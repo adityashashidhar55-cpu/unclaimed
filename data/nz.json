@@ -1,0 +1,4957 @@
+{
+  "country_code": "NZ",
+  "country_name": "New Zealand",
+  "currency": "NZD",
+  "language": "en",
+  "programmes": [
+    {
+      "slug": "jobseeker-support",
+      "name_local": "Jobseeker Support",
+      "name_en": "Jobseeker Support (main unemployment benefit)",
+      "admin_level": "national",
+      "admin_area": null,
+      "funder": "Ministry of Social Development — Work and Income",
+      "category": "income_support",
+      "benefit_type": "cash_monthly",
+      "amount_min": null,
+      "amount_max": null,
+      "amount_currency": "NZD",
+      "amount_period": "monthly",
+      "amount_note": "Weekly payment; net rate from 1 Apr 2026 approx $372.55/week (single 25+), $324.50 (single 20–24), $633.94 (couple no children). Rates reviewed each April.",
+      "is_automatic": false,
+      "application_url": "https://www.workandincome.govt.nz/products/a-z-benefits/jobseeker-support.html",
+      "application_channel": "online",
+      "deadline_type": "rolling",
+      "deadline_note": null,
+      "procedure_steps": [
+        {
+          "step": 1,
+          "detail": "Check eligibility with the Check What You Might Get tool",
+          "url": "https://check.msd.govt.nz"
+        },
+        {
+          "step": 2,
+          "detail": "Apply online via MyMSD or book an appointment with Work and Income",
+          "url": "https://www.workandincome.govt.nz"
+        },
+        {
+          "step": 3,
+          "detail": "Attend appointment, provide documents, agree to work obligations",
+          "url": null
+        }
+      ],
+      "documents_required": [
+        {
+          "doc": "Photo ID or birth certificate",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Bank account details",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Medical certificate (only if work capacity reduced)",
+          "mandatory": false,
+          "note": null
+        }
+      ],
+      "eligibility": {
+        "statuses": [
+          "unemployed",
+          "jobseeker"
+        ],
+        "age_min": 18,
+        "age_max": null,
+        "income_annual_max": null,
+        "income_note": "Income and asset tested; partner income counts",
+        "requires_children": false,
+        "nationality": "citizen_or_pr",
+        "residency_months_min": 24,
+        "housing_tenure": null,
+        "student_required": false,
+        "admin_areas": []
+      },
+      "source_url": "https://www.workandincome.govt.nz/products/a-z-benefits/jobseeker-support.html",
+      "source_snippet": "Jobseeker Support is a weekly payment that helps people until they find work.",
+      "last_verified_at": "2026-08-12",
+      "verification_status": "verified"
+    },
+    {
+      "slug": "jobseeker-support-student-hardship",
+      "name_local": "Jobseeker Support Student Hardship",
+      "name_en": "Jobseeker Support Student Hardship (summer break support for students)",
+      "admin_level": "national",
+      "admin_area": null,
+      "funder": "Ministry of Social Development — Work and Income",
+      "category": "income_support",
+      "benefit_type": "cash_monthly",
+      "amount_min": null,
+      "amount_max": null,
+      "amount_currency": "NZD",
+      "amount_period": "monthly",
+      "amount_note": "Weekly payment for students who cannot find work over the summer break when Student Allowance stops.",
+      "is_automatic": false,
+      "application_url": "https://www.workandincome.govt.nz/products/a-z-benefits/jobseeker-support-student-hardship.html",
+      "application_channel": "online",
+      "deadline_type": "window",
+      "deadline_note": "Applies to the summer study break period each year",
+      "procedure_steps": [
+        {
+          "step": 1,
+          "detail": "Apply via MyMSD before the summer break",
+          "url": "https://www.workandincome.govt.nz"
+        },
+        {
+          "step": 2,
+          "detail": "Provide proof of enrolment for the next year",
+          "url": null
+        }
+      ],
+      "documents_required": [
+        {
+          "doc": "Confirmation of enrolment for next study year",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Bank account details",
+          "mandatory": true,
+          "note": null
+        }
+      ],
+      "eligibility": {
+        "statuses": [
+          "student",
+          "jobseeker"
+        ],
+        "age_min": 18,
+        "age_max": null,
+        "income_annual_max": null,
+        "income_note": "Income tested",
+        "requires_children": false,
+        "nationality": "citizen_or_pr",
+        "residency_months_min": null,
+        "housing_tenure": null,
+        "student_required": true,
+        "admin_areas": []
+      },
+      "source_url": "https://www.workandincome.govt.nz/products/a-z-benefits/jobseeker-support-student-hardship.html",
+      "source_snippet": "Students may apply for Jobseeker Support Student Hardship while they are looking for a job over the summer holiday.",
+      "last_verified_at": "2026-08-12",
+      "verification_status": "auto_extracted"
+    },
+    {
+      "slug": "sole-parent-support",
+      "name_local": "Sole Parent Support",
+      "name_en": "Sole Parent Support",
+      "admin_level": "national",
+      "admin_area": null,
+      "funder": "Ministry of Social Development — Work and Income",
+      "category": "income_support",
+      "benefit_type": "cash_monthly",
+      "amount_min": null,
+      "amount_max": null,
+      "amount_currency": "NZD",
+      "amount_period": "monthly",
+      "amount_note": "Weekly payment for sole parents with a dependent child under 14; net rate from 1 Apr 2026 approx $521.52/week. Obligations to prepare for work apply.",
+      "is_automatic": false,
+      "application_url": "https://www.workandincome.govt.nz/products/a-z-benefits/sole-parent-support.html",
+      "application_channel": "online",
+      "deadline_type": "rolling",
+      "deadline_note": null,
+      "procedure_steps": [
+        {
+          "step": 1,
+          "detail": "Apply online via MyMSD or contact Work and Income",
+          "url": "https://www.workandincome.govt.nz"
+        },
+        {
+          "step": 2,
+          "detail": "Attend a work capability interview and provide documents",
+          "url": null
+        }
+      ],
+      "documents_required": [
+        {
+          "doc": "Photo ID",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Proof of care of dependent child",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Bank account details",
+          "mandatory": true,
+          "note": null
+        }
+      ],
+      "eligibility": {
+        "statuses": [
+          "parent"
+        ],
+        "age_min": null,
+        "age_max": null,
+        "income_annual_max": null,
+        "income_note": "Income tested",
+        "requires_children": true,
+        "nationality": "citizen_or_pr",
+        "residency_months_min": null,
+        "housing_tenure": null,
+        "student_required": false,
+        "admin_areas": []
+      },
+      "source_url": "https://www.workandincome.govt.nz/products/a-z-benefits/sole-parent-support.html",
+      "source_snippet": "Sole Parent $521.52 weekly (net, from 1 April 2026) per published Work and Income benefit rates.",
+      "last_verified_at": "2026-08-12",
+      "verification_status": "verified"
+    },
+    {
+      "slug": "supported-living-payment",
+      "name_local": "Supported Living Payment",
+      "name_en": "Supported Living Payment",
+      "admin_level": "national",
+      "admin_area": null,
+      "funder": "Ministry of Social Development — Work and Income",
+      "category": "income_support",
+      "benefit_type": "cash_monthly",
+      "amount_min": null,
+      "amount_max": null,
+      "amount_currency": "NZD",
+      "amount_period": "monthly",
+      "amount_note": "Weekly payment for people who have, or care full-time for someone with, a health condition, injury or disability that severely restricts ability to work. Rate depends on age and circumstances.",
+      "is_automatic": false,
+      "application_url": "https://www.workandincome.govt.nz/products/a-z-benefits/supported-living-payment.html",
+      "application_channel": "online",
+      "deadline_type": "rolling",
+      "deadline_note": null,
+      "procedure_steps": [
+        {
+          "step": 1,
+          "detail": "Apply via MyMSD or Work and Income appointment",
+          "url": "https://www.workandincome.govt.nz"
+        },
+        {
+          "step": 2,
+          "detail": "Provide medical certificate from your doctor or specialist",
+          "url": null
+        }
+      ],
+      "documents_required": [
+        {
+          "doc": "Medical certificate (Work Capacity Medical Certificate)",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Photo ID",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Bank account details",
+          "mandatory": true,
+          "note": null
+        }
+      ],
+      "eligibility": {
+        "statuses": [],
+        "age_min": 16,
+        "age_max": null,
+        "income_annual_max": null,
+        "income_note": "Income tested",
+        "requires_children": false,
+        "nationality": "citizen_or_pr",
+        "residency_months_min": null,
+        "housing_tenure": null,
+        "student_required": false,
+        "admin_areas": []
+      },
+      "source_url": "https://www.workandincome.govt.nz/products/a-z-benefits/supported-living-payment.html",
+      "source_snippet": "For people who are permanently and severely restricted in their capacity to work, or caring for someone full-time.",
+      "last_verified_at": "2026-08-12",
+      "verification_status": "auto_extracted"
+    },
+    {
+      "slug": "nz-superannuation",
+      "name_local": "New Zealand Superannuation (NZ Super)",
+      "name_en": "New Zealand Superannuation (universal state pension from age 65)",
+      "admin_level": "national",
+      "admin_area": null,
+      "funder": "Ministry of Social Development — Work and Income",
+      "category": "income_support",
+      "benefit_type": "cash_monthly",
+      "amount_min": null,
+      "amount_max": null,
+      "amount_currency": "NZD",
+      "amount_period": "monthly",
+      "amount_note": "Fortnightly payment; from 1 Apr 2026 approx $555.15/week net (single living alone, tax code M), $512.45 (single sharing), $427.04 each (qualifying couple). Not income or asset tested.",
+      "is_automatic": false,
+      "application_url": "https://www.workandincome.govt.nz/eligibility/seniors/superannuation/",
+      "application_channel": "online",
+      "deadline_type": "rolling",
+      "deadline_note": "Can apply up to 12 weeks before turning 65",
+      "procedure_steps": [
+        {
+          "step": 1,
+          "detail": "Apply via MyMSD up to 12 weeks before your 65th birthday",
+          "url": "https://my.msd.govt.nz"
+        },
+        {
+          "step": 2,
+          "detail": "Provide proof of identity and residency history",
+          "url": null
+        }
+      ],
+      "documents_required": [
+        {
+          "doc": "Birth certificate or passport",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Proof of residence in NZ (10 years since age 20, 5 since age 50)",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Bank account details",
+          "mandatory": true,
+          "note": null
+        }
+      ],
+      "eligibility": {
+        "statuses": [
+          "retired"
+        ],
+        "age_min": 65,
+        "age_max": null,
+        "income_annual_max": null,
+        "income_note": "Not income or asset tested",
+        "requires_children": false,
+        "nationality": "citizen_or_pr",
+        "residency_months_min": 120,
+        "housing_tenure": null,
+        "student_required": false,
+        "admin_areas": []
+      },
+      "source_url": "https://www.workandincome.govt.nz/eligibility/seniors/superannuation/",
+      "source_snippet": "Single (living alone) $555.15 weekly after tax (M); couple both qualifying $854.08 total — rates from 1 April 2026.",
+      "last_verified_at": "2026-08-12",
+      "verification_status": "verified"
+    },
+    {
+      "slug": "veterans-pension",
+      "name_local": "Veteran's Pension",
+      "name_en": "Veteran's Pension",
+      "admin_level": "national",
+      "admin_area": null,
+      "funder": "Ministry of Social Development — Work and Income",
+      "category": "income_support",
+      "benefit_type": "cash_monthly",
+      "amount_min": null,
+      "amount_max": null,
+      "amount_currency": "NZD",
+      "amount_period": "monthly",
+      "amount_note": "Fortnightly payment at the same rates as NZ Super for qualifying veterans with service-related conditions or aged 65+.",
+      "is_automatic": false,
+      "application_url": "https://www.workandincome.govt.nz/products/a-z-benefits/veterans-pension.html",
+      "application_channel": "online",
+      "deadline_type": "rolling",
+      "deadline_note": null,
+      "procedure_steps": [
+        {
+          "step": 1,
+          "detail": "Contact Work and Income seniors line to apply",
+          "url": "https://www.workandincome.govt.nz"
+        },
+        {
+          "step": 2,
+          "detail": "Provide service record and medical evidence if under 65",
+          "url": null
+        }
+      ],
+      "documents_required": [
+        {
+          "doc": "Proof of qualifying operational service",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Photo ID",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Bank account details",
+          "mandatory": true,
+          "note": null
+        }
+      ],
+      "eligibility": {
+        "statuses": [
+          "retired"
+        ],
+        "age_min": null,
+        "age_max": null,
+        "income_annual_max": null,
+        "income_note": "Not income or asset tested",
+        "requires_children": false,
+        "nationality": "citizen_or_pr",
+        "residency_months_min": null,
+        "housing_tenure": null,
+        "student_required": false,
+        "admin_areas": []
+      },
+      "source_url": "https://www.workandincome.govt.nz/products/a-z-benefits/veterans-pension.html",
+      "source_snippet": "Veteran's Pension is paid at the same rates as NZ Superannuation to qualifying veterans.",
+      "last_verified_at": "2026-08-12",
+      "verification_status": "auto_extracted"
+    },
+    {
+      "slug": "youth-payment",
+      "name_local": "Youth Payment",
+      "name_en": "Youth Payment",
+      "admin_level": "national",
+      "admin_area": null,
+      "funder": "Ministry of Social Development — Work and Income",
+      "category": "income_support",
+      "benefit_type": "cash_monthly",
+      "amount_min": null,
+      "amount_max": null,
+      "amount_currency": "NZD",
+      "amount_period": "monthly",
+      "amount_note": "Weekly payment for 16–17 year olds who cannot live with or be supported by their parents and are in education, training or work-based learning.",
+      "is_automatic": false,
+      "application_url": "https://www.workandincome.govt.nz/products/a-z-benefits/youth-payment.html",
+      "application_channel": "online",
+      "deadline_type": "rolling",
+      "deadline_note": null,
+      "procedure_steps": [
+        {
+          "step": 1,
+          "detail": "Apply via MyMSD with a youth service provider",
+          "url": "https://www.workandincome.govt.nz"
+        },
+        {
+          "step": 2,
+          "detail": "Enrol in education, training or work-based learning",
+          "url": null
+        }
+      ],
+      "documents_required": [
+        {
+          "doc": "Photo ID or birth certificate",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Evidence of circumstances preventing living at home",
+          "mandatory": true,
+          "note": null
+        }
+      ],
+      "eligibility": {
+        "statuses": [
+          "student",
+          "jobseeker"
+        ],
+        "age_min": 16,
+        "age_max": 17,
+        "income_annual_max": null,
+        "income_note": "Parental income may be assessed",
+        "requires_children": false,
+        "nationality": "citizen_or_pr",
+        "residency_months_min": null,
+        "housing_tenure": null,
+        "student_required": false,
+        "admin_areas": []
+      },
+      "source_url": "https://www.workandincome.govt.nz/products/a-z-benefits/youth-payment.html",
+      "source_snippet": "Weekly payment for 16 and 17 year olds with no parental support, managed with a youth service provider.",
+      "last_verified_at": "2026-08-12",
+      "verification_status": "auto_extracted"
+    },
+    {
+      "slug": "young-parent-payment",
+      "name_local": "Young Parent Payment",
+      "name_en": "Young Parent Payment",
+      "admin_level": "national",
+      "admin_area": null,
+      "funder": "Ministry of Social Development — Work and Income",
+      "category": "income_support",
+      "benefit_type": "cash_monthly",
+      "amount_min": null,
+      "amount_max": null,
+      "amount_currency": "NZD",
+      "amount_period": "monthly",
+      "amount_note": "Weekly payment for parents aged 16–19 (18–19 with no parental support) whose main role is caring for their child.",
+      "is_automatic": false,
+      "application_url": "https://www.workandincome.govt.nz/products/a-z-benefits/young-parent-payment.html",
+      "application_channel": "online",
+      "deadline_type": "rolling",
+      "deadline_note": null,
+      "procedure_steps": [
+        {
+          "step": 1,
+          "detail": "Apply via MyMSD with a youth service provider",
+          "url": "https://www.workandincome.govt.nz"
+        },
+        {
+          "step": 2,
+          "detail": "Agree a plan for education, training or parenting courses",
+          "url": null
+        }
+      ],
+      "documents_required": [
+        {
+          "doc": "Photo ID or birth certificate",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Child's birth certificate",
+          "mandatory": true,
+          "note": null
+        }
+      ],
+      "eligibility": {
+        "statuses": [
+          "parent"
+        ],
+        "age_min": 16,
+        "age_max": 19,
+        "income_annual_max": null,
+        "income_note": "Income tested",
+        "requires_children": true,
+        "nationality": "citizen_or_pr",
+        "residency_months_min": null,
+        "housing_tenure": null,
+        "student_required": false,
+        "admin_areas": []
+      },
+      "source_url": "https://www.workandincome.govt.nz/products/a-z-benefits/young-parent-payment.html",
+      "source_snippet": "Payment for young parents aged 16 to 19 who have dependent children in their care.",
+      "last_verified_at": "2026-08-12",
+      "verification_status": "auto_extracted"
+    },
+    {
+      "slug": "emergency-benefit",
+      "name_local": "Emergency Benefit",
+      "name_en": "Emergency Benefit",
+      "admin_level": "national",
+      "admin_area": null,
+      "funder": "Ministry of Social Development — Work and Income",
+      "category": "income_support",
+      "benefit_type": "cash_monthly",
+      "amount_min": null,
+      "amount_max": null,
+      "amount_currency": "NZD",
+      "amount_period": "monthly",
+      "amount_note": "Weekly hardship payment for people in hardship who cannot get any other benefit (e.g. residency criteria not yet met).",
+      "is_automatic": false,
+      "application_url": "https://www.workandincome.govt.nz/products/a-z-benefits/emergency-benefit.html",
+      "application_channel": "in_person",
+      "deadline_type": "rolling",
+      "deadline_note": null,
+      "procedure_steps": [
+        {
+          "step": 1,
+          "detail": "Contact Work and Income to discuss hardship situation",
+          "url": "https://www.workandincome.govt.nz"
+        },
+        {
+          "step": 2,
+          "detail": "Provide evidence you cannot get any other benefit",
+          "url": null
+        }
+      ],
+      "documents_required": [
+        {
+          "doc": "Photo ID",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Evidence of hardship and circumstances",
+          "mandatory": true,
+          "note": null
+        }
+      ],
+      "eligibility": {
+        "statuses": [],
+        "age_min": 18,
+        "age_max": null,
+        "income_annual_max": null,
+        "income_note": "Income and asset tested",
+        "requires_children": false,
+        "nationality": "any",
+        "residency_months_min": null,
+        "housing_tenure": null,
+        "student_required": false,
+        "admin_areas": []
+      },
+      "source_url": "https://www.workandincome.govt.nz/products/a-z-benefits/emergency-benefit.html",
+      "source_snippet": "Hardship assistance for people who cannot get another benefit, for example because they do not meet residency requirements.",
+      "last_verified_at": "2026-08-12",
+      "verification_status": "auto_extracted"
+    },
+    {
+      "slug": "temporary-additional-support",
+      "name_local": "Temporary Additional Support",
+      "name_en": "Temporary Additional Support (TAS)",
+      "admin_level": "national",
+      "admin_area": null,
+      "funder": "Ministry of Social Development — Work and Income",
+      "category": "income_support",
+      "benefit_type": "cash_monthly",
+      "amount_min": null,
+      "amount_max": null,
+      "amount_currency": "NZD",
+      "amount_period": "monthly",
+      "amount_note": "Weekly payment (max 13 weeks at a time) to cover essential living costs that cannot be met from income and other resources. You do not need to be on a benefit.",
+      "is_automatic": false,
+      "application_url": "https://www.workandincome.govt.nz/products/a-z-benefits/temporary-additional-support.html",
+      "application_channel": "online",
+      "deadline_type": "rolling",
+      "deadline_note": "Paid for a maximum of 13 weeks, then reviewed",
+      "procedure_steps": [
+        {
+          "step": 1,
+          "detail": "Apply via MyMSD or Work and Income appointment",
+          "url": "https://www.workandincome.govt.nz"
+        },
+        {
+          "step": 2,
+          "detail": "Provide details of essential costs and income",
+          "url": null
+        }
+      ],
+      "documents_required": [
+        {
+          "doc": "Photo ID",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Evidence of accommodation and essential costs",
+          "mandatory": true,
+          "note": null
+        }
+      ],
+      "eligibility": {
+        "statuses": [],
+        "age_min": 16,
+        "age_max": null,
+        "income_annual_max": null,
+        "income_note": "Income, asset and cost tested",
+        "requires_children": false,
+        "nationality": "citizen_or_pr",
+        "residency_months_min": null,
+        "housing_tenure": null,
+        "student_required": false,
+        "admin_areas": []
+      },
+      "source_url": "https://www.workandincome.govt.nz/products/a-z-benefits/temporary-additional-support.html",
+      "source_snippet": "A weekly payment that helps to cover essential living costs that cannot be met from income and through other resources; paid for a maximum of 13 weeks.",
+      "last_verified_at": "2026-08-12",
+      "verification_status": "auto_extracted"
+    },
+    {
+      "slug": "special-benefit",
+      "name_local": "Special Benefit",
+      "name_en": "Special Benefit (legacy hardship payment)",
+      "admin_level": "national",
+      "admin_area": null,
+      "funder": "Ministry of Social Development — Work and Income",
+      "category": "income_support",
+      "benefit_type": "cash_monthly",
+      "amount_min": null,
+      "amount_max": null,
+      "amount_currency": "NZD",
+      "amount_period": "monthly",
+      "amount_note": "Legacy weekly hardship payment; largely replaced by Temporary Additional Support since 2007 and now only continued for a small number of existing recipients.",
+      "is_automatic": false,
+      "application_url": "https://www.workandincome.govt.nz/",
+      "application_channel": "in_person",
+      "deadline_type": "rolling",
+      "deadline_note": "No new grants in most cases — TAS applies instead",
+      "procedure_steps": [
+        {
+          "step": 1,
+          "detail": "Contact Work and Income to check what ongoing help you can get",
+          "url": "https://check.msd.govt.nz"
+        }
+      ],
+      "documents_required": [
+        {
+          "doc": "Photo ID",
+          "mandatory": true,
+          "note": null
+        }
+      ],
+      "eligibility": {
+        "statuses": [],
+        "age_min": null,
+        "age_max": null,
+        "income_annual_max": null,
+        "income_note": "Income and asset tested",
+        "requires_children": false,
+        "nationality": "citizen_or_pr",
+        "residency_months_min": null,
+        "housing_tenure": null,
+        "student_required": false,
+        "admin_areas": []
+      },
+      "source_url": "https://www.workandincome.govt.nz/",
+      "source_snippet": "Special Benefit was largely replaced by Temporary Additional Support; Work and Income assesses which ongoing extra help applies.",
+      "last_verified_at": "2026-08-12",
+      "verification_status": "auto_extracted"
+    },
+    {
+      "slug": "orphans-benefit",
+      "name_local": "Orphan's Benefit",
+      "name_en": "Orphan's Benefit",
+      "admin_level": "national",
+      "admin_area": null,
+      "funder": "Ministry of Social Development — Work and Income",
+      "category": "income_support",
+      "benefit_type": "cash_monthly",
+      "amount_min": null,
+      "amount_max": null,
+      "amount_currency": "NZD",
+      "amount_period": "monthly",
+      "amount_note": "Weekly payment to the carer of a child whose parents have died, cannot be found, or cannot care for them. Not income tested for the carer.",
+      "is_automatic": false,
+      "application_url": "https://www.workandincome.govt.nz/products/a-z-benefits/orphans-benefit.html",
+      "application_channel": "online",
+      "deadline_type": "rolling",
+      "deadline_note": null,
+      "procedure_steps": [
+        {
+          "step": 1,
+          "detail": "Apply via MyMSD or Work and Income",
+          "url": "https://www.workandincome.govt.nz"
+        },
+        {
+          "step": 2,
+          "detail": "Provide evidence of the child's circumstances and your care",
+          "url": null
+        }
+      ],
+      "documents_required": [
+        {
+          "doc": "Child's birth certificate",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Evidence of parents' death or inability to care",
+          "mandatory": true,
+          "note": null
+        }
+      ],
+      "eligibility": {
+        "statuses": [],
+        "age_min": null,
+        "age_max": null,
+        "income_annual_max": null,
+        "income_note": "Carer's income not tested for Orphan's Benefit",
+        "requires_children": true,
+        "nationality": "citizen_or_pr",
+        "residency_months_min": null,
+        "housing_tenure": null,
+        "student_required": false,
+        "admin_areas": []
+      },
+      "source_url": "https://www.workandincome.govt.nz/products/a-z-benefits/orphans-benefit.html",
+      "source_snippet": "Weekly payment for people caring for a child whose parents have died, cannot be found or are unable to care for them.",
+      "last_verified_at": "2026-08-12",
+      "verification_status": "auto_extracted"
+    },
+    {
+      "slug": "unsupported-childs-benefit",
+      "name_local": "Unsupported Child's Benefit",
+      "name_en": "Unsupported Child's Benefit",
+      "admin_level": "national",
+      "admin_area": null,
+      "funder": "Ministry of Social Development — Work and Income",
+      "category": "income_support",
+      "benefit_type": "cash_monthly",
+      "amount_min": null,
+      "amount_max": null,
+      "amount_currency": "NZD",
+      "amount_period": "monthly",
+      "amount_note": "Weekly payment for carers (often grandparents or whānau) looking after a child whose parents cannot care for them because of a family breakdown.",
+      "is_automatic": false,
+      "application_url": "https://www.workandincome.govt.nz/products/a-z-benefits/unsupported-childs-benefit.html",
+      "application_channel": "online",
+      "deadline_type": "rolling",
+      "deadline_note": null,
+      "procedure_steps": [
+        {
+          "step": 1,
+          "detail": "Apply via MyMSD or Work and Income",
+          "url": "https://www.workandincome.govt.nz"
+        },
+        {
+          "step": 2,
+          "detail": "Provide evidence the child cannot live with their parents",
+          "url": null
+        }
+      ],
+      "documents_required": [
+        {
+          "doc": "Child's birth certificate",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Evidence of family breakdown and care arrangements",
+          "mandatory": true,
+          "note": null
+        }
+      ],
+      "eligibility": {
+        "statuses": [],
+        "age_min": null,
+        "age_max": null,
+        "income_annual_max": null,
+        "income_note": "Carer's income not tested",
+        "requires_children": true,
+        "nationality": "citizen_or_pr",
+        "residency_months_min": null,
+        "housing_tenure": null,
+        "student_required": false,
+        "admin_areas": []
+      },
+      "source_url": "https://www.workandincome.govt.nz/products/a-z-benefits/unsupported-childs-benefit.html",
+      "source_snippet": "Weekly payment for someone caring for a child whose parents are unable to care for them due to a family breakdown.",
+      "last_verified_at": "2026-08-12",
+      "verification_status": "auto_extracted"
+    },
+    {
+      "slug": "hardship-food-grant",
+      "name_local": "Special Needs Grant — Food",
+      "name_en": "Special Needs Grant for food (hardship food grant)",
+      "admin_level": "national",
+      "admin_area": null,
+      "funder": "Ministry of Social Development — Work and Income",
+      "category": "income_support",
+      "benefit_type": "cash_one_off",
+      "amount_min": null,
+      "amount_max": null,
+      "amount_currency": "NZD",
+      "amount_period": "one_off",
+      "amount_note": "One-off, non-recoverable payment for food in an emergency. Amount depends on family size; you do not have to be on a benefit.",
+      "is_automatic": false,
+      "application_url": "https://www.workandincome.govt.nz/benefits/urgent-costs/food.html",
+      "application_channel": "online",
+      "deadline_type": "rolling",
+      "deadline_note": "Limits on number of grants without an appointment in a period",
+      "procedure_steps": [
+        {
+          "step": 1,
+          "detail": "Apply via MyMSD urgent costs or call Work and Income",
+          "url": "https://my.msd.govt.nz"
+        },
+        {
+          "step": 2,
+          "detail": "Payment loaded onto a payment card for approved food retailers",
+          "url": null
+        }
+      ],
+      "documents_required": [
+        {
+          "doc": "Photo ID",
+          "mandatory": true,
+          "note": null
+        }
+      ],
+      "eligibility": {
+        "statuses": [],
+        "age_min": 16,
+        "age_max": null,
+        "income_annual_max": null,
+        "income_note": "Income and cash asset tested",
+        "requires_children": false,
+        "nationality": "any_resident",
+        "residency_months_min": null,
+        "housing_tenure": null,
+        "student_required": false,
+        "admin_areas": []
+      },
+      "source_url": "https://www.workandincome.govt.nz/",
+      "source_snippet": "If you have an urgent or unexpected cost like food, Work and Income may be able to help with a Special Needs Grant you do not have to pay back.",
+      "last_verified_at": "2026-08-12",
+      "verification_status": "auto_extracted"
+    },
+    {
+      "slug": "recoverable-assistance-payment",
+      "name_local": "Recoverable Assistance Payment",
+      "name_en": "Recoverable Assistance Payment (interest-free hardship loan)",
+      "admin_level": "national",
+      "admin_area": null,
+      "funder": "Ministry of Social Development — Work and Income",
+      "category": "income_support",
+      "benefit_type": "cash_one_off",
+      "amount_min": null,
+      "amount_max": null,
+      "amount_currency": "NZD",
+      "amount_period": "one_off",
+      "amount_note": "Interest-free, repayable payment for essential immediate needs (e.g. appliances, school costs, car repairs) for people not on a benefit who cannot get an advance. Repaid by instalments.",
+      "is_automatic": false,
+      "application_url": "https://www.workandincome.govt.nz/benefits/urgent-costs/index.html",
+      "application_channel": "online",
+      "deadline_type": "rolling",
+      "deadline_note": null,
+      "procedure_steps": [
+        {
+          "step": 1,
+          "detail": "Apply via MyMSD urgent costs",
+          "url": "https://my.msd.govt.nz"
+        },
+        {
+          "step": 2,
+          "detail": "Agree a repayment schedule deducted from wages or payments",
+          "url": null
+        }
+      ],
+      "documents_required": [
+        {
+          "doc": "Photo ID",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Evidence of the essential cost (quote/invoice)",
+          "mandatory": true,
+          "note": null
+        }
+      ],
+      "eligibility": {
+        "statuses": [],
+        "age_min": 16,
+        "age_max": null,
+        "income_annual_max": null,
+        "income_note": "Income and cash asset tested",
+        "requires_children": false,
+        "nationality": "any_resident",
+        "residency_months_min": null,
+        "housing_tenure": null,
+        "student_required": false,
+        "admin_areas": []
+      },
+      "source_url": "https://www.workandincome.govt.nz/",
+      "source_snippet": "Recoverable Assistance is an interest-free payment for essential costs that you pay back later.",
+      "last_verified_at": "2026-08-12",
+      "verification_status": "auto_extracted"
+    },
+    {
+      "slug": "advance-payment-of-benefit",
+      "name_local": "Advance Payment of Benefit",
+      "name_en": "Advance Payment of Benefit",
+      "admin_level": "national",
+      "admin_area": null,
+      "funder": "Ministry of Social Development — Work and Income",
+      "category": "income_support",
+      "benefit_type": "cash_one_off",
+      "amount_min": null,
+      "amount_max": null,
+      "amount_currency": "NZD",
+      "amount_period": "one_off",
+      "amount_note": "Interest-free advance of up to 6 weeks of your main benefit for immediate essential costs (e.g. whiteware, car repairs, school uniforms); repaid from your benefit.",
+      "is_automatic": false,
+      "application_url": "https://www.workandincome.govt.nz/products/a-z-benefits/advance-payment-of-benefit.html",
+      "application_channel": "online",
+      "deadline_type": "rolling",
+      "deadline_note": null,
+      "procedure_steps": [
+        {
+          "step": 1,
+          "detail": "Apply via MyMSD or call Work and Income",
+          "url": "https://my.msd.govt.nz"
+        },
+        {
+          "step": 2,
+          "detail": "Provide quote or evidence of the essential cost",
+          "url": null
+        }
+      ],
+      "documents_required": [
+        {
+          "doc": "Photo ID",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Quote or invoice for the item",
+          "mandatory": true,
+          "note": null
+        }
+      ],
+      "eligibility": {
+        "statuses": [],
+        "age_min": 16,
+        "age_max": null,
+        "income_annual_max": null,
+        "income_note": "Must be receiving a main benefit",
+        "requires_children": false,
+        "nationality": "any_resident",
+        "residency_months_min": null,
+        "housing_tenure": null,
+        "student_required": false,
+        "admin_areas": []
+      },
+      "source_url": "https://www.workandincome.govt.nz/",
+      "source_snippet": "An advance of your benefit for essential costs, repaid interest-free out of your future payments.",
+      "last_verified_at": "2026-08-12",
+      "verification_status": "auto_extracted"
+    },
+    {
+      "slug": "special-needs-grant-health-costs",
+      "name_local": "Special Needs Grant — Dental and Glasses",
+      "name_en": "Special Needs Grant for emergency dental care and glasses",
+      "admin_level": "national",
+      "admin_area": null,
+      "funder": "Ministry of Social Development — Work and Income",
+      "category": "health",
+      "benefit_type": "cash_one_off",
+      "amount_min": null,
+      "amount_max": 1000,
+      "amount_currency": "NZD",
+      "amount_period": "one_off",
+      "amount_note": "One-off grant for urgent dental treatment (up to $1,000 in a 12-month period) or glasses for people in hardship. May be recoverable depending on circumstances.",
+      "is_automatic": false,
+      "application_url": "https://www.workandincome.govt.nz/benefits/urgent-costs/index.html",
+      "application_channel": "online",
+      "deadline_type": "rolling",
+      "deadline_note": "Dental capped at $1,000 per 12 months",
+      "procedure_steps": [
+        {
+          "step": 1,
+          "detail": "Get a quote from the dentist or optometrist",
+          "url": null
+        },
+        {
+          "step": 2,
+          "detail": "Apply via MyMSD urgent costs",
+          "url": "https://my.msd.govt.nz"
+        }
+      ],
+      "documents_required": [
+        {
+          "doc": "Quote from dentist or optometrist",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Photo ID",
+          "mandatory": true,
+          "note": null
+        }
+      ],
+      "eligibility": {
+        "statuses": [],
+        "age_min": 16,
+        "age_max": null,
+        "income_annual_max": null,
+        "income_note": "Income and cash asset tested",
+        "requires_children": false,
+        "nationality": "any_resident",
+        "residency_months_min": null,
+        "housing_tenure": null,
+        "student_required": false,
+        "admin_areas": []
+      },
+      "source_url": "https://www.workandincome.govt.nz/",
+      "source_snippet": "Work and Income can help with urgent dental treatment up to $1,000 in any 12-month period through a Special Needs Grant.",
+      "last_verified_at": "2026-08-12",
+      "verification_status": "auto_extracted"
+    },
+    {
+      "slug": "funeral-grant",
+      "name_local": "Funeral Grant",
+      "name_en": "Funeral Grant",
+      "admin_level": "national",
+      "admin_area": null,
+      "funder": "Ministry of Social Development — Work and Income",
+      "category": "income_support",
+      "benefit_type": "cash_one_off",
+      "amount_min": null,
+      "amount_max": null,
+      "amount_currency": "NZD",
+      "amount_period": "one_off",
+      "amount_note": "One-off payment (currently up to around $2,600) towards the actual and reasonable costs of a funeral for people in hardship. Asset tested.",
+      "is_automatic": false,
+      "application_url": "https://www.workandincome.govt.nz/products/a-z-benefits/funeral-grant.html",
+      "application_channel": "online",
+      "deadline_type": "rolling",
+      "deadline_note": "Apply within a reasonable time after the funeral",
+      "procedure_steps": [
+        {
+          "step": 1,
+          "detail": "Apply via MyMSD or Work and Income with the funeral account",
+          "url": "https://www.workandincome.govt.nz"
+        }
+      ],
+      "documents_required": [
+        {
+          "doc": "Funeral director's account",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Death certificate or proof of death",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Deceased's and applicant's asset details",
+          "mandatory": true,
+          "note": null
+        }
+      ],
+      "eligibility": {
+        "statuses": [],
+        "age_min": 16,
+        "age_max": null,
+        "income_annual_max": null,
+        "income_note": "Asset test applies to deceased and partner",
+        "requires_children": false,
+        "nationality": "any_resident",
+        "residency_months_min": null,
+        "housing_tenure": null,
+        "student_required": false,
+        "admin_areas": []
+      },
+      "source_url": "https://www.workandincome.govt.nz/",
+      "source_snippet": "A Funeral Grant helps with actual and reasonable funeral costs when someone dies and there is hardship.",
+      "last_verified_at": "2026-08-12",
+      "verification_status": "auto_extracted"
+    },
+    {
+      "slug": "civil-defence-payment",
+      "name_local": "Civil Defence Payment",
+      "name_en": "Civil Defence Payment (emergency event support)",
+      "admin_level": "national",
+      "admin_area": null,
+      "funder": "Ministry of Social Development — Work and Income",
+      "category": "income_support",
+      "benefit_type": "cash_one_off",
+      "amount_min": null,
+      "amount_max": null,
+      "amount_currency": "NZD",
+      "amount_period": "one_off",
+      "amount_note": "Payments for people affected by a declared civil defence emergency (e.g. floods, cyclones) to help with food, clothing, accommodation and loss of livelihood.",
+      "is_automatic": false,
+      "application_url": "https://www.workandincome.govt.nz/benefits/natural-disaster-support.html",
+      "application_channel": "in_person",
+      "deadline_type": "window",
+      "deadline_note": "Only available during and shortly after a declared emergency",
+      "procedure_steps": [
+        {
+          "step": 1,
+          "detail": "Contact Work and Income during a declared emergency event",
+          "url": "https://www.workandincome.govt.nz"
+        },
+        {
+          "step": 2,
+          "detail": "Provide evidence you were affected by the emergency",
+          "url": null
+        }
+      ],
+      "documents_required": [
+        {
+          "doc": "Photo ID",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Proof of address in affected area",
+          "mandatory": true,
+          "note": null
+        }
+      ],
+      "eligibility": {
+        "statuses": [],
+        "age_min": null,
+        "age_max": null,
+        "income_annual_max": null,
+        "income_note": "Hardship-based, not normally income tested",
+        "requires_children": false,
+        "nationality": "any_resident",
+        "residency_months_min": null,
+        "housing_tenure": null,
+        "student_required": false,
+        "admin_areas": []
+      },
+      "source_url": "https://www.workandincome.govt.nz/",
+      "source_snippet": "Civil Defence Payments help people affected by an emergency with immediate costs such as food, bedding and accommodation.",
+      "last_verified_at": "2026-08-12",
+      "verification_status": "auto_extracted"
+    },
+    {
+      "slug": "acc-weekly-compensation",
+      "name_local": "ACC Weekly Compensation",
+      "name_en": "ACC weekly compensation (80% income replacement after injury)",
+      "admin_level": "national",
+      "admin_area": null,
+      "funder": "Accident Compensation Corporation (ACC)",
+      "category": "income_support",
+      "benefit_type": "cash_monthly",
+      "amount_min": null,
+      "amount_max": null,
+      "amount_currency": "NZD",
+      "amount_period": "monthly",
+      "amount_note": "Up to 80% of pre-injury weekly earnings if you cannot work because of a covered injury; minimum approx $766.40/week for full-time earners and maximum approx $2,409.86/week (2026/27). Starts from day 8; employer pays first week for work injuries.",
+      "is_automatic": false,
+      "application_url": "https://www.acc.co.nz/im-injured/financial-support/weekly-compensation",
+      "application_channel": "online",
+      "deadline_type": "rolling",
+      "deadline_note": null,
+      "procedure_steps": [
+        {
+          "step": 1,
+          "detail": "See a health provider who lodges an ACC claim",
+          "url": "https://www.acc.co.nz"
+        },
+        {
+          "step": 2,
+          "detail": "Apply for weekly compensation via MyACC or call 0800 101 996",
+          "url": "https://my.acc.co.nz"
+        },
+        {
+          "step": 3,
+          "detail": "Provide employment and income details",
+          "url": null
+        }
+      ],
+      "documents_required": [
+        {
+          "doc": "ACC claim lodged by treatment provider",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Medical certificate of incapacity",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Income details (IR3/payslips/tax return)",
+          "mandatory": true,
+          "note": null
+        }
+      ],
+      "eligibility": {
+        "statuses": [
+          "employee",
+          "self_employed"
+        ],
+        "age_min": null,
+        "age_max": null,
+        "income_annual_max": null,
+        "income_note": "Based on pre-injury earnings, not means tested",
+        "requires_children": false,
+        "nationality": "any",
+        "residency_months_min": null,
+        "housing_tenure": null,
+        "student_required": false,
+        "admin_areas": []
+      },
+      "source_url": "https://www.acc.co.nz/im-injured/financial-support/weekly-compensation",
+      "source_snippet": "We pay up to 80% of your income as weekly compensation if you can't work because of your injury.",
+      "last_verified_at": "2026-08-12",
+      "verification_status": "verified"
+    },
+    {
+      "slug": "family-tax-credit",
+      "name_local": "Working for Families — Family Tax Credit",
+      "name_en": "Working for Families Family Tax Credit",
+      "admin_level": "national",
+      "admin_area": null,
+      "funder": "Inland Revenue (Te Tari Taake)",
+      "category": "family",
+      "benefit_type": "tax_credit",
+      "amount_min": null,
+      "amount_max": null,
+      "amount_currency": "NZD",
+      "amount_period": "annual",
+      "amount_note": "Weekly payment per child; from 1 Apr 2024 up to $144/week for the eldest child and $117/week for each additional child. Abates from family income over $42,700. Paid by IRD (or Work and Income if on a benefit).",
+      "is_automatic": false,
+      "application_url": "https://www.ird.govt.nz/working-for-families/types/family-tax-credit",
+      "application_channel": "online",
+      "deadline_type": "rolling",
+      "deadline_note": null,
+      "procedure_steps": [
+        {
+          "step": 1,
+          "detail": "Apply via myIR or register when your baby is born via SmartStart",
+          "url": "https://smartstart.services.govt.nz"
+        },
+        {
+          "step": 2,
+          "detail": "Estimate your family income and confirm details annually",
+          "url": "https://www.ird.govt.nz"
+        }
+      ],
+      "documents_required": [
+        {
+          "doc": "IRD numbers for parents and children",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Estimate of annual family income",
+          "mandatory": true,
+          "note": null
+        }
+      ],
+      "eligibility": {
+        "statuses": [
+          "parent",
+          "employee",
+          "self_employed"
+        ],
+        "age_min": null,
+        "age_max": null,
+        "income_annual_max": null,
+        "income_note": "Abates once family income exceeds $42,700",
+        "requires_children": true,
+        "nationality": "citizen_or_pr",
+        "residency_months_min": null,
+        "housing_tenure": null,
+        "student_required": false,
+        "admin_areas": []
+      },
+      "source_url": "https://www.ird.govt.nz/working-for-families/types",
+      "source_snippet": "The most you can get each week from 1 April 2024: eldest child $144.00, each other child $117.00 (IR201, Inland Revenue).",
+      "last_verified_at": "2026-08-12",
+      "verification_status": "verified"
+    },
+    {
+      "slug": "in-work-tax-credit",
+      "name_local": "Working for Families — In-work Tax Credit",
+      "name_en": "Working for Families In-work Tax Credit",
+      "admin_level": "national",
+      "admin_area": null,
+      "funder": "Inland Revenue (Te Tari Taake)",
+      "category": "family",
+      "benefit_type": "tax_credit",
+      "amount_min": null,
+      "amount_max": null,
+      "amount_currency": "NZD",
+      "amount_period": "annual",
+      "amount_note": "Weekly payment for families normally in paid work; from 31 Jul 2024 up to $97/week for the first 3 children plus $15 for each additional child. Not payable while on a main benefit or student allowance.",
+      "is_automatic": false,
+      "application_url": "https://www.ird.govt.nz/working-for-families/types/in-work-tax-credit",
+      "application_channel": "online",
+      "deadline_type": "rolling",
+      "deadline_note": null,
+      "procedure_steps": [
+        {
+          "step": 1,
+          "detail": "Apply for Working for Families via myIR",
+          "url": "https://www.ird.govt.nz"
+        },
+        {
+          "step": 2,
+          "detail": "Confirm hours of paid work each year",
+          "url": null
+        }
+      ],
+      "documents_required": [
+        {
+          "doc": "IRD numbers for parents and children",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Estimate of annual family income",
+          "mandatory": true,
+          "note": null
+        }
+      ],
+      "eligibility": {
+        "statuses": [
+          "parent",
+          "employee",
+          "self_employed"
+        ],
+        "age_min": null,
+        "age_max": null,
+        "income_annual_max": null,
+        "income_note": "Requires paid work (single parents 20 hrs/week; couples 30 hrs/week combined)",
+        "requires_children": true,
+        "nationality": "citizen_or_pr",
+        "residency_months_min": null,
+        "housing_tenure": null,
+        "student_required": false,
+        "admin_areas": []
+      },
+      "source_url": "https://www.ird.govt.nz/working-for-families/types",
+      "source_snippet": "From 31 July 2024: $97.00 a week for the first 3 children, $15.00 for each other child (IR201, Inland Revenue).",
+      "last_verified_at": "2026-08-12",
+      "verification_status": "verified"
+    },
+    {
+      "slug": "best-start",
+      "name_local": "Best Start Tax Credit",
+      "name_en": "Best Start (Working for Families payment for children under 3)",
+      "admin_level": "national",
+      "admin_area": null,
+      "funder": "Inland Revenue (Te Tari Taake)",
+      "category": "family",
+      "benefit_type": "tax_credit",
+      "amount_min": null,
+      "amount_max": null,
+      "amount_currency": "NZD",
+      "amount_period": "annual",
+      "amount_note": "$73/week per child under 3 (up to $3,838/year); rising to $77/week (up to $4,041) from 1 Apr 2026. First year not income tested for children born before 1 Apr 2026; thereafter reduces by 21c per $1 over $79,000 family income.",
+      "is_automatic": false,
+      "application_url": "https://smartstart.services.govt.nz/register-my-baby",
+      "application_channel": "online",
+      "deadline_type": "rolling",
+      "deadline_note": "Payments stop when the child turns 3",
+      "procedure_steps": [
+        {
+          "step": 1,
+          "detail": "Register the birth and apply for Best Start via SmartStart",
+          "url": "https://smartstart.services.govt.nz/register-my-baby"
+        },
+        {
+          "step": 2,
+          "detail": "Confirm details with Inland Revenue each year via myIR",
+          "url": "https://www.ird.govt.nz"
+        }
+      ],
+      "documents_required": [
+        {
+          "doc": "Child's birth registration number",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "IRD number for the child (within 8 weeks)",
+          "mandatory": true,
+          "note": null
+        }
+      ],
+      "eligibility": {
+        "statuses": [
+          "parent"
+        ],
+        "age_min": null,
+        "age_max": null,
+        "income_annual_max": 97000,
+        "income_note": "Full rate under $79,000 family income; reduces 21c per $1 above; stops around $97,000",
+        "requires_children": true,
+        "nationality": "citizen_or_pr",
+        "residency_months_min": null,
+        "housing_tenure": null,
+        "student_required": false,
+        "admin_areas": []
+      },
+      "source_url": "https://www.ird.govt.nz/working-for-families/types/best-start",
+      "source_snippet": "Best Start is a payment of $73 a week for families with a new baby; from 1 April 2026 the weekly payment of $77 is reduced when the family income exceeds $79,000.",
+      "last_verified_at": "2026-08-12",
+      "verification_status": "verified"
+    },
+    {
+      "slug": "minimum-family-tax-credit",
+      "name_local": "Minimum Family Tax Credit",
+      "name_en": "Working for Families Minimum Family Tax Credit",
+      "admin_level": "national",
+      "admin_area": null,
+      "funder": "Inland Revenue (Te Tari Taake)",
+      "category": "family",
+      "benefit_type": "tax_credit",
+      "amount_min": null,
+      "amount_max": null,
+      "amount_currency": "NZD",
+      "amount_period": "annual",
+      "amount_note": "Tops up after-tax family income of working families to a guaranteed minimum (at least $679/week after tax at April 2024 settings). Requires minimum work hours and excludes those on a main benefit.",
+      "is_automatic": false,
+      "application_url": "https://www.ird.govt.nz/working-for-families/types/minimum-family-tax-credit",
+      "application_channel": "online",
+      "deadline_type": "rolling",
+      "deadline_note": null,
+      "procedure_steps": [
+        {
+          "step": 1,
+          "detail": "Apply via myIR with your Working for Families registration",
+          "url": "https://www.ird.govt.nz"
+        },
+        {
+          "step": 2,
+          "detail": "Confirm work hours and income annually",
+          "url": null
+        }
+      ],
+      "documents_required": [
+        {
+          "doc": "IRD numbers",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Evidence of work hours (payslips)",
+          "mandatory": true,
+          "note": null
+        }
+      ],
+      "eligibility": {
+        "statuses": [
+          "parent",
+          "employee"
+        ],
+        "age_min": null,
+        "age_max": null,
+        "income_annual_max": null,
+        "income_note": "Single parents must work 20 hrs/week; couples 30 hrs/week combined",
+        "requires_children": true,
+        "nationality": "citizen_or_pr",
+        "residency_months_min": null,
+        "housing_tenure": null,
+        "student_required": false,
+        "admin_areas": []
+      },
+      "source_url": "https://www.ird.govt.nz/working-for-families/types",
+      "source_snippet": "This payment tops up your family's income to at least $679 a week after tax (IR201, Inland Revenue, April 2025).",
+      "last_verified_at": "2026-08-12",
+      "verification_status": "verified"
+    },
+    {
+      "slug": "paid-parental-leave",
+      "name_local": "Paid Parental Leave (PPL)",
+      "name_en": "Government-funded paid parental leave (up to 26 weeks)",
+      "admin_level": "national",
+      "admin_area": null,
+      "funder": "Inland Revenue (Te Tari Taake)",
+      "category": "family",
+      "benefit_type": "cash_monthly",
+      "amount_min": null,
+      "amount_max": null,
+      "amount_currency": "NZD",
+      "amount_period": "monthly",
+      "amount_note": "Weekly payment for up to 26 weeks matching your normal pay, capped at $788.66 gross/week (1 Jul 2025–30 Jun 2026; $811.05 from 1 Jul 2026). Minimum for self-employed $235/week. Cannot overlap with Best Start.",
+      "is_automatic": false,
+      "application_url": "https://www.ird.govt.nz/paid-parental-leave",
+      "application_channel": "online",
+      "deadline_type": "window",
+      "deadline_note": "Apply before you return to work; payments must be taken in one continuous period",
+      "procedure_steps": [
+        {
+          "step": 1,
+          "detail": "Apply via myIR before or after the birth",
+          "url": "https://www.ird.govt.nz/paid-parental-leave"
+        },
+        {
+          "step": 2,
+          "detail": "Your employer confirms your leave details",
+          "url": null
+        },
+        {
+          "step": 3,
+          "detail": "Payments made fortnightly by Inland Revenue",
+          "url": null
+        }
+      ],
+      "documents_required": [
+        {
+          "doc": "IRD number",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Expected due date or birth/adoption details",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Employer details and income information",
+          "mandatory": true,
+          "note": null
+        }
+      ],
+      "eligibility": {
+        "statuses": [
+          "employee",
+          "self_employed",
+          "parent"
+        ],
+        "age_min": null,
+        "age_max": null,
+        "income_annual_max": null,
+        "income_note": "Must have worked 10+ hrs/week for 26 of the 52 weeks before the due date",
+        "requires_children": true,
+        "nationality": "any_resident",
+        "residency_months_min": null,
+        "housing_tenure": null,
+        "student_required": false,
+        "admin_areas": []
+      },
+      "source_url": "https://www.ird.govt.nz/paid-parental-leave/working-out-your-entitlement/employees",
+      "source_snippet": "Your maximum paid parental leave payment (before tax) is: 1 July 2025 to 30 June 2026 — $788.66 a week.",
+      "last_verified_at": "2026-08-12",
+      "verification_status": "verified"
+    },
+    {
+      "slug": "accommodation-supplement",
+      "name_local": "Accommodation Supplement",
+      "name_en": "Accommodation Supplement (weekly rent/board/mortgage help)",
+      "admin_level": "national",
+      "admin_area": null,
+      "funder": "Ministry of Social Development — Work and Income",
+      "category": "housing",
+      "benefit_type": "cash_monthly",
+      "amount_min": null,
+      "amount_max": null,
+      "amount_currency": "NZD",
+      "amount_period": "monthly",
+      "amount_note": "Weekly payment towards rent, board or home-ownership costs; maximum depends on household and one of 4 areas (highest in Auckland/Queenstown). You do not have to be on a benefit. Not paid to public housing tenants.",
+      "is_automatic": false,
+      "application_url": "https://www.workandincome.govt.nz/products/a-z-benefits/accommodation-supplement.html",
+      "application_channel": "online",
+      "deadline_type": "rolling",
+      "deadline_note": "Reviewed annually by Work and Income",
+      "procedure_steps": [
+        {
+          "step": 1,
+          "detail": "Apply online via MyMSD with proof of accommodation costs",
+          "url": "https://my.msd.govt.nz"
+        },
+        {
+          "step": 2,
+          "detail": "Non-beneficiaries attend a Work and Income appointment",
+          "url": null
+        },
+        {
+          "step": 3,
+          "detail": "Renew details at each annual review",
+          "url": null
+        }
+      ],
+      "documents_required": [
+        {
+          "doc": "Tenancy agreement or mortgage documents",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Proof of accommodation costs",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Photo ID and bank details",
+          "mandatory": true,
+          "note": null
+        }
+      ],
+      "eligibility": {
+        "statuses": [],
+        "age_min": 16,
+        "age_max": null,
+        "income_annual_max": null,
+        "income_note": "Asset tested ($8,100 single / $16,200 couple cash asset limits); income tested for non-beneficiaries",
+        "requires_children": false,
+        "nationality": "any_resident",
+        "residency_months_min": null,
+        "housing_tenure": null,
+        "student_required": false,
+        "admin_areas": []
+      },
+      "source_url": "https://www.workandincome.govt.nz/products/a-z-benefits/accommodation-supplement.html",
+      "source_snippet": "The Accommodation Supplement is a weekly payment to assist people who are not in public housing, with their rent, board or the cost of owning a home.",
+      "last_verified_at": "2026-08-12",
+      "verification_status": "verified"
+    },
+    {
+      "slug": "public-housing-income-related-rent",
+      "name_local": "Public Housing — Income-Related Rent Subsidy",
+      "name_en": "Income-Related Rent Subsidy (public/social housing rent at 25% of income)",
+      "admin_level": "national",
+      "admin_area": null,
+      "funder": "Ministry of Social Development / Kāinga Ora / Community Housing Providers",
+      "category": "housing",
+      "benefit_type": "in_kind",
+      "amount_min": null,
+      "amount_max": null,
+      "amount_currency": "NZD",
+      "amount_period": "monthly",
+      "amount_note": "Eligible public housing tenants pay an income-related rent (generally about 25% of net household income) with the Government paying the rest via the Income-Related Rent Subsidy to Kāinga Ora or community housing providers.",
+      "is_automatic": false,
+      "application_url": "https://www.workandincome.govt.nz/housing/public-housing/index.html",
+      "application_channel": "in_person",
+      "deadline_type": "rolling",
+      "deadline_note": null,
+      "procedure_steps": [
+        {
+          "step": 1,
+          "detail": "Apply for the Public Housing Register via Work and Income",
+          "url": "https://www.workandincome.govt.nz"
+        },
+        {
+          "step": 2,
+          "detail": "MSD assesses eligibility and priority rating",
+          "url": null
+        },
+        {
+          "step": 3,
+          "detail": "Matched with Kāinga Ora or a community housing provider",
+          "url": null
+        }
+      ],
+      "documents_required": [
+        {
+          "doc": "Photo ID",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Income and asset details",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Evidence of housing need",
+          "mandatory": true,
+          "note": null
+        }
+      ],
+      "eligibility": {
+        "statuses": [],
+        "age_min": 16,
+        "age_max": null,
+        "income_annual_max": null,
+        "income_note": "Income and asset tested for public housing eligibility",
+        "requires_children": false,
+        "nationality": "citizen_or_pr",
+        "residency_months_min": null,
+        "housing_tenure": "renting",
+        "student_required": false,
+        "admin_areas": []
+      },
+      "source_url": "https://www.workandincome.govt.nz/",
+      "source_snippet": "MSD calculates the amount of Income Related Rent that public housing tenants are charged by Kāinga Ora or registered Community Housing Providers.",
+      "last_verified_at": "2026-08-12",
+      "verification_status": "auto_extracted"
+    },
+    {
+      "slug": "emergency-housing-sng",
+      "name_local": "Emergency Housing Special Needs Grant",
+      "name_en": "Emergency Housing Special Needs Grant",
+      "admin_level": "national",
+      "admin_area": null,
+      "funder": "Ministry of Social Development — Work and Income",
+      "category": "housing",
+      "benefit_type": "in_kind",
+      "amount_min": null,
+      "amount_max": null,
+      "amount_currency": "NZD",
+      "amount_period": "one_off",
+      "amount_note": "Non-recoverable grant paying for short-term emergency accommodation (motel/transitional housing) for people with nowhere to stay, generally up to 7 nights at a time while longer-term housing is found.",
+      "is_automatic": false,
+      "application_url": "https://www.workandincome.govt.nz/housing/nowhere-to-stay/index.html",
+      "application_channel": "in_person",
+      "deadline_type": "rolling",
+      "deadline_note": null,
+      "procedure_steps": [
+        {
+          "step": 1,
+          "detail": "Contact Work and Income when you have nowhere to stay",
+          "url": "https://www.workandincome.govt.nz"
+        },
+        {
+          "step": 2,
+          "detail": "MSD checks alternative housing options and pays the provider directly",
+          "url": null
+        }
+      ],
+      "documents_required": [
+        {
+          "doc": "Photo ID",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Details of your housing situation",
+          "mandatory": true,
+          "note": null
+        }
+      ],
+      "eligibility": {
+        "statuses": [],
+        "age_min": 18,
+        "age_max": null,
+        "income_annual_max": null,
+        "income_note": "Income and asset tested",
+        "requires_children": false,
+        "nationality": "any_resident",
+        "residency_months_min": null,
+        "housing_tenure": "homeless",
+        "student_required": false,
+        "admin_areas": []
+      },
+      "source_url": "https://www.workandincome.govt.nz/",
+      "source_snippet": "If you have nowhere to stay, Work and Income may help with emergency housing paid through an Emergency Housing Special Needs Grant.",
+      "last_verified_at": "2026-08-12",
+      "verification_status": "auto_extracted"
+    },
+    {
+      "slug": "housing-support-products",
+      "name_local": "Housing Support Products (Bond, Rent in Advance, Rent Arrears, Moving Costs)",
+      "name_en": "Housing Support Products — bond, rent in advance, rent arrears and moving cost grants",
+      "admin_level": "national",
+      "admin_area": null,
+      "funder": "Ministry of Social Development — Work and Income",
+      "category": "housing",
+      "benefit_type": "cash_one_off",
+      "amount_min": null,
+      "amount_max": null,
+      "amount_currency": "NZD",
+      "amount_period": "one_off",
+      "amount_note": "Grants to get and keep rental housing: bond up to 4 weeks' rent (max $2,000, non-recoverable), rent in advance up to 2 weeks (max $1,000), rent arrears up to 4 weeks (recoverable), moving costs up to $1,500 (recoverable).",
+      "is_automatic": false,
+      "application_url": "https://www.workandincome.govt.nz/housing/move-into-a-house/index.html",
+      "application_channel": "online",
+      "deadline_type": "rolling",
+      "deadline_note": null,
+      "procedure_steps": [
+        {
+          "step": 1,
+          "detail": "Apply via MyMSD when starting or retaining a tenancy",
+          "url": "https://my.msd.govt.nz"
+        },
+        {
+          "step": 2,
+          "detail": "Provide tenancy agreement or arrears notice",
+          "url": null
+        }
+      ],
+      "documents_required": [
+        {
+          "doc": "Tenancy agreement",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Quote for bond/rent amount",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Photo ID",
+          "mandatory": true,
+          "note": null
+        }
+      ],
+      "eligibility": {
+        "statuses": [],
+        "age_min": 16,
+        "age_max": null,
+        "income_annual_max": null,
+        "income_note": "Income and cash asset tested",
+        "requires_children": false,
+        "nationality": "any_resident",
+        "residency_months_min": null,
+        "housing_tenure": "renting",
+        "student_required": false,
+        "admin_areas": []
+      },
+      "source_url": "https://www.msd.govt.nz/",
+      "source_snippet": "Bond grant up to four weeks' rent (max $2,000) and up to two weeks' rent in advance (max $1,000) — you don't have to pay these back.",
+      "last_verified_at": "2026-08-12",
+      "verification_status": "auto_extracted"
+    },
+    {
+      "slug": "first-home-loan",
+      "name_local": "First Home Loan (Kāinga Ora)",
+      "name_en": "Kāinga Ora First Home Loan (5% deposit, government-underwritten)",
+      "admin_level": "national",
+      "admin_area": null,
+      "funder": "Kāinga Ora — Homes and Communities",
+      "category": "housing",
+      "benefit_type": "in_kind",
+      "amount_min": null,
+      "amount_max": null,
+      "amount_currency": "NZD",
+      "amount_period": "one_off",
+      "amount_note": "Kāinga Ora underwrites a loan from a participating bank so first-home buyers can buy with a 5% deposit. Income caps: $95,000 single (no dependants) / $150,000 single with dependants or combined buyers. No house price cap. A Lender's Mortgage Insurance premium applies.",
+      "is_automatic": false,
+      "application_url": "https://kaingaora.govt.nz/home-ownership/first-home-loan/",
+      "application_channel": "in_person",
+      "deadline_type": "rolling",
+      "deadline_note": null,
+      "procedure_steps": [
+        {
+          "step": 1,
+          "detail": "Check eligibility with the Kāinga Ora First Home Decision Tool",
+          "url": "https://kaingaora.govt.nz"
+        },
+        {
+          "step": 2,
+          "detail": "Apply through a participating bank or lender with at least 5% deposit",
+          "url": null
+        }
+      ],
+      "documents_required": [
+        {
+          "doc": "Proof of income (12 months)",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Evidence of 5% genuine deposit (can include KiwiSaver)",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Photo ID",
+          "mandatory": true,
+          "note": null
+        }
+      ],
+      "eligibility": {
+        "statuses": [],
+        "age_min": null,
+        "age_max": null,
+        "income_annual_max": 95000,
+        "income_note": "$95,000 single no dependants; $150,000 single with dependants or two+ buyers combined",
+        "requires_children": false,
+        "nationality": "citizen_or_pr",
+        "residency_months_min": null,
+        "housing_tenure": null,
+        "student_required": false,
+        "admin_areas": []
+      },
+      "source_url": "https://www.govt.nz/browse/housing-and-property/buying-or-selling-a-home/buying-your-first-home/",
+      "source_snippet": "With a First Home Loan, you only need a 5% deposit. Kāinga Ora underwrite the loan... (First Home Grant and First Home Partner are no longer available).",
+      "last_verified_at": "2026-08-12",
+      "verification_status": "verified"
+    },
+    {
+      "slug": "kiwisaver-first-home-withdrawal",
+      "name_local": "KiwiSaver First-Home Withdrawal",
+      "name_en": "KiwiSaver first-home withdrawal",
+      "admin_level": "national",
+      "admin_area": null,
+      "funder": "Inland Revenue / KiwiSaver providers",
+      "category": "housing",
+      "benefit_type": "cash_one_off",
+      "amount_min": null,
+      "amount_max": null,
+      "amount_currency": "NZD",
+      "amount_period": "one_off",
+      "amount_note": "Withdraw nearly all your KiwiSaver savings (leaving $1,000) to buy your first home, after at least 3 years of membership. No income test. Apply through your KiwiSaver provider before settlement.",
+      "is_automatic": false,
+      "application_url": "https://www.ird.govt.nz/kiwisaver/kiwisaver-individuals/getting-my-kiwisaver-savings-early",
+      "application_channel": "online",
+      "deadline_type": "rolling",
+      "deadline_note": "Must apply before purchase settlement",
+      "procedure_steps": [
+        {
+          "step": 1,
+          "detail": "Ask your KiwiSaver provider for a first-home withdrawal application",
+          "url": "https://www.ird.govt.nz"
+        },
+        {
+          "step": 2,
+          "detail": "Provide sale and purchase agreement and solicitor details",
+          "url": null
+        }
+      ],
+      "documents_required": [
+        {
+          "doc": "KiwiSaver provider application form",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Sale and purchase agreement",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Photo ID",
+          "mandatory": true,
+          "note": null
+        }
+      ],
+      "eligibility": {
+        "statuses": [],
+        "age_min": null,
+        "age_max": null,
+        "income_annual_max": null,
+        "income_note": "Not income tested; 3+ years KiwiSaver membership",
+        "requires_children": false,
+        "nationality": "any_resident",
+        "residency_months_min": null,
+        "housing_tenure": null,
+        "student_required": false,
+        "admin_areas": []
+      },
+      "source_url": "https://www.ird.govt.nz/kiwisaver",
+      "source_snippet": "You may be able to withdraw your KiwiSaver savings to put towards buying your first home.",
+      "last_verified_at": "2026-08-12",
+      "verification_status": "auto_extracted"
+    },
+    {
+      "slug": "kainga-whenua-loan",
+      "name_local": "Kāinga Whenua Loan",
+      "name_en": "Kāinga Whenua Loan (build or buy on Māori land)",
+      "admin_level": "national",
+      "admin_area": null,
+      "funder": "Kāinga Ora — Homes and Communities",
+      "category": "housing",
+      "benefit_type": "in_kind",
+      "amount_min": null,
+      "amount_max": null,
+      "amount_currency": "NZD",
+      "amount_period": "one_off",
+      "amount_note": "Loans for Māori to build, purchase or relocate a house on multiply-owned Māori land; also available to Māori land trusts and collectives.",
+      "is_automatic": false,
+      "application_url": "https://kaingaora.govt.nz/home-ownership/kainga-whenua/",
+      "application_channel": "in_person",
+      "deadline_type": "rolling",
+      "deadline_note": null,
+      "procedure_steps": [
+        {
+          "step": 1,
+          "detail": "Discuss your plans with Kāinga Ora",
+          "url": "https://kaingaora.govt.nz"
+        },
+        {
+          "step": 2,
+          "detail": "Apply through an approved lender with Kāinga Whenua security arrangements",
+          "url": null
+        }
+      ],
+      "documents_required": [
+        {
+          "doc": "Proof of connection to the whenua/trust",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Building or purchase plans and costings",
+          "mandatory": true,
+          "note": null
+        }
+      ],
+      "eligibility": {
+        "statuses": [],
+        "age_min": null,
+        "age_max": null,
+        "income_annual_max": null,
+        "income_note": "Loan serviceability assessed by lender",
+        "requires_children": false,
+        "nationality": "citizen_or_pr",
+        "residency_months_min": null,
+        "housing_tenure": null,
+        "student_required": false,
+        "admin_areas": []
+      },
+      "source_url": "https://www.govt.nz/browse/housing-and-property/buying-or-selling-a-home/buying-your-first-home/",
+      "source_snippet": "The Kāinga Whenua Loan is an opportunity for Māori to build, purchase or relocate a house on Māori land that has shared ownership.",
+      "last_verified_at": "2026-08-12",
+      "verification_status": "auto_extracted"
+    },
+    {
+      "slug": "tenant-home-ownership-grant",
+      "name_local": "Tenant Home Ownership Grant",
+      "name_en": "Kāinga Ora Tenant Home Ownership Grant",
+      "admin_level": "national",
+      "admin_area": null,
+      "funder": "Kāinga Ora — Homes and Communities",
+      "category": "housing",
+      "benefit_type": "cash_one_off",
+      "amount_min": null,
+      "amount_max": 20000,
+      "amount_currency": "NZD",
+      "amount_period": "one_off",
+      "amount_note": "A grant of 10% of the purchase price (up to $20,000) for eligible Kāinga Ora tenants buying the home they live in. Only available for selected Kāinga Ora houses; can be combined with the First Home Loan.",
+      "is_automatic": false,
+      "application_url": "https://kaingaora.govt.nz/home-ownership/tenant-home-ownership/",
+      "application_channel": "post",
+      "deadline_type": "rolling",
+      "deadline_note": "Only selected Kāinga Ora homes in some areas are available",
+      "procedure_steps": [
+        {
+          "step": 1,
+          "detail": "Contact Kāinga Ora to check if your home is eligible",
+          "url": "https://kaingaora.govt.nz"
+        },
+        {
+          "step": 2,
+          "detail": "Submit the application and arrange finance",
+          "url": null
+        }
+      ],
+      "documents_required": [
+        {
+          "doc": "Kāinga Ora tenancy record",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Evidence of finance approval",
+          "mandatory": true,
+          "note": null
+        }
+      ],
+      "eligibility": {
+        "statuses": [],
+        "age_min": null,
+        "age_max": null,
+        "income_annual_max": null,
+        "income_note": "Must be a current Kāinga Ora tenant buying an eligible property",
+        "requires_children": false,
+        "nationality": "citizen_or_pr",
+        "residency_months_min": null,
+        "housing_tenure": "renting",
+        "student_required": false,
+        "admin_areas": []
+      },
+      "source_url": "https://www.govt.nz/browse/housing-and-property/buying-or-selling-a-home/buying-your-first-home/",
+      "source_snippet": "The tenant home ownership grant is a gift of 10% of the purchase price of selected Kāinga Ora houses up to a maximum of $20,000.",
+      "last_verified_at": "2026-08-12",
+      "verification_status": "auto_extracted"
+    },
+    {
+      "slug": "rates-rebate",
+      "name_local": "Rates Rebate Scheme",
+      "name_en": "Rates Rebate Scheme (local council rates relief for low-income homeowners)",
+      "admin_level": "national",
+      "admin_area": null,
+      "funder": "Department of Internal Affairs (administered by local councils)",
+      "category": "housing",
+      "benefit_type": "cash_one_off",
+      "amount_min": null,
+      "amount_max": 805,
+      "amount_currency": "NZD",
+      "amount_period": "annual",
+      "amount_note": "Rebate of up to $805 on council rates for low-income residential ratepayers. SuperGold cardholders get the full rebate with household income up to $45,000 (from 1 Jul 2025); general threshold around $31,510 plus dependants allowance.",
+      "is_automatic": false,
+      "application_url": "https://www.govt.nz/browse/housing-and-property/owning-a-home/apply-for-a-rates-rebate/",
+      "application_channel": "post",
+      "deadline_type": "annual",
+      "deadline_note": "Apply by 30 June for the current rating year",
+      "procedure_steps": [
+        {
+          "step": 1,
+          "detail": "Complete the rates rebate application form for your council",
+          "url": "https://www.govt.nz"
+        },
+        {
+          "step": 2,
+          "detail": "Submit with proof of income and rates to your local council",
+          "url": null
+        }
+      ],
+      "documents_required": [
+        {
+          "doc": "Rates rebate application form",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Proof of household income for the previous tax year",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Rates bill",
+          "mandatory": true,
+          "note": null
+        }
+      ],
+      "eligibility": {
+        "statuses": [
+          "retired",
+          "employee",
+          "self_employed",
+          "unemployed"
+        ],
+        "age_min": null,
+        "age_max": null,
+        "income_annual_max": null,
+        "income_note": "Income threshold around $31,510 (general) or $45,000 (SuperGold holders), higher with dependants",
+        "requires_children": false,
+        "nationality": "any_resident",
+        "residency_months_min": null,
+        "housing_tenure": "owner",
+        "student_required": false,
+        "admin_areas": []
+      },
+      "source_url": "https://www.beehive.govt.nz/release/rates-relief-66000-more-supergold-cardholders",
+      "source_snippet": "The maximum rebate for the scheme will also increase from $790 to $805... income abatement threshold... lifted from $31,510 to $45,000.",
+      "last_verified_at": "2026-08-12",
+      "verification_status": "verified"
+    },
+    {
+      "slug": "rates-postponement",
+      "name_local": "Council Rates Postponement",
+      "name_en": "Council rates postponement schemes for older or hardship homeowners",
+      "admin_level": "region",
+      "admin_area": "Wellington",
+      "funder": "Local councils (e.g. Wellington City Council, Auckland Council)",
+      "category": "housing",
+      "benefit_type": "cash_one_off",
+      "amount_min": null,
+      "amount_max": null,
+      "amount_currency": "NZD",
+      "amount_period": "annual",
+      "amount_note": "Several councils let older homeowners (e.g. 65+) or ratepayers in financial hardship postpone paying rates; the postponed amount accrues as a charge against the property and is repaid when it is sold.",
+      "is_automatic": false,
+      "application_url": "https://wellington.govt.nz/property-rates-and-building/rates",
+      "application_channel": "post",
+      "deadline_type": "rolling",
+      "deadline_note": null,
+      "procedure_steps": [
+        {
+          "step": 1,
+          "detail": "Contact your council about their rates postponement policy",
+          "url": "https://wellington.govt.nz"
+        },
+        {
+          "step": 2,
+          "detail": "Complete the application and agree the postponement charge terms",
+          "url": null
+        }
+      ],
+      "documents_required": [
+        {
+          "doc": "Rates account details",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Proof of age or hardship",
+          "mandatory": true,
+          "note": null
+        }
+      ],
+      "eligibility": {
+        "statuses": [
+          "retired"
+        ],
+        "age_min": null,
+        "age_max": null,
+        "income_annual_max": null,
+        "income_note": "Criteria vary by council",
+        "requires_children": false,
+        "nationality": "any_resident",
+        "residency_months_min": null,
+        "housing_tenure": "owner",
+        "student_required": false,
+        "admin_areas": [
+          "Auckland",
+          "Wellington",
+          "Canterbury"
+        ]
+      },
+      "source_url": "https://wellington.govt.nz/property-rates-and-building/rates",
+      "source_snippet": "Councils may allow ratepayers, including older homeowners, to postpone rates with repayment when the property is sold.",
+      "last_verified_at": "2026-08-12",
+      "verification_status": "auto_extracted"
+    },
+    {
+      "slug": "community-services-card",
+      "name_local": "Community Services Card",
+      "name_en": "Community Services Card (subsidised GP visits, prescriptions and transport discounts)",
+      "admin_level": "national",
+      "admin_area": null,
+      "funder": "Ministry of Social Development — Work and Income",
+      "category": "health",
+      "benefit_type": "discount",
+      "amount_min": null,
+      "amount_max": null,
+      "amount_currency": "NZD",
+      "amount_period": "annual",
+      "amount_note": "Free card for low-income people: reduced-cost GP visits, free subsidised prescriptions (no $5 charge), and eligibility for the 50% Community Connect public transport concession. Income thresholds depend on household size.",
+      "is_automatic": false,
+      "application_url": "https://www.workandincome.govt.nz/products/a-z-benefits/community-services-card.html",
+      "application_channel": "online",
+      "deadline_type": "rolling",
+      "deadline_note": null,
+      "procedure_steps": [
+        {
+          "step": 1,
+          "detail": "Apply online via MyMSD or at a Work and Income service centre",
+          "url": "https://my.msd.govt.nz"
+        },
+        {
+          "step": 2,
+          "detail": "Card posted to you; present it at your GP, pharmacy or transport operator",
+          "url": null
+        }
+      ],
+      "documents_required": [
+        {
+          "doc": "Photo ID",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Income details",
+          "mandatory": true,
+          "note": null
+        }
+      ],
+      "eligibility": {
+        "statuses": [],
+        "age_min": 16,
+        "age_max": null,
+        "income_annual_max": null,
+        "income_note": "Income tested; thresholds depend on household size (e.g. about $31,000 single, $47,000 couple)",
+        "requires_children": false,
+        "nationality": "any_resident",
+        "residency_months_min": null,
+        "housing_tenure": null,
+        "student_required": false,
+        "admin_areas": []
+      },
+      "source_url": "https://www.workandincome.govt.nz/products/a-z-benefits/community-services-card.html",
+      "source_snippet": "Benefit recipients and people on low incomes can get a Community Services Card for subsidised health services.",
+      "last_verified_at": "2026-08-12",
+      "verification_status": "auto_extracted"
+    },
+    {
+      "slug": "high-use-health-card",
+      "name_local": "High Use Health Card",
+      "name_en": "High Use Health Card (reduced GP fees for frequent users)",
+      "admin_level": "national",
+      "admin_area": null,
+      "funder": "Health New Zealand — Te Whatu Ora (via your GP practice)",
+      "category": "health",
+      "benefit_type": "discount",
+      "amount_min": null,
+      "amount_max": null,
+      "amount_currency": "NZD",
+      "amount_period": "annual",
+      "amount_note": "Card for people with long-term conditions who have visited their enrolled medical practice 12+ times in a year; reduces GP visit costs and specialist prescription co-payments. Not income tested. Renewed annually.",
+      "is_automatic": false,
+      "application_url": "https://www.healthnz.govt.nz/health-topics/tests-and-treatments/medicines/prescriptions",
+      "application_channel": "in_person",
+      "deadline_type": "rolling",
+      "deadline_note": "Must be reapplied for every year",
+      "procedure_steps": [
+        {
+          "step": 1,
+          "detail": "Ask your GP practice to apply for a High Use Health Card for you",
+          "url": "https://www.healthnz.govt.nz"
+        },
+        {
+          "step": 2,
+          "detail": "Use the card when you visit your practice or pharmacy",
+          "url": null
+        }
+      ],
+      "documents_required": [
+        {
+          "doc": "GP practice enrolment record",
+          "mandatory": true,
+          "note": null
+        }
+      ],
+      "eligibility": {
+        "statuses": [],
+        "age_min": null,
+        "age_max": null,
+        "income_annual_max": null,
+        "income_note": "Not income tested; based on frequency of GP visits",
+        "requires_children": false,
+        "nationality": "any_resident",
+        "residency_months_min": null,
+        "housing_tenure": null,
+        "student_required": false,
+        "admin_areas": []
+      },
+      "source_url": "https://www.healthnz.govt.nz/health-topics/tests-and-treatments/medicines/prescriptions",
+      "source_snippet": "A High Use Health Card is a card that your healthcare provider can apply for if you have a long-term condition... 12 or more times in 1 year. Unlike the Community Services Card, the HUHC doesn't depend on your income.",
+      "last_verified_at": "2026-08-12",
+      "verification_status": "verified"
+    },
+    {
+      "slug": "prescription-subsidy-card",
+      "name_local": "Prescription Charge and Prescription Subsidy Card",
+      "name_en": "$5 prescription co-payment with exemptions, and free prescriptions after 20 items (Prescription Subsidy Card)",
+      "admin_level": "national",
+      "admin_area": null,
+      "funder": "Health New Zealand — Te Whatu Ora / Pharmac",
+      "category": "health",
+      "benefit_type": "free_slab",
+      "amount_min": null,
+      "amount_max": 5,
+      "amount_currency": "NZD",
+      "amount_period": "one_off",
+      "amount_note": "Standard $5 charge per subsidised medicine on new prescriptions. FREE for under-14s, 65+, Community Services Card and Prescription Subsidy Card holders. After 20 paid items per family from 1 February, the PSC makes further items free until 31 January.",
+      "is_automatic": true,
+      "application_url": "https://www.healthnz.govt.nz/health-topics/tests-and-treatments/medicines/prescriptions",
+      "application_channel": "automatic",
+      "deadline_type": "rolling",
+      "deadline_note": "PSC year runs 1 February to 31 January",
+      "procedure_steps": [
+        {
+          "step": 1,
+          "detail": "Pay the $5 charge at the pharmacy for new prescriptions (unless exempt)",
+          "url": "https://www.healthnz.govt.nz"
+        },
+        {
+          "step": 2,
+          "detail": "Tell your pharmacist your family members so items count towards the 20-item threshold",
+          "url": null
+        },
+        {
+          "step": 3,
+          "detail": "After 20 items the Prescription Subsidy Card is issued automatically",
+          "url": null
+        }
+      ],
+      "documents_required": [
+        {
+          "doc": "Community Services Card (if claiming exemption)",
+          "mandatory": false,
+          "note": null
+        }
+      ],
+      "eligibility": {
+        "statuses": [],
+        "age_min": null,
+        "age_max": null,
+        "income_annual_max": null,
+        "income_note": "Exemptions for under-14, 65+, CSC and PSC holders",
+        "requires_children": false,
+        "nationality": "any_resident",
+        "residency_months_min": null,
+        "housing_tenure": null,
+        "student_required": false,
+        "admin_areas": []
+      },
+      "source_url": "https://www.healthnz.govt.nz/health-topics/tests-and-treatments/medicines/prescriptions",
+      "source_snippet": "People need to pay the standard $5 prescription charge, with exemptions for people aged 13 years or under, holding a Community Services Card, aged 65 years or over, or holding a Prescription Subsidy Card.",
+      "last_verified_at": "2026-08-12",
+      "verification_status": "verified"
+    },
+    {
+      "slug": "disability-allowance",
+      "name_local": "Disability Allowance",
+      "name_en": "Disability Allowance (weekly help with ongoing disability costs)",
+      "admin_level": "national",
+      "admin_area": null,
+      "funder": "Ministry of Social Development — Work and Income",
+      "category": "health",
+      "benefit_type": "cash_monthly",
+      "amount_min": null,
+      "amount_max": null,
+      "amount_currency": "NZD",
+      "amount_period": "monthly",
+      "amount_note": "Weekly payment (up to around $80) for ongoing, regular costs from a disability or health condition — e.g. doctor visits, prescriptions, counselling, special transport. You do not have to be on a benefit.",
+      "is_automatic": false,
+      "application_url": "https://www.workandincome.govt.nz/products/a-z-benefits/disability-allowance.html",
+      "application_channel": "online",
+      "deadline_type": "rolling",
+      "deadline_note": null,
+      "procedure_steps": [
+        {
+          "step": 1,
+          "detail": "Get your doctor to complete the Disability Certificate",
+          "url": "https://www.workandincome.govt.nz"
+        },
+        {
+          "step": 2,
+          "detail": "Apply via MyMSD with receipts or evidence of costs",
+          "url": null
+        }
+      ],
+      "documents_required": [
+        {
+          "doc": "Disability Certificate from a health practitioner",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Evidence of regular costs (receipts/invoices)",
+          "mandatory": true,
+          "note": null
+        }
+      ],
+      "eligibility": {
+        "statuses": [],
+        "age_min": 16,
+        "age_max": null,
+        "income_annual_max": null,
+        "income_note": "Income tested (single and couple thresholds apply)",
+        "requires_children": false,
+        "nationality": "any_resident",
+        "residency_months_min": null,
+        "housing_tenure": null,
+        "student_required": false,
+        "admin_areas": []
+      },
+      "source_url": "https://www.workandincome.govt.nz/products/a-z-benefits/disability-allowance.html",
+      "source_snippet": "Weekly payment for people who have regular, ongoing costs because of a disability, such as visits to the doctor or hospital, medicines or extra travel.",
+      "last_verified_at": "2026-08-12",
+      "verification_status": "auto_extracted"
+    },
+    {
+      "slug": "child-disability-allowance",
+      "name_local": "Child Disability Allowance",
+      "name_en": "Child Disability Allowance",
+      "admin_level": "national",
+      "admin_area": null,
+      "funder": "Ministry of Social Development — Work and Income",
+      "category": "health",
+      "benefit_type": "cash_monthly",
+      "amount_min": null,
+      "amount_max": null,
+      "amount_currency": "NZD",
+      "amount_period": "monthly",
+      "amount_note": "Fortnightly payment (currently around $60) to the main carer of a child with a serious disability who needs constant care and attention for at least 12 months. Not income tested.",
+      "is_automatic": false,
+      "application_url": "https://www.workandincome.govt.nz/products/a-z-benefits/child-disability-allowance.html",
+      "application_channel": "online",
+      "deadline_type": "rolling",
+      "deadline_note": null,
+      "procedure_steps": [
+        {
+          "step": 1,
+          "detail": "Get your doctor or specialist to complete the medical section",
+          "url": "https://www.workandincome.govt.nz"
+        },
+        {
+          "step": 2,
+          "detail": "Apply via MyMSD or Work and Income",
+          "url": null
+        }
+      ],
+      "documents_required": [
+        {
+          "doc": "Medical certificate for the child",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Child's birth certificate",
+          "mandatory": true,
+          "note": null
+        }
+      ],
+      "eligibility": {
+        "statuses": [],
+        "age_min": null,
+        "age_max": null,
+        "income_annual_max": null,
+        "income_note": "Not income tested",
+        "requires_children": true,
+        "nationality": "any_resident",
+        "residency_months_min": null,
+        "housing_tenure": null,
+        "student_required": false,
+        "admin_areas": []
+      },
+      "source_url": "https://www.workandincome.govt.nz/products/a-z-benefits/child-disability-allowance.html",
+      "source_snippet": "A fortnightly payment to the main carer of a child who has a serious disability and needs constant care and attention.",
+      "last_verified_at": "2026-08-12",
+      "verification_status": "auto_extracted"
+    },
+    {
+      "slug": "breastscreen-aotearoa",
+      "name_local": "BreastScreen Aotearoa",
+      "name_en": "Free breast screening (mammogram) for women 45–69",
+      "admin_level": "national",
+      "admin_area": null,
+      "funder": "Health New Zealand — National Screening Unit",
+      "category": "health",
+      "benefit_type": "free_slab",
+      "amount_min": null,
+      "amount_max": null,
+      "amount_currency": "NZD",
+      "amount_period": "one_off",
+      "amount_note": "Free mammogram every 2 years for women and eligible people aged 45–69. Book directly — no referral needed.",
+      "is_automatic": false,
+      "application_url": "https://www.timetoscreen.nz/breast-screening/",
+      "application_channel": "in_person",
+      "deadline_type": "rolling",
+      "deadline_note": "Screening recommended every 2 years",
+      "procedure_steps": [
+        {
+          "step": 1,
+          "detail": "Call 0800 270 200 or enrol via your GP",
+          "url": "https://www.timetoscreen.nz"
+        },
+        {
+          "step": 2,
+          "detail": "Attend a screening centre or mobile unit",
+          "url": null
+        }
+      ],
+      "documents_required": [
+        {
+          "doc": "NHI number or photo ID",
+          "mandatory": false,
+          "note": null
+        }
+      ],
+      "eligibility": {
+        "statuses": [],
+        "age_min": 45,
+        "age_max": 69,
+        "income_annual_max": null,
+        "income_note": "Free; not income tested",
+        "requires_children": false,
+        "nationality": "any_resident",
+        "residency_months_min": null,
+        "housing_tenure": null,
+        "student_required": false,
+        "admin_areas": []
+      },
+      "source_url": "https://www.timetoscreen.nz/breast-screening/",
+      "source_snippet": "Free mammograms every 2 years for women aged 45 to 69 through BreastScreen Aotearoa.",
+      "last_verified_at": "2026-08-12",
+      "verification_status": "auto_extracted"
+    },
+    {
+      "slug": "cervical-screening",
+      "name_local": "National Cervical Screening Programme",
+      "name_en": "Free/subsidised cervical screening (HPV test)",
+      "admin_level": "national",
+      "admin_area": null,
+      "funder": "Health New Zealand — National Screening Unit",
+      "category": "health",
+      "benefit_type": "free_slab",
+      "amount_min": null,
+      "amount_max": null,
+      "amount_currency": "NZD",
+      "amount_period": "one_off",
+      "amount_note": "Cervical screening (HPV primary screening, including self-test option) every 3–5 years for people aged 25–69; free for Māori and Pacific participants, Community Services Card holders, those over 30 never screened, and follow-up tests.",
+      "is_automatic": false,
+      "application_url": "https://www.timetoscreen.nz/cervical-screening/",
+      "application_channel": "in_person",
+      "deadline_type": "rolling",
+      "deadline_note": "Screening every 3 years (or 5 years for HPV-negative self-test)",
+      "procedure_steps": [
+        {
+          "step": 1,
+          "detail": "Book a screening test or request an HPV self-test at your GP or clinic",
+          "url": "https://www.timetoscreen.nz"
+        }
+      ],
+      "documents_required": [
+        {
+          "doc": "NHI number or photo ID",
+          "mandatory": false,
+          "note": null
+        }
+      ],
+      "eligibility": {
+        "statuses": [],
+        "age_min": 25,
+        "age_max": 69,
+        "income_annual_max": null,
+        "income_note": "Free for priority groups; small fee may apply otherwise",
+        "requires_children": false,
+        "nationality": "any_resident",
+        "residency_months_min": null,
+        "housing_tenure": null,
+        "student_required": false,
+        "admin_areas": []
+      },
+      "source_url": "https://www.timetoscreen.nz/cervical-screening/",
+      "source_snippet": "Regular cervical screening, including HPV self-testing, is offered free to priority groups aged 25 to 69.",
+      "last_verified_at": "2026-08-12",
+      "verification_status": "auto_extracted"
+    },
+    {
+      "slug": "bowel-screening",
+      "name_local": "National Bowel Screening Programme",
+      "name_en": "Free bowel screening test for ages 58–74",
+      "admin_level": "national",
+      "admin_area": null,
+      "funder": "Health New Zealand — National Screening Unit",
+      "category": "health",
+      "benefit_type": "free_slab",
+      "amount_min": null,
+      "amount_max": null,
+      "amount_currency": "NZD",
+      "amount_period": "one_off",
+      "amount_note": "Free home bowel screening test kit posted every 2 years to eligible people aged 58–74 (60–74 for some groups).",
+      "is_automatic": true,
+      "application_url": "https://www.timetoscreen.nz/bowel-screening/",
+      "application_channel": "automatic",
+      "deadline_type": "rolling",
+      "deadline_note": "Invitation sent every 2 years",
+      "procedure_steps": [
+        {
+          "step": 1,
+          "detail": "Complete and return the free test kit when it arrives in the post",
+          "url": "https://www.timetoscreen.nz"
+        }
+      ],
+      "documents_required": [
+        {
+          "doc": "None — kit posted to enrolled people",
+          "mandatory": false,
+          "note": null
+        }
+      ],
+      "eligibility": {
+        "statuses": [],
+        "age_min": 58,
+        "age_max": 74,
+        "income_annual_max": null,
+        "income_note": "Free; not income tested",
+        "requires_children": false,
+        "nationality": "any_resident",
+        "residency_months_min": null,
+        "housing_tenure": null,
+        "student_required": false,
+        "admin_areas": []
+      },
+      "source_url": "https://www.timetoscreen.nz/bowel-screening/",
+      "source_snippet": "Free bowel screening every 2 years for eligible New Zealanders, with a home test kit sent by post.",
+      "last_verified_at": "2026-08-12",
+      "verification_status": "auto_extracted"
+    },
+    {
+      "slug": "free-gp-visits-under-14",
+      "name_local": "Zero-fees GP visits for under-14s",
+      "name_en": "Free GP visits and after-hours care for children under 14",
+      "admin_level": "national",
+      "admin_area": null,
+      "funder": "Health New Zealand — Te Whatu Ora",
+      "category": "health",
+      "benefit_type": "free_slab",
+      "amount_min": null,
+      "amount_max": null,
+      "amount_currency": "NZD",
+      "amount_period": "one_off",
+      "amount_note": "Children under 14 enrolled with a general practice get free daytime GP visits and free after-hours care at participating clinics.",
+      "is_automatic": true,
+      "application_url": "https://www.healthnz.govt.nz/",
+      "application_channel": "automatic",
+      "deadline_type": "rolling",
+      "deadline_note": null,
+      "procedure_steps": [
+        {
+          "step": 1,
+          "detail": "Enrol your child with a general practice",
+          "url": "https://www.healthnz.govt.nz"
+        },
+        {
+          "step": 2,
+          "detail": "Visits are free at the enrolled practice and participating after-hours clinics",
+          "url": null
+        }
+      ],
+      "documents_required": [
+        {
+          "doc": "Child enrolled with a general practice",
+          "mandatory": true,
+          "note": null
+        }
+      ],
+      "eligibility": {
+        "statuses": [],
+        "age_min": 0,
+        "age_max": 13,
+        "income_annual_max": null,
+        "income_note": "Free; not income tested",
+        "requires_children": true,
+        "nationality": "any_resident",
+        "residency_months_min": null,
+        "housing_tenure": null,
+        "student_required": false,
+        "admin_areas": []
+      },
+      "source_url": "https://www.healthnz.govt.nz/",
+      "source_snippet": "Children under 14 years enrolled with a general practice are eligible for free GP visits and after-hours services.",
+      "last_verified_at": "2026-08-12",
+      "verification_status": "auto_extracted"
+    },
+    {
+      "slug": "acc-treatment-and-rehabilitation",
+      "name_local": "ACC Treatment, Rehabilitation and Social Support",
+      "name_en": "ACC-funded treatment, attendant care, home help and home modifications after injury",
+      "admin_level": "national",
+      "admin_area": null,
+      "funder": "Accident Compensation Corporation (ACC)",
+      "category": "health",
+      "benefit_type": "in_kind",
+      "amount_min": null,
+      "amount_max": null,
+      "amount_currency": "NZD",
+      "amount_period": "one_off",
+      "amount_note": "ACC pays part or all of covered treatment costs (GP, physio, surgery), plus rehabilitation support such as attendant care, home help, childcare help, transport to appointments, vocational rehabilitation, and home or vehicle modifications after serious injury.",
+      "is_automatic": true,
+      "application_url": "https://www.acc.co.nz/im-injured",
+      "application_channel": "automatic",
+      "deadline_type": "rolling",
+      "deadline_note": null,
+      "procedure_steps": [
+        {
+          "step": 1,
+          "detail": "Your treatment provider lodges an ACC claim when you are injured",
+          "url": "https://www.acc.co.nz"
+        },
+        {
+          "step": 2,
+          "detail": "ACC confirms cover and arranges treatment and support entitlements",
+          "url": null
+        }
+      ],
+      "documents_required": [
+        {
+          "doc": "ACC claim number",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Assessment by ACC for social/vocational support",
+          "mandatory": false,
+          "note": null
+        }
+      ],
+      "eligibility": {
+        "statuses": [],
+        "age_min": null,
+        "age_max": null,
+        "income_annual_max": null,
+        "income_note": "Not means tested; covers everyone in NZ including visitors",
+        "requires_children": false,
+        "nationality": "any",
+        "residency_months_min": null,
+        "housing_tenure": null,
+        "student_required": false,
+        "admin_areas": []
+      },
+      "source_url": "https://www.acc.co.nz/im-injured",
+      "source_snippet": "Along with financial support if you can't work or have a permanent injury, we can pay for things like transport to get you to appointments or work, childcare and help around the home.",
+      "last_verified_at": "2026-08-12",
+      "verification_status": "verified"
+    },
+    {
+      "slug": "home-help-multiple-birth",
+      "name_local": "Home Help Payment (Multiple Births)",
+      "name_en": "Funded home help hours for families with twins or triplets",
+      "admin_level": "national",
+      "admin_area": null,
+      "funder": "Ministry of Social Development — Work and Income",
+      "category": "health",
+      "benefit_type": "in_kind",
+      "amount_min": null,
+      "amount_max": null,
+      "amount_currency": "NZD",
+      "amount_period": "one_off",
+      "amount_note": "240 hours of funded home help for twins with an older sibling under 5, and 1,560 hours for triplets or more, paid at a maximum hourly rate (about $26.72). Use within 12 months (twins) or 24 months (triplets+).",
+      "is_automatic": false,
+      "application_url": "https://www.workandincome.govt.nz/map/income-support/extra-help/home-help/multiple-births-01.html",
+      "application_channel": "in_person",
+      "deadline_type": "rolling",
+      "deadline_note": "Hours must be used within 12 or 24 months of the birth",
+      "procedure_steps": [
+        {
+          "step": 1,
+          "detail": "Apply through Work and Income after the birth",
+          "url": "https://www.workandincome.govt.nz"
+        },
+        {
+          "step": 2,
+          "detail": "Arrange and pay your home helper, then claim reimbursement",
+          "url": null
+        }
+      ],
+      "documents_required": [
+        {
+          "doc": "Birth certificates for the multiple-birth children",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Home helper details and timesheets",
+          "mandatory": true,
+          "note": null
+        }
+      ],
+      "eligibility": {
+        "statuses": [
+          "parent"
+        ],
+        "age_min": null,
+        "age_max": null,
+        "income_annual_max": null,
+        "income_note": "Not income tested",
+        "requires_children": true,
+        "nationality": "any_resident",
+        "residency_months_min": null,
+        "housing_tenure": null,
+        "student_required": false,
+        "admin_areas": []
+      },
+      "source_url": "https://www.workandincome.govt.nz/map/income-support/extra-help/home-help/multiple-births-01.html",
+      "source_snippet": "240 hours of funded home help for twins with an older sibling under five; 1,560 hours for triplets or higher order multiples.",
+      "last_verified_at": "2026-08-12",
+      "verification_status": "auto_extracted"
+    },
+    {
+      "slug": "community-connect-concession",
+      "name_local": "Community Connect Concession",
+      "name_en": "Community Connect — 50% off public transport for Community Services Card holders",
+      "admin_level": "region",
+      "admin_area": null,
+      "funder": "NZ Transport Agency Waka Kotahi / regional councils (AT, Metlink, Metro)",
+      "category": "transport",
+      "benefit_type": "discount",
+      "amount_min": null,
+      "amount_max": null,
+      "amount_currency": "NZD",
+      "amount_period": "monthly",
+      "amount_note": "50% discount on adult public transport fares for Community Services Card holders, applied to a registered AT HOP (Auckland), Snapper (Wellington Metlink) or Metrocard (Canterbury). Free HOP/Metrocard when applying.",
+      "is_automatic": false,
+      "application_url": "https://at.govt.nz/bus-train-ferry/at-hop-card/card-concessions-and-discounted-fares/community-connect-concession",
+      "application_channel": "online",
+      "deadline_type": "rolling",
+      "deadline_note": "Concession expires when the Community Services Card expires",
+      "procedure_steps": [
+        {
+          "step": 1,
+          "detail": "Get a Community Services Card from Work and Income",
+          "url": "https://www.workandincome.govt.nz"
+        },
+        {
+          "step": 2,
+          "detail": "Apply the concession to your registered AT HOP / Snapper / Metrocard online",
+          "url": "https://at.govt.nz"
+        },
+        {
+          "step": 3,
+          "detail": "Carry your CSC when travelling",
+          "url": null
+        }
+      ],
+      "documents_required": [
+        {
+          "doc": "Current Community Services Card (MSD client number)",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Registered AT HOP, Snapper or Metrocard",
+          "mandatory": true,
+          "note": null
+        }
+      ],
+      "eligibility": {
+        "statuses": [],
+        "age_min": null,
+        "age_max": null,
+        "income_annual_max": null,
+        "income_note": "Must hold a Community Services Card (income tested)",
+        "requires_children": false,
+        "nationality": "any_resident",
+        "residency_months_min": null,
+        "housing_tenure": null,
+        "student_required": false,
+        "admin_areas": [
+          "Auckland",
+          "Wellington",
+          "Canterbury"
+        ]
+      },
+      "source_url": "https://at.govt.nz/bus-train-ferry/at-hop-card/card-concessions-and-discounted-fares/community-connect-concession",
+      "source_snippet": "This gives you 50% off most buses, trains and ferries when using your registered AT HOP card.",
+      "last_verified_at": "2026-08-12",
+      "verification_status": "verified"
+    },
+    {
+      "slug": "supergold-card",
+      "name_local": "SuperGold Card",
+      "name_en": "SuperGold Card — free off-peak public transport plus thousands of discounts",
+      "admin_level": "national",
+      "admin_area": null,
+      "funder": "Ministry of Social Development",
+      "category": "transport",
+      "benefit_type": "discount",
+      "amount_min": null,
+      "amount_max": null,
+      "amount_currency": "NZD",
+      "amount_period": "annual",
+      "amount_note": "Free concession card issued automatically with NZ Super or Veteran's Pension: free off-peak travel on scheduled buses, trains and ferries nationwide (weekdays after 9am, all weekend and public holidays) plus discounts at 2,800+ businesses.",
+      "is_automatic": true,
+      "application_url": "https://supergold.govt.nz/",
+      "application_channel": "automatic",
+      "deadline_type": "rolling",
+      "deadline_note": null,
+      "procedure_steps": [
+        {
+          "step": 1,
+          "detail": "Card is mailed automatically once NZ Super or Veteran's Pension is granted",
+          "url": "https://supergold.govt.nz"
+        },
+        {
+          "step": 2,
+          "detail": "Show the card for off-peak transport and business discounts, or load the concession on a gold AT HOP card",
+          "url": "https://at.govt.nz"
+        }
+      ],
+      "documents_required": [
+        {
+          "doc": "None — issued automatically with NZ Super/Veteran's Pension",
+          "mandatory": false,
+          "note": null
+        }
+      ],
+      "eligibility": {
+        "statuses": [
+          "retired"
+        ],
+        "age_min": 65,
+        "age_max": null,
+        "income_annual_max": null,
+        "income_note": "No income test; Veteran's Pension holders qualify under 65",
+        "requires_children": false,
+        "nationality": "citizen_or_pr",
+        "residency_months_min": null,
+        "housing_tenure": null,
+        "student_required": false,
+        "admin_areas": []
+      },
+      "source_url": "https://www.govt.nz/browse/tax-benefits-and-finance/supergold-card/",
+      "source_snippet": "Use your SuperGold card or Veteran SuperGold card to get business discounts, free or discounted council services, and free off-peak travel on public transport.",
+      "last_verified_at": "2026-08-12",
+      "verification_status": "verified"
+    },
+    {
+      "slug": "total-mobility-scheme",
+      "name_local": "Total Mobility Scheme",
+      "name_en": "Total Mobility Scheme (subsidised taxi transport for people with impairments)",
+      "admin_level": "region",
+      "admin_area": null,
+      "funder": "NZ Transport Agency Waka Kotahi / regional councils",
+      "category": "transport",
+      "benefit_type": "discount",
+      "amount_min": null,
+      "amount_max": null,
+      "amount_currency": "NZD",
+      "amount_period": "monthly",
+      "amount_note": "Subsidised taxi and ride-share fares (typically 50–75% off depending on region, up to a per-trip cap) for people with long-term impairments who cannot use public transport independently. Administered by regional councils.",
+      "is_automatic": false,
+      "application_url": "https://www.nzta.govt.nz/resources/total-mobility-scheme/",
+      "application_channel": "in_person",
+      "deadline_type": "rolling",
+      "deadline_note": null,
+      "procedure_steps": [
+        {
+          "step": 1,
+          "detail": "Contact your regional council to arrange an eligibility assessment",
+          "url": "https://www.nzta.govt.nz"
+        },
+        {
+          "step": 2,
+          "detail": "Receive your Total Mobility card or vouchers and book with approved operators",
+          "url": null
+        }
+      ],
+      "documents_required": [
+        {
+          "doc": "Assessment confirming long-term impairment",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Photo ID",
+          "mandatory": true,
+          "note": null
+        }
+      ],
+      "eligibility": {
+        "statuses": [],
+        "age_min": null,
+        "age_max": null,
+        "income_annual_max": null,
+        "income_note": "Not income tested; based on mobility impairment",
+        "requires_children": false,
+        "nationality": "any_resident",
+        "residency_months_min": null,
+        "housing_tenure": null,
+        "student_required": false,
+        "admin_areas": [
+          "Auckland",
+          "Wellington",
+          "Canterbury",
+          "Waikato",
+          "Bay of Plenty",
+          "Otago"
+        ]
+      },
+      "source_url": "https://www.nzta.govt.nz/resources/total-mobility-scheme/",
+      "source_snippet": "The Total Mobility scheme subsidises taxi travel for people who cannot use public transport because of a serious mobility impairment.",
+      "last_verified_at": "2026-08-12",
+      "verification_status": "auto_extracted"
+    },
+    {
+      "slug": "at-tertiary-concession",
+      "name_local": "AT Tertiary Student Concession (Auckland)",
+      "name_en": "Auckland Transport tertiary student fare concession",
+      "admin_level": "region",
+      "admin_area": "Auckland",
+      "funder": "Auckland Transport",
+      "category": "transport",
+      "benefit_type": "discount",
+      "amount_min": null,
+      "amount_max": null,
+      "amount_currency": "NZD",
+      "amount_period": "monthly",
+      "amount_note": "Discounted fares (at least 20% off adult fares) on Auckland buses, trains and most ferries for enrolled full-time tertiary students, loaded on a registered AT HOP card.",
+      "is_automatic": false,
+      "application_url": "https://at.govt.nz/bus-train-ferry/at-hop-card/card-concessions-and-discounted-fares/tertiary-student-concession",
+      "application_channel": "online",
+      "deadline_type": "rolling",
+      "deadline_note": "Renewed each study year",
+      "procedure_steps": [
+        {
+          "step": 1,
+          "detail": "Register your AT HOP card and apply for the tertiary concession online",
+          "url": "https://at.govt.nz"
+        },
+        {
+          "step": 2,
+          "detail": "Your institution confirms your enrolment to AT",
+          "url": null
+        }
+      ],
+      "documents_required": [
+        {
+          "doc": "Proof of full-time tertiary enrolment",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Registered AT HOP card",
+          "mandatory": true,
+          "note": null
+        }
+      ],
+      "eligibility": {
+        "statuses": [
+          "student"
+        ],
+        "age_min": null,
+        "age_max": null,
+        "income_annual_max": null,
+        "income_note": "Not income tested",
+        "requires_children": false,
+        "nationality": "any_resident",
+        "residency_months_min": null,
+        "housing_tenure": null,
+        "student_required": true,
+        "admin_areas": [
+          "Auckland"
+        ]
+      },
+      "source_url": "https://at.govt.nz/",
+      "source_snippet": "Eligible full-time tertiary students get discounted fares on AT bus, train and ferry services with a registered AT HOP card.",
+      "last_verified_at": "2026-08-12",
+      "verification_status": "auto_extracted"
+    },
+    {
+      "slug": "winter-energy-payment",
+      "name_local": "Winter Energy Payment",
+      "name_en": "Winter Energy Payment (automatic winter top-up for beneficiaries and superannuitants)",
+      "admin_level": "national",
+      "admin_area": null,
+      "funder": "Ministry of Social Development — Work and Income",
+      "category": "energy",
+      "benefit_type": "cash_monthly",
+      "amount_min": null,
+      "amount_max": null,
+      "amount_currency": "NZD",
+      "amount_period": "monthly",
+      "amount_note": "Automatic weekly payment 1 May–1 October: $20.46/week single without dependent children; $31.82/week for couples and people with dependent children (approx $450/$700 over the 22-week season). Non-taxable; paid with main benefits, NZ Super and Veteran's Pension.",
+      "is_automatic": true,
+      "application_url": "https://www.workandincome.govt.nz/products/a-z-benefits/winter-energy-payment.html",
+      "application_channel": "automatic",
+      "deadline_type": "window",
+      "deadline_note": "Paid automatically 1 May to 1 October each year",
+      "procedure_steps": [
+        {
+          "step": 1,
+          "detail": "No application needed — paid automatically with your qualifying benefit or pension",
+          "url": "https://www.workandincome.govt.nz"
+        }
+      ],
+      "documents_required": [
+        {
+          "doc": "None — paid automatically",
+          "mandatory": false,
+          "note": null
+        }
+      ],
+      "eligibility": {
+        "statuses": [
+          "retired",
+          "unemployed",
+          "parent",
+          "jobseeker"
+        ],
+        "age_min": null,
+        "age_max": null,
+        "income_annual_max": null,
+        "income_note": "Not income tested; tied to receipt of a qualifying benefit, NZ Super or Veteran's Pension",
+        "requires_children": false,
+        "nationality": "any_resident",
+        "residency_months_min": null,
+        "housing_tenure": null,
+        "student_required": false,
+        "admin_areas": []
+      },
+      "source_url": "https://www.workandincome.govt.nz/products/a-z-benefits/winter-energy-payment.html",
+      "source_snippet": "If you are a single person with no dependent children, you'll receive $20.46 per week. For couples and people with dependent children, you'll receive $31.82 per week.",
+      "last_verified_at": "2026-08-12",
+      "verification_status": "verified"
+    },
+    {
+      "slug": "warmer-kiwi-homes",
+      "name_local": "Warmer Kiwi Homes (EECA)",
+      "name_en": "Warmer Kiwi Homes — insulation and heat pump grants",
+      "admin_level": "national",
+      "admin_area": null,
+      "funder": "Energy Efficiency and Conservation Authority (EECA)",
+      "category": "energy",
+      "benefit_type": "in_kind",
+      "amount_min": null,
+      "amount_max": 3450,
+      "amount_currency": "NZD",
+      "amount_period": "one_off",
+      "amount_note": "Grant covering 50–90% of ceiling and underfloor insulation costs, and 90% (up to $3,450) of an approved high-wall heat pump. For owner-occupied homes built before 2008 with a Community Services Card, SuperGold Combo card, or in an eligible low-to-middle-income area. Wood/pellet burner grants ended January 2026.",
+      "is_automatic": false,
+      "application_url": "https://www.eeca.govt.nz/co-funding-and-support/products/warmer-kiwi-homes-programme/information/",
+      "application_channel": "online",
+      "deadline_type": "rolling",
+      "deadline_note": "Programme funding confirmed to 30 June 2027",
+      "procedure_steps": [
+        {
+          "step": 1,
+          "detail": "Check your address with the EECA eligibility tool or call 0800 749 782",
+          "url": "https://www.eeca.govt.nz"
+        },
+        {
+          "step": 2,
+          "detail": "An EECA-approved service provider quotes with the grant deducted",
+          "url": null
+        },
+        {
+          "step": 3,
+          "detail": "Pay only the non-funded portion directly to the installer",
+          "url": null
+        }
+      ],
+      "documents_required": [
+        {
+          "doc": "Proof of home ownership and occupancy",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Community Services Card or SuperGold Combo card (if applicable)",
+          "mandatory": false,
+          "note": null
+        }
+      ],
+      "eligibility": {
+        "statuses": [],
+        "age_min": null,
+        "age_max": null,
+        "income_annual_max": null,
+        "income_note": "Targeted to CSC holders and low-to-middle-income areas; home must be built before 2008",
+        "requires_children": false,
+        "nationality": "any_resident",
+        "residency_months_min": null,
+        "housing_tenure": "owner",
+        "student_required": false,
+        "admin_areas": []
+      },
+      "source_url": "https://www.eeca.govt.nz/co-funding-and-support/products/warmer-kiwi-homes-programme/information/",
+      "source_snippet": "You may be able to get a 90% grant (up to $3,450) if you have a Community Services Card, SuperGold Combo card, or live in the highest-need areas.",
+      "last_verified_at": "2026-08-12",
+      "verification_status": "verified"
+    },
+    {
+      "slug": "childcare-subsidy",
+      "name_local": "Childcare Subsidy",
+      "name_en": "Childcare Subsidy (income-tested help with pre-school childcare fees)",
+      "admin_level": "national",
+      "admin_area": null,
+      "funder": "Ministry of Social Development — Work and Income",
+      "category": "education",
+      "benefit_type": "cash_monthly",
+      "amount_min": null,
+      "amount_max": null,
+      "amount_currency": "NZD",
+      "amount_period": "monthly",
+      "amount_note": "Income-tested subsidy paid to licensed childcare providers for under-5s (and some 5–6 year olds): up to $6.52 per child per hour; up to 9 hours/week if not working or up to 50 hours/week if working/studying. Cannot be claimed for the same hours as 20 Hours ECE.",
+      "is_automatic": false,
+      "application_url": "https://www.workandincome.govt.nz/products/a-z-benefits/childcare-subsidy.html",
+      "application_channel": "online",
+      "deadline_type": "rolling",
+      "deadline_note": null,
+      "procedure_steps": [
+        {
+          "step": 1,
+          "detail": "Enrol your child with a licensed ECE provider",
+          "url": null
+        },
+        {
+          "step": 2,
+          "detail": "Apply via MyMSD with income and care details",
+          "url": "https://my.msd.govt.nz"
+        }
+      ],
+      "documents_required": [
+        {
+          "doc": "Child's birth certificate",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Evidence of income and work/study hours",
+          "mandatory": true,
+          "note": null
+        }
+      ],
+      "eligibility": {
+        "statuses": [
+          "parent",
+          "employee",
+          "student"
+        ],
+        "age_min": null,
+        "age_max": null,
+        "income_annual_max": null,
+        "income_note": "Subsidy tapers with weekly household income; cuts out at higher incomes",
+        "requires_children": true,
+        "nationality": "any_resident",
+        "residency_months_min": null,
+        "housing_tenure": null,
+        "student_required": false,
+        "admin_areas": []
+      },
+      "source_url": "https://www.workandincome.govt.nz/map/deskfile/extra-help-information/childcare-assistance-tables/childcare-subsidy-current.html",
+      "source_snippet": "Up to $6.52 per child per hour, paid to licensed ECE provider; up to 50 hours per week if both parents are working or studying.",
+      "last_verified_at": "2026-08-12",
+      "verification_status": "verified"
+    },
+    {
+      "slug": "oscar-subsidy",
+      "name_local": "OSCAR Subsidy",
+      "name_en": "OSCAR Subsidy (out-of-school care and recreation for children 5–13)",
+      "admin_level": "national",
+      "admin_area": null,
+      "funder": "Ministry of Social Development — Work and Income",
+      "category": "education",
+      "benefit_type": "cash_monthly",
+      "amount_min": null,
+      "amount_max": null,
+      "amount_currency": "NZD",
+      "amount_period": "monthly",
+      "amount_note": "Income-tested subsidy for before/after-school care and school holiday programmes for children aged 5–13 (up to 18 if receiving Child Disability Allowance), up to 20 hours/week term time and 50 hours/week in holidays.",
+      "is_automatic": false,
+      "application_url": "https://www.workandincome.govt.nz/products/a-z-benefits/oscar-subsidy.html",
+      "application_channel": "online",
+      "deadline_type": "rolling",
+      "deadline_note": null,
+      "procedure_steps": [
+        {
+          "step": 1,
+          "detail": "Enrol your child with an OSCAR-approved programme",
+          "url": null
+        },
+        {
+          "step": 2,
+          "detail": "Apply via MyMSD with income and care details",
+          "url": "https://my.msd.govt.nz"
+        }
+      ],
+      "documents_required": [
+        {
+          "doc": "Child's birth certificate",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Evidence of income and work/study hours",
+          "mandatory": true,
+          "note": null
+        }
+      ],
+      "eligibility": {
+        "statuses": [
+          "parent",
+          "employee",
+          "student"
+        ],
+        "age_min": null,
+        "age_max": null,
+        "income_annual_max": null,
+        "income_note": "Income tested",
+        "requires_children": true,
+        "nationality": "any_resident",
+        "residency_months_min": null,
+        "housing_tenure": null,
+        "student_required": false,
+        "admin_areas": []
+      },
+      "source_url": "https://www.workandincome.govt.nz/products/a-z-benefits/oscar-subsidy.html",
+      "source_snippet": "OSCAR Subsidy helps with the cost of before-school, after-school and school holiday programmes for children aged 5 to 13.",
+      "last_verified_at": "2026-08-12",
+      "verification_status": "auto_extracted"
+    },
+    {
+      "slug": "twenty-hours-ece",
+      "name_local": "20 Hours ECE",
+      "name_en": "20 Hours Early Childhood Education (free ECE for 3–5 year olds)",
+      "admin_level": "national",
+      "admin_area": null,
+      "funder": "Ministry of Education",
+      "category": "education",
+      "benefit_type": "free_slab",
+      "amount_min": null,
+      "amount_max": null,
+      "amount_currency": "NZD",
+      "amount_period": "monthly",
+      "amount_note": "Government funds up to 20 hours per week (max 6 hours/day) of early childhood education for all 3, 4 and 5-year-olds at participating licensed services, from the child's third birthday until they start school. Services cannot charge fees for these hours (optional charges may apply).",
+      "is_automatic": false,
+      "application_url": "https://www.education.govt.nz/parents-and-caregivers/early-learning/",
+      "application_channel": "in_person",
+      "deadline_type": "rolling",
+      "deadline_note": "From third birthday until starting school",
+      "procedure_steps": [
+        {
+          "step": 1,
+          "detail": "Enrol your child at a licensed ECE service offering 20 Hours ECE",
+          "url": "https://www.education.govt.nz"
+        },
+        {
+          "step": 2,
+          "detail": "Attest on the enrolment form which hours are claimed as 20 Hours ECE",
+          "url": null
+        }
+      ],
+      "documents_required": [
+        {
+          "doc": "Child's birth certificate or passport",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Enrolment agreement with attestation",
+          "mandatory": true,
+          "note": null
+        }
+      ],
+      "eligibility": {
+        "statuses": [],
+        "age_min": null,
+        "age_max": null,
+        "income_annual_max": null,
+        "income_note": "Not income tested",
+        "requires_children": true,
+        "nationality": "any_resident",
+        "residency_months_min": null,
+        "housing_tenure": null,
+        "student_required": false,
+        "admin_areas": []
+      },
+      "source_url": "https://www.education.govt.nz/education-professionals/early-learning/funding-and-financials/ece-funding-handbook/glossary",
+      "source_snippet": "20 Hours ECE enables services to provide early childhood education to 3-year-olds, 4-year-olds and 5-year-olds for up to a maximum of 6 hours per child per day and 20 hours per child per week without charging fees.",
+      "last_verified_at": "2026-08-12",
+      "verification_status": "verified"
+    },
+    {
+      "slug": "fees-free",
+      "name_local": "Fees Free (final year)",
+      "name_en": "Fees Free — final year of first tertiary qualification fees paid back",
+      "admin_level": "national",
+      "admin_area": null,
+      "funder": "Inland Revenue (with Tertiary Education Commission)",
+      "category": "education",
+      "benefit_type": "cash_one_off",
+      "amount_min": null,
+      "amount_max": 12000,
+      "amount_currency": "NZD",
+      "amount_period": "one_off",
+      "amount_note": "Pays back up to $12,000 of fees for the FINAL year of your first eligible tertiary qualification (or final 2 years of work-based learning) after you complete. Applies to final years started on/after 1 Jan 2025; scheme finishes end of 2026. Paid to your student loan balance or bank account via myIR.",
+      "is_automatic": false,
+      "application_url": "https://www.ird.govt.nz/fees-free",
+      "application_channel": "online",
+      "deadline_type": "window",
+      "deadline_note": "Apply within 12 months of completing an eligible qualification; scheme ends for completions after 31 December 2026",
+      "procedure_steps": [
+        {
+          "step": 1,
+          "detail": "Complete and pass your first eligible qualification or work-based programme",
+          "url": "https://www.feesfree.govt.nz"
+        },
+        {
+          "step": 2,
+          "detail": "Apply for your Fees Free entitlement in myIR",
+          "url": "https://www.ird.govt.nz/fees-free"
+        },
+        {
+          "step": 3,
+          "detail": "Entitlement is paid to your student loan or nominated bank account",
+          "url": null
+        }
+      ],
+      "documents_required": [
+        {
+          "doc": "myIR account",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Completed qualification confirmed by your provider",
+          "mandatory": true,
+          "note": null
+        }
+      ],
+      "eligibility": {
+        "statuses": [
+          "student"
+        ],
+        "age_min": null,
+        "age_max": null,
+        "income_annual_max": null,
+        "income_note": "Not income tested; prior-study and residency criteria apply",
+        "requires_children": false,
+        "nationality": "citizen_or_pr",
+        "residency_months_min": null,
+        "housing_tenure": null,
+        "student_required": true,
+        "admin_areas": []
+      },
+      "source_url": "https://www.ird.govt.nz/fees-free",
+      "source_snippet": "Fees Free covers fees for the final year of tertiary study or final 2 years of work-based learning... up to $12,000. The Government has announced it is ending Fees Free at the end of 2026.",
+      "last_verified_at": "2026-08-12",
+      "verification_status": "verified"
+    },
+    {
+      "slug": "student-allowance",
+      "name_local": "Student Allowance",
+      "name_en": "Student Allowance (weekly living support for full-time students)",
+      "admin_level": "national",
+      "admin_area": null,
+      "funder": "Ministry of Social Development — StudyLink",
+      "category": "education",
+      "benefit_type": "cash_monthly",
+      "amount_min": null,
+      "amount_max": null,
+      "amount_currency": "NZD",
+      "amount_period": "monthly",
+      "amount_note": "Weekly payment for full-time students that does not have to be paid back. Income tested (personal, and parental income if under 24 without children). Not paid over the summer break.",
+      "is_automatic": false,
+      "application_url": "https://www.studylink.govt.nz/products/a-z-products/student-allowance/index.html",
+      "application_channel": "online",
+      "deadline_type": "annual",
+      "deadline_note": "Apply before 16 December for the following study year",
+      "procedure_steps": [
+        {
+          "step": 1,
+          "detail": "Apply online via StudyLink (MyStudyLink)",
+          "url": "https://www.studylink.govt.nz"
+        },
+        {
+          "step": 2,
+          "detail": "Provide enrolment confirmation and income/parental income details",
+          "url": null
+        }
+      ],
+      "documents_required": [
+        {
+          "doc": "Proof of enrolment (0.8+ EFTS full-time)",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Income details (and parental income if under 24)",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "IRD number",
+          "mandatory": true,
+          "note": null
+        }
+      ],
+      "eligibility": {
+        "statuses": [
+          "student"
+        ],
+        "age_min": 18,
+        "age_max": null,
+        "income_annual_max": null,
+        "income_note": "Income tested; parental income test applies for most students under 24",
+        "requires_children": false,
+        "nationality": "citizen_or_pr",
+        "residency_months_min": null,
+        "housing_tenure": null,
+        "student_required": true,
+        "admin_areas": []
+      },
+      "source_url": "https://www.studylink.govt.nz/products/a-z-products/student-allowance/index.html",
+      "source_snippet": "Student Allowance is a weekly payment that can help with your living expenses while you're studying. You don't have to pay the money back.",
+      "last_verified_at": "2026-08-12",
+      "verification_status": "auto_extracted"
+    },
+    {
+      "slug": "student-loan-living-costs",
+      "name_local": "Student Loan — Living Costs",
+      "name_en": "Student Loan living costs component (in-kind loan, repayable)",
+      "admin_level": "national",
+      "admin_area": null,
+      "funder": "Ministry of Social Development — StudyLink / Inland Revenue",
+      "category": "education",
+      "benefit_type": "in_kind",
+      "amount_min": null,
+      "amount_max": null,
+      "amount_currency": "NZD",
+      "amount_period": "monthly",
+      "amount_note": "Weekly living-costs loan for full-time students (up to around $320/week), added to your student loan and repaid through the tax system once you earn over the repayment threshold. Interest-free while you remain in NZ.",
+      "is_automatic": false,
+      "application_url": "https://www.studylink.govt.nz/products/a-z-products/student-loan/index.html",
+      "application_channel": "online",
+      "deadline_type": "annual",
+      "deadline_note": "Apply before your course starts each year",
+      "procedure_steps": [
+        {
+          "step": 1,
+          "detail": "Apply via MyStudyLink as part of your student loan application",
+          "url": "https://www.studylink.govt.nz"
+        },
+        {
+          "step": 2,
+          "detail": "Choose the living costs amount (reduces if you get a Student Allowance)",
+          "url": null
+        }
+      ],
+      "documents_required": [
+        {
+          "doc": "Proof of full-time enrolment",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "IRD number",
+          "mandatory": true,
+          "note": null
+        }
+      ],
+      "eligibility": {
+        "statuses": [
+          "student"
+        ],
+        "age_min": null,
+        "age_max": null,
+        "income_annual_max": null,
+        "income_note": "Not means tested but reduced by any Student Allowance received",
+        "requires_children": false,
+        "nationality": "citizen_or_pr",
+        "residency_months_min": null,
+        "housing_tenure": null,
+        "student_required": true,
+        "admin_areas": []
+      },
+      "source_url": "https://www.studylink.govt.nz/products/a-z-products/student-loan/index.html",
+      "source_snippet": "A Student Loan can help pay for your course fees, study materials and living costs — you have to pay it back.",
+      "last_verified_at": "2026-08-12",
+      "verification_status": "auto_extracted"
+    },
+    {
+      "slug": "student-loan-course-related-costs",
+      "name_local": "Student Loan — Course-related Costs",
+      "name_en": "Student Loan course-related costs (up to $1,000/year)",
+      "admin_level": "national",
+      "admin_area": null,
+      "funder": "Ministry of Social Development — StudyLink / Inland Revenue",
+      "category": "education",
+      "benefit_type": "in_kind",
+      "amount_min": null,
+      "amount_max": 1000,
+      "amount_currency": "NZD",
+      "amount_period": "annual",
+      "amount_note": "Up to $1,000 per year loan component for course-related costs (books, equipment, materials), repayable through the student loan system.",
+      "is_automatic": false,
+      "application_url": "https://www.studylink.govt.nz/products/a-z-products/student-loan/index.html",
+      "application_channel": "online",
+      "deadline_type": "annual",
+      "deadline_note": "Apply before your course starts each year",
+      "procedure_steps": [
+        {
+          "step": 1,
+          "detail": "Apply via MyStudyLink as part of your student loan",
+          "url": "https://www.studylink.govt.nz"
+        },
+        {
+          "step": 2,
+          "detail": "Claim actual course-related expenses up to the $1,000 limit",
+          "url": null
+        }
+      ],
+      "documents_required": [
+        {
+          "doc": "Proof of full-time enrolment",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "IRD number",
+          "mandatory": true,
+          "note": null
+        }
+      ],
+      "eligibility": {
+        "statuses": [
+          "student"
+        ],
+        "age_min": null,
+        "age_max": null,
+        "income_annual_max": null,
+        "income_note": "Not income tested",
+        "requires_children": false,
+        "nationality": "citizen_or_pr",
+        "residency_months_min": null,
+        "housing_tenure": null,
+        "student_required": true,
+        "admin_areas": []
+      },
+      "source_url": "https://www.studylink.govt.nz/products/a-z-products/student-loan/index.html",
+      "source_snippet": "You can borrow up to $1,000 a year for course-related costs such as textbooks and equipment.",
+      "last_verified_at": "2026-08-12",
+      "verification_status": "auto_extracted"
+    },
+    {
+      "slug": "training-incentive-allowance",
+      "name_local": "Training Incentive Allowance",
+      "name_en": "Training Incentive Allowance (course costs help for people on certain benefits)",
+      "admin_level": "national",
+      "admin_area": null,
+      "funder": "Ministry of Social Development — Work and Income",
+      "category": "education",
+      "benefit_type": "cash_one_off",
+      "amount_min": null,
+      "amount_max": null,
+      "amount_currency": "NZD",
+      "amount_period": "annual",
+      "amount_note": "Payment towards tuition fees and course costs for people on Sole Parent Support, Supported Living Payment or certain other payments studying approved employment-focused courses (up to a yearly maximum, around $4,900).",
+      "is_automatic": false,
+      "application_url": "https://www.workandincome.govt.nz/products/a-z-benefits/training-incentive-allowance.html",
+      "application_channel": "online",
+      "deadline_type": "rolling",
+      "deadline_note": "Course must be approved before enrolling",
+      "procedure_steps": [
+        {
+          "step": 1,
+          "detail": "Discuss your study plan with Work and Income",
+          "url": "https://www.workandincome.govt.nz"
+        },
+        {
+          "step": 2,
+          "detail": "Apply via MyMSD with course fee details",
+          "url": null
+        }
+      ],
+      "documents_required": [
+        {
+          "doc": "Proof of enrolment and course fees",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Current main benefit details",
+          "mandatory": true,
+          "note": null
+        }
+      ],
+      "eligibility": {
+        "statuses": [
+          "unemployed",
+          "parent",
+          "jobseeker",
+          "student"
+        ],
+        "age_min": null,
+        "age_max": null,
+        "income_annual_max": null,
+        "income_note": "Must be receiving a qualifying benefit",
+        "requires_children": false,
+        "nationality": "any_resident",
+        "residency_months_min": null,
+        "housing_tenure": null,
+        "student_required": false,
+        "admin_areas": []
+      },
+      "source_url": "https://www.workandincome.govt.nz/products/a-z-benefits/training-incentive-allowance.html",
+      "source_snippet": "Training Incentive Allowance helps with the costs of studying an approved course while on certain benefits.",
+      "last_verified_at": "2026-08-12",
+      "verification_status": "auto_extracted"
+    },
+    {
+      "slug": "school-donations-scheme",
+      "name_local": "School Donations Scheme",
+      "name_en": "School donations scheme ($150 per student for decile 1–7 schools)",
+      "admin_level": "national",
+      "admin_area": null,
+      "funder": "Ministry of Education",
+      "category": "education",
+      "benefit_type": "in_kind",
+      "amount_min": null,
+      "amount_max": 150,
+      "amount_currency": "NZD",
+      "amount_period": "annual",
+      "amount_note": "Government pays decile 1–7 state and state-integrated schools $150 per student per year if the board agrees not to ask parents for donations (except for school camps). Families at opted-in schools pay no donation.",
+      "is_automatic": true,
+      "application_url": "https://www.education.govt.nz/our-work/publications/education-circulars/education-circular-202103",
+      "application_channel": "automatic",
+      "deadline_type": "annual",
+      "deadline_note": "School boards opt in each year",
+      "procedure_steps": [
+        {
+          "step": 1,
+          "detail": "Check with your school whether it has opted into the donations scheme",
+          "url": "https://www.education.govt.nz"
+        },
+        {
+          "step": 2,
+          "detail": "If opted in, the school cannot ask you for donations (camps excepted)",
+          "url": null
+        }
+      ],
+      "documents_required": [
+        {
+          "doc": "None — paid to the school",
+          "mandatory": false,
+          "note": null
+        }
+      ],
+      "eligibility": {
+        "statuses": [],
+        "age_min": null,
+        "age_max": null,
+        "income_annual_max": null,
+        "income_note": "Not income tested; depends on school opting in",
+        "requires_children": true,
+        "nationality": "any_resident",
+        "residency_months_min": null,
+        "housing_tenure": null,
+        "student_required": false,
+        "admin_areas": []
+      },
+      "source_url": "https://www.education.govt.nz/our-work/publications/education-circulars/education-circular-202103",
+      "source_snippet": "Decile 1-7 state and state-integrated schools have been able to choose to receive a $150 per student, per year payment if they agree not to ask parents and caregivers for donations.",
+      "last_verified_at": "2026-08-12",
+      "verification_status": "verified"
+    },
+    {
+      "slug": "ka-ora-ka-ako-school-lunches",
+      "name_local": "Ka Ora, Ka Ako — Healthy School Lunches Programme",
+      "name_en": "Free school lunches for students at participating high-need schools",
+      "admin_level": "national",
+      "admin_area": null,
+      "funder": "Ministry of Education",
+      "category": "education",
+      "benefit_type": "in_kind",
+      "amount_min": null,
+      "amount_max": null,
+      "amount_currency": "NZD",
+      "amount_period": "monthly",
+      "amount_note": "Free nutritious lunch every school day for students at around 1,000 participating schools and kura selected by equity index, reaching over 230,000 learners.",
+      "is_automatic": true,
+      "application_url": "https://www.education.govt.nz/",
+      "application_channel": "automatic",
+      "deadline_type": "rolling",
+      "deadline_note": "Available only at participating schools",
+      "procedure_steps": [
+        {
+          "step": 1,
+          "detail": "Enrol at a participating school — lunches are provided automatically each school day",
+          "url": "https://www.education.govt.nz"
+        }
+      ],
+      "documents_required": [
+        {
+          "doc": "None — provided through the school",
+          "mandatory": false,
+          "note": null
+        }
+      ],
+      "eligibility": {
+        "statuses": [],
+        "age_min": null,
+        "age_max": null,
+        "income_annual_max": null,
+        "income_note": "School-level targeting by equity index, not family income",
+        "requires_children": true,
+        "nationality": "any_resident",
+        "residency_months_min": null,
+        "housing_tenure": null,
+        "student_required": false,
+        "admin_areas": []
+      },
+      "source_url": "https://www.education.govt.nz/",
+      "source_snippet": "Ka Ora, Ka Ako provides a free healthy lunch every school day to students at participating schools and kura.",
+      "last_verified_at": "2026-08-12",
+      "verification_status": "auto_extracted"
+    },
+    {
+      "slug": "free-period-products-schools",
+      "name_local": "Ikura | Free Period Products in Schools",
+      "name_en": "Free period products (pads and tampons) available in all state and state-integrated schools",
+      "admin_level": "national",
+      "admin_area": null,
+      "funder": "Ministry of Education",
+      "category": "education",
+      "benefit_type": "in_kind",
+      "amount_min": null,
+      "amount_max": null,
+      "amount_currency": "NZD",
+      "amount_period": "monthly",
+      "amount_note": "Free pads and tampons provided in all state and state-integrated schools and kura that opt in, to reduce period poverty and support attendance.",
+      "is_automatic": true,
+      "application_url": "https://www.education.govt.nz/",
+      "application_channel": "automatic",
+      "deadline_type": "rolling",
+      "deadline_note": "Schools opt in to receive funded products",
+      "procedure_steps": [
+        {
+          "step": 1,
+          "detail": "Products are available free at your school — ask the school office or nurse",
+          "url": "https://www.education.govt.nz"
+        }
+      ],
+      "documents_required": [
+        {
+          "doc": "None",
+          "mandatory": false,
+          "note": null
+        }
+      ],
+      "eligibility": {
+        "statuses": [],
+        "age_min": null,
+        "age_max": null,
+        "income_annual_max": null,
+        "income_note": "Not income tested",
+        "requires_children": true,
+        "nationality": "any_resident",
+        "residency_months_min": null,
+        "housing_tenure": null,
+        "student_required": false,
+        "admin_areas": []
+      },
+      "source_url": "https://www.education.govt.nz/",
+      "source_snippet": "Free period products are provided to students in participating state and state-integrated schools to improve access to education.",
+      "last_verified_at": "2026-08-12",
+      "verification_status": "auto_extracted"
+    },
+    {
+      "slug": "flexi-wage",
+      "name_local": "Flexi-wage",
+      "name_en": "Flexi-wage (wage subsidy for hiring people at risk of long-term unemployment)",
+      "admin_level": "national",
+      "admin_area": null,
+      "funder": "Ministry of Social Development — Work and Income",
+      "category": "employment",
+      "benefit_type": "cash_one_off",
+      "amount_min": null,
+      "amount_max": null,
+      "amount_currency": "NZD",
+      "amount_period": "one_off",
+      "amount_note": "Wage subsidy paid to employers to hire jobseekers at risk of long-term benefit receipt; can also support people starting self-employment. Amount negotiated case by case.",
+      "is_automatic": false,
+      "application_url": "https://www.workandincome.govt.nz/employers/subsidies-and-other-assistance/index.html",
+      "application_channel": "in_person",
+      "deadline_type": "rolling",
+      "deadline_note": null,
+      "procedure_steps": [
+        {
+          "step": 1,
+          "detail": "Talk to Work and Income about a Flexi-wage for a new hire or self-employment",
+          "url": "https://www.workandincome.govt.nz"
+        },
+        {
+          "step": 2,
+          "detail": "Agree the subsidy terms before the job or business starts",
+          "url": null
+        }
+      ],
+      "documents_required": [
+        {
+          "doc": "Employment or business plan details",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "IRD and GST details for employers",
+          "mandatory": true,
+          "note": null
+        }
+      ],
+      "eligibility": {
+        "statuses": [
+          "unemployed",
+          "jobseeker",
+          "self_employed"
+        ],
+        "age_min": null,
+        "age_max": null,
+        "income_annual_max": null,
+        "income_note": "For jobseekers at risk of long-term unemployment",
+        "requires_children": false,
+        "nationality": "any_resident",
+        "residency_months_min": null,
+        "housing_tenure": null,
+        "student_required": false,
+        "admin_areas": []
+      },
+      "source_url": "https://www.workandincome.govt.nz/employers/subsidies-and-other-assistance/index.html",
+      "source_snippet": "Flexi-wage is a subsidy to help employers hire people who are at risk of staying on a benefit long term, and can support self-employment.",
+      "last_verified_at": "2026-08-12",
+      "verification_status": "auto_extracted"
+    },
+    {
+      "slug": "self-employment-start-up-payment",
+      "name_local": "Self-Employment Start-up Payment",
+      "name_en": "Self-Employment Start-up Payment (business start-up help for jobseekers)",
+      "admin_level": "national",
+      "admin_area": null,
+      "funder": "Ministry of Social Development — Work and Income",
+      "category": "employment",
+      "benefit_type": "cash_one_off",
+      "amount_min": null,
+      "amount_max": null,
+      "amount_currency": "NZD",
+      "amount_period": "one_off",
+      "amount_note": "One-off payment to help people on a benefit start a viable business — covering costs such as stock, equipment and initial overheads. Paid alongside business planning support.",
+      "is_automatic": false,
+      "application_url": "https://www.workandincome.govt.nz/employers/subsidies-and-other-assistance/index.html",
+      "application_channel": "in_person",
+      "deadline_type": "rolling",
+      "deadline_note": null,
+      "procedure_steps": [
+        {
+          "step": 1,
+          "detail": "Present your business plan to Work and Income",
+          "url": "https://www.workandincome.govt.nz"
+        },
+        {
+          "step": 2,
+          "detail": "Apply before incurring start-up costs",
+          "url": null
+        }
+      ],
+      "documents_required": [
+        {
+          "doc": "Business plan",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Quotes for start-up costs",
+          "mandatory": true,
+          "note": null
+        }
+      ],
+      "eligibility": {
+        "statuses": [
+          "unemployed",
+          "jobseeker",
+          "self_employed"
+        ],
+        "age_min": null,
+        "age_max": null,
+        "income_annual_max": null,
+        "income_note": "For people on a main benefit starting self-employment",
+        "requires_children": false,
+        "nationality": "any_resident",
+        "residency_months_min": null,
+        "housing_tenure": null,
+        "student_required": false,
+        "admin_areas": []
+      },
+      "source_url": "https://www.workandincome.govt.nz/employers/subsidies-and-other-assistance/index.html",
+      "source_snippet": "Work and Income may help with the costs of starting a business if you are on a benefit and have a viable business plan.",
+      "last_verified_at": "2026-08-12",
+      "verification_status": "auto_extracted"
+    },
+    {
+      "slug": "apprenticeship-boost",
+      "name_local": "Apprenticeship Boost",
+      "name_en": "Apprenticeship Boost ($500/month payment to employers of first-year apprentices)",
+      "admin_level": "national",
+      "admin_area": null,
+      "funder": "Ministry of Social Development — Work and Income (with Tertiary Education Commission)",
+      "category": "employment",
+      "benefit_type": "cash_monthly",
+      "amount_min": 500,
+      "amount_max": 500,
+      "amount_currency": "NZD",
+      "amount_period": "monthly",
+      "amount_note": "$500 per month (excl GST) paid directly to employers for up to 12 months per apprentice training in a targeted occupation, while in their first 12 months of training. Employer must pay at least the minimum or training wage.",
+      "is_automatic": false,
+      "application_url": "https://www.workandincome.govt.nz/employers/subsidies-and-other-assistance/apprenticeship-boost.html",
+      "application_channel": "online",
+      "deadline_type": "rolling",
+      "deadline_note": "Up to 12 months of support per eligible apprentice",
+      "procedure_steps": [
+        {
+          "step": 1,
+          "detail": "Employer creates an account and applies via Work and Income",
+          "url": "https://www.workandincome.govt.nz"
+        },
+        {
+          "step": 2,
+          "detail": "Reconfirm eligibility each month to keep receiving payments",
+          "url": null
+        }
+      ],
+      "documents_required": [
+        {
+          "doc": "Employer IRD/GST details",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Apprentice training agreement details (verified with TEC)",
+          "mandatory": true,
+          "note": null
+        }
+      ],
+      "eligibility": {
+        "statuses": [
+          "employee"
+        ],
+        "age_min": null,
+        "age_max": null,
+        "income_annual_max": null,
+        "income_note": "Apprentice must be in a targeted occupation and first 12 months of training",
+        "requires_children": false,
+        "nationality": "any_resident",
+        "residency_months_min": null,
+        "housing_tenure": null,
+        "student_required": false,
+        "admin_areas": []
+      },
+      "source_url": "https://www.tec.govt.nz/funding/fund-finder/apprenticeship-boost",
+      "source_snippet": "From 1 January 2025, employers can receive up to 12 months of support per eligible apprentice. Payments are currently $500 per month (excluding GST).",
+      "last_verified_at": "2026-08-12",
+      "verification_status": "verified"
+    },
+    {
+      "slug": "mana-in-mahi",
+      "name_local": "Mana in Mahi — Strength in Work",
+      "name_en": "Mana in Mahi (wage subsidy plus industry training for jobseekers)",
+      "admin_level": "national",
+      "admin_area": null,
+      "funder": "Ministry of Social Development — Work and Income",
+      "category": "employment",
+      "benefit_type": "cash_monthly",
+      "amount_min": null,
+      "amount_max": null,
+      "amount_currency": "NZD",
+      "amount_period": "monthly",
+      "amount_note": "Wage subsidy paid to employers who hire jobseekers into sustainable jobs with an industry training pathway (formal qualification or apprenticeship), plus support funding for the participant.",
+      "is_automatic": false,
+      "application_url": "https://www.workandincome.govt.nz/employers/subsidies-and-other-assistance/index.html",
+      "application_channel": "in_person",
+      "deadline_type": "rolling",
+      "deadline_note": null,
+      "procedure_steps": [
+        {
+          "step": 1,
+          "detail": "Register interest with Work and Income as an employer or jobseeker",
+          "url": "https://www.workandincome.govt.nz"
+        },
+        {
+          "step": 2,
+          "detail": "Agree the subsidy and training plan before employment starts",
+          "url": null
+        }
+      ],
+      "documents_required": [
+        {
+          "doc": "Employment agreement and training plan",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Employer IRD details",
+          "mandatory": true,
+          "note": null
+        }
+      ],
+      "eligibility": {
+        "statuses": [
+          "unemployed",
+          "jobseeker"
+        ],
+        "age_min": null,
+        "age_max": null,
+        "income_annual_max": null,
+        "income_note": "For jobseekers referred by Work and Income",
+        "requires_children": false,
+        "nationality": "any_resident",
+        "residency_months_min": null,
+        "housing_tenure": null,
+        "student_required": false,
+        "admin_areas": []
+      },
+      "source_url": "https://www.workandincome.govt.nz/employers/subsidies-and-other-assistance/index.html",
+      "source_snippet": "Mana in Mahi supports employers to hire people on a benefit into jobs that come with industry training towards a qualification.",
+      "last_verified_at": "2026-08-12",
+      "verification_status": "auto_extracted"
+    },
+    {
+      "slug": "independent-earner-tax-credit",
+      "name_local": "Independent Earner Tax Credit (IETC)",
+      "name_en": "Independent Earner Tax Credit",
+      "admin_level": "national",
+      "admin_area": null,
+      "funder": "Inland Revenue (Te Tari Taake)",
+      "category": "tax",
+      "benefit_type": "tax_credit",
+      "amount_min": null,
+      "amount_max": 520,
+      "amount_currency": "NZD",
+      "amount_period": "annual",
+      "amount_note": "Tax credit of up to $520 a year ($10/week) for people earning between $24,000 and $70,000 who are not receiving Working for Families, a main benefit, NZ Super or Veteran's Pension. Claimed via the ME tax code or at year end.",
+      "is_automatic": false,
+      "application_url": "https://www.ird.govt.nz/ietc",
+      "application_channel": "via_employer",
+      "deadline_type": "annual",
+      "deadline_note": "Claimed through your tax code or end-of-year assessment",
+      "procedure_steps": [
+        {
+          "step": 1,
+          "detail": "Use the ME or ME SL tax code with your employer",
+          "url": "https://www.ird.govt.nz/ietc"
+        },
+        {
+          "step": 2,
+          "detail": "Or claim at the end of the tax year via myIR",
+          "url": "https://www.ird.govt.nz"
+        }
+      ],
+      "documents_required": [
+        {
+          "doc": "IRD number",
+          "mandatory": true,
+          "note": null
+        }
+      ],
+      "eligibility": {
+        "statuses": [
+          "employee"
+        ],
+        "age_min": null,
+        "age_max": null,
+        "income_annual_max": 70000,
+        "income_note": "For annual incomes $24,000–$70,000 (abates from $44,000); cannot be received with Working for Families, a main benefit, NZ Super or Veteran's Pension",
+        "requires_children": false,
+        "nationality": "any_resident",
+        "residency_months_min": null,
+        "housing_tenure": null,
+        "student_required": false,
+        "admin_areas": []
+      },
+      "source_url": "https://www.ird.govt.nz/ietc",
+      "source_snippet": "If you're using a ME or ME SL tax code you'll need to change this with your employer when you apply for Working for Families — you cannot receive both (IR201).",
+      "last_verified_at": "2026-08-12",
+      "verification_status": "auto_extracted"
+    },
+    {
+      "slug": "kiwisaver-government-contribution",
+      "name_local": "KiwiSaver Government Contribution",
+      "name_en": "KiwiSaver annual government contribution",
+      "admin_level": "national",
+      "admin_area": null,
+      "funder": "Inland Revenue (Te Tari Taake)",
+      "category": "tax",
+      "benefit_type": "cash_one_off",
+      "amount_min": null,
+      "amount_max": 260.72,
+      "amount_currency": "NZD",
+      "amount_period": "annual",
+      "amount_note": "Government contributes 25 cents for every $1 you contribute to KiwiSaver each year, up to $260.72 (from the 2025/26 year), paid annually into your KiwiSaver account. Eligibility and amounts reduced under Budget 2025 changes; removed for higher earners.",
+      "is_automatic": true,
+      "application_url": "https://www.ird.govt.nz/kiwisaver",
+      "application_channel": "automatic",
+      "deadline_type": "annual",
+      "deadline_note": "Paid annually after the KiwiSaver year ends 30 June",
+      "procedure_steps": [
+        {
+          "step": 1,
+          "detail": "Contribute at least $1,042.86 during the year to get the maximum",
+          "url": "https://www.ird.govt.nz"
+        },
+        {
+          "step": 2,
+          "detail": "Government contribution is paid automatically into your KiwiSaver account",
+          "url": null
+        }
+      ],
+      "documents_required": [
+        {
+          "doc": "KiwiSaver membership",
+          "mandatory": true,
+          "note": null
+        }
+      ],
+      "eligibility": {
+        "statuses": [
+          "employee",
+          "self_employed"
+        ],
+        "age_min": 18,
+        "age_max": 64,
+        "income_annual_max": null,
+        "income_note": "Not paid for incomes over $180,000 under Budget 2025 changes",
+        "requires_children": false,
+        "nationality": "citizen_or_pr",
+        "residency_months_min": null,
+        "housing_tenure": null,
+        "student_required": false,
+        "admin_areas": []
+      },
+      "source_url": "https://www.ird.govt.nz/kiwisaver",
+      "source_snippet": "The Government contributes 25c for every dollar you contribute to KiwiSaver, up to $260.72 a year.",
+      "last_verified_at": "2026-08-12",
+      "verification_status": "auto_extracted"
+    },
+    {
+      "slug": "rd-tax-incentive",
+      "name_local": "Research and Development Tax Incentive (RDTI)",
+      "name_en": "R&D Tax Incentive — 15% tax credit on eligible R&D expenditure",
+      "admin_level": "national",
+      "admin_area": null,
+      "funder": "Inland Revenue and Ministry of Business, Innovation and Employment",
+      "category": "business",
+      "benefit_type": "tax_credit",
+      "amount_min": null,
+      "amount_max": null,
+      "amount_currency": "NZD",
+      "amount_period": "annual",
+      "amount_note": "15% tax credit on eligible R&D expenditure between $50,000 and $120 million per year (lower spend possible via an Approved Research Provider). Jointly administered by IRD and MBIE; in-year payments introduced from Budget 2026.",
+      "is_automatic": false,
+      "application_url": "https://www.ird.govt.nz/research-and-development/tax-incentive",
+      "application_channel": "online",
+      "deadline_type": "annual",
+      "deadline_note": "General Approval required by the last day of the 3rd month after year end; supplementary return within 30 days of tax return due date",
+      "procedure_steps": [
+        {
+          "step": 1,
+          "detail": "Enrol via myIR and assess eligibility",
+          "url": "https://www.rdti.govt.nz"
+        },
+        {
+          "step": 2,
+          "detail": "Apply for General Approval before the deadline",
+          "url": "https://www.ird.govt.nz"
+        },
+        {
+          "step": 3,
+          "detail": "File the R&D supplementary return with your income tax return",
+          "url": null
+        }
+      ],
+      "documents_required": [
+        {
+          "doc": "General Approval application describing core R&D activities",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "R&D supplementary return with eligible expenditure",
+          "mandatory": true,
+          "note": null
+        }
+      ],
+      "eligibility": {
+        "statuses": [
+          "self_employed"
+        ],
+        "age_min": null,
+        "age_max": null,
+        "income_annual_max": null,
+        "income_note": "Business must operate through a fixed establishment in NZ and perform a core R&D activity in NZ",
+        "requires_children": false,
+        "nationality": "any",
+        "residency_months_min": null,
+        "housing_tenure": null,
+        "student_required": false,
+        "admin_areas": []
+      },
+      "source_url": "https://www.mbie.govt.nz/science-and-technology/science-and-innovation/funding-information-and-opportunities/r-d-tax-incentive",
+      "source_snippet": "The main features of the R&D tax incentive include a credit rate of 15%, a $120 million cap on eligible expenditure, and a minimum R&D expenditure threshold of $50,000 per year.",
+      "last_verified_at": "2026-08-12",
+      "verification_status": "verified"
+    },
+    {
+      "slug": "rd-loss-tax-credit",
+      "name_local": "R&D Loss Tax Credit",
+      "name_en": "R&D Loss Tax Credit (cash refund for loss-making R&D companies)",
+      "admin_level": "national",
+      "admin_area": null,
+      "funder": "Inland Revenue (Te Tari Taake)",
+      "category": "business",
+      "benefit_type": "tax_credit",
+      "amount_min": null,
+      "amount_max": null,
+      "amount_currency": "NZD",
+      "amount_period": "annual",
+      "amount_note": "Allows eligible loss-making companies to cash out tax losses from R&D expenditure as a refund (28% of eligible losses, capped), repaid as a clawback if the company later sells R&D assets or is liquidated.",
+      "is_automatic": false,
+      "application_url": "https://www.ird.govt.nz/research-and-development/loss-tax-credit",
+      "application_channel": "online",
+      "deadline_type": "annual",
+      "deadline_note": "Claim with your income tax return",
+      "procedure_steps": [
+        {
+          "step": 1,
+          "detail": "Assess eligibility and elect to cash out R&D losses via myIR",
+          "url": "https://www.ird.govt.nz"
+        },
+        {
+          "step": 2,
+          "detail": "File with your income tax return",
+          "url": null
+        }
+      ],
+      "documents_required": [
+        {
+          "doc": "Income tax return with R&D loss election",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Records of eligible R&D expenditure",
+          "mandatory": true,
+          "note": null
+        }
+      ],
+      "eligibility": {
+        "statuses": [
+          "self_employed"
+        ],
+        "age_min": null,
+        "age_max": null,
+        "income_annual_max": null,
+        "income_note": "For loss-making companies with qualifying R&D wage intensity",
+        "requires_children": false,
+        "nationality": "any",
+        "residency_months_min": null,
+        "housing_tenure": null,
+        "student_required": false,
+        "admin_areas": []
+      },
+      "source_url": "https://www.ird.govt.nz/research-and-development/loss-tax-credit",
+      "source_snippet": "Cash refund for loss-making startups (must be repaid once the company becomes profitable).",
+      "last_verified_at": "2026-08-12",
+      "verification_status": "auto_extracted"
+    },
+    {
+      "slug": "investment-boost",
+      "name_local": "Investment Boost",
+      "name_en": "Investment Boost — 20% upfront deduction for new business assets",
+      "admin_level": "national",
+      "admin_area": null,
+      "funder": "Inland Revenue (Te Tari Taake)",
+      "category": "business",
+      "benefit_type": "tax_credit",
+      "amount_min": null,
+      "amount_max": null,
+      "amount_currency": "NZD",
+      "amount_period": "annual",
+      "amount_note": "Immediate 20% deduction of the cost of eligible new depreciable assets purchased on or after 22 May 2025, in addition to standard depreciation. No cap on asset value.",
+      "is_automatic": false,
+      "application_url": "https://www.ird.govt.nz/investment-boost",
+      "application_channel": "automatic",
+      "deadline_type": "annual",
+      "deadline_note": "Applies to eligible assets purchased from 22 May 2025",
+      "procedure_steps": [
+        {
+          "step": 1,
+          "detail": "Claim the 20% deduction in your tax return for the year of purchase",
+          "url": "https://www.ird.govt.nz"
+        }
+      ],
+      "documents_required": [
+        {
+          "doc": "Records of asset purchase date and cost",
+          "mandatory": true,
+          "note": null
+        }
+      ],
+      "eligibility": {
+        "statuses": [
+          "self_employed"
+        ],
+        "age_min": null,
+        "age_max": null,
+        "income_annual_max": null,
+        "income_note": "Available to NZ tax-paying businesses",
+        "requires_children": false,
+        "nationality": "any",
+        "residency_months_min": null,
+        "housing_tenure": null,
+        "student_required": false,
+        "admin_areas": []
+      },
+      "source_url": "https://www.ird.govt.nz/",
+      "source_snippet": "Investment Boost allows businesses an upfront deduction equal to 20 per cent of the cost of eligible assets purchased on or after 22 May 2025, in addition to standard depreciation.",
+      "last_verified_at": "2026-08-12",
+      "verification_status": "auto_extracted"
+    },
+    {
+      "slug": "rbp-capability-vouchers",
+      "name_local": "Regional Business Partner Network — Management Capability Development Vouchers",
+      "name_en": "RBP Capability Development Vouchers (50% co-funding up to $5,000 for SME training)",
+      "admin_level": "national",
+      "admin_area": null,
+      "funder": "New Zealand Trade and Enterprise (NZTE) via Regional Business Partners",
+      "category": "business",
+      "benefit_type": "discount",
+      "amount_min": null,
+      "amount_max": 5000,
+      "amount_currency": "NZD",
+      "amount_period": "annual",
+      "amount_note": "Vouchers co-funding up to 50% of the cost of management capability training and coaching, maximum $5,000 (excl GST) per business per year, for GST-registered NZ businesses with 50 or fewer FTEs, accessed through a Regional Business Partner assessment.",
+      "is_automatic": false,
+      "application_url": "https://www.regionalbusinesspartners.co.nz/",
+      "application_channel": "online",
+      "deadline_type": "rolling",
+      "deadline_note": "Vouchers expire 3 months after issue",
+      "procedure_steps": [
+        {
+          "step": 1,
+          "detail": "Register your business on the Regional Business Partner Network",
+          "url": "https://www.regionalbusinesspartners.co.nz"
+        },
+        {
+          "step": 2,
+          "detail": "Meet a local Growth Advisor for a capability assessment",
+          "url": null
+        },
+        {
+          "step": 3,
+          "detail": "Use the voucher with a registered service provider",
+          "url": null
+        }
+      ],
+      "documents_required": [
+        {
+          "doc": "Business registration and GST number",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Capability assessment with a Regional Business Partner",
+          "mandatory": true,
+          "note": null
+        }
+      ],
+      "eligibility": {
+        "statuses": [
+          "self_employed"
+        ],
+        "age_min": null,
+        "age_max": null,
+        "income_annual_max": null,
+        "income_note": "For businesses with 50 or fewer FTEs, GST registered and trading",
+        "requires_children": false,
+        "nationality": "any",
+        "residency_months_min": null,
+        "housing_tenure": null,
+        "student_required": false,
+        "admin_areas": []
+      },
+      "source_url": "https://www.business.govt.nz/strategy-and-performance/regional-business-partner-network",
+      "source_snippet": "The Management Capability Development Voucher Fund provides financial subsidy of up to 50% towards the cost of management capability building... maximum $5,000 excluding GST per business in one year.",
+      "last_verified_at": "2026-08-12",
+      "verification_status": "verified"
+    },
+    {
+      "slug": "rd-experience-grant",
+      "name_local": "R&D Experience Grant (MBIE Innovation Services)",
+      "name_en": "R&D Experience Grant — student R&D internship funding for businesses",
+      "admin_level": "national",
+      "admin_area": null,
+      "funder": "Ministry of Business, Innovation and Employment — Innovation Services",
+      "category": "business",
+      "benefit_type": "cash_one_off",
+      "amount_min": null,
+      "amount_max": 11960,
+      "amount_currency": "NZD",
+      "amount_period": "one_off",
+      "amount_note": "Grant reimbursing up to about $11,960 plus GST towards a student's wages for a 10-week full-time R&D summer placement. For businesses with an active R&D programme. Administered by MBIE Innovation Services (formerly Callaghan Innovation, disestablished December 2025).",
+      "is_automatic": false,
+      "application_url": "https://www.business.govt.nz/tax-and-money/innovation-funding/r-and-d-experience-grant",
+      "application_channel": "online",
+      "deadline_type": "window",
+      "deadline_note": "Annual application window (e.g. closes late August for summer placements)",
+      "procedure_steps": [
+        {
+          "step": 1,
+          "detail": "Apply via the Innovation Services funding portal",
+          "url": "https://funds.business.govt.nz"
+        },
+        {
+          "step": 2,
+          "detail": "Recruit an eligible student for a 10-week R&D placement",
+          "url": null
+        },
+        {
+          "step": 3,
+          "detail": "Claim reimbursement of wages up to the cap",
+          "url": null
+        }
+      ],
+      "documents_required": [
+        {
+          "doc": "Details of your R&D programme and R&D staff",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Student placement agreement",
+          "mandatory": true,
+          "note": null
+        }
+      ],
+      "eligibility": {
+        "statuses": [
+          "self_employed"
+        ],
+        "age_min": null,
+        "age_max": null,
+        "income_annual_max": null,
+        "income_note": "Business must have an active R&D programme with at least one R&D staff member",
+        "requires_children": false,
+        "nationality": "any",
+        "residency_months_min": null,
+        "housing_tenure": null,
+        "student_required": false,
+        "admin_areas": []
+      },
+      "source_url": "https://www.business.govt.nz/tax-and-money/innovation-funding/r-and-d-experience-grant",
+      "source_snippet": "A grant that reimburses up to $11,960 plus GST toward a student intern's wages for a 10-week, full-time R&D placement.",
+      "last_verified_at": "2026-08-12",
+      "verification_status": "auto_extracted"
+    },
+    {
+      "slug": "new-to-rd-grant",
+      "name_local": "New to R&D Grant (MBIE Innovation Services)",
+      "name_en": "New to R&D Grant — co-funding for businesses starting R&D",
+      "admin_level": "national",
+      "admin_area": null,
+      "funder": "Ministry of Business, Innovation and Employment — Innovation Services",
+      "category": "business",
+      "benefit_type": "cash_one_off",
+      "amount_min": null,
+      "amount_max": null,
+      "amount_currency": "NZD",
+      "amount_period": "one_off",
+      "amount_note": "Co-funding grant for businesses with limited R&D experience to start an eligible R&D project, delivered by MBIE Innovation Services at funds.business.govt.nz (transferred from Callaghan Innovation, disestablished December 2025).",
+      "is_automatic": false,
+      "application_url": "https://funds.business.govt.nz/",
+      "application_channel": "online",
+      "deadline_type": "window",
+      "deadline_note": "Application rounds published on the funding portal",
+      "procedure_steps": [
+        {
+          "step": 1,
+          "detail": "Check current funding rounds on the Innovation Services portal",
+          "url": "https://funds.business.govt.nz"
+        },
+        {
+          "step": 2,
+          "detail": "Submit an application with your R&D project plan",
+          "url": null
+        }
+      ],
+      "documents_required": [
+        {
+          "doc": "R&D project plan and budget",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Business financials",
+          "mandatory": true,
+          "note": null
+        }
+      ],
+      "eligibility": {
+        "statuses": [
+          "self_employed"
+        ],
+        "age_min": null,
+        "age_max": null,
+        "income_annual_max": null,
+        "income_note": "For NZ-registered businesses new to R&D",
+        "requires_children": false,
+        "nationality": "any",
+        "residency_months_min": null,
+        "housing_tenure": null,
+        "student_required": false,
+        "admin_areas": []
+      },
+      "source_url": "https://funds.business.govt.nz/",
+      "source_snippet": "MBIE continues to co-fund... innovation grants including the New to R&D Grant (now under Innovation Services at funds.business.govt.nz).",
+      "last_verified_at": "2026-08-12",
+      "verification_status": "auto_extracted"
+    },
+    {
+      "slug": "maori-business-support",
+      "name_local": "Te Puni Kōkiri Māori Business Support",
+      "name_en": "Māori business growth support (Te Puni Kōkiri)",
+      "admin_level": "national",
+      "admin_area": null,
+      "funder": "Te Puni Kōkiri (Ministry for Māori Development)",
+      "category": "business",
+      "benefit_type": "in_kind",
+      "amount_min": null,
+      "amount_max": null,
+      "amount_currency": "NZD",
+      "amount_period": "one_off",
+      "amount_note": "Business growth advisors, connections to Māori business networks and access to the Māori Development Fund for Māori-led businesses, trusts and enterprises.",
+      "is_automatic": false,
+      "application_url": "https://www.tpk.govt.nz/",
+      "application_channel": "online",
+      "deadline_type": "rolling",
+      "deadline_note": null,
+      "procedure_steps": [
+        {
+          "step": 1,
+          "detail": "Contact Te Puni Kōkiri regional office or Māori business network",
+          "url": "https://www.tpk.govt.nz"
+        },
+        {
+          "step": 2,
+          "detail": "Work with an advisor on growth support or funding applications",
+          "url": null
+        }
+      ],
+      "documents_required": [
+        {
+          "doc": "Business or trust details",
+          "mandatory": true,
+          "note": null
+        }
+      ],
+      "eligibility": {
+        "statuses": [
+          "self_employed"
+        ],
+        "age_min": null,
+        "age_max": null,
+        "income_annual_max": null,
+        "income_note": "For Māori-led businesses and entities",
+        "requires_children": false,
+        "nationality": "any",
+        "residency_months_min": null,
+        "housing_tenure": null,
+        "student_required": false,
+        "admin_areas": []
+      },
+      "source_url": "https://www.tpk.govt.nz/",
+      "source_snippet": "Te Puni Kōkiri delivers the Māori Development Fund, business growth advisors, and connections to Māori business networks.",
+      "last_verified_at": "2026-08-12",
+      "verification_status": "auto_extracted"
+    },
+    {
+      "slug": "pelt-english-tuition",
+      "name_local": "Pre-purchased English Language Tuition (PELT)",
+      "name_en": "PELT — pre-purchased English classes for migrants",
+      "admin_level": "national",
+      "admin_area": null,
+      "funder": "Tertiary Education Commission / English Language Partners New Zealand",
+      "category": "education",
+      "benefit_type": "in_kind",
+      "amount_min": null,
+      "amount_max": null,
+      "amount_currency": "NZD",
+      "amount_period": "one_off",
+      "amount_note": "Migrants who paid for English language tuition as part of their residence visa conditions can access funded ESOL classes through approved providers such as English Language Partners.",
+      "is_automatic": false,
+      "application_url": "https://www.englishlanguage.org.nz/",
+      "application_channel": "in_person",
+      "deadline_type": "rolling",
+      "deadline_note": "Classes must usually start within a set period of residence approval",
+      "procedure_steps": [
+        {
+          "step": 1,
+          "detail": "Check your visa letter for PELT entitlement",
+          "url": "https://www.immigration.govt.nz"
+        },
+        {
+          "step": 2,
+          "detail": "Enrol with English Language Partners or an approved provider",
+          "url": "https://www.englishlanguage.org.nz"
+        }
+      ],
+      "documents_required": [
+        {
+          "doc": "Visa letter showing PELT payment",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Passport or ID",
+          "mandatory": true,
+          "note": null
+        }
+      ],
+      "eligibility": {
+        "statuses": [],
+        "age_min": null,
+        "age_max": null,
+        "income_annual_max": null,
+        "income_note": "Pre-paid via visa levy; not income tested",
+        "requires_children": false,
+        "nationality": "refugee_or_protected",
+        "residency_months_min": null,
+        "housing_tenure": null,
+        "student_required": false,
+        "admin_areas": []
+      },
+      "source_url": "https://www.englishlanguage.org.nz/",
+      "source_snippet": "English Language Partners provides government-funded English language classes for eligible migrants and former refugees.",
+      "last_verified_at": "2026-08-12",
+      "verification_status": "auto_extracted"
+    },
+    {
+      "slug": "moneytalks-financial-mentoring",
+      "name_local": "MoneyTalks (FinCap)",
+      "name_en": "MoneyTalks — free financial mentoring helpline",
+      "admin_level": "national",
+      "admin_area": null,
+      "funder": "FinCap (National Building Financial Capability Charitable Trust, MSD-funded)",
+      "category": "income_support",
+      "benefit_type": "in_kind",
+      "amount_min": null,
+      "amount_max": null,
+      "amount_currency": "NZD",
+      "amount_period": "one_off",
+      "amount_note": "Free, confidential financial mentoring helpline (0800 345 123) connecting people to local budgeting services, help with benefit debt, no-interest budgeting advances and hardship support navigation.",
+      "is_automatic": true,
+      "application_url": "https://www.moneytalks.co.nz/",
+      "application_channel": "online",
+      "deadline_type": "rolling",
+      "deadline_note": null,
+      "procedure_steps": [
+        {
+          "step": 1,
+          "detail": "Call 0800 345 123, text or chat online with MoneyTalks",
+          "url": "https://www.moneytalks.co.nz"
+        },
+        {
+          "step": 2,
+          "detail": "Get connected to a free local financial mentor",
+          "url": null
+        }
+      ],
+      "documents_required": [
+        {
+          "doc": "None",
+          "mandatory": false,
+          "note": null
+        }
+      ],
+      "eligibility": {
+        "statuses": [],
+        "age_min": null,
+        "age_max": null,
+        "income_annual_max": null,
+        "income_note": "Free for everyone",
+        "requires_children": false,
+        "nationality": "any_resident",
+        "residency_months_min": null,
+        "housing_tenure": null,
+        "student_required": false,
+        "admin_areas": []
+      },
+      "source_url": "https://www.moneytalks.co.nz/",
+      "source_snippet": "MoneyTalks is a free helpline providing independent financial mentoring and connecting people to local budgeting services.",
+      "last_verified_at": "2026-08-12",
+      "verification_status": "auto_extracted"
+    },
+    {
+      "slug": "bank-sustainable-energy-loans",
+      "name_local": "Sustainable Energy Home Loan Top-ups (ANZ Good Energy, ASB, BNZ, Kiwibank)",
+      "name_en": "Bank green home-loan top-ups at around 1% for insulation, heating and solar",
+      "admin_level": "private",
+      "admin_area": null,
+      "funder": "ANZ, ASB, BNZ, Kiwibank (commercial banks)",
+      "category": "energy",
+      "benefit_type": "discount",
+      "amount_min": null,
+      "amount_max": 80000,
+      "amount_currency": "NZD",
+      "amount_period": "one_off",
+      "amount_note": "Major NZ banks offer existing home-loan customers top-up loans at around 1% p.a. (typically 3-year fixed) for energy upgrades — insulation, heat pumps, double glazing, solar, EV chargers — capped at $50,000–$80,000 depending on the bank.",
+      "is_automatic": false,
+      "application_url": "https://www.anz.co.nz/personal/home-loans-mortgages/home-loans/good-energy-home-loan/",
+      "application_channel": "in_person",
+      "deadline_type": "rolling",
+      "deadline_note": "Promotional rate applies for a fixed period; standard rate applies after",
+      "procedure_steps": [
+        {
+          "step": 1,
+          "detail": "Check your bank's sustainable/good energy loan offer",
+          "url": "https://www.anz.co.nz"
+        },
+        {
+          "step": 2,
+          "detail": "Apply with quotes for the energy upgrade work",
+          "url": null
+        }
+      ],
+      "documents_required": [
+        {
+          "doc": "Existing home loan with the bank",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Quotes for the energy upgrade",
+          "mandatory": true,
+          "note": null
+        }
+      ],
+      "eligibility": {
+        "statuses": [],
+        "age_min": null,
+        "age_max": null,
+        "income_annual_max": null,
+        "income_note": "Subject to bank lending criteria; usually requires an existing home loan",
+        "requires_children": false,
+        "nationality": "any_resident",
+        "residency_months_min": null,
+        "housing_tenure": "owner",
+        "student_required": false,
+        "admin_areas": []
+      },
+      "source_url": "https://www.anz.co.nz/",
+      "source_snippet": "The four major banks (ANZ, ASB, BNZ and Kiwibank) each offer an energy-upgrade loan capped at $80,000, fixed at around 1% p.a. for three years.",
+      "last_verified_at": "2026-08-12",
+      "verification_status": "auto_extracted"
+    }
+  ]
+}

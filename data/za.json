@@ -1,0 +1,4142 @@
+{
+  "country_code": "ZA",
+  "country_name": "South Africa",
+  "currency": "ZAR",
+  "language": "en",
+  "programmes": [
+    {
+      "slug": "sassa-older-persons-grant",
+      "name_local": "Older Person's Grant (Old Age Pension)",
+      "name_en": "Older Person's Grant",
+      "admin_level": "national",
+      "admin_area": null,
+      "funder": "South African Social Security Agency (SASSA)",
+      "category": "income_support",
+      "benefit_type": "cash_monthly",
+      "amount_min": 2400,
+      "amount_max": 2420,
+      "amount_currency": "ZAR",
+      "amount_period": "monthly",
+      "amount_note": "R2,400/month for ages 60-74 and R2,420/month for ages 75+ from April 2026 (2026/27 Budget); reviewed each April and October. Paid on a sliding scale if you have some income.",
+      "is_automatic": false,
+      "application_url": "https://www.sassa.gov.za",
+      "application_channel": "in_person",
+      "deadline_type": "rolling",
+      "deadline_note": null,
+      "procedure_steps": [
+        {
+          "step": 1,
+          "detail": "Visit your nearest SASSA office with the required documents",
+          "url": "https://www.sassa.gov.za"
+        },
+        {
+          "step": 2,
+          "detail": "Complete the application form in the presence of a SASSA official; fingerprinting is taken",
+          "url": null
+        },
+        {
+          "step": 3,
+          "detail": "Receive a receipt; if approved the grant is backdated to the application date (processing up to 90 days)",
+          "url": null
+        }
+      ],
+      "documents_required": [
+        {
+          "doc": "South African ID (13-digit bar-coded or smart ID)",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Proof of income/assets (payslips, bank statements or affidavit)",
+          "mandatory": true,
+          "note": "For means test"
+        }
+      ],
+      "eligibility": {
+        "statuses": [
+          "retired"
+        ],
+        "age_min": 60,
+        "age_max": null,
+        "income_annual_max": 96840,
+        "income_note": "Means test: single income below about R8,983/month (R96,840/yr) or R17,966/month combined if married; asset limits also apply",
+        "requires_children": false,
+        "nationality": "citizen_or_pr",
+        "residency_months_min": null,
+        "housing_tenure": null,
+        "student_required": false,
+        "admin_areas": []
+      },
+      "source_url": "https://www.sassa.gov.za",
+      "source_snippet": "Older Persons Grant, Disability Grant and Care Dependency Grant will increase by R80 to R2 400 ... from April 2026 (SASSA/SAnews 2026/27 announcement)",
+      "last_verified_at": "2026-08-12",
+      "verification_status": "verified"
+    },
+    {
+      "slug": "sassa-disability-grant",
+      "name_local": "Disability Grant",
+      "name_en": "Disability Grant",
+      "admin_level": "national",
+      "admin_area": null,
+      "funder": "South African Social Security Agency (SASSA)",
+      "category": "income_support",
+      "benefit_type": "cash_monthly",
+      "amount_min": 2400,
+      "amount_max": 2400,
+      "amount_currency": "ZAR",
+      "amount_period": "monthly",
+      "amount_note": "R2,400/month from April 2026. Temporary grants of 6-12 months are issued where the disability is temporary; permanent otherwise.",
+      "is_automatic": false,
+      "application_url": "https://www.sassa.gov.za",
+      "application_channel": "in_person",
+      "deadline_type": "rolling",
+      "deadline_note": null,
+      "procedure_steps": [
+        {
+          "step": 1,
+          "detail": "Visit your nearest SASSA office with the required documents",
+          "url": "https://www.sassa.gov.za"
+        },
+        {
+          "step": 2,
+          "detail": "Undergo a medical assessment by a state/SASSA-appointed medical officer",
+          "url": null
+        },
+        {
+          "step": 3,
+          "detail": "Complete the application at a SASSA office; decision within 90 days",
+          "url": null
+        }
+      ],
+      "documents_required": [
+        {
+          "doc": "South African ID (13-digit bar-coded or smart ID)",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Proof of income/assets (payslips, bank statements or affidavit)",
+          "mandatory": true,
+          "note": "For means test"
+        },
+        {
+          "doc": "Medical report/assessment confirming disability",
+          "mandatory": true,
+          "note": null
+        }
+      ],
+      "eligibility": {
+        "statuses": [
+          "unemployed"
+        ],
+        "age_min": 18,
+        "age_max": 59,
+        "income_annual_max": 96840,
+        "income_note": "Means-tested like the Older Person's Grant (about R96,840/yr single; R193,680/yr married); assets test applies",
+        "requires_children": false,
+        "nationality": "citizen_or_pr",
+        "residency_months_min": null,
+        "housing_tenure": null,
+        "student_required": false,
+        "admin_areas": []
+      },
+      "source_url": "https://www.sassa.gov.za",
+      "source_snippet": "Disability Grant ... will increase by R80 to R2 400 (Budget Speech increases effective April 2026)",
+      "last_verified_at": "2026-08-12",
+      "verification_status": "verified"
+    },
+    {
+      "slug": "sassa-child-support-grant",
+      "name_local": "Child Support Grant",
+      "name_en": "Child Support Grant",
+      "admin_level": "national",
+      "admin_area": null,
+      "funder": "South African Social Security Agency (SASSA)",
+      "category": "income_support",
+      "benefit_type": "cash_monthly",
+      "amount_min": 580,
+      "amount_max": 580,
+      "amount_currency": "ZAR",
+      "amount_period": "monthly",
+      "amount_note": "R580 per child per month from April 2026, paid to the primary caregiver (parent, grandparent or guardian) of a child under 18.",
+      "is_automatic": false,
+      "application_url": "https://www.sassa.gov.za",
+      "application_channel": "in_person",
+      "deadline_type": "rolling",
+      "deadline_note": null,
+      "procedure_steps": [
+        {
+          "step": 1,
+          "detail": "Visit your nearest SASSA office with the required documents",
+          "url": "https://www.sassa.gov.za"
+        },
+        {
+          "step": 2,
+          "detail": "Complete the application form in the presence of a SASSA official; fingerprinting is taken",
+          "url": null
+        },
+        {
+          "step": 3,
+          "detail": "Receive a receipt; if approved the grant is backdated to the application date (processing up to 90 days)",
+          "url": null
+        }
+      ],
+      "documents_required": [
+        {
+          "doc": "South African ID (13-digit bar-coded or smart ID)",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Child's birth certificate",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Proof of primary care (affidavit, school report or social worker note if not the parent)",
+          "mandatory": true,
+          "note": null
+        }
+      ],
+      "eligibility": {
+        "statuses": [
+          "parent"
+        ],
+        "age_min": null,
+        "age_max": null,
+        "income_annual_max": 57600,
+        "income_note": "Caregiver means test: about R4,800/month (R57,600/yr) single or R9,600/month (R115,200/yr) combined if married",
+        "requires_children": true,
+        "nationality": "citizen_or_pr",
+        "residency_months_min": null,
+        "housing_tenure": null,
+        "student_required": false,
+        "admin_areas": []
+      },
+      "source_url": "https://www.sassa.gov.za",
+      "source_snippet": "Child Support Grant and Grant-In-Aid will increase by R20 to R580 (Budget increases effective April 2026)",
+      "last_verified_at": "2026-08-12",
+      "verification_status": "verified"
+    },
+    {
+      "slug": "sassa-foster-child-grant",
+      "name_local": "Foster Child Grant",
+      "name_en": "Foster Child Grant",
+      "admin_level": "national",
+      "admin_area": null,
+      "funder": "South African Social Security Agency (SASSA)",
+      "category": "income_support",
+      "benefit_type": "cash_monthly",
+      "amount_min": 1290,
+      "amount_max": 1290,
+      "amount_currency": "ZAR",
+      "amount_period": "monthly",
+      "amount_note": "R1,290 per foster child per month from April 2026. Not means-tested; requires a court order placing the child in your foster care.",
+      "is_automatic": false,
+      "application_url": "https://www.sassa.gov.za",
+      "application_channel": "in_person",
+      "deadline_type": "rolling",
+      "deadline_note": null,
+      "procedure_steps": [
+        {
+          "step": 1,
+          "detail": "Visit your nearest SASSA office with the required documents",
+          "url": "https://www.sassa.gov.za"
+        },
+        {
+          "step": 2,
+          "detail": "Complete the application form in the presence of a SASSA official; fingerprinting is taken",
+          "url": null
+        },
+        {
+          "step": 3,
+          "detail": "Receive a receipt; if approved the grant is backdated to the application date (processing up to 90 days)",
+          "url": null
+        }
+      ],
+      "documents_required": [
+        {
+          "doc": "South African ID (13-digit bar-coded or smart ID)",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Court order confirming foster care placement",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Child's birth certificate",
+          "mandatory": true,
+          "note": null
+        }
+      ],
+      "eligibility": {
+        "statuses": [
+          "parent"
+        ],
+        "age_min": null,
+        "age_max": null,
+        "income_annual_max": null,
+        "income_note": "No means test",
+        "requires_children": true,
+        "nationality": "citizen_or_pr",
+        "residency_months_min": null,
+        "housing_tenure": null,
+        "student_required": false,
+        "admin_areas": []
+      },
+      "source_url": "https://www.sassa.gov.za",
+      "source_snippet": "Foster Child Grant will increase by R40 to R1 290 (Budget increases effective April 2026)",
+      "last_verified_at": "2026-08-12",
+      "verification_status": "verified"
+    },
+    {
+      "slug": "sassa-care-dependency-grant",
+      "name_local": "Care Dependency Grant",
+      "name_en": "Care Dependency Grant",
+      "admin_level": "national",
+      "admin_area": null,
+      "funder": "South African Social Security Agency (SASSA)",
+      "category": "income_support",
+      "benefit_type": "cash_monthly",
+      "amount_min": 2400,
+      "amount_max": 2400,
+      "amount_currency": "ZAR",
+      "amount_period": "monthly",
+      "amount_note": "R2,400 per month from April 2026 for the caregiver of a child under 18 with a severe disability needing full-time home care.",
+      "is_automatic": false,
+      "application_url": "https://www.sassa.gov.za",
+      "application_channel": "in_person",
+      "deadline_type": "rolling",
+      "deadline_note": null,
+      "procedure_steps": [
+        {
+          "step": 1,
+          "detail": "Visit your nearest SASSA office with the required documents",
+          "url": "https://www.sassa.gov.za"
+        },
+        {
+          "step": 2,
+          "detail": "Complete the application form in the presence of a SASSA official; fingerprinting is taken",
+          "url": null
+        },
+        {
+          "step": 3,
+          "detail": "Receive a receipt; if approved the grant is backdated to the application date (processing up to 90 days)",
+          "url": null
+        }
+      ],
+      "documents_required": [
+        {
+          "doc": "South African ID (13-digit bar-coded or smart ID)",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Medical assessment confirming the child's severe disability",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Proof of income/assets (payslips, bank statements or affidavit)",
+          "mandatory": true,
+          "note": "For means test"
+        }
+      ],
+      "eligibility": {
+        "statuses": [
+          "parent"
+        ],
+        "age_min": null,
+        "age_max": null,
+        "income_annual_max": 96840,
+        "income_note": "Means-tested (caregiver income, similar to Older Person's Grant thresholds)",
+        "requires_children": true,
+        "nationality": "citizen_or_pr",
+        "residency_months_min": null,
+        "housing_tenure": null,
+        "student_required": false,
+        "admin_areas": []
+      },
+      "source_url": "https://www.sassa.gov.za",
+      "source_snippet": "Care Dependency Grant will increase by R80 to R2 400 (Budget increases effective April 2026)",
+      "last_verified_at": "2026-08-12",
+      "verification_status": "verified"
+    },
+    {
+      "slug": "sassa-grant-in-aid",
+      "name_local": "Grant-in-Aid",
+      "name_en": "Grant-in-Aid",
+      "admin_level": "national",
+      "admin_area": null,
+      "funder": "South African Social Security Agency (SASSA)",
+      "category": "income_support",
+      "benefit_type": "cash_monthly",
+      "amount_min": 580,
+      "amount_max": 580,
+      "amount_currency": "ZAR",
+      "amount_period": "monthly",
+      "amount_note": "R580 per month from April 2026, paid in addition to an Older Person's, Disability or War Veterans Grant when the beneficiary needs full-time care from another person.",
+      "is_automatic": false,
+      "application_url": "https://www.sassa.gov.za",
+      "application_channel": "in_person",
+      "deadline_type": "rolling",
+      "deadline_note": null,
+      "procedure_steps": [
+        {
+          "step": 1,
+          "detail": "Visit your nearest SASSA office with the required documents",
+          "url": "https://www.sassa.gov.za"
+        },
+        {
+          "step": 2,
+          "detail": "Complete the application form in the presence of a SASSA official; fingerprinting is taken",
+          "url": null
+        },
+        {
+          "step": 3,
+          "detail": "Receive a receipt; if approved the grant is backdated to the application date (processing up to 90 days)",
+          "url": null
+        }
+      ],
+      "documents_required": [
+        {
+          "doc": "South African ID (13-digit bar-coded or smart ID)",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Medical report confirming need for full-time care",
+          "mandatory": true,
+          "note": null
+        }
+      ],
+      "eligibility": {
+        "statuses": [],
+        "age_min": null,
+        "age_max": null,
+        "income_annual_max": null,
+        "income_note": "Only payable on top of an existing adult SASSA grant; not a stand-alone grant",
+        "requires_children": false,
+        "nationality": "citizen_or_pr",
+        "residency_months_min": null,
+        "housing_tenure": null,
+        "student_required": false,
+        "admin_areas": []
+      },
+      "source_url": "https://www.sassa.gov.za",
+      "source_snippet": "Grant-In-Aid will increase by R20 to R580 (Budget increases effective April 2026)",
+      "last_verified_at": "2026-08-12",
+      "verification_status": "verified"
+    },
+    {
+      "slug": "sassa-war-veterans-grant",
+      "name_local": "War Veterans Grant",
+      "name_en": "War Veterans Grant",
+      "admin_level": "national",
+      "admin_area": null,
+      "funder": "South African Social Security Agency (SASSA)",
+      "category": "income_support",
+      "benefit_type": "cash_monthly",
+      "amount_min": 2420,
+      "amount_max": 2420,
+      "amount_currency": "ZAR",
+      "amount_period": "monthly",
+      "amount_note": "R2,420 per month from April 2026 for veterans of the First/Second World War or the Korean War who are 60+ or disabled and meet the means test. Very few beneficiaries remain.",
+      "is_automatic": false,
+      "application_url": "https://www.sassa.gov.za",
+      "application_channel": "in_person",
+      "deadline_type": "rolling",
+      "deadline_note": null,
+      "procedure_steps": [
+        {
+          "step": 1,
+          "detail": "Visit your nearest SASSA office with the required documents",
+          "url": "https://www.sassa.gov.za"
+        },
+        {
+          "step": 2,
+          "detail": "Complete the application form in the presence of a SASSA official; fingerprinting is taken",
+          "url": null
+        },
+        {
+          "step": 3,
+          "detail": "Receive a receipt; if approved the grant is backdated to the application date (processing up to 90 days)",
+          "url": null
+        }
+      ],
+      "documents_required": [
+        {
+          "doc": "South African ID (13-digit bar-coded or smart ID)",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Proof of war service",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Proof of income/assets (payslips, bank statements or affidavit)",
+          "mandatory": true,
+          "note": "For means test"
+        }
+      ],
+      "eligibility": {
+        "statuses": [],
+        "age_min": 60,
+        "age_max": null,
+        "income_annual_max": 96840,
+        "income_note": "Means-tested",
+        "requires_children": false,
+        "nationality": "citizen_or_pr",
+        "residency_months_min": null,
+        "housing_tenure": null,
+        "student_required": false,
+        "admin_areas": []
+      },
+      "source_url": "https://www.sassa.gov.za",
+      "source_snippet": "War Veterans Grant will increase by R80 to R2 420 (Budget increases effective April 2026)",
+      "last_verified_at": "2026-08-12",
+      "verification_status": "verified"
+    },
+    {
+      "slug": "sassa-srd-grant",
+      "name_local": "COVID-19 Social Relief of Distress (SRD) Grant",
+      "name_en": "Social Relief of Distress Grant (R370)",
+      "admin_level": "national",
+      "admin_area": null,
+      "funder": "South African Social Security Agency (SASSA)",
+      "category": "income_support",
+      "benefit_type": "cash_monthly",
+      "amount_min": 370,
+      "amount_max": 370,
+      "amount_currency": "ZAR",
+      "amount_period": "monthly",
+      "amount_note": "R370 per month for approved applicants. Extended from 1 April 2026 to 31 March 2027; reassessed every month. Cannot be held with other grants, UIF or NSFAS.",
+      "is_automatic": false,
+      "application_url": "https://srd.sassa.gov.za",
+      "application_channel": "online",
+      "deadline_type": "rolling",
+      "deadline_note": "Extended to 31 March 2027; monthly re-assessment",
+      "procedure_steps": [
+        {
+          "step": 1,
+          "detail": "Apply online at srd.sassa.gov.za (or WhatsApp 082 046 8553 / USSD *134*7737#) with ID and cellphone number",
+          "url": "https://srd.sassa.gov.za"
+        },
+        {
+          "step": 2,
+          "detail": "Consent to monthly bank/income verification; check your status each month",
+          "url": null
+        },
+        {
+          "step": 3,
+          "detail": "If declined, lodge an appeal within 90 days via the DSD appeals portal (ITSAA)",
+          "url": "https://srd.sassa.gov.za/appeals"
+        }
+      ],
+      "documents_required": [
+        {
+          "doc": "South African ID (13-digit bar-coded or smart ID)",
+          "mandatory": true,
+          "note": null
+        }
+      ],
+      "eligibility": {
+        "statuses": [
+          "unemployed",
+          "jobseeker"
+        ],
+        "age_min": 18,
+        "age_max": 59,
+        "income_annual_max": 7488,
+        "income_note": "Monthly income/deposits must be below R624 (about R7,488/yr); must not receive other social grants, UIF or NSFAS",
+        "requires_children": false,
+        "nationality": "any_resident",
+        "residency_months_min": null,
+        "housing_tenure": null,
+        "student_required": false,
+        "admin_areas": []
+      },
+      "source_url": "https://srd.sassa.gov.za",
+      "source_snippet": "The R370 provision would be paid to successful applicants for the 01 April 2026 to 31 March 2027 extension period (DSD/SAnews)",
+      "last_verified_at": "2026-08-12",
+      "verification_status": "verified"
+    },
+    {
+      "slug": "sassa-csg-top-up",
+      "name_local": "Child Support Grant Top-Up",
+      "name_en": "Child Support Grant Top-Up",
+      "admin_level": "national",
+      "admin_area": null,
+      "funder": "South African Social Security Agency (SASSA)",
+      "category": "income_support",
+      "benefit_type": "cash_monthly",
+      "amount_min": null,
+      "amount_max": null,
+      "amount_currency": "ZAR",
+      "amount_period": "monthly",
+      "amount_note": "An additional top-up on the Child Support Grant for orphaned children cared for by relatives (previously about R250-R280/month on top of the base CSG). Amount adjusts with the CSG each year.",
+      "is_automatic": false,
+      "application_url": "https://www.sassa.gov.za",
+      "application_channel": "in_person",
+      "deadline_type": "rolling",
+      "deadline_note": null,
+      "procedure_steps": [
+        {
+          "step": 1,
+          "detail": "Visit your nearest SASSA office with the required documents",
+          "url": "https://www.sassa.gov.za"
+        },
+        {
+          "step": 2,
+          "detail": "Complete the application form in the presence of a SASSA official; fingerprinting is taken",
+          "url": null
+        },
+        {
+          "step": 3,
+          "detail": "Receive a receipt; if approved the grant is backdated to the application date (processing up to 90 days)",
+          "url": null
+        }
+      ],
+      "documents_required": [
+        {
+          "doc": "South African ID (13-digit bar-coded or smart ID)",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Proof the child is orphaned (death certificates) or in vulnerable circumstances",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Proof you are the primary caregiver",
+          "mandatory": true,
+          "note": null
+        }
+      ],
+      "eligibility": {
+        "statuses": [
+          "parent"
+        ],
+        "age_min": null,
+        "age_max": null,
+        "income_annual_max": null,
+        "income_note": "CSG caregiver means test applies",
+        "requires_children": true,
+        "nationality": "citizen_or_pr",
+        "residency_months_min": null,
+        "housing_tenure": null,
+        "student_required": false,
+        "admin_areas": []
+      },
+      "source_url": "https://www.sassa.gov.za",
+      "source_snippet": "SASSA administers ... Child Support Grant Top-Up alongside the other children's grants",
+      "last_verified_at": "2026-08-12",
+      "verification_status": "auto_extracted"
+    },
+    {
+      "slug": "free-basic-electricity",
+      "name_local": "Free Basic Electricity (FBE)",
+      "name_en": "Free Basic Electricity",
+      "admin_level": "national",
+      "admin_area": null,
+      "funder": "Municipalities / Eskom (funded via Local Government Equitable Share; NERSA-regulated)",
+      "category": "energy",
+      "benefit_type": "free_slab",
+      "amount_min": null,
+      "amount_max": null,
+      "amount_currency": "ZAR",
+      "amount_period": "monthly",
+      "amount_note": "50 kWh free electricity per household per month under the Electricity Basic Services Support Tariff policy (some municipalities give 60 kWh; Cape Town is tiered 25-60 units). NERSA set the 2026/27 FBE rate at 238.60c/kWh.",
+      "is_automatic": false,
+      "application_url": null,
+      "application_channel": "in_person",
+      "deadline_type": "annual",
+      "deadline_note": "Most municipalities require annual re-registration on the indigent register",
+      "procedure_steps": [
+        {
+          "step": 1,
+          "detail": "Register on your municipality's indigent register (take ID, proof of address, proof of income or SASSA letter, meter number)",
+          "url": null
+        },
+        {
+          "step": 2,
+          "detail": "If approved, free units are loaded monthly to your prepaid meter (usually from the 1st)",
+          "url": null
+        },
+        {
+          "step": 3,
+          "detail": "Re-apply each year to keep the allocation",
+          "url": null
+        }
+      ],
+      "documents_required": [
+        {
+          "doc": "South African ID (13-digit bar-coded or smart ID)",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Proof of income or SASSA grant letter",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Electricity meter number / municipal account",
+          "mandatory": true,
+          "note": null
+        }
+      ],
+      "eligibility": {
+        "statuses": [],
+        "age_min": null,
+        "age_max": null,
+        "income_annual_max": null,
+        "income_note": "Each municipality sets its own threshold (commonly combined household income of about R3,200-R7,800/month; some use property value caps). Arrears can disqualify you.",
+        "requires_children": false,
+        "nationality": "citizen_or_pr",
+        "residency_months_min": null,
+        "housing_tenure": null,
+        "student_required": false,
+        "admin_areas": []
+      },
+      "source_url": "https://www.eskom.co.za",
+      "source_snippet": "The policy aims to provide a monthly allocation of 50 kilowatt-hours (kWh) of electricity to indigent households identified by municipalities (NERSA EBSST policy)",
+      "last_verified_at": "2026-08-12",
+      "verification_status": "verified"
+    },
+    {
+      "slug": "free-basic-water",
+      "name_local": "Free Basic Water",
+      "name_en": "Free Basic Water",
+      "admin_level": "national",
+      "admin_area": null,
+      "funder": "Municipalities (funded via Local Government Equitable Share)",
+      "category": "housing",
+      "benefit_type": "free_slab",
+      "amount_min": null,
+      "amount_max": null,
+      "amount_currency": "ZAR",
+      "amount_period": "monthly",
+      "amount_note": "At least 6 kilolitres (6,000 litres) of water free per household per month under the national Free Basic Water policy; some municipalities give more. Free to registered indigent households (in some municipalities to all households).",
+      "is_automatic": false,
+      "application_url": null,
+      "application_channel": "in_person",
+      "deadline_type": "annual",
+      "deadline_note": "Annual indigent re-registration in most municipalities",
+      "procedure_steps": [
+        {
+          "step": 1,
+          "detail": "Register as an indigent household at your municipality",
+          "url": null
+        },
+        {
+          "step": 2,
+          "detail": "The free allocation is credited automatically on your monthly municipal account",
+          "url": null
+        }
+      ],
+      "documents_required": [
+        {
+          "doc": "South African ID (13-digit bar-coded or smart ID)",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Proof of income or SASSA grant letter",
+          "mandatory": true,
+          "note": null
+        }
+      ],
+      "eligibility": {
+        "statuses": [],
+        "age_min": null,
+        "age_max": null,
+        "income_annual_max": null,
+        "income_note": "Municipal indigent thresholds apply (commonly household income of about R3,200-R7,800/month)",
+        "requires_children": false,
+        "nationality": "citizen_or_pr",
+        "residency_months_min": null,
+        "housing_tenure": null,
+        "student_required": false,
+        "admin_areas": []
+      },
+      "source_url": "https://www.cogta.gov.za",
+      "source_snippet": "The general rule is that indigent households are entitled to 6 kl of free water per household per month and 50 kWh of free electricity",
+      "last_verified_at": "2026-08-12",
+      "verification_status": "verified"
+    },
+    {
+      "slug": "free-basic-sanitation",
+      "name_local": "Free Basic Sanitation",
+      "name_en": "Free Basic Sanitation",
+      "admin_level": "national",
+      "admin_area": null,
+      "funder": "Municipalities",
+      "category": "housing",
+      "benefit_type": "free_slab",
+      "amount_min": null,
+      "amount_max": null,
+      "amount_currency": "ZAR",
+      "amount_period": "monthly",
+      "amount_note": "Registered indigent households receive free or 100% subsidised sanitation/sewerage (volumetric allocation or full subsidy, varies by municipality).",
+      "is_automatic": false,
+      "application_url": null,
+      "application_channel": "in_person",
+      "deadline_type": "annual",
+      "deadline_note": "Re-registration with the indigent register",
+      "procedure_steps": [
+        {
+          "step": 1,
+          "detail": "Register on the municipal indigent register",
+          "url": null
+        }
+      ],
+      "documents_required": [
+        {
+          "doc": "South African ID (13-digit bar-coded or smart ID)",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Proof of income",
+          "mandatory": true,
+          "note": null
+        }
+      ],
+      "eligibility": {
+        "statuses": [],
+        "age_min": null,
+        "age_max": null,
+        "income_annual_max": null,
+        "income_note": "Municipal indigent thresholds apply",
+        "requires_children": false,
+        "nationality": "citizen_or_pr",
+        "residency_months_min": null,
+        "housing_tenure": null,
+        "student_required": false,
+        "admin_areas": []
+      },
+      "source_url": "https://www.cogta.gov.za",
+      "source_snippet": "All metropolitan municipalities provide free basic services to qualifying indigent households, including water, electricity, sanitation, and refuse removal (COGTA parliamentary reply)",
+      "last_verified_at": "2026-08-12",
+      "verification_status": "auto_extracted"
+    },
+    {
+      "slug": "free-basic-refuse-removal",
+      "name_local": "Free Basic Refuse Removal",
+      "name_en": "Free Basic Refuse Removal",
+      "admin_level": "national",
+      "admin_area": null,
+      "funder": "Municipalities",
+      "category": "housing",
+      "benefit_type": "free_slab",
+      "amount_min": null,
+      "amount_max": null,
+      "amount_currency": "ZAR",
+      "amount_period": "monthly",
+      "amount_note": "Registered indigent households receive free (generally 100% subsidised) weekly refuse removal.",
+      "is_automatic": false,
+      "application_url": null,
+      "application_channel": "in_person",
+      "deadline_type": "annual",
+      "deadline_note": "Re-registration with the indigent register",
+      "procedure_steps": [
+        {
+          "step": 1,
+          "detail": "Register on the municipal indigent register",
+          "url": null
+        }
+      ],
+      "documents_required": [
+        {
+          "doc": "South African ID (13-digit bar-coded or smart ID)",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Proof of income",
+          "mandatory": true,
+          "note": null
+        }
+      ],
+      "eligibility": {
+        "statuses": [],
+        "age_min": null,
+        "age_max": null,
+        "income_annual_max": null,
+        "income_note": "Municipal indigent thresholds apply",
+        "requires_children": false,
+        "nationality": "citizen_or_pr",
+        "residency_months_min": null,
+        "housing_tenure": null,
+        "student_required": false,
+        "admin_areas": []
+      },
+      "source_url": "https://www.cogta.gov.za",
+      "source_snippet": "Refuse removal: Generally 100% subsidised (COGTA parliamentary reply on metro indigent programmes)",
+      "last_verified_at": "2026-08-12",
+      "verification_status": "auto_extracted"
+    },
+    {
+      "slug": "free-basic-alternative-energy",
+      "name_local": "Free Basic Alternative Energy",
+      "name_en": "Free Basic Alternative Energy",
+      "admin_level": "national",
+      "admin_area": null,
+      "funder": "Department of Mineral Resources and Energy / municipalities",
+      "category": "energy",
+      "benefit_type": "in_kind",
+      "amount_min": null,
+      "amount_max": null,
+      "amount_currency": "ZAR",
+      "amount_period": "monthly",
+      "amount_note": "Registered indigent households not connected to the electricity grid receive a free monthly allocation of alternative energy (e.g. paraffin, LPG or gel fuel) in participating municipalities.",
+      "is_automatic": false,
+      "application_url": null,
+      "application_channel": "in_person",
+      "deadline_type": "annual",
+      "deadline_note": "Indigent re-registration",
+      "procedure_steps": [
+        {
+          "step": 1,
+          "detail": "Register on the municipal indigent register and indicate you have no electricity connection",
+          "url": null
+        }
+      ],
+      "documents_required": [
+        {
+          "doc": "South African ID (13-digit bar-coded or smart ID)",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Proof of income",
+          "mandatory": true,
+          "note": null
+        }
+      ],
+      "eligibility": {
+        "statuses": [],
+        "age_min": null,
+        "age_max": null,
+        "income_annual_max": null,
+        "income_note": "Indigent households without grid electricity",
+        "requires_children": false,
+        "nationality": "citizen_or_pr",
+        "residency_months_min": null,
+        "housing_tenure": null,
+        "student_required": false,
+        "admin_areas": []
+      },
+      "source_url": "https://www.energy.gov.za",
+      "source_snippet": "Non-grid indigent households may receive free basic alternative energy such as paraffin or LPG under municipal indigent policies",
+      "last_verified_at": "2026-08-12",
+      "verification_status": "auto_extracted"
+    },
+    {
+      "slug": "joburg-expanded-social-package",
+      "name_local": "City of Johannesburg Expanded Social Package (ESP)",
+      "name_en": "City of Johannesburg Expanded Social Package (ESP)",
+      "admin_level": "city",
+      "admin_area": "City of Johannesburg",
+      "funder": "City of Johannesburg",
+      "category": "housing",
+      "benefit_type": "discount",
+      "amount_min": null,
+      "amount_max": null,
+      "amount_currency": "ZAR",
+      "amount_period": "monthly",
+      "amount_note": "Rebates of 50-100% on property rates, water, electricity, refuse and sewerage for qualifying low-income households; general threshold is a combined household income of up to about R7,800/month (pensioners assessed on property value).",
+      "is_automatic": false,
+      "application_url": null,
+      "application_channel": "in_person",
+      "deadline_type": "annual",
+      "deadline_note": "Indigent registration must usually be renewed yearly",
+      "procedure_steps": [
+        {
+          "step": 1,
+          "detail": "Apply at a municipal customer care centre or online with ID, proof of income and municipal account",
+          "url": "https://www.joburg.org.za"
+        },
+        {
+          "step": 2,
+          "detail": "Municipality vets the application and adds you to the indigent register",
+          "url": null
+        }
+      ],
+      "documents_required": [
+        {
+          "doc": "South African ID (13-digit bar-coded or smart ID)",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Municipal account / proof of address",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Proof of income of all household members",
+          "mandatory": true,
+          "note": null
+        }
+      ],
+      "eligibility": {
+        "statuses": [],
+        "age_min": null,
+        "age_max": null,
+        "income_annual_max": null,
+        "income_note": "Rebates of 50-100% on property rates, water, electricity, refuse and sewerage for qualifying low-income households; general threshold is a combined household income of up to about R7,800/month (pensioners assessed on property value).",
+        "requires_children": false,
+        "nationality": "citizen_or_pr",
+        "residency_months_min": null,
+        "housing_tenure": null,
+        "student_required": false,
+        "admin_areas": [
+          "Gauteng"
+        ]
+      },
+      "source_url": "https://www.joburg.org.za",
+      "source_snippet": null,
+      "last_verified_at": "2026-08-12",
+      "verification_status": "auto_extracted"
+    },
+    {
+      "slug": "cape-town-indigent-relief",
+      "name_local": "City of Cape Town Indigent and Rates Relief",
+      "name_en": "City of Cape Town Indigent and Rates Relief",
+      "admin_level": "city",
+      "admin_area": "City of Cape Town",
+      "funder": "City of Cape Town",
+      "category": "housing",
+      "benefit_type": "discount",
+      "amount_min": null,
+      "amount_max": null,
+      "amount_currency": "ZAR",
+      "amount_period": "monthly",
+      "amount_note": "Indigent grant: free basic services (water, sanitation, refuse, electricity) plus rates relief for households with a combined monthly income of up to about R7,500 (property value caps apply). Pensioner rates rebates also available.",
+      "is_automatic": false,
+      "application_url": null,
+      "application_channel": "in_person",
+      "deadline_type": "annual",
+      "deadline_note": "Indigent registration must usually be renewed yearly",
+      "procedure_steps": [
+        {
+          "step": 1,
+          "detail": "Apply at a municipal customer care centre or online with ID, proof of income and municipal account",
+          "url": "https://www.capetown.gov.za"
+        },
+        {
+          "step": 2,
+          "detail": "Municipality vets the application and adds you to the indigent register",
+          "url": null
+        }
+      ],
+      "documents_required": [
+        {
+          "doc": "South African ID (13-digit bar-coded or smart ID)",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Municipal account / proof of address",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Proof of income of all household members",
+          "mandatory": true,
+          "note": null
+        }
+      ],
+      "eligibility": {
+        "statuses": [],
+        "age_min": null,
+        "age_max": null,
+        "income_annual_max": null,
+        "income_note": "Indigent grant: free basic services (water, sanitation, refuse, electricity) plus rates relief for households with a combined monthly income of up to about R7,500 (property value caps apply). Pensioner rates rebates also available.",
+        "requires_children": false,
+        "nationality": "citizen_or_pr",
+        "residency_months_min": null,
+        "housing_tenure": null,
+        "student_required": false,
+        "admin_areas": [
+          "Western Cape"
+        ]
+      },
+      "source_url": "https://www.capetown.gov.za",
+      "source_snippet": null,
+      "last_verified_at": "2026-08-12",
+      "verification_status": "auto_extracted"
+    },
+    {
+      "slug": "ethekwini-indigent-support",
+      "name_local": "eThekwini Municipality Indigent Support",
+      "name_en": "eThekwini Municipality Indigent Support",
+      "admin_level": "city",
+      "admin_area": "eThekwini",
+      "funder": "eThekwini Municipality",
+      "category": "housing",
+      "benefit_type": "discount",
+      "amount_min": null,
+      "amount_max": null,
+      "amount_currency": "ZAR",
+      "amount_period": "monthly",
+      "amount_note": "Free basic water, electricity, sanitation and refuse plus rates relief for registered indigent households (eThekwini has the largest indigent register of the metros).",
+      "is_automatic": false,
+      "application_url": null,
+      "application_channel": "in_person",
+      "deadline_type": "annual",
+      "deadline_note": "Indigent registration must usually be renewed yearly",
+      "procedure_steps": [
+        {
+          "step": 1,
+          "detail": "Apply at a municipal customer care centre or online with ID, proof of income and municipal account",
+          "url": "https://www.durban.gov.za"
+        },
+        {
+          "step": 2,
+          "detail": "Municipality vets the application and adds you to the indigent register",
+          "url": null
+        }
+      ],
+      "documents_required": [
+        {
+          "doc": "South African ID (13-digit bar-coded or smart ID)",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Municipal account / proof of address",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Proof of income of all household members",
+          "mandatory": true,
+          "note": null
+        }
+      ],
+      "eligibility": {
+        "statuses": [],
+        "age_min": null,
+        "age_max": null,
+        "income_annual_max": null,
+        "income_note": "Free basic water, electricity, sanitation and refuse plus rates relief for registered indigent households (eThekwini has the largest indigent register of the metros).",
+        "requires_children": false,
+        "nationality": "citizen_or_pr",
+        "residency_months_min": null,
+        "housing_tenure": null,
+        "student_required": false,
+        "admin_areas": [
+          "KwaZulu-Natal"
+        ]
+      },
+      "source_url": "https://www.durban.gov.za",
+      "source_snippet": null,
+      "last_verified_at": "2026-08-12",
+      "verification_status": "auto_extracted"
+    },
+    {
+      "slug": "tshwane-indigent-support",
+      "name_local": "City of Tshwane Indigent Support Programme",
+      "name_en": "City of Tshwane Indigent Support Programme",
+      "admin_level": "city",
+      "admin_area": "City of Tshwane",
+      "funder": "City of Tshwane",
+      "category": "housing",
+      "benefit_type": "discount",
+      "amount_min": null,
+      "amount_max": null,
+      "amount_currency": "ZAR",
+      "amount_period": "monthly",
+      "amount_note": "Free basic services and rates rebates for registered indigent households; pensioners receive additional property rates relief.",
+      "is_automatic": false,
+      "application_url": null,
+      "application_channel": "in_person",
+      "deadline_type": "annual",
+      "deadline_note": "Indigent registration must usually be renewed yearly",
+      "procedure_steps": [
+        {
+          "step": 1,
+          "detail": "Apply at a municipal customer care centre or online with ID, proof of income and municipal account",
+          "url": "https://www.tshwane.gov.za"
+        },
+        {
+          "step": 2,
+          "detail": "Municipality vets the application and adds you to the indigent register",
+          "url": null
+        }
+      ],
+      "documents_required": [
+        {
+          "doc": "South African ID (13-digit bar-coded or smart ID)",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Municipal account / proof of address",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Proof of income of all household members",
+          "mandatory": true,
+          "note": null
+        }
+      ],
+      "eligibility": {
+        "statuses": [],
+        "age_min": null,
+        "age_max": null,
+        "income_annual_max": null,
+        "income_note": "Free basic services and rates rebates for registered indigent households; pensioners receive additional property rates relief.",
+        "requires_children": false,
+        "nationality": "citizen_or_pr",
+        "residency_months_min": null,
+        "housing_tenure": null,
+        "student_required": false,
+        "admin_areas": [
+          "Gauteng"
+        ]
+      },
+      "source_url": "https://www.tshwane.gov.za",
+      "source_snippet": null,
+      "last_verified_at": "2026-08-12",
+      "verification_status": "auto_extracted"
+    },
+    {
+      "slug": "ekurhuleni-indigent-support",
+      "name_local": "City of Ekurhuleni Indigent Support (incl. deemed indigent)",
+      "name_en": "City of Ekurhuleni Indigent Support (incl. deemed indigent)",
+      "admin_level": "city",
+      "admin_area": "City of Ekurhuleni",
+      "funder": "City of Ekurhuleni",
+      "category": "housing",
+      "benefit_type": "discount",
+      "amount_min": null,
+      "amount_max": null,
+      "amount_currency": "ZAR",
+      "amount_period": "monthly",
+      "amount_note": "Free basic services package and rates relief; low-value properties are 'deemed indigent' and receive free basic services automatically.",
+      "is_automatic": false,
+      "application_url": null,
+      "application_channel": "in_person",
+      "deadline_type": "annual",
+      "deadline_note": "Indigent registration must usually be renewed yearly",
+      "procedure_steps": [
+        {
+          "step": 1,
+          "detail": "Apply at a municipal customer care centre or online with ID, proof of income and municipal account",
+          "url": "https://www.ekurhuleni.gov.za"
+        },
+        {
+          "step": 2,
+          "detail": "Municipality vets the application and adds you to the indigent register",
+          "url": null
+        }
+      ],
+      "documents_required": [
+        {
+          "doc": "South African ID (13-digit bar-coded or smart ID)",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Municipal account / proof of address",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Proof of income of all household members",
+          "mandatory": true,
+          "note": null
+        }
+      ],
+      "eligibility": {
+        "statuses": [],
+        "age_min": null,
+        "age_max": null,
+        "income_annual_max": null,
+        "income_note": "Free basic services package and rates relief; low-value properties are 'deemed indigent' and receive free basic services automatically.",
+        "requires_children": false,
+        "nationality": "citizen_or_pr",
+        "residency_months_min": null,
+        "housing_tenure": null,
+        "student_required": false,
+        "admin_areas": [
+          "Gauteng"
+        ]
+      },
+      "source_url": "https://www.ekurhuleni.gov.za",
+      "source_snippet": null,
+      "last_verified_at": "2026-08-12",
+      "verification_status": "auto_extracted"
+    },
+    {
+      "slug": "nelson-mandela-bay-attp",
+      "name_local": "Nelson Mandela Bay Assistance to the Poor (ATTP)",
+      "name_en": "Nelson Mandela Bay Assistance to the Poor (ATTP)",
+      "admin_level": "city",
+      "admin_area": "Nelson Mandela Bay",
+      "funder": "Nelson Mandela Bay Municipality",
+      "category": "housing",
+      "benefit_type": "discount",
+      "amount_min": null,
+      "amount_max": null,
+      "amount_currency": "ZAR",
+      "amount_period": "monthly",
+      "amount_note": "ATTP subsidy: free basic water, electricity, sanitation and refuse for registered poor households, assessed against household income.",
+      "is_automatic": false,
+      "application_url": null,
+      "application_channel": "in_person",
+      "deadline_type": "annual",
+      "deadline_note": "Indigent registration must usually be renewed yearly",
+      "procedure_steps": [
+        {
+          "step": 1,
+          "detail": "Apply at a municipal customer care centre or online with ID, proof of income and municipal account",
+          "url": "https://www.nelsonmandelabay.gov.za"
+        },
+        {
+          "step": 2,
+          "detail": "Municipality vets the application and adds you to the indigent register",
+          "url": null
+        }
+      ],
+      "documents_required": [
+        {
+          "doc": "South African ID (13-digit bar-coded or smart ID)",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Municipal account / proof of address",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Proof of income of all household members",
+          "mandatory": true,
+          "note": null
+        }
+      ],
+      "eligibility": {
+        "statuses": [],
+        "age_min": null,
+        "age_max": null,
+        "income_annual_max": null,
+        "income_note": "ATTP subsidy: free basic water, electricity, sanitation and refuse for registered poor households, assessed against household income.",
+        "requires_children": false,
+        "nationality": "citizen_or_pr",
+        "residency_months_min": null,
+        "housing_tenure": null,
+        "student_required": false,
+        "admin_areas": [
+          "Eastern Cape"
+        ]
+      },
+      "source_url": "https://www.nelsonmandelabay.gov.za",
+      "source_snippet": null,
+      "last_verified_at": "2026-08-12",
+      "verification_status": "auto_extracted"
+    },
+    {
+      "slug": "joburg-pensioners-rates-rebate",
+      "name_local": "City of Johannesburg Pensioners Property Rates Rebate",
+      "name_en": "Johannesburg Pensioners Rates Rebate",
+      "admin_level": "city",
+      "admin_area": "City of Johannesburg",
+      "funder": "City of Johannesburg",
+      "category": "housing",
+      "benefit_type": "discount",
+      "amount_min": null,
+      "amount_max": null,
+      "amount_currency": "ZAR",
+      "amount_period": "monthly",
+      "amount_note": "Property rates rebate of up to 100% for pensioners aged 60+ (70+ in some brackets) who own and occupy their home; depends on household income and property value.",
+      "is_automatic": false,
+      "application_url": "https://www.joburg.org.za",
+      "application_channel": "in_person",
+      "deadline_type": "annual",
+      "deadline_note": "Rebates are renewed periodically; re-apply before expiry",
+      "procedure_steps": [
+        {
+          "step": 1,
+          "detail": "Submit the pensioners rebate application with ID, proof of income and municipal account at a City of Joburg customer centre",
+          "url": "https://www.joburg.org.za"
+        }
+      ],
+      "documents_required": [
+        {
+          "doc": "South African ID (13-digit bar-coded or smart ID)",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Proof of income (pension/SASSA letter)",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Municipal rates account in applicant's name",
+          "mandatory": true,
+          "note": null
+        }
+      ],
+      "eligibility": {
+        "statuses": [
+          "retired"
+        ],
+        "age_min": 60,
+        "age_max": null,
+        "income_annual_max": null,
+        "income_note": "Income and property-value thresholds set in the City's rates policy",
+        "requires_children": false,
+        "nationality": "citizen_or_pr",
+        "residency_months_min": null,
+        "housing_tenure": "owner",
+        "student_required": false,
+        "admin_areas": [
+          "Gauteng"
+        ]
+      },
+      "source_url": "https://www.joburg.org.za",
+      "source_snippet": null,
+      "last_verified_at": "2026-08-12",
+      "verification_status": "auto_extracted"
+    },
+    {
+      "slug": "bng-rdp-housing",
+      "name_local": "Breaking New Ground (BNG) / RDP Free Subsidised House",
+      "name_en": "BNG (RDP) Government Subsidised House",
+      "admin_level": "national",
+      "admin_area": null,
+      "funder": "Department of Human Settlements (via provinces and municipalities)",
+      "category": "housing",
+      "benefit_type": "in_kind",
+      "amount_min": null,
+      "amount_max": null,
+      "amount_currency": "ZAR",
+      "amount_period": "one_off",
+      "amount_note": "A fully subsidised free house for qualifying households earning up to R3,500/month. Registration on the National Housing Needs Register; waiting times can be many years.",
+      "is_automatic": false,
+      "application_url": null,
+      "application_channel": "in_person",
+      "deadline_type": "rolling",
+      "deadline_note": "Allocation depends on housing project pipelines; no fixed deadline",
+      "procedure_steps": [
+        {
+          "step": 1,
+          "detail": "Register on the National Housing Needs Register at your municipal housing office or provincial Department of Human Settlements",
+          "url": null
+        },
+        {
+          "step": 2,
+          "detail": "Submit the housing subsidy application with ID, dependants' birth certificates and proof of income",
+          "url": null
+        },
+        {
+          "step": 3,
+          "detail": "Track your application status on the Housing Subsidy System (HSS) online",
+          "url": "https://www.dhs.gov.za"
+        }
+      ],
+      "documents_required": [
+        {
+          "doc": "South African ID (13-digit bar-coded or smart ID)",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Birth certificates of dependants",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Proof of income or unemployment affidavit",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Marriage certificate (if married)",
+          "mandatory": false,
+          "note": null
+        }
+      ],
+      "eligibility": {
+        "statuses": [],
+        "age_min": 18,
+        "age_max": null,
+        "income_annual_max": 42000,
+        "income_note": "Household income up to R3,500/month; must not previously have owned property or received a housing subsidy",
+        "requires_children": false,
+        "nationality": "citizen_or_pr",
+        "residency_months_min": null,
+        "housing_tenure": null,
+        "student_required": false,
+        "admin_areas": []
+      },
+      "source_url": "https://www.dhs.gov.za",
+      "source_snippet": "In most cases, BNG housing is aimed at households earning less than R3 500 per month ... must not have previously owned property",
+      "last_verified_at": "2026-08-12",
+      "verification_status": "verified"
+    },
+    {
+      "slug": "flisp-first-home-finance",
+      "name_local": "Finance Linked Individual Subsidy Programme (FLISP) / First Home Finance",
+      "name_en": "FLISP (First Home Finance)",
+      "admin_level": "national",
+      "admin_area": null,
+      "funder": "Department of Human Settlements / National Housing Finance Corporation (NHFC)",
+      "category": "housing",
+      "benefit_type": "cash_one_off",
+      "amount_min": 38911,
+      "amount_max": 169265,
+      "amount_currency": "ZAR",
+      "amount_period": "one_off",
+      "amount_note": "Once-off subsidy of R38,911 to R169,265 for first-time home buyers earning R3,501-R22,000/month; subsidy decreases as income rises. Paid to reduce the home loan or as deposit.",
+      "is_automatic": false,
+      "application_url": "https://www.nhfc.co.za",
+      "application_channel": "in_person",
+      "deadline_type": "rolling",
+      "deadline_note": null,
+      "procedure_steps": [
+        {
+          "step": 1,
+          "detail": "Obtain an approved home loan from a bank (bond approval is a prerequisite)",
+          "url": null
+        },
+        {
+          "step": 2,
+          "detail": "Apply for First Home Finance through your bank, bond originator or the NHFC",
+          "url": "https://www.nhfc.co.za"
+        },
+        {
+          "step": 3,
+          "detail": "Subsidy is paid to the bond attorney / against the home loan on registration",
+          "url": null
+        }
+      ],
+      "documents_required": [
+        {
+          "doc": "South African ID (13-digit bar-coded or smart ID)",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Bank home loan approval",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Payslips / proof of income",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "FICA documents",
+          "mandatory": true,
+          "note": null
+        }
+      ],
+      "eligibility": {
+        "statuses": [],
+        "age_min": 18,
+        "age_max": null,
+        "income_annual_max": 264000,
+        "income_note": "Gross household income R3,501-R22,000/month; first-time buyer; must not have received a housing subsidy before",
+        "requires_children": false,
+        "nationality": "citizen_or_pr",
+        "residency_months_min": null,
+        "housing_tenure": "owner",
+        "student_required": false,
+        "admin_areas": []
+      },
+      "source_url": "https://www.nhfc.co.za",
+      "source_snippet": "The benefit ranges from anything between R38,911 and R169,265 depending on your monthly income ... earning between R3,501 and R22,000 a month",
+      "last_verified_at": "2026-08-12",
+      "verification_status": "verified"
+    },
+    {
+      "slug": "social-housing-shra",
+      "name_local": "Social Housing Programme (SHRA-subsidised rental)",
+      "name_en": "Social Housing (subsidised rental)",
+      "admin_level": "national",
+      "admin_area": null,
+      "funder": "Social Housing Regulatory Authority (SHRA) / accredited social housing institutions",
+      "category": "housing",
+      "benefit_type": "discount",
+      "amount_min": null,
+      "amount_max": null,
+      "amount_currency": "ZAR",
+      "amount_period": "monthly",
+      "amount_note": "Below-market rental units in designated restructuring zones for households earning roughly R1,850-R22,000/month (primary band R1,850-R15,000); rents are set well below market and subsidised via the SHRA capital grant.",
+      "is_automatic": false,
+      "application_url": null,
+      "application_channel": "in_person",
+      "deadline_type": "rolling",
+      "deadline_note": null,
+      "procedure_steps": [
+        {
+          "step": 1,
+          "detail": "Apply to an accredited social housing institution (SHI) with a project in your area",
+          "url": "https://www.shra.org.za"
+        },
+        {
+          "step": 2,
+          "detail": "Provide ID, proof of income and household details; sign a lease if allocated",
+          "url": null
+        }
+      ],
+      "documents_required": [
+        {
+          "doc": "South African ID (13-digit bar-coded or smart ID)",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Proof of income",
+          "mandatory": true,
+          "note": null
+        }
+      ],
+      "eligibility": {
+        "statuses": [],
+        "age_min": null,
+        "age_max": null,
+        "income_annual_max": null,
+        "income_note": "Income bands set by SHRA policy (about R1,850-R22,000/month)",
+        "requires_children": false,
+        "nationality": "citizen_or_pr",
+        "residency_months_min": null,
+        "housing_tenure": "renting",
+        "student_required": false,
+        "admin_areas": []
+      },
+      "source_url": "https://www.shra.org.za",
+      "source_snippet": "Social housing provides subsidised rental accommodation to low- and middle-income households through accredited social housing institutions",
+      "last_verified_at": "2026-08-12",
+      "verification_status": "auto_extracted"
+    },
+    {
+      "slug": "emergency-housing-programme",
+      "name_local": "Emergency Housing Programme",
+      "name_en": "Emergency Housing Assistance",
+      "admin_level": "national",
+      "admin_area": null,
+      "funder": "Department of Human Settlements / municipalities",
+      "category": "housing",
+      "benefit_type": "in_kind",
+      "amount_min": null,
+      "amount_max": null,
+      "amount_currency": "ZAR",
+      "amount_period": "one_off",
+      "amount_note": "Temporary shelter or resettlement assistance (temporary residential units, emergency relocation) for households left homeless by disasters, evictions or emergencies; activated by municipalities/provinces.",
+      "is_automatic": false,
+      "application_url": null,
+      "application_channel": "in_person",
+      "deadline_type": "none",
+      "deadline_note": "Triggered by emergency/disaster events",
+      "procedure_steps": [
+        {
+          "step": 1,
+          "detail": "Report to your municipality's housing or disaster management office after an emergency (fire, flood, eviction)",
+          "url": null
+        }
+      ],
+      "documents_required": [
+        {
+          "doc": "South African ID (13-digit bar-coded or smart ID)",
+          "mandatory": true,
+          "note": null
+        }
+      ],
+      "eligibility": {
+        "statuses": [],
+        "age_min": null,
+        "age_max": null,
+        "income_annual_max": null,
+        "income_note": "For households in emergency situations unable to provide their own shelter",
+        "requires_children": false,
+        "nationality": "citizen_or_pr",
+        "residency_months_min": null,
+        "housing_tenure": null,
+        "student_required": false,
+        "admin_areas": []
+      },
+      "source_url": "https://www.dhs.gov.za",
+      "source_snippet": "The Emergency Housing Programme assists households in emergency situations with temporary settlement and shelter",
+      "last_verified_at": "2026-08-12",
+      "verification_status": "auto_extracted"
+    },
+    {
+      "slug": "informal-settlement-upgrading",
+      "name_local": "Upgrading of Informal Settlements Programme (UISP)",
+      "name_en": "Informal Settlement Upgrading",
+      "admin_level": "national",
+      "admin_area": null,
+      "funder": "Department of Human Settlements / provinces (USDG/ISUPG grants)",
+      "category": "housing",
+      "benefit_type": "in_kind",
+      "amount_min": null,
+      "amount_max": null,
+      "amount_currency": "ZAR",
+      "amount_period": "one_off",
+      "amount_note": "In-situ upgrading of informal settlements: serviced stands (water, sanitation, roads, electricity connections) and eventual tenure for resident households, funded via the Informal Settlements Upgrading Partnership Grant.",
+      "is_automatic": true,
+      "application_url": null,
+      "application_channel": "automatic",
+      "deadline_type": "none",
+      "deadline_note": null,
+      "procedure_steps": [],
+      "documents_required": [],
+      "eligibility": {
+        "statuses": [],
+        "age_min": null,
+        "age_max": null,
+        "income_annual_max": null,
+        "income_note": "Residents of informal settlements earmarked for upgrading; generally aligned to BNG income thresholds",
+        "requires_children": false,
+        "nationality": "citizen_or_pr",
+        "residency_months_min": null,
+        "housing_tenure": null,
+        "student_required": false,
+        "admin_areas": []
+      },
+      "source_url": "https://www.dhs.gov.za",
+      "source_snippet": "The UISP provides for the phased upgrading of informal settlements, starting with basic services and tenure security",
+      "last_verified_at": "2026-08-12",
+      "verification_status": "auto_extracted"
+    },
+    {
+      "slug": "nsfas-bursary",
+      "name_local": "National Student Financial Aid Scheme (NSFAS) Bursary",
+      "name_en": "NSFAS Bursary",
+      "admin_level": "national",
+      "admin_area": null,
+      "funder": "National Student Financial Aid Scheme (DHET)",
+      "category": "education",
+      "benefit_type": "in_kind",
+      "amount_min": null,
+      "amount_max": null,
+      "amount_currency": "ZAR",
+      "amount_period": "annual",
+      "amount_note": "Full-cost bursary (not repayable if you pass) covering tuition and registration plus allowances: university accommodation actual/capped cost, living allowance about R15,000/yr, transport up to R7,500/yr, learning materials about R5,200/yr, personal care R2,900/yr; TVET accommodation R15,750-R24,000/yr depending on location.",
+      "is_automatic": false,
+      "application_url": "https://www.nsfas.org.za",
+      "application_channel": "online",
+      "deadline_type": "window",
+      "deadline_note": "Applications open around September-November for the following academic year (e.g. closed 31 January for 2026 intake); returning students re-register",
+      "procedure_steps": [
+        {
+          "step": 1,
+          "detail": "Create a myNSFAS account at www.nsfas.org.za",
+          "url": "https://www.nsfas.org.za"
+        },
+        {
+          "step": 2,
+          "detail": "Complete the online application and upload ID, proof of household income and consent form",
+          "url": null
+        },
+        {
+          "step": 3,
+          "detail": "Track application status on myNSFAS; sign the bursary agreement once approved",
+          "url": null
+        }
+      ],
+      "documents_required": [
+        {
+          "doc": "South African ID (13-digit bar-coded or smart ID)",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Proof of household income (payslips/SASSA letter/affidavit)",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "NSFAS consent form signed by parent/guardian",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Academic results / admission to a public university or TVET college",
+          "mandatory": true,
+          "note": null
+        }
+      ],
+      "eligibility": {
+        "statuses": [
+          "student"
+        ],
+        "age_min": null,
+        "age_max": null,
+        "income_annual_max": 350000,
+        "income_note": "Combined household income R350,000/yr or less (R600,000 for students with disabilities); SASSA grant recipients automatically qualify financially",
+        "requires_children": false,
+        "nationality": "citizen_or_pr",
+        "residency_months_min": null,
+        "housing_tenure": null,
+        "student_required": true,
+        "admin_areas": []
+      },
+      "source_url": "https://www.nsfas.org.za",
+      "source_snippet": "Come from a household earning R350,000 or less per year ... funding covers tuition, accommodation, study materials, and living allowances for students at public universities and TVET colleges",
+      "last_verified_at": "2026-08-12",
+      "verification_status": "verified"
+    },
+    {
+      "slug": "funza-lushaka-bursary",
+      "name_local": "Funza Lushaka Bursary Programme",
+      "name_en": "Funza Lushaka Teaching Bursary",
+      "admin_level": "national",
+      "admin_area": null,
+      "funder": "Department of Basic Education",
+      "category": "education",
+      "benefit_type": "in_kind",
+      "amount_min": null,
+      "amount_max": null,
+      "amount_currency": "ZAR",
+      "amount_period": "annual",
+      "amount_note": "Multi-year bursary for teaching students (BEd, priority phases/subjects): covers tuition, accommodation, meals, books, teaching practice and a small living allowance. Recipients must teach at a public school for the same number of years funded.",
+      "is_automatic": false,
+      "application_url": "https://www.eservices.gov.za",
+      "application_channel": "online",
+      "deadline_type": "window",
+      "deadline_note": "Opens around October; closes late November for re-applications and late January for new applications",
+      "procedure_steps": [
+        {
+          "step": 1,
+          "detail": "Gain admission to a BEd (or approved PGCE) programme at a public university with priority subject specialisations",
+          "url": null
+        },
+        {
+          "step": 2,
+          "detail": "Apply online via the e-Gov portal (eservices.gov.za), selecting Funza Lushaka Bursary Scheme",
+          "url": "https://www.eservices.gov.za"
+        },
+        {
+          "step": 3,
+          "detail": "Submit supporting documents to your university's Funza Lushaka office",
+          "url": null
+        }
+      ],
+      "documents_required": [
+        {
+          "doc": "South African ID (13-digit bar-coded or smart ID)",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "University acceptance letter / proof of registration",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Matric certificate / academic transcripts",
+          "mandatory": true,
+          "note": null
+        }
+      ],
+      "eligibility": {
+        "statuses": [
+          "student"
+        ],
+        "age_min": null,
+        "age_max": 30,
+        "income_annual_max": null,
+        "income_note": "First-time applicants must generally be 30 or younger; academic merit and priority subjects required",
+        "requires_children": false,
+        "nationality": "citizen_or_pr",
+        "residency_months_min": null,
+        "housing_tenure": null,
+        "student_required": true,
+        "admin_areas": []
+      },
+      "source_url": "https://www.education.gov.za",
+      "source_snippet": "The Funza Lushaka Bursary covers tuition fees, accommodation and meals, books and learning materials, teaching practice costs and a small living allowance; recipients must teach in public schools for the years funded",
+      "last_verified_at": "2026-08-12",
+      "verification_status": "verified"
+    },
+    {
+      "slug": "no-fee-schools",
+      "name_local": "No-Fee Schools (Quintile 1-3)",
+      "name_en": "No-Fee School Policy",
+      "admin_level": "national",
+      "admin_area": null,
+      "funder": "Department of Basic Education / provincial education departments",
+      "category": "education",
+      "benefit_type": "free_slab",
+      "amount_min": null,
+      "amount_max": null,
+      "amount_currency": "ZAR",
+      "amount_period": "annual",
+      "amount_note": "Public schools in the poorest three quintiles (quintiles 1-3) charge no school fees at all; learners receive the full state-funded school allocation. Roughly 60% of public school learners attend no-fee schools.",
+      "is_automatic": true,
+      "application_url": null,
+      "application_channel": "automatic",
+      "deadline_type": "none",
+      "deadline_note": null,
+      "procedure_steps": [],
+      "documents_required": [],
+      "eligibility": {
+        "statuses": [],
+        "age_min": null,
+        "age_max": null,
+        "income_annual_max": null,
+        "income_note": "Applies by school quintile (school poverty ranking), not individual income",
+        "requires_children": true,
+        "nationality": "citizen_or_pr",
+        "residency_months_min": null,
+        "housing_tenure": null,
+        "student_required": false,
+        "admin_areas": []
+      },
+      "source_url": "https://www.education.gov.za",
+      "source_snippet": "The National School Nutrition Programme (NSNP), a national initiative providing meals to vulnerable learners in Quintile 1-3 no-fee-paying schools, continues without disruption",
+      "last_verified_at": "2026-08-12",
+      "verification_status": "verified"
+    },
+    {
+      "slug": "school-fee-exemption",
+      "name_local": "School Fee Exemption (fee-paying schools)",
+      "name_en": "School Fee Exemption",
+      "admin_level": "national",
+      "admin_area": null,
+      "funder": "Provincial education departments (via school governing bodies)",
+      "category": "education",
+      "benefit_type": "discount",
+      "amount_min": null,
+      "amount_max": null,
+      "amount_currency": "ZAR",
+      "amount_period": "annual",
+      "amount_note": "Full, partial or conditional exemption from school fees at fee-paying public schools, granted based on parents' combined income relative to the school fee (total exemption where income is very low relative to fees; automatic for SASSA grant recipients).",
+      "is_automatic": false,
+      "application_url": null,
+      "application_channel": "in_person",
+      "deadline_type": "annual",
+      "deadline_note": "Apply each year, usually at the start of the school year",
+      "procedure_steps": [
+        {
+          "step": 1,
+          "detail": "Ask the school for the exemption application form",
+          "url": null
+        },
+        {
+          "step": 2,
+          "detail": "Submit proof of income of both parents; the SGB decides within 30 days",
+          "url": null
+        },
+        {
+          "step": 3,
+          "detail": "Appeal to the provincial Head of Department if refused",
+          "url": null
+        }
+      ],
+      "documents_required": [
+        {
+          "doc": "South African ID (13-digit bar-coded or smart ID)",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Proof of income of both parents/guardians (or SASSA grant letter)",
+          "mandatory": true,
+          "note": null
+        }
+      ],
+      "eligibility": {
+        "statuses": [
+          "parent"
+        ],
+        "age_min": null,
+        "age_max": null,
+        "income_annual_max": null,
+        "income_note": "Income-to-fee ratio formula; SASSA grant recipients qualify automatically for full exemption",
+        "requires_children": true,
+        "nationality": "citizen_or_pr",
+        "residency_months_min": null,
+        "housing_tenure": null,
+        "student_required": false,
+        "admin_areas": []
+      },
+      "source_url": "https://www.education.gov.za",
+      "source_snippet": "Parents who cannot afford school fees may apply to the school governing body for full or partial exemption in terms of the South African Schools Act",
+      "last_verified_at": "2026-08-12",
+      "verification_status": "auto_extracted"
+    },
+    {
+      "slug": "nsnp-school-meals",
+      "name_local": "National School Nutrition Programme (NSNP)",
+      "name_en": "National School Nutrition Programme",
+      "admin_level": "national",
+      "admin_area": null,
+      "funder": "Department of Basic Education / provincial education departments",
+      "category": "education",
+      "benefit_type": "in_kind",
+      "amount_min": null,
+      "amount_max": null,
+      "amount_currency": "ZAR",
+      "amount_period": "monthly",
+      "amount_note": "One free nutritious meal (breakfast and/or lunch) every school day to learners in quintile 1-3 primary and secondary schools (over 9 million learners); some provinces extend to quintile 4-5.",
+      "is_automatic": true,
+      "application_url": null,
+      "application_channel": "automatic",
+      "deadline_type": "none",
+      "deadline_note": null,
+      "procedure_steps": [],
+      "documents_required": [],
+      "eligibility": {
+        "statuses": [],
+        "age_min": null,
+        "age_max": null,
+        "income_annual_max": null,
+        "income_note": null,
+        "requires_children": true,
+        "nationality": "citizen_or_pr",
+        "residency_months_min": null,
+        "housing_tenure": null,
+        "student_required": true,
+        "admin_areas": []
+      },
+      "source_url": "https://www.education.gov.za",
+      "source_snippet": "The National School Nutrition Programme (NSNP) ... providing meals to vulnerable learners in Quintile 1-3 no-fee-paying schools",
+      "last_verified_at": "2026-08-12",
+      "verification_status": "verified"
+    },
+    {
+      "slug": "ecd-subsidy",
+      "name_local": "Early Childhood Development (ECD) Subsidy",
+      "name_en": "ECD Subsidy",
+      "admin_level": "national",
+      "admin_area": null,
+      "funder": "Department of Basic Education",
+      "category": "education",
+      "benefit_type": "in_kind",
+      "amount_min": null,
+      "amount_max": null,
+      "amount_currency": "ZAR",
+      "amount_period": "monthly",
+      "amount_note": "Subsidy of R24 per child per day (increased from R17 in the 2025 Budget) paid to registered ECD programmes for children from poor households; funds staff, nutrition and operating costs, lowering or removing parent fees.",
+      "is_automatic": true,
+      "application_url": null,
+      "application_channel": "automatic",
+      "deadline_type": "none",
+      "deadline_note": null,
+      "procedure_steps": [
+        {
+          "step": 1,
+          "detail": "Enrol your child at a registered ECD centre/programme that receives the subsidy",
+          "url": null
+        }
+      ],
+      "documents_required": [],
+      "eligibility": {
+        "statuses": [],
+        "age_min": null,
+        "age_max": 5,
+        "income_annual_max": null,
+        "income_note": "Children from low-income households attending registered, subsidy-eligible ECD programmes",
+        "requires_children": true,
+        "nationality": "citizen_or_pr",
+        "residency_months_min": null,
+        "housing_tenure": null,
+        "student_required": false,
+        "admin_areas": []
+      },
+      "source_url": "https://www.education.gov.za",
+      "source_snippet": "R10 billion has been set aside over the next three years to support ECD, increasing the subsidy from R17 to R24 per child per day",
+      "last_verified_at": "2026-08-12",
+      "verification_status": "verified"
+    },
+    {
+      "slug": "national-skills-fund",
+      "name_local": "National Skills Fund (NSF) Skills Development Funding",
+      "name_en": "National Skills Fund",
+      "admin_level": "national",
+      "admin_area": null,
+      "funder": "National Skills Fund (DHET)",
+      "category": "education",
+      "benefit_type": "in_kind",
+      "amount_min": null,
+      "amount_max": null,
+      "amount_currency": "ZAR",
+      "amount_period": "annual",
+      "amount_note": "Funds bursaries, learnerships, internships and skills programmes for unemployed youth and workers, prioritising scarce skills and rural communities; delivered through SETAs, TVET colleges and approved providers.",
+      "is_automatic": false,
+      "application_url": "https://www.dhet.gov.za",
+      "application_channel": "online",
+      "deadline_type": "window",
+      "deadline_note": "Funding windows advertised per project cycle",
+      "procedure_steps": [
+        {
+          "step": 1,
+          "detail": "Respond to NSF/SETA funding calls or apply through the funded institution/provider",
+          "url": "https://www.dhet.gov.za"
+        }
+      ],
+      "documents_required": [
+        {
+          "doc": "South African ID (13-digit bar-coded or smart ID)",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Proof of unemployment / academic records",
+          "mandatory": false,
+          "note": null
+        }
+      ],
+      "eligibility": {
+        "statuses": [],
+        "age_min": null,
+        "age_max": null,
+        "income_annual_max": null,
+        "income_note": "Prioritises unemployed youth and low-income learners",
+        "requires_children": false,
+        "nationality": "citizen_or_pr",
+        "residency_months_min": null,
+        "housing_tenure": null,
+        "student_required": false,
+        "admin_areas": []
+      },
+      "source_url": "https://www.dhet.gov.za",
+      "source_snippet": "The National Skills Fund finances skills development initiatives including bursaries, learnerships and workplace-based learning for the unemployed",
+      "last_verified_at": "2026-08-12",
+      "verification_status": "auto_extracted"
+    },
+    {
+      "slug": "seta-learnerships",
+      "name_local": "SETA Learnerships (Sector Education and Training Authorities)",
+      "name_en": "SETA Learnerships",
+      "admin_level": "national",
+      "admin_area": null,
+      "funder": "Sector Education and Training Authorities (SETAs)",
+      "category": "employment",
+      "benefit_type": "cash_monthly",
+      "amount_min": null,
+      "amount_max": null,
+      "amount_currency": "ZAR",
+      "amount_period": "monthly",
+      "amount_note": "Employed and unemployed learners on registered learnerships receive a monthly stipend (amount set per learnership agreement/SETA, commonly R2,000-R6,500/month for unemployed learners) plus free accredited training.",
+      "is_automatic": false,
+      "application_url": null,
+      "application_channel": "in_person",
+      "deadline_type": "window",
+      "deadline_note": "Employers and SETAs advertise learnership intakes",
+      "procedure_steps": [
+        {
+          "step": 1,
+          "detail": "Find a learnership advertised by a SETA, employer or the SAYouth.mobi platform",
+          "url": "https://www.sayouth.mobi"
+        },
+        {
+          "step": 2,
+          "detail": "Sign a learnership agreement with the employer and training provider",
+          "url": null
+        }
+      ],
+      "documents_required": [
+        {
+          "doc": "South African ID (13-digit bar-coded or smart ID)",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Highest qualification (usually Grade 10-12)",
+          "mandatory": true,
+          "note": null
+        }
+      ],
+      "eligibility": {
+        "statuses": [
+          "unemployed",
+          "jobseeker",
+          "employee"
+        ],
+        "age_min": 18,
+        "age_max": 35,
+        "income_annual_max": null,
+        "income_note": "Youth 18-35 prioritised for unemployed learnerships",
+        "requires_children": false,
+        "nationality": "citizen_or_pr",
+        "residency_months_min": null,
+        "housing_tenure": null,
+        "student_required": false,
+        "admin_areas": []
+      },
+      "source_url": "https://www.dhet.gov.za",
+      "source_snippet": "Learnerships combine structured learning with workplace experience; unemployed learners receive a monthly allowance for the duration of the learnership",
+      "last_verified_at": "2026-08-12",
+      "verification_status": "auto_extracted"
+    },
+    {
+      "slug": "epwp",
+      "name_local": "Expanded Public Works Programme (EPWP)",
+      "name_en": "Expanded Public Works Programme",
+      "admin_level": "national",
+      "admin_area": null,
+      "funder": "Department of Public Works and Infrastructure / municipalities / provinces",
+      "category": "employment",
+      "benefit_type": "cash_monthly",
+      "amount_min": null,
+      "amount_max": null,
+      "amount_currency": "ZAR",
+      "amount_period": "monthly",
+      "amount_note": "Temporary work with a daily wage/stipend set per project under EPWP ministerial wage guidelines (recent municipal examples range from about R136-R311/day; typically R2,500-R3,500/month full-time equivalent) plus skills training.",
+      "is_automatic": false,
+      "application_url": "https://www.epwp.gov.za",
+      "application_channel": "in_person",
+      "deadline_type": "window",
+      "deadline_note": "Municipalities and departments advertise EPWP intakes",
+      "procedure_steps": [
+        {
+          "step": 1,
+          "detail": "Watch for EPWP adverts from your municipality or apply via SAYouth.mobi",
+          "url": "https://www.epwp.gov.za"
+        },
+        {
+          "step": 2,
+          "detail": "Submit CV, certified ID and proof of residence; sign a fixed-term contract (usually 3-24 months)",
+          "url": null
+        }
+      ],
+      "documents_required": [
+        {
+          "doc": "South African ID (13-digit bar-coded or smart ID)",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Proof of residence",
+          "mandatory": true,
+          "note": null
+        }
+      ],
+      "eligibility": {
+        "statuses": [
+          "unemployed",
+          "jobseeker"
+        ],
+        "age_min": null,
+        "age_max": null,
+        "income_annual_max": null,
+        "income_note": "Unemployed persons; youth 18-35 prioritised",
+        "requires_children": false,
+        "nationality": "citizen_or_pr",
+        "residency_months_min": null,
+        "housing_tenure": null,
+        "student_required": false,
+        "admin_areas": []
+      },
+      "source_url": "https://www.epwp.gov.za",
+      "source_snippet": "EPWP workers are paid a minimum daily rate, which varies by municipality. Typical stipend range: R2 500 - R3 500 per month",
+      "last_verified_at": "2026-08-12",
+      "verification_status": "verified"
+    },
+    {
+      "slug": "community-work-programme",
+      "name_local": "Community Work Programme (CWP)",
+      "name_en": "Community Work Programme",
+      "admin_level": "national",
+      "admin_area": null,
+      "funder": "Department of Cooperative Governance (COGTA)",
+      "category": "employment",
+      "benefit_type": "cash_monthly",
+      "amount_min": null,
+      "amount_max": null,
+      "amount_currency": "ZAR",
+      "amount_period": "monthly",
+      "amount_note": "Part-time community work (about 2 days a week / 8 days a month) paid at the CWP daily rate pegged to the national minimum wage (roughly R1,600-R2,300/month depending on days worked), doing useful community work.",
+      "is_automatic": false,
+      "application_url": "https://www.cogta.gov.za",
+      "application_channel": "in_person",
+      "deadline_type": "window",
+      "deadline_note": "Site-based recruitment in participating wards",
+      "procedure_steps": [
+        {
+          "step": 1,
+          "detail": "Register at your local CWP site or through the ward councillor / local reference committee",
+          "url": null
+        }
+      ],
+      "documents_required": [
+        {
+          "doc": "South African ID (13-digit bar-coded or smart ID)",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Proof of residence in the CWP site area",
+          "mandatory": true,
+          "note": null
+        }
+      ],
+      "eligibility": {
+        "statuses": [
+          "unemployed",
+          "jobseeker"
+        ],
+        "age_min": null,
+        "age_max": null,
+        "income_annual_max": null,
+        "income_note": "For unemployed/underemployed people in CWP site areas",
+        "requires_children": false,
+        "nationality": "citizen_or_pr",
+        "residency_months_min": null,
+        "housing_tenure": null,
+        "student_required": false,
+        "admin_areas": []
+      },
+      "source_url": "https://www.cogta.gov.za",
+      "source_snippet": "The CWP provides a regular part-time work opportunity of two days a week for unemployed people of working age in the poorest wards",
+      "last_verified_at": "2026-08-12",
+      "verification_status": "auto_extracted"
+    },
+    {
+      "slug": "beei-education-assistants",
+      "name_local": "Basic Education Employment Initiative (BEEI) / Presidential Youth Employment",
+      "name_en": "Basic Education Employment Initiative",
+      "admin_level": "national",
+      "admin_area": null,
+      "funder": "Department of Basic Education (funded by National Treasury and UIF)",
+      "category": "employment",
+      "benefit_type": "cash_monthly",
+      "amount_min": null,
+      "amount_max": null,
+      "amount_currency": "ZAR",
+      "amount_period": "monthly",
+      "amount_note": "Short-term contracts as education assistants, general school assistants and eCadres in public schools, paid a monthly stipend (about R4,000/month in recent phases, less for part-time). Phase 5 (2025) created 204,676 opportunities for youth 18-34.",
+      "is_automatic": false,
+      "application_url": "https://www.sayouth.mobi",
+      "application_channel": "online",
+      "deadline_type": "window",
+      "deadline_note": "Phases are announced; applications via SAYouth.mobi (zero-rated)",
+      "procedure_steps": [
+        {
+          "step": 1,
+          "detail": "Register on SAYouth.mobi and apply when a BEEI phase opens",
+          "url": "https://www.sayouth.mobi"
+        },
+        {
+          "step": 2,
+          "detail": "Shortlisted candidates are interviewed at schools and sign fixed-term contracts",
+          "url": null
+        }
+      ],
+      "documents_required": [
+        {
+          "doc": "South African ID (13-digit bar-coded or smart ID)",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Matric certificate (for education assistants)",
+          "mandatory": true,
+          "note": null
+        }
+      ],
+      "eligibility": {
+        "statuses": [
+          "unemployed",
+          "jobseeker"
+        ],
+        "age_min": 18,
+        "age_max": 35,
+        "income_annual_max": null,
+        "income_note": "Unemployed youth 18-34; must live near the school",
+        "requires_children": false,
+        "nationality": "citizen_or_pr",
+        "residency_months_min": null,
+        "housing_tenure": null,
+        "student_required": false,
+        "admin_areas": []
+      },
+      "source_url": "https://www.education.gov.za",
+      "source_snippet": "Phase 5 of the Basic Education Employment Initiative (BEEI) was launched in June 2025, creating 204 676 job opportunities for youth aged 18-34",
+      "last_verified_at": "2026-08-12",
+      "verification_status": "auto_extracted"
+    },
+    {
+      "slug": "yes-youth-employment-service",
+      "name_local": "Youth Employment Service (YES)",
+      "name_en": "YES Programme",
+      "admin_level": "private",
+      "admin_area": null,
+      "funder": "YES (private sector initiative, B-BBEE incentive for companies)",
+      "category": "employment",
+      "benefit_type": "cash_monthly",
+      "amount_min": null,
+      "amount_max": null,
+      "amount_currency": "ZAR",
+      "amount_period": "monthly",
+      "amount_note": "12-month paid quality work experience for unemployed youth 18-35 at host companies, paid at least the national minimum wage; participating companies gain B-BBEE level recognition.",
+      "is_automatic": false,
+      "application_url": "https://www.yes4youth.co.za",
+      "application_channel": "online",
+      "deadline_type": "rolling",
+      "deadline_note": null,
+      "procedure_steps": [
+        {
+          "step": 1,
+          "detail": "Register on the YES4Youth platform and apply to host-company placements",
+          "url": "https://www.yes4youth.co.za"
+        }
+      ],
+      "documents_required": [
+        {
+          "doc": "South African ID (13-digit bar-coded or smart ID)",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Matric or higher (varies by placement)",
+          "mandatory": false,
+          "note": null
+        }
+      ],
+      "eligibility": {
+        "statuses": [
+          "unemployed",
+          "jobseeker"
+        ],
+        "age_min": 18,
+        "age_max": 34,
+        "income_annual_max": null,
+        "income_note": "Unemployed black youth 18-34 prioritised",
+        "requires_children": false,
+        "nationality": "citizen_or_pr",
+        "residency_months_min": null,
+        "housing_tenure": null,
+        "student_required": false,
+        "admin_areas": []
+      },
+      "source_url": "https://www.yes4youth.co.za",
+      "source_snippet": "YES gives youth a 12-month quality work experience and gives businesses B-BBEE level ups for creating youth jobs",
+      "last_verified_at": "2026-08-12",
+      "verification_status": "auto_extracted"
+    },
+    {
+      "slug": "uif-unemployment-benefit",
+      "name_local": "UIF Unemployment Benefit",
+      "name_en": "Unemployment Insurance Fund - Unemployment Benefits",
+      "admin_level": "national",
+      "admin_area": null,
+      "funder": "Unemployment Insurance Fund (Department of Employment and Labour)",
+      "category": "employment",
+      "benefit_type": "cash_monthly",
+      "amount_min": null,
+      "amount_max": 17712,
+      "amount_currency": "ZAR",
+      "amount_period": "monthly",
+      "amount_note": "38%-58% of your previous salary (lower earners get a higher percentage), capped at a remuneration ceiling of R17,712/month; payable for up to 365 days depending on credits (1 day per 4 days worked).",
+      "is_automatic": false,
+      "application_url": "https://ufiling.labour.gov.za",
+      "application_channel": "online",
+      "deadline_type": "rolling",
+      "deadline_note": "Claim within 12 months of becoming unemployed (best practice: as soon as possible)",
+      "procedure_steps": [
+        {
+          "step": 1,
+          "detail": "Register and claim on the uFiling portal (ufiling.labour.gov.za) or visit a Labour Centre",
+          "url": "https://ufiling.labour.gov.za"
+        },
+        {
+          "step": 2,
+          "detail": "Submit the relevant UI form and supporting documents",
+          "url": null
+        },
+        {
+          "step": 3,
+          "detail": "UIF pays benefits into your bank account once approved",
+          "url": null
+        }
+      ],
+      "documents_required": [
+        {
+          "doc": "South African ID (13-digit bar-coded or smart ID)",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "UI application form (e.g. UI-2.8 for banking details)",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Proof of unemployment / employer confirmation (UI-19)",
+          "mandatory": true,
+          "note": null
+        }
+      ],
+      "eligibility": {
+        "statuses": [
+          "unemployed"
+        ],
+        "age_min": null,
+        "age_max": null,
+        "income_annual_max": null,
+        "income_note": "Must have contributed to UIF while employed; must be available for work; not for resignation or misconduct dismissal in some cases",
+        "requires_children": false,
+        "nationality": "citizen_or_pr",
+        "residency_months_min": null,
+        "housing_tenure": null,
+        "student_required": false,
+        "admin_areas": []
+      },
+      "source_url": "https://www.labour.gov.za",
+      "source_snippet": "UIF benefit payments capped at R17,712/month. Benefits: 38%-58% of salary. Max claim period: up to 365 days",
+      "last_verified_at": "2026-08-12",
+      "verification_status": "verified"
+    },
+    {
+      "slug": "uif-maternity-benefit",
+      "name_local": "UIF Maternity Benefit",
+      "name_en": "UIF Maternity Benefits",
+      "admin_level": "national",
+      "admin_area": null,
+      "funder": "Unemployment Insurance Fund (Department of Employment and Labour)",
+      "category": "family",
+      "benefit_type": "cash_monthly",
+      "amount_min": null,
+      "amount_max": 17712,
+      "amount_currency": "ZAR",
+      "amount_period": "monthly",
+      "amount_note": "38%-58% of salary (capped at the R17,712/month ceiling) for up to 121 days (4 months) of maternity leave for contributors; also for miscarriage/stillbirth and commissioning parents.",
+      "is_automatic": false,
+      "application_url": "https://ufiling.labour.gov.za",
+      "application_channel": "online",
+      "deadline_type": "rolling",
+      "deadline_note": "Apply before or within 12 months after the birth",
+      "procedure_steps": [
+        {
+          "step": 1,
+          "detail": "Register and claim on the uFiling portal (ufiling.labour.gov.za) or visit a Labour Centre",
+          "url": "https://ufiling.labour.gov.za"
+        },
+        {
+          "step": 2,
+          "detail": "Submit the relevant UI form and supporting documents",
+          "url": null
+        },
+        {
+          "step": 3,
+          "detail": "UIF pays benefits into your bank account once approved",
+          "url": null
+        }
+      ],
+      "documents_required": [
+        {
+          "doc": "South African ID (13-digit bar-coded or smart ID)",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Maternity leave confirmation from employer",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Medical certificate / birth certificate",
+          "mandatory": true,
+          "note": null
+        }
+      ],
+      "eligibility": {
+        "statuses": [
+          "employee"
+        ],
+        "age_min": null,
+        "age_max": null,
+        "income_annual_max": null,
+        "income_note": "UIF contributors; can be claimed even if employer pays partial salary (top-up to ceiling)",
+        "requires_children": false,
+        "nationality": "citizen_or_pr",
+        "residency_months_min": null,
+        "housing_tenure": null,
+        "student_required": false,
+        "admin_areas": []
+      },
+      "source_url": "https://www.labour.gov.za",
+      "source_snippet": "Contributors on maternity leave can claim up to 121 days of UIF maternity benefits",
+      "last_verified_at": "2026-08-12",
+      "verification_status": "auto_extracted"
+    },
+    {
+      "slug": "uif-illness-benefit",
+      "name_local": "UIF Illness Benefit",
+      "name_en": "UIF Illness Benefits",
+      "admin_level": "national",
+      "admin_area": null,
+      "funder": "Unemployment Insurance Fund (Department of Employment and Labour)",
+      "category": "employment",
+      "benefit_type": "cash_monthly",
+      "amount_min": null,
+      "amount_max": 17712,
+      "amount_currency": "ZAR",
+      "amount_period": "monthly",
+      "amount_note": "38%-58% of salary (capped at the R17,712/month ceiling) when a contributor cannot work due to illness for more than 14 days and receives reduced or no pay.",
+      "is_automatic": false,
+      "application_url": "https://ufiling.labour.gov.za",
+      "application_channel": "online",
+      "deadline_type": "rolling",
+      "deadline_note": "Claim within 12 months of the illness period",
+      "procedure_steps": [
+        {
+          "step": 1,
+          "detail": "Register and claim on the uFiling portal (ufiling.labour.gov.za) or visit a Labour Centre",
+          "url": "https://ufiling.labour.gov.za"
+        },
+        {
+          "step": 2,
+          "detail": "Submit the relevant UI form and supporting documents",
+          "url": null
+        },
+        {
+          "step": 3,
+          "detail": "UIF pays benefits into your bank account once approved",
+          "url": null
+        }
+      ],
+      "documents_required": [
+        {
+          "doc": "South African ID (13-digit bar-coded or smart ID)",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Medical certificate",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Employer confirmation of reduced pay (UI-19)",
+          "mandatory": true,
+          "note": null
+        }
+      ],
+      "eligibility": {
+        "statuses": [
+          "employee"
+        ],
+        "age_min": null,
+        "age_max": null,
+        "income_annual_max": null,
+        "income_note": "UIF contributors unable to work due to illness",
+        "requires_children": false,
+        "nationality": "citizen_or_pr",
+        "residency_months_min": null,
+        "housing_tenure": null,
+        "student_required": false,
+        "admin_areas": []
+      },
+      "source_url": "https://www.labour.gov.za",
+      "source_snippet": "Illness benefits are paid to contributors who cannot work because of illness for more than two weeks",
+      "last_verified_at": "2026-08-12",
+      "verification_status": "auto_extracted"
+    },
+    {
+      "slug": "uif-dependants-benefit",
+      "name_local": "UIF Dependants' Benefit",
+      "name_en": "UIF Dependants' Benefits",
+      "admin_level": "national",
+      "admin_area": null,
+      "funder": "Unemployment Insurance Fund (Department of Employment and Labour)",
+      "category": "family",
+      "benefit_type": "cash_monthly",
+      "amount_min": null,
+      "amount_max": 17712,
+      "amount_currency": "ZAR",
+      "amount_period": "monthly",
+      "amount_note": "38%-58% of the deceased contributor's salary (capped at the R17,712/month ceiling) paid to the surviving spouse/life partner, then dependent children, of a deceased UIF contributor.",
+      "is_automatic": false,
+      "application_url": "https://ufiling.labour.gov.za",
+      "application_channel": "in_person",
+      "deadline_type": "rolling",
+      "deadline_note": "Spouse must apply within 18 months of the contributor's death",
+      "procedure_steps": [
+        {
+          "step": 1,
+          "detail": "Register and claim on the uFiling portal (ufiling.labour.gov.za) or visit a Labour Centre",
+          "url": "https://ufiling.labour.gov.za"
+        },
+        {
+          "step": 2,
+          "detail": "Submit the relevant UI form and supporting documents",
+          "url": null
+        },
+        {
+          "step": 3,
+          "detail": "UIF pays benefits into your bank account once approved",
+          "url": null
+        }
+      ],
+      "documents_required": [
+        {
+          "doc": "South African ID (13-digit bar-coded or smart ID)",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Death certificate of the contributor",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Marriage certificate / proof of dependency",
+          "mandatory": true,
+          "note": null
+        }
+      ],
+      "eligibility": {
+        "statuses": [],
+        "age_min": null,
+        "age_max": null,
+        "income_annual_max": null,
+        "income_note": "Dependants of a deceased UIF contributor",
+        "requires_children": false,
+        "nationality": "citizen_or_pr",
+        "residency_months_min": null,
+        "housing_tenure": null,
+        "student_required": false,
+        "admin_areas": []
+      },
+      "source_url": "https://www.labour.gov.za",
+      "source_snippet": "The dependants of a deceased contributor can claim UIF benefits from the Fund",
+      "last_verified_at": "2026-08-12",
+      "verification_status": "auto_extracted"
+    },
+    {
+      "slug": "uif-adoption-benefit",
+      "name_local": "UIF Adoption Benefit",
+      "name_en": "UIF Adoption Benefits",
+      "admin_level": "national",
+      "admin_area": null,
+      "funder": "Unemployment Insurance Fund (Department of Employment and Labour)",
+      "category": "family",
+      "benefit_type": "cash_monthly",
+      "amount_min": null,
+      "amount_max": 17712,
+      "amount_currency": "ZAR",
+      "amount_period": "monthly",
+      "amount_note": "38%-58% of salary (capped at the R17,712/month ceiling) for contributors who legally adopt a child under two years old and take adoption leave; only one adopting parent may claim.",
+      "is_automatic": false,
+      "application_url": "https://ufiling.labour.gov.za",
+      "application_channel": "online",
+      "deadline_type": "rolling",
+      "deadline_note": "Apply within 12 months of the adoption order",
+      "procedure_steps": [
+        {
+          "step": 1,
+          "detail": "Register and claim on the uFiling portal (ufiling.labour.gov.za) or visit a Labour Centre",
+          "url": "https://ufiling.labour.gov.za"
+        },
+        {
+          "step": 2,
+          "detail": "Submit the relevant UI form and supporting documents",
+          "url": null
+        },
+        {
+          "step": 3,
+          "detail": "UIF pays benefits into your bank account once approved",
+          "url": null
+        }
+      ],
+      "documents_required": [
+        {
+          "doc": "South African ID (13-digit bar-coded or smart ID)",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Court adoption order",
+          "mandatory": true,
+          "note": null
+        }
+      ],
+      "eligibility": {
+        "statuses": [
+          "employee"
+        ],
+        "age_min": null,
+        "age_max": null,
+        "income_annual_max": null,
+        "income_note": "UIF contributors adopting a child under the age of two",
+        "requires_children": false,
+        "nationality": "citizen_or_pr",
+        "residency_months_min": null,
+        "housing_tenure": null,
+        "student_required": false,
+        "admin_areas": []
+      },
+      "source_url": "https://www.labour.gov.za",
+      "source_snippet": "Contributors who adopt a child under the age of two can claim adoption benefits",
+      "last_verified_at": "2026-08-12",
+      "verification_status": "auto_extracted"
+    },
+    {
+      "slug": "coida-compensation-fund",
+      "name_local": "Compensation Fund (COIDA) - Occupational Injuries and Diseases",
+      "name_en": "Compensation Fund (COIDA)",
+      "admin_level": "national",
+      "admin_area": null,
+      "funder": "Compensation Fund (Department of Employment and Labour)",
+      "category": "employment",
+      "benefit_type": "cash_one_off",
+      "amount_min": null,
+      "amount_max": null,
+      "amount_currency": "ZAR",
+      "amount_period": "one_off",
+      "amount_note": "No-fault compensation for workplace injuries and occupational diseases: free medical treatment, temporary and permanent disablement pensions (up to 75% of earnings), and dependants' benefits on death. Funded entirely by employer assessments; claiming is free.",
+      "is_automatic": false,
+      "application_url": "https://www.labour.gov.za",
+      "application_channel": "via_employer",
+      "deadline_type": "rolling",
+      "deadline_note": "Employer must report within 7 days; claims within 12 months of injury/diagnosis",
+      "procedure_steps": [
+        {
+          "step": 1,
+          "detail": "Report the injury to your employer immediately; employer files W.CL.2 with the Compensation Fund",
+          "url": null
+        },
+        {
+          "step": 2,
+          "detail": "Get medical treatment; submit medical reports (W.CL.4, W.CL.5)",
+          "url": null
+        },
+        {
+          "step": 3,
+          "detail": "The Fund adjudicates and pays medical costs plus disablement/dependants compensation",
+          "url": "https://www.labour.gov.za"
+        }
+      ],
+      "documents_required": [
+        {
+          "doc": "South African ID (13-digit bar-coded or smart ID)",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Employer's report of accident (W.CL.2)",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Medical reports",
+          "mandatory": true,
+          "note": null
+        }
+      ],
+      "eligibility": {
+        "statuses": [
+          "employee"
+        ],
+        "age_min": null,
+        "age_max": null,
+        "income_annual_max": null,
+        "income_note": "All employees (employers must be registered with the Fund); no civil claim against employer if covered",
+        "requires_children": false,
+        "nationality": "citizen_or_pr",
+        "residency_months_min": null,
+        "housing_tenure": null,
+        "student_required": false,
+        "admin_areas": []
+      },
+      "source_url": "https://www.labour.gov.za",
+      "source_snippet": "The Compensation Fund is a South African government fund established under the Compensation for Occupational Injuries and Diseases Act (COIDA)",
+      "last_verified_at": "2026-08-12",
+      "verification_status": "auto_extracted"
+    },
+    {
+      "slug": "employment-tax-incentive",
+      "name_local": "Employment Tax Incentive (ETI)",
+      "name_en": "Employment Tax Incentive",
+      "admin_level": "national",
+      "admin_area": null,
+      "funder": "South African Revenue Service (SARS) / National Treasury",
+      "category": "tax",
+      "benefit_type": "tax_credit",
+      "amount_min": null,
+      "amount_max": 1500,
+      "amount_currency": "ZAR",
+      "amount_period": "monthly",
+      "amount_note": "Employers reduce monthly PAYE by the calculated ETI for qualifying young employees (18-29, earning under R7,500/month): up to R1,500/month per employee in the first 12 qualifying months and up to R750/month in the second 12 months. Scheme extended to February 2029.",
+      "is_automatic": false,
+      "application_url": "https://www.sars.gov.za/types-of-tax/pay-as-you-earn/employment-tax-incentive-eti/",
+      "application_channel": "via_employer",
+      "deadline_type": "rolling",
+      "deadline_note": "Claimed monthly on the EMP201; unclaimed amounts can be refunded 6-monthly",
+      "procedure_steps": [
+        {
+          "step": 1,
+          "detail": "Employer checks employee eligibility (age 18-29, valid ID/asylum permit, wage below R7,500/month)",
+          "url": null
+        },
+        {
+          "step": 2,
+          "detail": "Calculate the ETI per SARS tables each month",
+          "url": "https://www.sars.gov.za/types-of-tax/pay-as-you-earn/employment-tax-incentive-eti/how-does-the-employment-tax-incentive-eti-work/"
+        },
+        {
+          "step": 3,
+          "detail": "Claim against PAYE on the monthly EMP201 declaration",
+          "url": null
+        }
+      ],
+      "documents_required": [],
+      "eligibility": {
+        "statuses": [
+          "employee"
+        ],
+        "age_min": 18,
+        "age_max": 29,
+        "income_annual_max": null,
+        "income_note": "Employee must earn less than R7,500/month; benefit accrues to the employer",
+        "requires_children": false,
+        "nationality": "citizen_or_pr",
+        "residency_months_min": null,
+        "housing_tenure": null,
+        "student_required": false,
+        "admin_areas": []
+      },
+      "source_url": "https://www.sars.gov.za/types-of-tax/pay-as-you-earn/employment-tax-incentive-eti/how-does-the-employment-tax-incentive-eti-work/",
+      "source_snippet": "The Monthly Calculated ETI amount per qualifying employee is within the prescribed legislated threshold (SARS ETI tables)",
+      "last_verified_at": "2026-08-12",
+      "verification_status": "verified"
+    },
+    {
+      "slug": "free-primary-health-care",
+      "name_local": "Free Primary Health Care (public clinics)",
+      "name_en": "Free Primary Health Care",
+      "admin_level": "national",
+      "admin_area": null,
+      "funder": "National Department of Health / provincial health departments",
+      "category": "health",
+      "benefit_type": "in_kind",
+      "amount_min": null,
+      "amount_max": null,
+      "amount_currency": "ZAR",
+      "amount_period": "monthly",
+      "amount_note": "Free services at public clinics and community health centres for everyone (no user fees at primary level), including people with communicable diseases such as HIV and TB. Hospital care is means-tested under the UPFS.",
+      "is_automatic": true,
+      "application_url": null,
+      "application_channel": "automatic",
+      "deadline_type": "none",
+      "deadline_note": null,
+      "procedure_steps": [
+        {
+          "step": 1,
+          "detail": "Go to your nearest public clinic or community health centre with any ID or passport",
+          "url": null
+        }
+      ],
+      "documents_required": [],
+      "eligibility": {
+        "statuses": [],
+        "age_min": null,
+        "age_max": null,
+        "income_annual_max": null,
+        "income_note": "Free at primary level for all; hospital-level care is means-tested (UPFS)",
+        "requires_children": false,
+        "nationality": "any_resident",
+        "residency_months_min": null,
+        "housing_tenure": null,
+        "student_required": false,
+        "admin_areas": []
+      },
+      "source_url": "https://www.health.gov.za",
+      "source_snippet": "Under the NHA framework, irrespective of nationality and migration status: Everyone is entitled to free primary health services, including people with communicable diseases such as HIV and TB",
+      "last_verified_at": "2026-08-12",
+      "verification_status": "verified"
+    },
+    {
+      "slug": "free-maternal-child-health",
+      "name_local": "Free Health Care for Pregnant Women and Children Under 6",
+      "name_en": "Free Maternal and Under-6 Health Care",
+      "admin_level": "national",
+      "admin_area": null,
+      "funder": "National Department of Health",
+      "category": "health",
+      "benefit_type": "in_kind",
+      "amount_min": null,
+      "amount_max": null,
+      "amount_currency": "ZAR",
+      "amount_period": "monthly",
+      "amount_note": "All health services free of charge at public facilities (including hospitals) for pregnant and lactating women and for children under six, under section 4(3)(a) of the National Health Act and GN 657 of 1994 (excludes medical aid members).",
+      "is_automatic": true,
+      "application_url": null,
+      "application_channel": "automatic",
+      "deadline_type": "none",
+      "deadline_note": null,
+      "procedure_steps": [
+        {
+          "step": 1,
+          "detail": "Present at any public clinic or hospital; no fees may be charged for qualifying patients",
+          "url": null
+        }
+      ],
+      "documents_required": [],
+      "eligibility": {
+        "statuses": [],
+        "age_min": null,
+        "age_max": null,
+        "income_annual_max": null,
+        "income_note": "Universal for pregnant/lactating women and children under 6, regardless of nationality or documentation status",
+        "requires_children": false,
+        "nationality": "any_resident",
+        "residency_months_min": null,
+        "housing_tenure": null,
+        "student_required": false,
+        "admin_areas": []
+      },
+      "source_url": "https://www.health.gov.za",
+      "source_snippet": "Maternity care is an integral component of primary health care and a free health service for pregnant women (National Department of Health maternity care guidelines)",
+      "last_verified_at": "2026-08-12",
+      "verification_status": "verified"
+    },
+    {
+      "slug": "free-hiv-art",
+      "name_local": "Free HIV Testing and Antiretroviral Treatment (ART)",
+      "name_en": "Free HIV/AIDS Treatment (ART)",
+      "admin_level": "national",
+      "admin_area": null,
+      "funder": "National Department of Health",
+      "category": "health",
+      "benefit_type": "in_kind",
+      "amount_min": null,
+      "amount_max": null,
+      "amount_currency": "ZAR",
+      "amount_period": "monthly",
+      "amount_note": "Free HIV testing, counselling and lifelong antiretroviral therapy (including for TB co-infection and prevention of mother-to-child transmission) at all public health facilities - the world's largest ART programme.",
+      "is_automatic": true,
+      "application_url": null,
+      "application_channel": "automatic",
+      "deadline_type": "none",
+      "deadline_note": null,
+      "procedure_steps": [
+        {
+          "step": 1,
+          "detail": "Test at any public clinic; ART is initiated free of charge, often same-day",
+          "url": null
+        }
+      ],
+      "documents_required": [],
+      "eligibility": {
+        "statuses": [],
+        "age_min": null,
+        "age_max": null,
+        "income_annual_max": null,
+        "income_note": null,
+        "requires_children": false,
+        "nationality": "any_resident",
+        "residency_months_min": null,
+        "housing_tenure": null,
+        "student_required": false,
+        "admin_areas": []
+      },
+      "source_url": "https://www.health.gov.za",
+      "source_snippet": "Free services include services for ... infectious diseases such as HIV and TB (national free health services policy)",
+      "last_verified_at": "2026-08-12",
+      "verification_status": "auto_extracted"
+    },
+    {
+      "slug": "free-tb-treatment",
+      "name_local": "Free Tuberculosis (TB) Screening and Treatment",
+      "name_en": "Free TB Treatment",
+      "admin_level": "national",
+      "admin_area": null,
+      "funder": "National Department of Health",
+      "category": "health",
+      "benefit_type": "in_kind",
+      "amount_min": null,
+      "amount_max": null,
+      "amount_currency": "ZAR",
+      "amount_period": "monthly",
+      "amount_note": "Free TB screening, diagnosis and full course of treatment (including drug-resistant TB) at public health facilities.",
+      "is_automatic": true,
+      "application_url": null,
+      "application_channel": "automatic",
+      "deadline_type": "none",
+      "deadline_note": null,
+      "procedure_steps": [
+        {
+          "step": 1,
+          "detail": "Present with symptoms or for screening at any public clinic; treatment is free",
+          "url": null
+        }
+      ],
+      "documents_required": [],
+      "eligibility": {
+        "statuses": [],
+        "age_min": null,
+        "age_max": null,
+        "income_annual_max": null,
+        "income_note": null,
+        "requires_children": false,
+        "nationality": "any_resident",
+        "residency_months_min": null,
+        "housing_tenure": null,
+        "student_required": false,
+        "admin_areas": []
+      },
+      "source_url": "https://www.health.gov.za",
+      "source_snippet": "Free services include services for ... infectious diseases such as HIV and TB (national free health services policy)",
+      "last_verified_at": "2026-08-12",
+      "verification_status": "auto_extracted"
+    },
+    {
+      "slug": "free-childhood-immunisation",
+      "name_local": "Free Childhood Immunisation (Expanded Programme on Immunisation - EPI-SA)",
+      "name_en": "Free Childhood Immunisation",
+      "admin_level": "national",
+      "admin_area": null,
+      "funder": "National Department of Health",
+      "category": "health",
+      "benefit_type": "in_kind",
+      "amount_min": null,
+      "amount_max": null,
+      "amount_currency": "ZAR",
+      "amount_period": "one_off",
+      "amount_note": "All vaccines on the national EPI schedule (BCG, polio, measles, pentavalent, HPV for schoolgirls, etc.) are free at public clinics; the Road-to-Health booklet tracks the schedule.",
+      "is_automatic": true,
+      "application_url": null,
+      "application_channel": "automatic",
+      "deadline_type": "none",
+      "deadline_note": null,
+      "procedure_steps": [
+        {
+          "step": 1,
+          "detail": "Take the child's Road-to-Health booklet to any public clinic on schedule dates",
+          "url": null
+        }
+      ],
+      "documents_required": [
+        {
+          "doc": "Road-to-Health booklet (issued free at birth)",
+          "mandatory": false,
+          "note": null
+        }
+      ],
+      "eligibility": {
+        "statuses": [],
+        "age_min": null,
+        "age_max": null,
+        "income_annual_max": null,
+        "income_note": null,
+        "requires_children": true,
+        "nationality": "any_resident",
+        "residency_months_min": null,
+        "housing_tenure": null,
+        "student_required": false,
+        "admin_areas": []
+      },
+      "source_url": "https://www.health.gov.za",
+      "source_snippet": "Immunisation against vaccine-preventable diseases is provided free of charge at public health facilities under the Expanded Programme on Immunisation",
+      "last_verified_at": "2026-08-12",
+      "verification_status": "auto_extracted"
+    },
+    {
+      "slug": "road-accident-fund",
+      "name_local": "Road Accident Fund (RAF) Claims",
+      "name_en": "Road Accident Fund Compensation",
+      "admin_level": "national",
+      "admin_area": null,
+      "funder": "Road Accident Fund",
+      "category": "income_support",
+      "benefit_type": "cash_one_off",
+      "amount_min": null,
+      "amount_max": null,
+      "amount_currency": "ZAR",
+      "amount_period": "one_off",
+      "amount_note": "Statutory compensation for people injured (or dependants of those killed) in road accidents caused by another driver's negligence: medical expenses, loss of earnings/support (capped for unidentifiable-driver claims) and general damages for serious injury. Funded by the fuel levy; claiming is free.",
+      "is_automatic": false,
+      "application_url": "https://www.raf.co.za",
+      "application_channel": "in_person",
+      "deadline_type": "rolling",
+      "deadline_note": "Claims generally within 3 years of the accident (2 years for hit-and-run)",
+      "procedure_steps": [
+        {
+          "step": 1,
+          "detail": "Obtain the accident report and medical records; complete RAF claim forms (RAF 1, RAF 3/4 as applicable)",
+          "url": "https://www.raf.co.za/Claims/Pages/How-To-Claim.aspx"
+        },
+        {
+          "step": 2,
+          "detail": "Lodge the claim with the RAF (direct or via an attorney)",
+          "url": null
+        },
+        {
+          "step": 3,
+          "detail": "RAF investigates and settles or the matter proceeds to court",
+          "url": null
+        }
+      ],
+      "documents_required": [
+        {
+          "doc": "South African ID (13-digit bar-coded or smart ID)",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Police accident report",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Medical reports / RAF 4 serious injury report",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Proof of earnings (for loss of earnings claims)",
+          "mandatory": false,
+          "note": null
+        }
+      ],
+      "eligibility": {
+        "statuses": [],
+        "age_min": null,
+        "age_max": null,
+        "income_annual_max": null,
+        "income_note": "Anyone injured by negligent driving on SA roads; minors' claims run against different prescription rules",
+        "requires_children": false,
+        "nationality": "any_resident",
+        "residency_months_min": null,
+        "housing_tenure": null,
+        "student_required": false,
+        "admin_areas": []
+      },
+      "source_url": "https://www.raf.co.za/Claims/Pages/How-To-Claim.aspx",
+      "source_snippet": "RAF claims documentation includes RAF 4 Serious Injury Report, employer's certificate showing remuneration, and itemised tax invoices for past medical expenses",
+      "last_verified_at": "2026-08-12",
+      "verification_status": "verified"
+    },
+    {
+      "slug": "legal-aid-sa",
+      "name_local": "Legal Aid South Africa (free legal services)",
+      "name_en": "Legal Aid SA",
+      "admin_level": "national",
+      "admin_area": null,
+      "funder": "Legal Aid South Africa",
+      "category": "income_support",
+      "benefit_type": "in_kind",
+      "amount_min": null,
+      "amount_max": null,
+      "amount_currency": "ZAR",
+      "amount_period": "one_off",
+      "amount_note": "Free legal representation and advice in criminal and qualifying civil matters for people who cannot afford a lawyer (means test: income roughly below R8,200/month single or per household rule-of-thumb; children always qualify).",
+      "is_automatic": false,
+      "application_url": "https://legal-aid.co.za",
+      "application_channel": "in_person",
+      "deadline_type": "rolling",
+      "deadline_note": null,
+      "procedure_steps": [
+        {
+          "step": 1,
+          "detail": "Call the toll-free advice line 0800 110 110 or visit a Legal Aid SA office",
+          "url": "https://legal-aid.co.za"
+        },
+        {
+          "step": 2,
+          "detail": "Pass the means test and be assigned a legal practitioner",
+          "url": null
+        }
+      ],
+      "documents_required": [
+        {
+          "doc": "South African ID (13-digit bar-coded or smart ID)",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Proof of income (for means test)",
+          "mandatory": true,
+          "note": null
+        }
+      ],
+      "eligibility": {
+        "statuses": [],
+        "age_min": null,
+        "age_max": null,
+        "income_annual_max": null,
+        "income_note": "Means-tested; children qualify regardless of means in criminal matters",
+        "requires_children": false,
+        "nationality": "any_resident",
+        "residency_months_min": null,
+        "housing_tenure": null,
+        "student_required": false,
+        "admin_areas": []
+      },
+      "source_url": "https://legal-aid.co.za",
+      "source_snippet": "Legal Aid SA provides legal aid at state expense to those who cannot afford legal representation, subject to a means test",
+      "last_verified_at": "2026-08-12",
+      "verification_status": "auto_extracted"
+    },
+    {
+      "slug": "military-veterans-benefits",
+      "name_local": "Military Veterans Benefits (Department of Military Veterans)",
+      "name_en": "Military Veterans Benefits",
+      "admin_level": "national",
+      "admin_area": null,
+      "funder": "Department of Military Veterans",
+      "category": "income_support",
+      "benefit_type": "in_kind",
+      "amount_min": null,
+      "amount_max": null,
+      "amount_currency": "ZAR",
+      "amount_period": "monthly",
+      "amount_note": "Registered military veterans (and dependants) can access a package of benefits: housing subsidy, free health care at designated facilities, education support/bursaries, pension (needs-based) and burial support.",
+      "is_automatic": false,
+      "application_url": "https://www.dmv.gov.za",
+      "application_channel": "in_person",
+      "deadline_type": "rolling",
+      "deadline_note": null,
+      "procedure_steps": [
+        {
+          "step": 1,
+          "detail": "Register on the national military veterans database at a DMV office",
+          "url": "https://www.dmv.gov.za"
+        },
+        {
+          "step": 2,
+          "detail": "Apply for specific benefits (housing, health, education, pension) once registered",
+          "url": null
+        }
+      ],
+      "documents_required": [
+        {
+          "doc": "South African ID (13-digit bar-coded or smart ID)",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Proof of military service",
+          "mandatory": true,
+          "note": null
+        }
+      ],
+      "eligibility": {
+        "statuses": [],
+        "age_min": null,
+        "age_max": null,
+        "income_annual_max": null,
+        "income_note": "Some benefits (pension) are needs-tested; must be listed on the military veterans database",
+        "requires_children": false,
+        "nationality": "citizen_or_pr",
+        "residency_months_min": null,
+        "housing_tenure": null,
+        "student_required": false,
+        "admin_areas": []
+      },
+      "source_url": "https://www.dmv.gov.za",
+      "source_snippet": "The Military Veterans Act provides benefits including housing, health care, education support and a pension for qualifying military veterans",
+      "last_verified_at": "2026-08-12",
+      "verification_status": "auto_extracted"
+    },
+    {
+      "slug": "free-first-id-birth-registration",
+      "name_local": "Free First ID / Smart ID Card and Free Birth Registration",
+      "name_en": "Free First ID and Birth Registration",
+      "admin_level": "national",
+      "admin_area": null,
+      "funder": "Department of Home Affairs",
+      "category": "family",
+      "benefit_type": "in_kind",
+      "amount_min": null,
+      "amount_max": null,
+      "amount_currency": "ZAR",
+      "amount_period": "one_off",
+      "amount_note": "First issue of an ID/smart ID card (at age 16) is free, as is registration of a birth and the first abridged/unabridged birth certificate; re-issues and late registrations attract fees.",
+      "is_automatic": false,
+      "application_url": "https://www.dha.gov.za",
+      "application_channel": "in_person",
+      "deadline_type": "rolling",
+      "deadline_note": "Births must be registered within 30 days to avoid late-registration processes",
+      "procedure_steps": [
+        {
+          "step": 1,
+          "detail": "Register the birth at Home Affairs (or at the hospital where available) using form BI-24",
+          "url": "https://www.dha.gov.za"
+        },
+        {
+          "step": 2,
+          "detail": "Apply for a first smart ID card at a Home Affairs office or bank branch partnership when turning 16",
+          "url": null
+        }
+      ],
+      "documents_required": [
+        {
+          "doc": "South African ID (13-digit bar-coded or smart ID)",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Birth certificate / proof of birth (for first ID)",
+          "mandatory": true,
+          "note": null
+        }
+      ],
+      "eligibility": {
+        "statuses": [],
+        "age_min": null,
+        "age_max": null,
+        "income_annual_max": null,
+        "income_note": null,
+        "requires_children": false,
+        "nationality": "citizen_or_pr",
+        "residency_months_min": null,
+        "housing_tenure": null,
+        "student_required": false,
+        "admin_areas": []
+      },
+      "source_url": "https://www.dha.gov.za",
+      "source_snippet": "First-time applicants receive their smart ID card free of charge; birth registration within 30 days is free",
+      "last_verified_at": "2026-08-12",
+      "verification_status": "auto_extracted"
+    },
+    {
+      "slug": "sefa-small-business-finance",
+      "name_local": "Small Enterprise Finance Agency (sefa) Loans",
+      "name_en": "sefa Small Business Finance",
+      "admin_level": "national",
+      "admin_area": null,
+      "funder": "Small Enterprise Finance Agency (sefa, under DSBD)",
+      "category": "business",
+      "benefit_type": "cash_one_off",
+      "amount_min": null,
+      "amount_max": null,
+      "amount_currency": "ZAR",
+      "amount_period": "one_off",
+      "amount_note": "Development loan finance for small and micro enterprises (survivalist, micro, small and medium loans, and property/bridging finance), ranging from tens of thousands up to R15 million, at development rates; not a grant - repayable.",
+      "is_automatic": false,
+      "application_url": "https://www.sefa.org.za",
+      "application_channel": "online",
+      "deadline_type": "rolling",
+      "deadline_note": null,
+      "procedure_steps": [
+        {
+          "step": 1,
+          "detail": "Apply online or at a sefa office with business plan, financials and FICA documents",
+          "url": "https://www.sefa.org.za"
+        },
+        {
+          "step": 2,
+          "detail": "Credit and due-diligence assessment; loan agreement if approved",
+          "url": null
+        }
+      ],
+      "documents_required": [
+        {
+          "doc": "South African ID (13-digit bar-coded or smart ID)",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Business plan and financial statements / cash-flow projections",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Company registration documents",
+          "mandatory": true,
+          "note": null
+        }
+      ],
+      "eligibility": {
+        "statuses": [
+          "self_employed"
+        ],
+        "age_min": null,
+        "age_max": null,
+        "income_annual_max": null,
+        "income_note": "South African-owned SMMEs, prioritising youth, women and township/rural enterprises",
+        "requires_children": false,
+        "nationality": "citizen_or_pr",
+        "residency_months_min": null,
+        "housing_tenure": null,
+        "student_required": false,
+        "admin_areas": []
+      },
+      "source_url": "https://www.sefa.org.za",
+      "source_snippet": "sefa provides financial products and services to survivalist, micro, small and medium enterprises",
+      "last_verified_at": "2026-08-12",
+      "verification_status": "auto_extracted"
+    },
+    {
+      "slug": "seda-small-business-support",
+      "name_local": "Small Enterprise Development Agency (SEDA) Business Support",
+      "name_en": "SEDA Business Support",
+      "admin_level": "national",
+      "admin_area": null,
+      "funder": "Small Enterprise Development Agency (SEDA, under DSBD)",
+      "category": "business",
+      "benefit_type": "in_kind",
+      "amount_min": null,
+      "amount_max": null,
+      "amount_currency": "ZAR",
+      "amount_period": "one_off",
+      "amount_note": "Free or subsidised non-financial support for small businesses: business advice, business plans, incubation (SETP/technology incubators), export readiness, quality standards and mentoring.",
+      "is_automatic": false,
+      "application_url": "https://www.seda.org.za",
+      "application_channel": "in_person",
+      "deadline_type": "rolling",
+      "deadline_note": null,
+      "procedure_steps": [
+        {
+          "step": 1,
+          "detail": "Approach a SEDA branch/incubator or use the online enquiry service",
+          "url": "https://www.seda.org.za"
+        }
+      ],
+      "documents_required": [
+        {
+          "doc": "Business registration documents (for some programmes)",
+          "mandatory": false,
+          "note": null
+        }
+      ],
+      "eligibility": {
+        "statuses": [
+          "self_employed"
+        ],
+        "age_min": null,
+        "age_max": null,
+        "income_annual_max": null,
+        "income_note": null,
+        "requires_children": false,
+        "nationality": "citizen_or_pr",
+        "residency_months_min": null,
+        "housing_tenure": null,
+        "student_required": false,
+        "admin_areas": []
+      },
+      "source_url": "https://www.seda.org.za",
+      "source_snippet": "SEDA provides non-financial business development and support services to small enterprises through its national branch network",
+      "last_verified_at": "2026-08-12",
+      "verification_status": "auto_extracted"
+    },
+    {
+      "slug": "nyda-youth-enterprise-support",
+      "name_local": "National Youth Development Agency (NYDA) Grant and Voucher Programme",
+      "name_en": "NYDA Grant & Voucher Programme",
+      "admin_level": "national",
+      "admin_area": null,
+      "funder": "National Youth Development Agency (NYDA)",
+      "category": "business",
+      "benefit_type": "cash_one_off",
+      "amount_min": null,
+      "amount_max": null,
+      "amount_currency": "ZAR",
+      "amount_period": "one_off",
+      "amount_note": "Grant funding and business development vouchers for youth-owned (18-35) enterprises: grants have historically ranged from R1,000 to R250,000 (typically R5,000-R100,000 for micro-enterprises) plus free mentorship and business skills training.",
+      "is_automatic": false,
+      "application_url": "https://erp.nyda.gov.za",
+      "application_channel": "online",
+      "deadline_type": "rolling",
+      "deadline_note": null,
+      "procedure_steps": [
+        {
+          "step": 1,
+          "detail": "Register on the NYDA ERP portal and complete the online grant application",
+          "url": "https://erp.nyda.gov.za"
+        },
+        {
+          "step": 2,
+          "detail": "Attend assessment/business development support; grant paid in tranches on milestone delivery",
+          "url": null
+        }
+      ],
+      "documents_required": [
+        {
+          "doc": "South African ID (13-digit bar-coded or smart ID)",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Business registration / business plan",
+          "mandatory": true,
+          "note": null
+        }
+      ],
+      "eligibility": {
+        "statuses": [
+          "self_employed",
+          "jobseeker"
+        ],
+        "age_min": 18,
+        "age_max": 35,
+        "income_annual_max": null,
+        "income_note": "Youth-owned businesses (ownership 26%+ by youth aged 18-35)",
+        "requires_children": false,
+        "nationality": "citizen_or_pr",
+        "residency_months_min": null,
+        "housing_tenure": null,
+        "student_required": false,
+        "admin_areas": []
+      },
+      "source_url": "https://www.nyda.gov.za",
+      "source_snippet": "The NYDA Grant Programme provides young entrepreneurs with grant funding and business development support to start and grow businesses",
+      "last_verified_at": "2026-08-12",
+      "verification_status": "auto_extracted"
+    },
+    {
+      "slug": "trep-township-rural-entrepreneurship",
+      "name_local": "Township and Rural Entrepreneurship Programme (TREP)",
+      "name_en": "TREP",
+      "admin_level": "national",
+      "admin_area": null,
+      "funder": "Department of Small Business Development / sefa / SEDA",
+      "category": "business",
+      "benefit_type": "cash_one_off",
+      "amount_min": null,
+      "amount_max": null,
+      "amount_currency": "ZAR",
+      "amount_period": "one_off",
+      "amount_note": "Blended grant-and-loan support for township and rural micro and small enterprises (informal traders, general dealers, spazas, clothing, automotive repair, bakeries etc.), combining a grant component with sefa development finance plus capacity support.",
+      "is_automatic": false,
+      "application_url": "https://www.dsbd.gov.za",
+      "application_channel": "online",
+      "deadline_type": "window",
+      "deadline_note": "Calls for applications opened periodically via sefa/DSBD",
+      "procedure_steps": [
+        {
+          "step": 1,
+          "detail": "Apply through sefa when a TREP window opens, with business documents",
+          "url": "https://www.sefa.org.za"
+        }
+      ],
+      "documents_required": [
+        {
+          "doc": "South African ID (13-digit bar-coded or smart ID)",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Business plan / trading permit or registration",
+          "mandatory": true,
+          "note": null
+        }
+      ],
+      "eligibility": {
+        "statuses": [
+          "self_employed"
+        ],
+        "age_min": null,
+        "age_max": null,
+        "income_annual_max": null,
+        "income_note": "Township and rural enterprises",
+        "requires_children": false,
+        "nationality": "citizen_or_pr",
+        "residency_months_min": null,
+        "housing_tenure": null,
+        "student_required": false,
+        "admin_areas": []
+      },
+      "source_url": "https://www.dsbd.gov.za",
+      "source_snippet": "TREP supports township and rural enterprises through blended finance (grant plus loan) and business development support",
+      "last_verified_at": "2026-08-12",
+      "verification_status": "auto_extracted"
+    },
+    {
+      "slug": "black-industrialists-scheme",
+      "name_local": "Black Industrialists Scheme (BIS)",
+      "name_en": "Black Industrialists Scheme",
+      "admin_level": "national",
+      "admin_area": null,
+      "funder": "Department of Trade, Industry and Competition (the dtic)",
+      "category": "business",
+      "benefit_type": "cash_one_off",
+      "amount_min": null,
+      "amount_max": null,
+      "amount_currency": "ZAR",
+      "amount_period": "one_off",
+      "amount_note": "Cost-sharing grant of 30%-50% of qualifying investment (up to R50 million) for majority black-owned manufacturers to expand productive capacity, machinery and working capital.",
+      "is_automatic": false,
+      "application_url": "https://www.thedtic.gov.za",
+      "application_channel": "in_person",
+      "deadline_type": "window",
+      "deadline_note": "Applications per dtic incentive guidelines",
+      "procedure_steps": [
+        {
+          "step": 1,
+          "detail": "Submit application with business plan, B-BBEE and company documents to the dtic",
+          "url": "https://www.thedtic.gov.za"
+        },
+        {
+          "step": 2,
+          "detail": "Appraisal and approval; claims paid against verified expenditure",
+          "url": null
+        }
+      ],
+      "documents_required": [
+        {
+          "doc": "Company registration and B-BBEE certificate",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Business plan and financials",
+          "mandatory": true,
+          "note": null
+        }
+      ],
+      "eligibility": {
+        "statuses": [
+          "self_employed"
+        ],
+        "age_min": null,
+        "age_max": null,
+        "income_annual_max": null,
+        "income_note": "Majority black-owned and managed manufacturing enterprises",
+        "requires_children": false,
+        "nationality": "citizen_or_pr",
+        "residency_months_min": null,
+        "housing_tenure": null,
+        "student_required": false,
+        "admin_areas": []
+      },
+      "source_url": "https://www.thedtic.gov.za",
+      "source_snippet": "The Black Industrialists Scheme offers a cost-sharing grant towards capital investment, feasibility studies and business development services",
+      "last_verified_at": "2026-08-12",
+      "verification_status": "auto_extracted"
+    },
+    {
+      "slug": "emia-export-marketing",
+      "name_local": "Export Marketing and Investment Assistance (EMIA)",
+      "name_en": "EMIA",
+      "admin_level": "national",
+      "admin_area": null,
+      "funder": "Department of Trade, Industry and Competition (the dtic)",
+      "category": "business",
+      "benefit_type": "cash_one_off",
+      "amount_min": null,
+      "amount_max": null,
+      "amount_currency": "ZAR",
+      "amount_period": "one_off",
+      "amount_note": "Partial reimbursement of export marketing costs: participation in international trade exhibitions, missions and primary export market research for emerging exporters (including individuals and SMMEs).",
+      "is_automatic": false,
+      "application_url": "https://www.thedtic.gov.za",
+      "application_channel": "online",
+      "deadline_type": "window",
+      "deadline_note": "Apply before the event per EMIA guidelines",
+      "procedure_steps": [
+        {
+          "step": 1,
+          "detail": "Apply to the dtic before the trade show/mission with company and event documentation",
+          "url": "https://www.thedtic.gov.za"
+        },
+        {
+          "step": 2,
+          "detail": "Claim reimbursement with proof of expenditure after the event",
+          "url": null
+        }
+      ],
+      "documents_required": [
+        {
+          "doc": "Company registration and tax clearance",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Event invoices and proof of travel",
+          "mandatory": true,
+          "note": null
+        }
+      ],
+      "eligibility": {
+        "statuses": [
+          "self_employed"
+        ],
+        "age_min": null,
+        "age_max": null,
+        "income_annual_max": null,
+        "income_note": "Emerging exporters, SMMEs, HDI-owned entities get preferential rates",
+        "requires_children": false,
+        "nationality": "citizen_or_pr",
+        "residency_months_min": null,
+        "housing_tenure": null,
+        "student_required": false,
+        "admin_areas": []
+      },
+      "source_url": "https://www.thedtic.gov.za",
+      "source_snippet": "EMIA aims to develop export markets for South African goods and services by partially compensating exporters for qualifying marketing costs",
+      "last_verified_at": "2026-08-12",
+      "verification_status": "auto_extracted"
+    },
+    {
+      "slug": "casp-agricultural-support",
+      "name_local": "Comprehensive Agricultural Support Programme (CASP)",
+      "name_en": "CASP",
+      "admin_level": "national",
+      "admin_area": null,
+      "funder": "Department of Agriculture, Land Reform and Rural Development (DALRRD) / provinces",
+      "category": "business",
+      "benefit_type": "in_kind",
+      "amount_min": null,
+      "amount_max": null,
+      "amount_currency": "ZAR",
+      "amount_period": "one_off",
+      "amount_note": "Conditional grant support to smallholder and subsistence farmers delivered by provinces: production inputs, infrastructure (fencing, irrigation), on/off-farm equipment, training and extension services.",
+      "is_automatic": false,
+      "application_url": "https://www.dalrrd.gov.za",
+      "application_channel": "in_person",
+      "deadline_type": "annual",
+      "deadline_note": "Provincial calls and business-plan approvals each financial year",
+      "procedure_steps": [
+        {
+          "step": 1,
+          "detail": "Apply at your provincial agriculture office with ID, proof of land access and a farm business plan",
+          "url": null
+        }
+      ],
+      "documents_required": [
+        {
+          "doc": "South African ID (13-digit bar-coded or smart ID)",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Proof of land access (title, PTO or lease)",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Farm business plan",
+          "mandatory": true,
+          "note": null
+        }
+      ],
+      "eligibility": {
+        "statuses": [
+          "self_employed"
+        ],
+        "age_min": null,
+        "age_max": null,
+        "income_annual_max": null,
+        "income_note": "Subsistence, smallholder and previously disadvantaged commercial farmers",
+        "requires_children": false,
+        "nationality": "citizen_or_pr",
+        "residency_months_min": null,
+        "housing_tenure": null,
+        "student_required": false,
+        "admin_areas": []
+      },
+      "source_url": "https://www.dalrrd.gov.za",
+      "source_snippet": "CASP provides post-settlement support to targeted beneficiaries of land reform and other producers who have acquired land through private means",
+      "last_verified_at": "2026-08-12",
+      "verification_status": "auto_extracted"
+    },
+    {
+      "slug": "ilima-letsema-grants",
+      "name_local": "Ilima/Letsema Projects Grant",
+      "name_en": "Ilima/Letsema",
+      "admin_level": "national",
+      "admin_area": null,
+      "funder": "Department of Agriculture, Land Reform and Rural Development (DALRRD)",
+      "category": "business",
+      "benefit_type": "in_kind",
+      "amount_min": null,
+      "amount_max": null,
+      "amount_currency": "ZAR",
+      "amount_period": "annual",
+      "amount_note": "Provincial conditional grant boosting food production: production inputs (seeds, fertiliser, equipment) and support for community food gardens, schools and smallholder producers, implemented by provincial departments of agriculture.",
+      "is_automatic": false,
+      "application_url": "https://www.dalrrd.gov.za",
+      "application_channel": "in_person",
+      "deadline_type": "annual",
+      "deadline_note": "Provincial allocations each financial year",
+      "procedure_steps": [
+        {
+          "step": 1,
+          "detail": "Apply via your provincial department of agriculture or extension officer",
+          "url": null
+        }
+      ],
+      "documents_required": [
+        {
+          "doc": "South African ID (13-digit bar-coded or smart ID)",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Proof of land access / garden or farm project details",
+          "mandatory": true,
+          "note": null
+        }
+      ],
+      "eligibility": {
+        "statuses": [
+          "self_employed"
+        ],
+        "age_min": null,
+        "age_max": null,
+        "income_annual_max": null,
+        "income_note": "Vulnerable households, subsistence and smallholder producers",
+        "requires_children": false,
+        "nationality": "citizen_or_pr",
+        "residency_months_min": null,
+        "housing_tenure": null,
+        "student_required": false,
+        "admin_areas": []
+      },
+      "source_url": "https://www.dalrrd.gov.za",
+      "source_snippet": "The Ilima/Letsema programme aims to increase food production through support to subsistence, smallholder and household food producers",
+      "last_verified_at": "2026-08-12",
+      "verification_status": "auto_extracted"
+    },
+    {
+      "slug": "landbank-blended-finance",
+      "name_local": "Land Bank Blended Finance Scheme",
+      "name_en": "Land Bank Blended Finance",
+      "admin_level": "national",
+      "admin_area": null,
+      "funder": "Land and Agricultural Development Bank of South Africa (Land Bank) / DALRRD",
+      "category": "business",
+      "benefit_type": "cash_one_off",
+      "amount_min": null,
+      "amount_max": null,
+      "amount_currency": "ZAR",
+      "amount_period": "one_off",
+      "amount_note": "Blended grant-plus-loan finance for black commercial farmers (grants of roughly 40-60% of project value combined with Land Bank loans) for land acquisition, production and agri-processing.",
+      "is_automatic": false,
+      "application_url": "https://www.landbank.co.za",
+      "application_channel": "in_person",
+      "deadline_type": "window",
+      "deadline_note": "Application windows advertised by Land Bank",
+      "procedure_steps": [
+        {
+          "step": 1,
+          "detail": "Submit a funding application with farm business plan and land/enterprise documents to Land Bank",
+          "url": "https://www.landbank.co.za"
+        },
+        {
+          "step": 2,
+          "detail": "Credit assessment and blended structuring with DALRRD grant component",
+          "url": null
+        }
+      ],
+      "documents_required": [
+        {
+          "doc": "South African ID (13-digit bar-coded or smart ID)",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Farm business plan and financials",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Proof of land access / purchase agreement",
+          "mandatory": true,
+          "note": null
+        }
+      ],
+      "eligibility": {
+        "statuses": [
+          "self_employed"
+        ],
+        "age_min": null,
+        "age_max": null,
+        "income_annual_max": null,
+        "income_note": "Black (African) farmers with commercially viable projects",
+        "requires_children": false,
+        "nationality": "citizen_or_pr",
+        "residency_months_min": null,
+        "housing_tenure": null,
+        "student_required": false,
+        "admin_areas": []
+      },
+      "source_url": "https://www.landbank.co.za",
+      "source_snippet": "The Blended Finance Scheme combines a government grant with a Land Bank loan to support black commercial farmers",
+      "last_verified_at": "2026-08-12",
+      "verification_status": "auto_extracted"
+    },
+    {
+      "slug": "prasa-metrorail-subsidised-fares",
+      "name_local": "PRASA Metrorail Subsidised Commuter Rail Fares",
+      "name_en": "Metrorail Subsidised Fares",
+      "admin_level": "national",
+      "admin_area": null,
+      "funder": "Passenger Rail Agency of South Africa (PRASA) / Department of Transport",
+      "category": "transport",
+      "benefit_type": "discount",
+      "amount_min": null,
+      "amount_max": null,
+      "amount_currency": "ZAR",
+      "amount_period": "monthly",
+      "amount_note": "Heavily state-subsidised commuter rail fares on Metrorail services (single tickets from a few rand; weekly/monthly tickets at deep discounts versus road transport), with concessionary tickets for pensioners on some routes.",
+      "is_automatic": false,
+      "application_url": null,
+      "application_channel": "in_person",
+      "deadline_type": "rolling",
+      "deadline_note": null,
+      "procedure_steps": [
+        {
+          "step": 1,
+          "detail": "Buy single, return, weekly or monthly tickets at the station or via the PRASA/Metrorail app",
+          "url": "https://www.metrorail.co.za"
+        }
+      ],
+      "documents_required": [],
+      "eligibility": {
+        "statuses": [],
+        "age_min": null,
+        "age_max": null,
+        "income_annual_max": null,
+        "income_note": "Universal fare subsidy; aimed at low-income commuters",
+        "requires_children": false,
+        "nationality": "any_resident",
+        "residency_months_min": null,
+        "housing_tenure": null,
+        "student_required": false,
+        "admin_areas": []
+      },
+      "source_url": "https://www.metrorail.co.za",
+      "source_snippet": "Metrorail commuter rail fares are subsidised by the state to keep commuter rail affordable for low-income passengers",
+      "last_verified_at": "2026-08-12",
+      "verification_status": "auto_extracted"
+    },
+    {
+      "slug": "dial-a-ride-cape-town",
+      "name_local": "Cape Town Dial-a-Ride (transport for persons with disabilities)",
+      "name_en": "Dial-a-Ride Cape Town",
+      "admin_level": "city",
+      "admin_area": "City of Cape Town",
+      "funder": "City of Cape Town",
+      "category": "transport",
+      "benefit_type": "discount",
+      "amount_min": null,
+      "amount_max": null,
+      "amount_currency": "ZAR",
+      "amount_period": "monthly",
+      "amount_note": "Subsidised kerb-to-kerb shared minibus service for registered users with disabilities who cannot use mainstream public transport; nominal fares per trip.",
+      "is_automatic": false,
+      "application_url": "https://www.capetown.gov.za",
+      "application_channel": "in_person",
+      "deadline_type": "rolling",
+      "deadline_note": "Registration required; bookings in advance",
+      "procedure_steps": [
+        {
+          "step": 1,
+          "detail": "Register with the City as a Dial-a-Ride user (medical proof of disability)",
+          "url": "https://www.capetown.gov.za"
+        },
+        {
+          "step": 2,
+          "detail": "Book trips in advance; pay the subsidised fare per trip",
+          "url": null
+        }
+      ],
+      "documents_required": [
+        {
+          "doc": "South African ID (13-digit bar-coded or smart ID)",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Medical certificate / proof of disability",
+          "mandatory": true,
+          "note": null
+        }
+      ],
+      "eligibility": {
+        "statuses": [],
+        "age_min": null,
+        "age_max": null,
+        "income_annual_max": null,
+        "income_note": "For people with disabilities unable to use conventional public transport",
+        "requires_children": false,
+        "nationality": "any_resident",
+        "residency_months_min": null,
+        "housing_tenure": null,
+        "student_required": false,
+        "admin_areas": [
+          "Western Cape"
+        ]
+      },
+      "source_url": "https://www.capetown.gov.za",
+      "source_snippet": "Dial-a-Ride provides subsidised kerb-to-kerb transport for registered persons with disabilities in Cape Town",
+      "last_verified_at": "2026-08-12",
+      "verification_status": "auto_extracted"
+    },
+    {
+      "slug": "scholar-transport",
+      "name_local": "Provincial Scholar/Learner Transport Programme",
+      "name_en": "Scholar Transport",
+      "admin_level": "region",
+      "admin_area": null,
+      "funder": "Provincial Departments of Education/Transport (national DBE scholar transport policy)",
+      "category": "transport",
+      "benefit_type": "in_kind",
+      "amount_min": null,
+      "amount_max": null,
+      "amount_currency": "ZAR",
+      "amount_period": "monthly",
+      "amount_note": "Free state-provided learner transport for qualifying learners who live far from the nearest appropriate public school (typically more than 5 km from the school), delivered by provincial education departments via contracted operators.",
+      "is_automatic": false,
+      "application_url": null,
+      "application_channel": "in_person",
+      "deadline_type": "annual",
+      "deadline_note": "Apply through the school at the start of the school year",
+      "procedure_steps": [
+        {
+          "step": 1,
+          "detail": "Apply via the school/principal to the provincial education department's scholar transport unit",
+          "url": null
+        },
+        {
+          "step": 2,
+          "detail": "Route and eligibility are verified; the learner is assigned to a contracted transport route",
+          "url": null
+        }
+      ],
+      "documents_required": [
+        {
+          "doc": "Proof of residence / distance to school",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "School enrolment confirmation",
+          "mandatory": true,
+          "note": null
+        }
+      ],
+      "eligibility": {
+        "statuses": [],
+        "age_min": null,
+        "age_max": null,
+        "income_annual_max": null,
+        "income_note": "Eligibility based mainly on distance to nearest school (generally 5 km+)",
+        "requires_children": true,
+        "nationality": "citizen_or_pr",
+        "residency_months_min": null,
+        "housing_tenure": null,
+        "student_required": true,
+        "admin_areas": [
+          "Gauteng",
+          "Western Cape",
+          "KwaZulu-Natal",
+          "Eastern Cape",
+          "Limpopo",
+          "Mpumalanga",
+          "North West",
+          "Free State",
+          "Northern Cape"
+        ]
+      },
+      "source_url": "https://www.education.gov.za",
+      "source_snippet": "Provincial education departments provide scholar transport to learners who live more than a prescribed distance (usually 5 km) from the nearest suitable school",
+      "last_verified_at": "2026-08-12",
+      "verification_status": "auto_extracted"
+    }
+  ]
+}

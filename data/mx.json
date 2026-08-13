@@ -1,0 +1,4172 @@
+{
+  "country_code": "MX",
+  "country_name": "Mexico",
+  "currency": "MXN",
+  "language": "es",
+  "programmes": [
+    {
+      "slug": "pension-bienestar-adultos-mayores",
+      "name_local": "Pensión para el Bienestar de las Personas Adultas Mayores",
+      "name_en": "Wellbeing Pension for Senior Citizens",
+      "admin_level": "national",
+      "admin_area": null,
+      "funder": "Secretaría del Bienestar / Banco del Bienestar",
+      "category": "income_support",
+      "benefit_type": "cash_monthly",
+      "amount_min": 3200,
+      "amount_max": 3200,
+      "amount_currency": "MXN",
+      "amount_period": "monthly",
+      "amount_note": "MXN 6,400 bimestrales en 2026 (equivalente a 3,200 mensuales), depositados en la Tarjeta del Bienestar; existe un Pago de Marcha único de 3,200 para la persona auxiliar en caso de fallecimiento",
+      "is_automatic": false,
+      "application_url": "https://programasparaelbienestar.gob.mx/",
+      "application_channel": "in_person",
+      "deadline_type": "rolling",
+      "deadline_note": null,
+      "procedure_steps": [
+        {
+          "step": 1,
+          "detail": "Acudir a un Módulo del Bienestar con la documentación en la fecha según apellido",
+          "url": "https://programasparaelbienestar.gob.mx/"
+        },
+        {
+          "step": 2,
+          "detail": "Recibir la Tarjeta del Banco del Bienestar y esperar los depósitos bimestrales",
+          "url": "https://www.gob.mx/bancodelbienestar"
+        }
+      ],
+      "documents_required": [
+        {
+          "doc": "Identificación oficial vigente (INE, pasaporte o credencial INAPAM)",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "CURP",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Acta de nacimiento",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Comprobante de domicilio no mayor a 6 meses",
+          "mandatory": true,
+          "note": null
+        }
+      ],
+      "eligibility": {
+        "statuses": [
+          "retired"
+        ],
+        "age_min": 65,
+        "age_max": null,
+        "income_annual_max": null,
+        "income_note": "Universal para personas de 65 años o más, sin evaluar ingresos",
+        "requires_children": false,
+        "nationality": "citizen_or_pr",
+        "residency_months_min": null,
+        "housing_tenure": null,
+        "student_required": false,
+        "admin_areas": []
+      },
+      "source_url": "https://programasparaelbienestar.gob.mx/",
+      "source_snippet": "En 2026, el monto bimestral se incrementó a 6,400 pesos... Adultos mayores (65 años y más): $6,400 MXN bimestrales",
+      "last_verified_at": "2026-08-12",
+      "verification_status": "verified"
+    },
+    {
+      "slug": "pension-mujeres-bienestar",
+      "name_local": "Pensión Mujeres Bienestar",
+      "name_en": "Wellbeing Pension for Women aged 60-64",
+      "admin_level": "national",
+      "admin_area": null,
+      "funder": "Secretaría del Bienestar / Banco del Bienestar",
+      "category": "income_support",
+      "benefit_type": "cash_monthly",
+      "amount_min": 1550,
+      "amount_max": 1550,
+      "amount_currency": "MXN",
+      "amount_period": "monthly",
+      "amount_note": "MXN 3,100 bimestrales en 2026 (aprox. 1,550 mensuales), depositados en la Tarjeta del Bienestar",
+      "is_automatic": false,
+      "application_url": "https://programasparaelbienestar.gob.mx/",
+      "application_channel": "in_person",
+      "deadline_type": "window",
+      "deadline_note": "El registro se abre en ventanas anunciadas por la Secretaría del Bienestar en los Módulos del Bienestar",
+      "procedure_steps": [
+        {
+          "step": 1,
+          "detail": "Registrarse en un Módulo del Bienestar durante la ventana de registro",
+          "url": "https://programasparaelbienestar.gob.mx/"
+        },
+        {
+          "step": 2,
+          "detail": "Recibir la Tarjeta del Banco del Bienestar para los depósitos bimestrales",
+          "url": null
+        }
+      ],
+      "documents_required": [
+        {
+          "doc": "Identificación oficial vigente",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "CURP",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Acta de nacimiento",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Comprobante de domicilio no mayor a 6 meses",
+          "mandatory": true,
+          "note": null
+        }
+      ],
+      "eligibility": {
+        "statuses": [
+          "retired"
+        ],
+        "age_min": 60,
+        "age_max": 64,
+        "income_annual_max": null,
+        "income_note": "Dirigida a mujeres de 60 a 64 años en situación de vulnerabilidad; ampliación gradual del padrón",
+        "requires_children": false,
+        "nationality": "any_resident",
+        "residency_months_min": null,
+        "housing_tenure": null,
+        "student_required": false,
+        "admin_areas": []
+      },
+      "source_url": "https://programasparaelbienestar.gob.mx/",
+      "source_snippet": "Pensión Mujeres Bienestar: Dirigida a mujeres de 60 a 64 años en situación de vulnerabilidad. El apoyo será de 3 mil 100 pesos bimestrales, con ampliación gradual del padrón.",
+      "last_verified_at": "2026-08-12",
+      "verification_status": "verified"
+    },
+    {
+      "slug": "pension-bienestar-discapacidad",
+      "name_local": "Pensión para el Bienestar de las Personas con Discapacidad Permanente",
+      "name_en": "Wellbeing Pension for Persons with Permanent Disability",
+      "admin_level": "national",
+      "admin_area": null,
+      "funder": "Secretaría del Bienestar / Banco del Bienestar",
+      "category": "income_support",
+      "benefit_type": "cash_monthly",
+      "amount_min": 1650,
+      "amount_max": 1650,
+      "amount_currency": "MXN",
+      "amount_period": "monthly",
+      "amount_note": "MXN 3,300 bimestrales en 2026 (aprox. 1,650 mensuales) para personas de 0 a 64 años con discapacidad permanente",
+      "is_automatic": false,
+      "application_url": "https://programasparaelbienestar.gob.mx/",
+      "application_channel": "in_person",
+      "deadline_type": "window",
+      "deadline_note": "Registro en Módulos del Bienestar en las fechas que anuncia la Secretaría",
+      "procedure_steps": [
+        {
+          "step": 1,
+          "detail": "Acudir al Módulo del Bienestar con certificado médico y documentos",
+          "url": "https://programasparaelbienestar.gob.mx/"
+        },
+        {
+          "step": 2,
+          "detail": "Recibir la Tarjeta del Banco del Bienestar para cobros bimestrales",
+          "url": null
+        }
+      ],
+      "documents_required": [
+        {
+          "doc": "Identificación oficial vigente",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "CURP",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Acta de nacimiento",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Comprobante de domicilio no mayor a 6 meses",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Certificado médico de discapacidad permanente emitido por institución pública de salud",
+          "mandatory": true,
+          "note": null
+        }
+      ],
+      "eligibility": {
+        "statuses": [],
+        "age_min": 0,
+        "age_max": 64,
+        "income_annual_max": null,
+        "income_note": "Para personas con discapacidad permanente certificada; se prioriza a quienes viven en pobreza o marginación",
+        "requires_children": false,
+        "nationality": "any_resident",
+        "residency_months_min": null,
+        "housing_tenure": null,
+        "student_required": false,
+        "admin_areas": []
+      },
+      "source_url": "https://programasparaelbienestar.gob.mx/",
+      "source_snippet": "El apoyo es de tres mil 300 pesos bimestrales... personas de cero a 64 años con discapacidad permanente, directamente en una tarjeta del Banco del Bienestar",
+      "last_verified_at": "2026-08-12",
+      "verification_status": "verified"
+    },
+    {
+      "slug": "seguro-vida-jefas-familia",
+      "name_local": "Seguro de Vida para Jefas de Familia",
+      "name_en": "Life Insurance for Female Heads of Household",
+      "admin_level": "national",
+      "admin_area": null,
+      "funder": "Secretaría de Bienestar",
+      "category": "family",
+      "benefit_type": "cash_one_off",
+      "amount_min": null,
+      "amount_max": null,
+      "amount_currency": "MXN",
+      "amount_period": "one_off",
+      "amount_note": "Pago único a los beneficiarios designados en caso de fallecimiento de la madre jefa de familia asegurada; el monto se fija en las Reglas de Operación vigentes",
+      "is_automatic": false,
+      "application_url": "https://www.gob.mx/bienestar",
+      "application_channel": "in_person",
+      "deadline_type": "window",
+      "deadline_note": "Registro en ventanas que anuncia la Secretaría del Bienestar",
+      "procedure_steps": [
+        {
+          "step": 1,
+          "detail": "Acudir al Módulo del Bienestar con la documentación",
+          "url": "https://www.gob.mx/bienestar"
+        },
+        {
+          "step": 2,
+          "detail": "Designar beneficiarios y recibir la póliza del seguro",
+          "url": null
+        }
+      ],
+      "documents_required": [
+        {
+          "doc": "Identificación oficial vigente",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "CURP",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Acta de nacimiento",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Comprobante de domicilio",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Actas de nacimiento de las hijas e hijos",
+          "mandatory": true,
+          "note": null
+        }
+      ],
+      "eligibility": {
+        "statuses": [],
+        "age_min": null,
+        "age_max": null,
+        "income_annual_max": null,
+        "income_note": "Para mujeres jefas de familia con hijos menores de edad o con discapacidad, en localidades prioritarias",
+        "requires_children": true,
+        "nationality": "any_resident",
+        "residency_months_min": null,
+        "housing_tenure": null,
+        "student_required": false,
+        "admin_areas": []
+      },
+      "source_url": "https://www.gob.mx/bienestar",
+      "source_snippet": "El Seguro de Vida para Jefas de Familia protege económicamente a las hijas e hijos de mujeres jefas de familia en caso de fallecimiento de la asegurada.",
+      "last_verified_at": "2026-08-12",
+      "verification_status": "auto_extracted"
+    },
+    {
+      "slug": "produccion-para-el-bienestar",
+      "name_local": "Producción para el Bienestar",
+      "name_en": "Production for Wellbeing (small farmer support)",
+      "admin_level": "national",
+      "admin_area": null,
+      "funder": "Secretaría de Agricultura y Desarrollo Rural (AGRICULTURA)",
+      "category": "business",
+      "benefit_type": "cash_one_off",
+      "amount_min": 6000,
+      "amount_max": 24000,
+      "amount_currency": "MXN",
+      "amount_period": "annual",
+      "amount_note": "Apoyo económico anual directo de entre 6,000 y 24,000 pesos según el tipo de cultivo y las hectáreas registradas",
+      "is_automatic": false,
+      "application_url": "https://www.gob.mx/agricultura",
+      "application_channel": "in_person",
+      "deadline_type": "annual",
+      "deadline_note": "Convocatoria anual; registro ante CADER, DDR u oficinas de AGRICULTURA",
+      "procedure_steps": [
+        {
+          "step": 1,
+          "detail": "Inscribirse en el Padrón de Productores en el CADER o DDR más cercano",
+          "url": "https://www.gob.mx/agricultura"
+        },
+        {
+          "step": 2,
+          "detail": "Solicitar el apoyo conforme a la convocatoria anual y recibir el depósito directo",
+          "url": null
+        }
+      ],
+      "documents_required": [
+        {
+          "doc": "Identificación oficial vigente",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "CURP",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Comprobante de domicilio",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Documento que acredite la posesión del predio",
+          "mandatory": true,
+          "note": null
+        }
+      ],
+      "eligibility": {
+        "statuses": [
+          "self_employed"
+        ],
+        "age_min": null,
+        "age_max": null,
+        "income_annual_max": null,
+        "income_note": "Para productores agropecuarios de pequeña y mediana escala de granos, caña, café, cacao, nopal y miel",
+        "requires_children": false,
+        "nationality": "any_resident",
+        "residency_months_min": null,
+        "housing_tenure": null,
+        "student_required": false,
+        "admin_areas": []
+      },
+      "source_url": "https://www.gob.mx/agricultura",
+      "source_snippet": "El monto mínimo que se ofrece es de 6,000 pesos, y el máximo, de 24,000 pesos por persona.",
+      "last_verified_at": "2026-08-12",
+      "verification_status": "auto_extracted"
+    },
+    {
+      "slug": "precios-de-garantia-segalmex",
+      "name_local": "Precios de Garantía a Productos Alimentarios Básicos",
+      "name_en": "Guaranteed Prices for Basic Food Crops",
+      "admin_level": "national",
+      "admin_area": null,
+      "funder": "SEGALMEX / Secretaría de Agricultura y Desarrollo Rural",
+      "category": "business",
+      "benefit_type": "in_kind",
+      "amount_min": null,
+      "amount_max": null,
+      "amount_currency": "MXN",
+      "amount_period": "annual",
+      "amount_note": "El Estado compra la cosecha de maíz, frijol, trigo, arroz y leche a un precio de garantía publicado anualmente, en lugar de entregar efectivo",
+      "is_automatic": false,
+      "application_url": "https://www.gob.mx/segalmex",
+      "application_channel": "in_person",
+      "deadline_type": "annual",
+      "deadline_note": "Convocatoria y calendarios de acopio anuales publicados por SEGALMEX",
+      "procedure_steps": [
+        {
+          "step": 1,
+          "detail": "Registrarse en el padrón de productores y consultar la convocatoria de acopio",
+          "url": "https://www.gob.mx/segalmex"
+        },
+        {
+          "step": 2,
+          "detail": "Entregar la cosecha en los centros de acopio y recibir el pago al precio de garantía",
+          "url": null
+        }
+      ],
+      "documents_required": [
+        {
+          "doc": "Identificación oficial",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "CURP",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Acreditación de la producción y del predio",
+          "mandatory": true,
+          "note": null
+        }
+      ],
+      "eligibility": {
+        "statuses": [
+          "self_employed"
+        ],
+        "age_min": null,
+        "age_max": null,
+        "income_annual_max": null,
+        "income_note": "Para pequeños productores de maíz, frijol, trigo, arroz y leche dentro de los topes de volumen por persona",
+        "requires_children": false,
+        "nationality": "any_resident",
+        "residency_months_min": null,
+        "housing_tenure": null,
+        "student_required": false,
+        "admin_areas": []
+      },
+      "source_url": "https://www.gob.mx/segalmex",
+      "source_snippet": "SEGALMEX paga un precio de garantía por la cosecha de maíz, frijol, trigo, arroz y leche a pequeños y medianos productores.",
+      "last_verified_at": "2026-08-12",
+      "verification_status": "auto_extracted"
+    },
+    {
+      "slug": "pension-imss-cesantia-vejez",
+      "name_local": "Pensión de Cesantía en Edad Avanzada y Vejez (IMSS)",
+      "name_en": "IMSS Retirement and Old-Age Pension",
+      "admin_level": "national",
+      "admin_area": null,
+      "funder": "Instituto Mexicano del Seguro Social (IMSS)",
+      "category": "income_support",
+      "benefit_type": "cash_monthly",
+      "amount_min": null,
+      "amount_max": null,
+      "amount_currency": "MXN",
+      "amount_period": "monthly",
+      "amount_note": "Pensión mensual vitalicia; el monto depende del salario cotizado, semanas cotizadas y régimen (Ley 73 o Ley 97), con pensión mínima garantizada",
+      "is_automatic": false,
+      "application_url": "https://www.imss.gob.mx/tramites/imss03012",
+      "application_channel": "online",
+      "deadline_type": "rolling",
+      "deadline_note": null,
+      "procedure_steps": [
+        {
+          "step": 1,
+          "detail": "Verificar semanas cotizadas y régimen aplicable ante el IMSS",
+          "url": "https://www.imss.gob.mx/pensiones"
+        },
+        {
+          "step": 2,
+          "detail": "Solicitar la pensión en la subdelegación o en línea",
+          "url": "https://www.imss.gob.mx/tramites/imss03012"
+        },
+        {
+          "step": 3,
+          "detail": "Recibir el pago mensual en la cuenta bancaria registrada",
+          "url": null
+        }
+      ],
+      "documents_required": [
+        {
+          "doc": "Identificación oficial",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "CURP",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "NSS y estado de cuenta AFORE",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Cuenta bancaria CLABE",
+          "mandatory": true,
+          "note": null
+        }
+      ],
+      "eligibility": {
+        "statuses": [
+          "retired"
+        ],
+        "age_min": 60,
+        "age_max": null,
+        "income_annual_max": null,
+        "income_note": "Requiere 60 años (cesantía) o 65 (vejez) y las semanas mínimas de cotización según la ley aplicable",
+        "requires_children": false,
+        "nationality": "any_resident",
+        "residency_months_min": null,
+        "housing_tenure": null,
+        "student_required": false,
+        "admin_areas": []
+      },
+      "source_url": "https://www.imss.gob.mx/pensiones",
+      "source_snippet": "El IMSS otorga pensiones de Cesantía en Edad Avanzada y Vejez a los trabajadores que cumplen edad y semanas de cotización requeridas.",
+      "last_verified_at": "2026-08-12",
+      "verification_status": "auto_extracted"
+    },
+    {
+      "slug": "incapacidad-temporal-imss",
+      "name_local": "Subsidio por Incapacidad Temporal para el Trabajo (IMSS)",
+      "name_en": "IMSS Sickness and Maternity Cash Benefit",
+      "admin_level": "national",
+      "admin_area": null,
+      "funder": "Instituto Mexicano del Seguro Social (IMSS)",
+      "category": "income_support",
+      "benefit_type": "cash_monthly",
+      "amount_min": null,
+      "amount_max": null,
+      "amount_currency": "MXN",
+      "amount_period": "monthly",
+      "amount_note": "60% del salario base de cotización por enfermedad general (desde el 4º día), 100% en caso de riesgo de trabajo; incapacidad por maternidad al 100% por 84 días",
+      "is_automatic": true,
+      "application_url": "https://www.imss.gob.mx/derechoH/incapacidades",
+      "application_channel": "via_employer",
+      "deadline_type": "none",
+      "deadline_note": null,
+      "procedure_steps": [
+        {
+          "step": 1,
+          "detail": "Acudir a la Unidad de Medicina Familiar para obtener el certificado de incapacidad",
+          "url": "https://www.imss.gob.mx/derechoH/incapacidades"
+        },
+        {
+          "step": 2,
+          "detail": "El patrón o el IMSS dispersa el subsidio correspondiente",
+          "url": null
+        }
+      ],
+      "documents_required": [
+        {
+          "doc": "Certificado único de incapacidad expedido por médico del IMSS",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Identificación oficial y NSS",
+          "mandatory": true,
+          "note": null
+        }
+      ],
+      "eligibility": {
+        "statuses": [
+          "employee"
+        ],
+        "age_min": null,
+        "age_max": null,
+        "income_annual_max": null,
+        "income_note": "Para trabajadores asegurados con cotizaciones vigentes; se calcula sobre el salario base",
+        "requires_children": false,
+        "nationality": "any_resident",
+        "residency_months_min": null,
+        "housing_tenure": null,
+        "student_required": false,
+        "admin_areas": []
+      },
+      "source_url": "https://www.imss.gob.mx/derechoH/incapacidades",
+      "source_snippet": "En caso de enfermedad general el subsidio equivale al 60% del salario; por riesgo de trabajo o maternidad se paga el 100%.",
+      "last_verified_at": "2026-08-12",
+      "verification_status": "auto_extracted"
+    },
+    {
+      "slug": "pension-alimentaria-cdmx",
+      "name_local": "Pensión Alimentaria Ciudadana para Personas Adultas Mayores (CDMX)",
+      "name_en": "Mexico City Food Pension for Senior Citizens",
+      "admin_level": "city",
+      "admin_area": "Ciudad de México",
+      "funder": "Gobierno de la Ciudad de México / IAAM",
+      "category": "income_support",
+      "benefit_type": "cash_monthly",
+      "amount_min": null,
+      "amount_max": null,
+      "amount_currency": "MXN",
+      "amount_period": "monthly",
+      "amount_note": "Apoyo bimestral a residentes de la CDMX de 68 años o más que no reciben la pensión federal del Bienestar; el monto se actualiza cada año en el presupuesto capitalino",
+      "is_automatic": false,
+      "application_url": "https://www.iaam.cdmx.gob.mx/",
+      "application_channel": "in_person",
+      "deadline_type": "rolling",
+      "deadline_note": null,
+      "procedure_steps": [
+        {
+          "step": 1,
+          "detail": "Acudir a un módulo del IAAM o sede de la alcaldía con la documentación",
+          "url": "https://www.iaam.cdmx.gob.mx/"
+        },
+        {
+          "step": 2,
+          "detail": "Recibir la Tarjeta de Pensión Alimentaria para los depósitos bimestrales",
+          "url": null
+        }
+      ],
+      "documents_required": [
+        {
+          "doc": "Identificación oficial",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "CURP",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Comprobante de domicilio en la Ciudad de México",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Constancia de no ser beneficiario de la pensión federal del Bienestar",
+          "mandatory": true,
+          "note": null
+        }
+      ],
+      "eligibility": {
+        "statuses": [
+          "retired"
+        ],
+        "age_min": 68,
+        "age_max": null,
+        "income_annual_max": null,
+        "income_note": "Para residentes de la CDMX de 68 años o más no cubiertos por la pensión federal",
+        "requires_children": false,
+        "nationality": "any_resident",
+        "residency_months_min": null,
+        "housing_tenure": null,
+        "student_required": false,
+        "admin_areas": [
+          "Ciudad de México"
+        ]
+      },
+      "source_url": "https://www.iaam.cdmx.gob.mx/",
+      "source_snippet": "Pensión Alimentaria CDMX (IAAM): tener 68 años o más y residir en la Ciudad de México; el apoyo se entrega de forma bimestral mediante tarjeta.",
+      "last_verified_at": "2026-08-12",
+      "verification_status": "auto_extracted"
+    },
+    {
+      "slug": "imss-bienestar-salud",
+      "name_local": "IMSS-Bienestar (servicios de salud gratuitos)",
+      "name_en": "IMSS-Bienestar Free Public Healthcare",
+      "admin_level": "national",
+      "admin_area": null,
+      "funder": "IMSS-Bienestar / Secretaría de Salud",
+      "category": "health",
+      "benefit_type": "free_slab",
+      "amount_min": 0,
+      "amount_max": 0,
+      "amount_currency": "MXN",
+      "amount_period": "monthly",
+      "amount_note": "Consultas, medicamentos, estudios, hospitalización, parto y vacunación gratuitos para personas sin seguridad social",
+      "is_automatic": false,
+      "application_url": "https://www.imssbienestar.gob.mx/",
+      "application_channel": "in_person",
+      "deadline_type": "rolling",
+      "deadline_note": null,
+      "procedure_steps": [
+        {
+          "step": 1,
+          "detail": "Registrarse en el módulo o en la unidad de salud IMSS-Bienestar con CURP",
+          "url": "https://www.imssbienestar.gob.mx/"
+        },
+        {
+          "step": 2,
+          "detail": "Acudir a las unidades IMSS-Bienestar para recibir atención y medicamentos sin costo",
+          "url": null
+        }
+      ],
+      "documents_required": [
+        {
+          "doc": "CURP",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Identificación (recomendable)",
+          "mandatory": false,
+          "note": null
+        }
+      ],
+      "eligibility": {
+        "statuses": [],
+        "age_min": null,
+        "age_max": null,
+        "income_annual_max": null,
+        "income_note": "Para personas que no están afiliadas al IMSS ordinario, ISSSTE u otra institución de seguridad social",
+        "requires_children": false,
+        "nationality": "any_resident",
+        "residency_months_min": null,
+        "housing_tenure": null,
+        "student_required": false,
+        "admin_areas": []
+      },
+      "source_url": "https://www.gob.mx/salud/prensa/155-imss-bienestar-coordinara-servicios-de-salud-para-personas-sin-seguridad-social",
+      "source_snippet": "IMSS-Bienestar será el eje central del sistema que garantice el acceso a servicios para población sin seguridad social... bajo los principios de gratuidad, cobertura universal, accesibilidad, oportunidad y calidad",
+      "last_verified_at": "2026-08-12",
+      "verification_status": "verified"
+    },
+    {
+      "slug": "seguro-salud-familia-imss",
+      "name_local": "Seguro de Salud para la Familia (IMSS)",
+      "name_en": "IMSS Voluntary Family Health Insurance",
+      "admin_level": "national",
+      "admin_area": null,
+      "funder": "Instituto Mexicano del Seguro Social (IMSS)",
+      "category": "health",
+      "benefit_type": "discount",
+      "amount_min": null,
+      "amount_max": null,
+      "amount_currency": "MXN",
+      "amount_period": "annual",
+      "amount_note": "Seguro médico voluntario del IMSS mediante una cuota anual fija por edad (publicada cada año en el DOF); da acceso a consultas, medicamentos, hospitalización y cirugía",
+      "is_automatic": false,
+      "application_url": "https://www.imss.gob.mx/tramites/imss02008",
+      "application_channel": "in_person",
+      "deadline_type": "rolling",
+      "deadline_note": null,
+      "procedure_steps": [
+        {
+          "step": 1,
+          "detail": "Acudir a la subdelegación IMSS para valoración y cálculo de la cuota anual",
+          "url": "https://www.imss.gob.mx/tramites/imss02008"
+        },
+        {
+          "step": 2,
+          "detail": "Pagar la cuota anual y firmar el convenio de incorporación",
+          "url": null
+        }
+      ],
+      "documents_required": [
+        {
+          "doc": "Identificación oficial",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "CURP",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Acta de nacimiento",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Comprobante de domicilio",
+          "mandatory": true,
+          "note": null
+        }
+      ],
+      "eligibility": {
+        "statuses": [],
+        "age_min": null,
+        "age_max": null,
+        "income_annual_max": null,
+        "income_note": "Para personas sin seguridad social por otro esquema; se aplican periodos de espera y exclusiones por padecimientos preexistentes",
+        "requires_children": false,
+        "nationality": "any_resident",
+        "residency_months_min": null,
+        "housing_tenure": null,
+        "student_required": false,
+        "admin_areas": []
+      },
+      "source_url": "https://www.imss.gob.mx/tramites/imss02008",
+      "source_snippet": "Cualquier persona que no cuente con seguridad social puede incorporarse al Seguro de Salud para la Familia pagando una cuota anual anticipada.",
+      "last_verified_at": "2026-08-12",
+      "verification_status": "auto_extracted"
+    },
+    {
+      "slug": "seguro-medico-nueva-generacion",
+      "name_local": "Seguro Médico para una Nueva Generación (SMNG)",
+      "name_en": "Medical Insurance for a New Generation (children)",
+      "admin_level": "national",
+      "admin_area": null,
+      "funder": "Secretaría de Salud / IMSS-Bienestar",
+      "category": "health",
+      "benefit_type": "free_slab",
+      "amount_min": 0,
+      "amount_max": 0,
+      "amount_currency": "MXN",
+      "amount_period": "monthly",
+      "amount_note": "Atención médica gratuita para niñas y niños nacidos a partir del 1 de diciembre de 2006 sin otra seguridad social, hasta los 5 años",
+      "is_automatic": false,
+      "application_url": "https://www.gob.mx/salud",
+      "application_channel": "in_person",
+      "deadline_type": "rolling",
+      "deadline_note": null,
+      "procedure_steps": [
+        {
+          "step": 1,
+          "detail": "Acudir a la unidad de salud pública con el acta de nacimiento del menor",
+          "url": "https://www.gob.mx/salud"
+        },
+        {
+          "step": 2,
+          "detail": "Registrar al menor y recibir la cartilla de afiliación",
+          "url": null
+        }
+      ],
+      "documents_required": [
+        {
+          "doc": "Acta de nacimiento del menor",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "CURP del menor",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Identificación de la madre, padre o tutor",
+          "mandatory": true,
+          "note": null
+        }
+      ],
+      "eligibility": {
+        "statuses": [],
+        "age_min": null,
+        "age_max": 5,
+        "income_annual_max": null,
+        "income_note": "Gratuito para menores de 5 años sin otra cobertura de seguridad social",
+        "requires_children": true,
+        "nationality": "any_resident",
+        "residency_months_min": null,
+        "housing_tenure": null,
+        "student_required": false,
+        "admin_areas": []
+      },
+      "source_url": "https://www.gob.mx/salud",
+      "source_snippet": "El Seguro Médico para una Nueva Generación garantiza atención gratuita a niños nacidos después del 1 de diciembre de 2006 sin otra seguridad social.",
+      "last_verified_at": "2026-08-12",
+      "verification_status": "auto_extracted"
+    },
+    {
+      "slug": "riesgos-de-trabajo-imss",
+      "name_local": "Seguro de Riesgos de Trabajo (IMSS)",
+      "name_en": "IMSS Occupational Injury Insurance",
+      "admin_level": "national",
+      "admin_area": null,
+      "funder": "Instituto Mexicano del Seguro Social (IMSS)",
+      "category": "health",
+      "benefit_type": "free_slab",
+      "amount_min": null,
+      "amount_max": null,
+      "amount_currency": "MXN",
+      "amount_period": "monthly",
+      "amount_note": "Atención médica, rehabilitación, prótesis y subsidios al 100% del salario por accidentes y enfermedades de trabajo; sin costo para el trabajador",
+      "is_automatic": true,
+      "application_url": "https://www.imss.gob.mx/derechoH/riesgos-trabajo",
+      "application_channel": "automatic",
+      "deadline_type": "none",
+      "deadline_note": null,
+      "procedure_steps": [
+        {
+          "step": 1,
+          "detail": "Acudir de inmediato a la unidad médica IMSS tras el accidente o diagnóstico",
+          "url": "https://www.imss.gob.mx/derechoH/riesgos-trabajo"
+        },
+        {
+          "step": 2,
+          "detail": "Obtener la calificación de riesgo de trabajo y las prestaciones correspondientes",
+          "url": null
+        }
+      ],
+      "documents_required": [
+        {
+          "doc": "Identificación oficial y NSS",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Registro del accidente por el patrón",
+          "mandatory": false,
+          "note": null
+        }
+      ],
+      "eligibility": {
+        "statuses": [
+          "employee"
+        ],
+        "age_min": null,
+        "age_max": null,
+        "income_annual_max": null,
+        "income_note": "Cobertura automática de todo trabajador asegurado; el patrón paga la prima",
+        "requires_children": false,
+        "nationality": "any_resident",
+        "residency_months_min": null,
+        "housing_tenure": null,
+        "student_required": false,
+        "admin_areas": []
+      },
+      "source_url": "https://www.imss.gob.mx/derechoH/riesgos-trabajo",
+      "source_snippet": "El seguro de riesgos de trabajo cubre atención médica, incapacidades al 100% y, en su caso, pensiones por invalidez o muerte.",
+      "last_verified_at": "2026-08-12",
+      "verification_status": "auto_extracted"
+    },
+    {
+      "slug": "issste-salud-trabajadores-estado",
+      "name_local": "Servicios de Salud del ISSSTE",
+      "name_en": "ISSSTE Healthcare for State Workers",
+      "admin_level": "national",
+      "admin_area": null,
+      "funder": "Instituto de Seguridad y Servicios Sociales de los Trabajadores del Estado (ISSSTE)",
+      "category": "health",
+      "benefit_type": "free_slab",
+      "amount_min": null,
+      "amount_max": null,
+      "amount_currency": "MXN",
+      "amount_period": "monthly",
+      "amount_note": "Consultas, medicamentos, hospitalización, maternidad y servicios preventivos sin costo para derechohabientes del ISSSTE",
+      "is_automatic": true,
+      "application_url": "https://www.gob.mx/issste",
+      "application_channel": "automatic",
+      "deadline_type": "none",
+      "deadline_note": null,
+      "procedure_steps": [
+        {
+          "step": 1,
+          "detail": "Acudir a la clínica u hospital ISSSTE asignado con la credencial de derechohabiente",
+          "url": "https://www.gob.mx/issste"
+        }
+      ],
+      "documents_required": [
+        {
+          "doc": "Credencial de derechohabiente ISSSTE",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Tarjeta de afiliación / CURP",
+          "mandatory": true,
+          "note": null
+        }
+      ],
+      "eligibility": {
+        "statuses": [
+          "employee",
+          "retired"
+        ],
+        "age_min": null,
+        "age_max": null,
+        "income_annual_max": null,
+        "income_note": "Para trabajadores del Estado, pensionados ISSSTE y sus familiares derechohabientes",
+        "requires_children": false,
+        "nationality": "any_resident",
+        "residency_months_min": null,
+        "housing_tenure": null,
+        "student_required": false,
+        "admin_areas": []
+      },
+      "source_url": "https://www.gob.mx/issste",
+      "source_snippet": "El ISSSTE presta servicios médicos integrales a los trabajadores al servicio del Estado y sus derechohabientes.",
+      "last_verified_at": "2026-08-12",
+      "verification_status": "auto_extracted"
+    },
+    {
+      "slug": "vacunacion-esquema-completo",
+      "name_local": "Vacunación del Esquema Completo (Cartilla Nacional de Salud)",
+      "name_en": "Free National Immunisation Programme",
+      "admin_level": "national",
+      "admin_area": null,
+      "funder": "Secretaría de Salud / IMSS / ISSSTE / IMSS-Bienestar",
+      "category": "health",
+      "benefit_type": "free_slab",
+      "amount_min": 0,
+      "amount_max": 0,
+      "amount_currency": "MXN",
+      "amount_period": "monthly",
+      "amount_note": "Todas las vacunas del esquema nacional son gratuitas en instituciones públicas de salud",
+      "is_automatic": true,
+      "application_url": "https://www.gob.mx/salud/acciones-y-programas/vacunacion",
+      "application_channel": "in_person",
+      "deadline_type": "rolling",
+      "deadline_note": null,
+      "procedure_steps": [
+        {
+          "step": 1,
+          "detail": "Acudir a cualquier centro de salud público con la Cartilla Nacional de Salud",
+          "url": "https://www.gob.mx/salud/acciones-y-programas/vacunacion"
+        }
+      ],
+      "documents_required": [
+        {
+          "doc": "Cartilla Nacional de Salud",
+          "mandatory": true,
+          "note": null
+        }
+      ],
+      "eligibility": {
+        "statuses": [],
+        "age_min": null,
+        "age_max": null,
+        "income_annual_max": null,
+        "income_note": "Universal y gratuita, sin requisito de afiliación",
+        "requires_children": false,
+        "nationality": "any_resident",
+        "residency_months_min": null,
+        "housing_tenure": null,
+        "student_required": false,
+        "admin_areas": []
+      },
+      "source_url": "https://www.gob.mx/salud/acciones-y-programas/vacunacion",
+      "source_snippet": "La vacunación en México es gratuita y universal conforme a la Cartilla Nacional de Salud.",
+      "last_verified_at": "2026-08-12",
+      "verification_status": "auto_extracted"
+    },
+    {
+      "slug": "beca-universal-rita-cetina",
+      "name_local": "Beca Universal de Educación Básica “Rita Cetina”",
+      "name_en": "Rita Cetina Universal Basic Education Scholarship",
+      "admin_level": "national",
+      "admin_area": null,
+      "funder": "Coordinación Nacional de Becas para el Bienestar Benito Juárez (CNBBBJ) / SEP",
+      "category": "education",
+      "benefit_type": "cash_monthly",
+      "amount_min": 950,
+      "amount_max": 1300,
+      "amount_currency": "MXN",
+      "amount_period": "monthly",
+      "amount_note": "Secundaria: 1,900 pesos bimestrales por familia + 700 por cada estudiante adicional de secundaria (5 pagos al año, sin julio-agosto). Primaria nuevo ingreso 2026: 2,500 anuales por estudiante",
+      "is_automatic": false,
+      "application_url": "https://becaritacetina.gob.mx/",
+      "application_channel": "online",
+      "deadline_type": "window",
+      "deadline_note": "Registro en línea con Llave MX en las ventanas que publica la CNBBBJ (usualmente septiembre-diciembre)",
+      "procedure_steps": [
+        {
+          "step": 1,
+          "detail": "La madre, padre o tutor crea su Llave MX",
+          "url": "https://llave.gob.mx/"
+        },
+        {
+          "step": 2,
+          "detail": "Registra al estudiante con CURP y CCT en becaritacetina.gob.mx",
+          "url": "https://becaritacetina.gob.mx/"
+        },
+        {
+          "step": 3,
+          "detail": "Recibir la Tarjeta del Banco del Bienestar y los 5 pagos bimestrales",
+          "url": null
+        }
+      ],
+      "documents_required": [
+        {
+          "doc": "INE de la madre, padre o tutor",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "CURP del estudiante y del tutor",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Comprobante de domicilio digitalizado",
+          "mandatory": true,
+          "note": null
+        }
+      ],
+      "eligibility": {
+        "statuses": [],
+        "age_min": null,
+        "age_max": null,
+        "income_annual_max": null,
+        "income_note": "Universal para estudiantes de escuelas públicas de primaria y secundaria; no recibir otra beca federal con el mismo fin",
+        "requires_children": true,
+        "nationality": "any_resident",
+        "residency_months_min": null,
+        "housing_tenure": null,
+        "student_required": true,
+        "admin_areas": []
+      },
+      "source_url": "https://programasparaelbienestar.gob.mx/beca-rita-cetina-montos-requisitos-y-como-funciona-para-primaria-y-secundaria/",
+      "source_snippet": "Secundaria: 1,900 pesos bimestrales por un estudiante... Primaria: 2,500 pesos anuales por estudiante registrado este 2026",
+      "last_verified_at": "2026-08-12",
+      "verification_status": "verified"
+    },
+    {
+      "slug": "beca-benito-juarez-media-superior",
+      "name_local": "Beca Universal de Educación Media Superior “Benito Juárez”",
+      "name_en": "Benito Juárez Universal Upper-Secondary Scholarship",
+      "admin_level": "national",
+      "admin_area": null,
+      "funder": "Coordinación Nacional de Becas para el Bienestar Benito Juárez (CNBBBJ)",
+      "category": "education",
+      "benefit_type": "cash_monthly",
+      "amount_min": 950,
+      "amount_max": 950,
+      "amount_currency": "MXN",
+      "amount_period": "monthly",
+      "amount_note": "1,900 pesos bimestrales durante los 10 meses del ciclo escolar (sin julio ni agosto), hasta un máximo de 40 meses",
+      "is_automatic": false,
+      "application_url": "https://www.gob.mx/becasbenitojuarez",
+      "application_channel": "online",
+      "deadline_type": "window",
+      "deadline_note": "Incorporación por la escuela; registro en línea con Llave MX en las ventanas publicadas (usualmente febrero)",
+      "procedure_steps": [
+        {
+          "step": 1,
+          "detail": "Crear la Llave MX del estudiante",
+          "url": "https://llave.gob.mx/"
+        },
+        {
+          "step": 2,
+          "detail": "Registrarse en el portal de becas con CURP, datos escolares y comprobante de domicilio",
+          "url": "https://www.gob.mx/becasbenitojuarez"
+        },
+        {
+          "step": 3,
+          "detail": "Recibir la Tarjeta del Banco del Bienestar y los pagos bimestrales",
+          "url": null
+        }
+      ],
+      "documents_required": [
+        {
+          "doc": "CURP del estudiante",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Comprobante de domicilio digitalizado",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "CURP certificada e identificación del tutor si es menor de edad",
+          "mandatory": false,
+          "note": null
+        }
+      ],
+      "eligibility": {
+        "statuses": [],
+        "age_min": null,
+        "age_max": 25,
+        "income_annual_max": null,
+        "income_note": "Universal para estudiantes de hasta 25 años inscritos en escuelas públicas de media superior, modalidad escolarizada o mixta",
+        "requires_children": false,
+        "nationality": "any_resident",
+        "residency_months_min": null,
+        "housing_tenure": null,
+        "student_required": true,
+        "admin_areas": []
+      },
+      "source_url": "https://www.gob.mx/becasbenitojuarez/articulos/conoce-todo-sobre-la-beca-universal-de-educacion-media-superior-benito-juarez",
+      "source_snippet": "1,900 pesos bimestrales que se otorgan por los 10 meses que dura el ciclo escolar, hasta por un máximo de 40 meses",
+      "last_verified_at": "2026-08-12",
+      "verification_status": "verified"
+    },
+    {
+      "slug": "jovenes-escribiendo-el-futuro",
+      "name_local": "Beca Jóvenes Escribiendo el Futuro",
+      "name_en": "Youth Writing the Future Higher-Education Scholarship",
+      "admin_level": "national",
+      "admin_area": null,
+      "funder": "Coordinación Nacional de Becas para el Bienestar Benito Juárez (CNBBBJ)",
+      "category": "education",
+      "benefit_type": "cash_monthly",
+      "amount_min": 2900,
+      "amount_max": 2900,
+      "amount_currency": "MXN",
+      "amount_period": "monthly",
+      "amount_note": "5,800 pesos bimestrales durante los 5 bimestres del ciclo escolar, hasta 45 mensualidades (55 en medicina)",
+      "is_automatic": false,
+      "application_url": "https://www.gob.mx/becasbenitojuarez",
+      "application_channel": "online",
+      "deadline_type": "window",
+      "deadline_note": "Registro en línea en la ventana anual que publica la CNBBBJ",
+      "procedure_steps": [
+        {
+          "step": 1,
+          "detail": "Crear la Llave MX",
+          "url": "https://llave.gob.mx/"
+        },
+        {
+          "step": 2,
+          "detail": "Registrarse en el portal de becas con datos de la universidad",
+          "url": "https://www.gob.mx/becasbenitojuarez"
+        },
+        {
+          "step": 3,
+          "detail": "Recibir la Tarjeta del Banco del Bienestar y los pagos bimestrales",
+          "url": null
+        }
+      ],
+      "documents_required": [
+        {
+          "doc": "CURP",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Comprobante de inscripción en la IES pública",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Comprobante de domicilio",
+          "mandatory": true,
+          "note": null
+        }
+      ],
+      "eligibility": {
+        "statuses": [],
+        "age_min": null,
+        "age_max": 29,
+        "income_annual_max": null,
+        "income_note": "Para estudiantes de hasta 29 años de licenciatura o TSU en instituciones públicas prioritarias, en situación de vulnerabilidad económica",
+        "requires_children": false,
+        "nationality": "any_resident",
+        "residency_months_min": null,
+        "housing_tenure": null,
+        "student_required": true,
+        "admin_areas": []
+      },
+      "source_url": "https://www.gob.mx/becasbenitojuarez",
+      "source_snippet": "La beca es de 5,800 pesos bimestrales que se otorgan durante los cinco bimestres que dura el ciclo escolar con un máximo de 45 mensualidades",
+      "last_verified_at": "2026-08-12",
+      "verification_status": "verified"
+    },
+    {
+      "slug": "becas-elisa-acuna",
+      "name_local": "Programa de Becas “Elisa Acuña”",
+      "name_en": "Elisa Acuña Scholarship Programme (higher education)",
+      "admin_level": "national",
+      "admin_area": null,
+      "funder": "CNBBBJ / universidades públicas participantes",
+      "category": "education",
+      "benefit_type": "cash_monthly",
+      "amount_min": null,
+      "amount_max": null,
+      "amount_currency": "MXN",
+      "amount_period": "monthly",
+      "amount_note": "Modalidades de manutención (licenciatura y posgrado), titulación y servicio social; montos y reglas los publica cada institución participante (p. ej. UNAM, UPN)",
+      "is_automatic": false,
+      "application_url": "https://www.gob.mx/becasbenitojuarez",
+      "application_channel": "online",
+      "deadline_type": "window",
+      "deadline_note": "Convocatorias publicadas por cada universidad participante",
+      "procedure_steps": [
+        {
+          "step": 1,
+          "detail": "Consultar la convocatoria de la universidad participante (SUBES)",
+          "url": "https://subes.becasbenitojuarez.gob.mx/"
+        },
+        {
+          "step": 2,
+          "detail": "Registrar la solicitud en línea con los documentos académicos",
+          "url": null
+        }
+      ],
+      "documents_required": [
+        {
+          "doc": "CURP",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Comprobante de inscripción o de estudios",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Carátula de estado de cuenta bancario",
+          "mandatory": true,
+          "note": null
+        }
+      ],
+      "eligibility": {
+        "statuses": [],
+        "age_min": null,
+        "age_max": null,
+        "income_annual_max": null,
+        "income_note": "Para estudiantes de educación superior en instituciones públicas participantes, prioritariamente en vulnerabilidad económica",
+        "requires_children": false,
+        "nationality": "any_resident",
+        "residency_months_min": null,
+        "housing_tenure": null,
+        "student_required": true,
+        "admin_areas": []
+      },
+      "source_url": "https://www.becas.unam.mx/",
+      "source_snippet": "En el marco del Programa de Becas “Elisa Acuña”, la UNAM, a través de la Secretaría General y la Coordinación General de Estudios de Posgrado, emite las convocatorias de Becas para Estudios de Posgrado.",
+      "last_verified_at": "2026-08-12",
+      "verification_status": "verified"
+    },
+    {
+      "slug": "becas-nacionales-posgrado-secihti",
+      "name_local": "Becas Nacionales para Estudios de Posgrado (SECIHTI, antes CONAHCYT)",
+      "name_en": "National Postgraduate Scholarships (SECIHTI, ex-CONAHCYT)",
+      "admin_level": "national",
+      "admin_area": null,
+      "funder": "Secretaría de Ciencia, Humanidades, Tecnología e Innovación (SECIHTI)",
+      "category": "education",
+      "benefit_type": "cash_monthly",
+      "amount_min": 16048,
+      "amount_max": 19803,
+      "amount_currency": "MXN",
+      "amount_period": "monthly",
+      "amount_note": "Maestría: aprox. 16,048 pesos mensuales (4.5 UMA); doctorado: aprox. 19,803 pesos (6 UMA); incluye seguro médico ISSSTE para el becario y dependientes",
+      "is_automatic": false,
+      "application_url": "https://secihti.mx/",
+      "application_channel": "online",
+      "deadline_type": "window",
+      "deadline_note": "Convocatoria 2026 con recepción continua de solicitudes (febrero a noviembre) vía plataforma SECIHTI",
+      "procedure_steps": [
+        {
+          "step": 1,
+          "detail": "Crear o actualizar el CVU en la plataforma SECIHTI/Rizoma",
+          "url": "https://rizoma.conahcyt.mx/"
+        },
+        {
+          "step": 2,
+          "detail": "Registrar la solicitud con carta de aceptación del programa del SNP",
+          "url": "https://secihti.mx/"
+        }
+      ],
+      "documents_required": [
+        {
+          "doc": "CVU actualizado",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Carta de aceptación del programa de posgrado del SNP",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Título o acta de licenciatura con promedio mínimo 8.0",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "CURP",
+          "mandatory": true,
+          "note": null
+        }
+      ],
+      "eligibility": {
+        "statuses": [],
+        "age_min": null,
+        "age_max": null,
+        "income_annual_max": null,
+        "income_note": "Para estudiantes de tiempo completo aceptados en posgrados del Sistema Nacional de Posgrados, sin otra beca con el mismo fin",
+        "requires_children": false,
+        "nationality": "any_resident",
+        "residency_months_min": null,
+        "housing_tenure": null,
+        "student_required": true,
+        "admin_areas": []
+      },
+      "source_url": "https://secihti.mx/",
+      "source_snippet": "En 2025, el organismo fue integrado a la nueva Secretaría de Ciencia, Humanidades, Tecnología e Innovación (SECIHTI)... el programa de Becas Nacionales para Estudios de Posgrado continúa siendo el principal mecanismo de financiamiento",
+      "last_verified_at": "2026-08-12",
+      "verification_status": "verified"
+    },
+    {
+      "slug": "becas-posgrado-extranjero-secihti",
+      "name_local": "Becas para Estudios de Posgrado en el Extranjero (SECIHTI)",
+      "name_en": "Scholarships for Postgraduate Studies Abroad (SECIHTI)",
+      "admin_level": "national",
+      "admin_area": null,
+      "funder": "Secretaría de Ciencia, Humanidades, Tecnología e Innovación (SECIHTI)",
+      "category": "education",
+      "benefit_type": "cash_monthly",
+      "amount_min": null,
+      "amount_max": null,
+      "amount_currency": "MXN",
+      "amount_period": "monthly",
+      "amount_note": "Manutención mensual según el país de destino, más apoyos complementarios (matrícula, seguro médico, transporte); los montos se publican en la convocatoria anual",
+      "is_automatic": false,
+      "application_url": "https://secihti.mx/",
+      "application_channel": "online",
+      "deadline_type": "window",
+      "deadline_note": "Convocatoria anual con ventanas de solicitud publicadas por SECIHTI",
+      "procedure_steps": [
+        {
+          "step": 1,
+          "detail": "Actualizar el CVU en la plataforma SECIHTI",
+          "url": "https://rizoma.conahcyt.mx/"
+        },
+        {
+          "step": 2,
+          "detail": "Postular con carta de aceptación de la universidad extranjera",
+          "url": "https://secihti.mx/"
+        }
+      ],
+      "documents_required": [
+        {
+          "doc": "CVU actualizado",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Carta de aceptación de la institución extranjera",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Comprobante de dominio del idioma",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Documentos académicos y CURP",
+          "mandatory": true,
+          "note": null
+        }
+      ],
+      "eligibility": {
+        "statuses": [],
+        "age_min": null,
+        "age_max": null,
+        "income_annual_max": null,
+        "income_note": "Para mexicanos aceptados en posgrados de excelencia en el extranjero; incluye apoyos complementarios de maternidad/paternidad",
+        "requires_children": false,
+        "nationality": "citizen_or_pr",
+        "residency_months_min": null,
+        "housing_tenure": null,
+        "student_required": true,
+        "admin_areas": []
+      },
+      "source_url": "https://secihti.mx/",
+      "source_snippet": "Las Becas Apoyos Complementarios Maternidad Paternidad Posgrado Nacional y al extranjero otorgan una dotación económica complementaria a personas becarias de la Secihti.",
+      "last_verified_at": "2026-08-12",
+      "verification_status": "auto_extracted"
+    },
+    {
+      "slug": "escuelas-de-tiempo-completo",
+      "name_local": "Programa Escuelas de Tiempo Completo (PETC)",
+      "name_en": "Full-Time Schools Programme",
+      "admin_level": "national",
+      "admin_area": null,
+      "funder": "Secretaría de Educación Pública (SEP)",
+      "category": "education",
+      "benefit_type": "in_kind",
+      "amount_min": null,
+      "amount_max": null,
+      "amount_currency": "MXN",
+      "amount_period": "monthly",
+      "amount_note": "Jornada escolar ampliada (6 a 8 horas) con alimentación escolar y actividades académicas, artísticas y deportivas sin costo para las familias",
+      "is_automatic": false,
+      "application_url": "https://www.gob.mx/sep",
+      "application_channel": "in_person",
+      "deadline_type": "rolling",
+      "deadline_note": null,
+      "procedure_steps": [
+        {
+          "step": 1,
+          "detail": "Inscribir a la hija o hijo en una escuela pública incorporada al PETC",
+          "url": "https://www.gob.mx/sep"
+        }
+      ],
+      "documents_required": [
+        {
+          "doc": "Documentos de inscripción escolar ordinarios (CURP, acta de nacimiento)",
+          "mandatory": true,
+          "note": null
+        }
+      ],
+      "eligibility": {
+        "statuses": [],
+        "age_min": null,
+        "age_max": null,
+        "income_annual_max": null,
+        "income_note": "Escuelas públicas de zonas urbanas marginadas e indígenas seleccionadas por la SEP",
+        "requires_children": true,
+        "nationality": "any_resident",
+        "residency_months_min": null,
+        "housing_tenure": null,
+        "student_required": true,
+        "admin_areas": []
+      },
+      "source_url": "https://www.gob.mx/sep",
+      "source_snippet": "Las Escuelas de Tiempo Completo amplían la jornada escolar y ofrecen alimentación y actividades formativas sin costo en escuelas públicas.",
+      "last_verified_at": "2026-08-12",
+      "verification_status": "auto_extracted"
+    },
+    {
+      "slug": "becas-fundacion-telmex-telcel",
+      "name_local": "Becas Fundación Telmex Telcel",
+      "name_en": "Telmex Telcel Foundation Scholarships",
+      "admin_level": "private",
+      "admin_area": null,
+      "funder": "Fundación Telmex Telcel A.C.",
+      "category": "education",
+      "benefit_type": "cash_monthly",
+      "amount_min": null,
+      "amount_max": null,
+      "amount_currency": "MXN",
+      "amount_period": "monthly",
+      "amount_note": "Apoyos de manutención, útiles y colegiatura según la convocatoria de cada nivel; los montos los publica la fundación",
+      "is_automatic": false,
+      "application_url": "https://www.fundaciontelmextelcel.org/",
+      "application_channel": "online",
+      "deadline_type": "window",
+      "deadline_note": "Convocatorias anuales publicadas en el sitio de la fundación",
+      "procedure_steps": [
+        {
+          "step": 1,
+          "detail": "Revisar la convocatoria vigente y registrar la solicitud en línea",
+          "url": "https://www.fundaciontelmextelcel.org/"
+        }
+      ],
+      "documents_required": [
+        {
+          "doc": "Comprobante de estudios y promedio",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Documentos de identificación y estudio socioeconómico",
+          "mandatory": true,
+          "note": null
+        }
+      ],
+      "eligibility": {
+        "statuses": [],
+        "age_min": null,
+        "age_max": null,
+        "income_annual_max": null,
+        "income_note": "Para estudiantes con alto desempeño académico y necesidad económica comprobada",
+        "requires_children": false,
+        "nationality": "any_resident",
+        "residency_months_min": null,
+        "housing_tenure": null,
+        "student_required": true,
+        "admin_areas": []
+      },
+      "source_url": "https://www.fundaciontelmextelcel.org/",
+      "source_snippet": "Fundación Telmex Telcel otorga becas a estudiantes mexicanos de excelencia académica y escasos recursos.",
+      "last_verified_at": "2026-08-12",
+      "verification_status": "auto_extracted"
+    },
+    {
+      "slug": "becas-santander-universia",
+      "name_local": "Becas Santander (Becas Santander Estudios)",
+      "name_en": "Santander Scholarships Mexico",
+      "admin_level": "private",
+      "admin_area": null,
+      "funder": "Banco Santander México / Fundación Universia",
+      "category": "education",
+      "benefit_type": "cash_one_off",
+      "amount_min": null,
+      "amount_max": null,
+      "amount_currency": "MXN",
+      "amount_period": "one_off",
+      "amount_note": "Diversas convocatorias de becas de manutención, movilidad, idiomas y estudios; montos variables según programa",
+      "is_automatic": false,
+      "application_url": "https://www.becas-santander.com/",
+      "application_channel": "online",
+      "deadline_type": "window",
+      "deadline_note": "Convocatorias abiertas durante el año en la plataforma Becas Santander",
+      "procedure_steps": [
+        {
+          "step": 1,
+          "detail": "Crear perfil en la plataforma Becas Santander",
+          "url": "https://www.becas-santander.com/"
+        },
+        {
+          "step": 2,
+          "detail": "Postular a la convocatoria correspondiente",
+          "url": null
+        }
+      ],
+      "documents_required": [
+        {
+          "doc": "Comprobante de inscripción universitaria",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Documentos de identificación",
+          "mandatory": true,
+          "note": null
+        }
+      ],
+      "eligibility": {
+        "statuses": [],
+        "age_min": null,
+        "age_max": null,
+        "income_annual_max": null,
+        "income_note": "Para estudiantes universitarios según los criterios de cada convocatoria",
+        "requires_children": false,
+        "nationality": "any_resident",
+        "residency_months_min": null,
+        "housing_tenure": null,
+        "student_required": true,
+        "admin_areas": []
+      },
+      "source_url": "https://www.becas-santander.com/",
+      "source_snippet": "Becas Santander ofrece programas de becas de estudios, movilidad e idiomas para estudiantes universitarios en México.",
+      "last_verified_at": "2026-08-12",
+      "verification_status": "auto_extracted"
+    },
+    {
+      "slug": "mi-beca-para-empezar-cdmx",
+      "name_local": "Bienestar para Niñas y Niños, Mi Beca para Empezar (CDMX)",
+      "name_en": "My Scholarship to Start (Mexico City)",
+      "admin_level": "city",
+      "admin_area": "Ciudad de México",
+      "funder": "Gobierno de la CDMX / Fideicomiso Bienestar Educativo (Fibien)",
+      "category": "education",
+      "benefit_type": "cash_monthly",
+      "amount_min": 600,
+      "amount_max": 650,
+      "amount_currency": "MXN",
+      "amount_period": "monthly",
+      "amount_note": "Preescolar y CAM: 600 pesos mensuales; primaria: 650 pesos mensuales, durante 10 meses del ciclo escolar, más apoyo anual de útiles y uniformes. No se puede retirar en efectivo",
+      "is_automatic": false,
+      "application_url": "https://registro.mibecaparaempezar.cdmx.gob.mx/",
+      "application_channel": "online",
+      "deadline_type": "window",
+      "deadline_note": "Registro en línea con Cuenta Llave CDMX en las ventanas anunciadas por Fibien",
+      "procedure_steps": [
+        {
+          "step": 1,
+          "detail": "El tutor crea su Cuenta Llave CDMX",
+          "url": "https://llave.cdmx.gob.mx/"
+        },
+        {
+          "step": 2,
+          "detail": "Registra al estudiante con CURP certificada y comprobante de domicilio",
+          "url": "https://registro.mibecaparaempezar.cdmx.gob.mx/"
+        },
+        {
+          "step": 3,
+          "detail": "Recibir la tarjeta Mi Beca para Empezar y los depósitos mensuales",
+          "url": null
+        }
+      ],
+      "documents_required": [
+        {
+          "doc": "Identificación oficial vigente del tutor",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "CURP certificada del estudiante",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Comprobante de domicilio no mayor a 3 meses",
+          "mandatory": true,
+          "note": null
+        }
+      ],
+      "eligibility": {
+        "statuses": [],
+        "age_min": null,
+        "age_max": null,
+        "income_annual_max": null,
+        "income_note": "Universal para estudiantes de preescolar, primaria y CAM de escuelas públicas de la CDMX",
+        "requires_children": true,
+        "nationality": "any_resident",
+        "residency_months_min": null,
+        "housing_tenure": null,
+        "student_required": true,
+        "admin_areas": [
+          "Ciudad de México"
+        ]
+      },
+      "source_url": "https://www.elfinanciero.com.mx/cdmx/2025/12/16/mi-beca-para-empezar-cdmx-cuando-termina-el-registro-para-el-apoyo-a-ninos-de-preescolar-y-primaria/",
+      "source_snippet": "Los alumnos de preescolar reciben 600 pesos mensuales. Los estudiantes de primaria reciben 650 pesos mensuales.",
+      "last_verified_at": "2026-08-12",
+      "verification_status": "verified"
+    },
+    {
+      "slug": "beca-transporte-universitarios-cdmx",
+      "name_local": "Beca de Universitarios para Transporte y Más (CDMX)",
+      "name_en": "University Student Transport Scholarship (Mexico City)",
+      "admin_level": "city",
+      "admin_area": "Ciudad de México",
+      "funder": "Gobierno de la CDMX / SECTEI",
+      "category": "education",
+      "benefit_type": "cash_monthly",
+      "amount_min": 750,
+      "amount_max": 750,
+      "amount_currency": "MXN",
+      "amount_period": "monthly",
+      "amount_note": "1,500 pesos bimestrales para gastos de traslado; la Jefa de Gobierno anunció aumento del monto y duplicación de beneficiarios a partir de enero de 2026",
+      "is_automatic": false,
+      "application_url": "https://www.sectei.cdmx.gob.mx/",
+      "application_channel": "online",
+      "deadline_type": "window",
+      "deadline_note": "Registro en línea en las convocatorias de SECTEI (la más reciente abrió en agosto de 2025)",
+      "procedure_steps": [
+        {
+          "step": 1,
+          "detail": "Registrarse en la convocatoria de SECTEI con Llave CDMX",
+          "url": "https://www.sectei.cdmx.gob.mx/"
+        },
+        {
+          "step": 2,
+          "detail": "Consultar resultados y recibir los pagos bimestrales",
+          "url": null
+        }
+      ],
+      "documents_required": [
+        {
+          "doc": "Identificación oficial",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Comprobante de inscripción en universidad pública",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "CURP y comprobante de domicilio",
+          "mandatory": true,
+          "note": null
+        }
+      ],
+      "eligibility": {
+        "statuses": [],
+        "age_min": null,
+        "age_max": null,
+        "income_annual_max": null,
+        "income_note": "Para estudiantes de licenciatura escolarizada o mixta en instituciones públicas de la CDMX o universidades nacionales en el Valle de México; prioridad a zonas de bajo índice social",
+        "requires_children": false,
+        "nationality": "any_resident",
+        "residency_months_min": null,
+        "housing_tenure": null,
+        "student_required": true,
+        "admin_areas": [
+          "Ciudad de México"
+        ]
+      },
+      "source_url": "https://www.sectei.cdmx.gob.mx/",
+      "source_snippet": "Actualmente el programa entrega 1,500 pesos bimestrales. Monto que aumentará a partir de enero de 2026",
+      "last_verified_at": "2026-08-12",
+      "verification_status": "verified"
+    },
+    {
+      "slug": "beca-violeta-nuevo-leon",
+      "name_local": "Beca Violeta (Nuevo León)",
+      "name_en": "Violeta Scholarship (Nuevo León)",
+      "admin_level": "state",
+      "admin_area": "Nuevo León",
+      "funder": "Gobierno del Estado de Nuevo León",
+      "category": "education",
+      "benefit_type": "cash_monthly",
+      "amount_min": null,
+      "amount_max": null,
+      "amount_currency": "MXN",
+      "amount_period": "monthly",
+      "amount_note": "Apoyo económico para mujeres estudiantes de educación media superior y superior en instituciones públicas del estado; monto y requisitos según convocatoria vigente",
+      "is_automatic": false,
+      "application_url": "https://www.nl.gob.mx/",
+      "application_channel": "online",
+      "deadline_type": "window",
+      "deadline_note": "Convocatorias publicadas por el Gobierno de Nuevo León",
+      "procedure_steps": [
+        {
+          "step": 1,
+          "detail": "Consultar la convocatoria en el portal del estado y registrar la solicitud",
+          "url": "https://www.nl.gob.mx/"
+        }
+      ],
+      "documents_required": [
+        {
+          "doc": "Identificación oficial",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Comprobante de inscripción",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "CURP y comprobante de domicilio en Nuevo León",
+          "mandatory": true,
+          "note": null
+        }
+      ],
+      "eligibility": {
+        "statuses": [],
+        "age_min": null,
+        "age_max": null,
+        "income_annual_max": null,
+        "income_note": "Dirigida a mujeres estudiantes en situación de vulnerabilidad económica residentes en Nuevo León",
+        "requires_children": false,
+        "nationality": "any_resident",
+        "residency_months_min": null,
+        "housing_tenure": null,
+        "student_required": true,
+        "admin_areas": [
+          "Nuevo León"
+        ]
+      },
+      "source_url": "https://www.nl.gob.mx/",
+      "source_snippet": "La Beca Violeta del Gobierno de Nuevo León apoya económicamente a mujeres estudiantes para que continúen sus estudios.",
+      "last_verified_at": "2026-08-12",
+      "verification_status": "auto_extracted"
+    },
+    {
+      "slug": "ebdi-guarderias-imss",
+      "name_local": "Estancias de Bienestar y Desarrollo Infantil (EBDI) del IMSS",
+      "name_en": "IMSS Childcare Centres (EBDI)",
+      "admin_level": "national",
+      "admin_area": null,
+      "funder": "Instituto Mexicano del Seguro Social (IMSS)",
+      "category": "family",
+      "benefit_type": "in_kind",
+      "amount_min": null,
+      "amount_max": null,
+      "amount_currency": "MXN",
+      "amount_period": "monthly",
+      "amount_note": "Servicio de guardería y educación inicial para hijos de trabajadoras y trabajadores asegurados; cuota de recuperación baja según salario",
+      "is_automatic": false,
+      "application_url": "https://www.imss.gob.mx/guarderias",
+      "application_channel": "in_person",
+      "deadline_type": "rolling",
+      "deadline_note": null,
+      "procedure_steps": [
+        {
+          "step": 1,
+          "detail": "Solicitar inscripción en la EBDI de la delegación con plaza disponible",
+          "url": "https://www.imss.gob.mx/guarderias"
+        },
+        {
+          "step": 2,
+          "detail": "Presentar documentos de afiliación y del menor",
+          "url": null
+        }
+      ],
+      "documents_required": [
+        {
+          "doc": "Identificación oficial del padre, madre o tutor asegurado",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Acta de nacimiento y CURP del menor",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Cartilla Nacional de Salud",
+          "mandatory": true,
+          "note": null
+        }
+      ],
+      "eligibility": {
+        "statuses": [
+          "employee"
+        ],
+        "age_min": null,
+        "age_max": 4,
+        "income_annual_max": null,
+        "income_note": "Para hijos (de 43 días a 4 años) de trabajadores asegurados ante el IMSS; sujeto a cupo",
+        "requires_children": true,
+        "nationality": "any_resident",
+        "residency_months_min": null,
+        "housing_tenure": null,
+        "student_required": false,
+        "admin_areas": []
+      },
+      "source_url": "https://www.imss.gob.mx/guarderias",
+      "source_snippet": "Las Estancias de Bienestar y Desarrollo Infantil del IMSS brindan cuidado y educación inicial a hijas e hijos de personas trabajadoras aseguradas.",
+      "last_verified_at": "2026-08-12",
+      "verification_status": "auto_extracted"
+    },
+    {
+      "slug": "apoyo-madres-trabajadoras-bienestar",
+      "name_local": "Programa de Apoyo para el Bienestar de las Niñas y Niños, Hijos de Madres Trabajadoras",
+      "name_en": "Support for Children of Working Mothers",
+      "admin_level": "national",
+      "admin_area": null,
+      "funder": "Secretaría del Bienestar",
+      "category": "family",
+      "benefit_type": "cash_monthly",
+      "amount_min": null,
+      "amount_max": null,
+      "amount_currency": "MXN",
+      "amount_period": "monthly",
+      "amount_note": "Apoyo económico bimestral para el cuidado infantil de hijas e hijos de madres trabajadoras, buscadoras de empleo o estudiantes; el monto lo fijan las Reglas de Operación vigentes",
+      "is_automatic": false,
+      "application_url": "https://www.gob.mx/bienestar",
+      "application_channel": "in_person",
+      "deadline_type": "window",
+      "deadline_note": "Registro en ventanas que anuncia la Secretaría del Bienestar",
+      "procedure_steps": [
+        {
+          "step": 1,
+          "detail": "Acudir al Módulo del Bienestar con la documentación",
+          "url": "https://www.gob.mx/bienestar"
+        },
+        {
+          "step": 2,
+          "detail": "Recibir los apoyos bimestrales en la Tarjeta del Bienestar",
+          "url": null
+        }
+      ],
+      "documents_required": [
+        {
+          "doc": "Identificación oficial de la madre",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "CURP de la madre y del menor",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Acta de nacimiento del menor",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Comprobante de domicilio",
+          "mandatory": true,
+          "note": null
+        }
+      ],
+      "eligibility": {
+        "statuses": [],
+        "age_min": null,
+        "age_max": null,
+        "income_annual_max": null,
+        "income_note": "Para madres que trabajan, buscan empleo o estudian, con hijos de 1 a 4 años, sin acceso a guardería de seguridad social",
+        "requires_children": true,
+        "nationality": "any_resident",
+        "residency_months_min": null,
+        "housing_tenure": null,
+        "student_required": false,
+        "admin_areas": []
+      },
+      "source_url": "https://www.gob.mx/bienestar",
+      "source_snippet": "Apoyos para Madres Trabajadoras: mantiene subsidios directos para cuidado infantil y apoyo económico a familias monoparentales.",
+      "last_verified_at": "2026-08-12",
+      "verification_status": "auto_extracted"
+    },
+    {
+      "slug": "comedores-comunitarios-dif",
+      "name_local": "Programa de Comedores Comunitarios (DIF)",
+      "name_en": "Community Kitchens Programme",
+      "admin_level": "national",
+      "admin_area": null,
+      "funder": "Sistema Nacional DIF / DIF estatales y municipales",
+      "category": "income_support",
+      "benefit_type": "in_kind",
+      "amount_min": null,
+      "amount_max": null,
+      "amount_currency": "MXN",
+      "amount_period": "monthly",
+      "amount_note": "Desayunos y comidas calientes a precio simbólico o gratuitos en comedores comunitarios de localidades vulnerables",
+      "is_automatic": false,
+      "application_url": "https://www.gob.mx/difnacional",
+      "application_channel": "in_person",
+      "deadline_type": "rolling",
+      "deadline_note": null,
+      "procedure_steps": [
+        {
+          "step": 1,
+          "detail": "Acudir al comedor comunitario más cercano y solicitar la credencial o registro",
+          "url": "https://www.gob.mx/difnacional"
+        }
+      ],
+      "documents_required": [
+        {
+          "doc": "Identificación o registro en el padrón del comedor",
+          "mandatory": false,
+          "note": null
+        }
+      ],
+      "eligibility": {
+        "statuses": [],
+        "age_min": null,
+        "age_max": null,
+        "income_annual_max": null,
+        "income_note": "Para personas y familias en situación de vulnerabilidad alimentaria en localidades atendidas",
+        "requires_children": false,
+        "nationality": "any_resident",
+        "residency_months_min": null,
+        "housing_tenure": null,
+        "student_required": false,
+        "admin_areas": []
+      },
+      "source_url": "https://www.gob.mx/difnacional",
+      "source_snippet": "Los comedores comunitarios del DIF ofrecen alimentación subsidiada a población en situación de vulnerabilidad.",
+      "last_verified_at": "2026-08-12",
+      "verification_status": "auto_extracted"
+    },
+    {
+      "slug": "alimentacion-escolar-dif",
+      "name_local": "Programa de Alimentación Escolar (desayunos escolares)",
+      "name_en": "School Feeding Programme (school breakfasts)",
+      "admin_level": "national",
+      "admin_area": null,
+      "funder": "Sistema Nacional DIF / DIF estatales",
+      "category": "family",
+      "benefit_type": "in_kind",
+      "amount_min": null,
+      "amount_max": null,
+      "amount_currency": "MXN",
+      "amount_period": "monthly",
+      "amount_note": "Desayunos fríos o calientes gratuitos para estudiantes de escuelas públicas en zonas prioritarias durante el ciclo escolar",
+      "is_automatic": false,
+      "application_url": "https://www.gob.mx/difnacional",
+      "application_channel": "in_person",
+      "deadline_type": "rolling",
+      "deadline_note": null,
+      "procedure_steps": [
+        {
+          "step": 1,
+          "detail": "El menor debe estar inscrito en una escuela pública atendida por el programa",
+          "url": "https://www.gob.mx/difnacional"
+        }
+      ],
+      "documents_required": [
+        {
+          "doc": "Inscripción vigente en la escuela",
+          "mandatory": true,
+          "note": null
+        }
+      ],
+      "eligibility": {
+        "statuses": [],
+        "age_min": null,
+        "age_max": null,
+        "income_annual_max": null,
+        "income_note": "Escuelas públicas en localidades con rezago social seleccionadas por el DIF",
+        "requires_children": true,
+        "nationality": "any_resident",
+        "residency_months_min": null,
+        "housing_tenure": null,
+        "student_required": true,
+        "admin_areas": []
+      },
+      "source_url": "https://www.gob.mx/difnacional",
+      "source_snippet": "El DIF entrega desayunos escolares gratuitos a alumnos de escuelas públicas ubicadas en zonas de alta marginación.",
+      "last_verified_at": "2026-08-12",
+      "verification_status": "auto_extracted"
+    },
+    {
+      "slug": "paimef-inmujeres",
+      "name_local": "Programa de Apoyo a las Instancias de las Mujeres en las Entidades Federativas (PAIMEF)",
+      "name_en": "Support Programme for State Women's Institutes",
+      "admin_level": "national",
+      "admin_area": null,
+      "funder": "Instituto Nacional de las Mujeres (INMUJERES)",
+      "category": "family",
+      "benefit_type": "in_kind",
+      "amount_min": null,
+      "amount_max": null,
+      "amount_currency": "MXN",
+      "amount_period": "monthly",
+      "amount_note": "Financia atención a la violencia contra las mujeres (refugios, asesoría legal y psicológica) a través de los institutos de las mujeres estatales y municipales",
+      "is_automatic": false,
+      "application_url": "https://www.gob.mx/inmujeres",
+      "application_channel": "in_person",
+      "deadline_type": "rolling",
+      "deadline_note": null,
+      "procedure_steps": [
+        {
+          "step": 1,
+          "detail": "Acudir al instituto de las mujeres del estado o municipio para recibir atención",
+          "url": "https://www.gob.mx/inmujeres"
+        }
+      ],
+      "documents_required": [
+        {
+          "doc": "Identificación (recomendable)",
+          "mandatory": false,
+          "note": null
+        }
+      ],
+      "eligibility": {
+        "statuses": [],
+        "age_min": null,
+        "age_max": null,
+        "income_annual_max": null,
+        "income_note": "Para mujeres en situación de violencia; atención directa y gratuita",
+        "requires_children": false,
+        "nationality": "any_resident",
+        "residency_months_min": null,
+        "housing_tenure": null,
+        "student_required": false,
+        "admin_areas": []
+      },
+      "source_url": "https://www.gob.mx/inmujeres",
+      "source_snippet": "El PAIMEF fortalece a las instancias de las mujeres para prevenir y atender la violencia contra las mujeres en las entidades federativas.",
+      "last_verified_at": "2026-08-12",
+      "verification_status": "auto_extracted"
+    },
+    {
+      "slug": "centros-justicia-mujeres",
+      "name_local": "Centros de Justicia para las Mujeres",
+      "name_en": "Justice Centres for Women",
+      "admin_level": "state",
+      "admin_area": null,
+      "funder": "Fiscalías estatales / Gobierno de México",
+      "category": "family",
+      "benefit_type": "in_kind",
+      "amount_min": null,
+      "amount_max": null,
+      "amount_currency": "MXN",
+      "amount_period": "monthly",
+      "amount_note": "Atención integral y gratuita (asesoría jurídica, psicológica, médica, refugio temporal y guardería) a mujeres víctimas de violencia",
+      "is_automatic": false,
+      "application_url": "https://www.gob.mx/inmujeres",
+      "application_channel": "in_person",
+      "deadline_type": "rolling",
+      "deadline_note": null,
+      "procedure_steps": [
+        {
+          "step": 1,
+          "detail": "Acudir al Centro de Justicia para las Mujeres del estado o llamar a la línea de atención",
+          "url": "https://www.gob.mx/inmujeres"
+        }
+      ],
+      "documents_required": [
+        {
+          "doc": "Identificación (no indispensable para la primera atención)",
+          "mandatory": false,
+          "note": null
+        }
+      ],
+      "eligibility": {
+        "statuses": [],
+        "age_min": null,
+        "age_max": null,
+        "income_annual_max": null,
+        "income_note": "Para mujeres víctimas de violencia; servicios gratuitos",
+        "requires_children": false,
+        "nationality": "any_resident",
+        "residency_months_min": null,
+        "housing_tenure": null,
+        "student_required": false,
+        "admin_areas": []
+      },
+      "source_url": "https://www.gob.mx/inmujeres",
+      "source_snippet": "Los Centros de Justicia para las Mujeres concentran servicios de atención jurídica, psicológica y social a mujeres víctimas de violencia.",
+      "last_verified_at": "2026-08-12",
+      "verification_status": "auto_extracted"
+    },
+    {
+      "slug": "liconsa-leche-subsidiada",
+      "name_local": "Programa de Abasto Social de Leche (LICONSA)",
+      "name_en": "Subsidised Milk Programme (LICONSA)",
+      "admin_level": "national",
+      "admin_area": null,
+      "funder": "LICONSA, S.A. de C.V. / Secretaría de Agricultura y Desarrollo Rural",
+      "category": "income_support",
+      "benefit_type": "discount",
+      "amount_min": null,
+      "amount_max": null,
+      "amount_currency": "MXN",
+      "amount_period": "monthly",
+      "amount_note": "Leche fortificada a precio subsidiado de 7.50 pesos por litro (4.5 en el sureste; 6.5 en Guerrero, Oaxaca y Chiapas), hasta 4 litros semanales por persona y 24 por hogar",
+      "is_automatic": false,
+      "application_url": "https://www.liconsa.gob.mx/",
+      "application_channel": "in_person",
+      "deadline_type": "rolling",
+      "deadline_note": null,
+      "procedure_steps": [
+        {
+          "step": 1,
+          "detail": "Localizar la lechería LICONSA más cercana",
+          "url": "https://www.liconsa.gob.mx/"
+        },
+        {
+          "step": 2,
+          "detail": "Registrarse con la documentación y acudir en el día y horario asignados",
+          "url": null
+        }
+      ],
+      "documents_required": [
+        {
+          "doc": "Identificación oficial",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "CURP",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Comprobante de domicilio",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Estudio socioeconómico",
+          "mandatory": true,
+          "note": null
+        }
+      ],
+      "eligibility": {
+        "statuses": [],
+        "age_min": null,
+        "age_max": null,
+        "income_annual_max": null,
+        "income_note": "Para familias por debajo de la línea de pobreza con niños de 6 meses a 12 años, embarazadas, mujeres de 45 a 59, adultos mayores o personas con discapacidad",
+        "requires_children": false,
+        "nationality": "any_resident",
+        "residency_months_min": null,
+        "housing_tenure": null,
+        "student_required": false,
+        "admin_areas": []
+      },
+      "source_url": "https://www.liconsa.gob.mx/",
+      "source_snippet": "En 2025, el litro de leche Liconsa tiene un costo subsidiado de 7.50 pesos para los beneficiarios registrados en el programa",
+      "last_verified_at": "2026-08-12",
+      "verification_status": "verified"
+    },
+    {
+      "slug": "diconsa-abasto-rural",
+      "name_local": "Programa de Abasto Rural (Tiendas Diconsa)",
+      "name_en": "Rural Supply Programme (Diconsa stores)",
+      "admin_level": "national",
+      "admin_area": null,
+      "funder": "Diconsa, S.A. de C.V. / SEGALMEX",
+      "category": "income_support",
+      "benefit_type": "discount",
+      "amount_min": null,
+      "amount_max": null,
+      "amount_currency": "MXN",
+      "amount_period": "monthly",
+      "amount_note": "Productos de la canasta básica a precios bajos y garantizados en tiendas comunitarias y rurales Diconsa en localidades de alta marginación",
+      "is_automatic": false,
+      "application_url": "https://www.gob.mx/diconsa",
+      "application_channel": "in_person",
+      "deadline_type": "none",
+      "deadline_note": null,
+      "procedure_steps": [
+        {
+          "step": 1,
+          "detail": "Acudir a la tienda Diconsa de la comunidad",
+          "url": "https://www.gob.mx/diconsa"
+        }
+      ],
+      "documents_required": [
+        {
+          "doc": "Ninguno para comprar; las tiendas son abiertas a la población local",
+          "mandatory": true,
+          "note": null
+        }
+      ],
+      "eligibility": {
+        "statuses": [],
+        "age_min": null,
+        "age_max": null,
+        "income_annual_max": null,
+        "income_note": "Población de localidades rurales y de alta marginación con tienda Diconsa",
+        "requires_children": false,
+        "nationality": "any_resident",
+        "residency_months_min": null,
+        "housing_tenure": null,
+        "student_required": false,
+        "admin_areas": []
+      },
+      "source_url": "https://www.gob.mx/diconsa",
+      "source_snippet": "Diconsa opera una red de tiendas rurales y comunitarias que ofrecen productos básicos a bajo costo en zonas de alta marginación.",
+      "last_verified_at": "2026-08-12",
+      "verification_status": "auto_extracted"
+    },
+    {
+      "slug": "jovenes-construyendo-el-futuro",
+      "name_local": "Jóvenes Construyendo el Futuro",
+      "name_en": "Youth Building the Future (apprenticeship programme)",
+      "admin_level": "national",
+      "admin_area": null,
+      "funder": "Secretaría del Trabajo y Previsión Social (STPS)",
+      "category": "employment",
+      "benefit_type": "cash_monthly",
+      "amount_min": 9582,
+      "amount_max": 9582,
+      "amount_currency": "MXN",
+      "amount_period": "monthly",
+      "amount_note": "Beca mensual de 9,582.47 pesos en 2026 (equivalente al salario mínimo vigente), hasta por 12 meses, más afiliación al IMSS durante la capacitación",
+      "is_automatic": false,
+      "application_url": "https://jovenesconstruyendoelfuturo.stps.gob.mx/",
+      "application_channel": "online",
+      "deadline_type": "rolling",
+      "deadline_note": null,
+      "procedure_steps": [
+        {
+          "step": 1,
+          "detail": "Registrarse como aprendiz en la plataforma del programa",
+          "url": "https://jovenesconstruyendoelfuturo.stps.gob.mx/"
+        },
+        {
+          "step": 2,
+          "detail": "Aceptar la vinculación con un centro de trabajo",
+          "url": null
+        },
+        {
+          "step": 3,
+          "detail": "Recibir la Tarjeta del Banco del Bienestar y los pagos mensuales",
+          "url": null
+        }
+      ],
+      "documents_required": [
+        {
+          "doc": "CURP",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Identificación oficial",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Comprobante de domicilio",
+          "mandatory": true,
+          "note": null
+        }
+      ],
+      "eligibility": {
+        "statuses": [
+          "unemployed",
+          "jobseeker"
+        ],
+        "age_min": 18,
+        "age_max": 29,
+        "income_annual_max": null,
+        "income_note": "Para jóvenes de 18 a 29 años que no estudian ni trabajan (ninis); la beca equivale al salario mínimo",
+        "requires_children": false,
+        "nationality": "any_resident",
+        "residency_months_min": null,
+        "housing_tenure": null,
+        "student_required": false,
+        "admin_areas": []
+      },
+      "source_url": "https://jovenesconstruyendoelfuturo.stps.gob.mx/",
+      "source_snippet": "En 2026, cada aprendiz recibe un apoyo económico mensual de 9,582.47 pesos, cifra que equivale exactamente al salario mínimo general vigente en México",
+      "last_verified_at": "2026-08-12",
+      "verification_status": "verified"
+    },
+    {
+      "slug": "servicio-nacional-empleo",
+      "name_local": "Servicio Nacional de Empleo (SNE)",
+      "name_en": "National Employment Service",
+      "admin_level": "national",
+      "admin_area": null,
+      "funder": "Secretaría del Trabajo y Previsión Social (STPS)",
+      "category": "employment",
+      "benefit_type": "in_kind",
+      "amount_min": null,
+      "amount_max": null,
+      "amount_currency": "MXN",
+      "amount_period": "monthly",
+      "amount_note": "Vinculación laboral gratuita, ferias de empleo, bolsa de trabajo en línea y orientación vocacional",
+      "is_automatic": false,
+      "application_url": "https://www.empleo.gob.mx/",
+      "application_channel": "online",
+      "deadline_type": "none",
+      "deadline_note": null,
+      "procedure_steps": [
+        {
+          "step": 1,
+          "detail": "Registrarse en el portal de empleo o acudir a la oficina del SNE",
+          "url": "https://www.empleo.gob.mx/"
+        },
+        {
+          "step": 2,
+          "detail": "Postularse a las vacantes o asistir a ferias de empleo",
+          "url": null
+        }
+      ],
+      "documents_required": [
+        {
+          "doc": "CURP",
+          "mandatory": false,
+          "note": null
+        },
+        {
+          "doc": "Currículum o solicitud de empleo",
+          "mandatory": false,
+          "note": null
+        }
+      ],
+      "eligibility": {
+        "statuses": [
+          "unemployed",
+          "jobseeker",
+          "employee",
+          "self_employed"
+        ],
+        "age_min": null,
+        "age_max": null,
+        "income_annual_max": null,
+        "income_note": "Servicio gratuito abierto a toda la población que busca empleo",
+        "requires_children": false,
+        "nationality": "any_resident",
+        "residency_months_min": null,
+        "housing_tenure": null,
+        "student_required": false,
+        "admin_areas": []
+      },
+      "source_url": "https://www.empleo.gob.mx/",
+      "source_snippet": "El Servicio Nacional de Empleo vincula gratuitamente a personas buscadoras de empleo con vacantes en todo el país.",
+      "last_verified_at": "2026-08-12",
+      "verification_status": "auto_extracted"
+    },
+    {
+      "slug": "programa-apoyo-empleo-becate",
+      "name_local": "Programa de Apoyo al Empleo (PAE) / Bécate",
+      "name_en": "Employment Support Programme (Bécate training grant)",
+      "admin_level": "national",
+      "admin_area": null,
+      "funder": "Secretaría del Trabajo y Previsión Social (STPS)",
+      "category": "employment",
+      "benefit_type": "cash_one_off",
+      "amount_min": null,
+      "amount_max": null,
+      "amount_currency": "MXN",
+      "amount_period": "one_off",
+      "amount_note": "Apoyo económico (1 a 2 meses de salario mínimo según la modalidad) mientras la persona recibe capacitación para el trabajo en la empresa que la contratará",
+      "is_automatic": false,
+      "application_url": "https://www.gob.mx/tramites/ficha/programa-de-apoyo-al-empleo-pae/STPS806",
+      "application_channel": "in_person",
+      "deadline_type": "rolling",
+      "deadline_note": null,
+      "procedure_steps": [
+        {
+          "step": 1,
+          "detail": "Acudir a la oficina del Servicio Nacional de Empleo y solicitar la modalidad Bécate",
+          "url": "https://www.empleo.gob.mx/"
+        },
+        {
+          "step": 2,
+          "detail": "Realizar el curso de capacitación en el centro de trabajo y recibir el apoyo",
+          "url": null
+        }
+      ],
+      "documents_required": [
+        {
+          "doc": "Identificación oficial",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "CURP",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Comprobante de domicilio",
+          "mandatory": true,
+          "note": null
+        }
+      ],
+      "eligibility": {
+        "statuses": [
+          "unemployed",
+          "jobseeker"
+        ],
+        "age_min": 16,
+        "age_max": null,
+        "income_annual_max": null,
+        "income_note": "Para personas desempleadas o subempleadas; la empresa se compromete a capacitar y contratar",
+        "requires_children": false,
+        "nationality": "any_resident",
+        "residency_months_min": null,
+        "housing_tenure": null,
+        "student_required": false,
+        "admin_areas": []
+      },
+      "source_url": "https://www.gob.mx/tramites/ficha/programa-de-apoyo-al-empleo-pae/STPS806",
+      "source_snippet": "El Programa de Apoyo al Empleo otorga un apoyo económico durante la capacitación para el trabajo de personas desempleadas.",
+      "last_verified_at": "2026-08-12",
+      "verification_status": "auto_extracted"
+    },
+    {
+      "slug": "seguro-desempleo-cdmx",
+      "name_local": "Seguro de Desempleo de la Ciudad de México",
+      "name_en": "Mexico City Unemployment Insurance",
+      "admin_level": "city",
+      "admin_area": "Ciudad de México",
+      "funder": "Gobierno de la CDMX / Secretaría de Trabajo y Fomento al Empleo",
+      "category": "employment",
+      "benefit_type": "cash_monthly",
+      "amount_min": 3439,
+      "amount_max": 3439,
+      "amount_currency": "MXN",
+      "amount_period": "monthly",
+      "amount_note": "3,439.46 pesos mensuales (referencia salario mínimo) hasta por 3 meses, mientras se participa en acciones de vinculación laboral",
+      "is_automatic": false,
+      "application_url": "https://www.trabajo.cdmx.gob.mx/",
+      "application_channel": "online",
+      "deadline_type": "window",
+      "deadline_note": "Registro en línea en fechas muy específicas publicadas en la convocatoria (la de 2025 abrió un solo día, 9 de septiembre)",
+      "procedure_steps": [
+        {
+          "step": 1,
+          "detail": "Generar la Llave CDMX-Expediente",
+          "url": "https://llave.cdmx.gob.mx/"
+        },
+        {
+          "step": 2,
+          "detail": "Registrarse en línea el día de la convocatoria",
+          "url": "https://www.trabajo.cdmx.gob.mx/"
+        },
+        {
+          "step": 3,
+          "detail": "Presentar documentación y participar en las actividades de vinculación laboral",
+          "url": null
+        }
+      ],
+      "documents_required": [
+        {
+          "doc": "Identificación oficial vigente",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Comprobante de domicilio en la CDMX no mayor a 3 meses",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "CURP",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Documento que acredite la pérdida del empleo",
+          "mandatory": true,
+          "note": null
+        }
+      ],
+      "eligibility": {
+        "statuses": [
+          "unemployed"
+        ],
+        "age_min": 18,
+        "age_max": 64,
+        "income_annual_max": null,
+        "income_note": "Para residentes de la CDMX con 9 meses cumplidos que perdieron su empleo de manera involuntaria",
+        "requires_children": false,
+        "nationality": "any_resident",
+        "residency_months_min": null,
+        "housing_tenure": null,
+        "student_required": false,
+        "admin_areas": [
+          "Ciudad de México"
+        ]
+      },
+      "source_url": "https://www.trabajo.cdmx.gob.mx/",
+      "source_snippet": "Este programa ofrece un apoyo económico mensual de 3 mil 439 pesos con 46 centavos, el cual podrá otorgarse por un máximo de tres meses",
+      "last_verified_at": "2026-08-12",
+      "verification_status": "verified"
+    },
+    {
+      "slug": "jovenes-con-bienestar-edomex",
+      "name_local": "Jóvenes con Bienestar (Estado de México)",
+      "name_en": "Youth with Wellbeing (State of Mexico)",
+      "admin_level": "state",
+      "admin_area": "Estado de México",
+      "funder": "Gobierno del Estado de México / Secretaría del Bienestar Edomex",
+      "category": "employment",
+      "benefit_type": "cash_monthly",
+      "amount_min": 1250,
+      "amount_max": 1250,
+      "amount_currency": "MXN",
+      "amount_period": "monthly",
+      "amount_note": "Apoyo de 2,500 pesos bimestrales a jóvenes de 18 a 29 años en condiciones de pobreza y sin acceso a la seguridad social",
+      "is_automatic": false,
+      "application_url": "https://bienestar.edomex.gob.mx/",
+      "application_channel": "in_person",
+      "deadline_type": "window",
+      "deadline_note": "Inscripciones en las ventanas que publica la Secretaría del Bienestar del Estado de México",
+      "procedure_steps": [
+        {
+          "step": 1,
+          "detail": "Registrarse en la convocatoria del programa",
+          "url": "https://bienestar.edomex.gob.mx/"
+        },
+        {
+          "step": 2,
+          "detail": "Recibir los pagos bimestrales y participar en las actividades del programa",
+          "url": null
+        }
+      ],
+      "documents_required": [
+        {
+          "doc": "Identificación oficial",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "CURP",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Comprobante de domicilio en el Estado de México",
+          "mandatory": true,
+          "note": null
+        }
+      ],
+      "eligibility": {
+        "statuses": [
+          "unemployed",
+          "jobseeker"
+        ],
+        "age_min": 18,
+        "age_max": 29,
+        "income_annual_max": null,
+        "income_note": "Para jóvenes mexiquenses de 18 a 29 años en situación de pobreza sin seguridad social",
+        "requires_children": false,
+        "nationality": "any_resident",
+        "residency_months_min": null,
+        "housing_tenure": null,
+        "student_required": false,
+        "admin_areas": [
+          "Estado de México"
+        ]
+      },
+      "source_url": "https://bienestar.edomex.gob.mx/",
+      "source_snippet": "Jóvenes con Bienestar Edomex: busca apoyar a jóvenes de 18 a 29 años mediante la entrega de 2 mil 500 pesos bimestrales para enfrentar condiciones de pobreza y falta de acceso a la seguridad social.",
+      "last_verified_at": "2026-08-12",
+      "verification_status": "auto_extracted"
+    },
+    {
+      "slug": "tandas-para-el-bienestar",
+      "name_local": "Tandas para el Bienestar (Préstamos del Bienestar, FINABIEN)",
+      "name_en": "Wellbeing Microcredit Rotating Loans",
+      "admin_level": "national",
+      "admin_area": null,
+      "funder": "Financiera para el Bienestar (FINABIEN)",
+      "category": "business",
+      "benefit_type": "cash_one_off",
+      "amount_min": 6000,
+      "amount_max": 45000,
+      "amount_currency": "MXN",
+      "amount_period": "one_off",
+      "amount_note": "Microcréditos progresivos de 6,000 a 45,000 pesos; la primera tanda de 6,000 no genera intereses con pagos puntuales (GAT nominal 7.61% en tandas subsecuentes); plazo de 10 meses",
+      "is_automatic": false,
+      "application_url": "https://www.gob.mx/finabien",
+      "application_channel": "online",
+      "deadline_type": "rolling",
+      "deadline_note": null,
+      "procedure_steps": [
+        {
+          "step": 1,
+          "detail": "Solicitar el crédito en el portal o módulo de FINABIEN",
+          "url": "https://www.gob.mx/finabien"
+        },
+        {
+          "step": 2,
+          "detail": "Recibir la primera tanda de 6,000 pesos y pagar mensualidades fijas",
+          "url": null
+        },
+        {
+          "step": 3,
+          "detail": "Liquidar puntualmente para acceder a tandas mayores",
+          "url": null
+        }
+      ],
+      "documents_required": [
+        {
+          "doc": "Identificación oficial",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "CURP",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Comprobante de domicilio",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Acreditar un micronegocio con más de 6 meses de operación",
+          "mandatory": true,
+          "note": null
+        }
+      ],
+      "eligibility": {
+        "statuses": [
+          "self_employed"
+        ],
+        "age_min": null,
+        "age_max": null,
+        "income_annual_max": null,
+        "income_note": "Para personas con micronegocios no agropecuarios en operación; sin aval, garantía ni consulta de Buró de Crédito en el primer acceso",
+        "requires_children": false,
+        "nationality": "any_resident",
+        "residency_months_min": null,
+        "housing_tenure": null,
+        "student_required": false,
+        "admin_areas": []
+      },
+      "source_url": "https://www.gob.mx/finabien",
+      "source_snippet": "La primera tanda de $6,000 pesos no genera intereses si los pagos se realizan de forma puntual... montos que van desde los $6,000 hasta los $45,000 pesos",
+      "last_verified_at": "2026-08-12",
+      "verification_status": "verified"
+    },
+    {
+      "slug": "credito-ganadero-a-la-palabra",
+      "name_local": "Crédito Ganadero a la Palabra",
+      "name_en": "Word-of-Honour Livestock Credit",
+      "admin_level": "national",
+      "admin_area": null,
+      "funder": "Secretaría del Bienestar",
+      "category": "business",
+      "benefit_type": "cash_one_off",
+      "amount_min": null,
+      "amount_max": null,
+      "amount_currency": "MXN",
+      "amount_period": "one_off",
+      "amount_note": "Crédito a tasa preferencial para pequeños productores pecuarios, sin garantías ni historial crediticio; el monto lo fijan las Reglas de Operación vigentes",
+      "is_automatic": false,
+      "application_url": "https://www.gob.mx/bienestar",
+      "application_channel": "in_person",
+      "deadline_type": "window",
+      "deadline_note": "Convocatorias anunciadas por la Secretaría del Bienestar",
+      "procedure_steps": [
+        {
+          "step": 1,
+          "detail": "Acudir al módulo o convocatoria del programa con la documentación",
+          "url": "https://www.gob.mx/bienestar"
+        },
+        {
+          "step": 2,
+          "detail": "Recibir el crédito y adquirir el ganado o insumos conforme al proyecto",
+          "url": null
+        }
+      ],
+      "documents_required": [
+        {
+          "doc": "Identificación oficial",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "CURP",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Comprobante de domicilio",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Acreditar actividad ganadera de pequeña escala",
+          "mandatory": true,
+          "note": null
+        }
+      ],
+      "eligibility": {
+        "statuses": [
+          "self_employed"
+        ],
+        "age_min": null,
+        "age_max": null,
+        "income_annual_max": null,
+        "income_note": "Para pequeños productores ganaderos en zonas rurales prioritarias",
+        "requires_children": false,
+        "nationality": "any_resident",
+        "residency_months_min": null,
+        "housing_tenure": null,
+        "student_required": false,
+        "admin_areas": []
+      },
+      "source_url": "https://www.gob.mx/bienestar",
+      "source_snippet": "El Crédito Ganadero a la Palabra financia a pequeños productores pecuarios con base en su palabra, sin avales ni garantías.",
+      "last_verified_at": "2026-08-12",
+      "verification_status": "auto_extracted"
+    },
+    {
+      "slug": "cosechando-soberania",
+      "name_local": "Cosechando Soberanía",
+      "name_en": "Harvesting Sovereignty (agricultural credit)",
+      "admin_level": "national",
+      "admin_area": null,
+      "funder": "Secretaría de Agricultura y Desarrollo Rural (AGRICULTURA)",
+      "category": "business",
+      "benefit_type": "cash_one_off",
+      "amount_min": null,
+      "amount_max": null,
+      "amount_currency": "MXN",
+      "amount_period": "one_off",
+      "amount_note": "Créditos con tasa de interés de 8.5% para pequeños y medianos productores agropecuarios, según comunicados oficiales de AGRICULTURA",
+      "is_automatic": false,
+      "application_url": "https://www.gob.mx/agricultura",
+      "application_channel": "in_person",
+      "deadline_type": "rolling",
+      "deadline_note": null,
+      "procedure_steps": [
+        {
+          "step": 1,
+          "detail": "Acudir al CADER o DDR para registro y solicitud del crédito",
+          "url": "https://www.gob.mx/agricultura"
+        },
+        {
+          "step": 2,
+          "detail": "Recibir el financiamiento conforme al proyecto productivo",
+          "url": null
+        }
+      ],
+      "documents_required": [
+        {
+          "doc": "Identificación oficial",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "CURP",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Comprobante de domicilio y acreditación del predio",
+          "mandatory": true,
+          "note": null
+        }
+      ],
+      "eligibility": {
+        "statuses": [
+          "self_employed"
+        ],
+        "age_min": null,
+        "age_max": null,
+        "income_annual_max": null,
+        "income_note": "Para pequeños y medianos productores agropecuarios y pesqueros",
+        "requires_children": false,
+        "nationality": "any_resident",
+        "residency_months_min": null,
+        "housing_tenure": null,
+        "student_required": false,
+        "admin_areas": []
+      },
+      "source_url": "https://www.gob.mx/agricultura/bajacalifornia/articulos/inicio-agricultura-con-la-entrega-de-fertilizantes-del-bienestar-2025-a-productores-de-baja-california?idiom=es",
+      "source_snippet": "Otros, como el de Cosechando Soberanía, que otorga créditos con intereses del 8.5% a pequeños y medianos productores.",
+      "last_verified_at": "2026-08-12",
+      "verification_status": "auto_extracted"
+    },
+    {
+      "slug": "pronafim-microcreditos-nafin",
+      "name_local": "Programa Nacional de Financiamiento al Microempresario y la Mujer Rural (PRONAFIM)",
+      "name_en": "National Microbusiness Financing Programme (PRONAFIM/NAFIN)",
+      "admin_level": "national",
+      "admin_area": null,
+      "funder": "Nacional Financiera (NAFIN) / Secretaría de Economía",
+      "category": "business",
+      "benefit_type": "cash_one_off",
+      "amount_min": null,
+      "amount_max": null,
+      "amount_currency": "MXN",
+      "amount_period": "one_off",
+      "amount_note": "Créditos y garantías a microempresas a través de intermediarios financieros; montos y tasas según el intermediario y la convocatoria",
+      "is_automatic": false,
+      "application_url": "https://www.nafin.com/portalnf/",
+      "application_channel": "online",
+      "deadline_type": "rolling",
+      "deadline_note": null,
+      "procedure_steps": [
+        {
+          "step": 1,
+          "detail": "Solicitar el crédito ante un intermediario financiero participante de NAFIN",
+          "url": "https://www.nafin.com/portalnf/"
+        }
+      ],
+      "documents_required": [
+        {
+          "doc": "Identificación oficial",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Comprobante del negocio",
+          "mandatory": true,
+          "note": null
+        }
+      ],
+      "eligibility": {
+        "statuses": [
+          "self_employed"
+        ],
+        "age_min": null,
+        "age_max": null,
+        "income_annual_max": null,
+        "income_note": "Para microempresarios y mujeres rurales sin acceso a banca comercial",
+        "requires_children": false,
+        "nationality": "any_resident",
+        "residency_months_min": null,
+        "housing_tenure": null,
+        "student_required": false,
+        "admin_areas": []
+      },
+      "source_url": "https://www.nafin.com/portalnf/",
+      "source_snippet": "PRONAFIM canaliza financiamiento a microempresas a través de intermediarios financieros en todo el país.",
+      "last_verified_at": "2026-08-12",
+      "verification_status": "auto_extracted"
+    },
+    {
+      "slug": "fnd-creditos-rurales",
+      "name_local": "Créditos de la Financiera Nacional de Desarrollo Agropecuario, Rural, Forestal y Pesquero (FND)",
+      "name_en": "National Rural Development Finance (FND) credits",
+      "admin_level": "national",
+      "admin_area": null,
+      "funder": "Financiera Nacional de Desarrollo (FND)",
+      "category": "business",
+      "benefit_type": "cash_one_off",
+      "amount_min": null,
+      "amount_max": null,
+      "amount_currency": "MXN",
+      "amount_period": "one_off",
+      "amount_note": "Créditos directos y a través de intermediarios para el campo, con tasas preferenciales; montos según línea de crédito",
+      "is_automatic": false,
+      "application_url": "https://www.fnd.gob.mx/",
+      "application_channel": "in_person",
+      "deadline_type": "rolling",
+      "deadline_note": null,
+      "procedure_steps": [
+        {
+          "step": 1,
+          "detail": "Solicitar el crédito en la sucursal FND o intermediario más cercano",
+          "url": "https://www.fnd.gob.mx/"
+        }
+      ],
+      "documents_required": [
+        {
+          "doc": "Identificación oficial",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Acreditación de la actividad productiva rural",
+          "mandatory": true,
+          "note": null
+        }
+      ],
+      "eligibility": {
+        "statuses": [
+          "self_employed"
+        ],
+        "age_min": null,
+        "age_max": null,
+        "income_annual_max": null,
+        "income_note": "Para productores agropecuarios, rurales, forestales y pesqueros",
+        "requires_children": false,
+        "nationality": "any_resident",
+        "residency_months_min": null,
+        "housing_tenure": null,
+        "student_required": false,
+        "admin_areas": []
+      },
+      "source_url": "https://www.fnd.gob.mx/",
+      "source_snippet": "La FND ofrece financiamiento a productores del sector agropecuario, rural, forestal y pesquero.",
+      "last_verified_at": "2026-08-12",
+      "verification_status": "auto_extracted"
+    },
+    {
+      "slug": "sembrando-vida",
+      "name_local": "Programa Sembrando Vida",
+      "name_en": "Sowing Life Programme",
+      "admin_level": "national",
+      "admin_area": null,
+      "funder": "Secretaría del Bienestar",
+      "category": "business",
+      "benefit_type": "cash_monthly",
+      "amount_min": 6450,
+      "amount_max": 6450,
+      "amount_currency": "MXN",
+      "amount_period": "monthly",
+      "amount_note": "Pago mensual de 6,450 pesos vía Tarjeta del Banco del Bienestar, más apoyos en especie (semillas, plantas, herramientas) y viveros comunitarios; cobertura en 24 entidades",
+      "is_automatic": false,
+      "application_url": "https://programasparaelbienestar.gob.mx/sembrando-vida/",
+      "application_channel": "in_person",
+      "deadline_type": "window",
+      "deadline_note": "La incorporación se realiza mediante asambleas ejidales o comunales en las localidades del programa",
+      "procedure_steps": [
+        {
+          "step": 1,
+          "detail": "Participar en la asamblea ejidal o comunal de selección",
+          "url": "https://programasparaelbienestar.gob.mx/sembrando-vida/"
+        },
+        {
+          "step": 2,
+          "detail": "Integrarse a una Comunidad de Aprendizaje Campesino (CAC) y cumplir el plan de trabajo",
+          "url": null
+        },
+        {
+          "step": 3,
+          "detail": "Recibir el pago mensual y los insumos",
+          "url": null
+        }
+      ],
+      "documents_required": [
+        {
+          "doc": "Identificación oficial",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "CURP",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Acreditar la propiedad o posesión de 2.5 hectáreas disponibles",
+          "mandatory": true,
+          "note": null
+        }
+      ],
+      "eligibility": {
+        "statuses": [
+          "self_employed"
+        ],
+        "age_min": 18,
+        "age_max": null,
+        "income_annual_max": null,
+        "income_note": "Para personas mayores de edad en localidades rurales con rezago social que dispongan de 2.5 hectáreas para un proyecto agroforestal",
+        "requires_children": false,
+        "nationality": "any_resident",
+        "residency_months_min": null,
+        "housing_tenure": null,
+        "student_required": false,
+        "admin_areas": []
+      },
+      "source_url": "https://programasparaelbienestar.gob.mx/sembrando-vida/",
+      "source_snippet": "Las personas derechohabientes de este programa reciben un pago mensual de $6,450 pesos entregados de manera directa a través de la tarjeta del Banco del Bienestar",
+      "last_verified_at": "2026-08-12",
+      "verification_status": "verified"
+    },
+    {
+      "slug": "fertilizantes-para-el-bienestar",
+      "name_local": "Fertilizantes para el Bienestar",
+      "name_en": "Fertilisers for Wellbeing (free fertiliser)",
+      "admin_level": "national",
+      "admin_area": null,
+      "funder": "Secretaría de Agricultura y Desarrollo Rural (AGRICULTURA) / PEMEX",
+      "category": "business",
+      "benefit_type": "in_kind",
+      "amount_min": null,
+      "amount_max": null,
+      "amount_currency": "MXN",
+      "amount_period": "annual",
+      "amount_note": "Entrega gratuita de hasta 300 kg de fertilizante por hectárea (12 bultos de 25 kg), con límite de 2 hectáreas por persona (600 kg), en 27 entidades",
+      "is_automatic": false,
+      "application_url": "https://www.gob.mx/agricultura",
+      "application_channel": "in_person",
+      "deadline_type": "annual",
+      "deadline_note": "150 días hábiles para recoger el fertilizante tras la publicación de la asignación en línea",
+      "procedure_steps": [
+        {
+          "step": 1,
+          "detail": "Registrarse en el Padrón de Productores en el CADER o DDR",
+          "url": "https://www.gob.mx/agricultura"
+        },
+        {
+          "step": 2,
+          "detail": "Consultar la asignación en gob.mx/agricultura",
+          "url": "https://www.gob.mx/agricultura"
+        },
+        {
+          "step": 3,
+          "detail": "Recoger los fertilizantes en el CEDA asignado con identificación oficial",
+          "url": null
+        }
+      ],
+      "documents_required": [
+        {
+          "doc": "Identificación oficial vigente",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "CURP",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Comprobante de domicilio",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Acreditación de la posesión del predio y georreferencia",
+          "mandatory": true,
+          "note": null
+        }
+      ],
+      "eligibility": {
+        "statuses": [
+          "self_employed"
+        ],
+        "age_min": null,
+        "age_max": null,
+        "income_annual_max": null,
+        "income_note": "Para productores de cultivos prioritarios (maíz, frijol, trigo, arroz, entre otros) en zonas de atención prioritaria",
+        "requires_children": false,
+        "nationality": "any_resident",
+        "residency_months_min": null,
+        "housing_tenure": null,
+        "student_required": false,
+        "admin_areas": []
+      },
+      "source_url": "https://www.gob.mx/agricultura/prensa/agricultura-impulsa-la-productividad-del-campo-hidalguense-con-fertilizantes-para-el-bienestar-2025?idiom=es",
+      "source_snippet": "Cada derechohabiente recibirá hasta 300 kilogramos de fertilizantes por hectárea (12 bultos de 25 kg), con un límite de hasta 2 hectáreas por persona",
+      "last_verified_at": "2026-08-12",
+      "verification_status": "verified"
+    },
+    {
+      "slug": "bienpesca",
+      "name_local": "Bienpesca (Componente del Programa de Fomento a la Agricultura, Ganadería, Pesca y Acuicultura)",
+      "name_en": "Bienpesca small-scale fisher support",
+      "admin_level": "national",
+      "admin_area": null,
+      "funder": "CONAPESCA / Secretaría de Agricultura y Desarrollo Rural",
+      "category": "business",
+      "benefit_type": "cash_one_off",
+      "amount_min": 7500,
+      "amount_max": 7500,
+      "amount_currency": "MXN",
+      "amount_period": "annual",
+      "amount_note": "Apoyo económico directo anual único de 7,500 pesos (ejercicio 2025) depositado en la Tarjeta del Banco del Bienestar; derecho constitucional desde diciembre de 2024",
+      "is_automatic": false,
+      "application_url": "https://www.gob.mx/conapesca",
+      "application_channel": "in_person",
+      "deadline_type": "annual",
+      "deadline_note": "Registro en el Padrón de Productores de Pesca y Acuacultura; pago anual según ejercicio fiscal",
+      "procedure_steps": [
+        {
+          "step": 1,
+          "detail": "Inscribirse gratuitamente en el padrón de productores (SNIPA) de CONAPESCA",
+          "url": "https://www.gob.mx/conapesca"
+        },
+        {
+          "step": 2,
+          "detail": "Verificar la documentación y recibir el depósito anual en el Banco del Bienestar",
+          "url": null
+        }
+      ],
+      "documents_required": [
+        {
+          "doc": "Credencial para votar vigente u otra identificación oficial",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Cédula de inscripción al Padrón de Productores de Pesca y Acuacultura",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Título de concesión o permiso de pesca o acuacultura vigente, o avisos de arribo o cosecha",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "CURP certificada",
+          "mandatory": true,
+          "note": null
+        }
+      ],
+      "eligibility": {
+        "statuses": [
+          "self_employed"
+        ],
+        "age_min": null,
+        "age_max": null,
+        "income_annual_max": null,
+        "income_note": "Para productores pesqueros y acuícolas de pequeña escala inscritos en el padrón; prioridad a zonas rurales, indígenas y de alta marginación",
+        "requires_children": false,
+        "nationality": "any_resident",
+        "residency_months_min": null,
+        "housing_tenure": null,
+        "student_required": false,
+        "admin_areas": []
+      },
+      "source_url": "https://www.gob.mx/agricultura/prensa/gobierno-de-mexico-dispersara-mas-de-mil-200-mdp-para-el-pago-de-bienpesca-a-mas-de-168-mil-950-derechohabientes",
+      "source_snippet": "Cada pescador y pescadora derechohabiente recibirá 7 mil 500 pesos correspondientes al ejercicio fiscal 2025",
+      "last_verified_at": "2026-08-12",
+      "verification_status": "verified"
+    },
+    {
+      "slug": "credito-infonavit",
+      "name_local": "Crédito Infonavit (modalidad tradicional)",
+      "name_en": "Infonavit Subsidised Mortgage",
+      "admin_level": "national",
+      "admin_area": null,
+      "funder": "Instituto del Fondo Nacional de la Vivienda para los Trabajadores (Infonavit)",
+      "category": "housing",
+      "benefit_type": "discount",
+      "amount_min": null,
+      "amount_max": null,
+      "amount_currency": "MXN",
+      "amount_period": "monthly",
+      "amount_note": "Crédito hipotecario con tasa fija anual entre 3.09% y 10.45% según ingreso (menor ingreso, menor tasa), para comprar, construir o pagar una hipoteca",
+      "is_automatic": false,
+      "application_url": "https://portalmx.infonavit.org.mx/",
+      "application_channel": "online",
+      "deadline_type": "rolling",
+      "deadline_note": null,
+      "procedure_steps": [
+        {
+          "step": 1,
+          "detail": "Revisar la precalificación y puntuación en Mi Cuenta Infonavit",
+          "url": "https://portalmx.infonavit.org.mx/"
+        },
+        {
+          "step": 2,
+          "detail": "Solicitar el crédito y tramitar la escrituración",
+          "url": null
+        }
+      ],
+      "documents_required": [
+        {
+          "doc": "Identificación oficial",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "CURP y NSS",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Documentos del inmueble",
+          "mandatory": true,
+          "note": null
+        }
+      ],
+      "eligibility": {
+        "statuses": [
+          "employee"
+        ],
+        "age_min": null,
+        "age_max": null,
+        "income_annual_max": null,
+        "income_note": "Para trabajadores cotizantes al IMSS con relación laboral vigente y puntuación suficiente; las tasas más bajas aplican a menores ingresos",
+        "requires_children": false,
+        "nationality": "any_resident",
+        "residency_months_min": null,
+        "housing_tenure": null,
+        "student_required": false,
+        "admin_areas": []
+      },
+      "source_url": "https://portalmx.infonavit.org.mx/",
+      "source_snippet": "El Infonavit ofrece créditos hipotecarios con tasas fijas subsidiadas según el nivel de ingreso del trabajador.",
+      "last_verified_at": "2026-08-12",
+      "verification_status": "auto_extracted"
+    },
+    {
+      "slug": "mejoravit-renueva",
+      "name_local": "Mejoravit (crédito para mejoramiento de vivienda, Infonavit)",
+      "name_en": "Mejoravit Home Improvement Credit",
+      "admin_level": "national",
+      "admin_area": null,
+      "funder": "Infonavit",
+      "category": "housing",
+      "benefit_type": "cash_one_off",
+      "amount_min": null,
+      "amount_max": null,
+      "amount_currency": "MXN",
+      "amount_period": "one_off",
+      "amount_note": "Crédito para remodelar, ampliar o reparar la vivienda, descontado vía nómina; el monto depende de la capacidad de pago del derechohabiente",
+      "is_automatic": false,
+      "application_url": "https://portalmx.infonavit.org.mx/",
+      "application_channel": "online",
+      "deadline_type": "rolling",
+      "deadline_note": null,
+      "procedure_steps": [
+        {
+          "step": 1,
+          "detail": "Consultar el monto disponible en Mi Cuenta Infonavit",
+          "url": "https://portalmx.infonavit.org.mx/"
+        },
+        {
+          "step": 2,
+          "detail": "Solicitar el crédito y recibir el depósito",
+          "url": null
+        }
+      ],
+      "documents_required": [
+        {
+          "doc": "Identificación oficial",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "CURP y NSS",
+          "mandatory": true,
+          "note": null
+        }
+      ],
+      "eligibility": {
+        "statuses": [
+          "employee"
+        ],
+        "age_min": null,
+        "age_max": null,
+        "income_annual_max": null,
+        "income_note": "Para derechohabientes del Infonavit con relación laboral vigente",
+        "requires_children": false,
+        "nationality": "any_resident",
+        "residency_months_min": null,
+        "housing_tenure": "owner",
+        "student_required": false,
+        "admin_areas": []
+      },
+      "source_url": "https://portalmx.infonavit.org.mx/",
+      "source_snippet": "Mejoravit es el crédito del Infonavit para remodelar o mejorar tu vivienda con descuentos vía nómina.",
+      "last_verified_at": "2026-08-12",
+      "verification_status": "auto_extracted"
+    },
+    {
+      "slug": "credito-fovissste",
+      "name_local": "Crédito Tradicional FOVISSSTE",
+      "name_en": "FOVISSSTE Housing Credit for State Workers",
+      "admin_level": "national",
+      "admin_area": null,
+      "funder": "FOVISSSTE (Fondo de la Vivienda del ISSSTE)",
+      "category": "housing",
+      "benefit_type": "discount",
+      "amount_min": null,
+      "amount_max": null,
+      "amount_currency": "MXN",
+      "amount_period": "monthly",
+      "amount_note": "Crédito hipotecario con tasas preferenciales y subsidios según ingreso para trabajadores del Estado; sorteos anuales de asignación",
+      "is_automatic": false,
+      "application_url": "https://www.fovissste.gob.mx/",
+      "application_channel": "online",
+      "deadline_type": "annual",
+      "deadline_note": "Sorteos y convocatorias anuales publicados por FOVISSSTE",
+      "procedure_steps": [
+        {
+          "step": 1,
+          "detail": "Registrarse en la convocatoria o sorteo anual en el portal FOVISSSTE",
+          "url": "https://www.fovissste.gob.mx/"
+        },
+        {
+          "step": 2,
+          "detail": "Si resulta seleccionado, tramitar el crédito y la escrituración",
+          "url": null
+        }
+      ],
+      "documents_required": [
+        {
+          "doc": "Identificación oficial",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "CURP y comprobante de derechohabiencia ISSSTE",
+          "mandatory": true,
+          "note": null
+        }
+      ],
+      "eligibility": {
+        "statuses": [
+          "employee"
+        ],
+        "age_min": null,
+        "age_max": null,
+        "income_annual_max": null,
+        "income_note": "Para trabajadores al servicio del Estado cotizantes del ISSSTE; subsidios mayores a menores ingresos",
+        "requires_children": false,
+        "nationality": "any_resident",
+        "residency_months_min": null,
+        "housing_tenure": null,
+        "student_required": false,
+        "admin_areas": []
+      },
+      "source_url": "https://www.fovissste.gob.mx/",
+      "source_snippet": "FOVISSSTE otorga créditos de vivienda con tasas preferenciales y subsidios a trabajadores del Estado.",
+      "last_verified_at": "2026-08-12",
+      "verification_status": "auto_extracted"
+    },
+    {
+      "slug": "programa-vivienda-social-conavi",
+      "name_local": "Programa de Vivienda Social (CONAVI)",
+      "name_en": "Social Housing Programme",
+      "admin_level": "national",
+      "admin_area": null,
+      "funder": "Comisión Nacional de Vivienda (CONAVI)",
+      "category": "housing",
+      "benefit_type": "cash_one_off",
+      "amount_min": null,
+      "amount_max": null,
+      "amount_currency": "MXN",
+      "amount_period": "one_off",
+      "amount_note": "Subsidios para adquisición, producción y mejoramiento de vivienda para población de bajos ingresos; montos según modalidad y convocatoria anual",
+      "is_automatic": false,
+      "application_url": "https://www.gob.mx/conavi",
+      "application_channel": "in_person",
+      "deadline_type": "window",
+      "deadline_note": "Convocatorias publicadas por CONAVI y las entidades federativas",
+      "procedure_steps": [
+        {
+          "step": 1,
+          "detail": "Consultar la convocatoria vigente en el portal CONAVI",
+          "url": "https://www.gob.mx/conavi"
+        },
+        {
+          "step": 2,
+          "detail": "Presentar la solicitud y documentos ante la instancia ejecutora",
+          "url": null
+        }
+      ],
+      "documents_required": [
+        {
+          "doc": "Identificación oficial",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "CURP",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Comprobante de ingresos y estudio socioeconómico",
+          "mandatory": true,
+          "note": null
+        }
+      ],
+      "eligibility": {
+        "statuses": [],
+        "age_min": null,
+        "age_max": null,
+        "income_annual_max": null,
+        "income_note": "Para hogares con ingresos de hasta aproximadamente 5 UMA mensuales, según la modalidad",
+        "requires_children": false,
+        "nationality": "any_resident",
+        "residency_months_min": null,
+        "housing_tenure": null,
+        "student_required": false,
+        "admin_areas": []
+      },
+      "source_url": "https://www.gob.mx/conavi",
+      "source_snippet": "El Programa de Vivienda Social de CONAVI otorga subsidios para que familias de bajos ingresos accedan a una vivienda digna.",
+      "last_verified_at": "2026-08-12",
+      "verification_status": "auto_extracted"
+    },
+    {
+      "slug": "mejoramiento-vivienda-conavi",
+      "name_local": "Mejoramiento de Vivienda (CONAVI)",
+      "name_en": "Home Improvement Programme (CONAVI)",
+      "admin_level": "national",
+      "admin_area": null,
+      "funder": "Comisión Nacional de Vivienda (CONAVI)",
+      "category": "housing",
+      "benefit_type": "cash_one_off",
+      "amount_min": null,
+      "amount_max": null,
+      "amount_currency": "MXN",
+      "amount_period": "one_off",
+      "amount_note": "Subsidio para ampliar o mejorar la vivienda existente (cuartos adicionales, pisos, techos, baños); monto según modalidad y convocatoria",
+      "is_automatic": false,
+      "application_url": "https://www.gob.mx/conavi",
+      "application_channel": "in_person",
+      "deadline_type": "window",
+      "deadline_note": "Convocatorias anuales de CONAVI y de los organismos estatales de vivienda",
+      "procedure_steps": [
+        {
+          "step": 1,
+          "detail": "Acudir al organismo de vivienda estatal o municipal para registrar la solicitud",
+          "url": "https://www.gob.mx/conavi"
+        }
+      ],
+      "documents_required": [
+        {
+          "doc": "Identificación oficial",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "CURP",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Acreditación de la propiedad o posesión de la vivienda",
+          "mandatory": true,
+          "note": null
+        }
+      ],
+      "eligibility": {
+        "statuses": [],
+        "age_min": null,
+        "age_max": null,
+        "income_annual_max": null,
+        "income_note": "Para propietarios de vivienda con ingresos bajos que requieren ampliar o mejorar su casa",
+        "requires_children": false,
+        "nationality": "any_resident",
+        "residency_months_min": null,
+        "housing_tenure": "owner",
+        "student_required": false,
+        "admin_areas": []
+      },
+      "source_url": "https://www.gob.mx/conavi",
+      "source_snippet": "Las acciones de mejoramiento de vivienda financian ampliaciones y mejoras de la vivienda existente para familias de bajos ingresos.",
+      "last_verified_at": "2026-08-12",
+      "verification_status": "auto_extracted"
+    },
+    {
+      "slug": "programa-mejoramiento-urbano",
+      "name_local": "Programa de Mejoramiento Urbano (SEDATU)",
+      "name_en": "Urban Improvement Programme",
+      "admin_level": "national",
+      "admin_area": null,
+      "funder": "Secretaría de Desarrollo Agrario, Territorial y Urbano (SEDATU)",
+      "category": "housing",
+      "benefit_type": "in_kind",
+      "amount_min": null,
+      "amount_max": null,
+      "amount_currency": "MXN",
+      "amount_period": "one_off",
+      "amount_note": "Obras de infraestructura básica, equipamiento y espacios públicos en colonias populares, ejecutadas por el gobierno en beneficio directo de la comunidad",
+      "is_automatic": true,
+      "application_url": "https://www.gob.mx/sedatu",
+      "application_channel": "automatic",
+      "deadline_type": "none",
+      "deadline_note": null,
+      "procedure_steps": [
+        {
+          "step": 1,
+          "detail": "El beneficio llega mediante obras en la colonia seleccionada; no requiere trámite individual",
+          "url": "https://www.gob.mx/sedatu"
+        }
+      ],
+      "documents_required": [
+        {
+          "doc": "No aplica (beneficio colectivo por obra pública)",
+          "mandatory": true,
+          "note": null
+        }
+      ],
+      "eligibility": {
+        "statuses": [],
+        "age_min": null,
+        "age_max": null,
+        "income_annual_max": null,
+        "income_note": "Colonias y barrios en situación de marginación urbana seleccionados por SEDATU",
+        "requires_children": false,
+        "nationality": "any_resident",
+        "residency_months_min": null,
+        "housing_tenure": null,
+        "student_required": false,
+        "admin_areas": []
+      },
+      "source_url": "https://www.gob.mx/sedatu",
+      "source_snippet": "El Programa de Mejoramiento Urbano ejecuta obras de infraestructura y equipamiento en colonias populares para reducir la desigualdad urbana.",
+      "last_verified_at": "2026-08-12",
+      "verification_status": "auto_extracted"
+    },
+    {
+      "slug": "inapam-credencial-beneficios",
+      "name_local": "Credencial INAPAM (Directorio de Beneficios para Personas Adultas Mayores)",
+      "name_en": "INAPAM Senior Citizen Discount Card",
+      "admin_level": "national",
+      "admin_area": null,
+      "funder": "Instituto Nacional de las Personas Adultas Mayores (INAPAM)",
+      "category": "income_support",
+      "benefit_type": "discount",
+      "amount_min": null,
+      "amount_max": null,
+      "amount_currency": "MXN",
+      "amount_period": "monthly",
+      "amount_note": "Descuentos de 5% a 50% en farmacias, supermercados, ópticas, restaurantes, servicios, museos gratuitos y transporte; el Directorio de Beneficios se actualiza periódicamente",
+      "is_automatic": false,
+      "application_url": "https://www.gob.mx/inapam",
+      "application_channel": "in_person",
+      "deadline_type": "rolling",
+      "deadline_note": null,
+      "procedure_steps": [
+        {
+          "step": 1,
+          "detail": "Tramitar gratuitamente la credencial en el módulo INAPAM con fotografía y documentos",
+          "url": "https://www.gob.mx/inapam"
+        },
+        {
+          "step": 2,
+          "detail": "Presentar la credencial vigente en los establecimientos del Directorio de Beneficios",
+          "url": "https://www.gob.mx/inapam/acciones-y-programas/beneficios-test"
+        }
+      ],
+      "documents_required": [
+        {
+          "doc": "Identificación oficial o acta de nacimiento",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "CURP",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Comprobante de domicilio",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Fotografía tamaño infantil",
+          "mandatory": true,
+          "note": null
+        }
+      ],
+      "eligibility": {
+        "statuses": [],
+        "age_min": 60,
+        "age_max": null,
+        "income_annual_max": null,
+        "income_note": "Gratuita para todas las personas de 60 años o más residentes en México",
+        "requires_children": false,
+        "nationality": "any_resident",
+        "residency_months_min": null,
+        "housing_tenure": null,
+        "student_required": false,
+        "admin_areas": []
+      },
+      "source_url": "https://www.gob.mx/inapam/acciones-y-programas/beneficios-test",
+      "source_snippet": "El Instituto Nacional de Las Personas Adultas Mayores ofrece diversos beneficios y descuentos a quienes ya tienen su credencial INAPAM.",
+      "last_verified_at": "2026-08-12",
+      "verification_status": "verified"
+    },
+    {
+      "slug": "transporte-gratuito-adultos-mayores-cdmx",
+      "name_local": "Transporte público gratuito para personas adultas mayores (CDMX)",
+      "name_en": "Free Public Transport for Seniors (Mexico City)",
+      "admin_level": "city",
+      "admin_area": "Ciudad de México",
+      "funder": "Gobierno de la CDMX / SEMOVI",
+      "category": "transport",
+      "benefit_type": "free_slab",
+      "amount_min": 0,
+      "amount_max": 0,
+      "amount_currency": "MXN",
+      "amount_period": "monthly",
+      "amount_note": "Acceso 100% gratuito al Metro, Metrobús, Trolebús, RTP, Tren Ligero y Cablebús presentando la credencial INAPAM vigente",
+      "is_automatic": false,
+      "application_url": "https://www.gob.mx/inapam",
+      "application_channel": "automatic",
+      "deadline_type": "none",
+      "deadline_note": null,
+      "procedure_steps": [
+        {
+          "step": 1,
+          "detail": "Tramitar la credencial INAPAM",
+          "url": "https://www.gob.mx/inapam"
+        },
+        {
+          "step": 2,
+          "detail": "Presentarla en los torniquetes o accesos de cortesía de los sistemas de transporte",
+          "url": null
+        }
+      ],
+      "documents_required": [
+        {
+          "doc": "Credencial INAPAM original y vigente",
+          "mandatory": true,
+          "note": null
+        }
+      ],
+      "eligibility": {
+        "statuses": [],
+        "age_min": 60,
+        "age_max": null,
+        "income_annual_max": null,
+        "income_note": "Sin límite de ingreso; basta tener 60 años o más y la credencial INAPAM",
+        "requires_children": false,
+        "nationality": "any_resident",
+        "residency_months_min": null,
+        "housing_tenure": null,
+        "student_required": false,
+        "admin_areas": [
+          "Ciudad de México"
+        ]
+      },
+      "source_url": "https://www.gob.mx/inapam/acciones-y-programas/beneficios-test",
+      "source_snippet": "Los Adultos Mayores tienen derecho a ingresar de forma gratuita al Metro CDMX, Metrobús, Cablebús, RTP, Trolebús y el Tren Ligero.",
+      "last_verified_at": "2026-08-12",
+      "verification_status": "verified"
+    },
+    {
+      "slug": "inapam-descuento-autobuses-foraneos",
+      "name_local": "Descuento INAPAM en autobuses foráneos (ADO, ETN, Primera Plus y otras)",
+      "name_en": "INAPAM Intercity Bus Discount (up to 50%)",
+      "admin_level": "national",
+      "admin_area": null,
+      "funder": "INAPAM en convenio con líneas de autobuses",
+      "category": "transport",
+      "benefit_type": "discount",
+      "amount_min": null,
+      "amount_max": null,
+      "amount_currency": "MXN",
+      "amount_period": "one_off",
+      "amount_note": "Descuento de hasta 50% sobre la tarifa base en boletos de ADO, ETN Turistar, Omnibus de México, Primera Plus y Estrella Blanca; sujeto a 2-8 asientos preferentes por corrida",
+      "is_automatic": false,
+      "application_url": "https://www.gob.mx/inapam/acciones-y-programas/beneficios-test",
+      "application_channel": "in_person",
+      "deadline_type": "none",
+      "deadline_note": null,
+      "procedure_steps": [
+        {
+          "step": 1,
+          "detail": "Presentar la credencial INAPAM original al comprar el boleto en taquilla o plataforma",
+          "url": "https://www.gob.mx/inapam/acciones-y-programas/beneficios-test"
+        },
+        {
+          "step": 2,
+          "detail": "Mostrarla nuevamente al abordar la unidad",
+          "url": null
+        }
+      ],
+      "documents_required": [
+        {
+          "doc": "Credencial INAPAM original y vigente",
+          "mandatory": true,
+          "note": null
+        }
+      ],
+      "eligibility": {
+        "statuses": [],
+        "age_min": 60,
+        "age_max": null,
+        "income_annual_max": null,
+        "income_note": "Descuento sujeto a disponibilidad de asientos con tarifa preferente por corrida; no acumulable con otras promociones",
+        "requires_children": false,
+        "nationality": "any_resident",
+        "residency_months_min": null,
+        "housing_tenure": null,
+        "student_required": false,
+        "admin_areas": []
+      },
+      "source_url": "https://www.gob.mx/inapam/acciones-y-programas/beneficios-test",
+      "source_snippet": "El descuento puede alcanzar hasta el 50% del costo del boleto y está sujeto a la disponibilidad de entre dos y ocho asientos por autobús.",
+      "last_verified_at": "2026-08-12",
+      "verification_status": "verified"
+    },
+    {
+      "slug": "tarifa-preferente-siteur-jalisco",
+      "name_local": "Tarifa preferente del Tren Ligero y Mi Macro (SITEUR, Guadalajara)",
+      "name_en": "Concessionary Fares on Guadalajara Light Rail and BRT",
+      "admin_level": "state",
+      "admin_area": "Jalisco",
+      "funder": "SITEUR / Gobierno de Jalisco",
+      "category": "transport",
+      "benefit_type": "discount",
+      "amount_min": null,
+      "amount_max": null,
+      "amount_currency": "MXN",
+      "amount_period": "monthly",
+      "amount_note": "Tarifa preferente (aproximadamente 50% de la tarifa general) para estudiantes, personas adultas mayores y personas con discapacidad con tarjeta preferente",
+      "is_automatic": false,
+      "application_url": "https://siteur.jalisco.gob.mx/",
+      "application_channel": "in_person",
+      "deadline_type": "rolling",
+      "deadline_note": null,
+      "procedure_steps": [
+        {
+          "step": 1,
+          "detail": "Tramitar la tarjeta preferente en las oficinas o módulos de SITEUR",
+          "url": "https://siteur.jalisco.gob.mx/"
+        },
+        {
+          "step": 2,
+          "detail": "Usar la tarjeta al pagar en el Tren Ligero y Mi Macro",
+          "url": null
+        }
+      ],
+      "documents_required": [
+        {
+          "doc": "Identificación oficial",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Credencial INAPAM, constancia de estudios o constancia de discapacidad, según el caso",
+          "mandatory": true,
+          "note": null
+        }
+      ],
+      "eligibility": {
+        "statuses": [
+          "student",
+          "retired"
+        ],
+        "age_min": null,
+        "age_max": null,
+        "income_annual_max": null,
+        "income_note": "Para estudiantes, adultos mayores (60+) y personas con discapacidad",
+        "requires_children": false,
+        "nationality": "any_resident",
+        "residency_months_min": null,
+        "housing_tenure": null,
+        "student_required": false,
+        "admin_areas": [
+          "Jalisco"
+        ]
+      },
+      "source_url": "https://siteur.jalisco.gob.mx/",
+      "source_snippet": "SITEUR otorga tarifa preferente a estudiantes, personas adultas mayores y personas con discapacidad en el Tren Ligero y Mi Macro.",
+      "last_verified_at": "2026-08-12",
+      "verification_status": "auto_extracted"
+    },
+    {
+      "slug": "metrorrey-tarifa-preferente",
+      "name_local": "Tarifa preferente de Metrorrey (Nuevo León)",
+      "name_en": "Concessionary Fares on Monterrey Metro",
+      "admin_level": "state",
+      "admin_area": "Nuevo León",
+      "funder": "STC Metrorrey / Gobierno de Nuevo León",
+      "category": "transport",
+      "benefit_type": "discount",
+      "amount_min": null,
+      "amount_max": null,
+      "amount_currency": "MXN",
+      "amount_period": "monthly",
+      "amount_note": "Tarifa preferente para estudiantes, adultos mayores y personas con discapacidad en el metro de Monterrey, con tarjeta MIA preferente",
+      "is_automatic": false,
+      "application_url": "https://www.nl.gob.mx/",
+      "application_channel": "in_person",
+      "deadline_type": "rolling",
+      "deadline_note": null,
+      "procedure_steps": [
+        {
+          "step": 1,
+          "detail": "Tramitar la tarjeta preferente en las oficinas de Metrorrey",
+          "url": "https://www.nl.gob.mx/"
+        },
+        {
+          "step": 2,
+          "detail": "Pagar con la tarjeta preferente en las estaciones",
+          "url": null
+        }
+      ],
+      "documents_required": [
+        {
+          "doc": "Identificación oficial",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Documento que acredite la condición (credencial INAPAM, credencial escolar o constancia de discapacidad)",
+          "mandatory": true,
+          "note": null
+        }
+      ],
+      "eligibility": {
+        "statuses": [
+          "student",
+          "retired"
+        ],
+        "age_min": null,
+        "age_max": null,
+        "income_annual_max": null,
+        "income_note": "Para estudiantes, personas adultas mayores y personas con discapacidad",
+        "requires_children": false,
+        "nationality": "any_resident",
+        "residency_months_min": null,
+        "housing_tenure": null,
+        "student_required": false,
+        "admin_areas": [
+          "Nuevo León"
+        ]
+      },
+      "source_url": "https://www.nl.gob.mx/",
+      "source_snippet": "Metrorrey mantiene una tarifa preferente para estudiantes, adultos mayores y personas con discapacidad.",
+      "last_verified_at": "2026-08-12",
+      "verification_status": "auto_extracted"
+    },
+    {
+      "slug": "tarifa-domestica-subsidiada-cfe",
+      "name_local": "Tarifa doméstica subsidiada de electricidad (CFE)",
+      "name_en": "Subsidised Residential Electricity Tariff",
+      "admin_level": "national",
+      "admin_area": null,
+      "funder": "Comisión Federal de Electricidad (CFE) / Secretaría de Energía",
+      "category": "energy",
+      "benefit_type": "free_slab",
+      "amount_min": null,
+      "amount_max": null,
+      "amount_currency": "MXN",
+      "amount_period": "monthly",
+      "amount_note": "Las tarifas domésticas (1, 1A, 1B, 1C, 1D, 1E y 1F) incluyen subsidio creciente según consumo básico e intermedio y clima; las tarifas de verano tienen mayor subsidio en zonas cálidas",
+      "is_automatic": true,
+      "application_url": "https://www.cfe.mx/",
+      "application_channel": "automatic",
+      "deadline_type": "none",
+      "deadline_note": null,
+      "procedure_steps": [
+        {
+          "step": 1,
+          "detail": "El subsidio se aplica automáticamente en el recibo según la tarifa de la localidad",
+          "url": "https://www.cfe.mx/"
+        },
+        {
+          "step": 2,
+          "detail": "Mantener el consumo dentro del bloque básico/intermedio para no caer en tarifa DAC",
+          "url": null
+        }
+      ],
+      "documents_required": [
+        {
+          "doc": "Ninguno; es automático para usuarios domésticos",
+          "mandatory": true,
+          "note": null
+        }
+      ],
+      "eligibility": {
+        "statuses": [],
+        "age_min": null,
+        "age_max": null,
+        "income_annual_max": null,
+        "income_note": "Sin evaluación de ingresos; el subsidio depende de la tarifa de la zona y del consumo mensual (kWh)",
+        "requires_children": false,
+        "nationality": "any_resident",
+        "residency_months_min": null,
+        "housing_tenure": null,
+        "student_required": false,
+        "admin_areas": []
+      },
+      "source_url": "https://www.cfe.mx/",
+      "source_snippet": "Las tarifas domésticas de CFE gozan de un subsidio que se aplica en bloques de consumo básico e intermedio, mayor en regiones de clima cálido durante el verano.",
+      "last_verified_at": "2026-08-12",
+      "verification_status": "auto_extracted"
+    },
+    {
+      "slug": "gas-bienestar",
+      "name_local": "Gas Bienestar",
+      "name_en": "Gas Bienestar (below-market LP gas)",
+      "admin_level": "national",
+      "admin_area": null,
+      "funder": "Gas Bienestar, S.A. de C.V. (empresa del Estado)",
+      "category": "energy",
+      "benefit_type": "discount",
+      "amount_min": null,
+      "amount_max": null,
+      "amount_currency": "MXN",
+      "amount_period": "monthly",
+      "amount_note": "Venta de gas LP a precio inferior al de mercado en zonas de alta marginación (inició en alcaldías de la CDMX y se ha expandido); distribuye cilindros y pipas",
+      "is_automatic": false,
+      "application_url": "https://gasbienestar.gob.mx/",
+      "application_channel": "in_person",
+      "deadline_type": "rolling",
+      "deadline_note": null,
+      "procedure_steps": [
+        {
+          "step": 1,
+          "detail": "Solicitar el gas en los módulos o rutas de Gas Bienestar de la zona",
+          "url": "https://gasbienestar.gob.mx/"
+        }
+      ],
+      "documents_required": [
+        {
+          "doc": "Registro de usuario (domicilio) en zonas de cobertura",
+          "mandatory": true,
+          "note": null
+        }
+      ],
+      "eligibility": {
+        "statuses": [],
+        "age_min": null,
+        "age_max": null,
+        "income_annual_max": null,
+        "income_note": "Hogares de las zonas con cobertura de Gas Bienestar, principalmente colonias populares",
+        "requires_children": false,
+        "nationality": "any_resident",
+        "residency_months_min": null,
+        "housing_tenure": null,
+        "student_required": false,
+        "admin_areas": []
+      },
+      "source_url": "https://gasbienestar.gob.mx/",
+      "source_snippet": "Gas Bienestar vende gas LP a precio justo, por debajo del precio comercial, en zonas de alta marginación.",
+      "last_verified_at": "2026-08-12",
+      "verification_status": "auto_extracted"
+    },
+    {
+      "slug": "estimulo-ieps-combustibles",
+      "name_local": "Estímulo fiscal al IEPS de gasolinas y diésel",
+      "name_en": "Fuel Excise Tax (IEPS) Fiscal Stimulus",
+      "admin_level": "national",
+      "admin_area": null,
+      "funder": "SHCP / SAT",
+      "category": "tax",
+      "benefit_type": "tax_credit",
+      "amount_min": null,
+      "amount_max": null,
+      "amount_currency": "MXN",
+      "amount_period": "monthly",
+      "amount_note": "Reducción semanal del IEPS a gasolina magna, premium y diésel publicada en el DOF; mantiene los precios al consumidor por debajo de lo que resultaría con la cuota plena",
+      "is_automatic": true,
+      "application_url": "https://www.sat.gob.mx/",
+      "application_channel": "automatic",
+      "deadline_type": "none",
+      "deadline_note": null,
+      "procedure_steps": [
+        {
+          "step": 1,
+          "detail": "El estímulo se traslada automáticamente al precio en estaciones de servicio",
+          "url": "https://www.sat.gob.mx/"
+        }
+      ],
+      "documents_required": [
+        {
+          "doc": "Ninguno; beneficio general al consumidor",
+          "mandatory": true,
+          "note": null
+        }
+      ],
+      "eligibility": {
+        "statuses": [],
+        "age_min": null,
+        "age_max": null,
+        "income_annual_max": null,
+        "income_note": "Beneficio general vía precio; la cuota estimulada se publica semanalmente en el DOF",
+        "requires_children": false,
+        "nationality": "any_resident",
+        "residency_months_min": null,
+        "housing_tenure": null,
+        "student_required": false,
+        "admin_areas": []
+      },
+      "source_url": "https://www.sat.gob.mx/",
+      "source_snippet": "La SHCP publica semanalmente en el DOF los estímulos fiscales al IEPS aplicables a gasolinas y diésel.",
+      "last_verified_at": "2026-08-12",
+      "verification_status": "auto_extracted"
+    },
+    {
+      "slug": "exencion-isan-vehiculos-electricos",
+      "name_local": "Exención del ISAN para vehículos eléctricos e híbridos",
+      "name_en": "New Vehicle Tax (ISAN) Exemption for Electric and Hybrid Cars",
+      "admin_level": "national",
+      "admin_area": null,
+      "funder": "SAT / SHCP",
+      "category": "tax",
+      "benefit_type": "tax_credit",
+      "amount_min": null,
+      "amount_max": null,
+      "amount_currency": "MXN",
+      "amount_period": "one_off",
+      "amount_note": "Exención del Impuesto Sobre Automóviles Nuevos (ISAN) para vehículos eléctricos, de pila de combustible e híbridos dentro de los límites de precio del Decreto de estímulos fiscales vigente",
+      "is_automatic": true,
+      "application_url": "https://www.sat.gob.mx/",
+      "application_channel": "automatic",
+      "deadline_type": "none",
+      "deadline_note": null,
+      "procedure_steps": [
+        {
+          "step": 1,
+          "detail": "La agencia aplica la exención al facturar el vehículo dentro de los supuestos del decreto",
+          "url": "https://www.sat.gob.mx/"
+        }
+      ],
+      "documents_required": [
+        {
+          "doc": "Factura del vehículo que acredite la tecnología elegible",
+          "mandatory": true,
+          "note": null
+        }
+      ],
+      "eligibility": {
+        "statuses": [],
+        "age_min": null,
+        "age_max": null,
+        "income_annual_max": null,
+        "income_note": "Aplica a la compra de vehículos eléctricos e híbridos elegibles según el decreto vigente",
+        "requires_children": false,
+        "nationality": "any_resident",
+        "residency_months_min": null,
+        "housing_tenure": null,
+        "student_required": false,
+        "admin_areas": []
+      },
+      "source_url": "https://www.sat.gob.mx/",
+      "source_snippet": "El Decreto de estímulos fiscales exenta del ISAN a los vehículos eléctricos e híbridos que cumplan los requisitos y límites de precio.",
+      "last_verified_at": "2026-08-12",
+      "verification_status": "auto_extracted"
+    },
+    {
+      "slug": "resico-sat",
+      "name_local": "Régimen Simplificado de Confianza (RESICO)",
+      "name_en": "Simplified Trust Tax Regime for Small Taxpayers",
+      "admin_level": "national",
+      "admin_area": null,
+      "funder": "SAT",
+      "category": "tax",
+      "benefit_type": "tax_credit",
+      "amount_min": null,
+      "amount_max": null,
+      "amount_currency": "MXN",
+      "amount_period": "annual",
+      "amount_note": "Personas físicas con ingresos de hasta 3.5 millones de pesos anuales pagan ISR de 1% a 2.5% sobre ingresos efectivamente cobrados; personas morales hasta 35 millones",
+      "is_automatic": false,
+      "application_url": "https://www.sat.gob.mx/",
+      "application_channel": "online",
+      "deadline_type": "rolling",
+      "deadline_note": null,
+      "procedure_steps": [
+        {
+          "step": 1,
+          "detail": "Presentar el aviso de actualización de actividades económicas para tributar en RESICO",
+          "url": "https://www.sat.gob.mx/"
+        },
+        {
+          "step": 2,
+          "detail": "Emitir facturas y pagar el ISR reducido conforme a la tabla",
+          "url": null
+        }
+      ],
+      "documents_required": [
+        {
+          "doc": "RFC y e.firma o contraseña",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Constancia de situación fiscal",
+          "mandatory": true,
+          "note": null
+        }
+      ],
+      "eligibility": {
+        "statuses": [
+          "self_employed"
+        ],
+        "age_min": null,
+        "age_max": null,
+        "income_annual_max": null,
+        "income_note": "Ingresos propios de hasta 3.5 millones de pesos anuales para personas físicas",
+        "requires_children": false,
+        "nationality": "any_resident",
+        "residency_months_min": null,
+        "housing_tenure": null,
+        "student_required": false,
+        "admin_areas": []
+      },
+      "source_url": "https://www.sat.gob.mx/",
+      "source_snippet": "El RESICO permite a las personas físicas con ingresos de hasta 3.5 millones de pesos pagar tasas de ISR de 1% a 2.5%.",
+      "last_verified_at": "2026-08-12",
+      "verification_status": "auto_extracted"
+    }
+  ]
+}

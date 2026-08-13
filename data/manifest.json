@@ -1,0 +1,1603 @@
+{
+ "generated_at": "2026-08-12",
+ "countries": [
+  {
+   "country_code": "AE",
+   "slug": "ae",
+   "name": "United Arab Emirates",
+   "flag": "🇦🇪",
+   "currency": "AED",
+   "language": "ar",
+   "regions": [
+    "Abu Dhabi",
+    "Dubai",
+    "Ras Al Khaimah",
+    "Sharjah"
+   ],
+   "income_bands": [
+    {
+     "id": "b1",
+     "min": 0,
+     "max": 75000.0,
+     "label": "Under 75,000.0"
+    },
+    {
+     "id": "b2",
+     "min": 75000.0,
+     "max": 150000.0,
+     "label": "75,000.0 – 150,000.0"
+    },
+    {
+     "id": "b3",
+     "min": 150000.0,
+     "max": 300000.0,
+     "label": "150,000.0 – 300,000.0"
+    },
+    {
+     "id": "b4",
+     "min": 300000.0,
+     "max": 600000.0,
+     "label": "300,000.0 – 600,000.0"
+    },
+    {
+     "id": "b5",
+     "min": 600000.0,
+     "max": null,
+     "label": "Over 600,000.0"
+    }
+   ],
+   "programme_count": 76,
+   "verified_count": 22,
+   "categories": [
+    "business",
+    "education",
+    "employment",
+    "energy",
+    "family",
+    "health",
+    "housing",
+    "income_support",
+    "tax",
+    "transport"
+   ],
+   "data_url": "/api/v1/programmes/ae.json"
+  },
+  {
+   "country_code": "AT",
+   "slug": "at",
+   "name": "Austria",
+   "flag": "🇦🇹",
+   "currency": "EUR",
+   "language": "de",
+   "regions": [
+    "Burgenland",
+    "Kärnten",
+    "Niederösterreich",
+    "Oberösterreich",
+    "Steiermark",
+    "Wien"
+   ],
+   "income_bands": [
+    {
+     "id": "b1",
+     "min": 0,
+     "max": 12000.0,
+     "label": "Under 12,000.0"
+    },
+    {
+     "id": "b2",
+     "min": 12000.0,
+     "max": 25000.0,
+     "label": "12,000.0 – 25,000.0"
+    },
+    {
+     "id": "b3",
+     "min": 25000.0,
+     "max": 50000.0,
+     "label": "25,000.0 – 50,000.0"
+    },
+    {
+     "id": "b4",
+     "min": 50000.0,
+     "max": 100000.0,
+     "label": "50,000.0 – 100,000.0"
+    },
+    {
+     "id": "b5",
+     "min": 100000.0,
+     "max": null,
+     "label": "Over 100,000.0"
+    }
+   ],
+   "programme_count": 80,
+   "verified_count": 35,
+   "categories": [
+    "business",
+    "education",
+    "employment",
+    "energy",
+    "family",
+    "health",
+    "housing",
+    "income_support",
+    "tax",
+    "transport"
+   ],
+   "data_url": "/api/v1/programmes/at.json"
+  },
+  {
+   "country_code": "AU",
+   "slug": "au",
+   "name": "Australia",
+   "flag": "🇦🇺",
+   "currency": "AUD",
+   "language": "en",
+   "regions": [
+    "Australian Capital Territory",
+    "New South Wales",
+    "Northern Territory",
+    "Queensland",
+    "South Australia",
+    "Tasmania",
+    "Victoria",
+    "Western Australia"
+   ],
+   "income_bands": [
+    {
+     "id": "b1",
+     "min": 0,
+     "max": 25000.0,
+     "label": "Under 25,000.0"
+    },
+    {
+     "id": "b2",
+     "min": 25000.0,
+     "max": 50000.0,
+     "label": "25,000.0 – 50,000.0"
+    },
+    {
+     "id": "b3",
+     "min": 50000.0,
+     "max": 100000.0,
+     "label": "50,000.0 – 100,000.0"
+    },
+    {
+     "id": "b4",
+     "min": 100000.0,
+     "max": 200000.0,
+     "label": "100,000.0 – 200,000.0"
+    },
+    {
+     "id": "b5",
+     "min": 200000.0,
+     "max": null,
+     "label": "Over 200,000.0"
+    }
+   ],
+   "programme_count": 83,
+   "verified_count": 24,
+   "categories": [
+    "business",
+    "education",
+    "employment",
+    "energy",
+    "family",
+    "health",
+    "housing",
+    "income_support",
+    "tax",
+    "transport"
+   ],
+   "data_url": "/api/v1/programmes/au.json"
+  },
+  {
+   "country_code": "BE",
+   "slug": "be",
+   "name": "Belgium",
+   "flag": "🇧🇪",
+   "currency": "EUR",
+   "language": "nl",
+   "regions": [
+    "Antwerpen",
+    "Brugge",
+    "Brussel",
+    "Gent",
+    "Leuven",
+    "Liège",
+    "Vlaanderen",
+    "Wallonië"
+   ],
+   "income_bands": [
+    {
+     "id": "b1",
+     "min": 0,
+     "max": 12000.0,
+     "label": "Under 12,000.0"
+    },
+    {
+     "id": "b2",
+     "min": 12000.0,
+     "max": 25000.0,
+     "label": "12,000.0 – 25,000.0"
+    },
+    {
+     "id": "b3",
+     "min": 25000.0,
+     "max": 50000.0,
+     "label": "25,000.0 – 50,000.0"
+    },
+    {
+     "id": "b4",
+     "min": 50000.0,
+     "max": 100000.0,
+     "label": "50,000.0 – 100,000.0"
+    },
+    {
+     "id": "b5",
+     "min": 100000.0,
+     "max": null,
+     "label": "Over 100,000.0"
+    }
+   ],
+   "programme_count": 89,
+   "verified_count": 33,
+   "categories": [
+    "business",
+    "education",
+    "employment",
+    "energy",
+    "family",
+    "health",
+    "housing",
+    "income_support",
+    "tax",
+    "transport"
+   ],
+   "data_url": "/api/v1/programmes/be.json"
+  },
+  {
+   "country_code": "BR",
+   "slug": "br",
+   "name": "Brazil",
+   "flag": "🇧🇷",
+   "currency": "BRL",
+   "language": "pt",
+   "regions": [
+    "Bahia",
+    "Ceará",
+    "Distrito Federal",
+    "Minas Gerais",
+    "Paraná",
+    "Pernambuco",
+    "Rio Grande do Sul",
+    "Rio de Janeiro",
+    "São Paulo"
+   ],
+   "income_bands": [
+    {
+     "id": "b1",
+     "min": 0,
+     "max": 20000.0,
+     "label": "Under 20,000.0"
+    },
+    {
+     "id": "b2",
+     "min": 20000.0,
+     "max": 40000.0,
+     "label": "20,000.0 – 40,000.0"
+    },
+    {
+     "id": "b3",
+     "min": 40000.0,
+     "max": 80000.0,
+     "label": "40,000.0 – 80,000.0"
+    },
+    {
+     "id": "b4",
+     "min": 80000.0,
+     "max": 160000.0,
+     "label": "80,000.0 – 160,000.0"
+    },
+    {
+     "id": "b5",
+     "min": 160000.0,
+     "max": null,
+     "label": "Over 160,000.0"
+    }
+   ],
+   "programme_count": 67,
+   "verified_count": 20,
+   "categories": [
+    "business",
+    "education",
+    "employment",
+    "energy",
+    "family",
+    "health",
+    "housing",
+    "income_support",
+    "tax",
+    "transport"
+   ],
+   "data_url": "/api/v1/programmes/br.json"
+  },
+  {
+   "country_code": "CA",
+   "slug": "ca",
+   "name": "Canada",
+   "flag": "🇨🇦",
+   "currency": "CAD",
+   "language": "en",
+   "regions": [
+    "Alberta",
+    "British Columbia",
+    "Manitoba",
+    "New Brunswick",
+    "Newfoundland and Labrador",
+    "Nova Scotia",
+    "Ontario",
+    "Prince Edward Island",
+    "Quebec",
+    "Saskatchewan"
+   ],
+   "income_bands": [
+    {
+     "id": "b1",
+     "min": 0,
+     "max": 21000.0,
+     "label": "Under 21,000.0"
+    },
+    {
+     "id": "b2",
+     "min": 21000.0,
+     "max": 42000.0,
+     "label": "21,000.0 – 42,000.0"
+    },
+    {
+     "id": "b3",
+     "min": 42000.0,
+     "max": 85000.0,
+     "label": "42,000.0 – 85,000.0"
+    },
+    {
+     "id": "b4",
+     "min": 85000.0,
+     "max": 170000.0,
+     "label": "85,000.0 – 170,000.0"
+    },
+    {
+     "id": "b5",
+     "min": 170000.0,
+     "max": null,
+     "label": "Over 170,000.0"
+    }
+   ],
+   "programme_count": 89,
+   "verified_count": 21,
+   "categories": [
+    "education",
+    "employment",
+    "energy",
+    "family",
+    "health",
+    "housing",
+    "income_support",
+    "tax",
+    "transport"
+   ],
+   "data_url": "/api/v1/programmes/ca.json"
+  },
+  {
+   "country_code": "CH",
+   "slug": "ch",
+   "name": "Switzerland",
+   "flag": "🇨🇭",
+   "currency": "CHF",
+   "language": "de",
+   "regions": [
+    "Basel-Stadt",
+    "Bern",
+    "Genève",
+    "Luzern",
+    "St. Gallen",
+    "Ticino",
+    "Valais",
+    "Vaud",
+    "Zürich"
+   ],
+   "income_bands": [
+    {
+     "id": "b1",
+     "min": 0,
+     "max": 28000.0,
+     "label": "Under 28,000.0"
+    },
+    {
+     "id": "b2",
+     "min": 28000.0,
+     "max": 55000.0,
+     "label": "28,000.0 – 55,000.0"
+    },
+    {
+     "id": "b3",
+     "min": 55000.0,
+     "max": 110000.0,
+     "label": "55,000.0 – 110,000.0"
+    },
+    {
+     "id": "b4",
+     "min": 110000.0,
+     "max": 220000.0,
+     "label": "110,000.0 – 220,000.0"
+    },
+    {
+     "id": "b5",
+     "min": 220000.0,
+     "max": null,
+     "label": "Over 220,000.0"
+    }
+   ],
+   "programme_count": 69,
+   "verified_count": 25,
+   "categories": [
+    "business",
+    "education",
+    "employment",
+    "energy",
+    "family",
+    "health",
+    "housing",
+    "income_support",
+    "tax",
+    "transport"
+   ],
+   "data_url": "/api/v1/programmes/ch.json"
+  },
+  {
+   "country_code": "DE",
+   "slug": "de",
+   "name": "Germany",
+   "flag": "🇩🇪",
+   "currency": "EUR",
+   "language": "de",
+   "regions": [
+    "Baden-Württemberg",
+    "Bayern",
+    "Berlin",
+    "Hamburg",
+    "Hessen",
+    "Nordrhein-Westfalen",
+    "Sachsen"
+   ],
+   "income_bands": [
+    {
+     "id": "b1",
+     "min": 0,
+     "max": 11000.0,
+     "label": "Under 11,000.0"
+    },
+    {
+     "id": "b2",
+     "min": 11000.0,
+     "max": 22000.0,
+     "label": "11,000.0 – 22,000.0"
+    },
+    {
+     "id": "b3",
+     "min": 22000.0,
+     "max": 45000.0,
+     "label": "22,000.0 – 45,000.0"
+    },
+    {
+     "id": "b4",
+     "min": 45000.0,
+     "max": 90000.0,
+     "label": "45,000.0 – 90,000.0"
+    },
+    {
+     "id": "b5",
+     "min": 90000.0,
+     "max": null,
+     "label": "Over 90,000.0"
+    }
+   ],
+   "programme_count": 78,
+   "verified_count": 30,
+   "categories": [
+    "business",
+    "education",
+    "employment",
+    "energy",
+    "family",
+    "health",
+    "housing",
+    "income_support",
+    "tax",
+    "transport"
+   ],
+   "data_url": "/api/v1/programmes/de.json"
+  },
+  {
+   "country_code": "ES",
+   "slug": "es",
+   "name": "Spain",
+   "flag": "🇪🇸",
+   "currency": "EUR",
+   "language": "es",
+   "regions": [
+    "Andalucía",
+    "Canarias",
+    "Cataluña",
+    "Islas Baleares",
+    "Madrid",
+    "País Vasco"
+   ],
+   "income_bands": [
+    {
+     "id": "b1",
+     "min": 0,
+     "max": 8000.0,
+     "label": "Under 8,000.0"
+    },
+    {
+     "id": "b2",
+     "min": 8000.0,
+     "max": 16000.0,
+     "label": "8,000.0 – 16,000.0"
+    },
+    {
+     "id": "b3",
+     "min": 16000.0,
+     "max": 32000.0,
+     "label": "16,000.0 – 32,000.0"
+    },
+    {
+     "id": "b4",
+     "min": 32000.0,
+     "max": 64000.0,
+     "label": "32,000.0 – 64,000.0"
+    },
+    {
+     "id": "b5",
+     "min": 64000.0,
+     "max": null,
+     "label": "Over 64,000.0"
+    }
+   ],
+   "programme_count": 68,
+   "verified_count": 23,
+   "categories": [
+    "business",
+    "education",
+    "employment",
+    "energy",
+    "family",
+    "health",
+    "housing",
+    "income_support",
+    "tax",
+    "transport"
+   ],
+   "data_url": "/api/v1/programmes/es.json"
+  },
+  {
+   "country_code": "FR",
+   "slug": "fr",
+   "name": "France",
+   "flag": "🇫🇷",
+   "currency": "EUR",
+   "language": "fr",
+   "regions": [
+    "Auvergne-Rhône-Alpes",
+    "Lille",
+    "Lyon",
+    "Marseille",
+    "Nantes",
+    "Nouvelle-Aquitaine",
+    "Paris",
+    "Provence-Alpes-Côte d'Azur",
+    "Strasbourg",
+    "Toulouse",
+    "Île-de-France"
+   ],
+   "income_bands": [
+    {
+     "id": "b1",
+     "min": 0,
+     "max": 7500.0,
+     "label": "Under 7,500.0"
+    },
+    {
+     "id": "b2",
+     "min": 7500.0,
+     "max": 15000.0,
+     "label": "7,500.0 – 15,000.0"
+    },
+    {
+     "id": "b3",
+     "min": 15000.0,
+     "max": 30000.0,
+     "label": "15,000.0 – 30,000.0"
+    },
+    {
+     "id": "b4",
+     "min": 30000.0,
+     "max": 60000.0,
+     "label": "30,000.0 – 60,000.0"
+    },
+    {
+     "id": "b5",
+     "min": 60000.0,
+     "max": null,
+     "label": "Over 60,000.0"
+    }
+   ],
+   "programme_count": 75,
+   "verified_count": 22,
+   "categories": [
+    "business",
+    "education",
+    "employment",
+    "energy",
+    "family",
+    "health",
+    "housing",
+    "income_support",
+    "tax",
+    "transport"
+   ],
+   "data_url": "/api/v1/programmes/fr.json"
+  },
+  {
+   "country_code": "GB",
+   "slug": "gb",
+   "name": "United Kingdom",
+   "flag": "🇬🇧",
+   "currency": "GBP",
+   "language": "en",
+   "regions": [
+    "England",
+    "London",
+    "Northern Ireland",
+    "Scotland",
+    "Wales"
+   ],
+   "income_bands": [
+    {
+     "id": "b1",
+     "min": 0,
+     "max": 8800.0,
+     "label": "Under 8,800.0"
+    },
+    {
+     "id": "b2",
+     "min": 8800.0,
+     "max": 18000.0,
+     "label": "8,800.0 – 18,000.0"
+    },
+    {
+     "id": "b3",
+     "min": 18000.0,
+     "max": 35000.0,
+     "label": "18,000.0 – 35,000.0"
+    },
+    {
+     "id": "b4",
+     "min": 35000.0,
+     "max": 70000.0,
+     "label": "35,000.0 – 70,000.0"
+    },
+    {
+     "id": "b5",
+     "min": 70000.0,
+     "max": null,
+     "label": "Over 70,000.0"
+    }
+   ],
+   "programme_count": 89,
+   "verified_count": 25,
+   "categories": [
+    "business",
+    "education",
+    "employment",
+    "energy",
+    "family",
+    "health",
+    "housing",
+    "income_support",
+    "tax",
+    "transport"
+   ],
+   "data_url": "/api/v1/programmes/gb.json"
+  },
+  {
+   "country_code": "IE",
+   "slug": "ie",
+   "name": "Ireland",
+   "flag": "🇮🇪",
+   "currency": "EUR",
+   "language": "en",
+   "regions": [
+    "Cork",
+    "Donegal",
+    "Dublin",
+    "Galway",
+    "Kildare",
+    "Limerick",
+    "Meath"
+   ],
+   "income_bands": [
+    {
+     "id": "b1",
+     "min": 0,
+     "max": 14000.0,
+     "label": "Under 14,000.0"
+    },
+    {
+     "id": "b2",
+     "min": 14000.0,
+     "max": 28000.0,
+     "label": "14,000.0 – 28,000.0"
+    },
+    {
+     "id": "b3",
+     "min": 28000.0,
+     "max": 55000.0,
+     "label": "28,000.0 – 55,000.0"
+    },
+    {
+     "id": "b4",
+     "min": 55000.0,
+     "max": 110000.0,
+     "label": "55,000.0 – 110,000.0"
+    },
+    {
+     "id": "b5",
+     "min": 110000.0,
+     "max": null,
+     "label": "Over 110,000.0"
+    }
+   ],
+   "programme_count": 91,
+   "verified_count": 46,
+   "categories": [
+    "business",
+    "education",
+    "employment",
+    "energy",
+    "family",
+    "health",
+    "housing",
+    "income_support",
+    "tax",
+    "transport"
+   ],
+   "data_url": "/api/v1/programmes/ie.json"
+  },
+  {
+   "country_code": "IN",
+   "slug": "in",
+   "name": "India",
+   "flag": "🇮🇳",
+   "currency": "INR",
+   "language": "hi",
+   "regions": [
+    "Delhi NCT",
+    "Gujarat",
+    "Karnataka",
+    "Kerala",
+    "Maharashtra",
+    "Tamil Nadu",
+    "Telangana",
+    "Uttar Pradesh",
+    "West Bengal"
+   ],
+   "income_bands": [
+    {
+     "id": "b1",
+     "min": 0,
+     "max": 100000.0,
+     "label": "Under 100,000.0"
+    },
+    {
+     "id": "b2",
+     "min": 100000.0,
+     "max": 200000.0,
+     "label": "100,000.0 – 200,000.0"
+    },
+    {
+     "id": "b3",
+     "min": 200000.0,
+     "max": 400000.0,
+     "label": "200,000.0 – 400,000.0"
+    },
+    {
+     "id": "b4",
+     "min": 400000.0,
+     "max": 800000.0,
+     "label": "400,000.0 – 800,000.0"
+    },
+    {
+     "id": "b5",
+     "min": 800000.0,
+     "max": null,
+     "label": "Over 800,000.0"
+    }
+   ],
+   "programme_count": 67,
+   "verified_count": 22,
+   "categories": [
+    "business",
+    "education",
+    "employment",
+    "energy",
+    "family",
+    "health",
+    "housing",
+    "income_support",
+    "transport"
+   ],
+   "data_url": "/api/v1/programmes/in.json"
+  },
+  {
+   "country_code": "IT",
+   "slug": "it",
+   "name": "Italy",
+   "flag": "🇮🇹",
+   "currency": "EUR",
+   "language": "it",
+   "regions": [
+    "Campania",
+    "Emilia-Romagna",
+    "Lazio",
+    "Lombardia",
+    "Piemonte",
+    "Puglia",
+    "Sardegna",
+    "Sicilia",
+    "Toscana",
+    "Veneto"
+   ],
+   "income_bands": [
+    {
+     "id": "b1",
+     "min": 0,
+     "max": 8200.0,
+     "label": "Under 8,200.0"
+    },
+    {
+     "id": "b2",
+     "min": 8200.0,
+     "max": 16000.0,
+     "label": "8,200.0 – 16,000.0"
+    },
+    {
+     "id": "b3",
+     "min": 16000.0,
+     "max": 33000.0,
+     "label": "16,000.0 – 33,000.0"
+    },
+    {
+     "id": "b4",
+     "min": 33000.0,
+     "max": 66000.0,
+     "label": "33,000.0 – 66,000.0"
+    },
+    {
+     "id": "b5",
+     "min": 66000.0,
+     "max": null,
+     "label": "Over 66,000.0"
+    }
+   ],
+   "programme_count": 75,
+   "verified_count": 22,
+   "categories": [
+    "business",
+    "education",
+    "employment",
+    "energy",
+    "family",
+    "health",
+    "housing",
+    "income_support",
+    "tax",
+    "transport"
+   ],
+   "data_url": "/api/v1/programmes/it.json"
+  },
+  {
+   "country_code": "JP",
+   "slug": "jp",
+   "name": "Japan",
+   "flag": "🇯🇵",
+   "currency": "JPY",
+   "language": "ja",
+   "regions": [
+    "Aichi",
+    "Chiba",
+    "Fukuoka",
+    "Hokkaido",
+    "Hyogo",
+    "Kanagawa",
+    "Kyoto",
+    "Osaka",
+    "Saitama",
+    "Tokyo"
+   ],
+   "income_bands": [
+    {
+     "id": "b1",
+     "min": 0,
+     "max": 1400000.0,
+     "label": "Under 1,400,000.0"
+    },
+    {
+     "id": "b2",
+     "min": 1400000.0,
+     "max": 2800000.0,
+     "label": "1,400,000.0 – 2,800,000.0"
+    },
+    {
+     "id": "b3",
+     "min": 2800000.0,
+     "max": 5500000.0,
+     "label": "2,800,000.0 – 5,500,000.0"
+    },
+    {
+     "id": "b4",
+     "min": 5500000.0,
+     "max": 11000000.0,
+     "label": "5,500,000.0 – 11,000,000.0"
+    },
+    {
+     "id": "b5",
+     "min": 11000000.0,
+     "max": null,
+     "label": "Over 11,000,000.0"
+    }
+   ],
+   "programme_count": 68,
+   "verified_count": 35,
+   "categories": [
+    "business",
+    "education",
+    "employment",
+    "energy",
+    "family",
+    "health",
+    "housing",
+    "income_support",
+    "tax",
+    "transport"
+   ],
+   "data_url": "/api/v1/programmes/jp.json"
+  },
+  {
+   "country_code": "KR",
+   "slug": "kr",
+   "name": "South Korea",
+   "flag": "🇰🇷",
+   "currency": "KRW",
+   "language": "ko",
+   "regions": [
+    "Gwangju",
+    "Gyeonggi",
+    "Seoul"
+   ],
+   "income_bands": [
+    {
+     "id": "b1",
+     "min": 0,
+     "max": 15000000.0,
+     "label": "Under 15,000,000.0"
+    },
+    {
+     "id": "b2",
+     "min": 15000000.0,
+     "max": 30000000.0,
+     "label": "15,000,000.0 – 30,000,000.0"
+    },
+    {
+     "id": "b3",
+     "min": 30000000.0,
+     "max": 60000000.0,
+     "label": "30,000,000.0 – 60,000,000.0"
+    },
+    {
+     "id": "b4",
+     "min": 60000000.0,
+     "max": 120000000.0,
+     "label": "60,000,000.0 – 120,000,000.0"
+    },
+    {
+     "id": "b5",
+     "min": 120000000.0,
+     "max": null,
+     "label": "Over 120,000,000.0"
+    }
+   ],
+   "programme_count": 82,
+   "verified_count": 23,
+   "categories": [
+    "business",
+    "education",
+    "employment",
+    "energy",
+    "family",
+    "health",
+    "housing",
+    "income_support",
+    "tax",
+    "transport"
+   ],
+   "data_url": "/api/v1/programmes/kr.json"
+  },
+  {
+   "country_code": "MX",
+   "slug": "mx",
+   "name": "Mexico",
+   "flag": "🇲🇽",
+   "currency": "MXN",
+   "language": "es",
+   "regions": [
+    "Ciudad de México",
+    "Estado de México",
+    "Jalisco",
+    "Nuevo León"
+   ],
+   "income_bands": [
+    {
+     "id": "b1",
+     "min": 0,
+     "max": 75000.0,
+     "label": "Under 75,000.0"
+    },
+    {
+     "id": "b2",
+     "min": 75000.0,
+     "max": 150000.0,
+     "label": "75,000.0 – 150,000.0"
+    },
+    {
+     "id": "b3",
+     "min": 150000.0,
+     "max": 300000.0,
+     "label": "150,000.0 – 300,000.0"
+    },
+    {
+     "id": "b4",
+     "min": 300000.0,
+     "max": 600000.0,
+     "label": "300,000.0 – 600,000.0"
+    },
+    {
+     "id": "b5",
+     "min": 600000.0,
+     "max": null,
+     "label": "Over 600,000.0"
+    }
+   ],
+   "programme_count": 64,
+   "verified_count": 21,
+   "categories": [
+    "business",
+    "education",
+    "employment",
+    "energy",
+    "family",
+    "health",
+    "housing",
+    "income_support",
+    "tax",
+    "transport"
+   ],
+   "data_url": "/api/v1/programmes/mx.json"
+  },
+  {
+   "country_code": "NL",
+   "slug": "nl",
+   "name": "Netherlands",
+   "flag": "🇳🇱",
+   "currency": "EUR",
+   "language": "nl",
+   "regions": [
+    "Amsterdam",
+    "Den Haag",
+    "Gelderland",
+    "Noord-Brabant",
+    "Noord-Holland",
+    "Rotterdam",
+    "Utrecht",
+    "Zuid-Holland"
+   ],
+   "income_bands": [
+    {
+     "id": "b1",
+     "min": 0,
+     "max": 11000.0,
+     "label": "Under 11,000.0"
+    },
+    {
+     "id": "b2",
+     "min": 11000.0,
+     "max": 22000.0,
+     "label": "11,000.0 – 22,000.0"
+    },
+    {
+     "id": "b3",
+     "min": 22000.0,
+     "max": 45000.0,
+     "label": "22,000.0 – 45,000.0"
+    },
+    {
+     "id": "b4",
+     "min": 45000.0,
+     "max": 90000.0,
+     "label": "45,000.0 – 90,000.0"
+    },
+    {
+     "id": "b5",
+     "min": 90000.0,
+     "max": null,
+     "label": "Over 90,000.0"
+    }
+   ],
+   "programme_count": 70,
+   "verified_count": 20,
+   "categories": [
+    "business",
+    "education",
+    "employment",
+    "energy",
+    "family",
+    "health",
+    "housing",
+    "income_support",
+    "tax",
+    "transport"
+   ],
+   "data_url": "/api/v1/programmes/nl.json"
+  },
+  {
+   "country_code": "NZ",
+   "slug": "nz",
+   "name": "New Zealand",
+   "flag": "🇳🇿",
+   "currency": "NZD",
+   "language": "en",
+   "regions": [
+    "Auckland",
+    "Bay of Plenty",
+    "Canterbury",
+    "Otago",
+    "Waikato",
+    "Wellington"
+   ],
+   "income_bands": [
+    {
+     "id": "b1",
+     "min": 0,
+     "max": 28000.0,
+     "label": "Under 28,000.0"
+    },
+    {
+     "id": "b2",
+     "min": 28000.0,
+     "max": 55000.0,
+     "label": "28,000.0 – 55,000.0"
+    },
+    {
+     "id": "b3",
+     "min": 55000.0,
+     "max": 110000.0,
+     "label": "55,000.0 – 110,000.0"
+    },
+    {
+     "id": "b4",
+     "min": 110000.0,
+     "max": 220000.0,
+     "label": "110,000.0 – 220,000.0"
+    },
+    {
+     "id": "b5",
+     "min": 220000.0,
+     "max": null,
+     "label": "Over 220,000.0"
+    }
+   ],
+   "programme_count": 79,
+   "verified_count": 26,
+   "categories": [
+    "business",
+    "education",
+    "employment",
+    "energy",
+    "family",
+    "health",
+    "housing",
+    "income_support",
+    "tax",
+    "transport"
+   ],
+   "data_url": "/api/v1/programmes/nz.json"
+  },
+  {
+   "country_code": "PL",
+   "slug": "pl",
+   "name": "Poland",
+   "flag": "🇵🇱",
+   "currency": "PLN",
+   "language": "pl",
+   "regions": [
+    "Dolnośląskie",
+    "Mazowieckie",
+    "Małopolskie",
+    "Podkarpackie",
+    "Pomorskie",
+    "Wielkopolskie",
+    "Łódzkie",
+    "Śląskie"
+   ],
+   "income_bands": [
+    {
+     "id": "b1",
+     "min": 0,
+     "max": 22000.0,
+     "label": "Under 22,000.0"
+    },
+    {
+     "id": "b2",
+     "min": 22000.0,
+     "max": 45000.0,
+     "label": "22,000.0 – 45,000.0"
+    },
+    {
+     "id": "b3",
+     "min": 45000.0,
+     "max": 90000.0,
+     "label": "45,000.0 – 90,000.0"
+    },
+    {
+     "id": "b4",
+     "min": 90000.0,
+     "max": 180000.0,
+     "label": "90,000.0 – 180,000.0"
+    },
+    {
+     "id": "b5",
+     "min": 180000.0,
+     "max": null,
+     "label": "Over 180,000.0"
+    }
+   ],
+   "programme_count": 98,
+   "verified_count": 54,
+   "categories": [
+    "business",
+    "education",
+    "employment",
+    "energy",
+    "family",
+    "health",
+    "housing",
+    "income_support",
+    "tax",
+    "transport"
+   ],
+   "data_url": "/api/v1/programmes/pl.json"
+  },
+  {
+   "country_code": "PT",
+   "slug": "pt",
+   "name": "Portugal",
+   "flag": "🇵🇹",
+   "currency": "EUR",
+   "language": "pt",
+   "regions": [
+    "Açores",
+    "Lisboa",
+    "Madeira",
+    "Norte",
+    "Porto"
+   ],
+   "income_bands": [
+    {
+     "id": "b1",
+     "min": 0,
+     "max": 7000.0,
+     "label": "Under 7,000.0"
+    },
+    {
+     "id": "b2",
+     "min": 7000.0,
+     "max": 14000.0,
+     "label": "7,000.0 – 14,000.0"
+    },
+    {
+     "id": "b3",
+     "min": 14000.0,
+     "max": 28000.0,
+     "label": "14,000.0 – 28,000.0"
+    },
+    {
+     "id": "b4",
+     "min": 28000.0,
+     "max": 56000.0,
+     "label": "28,000.0 – 56,000.0"
+    },
+    {
+     "id": "b5",
+     "min": 56000.0,
+     "max": null,
+     "label": "Over 56,000.0"
+    }
+   ],
+   "programme_count": 75,
+   "verified_count": 35,
+   "categories": [
+    "business",
+    "education",
+    "employment",
+    "energy",
+    "family",
+    "health",
+    "housing",
+    "income_support",
+    "tax",
+    "transport"
+   ],
+   "data_url": "/api/v1/programmes/pt.json"
+  },
+  {
+   "country_code": "SE",
+   "slug": "se",
+   "name": "Sweden",
+   "flag": "🇸🇪",
+   "currency": "SEK",
+   "language": "sv",
+   "regions": [
+    "Skåne",
+    "Stockholm",
+    "Västra Götaland"
+   ],
+   "income_bands": [
+    {
+     "id": "b1",
+     "min": 0,
+     "max": 110000.0,
+     "label": "Under 110,000.0"
+    },
+    {
+     "id": "b2",
+     "min": 110000.0,
+     "max": 220000.0,
+     "label": "110,000.0 – 220,000.0"
+    },
+    {
+     "id": "b3",
+     "min": 220000.0,
+     "max": 450000.0,
+     "label": "220,000.0 – 450,000.0"
+    },
+    {
+     "id": "b4",
+     "min": 450000.0,
+     "max": 900000.0,
+     "label": "450,000.0 – 900,000.0"
+    },
+    {
+     "id": "b5",
+     "min": 900000.0,
+     "max": null,
+     "label": "Over 900,000.0"
+    }
+   ],
+   "programme_count": 84,
+   "verified_count": 42,
+   "categories": [
+    "business",
+    "education",
+    "employment",
+    "energy",
+    "family",
+    "health",
+    "housing",
+    "income_support",
+    "tax",
+    "transport"
+   ],
+   "data_url": "/api/v1/programmes/se.json"
+  },
+  {
+   "country_code": "SG",
+   "slug": "sg",
+   "name": "Singapore",
+   "flag": "🇸🇬",
+   "currency": "SGD",
+   "language": "en",
+   "regions": [],
+   "income_bands": [
+    {
+     "id": "b1",
+     "min": 0,
+     "max": 28000.0,
+     "label": "Under 28,000.0"
+    },
+    {
+     "id": "b2",
+     "min": 28000.0,
+     "max": 55000.0,
+     "label": "28,000.0 – 55,000.0"
+    },
+    {
+     "id": "b3",
+     "min": 55000.0,
+     "max": 110000.0,
+     "label": "55,000.0 – 110,000.0"
+    },
+    {
+     "id": "b4",
+     "min": 110000.0,
+     "max": 220000.0,
+     "label": "110,000.0 – 220,000.0"
+    },
+    {
+     "id": "b5",
+     "min": 220000.0,
+     "max": null,
+     "label": "Over 220,000.0"
+    }
+   ],
+   "programme_count": 80,
+   "verified_count": 29,
+   "categories": [
+    "business",
+    "education",
+    "employment",
+    "energy",
+    "family",
+    "health",
+    "housing",
+    "income_support",
+    "tax",
+    "transport"
+   ],
+   "data_url": "/api/v1/programmes/sg.json"
+  },
+  {
+   "country_code": "US",
+   "slug": "us",
+   "name": "United States",
+   "flag": "🇺🇸",
+   "currency": "USD",
+   "language": "en",
+   "regions": [
+    "California",
+    "Florida",
+    "Illinois",
+    "Los Angeles",
+    "New York",
+    "New York City",
+    "San Francisco",
+    "Seattle",
+    "Texas"
+   ],
+   "income_bands": [
+    {
+     "id": "b1",
+     "min": 0,
+     "max": 20000.0,
+     "label": "Under 20,000.0"
+    },
+    {
+     "id": "b2",
+     "min": 20000.0,
+     "max": 40000.0,
+     "label": "20,000.0 – 40,000.0"
+    },
+    {
+     "id": "b3",
+     "min": 40000.0,
+     "max": 80000.0,
+     "label": "40,000.0 – 80,000.0"
+    },
+    {
+     "id": "b4",
+     "min": 80000.0,
+     "max": 160000.0,
+     "label": "80,000.0 – 160,000.0"
+    },
+    {
+     "id": "b5",
+     "min": 160000.0,
+     "max": null,
+     "label": "Over 160,000.0"
+    }
+   ],
+   "programme_count": 71,
+   "verified_count": 19,
+   "categories": [
+    "business",
+    "education",
+    "employment",
+    "energy",
+    "family",
+    "health",
+    "housing",
+    "income_support",
+    "tax",
+    "transport"
+   ],
+   "data_url": "/api/v1/programmes/us.json"
+  },
+  {
+   "country_code": "ZA",
+   "slug": "za",
+   "name": "South Africa",
+   "flag": "🇿🇦",
+   "currency": "ZAR",
+   "language": "en",
+   "regions": [
+    "Eastern Cape",
+    "Free State",
+    "Gauteng",
+    "KwaZulu-Natal",
+    "Limpopo",
+    "Mpumalanga",
+    "North West",
+    "Northern Cape",
+    "Western Cape"
+   ],
+   "income_bands": [
+    {
+     "id": "b1",
+     "min": 0,
+     "max": 50000.0,
+     "label": "Under 50,000.0"
+    },
+    {
+     "id": "b2",
+     "min": 50000.0,
+     "max": 100000.0,
+     "label": "50,000.0 – 100,000.0"
+    },
+    {
+     "id": "b3",
+     "min": 100000.0,
+     "max": 200000.0,
+     "label": "100,000.0 – 200,000.0"
+    },
+    {
+     "id": "b4",
+     "min": 200000.0,
+     "max": 400000.0,
+     "label": "200,000.0 – 400,000.0"
+    },
+    {
+     "id": "b5",
+     "min": 400000.0,
+     "max": null,
+     "label": "Over 400,000.0"
+    }
+   ],
+   "programme_count": 66,
+   "verified_count": 23,
+   "categories": [
+    "business",
+    "education",
+    "employment",
+    "energy",
+    "family",
+    "health",
+    "housing",
+    "income_support",
+    "tax",
+    "transport"
+   ],
+   "data_url": "/api/v1/programmes/za.json"
+  }
+ ],
+ "total_programmes": 1933,
+ "total_verified": 697
+}

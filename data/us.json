@@ -1,0 +1,4880 @@
+{
+  "country_code": "US",
+  "country_name": "United States",
+  "currency": "USD",
+  "language": "en",
+  "programmes": [
+    {
+      "slug": "snap-supplemental-nutrition-assistance-program",
+      "name_local": "Supplemental Nutrition Assistance Program (SNAP)",
+      "name_en": "Supplemental Nutrition Assistance Program (SNAP)",
+      "admin_level": "national",
+      "admin_area": null,
+      "funder": "USDA Food and Nutrition Service (FNS)",
+      "category": "income_support",
+      "benefit_type": "in_kind",
+      "amount_min": null,
+      "amount_max": null,
+      "amount_currency": "USD",
+      "amount_period": "monthly",
+      "amount_note": "Monthly allotment on an EBT card depends on household size, income and deductions; FY2026 maximum allotments are published by USDA FNS",
+      "is_automatic": false,
+      "application_url": "https://www.fns.usda.gov/snap/state-directory",
+      "application_channel": "online",
+      "deadline_type": "rolling",
+      "deadline_note": null,
+      "procedure_steps": [
+        {
+          "step": 1,
+          "detail": "Apply with your state SNAP agency (online in most states)",
+          "url": "https://www.fns.usda.gov/snap/state-directory"
+        },
+        {
+          "step": 2,
+          "detail": "Complete an eligibility interview (usually by phone)",
+          "url": null
+        },
+        {
+          "step": 3,
+          "detail": "Receive EBT card and monthly benefits if approved (within 30 days; expedited in 7 days)",
+          "url": null
+        }
+      ],
+      "documents_required": [
+        {
+          "doc": "Proof of identity",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Proof of income",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Proof of household expenses (rent, utilities)",
+          "mandatory": false,
+          "note": null
+        }
+      ],
+      "eligibility": {
+        "statuses": [],
+        "age_min": null,
+        "age_max": null,
+        "income_annual_max": null,
+        "income_note": "Gross monthly income generally at or below 130% of the federal poverty level; net income at or below 100% FPL; many states use higher limits via broad-based categorical eligibility",
+        "requires_children": false,
+        "nationality": "any_resident",
+        "residency_months_min": null,
+        "housing_tenure": null,
+        "student_required": false,
+        "admin_areas": []
+      },
+      "source_url": "https://www.fns.usda.gov/snap",
+      "source_snippet": "USDA FNS administers SNAP; households must meet income limits and apply through their state agency.",
+      "last_verified_at": "2026-08-12",
+      "verification_status": "verified"
+    },
+    {
+      "slug": "wic-women-infants-children",
+      "name_local": "Special Supplemental Nutrition Program for Women, Infants, and Children (WIC)",
+      "name_en": "Special Supplemental Nutrition Program for Women, Infants, and Children (WIC)",
+      "admin_level": "national",
+      "admin_area": null,
+      "funder": "USDA Food and Nutrition Service (FNS)",
+      "category": "health",
+      "benefit_type": "in_kind",
+      "amount_min": null,
+      "amount_max": null,
+      "amount_currency": "USD",
+      "amount_period": "monthly",
+      "amount_note": "Monthly food package value varies by participant category (pregnant/postpartum/breastfeeding women, infants, children)",
+      "is_automatic": false,
+      "application_url": "https://www.fns.usda.gov/wic/wic-how-apply",
+      "application_channel": "in_person",
+      "deadline_type": "rolling",
+      "deadline_note": null,
+      "procedure_steps": [
+        {
+          "step": 1,
+          "detail": "Contact your local or state WIC agency to schedule an appointment",
+          "url": null
+        },
+        {
+          "step": 2,
+          "detail": "Attend a certification appointment with a free health/nutrition assessment",
+          "url": null
+        },
+        {
+          "step": 3,
+          "detail": "Receive eWIC card for WIC-approved foods if eligible",
+          "url": null
+        }
+      ],
+      "documents_required": [
+        {
+          "doc": "Proof of identity",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Proof of residency",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Proof of income or participation in Medicaid/SNAP/TANF",
+          "mandatory": true,
+          "note": null
+        }
+      ],
+      "eligibility": {
+        "statuses": [],
+        "age_min": null,
+        "age_max": null,
+        "income_annual_max": null,
+        "income_note": "Income at or below 185% of the federal poverty level, or adjunct eligibility via Medicaid, SNAP or TANF",
+        "requires_children": false,
+        "nationality": "any_resident",
+        "residency_months_min": null,
+        "housing_tenure": null,
+        "student_required": false,
+        "admin_areas": []
+      },
+      "source_url": "https://www.fns.usda.gov/wic",
+      "source_snippet": "WIC is available for women who are currently pregnant, recently pregnant, or breastfeeding, and babies and kids under 5.",
+      "last_verified_at": "2026-08-12",
+      "verification_status": "verified"
+    },
+    {
+      "slug": "national-school-lunch-breakfast-programs",
+      "name_local": "National School Lunch Program (NSLP) and School Breakfast Program (SBP)",
+      "name_en": "National School Lunch Program and School Breakfast Program",
+      "admin_level": "national",
+      "admin_area": null,
+      "funder": "USDA Food and Nutrition Service (FNS)",
+      "category": "education",
+      "benefit_type": "in_kind",
+      "amount_min": null,
+      "amount_max": null,
+      "amount_currency": "USD",
+      "amount_period": "monthly",
+      "amount_note": "Free or reduced-price meals at school; reduced price is capped at $0.40 for lunch and $0.30 for breakfast",
+      "is_automatic": false,
+      "application_url": "https://www.fns.usda.gov/nslp",
+      "application_channel": "in_person",
+      "deadline_type": "rolling",
+      "deadline_note": null,
+      "procedure_steps": [
+        {
+          "step": 1,
+          "detail": "Ask your child's school for a free/reduced-price meal application (or check if the school serves free meals to all under CEP)",
+          "url": null
+        },
+        {
+          "step": 2,
+          "detail": "Submit household income application to the school nutrition office",
+          "url": null
+        },
+        {
+          "step": 3,
+          "detail": "Children in SNAP/TANF households are directly certified for free meals",
+          "url": null
+        }
+      ],
+      "documents_required": [
+        {
+          "doc": "Household income information",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Names of all household members",
+          "mandatory": true,
+          "note": null
+        }
+      ],
+      "eligibility": {
+        "statuses": [],
+        "age_min": null,
+        "age_max": null,
+        "income_annual_max": null,
+        "income_note": "Free meals at or below 130% of the federal poverty level; reduced-price meals between 130% and 185% FPL",
+        "requires_children": true,
+        "nationality": "any_resident",
+        "residency_months_min": null,
+        "housing_tenure": null,
+        "student_required": true,
+        "admin_areas": []
+      },
+      "source_url": "https://www.fns.usda.gov/nslp",
+      "source_snippet": "Students from households with incomes at or below 130 percent of the Federal poverty line can receive a free lunch; between 130 and 185 percent a reduced-price lunch.",
+      "last_verified_at": "2026-08-12",
+      "verification_status": "verified"
+    },
+    {
+      "slug": "summer-ebt-sun-bucks",
+      "name_local": "Summer EBT (SUN Bucks)",
+      "name_en": "Summer Electronic Benefit Transfer (SUN Bucks)",
+      "admin_level": "national",
+      "admin_area": null,
+      "funder": "USDA Food and Nutrition Service (FNS)",
+      "category": "income_support",
+      "benefit_type": "cash_one_off",
+      "amount_min": null,
+      "amount_max": 120,
+      "amount_currency": "USD",
+      "amount_period": "annual",
+      "amount_note": "$120 per eligible school-age child for the summer (2024-2025 standard amount), loaded on an EBT card",
+      "is_automatic": false,
+      "application_url": "https://www.fns.usda.gov/summer/sunbucks",
+      "application_channel": "online",
+      "deadline_type": "annual",
+      "deadline_note": "Administered by states during the summer months; many families are automatically enrolled",
+      "procedure_steps": [
+        {
+          "step": 1,
+          "detail": "Check whether your state operates SUN Bucks and whether you are automatically enrolled",
+          "url": "https://www.fns.usda.gov/summer/sunbucks"
+        },
+        {
+          "step": 2,
+          "detail": "If not automatic, apply through your state SUN Bucks portal",
+          "url": null
+        },
+        {
+          "step": 3,
+          "detail": "Receive $120 per child on an EBT card for summer groceries",
+          "url": null
+        }
+      ],
+      "documents_required": [
+        {
+          "doc": "Child enrollment in a school with free/reduced-price meals or household participation in SNAP/TANF",
+          "mandatory": true,
+          "note": null
+        }
+      ],
+      "eligibility": {
+        "statuses": [],
+        "age_min": null,
+        "age_max": null,
+        "income_annual_max": null,
+        "income_note": "Children eligible for free/reduced-price school meals or in households receiving SNAP, TANF or FDPIR",
+        "requires_children": true,
+        "nationality": "any_resident",
+        "residency_months_min": null,
+        "housing_tenure": null,
+        "student_required": false,
+        "admin_areas": []
+      },
+      "source_url": "https://www.fns.usda.gov/summer/sunbucks",
+      "source_snippet": "SUN Bucks provides grocery-buying benefits to eligible school-aged children during the summer when schools are closed.",
+      "last_verified_at": "2026-08-12",
+      "verification_status": "auto_extracted"
+    },
+    {
+      "slug": "tefap-emergency-food-assistance",
+      "name_local": "The Emergency Food Assistance Program (TEFAP)",
+      "name_en": "The Emergency Food Assistance Program (TEFAP)",
+      "admin_level": "national",
+      "admin_area": null,
+      "funder": "USDA Food and Nutrition Service (FNS)",
+      "category": "income_support",
+      "benefit_type": "in_kind",
+      "amount_min": null,
+      "amount_max": null,
+      "amount_currency": "USD",
+      "amount_period": null,
+      "amount_note": "Free USDA foods distributed through food banks, pantries and soup kitchens; no cash value to recipients",
+      "is_automatic": false,
+      "application_url": "https://www.fns.usda.gov/tefap",
+      "application_channel": "in_person",
+      "deadline_type": "none",
+      "deadline_note": null,
+      "procedure_steps": [
+        {
+          "step": 1,
+          "detail": "Find a local food bank or pantry distributing TEFAP foods",
+          "url": null
+        },
+        {
+          "step": 2,
+          "detail": "Self-declare income eligibility or show participation in other assistance programs, per state rules",
+          "url": null
+        }
+      ],
+      "documents_required": [
+        {
+          "doc": "Proof of address",
+          "mandatory": false,
+          "note": null
+        }
+      ],
+      "eligibility": {
+        "statuses": [],
+        "age_min": null,
+        "age_max": null,
+        "income_annual_max": null,
+        "income_note": "Income limits set by each state, typically tied to a percentage of the federal poverty level or participation in SNAP/other programs",
+        "requires_children": false,
+        "nationality": "any_resident",
+        "residency_months_min": null,
+        "housing_tenure": null,
+        "student_required": false,
+        "admin_areas": []
+      },
+      "source_url": "https://www.fns.usda.gov/tefap",
+      "source_snippet": "TEFAP provides USDA foods to low-income Americans through food banks and emergency feeding organizations.",
+      "last_verified_at": "2026-08-12",
+      "verification_status": "auto_extracted"
+    },
+    {
+      "slug": "csfp-commodity-supplemental-food-program",
+      "name_local": "Commodity Supplemental Food Program (CSFP)",
+      "name_en": "Commodity Supplemental Food Program (CSFP)",
+      "admin_level": "national",
+      "admin_area": null,
+      "funder": "USDA Food and Nutrition Service (FNS)",
+      "category": "income_support",
+      "benefit_type": "in_kind",
+      "amount_min": null,
+      "amount_max": null,
+      "amount_currency": "USD",
+      "amount_period": "monthly",
+      "amount_note": "Monthly package of nutritious USDA foods",
+      "is_automatic": false,
+      "application_url": "https://www.fns.usda.gov/csfp",
+      "application_channel": "in_person",
+      "deadline_type": "rolling",
+      "deadline_note": null,
+      "procedure_steps": [
+        {
+          "step": 1,
+          "detail": "Contact your state or local CSFP agency",
+          "url": null
+        },
+        {
+          "step": 2,
+          "detail": "Apply and show age and income eligibility",
+          "url": null
+        },
+        {
+          "step": 3,
+          "detail": "Pick up a monthly food package",
+          "url": null
+        }
+      ],
+      "documents_required": [
+        {
+          "doc": "Proof of age",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Proof of income",
+          "mandatory": true,
+          "note": null
+        }
+      ],
+      "eligibility": {
+        "statuses": [],
+        "age_min": 60,
+        "age_max": null,
+        "income_annual_max": null,
+        "income_note": "Adults 60+ with income at or below 130% of the federal poverty level (state rules apply)",
+        "requires_children": false,
+        "nationality": "any_resident",
+        "residency_months_min": null,
+        "housing_tenure": null,
+        "student_required": false,
+        "admin_areas": []
+      },
+      "source_url": "https://www.fns.usda.gov/csfp",
+      "source_snippet": "CSFP works to improve the health of low-income persons at least 60 years of age by supplementing their diets with nutritious USDA foods.",
+      "last_verified_at": "2026-08-12",
+      "verification_status": "auto_extracted"
+    },
+    {
+      "slug": "senior-farmers-market-nutrition-program",
+      "name_local": "Senior Farmers' Market Nutrition Program (SFMNP)",
+      "name_en": "Senior Farmers' Market Nutrition Program (SFMNP)",
+      "admin_level": "national",
+      "admin_area": null,
+      "funder": "USDA Food and Nutrition Service (FNS)",
+      "category": "income_support",
+      "benefit_type": "in_kind",
+      "amount_min": null,
+      "amount_max": null,
+      "amount_currency": "USD",
+      "amount_period": "annual",
+      "amount_note": "Seasonal coupons/vouchers for fresh produce at farmers' markets; benefit level set by each state",
+      "is_automatic": false,
+      "application_url": "https://www.fns.usda.gov/sfmnp",
+      "application_channel": "in_person",
+      "deadline_type": "window",
+      "deadline_note": "Seasonal (growing season); coupons issued until funds run out",
+      "procedure_steps": [
+        {
+          "step": 1,
+          "detail": "Contact your state SFMNP agency or local aging office",
+          "url": null
+        },
+        {
+          "step": 2,
+          "detail": "Apply and receive coupons",
+          "url": null
+        },
+        {
+          "step": 3,
+          "detail": "Redeem at authorized farmers' markets and roadside stands",
+          "url": null
+        }
+      ],
+      "documents_required": [
+        {
+          "doc": "Proof of age",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Proof of income",
+          "mandatory": true,
+          "note": null
+        }
+      ],
+      "eligibility": {
+        "statuses": [],
+        "age_min": 60,
+        "age_max": null,
+        "income_annual_max": null,
+        "income_note": "Adults 60+ (55+ in some tribal programs) with income at or below 185% of the federal poverty level",
+        "requires_children": false,
+        "nationality": "any_resident",
+        "residency_months_min": null,
+        "housing_tenure": null,
+        "student_required": false,
+        "admin_areas": []
+      },
+      "source_url": "https://www.fns.usda.gov/sfmnp",
+      "source_snippet": "SFMNP provides low-income seniors with coupons that can be exchanged for eligible foods at farmers' markets, roadside stands, and community supported agriculture programs.",
+      "last_verified_at": "2026-08-12",
+      "verification_status": "auto_extracted"
+    },
+    {
+      "slug": "tanf-temporary-assistance-needy-families",
+      "name_local": "Temporary Assistance for Needy Families (TANF)",
+      "name_en": "Temporary Assistance for Needy Families (TANF)",
+      "admin_level": "national",
+      "admin_area": null,
+      "funder": "U.S. HHS Administration for Children and Families (ACF)",
+      "category": "income_support",
+      "benefit_type": "cash_monthly",
+      "amount_min": null,
+      "amount_max": null,
+      "amount_currency": "USD",
+      "amount_period": "monthly",
+      "amount_note": "Monthly cash benefit amount and rules are set by each state; federal lifetime limit of 60 months for adult recipients",
+      "is_automatic": false,
+      "application_url": "https://www.acf.hhs.gov/ofa/map/about-help-families",
+      "application_channel": "in_person",
+      "deadline_type": "rolling",
+      "deadline_note": null,
+      "procedure_steps": [
+        {
+          "step": 1,
+          "detail": "Apply at your state or county social services agency (each state runs its own TANF program)",
+          "url": "https://www.acf.hhs.gov/ofa/programs/tanf"
+        },
+        {
+          "step": 2,
+          "detail": "Complete an interview and provide income/family documentation",
+          "url": null
+        },
+        {
+          "step": 3,
+          "detail": "Participate in required work activities to keep benefits",
+          "url": null
+        }
+      ],
+      "documents_required": [
+        {
+          "doc": "Proof of identity and SSNs",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Proof of income and resources",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Proof of children's ages/school status",
+          "mandatory": true,
+          "note": null
+        }
+      ],
+      "eligibility": {
+        "statuses": [
+          "parent",
+          "unemployed",
+          "jobseeker"
+        ],
+        "age_min": null,
+        "age_max": null,
+        "income_annual_max": null,
+        "income_note": "Very low income; each state sets its own income and resource limits; work requirements and a 60-month federal time limit apply",
+        "requires_children": true,
+        "nationality": "any_resident",
+        "residency_months_min": null,
+        "housing_tenure": null,
+        "student_required": false,
+        "admin_areas": []
+      },
+      "source_url": "https://www.acf.hhs.gov/ofa/programs/temporary-assistance-needy-families-tanf",
+      "source_snippet": "TANF provides states with flexible funding for programs aimed at promoting stability, family preservation, and access to employment among low-income households with children.",
+      "last_verified_at": "2026-08-12",
+      "verification_status": "verified"
+    },
+    {
+      "slug": "ssi-supplemental-security-income",
+      "name_local": "Supplemental Security Income (SSI)",
+      "name_en": "Supplemental Security Income (SSI)",
+      "admin_level": "national",
+      "admin_area": null,
+      "funder": "Social Security Administration (SSA)",
+      "category": "income_support",
+      "benefit_type": "cash_monthly",
+      "amount_min": null,
+      "amount_max": 994,
+      "amount_currency": "USD",
+      "amount_period": "monthly",
+      "amount_note": "2026 federal benefit rate: up to $994/month individual and $1,491/month couple; reduced by countable income; many states add a supplement",
+      "is_automatic": false,
+      "application_url": "https://www.ssa.gov/ssi",
+      "application_channel": "online",
+      "deadline_type": "rolling",
+      "deadline_note": null,
+      "procedure_steps": [
+        {
+          "step": 1,
+          "detail": "Start an application online, by phone (1-800-772-1213) or at a local Social Security office",
+          "url": "https://www.ssa.gov/ssi"
+        },
+        {
+          "step": 2,
+          "detail": "Provide medical evidence (if under 65 and claiming disability) and financial information",
+          "url": null
+        },
+        {
+          "step": 3,
+          "detail": "SSA decides; payments begin the month after approval",
+          "url": null
+        }
+      ],
+      "documents_required": [
+        {
+          "doc": "Social Security number",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Proof of age",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Income and resource records",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Medical records (disability claims)",
+          "mandatory": false,
+          "note": null
+        }
+      ],
+      "eligibility": {
+        "statuses": [
+          "retired",
+          "unemployed"
+        ],
+        "age_min": null,
+        "age_max": null,
+        "income_annual_max": null,
+        "income_note": "Aged 65+, blind or disabled with very limited income (below the federal benefit rate after exclusions) and resources at or below $2,000 individual / $3,000 couple",
+        "requires_children": false,
+        "nationality": "citizen_or_pr",
+        "residency_months_min": null,
+        "housing_tenure": null,
+        "student_required": false,
+        "admin_areas": []
+      },
+      "source_url": "https://www.ssa.gov/ssi",
+      "source_snippet": "In 2026, the maximum federal SSI payment rose to $994 per month for an eligible individual and $1,491 for an eligible couple, reflecting the 2.8 percent cost-of-living adjustment.",
+      "last_verified_at": "2026-08-12",
+      "verification_status": "verified"
+    },
+    {
+      "slug": "ssdi-social-security-disability-insurance",
+      "name_local": "Social Security Disability Insurance (SSDI)",
+      "name_en": "Social Security Disability Insurance (SSDI)",
+      "admin_level": "national",
+      "admin_area": null,
+      "funder": "Social Security Administration (SSA)",
+      "category": "income_support",
+      "benefit_type": "cash_monthly",
+      "amount_min": null,
+      "amount_max": null,
+      "amount_currency": "USD",
+      "amount_period": "monthly",
+      "amount_note": "Monthly benefit is based on your lifetime earnings record; Medicare eligibility begins after 24 months of SSDI entitlement",
+      "is_automatic": false,
+      "application_url": "https://www.ssa.gov/disability",
+      "application_channel": "online",
+      "deadline_type": "rolling",
+      "deadline_note": null,
+      "procedure_steps": [
+        {
+          "step": 1,
+          "detail": "Apply online at ssa.gov/disability, by phone 1-800-772-1213, or at a local office",
+          "url": "https://www.ssa.gov/disability"
+        },
+        {
+          "step": 2,
+          "detail": "Submit medical records and work history",
+          "url": null
+        },
+        {
+          "step": 3,
+          "detail": "State Disability Determination Services reviews the claim; appeals available if denied",
+          "url": null
+        }
+      ],
+      "documents_required": [
+        {
+          "doc": "Social Security number and birth record",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Medical evidence and provider contacts",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Work history for the last 15 years",
+          "mandatory": true,
+          "note": null
+        }
+      ],
+      "eligibility": {
+        "statuses": [],
+        "age_min": null,
+        "age_max": null,
+        "income_annual_max": null,
+        "income_note": "Must meet SSA's disability definition and have enough Social Security work credits (generally 40 credits, 20 in the last 10 years)",
+        "requires_children": false,
+        "nationality": "citizen_or_pr",
+        "residency_months_min": null,
+        "housing_tenure": null,
+        "student_required": false,
+        "admin_areas": []
+      },
+      "source_url": "https://www.ssa.gov/disability",
+      "source_snippet": "Social Security pays disability benefits through 2 programs: Social Security Disability Insurance (SSDI) and Supplemental Security Income (SSI).",
+      "last_verified_at": "2026-08-12",
+      "verification_status": "verified"
+    },
+    {
+      "slug": "social-security-retirement-benefits",
+      "name_local": "Social Security Retirement Benefits",
+      "name_en": "Social Security Retirement Benefits",
+      "admin_level": "national",
+      "admin_area": null,
+      "funder": "Social Security Administration (SSA)",
+      "category": "income_support",
+      "benefit_type": "cash_monthly",
+      "amount_min": null,
+      "amount_max": null,
+      "amount_currency": "USD",
+      "amount_period": "monthly",
+      "amount_note": "Monthly benefit depends on lifetime earnings and claiming age (62-70); average retired-worker benefit is about $2,000/month in 2026",
+      "is_automatic": false,
+      "application_url": "https://www.ssa.gov/retirement",
+      "application_channel": "online",
+      "deadline_type": "rolling",
+      "deadline_note": null,
+      "procedure_steps": [
+        {
+          "step": 1,
+          "detail": "Create a my Social Security account to see your estimate",
+          "url": "https://www.ssa.gov/myaccount"
+        },
+        {
+          "step": 2,
+          "detail": "Apply online up to 4 months before you want benefits to start",
+          "url": null
+        },
+        {
+          "step": 3,
+          "detail": "Choose when to claim between age 62 and 70",
+          "url": null
+        }
+      ],
+      "documents_required": [
+        {
+          "doc": "Social Security number",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Proof of age",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Earnings record (W-2/self-employment)",
+          "mandatory": false,
+          "note": null
+        }
+      ],
+      "eligibility": {
+        "statuses": [
+          "retired"
+        ],
+        "age_min": 62,
+        "age_max": null,
+        "income_annual_max": null,
+        "income_note": "Not income-tested; requires about 10 years (40 credits) of work paying Social Security taxes",
+        "requires_children": false,
+        "nationality": "any",
+        "residency_months_min": null,
+        "housing_tenure": null,
+        "student_required": false,
+        "admin_areas": []
+      },
+      "source_url": "https://www.ssa.gov/retirement",
+      "source_snippet": "You can start receiving Social Security retirement benefits as early as age 62, but benefits are reduced before full retirement age.",
+      "last_verified_at": "2026-08-12",
+      "verification_status": "auto_extracted"
+    },
+    {
+      "slug": "va-pension-veterans",
+      "name_local": "VA Veterans Pension",
+      "name_en": "VA Pension for Wartime Veterans",
+      "admin_level": "national",
+      "admin_area": null,
+      "funder": "U.S. Department of Veterans Affairs",
+      "category": "income_support",
+      "benefit_type": "cash_monthly",
+      "amount_min": null,
+      "amount_max": null,
+      "amount_currency": "USD",
+      "amount_period": "monthly",
+      "amount_note": "Monthly payment tops up countable income to the Maximum Annual Pension Rate (MAPR); higher rates with Aid and Attendance or Housebound",
+      "is_automatic": false,
+      "application_url": "https://www.va.gov/pension/how-to-apply/",
+      "application_channel": "online",
+      "deadline_type": "rolling",
+      "deadline_note": null,
+      "procedure_steps": [
+        {
+          "step": 1,
+          "detail": "Check eligibility (wartime service, age 65+ or totally disabled, income/net worth limits)",
+          "url": "https://www.va.gov/pension/eligibility/"
+        },
+        {
+          "step": 2,
+          "detail": "File VA Form 21P-527EZ online, by mail or with a Veterans Service Officer",
+          "url": null
+        },
+        {
+          "step": 3,
+          "detail": "VA reviews income and service records and sets the pension rate",
+          "url": null
+        }
+      ],
+      "documents_required": [
+        {
+          "doc": "DD-214 discharge papers",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Income and asset information",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Medical evidence of disability (if under 65)",
+          "mandatory": false,
+          "note": null
+        }
+      ],
+      "eligibility": {
+        "statuses": [],
+        "age_min": 65,
+        "age_max": null,
+        "income_annual_max": null,
+        "income_note": "Wartime veterans with limited income and net worth below the VA limit; age 65+ or permanently and totally disabled",
+        "requires_children": false,
+        "nationality": "any",
+        "residency_months_min": null,
+        "housing_tenure": null,
+        "student_required": false,
+        "admin_areas": []
+      },
+      "source_url": "https://www.va.gov/pension/",
+      "source_snippet": "The Veterans Pension program provides monthly payments to wartime Veterans who meet certain age or disability requirements, and who have income and net worth within certain limits.",
+      "last_verified_at": "2026-08-12",
+      "verification_status": "auto_extracted"
+    },
+    {
+      "slug": "unemployment-insurance-ui",
+      "name_local": "Unemployment Insurance (UI)",
+      "name_en": "Unemployment Insurance",
+      "admin_level": "national",
+      "admin_area": null,
+      "funder": "U.S. Department of Labor / state workforce agencies",
+      "category": "employment",
+      "benefit_type": "cash_monthly",
+      "amount_min": null,
+      "amount_max": null,
+      "amount_currency": "USD",
+      "amount_period": "monthly",
+      "amount_note": "Weekly benefit amount, duration (typically up to 26 weeks) and rules are set by each state based on prior wages",
+      "is_automatic": false,
+      "application_url": "https://www.dol.gov/general/topic/unemployment-insurance",
+      "application_channel": "online",
+      "deadline_type": "rolling",
+      "deadline_note": null,
+      "procedure_steps": [
+        {
+          "step": 1,
+          "detail": "File a claim with the unemployment office of the state where you worked, as soon as you lose your job",
+          "url": null
+        },
+        {
+          "step": 2,
+          "detail": "Certify weekly and report any earnings",
+          "url": null
+        },
+        {
+          "step": 3,
+          "detail": "Meet work-search requirements to keep benefits",
+          "url": null
+        }
+      ],
+      "documents_required": [
+        {
+          "doc": "Social Security number",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Employment history for the last 18 months",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Reason for job separation",
+          "mandatory": true,
+          "note": null
+        }
+      ],
+      "eligibility": {
+        "statuses": [
+          "unemployed",
+          "jobseeker"
+        ],
+        "age_min": null,
+        "age_max": null,
+        "income_annual_max": null,
+        "income_note": "Must have lost work through no fault of your own and earned enough wages in the base period; must be able and available to work",
+        "requires_children": false,
+        "nationality": "any_resident",
+        "residency_months_min": null,
+        "housing_tenure": null,
+        "student_required": false,
+        "admin_areas": []
+      },
+      "source_url": "https://www.dol.gov/general/topic/unemployment-insurance",
+      "source_snippet": "Unemployment Insurance provides temporary financial assistance to eligible workers who lost their jobs through no fault of their own; claims are filed with the state unemployment agency.",
+      "last_verified_at": "2026-08-12",
+      "verification_status": "auto_extracted"
+    },
+    {
+      "slug": "wioa-adult-dislocated-worker-programs",
+      "name_local": "WIOA Adult and Dislocated Worker Programs",
+      "name_en": "Workforce Innovation and Opportunity Act (WIOA) Career Services and Training",
+      "admin_level": "national",
+      "admin_area": null,
+      "funder": "U.S. Department of Labor, Employment and Training Administration",
+      "category": "employment",
+      "benefit_type": "in_kind",
+      "amount_min": null,
+      "amount_max": null,
+      "amount_currency": "USD",
+      "amount_period": null,
+      "amount_note": "Free career services and training funding (Individual Training Accounts) delivered through American Job Centers",
+      "is_automatic": false,
+      "application_url": "https://www.careeronestop.org/LocalHelp/AmericanJobCenters/american-job-centers.aspx",
+      "application_channel": "in_person",
+      "deadline_type": "rolling",
+      "deadline_note": null,
+      "procedure_steps": [
+        {
+          "step": 1,
+          "detail": "Visit or contact your local American Job Center",
+          "url": "https://www.careeronestop.org"
+        },
+        {
+          "step": 2,
+          "detail": "Meet with a career counselor to assess eligibility and needs",
+          "url": null
+        },
+        {
+          "step": 3,
+          "detail": "Enroll in training or job-search services funded by WIOA",
+          "url": null
+        }
+      ],
+      "documents_required": [
+        {
+          "doc": "Proof of identity and work authorization",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Layoff notice or proof of income (priority groups)",
+          "mandatory": false,
+          "note": null
+        }
+      ],
+      "eligibility": {
+        "statuses": [
+          "unemployed",
+          "jobseeker",
+          "employee"
+        ],
+        "age_min": null,
+        "age_max": null,
+        "income_annual_max": null,
+        "income_note": "Adults 18+; priority for individualized and training services goes to low-income individuals, public benefit recipients and dislocated workers",
+        "requires_children": false,
+        "nationality": "any_resident",
+        "residency_months_min": null,
+        "housing_tenure": null,
+        "student_required": false,
+        "admin_areas": []
+      },
+      "source_url": "https://www.dol.gov/agencies/eta/wioa",
+      "source_snippet": "WIOA funds employment and training services for adults, dislocated workers and youth through a nationwide network of American Job Centers.",
+      "last_verified_at": "2026-08-12",
+      "verification_status": "auto_extracted"
+    },
+    {
+      "slug": "job-corps",
+      "name_local": "Job Corps",
+      "name_en": "Job Corps",
+      "admin_level": "national",
+      "admin_area": null,
+      "funder": "U.S. Department of Labor",
+      "category": "employment",
+      "benefit_type": "in_kind",
+      "amount_min": null,
+      "amount_max": null,
+      "amount_currency": "USD",
+      "amount_period": null,
+      "amount_note": "Free residential career training, education, housing, meals and a basic living allowance for eligible young people",
+      "is_automatic": false,
+      "application_url": "https://www.jobcorps.gov",
+      "application_channel": "online",
+      "deadline_type": "rolling",
+      "deadline_note": null,
+      "procedure_steps": [
+        {
+          "step": 1,
+          "detail": "Apply online or at an admissions office",
+          "url": "https://www.jobcorps.gov"
+        },
+        {
+          "step": 2,
+          "detail": "Meet with an admissions counselor and provide documents",
+          "url": null
+        },
+        {
+          "step": 3,
+          "detail": "Enroll at a Job Corps center for career technical training",
+          "url": null
+        }
+      ],
+      "documents_required": [
+        {
+          "doc": "Proof of age",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Proof of income eligibility",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "School records",
+          "mandatory": false,
+          "note": null
+        }
+      ],
+      "eligibility": {
+        "statuses": [
+          "student",
+          "unemployed",
+          "jobseeker"
+        ],
+        "age_min": 16,
+        "age_max": 24,
+        "income_annual_max": null,
+        "income_note": "Low-income youth ages 16-24 (no upper age limit for applicants with disabilities)",
+        "requires_children": false,
+        "nationality": "any_resident",
+        "residency_months_min": null,
+        "housing_tenure": null,
+        "student_required": false,
+        "admin_areas": []
+      },
+      "source_url": "https://www.jobcorps.gov",
+      "source_snippet": "Job Corps is the nation's largest free residential education and job training program for young adults ages 16-24.",
+      "last_verified_at": "2026-08-12",
+      "verification_status": "auto_extracted"
+    },
+    {
+      "slug": "trade-adjustment-assistance",
+      "name_local": "Trade Adjustment Assistance (TAA) for Workers",
+      "name_en": "Trade Adjustment Assistance for Workers",
+      "admin_level": "national",
+      "admin_area": null,
+      "funder": "U.S. Department of Labor",
+      "category": "employment",
+      "benefit_type": "cash_monthly",
+      "amount_min": null,
+      "amount_max": null,
+      "amount_currency": "USD",
+      "amount_period": "monthly",
+      "amount_note": "Trade Readjustment Allowances (income support during training), training costs, job search and relocation allowances",
+      "is_automatic": false,
+      "application_url": "https://www.dol.gov/agencies/eta/tradeact",
+      "application_channel": "in_person",
+      "deadline_type": "rolling",
+      "deadline_note": "Only for workers covered by a certified DOL petition; file through your state workforce agency",
+      "procedure_steps": [
+        {
+          "step": 1,
+          "detail": "Check if your employer's worker group has a certified TAA petition",
+          "url": "https://www.dol.gov/agencies/eta/tradeact"
+        },
+        {
+          "step": 2,
+          "detail": "Apply through your state workforce agency / American Job Center",
+          "url": null
+        },
+        {
+          "step": 3,
+          "detail": "Enroll in approved training to receive income support",
+          "url": null
+        }
+      ],
+      "documents_required": [
+        {
+          "doc": "Proof of employment and layoff from the certified employer",
+          "mandatory": true,
+          "note": null
+        }
+      ],
+      "eligibility": {
+        "statuses": [
+          "unemployed",
+          "jobseeker"
+        ],
+        "age_min": null,
+        "age_max": null,
+        "income_annual_max": null,
+        "income_note": "Workers who lost their jobs due to foreign trade, covered by a certified petition",
+        "requires_children": false,
+        "nationality": "any_resident",
+        "residency_months_min": null,
+        "housing_tenure": null,
+        "student_required": false,
+        "admin_areas": []
+      },
+      "source_url": "https://www.dol.gov/agencies/eta/tradeact",
+      "source_snippet": "TAA provides assistance to workers who have lost their jobs as a result of increased imports or shifts in production outside the United States.",
+      "last_verified_at": "2026-08-12",
+      "verification_status": "auto_extracted"
+    },
+    {
+      "slug": "ticket-to-work",
+      "name_local": "Ticket to Work Program",
+      "name_en": "Social Security Ticket to Work",
+      "admin_level": "national",
+      "admin_area": null,
+      "funder": "Social Security Administration (SSA)",
+      "category": "employment",
+      "benefit_type": "in_kind",
+      "amount_min": null,
+      "amount_max": null,
+      "amount_currency": "USD",
+      "amount_period": null,
+      "amount_note": "Free vocational rehabilitation, training, job placement and benefits counseling for disability beneficiaries who want to work",
+      "is_automatic": false,
+      "application_url": "https://choosework.ssa.gov",
+      "application_channel": "online",
+      "deadline_type": "none",
+      "deadline_note": null,
+      "procedure_steps": [
+        {
+          "step": 1,
+          "detail": "Call the Ticket to Work Help Line or find a service provider online",
+          "url": "https://choosework.ssa.gov"
+        },
+        {
+          "step": 2,
+          "detail": "Assign your Ticket to an Employment Network or state VR agency",
+          "url": null
+        },
+        {
+          "step": 3,
+          "detail": "Receive work incentives planning and employment services",
+          "url": null
+        }
+      ],
+      "documents_required": [
+        {
+          "doc": "Social Security number",
+          "mandatory": true,
+          "note": null
+        }
+      ],
+      "eligibility": {
+        "statuses": [
+          "unemployed",
+          "jobseeker",
+          "employee"
+        ],
+        "age_min": 18,
+        "age_max": 64,
+        "income_annual_max": null,
+        "income_note": "SSDI and SSI disability beneficiaries ages 18-64; voluntary and free",
+        "requires_children": false,
+        "nationality": "any_resident",
+        "residency_months_min": null,
+        "housing_tenure": null,
+        "student_required": false,
+        "admin_areas": []
+      },
+      "source_url": "https://www.ssa.gov/work",
+      "source_snippet": "The Ticket to Work program supports career development for Social Security disability beneficiaries ages 18 through 64 who want to work.",
+      "last_verified_at": "2026-08-12",
+      "verification_status": "auto_extracted"
+    },
+    {
+      "slug": "eitc-earned-income-tax-credit",
+      "name_local": "Earned Income Tax Credit (EITC)",
+      "name_en": "Earned Income Tax Credit (EITC)",
+      "admin_level": "national",
+      "admin_area": null,
+      "funder": "Internal Revenue Service (IRS)",
+      "category": "tax",
+      "benefit_type": "tax_credit",
+      "amount_min": 649,
+      "amount_max": 8046,
+      "amount_currency": "USD",
+      "amount_period": "annual",
+      "amount_note": "Tax year 2025 maximum credit: $649 (no children) to $8,046 (3+ children); income must be under $61,555 (single/HOH) or $68,675 (married filing jointly); refundable",
+      "is_automatic": false,
+      "application_url": "https://www.irs.gov/credits-deductions/individuals/earned-income-tax-credit-eitc",
+      "application_channel": "online",
+      "deadline_type": "annual",
+      "deadline_note": "Claimed on your annual federal tax return (Form 1040, Schedule EIC); refunds issued after mid-February by law",
+      "procedure_steps": [
+        {
+          "step": 1,
+          "detail": "Check eligibility with the IRS EITC Assistant",
+          "url": "https://www.irs.gov/credits-deductions/individuals/earned-income-tax-credit-eitc"
+        },
+        {
+          "step": 2,
+          "detail": "File Form 1040 (with Schedule EIC if you have qualifying children)",
+          "url": null
+        },
+        {
+          "step": 3,
+          "detail": "Receive the credit as part of your tax refund",
+          "url": null
+        }
+      ],
+      "documents_required": [
+        {
+          "doc": "Valid SSNs for filer, spouse and qualifying children",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Income records (W-2, 1099)",
+          "mandatory": true,
+          "note": null
+        }
+      ],
+      "eligibility": {
+        "statuses": [
+          "employee",
+          "self_employed"
+        ],
+        "age_min": null,
+        "age_max": null,
+        "income_annual_max": null,
+        "income_note": "Low-to-moderate earned income; TY2025 AGI limits range from $19,104 (single, no children) to $68,675 (married filing jointly, 3+ children); investment income must be $11,950 or less",
+        "requires_children": false,
+        "nationality": "citizen_or_pr",
+        "residency_months_min": null,
+        "housing_tenure": null,
+        "student_required": false,
+        "admin_areas": []
+      },
+      "source_url": "https://www.irs.gov/credits-deductions/individuals/earned-income-tax-credit/earned-income-and-earned-income-tax-credit-eitc-tables",
+      "source_snippet": "If you earned less than $68,675 (Married Filing Jointly) or $61,555 (Single, Qualifying Surviving Spouse or Head of Household) in tax year 2025, you may qualify for the Earned Income Credit.",
+      "last_verified_at": "2026-08-12",
+      "verification_status": "verified"
+    },
+    {
+      "slug": "ctc-child-tax-credit",
+      "name_local": "Child Tax Credit (CTC)",
+      "name_en": "Child Tax Credit",
+      "admin_level": "national",
+      "admin_area": null,
+      "funder": "Internal Revenue Service (IRS)",
+      "category": "tax",
+      "benefit_type": "tax_credit",
+      "amount_min": null,
+      "amount_max": 2200,
+      "amount_currency": "USD",
+      "amount_period": "annual",
+      "amount_note": "Up to $2,200 per qualifying child under 17 for tax year 2025 (made permanent and inflation-indexed by the 2025 tax law); partially refundable up to $1,700 via the Additional Child Tax Credit",
+      "is_automatic": false,
+      "application_url": "https://www.irs.gov/credits-deductions/individuals/child-tax-credit",
+      "application_channel": "online",
+      "deadline_type": "annual",
+      "deadline_note": "Claimed on the annual federal income tax return",
+      "procedure_steps": [
+        {
+          "step": 1,
+          "detail": "Confirm each child has a valid SSN and meets age/relationship/residency tests",
+          "url": null
+        },
+        {
+          "step": 2,
+          "detail": "File Form 1040 and complete the Child Tax Credit worksheet",
+          "url": null
+        },
+        {
+          "step": 3,
+          "detail": "Refundable portion (ACTC) arrives with your refund",
+          "url": null
+        }
+      ],
+      "documents_required": [
+        {
+          "doc": "SSN for each qualifying child",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Income records",
+          "mandatory": true,
+          "note": null
+        }
+      ],
+      "eligibility": {
+        "statuses": [
+          "employee",
+          "self_employed",
+          "parent"
+        ],
+        "age_min": null,
+        "age_max": null,
+        "income_annual_max": null,
+        "income_note": "Phases out at higher incomes ($200,000 single / $400,000 married filing jointly); child must be under 17 at year end",
+        "requires_children": true,
+        "nationality": "citizen_or_pr",
+        "residency_months_min": null,
+        "housing_tenure": null,
+        "student_required": false,
+        "admin_areas": []
+      },
+      "source_url": "https://www.irs.gov/credits-deductions/individuals/child-tax-credit",
+      "source_snippet": "The Child Tax Credit provides a credit of up to $2,200 per qualifying child under age 17 for tax year 2025.",
+      "last_verified_at": "2026-08-12",
+      "verification_status": "auto_extracted"
+    },
+    {
+      "slug": "savers-credit",
+      "name_local": "Retirement Savings Contributions Credit (Saver's Credit)",
+      "name_en": "Saver's Credit",
+      "admin_level": "national",
+      "admin_area": null,
+      "funder": "Internal Revenue Service (IRS)",
+      "category": "tax",
+      "benefit_type": "tax_credit",
+      "amount_min": null,
+      "amount_max": 2000,
+      "amount_currency": "USD",
+      "amount_period": "annual",
+      "amount_note": "Credit of 50%, 20% or 10% of up to $2,000 ($4,000 if married filing jointly) contributed to a retirement plan or IRA; maximum credit $1,000 ($2,000 MFJ); non-refundable",
+      "is_automatic": false,
+      "application_url": "https://www.irs.gov/retirement-plans/plan-participant-employee/retirement-savings-contributions-savers-credit",
+      "application_channel": "online",
+      "deadline_type": "annual",
+      "deadline_note": "Claimed on the annual federal tax return (Form 8880)",
+      "procedure_steps": [
+        {
+          "step": 1,
+          "detail": "Contribute to a 401(k), IRA or similar plan during the year",
+          "url": null
+        },
+        {
+          "step": 2,
+          "detail": "Check your AGI against the Saver's Credit rate table",
+          "url": null
+        },
+        {
+          "step": 3,
+          "detail": "File Form 8880 with your Form 1040",
+          "url": null
+        }
+      ],
+      "documents_required": [
+        {
+          "doc": "Retirement contribution records (W-2 box 12, 5498)",
+          "mandatory": true,
+          "note": null
+        }
+      ],
+      "eligibility": {
+        "statuses": [
+          "employee",
+          "self_employed"
+        ],
+        "age_min": 18,
+        "age_max": null,
+        "income_annual_max": null,
+        "income_note": "AGI below the annual thresholds (around $79,000 MFJ / $59,250 HOH / $39,500 single for 2025); cannot be a full-time student or claimed as a dependent",
+        "requires_children": false,
+        "nationality": "any_resident",
+        "residency_months_min": null,
+        "housing_tenure": null,
+        "student_required": false,
+        "admin_areas": []
+      },
+      "source_url": "https://www.irs.gov/retirement-plans/plan-participant-employee/retirement-savings-contributions-savers-credit",
+      "source_snippet": "The Saver's Credit is a tax credit for eligible contributions to retirement plans; the credit rate is 50%, 20% or 10% of contributions depending on adjusted gross income.",
+      "last_verified_at": "2026-08-12",
+      "verification_status": "auto_extracted"
+    },
+    {
+      "slug": "aotc-american-opportunity-tax-credit",
+      "name_local": "American Opportunity Tax Credit (AOTC)",
+      "name_en": "American Opportunity Tax Credit",
+      "admin_level": "national",
+      "admin_area": null,
+      "funder": "Internal Revenue Service (IRS)",
+      "category": "education",
+      "benefit_type": "tax_credit",
+      "amount_min": null,
+      "amount_max": 2500,
+      "amount_currency": "USD",
+      "amount_period": "annual",
+      "amount_note": "Up to $2,500 per eligible student per year for the first 4 years of higher education; 40% (up to $1,000) is refundable",
+      "is_automatic": false,
+      "application_url": "https://www.irs.gov/credits-deductions/individuals/aotc",
+      "application_channel": "online",
+      "deadline_type": "annual",
+      "deadline_note": "Claimed on the annual tax return (Form 8863) using Form 1098-T from the school",
+      "procedure_steps": [
+        {
+          "step": 1,
+          "detail": "Obtain Form 1098-T from the eligible educational institution",
+          "url": null
+        },
+        {
+          "step": 2,
+          "detail": "Keep receipts for tuition, fees and course materials",
+          "url": null
+        },
+        {
+          "step": 3,
+          "detail": "File Form 8863 with your Form 1040",
+          "url": null
+        }
+      ],
+      "documents_required": [
+        {
+          "doc": "Form 1098-T",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Records of qualified education expenses",
+          "mandatory": true,
+          "note": null
+        }
+      ],
+      "eligibility": {
+        "statuses": [
+          "student"
+        ],
+        "age_min": null,
+        "age_max": null,
+        "income_annual_max": null,
+        "income_note": "Phases out for MAGI between $80,000-$90,000 ($160,000-$180,000 MFJ); student must be enrolled at least half-time in a degree program and not have completed 4 years of higher education",
+        "requires_children": false,
+        "nationality": "any_resident",
+        "residency_months_min": null,
+        "housing_tenure": null,
+        "student_required": true,
+        "admin_areas": []
+      },
+      "source_url": "https://www.irs.gov/credits-deductions/individuals/aotc",
+      "source_snippet": "The American Opportunity Tax Credit is a credit for qualified education expenses paid for an eligible student for the first four years of higher education, up to $2,500 per eligible student.",
+      "last_verified_at": "2026-08-12",
+      "verification_status": "auto_extracted"
+    },
+    {
+      "slug": "llc-lifetime-learning-credit",
+      "name_local": "Lifetime Learning Credit (LLC)",
+      "name_en": "Lifetime Learning Credit",
+      "admin_level": "national",
+      "admin_area": null,
+      "funder": "Internal Revenue Service (IRS)",
+      "category": "education",
+      "benefit_type": "tax_credit",
+      "amount_min": null,
+      "amount_max": 2000,
+      "amount_currency": "USD",
+      "amount_period": "annual",
+      "amount_note": "20% of the first $10,000 of qualified tuition and fees, up to $2,000 per tax return per year; non-refundable; no limit on number of years",
+      "is_automatic": false,
+      "application_url": "https://www.irs.gov/credits-deductions/individuals/education-credits-aotc-and-llc",
+      "application_channel": "online",
+      "deadline_type": "annual",
+      "deadline_note": "Claimed on the annual tax return (Form 8863)",
+      "procedure_steps": [
+        {
+          "step": 1,
+          "detail": "Obtain Form 1098-T from the school",
+          "url": null
+        },
+        {
+          "step": 2,
+          "detail": "Total qualified tuition and related expenses",
+          "url": null
+        },
+        {
+          "step": 3,
+          "detail": "File Form 8863 with your Form 1040",
+          "url": null
+        }
+      ],
+      "documents_required": [
+        {
+          "doc": "Form 1098-T",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Payment records for tuition and fees",
+          "mandatory": true,
+          "note": null
+        }
+      ],
+      "eligibility": {
+        "statuses": [
+          "student",
+          "employee",
+          "self_employed"
+        ],
+        "age_min": null,
+        "age_max": null,
+        "income_annual_max": null,
+        "income_note": "Phases out for MAGI between $80,000-$90,000 ($160,000-$180,000 MFJ); available for undergraduate, graduate and job-skills courses",
+        "requires_children": false,
+        "nationality": "any_resident",
+        "residency_months_min": null,
+        "housing_tenure": null,
+        "student_required": false,
+        "admin_areas": []
+      },
+      "source_url": "https://www.irs.gov/credits-deductions/individuals/education-credits-aotc-and-llc",
+      "source_snippet": "The Lifetime Learning Credit is worth up to $2,000 per tax return for qualified tuition and related expenses at eligible educational institutions.",
+      "last_verified_at": "2026-08-12",
+      "verification_status": "auto_extracted"
+    },
+    {
+      "slug": "vita-free-file-tax-preparation",
+      "name_local": "IRS Free File and VITA Free Tax Preparation",
+      "name_en": "IRS Free File / Volunteer Income Tax Assistance (VITA)",
+      "admin_level": "national",
+      "admin_area": null,
+      "funder": "Internal Revenue Service (IRS)",
+      "category": "tax",
+      "benefit_type": "in_kind",
+      "amount_min": null,
+      "amount_max": null,
+      "amount_currency": "USD",
+      "amount_period": null,
+      "amount_note": "Free tax preparation and e-filing; ensures low-income filers claim EITC, CTC and other credits without paying preparer fees",
+      "is_automatic": false,
+      "application_url": "https://www.irs.gov/filing/irs-free-file-do-your-taxes-for-free",
+      "application_channel": "online",
+      "deadline_type": "annual",
+      "deadline_note": "Tax season (January-April 15); VITA/TCE sites operate locally",
+      "procedure_steps": [
+        {
+          "step": 1,
+          "detail": "Use IRS Free File if your AGI is within the limit, or find a VITA site",
+          "url": "https://www.irs.gov/individuals/free-tax-return-preparation-for-qualifying-taxpayers"
+        },
+        {
+          "step": 2,
+          "detail": "Bring ID, SSNs and income documents to the VITA site (or file online)",
+          "url": null
+        },
+        {
+          "step": 3,
+          "detail": "IRS-certified volunteers prepare and e-file your return for free",
+          "url": null
+        }
+      ],
+      "documents_required": [
+        {
+          "doc": "Photo ID",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "SSNs for the household",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "W-2s, 1099s and other tax documents",
+          "mandatory": true,
+          "note": null
+        }
+      ],
+      "eligibility": {
+        "statuses": [],
+        "age_min": null,
+        "age_max": null,
+        "income_annual_max": null,
+        "income_note": "VITA generally serves people earning $67,000 or less, persons with disabilities and limited English speakers; IRS Free File guided software is free below an AGI threshold",
+        "requires_children": false,
+        "nationality": "any_resident",
+        "residency_months_min": null,
+        "housing_tenure": null,
+        "student_required": false,
+        "admin_areas": []
+      },
+      "source_url": "https://www.irs.gov/individuals/free-tax-return-preparation-for-qualifying-taxpayers",
+      "source_snippet": "VITA and TCE sites offer free basic tax return preparation to qualified individuals, generally people who make $67,000 or less, persons with disabilities and limited English-speaking taxpayers.",
+      "last_verified_at": "2026-08-12",
+      "verification_status": "auto_extracted"
+    },
+    {
+      "slug": "medicaid",
+      "name_local": "Medicaid",
+      "name_en": "Medicaid",
+      "admin_level": "national",
+      "admin_area": null,
+      "funder": "Centers for Medicare & Medicaid Services (CMS) / state Medicaid agencies",
+      "category": "health",
+      "benefit_type": "in_kind",
+      "amount_min": null,
+      "amount_max": null,
+      "amount_currency": "USD",
+      "amount_period": null,
+      "amount_note": "Free or very low-cost comprehensive health coverage; enrollees pay little or nothing for covered services",
+      "is_automatic": false,
+      "application_url": "https://www.healthcare.gov/medicaid-chip/",
+      "application_channel": "online",
+      "deadline_type": "rolling",
+      "deadline_note": null,
+      "procedure_steps": [
+        {
+          "step": 1,
+          "detail": "Apply through your state Medicaid agency or via HealthCare.gov (one application screens Medicaid, CHIP and Marketplace savings)",
+          "url": "https://www.medicaid.gov"
+        },
+        {
+          "step": 2,
+          "detail": "Provide household, income and identity information",
+          "url": null
+        },
+        {
+          "step": 3,
+          "detail": "Enroll with a state Medicaid plan; renew annually",
+          "url": null
+        }
+      ],
+      "documents_required": [
+        {
+          "doc": "Proof of identity and citizenship/immigration status",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Income information",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Social Security number",
+          "mandatory": false,
+          "note": null
+        }
+      ],
+      "eligibility": {
+        "statuses": [],
+        "age_min": null,
+        "age_max": null,
+        "income_annual_max": null,
+        "income_note": "In expansion states, most adults qualify up to 138% of the federal poverty level; higher limits for children and pregnant women; non-expansion states have narrower adult eligibility",
+        "requires_children": false,
+        "nationality": "citizen_or_pr",
+        "residency_months_min": null,
+        "housing_tenure": null,
+        "student_required": false,
+        "admin_areas": []
+      },
+      "source_url": "https://www.medicaid.gov",
+      "source_snippet": "Medicaid provides health coverage to millions of Americans, including eligible low-income adults, children, pregnant women, elderly adults and people with disabilities.",
+      "last_verified_at": "2026-08-12",
+      "verification_status": "verified"
+    },
+    {
+      "slug": "chip-childrens-health-insurance-program",
+      "name_local": "Children's Health Insurance Program (CHIP)",
+      "name_en": "Children's Health Insurance Program (CHIP)",
+      "admin_level": "national",
+      "admin_area": null,
+      "funder": "Centers for Medicare & Medicaid Services (CMS) / states",
+      "category": "health",
+      "benefit_type": "in_kind",
+      "amount_min": null,
+      "amount_max": null,
+      "amount_currency": "USD",
+      "amount_period": null,
+      "amount_note": "Low-cost coverage for children; some states charge small premiums or copays capped by federal law",
+      "is_automatic": false,
+      "application_url": "https://www.healthcare.gov/medicaid-chip/childrens-health-insurance-program/",
+      "application_channel": "online",
+      "deadline_type": "rolling",
+      "deadline_note": null,
+      "procedure_steps": [
+        {
+          "step": 1,
+          "detail": "Apply any time of year through your state or HealthCare.gov",
+          "url": null
+        },
+        {
+          "step": 2,
+          "detail": "If income is too high for Medicaid, children are routed to CHIP",
+          "url": null
+        },
+        {
+          "step": 3,
+          "detail": "Choose a CHIP plan and pay any small state premium",
+          "url": null
+        }
+      ],
+      "documents_required": [
+        {
+          "doc": "Child's proof of age and identity",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Household income information",
+          "mandatory": true,
+          "note": null
+        }
+      ],
+      "eligibility": {
+        "statuses": [],
+        "age_min": null,
+        "age_max": 19,
+        "income_annual_max": null,
+        "income_note": "Children under 19 in families with income too high for Medicaid but below the state's CHIP limit, which ranges from about 170% to 400% of the federal poverty level by state",
+        "requires_children": true,
+        "nationality": "citizen_or_pr",
+        "residency_months_min": null,
+        "housing_tenure": null,
+        "student_required": false,
+        "admin_areas": []
+      },
+      "source_url": "https://www.medicaid.gov/chip",
+      "source_snippet": "Children eligible for CHIP are in families with incomes too high to qualify for Medicaid, but too low to afford private coverage.",
+      "last_verified_at": "2026-08-12",
+      "verification_status": "verified"
+    },
+    {
+      "slug": "premium-tax-credit-aptc",
+      "name_local": "Premium Tax Credit (Marketplace Subsidy)",
+      "name_en": "Advance Premium Tax Credit for Marketplace Health Insurance",
+      "admin_level": "national",
+      "admin_area": null,
+      "funder": "Internal Revenue Service (IRS) / Health Insurance Marketplace",
+      "category": "health",
+      "benefit_type": "tax_credit",
+      "amount_min": null,
+      "amount_max": null,
+      "amount_currency": "USD",
+      "amount_period": "monthly",
+      "amount_note": "Credit caps your benchmark silver-plan premium at a percentage of household income; paid in advance directly to the insurer or claimed at tax time",
+      "is_automatic": false,
+      "application_url": "https://www.healthcare.gov/lower-costs/",
+      "application_channel": "online",
+      "deadline_type": "window",
+      "deadline_note": "Annual Open Enrollment (typically Nov 1-Jan 15) plus Special Enrollment Periods after qualifying life events",
+      "procedure_steps": [
+        {
+          "step": 1,
+          "detail": "Create an account and apply at HealthCare.gov (or your state marketplace)",
+          "url": "https://www.healthcare.gov"
+        },
+        {
+          "step": 2,
+          "detail": "Estimate household income for the coverage year",
+          "url": null
+        },
+        {
+          "step": 3,
+          "detail": "Choose how much of the credit to take in advance and pick a plan",
+          "url": null
+        },
+        {
+          "step": 4,
+          "detail": "Reconcile the credit on Form 8962 with your tax return",
+          "url": null
+        }
+      ],
+      "documents_required": [
+        {
+          "doc": "Social Security numbers",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Income estimate and prior tax return",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Immigration documents (if applicable)",
+          "mandatory": false,
+          "note": null
+        }
+      ],
+      "eligibility": {
+        "statuses": [],
+        "age_min": null,
+        "age_max": null,
+        "income_annual_max": null,
+        "income_note": "Household income generally at least 100% of the federal poverty level; credit amount slides with income and is reconciled on the tax return; not available with an affordable employer offer or Medicaid",
+        "requires_children": false,
+        "nationality": "citizen_or_pr",
+        "residency_months_min": null,
+        "housing_tenure": null,
+        "student_required": false,
+        "admin_areas": []
+      },
+      "source_url": "https://www.healthcare.gov/lower-costs/",
+      "source_snippet": "When you apply for Marketplace coverage, you'll find out if you qualify for a premium tax credit that lowers your monthly premium.",
+      "last_verified_at": "2026-08-12",
+      "verification_status": "auto_extracted"
+    },
+    {
+      "slug": "cost-sharing-reductions",
+      "name_local": "Cost-Sharing Reductions (Silver Plan Savings)",
+      "name_en": "Cost-Sharing Reductions",
+      "admin_level": "national",
+      "admin_area": null,
+      "funder": "Health Insurance Marketplace (CMS)",
+      "category": "health",
+      "benefit_type": "discount",
+      "amount_min": null,
+      "amount_max": null,
+      "amount_currency": "USD",
+      "amount_period": null,
+      "amount_note": "Extra savings that lower deductibles, copays and out-of-pocket maximums on Marketplace Silver plans",
+      "is_automatic": false,
+      "application_url": "https://www.healthcare.gov/lower-costs/",
+      "application_channel": "online",
+      "deadline_type": "window",
+      "deadline_note": "Available only on Silver plans during Marketplace enrollment periods",
+      "procedure_steps": [
+        {
+          "step": 1,
+          "detail": "Apply at HealthCare.gov and estimate your income",
+          "url": null
+        },
+        {
+          "step": 2,
+          "detail": "If eligible, choose a Silver plan to get the extra savings",
+          "url": null
+        },
+        {
+          "step": 3,
+          "detail": "Savings apply automatically to the Silver plan's cost sharing",
+          "url": null
+        }
+      ],
+      "documents_required": [
+        {
+          "doc": "Income estimate",
+          "mandatory": true,
+          "note": null
+        }
+      ],
+      "eligibility": {
+        "statuses": [],
+        "age_min": null,
+        "age_max": null,
+        "income_annual_max": null,
+        "income_note": "Household income between 100% and 250% of the federal poverty level; must enroll in a Silver-tier Marketplace plan",
+        "requires_children": false,
+        "nationality": "citizen_or_pr",
+        "residency_months_min": null,
+        "housing_tenure": null,
+        "student_required": false,
+        "admin_areas": []
+      },
+      "source_url": "https://www.healthcare.gov/lower-costs/",
+      "source_snippet": "If your income qualifies, you can get extra savings on out-of-pocket costs like deductibles and copayments — but only if you enroll in a Silver plan.",
+      "last_verified_at": "2026-08-12",
+      "verification_status": "auto_extracted"
+    },
+    {
+      "slug": "medicare",
+      "name_local": "Medicare",
+      "name_en": "Medicare (Parts A, B, C, D)",
+      "admin_level": "national",
+      "admin_area": null,
+      "funder": "Centers for Medicare & Medicaid Services (CMS)",
+      "category": "health",
+      "benefit_type": "in_kind",
+      "amount_min": null,
+      "amount_max": null,
+      "amount_currency": "USD",
+      "amount_period": null,
+      "amount_note": "Part A is premium-free for most people with 10 years of Medicare-taxed work; Part B has a standard monthly premium ($202.90 in 2026) and Part D drug plans have separate premiums",
+      "is_automatic": false,
+      "application_url": "https://www.ssa.gov/medicare/sign-up",
+      "application_channel": "online",
+      "deadline_type": "window",
+      "deadline_note": "Initial Enrollment Period around your 65th birthday (7-month window); general enrollment Jan-Mar; penalties for late signup",
+      "procedure_steps": [
+        {
+          "step": 1,
+          "detail": "Sign up through Social Security online, by phone or in person",
+          "url": "https://www.ssa.gov/medicare/sign-up"
+        },
+        {
+          "step": 2,
+          "detail": "Choose Original Medicare or a Medicare Advantage plan",
+          "url": null
+        },
+        {
+          "step": 3,
+          "detail": "Add Part D drug coverage or a Medigap policy if desired",
+          "url": null
+        }
+      ],
+      "documents_required": [
+        {
+          "doc": "Social Security number",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Proof of age and citizenship/residency",
+          "mandatory": true,
+          "note": null
+        }
+      ],
+      "eligibility": {
+        "statuses": [
+          "retired"
+        ],
+        "age_min": 65,
+        "age_max": null,
+        "income_annual_max": null,
+        "income_note": "Not income-tested; for people 65+, certain younger people with disabilities, and people with End-Stage Renal Disease",
+        "requires_children": false,
+        "nationality": "citizen_or_pr",
+        "residency_months_min": null,
+        "housing_tenure": null,
+        "student_required": false,
+        "admin_areas": []
+      },
+      "source_url": "https://www.medicare.gov",
+      "source_snippet": "Medicare is federal health insurance for people 65 or older, and some people under 65 with certain disabilities or conditions.",
+      "last_verified_at": "2026-08-12",
+      "verification_status": "auto_extracted"
+    },
+    {
+      "slug": "medicare-extra-help-part-d",
+      "name_local": "Extra Help (Part D Low-Income Subsidy)",
+      "name_en": "Extra Help with Medicare Prescription Drug Costs",
+      "admin_level": "national",
+      "admin_area": null,
+      "funder": "Social Security Administration (SSA) / CMS",
+      "category": "health",
+      "benefit_type": "discount",
+      "amount_min": null,
+      "amount_max": null,
+      "amount_currency": "USD",
+      "amount_period": "annual",
+      "amount_note": "Worth an estimated $5,700 per year; enrollees pay no Part D premium/deductible and modest copays (no more than $12.65 brand-name / $5.10 generic in 2026)",
+      "is_automatic": false,
+      "application_url": "https://www.ssa.gov/extrahelp",
+      "application_channel": "online",
+      "deadline_type": "rolling",
+      "deadline_note": null,
+      "procedure_steps": [
+        {
+          "step": 1,
+          "detail": "Apply online at ssa.gov/extrahelp, by phone or at a local SSA office (automatic if you have Medicaid, SSI or a Medicare Savings Program)",
+          "url": null
+        },
+        {
+          "step": 2,
+          "detail": "Provide income and resource information",
+          "url": null
+        },
+        {
+          "step": 3,
+          "detail": "SSA mails a decision; then enroll in a Part D plan",
+          "url": null
+        }
+      ],
+      "documents_required": [
+        {
+          "doc": "Income records",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Resource/asset information",
+          "mandatory": true,
+          "note": null
+        }
+      ],
+      "eligibility": {
+        "statuses": [
+          "retired"
+        ],
+        "age_min": null,
+        "age_max": null,
+        "income_annual_max": null,
+        "income_note": "Medicare beneficiaries with income below 150% of the federal poverty level and resources at or below $17,600 (single) / $35,130 (couple) in 2025",
+        "requires_children": false,
+        "nationality": "citizen_or_pr",
+        "residency_months_min": null,
+        "housing_tenure": null,
+        "student_required": false,
+        "admin_areas": []
+      },
+      "source_url": "https://www.ssa.gov/extrahelp",
+      "source_snippet": "Medicare Part D Extra Help is a program that covers some of the Part D prescription drug plan costs; its estimated average annual value is $5,700 per person.",
+      "last_verified_at": "2026-08-12",
+      "verification_status": "verified"
+    },
+    {
+      "slug": "medicare-savings-programs",
+      "name_local": "Medicare Savings Programs (QMB, SLMB, QI)",
+      "name_en": "Medicare Savings Programs",
+      "admin_level": "national",
+      "admin_area": null,
+      "funder": "State Medicaid agencies / CMS",
+      "category": "health",
+      "benefit_type": "discount",
+      "amount_min": null,
+      "amount_max": null,
+      "amount_currency": "USD",
+      "amount_period": "monthly",
+      "amount_note": "Pays the Medicare Part B premium (and, under QMB, deductibles and coinsurance); worth at least the Part B premium per month",
+      "is_automatic": false,
+      "application_url": "https://www.medicare.gov",
+      "application_channel": "in_person",
+      "deadline_type": "rolling",
+      "deadline_note": null,
+      "procedure_steps": [
+        {
+          "step": 1,
+          "detail": "Apply through your state Medicaid office (each state runs these programs)",
+          "url": null
+        },
+        {
+          "step": 2,
+          "detail": "Provide income and resource information",
+          "url": null
+        },
+        {
+          "step": 3,
+          "detail": "State notifies you and the premium savings appear on your Medicare/Social Security record",
+          "url": null
+        }
+      ],
+      "documents_required": [
+        {
+          "doc": "Income records",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Resource information",
+          "mandatory": true,
+          "note": null
+        }
+      ],
+      "eligibility": {
+        "statuses": [
+          "retired"
+        ],
+        "age_min": null,
+        "age_max": null,
+        "income_annual_max": null,
+        "income_note": "Medicare beneficiaries with limited income and resources; QMB, SLMB and QI have different income ceilings set as percentages of the federal poverty level",
+        "requires_children": false,
+        "nationality": "citizen_or_pr",
+        "residency_months_min": null,
+        "housing_tenure": null,
+        "student_required": false,
+        "admin_areas": []
+      },
+      "source_url": "https://www.medicare.gov",
+      "source_snippet": "Medicare Savings Programs help pay Medicare premiums and in some cases deductibles, coinsurance and copayments for people with limited income and resources.",
+      "last_verified_at": "2026-08-12",
+      "verification_status": "auto_extracted"
+    },
+    {
+      "slug": "section-8-housing-choice-voucher",
+      "name_local": "Housing Choice Voucher Program (Section 8)",
+      "name_en": "Section 8 Housing Choice Vouchers",
+      "admin_level": "national",
+      "admin_area": null,
+      "funder": "U.S. Department of Housing and Urban Development (HUD) / local Public Housing Agencies",
+      "category": "housing",
+      "benefit_type": "in_kind",
+      "amount_min": null,
+      "amount_max": null,
+      "amount_currency": "USD",
+      "amount_period": "monthly",
+      "amount_note": "PHA pays the landlord the difference between about 30% of household income and the rent up to a local payment standard",
+      "is_automatic": false,
+      "application_url": "https://www.hud.gov/topics/housing_choice_voucher_program_section_8",
+      "application_channel": "in_person",
+      "deadline_type": "rolling",
+      "deadline_note": null,
+      "procedure_steps": [
+        {
+          "step": 1,
+          "detail": "Find your local Public Housing Agency (PHA) and join the waiting list when open",
+          "url": "https://www.hud.gov/program_offices/public_indian_housing/pha/contacts"
+        },
+        {
+          "step": 2,
+          "detail": "When selected, attend a briefing and receive a voucher",
+          "url": null
+        },
+        {
+          "step": 3,
+          "detail": "Find a qualifying unit; PHA inspects it and pays its share of rent to the landlord",
+          "url": null
+        }
+      ],
+      "documents_required": [
+        {
+          "doc": "Proof of identity and citizenship/eligible immigration status",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Income verification for all household members",
+          "mandatory": true,
+          "note": null
+        }
+      ],
+      "eligibility": {
+        "statuses": [],
+        "age_min": null,
+        "age_max": null,
+        "income_annual_max": null,
+        "income_note": "Income generally at or below 50% of area median income; 75% of new vouchers must go to households at or below 30% of area median income or the poverty line",
+        "requires_children": false,
+        "nationality": "citizen_or_pr",
+        "residency_months_min": null,
+        "housing_tenure": "renting",
+        "student_required": false,
+        "admin_areas": []
+      },
+      "source_url": "https://www.usa.gov/housing-voucher-section-8",
+      "source_snippet": "The Housing Choice Voucher (HCV) Program, also called Section 8, is run by the Department of Housing and Urban Development (HUD). The program gives you a voucher to help you afford safe, private housing.",
+      "last_verified_at": "2026-08-12",
+      "verification_status": "verified"
+    },
+    {
+      "slug": "public-housing",
+      "name_local": "Public Housing",
+      "name_en": "Public Housing",
+      "admin_level": "national",
+      "admin_area": null,
+      "funder": "U.S. Department of Housing and Urban Development (HUD) / local Public Housing Agencies",
+      "category": "housing",
+      "benefit_type": "discount",
+      "amount_min": null,
+      "amount_max": null,
+      "amount_currency": "USD",
+      "amount_period": "monthly",
+      "amount_note": "Rent is generally capped at about 30% of adjusted household income in PHA-owned apartments",
+      "is_automatic": false,
+      "application_url": "https://www.hud.gov/topics/public_housing",
+      "application_channel": "in_person",
+      "deadline_type": "rolling",
+      "deadline_note": null,
+      "procedure_steps": [
+        {
+          "step": 1,
+          "detail": "Apply at your local Public Housing Agency",
+          "url": "https://www.hud.gov/program_offices/public_indian_housing/pha/contacts"
+        },
+        {
+          "step": 2,
+          "detail": "Join the waiting list for available units",
+          "url": null
+        },
+        {
+          "step": 3,
+          "detail": "Sign a lease for a PHA-owned unit when offered",
+          "url": null
+        }
+      ],
+      "documents_required": [
+        {
+          "doc": "Proof of identity",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Income verification",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Citizenship or eligible immigration status",
+          "mandatory": true,
+          "note": null
+        }
+      ],
+      "eligibility": {
+        "statuses": [],
+        "age_min": null,
+        "age_max": null,
+        "income_annual_max": null,
+        "income_note": "Low-income families, seniors and people with disabilities; income limits at 80% of area median income (lower limits apply to most admissions)",
+        "requires_children": false,
+        "nationality": "citizen_or_pr",
+        "residency_months_min": null,
+        "housing_tenure": "renting",
+        "student_required": false,
+        "admin_areas": []
+      },
+      "source_url": "https://www.hud.gov/topics/public_housing",
+      "source_snippet": "Public housing provides decent and safe rental housing for eligible low-income families, the elderly, and persons with disabilities.",
+      "last_verified_at": "2026-08-12",
+      "verification_status": "auto_extracted"
+    },
+    {
+      "slug": "usda-section-502-direct-home-loan",
+      "name_local": "Single Family Housing Direct Home Loans (Section 502)",
+      "name_en": "USDA Section 502 Direct Home Loan Program",
+      "admin_level": "national",
+      "admin_area": null,
+      "funder": "USDA Rural Development",
+      "category": "housing",
+      "benefit_type": "discount",
+      "amount_min": null,
+      "amount_max": null,
+      "amount_currency": "USD",
+      "amount_period": "monthly",
+      "amount_note": "Payment assistance (subsidy) reduces the effective mortgage interest rate for low- and very-low-income buyers in eligible rural areas",
+      "is_automatic": false,
+      "application_url": "https://www.rd.usda.gov/programs-services/single-family-housing-direct-home-loans",
+      "application_channel": "in_person",
+      "deadline_type": "rolling",
+      "deadline_note": null,
+      "procedure_steps": [
+        {
+          "step": 1,
+          "detail": "Check that the property is in an eligible rural area and your income is within limits",
+          "url": "https://eligibility.sc.egov.usda.gov"
+        },
+        {
+          "step": 2,
+          "detail": "Apply through your local USDA Rural Development office",
+          "url": null
+        },
+        {
+          "step": 3,
+          "detail": "Complete homebuyer requirements and close on the home",
+          "url": null
+        }
+      ],
+      "documents_required": [
+        {
+          "doc": "Income verification",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Credit history",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Property information",
+          "mandatory": true,
+          "note": null
+        }
+      ],
+      "eligibility": {
+        "statuses": [],
+        "age_min": null,
+        "age_max": null,
+        "income_annual_max": null,
+        "income_note": "Low and very low income (generally below 80% of area median income) for homes in eligible rural areas; must be unable to obtain credit elsewhere",
+        "requires_children": false,
+        "nationality": "citizen_or_pr",
+        "residency_months_min": null,
+        "housing_tenure": "owner",
+        "student_required": false,
+        "admin_areas": []
+      },
+      "source_url": "https://www.rd.usda.gov/programs-services/single-family-housing-direct-home-loans",
+      "source_snippet": "Section 502 direct loans assist low- and very-low-income applicants obtain decent, safe and sanitary housing in eligible rural areas with payment assistance that increases repayment ability.",
+      "last_verified_at": "2026-08-12",
+      "verification_status": "auto_extracted"
+    },
+    {
+      "slug": "liheap",
+      "name_local": "Low Income Home Energy Assistance Program (LIHEAP)",
+      "name_en": "LIHEAP",
+      "admin_level": "national",
+      "admin_area": null,
+      "funder": "U.S. HHS Administration for Children and Families (ACF)",
+      "category": "energy",
+      "benefit_type": "cash_one_off",
+      "amount_min": null,
+      "amount_max": null,
+      "amount_currency": "USD",
+      "amount_period": "annual",
+      "amount_note": "Benefit amount, season and crisis assistance rules are set by each state/territory/tribe; payments usually go directly to the utility or fuel vendor",
+      "is_automatic": false,
+      "application_url": "https://www.acf.hhs.gov/ocs/programs/liheap",
+      "application_channel": "in_person",
+      "deadline_type": "window",
+      "deadline_note": "Application windows vary by state; crisis assistance available year-round in many states",
+      "procedure_steps": [
+        {
+          "step": 1,
+          "detail": "Find your local LIHEAP office via the ACF locator or by calling 1-866-674-6327",
+          "url": "https://www.acf.hhs.gov/ocs/programs/liheap"
+        },
+        {
+          "step": 2,
+          "detail": "Apply with proof of income and energy bills",
+          "url": null
+        },
+        {
+          "step": 3,
+          "detail": "Benefit is paid to your utility or fuel provider",
+          "url": null
+        }
+      ],
+      "documents_required": [
+        {
+          "doc": "Proof of income",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Recent energy bills",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Proof of household members",
+          "mandatory": true,
+          "note": null
+        }
+      ],
+      "eligibility": {
+        "statuses": [],
+        "age_min": null,
+        "age_max": null,
+        "income_annual_max": null,
+        "income_note": "Income-based; federal range is up to 150% of the federal poverty level or 60% of state median income (states choose within federal rules)",
+        "requires_children": false,
+        "nationality": "any_resident",
+        "residency_months_min": null,
+        "housing_tenure": null,
+        "student_required": false,
+        "admin_areas": []
+      },
+      "source_url": "https://www.acf.hhs.gov/ocs/programs/liheap",
+      "source_snippet": "LIHEAP assists eligible low-income households with their heating and cooling energy costs, bill payment assistance, energy crisis assistance, weatherization and energy-related home repairs.",
+      "last_verified_at": "2026-08-12",
+      "verification_status": "auto_extracted"
+    },
+    {
+      "slug": "wap-weatherization-assistance-program",
+      "name_local": "Weatherization Assistance Program (WAP)",
+      "name_en": "Weatherization Assistance Program",
+      "admin_level": "national",
+      "admin_area": null,
+      "funder": "U.S. Department of Energy (DOE)",
+      "category": "energy",
+      "benefit_type": "in_kind",
+      "amount_min": null,
+      "amount_max": null,
+      "amount_currency": "USD",
+      "amount_period": null,
+      "amount_note": "Free home energy-efficiency upgrades (insulation, air sealing, heating system repair/replacement); households save an average of $372 or more per year",
+      "is_automatic": false,
+      "application_url": "https://www.energy.gov/scep/wap/how-apply-weatherization-assistance",
+      "application_channel": "in_person",
+      "deadline_type": "rolling",
+      "deadline_note": null,
+      "procedure_steps": [
+        {
+          "step": 1,
+          "detail": "Identify and contact your state weatherization administrator or local Community Action Agency",
+          "url": "https://www.energy.gov/scep/wap/how-apply-weatherization-assistance"
+        },
+        {
+          "step": 2,
+          "detail": "Apply with proof of income",
+          "url": null
+        },
+        {
+          "step": 3,
+          "detail": "Receive a free energy audit and weatherization work",
+          "url": null
+        }
+      ],
+      "documents_required": [
+        {
+          "doc": "Proof of income",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Proof of homeownership or landlord permission (renters)",
+          "mandatory": true,
+          "note": null
+        }
+      ],
+      "eligibility": {
+        "statuses": [],
+        "age_min": null,
+        "age_max": null,
+        "income_annual_max": null,
+        "income_note": "Households at or below 200% of the federal poverty guidelines or receiving SSI; priority for seniors, people with disabilities and families with children",
+        "requires_children": false,
+        "nationality": "any_resident",
+        "residency_months_min": null,
+        "housing_tenure": null,
+        "student_required": false,
+        "admin_areas": []
+      },
+      "source_url": "https://www.energy.gov/scep/wap/weatherization-assistance-program",
+      "source_snippet": "Households that fall at or below 200% of the federal poverty guidelines or receive Supplemental Security Income (SSI) are eligible for weatherization assistance; services are 100% free for those who qualify.",
+      "last_verified_at": "2026-08-12",
+      "verification_status": "verified"
+    },
+    {
+      "slug": "lifeline-program",
+      "name_local": "Lifeline Program",
+      "name_en": "Lifeline Phone and Internet Discount",
+      "admin_level": "national",
+      "admin_area": null,
+      "funder": "Federal Communications Commission (FCC) / USAC",
+      "category": "income_support",
+      "benefit_type": "discount",
+      "amount_min": null,
+      "amount_max": 9.25,
+      "amount_currency": "USD",
+      "amount_period": "monthly",
+      "amount_note": "Up to $9.25/month off phone, internet or bundled service; up to $34.25/month for consumers on qualifying Tribal lands; one discount per household",
+      "is_automatic": false,
+      "application_url": "https://www.lifelinesupport.org",
+      "application_channel": "online",
+      "deadline_type": "rolling",
+      "deadline_note": null,
+      "procedure_steps": [
+        {
+          "step": 1,
+          "detail": "Check eligibility and apply through the National Verifier at lifelinesupport.org",
+          "url": "https://www.lifelinesupport.org"
+        },
+        {
+          "step": 2,
+          "detail": "Choose a participating phone or internet company",
+          "url": null
+        },
+        {
+          "step": 3,
+          "detail": "Recertify every year to keep the benefit",
+          "url": null
+        }
+      ],
+      "documents_required": [
+        {
+          "doc": "Proof of income or program participation (SNAP, Medicaid, SSI, etc.)",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Proof of identity",
+          "mandatory": true,
+          "note": null
+        }
+      ],
+      "eligibility": {
+        "statuses": [],
+        "age_min": null,
+        "age_max": null,
+        "income_annual_max": null,
+        "income_note": "Income at or below 135% of the federal poverty guidelines, or participation in SNAP, Medicaid, SSI, Federal Public Housing Assistance, Veterans Pension or certain Tribal programs",
+        "requires_children": false,
+        "nationality": "any_resident",
+        "residency_months_min": null,
+        "housing_tenure": null,
+        "student_required": false,
+        "admin_areas": []
+      },
+      "source_url": "https://www.lifelinesupport.org/about-lifeline/",
+      "source_snippet": "Qualifying consumers can get a monthly discount of up to $9.25 off the cost of their phone, internet, or bundled services. Consumers living on qualifying Tribal lands can get up to $34.25 per month.",
+      "last_verified_at": "2026-08-12",
+      "verification_status": "verified"
+    },
+    {
+      "slug": "pell-grant",
+      "name_local": "Federal Pell Grant",
+      "name_en": "Federal Pell Grant",
+      "admin_level": "national",
+      "admin_area": null,
+      "funder": "U.S. Department of Education, Federal Student Aid",
+      "category": "education",
+      "benefit_type": "cash_one_off",
+      "amount_min": 740,
+      "amount_max": 7395,
+      "amount_currency": "USD",
+      "amount_period": "annual",
+      "amount_note": "Award ranges from $740 to $7,395 for 2025-26 and 2026-27, based on Student Aid Index, cost of attendance and enrollment intensity; does not have to be repaid",
+      "is_automatic": false,
+      "application_url": "https://studentaid.gov/h/apply-for-aid/fafsa",
+      "application_channel": "online",
+      "deadline_type": "annual",
+      "deadline_note": "Submit the FAFSA each year (federal deadline June 30; earlier state/school deadlines apply)",
+      "procedure_steps": [
+        {
+          "step": 1,
+          "detail": "Complete the FAFSA at studentaid.gov",
+          "url": "https://studentaid.gov/h/apply-for-aid/fafsa"
+        },
+        {
+          "step": 2,
+          "detail": "Review your FAFSA Submission Summary / Student Aid Index",
+          "url": null
+        },
+        {
+          "step": 3,
+          "detail": "The school's financial aid office applies the Pell Grant to your account",
+          "url": null
+        }
+      ],
+      "documents_required": [
+        {
+          "doc": "Social Security number",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Federal tax information (transferred via IRS data)",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "FSA ID",
+          "mandatory": true,
+          "note": null
+        }
+      ],
+      "eligibility": {
+        "statuses": [
+          "student"
+        ],
+        "age_min": null,
+        "age_max": null,
+        "income_annual_max": null,
+        "income_note": "Undergraduates with exceptional financial need (no prior bachelor's degree); maximum award generally for household income below 175% of federal poverty guidelines (225% for single-parent households)",
+        "requires_children": false,
+        "nationality": "citizen_or_pr",
+        "residency_months_min": null,
+        "housing_tenure": null,
+        "student_required": true,
+        "admin_areas": []
+      },
+      "source_url": "https://studentaid.gov/understand-aid/types/grants/pell",
+      "source_snippet": "For both the 2025-26 and 2026-27 award years, the maximum Pell Grant award is $7,395; eligible students can receive between $740 and $7,395.",
+      "last_verified_at": "2026-08-12",
+      "verification_status": "verified"
+    },
+    {
+      "slug": "fseog-federal-supplemental-educational-opportunity-grant",
+      "name_local": "Federal Supplemental Educational Opportunity Grant (FSEOG)",
+      "name_en": "FSEOG",
+      "admin_level": "national",
+      "admin_area": null,
+      "funder": "U.S. Department of Education, Federal Student Aid",
+      "category": "education",
+      "benefit_type": "cash_one_off",
+      "amount_min": 100,
+      "amount_max": 4000,
+      "amount_currency": "USD",
+      "amount_period": "annual",
+      "amount_note": "$100 to $4,000 per year depending on need, other aid received, and the school's FSEOG funds; priority to Pell Grant recipients with the lowest Student Aid Index",
+      "is_automatic": false,
+      "application_url": "https://studentaid.gov/h/apply-for-aid/fafsa",
+      "application_channel": "online",
+      "deadline_type": "annual",
+      "deadline_note": "File the FAFSA early; each school has a limited FSEOG allocation",
+      "procedure_steps": [
+        {
+          "step": 1,
+          "detail": "File the FAFSA",
+          "url": null
+        },
+        {
+          "step": 2,
+          "detail": "Attend a participating school; the financial aid office awards FSEOG to the neediest students first",
+          "url": null
+        },
+        {
+          "step": 3,
+          "detail": "Funds are credited to your student account",
+          "url": null
+        }
+      ],
+      "documents_required": [
+        {
+          "doc": "FAFSA submission",
+          "mandatory": true,
+          "note": null
+        }
+      ],
+      "eligibility": {
+        "statuses": [
+          "student"
+        ],
+        "age_min": null,
+        "age_max": null,
+        "income_annual_max": null,
+        "income_note": "Undergraduates with exceptional financial need; not all schools participate",
+        "requires_children": false,
+        "nationality": "citizen_or_pr",
+        "residency_months_min": null,
+        "housing_tenure": null,
+        "student_required": true,
+        "admin_areas": []
+      },
+      "source_url": "https://studentaid.gov/understand-aid/types/grants/fseog",
+      "source_snippet": "FSEOG awards range from $100 to $4,000 a year; priority is given to students with the greatest financial need who also receive Pell Grants.",
+      "last_verified_at": "2026-08-12",
+      "verification_status": "auto_extracted"
+    },
+    {
+      "slug": "federal-work-study",
+      "name_local": "Federal Work-Study",
+      "name_en": "Federal Work-Study Program",
+      "admin_level": "national",
+      "admin_area": null,
+      "funder": "U.S. Department of Education, Federal Student Aid",
+      "category": "education",
+      "benefit_type": "cash_monthly",
+      "amount_min": null,
+      "amount_max": null,
+      "amount_currency": "USD",
+      "amount_period": "monthly",
+      "amount_note": "Part-time job earnings (at least federal minimum wage) up to the annual Work-Study award set by the school",
+      "is_automatic": false,
+      "application_url": "https://studentaid.gov/h/apply-for-aid/fafsa",
+      "application_channel": "via_employer",
+      "deadline_type": "annual",
+      "deadline_note": "Indicate interest on the FAFSA; jobs are limited and awarded by schools",
+      "procedure_steps": [
+        {
+          "step": 1,
+          "detail": "File the FAFSA and indicate interest in Work-Study",
+          "url": null
+        },
+        {
+          "step": 2,
+          "detail": "Accept the Work-Study award from your school",
+          "url": null
+        },
+        {
+          "step": 3,
+          "detail": "Find an approved on- or off-campus job and earn up to your award",
+          "url": null
+        }
+      ],
+      "documents_required": [
+        {
+          "doc": "FAFSA submission",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Work authorization documents (I-9)",
+          "mandatory": true,
+          "note": null
+        }
+      ],
+      "eligibility": {
+        "statuses": [
+          "student"
+        ],
+        "age_min": null,
+        "age_max": null,
+        "income_annual_max": null,
+        "income_note": "Undergraduate and graduate students with financial need at participating schools",
+        "requires_children": false,
+        "nationality": "citizen_or_pr",
+        "residency_months_min": null,
+        "housing_tenure": null,
+        "student_required": true,
+        "admin_areas": []
+      },
+      "source_url": "https://studentaid.gov/understand-aid/types/work-study",
+      "source_snippet": "Federal Work-Study provides part-time jobs for undergraduate and graduate students with financial need, allowing them to earn money to help pay education expenses.",
+      "last_verified_at": "2026-08-12",
+      "verification_status": "auto_extracted"
+    },
+    {
+      "slug": "pslf-public-service-loan-forgiveness",
+      "name_local": "Public Service Loan Forgiveness (PSLF)",
+      "name_en": "Public Service Loan Forgiveness",
+      "admin_level": "national",
+      "admin_area": null,
+      "funder": "U.S. Department of Education, Federal Student Aid",
+      "category": "education",
+      "benefit_type": "cash_one_off",
+      "amount_min": null,
+      "amount_max": null,
+      "amount_currency": "USD",
+      "amount_period": "one_off",
+      "amount_note": "Forgives the entire remaining balance on Direct Loans after 120 qualifying monthly payments (10 years) while working full-time for a qualifying public-service employer; forgiven amount is not federally taxed",
+      "is_automatic": false,
+      "application_url": "https://studentaid.gov/manage-loans/forgiveness-cancellation/public-service",
+      "application_channel": "online",
+      "deadline_type": "rolling",
+      "deadline_note": null,
+      "procedure_steps": [
+        {
+          "step": 1,
+          "detail": "Confirm your employer qualifies with the PSLF Help Tool",
+          "url": "https://studentaid.gov/pslf/"
+        },
+        {
+          "step": 2,
+          "detail": "Submit the PSLF Employment Certification Form annually",
+          "url": null
+        },
+        {
+          "step": 3,
+          "detail": "Make 120 qualifying payments on a Direct Loan under a qualifying plan, then apply for forgiveness",
+          "url": null
+        }
+      ],
+      "documents_required": [
+        {
+          "doc": "Employer certification forms",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Loan and payment records",
+          "mandatory": true,
+          "note": null
+        }
+      ],
+      "eligibility": {
+        "statuses": [
+          "employee"
+        ],
+        "age_min": null,
+        "age_max": null,
+        "income_annual_max": null,
+        "income_note": "Not income-tested; requires Direct Loans, full-time work for government or a 501(c)(3) nonprofit, and 120 qualifying payments",
+        "requires_children": false,
+        "nationality": "citizen_or_pr",
+        "residency_months_min": null,
+        "housing_tenure": null,
+        "student_required": false,
+        "admin_areas": []
+      },
+      "source_url": "https://studentaid.gov/manage-loans/forgiveness-cancellation/public-service",
+      "source_snippet": "PSLF forgives the remaining balance on your Direct Loans after you have made 120 qualifying monthly payments under a qualifying repayment plan while working full-time for a qualifying employer.",
+      "last_verified_at": "2026-08-12",
+      "verification_status": "auto_extracted"
+    },
+    {
+      "slug": "head-start",
+      "name_local": "Head Start and Early Head Start",
+      "name_en": "Head Start",
+      "admin_level": "national",
+      "admin_area": null,
+      "funder": "U.S. HHS Administration for Children and Families, Office of Head Start",
+      "category": "family",
+      "benefit_type": "in_kind",
+      "amount_min": null,
+      "amount_max": null,
+      "amount_currency": "USD",
+      "amount_period": null,
+      "amount_note": "Free early childhood education, health, nutrition and family services for children from birth to age 5 and pregnant women",
+      "is_automatic": false,
+      "application_url": "https://headstart.gov",
+      "application_channel": "in_person",
+      "deadline_type": "rolling",
+      "deadline_note": null,
+      "procedure_steps": [
+        {
+          "step": 1,
+          "detail": "Find a local Head Start program using the Head Start Center Locator",
+          "url": "https://headstart.gov"
+        },
+        {
+          "step": 2,
+          "detail": "Apply with proof of income and child's age",
+          "url": null
+        },
+        {
+          "step": 3,
+          "detail": "Program enrolls the child; priority to children in foster care, homelessness and public-assistance families",
+          "url": null
+        }
+      ],
+      "documents_required": [
+        {
+          "doc": "Proof of child's age",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Proof of income or program participation (TANF/SNAP/SSI)",
+          "mandatory": true,
+          "note": null
+        }
+      ],
+      "eligibility": {
+        "statuses": [],
+        "age_min": null,
+        "age_max": null,
+        "income_annual_max": null,
+        "income_note": "Family income at or below the federal poverty level, or children in foster care, homeless families, or families receiving public assistance; programs may serve some families up to 130% of poverty",
+        "requires_children": true,
+        "nationality": "any_resident",
+        "residency_months_min": null,
+        "housing_tenure": null,
+        "student_required": false,
+        "admin_areas": []
+      },
+      "source_url": "https://www.acf.hhs.gov/ohs",
+      "source_snippet": "Head Start programs promote school readiness of infants, toddlers, and preschool-aged children from low-income families through education, health and family services.",
+      "last_verified_at": "2026-08-12",
+      "verification_status": "auto_extracted"
+    },
+    {
+      "slug": "ccdf-child-care-assistance",
+      "name_local": "Child Care and Development Fund (CCDF) Subsidies",
+      "name_en": "Child Care Financial Assistance (CCDF)",
+      "admin_level": "national",
+      "admin_area": null,
+      "funder": "U.S. HHS Administration for Children and Families, Office of Child Care",
+      "category": "family",
+      "benefit_type": "discount",
+      "amount_min": null,
+      "amount_max": null,
+      "amount_currency": "USD",
+      "amount_period": "monthly",
+      "amount_note": "Subsidy covers all or most of child care costs; parents pay a sliding-scale copayment set by the state",
+      "is_automatic": false,
+      "application_url": "https://childcare.gov",
+      "application_channel": "in_person",
+      "deadline_type": "rolling",
+      "deadline_note": null,
+      "procedure_steps": [
+        {
+          "step": 1,
+          "detail": "Find your state or territory child care assistance office via childcare.gov",
+          "url": "https://childcare.gov"
+        },
+        {
+          "step": 2,
+          "detail": "Apply and provide work/education and income information",
+          "url": null
+        },
+        {
+          "step": 3,
+          "detail": "Choose an eligible provider; subsidy is paid to the provider",
+          "url": null
+        }
+      ],
+      "documents_required": [
+        {
+          "doc": "Proof of income and work/school activity",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Children's proof of age",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Provider information",
+          "mandatory": true,
+          "note": null
+        }
+      ],
+      "eligibility": {
+        "statuses": [
+          "parent",
+          "employee",
+          "self_employed",
+          "student"
+        ],
+        "age_min": null,
+        "age_max": null,
+        "income_annual_max": null,
+        "income_note": "Children under 13 (older if disabled) in low-income working families; states set income limits within the federal ceiling of 85% of state median income",
+        "requires_children": true,
+        "nationality": "any_resident",
+        "residency_months_min": null,
+        "housing_tenure": null,
+        "student_required": false,
+        "admin_areas": []
+      },
+      "source_url": "https://www.acf.hhs.gov/occ",
+      "source_snippet": "CCDF helps low-income families access child care so parents can work or attend education and training, administered by state, territory and tribal lead agencies.",
+      "last_verified_at": "2026-08-12",
+      "verification_status": "auto_extracted"
+    },
+    {
+      "slug": "cacfp-child-adult-care-food-program",
+      "name_local": "Child and Adult Care Food Program (CACFP)",
+      "name_en": "CACFP",
+      "admin_level": "national",
+      "admin_area": null,
+      "funder": "USDA Food and Nutrition Service (FNS)",
+      "category": "family",
+      "benefit_type": "in_kind",
+      "amount_min": null,
+      "amount_max": null,
+      "amount_currency": "USD",
+      "amount_period": null,
+      "amount_note": "Free or reduced-price nutritious meals and snacks served in child care centers, day care homes, after-school programs and adult day care",
+      "is_automatic": false,
+      "application_url": "https://www.fns.usda.gov/cacfp",
+      "application_channel": "in_person",
+      "deadline_type": "none",
+      "deadline_note": null,
+      "procedure_steps": [
+        {
+          "step": 1,
+          "detail": "Enroll your child in a participating child care or after-school program",
+          "url": null
+        },
+        {
+          "step": 2,
+          "detail": "Complete the center's income eligibility form",
+          "url": null
+        },
+        {
+          "step": 3,
+          "detail": "Meals are served free or at reduced price at the site",
+          "url": null
+        }
+      ],
+      "documents_required": [
+        {
+          "doc": "Income eligibility form from the care provider",
+          "mandatory": true,
+          "note": null
+        }
+      ],
+      "eligibility": {
+        "statuses": [],
+        "age_min": null,
+        "age_max": null,
+        "income_annual_max": null,
+        "income_note": "Free meals at or below 130% of poverty; reduced price between 130% and 185% FPL; centers in low-income areas may serve free meals to all",
+        "requires_children": true,
+        "nationality": "any_resident",
+        "residency_months_min": null,
+        "housing_tenure": null,
+        "student_required": false,
+        "admin_areas": []
+      },
+      "source_url": "https://www.fns.usda.gov/cacfp",
+      "source_snippet": "CACFP provides aid to child and adult care institutions and family or group day care homes for the provision of nutritious foods.",
+      "last_verified_at": "2026-08-12",
+      "verification_status": "auto_extracted"
+    },
+    {
+      "slug": "sba-8a-business-development-program",
+      "name_local": "8(a) Business Development Program",
+      "name_en": "SBA 8(a) Business Development Program",
+      "admin_level": "national",
+      "admin_area": null,
+      "funder": "U.S. Small Business Administration (SBA)",
+      "category": "business",
+      "benefit_type": "in_kind",
+      "amount_min": null,
+      "amount_max": null,
+      "amount_currency": "USD",
+      "amount_period": null,
+      "amount_note": "Access to set-aside and sole-source federal contracts plus business development assistance for up to 9 years; no direct cash grant",
+      "is_automatic": false,
+      "application_url": "https://www.sba.gov/federal-contracting/contracting-assistance-programs/8a-business-development-program",
+      "application_channel": "online",
+      "deadline_type": "rolling",
+      "deadline_note": null,
+      "procedure_steps": [
+        {
+          "step": 1,
+          "detail": "Create an account at certify.sba.gov and gather ownership/ financial documents",
+          "url": "https://certify.sba.gov"
+        },
+        {
+          "step": 2,
+          "detail": "Submit the 8(a) application showing social and economic disadvantage",
+          "url": null
+        },
+        {
+          "step": 3,
+          "detail": "If certified, pursue set-aside federal contracts with SBA support",
+          "url": null
+        }
+      ],
+      "documents_required": [
+        {
+          "doc": "Business and personal tax returns",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Proof of ownership and control",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Personal net worth statement",
+          "mandatory": true,
+          "note": null
+        }
+      ],
+      "eligibility": {
+        "statuses": [
+          "self_employed"
+        ],
+        "age_min": null,
+        "age_max": null,
+        "income_annual_max": null,
+        "income_note": "Businesses at least 51% owned by socially and economically disadvantaged U.S. citizens; personal net worth under $850,000, AGI under $400,000 and assets under $6.5 million",
+        "requires_children": false,
+        "nationality": "citizen_or_pr",
+        "residency_months_min": null,
+        "housing_tenure": null,
+        "student_required": false,
+        "admin_areas": []
+      },
+      "source_url": "https://www.sba.gov/federal-contracting/contracting-assistance-programs/8a-business-development-program",
+      "source_snippet": "The 8(a) program helps small businesses owned by socially and economically disadvantaged people compete for set-aside and sole-source federal contracts.",
+      "last_verified_at": "2026-08-12",
+      "verification_status": "auto_extracted"
+    },
+    {
+      "slug": "sba-microloan-program",
+      "name_local": "SBA Microloan Program",
+      "name_en": "SBA Microloans",
+      "admin_level": "national",
+      "admin_area": null,
+      "funder": "U.S. Small Business Administration (SBA)",
+      "category": "business",
+      "benefit_type": "cash_one_off",
+      "amount_min": null,
+      "amount_max": 50000,
+      "amount_currency": "USD",
+      "amount_period": "one_off",
+      "amount_note": "Loans up to $50,000 (average about $13,000) through nonprofit intermediary lenders for small business startup and expansion; this is a repayable loan, not a grant",
+      "is_automatic": false,
+      "application_url": "https://www.sba.gov/funding-programs/loans/microloans",
+      "application_channel": "in_person",
+      "deadline_type": "rolling",
+      "deadline_note": null,
+      "procedure_steps": [
+        {
+          "step": 1,
+          "detail": "Find an SBA-approved intermediary microlender in your area",
+          "url": null
+        },
+        {
+          "step": 2,
+          "detail": "Apply with a business plan and financials",
+          "url": null
+        },
+        {
+          "step": 3,
+          "detail": "Receive funds (some intermediaries require training or collateral)",
+          "url": null
+        }
+      ],
+      "documents_required": [
+        {
+          "doc": "Business plan",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Personal and business financial statements",
+          "mandatory": true,
+          "note": null
+        }
+      ],
+      "eligibility": {
+        "statuses": [
+          "self_employed"
+        ],
+        "age_min": null,
+        "age_max": null,
+        "income_annual_max": null,
+        "income_note": "For-profit small businesses, including many low-income entrepreneurs who cannot get conventional bank credit",
+        "requires_children": false,
+        "nationality": "any_resident",
+        "residency_months_min": null,
+        "housing_tenure": null,
+        "student_required": false,
+        "admin_areas": []
+      },
+      "source_url": "https://www.sba.gov/funding-programs/loans/microloans",
+      "source_snippet": "The Microloan program provides loans up to $50,000 to help small businesses and certain not-for-profit childcare centers start up and expand.",
+      "last_verified_at": "2026-08-12",
+      "verification_status": "auto_extracted"
+    },
+    {
+      "slug": "caleitc-california-earned-income-tax-credit",
+      "name_local": "California Earned Income Tax Credit (CalEITC)",
+      "name_en": "California Earned Income Tax Credit",
+      "admin_level": "state",
+      "admin_area": "California",
+      "funder": "California Franchise Tax Board (FTB)",
+      "category": "tax",
+      "benefit_type": "tax_credit",
+      "amount_min": null,
+      "amount_max": 3756,
+      "amount_currency": "USD",
+      "amount_period": "annual",
+      "amount_note": "Refundable credit up to $3,756 for tax year 2025 depending on income and number of children ($302 with no children); stacks with federal EITC and Young Child Tax Credit",
+      "is_automatic": false,
+      "application_url": "https://www.ftb.ca.gov/caleitc",
+      "application_channel": "online",
+      "deadline_type": "annual",
+      "deadline_note": "Claimed on the California income tax return with Form FTB 3514 (ITIN filers eligible)",
+      "procedure_steps": [
+        {
+          "step": 1,
+          "detail": "Check eligibility with the FTB CalEITC calculator",
+          "url": "https://www.ftb.ca.gov/caleitc"
+        },
+        {
+          "step": 2,
+          "detail": "File a California return and complete Form FTB 3514 (free via CalFile)",
+          "url": null
+        },
+        {
+          "step": 3,
+          "detail": "Receive the credit as a refund even if you owe no tax",
+          "url": null
+        }
+      ],
+      "documents_required": [
+        {
+          "doc": "SSN or ITIN",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Income records (W-2, self-employment records)",
+          "mandatory": true,
+          "note": null
+        }
+      ],
+      "eligibility": {
+        "statuses": [
+          "employee",
+          "self_employed"
+        ],
+        "age_min": null,
+        "age_max": null,
+        "income_annual_max": null,
+        "income_note": "California residents with earned income up to about $32,900 (tax year 2025); ITIN filers are eligible",
+        "requires_children": false,
+        "nationality": "any_resident",
+        "residency_months_min": null,
+        "housing_tenure": null,
+        "student_required": false,
+        "admin_areas": [
+          "California"
+        ]
+      },
+      "source_url": "https://www.ftb.ca.gov/caleitc",
+      "source_snippet": "Under CalEITC, individuals and families earning less than $31,950 may qualify for a cash back tax credit; claim it with Form FTB 3514 on your state return.",
+      "last_verified_at": "2026-08-12",
+      "verification_status": "verified"
+    },
+    {
+      "slug": "california-young-child-tax-credit",
+      "name_local": "Young Child Tax Credit (YCTC)",
+      "name_en": "California Young Child Tax Credit",
+      "admin_level": "state",
+      "admin_area": "California",
+      "funder": "California Franchise Tax Board (FTB)",
+      "category": "tax",
+      "benefit_type": "tax_credit",
+      "amount_min": null,
+      "amount_max": 1189,
+      "amount_currency": "USD",
+      "amount_period": "annual",
+      "amount_note": "Refundable credit of up to about $1,189 per tax return (tax year 2025) for CalEITC-eligible families with a child under age 6",
+      "is_automatic": false,
+      "application_url": "https://www.ftb.ca.gov/file/personal/credits/young-child-tax-credit.html",
+      "application_channel": "online",
+      "deadline_type": "annual",
+      "deadline_note": "Claimed with Form FTB 3514 on the California tax return",
+      "procedure_steps": [
+        {
+          "step": 1,
+          "detail": "File a California return with Form FTB 3514",
+          "url": null
+        },
+        {
+          "step": 2,
+          "detail": "Claim YCTC for each return with a qualifying child under 6",
+          "url": null
+        },
+        {
+          "step": 3,
+          "detail": "Refund issued even with zero tax liability",
+          "url": null
+        }
+      ],
+      "documents_required": [
+        {
+          "doc": "SSN or ITIN",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Proof of child's age",
+          "mandatory": true,
+          "note": null
+        }
+      ],
+      "eligibility": {
+        "statuses": [
+          "employee",
+          "self_employed",
+          "parent"
+        ],
+        "age_min": null,
+        "age_max": null,
+        "income_annual_max": null,
+        "income_note": "Must qualify for CalEITC (or have zero income) with a child under age 6",
+        "requires_children": true,
+        "nationality": "any_resident",
+        "residency_months_min": null,
+        "housing_tenure": null,
+        "student_required": false,
+        "admin_areas": [
+          "California"
+        ]
+      },
+      "source_url": "https://www.ftb.ca.gov/file/personal/credits/young-child-tax-credit.html",
+      "source_snippet": "The Young Child Tax Credit provides a credit of up to $1,189 per tax return for Californians who qualify for CalEITC and have a child under 6 years old.",
+      "last_verified_at": "2026-08-12",
+      "verification_status": "auto_extracted"
+    },
+    {
+      "slug": "calfresh",
+      "name_local": "CalFresh",
+      "name_en": "CalFresh (California SNAP)",
+      "admin_level": "state",
+      "admin_area": "California",
+      "funder": "California Department of Social Services (CDSS)",
+      "category": "income_support",
+      "benefit_type": "in_kind",
+      "amount_min": null,
+      "amount_max": null,
+      "amount_currency": "USD",
+      "amount_period": "monthly",
+      "amount_note": "California's version of SNAP; monthly EBT allotment depends on household size and income",
+      "is_automatic": false,
+      "application_url": "https://www.benefitscal.com",
+      "application_channel": "online",
+      "deadline_type": "rolling",
+      "deadline_note": null,
+      "procedure_steps": [
+        {
+          "step": 1,
+          "detail": "Apply online at BenefitsCal or at your county social services office",
+          "url": "https://www.benefitscal.com"
+        },
+        {
+          "step": 2,
+          "detail": "Complete a phone interview",
+          "url": null
+        },
+        {
+          "step": 3,
+          "detail": "Receive an EBT card if approved (expedited service within 3 days in emergencies)",
+          "url": null
+        }
+      ],
+      "documents_required": [
+        {
+          "doc": "Proof of identity",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Proof of income",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Proof of California residency",
+          "mandatory": true,
+          "note": null
+        }
+      ],
+      "eligibility": {
+        "statuses": [],
+        "age_min": null,
+        "age_max": null,
+        "income_annual_max": null,
+        "income_note": "California households meeting SNAP income rules (generally up to 130% of poverty gross income, higher via categorical eligibility)",
+        "requires_children": false,
+        "nationality": "any_resident",
+        "residency_months_min": null,
+        "housing_tenure": null,
+        "student_required": false,
+        "admin_areas": [
+          "California"
+        ]
+      },
+      "source_url": "https://www.cdss.ca.gov/calfresh",
+      "source_snippet": "CalFresh, federally known as SNAP, issues monthly electronic benefits that can be used to buy most foods at many markets and food stores.",
+      "last_verified_at": "2026-08-12",
+      "verification_status": "auto_extracted"
+    },
+    {
+      "slug": "medi-cal",
+      "name_local": "Medi-Cal",
+      "name_en": "Medi-Cal (California Medicaid)",
+      "admin_level": "state",
+      "admin_area": "California",
+      "funder": "California Department of Health Care Services (DHCS)",
+      "category": "health",
+      "benefit_type": "in_kind",
+      "amount_min": null,
+      "amount_max": null,
+      "amount_currency": "USD",
+      "amount_period": null,
+      "amount_note": "Free or low-cost health coverage; most enrollees pay no premiums or copays",
+      "is_automatic": false,
+      "application_url": "https://www.benefitscal.com",
+      "application_channel": "online",
+      "deadline_type": "rolling",
+      "deadline_note": null,
+      "procedure_steps": [
+        {
+          "step": 1,
+          "detail": "Apply via BenefitsCal, Covered California, or your county office",
+          "url": "https://www.benefitscal.com"
+        },
+        {
+          "step": 2,
+          "detail": "County determines eligibility",
+          "url": null
+        },
+        {
+          "step": 3,
+          "detail": "Choose a managed care plan in your county",
+          "url": null
+        }
+      ],
+      "documents_required": [
+        {
+          "doc": "Proof of identity",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Income information",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "California residency",
+          "mandatory": true,
+          "note": null
+        }
+      ],
+      "eligibility": {
+        "statuses": [],
+        "age_min": null,
+        "age_max": null,
+        "income_annual_max": null,
+        "income_note": "Adults up to 138% of the federal poverty level; higher limits for children and pregnant women; California covers eligible residents regardless of immigration status",
+        "requires_children": false,
+        "nationality": "any_resident",
+        "residency_months_min": null,
+        "housing_tenure": null,
+        "student_required": false,
+        "admin_areas": [
+          "California"
+        ]
+      },
+      "source_url": "https://www.dhcs.ca.gov/services/medi-cal",
+      "source_snippet": "Medi-Cal is California's Medicaid program, offering free or low-cost health coverage for children and adults with limited income and resources.",
+      "last_verified_at": "2026-08-12",
+      "verification_status": "auto_extracted"
+    },
+    {
+      "slug": "calworks",
+      "name_local": "CalWORKs (California Work Opportunity and Responsibility to Kids)",
+      "name_en": "CalWORKs",
+      "admin_level": "state",
+      "admin_area": "California",
+      "funder": "California Department of Social Services (CDSS)",
+      "category": "income_support",
+      "benefit_type": "cash_monthly",
+      "amount_min": null,
+      "amount_max": null,
+      "amount_currency": "USD",
+      "amount_period": "monthly",
+      "amount_note": "Monthly cash aid amount depends on family size, income and county; recipients also get welfare-to-work services and child care",
+      "is_automatic": false,
+      "application_url": "https://www.benefitscal.com",
+      "application_channel": "online",
+      "deadline_type": "rolling",
+      "deadline_note": null,
+      "procedure_steps": [
+        {
+          "step": 1,
+          "detail": "Apply at BenefitsCal or your county social services office",
+          "url": null
+        },
+        {
+          "step": 2,
+          "detail": "Complete an intake interview and eligibility determination",
+          "url": null
+        },
+        {
+          "step": 3,
+          "detail": "Participate in the welfare-to-work program while receiving cash aid",
+          "url": null
+        }
+      ],
+      "documents_required": [
+        {
+          "doc": "Proof of identity",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Income and resource records",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Proof of children's ages and school attendance",
+          "mandatory": true,
+          "note": null
+        }
+      ],
+      "eligibility": {
+        "statuses": [
+          "parent",
+          "unemployed",
+          "jobseeker"
+        ],
+        "age_min": null,
+        "age_max": null,
+        "income_annual_max": null,
+        "income_note": "Very low-income California families with children (also pregnant women); state/county income and resource limits apply",
+        "requires_children": true,
+        "nationality": "any_resident",
+        "residency_months_min": null,
+        "housing_tenure": null,
+        "student_required": false,
+        "admin_areas": [
+          "California"
+        ]
+      },
+      "source_url": "https://www.cdss.ca.gov/calworks",
+      "source_snippet": "CalWORKs is California's TANF program providing cash aid and services to eligible needy California families with children.",
+      "last_verified_at": "2026-08-12",
+      "verification_status": "auto_extracted"
+    },
+    {
+      "slug": "ny-heap-home-energy-assistance-program",
+      "name_local": "Home Energy Assistance Program (HEAP)",
+      "name_en": "New York HEAP",
+      "admin_level": "state",
+      "admin_area": "New York",
+      "funder": "New York State Office of Temporary and Disability Assistance (OTDA)",
+      "category": "energy",
+      "benefit_type": "cash_one_off",
+      "amount_min": null,
+      "amount_max": 996,
+      "amount_currency": "USD",
+      "amount_period": "annual",
+      "amount_note": "Regular benefit of up to $996 per season depending on heating type and income; separate Emergency, Heating Equipment Repair/Replacement and Cooling Assistance components",
+      "is_automatic": false,
+      "application_url": "https://www.mybenefits.ny.gov",
+      "application_channel": "online",
+      "deadline_type": "window",
+      "deadline_note": "Regular benefit typically opens in early November/December and runs until funds are exhausted; emergency component opens in January",
+      "procedure_steps": [
+        {
+          "step": 1,
+          "detail": "Apply online at myBenefits, by mail or at your local department of social services",
+          "url": "https://otda.ny.gov/programs/heap/"
+        },
+        {
+          "step": 2,
+          "detail": "Provide income, household and heating cost information",
+          "url": null
+        },
+        {
+          "step": 3,
+          "detail": "Benefit is paid directly to your utility or fuel vendor",
+          "url": null
+        }
+      ],
+      "documents_required": [
+        {
+          "doc": "Proof of income",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Heating/utility bills",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "SSNs for household members",
+          "mandatory": true,
+          "note": null
+        }
+      ],
+      "eligibility": {
+        "statuses": [],
+        "age_min": null,
+        "age_max": null,
+        "income_annual_max": null,
+        "income_note": "New York households within published HEAP income limits (tiered by household size); receipt of SNAP, TA or SSI can confer eligibility",
+        "requires_children": false,
+        "nationality": "any_resident",
+        "residency_months_min": null,
+        "housing_tenure": null,
+        "student_required": false,
+        "admin_areas": [
+          "New York"
+        ]
+      },
+      "source_url": "https://otda.ny.gov/programs/heap/",
+      "source_snippet": "Eligible households can receive up to $996 through the Regular HEAP benefit, depending on how they heat their home; payments go directly to your utility company or energy provider.",
+      "last_verified_at": "2026-08-12",
+      "verification_status": "verified"
+    },
+    {
+      "slug": "ny-empire-state-child-credit",
+      "name_local": "Empire State Child Credit",
+      "name_en": "Empire State Child Credit",
+      "admin_level": "state",
+      "admin_area": "New York",
+      "funder": "New York State Department of Taxation and Finance",
+      "category": "tax",
+      "benefit_type": "tax_credit",
+      "amount_min": null,
+      "amount_max": null,
+      "amount_currency": "USD",
+      "amount_period": "annual",
+      "amount_note": "Refundable credit per qualifying child; expanded amounts for 2025 (up to $1,000 for children under 4 and $330 for children ages 4-16 for eligible filers)",
+      "is_automatic": false,
+      "application_url": "https://www.tax.ny.gov/pit/credits/",
+      "application_channel": "online",
+      "deadline_type": "annual",
+      "deadline_note": "Claimed on the New York State income tax return (Form IT-213)",
+      "procedure_steps": [
+        {
+          "step": 1,
+          "detail": "Check eligibility on the Tax Department website",
+          "url": null
+        },
+        {
+          "step": 2,
+          "detail": "File a New York return with Form IT-213",
+          "url": null
+        },
+        {
+          "step": 3,
+          "detail": "Credit is refunded with your state refund",
+          "url": null
+        }
+      ],
+      "documents_required": [
+        {
+          "doc": "SSNs for qualifying children",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Federal return information",
+          "mandatory": true,
+          "note": null
+        }
+      ],
+      "eligibility": {
+        "statuses": [
+          "employee",
+          "self_employed",
+          "parent"
+        ],
+        "age_min": null,
+        "age_max": null,
+        "income_annual_max": null,
+        "income_note": "New York residents with at least one qualifying child under 17 and federal child tax credit eligibility or income under state thresholds",
+        "requires_children": true,
+        "nationality": "any_resident",
+        "residency_months_min": null,
+        "housing_tenure": null,
+        "student_required": false,
+        "admin_areas": [
+          "New York"
+        ]
+      },
+      "source_url": "https://www.tax.ny.gov/pit/credits/",
+      "source_snippet": "The Empire State Child Credit is a refundable credit for New York taxpayers with qualifying children under age 17.",
+      "last_verified_at": "2026-08-12",
+      "verification_status": "auto_extracted"
+    },
+    {
+      "slug": "ny-excelsior-scholarship",
+      "name_local": "Excelsior Scholarship",
+      "name_en": "New York Excelsior Scholarship",
+      "admin_level": "state",
+      "admin_area": "New York",
+      "funder": "New York State Higher Education Services Corporation (HESC)",
+      "category": "education",
+      "benefit_type": "in_kind",
+      "amount_min": null,
+      "amount_max": null,
+      "amount_currency": "USD",
+      "amount_period": "annual",
+      "amount_note": "Covers remaining SUNY or CUNY tuition after Pell, TAP and other aid ('last-dollar'); students must complete 30 credits per year and live/work in NY after graduation",
+      "is_automatic": false,
+      "application_url": "https://www.hesc.ny.gov/excelsior/",
+      "application_channel": "online",
+      "deadline_type": "window",
+      "deadline_note": "Annual application window (typically summer); FAFSA and TAP applications also required",
+      "procedure_steps": [
+        {
+          "step": 1,
+          "detail": "File the FAFSA and the NYS TAP application",
+          "url": null
+        },
+        {
+          "step": 2,
+          "detail": "Submit the Excelsior Scholarship application at HESC",
+          "url": "https://www.hesc.ny.gov/excelsior/"
+        },
+        {
+          "step": 3,
+          "detail": "Sign the contract agreeing to live and work in New York after graduation",
+          "url": null
+        }
+      ],
+      "documents_required": [
+        {
+          "doc": "FAFSA and TAP applications",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Household income documentation",
+          "mandatory": true,
+          "note": null
+        }
+      ],
+      "eligibility": {
+        "statuses": [
+          "student"
+        ],
+        "age_min": null,
+        "age_max": null,
+        "income_annual_max": 125000,
+        "income_note": "NY resident undergraduates at SUNY/CUNY with household adjusted gross income of $125,000 or less",
+        "requires_children": false,
+        "nationality": "any_resident",
+        "residency_months_min": null,
+        "housing_tenure": null,
+        "student_required": true,
+        "admin_areas": [
+          "New York"
+        ]
+      },
+      "source_url": "https://www.hesc.ny.gov/excelsior/",
+      "source_snippet": "The Excelsior Scholarship, in combination with other student financial aid programs, allows students to attend a SUNY or CUNY college tuition-free.",
+      "last_verified_at": "2026-08-12",
+      "verification_status": "auto_extracted"
+    },
+    {
+      "slug": "ny-tap-tuition-assistance-program",
+      "name_local": "Tuition Assistance Program (TAP)",
+      "name_en": "New York Tuition Assistance Program",
+      "admin_level": "state",
+      "admin_area": "New York",
+      "funder": "New York State Higher Education Services Corporation (HESC)",
+      "category": "education",
+      "benefit_type": "cash_one_off",
+      "amount_min": null,
+      "amount_max": null,
+      "amount_currency": "USD",
+      "amount_period": "annual",
+      "amount_note": "Grant toward tuition at approved New York schools; award depends on income, tuition charged, and family circumstances; does not need to be repaid",
+      "is_automatic": false,
+      "application_url": "https://www.hesc.ny.gov/",
+      "application_channel": "online",
+      "deadline_type": "annual",
+      "deadline_note": "Apply each year by June 30 of the academic year (file the FAFSA first)",
+      "procedure_steps": [
+        {
+          "step": 1,
+          "detail": "File the FAFSA, then complete the NYS TAP application (linked from the FAFSA confirmation page)",
+          "url": null
+        },
+        {
+          "step": 2,
+          "detail": "List your New York college choices",
+          "url": null
+        },
+        {
+          "step": 3,
+          "detail": "HESC notifies the school of your award",
+          "url": null
+        }
+      ],
+      "documents_required": [
+        {
+          "doc": "FAFSA",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "New York State income tax information",
+          "mandatory": true,
+          "note": null
+        }
+      ],
+      "eligibility": {
+        "statuses": [
+          "student"
+        ],
+        "age_min": null,
+        "age_max": null,
+        "income_annual_max": null,
+        "income_note": "New York residents attending approved in-state institutions full-time; income limits differ for dependent, independent and married students",
+        "requires_children": false,
+        "nationality": "any_resident",
+        "residency_months_min": null,
+        "housing_tenure": null,
+        "student_required": true,
+        "admin_areas": [
+          "New York"
+        ]
+      },
+      "source_url": "https://www.hesc.ny.gov/",
+      "source_snippet": "TAP is a New York State grant that helps eligible residents pay tuition at approved colleges and schools in New York.",
+      "last_verified_at": "2026-08-12",
+      "verification_status": "auto_extracted"
+    },
+    {
+      "slug": "ny-essential-plan",
+      "name_local": "Essential Plan",
+      "name_en": "New York Essential Plan",
+      "admin_level": "state",
+      "admin_area": "New York",
+      "funder": "New York State of Health (NY State of Health marketplace)",
+      "category": "health",
+      "benefit_type": "in_kind",
+      "amount_min": null,
+      "amount_max": 0,
+      "amount_currency": "USD",
+      "amount_period": "monthly",
+      "amount_note": "$0 monthly premium and very low out-of-pocket costs for eligible lower-income New Yorkers who do not qualify for Medicaid",
+      "is_automatic": false,
+      "application_url": "https://info.nystateofhealth.ny.gov/essentialplan",
+      "application_channel": "online",
+      "deadline_type": "rolling",
+      "deadline_note": "Enrollment is open year-round through NY State of Health",
+      "procedure_steps": [
+        {
+          "step": 1,
+          "detail": "Apply through NY State of Health online, by phone or with an in-person assistor",
+          "url": "https://nystateofhealth.ny.gov"
+        },
+        {
+          "step": 2,
+          "detail": "If your income is too low for Marketplace subsidies, you are routed to the Essential Plan",
+          "url": null
+        },
+        {
+          "step": 3,
+          "detail": "Choose a plan (premium is $0 for most enrollees)",
+          "url": null
+        }
+      ],
+      "documents_required": [
+        {
+          "doc": "Proof of identity and NY residency",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Income information",
+          "mandatory": true,
+          "note": null
+        }
+      ],
+      "eligibility": {
+        "statuses": [],
+        "age_min": null,
+        "age_max": null,
+        "income_annual_max": null,
+        "income_note": "NY residents ages 19-64 with income up to 250% of the federal poverty level who are not eligible for Medicaid or employer coverage",
+        "requires_children": false,
+        "nationality": "any_resident",
+        "residency_months_min": null,
+        "housing_tenure": null,
+        "student_required": false,
+        "admin_areas": [
+          "New York"
+        ]
+      },
+      "source_url": "https://info.nystateofhealth.ny.gov/essentialplan",
+      "source_snippet": "The Essential Plan offers comprehensive health insurance with no monthly premium and low out-of-pocket costs to eligible lower-income New Yorkers.",
+      "last_verified_at": "2026-08-12",
+      "verification_status": "auto_extracted"
+    },
+    {
+      "slug": "texas-ceap-comprehensive-energy-assistance",
+      "name_local": "Comprehensive Energy Assistance Program (CEAP)",
+      "name_en": "Texas CEAP",
+      "admin_level": "state",
+      "admin_area": "Texas",
+      "funder": "Texas Department of Housing and Community Affairs (TDHCA)",
+      "category": "energy",
+      "benefit_type": "cash_one_off",
+      "amount_min": null,
+      "amount_max": null,
+      "amount_currency": "USD",
+      "amount_period": "annual",
+      "amount_note": "Texas's LIHEAP-funded program; helps low-income households pay electric and gas bills and addresses energy crises; benefit level set locally",
+      "is_automatic": false,
+      "application_url": "https://www.tdhca.texas.gov/",
+      "application_channel": "in_person",
+      "deadline_type": "rolling",
+      "deadline_note": "Apply through the local community action subrecipient; funds limited",
+      "procedure_steps": [
+        {
+          "step": 1,
+          "detail": "Find your local CEAP subrecipient agency via TDHCA's 'Help for Texans' tool",
+          "url": null
+        },
+        {
+          "step": 2,
+          "detail": "Apply with proof of income and utility bills",
+          "url": null
+        },
+        {
+          "step": 3,
+          "detail": "Payment is made to your utility provider",
+          "url": null
+        }
+      ],
+      "documents_required": [
+        {
+          "doc": "Proof of income",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Utility bills",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Proof of identity",
+          "mandatory": true,
+          "note": null
+        }
+      ],
+      "eligibility": {
+        "statuses": [],
+        "age_min": null,
+        "age_max": null,
+        "income_annual_max": null,
+        "income_note": "Texas households with income at or below 150% of the federal poverty guidelines",
+        "requires_children": false,
+        "nationality": "any_resident",
+        "residency_months_min": null,
+        "housing_tenure": null,
+        "student_required": false,
+        "admin_areas": [
+          "Texas"
+        ]
+      },
+      "source_url": "https://www.tdhca.texas.gov/",
+      "source_snippet": "CEAP assists low-income households in meeting their immediate energy needs, including utility payments and energy-related crisis assistance.",
+      "last_verified_at": "2026-08-12",
+      "verification_status": "auto_extracted"
+    },
+    {
+      "slug": "florida-kidcare",
+      "name_local": "Florida KidCare",
+      "name_en": "Florida KidCare (Children's Health Insurance)",
+      "admin_level": "state",
+      "admin_area": "Florida",
+      "funder": "Florida KidCare Program / Florida Healthy Kids Corporation",
+      "category": "health",
+      "benefit_type": "in_kind",
+      "amount_min": null,
+      "amount_max": null,
+      "amount_currency": "USD",
+      "amount_period": "monthly",
+      "amount_note": "Many families pay nothing; others pay a low monthly premium ($15-$20 per household for subsidized coverage) plus small copays",
+      "is_automatic": false,
+      "application_url": "https://www.floridakidcare.org",
+      "application_channel": "online",
+      "deadline_type": "rolling",
+      "deadline_note": null,
+      "procedure_steps": [
+        {
+          "step": 1,
+          "detail": "Apply online at floridakidcare.org (one application covers Medicaid, MediKids, Healthy Kids and CHIP)",
+          "url": null
+        },
+        {
+          "step": 2,
+          "detail": "The program places the child in the right component based on age and income",
+          "url": null
+        },
+        {
+          "step": 3,
+          "detail": "Pay any monthly premium and choose a plan",
+          "url": null
+        }
+      ],
+      "documents_required": [
+        {
+          "doc": "Child's proof of age",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Household income information",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Florida residency",
+          "mandatory": true,
+          "note": null
+        }
+      ],
+      "eligibility": {
+        "statuses": [],
+        "age_min": null,
+        "age_max": 19,
+        "income_annual_max": null,
+        "income_note": "Florida children through age 18 in families within the income guidelines; families above the subsidized limit can buy full-pay coverage",
+        "requires_children": true,
+        "nationality": "any_resident",
+        "residency_months_min": null,
+        "housing_tenure": null,
+        "student_required": false,
+        "admin_areas": [
+          "Florida"
+        ]
+      },
+      "source_url": "https://www.floridakidcare.org",
+      "source_snippet": "Florida KidCare offers quality, affordable health and dental insurance for children from birth through age 18.",
+      "last_verified_at": "2026-08-12",
+      "verification_status": "auto_extracted"
+    },
+    {
+      "slug": "illinois-earned-income-credit",
+      "name_local": "Illinois Earned Income Credit (EIC)",
+      "name_en": "Illinois Earned Income Credit",
+      "admin_level": "state",
+      "admin_area": "Illinois",
+      "funder": "Illinois Department of Revenue (IDOR)",
+      "category": "tax",
+      "benefit_type": "tax_credit",
+      "amount_min": null,
+      "amount_max": null,
+      "amount_currency": "USD",
+      "amount_period": "annual",
+      "amount_note": "Refundable state credit equal to 20% of your federal Earned Income Tax Credit",
+      "is_automatic": false,
+      "application_url": "https://tax.illinois.gov/",
+      "application_channel": "online",
+      "deadline_type": "annual",
+      "deadline_note": "Claimed on the Illinois income tax return (Schedule IL-E/EIC)",
+      "procedure_steps": [
+        {
+          "step": 1,
+          "detail": "Claim the federal EITC on your federal return",
+          "url": null
+        },
+        {
+          "step": 2,
+          "detail": "File an Illinois return and claim 20% of the federal credit",
+          "url": null
+        },
+        {
+          "step": 3,
+          "detail": "Any excess is refunded",
+          "url": null
+        }
+      ],
+      "documents_required": [
+        {
+          "doc": "Federal tax return showing EITC",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "SSNs for filer and qualifying children",
+          "mandatory": true,
+          "note": null
+        }
+      ],
+      "eligibility": {
+        "statuses": [
+          "employee",
+          "self_employed"
+        ],
+        "age_min": null,
+        "age_max": null,
+        "income_annual_max": null,
+        "income_note": "Illinois residents who qualify for the federal EITC",
+        "requires_children": false,
+        "nationality": "citizen_or_pr",
+        "residency_months_min": null,
+        "housing_tenure": null,
+        "student_required": false,
+        "admin_areas": [
+          "Illinois"
+        ]
+      },
+      "source_url": "https://tax.illinois.gov/",
+      "source_snippet": "The Illinois Earned Income Credit is a refundable credit equal to 20% of the federal earned income tax credit.",
+      "last_verified_at": "2026-08-12",
+      "verification_status": "auto_extracted"
+    },
+    {
+      "slug": "nyc-fair-fares",
+      "name_local": "Fair Fares NYC",
+      "name_en": "Fair Fares NYC",
+      "admin_level": "city",
+      "admin_area": "New York City",
+      "funder": "NYC Department of Social Services / MTA",
+      "category": "transport",
+      "benefit_type": "discount",
+      "amount_min": null,
+      "amount_max": null,
+      "amount_currency": "USD",
+      "amount_period": "monthly",
+      "amount_note": "50% discount on subway and eligible bus fares and Access-A-Ride paratransit trips (issued as a Fair Fares OMNY card)",
+      "is_automatic": false,
+      "application_url": "https://access.nyc.gov/programs/fair-fares/",
+      "application_channel": "online",
+      "deadline_type": "rolling",
+      "deadline_note": null,
+      "procedure_steps": [
+        {
+          "step": 1,
+          "detail": "Apply online at ACCESS HRA Fair Fares or at a DSS office",
+          "url": "https://access.nyc.gov/programs/fair-fares/"
+        },
+        {
+          "step": 2,
+          "detail": "Submit proof of identity, age, NYC residency and income",
+          "url": null
+        },
+        {
+          "step": 3,
+          "detail": "Receive a Fair Fares OMNY card in the mail within about three weeks",
+          "url": null
+        }
+      ],
+      "documents_required": [
+        {
+          "doc": "Proof of identity and age",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Proof of NYC residency",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Proof of income",
+          "mandatory": true,
+          "note": null
+        }
+      ],
+      "eligibility": {
+        "statuses": [],
+        "age_min": 18,
+        "age_max": 64,
+        "income_annual_max": null,
+        "income_note": "NYC residents ages 18-64 with household income at or below 145% of the federal poverty level (e.g., $23,475 for a household of 1); not receiving another transit discount",
+        "requires_children": false,
+        "nationality": "any",
+        "residency_months_min": null,
+        "housing_tenure": null,
+        "student_required": false,
+        "admin_areas": [
+          "New York City"
+        ]
+      },
+      "source_url": "https://access.nyc.gov/programs/fair-fares/",
+      "source_snippet": "Fair Fares NYC helps low-income New Yorkers save 50% on public transportation including subway fares, eligible bus fares, and Access-A-Ride paratransit trips.",
+      "last_verified_at": "2026-08-12",
+      "verification_status": "verified"
+    },
+    {
+      "slug": "nyc-big-apple-connect",
+      "name_local": "Big Apple Connect",
+      "name_en": "Big Apple Connect (Free Internet for NYCHA Residents)",
+      "admin_level": "city",
+      "admin_area": "New York City",
+      "funder": "NYC Office of Technology and Innovation",
+      "category": "income_support",
+      "benefit_type": "free_slab",
+      "amount_min": null,
+      "amount_max": 0,
+      "amount_currency": "USD",
+      "amount_period": "monthly",
+      "amount_note": "Free home internet (up to 300 Mbps) plus basic cable TV, modem and router for residents of eligible NYCHA developments",
+      "is_automatic": false,
+      "application_url": "https://portal.311.nyc.gov/article/?kanumber=KA-03558",
+      "application_channel": "in_person",
+      "deadline_type": "rolling",
+      "deadline_note": null,
+      "procedure_steps": [
+        {
+          "step": 1,
+          "detail": "Confirm your NYCHA development is on the eligible list",
+          "url": null
+        },
+        {
+          "step": 2,
+          "detail": "Call the provider for your development (Optimum 866-580-1410 or Spectrum 866-960-1754)",
+          "url": null
+        },
+        {
+          "step": 3,
+          "detail": "Schedule installation; bills for internet and basic cable are reduced to $0",
+          "url": null
+        }
+      ],
+      "documents_required": [
+        {
+          "doc": "Proof of NYCHA residency",
+          "mandatory": true,
+          "note": null
+        }
+      ],
+      "eligibility": {
+        "statuses": [],
+        "age_min": null,
+        "age_max": null,
+        "income_annual_max": null,
+        "income_note": "Not income-tested; must live in an eligible NYCHA development",
+        "requires_children": false,
+        "nationality": "any",
+        "residency_months_min": null,
+        "housing_tenure": null,
+        "student_required": false,
+        "admin_areas": [
+          "New York City"
+        ]
+      },
+      "source_url": "https://portal.311.nyc.gov/article/?kanumber=KA-03558",
+      "source_snippet": "NYCHA residents in eligible developments can receive for free: internet connections with download speeds of up to 300 Mbps, wireless router, modem, and basic cable TV.",
+      "last_verified_at": "2026-08-12",
+      "verification_status": "verified"
+    },
+    {
+      "slug": "nyc-cityfheps",
+      "name_local": "CityFHEPS (City Fighting Homelessness and Eviction Prevention Supplement)",
+      "name_en": "CityFHEPS Rental Supplement",
+      "admin_level": "city",
+      "admin_area": "New York City",
+      "funder": "NYC Department of Social Services (HRA/DHS)",
+      "category": "housing",
+      "benefit_type": "in_kind",
+      "amount_min": null,
+      "amount_max": null,
+      "amount_currency": "USD",
+      "amount_period": "monthly",
+      "amount_note": "City pays the landlord the difference between the tenant's contribution (generally 30% of income) and the rent up to a payment standard based on household size",
+      "is_automatic": false,
+      "application_url": "https://www.nyc.gov/site/hra/help/cityfheps-documents.page",
+      "application_channel": "in_person",
+      "deadline_type": "rolling",
+      "deadline_note": null,
+      "procedure_steps": [
+        {
+          "step": 1,
+          "detail": "Apply through a Homebase office (in community) or your DHS shelter housing specialist",
+          "url": "https://www.nyc.gov/site/hra/help/homebase.page"
+        },
+        {
+          "step": 2,
+          "detail": "DSS determines eligibility and issues a shopping letter",
+          "url": null
+        },
+        {
+          "step": 3,
+          "detail": "Find an apartment anywhere in New York State; DSS inspects it and pays the landlord",
+          "url": null
+        }
+      ],
+      "documents_required": [
+        {
+          "doc": "Proof of identity for household members",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Income verification",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Eviction notice or shelter status documentation",
+          "mandatory": true,
+          "note": null
+        }
+      ],
+      "eligibility": {
+        "statuses": [],
+        "age_min": null,
+        "age_max": null,
+        "income_annual_max": null,
+        "income_note": "Households in shelter or at risk of eviction with income up to 200% of the federal poverty level at entry",
+        "requires_children": false,
+        "nationality": "any",
+        "residency_months_min": null,
+        "housing_tenure": "renting",
+        "student_required": false,
+        "admin_areas": [
+          "New York City"
+        ]
+      },
+      "source_url": "https://www.nyc.gov/site/hra/help/cityfheps-documents.page",
+      "source_snippet": "CityFHEPS is a rental supplement program administered by DSS that helps individuals and families in shelter or facing eviction move to or keep permanent housing.",
+      "last_verified_at": "2026-08-12",
+      "verification_status": "verified"
+    },
+    {
+      "slug": "nyc-rent-freeze-scrie-drie",
+      "name_local": "NYC Rent Freeze Program (SCRIE/DRIE)",
+      "name_en": "Senior Citizen / Disability Rent Increase Exemption",
+      "admin_level": "city",
+      "admin_area": "New York City",
+      "funder": "NYC Department of Finance",
+      "category": "housing",
+      "benefit_type": "tax_credit",
+      "amount_min": null,
+      "amount_max": null,
+      "amount_currency": "USD",
+      "amount_period": "monthly",
+      "amount_note": "Landlord gets a property-tax abatement equal to future rent increases, so the tenant's rent is frozen at the current level in rent-regulated apartments",
+      "is_automatic": false,
+      "application_url": "https://www.nyc.gov/site/rentfreeze/index.page",
+      "application_channel": "online",
+      "deadline_type": "rolling",
+      "deadline_note": null,
+      "procedure_steps": [
+        {
+          "step": 1,
+          "detail": "Check eligibility (age 62+ or disabled, rent-regulated apartment, income and rent-share limits)",
+          "url": "https://www.nyc.gov/site/rentfreeze/index.page"
+        },
+        {
+          "step": 2,
+          "detail": "Apply online or by mail to the Department of Finance",
+          "url": null
+        },
+        {
+          "step": 3,
+          "detail": "Renew periodically; rent stays frozen while the landlord receives the tax credit",
+          "url": null
+        }
+      ],
+      "documents_required": [
+        {
+          "doc": "Proof of age or disability",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Lease and rent history",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Proof of income",
+          "mandatory": true,
+          "note": null
+        }
+      ],
+      "eligibility": {
+        "statuses": [],
+        "age_min": 62,
+        "age_max": null,
+        "income_annual_max": 50000,
+        "income_note": "Tenants 62+ (SCRIE) or with a qualifying disability (DRIE) in rent-regulated housing with household income of $50,000 or less paying more than one-third of income in rent",
+        "requires_children": false,
+        "nationality": "any_resident",
+        "residency_months_min": null,
+        "housing_tenure": "renting",
+        "student_required": false,
+        "admin_areas": [
+          "New York City"
+        ]
+      },
+      "source_url": "https://www.nyc.gov/site/rentfreeze/index.page",
+      "source_snippet": "The NYC Rent Freeze Program freezes the rent of eligible senior citizens and people with disabilities in rent-regulated apartments; landlords receive a corresponding property tax abatement.",
+      "last_verified_at": "2026-08-12",
+      "verification_status": "auto_extracted"
+    },
+    {
+      "slug": "la-metro-life-program",
+      "name_local": "LIFE Program (Low-Income Fare is Easy)",
+      "name_en": "LA Metro LIFE Program",
+      "admin_level": "city",
+      "admin_area": "Los Angeles",
+      "funder": "Los Angeles County Metropolitan Transportation Authority (LA Metro)",
+      "category": "transport",
+      "benefit_type": "discount",
+      "amount_min": null,
+      "amount_max": null,
+      "amount_currency": "USD",
+      "amount_period": "monthly",
+      "amount_note": "Free or deeply discounted fares on LA Metro and participating regional transit operators for qualifying low-income riders",
+      "is_automatic": false,
+      "application_url": "https://www.metro.net/riding/fares/life/",
+      "application_channel": "online",
+      "deadline_type": "rolling",
+      "deadline_note": null,
+      "procedure_steps": [
+        {
+          "step": 1,
+          "detail": "Check eligibility and apply online or at a LIFE enrollment event",
+          "url": "https://www.metro.net/riding/fares/life/"
+        },
+        {
+          "step": 2,
+          "detail": "Load the benefit onto a TAP card",
+          "url": null
+        },
+        {
+          "step": 3,
+          "detail": "Ride with free or discounted fares on participating agencies",
+          "url": null
+        }
+      ],
+      "documents_required": [
+        {
+          "doc": "Proof of income or participation in CalFresh, Medi-Cal or other qualifying program",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "TAP card",
+          "mandatory": true,
+          "note": null
+        }
+      ],
+      "eligibility": {
+        "statuses": [],
+        "age_min": null,
+        "age_max": null,
+        "income_annual_max": null,
+        "income_note": "LA County residents with household income at or below the LIFE limits (around the federal poverty level), or participants in qualifying benefit programs",
+        "requires_children": false,
+        "nationality": "any_resident",
+        "residency_months_min": null,
+        "housing_tenure": null,
+        "student_required": false,
+        "admin_areas": [
+          "Los Angeles"
+        ]
+      },
+      "source_url": "https://www.metro.net/riding/fares/life/",
+      "source_snippet": "The LIFE program provides fare subsidies to low-income transit riders in Los Angeles County.",
+      "last_verified_at": "2026-08-12",
+      "verification_status": "auto_extracted"
+    },
+    {
+      "slug": "orca-lift-seattle",
+      "name_local": "ORCA LIFT",
+      "name_en": "ORCA LIFT Reduced Fare Program",
+      "admin_level": "city",
+      "admin_area": "Seattle",
+      "funder": "King County Metro Transit",
+      "category": "transport",
+      "benefit_type": "discount",
+      "amount_min": null,
+      "amount_max": null,
+      "amount_currency": "USD",
+      "amount_period": "monthly",
+      "amount_note": "Substantially discounted flat fares on King County Metro, Sound Transit and other Puget Sound agencies loaded on an ORCA card",
+      "is_automatic": false,
+      "application_url": "https://kingcounty.gov/en/dept/metro",
+      "application_channel": "in_person",
+      "deadline_type": "rolling",
+      "deadline_note": null,
+      "procedure_steps": [
+        {
+          "step": 1,
+          "detail": "Verify income eligibility online or at an enrollment office",
+          "url": null
+        },
+        {
+          "step": 2,
+          "detail": "Enroll and receive a free ORCA LIFT card",
+          "url": null
+        },
+        {
+          "step": 3,
+          "detail": "Load value and ride at the reduced LIFT fare; renew every two years",
+          "url": null
+        }
+      ],
+      "documents_required": [
+        {
+          "doc": "Proof of income or participation in Apple Health (Medicaid)/EBT",
+          "mandatory": true,
+          "note": null
+        }
+      ],
+      "eligibility": {
+        "statuses": [],
+        "age_min": null,
+        "age_max": null,
+        "income_annual_max": null,
+        "income_note": "Income at or below 200% of the federal poverty level (King, Pierce and Snohomish county residents)",
+        "requires_children": false,
+        "nationality": "any_resident",
+        "residency_months_min": null,
+        "housing_tenure": null,
+        "student_required": false,
+        "admin_areas": [
+          "Seattle"
+        ]
+      },
+      "source_url": "https://kingcounty.gov/en/dept/metro",
+      "source_snippet": "ORCA LIFT is a reduced transit fare program for riders whose household income is at or below 200% of the federal poverty level.",
+      "last_verified_at": "2026-08-12",
+      "verification_status": "auto_extracted"
+    },
+    {
+      "slug": "sf-free-muni-youth",
+      "name_local": "Free Muni for Youth",
+      "name_en": "San Francisco Free Muni for Youth",
+      "admin_level": "city",
+      "admin_area": "San Francisco",
+      "funder": "San Francisco Municipal Transportation Agency (SFMTA)",
+      "category": "transport",
+      "benefit_type": "free_slab",
+      "amount_min": null,
+      "amount_max": 0,
+      "amount_currency": "USD",
+      "amount_period": "monthly",
+      "amount_note": "All youth 18 and under ride Muni free; no application or Clipper card required (youth may use a Youth Clipper card but are not required to tag)",
+      "is_automatic": true,
+      "application_url": "https://www.sfmta.com/",
+      "application_channel": "automatic",
+      "deadline_type": "none",
+      "deadline_note": null,
+      "procedure_steps": [
+        {
+          "step": 1,
+          "detail": "No application needed - youth 18 and under simply board Muni without paying",
+          "url": null
+        }
+      ],
+      "documents_required": [],
+      "eligibility": {
+        "statuses": [],
+        "age_min": null,
+        "age_max": 18,
+        "income_annual_max": null,
+        "income_note": "Not income-tested; all youth 18 and under in San Francisco",
+        "requires_children": false,
+        "nationality": "any",
+        "residency_months_min": null,
+        "housing_tenure": null,
+        "student_required": false,
+        "admin_areas": [
+          "San Francisco"
+        ]
+      },
+      "source_url": "https://www.sfmta.com/",
+      "source_snippet": "Free Muni for All Youth lets everyone 18 years old and younger ride Muni for free, regardless of household income.",
+      "last_verified_at": "2026-08-12",
+      "verification_status": "auto_extracted"
+    },
+    {
+      "slug": "comcast-internet-essentials",
+      "name_local": "Internet Essentials from Comcast",
+      "name_en": "Comcast Internet Essentials",
+      "admin_level": "private",
+      "admin_area": null,
+      "funder": "Comcast",
+      "category": "income_support",
+      "benefit_type": "discount",
+      "amount_min": null,
+      "amount_max": 14.95,
+      "amount_currency": "USD",
+      "amount_period": "monthly",
+      "amount_note": "Low-cost home internet (50 Mbps) for about $14.95/month plus option to buy a low-cost computer; no credit check or contract",
+      "is_automatic": false,
+      "application_url": "https://www.internetessentials.com",
+      "application_channel": "online",
+      "deadline_type": "rolling",
+      "deadline_note": null,
+      "procedure_steps": [
+        {
+          "step": 1,
+          "detail": "Apply online at internetessentials.com",
+          "url": "https://www.internetessentials.com"
+        },
+        {
+          "step": 2,
+          "detail": "Verify eligibility via a qualifying assistance program or income",
+          "url": null
+        },
+        {
+          "step": 3,
+          "detail": "Get a self-install kit and activate service",
+          "url": null
+        }
+      ],
+      "documents_required": [
+        {
+          "doc": "Proof of participation in a qualifying program (e.g., SNAP, Medicaid, housing assistance) or income",
+          "mandatory": true,
+          "note": null
+        }
+      ],
+      "eligibility": {
+        "statuses": [],
+        "age_min": null,
+        "age_max": null,
+        "income_annual_max": null,
+        "income_note": "Households participating in qualifying federal/state assistance programs or within Comcast's low-income eligibility rules in its service area",
+        "requires_children": false,
+        "nationality": "any_resident",
+        "residency_months_min": null,
+        "housing_tenure": null,
+        "student_required": false,
+        "admin_areas": []
+      },
+      "source_url": "https://www.internetessentials.com",
+      "source_snippet": "Internet Essentials provides affordable high-speed home internet to qualifying low-income households.",
+      "last_verified_at": "2026-08-12",
+      "verification_status": "auto_extracted"
+    },
+    {
+      "slug": "att-access",
+      "name_local": "Access from AT&T",
+      "name_en": "AT&T Access Low-Cost Internet",
+      "admin_level": "private",
+      "admin_area": null,
+      "funder": "AT&T",
+      "category": "income_support",
+      "benefit_type": "discount",
+      "amount_min": null,
+      "amount_max": null,
+      "amount_currency": "USD",
+      "amount_period": "monthly",
+      "amount_note": "Low-cost home internet plan (around $30/month) for eligible households; free installation and no annual contract",
+      "is_automatic": false,
+      "application_url": "https://www.att.com/internet/access/",
+      "application_channel": "online",
+      "deadline_type": "rolling",
+      "deadline_note": null,
+      "procedure_steps": [
+        {
+          "step": 1,
+          "detail": "Check availability and apply at att.com/internet/access",
+          "url": "https://www.att.com/internet/access/"
+        },
+        {
+          "step": 2,
+          "detail": "Verify eligibility via SNAP, SSI or income",
+          "url": null
+        },
+        {
+          "step": 3,
+          "detail": "Schedule installation of the discounted plan",
+          "url": null
+        }
+      ],
+      "documents_required": [
+        {
+          "doc": "Proof of participation in SNAP or SSI, or income documentation",
+          "mandatory": true,
+          "note": null
+        }
+      ],
+      "eligibility": {
+        "statuses": [],
+        "age_min": null,
+        "age_max": null,
+        "income_annual_max": null,
+        "income_note": "Households with a member on SNAP or SSI (or income at or below 200% of federal poverty guidelines) in AT&T's wireline service area",
+        "requires_children": false,
+        "nationality": "any_resident",
+        "residency_months_min": null,
+        "housing_tenure": null,
+        "student_required": false,
+        "admin_areas": []
+      },
+      "source_url": "https://www.att.com/internet/access/",
+      "source_snippet": "Access from AT&T provides low-cost wireline home internet service to qualifying limited-income households.",
+      "last_verified_at": "2026-08-12",
+      "verification_status": "auto_extracted"
+    },
+    {
+      "slug": "spectrum-internet-assist",
+      "name_local": "Spectrum Internet Assist",
+      "name_en": "Spectrum Internet Assist",
+      "admin_level": "private",
+      "admin_area": null,
+      "funder": "Charter Communications (Spectrum)",
+      "category": "income_support",
+      "benefit_type": "discount",
+      "amount_min": null,
+      "amount_max": null,
+      "amount_currency": "USD",
+      "amount_period": "monthly",
+      "amount_note": "Discounted high-speed internet plan for qualifying low-income households; includes modem and no data caps",
+      "is_automatic": false,
+      "application_url": "https://www.spectrum.com/internet/spectrum-internet-assist",
+      "application_channel": "online",
+      "deadline_type": "rolling",
+      "deadline_note": null,
+      "procedure_steps": [
+        {
+          "step": 1,
+          "detail": "Check eligibility at spectrum.com",
+          "url": "https://www.spectrum.com/internet/spectrum-internet-assist"
+        },
+        {
+          "step": 2,
+          "detail": "Provide proof of participation in a qualifying program",
+          "url": null
+        },
+        {
+          "step": 3,
+          "detail": "Sign up for the discounted plan",
+          "url": null
+        }
+      ],
+      "documents_required": [
+        {
+          "doc": "Proof of participation in the National School Lunch Program, CEP, SSI (65+), or other qualifying programs",
+          "mandatory": true,
+          "note": null
+        }
+      ],
+      "eligibility": {
+        "statuses": [],
+        "age_min": null,
+        "age_max": null,
+        "income_annual_max": null,
+        "income_note": "Households with a member receiving National School Lunch Program benefits, Community Eligibility Provision participation, or SSI (for applicants 65+)",
+        "requires_children": false,
+        "nationality": "any_resident",
+        "residency_months_min": null,
+        "housing_tenure": null,
+        "student_required": false,
+        "admin_areas": []
+      },
+      "source_url": "https://www.spectrum.com/internet/spectrum-internet-assist",
+      "source_snippet": "Spectrum Internet Assist offers high-speed internet at a discounted price to eligible low-income households.",
+      "last_verified_at": "2026-08-12",
+      "verification_status": "auto_extracted"
+    },
+    {
+      "slug": "pge-care-california-alternate-rates-for-energy",
+      "name_local": "CARE (California Alternate Rates for Energy)",
+      "name_en": "PG&E CARE Program",
+      "admin_level": "private",
+      "admin_area": "California",
+      "funder": "Pacific Gas and Electric Company (regulated by the CPUC)",
+      "category": "energy",
+      "benefit_type": "discount",
+      "amount_min": null,
+      "amount_max": null,
+      "amount_currency": "USD",
+      "amount_period": "monthly",
+      "amount_note": "Roughly 20% or greater discount on monthly gas and electric bills (about 30-35% on electricity and 20% on gas)",
+      "is_automatic": false,
+      "application_url": "https://www.pge.com/",
+      "application_channel": "online",
+      "deadline_type": "rolling",
+      "deadline_note": null,
+      "procedure_steps": [
+        {
+          "step": 1,
+          "detail": "Apply online via your PG&E account or by paper form",
+          "url": null
+        },
+        {
+          "step": 2,
+          "detail": "Provide household size and income (or proof of participation in a qualifying program)",
+          "url": null
+        },
+        {
+          "step": 3,
+          "detail": "Discount applies automatically to future bills; renew every 2 years",
+          "url": null
+        }
+      ],
+      "documents_required": [
+        {
+          "doc": "PG&E account number",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Income information or benefit program proof",
+          "mandatory": true,
+          "note": null
+        }
+      ],
+      "eligibility": {
+        "statuses": [],
+        "age_min": null,
+        "age_max": null,
+        "income_annual_max": null,
+        "income_note": "Households with income at or below the CARE limits (200% of federal poverty guidelines) or enrolled in programs like Medi-Cal, CalFresh, SSI or WIC",
+        "requires_children": false,
+        "nationality": "any_resident",
+        "residency_months_min": null,
+        "housing_tenure": null,
+        "student_required": false,
+        "admin_areas": [
+          "California"
+        ]
+      },
+      "source_url": "https://www.pge.com/",
+      "source_snippet": "CARE provides a monthly discount on energy bills for income-qualified PG&E households.",
+      "last_verified_at": "2026-08-12",
+      "verification_status": "auto_extracted"
+    },
+    {
+      "slug": "conedison-energy-affordability-program",
+      "name_local": "Con Edison Energy Affordability Program (EAP)",
+      "name_en": "Con Edison Energy Affordability Program",
+      "admin_level": "private",
+      "admin_area": "New York",
+      "funder": "Consolidated Edison (regulated by the NYS PSC)",
+      "category": "energy",
+      "benefit_type": "discount",
+      "amount_min": null,
+      "amount_max": null,
+      "amount_currency": "USD",
+      "amount_period": "monthly",
+      "amount_note": "Monthly bill discount on electric and/or gas service for customers enrolled in qualifying government assistance programs",
+      "is_automatic": false,
+      "application_url": "https://www.coned.com/",
+      "application_channel": "online",
+      "deadline_type": "rolling",
+      "deadline_note": null,
+      "procedure_steps": [
+        {
+          "step": 1,
+          "detail": "Enroll in a qualifying benefit (HEAP, SNAP, SSI, Public Assistance, etc.)",
+          "url": null
+        },
+        {
+          "step": 2,
+          "detail": "Apply with Con Edison online or by phone with proof of benefit enrollment",
+          "url": null
+        },
+        {
+          "step": 3,
+          "detail": "Discount appears on your monthly bill automatically",
+          "url": null
+        }
+      ],
+      "documents_required": [
+        {
+          "doc": "Con Edison account number",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Proof of enrollment in a qualifying assistance program",
+          "mandatory": true,
+          "note": null
+        }
+      ],
+      "eligibility": {
+        "statuses": [],
+        "age_min": null,
+        "age_max": null,
+        "income_annual_max": null,
+        "income_note": "Con Edison customers in NYC and Westchester receiving HEAP or other qualifying means-tested benefits",
+        "requires_children": false,
+        "nationality": "any_resident",
+        "residency_months_min": null,
+        "housing_tenure": null,
+        "student_required": false,
+        "admin_areas": [
+          "New York"
+        ]
+      },
+      "source_url": "https://www.coned.com/",
+      "source_snippet": "Con Edison's Energy Affordability Program provides monthly bill discounts to customers enrolled in certain government assistance programs.",
+      "last_verified_at": "2026-08-12",
+      "verification_status": "auto_extracted"
+    },
+    {
+      "slug": "bank-on-certified-accounts",
+      "name_local": "Bank On Certified Accounts",
+      "name_en": "Bank On Low-Cost Certified Checking Accounts",
+      "admin_level": "private",
+      "admin_area": null,
+      "funder": "Cities for Financial Empowerment Fund (CFE Fund) with partner banks and credit unions",
+      "category": "income_support",
+      "benefit_type": "discount",
+      "amount_min": null,
+      "amount_max": null,
+      "amount_currency": "USD",
+      "amount_period": "monthly",
+      "amount_note": "Certified accounts cost $5 or less per month (many are free), have no overdraft/NSF fees, and low or no minimum opening deposit",
+      "is_automatic": false,
+      "application_url": "https://joinbankon.org",
+      "application_channel": "online",
+      "deadline_type": "rolling",
+      "deadline_note": null,
+      "procedure_steps": [
+        {
+          "step": 1,
+          "detail": "Find a Bank On certified account near you at joinbankon.org",
+          "url": "https://joinbankon.org"
+        },
+        {
+          "step": 2,
+          "detail": "Open the account online or in branch with ID",
+          "url": null
+        },
+        {
+          "step": 3,
+          "detail": "Use direct deposit and a debit card without overdraft fees",
+          "url": null
+        }
+      ],
+      "documents_required": [
+        {
+          "doc": "Government-issued ID",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Social Security number or ITIN",
+          "mandatory": true,
+          "note": null
+        }
+      ],
+      "eligibility": {
+        "statuses": [],
+        "age_min": null,
+        "age_max": null,
+        "income_annual_max": null,
+        "income_note": "Open to everyone; designed for unbanked and low-income consumers",
+        "requires_children": false,
+        "nationality": "any_resident",
+        "residency_months_min": null,
+        "housing_tenure": null,
+        "student_required": false,
+        "admin_areas": []
+      },
+      "source_url": "https://joinbankon.org",
+      "source_snippet": "Bank On certified accounts are safe, affordable transaction accounts with no overdraft fees and monthly costs of $5 or less.",
+      "last_verified_at": "2026-08-12",
+      "verification_status": "auto_extracted"
+    }
+  ]
+}
