@@ -527,19 +527,23 @@
     "age_min": null,
     "age_max": null,
     "income_annual_max": null,
-    "income_note": null,
+    "income_note": "Not means tested. Citizens Information (2026) states explicitly that 'DCA is not means-tested, so you may qualify for it regardless of your income.' The test is the level of care the child under 16 needs, plus residency conditions. Rate is €380 per month in 2026.",
     "requires_children": true,
     "nationality": "any_resident",
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
     "admin_areas": [],
-    "gender": "any"
+    "gender": "any",
+    "income_test": "none",
+    "income_source_url": "https://www.citizensinformation.ie/en/social-welfare/disability-and-illness/domiciliary-care-allowance/",
+    "income_confidence": "high"
    },
    "source_url": "https://www.citizensinformation.ie/en/social-welfare/disability-and-illness/domiciliary-care-allowance/",
    "source_snippet": "In 2026, the Domiciliary Care Allowance (DCA) rate is €380 per month. DCA is paid on the third Tuesday of every month for the current month.",
    "last_verified_at": "2026-08-12",
-   "verification_status": "verified"
+   "verification_status": "verified",
+   "income_reviewed_at": "2026-08-13"
   },
   {
    "slug": "carers-support-grant",
@@ -2679,19 +2683,23 @@
     "age_min": null,
     "age_max": null,
     "income_annual_max": null,
-    "income_note": "No income limit; first-time buyers of new-build homes (or self-builds) only; property price ceilings vary by local authority area",
+    "income_note": "No income limit. Citizens Information (2026) publishes no income ceiling for the First Home Scheme; constraints are the first-time-buyer/new-build rules, the standard 4x gross income mortgage borrowing limit, and property price ceilings of €375,000 to €500,000 depending on local authority area and property type.",
     "requires_children": false,
     "nationality": "any_resident",
     "residency_months_min": null,
     "housing_tenure": "owner",
     "student_required": false,
     "admin_areas": [],
-    "gender": "any"
+    "gender": "any",
+    "income_test": "none",
+    "income_source_url": "https://www.citizensinformation.ie/en/housing/owning-a-home/help-with-buying-a-home/first-home-scheme/",
+    "income_confidence": "high"
    },
    "source_url": "https://www.citizensinformation.ie/en/housing/owning-a-home/help-with-buying-a-home/first-home-scheme/",
    "source_snippet": "You can get up to 30% of the market value of your new property with the First Home Scheme. This is reduced to 20% if you are also getting the Help to Buy Scheme.",
    "last_verified_at": "2026-08-12",
-   "verification_status": "verified"
+   "verification_status": "verified",
+   "income_reviewed_at": "2026-08-13"
   },
   {
    "slug": "help-to-buy",
@@ -3396,19 +3404,23 @@
     "age_min": 66,
     "age_max": null,
     "income_annual_max": null,
-    "income_note": "Aged 70+: not means-tested; aged 66-69: must get a qualifying social welfare payment or pass a means test",
+    "income_note": "No fixed euro ceiling is published (2026). Aged 70+ there is no means test. Aged 66-69 without a qualifying payment, the means limit is defined relative to another rate: the current maximum State Pension (Contributory) including any age, living-alone and dependant increases, plus €200 a week — so it moves with the pension rate and household composition. Rent-a-room income up to €14,000 a year is disregarded.",
     "requires_children": false,
     "nationality": "any_resident",
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
     "admin_areas": [],
-    "gender": "any"
+    "gender": "any",
+    "income_test": "none",
+    "income_source_url": "https://www.citizensinformation.ie/en/social-welfare/extra-social-welfare-benefits/household-benefits-package/",
+    "income_confidence": "high"
    },
    "source_url": "https://www.citizensinformation.ie/en/social-welfare/extra-social-welfare-benefits/household-benefits-package/",
    "source_snippet": "The Household Benefits Package includes the Electricity or Gas Allowance and Free TV Licence. If you are aged 70 or over, you qualify regardless of your income or who lives with you.",
    "last_verified_at": "2026-08-12",
-   "verification_status": "verified"
+   "verification_status": "verified",
+   "income_reviewed_at": "2026-08-13"
   },
   {
    "slug": "free-travel-scheme",

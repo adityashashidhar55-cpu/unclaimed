@@ -42,19 +42,23 @@
     "age_min": null,
     "age_max": null,
     "income_annual_max": null,
-    "income_note": "Universal: no income test; 255 EUR/month per child (2026).",
+    "income_note": "No income ceiling exists. The federal ministry states 'Das Kindergeld wird einkommensunabhängig gezahlt'; the amount is 259 EUR per child per month from 1 January 2026.",
     "requires_children": true,
     "nationality": "any_resident",
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
     "admin_areas": [],
-    "gender": "any"
+    "gender": "any",
+    "income_test": "none",
+    "income_source_url": "https://www.bmbfsfj.bund.de/bmbfsfj/themen/familie/familienleistungen/kindergeld",
+    "income_confidence": "high"
    },
    "source_url": "https://www.arbeitsagentur.de/familie-und-kinder",
    "source_snippet": "Seit dem 1. Januar 2026 gibt es monatlich 259,00 Euro Kindergeld pro Kind (§ 66 EStG)",
    "last_verified_at": "2026-08-12",
-   "verification_status": "verified"
+   "verification_status": "verified",
+   "income_reviewed_at": "2026-08-13"
   },
   {
    "slug": "kinderzuschlag",
@@ -107,19 +111,23 @@
     "age_min": null,
     "age_max": null,
     "income_annual_max": null,
-    "income_note": "No fixed statutory income ceiling since the 2021 reform: eligibility results from an individual needs calculation (income + KiZ + Wohngeld must cover the family's need); minimum income 600 EUR/month gross (single parents) or 900 EUR/month (couples); max KiZ 297 EUR/month per child (2026).",
+    "income_note": "No upper income ceiling is published (2025/2026 rules). Only a MINIMUM gross income threshold exists: 900 EUR/month for couples, 600 EUR/month for single parents. The upper end is an individual needs calculation — KiZ tapers to zero as income rises, so no single household ceiling can be stated.",
     "requires_children": true,
     "nationality": "any_resident",
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
     "admin_areas": [],
-    "gender": "any"
+    "gender": "any",
+    "income_test": "unpublished",
+    "income_source_url": "https://www.familienportal.de/familienportal/familienleistungen/kinderzuschlag",
+    "income_confidence": "high"
    },
    "source_url": "https://www.arbeitsagentur.de/familie-und-kinder",
    "source_snippet": "Der Kinderzuschlag hat im Jahr 2026 eine Höhe von bis zu 297 Euro; Alleinerziehende müssen mindestens 600 Euro brutto, Paare 900 Euro brutto verdienen",
    "last_verified_at": "2026-08-12",
-   "verification_status": "verified"
+   "verification_status": "verified",
+   "income_reviewed_at": "2026-08-13"
   },
   {
    "slug": "elterngeld",
@@ -289,19 +297,23 @@
     "age_min": null,
     "age_max": null,
     "income_annual_max": null,
-    "income_note": "No parental income test: UVG is paid regardless of the single parent's income; only the child's own income (e.g. half of maintenance received) is counted.",
+    "income_note": "No parental income test. The ministry page states explicitly: 'Hierbei gibt es keine Einkommensgrenze für den alleinerziehenden Elternteil.' Only the child's own income is counted.",
     "requires_children": true,
     "nationality": "any_resident",
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
     "admin_areas": [],
-    "gender": "any"
+    "gender": "any",
+    "income_test": "unpublished",
+    "income_source_url": "https://www.bmfsfj.de/bmfsfj/themen/familie/familienleistungen/unterhaltsvorschuss",
+    "income_confidence": "high"
    },
    "source_url": "https://www.bmfsfj.de",
    "source_snippet": "Kinder bis 5 Jahre erhalten max. 227 Euro, 6 bis 11 Jahre 299 Euro, 12 bis 17 Jahre 394 Euro monatlich",
    "last_verified_at": "2026-08-12",
-   "verification_status": "verified"
+   "verification_status": "verified",
+   "income_reviewed_at": "2026-08-13"
   },
   {
    "slug": "mutterschaftsgeld",
@@ -1231,19 +1243,23 @@
     "age_min": null,
     "age_max": null,
     "income_annual_max": null,
-    "income_note": "No income test (universal or contribution-based benefit).",
+    "income_note": "Not income-tested: the official FAQ states 'Die Förderung wird einkommensunabhängig vergeben'. Awarded on merit (300 EUR/month) and can be combined with BAföG without deduction. No income ceiling exists.",
     "requires_children": false,
     "nationality": "any",
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": true,
     "admin_areas": [],
-    "gender": "any"
+    "gender": "any",
+    "income_test": "none",
+    "income_source_url": "https://www.deutschlandstipendium.de/deutschlandstipendium/de/studierende/haeufig-gestellte-fragen/haeufig-gestellte-fragen.html",
+    "income_confidence": "high"
    },
    "source_url": "https://www.deutschlandstipendium.de",
    "source_snippet": "Das Deutschlandstipendium beträgt 300 Euro pro Monat – 150 Euro übernehmen private Fördernde, die anderen 150 Euro trägt der Bund",
    "last_verified_at": "2026-08-12",
-   "verification_status": "verified"
+   "verification_status": "verified",
+   "income_reviewed_at": "2026-08-13"
   },
   {
    "slug": "berufsausbildungsbeihilfe-bab",
@@ -2669,8 +2685,8 @@
     "statuses": [],
     "age_min": null,
     "age_max": null,
-    "income_annual_max": null,
-    "income_note": "Benefit-linked: MobilAktiv ticket for Munich recipients of Buergergeld, Sozialhilfe, AsylbLG or Wohngeld.",
+    "income_annual_max": 22800,
+    "income_note": "Access runs through the München-Pass, whose published income ceiling from 1 January 2026 is 1.900 EUR net per month for a one-person household (= 22.800 EUR/year). It rises by 950 EUR/month for each further person aged 14+ and 570 EUR/month for each child aged 13 or under. Figures are NET monthly income.",
     "requires_children": false,
     "nationality": "any_resident",
     "residency_months_min": null,
@@ -2679,12 +2695,16 @@
     "admin_areas": [
      "Bayern"
     ],
-    "gender": "any"
+    "gender": "any",
+    "income_test": "numeric",
+    "income_source_url": "https://stadt.muenchen.de/service/info/munchenpass/1073956/n0/",
+    "income_confidence": "high"
    },
    "source_url": "https://stadt.muenchen.de",
    "source_snippet": "Mit MoBilAktiv erhalten Münchnerinnen und Münchner mit geringem Einkommen ermäßigte Fahrkarten des MVV",
    "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "verification_status": "verified",
+   "income_reviewed_at": "2026-08-13"
   },
   {
    "slug": "frankfurt-ticket",
@@ -2723,8 +2743,8 @@
     "statuses": [],
     "age_min": null,
     "age_max": null,
-    "income_annual_max": null,
-    "income_note": "Benefit-linked: Frankfurt-Pass holders (recipients of Buergergeld, Sozialhilfe, AsylbLG, Wohngeld/Kinderzuschlag and comparable low-income cases).",
+    "income_annual_max": 16572,
+    "income_note": "Access runs through the Frankfurt-Pass. Published Einkommensgrenzen 'ab 2026': 1-person household 1.381,00 EUR net/month (= 16.572 EUR/year), 2 persons 1.887, 3 persons 2.393, 4 persons 2.899, 5 persons 3.405 EUR net/month, plus 506,00 EUR net for each additional household member. Recipients of Bürgergeld, Sozialhilfe, Kinderzuschlag, Wohngeld or Asylbewerberleistungen qualify regardless of the figure.",
     "requires_children": false,
     "nationality": "any_resident",
     "residency_months_min": null,
@@ -2733,12 +2753,16 @@
     "admin_areas": [
      "Hessen"
     ],
-    "gender": "any"
+    "gender": "any",
+    "income_test": "numeric",
+    "income_source_url": "https://frankfurt.de/leistungen/Familie-Kinder-und-Jugend-8958408/Finanzielle-und-sonstige-Hilfen-8958417/Frankfurt-Pass",
+    "income_confidence": "high"
    },
    "source_url": "https://www.rmv.de",
    "source_snippet": "Das Frankfurt-Ticket ist ein verbilligtes Zeitkartenangebot des RMV für Empfänger sozialer Leistungen im Frankfurter Stadtgebiet",
    "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "verification_status": "verified",
+   "income_reviewed_at": "2026-08-13"
   },
   {
    "slug": "freifahrt-schwerbehinderte",
@@ -2891,19 +2915,23 @@
     "age_min": null,
     "age_max": null,
     "income_annual_max": null,
-    "income_note": "No income test (universal or contribution-based benefit).",
+    "income_note": "BAFA's BEG Einzelmaßnahmen for building envelope and system technology publishes no income criterion — funding rates depend on the measure, not on the applicant's income. Checked 2026.",
     "requires_children": false,
     "nationality": "any_resident",
     "residency_months_min": null,
     "housing_tenure": "owner",
     "student_required": false,
     "admin_areas": [],
-    "gender": "any"
+    "gender": "any",
+    "income_test": "none",
+    "income_source_url": "https://www.bafa.de/DE/Energie/Effiziente_Gebaeude/Sanierung_Wohngebaeude/sanierung_wohngebaeude_node.html",
+    "income_confidence": "medium"
    },
    "source_url": "https://www.bafa.de",
    "source_snippet": "Maßnahmen an der Gebäudehülle werden grundsätzlich mit 15 % der förderfähigen Kosten bezuschusst; mit iSFP steigt der Satz auf 20 %",
    "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "verification_status": "auto_extracted",
+   "income_reviewed_at": "2026-08-13"
   },
   {
    "slug": "energieberatung-wohngebaeude",
@@ -3103,19 +3131,23 @@
     "age_min": null,
     "age_max": null,
     "income_annual_max": null,
-    "income_note": "For recipients of social benefits / low-income households",
+    "income_note": "The programme's own site describes the check as free 'für Menschen mit geringem Einkommen' but publishes no euro threshold; eligibility is assessed via an income calculator or local advice point rather than a stated ceiling. Checked 2026.",
     "requires_children": false,
     "nationality": "any_resident",
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
     "admin_areas": [],
-    "gender": "any"
+    "gender": "any",
+    "income_test": "unpublished",
+    "income_source_url": "https://www.stromspar-check.de/",
+    "income_confidence": "medium"
    },
    "source_url": "https://www.stromspar-check.de",
    "source_snippet": "Der Stromspar-Check berät einkommensschwache Haushalte kostenlos zu Hause und installiert unentgeltlich Stromsparhelfer",
    "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "verification_status": "auto_extracted",
+   "income_reviewed_at": "2026-08-13"
   },
   {
    "slug": "kinderfreibetrag",
@@ -4468,7 +4500,7 @@
     "age_min": null,
     "age_max": null,
     "income_annual_max": null,
-    "income_note": "No income test and no employment requirement (Bayerisches Familiengeldgesetz, BayFamG).",
+    "income_note": "Not income-tested. ZBFS states 'Eltern erhalten die Leistung unabhängig vom Einkommen' (250 EUR/month per child, 300 EUR from the third child). Eligibility depends on Bavarian residence and the child's age, not income.",
     "requires_children": true,
     "gender": "any",
     "nationality": "any_resident",
@@ -4477,12 +4509,16 @@
     "student_required": false,
     "admin_areas": [
      "Bayern"
-    ]
+    ],
+    "income_test": "none",
+    "income_source_url": "https://www.zbfs.bayern.de/familienleistungen/familiengeld/",
+    "income_confidence": "high"
    },
    "source_url": "https://www.zbfs.bayern.de",
    "source_snippet": "Das Familiengeld wird einkommens- und erwerbsunabhängig gezahlt: 250 Euro pro Monat und Kind, ab dem dritten Kind 300 Euro.",
    "last_verified_at": "2026-08-12",
-   "verification_status": "verified"
+   "verification_status": "verified",
+   "income_reviewed_at": "2026-08-13"
   },
   {
    "slug": "berlin-schuelerticket",
@@ -4585,7 +4621,7 @@
     "age_min": null,
     "age_max": null,
     "income_annual_max": null,
-    "income_note": "Basic entitlement (5 h/day, free) has no income test; parental contributions for additional hours are graded by income.",
+    "income_note": "No income ceiling. Up to five hours daily in a Kita is free for every child from birth to school entry regardless of income. Beyond that, parental contributions are staged continuously by income, family size, age group and hours; families on SGB II/XII, AsylbLG, Kinderzuschlag or Wohngeld pay nothing. No single household income threshold is published (2026).",
     "requires_children": true,
     "gender": "any",
     "nationality": "any_resident",
@@ -4594,12 +4630,16 @@
     "student_required": false,
     "admin_areas": [
      "Hamburg"
-    ]
+    ],
+    "income_test": "none",
+    "income_source_url": "https://www.hamburg.de/politik-und-verwaltung/behoerden/bsfb/familie/kinderbetreuung/elterninformationen/elternbeitrag-hoehe-35372",
+    "income_confidence": "high"
    },
    "source_url": "https://www.hamburg.de",
    "source_snippet": "Mit dem Kita-Gutschein werden in Hamburg 5 Stunden Betreuung pro Tag kostenlos übernommen; für darüber hinausgehende Zeiten wird ein einkommensabhängiger Elternbeitrag erhoben.",
    "last_verified_at": "2026-08-12",
-   "verification_status": "verified"
+   "verification_status": "verified",
+   "income_reviewed_at": "2026-08-13"
   },
   {
    "slug": "hamburg-weiterbildungsbonus",
@@ -5750,7 +5790,7 @@
     "age_min": null,
     "age_max": null,
     "income_annual_max": null,
-    "income_note": "Benefit-linked or low income: recipients of SGB II, SGB XII (chapters 3/4) or AsylbLG benefits qualify directly; other Dresden residents after an individual income and asset check by the Sozialamt (no published fixed ceiling).",
+    "income_note": "No euro income limit is published (page last updated May 2026). Eligibility is defined by receipt of a listed benefit — Hilfe zum Lebensunterhalt/Grundsicherung, Bürgergeld or Sozialgeld, Wohngeld, Kinderzuschlag, Jugendamt Barbeträge, or Asylbewerberleistungen — plus main residence in Dresden.",
     "requires_children": false,
     "gender": "any",
     "nationality": "any_resident",
@@ -5759,12 +5799,16 @@
     "student_required": false,
     "admin_areas": [
      "Dresden"
-    ]
+    ],
+    "income_test": "unpublished",
+    "income_source_url": "https://www.dresden.de/de/rathaus/dienstleistungen/dresdenpass_d115.php",
+    "income_confidence": "high"
    },
    "source_url": "https://www.dresden.de/dresden-pass",
    "source_snippet": "Der Dresden-Pass ermöglicht Einwohnern mit geringem Einkommen den kostengünstigeren Besuch kultureller Einrichtungen, Ermäßigungen bei der Nutzung der Leistungen der Dresdner Verkehrsbetriebe AG (DVB AG) und bei kommunalen Leistungen.",
    "last_verified_at": "2026-08-12",
-   "verification_status": "verified"
+   "verification_status": "verified",
+   "income_reviewed_at": "2026-08-13"
   },
   {
    "slug": "tafel-deutschland",

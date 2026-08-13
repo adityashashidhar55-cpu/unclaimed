@@ -1790,7 +1790,7 @@
     "age_min": null,
     "age_max": null,
     "income_annual_max": null,
-    "income_note": "Income- and asset-tested, but most cantons publish no single income ceiling. Zurich (AlimV): advance only if recognised living costs exceed countable income of the household; wealth limits CHF 40'300-120'800 depending on household + CHF 30'200 per additional child; max advance CHF 1'008/month per child. Some cantons (AI, AR, NW, OW, SZ, UR) use EL-type tests; Ticino pays advances regardless of means. Thresholds vary by canton.",
+    "income_note": "Canton Zurich publishes no income ceiling: the page states only that 'Die Bevorschussung ist abhängig von den Einkommens- und Vermögensverhältnissen' and that the maximum advance is CHF 1'008 per month per child. Thresholds are set per canton and, in ZH, per regional Alimentenhilfestelle, so no national or even cantonal single figure exists (2026).",
     "requires_children": true,
     "nationality": "any_resident",
     "residency_months_min": null,
@@ -1807,12 +1807,16 @@
      "Luzern",
      "St. Gallen"
     ],
-    "gender": "any"
+    "gender": "any",
+    "income_test": "none",
+    "income_source_url": "https://www.zh.ch/de/familie/eltern-in-trennung/alimentenhilfe/alimentenbevorschussung-beantragen.html",
+    "income_confidence": "high"
    },
    "source_url": "https://www.zh.ch/de/familie/eltern-in-trennung/alimentenhilfe/alimentenbevorschussung-beantragen.html",
    "source_snippet": "Bevorschusst werden Unterhaltsbeiträge gemäss dem Urteil oder dem Vertrag. Die maximale Höhe des Vorschusses ist die einer einfachen Waisen- und Kinderrente (gegenwärtig 1008 Franken pro Monat).",
    "last_verified_at": "2026-08-12",
-   "verification_status": "verified"
+   "verification_status": "verified",
+   "income_reviewed_at": "2026-08-13"
   },
   {
    "slug": "praemienverbilligung-ipv",
@@ -4058,7 +4062,7 @@
     "age_min": null,
     "age_max": null,
     "income_annual_max": null,
-    "income_note": "Income-scaled, not capped: the voucher value and parental contribution depend on household income (city of Zürich tariff scale); no hard income ceiling - higher incomes receive lower subsidies.",
+    "income_note": "The City of Zurich publishes no headline income ceiling for subsidised childcare. Both the preschool and school-age pages state that entitlement and amount are determined by income and assets and refer applicants to an online calculator without naming the CHF limit. Checked 2026.",
     "requires_children": true,
     "nationality": "any_resident",
     "residency_months_min": null,
@@ -4067,12 +4071,16 @@
     "admin_areas": [
      "Zürich"
     ],
-    "gender": "any"
+    "gender": "any",
+    "income_test": "unpublished",
+    "income_source_url": "https://www.stadt-zuerich.ch/de/lebenslagen/jugend-und-familie/fruehe-kindheit/familienergaenzende-kinderbetreuung/betreuungskosten-und-subventionen.html",
+    "income_confidence": "high"
    },
    "source_url": "https://www.stadt-zuerich.ch",
    "source_snippet": "Die Stadt Zürich subventioniert die familienergänzende Kinderbetreuung einkommensabhängig (subventionierte Kita-Plätze und Tagesfamilien)",
    "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "verification_status": "verified",
+   "income_reviewed_at": "2026-08-13"
   },
   {
    "slug": "subventionierte-kita-bern",

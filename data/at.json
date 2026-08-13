@@ -704,7 +704,7 @@
     "age_min": 0,
     "age_max": 6,
     "income_annual_max": null,
-    "income_note": null,
+    "income_note": "No income test. The City of Vienna publishes only two conditions: a customer number in the Viennese kindergarten children's register and main residence in Vienna for the child and at least one parent throughout the kindergarten period. Meal contributions are separate and can be waived on application.",
     "requires_children": true,
     "gender": "any",
     "nationality": "any_resident",
@@ -713,12 +713,16 @@
     "student_required": false,
     "admin_areas": [
      "Wien"
-    ]
+    ],
+    "income_test": "none",
+    "income_source_url": "https://www.wien.gv.at/bildung/kindergarten/foerderungen-eltern/beitragsfreier-kindergarten.html",
+    "income_confidence": "high"
    },
    "source_url": "https://www.wien.gv.at",
    "source_snippet": "In Wien ist der Kindergarten gratis; Eltern zahlen nur für Verpflegung und Bastelmaterial.",
    "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "verification_status": "verified",
+   "income_reviewed_at": "2026-08-13"
   },
   {
    "slug": "gratis-kindergarten-burgenland",
@@ -1736,20 +1740,24 @@
     ],
     "age_min": null,
     "age_max": null,
-    "income_annual_max": null,
-    "income_note": "Einkommensabhängig; Beratungstermin beim AMS erforderlich",
+    "income_annual_max": 32400,
+    "income_note": "Official rule (page last updated 1 January 2026): the applicant's monthly gross income may not exceed 2.700 EUR, annualised x12 = 32.400 EUR. The limit is on the applicant's own gross income; no household-size variation is published.",
     "requires_children": true,
     "gender": "any",
     "nationality": "any_resident",
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "income_test": "numeric",
+    "income_source_url": "https://www.oesterreich.gv.at/de/themen/familie_und_partnerschaft/familie-und-kinderfuersorge/kinderbetreuung/Seite.370300",
+    "income_confidence": "high"
    },
    "source_url": "https://www.ams.at",
    "source_snippet": "\"Das AMS vergibt auch eine Beihilfe für die Kinderbetreuung. Voraussetzungen: Ihr Kind lebt im gemeinsamen Haushalt. Ihr Kind ist jünger als 15 Jahre ODER Ihr Kind mit Behinderung ist jünger als 18 Jahre. Sie verdienen wenig.\"",
    "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "verification_status": "verified",
+   "income_reviewed_at": "2026-08-13"
   },
   {
    "slug": "altersteilzeit",
@@ -2532,19 +2540,23 @@
     "age_min": 15,
     "age_max": null,
     "income_annual_max": null,
-    "income_note": "Bedürftigkeitsprüfung über Einkommen von Schüler:in, Eltern und Ehegatte abzüglich gesetzlicher Absetz- und Freibeträge (§ 12 SchBG, jährlich valorisiert, z. B. Grundabsetzbeträge ab 1.9.2025: 1.913 €/2.119 €/3.411 €); keine fixe publizierte Haushaltsobergrenze.",
+    "income_note": "No single income ceiling is published. Soziale Bedürftigkeit is assessed from income, marital status and family size via a formula: the base amount is reduced by the parents' or spouse's 'zumutbare Unterhaltsleistung' and a share of the applicant's own income, tapering to zero. The ministry directs applicants to a calculator rather than publishing a threshold.",
     "requires_children": false,
     "gender": "any",
     "nationality": "any_resident",
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": true,
-    "admin_areas": []
+    "admin_areas": [],
+    "income_test": "unpublished",
+    "income_source_url": "https://www.bmb.gv.at/Themen/schule/befoe/sbh.html",
+    "income_confidence": "high"
    },
    "source_url": "https://www.bmbwf.gv.at",
    "source_snippet": "Schülerbeihilfen können Schülerinnen und Schüler ab dem vollendeten 15. Lebensjahr in berufsbildenden mittleren und höheren Schulen erhalten, wenn soziale Bedürftigkeit vorliegt.",
    "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "verification_status": "verified",
+   "income_reviewed_at": "2026-08-13"
   },
   {
    "slug": "wohnbeihilfe-wien",

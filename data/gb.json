@@ -67,19 +67,23 @@
     "age_min": null,
     "age_max": null,
     "income_annual_max": null,
-    "income_note": "Means-tested with no fixed income ceiling: award reduces by 55p per £1 of net earnings above the work allowance (£427/month if the award includes housing costs, £710/month if not, 2026/27). Savings over £16,000 disqualify; benefit cap (£22,020/yr couples & families outside London, £25,323 in Greater London; £14,753/£16,967 single) may apply.",
+    "income_note": "No published income ceiling. GOV.UK eligibility (checked 2026) sets only a capital rule — you must have £16,000 or less in money, savings and investments; earnings reduce the award on a continuous taper rather than cutting it off at a fixed figure, so the point at which entitlement ends depends on household composition, housing costs and work allowances.",
     "requires_children": false,
     "nationality": "any_resident",
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
     "admin_areas": [],
-    "gender": "any"
+    "gender": "any",
+    "income_test": "unpublished",
+    "income_source_url": "https://www.gov.uk/universal-credit/eligibility",
+    "income_confidence": "high"
    },
    "source_url": "https://www.gov.uk/universal-credit",
    "source_snippet": "Universal Credit is a monthly payment to help with living costs for people on a low income, out of work or unable to work; claimed online via GOV.UK.",
    "last_verified_at": "2026-08-12",
-   "verification_status": "verified"
+   "verification_status": "verified",
+   "income_reviewed_at": "2026-08-13"
   },
   {
    "slug": "pension-credit",
@@ -1486,7 +1490,7 @@
     "age_min": null,
     "age_max": 15,
     "income_annual_max": null,
-    "income_note": "£27.15/week per child under 16 for families receiving Universal Credit, tax credits, Income Support, income-based JSA/ESA or Pension Credit; no separate published income ceiling — the qualifying benefit is the means test.",
+    "income_note": "No income threshold at all — eligibility is passported off receipt of a qualifying benefit (Universal Credit, income-based JSA, and if you alone are named on them Pension Credit, Income Support or income-related ESA), plus living in Scotland and caring for a child under 16. Payment is £28.20 per child per week (2026).",
     "requires_children": true,
     "nationality": "any_resident",
     "residency_months_min": null,
@@ -1495,12 +1499,16 @@
     "admin_areas": [
      "Scotland"
     ],
-    "gender": "any"
+    "gender": "any",
+    "income_test": "none",
+    "income_source_url": "https://www.mygov.scot/scottish-child-payment/who-should-apply",
+    "income_confidence": "high"
    },
    "source_url": "https://www.mygov.scot/scottish-child-payment",
    "source_snippet": "Scottish Child Payment is a weekly payment that helps towards the costs of supporting your family; you can apply whether you're in work or not, as long as you're getting one of the qualifying benefits.",
    "last_verified_at": "2026-08-12",
-   "verification_status": "verified"
+   "verification_status": "verified",
+   "income_reviewed_at": "2026-08-13"
   },
   {
    "slug": "best-start-grant-scotland",
@@ -1933,7 +1941,7 @@
     "age_min": 16,
     "age_max": 18,
     "income_annual_max": null,
-    "income_note": "16-19 Bursary Fund (England): institutions set their own household-income criteria for discretionary bursaries; a defined vulnerable-group bursary of up to £1,200/yr has fixed non-income criteria. No single published national income ceiling.",
+    "income_note": "No national income threshold. GOV.UK (2026) sets a defined vulnerable-group bursary of up to £1,200 a year based on circumstances (in care, care leaver, receiving Income Support/Universal Credit in own name, or receiving Disability Living Allowance/PIP with ESA or UC), while discretionary bursaries are allocated by each school or college under its own household-income criteria.",
     "requires_children": false,
     "nationality": "any_resident",
     "residency_months_min": null,
@@ -1942,12 +1950,16 @@
     "admin_areas": [
      "England"
     ],
-    "gender": "any"
+    "gender": "any",
+    "income_test": "none",
+    "income_source_url": "https://www.gov.uk/1619-bursary-fund",
+    "income_confidence": "medium"
    },
    "source_url": "https://www.gov.uk/1619-bursary-fund",
    "source_snippet": "You could get a bursary to help with education-related costs if you're aged 16 to 19 and studying at a publicly funded school or college in England.",
    "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "verification_status": "auto_extracted",
+   "income_reviewed_at": "2026-08-13"
   },
   {
    "slug": "warm-home-discount",
@@ -1978,19 +1990,23 @@
     "age_min": null,
     "age_max": null,
     "income_annual_max": null,
-    "income_note": "£150 bill credit: Core Group 1 = Guarantee Credit element of Pension Credit; Core Group 2 (England & Wales) = receipt of a qualifying means-tested benefit (UC, Housing Benefit, income-based JSA/ESA, Income Support, Pension Credit Savings Credit) on the qualifying date; in Scotland the 'broader group' requires a supplier application. No fixed income figure — the benefit test is the published rule.",
+    "income_note": "No income figure published. GOV.UK states the scheme is closed and reopens in October 2026 for winter 2026 to 2027, giving a one-off £150 electricity bill discount; qualification is by Pension Credit Guarantee Credit or receipt of a qualifying means-tested benefit (with a property high-cost-to-heat test in England and Wales), not by a stated income ceiling.",
     "requires_children": false,
     "nationality": "any_resident",
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
     "admin_areas": [],
-    "gender": "any"
+    "gender": "any",
+    "income_test": "none",
+    "income_source_url": "https://www.gov.uk/the-warm-home-discount-scheme",
+    "income_confidence": "medium"
    },
    "source_url": "https://www.gov.uk/the-warm-home-discount-scheme",
    "source_snippet": "You could get £150 off your electricity bill for winter under the Warm Home Discount Scheme if you get the Guarantee Credit element of Pension Credit or another qualifying means-tested benefit.",
    "last_verified_at": "2026-08-12",
-   "verification_status": "verified"
+   "verification_status": "verified",
+   "income_reviewed_at": "2026-08-13"
   },
   {
    "slug": "winter-fuel-payment",
@@ -3379,19 +3395,23 @@
     "age_min": null,
     "age_max": null,
     "income_annual_max": null,
-    "income_note": "Up to £30,000 (England) for home adaptations; means-tested on the applicant's income and savings above £6,000 against a notional loan amount — under-18s' cases are exempt from the test. No single published ceiling; the means test scales the required contribution.",
+    "income_note": "No income ceiling is published. GOV.UK (2026) states the grant is up to £30,000 in England, £36,000 in Wales and £25,000 in Northern Ireland, and that the contribution you must make depends on household income and savings over £6,000; there is no figure above which you are excluded. Applications for a disabled child under 18 ignore parental income and savings entirely, as do landlord applications.",
     "requires_children": false,
     "nationality": "any_resident",
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
     "admin_areas": [],
-    "gender": "any"
+    "gender": "any",
+    "income_test": "none",
+    "income_source_url": "https://www.gov.uk/disabled-facilities-grants/what-youll-get",
+    "income_confidence": "high"
    },
    "source_url": "https://www.gov.uk/disabled-facilities-grants",
    "source_snippet": "The maximum grant in England is £30,000; you can apply if you are a homeowner, tenant, or landlord applying on behalf of a tenant, or a disabled person who plans to live in the property.",
    "last_verified_at": "2026-08-12",
-   "verification_status": "verified"
+   "verification_status": "verified",
+   "income_reviewed_at": "2026-08-13"
   },
   {
    "slug": "support-for-mortgage-interest",
@@ -4672,7 +4692,7 @@
     "age_min": null,
     "age_max": null,
     "income_annual_max": null,
-    "income_note": "Water poverty test: household qualifies where the water bill exceeds about 5% of net income after housing costs and disability benefits (thresholds previously published as £17,005 Thames Valley / £21,749 London, now assessed case-by-case). Discount between 25% and 99%, typically 50%.",
+    "income_note": "No fixed income figure is published (checked 2026). Thames Water states only that you may be eligible if your annual water bill is more than 5% of your net income, with eligibility also depending on the number of occupants at the property — so the effective threshold varies by bill size and household size.",
     "requires_children": false,
     "gender": "any",
     "nationality": "any_resident",
@@ -4682,12 +4702,16 @@
     "admin_areas": [
      "London",
      "Thames Valley"
-    ]
+    ],
+    "income_test": "unpublished",
+    "income_source_url": "https://www.thameswater.co.uk/help/account-and-billing/financial-support/waterhelp",
+    "income_confidence": "high"
    },
    "source_url": "https://www.thameswater.co.uk/help/account-and-billing/financial-support",
    "source_snippet": "Customers whose water bill is more than five per cent of their equivalised net income could qualify for a 50 per cent discount under Thames Water's WaterHelp scheme.",
    "last_verified_at": "2026-08-12",
-   "verification_status": "verified"
+   "verification_status": "verified",
+   "income_reviewed_at": "2026-08-13"
   },
   {
    "slug": "severn-trent-big-difference-scheme",
@@ -5071,7 +5095,7 @@
     "age_min": null,
     "age_max": 11,
     "income_annual_max": null,
-    "income_note": "Universal — no income test. (For secondary pupils in Wales, benefits-based eligibility still applies, including a £7,400 net earnings limit for UC households.)",
+    "income_note": "Universal primary free school meals in Wales have no income test. The benefits-based route (which still applies to secondary pupils) uses a Universal Credit household earnings limit of less than £7,400 a year after tax excluding benefits, or Child Tax Credit income of £16,190 or less where Working Tax Credit is not also received.",
     "requires_children": true,
     "gender": "any",
     "nationality": "any_resident",
@@ -5080,12 +5104,16 @@
     "student_required": false,
     "admin_areas": [
      "Wales"
-    ]
+    ],
+    "income_test": "none",
+    "income_source_url": "https://www.gov.wales/free-school-meals-information-parents-and-carers",
+    "income_confidence": "medium"
    },
    "source_url": "https://www.gov.wales/free-school-meals",
    "source_snippet": "All primary school children in Wales can now access Universal Primary Free School Meals, rolled out between September 2022 and September 2024.",
    "last_verified_at": "2026-08-12",
-   "verification_status": "verified"
+   "verification_status": "verified",
+   "income_reviewed_at": "2026-08-13"
   },
   {
    "slug": "flying-start-childcare-wales",
@@ -5859,19 +5887,23 @@
     "age_min": null,
     "age_max": 24,
     "income_annual_max": null,
-    "income_note": "Means-assessed: Family Fund looks at household income and the impact of disability; open to low-income families and those receiving benefits, resident in the UK for at least 6 months. No single published national ceiling is stated publicly — income is assessed in the round.",
+    "income_note": "No income threshold is published (checked 2026). Family Fund requires the disabled child to need a high level of support in at least 3 of 7 key areas and the family to be 'on a low income', stating only that a grant is not usually awarded where there is 'a significant level of household income, savings or capital'. Families not on a qualifying benefit are assessed case by case.",
     "requires_children": true,
     "gender": "any",
     "nationality": "any_resident",
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "income_test": "none",
+    "income_source_url": "https://www.familyfund.org.uk/grants/are-we-eligible/",
+    "income_confidence": "high"
    },
    "source_url": "https://www.familyfund.org.uk/",
    "source_snippet": "Family Fund looks at your income and the impact of disability on your child; you can apply if you are the parent/carer of a child or young person with a disability or serious illness and are on a low income or receiving benefits.",
    "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "verification_status": "verified",
+   "income_reviewed_at": "2026-08-13"
   },
   {
    "slug": "maternity-exemption-certificate",

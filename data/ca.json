@@ -161,19 +161,23 @@
     ],
     "age_min": 19,
     "age_max": null,
-    "income_annual_max": null,
-    "income_note": "Working income required; no basic amount above $37,742 (single) or $49,393 (family)",
+    "income_annual_max": 37742,
+    "income_note": "CRA states for the 2025 tax year that no basic amount is paid if your adjusted net income is more than $37,742 for a single individual. Families have a higher cut-off, and Quebec, Alberta and Nunavut use their own reconfigured amounts and thresholds.",
     "requires_children": false,
     "nationality": "any_resident",
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "income_test": "numeric",
+    "income_source_url": "https://www.canada.ca/en/revenue-agency/services/child-family-benefits/acwb-amount.html",
+    "income_confidence": "high"
    },
    "source_url": "https://www.canada.ca/en/revenue-agency/services/child-family-benefits/witb-canada-workers-benefit.html",
    "source_snippet": "A refundable tax credit to help eligible working low-income individuals and families; up to 50% can be received as advance payments.",
    "last_verified_at": "2026-08-12",
-   "verification_status": "verified"
+   "verification_status": "verified",
+   "income_reviewed_at": "2026-08-13"
   },
   {
    "slug": "old-age-security-pension",
@@ -224,19 +228,23 @@
     ],
     "age_min": 65,
     "age_max": null,
-    "income_annual_max": null,
-    "income_note": "No income test to qualify; 15% recovery tax above ~$95,323 individual net income (2026)",
+    "income_annual_max": 148451,
+    "income_note": "OAS is clawed back by the recovery tax on net world income above $90,997 (2024 income year, for payments July 2025 - June 2026) and is fully recovered — no pension payable — at $148,451 for those aged 65-74 and $154,196 for those aged 75 and over.",
     "requires_children": false,
     "nationality": "citizen_or_pr",
     "residency_months_min": 120,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "income_test": "numeric",
+    "income_source_url": "https://www.canada.ca/en/services/benefits/publicpensions/cpp/old-age-security/recovery-tax.html",
+    "income_confidence": "high"
    },
    "source_url": "https://www.canada.ca/en/services/benefits/publicpensions/cpp/old-age-security.html",
    "source_snippet": "Old Age Security pension (age 65 to 74) maximum monthly amount $743.05 (April to June 2026).",
    "last_verified_at": "2026-08-12",
-   "verification_status": "verified"
+   "verification_status": "verified",
+   "income_reviewed_at": "2026-08-13"
   },
   {
    "slug": "guaranteed-income-supplement",
@@ -856,19 +864,23 @@
     "statuses": [],
     "age_min": null,
     "age_max": 21,
-    "income_annual_max": null,
-    "income_note": "Eligibility based on family income and number of children (primary caregiver receiving CCB at the low-income threshold)",
+    "income_annual_max": 57375,
+    "income_note": "ESDC sets the CLB adjusted income threshold for the benefit year 1 July 2025 - 30 June 2026 at $57,375 or less for families with 1 to 3 qualified children; the threshold rises with more children (4 children: under $64,733; 5: under $72,123).",
     "requires_children": true,
     "nationality": "any_resident",
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "income_test": "numeric",
+    "income_source_url": "https://www.canada.ca/en/employment-social-development/services/student-financial-aid/education-savings/resp/resp-promoters/bulletin/notice-2025-1095.html",
+    "income_confidence": "high"
    },
    "source_url": "https://www.canada.ca/en/employment-social-development/services/education-savings/canada-learning-bond.html",
    "source_snippet": "The Canada Learning Bond offers up to $2,000 for eligible low-income families with no contributions required.",
    "last_verified_at": "2026-08-12",
-   "verification_status": "verified"
+   "verification_status": "verified",
+   "income_reviewed_at": "2026-08-13"
   },
   {
    "slug": "canada-education-savings-grant",
@@ -1825,18 +1837,22 @@
     "age_min": null,
     "age_max": null,
     "income_annual_max": null,
-    "income_note": "Targeted at households receiving the maximum Canada Child Benefit or the maximum Guaranteed Income Supplement",
+    "income_note": "No dollar threshold is published. ISED states families are eligible if they receive the maximum Canada Child Benefit, and seniors if they receive at least 80% of the maximum Guaranteed Income Supplement; eligible households are identified annually and invited by letter.",
     "requires_children": false,
     "nationality": "any_resident",
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "income_test": "unpublished",
+    "income_source_url": "https://ised-isde.canada.ca/site/ised/en/programs-and-initiatives/connecting-families-initiative/eligibility",
+    "income_confidence": "high"
    },
    "source_url": "https://ised-isde.canada.ca/site/connecting-families/en",
    "source_snippet": "Through Connecting Families, participating Internet service providers offer $20 a month high-speed Internet to hundreds of thousands of low-income families and seniors.",
    "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "verification_status": "verified",
+   "income_reviewed_at": "2026-08-13"
   },
   {
    "slug": "veteran-emergency-fund",
@@ -2151,7 +2167,7 @@
     "age_min": null,
     "age_max": null,
     "income_annual_max": null,
-    "income_note": "Needs-tested; grant share highest for low-income families",
+    "income_note": "Ontario.ca publishes no household income ceiling for OSAP; the page directs applicants to the OSAP Aid Estimator, since entitlement is calculated from family income, family size, program costs and other factors rather than a single cut-off.",
     "requires_children": false,
     "nationality": "any_resident",
     "residency_months_min": null,
@@ -2159,12 +2175,16 @@
     "student_required": true,
     "admin_areas": [
      "Ontario"
-    ]
+    ],
+    "income_test": "unpublished",
+    "income_source_url": "https://www.ontario.ca/page/osap-ontario-student-assistance-program",
+    "income_confidence": "medium"
    },
    "source_url": "https://www.ontario.ca/page/osap-ontario-student-assistance-program",
    "source_snippet": "OSAP offers funding through grants (money you don't have to pay back) and loans (money you need to repay once you're done school), based on financial need.",
    "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "verification_status": "auto_extracted",
+   "income_reviewed_at": "2026-08-13"
   },
   {
    "slug": "ohip-plus",
@@ -2266,8 +2286,8 @@
     "statuses": [],
     "age_min": null,
     "age_max": null,
-    "income_annual_max": null,
-    "income_note": "After-tax household income thresholds by household size (e.g., 1 person up to ~$38,000)",
+    "income_annual_max": 38000,
+    "income_note": "The Ontario Energy Board publishes an OESP eligibility table by household size and combined annual after-tax household income: 1 person up to $38,000; 2 up to $54,000; 3 up to $65,000; 4 or more up to $71,000. Indigenous customers, electrically heated homes and households with electricity-intensive medical devices receive higher credits.",
     "requires_children": false,
     "nationality": "any_resident",
     "residency_months_min": null,
@@ -2275,12 +2295,16 @@
     "student_required": false,
     "admin_areas": [
      "Ontario"
-    ]
+    ],
+    "income_test": "numeric",
+    "income_source_url": "https://www.oeb.ca/consumer-information-and-protection/bill-assistance-programs/ontario-electricity-support-program",
+    "income_confidence": "high"
    },
    "source_url": "https://ontarioelectricitysupport.ca/",
    "source_snippet": "The OESP provides a monthly credit to lower-income households based on household income and household size, applied directly to the electricity bill.",
    "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "verification_status": "verified",
+   "income_reviewed_at": "2026-08-13"
   },
   {
    "slug": "ontario-child-benefit",
@@ -2330,7 +2354,7 @@
     "age_min": null,
     "age_max": null,
     "income_annual_max": null,
-    "income_note": "Income-tested on adjusted family net income",
+    "income_note": "CRA publishes only the phase-out start, not a hard ceiling: for the July 2026 - June 2027 benefit year the maximum is $146.66 per month per child, and above an adjusted family net income of $26,865 you may receive a partial benefit. The income at which the benefit reaches zero depends on the number of children and is not published.",
     "requires_children": true,
     "nationality": "any_resident",
     "residency_months_min": null,
@@ -2338,12 +2362,16 @@
     "student_required": false,
     "admin_areas": [
      "Ontario"
-    ]
+    ],
+    "income_test": "unpublished",
+    "income_source_url": "https://www.canada.ca/en/revenue-agency/services/child-family-benefits/provincial-territorial-programs/province-ontario.html",
+    "income_confidence": "high"
    },
    "source_url": "https://www.ontario.ca/page/ontario-child-benefit",
    "source_snippet": "The Ontario Child Benefit is a provincial program that helps low-income families provide for their children; payments are combined with the Canada Child Benefit.",
    "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "verification_status": "verified",
+   "income_reviewed_at": "2026-08-13"
   },
   {
    "slug": "ontario-senior-homeowners-property-tax-grant",
@@ -2453,7 +2481,7 @@
     "age_min": null,
     "age_max": 17,
     "income_annual_max": null,
-    "income_note": "Household net income must be below the HSO threshold (varies by family size)",
+    "income_note": "No dollar figure is published on the ontario.ca pages; they state only that the child must be in a household that meets the income eligibility requirements and refer applicants to ServiceOntario or the local public health unit.",
     "requires_children": true,
     "nationality": "any_resident",
     "residency_months_min": null,
@@ -2461,12 +2489,16 @@
     "student_required": false,
     "admin_areas": [
      "Ontario"
-    ]
+    ],
+    "income_test": "unpublished",
+    "income_source_url": "https://www.ontario.ca/page/services-covered-by-healthy-smiles-ontario",
+    "income_confidence": "medium"
    },
    "source_url": "https://www.ontario.ca/page/healthy-smiles-ontario",
    "source_snippet": "Healthy Smiles Ontario is a government-funded dental program that provides free preventive, routine, and emergency dental services for children and youth 17 years old and under from low-income households.",
    "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "verification_status": "auto_extracted",
+   "income_reviewed_at": "2026-08-13"
   },
   {
    "slug": "ontario-lift-tax-credit",
@@ -2649,19 +2681,23 @@
     "statuses": [],
     "age_min": 20,
     "age_max": 64,
-    "income_annual_max": null,
-    "income_note": "Total after-tax family income below 75% of the Low-Income Measure After-Tax (LIM-AT); automatic for OW/ODSP/CCFS clients",
+    "income_annual_max": 22691,
+    "income_note": "Toronto sets Fair Pass eligibility at total after-tax family income below 75% of the Low-Income Measure After-Tax threshold; for a 1-person household this is $22,691 per year. Thresholds rise with household size.",
     "requires_children": false,
     "nationality": "any_resident",
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "income_test": "numeric",
+    "income_source_url": "https://www.toronto.ca/community-people/employment-social-support/support-for-people-in-financial-need/assistance-through-ontario-works/transit-discount/",
+    "income_confidence": "high"
    },
    "source_url": "https://www.toronto.ca/community-people/employment-social-support/support-for-people-in-financial-need/assistance-through-ontario-works/transit-discount/",
    "source_snippet": "The Fair Pass Transit Discount Program provides a full year of savings on TTC and Wheel-Trans trips by offering a 36 per cent discount on adult single fares and a 21 per cent discount on adult monthly passes.",
    "last_verified_at": "2026-08-12",
-   "verification_status": "verified"
+   "verification_status": "verified",
+   "income_reviewed_at": "2026-08-13"
   },
   {
    "slug": "toronto-welcome-policy",
@@ -2902,8 +2938,8 @@
     ],
     "age_min": null,
     "age_max": null,
-    "income_annual_max": null,
-    "income_note": "Gross household income must be under RAP limits (e.g., around $40,000-$45,000 depending on family size/location)",
+    "income_annual_max": 60000,
+    "income_note": "BC Housing states applicants must have a total before-tax annual household income of $60,000 or less. Other conditions apply: the household must have at least one dependent child, and meet employment-income and residency tests.",
     "requires_children": true,
     "nationality": "any_resident",
     "residency_months_min": null,
@@ -2911,12 +2947,16 @@
     "student_required": false,
     "admin_areas": [
      "British Columbia"
-    ]
+    ],
+    "income_test": "numeric",
+    "income_source_url": "https://www.bchousing.org/housing-assistance/rental-assistance-programs/RAP",
+    "income_confidence": "high"
    },
    "source_url": "https://www.bchousing.org/housing-assistance/rental-assistance-financial-aid/rental-assistance-program",
    "source_snippet": "The Rental Assistance Program provides eligible low-income working families with cash assistance to help with their monthly rent payments.",
    "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "verification_status": "verified",
+   "income_reviewed_at": "2026-08-13"
   },
   {
    "slug": "bc-bus-pass-program",
@@ -2963,7 +3003,7 @@
     "age_min": null,
     "age_max": null,
     "income_annual_max": null,
-    "income_note": "For people receiving disability assistance, or low-income seniors (60+) receiving the B.C. Senior's Supplement",
+    "income_note": "No income figure published on the B.C. government page; eligibility is defined by receipt of specific benefits — notably the federal Guaranteed Income Supplement for seniors 60+, or provincial disability/income assistance.",
     "requires_children": false,
     "nationality": "any_resident",
     "residency_months_min": null,
@@ -2971,12 +3011,16 @@
     "student_required": false,
     "admin_areas": [
      "British Columbia"
-    ]
+    ],
+    "income_test": "none",
+    "income_source_url": "https://www2.gov.bc.ca/gov/content/transportation/passenger-travel/buses-taxis-limos/bus-pass/seniors",
+    "income_confidence": "high"
    },
    "source_url": "https://www2.gov.bc.ca/gov/content/transportation/pass-and-travel/bus-pass",
    "source_snippet": "The BC Bus Pass Program offers a reduced cost, annual bus pass for low income seniors and individuals receiving disability assistance from the Province of British Columbia.",
    "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "verification_status": "verified",
+   "income_reviewed_at": "2026-08-13"
   },
   {
    "slug": "bc-income-assistance",
@@ -3343,8 +3387,8 @@
     "statuses": [],
     "age_min": 18,
     "age_max": null,
-    "income_annual_max": null,
-    "income_note": "Family income must be under the Revenu Québec threshold for the credit",
+    "income_annual_max": 64545,
+    "income_note": "Revenu Quebec publishes maximum family income figures for the July 2026 - June 2027 payment period: $64,545 for a person without a spouse and for a single-parent family (+$2,634 per dependent child), and $70,395 for a person with a spouse. At or above these amounts no credit is paid.",
     "requires_children": false,
     "nationality": "any_resident",
     "residency_months_min": null,
@@ -3352,12 +3396,16 @@
     "student_required": false,
     "admin_areas": [
      "Quebec"
-    ]
+    ],
+    "income_test": "numeric",
+    "income_source_url": "https://www.revenuquebec.ca/en/citizens/tax-credits/solidarity-tax-credit/calculation-of-the-credit/",
+    "income_confidence": "medium"
    },
    "source_url": "https://www.revenuquebec.ca/en/citizens/tax-credits/solidarity-tax-credit/",
    "source_snippet": "Le crédit d'impôt pour solidarité aide les personnes à faible revenu qui résident au Québec; depuis juillet 2025, la fréquence des versements varie selon le montant (mensuelle à partir de 800 $).",
    "last_verified_at": "2026-08-12",
-   "verification_status": "verified"
+   "verification_status": "verified",
+   "income_reviewed_at": "2026-08-13"
   },
   {
    "slug": "quebec-subsidized-childcare",
@@ -3665,8 +3713,8 @@
     ],
     "age_min": null,
     "age_max": null,
-    "income_annual_max": null,
-    "income_note": "Work income must exceed a minimum threshold and family income be below the cutoff",
+    "income_annual_max": 24475,
+    "income_note": "Revenu Quebec's eligibility table for the 2025 taxation year requires annual family income below $24,475 for a person living alone; higher thresholds apply to couples and families with children, and the adapted work premium uses separate amounts.",
     "requires_children": false,
     "nationality": "any_resident",
     "residency_months_min": null,
@@ -3674,12 +3722,16 @@
     "student_required": false,
     "admin_areas": [
      "Quebec"
-    ]
+    ],
+    "income_test": "numeric",
+    "income_source_url": "https://www.revenuquebec.ca/en/citizens/tax-credits/work-premium-tax-credits/eligibility-requirements-for-the-work-premium-tax-credits/",
+    "income_confidence": "high"
    },
    "source_url": "https://www.revenuquebec.ca/en/citizens/tax-credits/work-premium-tax-credits/",
    "source_snippet": "The work premium is a refundable tax credit intended to encourage people to join or stay in the labour market.",
    "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "verification_status": "verified",
+   "income_reviewed_at": "2026-08-13"
   },
   {
    "slug": "ramq-public-prescription-drug-insurance",
@@ -3729,7 +3781,7 @@
     "age_min": null,
     "age_max": null,
     "income_annual_max": null,
-    "income_note": "Premium and maximum monthly contribution are income-based; several groups fully exempt",
+    "income_note": "No income ceiling. RAMQ states that as a rule you qualify for the Public Prescription Drug Insurance Plan if you don't have access to a private plan — eligibility turns on absence of private coverage, not income; premiums and deductibles are scaled to income separately.",
     "requires_children": false,
     "nationality": "any_resident",
     "residency_months_min": null,
@@ -3737,12 +3789,16 @@
     "student_required": false,
     "admin_areas": [
      "Quebec"
-    ]
+    ],
+    "income_test": "none",
+    "income_source_url": "https://www.ramq.gouv.qc.ca/en/citizens/prescription-drug-insurance",
+    "income_confidence": "high"
    },
    "source_url": "https://www.ramq.gouv.qc.ca/en/citizens/prescription-drug-insurance",
    "source_snippet": "The Public Prescription Drug Insurance Plan covers persons who do not have access to a private plan; the amount of the annual premium varies according to net family income.",
    "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "verification_status": "verified",
+   "income_reviewed_at": "2026-08-13"
   },
   {
    "slug": "aish",
@@ -3985,8 +4041,8 @@
     ],
     "age_min": 65,
     "age_max": null,
-    "income_annual_max": null,
-    "income_note": "Income-tested; full benefit roughly at GIS-level incomes",
+    "income_annual_max": 32690,
+    "income_note": "Alberta publishes, for the 1 July 2026 - 30 June 2027 benefit year, income guidelines of $32,690 or less for a single senior and $53,800 or less combined for a senior couple. Alberta notes these are guidelines only for seniors receiving the full OAS pension; actual entitlement varies with accommodation type, marital status and allowable deductions.",
     "requires_children": false,
     "nationality": "any_resident",
     "residency_months_min": null,
@@ -3994,12 +4050,16 @@
     "student_required": false,
     "admin_areas": [
      "Alberta"
-    ]
+    ],
+    "income_test": "numeric",
+    "income_source_url": "https://www.alberta.ca/alberta-seniors-benefit",
+    "income_confidence": "high"
    },
    "source_url": "https://www.alberta.ca/alberta-seniors-benefit",
    "source_snippet": "The Alberta Seniors Benefit provides a monthly benefit to eligible seniors with low-income to assist with living expenses.",
    "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "verification_status": "verified",
+   "income_reviewed_at": "2026-08-13"
   },
   {
    "slug": "calgary-fair-entry",
@@ -4048,19 +4108,23 @@
     "statuses": [],
     "age_min": null,
     "age_max": null,
-    "income_annual_max": null,
-    "income_note": "Household income below Calgary's low-income thresholds (based on LIM)",
+    "income_annual_max": 31906,
+    "income_note": "The City of Calgary publishes a Fair Entry eligibility table based on the Statistics Canada Low Income Cut-Off; the maximum total household income for a 1-person household is $31,906, rising with household size.",
     "requires_children": false,
     "nationality": "any_resident",
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "income_test": "numeric",
+    "income_source_url": "https://www.calgary.ca/social-services/low-income/fair-entry-subsidy/should-I-apply.html",
+    "income_confidence": "medium"
    },
    "source_url": "https://www.calgary.ca/social-services/low-income/fair-entry.html",
    "source_snippet": "Fair Entry is an application process that helps Calgarians access City of Calgary subsidized programs and services, using one application for multiple programs.",
    "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "verification_status": "auto_extracted",
+   "income_reviewed_at": "2026-08-13"
   },
   {
    "slug": "manitoba-employment-and-income-assistance",
@@ -4175,8 +4239,8 @@
     "statuses": [],
     "age_min": null,
     "age_max": null,
-    "income_annual_max": null,
-    "income_note": "Income-tested; not available to those in subsidized housing",
+    "income_annual_max": 29120,
+    "income_note": "For Manitobans not receiving EIA, Manitoba requires a net annual income of less than $29,120 for a single person, or $33,920 for a single person 55 years of age or older, or a person who qualifies for the Disability Tax Credit or receives CPP Disability benefits. Limits are higher for larger households.",
     "requires_children": false,
     "nationality": "any_resident",
     "residency_months_min": null,
@@ -4184,12 +4248,16 @@
     "student_required": false,
     "admin_areas": [
      "Manitoba"
-    ]
+    ],
+    "income_test": "numeric",
+    "income_source_url": "https://www.gov.mb.ca/fs/eia/rent_assist.html",
+    "income_confidence": "high"
    },
    "source_url": "https://www.gov.mb.ca/fs/eia/rent_assist.html",
    "source_snippet": "Rent Assist is a monthly shelter-related financial benefit to help low-income Manitobans who pay rent in the private market.",
    "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "verification_status": "verified",
+   "income_reviewed_at": "2026-08-13"
   },
   {
    "slug": "manitoba-55plus",
@@ -4236,8 +4304,8 @@
     ],
     "age_min": 55,
     "age_max": null,
-    "income_annual_max": null,
-    "income_note": "Annual net income below program maximums (indexed)",
+    "income_annual_max": 9746.4,
+    "income_note": "Manitoba 55 PLUS Junior component: annual income up to $9,746.40 for a single person and $16,255.20 for a couple. The Senior component instead tests family composition, net family income and the level of federal Old Age Security benefits received, and publishes no single maximum.",
     "requires_children": false,
     "nationality": "any_resident",
     "residency_months_min": null,
@@ -4245,12 +4313,16 @@
     "student_required": false,
     "admin_areas": [
      "Manitoba"
-    ]
+    ],
+    "income_test": "numeric",
+    "income_source_url": "https://www.gov.mb.ca/fs/eia/55plus.html",
+    "income_confidence": "high"
    },
    "source_url": "https://www.gov.mb.ca/fs/eia/55plus.html",
    "source_snippet": "The 55 PLUS Program provides quarterly income supplements to low-income Manitobans who are 55 years of age and over.",
    "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "verification_status": "verified",
+   "income_reviewed_at": "2026-08-13"
   },
   {
    "slug": "saskatchewan-income-support",
@@ -4308,7 +4380,7 @@
     "age_min": 18,
     "age_max": null,
     "income_annual_max": null,
-    "income_note": "Income and asset tested",
+    "income_note": "No income ceiling published. Saskatchewan states applicants must have no income or low income and have explored every other reasonable way to support themselves, using a whole-income approach in benefit calculation, but gives no dollar figure.",
     "requires_children": false,
     "nationality": "any_resident",
     "residency_months_min": null,
@@ -4316,12 +4388,16 @@
     "student_required": false,
     "admin_areas": [
      "Saskatchewan"
-    ]
+    ],
+    "income_test": "none",
+    "income_source_url": "https://www.saskatchewan.ca/residents/family-and-social-support/financial-help/saskatchewan-income-support-sis",
+    "income_confidence": "high"
    },
    "source_url": "https://www.saskatchewan.ca/residents/family-and-social-support/financial-help/saskatchewan-income-support-sis",
    "source_snippet": "The Saskatchewan Income Support (SIS) program helps people meet their basic needs while they become more self-sufficient and independent to the best of their abilities.",
    "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "verification_status": "verified",
+   "income_reviewed_at": "2026-08-13"
   },
   {
    "slug": "saskatchewan-assured-income-for-disability",
@@ -4816,7 +4892,7 @@
     "age_min": null,
     "age_max": null,
     "income_annual_max": null,
-    "income_note": "Full benefit for families with adjusted family net income below the first threshold (~$17,397, indexed)",
+    "income_note": "CRA publishes only the phase-out start, not a hard ceiling: for July 2026 - June 2027 the maximum is $157.33/month for the first child, and above an adjusted family net income of $20,397 you may get part of the benefit. The zero point depends on the number of children and is not published.",
     "requires_children": true,
     "nationality": "any_resident",
     "residency_months_min": null,
@@ -4824,12 +4900,16 @@
     "student_required": false,
     "admin_areas": [
      "Newfoundland and Labrador"
-    ]
+    ],
+    "income_test": "unpublished",
+    "income_source_url": "https://www.canada.ca/en/revenue-agency/services/child-family-benefits/provincial-territorial-programs/province-newfoundland-labrador.html",
+    "income_confidence": "high"
    },
    "source_url": "https://www.canada.ca/en/revenue-agency/services/child-family-benefits/provincial-territorial-programs/province-newfoundland-labrador.html",
    "source_snippet": "The Newfoundland and Labrador child benefit is a non-taxable amount paid monthly to help low-income families with the cost of raising children under 18 years of age.",
    "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "verification_status": "verified",
+   "income_reviewed_at": "2026-08-13"
   },
   {
    "slug": "pei-social-assistance",
@@ -4944,19 +5024,23 @@
     "statuses": [],
     "age_min": null,
     "age_max": null,
-    "income_annual_max": null,
-    "income_note": "Household income below the Statistics Canada Low-Income Cut-Off (LICO) thresholds",
+    "income_annual_max": 43028,
+    "income_note": "Vancouver publishes Leisure Access Program net-family-income tables: the general low-income table is $43,028 for a 1-person household, and $53,166 for households where someone receives the Disability Tax Credit or Child Disability Benefit. Thresholds rise with family size.",
     "requires_children": false,
     "nationality": "any_resident",
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "income_test": "numeric",
+    "income_source_url": "https://vancouver.ca/parks-recreation-culture/leisure-access-card.aspx",
+    "income_confidence": "high"
    },
    "source_url": "https://vancouver.ca/parks-recreation-culture/leisure-access-card.aspx",
    "source_snippet": "The Leisure Access Program helps low-income residents access Park Board programs and services at reduced cost.",
    "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "verification_status": "verified",
+   "income_reviewed_at": "2026-08-13"
   },
   {
    "slug": "canada-training-credit",
