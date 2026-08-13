@@ -833,6 +833,20 @@ app.addEventListener('click', async (ev) => {
   }
 });
 
+// A shared result link pasted while /check/ is already open changes only the
+// hash, which does not re-run the module. Without this the recipient sees the
+// wizard's first step instead of the result they were sent.
+window.addEventListener('hashchange', async () => {
+  const h = location.hash.match(/r=([A-Za-z0-9_-]+)/);
+  if (!h) return;
+  const p = decodeState(h[1]);
+  if (!p || !p.country_code) return;
+  if (S.result && encodeState() === h[1]) return;
+  Object.assign(S.profile, p);
+  await loadCountry(p.country_code.toLowerCase());
+  compute();
+});
+
 /* ---- boot ---- */
 (async () => {
   S.manifest = await (await fetch(`${BASE}/api/v1/countries.json`)).json();
