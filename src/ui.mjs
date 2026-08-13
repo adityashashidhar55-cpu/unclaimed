@@ -36,6 +36,10 @@ export const ICON = {
 
 export function layout({
   base,
+  linkBase,
+  lang = 'en',
+  altLangs = [],
+  tr,
   title,
   description,
   canonical,
@@ -47,11 +51,13 @@ export function layout({
   nav = '',
 }) {
   const fullTitle = title === SITE_NAME ? title : `${title} · ${SITE_NAME}`;
+  const LB = linkBase ?? base;
+  const T = tr ?? ((k) => k);
   const ldBlocks = jsonld
     .map((o) => `<script type="application/ld+json">${JSON.stringify(o).replace(/</g, '\\u003c')}</script>`)
     .join('\n');
   return `<!doctype html>
-<html lang="en">
+<html lang="${lang}">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -70,6 +76,7 @@ ${canonical ? `<meta property="og:url" content="${attr(canonical)}">` : ''}
 <link rel="stylesheet" href="${base}/theme.css">
 <link rel="icon" href="${base}/favicon.svg" type="image/svg+xml">
 <link rel="alternate" type="application/json" href="${base}/api/v1/countries.json" title="Unclaimed programme API">
+${altLangs.map((a) => `<link rel="alternate" hreflang="${a.lang}" href="${a.href}">`).join('\n')}
 ${head}
 ${ldBlocks}
 </head>
@@ -77,14 +84,14 @@ ${ldBlocks}
 <a href="#main" class="btn btn-sm" style="position:absolute;left:-9999px;top:0;z-index:100" onfocus="this.style.left='8px';this.style.top='8px'" onblur="this.style.left='-9999px'">Skip to content</a>
 <header class="masthead">
   <div class="shell masthead__inner">
-    <a class="wordmark" href="${base}/">${ICON.seal}${SITE_NAME}</a>
+    <a class="wordmark" href="${LB}/">${ICON.seal}${SITE_NAME}</a>
     <nav class="nav" aria-label="Main">
       <span class="nav nav--links">
-        <a href="${base}/countries/">Countries</a>
-        <a href="${base}/methodology/">How we know</a>
-        <a href="${base}/api/">API &amp; MCP</a>
+        <a href="${LB}/countries/">${esc(T('navCountries'))}</a>
+        <a href="${LB}/methodology/">${esc(T('navHow'))}</a>
+        <a href="${base}/api/">${esc(T('navApi'))}</a>
       </span>
-      ${nav || `<a class="btn btn-sm btn-primary" href="${base}/check/">Check what you're owed</a>`}
+      ${nav || `<a class="btn btn-sm btn-primary" href="${LB}/check/">${esc(T('ctaCheck'))}</a>`}
     </nav>
   </div>
 </header>
@@ -95,15 +102,15 @@ ${body}
   <div class="shell">
     <div class="grid grid-4">
       <div>
-        <a class="wordmark" href="${base}/">${ICON.seal}${SITE_NAME}</a>
+        <a class="wordmark" href="${LB}/">${ICON.seal}${SITE_NAME}</a>
         <p class="small" style="margin-top:.8rem;max-width:32ch">${esc(TAGLINE)} Free, anonymous, no sign-up.</p>
       </div>
       <div>
         <h4>Product</h4>
         <ul>
-          <li><a href="${base}/check/">Eligibility check</a></li>
-          <li><a href="${base}/countries/">All 25 countries</a></li>
-          <li><a href="${base}/methodology/">Methodology &amp; sources</a></li>
+          <li><a href="${LB}/check/">${esc(T('ctaCheck'))}</a></li>
+          <li><a href="${LB}/countries/">${esc(T('navCountries'))}</a></li>
+          <li><a href="${LB}/methodology/">${esc(T('methodology'))}</a></li>
         </ul>
       </div>
       <div>
@@ -117,12 +124,15 @@ ${body}
       <div>
         <h4>Trust</h4>
         <ul>
-          <li><a href="${base}/methodology/#limits">Known limitations</a></li>
-          <li><a href="${base}/methodology/#verification">Verification status</a></li>
+          <li><a href="${LB}/methodology/#limits">Known limitations</a></li>
+          <li><a href="${LB}/methodology/#verification">Verification status</a></li>
           <li><a href="https://github.com/adityashashidhar55-cpu/unclaimed">Source on GitHub</a></li>
         </ul>
       </div>
     </div>
+    ${altLangs.length ? `<div class="row" style="margin-top:2rem;gap:.5rem">${altLangs
+      .map((a) => `<a class="tag" href="${a.href}"${a.lang === lang ? ' aria-current="true"' : ''}>${esc(a.native)}</a>`)
+      .join('')}</div>` : ''}
     <p class="tiny" style="margin-top:2.5rem;max-width:none;border-top:1px solid var(--line);padding-top:1.2rem">
       ${SITE_NAME} is a discovery tool, not legal, tax or financial advice. Eligibility rules change; only the
       official body named on each programme page can confirm what you are entitled to. Always read the source
@@ -189,6 +199,7 @@ export function listRow(base, cc, p, currency) {
 </a>`;
 }
 
-export function disclaimerBar() {
-  return `<div class="disclaimer-bar"><div class="shell"><strong>Discovery tool, not advice.</strong> Every figure is the published rule, not a decision on your case.</div></div>`;
+export function disclaimerBar(tr) {
+  const T = tr ?? ((k) => ({ disclaimerShort: 'Discovery tool, not advice.', disclaimerRest: 'Every figure is the published rule, not a decision on your case.' }[k] ?? k));
+  return `<div class="disclaimer-bar"><div class="shell"><strong>${esc(T('disclaimerShort'))}</strong> ${esc(T('disclaimerRest'))}</div></div>`;
 }

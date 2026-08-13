@@ -13,6 +13,8 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import {
   match as matchEngine,
+  AUDIENCES,
+  audienceTags,
   CATEGORY_LABEL,
   CIRCUMSTANCES,
   circumstanceTags,
@@ -20,6 +22,7 @@ import {
   isCapitalCeiling,
   periodSuffix,
 } from './engine/matcher.js';
+import { LOCALES, LANGS, t as translator } from './i18n.mjs';
 import {
   SITE_NAME,
   TAGLINE,
@@ -63,6 +66,21 @@ function page(rel, html) {
 
 const PAGES = [];
 const nf = (n) => new Intl.NumberFormat('en').format(n);
+
+/* ---- Language state. The whole page set is generated once per language. ---- */
+let L = 'en';
+const LB = () => (L === 'en' ? BASE : `${BASE}/${L}`);
+let TR = translator('en');
+/** hreflang siblings for the page currently being rendered. */
+let ALT = [];
+function altFor(path) {
+  return LANGS.filter((lg) => lg === 'en' || (LOCALES[lg].countries ?? []).length)
+    .map((lg) => ({
+      lang: lg,
+      native: LOCALES[lg].native,
+      href: `${ORIGIN}${BASE}${lg === 'en' ? '' : '/' + lg}${path}`,
+    }));
+}
 
 /* ------------------------------------------------------------------ */
 /* Load data                                                           */
@@ -154,7 +172,7 @@ function landing() {
   const flags = countries
     .map(
       ({ entry }) =>
-        `<a class="flag-chip" href="${BASE}/${entry.slug}/"><span class="flag-chip__flag">${entry.flag}</span>${esc(
+        `<a class="flag-chip" href="${LB()}/${entry.slug}/"><span class="flag-chip__flag">${entry.flag}</span>${esc(
           entry.name,
         )}<span class="tiny">${entry.programme_count}</span></a>`,
     )
@@ -164,7 +182,7 @@ function landing() {
     .sort((a, b) => b[1] - a[1])
     .map(
       ([cat, n]) =>
-        `<a class="card card-link" href="${BASE}/browse/${cat}/">
+        `<a class="card card-link" href="${LB()}/browse/${cat}/">
           <h3 style="font-size:1.15rem;margin-bottom:.2rem">${esc(categoryLabel(cat))}</h3>
           <p class="small" style="margin:0">${nf(n)} programmes across ${STATS.countryCount} countries</p>
         </a>`,
@@ -194,23 +212,19 @@ function landing() {
   })();
 
   const body = `
-${disclaimerBar()}
+${disclaimerBar(TR)}
 <section class="hero shell">
   <div class="hero__grid">
   <div>
   <span class="eyebrow eyebrow-accent">${nf(STATS.total)} real programmes · ${STATS.countryCount} countries · sourced &amp; dated</span>
-  <h1>How much money are you <span class="hero__accent">leaving on the table</span>?</h1>
-  <p class="lede hero__lede">
-    Governments hand out rent support, family payments, energy discounts, tax credits and transport
-    concessions — and most of it goes unclaimed because nobody tells you it exists. Answer a few
-    questions and get a sourced list of what you can actually apply for, with the documents,
-    the steps and the official link.
-  </p>
+  <h1>${esc(TR('heroA'))} <span class="hero__accent">${esc(TR('heroB'))}</span>${esc(TR('heroQ'))}</h1>
+  <p class="lede hero__lede">${esc(TR('heroLede'))}</p>
   <div class="hero__cta">
-    <a class="btn btn-primary" href="${BASE}/check/">Check what you're owed ${ICON.arrow}</a>
-    <a class="btn btn-ghost" href="${BASE}/countries/">Browse by country</a>
+    <a class="btn btn-primary" href="${LB()}/check/">${esc(TR('ctaCheck'))} ${ICON.arrow}</a>
+    <a class="btn btn-ghost" href="${LB()}/countries/">${esc(TR('ctaBrowse'))}</a>
   </div>
-  <p class="tiny" style="margin-top:1rem">Free. Anonymous. No sign-up, no email, nothing stored on a server — the check runs in your browser.</p>
+  <p class="tiny" style="margin-top:1rem">${esc(TR('free'))}</p>
+  ${L === 'en' ? '' : `<p class="tiny" style="margin-top:.6rem;opacity:.8">${esc(TR('langNote'))}</p>`}
   </div>
   <aside class="hero__demo">
     <div class="result-hero" style="padding:1.6rem 1.5rem">
@@ -240,10 +254,10 @@ ${disclaimerBar()}
   </div>
 
   <div class="stat-strip">
-    <div class="stat"><div class="stat__n">${nf(STATS.total)}</div><div class="stat__l">Programmes catalogued</div></div>
-    <div class="stat"><div class="stat__n">${nf(STATS.countryCount)}</div><div class="stat__l">Countries covered</div></div>
-    <div class="stat"><div class="stat__n">${nf(STATS.verified)}</div><div class="stat__l">Human-verified records (${STATS.verifiedPct}%)</div></div>
-    <div class="stat"><div class="stat__n">${nf(STATS.funderCount)}</div><div class="stat__l">Distinct funding bodies</div></div>
+    <div class="stat"><div class="stat__n">${nf(STATS.total)}</div><div class="stat__l">${esc(TR('statProgrammes'))}</div></div>
+    <div class="stat"><div class="stat__n">${nf(STATS.countryCount)}</div><div class="stat__l">${esc(TR('statCountries'))}</div></div>
+    <div class="stat"><div class="stat__n">${nf(STATS.verified)}</div><div class="stat__l">${esc(TR('statVerified'))} (${STATS.verifiedPct}%)</div></div>
+    <div class="stat"><div class="stat__n">${nf(STATS.funderCount)}</div><div class="stat__l">${esc(TR('statFunders'))}</div></div>
   </div>
 </section>
 
@@ -317,12 +331,23 @@ ${disclaimerBar()}
 
 <section class="section shell section-rule">
   <span class="eyebrow">Coverage</span>
-  <div class="spread"><h2>${STATS.countryCount} countries</h2><a class="link-underline" href="${BASE}/countries/">See coverage detail</a></div>
+  <div class="spread"><h2>${STATS.countryCount} countries</h2><a class="link-underline" href="${LB()}/countries/">See coverage detail</a></div>
   <div class="flag-wall" style="margin-top:1.6rem">${flags}</div>
 </section>
 
 <section class="section shell section-rule">
-  <span class="eyebrow">Browse</span>
+  <span class="eyebrow">${esc(TR('whoFor'))}</span>
+  <h2 style="max-width:20ch">Start from who you are</h2>
+  <div class="grid grid-4" style="margin-top:2rem">
+    ${AUDIENCES.map((a) => `<a class="card card-link" href="${LB()}/for/${a.id}/">
+      <h3 style="font-size:1.1rem;margin-bottom:.3rem">${esc(a.label)}</h3>
+      <p class="small" style="margin:0">${esc(TR(a.blurbKey))}</p>
+    </a>`).join('')}
+  </div>
+</section>
+
+<section class="section shell section-rule">
+  <span class="eyebrow">${esc(TR('browseCat'))}</span>
   <h2>By category</h2>
   <div class="grid grid-3" style="margin-top:2rem">${catCards}</div>
 </section>
@@ -338,7 +363,7 @@ ${disclaimerBar()}
       <p>Amounts that depend on your circumstances are left blank with a note, never guessed. Right now
       ${nf(STATS.priced)} of ${nf(STATS.total)} records carry a published figure; the rest tell you the amount varies
       and link you to the official calculator.</p>
-      <p><a class="link-underline" href="${BASE}/methodology/">Read the full methodology and known limitations</a></p>
+      <p><a class="link-underline" href="${LB()}/methodology/">Read the full methodology and known limitations</a></p>
     </div>
     <div class="card">
       <h3 style="margin-bottom:1rem">Data as of ${esc(STATS.asOf)}</h3>
@@ -359,12 +384,16 @@ ${disclaimerBar()}
   <h2 style="max-width:22ch;margin-inline:auto">It takes about ninety seconds.</h2>
   <p class="lede" style="max-width:48ch">The worst case is you find out you're already claiming everything.
   The realistic case is one payment you didn't know existed.</p>
-  <p style="margin-top:2rem"><a class="btn btn-primary" href="${BASE}/check/">Start the check ${ICON.arrow}</a></p>
+  <p style="margin-top:2rem"><a class="btn btn-primary" href="${LB()}/check/">Start the check ${ICON.arrow}</a></p>
 </section>
 `;
 
   return layout({
     base: BASE,
+    linkBase: LB(),
+    lang: L,
+    tr: TR,
+    altLangs: ALT,
     title: SITE_NAME,
     description: `Find unclaimed government grants, benefits and tax relief across ${STATS.countryCount} countries. ${nf(STATS.total)} real programmes with official sources, document checklists and application steps. Free and anonymous.`,
     canonical: `${SITE_URL}/`,
@@ -406,9 +435,9 @@ function programmePage(entry, data, p) {
   const cur = p.amount_currency || data.currency;
   const amt = amountLabel(p, data.currency);
   const crumbs = [
-    { label: 'Home', href: `${BASE}/` },
-    { label: entry.name, href: `${BASE}/${cc}/` },
-    { label: categoryLabel(p.category), href: `${BASE}/${cc}/${p.category}/` },
+    { label: 'Home', href: `${LB()}/` },
+    { label: entry.name, href: `${LB()}/${cc}/` },
+    { label: categoryLabel(p.category), href: `${LB()}/${cc}/${p.category}/` },
     { label: p.name_en },
   ];
 
@@ -537,7 +566,7 @@ function programmePage(entry, data, p) {
           ? `<a class="btn btn-primary" style="width:100%" href="${attr(p.application_url)}" rel="nofollow noopener" target="_blank">Apply on the official site ${ICON.arrow}</a>`
           : `<a class="btn btn-ghost" style="width:100%" href="${attr(p.source_url)}" rel="nofollow noopener" target="_blank">Open the official page ${ICON.arrow}</a>`
       }
-      <a class="btn btn-ghost" style="width:100%" href="${BASE}/check/?country=${cc}">Check your full entitlement</a>
+      <a class="btn btn-ghost" style="width:100%" href="${LB()}/check/?country=${cc}">Check your full entitlement</a>
       <button class="btn btn-ghost" style="width:100%" onclick="window.print()">Print / save as PDF</button>
       <div class="card card-flat">
         <h4 style="margin-bottom:.7rem">At a glance</h4>
@@ -583,6 +612,10 @@ function programmePage(entry, data, p) {
 
   return layout({
     base: BASE,
+    linkBase: LB(),
+    lang: L,
+    tr: TR,
+    altLangs: ALT,
     title: `${p.name_en} — ${entry.name}`,
     description: `${p.name_en}${p.name_local !== p.name_en ? ` (${p.name_local})` : ''}: who qualifies, ${amt ? `worth ${amt}, ` : ''}documents needed, how to apply, and the official ${p.funder} source. Last checked ${p.last_verified_at}.`,
     canonical: `${SITE_URL}/${cc}/${p.category}/${p.slug}/`,
@@ -609,14 +642,14 @@ function countryPage(entry, data) {
       return `<section style="margin-top:3rem">
         <div class="spread" style="border-bottom:1px solid var(--line);padding-bottom:.6rem">
           <h2 style="font-size:clamp(1.3rem,2.2vw,1.9rem);margin:0">${esc(categoryLabel(cat))}</h2>
-          <a class="link-underline small" href="${BASE}/${cc}/${cat}/">All ${list.length} ${esc(categoryLabel(cat).toLowerCase())} programmes</a>
+          <a class="link-underline small" href="${LB()}/${cc}/${cat}/">All ${list.length} ${esc(categoryLabel(cat).toLowerCase())} programmes</a>
         </div>
         <div class="list-rows">${shown.map((p) => listRow(BASE, cc, p, data.currency)).join('')}</div>
       </section>`;
     })
     .join('');
 
-  const crumbs = [{ label: 'Home', href: `${BASE}/` }, { label: 'Countries', href: `${BASE}/countries/` }, { label: entry.name }];
+  const crumbs = [{ label: 'Home', href: `${LB()}/` }, { label: 'Countries', href: `${LB()}/countries/` }, { label: entry.name }];
 
   const body = `
 <section class="section-tight shell">
@@ -627,7 +660,7 @@ function countryPage(entry, data) {
   each with the published eligibility rules, an official source and the date we last checked it.
   ${automatic} of them pay out automatically; the other ${entry.programme_count - automatic} need an application.</p>
   <div class="hero__cta">
-    <a class="btn btn-primary" href="${BASE}/check/?country=${cc}">Check your entitlement in ${esc(entry.name)} ${ICON.arrow}</a>
+    <a class="btn btn-primary" href="${LB()}/check/?country=${cc}">Check your entitlement in ${esc(entry.name)} ${ICON.arrow}</a>
     <a class="btn btn-ghost" href="${BASE}/api/v1/programmes/${cc}.json">Raw JSON</a>
   </div>
   <div class="stat-strip">
@@ -642,7 +675,7 @@ function countryPage(entry, data) {
   <div class="filters">
     ${Object.keys(cats)
       .sort()
-      .map((c) => `<a class="tag" href="${BASE}/${cc}/${c}/">${esc(categoryLabel(c))} <span class="tiny">${cats[c].length}</span></a>`)
+      .map((c) => `<a class="tag" href="${LB()}/${cc}/${c}/">${esc(categoryLabel(c))} <span class="tiny">${cats[c].length}</span></a>`)
       .join('')}
   </div>
   ${catSections}
@@ -658,6 +691,10 @@ function countryPage(entry, data) {
 
   return layout({
     base: BASE,
+    linkBase: LB(),
+    lang: L,
+    tr: TR,
+    altLangs: ALT,
     title: `${entry.name} — every benefit, grant and rebate we could source`,
     description: `${entry.programme_count} government and institutional support programmes in ${entry.name}: housing, family, income support, energy, transport, tax and business. Official sources, eligibility rules and application steps. Free eligibility check.`,
     canonical: `${SITE_URL}/${cc}/`,
@@ -683,8 +720,8 @@ function countryPage(entry, data) {
 function categoryPage(entry, data, cat, list) {
   const cc = entry.slug;
   const crumbs = [
-    { label: 'Home', href: `${BASE}/` },
-    { label: entry.name, href: `${BASE}/${cc}/` },
+    { label: 'Home', href: `${LB()}/` },
+    { label: entry.name, href: `${LB()}/${cc}/` },
     { label: categoryLabel(cat) },
   ];
   const body = `
@@ -694,7 +731,7 @@ function categoryPage(entry, data, cat, list) {
   <h1 style="font-size:clamp(2rem,4.5vw,3.4rem)">${esc(categoryLabel(cat))} in ${esc(entry.name)}</h1>
   <p class="lede" style="max-width:58ch">${list.length} ${esc(categoryLabel(cat).toLowerCase())} programmes we could source and date.
   Sorted so the ones with a published amount come first.</p>
-  <p><a class="btn btn-primary btn-sm" href="${BASE}/check/?country=${cc}">Check which of these you qualify for ${ICON.arrow}</a></p>
+  <p><a class="btn btn-primary btn-sm" href="${LB()}/check/?country=${cc}">Check which of these you qualify for ${ICON.arrow}</a></p>
   <div class="list-rows" style="margin-top:2rem">
     ${list
       .slice()
@@ -706,6 +743,10 @@ function categoryPage(entry, data, cat, list) {
 
   return layout({
     base: BASE,
+    linkBase: LB(),
+    lang: L,
+    tr: TR,
+    altLangs: ALT,
     title: `${categoryLabel(cat)} in ${entry.name} — ${list.length} programmes`,
     description: `Every ${categoryLabel(cat).toLowerCase()} programme we could source in ${entry.name} (${list.length} records), with eligibility rules, amounts, documents and official links.`,
     canonical: `${SITE_URL}/${cc}/${cat}/`,
@@ -723,7 +764,7 @@ function globalCategoryPage(cat) {
     .map(({ entry, data }) => {
       const list = data.programmes.filter((p) => p.category === cat);
       if (!list.length) return '';
-      return `<a class="list-row" href="${BASE}/${entry.slug}/${cat}/">
+      return `<a class="list-row" href="${LB()}/${entry.slug}/${cat}/">
         <span><span class="list-row__name">${entry.flag} ${esc(entry.name)}</span>
         <span class="list-row__meta">${list
           .slice(0, 3)
@@ -734,7 +775,7 @@ function globalCategoryPage(cat) {
     })
     .join('');
 
-  const crumbs = [{ label: 'Home', href: `${BASE}/` }, { label: 'Browse' }, { label: categoryLabel(cat) }];
+  const crumbs = [{ label: 'Home', href: `${LB()}/` }, { label: 'Browse' }, { label: categoryLabel(cat) }];
   const total = STATS.byCategory[cat] || 0;
 
   const body = `
@@ -749,6 +790,10 @@ function globalCategoryPage(cat) {
 
   return layout({
     base: BASE,
+    linkBase: LB(),
+    lang: L,
+    tr: TR,
+    altLangs: ALT,
     title: `${categoryLabel(cat)} programmes worldwide`,
     description: `${total} ${categoryLabel(cat).toLowerCase()} support programmes across ${STATS.countryCount} countries, with official sources and eligibility rules.`,
     canonical: `${SITE_URL}/browse/${cat}/`,
@@ -765,7 +810,7 @@ function countriesIndex() {
   const rows = countries
     .map(({ entry, data }) => {
       const verified = data.programmes.filter((p) => p.verification_status === 'verified').length;
-      return `<a class="list-row" href="${BASE}/${entry.slug}/">
+      return `<a class="list-row" href="${LB()}/${entry.slug}/">
       <span><span class="list-row__name">${entry.flag} ${esc(entry.name)}</span>
       <span class="list-row__meta">${entry.categories.length} categories · ${verified} verified · ${entry.currency}</span></span>
       <span class="list-row__right"><span class="list-row__amount">${entry.programme_count}</span><span class="tiny">programmes</span></span>
@@ -775,7 +820,7 @@ function countriesIndex() {
 
   const body = `
 <section class="section-tight shell">
-  ${breadcrumbs([{ label: 'Home', href: `${BASE}/` }, { label: 'Countries' }])}
+  ${breadcrumbs([{ label: 'Home', href: `${LB()}/` }, { label: 'Countries' }])}
   <span class="eyebrow eyebrow-accent">Coverage</span>
   <h1>${STATS.countryCount} countries, ${nf(STATS.total)} programmes</h1>
   <p class="lede" style="max-width:56ch">Coverage is deliberately uneven — we went deep on national schemes everywhere
@@ -789,11 +834,15 @@ function countriesIndex() {
 
   return layout({
     base: BASE,
+    linkBase: LB(),
+    lang: L,
+    tr: TR,
+    altLangs: ALT,
     title: 'All countries',
     description: `Benefit and grant coverage across ${STATS.countryCount} countries — ${nf(STATS.total)} sourced programmes with eligibility rules and official links.`,
     canonical: `${SITE_URL}/countries/`,
     body,
-    jsonld: [breadcrumbLd([{ label: 'Home', href: `${BASE}/` }, { label: 'Countries' }])],
+    jsonld: [breadcrumbLd([{ label: 'Home', href: `${LB()}/` }, { label: 'Countries' }])],
   });
 }
 
@@ -803,14 +852,14 @@ function countriesIndex() {
 
 function checkPage() {
   const body = `
-${disclaimerBar()}
+${disclaimerBar(TR)}
 <section class="section-tight shell">
   <div id="app" class="wizard">
     <noscript>
       <div class="callout">
         <p><strong>The eligibility check needs JavaScript</strong> — it runs entirely in your browser so that
         nothing you type ever reaches a server. Without it you can still browse every programme by country:</p>
-        <p><a class="link-underline" href="${BASE}/countries/">Browse all ${STATS.countryCount} countries</a></p>
+        <p><a class="link-underline" href="${LB()}/countries/">Browse all ${STATS.countryCount} countries</a></p>
       </div>
     </noscript>
   </div>
@@ -819,11 +868,15 @@ ${disclaimerBar()}
 
   return layout({
     base: BASE,
+    linkBase: LB(),
+    lang: L,
+    tr: TR,
+    altLangs: ALT,
     title: 'Check what you are owed',
     description: `A 90-second anonymous eligibility check against ${nf(STATS.total)} government support programmes in ${STATS.countryCount} countries. Nothing is stored on a server.`,
     canonical: `${SITE_URL}/check/`,
     body,
-    nav: `<a class="btn btn-sm btn-ghost" href="${BASE}/countries/">Browse instead</a>`,
+    nav: `<a class="btn btn-sm btn-ghost" href="${LB()}/countries/">Browse instead</a>`,
   });
 }
 
@@ -834,7 +887,7 @@ ${disclaimerBar()}
 function methodologyPage() {
   const body = `
 <section class="section-tight shell-narrow">
-  ${breadcrumbs([{ label: 'Home', href: `${BASE}/` }, { label: 'Methodology' }])}
+  ${breadcrumbs([{ label: 'Home', href: `${LB()}/` }, { label: 'Methodology' }])}
   <span class="eyebrow eyebrow-accent">Trust</span>
   <h1>How we know what we say we know</h1>
   <p class="lede">Everything on this site is checkable. This page tells you exactly how the data was
@@ -923,6 +976,10 @@ function methodologyPage() {
 
   return layout({
     base: BASE,
+    linkBase: LB(),
+    lang: L,
+    tr: TR,
+    altLangs: ALT,
     title: 'Methodology, sources and known limitations',
     description: 'How the Unclaimed dataset is sourced, verified and dated — including an honest list of what is still wrong with it.',
     canonical: `${SITE_URL}/methodology/`,
@@ -937,7 +994,7 @@ function methodologyPage() {
 function apiPage() {
   const body = `
 <section class="section-tight shell-narrow">
-  ${breadcrumbs([{ label: 'Home', href: `${BASE}/` }, { label: 'API & MCP' }])}
+  ${breadcrumbs([{ label: 'Home', href: `${LB()}/` }, { label: 'API & MCP' }])}
   <span class="eyebrow eyebrow-accent">Developers</span>
   <h1>Plug the whole dataset into anything</h1>
   <p class="lede">Static JSON, no key, no rate limit, CORS-open by virtue of being files on a CDN.
@@ -978,10 +1035,114 @@ function apiPage() {
 
   return layout({
     base: BASE,
+    linkBase: LB(),
+    lang: L,
+    tr: TR,
+    altLangs: ALT,
     title: 'API and MCP access',
     description: 'Free static JSON API and MCP tool schemas over 2,000+ sourced government benefit programmes in 25 countries.',
     canonical: `${SITE_URL}/api/`,
     body,
+  });
+}
+
+
+/* ================================================================== */
+/* Audience landing pages                                              */
+/* ================================================================== */
+
+function audienceRows(cc, data, audId) {
+  return data.programmes
+    .filter((p) => audienceTags(p).includes(audId))
+    .sort((a, b) => {
+      // Money first, then human-verified, then everything else.
+      const av = a.amount_max ?? a.amount_min ?? -1;
+      const bv = b.amount_max ?? b.amount_min ?? -1;
+      if (bv !== av) return bv - av;
+      return (b.verification_status === 'verified') - (a.verification_status === 'verified');
+    });
+}
+
+/** /{cc}/for/{audience}/ — the page an ad click should land on. */
+function audienceCountryPage(entry, data, aud) {
+  const cc = entry.slug;
+  const list = audienceRows(cc, data, aud.id);
+  const automatic = list.filter((p) => p.is_automatic).length;
+  const priced = list.filter((p) => p.amount_max != null || p.amount_min != null);
+  const crumbs = [
+    { label: TR('backHome'), href: `${LB()}/` },
+    { label: entry.name, href: `${LB()}/${cc}/` },
+    { label: aud.label },
+  ];
+  const body = `
+${disclaimerBar(TR)}
+<section class="section-tight shell">
+  ${breadcrumbs(crumbs)}
+  <span class="eyebrow eyebrow-accent">${entry.flag} ${esc(entry.name)} · ${esc(TR(aud.i18n))}</span>
+  <h1 style="max-width:18ch">${esc(TR('audHead')(list.length, TR(aud.i18n), entry.name))}</h1>
+  <p class="lede" style="max-width:56ch">${esc(TR(aud.blurbKey))}</p>
+  <div class="hero__cta">
+    <a class="btn btn-primary" href="${LB()}/check/?country=${cc}">${esc(TR('ctaCheck'))} ${ICON.arrow}</a>
+  </div>
+  <div class="stat-strip">
+    <div class="stat"><div class="stat__n">${list.length}</div><div class="stat__l">${esc(TR('audFor'))}</div></div>
+    <div class="stat"><div class="stat__n">${automatic}</div><div class="stat__l">${esc(TR('audAuto'))}</div></div>
+    <div class="stat"><div class="stat__n">${list.length - automatic}</div><div class="stat__l">${esc(TR('audApply'))}</div></div>
+    <div class="stat"><div class="stat__n">${priced.length}</div><div class="stat__l">${esc(TR('audPriced'))}</div></div>
+  </div>
+  <div class="list-rows" style="margin-top:2.5rem">
+    ${list.map((p) => listRow(LB(), cc, p, data.currency)).join('')}
+  </div>
+  <div class="callout" style="margin-top:2.5rem">
+    <p><strong>${list.length - priced.length} of these publish no fixed amount.</strong> That does not mean they are
+    small — it means the authority calculates the figure from your circumstances, and those are often the biggest
+    payments of all. Run the check to see which apply to you.</p>
+  </div>
+</section>`;
+  return layout({
+    base: BASE, linkBase: LB(), lang: L, tr: TR, altLangs: ALT,
+    title: `${aud.label} in ${entry.name} — ${list.length} things you can claim`,
+    description: `${list.length} real support programmes for ${aud.label.toLowerCase()} in ${entry.name}: ${aud.blurb} Official sources, eligibility rules and application steps. Free anonymous check.`,
+    canonical: `${SITE_URL}${L === 'en' ? '' : '/' + L}/${cc}/for/${aud.id}/`,
+    body,
+    jsonld: [breadcrumbLd(crumbs)],
+  });
+}
+
+/** /for/{audience}/ — the global chooser. */
+function audienceIndexPage(aud) {
+  const rows = countries
+    .map(({ entry, data }) => ({ entry, n: audienceRows(entry.slug, data, aud.id).length }))
+    .filter((r) => r.n)
+    .sort((a, b) => b.n - a.n);
+  const total = rows.reduce((s2, r) => s2 + r.n, 0);
+  const crumbs = [{ label: TR('backHome'), href: `${LB()}/` }, { label: aud.label }];
+  const body = `
+${disclaimerBar(TR)}
+<section class="section-tight shell">
+  ${breadcrumbs(crumbs)}
+  <span class="eyebrow eyebrow-accent">${esc(TR('whoFor'))}</span>
+  <h1>${esc(aud.label)}</h1>
+  <p class="lede" style="max-width:56ch">${esc(TR(aud.blurbKey))} ${nf(total)} programmes across ${rows.length} countries.
+  Pick your country to see the list that applies to you.</p>
+  <div class="list-rows" style="margin-top:2rem">
+    ${rows
+      .map(
+        (r) => `<a class="list-row" href="${LB()}/${r.entry.slug}/for/${aud.id}/">
+      <span><span class="list-row__name">${r.entry.flag} ${esc(r.entry.name)}</span></span>
+      <span class="list-row__right"><span class="list-row__amount">${r.n}</span><span class="tiny">programmes</span></span>
+    </a>`,
+      )
+      .join('')}
+  </div>
+</section>`;
+  return layout({
+    base: BASE, linkBase: LB(), lang: L, tr: TR, altLangs: ALT,
+    title: `${aud.label} — what you can claim`,
+    description: `${total} support programmes for ${aud.label.toLowerCase()} across ${rows.length} countries, with official sources and eligibility rules.`,
+    canonical: `${SITE_URL}${L === 'en' ? '' : '/' + L}/for/${aud.id}/`,
+    body,
+    jsonld: [breadcrumbLd(crumbs)],
   });
 }
 
@@ -1002,35 +1163,78 @@ write(
   `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><rect width="24" height="24" rx="5" fill="#1c1a16"/><circle cx="12" cy="12" r="7.5" fill="none" stroke="#faf6ef" stroke-width="1"/><path d="M8.4 12.2l2.5 2.5 4.7-5.2" fill="none" stroke="#e08a5a" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>`,
 );
 
-// pages
-page('index.html', landing());
-page('countries/index.html', countriesIndex());
-page('check/index.html', checkPage());
-page('methodology/index.html', methodologyPage());
+/* ---- Generate the whole page set once per language. ------------------
+ * English gets everything. Each other language gets the shared surfaces plus
+ * the countries that actually speak it — a Hindi page for Portugal would be
+ * SEO noise, and a French page for France is the entire point.
+ */
+function buildLanguage(lang) {
+  L = lang;
+  TR = translator(lang);
+  const only = LOCALES[lang].countries;
+  const mine = only ? countries.filter((c) => only.includes(c.entry.slug)) : countries;
+  const pre = lang === 'en' ? '' : `${lang}/`;
+
+  ALT = altFor('/');
+  page(`${pre}index.html`, landing());
+  ALT = altFor('/countries/');
+  page(`${pre}countries/index.html`, countriesIndex());
+  ALT = altFor('/check/');
+  page(`${pre}check/index.html`, checkPage());
+  ALT = altFor('/methodology/');
+  page(`${pre}methodology/index.html`, methodologyPage());
+
+  for (const aud of AUDIENCES) {
+    ALT = altFor(`/for/${aud.id}/`);
+    page(`${pre}for/${aud.id}/index.html`, audienceIndexPage(aud));
+  }
+
+  if (lang === 'en') {
+    for (const cat of Object.keys(STATS.byCategory)) {
+      ALT = altFor(`/browse/${cat}/`);
+      page(`browse/${cat}/index.html`, globalCategoryPage(cat));
+    }
+  }
+
+  for (const { entry, data } of mine) {
+    const cc = entry.slug;
+    ALT = altFor(`/${cc}/`);
+    page(`${pre}${cc}/index.html`, countryPage(entry, data));
+
+    for (const aud of AUDIENCES) {
+      if (!audienceRows(cc, data, aud.id).length) continue;
+      ALT = altFor(`/${cc}/for/${aud.id}/`);
+      page(`${pre}${cc}/for/${aud.id}/index.html`, audienceCountryPage(entry, data, aud));
+    }
+
+    const cats = {};
+    for (const p2 of data.programmes) (cats[p2.category] ||= []).push(p2);
+    for (const [cat, list] of Object.entries(cats)) {
+      ALT = altFor(`/${cc}/${cat}/`);
+      page(`${pre}${cc}/${cat}/index.html`, categoryPage(entry, data, cat, list));
+      for (const p2 of list) {
+        ALT = altFor(`/${cc}/${cat}/${p2.slug}/`);
+        page(`${pre}${cc}/${cat}/${p2.slug}/index.html`, programmePage(entry, data, p2));
+      }
+    }
+  }
+}
+
+for (const lang of LANGS) buildLanguage(lang);
+L = 'en';
+TR = translator('en');
+ALT = [];
 page('api/index.html', apiPage());
 write('404.html', layout({
   base: BASE,
+  linkBase: BASE,
   title: 'Page not found',
   description: 'That page does not exist.',
-  body: `<section class="section shell center"><h1>Not here.</h1><p class="lede">That page doesn't exist — programme URLs look like <code>/gb/housing/some-scheme/</code>.</p><p style="margin-top:2rem"><a class="btn btn-primary" href="${BASE}/">Back to the start</a> <a class="btn btn-ghost" href="${BASE}/countries/">Browse countries</a></p></section>`,
+  body: `<section class="section shell center"><h1>Not here.</h1><p class="lede">That page doesn't exist — programme URLs look like <code>/gb/housing/some-scheme/</code>.</p><p style="margin-top:2rem"><a class="btn btn-primary" href="${LB()}/">Back to the start</a> <a class="btn btn-ghost" href="${LB()}/countries/">Browse countries</a></p></section>`,
 }));
 
-for (const cat of Object.keys(STATS.byCategory)) {
-  page(`browse/${cat}/index.html`, globalCategoryPage(cat));
-}
-
 for (const { entry, data } of countries) {
-  const cc = entry.slug;
-  page(`${cc}/index.html`, countryPage(entry, data));
-  const cats = {};
-  for (const p of data.programmes) (cats[p.category] ||= []).push(p);
-  for (const [cat, list] of Object.entries(cats)) {
-    page(`${cc}/${cat}/index.html`, categoryPage(entry, data, cat, list));
-    for (const p of list) {
-      page(`${cc}/${cat}/${p.slug}/index.html`, programmePage(entry, data, p));
-    }
-  }
-  write(`api/v1/programmes/${cc}.json`, JSON.stringify(data));
+  write(`api/v1/programmes/${entry.slug}.json`, JSON.stringify(data));
 }
 
 // ---- machine-readable layer ----
