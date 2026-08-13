@@ -3,7 +3,7 @@
 Honest capability read for the static rebuild. Nothing here is marked done if it is
 simulated or partially wired. Limitations first.
 
-Build verified: `node src/build.mjs` → 2,503 pages, `node scripts/verify.mjs` → 22/22 checks.
+Build verified: `node src/build.mjs` → 4,108 pages, `node scripts/verify.mjs` → 22/22 checks.
 
 ---
 
@@ -78,6 +78,54 @@ Build verified: `node src/build.mjs` → 2,503 pages, `node scripts/verify.mjs` 
 - **The original React SPA is not in this repo.** It was never installed or compiled (no npm
   registry access in the build sandbox), so it is **unverified**, not "working", and carrying
   unverified code would misrepresent it. The static build fully replaces it.
+
+## Income-threshold research (2026-08-13, second pass)
+
+Reported by the user: a French employee on €60,000 was being shown low-income
+allowances as "eligible". The cause was not the ranking — it was that the income rule
+could not fire. Only 371 of 2,216 records carried a numeric `income_annual_max`, and a
+further 412 stated in their own prose that they were means-tested without publishing a
+number. Any income above zero passed all of them.
+
+Six parallel research passes checked the highest-value records against official sources.
+**142 records were checked; nothing was estimated.** Results:
+
+- **52 numeric ceilings added** (dataset now 423). Examples: Visale €20,520; NZ Community
+  Services Card NZ$34,974; Belgian verhoogde tegemoetkoming €28,054.93; Canada Workers
+  Benefit CA$37,742; Ontario OESP CA$38,000; SASSA CSG R67,200; ECDA childcare
+  SGD 144,000; ANEEL tarifa social R$9,726; AU Low Income Health Care Card A$42,172.
+- **56 records confirmed to have NO income test at all** by their own official page
+  (Kindergeld, AEEH, Baby Bonus Cash Gift, SASSA Foster Child Grant, Deutschlandstipendium…).
+  These now carry `income_test: "none"` and are *no longer* wrongly caveated — accuracy
+  in both directions, not just tightening.
+- **34 confirmed means-tested with a genuinely unpublished threshold** (`income_test:
+  "unpublished"`) — Dutch huurtoeslag, US Medicaid, Swiss cantonal childcare. These are
+  held out of the eligible bucket instead of silently passing.
+
+Every researched record carries `income_source_url`, `income_confidence` and
+`income_reviewed_at`. Where an official page publishes no figure, the value is null with
+the reason recorded — never a plausible-looking guess. Two stale records were corrected in
+passing: Belgium's OMNIO status was merged into the verhoogde tegemoetkoming in 2014 and no
+longer exists separately, and the Vlaamse zorgverzekering note described the wrong benefit.
+
+Also fixed: **aid paid to employers** ("Employer Hiring Aid for Apprentices") was being
+offered to individuals as their own entitlement. Those are now flagged and excluded.
+
+## Audience pages
+
+`/for/{students,parents,freelancers,renters}/` plus per-country versions, derived **only**
+from structured eligibility fields (`student_required`, `requires_children`, `statuses`,
+`housing_tenure`, `age_max`, `category`) — never guessed from prose. Coverage: 351 student,
+424 parent, 342 freelancer, 201 renter records.
+
+## Languages
+
+Six locales (fr, es, de, it, pt, hi) with real `hreflang`, each generated only for the
+countries that speak it. **The interface is translated; the eligibility prose is not.**
+Programme names were already real local-language strings from the dataset's `name_local`.
+Official-source rule text is deliberately left untranslated and every localised page says
+so — on a site whose entire claim is accuracy, a machine-mistranslated benefit rule is
+worse than an English one.
 
 ## Accuracy fixes from adversarial review (2026-08-13)
 
