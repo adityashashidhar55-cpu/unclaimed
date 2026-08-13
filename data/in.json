@@ -1,0 +1,4834 @@
+{
+  "country_code": "IN",
+  "country_name": "India",
+  "currency": "INR",
+  "language": "hi",
+  "programmes": [
+    {
+      "slug": "pm-kisan",
+      "name_local": "प्रधानमंत्री किसान सम्मान निधि (PM-KISAN)",
+      "name_en": "PM Kisan Samman Nidhi (PM-KISAN) income support for farmers",
+      "admin_level": "national",
+      "admin_area": null,
+      "funder": "Ministry of Agriculture & Farmers Welfare, Government of India",
+      "category": "income_support",
+      "benefit_type": "cash_monthly",
+      "amount_min": 6000,
+      "amount_max": 6000,
+      "amount_currency": "INR",
+      "amount_period": "annual",
+      "amount_note": "₹6,000 per year paid in three equal instalments of ₹2,000 every four months via DBT",
+      "is_automatic": false,
+      "application_url": "https://pmkisan.gov.in",
+      "application_channel": "online",
+      "deadline_type": "rolling",
+      "deadline_note": null,
+      "procedure_steps": [
+        {
+          "step": 1,
+          "detail": "Register on the PM-KISAN portal (Farmer Corner > New Farmer Registration) or via a CSC",
+          "url": "https://pmkisan.gov.in"
+        },
+        {
+          "step": 2,
+          "detail": "Complete Aadhaar-based eKYC and land-record verification by the state"
+        },
+        {
+          "step": 3,
+          "detail": "Instalments of ₹2,000 are credited to the Aadhaar-linked bank account"
+        }
+      ],
+      "documents_required": [
+        {
+          "doc": "Aadhaar card",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Landholding records (Khatauni/RTC)",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Bank account details",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Mobile number linked to Aadhaar",
+          "mandatory": false,
+          "note": null
+        }
+      ],
+      "eligibility": {
+        "statuses": [],
+        "age_min": null,
+        "age_max": null,
+        "income_annual_max": null,
+        "income_note": "All landholding farmer families eligible; institutional landholders, serving/retired government employees (except Group D/MTS), income-tax payers and professionals excluded",
+        "requires_children": false,
+        "nationality": "citizen_or_pr",
+        "residency_months_min": null,
+        "housing_tenure": null,
+        "student_required": false,
+        "admin_areas": []
+      },
+      "source_url": "https://pmkisan.gov.in",
+      "source_snippet": "Eligible landholding farmer families receive ₹6,000 per year in three instalments of ₹2,000 each through Direct Benefit Transfer.",
+      "last_verified_at": "2026-08-12",
+      "verification_status": "verified"
+    },
+    {
+      "slug": "pmay-gramin",
+      "name_local": "प्रधानमंत्री आवास योजना – ग्रामीण (PMAY-G)",
+      "name_en": "Pradhan Mantri Awas Yojana – Gramin (rural housing grant)",
+      "admin_level": "national",
+      "admin_area": null,
+      "funder": "Ministry of Rural Development, Government of India",
+      "category": "housing",
+      "benefit_type": "cash_one_off",
+      "amount_min": 120000,
+      "amount_max": 130000,
+      "amount_currency": "INR",
+      "amount_period": "one_off",
+      "amount_note": "₹1.20 lakh in plain areas; ₹1.30 lakh in hilly/NE/LWE districts; released in instalments linked to construction stages, plus 90-95 days of MGNREGS wages",
+      "is_automatic": false,
+      "application_url": "https://pmayg.nic.in",
+      "application_channel": "in_person",
+      "deadline_type": "rolling",
+      "deadline_note": null,
+      "procedure_steps": [
+        {
+          "step": 1,
+          "detail": "Beneficiaries are identified from SECC-2011 / Awaas+ survey lists and approved by the Gram Sabha"
+        },
+        {
+          "step": 2,
+          "detail": "Gram Panchayat enters details in AwaasSoft with Aadhaar and bank seeding"
+        },
+        {
+          "step": 3,
+          "detail": "Instalments are paid by DBT as construction stages are geo-tagged and verified"
+        }
+      ],
+      "documents_required": [
+        {
+          "doc": "Aadhaar card",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Bank account details",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "MGNREGA job card (for wage linkage)",
+          "mandatory": false,
+          "note": null
+        },
+        {
+          "doc": "Land/house-site documents",
+          "mandatory": false,
+          "note": null
+        }
+      ],
+      "eligibility": {
+        "statuses": [],
+        "age_min": null,
+        "age_max": null,
+        "income_annual_max": null,
+        "income_note": "Houseless households and households living in kutcha/dilapidated houses as per SECC 2011 deprivation criteria and Awaas+ survey; income-tax payers, government employees and asset owners excluded",
+        "requires_children": false,
+        "nationality": "citizen_or_pr",
+        "residency_months_min": null,
+        "housing_tenure": null,
+        "student_required": false,
+        "admin_areas": []
+      },
+      "source_url": "https://pmayg.nic.in",
+      "source_snippet": "Financial assistance of ₹1.20 lakh (plain) / ₹1.30 lakh (hilly areas) is provided to eligible rural households to construct a pucca house.",
+      "last_verified_at": "2026-08-12",
+      "verification_status": "verified"
+    },
+    {
+      "slug": "pmay-urban",
+      "name_local": "प्रधानमंत्री आवास योजना – शहरी 2.0 (PMAY-U)",
+      "name_en": "Pradhan Mantri Awas Yojana – Urban 2.0 (urban housing assistance)",
+      "admin_level": "national",
+      "admin_area": null,
+      "funder": "Ministry of Housing and Urban Affairs, Government of India",
+      "category": "housing",
+      "benefit_type": "discount",
+      "amount_min": null,
+      "amount_max": 250000,
+      "amount_currency": "INR",
+      "amount_period": "one_off",
+      "amount_note": "Central assistance up to ₹2.5 lakh per EWS house (BLC component); interest subsidy up to ₹1.8 lakh on home loans for EWS/LIG/MIG under the Interest Subsidy Scheme",
+      "is_automatic": false,
+      "application_url": "https://pmay-urban.gov.in",
+      "application_channel": "online",
+      "deadline_type": "rolling",
+      "deadline_note": null,
+      "procedure_steps": [
+        {
+          "step": 1,
+          "detail": "Apply online on the PMAY-U portal or at the municipal ward/CSC",
+          "url": "https://pmay-urban.gov.in"
+        },
+        {
+          "step": 2,
+          "detail": "ULB verifies eligibility, income and 'no pucca house' declaration"
+        },
+        {
+          "step": 3,
+          "detail": "Assistance/interest subsidy is released through the state/PLI to the beneficiary or lender"
+        }
+      ],
+      "documents_required": [
+        {
+          "doc": "Aadhaar card",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Income proof/certificate",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Affidavit of not owning a pucca house",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Bank account details",
+          "mandatory": true,
+          "note": null
+        }
+      ],
+      "eligibility": {
+        "statuses": [],
+        "age_min": null,
+        "age_max": null,
+        "income_annual_max": 900000,
+        "income_note": "EWS up to ₹3 lakh/year, LIG ₹3–6 lakh, MIG ₹6–9 lakh annual household income; family must not own a pucca house anywhere in India",
+        "requires_children": false,
+        "nationality": "citizen_or_pr",
+        "residency_months_min": null,
+        "housing_tenure": null,
+        "student_required": false,
+        "admin_areas": []
+      },
+      "source_url": "https://pmay-urban.gov.in",
+      "source_snippet": "PMAY-U 2.0 provides central assistance and home-loan interest subsidy to urban EWS/LIG/MIG families without a pucca house.",
+      "last_verified_at": "2026-08-12",
+      "verification_status": "auto_extracted"
+    },
+    {
+      "slug": "pm-ujjwala",
+      "name_local": "प्रधानमंत्री उज्ज्वला योजना (PMUY)",
+      "name_en": "Pradhan Mantri Ujjwala Yojana (deposit-free LPG connection for poor women)",
+      "admin_level": "national",
+      "admin_area": null,
+      "funder": "Ministry of Petroleum and Natural Gas, Government of India",
+      "category": "energy",
+      "benefit_type": "in_kind",
+      "amount_min": null,
+      "amount_max": null,
+      "amount_currency": "INR",
+      "amount_period": "one_off",
+      "amount_note": "Deposit-free LPG connection (cylinder, regulator, hose) with free first refill and stove under Ujjwala 2.0; ₹300 per cylinder refill subsidy (up to 12 refills/year) credited by DBT",
+      "is_automatic": false,
+      "application_url": "https://www.pmuy.gov.in",
+      "application_channel": "online",
+      "deadline_type": "rolling",
+      "deadline_note": null,
+      "procedure_steps": [
+        {
+          "step": 1,
+          "detail": "Apply online at pmuy.gov.in or at any Indane/Bharatgas/HP Gas distributor",
+          "url": "https://www.pmuy.gov.in"
+        },
+        {
+          "step": 2,
+          "detail": "Submit KYC form with Aadhaar and complete eKYC (OTP/biometric)"
+        },
+        {
+          "step": 3,
+          "detail": "Oil company approves; distributor installs the connection and free stove"
+        }
+      ],
+      "documents_required": [
+        {
+          "doc": "Aadhaar card of the adult woman applicant",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Bank account in woman's name",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Proof of address or self-declaration (migrants)",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Ration card / BPL proof",
+          "mandatory": false,
+          "note": null
+        }
+      ],
+      "eligibility": {
+        "statuses": [],
+        "age_min": 18,
+        "age_max": null,
+        "income_annual_max": null,
+        "income_note": "Adult woman from a poor household without an existing LPG connection (SECC-2011 listed, SC/ST, PMAY-G, Antyodaya and similar categories, or self-declared poor under Ujjwala 2.0)",
+        "requires_children": false,
+        "nationality": "citizen_or_pr",
+        "residency_months_min": null,
+        "housing_tenure": null,
+        "student_required": false,
+        "admin_areas": []
+      },
+      "source_url": "https://www.pmuy.gov.in",
+      "source_snippet": "PMUY provides a deposit-free LPG connection in the name of an adult woman of a poor household; Ujjwala consumers also get ₹300 per refill subsidy via DBT.",
+      "last_verified_at": "2026-08-12",
+      "verification_status": "verified"
+    },
+    {
+      "slug": "ayushman-pmjay",
+      "name_local": "आयुष्मान भारत – प्रधानमंत्री जन आरोग्य योजना (AB PM-JAY)",
+      "name_en": "Ayushman Bharat PM Jan Arogya Yojana (₹5 lakh family health cover)",
+      "admin_level": "national",
+      "admin_area": null,
+      "funder": "National Health Authority, Government of India",
+      "category": "health",
+      "benefit_type": "in_kind",
+      "amount_min": null,
+      "amount_max": 500000,
+      "amount_currency": "INR",
+      "amount_period": "annual",
+      "amount_note": "Cashless hospitalisation cover of ₹5 lakh per family per year at empanelled public and private hospitals; no premium",
+      "is_automatic": false,
+      "application_url": "https://mera.pmjay.gov.in",
+      "application_channel": "in_person",
+      "deadline_type": "none",
+      "deadline_note": null,
+      "procedure_steps": [
+        {
+          "step": 1,
+          "detail": "Check eligibility at mera.pmjay.gov.in or helpline 14555 using mobile/ration card",
+          "url": "https://mera.pmjay.gov.in"
+        },
+        {
+          "step": 2,
+          "detail": "Get the Ayushman card made free at an empanelled hospital Ayushman Mitra desk or CSC"
+        },
+        {
+          "step": 3,
+          "detail": "Show the card at any empanelled hospital for cashless treatment"
+        }
+      ],
+      "documents_required": [
+        {
+          "doc": "Aadhaar card or any government ID",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Ration card (for family verification)",
+          "mandatory": false,
+          "note": null
+        }
+      ],
+      "eligibility": {
+        "statuses": [],
+        "age_min": null,
+        "age_max": null,
+        "income_annual_max": null,
+        "income_note": "Families identified as deprived in SECC-2011 (rural deprivation criteria / urban informal occupations); since 2024 all citizens aged 70+ are covered irrespective of income",
+        "requires_children": false,
+        "nationality": "citizen_or_pr",
+        "residency_months_min": null,
+        "housing_tenure": null,
+        "student_required": false,
+        "admin_areas": []
+      },
+      "source_url": "https://www.pmjay.gov.in",
+      "source_snippet": "PM-JAY gives free health cover of ₹5 lakh per family per year for secondary and tertiary hospitalisation; expanded in 2024 to all citizens aged 70+.",
+      "last_verified_at": "2026-08-12",
+      "verification_status": "verified"
+    },
+    {
+      "slug": "pm-jan-dhan",
+      "name_local": "प्रधानमंत्री जन धन योजना (PMJDY)",
+      "name_en": "Pradhan Mantri Jan Dhan Yojana (zero-balance bank account for every adult)",
+      "admin_level": "national",
+      "admin_area": null,
+      "funder": "Department of Financial Services, Ministry of Finance, Government of India",
+      "category": "income_support",
+      "benefit_type": "in_kind",
+      "amount_min": null,
+      "amount_max": null,
+      "amount_currency": "INR",
+      "amount_period": "one_off",
+      "amount_note": "Zero-balance Basic Savings account with free RuPay debit card, ₹2 lakh accident insurance on the card, overdraft up to ₹10,000 after 6 months, and DBT receipt of all scheme payments",
+      "is_automatic": false,
+      "application_url": "https://pmjdy.gov.in",
+      "application_channel": "in_person",
+      "deadline_type": "none",
+      "deadline_note": null,
+      "procedure_steps": [
+        {
+          "step": 1,
+          "detail": "Visit any bank branch or Business Correspondent with Aadhaar/KYC documents"
+        },
+        {
+          "step": 2,
+          "detail": "Fill the Financial Inclusion account-opening form"
+        },
+        {
+          "step": 3,
+          "detail": "Receive passbook and RuPay debit card; link Aadhaar for DBT"
+        }
+      ],
+      "documents_required": [
+        {
+          "doc": "Aadhaar card",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Proof of identity/address (any OVD)",
+          "mandatory": false,
+          "note": null
+        },
+        {
+          "doc": "Passport-size photograph",
+          "mandatory": false,
+          "note": null
+        }
+      ],
+      "eligibility": {
+        "statuses": [],
+        "age_min": null,
+        "age_max": null,
+        "income_annual_max": null,
+        "income_note": "Any unbanked Indian adult; no income bar",
+        "requires_children": false,
+        "nationality": "citizen_or_pr",
+        "residency_months_min": null,
+        "housing_tenure": null,
+        "student_required": false,
+        "admin_areas": []
+      },
+      "source_url": "https://pmjdy.gov.in",
+      "source_snippet": "PMJDY offers a zero-minimum-balance account with RuPay debit card, ₹2 lakh accident cover and overdraft up to ₹10,000.",
+      "last_verified_at": "2026-08-12",
+      "verification_status": "verified"
+    },
+    {
+      "slug": "pm-mudra",
+      "name_local": "प्रधानमंत्री मुद्रा योजना (PMMY)",
+      "name_en": "Pradhan Mantri MUDRA Yojana (collateral-free micro-business loans)",
+      "admin_level": "national",
+      "admin_area": null,
+      "funder": "MUDRA Ltd (SIDBI subsidiary) / Department of Financial Services",
+      "category": "business",
+      "benefit_type": "in_kind",
+      "amount_min": 50000,
+      "amount_max": 2000000,
+      "amount_currency": "INR",
+      "amount_period": "one_off",
+      "amount_note": "Collateral-free loans: Shishu up to ₹50,000; Kishore ₹50,001–5 lakh; Tarun ₹5–10 lakh; Tarun Plus up to ₹20 lakh (for borrowers who repaid a Tarun loan). This is a loan, not a grant.",
+      "is_automatic": false,
+      "application_url": "https://www.mudra.org.in",
+      "application_channel": "in_person",
+      "deadline_type": "rolling",
+      "deadline_note": null,
+      "procedure_steps": [
+        {
+          "step": 1,
+          "detail": "Apply at any bank, RRB, NBFC-MFI or via udyamimitra.in / Jan Samarth portal",
+          "url": "https://www.mudra.org.in"
+        },
+        {
+          "step": 2,
+          "detail": "Submit business plan/project report and KYC"
+        },
+        {
+          "step": 3,
+          "detail": "Loan sanctioned without collateral under CGFMU guarantee"
+        }
+      ],
+      "documents_required": [
+        {
+          "doc": "Aadhaar and PAN",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Business proof / Udyam registration",
+          "mandatory": false,
+          "note": null
+        },
+        {
+          "doc": "Project report with quotations",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Bank statements",
+          "mandatory": false,
+          "note": null
+        }
+      ],
+      "eligibility": {
+        "statuses": [
+          "self_employed"
+        ],
+        "age_min": 18,
+        "age_max": null,
+        "income_annual_max": null,
+        "income_note": "Non-corporate, non-farm micro/small enterprise in manufacturing, trading or services; no loan-default history",
+        "requires_children": false,
+        "nationality": "citizen_or_pr",
+        "residency_months_min": null,
+        "housing_tenure": null,
+        "student_required": false,
+        "admin_areas": []
+      },
+      "source_url": "https://www.mudra.org.in",
+      "source_snippet": "PMMY gives collateral-free loans up to ₹20 lakh (Tarun Plus) to non-farm micro and small enterprises through banks and NBFCs.",
+      "last_verified_at": "2026-08-12",
+      "verification_status": "verified"
+    },
+    {
+      "slug": "pm-svanidhi",
+      "name_local": "पीएम स्वनिधि योजना (PM SVANidhi)",
+      "name_en": "PM Street Vendor's AtmaNirbhar Nidhi (micro-credit for street vendors)",
+      "admin_level": "national",
+      "admin_area": null,
+      "funder": "Ministry of Housing and Urban Affairs (implemented by SIDBI)",
+      "category": "business",
+      "benefit_type": "discount",
+      "amount_min": 10000,
+      "amount_max": 50000,
+      "amount_currency": "INR",
+      "amount_period": "one_off",
+      "amount_note": "Working-capital loan of ₹10,000, then ₹20,000, then ₹50,000 in successive cycles on repayment; 7% annual interest subsidy and cashback on digital transactions",
+      "is_automatic": false,
+      "application_url": "https://pmsvanidhi.mohua.gov.in",
+      "application_channel": "online",
+      "deadline_type": "rolling",
+      "deadline_note": null,
+      "procedure_steps": [
+        {
+          "step": 1,
+          "detail": "Apply on the PM SVANidhi portal or at a CSC/ULB help desk",
+          "url": "https://pmsvanidhi.mohua.gov.in"
+        },
+        {
+          "step": 2,
+          "detail": "ULB verifies Certificate of Vending / Letter of Recommendation"
+        },
+        {
+          "step": 3,
+          "detail": "Loan disbursed by lending bank; interest subsidy credited quarterly"
+        }
+      ],
+      "documents_required": [
+        {
+          "doc": "Aadhaar card",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Certificate of Vending / Identity Card or LoR from ULB",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Bank account details",
+          "mandatory": true,
+          "note": null
+        }
+      ],
+      "eligibility": {
+        "statuses": [
+          "self_employed"
+        ],
+        "age_min": null,
+        "age_max": null,
+        "income_annual_max": null,
+        "income_note": "Street vendors vending on or before 24 March 2020 and identified in the ULB survey (or with LoR)",
+        "requires_children": false,
+        "nationality": "citizen_or_pr",
+        "residency_months_min": null,
+        "housing_tenure": null,
+        "student_required": false,
+        "admin_areas": []
+      },
+      "source_url": "https://pmsvanidhi.mohua.gov.in",
+      "source_snippet": "PM SVANidhi provides collateral-free working-capital loans of ₹10,000–₹50,000 with 7% interest subsidy to urban street vendors.",
+      "last_verified_at": "2026-08-12",
+      "verification_status": "auto_extracted"
+    },
+    {
+      "slug": "stand-up-india",
+      "name_local": "स्टैंड-अप इंडिया",
+      "name_en": "Stand-Up India (bank loans for SC/ST and women entrepreneurs)",
+      "admin_level": "national",
+      "admin_area": null,
+      "funder": "Department of Financial Services / SIDBI (Stand-Up Mitra portal)",
+      "category": "business",
+      "benefit_type": "in_kind",
+      "amount_min": 1000000,
+      "amount_max": 10000000,
+      "amount_currency": "INR",
+      "amount_period": "one_off",
+      "amount_note": "Composite bank loan (incl. working capital) between ₹10 lakh and ₹1 crore for a greenfield enterprise. Loan, not a grant.",
+      "is_automatic": false,
+      "application_url": "https://www.standupmitra.in",
+      "application_channel": "online",
+      "deadline_type": "rolling",
+      "deadline_note": null,
+      "procedure_steps": [
+        {
+          "step": 1,
+          "detail": "Register and apply on standupmitra.in or directly at a bank branch",
+          "url": "https://www.standupmitra.in"
+        },
+        {
+          "step": 2,
+          "detail": "Prepare project report; connect with handholding agencies if needed"
+        },
+        {
+          "step": 3,
+          "detail": "Bank appraises and sanctions the composite loan"
+        }
+      ],
+      "documents_required": [
+        {
+          "doc": "Aadhaar and PAN",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Caste certificate (SC/ST applicants)",
+          "mandatory": false,
+          "note": null
+        },
+        {
+          "doc": "Project report",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Company/partnership documents (non-individual)",
+          "mandatory": false,
+          "note": null
+        }
+      ],
+      "eligibility": {
+        "statuses": [
+          "self_employed"
+        ],
+        "age_min": 18,
+        "age_max": null,
+        "income_annual_max": null,
+        "income_note": "SC/ST and/or women entrepreneurs setting up a greenfield manufacturing, services, trading or agri-allied enterprise",
+        "requires_children": false,
+        "nationality": "citizen_or_pr",
+        "residency_months_min": null,
+        "housing_tenure": null,
+        "student_required": false,
+        "admin_areas": []
+      },
+      "source_url": "https://www.standupmitra.in",
+      "source_snippet": "Stand-Up India facilitates bank loans of ₹10 lakh to ₹1 crore for SC/ST and women entrepreneurs for greenfield enterprises.",
+      "last_verified_at": "2026-08-12",
+      "verification_status": "auto_extracted"
+    },
+    {
+      "slug": "pm-vishwakarma",
+      "name_local": "पीएम विश्वकर्मा",
+      "name_en": "PM Vishwakarma (support for traditional artisans and craftspeople)",
+      "admin_level": "national",
+      "admin_area": null,
+      "funder": "Ministry of Micro, Small and Medium Enterprises, Government of India",
+      "category": "employment",
+      "benefit_type": "discount",
+      "amount_min": null,
+      "amount_max": 300000,
+      "amount_currency": "INR",
+      "amount_period": "one_off",
+      "amount_note": "Recognition + skill training with ₹500/day stipend, ₹15,000 toolkit incentive, and collateral-free enterprise loans up to ₹1 lakh then ₹2 lakh at 5% concessional interest",
+      "is_automatic": false,
+      "application_url": "https://pmvishwakarma.gov.in",
+      "application_channel": "online",
+      "deadline_type": "rolling",
+      "deadline_note": null,
+      "procedure_steps": [
+        {
+          "step": 1,
+          "detail": "Register at a CSC or on pmvishwakarma.gov.in with Aadhaar-based biometric verification",
+          "url": "https://pmvishwakarma.gov.in"
+        },
+        {
+          "step": 2,
+          "detail": "Verification by Gram Panchayat/ULB and district committee"
+        },
+        {
+          "step": 3,
+          "detail": "Receive certificate/ID, training, toolkit incentive and apply for the concessional loan"
+        }
+      ],
+      "documents_required": [
+        {
+          "doc": "Aadhaar card",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Bank account details",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Mobile number",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Caste certificate (if applicable)",
+          "mandatory": false,
+          "note": null
+        }
+      ],
+      "eligibility": {
+        "statuses": [
+          "self_employed"
+        ],
+        "age_min": 18,
+        "age_max": null,
+        "income_annual_max": null,
+        "income_note": "Artisans/craftspeople working with hands and tools in 18 listed trades (carpenter, blacksmith, potter, tailor, barber, cobbler etc.) in the unorganised sector",
+        "requires_children": false,
+        "nationality": "citizen_or_pr",
+        "residency_months_min": null,
+        "housing_tenure": null,
+        "student_required": false,
+        "admin_areas": []
+      },
+      "source_url": "https://pmvishwakarma.gov.in",
+      "source_snippet": "PM Vishwakarma gives artisans training stipend, ₹15,000 toolkit support and loans up to ₹3 lakh at 5% interest.",
+      "last_verified_at": "2026-08-12",
+      "verification_status": "auto_extracted"
+    },
+    {
+      "slug": "pmegp",
+      "name_local": "प्रधानमंत्री रोजगार सृजन कार्यक्रम (PMEGP)",
+      "name_en": "Prime Minister's Employment Generation Programme (margin-money subsidy for new micro-units)",
+      "admin_level": "national",
+      "admin_area": null,
+      "funder": "Ministry of MSME / Khadi and Village Industries Commission",
+      "category": "business",
+      "benefit_type": "discount",
+      "amount_min": null,
+      "amount_max": null,
+      "amount_currency": "INR",
+      "amount_period": "one_off",
+      "amount_note": "Margin-money subsidy of 15–35% of project cost (higher for SC/ST/OBC/women/minorities/NER and rural units); max project cost ₹50 lakh (manufacturing) / ₹20 lakh (services). Subsidy is locked against the bank loan, not free cash.",
+      "is_automatic": false,
+      "application_url": "https://www.kviconline.gov.in",
+      "application_channel": "online",
+      "deadline_type": "rolling",
+      "deadline_note": null,
+      "procedure_steps": [
+        {
+          "step": 1,
+          "detail": "Apply online on the KVIC PMEGP e-portal",
+          "url": "https://www.kviconline.gov.in"
+        },
+        {
+          "step": 2,
+          "detail": "District task force interview and project approval"
+        },
+        {
+          "step": 3,
+          "detail": "Bank sanctions loan; subsidy released to a locked deposit against the loan"
+        }
+      ],
+      "documents_required": [
+        {
+          "doc": "Aadhaar card",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Project report",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Education/skill certificates",
+          "mandatory": false,
+          "note": null
+        },
+        {
+          "doc": "Caste certificate (for higher subsidy)",
+          "mandatory": false,
+          "note": null
+        }
+      ],
+      "eligibility": {
+        "statuses": [
+          "self_employed"
+        ],
+        "age_min": 18,
+        "age_max": null,
+        "income_annual_max": null,
+        "income_note": "Any individual (VIII pass for projects above ₹10 lakh manufacturing/₹5 lakh services) setting up a NEW micro-enterprise; no income ceiling",
+        "requires_children": false,
+        "nationality": "citizen_or_pr",
+        "residency_months_min": null,
+        "housing_tenure": null,
+        "student_required": false,
+        "admin_areas": []
+      },
+      "source_url": "https://www.kviconline.gov.in",
+      "source_snippet": "PMEGP gives 15–35% margin-money subsidy on bank loans for setting up new manufacturing/service micro-enterprises.",
+      "last_verified_at": "2026-08-12",
+      "verification_status": "auto_extracted"
+    },
+    {
+      "slug": "atal-pension",
+      "name_local": "अटल पेंशन योजना (APY)",
+      "name_en": "Atal Pension Yojana (guaranteed pension for unorganised workers)",
+      "admin_level": "national",
+      "admin_area": null,
+      "funder": "PFRDA / Department of Financial Services, Government of India",
+      "category": "income_support",
+      "benefit_type": "cash_monthly",
+      "amount_min": 1000,
+      "amount_max": 5000,
+      "amount_currency": "INR",
+      "amount_period": "monthly",
+      "amount_note": "Guaranteed pension of ₹1,000–₹5,000 per month from age 60, depending on the contribution chosen; spouse pension and nominee corpus on death",
+      "is_automatic": false,
+      "application_url": "https://www.jansuraksha.gov.in",
+      "application_channel": "in_person",
+      "deadline_type": "rolling",
+      "deadline_note": null,
+      "procedure_steps": [
+        {
+          "step": 1,
+          "detail": "Fill the APY form at your bank branch (or via netbanking where offered)"
+        },
+        {
+          "step": 2,
+          "detail": "Choose pension slab; monthly/quarterly auto-debit contribution starts"
+        },
+        {
+          "step": 3,
+          "detail": "Pension begins at age 60"
+        }
+      ],
+      "documents_required": [
+        {
+          "doc": "Aadhaar card",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Savings bank account",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Mobile number",
+          "mandatory": true,
+          "note": null
+        }
+      ],
+      "eligibility": {
+        "statuses": [],
+        "age_min": 18,
+        "age_max": 40,
+        "income_annual_max": null,
+        "income_note": "Open to all citizens aged 18–40 with a savings account; income-tax payers (as on/after 1 Oct 2022) are not eligible to join",
+        "requires_children": false,
+        "nationality": "citizen_or_pr",
+        "residency_months_min": null,
+        "housing_tenure": null,
+        "student_required": false,
+        "admin_areas": []
+      },
+      "source_url": "https://www.jansuraksha.gov.in",
+      "source_snippet": "APY guarantees a ₹1,000–₹5,000 monthly pension after 60 against modest contributions from age 18–40.",
+      "last_verified_at": "2026-08-12",
+      "verification_status": "auto_extracted"
+    },
+    {
+      "slug": "pmjjby",
+      "name_local": "प्रधानमंत्री जीवन ज्योति बीमा योजना (PMJJBY)",
+      "name_en": "PM Jeevan Jyoti Bima Yojana (₹2 lakh life insurance at ₹436/year)",
+      "admin_level": "national",
+      "admin_area": null,
+      "funder": "Department of Financial Services (through LIC/banks)",
+      "category": "income_support",
+      "benefit_type": "in_kind",
+      "amount_min": null,
+      "amount_max": 200000,
+      "amount_currency": "INR",
+      "amount_period": "one_off",
+      "amount_note": "₹2 lakh life cover on death from any cause for an annual premium of ₹436 auto-debited from the bank account",
+      "is_automatic": false,
+      "application_url": "https://www.jansuraksha.gov.in",
+      "application_channel": "in_person",
+      "deadline_type": "annual",
+      "deadline_note": "Renewal premium auto-debited each year before 31 May",
+      "procedure_steps": [
+        {
+          "step": 1,
+          "detail": "Give consent for auto-debit at your bank branch or via netbanking"
+        },
+        {
+          "step": 2,
+          "detail": "Premium of ₹436 is debited annually"
+        },
+        {
+          "step": 3,
+          "detail": "Nominee claims ₹2 lakh on the insured's death"
+        }
+      ],
+      "documents_required": [
+        {
+          "doc": "Aadhaar card",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Savings bank account",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Nominee details",
+          "mandatory": true,
+          "note": null
+        }
+      ],
+      "eligibility": {
+        "statuses": [],
+        "age_min": 18,
+        "age_max": 50,
+        "income_annual_max": null,
+        "income_note": "Any savings-account holder aged 18–50 who consents to auto-debit; cover continues up to age 55",
+        "requires_children": false,
+        "nationality": "citizen_or_pr",
+        "residency_months_min": null,
+        "housing_tenure": null,
+        "student_required": false,
+        "admin_areas": []
+      },
+      "source_url": "https://www.jansuraksha.gov.in",
+      "source_snippet": "PMJJBY offers ₹2 lakh term life cover at ₹436 per year for bank account holders aged 18–50.",
+      "last_verified_at": "2026-08-12",
+      "verification_status": "auto_extracted"
+    },
+    {
+      "slug": "pmsby",
+      "name_local": "प्रधानमंत्री सुरक्षा बीमा योजना (PMSBY)",
+      "name_en": "PM Suraksha Bima Yojana (₹2 lakh accident insurance at ₹20/year)",
+      "admin_level": "national",
+      "admin_area": null,
+      "funder": "Department of Financial Services (through general insurers/banks)",
+      "category": "income_support",
+      "benefit_type": "in_kind",
+      "amount_min": null,
+      "amount_max": 200000,
+      "amount_currency": "INR",
+      "amount_period": "one_off",
+      "amount_note": "₹2 lakh for accidental death/full disability and ₹1 lakh for partial disability for an annual premium of ₹20 auto-debited from the bank account",
+      "is_automatic": false,
+      "application_url": "https://www.jansuraksha.gov.in",
+      "application_channel": "in_person",
+      "deadline_type": "annual",
+      "deadline_note": "Renewal premium auto-debited each year before 31 May",
+      "procedure_steps": [
+        {
+          "step": 1,
+          "detail": "Give auto-debit consent at your bank branch or via netbanking"
+        },
+        {
+          "step": 2,
+          "detail": "Premium of ₹20 debited annually"
+        },
+        {
+          "step": 3,
+          "detail": "Claim on accidental death or disability"
+        }
+      ],
+      "documents_required": [
+        {
+          "doc": "Aadhaar card",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Savings bank account",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Nominee details",
+          "mandatory": true,
+          "note": null
+        }
+      ],
+      "eligibility": {
+        "statuses": [],
+        "age_min": 18,
+        "age_max": 70,
+        "income_annual_max": null,
+        "income_note": "Any savings-account holder aged 18–70 who consents to auto-debit",
+        "requires_children": false,
+        "nationality": "citizen_or_pr",
+        "residency_months_min": null,
+        "housing_tenure": null,
+        "student_required": false,
+        "admin_areas": []
+      },
+      "source_url": "https://www.jansuraksha.gov.in",
+      "source_snippet": "PMSBY provides ₹2 lakh accidental death/disability cover at ₹20 per year for bank account holders aged 18–70.",
+      "last_verified_at": "2026-08-12",
+      "verification_status": "auto_extracted"
+    },
+    {
+      "slug": "sukanya-samriddhi",
+      "name_local": "सुकन्या समृद्धि योजना (SSY)",
+      "name_en": "Sukanya Samriddhi Yojana (high-interest savings for the girl child)",
+      "admin_level": "national",
+      "admin_area": null,
+      "funder": "Ministry of Finance / National Savings Institute (post offices & banks)",
+      "category": "family",
+      "benefit_type": "tax_credit",
+      "amount_min": 250,
+      "amount_max": 150000,
+      "amount_currency": "INR",
+      "amount_period": "annual",
+      "amount_note": "Government-guaranteed interest (8.2% p.a. for Q1 FY2026-27, revised quarterly) on deposits of ₹250–₹1.5 lakh/year for 15 years; EEE tax treatment; matures 21 years after opening",
+      "is_automatic": false,
+      "application_url": "https://www.nsiindia.gov.in",
+      "application_channel": "in_person",
+      "deadline_type": "none",
+      "deadline_note": null,
+      "procedure_steps": [
+        {
+          "step": 1,
+          "detail": "Open an SSY account at any post office or authorised bank in the girl's name"
+        },
+        {
+          "step": 2,
+          "detail": "Deposit ₹250–₹1.5 lakh each financial year for 15 years"
+        },
+        {
+          "step": 3,
+          "detail": "Maturity after 21 years; 50% partial withdrawal allowed for education after 18"
+        }
+      ],
+      "documents_required": [
+        {
+          "doc": "Girl child's birth certificate",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Guardian's Aadhaar and PAN/KYC",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Passport-size photographs",
+          "mandatory": true,
+          "note": null
+        }
+      ],
+      "eligibility": {
+        "statuses": [],
+        "age_min": null,
+        "age_max": 10,
+        "income_annual_max": null,
+        "income_note": "For a girl child below 10 at account opening; maximum two accounts per family (exception for twins/triplets); no income bar",
+        "requires_children": true,
+        "nationality": "citizen_or_pr",
+        "residency_months_min": null,
+        "housing_tenure": null,
+        "student_required": false,
+        "admin_areas": []
+      },
+      "source_url": "https://www.nsiindia.gov.in",
+      "source_snippet": "SSY is a small-savings scheme for girls under 10: ₹250–₹1.5 lakh/year deposits earn a government-notified rate (currently 8.2%) with full tax exemption.",
+      "last_verified_at": "2026-08-12",
+      "verification_status": "verified"
+    },
+    {
+      "slug": "post-matric-sc",
+      "name_local": "अनुसूचित जाति के लिए पोस्ट-मैट्रिक छात्रवृत्ति",
+      "name_en": "Post-Matric Scholarship for SC students (National Scholarship Portal)",
+      "admin_level": "national",
+      "admin_area": null,
+      "funder": "Ministry of Social Justice and Empowerment, Government of India",
+      "category": "education",
+      "benefit_type": "cash_monthly",
+      "amount_min": null,
+      "amount_max": null,
+      "amount_currency": "INR",
+      "amount_period": "monthly",
+      "amount_note": "Covers tuition/compulsory fees plus a monthly maintenance allowance (day-scholar and hosteller rates notified annually); paid by DBT",
+      "is_automatic": false,
+      "application_url": "https://scholarships.gov.in",
+      "application_channel": "online",
+      "deadline_type": "annual",
+      "deadline_note": "NSP application window usually opens around July–October each academic year",
+      "procedure_steps": [
+        {
+          "step": 1,
+          "detail": "Register and apply on the National Scholarship Portal",
+          "url": "https://scholarships.gov.in"
+        },
+        {
+          "step": 2,
+          "detail": "Institute, district and state verify the application"
+        },
+        {
+          "step": 3,
+          "detail": "Scholarship credited by DBT through PFMS"
+        }
+      ],
+      "documents_required": [
+        {
+          "doc": "Caste certificate",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Income certificate",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Aadhaar card",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Previous exam marksheet",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Bank account details",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Bonafide student certificate",
+          "mandatory": true,
+          "note": null
+        }
+      ],
+      "eligibility": {
+        "statuses": [
+          "student"
+        ],
+        "age_min": null,
+        "age_max": null,
+        "income_annual_max": 250000,
+        "income_note": "Scheduled Caste students; family annual income up to ₹2.5 lakh",
+        "requires_children": false,
+        "nationality": "citizen_or_pr",
+        "residency_months_min": null,
+        "housing_tenure": null,
+        "student_required": true,
+        "admin_areas": []
+      },
+      "source_url": "https://scholarships.gov.in",
+      "source_snippet": "Centrally sponsored post-matric scholarship pays fees plus maintenance allowance to SC students with family income up to ₹2.5 lakh a year.",
+      "last_verified_at": "2026-08-12",
+      "verification_status": "verified"
+    },
+    {
+      "slug": "post-matric-st",
+      "name_local": "अनुसूचित जनजाति के लिए पोस्ट-मैट्रिक छात्रवृत्ति",
+      "name_en": "Post-Matric Scholarship for ST students (National Scholarship Portal)",
+      "admin_level": "national",
+      "admin_area": null,
+      "funder": "Ministry of Tribal Affairs, Government of India",
+      "category": "education",
+      "benefit_type": "cash_monthly",
+      "amount_min": null,
+      "amount_max": null,
+      "amount_currency": "INR",
+      "amount_period": "monthly",
+      "amount_note": "Tuition/compulsory fees plus monthly maintenance allowance for ST students studying after Class 10; DBT to the student's account",
+      "is_automatic": false,
+      "application_url": "https://scholarships.gov.in",
+      "application_channel": "online",
+      "deadline_type": "annual",
+      "deadline_note": "NSP application window usually opens around July–October each academic year",
+      "procedure_steps": [
+        {
+          "step": 1,
+          "detail": "Register and apply on the National Scholarship Portal",
+          "url": "https://scholarships.gov.in"
+        },
+        {
+          "step": 2,
+          "detail": "Institute/district/state verification"
+        },
+        {
+          "step": 3,
+          "detail": "DBT disbursement through PFMS"
+        }
+      ],
+      "documents_required": [
+        {
+          "doc": "ST certificate",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Income certificate",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Aadhaar card",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Marksheet",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Bank account details",
+          "mandatory": true,
+          "note": null
+        }
+      ],
+      "eligibility": {
+        "statuses": [
+          "student"
+        ],
+        "age_min": null,
+        "age_max": null,
+        "income_annual_max": 250000,
+        "income_note": "Scheduled Tribe students; family annual income up to ₹2.5 lakh",
+        "requires_children": false,
+        "nationality": "citizen_or_pr",
+        "residency_months_min": null,
+        "housing_tenure": null,
+        "student_required": true,
+        "admin_areas": []
+      },
+      "source_url": "https://scholarships.gov.in",
+      "source_snippet": "Post-matric scholarship for ST students covers fees and a maintenance allowance where family income is up to ₹2.5 lakh a year.",
+      "last_verified_at": "2026-08-12",
+      "verification_status": "verified"
+    },
+    {
+      "slug": "pm-yasasvi-obc",
+      "name_local": "पीएम-यशस्वी पोस्ट-मैट्रिक छात्रवृत्ति (OBC/EBC/DNT)",
+      "name_en": "PM-YASASVI Post-Matric Scholarship for OBC, EBC and DNT students",
+      "admin_level": "national",
+      "admin_area": null,
+      "funder": "Ministry of Social Justice and Empowerment, Government of India",
+      "category": "education",
+      "benefit_type": "cash_monthly",
+      "amount_min": null,
+      "amount_max": null,
+      "amount_currency": "INR",
+      "amount_period": "monthly",
+      "amount_note": "Tuition fees plus monthly academic allowance under the PM Young Achievers Scholarship Award Scheme for Vibrant India (PM-YASASVI)",
+      "is_automatic": false,
+      "application_url": "https://scholarships.gov.in",
+      "application_channel": "online",
+      "deadline_type": "annual",
+      "deadline_note": "NSP application window usually opens around July–October each academic year",
+      "procedure_steps": [
+        {
+          "step": 1,
+          "detail": "Apply on the National Scholarship Portal under the PM-YASASVI scheme",
+          "url": "https://scholarships.gov.in"
+        },
+        {
+          "step": 2,
+          "detail": "Institute and state verification"
+        },
+        {
+          "step": 3,
+          "detail": "DBT to student bank account"
+        }
+      ],
+      "documents_required": [
+        {
+          "doc": "OBC/EBC/DNT certificate",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Income certificate",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Aadhaar card",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Marksheet",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Bank account details",
+          "mandatory": true,
+          "note": null
+        }
+      ],
+      "eligibility": {
+        "statuses": [
+          "student"
+        ],
+        "age_min": null,
+        "age_max": null,
+        "income_annual_max": 250000,
+        "income_note": "OBC, EBC and De-notified Tribe students; family annual income up to ₹2.5 lakh (per current guidelines/state notice)",
+        "requires_children": false,
+        "nationality": "citizen_or_pr",
+        "residency_months_min": null,
+        "housing_tenure": null,
+        "student_required": true,
+        "admin_areas": []
+      },
+      "source_url": "https://scholarships.gov.in",
+      "source_snippet": "PM-YASASVI post-matric scholarship supports OBC/EBC/DNT students with fees and allowance where family income is up to ₹2.5 lakh.",
+      "last_verified_at": "2026-08-12",
+      "verification_status": "verified"
+    },
+    {
+      "slug": "merit-cum-means-minority",
+      "name_local": "अल्पसंख्यकों के लिए मेरिट-कम-मीन्स छात्रवृत्ति",
+      "name_en": "Merit-cum-Means Scholarship for minority community students",
+      "admin_level": "national",
+      "admin_area": null,
+      "funder": "Ministry of Minority Affairs, Government of India",
+      "category": "education",
+      "benefit_type": "cash_monthly",
+      "amount_min": null,
+      "amount_max": 20000,
+      "amount_currency": "INR",
+      "amount_period": "annual",
+      "amount_note": "Course fee reimbursement up to ₹20,000 per year plus maintenance allowance for professional/technical courses",
+      "is_automatic": false,
+      "application_url": "https://scholarships.gov.in",
+      "application_channel": "online",
+      "deadline_type": "annual",
+      "deadline_note": "NSP application window usually opens around July–October each academic year",
+      "procedure_steps": [
+        {
+          "step": 1,
+          "detail": "Apply on the National Scholarship Portal",
+          "url": "https://scholarships.gov.in"
+        },
+        {
+          "step": 2,
+          "detail": "Institute/state verification"
+        },
+        {
+          "step": 3,
+          "detail": "DBT disbursement"
+        }
+      ],
+      "documents_required": [
+        {
+          "doc": "Minority community certificate/declaration",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Income certificate",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Aadhaar card",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Marksheet (min 50%)",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Fee receipt",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Bank account details",
+          "mandatory": true,
+          "note": null
+        }
+      ],
+      "eligibility": {
+        "statuses": [
+          "student"
+        ],
+        "age_min": null,
+        "age_max": null,
+        "income_annual_max": 250000,
+        "income_note": "Students from six notified minority communities with at least 50% marks and family income up to ₹2.5 lakh/year, admitted to technical/professional courses",
+        "requires_children": false,
+        "nationality": "citizen_or_pr",
+        "residency_months_min": null,
+        "housing_tenure": null,
+        "student_required": true,
+        "admin_areas": []
+      },
+      "source_url": "https://scholarships.gov.in",
+      "source_snippet": "Merit-cum-Means scholarship reimburses course fees up to ₹20,000 a year plus maintenance for minority students in professional courses.",
+      "last_verified_at": "2026-08-12",
+      "verification_status": "auto_extracted"
+    },
+    {
+      "slug": "pm-scholarship-capf",
+      "name_local": "प्रधानमंत्री छात्रवृत्ति योजना (PMSS)",
+      "name_en": "Prime Minister's Scholarship Scheme for wards of CAPF/Assam Rifles and police personnel",
+      "admin_level": "national",
+      "admin_area": null,
+      "funder": "Ministry of Home Affairs (via National Scholarship Portal)",
+      "category": "education",
+      "benefit_type": "cash_monthly",
+      "amount_min": null,
+      "amount_max": null,
+      "amount_currency": "INR",
+      "amount_period": "monthly",
+      "amount_note": "Fixed monthly scholarship for the duration of the first professional degree course (rates for boys and girls notified by MHA; enhanced from ₹2,500/₹3,000 in recent years)",
+      "is_automatic": false,
+      "application_url": "https://scholarships.gov.in",
+      "application_channel": "online",
+      "deadline_type": "annual",
+      "deadline_note": "NSP window each academic year",
+      "procedure_steps": [
+        {
+          "step": 1,
+          "detail": "Apply on NSP under PM Scholarship Scheme",
+          "url": "https://scholarships.gov.in"
+        },
+        {
+          "step": 2,
+          "detail": "Verification by CAPF/police authority and institute"
+        },
+        {
+          "step": 3,
+          "detail": "DBT to student account; renewal on passing each year"
+        }
+      ],
+      "documents_required": [
+        {
+          "doc": "Service certificate of parent (CAPF/Assam Rifles/State Police)",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Aadhaar card",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Class 12 marksheet (min 60%)",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Admission proof",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Bank account details",
+          "mandatory": true,
+          "note": null
+        }
+      ],
+      "eligibility": {
+        "statuses": [
+          "student"
+        ],
+        "age_min": null,
+        "age_max": null,
+        "income_annual_max": null,
+        "income_note": "Dependent wards/widows of CAPF, Assam Rifles and state police personnel (incl. martyred/disabled); minimum 60% in Class 12; first professional degree",
+        "requires_children": false,
+        "nationality": "citizen_or_pr",
+        "residency_months_min": null,
+        "housing_tenure": null,
+        "student_required": true,
+        "admin_areas": []
+      },
+      "source_url": "https://scholarships.gov.in",
+      "source_snippet": "PMSS pays a monthly scholarship to wards and widows of CAPF, Assam Rifles and police personnel pursuing first professional degrees.",
+      "last_verified_at": "2026-08-12",
+      "verification_status": "auto_extracted"
+    },
+    {
+      "slug": "pm-internship",
+      "name_local": "प्रधानमंत्री इंटर्नशिप योजना",
+      "name_en": "PM Internship Scheme (12-month paid internship in top companies)",
+      "admin_level": "national",
+      "admin_area": null,
+      "funder": "Ministry of Corporate Affairs, Government of India",
+      "category": "employment",
+      "benefit_type": "cash_monthly",
+      "amount_min": 5000,
+      "amount_max": 5000,
+      "amount_currency": "INR",
+      "amount_period": "monthly",
+      "amount_note": "₹5,000/month stipend (₹4,500 from government via DBT + ₹500 from the company) for 12 months plus a one-time ₹6,000 joining grant",
+      "is_automatic": false,
+      "application_url": "https://pminternship.mca.gov.in",
+      "application_channel": "online",
+      "deadline_type": "window",
+      "deadline_note": "Applications open in rounds announced on the portal",
+      "procedure_steps": [
+        {
+          "step": 1,
+          "detail": "Register free on pminternship.mca.gov.in with Aadhaar and education details",
+          "url": "https://pminternship.mca.gov.in"
+        },
+        {
+          "step": 2,
+          "detail": "Apply to up to five internship postings matching location/sector/qualification"
+        },
+        {
+          "step": 3,
+          "detail": "Company shortlists and offers; stipend paid monthly by DBT"
+        }
+      ],
+      "documents_required": [
+        {
+          "doc": "Aadhaar card",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Class 10 (and higher) certificates",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Aadhaar-linked bank account",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Mobile number",
+          "mandatory": true,
+          "note": null
+        }
+      ],
+      "eligibility": {
+        "statuses": [
+          "unemployed",
+          "jobseeker"
+        ],
+        "age_min": 21,
+        "age_max": 24,
+        "income_annual_max": 800000,
+        "income_note": "Family income under ₹8 lakh/year; no family member a permanent government employee; candidate not in full-time employment or full-time education",
+        "requires_children": false,
+        "nationality": "citizen_or_pr",
+        "residency_months_min": null,
+        "housing_tenure": null,
+        "student_required": false,
+        "admin_areas": []
+      },
+      "source_url": "https://pminternship.mca.gov.in",
+      "source_snippet": "PM Internship Scheme pays ₹5,000 a month plus a ₹6,000 grant for a 12-month internship at 500+ top companies for youth aged 21–24 with family income under ₹8 lakh.",
+      "last_verified_at": "2026-08-12",
+      "verification_status": "verified"
+    },
+    {
+      "slug": "mgnrega",
+      "name_local": "महात्मा गांधी राष्ट्रीय ग्रामीण रोजगार गारंटी अधिनियम (MGNREGA)",
+      "name_en": "MGNREGA – 100 days guaranteed rural wage employment",
+      "admin_level": "national",
+      "admin_area": null,
+      "funder": "Ministry of Rural Development, Government of India",
+      "category": "employment",
+      "benefit_type": "cash_monthly",
+      "amount_min": null,
+      "amount_max": null,
+      "amount_currency": "INR",
+      "amount_period": "monthly",
+      "amount_note": "State-notified daily wage (roughly ₹240–₹400 depending on state, revised every April) for up to 100 days of unskilled manual work per rural household per year; wages via DBT within 15 days",
+      "is_automatic": false,
+      "application_url": "https://nrega.nic.in",
+      "application_channel": "in_person",
+      "deadline_type": "none",
+      "deadline_note": null,
+      "procedure_steps": [
+        {
+          "step": 1,
+          "detail": "Apply for a free job card at your Gram Panchayat (or via UMANG app)"
+        },
+        {
+          "step": 2,
+          "detail": "Demand work in writing; work must be offered within 15 days else unemployment allowance"
+        },
+        {
+          "step": 3,
+          "detail": "Wages credited to Aadhaar-linked bank/post-office account"
+        }
+      ],
+      "documents_required": [
+        {
+          "doc": "Job card (issued free by Gram Panchayat)",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Aadhaar card",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Bank/post-office account details",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Photograph",
+          "mandatory": true,
+          "note": null
+        }
+      ],
+      "eligibility": {
+        "statuses": [],
+        "age_min": 18,
+        "age_max": null,
+        "income_annual_max": null,
+        "income_note": "Any adult member of a rural household willing to do unskilled manual work; no income bar or BPL requirement",
+        "requires_children": false,
+        "nationality": "citizen_or_pr",
+        "residency_months_min": null,
+        "housing_tenure": null,
+        "student_required": false,
+        "admin_areas": []
+      },
+      "source_url": "https://nrega.nic.in",
+      "source_snippet": "MGNREGA legally guarantees 100 days of paid unskilled work per rural household per year at state-notified wage rates.",
+      "last_verified_at": "2026-08-12",
+      "verification_status": "verified"
+    },
+    {
+      "slug": "nfsa-free-grains",
+      "name_local": "राष्ट्रीय खाद्य सुरक्षा अधिनियम / पीएम गरीब कल्याण अन्न योजना",
+      "name_en": "NFSA / PMGKAY free food grains through ration shops",
+      "admin_level": "national",
+      "admin_area": null,
+      "funder": "Department of Food & Public Distribution, Government of India",
+      "category": "income_support",
+      "benefit_type": "in_kind",
+      "amount_min": null,
+      "amount_max": null,
+      "amount_currency": "INR",
+      "amount_period": "monthly",
+      "amount_note": "5 kg free food grains per person per month for priority households and 35 kg per month per Antyodaya (AAY) family; free-of-cost distribution extended under PMGKAY",
+      "is_automatic": true,
+      "application_url": "https://nfsa.gov.in",
+      "application_channel": "automatic",
+      "deadline_type": "none",
+      "deadline_note": null,
+      "procedure_steps": [
+        {
+          "step": 1,
+          "detail": "Obtain a ration card from the state food department if not already held"
+        },
+        {
+          "step": 2,
+          "detail": "Complete Aadhaar seeding and e-KYC of family members"
+        },
+        {
+          "step": 3,
+          "detail": "Collect monthly free grains at the fair price shop using biometric authentication"
+        }
+      ],
+      "documents_required": [
+        {
+          "doc": "Ration card",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Aadhaar of family members",
+          "mandatory": true,
+          "note": null
+        }
+      ],
+      "eligibility": {
+        "statuses": [],
+        "age_min": null,
+        "age_max": null,
+        "income_annual_max": null,
+        "income_note": "Priority and Antyodaya Anna Yojana ration-card households identified by states under NFSA coverage (about 80 crore persons)",
+        "requires_children": false,
+        "nationality": "citizen_or_pr",
+        "residency_months_min": null,
+        "housing_tenure": null,
+        "student_required": false,
+        "admin_areas": []
+      },
+      "source_url": "https://nfsa.gov.in",
+      "source_snippet": "NFSA/PMGKAY provides 5 kg of free food grains per person per month to priority ration-card households and 35 kg to AAY families.",
+      "last_verified_at": "2026-08-12",
+      "verification_status": "auto_extracted"
+    },
+    {
+      "slug": "annapurna",
+      "name_local": "अन्नपूर्णा योजना",
+      "name_en": "Annapurna Scheme (10 kg free food grains for destitute seniors)",
+      "admin_level": "national",
+      "admin_area": null,
+      "funder": "Ministry of Rural Development (National Social Assistance Programme)",
+      "category": "income_support",
+      "benefit_type": "in_kind",
+      "amount_min": null,
+      "amount_max": null,
+      "amount_currency": "INR",
+      "amount_period": "monthly",
+      "amount_note": "10 kg of free food grains per month to eligible destitute elderly persons who are not receiving a pension under IGNOAPS",
+      "is_automatic": false,
+      "application_url": "https://nsap.nic.in",
+      "application_channel": "in_person",
+      "deadline_type": "rolling",
+      "deadline_note": null,
+      "procedure_steps": [
+        {
+          "step": 1,
+          "detail": "Apply at the Gram Panchayat/Block office or municipality"
+        },
+        {
+          "step": 2,
+          "detail": "Verification of age and non-receipt of pension"
+        },
+        {
+          "step": 3,
+          "detail": "Monthly grain allocation through the ration shop"
+        }
+      ],
+      "documents_required": [
+        {
+          "doc": "Age proof",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "BPL/destitution proof",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Aadhaar card",
+          "mandatory": true,
+          "note": null
+        }
+      ],
+      "eligibility": {
+        "statuses": [],
+        "age_min": 65,
+        "age_max": null,
+        "income_annual_max": null,
+        "income_note": "Destitute elderly (65+) eligible for IGNOAPS but not currently receiving that pension",
+        "requires_children": false,
+        "nationality": "citizen_or_pr",
+        "residency_months_min": null,
+        "housing_tenure": null,
+        "student_required": false,
+        "admin_areas": []
+      },
+      "source_url": "https://nsap.nic.in",
+      "source_snippet": "Annapurna gives 10 kg of free food grains monthly to destitute senior citizens who are not covered by the old-age pension.",
+      "last_verified_at": "2026-08-12",
+      "verification_status": "auto_extracted"
+    },
+    {
+      "slug": "pmmvy",
+      "name_local": "प्रधानमंत्री मातृ वंदना योजना (PMMVY)",
+      "name_en": "Pradhan Matru Vandana Yojana (maternity benefit of ₹5,000)",
+      "admin_level": "national",
+      "admin_area": null,
+      "funder": "Ministry of Women and Child Development, Government of India",
+      "category": "family",
+      "benefit_type": "cash_one_off",
+      "amount_min": 5000,
+      "amount_max": 6000,
+      "amount_currency": "INR",
+      "amount_period": "one_off",
+      "amount_note": "₹5,000 in instalments for the first living child (₹1,000 registration + ₹2,000 after 6 months of pregnancy + ₹2,000 after birth/immunisation); additional ₹6,000 for a second child if a girl",
+      "is_automatic": false,
+      "application_url": "https://pmmvy.wcd.gov.in",
+      "application_channel": "online",
+      "deadline_type": "rolling",
+      "deadline_note": null,
+      "procedure_steps": [
+        {
+          "step": 1,
+          "detail": "Register at the Anganwadi/health facility or on the PMMVY portal",
+          "url": "https://pmmvy.wcd.gov.in"
+        },
+        {
+          "step": 2,
+          "detail": "Submit MCP card and Aadhaar-linked bank details"
+        },
+        {
+          "step": 3,
+          "detail": "Instalments credited by DBT after each milestone is verified"
+        }
+      ],
+      "documents_required": [
+        {
+          "doc": "Aadhaar card of mother",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "MCP/ANC card",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Aadhaar-linked bank account",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Child birth certificate and immunisation proof (later instalments)",
+          "mandatory": true,
+          "note": null
+        }
+      ],
+      "eligibility": {
+        "statuses": [
+          "parent"
+        ],
+        "age_min": null,
+        "age_max": null,
+        "income_annual_max": null,
+        "income_note": "Pregnant/lactating women (19+) for first living child, excluding those in government/PSU employment or receiving similar benefits; second girl child also covered under Mission Shakti expansion",
+        "requires_children": true,
+        "nationality": "citizen_or_pr",
+        "residency_months_min": null,
+        "housing_tenure": null,
+        "student_required": false,
+        "admin_areas": []
+      },
+      "source_url": "https://pmmvy.wcd.gov.in",
+      "source_snippet": "PMMVY provides ₹5,000 maternity benefit in instalments for the first child and ₹6,000 for a second girl child via DBT.",
+      "last_verified_at": "2026-08-12",
+      "verification_status": "auto_extracted"
+    },
+    {
+      "slug": "janani-suraksha",
+      "name_local": "जननी सुरक्षा योजना (JSY)",
+      "name_en": "Janani Suraksha Yojana (cash incentive for institutional delivery)",
+      "admin_level": "national",
+      "admin_area": null,
+      "funder": "Ministry of Health and Family Welfare (National Health Mission)",
+      "category": "health",
+      "benefit_type": "cash_one_off",
+      "amount_min": null,
+      "amount_max": null,
+      "amount_currency": "INR",
+      "amount_period": "one_off",
+      "amount_note": "Cash assistance for institutional delivery: ₹1,400 (rural) / ₹1,000 (urban) in low-performing states, ₹700/₹600 in other states; ASHA incentive additional",
+      "is_automatic": false,
+      "application_url": "https://nhm.gov.in",
+      "application_channel": "in_person",
+      "deadline_type": "rolling",
+      "deadline_note": null,
+      "procedure_steps": [
+        {
+          "step": 1,
+          "detail": "Register pregnancy at the nearest government health facility/ASHA worker"
+        },
+        {
+          "step": 2,
+          "detail": "Deliver at a government or accredited private health institution"
+        },
+        {
+          "step": 3,
+          "detail": "Cash incentive paid at the facility or into the bank account"
+        }
+      ],
+      "documents_required": [
+        {
+          "doc": "MCP card / JSY registration",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Aadhaar card",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Bank account details",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "BPL card (in some states)",
+          "mandatory": false,
+          "note": null
+        }
+      ],
+      "eligibility": {
+        "statuses": [
+          "parent"
+        ],
+        "age_min": null,
+        "age_max": null,
+        "income_annual_max": null,
+        "income_note": "Pregnant women delivering at health institutions; in low-performing states all women, elsewhere BPL/SC-ST women (19+)",
+        "requires_children": true,
+        "nationality": "citizen_or_pr",
+        "residency_months_min": null,
+        "housing_tenure": null,
+        "student_required": false,
+        "admin_areas": []
+      },
+      "source_url": "https://nhm.gov.in",
+      "source_snippet": "JSY gives a cash incentive to pregnant women for delivering in a health institution to reduce maternal and infant mortality.",
+      "last_verified_at": "2026-08-12",
+      "verification_status": "auto_extracted"
+    },
+    {
+      "slug": "ignoaps",
+      "name_local": "इंदिरा गांधी राष्ट्रीय वृद्धावस्था पेंशन योजना (IGNOAPS)",
+      "name_en": "Indira Gandhi National Old Age Pension Scheme",
+      "admin_level": "national",
+      "admin_area": null,
+      "funder": "Ministry of Rural Development (NSAP), with state top-ups",
+      "category": "income_support",
+      "benefit_type": "cash_monthly",
+      "amount_min": 200,
+      "amount_max": 500,
+      "amount_currency": "INR",
+      "amount_period": "monthly",
+      "amount_note": "Central share ₹200/month for ages 60–79 and ₹500/month for 80+; almost all states add a top-up, so actual monthly pension ranges roughly ₹400–₹3,000 by state",
+      "is_automatic": false,
+      "application_url": "https://nsap.nic.in",
+      "application_channel": "in_person",
+      "deadline_type": "rolling",
+      "deadline_note": null,
+      "procedure_steps": [
+        {
+          "step": 1,
+          "detail": "Apply at Gram Panchayat/Block office, municipality or state social welfare portal"
+        },
+        {
+          "step": 2,
+          "detail": "Verification of age and BPL status"
+        },
+        {
+          "step": 3,
+          "detail": "Pension credited monthly by DBT"
+        }
+      ],
+      "documents_required": [
+        {
+          "doc": "Age proof",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "BPL/income proof",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Aadhaar card",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Bank account details",
+          "mandatory": true,
+          "note": null
+        }
+      ],
+      "eligibility": {
+        "statuses": [
+          "retired"
+        ],
+        "age_min": 60,
+        "age_max": null,
+        "income_annual_max": null,
+        "income_note": "Persons aged 60+ belonging to households below the poverty line",
+        "requires_children": false,
+        "nationality": "citizen_or_pr",
+        "residency_months_min": null,
+        "housing_tenure": null,
+        "student_required": false,
+        "admin_areas": []
+      },
+      "source_url": "https://nsap.nic.in",
+      "source_snippet": "IGNOAPS pays ₹200–₹500 a month (centre's share; states top up) to BPL senior citizens aged 60 and above.",
+      "last_verified_at": "2026-08-12",
+      "verification_status": "auto_extracted"
+    },
+    {
+      "slug": "ignwps",
+      "name_local": "इंदिरा गांधी राष्ट्रीय विधवा पेंशन योजना (IGNWPS)",
+      "name_en": "Indira Gandhi National Widow Pension Scheme",
+      "admin_level": "national",
+      "admin_area": null,
+      "funder": "Ministry of Rural Development (NSAP), with state top-ups",
+      "category": "income_support",
+      "benefit_type": "cash_monthly",
+      "amount_min": 300,
+      "amount_max": 500,
+      "amount_currency": "INR",
+      "amount_period": "monthly",
+      "amount_note": "Central share ₹300/month (₹500 for 80+); states add top-ups, so actual pension varies by state",
+      "is_automatic": false,
+      "application_url": "https://nsap.nic.in",
+      "application_channel": "in_person",
+      "deadline_type": "rolling",
+      "deadline_note": null,
+      "procedure_steps": [
+        {
+          "step": 1,
+          "detail": "Apply at Gram Panchayat/Block/municipal office or state welfare portal"
+        },
+        {
+          "step": 2,
+          "detail": "Verification of widowhood, age and BPL status"
+        },
+        {
+          "step": 3,
+          "detail": "Monthly DBT pension"
+        }
+      ],
+      "documents_required": [
+        {
+          "doc": "Husband's death certificate",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Age proof",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "BPL/income proof",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Aadhaar card",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Bank account details",
+          "mandatory": true,
+          "note": null
+        }
+      ],
+      "eligibility": {
+        "statuses": [],
+        "age_min": 40,
+        "age_max": 79,
+        "income_annual_max": null,
+        "income_note": "BPL widows aged 40–79 (80+ shift to IGNOAPS at ₹500)",
+        "requires_children": false,
+        "nationality": "citizen_or_pr",
+        "residency_months_min": null,
+        "housing_tenure": null,
+        "student_required": false,
+        "admin_areas": []
+      },
+      "source_url": "https://nsap.nic.in",
+      "source_snippet": "IGNWPS pays ₹300 a month (centre's share) to BPL widows aged 40–79, with state top-ups.",
+      "last_verified_at": "2026-08-12",
+      "verification_status": "auto_extracted"
+    },
+    {
+      "slug": "igndps",
+      "name_local": "इंदिरा गांधी राष्ट्रीय दिव्यांग पेंशन योजना (IGNDPS)",
+      "name_en": "Indira Gandhi National Disability Pension Scheme",
+      "admin_level": "national",
+      "admin_area": null,
+      "funder": "Ministry of Rural Development (NSAP), with state top-ups",
+      "category": "income_support",
+      "benefit_type": "cash_monthly",
+      "amount_min": 300,
+      "amount_max": 500,
+      "amount_currency": "INR",
+      "amount_period": "monthly",
+      "amount_note": "Central share ₹300/month (₹500 for 80+) for persons with severe or multiple disabilities; state top-ups apply",
+      "is_automatic": false,
+      "application_url": "https://nsap.nic.in",
+      "application_channel": "in_person",
+      "deadline_type": "rolling",
+      "deadline_note": null,
+      "procedure_steps": [
+        {
+          "step": 1,
+          "detail": "Apply at Gram Panchayat/Block/municipal office or state welfare portal"
+        },
+        {
+          "step": 2,
+          "detail": "Disability and BPL verification"
+        },
+        {
+          "step": 3,
+          "detail": "Monthly DBT pension"
+        }
+      ],
+      "documents_required": [
+        {
+          "doc": "Disability certificate (80%+ or multiple disabilities)",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Age proof",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "BPL/income proof",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Aadhaar card",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Bank account details",
+          "mandatory": true,
+          "note": null
+        }
+      ],
+      "eligibility": {
+        "statuses": [],
+        "age_min": 18,
+        "age_max": 79,
+        "income_annual_max": null,
+        "income_note": "BPL persons aged 18–79 with severe or multiple disabilities",
+        "requires_children": false,
+        "nationality": "citizen_or_pr",
+        "residency_months_min": null,
+        "housing_tenure": null,
+        "student_required": false,
+        "admin_areas": []
+      },
+      "source_url": "https://nsap.nic.in",
+      "source_snippet": "IGNDPS pays ₹300 a month (centre's share) to BPL persons with severe or multiple disabilities aged 18–79.",
+      "last_verified_at": "2026-08-12",
+      "verification_status": "auto_extracted"
+    },
+    {
+      "slug": "eshram",
+      "name_local": "ई-श्रम पोर्टल",
+      "name_en": "e-Shram – national database and social security for unorganised workers",
+      "admin_level": "national",
+      "admin_area": null,
+      "funder": "Ministry of Labour and Employment, Government of India",
+      "category": "employment",
+      "benefit_type": "in_kind",
+      "amount_min": null,
+      "amount_max": 200000,
+      "amount_currency": "INR",
+      "amount_period": "one_off",
+      "amount_note": "Free registration with Universal Account Number; registered workers get accidental insurance cover of ₹2 lakh (death/total disability; ₹1 lakh partial) under PMSBY-linked cover, and a single gateway to welfare schemes",
+      "is_automatic": false,
+      "application_url": "https://eshram.gov.in",
+      "application_channel": "online",
+      "deadline_type": "none",
+      "deadline_note": null,
+      "procedure_steps": [
+        {
+          "step": 1,
+          "detail": "Self-register free on eshram.gov.in or at a CSC using Aadhaar",
+          "url": "https://eshram.gov.in"
+        },
+        {
+          "step": 2,
+          "detail": "Enter occupation, bank and nominee details; e-Shram card with UAN issued"
+        },
+        {
+          "step": 3,
+          "detail": "Accident insurance cover attaches automatically; use UAN to access linked schemes"
+        }
+      ],
+      "documents_required": [
+        {
+          "doc": "Aadhaar card",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Aadhaar-linked mobile number",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Bank account details",
+          "mandatory": true,
+          "note": null
+        }
+      ],
+      "eligibility": {
+        "statuses": [
+          "self_employed",
+          "employee"
+        ],
+        "age_min": 16,
+        "age_max": 59,
+        "income_annual_max": null,
+        "income_note": "Any unorganised/informal worker (construction, domestic, street vendor, gig, agricultural labour etc.) not in EPFO/ESIC/NPS-Govt coverage",
+        "requires_children": false,
+        "nationality": "citizen_or_pr",
+        "residency_months_min": null,
+        "housing_tenure": null,
+        "student_required": false,
+        "admin_areas": []
+      },
+      "source_url": "https://eshram.gov.in",
+      "source_snippet": "e-Shram registers unorganised workers free and provides ₹2 lakh accidental insurance plus access to central social-security schemes.",
+      "last_verified_at": "2026-08-12",
+      "verification_status": "auto_extracted"
+    },
+    {
+      "slug": "pm-sym",
+      "name_local": "प्रधानमंत्री श्रम योगी मानधन (PM-SYM)",
+      "name_en": "PM Shram Yogi Maan-dhan (₹3,000 monthly pension for unorganised workers)",
+      "admin_level": "national",
+      "admin_area": null,
+      "funder": "Ministry of Labour and Employment / LIC",
+      "category": "income_support",
+      "benefit_type": "cash_monthly",
+      "amount_min": 3000,
+      "amount_max": 3000,
+      "amount_currency": "INR",
+      "amount_period": "monthly",
+      "amount_note": "Assured pension of ₹3,000/month from age 60 with 50% matching government contribution; monthly subscriber contribution ₹55–₹200 depending on entry age",
+      "is_automatic": false,
+      "application_url": "https://maandhan.in",
+      "application_channel": "in_person",
+      "deadline_type": "rolling",
+      "deadline_note": null,
+      "procedure_steps": [
+        {
+          "step": 1,
+          "detail": "Enrol free at a CSC (or self-register on maandhan.in) with Aadhaar",
+          "url": "https://maandhan.in"
+        },
+        {
+          "step": 2,
+          "detail": "Monthly contribution auto-debited until age 60"
+        },
+        {
+          "step": 3,
+          "detail": "Pension of ₹3,000/month starts at 60; spouse pension on death"
+        }
+      ],
+      "documents_required": [
+        {
+          "doc": "Aadhaar card",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Savings/Jan Dhan bank account with IFSC",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Mobile number",
+          "mandatory": true,
+          "note": null
+        }
+      ],
+      "eligibility": {
+        "statuses": [
+          "self_employed",
+          "employee"
+        ],
+        "age_min": 18,
+        "age_max": 40,
+        "income_annual_max": 180000,
+        "income_note": "Unorganised workers with monthly income up to ₹15,000, not covered by EPFO/ESIC/NPS and not income-tax payers",
+        "requires_children": false,
+        "nationality": "citizen_or_pr",
+        "residency_months_min": null,
+        "housing_tenure": null,
+        "student_required": false,
+        "admin_areas": []
+      },
+      "source_url": "https://maandhan.in",
+      "source_snippet": "PM-SYM gives unorganised workers earning up to ₹15,000/month an assured ₹3,000 monthly pension after 60 with equal government contribution.",
+      "last_verified_at": "2026-08-12",
+      "verification_status": "auto_extracted"
+    },
+    {
+      "slug": "pm-poshan",
+      "name_local": "पीएम पोषण शक्ति निर्माण (PM POSHAN / मिड-डे मील)",
+      "name_en": "PM POSHAN (free hot cooked mid-day meal in schools)",
+      "admin_level": "national",
+      "admin_area": null,
+      "funder": "Ministry of Education, Government of India",
+      "category": "education",
+      "benefit_type": "in_kind",
+      "amount_min": null,
+      "amount_max": null,
+      "amount_currency": "INR",
+      "amount_period": "one_off",
+      "amount_note": "One free hot cooked meal (approx. 450 calories primary / 700 calories upper-primary norms) on every school day to children in Balvatika to Class VIII in government and government-aided schools",
+      "is_automatic": true,
+      "application_url": "https://pmposhan.education.gov.in",
+      "application_channel": "automatic",
+      "deadline_type": "none",
+      "deadline_note": null,
+      "procedure_steps": [
+        {
+          "step": 1,
+          "detail": "Enrol the child in a government or government-aided school"
+        },
+        {
+          "step": 2,
+          "detail": "Meal is served automatically on all school days — no application needed"
+        }
+      ],
+      "documents_required": [
+        {
+          "doc": "School enrolment",
+          "mandatory": true,
+          "note": "No separate application; benefit is automatic on enrolment"
+        }
+      ],
+      "eligibility": {
+        "statuses": [],
+        "age_min": 3,
+        "age_max": 14,
+        "income_annual_max": null,
+        "income_note": "All children in Balvatika to Class VIII of government/government-aided schools, local-body and madrasa institutions; no income test",
+        "requires_children": true,
+        "nationality": "citizen_or_pr",
+        "residency_months_min": null,
+        "housing_tenure": null,
+        "student_required": true,
+        "admin_areas": []
+      },
+      "source_url": "https://pmposhan.education.gov.in",
+      "source_snippet": "PM POSHAN serves a free hot cooked meal on every school day to children up to Class VIII in government and aided schools.",
+      "last_verified_at": "2026-08-12",
+      "verification_status": "auto_extracted"
+    },
+    {
+      "slug": "free-coaching-sc-obc",
+      "name_local": "एससी और ओबीसी छात्रों के लिए मुफ्त कोचिंग योजना",
+      "name_en": "Scheme of Free Coaching for SC and OBC students",
+      "admin_level": "national",
+      "admin_area": null,
+      "funder": "Ministry of Social Justice and Empowerment, Government of India",
+      "category": "education",
+      "benefit_type": "in_kind",
+      "amount_min": null,
+      "amount_max": null,
+      "amount_currency": "INR",
+      "amount_period": "one_off",
+      "amount_note": "Free coaching for competitive exams (UPSC, SSC, banking, NEET/JEE etc.) in empanelled institutions plus a monthly stipend (₹3,000 local / ₹6,000 outstation) during the course",
+      "is_automatic": false,
+      "application_url": "https://coaching.dosje.gov.in",
+      "application_channel": "online",
+      "deadline_type": "window",
+      "deadline_note": "Applications invited through portal notices/ads; selection on merit-cum-means",
+      "procedure_steps": [
+        {
+          "step": 1,
+          "detail": "Apply online at coaching.dosje.gov.in when the window opens",
+          "url": "https://coaching.dosje.gov.in"
+        },
+        {
+          "step": 2,
+          "detail": "Selection by merit within income-eligible SC/OBC candidates"
+        },
+        {
+          "step": 3,
+          "detail": "Join allotted empanelled coaching institute; stipend via DBT"
+        }
+      ],
+      "documents_required": [
+        {
+          "doc": "Caste certificate (SC/OBC)",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Income certificate",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Aadhaar card",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Qualifying exam marksheet",
+          "mandatory": true,
+          "note": null
+        }
+      ],
+      "eligibility": {
+        "statuses": [
+          "student"
+        ],
+        "age_min": null,
+        "age_max": null,
+        "income_annual_max": 800000,
+        "income_note": "SC and OBC students with family income up to ₹8 lakh/year; preference to candidates who have not availed the scheme before",
+        "requires_children": false,
+        "nationality": "citizen_or_pr",
+        "residency_months_min": null,
+        "housing_tenure": null,
+        "student_required": true,
+        "admin_areas": []
+      },
+      "source_url": "https://coaching.dosje.gov.in",
+      "source_snippet": "The scheme funds free coaching in empanelled institutes plus a monthly stipend for SC/OBC students with family income up to ₹8 lakh.",
+      "last_verified_at": "2026-08-12",
+      "verification_status": "auto_extracted"
+    },
+    {
+      "slug": "pm-evidya-diksha",
+      "name_local": "पीएम ई-विद्या / दीक्षा",
+      "name_en": "PM eVIDYA / DIKSHA (free digital learning content)",
+      "admin_level": "national",
+      "admin_area": null,
+      "funder": "Ministry of Education / NCERT, Government of India",
+      "category": "education",
+      "benefit_type": "in_kind",
+      "amount_min": null,
+      "amount_max": null,
+      "amount_currency": "INR",
+      "amount_period": "one_off",
+      "amount_note": "Free access to digital textbooks, e-content, TV/radio classes and QR-coded Energized Textbooks on the DIKSHA platform for all classes and boards",
+      "is_automatic": true,
+      "application_url": "https://diksha.gov.in",
+      "application_channel": "automatic",
+      "deadline_type": "none",
+      "deadline_note": null,
+      "procedure_steps": [
+        {
+          "step": 1,
+          "detail": "Open diksha.gov.in or the DIKSHA app, or scan QR codes in NCERT textbooks",
+          "url": "https://diksha.gov.in"
+        },
+        {
+          "step": 2,
+          "detail": "Choose board, medium and class to access free e-content"
+        }
+      ],
+      "documents_required": [
+        {
+          "doc": "None",
+          "mandatory": false,
+          "note": "Open access platform; no documents required"
+        }
+      ],
+      "eligibility": {
+        "statuses": [],
+        "age_min": null,
+        "age_max": null,
+        "income_annual_max": null,
+        "income_note": "Open to all students, teachers and parents free of cost",
+        "requires_children": false,
+        "nationality": "any",
+        "residency_months_min": null,
+        "housing_tenure": null,
+        "student_required": true,
+        "admin_areas": []
+      },
+      "source_url": "https://diksha.gov.in",
+      "source_snippet": "DIKSHA under PM eVIDYA gives every student free digital textbooks and curriculum-linked e-content.",
+      "last_verified_at": "2026-08-12",
+      "verification_status": "auto_extracted"
+    },
+    {
+      "slug": "pm-surya-ghar",
+      "name_local": "पीएम सूर्य घर मुफ्त बिजली योजना",
+      "name_en": "PM Surya Ghar: Muft Bijli Yojana (rooftop solar subsidy)",
+      "admin_level": "national",
+      "admin_area": null,
+      "funder": "Ministry of New and Renewable Energy, Government of India",
+      "category": "energy",
+      "benefit_type": "discount",
+      "amount_min": 30000,
+      "amount_max": 78000,
+      "amount_currency": "INR",
+      "amount_period": "one_off",
+      "amount_note": "Central subsidy ₹30,000 for 1 kW, ₹60,000 for 2 kW and ₹78,000 for 3 kW or more (capped) residential rooftop solar, credited to the consumer's bank account after commissioning",
+      "is_automatic": false,
+      "application_url": "https://pmsuryaghar.gov.in",
+      "application_channel": "online",
+      "deadline_type": "rolling",
+      "deadline_note": null,
+      "procedure_steps": [
+        {
+          "step": 1,
+          "detail": "Register on the national rooftop solar portal with DISCOM and consumer number",
+          "url": "https://pmsuryaghar.gov.in"
+        },
+        {
+          "step": 2,
+          "detail": "Get DISCOM feasibility approval and install via an empanelled vendor"
+        },
+        {
+          "step": 3,
+          "detail": "After inspection and net-metering, subsidy is transferred within ~30 days"
+        }
+      ],
+      "documents_required": [
+        {
+          "doc": "Aadhaar card",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Latest electricity bill",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Bank account details",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Roof ownership proof",
+          "mandatory": false,
+          "note": null
+        }
+      ],
+      "eligibility": {
+        "statuses": [],
+        "age_min": null,
+        "age_max": null,
+        "income_annual_max": null,
+        "income_note": "Any residential consumer with a suitable roof and an on-grid system up to 10 kW; no income test; collateral-free loans up to ₹2 lakh at subsidised rates also offered",
+        "requires_children": false,
+        "nationality": "citizen_or_pr",
+        "residency_months_min": null,
+        "housing_tenure": "owner",
+        "student_required": false,
+        "admin_areas": []
+      },
+      "source_url": "https://pmsuryaghar.gov.in",
+      "source_snippet": "PM Surya Ghar gives up to ₹78,000 subsidy for residential rooftop solar, targeting 300 units of free electricity a month for 1 crore households.",
+      "last_verified_at": "2026-08-12",
+      "verification_status": "verified"
+    },
+    {
+      "slug": "pm-kusum",
+      "name_local": "पीएम कुसुम योजना",
+      "name_en": "PM-KUSUM (solar pumps and plants for farmers)",
+      "admin_level": "national",
+      "admin_area": null,
+      "funder": "Ministry of New and Renewable Energy, Government of India",
+      "category": "energy",
+      "benefit_type": "discount",
+      "amount_min": null,
+      "amount_max": null,
+      "amount_currency": "INR",
+      "amount_period": "one_off",
+      "amount_note": "Component B: 30% central subsidy plus 30% state support for standalone solar agriculture pumps (farmer share ~40%); Component C: 30% subsidy for solarisation of grid-connected pumps",
+      "is_automatic": false,
+      "application_url": "https://pmkusum.mnre.gov.in",
+      "application_channel": "online",
+      "deadline_type": "rolling",
+      "deadline_note": "State-wise allocations and tenders announced periodically",
+      "procedure_steps": [
+        {
+          "step": 1,
+          "detail": "Apply on the PM-KUSUM/state renewable agency portal when allocations open",
+          "url": "https://pmkusum.mnre.gov.in"
+        },
+        {
+          "step": 2,
+          "detail": "Deposit farmer share after approval"
+        },
+        {
+          "step": 3,
+          "detail": "Installation by empanelled vendor; subsidy released to vendor"
+        }
+      ],
+      "documents_required": [
+        {
+          "doc": "Land records",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Aadhaar card",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Bank account details",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Existing pump/electricity connection details",
+          "mandatory": false,
+          "note": null
+        }
+      ],
+      "eligibility": {
+        "statuses": [],
+        "age_min": null,
+        "age_max": null,
+        "income_annual_max": null,
+        "income_note": "Farmers, groups of farmers, cooperatives, FPOs and water-user associations with cultivable land and water source",
+        "requires_children": false,
+        "nationality": "citizen_or_pr",
+        "residency_months_min": null,
+        "housing_tenure": null,
+        "student_required": false,
+        "admin_areas": []
+      },
+      "source_url": "https://pmkusum.mnre.gov.in",
+      "source_snippet": "PM-KUSUM subsidises solar agriculture pumps and pump solarisation with about 60% central-plus-state support.",
+      "last_verified_at": "2026-08-12",
+      "verification_status": "auto_extracted"
+    },
+    {
+      "slug": "kisan-credit-card",
+      "name_local": "किसान क्रेडिट कार्ड (KCC)",
+      "name_en": "Kisan Credit Card (concessional crop and allied-activity credit)",
+      "admin_level": "national",
+      "admin_area": null,
+      "funder": "Ministry of Finance / all scheduled banks and cooperatives",
+      "category": "business",
+      "benefit_type": "discount",
+      "amount_min": null,
+      "amount_max": 300000,
+      "amount_currency": "INR",
+      "amount_period": "one_off",
+      "amount_note": "Short-term crop loans up to ₹3 lakh at 7% interest, effectively 4% with the 3% prompt-repayment incentive under interest subvention; higher limits for animal husbandry/fisheries (₹2 lakh window)",
+      "is_automatic": false,
+      "application_url": "https://www.myscheme.gov.in",
+      "application_channel": "in_person",
+      "deadline_type": "rolling",
+      "deadline_note": null,
+      "procedure_steps": [
+        {
+          "step": 1,
+          "detail": "Apply at your bank branch with land records (or via PM-KISAN KCC drive)"
+        },
+        {
+          "step": 2,
+          "detail": "Bank fixes credit limit based on cropping pattern and scale of finance"
+        },
+        {
+          "step": 3,
+          "detail": "Withdraw as needed; interest subvention applied on timely repayment"
+        }
+      ],
+      "documents_required": [
+        {
+          "doc": "Aadhaar card",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Land records",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Passport-size photograph",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Fisheries/animal husbandry activity proof (for allied window)",
+          "mandatory": false,
+          "note": null
+        }
+      ],
+      "eligibility": {
+        "statuses": [],
+        "age_min": null,
+        "age_max": null,
+        "income_annual_max": null,
+        "income_note": "All farmers (owner-cultivators, tenant farmers, sharecroppers, oral lessees), SHGs/JLGs of farmers, and animal husbandry/fisheries workers",
+        "requires_children": false,
+        "nationality": "citizen_or_pr",
+        "residency_months_min": null,
+        "housing_tenure": null,
+        "student_required": false,
+        "admin_areas": []
+      },
+      "source_url": "https://www.myscheme.gov.in",
+      "source_snippet": "KCC provides revolving crop credit at 7% (effectively 4% on prompt repayment) for limits up to ₹3 lakh.",
+      "last_verified_at": "2026-08-12",
+      "verification_status": "auto_extracted"
+    },
+    {
+      "slug": "interest-subvention-crop-loan",
+      "name_local": "फसल ऋण ब्याज सबवेंशन योजना",
+      "name_en": "Modified Interest Subvention Scheme for short-term crop loans",
+      "admin_level": "national",
+      "admin_area": null,
+      "funder": "Ministry of Agriculture / RBI-implemented through banks",
+      "category": "business",
+      "benefit_type": "discount",
+      "amount_min": null,
+      "amount_max": null,
+      "amount_currency": "INR",
+      "amount_period": "one_off",
+      "amount_note": "Interest subvention of 1.5% to lending institutions plus 3% prompt-repayment incentive, making short-term crop loans up to ₹3 lakh available at an effective 4% per annum",
+      "is_automatic": true,
+      "application_url": "https://agricoop.gov.in",
+      "application_channel": "automatic",
+      "deadline_type": "annual",
+      "deadline_note": "Applied automatically through KCC/crop loans each year",
+      "procedure_steps": [
+        {
+          "step": 1,
+          "detail": "Take a KCC/short-term crop loan from a bank"
+        },
+        {
+          "step": 2,
+          "detail": "Repay on time; the 3% prompt-repayment incentive reduces the effective rate to 4% automatically"
+        }
+      ],
+      "documents_required": [
+        {
+          "doc": "Kisan Credit Card / crop loan account",
+          "mandatory": true,
+          "note": null
+        }
+      ],
+      "eligibility": {
+        "statuses": [],
+        "age_min": null,
+        "age_max": null,
+        "income_annual_max": null,
+        "income_note": "Farmers availing short-term crop loans up to ₹3 lakh (₹2 lakh sub-limit for animal husbandry and fisheries)",
+        "requires_children": false,
+        "nationality": "citizen_or_pr",
+        "residency_months_min": null,
+        "housing_tenure": null,
+        "student_required": false,
+        "admin_areas": []
+      },
+      "source_url": "https://agricoop.gov.in",
+      "source_snippet": "The interest subvention scheme delivers short-term crop loans at an effective 4% to farmers who repay promptly.",
+      "last_verified_at": "2026-08-12",
+      "verification_status": "auto_extracted"
+    },
+    {
+      "slug": "pmfby",
+      "name_local": "प्रधानमंत्री फसल बीमा योजना (PMFBY)",
+      "name_en": "Pradhan Mantri Fasal Bima Yojana (crop insurance)",
+      "admin_level": "national",
+      "admin_area": null,
+      "funder": "Ministry of Agriculture and Farmers Welfare, Government of India",
+      "category": "income_support",
+      "benefit_type": "in_kind",
+      "amount_min": null,
+      "amount_max": null,
+      "amount_currency": "INR",
+      "amount_period": "one_off",
+      "amount_note": "Yield-based crop insurance: farmer pays only 2% of sum insured (kharif), 1.5% (rabi) and 5% (horticulture/commercial crops); balance premium shared by centre and states; claims paid by DBT",
+      "is_automatic": false,
+      "application_url": "https://pmfby.gov.in",
+      "application_channel": "online",
+      "deadline_type": "window",
+      "deadline_note": "Enrolment deadlines are notified each season (sowing cut-off dates)",
+      "procedure_steps": [
+        {
+          "step": 1,
+          "detail": "Enrol on pmfby.gov.in (Farmer Corner), at a bank, CSC or through the loaning bank",
+          "url": "https://pmfby.gov.in"
+        },
+        {
+          "step": 2,
+          "detail": "Pay the subsidised farmer premium share"
+        },
+        {
+          "step": 3,
+          "detail": "Report crop loss within 72 hours; claims settled to bank account"
+        }
+      ],
+      "documents_required": [
+        {
+          "doc": "Aadhaar card",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Land records / sowing certificate",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Bank account details",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Crop details",
+          "mandatory": true,
+          "note": null
+        }
+      ],
+      "eligibility": {
+        "statuses": [],
+        "age_min": null,
+        "age_max": null,
+        "income_annual_max": null,
+        "income_note": "All farmers growing notified crops in notified areas, including sharecroppers and tenant farmers (enrolment voluntary for non-loanee farmers)",
+        "requires_children": false,
+        "nationality": "citizen_or_pr",
+        "residency_months_min": null,
+        "housing_tenure": null,
+        "student_required": false,
+        "admin_areas": []
+      },
+      "source_url": "https://pmfby.gov.in",
+      "source_snippet": "PMFBY insures crops against natural risks at subsidised farmer premiums of 1.5–5% of the sum insured.",
+      "last_verified_at": "2026-08-12",
+      "verification_status": "verified"
+    },
+    {
+      "slug": "startup-india-seed-fund",
+      "name_local": "स्टार्टअप इंडिया सीड फंड स्कीम (SISFS)",
+      "name_en": "Startup India Seed Fund Scheme",
+      "admin_level": "national",
+      "admin_area": null,
+      "funder": "DPIIT, Ministry of Commerce and Industry, Government of India",
+      "category": "business",
+      "benefit_type": "cash_one_off",
+      "amount_min": null,
+      "amount_max": 5000000,
+      "amount_currency": "INR",
+      "amount_period": "one_off",
+      "amount_note": "Up to ₹20 lakh as grants for prototype/trials and up to ₹50 lakh as investment (convertible debentures/debt) through approved incubators",
+      "is_automatic": false,
+      "application_url": "https://www.startupindia.gov.in",
+      "application_channel": "online",
+      "deadline_type": "window",
+      "deadline_note": "Incubator-wise application windows announced on the portal",
+      "procedure_steps": [
+        {
+          "step": 1,
+          "detail": "Apply on the Startup India Seed Fund portal to selected incubators",
+          "url": "https://www.startupindia.gov.in"
+        },
+        {
+          "step": 2,
+          "detail": "Incubator's selection committee evaluates and recommends funding"
+        },
+        {
+          "step": 3,
+          "detail": "Milestone-based disbursement"
+        }
+      ],
+      "documents_required": [
+        {
+          "doc": "DPIIT recognition certificate",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Pitch deck/business plan",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Certificate of incorporation",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Aadhaar/PAN of founders",
+          "mandatory": true,
+          "note": null
+        }
+      ],
+      "eligibility": {
+        "statuses": [
+          "self_employed"
+        ],
+        "age_min": null,
+        "age_max": null,
+        "income_annual_max": null,
+        "income_note": "DPIIT-recognised startups incorporated not more than 2 years earlier, at idea/prototype stage, not having raised more than ₹10 lakh earlier",
+        "requires_children": false,
+        "nationality": "citizen_or_pr",
+        "residency_months_min": null,
+        "housing_tenure": null,
+        "student_required": false,
+        "admin_areas": []
+      },
+      "source_url": "https://www.startupindia.gov.in",
+      "source_snippet": "SISFS provides up to ₹20 lakh in grants and ₹50 lakh in investment to early-stage DPIIT-recognised startups via incubators.",
+      "last_verified_at": "2026-08-12",
+      "verification_status": "auto_extracted"
+    },
+    {
+      "slug": "csis-education-loan",
+      "name_local": "शिक्षा ऋण ब्याज सब्सिडी (CSIS)",
+      "name_en": "Central Sector Interest Subsidy on education loans (CSIS)",
+      "admin_level": "national",
+      "admin_area": null,
+      "funder": "Ministry of Education (through Canara Bank as nodal bank)",
+      "category": "education",
+      "benefit_type": "discount",
+      "amount_min": null,
+      "amount_max": null,
+      "amount_currency": "INR",
+      "amount_period": "one_off",
+      "amount_note": "Full interest subsidy during the moratorium (course period + one year) on education loans up to ₹7.5 lakh for students from economically weaker sections; see also PM Vidyalaxmi for wider coverage",
+      "is_automatic": false,
+      "application_url": "https://www.vidyalakshmi.co.in",
+      "application_channel": "online",
+      "deadline_type": "rolling",
+      "deadline_note": null,
+      "procedure_steps": [
+        {
+          "step": 1,
+          "detail": "Apply for an education loan through the Vidya Lakshmi portal to a scheduled bank",
+          "url": "https://www.vidyalakshmi.co.in"
+        },
+        {
+          "step": 2,
+          "detail": "Submit EWS income proof; bank claims the interest subsidy"
+        },
+        {
+          "step": 3,
+          "detail": "No interest payable during the moratorium period"
+        }
+      ],
+      "documents_required": [
+        {
+          "doc": "Income certificate (EWS)",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Admission letter from recognised institution",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Aadhaar card",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Loan sanction documents",
+          "mandatory": true,
+          "note": null
+        }
+      ],
+      "eligibility": {
+        "statuses": [
+          "student"
+        ],
+        "age_min": null,
+        "age_max": null,
+        "income_annual_max": 450000,
+        "income_note": "Students from families with annual income up to ₹4.5 lakh pursuing technical/professional courses in India",
+        "requires_children": false,
+        "nationality": "citizen_or_pr",
+        "residency_months_min": null,
+        "housing_tenure": null,
+        "student_required": true,
+        "admin_areas": []
+      },
+      "source_url": "https://www.vidyalakshmi.co.in",
+      "source_snippet": "CSIS waives the interest during study and moratorium on education loans up to ₹7.5 lakh for students with family income up to ₹4.5 lakh.",
+      "last_verified_at": "2026-08-12",
+      "verification_status": "auto_extracted"
+    },
+    {
+      "slug": "lpg-subsidy-pahal",
+      "name_local": "एलपीजी सब्सिडी (PAHAL / DBTL)",
+      "name_en": "LPG refill subsidy via PAHAL (DBTL) direct transfer",
+      "admin_level": "national",
+      "admin_area": null,
+      "funder": "Ministry of Petroleum and Natural Gas / OMCs (Indane, Bharatgas, HP Gas)",
+      "category": "energy",
+      "benefit_type": "cash_monthly",
+      "amount_min": null,
+      "amount_max": null,
+      "amount_currency": "INR",
+      "amount_period": "monthly",
+      "amount_note": "Subsidy on domestic LPG refills credited directly to the consumer's Aadhaar-linked bank account; currently ₹300 per cylinder (up to 12 refills/year) targeted at PMUY consumers; general-DBT subsidy varies with government notifications",
+      "is_automatic": false,
+      "application_url": "https://www.mylpg.in",
+      "application_channel": "online",
+      "deadline_type": "none",
+      "deadline_note": null,
+      "procedure_steps": [
+        {
+          "step": 1,
+          "detail": "Link Aadhaar with your LPG ID and bank account at the distributor or mylpg.in",
+          "url": "https://www.mylpg.in"
+        },
+        {
+          "step": 2,
+          "detail": "Book refills as usual; subsidy is credited automatically after delivery"
+        }
+      ],
+      "documents_required": [
+        {
+          "doc": "LPG consumer number",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Aadhaar card",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Aadhaar-linked bank account",
+          "mandatory": true,
+          "note": null
+        }
+      ],
+      "eligibility": {
+        "statuses": [],
+        "age_min": null,
+        "age_max": null,
+        "income_annual_max": null,
+        "income_note": "Domestic LPG consumers with Aadhaar-seeded connection and bank account; ₹300/cylinder targeted subsidy is for PMUY beneficiaries",
+        "requires_children": false,
+        "nationality": "citizen_or_pr",
+        "residency_months_min": null,
+        "housing_tenure": null,
+        "student_required": false,
+        "admin_areas": []
+      },
+      "source_url": "https://www.mylpg.in",
+      "source_snippet": "PAHAL/DBTL credits the LPG refill subsidy directly to the Aadhaar-linked bank account; PMUY consumers get ₹300 per cylinder.",
+      "last_verified_at": "2026-08-12",
+      "verification_status": "auto_extracted"
+    },
+    {
+      "slug": "railway-concessions",
+      "name_local": "भारतीय रेल रियायती किराया",
+      "name_en": "Indian Railways fare concessions (disabled, students, patients)",
+      "admin_level": "national",
+      "admin_area": null,
+      "funder": "Indian Railways (Ministry of Railways)",
+      "category": "transport",
+      "benefit_type": "discount",
+      "amount_min": null,
+      "amount_max": null,
+      "amount_currency": "INR",
+      "amount_period": "one_off",
+      "amount_note": "Fare concessions of 25–75% by category: persons with disabilities (up to 75% in most classes), certain patients (cancer, TB etc.), war widows and students on authorised journeys (50% in second/sleeper); the general senior-citizen concession remains suspended since March 2020",
+      "is_automatic": false,
+      "application_url": "https://indianrailways.gov.in",
+      "application_channel": "in_person",
+      "deadline_type": "none",
+      "deadline_note": null,
+      "procedure_steps": [
+        {
+          "step": 1,
+          "detail": "Obtain the relevant concession certificate (disability/medical/institution)"
+        },
+        {
+          "step": 2,
+          "detail": "Book tickets at the counter/PRS showing the certificate, or upload details as required"
+        },
+        {
+          "step": 3,
+          "detail": "Concession applied to eligible class and category"
+        }
+      ],
+      "documents_required": [
+        {
+          "doc": "Disability certificate / medical certificate (category-specific)",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Student bonafide certificate from institution",
+          "mandatory": false,
+          "note": null
+        },
+        {
+          "doc": "Photo ID",
+          "mandatory": true,
+          "note": null
+        }
+      ],
+      "eligibility": {
+        "statuses": [],
+        "age_min": null,
+        "age_max": null,
+        "income_annual_max": null,
+        "income_note": "Category-based: persons with disabilities, specified patients, students on permitted journeys and gallantry-award/war-widow categories; general senior-citizen concession currently suspended",
+        "requires_children": false,
+        "nationality": "any_resident",
+        "residency_months_min": null,
+        "housing_tenure": null,
+        "student_required": false,
+        "admin_areas": []
+      },
+      "source_url": "https://indianrailways.gov.in",
+      "source_snippet": "Indian Railways grants 25–75% fare concessions to persons with disabilities, certain patients and students on authorised journeys.",
+      "last_verified_at": "2026-08-12",
+      "verification_status": "auto_extracted"
+    },
+    {
+      "slug": "ka-gruha-jyothi",
+      "name_local": "ಗೃಹ ಜ್ಯೋತಿ ಯೋಜನೆ (Gruha Jyothi)",
+      "name_en": "Karnataka Gruha Jyothi (free electricity up to 200 units)",
+      "admin_level": "state",
+      "admin_area": "Karnataka",
+      "funder": "Department of Energy, Government of Karnataka",
+      "category": "energy",
+      "benefit_type": "free_slab",
+      "amount_min": null,
+      "amount_max": null,
+      "amount_currency": "INR",
+      "amount_period": "monthly",
+      "amount_note": "Zero electricity bill for monthly consumption within the household's free-unit entitlement (average FY2022-23 usage + 10%, capped at 200 units); full bill payable if usage exceeds 200 units",
+      "is_automatic": false,
+      "application_url": "https://sevasindhugs.karnataka.gov.in",
+      "application_channel": "online",
+      "deadline_type": "rolling",
+      "deadline_note": null,
+      "procedure_steps": [
+        {
+          "step": 1,
+          "detail": "Register on the Seva Sindhu portal (or at Grama One/Karnataka One/Bangalore One)",
+          "url": "https://sevasindhugs.karnataka.gov.in"
+        },
+        {
+          "step": 2,
+          "detail": "Enter ESCOM, connection ID and Aadhaar details"
+        },
+        {
+          "step": 3,
+          "detail": "Free units applied automatically on the monthly bill"
+        }
+      ],
+      "documents_required": [
+        {
+          "doc": "Aadhaar card",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Electricity connection/account ID",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Rent/lease agreement (tenants)",
+          "mandatory": false,
+          "note": null
+        },
+        {
+          "doc": "Mobile number",
+          "mandatory": true,
+          "note": null
+        }
+      ],
+      "eligibility": {
+        "statuses": [],
+        "age_min": null,
+        "age_max": null,
+        "income_annual_max": null,
+        "income_note": "All domestic residential connections in Karnataka (owners and tenants) whose FY2022-23 average monthly consumption is up to 200 units",
+        "requires_children": false,
+        "nationality": "citizen_or_pr",
+        "residency_months_min": null,
+        "housing_tenure": null,
+        "student_required": false,
+        "admin_areas": [
+          "Karnataka"
+        ]
+      },
+      "source_url": "https://sevasindhugs.karnataka.gov.in",
+      "source_snippet": "Gruha Jyothi gives Karnataka households free electricity up to 200 units a month, merged from the earlier Bhagya Jyothi/Kuteera Jyothi schemes.",
+      "last_verified_at": "2026-08-12",
+      "verification_status": "verified"
+    },
+    {
+      "slug": "ka-gruha-lakshmi",
+      "name_local": "ಗೃಹ ಲಕ್ಷ್ಮೀ ಯೋಜನೆ (Gruha Lakshmi)",
+      "name_en": "Karnataka Gruha Lakshmi (₹2,000/month to women heads of household)",
+      "admin_level": "state",
+      "admin_area": "Karnataka",
+      "funder": "Department of Women and Child Development, Government of Karnataka",
+      "category": "income_support",
+      "benefit_type": "cash_monthly",
+      "amount_min": 2000,
+      "amount_max": 2000,
+      "amount_currency": "INR",
+      "amount_period": "monthly",
+      "amount_note": "₹2,000 per month by DBT to the woman head of the family listed on the ration card",
+      "is_automatic": false,
+      "application_url": "https://sevasindhugs.karnataka.gov.in",
+      "application_channel": "online",
+      "deadline_type": "rolling",
+      "deadline_note": null,
+      "procedure_steps": [
+        {
+          "step": 1,
+          "detail": "Apply on Seva Sindhu or at Grama One/Karnataka One centres",
+          "url": "https://sevasindhugs.karnataka.gov.in"
+        },
+        {
+          "step": 2,
+          "detail": "Ration card head-of-family verification and Aadhaar-bank seeding"
+        },
+        {
+          "step": 3,
+          "detail": "₹2,000 credited monthly by DBT"
+        }
+      ],
+      "documents_required": [
+        {
+          "doc": "Aadhaar card",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Ration card (applicant as head of family)",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Aadhaar-linked bank account",
+          "mandatory": true,
+          "note": null
+        }
+      ],
+      "eligibility": {
+        "statuses": [],
+        "age_min": null,
+        "age_max": null,
+        "income_annual_max": null,
+        "income_note": "Woman head of a BPL/APL ration-card household in Karnataka; families of government employees and income-tax payers excluded",
+        "requires_children": false,
+        "nationality": "citizen_or_pr",
+        "residency_months_min": null,
+        "housing_tenure": null,
+        "student_required": false,
+        "admin_areas": [
+          "Karnataka"
+        ]
+      },
+      "source_url": "https://sevasindhugs.karnataka.gov.in",
+      "source_snippet": "Gruha Lakshmi pays ₹2,000 a month to women heads of ration-card households in Karnataka.",
+      "last_verified_at": "2026-08-12",
+      "verification_status": "auto_extracted"
+    },
+    {
+      "slug": "ka-anna-bhagya",
+      "name_local": "ಅನ್ನ ಭಾಗ್ಯ ಯೋಜನೆ (Anna Bhagya)",
+      "name_en": "Karnataka Anna Bhagya (free rice plus cash top-up)",
+      "admin_level": "state",
+      "admin_area": "Karnataka",
+      "funder": "Department of Food, Civil Supplies & Consumer Affairs, Government of Karnataka",
+      "category": "income_support",
+      "benefit_type": "in_kind",
+      "amount_min": null,
+      "amount_max": null,
+      "amount_currency": "INR",
+      "amount_period": "monthly",
+      "amount_note": "10 kg of rice per person per month for BPL/AAY cardholders — 5 kg free from the centre plus state top-up given partly as DBT cash (₹170 per person per month in lieu of the additional 5 kg in recent implementation)",
+      "is_automatic": true,
+      "application_url": "https://ahara.kar.nic.in",
+      "application_channel": "automatic",
+      "deadline_type": "none",
+      "deadline_note": null,
+      "procedure_steps": [
+        {
+          "step": 1,
+          "detail": "Hold a BPL/priority ration card with Aadhaar seeding"
+        },
+        {
+          "step": 2,
+          "detail": "Collect 5 kg free rice at the fair price shop; top-up cash credited by DBT"
+        }
+      ],
+      "documents_required": [
+        {
+          "doc": "Ration card",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Aadhaar of family members",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Bank account (for DBT top-up)",
+          "mandatory": true,
+          "note": null
+        }
+      ],
+      "eligibility": {
+        "statuses": [],
+        "age_min": null,
+        "age_max": null,
+        "income_annual_max": null,
+        "income_note": "BPL and Antyodaya ration-card households in Karnataka",
+        "requires_children": false,
+        "nationality": "citizen_or_pr",
+        "residency_months_min": null,
+        "housing_tenure": null,
+        "student_required": false,
+        "admin_areas": [
+          "Karnataka"
+        ]
+      },
+      "source_url": "https://ahara.kar.nic.in",
+      "source_snippet": "Anna Bhagya gives BPL households 10 kg of rice per person per month, with the state share partly paid as DBT cash.",
+      "last_verified_at": "2026-08-12",
+      "verification_status": "auto_extracted"
+    },
+    {
+      "slug": "ka-shakti",
+      "name_local": "ಶಕ್ತಿ ಯೋಜನೆ (Shakti)",
+      "name_en": "Karnataka Shakti (free bus travel for women)",
+      "admin_level": "state",
+      "admin_area": "Karnataka",
+      "funder": "Department of Transport, Government of Karnataka",
+      "category": "transport",
+      "benefit_type": "free_slab",
+      "amount_min": null,
+      "amount_max": null,
+      "amount_currency": "INR",
+      "amount_period": "monthly",
+      "amount_note": "Free travel for women on non-premium (ordinary, city, express) buses of KSRTC, BMTC, NWKRTC and KKRTC within Karnataka; 50% of seats reserved for men",
+      "is_automatic": false,
+      "application_url": "https://sevasindhugs.karnataka.gov.in",
+      "application_channel": "online",
+      "deadline_type": "rolling",
+      "deadline_note": null,
+      "procedure_steps": [
+        {
+          "step": 1,
+          "detail": "Travel free by showing an accepted ID, or apply for the Shakti smart card on Seva Sindhu",
+          "url": "https://sevasindhugs.karnataka.gov.in"
+        },
+        {
+          "step": 2,
+          "detail": "Smart card dispatched to registered address after verification"
+        }
+      ],
+      "documents_required": [
+        {
+          "doc": "Aadhaar card / address proof (Karnataka domicile)",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Photograph",
+          "mandatory": true,
+          "note": null
+        }
+      ],
+      "eligibility": {
+        "statuses": [],
+        "age_min": null,
+        "age_max": null,
+        "income_annual_max": null,
+        "income_note": "Women and transgender persons domiciled in Karnataka; valid only on ordinary/express buses within the state",
+        "requires_children": false,
+        "nationality": "citizen_or_pr",
+        "residency_months_min": null,
+        "housing_tenure": null,
+        "student_required": false,
+        "admin_areas": [
+          "Karnataka"
+        ]
+      },
+      "source_url": "https://sevasindhugs.karnataka.gov.in",
+      "source_snippet": "Shakti allows women domiciled in Karnataka to travel free on non-premium state transport buses within the state.",
+      "last_verified_at": "2026-08-12",
+      "verification_status": "verified"
+    },
+    {
+      "slug": "ka-yuva-nidhi",
+      "name_local": "ಯುವ ನಿಧಿ (Yuva Nidhi)",
+      "name_en": "Karnataka Yuva Nidhi (unemployment allowance for youth)",
+      "admin_level": "state",
+      "admin_area": "Karnataka",
+      "funder": "Department of Skill Development, Government of Karnataka",
+      "category": "income_support",
+      "benefit_type": "cash_monthly",
+      "amount_min": 1500,
+      "amount_max": 3000,
+      "amount_currency": "INR",
+      "amount_period": "monthly",
+      "amount_note": "₹3,000/month for unemployed graduates and ₹1,500/month for diploma holders, for up to 2 years after passing",
+      "is_automatic": false,
+      "application_url": "https://sevasindhugs.karnataka.gov.in",
+      "application_channel": "online",
+      "deadline_type": "rolling",
+      "deadline_note": null,
+      "procedure_steps": [
+        {
+          "step": 1,
+          "detail": "Register on Seva Sindhu within the eligibility window after passing",
+          "url": "https://sevasindhugs.karnataka.gov.in"
+        },
+        {
+          "step": 2,
+          "detail": "Education and unemployment verification"
+        },
+        {
+          "step": 3,
+          "detail": "Monthly DBT until employment or 2-year cap"
+        }
+      ],
+      "documents_required": [
+        {
+          "doc": "Degree/diploma certificate",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Aadhaar card",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Karnataka domicile proof",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Bank account details",
+          "mandatory": true,
+          "note": null
+        }
+      ],
+      "eligibility": {
+        "statuses": [
+          "unemployed",
+          "jobseeker"
+        ],
+        "age_min": 18,
+        "age_max": null,
+        "income_annual_max": null,
+        "income_note": "Unemployed graduates/diploma holders (2022-23 pass-outs onwards) domiciled in Karnataka, not in jobs, higher studies or covered by ESI/PF",
+        "requires_children": false,
+        "nationality": "citizen_or_pr",
+        "residency_months_min": null,
+        "housing_tenure": null,
+        "student_required": false,
+        "admin_areas": [
+          "Karnataka"
+        ]
+      },
+      "source_url": "https://sevasindhugs.karnataka.gov.in",
+      "source_snippet": "Yuva Nidhi pays ₹1,500–₹3,000 a month to unemployed diploma holders and graduates in Karnataka for up to two years.",
+      "last_verified_at": "2026-08-12",
+      "verification_status": "auto_extracted"
+    },
+    {
+      "slug": "dl-free-electricity",
+      "name_local": "दिल्ली मुफ्त बिजली योजना",
+      "name_en": "Delhi free electricity (zero bill up to 200 units)",
+      "admin_level": "state",
+      "admin_area": "Delhi NCT",
+      "funder": "Government of NCT of Delhi (through BSES/TPDDL discoms)",
+      "category": "energy",
+      "benefit_type": "free_slab",
+      "amount_min": null,
+      "amount_max": null,
+      "amount_currency": "INR",
+      "amount_period": "monthly",
+      "amount_note": "Entire bill waived to ₹0 for consumption up to 200 units/month; 50% subsidy (capped at ₹800/month) for 201–400 units; no subsidy above 400 units",
+      "is_automatic": false,
+      "application_url": "https://www.bsesdelhi.com",
+      "application_channel": "automatic",
+      "deadline_type": "annual",
+      "deadline_note": "Opt-in confirmation may be requested by the discom each year",
+      "procedure_steps": [
+        {
+          "step": 1,
+          "detail": "Subsidy applies automatically to domestic bills; opt in via discom app/missed call if asked"
+        },
+        {
+          "step": 2,
+          "detail": "Keep monthly consumption within 200 units for a zero bill"
+        }
+      ],
+      "documents_required": [
+        {
+          "doc": "Domestic electricity connection in Delhi",
+          "mandatory": true,
+          "note": "Bill in resident's or family member's name"
+        }
+      ],
+      "eligibility": {
+        "statuses": [],
+        "age_min": null,
+        "age_max": null,
+        "income_annual_max": null,
+        "income_note": "All domestic consumers of BSES Rajdhani, BSES Yamuna and Tata Power-DDL; one subsidised connection per household",
+        "requires_children": false,
+        "nationality": "citizen_or_pr",
+        "residency_months_min": null,
+        "housing_tenure": null,
+        "student_required": false,
+        "admin_areas": [
+          "Delhi NCT"
+        ]
+      },
+      "source_url": "https://www.bsesdelhi.com",
+      "source_snippet": "Delhi households pay ₹0 for up to 200 units a month and half price for 201–400 units (capped), funded by the Delhi government.",
+      "last_verified_at": "2026-08-12",
+      "verification_status": "verified"
+    },
+    {
+      "slug": "dl-free-water",
+      "name_local": "दिल्ली मुफ्त पानी (20 किलोलीटर)",
+      "name_en": "Delhi free water up to 20 kilolitres per month",
+      "admin_level": "state",
+      "admin_area": "Delhi NCT",
+      "funder": "Delhi Jal Board, Government of NCT of Delhi",
+      "category": "energy",
+      "benefit_type": "free_slab",
+      "amount_min": null,
+      "amount_max": null,
+      "amount_currency": "INR",
+      "amount_period": "monthly",
+      "amount_note": "Zero water bill for domestic consumers with functional meters using up to 20 kilolitres per month; full bill payable if consumption exceeds 20 kL",
+      "is_automatic": true,
+      "application_url": "https://djb.gov.in",
+      "application_channel": "automatic",
+      "deadline_type": "none",
+      "deadline_note": null,
+      "procedure_steps": [
+        {
+          "step": 1,
+          "detail": "Hold a domestic DJB connection with a working meter"
+        },
+        {
+          "step": 2,
+          "detail": "Zero bill is generated automatically when monthly consumption is within 20 kL"
+        }
+      ],
+      "documents_required": [
+        {
+          "doc": "DJB water connection (KNO)",
+          "mandatory": true,
+          "note": "Functional meter required"
+        }
+      ],
+      "eligibility": {
+        "statuses": [],
+        "age_min": null,
+        "age_max": null,
+        "income_annual_max": null,
+        "income_note": "Domestic metered water consumers in Delhi using up to 20 kL/month",
+        "requires_children": false,
+        "nationality": "citizen_or_pr",
+        "residency_months_min": null,
+        "housing_tenure": null,
+        "student_required": false,
+        "admin_areas": [
+          "Delhi NCT"
+        ]
+      },
+      "source_url": "https://djb.gov.in",
+      "source_snippet": "DJB domestic consumers using up to 20 kilolitres a month get a zero water bill.",
+      "last_verified_at": "2026-08-12",
+      "verification_status": "auto_extracted"
+    },
+    {
+      "slug": "dl-women-free-bus",
+      "name_local": "दिल्ली महिला मुफ्त बस यात्रा (पिंक टिकट)",
+      "name_en": "Delhi free bus travel for women (pink ticket)",
+      "admin_level": "state",
+      "admin_area": "Delhi NCT",
+      "funder": "Department of Transport, Government of NCT of Delhi",
+      "category": "transport",
+      "benefit_type": "in_kind",
+      "amount_min": null,
+      "amount_max": null,
+      "amount_currency": "INR",
+      "amount_period": "monthly",
+      "amount_note": "Free travel for women and girls on all DTC and cluster (orange) buses within Delhi using the free pink single-journey ticket issued by the conductor",
+      "is_automatic": true,
+      "application_url": "https://dtc.delhi.gov.in",
+      "application_channel": "automatic",
+      "deadline_type": "none",
+      "deadline_note": null,
+      "procedure_steps": [
+        {
+          "step": 1,
+          "detail": "Board any DTC or cluster bus and take a free pink ticket from the conductor"
+        },
+        {
+          "step": 2,
+          "detail": "No pass, card or application needed"
+        }
+      ],
+      "documents_required": [
+        {
+          "doc": "None",
+          "mandatory": false,
+          "note": "Open to all women and girls"
+        }
+      ],
+      "eligibility": {
+        "statuses": [],
+        "age_min": null,
+        "age_max": null,
+        "income_annual_max": null,
+        "income_note": "All women and girls travelling within Delhi on DTC/cluster buses",
+        "requires_children": false,
+        "nationality": "citizen_or_pr",
+        "residency_months_min": null,
+        "housing_tenure": null,
+        "student_required": false,
+        "admin_areas": [
+          "Delhi NCT"
+        ]
+      },
+      "source_url": "https://dtc.delhi.gov.in",
+      "source_snippet": "Women travel free on DTC and cluster buses in Delhi with a pink ticket issued on board.",
+      "last_verified_at": "2026-08-12",
+      "verification_status": "auto_extracted"
+    },
+    {
+      "slug": "dl-ladli",
+      "name_local": "दिल्ली लाडली योजना",
+      "name_en": "Delhi Ladli Scheme (staged deposits for the girl child)",
+      "admin_level": "state",
+      "admin_area": "Delhi NCT",
+      "funder": "Department of Women and Child Development, Government of NCT of Delhi",
+      "category": "family",
+      "benefit_type": "cash_one_off",
+      "amount_min": null,
+      "amount_max": null,
+      "amount_currency": "INR",
+      "amount_period": "one_off",
+      "amount_note": "Staged deposits (₹11,000 at institutional birth/₹10,000 at home birth, then ₹5,000 each at admission to Classes I, VI, IX and XII) maturing with interest when the girl turns 18 and passes Class X/XII",
+      "is_automatic": false,
+      "application_url": "https://www.delhi.gov.in",
+      "application_channel": "in_person",
+      "deadline_type": "rolling",
+      "deadline_note": null,
+      "procedure_steps": [
+        {
+          "step": 1,
+          "detail": "Apply at the district WCD office/anganwadi or through the school"
+        },
+        {
+          "step": 2,
+          "detail": "Deposits made with SBI Life at each education milestone"
+        },
+        {
+          "step": 3,
+          "detail": "Maturity amount paid to the girl at 18 on meeting conditions"
+        }
+      ],
+      "documents_required": [
+        {
+          "doc": "Girl's birth certificate",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Delhi residence proof (3 years)",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Income certificate",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "School admission proof",
+          "mandatory": true,
+          "note": null
+        }
+      ],
+      "eligibility": {
+        "statuses": [],
+        "age_min": null,
+        "age_max": 18,
+        "income_annual_max": 100000,
+        "income_note": "Girls born in Delhi whose family has lived in Delhi for 3+ years with annual income up to ₹1 lakh; maximum two girls per family",
+        "requires_children": true,
+        "nationality": "citizen_or_pr",
+        "residency_months_min": null,
+        "housing_tenure": null,
+        "student_required": false,
+        "admin_areas": [
+          "Delhi NCT"
+        ]
+      },
+      "source_url": "https://www.delhi.gov.in",
+      "source_snippet": "Ladli builds a maturity fund for Delhi girls from low-income families through staged deposits linked to schooling.",
+      "last_verified_at": "2026-08-12",
+      "verification_status": "auto_extracted"
+    },
+    {
+      "slug": "dl-doorstep-ration",
+      "name_local": "मुख्यमंत्री घर घर राशन योजना",
+      "name_en": "Delhi doorstep delivery of ration (Mukhya Mantri Ghar Ghar Ration Yojana)",
+      "admin_level": "state",
+      "admin_area": "Delhi NCT",
+      "funder": "Department of Food, Supplies & Consumer Affairs, Government of NCT of Delhi",
+      "category": "income_support",
+      "benefit_type": "in_kind",
+      "amount_min": null,
+      "amount_max": null,
+      "amount_currency": "INR",
+      "amount_period": "monthly",
+      "amount_note": "Home delivery of the NFSA entitlement of packaged wheat flour/rice to ration-card households instead of collection at the fair price shop; rollout status depends on current government orders",
+      "is_automatic": false,
+      "application_url": "https://nfs.delhi.gov.in",
+      "application_channel": "online",
+      "deadline_type": "rolling",
+      "deadline_note": null,
+      "procedure_steps": [
+        {
+          "step": 1,
+          "detail": "Hold a Delhi NFSA ration card with Aadhaar seeding"
+        },
+        {
+          "step": 2,
+          "detail": "Opt in for doorstep delivery when the window/service is active"
+        }
+      ],
+      "documents_required": [
+        {
+          "doc": "Delhi ration card",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Aadhaar of family members",
+          "mandatory": true,
+          "note": null
+        }
+      ],
+      "eligibility": {
+        "statuses": [],
+        "age_min": null,
+        "age_max": null,
+        "income_annual_max": null,
+        "income_note": "Delhi NFSA ration-card households (priority and AAY)",
+        "requires_children": false,
+        "nationality": "citizen_or_pr",
+        "residency_months_min": null,
+        "housing_tenure": null,
+        "student_required": false,
+        "admin_areas": [
+          "Delhi NCT"
+        ]
+      },
+      "source_url": "https://nfs.delhi.gov.in",
+      "source_snippet": "The scheme delivers NFSA rations to the homes of Delhi cardholders; availability depends on the current rollout.",
+      "last_verified_at": "2026-08-12",
+      "verification_status": "auto_extracted"
+    },
+    {
+      "slug": "tn-vidiyal-payanam",
+      "name_local": "விடியல் பயணம் (Vidiyal Payanam)",
+      "name_en": "Tamil Nadu free bus travel for women (Vidiyal Payanam)",
+      "admin_level": "state",
+      "admin_area": "Tamil Nadu",
+      "funder": "Department of Transport, Government of Tamil Nadu",
+      "category": "transport",
+      "benefit_type": "in_kind",
+      "amount_min": null,
+      "amount_max": null,
+      "amount_currency": "INR",
+      "amount_period": "monthly",
+      "amount_note": "Free travel for women and transgender persons on ordinary-fare city and mofussil buses of state transport corporations within Tamil Nadu using a zero-fare ticket",
+      "is_automatic": true,
+      "application_url": "https://www.tn.gov.in",
+      "application_channel": "automatic",
+      "deadline_type": "none",
+      "deadline_note": null,
+      "procedure_steps": [
+        {
+          "step": 1,
+          "detail": "Board an ordinary-fare state transport bus and take the free zero-value ticket"
+        },
+        {
+          "step": 2,
+          "detail": "No application needed; premium/AC services excluded"
+        }
+      ],
+      "documents_required": [
+        {
+          "doc": "None",
+          "mandatory": false,
+          "note": "Open to women and transgender passengers"
+        }
+      ],
+      "eligibility": {
+        "statuses": [],
+        "age_min": null,
+        "age_max": null,
+        "income_annual_max": null,
+        "income_note": "Women and transgender persons travelling on ordinary-fare government buses within Tamil Nadu",
+        "requires_children": false,
+        "nationality": "citizen_or_pr",
+        "residency_months_min": null,
+        "housing_tenure": null,
+        "student_required": false,
+        "admin_areas": [
+          "Tamil Nadu"
+        ]
+      },
+      "source_url": "https://www.tn.gov.in",
+      "source_snippet": "Vidiyal Payanam lets women and transgender persons ride ordinary state buses in Tamil Nadu free of charge.",
+      "last_verified_at": "2026-08-12",
+      "verification_status": "auto_extracted"
+    },
+    {
+      "slug": "tn-breakfast-scheme",
+      "name_local": "முதலமைச்சரின் காலை உணவு திட்டம்",
+      "name_en": "Tamil Nadu Chief Minister's Breakfast Scheme",
+      "admin_level": "state",
+      "admin_area": "Tamil Nadu",
+      "funder": "School Education Department, Government of Tamil Nadu",
+      "category": "education",
+      "benefit_type": "in_kind",
+      "amount_min": null,
+      "amount_max": null,
+      "amount_currency": "INR",
+      "amount_period": "one_off",
+      "amount_note": "Free breakfast on all school days for students of Classes 1–5 in government and government-aided primary schools (statewide since August 2023), in addition to the mid-day meal",
+      "is_automatic": true,
+      "application_url": "https://tnschools.gov.in",
+      "application_channel": "automatic",
+      "deadline_type": "none",
+      "deadline_note": null,
+      "procedure_steps": [
+        {
+          "step": 1,
+          "detail": "Enrol the child in a government/government-aided primary school"
+        },
+        {
+          "step": 2,
+          "detail": "Breakfast is served automatically on school days"
+        }
+      ],
+      "documents_required": [
+        {
+          "doc": "School enrolment",
+          "mandatory": true,
+          "note": "Automatic on enrolment"
+        }
+      ],
+      "eligibility": {
+        "statuses": [],
+        "age_min": 5,
+        "age_max": 11,
+        "income_annual_max": null,
+        "income_note": "All students of Classes 1–5 in Tamil Nadu government and aided primary schools",
+        "requires_children": true,
+        "nationality": "citizen_or_pr",
+        "residency_months_min": null,
+        "housing_tenure": null,
+        "student_required": true,
+        "admin_areas": [
+          "Tamil Nadu"
+        ]
+      },
+      "source_url": "https://tnschools.gov.in",
+      "source_snippet": "The Chief Minister's Breakfast Scheme serves a free breakfast every school day to primary students across Tamil Nadu.",
+      "last_verified_at": "2026-08-12",
+      "verification_status": "auto_extracted"
+    },
+    {
+      "slug": "tn-kalaignar-magalir",
+      "name_local": "கலைஞர் மகளிர் உரிமைத் தொகை (KMUT)",
+      "name_en": "Kalaignar Magalir Urimai Thogai (₹1,000/month to women heads of family)",
+      "admin_level": "state",
+      "admin_area": "Tamil Nadu",
+      "funder": "Social Welfare and Women Empowerment Department, Government of Tamil Nadu",
+      "category": "income_support",
+      "benefit_type": "cash_monthly",
+      "amount_min": 1000,
+      "amount_max": 1000,
+      "amount_currency": "INR",
+      "amount_period": "monthly",
+      "amount_note": "₹1,000 per month (₹12,000/year) by DBT to eligible women heads of families",
+      "is_automatic": false,
+      "application_url": "https://kmut.tn.gov.in",
+      "application_channel": "in_person",
+      "deadline_type": "rolling",
+      "deadline_note": null,
+      "procedure_steps": [
+        {
+          "step": 1,
+          "detail": "Apply at the e-Sevai centre/ration shop during enrolment drives or on kmut.tn.gov.in",
+          "url": "https://kmut.tn.gov.in"
+        },
+        {
+          "step": 2,
+          "detail": "Ration-card head-of-family and eligibility verification"
+        },
+        {
+          "step": 3,
+          "detail": "₹1,000 credited monthly by DBT"
+        }
+      ],
+      "documents_required": [
+        {
+          "doc": "Smart ration card (woman as head of family)",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Aadhaar card (bank-linked)",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Bank passbook",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Voter ID",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Photograph",
+          "mandatory": true,
+          "note": null
+        }
+      ],
+      "eligibility": {
+        "statuses": [],
+        "age_min": 21,
+        "age_max": null,
+        "income_annual_max": 250000,
+        "income_note": "Woman head of a ration-card family; family income below ₹2.5 lakh/year, land under 5 acres wetland/10 acres dryland, annual electricity use under 3,600 units",
+        "requires_children": false,
+        "nationality": "citizen_or_pr",
+        "residency_months_min": null,
+        "housing_tenure": null,
+        "student_required": false,
+        "admin_areas": [
+          "Tamil Nadu"
+        ]
+      },
+      "source_url": "https://kmut.tn.gov.in",
+      "source_snippet": "KMUT pays ₹1,000 a month to over 1.3 crore eligible women heads of families in Tamil Nadu.",
+      "last_verified_at": "2026-08-12",
+      "verification_status": "verified"
+    },
+    {
+      "slug": "tn-pudhumai-penn",
+      "name_local": "புதுமைப் பெண் திட்டம் (Pudhumai Penn)",
+      "name_en": "Tamil Nadu Pudhumai Penn (₹1,000/month for college-going girls from government schools)",
+      "admin_level": "state",
+      "admin_area": "Tamil Nadu",
+      "funder": "Higher Education Department, Government of Tamil Nadu",
+      "category": "education",
+      "benefit_type": "cash_monthly",
+      "amount_min": 1000,
+      "amount_max": 1000,
+      "amount_currency": "INR",
+      "amount_period": "monthly",
+      "amount_note": "₹1,000 per month by DBT to girls who studied Classes 6–12 in Tamil Nadu government schools and are now enrolled in recognised UG/diploma/ITI courses",
+      "is_automatic": false,
+      "application_url": "https://www.tn.gov.in",
+      "application_channel": "online",
+      "deadline_type": "rolling",
+      "deadline_note": "Apply through the college during enrolment each academic year",
+      "procedure_steps": [
+        {
+          "step": 1,
+          "detail": "Apply through the college nodal officer with EMIS/records"
+        },
+        {
+          "step": 2,
+          "detail": "Verification of government-school study (6th–12th) and current enrolment"
+        },
+        {
+          "step": 3,
+          "detail": "₹1,000 credited monthly for the course duration"
+        }
+      ],
+      "documents_required": [
+        {
+          "doc": "Class 6–12 government school records",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "College admission/bonafide certificate",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Aadhaar card",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Bank account details",
+          "mandatory": true,
+          "note": null
+        }
+      ],
+      "eligibility": {
+        "statuses": [
+          "student"
+        ],
+        "age_min": null,
+        "age_max": null,
+        "income_annual_max": null,
+        "income_note": "Girl students who completed Classes 6–12 in Tamil Nadu government schools and joined higher education; Moovalur Ramamirtham Ammaiyar scheme",
+        "requires_children": false,
+        "nationality": "citizen_or_pr",
+        "residency_months_min": null,
+        "housing_tenure": null,
+        "student_required": true,
+        "admin_areas": [
+          "Tamil Nadu"
+        ]
+      },
+      "source_url": "https://www.tn.gov.in",
+      "source_snippet": "Pudhumai Penn pays ₹1,000 a month to girls from government schools pursuing college education in Tamil Nadu.",
+      "last_verified_at": "2026-08-12",
+      "verification_status": "auto_extracted"
+    },
+    {
+      "slug": "mh-ladki-bahin",
+      "name_local": "मुख्यमंत्री माझी लाडकी बहीण योजना",
+      "name_en": "Maharashtra Mukhyamantri Mazi Ladki Bahin Yojana (₹1,500/month)",
+      "admin_level": "state",
+      "admin_area": "Maharashtra",
+      "funder": "Department of Women and Child Development, Government of Maharashtra",
+      "category": "income_support",
+      "benefit_type": "cash_monthly",
+      "amount_min": 1500,
+      "amount_max": 1500,
+      "amount_currency": "INR",
+      "amount_period": "monthly",
+      "amount_note": "₹1,500 per month (₹18,000/year) by DBT to eligible women; over 2.35 crore women enrolled",
+      "is_automatic": false,
+      "application_url": "https://ladakibahin.maharashtra.gov.in",
+      "application_channel": "online",
+      "deadline_type": "rolling",
+      "deadline_note": null,
+      "procedure_steps": [
+        {
+          "step": 1,
+          "detail": "Apply on ladakibahin.maharashtra.gov.in or the app, or at a Setu/Anganwadi centre",
+          "url": "https://ladakibahin.maharashtra.gov.in"
+        },
+        {
+          "step": 2,
+          "detail": "Domicile, age, income and Aadhaar-bank verification"
+        },
+        {
+          "step": 3,
+          "detail": "₹1,500 credited monthly by DBT"
+        }
+      ],
+      "documents_required": [
+        {
+          "doc": "Aadhaar card",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Maharashtra domicile proof / ration card",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Income declaration (below ₹2.5 lakh)",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Aadhaar-linked bank account",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Marriage/widow/divorce proof as applicable",
+          "mandatory": false,
+          "note": null
+        }
+      ],
+      "eligibility": {
+        "statuses": [],
+        "age_min": 21,
+        "age_max": 65,
+        "income_annual_max": 250000,
+        "income_note": "Married, widowed, divorced, abandoned or unmarried women (21–65) domiciled in Maharashtra with family income below ₹2.5 lakh/year; taxpayers and government employees excluded",
+        "requires_children": false,
+        "nationality": "citizen_or_pr",
+        "residency_months_min": null,
+        "housing_tenure": null,
+        "student_required": false,
+        "admin_areas": [
+          "Maharashtra"
+        ]
+      },
+      "source_url": "https://ladakibahin.maharashtra.gov.in",
+      "source_snippet": "Ladki Bahin pays ₹1,500 a month to eligible women aged 21–65 in Maharashtra with family income under ₹2.5 lakh.",
+      "last_verified_at": "2026-08-12",
+      "verification_status": "verified"
+    },
+    {
+      "slug": "ts-rythu-bandhu",
+      "name_local": "రైతు బంధు (Rythu Bandhu)",
+      "name_en": "Telangana Rythu Bandhu (₹5,000 per acre per season investment support)",
+      "admin_level": "state",
+      "admin_area": "Telangana",
+      "funder": "Department of Agriculture, Government of Telangana",
+      "category": "income_support",
+      "benefit_type": "cash_monthly",
+      "amount_min": null,
+      "amount_max": null,
+      "amount_currency": "INR",
+      "amount_period": "annual",
+      "amount_note": "₹5,000 per acre per season (₹10,000 per acre per year, kharif + rabi) paid by DBT/cheque to landholding farmers; total depends on landholding",
+      "is_automatic": false,
+      "application_url": "https://rythubandhu.telangana.gov.in",
+      "application_channel": "in_person",
+      "deadline_type": "window",
+      "deadline_note": "Disbursed before each kharif and rabi season",
+      "procedure_steps": [
+        {
+          "step": 1,
+          "detail": "Land records updated in the Dharani portal / Pattadar passbook"
+        },
+        {
+          "step": 2,
+          "detail": "Village-level verification by agriculture officers"
+        },
+        {
+          "step": 3,
+          "detail": "Amount credited each season based on acreage"
+        }
+      ],
+      "documents_required": [
+        {
+          "doc": "Pattadar passbook / Dharani land record",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Aadhaar card",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Bank account details",
+          "mandatory": true,
+          "note": null
+        }
+      ],
+      "eligibility": {
+        "statuses": [],
+        "age_min": null,
+        "age_max": null,
+        "income_annual_max": null,
+        "income_note": "Farmers owning agricultural land in Telangana (Pattadars); income-tax payers and public representatives excluded",
+        "requires_children": false,
+        "nationality": "citizen_or_pr",
+        "residency_months_min": null,
+        "housing_tenure": null,
+        "student_required": false,
+        "admin_areas": [
+          "Telangana"
+        ]
+      },
+      "source_url": "https://rythubandhu.telangana.gov.in",
+      "source_snippet": "Rythu Bandhu gives Telangana landholding farmers ₹5,000 per acre per season as agriculture investment support.",
+      "last_verified_at": "2026-08-12",
+      "verification_status": "verified"
+    },
+    {
+      "slug": "ts-mahalakshmi",
+      "name_local": "మహాలక్ష్మీ పథకం (Mahalakshmi)",
+      "name_en": "Telangana Mahalakshmi Scheme (₹2,500/month to eligible women)",
+      "admin_level": "state",
+      "admin_area": "Telangana",
+      "funder": "Government of Telangana (Praja Palana / SERP)",
+      "category": "income_support",
+      "benefit_type": "cash_monthly",
+      "amount_min": 2500,
+      "amount_max": 2500,
+      "amount_currency": "INR",
+      "amount_period": "monthly",
+      "amount_note": "₹2,500 per month to eligible women heads of low-income households identified through Praja Palana applications",
+      "is_automatic": false,
+      "application_url": "https://www.telangana.gov.in",
+      "application_channel": "in_person",
+      "deadline_type": "window",
+      "deadline_note": "Enrolment via Praja Palana application drives announced by the state",
+      "procedure_steps": [
+        {
+          "step": 1,
+          "detail": "Submit the Praja Palana application at the village/ward level"
+        },
+        {
+          "step": 2,
+          "detail": "Field verification of household eligibility"
+        },
+        {
+          "step": 3,
+          "detail": "₹2,500 monthly DBT to the woman's account"
+        }
+      ],
+      "documents_required": [
+        {
+          "doc": "Aadhaar card",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Ration card",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Telangana residence proof",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Bank account details",
+          "mandatory": true,
+          "note": null
+        }
+      ],
+      "eligibility": {
+        "statuses": [],
+        "age_min": null,
+        "age_max": null,
+        "income_annual_max": null,
+        "income_note": "Women heads of low-income households in Telangana (per Praja Palana criteria; white ration-card-type categories)",
+        "requires_children": false,
+        "nationality": "citizen_or_pr",
+        "residency_months_min": null,
+        "housing_tenure": null,
+        "student_required": false,
+        "admin_areas": [
+          "Telangana"
+        ]
+      },
+      "source_url": "https://www.telangana.gov.in",
+      "source_snippet": "Mahalakshmi pays ₹2,500 a month to eligible women heads of households in Telangana.",
+      "last_verified_at": "2026-08-12",
+      "verification_status": "auto_extracted"
+    },
+    {
+      "slug": "wb-lakshmir-bhandar",
+      "name_local": "লক্ষ্মীর ভাণ্ডার (Lakshmir Bhandar)",
+      "name_en": "West Bengal Lakshmir Bhandar (monthly allowance to women)",
+      "admin_level": "state",
+      "admin_area": "West Bengal",
+      "funder": "Department of Women & Child Development and Social Welfare, Government of West Bengal",
+      "category": "income_support",
+      "benefit_type": "cash_monthly",
+      "amount_min": 1500,
+      "amount_max": 1700,
+      "amount_currency": "INR",
+      "amount_period": "monthly",
+      "amount_note": "₹1,500/month for general-category women and ₹1,700/month for SC/ST women (raised from ₹1,000/₹1,200 by the February 2026 interim budget); paid by DBT",
+      "is_automatic": false,
+      "application_url": "https://wb.gov.in",
+      "application_channel": "in_person",
+      "deadline_type": "rolling",
+      "deadline_note": "Apply at Duare Sarkar camps or block/municipality offices",
+      "procedure_steps": [
+        {
+          "step": 1,
+          "detail": "Apply at a Duare Sarkar camp / BDO / municipality with documents"
+        },
+        {
+          "step": 2,
+          "detail": "Verification and sanction by the district administration"
+        },
+        {
+          "step": 3,
+          "detail": "Monthly DBT to the woman's Aadhaar-linked account"
+        }
+      ],
+      "documents_required": [
+        {
+          "doc": "Aadhaar card",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Ration card / Swasthya Sathi card",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Caste certificate (SC/ST)",
+          "mandatory": false,
+          "note": null
+        },
+        {
+          "doc": "Bank account details",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Residence proof",
+          "mandatory": true,
+          "note": null
+        }
+      ],
+      "eligibility": {
+        "statuses": [],
+        "age_min": 25,
+        "age_max": 60,
+        "income_annual_max": null,
+        "income_note": "Women residents of West Bengal aged 25–60; families paying income tax or holding more than 2 hectares of land excluded",
+        "requires_children": false,
+        "nationality": "citizen_or_pr",
+        "residency_months_min": null,
+        "housing_tenure": null,
+        "student_required": false,
+        "admin_areas": [
+          "West Bengal"
+        ]
+      },
+      "source_url": "https://wb.gov.in",
+      "source_snippet": "Lakshmir Bhandar pays a monthly allowance (₹1,500 general / ₹1,700 SC-ST after the 2026 hike) to over 2.2 crore women in West Bengal.",
+      "last_verified_at": "2026-08-12",
+      "verification_status": "verified"
+    },
+    {
+      "slug": "wb-kanyashree",
+      "name_local": "কন্যাশ্রী প্রকল্প (Kanyashree)",
+      "name_en": "West Bengal Kanyashree Prakalpa (scholarships to keep girls in school)",
+      "admin_level": "state",
+      "admin_area": "West Bengal",
+      "funder": "Department of Women & Child Development and Social Welfare, Government of West Bengal",
+      "category": "education",
+      "benefit_type": "cash_one_off",
+      "amount_min": null,
+      "amount_max": null,
+      "amount_currency": "INR",
+      "amount_period": "one_off",
+      "amount_note": "K1: ₹1,000 annual scholarship for unmarried girls aged 13–18 in Class VIII or above; K2: ₹25,000 one-time grant at 18 if unmarried and continuing education/vocational training",
+      "is_automatic": false,
+      "application_url": "https://www.wbkanyashree.gov.in",
+      "application_channel": "in_person",
+      "deadline_type": "annual",
+      "deadline_note": "Forms submitted through the school/college each academic year",
+      "procedure_steps": [
+        {
+          "step": 1,
+          "detail": "Collect the K1/K2 form free from the school/college"
+        },
+        {
+          "step": 2,
+          "detail": "Institution verifies and uploads to the Kanyashree portal; Kanyashree ID issued"
+        },
+        {
+          "step": 3,
+          "detail": "Amount credited by DBT to the girl's bank account"
+        }
+      ],
+      "documents_required": [
+        {
+          "doc": "Aadhaar card",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Birth certificate",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Income certificate",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Bank passbook (girl's account)",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Unmarried declaration",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Bonafide student certificate",
+          "mandatory": true,
+          "note": null
+        }
+      ],
+      "eligibility": {
+        "statuses": [
+          "student"
+        ],
+        "age_min": 13,
+        "age_max": null,
+        "income_annual_max": 120000,
+        "income_note": "Unmarried girls of West Bengal; family income up to ₹1.2 lakh/year (waived for girls with disabilities, orphans and JJ-home residents)",
+        "requires_children": false,
+        "nationality": "citizen_or_pr",
+        "residency_months_min": null,
+        "housing_tenure": null,
+        "student_required": true,
+        "admin_areas": [
+          "West Bengal"
+        ]
+      },
+      "source_url": "https://www.wbkanyashree.gov.in",
+      "source_snippet": "Kanyashree gives unmarried school-going girls ₹1,000 a year (K1) and a ₹25,000 one-time grant at 18 (K2) via DBT.",
+      "last_verified_at": "2026-08-12",
+      "verification_status": "verified"
+    },
+    {
+      "slug": "wb-swasthya-sathi",
+      "name_local": "স্বাস্থ্য সাথী (Swasthya Sathi)",
+      "name_en": "West Bengal Swasthya Sathi (₹5 lakh cashless health cover)",
+      "admin_level": "state",
+      "admin_area": "West Bengal",
+      "funder": "Health & Family Welfare Department, Government of West Bengal",
+      "category": "health",
+      "benefit_type": "in_kind",
+      "amount_min": null,
+      "amount_max": 500000,
+      "amount_currency": "INR",
+      "amount_period": "annual",
+      "amount_note": "Cashless health cover of ₹5 lakh per family per year (basic) at empanelled hospitals, with a smart card issued in the name of a woman member; fully state-funded, no premium",
+      "is_automatic": false,
+      "application_url": "https://swasthyasathi.gov.in",
+      "application_channel": "in_person",
+      "deadline_type": "rolling",
+      "deadline_note": null,
+      "procedure_steps": [
+        {
+          "step": 1,
+          "detail": "Enrol at Duare Sarkar camps / notified enrolment centres",
+          "url": "https://swasthyasathi.gov.in"
+        },
+        {
+          "step": 2,
+          "detail": "Smart card issued after biometric verification"
+        },
+        {
+          "step": 3,
+          "detail": "Cashless treatment at empanelled hospitals up to the annual limit"
+        }
+      ],
+      "documents_required": [
+        {
+          "doc": "Aadhaar card",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Ration card / residence proof",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Mobile number",
+          "mandatory": true,
+          "note": null
+        }
+      ],
+      "eligibility": {
+        "statuses": [],
+        "age_min": null,
+        "age_max": null,
+        "income_annual_max": null,
+        "income_note": "Families in West Bengal not covered by other government health insurance; card issued in the name of the eldest woman of the family",
+        "requires_children": false,
+        "nationality": "citizen_or_pr",
+        "residency_months_min": null,
+        "housing_tenure": null,
+        "student_required": false,
+        "admin_areas": [
+          "West Bengal"
+        ]
+      },
+      "source_url": "https://swasthyasathi.gov.in",
+      "source_snippet": "Swasthya Sathi provides cashless health cover of ₹5 lakh per family per year to West Bengal households.",
+      "last_verified_at": "2026-08-12",
+      "verification_status": "auto_extracted"
+    },
+    {
+      "slug": "kl-welfare-pension",
+      "name_local": "കേരള ക്ഷേമ പെൻഷൻ (Welfare Pension)",
+      "name_en": "Kerala social welfare pensions (old age, widow, disability and others)",
+      "admin_level": "state",
+      "admin_area": "Kerala",
+      "funder": "Local Self Government Department / Government of Kerala",
+      "category": "income_support",
+      "benefit_type": "cash_monthly",
+      "amount_min": 1600,
+      "amount_max": 1600,
+      "amount_currency": "INR",
+      "amount_period": "monthly",
+      "amount_note": "₹1,600 per month (periodically revised) to eligible elderly, widows, persons with disabilities, agricultural workers, unmarried women above 50 and other listed categories",
+      "is_automatic": false,
+      "application_url": "https://welfarepension.lsgkerala.gov.in",
+      "application_channel": "in_person",
+      "deadline_type": "rolling",
+      "deadline_note": null,
+      "procedure_steps": [
+        {
+          "step": 1,
+          "detail": "Apply at the Grama Panchayat/municipality/corporation welfare section"
+        },
+        {
+          "step": 2,
+          "detail": "Verification by the local body and sanction"
+        },
+        {
+          "step": 3,
+          "detail": "Pension paid monthly to the bank account or delivered at home"
+        }
+      ],
+      "documents_required": [
+        {
+          "doc": "Aadhaar card",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Age proof",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Income certificate (BPL/low income)",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Bank account details",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Category-specific proof (death/disability certificate)",
+          "mandatory": false,
+          "note": null
+        }
+      ],
+      "eligibility": {
+        "statuses": [],
+        "age_min": 60,
+        "age_max": null,
+        "income_annual_max": null,
+        "income_note": "Destitute/low-income residents of Kerala in listed categories (old age, widow, disabled, agricultural labourer etc.); income ceilings set by LSGD",
+        "requires_children": false,
+        "nationality": "citizen_or_pr",
+        "residency_months_min": null,
+        "housing_tenure": null,
+        "student_required": false,
+        "admin_areas": [
+          "Kerala"
+        ]
+      },
+      "source_url": "https://welfarepension.lsgkerala.gov.in",
+      "source_snippet": "Kerala's welfare pension system pays ₹1,600 a month to elderly, widows, persons with disabilities and other eligible categories.",
+      "last_verified_at": "2026-08-12",
+      "verification_status": "auto_extracted"
+    },
+    {
+      "slug": "kl-karunya-kasp",
+      "name_local": "കരുണ്യ ആരോഗ്യ സുരക്ഷാ പദ്ധതി (KASP)",
+      "name_en": "Kerala Karunya Arogya Suraksha Padhathi (state health assurance, integrated with PM-JAY)",
+      "admin_level": "state",
+      "admin_area": "Kerala",
+      "funder": "State Health Agency, Government of Kerala",
+      "category": "health",
+      "benefit_type": "in_kind",
+      "amount_min": null,
+      "amount_max": 500000,
+      "amount_currency": "INR",
+      "amount_period": "annual",
+      "amount_note": "Cashless secondary and tertiary hospitalisation cover of ₹5 lakh per eligible family per year at empanelled hospitals, integrating PM-JAY in Kerala",
+      "is_automatic": false,
+      "application_url": "https://sha.kerala.gov.in",
+      "application_channel": "in_person",
+      "deadline_type": "rolling",
+      "deadline_note": null,
+      "procedure_steps": [
+        {
+          "step": 1,
+          "detail": "Check eligibility with ration card at an Akshaya centre/hospital kiosk"
+        },
+        {
+          "step": 2,
+          "detail": "KASP/Ayushman card issued after eKYC"
+        },
+        {
+          "step": 3,
+          "detail": "Cashless treatment at empanelled hospitals"
+        }
+      ],
+      "documents_required": [
+        {
+          "doc": "Ration card",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Aadhaar card",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Income/BPL proof",
+          "mandatory": false,
+          "note": null
+        }
+      ],
+      "eligibility": {
+        "statuses": [],
+        "age_min": null,
+        "age_max": null,
+        "income_annual_max": null,
+        "income_note": "Poor and vulnerable families in Kerala as per SECC/state criteria, integrated with the Ayushman Bharat beneficiary base",
+        "requires_children": false,
+        "nationality": "citizen_or_pr",
+        "residency_months_min": null,
+        "housing_tenure": null,
+        "student_required": false,
+        "admin_areas": [
+          "Kerala"
+        ]
+      },
+      "source_url": "https://sha.kerala.gov.in",
+      "source_snippet": "KASP gives Kerala's eligible families ₹5 lakh cashless annual health cover integrated with Ayushman Bharat.",
+      "last_verified_at": "2026-08-12",
+      "verification_status": "auto_extracted"
+    },
+    {
+      "slug": "gj-mysy-scholarship",
+      "name_local": "મુખ્યમંત્રી યુવા સ્વાવલંબન યોજના (MYSY)",
+      "name_en": "Gujarat Mukhyamantri Yuva Swavalamban Yojana (MYSY scholarship)",
+      "admin_level": "state",
+      "admin_area": "Gujarat",
+      "funder": "Department of Education, Government of Gujarat",
+      "category": "education",
+      "benefit_type": "cash_one_off",
+      "amount_min": null,
+      "amount_max": null,
+      "amount_currency": "INR",
+      "amount_period": "annual",
+      "amount_note": "Tuition assistance (up to 50% of fees, capped by course: e.g., up to ₹2 lakh for professional courses, lower caps for diploma/general graduation) plus hostel and book/instrument assistance for eligible students",
+      "is_automatic": false,
+      "application_url": "https://mysy.guj.nic.in",
+      "application_channel": "online",
+      "deadline_type": "annual",
+      "deadline_note": "Applications open each year after board/admission results",
+      "procedure_steps": [
+        {
+          "step": 1,
+          "detail": "Apply on mysy.guj.nic.in in the year of admission",
+          "url": "https://mysy.guj.nic.in"
+        },
+        {
+          "step": 2,
+          "detail": "Verification of merit percentile, income and institution"
+        },
+        {
+          "step": 3,
+          "detail": "Assistance paid to institution/student by DBT"
+        }
+      ],
+      "documents_required": [
+        {
+          "doc": "Income certificate",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Class 10/12 marksheets (merit criteria)",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Admission proof and fee receipt",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Aadhaar card",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Bank account details",
+          "mandatory": true,
+          "note": null
+        }
+      ],
+      "eligibility": {
+        "statuses": [
+          "student"
+        ],
+        "age_min": null,
+        "age_max": null,
+        "income_annual_max": 600000,
+        "income_note": "Gujarat students with family income up to ₹6 lakh/year and required merit percentiles entering diploma, graduation or professional courses",
+        "requires_children": false,
+        "nationality": "citizen_or_pr",
+        "residency_months_min": null,
+        "housing_tenure": null,
+        "student_required": true,
+        "admin_areas": [
+          "Gujarat"
+        ]
+      },
+      "source_url": "https://mysy.guj.nic.in",
+      "source_snippet": "MYSY funds tuition, hostel and book assistance for meritorious Gujarat students from families earning up to ₹6 lakh a year.",
+      "last_verified_at": "2026-08-12",
+      "verification_status": "auto_extracted"
+    },
+    {
+      "slug": "up-kanya-sumangala",
+      "name_local": "मुख्यमंत्री कन्या सुमंगला योजना",
+      "name_en": "Uttar Pradesh Mukhyamantri Kanya Sumangala Yojana (₹15,000 staged grant for girls)",
+      "admin_level": "state",
+      "admin_area": "Uttar Pradesh",
+      "funder": "Department of Women and Child Development, Government of Uttar Pradesh",
+      "category": "family",
+      "benefit_type": "cash_one_off",
+      "amount_min": 15000,
+      "amount_max": 15000,
+      "amount_currency": "INR",
+      "amount_period": "one_off",
+      "amount_note": "Total ₹15,000 in six stages from birth to admission in graduation/diploma (₹2,000 at birth, ₹1,000 immunisation, ₹2,000 Class I, ₹2,000 Class VI, ₹3,000 Class IX, ₹5,000 higher education)",
+      "is_automatic": false,
+      "application_url": "https://mksy.up.gov.in",
+      "application_channel": "online",
+      "deadline_type": "rolling",
+      "deadline_note": null,
+      "procedure_steps": [
+        {
+          "step": 1,
+          "detail": "Register on mksy.up.gov.in within six months of the relevant stage",
+          "url": "https://mksy.up.gov.in"
+        },
+        {
+          "step": 2,
+          "detail": "Upload documents; district verification"
+        },
+        {
+          "step": 3,
+          "detail": "Stage-wise DBT to the guardian's/girl's bank account"
+        }
+      ],
+      "documents_required": [
+        {
+          "doc": "Girl's birth certificate",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Aadhaar of parents",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "UP residence proof",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Income certificate",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Bank account details",
+          "mandatory": true,
+          "note": null
+        },
+        {
+          "doc": "Stage-specific proof (immunisation/admission)",
+          "mandatory": false,
+          "note": null
+        }
+      ],
+      "eligibility": {
+        "statuses": [],
+        "age_min": null,
+        "age_max": null,
+        "income_annual_max": 300000,
+        "income_note": "Girls born in UP resident families with annual income up to ₹3 lakh; maximum two girls per family (exceptions for twins/adoption)",
+        "requires_children": true,
+        "nationality": "citizen_or_pr",
+        "residency_months_min": null,
+        "housing_tenure": null,
+        "student_required": false,
+        "admin_areas": [
+          "Uttar Pradesh"
+        ]
+      },
+      "source_url": "https://mksy.up.gov.in",
+      "source_snippet": "Kanya Sumangala gives ₹15,000 in six stages for each eligible girl child in Uttar Pradesh from birth to higher education.",
+      "last_verified_at": "2026-08-12",
+      "verification_status": "auto_extracted"
+    }
+  ]
+}

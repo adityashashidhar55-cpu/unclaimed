@@ -1,0 +1,4573 @@
+{
+ "country_code": "ES",
+ "country_name": "Spain",
+ "currency": "EUR",
+ "language": "es",
+ "programmes": [
+  {
+   "slug": "ingreso-minimo-vital",
+   "name_local": "Ingreso Mínimo Vital (IMV)",
+   "name_en": "Minimum Living Income (IMV)",
+   "admin_level": "national",
+   "admin_area": null,
+   "funder": "Instituto Nacional de la Seguridad Social (INSS)",
+   "category": "income_support",
+   "benefit_type": "cash_monthly",
+   "amount_min": 658.81,
+   "amount_max": null,
+   "amount_currency": "EUR",
+   "amount_period": "monthly",
+   "amount_note": "2025: 658,81 €/mes single person; 856,46 € (2 members) up to 1.449,39 €+ (5+ members), plus per-child and monoparental supplements",
+   "is_automatic": false,
+   "application_url": "https://sede.seg-social.gob.es",
+   "application_channel": "online",
+   "deadline_type": "rolling",
+   "deadline_note": null,
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Use the official IMV simulator on the Seguridad Social portal",
+     "url": "https://www.seg-social.es"
+    },
+    {
+     "step": 2,
+     "detail": "Apply online via Sede Electrónica (Cl@ve/certificado) or book an appointment at an INSS office",
+     "url": "https://sede.seg-social.gob.es"
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "DNI/NIE of all household members",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Libro de familia or civil registry certificates",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Bank account certificate",
+     "mandatory": true,
+     "note": null
+    }
+   ],
+   "eligibility": {
+    "statuses": [],
+    "age_min": null,
+    "age_max": null,
+    "income_annual_max": 7905.72,
+    "income_note": "Vulnerability threshold 2025: single person 658,81 €/mes x 12 = 7.905,72 €/año; +30% per additional member up to 220%, plus CAPI/monoparental supplements; patrimony limit also applies",
+    "requires_children": false,
+    "nationality": "any_resident",
+    "residency_months_min": 12,
+    "housing_tenure": null,
+    "student_required": false,
+    "admin_areas": [],
+    "gender": "any"
+   },
+   "source_url": "https://www.seg-social.es",
+   "source_snippet": "La cuantía de la renta garantizada en 2025 es de 658,81 euros al mes para un beneficiario individual; se incrementa un 30% por cada miembro adicional hasta el 220%, con complemento monoparental del 22% y complemento por menor (115 €, 80,50 € o 57,70 € según edad).",
+   "last_verified_at": "2026-08-12",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "prestacion-contributiva-desempleo",
+   "name_local": "Prestación contributiva por desempleo (el paro)",
+   "name_en": "Contributory Unemployment Benefit (paro)",
+   "admin_level": "national",
+   "admin_area": null,
+   "funder": "Servicio Público de Empleo Estatal (SEPE)",
+   "category": "income_support",
+   "benefit_type": "cash_monthly",
+   "amount_min": 560.0,
+   "amount_max": 1575.0,
+   "amount_currency": "EUR",
+   "amount_period": "monthly",
+   "amount_note": "70% of base reguladora first 6 months, 60% thereafter; capped between min and max depending on dependent children; duration 4-24 months",
+   "is_automatic": false,
+   "application_url": "https://sede.sepe.gob.es",
+   "application_channel": "online",
+   "deadline_type": "rolling",
+   "deadline_note": null,
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Register as jobseeker (demandante de empleo) in your regional employment service",
+     "url": null
+    },
+    {
+     "step": 2,
+     "detail": "Apply within 15 working days of job loss via SEPE e-office or with appointment",
+     "url": "https://sede.sepe.gob.es"
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "DNI/NIE",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Company certificate (certificado de empresa)",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Bank account details",
+     "mandatory": true,
+     "note": null
+    }
+   ],
+   "eligibility": {
+    "statuses": [
+     "unemployed"
+    ],
+    "age_min": null,
+    "age_max": null,
+    "income_annual_max": null,
+    "income_note": "No income test: contributory benefit based on previous contributions and salary base",
+    "requires_children": false,
+    "nationality": "any_resident",
+    "residency_months_min": null,
+    "housing_tenure": null,
+    "student_required": false,
+    "admin_areas": [],
+    "gender": "any"
+   },
+   "source_url": "https://www.sepe.es",
+   "source_snippet": "El importe diario que se percibe es el 70 % de la base reguladora durante los primeros 180 días de prestación y el 60 % a partir del día 181; topes 2026: mínimo 560 € (sin hijos) / 749 € (con hijos) y máximo 1.225 €/1.400 €/1.575 €.",
+   "last_verified_at": "2026-08-12",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "subsidio-mayores-52-anos",
+   "name_local": "Subsidio por desempleo para mayores de 52 años",
+   "name_en": "Unemployment Subsidy for over-52s",
+   "admin_level": "national",
+   "admin_area": null,
+   "funder": "Servicio Público de Empleo Estatal (SEPE)",
+   "category": "income_support",
+   "benefit_type": "cash_monthly",
+   "amount_min": 480.0,
+   "amount_max": 480.0,
+   "amount_currency": "EUR",
+   "amount_period": "monthly",
+   "amount_note": "Fixed 80% of IPREM = 480 €/month; payable until ordinary retirement age; SEPE pays retirement contributions",
+   "is_automatic": false,
+   "application_url": "https://sede.sepe.gob.es",
+   "application_channel": "online",
+   "deadline_type": "rolling",
+   "deadline_note": null,
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Exhaust contributory unemployment benefit or qualifying subsidy",
+     "url": null
+    },
+    {
+     "step": 2,
+     "detail": "Apply within 15 working days via SEPE e-office or appointment",
+     "url": "https://sede.sepe.gob.es"
+    },
+    {
+     "step": 3,
+     "detail": "Submit annual income declaration every 12 months",
+     "url": null
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "DNI/NIE",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Proof of income (declaración de rentas)",
+     "mandatory": true,
+     "note": null
+    }
+   ],
+   "eligibility": {
+    "statuses": [
+     "unemployed"
+    ],
+    "age_min": 52,
+    "age_max": null,
+    "income_annual_max": 10656,
+    "income_note": "Own income must not exceed 75% of SMI (about 888 €/month); must meet all retirement pension requirements except age (15 years of contributions, 2 in last 15, 6 years of unemployment contributions)",
+    "requires_children": false,
+    "nationality": "any_resident",
+    "residency_months_min": null,
+    "housing_tenure": null,
+    "student_required": false,
+    "admin_areas": [],
+    "gender": "any"
+   },
+   "source_url": "https://www.sepe.es",
+   "source_snippet": "La cuantía equivale al 80 % del IPREM: 480 euros al mes en 12 pagas; se cobra hasta alcanzar la edad ordinaria de jubilación y cotiza para la pensión.",
+   "last_verified_at": "2026-08-12",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "subsidio-insuficiencia-cotizacion",
+   "name_local": "Subsidio por insuficiencia de cotización",
+   "name_en": "Subsidy for Insufficient Contributions",
+   "admin_level": "national",
+   "admin_area": null,
+   "funder": "Servicio Público de Empleo Estatal (SEPE)",
+   "category": "income_support",
+   "benefit_type": "cash_monthly",
+   "amount_min": 480.0,
+   "amount_max": 570.0,
+   "amount_currency": "EUR",
+   "amount_period": "monthly",
+   "amount_note": "Amount linked to IPREM: up to 570 € first period, 540 € second, 480 € final phase; duration depends on contributions and family responsibilities",
+   "is_automatic": false,
+   "application_url": "https://sede.sepe.gob.es",
+   "application_channel": "online",
+   "deadline_type": "rolling",
+   "deadline_note": null,
+   "procedure_steps": [],
+   "documents_required": [],
+   "eligibility": {
+    "statuses": [
+     "unemployed"
+    ],
+    "age_min": null,
+    "age_max": null,
+    "income_annual_max": 10656,
+    "income_note": "With family responsibilities: own income must not exceed 75% of SMI; 2025 SMI 1.184 €/mes -> 75% = 888 €/mes -> 10.656 €/año (converted from monthly rule)",
+    "requires_children": false,
+    "nationality": "any_resident",
+    "residency_months_min": null,
+    "housing_tenure": null,
+    "student_required": false,
+    "admin_areas": [],
+    "gender": "any"
+   },
+   "source_url": "https://www.sepe.es",
+   "source_snippet": "Subsidio para quienes no alcanzan los 360 días cotizados exigidos para el paro; tras la reforma se puede acceder con al menos 90 días cotizados; cuantía referenciada al IPREM (hasta 570 €/540 €/480 € según fase).",
+   "last_verified_at": "2026-08-12",
+   "verification_status": "auto_extracted"
+  },
+  {
+   "slug": "subsidio-agotamiento-prestacion",
+   "name_local": "Subsidio por agotamiento de la prestación contributiva",
+   "name_en": "Subsidy after Exhaustion of Contributory Benefit",
+   "admin_level": "national",
+   "admin_area": null,
+   "funder": "Servicio Público de Empleo Estatal (SEPE)",
+   "category": "income_support",
+   "benefit_type": "cash_monthly",
+   "amount_min": 480.0,
+   "amount_max": 480.0,
+   "amount_currency": "EUR",
+   "amount_period": "monthly",
+   "amount_note": "80% of IPREM = 480 €/month; duration varies (6-30 months) by age and family responsibilities",
+   "is_automatic": false,
+   "application_url": "https://sede.sepe.gob.es",
+   "application_channel": "online",
+   "deadline_type": "rolling",
+   "deadline_note": null,
+   "procedure_steps": [],
+   "documents_required": [],
+   "eligibility": {
+    "statuses": [
+     "unemployed"
+    ],
+    "age_min": null,
+    "age_max": null,
+    "income_annual_max": 10656,
+    "income_note": "Income limit: own monthly income <= 75% of SMI (888 €/mes in 2025) -> 10.656 €/año; applies with cargas familiares",
+    "requires_children": false,
+    "nationality": "any_resident",
+    "residency_months_min": null,
+    "housing_tenure": null,
+    "student_required": false,
+    "admin_areas": [],
+    "gender": "any"
+   },
+   "source_url": "https://www.sepe.es",
+   "source_snippet": "Subsidio para desempleados que han agotado la prestación contributiva y cumplen requisitos de edad o responsabilidades familiares; cuantía del 80% del IPREM (480 €/mes).",
+   "last_verified_at": "2026-08-12",
+   "verification_status": "auto_extracted"
+  },
+  {
+   "slug": "renta-activa-insercion-rai",
+   "name_local": "Renta Activa de Inserción (RAI)",
+   "name_en": "Active Insertion Income (RAI)",
+   "admin_level": "national",
+   "admin_area": null,
+   "funder": "Servicio Público de Empleo Estatal (SEPE)",
+   "category": "income_support",
+   "benefit_type": "cash_monthly",
+   "amount_min": 480.0,
+   "amount_max": 480.0,
+   "amount_currency": "EUR",
+   "amount_period": "monthly",
+   "amount_note": "80% IPREM = 480 €/month for up to 11 months; can be received up to 3 times with 365 days between periods",
+   "is_automatic": false,
+   "application_url": "https://sede.sepe.gob.es",
+   "application_channel": "online",
+   "deadline_type": "rolling",
+   "deadline_note": null,
+   "procedure_steps": [],
+   "documents_required": [
+    {
+     "doc": "DNI/NIE of household members",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Disability certificate / protection order (if applicable)",
+     "mandatory": false,
+     "note": null
+    },
+    {
+     "doc": "Bank account certificate",
+     "mandatory": true,
+     "note": null
+    }
+   ],
+   "eligibility": {
+    "statuses": [
+     "unemployed"
+    ],
+    "age_min": 45,
+    "age_max": null,
+    "income_annual_max": 10656,
+    "income_note": "Own income and household average income below 75% of SMI (≈888 €/month); long-term unemployed (12 months registered) or specific collectives",
+    "requires_children": false,
+    "nationality": "any_resident",
+    "residency_months_min": null,
+    "housing_tenure": null,
+    "student_required": false,
+    "admin_areas": [],
+    "gender": "any"
+   },
+   "source_url": "https://www.sepe.es",
+   "source_snippet": "Para desempleados de larga duración mayores de 45 años, víctimas de violencia de género o doméstica, personas con discapacidad igual o superior al 33 % y emigrantes retornados; cuantía del 80 % del IPREM (480 €/mes), 11 meses, hasta 3 veces en la vida.",
+   "last_verified_at": "2026-08-12",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "renta-agraria",
+   "name_local": "Renta agraria (Andalucía y Extremadura)",
+   "name_en": "Agrarian Income (Andalusia & Extremadura)",
+   "admin_level": "region",
+   "admin_area": "Andalucía",
+   "funder": "Servicio Público de Empleo Estatal (SEPE)",
+   "category": "income_support",
+   "benefit_type": "cash_monthly",
+   "amount_min": 480.0,
+   "amount_max": 480.0,
+   "amount_currency": "EUR",
+   "amount_period": "monthly",
+   "amount_note": "80% IPREM = 480 €/month; duration linked to accredited agricultural working days",
+   "is_automatic": false,
+   "application_url": "https://sede.sepe.gob.es",
+   "application_channel": "online",
+   "deadline_type": "rolling",
+   "deadline_note": null,
+   "procedure_steps": [],
+   "documents_required": [],
+   "eligibility": {
+    "statuses": [
+     "unemployed"
+    ],
+    "age_min": null,
+    "age_max": null,
+    "income_annual_max": 10656,
+    "income_note": "Requirement: rentas propias no superiores al 75% del SMI mensual (888 €/mes 2025) -> 10.656 €/año (conversion from monthly rule); higher allowance with family responsibilities",
+    "requires_children": false,
+    "nationality": "any_resident",
+    "residency_months_min": null,
+    "housing_tenure": null,
+    "student_required": false,
+    "admin_areas": [
+     "Andalucía"
+    ],
+    "gender": "any"
+   },
+   "source_url": "https://www.sepe.es",
+   "source_snippet": "Subsidio para trabajadores eventuales agrarios de Andalucía y Extremadura; 80% del IPREM (480 €/mes); exige jornales cotizados y 10 años de empadronamiento acumulado en alguna de las dos comunidades.",
+   "last_verified_at": "2026-08-12",
+   "verification_status": "auto_extracted"
+  },
+  {
+   "slug": "subsidio-agrario-eventual",
+   "name_local": "Subsidio agrario para trabajadores eventuales",
+   "name_en": "Agricultural Casual Workers' Subsidy",
+   "admin_level": "region",
+   "admin_area": "Andalucía",
+   "funder": "Servicio Público de Empleo Estatal (SEPE)",
+   "category": "income_support",
+   "benefit_type": "cash_monthly",
+   "amount_min": 480.0,
+   "amount_max": 480.0,
+   "amount_currency": "EUR",
+   "amount_period": "monthly",
+   "amount_note": "80% IPREM = 480 €/month for 6 months",
+   "is_automatic": false,
+   "application_url": "https://sede.sepe.gob.es",
+   "application_channel": "online",
+   "deadline_type": "rolling",
+   "deadline_note": null,
+   "procedure_steps": [],
+   "documents_required": [],
+   "eligibility": {
+    "statuses": [
+     "unemployed"
+    ],
+    "age_min": null,
+    "age_max": null,
+    "income_annual_max": 10656,
+    "income_note": "Same income rule as renta agraria: monthly income <= 75% SMI (888 €/mes 2025) = 10.656 €/año",
+    "requires_children": false,
+    "nationality": "any_resident",
+    "residency_months_min": null,
+    "housing_tenure": null,
+    "student_required": false,
+    "admin_areas": [
+     "Andalucía"
+    ],
+    "gender": "any"
+   },
+   "source_url": "https://www.sepe.es",
+   "source_snippet": "Exclusivo de Andalucía y Extremadura; exige un mínimo de 35 jornadas reales cotizadas en los últimos 12 meses; 80% del IPREM (480 €/mes) durante 6 meses.",
+   "last_verified_at": "2026-08-12",
+   "verification_status": "auto_extracted"
+  },
+  {
+   "slug": "prestacion-cese-actividad-autonomos",
+   "name_local": "Prestación por cese de actividad de trabajadores autónomos",
+   "name_en": "Self-Employed Cessation of Activity Benefit",
+   "admin_level": "national",
+   "admin_area": null,
+   "funder": "Servicio Público de Empleo Estatal (SEPE) y mutuas",
+   "category": "income_support",
+   "benefit_type": "cash_monthly",
+   "amount_min": null,
+   "amount_max": null,
+   "amount_currency": "EUR",
+   "amount_period": "monthly",
+   "amount_note": "70% of the contribution base (base reguladora); duration 2-12 months depending on contribution period",
+   "is_automatic": false,
+   "application_url": "https://sede.sepe.gob.es",
+   "application_channel": "online",
+   "deadline_type": "rolling",
+   "deadline_note": null,
+   "procedure_steps": [],
+   "documents_required": [],
+   "eligibility": {
+    "statuses": [
+     "self_employed"
+    ],
+    "age_min": null,
+    "age_max": null,
+    "income_annual_max": 10656,
+    "income_note": "With family responsibilities, unit income must not exceed 75% of monthly SMI (888 €/mes 2025) -> 10.656 €/año; no income test otherwise",
+    "requires_children": false,
+    "nationality": "any_resident",
+    "residency_months_min": null,
+    "housing_tenure": null,
+    "student_required": false,
+    "admin_areas": [],
+    "gender": "any"
+   },
+   "source_url": "https://www.sepe.es",
+   "source_snippet": "El autónomo que cesa la actividad por causas económicas, técnicas, fuerza mayor o pérdida de licencia puede cobrar el 70% de su base reguladora de cotización, hasta 12 meses.",
+   "last_verified_at": "2026-08-12",
+   "verification_status": "auto_extracted"
+  },
+  {
+   "slug": "pension-no-contributiva-jubilacion",
+   "name_local": "Pensión no contributiva de jubilación",
+   "name_en": "Non-Contributory Retirement Pension",
+   "admin_level": "national",
+   "admin_area": null,
+   "funder": "Instituto Nacional de la Seguridad Social (INSS) / IMSERSO",
+   "category": "income_support",
+   "benefit_type": "cash_monthly",
+   "amount_min": 564.7,
+   "amount_max": 564.7,
+   "amount_currency": "EUR",
+   "amount_period": "monthly",
+   "amount_note": "2025 full amount 564,70 €/month in 14 payments (7.905,80 €/year); reduced if income; from 2026 ≈ 629 €/month after 11,4% rise",
+   "is_automatic": false,
+   "application_url": "https://sede.seg-social.gob.es",
+   "application_channel": "online",
+   "deadline_type": "rolling",
+   "deadline_note": null,
+   "procedure_steps": [],
+   "documents_required": [],
+   "eligibility": {
+    "statuses": [
+     "retired"
+    ],
+    "age_min": 65,
+    "age_max": null,
+    "income_annual_max": 7905.8,
+    "income_note": "Annual income below 7.905,80 € (2025); household income limits apply; 10 years of legal residence in Spain, 2 consecutive before applying",
+    "requires_children": false,
+    "nationality": "any_resident",
+    "residency_months_min": 120,
+    "housing_tenure": null,
+    "student_required": false,
+    "admin_areas": [],
+    "gender": "any"
+   },
+   "source_url": "https://www.seg-social.es",
+   "source_snippet": "La cuantía anual en 2025 es de 7.905,80 euros (564,70 €/mes en 14 pagas); exige 65 años, 10 años de residencia en España (2 consecutivos previos a la solicitud) e insuficiencia de recursos.",
+   "last_verified_at": "2026-08-12",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "pension-no-contributiva-invalidez",
+   "name_local": "Pensión no contributiva de invalidez",
+   "name_en": "Non-Contributory Invalidity Pension",
+   "admin_level": "national",
+   "admin_area": null,
+   "funder": "Instituto Nacional de la Seguridad Social (INSS) / IMSERSO",
+   "category": "income_support",
+   "benefit_type": "cash_monthly",
+   "amount_min": 564.7,
+   "amount_max": 847.05,
+   "amount_currency": "EUR",
+   "amount_period": "monthly",
+   "amount_note": "564,70 €/month (14 payments); +50% supplement (847,05 €/month) if ≥75% disability requiring third-person assistance",
+   "is_automatic": false,
+   "application_url": "https://sede.seg-social.gob.es",
+   "application_channel": "online",
+   "deadline_type": "rolling",
+   "deadline_note": null,
+   "procedure_steps": [],
+   "documents_required": [],
+   "eligibility": {
+    "statuses": [],
+    "age_min": 18,
+    "age_max": 64,
+    "income_annual_max": 7905.8,
+    "income_note": "Disability ≥65%; annual income below 7.905,80 € (2025); 5 years residence in Spain, 2 consecutive before applying",
+    "requires_children": false,
+    "nationality": "any_resident",
+    "residency_months_min": 60,
+    "housing_tenure": null,
+    "student_required": false,
+    "admin_areas": [],
+    "gender": "any"
+   },
+   "source_url": "https://www.seg-social.es",
+   "source_snippet": "Para personas de 18 a 65 años con discapacidad igual o superior al 65% e insuficiencia de recursos; cuantía 2025: 7.905,80 €/año (564,70 €/mes), con complemento del 50% si discapacidad ≥75% y necesidad de otra persona.",
+   "last_verified_at": "2026-08-12",
+   "verification_status": "auto_extracted"
+  },
+  {
+   "slug": "prestacion-nacimiento-cuidado-menor",
+   "name_local": "Prestación por nacimiento y cuidado del menor",
+   "name_en": "Birth and Childcare Benefit (parental leave pay)",
+   "admin_level": "national",
+   "admin_area": null,
+   "funder": "Instituto Nacional de la Seguridad Social (INSS)",
+   "category": "family",
+   "benefit_type": "cash_monthly",
+   "amount_min": null,
+   "amount_max": null,
+   "amount_currency": "EUR",
+   "amount_period": "monthly",
+   "amount_note": "100% of the contribution base for 17 weeks in the baby's first 12 months plus 2 flexible weeks until age 8 (19 total); 32 weeks for single-parent families; 6 weeks mandatory immediately after birth",
+   "is_automatic": false,
+   "application_url": "https://prestaciones.seg-social.es/servicio/prestacion-nacimiento-adopcion-cuidado-menor.html",
+   "application_channel": "online",
+   "deadline_type": "rolling",
+   "deadline_note": null,
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Apply online at prestaciones.seg-social.es or Tu Seguridad Social",
+     "url": "https://prestaciones.seg-social.es/servicio/prestacion-nacimiento-adopcion-cuidado-menor.html"
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "DNI/NIE",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Libro de familia / birth certificate",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Company certificate of working conditions",
+     "mandatory": true,
+     "note": null
+    }
+   ],
+   "eligibility": {
+    "statuses": [
+     "employee",
+     "self_employed",
+     "parent"
+    ],
+    "age_min": null,
+    "age_max": null,
+    "income_annual_max": null,
+    "income_note": "Requires affiliation and minimum contribution period (180 days in last 7 years if 26+; 90 days if 21-25; none required under 21)",
+    "requires_children": true,
+    "nationality": "any_resident",
+    "residency_months_min": null,
+    "housing_tenure": null,
+    "student_required": false,
+    "admin_areas": [],
+    "gender": "any"
+   },
+   "source_url": "https://prestaciones.seg-social.es/servicio/prestacion-nacimiento-adopcion-cuidado-menor.html",
+   "source_snippet": "El permiso por nacimiento y cuidado de menor pasa de 16 a 19 semanas (32 en familias monoparentales), iguales e intransferibles para ambos progenitores, con el 100% de la base reguladora abonado por el INSS.",
+   "last_verified_at": "2026-08-12",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "prestacion-riesgo-embarazo-lactancia",
+   "name_local": "Prestación por riesgo durante el embarazo y la lactancia natural",
+   "name_en": "Pregnancy & Breastfeeding Risk Benefit",
+   "admin_level": "national",
+   "admin_area": null,
+   "funder": "Instituto Nacional de la Seguridad Social (INSS)",
+   "category": "family",
+   "benefit_type": "cash_monthly",
+   "amount_min": null,
+   "amount_max": null,
+   "amount_currency": "EUR",
+   "amount_period": "monthly",
+   "amount_note": "100% of base reguladora from suspension of contract until start of birth benefit or 9 months of age (lactation)",
+   "is_automatic": false,
+   "application_url": "https://sede.seg-social.gob.es",
+   "application_channel": "online",
+   "deadline_type": "rolling",
+   "deadline_note": null,
+   "procedure_steps": [],
+   "documents_required": [],
+   "eligibility": {
+    "statuses": [
+     "employee",
+     "self_employed",
+     "parent"
+    ],
+    "age_min": null,
+    "age_max": null,
+    "income_annual_max": null,
+    "income_note": "Requires medical certificate of risk and affiliation with minimum contributions",
+    "requires_children": false,
+    "nationality": "any_resident",
+    "residency_months_min": null,
+    "housing_tenure": null,
+    "student_required": false,
+    "admin_areas": [],
+    "gender": "female"
+   },
+   "source_url": "https://www.seg-social.es",
+   "source_snippet": "Protege a la trabajadora embarazada o en lactancia cuando el puesto de trabajo supone un riesgo para su salud o la del bebé y no es posible adaptarlo; 100% de la base reguladora.",
+   "last_verified_at": "2026-08-12",
+   "verification_status": "auto_extracted"
+  },
+  {
+   "slug": "asignacion-economica-hijo-discapacidad",
+   "name_local": "Asignación económica por hijo o menor acogido a cargo con discapacidad",
+   "name_en": "Cash Benefit for Dependent Child with Disability",
+   "admin_level": "national",
+   "admin_area": null,
+   "funder": "Instituto Nacional de la Seguridad Social (INSS)",
+   "category": "family",
+   "benefit_type": "cash_monthly",
+   "amount_min": 1000.0,
+   "amount_max": 8942.4,
+   "amount_currency": "EUR",
+   "amount_period": "annual",
+   "amount_note": "1.000 €/year (under-18, ≥33%); 5.962,80 €/year (adult, ≥65%); 8.942,40 €/year (≥75% needing a third person); no income limit",
+   "is_automatic": false,
+   "application_url": "https://sede.seg-social.gob.es",
+   "application_channel": "online",
+   "deadline_type": "rolling",
+   "deadline_note": null,
+   "procedure_steps": [],
+   "documents_required": [
+    {
+     "doc": "Disability recognition certificate",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Libro de familia",
+     "mandatory": true,
+     "note": null
+    }
+   ],
+   "eligibility": {
+    "statuses": [],
+    "age_min": null,
+    "age_max": null,
+    "income_annual_max": null,
+    "income_note": "No income test since 2023 reform (previously income-limited); requires child with >=33% disability",
+    "requires_children": true,
+    "nationality": "any_resident",
+    "residency_months_min": null,
+    "housing_tenure": null,
+    "student_required": false,
+    "admin_areas": [],
+    "gender": "any"
+   },
+   "source_url": "https://www.seg-social.es",
+   "source_snippet": "Tres tramos: 1.000 €/año para menores de 18 años con discapacidad ≥33%; 5.962,80 €/año para mayores de 18 con ≥65%; 8.942,40 €/año para ≥75% con necesidad de otra persona (Real Decreto-ley 1/2025). Sin límite de ingresos.",
+   "last_verified_at": "2026-08-12",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "complemento-ayuda-infancia-imv",
+   "name_local": "Complemento de ayuda para la infancia del IMV",
+   "name_en": "Child Assistance Supplement (IMV)",
+   "admin_level": "national",
+   "admin_area": null,
+   "funder": "Instituto Nacional de la Seguridad Social (INSS)",
+   "category": "family",
+   "benefit_type": "cash_monthly",
+   "amount_min": 57.7,
+   "amount_max": 115.0,
+   "amount_currency": "EUR",
+   "amount_period": "monthly",
+   "amount_note": "Per child: 115 €/month (under 3), 80,50 € (3-6), 57,70 € (6-18); paid automatically with IMV",
+   "is_automatic": true,
+   "application_url": "https://sede.seg-social.gob.es",
+   "application_channel": "automatic",
+   "deadline_type": "rolling",
+   "deadline_note": null,
+   "procedure_steps": [],
+   "documents_required": [],
+   "eligibility": {
+    "statuses": [],
+    "age_min": null,
+    "age_max": null,
+    "income_annual_max": 7905.72,
+    "income_note": "Linked to IMV: household income below IMV guaranteed income (658,81 €/mes x 12 base 2025, scaled by household size)",
+    "requires_children": true,
+    "nationality": "any_resident",
+    "residency_months_min": null,
+    "housing_tenure": null,
+    "student_required": false,
+    "admin_areas": [],
+    "gender": "any"
+   },
+   "source_url": "https://www.seg-social.es",
+   "source_snippet": "Complemento mensual por cada menor de la unidad de convivencia beneficiaria del IMV: 115 € menores de 3 años, 80,50 € de 3 a 6 años y 57,70 € de 6 a 18 años.",
+   "last_verified_at": "2026-08-12",
+   "verification_status": "auto_extracted"
+  },
+  {
+   "slug": "prestacion-parto-multiple",
+   "name_local": "Prestación económica por parto o adopción múltiples",
+   "name_en": "Multiple Birth/Adoption Lump-Sum Benefit",
+   "admin_level": "national",
+   "admin_area": null,
+   "funder": "Instituto Nacional de la Seguridad Social (INSS)",
+   "category": "family",
+   "benefit_type": "cash_one_off",
+   "amount_min": null,
+   "amount_max": 14208.0,
+   "amount_currency": "EUR",
+   "amount_period": "one_off",
+   "amount_note": "4 × SMI for twins, 8 × SMI for triplets, 12 × SMI for 4+ (SMI 2025 = 1.184 €/month)",
+   "is_automatic": false,
+   "application_url": "https://sede.seg-social.gob.es",
+   "application_channel": "online",
+   "deadline_type": "rolling",
+   "deadline_note": null,
+   "procedure_steps": [],
+   "documents_required": [],
+   "eligibility": {
+    "statuses": [],
+    "age_min": null,
+    "age_max": null,
+    "income_annual_max": null,
+    "income_note": "All families regardless of contributions or income",
+    "requires_children": true,
+    "nationality": "any_resident",
+    "residency_months_min": null,
+    "housing_tenure": null,
+    "student_required": false,
+    "admin_areas": [],
+    "gender": "any"
+   },
+   "source_url": "https://www.seg-social.es",
+   "source_snippet": "Pago único equivalente a 4, 8 o 12 veces el SMI mensual según sean 2, 3 o 4 o más hijos nacidos o adoptados a la vez; no exige cotización ni límite de ingresos.",
+   "last_verified_at": "2026-08-12",
+   "verification_status": "auto_extracted"
+  },
+  {
+   "slug": "prestacion-cuidado-menores-enfermedad-grave",
+   "name_local": "Prestación por cuidado de menores afectados por cáncer u otra enfermedad grave",
+   "name_en": "Benefit for Caring for Children with Cancer or Serious Illness",
+   "admin_level": "national",
+   "admin_area": null,
+   "funder": "Instituto Nacional de la Seguridad Social (INSS)",
+   "category": "family",
+   "benefit_type": "cash_monthly",
+   "amount_min": null,
+   "amount_max": null,
+   "amount_currency": "EUR",
+   "amount_period": "monthly",
+   "amount_note": "100% of base reguladora proportional to the working-hours reduction (minimum 50%)",
+   "is_automatic": false,
+   "application_url": "https://sede.seg-social.gob.es",
+   "application_channel": "online",
+   "deadline_type": "rolling",
+   "deadline_note": null,
+   "procedure_steps": [],
+   "documents_required": [],
+   "eligibility": {
+    "statuses": [
+     "employee",
+     "self_employed",
+     "parent"
+    ],
+    "age_min": null,
+    "age_max": null,
+    "income_annual_max": null,
+    "income_note": "Child under 18 hospitalised or requiring continuous treatment; reduction of working hours ≥50%",
+    "requires_children": true,
+    "nationality": "any_resident",
+    "residency_months_min": null,
+    "housing_tenure": null,
+    "student_required": false,
+    "admin_areas": [],
+    "gender": "any"
+   },
+   "source_url": "https://www.seg-social.es",
+   "source_snippet": "Subsidio del 100% de la base reguladora para progenitores que reducen al menos el 50% su jornada para cuidar a un menor con cáncer u otra enfermedad grave que requiera internamiento hospitalario.",
+   "last_verified_at": "2026-08-12",
+   "verification_status": "auto_extracted"
+  },
+  {
+   "slug": "deduccion-maternidad-madre-trabajadora",
+   "name_local": "Deducción por maternidad (madre trabajadora)",
+   "name_en": "Maternity Tax Deduction (working mother)",
+   "admin_level": "national",
+   "admin_area": null,
+   "funder": "Agencia Estatal de Administración Tributaria (AEAT)",
+   "category": "tax",
+   "benefit_type": "tax_credit",
+   "amount_min": 1200.0,
+   "amount_max": 1200.0,
+   "amount_currency": "EUR",
+   "amount_period": "annual",
+   "amount_note": "1.200 €/year per child under 3 (100 €/month advance payment via Modelo 140); extra up to 1.000 €/year for nursery expenses",
+   "is_automatic": false,
+   "application_url": "https://www.agenciatributaria.es",
+   "application_channel": "online",
+   "deadline_type": "rolling",
+   "deadline_note": null,
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "File Modelo 140 for monthly advance payments, or apply in the annual IRPF return",
+     "url": "https://www.agenciatributaria.es"
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "DNI/NIE of mother and child",
+     "mandatory": true,
+     "note": null
+    }
+   ],
+   "eligibility": {
+    "statuses": [
+     "employee",
+     "self_employed",
+     "parent"
+    ],
+    "age_min": null,
+    "age_max": null,
+    "income_annual_max": null,
+    "income_note": "Working mother registered with Social Security (or receiving unemployment benefit) with children under 3; fathers with exclusive custody also eligible",
+    "requires_children": true,
+    "nationality": "any_resident",
+    "residency_months_min": null,
+    "housing_tenure": null,
+    "student_required": false,
+    "admin_areas": [],
+    "gender": "female"
+   },
+   "source_url": "https://www.agenciatributaria.es",
+   "source_snippet": "Deducción de 1.200 euros anuales por cada hijo menor de 3 años para madres dadas de alta en la Seguridad Social; se puede cobrar por adelantado a 100 €/mes presentando el modelo 140, o en la declaración de la renta.",
+   "last_verified_at": "2026-08-12",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "deduccion-familia-numerosa-discapacidad",
+   "name_local": "Deducción por familia numerosa, ascendiente/descendiente con discapacidad",
+   "name_en": "Tax Deduction for Large Family / Disabled Dependents",
+   "admin_level": "national",
+   "admin_area": null,
+   "funder": "Agencia Estatal de Administración Tributaria (AEAT)",
+   "category": "tax",
+   "benefit_type": "tax_credit",
+   "amount_min": 1200.0,
+   "amount_max": 2400.0,
+   "amount_currency": "EUR",
+   "amount_period": "annual",
+   "amount_note": "1.200 €/year (large family general / disabled ascendant or descendant / spouse with disability) or 2.400 €/year (large family special); advance via Modelo 143",
+   "is_automatic": false,
+   "application_url": "https://www.agenciatributaria.es",
+   "application_channel": "online",
+   "deadline_type": "rolling",
+   "deadline_note": null,
+   "procedure_steps": [],
+   "documents_required": [],
+   "eligibility": {
+    "statuses": [],
+    "age_min": null,
+    "age_max": null,
+    "income_annual_max": null,
+    "income_note": "Requires large-family title or accredited disability and Social Security contributions or pension/unemployment benefit",
+    "requires_children": true,
+    "nationality": "any_resident",
+    "residency_months_min": null,
+    "housing_tenure": null,
+    "student_required": false,
+    "admin_areas": [],
+    "gender": "any"
+   },
+   "source_url": "https://www.agenciatributaria.es",
+   "source_snippet": "Deducción de 1.200 € anuales (familia numerosa general, ascendientes o personas con discapacidad a cargo) o 2.400 € (familia numerosa especial), con abono anticipado de 100 €/200 € al mes (modelo 143).",
+   "last_verified_at": "2026-08-12",
+   "verification_status": "auto_extracted"
+  },
+  {
+   "slug": "deduccion-gastos-guarderia",
+   "name_local": "Deducción por gastos de guardería (incremento deducción por maternidad)",
+   "name_en": "Nursery Expenses Deduction (maternity top-up)",
+   "admin_level": "national",
+   "admin_area": null,
+   "funder": "Agencia Estatal de Administración Tributaria (AEAT)",
+   "category": "tax",
+   "benefit_type": "tax_credit",
+   "amount_min": null,
+   "amount_max": 1000.0,
+   "amount_currency": "EUR",
+   "amount_period": "annual",
+   "amount_note": "Up to 1.000 €/year additional deduction for authorised nursery costs of children under 3",
+   "is_automatic": false,
+   "application_url": "https://www.agenciatributaria.es",
+   "application_channel": "online",
+   "deadline_type": "rolling",
+   "deadline_note": null,
+   "procedure_steps": [],
+   "documents_required": [],
+   "eligibility": {
+    "statuses": [
+     "employee",
+     "self_employed",
+     "parent"
+    ],
+    "age_min": null,
+    "age_max": null,
+    "income_annual_max": null,
+    "income_note": "Linked to the maternity deduction; actual expenses at authorised centres",
+    "requires_children": true,
+    "nationality": "any_resident",
+    "residency_months_min": null,
+    "housing_tenure": null,
+    "student_required": false,
+    "admin_areas": [],
+    "gender": "female"
+   },
+   "source_url": "https://www.agenciatributaria.es",
+   "source_snippet": "Incremento de hasta 1.000 € anuales adicionales a la deducción por maternidad por gastos de custodia en guarderías o centros de educación infantil autorizados, para hijos menores de 3 años.",
+   "last_verified_at": "2026-08-12",
+   "verification_status": "auto_extracted"
+  },
+  {
+   "slug": "deduccion-alquiler-vivienda-habitual-estatal",
+   "name_local": "Deducción estatal por alquiler de vivienda habitual (régimen transitorio)",
+   "name_en": "State Rent Tax Deduction (transitional regime)",
+   "admin_level": "national",
+   "admin_area": null,
+   "funder": "Agencia Estatal de Administración Tributaria (AEAT)",
+   "category": "tax",
+   "benefit_type": "tax_credit",
+   "amount_min": null,
+   "amount_max": 908.52,
+   "amount_currency": "EUR",
+   "amount_period": "annual",
+   "amount_note": "10,05% of rent paid; max deduction base 9.040 €/year; only contracts before 1/1/2015 (transitional regime)",
+   "is_automatic": false,
+   "application_url": "https://www.agenciatributaria.es",
+   "application_channel": "automatic",
+   "deadline_type": "rolling",
+   "deadline_note": null,
+   "procedure_steps": [],
+   "documents_required": [],
+   "eligibility": {
+    "statuses": [],
+    "age_min": null,
+    "age_max": null,
+    "income_annual_max": 24107.2,
+    "income_note": "Taxable income below 24.107,20 € (full base if below 17.707,20 €); contract signed before 1 January 2015 and deduction already applied previously",
+    "requires_children": false,
+    "nationality": "any_resident",
+    "residency_months_min": null,
+    "housing_tenure": "renting",
+    "student_required": false,
+    "admin_areas": [],
+    "gender": "any"
+   },
+   "source_url": "https://www.agenciatributaria.es",
+   "source_snippet": "El 10,05 % de las cantidades satisfechas por el alquiler, con base máxima de deducción de 9.040 €, solo para contratos firmados antes del 1 de enero de 2015 y base imponible inferior a 24.107,20 €.",
+   "last_verified_at": "2026-08-12",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "deduccion-alquiler-comunidad-madrid",
+   "name_local": "Deducción autonómica por alquiler de vivienda habitual (Comunidad de Madrid)",
+   "name_en": "Madrid Region Rent Tax Deduction",
+   "admin_level": "region",
+   "admin_area": "Madrid",
+   "funder": "Comunidad de Madrid / AEAT",
+   "category": "tax",
+   "benefit_type": "tax_credit",
+   "amount_min": null,
+   "amount_max": 1237.0,
+   "amount_currency": "EUR",
+   "amount_period": "annual",
+   "amount_note": "30% of annual rent, up to 1.237 EUR/year deduction in the IRPF regional tranche",
+   "is_automatic": false,
+   "application_url": "https://www.agenciatributaria.es",
+   "application_channel": "automatic",
+   "deadline_type": "rolling",
+   "deadline_note": null,
+   "procedure_steps": [],
+   "documents_required": [],
+   "eligibility": {
+    "statuses": [],
+    "age_min": null,
+    "age_max": null,
+    "income_annual_max": 26414.22,
+    "income_note": "Suma de bases imponibles general y del ahorro <= 26.414,22 € individual / 37.322,20 € conjunta; unidad familiar total <= 61.860 € (IRPF 2025)",
+    "requires_children": false,
+    "nationality": "any_resident",
+    "residency_months_min": null,
+    "housing_tenure": "renting",
+    "student_required": false,
+    "admin_areas": [
+     "Madrid"
+    ],
+    "gender": "any"
+   },
+   "source_url": "https://www.comunidad.madrid",
+   "source_snippet": "El 30 % de las cantidades satisfechas por el alquiler de la vivienda habitual, hasta un máximo de 1.237 euros de deducción anual (Ley 5/2024), para menores de 35 años, mayores de 65 y otros colectivos con renta limitada.",
+   "last_verified_at": "2026-08-12",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "justicia-gratuita",
+   "name_local": "Asistencia jurídica gratuita (abogado de oficio y exención de tasas judiciales)",
+   "name_en": "Free Legal Aid",
+   "admin_level": "national",
+   "admin_area": null,
+   "funder": "Ministerio de Justicia / Colegios de Abogados",
+   "category": "income_support",
+   "benefit_type": "in_kind",
+   "amount_min": null,
+   "amount_max": null,
+   "amount_currency": "EUR",
+   "amount_period": "one_off",
+   "amount_note": "Covers lawyer, court agent, court fees and other procedural costs; income thresholds from 2 to 5 times IPREM depending on family situation",
+   "is_automatic": false,
+   "application_url": "https://www.mjusticia.gob.es",
+   "application_channel": "in_person",
+   "deadline_type": "rolling",
+   "deadline_note": null,
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Request legal aid at the Colegio de Abogados legal aid service or the court",
+     "url": "https://www.mjusticia.gob.es"
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "Proof of income (IRPF return, payroll)",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Libro de familia / empadronamiento",
+     "mandatory": true,
+     "note": null
+    }
+   ],
+   "eligibility": {
+    "statuses": [],
+    "age_min": null,
+    "age_max": null,
+    "income_annual_max": 16800,
+    "income_note": "General threshold: 2 x IPREM 14 pagas = 2 x 8.400 = 16.800 €/año; 2,5x familia numerosa general (21.000 €); 3x categoría especial (25.200 €); 5x discapacidad",
+    "requires_children": false,
+    "nationality": "any_resident",
+    "residency_months_min": null,
+    "housing_tenure": null,
+    "student_required": false,
+    "admin_areas": [],
+    "gender": "any"
+   },
+   "source_url": "https://www.mjusticia.gob.es",
+   "source_snippet": "Derecho a abogado y procurador gratuitos, exención de tasas judiciales y demás costes del proceso para personas con recursos económicos insuficientes (en general, ingresos inferiores a 2-5 veces el IPREM según la unidad familiar).",
+   "last_verified_at": "2026-08-12",
+   "verification_status": "auto_extracted"
+  },
+  {
+   "slug": "ayuda-alimentaria-fega",
+   "name_local": "Ayuda alimentaria FEGA / bancos de alimentos (FESBAL)",
+   "name_en": "FEGA Food Assistance (via food banks)",
+   "admin_level": "national",
+   "admin_area": null,
+   "funder": "Fondo Español de Garantía Agraria (FEGA) / FESBAL",
+   "category": "income_support",
+   "benefit_type": "in_kind",
+   "amount_min": null,
+   "amount_max": null,
+   "amount_currency": "EUR",
+   "amount_period": "monthly",
+   "amount_note": "In-kind food packages channelled through accredited social entities and food banks",
+   "is_automatic": false,
+   "application_url": "https://www.fega.gob.es",
+   "application_channel": "in_person",
+   "deadline_type": "rolling",
+   "deadline_note": null,
+   "procedure_steps": [],
+   "documents_required": [],
+   "eligibility": {
+    "statuses": [],
+    "age_min": null,
+    "age_max": null,
+    "income_annual_max": null,
+    "income_note": "No single published monetary threshold: food aid channelled to persons in severe deprivation assessed by partner social entities (FEAD)",
+    "requires_children": false,
+    "nationality": "any_resident",
+    "residency_months_min": null,
+    "housing_tenure": null,
+    "student_required": false,
+    "admin_areas": [],
+    "gender": "any"
+   },
+   "source_url": "https://www.fega.gob.es",
+   "source_snippet": "Distribución gratuita de alimentos a personas en situación de vulnerabilidad a través de los bancos de alimentos y entidades sociales, financiada por el FEAD/FEGA.",
+   "last_verified_at": "2026-08-12",
+   "verification_status": "auto_extracted"
+  },
+  {
+   "slug": "bono-alquiler-joven",
+   "name_local": "Bono Alquiler Joven (Plan Estatal de Acceso a la Vivienda)",
+   "name_en": "Youth Rent Voucher",
+   "admin_level": "national",
+   "admin_area": null,
+   "funder": "Ministerio de Vivienda y Agenda Urbana (MIVAU) / CCAA",
+   "category": "housing",
+   "benefit_type": "cash_monthly",
+   "amount_min": 250.0,
+   "amount_max": 250.0,
+   "amount_currency": "EUR",
+   "amount_period": "monthly",
+   "amount_note": "250 EUR/month for up to 24 months (max 6.000 EUR); applies to whole home or room rental",
+   "is_automatic": false,
+   "application_url": "https://www.mivau.gob.es/vivienda",
+   "application_channel": "online",
+   "deadline_type": "rolling",
+   "deadline_note": null,
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Apply through your autonomous community housing portal when the call is open",
+     "url": "https://www.mivau.gob.es/vivienda"
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "Rental contract",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "DNI/NIE and empadronamiento",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Proof of income",
+     "mandatory": true,
+     "note": null
+    }
+   ],
+   "eligibility": {
+    "statuses": [],
+    "age_min": 18,
+    "age_max": 35,
+    "income_annual_max": 25200,
+    "income_note": "Income generally below 3x IPREM (approx. 25.200 EUR/year); Spanish nationality or legal residence; subject to each region's call",
+    "requires_children": false,
+    "nationality": "any_resident",
+    "residency_months_min": null,
+    "housing_tenure": "renting",
+    "student_required": false,
+    "admin_areas": [],
+    "gender": "any"
+   },
+   "source_url": "https://www.mivau.gob.es/vivienda",
+   "source_snippet": "Subvención mensual de 250 euros durante un máximo de dos años (hasta 6.000 EUR) para jóvenes de 18 a 35 años con ingresos que no superen 3 veces el IPREM y contrato de alquiler de vivienda o habitación.",
+   "last_verified_at": "2026-08-12",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "ayudas-alquiler-plan-estatal-vivienda",
+   "name_local": "Ayudas al arrendamiento de vivienda del Plan Estatal 2022-2025",
+   "name_en": "State Housing Plan Rental Aid",
+   "admin_level": "national",
+   "admin_area": null,
+   "funder": "Ministerio de Vivienda y Agenda Urbana (MIVAU) / CCAA",
+   "category": "housing",
+   "benefit_type": "cash_monthly",
+   "amount_min": null,
+   "amount_max": null,
+   "amount_currency": "EUR",
+   "amount_period": "monthly",
+   "amount_note": "Generally 40% of rent (up to 100% for certain vulnerable situations); also aid for temporary relocation after eviction or disaster",
+   "is_automatic": false,
+   "application_url": "https://www.mivau.gob.es/vivienda",
+   "application_channel": "online",
+   "deadline_type": "rolling",
+   "deadline_note": null,
+   "procedure_steps": [],
+   "documents_required": [],
+   "eligibility": {
+    "statuses": [],
+    "age_min": null,
+    "age_max": null,
+    "income_annual_max": 25200,
+    "income_note": "General income ceiling: 3 x IPREM (14 pagas) = 25.200 €/año; 4x familia numerosa general; 5x categoría especial o discapacidad",
+    "requires_children": false,
+    "nationality": "any_resident",
+    "residency_months_min": null,
+    "housing_tenure": "renting",
+    "student_required": false,
+    "admin_areas": [],
+    "gender": "any"
+   },
+   "source_url": "https://www.mivau.gob.es/vivienda",
+   "source_snippet": "Ayudas para inquilinos vulnerables (mayores de 65, desahuciados, familias numerosas, personas con discapacidad, etc.) que cubren entre el 40% y el 100% de la renta según la situación, gestionadas por las comunidades autónomas.",
+   "last_verified_at": "2026-08-12",
+   "verification_status": "auto_extracted"
+  },
+  {
+   "slug": "ayudas-rehabilitacion-vivienda",
+   "name_local": "Ayudas a la rehabilitación de vivienda (Plan Estatal / fondos Next Generation)",
+   "name_en": "Housing Renovation & Energy Rehabilitation Grants",
+   "admin_level": "national",
+   "admin_area": null,
+   "funder": "Ministerio de Vivienda y Agenda Urbana (MIVAU) / IDAE / CCAA",
+   "category": "housing",
+   "benefit_type": "cash_one_off",
+   "amount_min": null,
+   "amount_max": null,
+   "amount_currency": "EUR",
+   "amount_period": "one_off",
+   "amount_note": "Percentage-based grants (roughly 40-80% of eligible cost, higher for vulnerable households and whole-building works); plus IRPF deductions for energy-efficiency works",
+   "is_automatic": false,
+   "application_url": "https://www.mivau.gob.es/vivienda",
+   "application_channel": "online",
+   "deadline_type": "window",
+   "deadline_note": null,
+   "procedure_steps": [],
+   "documents_required": [],
+   "eligibility": {
+    "statuses": [],
+    "age_min": null,
+    "age_max": null,
+    "income_annual_max": 25200,
+    "income_note": "Plan Estatal: ingresos familiares <= 3 x IPREM (25.200 €/año) con carácter general; límites superiores para familia numerosa/discapacidad",
+    "requires_children": false,
+    "nationality": "any_resident",
+    "residency_months_min": null,
+    "housing_tenure": "owner",
+    "student_required": false,
+    "admin_areas": [],
+    "gender": "any"
+   },
+   "source_url": "https://www.mivau.gob.es/vivienda",
+   "source_snippet": "Subvenciones para la rehabilitación energética de edificios y viviendas (aislamiento, ventanas, sistemas eficientes), que pueden cubrir entre el 40% y el 80-100% del coste según actuación y colectivo.",
+   "last_verified_at": "2026-08-12",
+   "verification_status": "auto_extracted"
+  },
+  {
+   "slug": "vivienda-proteccion-oficial-vpo",
+   "name_local": "Vivienda de Protección Oficial (VPO/VPT)",
+   "name_en": "Social/Protected Housing (VPO)",
+   "admin_level": "national",
+   "admin_area": null,
+   "funder": "Comunidades autónomas / MIVAU",
+   "category": "housing",
+   "benefit_type": "free_slab",
+   "amount_min": null,
+   "amount_max": null,
+   "amount_currency": "EUR",
+   "amount_period": "one_off",
+   "amount_note": "Below-market purchase or rental prices set by each region; access via regional housing registers and draws",
+   "is_automatic": false,
+   "application_url": "https://www.mivau.gob.es/vivienda",
+   "application_channel": "online",
+   "deadline_type": "rolling",
+   "deadline_note": null,
+   "procedure_steps": [],
+   "documents_required": [],
+   "eligibility": {
+    "statuses": [],
+    "age_min": null,
+    "age_max": null,
+    "income_annual_max": 25200,
+    "income_note": "Acceso con límite de ingresos familiares, normalmente <= 3 x IPREM (25.200 €/año) en régimen general; los regímenes autonómicos fijan múltiplos propios",
+    "requires_children": false,
+    "nationality": "any_resident",
+    "residency_months_min": null,
+    "housing_tenure": null,
+    "student_required": false,
+    "admin_areas": [],
+    "gender": "any"
+   },
+   "source_url": "https://www.mivau.gob.es/vivienda",
+   "source_snippet": "Viviendas con precios de venta o alquiler limitados legalmente, adjudicadas por sorteo o baremo a personas con ingresos por debajo de múltiplos del IPREM, a través de los planes de vivienda autonómicos.",
+   "last_verified_at": "2026-08-12",
+   "verification_status": "auto_extracted"
+  },
+  {
+   "slug": "vivienda-alquiler-emvs-madrid",
+   "name_local": "Vivienda en alquiler asequible EMVS (Ayuntamiento de Madrid)",
+   "name_en": "EMVS Affordable Rental Housing (City of Madrid)",
+   "admin_level": "city",
+   "admin_area": "Madrid",
+   "funder": "Empresa Municipal de la Vivienda y Suelo de Madrid (EMVS)",
+   "category": "housing",
+   "benefit_type": "discount",
+   "amount_min": null,
+   "amount_max": null,
+   "amount_currency": "EUR",
+   "amount_period": "monthly",
+   "amount_note": "Below-market rents and municipal rental aid; adjudication by public draw/baremo",
+   "is_automatic": false,
+   "application_url": "https://www.emvs.es",
+   "application_channel": "online",
+   "deadline_type": "rolling",
+   "deadline_note": null,
+   "procedure_steps": [],
+   "documents_required": [],
+   "eligibility": {
+    "statuses": [],
+    "age_min": null,
+    "age_max": null,
+    "income_annual_max": 21000,
+    "income_note": "EMVS fija límites por composición de la unidad de convivencia referidos al IPREM (1 miembro aprox. 2,5 x IPREM = 21.000 €/año); consultar baremo vigente",
+    "requires_children": false,
+    "nationality": "any_resident",
+    "residency_months_min": null,
+    "housing_tenure": "renting",
+    "student_required": false,
+    "admin_areas": [
+     "Madrid"
+    ],
+    "gender": "any"
+   },
+   "source_url": "https://www.emvs.es",
+   "source_snippet": "La EMVS adjudica viviendas en alquiler a precio asequible y gestiona ayudas al pago del alquiler para familias con bajos ingresos empadronadas en Madrid.",
+   "last_verified_at": "2026-08-12",
+   "verification_status": "auto_extracted"
+  },
+  {
+   "slug": "bono-social-electrico",
+   "name_local": "Bono social eléctrico",
+   "name_en": "Electricity Social Tariff (bono social)",
+   "admin_level": "national",
+   "admin_area": null,
+   "funder": "Comercializadoras de referencia / Ministerio para la Transición Ecológica (MITECO)",
+   "category": "energy",
+   "benefit_type": "discount",
+   "amount_min": null,
+   "amount_max": null,
+   "amount_currency": "EUR",
+   "amount_period": "monthly",
+   "amount_note": "2026 discount: 42,5% (vulnerable) / 57,5% (severely vulnerable) on the PVPC energy term, within consumption limits; ordinary rates 35%/50%",
+   "is_automatic": false,
+   "application_url": "https://www.miteco.gob.es",
+   "application_channel": "online",
+   "deadline_type": "rolling",
+   "deadline_note": null,
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Check you are on the PVPC regulated tariff with a reference retailer (comercializadora de referencia)",
+     "url": null
+    },
+    {
+     "step": 2,
+     "detail": "Apply with income, family and pension documentation to the reference retailer",
+     "url": "https://www.miteco.gob.es"
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "DNI/NIE of household members",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Income proof (IRPF, pension, IMV certificate)",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Large-family title if applicable",
+     "mandatory": false,
+     "note": null
+    }
+   ],
+   "eligibility": {
+    "statuses": [],
+    "age_min": null,
+    "age_max": null,
+    "income_annual_max": 12600,
+    "income_note": "Vulnerable: renta anual de la unidad de convivencia <= 1,5 x IPREM 14 pagas = 12.600 €/año (+0,3 por adulto adicional, +0,5 por menor); familia numerosa 2x IPREM (16.800 €); vulnerable severo = 50% de esos umbrales",
+    "requires_children": false,
+    "nationality": "any_resident",
+    "residency_months_min": null,
+    "housing_tenure": null,
+    "student_required": false,
+    "admin_areas": [],
+    "gender": "any"
+   },
+   "source_url": "https://www.miteco.gob.es",
+   "source_snippet": "Descuento sobre la factura PVPC del 42,5% para consumidores vulnerables y del 57,5% para vulnerables severos durante 2026 (35% y 50% ordinarios); los consumidores en riesgo de exclusión social no pueden sufrir corte de suministro.",
+   "last_verified_at": "2026-08-12",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "bono-social-termico",
+   "name_local": "Bono social térmico",
+   "name_en": "Thermal Social Allowance",
+   "admin_level": "national",
+   "admin_area": null,
+   "funder": "Ministerio para la Transición Ecológica (MITECO) / comercializadoras de referencia",
+   "category": "energy",
+   "benefit_type": "cash_one_off",
+   "amount_min": null,
+   "amount_max": null,
+   "amount_currency": "EUR",
+   "amount_period": "annual",
+   "amount_note": "Single annual payment; amount varies by vulnerability level and climate zone (published annually by MITECO)",
+   "is_automatic": true,
+   "application_url": "https://www.miteco.gob.es",
+   "application_channel": "automatic",
+   "deadline_type": "rolling",
+   "deadline_note": null,
+   "procedure_steps": [],
+   "documents_required": [],
+   "eligibility": {
+    "statuses": [],
+    "age_min": null,
+    "age_max": null,
+    "income_annual_max": 12600,
+    "income_note": "Concedido de oficio a beneficiarios del bono social eléctrico: mismos umbrales de renta (1,5 x IPREM 14 pagas = 12.600 €/año base, con incrementos por miembro)",
+    "requires_children": false,
+    "nationality": "any_resident",
+    "residency_months_min": null,
+    "housing_tenure": null,
+    "student_required": false,
+    "admin_areas": [],
+    "gender": "any"
+   },
+   "source_url": "https://www.miteco.gob.es",
+   "source_snippet": "Ayuda económica anual para beneficiarios del bono social eléctrico destinada a gastos de calefacción, agua caliente y cocina, abonada automáticamente en un único pago cuya cuantía depende del grado de vulnerabilidad y la zona climática.",
+   "last_verified_at": "2026-08-12",
+   "verification_status": "auto_extracted"
+  },
+  {
+   "slug": "tarifa-social-agua-barcelona",
+   "name_local": "Tarifa social del agua (Aigües de Barcelona)",
+   "name_en": "Social Water Tariff (Aigües de Barcelona)",
+   "admin_level": "city",
+   "admin_area": "Barcelona",
+   "funder": "Aigües de Barcelona / Ayuntamiento de Barcelona",
+   "category": "energy",
+   "benefit_type": "discount",
+   "amount_min": null,
+   "amount_max": null,
+   "amount_currency": "EUR",
+   "amount_period": "monthly",
+   "amount_note": "Discounts up to 100% of the water bill for vulnerable households; reduced tariff for large families and pensioners",
+   "is_automatic": false,
+   "application_url": "https://www.aiguesdebarcelona.cat",
+   "application_channel": "online",
+   "deadline_type": "rolling",
+   "deadline_note": null,
+   "procedure_steps": [],
+   "documents_required": [],
+   "eligibility": {
+    "statuses": [],
+    "age_min": null,
+    "age_max": null,
+    "income_annual_max": null,
+    "income_note": "Granted via municipal social services to households in economic vulnerability; eligibility assessed case-by-case, no fixed published annual ceiling",
+    "requires_children": false,
+    "nationality": "any_resident",
+    "residency_months_min": null,
+    "housing_tenure": null,
+    "student_required": false,
+    "admin_areas": [],
+    "gender": "any"
+   },
+   "source_url": "https://www.aiguesdebarcelona.cat",
+   "source_snippet": "Bonificaciones de hasta el 100% del servicio de agua para familias en situación de vulnerabilidad, y tarifa reducida para familias numerosas, pensionistas y perceptores de rentas mínimas en el área metropolitana de Barcelona.",
+   "last_verified_at": "2026-08-12",
+   "verification_status": "auto_extracted"
+  },
+  {
+   "slug": "plan-moves-iii",
+   "name_local": "Plan MOVES III (ayudas a vehículos eléctricos y puntos de recarga)",
+   "name_en": "MOVES III EV & Charging-Point Grants",
+   "admin_level": "national",
+   "admin_area": null,
+   "funder": "Instituto para la Diversificación y Ahorro de la Energía (IDAE) / CCAA",
+   "category": "transport",
+   "benefit_type": "cash_one_off",
+   "amount_min": 1100.0,
+   "amount_max": 9000.0,
+   "amount_currency": "EUR",
+   "amount_period": "one_off",
+   "amount_note": "4.500 EUR per EV car (7.000 EUR with scrappage), up to 9.000 EUR for vans with scrappage; up to 70% of charging infrastructure cost; territorialised by region",
+   "is_automatic": false,
+   "application_url": "https://ayudasenergiaidae.es/moves-iii/",
+   "application_channel": "online",
+   "deadline_type": "window",
+   "deadline_note": "Applications until 31 December of each call year or until funds are exhausted, per autonomous community",
+   "procedure_steps": [],
+   "documents_required": [
+    {
+     "doc": "Vehicle purchase invoice",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Scrappage certificate (if claiming the extra)",
+     "mandatory": false,
+     "note": null
+    }
+   ],
+   "eligibility": {
+    "statuses": [],
+    "age_min": null,
+    "age_max": null,
+    "income_annual_max": null,
+    "income_note": "Individuals, self-employed, companies, communities of owners and public bodies; vehicle must be in the IDAE database and cost ≤45.000 EUR excl. VAT",
+    "requires_children": false,
+    "nationality": "any_resident",
+    "residency_months_min": null,
+    "housing_tenure": null,
+    "student_required": false,
+    "admin_areas": [],
+    "gender": "any"
+   },
+   "source_url": "https://ayudasenergiaidae.es/moves-iii/",
+   "source_snippet": "Para particulares hasta 7.000 EUR por la compra de un turismo eléctrico (4.500 EUR sin achatarramiento; hasta 9.000 EUR furgonetas), con incremento del 10% para movilidad reducida, taxis/VTC y municipios de menos de 5.000 habitantes; precio máximo del vehículo 45.000 EUR sin IVA.",
+   "last_verified_at": "2026-08-12",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "tarjeta-dorada-renfe",
+   "name_local": "Tarjeta Dorada de Renfe (mayores de 60 años)",
+   "name_en": "Renfe Gold Card (over-60 rail discounts)",
+   "admin_level": "national",
+   "admin_area": null,
+   "funder": "Renfe",
+   "category": "transport",
+   "benefit_type": "discount",
+   "amount_min": 6.0,
+   "amount_max": 15.0,
+   "amount_currency": "EUR",
+   "amount_period": "annual",
+   "amount_note": "Card costs 6 EUR/1 year, 12 EUR/2 years, 15 EUR/3 years; discounts 25-40% depending on service and day",
+   "is_automatic": false,
+   "application_url": "https://www.renfe.com/es/es",
+   "application_channel": "in_person",
+   "deadline_type": "rolling",
+   "deadline_note": null,
+   "procedure_steps": [],
+   "documents_required": [],
+   "eligibility": {
+    "statuses": [
+     "retired"
+    ],
+    "age_min": 60,
+    "age_max": null,
+    "income_annual_max": null,
+    "income_note": "Open to anyone aged 60+ with DNI/NIE/passport",
+    "requires_children": false,
+    "nationality": "any_resident",
+    "residency_months_min": null,
+    "housing_tenure": null,
+    "student_required": false,
+    "admin_areas": [],
+    "gender": "any"
+   },
+   "source_url": "https://www.renfe.com/es/es",
+   "source_snippet": "Descuento del 25% en AVE y Larga Distancia y del 40% en Media Distancia, Avant (fines de semana) y Cercanías para mayores de 60 años; la tarjeta cuesta 6 EUR al año (12 EUR dos años, 15 EUR tres).",
+   "last_verified_at": "2026-08-12",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "abono-joven-comunidad-madrid",
+   "name_local": "Abono Transporte Joven (Comunidad de Madrid)",
+   "name_en": "Madrid Youth Travel Pass",
+   "admin_level": "region",
+   "admin_area": "Madrid",
+   "funder": "Consorcio Regional de Transportes de Madrid / Comunidad de Madrid",
+   "category": "transport",
+   "benefit_type": "discount",
+   "amount_min": 10.0,
+   "amount_max": 10.0,
+   "amount_currency": "EUR",
+   "amount_period": "monthly",
+   "amount_note": "10 EUR/month for all zones (50% discount funded by State and Region); ages 15-25",
+   "is_automatic": false,
+   "application_url": "https://www.comunidad.madrid/transporte/abono-joven-todo-madrid-tu-alcance",
+   "application_channel": "online",
+   "deadline_type": "rolling",
+   "deadline_note": null,
+   "procedure_steps": [],
+   "documents_required": [],
+   "eligibility": {
+    "statuses": [],
+    "age_min": 15,
+    "age_max": 25,
+    "income_annual_max": null,
+    "income_note": "Age-based; no income test",
+    "requires_children": false,
+    "nationality": "any_resident",
+    "residency_months_min": null,
+    "housing_tenure": null,
+    "student_required": false,
+    "admin_areas": [
+     "Madrid"
+    ],
+    "gender": "any"
+   },
+   "source_url": "https://www.comunidad.madrid/transporte/abono-joven-todo-madrid-tu-alcance",
+   "source_snippet": "El Abono Joven 30 días tiene un precio único de 10 euros, aplicados los descuentos sobre la tarifa de 20 euros; válido para todas las zonas (A a E2) desde los 15 años hasta la fecha en que se cumplen 26.",
+   "last_verified_at": "2026-08-12",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "abono-unico-transporte-publico",
+   "name_local": "Abono Único de transporte público estatal",
+   "name_en": "State Single Public-Transport Pass",
+   "admin_level": "national",
+   "admin_area": null,
+   "funder": "Ministerio de Transportes y Movilidad Sostenible",
+   "category": "transport",
+   "benefit_type": "discount",
+   "amount_min": 30.0,
+   "amount_max": 60.0,
+   "amount_currency": "EUR",
+   "amount_period": "monthly",
+   "amount_note": "60 EUR/month flat fare (30 EUR for under-26) for unlimited state-run Cercanías, Media Distancia and interregional buses",
+   "is_automatic": false,
+   "application_url": "https://www.transportes.gob.es",
+   "application_channel": "online",
+   "deadline_type": "rolling",
+   "deadline_note": null,
+   "procedure_steps": [],
+   "documents_required": [],
+   "eligibility": {
+    "statuses": [],
+    "age_min": null,
+    "age_max": null,
+    "income_annual_max": null,
+    "income_note": "Universal; reduced price for under-26",
+    "requires_children": false,
+    "nationality": "any_resident",
+    "residency_months_min": null,
+    "housing_tenure": null,
+    "student_required": false,
+    "admin_areas": [],
+    "gender": "any"
+   },
+   "source_url": "https://www.transportes.gob.es",
+   "source_snippet": "Tarifa plana de 60 euros mensuales (30 euros para menores de 26 años) que permite viajar de forma ilimitada en Cercanías, Media Distancia convencional y autobuses interregionales estatales de toda España.",
+   "last_verified_at": "2026-08-12",
+   "verification_status": "auto_extracted"
+  },
+  {
+   "slug": "t-jove-cataluna",
+   "name_local": "T-jove (abono joven del área metropolitana de Barcelona)",
+   "name_en": "T-jove Youth Pass (Barcelona metropolitan area)",
+   "admin_level": "region",
+   "admin_area": "Cataluña",
+   "funder": "Autoritat del Transport Metropolità (ATM)",
+   "category": "transport",
+   "benefit_type": "discount",
+   "amount_min": 22.75,
+   "amount_max": 45.5,
+   "amount_currency": "EUR",
+   "amount_period": "one_off",
+   "amount_note": "45,50 EUR per 90 days (2026 reduced fare); 36,40 EUR (large/single-parent family general) or 22,75 EUR (special)",
+   "is_automatic": false,
+   "application_url": "https://www.atm.cat",
+   "application_channel": "online",
+   "deadline_type": "rolling",
+   "deadline_note": null,
+   "procedure_steps": [],
+   "documents_required": [],
+   "eligibility": {
+    "statuses": [],
+    "age_min": 16,
+    "age_max": 29,
+    "income_annual_max": null,
+    "income_note": "Age-based; registered in one of the integrated-fare municipalities",
+    "requires_children": false,
+    "nationality": "any_resident",
+    "residency_months_min": null,
+    "housing_tenure": null,
+    "student_required": false,
+    "admin_areas": [
+     "Cataluña"
+    ],
+    "gender": "any"
+   },
+   "source_url": "https://www.atm.cat",
+   "source_snippet": "Título trimestral personal e intransferible para jóvenes de 16 a 29 años con viajes ilimitados en las 6 coronas del sistema tarifario integrado; precio reducido de 45,50 EUR (36,40 EUR familia numerosa/monoparental general y 22,75 EUR especial).",
+   "last_verified_at": "2026-08-12",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "bono-residente-transporte-aereo-insular",
+   "name_local": "Bonificación del 75% para residentes en Canarias, Baleares, Ceuta y Melilla (transporte aéreo y marítimo)",
+   "name_en": "75% Resident Discount on Flights/Ferries (islands)",
+   "admin_level": "national",
+   "admin_area": null,
+   "funder": "Ministerio de Transportes y Movilidad Sostenible",
+   "category": "transport",
+   "benefit_type": "discount",
+   "amount_min": null,
+   "amount_max": null,
+   "amount_currency": "EUR",
+   "amount_period": "one_off",
+   "amount_note": "75% off the base fare (80-85% for large families resident there); applied automatically when booking as resident",
+   "is_automatic": true,
+   "application_url": "https://www.transportes.gob.es",
+   "application_channel": "automatic",
+   "deadline_type": "rolling",
+   "deadline_note": null,
+   "procedure_steps": [],
+   "documents_required": [
+    {
+     "doc": "Certificado de residencia para viajes",
+     "mandatory": true,
+     "note": "Only if the SARA automatic validation fails"
+    }
+   ],
+   "eligibility": {
+    "statuses": [],
+    "age_min": null,
+    "age_max": null,
+    "income_annual_max": null,
+    "income_note": "Must be registered (empadronado) in the Canary or Balearic Islands, Ceuta or Melilla",
+    "requires_children": false,
+    "nationality": "any_resident",
+    "residency_months_min": null,
+    "housing_tenure": null,
+    "student_required": false,
+    "admin_areas": [
+     "Canarias",
+     "Islas Baleares"
+    ],
+    "gender": "any"
+   },
+   "source_url": "https://www.transportes.gob.es",
+   "source_snippet": "Bonificación del 75% sobre la tarifa base de los billetes de avión y barco entre el lugar de residencia (Canarias, Baleares, Ceuta, Melilla) y el resto del territorio nacional, validada telemáticamente (SARA).",
+   "last_verified_at": "2026-08-12",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "tarjeta-65-andalucia",
+   "name_local": "Tarjeta 65 de Andalucía (transporte interurbano)",
+   "name_en": "Andalusia 65+ Public Transport Card",
+   "admin_level": "region",
+   "admin_area": "Andalucía",
+   "funder": "Junta de Andalucía (Consejería de Fomento)",
+   "category": "transport",
+   "benefit_type": "discount",
+   "amount_min": null,
+   "amount_max": null,
+   "amount_currency": "EUR",
+   "amount_period": "monthly",
+   "amount_note": "Free card giving around 30% off interurban coach fares in Andalusia",
+   "is_automatic": false,
+   "application_url": "https://www.juntadeandalucia.es",
+   "application_channel": "online",
+   "deadline_type": "rolling",
+   "deadline_note": null,
+   "procedure_steps": [],
+   "documents_required": [],
+   "eligibility": {
+    "statuses": [
+     "retired"
+    ],
+    "age_min": 65,
+    "age_max": null,
+    "income_annual_max": null,
+    "income_note": "Registered in Andalusia and aged 65+",
+    "requires_children": false,
+    "nationality": "any_resident",
+    "residency_months_min": null,
+    "housing_tenure": null,
+    "student_required": false,
+    "admin_areas": [
+     "Andalucía"
+    ],
+    "gender": "any"
+   },
+   "source_url": "https://www.juntadeandalucia.es",
+   "source_snippet": "Tarjeta gratuita para mayores de 65 años empadronados en Andalucía que aplica descuentos (del orden del 30%) en el transporte interurbano por carretera de la comunidad.",
+   "last_verified_at": "2026-08-12",
+   "verification_status": "auto_extracted"
+  },
+  {
+   "slug": "transporte-gratuito-menores-madrid",
+   "name_local": "Transporte público gratuito para menores de 14 años y mayores de 65 (Comunidad de Madrid)",
+   "name_en": "Free Public Transport for Children & over-65s (Madrid)",
+   "admin_level": "region",
+   "admin_area": "Madrid",
+   "funder": "Consorcio Regional de Transportes de Madrid",
+   "category": "transport",
+   "benefit_type": "free_slab",
+   "amount_min": null,
+   "amount_max": null,
+   "amount_currency": "EUR",
+   "amount_period": "monthly",
+   "amount_note": "Free 30-day travel pass for children up to 14 and for over-65s in the Madrid region",
+   "is_automatic": false,
+   "application_url": "https://www.comunidad.madrid/servicios/urbanismo-medio-ambiente/transporte",
+   "application_channel": "online",
+   "deadline_type": "rolling",
+   "deadline_note": null,
+   "procedure_steps": [],
+   "documents_required": [],
+   "eligibility": {
+    "statuses": [],
+    "age_min": null,
+    "age_max": null,
+    "income_annual_max": null,
+    "income_note": "Age-based (0-14 years, or 65+); personal transport card required",
+    "requires_children": false,
+    "nationality": "any_resident",
+    "residency_months_min": null,
+    "housing_tenure": null,
+    "student_required": false,
+    "admin_areas": [
+     "Madrid"
+    ],
+    "gender": "any"
+   },
+   "source_url": "https://www.comunidad.madrid/servicios/urbanismo-medio-ambiente/transporte",
+   "source_snippet": "Los niños hasta 14 años pueden usar el transporte público de manera gratuita y los mayores de 65 años conservan también la gratuidad de su abono en la Comunidad de Madrid.",
+   "last_verified_at": "2026-08-12",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "becas-generales-ministerio-educacion",
+   "name_local": "Becas generales del Ministerio de Educación (estudios postobligatorios y universitarios)",
+   "name_en": "Ministry of Education General Grants (MEC)",
+   "admin_level": "national",
+   "admin_area": null,
+   "funder": "Ministerio de Educación, Formación Profesional y Deportes",
+   "category": "education",
+   "benefit_type": "cash_one_off",
+   "amount_min": 300.0,
+   "amount_max": 3000.0,
+   "amount_currency": "EUR",
+   "amount_period": "annual",
+   "amount_note": "Components: tuition coverage (university), 1.700 EUR income-linked, 2.700 EUR residence-linked, 300 EUR basic (non-university), 50-125 EUR excellence, variable 60-3.000 EUR",
+   "is_automatic": false,
+   "application_url": "https://www.becaseducacion.gob.es/portada.html",
+   "application_channel": "online",
+   "deadline_type": "annual",
+   "deadline_note": "Annual call (usually opens around March-April) with fixed deadline",
+   "procedure_steps": [],
+   "documents_required": [
+    {
+     "doc": "Academic records",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Household income data (AEAT cross-check consent)",
+     "mandatory": true,
+     "note": null
+    }
+   ],
+   "eligibility": {
+    "statuses": [
+     "student"
+    ],
+    "age_min": null,
+    "age_max": null,
+    "income_annual_max": 40773,
+    "income_note": "RD 179/2026 (curso 2026-27): sin derecho a beca si la renta familiar supera el umbral 3 (familia de 4 miembros: 40.773 €/año); umbrales varían por número de miembros (1 miembro: 14.818 €)",
+    "requires_children": false,
+    "nationality": "any_resident",
+    "residency_months_min": null,
+    "housing_tenure": null,
+    "student_required": true,
+    "admin_areas": [],
+    "gender": "any"
+   },
+   "source_url": "https://www.becaseducacion.gob.es/portada.html",
+   "source_snippet": "Cuantía fija ligada a la renta de 1.700 EUR, cuantía fija ligada a la residencia de 2.700 EUR, beca básica no universitaria de 300 EUR, exención de matrícula universitaria y cuantía variable de 60 a 3.000 EUR según renta y expediente (RD 163/2025).",
+   "last_verified_at": "2026-08-12",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "beca-6000-bachillerato",
+   "name_local": "Beca 6000 para estudiantes de Bachillerato",
+   "name_en": "Beca 6000 Upper-Secondary Grant",
+   "admin_level": "national",
+   "admin_area": null,
+   "funder": "Ministerio de Educación, Formación Profesional y Deportes",
+   "category": "education",
+   "benefit_type": "cash_one_off",
+   "amount_min": 6000.0,
+   "amount_max": 6000.0,
+   "amount_currency": "EUR",
+   "amount_period": "annual",
+   "amount_note": "6.000 EUR/year, renewable for the 2nd year of Bachillerato if conditions are maintained",
+   "is_automatic": false,
+   "application_url": "https://www.becaseducacion.gob.es/portada.html",
+   "application_channel": "online",
+   "deadline_type": "annual",
+   "deadline_note": null,
+   "procedure_steps": [],
+   "documents_required": [],
+   "eligibility": {
+    "statuses": [
+     "student"
+    ],
+    "age_min": null,
+    "age_max": null,
+    "income_annual_max": 22107,
+    "income_note": "Exige no superar el umbral 1 de renta familiar (RD 179/2026: 22.107 €/año para familia de 4 miembros; 8.843 € un miembro) y matrícula de honor en 1º de bachillerato",
+    "requires_children": false,
+    "nationality": "any_resident",
+    "residency_months_min": null,
+    "housing_tenure": null,
+    "student_required": true,
+    "admin_areas": [],
+    "gender": "any"
+   },
+   "source_url": "https://www.becaseducacion.gob.es/portada.html",
+   "source_snippet": "Beca de 6.000 EUR anuales (renovable el segundo curso) para alumnado de primer curso de Bachillerato con excelente expediente y renta familiar muy baja (umbral 1 del Ministerio).",
+   "last_verified_at": "2026-08-12",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "becas-compensatorias-transporte-residencia",
+   "name_local": "Becas compensatorias, de transporte y de residencia (estudiantes no universitarios)",
+   "name_en": "Compensatory, Transport & Residence Grants (non-university students)",
+   "admin_level": "national",
+   "admin_area": null,
+   "funder": "Ministerio de Educación, Formación Profesional y Deportes",
+   "category": "education",
+   "benefit_type": "cash_one_off",
+   "amount_min": 400.0,
+   "amount_max": 2500.0,
+   "amount_currency": "EUR",
+   "amount_period": "annual",
+   "amount_note": "400 EUR compensatory, 617 EUR transport subsidy, 2.500 EUR residence aid for non-university post-compulsory students",
+   "is_automatic": false,
+   "application_url": "https://www.becaseducacion.gob.es/portada.html",
+   "application_channel": "online",
+   "deadline_type": "annual",
+   "deadline_note": null,
+   "procedure_steps": [],
+   "documents_required": [],
+   "eligibility": {
+    "statuses": [
+     "student"
+    ],
+    "age_min": null,
+    "age_max": null,
+    "income_annual_max": 40773,
+    "income_note": "Cuantía fija ligada a la residencia exige no superar umbral 2 (38.242 € familia de 4, RD 179/2026); becas compensatorias de transporte se conceden dentro de los umbrales generales",
+    "requires_children": false,
+    "nationality": "any_resident",
+    "residency_months_min": null,
+    "housing_tenure": null,
+    "student_required": true,
+    "admin_areas": [],
+    "gender": "any"
+   },
+   "source_url": "https://www.becaseducacion.gob.es/portada.html",
+   "source_snippet": "Ayudas para alumnado postobligatorio no universitario: beca compensatoria (400 EUR), subsidio de transporte (617 EUR) y ayuda de residencia (2.500 EUR) según distancia y renta familiar.",
+   "last_verified_at": "2026-08-12",
+   "verification_status": "auto_extracted"
+  },
+  {
+   "slug": "beca-comedor-escolar-madrid",
+   "name_local": "Becas de comedor escolar (Comunidad de Madrid)",
+   "name_en": "School Meal Grants (Madrid Region)",
+   "admin_level": "region",
+   "admin_area": "Madrid",
+   "funder": "Comunidad de Madrid (Consejería de Educación)",
+   "category": "education",
+   "benefit_type": "in_kind",
+   "amount_min": null,
+   "amount_max": null,
+   "amount_currency": "EUR",
+   "amount_period": "monthly",
+   "amount_note": "Full or partial coverage of school canteen cost; amount depends on income bracket",
+   "is_automatic": false,
+   "application_url": "https://www.comunidad.madrid",
+   "application_channel": "online",
+   "deadline_type": "annual",
+   "deadline_note": null,
+   "procedure_steps": [],
+   "documents_required": [],
+   "eligibility": {
+    "statuses": [],
+    "age_min": null,
+    "age_max": null,
+    "income_annual_max": null,
+    "income_note": "Income scale published annually by Comunidad de Madrid by household size/per-cápita renta (umbrales IPREM-based); lower income bands get 100% comedor grant",
+    "requires_children": true,
+    "nationality": "any_resident",
+    "residency_months_min": null,
+    "housing_tenure": null,
+    "student_required": false,
+    "admin_areas": [
+     "Madrid"
+    ],
+    "gender": "any"
+   },
+   "source_url": "https://www.comunidad.madrid",
+   "source_snippet": "Ayudas que cubren total o parcialmente el coste del comedor escolar en centros sostenidos con fondos públicos para familias con bajos ingresos, con prioridad a perceptores de IMV y familias numerosas.",
+   "last_verified_at": "2026-08-12",
+   "verification_status": "auto_extracted"
+  },
+  {
+   "slug": "ayudas-libros-texto-madrid",
+   "name_local": "Ayudas para libros de texto y material escolar (Comunidad de Madrid)",
+   "name_en": "Textbook & School Material Aid (Madrid Region)",
+   "admin_level": "region",
+   "admin_area": "Madrid",
+   "funder": "Comunidad de Madrid (Consejería de Educación)",
+   "category": "education",
+   "benefit_type": "cash_one_off",
+   "amount_min": null,
+   "amount_max": null,
+   "amount_currency": "EUR",
+   "amount_period": "annual",
+   "amount_note": "Annual lump-sum per child for textbooks and materials in compulsory education; amount set in each call",
+   "is_automatic": false,
+   "application_url": "https://www.comunidad.madrid",
+   "application_channel": "online",
+   "deadline_type": "annual",
+   "deadline_note": null,
+   "procedure_steps": [],
+   "documents_required": [],
+   "eligibility": {
+    "statuses": [],
+    "age_min": null,
+    "age_max": null,
+    "income_annual_max": null,
+    "income_note": "Renta per cápita limits published in each annual convocatoria (familias de menores ingresos); amount and banding vary by year",
+    "requires_children": true,
+    "nationality": "any_resident",
+    "residency_months_min": null,
+    "housing_tenure": null,
+    "student_required": false,
+    "admin_areas": [
+     "Madrid"
+    ],
+    "gender": "any"
+   },
+   "source_url": "https://www.comunidad.madrid",
+   "source_snippet": "Ayuda anual para la adquisición de libros de texto y material escolar en enseñanzas obligatorias para familias con rentas por debajo de los umbrales fijados en la convocatoria.",
+   "last_verified_at": "2026-08-12",
+   "verification_status": "auto_extracted"
+  },
+  {
+   "slug": "becas-excelencia-universidad-madrid",
+   "name_local": "Becas de excelencia universitaria (Comunidad de Madrid)",
+   "name_en": "University Excellence Grants (Madrid Region)",
+   "admin_level": "region",
+   "admin_area": "Madrid",
+   "funder": "Comunidad de Madrid (Consejería de Educación, Ciencia y Universidades)",
+   "category": "education",
+   "benefit_type": "cash_one_off",
+   "amount_min": null,
+   "amount_max": null,
+   "amount_currency": "EUR",
+   "amount_period": "annual",
+   "amount_note": "Annual merit-based grant for top academic records in Madrid public universities",
+   "is_automatic": false,
+   "application_url": "https://www.comunidad.madrid",
+   "application_channel": "online",
+   "deadline_type": "annual",
+   "deadline_note": null,
+   "procedure_steps": [],
+   "documents_required": [],
+   "eligibility": {
+    "statuses": [
+     "student"
+    ],
+    "age_min": null,
+    "age_max": null,
+    "income_annual_max": null,
+    "income_note": "Academic excellence requirements; regional call",
+    "requires_children": false,
+    "nationality": "any_resident",
+    "residency_months_min": null,
+    "housing_tenure": null,
+    "student_required": true,
+    "admin_areas": [
+     "Madrid"
+    ],
+    "gender": "any"
+   },
+   "source_url": "https://www.comunidad.madrid",
+   "source_snippet": "Becas para estudiantes universitarios con mejor expediente matriculados en universidades públicas madrileñas, compatibles con las becas del Ministerio, con cuantía fijada en cada convocatoria.",
+   "last_verified_at": "2026-08-12",
+   "verification_status": "auto_extracted"
+  },
+  {
+   "slug": "educacion-infantil-0-3-gratuita-madrid",
+   "name_local": "Escolarización gratuita de 2 a 3 años (Comunidad de Madrid)",
+   "name_en": "Free Early Childhood Schooling 2-3 years (Madrid)",
+   "admin_level": "region",
+   "admin_area": "Madrid",
+   "funder": "Comunidad de Madrid (Consejería de Educación)",
+   "category": "education",
+   "benefit_type": "free_slab",
+   "amount_min": null,
+   "amount_max": null,
+   "amount_currency": "EUR",
+   "amount_period": "monthly",
+   "amount_note": "Free schooling for the 2-3 year stage in public and state-subsidised schools; families may still pay canteen/extended hours",
+   "is_automatic": false,
+   "application_url": "https://www.comunidad.madrid",
+   "application_channel": "online",
+   "deadline_type": "annual",
+   "deadline_note": null,
+   "procedure_steps": [],
+   "documents_required": [],
+   "eligibility": {
+    "statuses": [],
+    "age_min": null,
+    "age_max": null,
+    "income_annual_max": null,
+    "income_note": "Universal access via school admissions process",
+    "requires_children": true,
+    "nationality": "any_resident",
+    "residency_months_min": null,
+    "housing_tenure": null,
+    "student_required": false,
+    "admin_areas": [
+     "Madrid"
+    ],
+    "gender": "any"
+   },
+   "source_url": "https://www.comunidad.madrid",
+   "source_snippet": "Oferta gratuita del primer ciclo de educación infantil (2-3 años) en la red de escuelas infantiles y colegios públicos y concertados de la Comunidad de Madrid.",
+   "last_verified_at": "2026-08-12",
+   "verification_status": "auto_extracted"
+  },
+  {
+   "slug": "formacion-sepe-desempleados",
+   "name_local": "Cursos de formación gratuitos para desempleados (SEPE y servicios autonómicos de empleo)",
+   "name_en": "Free Training Courses for the Unemployed (SEPE)",
+   "admin_level": "national",
+   "admin_area": null,
+   "funder": "Servicio Público de Empleo Estatal (SEPE) / CCAA",
+   "category": "employment",
+   "benefit_type": "in_kind",
+   "amount_min": null,
+   "amount_max": null,
+   "amount_currency": "EUR",
+   "amount_period": "one_off",
+   "amount_note": "Free courses (professional certificates, digital skills, languages); some include travel/meal allowances",
+   "is_automatic": false,
+   "application_url": "https://www.sepe.es",
+   "application_channel": "online",
+   "deadline_type": "rolling",
+   "deadline_note": null,
+   "procedure_steps": [],
+   "documents_required": [],
+   "eligibility": {
+    "statuses": [
+     "unemployed",
+     "jobseeker"
+    ],
+    "age_min": null,
+    "age_max": null,
+    "income_annual_max": null,
+    "income_note": "Registered as jobseeker; priority for long-term unemployed",
+    "requires_children": false,
+    "nationality": "any_resident",
+    "residency_months_min": null,
+    "housing_tenure": null,
+    "student_required": false,
+    "admin_areas": [],
+    "gender": "any"
+   },
+   "source_url": "https://www.sepe.es",
+   "source_snippet": "Oferta formativa gratuita para personas inscritas como demandantes de empleo: certificados de profesionalidad, cursos de especialización, idiomas y competencias digitales, con posibilidad de becas y ayudas.",
+   "last_verified_at": "2026-08-12",
+   "verification_status": "auto_extracted"
+  },
+  {
+   "slug": "garantia-juvenil",
+   "name_local": "Sistema Nacional de Garantía Juvenil",
+   "name_en": "National Youth Guarantee",
+   "admin_level": "national",
+   "admin_area": null,
+   "funder": "Servicio Público de Empleo Estatal (SEPE) / CCAA",
+   "category": "employment",
+   "benefit_type": "in_kind",
+   "amount_min": null,
+   "amount_max": null,
+   "amount_currency": "EUR",
+   "amount_period": "one_off",
+   "amount_note": "Free registration gives access to subsidised jobs, training courses, internships and apprenticeships within 4 months",
+   "is_automatic": false,
+   "application_url": "https://www.sepe.es",
+   "application_channel": "online",
+   "deadline_type": "rolling",
+   "deadline_note": null,
+   "procedure_steps": [],
+   "documents_required": [],
+   "eligibility": {
+    "statuses": [
+     "unemployed",
+     "jobseeker",
+     "student"
+    ],
+    "age_min": 16,
+    "age_max": 29,
+    "income_annual_max": null,
+    "income_note": "Not working, not in education or training; Spanish/EU nationality or work authorisation",
+    "requires_children": false,
+    "nationality": "any_resident",
+    "residency_months_min": null,
+    "housing_tenure": null,
+    "student_required": false,
+    "admin_areas": [],
+    "gender": "any"
+   },
+   "source_url": "https://www.comunidad.madrid/juventud/garantia-juvenil",
+   "source_snippet": "Iniciativa europea para jóvenes de 16 a 29 años que no estudian ni trabajan: acceso a empleo con bonificaciones para empresas, planes de formación, terminar la enseñanza obligatoria o estudiar Formación Profesional.",
+   "last_verified_at": "2026-08-12",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "bonificacion-empleados-hogar",
+   "name_local": "Bonificaciones en las cuotas del Sistema Especial de Empleados de Hogar",
+   "name_en": "Contribution Rebates for Household Employees' Employers",
+   "admin_level": "national",
+   "admin_area": null,
+   "funder": "Tesorería General de la Seguridad Social",
+   "category": "employment",
+   "benefit_type": "discount",
+   "amount_min": null,
+   "amount_max": null,
+   "amount_currency": "EUR",
+   "amount_period": "monthly",
+   "amount_note": "20% general rebate on employer contributions, 45% for large families, applied to the household-employer system",
+   "is_automatic": false,
+   "application_url": "https://www.seg-social.es",
+   "application_channel": "online",
+   "deadline_type": "rolling",
+   "deadline_note": null,
+   "procedure_steps": [],
+   "documents_required": [],
+   "eligibility": {
+    "statuses": [
+     "employee",
+     "parent"
+    ],
+    "age_min": null,
+    "age_max": null,
+    "income_annual_max": null,
+    "income_note": "Household employer contributions; 45% rate for large-family employers",
+    "requires_children": false,
+    "nationality": "any_resident",
+    "residency_months_min": null,
+    "housing_tenure": null,
+    "student_required": false,
+    "admin_areas": [],
+    "gender": "any"
+   },
+   "source_url": "https://www.seg-social.es",
+   "source_snippet": "Bonificaciones en las cuotas empresariales para empleadores del hogar familiar (hasta el 45% para familias numerosas y otros supuestos del 20% según composición y renta).",
+   "last_verified_at": "2026-08-12",
+   "verification_status": "auto_extracted"
+  },
+  {
+   "slug": "tarifa-plana-autonomos",
+   "name_local": "Tarifa plana para nuevos autónomos (RETA)",
+   "name_en": "Flat-Rate Social Security Contribution for New Self-Employed",
+   "admin_level": "national",
+   "admin_area": null,
+   "funder": "Tesorería General de la Seguridad Social (TGSS)",
+   "category": "business",
+   "benefit_type": "discount",
+   "amount_min": 80.0,
+   "amount_max": 80.0,
+   "amount_currency": "EUR",
+   "amount_period": "monthly",
+   "amount_note": "80 EUR/month flat rate for 12 months (real charge ~88 EUR with MEI); extendable 12 more months if net income below SMI",
+   "is_automatic": false,
+   "application_url": "https://www.seg-social.es",
+   "application_channel": "online",
+   "deadline_type": "rolling",
+   "deadline_note": null,
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Register with AEAT (modelo 036/037) and then with RETA via Import@ss, selecting the reduced quota",
+     "url": "https://www.seg-social.es"
+    }
+   ],
+   "documents_required": [],
+   "eligibility": {
+    "statuses": [
+     "self_employed"
+    ],
+    "age_min": null,
+    "age_max": null,
+    "income_annual_max": null,
+    "income_note": "No RETA registration in previous 2 years (3 if flat rate used before); no debts with AEAT/TGSS; not 'autónomo colaborador'",
+    "requires_children": false,
+    "nationality": "any_resident",
+    "residency_months_min": null,
+    "housing_tenure": null,
+    "student_required": false,
+    "admin_areas": [],
+    "gender": "any"
+   },
+   "source_url": "https://www.seg-social.es",
+   "source_snippet": "Cuota reducida de 80 euros mensuales durante los primeros 12 meses de actividad, prorrogable 12 meses más si los rendimientos netos no superan el SMI (24-36 meses para discapacidad, víctimas y municipios pequeños).",
+   "last_verified_at": "2026-08-12",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "tarifa-cero-autonomos-madrid",
+   "name_local": "Tarifa Cero para autónomos (Comunidad de Madrid)",
+   "name_en": "Tarifa Cero Self-Employed Rebate (Madrid Region)",
+   "admin_level": "region",
+   "admin_area": "Madrid",
+   "funder": "Comunidad de Madrid (Consejería de Economía)",
+   "category": "business",
+   "benefit_type": "cash_one_off",
+   "amount_min": null,
+   "amount_max": null,
+   "amount_currency": "EUR",
+   "amount_period": "annual",
+   "amount_note": "Full refund of first-year RETA contributions (after completing the year), subject to budget availability",
+   "is_automatic": false,
+   "application_url": "https://www.comunidad.madrid",
+   "application_channel": "online",
+   "deadline_type": "window",
+   "deadline_note": null,
+   "procedure_steps": [],
+   "documents_required": [],
+   "eligibility": {
+    "statuses": [
+     "self_employed"
+    ],
+    "age_min": null,
+    "age_max": null,
+    "income_annual_max": null,
+    "income_note": "New self-employed residing in Madrid who completed 12 months of activity",
+    "requires_children": false,
+    "nationality": "any_resident",
+    "residency_months_min": null,
+    "housing_tenure": null,
+    "student_required": false,
+    "admin_areas": [
+     "Madrid"
+    ],
+    "gender": "any"
+   },
+   "source_url": "https://www.comunidad.madrid",
+   "source_snippet": "Reembolso del 100% de las cuotas de autónomos pagadas durante el primer año de actividad para nuevos autónomos residentes en la Comunidad de Madrid, acumulable a la tarifa plana estatal.",
+   "last_verified_at": "2026-08-12",
+   "verification_status": "auto_extracted"
+  },
+  {
+   "slug": "kit-digital",
+   "name_local": "Kit Digital (bono digital para pymes y autónomos)",
+   "name_en": "Kit Digital Digitalisation Voucher",
+   "admin_level": "national",
+   "admin_area": null,
+   "funder": "Red.es / Ministerio para la Transformación Digital",
+   "category": "business",
+   "benefit_type": "in_kind",
+   "amount_min": 2000.0,
+   "amount_max": 29000.0,
+   "amount_currency": "EUR",
+   "amount_period": "one_off",
+   "amount_note": "Voucher by company size: 2.000 / 6.000 / 12.000 / 25.000 / 29.000 EUR; spent only with authorised digitalisation agents",
+   "is_automatic": false,
+   "application_url": "https://www.acelerapyme.gob.es/kit-digital",
+   "application_channel": "online",
+   "deadline_type": "window",
+   "deadline_note": null,
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Complete the digital self-diagnosis test at acelerapyme.gob.es",
+     "url": "https://www.acelerapyme.gob.es"
+    },
+    {
+     "step": 2,
+     "detail": "Apply for the voucher for your employee segment",
+     "url": "https://www.acelerapyme.gob.es/kit-digital"
+    },
+    {
+     "step": 3,
+     "detail": "Choose an authorised digitalisation agent and implement the solution",
+     "url": null
+    }
+   ],
+   "documents_required": [],
+   "eligibility": {
+    "statuses": [
+     "self_employed"
+    ],
+    "age_min": null,
+    "age_max": null,
+    "income_annual_max": null,
+    "income_note": "SMEs and self-employed of any sector; tax and Social Security obligations up to date",
+    "requires_children": false,
+    "nationality": "any_resident",
+    "residency_months_min": null,
+    "housing_tenure": null,
+    "student_required": false,
+    "admin_areas": [],
+    "gender": "any"
+   },
+   "source_url": "https://www.acelerapyme.gob.es/kit-digital",
+   "source_snippet": "Bono digital a fondo perdido de 2.000 EUR (0-2 empleados), 6.000 EUR (3-9), 12.000 EUR (10-49), 25.000 EUR (50-99) o 29.000 EUR (100-249) para contratar soluciones de digitalización con agentes digitalizadores adheridos.",
+   "last_verified_at": "2026-08-12",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "kit-consulting",
+   "name_local": "Kit Consulting (bono de asesoramiento digital)",
+   "name_en": "Kit Consulting Advisory Voucher",
+   "admin_level": "national",
+   "admin_area": null,
+   "funder": "Red.es / Ministerio para la Transformación Digital",
+   "category": "business",
+   "benefit_type": "in_kind",
+   "amount_min": 10000.0,
+   "amount_max": 24000.0,
+   "amount_currency": "EUR",
+   "amount_period": "one_off",
+   "amount_note": "Advisory voucher 10.000-24.000 EUR depending on company size; SME must already have basic digitalisation",
+   "is_automatic": false,
+   "application_url": "https://www.acelerapyme.gob.es/kit-consulting",
+   "application_channel": "online",
+   "deadline_type": "window",
+   "deadline_note": null,
+   "procedure_steps": [],
+   "documents_required": [],
+   "eligibility": {
+    "statuses": [
+     "self_employed"
+    ],
+    "age_min": null,
+    "age_max": null,
+    "income_annual_max": null,
+    "income_note": "SMEs with 10-249 employees; obligations up to date",
+    "requires_children": false,
+    "nationality": "any_resident",
+    "residency_months_min": null,
+    "housing_tenure": null,
+    "student_required": false,
+    "admin_areas": [],
+    "gender": "any"
+   },
+   "source_url": "https://www.acelerapyme.gob.es/kit-consulting",
+   "source_snippet": "Bono de asesoramiento de 10.000 a 24.000 EUR según tamaño (empresas de 10 a 249 empleados) para contratar paquetes de asesoramiento digital con agentes asesores adheridos.",
+   "last_verified_at": "2026-08-12",
+   "verification_status": "auto_extracted"
+  },
+  {
+   "slug": "microcreditos-microbank",
+   "name_local": "Microcréditos sociales MicroBank (CaixaBank)",
+   "name_en": "MicroBank Social Microcredits",
+   "admin_level": "private",
+   "admin_area": null,
+   "funder": "MicroBank (CaixaBank)",
+   "category": "business",
+   "benefit_type": "cash_one_off",
+   "amount_min": null,
+   "amount_max": 50000.0,
+   "amount_currency": "EUR",
+   "amount_period": "one_off",
+   "amount_note": "Loans up to 25.000 EUR (entrepreneurs) / 50.000 EUR (microenterprises); average loan ~21.700 EUR (2025); granted on project viability without collateral",
+   "is_automatic": false,
+   "application_url": "https://www.microbank.com",
+   "application_channel": "in_person",
+   "deadline_type": "rolling",
+   "deadline_note": null,
+   "procedure_steps": [],
+   "documents_required": [],
+   "eligibility": {
+    "statuses": [
+     "self_employed"
+    ],
+    "age_min": null,
+    "age_max": null,
+    "income_annual_max": null,
+    "income_note": "Based on project viability; no guarantees required; via CaixaBank branches and 280+ collaborating entities",
+    "requires_children": false,
+    "nationality": "any_resident",
+    "residency_months_min": null,
+    "housing_tenure": null,
+    "student_required": false,
+    "admin_areas": [],
+    "gender": "any"
+   },
+   "source_url": "https://www.microbank.com",
+   "source_snippet": "Microcréditos de hasta 25.000 EUR para emprendedores y hasta 50.000 EUR para microempresas, sin necesidad de avales para proyectos viables; también microcréditos a familias con fines sociales.",
+   "last_verified_at": "2026-08-12",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "prestamos-participativos-enisa",
+   "name_local": "Préstamos participativos ENISA",
+   "name_en": "ENISA Participative Loans for Innovative SMEs",
+   "admin_level": "national",
+   "admin_area": null,
+   "funder": "Empresa Nacional de Innovación (ENISA), Ministerio de Industria y Turismo",
+   "category": "business",
+   "benefit_type": "cash_one_off",
+   "amount_min": 25000.0,
+   "amount_max": 1500000.0,
+   "amount_currency": "EUR",
+   "amount_period": "one_off",
+   "amount_note": "Participative loans 25.000-1.500.000 EUR, no collateral, grace period up to 7 years",
+   "is_automatic": false,
+   "application_url": "https://www.enisa.gob.es",
+   "application_channel": "online",
+   "deadline_type": "rolling",
+   "deadline_note": null,
+   "procedure_steps": [],
+   "documents_required": [],
+   "eligibility": {
+    "statuses": [
+     "self_employed"
+    ],
+    "age_min": null,
+    "age_max": null,
+    "income_annual_max": null,
+    "income_note": "Innovative Spanish SMEs with viable business models; equity requirements per line",
+    "requires_children": false,
+    "nationality": "any_resident",
+    "residency_months_min": null,
+    "housing_tenure": null,
+    "student_required": false,
+    "admin_areas": [],
+    "gender": "any"
+   },
+   "source_url": "https://www.enisa.gob.es",
+   "source_snippet": "Préstamos participativos de 25.000 a 1.500.000 EUR para pymes innovadoras (líneas Jóvenes Emprendedores, Emprendedores, Crecimiento y AgroInnpulso), sin avales, con interés fijo más variable según rentabilidad.",
+   "last_verified_at": "2026-08-12",
+   "verification_status": "auto_extracted"
+  },
+  {
+   "slug": "lineas-ico-empresas-emprendedores",
+   "name_local": "Líneas ICO de financiación para empresas y emprendedores",
+   "name_en": "ICO Credit Lines for Businesses & Entrepreneurs",
+   "admin_level": "national",
+   "admin_area": null,
+   "funder": "Instituto de Crédito Oficial (ICO)",
+   "category": "business",
+   "benefit_type": "cash_one_off",
+   "amount_min": null,
+   "amount_max": null,
+   "amount_currency": "EUR",
+   "amount_period": "one_off",
+   "amount_note": "Loans with preferential terms channelled through banks; amounts and maturities per line",
+   "is_automatic": false,
+   "application_url": "https://www.ico.es",
+   "application_channel": "in_person",
+   "deadline_type": "rolling",
+   "deadline_note": null,
+   "procedure_steps": [],
+   "documents_required": [],
+   "eligibility": {
+    "statuses": [
+     "self_employed"
+    ],
+    "age_min": null,
+    "age_max": null,
+    "income_annual_max": null,
+    "income_note": "Self-employed and companies with activity in Spain; bank risk assessment",
+    "requires_children": false,
+    "nationality": "any_resident",
+    "residency_months_min": null,
+    "housing_tenure": null,
+    "student_required": false,
+    "admin_areas": [],
+    "gender": "any"
+   },
+   "source_url": "https://www.ico.es",
+   "source_snippet": "Líneas de financiación en condiciones ventajosas para autónomos, pymes y emprendedores (inversión, liquidez, internacionalización), tramitadas a través de las entidades bancarias adheridas.",
+   "last_verified_at": "2026-08-12",
+   "verification_status": "auto_extracted"
+  },
+  {
+   "slug": "renta-garantia-ingresos-pais-vasco",
+   "name_local": "Renta de Garantía de Ingresos (RGI) del País Vasco",
+   "name_en": "Guaranteed Income (RGI, Basque Country)",
+   "admin_level": "region",
+   "admin_area": "País Vasco",
+   "funder": "Gobierno Vasco (Departamento de Empleo y Políticas Sociales)",
+   "category": "income_support",
+   "benefit_type": "cash_monthly",
+   "amount_min": null,
+   "amount_max": null,
+   "amount_currency": "EUR",
+   "amount_period": "monthly",
+   "amount_note": "Monthly top-up to a guaranteed income level that depends on household size; compatible/complementary with IMV",
+   "is_automatic": false,
+   "application_url": "https://www.euskadi.eus",
+   "application_channel": "online",
+   "deadline_type": "rolling",
+   "deadline_note": null,
+   "procedure_steps": [],
+   "documents_required": [],
+   "eligibility": {
+    "statuses": [],
+    "age_min": null,
+    "age_max": null,
+    "income_annual_max": 10239.36,
+    "income_note": "Renta mínima garantizada 2025: 853,28 €/mes persona sola -> 10.239,36 €/año; UC de 2 adultos 1.137,71 €/mes; patrimonio <= 5 x RMG anual",
+    "requires_children": false,
+    "nationality": "any_resident",
+    "residency_months_min": 36,
+    "housing_tenure": null,
+    "student_required": false,
+    "admin_areas": [
+     "País Vasco"
+    ],
+    "gender": "any"
+   },
+   "source_url": "https://www.euskadi.eus",
+   "source_snippet": "Prestación no contributiva que garantiza unos ingresos mínimos a las personas residentes en Euskadi en situación de vulnerabilidad económica; complementa el IMV hasta los umbrales fijados por la norma vasca.",
+   "last_verified_at": "2026-08-12",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "renda-garantida-ciutadania-cataluna",
+   "name_local": "Renda Garantida de Ciutadania (Cataluña)",
+   "name_en": "Guaranteed Citizenship Income (Catalonia)",
+   "admin_level": "region",
+   "admin_area": "Cataluña",
+   "funder": "Generalitat de Catalunya (Departament de Drets Socials)",
+   "category": "income_support",
+   "benefit_type": "cash_monthly",
+   "amount_min": null,
+   "amount_max": null,
+   "amount_currency": "EUR",
+   "amount_period": "monthly",
+   "amount_note": "Monthly benefit topping up income to the guaranteed threshold by household composition",
+   "is_automatic": false,
+   "application_url": "https://web.gencat.cat",
+   "application_channel": "online",
+   "deadline_type": "rolling",
+   "deadline_note": null,
+   "procedure_steps": [],
+   "documents_required": [],
+   "eligibility": {
+    "statuses": [],
+    "age_min": null,
+    "age_max": null,
+    "income_annual_max": 9341.92,
+    "income_note": "100% del IRSC para 1 persona: 778,49 €/mes (2025) -> 9.341,92 €/año; 150% IRSC 2 personas, 165% 3, 180% 4, 182% 5+",
+    "requires_children": false,
+    "nationality": "any_resident",
+    "residency_months_min": 12,
+    "housing_tenure": null,
+    "student_required": false,
+    "admin_areas": [
+     "Cataluña"
+    ],
+    "gender": "any"
+   },
+   "source_url": "https://web.gencat.cat",
+   "source_snippet": "Prestación económica para personas y unidades de convivencia de Cataluña con rentas inferiores a los umbrales de vulnerabilidad, complementaria del IMV y ligada a itinerarios de inserción.",
+   "last_verified_at": "2026-08-12",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "renta-minima-insercion-madrid",
+   "name_local": "Renta Mínima de Inserción (Comunidad de Madrid)",
+   "name_en": "Minimum Insertion Income (Madrid Region)",
+   "admin_level": "region",
+   "admin_area": "Madrid",
+   "funder": "Comunidad de Madrid (Consejería de Familia, Juventud y Política Social)",
+   "category": "income_support",
+   "benefit_type": "cash_monthly",
+   "amount_min": null,
+   "amount_max": null,
+   "amount_currency": "EUR",
+   "amount_period": "monthly",
+   "amount_note": "Monthly amount complements income up to the regional guaranteed minimum by household size",
+   "is_automatic": false,
+   "application_url": "https://www.comunidad.madrid",
+   "application_channel": "online",
+   "deadline_type": "rolling",
+   "deadline_note": null,
+   "procedure_steps": [],
+   "documents_required": [],
+   "eligibility": {
+    "statuses": [],
+    "age_min": null,
+    "age_max": null,
+    "income_annual_max": 5639.16,
+    "income_note": "Prestación básica 2025: 469,93 €/mes persona sola -> 5.639,16 €/año; +117,48 € primer miembro adicional, +75,11 € siguientes; tope: SMI",
+    "requires_children": false,
+    "nationality": "any_resident",
+    "residency_months_min": 12,
+    "housing_tenure": null,
+    "student_required": false,
+    "admin_areas": [
+     "Madrid"
+    ],
+    "gender": "any"
+   },
+   "source_url": "https://www.comunidad.madrid",
+   "source_snippet": "Ayuda económica mensual para personas empadronadas en la Comunidad de Madrid en situación de necesidad económica, complementaria al IMV, vinculada a programas de inserción social.",
+   "last_verified_at": "2026-08-12",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "titulo-familia-numerosa",
+   "name_local": "Título oficial de familia numerosa (descuentos)",
+   "name_en": "Official Large-Family Card & Discounts",
+   "admin_level": "national",
+   "admin_area": null,
+   "funder": "Comunidades autónomas / FEDF (Federación Española de Familias Numerosas)",
+   "category": "family",
+   "benefit_type": "discount",
+   "amount_min": null,
+   "amount_max": null,
+   "amount_currency": "EUR",
+   "amount_period": "one_off",
+   "amount_note": "Discounts: up to 50% on trains, 5-10% flights, education fee reductions, higher bono social threshold, etc.; general and special categories",
+   "is_automatic": false,
+   "application_url": "https://www.familiasnumerosas.org",
+   "application_channel": "in_person",
+   "deadline_type": "rolling",
+   "deadline_note": null,
+   "procedure_steps": [],
+   "documents_required": [],
+   "eligibility": {
+    "statuses": [],
+    "age_min": null,
+    "age_max": null,
+    "income_annual_max": null,
+    "income_note": "Families with 3+ children (or 2 in specific situations); issued by the autonomous community",
+    "requires_children": true,
+    "nationality": "any_resident",
+    "residency_months_min": null,
+    "housing_tenure": null,
+    "student_required": false,
+    "admin_areas": [],
+    "gender": "any"
+   },
+   "source_url": "https://www.familiasnumerosas.org",
+   "source_snippet": "El título de familia numerosa da acceso a descuentos de hasta el 50% en transporte ferroviario, reducciones en transporte aéreo, becas y tasas de educación, bonificaciones en el bono social y otros descuentos públicos y privados.",
+   "last_verified_at": "2026-08-12",
+   "verification_status": "auto_extracted"
+  },
+  {
+   "slug": "titulo-familia-monoparental-madrid",
+   "name_local": "Título de familia monoparental (Comunidad de Madrid)",
+   "name_en": "Single-Parent Family Card (Madrid Region)",
+   "admin_level": "region",
+   "admin_area": "Madrid",
+   "funder": "Comunidad de Madrid",
+   "category": "family",
+   "benefit_type": "discount",
+   "amount_min": null,
+   "amount_max": null,
+   "amount_currency": "EUR",
+   "amount_period": "one_off",
+   "amount_note": "Accreditation card unlocking regional discounts and priority access for single-parent families",
+   "is_automatic": false,
+   "application_url": "https://www.comunidad.madrid",
+   "application_channel": "online",
+   "deadline_type": "rolling",
+   "deadline_note": null,
+   "procedure_steps": [],
+   "documents_required": [],
+   "eligibility": {
+    "statuses": [],
+    "age_min": null,
+    "age_max": null,
+    "income_annual_max": null,
+    "income_note": "Single-parent household registered in Madrid",
+    "requires_children": true,
+    "nationality": "any_resident",
+    "residency_months_min": null,
+    "housing_tenure": null,
+    "student_required": false,
+    "admin_areas": [
+     "Madrid"
+    ],
+    "gender": "any"
+   },
+   "source_url": "https://www.comunidad.madrid",
+   "source_snippet": "Título que acredita la condición de familia monoparental en la Comunidad de Madrid y da acceso a bonificaciones y prioridades en servicios públicos regionales (vivienda, escolarización, transporte y ayudas).",
+   "last_verified_at": "2026-08-12",
+   "verification_status": "auto_extracted"
+  },
+  {
+   "slug": "targeta-familia-monoparental-cataluna",
+   "name_local": "Títol de família monoparental (Cataluña)",
+   "name_en": "Single-Parent Family Card (Catalonia)",
+   "admin_level": "region",
+   "admin_area": "Cataluña",
+   "funder": "Generalitat de Catalunya (Departament de Drets Socials)",
+   "category": "family",
+   "benefit_type": "discount",
+   "amount_min": null,
+   "amount_max": null,
+   "amount_currency": "EUR",
+   "amount_period": "one_off",
+   "amount_note": "Card giving reduced fares (e.g. T-jove FM/FN) and access to Catalan social services benefits",
+   "is_automatic": false,
+   "application_url": "https://web.gencat.cat",
+   "application_channel": "online",
+   "deadline_type": "rolling",
+   "deadline_note": null,
+   "procedure_steps": [],
+   "documents_required": [],
+   "eligibility": {
+    "statuses": [],
+    "age_min": null,
+    "age_max": null,
+    "income_annual_max": null,
+    "income_note": "Single-parent household registered in Catalonia",
+    "requires_children": true,
+    "nationality": "any_resident",
+    "residency_months_min": null,
+    "housing_tenure": null,
+    "student_required": false,
+    "admin_areas": [
+     "Cataluña"
+    ],
+    "gender": "any"
+   },
+   "source_url": "https://web.gencat.cat",
+   "source_snippet": "Título que acredita a las familias monoparentales catalanas y da acceso a descuentos en transporte (T-jove FM/FN), equipamientos públicos y ayudas sociales de la Generalitat.",
+   "last_verified_at": "2026-08-12",
+   "verification_status": "auto_extracted"
+  },
+  {
+   "slug": "cheque-bebe-comunidad-madrid",
+   "name_local": "Cheque Bebé (Comunidad de Madrid)",
+   "name_en": "Baby Cheque (Madrid Region)",
+   "admin_level": "region",
+   "admin_area": "Madrid",
+   "funder": "Comunidad de Madrid (Consejería de Familia, Juventud y Política Social)",
+   "category": "family",
+   "benefit_type": "cash_monthly",
+   "amount_min": 500.0,
+   "amount_max": 500.0,
+   "amount_currency": "EUR",
+   "amount_period": "monthly",
+   "amount_note": "500 EUR/month for 24 months per child born or adopted from 1 January 2022",
+   "is_automatic": false,
+   "application_url": "https://www.comunidad.madrid",
+   "application_channel": "online",
+   "deadline_type": "window",
+   "deadline_note": null,
+   "procedure_steps": [],
+   "documents_required": [],
+   "eligibility": {
+    "statuses": [
+     "parent"
+    ],
+    "age_min": null,
+    "age_max": 29,
+    "income_annual_max": 36200,
+    "income_note": "Mothers under 30; taxable income below 30.000 EUR (individual) or 36.200 EUR (joint); residence in Madrid",
+    "requires_children": true,
+    "nationality": "any_resident",
+    "residency_months_min": null,
+    "housing_tenure": null,
+    "student_required": false,
+    "admin_areas": [
+     "Madrid"
+    ],
+    "gender": "any"
+   },
+   "source_url": "https://www.comunidad.madrid",
+   "source_snippet": "Ayuda de 500 euros al mes durante 24 meses para madres menores de 30 años por cada hijo nacido o adoptado, con límite de renta de 30.000 EUR (individual) o 36.200 EUR (conjunta).",
+   "last_verified_at": "2026-08-12",
+   "verification_status": "auto_extracted"
+  },
+  {
+   "slug": "prestaciones-ley-dependencia",
+   "name_local": "Prestaciones del Sistema para la Autonomía y Atención a la Dependencia (Ley 39/2006)",
+   "name_en": "Dependency Care Benefits (Ley 39/2006)",
+   "admin_level": "national",
+   "admin_area": null,
+   "funder": "IMSERSO / servicios sociales autonómicos",
+   "category": "health",
+   "benefit_type": "in_kind",
+   "amount_min": null,
+   "amount_max": null,
+   "amount_currency": "EUR",
+   "amount_period": "monthly",
+   "amount_note": "Services and/or cash benefits whose amount depends on dependency grade (I-III), service type and the applicant's financial capacity",
+   "is_automatic": false,
+   "application_url": "https://imserso.es",
+   "application_channel": "in_person",
+   "deadline_type": "rolling",
+   "deadline_note": null,
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Apply at regional social services with medical and functional reports",
+     "url": "https://imserso.es"
+    },
+    {
+     "step": 2,
+     "detail": "Valoración de la dependencia y reconocimiento del grado",
+     "url": null
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "Medical reports",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "DNI/NIE and empadronamiento",
+     "mandatory": true,
+     "note": null
+    }
+   ],
+   "eligibility": {
+    "statuses": [],
+    "age_min": null,
+    "age_max": null,
+    "income_annual_max": null,
+    "income_note": "Benefit amount and copayment scale with the applicant's economic capacity (sliding scale set by regional services sociales); no hard income ceiling",
+    "requires_children": false,
+    "nationality": "any_resident",
+    "residency_months_min": 60,
+    "housing_tenure": null,
+    "student_required": false,
+    "admin_areas": [],
+    "gender": "any"
+   },
+   "source_url": "https://imserso.es",
+   "source_snippet": "Prestaciones económicas y servicios (centro de día, residencia, ayuda a domicilio, teleasistencia, cuidado familiar) para personas reconocidas en situación de dependencia, según grado y capacidad económica.",
+   "last_verified_at": "2026-08-12",
+   "verification_status": "auto_extracted"
+  },
+  {
+   "slug": "teleasistencia-domiciliaria-madrid",
+   "name_local": "Teleasistencia domiciliaria (Comunidad de Madrid)",
+   "name_en": "Home Telecare Service (Madrid Region)",
+   "admin_level": "region",
+   "admin_area": "Madrid",
+   "funder": "Comunidad de Madrid",
+   "category": "health",
+   "benefit_type": "in_kind",
+   "amount_min": null,
+   "amount_max": null,
+   "amount_currency": "EUR",
+   "amount_period": "monthly",
+   "amount_note": "Free or subsidised 24/7 telecare device and emergency-response service, depending on income",
+   "is_automatic": false,
+   "application_url": "https://www.comunidad.madrid",
+   "application_channel": "online",
+   "deadline_type": "rolling",
+   "deadline_note": null,
+   "procedure_steps": [],
+   "documents_required": [],
+   "eligibility": {
+    "statuses": [
+     "retired"
+    ],
+    "age_min": 65,
+    "age_max": null,
+    "income_annual_max": null,
+    "income_note": "Municipal price scales by income (public price reduced or free for low-income users assessed by servicios sociales)",
+    "requires_children": false,
+    "nationality": "any_resident",
+    "residency_months_min": null,
+    "housing_tenure": null,
+    "student_required": false,
+    "admin_areas": [
+     "Madrid"
+    ],
+    "gender": "any"
+   },
+   "source_url": "https://www.comunidad.madrid",
+   "source_snippet": "Servicio gratuito o bonificado de teleasistencia 24 horas para personas mayores de 65 años, con discapacidad o en situación de dependencia que viven solas o pasan mucho tiempo solas.",
+   "last_verified_at": "2026-08-12",
+   "verification_status": "auto_extracted"
+  },
+  {
+   "slug": "aportacion-farmaceutica-reducida",
+   "name_local": "Aportación farmacéutica reducida según renta (recetas SNS)",
+   "name_en": "Income-Based Prescription Copayment Reduction",
+   "admin_level": "national",
+   "admin_area": null,
+   "funder": "Sistema Nacional de Salud (Ministerio de Sanidad / CCAA)",
+   "category": "health",
+   "benefit_type": "discount",
+   "amount_min": null,
+   "amount_max": null,
+   "amount_currency": "EUR",
+   "amount_period": "monthly",
+   "amount_note": "Copayment 10-60% of medicine price by income band; monthly caps for pensioners; 0% for IMV/non-contributory pension recipients",
+   "is_automatic": true,
+   "application_url": "https://www.sanidad.gob.es",
+   "application_channel": "automatic",
+   "deadline_type": "rolling",
+   "deadline_note": null,
+   "procedure_steps": [],
+   "documents_required": [],
+   "eligibility": {
+    "statuses": [],
+    "age_min": null,
+    "age_max": null,
+    "income_annual_max": null,
+    "income_note": "Copayment percentage depends on annual income brackets (pensioners: 10% if income <18.000 €/año; trabajadores 40-60% by bracket); no exclusion ceiling",
+    "requires_children": false,
+    "nationality": "any_resident",
+    "residency_months_min": null,
+    "housing_tenure": null,
+    "student_required": false,
+    "admin_areas": [],
+    "gender": "any"
+   },
+   "source_url": "https://www.sanidad.gob.es",
+   "source_snippet": "El copago de los medicamentos se reduce según la renta: del 10% al 60% para trabajadores en activo y del 10% (con tope mensual) al 0% para pensionistas con menores ingresos; sin aportación para perceptores de IMV y pensiones no contributivas.",
+   "last_verified_at": "2026-08-12",
+   "verification_status": "auto_extracted"
+  },
+  {
+   "slug": "comedores-sociales-municipales",
+   "name_local": "Comedores sociales y servicios de comida a domicilio municipales",
+   "name_en": "Municipal Social Canteens & Meals-on-Wheels",
+   "admin_level": "city",
+   "admin_area": "Madrid",
+   "funder": "Ayuntamientos (servicios sociales) / Cáritas / Cruz Roja",
+   "category": "income_support",
+   "benefit_type": "in_kind",
+   "amount_min": null,
+   "amount_max": null,
+   "amount_currency": "EUR",
+   "amount_period": "monthly",
+   "amount_note": "Free or low-cost daily meals via municipal social services referral",
+   "is_automatic": false,
+   "application_url": "https://www.madrid.es",
+   "application_channel": "in_person",
+   "deadline_type": "rolling",
+   "deadline_note": null,
+   "procedure_steps": [],
+   "documents_required": [],
+   "eligibility": {
+    "statuses": [],
+    "age_min": null,
+    "age_max": null,
+    "income_annual_max": null,
+    "income_note": "Access via valoración de servicios sociales municipales for people without resources; no fixed published € threshold",
+    "requires_children": false,
+    "nationality": "any_resident",
+    "residency_months_min": null,
+    "housing_tenure": null,
+    "student_required": false,
+    "admin_areas": [],
+    "gender": "any"
+   },
+   "source_url": "https://www.madrid.es",
+   "source_snippet": "Acceso gratuito o a precio simbólico a comedores sociales y servicios de entrega de comida para personas en situación de vulnerabilidad derivadas por los servicios sociales municipales.",
+   "last_verified_at": "2026-08-12",
+   "verification_status": "auto_extracted"
+  },
+  {
+   "slug": "bono-alquiler-joven-andalucia",
+   "name_local": "Bono Alquiler Joven en Andalucía",
+   "name_en": "Young Person's Rent Voucher (Andalucía)",
+   "admin_level": "region",
+   "admin_area": "Andalucía",
+   "funder": "Junta de Andalucía (Consejería de Vivienda) / Ministerio de Vivienda y Agenda Urbana",
+   "category": "housing",
+   "benefit_type": "cash_monthly",
+   "amount_min": 250,
+   "amount_max": 250,
+   "amount_currency": "EUR",
+   "amount_period": "monthly",
+   "amount_note": "250 €/mes durante un máximo de 24 meses; never more than the tenant's share of rent",
+   "is_automatic": false,
+   "application_url": "https://www.juntadeandalucia.es/temas/vivienda-consumo/alquiler/bono-alquilerjoven.html",
+   "application_channel": "online",
+   "deadline_type": "window",
+   "deadline_note": "Convocatoria opens in tranches and closes provisionally when 15.000 solicitudes are reached",
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Apply online via the Ventanilla Electrónica de la Junta de Andalucía (certificado digital + Autofirma)",
+     "url": "https://www.juntadeandalucia.es/temas/vivienda-consumo/alquiler/bono-alquilerjoven.html"
+    },
+    {
+     "step": 2,
+     "detail": "Attach rental contract or contract commitment, empadronamiento and income documentation",
+     "url": null
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "Contrato de alquiler o compromiso de contrato",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Certificado de empadronamiento en la vivienda",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Documentación de ingresos de la unidad familiar",
+     "mandatory": true,
+     "note": null
+    }
+   ],
+   "eligibility": {
+    "statuses": [],
+    "age_min": 18,
+    "age_max": 35,
+    "income_annual_max": 25200,
+    "income_note": "Ingresos menores a 3 veces el IPREM si vives solo (25.200 €/año) y 4 veces el IPREM si es unidad familiar (33.600 €/año)",
+    "requires_children": false,
+    "gender": "any",
+    "nationality": "any_resident",
+    "residency_months_min": null,
+    "housing_tenure": "renting",
+    "student_required": false,
+    "admin_areas": [
+     "Andalucía"
+    ]
+   },
+   "source_url": "https://www.juntadeandalucia.es/temas/vivienda-consumo/alquiler/bono-alquilerjoven.html",
+   "source_snippet": "El Bono de Alquiler Joven es una ayuda económica de 250 euros al mes durante un máximo de 24 meses, destinada a jóvenes que viven de alquiler.",
+   "last_verified_at": "2026-08-12",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "targeta-rosa-metropolitana-barcelona",
+   "name_local": "T-metropolitana Targeta Rosa (gratuïta i reduïda)",
+   "name_en": "Pink Card: free/reduced public transport (Barcelona metropolitan area)",
+   "admin_level": "region",
+   "admin_area": "Àrea Metropolitana de Barcelona",
+   "funder": "Àrea Metropolitana de Barcelona (AMB)",
+   "category": "transport",
+   "benefit_type": "free_slab",
+   "amount_min": null,
+   "amount_max": null,
+   "amount_currency": "EUR",
+   "amount_period": "annual",
+   "amount_note": "Targeta rosa gratuïta: unlimited travel paying only a 6,20 € annual fee; targeta rosa reduïda: T-4 (10 trips) for 2,15 € without annual fee",
+   "is_automatic": false,
+   "application_url": "https://lesmevesajudes.barcelona.cat/ca/llistat-dajudes/t-metropolitana-targeta-rosa/",
+   "application_channel": "in_person",
+   "deadline_type": "rolling",
+   "deadline_note": null,
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Apply at the ajuntament's citizen attention office or online via the AMB tràmits portal",
+     "url": "https://lesmevesajudes.barcelona.cat/ca/llistat-dajudes/t-metropolitana-targeta-rosa/"
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "DNI o NIE",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Acreditación de discapacidad >=33% si es menor de 60 años",
+     "mandatory": false,
+     "note": null
+    },
+    {
+     "doc": "Documentación de ingresos de la unidad familiar",
+     "mandatory": true,
+     "note": null
+    }
+   ],
+   "eligibility": {
+    "statuses": [],
+    "age_min": 60,
+    "age_max": null,
+    "income_annual_max": 9240,
+    "income_note": "Ingresos brutos anuales por persona de la unidad familiar <= 9.240 €/año para la gratuita; <= 18.480 €/año para la reduïda (umbrales escalados por miembros: 2 miembros 18.480/36.960 €)",
+    "requires_children": false,
+    "gender": "any",
+    "nationality": "any_resident",
+    "residency_months_min": null,
+    "housing_tenure": null,
+    "student_required": false,
+    "admin_areas": [
+     "Cataluña"
+    ]
+   },
+   "source_url": "https://lesmevesajudes.barcelona.cat/ca/llistat-dajudes/t-metropolitana-targeta-rosa/",
+   "source_snippet": "Cal tenir uns ingressos econòmics bruts anuals per tots els conceptes iguals o inferiors a 9.240,00 € per ser beneficiari de la T-metropolitana targeta rosa gratuïta.",
+   "last_verified_at": "2026-08-12",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "abono-joven-comunitat-valenciana",
+   "name_local": "Abono joven bonificado 50% (Móbilis 30 Jove / abonos jóvenes GVA)",
+   "name_en": "Youth travel pass with 50% discount (Comunitat Valenciana)",
+   "admin_level": "region",
+   "admin_area": "Comunitat Valenciana",
+   "funder": "Generalitat Valenciana (Conselleria de Medio Ambiente, Infraestructuras y Territorio)",
+   "category": "transport",
+   "benefit_type": "discount",
+   "amount_min": 14.9,
+   "amount_max": 14.9,
+   "amount_currency": "EUR",
+   "amount_period": "monthly",
+   "amount_note": "Menores de 31 años: 50% de descuento en abonos mensuales (València Móbilis 30 Jove 14,90 €/mes; Alacant 10,60 €; Castelló 12,75 €); menores de 14 viajan gratis; medida prorrogada en 2026",
+   "is_automatic": false,
+   "application_url": "https://www.atmv.gva.es",
+   "application_channel": "online",
+   "deadline_type": "annual",
+   "deadline_note": "Decreto ley del Consell renueva las bonificaciones por periodos (vigente hasta 30/06/2026)",
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Request the personalised Móbilis30 card online via ATMV or SIGAPUNT (4 € emission)",
+     "url": "https://www.atmv.gva.es"
+    },
+    {
+     "step": 2,
+     "detail": "Load the discounted monthly abono joven at stations, app or web",
+     "url": null
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "DNI/NIE o TIE acreditativo de residencia legal en España",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Fotografía para la tarjeta personalizada",
+     "mandatory": true,
+     "note": null
+    }
+   ],
+   "eligibility": {
+    "statuses": [],
+    "age_min": 14,
+    "age_max": 30,
+    "income_annual_max": null,
+    "income_note": "No income test: age-based discount (under 31); under-14s travel free",
+    "requires_children": false,
+    "gender": "any",
+    "nationality": "any_resident",
+    "residency_months_min": null,
+    "housing_tenure": null,
+    "student_required": false,
+    "admin_areas": [
+     "Comunidad Valenciana"
+    ]
+   },
+   "source_url": "https://www.atmv.gva.es",
+   "source_snippet": "Bonificaciones de hasta el 50 % en los abonos mensuales para jóvenes menores de 31 años: València Móbilis 30 Joven 14,90 euros; Alicante 10,60 euros; Castelló 12,75 euros.",
+   "last_verified_at": "2026-08-12",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "barcelona-prestacions-urgencia-social-vivienda",
+   "name_local": "Prestacions econòmiques d'urgència social derivades de la mediació a Barcelona",
+   "name_en": "Emergency social payments for rental housing (Barcelona)",
+   "admin_level": "city",
+   "admin_area": "Barcelona",
+   "funder": "Consorci de l'Habitatge de Barcelona (Generalitat de Catalunya i Ajuntament de Barcelona)",
+   "category": "housing",
+   "benefit_type": "cash_monthly",
+   "amount_min": null,
+   "amount_max": null,
+   "amount_currency": "EUR",
+   "amount_period": "monthly",
+   "amount_note": "Covers part of rent for tenants in difficulty linked to mediation services; monthly rent of the dwelling may not exceed 1.100 €",
+   "is_automatic": false,
+   "application_url": "https://lesmevesajudes.barcelona.cat/es/listado-de-ayudas/prestacions-economiques-durgencia-social-derivades-de-la-mediacio-a-barcelona/",
+   "application_channel": "in_person",
+   "deadline_type": "window",
+   "deadline_note": "Annual convocatoria of the Consorci de l'Habitatge",
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Be attended/derived by the Red de Oficinas de Vivienda de Barcelona mediation service or Àrea de Drets Socials",
+     "url": null
+    },
+    {
+     "step": 2,
+     "detail": "Submit application with rental contract and income evidence",
+     "url": "https://lesmevesajudes.barcelona.cat/es/listado-de-ayudas/prestacions-economiques-durgencia-social-derivades-de-la-mediacio-a-barcelona/"
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "DNI/NIE/pasaporte de todos los miembros mayores de edad",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Contrato de alquiler de la vivienda en Barcelona",
+     "mandatory": true,
+     "note": "rent <= 1.100 €/mes"
+    },
+    {
+     "doc": "Justificación de ingresos de los 3 últimos meses",
+     "mandatory": true,
+     "note": null
+    }
+   ],
+   "eligibility": {
+    "statuses": [],
+    "age_min": null,
+    "age_max": null,
+    "income_annual_max": 24911.64,
+    "income_note": "Ingresos de la unidad de convivencia (media mensual de los últimos 3 meses) <= 2.075,97 €/mes para 1 miembro -> 24.911,64 €/año; 2 miembros 2.675,22 €/mes; 4+ 2.883,30 €/mes; más del 30% de los ingresos netos destinados al alquiler",
+    "requires_children": false,
+    "gender": "any",
+    "nationality": "any_resident",
+    "residency_months_min": null,
+    "housing_tenure": "renting",
+    "student_required": false,
+    "admin_areas": [
+     "Barcelona"
+    ]
+   },
+   "source_url": "https://lesmevesajudes.barcelona.cat/es/listado-de-ayudas/prestacions-economiques-durgencia-social-derivades-de-la-mediacio-a-barcelona/",
+   "source_snippet": "Los ingresos de la unidad de convivencia en los tres últimos meses antes de la presentación de la solicitud no podrán ser superiores a 2.075,97 euros (media mensual, 1 miembro).",
+   "last_verified_at": "2026-08-12",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "renda-valenciana-inclusio",
+   "name_local": "Renta Valenciana de Inclusión (RVI)",
+   "name_en": "Valencian Inclusion Income",
+   "admin_level": "region",
+   "admin_area": "Comunitat Valenciana",
+   "funder": "Generalitat Valenciana (Conselleria de Servicios Sociales, Igualdad y Vivienda)",
+   "category": "income_support",
+   "benefit_type": "cash_monthly",
+   "amount_min": 793.8,
+   "amount_max": 1247.4,
+   "amount_currency": "EUR",
+   "amount_period": "monthly",
+   "amount_note": "New single-modality law (2025): 793,80 €/mes (70% SMI) one person up to 1.247,40 €/mes (110% SMI) for 6+ member units; complements 60 €/mes per minor (máx 180 €) and 30% housing complement",
+   "is_automatic": false,
+   "application_url": "https://www.gva.es",
+   "application_channel": "online",
+   "deadline_type": "rolling",
+   "deadline_note": null,
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Request prior assessment at servicios sociales municipales of the ayuntamiento",
+     "url": null
+    },
+    {
+     "step": 2,
+     "detail": "Apply via Generalitat electronic office (sede.gva.es) or in person; sign the social inclusion itinerary",
+     "url": "https://www.gva.es"
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "DNI/NIE de la unidad de convivencia",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Certificado de empadronamiento colectivo",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Documentación de ingresos y patrimonio",
+     "mandatory": true,
+     "note": null
+    }
+   ],
+   "eligibility": {
+    "statuses": [],
+    "age_min": null,
+    "age_max": null,
+    "income_annual_max": 9525.6,
+    "income_note": "Ingresos de la unidad de convivencia inferiores a la cuantía base correspondiente: 70% del SMI para 1 persona (793,80 €/mes -> 9.525,60 €/año) hasta 110% del SMI para 6+ miembros; employment incentive discounts work income temporarily",
+    "requires_children": false,
+    "gender": "any",
+    "nationality": "any_resident",
+    "residency_months_min": 12,
+    "housing_tenure": null,
+    "student_required": false,
+    "admin_areas": [
+     "Comunidad Valenciana"
+    ]
+   },
+   "source_url": "https://www.gva.es",
+   "source_snippet": "La cuantía base pasa a ser una para todas las personas beneficiarias según las personas que formen la unidad de convivencia: de 793,80 euros (el 70% del SMI) en el caso de un único individuo hasta los 1.247,40 euros (110% del SMI) en el caso de seis o más personas.",
+   "last_verified_at": "2026-08-12",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "risga-galicia",
+   "name_local": "Renta de Inclusión Social de Galicia (RISGA)",
+   "name_en": "Galician Social Inclusion Income",
+   "admin_level": "region",
+   "admin_area": "Galicia",
+   "funder": "Xunta de Galicia (Consellería de Política Social)",
+   "category": "income_support",
+   "benefit_type": "cash_monthly",
+   "amount_min": 469.2,
+   "amount_max": 840,
+   "amount_currency": "EUR",
+   "amount_period": "monthly",
+   "amount_note": "Tramo personal 78,20% IPREM = 469,20 €/mes persona sola; complementos por conviviente (87,60/75/62,40 €) hasta 750 € sin menores y 840 € con menores; optional complementos de inserción (90-210 €) y alquiler",
+   "is_automatic": false,
+   "application_url": "https://politicasocial.xunta.gal/es/areas/inclusion-social/ayudas-y-prestaciones/renta-de-inclusion-social-de-galicia-risga",
+   "application_channel": "online",
+   "deadline_type": "rolling",
+   "deadline_note": null,
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Obtain valoración from the servicios sociales comunitarios of your ayuntamiento",
+     "url": null
+    },
+    {
+     "step": 2,
+     "detail": "Apply via the Xunta electronic office or in person; sign the integration project",
+     "url": "https://politicasocial.xunta.gal/es/areas/inclusion-social/ayudas-y-prestaciones/renta-de-inclusion-social-de-galicia-risga"
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "DNI/NIE",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Certificado de empadronamiento (6 meses previos en Galicia)",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Informe de valoración de servicios sociales",
+     "mandatory": true,
+     "note": null
+    }
+   ],
+   "eligibility": {
+    "statuses": [],
+    "age_min": 25,
+    "age_max": 65,
+    "income_annual_max": 5630.4,
+    "income_note": "Ingresos de la unidad de convivencia inferiores al tramo personal y familiar correspondiente: 469,20 €/mes persona sola (78,20% IPREM) -> 5.630,40 €/año; excepciones de edad para familias con menores u otros colectivos",
+    "requires_children": false,
+    "gender": "any",
+    "nationality": "any_resident",
+    "residency_months_min": 6,
+    "housing_tenure": null,
+    "student_required": false,
+    "admin_areas": [
+     "Galicia"
+    ]
+   },
+   "source_url": "https://politicasocial.xunta.gal/es/areas/inclusion-social/ayudas-y-prestaciones/renta-de-inclusion-social-de-galicia-risga",
+   "source_snippet": "El tramo personal será el equivalente al 78,20% del importe mensual del IPREM (que serían 469,20€ para el año 2026) y es lo que le correspondería a una sola persona (titular).",
+   "last_verified_at": "2026-08-12",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "pci-canarias",
+   "name_local": "Prestación Canaria de Inserción (PCI)",
+   "name_en": "Canary Islands Insertion Benefit",
+   "admin_level": "region",
+   "admin_area": "Canarias",
+   "funder": "Gobierno de Canarias (Consejería de Empleo, Asuntos Sociales e Igualdad)",
+   "category": "income_support",
+   "benefit_type": "cash_monthly",
+   "amount_min": 137.97,
+   "amount_max": 722.09,
+   "amount_currency": "EUR",
+   "amount_period": "monthly",
+   "amount_note": "Cuantía mensual = diferencia entre la cuantía PCI de la unidad de convivencia y sus ingresos; mínimo 137,97 €/mes y máximo 722,09 €/mes según composición",
+   "is_automatic": false,
+   "application_url": "https://www.gobiernodecanarias.org/social/",
+   "application_channel": "online",
+   "deadline_type": "rolling",
+   "deadline_note": null,
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Request assessment at municipal servicios sociales; they issue the social report",
+     "url": null
+    },
+    {
+     "step": 2,
+     "detail": "Apply at the Gobierno de Canarias (sede electrónica or registro) and subscribe the insertion agreement",
+     "url": "https://www.gobiernodecanarias.org/social/"
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "DNI/NIE de la unidad de convivencia",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Certificado de empadronamiento",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Informe social y documentación de ingresos",
+     "mandatory": true,
+     "note": null
+    }
+   ],
+   "eligibility": {
+    "statuses": [],
+    "age_min": null,
+    "age_max": null,
+    "income_annual_max": 8665.08,
+    "income_note": "Household income must be below the PCI amount for its size (cuantía máxima mensual 722,09 € -> 8.665,08 €/año); la cuantía para un solo miembro es inferior",
+    "requires_children": false,
+    "gender": "any",
+    "nationality": "any_resident",
+    "residency_months_min": 6,
+    "housing_tenure": null,
+    "student_required": false,
+    "admin_areas": [
+     "Canarias"
+    ]
+   },
+   "source_url": "https://www.gobiernodecanarias.org/social/",
+   "source_snippet": "La cuantía máxima mensual es 722,09 Euros. La cuantía mínima mensual es de 137,97 euros, cualquiera que sea la deducción que se efectúe por los ingresos.",
+   "last_verified_at": "2026-08-12",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "pfea-andalucia-extremadura",
+   "name_local": "Programa de Fomento del Empleo Agrario (PFEA, ex-PER)",
+   "name_en": "Agrarian Employment Promotion Programme (Andalucía/Extremadura)",
+   "admin_level": "region",
+   "admin_area": "Andalucía y Extremadura",
+   "funder": "SEPE / Junta de Andalucía / Junta de Extremadura",
+   "category": "employment",
+   "benefit_type": "cash_monthly",
+   "amount_min": null,
+   "amount_max": null,
+   "amount_currency": "EUR",
+   "amount_period": "monthly",
+   "amount_note": "Subsidio/protección asistencial para trabajadores eventuales agrarios con jornales acreditados; cuantía 80% IPREM (480 €/mes, 6 mensualidades anuales máximo) y apoyo a contratación agraria",
+   "is_automatic": false,
+   "application_url": "https://www.sepe.es",
+   "application_channel": "in_person",
+   "deadline_type": "window",
+   "deadline_note": "Solicitud en periodos fijados anualmente por SEPE/Juntas",
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Acreditar jornales agrarios realizados en la campaña anterior",
+     "url": null
+    },
+    {
+     "step": 2,
+     "detail": "Solicitar la protección en la oficina de empleo o sede electrónica del SEPE",
+     "url": "https://www.sepe.es"
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "DNI/NIE",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Vida laboral y acreditación de jornales agrarios",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Declaración de rentas de la unidad familiar",
+     "mandatory": true,
+     "note": null
+    }
+   ],
+   "eligibility": {
+    "statuses": [
+     "unemployed"
+    ],
+    "age_min": null,
+    "age_max": null,
+    "income_annual_max": 10656,
+    "income_note": "Rentas propias (o de la unidad familiar si hay cargas) no superiores al 75% del SMI mensual (888 €/mes 2025) -> 10.656 €/año (conversión desde regla mensual)",
+    "requires_children": false,
+    "gender": "any",
+    "nationality": "any_resident",
+    "residency_months_min": null,
+    "housing_tenure": null,
+    "student_required": false,
+    "admin_areas": [
+     "Andalucía",
+     "Extremadura"
+    ]
+   },
+   "source_url": "https://www.sepe.es",
+   "source_snippet": "Programa de Fomento del Empleo Agrario: protección asistencial para trabajadores eventuales agrarios de Andalucía y Extremadura que acrediten jornales.",
+   "last_verified_at": "2026-08-12",
+   "verification_status": "auto_extracted"
+  },
+  {
+   "slug": "pago-unico-capitalizacion-paro",
+   "name_local": "Pago único de la prestación por desempleo (capitalización del paro)",
+   "name_en": "Lump-sum capitalisation of unemployment benefit to start self-employment",
+   "admin_level": "national",
+   "admin_area": null,
+   "funder": "Servicio Público de Empleo Estatal (SEPE)",
+   "category": "employment",
+   "benefit_type": "cash_one_off",
+   "amount_min": null,
+   "amount_max": null,
+   "amount_currency": "EUR",
+   "amount_period": "one_off",
+   "amount_note": "Capitalización en un solo pago del 100% (inversión) y/o 60% (cuotas de autónomos) de la prestación por desempleo pendiente para iniciar actividad por cuenta propia o incorporarse a cooperativas/sociedades laborales",
+   "is_automatic": false,
+   "application_url": "https://www.sepe.es",
+   "application_channel": "online",
+   "deadline_type": "rolling",
+   "deadline_note": null,
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Estar cobrando (o con derecho a) prestación contributiva por desempleo",
+     "url": null
+    },
+    {
+     "step": 2,
+     "detail": "Presentar solicitud en el SEPE antes de iniciar la actividad, con memoria del proyecto",
+     "url": "https://www.sepe.es"
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "Solicitud de pago único SEPE",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Memoria/actividad: alta RETA, estatutos o documentación de la cooperativa",
+     "mandatory": true,
+     "note": null
+    }
+   ],
+   "eligibility": {
+    "statuses": [
+     "unemployed"
+    ],
+    "age_min": null,
+    "age_max": null,
+    "income_annual_max": null,
+    "income_note": "No income test: requiere derecho a prestación contributiva por desempleo pendiente",
+    "requires_children": false,
+    "gender": "any",
+    "nationality": "any_resident",
+    "residency_months_min": null,
+    "housing_tenure": null,
+    "student_required": false,
+    "admin_areas": []
+   },
+   "source_url": "https://www.sepe.es",
+   "source_snippet": "Pago único: percepción en un solo pago del importe de la prestación contributiva que quede por percibir para iniciar una actividad como trabajador autónomo.",
+   "last_verified_at": "2026-08-12",
+   "verification_status": "auto_extracted"
+  },
+  {
+   "slug": "deduccion-ascendiente-dos-descendientes",
+   "name_local": "Deducción por ascendiente con dos descendientes o con discapacidad a cargo (IRPF)",
+   "name_en": "Tax credit for a single ascendant with two descendants or disabled dependants",
+   "admin_level": "national",
+   "admin_area": null,
+   "funder": "Agencia Estatal de Administración Tributaria (AEAT)",
+   "category": "tax",
+   "benefit_type": "tax_credit",
+   "amount_min": 1200,
+   "amount_max": 1200,
+   "amount_currency": "EUR",
+   "amount_period": "annual",
+   "amount_note": "1.200 €/año (100 €/mes de pago fraccionado opcional) para ascendientes no casados (separados, divorciados, viudos o solteros) con dos hijos sin derecho a anualidades por alimentos, o con personas con discapacidad a cargo",
+   "is_automatic": false,
+   "application_url": "https://sede.agenciatributaria.gob.es",
+   "application_channel": "online",
+   "deadline_type": "annual",
+   "deadline_note": "Se aplica en la declaración de la renta o se solicita pago anticipado (modelo 143)",
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Cumplimentar la deducción en Renta WEB (Anexo A.2) o solicitar el abono anticipado con el modelo 143",
+     "url": "https://sede.agenciatributaria.gob.es"
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "Situación familiar acreditable (custodia, no percepción de anualidades por alimentos)",
+     "mandatory": true,
+     "note": null
+    }
+   ],
+   "eligibility": {
+    "statuses": [
+     "parent"
+    ],
+    "age_min": null,
+    "age_max": null,
+    "income_annual_max": null,
+    "income_note": "No income test; incompatible con la deducción por familia numerosa por los mismos descendientes",
+    "requires_children": true,
+    "gender": "any",
+    "nationality": "any_resident",
+    "residency_months_min": null,
+    "housing_tenure": null,
+    "student_required": false,
+    "admin_areas": []
+   },
+   "source_url": "https://sede.agenciatributaria.gob.es",
+   "source_snippet": "Deducción por ascendiente con dos descendientes sin derecho a percibir anualidades por alimentación: 1.200 euros anuales.",
+   "last_verified_at": "2026-08-12",
+   "verification_status": "auto_extracted"
+  },
+  {
+   "slug": "padi-atencion-dental-infantil",
+   "name_local": "Programa de Atención Dental Infantil (PADI)",
+   "name_en": "Child Dental Care Programme",
+   "admin_level": "national",
+   "admin_area": null,
+   "funder": "Ministerio de Sanidad y servicios de salud autonómicos (PADIMAZ en Madrid, etc.)",
+   "category": "health",
+   "benefit_type": "in_kind",
+   "amount_min": null,
+   "amount_max": null,
+   "amount_currency": "EUR",
+   "amount_period": "annual",
+   "amount_note": "Atención bucodental gratuita (revisiones, sellados, empastes, extracciones y, en algunas CCAA, ortodoncia) para niños, generalmente de 6/7 a 14/15 años, en centros concertados de cada comunidad",
+   "is_automatic": true,
+   "application_url": "https://www.sanidad.gob.es",
+   "application_channel": "in_person",
+   "deadline_type": "none",
+   "deadline_note": null,
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "El niño es derivado desde el centro de salud o captado en revisiones escolares; cada CCAA publica sus centros concertados",
+     "url": "https://www.sanidad.gob.es"
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "Tarjeta sanitaria del menor",
+     "mandatory": true,
+     "note": null
+    }
+   ],
+   "eligibility": {
+    "statuses": [],
+    "age_min": 6,
+    "age_max": 15,
+    "income_annual_max": null,
+    "income_note": "No income test: programa universal por edad dentro de la cartera de servicios de salud bucodental",
+    "requires_children": false,
+    "gender": "any",
+    "nationality": "any_resident",
+    "residency_months_min": null,
+    "housing_tenure": null,
+    "student_required": false,
+    "admin_areas": []
+   },
+   "source_url": "https://www.sanidad.gob.es",
+   "source_snippet": "El Programa de Atención Dental Infantil (PADI) presta atención bucodental a la población infantil mediante centros concertados en las comunidades autónomas.",
+   "last_verified_at": "2026-08-12",
+   "verification_status": "auto_extracted"
+  },
+  {
+   "slug": "bonificacion-ibi-solar-madrid",
+   "name_local": "Bonificación del IBI por instalaciones solares (Madrid)",
+   "name_en": "IBI property-tax rebate for solar installations (Madrid)",
+   "admin_level": "city",
+   "admin_area": "Madrid",
+   "funder": "Ayuntamiento de Madrid",
+   "category": "tax",
+   "benefit_type": "tax_credit",
+   "amount_min": null,
+   "amount_max": null,
+   "amount_currency": "EUR",
+   "amount_period": "annual",
+   "amount_note": "Bonificación de hasta el 50% de la cuota del IBI (y del ICIO para la obra) durante varios ejercicios para inmuebles que instalen sistemas de aprovechamiento térmico o eléctrico de energía solar, según ordenanza fiscal",
+   "is_automatic": false,
+   "application_url": "https://www.madrid.es",
+   "application_channel": "online",
+   "deadline_type": "rolling",
+   "deadline_note": "Solicitud ante la Oficina Tributaria dentro de plazo tras finalizar la instalación",
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Instalar el sistema solar con licencia/declaración responsable y certificado final",
+     "url": null
+    },
+    {
+     "step": 2,
+     "detail": "Solicitar la bonificación en la sede electrónica del Ayuntamiento de Madrid",
+     "url": "https://www.madrid.es"
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "Justificante de pago de la instalación y certificado final de obra",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Recibo del IBI del inmueble",
+     "mandatory": true,
+     "note": null
+    }
+   ],
+   "eligibility": {
+    "statuses": [],
+    "age_min": null,
+    "age_max": null,
+    "income_annual_max": null,
+    "income_note": "No income test: bonificación ambiental por instalación; porcentajes y años fijados por la ordenanza fiscal municipal",
+    "requires_children": false,
+    "gender": "any",
+    "nationality": "any_resident",
+    "residency_months_min": null,
+    "housing_tenure": "owner",
+    "student_required": false,
+    "admin_areas": [
+     "Madrid"
+    ]
+   },
+   "source_url": "https://www.madrid.es",
+   "source_snippet": "Bonificación en el IBI para inmuebles que incorporen sistemas para el aprovechamiento térmico o eléctrico de la energía solar.",
+   "last_verified_at": "2026-08-12",
+   "verification_status": "auto_extracted"
+  },
+  {
+   "slug": "subvenciones-rehabilitacion-edificios-rd853",
+   "name_local": "Ayudas a la rehabilitación energética de edificios (RD 853/2021, Plan de Recuperación)",
+   "name_en": "Energy-renovation grants for residential buildings (Next Generation funds)",
+   "admin_level": "national",
+   "admin_area": null,
+   "funder": "Ministerio de Vivienda y Agenda Urbana (MIVAU) / comunidades autónomas",
+   "category": "energy",
+   "benefit_type": "cash_one_off",
+   "amount_min": null,
+   "amount_max": null,
+   "amount_currency": "EUR",
+   "amount_period": "one_off",
+   "amount_note": "Subvenciones del 40% al 80% del coste para actuaciones en edificios residenciales (comunidades de propietarios) que reduzcan >=30% el consumo de energía primaria no renovable; cuantías por vivienda/local según ahorro conseguido",
+   "is_automatic": false,
+   "application_url": "https://www.mivau.gob.es",
+   "application_channel": "online",
+   "deadline_type": "window",
+   "deadline_note": "Convocatorias autonómicas hasta agotar fondos Next Generation",
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "La comunidad de propietarios acuerda la actuación y encarga memoria técnica/CEE previo",
+     "url": null
+    },
+    {
+     "step": 2,
+     "detail": "Solicitar la ayuda en la convocatoria de la comunidad autónoma correspondiente",
+     "url": "https://www.mivau.gob.es"
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "Acta de la junta de propietarios",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Certificado de eficiencia energética previo y posterior",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Memoria técnica y presupuestos",
+     "mandatory": true,
+     "note": null
+    }
+   ],
+   "eligibility": {
+    "statuses": [],
+    "age_min": null,
+    "age_max": null,
+    "income_annual_max": 25200,
+    "income_note": "Para ayudas a propietarios individuales/vivienda unifamiliar: ingresos familiares <= 3 x IPREM = 25.200 €/año; las actuaciones de edificio completos vía comunidad de propietarios no exigen test individual de renta",
+    "requires_children": false,
+    "gender": "any",
+    "nationality": "any_resident",
+    "residency_months_min": null,
+    "housing_tenure": "owner",
+    "student_required": false,
+    "admin_areas": []
+   },
+   "source_url": "https://www.mivau.gob.es",
+   "source_snippet": "Programa de ayudas a actuaciones de rehabilitación a nivel de edificio financiado con fondos Next Generation (RD 853/2021).",
+   "last_verified_at": "2026-08-12",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "ayudas-alquiler-mayores-65",
+   "name_local": "Ayudas al alquiler para personas mayores de 65 años (Plan Estatal de Vivienda)",
+   "name_en": "Rental aid for over-65s (State Housing Plan)",
+   "admin_level": "national",
+   "admin_area": null,
+   "funder": "Ministerio de Vivienda y Agenda Urbana (MIVAU) / comunidades autónomas",
+   "category": "housing",
+   "benefit_type": "cash_monthly",
+   "amount_min": null,
+   "amount_max": null,
+   "amount_currency": "EUR",
+   "amount_period": "monthly",
+   "amount_note": "Subvención de parte de la renta de alquiler (o cesión de uso) de la vivienda habitual para personas de 65 o más años con ingresos limitados; convocada por las CCAA con cargo al Plan Estatal de Acceso a la Vivienda",
+   "is_automatic": false,
+   "application_url": "https://www.mivau.gob.es",
+   "application_channel": "in_person",
+   "deadline_type": "window",
+   "deadline_note": "Convocatoria autonómica anual",
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Solicitar en la consejería/ente autonómico de vivienda con contrato y documentación de ingresos",
+     "url": "https://www.mivau.gob.es"
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "Contrato de alquiler o cesión de uso de la vivienda habitual",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Documentación acreditativa de ingresos familiares",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Certificado de empadronamiento",
+     "mandatory": true,
+     "note": null
+    }
+   ],
+   "eligibility": {
+    "statuses": [],
+    "age_min": 65,
+    "age_max": null,
+    "income_annual_max": 25200,
+    "income_note": "Regla general del Plan Estatal: ingresos de la unidad familiar <= 3 x IPREM = 25.200 €/año (múltiplos superiores para familia numerosa/discapacidad); la renta de alquiler debe superar el 30% de los ingresos",
+    "requires_children": false,
+    "gender": "any",
+    "nationality": "any_resident",
+    "residency_months_min": null,
+    "housing_tenure": "renting",
+    "student_required": false,
+    "admin_areas": []
+   },
+   "source_url": "https://www.mivau.gob.es",
+   "source_snippet": "Programa de ayudas al arrendamiento o cesión de uso de vivienda para personas mayores de 65 años del Plan Estatal de Acceso a la Vivienda.",
+   "last_verified_at": "2026-08-12",
+   "verification_status": "auto_extracted"
+  },
+  {
+   "slug": "bono-cultural-joven",
+   "name_local": "Bono Cultural Joven",
+   "name_en": "Youth Culture Voucher",
+   "admin_level": "national",
+   "admin_area": null,
+   "funder": "Ministerio de Cultura",
+   "category": "education",
+   "benefit_type": "in_kind",
+   "amount_min": 400,
+   "amount_max": 400,
+   "amount_currency": "EUR",
+   "amount_period": "one_off",
+   "amount_note": "400 € en tarjeta prepago virtual para productos y actividades culturales (2026 añade modalidad 'creación': instrumentos, material artístico y formación cultural); válido 12 meses",
+   "is_automatic": false,
+   "application_url": "https://bonoculturajoven.gob.es",
+   "application_channel": "online",
+   "deadline_type": "window",
+   "deadline_note": "Convocatoria anual: en 2026 del 22 de junio al 31 de octubre",
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Darse de alta en bonoculturajoven.gob.es con Cl@ve o certificado digital",
+     "url": "https://bonoculturajoven.gob.es"
+    },
+    {
+     "step": 2,
+     "detail": "Recibir la tarjeta prepago virtual y gastarla en entidades culturales adheridas",
+     "url": null
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "DNI/NIE y residencia legal en España",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Cl@ve Permanente, Cl@ve PIN o certificado digital",
+     "mandatory": true,
+     "note": null
+    }
+   ],
+   "eligibility": {
+    "statuses": [],
+    "age_min": 18,
+    "age_max": 18,
+    "income_annual_max": null,
+    "income_note": "Sin requisito de renta: para quienes cumplen 18 años en el año de la convocatoria",
+    "requires_children": false,
+    "gender": "any",
+    "nationality": "any_resident",
+    "residency_months_min": null,
+    "housing_tenure": null,
+    "student_required": false,
+    "admin_areas": []
+   },
+   "source_url": "https://www.lamoncloa.gob.es/serviciosdeprensa/notasprensa/cultura/paginas/2023/010223-solicitar-bono-cultural-joven.aspx",
+   "source_snippet": "Los jóvenes que cumplan 18 años en 2026, es decir, que hayan nacido en el año 2008, que sean de nacionalidad española, posean residencia legal en España... pueden solicitarlo.",
+   "last_verified_at": "2026-08-12",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "bonificaciones-contratacion-indefinida-sepe",
+   "name_local": "Bonificaciones de Seguridad Social a la contratación indefinida (jóvenes, desempleados de larga duración, discapacidad)",
+   "name_en": "Social Security rebates for permanent hiring of target groups",
+   "admin_level": "national",
+   "admin_area": null,
+   "funder": "Tesorería General de la Seguridad Social (TGSS)",
+   "category": "employment",
+   "benefit_type": "discount",
+   "amount_min": null,
+   "amount_max": null,
+   "amount_currency": "EUR",
+   "amount_period": "monthly",
+   "amount_note": "Reducciones/bonificaciones de cuotas empresariales (p.ej. jóvenes cualificados INJUVE 300 €/mes; desempleados larga duración >=45 años; personas con discapacidad 150-255 €/mes) según Ley 43/2006 y normativa vigente",
+   "is_automatic": false,
+   "application_url": "https://www.sepe.es",
+   "application_channel": "online",
+   "deadline_type": "rolling",
+   "deadline_note": null,
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "El empresario comunica el contrato y solicita la bonificación en el sistema RED/SEPE",
+     "url": "https://www.sepe.es"
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "Contrato de trabajo y acreditación del colectivo (demandante de empleo, certificado de discapacidad...)",
+     "mandatory": true,
+     "note": null
+    }
+   ],
+   "eligibility": {
+    "statuses": [
+     "unemployed",
+     "jobseeker"
+    ],
+    "age_min": null,
+    "age_max": null,
+    "income_annual_max": null,
+    "income_note": "No income test for the worker: bonifican al empleador por contratar a colectivos con dificultad de inserción",
+    "requires_children": false,
+    "gender": "any",
+    "nationality": "any_resident",
+    "residency_months_min": null,
+    "housing_tenure": null,
+    "student_required": false,
+    "admin_areas": []
+   },
+   "source_url": "https://www.sepe.es",
+   "source_snippet": "Bonificaciones a la contratación: reducciones de las cuotas empresariales a la Seguridad Social por la contratación indefinida de determinados colectivos.",
+   "last_verified_at": "2026-08-12",
+   "verification_status": "auto_extracted"
+  },
+  {
+   "slug": "exencion-tasas-universidad-familia-numerosa",
+   "name_local": "Exención/bonificación de precios públicos universitarios por familia numerosa",
+   "name_en": "University fee exemption/reduction for large families",
+   "admin_level": "national",
+   "admin_area": null,
+   "funder": "Universidades públicas / comunidades autónomas (Ley 40/2003)",
+   "category": "education",
+   "benefit_type": "discount",
+   "amount_min": null,
+   "amount_max": null,
+   "amount_currency": "EUR",
+   "amount_period": "annual",
+   "amount_note": "Familia numerosa categoría general: 50% de bonificación en precios públicos por servicios académicos universitarios; categoría especial: exención (100%)",
+   "is_automatic": true,
+   "application_url": "https://www.educacionfpydeportes.gob.es",
+   "application_channel": "automatic",
+   "deadline_type": "none",
+   "deadline_note": null,
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Presentar el título de familia numerosa vigente en la secretaría de la universidad al formalizar la matrícula",
+     "url": null
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "Título oficial de familia numerosa en vigor",
+     "mandatory": true,
+     "note": null
+    }
+   ],
+   "eligibility": {
+    "statuses": [
+     "student"
+    ],
+    "age_min": null,
+    "age_max": null,
+    "income_annual_max": null,
+    "income_note": "No income test: depende solo de la categoría del título de familia numerosa",
+    "requires_children": false,
+    "gender": "any",
+    "nationality": "any_resident",
+    "residency_months_min": null,
+    "housing_tenure": null,
+    "student_required": true,
+    "admin_areas": []
+   },
+   "source_url": "https://www.educacionfpydeportes.gob.es",
+   "source_snippet": "Los miembros de familia numerosa de categoría especial quedan exentos del pago de precios públicos por servicios universitarios; la categoría general tiene bonificación del 50 por ciento.",
+   "last_verified_at": "2026-08-12",
+   "verification_status": "auto_extracted"
+  },
+  {
+   "slug": "pension-viudedad",
+   "name_local": "Pensión de viudedad (Seguridad Social)",
+   "name_en": "Contributory widow(er)'s pension",
+   "admin_level": "national",
+   "admin_area": null,
+   "funder": "Instituto Nacional de la Seguridad Social (INSS)",
+   "category": "income_support",
+   "benefit_type": "cash_monthly",
+   "amount_min": null,
+   "amount_max": null,
+   "amount_currency": "EUR",
+   "amount_period": "monthly",
+   "amount_note": "Generalmente 52% de la base reguladora (70% si hay cargas familiares e ingresos limitados, 60% mayores de 65 sin dependientes); mejoras 2024-2025 para mayores de 65 con hijos a cargo o cargas familiares",
+   "is_automatic": false,
+   "application_url": "https://www.seg-social.es",
+   "application_channel": "online",
+   "deadline_type": "rolling",
+   "deadline_note": null,
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Solicitar en la sede electrónica de la Seguridad Social o cita INSS tras el fallecimiento",
+     "url": "https://www.seg-social.es"
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "Certificado de defunción y de matrimonio/pareja de hecho",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "DNI y documentación de cargas familiares si se solicita el 70%",
+     "mandatory": false,
+     "note": null
+    }
+   ],
+   "eligibility": {
+    "statuses": [
+     "retired",
+     "unemployed",
+     "employee",
+     "self_employed"
+    ],
+    "age_min": null,
+    "age_max": null,
+    "income_annual_max": null,
+    "income_note": "Sin test de renta general; para el 70% se exigen cargas familiares e ingresos anuales por debajo del límite fijado en cada LPGE",
+    "requires_children": false,
+    "gender": "any",
+    "nationality": "any_resident",
+    "residency_months_min": null,
+    "housing_tenure": null,
+    "student_required": false,
+    "admin_areas": []
+   },
+   "source_url": "https://www.seg-social.es",
+   "source_snippet": "La pensión de viudedad tiene por objeto cubrir la situación de necesidad económica derivada del fallecimiento de la persona generadora.",
+   "last_verified_at": "2026-08-12",
+   "verification_status": "auto_extracted"
+  },
+  {
+   "slug": "pension-orfandad",
+   "name_local": "Pensión de orfandad (Seguridad Social)",
+   "name_en": "Contributory orphan's pension",
+   "admin_level": "national",
+   "admin_area": null,
+   "funder": "Instituto Nacional de la Seguridad Social (INSS)",
+   "category": "income_support",
+   "benefit_type": "cash_monthly",
+   "amount_min": null,
+   "amount_max": null,
+   "amount_currency": "EUR",
+   "amount_period": "monthly",
+   "amount_note": "20% de la base reguladora por cada huérfano (tope conjunto 100%); menores de 21 años, o 25 si no trabajan o con ingresos inferiores al 75% del SMI; sin límite de edad con discapacidad",
+   "is_automatic": true,
+   "application_url": "https://www.seg-social.es",
+   "application_channel": "online",
+   "deadline_type": "rolling",
+   "deadline_note": null,
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Solicitud en la sede electrónica de la Seguridad Social o INSS tras el fallecimiento del causante",
+     "url": "https://www.seg-social.es"
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "Certificado de defunción y libro de familia",
+     "mandatory": true,
+     "note": null
+    }
+   ],
+   "eligibility": {
+    "statuses": [],
+    "age_min": null,
+    "age_max": 25,
+    "income_annual_max": null,
+    "income_note": "Para beneficiarios de 21 a 25 años: no realizar trabajo remunerado o percibir ingresos inferiores al 75% del SMI (888 €/mes 2025 -> 10.656 €/año)",
+    "requires_children": false,
+    "gender": "any",
+    "nationality": "any_resident",
+    "residency_months_min": null,
+    "housing_tenure": null,
+    "student_required": false,
+    "admin_areas": []
+   },
+   "source_url": "https://www.seg-social.es",
+   "source_snippet": "La pensión de orfandad tiene por objeto cubrir la situación de necesidad económica de los hijos del fallecido.",
+   "last_verified_at": "2026-08-12",
+   "verification_status": "auto_extracted"
+  },
+  {
+   "slug": "cheque-guarderia-madrid",
+   "name_local": "Becas cheque guardería (Comunidad de Madrid)",
+   "name_en": "'Nursery cheque' grant for 0-3 schooling in private centres (Madrid)",
+   "admin_level": "region",
+   "admin_area": "Comunidad de Madrid",
+   "funder": "Comunidad de Madrid (Consejería de Educación / Familia, Juventud y Política Social)",
+   "category": "education",
+   "benefit_type": "cash_monthly",
+   "amount_min": 177,
+   "amount_max": 283,
+   "amount_currency": "EUR",
+   "amount_period": "monthly",
+   "amount_note": "177 € o 283-284 €/mes durante 11 mensualidades (septiembre-julio) para menores de 3 años escolarizados en primer ciclo de Educación Infantil en centros privados autorizados",
+   "is_automatic": false,
+   "application_url": "https://www.comunidad.madrid",
+   "application_channel": "online",
+   "deadline_type": "window",
+   "deadline_note": "Convocatoria anual: en 2025, del 4 al 24 de junio",
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Matricular o reservar plaza del menor en un centro privado autorizado de 0-3 años",
+     "url": null
+    },
+    {
+     "step": 2,
+     "detail": "Presentar solicitud telemática en la sede electrónica de la Comunidad de Madrid dentro de plazo",
+     "url": "https://www.comunidad.madrid"
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "Certificado de nacimiento o Libro de Familia",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Documentación de renta de la unidad familiar",
+     "mandatory": true,
+     "note": null
+    }
+   ],
+   "eligibility": {
+    "statuses": [],
+    "age_min": null,
+    "age_max": null,
+    "income_annual_max": 35913,
+    "income_note": "Límite de renta per cápita familiar de 35.913 €/año (curso 2025-26); la cuantía (177/283 €/mes) depende de la renta",
+    "requires_children": true,
+    "gender": "any",
+    "nationality": "any_resident",
+    "residency_months_min": null,
+    "housing_tenure": null,
+    "student_required": false,
+    "admin_areas": [
+     "Comunidad de Madrid"
+    ]
+   },
+   "source_url": "https://www.comunidad.madrid",
+   "source_snippet": "Becas de ayuda a la escolarización para alumnos matriculados en el 1er ciclo de infantil de los centros privados autorizados. Límite de renta per cápita familiar de 35.913 euros.",
+   "last_verified_at": "2026-08-12",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "becas-universitarias-canarias",
+   "name_local": "Becas de estudios universitarios del Gobierno de Canarias",
+   "name_en": "Canary Islands Government university grants (MEC-complementary)",
+   "admin_level": "region",
+   "admin_area": "Canarias",
+   "funder": "Gobierno de Canarias (Consejería de Universidades)",
+   "category": "education",
+   "benefit_type": "cash_one_off",
+   "amount_min": null,
+   "amount_max": null,
+   "amount_currency": "EUR",
+   "amount_period": "one_off",
+   "amount_note": "Becas autonómicas para residentes en Canarias que cursan grado/máster en universidades públicas y no obtienen todas las modalidades de la beca general del Ministerio; cuantías según convocatoria anual",
+   "is_automatic": false,
+   "application_url": "https://www.gobiernodecanarias.org/educacion/",
+   "application_channel": "online",
+   "deadline_type": "window",
+   "deadline_note": "Convocatoria anual (habitualmente en el primer trimestre del curso)",
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Haber solicitado la beca general del Ministerio de Educación",
+     "url": null
+    },
+    {
+     "step": 2,
+     "detail": "Presentar solicitud en la sede electrónica del Gobierno de Canarias dentro de plazo",
+     "url": "https://www.gobiernodecanarias.org/educacion/"
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "DNI/NIE y empadronamiento en Canarias",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Matrícula universitaria y documentación académica/económica",
+     "mandatory": true,
+     "note": null
+    }
+   ],
+   "eligibility": {
+    "statuses": [
+     "student"
+    ],
+    "age_min": null,
+    "age_max": null,
+    "income_annual_max": 42836,
+    "income_note": "Umbrales del RD 163/2025: no superar el umbral 3 de renta familiar (familia de 4 miembros: 42.836 €/año; 1 miembro: 15.567 €)",
+    "requires_children": false,
+    "gender": "any",
+    "nationality": "any_resident",
+    "residency_months_min": null,
+    "housing_tenure": null,
+    "student_required": true,
+    "admin_areas": [
+     "Canarias"
+    ]
+   },
+   "source_url": "https://www.gobiernodecanarias.org/educacion/",
+   "source_snippet": "No se podrán superar los umbrales de renta familiar en relación con lo fijado en el real decreto 163/2025, de 4 de marzo.",
+   "last_verified_at": "2026-08-12",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "deduccion-eficiencia-energetica-vivienda-irpf",
+   "name_local": "Deducciones IRPF por obras de mejora de la eficiencia energética de viviendas",
+   "name_en": "IRPF credits for home energy-efficiency works (20/40/60%)",
+   "admin_level": "national",
+   "admin_area": null,
+   "funder": "Agencia Estatal de Administración Tributaria (AEAT)",
+   "category": "tax",
+   "benefit_type": "tax_credit",
+   "amount_min": null,
+   "amount_max": null,
+   "amount_currency": "EUR",
+   "amount_period": "annual",
+   "amount_note": "20% (base máx. 5.000 €) por reducir >=7% la demanda; 40% (base máx. 7.500 €) por reducir >=30% el consumo o clase A/B; 60% (base máx. 5.000 €/año, 15.000 € acumulado) en edificios residenciales; obras hasta 31/12/2026 (edificios 2027), RD-L 16/2025",
+   "is_automatic": false,
+   "application_url": "https://sede.agenciatributaria.gob.es",
+   "application_channel": "online",
+   "deadline_type": "annual",
+   "deadline_note": "Se aplica en la declaración de la renta del ejercicio en que se expide el certificado energético posterior",
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Obtener certificado de eficiencia energética antes y después de las obras y pagar por medios bancarios",
+     "url": null
+    },
+    {
+     "step": 2,
+     "detail": "Cumplimentar en Renta WEB el apartado 'Por obras de mejora de la eficiencia energética de las viviendas'",
+     "url": "https://sede.agenciatributaria.gob.es"
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "Certificados de eficiencia energética previo y posterior",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Facturas y justificantes de pago bancario",
+     "mandatory": true,
+     "note": null
+    }
+   ],
+   "eligibility": {
+    "statuses": [],
+    "age_min": null,
+    "age_max": null,
+    "income_annual_max": null,
+    "income_note": "No income test; no aplicable en País Vasco y Navarra (régimen foral propio)",
+    "requires_children": false,
+    "gender": "any",
+    "nationality": "any_resident",
+    "residency_months_min": null,
+    "housing_tenure": "owner",
+    "student_required": false,
+    "admin_areas": []
+   },
+   "source_url": "https://sede.agenciatributaria.gob.es",
+   "source_snippet": "Deducción del 20/40/60 por ciento de las cantidades satisfechas por obras que reduzcan la demanda o el consumo de energía primaria no renovable de la vivienda, prorrogada por el Real Decreto-ley 16/2025.",
+   "last_verified_at": "2026-08-12",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "bono-alquiler-joven-alicante",
+   "name_local": "Bono alquiler joven del Ayuntamiento de Alicante",
+   "name_en": "Alicante city youth rent voucher",
+   "admin_level": "city",
+   "admin_area": "Alicante",
+   "funder": "Ayuntamiento de Alicante (Concejalía de Juventud)",
+   "category": "housing",
+   "benefit_type": "cash_monthly",
+   "amount_min": 400,
+   "amount_max": 400,
+   "amount_currency": "EUR",
+   "amount_period": "monthly",
+   "amount_note": "Hasta 400 €/mes durante un máximo de 12 mensualidades en 2026 (hasta 4.800 €/año) para jóvenes de 18 a 35 años empadronados en Alicante con vivienda habitual alquilada",
+   "is_automatic": false,
+   "application_url": "https://www.alicante.es",
+   "application_channel": "online",
+   "deadline_type": "window",
+   "deadline_note": "30 días naturales desde la publicación de la convocatoria en el BOP; hasta agotar crédito",
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Presentar solicitud en la sede electrónica municipal (catálogo de servicios de Juventud)",
+     "url": "https://www.alicante.es"
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "Contrato de arrendamiento de vivienda de duración mínima un año (<= 1.000 €/mes)",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Empadronamiento en Alicante y documentación de renta 2025",
+     "mandatory": true,
+     "note": null
+    }
+   ],
+   "eligibility": {
+    "statuses": [],
+    "age_min": 18,
+    "age_max": 35,
+    "income_annual_max": 29000,
+    "income_note": "La unidad familiar no podrá superar una renta anual (2025) de 29.000 €; sin subarrendamientos ni alquiler de habitaciones",
+    "requires_children": false,
+    "gender": "any",
+    "nationality": "any_resident",
+    "residency_months_min": null,
+    "housing_tenure": "renting",
+    "student_required": false,
+    "admin_areas": [
+     "Alicante"
+    ]
+   },
+   "source_url": "https://www.alicante.es",
+   "source_snippet": "La cuantía de las ayudas podrá alcanzar los 400 euros mensuales con un máximo de 12 mensualidades en 2026, lo que permite recibir hasta 4.800 euros por beneficiario.",
+   "last_verified_at": "2026-08-12",
+   "verification_status": "verified"
+  }
+ ]
+}
