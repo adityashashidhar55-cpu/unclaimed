@@ -146,6 +146,87 @@ export function isCapitalCeiling(p) {
   return /\b(loans?|microcredit|micro-credit|credit facilit|term loan|working capital|mortgage guarantee|repayable advance)\b/i.test(text);
 }
 
+
+/* ------------------------------------------------------------------ */
+/* Who is actually paid                                                */
+/* ------------------------------------------------------------------ */
+
+/**
+ * A handful of records are subsidies paid to an EMPLOYER or a company for
+ * hiring or investing — "Employer Hiring Aid for Apprentices" is money for the
+ * firm, not for the employee reading this site. Showing them to an individual
+ * is not a ranking nuisance, it is a wrong answer.
+ */
+const EMPLOYER_AIMED =
+  /\b(employer|employers|hiring aid|recruitment (aid|subsidy|bonus)|aid for (hiring|recruiting)|apprentice.{0,20}(employer|hiring)|arbeitgeber|aide (à l'|a l')embauche|prime à l'embauche)\b/i;
+
+export function isEmployerAid(p) {
+  return EMPLOYER_AIMED.test(`${p.name_en} ${p.name_local}`);
+}
+
+/**
+ * The dataset carries a numeric `income_annual_max` on only ~17% of records,
+ * yet a further ~19% say in their own words that they are means-tested. On
+ * those, the income rule cannot fire at all — which is why a person on
+ * EUR 60,000 was being shown low-income schemes as "eligible". We cannot
+ * invent the threshold, but we can stop pretending the test passed.
+ */
+const MEANS_TESTED =
+  /\b(means-test|means test|income-test|income test|subject to (income|resource)|sous condition de ressources|conditions de ressources|selon les ressources|einkommensabhängig|bedürftigkeitsprüfung|en función de la renta|prova dei mezzi|income (limit|threshold|ceiling|cap)|low-income|modest income|income-related|inkomensafhankelijk)\b/i;
+
+export function isUnpricedMeansTest(p) {
+  if (p.eligibility?.income_annual_max != null) return false;
+  // `income_test` is set by researched records (see docs/status.md). It beats
+  // the keyword guess in both directions: 'none' means a human confirmed on the
+  // official page that there is no income test at all, so the programme must
+  // stop being caveated and go back to being a straight match.
+  const declared = p.eligibility?.income_test;
+  if (declared === 'none') return false;
+  if (declared === 'unpublished') return true;
+  return MEANS_TESTED.test(
+    `${p.eligibility?.income_note ?? ''} ${p.source_snippet ?? ''} ${p.amount_note ?? ''}`,
+  );
+}
+
+
+/* ------------------------------------------------------------------ */
+/* Audience                                                            */
+/* ------------------------------------------------------------------ */
+
+/**
+ * Who a programme is actually for, derived ONLY from the structured
+ * eligibility fields — never from guessing at the prose. These drive the
+ * /for/<audience>/ landing pages, which is what an ad click should land on:
+ * "23 things a student in France can claim" converts, "2,216 programmes"
+ * does not.
+ */
+export const AUDIENCES = [
+  { id: 'students', blurbKey: 'audBlurbStudents', i18n: 'audStudents', label: 'Students & under-30s', blurb: 'Housing aid, transport passes, study grants, first-job and mobility help.' },
+  { id: 'parents', blurbKey: 'audBlurbParents', i18n: 'audParents', label: 'Parents at home', blurb: 'Family allowances, childcare costs, school and back-to-school help, energy support.' },
+  { id: 'freelancers', blurbKey: 'audBlurbFreelancers', i18n: 'audFreelancers', label: 'Freelancers & self-employed', blurb: 'Training credit, start-up aid, contribution relief and health cover.' },
+  { id: 'renters', blurbKey: 'audBlurbRenters', i18n: 'audRenters', label: 'Renters', blurb: 'Rent support, deposit guarantees, moving costs and social utility tariffs.' },
+];
+
+export function audienceTags(p) {
+  const e = p.eligibility || {};
+  const st = e.statuses || [];
+  const tags = [];
+
+  if (e.student_required || st.includes('student') || (e.age_max != null && e.age_max <= 30)) {
+    tags.push('students');
+  }
+  if (e.requires_children || st.includes('parent') || p.category === 'family') {
+    tags.push('parents');
+  }
+  if (st.includes('self_employed') || p.category === 'business') {
+    tags.push('freelancers');
+  }
+  if (e.housing_tenure === 'renting' || p.category === 'housing') {
+    tags.push('renters');
+  }
+  return tags;
+}
+
 /* ------------------------------------------------------------------ */
 /* Unmodelled qualifying circumstances                                 */
 /* ------------------------------------------------------------------ */
@@ -526,20 +607,23 @@ export function match(profile, countryData, manifestEntry) {
       circumstances: circumstanceTags(p),
     };
 
-    // A gate we cannot evaluate from the answers given. Never counted as a
-    // match, never counted in the total — surfaced as "only if this is you".
+    // Gates we cannot evaluate from the answers given. Never counted as a
+    // match, never counted in the total — surfaced as a caveat instead.
     const unmet = m.circumstances.filter((c) => !claimed.has(c));
+    const caveats = unmet.map((id) => CIRCUMSTANCES.find((c) => c.id === id)?.short || id);
+    if (isEmployerAid(p)) caveats.push('paid to an employer, not to you');
+    if (isUnpricedMeansTest(p)) {
+      caveats.push("an income test whose published threshold we don't hold");
+    }
     if (failed.length > 0) {
       notEligible.push(m);
     } else if (tapering.length > 0) {
       m.taper_note = tapering[0].sentence;
       m.condition_ids = unmet;
       tapered.push(m);
-    } else if (unmet.length > 0) {
+    } else if (caveats.length > 0) {
       m.condition_ids = unmet;
-      m.condition_label = unmet
-        .map((id) => CIRCUMSTANCES.find((c) => c.id === id)?.short || id)
-        .join(' or ');
+      m.condition_label = caveats.join('; ');
       conditional.push(m);
     } else if (unknown.length > 0) {
       m.blocking_question = unknown[0].question;
