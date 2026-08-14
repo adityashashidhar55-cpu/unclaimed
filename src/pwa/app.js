@@ -32,6 +32,19 @@ const esc = (s) =>
   String(s ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
 const nf = (n) => Number(n).toLocaleString();
 
+/* Matcher attribute names, in the words the question used. */
+const ATTR_LABEL = {
+  nationality: 'your residency status',
+  age: 'your age',
+  income: 'your household income',
+  income_annual_max: 'your household income',
+  admin_area: 'your region',
+  household: 'who lives with you',
+  housing_tenure: 'your housing',
+  status: 'your work status',
+  residency_months: 'how long you have lived there',
+};
+
 const STORE = 'unclaimed.profile.v1';
 
 /* Synchronous mirror so render stays sync; the durable copy goes through the
@@ -291,6 +304,16 @@ async function resultsView() {
 
      If the request fails we fall through to the locked panel rather than to
      the local list — an offline client is not an entitled one. */
+  /* Nothing qualifies, but things are pending: that is a question to ask, not
+     a zero to report. `blockers` names what is actually holding them up, taken
+     from the matcher's own verdicts rather than guessed. */
+  const pending = r.eligible.length === 0 ? r.needs_one_more_answer.length : 0;
+  const blockers = pending
+    ? [...new Set(r.needs_one_more_answer.map((m) => m.blocking_attribute).filter(Boolean))]
+        .map((a) => ATTR_LABEL[a] ?? a)
+        .slice(0, 2)
+    : [];
+
   const gate = await fetchMatch({ ...p, country_code: cc }).catch(() => ({ ok: false }));
 
   const serverRow = (m) => {
@@ -318,12 +341,25 @@ async function resultsView() {
   };
 
   return shell(
-    `<section class="total">
+    `${pending
+      ? /* A confident zero is the worst thing this screen can say. When every
+           programme is merely waiting on a question the user skipped, £0 is
+           not the answer — it is the absence of one, and someone who reads it
+           as the answer closes the tab and keeps not claiming. */
+        `<section class="total total--pending">
+      <p class="eyebrow">Not enough to answer yet</p>
+      <div class="total__n">${pending} waiting</div>
+      <p class="small">${pending} programme${pending === 1 ? '' : 's'} could apply to you — ${blockers.length
+        ? `they depend on ${blockers.join(' and ')}, which you skipped.`
+        : 'they depend on a question you skipped.'}</p>
+      <button class="btn btn-block btn-primary" data-action="recheck">Answer ${blockers.length === 1 ? 'it' : 'them'} now</button>
+    </section>`
+      : `<section class="total">
       <p class="eyebrow">You could be owed, per year</p>
       <div class="total__n">${sym}${nf(r.total_min)}–${sym}${nf(r.total_max)}</div>
       <p class="small">across ${r.eligible.length} programmes${r.unpriced_count ? `, plus ${r.unpriced_count} with no published amount` : ''}.</p>
       ${cal.counts.closing ? `<p class="warn">${cal.counts.closing} closing within two weeks.</p>` : ''}
-    </section>
+    </section>`}
 
     ${gate.entitled
       ? `<section>
@@ -538,6 +574,10 @@ function g_back() {
 
 initShell();
 render('home');
+  }
+  if (action.dataset.action === 'recheck') {
+    render('check');
+    return;
   }
   if (action.dataset.action === 'signin') {
     location.href = `${BASE}/account/`;

@@ -197,3 +197,8 @@ p { margin: 0 0 .8rem; color: var(--ink-2); }
   .locked__row:nth-child(4) { animation-delay: .54s; }
   @keyframes lockedPulse { 0%, 100% { opacity: .18; } 50% { opacity: .5; } }
 }
+
+/* The pending state: a question outstanding, not a zero.
+   Warm rather than red — nothing has gone wrong, we just cannot answer yet. */
+.total--pending .total__n { font-size: clamp(1.6rem, 5vw, 2.4rem); }
+.total--pending .btn { margin-top: 1.1rem; }
