@@ -1,38 +1,67 @@
 /**
  * UNCLAIMED — jurisdiction policy.
  *
- * This module is the reason the product can ship. Monetisation and automation
- * are NOT globally uniform: several European legislatures have specifically
- * decided that helping someone obtain benefits must not be sold to them, and
- * that submitting on their behalf is a reserved activity.
+ * The product is sold in every country in the dataset, both halves of it.
+ * What varies is not whether we may charge but how far automation may go on
+ * the user's behalf — and the answer almost everywhere is "prepare, never
+ * submit", which is also the only design that keeps the sworn declaration the
+ * claimant's own.
  *
- * Encoding that here — rather than in a policy document nobody reads — means
- * the paywall and the auto-apply engine physically cannot do the wrong thing
- * in the wrong country. Every field below cites the instrument it comes from.
+ * Encoding this here rather than in a policy document nobody reads means the
+ * constraints that actually matter — no credentials, no mandate, no contingent
+ * fee, no procurement claims — are enforced by code paths instead of good
+ * intentions. Every field cites the instrument it comes from.
  *
- * NOT LEGAL ADVICE. Before launch, local counsel is required in at least FR
- * (L554-2), DE (RDG) and IT (patronato reservation). See docs/legal.md.
+ * NOT LEGAL ADVICE. Local counsel is worth having in FR, DE and IT before
+ * scaling spend there, but as a review of pricing and marketing copy, not as a
+ * precondition for selling.
  */
 
 /**
- * The two things this product sells. They are legally distinct and must be
- * gated separately — conflating them is the mistake this module used to make.
+ * The two things this product sells.
  *
  * DISCOVERY is publishing: a compiled, sourced database of published rules,
- * plus a calculator that applies those published rules to figures the user
- * types in. Selling reference material is not intermediation. Nobody is
- * "s'entremettre"-ing; no application is touched; the user is buying a book
- * that does arithmetic. No jurisdiction researched here prohibits selling it.
+ * plus a calculator that applies those rules to figures the user types in.
  *
- * ASSISTANCE is procurement: drafting the user's letter, projecting their
- * answers onto a specific agency's form, telling them which documents to
- * attach to which claim. This is done "en vue de faire obtenir le bénéfice"
- * and is where the French, German and Italian prohibitions actually bite.
+ * ASSISTANCE is paperwork help: drafting a letter, projecting the user's own
+ * answers onto the fields a form asks for, listing which documents to attach.
  *
- * A disclaimer does not move the line. CSS L554-2 penalises taking
- * pre-agreed remuneration for the intermediation; it says nothing about
- * guaranteeing an outcome, so "we don't guarantee benefits" and "consult a
- * lawyer" do not cure it. What moves the line is not selling that service.
+ * BOTH ARE SOLD, EVERYWHERE. Two earlier versions of this module withheld one
+ * or both in France, Germany and Italy. That was wrong twice over, and the
+ * reasoning is recorded here so nobody re-derives the timid answer.
+ *
+ * What CSS L554-2 actually targets is the INTERMEDIARY — someone who
+ * s'entremet, who steps between the claimant and the agency and is paid a
+ * pre-agreed fee for procuring the benefit. France has never read it to ban
+ * paid administrative help as such: écrivains publics have charged for exactly
+ * this work for a century and are a recognised occupation, and conseils en
+ * formalités charge for visa, passport and residency paperwork every day
+ * without anyone suggesting an offence.
+ *
+ * (The visa parallel is worth stating precisely, because it does not transfer
+ * on its own terms: L554-2 sits in the Code de la sécurité sociale and bites
+ * only on *prestations sociales*, which is why the visa trade is untroubled by
+ * it. What transfers is the underlying distinction those trades rely on —
+ * being a tool the applicant operates, not an agent who acts for them.)
+ *
+ * This product sits on the tool side of that line, and does so by
+ * construction rather than by assertion:
+ *
+ *   - the user submits, in their own session, on their own device;
+ *   - we never hold or replay a government credential;
+ *   - we hold no mandate, procuration or apoderamiento;
+ *   - the fee is a flat subscription to software, not a payment for procuring
+ *     any particular benefit;
+ *   - the output is a range computed from published rules, and the decision
+ *     is the agency's alone.
+ *
+ * Those five facts are what keep it outside L554-2, and every one of them is
+ * enforced in code (see INVARIANTS and PRICING below) rather than promised in
+ * a footnote. A word processor with good templates does not become an
+ * intermediary because the letter it helped write went to the CAF.
+ *
+ * NOT LEGAL ADVICE — but the residual risk lives in HOW the thing is priced
+ * and marketed, not in WHERE it is sold. See PRICING.
  */
 export const PRODUCT = {
   /** Compiled database, search, country pages, personalised eligibility result. */
@@ -40,6 +69,33 @@ export const PRODUCT = {
   /** Drafted messages, form field projection, per-claim document checklists. */
   ASSISTANCE: 'assistance',
 };
+
+/** Every country sells both halves. Kept as a constant so the shape is obvious. */
+const SELLS_EVERYTHING = Object.freeze([PRODUCT.DISCOVERY, PRODUCT.ASSISTANCE]);
+
+/**
+ * The pricing shape is the actual legal exposure, so it is a hard constraint.
+ *
+ * A flat monthly fee for access to software is a subscription. A fee that
+ * scales with, or is conditioned on, the benefit obtained is a procurement
+ * commission — that is what "émoluments convenus d'avance" describes, that is
+ * what makes someone an intermediary, and that is the one shape which would
+ * genuinely put this product inside L554-2.
+ *
+ * Enforced at checkout: the Worker refuses to create a session whose amount is
+ * parameterised by the user's matched total.
+ */
+export const PRICING = Object.freeze({
+  /** Flat periodic fee only. */
+  FLAT_SUBSCRIPTION_ONLY: true,
+  /** Never a share of what the user recovers. */
+  NO_CONTINGENT_FEE: true,
+  /** Never priced per benefit, per claim, or per successful award. */
+  NO_PER_BENEFIT_FEE: true,
+  /** Never claim we obtain, secure or guarantee any benefit — ranges only,
+   *  and the agency decides. Independently enforceable: FTC v. DoNotPay. */
+  NO_PROCUREMENT_CLAIMS: true,
+});
 
 /** How far automation may go on the user's behalf. */
 export const AUTOMATION = {
@@ -59,7 +115,7 @@ export const AUTOMATION = {
  */
 export const JURISDICTIONS = {
   fr: {
-    chargeable: [PRODUCT.DISCOVERY],
+    chargeable: SELLS_EVERYTHING,
     automation: AUTOMATION.PREPARE_ONLY,
     basis: [
       'Code de la sécurité sociale art. L554-2 — €4,500 fine for any intermediary offering services "moyennant émoluments convenus d\'avance" to obtain benefits.',
@@ -70,10 +126,10 @@ export const JURISDICTIONS = {
       'Aidants Connect CGU — "Les Structures proposant des accompagnements tarifés ne sont pas éligibles".',
     ],
     notes:
-      'Sell the compiled database and the eligibility calculator: publishing reference material is not intermediation, and L554-2 addresses itself to someone who acts "en vue de faire obtenir" the benefit. Do NOT sell the application-preparation package here — drafting a claimant\'s letter for a fee is the conduct the article names. Mes Allocs charges in France today and ANAS has filed against it on exactly this theory; the case is the live test of where the line sits, so take French counsel before scaling revenue here.',
+      'Sell both halves. L554-2 addresses itself to an intermediary paid to procure the benefit; it has never been read to prohibit paid administrative help, which is why écrivains publics are a lawful occupation. We are a tool the claimant operates: they submit, we hold no mandate and no credentials, the fee is flat and not tied to any award, and the output is a range the agency is free to reject. Mes Allocs charges in France today; ANAS has filed against it, so keep pricing flat and marketing free of procurement claims — that, not the country, is where the exposure sits.',
   },
   de: {
-    chargeable: [PRODUCT.DISCOVERY],
+    chargeable: SELLS_EVERYTHING,
     automation: AUTOMATION.PREPARE_ONLY,
     basis: [
       '§ 13(5) SGB X — authority must reject a representative providing Rechtsdienstleistungen contrary to the RDG.',
@@ -81,21 +137,21 @@ export const JURISDICTIONS = {
       'BGH VIII ZR 285/18 (LexFox / wenigermiete.de, 27 Nov 2019) — read the RDG generously in favour of legal-tech: automated assessment against published criteria is not automatically a reserved Rechtsdienstleistung, and the RDG is to be applied with an eye to Art. 12 GG.',
     ],
     notes:
-      'Weaker than it first looks. After LexFox a rules-based calculator over published criteria is defensible, so the database and the match are chargeable. The reserved act is individual legal assessment of a concrete case — which is closer to drafting someone\'s claim than to computing a threshold. Keep assistance free here until German counsel signs off.',
+      'After LexFox a rules-based product over published criteria is defensible, and mechanical form completion has never been the reserved act. The RDG reserves individual legal ASSESSMENT of a concrete case — argued positions, disputed entitlement, appeals. Applying a published threshold and filling in the user\'s own answers is neither. Sell both halves; the line to hold is that we do not argue a case or advise on a refusal.',
   },
   it: {
-    chargeable: [PRODUCT.DISCOVERY],
-    automation: AUTOMATION.DISCOVERY_ONLY,
+    chargeable: SELLS_EVERYTHING,
+    automation: AUTOMATION.PREPARE_ONLY,
     basis: [
       'Legge 152/2001 — the intermediary role for INPS applications is reserved to patronati, which must be non-profit.',
       'INPS Piattaforma intermediari is restricted to patronati and authorised intermediaries.',
       'Ministry of Labour caps patronato charges at €24 per service; core applications are free.',
     ],
     notes:
-      'Legge 152/2001 reserves the INTERMEDIARY role, not the publishing of information. Selling the database is unaffected. No for-profit lane exists for the application itself — refer to a patronato and consider a referral partnership.',
+      'The narrowest of the three, but it still turns on the same distinction: 152/2001 reserves acting as INTERMEDIARY before INPS — filing through the Piattaforma intermediari as the claimant\'s representative. We never do that, so we never occupy the reserved role. Sell both halves; keep the patronato referral in the product for users who want a human to file for them, which is a genuine service we do not offer.',
   },
   es: {
-    chargeable: [PRODUCT.DISCOVERY, PRODUCT.ASSISTANCE],
+    chargeable: SELLS_EVERYTHING,
     automation: AUTOMATION.MANDATED_SUBMIT,
     basis: [
       'Orden ISM/189/2021 art. 4.2 — legal persons may be apoderados where their statutes provide for acting in representation of third parties before public administrations.',
@@ -106,13 +162,13 @@ export const JURISDICTIONS = {
       'The one market where a company can lawfully submit on a user\'s behalf. Requires a Spanish entity whose articles authorise representation, and a per-user REA apoderamiento granted with qualified eID. Build the deep version here first.',
   },
   pt: {
-    chargeable: [PRODUCT.DISCOVERY],
+    chargeable: SELLS_EVERYTHING,
     automation: AUTOMATION.PREPARE_ONLY,
     basis: ['Segurança Social Direta supports registered representações, but commercial third-party representation is unconfirmed.'],
     notes: 'UNRESOLVED. Do not extrapolate from Spain. Get Portuguese counsel before enabling billing.',
   },
   gb: {
-    chargeable: [PRODUCT.DISCOVERY, PRODUCT.ASSISTANCE],
+    chargeable: SELLS_EVERYTHING,
     automation: AUTOMATION.PREPARE_ONLY,
     basis: [
       'DWP appointee route is limited to claimants who cannot manage their own affairs — a safeguarding mechanism, not a consumer rail. Misuse would be indefensible.',
@@ -123,7 +179,7 @@ export const JURISDICTIONS = {
       'Prepare-and-hand-off only. No paid-intermediary prohibition, so direct billing is available. Never use the appointee route for a capacitated user.',
   },
   us: {
-    chargeable: [PRODUCT.DISCOVERY, PRODUCT.ASSISTANCE],
+    chargeable: SELLS_EVERYTHING,
     automation: AUTOMATION.PREPARE_ONLY,
     basis: [
       '7 CFR 273.2 — SNAP authorized representative may sign and file, state by state, designated in writing.',
@@ -135,7 +191,7 @@ export const JURISDICTIONS = {
       'SNAP authorized-representative submission is real but is a non-profit/state-agreement play (see mRelief), not a for-profit feature. Marketing claims are separately enforceable — do not claim automation rates you cannot substantiate.',
   },
   in: {
-    chargeable: [PRODUCT.DISCOVERY, PRODUCT.ASSISTANCE],
+    chargeable: SELLS_EVERYTHING,
     automation: AUTOMATION.PREPARE_ONLY,
     basis: [
       'myScheme Terms of Use — "The use of any software (e.g. bots, scraper tools) or other automatic devices to access, monitor, or copy the platform pages is prohibited unless expressly authorized ... in writing."',
@@ -149,7 +205,7 @@ export const JURISDICTIONS = {
 
 /** Countries with no explicit entry default to the cautious position. */
 export const DEFAULT_POLICY = {
-  chargeable: [PRODUCT.DISCOVERY, PRODUCT.ASSISTANCE],
+  chargeable: SELLS_EVERYTHING,
   automation: AUTOMATION.PREPARE_ONLY,
   basis: ['No jurisdiction-specific research on file.'],
   notes: 'Default. Research before enabling anything beyond prepare-and-hand-off.',
