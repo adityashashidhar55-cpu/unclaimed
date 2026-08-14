@@ -1,0 +1,187 @@
+{
+ "country_code": "pl",
+ "country_name": "Poland",
+ "currency": "PLN",
+ "language": "en",
+ "entity": "startup",
+ "programmes": [
+  {
+   "slug": "pl-polska-strefa-inwestycji",
+   "name_local": "Polska Strefa Inwestycji",
+   "name_en": "Polish Investment Zone – income tax exemption for new investments",
+   "country_code": "pl",
+   "admin_level": "national",
+   "funder": "Ministerstwo Rozwoju i Technologii, through the Special Economic Zone managers; promoted by PAIH",
+   "funder_type": "public",
+   "grant_type": "tax_credit",
+   "amount_min": null,
+   "amount_max": null,
+   "amount_currency": "PLN",
+   "amount_note": "A CIT/PIT exemption rather than a cash award. The value equals a percentage of eligible investment costs set by the 2022-2027 regional aid map: up to 50% in eastern/north-eastern regions, 40% in industrial regions, 30% in mid-tier areas and 25% or less in wealthier regions, plus 20 percentage points for small enterprises and 10 for medium ones. Minimum investment outlays depend on company size and local unemployment (from PLN 0.2 million for micro enterprises in high-unemployment areas up to PLN 2 million in low-unemployment regions). Exemption periods run 12-15 years.",
+   "application_url": "https://www.paih.gov.pl/inwestycje/zachety-inwestycyjne/polska-strefa-inwestycji/",
+   "application_channel": "post",
+   "deadline_type": "rolling",
+   "deadline_note": "Applications for a decyzja o wsparciu are processed continuously by the Special Economic Zone managers acting on behalf of the Minister of Development and Technology.",
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Confirm the project counts as a new investment (new facility, capacity expansion, product diversification, fundamental process change, or acquisition of assets of a closed facility) and is not in an excluded sector.",
+     "url": "https://www.paih.gov.pl/inwestycje/zachety-inwestycyjne/polska-strefa-inwestycji/"
+    },
+    {
+     "step": 2,
+     "detail": "Check the minimum investment outlay for your company size and county unemployment rate, and the qualitative criteria.",
+     "url": null
+    },
+    {
+     "step": 3,
+     "detail": "Apply to the Special Economic Zone manager covering the investment location for a decyzja o wsparciu (support decision).",
+     "url": null
+    },
+    {
+     "step": 4,
+     "detail": "Carry out the investment and claim the CIT/PIT exemption up to the aid intensity limit over the decision period.",
+     "url": null
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "Wniosek o wydanie decyzji o wsparciu",
+     "mandatory": true,
+     "note": "Filed with the relevant SEZ manager"
+    },
+    {
+     "doc": "Investment plan with eligible cost budget and job creation commitments",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Evidence of company size (micro/small/medium/large)",
+     "mandatory": true,
+     "note": "Determines the aid-intensity bonus and the minimum outlay"
+    }
+   ],
+   "eligibility": {
+    "entity": "startup",
+    "company_age_months_min": null,
+    "company_age_months_max": null,
+    "headcount_min": null,
+    "headcount_max": null,
+    "turnover_annual_max": null,
+    "sme_category": "any",
+    "sectors": [
+     "manufacturing",
+     "any"
+    ],
+    "stages": [
+     "growth"
+    ],
+    "requires_local_entity": true,
+    "requires_incorporation": true,
+    "rd_focus": false,
+    "female_founder_only": false,
+    "underrepresented_focus": false,
+    "de_minimis": false,
+    "other_note": "Available across Poland since the 2018 Act on supporting new investments. Excluded sectors include explosives, alcohol, tobacco, steel, energy distribution, retail and wholesale trade, hospitality and gaming.",
+    "is_automatic": false
+   },
+   "source_url": "https://www.paih.gov.pl/inwestycje/zachety-inwestycyjne/polska-strefa-inwestycji/",
+   "source_snippet": "Po ponad 20 latach funkcjonowania specjalnych stref ekonomicznych, ustawą z dnia 10 maja 2018 r. o wspieraniu nowych inwestycji ... małe przedsiębiorstwa +20%, średnie +10% ... 0,2 mln PLN.",
+   "category": "startup",
+   "cofunding_pct": null,
+   "is_automatic": false,
+   "admin_area": null,
+   "last_verified_at": "2026-08-14",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "pl-sciezka-smart-parp",
+   "name_local": "Ścieżka SMART (FENG) – konkurs dla MŚP",
+   "name_en": "SMART Path (European Funds for a Modern Economy) – call for SMEs",
+   "country_code": "pl",
+   "admin_level": "national",
+   "funder": "Polska Agencja Rozwoju Przedsiębiorczości (PARP), under Fundusze Europejskie dla Nowoczesnej Gospodarki (FENG)",
+   "funder_type": "public",
+   "grant_type": "grant",
+   "amount_min": null,
+   "amount_max": null,
+   "amount_currency": "PLN",
+   "amount_note": "No per-project ceiling is published on the PARP page. The 2026 call allocation is PLN 700 million in total. Support levels depend on the module and on regional aid maps, which are set in the call documentation.",
+   "application_url": "https://www.parp.gov.pl/component/grants/grants/sciezka-smart",
+   "application_channel": "portal",
+   "deadline_type": "annual_call",
+   "deadline_note": "2026 PARP call for SMEs: announced 12 February 2026, applications opened 26 February 2026, closed 31 March 2026 at 16:00. The instrument recurs with new calls each year; NCBR runs parallel calls for consortia.",
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Design a project with the obligatory R&D module, optionally adding internationalisation, IP protection and staff competence modules.",
+     "url": "https://www.parp.gov.pl/component/grants/grants/sciezka-smart"
+    },
+    {
+     "step": 2,
+     "detail": "Ensure the innovation is at least at national level.",
+     "url": null
+    },
+    {
+     "step": 3,
+     "detail": "Submit the application electronically through the LSI system within the call window.",
+     "url": "https://www.parp.gov.pl/component/grants/grants/sciezka-smart"
+    },
+    {
+     "step": 4,
+     "detail": "If qualified for stage II of the assessment, supply the financial model and financing confirmation documents within 10 days.",
+     "url": null
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "Wniosek o dofinansowanie submitted in the LSI system",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Model finansowy (financial model)",
+     "mandatory": true,
+     "note": "Required within 10 days of qualifying for stage II"
+    },
+    {
+     "doc": "Dokumenty potwierdzające finansowanie projektu",
+     "mandatory": true,
+     "note": null
+    }
+   ],
+   "eligibility": {
+    "entity": "startup",
+    "company_age_months_min": null,
+    "company_age_months_max": null,
+    "headcount_min": null,
+    "headcount_max": 250,
+    "turnover_annual_max": null,
+    "sme_category": "any",
+    "sectors": [
+     "any"
+    ],
+    "stages": [
+     "seed",
+     "series_a",
+     "growth"
+    ],
+    "requires_local_entity": true,
+    "requires_incorporation": true,
+    "rd_focus": true,
+    "female_founder_only": false,
+    "underrepresented_focus": false,
+    "de_minimis": false,
+    "other_note": "Exclusively for micro, small and medium enterprises conducting business in Poland ('mikro, małych i średnich przedsiębiorców prowadzących działalność w Polsce'). The R&D module is obligatory. Some modules are granted as de minimis under the FENG rules, but the PARP landing page does not say so, so de_minimis is not asserted here."
+   },
+   "source_url": "https://www.parp.gov.pl/component/grants/grants/sciezka-smart",
+   "source_snippet": "Ścieżka SMART ma na celu rozwijanie i wzmacnianie zdolności badawczych i innowacyjnych ... 12 lutego 2026 – ogłoszenie konkursu; 26 lutego 2026 – otwarcie przyjmowania wniosków; 31 marca 2026 – zamknięcie naboru (godz. 16:00).",
+   "category": "startup",
+   "cofunding_pct": null,
+   "is_automatic": false,
+   "admin_area": null,
+   "last_verified_at": "2026-08-14",
+   "verification_status": "verified"
+  }
+ ]
+}

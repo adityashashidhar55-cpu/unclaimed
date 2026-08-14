@@ -1,0 +1,181 @@
+{
+ "country_code": "ch",
+ "country_name": "Switzerland",
+ "currency": "CHF",
+ "language": "en",
+ "entity": "startup",
+ "programmes": [
+  {
+   "slug": "ch-innosuisse-innovation-project-implementation-partner",
+   "name_local": "Innosuisse – Innovationsprojekte mit Umsetzungspartner",
+   "name_en": "Innosuisse – Innovation projects with implementation partner",
+   "country_code": "ch",
+   "admin_level": "national",
+   "funder": "Innosuisse – Swiss Innovation Agency",
+   "funder_type": "public",
+   "grant_type": "grant",
+   "amount_min": null,
+   "amount_max": null,
+   "amount_currency": "CHF",
+   "amount_note": "Innosuisse funds the Swiss research partner's costs; the implementation partner (company) must cover '40–60% of total project costs' from its own resources and contribute at least '5% of total project costs' in cash toward the research partner's expenses. No maximum funding cap is published on the page.",
+   "cofunding_pct": 40,
+   "application_url": "https://www.innosuisse.admin.ch/en/innovation-project-with-implementation-partner",
+   "application_channel": "portal",
+   "deadline_type": "rolling",
+   "deadline_note": "Continuous submission. Applications must be submitted at least six weeks before an Innovation Council evaluation meeting; decisions normally arrive within six to eight weeks. Meetings are scheduled across five thematic areas (Energy & Environment, Engineering, ICT, Life Sciences, Social Sciences & Business Management) throughout 2026.",
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Find a research partner at a Swiss higher education or non-commercial research institution.",
+     "url": "https://www.innosuisse.admin.ch/en/innovation-project-with-implementation-partner"
+    },
+    {
+     "step": 2,
+     "detail": "Jointly define the innovation project and agree the cost split (implementation partner covers 40-60% of total project costs plus at least 5% in cash to the research partner).",
+     "url": null
+    },
+    {
+     "step": 3,
+     "detail": "Submit the joint application at least six weeks before the relevant Innovation Council meeting.",
+     "url": null
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "Joint project application (research partner and implementation partner)",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Cost and financing plan showing the own contribution and cash contribution",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Declaration of the implementation partner",
+     "mandatory": true,
+     "note": null
+    }
+   ],
+   "eligibility": {
+    "entity": "startup",
+    "company_age_months_min": null,
+    "company_age_months_max": null,
+    "headcount_min": null,
+    "headcount_max": null,
+    "turnover_annual_max": null,
+    "sme_category": "any",
+    "sectors": [
+     "any"
+    ],
+    "stages": [
+     "seed",
+     "series_a",
+     "growth"
+    ],
+    "requires_local_entity": true,
+    "requires_incorporation": true,
+    "rd_focus": true,
+    "female_founder_only": false,
+    "underrepresented_focus": false,
+    "de_minimis": false,
+    "other_note": "Implementation partners can be SMEs, large companies, start-ups, administrative bodies, non-profits and other private or public institutions. Innosuisse does not fund implementation partners directly; it funds the research partner's project costs."
+   },
+   "source_url": "https://www.innosuisse.admin.ch/en/innovation-project-with-implementation-partner",
+   "source_snippet": "Implementation partners must cover 40–60% of total project costs from their own resources and contribute at least 5% of total project costs toward research partner expenses.",
+   "category": "startup",
+   "is_automatic": false,
+   "admin_area": null,
+   "last_verified_at": "2026-08-14",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "ch-innosuisse-startup-innovation-projects",
+   "name_local": "Innosuisse – Innovationsprojekte für Start-ups",
+   "name_en": "Innosuisse – Start-up innovation projects",
+   "country_code": "ch",
+   "admin_level": "national",
+   "funder": "Innosuisse – Swiss Innovation Agency",
+   "funder_type": "public",
+   "grant_type": "grant",
+   "amount_min": null,
+   "amount_max": null,
+   "amount_currency": "CHF",
+   "amount_note": "Innosuisse covers up to 70% of direct project costs; the start-up must contribute at least 30% itself. No maximum funding amount or ceiling is stated on the page, so none is recorded here.",
+   "cofunding_pct": 30,
+   "application_url": "https://www.innosuisse.admin.ch/en/start-up-innovation-projects",
+   "application_channel": "portal",
+   "deadline_type": "rolling",
+   "deadline_note": "'Projects can be submitted on an ongoing basis. There are no tenders.' Applications must be submitted at least eight weeks before an Innovation Council meeting date to be considered at that meeting.",
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Confirm eligibility: Swiss-headquartered company registered in the Swiss registry of commerce, established no more than 5 years ago (up to 10 in exceptional cases), fewer than 50 FTE.",
+     "url": "https://www.innosuisse.admin.ch/en/start-up-innovation-projects"
+    },
+    {
+     "step": 2,
+     "detail": "Prepare a science-based innovation project preparing first-time market entry, with the eligible cost plan.",
+     "url": null
+    },
+    {
+     "step": 3,
+     "detail": "Submit via the Innosuisse application platform at least eight weeks before an Innovation Council meeting.",
+     "url": "https://www.innosuisse.admin.ch/en/start-up-innovation-projects"
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "Innovation project application form",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Cost plan following the 'Eligible material costs Start-up innovation projects' rules",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Commercial register extract evidencing Swiss registration and company age",
+     "mandatory": true,
+     "note": null
+    }
+   ],
+   "eligibility": {
+    "entity": "startup",
+    "company_age_months_min": null,
+    "company_age_months_max": 60,
+    "headcount_min": null,
+    "headcount_max": 50,
+    "turnover_annual_max": null,
+    "sme_category": "small",
+    "sectors": [
+     "deeptech",
+     "health",
+     "ai",
+     "climate",
+     "any"
+    ],
+    "stages": [
+     "pre_seed",
+     "seed",
+     "series_a"
+    ],
+    "requires_local_entity": true,
+    "requires_incorporation": true,
+    "rd_focus": true,
+    "female_founder_only": false,
+    "underrepresented_focus": false,
+    "de_minimis": false,
+    "other_note": "Start-up must be 'based in Switzerland (i.e. the company's headquarters is in Switzerland) and is registered in the Swiss registry of commerce', 'has not been established for more than 5 years at the time of submission (up to 10 years in exceptional cases)' and have 'less than 50 FTE'. Research partners receive no direct funding in this instrument."
+   },
+   "source_url": "https://www.innosuisse.admin.ch/en/start-up-innovation-projects",
+   "source_snippet": "has not been established for more than 5 years at the time of submission (up to 10 years in exceptional cases) ... less than 50 FTE ... Projects can be submitted on an ongoing basis. There are no tenders.",
+   "category": "startup",
+   "is_automatic": false,
+   "admin_area": null,
+   "last_verified_at": "2026-08-14",
+   "verification_status": "verified"
+  }
+ ]
+}

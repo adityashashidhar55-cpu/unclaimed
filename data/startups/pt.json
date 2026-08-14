@@ -1,0 +1,101 @@
+{
+ "country_code": "pt",
+ "country_name": "Portugal",
+ "currency": "EUR",
+ "language": "en",
+ "entity": "startup",
+ "programmes": [
+  {
+   "slug": "pt-startup-voucher",
+   "name_local": "StartUP Voucher Innovate 2025-2026",
+   "name_en": "StartUP Voucher Innovate 2025-2026",
+   "country_code": "pt",
+   "admin_level": "national",
+   "funder": "IAPMEI – Agência para a Competitividade e Inovação, I.P.",
+   "funder_type": "public",
+   "grant_type": "grant",
+   "amount_min": null,
+   "amount_max": 11100,
+   "amount_currency": "EUR",
+   "amount_note": "'Bolsa mensal no valor de 900€ (até ao máximo de 2 bolsas/projeto)' for up to 9 months, plus intermediate awards of EUR 1,500 at the start of phases 2 and 3 and a completion prize of EUR 2,000 on incorporation of the company. Maximum per promoter therefore reaches about EUR 11,100.",
+   "application_url": "https://www.iapmei.pt/PRODUTOS-E-SERVICOS/Empreendedorismo-Inovacao/Empreendedorismo-(1)/StartUP-Voucher-2025-2026.aspx",
+   "application_channel": "online",
+   "deadline_type": "cutoff",
+   "deadline_note": "'Candidaturas até 25 de agosto' (25 August) for the 2025-2026 edition. The programme runs in recurring editions.",
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Check eligibility: 'Jovens até aos 29 anos, licenciados ou com grau superior', resident in NUTS II Norte, Centro or Alentejo, with a project at idea stage.",
+     "url": "https://www.iapmei.pt/PRODUTOS-E-SERVICOS/Empreendedorismo-Inovacao/Empreendedorismo-(1)/StartUP-Voucher-2025-2026.aspx"
+    },
+    {
+     "step": 2,
+     "detail": "Prepare the application following the Guia de Apoio à Apresentação de Candidatura.",
+     "url": "https://www.iapmei.pt/getattachment/PRODUTOS-E-SERVICOS/Empreendedorismo-Inovacao/Empreendedorismo-(1)/StartUP-Voucher-2025-2026/Guia-de-Apoio-a-Apresentacao-de-Candidatura_vrs1_1.pdf.aspx"
+    },
+    {
+     "step": 3,
+     "detail": "Submit online by the deadline; selected projects run 9 months across three development phases with mentoring and incubator support.",
+     "url": null
+    },
+    {
+     "step": 4,
+     "detail": "On completion, incorporate the company to receive the EUR 2,000 completion prize.",
+     "url": null
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "Online application form",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Proof of academic qualification (licenciatura or higher)",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Proof of age and residence in NUTS II Norte, Centro or Alentejo",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Project description at idea stage",
+     "mandatory": true,
+     "note": null
+    }
+   ],
+   "eligibility": {
+    "entity": "startup",
+    "company_age_months_min": null,
+    "company_age_months_max": null,
+    "headcount_min": null,
+    "headcount_max": null,
+    "turnover_annual_max": null,
+    "sme_category": "micro",
+    "sectors": [
+     "any"
+    ],
+    "stages": [
+     "idea"
+    ],
+    "requires_local_entity": true,
+    "requires_incorporation": false,
+    "rd_focus": false,
+    "female_founder_only": false,
+    "underrepresented_focus": false,
+    "de_minimis": false,
+    "other_note": "'Jovens até aos 29 anos, licenciados ou com grau superior'; projects must be 'em fase de ideia'; promoters must be resident in the less developed NUTS II regions (Norte, Centro, Alentejo). Up to two grant-holders per project. De minimis status is not stated on the IAPMEI page."
+   },
+   "source_url": "https://www.iapmei.pt/PRODUTOS-E-SERVICOS/Empreendedorismo-Inovacao/Empreendedorismo-(1)/StartUP-Voucher-2025-2026.aspx",
+   "source_snippet": "Bolsa mensal no valor de 900€ (até ao máximo de 2 bolsas/projeto) ... Jovens até aos 29 anos, licenciados ou com grau superior ... Candidaturas até 25 de agosto.",
+   "category": "startup",
+   "cofunding_pct": null,
+   "is_automatic": false,
+   "admin_area": null,
+   "last_verified_at": "2026-08-14",
+   "verification_status": "verified"
+  }
+ ]
+}

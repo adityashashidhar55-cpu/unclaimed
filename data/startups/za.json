@@ -1,0 +1,198 @@
+{
+ "country_code": "za",
+ "country_name": "South Africa",
+ "currency": "ZAR",
+ "language": "en",
+ "entity": "startup",
+ "programmes": [
+  {
+   "slug": "za-spii",
+   "name_local": "Support Programme for Industrial Innovation (SPII)",
+   "name_en": "Support Programme for Industrial Innovation (SPII)",
+   "country_code": "za",
+   "admin_level": "national",
+   "funder": "Department of Trade, Industry and Competition (the dtic), administered with the IDC",
+   "funder_type": "public",
+   "grant_type": "grant",
+   "amount_min": null,
+   "amount_max": 5000000,
+   "amount_currency": "ZAR",
+   "amount_note": "Two schemes. Product Process Development (PPD) Scheme: maximum grant R2 million, covering 50%-85% of qualifying costs depending on BEE ownership, for small, very small and micro enterprises. Matching Scheme: maximum grant R5 million, covering 50%-75% of qualifying costs based on BEE ownership, available to all enterprises and individuals.",
+   "application_url": "https://www.thedtic.gov.za/financial-and-non-financial-support/incentives/support-programme-for-industrial-innovation-spii/",
+   "application_channel": "email",
+   "deadline_type": "rolling",
+   "deadline_note": "No closing date is published; applications are submitted to spiiapplications@thedtic.gov.za and assessed as received.",
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Confirm the development represents a significant advance in technology and that development and subsequent production will take place within South Africa.",
+     "url": "https://www.thedtic.gov.za/financial-and-non-financial-support/incentives/support-programme-for-industrial-innovation-spii/"
+    },
+    {
+     "step": 2,
+     "detail": "Choose the scheme (PPD for small/very small/micro enterprises, Matching Scheme for all enterprises).",
+     "url": null
+    },
+    {
+     "step": 3,
+     "detail": "Submit the application to spiiapplications@thedtic.gov.za (contact Ramoroa Molose, +27 12 394 5655).",
+     "url": null
+    },
+    {
+     "step": 4,
+     "detail": "Assessment; if approved, claim qualifying costs (personnel, materials, capital items, software, testing, patents, subcontracting, QA) against milestones.",
+     "url": null
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "SPII application form",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Technical project description showing significant technology advance",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Detailed qualifying cost budget",
+     "mandatory": true,
+     "note": "Excludes production, marketing and basic research"
+    },
+    {
+     "doc": "Proof that IP will reside in a South African registered company",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "B-BBEE certificate",
+     "mandatory": true,
+     "note": "Determines the grant percentage (50%-85%)"
+    }
+   ],
+   "eligibility": {
+    "entity": "startup",
+    "company_age_months_min": null,
+    "company_age_months_max": null,
+    "headcount_min": null,
+    "headcount_max": null,
+    "turnover_annual_max": null,
+    "sme_category": "any",
+    "sectors": [
+     "manufacturing",
+     "deeptech",
+     "any"
+    ],
+    "stages": [
+     "pre_seed",
+     "seed",
+     "series_a"
+    ],
+    "requires_local_entity": true,
+    "requires_incorporation": true,
+    "rd_focus": true,
+    "female_founder_only": false,
+    "underrepresented_focus": true,
+    "de_minimis": false,
+    "other_note": "'Development should represent significant advance in technology'; 'Development and subsequent production must take place within South Africa'; 'Intellectual Property to reside in South African registered company'. Grant percentage rises with B-BBEE ownership levels."
+   },
+   "source_url": "https://www.thedtic.gov.za/financial-and-non-financial-support/incentives/support-programme-for-industrial-innovation-spii/",
+   "source_snippet": "The SPII is designed to promote technology development in South Africa's industry, through the provision of financial assistance ... Product Process Development (PPD) Scheme ... maximum grant R2 million ... Matching Scheme ... maximum grant R5 million.",
+   "category": "startup",
+   "cofunding_pct": null,
+   "is_automatic": false,
+   "admin_area": null,
+   "last_verified_at": "2026-08-14",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "za-tia-seed-fund",
+   "name_local": "TIA Seed Fund Programme",
+   "name_en": "Technology Innovation Agency (TIA) Seed Fund Programme",
+   "country_code": "za",
+   "admin_level": "national",
+   "funder": "Technology Innovation Agency (TIA)",
+   "funder_type": "public",
+   "grant_type": "grant",
+   "amount_min": null,
+   "amount_max": null,
+   "amount_currency": "ZAR",
+   "amount_note": "No seed-fund ceiling is published on the TIA funding instruments page. Related instruments do publish caps: the Grassroots Innovation Programme has a maximum R200,000 technology development grant and the Technology Acquisition and Deployment Fund a maximum of R1 million over 24 months. Do not assume a Seed Fund maximum.",
+   "application_url": "https://www.tia.org.za/funding-instruments/",
+   "application_channel": "email",
+   "deadline_type": "annual_call",
+   "deadline_note": "TIA funds through periodic calls, often via implementing partners (universities, science councils, incubators). Check the TIA site for the current call; contact customerservice@tia.org.za.",
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Identify the correct instrument for your technology readiness level (Seed Fund TRL 3-8; Technology Development Fund TRL 4-7; Commercialisation Support Fund TRL 8-9).",
+     "url": "https://www.tia.org.za/funding-instruments/"
+    },
+    {
+     "step": 2,
+     "detail": "Apply through the open call or through a TIA implementing partner.",
+     "url": null
+    },
+    {
+     "step": 3,
+     "detail": "Technical and commercial due diligence, then contracting and milestone-based disbursement.",
+     "url": null
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "Application form for the relevant TIA instrument",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Technology/prototype development plan with TRL evidence",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Company registration and B-BBEE documentation",
+     "mandatory": true,
+     "note": "Standard for South African public funding"
+    }
+   ],
+   "eligibility": {
+    "entity": "startup",
+    "company_age_months_min": null,
+    "company_age_months_max": null,
+    "headcount_min": null,
+    "headcount_max": null,
+    "turnover_annual_max": null,
+    "sme_category": "any",
+    "sectors": [
+     "deeptech",
+     "health",
+     "agri",
+     "manufacturing",
+     "any"
+    ],
+    "stages": [
+     "idea",
+     "pre_seed",
+     "seed"
+    ],
+    "requires_local_entity": true,
+    "requires_incorporation": true,
+    "rd_focus": true,
+    "female_founder_only": false,
+    "underrepresented_focus": false,
+    "de_minimis": false,
+    "other_note": "Seed Fund is designed to 'assist innovators at Higher Education Institutions (HEIs), Science Councils (SCs) and Small and Medium-sized Enterprises (SMEs)' to convert research outputs into prototypes and commercialisable ideas, at TRL 3-8."
+   },
+   "source_url": "https://www.tia.org.za/funding-instruments/",
+   "source_snippet": "SEED Fund ... assist innovators at Higher Education Institutions (HEIs), Science Councils (SCs) and Small and Medium-sized Enterprises (SMEs) ... TRL 3-8.",
+   "category": "startup",
+   "cofunding_pct": null,
+   "is_automatic": false,
+   "admin_area": null,
+   "last_verified_at": "2026-08-14",
+   "verification_status": "verified"
+  }
+ ]
+}

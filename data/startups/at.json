@@ -1,0 +1,180 @@
+{
+ "country_code": "at",
+ "country_name": "Austria",
+ "currency": "EUR",
+ "language": "en",
+ "entity": "startup",
+ "programmes": [
+  {
+   "slug": "at-aws-preseed-innovative-solutions",
+   "name_local": "aws Preseed – Innovative Solutions",
+   "name_en": "aws Preseed – Innovative Solutions",
+   "country_code": "at",
+   "admin_level": "national",
+   "funder": "Austria Wirtschaftsservice GmbH (aws)",
+   "funder_type": "public",
+   "grant_type": "grant",
+   "amount_min": null,
+   "amount_max": 100000,
+   "amount_currency": "EUR",
+   "amount_note": "'The maximum possible grant amounts to EUR 100,000' with the gender bonus; otherwise EUR 89,000. Funding rate is 80% of eligible costs (10% equity from shareholders, 10% from other defined monetary sources); with the gender bonus 90% (5% equity, 5% other sources).",
+   "cofunding_pct": 20,
+   "application_url": "https://www.aws.at/en/aws-preseed-innovative-solutions/",
+   "application_channel": "portal",
+   "deadline_type": "rolling",
+   "deadline_note": "Ongoing submission with several decision dates per year.",
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Check the target group: start-up teams before incorporation, or companies registered in the Commercial Register no more than 6 months ago (micro and small enterprises).",
+     "url": "https://www.aws.at/en/aws-preseed-innovative-solutions/"
+    },
+    {
+     "step": 2,
+     "detail": "Prepare the project and financing plan showing the required equity and other own contributions.",
+     "url": null
+    },
+    {
+     "step": 3,
+     "detail": "Submit through the aws Fördermanager; applications are decided at one of several decision dates per year.",
+     "url": "https://www.aws.at/en/aws-preseed-innovative-solutions/"
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "Business plan / project description",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Financing plan evidencing the equity contribution by shareholders",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Commercial Register extract (if already incorporated)",
+     "mandatory": false,
+     "note": "Max 6 months since registration"
+    }
+   ],
+   "eligibility": {
+    "entity": "startup",
+    "company_age_months_min": null,
+    "company_age_months_max": 6,
+    "headcount_min": null,
+    "headcount_max": null,
+    "turnover_annual_max": null,
+    "sme_category": "micro",
+    "sectors": [
+     "deeptech",
+     "any"
+    ],
+    "stages": [
+     "idea",
+     "pre_seed"
+    ],
+    "requires_local_entity": true,
+    "requires_incorporation": false,
+    "rd_focus": false,
+    "female_founder_only": false,
+    "underrepresented_focus": false,
+    "de_minimis": false,
+    "other_note": "Applicants may be 'natural persons (start-up teams before the company is established)' or companies within 6 months of Commercial Register registration; also 'already established independent partnerships or corporations (limited to micro and small enterprises according to the SME definition)'. A gender bonus raises the rate and ceiling. De minimis is not stated on the page."
+   },
+   "source_url": "https://www.aws.at/en/aws-preseed-innovative-solutions/",
+   "source_snippet": "The maximum possible grant amounts to EUR 100,000 ... 80 % of eligible costs, with 10 % to be contributed as equity by shareholders ... max. 6 months after their registration in the Commercial Register ... Ongoing; several decision dates per year.",
+   "category": "startup",
+   "is_automatic": false,
+   "admin_area": null,
+   "last_verified_at": "2026-08-14",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "at-ffg-basisprogramm",
+   "name_local": "FFG Basisprogramm",
+   "name_en": "FFG General Programme (Basisprogramm)",
+   "country_code": "at",
+   "admin_level": "national",
+   "funder": "Österreichische Forschungsförderungsgesellschaft (FFG)",
+   "funder_type": "public",
+   "grant_type": "grant",
+   "amount_min": null,
+   "amount_max": 3000000,
+   "amount_currency": "EUR",
+   "amount_note": "For 2026 the maximum funding per project is EUR 3,000,000. Funding is a mix of grant and loan; the FFG page states support of up to 70% of project costs for startups plus a 5% bonus for high-tech startups, and loan repayment falls due five years after project completion.",
+   "application_url": "https://www.ffg.at/programm/basisprogramm",
+   "application_channel": "portal",
+   "deadline_type": "rolling",
+   "deadline_note": "Applications can be submitted at any time; the 2026 call runs from 1 January to 31 December 2026.",
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Scope an R&D project with high commercial potential, running through to prototype stage.",
+     "url": "https://www.ffg.at/programm/basisprogramm"
+    },
+    {
+     "step": 2,
+     "detail": "Prepare the project description, work packages and cost plan (cooperation with partners is possible).",
+     "url": null
+    },
+    {
+     "step": 3,
+     "detail": "Submit at any time via the FFG eCall portal; FFG evaluates and offers a grant/loan mix.",
+     "url": "https://www.ffg.at/programm/basisprogramm"
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "Project description with work packages and milestones (eCall)",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Cost plan / Kostenplan",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Company financial statements",
+     "mandatory": true,
+     "note": null
+    }
+   ],
+   "eligibility": {
+    "entity": "startup",
+    "company_age_months_min": null,
+    "company_age_months_max": null,
+    "headcount_min": null,
+    "headcount_max": null,
+    "turnover_annual_max": null,
+    "sme_category": "any",
+    "sectors": [
+     "deeptech",
+     "manufacturing",
+     "any"
+    ],
+    "stages": [
+     "pre_seed",
+     "seed",
+     "series_a",
+     "growth"
+    ],
+    "requires_local_entity": true,
+    "requires_incorporation": true,
+    "rd_focus": true,
+    "female_founder_only": false,
+    "underrepresented_focus": false,
+    "de_minimis": false,
+    "other_note": "Open to 'all company sizes - including startups (companies in formation)'. Projects must show high commercial potential and technical sophistication."
+   },
+   "source_url": "https://www.ffg.at/programm/basisprogramm",
+   "source_snippet": "Anträge innovativer und wettbewerbsfähiger Unternehmen können laufend eingereicht werden (Kooperation möglich); Call 2026: 01.01.2026 - 31.12.2026; max. Förderung pro Projekt EUR 3.000.000.",
+   "category": "startup",
+   "cofunding_pct": null,
+   "is_automatic": false,
+   "admin_area": null,
+   "last_verified_at": "2026-08-14",
+   "verification_status": "verified"
+  }
+ ]
+}

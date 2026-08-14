@@ -1,0 +1,173 @@
+{
+ "country_code": "se",
+ "country_name": "Sweden",
+ "currency": "SEK",
+ "language": "en",
+ "entity": "startup",
+ "programmes": [
+  {
+   "slug": "se-almi-foretagslan",
+   "name_local": "Almi – lån till företag",
+   "name_en": "Almi business loans",
+   "country_code": "se",
+   "admin_level": "national",
+   "funder": "Almi Företagspartner AB (state-owned)",
+   "funder_type": "public",
+   "grant_type": "loan",
+   "amount_min": null,
+   "amount_max": null,
+   "amount_currency": "SEK",
+   "amount_note": "Almi does not publish loan amounts, interest rates or ceilings on its lending page; loans are priced individually and normally complement bank financing. No amount is recorded here rather than guessed.",
+   "application_url": "https://www.almi.se/vara-tjanster/tjanster/lan/",
+   "application_channel": "online",
+   "deadline_type": "rolling",
+   "deadline_note": "Continuous — lending, not a call. Applications are made through Almi's e-services at any time.",
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Prepare a business plan and financing need; Almi lending usually complements bank or own financing.",
+     "url": "https://www.almi.se/vara-tjanster/tjanster/lan/"
+    },
+    {
+     "step": 2,
+     "detail": "Log in to Almi's e-services with BankID, mobile BankID or Telia e-legitimation and complete the loan application.",
+     "url": "https://www.almi.se/vara-tjanster/tjanster/lan/"
+    },
+    {
+     "step": 3,
+     "detail": "Register the company before disbursement — 'Företaget behöver inte vara registrerat vid ansökningstillfället, men det måste vara registrerat innan utbetalning.'",
+     "url": null
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "Loan application via Almi e-services",
+     "mandatory": true,
+     "note": "Requires BankID / mobile BankID / Telia e-legitimation"
+    },
+    {
+     "doc": "Business plan and financial forecasts",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Company registration (before disbursement)",
+     "mandatory": true,
+     "note": null
+    }
+   ],
+   "eligibility": {
+    "entity": "startup",
+    "company_age_months_min": null,
+    "company_age_months_max": null,
+    "headcount_min": null,
+    "headcount_max": null,
+    "turnover_annual_max": null,
+    "sme_category": "any",
+    "sectors": [
+     "any"
+    ],
+    "stages": [
+     "idea",
+     "pre_seed",
+     "seed",
+     "series_a",
+     "growth"
+    ],
+    "requires_local_entity": true,
+    "requires_incorporation": false,
+    "rd_focus": false,
+    "female_founder_only": false,
+    "underrepresented_focus": false,
+    "de_minimis": false,
+    "other_note": "'Företaget behöver inte vara registrerat vid ansökningstillfället, men det måste vara registrerat innan utbetalning.' Almi is state-owned and lends on commercial terms, typically at a higher interest rate than banks to reflect risk (rate not published on the page)."
+   },
+   "source_url": "https://www.almi.se/vara-tjanster/tjanster/lan/",
+   "source_snippet": "Vi ger näring till Sverige genom att erbjuda finansiering i form av lån och riskkapital ... Företaget behöver inte vara registrerat vid ansökningstillfället, men det måste vara registrerat innan utbetalning.",
+   "category": "startup",
+   "cofunding_pct": null,
+   "is_automatic": false,
+   "admin_area": null,
+   "last_verified_at": "2026-08-14",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "se-vinnova-innovativa-startups",
+   "name_local": "Innovativa Startups 2026",
+   "name_en": "Innovative Startups 2026 (Vinnova)",
+   "country_code": "se",
+   "admin_level": "national",
+   "funder": "Vinnova – Sveriges innovationsmyndighet",
+   "funder_type": "public",
+   "grant_type": "grant",
+   "amount_min": null,
+   "amount_max": 500000,
+   "amount_currency": "SEK",
+   "amount_note": "'Maximalt 500 000 kr' per project, for testing customer needs and business viability. The support percentage is not stated on the call page, so none is recorded here.",
+   "application_url": "https://www.vinnova.se/e/innovativa-startups/innovativa-startups-2026",
+   "application_channel": "portal",
+   "deadline_type": "cutoff",
+   "deadline_note": "The 2026 call opens 12 October 2026 and closes 12 January 2027 at 14:00. Vinnova runs this call annually.",
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Check that the company is a Swedish aktiebolag no more than 10 years old, with at most 10 employees and at most SEK 10 million net turnover.",
+     "url": "https://www.vinnova.se/e/innovativa-startups/innovativa-startups-2026"
+    },
+    {
+     "step": 2,
+     "detail": "Log in and complete the application in Vinnova's e-service, describing the project, the parties and the budget.",
+     "url": "https://www.vinnova.se/e/innovativa-startups/innovativa-startups-2026"
+    },
+    {
+     "step": 3,
+     "detail": "Submit before the closing time; Vinnova assesses and notifies the decision.",
+     "url": null
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "Application in Vinnova's e-service (project description, parties, budget)",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Company registration certificate / evidence of company age, headcount and turnover",
+     "mandatory": true,
+     "note": null
+    }
+   ],
+   "eligibility": {
+    "entity": "startup",
+    "company_age_months_min": null,
+    "company_age_months_max": 120,
+    "headcount_min": null,
+    "headcount_max": 10,
+    "turnover_annual_max": 10000000,
+    "sme_category": "micro",
+    "sectors": [
+     "any"
+    ],
+    "stages": [
+     "pre_seed",
+     "seed"
+    ],
+    "requires_local_entity": true,
+    "requires_incorporation": true,
+    "rd_focus": false,
+    "female_founder_only": false,
+    "underrepresented_focus": false,
+    "de_minimis": false,
+    "other_note": "'Svenska aktiebolag som är högst 10 år gamla, har max 10 anställda, högst 10 mkr i nettoomsättning'. Vinnova grants of this type are commonly awarded as försumbart stöd (de minimis), but the call page text we read did not state it, so it is not asserted here."
+   },
+   "source_url": "https://www.vinnova.se/e/innovativa-startups/innovativa-startups-2026",
+   "source_snippet": "Svenska aktiebolag som är högst 10 år gamla, har max 10 anställda, högst 10 mkr i nettoomsättning ... Maximalt 500 000 kr ... 12 okt. 2026 - 12 jan. 2027 kl 14:00.",
+   "category": "startup",
+   "cofunding_pct": null,
+   "is_automatic": false,
+   "admin_area": null,
+   "last_verified_at": "2026-08-14",
+   "verification_status": "verified"
+  }
+ ]
+}

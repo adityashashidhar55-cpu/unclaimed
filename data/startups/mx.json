@@ -1,0 +1,180 @@
+{
+ "country_code": "mx",
+ "country_name": "Mexico",
+ "currency": "MXN",
+ "language": "en",
+ "entity": "startup",
+ "programmes": [
+  {
+   "slug": "mx-impulsora-innovacion",
+   "name_local": "Impulsora de Innovación México",
+   "name_en": "Impulsora de Innovación México (co-investment programme)",
+   "country_code": "mx",
+   "admin_level": "national",
+   "funder": "Secretaría de Economía with Fondo de Fondos (Corporación Mexicana de Inversiones de Capital)",
+   "funder_type": "ppp",
+   "grant_type": "equity",
+   "amount_min": null,
+   "amount_max": 20000000,
+   "amount_currency": "MXN",
+   "amount_note": "Co-investment through the Fondo de Fondos: up to 6 million pesos for seed capital and up to 20 million pesos for venture/growth capital. The Fondo de Fondos covers up to 50% of an investment round; private institutional funds must cover the remainder. Investment periods of 5-7 years with 10-12 year exit horizons.",
+   "cofunding_pct": 50,
+   "application_url": "https://www.impulsorainnovacion.gob.mx/",
+   "application_channel": "online",
+   "deadline_type": "annual_call",
+   "deadline_note": "'Convocatoria cerrada el 30 de abril del 2026' — the most recent call closed on 30 April 2026. The programme is presented as an ongoing instrument of Plan México; check the microsite for the next call.",
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Verify that the company is formally incorporated in Mexico and operates in a Plan México strategic sector.",
+     "url": "https://www.impulsorainnovacion.gob.mx/"
+    },
+    {
+     "step": 2,
+     "detail": "Register through the electronic form on the programme microsite while a call is open.",
+     "url": "https://www.impulsorainnovacion.gob.mx/"
+    },
+    {
+     "step": 3,
+     "detail": "Selected companies are matched with private institutional funds; Fondo de Fondos co-invests up to 50% of the round via equity or convertible instruments (SAFEs, notas convertibles).",
+     "url": null
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "Electronic registration form on the microsite",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Acta constitutiva / proof of formal incorporation in Mexico",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Investment materials (deck, financials, round structure)",
+     "mandatory": true,
+     "note": null
+    }
+   ],
+   "eligibility": {
+    "entity": "startup",
+    "company_age_months_min": null,
+    "company_age_months_max": null,
+    "headcount_min": null,
+    "headcount_max": null,
+    "turnover_annual_max": null,
+    "sme_category": "any",
+    "sectors": [
+     "ai",
+     "deeptech",
+     "climate",
+     "health",
+     "agri",
+     "manufacturing"
+    ],
+    "stages": [
+     "seed",
+     "series_a",
+     "growth"
+    ],
+    "requires_local_entity": true,
+    "requires_incorporation": true,
+    "rd_focus": false,
+    "female_founder_only": false,
+    "underrepresented_focus": false,
+    "de_minimis": false,
+    "other_note": "Mexican companies 'formalmente constituidas', operating in Plan México strategic sectors (AI, semiconductors, clean energy, biotech, agri-innovation, advanced manufacturing, telecommunications, security tech, mobility, cybersecurity), at early, growth or consolidation stage, and able to receive private capital through equity or convertible instruments."
+   },
+   "source_url": "https://www.impulsorainnovacion.gob.mx/",
+   "source_snippet": "Programa que apoya proyectos ciudadanos de innovación y de tecnologías avanzadas ... Convocatoria cerrada el 30 de abril del 2026.",
+   "category": "startup",
+   "is_automatic": false,
+   "admin_area": null,
+   "last_verified_at": "2026-08-14",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "mx-nafin-financiamiento-empresarial",
+   "name_local": "Nafin — Financiamiento Empresarial (crédito para MIPYMES)",
+   "name_en": "Nacional Financiera — business financing for MSMEs (guaranteed bank credit)",
+   "country_code": "mx",
+   "admin_level": "national",
+   "funder": "Nacional Financiera S.N.C. (Nafin)",
+   "funder_type": "public",
+   "grant_type": "loan",
+   "amount_min": null,
+   "amount_max": 20000000,
+   "amount_currency": "MXN",
+   "amount_note": "'Hasta 20 mdp' (up to 20 million pesos), term 'Hasta 5 años', rate 'Anual conforme al destino'. Nafin guarantees/funds the credit; the participating commercial bank sets the final rate and authorises the loan.",
+   "application_url": "https://www.nafin.com/portalnf/content/financiamiento/empresarial.html",
+   "application_channel": "online",
+   "deadline_type": "rolling",
+   "deadline_note": "Continuous — a standing credit programme delivered through 15+ participating banks (BBVA, Citibanamex, HSBC, Banorte and others), not a call.",
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Confirm you meet the requirements (formal business, favourable credit bureau history, minimum two years of operation, sufficient cash flow).",
+     "url": "https://www.nafin.com/portalnf/content/financiamiento/empresarial.html"
+    },
+    {
+     "step": 2,
+     "detail": "Contact one of the participating banks listed by Nafin.",
+     "url": null
+    },
+    {
+     "step": 3,
+     "detail": "The bank evaluates creditworthiness and authorises the loan directly.",
+     "url": null
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "Documentation requested by the participating bank",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Evidence of at least two years of business operation",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Financial statements demonstrating cash flow",
+     "mandatory": true,
+     "note": null
+    }
+   ],
+   "eligibility": {
+    "entity": "startup",
+    "company_age_months_min": 24,
+    "company_age_months_max": null,
+    "headcount_min": null,
+    "headcount_max": null,
+    "turnover_annual_max": null,
+    "sme_category": "any",
+    "sectors": [
+     "any"
+    ],
+    "stages": [
+     "growth"
+    ],
+    "requires_local_entity": true,
+    "requires_incorporation": false,
+    "rd_focus": false,
+    "female_founder_only": false,
+    "underrepresented_focus": false,
+    "de_minimis": false,
+    "other_note": "'Para las Micro, Pequeñas y Medianas Empresas mexicanas de los sectores industria, comercio y servicios'. Requires a favourable credit bureau history and a minimum of two years of operation — so it is not available to pre-revenue startups."
+   },
+   "source_url": "https://www.nafin.com/portalnf/content/financiamiento/empresarial.html",
+   "source_snippet": "Para las Micro, Pequeñas y Medianas Empresas mexicanas de los sectores industria, comercio y servicios ... Hasta 20 mdp ... Hasta 5 años.",
+   "category": "startup",
+   "cofunding_pct": null,
+   "is_automatic": false,
+   "admin_area": null,
+   "last_verified_at": "2026-08-14",
+   "verification_status": "verified"
+  }
+ ]
+}

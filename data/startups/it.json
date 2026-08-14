@@ -1,0 +1,191 @@
+{
+ "country_code": "it",
+ "country_name": "Italy",
+ "currency": "EUR",
+ "language": "en",
+ "entity": "startup",
+ "programmes": [
+  {
+   "slug": "it-on-nuove-imprese-tasso-zero",
+   "name_local": "ON – Oltre Nuove imprese a tasso zero",
+   "name_en": "ON – Beyond New zero-interest enterprises",
+   "country_code": "it",
+   "admin_level": "national",
+   "funder": "Invitalia S.p.A., for the Ministero delle Imprese e del Made in Italy",
+   "funder_type": "public",
+   "grant_type": "loan",
+   "amount_min": null,
+   "amount_max": 3000000,
+   "amount_currency": "EUR",
+   "amount_note": "Eligible project spend up to EUR 3 million, with the incentive covering up to 90% of project costs. Historically a mix of a zero-interest loan (repayable over 10 years) and a non-repayable grant, but the grant funds are exhausted: 'per le domande presentate dal 1° luglio 2026 le agevolazioni verranno quindi concesse nella sola forma del finanziamento agevolato' — from 1 July 2026 only the subsidised zero-interest loan is granted.",
+   "cofunding_pct": 10,
+   "application_url": "https://www.invitalia.it/cosa-facciamo/creiamo-nuove-aziende/nuove-imprese-a-tasso-zero/presenta-la-domanda",
+   "application_channel": "portal",
+   "deadline_type": "rolling",
+   "deadline_note": "Open-window (sportello), active since 19 May 2021, with no closing date published. From 1 July 2026 the aid is granted only as subsidised financing.",
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Confirm ownership structure: people aged 18-35 or women of any age must hold more than 50% of both the shareholders and the equity.",
+     "url": "https://www.invitalia.it/cosa-facciamo/creiamo-nuove-aziende/nuove-imprese-a-tasso-zero"
+    },
+    {
+     "step": 2,
+     "detail": "Prepare the business plan with eligible costs up to EUR 3 million.",
+     "url": null
+    },
+    {
+     "step": 3,
+     "detail": "Submit the application through the Invitalia reserved area (invitalia-areariservata-fe.npi.invitalia.it).",
+     "url": "https://www.invitalia.it/cosa-facciamo/creiamo-nuove-aziende/nuove-imprese-a-tasso-zero/presenta-la-domanda"
+    },
+    {
+     "step": 4,
+     "detail": "If the project passes the first screening, complete the second-phase evaluation documentation.",
+     "url": "https://www.invitalia.it/incentivi-e-strumenti/nuove-imprese-tasso-zero/presenta-la-domanda/modulistica-seconda-fase-di-valutazione"
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "Piano d'impresa with detailed investment plan",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Documentation of the ownership structure (youth/female majority)",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Second-phase evaluation forms (modulistica seconda fase)",
+     "mandatory": false,
+     "note": "Only if invited to the second phase"
+    }
+   ],
+   "eligibility": {
+    "entity": "startup",
+    "company_age_months_min": null,
+    "company_age_months_max": null,
+    "headcount_min": null,
+    "headcount_max": null,
+    "turnover_annual_max": null,
+    "sme_category": "micro",
+    "sectors": [
+     "any"
+    ],
+    "stages": [
+     "idea",
+     "pre_seed",
+     "seed"
+    ],
+    "requires_local_entity": true,
+    "requires_incorporation": true,
+    "rd_focus": false,
+    "female_founder_only": false,
+    "underrepresented_focus": true,
+    "de_minimis": false,
+    "other_note": "Companies with 'prevalente partecipazione giovanile o femminile': people aged 18-35, or women of any age, must make up more than 50% of both the shareholders and the equity held. Micro and small enterprises."
+   },
+   "source_url": "https://www.invitalia.it/cosa-facciamo/creiamo-nuove-aziende/nuove-imprese-a-tasso-zero",
+   "source_snippet": "prevalente partecipazione giovanile o femminile ... spese ammissibili fino a 3 milioni di euro ... per le domande presentate dal 1° luglio 2026 le agevolazioni verranno quindi concesse nella sola forma del finanziamento agevolato.",
+   "category": "startup",
+   "is_automatic": false,
+   "admin_area": null,
+   "last_verified_at": "2026-08-14",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "it-smart-start-italia",
+   "name_local": "Smart&Start Italia",
+   "name_en": "Smart&Start Italia – zero-interest loans for innovative startups",
+   "country_code": "it",
+   "admin_level": "national",
+   "funder": "Invitalia S.p.A. (Agenzia nazionale per l'attrazione degli investimenti), for the Ministero delle Imprese e del Made in Italy",
+   "funder_type": "public",
+   "grant_type": "loan",
+   "amount_min": 100000,
+   "amount_max": 1500000,
+   "amount_currency": "EUR",
+   "amount_note": "'Finanziamento a tasso zero dell'80% delle spese ammissibili', rising to 90% for startups made up entirely of women and/or people under 36 or including a researcher returning from abroad. Eligible project spend between EUR 100,000 and EUR 1.5 million. Startups based in southern Italy also receive an additional 30% non-repayable contribution.",
+   "cofunding_pct": 20,
+   "application_url": "https://www.invitalia.it/cosa-facciamo/creiamo-nuove-aziende/smartstart-italia",
+   "application_channel": "portal",
+   "deadline_type": "rolling",
+   "deadline_note": "'L'incentivo è a \"sportello\", non ci sono graduatorie né scadenze' — open-window, no rankings and no deadlines. Applications are assessed in order of receipt, normally within 60 days.",
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Ensure the company is a small innovative startup registered in the special section of the Registro delle imprese and incorporated no more than 60 months ago.",
+     "url": "https://www.invitalia.it/cosa-facciamo/creiamo-nuove-aziende/smartstart-italia"
+    },
+    {
+     "step": 2,
+     "detail": "Prepare the business plan and a project budget between EUR 100,000 and EUR 1.5 million.",
+     "url": null
+    },
+    {
+     "step": 3,
+     "detail": "Submit the application on the Invitalia online platform (sportello, no deadline).",
+     "url": "https://www.invitalia.it/cosa-facciamo/creiamo-nuove-aziende/smartstart-italia"
+    },
+    {
+     "step": 4,
+     "detail": "Invitalia assesses in order of arrival, normally within 60 days; on approval the zero-interest loan is contracted and disbursed against expenditure.",
+     "url": null
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "Piano d'impresa (business plan) with budget",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Visura camerale showing registration in the special section for innovative startups",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Identity and digital signature (SPID/CNS) of the legal representative",
+     "mandatory": true,
+     "note": null
+    }
+   ],
+   "eligibility": {
+    "entity": "startup",
+    "company_age_months_min": null,
+    "company_age_months_max": 60,
+    "headcount_min": null,
+    "headcount_max": null,
+    "turnover_annual_max": null,
+    "sme_category": "small",
+    "sectors": [
+     "deeptech",
+     "ai",
+     "health",
+     "climate",
+     "any"
+    ],
+    "stages": [
+     "pre_seed",
+     "seed",
+     "series_a"
+    ],
+    "requires_local_entity": true,
+    "requires_incorporation": true,
+    "rd_focus": false,
+    "female_founder_only": false,
+    "underrepresented_focus": false,
+    "de_minimis": false,
+    "other_note": "'Startup innovative di piccola dimensione, costituite da non più di 60 mesi, iscritte alla sezione speciale del Registro delle imprese'. Teams not yet incorporated may apply and incorporate afterwards under the programme rules (not verified here). De minimis status is not stated on the page, so it is not asserted."
+   },
+   "source_url": "https://www.invitalia.it/cosa-facciamo/creiamo-nuove-aziende/smartstart-italia",
+   "source_snippet": "Finanziamento a tasso zero dell'80% delle spese ammissibili ... Startup innovative di piccola dimensione, costituite da non più di 60 mesi, iscritte alla sezione speciale del Registro delle imprese ... L'incentivo è a \"sportello\", non ci sono graduatorie né scadenze.",
+   "category": "startup",
+   "is_automatic": false,
+   "admin_area": null,
+   "last_verified_at": "2026-08-14",
+   "verification_status": "verified"
+  }
+ ]
+}

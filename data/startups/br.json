@@ -1,0 +1,184 @@
+{
+ "country_code": "br",
+ "country_name": "Brazil",
+ "currency": "BRL",
+ "language": "en",
+ "entity": "startup",
+ "programmes": [
+  {
+   "slug": "br-embrapii-sebrae-mpme",
+   "name_local": "Embrapii + Sebrae — apoio à inovação para MPMEs",
+   "name_en": "EMBRAPII + Sebrae innovation support for micro, small and medium enterprises",
+   "country_code": "br",
+   "admin_level": "national",
+   "funder": "EMBRAPII (Empresa Brasileira de Pesquisa e Inovação Industrial) with Sebrae",
+   "funder_type": "ppp",
+   "grant_type": "grant",
+   "amount_min": null,
+   "amount_max": 300000,
+   "amount_currency": "BRL",
+   "amount_note": "'Custeamos até 90% do seu projeto de inovação, sem a necessidade do reembolso dos recursos ao final do projeto.' EMBRAPII contributes up to 50% of total project value and Sebrae covers up to 70% of the company's own share. Ceilings by modality: R$ 150,000 (single MPME), R$ 200,000 (MPME with a medium/large partner), R$ 300,000 (multiple MPMEs).",
+   "cofunding_pct": 10,
+   "application_url": "https://embrapii.org.br/sebrae/",
+   "application_channel": "online",
+   "deadline_type": "rolling",
+   "deadline_note": "No deadlines are published; companies engage an EMBRAPII accredited unit directly and contract when a project is scoped.",
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Define the innovation challenge.",
+     "url": "https://embrapii.org.br/sebrae/"
+    },
+    {
+     "step": 2,
+     "detail": "Identify the technical expertise needed and search the network of EMBRAPII accredited units (over 90 research centres).",
+     "url": null
+    },
+    {
+     "step": 3,
+     "detail": "Meet the unit, assess viability and agree the project scope.",
+     "url": null
+    },
+    {
+     "step": 4,
+     "detail": "Negotiate and sign the contract; funds are transferred and the project is executed.",
+     "url": null
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "Project scope agreed with the EMBRAPII accredited unit",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Proof of annual revenue up to R$ 4.8 million",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Contract with the EMBRAPII unit",
+     "mandatory": true,
+     "note": null
+    }
+   ],
+   "eligibility": {
+    "entity": "startup",
+    "company_age_months_min": null,
+    "company_age_months_max": null,
+    "headcount_min": null,
+    "headcount_max": null,
+    "turnover_annual_max": 4800000,
+    "sme_category": "micro",
+    "sectors": [
+     "manufacturing",
+     "deeptech",
+     "any"
+    ],
+    "stages": [
+     "seed",
+     "series_a",
+     "growth"
+    ],
+    "requires_local_entity": true,
+    "requires_incorporation": true,
+    "rd_focus": true,
+    "female_founder_only": false,
+    "underrepresented_focus": false,
+    "de_minimis": false,
+    "other_note": "'Micro e pequenas empresas com faturamento anual de até R$ 4,8 milhões'. Support is non-refundable ('sem a necessidade do reembolso dos recursos ao final do projeto') and is delivered as R&D services performed by EMBRAPII accredited units."
+   },
+   "source_url": "https://embrapii.org.br/sebrae/",
+   "source_snippet": "Custeamos até 90% do seu projeto de inovação, sem a necessidade do reembolso dos recursos ao final do projeto. ... Micro e pequenas empresas com faturamento anual de até R$ 4,8 milhões.",
+   "category": "startup",
+   "is_automatic": false,
+   "admin_area": null,
+   "last_verified_at": "2026-08-14",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "br-finep-inovacred",
+   "name_local": "Finep Inovacred",
+   "name_en": "Finep Inovacred (indirect innovation credit line)",
+   "country_code": "br",
+   "admin_level": "national",
+   "funder": "Financiadora de Estudos e Projetos (Finep)",
+   "funder_type": "public",
+   "grant_type": "loan",
+   "amount_min": null,
+   "amount_max": 30000000,
+   "amount_currency": "BRL",
+   "amount_note": "'Projetos e PEIS até 30 milhões. Taxa: TR + 6,068 a 6,605% a.a.' Operated indirectly ('Operação: Indireta via parceiros') through accredited regional financial partners, which set the individual ticket. Open to companies of all revenue bands, including 'Receita: até R$ 4,8 Mi'.",
+   "application_url": "https://www.finep.gov.br/credito-operado-por-parceiros#finep-inovacred",
+   "application_channel": "portal",
+   "deadline_type": "rolling",
+   "deadline_note": "Continuous credit line ('fluxo contínuo') operated through accredited partner institutions, not a call with a closing date.",
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Register the company in the Finep cadastro system.",
+     "url": "https://cadastro.finep.gov.br/"
+    },
+    {
+     "step": 2,
+     "detail": "Identify an accredited partner financial institution operating Inovacred in your state.",
+     "url": "https://www.finep.gov.br/credito-operado-por-parceiros#finep-inovacred"
+    },
+    {
+     "step": 3,
+     "detail": "Submit the innovation project and financial documentation to the partner institution for credit analysis and contracting.",
+     "url": null
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "Finep cadastro (company registration)",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Innovation project description and budget",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Company financial statements / consolidated group financials",
+     "mandatory": true,
+     "note": null
+    }
+   ],
+   "eligibility": {
+    "entity": "startup",
+    "company_age_months_min": null,
+    "company_age_months_max": null,
+    "headcount_min": null,
+    "headcount_max": null,
+    "turnover_annual_max": null,
+    "sme_category": "any",
+    "sectors": [
+     "any"
+    ],
+    "stages": [
+     "seed",
+     "series_a",
+     "growth"
+    ],
+    "requires_local_entity": true,
+    "requires_incorporation": true,
+    "rd_focus": false,
+    "female_founder_only": false,
+    "underrepresented_focus": false,
+    "de_minimis": false,
+    "other_note": "Brazilian companies ('empresas brasileiras'). Objective: 'Apoiar o fomento às atividades inovativas de empresas brasileiras.' This is reimbursable credit at TR + ~6% p.a., not a grant."
+   },
+   "source_url": "https://www.finep.gov.br/chamadas-publicas/chamadaspublicas?situacao=aberta",
+   "source_snippet": "Finep Inovacred — Objetivo: Apoiar o fomento às atividades inovativas de empresas brasileiras. Condição de financiamento: Projetos e PEIS até 30 milhões. Taxa: TR + 6,068 a 6,605% a.a. Operação: Indireta via parceiros.",
+   "category": "startup",
+   "cofunding_pct": null,
+   "is_automatic": false,
+   "admin_area": null,
+   "last_verified_at": "2026-08-14",
+   "verification_status": "verified"
+  }
+ ]
+}
