@@ -2,9 +2,9 @@
    UNCLAIMED — liquid glass.
 
    Dark, cinematic, near-invisible panels whose edges are drawn by a
-   masked gradient stroke rather than a border. The canvas is pure #000;
-   sections butt against each other and the ambient gradient field does
-   the separating.
+   masked gradient stroke rather than a border. The canvas is a soft warm
+   slate rather than pure black; sections butt against each other and the
+   ambient gradient field does the separating.
 
    The class API is unchanged from the previous light theme on purpose —
    4,300 generated pages use these names, so restyling here restyles the
@@ -14,30 +14,36 @@
      - fill is ~1% white. Past 0.02 it reads as milky 2016 glassmorphism.
      - no `border` anywhere. The edge is a ::before ring, bright at top
        and bottom, gone at the sides — light catching the lip of a pane.
-     - Instrument Serif italic carries the identity; body is Barlow.
+     - Comic Sans carries the identity, headings and body alike.
      - motion is entry-only and never bounces.
    =================================================================== */
 
-@import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Barlow:wght@300;400;500;600&display=swap');
+/* Comic Neue is loaded alongside Comic Sans MS because Comic Sans ships with
+   Windows and macOS but not with Linux or Android — without a webfont, a
+   third of visitors would silently fall back to a system sans and see a
+   different site from everyone else. Comic Neue is the same shapes, drawn
+   properly, so the two are near-indistinguishable at body size. */
+@import url('https://fonts.googleapis.com/css2?family=Comic+Neue:ital,wght@0,300;0,400;0,700;1,400;1,700&display=swap');
 
 :root {
-  --lg-fill: rgba(255, 255, 255, 0.01);
+  --lg-fill: rgba(255, 255, 255, 0.035);
   --lg-blur: 4px;
   --lg-blur-strong: 50px;
   --lg-stroke: 1.4px;
 
-  --font-heading: 'Instrument Serif', Georgia, serif;
-  --font-body: 'Barlow', system-ui, -apple-system, sans-serif;
+  --font-heading: 'Comic Sans MS', 'Comic Neue', 'Chalkboard SE', cursive;
+  --font-body: 'Comic Sans MS', 'Comic Neue', 'Chalkboard SE', cursive;
 
   --ink: #ffffff;
   --ink-2: rgba(255, 255, 255, 0.72);
-  --ink-3: rgba(255, 255, 255, 0.5);
-  --ink-4: rgba(255, 255, 255, 0.34);
-  --line: rgba(255, 255, 255, 0.1);
-  --line-2: rgba(255, 255, 255, 0.16);
+  --ink-3: rgba(255, 255, 255, 0.62);
+  --ink-4: rgba(255, 255, 255, 0.46);
+  --line: rgba(255, 255, 255, 0.13);
+  --line-2: rgba(255, 255, 255, 0.2);
 
-  --paper: #000000;
-  --cream: #000000;
+  --paper: #1c1f26;
+  --cream: #1c1f26;
+  --paper-2: #232733;
   --terracotta: #e8734a;
   --sage: #7fd1ae;
   --gold: #e3b23c;
@@ -57,7 +63,7 @@ html { scroll-behavior: smooth; }
 
 body {
   margin: 0;
-  background: #000;
+  background: var(--paper);
   color: var(--ink);
   font-family: var(--font-body);
   font-weight: 300;
@@ -77,9 +83,10 @@ body::before {
   z-index: -2;
   pointer-events: none;
   background:
-    radial-gradient(48rem 48rem at 12% -8%, rgba(232, 115, 74, 0.13), transparent 60%),
-    radial-gradient(42rem 42rem at 88% 4%, rgba(127, 209, 174, 0.09), transparent 62%),
-    radial-gradient(56rem 56rem at 50% 108%, rgba(120, 120, 255, 0.07), transparent 60%);
+    radial-gradient(48rem 48rem at 12% -8%, rgba(232, 115, 74, 0.16), transparent 60%),
+    radial-gradient(42rem 42rem at 88% 4%, rgba(127, 209, 174, 0.11), transparent 62%),
+    radial-gradient(56rem 56rem at 50% 108%, rgba(126, 138, 255, 0.10), transparent 60%),
+    linear-gradient(180deg, #202430 0%, #1c1f26 55%, #191c23 100%);
   animation: drift 34s ease-in-out infinite alternate;
 }
 @keyframes drift {
@@ -315,7 +322,7 @@ footer.site a:hover { color: #fff; opacity: 1; }
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6' fill='none'%3E%3Cpath d='M1 1l4 4 4-4' stroke='%23fff' stroke-width='1.4' stroke-linecap='round'/%3E%3C/svg%3E");
   background-repeat: no-repeat; background-position: right .8rem center;
 }
-.lang-select option { background: #111; color: #fff; }
+.lang-select option { background: #232733; color: #fff; }
 
 /* ------------------------------------------------------------------ */
 /* Deadline status                                                     */
@@ -362,7 +369,7 @@ footer.site a:hover { color: #fff; opacity: 1; }
 .flow__dot {
   flex: 0 0 auto; width: 2.7rem; height: 2.7rem; border-radius: 9999px;
   display: grid; place-items: center; font-family: var(--font-heading); font-size: 1.05rem;
-  background: #000; box-shadow: inset 0 0 0 1px var(--line-2); position: relative; z-index: 1;
+  background: var(--paper-2); box-shadow: inset 0 0 0 1px var(--line-2); position: relative; z-index: 1;
 }
 .flow__step.in .flow__dot { box-shadow: inset 0 0 0 1px rgba(255,255,255,.4); }
 
@@ -459,7 +466,7 @@ footer.site a:hover { color: #fff; opacity: 1; }
   -webkit-box-shadow: inset 0 0 0 1px var(--line-2), inset 0 0 0 100px #0a0a0a;
   caret-color: #fff;
 }
-.field option { background: #111; }
+.field option { background: #232733; }
 
 /* An honest failure state, styled like the rest of the system. */
 .notice {

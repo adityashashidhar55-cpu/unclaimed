@@ -275,6 +275,53 @@ function viewHousing() {
 /* Results                                                             */
 /* ------------------------------------------------------------------ */
 
+/* ------------------------------------------------------------------ */
+/* The wall                                                            */
+/*                                                                     */
+/* This wizard used to render every matched programme to anyone who    */
+/* finished the questions — the whole paid product, free, on the page. */
+/* The total stays free because it is the honest teaser and it is what */
+/* gets someone to care. The list is what is being sold.               */
+/*                                                                     */
+/* Entitlement is asked of the server, never assumed. If the API is    */
+/* unreachable the answer is "not entitled": guessing generously here  */
+/* hands the paid list to anyone who blocks a request.                 */
+/* ------------------------------------------------------------------ */
+
+let ENTITLED = false;
+
+async function refreshEntitlement() {
+  try {
+    const res = await fetch('/api/me', { credentials: 'same-origin' });
+    if (!res.ok) { ENTITLED = false; return; }
+    const data = await res.json();
+    ENTITLED = !!data?.entitlement?.entitled;
+  } catch {
+    ENTITLED = false;
+  }
+}
+
+/**
+ * A bucket, or the wall in its place.
+ *
+ * Takes a thunk rather than a string so the programme markup is never built
+ * for an unentitled viewer — nothing to find in the DOM, nothing to un-hide.
+ */
+function gated(count, noun, buildHtml) {
+  if (ENTITLED) return buildHtml();
+  if (!count) return '';
+  return `<section class="bucket locked-bucket">
+    <div class="bucket__head"><h2>${count} ${noun}</h2></div>
+    <p class="small">Unlock to see which ones, what each pays, what documents they want and when they close.</p>
+    <div class="locked__rows" aria-hidden="true">
+      ${Array.from({ length: Math.min(count, 4) }, () => '<div class="locked__row"></div>').join('')}
+    </div>
+    <p><a class="btn btn-primary" href="/account/">Sign in to unlock</a>
+       <a class="btn" href="/pricing/">See pricing</a></p>
+    <p class="tiny">Email and a six-digit code. No password to forget.</p>
+  </section>`;
+}
+
 function money(n, cur) {
   return formatMoney(n, cur);
 }
@@ -554,41 +601,27 @@ function viewResults() {
     <div class="card card-flat"><div class="figure-sm">${r.eligible.filter((m) => m.programme.verification_status === 'verified').length}</div><p class="small" style="margin:.4rem 0 0"><strong>Human-verified matches.</strong> A researcher confirmed these against the official page.</p></div>
   </div>
 
-  ${
-    apply.length
-      ? `<section class="bucket">
+  ${gated(apply.length, 'programmes you can apply for', () => `<section class="bucket">
     <div class="bucket__head"><h2>Apply for these</h2><span class="bucket__count">${apply.length} programmes · nobody will remind you</span></div>
     <div class="bucket-list">${apply.map((m) => progCard(m, 'eligible')).join('')}</div>
-  </section>`
-      : ''
-  }
+  </section>`)}
 
-  ${
-    auto.length
-      ? `<section class="bucket">
+  ${gated(auto.length, 'you should already be getting', () => `<section class="bucket">
     <div class="bucket__head"><h2>You should already be getting these</h2><span class="bucket__count">${auto.length} automatic</span></div>
     <p class="small">No application needed — but "automatic" assumes the authority has your correct details. If one of these
     isn't reaching you, that is the gap worth chasing.</p>
     <div class="bucket-list" style="margin-top:1rem">${auto.map((m) => progCard(m, 'eligible')).join('')}</div>
-  </section>`
-      : ''
-  }
+  </section>`)}
 
-  ${
-    (r.tapered || []).length
-      ? `<section class="bucket">
+  ${gated((r.tapered || []).length, 'at a reduced amount', () => `<section class="bucket">
     <div class="bucket__head"><h2>Reduced amount, probably still yours</h2><span class="bucket__count">${r.tapered.length} programmes</span></div>
     <p class="small" style="max-width:62ch">Your income is above the published ceiling — but that ceiling is the threshold for the
     <em>maximum</em> award, and each of these records says in its own words that the payment tapers rather than stops.
     A tool that treated the ceiling as a cut-off would tell you "no" here. We'd rather tell you "probably less, go and check".</p>
     <div class="bucket-list" style="margin-top:1rem">${r.tapered.slice(0, 15).map((m) => progCard(m, 'taper')).join('')}</div>
-  </section>`
-      : ''
-  }
+  </section>`)}
 
-  ${
-    r.conditional.length
-      ? `<section class="bucket">
+  ${gated(r.conditional.length, 'that depend on your circumstances', () => `<section class="bucket">
     <div class="bucket__head"><h2>Only if this is you</h2><span class="bucket__count">${r.conditional.length} programmes${
       r.conditional_max > 0 ? ` · ${money(r.conditional_max, cur)} not counted` : ''
     }</span></div>
@@ -598,22 +631,15 @@ function viewResults() {
     get is how these tools end up useless. If one of them describes you, it's likely the biggest thing on this page.</p>
     <div class="bucket-list" style="margin-top:1rem">${r.conditional.slice(0, 20).map((m) => progCard(m, 'conditional')).join('')}</div>
     ${r.conditional.length > 20 ? `<p class="small">Showing 20 of ${r.conditional.length}.</p>` : ''}
-  </section>`
-      : ''
-  }
+  </section>`)}
 
-  ${documentPlan(r)}
-  ${deadlineSection(r)}
+  ${gated(r.eligible.length, 'documents and deadlines', () => documentPlan(r) + deadlineSection(r))}
 
-  ${
-    r.needs_one_more_answer.length
-      ? `<section class="bucket">
+  ${gated(r.needs_one_more_answer.length, 'one answer away', () => `<section class="bucket">
     <div class="bucket__head"><h2>One answer away</h2><span class="bucket__count">${r.needs_one_more_answer.length} programmes</span></div>
     <p class="small">You pass everything we can test. Each of these needs one more detail — answer it and it moves bucket immediately.</p>
     <div class="bucket-list" style="margin-top:1rem">${r.needs_one_more_answer.slice(0, 25).map((m) => progCard(m, 'maybe')).join('')}</div>
-  </section>`
-      : ''
-  }
+  </section>`)}
 
   <details class="fold" style="margin-top:3rem">
     <summary>Show the ${r.not_eligible.length} programmes you don't qualify for, and why</summary>
@@ -673,9 +699,12 @@ function buildIcs() {
 /* Controller                                                          */
 /* ------------------------------------------------------------------ */
 
-function render() {
+async function render() {
   const st = steps();
   if (S.result) {
+    /* Ask before drawing: rendering the list and then hiding it would put the
+       whole paid product one devtools panel away. */
+    await refreshEntitlement();
     app.innerHTML = viewResults();
   } else {
     const which = st[S.step];
