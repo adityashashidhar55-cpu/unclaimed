@@ -1,0 +1,587 @@
+{
+ "country_code": "sg",
+ "country_name": "Singapore",
+ "currency": "SGD",
+ "language": "en",
+ "entity": "startup",
+ "programmes": [
+  {
+   "slug": "sg-enterprise-development-grant",
+   "name_local": null,
+   "name_en": "Enterprise Development Grant (EDG)",
+   "country_code": "sg",
+   "admin_level": "national",
+   "admin_area": null,
+   "funder": "Enterprise Singapore (EnterpriseSG)",
+   "funder_type": "public",
+   "grant_type": "grant",
+   "category": "startup",
+   "amount_min": null,
+   "amount_max": null,
+   "amount_currency": "SGD",
+   "amount_note": "Support level, not a fixed cap: from 1 April 2023 SMEs can receive up to 50% support for EDG; sustainability-related projects are supported at up to 70%. EDG funds qualifying project costs, namely third-party consultancy fees, software and equipment, and internal manpower cost. There is no published per-project ceiling; the award follows the approved project cost. Projects are supported on a reimbursement basis.",
+   "cofunding_pct": 50,
+   "is_automatic": false,
+   "application_url": "https://apply.gov.sg/grants/business",
+   "application_channel": "portal",
+   "deadline_type": "rolling",
+   "deadline_note": "Open continuously on the Business Grants Portal; each complete application takes approximately 8-12 weeks to process. Note: EnterpriseSG states that EDGE launches in 2H2026 and that existing grants (EDG, MRA, PSG) remain accessible until that launch, so this scheme is expected to be superseded.",
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Identify the project category: Core Capabilities, Innovation & Productivity, or Market Access.",
+     "url": "https://www.enterprisesg.gov.sg/financial-support/enterprise-development-grant"
+    },
+    {
+     "step": 2,
+     "detail": "If claiming management consultancy costs, engage a consultant with SAC-accredited TR 43 or SS 680 certification.",
+     "url": "https://www.sac-accreditation.gov.sg/"
+    },
+    {
+     "step": 3,
+     "detail": "Prepare the project proposal using the EnterpriseSG template and gather supporting documents.",
+     "url": null
+    },
+    {
+     "step": 4,
+     "detail": "Apply on the Business Grants Portal using a Corppass account before the project commences.",
+     "url": "https://apply.gov.sg/grants/business"
+    },
+    {
+     "step": 5,
+     "detail": "On completion, appoint an auditor from EnterpriseSG's Pre-Qualified Panel and file the claim within six months of the end of the project qualifying period.",
+     "url": null
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "Latest ACRA search or instant information",
+     "mandatory": true,
+     "note": "Dated no earlier than 6 months from date of project application"
+    },
+    {
+     "doc": "Audited financial statements or certified management accounts for the last financial year",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Consolidated financial statements of the ultimate parent company",
+     "mandatory": false,
+     "note": "If any"
+    },
+    {
+     "doc": "Project proposal",
+     "mandatory": true,
+     "note": "Use the EnterpriseSG template for the chosen category"
+    },
+    {
+     "doc": "Proof of quotation for project cost items",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Consultants' CVs and SAC-accredited TR 43 or SS 680 certificates",
+     "mandatory": false,
+     "note": "Where management consultants are engaged"
+    }
+   ],
+   "eligibility": {
+    "entity": "startup",
+    "company_age_months_min": null,
+    "company_age_months_max": null,
+    "headcount_min": null,
+    "headcount_max": null,
+    "turnover_annual_max": null,
+    "sme_category": "any",
+    "sectors": [
+     "any"
+    ],
+    "stages": [
+     "seed",
+     "series_a",
+     "growth"
+    ],
+    "requires_local_entity": true,
+    "requires_incorporation": true,
+    "rd_focus": false,
+    "female_founder_only": false,
+    "underrepresented_focus": false,
+    "de_minimis": false,
+    "other_note": "Business entity registered and operating in Singapore; at least 30% local equity held directly or indirectly by Singaporeans and/or Singapore PRs, determined by ultimate individual ownership; company financially ready to start and complete the project. Projects must be new, must not have commenced, and must not be generating revenue at the point of grant application. Third party companies are not allowed to apply or manage the grant on behalf of applicant companies. There are no compulsory application fees."
+   },
+   "source_url": "https://www.enterprisesg.gov.sg/financial-support/enterprise-development-grant",
+   "source_snippet": "From 1 April 2023, SMEs can receive up to 50% support for EDG (support period for sustainability-related projects has been extended, and will be supported at up to 70%). ... EDGE launches in 2H2026. Existing grants (EDG, MRA, PSG) remain accessible until launch.",
+   "last_verified_at": "2026-08-14",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "sg-market-readiness-assistance",
+   "name_local": null,
+   "name_en": "Market Readiness Assistance (MRA) Grant",
+   "country_code": "sg",
+   "admin_level": "national",
+   "admin_area": null,
+   "funder": "Enterprise Singapore (EnterpriseSG)",
+   "funder_type": "public",
+   "grant_type": "grant",
+   "category": "startup",
+   "amount_min": null,
+   "amount_max": 100000,
+   "amount_currency": "SGD",
+   "amount_note": "Up to 70% of eligible costs for local SMEs (the 70% level takes effect 1 April 2026), capped at S$100,000 per company per new market, split across three activities: overseas market promotion up to S$20,000; overseas business development up to S$50,000; overseas market set-up up to S$30,000.",
+   "cofunding_pct": 30,
+   "is_automatic": false,
+   "application_url": "https://apply.gov.sg/grants/business",
+   "application_channel": "portal",
+   "deadline_type": "rolling",
+   "deadline_note": "Open continuously on the Business Grants Portal. EnterpriseSG states that EDGE launches in 2H2026 and that existing grants (EDG, MRA, PSG) remain accessible until launch.",
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Identify the target overseas market where annual sales have not exceeded S$100,000 in any of the past three years.",
+     "url": "https://www.enterprisesg.gov.sg/financial-support/market-readiness-assistance-grant"
+    },
+    {
+     "step": 2,
+     "detail": "Select the activity (market promotion, business development, or market set-up) and a vendor, and obtain quotations.",
+     "url": null
+    },
+    {
+     "step": 3,
+     "detail": "Apply on the Business Grants Portal with a Corppass account before the activity starts.",
+     "url": "https://apply.gov.sg/grants/business"
+    },
+    {
+     "step": 4,
+     "detail": "Complete the project, then submit the claim with the required audit.",
+     "url": null
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "ACRA business profile",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Latest audited financial statements or management accounts",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Vendor quotation for the proposed activity",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Project proposal describing the target market and activity",
+     "mandatory": true,
+     "note": null
+    }
+   ],
+   "eligibility": {
+    "entity": "startup",
+    "company_age_months_min": null,
+    "company_age_months_max": null,
+    "headcount_min": null,
+    "headcount_max": 200,
+    "turnover_annual_max": 100000000,
+    "sme_category": "any",
+    "sectors": [
+     "any"
+    ],
+    "stages": [
+     "seed",
+     "series_a",
+     "growth"
+    ],
+    "requires_local_entity": true,
+    "requires_incorporation": true,
+    "rd_focus": false,
+    "female_founder_only": false,
+    "underrepresented_focus": false,
+    "de_minimis": false,
+    "other_note": "Registered and operating in Singapore; at least 30% local equity held directly or indirectly by Singaporeans and/or Singapore PRs; new to the target market, with annual sales not exceeding S$100,000 in that market in any of the prior three years; Group Annual Sales Turnover not exceeding S$100 million OR Group employment size not exceeding 200 employees."
+   },
+   "source_url": "https://www.enterprisesg.gov.sg/financial-support/market-readiness-assistance-grant",
+   "source_snippet": "Up to 70% of eligible costs for local SMEs ... capped at S$100,000 per company per new market ... At least 30% local equity held directly or indirectly by Singaporean(s) and/or Singapore PR(s) ... Group Annual Sales Turnover not exceeding S$100 million OR a Group employment size not exceeding 200 employees.",
+   "last_verified_at": "2026-08-14",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "sg-productivity-solutions-grant",
+   "name_local": null,
+   "name_en": "Productivity Solutions Grant (PSG)",
+   "country_code": "sg",
+   "admin_level": "national",
+   "admin_area": null,
+   "funder": "Enterprise Singapore with sector lead agencies, administered via GoBusiness / Business Grants Portal",
+   "funder_type": "public",
+   "grant_type": "voucher",
+   "category": "startup",
+   "amount_min": null,
+   "amount_max": null,
+   "amount_currency": "SGD",
+   "amount_note": "PSG defrays the cost of pre-scoped IT solutions, equipment and consultancy services from pre-approved vendors. The GoBusiness PSG page describes the two support types (sector-specific and generic solutions) and the eligibility rules but does not state the support percentage or a cap on that page, so those are recorded as null rather than guessed; per-solution support levels are shown in the PSG Solution Directory.",
+   "cofunding_pct": null,
+   "is_automatic": false,
+   "application_url": "https://apply.gov.sg/grants/business",
+   "application_channel": "portal",
+   "deadline_type": "rolling",
+   "deadline_note": "Open continuously. EnterpriseSG states that EDGE launches in 2H2026 and that existing grants (EDG, MRA, PSG) remain accessible until launch.",
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Search the PSG Solution Directory for supportable solutions for your sector.",
+     "url": "https://grants.gobusiness.gov.sg/support/productivity-solutions-grant/psg-directory"
+    },
+    {
+     "step": 2,
+     "detail": "Get a quotation from the pre-approved vendor (IT solution), the vendor (equipment), or the pre-approved consultant (consultancy).",
+     "url": null
+    },
+    {
+     "step": 3,
+     "detail": "Submit the application on the Business Grants Portal using a Corppass account.",
+     "url": "https://apply.gov.sg/grants/business"
+    },
+    {
+     "step": 4,
+     "detail": "Submit the grant claim on the BGP before the claim due date.",
+     "url": null
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "Vendor or consultant quotation",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Corppass-authenticated company details",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Invoice and payment proof at claim stage",
+     "mandatory": true,
+     "note": null
+    }
+   ],
+   "eligibility": {
+    "entity": "startup",
+    "company_age_months_min": null,
+    "company_age_months_max": null,
+    "headcount_min": null,
+    "headcount_max": null,
+    "turnover_annual_max": null,
+    "sme_category": "any",
+    "sectors": [
+     "any"
+    ],
+    "stages": [
+     "seed",
+     "series_a",
+     "growth"
+    ],
+    "requires_local_entity": true,
+    "requires_incorporation": true,
+    "rd_focus": false,
+    "female_founder_only": false,
+    "underrepresented_focus": false,
+    "de_minimis": false,
+    "other_note": "Registered and operating in Singapore; the purchase/lease/subscription of the IT solution, equipment or consultancy service must be used in Singapore. For selected solutions only: minimum 30% local shareholding. For consultancy service solutions only: at least three local employees at the point of application. Companies are reminded not to share their Corppass with vendors to submit applications or claims."
+   },
+   "source_url": "https://grants.gobusiness.gov.sg/support/productivity-solutions-grant",
+   "source_snippet": "Registered and operating in Singapore. Purchase/lease/subscription of the IT solutions/equipment/consultancy service must be used in Singapore. For selected solutions only: Have a minimum of 30% local shareholding. For consultancy service solutions only: Have at least three local employees at the point of application.",
+   "last_verified_at": "2026-08-14",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "sg-startup-sg-equity",
+   "name_local": null,
+   "name_en": "Startup SG Equity (SSGE)",
+   "country_code": "sg",
+   "admin_level": "national",
+   "admin_area": null,
+   "funder": "Enterprise Singapore, deployed through SG Growth Capital (SGGC) and SGInnovate (SGI)",
+   "funder_type": "ppp",
+   "grant_type": "equity",
+   "category": "startup",
+   "amount_min": null,
+   "amount_max": 12000000,
+   "amount_currency": "SGD",
+   "amount_note": "Government co-invests alongside independent, qualified third-party investors. SSGE investment cap for each deep tech startup is S$12 million. Co-investment ratio (SGGC/SGI : co-investor), as of 27 Feb 2026: 2:1 up to the first S$1 million; 1:1 thereafter up to S$4 million; 1:2 thereafter up to S$8 million; 1:3 thereafter up to S$12 million. A growth-stage direct investment route and a fund-of-funds route (minimum investee fund size S$30 million) also exist.",
+   "cofunding_pct": null,
+   "is_automatic": false,
+   "application_url": "https://www.startupsg.gov.sg/programmes/4895/startup-sg-equity/apply",
+   "application_channel": "email",
+   "deadline_type": "rolling",
+   "deadline_note": "Rolling. Startups do not apply to EnterpriseSG directly; they raise from an appointed co-investment partner (SGGC or SGInnovate).",
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Confirm the startup is Singapore-registered, incorporated 10 years or less, and in one of the SSGE deep tech domains.",
+     "url": "https://www.startupsg.gov.sg/programmes/4895/startup-sg-equity/eligibility"
+    },
+    {
+     "step": 2,
+     "detail": "Secure a lead from an independent qualified third-party investor.",
+     "url": null
+    },
+    {
+     "step": 3,
+     "detail": "Approach SG Growth Capital or SGInnovate to co-invest in the round at the applicable ratio.",
+     "url": "https://www.startupsg.gov.sg/programmes/4895/startup-sg-equity/partners"
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "Term sheet from the lead third-party investor",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Cap table and ACRA information",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Technical and commercial due diligence pack",
+     "mandatory": true,
+     "note": null
+    }
+   ],
+   "eligibility": {
+    "entity": "startup",
+    "company_age_months_min": null,
+    "company_age_months_max": 120,
+    "headcount_min": null,
+    "headcount_max": null,
+    "turnover_annual_max": null,
+    "sme_category": "any",
+    "sectors": [
+     "deeptech",
+     "health",
+     "climate",
+     "ai",
+     "agri",
+     "manufacturing"
+    ],
+    "stages": [
+     "seed",
+     "series_a",
+     "growth"
+    ],
+    "requires_local_entity": true,
+    "requires_incorporation": true,
+    "rd_focus": true,
+    "female_founder_only": false,
+    "underrepresented_focus": false,
+    "de_minimis": false,
+    "other_note": "A Singapore-based startup means a Singapore-registered private limited company incorporated for 10 years or less that develops or possesses innovations in Singapore. Focus domains: Advanced Manufacturing; Pharmbio/MedTech; Agrifood Tech; Sustainability (energy, circular economy, urban mobility); Spacetech; and Smart Nation and Digital Economy deep tech areas (quantum tech, cybersecurity, generative AI). Growth-stage direct investment requires prior substantial institutional capital and at least one other institutional investor in the round."
+   },
+   "source_url": "https://www.startupsg.gov.sg/programmes/4895/startup-sg-equity/eligibility",
+   "source_snippet": "SSGE Investment Cap for each deep tech startup S$12 million. Co-investment Ratio (SGGC /SGI: co-investor) 2:1 up to the first S$1 million; 1:1 thereafter, up to S$4 million; 1:2 thereafter, up to S$8 million; 1:3 thereafter, up to S$12 million. As of 27 Feb 2026.",
+   "last_verified_at": "2026-08-14",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "sg-startup-sg-founder",
+   "name_local": null,
+   "name_en": "Startup SG Founder (SSGF)",
+   "country_code": "sg",
+   "admin_level": "national",
+   "admin_area": null,
+   "funder": "Enterprise Singapore (EnterpriseSG)",
+   "funder_type": "public",
+   "grant_type": "grant",
+   "category": "startup",
+   "amount_min": 20000,
+   "amount_max": 50000,
+   "amount_currency": "SGD",
+   "amount_note": "With effect from 1 April 2024 EnterpriseSG supports all successful startup grant recipients on a 1:1 support ratio, for a grant amount from S$20,000 to S$50,000. Applicants must inject co-matching paid-up capital into the startup at a 1:1 ratio to the grant quantum. Co-matching capital may originate from an AMP's or third party's investment (e.g. convertible / SAFE notes) in lieu of paid-up capital, but at least 50% of the co-matching capital must be paid-up capital on ACRA Bizfile when the application is submitted to EnterpriseSG.",
+   "cofunding_pct": 50,
+   "is_automatic": false,
+   "application_url": "https://www.startupsg.gov.sg/programmes/4894/startup-sg-founder",
+   "application_channel": "online",
+   "deadline_type": "rolling",
+   "deadline_note": "Rolling: startups apply first to an Accredited Mentor Partner (AMP), then submit to EnterpriseSG once they hold a Letter of Recommendation. A separate Call for Partnerships 2026 is open for organisations wanting to become AMPs.",
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Complete recognised entrepreneurship training and prepare the business idea.",
+     "url": "https://www.startupsg.gov.sg/public/2025-07/Examples%20of%20Entrepreneurship%20Training%20courses%20%28updated%20as%20of%208%20July%202025%29_0.pdf"
+    },
+    {
+     "step": 2,
+     "detail": "Apply to an Accredited Mentor Partner within 6 months of incorporating the private limited entity (or before incorporating).",
+     "url": "https://www.startupsg.gov.sg/programmes/4894/startup-sg-founder/accredited-mentor-partners"
+    },
+    {
+     "step": 3,
+     "detail": "Obtain a Letter of Recommendation from the AMP and submit the application to EnterpriseSG.",
+     "url": "https://go.gov.sg/ssgfapril2024"
+    },
+    {
+     "step": 4,
+     "detail": "Inject the 1:1 co-matching capital and receive the grant; second tranche disbursed on a separate form.",
+     "url": "https://form.gov.sg/#!/6095582268e5490011620a0a"
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "Letter of Recommendation from an Accredited Mentor Partner",
+     "mandatory": true,
+     "note": "Application cannot be submitted without it"
+    },
+    {
+     "doc": "Evidence of entrepreneurship training",
+     "mandatory": true,
+     "note": "Required for the first applicant"
+    },
+    {
+     "doc": "ACRA Bizfile showing shareholding and paid-up capital",
+     "mandatory": true,
+     "note": "At least 50% of co-matching capital must appear as paid-up capital"
+    },
+    {
+     "doc": "Business plan / pitch",
+     "mandatory": true,
+     "note": null
+    }
+   ],
+   "eligibility": {
+    "entity": "startup",
+    "company_age_months_min": null,
+    "company_age_months_max": 6,
+    "headcount_min": null,
+    "headcount_max": null,
+    "turnover_annual_max": null,
+    "sme_category": "any",
+    "sectors": [
+     "any"
+    ],
+    "stages": [
+     "idea",
+     "pre_seed"
+    ],
+    "requires_local_entity": true,
+    "requires_incorporation": true,
+    "rd_focus": false,
+    "female_founder_only": false,
+    "underrepresented_focus": false,
+    "de_minimis": false,
+    "other_note": "Open to Singapore Citizens / Permanent Residents. The first applicant must be a first-time founder with no prior Private Limited entity with ACRA, must not be externally employed, must commit full time, and must have undergone entrepreneurship training; a second applicant need not be a first-time founder and may be externally employed. First-time founders must hold a minimum of 30% equity collectively and both applicants must hold equity. The startup must have at least 51% of issued shares owned by SC/PR, be registered as a private limited entity in Singapore for less than 6 months at the point of application to the AMP, keep key HQ activities mainly in Singapore, and must not have received funding from another government organisation for the same idea. Excluded ideas: cafes, restaurants, night clubs, lounges, bars, foot reflexology, massage parlours, gambling, prostitution, social escort services, employment agencies and geomancy."
+   },
+   "source_url": "https://www.startupsg.gov.sg/programmes/4894/startup-sg-founder/eligibility",
+   "source_snippet": "Applicants are required to inject co-matching paid-up capital into the startup at a 1:1 ratio to match the grant quantum that they are applying for. ... Be registered as a private limited entity in Singapore for less than 6 months at point of application to AMP ... Has minimum 51% of issued shares are owned by Singapore Citizen (SC) /Singapore Permanent Resident (PR)",
+   "last_verified_at": "2026-08-14",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "sg-startup-sg-tech",
+   "name_local": null,
+   "name_en": "Startup SG Tech (Proof-of-Concept and Proof-of-Value grants)",
+   "country_code": "sg",
+   "admin_level": "national",
+   "admin_area": null,
+   "funder": "Enterprise Singapore (EnterpriseSG)",
+   "funder_type": "public",
+   "grant_type": "grant",
+   "category": "startup",
+   "amount_min": null,
+   "amount_max": 800000,
+   "amount_currency": "SGD",
+   "amount_note": "Proof-of-Concept (POC) grant cap SGD 400,000 (raised from SGD 250,000 for formal Stage 2 applications submitted from 2 Jan 2025); Proof-of-Value (POV) grant cap SGD 800,000 (raised from SGD 500,000 on the same date). Startups must demonstrate existing paid-up capital equivalent to at least 10% of the POC grant, or at least 20% of the POV grant. Grants are awarded upon completion of each milestone. The grant carries a share subscription component: EnterpriseSG or its appointed nominee has the right to subscribe to shares equivalent to 50% of the awarded grant amount, up to 49% of total shareholding, exercised when a qualifying equity financing round occurs.",
+   "cofunding_pct": null,
+   "is_automatic": false,
+   "application_url": "https://www.startupsg.gov.sg/programmes/4897/startup-sg-tech/apply",
+   "application_channel": "email",
+   "deadline_type": "rolling",
+   "deadline_note": "Competitive grant with a rolling two-stage intake: Registration of Interest (Stage 1), then formal Stage 2 application.",
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Download and complete the Startup SG Tech Registration of Interest form.",
+     "url": "https://www.startupsg.gov.sg/2025-01/SSG%20Tech%20Stage%201_Registration%20of%20Interest%20Form_Nov%2024_0.xlsx"
+    },
+    {
+     "step": 2,
+     "detail": "Submit the form via the EnterpriseSG enquiry channel.",
+     "url": "https://go.gov.sg/askenterprisesg"
+    },
+    {
+     "step": 3,
+     "detail": "If invited, submit the formal Stage 2 application with full project and cost details.",
+     "url": null
+    },
+    {
+     "step": 4,
+     "detail": "On award, deliver against milestones; grant is disbursed per milestone.",
+     "url": null
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "Registration of Interest form (Stage 1)",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Technical project proposal demonstrating proprietary technology and breakthrough innovation",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "ACRA information and shareholding details",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Evidence of paid-up capital (10% of POC grant / 20% of POV grant)",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Proof of interest from a potential customer or third-party investor",
+     "mandatory": true,
+     "note": "POV projects only"
+    }
+   ],
+   "eligibility": {
+    "entity": "startup",
+    "company_age_months_min": null,
+    "company_age_months_max": 120,
+    "headcount_min": null,
+    "headcount_max": 200,
+    "turnover_annual_max": 100000000,
+    "sme_category": "any",
+    "sectors": [
+     "deeptech",
+     "health",
+     "climate",
+     "ai",
+     "agri",
+     "manufacturing"
+    ],
+    "stages": [
+     "pre_seed",
+     "seed",
+     "series_a"
+    ],
+    "requires_local_entity": true,
+    "requires_incorporation": true,
+    "rd_focus": true,
+    "female_founder_only": false,
+    "underrepresented_focus": false,
+    "de_minimis": false,
+    "other_note": "Registered in Singapore within the past 10 years at time of grant application; at least 30% local equity held directly or indirectly by Singaporeans and/or Singapore PRs; company must not be a subsidiary (>50% held by a corporate parent) at point of incorporation; group annual sales turnover not more than S$100 million or group employment size not more than 200 workers; core R&D activities carried out in Singapore; main applicant must have a significant role, not be a mere shareholder. The project must not have commenced at application. Nine eligible technology areas are listed, including Advanced Manufacturing/Robotics, Biomedical Sciences and Healthcare, Clean Technology, ICT (5G, AI, cybersecurity), New Industries (AR/VR, blockchain, space, quantum), Precision Engineering, Transport Engineering, Food Science and Agritech."
+   },
+   "source_url": "https://www.startupsg.gov.sg/programmes/4897/startup-sg-tech/eligibility",
+   "source_snippet": "To maintain financial discipline, startups will be required to demonstrate existing paid-up capital equivalent to at least 10% of the POC grant. The grant cap for POC will remain at SGD400,000. ... The grant cap for POV will remain at SGD800,000. ... Startup SG Tech will also include a share subscription component, where EnterpriseSG or its appointed nominee will have the right to subscribe to shares equivalent to 50% of the awarded grant amount, up to 49% of the total shareholding of the company.",
+   "last_verified_at": "2026-08-14",
+   "verification_status": "verified"
+  }
+ ]
+}

@@ -1,0 +1,350 @@
+{
+ "country_code": "ca",
+ "country_name": "Canada",
+ "currency": "CAD",
+ "language": "en",
+ "entity": "startup",
+ "programmes": [
+  {
+   "slug": "ca-bdc-startup-financing",
+   "name_local": "Financement de démarrage BDC",
+   "name_en": "BDC Start-up Financing / Small Business Loan",
+   "country_code": "ca",
+   "admin_level": "national",
+   "funder": "Business Development Bank of Canada (BDC)",
+   "funder_type": "public",
+   "grant_type": "loan",
+   "amount_min": null,
+   "amount_max": 350000,
+   "amount_currency": "CAD",
+   "amount_note": "Two distinct online products are advertised: Start-up Financing — 'Get up to $150,000 to grow your business'; Small Business Loan — 'Get up to $350,000 online quickly and easily'. Interest rates and terms are quoted individually; not published on the page.",
+   "application_url": "https://www.bdc.ca/en/financing",
+   "application_channel": "online",
+   "deadline_type": "rolling",
+   "deadline_note": "Continuous — commercial lending, no calls or deadlines.",
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Check eligibility online.",
+     "url": "https://www.bdc.ca/en/financing"
+    },
+    {
+     "step": 2,
+     "detail": "Tell BDC about your financing needs.",
+     "url": null
+    },
+    {
+     "step": 3,
+     "detail": "Receive a tailored solution based on your financial profile.",
+     "url": null
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "Business financial statements / evidence of sales",
+     "mandatory": true,
+     "note": "'Your business has recorded sales'"
+    },
+    {
+     "doc": "Proof of Canadian business registration",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Business bank account details",
+     "mandatory": true,
+     "note": null
+    }
+   ],
+   "eligibility": {
+    "entity": "startup",
+    "company_age_months_min": null,
+    "company_age_months_max": null,
+    "headcount_min": null,
+    "headcount_max": null,
+    "turnover_annual_max": null,
+    "sme_category": "any",
+    "sectors": [
+     "any"
+    ],
+    "stages": [
+     "pre_seed",
+     "seed",
+     "series_a",
+     "growth"
+    ],
+    "requires_local_entity": true,
+    "requires_incorporation": true,
+    "rd_focus": false,
+    "female_founder_only": false,
+    "underrepresented_focus": false,
+    "de_minimis": false,
+    "other_note": "Business must be registered in Canada, have recorded sales, have good personal and business credit standing, all shareholders of legal age, and maintain a business bank account. BDC is a Crown corporation lending on commercial terms — this is debt, not a grant."
+   },
+   "source_url": "https://www.bdc.ca/en/financing",
+   "source_snippet": "Start-up Financing: Get up to $150,000 to grow your business. ... Small Business Loan: Get up to $350,000 online quickly and easily. ... Your business has recorded sales.",
+   "category": "startup",
+   "cofunding_pct": null,
+   "is_automatic": false,
+   "admin_area": null,
+   "last_verified_at": "2026-08-14",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "ca-canexport-smes",
+   "name_local": "CanExport PME",
+   "name_en": "CanExport SMEs",
+   "country_code": "ca",
+   "admin_level": "national",
+   "funder": "Global Affairs Canada – Trade Commissioner Service",
+   "funder_type": "public",
+   "grant_type": "grant",
+   "amount_min": null,
+   "amount_max": 50000,
+   "amount_currency": "CAD",
+   "amount_note": "'Successful projects may receive up to $50,000 in funding for international business development activities.' The programme shares the cost of export-related activities; the exact applicant cost share is set in the 2026-27 Applicant's guide (not read here).",
+   "application_url": "https://www.tradecommissioner.gc.ca/en/our-solutions/funding-financing-international-business/canexport-smes/how-to-apply.html",
+   "application_channel": "portal",
+   "deadline_type": "cutoff",
+   "deadline_note": "For markets other than the United States: 'Deadline: Extended to August 31, 2026 at 12:00 PM (ET)'. Applications for U.S.-targeted projects are no longer accepted for this intake because the $3.1 million allocated to U.S. projects is fully allocated. Applications are assessed on a rolling competitive basis; the programme reopens with a new annual intake.",
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Use the 'Find out if you qualify' checklist to confirm the programme fits your business and export plans.",
+     "url": "https://www.tradecommissioner.gc.ca/en/our-solutions/funding-financing-international-business/canexport-smes/find-out-qualify.html"
+    },
+    {
+     "step": 2,
+     "detail": "Read the 2026-27 Applicant's guide (eligible activities and expenses, assessment criteria).",
+     "url": "https://www.tradecommissioner.gc.ca/en/our-solutions/funding-financing-international-business/canexport-smes/applicants-guide-2026-27.html"
+    },
+    {
+     "step": 3,
+     "detail": "Create a profile in the CanExport SMEs portal and submit the application.",
+     "url": "https://www.tradecommissioner.gc.ca/en/our-solutions/funding-financing-international-business/canexport-smes/how-to-apply.html"
+    },
+    {
+     "step": 4,
+     "detail": "Await assessment: up to 60 business days for non-U.S. markets, up to 90 business days for U.S. projects.",
+     "url": null
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "Completed online application form (see sample application form)",
+     "mandatory": true,
+     "note": "https://www.tradecommissioner.gc.ca/en/our-solutions/funding-financing-international-business/canexport-smes/sample-funding-application.html"
+    },
+    {
+     "doc": "Export/market development plan and budget for the target market",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Financial information demonstrating capacity",
+     "mandatory": true,
+     "note": "Detailed list is in the Applicant's guide"
+    }
+   ],
+   "eligibility": {
+    "entity": "startup",
+    "company_age_months_min": null,
+    "company_age_months_max": null,
+    "headcount_min": null,
+    "headcount_max": null,
+    "turnover_annual_max": null,
+    "sme_category": "any",
+    "sectors": [
+     "any"
+    ],
+    "stages": [
+     "seed",
+     "series_a",
+     "growth"
+    ],
+    "requires_local_entity": true,
+    "requires_incorporation": true,
+    "rd_focus": false,
+    "female_founder_only": false,
+    "underrepresented_focus": false,
+    "de_minimis": false,
+    "other_note": "'It is intended for companies with meaningful economic ties to Canada, the capacity to grow internationally, and a clear plan to export Canadian goods and services.' Precise size thresholds are set in the Applicant's guide 2026-27."
+   },
+   "source_url": "https://www.tradecommissioner.gc.ca/en/our-solutions/funding-financing-international-business/canexport-smes.html",
+   "source_snippet": "Successful projects may receive up to $50,000 in funding for international business development activities. Funding is limited, and applications are assessed on a rolling competitive basis. ... Deadline: Extended to August 31, 2026 at 12:00 PM (ET)",
+   "category": "startup",
+   "cofunding_pct": null,
+   "is_automatic": false,
+   "admin_area": null,
+   "last_verified_at": "2026-08-14",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "ca-nrc-irap",
+   "name_local": "Programme d'aide à la recherche industrielle du CNRC (PARI CNRC)",
+   "name_en": "NRC Industrial Research Assistance Program (NRC IRAP) – financial support for technology innovation",
+   "country_code": "ca",
+   "admin_level": "national",
+   "funder": "National Research Council Canada (NRC), Industrial Research Assistance Program",
+   "funder_type": "public",
+   "grant_type": "grant",
+   "amount_min": null,
+   "amount_max": null,
+   "amount_currency": "CAD",
+   "amount_note": "No funding amounts, ceilings or cost-share percentages are published on the official NRC IRAP financial support page. Contributions are negotiated project by project with an Industrial Technology Advisor. Do not assume a published maximum.",
+   "application_url": "https://nrc.canada.ca/en/support-technology-innovation/financial-support-technology-innovation",
+   "application_channel": "portal",
+   "deadline_type": "rolling",
+   "deadline_note": "No application deadlines are published; intake is continuous and starts by contacting NRC IRAP (1-877-994-4727).",
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Check the minimum requirements, then contact NRC IRAP at 1-877-994-4727.",
+     "url": "https://nrc.canada.ca/en/support-technology-innovation/financial-support-technology-innovation"
+    },
+    {
+     "step": 2,
+     "detail": "A client engagement advisor reviews your business information and goals.",
+     "url": null
+    },
+    {
+     "step": 3,
+     "detail": "An Industrial Technology Advisor may assess innovation potential and business readiness and, if appropriate, invite a proposal. 'Working with an advisor or being invited to submit a proposal does not guarantee funding.'",
+     "url": null
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "Company and project information provided to the client engagement advisor",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Project proposal (only if invited by an Industrial Technology Advisor)",
+     "mandatory": false,
+     "note": null
+    }
+   ],
+   "eligibility": {
+    "entity": "startup",
+    "company_age_months_min": null,
+    "company_age_months_max": null,
+    "headcount_min": null,
+    "headcount_max": 500,
+    "turnover_annual_max": null,
+    "sme_category": "any",
+    "sectors": [
+     "deeptech",
+     "manufacturing",
+     "any"
+    ],
+    "stages": [
+     "pre_seed",
+     "seed",
+     "series_a",
+     "growth"
+    ],
+    "requires_local_entity": true,
+    "requires_incorporation": true,
+    "rd_focus": true,
+    "female_founder_only": false,
+    "underrepresented_focus": false,
+    "de_minimis": false,
+    "other_note": "'To work with NRC IRAP, your business must: be incorporated, for-profit, and operating in Canada' and employ up to 500 full-time-equivalent people. Unlimited/limited liability corporations (ULCs, LLCs), sole proprietorships, partnerships and cooperatives are not supported. Day-to-day operating costs, non-technical activities and work outside Canada are not funded."
+   },
+   "source_url": "https://nrc.canada.ca/en/support-technology-innovation/financial-support-technology-innovation",
+   "source_snippet": "To work with NRC IRAP, your business must: be incorporated, for-profit, and operating in Canada ... employ up to 500 people (full-time equivalent) ... Working with an advisor or being invited to submit a proposal does not guarantee funding.",
+   "category": "startup",
+   "cofunding_pct": null,
+   "is_automatic": false,
+   "admin_area": null,
+   "last_verified_at": "2026-08-14",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "ca-sred-tax-incentive",
+   "name_local": "Scientific Research and Experimental Development (SR&ED) tax incentives / Encouragements fiscaux à la RS&DE",
+   "name_en": "Scientific Research and Experimental Development (SR&ED) tax incentives",
+   "country_code": "ca",
+   "admin_level": "national",
+   "funder": "Canada Revenue Agency (CRA)",
+   "funder_type": "public",
+   "grant_type": "tax_credit",
+   "amount_min": null,
+   "amount_max": null,
+   "amount_currency": "CAD",
+   "amount_note": "No fixed award. Two incentives: a deduction against income, and an investment tax credit (ITC). CRA's ITC policy states 'CCPCs may earn the SR&ED ITC at an enhanced rate of 35%' on qualified expenditures up to an expenditure limit (the policy page states a maximum threshold of $3 million; the limit has been the subject of announced federal increases which we did not verify on the CRA page), and 'The basic rate of SR&ED ITC is 15%'. Refundability: up to 100% of the unclaimed balance earned at the 35% enhanced rate for qualifying CCPCs, and 40% of the unclaimed balance at the basic rate.",
+   "application_url": "https://www.canada.ca/en/revenue-agency/services/scientific-research-experimental-development-tax-incentive-program.html",
+   "application_channel": "online",
+   "deadline_type": "rolling",
+   "deadline_note": "Claimed with the corporate income tax return for the year: 'Claimants should submit their SR&ED claim with their income tax return for the year.' Statutory reporting deadlines apply (not verified on this page).",
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Determine that your work meets the SR&ED definition (scientific or technological uncertainty, systematic investigation, advancement).",
+     "url": "https://www.canada.ca/en/revenue-agency/services/scientific-research-experimental-development-tax-incentive-program.html"
+    },
+    {
+     "step": 2,
+     "detail": "Link eligible work to claimable expenditures: 'To benefit from the incentives, you must link your eligible work to expenditures you can claim.'",
+     "url": "https://www.canada.ca/en/revenue-agency/services/scientific-research-experimental-development-tax-incentive-program.html"
+    },
+    {
+     "step": 3,
+     "detail": "File Form T661 (and T2SCH31 for corporations or T2038(IND) for individuals) with the income tax return.",
+     "url": "https://www.canada.ca/en/revenue-agency/services/scientific-research-experimental-development-tax-incentive-program/sred-forms-publications.html"
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "Form T661 – Scientific Research and Experimental Development (SR&ED) Expenditures Claim",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Schedule T2SCH31 (corporations) or Form T2038(IND) (individuals)",
+     "mandatory": true,
+     "note": "Depends on claimant type"
+    },
+    {
+     "doc": "Contemporaneous technical and financial documentation supporting the claim",
+     "mandatory": false,
+     "note": "Required on review/audit"
+    }
+   ],
+   "eligibility": {
+    "entity": "startup",
+    "company_age_months_min": null,
+    "company_age_months_max": null,
+    "headcount_min": null,
+    "headcount_max": null,
+    "turnover_annual_max": null,
+    "sme_category": "any",
+    "sectors": [
+     "any"
+    ],
+    "stages": [
+     "pre_seed",
+     "seed",
+     "series_a",
+     "growth"
+    ],
+    "requires_local_entity": true,
+    "requires_incorporation": false,
+    "rd_focus": true,
+    "female_founder_only": false,
+    "underrepresented_focus": false,
+    "de_minimis": false,
+    "other_note": "'Corporations, individuals, trusts, and partnerships that conduct eligible work may be able to claim SR&ED tax incentives for the year.' The enhanced 35% refundable rate is limited to Canadian-controlled private corporations (CCPCs). Work must be conducted in Canada."
+   },
+   "source_url": "https://www.canada.ca/en/revenue-agency/services/scientific-research-experimental-development-tax-incentive-program.html",
+   "source_snippet": "The Scientific Research and Experimental Development (SR&ED) tax incentives are intended to encourage businesses to conduct research and development in Canada. ... There are 2 tax incentives: Claim a deduction against income; Earn an investment tax credit (ITC).",
+   "category": "startup",
+   "cofunding_pct": null,
+   "is_automatic": false,
+   "admin_area": null,
+   "last_verified_at": "2026-08-14",
+   "verification_status": "verified"
+  }
+ ]
+}

@@ -1,0 +1,280 @@
+{
+ "country_code": "nl",
+ "country_name": "Netherlands",
+ "currency": "EUR",
+ "language": "en",
+ "entity": "startup",
+ "programmes": [
+  {
+   "slug": "nl-innovatiekrediet",
+   "name_local": "Innovatiekrediet",
+   "name_en": "Innovation Credit",
+   "country_code": "nl",
+   "admin_level": "national",
+   "funder": "Rijksdienst voor Ondernemend Nederland (RVO)",
+   "funder_type": "public",
+   "grant_type": "loan",
+   "amount_min": null,
+   "amount_max": 10000000,
+   "amount_currency": "EUR",
+   "amount_note": "Maximum credit of EUR 10 million for technical development projects and EUR 5 million for clinical development projects. For small companies RVO finances a maximum of 45% of development costs (50% when the project is carried out in collaboration); the applicant must finance at least 55% from other sources. Total 2026 budget EUR 50,000,000. The credit is repaid only if the project succeeds.",
+   "cofunding_pct": 55,
+   "application_url": "https://www.rvo.nl/subsidies-financiering/innovatiekrediet",
+   "application_channel": "portal",
+   "deadline_type": "rolling",
+   "deadline_note": "'Open voor aanvragen' — applications are accepted year-round while budget lasts.",
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Check that the project has high technical or clinical risk and that the product can be brought to market within 5 years.",
+     "url": "https://www.rvo.nl/subsidies-financiering/innovatiekrediet"
+    },
+    {
+     "step": 2,
+     "detail": "Secure at least 55% of the development costs from other sources.",
+     "url": null
+    },
+    {
+     "step": 3,
+     "detail": "Submit the application to RVO with the business case and financing plan.",
+     "url": null
+    },
+    {
+     "step": 4,
+     "detail": "Report progress to RVO during the project; at completion RVO determines 'het subsidiebedrag en het aflossingsschema' (the amount and the repayment schedule).",
+     "url": null
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "Project plan showing technical or clinical risk and route to market within 5 years",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Financing plan evidencing at least 55% co-financing",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Business plan and financial projections",
+     "mandatory": true,
+     "note": null
+    }
+   ],
+   "eligibility": {
+    "entity": "startup",
+    "company_age_months_min": null,
+    "company_age_months_max": null,
+    "headcount_min": null,
+    "headcount_max": null,
+    "turnover_annual_max": null,
+    "sme_category": "any",
+    "sectors": [
+     "deeptech",
+     "health",
+     "any"
+    ],
+    "stages": [
+     "seed",
+     "series_a",
+     "growth"
+    ],
+    "requires_local_entity": true,
+    "requires_incorporation": true,
+    "rd_focus": true,
+    "female_founder_only": false,
+    "underrepresented_focus": false,
+    "de_minimis": false,
+    "other_note": "Both SMEs and large enterprises qualify; the 45%/50% financing percentages quoted here are the rates for small companies. The product must be ready for the market within five years."
+   },
+   "source_url": "https://www.rvo.nl/subsidies-financiering/innovatiekrediet",
+   "source_snippet": "Open voor aanvragen ... maximaal 45% (zonder samenwerking) / maximaal 50% (met samenwerking) ... € 10 miljoen (technisch) / € 5 miljoen (klinisch) ... budget € 50.000.000.",
+   "category": "startup",
+   "is_automatic": false,
+   "admin_area": null,
+   "last_verified_at": "2026-08-14",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "nl-mit-rd-samenwerking",
+   "name_local": "MIT R&D-samenwerkingsprojecten (MKB-innovatiestimulering Regio en Topsectoren)",
+   "name_en": "MIT R&D collaboration projects (SME innovation stimulus for region and top sectors)",
+   "country_code": "nl",
+   "admin_level": "national",
+   "funder": "Rijksdienst voor Ondernemend Nederland (RVO) with the provinces and top sectors",
+   "funder_type": "public",
+   "grant_type": "grant",
+   "amount_min": null,
+   "amount_max": null,
+   "amount_currency": "EUR",
+   "amount_note": "Subsidy amounts and rates are set per instrument and per region in the annual regulation; the RVO landing page states only that a kennisvoucher is worth 'maximaal 70% van de rekening'. No national R&D-samenwerking ceiling is quoted on that page, so none is recorded here.",
+   "application_url": "https://www.rvo.nl/subsidies-financiering/mit",
+   "application_channel": "portal",
+   "deadline_type": "cutoff",
+   "deadline_note": "MIT R&D-samenwerkingsprojecten: 'Open voor aanvragen ... vanaf 9 juni tot en met 17 september 2026'. The MIT AI variant is closed. Kennisvouchers, TKI-Netwerkactiviteiten and TKI-Innovatiemakelaars will not reopen ('Dit instrument opent niet meer'), and haalbaarheidsprojecten are no longer run by RVO ('De Haalbaarheidsprojecten worden niet meer uitgevoerd door RVO') — check your province for regional MIT instruments.",
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Form a collaboration of at least two independent SMEs with a joint R&D project fitting a top sector agenda.",
+     "url": "https://www.rvo.nl/subsidies-financiering/mit"
+    },
+    {
+     "step": 2,
+     "detail": "Check whether to apply nationally (RVO) or through your province.",
+     "url": null
+    },
+    {
+     "step": 3,
+     "detail": "Submit the application in the window 9 June - 17 September 2026 via mijn.rvo.nl; applications are ranked and awarded by tender.",
+     "url": "https://mijn.rvo.nl/"
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "Joint R&D project plan and cost breakdown per partner",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Signed collaboration agreement between the SME partners",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "SME declaration (MKB-verklaring)",
+     "mandatory": true,
+     "note": null
+    }
+   ],
+   "eligibility": {
+    "entity": "startup",
+    "company_age_months_min": null,
+    "company_age_months_max": null,
+    "headcount_min": null,
+    "headcount_max": 250,
+    "turnover_annual_max": null,
+    "sme_category": "any",
+    "sectors": [
+     "any"
+    ],
+    "stages": [
+     "seed",
+     "series_a",
+     "growth"
+    ],
+    "requires_local_entity": true,
+    "requires_incorporation": true,
+    "rd_focus": true,
+    "female_founder_only": false,
+    "underrepresented_focus": false,
+    "de_minimis": false,
+    "other_note": "For Dutch SMEs collaborating on R&D within the top sectors. The de minimis question depends on the specific instrument and regional regulation; RVO's landing page does not state it, so it is left false here rather than guessed."
+   },
+   "source_url": "https://www.rvo.nl/subsidies-financiering/mit",
+   "source_snippet": "R&D-Samenwerkingsprojecten — Open voor aanvragen — vanaf 9 juni tot en met 17 september 2026.",
+   "category": "startup",
+   "cofunding_pct": null,
+   "is_automatic": false,
+   "admin_area": null,
+   "last_verified_at": "2026-08-14",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "nl-wbso",
+   "name_local": "WBSO (Wet Bevordering Speur- en Ontwikkelingswerk)",
+   "name_en": "WBSO – R&D tax credit (reduction of payroll tax / income tax)",
+   "country_code": "nl",
+   "admin_level": "national",
+   "funder": "Rijksdienst voor Ondernemend Nederland (RVO), on behalf of the Ministry of Economic Affairs",
+   "funder_type": "public",
+   "grant_type": "tax_credit",
+   "amount_min": null,
+   "amount_max": null,
+   "amount_currency": "EUR",
+   "amount_note": "2026 parameters as published by RVO: first bracket 36% (50% for starters) of the S&O-basis up to EUR 391,020, and 16% above that. Self-employed persons may use a fixed deduction; the flat-rate S&O hourly cost is EUR 29.",
+   "application_url": "https://mijn.rvo.nl/",
+   "application_channel": "portal",
+   "deadline_type": "cutoff",
+   "deadline_note": "'De aanvraagtermijnen verschillen voor zzp'ers en ondernemingen met personeel' — application windows differ for the self-employed and for companies with staff, and there are several application moments per year; see the RVO WBSO calendar.",
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Check that your project is development work or technical-scientific research carried out within the EU and that you pay Dutch payroll and/or income tax.",
+     "url": "https://www.rvo.nl/subsidies-financiering/wbso"
+    },
+    {
+     "step": 2,
+     "detail": "Arrange eHerkenning (minimum level 3 with RVO authorisation).",
+     "url": null
+    },
+    {
+     "step": 3,
+     "detail": "Submit the application yourself via mijn.rvo.nl within the applicable window (typically 1-4 hours of work).",
+     "url": "https://mijn.rvo.nl/"
+    },
+    {
+     "step": 4,
+     "detail": "After receiving the S&O-verklaring, offset the amount against payroll tax and keep an S&O administration of hours and costs.",
+     "url": null
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "WBSO application via mijn.rvo.nl",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "eHerkenning level 3 or higher with RVO services authorisation",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Project description of the development work / technical-scientific research",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "S&O-administratie (hours and costs records)",
+     "mandatory": true,
+     "note": "Kept during the project, checked afterwards"
+    }
+   ],
+   "eligibility": {
+    "entity": "startup",
+    "company_age_months_min": null,
+    "company_age_months_max": null,
+    "headcount_min": null,
+    "headcount_max": null,
+    "turnover_annual_max": null,
+    "sme_category": "any",
+    "sectors": [
+     "any"
+    ],
+    "stages": [
+     "idea",
+     "pre_seed",
+     "seed",
+     "series_a",
+     "growth"
+    ],
+    "requires_local_entity": true,
+    "requires_incorporation": false,
+    "rd_focus": true,
+    "female_founder_only": false,
+    "underrepresented_focus": false,
+    "de_minimis": false,
+    "other_note": "Open to entrepreneurs subject to Dutch payroll tax and/or income tax, including self-employed persons (zzp'ers) and starters, who carry out R&D within the EU. Starters get the enhanced 50% first-bracket rate."
+   },
+   "source_url": "https://www.rvo.nl/subsidies-financiering/wbso",
+   "source_snippet": "De aanvraagtermijnen verschillen voor zzp'ers en ondernemingen met personeel. (2026: eerste schijf 36%, starters 50%, grens € 391.020, tweede schijf 16%, forfaitair uurtarief € 29.)",
+   "category": "startup",
+   "cofunding_pct": null,
+   "is_automatic": false,
+   "admin_area": null,
+   "last_verified_at": "2026-08-14",
+   "verification_status": "verified"
+  }
+ ]
+}

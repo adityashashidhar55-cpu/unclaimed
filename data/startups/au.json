@@ -1,0 +1,271 @@
+{
+ "country_code": "au",
+ "country_name": "Australia",
+ "currency": "AUD",
+ "language": "en",
+ "entity": "startup",
+ "programmes": [
+  {
+   "slug": "au-csiro-kick-start",
+   "name_local": "CSIRO Kick-Start",
+   "name_en": "CSIRO Kick-Start",
+   "country_code": "au",
+   "admin_level": "national",
+   "funder": "Commonwealth Scientific and Industrial Research Organisation (CSIRO)",
+   "funder_type": "public",
+   "grant_type": "voucher",
+   "amount_min": 20000,
+   "amount_max": 60000,
+   "amount_currency": "AUD",
+   "amount_note": "'Access up to 2 vouchers between $20K - $60K each', matched dollar-for-dollar by the business ('$60,000 from CSIRO = $60,000 from the business'). Vouchers pay for CSIRO research services on a 2-12 month project.",
+   "cofunding_pct": 50,
+   "application_url": "https://www.csiro.au/en/work-with-us/funding-programs/funding/funding-finder/kick-start",
+   "application_channel": "online",
+   "deadline_type": "rolling",
+   "deadline_note": "No fixed rounds published on the eligibility page; applications are made when a suitable project is scoped with CSIRO.",
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Confirm eligibility (turnover/trading history, GST registration, ACN or ICN, ability to match funding).",
+     "url": "https://www.csiro.au/en/work-with-us/funding-programs/SME/CSIRO-Kick-Start/Eligibility-and-funding"
+    },
+    {
+     "step": 2,
+     "detail": "Scope a 2-12 month R&D project requiring scientific, technical or analytical expertise with CSIRO.",
+     "url": null
+    },
+    {
+     "step": 3,
+     "detail": "Submit the Kick-Start application and, if successful, contract the research with CSIRO.",
+     "url": "https://www.csiro.au/en/work-with-us/funding-programs/funding/funding-finder/kick-start"
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "Kick-Start application form with project scope",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Evidence of ACN/ICN and GST registration",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Evidence of turnover/operating expenditure or trading history",
+     "mandatory": true,
+     "note": null
+    }
+   ],
+   "eligibility": {
+    "entity": "startup",
+    "company_age_months_min": null,
+    "company_age_months_max": null,
+    "headcount_min": null,
+    "headcount_max": null,
+    "turnover_annual_max": 10000000,
+    "sme_category": "small",
+    "sectors": [
+     "deeptech",
+     "manufacturing",
+     "agri",
+     "health",
+     "any"
+    ],
+    "stages": [
+     "pre_seed",
+     "seed",
+     "series_a"
+    ],
+    "requires_local_entity": true,
+    "requires_incorporation": true,
+    "rd_focus": true,
+    "female_founder_only": false,
+    "underrepresented_focus": false,
+    "de_minimis": false,
+    "other_note": "Must either have 'annual turnover and operating expenditure under $10 million' OR 'have been trading for less than three years'; must 'be registered for GST' and 'hold an Australian Company Number (ACN) or Indigenous Corporation Number (ICN)'; must provide the matching cash contribution. 'International companies and Australian subsidiaries of international companies are not eligible.'"
+   },
+   "source_url": "https://www.csiro.au/en/work-with-us/funding-programs/SME/CSIRO-Kick-Start/Eligibility-and-funding",
+   "source_snippet": "Access up to 2 vouchers between $20K - $60K each ... $60,000 from CSIRO = $60,000 from the business ... annual turnover and operating expenditure under $10 million ... have been trading for less than three years.",
+   "category": "startup",
+   "is_automatic": false,
+   "admin_area": null,
+   "last_verified_at": "2026-08-14",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "au-emdg",
+   "name_local": "Export Market Development Grants (EMDG)",
+   "name_en": "Export Market Development Grants (EMDG)",
+   "country_code": "au",
+   "admin_level": "national",
+   "funder": "Austrade (Australian Trade and Investment Commission)",
+   "funder_type": "public",
+   "grant_type": "grant",
+   "amount_min": null,
+   "amount_max": null,
+   "amount_currency": "AUD",
+   "amount_note": "Grant amounts differ by tier and are set in the guidelines for each round; no amount is published on the current programme page, so none is recorded here. Four streams exist: Tier 1 (SMEs ready to export), Tier 2 (exporting within existing markets), Tier 3 (exporting to new key markets) and representative bodies.",
+   "application_url": "https://www.austrade.gov.au/en/how-we-can-help-you/grants/export-market-development-grants/apply",
+   "application_channel": "portal",
+   "deadline_type": "annual_call",
+   "deadline_note": "No round is open at the time of verification: 'Currently there are no grant rounds open to applications' and 'EMDG Round 4 is closed'. Austrade states 'We will update our website when timing of the next grant round is confirmed.' The programme runs in recurring multi-year rounds.",
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Check eligibility and read the EMDG guidelines and legislation.",
+     "url": "https://www.austrade.gov.au/en/how-we-can-help-you/grants/export-market-development-grants/check-eligibility/guidelines-and-legislation"
+    },
+    {
+     "step": 2,
+     "detail": "Wait for the next grant round to open and apply through the Austrade grants portal.",
+     "url": "https://www.austrade.gov.au/en/how-we-can-help-you/grants/export-market-development-grants/apply/how-to-apply"
+    },
+    {
+     "step": 3,
+     "detail": "If successful, enter a multi-year grant agreement and acquit eligible marketing/promotion and export training expenses.",
+     "url": "https://www.austrade.gov.au/en/how-we-can-help-you/grants/export-market-development-grants/manage/grant-rounds/round-4"
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "EMDG application form (portal)",
+     "mandatory": true,
+     "note": "Available only while a round is open"
+    },
+    {
+     "doc": "Evidence of eligible export promotion expenditure and export plan",
+     "mandatory": true,
+     "note": null
+    }
+   ],
+   "eligibility": {
+    "entity": "startup",
+    "company_age_months_min": null,
+    "company_age_months_max": null,
+    "headcount_min": null,
+    "headcount_max": null,
+    "turnover_annual_max": null,
+    "sme_category": "any",
+    "sectors": [
+     "any"
+    ],
+    "stages": [
+     "seed",
+     "series_a",
+     "growth"
+    ],
+    "requires_local_entity": true,
+    "requires_incorporation": true,
+    "rd_focus": false,
+    "female_founder_only": false,
+    "underrepresented_focus": false,
+    "de_minimis": false,
+    "other_note": "'The EMDG program provides grants to Australian small and medium enterprises and their representative bodies to: market and promote their goods and services globally [and] undertake export training.' Turnover ceilings and tier tests are defined in the round guidelines, which we did not read."
+   },
+   "source_url": "https://www.austrade.gov.au/en/how-we-can-help-you/grants/export-market-development-grants",
+   "source_snippet": "The EMDG program provides grants to Australian small and medium enterprises and their representative bodies to: market and promote their goods and services globally ... Currently there are no grant rounds open to applications.",
+   "category": "startup",
+   "cofunding_pct": null,
+   "is_automatic": false,
+   "admin_area": null,
+   "last_verified_at": "2026-08-14",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "au-rd-tax-incentive",
+   "name_local": "Research and Development Tax Incentive (R&DTI)",
+   "name_en": "Research and Development Tax Incentive (R&DTI)",
+   "country_code": "au",
+   "admin_level": "national",
+   "funder": "Department of Industry, Science and Resources (AusIndustry) jointly with the Australian Taxation Office",
+   "funder_type": "public",
+   "grant_type": "tax_credit",
+   "amount_min": null,
+   "amount_max": null,
+   "amount_currency": "AUD",
+   "amount_note": "A tax offset that 'offset[s] some of the costs you put into eligible research and development'. Offset rates and turnover thresholds are set in tax law and are not stated on this landing page — we did not verify a rate, so none is recorded here. The Government announced changes to the R&DTI in the 2026-27 Budget which 'will start from 1 July 2028. Until then, the program will continue running under the current rules.'",
+   "application_url": "https://business.gov.au/grants-and-programs/research-and-development-tax-incentive/apply-for-the-randd-tax-incentive",
+   "application_channel": "portal",
+   "deadline_type": "annual_call",
+   "deadline_note": "Registration of R&D activities is made after the end of each income year, within a statutory deadline (10 months after the end of the income year under the current rules — not verified on this page). The programme is ongoing and recurring each income year.",
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Self-assess whether your company and its R&D activities meet the eligibility requirements.",
+     "url": "https://business.gov.au/grants-and-programs/research-and-development-tax-incentive/check-if-you-are-eligible-for-the-randd-tax-incentive"
+    },
+    {
+     "step": 2,
+     "detail": "Optionally apply for an advance finding (certainty about activity eligibility) or an overseas finding (for activities conducted outside Australia).",
+     "url": "https://business.gov.au/grants-and-programs/research-and-development-tax-incentive/apply-for-an-advance-finding"
+    },
+    {
+     "step": 3,
+     "detail": "Conduct and document core and supporting R&D activities.",
+     "url": "https://business.gov.au/grants-and-programs/research-and-development-tax-incentive/check-if-you-are-eligible-for-the-randd-tax-incentive/conducting-core-activities"
+    },
+    {
+     "step": 4,
+     "detail": "Register the activities through the R&DTI customer portal, then claim the offset in the company tax return with the ATO.",
+     "url": "https://business.gov.au/grants-and-programs/research-and-development-tax-incentive/apply-for-the-randd-tax-incentive"
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "R&DTI registration application (customer portal)",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Contemporaneous records evidencing core and supporting R&D activities and expenditure",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Company income tax return with R&D tax offset schedule (ATO)",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Advance/overseas finding application",
+     "mandatory": false,
+     "note": "Only where certainty is sought or activities are conducted overseas"
+    }
+   ],
+   "eligibility": {
+    "entity": "startup",
+    "company_age_months_min": null,
+    "company_age_months_max": null,
+    "headcount_min": null,
+    "headcount_max": null,
+    "turnover_annual_max": null,
+    "sme_category": "any",
+    "sectors": [
+     "any"
+    ],
+    "stages": [
+     "pre_seed",
+     "seed",
+     "series_a",
+     "growth"
+    ],
+    "requires_local_entity": true,
+    "requires_incorporation": true,
+    "rd_focus": true,
+    "female_founder_only": false,
+    "underrepresented_focus": false,
+    "de_minimis": false,
+    "other_note": "Open to companies conducting eligible core and supporting R&D activities. Some activities are excluded; a registered research service provider may conduct R&D on your behalf."
+   },
+   "source_url": "https://business.gov.au/grants-and-programs/research-and-development-tax-incentive",
+   "source_snippet": "Offset some of the costs you put into eligible research and development. ... The Australian Government announced changes to the R&DTI in the 2026–27 Budget. These changes will start from 1 July 2028. Until then, the program will continue running under the current rules.",
+   "category": "startup",
+   "cofunding_pct": null,
+   "is_automatic": false,
+   "admin_area": null,
+   "last_verified_at": "2026-08-14",
+   "verification_status": "verified"
+  }
+ ]
+}

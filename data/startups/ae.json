@@ -1,0 +1,482 @@
+{
+ "country_code": "ae",
+ "country_name": "United Arab Emirates",
+ "currency": "AED",
+ "language": "en",
+ "entity": "startup",
+ "programmes": [
+  {
+   "slug": "ae-hub71-access-programme",
+   "name_local": "حاضنة 71 - برنامج أكسس",
+   "name_en": "Hub71 Access Programme",
+   "country_code": "ae",
+   "admin_level": "regional",
+   "admin_area": "Abu Dhabi",
+   "funder": "Hub71, Abu Dhabi's global tech ecosystem (backed by Mubadala, ADIO and the Abu Dhabi Government)",
+   "funder_type": "ppp",
+   "grant_type": "accelerator",
+   "category": "startup",
+   "amount_min": null,
+   "amount_max": 750000,
+   "amount_currency": "AED",
+   "amount_note": "Startups onboarded to the programme receive AED 250,000 worth of in-kind incentives in the form of support services, and AED 250,000 in cash in exchange for equity through a SAFE note. High-performing startups committed to Abu Dhabi are eligible to receive a top-up of up to AED 250,000 in exchange for additional equity, upon completion of the programme, for a maximum of AED 750,000. In-kind incentives cover office space, health insurance, housing, workforce support, licensing and visa support, and marketing/legal services.",
+   "cofunding_pct": null,
+   "is_automatic": false,
+   "application_url": "https://www.hub71.com/program/access-programme/apply",
+   "application_channel": "online",
+   "deadline_type": "cutoff",
+   "deadline_note": "Hub71 runs cohort-based intakes for the Access Programme, a 12-month programme with a 3-month guided track powered by Techstars. Specific cohort application windows are published on the Hub71 programme page.",
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Submit an application to the Access Programme on the Hub71 website.",
+     "url": "https://www.hub71.com/program/access-programme/apply"
+    },
+    {
+     "step": 2,
+     "detail": "Screening and evaluation, including sessions attended by Hub71 community partners.",
+     "url": null
+    },
+    {
+     "step": 3,
+     "detail": "On selection, sign the SAFE note and onboard for the 12-month programme; launch phase sets KPIs.",
+     "url": null
+    },
+    {
+     "step": 4,
+     "detail": "Participate in the fundraising showcase and public Demo Day; high performers may receive the AED 250,000 top-up.",
+     "url": null
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "Pitch deck",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Cap table and incorporation documents",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Traction and financial metrics",
+     "mandatory": true,
+     "note": null
+    }
+   ],
+   "eligibility": {
+    "entity": "startup",
+    "company_age_months_min": null,
+    "company_age_months_max": null,
+    "headcount_min": null,
+    "headcount_max": null,
+    "turnover_annual_max": null,
+    "sme_category": "any",
+    "sectors": [
+     "any",
+     "ai",
+     "deeptech"
+    ],
+    "stages": [
+     "pre_seed",
+     "seed",
+     "series_a"
+    ],
+    "requires_local_entity": false,
+    "requires_incorporation": true,
+    "rd_focus": false,
+    "female_founder_only": false,
+    "underrepresented_focus": false,
+    "de_minimis": false,
+    "other_note": "Supports pre-seed to Series A start-ups looking to establish themselves in Abu Dhabi and expand globally. A commitment to establish and operate from Abu Dhabi is central; licensing and visa support is part of the in-kind package, so a UAE entity is not required before applying but is expected on onboarding. The cash component is dilutive (SAFE note)."
+   },
+   "source_url": "https://www.hub71.com/program/access-programme",
+   "source_snippet": "Startups onboarded to the programme will receive: AED 250,000 worth of in-kind incentives in the form of support services, and AED 250,000 in cash for exchange for equity through a SAFE note. High-performing startups are eligible to receive a top-up of up to AED 250,000 in exchange for additional equity, upon completion of the programme.",
+   "last_verified_at": "2026-08-14",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "ae-khalifa-fund",
+   "name_local": "صندوق خليفة لتطوير المشاريع",
+   "name_en": "Khalifa Fund for Enterprise Development - funding products",
+   "country_code": "ae",
+   "admin_level": "regional",
+   "admin_area": "Abu Dhabi",
+   "funder": "Khalifa Fund for Enterprise Development, Government of Abu Dhabi",
+   "funder_type": "public",
+   "grant_type": "loan",
+   "category": "startup",
+   "amount_min": null,
+   "amount_max": 3000000,
+   "amount_currency": "AED",
+   "amount_note": "Medium-term, interest-free loans. Microfinance Loan: for new entrepreneurs with project costs up to AED 1 million, funding up to AED 500,000, up to 80% project cost coverage, repayment up to 60 months with up to 18 months grace. Small Loan: project range AED 1M-5M, funding up to AED 2M (manufacturing) or AED 1M (other sectors), 80% cost coverage, repayment up to 72 months. Expansion Loan: up to AED 3M (manufacturing) or AED 2M (other sectors), 80% cost coverage, repayment up to 84 months with up to 24 months grace. Additional agri products (PHIDF up to AED 250,000; NHDF up to AED 400,000; WMSEF up to AED 150,000, each at 90% cost coverage) and Scale Up products (operating capital up to AED 600K; vehicles, machinery, bill discounting, APG and e-commerce inventory each up to AED 1M; Agri Tech Financing up to AED 2M).",
+   "cofunding_pct": 20,
+   "is_automatic": false,
+   "application_url": "https://www.tamm.abudhabi/en/abu-dhabi-government-entities/khalifafundforenterprisedevelopment",
+   "application_channel": "portal",
+   "deadline_type": "rolling",
+   "deadline_note": "Applications are accepted on a rolling basis through the Abu Dhabi Government services platform, TAMM.",
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Use the Khalifa Fund eligibility calculator to get a provisional estimate of available funds.",
+     "url": "https://khalifafund.ae/calculator/"
+    },
+    {
+     "step": 2,
+     "detail": "Select the appropriate funding product from the Funding Scheme page.",
+     "url": "https://www.khalifafund.ae/services/funding-scheme/"
+    },
+    {
+     "step": 3,
+     "detail": "Submit the application via TAMM.",
+     "url": "https://www.tamm.abudhabi/en/abu-dhabi-government-entities/khalifafundforenterprisedevelopment"
+    },
+    {
+     "step": 4,
+     "detail": "On approval, request disbursement; post-funding services cover top-ups, amendments and collateral release.",
+     "url": null
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "Emirates ID proving Emirati nationality",
+     "mandatory": true,
+     "note": "Applicants must be Emirati entrepreneurs aged 21-60"
+    },
+    {
+     "doc": "Business plan and project cost breakdown",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Trade licence for the Abu Dhabi / Western Region business",
+     "mandatory": true,
+     "note": "Business must be operational in Abu Dhabi and Western Region"
+    },
+    {
+     "doc": "Financial statements, salary certificate, bank statements",
+     "mandatory": true,
+     "note": "Used in the eligibility calculation"
+    },
+    {
+     "doc": "Minimum cash contribution evidence",
+     "mandatory": true,
+     "note": "Typically the remaining 20% of project cost"
+    }
+   ],
+   "eligibility": {
+    "entity": "startup",
+    "company_age_months_min": null,
+    "company_age_months_max": null,
+    "headcount_min": null,
+    "headcount_max": null,
+    "turnover_annual_max": null,
+    "sme_category": "small",
+    "sectors": [
+     "any",
+     "agri",
+     "health",
+     "manufacturing"
+    ],
+    "stages": [
+     "pre_seed",
+     "seed",
+     "growth"
+    ],
+    "requires_local_entity": true,
+    "requires_incorporation": true,
+    "rd_focus": false,
+    "female_founder_only": false,
+    "underrepresented_focus": false,
+    "de_minimis": false,
+    "other_note": "Emirati entrepreneurs aged 21-60 with operational businesses in Abu Dhabi and the Western Region can apply. Funding schemes are available to eligible Emirati-owned SMEs in Healthcare, Education, Agriculture, ICT, Tourism, Manufacturing and other sectors. Loans are interest-free but repayable; this is not a grant. Non-Emirati founders are not eligible."
+   },
+   "source_url": "https://www.khalifafund.ae/services/funding-scheme/",
+   "source_snippet": "Khalifa Fund offers medium-term, interest-free loans to Emirati entrepreneurs that will support their business potential and growth. Emirati entrepreneurs aged 21-60 with operational businesses in Abu Dhabi and Western Region can apply. ... Microfinance Loan ... Funding up to AED 500,000 ... Up to 80% project cost coverage ... Expansion Loan ... Funding up to: AED 3M (manufacturing), AED 2M (other sectors).",
+   "last_verified_at": "2026-08-14",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "ae-mbrif-accelerator",
+   "name_local": "صندوق محمد بن راشد للابتكار - برنامج التسريع",
+   "name_en": "Mohammed Bin Rashid Innovation Fund (MBRIF) Accelerator",
+   "country_code": "ae",
+   "admin_level": "national",
+   "admin_area": null,
+   "funder": "Mohammed Bin Rashid Innovation Fund, an initiative of the UAE Ministry of Finance, supported by Emirates Development Bank",
+   "funder_type": "public",
+   "grant_type": "in_kind",
+   "category": "startup",
+   "amount_min": null,
+   "amount_max": null,
+   "amount_currency": "AED",
+   "amount_note": "No cash award and no equity: MBRIF states 'We don't charge you any fees at any time and don't take equity'. The Accelerator provides personalised advisory services, expert matching, market entry support, showcase opportunities at industry conferences and access to the MBRIF ecosystem. Members have collectively raised AED 2.8B+.",
+   "cofunding_pct": null,
+   "is_automatic": false,
+   "application_url": "https://mbrif.acceleratorapp.co/apply/program/cohort-13",
+   "application_channel": "online",
+   "deadline_type": "cutoff",
+   "deadline_note": "Cohort-based. The MBRIF application portal was open for Cohort 13 at the time of verification; the exact closing date is not published on the public site.",
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Take the MBRIF programme-fit quiz to confirm whether the Accelerator or the Guarantee Scheme suits your stage.",
+     "url": "https://mbrif.ae/"
+    },
+    {
+     "step": 2,
+     "detail": "Apply online: answer the screening questions and submit a pitch video, demo video and pitch deck.",
+     "url": "https://mbrif.acceleratorapp.co/apply/program/cohort-13"
+    },
+    {
+     "step": 3,
+     "detail": "Shortlisted applicants deliver a final pitch before an independent panel.",
+     "url": null
+    },
+    {
+     "step": 4,
+     "detail": "On acceptance, work with MBRIF-selected experts matched to your specific needs.",
+     "url": null
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "Pitch deck",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Pitch video",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Demo video of the product or service",
+     "mandatory": true,
+     "note": null
+    }
+   ],
+   "eligibility": {
+    "entity": "startup",
+    "company_age_months_min": null,
+    "company_age_months_max": null,
+    "headcount_min": null,
+    "headcount_max": null,
+    "turnover_annual_max": null,
+    "sme_category": "any",
+    "sectors": [
+     "deeptech",
+     "climate",
+     "health",
+     "any"
+    ],
+    "stages": [
+     "seed",
+     "series_a",
+     "growth"
+    ],
+    "requires_local_entity": false,
+    "requires_incorporation": true,
+    "rd_focus": false,
+    "female_founder_only": false,
+    "underrepresented_focus": false,
+    "de_minimis": false,
+    "other_note": "Innovation must be in a focus sector: Tech, Education, Clean Energy, Water, Transport, Health or Space. Applicants must be UAE-based or interested in building a UAE presence. The idea must have taken form and become a developed product or service (post-ideation), with demonstrable market potential. Non-profit, zero-equity, zero-fee. 89+ countries have applied to MBRIF programmes, so applicants need not be UAE-incorporated at application."
+   },
+   "source_url": "https://mbrif.ae/accelerator-2/",
+   "source_snippet": "We don't charge you any fees at any time and don't take equity",
+   "last_verified_at": "2026-08-14",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "ae-mbrif-guarantee-scheme",
+   "name_local": "صندوق محمد بن راشد للابتكار - برنامج الضمان",
+   "name_en": "MBRIF Guarantee Scheme",
+   "country_code": "ae",
+   "admin_level": "national",
+   "admin_area": null,
+   "funder": "Mohammed Bin Rashid Innovation Fund (UAE Ministry of Finance), supported by Emirates Development Bank",
+   "funder_type": "public",
+   "grant_type": "loan",
+   "category": "startup",
+   "amount_min": null,
+   "amount_max": null,
+   "amount_currency": "AED",
+   "amount_note": "Government-backed loan guarantees that let innovators obtain bank financing without diluting equity. The official Guarantee Scheme page does not publish a guarantee amount range, a coverage percentage or a list of participating banks, so these are recorded as null rather than guessed.",
+   "cofunding_pct": null,
+   "is_automatic": false,
+   "application_url": "https://mbrif.ae/guarantee-scheme-2/",
+   "application_channel": "online",
+   "deadline_type": "rolling",
+   "deadline_note": "Applications are submitted online through the MBRIF Guarantee Scheme form; no closing date is published.",
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Register online and submit the Guarantee Scheme application.",
+     "url": "https://mbrif.ae/guarantee-scheme-2/"
+    },
+    {
+     "step": 2,
+     "detail": "MBRIF reviews the application for completeness.",
+     "url": null
+    },
+    {
+     "step": 3,
+     "detail": "Detailed due diligence analysis is carried out.",
+     "url": null
+    },
+    {
+     "step": 4,
+     "detail": "The Advisory & Decision Committee reviews and the decision is communicated via a letter of intent.",
+     "url": null
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "Business plan demonstrating a strong and sustainable model",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Financial statements and funding requirement",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Evidence of the developed product or service",
+     "mandatory": true,
+     "note": null
+    }
+   ],
+   "eligibility": {
+    "entity": "startup",
+    "company_age_months_min": null,
+    "company_age_months_max": null,
+    "headcount_min": null,
+    "headcount_max": null,
+    "turnover_annual_max": null,
+    "sme_category": "any",
+    "sectors": [
+     "deeptech",
+     "climate",
+     "health",
+     "any"
+    ],
+    "stages": [
+     "seed",
+     "series_a",
+     "growth"
+    ],
+    "requires_local_entity": false,
+    "requires_incorporation": true,
+    "rd_focus": false,
+    "female_founder_only": false,
+    "underrepresented_focus": false,
+    "de_minimis": false,
+    "other_note": "MBRIF's stated alignment questions: based in the UAE or interested in building a presence there; the idea has become a developed product or service; the innovation has potential for large impact; the business plan is strong and sustainable; the company carries a reasonable level of commercial risk; and the applicant has been unable to access affordable funding or alternatives. This is debt support, not a grant."
+   },
+   "source_url": "https://mbrif.ae/guarantee-scheme-2/",
+   "source_snippet": "The MBRIF's Guarantee Scheme provides you with access to financial support through flexible government-backed loan guarantees ... The Guarantee Scheme allows you to grow your business with financing solutions that do not dilute your equity.",
+   "last_verified_at": "2026-08-14",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "ae-sheraa-sharjah-startup-studio",
+   "name_local": "شراع - استوديو الشارقة للشركات الناشئة",
+   "name_en": "Sheraa Sharjah Startup Studio (S3)",
+   "country_code": "ae",
+   "admin_level": "regional",
+   "admin_area": "Sharjah",
+   "funder": "Sharjah Entrepreneurship Center (Sheraa)",
+   "funder_type": "public",
+   "grant_type": "accelerator",
+   "category": "startup",
+   "amount_min": null,
+   "amount_max": null,
+   "amount_currency": "AED",
+   "amount_note": "No cash grant and no equity: 'S3 does not take equity or charge a fee to participate in the program.' The package is in-kind: a free 1-year business licence at Sharjah Research Technology and Innovation Park (Sheraa covers the first-year fee, approximately AED 3,000 / USD 820 per year), co-working space, 15 credits usable for 1:1 expert mentorship, partner introductions and VC/capital introductions, access to AED 3M+ in software perks, and a showcase at the Sharjah Entrepreneurship Festival.",
+   "cofunding_pct": null,
+   "is_automatic": false,
+   "application_url": "https://www.asc.sheraa.ae/s3-program",
+   "application_channel": "online",
+   "deadline_type": "annual_call",
+   "deadline_note": "Annual cohort. The published timeline for the most recent cycle was: applications open 7 July, close 7 September, cohort announced 14 October, programme running October to February with Demo Day and SEF showcase on 1 February. Applications are reviewed on a rolling basis within the window.",
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Submit the application through the S3 programme website during the open window.",
+     "url": "https://www.asc.sheraa.ae/s3-program"
+    },
+    {
+     "step": 2,
+     "detail": "Sheraa's internal assessment reviews every application.",
+     "url": null
+    },
+    {
+     "step": 3,
+     "detail": "Founders who pass review are invited to a 20-minute screening call with a live product demo.",
+     "url": null
+    },
+    {
+     "step": 4,
+     "detail": "Selected startups go to a deep-dive session covering solution, business model, legal and financial.",
+     "url": null
+    },
+    {
+     "step": 5,
+     "detail": "On acceptance, sign the participation agreement and obtain a Sharjah business licence for at least two years.",
+     "url": null
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "Application form with team and traction detail",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Live product demo",
+     "mandatory": true,
+     "note": "Presented during the screening call"
+    },
+    {
+     "doc": "Legal and financial documentation",
+     "mandatory": true,
+     "note": "Reviewed at the deep-dive stage"
+    }
+   ],
+   "eligibility": {
+    "entity": "startup",
+    "company_age_months_min": null,
+    "company_age_months_max": null,
+    "headcount_min": null,
+    "headcount_max": null,
+    "turnover_annual_max": null,
+    "sme_category": "any",
+    "sectors": [
+     "creative",
+     "manufacturing",
+     "climate",
+     "any"
+    ],
+    "stages": [
+     "seed",
+     "series_a"
+    ],
+    "requires_local_entity": false,
+    "requires_incorporation": true,
+    "rd_focus": false,
+    "female_founder_only": false,
+    "underrepresented_focus": false,
+    "de_minimis": false,
+    "other_note": "Criteria: scalable business model driven by tech-enabled solutions; ready for market with early customer traction and revenue generation; committed to operating and expanding within Sharjah and across the UAE; a dedicated full-time founder and development support team; and preferably operating in the priority sectors EdTech, Sustainability, Manufacturing or Creative Industries (other sectors welcome if relevant to those areas). Selected startups must obtain a business licence in Sharjah for at least two years, and must be present in the UAE for onboarding, demo days and showcases. Minimum commitment of 2 hours bi-weekly. Around 20 startups are selected."
+   },
+   "source_url": "https://www.asc.sheraa.ae/s3-program",
+   "source_snippet": "No, S3 does not take equity or charge a fee to participate in the program. ... Sheraa will cover the first-year licensing fee at the Sharjah Research Technology and Innovation Park (SRTIP) as part of the program perks. You are required to obtain a business license in Sharjah for at least two years.",
+   "last_verified_at": "2026-08-14",
+   "verification_status": "verified"
+  }
+ ]
+}

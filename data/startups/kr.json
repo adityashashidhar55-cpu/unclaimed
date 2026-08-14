@@ -1,0 +1,291 @@
+{
+ "country_code": "kr",
+ "country_name": "South Korea",
+ "currency": "KRW",
+ "language": "en",
+ "entity": "startup",
+ "programmes": [
+  {
+   "slug": "kr-k-startup-grand-challenge",
+   "name_local": "K-스타트업 그랜드 챌린지",
+   "name_en": "K-Startup Grand Challenge (KSGC)",
+   "country_code": "kr",
+   "admin_level": "national",
+   "admin_area": null,
+   "funder": "Ministry of SMEs and Startups (중소벤처기업부), delivered with the Centers for Creative Economy and Innovation (창조경제혁신센터)",
+   "funder_type": "public",
+   "grant_type": "accelerator",
+   "category": "startup",
+   "amount_min": null,
+   "amount_max": null,
+   "amount_currency": "KRW",
+   "amount_note": "KSGC is Korea's flagship soft-landing accelerator for foreign founders. Participation is free for selected teams. The main-track cash award is set in each year's Recruitment Guidelines PDF rather than on the landing page, so no amount is recorded here. The dedicated International Students track verified on 14 August 2026 lists no cash grant: it provides diagnostics, KPI and milestone setting, 1:1 mentoring, IR deck clinic and pitch coaching, mock IR, and a COMEUP Mini Demo Day showcase.",
+   "cofunding_pct": null,
+   "is_automatic": false,
+   "application_url": "https://ksgc.global/",
+   "application_channel": "online",
+   "deadline_type": "annual_call",
+   "deadline_note": "Annual. As of 14 August 2026 the site shows 'Applications closed'. The International Students track ran 13 July 2026 to 14 August 2026 15:00 KST, with the programme running August to December in Pangyo; the main 2026 track's stated deadline was 17 June 2026. Note: the former domain k-startupgc.org has lapsed and now hosts an unrelated commercial site - use ksgc.global.",
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Download and read the year's Recruitment Guidelines.",
+     "url": "https://ksgc.global/guidelines/KSGC_2026_Recruitment_Guidelines.pdf"
+    },
+    {
+     "step": 2,
+     "detail": "Submit the team information and business materials through the online application when the window is open.",
+     "url": "https://ksgc.global/"
+    },
+    {
+     "step": 3,
+     "detail": "Applications are reviewed for team quality, business potential and programme fit.",
+     "url": null
+    },
+    {
+     "step": 4,
+     "detail": "Selected teams are onboarded and run the programme in Pangyo and nearby areas, in English, ending with a demo day.",
+     "url": null
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "Team information and business materials",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Certificate of Enrollment",
+     "mandatory": true,
+     "note": "International Students track only - used to verify student status"
+    },
+    {
+     "doc": "Pitch deck",
+     "mandatory": true,
+     "note": null
+    }
+   ],
+   "eligibility": {
+    "entity": "startup",
+    "company_age_months_min": null,
+    "company_age_months_max": null,
+    "headcount_min": null,
+    "headcount_max": null,
+    "turnover_annual_max": null,
+    "sme_category": "any",
+    "sectors": [
+     "any",
+     "ai",
+     "deeptech"
+    ],
+    "stages": [
+     "idea",
+     "pre_seed",
+     "seed"
+    ],
+    "requires_local_entity": false,
+    "requires_incorporation": false,
+    "rd_focus": false,
+    "female_founder_only": false,
+    "underrepresented_focus": false,
+    "de_minimis": false,
+    "other_note": "The main KSGC track targets foreign-founded startups wanting to enter the Korean market; a Korean entity is not required at application (the programme has produced 225 Korean entities from 449 graduates). The International Students track verified here is narrower: pre-startup teams led by international students in Korea, where all members are current undergraduate or graduate students not on leave of absence, at least 50% of members are international students, and at least one member including the leader is a graduate student or an international student expected to graduate by 2027. Up to 20 teams, free of charge, English-language."
+   },
+   "source_url": "https://ksgc.global/",
+   "source_snippet": "KSGC for International Students is a dedicated growth track within the K-Startup Grand Challenge ... Duration Aug-Dec August to December. Scale 20 Up to 20 teams. Location Pangyo and nearby areas. Language English. Cost Free For selected teams. ... Application Period July 13, 2026 - August 14, 2026 15:00 KST",
+   "last_verified_at": "2026-08-14",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "kr-preliminary-startup-package",
+   "name_local": "예비창업패키지",
+   "name_en": "Preliminary Startup Package (Pre-Startup Package)",
+   "country_code": "kr",
+   "admin_level": "national",
+   "admin_area": null,
+   "funder": "Ministry of SMEs and Startups (중소벤처기업부), implemented by the Korea Institute of Startup and Entrepreneurship Development (창업진흥원)",
+   "funder_type": "public",
+   "grant_type": "grant",
+   "category": "startup",
+   "amount_min": null,
+   "amount_max": null,
+   "amount_currency": "KRW",
+   "amount_note": "사업화 자금, 창업프로그램 등 지원 - commercialisation funding plus startup programme support. The bizinfo listing does not state the per-recipient cap; that figure appears only in the attached 모집 공고 PDF, so the amount is recorded as null rather than guessed.",
+   "cofunding_pct": null,
+   "is_automatic": false,
+   "application_url": "https://www.k-startup.go.kr/",
+   "application_channel": "portal",
+   "deadline_type": "annual_call",
+   "deadline_note": "Annual open call. The 2026 revised recruitment notice (공고 2026-143호, published 3 March 2026) ran 신청기간 2026.03.06 ~ 2026.03.24. That window has closed; the programme recurs annually in Q1.",
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Read the annual 모집 공고 (recruitment notice) published by 중소벤처기업부 / 창업진흥원.",
+     "url": "https://www.mss.go.kr/site/smba/ex/bbs/View.do?cbIdx=310&bcIdx=1065953&parentSeq=1065953"
+    },
+    {
+     "step": 2,
+     "detail": "Confirm you are a 예비창업자: you must not hold a business registration certificate in your own name and must not be the legal representative of a corporation as at the reference date.",
+     "url": null
+    },
+    {
+     "step": 3,
+     "detail": "Apply online through the K-Startup portal within the window.",
+     "url": "https://www.k-startup.go.kr/"
+    },
+    {
+     "step": 4,
+     "detail": "Pass the evaluation to receive commercialisation funding and structured startup programme support.",
+     "url": null
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "사업계획서 (business plan) in the prescribed format",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Proof that no business registration exists in the applicant's name as at the reference date",
+     "mandatory": true,
+     "note": "Reference date for the 2026 call was 22 January 2026"
+    },
+    {
+     "doc": "Supporting evidence for scoring items listed in the 공고",
+     "mandatory": false,
+     "note": null
+    }
+   ],
+   "eligibility": {
+    "entity": "startup",
+    "company_age_months_min": null,
+    "company_age_months_max": null,
+    "headcount_min": null,
+    "headcount_max": null,
+    "turnover_annual_max": null,
+    "sme_category": "any",
+    "sectors": [
+     "any",
+     "deeptech",
+     "ai"
+    ],
+    "stages": [
+     "idea",
+     "pre_seed"
+    ],
+    "requires_local_entity": true,
+    "requires_incorporation": false,
+    "rd_focus": false,
+    "female_founder_only": false,
+    "underrepresented_focus": false,
+    "de_minimis": false,
+    "other_note": "For 예비창업자 - pre-founding entrepreneurs with innovative technology and business models who do not yet hold a business registration certificate in their own name and are not the legal representative of a corporation as at the notice's reference date. A Korean business registration is what the programme helps you obtain, so incorporation is not required at application. Detailed eligibility is in the attached 공고문."
+   },
+   "source_url": "https://www.bizinfo.go.kr/sii/siia/selectSIIA200Detail.do?pblancId=PBLN_000000000119019",
+   "source_snippet": "2026년 예비창업패키지 예비창업자 모집 수정 공고 ... 소관부처·지자체 중소벤처기업부 ... 사업수행기관 창업진흥원 ... 신청기간 2026.03.06 ~ 2026.03.24 ... 혁신적인 기술과 사업모델(BM)을 보유한 예비창업자를 발굴ㆍ지원하기위한 ... ☞ 사업화 자금, 창업프로그램 등 지원 ... 온라인 접수 (K-Startup 누리집)",
+   "last_verified_at": "2026-08-14",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "kr-tips",
+   "name_local": "팁스(TIPS, 민간투자주도형 기술창업지원)",
+   "name_en": "TIPS - Tech Incubator Program for Startup Korea",
+   "country_code": "kr",
+   "admin_level": "national",
+   "admin_area": null,
+   "funder": "Ministry of SMEs and Startups (중소벤처기업부), operated by the Korea Angel Investment Association (한국엔젤투자협회) through designated TIPS operators (운영사)",
+   "funder_type": "ppp",
+   "grant_type": "grant",
+   "category": "startup",
+   "amount_min": null,
+   "amount_max": 800000000,
+   "amount_currency": "KRW",
+   "amount_note": "Up to approximately KRW 800 million per startup team over a maximum of 3 years: angel investment of about KRW 100 million from the TIPS operator (of which the government contribution is 20%+), R&D funding of up to KRW 500 million (government covers up to 80% of the technology development cost, with the private party covering at least 20%), plus up to KRW 200 million of linked support (KRW 100 million startup commercialisation funding and KRW 100 million overseas marketing). Incubation runs 2-3 years; the R&D project itself runs 24 months, with linked projects adding up to 10 months. The R&D money is a government contribution and takes no equity, but on an 'excellent' or 'average' final evaluation the company pays a technology fee of up to 20% of the R&D funding based on project revenue over the following five years; on a failed but 'diligently performed' project there is no repayment obligation.",
+   "cofunding_pct": 20,
+   "is_automatic": false,
+   "application_url": "https://www.jointips.or.kr/bbs/apply.php",
+   "application_channel": "email",
+   "deadline_type": "rolling",
+   "deadline_note": "팁스 운영사의 투자심사는 365일 상시 접수 - TIPS operators accept investment proposals year-round. Operators then recommend invested companies to the managing organisation on a continuous basis, and the managing organisation runs selection evaluations (written review, business plan revision, then in-person evaluation) roughly every two months.",
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Prepare a business plan - there is no fixed format; write it in whatever way best explains your business item.",
+     "url": "https://www.jointips.or.kr/about.php"
+    },
+    {
+     "step": 2,
+     "detail": "Submit the investment proposal to one or more TIPS operators (운영사) by email or through the online submission page. You may pitch multiple operators, but the recommendation must come from a single one.",
+     "url": "https://www.jointips.or.kr/bbs/apply.php"
+    },
+    {
+     "step": 3,
+     "detail": "Pass the operator's own investment screening and secure an investment commitment (투자확약).",
+     "url": null
+    },
+    {
+     "step": 4,
+     "detail": "The operator recommends you to the managing organisation within its annual quota; you then pass the selection evaluation (written review, business plan revision, in-person evaluation).",
+     "url": null
+    },
+    {
+     "step": 5,
+     "detail": "Run the project with operator investment, mentoring and incubation plus government R&D support; graduate to follow-on VC investment, M&A or IPO.",
+     "url": null
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "사업계획서 (business plan)",
+     "mandatory": true,
+     "note": "No prescribed format for the operator investment stage"
+    },
+    {
+     "doc": "TIPS operator investment commitment and recommendation",
+     "mandatory": true,
+     "note": "Cannot apply to TIPS without it"
+    },
+    {
+     "doc": "Corporate registration under the 중소기업창업 지원법",
+     "mandatory": true,
+     "note": "Pre-founding entrepreneurs (예비창업자) are also eligible"
+    },
+    {
+     "doc": "Technology development plan for the 24-month R&D project",
+     "mandatory": true,
+     "note": null
+    }
+   ],
+   "eligibility": {
+    "entity": "startup",
+    "company_age_months_min": null,
+    "company_age_months_max": null,
+    "headcount_min": null,
+    "headcount_max": null,
+    "turnover_annual_max": null,
+    "sme_category": "any",
+    "sectors": [
+     "deeptech",
+     "ai",
+     "health",
+     "any"
+    ],
+    "stages": [
+     "pre_seed",
+     "seed"
+    ],
+    "requires_local_entity": true,
+    "requires_incorporation": true,
+    "rd_focus": true,
+    "female_founder_only": false,
+    "underrepresented_focus": false,
+    "de_minimis": false,
+    "other_note": "Startups (창업기업) or pre-founding entrepreneurs (예비창업자) under Article 2 of the Small and Medium Enterprise Startup Support Act that have received an investment commitment and recommendation from a TIPS operator. A TIPS company cannot simultaneously run a 졸업제 (graduation-type) R&D project, unless less than 6 months remain on the existing one; at most two concurrent projects (one graduation-type plus one non-graduation-type) including TIPS. Detailed eligibility is published in the annual 팁스(TIPS) 창업기업 지원계획 통합공고."
+   },
+   "source_url": "https://www.jointips.or.kr/about.php",
+   "source_snippet": "지원조건 창업팀당 최대 8억원 내외(최장 3년 이내) 지원내용 엔젤투자(1억원) + 성공벤처인의 보육·멘토링 + R&D(5억) + 추가지원 2억(창업자금 1억원, 해외마케팅 1억원) ... 팁스 운영사의 투자심사는 365일 상시 접수하며",
+   "last_verified_at": "2026-08-14",
+   "verification_status": "verified"
+  }
+ ]
+}

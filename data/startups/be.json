@@ -1,0 +1,268 @@
+{
+ "country_code": "be",
+ "country_name": "Belgium",
+ "currency": "EUR",
+ "language": "en",
+ "entity": "startup",
+ "programmes": [
+  {
+   "slug": "be-cheques-entreprises-wallonie",
+   "name_local": "Chèques-entreprises (Wallonie)",
+   "name_en": "Wallonia enterprise cheques (chèques-entreprises)",
+   "country_code": "be",
+   "admin_level": "regional",
+   "admin_area": "Wallonie (Wallonia)",
+   "funder": "Service public de Wallonie – Économie, Emploi, Recherche (SPW EER)",
+   "funder_type": "public",
+   "grant_type": "voucher",
+   "amount_min": null,
+   "amount_max": 50000,
+   "amount_currency": "EUR",
+   "amount_note": "A portfolio of cheques with different rates and ceilings over a rolling three-year period ('Montant maximum sur 3 ans'), for example: Chèque Technologique up to EUR 45,000 HTVA at 50%; Chèque Propriété Intellectuelle up to EUR 45,000 at 50%; Cybersécurité up to EUR 50,000 at 75%; Maturité Numérique up to EUR 50,000 at 50%; Création-Conseil up to EUR 15,000 at 75%; Formation à la Création up to EUR 6,000 at 80%; Consultance Export up to EUR 25,000 (PME) or EUR 37,500 (starter) at 50%; Accompagnement Croissance up to EUR 50,000 at 50%.",
+   "application_url": "https://www.cheques-entreprises.be/cheques/",
+   "application_channel": "portal",
+   "deadline_type": "rolling",
+   "deadline_note": "Continuous — cheques are requested on the platform whenever needed, subject to the three-year ceilings and available budget.",
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Confirm you are a PME or independent with a principal operating seat in Wallonia and fewer than 250 employees.",
+     "url": "https://www.cheques-entreprises.be/cheques/"
+    },
+    {
+     "step": 2,
+     "detail": "Choose the cheque matching your need (technology, IP, cybersecurity, digital maturity, export, creation, growth, circular economy, energy).",
+     "url": "https://www.cheques-entreprises.be/cheques/"
+    },
+    {
+     "step": 3,
+     "detail": "Select an approved service provider and submit the request on app.cheques-entreprises.be before the service starts.",
+     "url": "https://app.cheques-entreprises.be/"
+    },
+    {
+     "step": 4,
+     "detail": "The region pays its share directly to the provider; you pay only your contribution.",
+     "url": null
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "Online request on the chèques-entreprises platform",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Quotation/offer from an approved service provider (prestataire labellisé)",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Proof of operating seat in Wallonia",
+     "mandatory": true,
+     "note": null
+    }
+   ],
+   "eligibility": {
+    "entity": "startup",
+    "company_age_months_min": null,
+    "company_age_months_max": null,
+    "headcount_min": null,
+    "headcount_max": 250,
+    "turnover_annual_max": null,
+    "sme_category": "any",
+    "sectors": [
+     "any"
+    ],
+    "stages": [
+     "idea",
+     "pre_seed",
+     "seed",
+     "series_a",
+     "growth"
+    ],
+    "requires_local_entity": true,
+    "requires_incorporation": true,
+    "rd_focus": false,
+    "female_founder_only": false,
+    "underrepresented_focus": false,
+    "de_minimis": true,
+    "other_note": "'PME ou indépendant ... possède un siège d'exploitation principal situé en région wallonne' with fewer than 250 employees. The scheme is operated as de minimis aid under the Walloon chèques-entreprises framework; the cheque ceilings are cumulative over three years, consistent with de minimis accounting."
+   },
+   "source_url": "https://www.cheques-entreprises.be/cheques/",
+   "source_snippet": "Chèque Technologique - jusqu'à 45.000 € HTVA - intervention 50% ... PME ou indépendant ... possède un siège d'exploitation principal situé en région wallonne ... Montant maximum sur 3 ans.",
+   "category": "startup",
+   "cofunding_pct": null,
+   "is_automatic": false,
+   "last_verified_at": "2026-08-14",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "be-vlaio-onderzoeksproject",
+   "name_local": "VLAIO Onderzoeksproject",
+   "name_en": "VLAIO Research Project grant (Flanders)",
+   "country_code": "be",
+   "admin_level": "regional",
+   "admin_area": "Vlaanderen (Flanders)",
+   "funder": "Agentschap Innoveren en Ondernemen (VLAIO)",
+   "funder_type": "public",
+   "grant_type": "grant",
+   "amount_min": 100000,
+   "amount_max": null,
+   "amount_currency": "EUR",
+   "amount_note": "'25 tot 60% van de projectbegroting', with a minimum project budget equivalent to a subsidy of EUR 100,000. No maximum is published on the page.",
+   "cofunding_pct": 40,
+   "application_url": "https://www.vlaio.be/nl/subsidies-financiering/onderzoeksproject",
+   "application_channel": "portal",
+   "deadline_type": "rolling",
+   "deadline_note": "Continuous submission via e-loketondernemers.be; a separate continuous defence call runs in 2026.",
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Define a research project that builds up the company's research and development capability.",
+     "url": "https://www.vlaio.be/nl/subsidies-financiering/onderzoeksproject"
+    },
+    {
+     "step": 2,
+     "detail": "Ensure the project budget is large enough to reach the EUR 100,000 minimum subsidy.",
+     "url": null
+    },
+    {
+     "step": 3,
+     "detail": "Submit digitally through e-loketondernemers.be.",
+     "url": "https://www.e-loketondernemers.be/"
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "Research project proposal with scientific/technical description",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Project budget",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Valorisation plan for the Flemish economy",
+     "mandatory": true,
+     "note": null
+    }
+   ],
+   "eligibility": {
+    "entity": "startup",
+    "company_age_months_min": null,
+    "company_age_months_max": null,
+    "headcount_min": null,
+    "headcount_max": null,
+    "turnover_annual_max": null,
+    "sme_category": "any",
+    "sectors": [
+     "any"
+    ],
+    "stages": [
+     "seed",
+     "series_a",
+     "growth"
+    ],
+    "requires_local_entity": true,
+    "requires_incorporation": true,
+    "rd_focus": true,
+    "female_founder_only": false,
+    "underrepresented_focus": false,
+    "de_minimis": false,
+    "other_note": "'Onderneming actief in het Vlaamse Gewest'. Higher rates (up to 60%) apply to SMEs and collaborative research."
+   },
+   "source_url": "https://www.vlaio.be/nl/subsidies-financiering/onderzoeksproject",
+   "source_snippet": "25 tot 60% van de projectbegroting ... een minimumbegroting equivalent aan een subsidie van € 100.000 ... Onderneming actief in het Vlaamse Gewest.",
+   "category": "startup",
+   "is_automatic": false,
+   "last_verified_at": "2026-08-14",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "be-vlaio-ontwikkelingsproject",
+   "name_local": "VLAIO Ontwikkelingsproject",
+   "name_en": "VLAIO Development Project grant (Flanders)",
+   "country_code": "be",
+   "admin_level": "regional",
+   "admin_area": "Vlaanderen (Flanders)",
+   "funder": "Agentschap Innoveren en Ondernemen (VLAIO)",
+   "funder_type": "public",
+   "grant_type": "grant",
+   "amount_min": 25000,
+   "amount_max": 3000000,
+   "amount_currency": "EUR",
+   "amount_note": "'25 tot 50%' of project costs for SMEs, with a minimum subsidy of EUR 25,000 and a maximum of EUR 3 million.",
+   "cofunding_pct": 50,
+   "application_url": "https://www.vlaio.be/nl/subsidies-financiering/ontwikkelingsproject",
+   "application_channel": "portal",
+   "deadline_type": "rolling",
+   "deadline_note": "Continuous submission via het e-loket voor ondernemers. A separate 'continue oproep defensie 2026' exists for defence-related projects.",
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Define a development project: developing new technologies, improving processes, building prototypes or running pilot phases.",
+     "url": "https://www.vlaio.be/nl/subsidies-financiering/ontwikkelingsproject"
+    },
+    {
+     "step": 2,
+     "detail": "Discuss the project with a VLAIO adviser and prepare the project and cost plan.",
+     "url": null
+    },
+    {
+     "step": 3,
+     "detail": "Submit digitally through e-loketondernemers.be; VLAIO evaluates and decides.",
+     "url": "https://www.e-loketondernemers.be/"
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "Project proposal with technical description and valorisation plan",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Cost budget per work package",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Company financial data",
+     "mandatory": true,
+     "note": null
+    }
+   ],
+   "eligibility": {
+    "entity": "startup",
+    "company_age_months_min": null,
+    "company_age_months_max": null,
+    "headcount_min": null,
+    "headcount_max": null,
+    "turnover_annual_max": null,
+    "sme_category": "any",
+    "sectors": [
+     "any"
+    ],
+    "stages": [
+     "seed",
+     "series_a",
+     "growth"
+    ],
+    "requires_local_entity": true,
+    "requires_incorporation": true,
+    "rd_focus": true,
+    "female_founder_only": false,
+    "underrepresented_focus": false,
+    "de_minimis": false,
+    "other_note": "Companies with an operating seat in the Flemish Region. Grant rate 25-50% for SMEs depending on project type and company size."
+   },
+   "source_url": "https://www.vlaio.be/nl/subsidies-financiering/ontwikkelingsproject",
+   "source_snippet": "25 tot 50% van de projectkosten voor kmo's ... minimum steun € 25.000 ... maximum steun € 3 miljoen.",
+   "category": "startup",
+   "is_automatic": false,
+   "last_verified_at": "2026-08-14",
+   "verification_status": "verified"
+  }
+ ]
+}

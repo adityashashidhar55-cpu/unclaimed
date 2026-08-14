@@ -1,0 +1,398 @@
+{
+ "country_code": "jp",
+ "country_name": "Japan",
+ "currency": "JPY",
+ "language": "en",
+ "entity": "startup",
+ "programmes": [
+  {
+   "slug": "jp-j-startup",
+   "name_local": "J-Startup",
+   "name_en": "J-Startup",
+   "country_code": "jp",
+   "admin_level": "national",
+   "admin_area": null,
+   "funder": "Ministry of Economy, Trade and Industry (経済産業省 / METI)",
+   "funder_type": "ppp",
+   "grant_type": "in_kind",
+   "category": "startup",
+   "amount_min": null,
+   "amount_max": null,
+   "amount_currency": "JPY",
+   "amount_note": "J-Startup is a selection and endorsement programme, not a cash grant. Selected companies receive the J-Startup designation plus concentrated public and private support. The official site does not publish a monetary value for the support package, so amounts are null.",
+   "cofunding_pct": null,
+   "is_automatic": false,
+   "application_url": "https://www.j-startup.go.jp/",
+   "application_channel": "online",
+   "deadline_type": "annual_call",
+   "deadline_note": "Selection is by nomination, not open application: top venture capitalists, accelerators and corporate innovation officers recommend companies and an external review committee (外部審査委員会) screens them. METI publishes periodic reviews of selected companies (選定企業の見直し); the most recent announcements on the site were dated May 2026, November 2025 and July 2025. Regional tracks such as J-Startup KANTO, J-Startup KYUSHU and the thematic J-Startup Impact run their own calls.",
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Build a relationship with a recommending body: a leading VC, accelerator or corporate innovation officer recognised by METI.",
+     "url": "https://www.j-startup.go.jp/"
+    },
+    {
+     "step": 2,
+     "detail": "Be nominated by that recommender when METI opens a selection review round.",
+     "url": null
+    },
+    {
+     "step": 3,
+     "detail": "Undergo screening by the external review committee; selected firms are announced as J-Startup companies.",
+     "url": "https://www.meti.go.jp/press/2024/03/20250313001/20250313001.html"
+    },
+    {
+     "step": 4,
+     "detail": "Alternatively, apply to a regional or thematic track such as J-Startup KANTO or J-Startup Impact when its call opens.",
+     "url": "https://www.kanto.meti.go.jp/press/20260422_j_startup_press.html"
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "Recommendation from an approved recommender (VC, accelerator, corporate innovation officer)",
+     "mandatory": true,
+     "note": "There is no direct self-application route to the national programme"
+    },
+    {
+     "doc": "Company and technology information for the review committee",
+     "mandatory": true,
+     "note": null
+    }
+   ],
+   "eligibility": {
+    "entity": "startup",
+    "company_age_months_min": null,
+    "company_age_months_max": null,
+    "headcount_min": null,
+    "headcount_max": null,
+    "turnover_annual_max": null,
+    "sme_category": "any",
+    "sectors": [
+     "deeptech",
+     "any"
+    ],
+    "stages": [
+     "seed",
+     "series_a",
+     "growth"
+    ],
+    "requires_local_entity": true,
+    "requires_incorporation": true,
+    "rd_focus": false,
+    "female_founder_only": false,
+    "underrepresented_focus": false,
+    "de_minimis": false,
+    "other_note": "Aimed at startups capable of becoming globally competitive and delivering innovative value worldwide. Selection is by nomination and external committee screening rather than open application, which makes it materially different from a grant scheme. A Japanese entity is required."
+   },
+   "source_url": "https://www.j-startup.go.jp/",
+   "source_snippet": "経済産業省が推進するスタートアップ企業の育成支援プログラム",
+   "last_verified_at": "2026-08-14",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "jp-monodukuri-hojokin",
+   "name_local": "ものづくり・商業・サービス生産性向上促進補助金（ものづくり補助金）",
+   "name_en": "Monozukuri Subsidy (Manufacturing, Commerce and Service Productivity Improvement Promotion Subsidy)",
+   "country_code": "jp",
+   "admin_level": "national",
+   "admin_area": null,
+   "funder": "Small and Medium Enterprise Agency (中小企業庁) / METI, administered by the Monozukuri Subsidy Secretariat",
+   "funder_type": "public",
+   "grant_type": "grant",
+   "category": "startup",
+   "amount_min": 1000000,
+   "amount_max": null,
+   "amount_currency": "JPY",
+   "amount_note": "Subsidy caps scale with headcount and frame. Per the 23rd-round 公募要領: 6-20 employees JPY 10 million, 21-50 employees JPY 15 million, 51+ employees JPY 25 million for one frame, and JPY 30 million for another; subsidy rate 1/2 for SMEs and 2/3 for small enterprises, small-scale business operators and restructuring businesses; floor JPY 1 million. A wage-increase uplift adds up to JPY 1 million (1-5 staff), JPY 2.5 million (6-20) or JPY 10 million (21-50 and 51+) to each frame's cap. Costs other than machinery/system construction are capped at JPY 5 million ex-tax in total (JPY 10 million for the global frame). Because the figures come from the PDF 公募要領 rather than an HTML page, the exact top-line cap is left null here.",
+   "cofunding_pct": 50,
+   "is_automatic": false,
+   "application_url": "https://portal.monodukuri-hojo.jp/about.html",
+   "application_channel": "portal",
+   "deadline_type": "cutoff",
+   "deadline_note": "Recurring numbered cut-offs. 23次締切: 公募開始 令和8年2月6日, 申請開始 令和8年4月3日 17時, 申請締切 令和8年5月8日 17時 - that deadline has passed. New applications have moved to the merged 新事業進出・ものづくり商業サービス補助金, whose first call closes 30 October 2026.",
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Obtain a GビズID プライム account before applying.",
+     "url": "https://gbiz-id.go.jp/top/"
+    },
+    {
+     "step": 2,
+     "detail": "Read the 公募要領 for the relevant cut-off round.",
+     "url": "https://portal.monodukuri-hojo.jp/common/bunsho/ippan/23th/%E5%85%AC%E5%8B%9F%E8%A6%81%E9%A0%98_23%E6%AC%A1%E7%B7%A0%E5%88%87_20260206.pdf"
+    },
+    {
+     "step": 3,
+     "detail": "Prepare the 事業計画書 using the reference format and the CAGR calculation tool.",
+     "url": "https://portal.monodukuri-hojo.jp/common/bunsho/ippan/CAGR%E7%AE%97%E5%87%BA%E3%83%84%E3%83%BC%E3%83%AB_20250314.xlsx"
+    },
+    {
+     "step": 4,
+     "detail": "Submit through the electronic application system before the round's 申請締切日.",
+     "url": null
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "GビズID プライム account",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "事業計画書 (business plan)",
+     "mandatory": true,
+     "note": "Entered into the electronic application system"
+    },
+    {
+     "doc": "労働者名簿 (employee roster)",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "様式4 大幅な賃上げ計画書",
+     "mandatory": false,
+     "note": "Only when applying for the raised subsidy cap via large wage increases"
+    },
+    {
+     "doc": "様式5 資金調達確認書",
+     "mandatory": false,
+     "note": "When raising funds from a financial institution"
+    }
+   ],
+   "eligibility": {
+    "entity": "startup",
+    "company_age_months_min": null,
+    "company_age_months_max": null,
+    "headcount_min": null,
+    "headcount_max": null,
+    "turnover_annual_max": null,
+    "sme_category": "any",
+    "sectors": [
+     "manufacturing",
+     "any"
+    ],
+    "stages": [
+     "seed",
+     "growth"
+    ],
+    "requires_local_entity": true,
+    "requires_incorporation": true,
+    "rd_focus": false,
+    "female_founder_only": false,
+    "underrepresented_focus": false,
+    "de_minimis": false,
+    "other_note": "Japanese SMEs, small enterprises, small-scale business operators and restructuring businesses. A value-added growth requirement of 3.0% (付加価値額基準値) applies. From the 23rd round, the salary growth test used for clawback is judged on a per-employee basis rather than on total payroll. Not startup-specific, but widely used by early-stage manufacturing and hardware companies in Japan."
+   },
+   "source_url": "https://portal.monodukuri-hojo.jp/about.html",
+   "source_snippet": "23次締切 公募開始日 令和8年2月6日(金) 申請開始日 令和8年4月3日(金) 17時 申請締切日 令和8年5月8日(金) 17時 ... ※申請にあたっては、事前にGビズIDプライムアカウントの取得が必要となります。",
+   "last_verified_at": "2026-08-14",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "jp-nedo-dtsu",
+   "name_local": "ディープテック・スタートアップ支援事業（DTSU）",
+   "name_en": "NEDO Deep Tech Startup Support Program (DTSU), with the GX deep tech track",
+   "country_code": "jp",
+   "admin_level": "national",
+   "admin_area": null,
+   "funder": "New Energy and Industrial Technology Development Organization (NEDO) / 国立研究開発法人新エネルギー・産業技術総合開発機構",
+   "funder_type": "public",
+   "grant_type": "grant",
+   "category": "startup",
+   "amount_min": null,
+   "amount_max": 3000000000,
+   "amount_currency": "JPY",
+   "amount_note": "Three phases, all at a subsidy rate of up to 2/3 (DMP may be 2/3 or 1/2). STS phase (early commercialisation R&D): up to JPY 300 million or JPY 500 million per project period. PCA phase (later commercialisation R&D): up to JPY 500 million or JPY 1 billion. DMP phase (mass production demonstration): up to JPY 2.5 billion. Each phase runs about 1.5-2 years (max 4 years within a phase). Where a company moves through phases via stage-gate review, the overall cap per project is JPY 3 billion over a maximum of 6 years. To date DTSU has awarded 119 projects totalling about JPY 68.46 billion and GX 19 projects totalling about JPY 10.06 billion (as of June 2026).",
+   "cofunding_pct": 33,
+   "is_automatic": false,
+   "application_url": "https://www.nedo.go.jp/koubo/CA2_100521.html",
+   "application_channel": "portal",
+   "deadline_type": "cutoff",
+   "deadline_note": "公募は通年で実施し、年4回程度、提案受付期間及び審査の実施を予定しています (open year-round with roughly four proposal-intake and review rounds a year). The 10th DTSU call and 7th GX call were scheduled to open in late July 2026. NEDO warns that DTSU may end earlier than the planned FY2027 end depending on award volume.",
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Obtain a GビズID (GBizID Prime or Member) account, required to apply through the Jグランツ system.",
+     "url": "https://www.nedo.go.jp/koubo/ZZAN_100061.html"
+    },
+    {
+     "step": 2,
+     "detail": "Secure investment from a VC, CVC or operating company - the project period is defined from that investment.",
+     "url": null
+    },
+    {
+     "step": 3,
+     "detail": "Choose the phase (STS, PCA or DMP) that best matches your stage and read the 公募要領 published at call opening.",
+     "url": "https://www.nedo.go.jp/koubo/CA1_100521.html"
+    },
+    {
+     "step": 4,
+     "detail": "Submit the proposal on Jグランツ within the intake window; NEDO reviews and may apply stage-gate review for phase transitions.",
+     "url": null
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "GビズID プライム or メンバー account",
+     "mandatory": true,
+     "note": "Required to submit on Jグランツ"
+    },
+    {
+     "doc": "Letter of Intent (LOI) from an operating company on collaboration, procurement or channel development",
+     "mandatory": true,
+     "note": "Expected for STS and PCA phases"
+    },
+    {
+     "doc": "Memorandum of Understanding (MOU) with an operating company",
+     "mandatory": true,
+     "note": "Expected for the DMP phase"
+    },
+    {
+     "doc": "Evidence of VC / CVC / corporate investment",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "R&D and commercialisation plan with budget",
+     "mandatory": true,
+     "note": null
+    }
+   ],
+   "eligibility": {
+    "entity": "startup",
+    "company_age_months_min": null,
+    "company_age_months_max": null,
+    "headcount_min": null,
+    "headcount_max": null,
+    "turnover_annual_max": null,
+    "sme_category": "any",
+    "sectors": [
+     "deeptech",
+     "climate",
+     "manufacturing"
+    ],
+    "stages": [
+     "seed",
+     "series_a",
+     "growth"
+    ],
+    "requires_local_entity": true,
+    "requires_incorporation": true,
+    "rd_focus": true,
+    "female_founder_only": false,
+    "underrepresented_focus": false,
+    "de_minimis": false,
+    "other_note": "対象者: 企業（団体等を含む） - companies including organisations. Aimed at deep tech startups whose technology needs long-term R&D and large capital, addressing socio-economic challenges. Co-ordination with VCs and use of stage-gate review are built into the scheme. The GX track is a parallel programme for deep tech startups in the green transformation field."
+   },
+   "source_url": "https://www.nedo.go.jp/koubo/CA1_100521.html",
+   "source_snippet": "〔1〕STSフェーズ（実用化研究開発（前期））補助金の額：3億円以内または5億円以内※／事業期間 ... 補助率：2／3以下 ... 〔3〕DMPフェーズ（量産化実証）補助金の額25億円以内※／事業期間 ... 当該事業全体で、1件当たりの補助金額の上限を30億円、事業期間の上限を6年とする予定です。 ... 公募は通年で実施し、年4回程度、提案受付期間及び審査の実施を予定しています。",
+   "last_verified_at": "2026-08-14",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "jp-shinjigyo-shinshutsu-monodukuri-hojokin",
+   "name_local": "新事業進出・ものづくり商業サービス補助金",
+   "name_en": "New Business Entry / Manufacturing, Commerce and Services Subsidy (merged successor to the Monozukuri and New Business Entry subsidies)",
+   "country_code": "jp",
+   "admin_level": "national",
+   "admin_area": null,
+   "funder": "Organization for Small & Medium Enterprises and Regional Innovation, JAPAN (中小企業基盤整備機構 / SMRJ), under METI and the SME Agency",
+   "funder_type": "public",
+   "grant_type": "grant",
+   "category": "startup",
+   "amount_min": 1000000,
+   "amount_max": 90000000,
+   "amount_currency": "JPY",
+   "amount_note": "Three frames. 革新的新製品・サービス枠 (innovative new product/service): up to JPY 25 million, or JPY 35 million with the wage-increase special measure; by headcount, 1-5 staff JPY 7.5M (8.5M), 6-20 JPY 10M (12.5M), 21-50 JPY 15M (25M), 51+ JPY 25M (35M); subsidy rate 1/2 for SMEs (2/3 under conditions), 2/3 for small enterprises and restructuring businesses; floor JPY 1 million. 新事業進出枠 (new market entry): up to JPY 70 million, or JPY 90 million with the wage-increase measure; subsidy rate 1/2 for SMEs (2/3 under conditions); floor JPY 7.5 million. グローバル枠 (global/export): up to JPY 70 million (JPY 90 million with the measure); subsidy rate 2/3; floor JPY 7.5 million.",
+   "cofunding_pct": 50,
+   "is_automatic": false,
+   "application_url": "https://shinjigyou-monodukuri.smrj.go.jp/",
+   "application_channel": "portal",
+   "deadline_type": "cutoff",
+   "deadline_note": "第1回公募: opened 令和8年6月29日 (29 June 2026); application acceptance from 令和8年9月30日 (30 September 2026); 応募締切 令和8年10月30日（金）18:00 厳守 (30 October 2026, 18:00 sharp). This is currently OPEN. It replaces both the 中小企業新事業進出補助金 (public calls ended) and the ものづくり補助金 (last round, 23rd cut-off, closed 8 May 2026).",
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Obtain a GビズID プライム account (required for the electronic application system).",
+     "url": "https://gbiz-id.go.jp/top/"
+    },
+    {
+     "step": 2,
+     "detail": "Read the 公募要領 (application guidelines) for the 1st call.",
+     "url": "https://shinjigyou-monodukuri.smrj.go.jp/assets/documents/shinmono_application_guidelines_01.pdf"
+    },
+    {
+     "step": 3,
+     "detail": "Choose the frame: 革新的新製品・サービス枠, 新事業進出枠, or グローバル枠.",
+     "url": "https://shinjigyou-monodukuri.smrj.go.jp/overview/"
+    },
+    {
+     "step": 4,
+     "detail": "Submit the business plan via the electronic application system before the deadline; applications are accepted only electronically.",
+     "url": "https://shinjigyou-monodukuri.smrj.go.jp/"
+    },
+    {
+     "step": 5,
+     "detail": "If selected, file the 交付申請, run the project, then submit the 実績報告 and claim payment.",
+     "url": null
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "GビズID プライム account",
+     "mandatory": true,
+     "note": "Electronic application only"
+    },
+    {
+     "doc": "事業計画書 (business plan) meeting the post-project growth targets",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "労働者名簿 (employee roster)",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "金融機関による確認書 (financial institution confirmation)",
+     "mandatory": false,
+     "note": "Where external financing is used"
+    },
+    {
+     "doc": "賃上げ計画の表明書 (wage-increase declaration)",
+     "mandatory": false,
+     "note": "Required to claim the wage-increase special upper limits"
+    }
+   ],
+   "eligibility": {
+    "entity": "startup",
+    "company_age_months_min": null,
+    "company_age_months_max": null,
+    "headcount_min": null,
+    "headcount_max": null,
+    "turnover_annual_max": null,
+    "sme_category": "any",
+    "sectors": [
+     "manufacturing",
+     "any"
+    ],
+    "stages": [
+     "seed",
+     "growth"
+    ],
+    "requires_local_entity": true,
+    "requires_incorporation": true,
+    "rd_focus": false,
+    "female_founder_only": false,
+    "underrepresented_focus": false,
+    "de_minimis": false,
+    "other_note": "For 中小企業等 (Japanese SMEs and similar). Machinery/system construction costs (or building costs for the new business entry and global frames) must be included in the eligible costs. Binding post-project commitments: over the 3-5 years after the subsidised project, value added must grow at a CAGR of at least +4.0%, per-employee total salary payments at a CAGR of at least +3.5%, and the in-workplace minimum wage must be at least JPY 30 above the regional minimum wage. Failure to meet these targets can trigger partial or full repayment of the subsidy."
+   },
+   "source_url": "https://shinjigyou-monodukuri.smrj.go.jp/",
+   "source_snippet": "第1回公募を開始しました。応募期間は令和8年9月30日（水）〜10月30日（金）18:00（厳守） ... 革新的新製品・サービス枠 ... 補助上限額 最大 2,500万円（賃上げ特例適用の場合は最大3,500万円） ... 新事業進出枠 ... 補助上限額 最大 7,000万円（賃上げ特例適用の場合は最大9,000万円） ... グローバル枠 ... 補助率 中小企業者：2/3",
+   "last_verified_at": "2026-08-14",
+   "verification_status": "verified"
+  }
+ ]
+}

@@ -1,0 +1,180 @@
+{
+ "country_code": "nz",
+ "country_name": "New Zealand",
+ "currency": "NZD",
+ "language": "en",
+ "entity": "startup",
+ "programmes": [
+  {
+   "slug": "nz-nzgcp-aspire-seed-fund",
+   "name_local": "Aspire NZ Seed Fund",
+   "name_en": "Aspire NZ Seed Fund (New Zealand Growth Capital Partners)",
+   "country_code": "nz",
+   "admin_level": "national",
+   "funder": "New Zealand Growth Capital Partners (NZGCP), a Crown-owned entity",
+   "funder_type": "public",
+   "grant_type": "equity",
+   "amount_min": null,
+   "amount_max": null,
+   "amount_currency": "NZD",
+   "amount_note": "Investment amounts are not published on the NZGCP website; Aspire 'invests directly into early-stage Kiwi technology start-ups at proof of concept, seed, and early expansion investment stages'. NZGCP also runs the Elevate NZ Venture Fund, 'a $300m government-funded fund of funds, that invests into venture capital funds' (Elevate invests in funds, not directly in startups).",
+   "application_url": "https://www.nzgcp.co.nz/",
+   "application_channel": "email",
+   "deadline_type": "rolling",
+   "deadline_note": "No calls or deadlines. Founders can book 'Aspire Venture Hours' — '25-minute sessions where Kiwi start-up founders can share their ideas, receive feedback, and strengthen their pathway to investment' — allocated 'on a first come, first served basis'.",
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Book an Aspire Venture Hours session or contact NZGCP at info@nzgcp.co.nz.",
+     "url": "https://www.nzgcp.co.nz/"
+    },
+    {
+     "step": 2,
+     "detail": "Present the venture; Aspire assesses fit for direct early-stage investment (proof of concept, seed, early expansion).",
+     "url": null
+    },
+    {
+     "step": 3,
+     "detail": "If selected, negotiate and complete a direct equity investment, typically alongside private co-investors.",
+     "url": null
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "Pitch deck / investment materials",
+     "mandatory": true,
+     "note": "No formal document list is published"
+    },
+    {
+     "doc": "Cap table and financial model",
+     "mandatory": false,
+     "note": null
+    }
+   ],
+   "eligibility": {
+    "entity": "startup",
+    "company_age_months_min": null,
+    "company_age_months_max": null,
+    "headcount_min": null,
+    "headcount_max": null,
+    "turnover_annual_max": null,
+    "sme_category": "any",
+    "sectors": [
+     "deeptech",
+     "ai",
+     "health",
+     "any"
+    ],
+    "stages": [
+     "pre_seed",
+     "seed",
+     "series_a"
+    ],
+    "requires_local_entity": true,
+    "requires_incorporation": true,
+    "rd_focus": false,
+    "female_founder_only": false,
+    "underrepresented_focus": false,
+    "de_minimis": false,
+    "other_note": "New Zealand technology start-ups at proof of concept, seed and early expansion stages. NZGCP publishes no formal eligibility criteria or investment sizes on its site; this is equity investment, not a grant."
+   },
+   "source_url": "https://www.nzgcp.co.nz/",
+   "source_snippet": "Aspire NZ Seed Fund invests directly into early-stage Kiwi technology start-ups at proof of concept, seed, and early expansion investment stages.",
+   "category": "startup",
+   "cofunding_pct": null,
+   "is_automatic": false,
+   "admin_area": null,
+   "last_verified_at": "2026-08-14",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "nz-rdti",
+   "name_local": "Research and Development Tax Incentive (RDTI)",
+   "name_en": "Research and Development Tax Incentive (RDTI)",
+   "country_code": "nz",
+   "admin_level": "national",
+   "funder": "Inland Revenue (Te Tari Taake)",
+   "funder_type": "public",
+   "grant_type": "tax_credit",
+   "amount_min": null,
+   "amount_max": null,
+   "amount_currency": "NZD",
+   "amount_note": "'15% tax credit available for eligible R&D', with a 'minimum eligible R&D expenditure of $50,000 a year' and a 'maximum eligible R&D expenditure of $120 million a year'.",
+   "application_url": "https://www.ird.govt.nz/research-and-development/tax-incentive",
+   "application_channel": "online",
+   "deadline_type": "annual_call",
+   "deadline_note": "Annual cycle tied to the income year: register, then file either a general approval application or a criteria and methodologies approval application 'by the relevant due date', then file an R&D supplementary return 'by the relevant due date'. Specific due dates depend on your balance date.",
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Check your eligibility to register for the R&D tax incentive.",
+     "url": "https://www.ird.govt.nz/research-and-development/tax-incentive"
+    },
+    {
+     "step": 2,
+     "detail": "Register for the incentive in myIR.",
+     "url": null
+    },
+    {
+     "step": 3,
+     "detail": "Submit a general approval application, OR a criteria and methodologies approval application, by the relevant due date.",
+     "url": null
+    },
+    {
+     "step": 4,
+     "detail": "After approval, file an R&D supplementary return by the relevant due date alongside your income tax return.",
+     "url": null
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "General approval application (or criteria and methodologies approval application)",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "R&D supplementary return (IR1060 guide)",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Records evidencing eligible R&D activities and expenditure",
+     "mandatory": true,
+     "note": null
+    }
+   ],
+   "eligibility": {
+    "entity": "startup",
+    "company_age_months_min": null,
+    "company_age_months_max": null,
+    "headcount_min": null,
+    "headcount_max": null,
+    "turnover_annual_max": null,
+    "sme_category": "any",
+    "sectors": [
+     "any"
+    ],
+    "stages": [
+     "seed",
+     "series_a",
+     "growth"
+    ],
+    "requires_local_entity": true,
+    "requires_incorporation": true,
+    "rd_focus": true,
+    "female_founder_only": false,
+    "underrepresented_focus": false,
+    "de_minimis": false,
+    "other_note": "Activities must 'seek to solve scientific or technological uncertainty(ies)'. Minimum spend of NZ$50,000 a year unless an approved research provider is used (approved research provider rules not verified here)."
+   },
+   "source_url": "https://www.ird.govt.nz/research-and-development/tax-incentive",
+   "source_snippet": "15% tax credit available for eligible R&D ... minimum eligible R&D expenditure of $50,000 a year ... maximum eligible R&D expenditure of $120 million a year.",
+   "category": "startup",
+   "cofunding_pct": null,
+   "is_automatic": false,
+   "admin_area": null,
+   "last_verified_at": "2026-08-14",
+   "verification_status": "verified"
+  }
+ ]
+}

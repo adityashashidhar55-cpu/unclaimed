@@ -1,0 +1,279 @@
+{
+ "country_code": "es",
+ "country_name": "Spain",
+ "currency": "EUR",
+ "language": "en",
+ "entity": "startup",
+ "programmes": [
+  {
+   "slug": "es-cdti-neotec",
+   "name_local": "Programa NEOTEC",
+   "name_en": "CDTI NEOTEC programme – grants for new technology-based companies",
+   "country_code": "es",
+   "admin_level": "national",
+   "funder": "Centro para el Desarrollo Tecnológico y la Innovación (CDTI Innovación), Ministerio de Ciencia, Innovación y Universidades",
+   "funder_type": "public",
+   "grant_type": "grant",
+   "amount_min": null,
+   "amount_max": 325000,
+   "amount_currency": "EUR",
+   "amount_note": "'Subvenciones hasta el 70% del presupuesto elegible' with an 'importe máximo de subvención de 250.000 euros por beneficiario', rising to 85% coverage and up to EUR 325,000 where the company hires doctorate holders. The 2026 call budget is EUR 20,383,300, of which EUR 5,000,000 is reserved for projects led by women.",
+   "cofunding_pct": 30,
+   "application_url": "https://www.cdti.es/ayudas/ayudas-neotec-2026",
+   "application_channel": "portal",
+   "deadline_type": "annual_call",
+   "deadline_note": "2026 call: 'Del 14 de abril hasta el 14 de mayo de 2026, a las 12:00 horas'. NEOTEC is run as an annual call.",
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Confirm eligibility: innovative company with a maximum of three years since incorporation and minimum share capital of EUR 20,000.",
+     "url": "https://www.cdti.es/ayudas/ayudas-neotec-2026"
+    },
+    {
+     "step": 2,
+     "detail": "Prepare the business plan for the new technology-based company and the eligible budget.",
+     "url": null
+    },
+    {
+     "step": 3,
+     "detail": "Submit the application electronically through the CDTI portal within the call window.",
+     "url": "https://www.cdti.es/ayudas/ayudas-neotec-2026"
+    },
+    {
+     "step": 4,
+     "detail": "Competitive evaluation; the resolution and the call terms are published in the BOE.",
+     "url": "https://www.boe.es/buscar/doc.php?id=BOE-B-2026-10827"
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "Plan de empresa (business plan)",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Escritura de constitución evidencing company age and share capital of at least EUR 20,000",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Presupuesto elegible / budget breakdown",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Evidence of doctorate hires",
+     "mandatory": false,
+     "note": "Only if claiming the enhanced 85% rate / EUR 325,000 ceiling"
+    }
+   ],
+   "eligibility": {
+    "entity": "startup",
+    "company_age_months_min": null,
+    "company_age_months_max": 36,
+    "headcount_min": null,
+    "headcount_max": null,
+    "turnover_annual_max": null,
+    "sme_category": "small",
+    "sectors": [
+     "deeptech",
+     "any"
+    ],
+    "stages": [
+     "pre_seed",
+     "seed"
+    ],
+    "requires_local_entity": true,
+    "requires_incorporation": true,
+    "rd_focus": true,
+    "female_founder_only": false,
+    "underrepresented_focus": false,
+    "de_minimis": false,
+    "other_note": "'Tres años de antigüedad máximo'; 'Capital social mínimo: 20.000 euros'. The call is framed under Reglamento (UE) 651/2014 (general block exemption) rather than de minimis, per the CDTI page; a de minimis basis is therefore not asserted here."
+   },
+   "source_url": "https://www.cdti.es/ayudas/ayudas-neotec-2026",
+   "source_snippet": "Subvenciones hasta el 70% del presupuesto elegible ... importe máximo de subvención de 250.000 euros por beneficiario ... Tres años de antigüedad máximo ... Capital social mínimo: 20.000 euros ... Del 14 de abril hasta el 14 de mayo de 2026, a las 12:00 horas.",
+   "category": "startup",
+   "is_automatic": false,
+   "admin_area": null,
+   "last_verified_at": "2026-08-14",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "es-cdti-proyectos-id",
+   "name_local": "CDTI – Proyectos de I+D (PID)",
+   "name_en": "CDTI R&D Projects (PID) – partially repayable aid",
+   "country_code": "es",
+   "admin_level": "national",
+   "funder": "Centro para el Desarrollo Tecnológico y la Innovación (CDTI Innovación)",
+   "funder_type": "public",
+   "grant_type": "loan",
+   "amount_min": 175000,
+   "amount_max": null,
+   "amount_currency": "EUR",
+   "amount_note": "'Ayuda parcialmente reembolsable' covering up to 85% of the approved budget, with the company contributing at least 15% of its own resources. Minimum eligible project budget of EUR 175,000. No published maximum on the page.",
+   "cofunding_pct": 15,
+   "application_url": "https://www.cdti.es/ayudas/proyectos-de-id",
+   "application_channel": "portal",
+   "deadline_type": "rolling",
+   "deadline_note": "'Convocatoria abierta todo el año' — applications can be submitted continuously throughout the year.",
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Scope an industrial research or experimental development project with a budget of at least EUR 175,000 (individual, or a consortium of 2-6 autonomous companies for cooperative projects).",
+     "url": "https://www.cdti.es/ayudas/proyectos-de-id"
+    },
+    {
+     "step": 2,
+     "detail": "Submit the project memoria and budget through the CDTI electronic portal at any time of year.",
+     "url": null
+    },
+    {
+     "step": 3,
+     "detail": "CDTI technical and economic-financial evaluation; on approval the partially repayable aid is contracted and disbursed against milestones.",
+     "url": null
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "Memoria técnica del proyecto (technical project report)",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Presupuesto detallado del proyecto",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Cuentas anuales / financial statements demonstrating solvency",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Consortium agreement",
+     "mandatory": false,
+     "note": "Cooperative projects of 2-6 autonomous companies"
+    }
+   ],
+   "eligibility": {
+    "entity": "startup",
+    "company_age_months_min": null,
+    "company_age_months_max": null,
+    "headcount_min": null,
+    "headcount_max": null,
+    "turnover_annual_max": null,
+    "sme_category": "any",
+    "sectors": [
+     "any"
+    ],
+    "stages": [
+     "seed",
+     "series_a",
+     "growth"
+    ],
+    "requires_local_entity": true,
+    "requires_incorporation": true,
+    "rd_focus": true,
+    "female_founder_only": false,
+    "underrepresented_focus": false,
+    "de_minimis": false,
+    "other_note": "Beneficiaries are companies of any size with legal personality in Spain; the company must contribute at least 15% of the project cost from its own resources."
+   },
+   "source_url": "https://www.cdti.es/ayudas/proyectos-de-id",
+   "source_snippet": "Ayuda parcialmente reembolsable ... Convocatoria abierta todo el año ... presupuesto mínimo 175.000 euros.",
+   "category": "startup",
+   "is_automatic": false,
+   "admin_area": null,
+   "last_verified_at": "2026-08-14",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "es-enisa-prestamos-participativos",
+   "name_local": "ENISA – Préstamos participativos",
+   "name_en": "ENISA participative loans for SMEs and startups",
+   "country_code": "es",
+   "admin_level": "national",
+   "funder": "Empresa Nacional de Innovación S.A. (ENISA), Ministerio de Industria y Turismo",
+   "funder_type": "public",
+   "grant_type": "loan",
+   "amount_min": 25000,
+   "amount_max": 1500000,
+   "amount_currency": "EUR",
+   "amount_note": "'Préstamos de 25.000 a 1.500.000 euros' as participative loans ('préstamo participativo'), 'Sin garantías' (no personal guarantees) and 'Los primeros 2 años, sólo pagas intereses'. Specialised lines exist: Innovación x Clima, Emprendedoras Digitales (women-led tech SMEs), AgroInnpulso, and Audiovisual e Industrias Culturales y Creativas.",
+   "application_url": "https://www.enisa.es/servicios/financiacion/",
+   "application_channel": "portal",
+   "deadline_type": "rolling",
+   "deadline_note": "'Convocatoria abierta' — the call is open and applications are submitted continuously through the ENISA client portal while budget lasts.",
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Choose the line that matches your company (general or one of the specialised lines).",
+     "url": "https://www.enisa.es/servicios/financiacion/"
+    },
+    {
+     "step": 2,
+     "detail": "Register in the ENISA client portal and submit the application with the business plan and financials.",
+     "url": "https://www.enisa.es/servicios/financiacion/"
+    },
+    {
+     "step": 3,
+     "detail": "ENISA analyses the project and the team; if approved, the participative loan is formalised with a 2-year interest-only period.",
+     "url": null
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "Business plan",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Audited or filed annual accounts / financial projections",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Escritura de constitución and company registration documents",
+     "mandatory": true,
+     "note": null
+    }
+   ],
+   "eligibility": {
+    "entity": "startup",
+    "company_age_months_min": null,
+    "company_age_months_max": null,
+    "headcount_min": null,
+    "headcount_max": null,
+    "turnover_annual_max": null,
+    "sme_category": "any",
+    "sectors": [
+     "any",
+     "climate",
+     "agri",
+     "creative"
+    ],
+    "stages": [
+     "seed",
+     "series_a",
+     "growth"
+    ],
+    "requires_local_entity": true,
+    "requires_incorporation": true,
+    "rd_focus": false,
+    "female_founder_only": false,
+    "underrepresented_focus": false,
+    "de_minimis": false,
+    "other_note": "Spanish SMEs. No personal guarantees are required — 'Tu proyecto y talento' act as collateral. Exact age/size conditions differ per line and are set out in each line's page."
+   },
+   "source_url": "https://www.enisa.es/servicios/financiacion/",
+   "source_snippet": "Préstamos de 25.000 a 1.500.000 euros ... Los primeros 2 años, sólo pagas intereses ... Sin garantías ... Convocatoria abierta.",
+   "category": "startup",
+   "cofunding_pct": null,
+   "is_automatic": false,
+   "admin_area": null,
+   "last_verified_at": "2026-08-14",
+   "verification_status": "verified"
+  }
+ ]
+}
