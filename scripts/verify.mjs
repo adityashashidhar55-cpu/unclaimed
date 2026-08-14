@@ -178,5 +178,16 @@ landingHtml.includes('class="langbar"') ? ok('language switcher in the footer') 
 landingHtml.includes('class="flow"') ? ok('how-it-works flow is on the landing page') : fail('no how-it-works flow');
 fs.existsSync(path.join(DIST, 'enterprise/index.html')) ? ok('enterprise page present') : fail('enterprise page MISSING');
 
+
+/* Entry motion hides content until JS runs. If it never runs, the page must
+   still be readable — a blank landing page is a total failure, and an
+   animation is only a nicety. Two independent fallbacks, both asserted. */
+landingHtml.includes('<noscript><style>.reveal')
+  ? ok('noscript fallback reveals hidden content')
+  : fail('no noscript fallback — page would be blank without JS');
+landingHtml.includes('Safety net')
+  ? ok('timeout fallback reveals content if the observer fails')
+  : fail('no timeout fallback for the reveal animation');
+
 console.log(`\n${checks} checks passed, ${failures} failed\n`);
 process.exit(failures ? 1 : 0);
