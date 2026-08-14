@@ -27,6 +27,8 @@
  * Runs unchanged in Node, the browser, the Worker and React Native.
  */
 
+import { rankMatches, rateCoverage } from '../../packages/scoring/index.js';
+
 /* ------------------------------------------------------------------ */
 /* EU SME definition — Recommendation 2003/361/EC, Annex Art. 2        */
 /* ------------------------------------------------------------------ */
@@ -261,17 +263,16 @@ export function matchStartup(profile, datasets, asOf = Date.now()) {
     }
   }
 
-  /* Rank: money first, then whether it is actually verified, then name. */
-  const rank = (a, b) => {
-    const av = a.programme.amount_max ?? a.programme.amount_min ?? -1;
-    const bv = b.programme.amount_max ?? b.programme.amount_min ?? -1;
-    if (bv !== av) return bv - av;
-    const averified = a.programme.verification_status === 'verified' ? 1 : 0;
-    const bverified = b.programme.verification_status === 'verified' ? 1 : 0;
-    if (bverified !== averified) return bverified - averified;
-    return (a.programme.name_en || '').localeCompare(b.programme.name_en || '');
-  };
-  for (const k of Object.keys(buckets)) buckets[k].sort(rank);
+  /* Rank by what the company can actually get, not by the biggest headline.
+     
+     Sorting on amount alone put a EUR 3,000,000 regional grant needing
+     EUR 900,000 of co-funding above every award a three-person pre-seed team
+     could realistically win, with cloud credits and a dilutive accelerator
+     above the real grants beneath it. packages/scoring fixes that: a hard
+     band ordering (cash before loans before equity before credits) and then
+     amount x probability x feasibility inside each band. Every component is
+     returned on the match so the UI can show the working. */
+  for (const k of Object.keys(buckets)) buckets[k] = rankMatches(buckets[k], profile);
 
   /* Totals per instrument AND per currency.
      
@@ -346,6 +347,10 @@ export function matchStartup(profile, datasets, asOf = Date.now()) {
     /* Which single answer would unlock the most. Same idea as the personal
        engine's gaps: ask the question that moves the most money. */
     unlocks: unlockRanking(buckets.needs_answer),
+    /* How much of this ranking rests on funder-published rates versus our
+       own class priors. Surfaced so the honesty of the order is inspectable
+       rather than something the user has to take on trust. */
+    rate_coverage: rateCoverage(buckets.eligible.map((m) => m.programme)),
   };
 }
 
