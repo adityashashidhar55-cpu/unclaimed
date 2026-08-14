@@ -23,7 +23,7 @@ import {
   periodSuffix,
 } from './engine/matcher.js';
 import { LOCALES, LANGS, t as translator } from './i18n.mjs';
-import { mayChargeForAssistance, policyFor } from '../packages/policy/index.js';
+import { policyFor } from '../packages/policy/index.js';
 import {
   SITE_NAME,
   TAGLINE,
@@ -1076,15 +1076,6 @@ function apiPage() {
 /* ================================================================== */
 
 function pricingPage() {
-  /* The subscription is sold everywhere: a sourced database and a calculator
-     over published rules is reference material, not intermediation. What some
-     countries reserve is the act of preparing someone's claim for a fee — so
-     there the application pack is included at no charge, stated plainly
-     rather than hidden. */
-  const assistFreeCountries = countries
-    .filter(({ entry }) => !mayChargeForAssistance(entry.slug))
-    .map(({ entry }) => `${entry.flag} ${esc(entry.name)}`);
-
   const body = `
 ${disclaimerBar(TR)}
 <section class="section-tight shell">
@@ -1123,18 +1114,13 @@ ${disclaimerBar(TR)}
     </div>
   </div>
 
-  ${
-    assistFreeCountries.length
-      ? `<div class="callout callout--sage" style="margin-top:2.5rem">
-    <p><strong>In ${assistFreeCountries.length} countries the prepared applications are included free.</strong>
-    In ${assistFreeCountries.join(', ')} the law reserves the act of preparing someone's benefit claim for a
-    fee — France's Code de la sécurité sociale art. L554-2 is the clearest example, and Italy reserves the
-    role to non-profit patronati. Everything else is unchanged: you still get which schemes you qualify for,
-    the steps and the sources. We simply don't take money for the paperwork there, and the billing system
-    enforces it rather than trusting a footnote.</p>
-  </div>`
-      : ''
-  }
+  <div class="callout callout--sage" style="margin-top:2.5rem">
+    <p><strong>One flat price. Never a cut of what you get.</strong> We charge for the software,
+    the same amount whether you turn out to be owed nothing or £9,000 a year. No success fee, no
+    commission, no per-claim charge. That is a deliberate limit on us, not a pricing gimmick: the moment
+    a service takes a share of someone's benefits it stops being a tool and starts being a middleman,
+    and in several countries that is exactly the thing the law is there to stop.</p>
+  </div>
 
   <div class="callout" style="margin-top:1.5rem">
     <p><strong>What we don't do.</strong> We never sign in to a government website as you, and we never
