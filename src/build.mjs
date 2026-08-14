@@ -1025,6 +1025,12 @@ function pricingPage() {
     ${t.note ? `<p class="tiny" style="margin-top:.8rem">${t.note}</p>` : ''}
   </div>`;
 
+  /* Two audiences, one page, one visible at a time.
+
+     Built on radio inputs and sibling selectors rather than a click handler:
+     the panels are both in the HTML, so the page works with JavaScript off,
+     search engines index both halves, and there is no flash of the wrong
+     price while a script boots. */
   const body = `
 ${disclaimerBar(TR)}
 <section class="section-tight shell">
@@ -1034,74 +1040,123 @@ ${disclaimerBar(TR)}
   <p class="lede" style="max-width:54ch">You never pay to learn the number. You pay when you want the
   programmes behind it, the paperwork done, and the deadlines watched.</p>
 
-  <div class="grid grid-4" style="margin-top:3rem;align-items:stretch">
-    ${tier({
-      delay: 0, eyebrow: 'Free', price: '€0', per: ' forever',
-      blurb: 'The number, and enough of the shape to know whether it is worth your time.',
-      features: [
-        'How much you are owed, per year',
-        'How many programmes it comes from',
-        'How many pay out automatically',
-        `All ${nf(totalProgrammes)} programme pages, with sources`,
-        'No account, nothing stored',
-      ],
-      href: `${LB()}/check/`, cta: 'Check your total',
-    })}
-    ${tier({
-      delay: 110, eyebrow: 'Personal', price: '€50', per: '/year', featured: true,
-      second: 'or €7/month — the annual plan saves €34',
-      blurb: 'For households claiming what they are entitled to.',
-      features: [
-        '<strong>Which programmes</strong> you specifically qualify for',
-        'Exact steps and documents for each',
-        '<strong>A prepared application per claim</strong>',
-        'Encrypted document vault, reused across claims',
-        'Deadline reminders in your calendar',
-        'The Android and iOS app',
-      ],
-      href: `${LB()}/check/`, cta: 'Start with the free check',
-      note: 'Cancel any time. Same price whether you are owed nothing or €9,000.',
-    })}
-    ${tier({
-      delay: 220, eyebrow: 'Business', price: '€49', per: '/month',
-      second: 'or €490/year',
-      blurb: 'For founders and small teams chasing grants.',
-      features: [
-        `All ${nf(startupCount)} startup programmes, ranked by what you can win`,
-        'Award odds and effort estimate per programme',
-        '<strong>EU de minimis ceiling tracking</strong>',
-        'Company auto-fill from public registers',
-        'Reopen alerts on closed calls',
-        'Saved searches, weekly digest',
-      ],
-      href: `${LB()}/startups/`, cta: 'Find your grants',
-    })}
-    ${tier({
-      delay: 330, eyebrow: 'Enterprise', price: 'From €249', per: '/month',
-      second: 'billed annually · unlimited seats',
-      blurb: 'For accelerators, funds, universities and public bodies managing many applicants.',
-      features: [
-        '<strong>Team dashboard</strong> with pipeline and stages',
-        'Unlimited seats, role-based visibility',
-        'Portfolio view across all your companies',
-        'Bulk matching and CSV export',
-        'API access and webhooks',
-        'SSO, audit log, data residency',
-        'Named support and onboarding',
-      ],
-      href: `${LB()}/enterprise/`, cta: 'See the dashboard',
-      note: 'Web only — the dashboard is not in the mobile app.',
-    })}
+  <div class="audience">
+    <input type="radio" name="audience" id="aud-me" class="audience__radio" checked>
+    <input type="radio" name="audience" id="aud-biz" class="audience__radio">
+
+    <div class="audience__switch" role="tablist" aria-label="Who is this for">
+      <label for="aud-me" class="audience__tab">For me and my household</label>
+      <label for="aud-biz" class="audience__tab">For my company or team</label>
+    </div>
+
+    <div class="audience__panel audience__panel--me">
+      <div class="grid grid-2" style="margin-top:2.2rem;align-items:stretch">
+        ${tier({
+          delay: 0, eyebrow: 'Free', price: '€0', per: ' forever',
+          blurb: 'The number, and enough of the shape to know whether it is worth your time.',
+          features: [
+            '<strong>How much you are owed</strong>, per year',
+            'How many programmes it comes from',
+            'How many pay out automatically',
+            `All ${nf(totalProgrammes)} programme pages, with sources`,
+            'Email sign-in, verified by a code',
+          ],
+          href: `${LB()}/check/`, cta: 'Check your total',
+        })}
+        ${tier({
+          delay: 110, eyebrow: 'Personal', price: '€50', per: '/year', featured: true,
+          second: 'or €7/month — the annual plan saves €34',
+          blurb: 'For households claiming what they are entitled to.',
+          features: [
+            '<strong>Which programmes</strong> you specifically qualify for',
+            'Exact steps and documents for each',
+            '<strong>A prepared application per claim</strong>',
+            'Encrypted document vault, reused across claims',
+            'Deadline reminders in your calendar',
+            'The Android and iOS app',
+          ],
+          href: `${LB()}/check/`, cta: 'Start with the free check',
+          note: 'Cancel any time. Same price whether you are owed nothing or €9,000.',
+        })}
+      </div>
+
+      <div class="callout callout--sage" style="margin-top:1.6rem">
+        <p><strong>One flat price. Never a cut of what you get.</strong> No success fee, no commission, no
+        per-claim charge. That is a deliberate limit on us: the moment a service takes a share of someone's
+        benefits it stops being a tool and becomes a middleman, and in several countries that is exactly what
+        the law is there to stop.</p>
+      </div>
+
+      <div class="callout" style="margin-top:1.4rem">
+        <p><strong>What we don't do.</strong> We never sign in to a government website as you, and we never
+        press submit on your behalf outside Spain. Every application we prepare is sent by you, from your own
+        account. A benefits declaration is sworn by the person making it, and keeping it yours is what the law
+        requires and what protects you.</p>
+      </div>
+    </div>
+
+    <div class="audience__panel audience__panel--biz">
+      <div class="grid grid-3" style="margin-top:2.2rem;align-items:stretch">
+        ${tier({
+          delay: 0, eyebrow: 'Free', price: '€0', per: ' forever',
+          blurb: 'See what your company could raise before you pay anything.',
+          features: [
+            '<strong>Your total non-dilutive potential</strong>',
+            'How many programmes, and how many are open',
+            `Every one of the ${nf(startupCount)} programme pages`,
+            'Business sign-in, verified by a code',
+          ],
+          href: `${LB()}/startups/`, cta: 'Check your company',
+        })}
+        ${tier({
+          delay: 110, eyebrow: 'Business', price: '€49', per: '/month', featured: true,
+          second: 'or €490/year · one company, one seat',
+          blurb: 'For founders chasing grants for their own company.',
+          features: [
+            `All ${nf(startupCount)} startup programmes, ranked by what you can realistically win`,
+            'Award odds and effort estimate per programme',
+            '<strong>EU de minimis ceiling tracking</strong>',
+            'Company auto-fill from public registers',
+            'Reopen alerts on closed calls',
+            'Saved searches, weekly digest',
+          ],
+          href: `${LB()}/startups/`, cta: 'Find your grants',
+        })}
+        ${tier({
+          delay: 220, eyebrow: 'Enterprise', price: 'From €80', per: '/seat/month',
+          second: 'teams, portfolios and public bodies',
+          blurb: 'For accelerators, funds, universities and anyone managing many applicants.',
+          features: [
+            '<strong>Team dashboard</strong> with pipeline and stages',
+            'Portfolio view across every company you back',
+            'Bulk matching and CSV export',
+            'A de minimis ledger per portfolio company',
+            'API access and webhooks',
+            'SSO, audit log, data residency',
+            'Named support and onboarding',
+          ],
+          href: `${LB()}/enterprise/`, cta: 'See the dashboard',
+          note: 'Web only — the dashboard is not in the mobile app.',
+        })}
+      </div>
+
+      <div class="callout" style="margin-top:1.6rem">
+        <p><strong>Why Enterprise is not a slightly bigger Business plan.</strong> One founder checking one
+        company is a search. An accelerator running forty companies against ${nf(startupCount)} programmes,
+        tracking who applied for what, watching every deadline and keeping a de minimis ledger per portfolio
+        company is a different product with a support obligation attached. It is priced per seat because that
+        is what actually scales — the work is per person using it, not per company in the sheet.</p>
+      </div>
+
+      <div class="callout callout--sage" style="margin-top:1.4rem">
+        <p><strong>Business accounts sign in separately.</strong> A company account is billed to the company,
+        invoiced with your VAT number, and its seats are managed by whoever owns it. It is not a personal
+        account with a bigger plan attached, because the two get audited by different people.</p>
+      </div>
+    </div>
   </div>
 
-  <div class="callout" style="margin-top:2.4rem">
-    <p><strong>Why enterprise is not a slightly bigger Business plan.</strong> One founder checking one
-    company is a search. An accelerator running forty companies against ${nf(startupCount)} programmes,
-    tracking who applied for what, watching every deadline and keeping a de minimis ledger per portfolio
-    company is a different product with a support obligation attached. It is priced as one.</p>
-  </div>
-
-  <div class="grid grid-2" style="margin-top:1.4rem;align-items:stretch">
+  <div class="grid grid-2" style="margin-top:1.8rem;align-items:stretch">
     <div class="card reveal">
       <span class="eyebrow">Included on every paid plan</span>
       <h2 style="font-size:1.3rem;margin-top:.4rem">A place to keep the paperwork</h2>
@@ -1117,26 +1172,12 @@ ${disclaimerBar(TR)}
       complete package and press send yourself.</p>
     </div>
   </div>
-
-  <div class="callout callout--sage" style="margin-top:1.4rem">
-    <p><strong>One flat price. Never a cut of what you get.</strong> No success fee, no commission, no
-    per-claim charge. That is a deliberate limit on us: the moment a service takes a share of someone's
-    benefits it stops being a tool and becomes a middleman, and in several countries that is exactly what
-    the law is there to stop.</p>
-  </div>
-
-  <div class="callout" style="margin-top:1.4rem">
-    <p><strong>What we don't do.</strong> We never sign in to a government website as you, and we never
-    press submit on your behalf outside Spain. Every application we prepare is sent by you, from your own
-    account. A benefits declaration is sworn by the person making it, and keeping it yours is what the law
-    requires and what protects you.</p>
-  </div>
 </section>`;
 
   return layout({
     base: BASE, linkBase: LB(), lang: L, tr: TR, altLangs: ALT,
     title: 'Pricing — free to find out, paid to claim',
-    description: `Free forever to see how much you are owed. Personal €50/year, Business €49/month, Enterprise from €249/month for portfolio matching across ${nf(totalProgrammes)} programmes.`,
+    description: `Free forever to see how much you are owed. Personal €50/year or €7/month. Business €49/month. Enterprise from €80/seat/month for portfolio matching across ${nf(totalProgrammes)} programmes.`,
     canonical: `${SITE_URL}${L === 'en' ? '' : '/' + L}/pricing/`,
     body,
   });
@@ -1256,6 +1297,154 @@ function webManifest() {
 
 
 /** /privacy/ — both stores refuse a listing without a reachable policy URL. */
+/* ------------------------------------------------------------------ */
+/* Account — email and a six-digit code                                */
+/* ------------------------------------------------------------------ */
+
+/**
+ * Sign-in, built as a real form first.
+ *
+ * The markup below works with JavaScript disabled up to the point where it
+ * cannot: the fields post nowhere useful without the fetch handler, so the
+ * noscript block says so plainly instead of leaving someone typing into a
+ * form that silently does nothing.
+ *
+ * Individual and business are separate doors on purpose. A company account is
+ * billed to the company, invoiced with its VAT number and its seats are
+ * managed by whoever owns it — landing there by accident from a personal
+ * sign-in would put the wrong entity on the invoice.
+ */
+function accountPage() {
+  const body = `
+${disclaimerBar(TR)}
+<section class="section-tight shell" style="max-width:34rem">
+  ${breadcrumbs([{ label: TR('backHome'), href: `${LB()}/` }, { label: 'Sign in' }])}
+  <span class="eyebrow eyebrow-accent">Sign in</span>
+  <h1 style="max-width:16ch">No password. <em class="serif-italic">Just your email.</em></h1>
+  <p class="lede" style="max-width:46ch">We send a six-digit code. It works once, expires in ten
+  minutes, and there is nothing for anyone to steal or for you to forget.</p>
+
+  <div class="card" style="margin-top:2.4rem" id="auth-card">
+    <div class="audience" style="margin-bottom:1.4rem">
+      <input type="radio" name="acct" id="acct-me" class="audience__radio" checked>
+      <input type="radio" name="acct" id="acct-biz" class="audience__radio">
+      <div class="audience__switch">
+        <label for="acct-me" class="audience__tab">Personal</label>
+        <label for="acct-biz" class="audience__tab">Business</label>
+      </div>
+    </div>
+
+    <form id="auth-form" novalidate>
+      <div id="step-email">
+        <label class="tiny" for="auth-email">Your email</label>
+        <input class="field" type="email" id="auth-email" name="email" autocomplete="email"
+               inputmode="email" required placeholder="you@example.com" style="width:100%;margin:.4rem 0 1rem">
+        <button class="btn btn-primary" type="submit" id="auth-send" style="width:100%">Send me a code</button>
+      </div>
+
+      <div id="step-code" hidden>
+        <p class="small" id="code-sent-to" style="margin-top:0"></p>
+        <label class="tiny" for="auth-code">Six-digit code</label>
+        <input class="field" type="text" id="auth-code" name="code" autocomplete="one-time-code"
+               inputmode="numeric" pattern="[0-9]{6}" maxlength="6" required
+               placeholder="000000" style="width:100%;margin:.4rem 0 1rem;letter-spacing:.4em;font-size:1.3rem">
+        <button class="btn btn-primary" type="submit" id="auth-verify" style="width:100%">Verify and sign in</button>
+        <p style="margin:.9rem 0 0"><button class="btn btn-sm" type="button" id="auth-back">Use a different email</button></p>
+      </div>
+
+      <p class="small" id="auth-msg" role="status" aria-live="polite" style="margin:1rem 0 0;min-height:1.2em"></p>
+    </form>
+
+    <noscript>
+      <p class="small"><strong>Sign-in needs JavaScript.</strong> The code is exchanged for a session
+      without leaving this page, and that cannot be done with a plain form post. Everything else on this
+      site — every programme, every source, the whole database — works without it.</p>
+    </noscript>
+  </div>
+
+  <div id="auth-signed-in" hidden class="card" style="margin-top:1.2rem">
+    <span class="eyebrow eyebrow-accent">Signed in</span>
+    <h2 style="font-size:1.3rem;margin-top:.4rem" id="acct-email"></h2>
+    <p class="small" id="acct-plan"></p>
+    <p style="margin-top:1.2rem">
+      <a class="btn btn-primary" href="${LB()}/check/">Go to my check</a>
+      <a class="btn" href="/auth/signout">Sign out</a>
+    </p>
+  </div>
+
+  <div class="callout" style="margin-top:1.6rem">
+    <p><strong>What signing in does and does not do.</strong> It keeps your answers and your unlocked
+    programmes across devices. It does not make us able to read your documents — those are encrypted on
+    your device before they reach us, and the key never leaves it.</p>
+  </div>
+</section>
+
+<script type="module">
+import { requestCode, verifyCode, me } from '${LB()}/app/auth.js';
+
+const $ = (s) => document.querySelector(s);
+const msg = $('#auth-msg');
+const form = $('#auth-form');
+let email = '';
+const acctType = () => ($('#acct-biz').checked ? 'business' : 'individual');
+
+/* Already signed in? Show the account, not another sign-in form. */
+me().then((s) => {
+  if (!s.signedIn) return;
+  $('#auth-card').hidden = true;
+  $('#auth-signed-in').hidden = false;
+  $('#acct-email').textContent = s.user?.email ?? '';
+  $('#acct-plan').textContent = s.entitled
+    ? 'Your ' + (s.plan || 'subscription') + ' is active — every programme you match is unlocked.'
+    : 'Free account. You can see your total; unlock to see which programmes it comes from.';
+});
+
+form.addEventListener('submit', async (e) => {
+  e.preventDefault();
+  const onCode = !$('#step-code').hidden;
+  msg.textContent = '';
+
+  if (!onCode) {
+    email = $('#auth-email').value.trim();
+    if (!/^[^@\\s]+@[^@\\s]+\\.[^@\\s]+$/.test(email)) { msg.textContent = 'That does not look like an email address.'; return; }
+    const btn = $('#auth-send'); btn.disabled = true; btn.textContent = 'Sending…';
+    const res = await requestCode(email, acctType());
+    btn.disabled = false; btn.textContent = 'Send me a code';
+    if (!res.ok) { msg.textContent = res.message || 'Could not send the code.'; return; }
+    $('#step-email').hidden = true;
+    $('#step-code').hidden = false;
+    $('#code-sent-to').textContent = res.sent
+      ? 'We sent a code to ' + email + '. It expires in ten minutes.'
+      : 'Mail is not configured on this deployment yet.';
+    if (res.devCode) $('#auth-code').value = res.devCode;
+    $('#auth-code').focus();
+    return;
+  }
+
+  const code = $('#auth-code').value.trim();
+  const btn = $('#auth-verify'); btn.disabled = true; btn.textContent = 'Checking…';
+  const res = await verifyCode(email, code, acctType());
+  btn.disabled = false; btn.textContent = 'Verify and sign in';
+  if (!res.ok) { msg.textContent = res.message || 'That code is wrong or has expired.'; return; }
+  location.href = '${LB()}/check/';
+});
+
+$('#auth-back').addEventListener('click', () => {
+  $('#step-code').hidden = true;
+  $('#step-email').hidden = false;
+  msg.textContent = '';
+});
+</script>`;
+
+  return layout({
+    base: BASE, linkBase: LB(), lang: L, tr: TR, altLangs: ALT,
+    title: 'Sign in — Unlisted Grants',
+    description: 'Sign in with your email and a six-digit code. No password. Personal and business accounts.',
+    canonical: `${SITE_URL}${L === 'en' ? '' : '/' + L}/account/`,
+    body,
+  });
+}
+
 function privacyPage() {
   const body = `
 ${disclaimerBar(TR)}
@@ -1842,6 +2031,7 @@ function buildLanguage(lang) {
   page(`${pre}enterprise/index.html`, enterprisePage());
   ALT = altFor('/privacy/');
   page(`${pre}privacy/index.html`, privacyPage());
+  page(`${pre}account/index.html`, accountPage());
 
   for (const aud of AUDIENCES) {
     ALT = altFor(`/for/${aud.id}/`);
@@ -1929,6 +2119,7 @@ write('app/index.html', appShell());
 write('app/app.css', fs.readFileSync(path.join(SRC, 'pwa/app.css'), 'utf8'));
 write('app/app.js', fs.readFileSync(path.join(SRC, 'pwa/app.js'), 'utf8'));
 write('app/native.js', fs.readFileSync(path.join(SRC, 'pwa/native.js'), 'utf8'));
+write('app/auth.js', fs.readFileSync(path.join(SRC, 'pwa/auth.js'), 'utf8'));
 /* The service worker must sit at the root to claim the whole scope. */
 write('sw.js', fs.readFileSync(path.join(SRC, 'pwa/sw.js'), 'utf8'));
 write('manifest.webmanifest', webManifest());

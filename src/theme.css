@@ -369,6 +369,65 @@ footer.site a:hover { color: #fff; opacity: 1; }
 /* Counting figure for the hero. */
 .tally { font-family: var(--font-heading); font-variant-numeric: tabular-nums; }
 
+/* ------------------------------------------------------------------ */
+/* Audience switch — individual vs company                             */
+/*                                                                     */
+/* Radio inputs and sibling selectors, not a click handler. Both panels */
+/* are real HTML, so the page works with scripting off, both halves are */
+/* indexed, and no price ever flashes wrong while a script boots.       */
+/* ------------------------------------------------------------------ */
+
+.audience__radio { position: absolute; opacity: 0; pointer-events: none; }
+
+.audience__switch {
+  display: inline-flex; gap: .25rem; margin-top: 2.4rem; padding: .28rem;
+  border-radius: 9999px; position: relative; isolation: isolate;
+  background: rgba(255, 255, 255, 0.01);
+}
+/* Same masked gradient ring as every other surface — never a border. */
+.audience__switch::before {
+  content: ''; position: absolute; inset: 0; border-radius: inherit; padding: 1px;
+  background: linear-gradient(140deg, rgba(255,255,255,.22), rgba(255,255,255,.04) 42%, rgba(255,255,255,.16));
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor; mask-composite: exclude; pointer-events: none;
+}
+
+.audience__tab {
+  padding: .62rem 1.35rem; border-radius: 9999px; cursor: pointer;
+  font-size: .92rem; letter-spacing: .01em; color: var(--ink-4);
+  transition: color .3s ease, background .3s ease;
+  white-space: nowrap;
+}
+.audience__tab:hover { color: rgba(255,255,255,.72); }
+
+/* The selected tab reads as the active surface. */
+#aud-me:checked  ~ .audience__switch label[for="aud-me"],
+#aud-biz:checked ~ .audience__switch label[for="aud-biz"] {
+  background: #fff; color: #000;
+}
+
+/* Keyboard focus has to land somewhere visible, since the input itself is
+   off-screen — without this the switch is unusable without a mouse. */
+#aud-me:focus-visible  ~ .audience__switch label[for="aud-me"],
+#aud-biz:focus-visible ~ .audience__switch label[for="aud-biz"] {
+  outline: 2px solid rgba(255,255,255,.6); outline-offset: 3px;
+}
+
+.audience__panel { display: none; }
+#aud-me:checked  ~ .audience__panel--me,
+#aud-biz:checked ~ .audience__panel--biz { display: block; }
+
+@media (max-width: 560px) {
+  .audience__switch { display: flex; width: 100%; }
+  .audience__tab { flex: 1; text-align: center; padding: .62rem .5rem; font-size: .84rem; }
+}
+
+/* Printing a page whose alternative half is hidden loses half the pricing. */
+@media print {
+  .audience__panel { display: block !important; }
+  .audience__switch { display: none; }
+}
+
 @media print {
   body::before, body::after { display: none; }
   body { background: #fff; color: #000; }
