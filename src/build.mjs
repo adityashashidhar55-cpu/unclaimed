@@ -28,6 +28,7 @@ import { DOC_TYPES } from '../packages/vault/index.js';
 import { INSTRUMENTS, isFreeMoney, reachFor } from './engine/startup.js';
 import { DE_MINIMIS_CEILING_EUR, REGULATION } from '../packages/stateaid/index.js';
 import { REGISTRIES, autofillAvailable } from '../packages/registry/index.js';
+import { awardLikelihood, effortFor, bandFor, BAND_LABELS } from '../packages/scoring/index.js';
 
 /* Startup grants live in their own namespace with their own engine — a
    company is not a household and forcing both through one matcher would make
@@ -757,6 +758,17 @@ function countryPage(entry, data) {
 /* ================================================================== */
 
 function categoryPage(entry, data, cat, list) {
+  /* Founders arriving on a business-support page should be told the startup
+     dataset exists — it is deeper and purpose-built for companies. */
+  const startupCrossLink =
+    cat === 'business' && STARTUP_DATA[entry.slug]
+      ? `<div class="callout callout--sage" style="margin-top:1.5rem">
+    <p><strong>Building a startup rather than a small business?</strong> We keep a separate, deeper
+    dataset of <a href="${LB()}/startups/${esc(entry.slug)}/">${STARTUP_DATA[entry.slug].programmes.length}
+    startup funding programmes in ${esc(entry.name)}</a> — grants, R&D credits and cloud credits, ranked by
+    what you can realistically win rather than by headline size.</p>
+  </div>`
+      : '';
   const cc = entry.slug;
   const crumbs = [
     { label: 'Home', href: `${LB()}/` },
@@ -771,6 +783,7 @@ function categoryPage(entry, data, cat, list) {
   <p class="lede" style="max-width:58ch">${list.length} ${esc(categoryLabel(cat).toLowerCase())} programmes we could source and date.
   Sorted so the ones with a published amount come first.</p>
   <p><a class="btn btn-primary btn-sm" href="${LB()}/check/?country=${cc}">Check which of these you qualify for ${ICON.arrow}</a></p>
+  ${startupCrossLink}
   <div class="list-rows" style="margin-top:2rem">
     ${list
       .slice()
@@ -1275,6 +1288,16 @@ ${disclaimerBar(TR)}
 }
 
 /** /startups/{cc}/ */
+/* The personal dataset also carries a `business` category — 152 SME and
+   self-employment records written for the household engine. They overlap the
+   startup dataset by 4 programmes. Rather than delete either (a self-employed
+   person browsing benefits should still see SBA Microloans, and so should a
+   founder), the two are cross-linked. */
+function hasPersonalBusiness(cc) {
+  const entry = countries.find((c) => c.entry.slug === cc);
+  return entry ? entry.data.programmes.some((p) => p.category === 'business') : false;
+}
+
 function startupCountryPage(c) {
   const data = STARTUP_DATA[c.slug];
   const reg = REGISTRIES[c.slug];
@@ -1286,6 +1309,17 @@ ${disclaimerBar(TR)}
   <h1>Startup funding in ${esc(c.name)}</h1>
   <p class="lede" style="max-width:56ch">${c.count} programmes, ${c.priced} with a published amount.
   ${reachFor(c.slug).includes('eu') && c.slug !== 'eu' ? 'EU-level programmes are open to you too — see the EU page.' : ''}</p>
+
+  ${
+    hasPersonalBusiness(c.slug)
+      ? `<div class="callout" style="margin-top:1.5rem">
+    <p><strong>Also worth checking:</strong> the
+    <a href="${LB()}/${esc(c.slug)}/business/">business support schemes in our benefits dataset</a> for
+    ${esc(c.name)} — SME and self-employment programmes aimed at sole traders and very small firms rather
+    than at funded startups.</p>
+  </div>`
+      : ''
+  }
 
   ${reg ? `<div class="callout${reg.available ? ' callout--sage' : ''}" style="margin-top:1.5rem">
     <p><strong>${reg.available ? 'Auto-fill is available here.' : 'Auto-fill is not available here.'}</strong>
@@ -1349,6 +1383,30 @@ ${disclaimerBar(TR)}
       <p class="small">Deadline: ${esc(p.deadline_type)}${p.deadline_note ? ` — ${esc(p.deadline_note)}` : ''}</p>
     </div>
   </div>
+
+  ${(() => {
+    const L = awardLikelihood(p);
+    const eff = effortFor(p);
+    if (L.basis === 'class_prior' && !L.detail) return '';
+    return `<div class="grid grid-2" style="margin-top:1.2rem;align-items:stretch">
+    <div class="card">
+      <span class="eyebrow">Your odds</span>
+      <div class="figure-sm">${L.p_published != null ? (L.p_published * 100).toFixed(1) + '%' : 'Not published'}</div>
+      <p class="small">${
+        L.p_published != null
+          ? `${L.basis === 'published' ? 'Published by the funder' : 'Derived from official counts'}${L.period ? `, ${esc(L.period)}` : ''}.${L.haircut !== 1 ? ` This rate is measured ${esc(String(L.stage).replace(/_/g, ' '))}, so the odds from a standing start are lower.` : ''}`
+          : 'This funder does not publish a success rate. We rank it using the rate observed across similar programmes and label it as an estimate rather than implying we know.'
+      }</p>
+      ${L.source_url && L.p_published != null ? `<p class="small"><a href="${esc(L.source_url)}" rel="nofollow noopener">Source</a></p>` : ''}
+    </div>
+    <div class="card">
+      <span class="eyebrow">Effort</span>
+      <div class="figure-sm" style="text-transform:capitalize">${esc(eff.tier)}</div>
+      <p class="small">${esc(eff.label)}.</p>
+      ${p.cofunding_pct != null && p.cofunding_pct > 0 ? `<p class="small"><strong>You fund ${p.cofunding_pct}% yourself.</strong></p>` : ''}
+    </div>
+  </div>`;
+  })()}
 
   ${e.de_minimis ? `<div class="callout" style="margin-top:1.5rem;border-color:var(--terracotta)">
     <p><strong>This is de minimis aid.</strong> It counts against the €${nf(DE_MINIMIS_CEILING_EUR)} ceiling
