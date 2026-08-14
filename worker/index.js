@@ -21,6 +21,9 @@ import { match } from '../src/engine/matcher.js';
 import { buildPlan, buildPackage, recordConsent } from '../packages/autoapply/index.js';
 import { policyFor, mayCharge, mayChargeFor, PRODUCT, PRICING } from '../packages/policy/index.js';
 import { DOC_TYPES, expiresAt, KDF_ITERATIONS } from '../packages/vault/index.js';
+import { matchStartup, reachFor } from '../src/engine/startup.js';
+import { planWithinCeiling, declarationText, headroom } from '../packages/stateaid/index.js';
+import { lookupCompany, projectCompany, autofillAvailable } from '../packages/registry/index.js';
 
 const JSON_HEADERS = { 'content-type': 'application/json; charset=utf-8' };
 
@@ -575,6 +578,137 @@ async function handleVaultDelete(request, env, id) {
   return json({ deleted: id });
 }
 
+
+/* ------------------------------------------------------------------ */
+/* Startup grants                                                      */
+/* ------------------------------------------------------------------ */
+
+async function loadStartupPool(env, request, pool) {
+  const url = new URL(request.url);
+  url.pathname = `/api/v1/startups/${pool}.json`;
+  url.search = '';
+  const res = await env.ASSETS.fetch(new Request(url.toString()));
+  return res.ok ? res.json() : null;
+}
+
+/**
+ * POST /api/startups/check — the free half, same contract as /api/check.
+ *
+ * Returns totals and counts, never the programme list. Note that totals are
+ * per instrument AND per currency: mixing cloud credits into a cash figure,
+ * or EUR into USD, would produce a headline number that is not true.
+ */
+async function handleStartupCheck(request, env) {
+  const profile = await request.json().catch(() => null);
+  if (!profile?.country_code) return bad('country_code required');
+
+  const pools = reachFor(profile.country_code);
+  const datasets = {};
+  for (const pool of pools) {
+    const d = await loadStartupPool(env, request, pool);
+    if (d) datasets[pool] = d;
+  }
+  if (!Object.keys(datasets).length) return bad('unknown country', 404);
+
+  const r = matchStartup(profile, datasets, Date.now());
+
+  return json({
+    country: r.country,
+    pools: r.pools,
+    sme_category: r.sme_category,
+    counts: {
+      eligible: r.eligible.length,
+      conditional: r.conditional.length,
+      needs_answer: r.needs_answer.length,
+      not_eligible: r.not_eligible.length,
+      closed: r.closed.length,
+    },
+    /* Free: the money. Paid: which programmes. */
+    non_dilutive: r.non_dilutive,
+    totals: r.totals,
+    unlocks: r.unlocks.map((u) => ({ field: u.field, count: u.count })),
+  });
+}
+
+/** POST /api/startups/plan — paid. The list, plus the de minimis ceiling applied. */
+async function handleStartupPlan(request, env) {
+  const session = await readSession(env, request.headers.get('cookie'));
+  if (!session?.uid) return bad('sign in required', 401);
+
+  const { profile, prior_aid = [] } = await request.json().catch(() => ({}));
+  if (!profile?.country_code) return bad('country_code required');
+
+  const cc = String(profile.country_code).toLowerCase();
+  const ent = await entitlementFor(env, session.uid, cc, PRODUCT.ASSISTANCE);
+  if (!ent.entitled) return json({ error: 'subscription required', paywall: ent }, 402);
+
+  const datasets = {};
+  for (const pool of reachFor(cc)) {
+    const d = await loadStartupPool(env, request, pool);
+    if (d) datasets[pool] = d;
+  }
+  const r = matchStartup(profile, datasets, Date.now());
+
+  /* The ceiling is applied to the PLAN, not to each grant in isolation —
+     otherwise we would hand a founder a list they cannot lawfully take. */
+  const ceiling = planWithinCeiling(r.eligible, {
+    awards: prior_aid,
+    memberState: cc,
+    asOf: Date.now(),
+  });
+
+  return json({
+    ...r,
+    de_minimis: {
+      ...ceiling,
+      declaration: declarationText(prior_aid, cc, Date.now()),
+    },
+  });
+}
+
+/**
+ * POST /api/startups/autofill — one identifier, most of a form.
+ *
+ * This reads a PUBLIC company register. It never touches the company's own
+ * account on any portal and holds no credential of theirs; the API keys used
+ * here are ours, and live in Worker secrets.
+ */
+async function handleStartupAutofill(request, env) {
+  const session = await readSession(env, request.headers.get('cookie'));
+  if (!session?.uid) return bad('sign in required', 401);
+
+  const { country_code, identifier, programme_slug, profile = {} } = await request.json().catch(() => ({}));
+  if (!country_code || !identifier) return bad('country_code and identifier required');
+
+  if (!autofillAvailable(country_code)) {
+    return json({ ok: false, reason: 'no_machine_readable_register', country: country_code }, 200);
+  }
+
+  const result = await lookupCompany({
+    countryCode: country_code,
+    identifier,
+    fetchImpl: fetch,
+    keys: { companiesHouse: env.COMPANIES_HOUSE_KEY, samGov: env.SAM_GOV_KEY },
+  });
+  if (!result.ok) return json(result, 200);
+
+  let programme = null;
+  if (programme_slug) {
+    for (const pool of reachFor(country_code)) {
+      const d = await loadStartupPool(env, request, pool);
+      const hit = d?.programmes?.find((p) => p.slug === programme_slug);
+      if (hit) { programme = hit; break; }
+    }
+  }
+
+  return json({
+    ok: true,
+    company: result.company,
+    registry: { name: result.registry.name, auth: result.registry.auth },
+    projection: projectCompany({ company: result.company, programme, profile }),
+  });
+}
+
 async function handleCheckout(request, env) {
   const session = await readSession(env, request.headers.get('cookie'));
   if (!session?.uid) return bad('sign in required', 401);
@@ -821,6 +955,9 @@ export default {
       if (pathname === '/api/check' && request.method === 'POST') return await handleCheck(request, env);
       if (pathname === '/api/apply/plan' && request.method === 'POST') return await handlePlan(request, env);
       if (pathname === '/api/apply/consent' && request.method === 'POST') return await handleConsent(request, env);
+      if (pathname === '/api/startups/check' && request.method === 'POST') return await handleStartupCheck(request, env);
+      if (pathname === '/api/startups/plan' && request.method === 'POST') return await handleStartupPlan(request, env);
+      if (pathname === '/api/startups/autofill' && request.method === 'POST') return await handleStartupAutofill(request, env);
       if (pathname === '/api/vault' && request.method === 'GET') return await handleVaultList(request, env);
       if (pathname.startsWith('/api/vault/')) {
         const id = pathname.slice('/api/vault/'.length);
