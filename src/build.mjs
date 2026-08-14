@@ -23,7 +23,7 @@ import {
   periodSuffix,
 } from './engine/matcher.js';
 import { LOCALES, LANGS, t as translator } from './i18n.mjs';
-import { mayCharge, policyFor } from '../packages/policy/index.js';
+import { mayChargeForAssistance, policyFor } from '../packages/policy/index.js';
 import {
   SITE_NAME,
   TAGLINE,
@@ -1076,10 +1076,13 @@ function apiPage() {
 /* ================================================================== */
 
 function pricingPage() {
-  /* Countries where charging the beneficiary is an offence or a reserved
-     activity get a free plan, stated plainly rather than hidden. */
-  const freeCountries = countries
-    .filter(({ entry }) => !mayCharge(entry.slug))
+  /* The subscription is sold everywhere: a sourced database and a calculator
+     over published rules is reference material, not intermediation. What some
+     countries reserve is the act of preparing someone's claim for a fee — so
+     there the application pack is included at no charge, stated plainly
+     rather than hidden. */
+  const assistFreeCountries = countries
+    .filter(({ entry }) => !mayChargeForAssistance(entry.slug))
     .map(({ entry }) => `${entry.flag} ${esc(entry.name)}`);
 
   const body = `
@@ -1121,13 +1124,14 @@ ${disclaimerBar(TR)}
   </div>
 
   ${
-    freeCountries.length
+    assistFreeCountries.length
       ? `<div class="callout callout--sage" style="margin-top:2.5rem">
-    <p><strong>Free in ${freeCountries.length} countries, and not as a promotion.</strong> In
-    ${freeCountries.join(', ')} the law either forbids charging someone to help them obtain benefits or
-    reserves that role to non-profits — France's Code de la sécurité sociale art. L554-2 is the clearest
-    example. So we don't charge there. The full product is free in those countries and our billing system
-    refuses to take the money.</p>
+    <p><strong>In ${assistFreeCountries.length} countries the prepared applications are included free.</strong>
+    In ${assistFreeCountries.join(', ')} the law reserves the act of preparing someone's benefit claim for a
+    fee — France's Code de la sécurité sociale art. L554-2 is the clearest example, and Italy reserves the
+    role to non-profit patronati. Everything else is unchanged: you still get which schemes you qualify for,
+    the steps and the sources. We simply don't take money for the paperwork there, and the billing system
+    enforces it rather than trusting a footnote.</p>
   </div>`
       : ''
   }
