@@ -26,8 +26,8 @@ export default function Account() {
             <Text style={s.cardH}>Subscription</Text>
             <Text style={s.p}>
               {state.entitlement?.entitled
-                ? state.entitlement.reason === 'free_jurisdiction'
-                  ? 'Free in your country. We do not charge for benefits help here.'
+                ? state.entitlement.reason === 'free_in_jurisdiction'
+                  ? 'Included free in your country — the law reserves paid help with a claim here.'
                   : 'Active'
                 : 'Not subscribed'}
             </Text>
