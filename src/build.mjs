@@ -23,6 +23,7 @@ import {
   periodSuffix,
 } from './engine/matcher.js';
 import { LOCALES, LANGS, t as translator } from './i18n.mjs';
+import { mayCharge, policyFor } from '../packages/policy/index.js';
 import {
   SITE_NAME,
   TAGLINE,
@@ -46,6 +47,22 @@ const DATA = path.join(ROOT, 'data');
 const OUT = path.join(ROOT, 'dist');
 
 const BASE = (process.env.SITE_BASE ?? '').replace(/\/$/, '');
+
+/**
+ * Gate the 2,216 programme pages behind the paywall?
+ *
+ * Default OFF, deliberately. Those pages ARE the acquisition engine — they are
+ * what Google indexes and what a Meta ad lands on. Gating them removes the
+ * content Google ranks and the traffic stops. The paid product is the
+ * PERSONALISED answer (which of these apply to you, and the prepared
+ * application for each), which is gated server-side in worker/index.js and
+ * cannot be scraped.
+ *
+ * Set PAYWALL_SCHEMES=1 to gate them anyway — the page keeps its JSON-LD and
+ * its title so it stays in the index, but the steps, documents and source are
+ * replaced with a sign-in prompt.
+ */
+const PAYWALL_SCHEMES = process.env.PAYWALL_SCHEMES === '1';
 const ORIGIN = (process.env.SITE_ORIGIN ?? 'https://adityashashidhar55-cpu.github.io').replace(/\/$/, '');
 const SITE_URL = `${ORIGIN}${BASE}`;
 
@@ -525,9 +542,15 @@ function programmePage(entry, data, p) {
       <h2 style="margin-top:2.5rem">Who qualifies</h2>
       <table class="rule-table">${ruleRows.join('')}</table>
 
+      ${PAYWALL_SCHEMES ? `<div class="callout callout--terracotta" style="margin:2rem 0">
+        <p><strong>The steps, documents and official link are part of the paid plan.</strong>
+        Checking how much you're owed is free and always will be.</p>
+        <p style="margin-bottom:0"><a class="btn btn-primary btn-sm" href="${LB()}/pricing/">See plans</a>
+        <a class="btn btn-ghost btn-sm" href="${LB()}/check/">Check your total free</a></p>
+      </div>` : ''}
       ${
-        steps
-          ? `<h2 style="margin-top:3rem">How to apply</h2>
+        PAYWALL_SCHEMES ? '' : steps
+          ? `<h2 style="margin-top:3rem">${esc(TR('howApply'))}</h2>
              <ol class="steps">${steps}</ol>`
           : p.is_automatic
             ? `<h2 style="margin-top:3rem">How to apply</h2><div class="callout callout--sage"><p><strong>No application needed.</strong> This is paid automatically to people who meet the criteria, usually through an existing record the authority already holds. If you meet the rules and are not receiving it, contact ${esc(
@@ -1047,6 +1070,85 @@ function apiPage() {
 }
 
 
+
+/* ================================================================== */
+/* Pricing                                                             */
+/* ================================================================== */
+
+function pricingPage() {
+  /* Countries where charging the beneficiary is an offence or a reserved
+     activity get a free plan, stated plainly rather than hidden. */
+  const freeCountries = countries
+    .filter(({ entry }) => !mayCharge(entry.slug))
+    .map(({ entry }) => `${entry.flag} ${esc(entry.name)}`);
+
+  const body = `
+${disclaimerBar(TR)}
+<section class="section-tight shell">
+  ${breadcrumbs([{ label: TR('backHome'), href: `${LB()}/` }, { label: 'Pricing' }])}
+  <span class="eyebrow eyebrow-accent">Pricing</span>
+  <h1 style="max-width:16ch">Finding out what you're owed is free. Always.</h1>
+  <p class="lede" style="max-width:56ch">You never pay to learn the number. You pay when you want the
+  schemes behind it and the paperwork done for you.</p>
+
+  <div class="grid grid-2" style="margin-top:3rem;align-items:stretch">
+    <div class="card">
+      <span class="eyebrow">Free</span>
+      <div class="figure-sm">£0</div>
+      <p class="small">Forever, no account.</p>
+      <ul style="margin-top:1.2rem;padding-left:1.1rem">
+        <li>How much you're owed, per year</li>
+        <li>How many schemes it comes from</li>
+        <li>How many pay out automatically</li>
+        <li>Every one of ${nf(STATS.total)} programme pages, with sources</li>
+      </ul>
+      <p style="margin-top:1.5rem"><a class="btn btn-ghost" href="${LB()}/check/">Check your total</a></p>
+    </div>
+
+    <div class="card" style="border-color:var(--terracotta)">
+      <span class="eyebrow eyebrow-accent">Claim</span>
+      <div class="figure-sm" style="color:var(--terracotta)">£4.99<span style="font-size:1rem;color:var(--ink-3)">/month</span></div>
+      <p class="small">Cancel any time, in two clicks.</p>
+      <ul style="margin-top:1.2rem;padding-left:1.1rem">
+        <li><strong>Which schemes</strong> you specifically qualify for</li>
+        <li>The exact steps and documents for each</li>
+        <li><strong>A prepared application per scheme</strong> — drafted, filled, ready to send</li>
+        <li>One merged document checklist across every claim</li>
+        <li>Deadline reminders and re-checks when rules change</li>
+      </ul>
+      <p style="margin-top:1.5rem"><a class="btn btn-primary" href="${LB()}/check/">Start with the free check</a></p>
+    </div>
+  </div>
+
+  ${
+    freeCountries.length
+      ? `<div class="callout callout--sage" style="margin-top:2.5rem">
+    <p><strong>Free in ${freeCountries.length} countries, and not as a promotion.</strong> In
+    ${freeCountries.join(', ')} the law either forbids charging someone to help them obtain benefits or
+    reserves that role to non-profits — France's Code de la sécurité sociale art. L554-2 is the clearest
+    example. So we don't charge there. The full product is free in those countries and our billing system
+    refuses to take the money.</p>
+  </div>`
+      : ''
+  }
+
+  <div class="callout" style="margin-top:1.5rem">
+    <p><strong>What we don't do.</strong> We never sign in to a government website as you, and we never
+    press submit on your behalf. Every application we prepare is sent by you, from your own account. That
+    is a deliberate design choice: a benefits declaration is sworn by the person making it, and keeping it
+    yours is what the law requires and what protects you.</p>
+  </div>
+</section>`;
+
+  return layout({
+    base: BASE, linkBase: LB(), lang: L, tr: TR, altLangs: ALT,
+    title: 'Pricing — free to find out, paid to claim',
+    description: `Seeing how much you're owed is free forever. £4.99/month unlocks which of ${nf(STATS.total)} schemes you qualify for and a prepared application for each one.`,
+    canonical: `${SITE_URL}${L === 'en' ? '' : '/' + L}/pricing/`,
+    body,
+  });
+}
+
 /* ================================================================== */
 /* Audience landing pages                                              */
 /* ================================================================== */
@@ -1183,6 +1285,8 @@ function buildLanguage(lang) {
   page(`${pre}check/index.html`, checkPage());
   ALT = altFor('/methodology/');
   page(`${pre}methodology/index.html`, methodologyPage());
+  ALT = altFor('/pricing/');
+  page(`${pre}pricing/index.html`, pricingPage());
 
   for (const aud of AUDIENCES) {
     ALT = altFor(`/for/${aud.id}/`);
