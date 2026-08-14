@@ -621,7 +621,7 @@ build verification in CI, GitHub Pages deployment. Design system rewritten from 
 (editorial/warm, no framework).
 
 **2026-08-14 — native apps, own domain, pricing.** The site now builds for
-`unlistedgrants.com` at the apex rather than a project path, and the same app that runs
+`unclaimedgrant.com` at the apex rather than a project path, and the same app that runs
 in the browser ships as signed Android and iOS binaries.
 
 *Why Capacitor rather than a second codebase.* The eligibility matcher, the deadline
@@ -660,7 +660,22 @@ dashboard and bulk work that justifies it. The mobile apps carry the individual 
 only — enterprise is a desktop workflow and pretending otherwise would mean shipping a
 dashboard nobody uses on a phone.
 
-**Still open:** DNS for `unlistedgrants.com` is not yet pointed at GitHub Pages, so the
+**Still open:** DNS for `unclaimedgrant.com` is not yet pointed at GitHub Pages, so the
 custom domain shows "DNS check in progress". Store accounts (Apple $99/yr, Play $25 once)
 and the signing secrets are the remaining human steps; Play's 14-day / 12-tester closed
 test for new personal accounts is the longest pole in the launch.
+
+**2026-08-14 (later) — domain moved to unclaimedgrant.com.** Renamed across the
+build, the Worker, both workflows, the Capacitor project and the store listing.
+
+Two things worth naming rather than doing quietly. The **bundle ID changed** to
+`com.unclaimedgrant.app`. A bundle ID is permanent once an app is published —
+Apple and Google both refuse to change it afterwards, and the only remedy is a
+new listing that loses its reviews and its install base. Nothing is published
+yet, so this is the last free moment to get it right, and it should match the
+domain that is actually owned.
+
+The **display name stays plural** — "Unclaimed Grants" — against a singular
+domain. `unclaimedgrant.com` is the address; the product finds many programmes,
+and "Unclaimed Grant collects 3,900 programmes" reads wrong in the one place it
+matters most, the store description.
