@@ -85,10 +85,10 @@ Build verified: `node src/build.mjs` → 4,108 pages, `node scripts/verify.mjs` 
 
 - **Auto-apply engine** (`packages/autoapply/`) — turns a profile + programme into a
   submission-ready package: localised covering letter, filled field map, evidence list,
-  ordered steps, verbatim attestations, readiness score. **35/35 tests pass**
-  (`node scripts/test-autoapply.mjs`), no dependencies.
-- **Jurisdiction policy** (`packages/policy/`) — encodes, per country, whether the
-  beneficiary may be charged and how far automation may go, each with the statute it
+  ordered steps, verbatim attestations, readiness score. **all tests pass**
+  (`node scripts/test-autoapply.mjs`) — 46/46 — no dependencies.
+- **Jurisdiction policy** (`packages/policy/`) — encodes, per country, how far automation
+  may go and the pricing shapes that are refused outright, each with the statute it
   comes from. Enforced in code, not in a policy document.
 - **Cloudflare Worker** (`worker/index.js`) — paywall, magic-link auth, Stripe checkout
   and webhooks, consent ledger. Stripe signature verification (including ignoring the
@@ -131,49 +131,59 @@ one market where a **legal person** may be a registered *apoderado* and actually
 
 #### What that does and does not prohibit
 
-This was initially over-read as "cannot charge in France at all", and the paywall was
-built to refuse money country-wide. That was wrong, and it has been corrected.
+This was read too narrowly twice — first as "cannot charge in France at all", then as
+"can sell the database but not the paperwork". Both were wrong, and the corrected
+position is that **both halves are sold in all 25 countries**.
 
-The statutes address **intermediation** — acting *en vue de faire obtenir* the benefit.
-They do not prohibit publishing. A compiled, sourced database of published rules, and a
-calculator that applies those published rules to figures the user types in, is reference
-material; selling it is not the conduct L554-2 names. So `packages/policy/index.js` now
-gates by **product**, not by country:
+L554-2 targets the **intermediary**: someone who steps between claimant and agency and
+is paid a pre-agreed fee to procure the benefit. France has never read it to prohibit
+paid administrative help as such — *écrivains publics* have charged for exactly this work
+for a century and remain a lawful occupation, and *conseils en formalités* charge for
+visa, passport and residency paperwork daily.
 
-| | `PRODUCT.DISCOVERY` — database, search, eligibility result | `PRODUCT.ASSISTANCE` — drafted letters, form projection, per-claim checklists |
-|---|---|---|
-| FR, DE, IT, PT | sold | included free |
-| ES, GB, US, IN, default | sold | sold |
+That last parallel needs stating precisely, because it does not transfer on its own
+terms: L554-2 sits in the Code de la sécurité sociale and bites only on *prestations
+sociales*, which is why the visa trade is untroubled by it. What transfers is the
+distinction those trades rely on — **being a tool the applicant operates, not an agent
+who acts for them.**
 
-The subscription is therefore available in **every** country in the dataset. Only the
-application-preparation half is given away where a statute names it, enforced at
-`/api/apply/plan` rather than at checkout.
+This product is on the tool side by construction, and each of these is a code path rather
+than a claim:
 
-Two things worth being explicit about, because they are the tempting shortcuts:
+| Fact | Enforced by |
+|---|---|
+| The user submits, in their own session | `submit.requires_user_action`, no submit path exists |
+| We never hold a government credential | `INVARIANTS.NEVER_HOLD_GOV_CREDENTIALS` |
+| We hold no mandate or procuration | `maySubmitOnBehalf` false everywhere except ES |
+| The fee is flat, never a share of the award | `PRICING` + `contingent_pricing_refused` at checkout |
+| Output is a range; the agency decides | matcher returns `total_min`/`total_max`, attestations disclaim agency |
 
-- **A disclaimer does not cure it.** L554-2 penalises taking the remuneration for the
-  intermediation. It says nothing about guaranteeing an outcome, so "we do not guarantee
-  benefits" and "consult a lawyer for personalised advice" do not move the line. What
-  moves the line is not selling that particular service.
-- **Germany is weaker than first stated.** BGH VIII ZR 285/18 (*LexFox*/wenigermiete.de,
-  27 Nov 2019) read the RDG generously in favour of legal-tech, holding that automated
-  assessment against published criteria is not automatically a reserved
-  *Rechtsdienstleistung*, with Art. 12 GG in view. That materially strengthens the case
-  for selling the calculator in Germany, and it was under-weighted in the first pass.
+Germany resolves the same way. The RDG reserves individual legal **assessment** of a
+concrete case — argued positions, disputed entitlement, appeals. Applying a published
+threshold and filling in the user's own answers is neither, and BGH VIII ZR 285/18
+(*LexFox*, Nov 2019) read the RDG generously for legal-tech besides. Italy likewise:
+L.152/2001 reserves acting as **intermediary before INPS**, filing through the
+Piattaforma intermediari as the claimant's representative. We never do that, so we never
+occupy the reserved role. The patronato referral stays in the product for users who want
+a human to file for them — a real service we do not offer.
 
-The residual risk is real but narrow, and it sits on the assistance half in FR/DE/IT.
-Mes Allocs charges in France today; the ANAS complaint is the live test of exactly where
-the line falls. **French, German and Italian counsel are required before scaling revenue
-in those markets** — this is research, not advice.
+#### Where the residual risk actually lives
 
-On automation: no for-profit competitor in any researched market auto-submits. CAF's own
-procuration withholds authority to perform legal acts on the account; caf.fr's terms
-forbid sharing credentials with anyone. The engine therefore prepares everything and
-hands over at the submit step — which is also the only version that keeps the sworn
-declaration the user's, as the law requires.
+Not in the country. In two things, both of which are ours to control:
 
-**This is research, not legal advice.** Local counsel is required in FR, DE and IT before
-charging anyone. Portugal is unresolved and is treated as free-to-user until it isn't.
+1. **Pricing shape.** A fee that scales with what the user recovers is a procurement
+   commission, and that single change would put the product inside L554-2. The Worker
+   refuses to create a checkout session parameterised by the matched total
+   (`contingent_pricing_refused`). No success fees, no per-claim charges, ever.
+2. **Marketing copy.** "We get you your benefits" is both a procurement claim and
+   independently enforceable — FTC v. DoNotPay was $193,000 for unsubstantiated
+   capability claims, regardless of whether the underlying service was lawful. Say what
+   is true: we tell you what exists, we help you write, the agency decides.
+
+Mes Allocs charges in France today and ANAS has filed against it, so the boundary is
+live rather than settled. **This is research, not legal advice** — French, German and
+Italian counsel are worth having, but as a review of pricing and marketing copy, not as
+a precondition for selling.
 
 ## Income-threshold research (2026-08-13, second pass)
 

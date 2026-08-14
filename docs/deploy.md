@@ -179,9 +179,10 @@ PT. The site already targets AA; keep it there.
   registry access, so `wrangler dev`, `expo start` and every store build are **unrun**.
   See `docs/status.md` for exactly what was and was not verified.
 - Stripe products and prices do not exist yet. `STRIPE_PRICE_MONTHLY` is a placeholder.
-- No legal review. `packages/policy/index.js` encodes research, not advice. The
-  subscription is sold in every country; what FR, DE, IT and PT withhold from billing is
-  the application-preparation half, because those statutes target intermediation rather
-  than publishing. That distinction is a judgement call — France (L554-2), Germany (RDG)
-  and Italy (patronato) need local counsel before you scale revenue there. Portugal is
-  genuinely unresolved. See `docs/status.md` for the reasoning and the counterweights.
+- No legal review. `packages/policy/index.js` encodes research, not advice. Both halves of
+  the product are sold in all 25 countries: the statutes people cite here (L554-2, RDG,
+  L.152/2001) target acting as a paid intermediary, which this product never does — the
+  user submits, we hold no mandate and no credentials, and the fee is flat. The exposure
+  that remains is in pricing shape and marketing copy, not geography. Keep the fee flat,
+  never claim you obtain benefits, and have FR/DE/IT counsel review the copy before you
+  scale spend there. See `docs/status.md`.
