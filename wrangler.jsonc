@@ -1,0 +1,42 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "unclaimed",
+  "main": "./worker/index.js",
+  "compatibility_date": "2026-08-14",
+
+  // Static assets + Worker in ONE deployment. Asset requests are free and do
+  // not count against the 100k/day Worker request limit — which is why 4,000
+  // SEO pages cost nothing. Only /api, /auth and /webhooks run code.
+  "assets": {
+    "directory": "./dist",
+    "binding": "ASSETS",
+    "html_handling": "auto-trailing-slash",
+    "not_found_handling": "404-page",
+    "run_worker_first": ["/api/*", "/auth/*", "/webhooks/*"]
+  },
+
+  "observability": { "enabled": true },
+  "preview_urls": true,
+
+  // D1, not KV, for entitlements: KV is eventually consistent (~60s) and a
+  // user who just paid must never still see the paywall.
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "unclaimed-prod",
+      "database_id": "REPLACE_AFTER_wrangler_d1_create",
+      "migrations_dir": "./migrations"
+    }
+  ],
+
+  "vars": {
+    "APP_ORIGIN": "https://unclaimed.app",
+    "STRIPE_PRICE_MONTHLY": "price_REPLACE_ME"
+  }
+
+  // Secrets (never in this file):
+  //   wrangler secret put STRIPE_SECRET_KEY
+  //   wrangler secret put STRIPE_WEBHOOK_SECRET
+  //   wrangler secret put SESSION_SIGNING_KEY
+  //   wrangler secret put RESEND_API_KEY        (optional, for magic links)
+}
