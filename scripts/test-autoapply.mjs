@@ -3,7 +3,10 @@
 import fs from 'node:fs';
 import { match } from '../src/engine/matcher.js';
 import { buildPackage, buildPlan, recordConsent, mailtoLink, fieldLabel } from '../packages/autoapply/index.js';
-import { policyFor, mayCharge, maySubmitOnBehalf, mayAssist, INVARIANTS } from '../packages/policy/index.js';
+import {
+  policyFor, mayCharge, mayChargeFor, mayChargeForAssistance,
+  maySubmitOnBehalf, mayAssist, PRODUCT, INVARIANTS,
+} from '../packages/policy/index.js';
 
 let pass = 0, fail = 0;
 const ok = (name, cond, detail = '') => {
@@ -24,13 +27,23 @@ const base = {
 };
 
 console.log('\nJurisdiction policy');
-ok('France: charging the beneficiary is refused', !mayCharge('fr'));
-ok('Germany: charging refused (RDG)', !mayCharge('de'));
-ok('Italy: assistance refused entirely (patronato)', !mayAssist('it'));
-ok('Spain: mandated submit permitted (Orden ISM/189/2021)', maySubmitOnBehalf('es'));
-ok('UK: charging allowed, submit not', mayCharge('gb') && !maySubmitOnBehalf('gb'));
+ok('France: the database and calculator ARE sellable', mayChargeFor('fr', PRODUCT.DISCOVERY));
+ok('France: preparing the claim for a fee is not (L554-2)', !mayChargeForAssistance('fr'));
+ok('Germany: discovery sellable after LexFox', mayChargeFor('de', PRODUCT.DISCOVERY));
+ok('Germany: paid assistance withheld pending counsel (RDG)', !mayChargeForAssistance('de'));
+ok('Italy: discovery sellable — 152/2001 reserves the intermediary, not publishing',
+   mayChargeFor('it', PRODUCT.DISCOVERY));
+ok('Italy: assistance refused entirely (patronato)', !mayAssist('it') && !mayChargeForAssistance('it'));
+ok('Spain: both products sellable, mandated submit permitted',
+   mayChargeForAssistance('es') && maySubmitOnBehalf('es'));
+ok('UK: both sellable, submit not', mayChargeForAssistance('gb') && !maySubmitOnBehalf('gb'));
+ok('Subscription is sellable in every researched country',
+   ['fr','de','it','es','pt','gb','us','in'].every(mayCharge));
 ok('Unknown country falls back to cautious default', !maySubmitOnBehalf('zz') && mayAssist('zz'));
 ok('France policy cites L554-2', policyFor('fr').basis.some(b => b.includes('L554-2')));
+ok('Germany policy cites the LexFox counterweight',
+   policyFor('de').basis.some(b => b.includes('LexFox')));
+ok('mayChargeFor defaults to discovery', mayChargeFor('fr') === mayChargeFor('fr', PRODUCT.DISCOVERY));
 
 console.log('\nInvariants');
 ok('never holds government credentials', INVARIANTS.NEVER_HOLD_GOV_CREDENTIALS === true);
