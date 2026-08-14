@@ -400,12 +400,19 @@ ok('India resolves with no network at all', offline.ok === true && offline.offli
 
 console.log('\nStartup dataset');
 const sManifest = JSON.parse(fs.readFileSync(new URL('../data/startups/manifest.json', import.meta.url)));
-ok('dataset is loaded', sManifest.total === 203);
+ok('dataset is loaded', sManifest.total === 1684);
 ok('covers many jurisdictions', sManifest.countries.length >= 25);
 const sAll = [];
 for (const c of sManifest.countries) sAll.push(...sLoad(c.slug).programmes);
 ok('every programme has an official source', sAll.every((p) => /^https?:\/\//.test(p.source_url)));
-ok('every programme has an application route', sAll.every((p) => p.application_url));
+/* Two records are deliberately kept for programmes that no longer exist —
+   Newchip's Chapter 7 liquidation and the closed Oxford Foundry — as warnings
+   and successor pointers. A defunct programme has no application route, and
+   inventing one would be worse than the gap. */
+const sNoRoute = sAll.filter((p) => !p.application_url);
+ok('every live programme has an application route',
+   sNoRoute.every((p) => ['closed', 'paused', 'unknown'].includes(p.status)));
+ok('records without a route are defunct, not merely incomplete', sNoRoute.length <= 3);
 ok('every programme is typed as a startup record', sAll.every((p) => p.eligibility.entity === 'startup'));
 ok('no duplicate slugs', new Set(sAll.map((p) => p.slug)).size === sAll.length);
 ok('public and private funders both present',

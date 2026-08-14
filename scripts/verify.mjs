@@ -112,7 +112,7 @@ noSource === 0 ? ok('every record has an http(s) source_url') : fail(`${noSource
 
 /* --- Startup grants ------------------------------------------------ */
 const sMan = JSON.parse(fs.readFileSync(path.join(DIST, 'api/v1/startups/index.json'), 'utf8'));
-sMan.total === 203 && sMan.countries.length >= 25 ? ok('startup pool index is published') : fail('startup pool index is published');
+sMan.total === 1684 && sMan.countries.length >= 25 ? ok('startup pool index is published') : fail('startup pool index is published');
 sMan.countries.every((c) => fs.existsSync(path.join(DIST, `api/v1/startups/${c.slug}.json`)))
   ? ok('every startup pool has a JSON asset')
   : fail('a startup pool JSON asset is missing');
@@ -135,6 +135,48 @@ const walkStartups = (d) => {
 walkStartups(path.join(DIST, 'startups'));
 sLeaks === 0 ? ok(`no template leaks across ${sPages} startup pages`) : fail(`no template leaks across ${sPages} startup pages`);
 fs.readFileSync(path.join(DIST, 'sitemap.xml'), 'utf8').includes('/startups/') ? ok('startup pages are in the sitemap') : fail('startup pages are in the sitemap');
+
+
+/* --- The app (PWA) -------------------------------------------------- */
+for (const f of ['app/index.html', 'app/app.js', 'app/app.css', 'sw.js', 'manifest.webmanifest', 'icon-192.svg', 'icon-512.svg']) {
+  fs.existsSync(path.join(DIST, f)) ? ok(`${f} present`) : fail(`${f} MISSING`);
+}
+const mf = JSON.parse(fs.readFileSync(path.join(DIST, 'manifest.webmanifest'), 'utf8'));
+mf.display === 'standalone' && mf.start_url && mf.icons.length >= 2
+  ? ok('web manifest is installable (standalone, start_url, icons)')
+  : fail('web manifest would not install');
+
+/* The single check that matters: every module the app imports must resolve
+   INSIDE dist. A specifier that is correct in the repo can still escape the
+   published tree and 404 in the browser — which is exactly what happened. */
+const distReal = fs.realpathSync(DIST);
+const walked = new Set();
+let escapes = 0;
+let absent = 0;
+(function walkApp(file) {
+  if (walked.has(file)) return;
+  walked.add(file);
+  if (!fs.existsSync(file)) { absent += 1; return; }
+  if (!file.startsWith(distReal + path.sep)) { escapes += 1; return; }
+  const src = fs.readFileSync(file, 'utf8');
+  for (const m of src.matchAll(/from\s+['"](\.[^'"]+)['"]/g)) {
+    walkApp(path.resolve(path.dirname(file), m[1]));
+  }
+})(path.join(distReal, 'app/app.js'));
+escapes === 0 ? ok(`app module graph stays inside dist (${walked.size} modules)`) : fail(`${escapes} app imports escape dist and would 404`);
+absent === 0 ? ok('every app import exists') : fail(`${absent} app imports are missing`);
+
+const swSrc = fs.readFileSync(path.join(DIST, 'sw.js'), 'utf8');
+/addEventListener\(['"]fetch/.test(swSrc) && /caches\.open/.test(swSrc)
+  ? ok('service worker caches and serves offline')
+  : fail('service worker does not handle fetch');
+
+/* Language switcher, top and bottom. */
+const landingHtml = fs.readFileSync(path.join(DIST, 'index.html'), 'utf8');
+landingHtml.includes('lang-select') ? ok('language switcher in the masthead') : fail('no language switcher at top');
+landingHtml.includes('class="langbar"') ? ok('language switcher in the footer') : fail('no language switcher at bottom');
+landingHtml.includes('class="flow"') ? ok('how-it-works flow is on the landing page') : fail('no how-it-works flow');
+fs.existsSync(path.join(DIST, 'enterprise/index.html')) ? ok('enterprise page present') : fail('enterprise page MISSING');
 
 console.log(`\n${checks} checks passed, ${failures} failed\n`);
 process.exit(failures ? 1 : 0);
