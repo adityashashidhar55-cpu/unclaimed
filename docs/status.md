@@ -86,7 +86,7 @@ Build verified: `node src/build.mjs` → 4,108 pages, `node scripts/verify.mjs` 
 - **Auto-apply engine** (`packages/autoapply/`) — turns a profile + programme into a
   submission-ready package: localised covering letter, filled field map, evidence list,
   ordered steps, verbatim attestations, readiness score. **all tests pass**
-  (`node scripts/test-autoapply.mjs`) — 88/88 — no dependencies.
+  (`node scripts/test-autoapply.mjs`) — 169/169 — no dependencies.
 - **Jurisdiction policy** (`packages/policy/`) — encodes, per country, how far automation
   may go and the pricing shapes that are refused outright, each with the statute it
   comes from. Enforced in code, not in a policy document.
@@ -233,6 +233,99 @@ injected provider and the mobile side will need `react-native-quick-crypto` or
 equivalent. The crypto itself is tested: the suite performs a real AES-GCM
 round-trip, asserts a wrong passphrase fails, and asserts IVs and data keys are
 never reused.
+
+### Startup grants (2026-08-14, fourth pass)
+
+**203 programmes across 27 jurisdictions**, researched against official funder
+pages — 152 public, 31 private, 20 public-private. 200 of 203 carry
+`verification_status: verified` with a verbatim `source_snippet`; the three
+that do not are marked unverified rather than dropped or guessed.
+
+Coverage: us 29, global 27, eu 23, gb 21, fr 15, de 13, in 12, ie 10, sg 6,
+ae 5, jp/ca 4, kr/au/nl/es/be 3, and 2 each across nz, br, mx, za, it, pl, se,
+at, ch, pt 1. By instrument: 92 grants, 29 loans, 24 in-kind, 19 tax credits,
+16 equity, 10 prizes, 7 accelerators, 6 vouchers.
+
+#### A separate engine, on purpose
+
+`src/engine/startup.js` does not extend the personal matcher. A person is
+tested on income, household and tenure; a company on age, headcount, turnover,
+sector and stage. Three things it does that a filter would not:
+
+- **Supranational programmes travel.** EU-level and global programmes live in
+  their own pools and are merged in for the countries that can reach them,
+  rather than being duplicated 27 times. Horizon association is tracked
+  separately from EU membership, because the lists genuinely differ — reading
+  them as one would wrongly exclude Norwegian, Swiss and UK founders.
+- **The EU SME test is turnover OR balance sheet, not AND.** Reading it as AND
+  wrongly excludes capital-heavy companies with low revenue, which is most
+  deeptech. Headcount is the binding test; the medium balance-sheet threshold
+  is €43m, not €50m.
+- **Instruments and currencies are never summed together.** A €150k grant and
+  $100k of AWS credits are different things in different units. Totals are
+  per instrument and per currency, and no FX rate is ever invented. This was
+  a real bug on first run — EUR grants were being added to USD prizes — caught
+  by a test rather than by review.
+
+#### De minimis: the ceiling founders find out about too late
+
+`packages/stateaid/` implements Regulation (EU) 2023/2831, read from the
+consolidated text (`docs/state-aid.md` carries the quotes).
+
+Small public grants across the EU are capped at **€300,000 per single
+undertaking per member state over a rolling three years**. Three details that
+aggregators routinely get wrong, all encoded and tested:
+
+1. **The window is rolling, not fiscal.** 1407/2013 used fiscal years;
+   2023/2831 replaced that (recital 11). Code written against the old rule
+   under-counts.
+2. **The ceiling is per member state.** German and Spanish aid draw on
+   separate pots for the same company.
+3. **"Single undertaking" is not the SME group test.** Control-based links
+   only — a fund holding 30% of two portfolio companies does not merge their
+   de minimis pots, though it does affect both SME calculations.
+
+The consequence that makes this worth implementing rather than mentioning:
+under **Article 3(7)**, an award that would breach the ceiling is disqualified
+**in full**, not trimmed to the headroom. So `planWithinCeiling` applies the
+budget across the whole plan, largest-affordable-first, and the UI tells a
+founder which awards are blocked and the date the oldest aid rolls out of the
+window and frees room. Aid counts from the date the legal right is conferred,
+not the date of payment (Art. 3(3)).
+
+#### Auto-fill actually works here, and the reason is structural
+
+`packages/registry/` — a person's income is private, but a company's legal
+identity is public record. One identifier fills most of a grant form:
+
+| | Register | Auth | Reality |
+|---|---|---|---|
+| **GB** | Companies House | Free key | The most complete free company API in any market |
+| **FR** | API Recherche d'entreprises (INSEE) | None | Open, no key. Returns a headcount **band**, never an exact figure — recorded as a band, never presented as a number |
+| **US** | SAM.gov | Free key | Registration **expires annually** and that expiry blocks every federal award — surfacing the date is worth more than any other field |
+| **IN** | CIN structure | None | The identifier itself encodes listing status, industry, state, year and class. Parsed offline, no API call at all |
+| **DE** | Handelsregister | Paid | **No free structured API.** Marked `available: false` rather than implying parity |
+
+`projectCompany` reports the split honestly: fields filled from the register
+versus the narrative — project summary, innovation claim, work plan, budget,
+co-funding, CVs — that no register can supply and only the founder can write.
+"9 fields filled, 7 only you can write" is a true claim; "auto-apply" would
+not be.
+
+#### What is not done
+
+- **No registry API has been called.** No keys exist, and the sandbox has no
+  npm; the adapters are tested against captured response shapes, not live
+  endpoints.
+- **The classifier recognises 33% of startup document requirements** (180 of
+  541) versus 55% for personal ones. Grant paperwork is more bespoke —
+  "Business plan and financing plan", "Contract of sale or building contract"
+  — and the rest falls back to the funder's own wording.
+- **Several programmes are closed or paused** and recorded as such rather than
+  quietly dropped: Innovate UK Smart Grants (no rounds since Jan 2025), ZIM
+  (application stop to early 2027), India's SISFS (closed 31 May 2026),
+  Australia's Industry Growth Program, Innoviris Brussels. A grants site that
+  lists closed calls as open wastes weeks of founders' time.
 
 ### Where the residual risk actually lives
 
