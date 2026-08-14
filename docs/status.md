@@ -114,23 +114,57 @@ The build sandbox has **no npm registry access** (`registry.npmjs.org` returns 4
 - **No store submission.** Requires an Apple Developer account ($99/yr), a Play account
   ($25) and code signing.
 
-### The finding that changes the business model
+### The finding that shapes the business model
 
-Research against primary sources established that **charging the beneficiary for benefits
-help is an offence in France** — Code de la sécurité sociale art. **L554-2**, €4,500 fine
-for any intermediary offering services *"moyennant émoluments convenus d'avance"* to
-obtain benefits, replicated per benefit in CASF L262-51 (RSA), CCH L852-3 (APL), CSS
-L821-5 (AAH), L845-6, L815-14. No fraud element is required. ANAS has filed a complaint
-against Mes Allocs on this basis. France's own *Aidants Connect* excludes paid providers
-by rule.
+Research against primary sources established that in France, **taking pre-agreed fees to
+help someone obtain a benefit** is an offence — Code de la sécurité sociale art.
+**L554-2**, €4,500 fine for any intermediary offering services *"moyennant émoluments
+convenus d'avance"* to obtain benefits, replicated per benefit in CASF L262-51 (RSA),
+CCH L852-3 (APL), CSS L821-5 (AAH), L845-6, L815-14. No fraud element is required. ANAS
+has filed a complaint against Mes Allocs on this basis. France's own *Aidants Connect*
+excludes paid providers by rule.
 
-Germany reserves paid benefits advice to qualified lawyers (§13(5) SGB X + RDG). Italy
-reserves the intermediary role to non-profit patronati (L.152/2001). Spain is the one
-market where a **legal person** may be a registered *apoderado* and actually submit
+Germany reserves individual legal assessment of a concrete case (§13(5) SGB X + RDG).
+Italy reserves the intermediary role to non-profit patronati (L.152/2001). Spain is the
+one market where a **legal person** may be a registered *apoderado* and actually submit
 (Orden ISM/189/2021 art. 4.2).
 
-Consequently the paywall **refuses to take money in FR, DE, IT and PT** — server-side, in
-`handleCheckout`. The pricing page states this plainly rather than hiding it.
+#### What that does and does not prohibit
+
+This was initially over-read as "cannot charge in France at all", and the paywall was
+built to refuse money country-wide. That was wrong, and it has been corrected.
+
+The statutes address **intermediation** — acting *en vue de faire obtenir* the benefit.
+They do not prohibit publishing. A compiled, sourced database of published rules, and a
+calculator that applies those published rules to figures the user types in, is reference
+material; selling it is not the conduct L554-2 names. So `packages/policy/index.js` now
+gates by **product**, not by country:
+
+| | `PRODUCT.DISCOVERY` — database, search, eligibility result | `PRODUCT.ASSISTANCE` — drafted letters, form projection, per-claim checklists |
+|---|---|---|
+| FR, DE, IT, PT | sold | included free |
+| ES, GB, US, IN, default | sold | sold |
+
+The subscription is therefore available in **every** country in the dataset. Only the
+application-preparation half is given away where a statute names it, enforced at
+`/api/apply/plan` rather than at checkout.
+
+Two things worth being explicit about, because they are the tempting shortcuts:
+
+- **A disclaimer does not cure it.** L554-2 penalises taking the remuneration for the
+  intermediation. It says nothing about guaranteeing an outcome, so "we do not guarantee
+  benefits" and "consult a lawyer for personalised advice" do not move the line. What
+  moves the line is not selling that particular service.
+- **Germany is weaker than first stated.** BGH VIII ZR 285/18 (*LexFox*/wenigermiete.de,
+  27 Nov 2019) read the RDG generously in favour of legal-tech, holding that automated
+  assessment against published criteria is not automatically a reserved
+  *Rechtsdienstleistung*, with Art. 12 GG in view. That materially strengthens the case
+  for selling the calculator in Germany, and it was under-weighted in the first pass.
+
+The residual risk is real but narrow, and it sits on the assistance half in FR/DE/IT.
+Mes Allocs charges in France today; the ANAS complaint is the live test of exactly where
+the line falls. **French, German and Italian counsel are required before scaling revenue
+in those markets** — this is research, not advice.
 
 On automation: no for-profit competitor in any researched market auto-submits. CAF's own
 procuration withholds authority to perform legal acts on the account; caf.fr's terms
