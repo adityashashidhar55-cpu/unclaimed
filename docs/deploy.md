@@ -24,6 +24,8 @@ npm i -D wrangler@latest
 npx wrangler d1 create unclaimed-prod       # paste database_id into wrangler.jsonc
 npx wrangler d1 migrations apply unclaimed-prod --remote
 
+npx wrangler r2 bucket create unclaimed-vault   # encrypted document storage
+
 npx wrangler secret put STRIPE_SECRET_KEY
 npx wrangler secret put STRIPE_WEBHOOK_SECRET
 npx wrangler secret put SESSION_SIGNING_KEY   # openssl rand -hex 32

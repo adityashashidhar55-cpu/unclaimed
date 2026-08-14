@@ -86,7 +86,7 @@ Build verified: `node src/build.mjs` → 4,108 pages, `node scripts/verify.mjs` 
 - **Auto-apply engine** (`packages/autoapply/`) — turns a profile + programme into a
   submission-ready package: localised covering letter, filled field map, evidence list,
   ordered steps, verbatim attestations, readiness score. **all tests pass**
-  (`node scripts/test-autoapply.mjs`) — 46/46 — no dependencies.
+  (`node scripts/test-autoapply.mjs`) — 88/88 — no dependencies.
 - **Jurisdiction policy** (`packages/policy/`) — encodes, per country, how far automation
   may go and the pricing shapes that are refused outright, each with the statute it
   comes from. Enforced in code, not in a policy document.
@@ -167,7 +167,74 @@ Piattaforma intermediari as the claimant's representative. We never do that, so 
 occupy the reserved role. The patronato referral stays in the product for users who want
 a human to file for them — a real service we do not offer.
 
-#### Where the residual risk actually lives
+#### Auto-apply tiering and the document vault (2026-08-14, third pass)
+
+Auto-apply is not one switch. It depends on whether a real, named mechanism
+exists that a company can lawfully stand inside, and `SUBMISSION_RAILS` in
+`packages/policy` records what actually does:
+
+| Country | Rail | Tier | What it means |
+|---|---|---|---|
+| **ES** | Registro Electrónico de Apoderamientos | `submit` | A legal person may hold a registered apoderamiento and file. We do. |
+| **IN** | DigiLocker / API Setu | `fetch` | Pull the user's own documents in with per-fetch consent. Never submission — myScheme's terms forbid automated access outright. |
+| **US** | SNAP authorized representative (7 CFR 273.2) | `prepare` | Real in statute, `available: false` in code. It is a state-agreement/non-profit lane (mRelief), not a for-profit consumer feature. Claiming it would be the DoNotPay mistake. |
+| Everywhere else | none | `prepare` | Complete package, user presses send. |
+
+Where the tier is `prepare`, the honest product is the paperwork itself, which
+is what the vault is for.
+
+#### The vault (`packages/vault/`)
+
+Almost nobody misses a benefit because the form was hard. They miss it because
+the form wanted three documents at once. So: keep each once, know when it goes
+stale, and know which claims each missing one unlocks.
+
+- **17 canonical document types** with per-type validity windows, labelled in
+  six languages.
+- **A classifier** normalising the dataset's free-text `documents_required`
+  onto those types. Measured against all **3,206 requirements** in the shipped
+  data: **1,771 recognised (55%)**. The remaining 1,435 span ~1,400 distinct
+  strings — a real long tail, not a fixable gap — and fall back to showing the
+  agency's own wording verbatim rather than guessing.
+- **Reuse is the payoff, and it is measurable.** In France, uploading the five
+  most-demanded documents moves the user from **1 claim ready to 25** (GB 4→21,
+  DE 2→27).
+- **Two correctness bugs found by measuring** rather than by assuming: `\b`
+  does not fire next to non-ASCII characters, so every accented French term and
+  every Korean and Japanese term silently failed to match; and `documentPlan`
+  merged all unrecognised requirements into one bucket, claiming a reuse that
+  does not exist. Both are now regression-tested.
+- **"None" is not a missing document.** 21 requirements in the data say some
+  variant of *no application required*. Treating those as outstanding paperwork
+  would have told people on automatic payments that they were incomplete.
+
+#### Encryption, and what the server cannot do
+
+Documents are AES-GCM encrypted **on the user's device** under a key derived
+from their passphrase (PBKDF2-HMAC-SHA256, 600,000 iterations, per OWASP 2023).
+Envelope encryption: a random data key per document, wrapped under the
+passphrase-derived key, so a passphrase change rewraps N small keys rather than
+re-encrypting N large files.
+
+The server holds ciphertext, a wrapped key it cannot unwrap, a coarse type
+label, a size and two dates. **It stores no filename** — `AAH_refus_2024.pdf`
+would leak precisely what the encryption protects. An operator with full
+database and bucket access cannot read a single payslip. `handleVaultPut` also
+refuses a body whose magic bytes look like a real PDF, ZIP, JPEG or PNG, so a
+client bug that skipped encryption fails loudly instead of quietly filling the
+bucket with readable documents.
+
+Argon2id would be better than PBKDF2 and is not reachable without a dependency.
+
+**Unverified, as with everything else here:** R2 has never been written to, the
+routes have never been served, and the React Native crypto provider is
+unwired — Expo does not expose full WebCrypto, so `createVaultCrypto` takes an
+injected provider and the mobile side will need `react-native-quick-crypto` or
+equivalent. The crypto itself is tested: the suite performs a real AES-GCM
+round-trip, asserts a wrong passphrase fails, and asserts IVs and data keys are
+never reused.
+
+### Where the residual risk actually lives
 
 Not in the country. In two things, both of which are ours to control:
 
