@@ -19,7 +19,7 @@
 
 import { match } from '../src/engine/matcher.js';
 import { buildPlan, buildPackage, recordConsent } from '../packages/autoapply/index.js';
-import { policyFor, mayCharge, mayChargeFor, PRODUCT } from '../packages/policy/index.js';
+import { policyFor, mayCharge, mayChargeFor, PRODUCT, PRICING } from '../packages/policy/index.js';
 
 const JSON_HEADERS = { 'content-type': 'application/json; charset=utf-8' };
 
@@ -400,15 +400,35 @@ async function handleCheckout(request, env) {
   const session = await readSession(env, request.headers.get('cookie'));
   if (!session?.uid) return bad('sign in required', 401);
 
-  const { country = 'gb' } = await request.json().catch(() => ({}));
+  const body = await request.json().catch(() => ({}));
+  const { country = 'gb' } = body;
 
-  /* Server-side guard, not a UI nicety. Today DISCOVERY is sellable in every
-     country in the dataset, so this branch is dormant — it exists so that if
+  /* The real guard is the SHAPE of the fee, not the country.
+     
+     A flat subscription to software is a subscription. A fee that scales with
+     what the user recovers is a procurement commission — "émoluments convenus
+     d'avance" — and that single change is what would turn this product into
+     the intermediary CSS L554-2 targets. So the amount must never be
+     parameterised by the match result. If a future caller tries, refuse:
+     it is cheaper to fail a checkout than to argue about it later. */
+  const CONTINGENT_KEYS = ['amount', 'total', 'total_min', 'total_max', 'percent', 'percentage', 'share', 'success_fee', 'commission'];
+  const contingent = CONTINGENT_KEYS.filter((k) => body[k] != null);
+  if (contingent.length) {
+    return json(
+      {
+        error: 'contingent_pricing_refused',
+        message:
+          'Checkout amount may not depend on what the user is owed. The fee is a flat subscription to the software.',
+        offending_fields: contingent,
+        pricing: PRICING,
+      },
+      400,
+    );
+  }
+
+  /* Dormant by design: today every country sells both halves. Kept so that if
      research ever moves a country out of PRODUCT.DISCOVERY, billing stops
-     there without anyone remembering to change the checkout page. The
-     application-assistance restriction is enforced separately, at
-     /api/apply/plan, because it is a per-feature limit and not a per-country
-     one. See packages/policy for the statutes. */
+     there without anyone remembering to change the checkout page. */
   if (!mayCharge(country)) {
     return json(
       {
