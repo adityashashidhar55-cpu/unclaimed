@@ -1438,7 +1438,7 @@ $('#auth-back').addEventListener('click', () => {
 
   return layout({
     base: BASE, linkBase: LB(), lang: L, tr: TR, altLangs: ALT,
-    title: 'Sign in — Unlisted Grants',
+    title: 'Sign in — Unclaimed Grants',
     description: 'Sign in with your email and a six-digit code. No password. Personal and business accounts.',
     canonical: `${SITE_URL}${L === 'en' ? '' : '/' + L}/account/`,
     body,
@@ -1490,7 +1490,7 @@ ${disclaimerBar(TR)}
   <h2 style="margin-top:2rem">Your rights</h2>
   <p>Under the GDPR and equivalent laws you can ask for a copy of your data, correct it, or have it deleted.
   Account deletion is available in the app and on the web and removes your email, subscription record and all
-  stored documents. Write to <a class="link-underline" href="mailto:privacy@unlistedgrants.com">privacy@unlistedgrants.com</a>
+  stored documents. Write to <a class="link-underline" href="mailto:privacy@unclaimedgrant.com">privacy@unclaimedgrant.com</a>
   and we will respond within 30 days.</p>
 
   <h2 style="margin-top:2rem">Children</h2>
@@ -2112,7 +2112,7 @@ write('api/v1/stats.json', JSON.stringify(STATS));
 /* GitHub Pages reads the custom domain from a CNAME file in the published
    artifact. Without it, every deploy silently reverts the site to the
    github.io subdomain and breaks the canonical URLs. */
-write('CNAME', 'unlistedgrants.com\n');
+write('CNAME', 'unclaimedgrant.com\n');
 
 /* --- The app ---------------------------------------------------- */
 write('app/index.html', appShell());
