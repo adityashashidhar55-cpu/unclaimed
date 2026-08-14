@@ -412,5 +412,117 @@ ok('public and private funders both present',
    sAll.some((p) => p.funder_type === 'public') && sAll.some((p) => p.funder_type === 'private'));
 
 
+
+/* ================================================================== */
+/* Ranking and scoring                                                 */
+/* ================================================================== */
+
+import {
+  BANDS, bandFor, BAND_LABELS, FX_TO_EUR, toEur, awardLikelihood, effortFor,
+  feasibility, scoreProgramme, rankMatches, rateCoverage, STAGE_HAIRCUT, CLASS_PRIORS,
+} from '../packages/scoring/index.js';
+
+console.log('\nBand ordering — the hard rule');
+ok('grants outrank tax credits', bandFor('grant') < bandFor('tax_credit'));
+ok('tax credits outrank loans', bandFor('tax_credit') < bandFor('loan'));
+ok('loans outrank equity', bandFor('loan') < bandFor('equity'));
+ok('equity outranks credits — no amount of credits is cash', bandFor('equity') < bandFor('in_kind'));
+ok('unknown instruments sort last, never first', bandFor('mystery') === 5);
+ok('every band has a label', BAND_LABELS.length >= 5);
+
+console.log('\nCurrency handling');
+ok('FX table is dated', /^\d{4}-\d{2}-\d{2}$/.test(FX_TO_EUR.as_of));
+ok('FX is marked ranking-only', /never used to display/i.test(FX_TO_EUR.note));
+ok('EUR is the identity', toEur(1000, 'EUR') === 1000);
+ok('a null amount stays null and never becomes zero', toEur(null, 'USD') === null);
+ok('an unknown currency returns null rather than assuming parity', toEur(100, 'XYZ') === null);
+
+console.log('\nAward likelihood provenance');
+const eicL = awardLikelihood({ slug: 'eic-accelerator', grant_type: 'grant' });
+ok('a researched rate is used', eicL.p_published != null);
+ok('its provenance is recorded', ['published', 'derived'].includes(eicL.basis));
+ok('it links to the source', /^https?:\/\//.test(eicL.source_url));
+ok('a post-filter rate is discounted, not taken at face value',
+   eicL.stage === 'post_filter' && eicL.p < eicL.p_published);
+ok('the discount is the documented one', eicL.haircut === STAGE_HAIRCUT.post_filter);
+
+const unknownL = awardLikelihood({ slug: 'no-such-programme', grant_type: 'grant' });
+ok('an unresearched programme falls back to a class prior', unknownL.basis === 'class_prior');
+ok('a class prior is never presented as a published figure', unknownL.p_published === null);
+ok('the fallback says so in words', /estimated|does not publish|No official/i.test(unknownL.detail));
+ok('end-to-end rates take no haircut', STAGE_HAIRCUT.end_to_end === 1);
+ok('gatekeepered rates take the largest haircut',
+   STAGE_HAIRCUT.post_endorsement < STAGE_HAIRCUT.post_filter);
+ok('tax credits are treated as entitlements, not competitions', CLASS_PRIORS.tax_credit > 0.8);
+
+console.log('\nEffort');
+ok('a bare programme is quick', effortFor({}).tier === 'quick');
+ok('a written case makes it a major bid',
+   effortFor({ documents_required: [{ doc: 'Business plan' }, { doc: 'Budget breakdown' }], procedure_steps: [1, 2, 3, 4, 5, 6] }).tier === 'major');
+ok('effort is derived from the record, not guessed', effortFor({ documents_required: [{ doc: 'ID' }] }).points === 1);
+
+console.log('\nFeasibility — the co-funding test');
+const bigCoFunded = { slug: 'x', grant_type: 'grant', amount_max: 3_000_000, amount_currency: 'EUR', cofunding_pct: 30 };
+const poorCo = feasibility(bigCoFunded, { cash_available_eur: 20_000, stage: 'pre_seed' });
+ok('a co-funding gap is penalised', poorCo.factor < 0.2);
+ok('the penalty is explained in money terms', poorCo.reasons.some((r) => /900,000/.test(r)));
+const richCo = feasibility(bigCoFunded, { cash_available_eur: 2_000_000, stage: 'growth' });
+ok('a company that can cover the match is not penalised for it', richCo.factor > poorCo.factor);
+ok('unknown cash asks rather than assumes',
+   feasibility(bigCoFunded, {}).reasons.some((r) => /tell us your available cash/i.test(r)));
+
+console.log('\nScoring');
+const smallLikely = { slug: 'fr-concours-i-nov', grant_type: 'grant', amount_max: 30_000, amount_currency: 'EUR' };
+const bigUnlikely = { slug: 'eic-accelerator', grant_type: 'grant', amount_max: 2_500_000, amount_currency: 'EUR' };
+const sSmall = scoreProgramme(smallLikely, { stage: 'seed' });
+const sBig = scoreProgramme(bigUnlikely, { stage: 'seed' });
+ok('expected value is amount times probability',
+   Math.abs(sSmall.expected_eur - 30_000 * sSmall.probability.p) < 1);
+ok('a huge unlikely grant still beats a small likely one on raw EV', sBig.expected_eur > sSmall.expected_eur);
+ok('every score carries its working', typeof sBig.explanation === 'string' && sBig.explanation.length > 40);
+ok('the explanation names the probability', /%/.test(sBig.explanation));
+ok('an unpriced programme scores null, never zero',
+   scoreProgramme({ slug: 'z', grant_type: 'grant' }, {}).score === null);
+ok('an unpriced programme is flagged as unpriced',
+   scoreProgramme({ slug: 'z', grant_type: 'grant' }, {}).unpriced === true);
+
+console.log('\nRanking — the bug this module exists to fix');
+const mixed = [
+  { programme: { slug: 'credits', grant_type: 'in_kind', amount_max: 350_000, amount_currency: 'USD', name_en: 'Cloud credits' } },
+  { programme: { slug: 'yc', grant_type: 'equity', amount_max: 500_000, amount_currency: 'USD', name_en: 'Accelerator' } },
+  { programme: { slug: 'grant', grant_type: 'grant', amount_max: 40_000, amount_currency: 'EUR', name_en: 'Small grant' } },
+  { programme: { slug: 'loan', grant_type: 'loan', amount_max: 200_000, amount_currency: 'EUR', name_en: 'Honour loan' } },
+];
+const ranked = rankMatches(mixed, { stage: 'pre_seed' });
+ok('a EUR 40k grant outranks USD 350k of credits', ranked[0].programme.name_en === 'Small grant');
+ok('credits rank last despite the largest headline',
+   ranked.at(-1).programme.name_en === 'Cloud credits');
+ok('the loan sits between the grant and the equity',
+   ranked[1].programme.name_en === 'Honour loan');
+ok('every ranked item carries its scoring', ranked.every((m) => m.scoring && m.scoring.band_label));
+
+const coFundedPair = [
+  { programme: { slug: 'big', grant_type: 'grant', amount_max: 3_000_000, amount_currency: 'EUR', cofunding_pct: 30, name_en: 'Big co-funded', documents_required: [{ doc: 'Business plan' }], procedure_steps: [1, 2, 3, 4, 5] } },
+  { programme: { slug: 'mid', grant_type: 'grant', amount_max: 250_000, amount_currency: 'EUR', name_en: 'Mid outright' } },
+];
+const poorRank = rankMatches(coFundedPair, { cash_available_eur: 20_000, stage: 'pre_seed' });
+ok('a grant needing co-funding the company cannot raise is demoted',
+   poorRank[0].programme.name_en === 'Mid outright');
+const richRank = rankMatches(coFundedPair, { cash_available_eur: 5_000_000, stage: 'growth' });
+ok('the same grant ranks first for a company that can match it',
+   richRank[0].programme.name_en === 'Big co-funded');
+
+console.log('\nRanking honesty is inspectable');
+const cov = rateCoverage([{ slug: 'eic-accelerator' }, { slug: 'eurostars-3' }, { slug: 'unknown-x' }]);
+ok('coverage counts published rates', cov.published === 2);
+ok('coverage counts estimates separately', cov.class_prior === 1);
+ok('coverage reports a percentage', cov.published_pct === 67);
+
+const sFrRanked = matchStartup(founder, sDatasets, S_ASOF);
+ok('the engine ranks with the scoring model', sFrRanked.eligible[0].scoring != null);
+ok('non-dilutive cash heads the list', sFrRanked.eligible[0].scoring.band === 0);
+ok('the engine reports its rate coverage', sFrRanked.rate_coverage.total > 0);
+
+
 console.log(`\n${pass} passed, ${fail} failed\n`);
 process.exit(fail ? 1 : 0);
