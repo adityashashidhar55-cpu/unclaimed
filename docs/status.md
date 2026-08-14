@@ -86,7 +86,7 @@ Build verified: `node src/build.mjs` → 4,108 pages, `node scripts/verify.mjs` 
 - **Auto-apply engine** (`packages/autoapply/`) — turns a profile + programme into a
   submission-ready package: localised covering letter, filled field map, evidence list,
   ordered steps, verbatim attestations, readiness score. **all tests pass**
-  (`node scripts/test-autoapply.mjs`) — 169/169 — no dependencies.
+  (`node scripts/test-autoapply.mjs`) — 216/216 — no dependencies.
 - **Jurisdiction policy** (`packages/policy/`) — encodes, per country, how far automation
   may go and the pricing shapes that are refused outright, each with the statute it
   comes from. Enforced in code, not in a policy document.
@@ -326,6 +326,100 @@ not be.
   (application stop to early 2027), India's SISFS (closed 31 May 2026),
   Australia's Industry Growth Program, Innoviris Brussels. A grants site that
   lists closed calls as open wastes weeks of founders' time.
+
+### Ranking and scoring (2026-08-14, fifth pass)
+
+#### The counts, stated once
+
+| | Records |
+|---|---|
+| Individuals and households | **2,064** |
+| Business-facing | **355** — 152 in the personal dataset's `business` category, 203 in the startup dataset |
+| **Total** | **2,419 records / 2,415 unique programmes** |
+
+Four programmes appear in both datasets (Initiative France Honour Loan, UK
+Growth Guarantee Scheme, Dutch WBSO, SBA Microloans). They are deliberately
+kept in both and cross-linked rather than deduplicated: a self-employed person
+browsing benefits should see SBA Microloans, and so should a founder. The two
+business sets now link to each other in both directions.
+
+#### The bug this pass fixes
+
+The startup engine ranked by headline amount. For a three-person pre-seed
+company with no revenue that produced:
+
+```
+1. Innov'up regional aid    €3,000,000  grant   — needs 30% co-funding (€900k)
+2. EIT Urban Mobility       €2,500,000  grant
+3. Y Combinator               $500,000  equity  — above every remaining grant
+4. Cloudflare for Startups    $350,000  in_kind — credits, above real cash
+```
+
+Every one of those is bad advice, and the personal matcher had already fixed
+this class of error — its `tier()` comment records that sorting by amount
+alone "put a €15,000 business microcredit at the top of an unemployed person's
+list". The lesson did not carry across. `packages/scoring/` is that fix,
+generalised.
+
+#### The model
+
+**Band first, and it is never traded off against money.** Non-dilutive cash →
+tax credits → repayable → dilutive → credits. No amount of cloud credits is a
+grant, so no amount of them should outrank one.
+
+**Then expected value inside the band:** `amount × P(award) × feasibility ×
+effort`. A €30,000 voucher at ~50% beats a €2.5m grant at 5.9%.
+
+**Feasibility is mostly the co-funding test**, which nobody models and which
+decides whether an application is even possible. A grant covering 70% of a €3m
+project needs €900,000 from the company; for a team with €20,000 that is not
+ambition, it is noise. Same grant, a company with €5m in the bank: ranks first.
+Both directions are tested.
+
+#### Where the probabilities come from, and where they don't
+
+`packages/scoring/rates.js` holds **50 researched records — 22 with a rate**
+(11 funder-published, 11 derived from official counts), each with the counts,
+the period and a link. The other 28 record that the funder publishes nothing
+and what they publish instead, because knowing a rate is unpublished is itself
+useful.
+
+Where no rate exists we fall back to a class prior and label it
+`class_prior` — the UI says "estimated from similar programmes", never a bare
+percentage. `rate_coverage` is returned on every match so the honesty of the
+order is inspectable rather than taken on trust. For a French pre-seed AI
+company that is currently **12% published, 88% estimated** — low, and shown.
+
+**The trap, which is the important part.** Published rates are measured at
+different stages. EIC Accelerator's 5.9% is on *full* proposals, after a
+short-proposal filter the applicant must first pass. EXIST's 55% is on
+applications a university has already endorsed. NSF's 11% is on *invited*
+proposals. Comparing those to a single-stage competition's end-to-end rate
+systematically flatters two-stage and gatekeepered programmes. Every rate
+carries its stage and takes a documented haircut (post-filter ×0.5,
+post-endorsement ×0.4, unstated ×0.8, end-to-end ×1). The haircuts are stated
+approximations of a known distortion, not measurements — but using a
+post-filter rate as if it were end-to-end is a larger error in a known
+direction, so a conservative stated discount is the lesser evil. The programme
+page shows the published figure, the stage, and a link.
+
+#### Currency
+
+Ranking needs a common unit; display must never have one. `FX_TO_EUR` is a
+single dated table used **only inside the scoring module**, and every amount on
+the site is still shown in the currency the funder published it in. An unknown
+currency returns null rather than assuming parity, and a null amount stays null
+rather than becoming zero.
+
+#### Not done
+
+- **Rate coverage is thin outside the flagship programmes.** 22 of 203. Private
+  and cloud-credit programmes publish almost nothing, and the numbers quoted
+  for them in the press are estimates by third parties, not funders.
+- **No outcome data.** Nothing here learns from whether users actually won. A
+  real product would close that loop; this ranks on published priors only.
+- **The haircuts are judgement.** They are documented and conservative, but
+  they are not measured, and they are the weakest numbers in the model.
 
 ### Where the residual risk actually lives
 
