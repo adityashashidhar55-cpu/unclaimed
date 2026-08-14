@@ -563,7 +563,7 @@ render('home');
   if (action.dataset.action === 'ics' && state.result) {
     const evts = reminders(state.result.eligible, Date.now());
     await files.saveAndShare({
-      filename: 'unlisted-grants-deadlines.ics',
+      filename: 'unclaimed-grants-deadlines.ics',
       data: toICS(evts),
       mime: 'text/calendar',
       title: 'Grant deadlines',

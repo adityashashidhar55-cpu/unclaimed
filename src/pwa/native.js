@@ -182,7 +182,7 @@ export const biometrics = {
     const p = plugin('NativeBiometric');
     if (!p) return true; // no biometry on this device: fall through to the passphrase
     try {
-      await p.verifyIdentity({ reason, title: 'Unlisted Grants', subtitle: '', description: '' });
+      await p.verifyIdentity({ reason, title: 'Unclaimed Grants', subtitle: '', description: '' });
       return true;
     } catch {
       return false;
@@ -200,7 +200,7 @@ export const biometrics = {
  * right behaviour there.
  */
 export const files = {
-  async saveAndShare({ filename, data, mime = 'text/plain', title = 'Unlisted Grants' }) {
+  async saveAndShare({ filename, data, mime = 'text/plain', title = 'Unclaimed Grants' }) {
     const fsPlugin = plugin('Filesystem');
     const sharePlugin = plugin('Share');
 
