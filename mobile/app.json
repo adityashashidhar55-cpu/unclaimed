@@ -1,0 +1,40 @@
+{
+  "expo": {
+    "name": "Unclaimed",
+    "slug": "unclaimed",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "scheme": "unclaimed",
+    "userInterfaceStyle": "light",
+    "newArchEnabled": true,
+    "icon": "./assets/icon.png",
+    "splash": {
+      "image": "./assets/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#faf6ef"
+    },
+    "assetBundlePatterns": ["**/*"],
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "app.unclaimed.mobile",
+      "config": { "usesNonExemptEncryption": false },
+      "infoPlist": {
+        "NSCalendarsUsageDescription": "Unclaimed adds application deadlines to your calendar so you don't miss them.",
+        "ITSAppUsesNonExemptEncryption": false
+      }
+    },
+    "android": {
+      "package": "app.unclaimed.mobile",
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#faf6ef"
+      },
+      "permissions": ["READ_CALENDAR", "WRITE_CALENDAR"]
+    },
+    "plugins": ["expo-router", "expo-secure-store", "expo-calendar"],
+    "extra": {
+      "apiOrigin": "https://unclaimed.app",
+      "eas": { "projectId": "REPLACE_WITH_EAS_PROJECT_ID" }
+    }
+  }
+}
