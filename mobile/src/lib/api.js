@@ -34,6 +34,12 @@ async function call(path, { method = 'GET', body } = {}) {
   return { status: res.status, data };
 }
 
+/**
+ * The vault. Metadata only over this call — the bytes are fetched and
+ * decrypted separately, on device, with a key the server never sees.
+ */
+export const vaultList = () => call('/api/vault');
+
 /** Free: the money figure and the shape. No scheme names come back unentitled. */
 export const check = (profile) => call('/api/check', { method: 'POST', body: profile });
 
