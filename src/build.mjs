@@ -1011,10 +1011,12 @@ function apiPage() {
 
 function pricingPage() {
   const startupCount = STARTUP_ALL.length;
+  const totalProgrammes = STATS.total + startupCount;
 
-  const tier = (t) => `<div class="card reveal" data-delay="${t.delay}"${t.featured ? ' style="border-radius:1.25rem"' : ''}>
+  const tier = (t) => `<div class="card reveal" data-delay="${t.delay}">
     <span class="eyebrow${t.featured ? ' eyebrow-accent' : ''}">${t.eyebrow}</span>
-    <div class="figure-sm">${t.price}${t.per ? `<span style="font-size:.95rem;color:var(--ink-4);font-family:var(--font-body)">${t.per}</span>` : ''}</div>
+    <div class="figure-sm">${t.price}${t.per ? `<span style="font-size:.9rem;color:var(--ink-4);font-family:var(--font-body)">${t.per}</span>` : ''}</div>
+    ${t.second ? `<p class="small" style="margin:-.3rem 0 .6rem;color:var(--ink-4)">${t.second}</p>` : ''}
     <p class="small">${t.blurb}</p>
     <ul style="margin:1.2rem 0 0;padding-left:1.1rem">
       ${t.features.map((f) => `<li class="small" style="margin-bottom:.42rem">${f}</li>`).join('')}
@@ -1030,23 +1032,24 @@ ${disclaimerBar(TR)}
   <span class="eyebrow eyebrow-accent">Pricing</span>
   <h1 style="max-width:15ch">Finding out is free. <em class="serif-italic">Always.</em></h1>
   <p class="lede" style="max-width:54ch">You never pay to learn the number. You pay when you want the
-  schemes behind it, the paperwork done, and the deadlines watched.</p>
+  programmes behind it, the paperwork done, and the deadlines watched.</p>
 
   <div class="grid grid-4" style="margin-top:3rem;align-items:stretch">
     ${tier({
-      delay: 0, eyebrow: 'Free', price: '£0', per: ' forever',
+      delay: 0, eyebrow: 'Free', price: '€0', per: ' forever',
       blurb: 'The number, and enough of the shape to know whether it is worth your time.',
       features: [
         'How much you are owed, per year',
         'How many programmes it comes from',
         'How many pay out automatically',
-        `All ${nf(STATS.total + startupCount)} programme pages, with sources`,
+        `All ${nf(totalProgrammes)} programme pages, with sources`,
         'No account, nothing stored',
       ],
       href: `${LB()}/check/`, cta: 'Check your total',
     })}
     ${tier({
-      delay: 110, eyebrow: 'Personal', price: '£4.99', per: '/month', featured: true,
+      delay: 110, eyebrow: 'Personal', price: '€50', per: '/year', featured: true,
+      second: 'or €7/month — the annual plan saves €34',
       blurb: 'For households claiming what they are entitled to.',
       features: [
         '<strong>Which programmes</strong> you specifically qualify for',
@@ -1054,13 +1057,14 @@ ${disclaimerBar(TR)}
         '<strong>A prepared application per claim</strong>',
         'Encrypted document vault, reused across claims',
         'Deadline reminders in your calendar',
-        'Available in the mobile app',
+        'The Android and iOS app',
       ],
       href: `${LB()}/check/`, cta: 'Start with the free check',
-      note: 'Cancel in two clicks. Same price whether you are owed nothing or £9,000.',
+      note: 'Cancel any time. Same price whether you are owed nothing or €9,000.',
     })}
     ${tier({
-      delay: 220, eyebrow: 'Business', price: '£29', per: '/month',
+      delay: 220, eyebrow: 'Business', price: '€49', per: '/month',
+      second: 'or €490/year',
       blurb: 'For founders and small teams chasing grants.',
       features: [
         `All ${nf(startupCount)} startup programmes, ranked by what you can win`,
@@ -1073,7 +1077,8 @@ ${disclaimerBar(TR)}
       href: `${LB()}/startups/`, cta: 'Find your grants',
     })}
     ${tier({
-      delay: 330, eyebrow: 'Enterprise', price: 'Custom', per: '',
+      delay: 330, eyebrow: 'Enterprise', price: 'From €249', per: '/month',
+      second: 'billed annually · unlimited seats',
       blurb: 'For accelerators, funds, universities and public bodies managing many applicants.',
       features: [
         '<strong>Team dashboard</strong> with pipeline and stages',
@@ -1082,13 +1087,21 @@ ${disclaimerBar(TR)}
         'Bulk matching and CSV export',
         'API access and webhooks',
         'SSO, audit log, data residency',
+        'Named support and onboarding',
       ],
       href: `${LB()}/enterprise/`, cta: 'See the dashboard',
       note: 'Web only — the dashboard is not in the mobile app.',
     })}
   </div>
 
-  <div class="grid grid-2" style="margin-top:2.4rem;align-items:stretch">
+  <div class="callout" style="margin-top:2.4rem">
+    <p><strong>Why enterprise is not a slightly bigger Business plan.</strong> One founder checking one
+    company is a search. An accelerator running forty companies against ${nf(startupCount)} programmes,
+    tracking who applied for what, watching every deadline and keeping a de minimis ledger per portfolio
+    company is a different product with a support obligation attached. It is priced as one.</p>
+  </div>
+
+  <div class="grid grid-2" style="margin-top:1.4rem;align-items:stretch">
     <div class="card reveal">
       <span class="eyebrow">Included on every paid plan</span>
       <h2 style="font-size:1.3rem;margin-top:.4rem">A place to keep the paperwork</h2>
@@ -1105,7 +1118,7 @@ ${disclaimerBar(TR)}
     </div>
   </div>
 
-  <div class="callout callout--sage" style="margin-top:2.4rem">
+  <div class="callout callout--sage" style="margin-top:1.4rem">
     <p><strong>One flat price. Never a cut of what you get.</strong> No success fee, no commission, no
     per-claim charge. That is a deliberate limit on us: the moment a service takes a share of someone's
     benefits it stops being a tool and becomes a middleman, and in several countries that is exactly what
@@ -1123,7 +1136,7 @@ ${disclaimerBar(TR)}
   return layout({
     base: BASE, linkBase: LB(), lang: L, tr: TR, altLangs: ALT,
     title: 'Pricing — free to find out, paid to claim',
-    description: `Free forever to see how much you are owed. Personal, business and enterprise plans unlock which of ${nf(STATS.total + startupCount)} programmes you qualify for, the prepared paperwork and deadline alerts.`,
+    description: `Free forever to see how much you are owed. Personal €50/year, Business €49/month, Enterprise from €249/month for portfolio matching across ${nf(totalProgrammes)} programmes.`,
     canonical: `${SITE_URL}${L === 'en' ? '' : '/' + L}/pricing/`,
     body,
   });
@@ -1238,6 +1251,73 @@ function webManifest() {
       { name: 'Check what I am owed', url: `${BASE}/app/#check` },
       { name: 'Deadlines', url: `${BASE}/app/#deadlines` },
     ],
+  });
+}
+
+
+/** /privacy/ — both stores refuse a listing without a reachable policy URL. */
+function privacyPage() {
+  const body = `
+${disclaimerBar(TR)}
+<section class="section-tight shell" style="max-width:44rem">
+  ${breadcrumbs([{ label: TR('backHome'), href: `${LB()}/` }, { label: 'Privacy' }])}
+  <span class="eyebrow eyebrow-accent">Privacy</span>
+  <h1 style="max-width:18ch">What we know about you, which is almost nothing.</h1>
+  <p class="lede">Last updated 14 August 2026.</p>
+
+  <div class="callout callout--sage" style="margin-top:1.6rem">
+    <p><strong>The short version.</strong> The eligibility check runs on your device. Your answers are not
+    sent to us and we cannot see them. If you create an account we store your email address. If you use the
+    document vault, your files are encrypted on your device before upload and we cannot open them.</p>
+  </div>
+
+  <h2 style="margin-top:2.4rem">The free check</h2>
+  <p>When you answer the questions, the matching happens in your browser or in the app, against data already
+  downloaded to your device. Your country, age, income band, household and housing answers are stored on
+  your device only. They are never transmitted to us. You can erase them at any time from Settings, and
+  clearing your browser data or uninstalling the app removes them completely.</p>
+
+  <h2 style="margin-top:2rem">If you create an account</h2>
+  <p>We store your email address, to sign you in and to send the magic link. We do not use passwords. If you
+  subscribe, our payment processor (Stripe) holds your card details — we never see or store them. We keep a
+  record of your subscription status so we know what to show you.</p>
+
+  <h2 style="margin-top:2rem">The document vault</h2>
+  <p>Documents are encrypted on your device with a key derived from your passphrase, before anything leaves
+  it. We receive ciphertext, a coarse type label such as "proof of income", a file size and two dates. We
+  deliberately do not store filenames, because a filename can reveal exactly what the encryption is there to
+  protect. <strong>We cannot decrypt your documents.</strong> Neither can anyone who obtains our database and
+  our storage. If you forget your passphrase, they are unrecoverable — that is the cost of the guarantee.</p>
+
+  <h2 style="margin-top:2rem">What we do not collect</h2>
+  <p>No advertising identifiers. No location. No contacts, photos or messages. No cross-site tracking, and no
+  third-party analytics or advertising SDKs in the app. We do not sell or share personal data with anyone,
+  and there is no category of data we would sell.</p>
+
+  <h2 style="margin-top:2rem">Notifications</h2>
+  <p>Deadline reminders are scheduled locally on your device. There is no push server and no message about
+  you leaves your phone.</p>
+
+  <h2 style="margin-top:2rem">Your rights</h2>
+  <p>Under the GDPR and equivalent laws you can ask for a copy of your data, correct it, or have it deleted.
+  Account deletion is available in the app and on the web and removes your email, subscription record and all
+  stored documents. Write to <a class="link-underline" href="mailto:privacy@unlistedgrants.com">privacy@unlistedgrants.com</a>
+  and we will respond within 30 days.</p>
+
+  <h2 style="margin-top:2rem">Children</h2>
+  <p>The service is not directed at children under 13 and we do not knowingly collect their data.</p>
+
+  <h2 style="margin-top:2rem">Changes</h2>
+  <p>If this policy changes materially we will say so on this page and, for account holders, by email. The
+  date at the top always reflects the current version.</p>
+</section>`;
+
+  return layout({
+    base: BASE, linkBase: LB(), lang: L, tr: TR, altLangs: ALT,
+    title: 'Privacy',
+    description: 'The eligibility check runs on your device. Your answers are never sent to us, and documents are encrypted before they leave your phone.',
+    canonical: `${SITE_URL}${L === 'en' ? '' : '/' + L}/privacy/`,
+    body,
   });
 }
 
@@ -1760,6 +1840,8 @@ function buildLanguage(lang) {
   page(`${pre}pricing/index.html`, pricingPage());
   ALT = altFor('/enterprise/');
   page(`${pre}enterprise/index.html`, enterprisePage());
+  ALT = altFor('/privacy/');
+  page(`${pre}privacy/index.html`, privacyPage());
 
   for (const aud of AUDIENCES) {
     ALT = altFor(`/for/${aud.id}/`);
@@ -1837,10 +1919,16 @@ write(
 );
 write('api/v1/stats.json', JSON.stringify(STATS));
 
+/* GitHub Pages reads the custom domain from a CNAME file in the published
+   artifact. Without it, every deploy silently reverts the site to the
+   github.io subdomain and breaks the canonical URLs. */
+write('CNAME', 'unlistedgrants.com\n');
+
 /* --- The app ---------------------------------------------------- */
 write('app/index.html', appShell());
 write('app/app.css', fs.readFileSync(path.join(SRC, 'pwa/app.css'), 'utf8'));
 write('app/app.js', fs.readFileSync(path.join(SRC, 'pwa/app.js'), 'utf8'));
+write('app/native.js', fs.readFileSync(path.join(SRC, 'pwa/native.js'), 'utf8'));
 /* The service worker must sit at the root to claim the whole scope. */
 write('sw.js', fs.readFileSync(path.join(SRC, 'pwa/sw.js'), 'utf8'));
 write('manifest.webmanifest', webManifest());

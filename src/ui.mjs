@@ -138,6 +138,7 @@ ${body}
       <div>
         <h4>Trust</h4>
         <ul>
+          <li><a href="${LB}/privacy/">Privacy</a></li>
           <li><a href="${LB}/methodology/#limits">Known limitations</a></li>
           <li><a href="${LB}/methodology/#verification">Verification status</a></li>
           <li><a href="https://github.com/adityashashidhar55-cpu/unclaimed">Source on GitHub</a></li>
