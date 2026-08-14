@@ -326,74 +326,189 @@ async function handleConsent(request, env) {
 }
 
 /* ------------------------------------------------------------------ */
-/* Auth — magic link, no passwords                                     */
+/* Auth — email + one-time code, no passwords                          */
 /* ------------------------------------------------------------------ */
 
-async function handleAuthRequest(request, env) {
-  const { email } = await request.json().catch(() => ({}));
-  if (!email || !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)) return bad('valid email required');
+const CODE_TTL_MS = 10 * 60 * 1000;
+const MAX_ATTEMPTS = 5;
+const MAX_SENDS_PER_HOUR = { email: 5, ip: 20 };
 
-  const token = crypto.randomUUID().replace(/-/g, '') + crypto.randomUUID().replace(/-/g, '');
-  const hash = await sha256Hex(token);
-  const expires = Date.now() + 15 * 60 * 1000;
-
-  await env.DB.prepare('INSERT INTO login_tokens (token_hash, email, expires_at) VALUES (?, ?, ?)')
-    .bind(hash, email.toLowerCase(), expires)
-    .run();
-
-  const link = `${env.APP_ORIGIN}/auth/callback?token=${token}`;
-
-  /* Delivery is intentionally pluggable. Wire MailChannels, Resend or Postmark
-     here; in dev the link is returned so the flow is testable without email. */
-  if (env.RESEND_API_KEY) {
-    await fetch('https://api.resend.com/emails', {
-      method: 'POST',
-      headers: { authorization: `Bearer ${env.RESEND_API_KEY}`, 'content-type': 'application/json' },
-      body: JSON.stringify({
-        from: env.MAIL_FROM || 'Unclaimed <hello@unclaimed.app>',
-        to: email,
-        subject: 'Your sign-in link',
-        text: `Sign in to Unclaimed:\n\n${link}\n\nThis link expires in 15 minutes. If you didn't ask for it, ignore this email.`,
-      }),
-    });
-    return json({ ok: true, sent: true });
-  }
-
-  return json({ ok: true, sent: false, dev_link: link });
+/**
+ * Six digits, uniformly distributed.
+ *
+ * `Math.random()` is not acceptable here and `% 1000000` on a 32-bit draw is
+ * only very slightly biased — but this is the single secret standing between a
+ * stranger and someone's benefits profile, so it is drawn from the CSPRNG and
+ * rejection-sampled rather than folded.
+ */
+function sixDigitCode() {
+  const LIMIT = 4294000000; // largest multiple of 1e6 below 2^32
+  const buf = new Uint32Array(1);
+  let n;
+  do {
+    crypto.getRandomValues(buf);
+    n = buf[0];
+  } while (n >= LIMIT);
+  return String(n % 1000000).padStart(6, '0');
 }
 
-async function handleAuthCallback(request, env) {
-  const token = new URL(request.url).searchParams.get('token');
-  if (!token) return bad('token required');
+/** Per-row salt: two identical codes must not produce identical hashes. */
+async function hashCode(code, salt) {
+  return sha256Hex(`${salt}:${code}`);
+}
 
-  const hash = await sha256Hex(token);
-  const row = await env.DB.prepare(
-    'SELECT email, expires_at, used_at FROM login_tokens WHERE token_hash = ?',
+/**
+ * Fixed-window counter. Coarse on purpose — the goal is to stop this endpoint
+ * being a free mail cannon aimed at arbitrary addresses, not to police a burst
+ * of three legitimate retries.
+ */
+async function underSendLimit(env, bucket, limit) {
+  const window = Math.floor(Date.now() / 3600000);
+  await env.DB.prepare(
+    `INSERT INTO send_log (bucket, window, count) VALUES (?, ?, 1)
+     ON CONFLICT(bucket, window) DO UPDATE SET count = count + 1`,
   )
-    .bind(hash)
+    .bind(bucket, window)
+    .run();
+  const row = await env.DB.prepare('SELECT count FROM send_log WHERE bucket = ? AND window = ?')
+    .bind(bucket, window)
     .first();
+  return (row?.count ?? 0) <= limit;
+}
 
-  if (!row || row.used_at || row.expires_at < Date.now()) return bad('link expired or already used', 401);
+async function sendCodeEmail(env, email, code) {
+  if (!env.RESEND_API_KEY) return false;
+  const res = await fetch('https://api.resend.com/emails', {
+    method: 'POST',
+    headers: { authorization: `Bearer ${env.RESEND_API_KEY}`, 'content-type': 'application/json' },
+    body: JSON.stringify({
+      from: env.MAIL_FROM || 'Unlisted Grants <hello@unlistedgrants.com>',
+      to: email,
+      subject: `${code} is your sign-in code`,
+      text:
+        `Your Unlisted Grants sign-in code is:\n\n    ${code}\n\n` +
+        `It expires in 10 minutes and can be used once.\n\n` +
+        `If you did not ask to sign in, ignore this email — nobody can get in without this code.`,
+    }),
+  });
+  return res.ok;
+}
 
-  await env.DB.prepare('UPDATE login_tokens SET used_at = ? WHERE token_hash = ?').bind(Date.now(), hash).run();
+/**
+ * POST /auth/request — { email, account_type? } → sends a code.
+ *
+ * Always answers the same way whether or not the address has an account.
+ * Telling an anonymous caller "no such user" turns this into a free membership
+ * oracle, and for a benefits product the membership list is itself sensitive.
+ */
+async function handleAuthRequest(request, env) {
+  const body = await request.json().catch(() => ({}));
+  const email = String(body.email ?? '').trim().toLowerCase();
+  const accountType = body.account_type === 'business' ? 'business' : 'individual';
 
-  let user = await env.DB.prepare('SELECT id FROM users WHERE email = ?').bind(row.email).first();
-  if (!user) {
-    const id = crypto.randomUUID();
-    await env.DB.prepare('INSERT INTO users (id, email, created_at) VALUES (?, ?, ?)')
-      .bind(id, row.email, Date.now())
-      .run();
-    user = { id };
+  if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)) return bad('valid email required');
+
+  const ip = request.headers.get('cf-connecting-ip') ?? 'unknown';
+  const okEmail = await underSendLimit(env, `email:${email}`, MAX_SENDS_PER_HOUR.email);
+  const okIp = await underSendLimit(env, `ip:${ip}`, MAX_SENDS_PER_HOUR.ip);
+  if (!okEmail || !okIp) {
+    return json({ error: 'too_many_requests', message: 'Too many codes requested. Try again in an hour.' }, 429);
   }
 
-  const cookie = await signSession(env, { uid: user.id, email: row.email, exp: Date.now() + 30 * 864e5 });
-  return new Response(null, {
-    status: 302,
-    headers: {
-      location: `${env.APP_ORIGIN}/account/`,
+  /* Supersede any code still outstanding for this address, so a second request
+     cannot leave two valid codes alive at once. */
+  await env.DB.prepare('UPDATE login_codes SET consumed_at = ? WHERE email = ? AND consumed_at IS NULL')
+    .bind(Date.now(), email)
+    .run();
+
+  const code = sixDigitCode();
+  const salt = crypto.randomUUID();
+  await env.DB.prepare(
+    `INSERT INTO login_codes (id, email, code_hash, salt, expires_at, requested_ip, created_at)
+     VALUES (?, ?, ?, ?, ?, ?, ?)`,
+  )
+    .bind(crypto.randomUUID(), email, await hashCode(code, salt), salt, Date.now() + CODE_TTL_MS, ip, Date.now())
+    .run();
+
+  const sent = await sendCodeEmail(env, email, code);
+
+  /* With no mail provider configured the code comes back in the response so
+     the flow is testable end to end. Guarded by an explicit env flag: shipping
+     this to production would hand every account away. */
+  const devEcho = !sent && env.ALLOW_DEV_CODE_ECHO === 'true' ? { dev_code: code } : {};
+  return json({ ok: true, sent, account_type: accountType, expires_in: CODE_TTL_MS / 1000, ...devEcho });
+}
+
+/**
+ * POST /auth/verify — { email, code } → session cookie.
+ *
+ * Attempts are counted on the stored row, not in memory: a Worker isolate is
+ * not a place to keep state, and an attacker who can spread six-digit guesses
+ * across isolates would otherwise face no limit at all.
+ */
+async function handleAuthVerify(request, env) {
+  const body = await request.json().catch(() => ({}));
+  const email = String(body.email ?? '').trim().toLowerCase();
+  const code = String(body.code ?? '').trim();
+  const accountType = body.account_type === 'business' ? 'business' : 'individual';
+
+  if (!/^\d{6}$/.test(code)) return bad('six-digit code required');
+
+  const row = await env.DB.prepare(
+    `SELECT id, code_hash, salt, expires_at, attempts, consumed_at
+       FROM login_codes WHERE email = ? ORDER BY created_at DESC LIMIT 1`,
+  )
+    .bind(email)
+    .first();
+
+  const invalid = () => json({ error: 'invalid_code', message: 'That code is wrong or has expired.' }, 401);
+
+  if (!row || row.consumed_at || row.expires_at < Date.now()) return invalid();
+  if (row.attempts >= MAX_ATTEMPTS) {
+    await env.DB.prepare('UPDATE login_codes SET consumed_at = ? WHERE id = ?').bind(Date.now(), row.id).run();
+    return json({ error: 'too_many_attempts', message: 'Too many wrong codes. Request a new one.' }, 429);
+  }
+
+  await env.DB.prepare('UPDATE login_codes SET attempts = attempts + 1 WHERE id = ?').bind(row.id).run();
+
+  const expected = await hashCode(code, row.salt);
+  if (!timingSafeEqual(expected, row.code_hash)) return invalid();
+
+  await env.DB.prepare('UPDATE login_codes SET consumed_at = ? WHERE id = ?').bind(Date.now(), row.id).run();
+
+  const now = Date.now();
+  let user = await env.DB.prepare('SELECT id, account_type FROM users WHERE email = ?').bind(email).first();
+  if (!user) {
+    const id = crypto.randomUUID();
+    await env.DB.prepare(
+      'INSERT INTO users (id, email, account_type, email_verified_at, created_at) VALUES (?, ?, ?, ?, ?)',
+    )
+      .bind(id, email, accountType, now, now)
+      .run();
+    user = { id, account_type: accountType };
+  } else {
+    /* Reaching a verified state is one-way. An existing individual who signs
+       in through the business door is not silently converted — that would move
+       them onto a different price. */
+    await env.DB.prepare('UPDATE users SET email_verified_at = COALESCE(email_verified_at, ?) WHERE id = ?')
+      .bind(now, user.id)
+      .run();
+  }
+
+  const cookie = await signSession(env, {
+    uid: user.id,
+    email,
+    typ: user.account_type,
+    exp: now + 30 * 864e5,
+  });
+
+  return json(
+    { ok: true, user: { id: user.id, email, account_type: user.account_type }, verified: true },
+    200,
+    {
       'set-cookie': `ua_session=${cookie}; Path=/; HttpOnly; Secure; SameSite=Lax; Max-Age=${30 * 86400}`,
     },
-  });
+  );
 }
 
 /* ------------------------------------------------------------------ */
@@ -753,20 +868,55 @@ async function handleCheckout(request, env) {
     );
   }
 
+  /* Three products, one endpoint. The price id is chosen from a fixed table
+     rather than taken from the request: a client-supplied price is a client
+     that can subscribe itself to a price of its choosing. */
+  const PLANS = {
+    personal_monthly: { price: env.STRIPE_PRICE_PERSONAL_MONTHLY, seats: false, account: 'individual' },
+    personal_annual: { price: env.STRIPE_PRICE_PERSONAL_ANNUAL, seats: false, account: 'individual' },
+    business_monthly: { price: env.STRIPE_PRICE_BUSINESS_MONTHLY, seats: true, account: 'business' },
+  };
+
+  const planKey = String(body.plan ?? 'personal_annual');
+  const plan = PLANS[planKey];
+  if (!plan) return bad(`unknown plan: ${planKey}`);
+  if (!plan.price || plan.price.startsWith('price_REPLACE')) {
+    return json(
+      {
+        error: 'price_not_configured',
+        message: `No Stripe price is configured for ${planKey}. Run scripts/stripe-setup.mjs and set the secret.`,
+      },
+      503,
+    );
+  }
+
+  /* Seats are billed per unit on the business plan. Clamped rather than
+     trusted: quantity comes over the wire, and an unbounded one is an
+     unbounded invoice pointed at whoever's card is on file. */
+  const seats = plan.seats ? Math.min(Math.max(parseInt(body.seats, 10) || 1, 1), 500) : 1;
+
   const cs = await stripeCall(env, 'checkout/sessions', {
     mode: 'subscription',
-    'line_items[0][price]': env.STRIPE_PRICE_MONTHLY,
-    'line_items[0][quantity]': '1',
+    'line_items[0][price]': plan.price,
+    'line_items[0][quantity]': String(seats),
+    ...(plan.seats ? { 'line_items[0][adjustable_quantity][enabled]': 'true' } : {}),
     success_url: `${env.APP_ORIGIN}/account/?welcome=1&session_id={CHECKOUT_SESSION_ID}`,
     cancel_url: `${env.APP_ORIGIN}/pricing/`,
     client_reference_id: session.uid,
     'metadata[user_id]': session.uid,
+    'metadata[plan]': planKey,
     customer_email: session.email,
     'subscription_data[metadata][user_id]': session.uid,
+    'subscription_data[metadata][plan]': planKey,
+    /* A business buying software wants an invoice with their VAT number on it,
+       and collecting it after the fact means reissuing every invoice. */
+    ...(plan.seats
+      ? { 'tax_id_collection[enabled]': 'true', 'customer_update[name]': 'auto', billing_address_collection: 'required' }
+      : {}),
     allow_promotion_codes: 'true',
   });
 
-  return json({ url: cs.url });
+  return json({ url: cs.url, plan: planKey, seats });
 }
 
 /**
@@ -972,7 +1122,7 @@ export default {
       if (pathname === '/api/billing/checkout' && request.method === 'POST') return await handleCheckout(request, env);
       if (pathname === '/api/billing/portal' && request.method === 'POST') return await handlePortal(request, env);
       if (pathname === '/auth/request' && request.method === 'POST') return await handleAuthRequest(request, env);
-      if (pathname === '/auth/callback') return await handleAuthCallback(request, env);
+      if (pathname === '/auth/verify' && request.method === 'POST') return await handleAuthVerify(request, env);
       if (pathname === '/auth/signout') {
         return new Response(null, {
           status: 302,
