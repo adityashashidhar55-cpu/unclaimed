@@ -1,6 +1,6 @@
 {
   "$schema": "node_modules/wrangler/config-schema.json",
-  "name": "unlistedgrants",
+  "name": "unclaimedgrant",
   "main": "./worker/index.js",
   "compatibility_date": "2026-08-14",
 
@@ -23,7 +23,7 @@
   "d1_databases": [
     {
       "binding": "DB",
-      "database_name": "unlistedgrants-prod",
+      "database_name": "unclaimedgrant-prod",
       "database_id": "REPLACE_AFTER_wrangler_d1_create",
       "migrations_dir": "./migrations"
     }
@@ -34,12 +34,12 @@
   "r2_buckets": [
     {
       "binding": "VAULT",
-      "bucket_name": "unlistedgrants-vault"
+      "bucket_name": "unclaimedgrant-vault"
     }
   ],
 
   "vars": {
-    "APP_ORIGIN": "https://unlistedgrants.com",
+    "APP_ORIGIN": "https://unclaimedgrant.com",
 
     // Price ids are public identifiers, not secrets — they appear in the
     // checkout URL either way. Created by `node scripts/stripe-setup.mjs`,
@@ -50,8 +50,8 @@
   },
 
   "routes": [
-    { "pattern": "unlistedgrants.com", "custom_domain": true },
-    { "pattern": "www.unlistedgrants.com", "custom_domain": true }
+    { "pattern": "unclaimedgrant.com", "custom_domain": true },
+    { "pattern": "www.unclaimedgrant.com", "custom_domain": true }
   ]
 
   // Secrets (never in this file):
@@ -61,5 +61,5 @@
   //   wrangler secret put RESEND_API_KEY        (optional, for magic links)
   //
   // Bucket:
-  //   wrangler r2 bucket create unlistedgrants-vault
+  //   wrangler r2 bucket create unclaimedgrant-vault
 }
