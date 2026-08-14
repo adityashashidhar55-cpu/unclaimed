@@ -5,7 +5,7 @@ import { match } from '../src/engine/matcher.js';
 import { buildPackage, buildPlan, recordConsent, mailtoLink, fieldLabel } from '../packages/autoapply/index.js';
 import {
   policyFor, mayCharge, mayChargeFor, mayChargeForAssistance,
-  maySubmitOnBehalf, mayAssist, PRODUCT, INVARIANTS,
+  maySubmitOnBehalf, mayAssist, PRODUCT, PRICING, INVARIANTS,
 } from '../packages/policy/index.js';
 
 let pass = 0, fail = 0;
@@ -27,23 +27,30 @@ const base = {
 };
 
 console.log('\nJurisdiction policy');
-ok('France: the database and calculator ARE sellable', mayChargeFor('fr', PRODUCT.DISCOVERY));
-ok('France: preparing the claim for a fee is not (L554-2)', !mayChargeForAssistance('fr'));
-ok('Germany: discovery sellable after LexFox', mayChargeFor('de', PRODUCT.DISCOVERY));
-ok('Germany: paid assistance withheld pending counsel (RDG)', !mayChargeForAssistance('de'));
-ok('Italy: discovery sellable — 152/2001 reserves the intermediary, not publishing',
-   mayChargeFor('it', PRODUCT.DISCOVERY));
-ok('Italy: assistance refused entirely (patronato)', !mayAssist('it') && !mayChargeForAssistance('it'));
-ok('Spain: both products sellable, mandated submit permitted',
-   mayChargeForAssistance('es') && maySubmitOnBehalf('es'));
-ok('UK: both sellable, submit not', mayChargeForAssistance('gb') && !maySubmitOnBehalf('gb'));
-ok('Subscription is sellable in every researched country',
-   ['fr','de','it','es','pt','gb','us','in'].every(mayCharge));
-ok('Unknown country falls back to cautious default', !maySubmitOnBehalf('zz') && mayAssist('zz'));
+const RESEARCHED = ['fr', 'de', 'it', 'es', 'pt', 'gb', 'us', 'in'];
+
+ok('every researched country sells the database', RESEARCHED.every(c => mayChargeFor(c, PRODUCT.DISCOVERY)));
+ok('every researched country sells application help', RESEARCHED.every(mayChargeForAssistance));
+ok('France included — L554-2 targets intermediaries, not paid admin help', mayChargeForAssistance('fr'));
+ok('Germany included — mechanical form completion is not the reserved act', mayChargeForAssistance('de'));
+ok('Italy included — we never occupy the patronato intermediary role', mayChargeForAssistance('it'));
+ok('unknown country sells both too', mayCharge('zz') && mayChargeForAssistance('zz'));
+ok('mayChargeFor defaults to discovery', mayChargeFor('fr') === mayChargeFor('fr', PRODUCT.DISCOVERY));
+
+ok('nobody may submit on the user\'s behalf except Spain',
+   RESEARCHED.filter(maySubmitOnBehalf).join() === 'es');
+ok('assistance product exists in every researched country', RESEARCHED.every(mayAssist));
+ok('unknown country still refuses mandated submit', !maySubmitOnBehalf('zz'));
 ok('France policy cites L554-2', policyFor('fr').basis.some(b => b.includes('L554-2')));
 ok('Germany policy cites the LexFox counterweight',
    policyFor('de').basis.some(b => b.includes('LexFox')));
-ok('mayChargeFor defaults to discovery', mayChargeFor('fr') === mayChargeFor('fr', PRODUCT.DISCOVERY));
+
+console.log('\nPricing shape — the actual exposure');
+ok('flat subscription only', PRICING.FLAT_SUBSCRIPTION_ONLY === true);
+ok('no contingent fee', PRICING.NO_CONTINGENT_FEE === true);
+ok('no per-benefit fee', PRICING.NO_PER_BENEFIT_FEE === true);
+ok('no procurement claims', PRICING.NO_PROCUREMENT_CLAIMS === true);
+ok('pricing constraints are frozen', Object.isFrozen(PRICING));
 
 console.log('\nInvariants');
 ok('never holds government credentials', INVARIANTS.NEVER_HOLD_GOV_CREDENTIALS === true);
@@ -70,12 +77,14 @@ ok('missing fields are reported, not invented', Array.isArray(pkg.fields_missing
 const missingKeys = pkg.fields_missing;
 ok('no missing field is silently filled', missingKeys.every(k => !pkg.fields[k]));
 
-console.log('\nItaly is blocked, not silently served');
+console.log('\nItaly is served, but never as the intermediary');
 const it = load('it'), itEntry = man.countries.find(c => c.slug === 'it');
 const rIt = match({ ...base, country_code: 'IT' }, it, itEntry);
 const itPkg = buildPackage({ profile: base, programme: rIt.eligible[0].programme, entry: itEntry, lang: 'it' });
-ok('Italy package carries a blocker', itPkg.blockers.length > 0);
-ok('blocker explains the reservation', /reserved/i.test(itPkg.blockers[0].message));
+ok('Italy package is produced', itPkg.blockers.length === 0);
+ok('Italy: company may not submit — that is the patronato role',
+   itPkg.submit.company_may_submit === false);
+ok('Italy: the user is told to act', itPkg.submit.requires_user_action === true);
 
 console.log('\nSpain permits mandated submit');
 const es = load('es'), esEntry = man.countries.find(c => c.slug === 'es');
