@@ -29,7 +29,7 @@ jobs:
           # path prefix. Changing this back to /unclaimed would break every
           # absolute URL, the service worker scope and the manifest at once.
           SITE_BASE: ''
-          SITE_ORIGIN: https://unlistedgrants.com
+          SITE_ORIGIN: https://unclaimedgrant.com
         run: node src/build.mjs
       - name: Verify build
         run: node scripts/verify.mjs

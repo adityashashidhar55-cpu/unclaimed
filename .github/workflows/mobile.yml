@@ -43,7 +43,7 @@ jobs:
       - name: Build the site (the app bundles from it)
         env:
           SITE_BASE: ''
-          SITE_ORIGIN: https://unlistedgrants.com
+          SITE_ORIGIN: https://unclaimedgrant.com
         run: node src/build.mjs
       - name: Verify
         run: node scripts/verify.mjs
@@ -198,7 +198,7 @@ jobs:
         uses: r0adkll/upload-google-play@v1
         with:
           serviceAccountJsonPlainText: ${{ secrets.PLAY_SERVICE_ACCOUNT_JSON }}
-          packageName: com.unlistedgrants.app
+          packageName: com.unclaimedgrant.app
           releaseFiles: native/android/app/build/outputs/bundle/release/app-release.aab
           track: ${{ inputs.track || 'internal' }}
           status: completed
