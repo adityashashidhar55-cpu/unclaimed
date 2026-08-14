@@ -444,7 +444,10 @@ footer.site a:hover { color: #fff; opacity: 1; }
 /* which would drag the whole app layer onto every marketing page.     */
 /* ------------------------------------------------------------------ */
 
-.field {
+/* Scoped to real form controls: the wizard also uses .field on the DIV that
+   wraps a label and its input, and styling that as an input box produced a
+   box-inside-a-box with the label sitting inside the field. */
+input.field, select.field, textarea.field {
   width: 100%; min-height: 50px; border-radius: .9rem; padding: .8rem 1rem;
   font-family: var(--font-body); font-size: 1rem; color: #fff;
   background: rgba(255, 255, 255, 0.02);
@@ -452,21 +455,42 @@ footer.site a:hover { color: #fff; opacity: 1; }
   transition: box-shadow .25s ease, background .25s ease;
   -webkit-appearance: none; appearance: none;
 }
-.field::placeholder { color: rgba(255, 255, 255, 0.28); }
-.field:focus {
+
+/* The wrapper form: a label above its control. */
+.field:not(input):not(select):not(textarea) {
+  display: block; margin-bottom: 1.4rem;
+}
+.field > label {
+  display: block; margin-bottom: .4rem;
+  font-size: .82rem; letter-spacing: .04em; color: var(--ink-3);
+}
+.field > input, .field > select, .field > textarea {
+  width: 100%; min-height: 50px; border-radius: .9rem; padding: .8rem 1rem;
+  font-family: var(--font-body); font-size: 1rem; color: #fff;
+  background: rgba(255, 255, 255, 0.02);
+  border: 0; box-shadow: inset 0 0 0 1px var(--line-2);
+  -webkit-appearance: none; appearance: none;
+}
+.field > input::placeholder { color: rgba(255,255,255,.28); }
+.field > input:focus, .field > select:focus {
+  outline: none; background: rgba(255,255,255,.04);
+  box-shadow: inset 0 0 0 1px rgba(255,255,255,.45);
+}
+input.field::placeholder, textarea.field::placeholder { color: rgba(255, 255, 255, 0.28); }
+input.field:focus, select.field:focus, textarea.field:focus {
   outline: none;
   background: rgba(255, 255, 255, 0.04);
   box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.45);
 }
 /* Chrome paints a blue-white block over autofilled inputs; the inset
    shadow is the only way to repaint it without !important on colour. */
-.field:-webkit-autofill,
-.field:-webkit-autofill:focus {
+input.field:-webkit-autofill,
+input.field:-webkit-autofill:focus {
   -webkit-text-fill-color: #fff;
   -webkit-box-shadow: inset 0 0 0 1px var(--line-2), inset 0 0 0 100px #0a0a0a;
   caret-color: #fff;
 }
-.field option { background: #232733; }
+select.field option, .field select option { background: #232733; }
 
 /* An honest failure state, styled like the rest of the system. */
 .notice {
@@ -480,4 +504,158 @@ footer.site a:hover { color: #fff; opacity: 1; }
   body::before, body::after { display: none; }
   body { background: #fff; color: #000; }
   .masthead, footer.site, .btn { display: none; }
+}
+
+/* ==================================================================== */
+/* The eligibility check                                                */
+/*                                                                      */
+/* These classes had no rules at all. The wizard was rendering with      */
+/* default browser buttons on a dark page — which is why the country     */
+/* picker read as "Australia83 programmes" with the label and the count  */
+/* jammed together, and why filling the form felt like filling a form    */
+/* from 1998. Everything here is layout and spacing in the existing      */
+/* glass language; no new colours, no new components.                    */
+/* ==================================================================== */
+
+.wizard { max-width: 62rem; margin-inline: auto; }
+
+.step {
+  font-size: .82rem; letter-spacing: .04em; color: var(--ink-4);
+  margin-bottom: 1.6rem;
+}
+
+/* .q is the question HEADING in this wizard, not a wrapper. */
+h1.q, h2.q { margin: 0 0 .45rem; }
+div.q { margin-bottom: 2.4rem; }
+.q-why, .hint { color: var(--ink-3); margin: 0 0 1.6rem; max-width: 62ch; }
+
+/* --- options ------------------------------------------------------- */
+
+.opts {
+  display: grid; gap: .75rem; margin: 0 0 1.6rem;
+  grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
+}
+/* A short list of two- or three-word answers should not be forced into a
+   15rem grid — it leaves a shelf of empty space beside each one. */
+.opts--tight { grid-template-columns: repeat(auto-fill, minmax(9.5rem, 1fr)); }
+
+.opt {
+  position: relative; isolation: isolate;
+  display: flex; align-items: center; gap: .7rem;
+  width: 100%; min-height: 60px;
+  padding: .85rem 1.05rem;
+  border: 0; border-radius: .95rem;
+  background: rgba(255, 255, 255, 0.035);
+  color: var(--ink); font-family: var(--font-body); font-size: 1rem;
+  text-align: left; cursor: pointer;
+  transition: background .22s ease, transform .22s ease;
+}
+.opt::before {
+  content: ''; position: absolute; inset: 0; border-radius: inherit; padding: 1px;
+  background: linear-gradient(140deg, rgba(255,255,255,.2), rgba(255,255,255,.05) 45%, rgba(255,255,255,.15));
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor; mask-composite: exclude; pointer-events: none;
+}
+.opt:hover { background: rgba(255, 255, 255, 0.07); }
+.opt:focus-visible { outline: 2px solid rgba(255,255,255,.6); outline-offset: 3px; }
+.opt[aria-pressed="true"] { background: #fff; color: #111; }
+.opt[aria-pressed="true"]::before { opacity: 0; }
+
+/* The label and its count were running together as one string. */
+.opt > span { display: flex; flex-direction: column; gap: .18rem; min-width: 0; }
+.opt__sub {
+  display: block; font-size: .8rem; line-height: 1.35;
+  color: var(--ink-4); font-variant-numeric: tabular-nums;
+}
+.opt[aria-pressed="true"] .opt__sub { color: rgba(0, 0, 0, .58); }
+
+/* The two-letter country code, set apart rather than glued to the name. */
+.opt__key {
+  flex: 0 0 auto; display: grid; place-items: center;
+  min-width: 2.1rem; height: 1.55rem; padding: 0 .4rem;
+  border-radius: .42rem; font-size: .74rem; letter-spacing: .06em;
+  background: rgba(255, 255, 255, 0.08); color: var(--ink-3);
+}
+.opt[aria-pressed="true"] .opt__key { background: rgba(0,0,0,.1); color: rgba(0,0,0,.6); }
+
+/* --- inputs and nav ------------------------------------------------ */
+
+.field-row { display: grid; gap: 1rem; grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr)); margin-bottom: 1.4rem; }
+
+.wizard-nav {
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 1rem; margin-top: 2.4rem; padding-top: 1.5rem;
+  border-top: 1px solid var(--line);
+  flex-wrap: wrap;
+}
+.wizard-nav .row { display: flex; gap: .6rem; align-items: center; }
+
+.progress-rail { display: flex; gap: .35rem; margin-bottom: 2rem; }
+.progress-rail i {
+  flex: 1; height: 3px; border-radius: 2px; background: rgba(255,255,255,.1);
+  transition: background .3s ease;
+}
+.progress-rail i.done { background: rgba(255,255,255,.42); }
+.progress-rail i.current { background: #fff; }
+
+/* --- results ------------------------------------------------------- */
+
+.result-hero { margin-bottom: 2.6rem; }
+.figure { font-family: var(--font-heading); font-size: clamp(2.6rem, 9vw, 5.5rem);
+          line-height: 1.02; margin: .6rem 0 0; }
+.figure-unit { color: var(--ink-3); max-width: 46ch; }
+
+.bucket { margin: 2.6rem 0; }
+.bucket__head {
+  display: flex; align-items: baseline; justify-content: space-between;
+  gap: 1rem; flex-wrap: wrap; margin-bottom: .9rem;
+}
+.bucket__head h2 { margin: 0; }
+.bucket__count { font-size: .85rem; color: var(--ink-4); }
+.bucket-list { display: grid; gap: .8rem; }
+
+.prog-card { position: relative; isolation: isolate; border-radius: 1rem; padding: 1.1rem 1.2rem;
+             background: rgba(255,255,255,.03); }
+.prog-card::before {
+  content: ''; position: absolute; inset: 0; border-radius: inherit; padding: 1px;
+  background: linear-gradient(140deg, rgba(255,255,255,.18), rgba(255,255,255,.04) 45%, rgba(255,255,255,.13));
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor; mask-composite: exclude; pointer-events: none;
+}
+.prog-card__head { display: flex; justify-content: space-between; gap: 1rem; align-items: flex-start; flex-wrap: wrap; }
+.prog-card__title { margin: 0; font-size: 1.08rem; }
+.prog-card__sub, .prog-card__meta { font-size: .84rem; color: var(--ink-4); margin: .25rem 0 0; }
+.prog-card__amount { text-align: right; white-space: nowrap; }
+.prog-card__value { font-family: var(--font-heading); font-size: 1.35rem; }
+
+.why { margin: .8rem 0 0; padding: .7rem .9rem; border-radius: .7rem; font-size: .87rem;
+       background: rgba(255,255,255,.03); color: var(--ink-3); }
+.why--fail { color: #ffc4b3; background: rgba(232,115,74,.1); }
+.why--ask  { color: #bfe9d6; background: rgba(127,209,174,.1); }
+.q-why { margin-top: .5rem; }
+
+.fold { margin-top: 2.6rem; }
+.fold > summary { cursor: pointer; color: var(--ink-3); padding: .6rem 0; }
+
+.locked-bucket { margin: 2.6rem 0; padding: 1.4rem; border-radius: 1.1rem;
+                 position: relative; isolation: isolate; background: rgba(255,255,255,.03); }
+.locked-bucket::before {
+  content: ''; position: absolute; inset: 0; border-radius: inherit; padding: 1px;
+  background: linear-gradient(140deg, rgba(255,255,255,.22), rgba(255,255,255,.05) 45%, rgba(255,255,255,.16));
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor; mask-composite: exclude; pointer-events: none;
+}
+.locked-bucket .btn { margin-right: .5rem; }
+
+.locked__rows { display: grid; gap: .5rem; margin: 1.1rem 0 1.3rem; }
+.locked__row { height: 3.4rem; border-radius: .8rem;
+  background: linear-gradient(90deg, rgba(255,255,255,.06), rgba(255,255,255,.025) 60%, rgba(255,255,255,.05)); }
+.locked__row:nth-child(2) { opacity: .72; }
+.locked__row:nth-child(3) { opacity: .48; }
+.locked__row:nth-child(4) { opacity: .26; }
+
+@media (max-width: 640px) {
+  .opts { grid-template-columns: 1fr; }
+  .wizard-nav { flex-direction: column-reverse; align-items: stretch; }
+  .wizard-nav .row { justify-content: space-between; }
 }
