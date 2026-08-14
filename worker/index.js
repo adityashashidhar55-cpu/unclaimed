@@ -20,6 +20,7 @@
 import { match } from '../src/engine/matcher.js';
 import { buildPlan, buildPackage, recordConsent } from '../packages/autoapply/index.js';
 import { policyFor, mayCharge, mayChargeFor, PRODUCT, PRICING } from '../packages/policy/index.js';
+import { DOC_TYPES, expiresAt, KDF_ITERATIONS } from '../packages/vault/index.js';
 
 const JSON_HEADERS = { 'content-type': 'application/json; charset=utf-8' };
 
@@ -249,7 +250,23 @@ async function handlePlan(request, env) {
   const entry = manifest.countries.find((c) => c.slug === cc);
 
   const result = match(profile, data, entry);
-  const plan = buildPlan({ profile, matches: result.eligible, entry, lang });
+
+  /* Metadata only — types and dates. Enough to say "you already have this",
+     which is all the plan needs; the bytes stay encrypted and untouched. */
+  const { results: holdings } = await env.DB.prepare(
+    'SELECT id, doc_type AS type, checksum, issued_at, created_at FROM vault_documents WHERE user_id = ?',
+  )
+    .bind(session.uid)
+    .all();
+
+  const plan = buildPlan({
+    profile,
+    matches: result.eligible,
+    entry,
+    lang,
+    holdings: holdings ?? [],
+    asOf: Date.now(),
+  });
 
   return json({
     country: entry.name,
@@ -394,6 +411,168 @@ async function stripeCall(env, path, params, method = 'POST') {
   const out = await res.json();
   if (!res.ok) throw new Error(out?.error?.message || 'stripe error');
   return out;
+}
+
+
+/* ------------------------------------------------------------------ */
+/* Vault — ciphertext in, ciphertext out                               */
+/* ------------------------------------------------------------------ */
+
+/**
+ * The Worker is deliberately dumb about documents. It stores bytes it cannot
+ * read, returns them on request, and keeps enough metadata to answer "which
+ * of your claims does this unlock" and "is this too old to be accepted".
+ *
+ * It never decrypts, never derives a key, and never sees a passphrase. If a
+ * future handler here needs the plaintext, the design has been broken.
+ */
+
+const MAX_DOC_BYTES = 15 * 1024 * 1024;
+
+/** Per-user KDF salt, created on first use. Not secret; must be stable. */
+async function vaultSalt(env, userId) {
+  const row = await env.DB.prepare('SELECT kdf_salt, kdf_iterations FROM vault_keys WHERE user_id = ?')
+    .bind(userId)
+    .first();
+  if (row) return { salt: [...new Uint8Array(row.kdf_salt)], iterations: row.kdf_iterations };
+
+  const salt = crypto.getRandomValues(new Uint8Array(16));
+  await env.DB.prepare(
+    'INSERT INTO vault_keys (user_id, kdf_salt, kdf_iterations, created_at) VALUES (?, ?, ?, ?)',
+  )
+    .bind(userId, salt, KDF_ITERATIONS, Date.now())
+    .run();
+  return { salt: [...salt], iterations: KDF_ITERATIONS };
+}
+
+/** GET /api/vault — metadata list plus the KDF parameters for this user. */
+async function handleVaultList(request, env) {
+  const session = await readSession(env, request.headers.get('cookie'));
+  if (!session?.uid) return bad('sign in required', 401);
+
+  const { results } = await env.DB.prepare(
+    `SELECT id, doc_type, bytes, checksum, issued_at, created_at, expires_at, source
+       FROM vault_documents WHERE user_id = ? ORDER BY created_at DESC`,
+  )
+    .bind(session.uid)
+    .all();
+
+  return json({ kdf: await vaultSalt(env, session.uid), documents: results ?? [] });
+}
+
+/**
+ * PUT /api/vault/:id — store one encrypted document.
+ *
+ * Body is the raw ciphertext; crypto parameters ride in headers so the body
+ * stays a clean byte stream. Everything here was produced on the client.
+ */
+async function handleVaultPut(request, env, id) {
+  const session = await readSession(env, request.headers.get('cookie'));
+  if (!session?.uid) return bad('sign in required', 401);
+
+  const h = request.headers;
+  const docType = h.get('x-doc-type');
+  if (!docType || !DOC_TYPES[docType]) return bad('unknown or missing x-doc-type');
+  if (docType === 'not_required') return bad('not a storable document type');
+
+  const b64 = (name) => {
+    const v = h.get(name);
+    if (!v) return null;
+    return Uint8Array.from(atob(v), (c) => c.charCodeAt(0));
+  };
+  const iv = b64('x-iv');
+  const wrappedKey = b64('x-wrapped-key');
+  const wrapIv = b64('x-wrap-iv');
+  if (!iv || !wrappedKey || !wrapIv) return bad('missing encryption parameters');
+
+  const ciphertext = new Uint8Array(await request.arrayBuffer());
+  if (!ciphertext.length) return bad('empty body');
+  if (ciphertext.length > MAX_DOC_BYTES) return bad('document too large', 413);
+
+  /* Reject anything that decodes as a plausible plaintext document. A client
+     bug that skipped encryption must fail loudly here rather than quietly
+     filling the bucket with readable payslips. */
+  const magic = String.fromCharCode(...ciphertext.slice(0, 5));
+  if (magic.startsWith('%PDF') || magic.startsWith('PK') || magic.startsWith('\xFF\xD8')) {
+    return bad('body is not encrypted — refusing to store plaintext', 400);
+  }
+
+  const checksum = await sha256Hex(String.fromCharCode(...ciphertext.slice(0, 4096)) + ciphertext.length);
+  const objectKey = `vault/${session.uid}/${id}`;
+  await env.VAULT.put(objectKey, ciphertext);
+
+  const now = Date.now();
+  const issuedAt = Number(h.get('x-issued-at')) || now;
+  const exp = expiresAt({ type: docType, issued_at: issuedAt, created_at: now });
+
+  await env.DB.prepare(
+    `INSERT INTO vault_documents
+       (id, user_id, doc_type, object_key, bytes, iv, wrapped_key, wrap_iv, checksum, issued_at, created_at, expires_at, source)
+     VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+     ON CONFLICT(id) DO UPDATE SET
+       doc_type=excluded.doc_type, bytes=excluded.bytes, iv=excluded.iv,
+       wrapped_key=excluded.wrapped_key, wrap_iv=excluded.wrap_iv,
+       checksum=excluded.checksum, issued_at=excluded.issued_at, expires_at=excluded.expires_at`,
+  )
+    .bind(id, session.uid, docType, objectKey, ciphertext.length, iv, wrappedKey, wrapIv, checksum, issuedAt, now, exp, h.get('x-source') || 'upload')
+    .run();
+
+  await env.DB.prepare('INSERT INTO vault_access_log (user_id, document_id, action, at) VALUES (?, ?, ?, ?)')
+    .bind(session.uid, id, 'put', now)
+    .run();
+
+  return json({ id, doc_type: docType, bytes: ciphertext.length, checksum, expires_at: exp }, 201);
+}
+
+/** GET /api/vault/:id — ciphertext plus the parameters needed to decrypt it. */
+async function handleVaultGet(request, env, id) {
+  const session = await readSession(env, request.headers.get('cookie'));
+  if (!session?.uid) return bad('sign in required', 401);
+
+  const row = await env.DB.prepare(
+    'SELECT object_key, iv, wrapped_key, wrap_iv, doc_type FROM vault_documents WHERE id = ? AND user_id = ?',
+  )
+    .bind(id, session.uid)
+    .first();
+  if (!row) return bad('not found', 404);
+
+  const obj = await env.VAULT.get(row.object_key);
+  if (!obj) return bad('object missing', 410);
+
+  await env.DB.prepare('INSERT INTO vault_access_log (user_id, document_id, action, at) VALUES (?, ?, ?, ?)')
+    .bind(session.uid, id, 'get', Date.now())
+    .run();
+
+  const b64 = (buf) => btoa(String.fromCharCode(...new Uint8Array(buf)));
+  return new Response(obj.body, {
+    headers: {
+      'content-type': 'application/octet-stream',
+      'cache-control': 'no-store',
+      'x-doc-type': row.doc_type,
+      'x-iv': b64(row.iv),
+      'x-wrapped-key': b64(row.wrapped_key),
+      'x-wrap-iv': b64(row.wrap_iv),
+    },
+  });
+}
+
+/** DELETE /api/vault/:id — object first, then the row. */
+async function handleVaultDelete(request, env, id) {
+  const session = await readSession(env, request.headers.get('cookie'));
+  if (!session?.uid) return bad('sign in required', 401);
+
+  const row = await env.DB.prepare('SELECT object_key FROM vault_documents WHERE id = ? AND user_id = ?')
+    .bind(id, session.uid)
+    .first();
+  if (!row) return bad('not found', 404);
+
+  await env.VAULT.delete(row.object_key);
+  await env.DB.prepare('DELETE FROM vault_documents WHERE id = ? AND user_id = ?').bind(id, session.uid).run();
+  await env.DB.prepare('INSERT INTO vault_access_log (user_id, document_id, action, at) VALUES (?, ?, ?, ?)')
+    .bind(session.uid, id, 'delete', Date.now())
+    .run();
+
+  return json({ deleted: id });
 }
 
 async function handleCheckout(request, env) {
@@ -642,6 +821,15 @@ export default {
       if (pathname === '/api/check' && request.method === 'POST') return await handleCheck(request, env);
       if (pathname === '/api/apply/plan' && request.method === 'POST') return await handlePlan(request, env);
       if (pathname === '/api/apply/consent' && request.method === 'POST') return await handleConsent(request, env);
+      if (pathname === '/api/vault' && request.method === 'GET') return await handleVaultList(request, env);
+      if (pathname.startsWith('/api/vault/')) {
+        const id = pathname.slice('/api/vault/'.length);
+        if (!/^[A-Za-z0-9_-]{8,64}$/.test(id)) return bad('bad document id');
+        if (request.method === 'PUT') return await handleVaultPut(request, env, id);
+        if (request.method === 'GET') return await handleVaultGet(request, env, id);
+        if (request.method === 'DELETE') return await handleVaultDelete(request, env, id);
+        return bad('method not allowed', 405);
+      }
       if (pathname === '/api/me') return await handleMe(request, env);
       if (pathname === '/api/profile') return await handleProfile(request, env);
       if (pathname === '/api/billing/checkout' && request.method === 'POST') return await handleCheckout(request, env);
