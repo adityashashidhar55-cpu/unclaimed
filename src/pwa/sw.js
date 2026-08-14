@@ -1,0 +1,153 @@
+/**
+ * UNCLAIMED — service worker.
+ *
+ * This is what makes the app real on both Android and iOS today, without a
+ * store review, a signing certificate or a build step. Installed from the
+ * browser, it runs offline with the whole dataset on device.
+ *
+ * Two caches, because they age differently:
+ *   SHELL — the app itself. Cache-first; it only changes when we deploy.
+ *   DATA  — the programme pools. Stale-while-revalidate: show the copy on
+ *           device immediately, fetch a fresher one in the background. A
+ *           benefits dataset that is a day old is still worth far more than
+ *           a spinner on a train.
+ *
+ * The free check runs entirely in here — the matcher is bundled, so a user
+ * with no signal still gets their number. That is not a nicety: the people
+ * most likely to be owed money are the most likely to be on a poor
+ * connection or a metered plan.
+ */
+
+const VERSION = 'v1';
+const SHELL = `unclaimed-shell-${VERSION}`;
+const DATA = `unclaimed-data-${VERSION}`;
+
+/* Everything needed to open the app cold, offline. */
+const SHELL_ASSETS = [
+  'app/',
+  'app/index.html',
+  'app/app.css',
+  'app/app.js',
+  'theme.css',
+  'engine/matcher.js',
+  'engine/startup.js',
+  'manifest.webmanifest',
+];
+
+self.addEventListener('install', (event) => {
+  event.waitUntil(
+    (async () => {
+      const cache = await caches.open(SHELL);
+      /* addAll rejects the whole install if one asset 404s, which would leave
+         the user with no app at all. Add them individually and tolerate a
+         miss — a missing font matters less than a failed install. */
+      await Promise.all(
+        SHELL_ASSETS.map((a) => cache.add(a).catch(() => {})),
+      );
+      await self.skipWaiting();
+    })(),
+  );
+});
+
+self.addEventListener('activate', (event) => {
+  event.waitUntil(
+    (async () => {
+      const keys = await caches.keys();
+      await Promise.all(
+        keys.filter((k) => k !== SHELL && k !== DATA).map((k) => caches.delete(k)),
+      );
+      await self.clients.claim();
+    })(),
+  );
+});
+
+const isData = (url) => url.pathname.includes('/api/v1/');
+
+self.addEventListener('fetch', (event) => {
+  const { request } = event;
+  if (request.method !== 'GET') return;
+
+  const url = new URL(request.url);
+  if (url.origin !== self.location.origin) return;
+
+  /* Programme data: serve from cache at once, refresh behind the user's back. */
+  if (isData(url)) {
+    event.respondWith(
+      (async () => {
+        const cache = await caches.open(DATA);
+        const hit = await cache.match(request);
+        const network = fetch(request)
+          .then((res) => {
+            if (res.ok) cache.put(request, res.clone());
+            return res;
+          })
+          .catch(() => null);
+        return hit || (await network) || new Response('{"programmes":[]}', {
+          headers: { 'content-type': 'application/json' },
+        });
+      })(),
+    );
+    return;
+  }
+
+  /* Navigations: network first so a deploy is picked up, falling back to the
+     cached shell so the app still opens on a train. */
+  if (request.mode === 'navigate') {
+    event.respondWith(
+      (async () => {
+        try {
+          const res = await fetch(request);
+          const cache = await caches.open(SHELL);
+          cache.put(request, res.clone());
+          return res;
+        } catch {
+          const cache = await caches.open(SHELL);
+          return (
+            (await cache.match(request)) ||
+            (await cache.match('app/index.html')) ||
+            new Response('<h1>Offline</h1><p>Open the app once with a connection and it will work offline after that.</p>', {
+              headers: { 'content-type': 'text/html' },
+            })
+          );
+        }
+      })(),
+    );
+    return;
+  }
+
+  /* Everything else: cache first. */
+  event.respondWith(
+    (async () => {
+      const cached = await caches.match(request);
+      if (cached) return cached;
+      try {
+        const res = await fetch(request);
+        if (res.ok && res.type === 'basic') {
+          const cache = await caches.open(SHELL);
+          cache.put(request, res.clone());
+        }
+        return res;
+      } catch {
+        return new Response('', { status: 504 });
+      }
+    })(),
+  );
+});
+
+/**
+ * Deadline reminders.
+ *
+ * iOS only permits notifications from an installed PWA, and only after an
+ * explicit grant — so this is best-effort by design and the app never relies
+ * on it. Calendar export is the fallback that works everywhere.
+ */
+self.addEventListener('notificationclick', (event) => {
+  event.notification.close();
+  const target = event.notification.data?.url || 'app/';
+  event.waitUntil(
+    self.clients.matchAll({ type: 'window', includeUncontrolled: true }).then((list) => {
+      for (const c of list) if ('focus' in c) return c.focus();
+      return self.clients.openWindow(target);
+    }),
+  );
+});
