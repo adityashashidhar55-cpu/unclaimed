@@ -29,6 +29,15 @@ import { INSTRUMENTS, isFreeMoney, reachFor } from './engine/startup.js';
 import { DE_MINIMIS_CEILING_EUR, REGULATION } from '../packages/stateaid/index.js';
 import { REGISTRIES, autofillAvailable } from '../packages/registry/index.js';
 import { awardLikelihood, effortFor, bandFor, BAND_LABELS } from '../packages/scoring/index.js';
+import { deadlineState, STATUS_META } from '../packages/deadlines/index.js';
+
+const BUILD_NOW = Date.parse('2026-08-14');
+
+/** Status chip. The most time-sensitive fact on any programme, so it goes first. */
+function statusChip(p) {
+  const d = deadlineState(p, BUILD_NOW);
+  return `<span class="status status--${d.urgency}" title="${attr(d.detail)}">${esc(d.headline)}</span>`;
+}
 
 /* Startup grants live in their own namespace with their own engine — a
    company is not a household and forcing both through one matcher would make
@@ -61,6 +70,7 @@ import {
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.resolve(__dirname, '..');
 const DATA = path.join(ROOT, 'data');
+const SRC = __dirname;
 const OUT = path.join(ROOT, 'dist');
 
 const BASE = (process.env.SITE_BASE ?? '').replace(/\/$/, '');
@@ -203,260 +213,155 @@ function breadcrumbLd(items) {
 /* ================================================================== */
 
 function landing() {
-  const flags = countries
-    .map(
-      ({ entry }) =>
-        `<a class="flag-chip" href="${LB()}/${entry.slug}/"><span class="flag-chip__flag">${entry.flag}</span>${esc(
-          entry.name,
-        )}<span class="tiny">${entry.programme_count}</span></a>`,
-    )
-    .join('');
-
-  const catCards = Object.entries(STATS.byCategory)
-    .sort((a, b) => b[1] - a[1])
-    .map(
-      ([cat, n]) =>
-        `<a class="card card-link" href="${LB()}/browse/${cat}/">
-          <h3 style="font-size:1.15rem;margin-bottom:.2rem">${esc(categoryLabel(cat))}</h3>
-          <p class="small" style="margin:0">${nf(n)} programmes across ${STATS.countryCount} countries</p>
-        </a>`,
-    )
-    .join('');
-
-  // A real, computed example — run through the same engine the browser uses,
-  // so the landing page can never claim a figure the product wouldn't produce.
-  const example = (() => {
-    const gb = countries.find((c) => c.entry.slug === 'gb') || countries[0];
-    const profile = {
-      country_code: gb.entry.country_code,
-      admin_area: null,
-      status: 'employee',
-      age: 34,
-      income_band: (gb.entry.income_bands || [])[0]?.id ?? null,
-      income_annual: null,
-      household_size: 3,
-      children_count: 2,
-      housing_tenure: 'renting',
-      nationality_group: 'citizen_or_pr',
-      residency_months: 120,
-      circumstances: [],
-    };
-    const r = matchEngine(profile, gb.data, gb.entry);
-    return { r, entry: gb.entry };
-  })();
+  const startupCount = STARTUP_ALL.length;
+  const openNow = STARTUP_ALL.filter((p) => ['open', 'rolling'].includes(p.status)).length;
+  const reopening = STARTUP_ALL.filter(
+    (p) => ['closed', 'paused'].includes(p.status) && (p.reopen_note || p.opens_at || (p.typical_months || []).length),
+  ).length;
+  const jurisdictions = new Set([...countries.map((c) => c.entry.slug), ...STARTUP_MANIFEST.countries.map((c) => c.slug)]).size;
 
   const body = `
-${disclaimerBar(TR)}
-<section class="hero shell">
-  <div class="hero__grid">
-  <div>
-  <span class="eyebrow eyebrow-accent">${nf(STATS.total)} real programmes · ${STATS.countryCount} countries · sourced &amp; dated</span>
-  <h1>${esc(TR('heroA'))} <span class="hero__accent">${esc(TR('heroB'))}</span>${esc(TR('heroQ'))}</h1>
-  <p class="lede hero__lede">${esc(TR('heroLede'))}</p>
-  <div class="hero__cta">
-    <a class="btn btn-primary" href="${LB()}/check/">${esc(TR('ctaCheck'))} ${ICON.arrow}</a>
-    <a class="btn btn-ghost" href="${LB()}/countries/">${esc(TR('ctaBrowse'))}</a>
-  </div>
-  <p class="tiny" style="margin-top:1rem">${esc(TR('free'))}</p>
-  ${L === 'en' ? '' : `<p class="tiny" style="margin-top:.6rem;opacity:.8">${esc(TR('langNote'))}</p>`}
-  </div>
-  <aside class="hero__demo">
-    <div class="result-hero" style="padding:1.6rem 1.5rem">
-      <span class="eyebrow" style="margin-bottom:.8rem">Example · ${example.entry.flag} ${esc(example.entry.name)} · renting, 2 children, low income band</span>
-      <p class="figure" style="font-size:clamp(2.6rem,5.5vw,4rem)">${example.r.eligible.length} payments</p>
-      <p class="figure-unit" style="margin-top:.7rem">this person can claim and probably isn't</p>
-      <div style="margin-top:1.3rem;display:grid;gap:.5rem">
-        ${example.r.eligible
-          .filter((m) => !m.is_capital && (m.programme.amount_min != null || m.programme.amount_max != null))
-          .slice(0, 3)
-          .map(
-            (m) =>
-              `<div style="display:flex;justify-content:space-between;gap:1rem;font-size:.83rem;color:#cfc7b8;border-top:1px solid #34302a;padding-top:.5rem">
-                <span style="min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">${esc(m.programme.name_en)}</span>
-                <span style="flex:none;color:#f0c8a8">${esc(amountLabel(m.programme, example.r.currency) || '—')}</span>
-              </div>`,
-          )
-          .join('')}
-      </div>
-      <p class="tiny" style="color:#8b8175;margin:1.2rem 0 0">Worth ${esc(formatMoney(example.r.total_max, example.r.currency))}/yr in fixed
-      amounts, plus ${example.r.eligible.filter((m) => m.programme.amount_min == null && m.programme.amount_max == null).length}
-      whose value the authority calculates from your circumstances — usually the biggest ones.
-      ${example.r.conditional.length} more were held back because they need a disability, caring or new-baby situation this
-      example didn't claim. Computed live at build time — not a mockup.</p>
-    </div>
-  </aside>
-  </div>
+<section style="padding:clamp(4rem,10vw,8rem) 0 clamp(3rem,6vw,5rem);position:relative">
+  <div class="shell">
+    <span class="eyebrow eyebrow-accent reveal">${nf(STATS.total + startupCount)} sourced programmes · ${jurisdictions} jurisdictions</span>
+    <h1 style="max-width:15ch" data-blur-words>The money you are owed, and nobody told you about.</h1>
+    <p class="lede reveal" data-delay="200" style="max-width:52ch;margin-top:1.4rem">
+      Governments and funders hand out rent support, family payments, R&amp;D credits and startup grants
+      every year. Most of it goes unclaimed because nobody can find it. We found it, sourced it, and dated it.
+    </p>
 
-  <div class="stat-strip">
-    <div class="stat"><div class="stat__n">${nf(STATS.total)}</div><div class="stat__l">${esc(TR('statProgrammes'))}</div></div>
-    <div class="stat"><div class="stat__n">${nf(STATS.countryCount)}</div><div class="stat__l">${esc(TR('statCountries'))}</div></div>
-    <div class="stat"><div class="stat__n">${nf(STATS.verified)}</div><div class="stat__l">${esc(TR('statVerified'))} (${STATS.verifiedPct}%)</div></div>
-    <div class="stat"><div class="stat__n">${nf(STATS.funderCount)}</div><div class="stat__l">${esc(TR('statFunders'))}</div></div>
-  </div>
-</section>
-
-<section class="section shell section-rule">
-  <span class="eyebrow">The problem</span>
-  <div class="grid grid-2" style="align-items:start">
-    <div>
-      <h2>Eligibility is public. Findability is not.</h2>
-      <p>
-        Every scheme on this site is published on an official government page. None of it is secret.
-        It is simply spread across dozens of departments, written in the local language, buried under
-        criteria you have to read to know don't apply to you, and never cross-referenced.
-      </p>
-      <p>
-        Unclaimed reads the rules for you. You answer six questions once; we evaluate
-        ${nf(STATS.total)} sets of published criteria against them and tell you, in plain language,
-        which ones you pass, which one answer is still missing, and which ones you fail and why.
-      </p>
+    <div class="row reveal" data-delay="340" style="margin-top:2.2rem;gap:.7rem">
+      <a class="btn btn-primary" href="${LB()}/check/">Check what you're owed</a>
+      <a class="btn" href="${LB()}/startups/">I'm a founder</a>
     </div>
-    <div class="stack">
-      <div class="callout callout--terracotta">
-        <p><strong>${nf(STATS.automatic)} of ${nf(STATS.total)} programmes are automatic.</strong>
-        You get them without applying — <em>if</em> the right authority already has your details. The other
-        ${nf(STATS.mustApply)} require an application that nobody will prompt you to make.</p>
+
+    <div class="grid grid-4 reveal" data-delay="460" style="margin-top:3.4rem">
+      <div class="stat">
+        <span class="stat__n tally" data-tally="${STATS.total + startupCount}">${nf(STATS.total + startupCount)}</span>
+        <span class="stat__l">Programmes</span>
       </div>
-      <div class="callout callout--sage">
-        <p><strong>${nf(STATS.withDocs)} records ship a document checklist</strong> and ${nf(STATS.withSteps)} ship
-        numbered application steps taken from the official page — so "am I eligible?" turns straight into
-        "here is what to gather this weekend".</p>
+      <div class="stat">
+        <span class="stat__n tally" data-tally="${openNow}">${nf(openNow)}</span>
+        <span class="stat__l">Open right now</span>
+      </div>
+      <div class="stat">
+        <span class="stat__n tally" data-tally="${reopening}">${nf(reopening)}</span>
+        <span class="stat__l">Closed, with a reopen date</span>
+      </div>
+      <div class="stat">
+        <span class="stat__n tally" data-tally="${jurisdictions}">${jurisdictions}</span>
+        <span class="stat__l">Jurisdictions</span>
       </div>
     </div>
   </div>
 </section>
 
-<section class="section shell section-rule">
-  <span class="eyebrow">What you get</span>
-  <h2 style="max-width:20ch">Not a list of links. A claim plan.</h2>
-  <div class="grid grid-3" style="margin-top:2.5rem">
-    <div class="card card-flat">
-      <h3>Three honest buckets</h3>
-      <p class="small">Eligible / needs one more answer / not eligible — with the exact failing rule spelled out
-      in plain language, so you learn something even from a "no".</p>
-    </div>
-    <div class="card card-flat">
-      <h3>One merged document list</h3>
-      <p class="small">Your matches are deduplicated into a single checklist. Usually a handful of documents
-      unlocks nearly everything — we show you which ones and what they open.</p>
-    </div>
-    <div class="card card-flat">
-      <h3>Deadline calendar</h3>
-      <p class="small">Programmes with a real deadline export to a calendar file you can drop into
-      Google Calendar, Outlook or Apple Calendar in one click.</p>
-    </div>
-    <div class="card card-flat">
-      <h3>A printable pack</h3>
-      <p class="small">Print or save your plan as a PDF with every source URL and verified date attached —
-      useful for a caseworker, an adviser, or a relative who doesn't use the web.</p>
-    </div>
-    <div class="card card-flat">
-      <h3>A shareable link</h3>
-      <p class="small">Your answers live in the URL, not in an account. Send the link to a partner,
-      a parent, or a client and they see the same result.</p>
-    </div>
-    <div class="card card-flat">
-      <h3>Sources on every claim</h3>
-      <p class="small">Each programme carries the official URL, a verbatim snippet, the funder,
-      and the date a human last checked it. No source, no entry.</p>
+<section class="section-tight">
+  <div class="shell">
+    <div class="callout reveal">
+      <p><strong>Closed does not mean hidden.</strong> Every grant site either buries closed calls — so you
+      never learn they exist and miss them again next year — or lists them as open and wastes your afternoon.
+      We show them with the only fact that matters: <em class="serif-italic">when they come back</em>.</p>
     </div>
   </div>
 </section>
 
-<section class="section shell section-rule">
-  <span class="eyebrow">Coverage</span>
-  <div class="spread"><h2>${STATS.countryCount} countries</h2><a class="link-underline" href="${LB()}/countries/">See coverage detail</a></div>
-  <div class="flag-wall" style="margin-top:1.6rem">${flags}</div>
-</section>
-
-<section class="section shell section-rule">
-  <span class="eyebrow">${esc(TR('whoFor'))}</span>
-  <h2 style="max-width:20ch">Start from who you are</h2>
-  <div class="grid grid-4" style="margin-top:2rem">
-    ${AUDIENCES.map((a) => `<a class="card card-link" href="${LB()}/for/${a.id}/">
-      <h3 style="font-size:1.1rem;margin-bottom:.3rem">${esc(a.label)}</h3>
-      <p class="small" style="margin:0">${esc(TR(a.blurbKey))}</p>
-    </a>`).join('')}
-  </div>
-</section>
-
-<section class="section shell section-rule">
-  <span class="eyebrow">${esc(TR('browseCat'))}</span>
-  <h2>By category</h2>
-  <div class="grid grid-3" style="margin-top:2rem">${catCards}</div>
-</section>
-
-<section class="section shell section-rule">
-  <span class="eyebrow">Trust</span>
-  <div class="grid grid-2">
-    <div>
-      <h2>We would rather say "we don't know".</h2>
-      <p>Every record is tagged <strong>Verified</strong> (a researcher opened the official page and confirmed the
-      rule) or <strong>Not human-checked</strong> (extracted from an official source, not yet re-read). We show the
-      difference on every card instead of flattening it into a false uniform confidence.</p>
-      <p>Amounts that depend on your circumstances are left blank with a note, never guessed. Right now
-      ${nf(STATS.priced)} of ${nf(STATS.total)} records carry a published figure; the rest tell you the amount varies
-      and link you to the official calculator.</p>
-      <p><a class="link-underline" href="${LB()}/methodology/">Read the full methodology and known limitations</a></p>
-    </div>
-    <div class="card">
-      <h3 style="margin-bottom:1rem">Data as of ${esc(STATS.asOf)}</h3>
-      <table class="rule-table">
-        <tr><th>Programmes</th><td>${nf(STATS.total)}</td></tr>
-        <tr><th>Human-verified</th><td>${nf(STATS.verified)} (${STATS.verifiedPct}%)</td></tr>
-        <tr><th>With published amount</th><td>${nf(STATS.priced)}</td></tr>
-        <tr><th>With application steps</th><td>${nf(STATS.withSteps)}</td></tr>
-        <tr><th>With document list</th><td>${nf(STATS.withDocs)}</td></tr>
-        <tr><th>Automatic (no application)</th><td>${nf(STATS.automatic)}</td></tr>
-        <tr><th>Funding bodies</th><td>${nf(STATS.funderCount)}</td></tr>
-      </table>
+<section class="section">
+  <div class="shell">
+    <span class="eyebrow reveal">How it works</span>
+    <h2 class="reveal" style="max-width:16ch">Four questions. <em class="serif-italic">Then the money.</em></h2>
+    <div class="flow" style="margin-top:2.6rem;max-width:46rem">
+      ${[
+        ['1', 'Tell us about you', 'Country, situation, rough income. No account, no email, nothing stored. The matcher runs in your browser.'],
+        ['2', 'See the number', 'What you are owed across every programme you qualify for — free, always, no wall.'],
+        ['3', 'Get the list and the paperwork', 'Which schemes, what each needs, and a prepared application per claim with the fields already filled.'],
+        ['4', 'Never miss the window', 'Deadlines in your calendar, and an alert when a closed programme reopens.'],
+      ]
+        .map(
+          (st, i) => `<div class="flow__step reveal" data-delay="${i * 130}">
+        <div class="flow__dot">${st[0]}</div>
+        <div>
+          <h3 style="margin-bottom:.25rem">${st[1]}</h3>
+          <p class="small" style="max-width:40ch">${st[2]}</p>
+        </div>
+      </div>`,
+        )
+        .join('')}
     </div>
   </div>
 </section>
 
-<section class="section shell section-rule center">
-  <h2 style="max-width:22ch;margin-inline:auto">It takes about ninety seconds.</h2>
-  <p class="lede" style="max-width:48ch">The worst case is you find out you're already claiming everything.
-  The realistic case is one payment you didn't know existed.</p>
-  <p style="margin-top:2rem"><a class="btn btn-primary" href="${LB()}/check/">Start the check ${ICON.arrow}</a></p>
+<section class="section-rule section">
+  <div class="shell">
+    <span class="eyebrow reveal">Two products</span>
+    <h2 class="reveal" style="max-width:18ch">Households and founders need different things.</h2>
+    <div class="grid grid-2" style="margin-top:2.4rem">
+      <a class="card card-link reveal" href="${LB()}/check/">
+        <span class="eyebrow">For people</span>
+        <h3>${nf(STATS.total)} benefits across ${countries.length} countries</h3>
+        <p class="small">Rent support, family payments, energy help, transport concessions, tax credits.
+        Means-tested rules modelled from the published thresholds, with every source linked.</p>
+        <p class="small" style="color:#fff;margin-top:.8rem">Check what you're owed →</p>
+      </a>
+      <a class="card card-link reveal" data-delay="120" href="${LB()}/startups/">
+        <span class="eyebrow eyebrow-accent">For founders</span>
+        <h3>${nf(startupCount)} grants across ${STARTUP_MANIFEST.countries.length} jurisdictions</h3>
+        <p class="small">Public and private, ranked by what you can realistically win rather than headline
+        size — with the EU de minimis ceiling applied so the plan is one you can lawfully execute.</p>
+        <p class="small" style="color:#fff;margin-top:.8rem">Find startup funding →</p>
+      </a>
+    </div>
+  </div>
 </section>
-`;
+
+<section class="section">
+  <div class="shell">
+    <span class="eyebrow reveal">Why trust the number</span>
+    <h2 class="reveal" style="max-width:20ch">Every figure is a published rule, <em class="serif-italic">not a guess.</em></h2>
+    <div class="grid grid-3" style="margin-top:2.2rem">
+      ${[
+        ['Sourced and dated', 'Every programme links to the funder\'s own page with a verbatim quote and the date we last read it. Records we have not re-checked say so.'],
+        ['Nulls, never estimates', 'Where a funder publishes no amount we show no amount. An invented figure is worse than a blank.'],
+        ['Nothing leaves your device', 'The free check runs entirely in your browser. No account, no tracking, no answers stored anywhere.'],
+      ]
+        .map(
+          (c, i) => `<div class="card reveal" data-delay="${i * 110}">
+        <h3 style="font-size:1.12rem">${c[0]}</h3>
+        <p class="small">${c[1]}</p>
+      </div>`,
+        )
+        .join('')}
+    </div>
+  </div>
+</section>
+
+<section class="section-rule section">
+  <div class="shell" style="text-align:center">
+    <h2 class="reveal" style="max-width:18ch;margin-inline:auto">Find out in ninety seconds.</h2>
+    <p class="lede reveal" data-delay="120" style="max-width:40ch;margin:1rem auto 2rem">
+      No sign-up. No card. The number is free forever.
+    </p>
+    <div class="row reveal" data-delay="220" style="justify-content:center">
+      <a class="btn btn-primary" href="${LB()}/check/">Check what you're owed</a>
+      <a class="btn" href="${LB()}/pricing/">See pricing</a>
+    </div>
+  </div>
+</section>`;
 
   return layout({
-    base: BASE,
-    linkBase: LB(),
-    lang: L,
-    tr: TR,
-    altLangs: ALT,
+    base: BASE, linkBase: LB(), lang: L, tr: TR, altLangs: ALT,
     title: SITE_NAME,
-    description: `Find unclaimed government grants, benefits and tax relief across ${STATS.countryCount} countries. ${nf(STATS.total)} real programmes with official sources, document checklists and application steps. Free and anonymous.`,
-    canonical: `${SITE_URL}/`,
-    body,
+    description: `${nf(STATS.total + startupCount)} sourced government and private funding programmes across ${jurisdictions} jurisdictions. Find what you are owed in ninety seconds — free, anonymous, no sign-up.`,
+    canonical: `${SITE_URL}${L === 'en' ? '' : '/' + L}/`,
     jsonld: [
+      { '@context': 'https://schema.org', '@type': 'WebSite', name: SITE_NAME, url: SITE_URL },
       {
-        '@context': 'https://schema.org',
-        '@type': 'WebSite',
-        name: SITE_NAME,
-        url: `${SITE_URL}/`,
-        description: TAGLINE,
-        potentialAction: {
-          '@type': 'SearchAction',
-          target: `${SITE_URL}/countries/?q={search_term_string}`,
-          'query-input': 'required name=search_term_string',
-        },
-      },
-      {
-        '@context': 'https://schema.org',
-        '@type': 'Dataset',
-        name: 'Unclaimed global benefits dataset',
-        description: `${STATS.total} government and institutional support programmes across ${STATS.countryCount} countries, each with an official source URL, eligibility rules, documents and application steps.`,
-        url: `${SITE_URL}/methodology/`,
-        license: 'https://opensource.org/licenses/MIT',
-        distribution: [
-          { '@type': 'DataDownload', encodingFormat: 'application/json', contentUrl: `${SITE_URL}/api/v1/countries.json` },
-        ],
+        '@context': 'https://schema.org', '@type': 'Dataset', name: `${SITE_NAME} programme dataset`,
+        description: `${nf(STATS.total + startupCount)} sourced funding programmes across ${jurisdictions} jurisdictions.`,
+        url: `${SITE_URL}/api/`, license: 'https://opensource.org/licenses/MIT',
       },
     ],
+    body,
   });
 }
 
@@ -1105,93 +1010,348 @@ function apiPage() {
 /* ================================================================== */
 
 function pricingPage() {
+  const startupCount = STARTUP_ALL.length;
+
+  const tier = (t) => `<div class="card reveal" data-delay="${t.delay}"${t.featured ? ' style="border-radius:1.25rem"' : ''}>
+    <span class="eyebrow${t.featured ? ' eyebrow-accent' : ''}">${t.eyebrow}</span>
+    <div class="figure-sm">${t.price}${t.per ? `<span style="font-size:.95rem;color:var(--ink-4);font-family:var(--font-body)">${t.per}</span>` : ''}</div>
+    <p class="small">${t.blurb}</p>
+    <ul style="margin:1.2rem 0 0;padding-left:1.1rem">
+      ${t.features.map((f) => `<li class="small" style="margin-bottom:.42rem">${f}</li>`).join('')}
+    </ul>
+    <p style="margin-top:1.6rem"><a class="btn ${t.featured ? 'btn-primary' : ''}" href="${t.href}">${t.cta}</a></p>
+    ${t.note ? `<p class="tiny" style="margin-top:.8rem">${t.note}</p>` : ''}
+  </div>`;
+
   const body = `
 ${disclaimerBar(TR)}
 <section class="section-tight shell">
   ${breadcrumbs([{ label: TR('backHome'), href: `${LB()}/` }, { label: 'Pricing' }])}
   <span class="eyebrow eyebrow-accent">Pricing</span>
-  <h1 style="max-width:16ch">Finding out what you're owed is free. Always.</h1>
-  <p class="lede" style="max-width:56ch">You never pay to learn the number. You pay when you want the
-  schemes behind it and the paperwork done for you.</p>
+  <h1 style="max-width:15ch">Finding out is free. <em class="serif-italic">Always.</em></h1>
+  <p class="lede" style="max-width:54ch">You never pay to learn the number. You pay when you want the
+  schemes behind it, the paperwork done, and the deadlines watched.</p>
 
-  <div class="grid grid-2" style="margin-top:3rem;align-items:stretch">
-    <div class="card">
-      <span class="eyebrow">Free</span>
-      <div class="figure-sm">£0</div>
-      <p class="small">Forever, no account.</p>
-      <ul style="margin-top:1.2rem;padding-left:1.1rem">
-        <li>How much you're owed, per year</li>
-        <li>How many schemes it comes from</li>
-        <li>How many pay out automatically</li>
-        <li>Every one of ${nf(STATS.total)} programme pages, with sources</li>
-      </ul>
-      <p style="margin-top:1.5rem"><a class="btn btn-ghost" href="${LB()}/check/">Check your total</a></p>
-    </div>
-
-    <div class="card" style="border-color:var(--terracotta)">
-      <span class="eyebrow eyebrow-accent">Claim</span>
-      <div class="figure-sm" style="color:var(--terracotta)">£4.99<span style="font-size:1rem;color:var(--ink-3)">/month</span></div>
-      <p class="small">Cancel any time, in two clicks.</p>
-      <ul style="margin-top:1.2rem;padding-left:1.1rem">
-        <li><strong>Which schemes</strong> you specifically qualify for</li>
-        <li>The exact steps and documents for each</li>
-        <li><strong>A prepared application per scheme</strong> — drafted, filled, ready to send</li>
-        <li>One merged document checklist across every claim</li>
-        <li>Deadline reminders and re-checks when rules change</li>
-      </ul>
-      <p style="margin-top:1.5rem"><a class="btn btn-primary" href="${LB()}/check/">Start with the free check</a></p>
-    </div>
+  <div class="grid grid-4" style="margin-top:3rem;align-items:stretch">
+    ${tier({
+      delay: 0, eyebrow: 'Free', price: '£0', per: ' forever',
+      blurb: 'The number, and enough of the shape to know whether it is worth your time.',
+      features: [
+        'How much you are owed, per year',
+        'How many programmes it comes from',
+        'How many pay out automatically',
+        `All ${nf(STATS.total + startupCount)} programme pages, with sources`,
+        'No account, nothing stored',
+      ],
+      href: `${LB()}/check/`, cta: 'Check your total',
+    })}
+    ${tier({
+      delay: 110, eyebrow: 'Personal', price: '£4.99', per: '/month', featured: true,
+      blurb: 'For households claiming what they are entitled to.',
+      features: [
+        '<strong>Which programmes</strong> you specifically qualify for',
+        'Exact steps and documents for each',
+        '<strong>A prepared application per claim</strong>',
+        'Encrypted document vault, reused across claims',
+        'Deadline reminders in your calendar',
+        'Available in the mobile app',
+      ],
+      href: `${LB()}/check/`, cta: 'Start with the free check',
+      note: 'Cancel in two clicks. Same price whether you are owed nothing or £9,000.',
+    })}
+    ${tier({
+      delay: 220, eyebrow: 'Business', price: '£29', per: '/month',
+      blurb: 'For founders and small teams chasing grants.',
+      features: [
+        `All ${nf(startupCount)} startup programmes, ranked by what you can win`,
+        'Award odds and effort estimate per programme',
+        '<strong>EU de minimis ceiling tracking</strong>',
+        'Company auto-fill from public registers',
+        'Reopen alerts on closed calls',
+        'Saved searches, weekly digest',
+      ],
+      href: `${LB()}/startups/`, cta: 'Find your grants',
+    })}
+    ${tier({
+      delay: 330, eyebrow: 'Enterprise', price: 'Custom', per: '',
+      blurb: 'For accelerators, funds, universities and public bodies managing many applicants.',
+      features: [
+        '<strong>Team dashboard</strong> with pipeline and stages',
+        'Unlimited seats, role-based visibility',
+        'Portfolio view across all your companies',
+        'Bulk matching and CSV export',
+        'API access and webhooks',
+        'SSO, audit log, data residency',
+      ],
+      href: `${LB()}/enterprise/`, cta: 'See the dashboard',
+      note: 'Web only — the dashboard is not in the mobile app.',
+    })}
   </div>
 
-  <div class="callout callout--sage" style="margin-top:2.5rem">
-    <p><strong>One flat price. Never a cut of what you get.</strong> We charge for the software,
-    the same amount whether you turn out to be owed nothing or £9,000 a year. No success fee, no
-    commission, no per-claim charge. That is a deliberate limit on us, not a pricing gimmick: the moment
-    a service takes a share of someone's benefits it stops being a tool and starts being a middleman,
-    and in several countries that is exactly the thing the law is there to stop.</p>
-  </div>
-
-  <div class="grid grid-2" style="margin-top:2.5rem;align-items:stretch">
-    <div class="card">
-      <span class="eyebrow">Included</span>
-      <h2 style="font-size:1.35rem;margin-top:.4rem">A place to keep the paperwork</h2>
+  <div class="grid grid-2" style="margin-top:2.4rem;align-items:stretch">
+    <div class="card reveal">
+      <span class="eyebrow">Included on every paid plan</span>
+      <h2 style="font-size:1.3rem;margin-top:.4rem">A place to keep the paperwork</h2>
       <p class="small">Every claim wants a payslip, a proof of address, a birth certificate. Keep each one
-      once and every later claim that asks for it is already answered. We tell you when something has gone
-      out of date, and which claims each missing document would unlock — so you fetch one thing and finish
-      four applications, instead of doing it twelve times.</p>
-      <p class="small" style="margin-top:.8rem"><strong>Encrypted on your device before it reaches us.</strong>
-      We hold the scrambled bytes and a label like "proof of income". We cannot open your files, and neither
-      can anyone who breaks into our servers.</p>
+      once and every later claim that asks for it is already answered. <strong>Encrypted on your device
+      before it reaches us</strong> — we hold scrambled bytes and a label, and cannot open your files.</p>
     </div>
-    <div class="card">
+    <div class="card reveal" data-delay="120">
       <span class="eyebrow">Where we can, we file it</span>
-      <h2 style="font-size:1.35rem;margin-top:.4rem">Auto-apply, honestly scoped</h2>
+      <h2 style="font-size:1.3rem;margin-top:.4rem">Auto-apply, honestly scoped</h2>
       <p class="small">In <strong>Spain</strong> a company can hold a registered power of attorney and submit
-      for you, so there we do. That is one country, and we would rather say so than imply otherwise.</p>
-      <p class="small" style="margin-top:.8rem">Everywhere else no such mechanism exists, so you get the
-      complete package — the letter written, the form fields filled from your answers, the document
-      checklist, the exact steps — and you press send. In <strong>India</strong> we can pull your own
-      documents in from DigiLocker with your consent each time.</p>
+      for you, so there we do. That is one country and we would rather say so. Everywhere else you get the
+      complete package and press send yourself.</p>
     </div>
   </div>
 
-  <div class="callout" style="margin-top:1.5rem">
+  <div class="callout callout--sage" style="margin-top:2.4rem">
+    <p><strong>One flat price. Never a cut of what you get.</strong> No success fee, no commission, no
+    per-claim charge. That is a deliberate limit on us: the moment a service takes a share of someone's
+    benefits it stops being a tool and becomes a middleman, and in several countries that is exactly what
+    the law is there to stop.</p>
+  </div>
+
+  <div class="callout" style="margin-top:1.4rem">
     <p><strong>What we don't do.</strong> We never sign in to a government website as you, and we never
-    press submit on your behalf. Every application we prepare is sent by you, from your own account. That
-    is a deliberate design choice: a benefits declaration is sworn by the person making it, and keeping it
-    yours is what the law requires and what protects you.</p>
+    press submit on your behalf outside Spain. Every application we prepare is sent by you, from your own
+    account. A benefits declaration is sworn by the person making it, and keeping it yours is what the law
+    requires and what protects you.</p>
   </div>
 </section>`;
 
   return layout({
     base: BASE, linkBase: LB(), lang: L, tr: TR, altLangs: ALT,
     title: 'Pricing — free to find out, paid to claim',
-    description: `Seeing how much you're owed is free forever. £4.99/month unlocks which of ${nf(STATS.total)} schemes you qualify for and a prepared application for each one.`,
+    description: `Free forever to see how much you are owed. Personal, business and enterprise plans unlock which of ${nf(STATS.total + startupCount)} programmes you qualify for, the prepared paperwork and deadline alerts.`,
     canonical: `${SITE_URL}${L === 'en' ? '' : '/' + L}/pricing/`,
     body,
   });
 }
 
+
+
+
+/* ================================================================== */
+/* PWA — the mobile app                                                */
+/* ================================================================== */
+
+/**
+ * The app is a PWA, and that is a deliberate choice rather than a fallback.
+ *
+ * An Expo build needs a Mac, two developer accounts, signing certificates and
+ * a review queue before anyone can open it. A PWA installs from the browser on
+ * both Android and iOS, updates the moment we deploy, and — because the
+ * matcher is plain JS with no dependencies — runs the whole free check on
+ * device with no signal. The Expo source stays in mobile/ for the store
+ * builds; this is the one that works today.
+ *
+ * Individual scope only: check, results, deadlines, documents. The enterprise
+ * dashboard is web-only by design.
+ */
+function appShell() {
+  return `<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Unclaimed</title>
+<meta name="description" content="Find the government money you are owed. Works offline, no account.">
+<meta name="theme-color" content="#000000">
+<link rel="manifest" href="${BASE}/manifest.webmanifest">
+<link rel="stylesheet" href="${BASE}/app/app.css">
+<link rel="apple-touch-icon" href="${BASE}/icon-192.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Unclaimed">
+<meta name="mobile-web-app-capable" content="yes">
+</head>
+<body data-base="${BASE}">
+<div id="app"><noscript><p style="padding:2rem;color:#fff;font-family:system-ui">
+This app needs JavaScript. The full site works without it — <a href="${BASE}/" style="color:#fff">open unclaimed</a>.
+</p></noscript></div>
+
+<div id="install" hidden>
+  <span style="font-size:.88rem">Install Unclaimed for offline use</span>
+  <button id="install-go" class="btn" style="min-height:40px;padding:.5rem 1rem">Install</button>
+</div>
+
+<script type="module" src="${BASE}/app/app.js"></script>
+<script>
+/* iOS gives no install prompt event, so tell Safari users how, once. */
+(function () {
+  var iOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+  var standalone = window.navigator.standalone || matchMedia('(display-mode: standalone)').matches;
+  if (!iOS || standalone) return;
+  try { if (localStorage.getItem('unclaimed.ios-hint')) return; } catch (e) { return; }
+  var bar = document.getElementById('install');
+  bar.innerHTML = '<span style="font-size:.86rem">Add to Home Screen: tap Share, then Add to Home Screen</span>' +
+                  '<button class="btn" id="ios-ok" style="min-height:40px;padding:.5rem 1rem">Got it</button>';
+  bar.hidden = false;
+  bar.addEventListener('click', function (e) {
+    if (!e.target.closest('#ios-ok')) return;
+    try { localStorage.setItem('unclaimed.ios-hint', '1'); } catch (err) {}
+    bar.hidden = true;
+  });
+})();
+</script>
+</body>
+</html>`;
+}
+
+/** Maskable icon. Generated rather than shipped as a binary — one less asset
+ *  to keep in sync, and it stays crisp at every density. */
+function appIcon(size) {
+  const r = size * 0.5;
+  return `<svg xmlns="http://www.w3.org/2000/svg" width="${size}" height="${size}" viewBox="0 0 ${size} ${size}">
+  <defs>
+    <radialGradient id="g" cx="30%" cy="12%" r="90%">
+      <stop offset="0%" stop-color="#2a1a14"/><stop offset="55%" stop-color="#0a0a0a"/><stop offset="100%" stop-color="#000"/>
+    </radialGradient>
+  </defs>
+  <rect width="${size}" height="${size}" fill="url(#g)"/>
+  <circle cx="${r}" cy="${r}" r="${size * 0.27}" fill="none" stroke="#e8734a" stroke-width="${size * 0.055}"/>
+  <path d="M${r - size * 0.115} ${r + size * 0.005} l${size * 0.075} ${size * 0.085} l${size * 0.16} -${size * 0.175}"
+        fill="none" stroke="#fff" stroke-width="${size * 0.055}" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>`;
+}
+
+function webManifest() {
+  return JSON.stringify({
+    name: 'Unclaimed — money you are owed',
+    short_name: 'Unclaimed',
+    description:
+      'Find the government benefits and grants you are entitled to. Works offline, no account, nothing leaves your device.',
+    start_url: `${BASE}/app/`,
+    scope: `${BASE}/`,
+    display: 'standalone',
+    orientation: 'portrait',
+    background_color: '#000000',
+    theme_color: '#000000',
+    categories: ['finance', 'productivity', 'utilities'],
+    lang: 'en',
+    icons: [
+      { src: `${BASE}/icon-192.svg`, sizes: '192x192', type: 'image/svg+xml', purpose: 'any maskable' },
+      { src: `${BASE}/icon-512.svg`, sizes: '512x512', type: 'image/svg+xml', purpose: 'any maskable' },
+    ],
+    shortcuts: [
+      { name: 'Check what I am owed', url: `${BASE}/app/#check` },
+      { name: 'Deadlines', url: `${BASE}/app/#deadlines` },
+    ],
+  });
+}
+
+/* ================================================================== */
+/* Enterprise                                                          */
+/* ================================================================== */
+
+/** /enterprise/ — the dashboard product. Web only, by design. */
+function enterprisePage() {
+  const startupCount = STARTUP_ALL.length;
+  const openNow = STARTUP_ALL.filter((p) => ['open', 'rolling'].includes(p.status)).length;
+
+  const body = `
+${disclaimerBar(TR)}
+<section class="section-tight shell">
+  ${breadcrumbs([{ label: TR('backHome'), href: `${LB()}/` }, { label: 'Enterprise' }])}
+  <span class="eyebrow eyebrow-accent">Enterprise</span>
+  <h1 style="max-width:16ch" data-blur-words>One dashboard for every company you support.</h1>
+  <p class="lede reveal" style="max-width:54ch;margin-top:1.2rem">
+    Accelerators, funds, universities and economic development agencies run the same search dozens of times
+    a year. This is that search, done once, for a whole portfolio — with the deadlines watched.
+  </p>
+
+  <div class="card reveal" data-delay="200" style="margin-top:2.6rem;padding:1.6rem">
+    <div class="row-between" style="margin-bottom:1.2rem">
+      <div>
+        <span class="eyebrow" style="margin:0">Portfolio</span>
+        <h3 style="margin:.2rem 0 0">42 companies · 3 programmes closing this week</h3>
+      </div>
+      <span class="status status--closing">3 closing</span>
+    </div>
+    <div class="grid grid-4" style="margin-bottom:1.2rem">
+      <div class="stat"><span class="stat__n">€4.1M</span><span class="stat__l">In pipeline</span></div>
+      <div class="stat"><span class="stat__n">18</span><span class="stat__l">Submitted</span></div>
+      <div class="stat"><span class="stat__n">7</span><span class="stat__l">Awarded</span></div>
+      <div class="stat"><span class="stat__n">39%</span><span class="stat__l">Hit rate</span></div>
+    </div>
+    <div class="list-rows">
+      ${[
+        ['Northwind Bio', 'EIC Accelerator', 'Drafting', 'closing', 'Closes in 9 days'],
+        ['Kestrel Energy', 'Innovation Fund', 'Submitted', 'open', 'Decision Q1'],
+        ['Halden Robotics', 'Eurostars', 'Eligible', 'soon', 'Opens 12 Mar'],
+        ['Vantage Health', 'EXIST Transfer', 'Blocked', 'stalled', 'De minimis ceiling'],
+      ]
+        .map(
+          (r) => `<div class="list-row">
+        <div><div class="list-row__name">${r[0]}</div><div class="list-row__meta">${r[1]} · ${r[2]}</div></div>
+        <div class="list-row__right"><span class="status status--${r[3]}">${r[4]}</span></div>
+      </div>`,
+        )
+        .join('')}
+    </div>
+    <p class="tiny" style="margin-top:1rem">Illustrative view. Figures are sample data, not a customer's.</p>
+  </div>
+
+  <div class="grid grid-3" style="margin-top:2.6rem">
+    ${[
+      ['Portfolio matching', `Run every company in your portfolio against all ${nf(startupCount)} programmes at once. ${nf(openNow)} are open today. Bulk import by company number — public registers fill the rest.`],
+      ['Pipeline and stages', 'Eligible → drafting → submitted → awarded, with owner, value and next action on each. The board view your programme manager is currently keeping in a spreadsheet.'],
+      ['Deadline watch', 'Every closing date and projected reopening across the portfolio, pushed to calendars and email. Closed calls are tracked, not hidden — that is where next quarter\'s applications come from.'],
+      ['De minimis ledger', 'Cumulative state aid per company per member state, on a rolling three-year window. Flags an award that would breach the ceiling before anyone spends six weeks on it.'],
+      ['Saved searches', 'Standing queries by sector, stage and geography, with a weekly digest of what is newly open. New programmes surface without anyone re-running a search.'],
+      ['Seats and visibility', 'Unlimited seats with role-based visibility, so a founder sees their own row and the programme team sees everything. SSO, audit log, data residency.'],
+    ]
+      .map(
+        (f, i) => `<div class="card reveal" data-delay="${i * 90}">
+      <h3 style="font-size:1.1rem">${f[0]}</h3>
+      <p class="small">${f[1]}</p>
+    </div>`,
+      )
+      .join('')}
+  </div>
+
+  <div class="callout" style="margin-top:2.4rem">
+    <p><strong>Enterprise is web only, on purpose.</strong> A pipeline board with forty companies and six
+    columns is not a phone screen. The mobile app is for individuals checking what they personally qualify
+    for — different job, different device, so we built it as a different product rather than cramming a
+    dashboard into a 390px viewport.</p>
+  </div>
+
+  <div class="grid grid-2" style="margin-top:1.4rem">
+    <div class="card reveal">
+      <span class="eyebrow">Data out</span>
+      <h3 style="font-size:1.1rem">API, webhooks and CSV</h3>
+      <p class="small">Everything in the dashboard is reachable over the API, so matches land in your own
+      CRM rather than in another tab. Webhooks fire on status change and on reopening.
+      <a class="link-underline" href="${BASE}/api/">See the API →</a></p>
+    </div>
+    <div class="card reveal" data-delay="120">
+      <span class="eyebrow">Getting started</span>
+      <h3 style="font-size:1.1rem">Bring a spreadsheet</h3>
+      <p class="small">Upload your portfolio as CSV with company numbers. We resolve each against its public
+      register, match it, and hand back a ranked plan per company on day one.</p>
+    </div>
+  </div>
+
+  <div style="margin-top:3rem;text-align:center">
+    <h2 class="reveal" style="max-width:20ch;margin-inline:auto">See it against your own portfolio.</h2>
+    <p class="lede reveal" data-delay="100" style="max-width:38ch;margin:1rem auto 1.8rem">Send a CSV, get a ranked plan back.</p>
+    <div class="row reveal" data-delay="180" style="justify-content:center">
+      <a class="btn btn-primary" href="${LB()}/pricing/">Pricing</a>
+      <a class="btn" href="${BASE}/api/">API docs</a>
+    </div>
+  </div>
+</section>`;
+
+  return layout({
+    base: BASE, linkBase: LB(), lang: L, tr: TR, altLangs: ALT,
+    title: 'Enterprise — portfolio grant matching and deadline tracking',
+    description: `Match a whole portfolio against ${nf(startupCount)} funding programmes at once. Pipeline, deadline watch, de minimis tracking, saved searches, SSO and API access.`,
+    canonical: `${SITE_URL}${L === 'en' ? '' : '/' + L}/enterprise/`,
+    body,
+  });
+}
 
 /* ================================================================== */
 /* Startup grants                                                      */
@@ -1214,6 +1374,7 @@ function startupRow(p) {
     ${instrumentBadge(p)}
   </div>
   ${p.name_local && p.name_local !== p.name_en ? `<p class="small" style="margin:.2rem 0 0;color:var(--ink-3)">${esc(p.name_local)}</p>` : ''}
+  <div class="row" style="margin-top:.6rem">${statusChip(p)}</div>
   <p class="small" style="margin:.6rem 0 0">${esc(p.funder)}${p.funder_type === 'private' ? ' · private' : ''}</p>
   <p style="margin:.6rem 0 0"><strong>${amt != null ? esc(money(amt, p.amount_currency)) : 'Amount not published'}</strong>
   ${p.amount_note ? `<span class="small" style="color:var(--ink-3)"> — ${esc(String(p.amount_note).slice(0, 130))}</span>` : ''}</p>
@@ -1369,7 +1530,22 @@ ${disclaimerBar(TR)}
   <h1 style="max-width:20ch">${esc(p.name_en)}</h1>
   ${p.name_local && p.name_local !== p.name_en ? `<p class="lede">${esc(p.name_local)}</p>` : ''}
 
-  <div class="grid grid-2" style="margin-top:2rem;align-items:stretch">
+  ${(() => {
+    const d = deadlineState(p, BUILD_NOW);
+    return `<div class="card" style="margin-top:1.6rem">
+      <div class="row-between">
+        <div>
+          <span class="eyebrow" style="margin:0">Status</span>
+          <h2 style="font-size:1.5rem;margin:.2rem 0 .3rem">${esc(d.headline)}</h2>
+          <p class="small" style="margin:0;max-width:52ch">${esc(d.detail)}</p>
+        </div>
+        <span class="status status--${d.urgency}">${esc(d.meta.label)}</span>
+      </div>
+      ${d.projected ? '<p class="tiny" style="margin-top:.8rem">Projected from the pattern of past calls — confirm on the funder\'s page before planning around it.</p>' : ''}
+    </div>`;
+  })()}
+
+  <div class="grid grid-2" style="margin-top:1.2rem;align-items:stretch">
     <div class="card">
       <span class="eyebrow">Amount</span>
       <div class="figure-sm">${amt != null ? esc(money(amt, p.amount_currency)) : 'Not published'}</div>
@@ -1582,6 +1758,8 @@ function buildLanguage(lang) {
   page(`${pre}methodology/index.html`, methodologyPage());
   ALT = altFor('/pricing/');
   page(`${pre}pricing/index.html`, pricingPage());
+  ALT = altFor('/enterprise/');
+  page(`${pre}enterprise/index.html`, enterprisePage());
 
   for (const aud of AUDIENCES) {
     ALT = altFor(`/for/${aud.id}/`);
@@ -1658,6 +1836,29 @@ write(
   }),
 );
 write('api/v1/stats.json', JSON.stringify(STATS));
+
+/* --- The app ---------------------------------------------------- */
+write('app/index.html', appShell());
+write('app/app.css', fs.readFileSync(path.join(SRC, 'pwa/app.css'), 'utf8'));
+write('app/app.js', fs.readFileSync(path.join(SRC, 'pwa/app.js'), 'utf8'));
+/* The service worker must sit at the root to claim the whole scope. */
+write('sw.js', fs.readFileSync(path.join(SRC, 'pwa/sw.js'), 'utf8'));
+write('manifest.webmanifest', webManifest());
+write('icon-192.svg', appIcon(192));
+write('icon-512.svg', appIcon(512));
+/* The app imports these by relative path, so they must exist alongside it. */
+/* The source lives at src/engine/startup.js and imports ../../packages/...,
+   which is correct in the repo but escapes dist/ once emitted. Rewrite the
+   specifier in the served copy so the browser can actually resolve it. */
+write(
+  'engine/startup.js',
+  fs
+    .readFileSync(path.join(SRC, 'engine/startup.js'), 'utf8')
+    .replace(/from '\.\.\/\.\.\/packages\//g, "from '../packages/"),
+);
+write('packages/deadlines/index.js', fs.readFileSync(path.join(ROOT, 'packages/deadlines/index.js'), 'utf8'));
+write('packages/scoring/index.js', fs.readFileSync(path.join(ROOT, 'packages/scoring/index.js'), 'utf8'));
+write('packages/scoring/rates.js', fs.readFileSync(path.join(ROOT, 'packages/scoring/rates.js'), 'utf8'));
 
 /* Startup pools as JSON assets. The Worker reads these through env.ASSETS
    rather than bundling the dataset, so a data refresh is a rebuild and not a
