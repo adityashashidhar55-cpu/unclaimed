@@ -59,6 +59,7 @@ for (const asset of [
   'app/app.css',
   'app/app.js',
   'app/native.js',
+  'app/auth.js',
   'engine',
   'packages',
   'api/v1',
