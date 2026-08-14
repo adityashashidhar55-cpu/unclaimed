@@ -382,11 +382,11 @@ async function sendCodeEmail(env, email, code) {
     method: 'POST',
     headers: { authorization: `Bearer ${env.RESEND_API_KEY}`, 'content-type': 'application/json' },
     body: JSON.stringify({
-      from: env.MAIL_FROM || 'Unlisted Grants <hello@unlistedgrants.com>',
+      from: env.MAIL_FROM || 'Unclaimed Grants <hello@unclaimedgrant.com>',
       to: email,
       subject: `${code} is your sign-in code`,
       text:
-        `Your Unlisted Grants sign-in code is:\n\n    ${code}\n\n` +
+        `Your Unclaimed Grants sign-in code is:\n\n    ${code}\n\n` +
         `It expires in 10 minutes and can be used once.\n\n` +
         `If you did not ask to sign in, ignore this email — nobody can get in without this code.`,
     }),
