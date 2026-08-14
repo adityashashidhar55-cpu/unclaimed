@@ -1,5 +1,5 @@
 /**
- * UNLISTED GRANTS — sign-in and entitlement.
+ * UNCLAIMED GRANTS — sign-in and entitlement.
  *
  * Email plus a six-digit code. No passwords anywhere in the product: there is
  * nothing to leak, nothing to reset, and nothing a user can reuse from a site
@@ -34,6 +34,20 @@ async function post(path, body) {
 export async function requestCode(email, accountType = 'individual') {
   const { ok, status, data } = await post('/auth/request', { email, account_type: accountType });
   if (status === 429) return { ok: false, error: 'rate_limited', message: data.message };
+
+  /* 404/405 means the static site is being served without the Worker behind
+     it — the API route does not exist, so the request fell through to the
+     asset handler. That is a deployment state, not a user error, and telling
+     someone "could not send the code" would have them retyping their address
+     at a wall. Name it instead. */
+  if (status === 404 || status === 405) {
+    return {
+      ok: false,
+      error: 'api_not_deployed',
+      message: 'Accounts are not switched on yet — the sign-in service is still being deployed. Everything else on the site works.',
+    };
+  }
+
   if (!ok) return { ok: false, error: data.error ?? 'failed', message: data.message ?? 'Could not send the code.' };
   return { ok: true, sent: data.sent, devCode: data.dev_code ?? null, expiresIn: data.expires_in };
 }
