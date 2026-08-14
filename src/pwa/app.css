@@ -2,26 +2,26 @@
    Same glass language as the site, retuned for a thumb: bigger targets,
    denser rows, safe-area insets so nothing hides under the iOS home bar. */
 
-@import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Barlow:wght@300;400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Comic+Neue:ital,wght@0,300;0,400;0,700;1,400;1,700&display=swap');
 
 :root {
   --ink: #fff;
   --ink-2: rgba(255,255,255,.72);
-  --ink-3: rgba(255,255,255,.5);
-  --ink-4: rgba(255,255,255,.34);
-  --line: rgba(255,255,255,.1);
+  --ink-3: rgba(255,255,255,.62);
+  --ink-4: rgba(255,255,255,.46);
+  --line: rgba(255,255,255,.13);
   --terracotta: #e8734a;
   --sage: #7fd1ae;
   --gold: #e3b23c;
-  --font-heading: 'Instrument Serif', Georgia, serif;
-  --font-body: 'Barlow', system-ui, -apple-system, sans-serif;
+  --font-heading: 'Comic Sans MS', 'Comic Neue', 'Chalkboard SE', cursive;
+  --font-body: 'Comic Sans MS', 'Comic Neue', 'Chalkboard SE', cursive;
 }
 
 * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
 
 body {
   margin: 0;
-  background: #000;
+  background: #1c1f26;
   color: var(--ink);
   font-family: var(--font-body);
   font-weight: 300;
@@ -35,8 +35,9 @@ body {
 body::before {
   content: ''; position: fixed; inset: -20%; z-index: -1; pointer-events: none;
   background:
-    radial-gradient(30rem 30rem at 10% -6%, rgba(232,115,74,.16), transparent 62%),
-    radial-gradient(26rem 26rem at 92% 8%, rgba(127,209,174,.1), transparent 64%);
+    radial-gradient(30rem 30rem at 10% -6%, rgba(232,115,74,.18), transparent 62%),
+    radial-gradient(26rem 26rem at 92% 8%, rgba(127,209,174,.12), transparent 64%),
+    linear-gradient(180deg, #202430 0%, #1c1f26 60%, #191c23 100%);
 }
 
 /* Glass primitive */
@@ -202,3 +203,41 @@ p { margin: 0 0 .8rem; color: var(--ink-2); }
    Warm rather than red — nothing has gone wrong, we just cannot answer yet. */
 .total--pending .total__n { font-size: clamp(1.6rem, 5vw, 2.4rem); }
 .total--pending .btn { margin-top: 1.1rem; }
+
+/* ------------------------------------------------------------------ */
+/* Form rhythm                                                         */
+/*                                                                     */
+/* The check was cramped: 1.8rem between questions and 0.5rem between  */
+/* chips, so a screen of options read as one undifferentiated block    */
+/* and it was genuinely hard to tell which answer belonged to which    */
+/* question. Everything below is spacing — no colours, no new          */
+/* components — because that was the whole problem.                    */
+/* ------------------------------------------------------------------ */
+
+.q { margin-bottom: 2.9rem; }
+.q > h2, .q > .qlabel { margin-bottom: .35rem; }
+
+/* The hint under a question belongs to the question, not to the gap. */
+.q .small, .q .tiny { margin-bottom: 1rem; color: var(--ink-3); }
+
+.choices { gap: .7rem; row-gap: .7rem; margin-top: .2rem; }
+.choice { padding: .78rem 1.25rem; min-height: 48px; }
+
+.field { margin-top: .2rem; padding: .95rem 1.1rem; min-height: 54px; }
+
+/* Adults/children steppers sat flush against each other on a phone. */
+.stepper { margin-top: .5rem; padding: .3rem; }
+.stepper + .stepper, .q .grid-2 { gap: 1rem; }
+
+/* The submit is a decision — give it air rather than letting it ride up
+   against the last option, where it gets tapped by accident. */
+.appmain > .btn-block:last-of-type { margin-top: 2rem; }
+
+/* Reading measure: full-width body text on a wide screen is unreadable
+   regardless of how well spaced it is. */
+.q .small, .q .tiny, .hero p { max-width: 62ch; }
+
+@media (min-width: 720px) {
+  .appmain { padding: 2rem 1.6rem 4rem; }
+  .q { margin-bottom: 3.3rem; }
+}
