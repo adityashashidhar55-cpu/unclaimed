@@ -428,6 +428,47 @@ footer.site a:hover { color: #fff; opacity: 1; }
   .audience__switch { display: none; }
 }
 
+/* ------------------------------------------------------------------ */
+/* Form fields on the marketing site                                   */
+/*                                                                     */
+/* .field is defined in the app stylesheet, which the site does not     */
+/* load — so the sign-in input rendered as a browser-default white box  */
+/* on a black page. Restated here rather than importing the app CSS,    */
+/* which would drag the whole app layer onto every marketing page.     */
+/* ------------------------------------------------------------------ */
+
+.field {
+  width: 100%; min-height: 50px; border-radius: .9rem; padding: .8rem 1rem;
+  font-family: var(--font-body); font-size: 1rem; color: #fff;
+  background: rgba(255, 255, 255, 0.02);
+  border: 0; box-shadow: inset 0 0 0 1px var(--line-2);
+  transition: box-shadow .25s ease, background .25s ease;
+  -webkit-appearance: none; appearance: none;
+}
+.field::placeholder { color: rgba(255, 255, 255, 0.28); }
+.field:focus {
+  outline: none;
+  background: rgba(255, 255, 255, 0.04);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.45);
+}
+/* Chrome paints a blue-white block over autofilled inputs; the inset
+   shadow is the only way to repaint it without !important on colour. */
+.field:-webkit-autofill,
+.field:-webkit-autofill:focus {
+  -webkit-text-fill-color: #fff;
+  -webkit-box-shadow: inset 0 0 0 1px var(--line-2), inset 0 0 0 100px #0a0a0a;
+  caret-color: #fff;
+}
+.field option { background: #111; }
+
+/* An honest failure state, styled like the rest of the system. */
+.notice {
+  border-radius: .9rem; padding: .85rem 1rem; margin-top: 1rem;
+  font-size: .92rem; line-height: 1.55;
+  background: rgba(255, 255, 255, 0.02);
+  box-shadow: inset 0 0 0 1px var(--line-2);
+}
+
 @media print {
   body::before, body::after { display: none; }
   body { background: #fff; color: #000; }
