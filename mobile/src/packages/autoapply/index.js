@@ -19,7 +19,8 @@
  * Cloudflare Worker unchanged.
  */
 
-import { policyFor, maySubmitOnBehalf, mayAssist, AUTOMATION } from '../policy/index.js';
+import { policyFor, maySubmitOnBehalf, mayAssist, autoApplyTier, railFor, AUTOMATION } from '../policy/index.js';
+import { coverageFor, documentPlan } from '../vault/index.js';
 
 /* ------------------------------------------------------------------ */
 /* Canonical field vocabulary                                          */
@@ -290,7 +291,7 @@ export function attestationsFor(programme, entry, lang = 'en') {
  * half-built package. A package is never returned in a state that would let a
  * user submit something inaccurate without noticing.
  */
-export function buildPackage({ profile, programme, entry, lang = 'en' }) {
+export function buildPackage({ profile, programme, entry, lang = 'en', holdings = [], asOf = 0 }) {
   const cc = (entry?.slug || profile?.country_code || '').toLowerCase();
   const policy = policyFor(cc);
   const blockers = [];
@@ -334,6 +335,10 @@ export function buildPackage({ profile, programme, entry, lang = 'en' }) {
       mandatory: d.mandatory !== false,
       note: d.note ?? null,
     })),
+    /** What the user already holds in the vault versus what this claim wants.
+     *  With no vault this degrades to "you need all of them", which is the
+     *  old behaviour, so nothing depends on the vault existing. */
+    evidence: coverageFor(programme, holdings, asOf),
     /** Ordered steps taken from the official page. */
     steps: (programme.procedure_steps || []).slice().sort((a, b) => a.step - b.step),
     /** Where the user goes to finish. Their session, their device, their tap. */
@@ -342,6 +347,10 @@ export function buildPackage({ profile, programme, entry, lang = 'en' }) {
       url: programme.application_url || programme.source_url,
       /** True only where a statutory instrument lets a legal person submit. */
       company_may_submit: maySubmitOnBehalf(cc),
+      /** 'submit' | 'fetch' | 'prepare' — what we can actually do here. */
+      tier: autoApplyTier(cc),
+      /** The named mechanism, where one exists. Null is the honest answer. */
+      rail: railFor(cc),
       /** Always true. The user performs the submission act. */
       requires_user_action: !maySubmitOnBehalf(cc),
     },
@@ -366,12 +375,12 @@ export function buildPackage({ profile, programme, entry, lang = 'en' }) {
  * Build packages for a whole result set, ordered so the user does the
  * highest-value, most-complete one first.
  */
-export function buildPlan({ profile, matches, entry, lang = 'en' }) {
+export function buildPlan({ profile, matches, entry, lang = 'en', holdings = [], asOf = 0 }) {
   const packages = matches
     .filter((m) => !m.programme.is_automatic)
     .map((m) => ({
       match: m,
-      pkg: buildPackage({ profile, programme: m.programme, entry, lang }),
+      pkg: buildPackage({ profile, programme: m.programme, entry, lang, holdings, asOf }),
     }))
     .sort((a, b) => {
       if (a.pkg.readiness.ready !== b.pkg.readiness.ready) return a.pkg.readiness.ready ? -1 : 1;
@@ -394,6 +403,15 @@ export function buildPlan({ profile, matches, entry, lang = 'en' }) {
     packages,
     ready_count: packages.filter((p) => p.pkg.readiness.ready).length,
     gaps: [...gaps.values()].sort((a, b) => b.unlocks.length - a.unlocks.length),
+    /* The same consolidation for evidence. Answering questions is cheap;
+       finding a birth certificate is not, so this is the list that actually
+       decides whether someone finishes or gives up. */
+    documents: documentPlan(
+      packages.map((p) => p.match.programme),
+      holdings,
+      asOf,
+      lang,
+    ),
   };
 }
 
