@@ -16,6 +16,10 @@
 import { match } from '../engine/matcher.js';
 import { matchStartup, reachFor } from '../engine/startup.js';
 import { deadlineState, calendar, reminders, toICS } from '../packages/deadlines/index.js';
+import {
+  isNative, store, notifications, biometrics, files, openExternal, tap,
+  initShell, environmentLabel,
+} from './native.js';
 
 /* ------------------------------------------------------------------ */
 /* Tiny helpers                                                        */
@@ -28,11 +32,19 @@ const esc = (s) =>
 const nf = (n) => Number(n).toLocaleString();
 
 const STORE = 'unclaimed.profile.v1';
-const load = () => {
+
+/* Synchronous mirror so render stays sync; the durable copy goes through the
+   native bridge, because iOS evicts webview localStorage after seven days of
+   disuse and would silently wipe someone's answers between checks. */
+let cache = (() => {
   try { return JSON.parse(localStorage.getItem(STORE)) || {}; } catch { return {}; }
-};
+})();
+const load = () => cache;
 const save = (p) => {
-  try { localStorage.setItem(STORE, JSON.stringify(p)); } catch { /* private mode */ }
+  cache = p;
+  const json = JSON.stringify(p);
+  try { localStorage.setItem(STORE, json); } catch {}
+  store.set(STORE, json);
 };
 
 const state = { profile: load(), manifest: null, result: null, view: 'home', mode: 'person' };
@@ -236,7 +248,7 @@ async function resultsView() {
 
   const row = (m) => {
     const d = deadlineState(m.programme, Date.now());
-    return `<a class="prow" href="${esc(m.programme.application_url || m.programme.source_url)}" target="_blank" rel="noopener">
+    return `<a class="prow" data-external href="${esc(m.programme.application_url || m.programme.source_url)}" target="_blank" rel="noopener">
       <div class="prow__main">
         <div class="prow__name">${esc(m.programme.name_local || m.programme.name_en)}</div>
         <div class="prow__meta">${esc(m.programme.funder)}</div>
@@ -269,6 +281,12 @@ async function resultsView() {
     }
 
     <button class="btn btn-block" data-action="ics">Add deadlines to my calendar</button>
+    ${
+      isNative
+        ? `<button class="btn btn-block" data-action="notify">Remind me before each deadline</button>
+           <p class="tiny" id="notify-state"></p>`
+        : `<p class="tiny">Install the app to get a reminder on your phone before each deadline closes.</p>`
+    }
     <p class="tiny">Amounts are published maximums. Means-tested payments taper — most people get less than the ceiling.</p>`,
     { back: 'home', title: entry?.name || '' },
   );
@@ -325,6 +343,12 @@ function documentsView() {
       before they leave your phone. We hold scrambled bytes and a label like "proof of income" — we cannot
       open them, and neither can anyone who breaks into our servers.
     </div>
+    ${
+      isNative
+        ? `<button class="btn btn-block" data-action="unlock">Unlock with Face ID or fingerprint</button>
+           <p class="tiny" id="vault-state"></p>`
+        : ''
+    }
     <p class="small">Sign in on the web to add documents to your vault. They will appear here.</p>
     <button class="btn btn-block" data-action="signin">Sign in</button>`,
     { back: 'home', title: 'Documents' },
@@ -341,6 +365,7 @@ function settingsView() {
     <section>
       <h2>Offline</h2>
       <p class="small" id="offline-state">Checking…</p>
+      <p class="tiny">Running as: ${esc(environmentLabel())}</p>
     </section>
     <section>
       <h2>About</h2>
@@ -422,13 +447,36 @@ document.addEventListener('click', async (e) => {
     return;
   }
 
+  /* Funder links must never open inside our own shell — a government portal
+     rendered in our chrome reads as ours, which is the impersonation both
+     stores reject and the confusion a claimant least needs. */
+  const ext = e.target.closest('a[data-external]');
+  if (ext) {
+    e.preventDefault();
+    tap();
+    openExternal(ext.href);
+    return;
+  }
+
   const action = e.target.closest('[data-action]');
   if (!action) return;
 
   if (action.dataset.action === 'clear') {
     localStorage.removeItem(STORE);
     state.profile = {};
-    return void render('home');
+    return void /* Android hardware back walks our own view stack before the OS closes the
+   app — otherwise the first press quits from a results screen. */
+g_back();
+function g_back() {
+  globalThis.__unclaimedBack = () => {
+    if (state.view === 'home') return false;
+    render(state.view === 'results' ? 'home' : 'home');
+    return true;
+  };
+}
+
+initShell();
+render('home');
   }
   if (action.dataset.action === 'signin') {
     location.href = `${BASE}/account/`;
@@ -436,12 +484,36 @@ document.addEventListener('click', async (e) => {
   }
   if (action.dataset.action === 'ics' && state.result) {
     const evts = reminders(state.result.eligible, Date.now());
-    const blob = new Blob([toICS(evts)], { type: 'text/calendar' });
-    const a = document.createElement('a');
-    a.href = URL.createObjectURL(blob);
-    a.download = 'unclaimed-deadlines.ics';
-    a.click();
-    URL.revokeObjectURL(a.href);
+    await files.saveAndShare({
+      filename: 'unlisted-grants-deadlines.ics',
+      data: toICS(evts),
+      mime: 'text/calendar',
+      title: 'Grant deadlines',
+    });
+    tap();
+  }
+
+  /* The reason to install the app: deadlines become OS notifications months
+     ahead, with no server and no network at the time they fire. */
+  if (action.dataset.action === 'notify' && state.result) {
+    const evts = reminders(state.result.eligible, Date.now());
+    const res = await notifications.schedule(evts);
+    const el = $('#notify-state');
+    if (el) {
+      el.textContent =
+        res.reason === 'unsupported'
+          ? 'Install the app to get deadline reminders on your phone.'
+          : res.reason === 'denied'
+            ? 'Notifications are off. Turn them on in your phone settings to get deadline reminders.'
+            : `${res.scheduled} reminders set.${res.capped ? ` ${res.capped} more will be added as these pass — your phone limits how many can be pending at once.` : ''}`;
+    }
+    tap();
+  }
+
+  if (action.dataset.action === 'unlock') {
+    const ok = await biometrics.verify('Unlock your documents');
+    const el = $('#vault-state');
+    if (el) el.textContent = ok ? 'Unlocked.' : 'Could not verify. Use your passphrase instead.';
   }
 });
 
@@ -486,4 +558,16 @@ document.addEventListener('click', async (e) => {
   $('#install').hidden = true;
 });
 
+/* Android hardware back walks our own view stack before the OS closes the
+   app — otherwise the first press quits from a results screen. */
+g_back();
+function g_back() {
+  globalThis.__unclaimedBack = () => {
+    if (state.view === 'home') return false;
+    render(state.view === 'results' ? 'home' : 'home');
+    return true;
+  };
+}
+
+initShell();
 render('home');
