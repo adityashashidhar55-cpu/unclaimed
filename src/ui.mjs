@@ -74,6 +74,7 @@ ${canonical ? `<meta property="og:url" content="${attr(canonical)}">` : ''}
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="${base}/theme.css">
+<noscript><style>.reveal,.blur-word,.flow::before{opacity:1!important;filter:none!important;transform:none!important}</style></noscript>
 <link rel="icon" href="${base}/favicon.svg" type="image/svg+xml">
 <link rel="alternate" type="application/json" href="${base}/api/v1/countries.json" title="Unclaimed programme API">
 ${altLangs.map((a) => `<link rel="alternate" hreflang="${a.lang}" href="${a.href}">`).join('\n')}
@@ -182,6 +183,14 @@ ${body}
   }
 
   /* Headline blur-in, word by word. Hero only — everywhere it becomes a tic. */
+  /* Safety net. Entry animation is a nicety; a blank page is not an option.
+     If anything above failed, this still shows the content. */
+  setTimeout(function () {
+    document.querySelectorAll('.reveal, .flow, .flow__step, .blur-word').forEach(function (el) {
+      el.classList.add('in');
+    });
+  }, 3000);
+
   document.querySelectorAll('[data-blur-words]').forEach(function (h) {
     if (reduce) return;
     var words = h.textContent.trim().split(/\s+/);
