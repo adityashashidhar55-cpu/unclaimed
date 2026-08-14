@@ -66,9 +66,31 @@ export const DOC_TYPES = {
   jobseeker_registration: { validity_months: 3, sensitivity: 'medium', reusable: true },
   photo: { validity_months: 12, sensitivity: 'low', reusable: true },
   other: { validity_months: null, sensitivity: 'medium', reusable: false },
+  /* --- Company documents. Grant applications want a different set entirely,
+     and they are reused even harder than personal ones: one pitch deck and
+     one set of accounts feed every application a founder makes that year. */
+  certificate_of_incorporation: { validity_months: null, sensitivity: 'low', reusable: true, entity: 'startup' },
+  company_accounts: { validity_months: 12, sensitivity: 'high', reusable: true, entity: 'startup' },
+  cap_table: { validity_months: 6, sensitivity: 'high', reusable: true, entity: 'startup' },
+  business_plan: { validity_months: 12, sensitivity: 'medium', reusable: true, entity: 'startup' },
+  pitch_deck: { validity_months: 6, sensitivity: 'medium', reusable: true, entity: 'startup' },
+  financial_projections: { validity_months: 6, sensitivity: 'high', reusable: true, entity: 'startup' },
+  tax_clearance: { validity_months: 6, sensitivity: 'high', reusable: true, entity: 'startup' },
+  vat_registration: { validity_months: null, sensitivity: 'medium', reusable: true, entity: 'startup' },
+  de_minimis_declaration: { validity_months: 3, sensitivity: 'medium', reusable: false, entity: 'startup' },
+  ip_evidence: { validity_months: null, sensitivity: 'high', reusable: true, entity: 'startup' },
+  letters_of_support: { validity_months: 12, sensitivity: 'low', reusable: false, entity: 'startup' },
+  team_cvs: { validity_months: 12, sensitivity: 'medium', reusable: true, entity: 'startup' },
+  bank_statement_business: { validity_months: 3, sensitivity: 'high', reusable: true, entity: 'startup' },
+  articles_of_association: { validity_months: null, sensitivity: 'low', reusable: true, entity: 'startup' },
   /** Not a document at all — the scheme asks for nothing. Never a gap. */
   not_required: { validity_months: null, sensitivity: 'low', reusable: true },
 };
+
+/** Document types that belong to a company rather than a person. */
+export function isCompanyDoc(type) {
+  return DOC_TYPES[type]?.entity === 'startup';
+}
 
 /** Human labels, in the languages the site ships. */
 export const DOC_LABELS = {
@@ -92,6 +114,20 @@ export const DOC_LABELS = {
     application_form: 'Application form',
     jobseeker_registration: 'Jobseeker registration',
     social_registry: 'Social registry enrolment',
+    certificate_of_incorporation: 'Certificate of incorporation',
+    company_accounts: 'Company accounts',
+    cap_table: 'Cap table / shareholder register',
+    business_plan: 'Business plan',
+    pitch_deck: 'Pitch deck',
+    financial_projections: 'Financial projections',
+    tax_clearance: 'Tax clearance certificate',
+    vat_registration: 'VAT registration',
+    de_minimis_declaration: 'De minimis declaration',
+    ip_evidence: 'IP evidence (patents, filings)',
+    letters_of_support: 'Letters of support',
+    team_cvs: 'Team CVs',
+    bank_statement_business: 'Business bank statement',
+    articles_of_association: 'Articles of association',
     not_required: 'No document required',
     other: 'Other document',
   },
@@ -269,6 +305,20 @@ const PATTERNS = [
 
   ['application_form', /(?<![a-zA-Z])(application form|claim form|completed form|formulaire de demande|antragsformular|formulario de solicitud|modulo di domanda|formul[áa]rio de candidatura|wniosek\b|aanvraagformulier|ans[öo]kningsblankett|신청서)(?![a-zA-Z])/i],
   ['jobseeker_registration', /(?<![a-zA-Z])(jobseeker|job seeker|registered (as )?unemployed|employment service registration|inscription (à )?p[ôo]le emploi|france travail|arbeitslos(meldung)?|arbeitssuchend|demanda de empleo|darde|inskrivning hos arbetsf[öo]rmedlingen|arbetsf[öo]rmedlingen|centro per l'?impiego|did\b)(?![a-zA-Z])/i],
+  ['certificate_of_incorporation', /(?<![a-zA-Z])(certificate of incorporation|incorporation certificate|companies house|extrait kbis|kbis|handelsregisterauszug|gewerbeanmeldung|escritura de constituci[oó]n|visura camerale|certid[ãa]o permanente|krs\b|uittreksel kvk|kvk\b|registreringsbevis|certificate of registration|company registration certificate)(?![a-zA-Z])/i],
+  ['company_accounts', /(?<![a-zA-Z])(annual accounts|financial statements|audited accounts|statutory accounts|balance sheet|profit and loss|liasse fiscale|bilan comptable|jahresabschluss|bwa\b|cuentas anuales|bilancio|presta[çc][ãa]o de contas|jaarrekening|[åa]rsredovisning)(?![a-zA-Z])/i],
+  ['cap_table', /(?<![a-zA-Z])(cap ?table|capitalisation table|capitalization table|shareholder (register|agreement|list)|share register|ownership structure|r[ée]partition du capital|gesellschafterliste|estructura accionarial|libro soci|aandeelhoudersregister)(?![a-zA-Z])/i],
+  ['pitch_deck', /(?<![a-zA-Z])(pitch ?deck|investor deck|presentation deck|slide deck)(?![a-zA-Z])/i],
+  ['business_plan', /(?<![a-zA-Z])(business plan|plan d'?affaires|businessplan|plan de negocio|piano industriale|plano de neg[óo]cios|ondernemingsplan|aff[äa]rsplan|biznesplan|project (proposal|description)|work ?plan|feasibility study)(?![a-zA-Z])/i],
+  ['financial_projections', /(?<![a-zA-Z])(financial (projections?|forecast|model)|cash ?flow (forecast|projection)|pr[ée]visionnel|finanzplan|liquidit[äa]tsplan|proyecciones financieras|piano finanziario|budget forecast)(?![a-zA-Z])/i],
+  ['de_minimis_declaration', /(?<![a-zA-Z])(de.?minimis|state aid declaration|d[ée]claration des aides|beihilfe(erkl[äa]rung)?|minimis-?erkl[äa]rung|ayudas de minimis|aiuti de minimis)(?![a-zA-Z])/i],
+  ['tax_clearance', /(?<![a-zA-Z])(tax clearance|tax compliance certificate|attestation (de vigilance|fiscale|urssaf)|unbedenklichkeitsbescheinigung|certificado de estar al corriente|durc\b|certid[ãa]o de n[ãa]o d[íi]vida|skatteverket intyg)(?![a-zA-Z])/i],
+  ['vat_registration', /(?<![a-zA-Z])(vat (registration|number|certificate)|num[ée]ro de tva|umsatzsteuer|ust-?idnr|steuernummer|n[ií]f\b|partita iva|btw-?nummer|momsregistrering|gstin?\b)(?![a-zA-Z])/i],
+  ['ip_evidence', /(?<![a-zA-Z])(patent|trademark|intellectual property|freedom to operate|brevet|marque d[ée]pos[ée]e|patentanmeldung|schutzrecht|patente|marchio|propriedade intelectual|octrooi)(?![a-zA-Z])/i],
+  ['letters_of_support', /(?<![a-zA-Z])(letters? of (support|intent|commitment)|lettre de soutien|absichtserkl[äa]rung|letter of engagement|carta de apoyo|lettera di sostegno|loi\b|mou\b)(?![a-zA-Z])/i],
+  ['team_cvs', /(?<![a-zA-Z])(cvs?\b|curriculum vitae|r[ée]sum[ée]s?\b|team (profile|biograph)|lebenslauf|founder profiles?)(?![a-zA-Z])/i],
+  ['bank_statement_business', /(?<![a-zA-Z])(business bank statement|company bank statement|relev[ée] bancaire professionnel|gesch[äa]ftskonto)(?![a-zA-Z])/i],
+  ['articles_of_association', /(?<![a-zA-Z])(articles of association|memorandum of association|statuts\b|gesellschaftsvertrag|satzung|estatutos|statuto|estatutos sociais|statuten|bolagsordning|umowa sp[óo]łki)(?![a-zA-Z])/i],
   ['photo', /(?<![a-zA-Z])(photograph|passport photo|passport-sized|photo d'?identit[ée]|lichtbild|passbild|fotograf[íi]a|fotografia|zdj[eę]cie|pasfoto)(?![a-zA-Z])/i],
 ];
 
