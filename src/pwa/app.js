@@ -20,6 +20,7 @@ import {
   isNative, store, notifications, biometrics, files, openExternal, tap,
   initShell, environmentLabel,
 } from './native.js';
+import { me, fetchMatch, startCheckout } from './auth.js';
 
 /* ------------------------------------------------------------------ */
 /* Tiny helpers                                                        */
@@ -231,6 +232,43 @@ async function checkView() {
   );
 }
 
+/**
+ * What an unentitled visitor sees instead of their programme list.
+ *
+ * It shows the shape of the answer — how many programmes, how many pay out
+ * automatically, what categories — because a wall with nothing behind it that
+ * you can see the outline of is just a wall. The names, amounts, links and
+ * steps are the thing being sold, and none of them are in this markup.
+ */
+function lockedPanel(gate, r, sym) {
+  const n = gate.counts?.eligible ?? r.eligible.length;
+  const auto = gate.counts?.automatic ?? r.eligible.filter((m) => m.programme.is_automatic).length;
+  const signedIn = gate.paywall?.reason && gate.paywall.reason !== 'anonymous';
+
+  const cats = Object.entries(gate.by_category || {})
+    .sort((a, b) => b[1] - a[1])
+    .slice(0, 6)
+    .map(([c, k]) => `<span class="chip">${esc(c.replace(/_/g, ' '))} · ${k}</span>`)
+    .join('');
+
+  return `<section class="locked">
+    <h2>${n} programme${n === 1 ? '' : 's'} match you</h2>
+    <p class="small">${auto ? `${auto} of them pay out automatically once you are registered. ` : ''}Unlock to see
+    which ones, what each pays, what documents they want, and when they close.</p>
+    ${cats ? `<div class="chips">${cats}</div>` : ''}
+    <div class="locked__rows" aria-hidden="true">
+      ${Array.from({ length: Math.min(n, 4) }, () => '<div class="locked__row"></div>').join('')}
+    </div>
+    ${
+      signedIn
+        ? `<button class="btn btn-block btn-primary" data-action="upgrade">Unlock my ${n} programmes — €50/year</button>
+           <p class="tiny">or €7/month. Cancel any time. The same price whether you are owed nothing or ${sym}9,000.</p>`
+        : `<button class="btn btn-block btn-primary" data-action="signin">Sign in to unlock</button>
+           <p class="tiny">Email and a six-digit code. No password to forget.</p>`
+    }
+  </section>`;
+}
+
 async function resultsView() {
   const p = state.profile;
   if (!p.country_code) return checkView();
@@ -245,6 +283,27 @@ async function resultsView() {
   const cur = r.currency || entry?.currency || '';
   const sym = { GBP: '£', USD: '$', EUR: '€' }[cur] || '';
   const cal = calendar(r.eligible, Date.now());
+
+  /* The total above is computed on this device, so the free answer works with
+     no network at all. The LIST is not: it comes from the server, which
+     decides whether this user may have it. Rendering it locally and hiding it
+     with CSS would put every programme one devtools panel away.
+
+     If the request fails we fall through to the locked panel rather than to
+     the local list — an offline client is not an entitled one. */
+  const gate = await fetchMatch({ ...p, country_code: cc }).catch(() => ({ ok: false }));
+
+  const serverRow = (m) => {
+    const d = deadlineState(m, Date.now());
+    return `<a class="prow" data-external href="${esc(m.application_url || m.source_url)}" target="_blank" rel="noopener">
+      <div class="prow__main">
+        <div class="prow__name">${esc(m.name_local || m.name_en)}</div>
+        <div class="prow__meta">${esc(m.funder)}</div>
+        <span class="chip chip--${d.urgency}">${esc(d.headline)}</span>
+      </div>
+      <div class="prow__amt">${m.est_annual_max != null ? sym + nf(m.est_annual_max) : '—'}</div>
+    </a>`;
+  };
 
   const row = (m) => {
     const d = deadlineState(m.programme, Date.now());
@@ -266,19 +325,21 @@ async function resultsView() {
       ${cal.counts.closing ? `<p class="warn">${cal.counts.closing} closing within two weeks.</p>` : ''}
     </section>
 
-    <section>
+    ${gate.entitled
+      ? `<section>
       <h2>What you qualify for</h2>
-      <div class="prows">${r.eligible.slice(0, 40).map(row).join('') || '<p class="small">Nothing matched. Try answering the questions you skipped.</p>'}</div>
+      <div class="prows">${(gate.eligible || []).slice(0, 40).map(serverRow).join('') || '<p class="small">Nothing matched. Try answering the questions you skipped.</p>'}</div>
     </section>
 
     ${
-      r.needs_one_more_answer.length
+      (gate.needs_one_more_answer || []).length
         ? `<section>
       <h2>One more answer would unlock these</h2>
-      <div class="prows">${r.needs_one_more_answer.slice(0, 10).map(row).join('')}</div>
+      <div class="prows">${gate.needs_one_more_answer.slice(0, 10).map(serverRow).join('')}</div>
     </section>`
         : ''
-    }
+    }`
+      : lockedPanel(gate, r, sym)}
 
     <button class="btn btn-block" data-action="ics">Add deadlines to my calendar</button>
     ${
@@ -480,6 +541,23 @@ render('home');
   }
   if (action.dataset.action === 'signin') {
     location.href = `${BASE}/account/`;
+    return;
+  }
+
+  /* Checkout is started by the server, not by a Stripe key in this bundle.
+     The price is chosen from a fixed table in the Worker — a client that can
+     name its own price is a client that can name a cheaper one. */
+  if (action.dataset.action === 'upgrade') {
+    action.disabled = true;
+    action.textContent = 'Opening checkout…';
+    const res = await startCheckout('personal_annual');
+    if (res.ok && res.url) {
+      if (isNative) await openExternal(res.url);
+      else location.href = res.url;
+    } else {
+      action.disabled = false;
+      action.textContent = 'Could not open checkout — try again';
+    }
     return;
   }
   if (action.dataset.action === 'ics' && state.result) {
