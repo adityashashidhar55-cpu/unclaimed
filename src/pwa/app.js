@@ -57,10 +57,37 @@ async function manifest() {
 /* The question flow                                                   */
 /* ------------------------------------------------------------------ */
 
+/**
+ * The question set is driven by what the matcher actually blocks on.
+ *
+ * A first version asked five friendly questions and returned nothing: every
+ * programme fell into "needs one more answer" because the engine wanted age,
+ * nationality and region, and none of them were asked. A check that returns
+ * zero is worse than one that asks two more questions, so the flow now covers
+ * every attribute the matcher can block on. Each one is skippable — a missing
+ * answer routes a programme to "needs one more answer", never to "no".
+ */
 const QUESTIONS = [
   {
     id: 'country_code', label: 'Where do you live?', type: 'country',
     help: 'Rules are national, so this decides everything else.',
+  },
+  {
+    id: 'admin_area', label: 'Which region?', type: 'region',
+    help: 'Some support is regional. Skip it and we will still show the national programmes.',
+  },
+  {
+    id: 'age', label: 'How old are you?', type: 'number',
+    help: 'Plenty of programmes have an age floor or ceiling.',
+  },
+  {
+    id: 'nationality_group', label: 'Your status in the country?', type: 'choice',
+    options: [
+      ['citizen_or_pr', 'Citizen or permanent resident'],
+      ['eu_eea', 'EU / EEA national'],
+      ['other_legal', 'Other legal residence'],
+      [null, 'Rather not say'],
+    ],
   },
   {
     id: 'status', label: 'What best describes you right now?', type: 'choice',
@@ -104,7 +131,7 @@ function homeView() {
     <section class="hero">
       <p class="eyebrow">Free forever, no account</p>
       <h1>The money you are owed.</h1>
-      <p class="lede">Answer five questions. Everything runs on this device — nothing is sent anywhere,
+      <p class="lede">Answer a few questions. Everything runs on this device — nothing is sent anywhere,
       and it works with no signal.</p>
       <button class="btn btn-primary btn-block" data-nav="check">
         ${hasProfile ? 'Check again' : 'Start the check'}
@@ -147,6 +174,19 @@ async function checkView() {
         <option value="">Choose…</option>
         ${man.countries.map((c) => `<option value="${c.slug}"${v === c.slug ? ' selected' : ''}>${c.flag} ${esc(c.name)}</option>`).join('')}
       </select>`;
+    }
+    if (question.type === 'region') {
+      const e = man.countries.find((c) => c.slug === p.country_code);
+      const regions = e?.regions || [];
+      if (!regions.length) return '<p class="small">No regional breakdown for this country.</p>';
+      return `<select class="field" data-q="admin_area">
+        <option value="">All of ${esc(e.name)}</option>
+        ${regions.map((rg) => `<option value="${esc(rg)}"${v === rg ? ' selected' : ''}>${esc(rg)}</option>`).join('')}
+      </select>`;
+    }
+    if (question.type === 'number') {
+      return `<input class="field" type="number" inputmode="numeric" min="0" max="120"
+        data-q="${question.id}" value="${v ?? ''}" placeholder="Skip if you'd rather not say">`;
     }
     if (question.type === 'household') {
       return `<div class="stepper-row">
@@ -408,8 +448,15 @@ document.addEventListener('click', async (e) => {
 document.addEventListener('change', (e) => {
   const f = e.target.closest('.field');
   if (!f) return;
-  state.profile[f.dataset.q] = f.value || null;
+  /* Coerce numbers. The matcher compares against numeric thresholds, and a
+     string age silently fails every one of them. */
+  const raw = f.value;
+  state.profile[f.dataset.q] = raw === '' ? null : f.type === 'number' ? Number(raw) : raw;
   save(state.profile);
+  if (f.dataset.q === 'country_code') {
+    state.profile.admin_area = null;
+    render('check');
+  }
 });
 
 /* ------------------------------------------------------------------ */
