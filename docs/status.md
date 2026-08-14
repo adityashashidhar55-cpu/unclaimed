@@ -619,3 +619,48 @@ generator. Added: conditional-circumstance bucket, loan/capital exclusion from t
 document checklist, `.ics` export, shareable result URLs, print pack, global category browse,
 build verification in CI, GitHub Pages deployment. Design system rewritten from scratch
 (editorial/warm, no framework).
+
+**2026-08-14 — native apps, own domain, pricing.** The site now builds for
+`unlistedgrants.com` at the apex rather than a project path, and the same app that runs
+in the browser ships as signed Android and iOS binaries.
+
+*Why Capacitor rather than a second codebase.* The eligibility matcher, the deadline
+engine and the scoring package are already tested and already run in the browser.
+Rewriting them for React Native would mean two implementations of the one thing that
+must not disagree — what someone is told they are owed. Capacitor wraps the tested shell
+and adds OS integration around it, which is also the answer to App Store guideline 4.2:
+the matcher runs on-device against a bundled dataset (the free check works in airplane
+mode), deadlines become local notifications scheduled months ahead, the document vault is
+gated by Face ID or fingerprint, and exports go through the native share sheet. Four
+things a browser tab cannot do.
+
+*What was added.* `src/pwa/native.js` (the bridge — every capability degrades rather than
+throwing, so the web build never breaks when a plugin is absent); `native/prepare.mjs`
+(assembles the app's web root: 121 files, 8.0 MB, index.html at the bundle root because
+Capacitor loads `/index.html` and a wrong path there is a white screen with no error
+anywhere useful); `native/gen-assets.py` (opaque RGB icons and splashes — both stores
+reject alpha); `native/STORE.md` (listing copy, review notes, Data Safety and privacy
+label answers, runbook); `.github/workflows/mobile.yml` (a signed .aab and .ipa from CI,
+no laptop involved); `scripts/verify-native.mjs` (18 checks).
+
+*Two traps worth recording.* GitHub's `secrets` context is not readable from a step-level
+`if:`, so every "is signing configured?" condition reads from job-level `env` instead —
+written the obvious way, the conditions fail to evaluate rather than failing loudly.
+And Capacitor's generated `build.gradle` has no release `signingConfig`, so a stock
+`bundleRelease` emits an *unsigned* bundle that Play rejects with a message that never
+mentions signing; the workflow injects one.
+
+*Store figures are checked against the data.* The listing quotes 3,900 programmes across
+77 jurisdictions and 226 closed programmes tracked with their reopening dates. Those three
+numbers are asserted against `data/` in `verify-native.mjs`, because a description written
+once and never revisited becomes a misrepresentation the first time the dataset grows.
+
+*Pricing.* Personal is €50/year or €7/month; Enterprise starts at €249/month, with the
+dashboard and bulk work that justifies it. The mobile apps carry the individual product
+only — enterprise is a desktop workflow and pretending otherwise would mean shipping a
+dashboard nobody uses on a phone.
+
+**Still open:** DNS for `unlistedgrants.com` is not yet pointed at GitHub Pages, so the
+custom domain shows "DNS check in progress". Store accounts (Apple $99/yr, Play $25 once)
+and the signing secrets are the remaining human steps; Play's 14-day / 12-tester closed
+test for new personal accounts is the longest pole in the launch.
