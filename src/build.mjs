@@ -25,6 +25,21 @@ import {
 import { LOCALES, LANGS, t as translator } from './i18n.mjs';
 import { policyFor, autoApplyTier, railFor } from '../packages/policy/index.js';
 import { DOC_TYPES } from '../packages/vault/index.js';
+import { INSTRUMENTS, isFreeMoney, reachFor } from './engine/startup.js';
+import { DE_MINIMIS_CEILING_EUR, REGULATION } from '../packages/stateaid/index.js';
+import { REGISTRIES, autofillAvailable } from '../packages/registry/index.js';
+
+/* Startup grants live in their own namespace with their own engine — a
+   company is not a household and forcing both through one matcher would make
+   each worse. See src/engine/startup.js. */
+const STARTUP_MANIFEST = JSON.parse(fs.readFileSync(new URL('../data/startups/manifest.json', import.meta.url)));
+const STARTUP_DATA = Object.fromEntries(
+  STARTUP_MANIFEST.countries.map((c) => [
+    c.slug,
+    JSON.parse(fs.readFileSync(new URL(`../data/startups/${c.slug}.json`, import.meta.url))),
+  ]),
+);
+const STARTUP_ALL = STARTUP_MANIFEST.countries.flatMap((c) => STARTUP_DATA[c.slug].programmes);
 import {
   SITE_NAME,
   TAGLINE,
@@ -1164,6 +1179,213 @@ ${disclaimerBar(TR)}
   });
 }
 
+
+/* ================================================================== */
+/* Startup grants                                                      */
+/* ================================================================== */
+
+const money = (n, cur) =>
+  n == null ? null : `${cur === 'GBP' ? '£' : cur === 'USD' ? '$' : cur === 'EUR' ? '€' : ''}${nf(n)}${cur && !['GBP', 'USD', 'EUR'].includes(cur) ? ' ' + cur : ''}`;
+
+function instrumentBadge(p) {
+  const i = INSTRUMENTS[p.grant_type];
+  const free = isFreeMoney(p.grant_type);
+  return `<span class="pill${free ? ' pill-accent' : ''}">${esc(i?.label ?? p.grant_type)}</span>`;
+}
+
+function startupRow(p) {
+  const amt = p.amount_max ?? p.amount_min;
+  return `<article class="card">
+  <div class="row-between">
+    <h3 style="margin:0"><a href="${LB()}/startups/${esc(p.country_code)}/${esc(p.slug)}/">${esc(p.name_en)}</a></h3>
+    ${instrumentBadge(p)}
+  </div>
+  ${p.name_local && p.name_local !== p.name_en ? `<p class="small" style="margin:.2rem 0 0;color:var(--ink-3)">${esc(p.name_local)}</p>` : ''}
+  <p class="small" style="margin:.6rem 0 0">${esc(p.funder)}${p.funder_type === 'private' ? ' · private' : ''}</p>
+  <p style="margin:.6rem 0 0"><strong>${amt != null ? esc(money(amt, p.amount_currency)) : 'Amount not published'}</strong>
+  ${p.amount_note ? `<span class="small" style="color:var(--ink-3)"> — ${esc(String(p.amount_note).slice(0, 130))}</span>` : ''}</p>
+  ${p.eligibility?.de_minimis ? '<p class="small" style="margin:.4rem 0 0;color:var(--terracotta)">Counts against your de minimis ceiling</p>' : ''}
+</article>`;
+}
+
+/** /startups/ — the index. */
+function startupsIndex() {
+  const byType = {};
+  for (const p of STARTUP_ALL) byType[p.grant_type] = (byType[p.grant_type] || 0) + 1;
+  const nonDilutive = STARTUP_ALL.filter((p) => isFreeMoney(p.grant_type)).length;
+  const priv = STARTUP_ALL.filter((p) => p.funder_type === 'private').length;
+
+  const body = `
+${disclaimerBar(TR)}
+<section class="section-tight shell">
+  ${breadcrumbs([{ label: TR('backHome'), href: `${LB()}/` }, { label: 'Startup grants' }])}
+  <span class="eyebrow eyebrow-accent">For founders</span>
+  <h1 style="max-width:18ch">Grants your startup can take without giving up equity</h1>
+  <p class="lede" style="max-width:58ch">${nf(STARTUP_ALL.length)} funding programmes across
+  ${STARTUP_MANIFEST.countries.length} jurisdictions — public and private, every one with a link to the
+  funder's own page. ${nf(nonDilutive)} of them are non-dilutive cash.</p>
+
+  <div class="grid grid-4" style="margin-top:2rem">
+    ${Object.entries(byType).sort((a, b) => b[1] - a[1]).map(([t, n]) => `<div class="card">
+      <div class="figure-sm">${n}</div>
+      <p class="small">${esc(INSTRUMENTS[t]?.label ?? t)}</p>
+    </div>`).join('')}
+  </div>
+
+  <div class="callout callout--sage" style="margin-top:2rem">
+    <p><strong>Credits are not cash, and we never add them together.</strong> ${nf(byType.in_kind ?? 0)} of
+    these are cloud or software credits. They are worth having, but a headline that mixed $100,000 of AWS
+    credits into a grant total would be a lie, so instruments are counted separately everywhere on this site.
+    Equity and loans are marked as such too.</p>
+  </div>
+
+  <div class="callout" style="margin-top:1.2rem">
+    <p><strong>The ceiling most founders find out about too late.</strong> Small public grants across the EU
+    are capped at <strong>€${nf(DE_MINIMIS_CEILING_EUR)} per company per member state over a rolling three
+    years</strong> (${esc(REGULATION.general.id)}, ${esc(REGULATION.general.article)}). Go over it and the new
+    award does not get trimmed — under Article 3(7) it is disqualified in full. We track what you have already
+    taken and tell you before you spend six weeks on an application you are barred from.</p>
+  </div>
+
+  <h2 style="margin-top:3rem">By country</h2>
+  <div class="grid grid-3" style="margin-top:1.2rem">
+    ${STARTUP_MANIFEST.countries.map((c) => `<a class="card card-link" href="${LB()}/startups/${esc(c.slug)}/">
+      <div class="row-between"><strong>${c.flag} ${esc(c.name)}</strong><span class="small">${c.count}</span></div>
+      <p class="small" style="margin:.4rem 0 0;color:var(--ink-3)">${c.priced} with published amounts</p>
+    </a>`).join('')}
+  </div>
+
+  <h2 style="margin-top:3rem">Private and corporate programmes</h2>
+  <p class="small" style="max-width:56ch">${nf(priv)} of these come from companies rather than governments —
+  cloud credits, foundation grants and prizes. They rarely appear in public grant databases at all.</p>
+  <div class="grid grid-2" style="margin-top:1.2rem">
+    ${STARTUP_ALL.filter((p) => p.funder_type === 'private').slice(0, 8).map(startupRow).join('')}
+  </div>
+
+  <p style="margin-top:2.5rem"><a class="btn btn-primary" href="${LB()}/startups/check/">Check what your company qualifies for</a></p>
+</section>`;
+
+  return layout({
+    base: BASE, linkBase: LB(), lang: L, tr: TR, altLangs: ALT,
+    title: 'Startup grants — non-dilutive funding across 27 jurisdictions',
+    description: `${nf(STARTUP_ALL.length)} startup funding programmes, public and private, across ${STARTUP_MANIFEST.countries.length} jurisdictions. Sourced, dated and linked to the funder.`,
+    canonical: `${SITE_URL}${L === 'en' ? '' : '/' + L}/startups/`,
+    body,
+  });
+}
+
+/** /startups/{cc}/ */
+function startupCountryPage(c) {
+  const data = STARTUP_DATA[c.slug];
+  const reg = REGISTRIES[c.slug];
+  const body = `
+${disclaimerBar(TR)}
+<section class="section-tight shell">
+  ${breadcrumbs([{ label: TR('backHome'), href: `${LB()}/` }, { label: 'Startup grants', href: `${LB()}/startups/` }, { label: c.name }])}
+  <span class="eyebrow eyebrow-accent">${c.flag} ${esc(c.name)}</span>
+  <h1>Startup funding in ${esc(c.name)}</h1>
+  <p class="lede" style="max-width:56ch">${c.count} programmes, ${c.priced} with a published amount.
+  ${reachFor(c.slug).includes('eu') && c.slug !== 'eu' ? 'EU-level programmes are open to you too — see the EU page.' : ''}</p>
+
+  ${reg ? `<div class="callout${reg.available ? ' callout--sage' : ''}" style="margin-top:1.5rem">
+    <p><strong>${reg.available ? 'Auto-fill is available here.' : 'Auto-fill is not available here.'}</strong>
+    ${esc(reg.name)} — ${esc(reg.note)}</p>
+  </div>` : ''}
+
+  <div class="grid grid-2" style="margin-top:2rem">
+    ${data.programmes.map(startupRow).join('')}
+  </div>
+</section>`;
+
+  return layout({
+    base: BASE, linkBase: LB(), lang: L, tr: TR, altLangs: ALT,
+    title: `Startup grants in ${c.name} — ${c.count} programmes`,
+    description: `${c.count} startup funding programmes in ${c.name}, each linked to the funder's own page.`,
+    canonical: `${SITE_URL}${L === 'en' ? '' : '/' + L}/startups/${c.slug}/`,
+    body,
+  });
+}
+
+/** /startups/{cc}/{slug}/ */
+function startupProgrammePage(c, p) {
+  const amt = p.amount_max ?? p.amount_min;
+  const e = p.eligibility || {};
+  const crit = [
+    e.company_age_months_max != null ? `Under ${Math.round(e.company_age_months_max / 12)} years old` : null,
+    e.headcount_max != null ? `Up to ${e.headcount_max} employees` : null,
+    e.turnover_annual_max != null ? `Turnover up to ${nf(e.turnover_annual_max)}` : null,
+    e.sme_category && e.sme_category !== 'any' ? `${e.sme_category} enterprises` : null,
+    (e.sectors || []).filter((x) => x && x !== 'any').length ? `Sectors: ${e.sectors.join(', ')}` : null,
+    (e.stages || []).length ? `Stage: ${e.stages.join(', ')}` : null,
+    e.rd_focus ? 'R&D activity required' : null,
+    e.female_founder_only ? 'Female founders' : null,
+    e.requires_local_entity ? 'Locally registered entity required' : null,
+  ].filter(Boolean);
+
+  const body = `
+${disclaimerBar(TR)}
+<section class="section-tight shell">
+  ${breadcrumbs([
+    { label: TR('backHome'), href: `${LB()}/` },
+    { label: 'Startup grants', href: `${LB()}/startups/` },
+    { label: c.name, href: `${LB()}/startups/${c.slug}/` },
+    { label: p.name_en },
+  ])}
+  <span class="eyebrow eyebrow-accent">${esc(INSTRUMENTS[p.grant_type]?.label ?? p.grant_type)}</span>
+  <h1 style="max-width:20ch">${esc(p.name_en)}</h1>
+  ${p.name_local && p.name_local !== p.name_en ? `<p class="lede">${esc(p.name_local)}</p>` : ''}
+
+  <div class="grid grid-2" style="margin-top:2rem;align-items:stretch">
+    <div class="card">
+      <span class="eyebrow">Amount</span>
+      <div class="figure-sm">${amt != null ? esc(money(amt, p.amount_currency)) : 'Not published'}</div>
+      ${p.amount_note ? `<p class="small">${esc(p.amount_note)}</p>` : ''}
+      ${p.cofunding_pct != null ? `<p class="small"><strong>You must co-fund ${p.cofunding_pct}%.</strong></p>` : ''}
+    </div>
+    <div class="card">
+      <span class="eyebrow">Funder</span>
+      <p style="margin:.4rem 0 0"><strong>${esc(p.funder)}</strong></p>
+      <p class="small">${esc(p.funder_type)} · ${esc(p.admin_level)}</p>
+      <p class="small">Deadline: ${esc(p.deadline_type)}${p.deadline_note ? ` — ${esc(p.deadline_note)}` : ''}</p>
+    </div>
+  </div>
+
+  ${e.de_minimis ? `<div class="callout" style="margin-top:1.5rem;border-color:var(--terracotta)">
+    <p><strong>This is de minimis aid.</strong> It counts against the €${nf(DE_MINIMIS_CEILING_EUR)} ceiling
+    that applies to your company across a rolling three years in this member state
+    (${esc(REGULATION.general.id)}). If a new award would take you over, Article 3(7) disqualifies that award
+    in full rather than reducing it — so check your headroom before you apply, not after.</p>
+  </div>` : ''}
+
+  ${crit.length ? `<h2 style="margin-top:2.5rem">Who can apply</h2>
+  <ul>${crit.map((x) => `<li>${esc(x)}</li>`).join('')}</ul>` : ''}
+  ${e.other_note ? `<p class="small">${esc(e.other_note)}</p>` : ''}
+
+  ${(p.procedure_steps || []).length ? `<h2 style="margin-top:2.5rem">How to apply</h2>
+  <ol>${p.procedure_steps.map((st) => `<li>${esc(st.detail)}${st.url ? ` — <a href="${esc(st.url)}">link</a>` : ''}</li>`).join('')}</ol>` : ''}
+
+  ${(p.documents_required || []).length ? `<h2 style="margin-top:2rem">What you will need</h2>
+  <ul>${p.documents_required.map((d) => `<li>${esc(d.doc)}${d.mandatory === false ? ' <span class="small">(if applicable)</span>' : ''}</li>`).join('')}</ul>` : ''}
+
+  <p style="margin-top:2rem"><a class="btn btn-primary" href="${esc(p.application_url)}" rel="nofollow noopener">Apply on the funder's site</a></p>
+
+  <div class="callout" style="margin-top:2rem">
+    <p><strong>Source.</strong> <a href="${esc(p.source_url)}" rel="nofollow noopener">${esc(p.source_url)}</a>
+    ${p.last_verified_at ? ` — checked ${esc(p.last_verified_at)}` : ''}
+    ${p.verification_status !== 'verified' ? ' · <strong>not human-checked</strong>' : ''}</p>
+    ${p.source_snippet ? `<p class="small" style="margin-top:.6rem">"${esc(String(p.source_snippet).slice(0, 300))}"</p>` : ''}
+  </div>
+</section>`;
+
+  return layout({
+    base: BASE, linkBase: LB(), lang: L, tr: TR, altLangs: ALT,
+    title: `${p.name_en} — ${c.name} startup funding`,
+    description: `${p.name_en} from ${p.funder}. ${amt != null ? money(amt, p.amount_currency) + '. ' : ''}Eligibility, steps and documents, linked to the official page.`,
+    canonical: `${SITE_URL}${L === 'en' ? '' : '/' + L}/startups/${c.slug}/${p.slug}/`,
+    body,
+  });
+}
+
 /* ================================================================== */
 /* Audience landing pages                                              */
 /* ================================================================== */
@@ -1309,6 +1531,17 @@ function buildLanguage(lang) {
   }
 
   if (lang === 'en') {
+    ALT = altFor('/startups/');
+    page('startups/index.html', startupsIndex());
+    for (const c of STARTUP_MANIFEST.countries) {
+      ALT = altFor(`/startups/${c.slug}/`);
+      page(`startups/${c.slug}/index.html`, startupCountryPage(c));
+      for (const p2 of STARTUP_DATA[c.slug].programmes) {
+        ALT = altFor(`/startups/${c.slug}/${p2.slug}/`);
+        page(`startups/${c.slug}/${p2.slug}/index.html`, startupProgrammePage(c, p2));
+      }
+    }
+
     for (const cat of Object.keys(STATS.byCategory)) {
       ALT = altFor(`/browse/${cat}/`);
       page(`browse/${cat}/index.html`, globalCategoryPage(cat));
@@ -1367,6 +1600,25 @@ write(
   }),
 );
 write('api/v1/stats.json', JSON.stringify(STATS));
+
+/* Startup pools as JSON assets. The Worker reads these through env.ASSETS
+   rather than bundling the dataset, so a data refresh is a rebuild and not a
+   redeploy of code. Pools, not countries: `eu` and `global` are real pools
+   that many countries draw on. */
+for (const c of STARTUP_MANIFEST.countries) {
+  write(`api/v1/startups/${c.slug}.json`, JSON.stringify(STARTUP_DATA[c.slug]));
+}
+write(
+  'api/v1/startups/index.json',
+  JSON.stringify({
+    generated_at: STARTUP_MANIFEST.generated_at,
+    total: STARTUP_MANIFEST.total,
+    countries: STARTUP_MANIFEST.countries.map((c) => ({
+      ...c,
+      data_url: `${BASE}/api/v1/startups/${c.slug}.json`,
+    })),
+  }),
+);
 const mcpToolsSrc = path.join(DATA, 'mcp-tools.json');
 if (fs.existsSync(mcpToolsSrc)) fs.copyFileSync(mcpToolsSrc, path.join(OUT, 'api/v1/mcp-tools.json'));
 
