@@ -23,7 +23,8 @@ import {
   periodSuffix,
 } from './engine/matcher.js';
 import { LOCALES, LANGS, t as translator } from './i18n.mjs';
-import { policyFor } from '../packages/policy/index.js';
+import { policyFor, autoApplyTier, railFor } from '../packages/policy/index.js';
+import { DOC_TYPES } from '../packages/vault/index.js';
 import {
   SITE_NAME,
   TAGLINE,
@@ -1120,6 +1121,30 @@ ${disclaimerBar(TR)}
     commission, no per-claim charge. That is a deliberate limit on us, not a pricing gimmick: the moment
     a service takes a share of someone's benefits it stops being a tool and starts being a middleman,
     and in several countries that is exactly the thing the law is there to stop.</p>
+  </div>
+
+  <div class="grid grid-2" style="margin-top:2.5rem;align-items:stretch">
+    <div class="card">
+      <span class="eyebrow">Included</span>
+      <h2 style="font-size:1.35rem;margin-top:.4rem">A place to keep the paperwork</h2>
+      <p class="small">Every claim wants a payslip, a proof of address, a birth certificate. Keep each one
+      once and every later claim that asks for it is already answered. We tell you when something has gone
+      out of date, and which claims each missing document would unlock — so you fetch one thing and finish
+      four applications, instead of doing it twelve times.</p>
+      <p class="small" style="margin-top:.8rem"><strong>Encrypted on your device before it reaches us.</strong>
+      We hold the scrambled bytes and a label like "proof of income". We cannot open your files, and neither
+      can anyone who breaks into our servers.</p>
+    </div>
+    <div class="card">
+      <span class="eyebrow">Where we can, we file it</span>
+      <h2 style="font-size:1.35rem;margin-top:.4rem">Auto-apply, honestly scoped</h2>
+      <p class="small">In <strong>Spain</strong> a company can hold a registered power of attorney and submit
+      for you, so there we do. That is one country, and we would rather say so than imply otherwise.</p>
+      <p class="small" style="margin-top:.8rem">Everywhere else no such mechanism exists, so you get the
+      complete package — the letter written, the form fields filled from your answers, the document
+      checklist, the exact steps — and you press send. In <strong>India</strong> we can pull your own
+      documents in from DigiLocker with your consent each time.</p>
+    </div>
   </div>
 
   <div class="callout" style="margin-top:1.5rem">
