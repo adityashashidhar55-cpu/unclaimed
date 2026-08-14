@@ -1,0 +1,249 @@
+{
+ "generated_at": "2026-08-14",
+ "total": 203,
+ "countries": [
+  {
+   "slug": "us",
+   "name": "United States",
+   "flag": "🇺🇸",
+   "currency": "USD",
+   "count": 29,
+   "verified": 29,
+   "priced": 18
+  },
+  {
+   "slug": "global",
+   "name": "Global",
+   "flag": "🌐",
+   "currency": "USD",
+   "count": 27,
+   "verified": 27,
+   "priced": 17
+  },
+  {
+   "slug": "eu",
+   "name": "European Union",
+   "flag": "🇪🇺",
+   "currency": "EUR",
+   "count": 23,
+   "verified": 23,
+   "priced": 12
+  },
+  {
+   "slug": "gb",
+   "name": "United Kingdom",
+   "flag": "🇬🇧",
+   "currency": "GBP",
+   "count": 21,
+   "verified": 20,
+   "priced": 11
+  },
+  {
+   "slug": "fr",
+   "name": "France",
+   "flag": "🇫🇷",
+   "currency": "EUR",
+   "count": 15,
+   "verified": 15,
+   "priced": 11
+  },
+  {
+   "slug": "de",
+   "name": "Germany",
+   "flag": "🇩🇪",
+   "currency": "EUR",
+   "count": 13,
+   "verified": 13,
+   "priced": 10
+  },
+  {
+   "slug": "in",
+   "name": "India",
+   "flag": "🇮🇳",
+   "currency": "INR",
+   "count": 12,
+   "verified": 10,
+   "priced": 5
+  },
+  {
+   "slug": "ie",
+   "name": "Ireland",
+   "flag": "🇮🇪",
+   "currency": "EUR",
+   "count": 10,
+   "verified": 10,
+   "priced": 7
+  },
+  {
+   "slug": "sg",
+   "name": "Singapore",
+   "flag": "🇸🇬",
+   "currency": "SGD",
+   "count": 6,
+   "verified": 6,
+   "priced": 4
+  },
+  {
+   "slug": "ae",
+   "name": "United Arab Emirates",
+   "flag": "🇦🇪",
+   "currency": "AED",
+   "count": 5,
+   "verified": 5,
+   "priced": 2
+  },
+  {
+   "slug": "jp",
+   "name": "Japan",
+   "flag": "🇯🇵",
+   "currency": "JPY",
+   "count": 4,
+   "verified": 4,
+   "priced": 2
+  },
+  {
+   "slug": "ca",
+   "name": "Canada",
+   "flag": "🇨🇦",
+   "currency": "CAD",
+   "count": 4,
+   "verified": 4,
+   "priced": 2
+  },
+  {
+   "slug": "kr",
+   "name": "South Korea",
+   "flag": "🇰🇷",
+   "currency": "KRW",
+   "count": 3,
+   "verified": 3,
+   "priced": 1
+  },
+  {
+   "slug": "au",
+   "name": "Australia",
+   "flag": "🇦🇺",
+   "currency": "AUD",
+   "count": 3,
+   "verified": 3,
+   "priced": 1
+  },
+  {
+   "slug": "nl",
+   "name": "Netherlands",
+   "flag": "🇳🇱",
+   "currency": "EUR",
+   "count": 3,
+   "verified": 3,
+   "priced": 1
+  },
+  {
+   "slug": "es",
+   "name": "Spain",
+   "flag": "🇪🇸",
+   "currency": "EUR",
+   "count": 3,
+   "verified": 3,
+   "priced": 2
+  },
+  {
+   "slug": "be",
+   "name": "Belgium",
+   "flag": "🇧🇪",
+   "currency": "EUR",
+   "count": 3,
+   "verified": 3,
+   "priced": 2
+  },
+  {
+   "slug": "nz",
+   "name": "New Zealand",
+   "flag": "🇳🇿",
+   "currency": "NZD",
+   "count": 2,
+   "verified": 2,
+   "priced": 0
+  },
+  {
+   "slug": "br",
+   "name": "Brazil",
+   "flag": "🇧🇷",
+   "currency": "BRL",
+   "count": 2,
+   "verified": 2,
+   "priced": 2
+  },
+  {
+   "slug": "mx",
+   "name": "Mexico",
+   "flag": "🇲🇽",
+   "currency": "MXN",
+   "count": 2,
+   "verified": 2,
+   "priced": 2
+  },
+  {
+   "slug": "za",
+   "name": "South Africa",
+   "flag": "🇿🇦",
+   "currency": "ZAR",
+   "count": 2,
+   "verified": 2,
+   "priced": 1
+  },
+  {
+   "slug": "it",
+   "name": "Italy",
+   "flag": "🇮🇹",
+   "currency": "EUR",
+   "count": 2,
+   "verified": 2,
+   "priced": 2
+  },
+  {
+   "slug": "pl",
+   "name": "Poland",
+   "flag": "🇵🇱",
+   "currency": "PLN",
+   "count": 2,
+   "verified": 2,
+   "priced": 0
+  },
+  {
+   "slug": "se",
+   "name": "Sweden",
+   "flag": "🇸🇪",
+   "currency": "SEK",
+   "count": 2,
+   "verified": 2,
+   "priced": 1
+  },
+  {
+   "slug": "at",
+   "name": "Austria",
+   "flag": "🇦🇹",
+   "currency": "EUR",
+   "count": 2,
+   "verified": 2,
+   "priced": 2
+  },
+  {
+   "slug": "ch",
+   "name": "Switzerland",
+   "flag": "🇨🇭",
+   "currency": "CHF",
+   "count": 2,
+   "verified": 2,
+   "priced": 0
+  },
+  {
+   "slug": "pt",
+   "name": "Portugal",
+   "flag": "🇵🇹",
+   "currency": "EUR",
+   "count": 1,
+   "verified": 1,
+   "priced": 1
+  }
+ ]
+}

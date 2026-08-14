@@ -1,0 +1,1870 @@
+{
+ "country_code": "eu",
+ "country_name": "European Union",
+ "currency": "EUR",
+ "language": "en",
+ "entity": "startup",
+ "programmes": [
+  {
+   "slug": "creative-europe-media",
+   "name_local": "Creative Europe - MEDIA strand",
+   "name_en": "Creative Europe MEDIA strand",
+   "country_code": "eu",
+   "admin_level": "supranational",
+   "admin_area": null,
+   "funder": "European Commission (DG EAC / DG CNECT), implemented by EACEA",
+   "funder_type": "public",
+   "grant_type": "grant",
+   "category": "startup",
+   "amount_min": null,
+   "amount_max": null,
+   "amount_currency": "EUR",
+   "amount_note": "Grant amounts differ per action. The programme landing page does not publish a budget figure or co-funding rate for 2021-2027, so both are null here. Actions most relevant to companies include Video Games and Immersive Content Development (CREA-MEDIA-2026-DEVVGIM) and European mini-slate development (CREA-MEDIA-2026-DEVMINISLATE); the specific amounts are in each call's guidelines.",
+   "cofunding_pct": null,
+   "is_automatic": false,
+   "application_url": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/calls-for-proposals?keywords=CREA-MEDIA-2026",
+   "application_channel": "portal",
+   "deadline_type": "annual_call",
+   "deadline_note": "Annual calls with fixed deadlines. Examples verified for 2026: Video Games and Immersive Content Development (CREA-MEDIA-2026-DEVVGIM) closed 11 February 2026; European mini-slate development (CREA-MEDIA-2026-DEVMINISLATE) opened 21 April 2026 with deadline 17 September 2026, single-stage.",
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Find the relevant CREA-MEDIA call on the EU Funding & Tenders Portal.",
+     "url": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/calls-for-proposals?keywords=CREA-MEDIA-2026"
+    },
+    {
+     "step": 2,
+     "detail": "Register your company and obtain a PIC.",
+     "url": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/how-to-participate/participant-register"
+    },
+    {
+     "step": 3,
+     "detail": "Submit the single-stage proposal by the deadline. Contact your national Creative Europe Desk for guidance.",
+     "url": "https://culture.ec.europa.eu/creative-europe"
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "Application forms Part A and Part B",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Company track record / previous works evidence",
+     "mandatory": true,
+     "note": "Most MEDIA development actions require a prior production track record"
+    },
+    {
+     "doc": "Project development plan and budget",
+     "mandatory": true,
+     "note": null
+    }
+   ],
+   "eligibility": {
+    "entity": "startup",
+    "company_age_months_min": null,
+    "company_age_months_max": null,
+    "headcount_min": null,
+    "headcount_max": null,
+    "turnover_annual_max": null,
+    "sme_category": "any",
+    "sectors": [
+     "creative"
+    ],
+    "stages": [
+     "seed",
+     "series_a"
+    ],
+    "requires_local_entity": true,
+    "requires_incorporation": true,
+    "rd_focus": false,
+    "female_founder_only": false,
+    "underrepresented_focus": false,
+    "de_minimis": false,
+    "other_note": "'The Creative Europe programme is divided into 2 strands, Culture and MEDIA, and is supported by a cross-sectoral strand.' The Video Games and Immersive Content Development action is 'Aimed at European video game development and XR/AR studios'. Most MEDIA calls require an established production company with a track record, which excludes brand-new startups."
+   },
+   "source_url": "https://culture.ec.europa.eu/creative-europe",
+   "source_snippet": "The Creative Europe programme is divided into 2 strands, Culture and MEDIA, and is supported by a cross-sectoral strand.",
+   "last_verified_at": "2026-08-14",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "digital-europe-programme",
+   "name_local": "Digital Europe Programme (DIGITAL)",
+   "name_en": "Digital Europe Programme",
+   "country_code": "eu",
+   "admin_level": "supranational",
+   "admin_area": null,
+   "funder": "European Commission (DG CNECT), implemented by HaDEA and EISMEA",
+   "funder_type": "public",
+   "grant_type": "grant",
+   "category": "startup",
+   "amount_min": null,
+   "amount_max": null,
+   "amount_currency": "EUR",
+   "amount_note": "Programme budget is 'over €8.1 billion' for the Multiannual Financial Framework 2021-2027. Grant sizes and co-funding rates are set per topic in the annual work programmes (typically 50% for most actions and higher for some, but this was not stated on the official programme page, so cofunding_pct is null here rather than guessed).",
+   "cofunding_pct": null,
+   "is_automatic": false,
+   "application_url": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/programmes/digital",
+   "application_channel": "portal",
+   "deadline_type": "annual_call",
+   "deadline_note": "Calls published on the EU Funding & Tenders Portal under the DIGITAL programme, with topic-specific deadlines set in the annual work programmes.",
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Search the DIGITAL programme page on the Funding & Tenders Portal for open topics.",
+     "url": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/programmes/digital"
+    },
+    {
+     "step": 2,
+     "detail": "Register your organisation and obtain a PIC.",
+     "url": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/how-to-participate/participant-register"
+    },
+    {
+     "step": 3,
+     "detail": "Submit the proposal by the topic deadline. Many DIGITAL topics fund consortia or European Digital Innovation Hubs, which then deliver free or subsidised services to SMEs.",
+     "url": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/programmes/digital"
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "Proposal Part A and Part B",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "PIC for every partner",
+     "mandatory": true,
+     "note": null
+    }
+   ],
+   "eligibility": {
+    "entity": "startup",
+    "company_age_months_min": null,
+    "company_age_months_max": null,
+    "headcount_min": null,
+    "headcount_max": null,
+    "turnover_annual_max": null,
+    "sme_category": "any",
+    "sectors": [
+     "ai",
+     "deeptech"
+    ],
+    "stages": [
+     "seed",
+     "series_a",
+     "growth"
+    ],
+    "requires_local_entity": true,
+    "requires_incorporation": true,
+    "rd_focus": false,
+    "female_founder_only": false,
+    "underrepresented_focus": false,
+    "de_minimis": false,
+    "other_note": "The programme 'supports industry, small and medium-sized enterprises (SMEs), and public administration in their digital transformation'. Thematic areas: 'supercomputing, artificial intelligence, cybersecurity, advanced digital skills, and ensuring a wide use of digital technologies across the economy and society', plus semiconductors added in September 2023. Important nuance for aggregators: much of the SME-facing value flows indirectly, via European Digital Innovation Hubs, whose services to an SME may themselves count as de minimis aid at national level."
+   },
+   "source_url": "https://digital-strategy.ec.europa.eu/en/activities/digital-programme",
+   "source_snippet": "With an overall budget of over €8.1 billion, DIGITAL aims to shape the digital transformation ... supercomputing, artificial intelligence, cybersecurity, advanced digital skills, and ensuring a wide use of digital technologies across the economy and society",
+   "last_verified_at": "2026-08-14",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "eic-accelerator",
+   "name_local": "EIC Accelerator",
+   "name_en": "European Innovation Council Accelerator",
+   "country_code": "eu",
+   "admin_level": "supranational",
+   "admin_area": null,
+   "funder": "European Innovation Council and SMEs Executive Agency (EISMEA) / European Commission, under Horizon Europe",
+   "funder_type": "public",
+   "grant_type": "grant",
+   "category": "startup",
+   "amount_min": null,
+   "amount_max": 2500000,
+   "amount_currency": "EUR",
+   "amount_note": "Grant component is a lump sum contribution 'below EUR 2.5 million' for innovation activities (TRL 6-8), to be completed within 24 months. A separate investment component of EUR 1-10 million in direct equity or quasi-equity is available via the EIC Fund (blended finance), or investment-only. Because the grant is a lump sum, there is no published percentage funding rate. 2026 budgets: EUR 414 million for Accelerator Open, EUR 220 million for Accelerator Challenges.",
+   "cofunding_pct": null,
+   "is_automatic": false,
+   "application_url": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/HORIZON-EIC-2026-ACCELERATOR-01",
+   "application_channel": "portal",
+   "deadline_type": "cutoff",
+   "deadline_note": "Step 1 short proposals may be submitted at any time and are batched every first Tuesday of the month at 17:00 Brussels time. Step 2 full proposals are batched at 17:00 Brussels time on 07/01/2026, 04/03/2026, 06/05/2026, 08/07/2026, 02/09/2026 and 04/11/2026.",
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Write your short proposal: a 12-page form, a pitch deck of up to ten slides in PDF, and a video pitch of up to three minutes. Evaluated remotely by 4 EIC expert evaluators; feedback normally in 4-6 weeks.",
+     "url": "https://eic.ec.europa.eu/eic-funding-opportunities/eic-accelerator_en"
+    },
+    {
+     "step": 2,
+     "detail": "If the short proposal receives a GO, prepare the full proposal on the Funding and Tenders portal: a 20-page form, pitch deck, implementation plan, financial information, Letters of Intent, freedom-to-operate analysis and a 3-minute video pitch. Results within 8-9 weeks.",
+     "url": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/HORIZON-EIC-2026-ACCELERATOR-01"
+    },
+    {
+     "step": 3,
+     "detail": "Pitch your innovation face-to-face to the EIC Jury (top-ranked proposals corresponding to 2.5 times the available grant budget are invited). Interview results within 2-3 weeks.",
+     "url": "https://eic.ec.europa.eu/eic-jury-members_en"
+    },
+    {
+     "step": 4,
+     "detail": "Sign the Grant Agreement and receive first pre-financing. For blended finance, the case is transmitted to the EIC Fund and the investment need is assessed; investment decided within 2-6 months.",
+     "url": "https://eic.ec.europa.eu/eic-fund_en"
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "Short proposal form (12 pages)",
+     "mandatory": true,
+     "note": "Step 1"
+    },
+    {
+     "doc": "Pitch deck (up to 10 slides, PDF)",
+     "mandatory": true,
+     "note": "Steps 1 and 2"
+    },
+    {
+     "doc": "Video pitch (up to 3 minutes, core team of up to 3 people)",
+     "mandatory": true,
+     "note": "Steps 1 and 2"
+    },
+    {
+     "doc": "Full proposal form (20 pages)",
+     "mandatory": true,
+     "note": "Step 2"
+    },
+    {
+     "doc": "Implementation plan and financial information",
+     "mandatory": true,
+     "note": "Step 2"
+    },
+    {
+     "doc": "Letters of Intent",
+     "mandatory": true,
+     "note": "Step 2"
+    },
+    {
+     "doc": "Freedom-to-operate (FTO) analysis",
+     "mandatory": true,
+     "note": "Step 2"
+    },
+    {
+     "doc": "PIC (Participant Identification Code) from the EU Funding & Tenders Portal",
+     "mandatory": true,
+     "note": null
+    }
+   ],
+   "eligibility": {
+    "entity": "startup",
+    "company_age_months_min": null,
+    "company_age_months_max": null,
+    "headcount_min": null,
+    "headcount_max": 499,
+    "turnover_annual_max": null,
+    "sme_category": "any",
+    "sectors": [
+     "deeptech",
+     "any"
+    ],
+    "stages": [
+     "seed",
+     "series_a",
+     "growth"
+    ],
+    "requires_local_entity": true,
+    "requires_incorporation": false,
+    "rd_focus": true,
+    "female_founder_only": false,
+    "underrepresented_focus": false,
+    "de_minimis": false,
+    "other_note": "Single start-up or SME (including spin-outs); small mid-caps up to 499 employees may apply for the investment component only; natural persons or legal entities willing to set up an SME or mid-cap may also apply. Applicants from third countries may relocate their company before Step 2 to become eligible. UK applicants can only apply for the 'grant only' scheme. Only one application at a time. Grant-only support may be provided only once during Horizon Europe 2021-2027. Horizon Europe grants are not de minimis aid; they are direct EU management funds, so the Regulation (EU) 2023/2831 ceiling does not apply."
+   },
+   "source_url": "https://eic.ec.europa.eu/eic-funding-opportunities/eic-accelerator_en",
+   "source_snippet": "Grant component below EUR 2.5 million. Up to € 10 million of equity investments, coaching & mentoring, networking. ... Single start-up or SME (including spin-outs); Small mid-caps (up to 499 employees) in need of rapid scale up of the TRL 9 activity. Mid-caps can apply for investment only.",
+   "last_verified_at": "2026-08-14",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "eic-business-acceleration-services",
+   "name_local": "EIC Business Acceleration Services (BAS)",
+   "name_en": "European Innovation Council Business Acceleration Services",
+   "country_code": "eu",
+   "admin_level": "supranational",
+   "admin_area": null,
+   "funder": "European Innovation Council and SMEs Executive Agency (EISMEA)",
+   "funder_type": "public",
+   "grant_type": "in_kind",
+   "category": "startup",
+   "amount_min": null,
+   "amount_max": null,
+   "amount_currency": "EUR",
+   "amount_note": "No cash award. BAS provides in-kind support: coaching, mentoring, expertise and training, access to global corporate partners, investor matchmaking and ecosystem/peer access. The official page does not state a monetary value.",
+   "cofunding_pct": null,
+   "is_automatic": false,
+   "application_url": "https://eic.eismea.eu/community/",
+   "application_channel": "online",
+   "deadline_type": "rolling",
+   "deadline_note": "Open calls for individual services are published on the EIC Community Platform on a rolling basis. 'Our services have no expiration date. You remain eligible to apply even after your project has concluded.'",
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Visit the EIC Community Platform to view open BAS calls and submit applications.",
+     "url": "https://eic.eismea.eu/community/"
+    },
+    {
+     "step": 2,
+     "detail": "Browse the EIC Service Catalogue for available partner services.",
+     "url": "https://partnerservices.eismea.eu/"
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "Proof of eligible status (EIC awardee, Step 1 applicant, Seal of Excellence holder, Women TechEU awardee, EIC Scaling Club member)",
+     "mandatory": true,
+     "note": null
+    }
+   ],
+   "eligibility": {
+    "entity": "startup",
+    "company_age_months_min": null,
+    "company_age_months_max": null,
+    "headcount_min": null,
+    "headcount_max": null,
+    "turnover_annual_max": null,
+    "sme_category": "any",
+    "sectors": [
+     "deeptech",
+     "any"
+    ],
+    "stages": [
+     "pre_seed",
+     "seed",
+     "series_a",
+     "growth"
+    ],
+    "requires_local_entity": true,
+    "requires_incorporation": true,
+    "rd_focus": false,
+    "female_founder_only": false,
+    "underrepresented_focus": false,
+    "de_minimis": false,
+    "other_note": "Access is restricted to: EIC awardees (Pre-Accelerator, Accelerator, Transition, Pathfinder, STEP Scale Up), EIC Accelerator Step 1 applicants, EIC Scaling Club members, Horizon Europe Seal of Excellence holders, Women TechEU awardees, and Ukrainian tech SME/start-up beneficiaries. Notably you become eligible simply by submitting an EIC Accelerator Step 1 short proposal."
+   },
+   "source_url": "https://eic.ec.europa.eu/eic-funding-opportunities/business-acceleration-services_en",
+   "source_snippet": "EIC support goes far beyond funding. It provides to the EIC top-notch innovators with access to a range of tailor-made high-quality Business Acceleration Services (BAS). ... Our services have no expiration date. You remain eligible to apply even after your project has concluded.",
+   "last_verified_at": "2026-08-14",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "eic-pathfinder-challenges",
+   "name_local": "EIC Pathfinder Challenges",
+   "name_en": "European Innovation Council Pathfinder Challenges",
+   "country_code": "eu",
+   "admin_level": "supranational",
+   "admin_area": null,
+   "funder": "European Innovation Council and SMEs Executive Agency (EISMEA) / European Commission, under Horizon Europe",
+   "funder_type": "public",
+   "grant_type": "grant",
+   "category": "startup",
+   "amount_min": null,
+   "amount_max": 4000000,
+   "amount_currency": "EUR",
+   "amount_note": "Same instrument as Pathfinder Open ('up to EUR 4 million or more if duly justified'), but proposals must address one of the pre-defined Challenge topics set in the annual EIC Work Programme. Unlike Pathfinder Open, single applicants are permitted. Booster grants of a fixed amount not exceeding EUR 50 000 are also available.",
+   "cofunding_pct": null,
+   "is_automatic": false,
+   "application_url": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/calls-for-proposals",
+   "application_channel": "portal",
+   "deadline_type": "annual_call",
+   "deadline_note": "Pathfinder Challenges 2026 deadline: 28 October 2026. Challenge topics change each year with the EIC Work Programme.",
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Check the Challenge topics in the current EIC Work Programme and confirm your project fits one of them.",
+     "url": "https://eic.ec.europa.eu/eic-funding-opportunities/eic-2026-work-programme_en"
+    },
+    {
+     "step": 2,
+     "detail": "Register on the EU Funding & Tenders Portal and obtain a PIC.",
+     "url": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/how-to-participate/participant-register"
+    },
+    {
+     "step": 3,
+     "detail": "Submit a single-stage full proposal by the annual deadline; single applicants are allowed under Challenges.",
+     "url": "https://eic.ec.europa.eu/eic-funding-opportunities/eic-pathfinder_en"
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "Proposal Part A (administrative forms, budget)",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Proposal Part B (technical description addressing the specific Challenge)",
+     "mandatory": true,
+     "note": null
+    }
+   ],
+   "eligibility": {
+    "entity": "startup",
+    "company_age_months_min": null,
+    "company_age_months_max": null,
+    "headcount_min": null,
+    "headcount_max": null,
+    "turnover_annual_max": null,
+    "sme_category": "any",
+    "sectors": [
+     "deeptech"
+    ],
+    "stages": [
+     "idea",
+     "pre_seed"
+    ],
+    "requires_local_entity": true,
+    "requires_incorporation": true,
+    "rd_focus": true,
+    "female_founder_only": false,
+    "underrepresented_focus": false,
+    "de_minimis": false,
+    "other_note": "Single applicants (including a single SME or startup) are permitted for Pathfinder Challenges only. Proposals must address a pre-defined Challenge topic. Challenge topics for 2026 are set out in the EIC Work Programme 2026 (published 17 June 2026)."
+   },
+   "source_url": "https://eic.ec.europa.eu/eic-funding-opportunities/eic-pathfinder_en",
+   "source_snippet": "Single Applicants: Permitted for Pathfinder Challenges only ... Pathfinder Challenges: 28 October 2026",
+   "last_verified_at": "2026-08-14",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "eic-pathfinder-open",
+   "name_local": "EIC Pathfinder Open",
+   "name_en": "European Innovation Council Pathfinder Open",
+   "country_code": "eu",
+   "admin_level": "supranational",
+   "admin_area": null,
+   "funder": "European Innovation Council and SMEs Executive Agency (EISMEA) / European Commission, under Horizon Europe",
+   "funder_type": "public",
+   "grant_type": "grant",
+   "category": "startup",
+   "amount_min": null,
+   "amount_max": 4000000,
+   "amount_currency": "EUR",
+   "amount_note": "Grants of 'up to EUR 4 million or more if duly justified' for early-stage development of future technologies (roughly TRL 1-4). Beneficiaries may additionally receive Booster grants of a 'fixed amount not exceeding EUR 50 000'. Funding rate is not stated on the EIC Pathfinder page.",
+   "cofunding_pct": null,
+   "is_automatic": false,
+   "application_url": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/calls-for-proposals?callIdentifier=HORIZON-EIC-2026-PATHFINDEROPEN",
+   "application_channel": "portal",
+   "deadline_type": "annual_call",
+   "deadline_note": "Pathfinder Open 2026 deadline: 12 May 2026. Recurring annually under each EIC Work Programme.",
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Form an eligible consortium of at least three different independent legal entities (at least one in a Member State and at least two others each established in different Member States or Associated Countries).",
+     "url": "https://eic.ec.europa.eu/eic-funding-opportunities/eic-pathfinder_en"
+    },
+    {
+     "step": 2,
+     "detail": "Register the organisation on the EU Funding & Tenders Portal and obtain a PIC.",
+     "url": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/how-to-participate/participant-register"
+    },
+    {
+     "step": 3,
+     "detail": "Submit the full proposal on the Funding & Tenders Portal by the single annual deadline. Single-stage evaluation by remote experts.",
+     "url": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/calls-for-proposals?callIdentifier=HORIZON-EIC-2026-PATHFINDEROPEN"
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "Proposal Part A (administrative forms, budget, participants)",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Proposal Part B (technical description)",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "PIC for each consortium partner",
+     "mandatory": true,
+     "note": null
+    }
+   ],
+   "eligibility": {
+    "entity": "startup",
+    "company_age_months_min": null,
+    "company_age_months_max": null,
+    "headcount_min": null,
+    "headcount_max": null,
+    "turnover_annual_max": null,
+    "sme_category": "any",
+    "sectors": [
+     "deeptech",
+     "any"
+    ],
+    "stages": [
+     "idea",
+     "pre_seed"
+    ],
+    "requires_local_entity": true,
+    "requires_incorporation": true,
+    "rd_focus": true,
+    "female_founder_only": false,
+    "underrepresented_focus": false,
+    "de_minimis": false,
+    "other_note": "Consortium-based: 'at least three different independent legal entities', with 'At least one legal entity established in a Member State' and 'At least two other independent legal entities, each established in different Member States or Associated Countries'. Single applicants are permitted for Pathfinder Challenges only, not for Pathfinder Open. Startups typically participate as consortium partners alongside universities and research organisations."
+   },
+   "source_url": "https://eic.ec.europa.eu/eic-funding-opportunities/eic-pathfinder_en",
+   "source_snippet": "up to EUR 4 million or more if duly justified ... at least three different independent legal entities ... At least one legal entity established in a Member State ... At least two other independent legal entities, each established in different Member States or Associated Countries",
+   "last_verified_at": "2026-08-14",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "eic-pre-accelerator",
+   "name_local": "EIC Pre-Accelerator",
+   "name_en": "European Innovation Council Pre-Accelerator",
+   "country_code": "eu",
+   "admin_level": "supranational",
+   "admin_area": null,
+   "funder": "European Innovation Council and SMEs Executive Agency (EISMEA) / European Commission, under the Horizon Europe Widening (WIDERA) work programme",
+   "funder_type": "public",
+   "grant_type": "grant",
+   "category": "startup",
+   "amount_min": 500000,
+   "amount_max": 1000000,
+   "amount_currency": "EUR",
+   "amount_note": "'Individual grants between 500 thousand and 1 million EUR.' The 2025 call awarded up to EUR 500 000 per company (70 companies, ~EUR 32.5 million total). The next call under the WIDERA work programme 2026-2027 is stated to raise this to EUR 1 million per company with a EUR 40 million budget.",
+   "cofunding_pct": null,
+   "is_automatic": false,
+   "application_url": "https://eic.ec.europa.eu/eic-funding-opportunities/eic-pre-accelerator_en",
+   "application_channel": "portal",
+   "deadline_type": "annual_call",
+   "deadline_note": "No open cut-off confirmed on the official page at the time of verification. The EIC states the next EIC Pre-Accelerator call is planned in the WIDERA work programme 2026-2027 with a EUR 40 million budget; the exact deadline could not be verified from an official page and is recorded as null.",
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Check that your company is established in an eligible Horizon Europe Widening country or outermost region.",
+     "url": "https://eic.ec.europa.eu/eic-funding-opportunities/eic-pre-accelerator_en"
+    },
+    {
+     "step": 2,
+     "detail": "Register on the EU Funding & Tenders Portal and obtain a PIC.",
+     "url": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/how-to-participate/participant-register"
+    },
+    {
+     "step": 3,
+     "detail": "Submit a single-applicant SME proposal via the Funding & Tenders Portal when the call is open.",
+     "url": "https://eic.ec.europa.eu/eic-funding-opportunities/eic-pre-accelerator_en"
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "Proposal Part A and Part B",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "SME self-declaration / evidence of SME status",
+     "mandatory": true,
+     "note": "SME status per Recommendation 2003/361/EC"
+    }
+   ],
+   "eligibility": {
+    "entity": "startup",
+    "company_age_months_min": null,
+    "company_age_months_max": null,
+    "headcount_min": null,
+    "headcount_max": 250,
+    "turnover_annual_max": null,
+    "sme_category": "any",
+    "sectors": [
+     "deeptech"
+    ],
+    "stages": [
+     "pre_seed",
+     "seed"
+    ],
+    "requires_local_entity": true,
+    "requires_incorporation": true,
+    "rd_focus": true,
+    "female_founder_only": false,
+    "underrepresented_focus": true,
+    "de_minimis": false,
+    "other_note": "Restricted to single SME applicants established in Horizon Europe Widening countries (listed by the EIC as including Bulgaria, Croatia, Cyprus, Czechia, Estonia, Greece, Hungary, Latvia, Lithuania, Malta, Poland and others), associated Widening countries and EU outermost regions. Aim is to boost capacity to later apply successfully to the EIC Accelerator."
+   },
+   "source_url": "https://eic.ec.europa.eu/eic-funding-opportunities/eic-pre-accelerator_en",
+   "source_snippet": "Individual grants between 500 thousand and 1 million EUR. Bulgaria, Croatia, Cyprus, Czechia, Estonia, Greece, Hungary, Latvia, Lithuania, Malta, Poland, ...",
+   "last_verified_at": "2026-08-14",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "eic-step-scale-up",
+   "name_local": "EIC STEP Scale Up",
+   "name_en": "European Innovation Council STEP Scale Up",
+   "country_code": "eu",
+   "admin_level": "supranational",
+   "admin_area": null,
+   "funder": "European Innovation Council Fund / EISMEA, under the Strategic Technologies for Europe Platform (STEP)",
+   "funder_type": "public",
+   "grant_type": "equity",
+   "category": "startup",
+   "amount_min": 10000000,
+   "amount_max": 30000000,
+   "amount_currency": "EUR",
+   "amount_note": "'offering financial support in the form of investments to startups, SMEs, and small mid-caps, between EUR 10 to 30 million'. Equity only - no grant component. 2026 budget: EUR 300 million.",
+   "cofunding_pct": null,
+   "is_automatic": false,
+   "application_url": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/HORIZON-EIC-2026-STEP",
+   "application_channel": "portal",
+   "deadline_type": "rolling",
+   "deadline_note": "The EIC states applicants 'can apply anytime via the Funding & Tenders Portal'; no fixed cut-off dates are published for the general STEP Scale Up call in 2026.",
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Secure proof of initial market interest from a qualified investor covering at least 20% of the total target funding round.",
+     "url": "https://eic.ec.europa.eu/eic-funding-opportunities/step-scale_en"
+    },
+    {
+     "step": 2,
+     "detail": "Register on the EU Funding & Tenders Portal and obtain a PIC.",
+     "url": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/how-to-participate/participant-register"
+    },
+    {
+     "step": 3,
+     "detail": "Submit the application at any time; evaluation, interview and due diligence follow.",
+     "url": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/HORIZON-EIC-2026-STEP"
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "Application form / business plan",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Evidence of qualified investor interest covering at least 20% of the target round",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Financial statements for due diligence",
+     "mandatory": true,
+     "note": null
+    }
+   ],
+   "eligibility": {
+    "entity": "startup",
+    "company_age_months_min": null,
+    "company_age_months_max": null,
+    "headcount_min": null,
+    "headcount_max": 499,
+    "turnover_annual_max": null,
+    "sme_category": "any",
+    "sectors": [
+     "deeptech",
+     "ai",
+     "climate",
+     "health"
+    ],
+    "stages": [
+     "series_a",
+     "growth"
+    ],
+    "requires_local_entity": true,
+    "requires_incorporation": true,
+    "rd_focus": false,
+    "female_founder_only": false,
+    "underrepresented_focus": false,
+    "de_minimis": false,
+    "other_note": "'A single SME or small mid-cap (fewer than 500 employees)' established in EU Member States or eligible Associated Countries (excluding the UK). Target sectors: digital and deep tech, clean technologies, biotechnologies. Requires 'proof of initial market interest from a qualified investor covering at least 20% of the total target funding round'."
+   },
+   "source_url": "https://eic.ec.europa.eu/eic-funding-opportunities/step-scale_en",
+   "source_snippet": "The EIC STEP Scale Up scheme is part of the Strategic Technologies for Europe Platform (STEP), offering financial support in the form of investments to startups, SMEs, and small mid-caps, between EUR 10 to 30 million.",
+   "last_verified_at": "2026-08-14",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "eic-step-scale-up-defence",
+   "name_local": "EIC STEP Scale Up Defence",
+   "name_en": "European Innovation Council STEP Scale Up Defence",
+   "country_code": "eu",
+   "admin_level": "supranational",
+   "admin_area": null,
+   "funder": "European Innovation Council Fund / EISMEA, under the Strategic Technologies for Europe Platform (STEP)",
+   "funder_type": "public",
+   "grant_type": "equity",
+   "category": "startup",
+   "amount_min": 10000000,
+   "amount_max": 30000000,
+   "amount_currency": "EUR",
+   "amount_note": "EUR 10-30 million equity per company via the EIC Fund, designed to catalyse larger rounds of EUR 50-150 million or more. 2026 budget: EUR 100 million. No grant component.",
+   "cofunding_pct": null,
+   "is_automatic": false,
+   "application_url": "https://eic.ec.europa.eu/eic-funding-opportunities/eic-step-scale-defence_en",
+   "application_channel": "portal",
+   "deadline_type": "cutoff",
+   "deadline_note": "2026 application deadline: 28 October 2026. Interview notification 4-6 weeks from evaluation start; results 2 weeks after interview.",
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Confirm eligibility: single SME or small mid-cap (<500 employees) in an EU Member State, an EEA country associated with Horizon Europe, or Ukraine, working on critical defence technologies.",
+     "url": "https://eic.ec.europa.eu/eic-funding-opportunities/eic-step-scale-defence_en"
+    },
+    {
+     "step": 2,
+     "detail": "Obtain proof of initial market interest from a single qualified investor covering at least 20% of the total target funding round.",
+     "url": "https://eic.ec.europa.eu/eic-funding-opportunities/eic-step-scale-defence_en"
+    },
+    {
+     "step": 3,
+     "detail": "Submit via the EU Funding & Tenders Portal by the deadline; interview and due diligence follow.",
+     "url": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/home"
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "Application form / business plan",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Evidence of qualified investor interest covering at least 20% of the target round",
+     "mandatory": true,
+     "note": null
+    }
+   ],
+   "eligibility": {
+    "entity": "startup",
+    "company_age_months_min": null,
+    "company_age_months_max": null,
+    "headcount_min": null,
+    "headcount_max": 499,
+    "turnover_annual_max": null,
+    "sme_category": "any",
+    "sectors": [
+     "deeptech"
+    ],
+    "stages": [
+     "series_a",
+     "growth"
+    ],
+    "requires_local_entity": true,
+    "requires_incorporation": true,
+    "rd_focus": false,
+    "female_founder_only": false,
+    "underrepresented_focus": false,
+    "de_minimis": false,
+    "other_note": "Critical defence technology areas explicitly named include air and missile defence, drones and counter-drones. Eligible countries: EU Member States, EEA countries associated with Horizon Europe, and Ukraine. This scheme marks the EIC opening to defence and dual-use technologies from 17 June 2026."
+   },
+   "source_url": "https://eic.ec.europa.eu/eic-funding-opportunities/eic-step-scale-defence_en",
+   "source_snippet": "breakthrough innovations in the critical defence technologies areas such as air and missile defence, drones and counter drones ... proof of initial market interest from a single qualified investor covering at least 20% of the total target funding round",
+   "last_verified_at": "2026-08-14",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "eic-transition",
+   "name_local": "EIC Transition",
+   "name_en": "European Innovation Council Transition",
+   "country_code": "eu",
+   "admin_level": "supranational",
+   "admin_area": null,
+   "funder": "European Innovation Council and SMEs Executive Agency (EISMEA) / European Commission, under Horizon Europe",
+   "funder_type": "public",
+   "grant_type": "grant",
+   "category": "startup",
+   "amount_min": null,
+   "amount_max": 2500000,
+   "amount_currency": "EUR",
+   "amount_note": "'Grants of up to EUR 2.5 million' to validate and demonstrate technology in an application-relevant environment and develop a business plan. Booster grants not exceeding EUR 50 000 are available for complementary activities. Non-dilutive; the specific funding rate is not stated on the EIC Transition page.",
+   "cofunding_pct": null,
+   "is_automatic": false,
+   "application_url": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/HORIZON-EIC-2026-TRANSITIONOPEN",
+   "application_channel": "portal",
+   "deadline_type": "annual_call",
+   "deadline_note": "2026 deadline for submissions: 16 September 2026. Recurring annually.",
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Confirm your project builds on results from an eligible source project at experimental proof of concept (TRL 3 completed) or, ideally, technology validated in the lab (TRL 4).",
+     "url": "https://eic.ec.europa.eu/eic-funding-opportunities/eic-transition_en"
+    },
+    {
+     "step": 2,
+     "detail": "Register on the EU Funding & Tenders Portal and obtain a PIC.",
+     "url": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/how-to-participate/participant-register"
+    },
+    {
+     "step": 3,
+     "detail": "Submit a single-stage full proposal by the annual deadline; remote evaluation followed by an interview for shortlisted proposals.",
+     "url": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/HORIZON-EIC-2026-TRANSITIONOPEN"
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "Proposal Part A and Part B",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Evidence of the eligible source project results (TRL 3-4)",
+     "mandatory": true,
+     "note": "Eligible sources include EIC Pathfinder, ERC Proof of Concept, Horizon Europe/Horizon 2020 Research and Innovation Actions, European Defence Fund projects (civil applications only) and Research Infrastructures projects"
+    }
+   ],
+   "eligibility": {
+    "entity": "startup",
+    "company_age_months_min": null,
+    "company_age_months_max": null,
+    "headcount_min": null,
+    "headcount_max": null,
+    "turnover_annual_max": null,
+    "sme_category": "any",
+    "sectors": [
+     "deeptech"
+    ],
+    "stages": [
+     "pre_seed",
+     "seed"
+    ],
+    "requires_local_entity": true,
+    "requires_incorporation": true,
+    "rd_focus": true,
+    "female_founder_only": false,
+    "underrepresented_focus": false,
+    "de_minimis": false,
+    "other_note": "Open to single entities (start-ups, SMEs, research organisations, universities), small consortia of minimum 2 legal entities from different Member States/Associated Countries, or multi-beneficiary consortia of 3-5 independent legal entities. Crucially, the project must build on results of a specific eligible prior project - you cannot enter EIC Transition from a standing start."
+   },
+   "source_url": "https://eic.ec.europa.eu/eic-funding-opportunities/eic-transition_en",
+   "source_snippet": "Grants of up to EUR 2.5 million ... experimental proof of concept (TRL 3 completed) or, ideally, technology validated in the lab level (TRL 4) ... Deadline for submissions: 16/09",
+   "last_verified_at": "2026-08-14",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "eit-food-accelerator-network",
+   "name_local": "EIT Food Accelerator Network (FAN)",
+   "name_en": "EIT Food Accelerator Network",
+   "country_code": "eu",
+   "admin_level": "supranational",
+   "admin_area": null,
+   "funder": "EIT Food (European Institute of Innovation and Technology Knowledge and Innovation Community)",
+   "funder_type": "ppp",
+   "grant_type": "accelerator",
+   "category": "startup",
+   "amount_min": 20000,
+   "amount_max": 50000,
+   "amount_currency": "EUR",
+   "amount_note": "Each startup receives a EUR 3 000 grant to cover travel expenses during the programme. At the end, each Hub runs a Tech Validation pitch event awarding three startups EUR 50 000 (1st), EUR 30 000 (2nd) and EUR 20 000 (3rd) to implement their tech validation project. Note: EIT Food's programme page describes this funding as being awarded through a SAFE (Simple Agreement For Future Equity) instrument, while the 2026 call page describes it as sub-grants for Technology Validation Projects - check the current call guidelines, as the instrument is material.",
+   "cofunding_pct": null,
+   "is_automatic": false,
+   "application_url": "https://www.eitfood.eu/open-calls/eit-food-accelerator-network-fan-call-for-startups-2026",
+   "application_channel": "online",
+   "deadline_type": "annual_call",
+   "deadline_note": "2026 call deadline: 14 April 2026. The call runs annually.",
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Choose the thematic Hub that matches your solution (six hubs: supply chains, circular solutions, biotech, agriculture, water systems, digital farming).",
+     "url": "https://www.eitfood.eu/open-calls/eit-food-accelerator-network-fan-call-for-startups-2026"
+    },
+    {
+     "step": 2,
+     "detail": "Submit the application by the annual deadline; selection into the accelerator programme follows.",
+     "url": "https://www.eitfood.eu/entrepreneurship/accelerate-food-accelerator-network"
+    },
+    {
+     "step": 3,
+     "detail": "Complete the programme and pitch at the Hub's Tech Validation event to compete for EUR 50 000 / 30 000 / 20 000.",
+     "url": "https://www.eitfood.eu/entrepreneurship/accelerate-food-accelerator-network"
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "Online application form",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Proof of company registration in an eligible country",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Financials evidencing revenue below EUR 1 million",
+     "mandatory": true,
+     "note": null
+    }
+   ],
+   "eligibility": {
+    "entity": "startup",
+    "company_age_months_min": null,
+    "company_age_months_max": null,
+    "headcount_min": null,
+    "headcount_max": 20,
+    "turnover_annual_max": 1000000,
+    "sme_category": "micro",
+    "sectors": [
+     "agri"
+    ],
+    "stages": [
+     "pre_seed",
+     "seed"
+    ],
+    "requires_local_entity": true,
+    "requires_incorporation": true,
+    "rd_focus": true,
+    "female_founder_only": false,
+    "underrepresented_focus": false,
+    "de_minimis": false,
+    "other_note": "'pre-series A, with revenues up to €1 million and a team, no more than 20 people'; technology at TRL 4-8 (prototype or pilot stage required); must be a 'registered company established in an EU Member State or Horizon Europe-associated countries'. Switzerland and UK-based companies are eligible to apply, though funding is subject to their future eligibility status."
+   },
+   "source_url": "https://www.eitfood.eu/entrepreneurship/accelerate-food-accelerator-network",
+   "source_snippet": "The EIT Food Accelerator Network programme offers a €3,000 grant for each startup to cover their travel expenses during the programme. Additionally, each startup is offered an opportunity to compete for funding of up to €50,000 to implement their tech validation project.",
+   "last_verified_at": "2026-08-14",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "eit-health-startup-programmes",
+   "name_local": "EIT Health start-up programmes",
+   "name_en": "EIT Health start-up and acceleration programmes",
+   "country_code": "eu",
+   "admin_level": "supranational",
+   "admin_area": null,
+   "funder": "EIT Health (European Institute of Innovation and Technology Knowledge and Innovation Community)",
+   "funder_type": "ppp",
+   "grant_type": "accelerator",
+   "category": "startup",
+   "amount_min": null,
+   "amount_max": null,
+   "amount_currency": "EUR",
+   "amount_note": "EIT Health runs a portfolio of bootcamps and acceleration programmes (Regulatory Pathways Bootcamp, MedTech Bootcamp, Patient Innovation Bootcamp, User Validation Labs, Wild Card, Women Entrepreneurship Bootcamp) plus funding instruments such as the Transformative Healthcare Instrument. Funding amounts are not stated on the programme overview page and vary by call, so they are recorded as null rather than guessed.",
+   "cofunding_pct": null,
+   "is_automatic": false,
+   "application_url": "https://eithealth.eu/get-involved/new-call-opportunities/",
+   "application_channel": "online",
+   "deadline_type": "annual_call",
+   "deadline_note": "Deadlines are set per programme and per annual call; the overview page does not list them. Check the 'New call opportunities' page for currently open calls.",
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Register your organisation in the EU Funding & Tenders Portal to obtain a nine-digit PIC number (required for EIT Health funding calls such as the Transformative Healthcare Instrument).",
+     "url": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/how-to-participate/participant-register"
+    },
+    {
+     "step": 2,
+     "detail": "Apply to the call via EIT Health's own application platform.",
+     "url": "https://apply.eithealth.eu/s_Login.jsp"
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "PIC number from the EU Funding & Tenders Portal",
+     "mandatory": true,
+     "note": "Required for EIT Health funding calls"
+    },
+    {
+     "doc": "Application submitted on apply.eithealth.eu",
+     "mandatory": true,
+     "note": null
+    }
+   ],
+   "eligibility": {
+    "entity": "startup",
+    "company_age_months_min": null,
+    "company_age_months_max": null,
+    "headcount_min": null,
+    "headcount_max": null,
+    "turnover_annual_max": null,
+    "sme_category": "any",
+    "sectors": [
+     "health"
+    ],
+    "stages": [
+     "idea",
+     "pre_seed",
+     "seed",
+     "series_a"
+    ],
+    "requires_local_entity": true,
+    "requires_incorporation": false,
+    "rd_focus": true,
+    "female_founder_only": false,
+    "underrepresented_focus": false,
+    "de_minimis": false,
+    "other_note": "Programme-specific: e.g. Regulatory Pathways Bootcamp is for digital health or medical device solutions; MedTech Bootcamp for teams with a medtech solution; Patient Innovation Bootcamp for patients and caregivers; Women Entrepreneurship Bootcamp for women-led or co-led start-ups. Several bootcamps accept pre-incorporation teams."
+   },
+   "source_url": "https://eithealth.eu/what-we-do/our-programmes/launch-your-start-up/",
+   "source_snippet": "A 10-week blended programme to understand the highly regulated pathway within the European healthcare system. ... A six-week online programme for teams with a medtech solution, looking for hands-on business training and personalised coaching.",
+   "last_verified_at": "2026-08-14",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "eit-jumpstarter",
+   "name_local": "EIT Jumpstarter",
+   "name_en": "EIT Jumpstarter",
+   "country_code": "eu",
+   "admin_level": "supranational",
+   "admin_area": null,
+   "funder": "European Institute of Innovation and Technology (EIT), delivered jointly by several EIT Knowledge and Innovation Communities",
+   "funder_type": "ppp",
+   "grant_type": "prize",
+   "category": "startup",
+   "amount_min": 2500,
+   "amount_max": 10000,
+   "amount_currency": "EUR",
+   "amount_note": "A 7-month pre-acceleration programme. Winners compete for EUR 2 500, EUR 5 000 or EUR 10 000 in startup funding, and all participants receive a EUR 2 000 participation budget plus EUR 1 000 travel budget. Total programme funding EUR 240 000 for 2026.",
+   "cofunding_pct": null,
+   "is_automatic": false,
+   "application_url": "https://eitjumpstarter.eu/",
+   "application_channel": "online",
+   "deadline_type": "annual_call",
+   "deadline_note": "Annual call. The 2026 edition opened 13 March 2026 with an application deadline of 17 May 2026 (extended). Applications for 2026 are now closed; expect a comparable spring window in 2027.",
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Check the eligible countries and thematic categories in the Terms and Conditions.",
+     "url": "https://www.climate-kic.org/open-call/eit-jumpstarter-2026/"
+    },
+    {
+     "step": 2,
+     "detail": "Apply online with your early-stage idea by the annual deadline.",
+     "url": "https://eitjumpstarter.eu/"
+    },
+    {
+     "step": 3,
+     "detail": "Complete the 7-month training and mentorship programme and pitch at the final for the prizes; teams are expected to be ready for company creation by the end.",
+     "url": "https://eitjumpstarter.eu/"
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "Online application form describing the idea and team",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Proof of citizenship/residence in an eligible country",
+     "mandatory": true,
+     "note": null
+    }
+   ],
+   "eligibility": {
+    "entity": "startup",
+    "company_age_months_min": null,
+    "company_age_months_max": null,
+    "headcount_min": null,
+    "headcount_max": null,
+    "turnover_annual_max": null,
+    "sme_category": "any",
+    "sectors": [
+     "health",
+     "agri",
+     "manufacturing",
+     "climate",
+     "any"
+    ],
+    "stages": [
+     "idea",
+     "pre_seed"
+    ],
+    "requires_local_entity": false,
+    "requires_incorporation": false,
+    "rd_focus": false,
+    "female_founder_only": false,
+    "underrepresented_focus": true,
+    "de_minimis": false,
+    "other_note": "'The programme is open to individuals and teams from Central, Eastern and Southern Europe' with early-stage ideas. No registered company is required at application - this is a pre-acceleration/idea-stage programme aimed at company creation. Applicants must hold citizenship of an EU Member State, EU outermost region, or a Horizon Europe Associated Country (Albania, Armenia, Bosnia and Herzegovina, Kosovo, Moldova, Montenegro, North Macedonia, Serbia, Ukraine, Türkiye)."
+   },
+   "source_url": "https://eitjumpstarter.eu/",
+   "source_snippet": "EIT Jumpstarter is back with €240,000. Join the 2026 EIT Jumpstarter programme. ... A 7-month pre-acceleration programme for early-stage innovators from over 22 countries.",
+   "last_verified_at": "2026-08-14",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "eit-urban-mobility-financial-support-startups",
+   "name_local": "EIT Urban Mobility - Financial Support to Startups Open Call",
+   "name_en": "EIT Urban Mobility Financial Support to Startups",
+   "country_code": "eu",
+   "admin_level": "supranational",
+   "admin_area": null,
+   "funder": "EIT Urban Mobility (European Institute of Innovation and Technology Knowledge and Innovation Community)",
+   "funder_type": "ppp",
+   "grant_type": "grant",
+   "category": "startup",
+   "amount_min": null,
+   "amount_max": 2500000,
+   "amount_currency": "EUR",
+   "amount_note": "'EIT Urban Mobility will provide financial support of up to €2.5 million per company, for startups developing breakthrough mobility solutions.' The exact instrument mix (grant versus investment) and any co-financing requirement are set in the Call Manual, which is the binding document.",
+   "cofunding_pct": null,
+   "is_automatic": false,
+   "application_url": "https://www.eiturbanmobility.eu/call-for-proposals/financial-support-to-startups-open-call-3/",
+   "application_channel": "online",
+   "deadline_type": "cutoff",
+   "deadline_note": "Rolling open call with multiple cut-offs. 2026 cut-offs: 23 February 2026, 18 May 2026, 31 August 2026, 16 November 2026. The call continues with further cut-offs in 2027 and 2028 (see the Call Manual).",
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Read the Call Manual for eligibility, special cases and the full cut-off schedule.",
+     "url": "https://www.eiturbanmobility.eu/wp-content/uploads/2025/12/Financial-Support-to-Startups_Call-Manual_FINAL.pdf"
+    },
+    {
+     "step": 2,
+     "detail": "Submit the application via the EIT Urban Mobility open call page before the chosen cut-off.",
+     "url": "https://www.eiturbanmobility.eu/call-for-proposals/financial-support-to-startups-open-call-3/"
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "Application form",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Business plan / pitch materials",
+     "mandatory": true,
+     "note": "Per the Call Manual"
+    }
+   ],
+   "eligibility": {
+    "entity": "startup",
+    "company_age_months_min": null,
+    "company_age_months_max": null,
+    "headcount_min": null,
+    "headcount_max": null,
+    "turnover_annual_max": null,
+    "sme_category": "any",
+    "sectors": [
+     "any"
+    ],
+    "stages": [
+     "pre_seed",
+     "seed",
+     "series_a"
+    ],
+    "requires_local_entity": true,
+    "requires_incorporation": true,
+    "rd_focus": false,
+    "female_founder_only": false,
+    "underrepresented_focus": false,
+    "de_minimis": false,
+    "other_note": "Aimed at 'pre-seed, seed, and Series A companies' developing breakthrough urban mobility solutions. Detailed eligibility (including country scope and special cases) is only in the Call Manual PDF and is therefore recorded as null rather than guessed."
+   },
+   "source_url": "https://www.eit.europa.eu/our-activities/opportunities/financial-support-startups-open-call-2026",
+   "source_snippet": "EIT Urban Mobility will provide financial support of up to €2.5 million per company, for startups developing breakthrough mobility solutions. Funding is provided through an open application process with multiple cut offs throughout 2026 ... Cut off 1 – 23 February 2026",
+   "last_verified_at": "2026-08-14",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "eu4health",
+   "name_local": "EU4Health",
+   "name_en": "EU4Health Programme",
+   "country_code": "eu",
+   "admin_level": "supranational",
+   "admin_area": null,
+   "funder": "European Commission (DG SANTE), implemented by HaDEA (European Health and Digital Executive Agency)",
+   "funder_type": "public",
+   "grant_type": "grant",
+   "category": "startup",
+   "amount_min": null,
+   "amount_max": null,
+   "amount_currency": "EUR",
+   "amount_note": "Budget, co-funding rates and eligibility are set in the EU4Health Annual Work Programmes rather than on the programme landing page; the page verified did not state them, so all are null here. EU4Health is predominantly aimed at health authorities, NGOs and health system actors rather than startups; company participation is limited and usually via consortia or tenders.",
+   "cofunding_pct": null,
+   "is_automatic": false,
+   "application_url": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/programmes/eu4h",
+   "application_channel": "portal",
+   "deadline_type": "annual_call",
+   "deadline_note": "Calls and tenders are launched by HaDEA under the EU4Health Annual Work Programmes, 2021-2027. Specific deadlines vary by call and were not verified here.",
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Check the current EU4Health Annual Work Programme for planned actions.",
+     "url": "https://hadea.ec.europa.eu/programmes/eu4health_en"
+    },
+    {
+     "step": 2,
+     "detail": "Register your organisation and obtain a PIC.",
+     "url": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/how-to-participate/participant-register"
+    },
+    {
+     "step": 3,
+     "detail": "Submit the proposal or tender via the EU Funding & Tenders Portal by the deadline.",
+     "url": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/programmes/eu4h"
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "Application Part A and Part B",
+     "mandatory": true,
+     "note": null
+    }
+   ],
+   "eligibility": {
+    "entity": "startup",
+    "company_age_months_min": null,
+    "company_age_months_max": null,
+    "headcount_min": null,
+    "headcount_max": null,
+    "turnover_annual_max": null,
+    "sme_category": "any",
+    "sectors": [
+     "health"
+    ],
+    "stages": [
+     "seed",
+     "series_a",
+     "growth"
+    ],
+    "requires_local_entity": true,
+    "requires_incorporation": true,
+    "rd_focus": false,
+    "female_founder_only": false,
+    "underrepresented_focus": false,
+    "de_minimis": false,
+    "other_note": "'HaDEA implements the EU4Health programme by managing calls for proposals and tenders from 2021 to 2027', aimed at 'the resilience of European healthcare systems'. Whether companies and SMEs can apply is set per call and is not stated on the programme page; it is recorded here honestly as unverified. Health startups will usually find Horizon Europe Cluster 1, the EIC Accelerator or EIT Health a better fit than EU4Health."
+   },
+   "source_url": "https://hadea.ec.europa.eu/programmes/eu4health_en",
+   "source_snippet": "HaDEA implements the EU4Health programme by managing calls for proposals and tenders from 2021 to 2027 ... the resilience of European healthcare systems and contribute to a healthier Europe",
+   "last_verified_at": "2026-08-14",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "european-innovation-ecosystems-connect",
+   "name_local": "European Innovation Ecosystems (EIE)",
+   "name_en": "European Innovation Ecosystems - CONNECT and INNOVSMES strands",
+   "country_code": "eu",
+   "admin_level": "supranational",
+   "admin_area": null,
+   "funder": "European Innovation Council and SMEs Executive Agency (EISMEA), under Horizon Europe",
+   "funder_type": "public",
+   "grant_type": "grant",
+   "category": "startup",
+   "amount_min": null,
+   "amount_max": null,
+   "amount_currency": "EUR",
+   "amount_note": "Grants to direct beneficiaries cover 'up to 100% of costs (Coordination & Support Actions) or 30-50% for Co-funded actions'. No single per-project amount is published on the programme page. Startups are usually not direct beneficiaries: they benefit indirectly through cascade grants (financial support to third parties) redistributed by the funded intermediaries.",
+   "cofunding_pct": null,
+   "is_automatic": false,
+   "application_url": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/home",
+   "application_channel": "portal",
+   "deadline_type": "annual_call",
+   "deadline_note": "Calls are published annually. One call open at verification: HORIZON-EIE-2026-03-CONNECT-01 (technology transfer offices), deadline 22 September 2026, 17:00 CET.",
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Identify the relevant EIE strand (CONNECT for interconnected ecosystems; INNOVSMES, the European Partnership on Innovative SMEs, delivering Eurostars, Innowwide and Fast Track to EIC).",
+     "url": "https://eismea.ec.europa.eu/programmes/european-innovation-ecosystems_en"
+    },
+    {
+     "step": 2,
+     "detail": "As a startup, look for cascade funding open calls run by EIE-funded projects rather than applying directly.",
+     "url": "https://eismea.ec.europa.eu/programmes/european-innovation-ecosystems_en"
+    },
+    {
+     "step": 3,
+     "detail": "As an intermediary (agency, university, RTO), submit a consortium proposal via the EU Funding & Tenders Portal.",
+     "url": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/home"
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "Proposal Part A and Part B",
+     "mandatory": true,
+     "note": "For direct beneficiaries"
+    }
+   ],
+   "eligibility": {
+    "entity": "startup",
+    "company_age_months_min": null,
+    "company_age_months_max": null,
+    "headcount_min": null,
+    "headcount_max": null,
+    "turnover_annual_max": null,
+    "sme_category": "any",
+    "sectors": [
+     "any"
+    ],
+    "stages": [
+     "pre_seed",
+     "seed",
+     "series_a"
+    ],
+    "requires_local_entity": true,
+    "requires_incorporation": true,
+    "rd_focus": false,
+    "female_founder_only": false,
+    "underrepresented_focus": true,
+    "de_minimis": false,
+    "other_note": "Direct beneficiaries are 'national or regional innovation agencies, funding bodies, higher education institutions, research & technology organisations' and other intermediaries; 'Companies benefit indirectly through cascade grants'. This is a common trap for aggregators: EIE call pages are not startup application routes."
+   },
+   "source_url": "https://eismea.ec.europa.eu/programmes/european-innovation-ecosystems_en",
+   "source_snippet": "aims to create more connected, inclusive, and efficient innovation ecosystems and support the scaling of companies ... up to 100% of costs (Coordination & Support Actions) or 30–50% for Co-funded actions",
+   "last_verified_at": "2026-08-14",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "european-prize-women-innovators",
+   "name_local": "European Prize for Women Innovators",
+   "name_en": "European Prize for Women Innovators, powered by EIC & EIT",
+   "country_code": "eu",
+   "admin_level": "supranational",
+   "admin_area": null,
+   "funder": "European Innovation Council (EIC) and European Institute of Innovation and Technology (EIT), via EISMEA",
+   "funder_type": "public",
+   "grant_type": "prize",
+   "category": "startup",
+   "amount_min": 20000,
+   "amount_max": 100000,
+   "amount_currency": "EUR",
+   "amount_note": "Three categories. EIC Women Innovators: EUR 100 000 / EUR 70 000 / EUR 50 000. EIC Rising Innovators (under 35): EUR 50 000 / EUR 30 000 / EUR 20 000. EIT Women Leadership Award: EUR 50 000 winner plus runners-up of EUR 30 000 and EUR 20 000.",
+   "cofunding_pct": null,
+   "is_automatic": false,
+   "application_url": "https://eic.ec.europa.eu/eic-prizes/european-prize-women-innovators-powered-eic-eit_en",
+   "application_channel": "portal",
+   "deadline_type": "annual_call",
+   "deadline_note": "Recurring annual prize (the 2026 edition was the 12th, with winners announced 4 June 2026 at the EIC Summit). At the time of verification the official page stated: 'The call for applications has been closed on 25 September 2025.' The next call's deadline was not published on the official page and is recorded as unknown.",
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Check the category you fit: EIC Women Innovators, EIC Rising Innovators (under 35 at the start of the call year), or the EIT Women Leadership Award.",
+     "url": "https://eic.ec.europa.eu/eic-prizes/european-prize-women-innovators-powered-eic-eit_en"
+    },
+    {
+     "step": 2,
+     "detail": "Apply as an individual (not as a legal entity) via the category-specific link on the EU Funding and Tenders Portal.",
+     "url": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/home"
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "Application form for the chosen category",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Evidence of founder/co-founder role and of company registration at least two years before the call year",
+     "mandatory": true,
+     "note": null
+    }
+   ],
+   "eligibility": {
+    "entity": "startup",
+    "company_age_months_min": 24,
+    "company_age_months_max": null,
+    "headcount_min": null,
+    "headcount_max": null,
+    "turnover_annual_max": null,
+    "sme_category": "any",
+    "sectors": [
+     "any"
+    ],
+    "stages": [
+     "seed",
+     "series_a",
+     "growth"
+    ],
+    "requires_local_entity": true,
+    "requires_incorporation": true,
+    "rd_focus": false,
+    "female_founder_only": true,
+    "underrepresented_focus": true,
+    "de_minimis": false,
+    "other_note": "Applicants must be female and apply as an individual, not as a legal entity; must be legally established in an EU Member State, OCT or Horizon Europe associated country; must 'Be the founder or co-founder of the company or organisation'; the company must be 'registered or incorporated at least two years before the call year'. An applicant cannot receive a second EU/Euratom prize for the same activities. Rising Innovators must be under 35 at the start of the call year."
+   },
+   "source_url": "https://eic.ec.europa.eu/eic-prizes/european-prize-women-innovators-powered-eic-eit_en",
+   "source_snippet": "In the EIC Rising Innovators, three prizes of EUR 50 000, EUR 30 000 and EUR 20 000 are awarded to the three highest-ranked applications from promising 'Rising Innovators' ... Be the founder or co-founder of the company or organisation",
+   "last_verified_at": "2026-08-14",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "eurostars-3",
+   "name_local": "Eurostars",
+   "name_en": "Eurostars (Eureka / European Partnership on Innovative SMEs)",
+   "country_code": "eu",
+   "admin_level": "supranational",
+   "admin_area": null,
+   "funder": "Eureka Network / European Partnership on Innovative SMEs, co-funded by Horizon Europe and by national funding bodies",
+   "funder_type": "ppp",
+   "grant_type": "grant",
+   "category": "startup",
+   "amount_min": null,
+   "amount_max": null,
+   "amount_currency": "EUR",
+   "amount_note": "There is no single Eurostars grant amount. Funding is decentralised: participants receive money 'directly from National Funding Bodies', and each national agency sets its own 'funding rate per type of company' and eligible costs. Applicants must check their National Funding Body's rules. Projects must run 36 months or less.",
+   "cofunding_pct": null,
+   "is_automatic": false,
+   "application_url": "https://www.eurekanetwork.org/programmes/eurostars/",
+   "application_channel": "online",
+   "deadline_type": "cutoff",
+   "deadline_note": "Call 11 deadline: 10 September 2026. Call 12 deadline: 4 March 2027. Roughly two cut-offs per year.",
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Build a consortium led by an innovative SME from a Eurostars country, with at least two independent entities from at least two Eurostars countries (one must be an EU or Horizon Europe Associated Country).",
+     "url": "https://www.eurekanetwork.org/programmes/eurostars/"
+    },
+    {
+     "step": 2,
+     "detail": "Contact your National Funding Body to understand national funding rates, eligible costs and any national procedures before submitting.",
+     "url": "https://www.eurekanetwork.org/programmes/eurostars/"
+    },
+    {
+     "step": 3,
+     "detail": "Submit the joint project application online by the cut-off date; central Eureka evaluation is followed by national funding decisions.",
+     "url": "https://www.eurekanetwork.org/programmes/eurostars/"
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "Joint project application (consortium project description, workplan, budget)",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "National forms required by each participant's National Funding Body",
+     "mandatory": true,
+     "note": "Varies by country"
+    },
+    {
+     "doc": "SME self-declaration",
+     "mandatory": true,
+     "note": "SME status per Recommendation 2003/361/EC"
+    }
+   ],
+   "eligibility": {
+    "entity": "startup",
+    "company_age_months_min": null,
+    "company_age_months_max": null,
+    "headcount_min": null,
+    "headcount_max": 250,
+    "turnover_annual_max": null,
+    "sme_category": "any",
+    "sectors": [
+     "any"
+    ],
+    "stages": [
+     "seed",
+     "series_a",
+     "growth"
+    ],
+    "requires_local_entity": true,
+    "requires_incorporation": true,
+    "rd_focus": true,
+    "female_founder_only": false,
+    "underrepresented_focus": false,
+    "de_minimis": false,
+    "other_note": "Rules: 'The project consortium must be led by an innovative SME from a Eurostars country'; 'composed of at least two entities that are independent from each other'; participants from at least two Eurostars countries; 'The budget of the SMEs from the Eurostars countries (excluding any subcontracting) is 50% or more of the total project cost'; 'No single participant or country in the project can be responsible for more than 70% of the project's budget'; maximum duration 36 months; exclusively civil applications. Because money comes from national budgets, individual national awards may be granted under GBER or under de minimis - check the national body."
+   },
+   "source_url": "https://www.eurekanetwork.org/programmes/eurostars/",
+   "source_snippet": "The project consortium must be led by an innovative SME from a Eurostars country. ... The budget of the SMEs from the Eurostars countries (excluding any subcontracting) is 50% or more of the total project cost.",
+   "last_verified_at": "2026-08-14",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "horizon-europe-collaborative-calls",
+   "name_local": "Horizon Europe (Clusters / Pillar II collaborative calls)",
+   "name_en": "Horizon Europe collaborative research and innovation calls",
+   "country_code": "eu",
+   "admin_level": "supranational",
+   "admin_area": null,
+   "funder": "European Commission (DG RTD and executive agencies HaDEA, CINEA, REA, EISMEA)",
+   "funder_type": "public",
+   "grant_type": "grant",
+   "category": "startup",
+   "amount_min": null,
+   "amount_max": null,
+   "amount_currency": "EUR",
+   "amount_note": "Amounts vary entirely by topic; typical Pillar II project budgets run from roughly EUR 2 million to EUR 20 million shared across a consortium, but no single figure applies. Standard reimbursement rates are set per action type in the Horizon Europe Model Grant Agreement, not on the programme landing page; not verified here, so recorded as null.",
+   "cofunding_pct": null,
+   "is_automatic": false,
+   "application_url": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/programmes/horizon",
+   "application_channel": "portal",
+   "deadline_type": "annual_call",
+   "deadline_note": "Hundreds of topic-specific deadlines published in biennial work programmes; check each topic page on the Funding & Tenders Portal.",
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Search the Funding & Tenders Portal for topics matching your technology and check the topic conditions.",
+     "url": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/calls-for-proposals"
+    },
+    {
+     "step": 2,
+     "detail": "Register your organisation and obtain a PIC.",
+     "url": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/how-to-participate/participant-register"
+    },
+    {
+     "step": 3,
+     "detail": "Join or form a consortium (most Pillar II topics require at least three independent legal entities from three different Member States/Associated Countries) and submit by the topic deadline.",
+     "url": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/programmes/horizon"
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "Proposal Part A (administrative and budget forms)",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Proposal Part B (technical annex)",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "PIC for every partner",
+     "mandatory": true,
+     "note": null
+    }
+   ],
+   "eligibility": {
+    "entity": "startup",
+    "company_age_months_min": null,
+    "company_age_months_max": null,
+    "headcount_min": null,
+    "headcount_max": null,
+    "turnover_annual_max": null,
+    "sme_category": "any",
+    "sectors": [
+     "any",
+     "health",
+     "climate",
+     "ai",
+     "manufacturing",
+     "agri"
+    ],
+    "stages": [
+     "seed",
+     "series_a",
+     "growth"
+    ],
+    "requires_local_entity": true,
+    "requires_incorporation": true,
+    "rd_focus": true,
+    "female_founder_only": false,
+    "underrepresented_focus": false,
+    "de_minimis": false,
+    "other_note": "Startups normally participate as consortium partners rather than as lead applicants. Included here because it is the largest single source of EU R&D money reachable by an SME, but any specific topic's amounts and rates must be read from that topic's page. Horizon Europe grants are directly managed EU funds and are not Member State de minimis aid."
+   },
+   "source_url": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/programmes/horizon",
+   "source_snippet": "Horizon Europe programme page on the EU Funding & Tenders Opportunities Portal, listing calls for proposals by cluster and topic.",
+   "last_verified_at": "2026-08-14",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "innovation-fund",
+   "name_local": "Innovation Fund",
+   "name_en": "EU Innovation Fund",
+   "country_code": "eu",
+   "admin_level": "supranational",
+   "admin_area": null,
+   "funder": "European Commission (DG CLIMA), implemented by CINEA, financed from EU Emissions Trading System revenues",
+   "funder_type": "public",
+   "grant_type": "grant",
+   "category": "startup",
+   "amount_min": null,
+   "amount_max": null,
+   "amount_currency": "EUR",
+   "amount_note": "Programme size is '€40 billion From 2020 - 2030' based on 'a carbon price of 75 €/tonne', financed by EU Emissions Trading System revenues. Individual grant sizes depend on the call and the project's relevant costs; the CINEA programme page does not publish per-project thresholds or a maximum funding rate, so both are recorded as null. The most recent launched call round (IF25, launched 4 December 2025) comprised three calls totalling EUR 5.2 billion: the IF25 NZT call (regular grants), the IF25 Heat Auction and the IF25 Hydrogen Auction.",
+   "cofunding_pct": null,
+   "is_automatic": false,
+   "application_url": "https://climate.ec.europa.eu/eu-action/eu-funding-climate-action/innovation-fund/calls-proposals_en",
+   "application_channel": "portal",
+   "deadline_type": "annual_call",
+   "deadline_note": "At verification the official page stated: 'There are currently no open Innovation Fund calls. Calls typically open at the end of the year.' The next round (IF26, including an IF26 Heat Auction) was in draft terms and conditions consultation, with a stakeholder workshop on 7 July 2026; no IF26 deadline was published.",
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Monitor the Innovation Fund calls page; calls typically open at the end of the calendar year.",
+     "url": "https://climate.ec.europa.eu/eu-action/eu-funding-climate-action/innovation-fund/calls-proposals_en"
+    },
+    {
+     "step": 2,
+     "detail": "Register on the EU Funding & Tenders Portal and obtain a PIC.",
+     "url": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/how-to-participate/participant-register"
+    },
+    {
+     "step": 3,
+     "detail": "Submit the application (grant call) or bid (auction) via the Funding & Tenders Portal by the call deadline.",
+     "url": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/home"
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "Application form Part A and Part B",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Business plan and financial model",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "GHG emission avoidance calculation",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Feasibility and permitting evidence",
+     "mandatory": true,
+     "note": null
+    }
+   ],
+   "eligibility": {
+    "entity": "startup",
+    "company_age_months_min": null,
+    "company_age_months_max": null,
+    "headcount_min": null,
+    "headcount_max": null,
+    "turnover_annual_max": null,
+    "sme_category": "any",
+    "sectors": [
+     "climate",
+     "manufacturing"
+    ],
+    "stages": [
+     "growth"
+    ],
+    "requires_local_entity": true,
+    "requires_incorporation": true,
+    "rd_focus": false,
+    "female_founder_only": false,
+    "underrepresented_focus": false,
+    "de_minimis": false,
+    "other_note": "Projects must be 'located in the EU, Liechtenstein, Iceland, and Norway'. Supports 'innovative clean technologies' across 'energy-intensive industries, renewables, energy storage, net-zero mobility and buildings, hydrogen, and carbon capture, use and storage'. Realistically this is for capital-intensive demonstration and first-of-a-kind commercial plants, not for early-stage startups. Innovation Fund grants are directly managed EU funds, not Member State de minimis aid."
+   },
+   "source_url": "https://cinea.ec.europa.eu/programmes/innovation-fund_en",
+   "source_snippet": "€40 billion From 2020 - 2030 ... innovative clean technologies ... energy-intensive industries, renewables, energy storage, net-zero mobility and buildings, hydrogen, and carbon capture, use and storage",
+   "last_verified_at": "2026-08-14",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "investeu",
+   "name_local": "InvestEU",
+   "name_en": "InvestEU Programme",
+   "country_code": "eu",
+   "admin_level": "supranational",
+   "admin_area": null,
+   "funder": "European Commission with the European Investment Bank (EIB) Group and other implementing partners",
+   "funder_type": "ppp",
+   "grant_type": "loan",
+   "category": "startup",
+   "amount_min": null,
+   "amount_max": null,
+   "amount_currency": "EUR",
+   "amount_note": "InvestEU is not a grant programme. It provides 'an EU budget guarantee of €26.2 billion' intended to mobilise at least EUR 372 billion in additional investment over 2021-27. Companies never receive money directly from InvestEU: 'The InvestEU Fund is implemented through financial partners that will invest in projects.' Ticket sizes and terms are set by each intermediary bank, fund or guarantee scheme.",
+   "cofunding_pct": null,
+   "is_automatic": false,
+   "application_url": "https://investeu.europa.eu/investeu-programme_en",
+   "application_channel": "online",
+   "deadline_type": "rolling",
+   "deadline_note": "No EU-level deadline. Access is continuous through intermediaries; each intermediary has its own process and timing.",
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Identify an InvestEU implementing partner or financial intermediary operating in your country (EIB Group, national promotional bank, VC fund or commercial lender with an InvestEU guarantee).",
+     "url": "https://investeu.europa.eu/investeu-programme_en"
+    },
+    {
+     "step": 2,
+     "detail": "Apply directly to that intermediary under its own credit or investment process; the InvestEU guarantee sits behind the product and is usually invisible to the borrower.",
+     "url": "https://investeu.europa.eu/investeu-programme_en"
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "Whatever the financial intermediary requires (business plan, financial statements, security)",
+     "mandatory": true,
+     "note": "Set by the intermediary, not by the Commission"
+    }
+   ],
+   "eligibility": {
+    "entity": "startup",
+    "company_age_months_min": null,
+    "company_age_months_max": null,
+    "headcount_min": null,
+    "headcount_max": null,
+    "turnover_annual_max": null,
+    "sme_category": "any",
+    "sectors": [
+     "any",
+     "climate",
+     "ai"
+    ],
+    "stages": [
+     "seed",
+     "series_a",
+     "growth"
+    ],
+    "requires_local_entity": true,
+    "requires_incorporation": true,
+    "rd_focus": false,
+    "female_founder_only": false,
+    "underrepresented_focus": false,
+    "de_minimis": false,
+    "other_note": "InvestEU 'supports sustainable investment, innovation and job creation in Europe' covering 'the green, and digital transition, innovation and social investments and skills'. Important for aggregators: InvestEU is debt/equity/guarantee, not a grant, and there is no direct application to the Commission. Where an InvestEU-backed product is delivered by a national intermediary on below-market terms, the aid element may be granted to the SME under de minimis or GBER at national level - ask the intermediary for the de minimis certificate."
+   },
+   "source_url": "https://investeu.europa.eu/investeu-programme_en",
+   "source_snippet": "The InvestEU Programme supports sustainable investment, innovation and job creation in Europe. ... The InvestEU Fund is implemented through financial partners that will invest in projects.",
+   "last_verified_at": "2026-08-14",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "life-programme",
+   "name_local": "LIFE Programme",
+   "name_en": "LIFE Programme for the Environment and Climate Action",
+   "country_code": "eu",
+   "admin_level": "supranational",
+   "admin_area": null,
+   "funder": "European Commission, implemented by CINEA (European Climate, Infrastructure and Environment Executive Agency)",
+   "funder_type": "public",
+   "grant_type": "grant",
+   "category": "startup",
+   "amount_min": null,
+   "amount_max": null,
+   "amount_currency": "EUR",
+   "amount_note": "Grant amounts and EU co-financing rates are set per call topic in the LIFE annual work programme. The CINEA LIFE programme page does not publish a headline amount or rate, so both are recorded as null rather than guessed. LIFE explicitly includes a 'close-to-market' angle relevant to SMEs and start-ups.",
+   "cofunding_pct": null,
+   "is_automatic": false,
+   "application_url": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/programmes/life",
+   "application_channel": "portal",
+   "deadline_type": "annual_call",
+   "deadline_note": "The CINEA LIFE page stated at verification: 'The Calls for proposals 2026 are open'. Specific 2026 deadlines are published per sub-programme on the Funding & Tenders Portal and were not verified here.",
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Identify the relevant sub-programme: Nature and Biodiversity; Circular Economy and Quality of Life; Climate Change Mitigation and Adaptation; Clean Energy Transition.",
+     "url": "https://cinea.ec.europa.eu/programmes/life_en"
+    },
+    {
+     "step": 2,
+     "detail": "Register your organisation and obtain a PIC.",
+     "url": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/how-to-participate/participant-register"
+    },
+    {
+     "step": 3,
+     "detail": "Submit the proposal on the Funding & Tenders Portal by the call deadline.",
+     "url": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/programmes/life"
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "Application Part A and Part B",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Detailed budget and financial capacity evidence",
+     "mandatory": true,
+     "note": null
+    }
+   ],
+   "eligibility": {
+    "entity": "startup",
+    "company_age_months_min": null,
+    "company_age_months_max": null,
+    "headcount_min": null,
+    "headcount_max": null,
+    "turnover_annual_max": null,
+    "sme_category": "any",
+    "sectors": [
+     "climate"
+    ],
+    "stages": [
+     "seed",
+     "series_a",
+     "growth"
+    ],
+    "requires_local_entity": true,
+    "requires_incorporation": true,
+    "rd_focus": false,
+    "female_founder_only": false,
+    "underrepresented_focus": false,
+    "de_minimis": false,
+    "other_note": "Four sub-programmes: Nature and Biodiversity; Circular Economy and Quality of Life; Climate Change Mitigation and Adaptation; Clean Energy Transition. SMEs and start-ups are explicitly mentioned in relation to the 'close-to-market' initiative. Most LIFE projects are consortium-based and demand substantial co-financing from the beneficiary."
+   },
+   "source_url": "https://cinea.ec.europa.eu/programmes/life_en",
+   "source_snippet": "The Calls for proposals 2026 are open ... four thematic sub-programmes: Nature and Biodiversity; Circular Economy and Quality of Life; Climate Change Mitigation and Adaptation; Clean Energy Transition",
+   "last_verified_at": "2026-08-14",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "women-techeu",
+   "name_local": "Women TechEU",
+   "name_en": "Women TechEU",
+   "country_code": "eu",
+   "admin_level": "supranational",
+   "admin_area": null,
+   "funder": "European Innovation Council (EIC) / European Commission, implemented by a consortium under Horizon Europe",
+   "funder_type": "public",
+   "grant_type": "grant",
+   "category": "startup",
+   "amount_min": 75000,
+   "amount_max": 75000,
+   "amount_currency": "EUR",
+   "amount_note": "EUR 75 000 equity-free (non-dilutive) grant per selected startup, plus a personalised business development programme with mentoring, training, investor matchmaking and networking. Total scheme budget EUR 12 million for approximately 160 startups. 40% of the budget is exclusively reserved for companies based in Widening areas.",
+   "cofunding_pct": null,
+   "is_automatic": false,
+   "application_url": "https://womentecheurope.eu/active-calls/",
+   "application_channel": "online",
+   "deadline_type": "cutoff",
+   "deadline_note": "Two-stage. Eligibility Strand: opened 1 June 2026 with weekly cut-offs every Tuesday at 17:00 CEST, final cut-off 14 June 2027. Full Proposal Strand (only for applicants already assessed eligible): opened 15 July 2026 with deadlines 16 September 2026, 14 January 2027, 1 April 2027 and 8 July 2027, all at 17:00 CEST.",
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Submit to the Eligibility Strand via the cascade funding platform; assessed at the weekly Tuesday cut-off.",
+     "url": "https://cascadefunding.sploro.eu/apply/program/women-techeu-eligibility-strand"
+    },
+    {
+     "step": 2,
+     "detail": "If assessed eligible, you receive a confirmation letter with access details for the Full Proposal Strand.",
+     "url": "https://womentecheurope.eu/active-calls/"
+    },
+    {
+     "step": 3,
+     "detail": "Submit the full proposal by one of the four published deadlines; selected companies receive EUR 75 000 plus the business development programme.",
+     "url": "https://womentecheurope.eu/active-calls/"
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "Eligibility Strand application form",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Full proposal (business/technology plan)",
+     "mandatory": true,
+     "note": "Only accessible after passing the eligibility strand"
+    },
+    {
+     "doc": "Proof of company registration and of the woman founder's role",
+     "mandatory": true,
+     "note": "Detailed requirements are in the Guidelines for Applicants"
+    }
+   ],
+   "eligibility": {
+    "entity": "startup",
+    "company_age_months_min": null,
+    "company_age_months_max": null,
+    "headcount_min": null,
+    "headcount_max": null,
+    "turnover_annual_max": null,
+    "sme_category": "any",
+    "sectors": [
+     "deeptech"
+    ],
+    "stages": [
+     "pre_seed",
+     "seed"
+    ],
+    "requires_local_entity": true,
+    "requires_incorporation": true,
+    "rd_focus": true,
+    "female_founder_only": true,
+    "underrepresented_focus": true,
+    "de_minimis": false,
+    "other_note": "For 'women-led early-stage deep tech startups from Europe', across 43 eligible countries. Specific company age and size thresholds are set in the Guidelines for Applicants document, which is the binding source; they are recorded as null here rather than guessed. Because this is EU cascade funding under Horizon Europe, it is not national de minimis aid, but recipients should still check whether their national authority treats the sub-grant as such."
+   },
+   "source_url": "https://eic.ec.europa.eu/news/women-techeu-continues-another-eu12-million-equity-free-grants-women-founders-deep-tech-2026-06-12_en",
+   "source_snippet": "Another 160 selected startups will receive €75,000 ... €12 million in equity-free grants ... 40% of the budget exclusively reserved to companies based in Widening areas",
+   "last_verified_at": "2026-08-14",
+   "verification_status": "verified"
+  }
+ ]
+}

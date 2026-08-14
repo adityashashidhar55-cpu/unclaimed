@@ -1,0 +1,1092 @@
+{
+ "country_code": "de",
+ "country_name": "Germany",
+ "currency": "EUR",
+ "language": "en",
+ "entity": "startup",
+ "programmes": [
+  {
+   "slug": "de-baytou",
+   "name_local": "Bayerisches Programm zur Förderung technologieorientierter Unternehmensgründungen (BayTOU)",
+   "name_en": "Bavarian Programme for Technology-Oriented Start-ups",
+   "country_code": "de",
+   "admin_level": "regional",
+   "admin_area": "Bayern",
+   "funder": "Bayerisches Staatsministerium für Wirtschaft, Landesentwicklung und Energie, operated by Bayern Innovativ GmbH",
+   "funder_type": "public",
+   "grant_type": "grant",
+   "category": "startup",
+   "amount_min": null,
+   "amount_max": null,
+   "amount_currency": "EUR",
+   "amount_note": "Maximum grant amount and funding rate are set in the current BayTOU guideline and were not published on the pages verified; recorded as null rather than estimated. Support is given as \"a non-repayable grant as part of project funding\" covering \"R&D personnel costs, costs for instruments and equipment, contract research and obtaining patents\".",
+   "cofunding_pct": null,
+   "is_automatic": false,
+   "application_url": "https://www.bayern-innovativ.de/en/geschaeftsfelder/projekttraeger/project-sponsor-bavaria/baytou/",
+   "application_channel": "portal",
+   "deadline_type": "rolling",
+   "deadline_note": "No published fixed deadlines; applications handled by the Projektträger Bayern Innovativ.",
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Contact Bayern Innovativ / the Gründerlotse Bayern to discuss the project before applying.",
+     "url": "https://www.bayern-innovativ.de/en/geschaeftsfelder/projekttraeger/project-sponsor-bavaria/baytou/"
+    },
+    {
+     "step": 2,
+     "detail": "Submit the application to the Projektträger against the current BayTOU guideline.",
+     "url": null
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "Project description of the technically and economically risky development project",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Cost plan covering R&D personnel, instruments/equipment, contract research and patent costs",
+     "mandatory": true,
+     "note": null
+    }
+   ],
+   "eligibility": {
+    "entity": "startup",
+    "company_age_months_min": null,
+    "company_age_months_max": null,
+    "headcount_min": null,
+    "headcount_max": null,
+    "turnover_annual_max": null,
+    "sme_category": "small",
+    "sectors": [
+     "deeptech",
+     "any"
+    ],
+    "stages": [
+     "idea",
+     "pre_seed",
+     "seed"
+    ],
+    "requires_local_entity": true,
+    "requires_incorporation": false,
+    "rd_focus": true,
+    "female_founder_only": false,
+    "underrepresented_focus": false,
+    "de_minimis": false,
+    "other_note": "\"company founders and young companies in the development of new products, processes and technical services\", open to \"company founders from all technology sectors\" with \"technologically and economically risky development projects\". Company age limits and grant ceilings are set in the current guideline and were not verified."
+   },
+   "source_url": "https://www.bayern-innovativ.de/en/geschaeftsfelder/projekttraeger/project-sponsor-bavaria/baytou/",
+   "source_snippet": "company founders and young companies in the development of new products, processes and technical services",
+   "last_verified_at": "2026-08-14",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "de-berlin-pro-fit-fruehphasenfinanzierung",
+   "name_local": "Pro FIT Frühphasenfinanzierung",
+   "name_en": "Pro FIT Early-Stage Financing (Berlin)",
+   "country_code": "de",
+   "admin_level": "regional",
+   "admin_area": "Berlin",
+   "funder": "Investitionsbank Berlin (IBB)",
+   "funder_type": "public",
+   "grant_type": "grant",
+   "category": "startup",
+   "amount_min": null,
+   "amount_max": 500000,
+   "amount_currency": "EUR",
+   "amount_note": "Up to €500,000 in total. Frühphase 1 up to €200,000, split 50/50 between a non-repayable Zuschuss and a Darlehen; Frühphase 2 is loan only. Up to \"100 % der förderfähigen Ausgaben\" can be covered in both phases.",
+   "cofunding_pct": 0,
+   "is_automatic": false,
+   "application_url": "https://www.ibb.de/de/foerderprogramme/pro-fit-fruehphasenfinanzierung.html",
+   "application_channel": "portal",
+   "deadline_type": "rolling",
+   "deadline_note": "Continuous; a funding committee decides monthly.",
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Submit the application digitally via the IBB Kundenportal.",
+     "url": "https://www.ibb.de/de/foerderprogramme/pro-fit-fruehphasenfinanzierung.html"
+    },
+    {
+     "step": 2,
+     "detail": "External technical experts assess the project.",
+     "url": null
+    },
+    {
+     "step": 3,
+     "detail": "IBB carries out the commercial review.",
+     "url": null
+    },
+    {
+     "step": 4,
+     "detail": "The funding committee decides — it meets monthly.",
+     "url": null
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "Project description and work plan",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Cost and financing plan",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Business plan",
+     "mandatory": true,
+     "note": null
+    }
+   ],
+   "eligibility": {
+    "entity": "startup",
+    "company_age_months_min": null,
+    "company_age_months_max": 24,
+    "headcount_min": null,
+    "headcount_max": 50,
+    "turnover_annual_max": null,
+    "sme_category": "small",
+    "sectors": [
+     "deeptech",
+     "any"
+    ],
+    "stages": [
+     "idea",
+     "pre_seed",
+     "seed"
+    ],
+    "requires_local_entity": true,
+    "requires_incorporation": true,
+    "rd_focus": true,
+    "female_founder_only": false,
+    "underrepresented_focus": false,
+    "de_minimis": false,
+    "other_note": "Berlin-based small technology-oriented companies. Maximum 12 months old for Frühphase 1; maximum 24 months if applying only for Frühphase 2."
+   },
+   "source_url": "https://www.ibb.de/de/foerderprogramme/pro-fit-fruehphasenfinanzierung.html",
+   "source_snippet": "100 % der förderfähigen Ausgaben",
+   "last_verified_at": "2026-08-14",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "de-exist-forschungstransfer",
+   "name_local": "EXIST-Forschungstransfer",
+   "name_en": "EXIST Transfer of Research",
+   "country_code": "de",
+   "admin_level": "national",
+   "admin_area": null,
+   "funder": "Bundesministerium für Wirtschaft und Energie (BMWE), operated by Projektträger Jülich",
+   "funder_type": "public",
+   "grant_type": "grant",
+   "category": "startup",
+   "amount_min": null,
+   "amount_max": 250000,
+   "amount_currency": "EUR",
+   "amount_note": "Förderphase I: personnel for up to 4 FTE (3 scientific plus 1 business) and material costs \"bis zu 250.000 Euro\", which may be exceeded in well-justified cases; duration \"bis zu 18 Monate\", extendable to 36 months for complex projects. Förderphase II: grant \"bis zu 180.000 Euro\" on eligible costs of €240,000 at a rate of \"bis zu 75 Prozent\".",
+   "cofunding_pct": 25,
+   "is_automatic": false,
+   "application_url": "https://exist.de/programm/forschungstransfer/",
+   "application_channel": "portal",
+   "deadline_type": "rolling",
+   "deadline_note": "No fixed Stichtage published on the programme page; applications go through the host institution.",
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Contact the transfer office of the German university or research institution early.",
+     "url": "https://exist.de/programm/forschungstransfer/"
+    },
+    {
+     "step": 2,
+     "detail": "The institution submits the Phase I application (\"Die Antragstellung erfolgt über die Hochschule oder Forschungseinrichtung\").",
+     "url": null
+    },
+    {
+     "step": 3,
+     "detail": "Complete Phase I technology development and start-up preparation, then found the company.",
+     "url": null
+    },
+    {
+     "step": 4,
+     "detail": "Apply for Phase II from the newly founded company; direct entry to Phase II is \"grundsätzlich nicht möglich\".",
+     "url": null
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "Project outline demonstrating scientific preliminary work and basic technological feasibility",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Team competence description (scientific and business)",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Institutional application from the host university or research institution",
+     "mandatory": true,
+     "note": null
+    }
+   ],
+   "eligibility": {
+    "entity": "startup",
+    "company_age_months_min": null,
+    "company_age_months_max": null,
+    "headcount_min": null,
+    "headcount_max": 4,
+    "turnover_annual_max": null,
+    "sme_category": "micro",
+    "sectors": [
+     "deeptech"
+    ],
+    "stages": [
+     "idea",
+     "pre_seed",
+     "seed"
+    ],
+    "requires_local_entity": true,
+    "requires_incorporation": false,
+    "rd_focus": true,
+    "female_founder_only": false,
+    "underrepresented_focus": false,
+    "de_minimis": false,
+    "other_note": "Project must be hosted at a German university or research institution, with scientific preliminary work and demonstrated basic technological feasibility. The company must not yet be founded in Phase I."
+   },
+   "source_url": "https://exist.de/programm/forschungstransfer/",
+   "source_snippet": "bis zu 250.000 Euro […] bis zu 18 Monate […] bis zu 180.000 Euro […] bis zu 75 Prozent",
+   "last_verified_at": "2026-08-14",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "de-exist-gruendungsstipendium",
+   "name_local": "EXIST-Gründungsstipendium",
+   "name_en": "EXIST Business Start-up Grant",
+   "country_code": "de",
+   "admin_level": "national",
+   "admin_area": null,
+   "funder": "Bundesministerium für Wirtschaft und Energie (BMWE), operated by Projektträger Jülich",
+   "funder_type": "public",
+   "grant_type": "grant",
+   "category": "startup",
+   "amount_min": 1000,
+   "amount_max": 3000,
+   "amount_currency": "EUR",
+   "amount_note": "Monthly personal stipend per founder: \"Promovierte Gründerinnen und Gründer: 3.000 €\", \"Hochschulabsolventinnen und Hochschulabsolventen: 2.500 €\", \"Gründende mit Berufsabschluss: 2.000 €\", \"Studierende: 1.000 €\". Plus \"Kinderzuschlag: 150 € pro Kind und Monat\", \"Sachmittel für Teams: 30.000 €\" (or up to €10,000 for solo founders) and a \"Coachingbudget: 5.000 €\". Paid for twelve months.",
+   "cofunding_pct": null,
+   "is_automatic": false,
+   "application_url": "https://exist.de/programm/gruendungsstipendium/",
+   "application_channel": "portal",
+   "deadline_type": "rolling",
+   "deadline_note": "No fixed cut-off dates published; applications are submitted through the participating university at any time.",
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Contact the Gründungsnetzwerk / start-up support office of a German university or research institution.",
+     "url": "https://exist.de/programm/gruendungsstipendium/"
+    },
+    {
+     "step": 2,
+     "detail": "Develop the business idea and idea paper with the network; the institution is the formal applicant.",
+     "url": null
+    },
+    {
+     "step": 3,
+     "detail": "The institution submits the application to Projektträger Jülich; on approval the stipend runs for twelve months.",
+     "url": null
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "Ideenpapier / business idea description",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Proof of qualification and study progress for each team member",
+     "mandatory": true,
+     "note": "Students need at least half the degree completed; graduates within 5 years of graduation"
+    },
+    {
+     "doc": "Letter of support / hosting agreement from the university or research institution",
+     "mandatory": true,
+     "note": null
+    }
+   ],
+   "eligibility": {
+    "entity": "startup",
+    "company_age_months_min": null,
+    "company_age_months_max": null,
+    "headcount_min": 1,
+    "headcount_max": 3,
+    "turnover_annual_max": null,
+    "sme_category": "micro",
+    "sectors": [
+     "deeptech",
+     "any"
+    ],
+    "stages": [
+     "idea",
+     "pre_seed"
+    ],
+    "requires_local_entity": false,
+    "requires_incorporation": false,
+    "rd_focus": true,
+    "female_founder_only": false,
+    "underrepresented_focus": false,
+    "de_minimis": false,
+    "other_note": "\"Mindestens die Hälfte des Studiums abgeschlossen\" for students; \"Bis 5 Jahre nach Abschluss\" for graduates; researchers also eligible. \"max. 3 Personen im Team\". The company must not yet be founded at application; the host institution applies on the team's behalf."
+   },
+   "source_url": "https://exist.de/programm/gruendungsstipendium/",
+   "source_snippet": "Promovierte Gründerinnen und Gründer: 3.000 € […] Studierende: 1.000 € […] Kinderzuschlag: 150 € pro Kind und Monat",
+   "last_verified_at": "2026-08-14",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "de-exist-women",
+   "name_local": "EXIST-Women",
+   "name_en": "EXIST-Women",
+   "country_code": "de",
+   "admin_level": "national",
+   "admin_area": null,
+   "funder": "Bundesministerium für Wirtschaft und Energie (BMWE), operated by Projektträger Jülich",
+   "funder_type": "public",
+   "grant_type": "grant",
+   "category": "startup",
+   "amount_min": 1000,
+   "amount_max": 3000,
+   "amount_currency": "EUR",
+   "amount_note": "\"Sachmittel in Höhe von 2.000 €\" per participant, plus an optional stipend for up to 3 months: students €1,000, with completed vocational training €2,000, graduates €2,500, doctorate holders €3,000, plus €150 per child per month. The programme runs roughly 10 months including mentoring, workshops and network access.",
+   "cofunding_pct": null,
+   "is_automatic": false,
+   "application_url": "https://exist.de/programm/women/",
+   "application_channel": "portal",
+   "deadline_type": "rolling",
+   "deadline_note": "Participation is via a university or research institution that runs an EXIST-Women cohort; timings set by each institution.",
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Find a participating university or research institution (\"Antragsberechtigt sind Hochschulen und Forschungseinrichtungen\").",
+     "url": "https://exist.de/programm/women/"
+    },
+    {
+     "step": 2,
+     "detail": "Apply to that institution's EXIST-Women cohort with an initial business concept.",
+     "url": null
+    },
+    {
+     "step": 3,
+     "detail": "Take part in the ~10-month programme: mentoring by the Gründungsnetzwerk, workshops and the online platform; receive Sachmittel and, if granted, the stipend.",
+     "url": null
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "Initial business concept / idea description",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Proof of status as student, graduate or researcher at the institution",
+     "mandatory": true,
+     "note": null
+    }
+   ],
+   "eligibility": {
+    "entity": "startup",
+    "company_age_months_min": null,
+    "company_age_months_max": null,
+    "headcount_min": null,
+    "headcount_max": null,
+    "turnover_annual_max": null,
+    "sme_category": "micro",
+    "sectors": [
+     "any"
+    ],
+    "stages": [
+     "idea",
+     "pre_seed"
+    ],
+    "requires_local_entity": false,
+    "requires_incorporation": false,
+    "rd_focus": false,
+    "female_founder_only": true,
+    "underrepresented_focus": true,
+    "de_minimis": false,
+    "other_note": "Targets \"Studentinnen, Absolventinnen, Wissenschaftlerinnen\" at universities and research institutions with an interest in founding and an initial business concept. Universities and research institutions are the formal applicants."
+   },
+   "source_url": "https://exist.de/programm/women/",
+   "source_snippet": "Sachmittel in Höhe von 2.000 € […] Antragsberechtigt sind Hochschulen und Forschungseinrichtungen",
+   "last_verified_at": "2026-08-14",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "de-gruendungsstipendium-nrw",
+   "name_local": "Gründungsstipendium NRW",
+   "name_en": "North Rhine-Westphalia Start-up Stipend",
+   "country_code": "de",
+   "admin_level": "regional",
+   "admin_area": "Nordrhein-Westfalen",
+   "funder": "Ministerium für Wirtschaft, Industrie, Klimaschutz und Energie des Landes Nordrhein-Westfalen",
+   "funder_type": "public",
+   "grant_type": "grant",
+   "category": "startup",
+   "amount_min": 1200,
+   "amount_max": 1500,
+   "amount_currency": "EUR",
+   "amount_note": "\"1.200 Euro pro Monat. Für 1 Jahr\" per founder. Gender-diverse teams receive \"1.500 Euro statt 1.200 Euro pro Monat\" plus a one-off bonus of up to €3,600 per person.",
+   "cofunding_pct": null,
+   "is_automatic": false,
+   "application_url": "https://www.gruenderstipendium.nrw/",
+   "application_channel": "online",
+   "deadline_type": "closed",
+   "deadline_note": "TEMPORARILY PAUSED: due to high demand the jury sessions are suspended — \"pausieren die Jurysitzungen ab dem 01.04.2026 vorerst\". Applications already submitted continue to be processed. No reopening date was published at the time of verification.",
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Choose an accredited Gründungsnetzwerk in NRW.",
+     "url": "https://www.gruenderstipendium.nrw/"
+    },
+    {
+     "step": 2,
+     "detail": "Develop the innovative business idea with the network's support.",
+     "url": null
+    },
+    {
+     "step": 3,
+     "detail": "Pitch the idea to the network's jury; on approval the stipend runs for one year — jury sessions are currently paused.",
+     "url": null
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "Business idea description / pitch",
+     "mandatory": true,
+     "note": "Presented to the jury of an accredited founding network"
+    }
+   ],
+   "eligibility": {
+    "entity": "startup",
+    "company_age_months_min": null,
+    "company_age_months_max": null,
+    "headcount_min": null,
+    "headcount_max": null,
+    "turnover_annual_max": null,
+    "sme_category": "micro",
+    "sectors": [
+     "any"
+    ],
+    "stages": [
+     "idea",
+     "pre_seed"
+    ],
+    "requires_local_entity": true,
+    "requires_incorporation": false,
+    "rd_focus": false,
+    "female_founder_only": false,
+    "underrepresented_focus": true,
+    "de_minimis": true,
+    "other_note": "For people \"die in die Start-up-Szene einsteigen wollen\" with an innovative business idea in North Rhine-Westphalia. An uplift applies to gender-diverse founding teams. Awarded as de minimis aid; the de minimis basis was not restated on the page verified."
+   },
+   "source_url": "https://www.gruenderstipendium.nrw/",
+   "source_snippet": "1.200 Euro pro Monat. Für 1 Jahr […] pausieren die Jurysitzungen ab dem 01.04.2026 vorerst",
+   "last_verified_at": "2026-08-14",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "de-gruendungszuschuss",
+   "name_local": "Gründungszuschuss",
+   "name_en": "Start-up Subsidy (for unemployed founders)",
+   "country_code": "de",
+   "admin_level": "national",
+   "admin_area": null,
+   "funder": "Bundesagentur für Arbeit",
+   "funder_type": "public",
+   "grant_type": "grant",
+   "category": "startup",
+   "amount_min": 300,
+   "amount_max": null,
+   "amount_currency": "EUR",
+   "amount_note": "Phase 1 (6 months): the founder's previous Arbeitslosengeld amount plus €300 per month. Phase 2 (9 months): €300 per month towards social security cover. The individual total depends on the founder's ALG I entitlement, so no fixed maximum.",
+   "cofunding_pct": null,
+   "is_automatic": false,
+   "application_url": "https://www.arbeitsagentur.de/arbeitslos-arbeit-finden/arbeitslosengeld/gruendungszuschuss-beantragen",
+   "application_channel": "online",
+   "deadline_type": "rolling",
+   "deadline_note": "Applied for at the point of taking up self-employment, while ALG I entitlement remains.",
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Confirm at least 150 days of remaining Arbeitslosengeld entitlement.",
+     "url": null
+    },
+    {
+     "step": 2,
+     "detail": "Obtain a Tragfähigkeitsbescheinigung from a fachkundige Stelle (IHK, HWK, bank or business consultant) confirming the long-term viability of the business.",
+     "url": null
+    },
+    {
+     "step": 3,
+     "detail": "Submit the application online through the Bundesagentur für Arbeit portal with the supporting documents.",
+     "url": "https://www.arbeitsagentur.de/arbeitslos-arbeit-finden/arbeitslosengeld/gruendungszuschuss-beantragen"
+    },
+    {
+     "step": 4,
+     "detail": "After 6 months, apply for the second phase (€300/month for 9 months).",
+     "url": null
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "Business plan / Konzept",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Tragfähigkeitsbescheinigung from a fachkundige Stelle",
+     "mandatory": true,
+     "note": "IHK, HWK, banks or business consultants"
+    },
+    {
+     "doc": "Proof of remaining ALG I entitlement",
+     "mandatory": true,
+     "note": "At least 150 days"
+    }
+   ],
+   "eligibility": {
+    "entity": "startup",
+    "company_age_months_min": null,
+    "company_age_months_max": null,
+    "headcount_min": null,
+    "headcount_max": null,
+    "turnover_annual_max": null,
+    "sme_category": "micro",
+    "sectors": [
+     "any"
+    ],
+    "stages": [
+     "idea",
+     "pre_seed"
+    ],
+    "requires_local_entity": true,
+    "requires_incorporation": false,
+    "rd_focus": false,
+    "female_founder_only": false,
+    "underrepresented_focus": false,
+    "de_minimis": false,
+    "other_note": "Founder must be receiving Arbeitslosengeld, have at least 150 days of remaining entitlement and work at least 15 hours per week hauptberuflich in the new business. It is an Ermessensleistung (discretionary), not an entitlement — the agency must be convinced of the venture's prospects."
+   },
+   "source_url": "https://www.arbeitsagentur.de/arbeitslos-arbeit-finden/arbeitslosengeld/gruendungszuschuss-beantragen",
+   "source_snippet": "langfristigen Erfolg der Selbstständigkeit",
+   "last_verified_at": "2026-08-14",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "de-high-tech-gruenderfonds",
+   "name_local": "High-Tech Gründerfonds (HTGF)",
+   "name_en": "High-Tech Gründerfonds",
+   "country_code": "de",
+   "admin_level": "national",
+   "admin_area": null,
+   "funder": "High-Tech Gründerfonds Management GmbH",
+   "funder_type": "ppp",
+   "grant_type": "equity",
+   "category": "startup",
+   "amount_min": 800000,
+   "amount_max": 30000000,
+   "amount_currency": "EUR",
+   "amount_note": "EQUITY, NOT A GRANT. \"Der Sweet Spot unserer Erstinvestitionen in Pre-Seed und Seed liegt bei 800.000+ Euro.\" \"In Wachstumsrunden können wir bis zu 30 Millionen Euro in ein Startup aus unserem Portfolio investieren.\" Follow-on capital is reserved for existing portfolio companies only.",
+   "cofunding_pct": null,
+   "is_automatic": false,
+   "application_url": "https://www.htgf.de/de/",
+   "application_channel": "online",
+   "deadline_type": "rolling",
+   "deadline_note": "Continuous; pitch decks accepted at any time via the 'Mein Pitch' form.",
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Submit a pitch deck via the 'Mein Pitch' form on the HTGF website.",
+     "url": "https://www.htgf.de/de/"
+    },
+    {
+     "step": 2,
+     "detail": "Screening and due diligence by the relevant sector team.",
+     "url": null
+    },
+    {
+     "step": 3,
+     "detail": "Investment as lead investor, typically alongside co-investors from the HTGF network.",
+     "url": null
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "Pitch deck",
+     "mandatory": true,
+     "note": "Submitted through the 'Mein Pitch' form"
+    },
+    {
+     "doc": "Financial plan and cap table",
+     "mandatory": true,
+     "note": "Required during due diligence"
+    }
+   ],
+   "eligibility": {
+    "entity": "startup",
+    "company_age_months_min": null,
+    "company_age_months_max": 36,
+    "headcount_min": null,
+    "headcount_max": null,
+    "turnover_annual_max": null,
+    "sme_category": "any",
+    "sectors": [
+     "deeptech",
+     "health",
+     "climate",
+     "ai",
+     "manufacturing"
+    ],
+    "stages": [
+     "pre_seed",
+     "seed"
+    ],
+    "requires_local_entity": true,
+    "requires_incorporation": true,
+    "rd_focus": true,
+    "female_founder_only": false,
+    "underrepresented_focus": false,
+    "de_minimis": false,
+    "other_note": "\"Wir investieren frühphasig in Unternehmen, die nicht älter als drei Jahre sind.\" Focus sectors: \"Digital Tech, Industrial, Climate & Deep Tech, Life Sciences, Chemie oder angrenzenden Tech-Bereichen\". Company must be headquartered in Germany or have a German operating base. This is an equity investment, not public aid."
+   },
+   "source_url": "https://www.htgf.de/de/",
+   "source_snippet": "Der Sweet Spot unserer Erstinvestitionen in Pre-Seed und Seed liegt bei 800.000+ Euro. […] Wir investieren frühphasig in Unternehmen, die nicht älter als drei Jahre sind.",
+   "last_verified_at": "2026-08-14",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "de-invest-zuschuss-wagniskapital",
+   "name_local": "INVEST – Zuschuss für Wagniskapital",
+   "name_en": "INVEST – Venture Capital Grant",
+   "country_code": "de",
+   "admin_level": "national",
+   "admin_area": null,
+   "funder": "Bundesamt für Wirtschaft und Ausfuhrkontrolle (BAFA)",
+   "funder_type": "public",
+   "grant_type": "grant",
+   "category": "startup",
+   "amount_min": null,
+   "amount_max": 100000,
+   "amount_currency": "EUR",
+   "amount_note": "Paid to the investor, not the startup. Erwerbszuschuss of \"15 Prozent des Ausgabepreises seiner Anteile\"; minimum investment \"mindestens 10.000 Euro\"; maximum €333,333.33 per single investment (€50,000 grant) and €666,666.66 lifetime per person (€100,000 grant). Exit-Zuschuss of \"25 Prozent des Gewinns aus der Veräußerung\", capped at the original acquisition subsidy. Up to €3m of eligible investment per company per calendar year.",
+   "cofunding_pct": null,
+   "is_automatic": false,
+   "application_url": "https://bafa.de/DE/Wirtschaft/Beratung_Finanzierung/Invest/invest.html",
+   "application_channel": "online",
+   "deadline_type": "rolling",
+   "deadline_note": "Open continuously; the guidance on market-standard clauses was revised with effect from 1 May 2025.",
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "The startup applies to BAFA for a Förderfähigkeitsbescheinigung confirming it is a young innovative company.",
+     "url": "https://bafa.de/DE/Wirtschaft/Beratung_Finanzierung/Invest/invest.html"
+    },
+    {
+     "step": 2,
+     "detail": "The investor acquires new shares (minimum €10,000) and holds them for the minimum holding period.",
+     "url": null
+    },
+    {
+     "step": 3,
+     "detail": "The investor applies to BAFA for the Erwerbszuschuss after the investment.",
+     "url": null
+    },
+    {
+     "step": 4,
+     "detail": "On a later sale at a gain, the investor may apply for the Exit-Zuschuss.",
+     "url": null
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "Förderfähigkeitsbescheinigung for the company",
+     "mandatory": true,
+     "note": "Obtained from BAFA before the investment"
+    },
+    {
+     "doc": "Share purchase / investment agreement and proof of payment",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "De-minimis declaration",
+     "mandatory": true,
+     "note": "€300,000 limit per beneficiary"
+    }
+   ],
+   "eligibility": {
+    "entity": "startup",
+    "company_age_months_min": null,
+    "company_age_months_max": 84,
+    "headcount_min": null,
+    "headcount_max": 49,
+    "turnover_annual_max": 10000000,
+    "sme_category": "small",
+    "sectors": [
+     "any"
+    ],
+    "stages": [
+     "pre_seed",
+     "seed",
+     "series_a"
+    ],
+    "requires_local_entity": true,
+    "requires_incorporation": true,
+    "rd_focus": false,
+    "female_founder_only": false,
+    "underrepresented_focus": false,
+    "de_minimis": true,
+    "other_note": "Company must be \"jünger als sieben Jahre\", have \"weniger als 50 beschäftigte Personen\" and \"Jahresumsatz oder eine Jahresbilanzsumme von höchstens 10 Millionen Euro\", be a Kapitalgesellschaft or eingetragene Genossenschaft with a German operating site, and be innovative. Aid is granted as de minimis."
+   },
+   "source_url": "https://bafa.de/DE/Wirtschaft/Beratung_Finanzierung/Invest/invest.html",
+   "source_snippet": "15 Prozent des Ausgabepreises seiner Anteile […] mindestens 10.000 Euro […] 25 Prozent des Gewinns aus der Veräußerung […] jünger als sieben Jahre",
+   "last_verified_at": "2026-08-14",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "de-kfw-erp-gruenderkredit-startgeld",
+   "name_local": "ERP-Gründerkredit – StartGeld (067)",
+   "name_en": "ERP Start-up Loan – StartGeld",
+   "country_code": "de",
+   "admin_level": "national",
+   "admin_area": null,
+   "funder": "KfW",
+   "funder_type": "public",
+   "grant_type": "loan",
+   "category": "startup",
+   "amount_min": null,
+   "amount_max": 200000,
+   "amount_currency": "EUR",
+   "amount_note": "\"maximal 200.000 Euro pro Vorhaben\", of which \"maximal 80.000 Euro für Betriebsmittelfinanzierungen\". KfW gives the on-lending bank an \"80-prozentige Haftungsfreistellung\". Terms: up to 10 years with at most 2 repayment-free years, or up to 5 years with at most 1 repayment-free year. Merkblatt Stand: 18.06.2026.",
+   "cofunding_pct": null,
+   "is_automatic": false,
+   "application_url": "https://www.kfw.de/inlandsfoerderung/Unternehmen/Gr%C3%BCnden-Nachfolgen/F%C3%B6rderprodukte/ERP-Gr%C3%BCnderkredit-Startgeld-(067)/",
+   "application_channel": "portal",
+   "deadline_type": "rolling",
+   "deadline_note": "Continuous; applications must be made before the project starts.",
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Prepare the business plan and financing plan.",
+     "url": null
+    },
+    {
+     "step": 2,
+     "detail": "Approach a Hausbank or other financing partner — KfW does not lend directly.",
+     "url": null
+    },
+    {
+     "step": 3,
+     "detail": "The Hausbank submits the application to KfW before the project begins.",
+     "url": null
+    },
+    {
+     "step": 4,
+     "detail": "On approval, sign the loan contract with the Hausbank and draw down the funds.",
+     "url": null
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "Business plan",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Investment and financing plan",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Profitability forecast (Rentabilitätsvorschau) and liquidity plan",
+     "mandatory": true,
+     "note": "Required by the Hausbank"
+    }
+   ],
+   "eligibility": {
+    "entity": "startup",
+    "company_age_months_min": null,
+    "company_age_months_max": 60,
+    "headcount_min": null,
+    "headcount_max": 50,
+    "turnover_annual_max": 10000000,
+    "sme_category": "small",
+    "sectors": [
+     "any"
+    ],
+    "stages": [
+     "idea",
+     "pre_seed",
+     "seed"
+    ],
+    "requires_local_entity": true,
+    "requires_incorporation": false,
+    "rd_focus": false,
+    "female_founder_only": false,
+    "underrepresented_focus": false,
+    "de_minimis": false,
+    "other_note": "\"Existenzgründern und jungen Unternehmen\" — founders, freelancers and companies less than 5 years in the market meeting the EU small-enterprise definition. Applied for through a Hausbank."
+   },
+   "source_url": "https://www.kfw.de/PDF/Download-Center/F%C3%B6rderprogramme-(Inlandsf%C3%B6rderung)/PDF-Dokumente/6000002258_M_067_StartGeld.pdf",
+   "source_snippet": "maximal 200.000 Euro pro Vorhaben […] maximal 80.000 Euro für Betriebsmittelfinanzierungen […] 80-prozentige Haftungsfreistellung",
+   "last_verified_at": "2026-08-14",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "de-kfw-erp-kapital-fuer-gruendung",
+   "name_local": "ERP-Kapital für Gründung (058)",
+   "name_en": "ERP Capital for Start-ups",
+   "country_code": "de",
+   "admin_level": "national",
+   "admin_area": null,
+   "funder": "KfW",
+   "funder_type": "public",
+   "grant_type": "loan",
+   "category": "startup",
+   "amount_min": null,
+   "amount_max": 500000,
+   "amount_currency": "EUR",
+   "amount_note": "\"maximal 500.000 Euro pro Antragsteller\". A subordinated loan (Nachrangkredit) treated as quasi-equity, requiring no collateral. \"Kreditlaufzeit: 15 Jahre, davon 7 Jahre tilgungsfreie Anlaufjahre\". The Hausbank receives a \"100-prozentige Haftungsfreistellung auf Grundlage einer Bundesgarantie\". Merkblatt Stand: 01.01.2022.",
+   "cofunding_pct": 15,
+   "is_automatic": false,
+   "application_url": "https://www.kfw.de/inlandsfoerderung/Unternehmen/Gr%C3%BCnden-Nachfolgen/F%C3%B6rderprodukte/ERP-Kapital-f%C3%BCr-Gr%C3%BCndung-(058)/",
+   "application_channel": "portal",
+   "deadline_type": "rolling",
+   "deadline_note": "Continuous; application must be made before the project starts.",
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Confirm the business has been operating for less than 3 years.",
+     "url": null
+    },
+    {
+     "step": 2,
+     "detail": "Contribute own funds of \"15 % (alte Länder) beziehungsweise 10 % (neue Länder und Berlin) der förderfähigen Kosten\".",
+     "url": null
+    },
+    {
+     "step": 3,
+     "detail": "Apply through a Hausbank, which passes the application to KfW.",
+     "url": null
+    },
+    {
+     "step": 4,
+     "detail": "On approval, the subordinated loan is disbursed with 7 repayment-free years.",
+     "url": null
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "Business plan and investment plan",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Evidence of the required own contribution (Eigenmittel)",
+     "mandatory": true,
+     "note": "15% old Länder / 10% new Länder and Berlin"
+    },
+    {
+     "doc": "Profitability forecast",
+     "mandatory": true,
+     "note": null
+    }
+   ],
+   "eligibility": {
+    "entity": "startup",
+    "company_age_months_min": null,
+    "company_age_months_max": 36,
+    "headcount_min": null,
+    "headcount_max": null,
+    "turnover_annual_max": null,
+    "sme_category": "any",
+    "sectors": [
+     "any"
+    ],
+    "stages": [
+     "pre_seed",
+     "seed"
+    ],
+    "requires_local_entity": true,
+    "requires_incorporation": false,
+    "rd_focus": false,
+    "female_founder_only": false,
+    "underrepresented_focus": false,
+    "de_minimis": false,
+    "other_note": "Business must \"noch keine 3 Jahre bestehen\" since starting operations. The loan strengthens the equity base and requires no collateral from the borrower."
+   },
+   "source_url": "https://www.kfw.de/PDF/Download-Center/F%C3%B6rderprogramme-(Inlandsf%C3%B6rderung)/PDF-Dokumente/6000000213_M_058_ERP_Kapital_Gruendung.pdf",
+   "source_snippet": "maximal 500.000 Euro pro Antragsteller […] Kreditlaufzeit: 15 Jahre, davon 7 Jahre tilgungsfreie Anlaufjahre […] noch keine 3 Jahre bestehen",
+   "last_verified_at": "2026-08-14",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "de-mikromezzaninfonds-deutschland",
+   "name_local": "Mikromezzaninfonds Deutschland",
+   "name_en": "Micro-Mezzanine Fund Germany",
+   "country_code": "de",
+   "admin_level": "national",
+   "admin_area": null,
+   "funder": "Mikromezzaninfonds Deutschland, delivered by the regional Mittelständische Beteiligungsgesellschaften",
+   "funder_type": "public",
+   "grant_type": "equity",
+   "category": "startup",
+   "amount_min": null,
+   "amount_max": 150000,
+   "amount_currency": "EUR",
+   "amount_note": "\"Die maximale Beteiligungshöhe beträgt 100.000 Euro bei einer Laufzeit von 10 Jahren. Für Zielgruppen-Unternehmen liegt die maximale Beteiligungshöhe bei 150.000 Euro.\" Provided as a stille Beteiligung (silent participation) — economic equity without voting rights; repayment from year 7 in three equal annual instalments.",
+   "cofunding_pct": null,
+   "is_automatic": false,
+   "application_url": "https://www.mikromezzaninfonds-deutschland.de/",
+   "application_channel": "online",
+   "deadline_type": "rolling",
+   "deadline_note": "Continuous, through the Mittelständische Beteiligungsgesellschaft of the applicant's Bundesland.",
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Prepare a business plan.",
+     "url": null
+    },
+    {
+     "step": 2,
+     "detail": "Submit the completed funding application with the business plan to the Mittelständische Beteiligungsgesellschaft of your Bundesland.",
+     "url": "https://www.mikromezzaninfonds-deutschland.de/"
+    },
+    {
+     "step": 3,
+     "detail": "On approval, the silent participation runs for 10 years with repayment from year 7.",
+     "url": null
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "Completed Beteiligungsantrag",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Business plan",
+     "mandatory": true,
+     "note": null
+    }
+   ],
+   "eligibility": {
+    "entity": "startup",
+    "company_age_months_min": null,
+    "company_age_months_max": null,
+    "headcount_min": null,
+    "headcount_max": null,
+    "turnover_annual_max": null,
+    "sme_category": "micro",
+    "sectors": [
+     "any"
+    ],
+    "stages": [
+     "idea",
+     "pre_seed",
+     "seed"
+    ],
+    "requires_local_entity": true,
+    "requires_incorporation": false,
+    "rd_focus": false,
+    "female_founder_only": false,
+    "underrepresented_focus": true,
+    "de_minimis": true,
+    "other_note": "Target groups qualifying for the higher €150,000 ceiling include businesses founded by unemployed people, companies led by women or people with a migration background, socially oriented enterprises and ecologically sustainable businesses. Granted as de minimis aid."
+   },
+   "source_url": "https://www.mikromezzaninfonds-deutschland.de/",
+   "source_snippet": "Die maximale Beteiligungshöhe beträgt 100.000 Euro bei einer Laufzeit von 10 Jahren. Für Zielgruppen-Unternehmen liegt die maximale Beteiligungshöhe bei 150.000 Euro.",
+   "last_verified_at": "2026-08-14",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "de-zim",
+   "name_local": "Zentrales Innovationsprogramm Mittelstand (ZIM)",
+   "name_en": "Central Innovation Programme for SMEs",
+   "country_code": "de",
+   "admin_level": "national",
+   "admin_area": null,
+   "funder": "Bundesministerium für Wirtschaft und Energie (BMWE)",
+   "funder_type": "public",
+   "grant_type": "grant",
+   "category": "startup",
+   "amount_min": null,
+   "amount_max": null,
+   "amount_currency": "EUR",
+   "amount_note": "Maximum grant amounts and funding rates are set in the ZIM-Richtlinie and were not stated on the pages verified; recorded as null rather than estimated. Funds market-oriented R&D projects, technology- and sector-open.",
+   "cofunding_pct": null,
+   "is_automatic": false,
+   "application_url": "https://foerderzentrale.gov.de/partner/zim",
+   "application_channel": "portal",
+   "deadline_type": "closed",
+   "deadline_note": "TEMPORARILY SUSPENDED: a befristeter Antragsstopp applies \"ab 7. Juli 2026, 12:00 Uhr\" for \"alle Projektformen sowie Projektskizzen\". Applications already submitted will still be approved where funds allow, and international cooperation applications are excepted. \"Eine Aufhebung der Aussetzung der Antragsannahme wird für Anfang 2027 angestrebt.\"",
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Choose the project form: FuE-Einzelprojekt, FuE-Kooperationsprojekt (at least two companies, or one company and a research institution), or Innovationsnetzwerk.",
+     "url": "https://www.zim.de/ZIM/Navigation/DE/Home/home.html"
+    },
+    {
+     "step": 2,
+     "detail": "Submit the application fully digitally via the Förderzentrale Deutschland — currently suspended until the Antragsstopp is lifted.",
+     "url": "https://foerderzentrale.gov.de/partner/zim"
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "R&D project description and work plan",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Cost and financing plan",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Proof of SME status",
+     "mandatory": true,
+     "note": null
+    }
+   ],
+   "eligibility": {
+    "entity": "startup",
+    "company_age_months_min": null,
+    "company_age_months_max": null,
+    "headcount_min": null,
+    "headcount_max": null,
+    "turnover_annual_max": null,
+    "sme_category": "any",
+    "sectors": [
+     "any"
+    ],
+    "stages": [
+     "seed",
+     "series_a",
+     "growth"
+    ],
+    "requires_local_entity": true,
+    "requires_incorporation": true,
+    "rd_focus": true,
+    "female_founder_only": false,
+    "underrepresented_focus": false,
+    "de_minimis": false,
+    "other_note": "\"unterstützt innovative KMU über die Förderung von Forschung und Entwicklung marktorientierter FuE-Projekte\". Exact KMU headcount and turnover limits were not stated on the verified page."
+   },
+   "source_url": "https://www.zim.de/ZIM/Redaktion/DE/Meldungen/2026/3/2026-07-07-befristeter-antragsstopp.html",
+   "source_snippet": "ab 7. Juli 2026, 12:00 Uhr […] Dies gilt für alle Projektformen sowie Projektskizzen […] Eine Aufhebung der Aussetzung der Antragsannahme wird für Anfang 2027 angestrebt",
+   "last_verified_at": "2026-08-14",
+   "verification_status": "verified"
+  }
+ ]
+}

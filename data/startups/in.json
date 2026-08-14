@@ -1,0 +1,1040 @@
+{
+ "country_code": "in",
+ "country_name": "India",
+ "currency": "INR",
+ "language": "en",
+ "entity": "startup",
+ "programmes": [
+  {
+   "slug": "in-atal-innovation-mission",
+   "name_local": "अटल नवाचार मिशन",
+   "name_en": "Atal Innovation Mission (Atal Incubation Centres, Atal Community Innovation Centres, Atal Tinkering Labs)",
+   "country_code": "in",
+   "admin_level": "national",
+   "admin_area": null,
+   "funder": "Atal Innovation Mission (AIM), NITI Aayog, Government of India",
+   "funder_type": "public",
+   "grant_type": "grant",
+   "category": "startup",
+   "amount_min": null,
+   "amount_max": null,
+   "amount_currency": "INR",
+   "amount_note": "AIM funds institutions (incubators, community innovation centres, school tinkering labs) rather than making direct grants to individual startups; startups benefit indirectly through the 72 Atal Incubation Centres. Per-centre grant ceilings are set in each Expression of Interest. No amount is published on the AIM homepage and the programme pages were not reachable at the time of verification, so amounts are recorded as null.",
+   "cofunding_pct": null,
+   "is_automatic": false,
+   "application_url": "https://aim.gov.in/",
+   "application_channel": "portal",
+   "deadline_type": "annual_call",
+   "deadline_note": "As of 14 August 2026 the AIM website states: 'Dear Applicants, please note that the application portal for ATL, AIC and ACIC are not currently open.' AIM runs periodic Expression of Interest calls; no open call was listed at the time of verification.",
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Monitor aim.gov.in for the next Expression of Interest for AIC / ACIC / ATL.",
+     "url": "https://aim.gov.in/"
+    },
+    {
+     "step": 2,
+     "detail": "Institutions apply through the AIM application portal when a call opens.",
+     "url": null
+    },
+    {
+     "step": 3,
+     "detail": "Individual startups seeking support should instead approach an existing Atal Incubation Centre directly.",
+     "url": null
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "Expression of Interest as per the AIM call format",
+     "mandatory": true,
+     "note": "For host institutions, not individual startups"
+    },
+    {
+     "doc": "Proof of legal entity status and infrastructure availability",
+     "mandatory": true,
+     "note": null
+    }
+   ],
+   "eligibility": {
+    "entity": "startup",
+    "company_age_months_min": null,
+    "company_age_months_max": null,
+    "headcount_min": null,
+    "headcount_max": null,
+    "turnover_annual_max": null,
+    "sme_category": "any",
+    "sectors": [
+     "any"
+    ],
+    "stages": [
+     "idea",
+     "pre_seed",
+     "seed"
+    ],
+    "requires_local_entity": true,
+    "requires_incorporation": false,
+    "rd_focus": false,
+    "female_founder_only": false,
+    "underrepresented_focus": false,
+    "de_minimis": false,
+    "other_note": "AIM's direct beneficiaries are host institutions (universities, institutions, corporates, NGOs) that set up Atal Incubation Centres, Atal Community Innovation Centres or Atal Tinkering Labs. Startups access support through the 72 operating AICs, which report 3,500+ startups supported and 32,000+ jobs created. DPIIT recognition is not a stated prerequisite, though individual AICs may require it for onward central schemes such as SISFS."
+   },
+   "source_url": "https://aim.gov.in/",
+   "source_snippet": "Dear Applicants, please note that the application portal for ATL, AIC and ACIC are not currently open.",
+   "last_verified_at": "2026-08-14",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "in-birac-big",
+   "name_local": "जैव प्रौद्योगिकी इग्निशन ग्रांट",
+   "name_en": "BIRAC Biotechnology Ignition Grant (BIG)",
+   "country_code": "in",
+   "admin_level": "national",
+   "admin_area": null,
+   "funder": "Biotechnology Industry Research Assistance Council (BIRAC), a PSE of the Department of Biotechnology (DBT), Government of India",
+   "funder_type": "public",
+   "grant_type": "grant",
+   "category": "startup",
+   "amount_min": null,
+   "amount_max": 5000000,
+   "amount_currency": "INR",
+   "amount_note": "Up to INR 50 Lakhs as grant-in-aid per BIG Innovator, for a research project with commercialization potential of up to 18 months duration, to take an innovative idea to Proof of Concept.",
+   "cofunding_pct": null,
+   "is_automatic": false,
+   "application_url": "https://birac.nic.in/big.php",
+   "application_channel": "online",
+   "deadline_type": "cutoff",
+   "deadline_note": "The call for proposal is announced twice a year, i.e. on 1st January and 1st July. Call for proposals typically remains open for about 45 days.",
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Register on the BIRAC portal following the BIG registration guidelines.",
+     "url": "https://birac.nic.in/webcontent/big_user_registration_guidelines.pdf"
+    },
+    {
+     "step": 2,
+     "detail": "Read the BIG scheme guidelines (revised November 2025) and prepare the proposal in the prescribed proforma.",
+     "url": "https://birac.nic.in/webcontent/1761936564_big_new_guidelines_nov_2025.pdf"
+    },
+    {
+     "step": 3,
+     "detail": "Submit the proposal online during an open call window (opens 1 January or 1 July, ~45 days).",
+     "url": "https://birac.nic.in/big.php"
+    },
+    {
+     "step": 4,
+     "detail": "Shortlisted applicants are evaluated and, if selected, are mentored and monitored through one of the 8 BIG Partner institutions.",
+     "url": null
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "BIG proposal in the prescribed proforma",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "CV of the applicant / team",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Budget breakdown for up to 18 months",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Company incorporation documents",
+     "mandatory": false,
+     "note": "Individual innovators may also apply; a company is required at award stage"
+    }
+   ],
+   "eligibility": {
+    "entity": "startup",
+    "company_age_months_min": null,
+    "company_age_months_max": null,
+    "headcount_min": null,
+    "headcount_max": null,
+    "turnover_annual_max": null,
+    "sme_category": "any",
+    "sectors": [
+     "health",
+     "deeptech",
+     "agri"
+    ],
+    "stages": [
+     "idea",
+     "pre_seed"
+    ],
+    "requires_local_entity": true,
+    "requires_incorporation": false,
+    "rd_focus": true,
+    "female_founder_only": false,
+    "underrepresented_focus": false,
+    "de_minimis": false,
+    "other_note": "Aimed at young startups and individual researchers/innovators in biotechnology and life sciences. Administered through 8 BIG Partners (C-CAMP, KIIT-TBI, IKP, Venture Center, FITT IIT Delhi, SIIC IIT Kanpur, a-IDEA NAARM, SINE IIT Bombay) plus 11 associate partners. DPIIT recognition is not stated as a prerequisite for BIG on the official page."
+   },
+   "source_url": "https://birac.nic.in/big.php",
+   "source_snippet": "BIG provides early-stage funding support of INR 50 Lakhs as grant-in-aid for a period of 18 months to translate their innovative ideas into Proof of Concept. ... The call for proposal is announced twice a year, i.e. on 1st January and 1st July. Call for proposals typically remains open for about 45 days.",
+   "last_verified_at": "2026-08-14",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "in-birac-seed-fund",
+   "name_local": "बिराक सीड फंड",
+   "name_en": "BIRAC SEED Fund (Sustainable Entrepreneurship And Enterprise Development)",
+   "country_code": "in",
+   "admin_level": "national",
+   "admin_area": null,
+   "funder": "Biotechnology Industry Research Assistance Council (BIRAC), Department of Biotechnology (DBT), Government of India",
+   "funder_type": "public",
+   "grant_type": "equity",
+   "category": "startup",
+   "amount_min": null,
+   "amount_max": 3000000,
+   "amount_currency": "INR",
+   "amount_note": "First equity exposure of up to INR 30 lakhs per post-Proof-of-Concept startup. The money is deployed by selected BioNEST incubators, which receive grant-in-aid of INR 200 lakhs per cycle from BIRAC to invest in biotech startups. Positioned as a bridge between promoter's investment and Angel/Venture investment.",
+   "cofunding_pct": null,
+   "is_automatic": false,
+   "application_url": "https://www.birac.nic.in/seedFundNew.php",
+   "application_channel": "email",
+   "deadline_type": "rolling",
+   "deadline_note": "Startups avail SEED Fund through one of the 16 listed BIRAC SEED Fund Partner incubators; each partner runs its own intake. No central call schedule is published on the BIRAC SEED Fund page.",
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Read the BIRAC Incubator SEED Fund guidelines.",
+     "url": "https://www.birac.nic.in/webcontent/1616486925_seed_fund_Guidelines.pdf"
+    },
+    {
+     "step": 2,
+     "detail": "Identify and approach one of BIRAC's SEED Fund Partner BioNEST incubators (e.g. C-CAMP, IKP, Venture Center, SINE IIT Bombay, KIIT-TBI, riidl, FITT, VIT-TBI).",
+     "url": "https://www.birac.nic.in/seedFundNew.php"
+    },
+    {
+     "step": 3,
+     "detail": "Apply to that incubator; the incubator conducts due diligence and makes the equity investment decision.",
+     "url": null
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "Evidence of completed Proof of Concept",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Business plan and financial projections",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Certificate of Incorporation and cap table",
+     "mandatory": true,
+     "note": null
+    }
+   ],
+   "eligibility": {
+    "entity": "startup",
+    "company_age_months_min": null,
+    "company_age_months_max": null,
+    "headcount_min": null,
+    "headcount_max": null,
+    "turnover_annual_max": null,
+    "sme_category": "any",
+    "sectors": [
+     "health",
+     "deeptech"
+    ],
+    "stages": [
+     "pre_seed",
+     "seed"
+    ],
+    "requires_local_entity": true,
+    "requires_incorporation": true,
+    "rd_focus": true,
+    "female_founder_only": false,
+    "underrepresented_focus": false,
+    "de_minimis": false,
+    "other_note": "For post-PoC biotech / life sciences startups. Investment is made by the partner BioNEST incubator, not by BIRAC directly, and takes equity. DPIIT recognition is not stated as a prerequisite on the official SEED Fund page."
+   },
+   "source_url": "https://www.birac.nic.in/seedFundNew.php",
+   "source_snippet": "SEED Fund is the first equity exposure of up to INR 30 lakhs providing Capital assistance to post PoC Startups with new and meritorious ideas, innovations and technologies. ... The scheme is implemented through selected BioNEST Incubators who as BIRAC's SEED Fund partners receive grant-in-aid support of INR 200 lakhs/ cycle for deployment in Biotech Startups.",
+   "last_verified_at": "2026-08-14",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "in-cgtmse-credit-guarantee",
+   "name_local": "सीजीटीएमएसई ऋण गारंटी योजना",
+   "name_en": "CGTMSE Credit Guarantee Scheme for Micro and Small Enterprises",
+   "country_code": "in",
+   "admin_level": "national",
+   "admin_area": null,
+   "funder": "Credit Guarantee Fund Trust for Micro and Small Enterprises (CGTMSE), set up by the Ministry of MSME, Government of India and SIDBI",
+   "funder_type": "public",
+   "grant_type": "loan",
+   "category": "startup",
+   "amount_min": null,
+   "amount_max": 100000000,
+   "amount_currency": "INR",
+   "amount_note": "CGTMSE does not lend. It guarantees collateral-free credit extended by Member Lending Institutions to Micro and Small Enterprises. The guarantee ceiling has been increased to Rs. 10 crore (raised from Rs. 500 lakh). The guarantee coverage percentage and the annual guarantee fee slabs are set out in CGTMSE circulars which I could not load at the time of verification, so they are recorded as null rather than guessed; the homepage does state that the annual guarantee fee structure was revised and reduced for guarantees above Rs 1 crore.",
+   "cofunding_pct": null,
+   "is_automatic": false,
+   "application_url": "https://www.cgtmse.in/",
+   "application_channel": "portal",
+   "deadline_type": "rolling",
+   "deadline_note": "Continuously available. Guarantee cover is applied for by the lending bank, not by the borrower.",
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Approach a CGTMSE Member Lending Institution (a bank, RRB or eligible financial institution) for a collateral-free credit facility.",
+     "url": "https://www.cgtmse.in/"
+    },
+    {
+     "step": 2,
+     "detail": "The lender appraises the proposal and, on sanction, lodges the application for guarantee cover with CGTMSE.",
+     "url": null
+    },
+    {
+     "step": 3,
+     "detail": "CGTMSE issues the guarantee; the borrower pays the applicable annual guarantee fee through the lender.",
+     "url": null
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "Udyam Registration / MSME registration",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Project report and financial projections for the lender's appraisal",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "KYC and constitution documents of the enterprise",
+     "mandatory": true,
+     "note": null
+    }
+   ],
+   "eligibility": {
+    "entity": "startup",
+    "company_age_months_min": null,
+    "company_age_months_max": null,
+    "headcount_min": null,
+    "headcount_max": null,
+    "turnover_annual_max": null,
+    "sme_category": "micro",
+    "sectors": [
+     "any"
+    ],
+    "stages": [
+     "pre_seed",
+     "seed",
+     "growth"
+    ],
+    "requires_local_entity": true,
+    "requires_incorporation": true,
+    "rd_focus": false,
+    "female_founder_only": false,
+    "underrepresented_focus": false,
+    "de_minimis": false,
+    "other_note": "Eligible borrowers are Micro & Small Enterprises (MSEs). Enhanced terms apply for women entrepreneurs, transgender entrepreneurs, SC/ST entrepreneurs, persons with disability (PwD), ZED certified units, informal micro enterprises (IME) and units in Jammu & Kashmir and Ladakh. DPIIT recognition is NOT required for CGTMSE; MSME/Udyam registration is the relevant credential. A separate Credit Guarantee Scheme for Startups (CGSS) exists for DPIIT-recognised startups and is administered by NCGTC, not CGTMSE."
+   },
+   "source_url": "https://www.cgtmse.in/",
+   "source_snippet": "CGTMSE does not provide any financial assistance. It only gives guarantees. ... Ceiling ... Rs 10 crore. Annual guarantee Fee structure revised and fee reduced.",
+   "last_verified_at": "2026-08-14",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "in-dpiit-startup-recognition",
+   "name_local": "डीपीआईआईटी स्टार्टअप मान्यता",
+   "name_en": "DPIIT Startup Recognition (gateway to Startup India benefits, incl. Section 56 angel tax exemption)",
+   "country_code": "in",
+   "admin_level": "national",
+   "admin_area": null,
+   "funder": "Department for Promotion of Industry and Internal Trade (DPIIT), Ministry of Commerce and Industry, Government of India",
+   "funder_type": "public",
+   "grant_type": "in_kind",
+   "category": "startup",
+   "amount_min": null,
+   "amount_max": null,
+   "amount_currency": "INR",
+   "amount_note": "Recognition carries no cash award. It is the gateway credential: self-certification under labour and environment laws, IPR fast-tracking, public procurement relaxations, and eligibility to then apply for 80-IAC income tax exemption and for exemption under Section 56 of the Income Tax Act (angel tax). Almost every Indian central startup scheme requires it.",
+   "cofunding_pct": null,
+   "is_automatic": false,
+   "application_url": "https://www.nsws.gov.in/",
+   "application_channel": "portal",
+   "deadline_type": "rolling",
+   "deadline_note": "Applications accepted at any time on the National Single Window System. No fee is charged.",
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Create an account on the National Single Window System (nsws.gov.in) and add the form 'Registration as a Startup'.",
+     "url": "https://www.nsws.gov.in/"
+    },
+    {
+     "step": 2,
+     "detail": "Submit entity details and supporting documents; recognition is granted against the definition in G.S.R. notification 108(E).",
+     "url": "https://www.startupindia.gov.in/content/dam/invest-india/Templates/public/Gazette_060226.pdf"
+    },
+    {
+     "step": 3,
+     "detail": "After receiving the DPIIT Certificate, apply separately for 80-IAC tax exemption and for Section 56 (angel tax) exemption.",
+     "url": "https://www.startupindia.gov.in/content/sih/en/form80iac.html"
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "Certificate of Incorporation / Registration",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "PAN of the entity",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Brief write-up on innovation and scalability",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Directors'/partners' details",
+     "mandatory": true,
+     "note": null
+    }
+   ],
+   "eligibility": {
+    "entity": "startup",
+    "company_age_months_min": null,
+    "company_age_months_max": 120,
+    "headcount_min": null,
+    "headcount_max": null,
+    "turnover_annual_max": 2000000000,
+    "sme_category": "any",
+    "sectors": [
+     "any"
+    ],
+    "stages": [
+     "idea",
+     "pre_seed",
+     "seed",
+     "series_a",
+     "growth"
+    ],
+    "requires_local_entity": true,
+    "requires_incorporation": true,
+    "rd_focus": false,
+    "female_founder_only": false,
+    "underrepresented_focus": false,
+    "de_minimis": false,
+    "other_note": "Must be incorporated as a Private Limited Company or registered as a Partnership Firm, Limited Liability Partnership, or Cooperative Society. Turnover less than INR 200 Crores (INR 300 Crores for DeepTech startups) in any of the previous financial years. Startup status lasts up to 10 years (20 years for DeepTech) from incorporation. An entity formed by splitting up or reconstruction of an existing business is not a Startup. On angel tax: the official page still signposts an application route for 'Exemption under Section 56 of the Income Tax Act (Angel Tax)'. I did not independently verify the current statutory position of Section 56(2)(viib) on an Income Tax Department page, so the live status of that exemption route is unconfirmed here."
+   },
+   "source_url": "https://www.startupindia.gov.in/content/sih/en/startupgov/startup_recognition_page.html",
+   "source_snippet": "The startup should be incorporated as a Private Limited Company or registered as a Partnership Firm, Limited Liability Partnership, or Cooperative Society. Turnover should be less than INR 200 Crores (INR 300 Crores for DeepTech startups) in any of the previous financial years. An entity shall be considered a startup for up to 10 years (20 years for DeepTech startups) from the date of its incorporation.",
+   "last_verified_at": "2026-08-14",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "in-karnataka-elevate-idea2poc",
+   "name_local": "ಎಲಿವೇಟ್ (ಕರ್ನಾಟಕ)",
+   "name_en": "ELEVATE / Idea2PoC grant-in-aid, Startup Karnataka",
+   "country_code": "in",
+   "admin_level": "regional",
+   "admin_area": "Karnataka",
+   "funder": "Karnataka Innovation and Technology Society (KITS) / Karnataka Startup Cell, Department of Electronics, IT, BT and Science & Technology, Government of Karnataka",
+   "funder_type": "public",
+   "grant_type": "grant",
+   "category": "startup",
+   "amount_min": null,
+   "amount_max": null,
+   "amount_currency": "INR",
+   "amount_note": "A one-time, non-dilutive, milestone-linked grant-in-aid to take an idea to proof of concept, run in multiple tracks (general, Aspire for Beyond Bengaluru, Shakti for women-led, Unnati for SC/ST-led). The commonly cited ceiling is INR 50 lakh, but neither startup.karnataka.gov.in nor elevate.startupkarnataka.gov.in would resolve or load at the time of verification, so the amount is recorded as null rather than taken from aggregator sites.",
+   "cofunding_pct": null,
+   "is_automatic": false,
+   "application_url": "https://startup.karnataka.gov.in/",
+   "application_channel": "portal",
+   "deadline_type": "annual_call",
+   "deadline_note": "ELEVATE runs as an annual competitive challenge with multiple tracks, each with its own window. No open window was confirmable from an official Government of Karnataka page at the time of verification.",
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Check the current ELEVATE call and track-specific eligibility on the Startup Karnataka portal.",
+     "url": "https://startup.karnataka.gov.in/"
+    },
+    {
+     "step": 2,
+     "detail": "Register and submit the application on the ELEVATE portal during an open window.",
+     "url": null
+    },
+    {
+     "step": 3,
+     "detail": "Shortlisted startups pitch to an evaluation panel; selected startups receive grant-in-aid released against milestones.",
+     "url": null
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "Certificate of Incorporation showing a registered office in Karnataka",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Proof of concept / prototype plan with milestones and budget",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Founder / shareholding details",
+     "mandatory": true,
+     "note": "Track-specific: SC/ST or women shareholding thresholds for Unnati and Shakti"
+    }
+   ],
+   "eligibility": {
+    "entity": "startup",
+    "company_age_months_min": null,
+    "company_age_months_max": null,
+    "headcount_min": null,
+    "headcount_max": null,
+    "turnover_annual_max": null,
+    "sme_category": "any",
+    "sectors": [
+     "deeptech",
+     "any"
+    ],
+    "stages": [
+     "idea",
+     "pre_seed",
+     "seed"
+    ],
+    "requires_local_entity": true,
+    "requires_incorporation": true,
+    "rd_focus": false,
+    "female_founder_only": false,
+    "underrepresented_focus": false,
+    "de_minimis": false,
+    "other_note": "Startup must be registered and headquartered in Karnataka. Track-specific criteria apply for the Aspire (outside Bengaluru Urban), Shakti (women-led) and Unnati (SC/ST-led) tracks. DPIIT recognition is generally expected by Karnataka for state startup benefits but I could not confirm this on an official Karnataka page at the time of verification."
+   },
+   "source_url": "https://startup.karnataka.gov.in/",
+   "source_snippet": null,
+   "last_verified_at": "2026-08-14",
+   "verification_status": "unverified"
+  },
+  {
+   "slug": "in-msme-sustainable-zed-certification",
+   "name_local": "एमएसएमई सस्टेनेबल (जेड) प्रमाणन योजना",
+   "name_en": "MSME Sustainable (ZED) Certification Scheme",
+   "country_code": "in",
+   "admin_level": "national",
+   "admin_area": null,
+   "funder": "Ministry of Micro, Small and Medium Enterprises (Ministry of MSME), Government of India",
+   "funder_type": "public",
+   "grant_type": "voucher",
+   "category": "startup",
+   "amount_min": null,
+   "amount_max": null,
+   "amount_currency": "INR",
+   "amount_note": "Subsidy on certification cost across three levels (Bronze, Silver, Gold), plus a joining reward, handholding support and testing/certification reimbursement, with additional subsidy for women-owned, SC/ST-owned, NER and aspirational-district units. The exact subsidy percentages and the joining reward amount are published in the scheme guidelines; the ZED guidelines page returned a robots error at the time of verification, so those figures are recorded as null rather than guessed. The official site reports 672,994 MSMEs registered and Rs 604.85 Cr of financial support provided to date.",
+   "cofunding_pct": null,
+   "is_automatic": false,
+   "application_url": "https://zed.msme.gov.in/",
+   "application_channel": "portal",
+   "deadline_type": "rolling",
+   "deadline_note": "Registration on the ZED portal is open continuously; no closing date is published.",
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Register the MSME free of cost on the ZED portal and take the ZED pledge.",
+     "url": "https://zed.msme.gov.in/"
+    },
+    {
+     "step": 2,
+     "detail": "Apply for Bronze, Silver or Gold certification and complete the assessment.",
+     "url": null
+    },
+    {
+     "step": 3,
+     "detail": "Claim the applicable subsidy, joining reward, handholding and testing/certification reimbursement.",
+     "url": null
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "Udyam Registration Number",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Manufacturing unit details and self-assessment",
+     "mandatory": true,
+     "note": null
+    }
+   ],
+   "eligibility": {
+    "entity": "startup",
+    "company_age_months_min": null,
+    "company_age_months_max": null,
+    "headcount_min": null,
+    "headcount_max": null,
+    "turnover_annual_max": null,
+    "sme_category": "any",
+    "sectors": [
+     "manufacturing"
+    ],
+    "stages": [
+     "growth"
+    ],
+    "requires_local_entity": true,
+    "requires_incorporation": true,
+    "rd_focus": false,
+    "female_founder_only": false,
+    "underrepresented_focus": false,
+    "de_minimis": false,
+    "other_note": "Open to manufacturing MSMEs with a valid Udyam Registration. The scheme encourages manufacturing with 'zero defect' and 'zero effect' on the environment. DPIIT startup recognition is not required; Udyam/MSME registration is. Additional incentives exist for women, SC/ST, NER and ZED-linked units."
+   },
+   "source_url": "https://zed.msme.gov.in/",
+   "source_snippet": "We should manufacture goods with zero effect that they should not have a negative impact on the environment. ... Bronze Certified ... Silver Certified ... Gold Certified ... Total Registered MSMEs 672,994 ... Financial Support Provided Rs 604.85 Cr.",
+   "last_verified_at": "2026-08-14",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "in-nidhi-prayas",
+   "name_local": "निधि-प्रयास",
+   "name_en": "NIDHI-PRAYAS (Promoting and Accelerating Young and Aspiring Innovators and Startups)",
+   "country_code": "in",
+   "admin_level": "national",
+   "admin_area": null,
+   "funder": "Department of Science and Technology (DST), Government of India, implemented with SINE, IIT Bombay",
+   "funder_type": "public",
+   "grant_type": "grant",
+   "category": "startup",
+   "amount_min": null,
+   "amount_max": 1000000,
+   "amount_currency": "INR",
+   "amount_note": "The maximum funding support offered to an innovator/Startup under this program is INR 10 lakhs, to convert an idea into a working prototype. Beneficiaries also get access to TBI infrastructure, PRAYAS Shalas (Fab Labs), mentoring and industry connections.",
+   "cofunding_pct": null,
+   "is_automatic": false,
+   "application_url": "https://www.nidhi-prayas.org/prayascenters.html",
+   "application_channel": "portal",
+   "deadline_type": "rolling",
+   "deadline_note": "Innovators apply through individual NIDHI-PRAYAS Centres hosted at selected Technology Business Incubators; each centre runs its own call. Centres themselves are selected through open calls published on the NIDHI-PRAYAS PMU website.",
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Read the NIDHI-PRAYAS guidelines.",
+     "url": "https://cdnbbsr.s3waas.gov.in/s312b1e42dc0746f22cf361267de07073f/uploads/2023/01/2023010696.pdf"
+    },
+    {
+     "step": 2,
+     "detail": "Find a NIDHI-PRAYAS Centre (a selected TBI) near you from the official list.",
+     "url": "https://www.nidhi-prayas.org/prayascenters.html"
+    },
+    {
+     "step": 3,
+     "detail": "Apply to that centre when its call is open; selected PRAYASEEs receive milestone-based prototype funding and Fab Lab access.",
+     "url": "https://www.nidhi-prayas.org/"
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "Prototype development proposal with milestones and budget",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Proof of student / innovator status or entity registration",
+     "mandatory": true,
+     "note": "Varies by host centre"
+    },
+    {
+     "doc": "Technical description of the innovation",
+     "mandatory": true,
+     "note": null
+    }
+   ],
+   "eligibility": {
+    "entity": "startup",
+    "company_age_months_min": null,
+    "company_age_months_max": null,
+    "headcount_min": null,
+    "headcount_max": null,
+    "turnover_annual_max": null,
+    "sme_category": "any",
+    "sectors": [
+     "any"
+    ],
+    "stages": [
+     "idea",
+     "pre_seed"
+    ],
+    "requires_local_entity": true,
+    "requires_incorporation": false,
+    "rd_focus": true,
+    "female_founder_only": false,
+    "underrepresented_focus": false,
+    "de_minimis": false,
+    "other_note": "Sector-agnostic. Beneficiaries are Students / Researchers / Innovators / Entrepreneurs / Startups; a registered company is not required at application stage. Emphasis on indigenously developed innovations aligned with the AtmaNirbhar Bharat Mission. DPIIT recognition is not stated as a prerequisite on the official DST page."
+   },
+   "source_url": "https://nidhi.dst.gov.in/schemes-programmes/nidhiprayas/",
+   "source_snippet": "NIDHI - PRAYAS is a sector-agnostic program. The maximum funding support offered to an innovator/ Startup under this program is INR 10 lakhs. ... Interested Students and Innovators may apply for support under NIDHI - PRAYAS through NIDHI - PRAYAS Centres (at selected TBIs).",
+   "last_verified_at": "2026-08-14",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "in-section-80iac-tax-holiday",
+   "name_local": "धारा 80-आईएसी कर छूट",
+   "name_en": "Section 80-IAC Income Tax Exemption (three-year tax holiday for DPIIT-recognised startups)",
+   "country_code": "in",
+   "admin_level": "national",
+   "admin_area": null,
+   "funder": "Department for Promotion of Industry and Internal Trade (DPIIT) / Central Board of Direct Taxes, Government of India",
+   "funder_type": "public",
+   "grant_type": "tax_credit",
+   "category": "startup",
+   "amount_min": null,
+   "amount_max": null,
+   "amount_currency": "INR",
+   "amount_note": "100% deduction of profits and gains for 3 consecutive financial years, chosen by the startup out of its first ten years since incorporation. The value depends entirely on the startup's taxable profits, so no cash cap is published.",
+   "cofunding_pct": null,
+   "is_automatic": false,
+   "application_url": "https://www.startupindia.gov.in/content/sih/en/form80iac.html",
+   "application_channel": "online",
+   "deadline_type": "rolling",
+   "deadline_note": "Applications are accepted on a rolling basis on the Startup India portal and are cleared in batches by the Inter-Ministerial Board. No fixed annual cut-off is published on the official page.",
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Obtain DPIIT Startup Recognition first.",
+     "url": "https://www.startupindia.gov.in/content/sih/en/startupgov/startup_recognition_page.html"
+    },
+    {
+     "step": 2,
+     "detail": "Submit Form 80-IAC on the Startup India portal.",
+     "url": "https://www.startupindia.gov.in/content/sih/en/form80iac.html"
+    },
+    {
+     "step": 3,
+     "detail": "Inter-Ministerial Board evaluates; track outcome via the application status page.",
+     "url": "https://www.startupindia.gov.in/content/sih/en/recognition-application-detail.html"
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "DPIIT Certificate of Recognition",
+     "mandatory": true,
+     "note": "Prerequisite"
+    },
+    {
+     "doc": "Memorandum of Association / LLP Deed",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Board resolution, if any",
+     "mandatory": false,
+     "note": null
+    },
+    {
+     "doc": "Annual accounts and income tax returns for the last three financial years",
+     "mandatory": true,
+     "note": "Where applicable"
+    },
+    {
+     "doc": "Pitch deck / video link describing the innovation",
+     "mandatory": true,
+     "note": null
+    }
+   ],
+   "eligibility": {
+    "entity": "startup",
+    "company_age_months_min": null,
+    "company_age_months_max": 120,
+    "headcount_min": null,
+    "headcount_max": null,
+    "turnover_annual_max": null,
+    "sme_category": "any",
+    "sectors": [
+     "any"
+    ],
+    "stages": [
+     "seed",
+     "series_a",
+     "growth"
+    ],
+    "requires_local_entity": true,
+    "requires_incorporation": true,
+    "rd_focus": false,
+    "female_founder_only": false,
+    "underrepresented_focus": false,
+    "de_minimis": false,
+    "other_note": "The entity should be a recognised Startup; only a Private Limited Company or a Limited Liability Partnership is eligible under Section 80-IAC (a registered partnership firm or cooperative society recognised by DPIIT is not); and the Startup should have been incorporated after 1st April, 2016. DPIIT recognition is a hard prerequisite: the startup must hold a DPIIT Certificate of Recognition obtained through the National Single Window System (nsws.gov.in) before it can apply. Per the official recognition page the entity must be a Private Limited Company, Registered Partnership Firm, LLP or Cooperative Society, with turnover under INR 200 crore (INR 300 crore for DeepTech) in any previous financial year, and is treated as a startup for up to 10 years (20 years for DeepTech) from incorporation."
+   },
+   "source_url": "https://www.startupindia.gov.in/content/sih/en/startupgov/startup_recognition_page.html",
+   "source_snippet": "Post getting recognition a Startup may apply for Tax exemption under section 80 IAC of the Income Tax Act. Post getting clearance for Tax exemption, the Startup can avail tax holiday for 3 consecutive financial years out of its first ten years since incorporation. ... Only Private limited or a Limited Liability Partnership is eligible for Tax exemption under Section 80IAC. The Startup should have been incorporated after 1st April, 2016.",
+   "last_verified_at": "2026-08-14",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "in-sidbi-fund-of-funds-for-startups",
+   "name_local": "स्टार्टअप्स के लिए फंड ऑफ फंड्स",
+   "name_en": "Fund of Funds for Startups (FFS), operated by SIDBI",
+   "country_code": "in",
+   "admin_level": "national",
+   "admin_area": null,
+   "funder": "Small Industries Development Bank of India (SIDBI), on behalf of DPIIT, Ministry of Commerce and Industry, Government of India",
+   "funder_type": "public",
+   "grant_type": "equity",
+   "category": "startup",
+   "amount_min": null,
+   "amount_max": null,
+   "amount_currency": "INR",
+   "amount_note": "FFS does not invest in startups directly. SIDBI commits capital to SEBI-registered Alternative Investment Funds (AIFs), which in turn invest in startups; the AIFs are required to invest at least twice the FFS commitment into startups. Startups therefore access FFS money only by raising from a participating AIF, on that fund's commercial terms. I was unable to load the official SIDBI FFS page at the time of verification (robots/timeout), so the corpus figure, the per-AIF commitment cap and the current AIF application window are recorded as null rather than guessed.",
+   "cofunding_pct": null,
+   "is_automatic": false,
+   "application_url": "https://www.sidbivcf.in/en/funds/ffs",
+   "application_channel": "email",
+   "deadline_type": "rolling",
+   "deadline_note": "AIF managers approach SIDBI Venture Capital for commitments; there is no application route for individual startups.",
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Startups: identify and pitch to Alternative Investment Funds that have received an FFS commitment from SIDBI.",
+     "url": "https://www.sidbivcf.in/en/funds/ffs"
+    },
+    {
+     "step": 2,
+     "detail": "Fund managers: apply to SIDBI Venture Capital Ltd for a commitment from the Fund of Funds for Startups.",
+     "url": "https://www.sidbivcf.in/en/funds/ffs"
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "For AIFs: SEBI AIF registration and fund documents",
+     "mandatory": true,
+     "note": "Not applicable to startups directly"
+    }
+   ],
+   "eligibility": {
+    "entity": "startup",
+    "company_age_months_min": null,
+    "company_age_months_max": null,
+    "headcount_min": null,
+    "headcount_max": null,
+    "turnover_annual_max": null,
+    "sme_category": "any",
+    "sectors": [
+     "any"
+    ],
+    "stages": [
+     "seed",
+     "series_a",
+     "growth"
+    ],
+    "requires_local_entity": true,
+    "requires_incorporation": true,
+    "rd_focus": false,
+    "female_founder_only": false,
+    "underrepresented_focus": false,
+    "de_minimis": false,
+    "other_note": "Indirect instrument. The startup-facing eligibility condition is that the investee must qualify as a startup under the DPIIT definition for the AIF's FFS-attributable investment to count, so DPIIT recognition is effectively required for the FFS-linked portion. Terms are set by the AIF, not by SIDBI or DPIIT."
+   },
+   "source_url": "https://www.sidbivcf.in/en/funds/ffs",
+   "source_snippet": null,
+   "last_verified_at": "2026-08-14",
+   "verification_status": "unverified"
+  },
+  {
+   "slug": "in-startup-india-seed-fund-scheme",
+   "name_local": "स्टार्टअप इंडिया सीड फंड योजना",
+   "name_en": "Startup India Seed Fund Scheme (SISFS)",
+   "country_code": "in",
+   "admin_level": "national",
+   "admin_area": null,
+   "funder": "Department for Promotion of Industry and Internal Trade (DPIIT), Ministry of Commerce and Industry, Government of India",
+   "funder_type": "public",
+   "grant_type": "grant",
+   "category": "startup",
+   "amount_min": null,
+   "amount_max": 5000000,
+   "amount_currency": "INR",
+   "amount_note": "Two instruments, each available once per startup. (1) Up to Rs. 20 Lakhs as grant for validation of Proof of Concept, prototype development or product trials, disbursed in milestone-based instalments. (2) Up to Rs. 50 Lakhs of investment for market entry, commercialization or scaling up, through convertible debentures or debt or debt-linked instruments, at a rate of interest of not more than the prevailing repo rate. Money is not paid by DPIIT directly: it is disbursed through the selected incubator. Total scheme outlay is INR 945 crore.",
+   "cofunding_pct": null,
+   "is_automatic": false,
+   "application_url": "https://seedfund.startupindia.gov.in/",
+   "application_channel": "portal",
+   "deadline_type": "closed",
+   "deadline_note": "The scheme originally ran year-round Calls for Applications. As of 14 August 2026 the SISFS portal carries a banner reading 'Final Notice (Extended): Last date for startups to apply under SISFS - 31 May 2026 | Incubators to complete 100% startup selection by - 30 June 2026.' That startup application deadline has passed, so the scheme is not accepting new startup applications at the time of verification. No successor call had been announced on the official site.",
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Obtain DPIIT Startup Recognition via the National Single Window System.",
+     "url": "https://www.startupindia.gov.in/content/sih/en/startupgov/startup_recognition_page.html"
+    },
+    {
+     "step": 2,
+     "detail": "Register on the SISFS portal and apply to up to three eligible incubators simultaneously, choosing grant and/or debt instrument.",
+     "url": "https://seedfund.startupindia.gov.in/"
+    },
+    {
+     "step": 3,
+     "detail": "Incubator's Incubator Seed Management Committee (ISMC) evaluates and selects startups.",
+     "url": null
+    },
+    {
+     "step": 4,
+     "detail": "Sign the agreement with the incubator; funds released against agreed milestones.",
+     "url": null
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "DPIIT Certificate of Recognition",
+     "mandatory": true,
+     "note": "Prerequisite"
+    },
+    {
+     "doc": "Certificate of Incorporation",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Business plan / pitch deck",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Shareholding pattern showing at least 51% Indian promoter shareholding",
+     "mandatory": true,
+     "note": "Per Companies Act 2013 and SEBI (ICDR) Regulations 2018"
+    },
+    {
+     "doc": "PAN and bank details",
+     "mandatory": true,
+     "note": null
+    }
+   ],
+   "eligibility": {
+    "entity": "startup",
+    "company_age_months_min": null,
+    "company_age_months_max": 24,
+    "headcount_min": null,
+    "headcount_max": null,
+    "turnover_annual_max": null,
+    "sme_category": "any",
+    "sectors": [
+     "any"
+    ],
+    "stages": [
+     "idea",
+     "pre_seed",
+     "seed"
+    ],
+    "requires_local_entity": true,
+    "requires_incorporation": true,
+    "rd_focus": true,
+    "female_founder_only": false,
+    "underrepresented_focus": false,
+    "de_minimis": false,
+    "other_note": "A startup, recognized by DPIIT, incorporated not more than 2 years ago at the time of application. Must use technology in its core product/service, business model, distribution model or methodology. Must not have received more than Rs 10 lakh of monetary support under any other Central or State Government scheme (prize money, subsidised workspace, founder allowance, lab or prototyping access excluded). Shareholding by Indian promoters must be at least 51% at the time of application. Preference for social impact, waste management, water management, financial inclusion, education, agriculture, food processing, biotechnology, healthcare, energy, mobility, defence, space, railways, oil and gas, textiles. No mandatory physical incubation. DPIIT recognition is a hard prerequisite: the startup must hold a DPIIT Certificate of Recognition obtained through the National Single Window System (nsws.gov.in) before it can apply. Per the official recognition page the entity must be a Private Limited Company, Registered Partnership Firm, LLP or Cooperative Society, with turnover under INR 200 crore (INR 300 crore for DeepTech) in any previous financial year, and is treated as a startup for up to 10 years (20 years for DeepTech) from incorporation."
+   },
+   "source_url": "https://seedfund.startupindia.gov.in/faq",
+   "source_snippet": "Up to Rs. 20 Lakhs as grant for validation of Proof of Concept, or prototype development, or product trials ... Up to Rs. 50 Lakhs of investment for market entry, commercialization, or scaling up through convertible debentures or debt or debt-linked instruments ... A startup applicant can avail seed support in the form of grant and debt/convertible debentures each once as per the guidelines of the scheme.",
+   "last_verified_at": "2026-08-14",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "in-tdb-technology-development-funding",
+   "name_local": "प्रौद्योगिकी विकास बोर्ड वित्तीय सहायता",
+   "name_en": "Technology Development Board (TDB) financial assistance for commercialisation of indigenous technology",
+   "country_code": "in",
+   "admin_level": "national",
+   "admin_area": null,
+   "funder": "Technology Development Board (TDB), Department of Science & Technology, Government of India",
+   "funder_type": "public",
+   "grant_type": "loan",
+   "category": "startup",
+   "amount_min": null,
+   "amount_max": null,
+   "amount_currency": "INR",
+   "amount_note": "Three modes. Loan: soft loan at 5% simple interest per annum, covering 50% of the un-incurred project cost. Equity: up to 25% of the approved project cost, provided such investment does not exceed the capital paid up by the promoters. Grant: only in exceptional cases of national interest. TDB does not publish a fixed per-project ceiling; the amount follows the approved project cost.",
+   "cofunding_pct": 50,
+   "is_automatic": false,
+   "application_url": "https://www.e-techcom.tdb.gov.in/company-registration.php",
+   "application_channel": "portal",
+   "deadline_type": "rolling",
+   "deadline_note": "TDB Core Funding runs an open Call for Proposal via the e-TechCom portal. Separate time-bound calls run alongside it, e.g. the India-Finland Joint Innovation Call 2026 and the RDI Fund call (RDIF 2026), listed under 'Active Calls' on the TDB homepage.",
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Review the TDB modes of funding and project funding guidelines.",
+     "url": "https://tdb.gov.in/modes-funding"
+    },
+    {
+     "step": 2,
+     "detail": "Register your company on the TDB e-TechCom portal and submit the proposal.",
+     "url": "https://www.e-techcom.tdb.gov.in/company-registration.php"
+    },
+    {
+     "step": 3,
+     "detail": "Technical and financial appraisal, followed by the Board's decision and signing of an agreement.",
+     "url": null
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "Detailed project report with project cost breakdown",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Evidence of indigenous technology or technology transfer agreement",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Audited financial statements of the industrial concern",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Promoters' contribution / means of finance statement",
+     "mandatory": true,
+     "note": null
+    }
+   ],
+   "eligibility": {
+    "entity": "startup",
+    "company_age_months_min": null,
+    "company_age_months_max": null,
+    "headcount_min": null,
+    "headcount_max": null,
+    "turnover_annual_max": null,
+    "sme_category": "any",
+    "sectors": [
+     "deeptech",
+     "manufacturing",
+     "any"
+    ],
+    "stages": [
+     "seed",
+     "series_a",
+     "growth"
+    ],
+    "requires_local_entity": true,
+    "requires_incorporation": true,
+    "rd_focus": true,
+    "female_founder_only": false,
+    "underrepresented_focus": false,
+    "de_minimis": false,
+    "other_note": "Open to Indian industrial concerns and other agencies attempting development and commercial application of indigenous technology, or adapting imported technology to wider domestic applications. Not limited to startups. DPIIT recognition is not stated as a prerequisite for TDB core funding."
+   },
+   "source_url": "https://tdb.gov.in/modes-funding",
+   "source_snippet": "The financial assistance to the industrial concerns is provided a soft loan at 5% simple interest per annum. The financial assistance is 50 % of the un incurred project cost. ... TDB contributes by way of equity capital in an industrial concern on its commencement start-up and/or growth stages. It is up to 25 % of the approved project cost, provided such investment does not exceed the capital paid up by the promoters.",
+   "last_verified_at": "2026-08-14",
+   "verification_status": "verified"
+  }
+ ]
+}

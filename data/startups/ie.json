@@ -1,0 +1,811 @@
+{
+ "country_code": "ie",
+ "country_name": "Ireland",
+ "currency": "EUR",
+ "language": "en",
+ "entity": "startup",
+ "programmes": [
+  {
+   "slug": "ie-disruptive-technologies-innovation-fund",
+   "name_local": "Disruptive Technologies Innovation Fund (DTIF)",
+   "name_en": "Disruptive Technologies Innovation Fund (DTIF)",
+   "country_code": "ie",
+   "admin_level": "national",
+   "admin_area": null,
+   "funder": "Department of Enterprise, Tourism and Employment (administered with Enterprise Ireland)",
+   "funder_type": "public",
+   "grant_type": "grant",
+   "category": "startup",
+   "amount_min": null,
+   "amount_max": null,
+   "amount_currency": "EUR",
+   "amount_note": "A €500 million challenge-based fund established under Project Ireland 2040; over €530 million has been awarded across seven calls. Call 8 has a €40 million allocation. Per-project minimum and maximum award sizes are set in each call's documentation, which had not been released at the time of checking.",
+   "cofunding_pct": null,
+   "is_automatic": false,
+   "application_url": "https://enterprise.gov.ie/en/what-we-do/innovation-research-development/disruptive-technologies-innovation-fund/",
+   "application_channel": "online",
+   "deadline_type": "annual_call",
+   "deadline_note": "Call 8 was announced on 9 June 2026 and will open for applications on 1 October 2026. Documentation is released closer to the opening date.",
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Form a consortium — DTIF is suitable for combinations of SMEs, MNCs and research performing organisations (RPOs).",
+     "url": "https://enterprise.gov.ie/en/what-we-do/innovation-research-development/disruptive-technologies-innovation-fund/"
+    },
+    {
+     "step": 2,
+     "detail": "Wait for the call documentation to be published ahead of the 1 October 2026 opening.",
+     "url": null
+    },
+    {
+     "step": 3,
+     "detail": "Submit the collaborative proposal for industrial research and/or experimental development.",
+     "url": null
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "Consortium proposal per call documentation",
+     "mandatory": true,
+     "note": "Documentation released closer to the call opening"
+    }
+   ],
+   "eligibility": {
+    "entity": "startup",
+    "company_age_months_min": null,
+    "company_age_months_max": null,
+    "headcount_min": null,
+    "headcount_max": null,
+    "turnover_annual_max": null,
+    "sme_category": "any",
+    "sectors": [
+     "deeptech",
+     "ai",
+     "health",
+     "climate",
+     "manufacturing"
+    ],
+    "stages": [
+     "seed",
+     "series_a",
+     "growth"
+    ],
+    "requires_local_entity": true,
+    "requires_incorporation": true,
+    "rd_focus": true,
+    "female_founder_only": false,
+    "underrepresented_focus": false,
+    "de_minimis": false,
+    "other_note": "Collaborative only: consortia of SMEs, multinationals and research performing organisations engaging in industrial research and/or experimental development towards a common objective."
+   },
+   "source_url": "https://enterprise.gov.ie/en/what-we-do/innovation-research-development/disruptive-technologies-innovation-fund/",
+   "source_snippet": "The Disruptive Technologies Innovation Fund (DTIF) is a €500 million challenge-based fund established under Project Ireland 2040 ... Call 8 was announced on 9 June 2026 and will open for applications on 1 October 2026.",
+   "last_verified_at": "2026-08-14",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "ie-hpsu-feasibility-study-grant",
+   "name_local": "HPSU Feasibility Study Grant",
+   "name_en": "Enterprise Ireland HPSU Feasibility Study Grant",
+   "country_code": "ie",
+   "admin_level": "national",
+   "admin_area": null,
+   "funder": "Enterprise Ireland",
+   "funder_type": "public",
+   "grant_type": "grant",
+   "category": "startup",
+   "amount_min": null,
+   "amount_max": 30000,
+   "amount_currency": "EUR",
+   "amount_note": "Maximum award: €30,000. The percentage of eligible costs covered was not stated on the page read.",
+   "cofunding_pct": null,
+   "is_automatic": false,
+   "application_url": "https://www.enterprise-ireland.com/en/supports/hpsu-feasibility-study-grant",
+   "application_channel": "online",
+   "deadline_type": "rolling",
+   "deadline_note": "No published deadline; applied for through your Enterprise Ireland development adviser.",
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Confirm you are an existing Enterprise Ireland client and an innovative HPSU preparing to raise investment.",
+     "url": "https://www.enterprise-ireland.com/en/supports/hpsu-feasibility-study-grant"
+    },
+    {
+     "step": 2,
+     "detail": "Agree the scope of the feasibility work with your Enterprise Ireland adviser and apply.",
+     "url": null
+    },
+    {
+     "step": 3,
+     "detail": "Use the grant to prepare an investor-ready business plan.",
+     "url": null
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "Feasibility study grant application",
+     "mandatory": true,
+     "note": null
+    }
+   ],
+   "eligibility": {
+    "entity": "startup",
+    "company_age_months_min": null,
+    "company_age_months_max": null,
+    "headcount_min": null,
+    "headcount_max": null,
+    "turnover_annual_max": null,
+    "sme_category": "micro",
+    "sectors": [
+     "deeptech",
+     "manufacturing",
+     "health",
+     "ai",
+     "climate"
+    ],
+    "stages": [
+     "pre_seed",
+     "seed"
+    ],
+    "requires_local_entity": true,
+    "requires_incorporation": true,
+    "rd_focus": false,
+    "female_founder_only": false,
+    "underrepresented_focus": false,
+    "de_minimis": false,
+    "other_note": "Restricted to innovative HPSUs preparing to raise investment who are existing Enterprise Ireland clients."
+   },
+   "source_url": "https://www.enterprise-ireland.com/en/supports/hpsu-feasibility-study-grant",
+   "source_snippet": "Maximum award: €30,000 ... Innovative HPSUs preparing to raise investment, who is an existing Enterprise Ireland client. ... Prepare an investor-ready business plan.",
+   "last_verified_at": "2026-08-14",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "ie-ida-ireland-grants",
+   "name_local": "IDA Ireland grants and incentives",
+   "name_en": "IDA Ireland funding programmes and incentives",
+   "country_code": "ie",
+   "admin_level": "national",
+   "admin_area": null,
+   "funder": "IDA Ireland",
+   "funder_type": "public",
+   "grant_type": "grant",
+   "category": "startup",
+   "amount_min": null,
+   "amount_max": null,
+   "amount_currency": "EUR",
+   "amount_note": "Individual award sizes are negotiated per investment and are not published. IDA operates a €100m annual capital grant programme for supporting investment projects, with grant levels depending on company size and investment impact; RD&I is the largest proportion of IDA's grant funding programme. Grant aid is also available for in-house bespoke training and management mentoring, business asset grants, lean/digitalisation and sustainability. Ireland's 25% R&D tax credit is cited separately by IDA (note: Revenue confirms 30% for accounting periods beginning on or after 1 January 2024, so IDA's page appears out of date on this point).",
+   "cofunding_pct": null,
+   "is_automatic": false,
+   "application_url": "https://www.idaireland.com/scale-with-ida/funding-programmes-incentives",
+   "application_channel": "email",
+   "deadline_type": "rolling",
+   "deadline_note": "No calls; IDA's Board meets every month to make decisions on supporting company investments, in strict compliance with EU state aid rules.",
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Contact IDA Ireland to discuss the proposed investment in Ireland.",
+     "url": "https://www.idaireland.com/scale-with-ida/funding-programmes-incentives"
+    },
+    {
+     "step": 2,
+     "detail": "Develop a project proposal with an IDA executive covering capital, employment, RD&I, training or sustainability elements.",
+     "url": null
+    },
+    {
+     "step": 3,
+     "detail": "Proposal goes to IDA's independent Board of Directors, which meets monthly to decide on support.",
+     "url": null
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "Investment project proposal",
+     "mandatory": true,
+     "note": "Developed with an IDA executive; format not published"
+    }
+   ],
+   "eligibility": {
+    "entity": "startup",
+    "company_age_months_min": null,
+    "company_age_months_max": null,
+    "headcount_min": null,
+    "headcount_max": null,
+    "turnover_annual_max": null,
+    "sme_category": "any",
+    "sectors": [
+     "manufacturing",
+     "health",
+     "ai",
+     "deeptech",
+     "climate"
+    ],
+    "stages": [
+     "growth"
+    ],
+    "requires_local_entity": true,
+    "requires_incorporation": true,
+    "rd_focus": true,
+    "female_founder_only": false,
+    "underrepresented_focus": false,
+    "de_minimis": false,
+    "other_note": "IDA Ireland is the foreign direct investment agency: support is aimed at overseas-owned companies investing or expanding in Ireland, not at indigenous startups (which are served by Enterprise Ireland and the Local Enterprise Offices). Decisions are made in strict compliance with EU state aid rules."
+   },
+   "source_url": "https://www.idaireland.com/scale-with-ida/funding-programmes-incentives",
+   "source_snippet": "€100m annual grant programme for supporting investment projects ... RD&I is the largest proportion of IDA's grant funding programme ... Grant aid available for in-house bespoke training and management mentoring",
+   "last_verified_at": "2026-08-14",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "ie-innovation-voucher",
+   "name_local": "Innovation Voucher",
+   "name_en": "Enterprise Ireland Innovation Voucher",
+   "country_code": "ie",
+   "admin_level": "national",
+   "admin_area": null,
+   "funder": "Enterprise Ireland",
+   "funder_type": "public",
+   "grant_type": "voucher",
+   "category": "startup",
+   "amount_min": 10000,
+   "amount_max": 20000,
+   "amount_currency": "EUR",
+   "amount_note": "Standard vouchers are worth €10,000. Co-Funded Vouchers are worth up to €20,000, where the company contributes part of the cost. All vouchers are valid for 18 months.",
+   "cofunding_pct": null,
+   "is_automatic": false,
+   "application_url": "https://www.enterprise-ireland.com/en/supports/innovation-voucher",
+   "application_channel": "online",
+   "deadline_type": "rolling",
+   "deadline_note": "Available all year round.",
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Identify a registered knowledge provider (Irish or approved) to work with on a specific business challenge.",
+     "url": "https://www.enterprise-ireland.com/en/supports/innovation-voucher"
+    },
+    {
+     "step": 2,
+     "detail": "Apply online for the voucher.",
+     "url": null
+    },
+    {
+     "step": 3,
+     "detail": "Redeem the voucher with the knowledge provider within its 18-month validity period.",
+     "url": null
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "Innovation Voucher application form",
+     "mandatory": true,
+     "note": "Describes the innovation question and the chosen knowledge provider"
+    }
+   ],
+   "eligibility": {
+    "entity": "startup",
+    "company_age_months_min": null,
+    "company_age_months_max": null,
+    "headcount_min": null,
+    "headcount_max": 249,
+    "turnover_annual_max": null,
+    "sme_category": "medium",
+    "sectors": [
+     "any"
+    ],
+    "stages": [
+     "idea",
+     "pre_seed",
+     "seed",
+     "series_a"
+    ],
+    "requires_local_entity": true,
+    "requires_incorporation": true,
+    "rd_focus": true,
+    "female_founder_only": false,
+    "underrepresented_focus": false,
+    "de_minimis": true,
+    "other_note": "Open to Irish-registered SMEs seeking innovative input from a registered knowledge provider. Not restricted to Enterprise Ireland clients."
+   },
+   "source_url": "https://www.enterprise-ireland.com/en/supports/innovation-voucher",
+   "source_snippet": "SMEs seeking innovative input; Standard €10K vouchers; Co-Funded Vouchers up to €20,000; All vouchers are valid for 18 months and available all year round.",
+   "last_verified_at": "2026-08-14",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "ie-innovative-hpsu-fund",
+   "name_local": "Innovative HPSU Fund (iHPSU)",
+   "name_en": "Enterprise Ireland Innovative High Potential Start-Up Fund",
+   "country_code": "ie",
+   "admin_level": "national",
+   "admin_area": null,
+   "funder": "Enterprise Ireland",
+   "funder_type": "public",
+   "grant_type": "equity",
+   "category": "startup",
+   "amount_min": null,
+   "amount_max": 1200000,
+   "amount_currency": "EUR",
+   "amount_note": "The iHPSU page states 'Up to €1.2 million' in its at-a-glance panel, while Enterprise Ireland's startup landing page describes 'co-funded equity investment of up to €800,000'. Both figures appear on Enterprise Ireland's own site; treat €800,000 as the commonly quoted headline and €1.2m as the stated upper bound, and confirm with EI before relying on either. Co-funding model: Enterprise Ireland does not lead investment rounds and requires external investment to be raised first.",
+   "cofunding_pct": 50,
+   "is_automatic": false,
+   "application_url": "https://www.enterprise-ireland.com/en/innovative-hpsu-fund",
+   "application_channel": "online",
+   "deadline_type": "rolling",
+   "deadline_note": "No published deadline; engagement is via Enterprise Ireland's High Potential Start-Up Unit and is tied to the company's private investment round.",
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Confirm you meet the HPSU definition and engage with Enterprise Ireland's HPSU Unit.",
+     "url": "https://www.enterprise-ireland.com/en/innovative-hpsu-fund"
+    },
+    {
+     "step": 2,
+     "detail": "Raise external private investment — Enterprise Ireland co-invests and does not lead rounds.",
+     "url": null
+    },
+    {
+     "step": 3,
+     "detail": "Submit a business plan and financial projections for appraisal.",
+     "url": null
+    },
+    {
+     "step": 4,
+     "detail": "If approved, Enterprise Ireland takes an equity stake alongside the private investors.",
+     "url": null
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "Investor-ready business plan",
+     "mandatory": true,
+     "note": "An HPSU Feasibility Study Grant of up to €30,000 is available to existing EI clients to prepare it"
+    },
+    {
+     "doc": "Financial projections",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Evidence of committed external investment",
+     "mandatory": true,
+     "note": "Co-funding model"
+    }
+   ],
+   "eligibility": {
+    "entity": "startup",
+    "company_age_months_min": null,
+    "company_age_months_max": 60,
+    "headcount_min": null,
+    "headcount_max": null,
+    "turnover_annual_max": null,
+    "sme_category": "any",
+    "sectors": [
+     "deeptech",
+     "manufacturing",
+     "health",
+     "ai",
+     "climate"
+    ],
+    "stages": [
+     "seed",
+     "series_a"
+    ],
+    "requires_local_entity": true,
+    "requires_incorporation": true,
+    "rd_focus": true,
+    "female_founder_only": false,
+    "underrepresented_focus": false,
+    "de_minimis": false,
+    "other_note": "A High Potential Start-Up is defined as introducing a new product or service to international markets that is truly innovative and disruptive with some form of protectable IP; involved in manufacturing or internationally traded services; capable of creating 10 jobs in Ireland and €1 million in annual sales within three years of starting; led by an experienced management team residing in Ireland; headquartered and controlled in Ireland; and less than five years old from the date of company registration. Must have an MVP and some commercial traction."
+   },
+   "source_url": "https://www.enterprise-ireland.com/en/innovative-hpsu-fund",
+   "source_snippet": "Capable of creating 10 jobs in Ireland and realising €1 million in annual sales within three years of starting ... Less than five years old from the date of your company's registration ... Enterprise Ireland's iHPSU fund operates on a co-funding model. We do not lead on investment rounds",
+   "last_verified_at": "2026-08-14",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "ie-leo-business-expansion-grant",
+   "name_local": "Business Expansion Grant",
+   "name_en": "Local Enterprise Office Business Expansion Grant",
+   "country_code": "ie",
+   "admin_level": "regional",
+   "admin_area": "Ireland — delivered by 31 Local Enterprise Offices",
+   "funder": "Local Enterprise Office (Enterprise Ireland / local authorities)",
+   "funder_type": "public",
+   "grant_type": "grant",
+   "category": "startup",
+   "amount_min": null,
+   "amount_max": 150000,
+   "amount_currency": "EUR",
+   "amount_note": "Maximum 50% of the investment or, in exceptional circumstances, €150,000 — whichever is the lesser. Salary support capped at €15,000 per full-time job created, subject to the 50% limit.",
+   "cofunding_pct": 50,
+   "is_automatic": false,
+   "application_url": "https://www.localenterprise.ie/Discover-Business-Supports/Financial-Supports/",
+   "application_channel": "online",
+   "deadline_type": "rolling",
+   "deadline_note": "Ongoing assessment by the local LEO evaluation committee.",
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Contact your Local Enterprise Office to confirm eligibility (past the initial 18-month start-up period).",
+     "url": "https://www.localenterprise.ie/"
+    },
+    {
+     "step": 2,
+     "detail": "Prepare a growth plan with costed investment and job creation projections.",
+     "url": null
+    },
+    {
+     "step": 3,
+     "detail": "Submit the application to the LEO evaluation committee.",
+     "url": null
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "Business/growth plan",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Financial projections and quotes",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Tax clearance",
+     "mandatory": true,
+     "note": null
+    }
+   ],
+   "eligibility": {
+    "entity": "startup",
+    "company_age_months_min": 18,
+    "company_age_months_max": null,
+    "headcount_min": null,
+    "headcount_max": 10,
+    "turnover_annual_max": null,
+    "sme_category": "micro",
+    "sectors": [
+     "manufacturing",
+     "any"
+    ],
+    "stages": [
+     "seed",
+     "growth"
+    ],
+    "requires_local_entity": true,
+    "requires_incorporation": false,
+    "rd_focus": false,
+    "female_founder_only": false,
+    "underrepresented_focus": false,
+    "de_minimis": true,
+    "other_note": "For businesses employing up to 10 staff in the growth phase after the initial 18-month start-up period. Covers capital development, equipment, utilities, salary support, consultancy, innovation and marketing. Retail, personal services, professional services, construction and local services are ineligible."
+   },
+   "source_url": "https://www.localenterprise.ie/FAQs/response/What-grants-are-available-from-the-LEO-/",
+   "source_snippet": "The Business Expansion Grant is designed to assist businesses, employing up to 10 staff in its growth phase after the initial 18-month start-up period. The maximum Business Expansion Grant payable must not exceed 50% of the investment or, in exceptional circumstances, €150,000 - or whichever is the lesser.",
+   "last_verified_at": "2026-08-14",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "ie-leo-feasibility-grant",
+   "name_local": "Feasibility Study / Innovation Grant",
+   "name_en": "Local Enterprise Office Feasibility Study Grant",
+   "country_code": "ie",
+   "admin_level": "regional",
+   "admin_area": "Ireland — delivered by 31 Local Enterprise Offices",
+   "funder": "Local Enterprise Office (Enterprise Ireland / local authorities)",
+   "funder_type": "public",
+   "grant_type": "grant",
+   "category": "startup",
+   "amount_min": null,
+   "amount_max": 15000,
+   "amount_currency": "EUR",
+   "amount_note": "50% of investment in the South and East Region and 60% in the Border, Midlands and West Region, up to a maximum of €15,000 (whichever is the lesser). Own labour is claimable at a maximum of €400 per week and not exceeding 20% of the grant.",
+   "cofunding_pct": 50,
+   "is_automatic": false,
+   "application_url": "https://www.localenterprise.ie/Discover-Business-Supports/Financial-Supports/",
+   "application_channel": "online",
+   "deadline_type": "rolling",
+   "deadline_note": "Ongoing assessment by the local LEO.",
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Contact your Local Enterprise Office and scope the feasibility work.",
+     "url": "https://www.localenterprise.ie/"
+    },
+    {
+     "step": 2,
+     "detail": "Submit an application setting out the market research, technical development or prototype work planned.",
+     "url": null
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "Feasibility grant application form",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Quotes for consultancy / technical work",
+     "mandatory": true,
+     "note": null
+    }
+   ],
+   "eligibility": {
+    "entity": "startup",
+    "company_age_months_min": null,
+    "company_age_months_max": null,
+    "headcount_min": null,
+    "headcount_max": 10,
+    "turnover_annual_max": null,
+    "sme_category": "micro",
+    "sectors": [
+     "manufacturing",
+     "any"
+    ],
+    "stages": [
+     "idea",
+     "pre_seed"
+    ],
+    "requires_local_entity": true,
+    "requires_incorporation": false,
+    "rd_focus": true,
+    "female_founder_only": false,
+    "underrepresented_focus": false,
+    "de_minimis": true,
+    "other_note": "Supports research of market demand for a product or service and examination of its sustainability. Covers market research, consultancy fees, technical development, prototype creation and own labour. Retail, personal services, professional services, construction and local services are ineligible."
+   },
+   "source_url": "https://www.localenterprise.ie/FAQs/response/What-grants-are-available-from-the-LEO-/",
+   "source_snippet": "The maximum Feasibility Study Grant is from 50% (in the South and East Region) to 60% (in the Borders Midlands, West Region) of investment and up to a maximum of €15,000, whichever is the lesser.",
+   "last_verified_at": "2026-08-14",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "ie-leo-priming-grant",
+   "name_local": "Priming Grant",
+   "name_en": "Local Enterprise Office Priming Grant",
+   "country_code": "ie",
+   "admin_level": "regional",
+   "admin_area": "Ireland — delivered by 31 Local Enterprise Offices",
+   "funder": "Local Enterprise Office (Enterprise Ireland / local authorities)",
+   "funder_type": "public",
+   "grant_type": "grant",
+   "category": "startup",
+   "amount_min": null,
+   "amount_max": 150000,
+   "amount_currency": "EUR",
+   "amount_note": "Maximum 50% of the investment up to €80,000; the LEO can approve up to €150,000 in certain/exceptional situations. Salary costs are supported at a maximum of €15,000 per full-time job created, subject to the 50% limit.",
+   "cofunding_pct": 50,
+   "is_automatic": false,
+   "application_url": "https://www.localenterprise.ie/Discover-Business-Supports/Financial-Supports/",
+   "application_channel": "online",
+   "deadline_type": "rolling",
+   "deadline_note": "Applications assessed by the local LEO on an ongoing basis, typically via an evaluation committee.",
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Contact your Local Enterprise Office to discuss eligibility.",
+     "url": "https://www.localenterprise.ie/"
+    },
+    {
+     "step": 2,
+     "detail": "Prepare a business plan with costed investment and job creation projections.",
+     "url": null
+    },
+    {
+     "step": 3,
+     "detail": "Submit the application to the LEO evaluation committee.",
+     "url": null
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "Business plan",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Financial projections and quotes for capital items",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Tax clearance",
+     "mandatory": true,
+     "note": null
+    }
+   ],
+   "eligibility": {
+    "entity": "startup",
+    "company_age_months_min": null,
+    "company_age_months_max": 18,
+    "headcount_min": null,
+    "headcount_max": 10,
+    "turnover_annual_max": null,
+    "sme_category": "micro",
+    "sectors": [
+     "manufacturing",
+     "any"
+    ],
+    "stages": [
+     "pre_seed",
+     "seed"
+    ],
+    "requires_local_entity": true,
+    "requires_incorporation": false,
+    "rd_focus": false,
+    "female_founder_only": false,
+    "underrepresented_focus": false,
+    "de_minimis": true,
+    "other_note": "A business start-up grant for micro enterprises employing up to 10 employees, within 18 months of starting. Eligible costs include capital items, equipment, utilities, salary costs (max €15,000 per job), consultancy, innovation and marketing. Retail, personal services, professional services, construction and local services are ineligible."
+   },
+   "source_url": "https://www.localenterprise.ie/FAQs/response/What-grants-are-available-from-the-LEO-/",
+   "source_snippet": "The maximum Priming Grant payable must not exceed 50% of the investment up to €80,000 but the LEO can approve up to €150,000 in certain situations.",
+   "last_verified_at": "2026-08-14",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "ie-pre-seed-start-fund",
+   "name_local": "Pre-Seed Start Fund (PSSF)",
+   "name_en": "Enterprise Ireland Pre-Seed Start Fund",
+   "country_code": "ie",
+   "admin_level": "national",
+   "admin_area": null,
+   "funder": "Enterprise Ireland",
+   "funder_type": "public",
+   "grant_type": "equity",
+   "category": "startup",
+   "amount_min": 50000,
+   "amount_max": 100000,
+   "amount_currency": "EUR",
+   "amount_note": "Investment of €50,000 or €100,000, released in tranches. The first €50,000 tranche is released subject to the company confirming an additional new cash co-investment of a minimum of €5,000. Includes 10 mentoring sessions. Former Competitive Start Fund investee companies may apply for a maximum of €50,000 if suitable.",
+   "cofunding_pct": null,
+   "is_automatic": false,
+   "application_url": "https://www.enterprise-ireland.com/en/supports/pre-seed-start-fund",
+   "application_channel": "online",
+   "deadline_type": "annual_call",
+   "deadline_note": "Run as competitive calls. Specific call dates were not visible on the page read; check the Enterprise Ireland support page for the current call. The Pre-Seed Start Fund is Enterprise Ireland's current early-stage equity offering — the older Competitive Start Fund (CSF) is referenced only historically, with former CSF investees eligible for up to €50,000.",
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Confirm you are an existing or potential client of Enterprise Ireland's High Potential Start-Up Unit with evidence of innovation, internationalisation potential and employment capacity.",
+     "url": "https://www.enterprise-ireland.com/en/supports/pre-seed-start-fund"
+    },
+    {
+     "step": 2,
+     "detail": "Apply during an open call.",
+     "url": null
+    },
+    {
+     "step": 3,
+     "detail": "If successful, secure the minimum €5,000 new cash co-investment to release the first €50,000 tranche.",
+     "url": null
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "Application form and business plan",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Evidence of new cash co-investment of at least €5,000",
+     "mandatory": true,
+     "note": "Condition of releasing the first tranche"
+    }
+   ],
+   "eligibility": {
+    "entity": "startup",
+    "company_age_months_min": null,
+    "company_age_months_max": null,
+    "headcount_min": null,
+    "headcount_max": null,
+    "turnover_annual_max": null,
+    "sme_category": "micro",
+    "sectors": [
+     "deeptech",
+     "manufacturing",
+     "health",
+     "ai",
+     "climate"
+    ],
+    "stages": [
+     "idea",
+     "pre_seed"
+    ],
+    "requires_local_entity": true,
+    "requires_incorporation": true,
+    "rd_focus": false,
+    "female_founder_only": false,
+    "underrepresented_focus": false,
+    "de_minimis": false,
+    "other_note": "Requires evidence of innovation, internationalisation potential and employment capacity, and status as an existing or potential Enterprise Ireland HPSU client."
+   },
+   "source_url": "https://www.enterprise-ireland.com/en/supports/pre-seed-start-fund",
+   "source_snippet": "Former Competitive Start Fund (CSF) investee companies may apply for a maximum of €50,000 if they are suitable. ... The first €50,000 tranche will be released to successful applicants subject to the company providing confirmation that an additional new cash co-investment of a minimum of €5,000.",
+   "last_verified_at": "2026-08-14",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "ie-rd-tax-credit",
+   "name_local": "Creidmheas Cánach T&F",
+   "name_en": "Irish Research and Development (R&D) Corporation Tax Credit",
+   "country_code": "ie",
+   "admin_level": "national",
+   "admin_area": null,
+   "funder": "Revenue Commissioners",
+   "funder_type": "public",
+   "grant_type": "tax_credit",
+   "category": "startup",
+   "amount_min": null,
+   "amount_max": null,
+   "amount_currency": "EUR",
+   "amount_note": "30% of qualifying R&D expenditure for accounting periods commencing on or after 1 January 2024 (previously 25%). The credit is repaid in three annual instalments; for each instalment the company elects whether it is treated as an overpayment, offset against tax liabilities, or repaid in cash. No cap on qualifying expenditure.",
+   "cofunding_pct": null,
+   "is_automatic": false,
+   "application_url": "https://www.revenue.ie/en/companies-and-charities/reliefs-and-exemptions/research-and-development-rd-tax-credit/index.aspx",
+   "application_channel": "online",
+   "deadline_type": "rolling",
+   "deadline_note": "Claimed in the corporation tax return; claims must generally be made within 12 months of the end of the accounting period.",
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Confirm the activities meet the statutory definition of qualifying R&D and record qualifying expenditure.",
+     "url": "https://www.revenue.ie/en/companies-and-charities/reliefs-and-exemptions/research-and-development-rd-tax-credit/index.aspx"
+    },
+    {
+     "step": 2,
+     "detail": "Claim the credit in the corporation tax return (Form CT1) for the accounting period.",
+     "url": null
+    },
+    {
+     "step": 3,
+     "detail": "Elect for each of the three annual instalments how it should be treated (offset or repaid).",
+     "url": null
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "Form CT1 corporation tax return with R&D claim",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Contemporaneous technical and financial records of the R&D",
+     "mandatory": true,
+     "note": "Required to support the claim on Revenue audit"
+    }
+   ],
+   "eligibility": {
+    "entity": "startup",
+    "company_age_months_min": null,
+    "company_age_months_max": null,
+    "headcount_min": null,
+    "headcount_max": null,
+    "turnover_annual_max": null,
+    "sme_category": "any",
+    "sectors": [
+     "any"
+    ],
+    "stages": [
+     "pre_seed",
+     "seed",
+     "series_a",
+     "growth"
+    ],
+    "requires_local_entity": true,
+    "requires_incorporation": true,
+    "rd_focus": true,
+    "female_founder_only": false,
+    "underrepresented_focus": false,
+    "de_minimis": false,
+    "other_note": "Available to companies within the charge to Irish corporation tax carrying out qualifying R&D in Ireland or the EEA. The credit is repayable in cash even for loss-making companies, which makes it materially useful for pre-revenue startups."
+   },
+   "source_url": "https://www.revenue.ie/en/companies-and-charities/reliefs-and-exemptions/research-and-development-rd-tax-credit/index.aspx",
+   "source_snippet": "For accounting periods commencing on or after 1 January 2024, the rate has increased to 30%.",
+   "last_verified_at": "2026-08-14",
+   "verification_status": "verified"
+  }
+ ]
+}

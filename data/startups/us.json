@@ -1,0 +1,2541 @@
+{
+ "country_code": "us",
+ "country_name": "United States",
+ "currency": "USD",
+ "language": "en",
+ "entity": "startup",
+ "programmes": [
+  {
+   "slug": "amber-grant-womensnet",
+   "name_local": "Amber Grant",
+   "name_en": "Amber Grant (WomensNet)",
+   "country_code": "us",
+   "admin_level": "national",
+   "admin_area": null,
+   "funder": "WomensNet",
+   "funder_type": "private",
+   "grant_type": "grant",
+   "category": "startup",
+   "amount_min": 10000,
+   "amount_max": 50000,
+   "amount_currency": "USD",
+   "amount_note": "Cash grant. 'Each month, we award a $10,000 Amber Grant to one outstanding woman-owned business.' Monthly $10,000 recipients across the Amber, Startup and Business Category streams are then eligible for three $50,000 year-end grants. WomensNet states it funds '$510,000 worth' of grants a year. Note there is a $15 application fee: 'The nominal $15 application fee is the only fee we charge.' Fee waivers are available on request.",
+   "cofunding_pct": null,
+   "is_automatic": false,
+   "application_url": "https://ambergrantsforwomen.com/get-an-amber-grant/",
+   "application_channel": "online",
+   "deadline_type": "cutoff",
+   "deadline_note": "Monthly cut-offs — one $10,000 grant awarded each month (e.g. the page showed an application cutoff of 31 August 2026 for the next $10,000 Amber Grant). Year-end $50,000 grants are drawn from monthly winners.",
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Complete the short online application describing yourself and your business.",
+     "url": "https://ambergrantsforwomen.com/get-an-amber-grant/"
+    },
+    {
+     "step": 2,
+     "detail": "Pay the $15 application fee (waivers available by emailing WomensNet).",
+     "url": null
+    },
+    {
+     "step": 3,
+     "detail": "Monthly winner selected by the WomensNet advisory board; monthly winners are then considered for the year-end $50,000 grants.",
+     "url": null
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "Online application describing the business and how the funds would be used",
+     "mandatory": true,
+     "note": null
+    }
+   ],
+   "eligibility": {
+    "entity": "startup",
+    "company_age_months_min": null,
+    "company_age_months_max": null,
+    "headcount_min": null,
+    "headcount_max": null,
+    "turnover_annual_max": null,
+    "sme_category": "any",
+    "sectors": [
+     "any"
+    ],
+    "stages": [
+     "idea",
+     "pre_seed",
+     "seed",
+     "growth"
+    ],
+    "requires_local_entity": true,
+    "requires_incorporation": false,
+    "rd_focus": false,
+    "female_founder_only": true,
+    "underrepresented_focus": true,
+    "de_minimis": false,
+    "other_note": "'your business is 50% women-owned, and is based in the United States or Canada — you're eligible to apply'. So this is a two-country programme (US and Canada), not worldwide. All business categories including non-profits are eligible."
+   },
+   "source_url": "https://ambergrantsforwomen.com/about-us/faq-online-grants-for-women/",
+   "source_snippet": "your business is 50% women-owned, and is based in the United States or Canada — you're eligible to apply",
+   "last_verified_at": "2026-08-14",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "ifw-universal-funding-grant-application",
+   "name_local": "IFW Universal Funding and Grant Application",
+   "name_en": "IFW by Honeycomb Credit (formerly IFundWomen) Universal Funding and Grant Application",
+   "country_code": "us",
+   "admin_level": "national",
+   "admin_area": null,
+   "funder": "IFW by Honeycomb Credit (formerly IFundWomen)",
+   "funder_type": "private",
+   "grant_type": "grant",
+   "category": "startup",
+   "amount_min": null,
+   "amount_max": null,
+   "amount_currency": "USD",
+   "amount_note": "No single amount: the Universal Funding and Grant Application is a standing database that IFW matches against sponsor-funded grants as corporate partners launch them. Historic sponsored grants have ranged from $2,500 (Honeycomb Hot Streak, Honeycomb Celebration) to $5,000 (Spark Grant, Caress) to $10,000 (Angel City FC Player 22, Visa She's Next) to $25,000 (BOTOX Cosmetic) and a $100,000 Poker Power 'Power Play' grand prize. Individual named grants open and close; amount recorded as null because no standing figure is guaranteed. Note the organisation has rebranded from IFundWomen to 'IFW by Honeycomb Credit'.",
+   "cofunding_pct": null,
+   "is_automatic": false,
+   "application_url": "https://www.ifundwomen.com/grants/universal-funding-grant-application/welcome",
+   "application_channel": "online",
+   "deadline_type": "rolling",
+   "deadline_note": "The Universal Funding and Grant Application is open on a rolling basis; individual sponsored grants have their own windows and most named grants listed on the page are currently closed.",
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Complete the Universal Funding and Grant Application to enter the matching database.",
+     "url": "https://www.ifundwomen.com/grants/universal-funding-grant-application/welcome"
+    },
+    {
+     "step": 2,
+     "detail": "When IFW partners with a brand, it matches the partner's grant criteria to businesses in the database.",
+     "url": null
+    },
+    {
+     "step": 3,
+     "detail": "If matched, you are notified and invited to complete the sponsor-specific application.",
+     "url": null
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "Universal Funding and Grant Application form",
+     "mandatory": true,
+     "note": null
+    }
+   ],
+   "eligibility": {
+    "entity": "startup",
+    "company_age_months_min": null,
+    "company_age_months_max": null,
+    "headcount_min": null,
+    "headcount_max": null,
+    "turnover_annual_max": null,
+    "sme_category": "any",
+    "sectors": [
+     "any"
+    ],
+    "stages": [
+     "idea",
+     "pre_seed",
+     "seed",
+     "growth"
+    ],
+    "requires_local_entity": true,
+    "requires_incorporation": false,
+    "rd_focus": false,
+    "female_founder_only": false,
+    "underrepresented_focus": true,
+    "de_minimis": false,
+    "other_note": "Open to 'all small business owners and entrepreneurs, regardless of industry, location, or stage of business' in the general IFW grants, though individual sponsored grants carry their own country restrictions (past editions have been US-, Canada- and Ireland-specific). IFW notes 'Many grants have revenue requirements and amount of years in business'."
+   },
+   "source_url": "https://www.ifundwomen.com/grants",
+   "source_snippet": "when IFW partners with a brand, we match the partner's grant criteria to businesses in the database. If you're a match for one of our sponsored grants, you will be notified.",
+   "last_verified_at": "2026-08-14",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "us-army-xtech",
+   "name_local": "Army xTech Program (xTechSearch and themed competitions)",
+   "name_en": "U.S. Army xTech Prize Competitions",
+   "country_code": "us",
+   "admin_level": "national",
+   "admin_area": null,
+   "funder": "U.S. Army (Office of the Assistant Secretary of the Army for Acquisition, Logistics and Technology)",
+   "funder_type": "public",
+   "grant_type": "prize",
+   "category": "startup",
+   "amount_min": null,
+   "amount_max": null,
+   "amount_currency": "USD",
+   "amount_note": "Prize amounts are set per competition and change every round; there is no standing ceiling. Concrete published example - xTech|Inversion (submission window 3-30 June 2026): Phase 1 up to 12 finalists at $20K each; Phase 2 up to 5 winners at $152K each; Phase 3 up to 5 selectees receiving 'Up to $300K in SBIR Contracts', totalling 'Up to $1M in cash prizes; Phase I SBIR Contracts: Up to $1.5M'. Always read the specific competition announcement.",
+   "cofunding_pct": null,
+   "is_automatic": false,
+   "application_url": "https://xtech.army.mil/",
+   "application_channel": "portal",
+   "deadline_type": "annual_call",
+   "deadline_note": "A rolling series of themed competitions (xTechSearch, xTech|Inversion, xTechHumanoid, xTech|Adaptive Strike, hackathons, xTech|Live events) each with its own submission window announced on xtech.army.mil.",
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Browse open competitions on xtech.army.mil and select one matching your technology.",
+     "url": "https://xtech.army.mil/"
+    },
+    {
+     "step": 2,
+     "detail": "Phase 1: submit a white paper via the competition portal.",
+     "url": null
+    },
+    {
+     "step": 3,
+     "detail": "Phase 2: selected finalists advance to a pitch event.",
+     "url": null
+    },
+    {
+     "step": 4,
+     "detail": "Phase 3: present proof-of-concept; winners may receive follow-on SBIR contracts.",
+     "url": null
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "White paper",
+     "mandatory": true,
+     "note": "Page limits set per competition"
+    },
+    {
+     "doc": "Pitch presentation",
+     "mandatory": true,
+     "note": "For finalists"
+    },
+    {
+     "doc": "SAM.gov registration with UEI",
+     "mandatory": true,
+     "note": "Required before any Army contract or prize payment"
+    }
+   ],
+   "eligibility": {
+    "entity": "startup",
+    "company_age_months_min": null,
+    "company_age_months_max": null,
+    "headcount_min": null,
+    "headcount_max": 500,
+    "turnover_annual_max": null,
+    "sme_category": "any",
+    "sectors": [
+     "deeptech",
+     "ai",
+     "manufacturing"
+    ],
+    "stages": [
+     "pre_seed",
+     "seed",
+     "series_a"
+    ],
+    "requires_local_entity": true,
+    "requires_incorporation": true,
+    "rd_focus": true,
+    "female_founder_only": false,
+    "underrepresented_focus": false,
+    "de_minimis": false,
+    "other_note": "xTech|Inversion eligibility: 'Small, for-profit, independent U.S. businesses' with majority equity 'directly owned and controlled' by US citizens, permanent residents or other qualifying small businesses, and which 'together with the affiliates, must not have more than 500 employees'. Non-profits excluded. Proposals must not be substantially the same as another funded or pending proposal. Some competitions (e.g. G-TEAD) open to large businesses and allied foreign companies. SAM.gov registration and a UEI are required to receive prize money or the follow-on SBIR contract."
+   },
+   "source_url": "https://xtech.army.mil/competition/xtechinversion/",
+   "source_snippet": "Up to $1M in cash prizes; Phase I SBIR Contracts: Up to $1.5M",
+   "last_verified_at": "2026-08-14",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "us-arpa-e",
+   "name_local": "ARPA-E (Advanced Research Projects Agency-Energy) funding opportunities",
+   "name_en": "ARPA-E funding opportunities (OPEN and focused programs)",
+   "country_code": "us",
+   "admin_level": "national",
+   "admin_area": null,
+   "funder": "Advanced Research Projects Agency-Energy, U.S. Department of Energy",
+   "funder_type": "public",
+   "grant_type": "grant",
+   "category": "startup",
+   "amount_min": null,
+   "amount_max": null,
+   "amount_currency": "USD",
+   "amount_note": "Award sizes are set individually in each Funding Opportunity Announcement (FOA/NOFO) and vary widely by programme; ARPA-E does not publish a single standing ceiling. ARPA-E describes its model as 'non-dilutive funding' that lets 'awardees ... pursue groundbreaking ideas with reduced financial risk and the preservation of equity'. Cost share requirements are also set per FOA. Do not assume a figure - read the specific FOA on ARPA-E eXCHANGE.",
+   "cofunding_pct": null,
+   "is_automatic": false,
+   "application_url": "https://arpa-e-foa.energy.gov/",
+   "application_channel": "portal",
+   "deadline_type": "annual_call",
+   "deadline_note": "Rolling series of FOAs, each with its own concept-paper and full-application deadlines. Recurring OPEN calls (roughly every three years) accept proposals in any energy technology area; focused programs and SPARKS/exploratory topics are announced continuously on ARPA-E eXCHANGE.",
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Register in SAM.gov to obtain a UEI and create an account on ARPA-E eXCHANGE.",
+     "url": "https://arpa-e-foa.energy.gov/"
+    },
+    {
+     "step": 2,
+     "detail": "Submit a Concept Paper by the FOA deadline.",
+     "url": null
+    },
+    {
+     "step": 3,
+     "detail": "If encouraged, submit a Full Application, then respond to reviewer comments.",
+     "url": null
+    },
+    {
+     "step": 4,
+     "detail": "Negotiate the award (cooperative agreement or other transaction) including any cost share.",
+     "url": "https://arpa-e.energy.gov/innovator-hub/FOA-resources-and-award-reporting"
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "Concept Paper",
+     "mandatory": true,
+     "note": "Mandatory gate for full applications in most FOAs"
+    },
+    {
+     "doc": "Full Application including technical volume, budget and cost-share plan",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "SAM.gov registration with UEI",
+     "mandatory": true,
+     "note": null
+    }
+   ],
+   "eligibility": {
+    "entity": "startup",
+    "company_age_months_min": null,
+    "company_age_months_max": null,
+    "headcount_min": null,
+    "headcount_max": null,
+    "turnover_annual_max": null,
+    "sme_category": "any",
+    "sectors": [
+     "climate",
+     "deeptech",
+     "manufacturing"
+    ],
+    "stages": [
+     "pre_seed",
+     "seed",
+     "series_a"
+    ],
+    "requires_local_entity": true,
+    "requires_incorporation": true,
+    "rd_focus": true,
+    "female_founder_only": false,
+    "underrepresented_focus": false,
+    "de_minimis": false,
+    "other_note": "ARPA-E is open to a broad range of applicants - startups, established companies, universities, national labs and consortia - not restricted to small businesses, so startups compete against large institutions. Eligibility and cost-share rules are set in each FOA and in the standing FOA provisions incorporated by reference. SAM.gov entity registration with a Unique Entity ID is required before any award can be made, and an ARPA-E eXCHANGE account is required to submit. Note: DOE also runs a separate DOE SBIR/STTR programme with the standard SBIR ceilings."
+   },
+   "source_url": "https://arpa-e.energy.gov/innovator-hub",
+   "source_snippet": "ARPA-E's non-dilutive funding model enables awardees to pursue groundbreaking ideas with reduced financial risk and the preservation of equity.",
+   "last_verified_at": "2026-08-14",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "us-ca-california-competes-grant",
+   "name_local": "California Competes Grant Program (CCGP)",
+   "name_en": "California Competes Grant Program",
+   "country_code": "us",
+   "admin_level": "regional",
+   "admin_area": "California",
+   "funder": "California Governor's Office of Business and Economic Development (GO-Biz)",
+   "funder_type": "public",
+   "grant_type": "grant",
+   "category": "startup",
+   "amount_min": 5000000,
+   "amount_max": 36000000,
+   "amount_currency": "USD",
+   "amount_note": "Figures are from the most recent published round (Round 3): '$120,000,000' estimated available, with individual awards of '$5,000,000 - $36,000,000'. Whether a further round is funded depends on the state budget each year - do not assume these amounts recur. This is a cash grant alternative to the California Competes Tax Credit aimed at 'businesses for whom a non-refundable tax credit would not provide a significant financial benefit', including startups with minimal tax liability.",
+   "cofunding_pct": null,
+   "is_automatic": false,
+   "application_url": "https://business.ca.gov/california-competes-tax-credit/",
+   "application_channel": "online",
+   "deadline_type": "annual_call",
+   "deadline_note": "Run as discrete rounds subject to state budget appropriation. Round 3 ran 24 July 2023 to 14 August 2023 with awards announced 16 November 2023 and is closed. Monitor grants.ca.gov and business.ca.gov for any successor round.",
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Confirm you can commit to creating at least 500 new full-time California jobs, or investing at least $10 million in facility construction/renovation, or meeting both thresholds in a high-unemployment or high-poverty area.",
+     "url": "https://www.grants.ca.gov/grants/california-competes-grant-round-3/"
+    },
+    {
+     "step": 2,
+     "detail": "Submit the online application during an open round.",
+     "url": null
+    },
+    {
+     "step": 3,
+     "detail": "GO-Biz evaluates, negotiates an agreement and the Committee approves; grant funds are paid against milestone achievement.",
+     "url": null
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "Online application with jobs and investment commitments",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Financial statements",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Negotiated grant agreement",
+     "mandatory": true,
+     "note": null
+    }
+   ],
+   "eligibility": {
+    "entity": "startup",
+    "company_age_months_min": null,
+    "company_age_months_max": null,
+    "headcount_min": null,
+    "headcount_max": null,
+    "turnover_annual_max": null,
+    "sme_category": "any",
+    "sectors": [
+     "manufacturing",
+     "deeptech",
+     "climate",
+     "any"
+    ],
+    "stages": [
+     "growth"
+    ],
+    "requires_local_entity": true,
+    "requires_incorporation": true,
+    "rd_focus": false,
+    "female_founder_only": false,
+    "underrepresented_focus": false,
+    "de_minimis": false,
+    "other_note": "The 500-job / $10 million investment thresholds mean this is realistically only reachable by well-funded scale-ups (large-scale manufacturing, battery, semiconductor and biotech buildouts), not early-stage startups. State programme - no SAM.gov registration or UEI required."
+   },
+   "source_url": "https://www.grants.ca.gov/grants/california-competes-grant-round-3/",
+   "source_snippet": "$5,000,000 – $36,000,000",
+   "last_verified_at": "2026-08-14",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "us-ca-california-competes-tax-credit",
+   "name_local": "California Competes Tax Credit (CCTC)",
+   "name_en": "California Competes Tax Credit",
+   "country_code": "us",
+   "admin_level": "regional",
+   "admin_area": "California",
+   "funder": "California Governor's Office of Business and Economic Development (GO-Biz)",
+   "funder_type": "public",
+   "grant_type": "tax_credit",
+   "category": "startup",
+   "amount_min": null,
+   "amount_max": null,
+   "amount_currency": "USD",
+   "amount_note": "GO-Biz makes 'over $180 million available in tax credits' each year across three application periods; individual award sizes are negotiated and are not capped at a published figure. The credit is a non-refundable California income tax credit, so it is of limited immediate value to pre-revenue startups - GO-Biz created the separate California Competes Grant Program for 'businesses for whom a non-refundable tax credit would not provide a significant financial benefit'. To date '1,245 Businesses Awarded' and '170K Full-Time Jobs Committed'.",
+   "cofunding_pct": null,
+   "is_automatic": false,
+   "application_url": "https://business.ca.gov/california-competes-tax-credit/",
+   "application_channel": "online",
+   "deadline_type": "cutoff",
+   "deadline_note": "Three application periods per fiscal year. FY2026-2027 windows: 20 July 2026 - 10 August 2026; 4 January 2027 - 25 January 2027; 1 March 2027 - 15 March 2027.",
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Submit the online application during an open period, stating jobs to be created and investment to be made.",
+     "url": "https://business.ca.gov/california-competes-tax-credit/"
+    },
+    {
+     "step": 2,
+     "detail": "Phase I: applications are ranked by cost-benefit ratio (credit requested divided by aggregate jobs and investment).",
+     "url": null
+    },
+    {
+     "step": 3,
+     "detail": "Phase II: GO-Biz evaluates the top applications against fourteen factors and negotiates an agreement.",
+     "url": null
+    },
+    {
+     "step": 4,
+     "detail": "The agreement is approved by the California Competes Tax Credit Committee; credits vest as milestones are met.",
+     "url": null
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "Online application with jobs and investment commitments",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Financial statements and tax returns",
+     "mandatory": true,
+     "note": "Requested at Phase II"
+    },
+    {
+     "doc": "Negotiated written agreement with GO-Biz",
+     "mandatory": true,
+     "note": null
+    }
+   ],
+   "eligibility": {
+    "entity": "startup",
+    "company_age_months_min": null,
+    "company_age_months_max": null,
+    "headcount_min": null,
+    "headcount_max": null,
+    "turnover_annual_max": null,
+    "sme_category": "any",
+    "sectors": [
+     "any"
+    ],
+    "stages": [
+     "seed",
+     "series_a",
+     "growth"
+    ],
+    "requires_local_entity": true,
+    "requires_incorporation": true,
+    "rd_focus": false,
+    "female_founder_only": false,
+    "underrepresented_focus": false,
+    "de_minimis": false,
+    "other_note": "Open to any business, of any size or industry, that wants to locate in or stay and grow in California. A fixed share of credits each year is reserved for small businesses (under $2 million in gross receipts) - verify the current small-business set-aside percentage in the live programme rules. Selection uses 'fourteen different factors of evaluation, including number of full-time jobs being created, amount of investment, and strategic importance to the state or region'. State programme - no SAM.gov registration or UEI required."
+   },
+   "source_url": "https://business.ca.gov/california-competes-tax-credit/",
+   "source_snippet": "compete for over $180 million available in tax credits by applying in one of the three application periods each year",
+   "last_verified_at": "2026-08-14",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "us-dow-sbir-sttr",
+   "name_local": "Department of War (formerly Department of Defense) SBIR/STTR Program",
+   "name_en": "Department of War SBIR/STTR Program",
+   "country_code": "us",
+   "admin_level": "national",
+   "admin_area": null,
+   "funder": "U.S. Department of War (formerly Department of Defense)",
+   "funder_type": "public",
+   "grant_type": "grant",
+   "category": "startup",
+   "amount_min": null,
+   "amount_max": null,
+   "amount_currency": "USD",
+   "amount_note": "Award sizes are set per Service/Component, not centrally. The FY2026 Phase I release instructions state 'The Phase I period of performance is generally between six to twelve months' and that 'Contract value varies among the DoW Services/Components; it is important for proposing SBCs to review Service/Component-specific instructions regarding award size.' As a concrete example, Army publishes SBIR Phase I up to $250K over 3-6 months, STTR Phase I up to $204K over 6 months, SBIR Phase II up to $2M over 12-18 months and STTR Phase II up to $1.36M over 24 months. All sit within the SBA guideline ceilings ($323,090 Phase I / $2,153,927 Phase II as of April 2026).",
+   "cofunding_pct": null,
+   "is_automatic": false,
+   "application_url": "https://www.dodsbirsttr.mil/submissions/",
+   "application_channel": "portal",
+   "deadline_type": "annual_call",
+   "deadline_note": "Multiple Broad Agency Announcement (BAA) releases per fiscal year, plus rolling Commercial Solutions Openings and open topics. FY2026 solicitation schedule published at defensesbirsttr.mil.",
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Register in SAM.gov - 'Registration in SAM will generate the Unique Entity ID (UEI) number and the Commercial and Government Entry (CAGE) code.'",
+     "url": "https://sam.gov/content/entity-registration"
+    },
+    {
+     "step": 2,
+     "detail": "Register in the SBA Company Registry using the UEI, and create an account on the Defense SBIR/STTR Innovation Portal (DSIP).",
+     "url": "https://www.dodsbirsttr.mil/submissions/"
+    },
+    {
+     "step": 3,
+     "detail": "Select a topic from an open BAA release and submit the proposal through DSIP before the closing date.",
+     "url": null
+    },
+    {
+     "step": 4,
+     "detail": "Optionally pursue a Direct to Phase II award where offered - 15 U.S.C. 638(cc) allows a Phase II award without a prior Phase I, though DoW 'does not guarantee Direct to Phase II opportunities will be offered in future solicitations'.",
+     "url": null
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "Technical volume responding to a specific topic",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Cost volume",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Company commercialization report",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "SAM.gov registration producing UEI and CAGE code, plus SBA Company Registry registration",
+     "mandatory": true,
+     "note": "Explicitly required in the FY2026 release instructions"
+    }
+   ],
+   "eligibility": {
+    "entity": "startup",
+    "company_age_months_min": null,
+    "company_age_months_max": null,
+    "headcount_min": null,
+    "headcount_max": 500,
+    "turnover_annual_max": null,
+    "sme_category": "any",
+    "sectors": [
+     "deeptech",
+     "ai",
+     "manufacturing"
+    ],
+    "stages": [
+     "idea",
+     "pre_seed",
+     "seed",
+     "series_a"
+    ],
+    "requires_local_entity": true,
+    "requires_incorporation": true,
+    "rd_focus": true,
+    "female_founder_only": false,
+    "underrepresented_focus": false,
+    "de_minimis": false,
+    "other_note": "Largest SBIR/STTR agency by dollar volume. Standard eligibility: US for-profit small business concern with 500 or fewer employees including affiliates, majority US-owned and controlled. Additional foreign-ownership and malign-influence screening applies to defence awards. SAM.gov registration with a UEI and CAGE code is explicitly mandatory: 'Proposing SBCs must register in SAM here. Registration in SAM will generate the Unique Entity ID (UEI) number and the Commercial and Government Entry (CAGE) code. The UEI is required for registration in the U.S. Small Business Administration's (SBA) Company Registry.'"
+   },
+   "source_url": "https://www.dodsbirsttr.mil/submissions/api/public/download/solicitationDocuments?solicitation=DOD_SBIR_2026_P1_CBZ&release=1&documentType=RELEASE_INSTRUCTIONS",
+   "source_snippet": "Contract value varies among the DoW Services/Components; it is important for proposing SBCs to review Service/Component-specific instructions regarding award size.",
+   "last_verified_at": "2026-08-14",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "us-eda-build-to-scale",
+   "name_local": "Build to Scale (B2S) Program",
+   "name_en": "EDA Build to Scale Program",
+   "country_code": "us",
+   "admin_level": "national",
+   "admin_area": null,
+   "funder": "U.S. Economic Development Administration, Department of Commerce",
+   "funder_type": "public",
+   "grant_type": "grant",
+   "category": "startup",
+   "amount_min": null,
+   "amount_max": null,
+   "amount_currency": "USD",
+   "amount_note": "Award sizes and the matching share are set in each annual Notice of Funding Opportunity and are not published as a standing figure on the current EDA programme page. Historically B2S has run Venture Challenge and Capital Challenge tracks with a statutory 1:1 non-federal match, but that should be confirmed against the live NOFO before relying on it.",
+   "cofunding_pct": null,
+   "is_automatic": false,
+   "application_url": "https://www.eda.gov/funding/programs/build-to-scale",
+   "application_channel": "portal",
+   "deadline_type": "annual_call",
+   "deadline_note": "Announced annually via a NOFO on Grants.gov and eda.gov. The FY2024 round closed 28 October 2024 and, as of 14 August 2026, no successor NOFO was listed among EDA's open opportunities - EDA directs prospective applicants to 'sign up for EDA's newsletter' for 'any future funding opportunities'.",
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Monitor eda.gov and Grants.gov for the next Build to Scale NOFO.",
+     "url": "https://www.eda.gov/funding/funding-opportunities/all-opportunities"
+    },
+    {
+     "step": 2,
+     "detail": "Register in SAM.gov (UEI) and Grants.gov; note EDA 'does not provide grants to individuals'.",
+     "url": "https://sam.gov/content/entity-registration"
+    },
+    {
+     "step": 3,
+     "detail": "Submit the application through Grants.gov or EDA's EDGE system by the NOFO deadline.",
+     "url": null
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "Project narrative describing the regional innovation/entrepreneurship programme",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Evidence of committed non-federal matching funds",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "SAM.gov registration with UEI",
+     "mandatory": true,
+     "note": null
+    }
+   ],
+   "eligibility": {
+    "entity": "startup",
+    "company_age_months_min": null,
+    "company_age_months_max": null,
+    "headcount_min": null,
+    "headcount_max": null,
+    "turnover_annual_max": null,
+    "sme_category": "any",
+    "sectors": [
+     "deeptech",
+     "climate",
+     "ai",
+     "manufacturing"
+    ],
+    "stages": [
+     "idea",
+     "pre_seed",
+     "seed"
+    ],
+    "requires_local_entity": true,
+    "requires_incorporation": true,
+    "rd_focus": true,
+    "female_founder_only": false,
+    "underrepresented_focus": true,
+    "de_minimis": false,
+    "other_note": "IMPORTANT: B2S grants go to intermediary organisations - accelerators, universities, economic development organisations, venture funds and non-profits - not directly to startups. EDA states B2S 'grants fund programs that support innovators, entrepreneurs, and startups transforming ideas into the critical, emerging technologies of the future' and that EDA 'does not provide grants to individuals'. Startups benefit through the accelerators and capital-formation programmes these grants stand up. Applicants must be registered in SAM.gov with a Unique Entity ID."
+   },
+   "source_url": "https://www.eda.gov/funding/programs/build-to-scale",
+   "source_snippet": "B2S grants fund programs that support innovators, entrepreneurs, and startups transforming ideas into the critical, emerging technologies of the future.",
+   "last_verified_at": "2026-08-14",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "us-ma-massventures-start",
+   "name_local": "MassVentures START Program (SBIR Targeted Technologies)",
+   "name_en": "MassVentures START Program",
+   "country_code": "us",
+   "admin_level": "regional",
+   "admin_area": "Massachusetts",
+   "funder": "MassVentures (Massachusetts Technology Development Corporation), funded by the Commonwealth of Massachusetts",
+   "funder_type": "ppp",
+   "grant_type": "grant",
+   "category": "startup",
+   "amount_min": 100000,
+   "amount_max": 500000,
+   "amount_currency": "USD",
+   "amount_note": "Three rounds. In the most recent cycle MassVentures made '16 \"Round 1\" grants of $100,000 each', '7 \"Round 2\" grants of $200,000 each to the most promising Round 1 winners', and Round 3 provides 'up to $500,000 each of seed capital in a commercial spinout'. Since 2012 the programme has distributed '$46.2 million to 157 companies that have gone on to raise more than $5 billion and employ more than 3,400 people'.",
+   "cofunding_pct": null,
+   "is_automatic": false,
+   "application_url": "https://www.mass-ventures.com/start-program-info",
+   "application_channel": "online",
+   "deadline_type": "annual_call",
+   "deadline_note": "Annual application window. MassVentures states 'The application window will reopen February 1st, 2027.'",
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Win a federal SBIR/STTR Phase II award as a Massachusetts-based company.",
+     "url": null
+    },
+    {
+     "step": 2,
+     "detail": "Apply to START during the annual window (reopens 1 February 2027).",
+     "url": "https://www.mass-ventures.com/start-program-info"
+    },
+    {
+     "step": 3,
+     "detail": "Round 1 winners ($100,000) may compete for Round 2 ($200,000) and then Round 3 (up to $500,000 of seed capital in a commercial spinout).",
+     "url": null
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "Evidence of a federal SBIR/STTR Phase II award",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Commercialisation plan",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Massachusetts operating and job creation information",
+     "mandatory": true,
+     "note": null
+    }
+   ],
+   "eligibility": {
+    "entity": "startup",
+    "company_age_months_min": null,
+    "company_age_months_max": null,
+    "headcount_min": null,
+    "headcount_max": 500,
+    "turnover_annual_max": null,
+    "sme_category": "any",
+    "sectors": [
+     "deeptech",
+     "health",
+     "climate",
+     "manufacturing",
+     "ai"
+    ],
+    "stages": [
+     "seed",
+     "series_a"
+    ],
+    "requires_local_entity": true,
+    "requires_incorporation": true,
+    "rd_focus": true,
+    "female_founder_only": false,
+    "underrepresented_focus": false,
+    "de_minimis": false,
+    "other_note": "Restricted to Massachusetts-based companies that have completed or hold a federal SBIR Phase II contract - it is explicitly a bridge from federal R&D funding to commercialisation. This is a state grant so no SAM.gov registration or UEI is required for START itself, but the qualifying federal SBIR Phase II award does require SAM.gov registration with a Unique Entity ID."
+   },
+   "source_url": "https://www.mass-ventures.com/start-program-info",
+   "source_snippet": "16 \"Round 1\" grants of $100,000 each ... 7 \"Round 2\" grants of $200,000 each to the most promising Round 1 winners",
+   "last_verified_at": "2026-08-14",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "us-mbda-business-center-program",
+   "name_local": "MBDA Business Center Program (including the Rural Business Center Program)",
+   "name_en": "Minority Business Development Agency Business Center Program",
+   "country_code": "us",
+   "admin_level": "national",
+   "admin_area": null,
+   "funder": "Minority Business Development Agency, U.S. Department of Commerce",
+   "funder_type": "public",
+   "grant_type": "in_kind",
+   "category": "startup",
+   "amount_min": 2250000,
+   "amount_max": 3000000,
+   "amount_currency": "USD",
+   "amount_note": "Figures shown are for the FY2026 MBDA Rural Business Center Program NOFO: 'approximately $14,500,000 for 5 - 7 awards' with individual awards of 'approximately $2,250,000 to $3,000,000' over a three-year project period, requiring '20% of the total amount of Federal funding' in non-federal cost share. These are cooperative agreements to the organisations that run the centres. Individual businesses receive free advisory services, not cash. MBDA's earlier $125 million Capital Readiness Program (43 awardees) is closed to new applications.",
+   "cofunding_pct": 20,
+   "is_automatic": false,
+   "application_url": "https://www.mbda.gov/grants",
+   "application_channel": "portal",
+   "deadline_type": "annual_call",
+   "deadline_note": "MBDA Rural Business Center Program FY2026: 'Due June 29, 2026, by 11:59 p.m. Eastern Daylight Time'; project period approximately 1 September 2026 - 31 August 2029. Other Business Center competitions are announced periodically on grants.gov.",
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "As a minority-owned business seeking help, find and contact your nearest MBDA Business Center - services are free at point of use.",
+     "url": "https://www.mbda.gov/businesscenters"
+    },
+    {
+     "step": 2,
+     "detail": "As an organisation wishing to operate a centre, register in SAM.gov (UEI) and Grants.gov and monitor MBDA NOFOs.",
+     "url": "https://www.mbda.gov/grants"
+    },
+    {
+     "step": 3,
+     "detail": "Submit the cooperative agreement application with the required non-federal cost share by the deadline.",
+     "url": null
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "Project narrative and operating plan for the centre",
+     "mandatory": true,
+     "note": "Applicants only"
+    },
+    {
+     "doc": "Evidence of non-federal cost share (20% of federal funding for the Rural Business Center Program)",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "SAM.gov registration with UEI",
+     "mandatory": true,
+     "note": null
+    }
+   ],
+   "eligibility": {
+    "entity": "startup",
+    "company_age_months_min": null,
+    "company_age_months_max": null,
+    "headcount_min": null,
+    "headcount_max": null,
+    "turnover_annual_max": null,
+    "sme_category": "any",
+    "sectors": [
+     "any"
+    ],
+    "stages": [
+     "idea",
+     "pre_seed",
+     "seed",
+     "growth"
+    ],
+    "requires_local_entity": true,
+    "requires_incorporation": false,
+    "rd_focus": false,
+    "female_founder_only": false,
+    "underrepresented_focus": true,
+    "de_minimis": false,
+    "other_note": "IMPORTANT: MBDA does not make cash grants to individual businesses. Grants and cooperative agreements go to host organisations (for the FY2026 Rural Business Center Program, eligible applicants are 'Institutions of higher education' meeting specific criteria - HBCUs, Hispanic-serving institutions, Tribal colleges - or consortia led by such institutions), which then deliver free business consulting, capital access and contracting support to minority and underserved business enterprises. Applicant organisations must be registered in SAM.gov with a Unique Entity ID."
+   },
+   "source_url": "https://files.simpler.grants.gov/opportunities/dfeeab1b-cc40-475c-b5c4-73836f302dea/attachments/239f1af7-a203-40d7-bd7b-7c85e63a95b8/RBC_MBDA_FINAL_OMB-FALD-May_26_2026-CLEAN_05282026.pdf",
+   "source_snippet": "approximately $14,500,000 for 5 - 7 awards ... approximately $2,250,000 to $3,000,000 ... Due June 29, 2026, by 11:59 p.m. Eastern Daylight Time",
+   "last_verified_at": "2026-08-14",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "us-mi-business-accelerator-fund",
+   "name_local": "Michigan Business Accelerator Fund (BAF)",
+   "name_en": "Michigan Business Accelerator Fund",
+   "country_code": "us",
+   "admin_level": "regional",
+   "admin_area": "Michigan",
+   "funder": "Michigan Economic Development Corporation (MEDC) via the Michigan SmartZone network",
+   "funder_type": "public",
+   "grant_type": "in_kind",
+   "category": "startup",
+   "amount_min": 7000,
+   "amount_max": 50000,
+   "amount_currency": "USD",
+   "amount_note": "Delivered as services rather than cash: a maximum of '$50,000 in BAF services' per company, with a typical engagement range of '$7,000 to $15,000'. Services are procured on the company's behalf by the SmartZone accelerator (market research, regulatory strategy, IP, prototyping support and similar).",
+   "cofunding_pct": null,
+   "is_automatic": false,
+   "application_url": "https://www.michiganbusiness.org/services/entrepreneurial-opportunity/early-stage-funding/",
+   "application_channel": "email",
+   "deadline_type": "rolling",
+   "deadline_note": "Rolling - accessed through a Michigan SmartZone accelerator rather than a competitive call.",
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Engage with a Michigan SmartZone accelerator or MEDC-supported incubator.",
+     "url": "https://www.michiganbusiness.org/services/entrepreneurial-opportunity/early-stage-funding/"
+    },
+    {
+     "step": 2,
+     "detail": "Work with the accelerator to define the specific service need and scope a BAF engagement.",
+     "url": null
+    },
+    {
+     "step": 3,
+     "detail": "The accelerator requests BAF funds and procures the service provider.",
+     "url": null
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "Scope of work for the requested service",
+     "mandatory": true,
+     "note": "Prepared with the SmartZone accelerator"
+    },
+    {
+     "doc": "Company overview and technology description",
+     "mandatory": true,
+     "note": null
+    }
+   ],
+   "eligibility": {
+    "entity": "startup",
+    "company_age_months_min": null,
+    "company_age_months_max": null,
+    "headcount_min": null,
+    "headcount_max": null,
+    "turnover_annual_max": null,
+    "sme_category": "micro",
+    "sectors": [
+     "deeptech",
+     "health",
+     "manufacturing",
+     "ai",
+     "climate"
+    ],
+    "stages": [
+     "idea",
+     "pre_seed",
+     "seed"
+    ],
+    "requires_local_entity": true,
+    "requires_incorporation": true,
+    "rd_focus": true,
+    "female_founder_only": false,
+    "underrepresented_focus": false,
+    "de_minimis": false,
+    "other_note": "Available to high-tech Michigan companies working through the SmartZone accelerator network. Funds are never paid to the company directly - the accelerator buys in specialist services on its behalf, so this is an in-kind benefit. State programme - no SAM.gov registration or UEI required."
+   },
+   "source_url": "https://www.michiganbusiness.org/services/entrepreneurial-opportunity/early-stage-funding/",
+   "source_snippet": "Maximum per company: $50,000 in BAF services",
+   "last_verified_at": "2026-08-14",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "us-mi-emerging-technologies-fund",
+   "name_local": "Michigan Emerging Technologies Fund (ETF)",
+   "name_en": "Michigan Emerging Technologies Fund",
+   "country_code": "us",
+   "admin_level": "regional",
+   "admin_area": "Michigan",
+   "funder": "Michigan Economic Development Corporation (MEDC), administered by the Michigan Small Business Development Center",
+   "funder_type": "public",
+   "grant_type": "grant",
+   "category": "startup",
+   "amount_min": 25000,
+   "amount_max": 125000,
+   "amount_currency": "USD",
+   "amount_note": "Matching funds for federal SBIR/STTR awards: '$25,000' for Phase I matches and 'up to $125,000' for Phase II matches, with the Phase II match requiring a third-party match. Lifetime limits: a maximum of 'two (2) ETF grants covering Phase II awards and no more than four (4) ETF grants covering Phase I awards for a total of no more than six (6)'.",
+   "cofunding_pct": null,
+   "is_automatic": false,
+   "application_url": "https://www.michiganbusiness.org/services/entrepreneurial-opportunity/early-stage-funding/",
+   "application_channel": "online",
+   "deadline_type": "rolling",
+   "deadline_note": "Applications are tied to federal SBIR/STTR submission deadlines - the ETF application must be submitted before the federal deadline. No more than two ETF grants per company per 12-month period.",
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Before the federal SBIR/STTR deadline, 'submit an electronic application through the ETF website at www.mietf.org'.",
+     "url": "https://www.mietf.org/"
+    },
+    {
+     "step": 2,
+     "detail": "The MI-SBDC reviews the application and provides a support letter 'within five (5) business days'.",
+     "url": null
+    },
+    {
+     "step": 3,
+     "detail": "After receiving the federal award, submit documentation and enter an ETF agreement before funds are disbursed.",
+     "url": null
+    },
+    {
+     "step": 4,
+     "detail": "Submit annual reports for five years covering commercialisation, jobs, patents and revenue.",
+     "url": null
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "Copy of the federal SBIR/STTR proposal",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Notice of the federal award",
+     "mandatory": true,
+     "note": "Required before disbursement"
+    },
+    {
+     "doc": "Evidence of third-party match",
+     "mandatory": true,
+     "note": "Phase II matches only"
+    },
+    {
+     "doc": "Signed ETF agreement",
+     "mandatory": true,
+     "note": null
+    }
+   ],
+   "eligibility": {
+    "entity": "startup",
+    "company_age_months_min": null,
+    "company_age_months_max": null,
+    "headcount_min": null,
+    "headcount_max": 500,
+    "turnover_annual_max": null,
+    "sme_category": "any",
+    "sectors": [
+     "health",
+     "deeptech",
+     "manufacturing",
+     "climate"
+    ],
+    "stages": [
+     "idea",
+     "pre_seed",
+     "seed"
+    ],
+    "requires_local_entity": true,
+    "requires_incorporation": true,
+    "rd_focus": true,
+    "female_founder_only": false,
+    "underrepresented_focus": false,
+    "de_minimis": false,
+    "other_note": "Must be a Michigan-based business with principal operations in the state, submitting an SBIR/STTR proposal in one of four technology sectors (life sciences, homeland security/defense, advanced automotive/manufacturing/materials, or alternative energy), and must have no more than 'two (2) SBIR/STTR Phase II federal awards'. Maximum two ETF grants per 12-month period. The underlying federal SBIR/STTR award requires SAM.gov registration with a Unique Entity ID and SBA Company Registry registration; the state ETF match itself does not."
+   },
+   "source_url": "https://www.michiganbusiness.org/4aef88/globalassets/documents/reports/fact-sheets/emergingtechnologiesfundmedc.pdf",
+   "source_snippet": "two (2) ETF grants covering Phase II awards and no more than four (4) ETF grants covering Phase I awards for a total of no more than six (6)",
+   "last_verified_at": "2026-08-14",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "us-nasa-sbir-sttr",
+   "name_local": "NASA SBIR/STTR Program",
+   "name_en": "NASA Small Business Innovation Research / Small Business Technology Transfer Program",
+   "country_code": "us",
+   "admin_level": "national",
+   "admin_area": null,
+   "funder": "National Aeronautics and Space Administration",
+   "funder_type": "public",
+   "grant_type": "grant",
+   "category": "startup",
+   "amount_min": null,
+   "amount_max": 1275000,
+   "amount_currency": "USD",
+   "amount_note": "NASA publishes Phase I as 'Up to $225,000' (SBIR 6 months, STTR 13 months) - the 2025 selections were made at $150,000 each, so the actual figure varies by solicitation year. Phase II is 'Up to $1,275,000' over 24 months for both SBIR and STTR, plus 'up to $50,000 in Technical and Business Assistance (TABA) funds'. NASA's ceilings sit below the SBA guideline maxima.",
+   "cofunding_pct": null,
+   "is_automatic": false,
+   "application_url": "https://www.nasa.gov/sbir_sttr/",
+   "application_channel": "portal",
+   "deadline_type": "annual_call",
+   "deadline_note": "Annual solicitation cycle published on the NASA SBIR/STTR site. Recent examples: 2026-2027 BAA Appendix 26A-I SBIR opened 21 April 2026 and closed 21 May 2026; 2026 Phase II Sequential Call for White Papers opened 12 August 2026 and closes 11 September 2026.",
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Register in SAM.gov for a UEI, then create an account in the NASA SBIR/STTR EHB (Electronic Handbook).",
+     "url": "https://sam.gov/content/entity-registration"
+    },
+    {
+     "step": 2,
+     "detail": "Review the annual solicitation subtopics and submit a Phase I proposal via the EHB before the closing date.",
+     "url": "https://www.nasa.gov/sbir_sttr/"
+    },
+    {
+     "step": 3,
+     "detail": "Successful Phase I awardees may propose for Phase II (up to $1,275,000 over 24 months).",
+     "url": "https://www.nasa.gov/sbir_sttr/phase-ii"
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "Technical proposal against a NASA subtopic",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Budget / cost proposal",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Briefing chart and commercialisation information",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "SAM.gov registration with UEI",
+     "mandatory": true,
+     "note": null
+    }
+   ],
+   "eligibility": {
+    "entity": "startup",
+    "company_age_months_min": null,
+    "company_age_months_max": null,
+    "headcount_min": null,
+    "headcount_max": 500,
+    "turnover_annual_max": null,
+    "sme_category": "any",
+    "sectors": [
+     "deeptech",
+     "manufacturing",
+     "ai"
+    ],
+    "stages": [
+     "idea",
+     "pre_seed",
+     "seed"
+    ],
+    "requires_local_entity": true,
+    "requires_incorporation": true,
+    "rd_focus": true,
+    "female_founder_only": false,
+    "underrepresented_focus": false,
+    "de_minimis": false,
+    "other_note": "Standard SBIR/STTR eligibility: US for-profit small business concern, 500 or fewer employees including affiliates, majority owned and controlled by US citizens or permanent residents. STTR requires a partnering US research institution. NASA awards are contracts, so SAM.gov registration with a Unique Entity ID and CAGE code is mandatory, plus registration in the SBA Company Registry."
+   },
+   "source_url": "https://www.nasa.gov/sbir_sttr/phase-ii",
+   "source_snippet": "Up to $1,275,000 ... 24 months ... up to $50,000 in Technical and Business Assistance (TABA) funds",
+   "last_verified_at": "2026-08-14",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "us-nih-sbir-sttr",
+   "name_local": "NIH SBIR/STTR Program (Seed - NIH Small Business Programs)",
+   "name_en": "National Institutes of Health SBIR/STTR Program",
+   "country_code": "us",
+   "admin_level": "national",
+   "admin_area": null,
+   "funder": "U.S. National Institutes of Health (Department of Health and Human Services)",
+   "funder_type": "public",
+   "grant_type": "grant",
+   "category": "startup",
+   "amount_min": null,
+   "amount_max": 2153927,
+   "amount_currency": "USD",
+   "amount_note": "NIH SEED: 'A Phase I budget is $323,090 for a project timeline between 6 months to 2 years' and 'A Phase II budget is $2,153,927 for a project timeline between 1 to 3 years.' These match the SBA guideline ceilings. NIH additionally 'has a waiver from the Small Business Administration (SBA) to allow larger awards (Phase I and Phase II only)' for specific topics - applicants must contact programme officials before exceeding the listed totals.",
+   "cofunding_pct": null,
+   "is_automatic": false,
+   "application_url": "https://seed.nih.gov/small-business-funding",
+   "application_channel": "portal",
+   "deadline_type": "cutoff",
+   "deadline_note": "NIH runs three standard SBIR/STTR receipt dates per year (commonly 5 January, 5 April, 5 September) plus numerous targeted funding opportunities with their own dates. Check the specific NOFO in the NIH Guide.",
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Register in SAM.gov for a UEI, then in eRA Commons, Grants.gov and the SBA Company Registry - allow 6-8 weeks.",
+     "url": "https://sam.gov/content/entity-registration"
+    },
+    {
+     "step": 2,
+     "detail": "Identify a relevant NIH Institute/Center and funding opportunity; contact the program official, especially if planning a budget above the guideline.",
+     "url": "https://seed.nih.gov/small-business-funding"
+    },
+    {
+     "step": 3,
+     "detail": "Submit the application through Grants.gov / ASSIST by the receipt date.",
+     "url": null
+    },
+    {
+     "step": 4,
+     "detail": "Peer review, council review, then award (typically ~9 months from submission).",
+     "url": null
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "Research Strategy / Specific Aims",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Detailed budget and justification",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Commercialization Plan",
+     "mandatory": true,
+     "note": "Required for Phase II; for Phase I in some NOFOs"
+    },
+    {
+     "doc": "SAM.gov (UEI), eRA Commons and SBA Company Registry registrations",
+     "mandatory": true,
+     "note": null
+    }
+   ],
+   "eligibility": {
+    "entity": "startup",
+    "company_age_months_min": null,
+    "company_age_months_max": null,
+    "headcount_min": null,
+    "headcount_max": 500,
+    "turnover_annual_max": null,
+    "sme_category": "any",
+    "sectors": [
+     "health",
+     "deeptech"
+    ],
+    "stages": [
+     "idea",
+     "pre_seed",
+     "seed"
+    ],
+    "requires_local_entity": true,
+    "requires_incorporation": true,
+    "rd_focus": true,
+    "female_founder_only": false,
+    "underrepresented_focus": false,
+    "de_minimis": false,
+    "other_note": "Standard SBIR/STTR eligibility: US-based for-profit small business concern, 500 employees or fewer including affiliates, majority US-owned. NIH is the largest single source of SBIR/STTR funding after the Department of War. SAM.gov entity registration with a Unique Entity ID, plus eRA Commons and SBA Company Registry accounts, are mandatory before submission - registration lead time is the most common cause of missed deadlines."
+   },
+   "source_url": "https://seed.nih.gov/small-business-funding/small-business-program-basics/understanding-sbir-sttr",
+   "source_snippet": "A Phase I budget is $323,090 for a project timeline between 6 months to 2 years. ... A Phase II budget is $2,153,927 for a project timeline between 1 to 3 years.",
+   "last_verified_at": "2026-08-14",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "us-nsf-americas-seed-fund",
+   "name_local": "NSF SBIR/STTR - America's Seed Fund powered by NSF",
+   "name_en": "NSF America's Seed Fund (SBIR/STTR)",
+   "country_code": "us",
+   "admin_level": "national",
+   "admin_area": null,
+   "funder": "U.S. National Science Foundation",
+   "funder_type": "public",
+   "grant_type": "grant",
+   "category": "startup",
+   "amount_min": null,
+   "amount_max": 1250000,
+   "amount_currency": "USD",
+   "amount_note": "Solicitation NSF 26-511: Phase I 'up to $305,000 in R&D funding' over 6-18 months; Phase II 'up to $1,250,000' over 24 months. NSF raised these ceilings from previous levels in June 2024. NSF's headline is 'We invest up to $2 million in seed funding' across the phases including supplements.",
+   "cofunding_pct": null,
+   "is_automatic": false,
+   "application_url": "https://seedfund.nsf.gov/",
+   "application_channel": "portal",
+   "deadline_type": "cutoff",
+   "deadline_note": "Three proposal deadlines per year. Published in NSF 26-511: 27 July 2026; 4 November 2026 and the first Wednesday in November annually thereafter; 4 March 2027 and the first Thursday in March annually thereafter; 7 July 2027 and the first Wednesday in July annually thereafter. A Project Pitch must be submitted and approved first.",
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Submit a Project Pitch; prospective applicants 'must obtain an official invitation to submit a proposal' from NSF program staff. Invitations remain valid for the next two submission deadlines.",
+     "url": "https://seedfund.nsf.gov/project-pitch/"
+    },
+    {
+     "step": 2,
+     "detail": "Register the company in SAM.gov (UEI), Research.gov and the SBA Company Registry.",
+     "url": "https://sam.gov/content/entity-registration"
+    },
+    {
+     "step": 3,
+     "detail": "Submit the full Phase I proposal via Research.gov or Grants.gov by a deadline.",
+     "url": "https://seedfund.nsf.gov/apply/"
+    },
+    {
+     "step": 4,
+     "detail": "Phase I awardees may later apply for Phase II (up to $1,250,000, 24 months).",
+     "url": null
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "Project Pitch (3 pages max, online form)",
+     "mandatory": true,
+     "note": "Gateway - no invitation, no proposal"
+    },
+    {
+     "doc": "Project Description / technical proposal",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Budget and budget justification",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Biographical sketches for senior personnel",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "SAM.gov registration with UEI + SBA Company Registry ID",
+     "mandatory": true,
+     "note": null
+    }
+   ],
+   "eligibility": {
+    "entity": "startup",
+    "company_age_months_min": null,
+    "company_age_months_max": null,
+    "headcount_min": null,
+    "headcount_max": 500,
+    "turnover_annual_max": null,
+    "sme_category": "any",
+    "sectors": [
+     "deeptech",
+     "health",
+     "climate",
+     "ai",
+     "manufacturing",
+     "agri"
+    ],
+    "stages": [
+     "idea",
+     "pre_seed",
+     "seed"
+    ],
+    "requires_local_entity": true,
+    "requires_incorporation": true,
+    "rd_focus": true,
+    "female_founder_only": false,
+    "underrepresented_focus": false,
+    "de_minimis": false,
+    "other_note": "NSF 26-511: applicants must be 'firms qualifying as a small business concern' with the 'size limit of 500 employees includes affiliates'; majority US-owned and for-profit, located in the US. STTR proposals must include a partner research institution. NSF funds any area of science and engineering with commercial potential except clinical trials and certain regulated activities. SAM.gov registration with a UEI is mandatory before award - it is the practical gate for all federal awards."
+   },
+   "source_url": "https://www.nsf.gov/funding/opportunities/small-business-innovation-research-small-business-technology-0/nsf26-511/solicitation",
+   "source_snippet": "up to $305,000 in R&D funding ... 6-18 months ... Phase II ... up to $1,250,000 ... 24 months",
+   "last_verified_at": "2026-08-14",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "us-ny-excelsior-jobs-program",
+   "name_local": "Excelsior Jobs Program",
+   "name_en": "New York Excelsior Jobs Program",
+   "country_code": "us",
+   "admin_level": "regional",
+   "admin_area": "New York",
+   "funder": "Empire State Development (ESD), New York State",
+   "funder_type": "public",
+   "grant_type": "tax_credit",
+   "category": "startup",
+   "amount_min": null,
+   "amount_max": null,
+   "amount_currency": "USD",
+   "amount_note": "No fixed per-company ceiling; the benefit is a package of fully refundable tax credits sized against a company's own wages, investment and R&D. Rates: Excelsior Jobs Tax Credit 'a credit of up to 6.85% of wages per net new job' (7% semiconductor supply chain, 7.5% green/green CHIPS); Investment Tax Credit 2% of qualified investments (3% semiconductor, 5% green/green CHIPS and child care); R&D Tax Credit '50% of the portion of the Federal Research and Development tax credit' capped at 6% of qualifying research expenditures in New York; plus Real Property and Child Care Services credits. Credits are claimed 'over a benefit period of up to 10 years' (up to 20 years for green CHIPS).",
+   "cofunding_pct": null,
+   "is_automatic": false,
+   "application_url": "https://esd.ny.gov/excelsior-jobs-program",
+   "application_channel": "online",
+   "deadline_type": "rolling",
+   "deadline_note": "Applications are accepted on a rolling basis, subject to the annual programme cap; also accessible through New York's Consolidated Funding Application rounds.",
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Confirm your industry qualifies and you can meet the net new job threshold (5 jobs for scientific R&D, software development, life sciences, agriculture, manufacturing and music production).",
+     "url": "https://esd.ny.gov/excelsior-jobs-program"
+    },
+    {
+     "step": 2,
+     "detail": "Contact the appropriate ESD Industry Director or ESD Regional Office, or submit via the Consolidated Funding Application.",
+     "url": null
+    },
+    {
+     "step": 3,
+     "detail": "Receive a Certificate of Eligibility, then annually document job and investment performance to receive a Certificate of Tax Credit.",
+     "url": null
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "Application to ESD with job creation and investment schedule",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Annual performance reports evidencing net new jobs and qualified investment",
+     "mandatory": true,
+     "note": "Credits are only issued after performance is verified"
+    }
+   ],
+   "eligibility": {
+    "entity": "startup",
+    "company_age_months_min": null,
+    "company_age_months_max": null,
+    "headcount_min": 5,
+    "headcount_max": null,
+    "turnover_annual_max": null,
+    "sme_category": "any",
+    "sectors": [
+     "deeptech",
+     "health",
+     "ai",
+     "agri",
+     "manufacturing",
+     "creative"
+    ],
+    "stages": [
+     "seed",
+     "series_a",
+     "growth"
+    ],
+    "requires_local_entity": true,
+    "requires_incorporation": true,
+    "rd_focus": true,
+    "female_founder_only": false,
+    "underrepresented_focus": false,
+    "de_minimis": false,
+    "other_note": "Job thresholds by sector: scientific research and development 5+, software development 5+, life sciences 5+, agriculture 5+, manufacturing 5+, music production 5+, financial services back office 25+, distribution 50+, entertainment 100+. Other firms need 'at least 150 net new jobs and investing at least $3 million'. The 5-job thresholds for software, life sciences and R&D make this genuinely reachable by a funded startup. Credits are fully refundable, which matters for pre-profit companies. State programme - no SAM.gov registration or UEI required."
+   },
+   "source_url": "https://esd.ny.gov/excelsior-jobs-program",
+   "source_snippet": "A credit of up to 6.85% of wages per net new job",
+   "last_verified_at": "2026-08-14",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "us-ny-innovation-venture-capital-fund",
+   "name_local": "New York State Innovation Venture Capital Fund (New York Ventures)",
+   "name_en": "New York State Innovation Venture Capital Fund",
+   "country_code": "us",
+   "admin_level": "regional",
+   "admin_area": "New York",
+   "funder": "Empire State Development (New York Ventures)",
+   "funder_type": "public",
+   "grant_type": "equity",
+   "category": "startup",
+   "amount_min": null,
+   "amount_max": null,
+   "amount_currency": "USD",
+   "amount_note": "Fund size is '$100 million - with an additional $35 million of SSBCI funding'. ESD does not publish a per-company investment range on the fund page. New York Ventures invests primarily at Seed and Series A and 'invest[s] alongside your lead institutional or strategic investor but do not lead rounds themselves' - so the cheque is sized as a co-investment in a round led by someone else.",
+   "cofunding_pct": null,
+   "is_automatic": false,
+   "application_url": "https://esd.ny.gov/new-york-state-innovation-venture-capital-fund",
+   "application_channel": "email",
+   "deadline_type": "rolling",
+   "deadline_note": "No deadline; the fund reviews opportunities on a rolling basis. There is no formal public application form - founders contact New York Ventures directly via the email address on the fund page.",
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Secure or line up a lead institutional or strategic investor for your round - New York Ventures co-invests and does not lead.",
+     "url": null
+    },
+    {
+     "step": 2,
+     "detail": "Contact New York Ventures directly with your deck and round details.",
+     "url": "https://esd.ny.gov/new-york-state-innovation-venture-capital-fund"
+    },
+    {
+     "step": 3,
+     "detail": "Complete due diligence and commit to building the workforce and economic activity in New York State.",
+     "url": null
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "Pitch deck and financial model",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Term sheet from the lead investor",
+     "mandatory": true,
+     "note": "New York Ventures co-invests rather than leading"
+    },
+    {
+     "doc": "New York job creation / economic activity commitment",
+     "mandatory": true,
+     "note": null
+    }
+   ],
+   "eligibility": {
+    "entity": "startup",
+    "company_age_months_min": null,
+    "company_age_months_max": null,
+    "headcount_min": null,
+    "headcount_max": null,
+    "turnover_annual_max": null,
+    "sme_category": "any",
+    "sectors": [
+     "climate",
+     "health",
+     "agri",
+     "manufacturing",
+     "ai",
+     "deeptech"
+    ],
+    "stages": [
+     "seed",
+     "series_a"
+    ],
+    "requires_local_entity": false,
+    "requires_incorporation": true,
+    "rd_focus": true,
+    "female_founder_only": false,
+    "underrepresented_focus": true,
+    "de_minimis": false,
+    "other_note": "Target sectors: climate tech, health tech, life sciences, ag-tech, advanced manufacturing, social impact SaaS, data and AI. The fund targets 'exceptional founders from diverse backgrounds who solve large-scale problems using innovative technologies'. Portfolio companies must commit to 'building a diverse workforce in New York State, generating new jobs and other economic activity'; the fund also considers companies 'willing to relocate to New York', so a New York entity is not a precondition to first contact. Partly capitalised with federal SSBCI funds, which carry federal eligibility certifications. No SAM.gov registration or UEI required by the startup."
+   },
+   "source_url": "https://esd.ny.gov/new-york-state-innovation-venture-capital-fund",
+   "source_snippet": "$100 million – with an additional $35 million of SSBCI funding",
+   "last_verified_at": "2026-08-14",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "us-rd-credit-payroll-tax-offset",
+   "name_local": "Credit for Increasing Research Activities - qualified small business payroll tax election",
+   "name_en": "R&D Tax Credit with Qualified Small Business Payroll Tax Offset",
+   "country_code": "us",
+   "admin_level": "national",
+   "admin_area": null,
+   "funder": "Internal Revenue Service, U.S. Department of the Treasury",
+   "funder_type": "public",
+   "grant_type": "tax_credit",
+   "category": "startup",
+   "amount_min": null,
+   "amount_max": 500000,
+   "amount_currency": "USD",
+   "amount_note": "IRS: 'The Inflation Reduction Act of 2022 (IRA) increases the election amount from $250,000 to $500,000 for tax years beginning after December 31, 2022'. The $500,000 annual cap is on the portion of the research credit a qualified small business may elect to apply against payroll taxes: first against the employer share of Social Security tax up to $250,000 per year, then any remainder against the employer share of Medicare tax. The underlying research credit itself is uncapped - only the payroll-offset election is capped. Unused amounts carry forward to subsequent quarters.",
+   "cofunding_pct": null,
+   "is_automatic": false,
+   "application_url": "https://www.irs.gov/credits-deductions/research-credit-against-payroll-tax-for-small-businesses",
+   "application_channel": "post",
+   "deadline_type": "annual_call",
+   "deadline_note": "The election 'must be made on or before the due date of the original income tax return (including extensions)' for the tax year in question. It cannot be made on an amended return (limited relief has historically been available).",
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Identify and document qualified research expenses under IRC section 41 for the tax year.",
+     "url": null
+    },
+    {
+     "step": 2,
+     "detail": "Compute the credit and make the payroll tax election on Form 6765, Credit for Increasing Research Activities, filed with the timely original income tax return.",
+     "url": "https://www.irs.gov/forms-pubs/about-form-6765"
+    },
+    {
+     "step": 3,
+     "detail": "Carry the amount from Form 6765 line 44 to Form 8974, Qualified Small Business Payroll Tax Credit for Increasing Research Activities.",
+     "url": "https://www.irs.gov/forms-pubs/about-form-8974"
+    },
+    {
+     "step": 4,
+     "detail": "File Form 8974 with the employment tax return (Form 941) for the first quarter beginning after the income tax return was filed, and each subsequent quarter until used up.",
+     "url": null
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "Form 6765 (Credit for Increasing Research Activities) with the payroll tax election",
+     "mandatory": true,
+     "note": "Must be on a timely-filed original return"
+    },
+    {
+     "doc": "Form 8974 attached to Form 941",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Contemporaneous documentation of qualified research expenses (project records, payroll allocation, contractor invoices)",
+     "mandatory": true,
+     "note": "Needed to survive examination"
+    }
+   ],
+   "eligibility": {
+    "entity": "startup",
+    "company_age_months_min": null,
+    "company_age_months_max": 60,
+    "headcount_min": null,
+    "headcount_max": null,
+    "turnover_annual_max": 5000000,
+    "sme_category": "any",
+    "sectors": [
+     "any"
+    ],
+    "stages": [
+     "pre_seed",
+     "seed",
+     "series_a"
+    ],
+    "requires_local_entity": true,
+    "requires_incorporation": true,
+    "rd_focus": true,
+    "female_founder_only": false,
+    "underrepresented_focus": false,
+    "de_minimis": false,
+    "other_note": "The payroll offset is designed for pre-revenue startups with no income tax liability. To be a 'qualified small business' under IRC 41(h) a taxpayer must have gross receipts of less than $5 million for the credit year and must not have had gross receipts for any tax year before the five-tax-year period ending with the credit year - i.e. broadly a company in its first five years of receipts. This is a tax election, not an award, so no SAM.gov registration or UEI is required. The gross-receipts and five-year tests were not re-verified verbatim against irs.gov in this pass - confirm against the current Form 6765 instructions before relying on them."
+   },
+   "source_url": "https://www.irs.gov/credits-deductions/research-credit-against-payroll-tax-for-small-businesses",
+   "source_snippet": "The Inflation Reduction Act of 2022 (IRA) increases the election amount from $250,000 to $500,000 for tax years beginning after December 31, 2022",
+   "last_verified_at": "2026-08-14",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "us-sba-504-loan",
+   "name_local": "SBA 504 Loan Program",
+   "name_en": "SBA 504 Loan Program (CDC/504)",
+   "country_code": "us",
+   "admin_level": "national",
+   "admin_area": null,
+   "funder": "U.S. Small Business Administration via Certified Development Companies",
+   "funder_type": "ppp",
+   "grant_type": "loan",
+   "category": "startup",
+   "amount_min": null,
+   "amount_max": 5500000,
+   "amount_currency": "USD",
+   "amount_note": "SBA: 'The maximum loan amount for a 504 loan is $5.5 million.' This refers to the CDC/SBA debenture portion; the total project is typically financed 50% by a third-party lender, 40% by the CDC/SBA debenture and 10% by the borrower.",
+   "cofunding_pct": 10,
+   "is_automatic": false,
+   "application_url": "https://www.sba.gov/funding-programs/loans/504-loans",
+   "application_channel": "online",
+   "deadline_type": "rolling",
+   "deadline_note": "No deadline; apply through a Certified Development Company year-round.",
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Confirm eligibility: tangible net worth under $20 million and average net income under $6.5 million after federal income taxes for the preceding two years.",
+     "url": "https://www.sba.gov/funding-programs/loans/504-loans"
+    },
+    {
+     "step": 2,
+     "detail": "Locate a Certified Development Company (CDC) in your area - '504 loans are available exclusively through Certified Development Companies (CDCs).'",
+     "url": "https://www.sba.gov/document/support-cdc-listing"
+    },
+    {
+     "step": 3,
+     "detail": "Work with the CDC and a third-party lender to structure the project financing.",
+     "url": null
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "Business plan and project cost breakdown",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Two years of business tax returns and financial statements",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Evidence of owner-occupancy / asset purchase documentation",
+     "mandatory": true,
+     "note": null
+    }
+   ],
+   "eligibility": {
+    "entity": "startup",
+    "company_age_months_min": null,
+    "company_age_months_max": null,
+    "headcount_min": null,
+    "headcount_max": null,
+    "turnover_annual_max": null,
+    "sme_category": "any",
+    "sectors": [
+     "manufacturing",
+     "any"
+    ],
+    "stages": [
+     "growth"
+    ],
+    "requires_local_entity": true,
+    "requires_incorporation": false,
+    "rd_focus": false,
+    "female_founder_only": false,
+    "underrepresented_focus": false,
+    "de_minimis": false,
+    "other_note": "For fixed assets only: purchase or construction of buildings, land or facilities, and long-term machinery and equipment with a minimum 10-year useful life, plus qualified debt refinancing. Cannot be used for working capital, inventory, speculative real estate or non-qualifying debt - so it is of limited use to early-stage software startups. No SAM.gov registration or UEI required (this is a guaranteed loan, not a federal award)."
+   },
+   "source_url": "https://www.sba.gov/funding-programs/loans/504-loans",
+   "source_snippet": "The maximum loan amount for a 504 loan is $5.5 million.",
+   "last_verified_at": "2026-08-14",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "us-sba-7a-loan",
+   "name_local": "SBA 7(a) Loan Program",
+   "name_en": "SBA 7(a) Loan Program",
+   "country_code": "us",
+   "admin_level": "national",
+   "admin_area": null,
+   "funder": "U.S. Small Business Administration",
+   "funder_type": "ppp",
+   "grant_type": "loan",
+   "category": "startup",
+   "amount_min": null,
+   "amount_max": 5000000,
+   "amount_currency": "USD",
+   "amount_note": "SBA: 'The maximum loan amount for a 7(a) loan is $5 million.' SBA guarantees a portion of the loan (85% for loans up to $150,000 and 75% above that); SBA's maximum exposure is $3.75 million. The loan itself is made by a participating lender, not by SBA.",
+   "cofunding_pct": null,
+   "is_automatic": false,
+   "application_url": "https://www.sba.gov/funding-programs/loans/7a-loans",
+   "application_channel": "online",
+   "deadline_type": "rolling",
+   "deadline_note": "No deadline; applications are made to participating lenders year-round.",
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Check eligibility against SBA size standards and the ineligible-business list.",
+     "url": "https://www.sba.gov/funding-programs/loans/7a-loans"
+    },
+    {
+     "step": 2,
+     "detail": "Find a participating lender using SBA's Lender Match tool or approach a local bank/CDFI directly.",
+     "url": "https://www.sba.gov/funding-programs/loans/lender-match"
+    },
+    {
+     "step": 3,
+     "detail": "Submit the lender's application package; the lender makes the credit decision and requests the SBA guarantee.",
+     "url": null
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "Business plan and financial projections",
+     "mandatory": true,
+     "note": "Exact documents depend on loan size and lender requirements"
+    },
+    {
+     "doc": "Business and personal tax returns and financial statements",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Personal guarantee from owners of 20% or more",
+     "mandatory": true,
+     "note": null
+    }
+   ],
+   "eligibility": {
+    "entity": "startup",
+    "company_age_months_min": null,
+    "company_age_months_max": null,
+    "headcount_min": null,
+    "headcount_max": null,
+    "turnover_annual_max": null,
+    "sme_category": "any",
+    "sectors": [
+     "any"
+    ],
+    "stages": [
+     "seed",
+     "growth"
+    ],
+    "requires_local_entity": true,
+    "requires_incorporation": false,
+    "rd_focus": false,
+    "female_founder_only": false,
+    "underrepresented_focus": false,
+    "de_minimis": false,
+    "other_note": "SBA criteria: operate as a for-profit business, be located in the US, meet SBA size standards, not be an ineligible business type, demonstrate inability to obtain comparable credit elsewhere, and show creditworthiness and repayment ability. No SAM.gov registration or UEI is needed for SBA guaranteed loans - SAM/UEI is the gate for federal grants and contracts, not for 7(a) lending. Size standards vary by NAICS code."
+   },
+   "source_url": "https://www.sba.gov/funding-programs/loans/7a-loans",
+   "source_snippet": "The maximum loan amount for a 7(a) loan is $5 million.",
+   "last_verified_at": "2026-08-14",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "us-sba-community-advantage-sblc",
+   "name_local": "Community Advantage Small Business Lending Companies (CA SBLC)",
+   "name_en": "Community Advantage Small Business Lending Companies (CA SBLC)",
+   "country_code": "us",
+   "admin_level": "national",
+   "admin_area": null,
+   "funder": "U.S. Small Business Administration",
+   "funder_type": "ppp",
+   "grant_type": "loan",
+   "category": "startup",
+   "amount_min": null,
+   "amount_max": 350000,
+   "amount_currency": "USD",
+   "amount_note": "SBA: 'CA SBLCs focus on making loans of up to $350,000 to small businesses in underserved markets'. The Biden-era attempt to raise the ceiling to $500,000 (and $2 million for climate projects) was reversed - in May 2025 SBA 'reinstated the moratorium on the approval of new Community Advantage lending licenses' and imposed higher capital reserve requirements. Existing licensed CA SBLCs continue to lend. Treat the $350,000 figure as the operative published ceiling.",
+   "cofunding_pct": null,
+   "is_automatic": false,
+   "application_url": "https://www.sba.gov/funding-programs/loans/lender-match",
+   "application_channel": "online",
+   "deadline_type": "rolling",
+   "deadline_note": "Borrowers apply year-round to a licensed CA SBLC. No new CA SBLC lender licences are being approved as of May 2025.",
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Confirm the business falls into an underserved market category (LMI community, HUBZone, Opportunity Zone, rural area, veteran-owned, or a business in operation for less than two years).",
+     "url": null
+    },
+    {
+     "step": 2,
+     "detail": "Identify a licensed CA SBLC lender, e.g. via SBA Lender Match.",
+     "url": "https://www.sba.gov/funding-programs/loans/lender-match"
+    },
+    {
+     "step": 3,
+     "detail": "Apply to the CA SBLC; it makes the credit decision under 7(a) rules.",
+     "url": null
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "Business plan and financial projections",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Tax returns and personal financial statement",
+     "mandatory": true,
+     "note": null
+    }
+   ],
+   "eligibility": {
+    "entity": "startup",
+    "company_age_months_min": null,
+    "company_age_months_max": null,
+    "headcount_min": null,
+    "headcount_max": null,
+    "turnover_annual_max": null,
+    "sme_category": "micro",
+    "sectors": [
+     "any"
+    ],
+    "stages": [
+     "idea",
+     "pre_seed",
+     "seed"
+    ],
+    "requires_local_entity": true,
+    "requires_incorporation": false,
+    "rd_focus": false,
+    "female_founder_only": false,
+    "underrepresented_focus": true,
+    "de_minimis": false,
+    "other_note": "Underserved markets defined by SBA as: businesses in Low-to-Moderate Income communities, Empowerment Zones, HUBZones, Promise Zones, Opportunity Zones or Rural Areas; 'New businesses (those in operation for less than two years)'; businesses 51 percent or more owned and controlled by one or more Veterans; and businesses where more than 50% of the full-time workforce is low-income or resides in LMI census tracts. This is the most startup-accessible SBA 7(a) channel. No SAM.gov registration or UEI required."
+   },
+   "source_url": "https://legacy.sba.gov/document/support-community-advantage-small-business-lending-companies-ca-sblcs",
+   "source_snippet": "CA SBLCs focus on making loans of up to $350,000 to small businesses in underserved markets",
+   "last_verified_at": "2026-08-14",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "us-sba-growth-accelerator-fund-competition",
+   "name_local": "SBA Growth Accelerator Fund Competition (GAFC)",
+   "name_en": "SBA Growth Accelerator Fund Competition (GAFC)",
+   "country_code": "us",
+   "admin_level": "national",
+   "admin_area": null,
+   "funder": "U.S. Small Business Administration",
+   "funder_type": "public",
+   "grant_type": "prize",
+   "category": "startup",
+   "amount_min": null,
+   "amount_max": null,
+   "amount_currency": "USD",
+   "amount_note": "Prize amounts have changed every round and no 2026 round has been announced. In the 2025 round SBA awarded '$5.7 million in 2025 Growth Accelerator Fund Competition (GAFC) awards' with individual awardees receiving a '$75,000 prize'. Earlier rounds ran two stages: SBA's January 2024 announcement described '$50,000 to $200,000 in prize awards in two stages', and the 2023 round offered Stage Two cash prizes of $50,000 to $150,000. Do not assume a fixed ceiling.",
+   "cofunding_pct": null,
+   "is_automatic": false,
+   "application_url": "https://www.americasseedfund.us/accelerators",
+   "application_channel": "portal",
+   "deadline_type": "annual_call",
+   "deadline_note": "Run as an annual competition; the 2025 round is closed and no 2026 round had been announced as of 14 August 2026. Watch americasseedfund.us and grants.gov.",
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Monitor SBA/America's Seed Fund for the annual GAFC announcement and theme areas (recent themes: Lab-to-Market and Capital Formation).",
+     "url": "https://www.americasseedfund.us/accelerators"
+    },
+    {
+     "step": 2,
+     "detail": "Register in SAM.gov to obtain a UEI, then submit the Stage One application via the competition portal / grants.gov.",
+     "url": "https://sam.gov/content/entity-registration"
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "Application describing the gap in the local innovation ecosystem and the proposed solution",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "SAM.gov registration with UEI",
+     "mandatory": true,
+     "note": null
+    }
+   ],
+   "eligibility": {
+    "entity": "startup",
+    "company_age_months_min": null,
+    "company_age_months_max": null,
+    "headcount_min": null,
+    "headcount_max": null,
+    "turnover_annual_max": null,
+    "sme_category": "any",
+    "sectors": [
+     "deeptech",
+     "any"
+    ],
+    "stages": [
+     "idea",
+     "pre_seed",
+     "seed"
+    ],
+    "requires_local_entity": true,
+    "requires_incorporation": true,
+    "rd_focus": true,
+    "female_founder_only": false,
+    "underrepresented_focus": true,
+    "de_minimis": false,
+    "other_note": "IMPORTANT: GAFC prizes go to entrepreneur support organizations (accelerators, incubators, ESOs), NOT directly to startups. Startups benefit indirectly through the services these organizations deliver. SBA describes it as for 'entrepreneur support organizations (ESOs) focused on innovation-driven startups and entrepreneurs in underserved regions, industries, and communities'. Applicants must be registered in SAM.gov with a UEI, the practical gate for all federal prize and grant awards."
+   },
+   "source_url": "https://www.americasseedfund.us/accelerators",
+   "source_snippet": "$5.7 million in 2025 Growth Accelerator Fund Competition (GAFC) awards",
+   "last_verified_at": "2026-08-14",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "us-sba-microloan",
+   "name_local": "SBA Microloan Program",
+   "name_en": "SBA Microloan Program",
+   "country_code": "us",
+   "admin_level": "national",
+   "admin_area": null,
+   "funder": "U.S. Small Business Administration via SBA-approved intermediary lenders",
+   "funder_type": "ppp",
+   "grant_type": "loan",
+   "category": "startup",
+   "amount_min": null,
+   "amount_max": 50000,
+   "amount_currency": "USD",
+   "amount_note": "SBA: 'The microloan program provides loans up to $50,000 to help small businesses and certain not-for-profit childcare centers start up and expand.' SBA also states 'The average microloan is about $13,000.' Maximum term seven years; interest rates generally 8%-13%, set by the intermediary lender.",
+   "cofunding_pct": null,
+   "is_automatic": false,
+   "application_url": "https://www.sba.gov/funding-programs/loans/microloans",
+   "application_channel": "online",
+   "deadline_type": "rolling",
+   "deadline_note": "No deadline; apply directly to an SBA-approved intermediary lender.",
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Find an SBA-approved microloan intermediary lender in your area.",
+     "url": "https://www.sba.gov/funding-programs/loans/microloans"
+    },
+    {
+     "step": 2,
+     "detail": "Apply directly to the intermediary - 'SBA-approved lenders make all credit decisions and set all terms for your microloan.'",
+     "url": null
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "Business plan",
+     "mandatory": true,
+     "note": "Requirements set by each intermediary lender"
+    },
+    {
+     "doc": "Collateral and personal guarantee from the business owner",
+     "mandatory": true,
+     "note": "Generally required"
+    }
+   ],
+   "eligibility": {
+    "entity": "startup",
+    "company_age_months_min": null,
+    "company_age_months_max": null,
+    "headcount_min": null,
+    "headcount_max": null,
+    "turnover_annual_max": null,
+    "sme_category": "micro",
+    "sectors": [
+     "any"
+    ],
+    "stages": [
+     "idea",
+     "pre_seed",
+     "seed"
+    ],
+    "requires_local_entity": true,
+    "requires_incorporation": false,
+    "rd_focus": false,
+    "female_founder_only": false,
+    "underrepresented_focus": true,
+    "de_minimis": false,
+    "other_note": "Each intermediary lender sets its own eligibility requirements; intermediaries are typically mission-driven non-profits/CDFIs targeting underserved borrowers. Proceeds may fund working capital, inventory, supplies, furniture, fixtures, machinery and equipment, but 'cannot be used to pay existing debts or to purchase real estate'. No SAM.gov registration or UEI required."
+   },
+   "source_url": "https://www.sba.gov/funding-programs/loans/microloans",
+   "source_snippet": "The microloan program provides loans up to $50,000 to help small businesses and certain not-for-profit childcare centers start up and expand.",
+   "last_verified_at": "2026-08-14",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "us-sbir",
+   "name_local": "Small Business Innovation Research (SBIR) Program",
+   "name_en": "Small Business Innovation Research (SBIR) Program",
+   "country_code": "us",
+   "admin_level": "national",
+   "admin_area": null,
+   "funder": "U.S. Small Business Administration (coordinating) and 11 participating federal agencies",
+   "funder_type": "public",
+   "grant_type": "grant",
+   "category": "startup",
+   "amount_min": null,
+   "amount_max": 2153927,
+   "amount_currency": "USD",
+   "amount_note": "Award ceilings are set per agency within SBA guidelines. As of April 2026 agencies may issue a Phase I award (including modifications) up to $323,090 and a Phase II award (including modifications) up to $2,153,927 without seeking SBA approval; anything above requires an SBA waiver (see SBIR/STTR Policy Directive s7(i)(4)). Individual agencies routinely award well below these caps (e.g. NSF Phase I up to $305,000, NASA Phase I up to $225,000). Phase III is not funded by SBIR dollars.",
+   "cofunding_pct": null,
+   "is_automatic": false,
+   "application_url": "https://www.sbir.gov/apply",
+   "application_channel": "portal",
+   "deadline_type": "annual_call",
+   "deadline_note": "Each participating agency issues its own solicitations on its own schedule; open solicitations are listed at https://www.sbir.gov/solicitations. No single national deadline.",
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Agencies post solicitations; review them and verify eligibility.",
+     "url": "https://www.sbir.gov/solicitations"
+    },
+    {
+     "step": 2,
+     "detail": "Register the company in SAM.gov (generates the UEI and CAGE code) and in the SBA Company Registry.",
+     "url": "https://sam.gov/content/entity-registration"
+    },
+    {
+     "step": 3,
+     "detail": "Submit a proposal through the agency's own SBIR portal before the submission closing date.",
+     "url": "https://www.sbir.gov/apply"
+    },
+    {
+     "step": 4,
+     "detail": "The participating agency reviews proposals and makes awards.",
+     "url": null
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "Technical proposal responding to the agency topic",
+     "mandatory": true,
+     "note": "Format set by each agency solicitation"
+    },
+    {
+     "doc": "Budget / cost proposal",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Commercialization plan",
+     "mandatory": true,
+     "note": "Required at Phase II by all agencies; some require a commercial plan at Phase I"
+    },
+    {
+     "doc": "SAM.gov registration with Unique Entity ID (UEI)",
+     "mandatory": true,
+     "note": "Practical gate for any federal award"
+    },
+    {
+     "doc": "SBA Company Registry registration",
+     "mandatory": true,
+     "note": null
+    }
+   ],
+   "eligibility": {
+    "entity": "startup",
+    "company_age_months_min": null,
+    "company_age_months_max": null,
+    "headcount_min": null,
+    "headcount_max": 500,
+    "turnover_annual_max": null,
+    "sme_category": "any",
+    "sectors": [
+     "deeptech",
+     "health",
+     "climate",
+     "ai",
+     "agri",
+     "manufacturing",
+     "any"
+    ],
+    "stages": [
+     "idea",
+     "pre_seed",
+     "seed",
+     "series_a"
+    ],
+    "requires_local_entity": true,
+    "requires_incorporation": true,
+    "rd_focus": true,
+    "female_founder_only": false,
+    "underrepresented_focus": false,
+    "de_minimis": false,
+    "other_note": "sbir.gov states the company 'Is a for-profit entity located in the U.S.', 'Has fewer than 500 employees' (including affiliates) and 'Is owned and controlled by U.S. citizens or permanent residents.' Participating agencies: USDA, DOC, Department of War (formerly DoD), DOE, ED, HHS, DHS, DOT, EPA, NASA, NSF. SAM.gov entity registration and a Unique Entity ID (UEI) are mandatory before award - SAM.gov states 'If you want to apply for federal awards as a prime awardee, you need a registration'; registration in SAM generates the UEI and CAGE code, and the UEI is required to register in the SBA Company Registry."
+   },
+   "source_url": "https://www.sbir.gov/about",
+   "source_snippet": "Each participating federal agency administers its own SBIR/STTR program within guidelines established by Congress. As of April 2026, agencies may issue a Phase I award (including modifications) up to $ 323,090 and a Phase II award (including modifications) up to $2,153,927 without seeking SBA approval. Any award above those levels will require a waiver.",
+   "last_verified_at": "2026-08-14",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "us-ssbci",
+   "name_local": "State Small Business Credit Initiative (SSBCI)",
+   "name_en": "State Small Business Credit Initiative",
+   "country_code": "us",
+   "admin_level": "national",
+   "admin_area": null,
+   "funder": "U.S. Department of the Treasury (funds administered by states, territories, DC and Tribal governments)",
+   "funder_type": "public",
+   "grant_type": "equity",
+   "category": "startup",
+   "amount_min": null,
+   "amount_max": null,
+   "amount_currency": "USD",
+   "amount_note": "SSBCI is 'a nearly $10 billion program'. Treasury does not set a per-business award size - each state designs its own programmes (venture capital equity, loan participations, loan guarantees, collateral support, capital access programs) and sets its own limits. Treasury notes 'SSBCI is expected to catalyze up to $10 of private investment for every $1 of SSBCI Capital Program funding.' Check your state's programme for its specific caps.",
+   "cofunding_pct": null,
+   "is_automatic": false,
+   "application_url": "https://home.treasury.gov/policy-issues/small-business-programs/state-small-business-credit-initiative-ssbci",
+   "application_channel": "online",
+   "deadline_type": "rolling",
+   "deadline_note": "No federal deadline. Individual state programmes operate on rolling or periodic cycles; the SSBCI capital deployment period runs to 2030.",
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Use Treasury's Small Business Visitor pages to identify your state's or Tribal government's SSBCI programmes and contacts.",
+     "url": "https://home.treasury.gov/policy-issues/small-business-programs/state-small-business-credit-initiative-ssbci"
+    },
+    {
+     "step": 2,
+     "detail": "Apply directly to the state programme or, for loan programmes, to a participating lender enrolled in it.",
+     "url": null
+    },
+    {
+     "step": 3,
+     "detail": "For equity/venture programmes, approach the state-backed fund or its fund managers.",
+     "url": null
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "Business plan and financials",
+     "mandatory": true,
+     "note": "Set by each state programme"
+    },
+    {
+     "doc": "SSBCI borrower/investee certifications (sex-offender, use-of-proceeds and conflict-of-interest certifications)",
+     "mandatory": true,
+     "note": "Federally mandated across all SSBCI programmes"
+    }
+   ],
+   "eligibility": {
+    "entity": "startup",
+    "company_age_months_min": null,
+    "company_age_months_max": null,
+    "headcount_min": null,
+    "headcount_max": 750,
+    "turnover_annual_max": null,
+    "sme_category": "any",
+    "sectors": [
+     "any"
+    ],
+    "stages": [
+     "pre_seed",
+     "seed",
+     "series_a",
+     "growth"
+    ],
+    "requires_local_entity": true,
+    "requires_incorporation": false,
+    "rd_focus": false,
+    "female_founder_only": false,
+    "underrepresented_focus": true,
+    "de_minimis": false,
+    "other_note": "Businesses cannot apply to Treasury directly - 'The SSBCI Capital Program provides funds to states, the District of Columbia, territories, and Tribal governments for those jurisdictions to create tailored programs'. Federal SSBCI rules generally cap eligible businesses at 750 employees (500 for the transaction-level target); verify against your state's programme guidelines. A significant share of SSBCI funds is earmarked for Socially and Economically Disadvantaged Individual-owned and very small businesses. SAM.gov registration and a UEI are NOT required of the small business - the state or Tribal government is the federal recipient."
+   },
+   "source_url": "https://home.treasury.gov/policy-issues/small-business-programs/state-small-business-credit-initiative-ssbci",
+   "source_snippet": "a nearly $10 billion program to support small businesses and entrepreneurship in communities across the United States by providing capital and technical assistance",
+   "last_verified_at": "2026-08-14",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "us-sttr",
+   "name_local": "Small Business Technology Transfer (STTR) Program",
+   "name_en": "Small Business Technology Transfer (STTR) Program",
+   "country_code": "us",
+   "admin_level": "national",
+   "admin_area": null,
+   "funder": "U.S. Small Business Administration (coordinating) and 6 participating federal agencies",
+   "funder_type": "public",
+   "grant_type": "grant",
+   "category": "startup",
+   "amount_min": null,
+   "amount_max": 2153927,
+   "amount_currency": "USD",
+   "amount_note": "Same SBA guideline ceilings as SBIR and set per agency: as of April 2026, Phase I up to $323,090 and Phase II up to $2,153,927 without SBA approval; above that requires a waiver. Actual STTR award sizes differ by agency (e.g. Army STTR Phase I up to $204K, Phase II up to $1.36M; NASA STTR Phase II up to $1,275,000).",
+   "cofunding_pct": null,
+   "is_automatic": false,
+   "application_url": "https://www.sbir.gov/apply",
+   "application_channel": "portal",
+   "deadline_type": "annual_call",
+   "deadline_note": "Set individually by the six STTR agencies (USDA, Department of War, DOE, HHS, NASA, NSF). Open solicitations listed at https://www.sbir.gov/solicitations.",
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Identify an eligible non-profit research institution partner (typically a university or federal lab).",
+     "url": null
+    },
+    {
+     "step": 2,
+     "detail": "Register in SAM.gov to obtain a UEI and CAGE code, then register in the SBA Company Registry.",
+     "url": "https://sam.gov/content/entity-registration"
+    },
+    {
+     "step": 3,
+     "detail": "Execute an allocation-of-rights agreement with the research institution and submit the proposal to the agency portal.",
+     "url": "https://www.sbir.gov/apply"
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "Technical proposal",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Formal cooperative R&D agreement / allocation of intellectual property rights with the research institution",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "SAM.gov registration with UEI",
+     "mandatory": true,
+     "note": null
+    }
+   ],
+   "eligibility": {
+    "entity": "startup",
+    "company_age_months_min": null,
+    "company_age_months_max": null,
+    "headcount_min": null,
+    "headcount_max": 500,
+    "turnover_annual_max": null,
+    "sme_category": "any",
+    "sectors": [
+     "deeptech",
+     "health",
+     "climate",
+     "ai",
+     "agri",
+     "manufacturing",
+     "any"
+    ],
+    "stages": [
+     "idea",
+     "pre_seed",
+     "seed"
+    ],
+    "requires_local_entity": true,
+    "requires_incorporation": true,
+    "rd_focus": true,
+    "female_founder_only": false,
+    "underrepresented_focus": false,
+    "de_minimis": false,
+    "other_note": "The small business is always the applicant and must be teamed with a single non-profit research institution. sbir.gov FAQ: 'The STTR program requires that the small business performs at least 40% of the R&D and the single partnering research institution to perform at least 30% of the R&D.' Same for-profit / US-owned / under-500-employee tests as SBIR. SAM.gov registration and a UEI are mandatory before any federal award."
+   },
+   "source_url": "https://www.sbir.gov/faq",
+   "source_snippet": "The STTR program requires that the small business performs at least 40% of the R&D and the single partnering research institution to perform at least 30% of the R&D.",
+   "last_verified_at": "2026-08-14",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "us-tx-product-development-small-business-incubator-fund",
+   "name_local": "Product Development and Small Business Incubator Fund (PDSBI)",
+   "name_en": "Texas Product Development and Small Business Incubator Fund",
+   "country_code": "us",
+   "admin_level": "regional",
+   "admin_area": "Texas",
+   "funder": "Texas Economic Development Bank, Office of the Governor (Texas Economic Development and Tourism Office)",
+   "funder_type": "public",
+   "grant_type": "loan",
+   "category": "startup",
+   "amount_min": null,
+   "amount_max": 5000000,
+   "amount_currency": "USD",
+   "amount_note": "'Long-term, asset-backed loans fully secured by tangible assets, not to exceed $5 million.' Interest rates are 'variable and generally below-market, comprised of a low weekly variable rate plus a risk premium determined by the Governor's Office'. Loans require 'unencumbered tangible assets at a maximum Loan-to-Orderly Liquidated Value ratio of 1:1'.",
+   "cofunding_pct": null,
+   "is_automatic": false,
+   "application_url": "https://gov.texas.gov/business/page/product-development-and-small-business-incubator-fund",
+   "application_channel": "email",
+   "deadline_type": "rolling",
+   "deadline_note": "'a rolling application process' - no fixed deadline. Loan structures are 'ultimately determined by staff in consultation with individual applicants'.",
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Confirm eligibility: at least 3 years of operating history and at least 1 year of revenue history, product past the R&D phase, and unencumbered tangible assets to secure the loan.",
+     "url": "https://gov.texas.gov/business/page/product-development-and-small-business-incubator-fund"
+    },
+    {
+     "step": 2,
+     "detail": "Contact the Texas Economic Development Bank to discuss the loan structure.",
+     "url": null
+    },
+    {
+     "step": 3,
+     "detail": "Submit the application with financials and asset schedule; the Governor's Office sets the risk premium.",
+     "url": null
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "Three years of operating history and financial statements",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Schedule of unencumbered tangible assets for collateral",
+     "mandatory": true,
+     "note": "Maximum Loan-to-Orderly Liquidated Value ratio of 1:1"
+    },
+    {
+     "doc": "Business plan and use-of-proceeds statement",
+     "mandatory": true,
+     "note": "Must fund capital purchases or working capital"
+    }
+   ],
+   "eligibility": {
+    "entity": "startup",
+    "company_age_months_min": 36,
+    "company_age_months_max": null,
+    "headcount_min": null,
+    "headcount_max": 100,
+    "turnover_annual_max": null,
+    "sme_category": "small",
+    "sectors": [
+     "manufacturing",
+     "deeptech",
+     "any"
+    ],
+    "stages": [
+     "growth"
+    ],
+    "requires_local_entity": true,
+    "requires_incorporation": true,
+    "rd_focus": false,
+    "female_founder_only": false,
+    "underrepresented_focus": false,
+    "de_minimis": false,
+    "other_note": "For near-bankable businesses commercialising new or improved products, plus incubators and accelerators. Requires 'at least 3 years of operating history and at least 1 year of revenue history', fewer than 100 full-time employees for the small business track, and the business must be located in Texas or have 51%+ of employees in the state. Crucially, 'Products cannot be in research and development phase' - so this excludes pre-product startups. State programme - no SAM.gov registration or UEI required."
+   },
+   "source_url": "https://gov.texas.gov/business/page/product-development-and-small-business-incubator-fund",
+   "source_snippet": "Long-term, asset-backed loans fully secured by tangible assets, not to exceed $5 million.",
+   "last_verified_at": "2026-08-14",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "us-usda-rural-business-development-grants",
+   "name_local": "Rural Business Development Grants (RBDG)",
+   "name_en": "USDA Rural Business Development Grants",
+   "country_code": "us",
+   "admin_level": "national",
+   "admin_area": null,
+   "funder": "U.S. Department of Agriculture, Rural Development (Rural Business-Cooperative Service)",
+   "funder_type": "public",
+   "grant_type": "grant",
+   "category": "startup",
+   "amount_min": null,
+   "amount_max": null,
+   "amount_currency": "USD",
+   "amount_note": "USDA states: 'There is no maximum grant amount; however, smaller requests are given higher priority.' Funds are split between Enterprise Type grants (for specific small and emerging rural businesses) and Opportunity Type grants (for technical assistance, training and planning).",
+   "cofunding_pct": null,
+   "is_automatic": false,
+   "application_url": "https://www.rd.usda.gov/programs-services/business-programs/rural-business-development-grants",
+   "application_channel": "portal",
+   "deadline_type": "annual_call",
+   "deadline_note": "2026 closing dates: 'June 15, 2026' for Strategic Economic and Community Development (SECD) applications only, and 'June 30, 2026' for all other applications. 'Complete applications must be submitted in grants.gov by 4:30 p.m. local time on the due date.'",
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "As a startup, identify a local eligible applicant (public body, federally recognised Tribe or rural-serving non-profit) willing to sponsor a project that benefits your business - you cannot apply directly.",
+     "url": "https://www.rd.usda.gov/programs-services/business-programs/rural-business-development-grants"
+    },
+    {
+     "step": 2,
+     "detail": "The applicant organisation registers in SAM.gov (UEI) and Grants.gov.",
+     "url": "https://sam.gov/content/entity-registration"
+    },
+    {
+     "step": 3,
+     "detail": "Submit the complete application in grants.gov by 4:30 p.m. local time on the closing date.",
+     "url": null
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "Project proposal describing the small and emerging business to be assisted",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Evidence of applicant eligibility (public body, Tribe or non-profit status)",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "SAM.gov registration with UEI",
+     "mandatory": true,
+     "note": null
+    }
+   ],
+   "eligibility": {
+    "entity": "startup",
+    "company_age_months_min": null,
+    "company_age_months_max": null,
+    "headcount_min": null,
+    "headcount_max": 50,
+    "turnover_annual_max": 1000000,
+    "sme_category": "micro",
+    "sectors": [
+     "agri",
+     "any"
+    ],
+    "stages": [
+     "idea",
+     "pre_seed",
+     "seed"
+    ],
+    "requires_local_entity": true,
+    "requires_incorporation": false,
+    "rd_focus": false,
+    "female_founder_only": false,
+    "underrepresented_focus": true,
+    "de_minimis": false,
+    "other_note": "IMPORTANT: for-profit businesses and individuals CANNOT apply directly. Eligible applicants are limited to 'Public Body/Government Entity', 'Federally Recognized Indian Tribe' and 'Nonprofit entity serving rural areas'. Startups benefit as the ultimate recipients of Enterprise Type grants, which must assist 'small and emerging' rural businesses - USDA's standard definition is fewer than 50 new employees and less than $1 million in projected gross revenue (verify against the current NOFO). Projects must be in rural areas outside urbanised areas of 50,000 or more. The applicant organisation must be registered in SAM.gov with a Unique Entity ID."
+   },
+   "source_url": "https://www.rd.usda.gov/programs-services/business-programs/rural-business-development-grants",
+   "source_snippet": "There is no maximum grant amount; however, smaller requests are given higher priority.",
+   "last_verified_at": "2026-08-14",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "us-usda-value-added-producer-grants",
+   "name_local": "Value-Added Producer Grants (VAPG)",
+   "name_en": "USDA Value-Added Producer Grants",
+   "country_code": "us",
+   "admin_level": "national",
+   "admin_area": null,
+   "funder": "U.S. Department of Agriculture, Rural Development (Rural Business-Cooperative Service)",
+   "funder_type": "public",
+   "grant_type": "grant",
+   "category": "startup",
+   "amount_min": null,
+   "amount_max": 200000,
+   "amount_currency": "USD",
+   "amount_note": "Planning Grants 'Up to $50,000'; Working Capital Grants 'Up to $200,000'. Approximately $25 million was available in the FY2026 round. All grants require a '1:1 match (100% of the grant amount), which may include cash or eligible in-kind contributions'.",
+   "cofunding_pct": 50,
+   "is_automatic": false,
+   "application_url": "https://www.rd.usda.gov/programs-services/business-programs/value-added-producer-grants",
+   "application_channel": "portal",
+   "deadline_type": "annual_call",
+   "deadline_note": "FY2026 round: 'Applications are accepted for processing from Agricultural Producers from February 17, 2026, through 1:00 p.m. Eastern Time (ET), April 22, 2026.' Announced annually via a Notice of Funding Opportunity.",
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Confirm you are an eligible independent agricultural producer, producer group, farmer/rancher cooperative or majority-controlled producer-based business venture.",
+     "url": "https://www.rd.usda.gov/programs-services/business-programs/value-added-producer-grants"
+    },
+    {
+     "step": 2,
+     "detail": "Register in SAM.gov to obtain a Unique Entity ID and in Grants.gov.",
+     "url": "https://sam.gov/content/entity-registration"
+    },
+    {
+     "step": 3,
+     "detail": "Prepare the application (business/feasibility plan or working capital request) and secure the 1:1 matching funds.",
+     "url": null
+    },
+    {
+     "step": 4,
+     "detail": "Submit via Grants.gov or to the USDA Rural Development state office before the deadline.",
+     "url": null
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "Feasibility study (working capital applications)",
+     "mandatory": true,
+     "note": "Must be prepared by a qualified independent third party"
+    },
+    {
+     "doc": "Business plan",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Evidence of matching funds (cash or eligible in-kind, 1:1)",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Proof that the applicant owns and produces more than 50% of the raw commodity",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "SAM.gov registration with UEI",
+     "mandatory": true,
+     "note": null
+    }
+   ],
+   "eligibility": {
+    "entity": "startup",
+    "company_age_months_min": null,
+    "company_age_months_max": null,
+    "headcount_min": null,
+    "headcount_max": null,
+    "turnover_annual_max": null,
+    "sme_category": "any",
+    "sectors": [
+     "agri"
+    ],
+    "stages": [
+     "idea",
+     "pre_seed",
+     "seed",
+     "growth"
+    ],
+    "requires_local_entity": true,
+    "requires_incorporation": false,
+    "rd_focus": false,
+    "female_founder_only": false,
+    "underrepresented_focus": true,
+    "de_minimis": false,
+    "other_note": "Eligible applicants are 'Agricultural producers (including harvesters and steering committees)' and 'Agricultural producer groups'. Applicants must 'Own and produce more than 50% of the raw commodity' and show they 'Will retain greater revenue from the value-added product than from the raw commodity alone'. Priority points for beginning farmers/ranchers, veteran farmers, socially disadvantaged producers and small/medium-sized family farms. SAM.gov registration with a Unique Entity ID is mandatory - the practical gate for all federal awards."
+   },
+   "source_url": "https://www.rd.usda.gov/programs-services/business-programs/value-added-producer-grants",
+   "source_snippet": "Applications are accepted for processing from Agricultural Producers from February 17, 2026, through 1:00 p.m. Eastern Time (ET), April 22, 2026.",
+   "last_verified_at": "2026-08-14",
+   "verification_status": "verified"
+  }
+ ]
+}

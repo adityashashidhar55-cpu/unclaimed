@@ -1,0 +1,1237 @@
+{
+ "country_code": "fr",
+ "country_name": "France",
+ "currency": "EUR",
+ "language": "en",
+ "entity": "startup",
+ "programmes": [
+  {
+   "slug": "fr-aide-au-developpement-deeptech",
+   "name_local": "Aide au Développement Deeptech (ADD)",
+   "name_en": "Deeptech Development Aid",
+   "country_code": "fr",
+   "admin_level": "national",
+   "admin_area": null,
+   "funder": "Bpifrance",
+   "funder_type": "public",
+   "grant_type": "grant",
+   "category": "startup",
+   "amount_min": null,
+   "amount_max": 2000000,
+   "amount_currency": "EUR",
+   "amount_note": "\"Aide sous forme mixte de subvention et d'avance récupérable d'un montant maximum de 2 000 000 €.\" Mixed grant + repayable advance; the split between the two is not published on the offer page.",
+   "cofunding_pct": null,
+   "is_automatic": false,
+   "application_url": "https://contacts.bpifrance.fr/contactez-bpifrance-formulaire-de-contact/",
+   "application_channel": "portal",
+   "deadline_type": "rolling",
+   "deadline_note": "Continuous; no published call deadline.",
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Contact Bpifrance and present the breakthrough-innovation R&D project (industrial research and experimental development).",
+     "url": "https://contacts.bpifrance.fr/contactez-bpifrance-formulaire-de-contact/"
+    },
+    {
+     "step": 2,
+     "detail": "File the request before any project expense is incurred.",
+     "url": null
+    },
+    {
+     "step": 3,
+     "detail": "Aid paid in 2 or 3 tranches; repayable advance repaid in quarterly instalments in arrears.",
+     "url": null
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "R&D project dossier covering industrial research and experimental development",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Detailed expense budget",
+     "mandatory": true,
+     "note": null
+    }
+   ],
+   "eligibility": {
+    "entity": "startup",
+    "company_age_months_min": null,
+    "company_age_months_max": null,
+    "headcount_min": null,
+    "headcount_max": 2000,
+    "turnover_annual_max": null,
+    "sme_category": "any",
+    "sectors": [
+     "deeptech"
+    ],
+    "stages": [
+     "seed",
+     "series_a",
+     "growth"
+    ],
+    "requires_local_entity": true,
+    "requires_incorporation": true,
+    "rd_focus": true,
+    "female_founder_only": false,
+    "underrepresented_focus": false,
+    "de_minimis": false,
+    "other_note": "\"PME au sens de la définition européenne. ETI dans la limite de 2000 ETP.​ Immatriculée en France.\" Programme duration max 36 months. No file fees."
+   },
+   "source_url": "https://www.bpifrance.fr/catalogue-offres/aide-au-developpement-deeptech",
+   "source_snippet": "Aide sous forme mixte de subvention et d'avance récupérable d'un montant maximum de 2 000 000 €. […] PME au sens de la définition européenne. ETI dans la limite de 2000 ETP.",
+   "last_verified_at": "2026-08-14",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "fr-bourse-french-tech",
+   "name_local": "Bourse French Tech",
+   "name_en": "French Tech Grant",
+   "country_code": "fr",
+   "admin_level": "national",
+   "admin_area": null,
+   "funder": "Bpifrance",
+   "funder_type": "public",
+   "grant_type": "grant",
+   "category": "startup",
+   "amount_min": null,
+   "amount_max": 30000,
+   "amount_currency": "EUR",
+   "amount_note": "\"Aide sous forme de subvention d'un montant maximum de 30 000 € sous condition.\" Covers internal and external R&D expenses of a maturation/feasibility phase; no expense incurred before the application date is eligible.",
+   "cofunding_pct": 50,
+   "is_automatic": false,
+   "application_url": "https://contacts.bpifrance.fr/contactez-bpifrance-formulaire-de-contact/",
+   "application_channel": "portal",
+   "deadline_type": "rolling",
+   "deadline_note": "No published call window; applications are made at any time via the Bpifrance regional network.",
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Contact Bpifrance via the contact form to be put in touch with the regional office.",
+     "url": "https://contacts.bpifrance.fr/contactez-bpifrance-formulaire-de-contact/"
+    },
+    {
+     "step": 2,
+     "detail": "File the aid request before incurring any project expense (\"Aucune dépense engagée antérieurement à la date de dépôt de la demande d'aide ne peut être retenue\").",
+     "url": null
+    },
+    {
+     "step": 3,
+     "detail": "Sign the aid contract; first tranche paid on signature, balance on completion of the programme.",
+     "url": null
+    },
+    {
+     "step": 4,
+     "detail": "Submit end-of-programme report and statement of expenses paid to obtain the balance.",
+     "url": null
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "Innovation project description and budget of internal/external R&D expenses",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "End-of-programme report and recapitulative statement of paid expenses (at balance stage)",
+     "mandatory": true,
+     "note": "Required for payment of the final tranche"
+    }
+   ],
+   "eligibility": {
+    "entity": "startup",
+    "company_age_months_min": null,
+    "company_age_months_max": null,
+    "headcount_min": null,
+    "headcount_max": 250,
+    "turnover_annual_max": null,
+    "sme_category": "any",
+    "sectors": [
+     "deeptech",
+     "any"
+    ],
+    "stages": [
+     "idea",
+     "pre_seed",
+     "seed"
+    ],
+    "requires_local_entity": true,
+    "requires_incorporation": true,
+    "rd_focus": true,
+    "female_founder_only": false,
+    "underrepresented_focus": false,
+    "de_minimis": false,
+    "other_note": "\"PME au sens de la Définition Européenne\". Aid covers \"jusqu'à 50 % des dépenses éligibles et selon la catégorie de l'entreprise, jusqu'à 70 %\". Programme duration max 24 months. No file or appraisal fees."
+   },
+   "source_url": "https://www.bpifrance.fr/catalogue-offres/bourse-french-tech",
+   "source_snippet": "Aide sous forme de subvention d'un montant maximum de 30 000 € sous condition. […] Cette aide peut couvrir jusqu'à 50 % des dépenses éligibles et selon la catégorie de l'entreprise, jusqu'à 70 %.",
+   "last_verified_at": "2026-08-14",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "fr-bourse-french-tech-emergence",
+   "name_local": "Bourse French Tech Emergence",
+   "name_en": "French Tech Emergence Grant",
+   "country_code": "fr",
+   "admin_level": "national",
+   "admin_area": null,
+   "funder": "Bpifrance",
+   "funder_type": "public",
+   "grant_type": "grant",
+   "category": "startup",
+   "amount_min": null,
+   "amount_max": 90000,
+   "amount_currency": "EUR",
+   "amount_note": "\"Aide sous forme de subvention d'un montant maximum de 90 000 € sous condition.\" Funded by the State from PIA4 or the Fonds pour l'Innovation et l'Industrie.",
+   "cofunding_pct": 50,
+   "is_automatic": false,
+   "application_url": "https://www.bpifrance.fr/Contactez-nous",
+   "application_channel": "portal",
+   "deadline_type": "rolling",
+   "deadline_note": "No published fixed call window; applications handled continuously by the Bpifrance regional network.",
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Have the project qualified as deeptech under the Bpifrance deeptech référentiel in force.",
+     "url": null
+    },
+    {
+     "step": 2,
+     "detail": "File the aid application before incurring any project expense.",
+     "url": "https://www.bpifrance.fr/Contactez-nous"
+    },
+    {
+     "step": 3,
+     "detail": "Sign the aid contract; first tranche on signature after lifting of any conditions precedent.",
+     "url": null
+    },
+    {
+     "step": 4,
+     "detail": "Submit end-of-programme report and statement of paid expenses to receive the balance.",
+     "url": null
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "Deeptech project dossier qualified against the Bpifrance deeptech référentiel",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Budget of internal and external project expenses",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "End-of-programme report and recapitulative statement of paid expenses",
+     "mandatory": true,
+     "note": "For the final tranche"
+    }
+   ],
+   "eligibility": {
+    "entity": "startup",
+    "company_age_months_min": null,
+    "company_age_months_max": 12,
+    "headcount_min": null,
+    "headcount_max": 50,
+    "turnover_annual_max": null,
+    "sme_category": "small",
+    "sectors": [
+     "deeptech"
+    ],
+    "stages": [
+     "idea",
+     "pre_seed"
+    ],
+    "requires_local_entity": true,
+    "requires_incorporation": true,
+    "rd_focus": true,
+    "female_founder_only": false,
+    "underrepresented_focus": false,
+    "de_minimis": false,
+    "other_note": "\"Petites entreprises immatriculées en France depuis moins d'un an\". Awarded under the \"Régime cadre exempté de notification relatif aux aides à la recherche, au développement et à l'innovation (RDI)\", not de minimis. Programme max 12 months, extendable to 18 months under conditions."
+   },
+   "source_url": "https://www.bpifrance.fr/catalogue-offres/bourse-french-tech-emergence",
+   "source_snippet": "Aide sous forme de subvention d'un montant maximum de 90 000 € sous condition. […] Petites entreprises immatriculées en France depuis moins d'un an",
+   "last_verified_at": "2026-08-14",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "fr-concours-i-lab",
+   "name_local": "Concours d'innovation i-Lab",
+   "name_en": "i-Lab Innovation Competition",
+   "country_code": "fr",
+   "admin_level": "national",
+   "admin_area": null,
+   "funder": "Ministère de l'Enseignement supérieur et de la Recherche / Bpifrance (France 2030)",
+   "funder_type": "public",
+   "grant_type": "prize",
+   "category": "startup",
+   "amount_min": null,
+   "amount_max": 600000,
+   "amount_currency": "EUR",
+   "amount_note": "\"Le financement prend la forme d'une subvention d'un montant maximum de 600 K€.\" Eligible expenses capped at €1M (personnel, running costs, equipment directly linked to the R&D programme).",
+   "cofunding_pct": null,
+   "is_automatic": false,
+   "application_url": "https://www.picxel.bpifrance.fr/",
+   "application_channel": "portal",
+   "deadline_type": "annual_call",
+   "deadline_note": "28th edition ran 25 November 2025 to 3 February 2026 (12:00 Paris). Annual competition; the next edition's dates were not published on the page at the time of verification.",
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Download the competition règlement and the mandatory candidature dossier template from the Bpifrance page.",
+     "url": "https://www.bpifrance.fr/nos-appels-a-projets-concours/concours-dinnovation-i-lab"
+    },
+    {
+     "step": 2,
+     "detail": "Complete the dossier and the impact grid using the provided guide.",
+     "url": "https://www.bpifrance.fr/download/media-file/607242"
+    },
+    {
+     "step": 3,
+     "detail": "Submit exclusively online on the PICXEL platform before the deadline.",
+     "url": "https://www.picxel.bpifrance.fr/"
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "Dossier de candidature (mandatory Bpifrance template)",
+     "mandatory": true,
+     "note": "https://www.bpifrance.fr/download/media-file/607243"
+    },
+    {
+     "doc": "Grille d'impact",
+     "mandatory": true,
+     "note": "Completed using the Guides grille d'impact"
+    },
+    {
+     "doc": "Evidence of intellectual property position and freedom to operate",
+     "mandatory": true,
+     "note": "Assessed as a selection criterion"
+    }
+   ],
+   "eligibility": {
+    "entity": "startup",
+    "company_age_months_min": null,
+    "company_age_months_max": 24,
+    "headcount_min": null,
+    "headcount_max": null,
+    "turnover_annual_max": null,
+    "sme_category": "any",
+    "sectors": [
+     "deeptech"
+    ],
+    "stages": [
+     "idea",
+     "pre_seed",
+     "seed"
+    ],
+    "requires_local_entity": true,
+    "requires_incorporation": false,
+    "rd_focus": true,
+    "female_founder_only": false,
+    "underrepresented_focus": false,
+    "de_minimis": false,
+    "other_note": "\"toute personne physique ayant créé son entreprise depuis moins de deux ans ou ayant pour projet la création, sur le territoire français, d'une entreprise de technologies innovantes, quels que soient sa nationalité, son statut ou sa situation professionnelle\". Individuals may apply before incorporation."
+   },
+   "source_url": "https://www.bpifrance.fr/nos-appels-a-projets-concours/concours-dinnovation-i-lab",
+   "source_snippet": "Le financement prend la forme d'une subvention d'un montant maximum de 600 K€. […] Date limite de dépôt : mardi 03 février 2026 à 12h (midi heure de Paris).",
+   "last_verified_at": "2026-08-14",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "fr-concours-i-nov",
+   "name_local": "Concours d'innovation i-Nov",
+   "name_en": "i-Nov Innovation Competition",
+   "country_code": "fr",
+   "admin_level": "national",
+   "admin_area": null,
+   "funder": "Bpifrance / ADEME (France 2030)",
+   "funder_type": "public",
+   "grant_type": "grant",
+   "category": "startup",
+   "amount_min": null,
+   "amount_max": null,
+   "amount_currency": "EUR",
+   "amount_note": "No fixed grant ceiling published. Total eligible project costs must be between €1M and €5M; \"Les taux maximums d'intervention sont de 45 % pour les petites entreprises et 35 % pour les moyennes entreprises\" and the aid is \"constituées pour 60 % de subventions et 40 % d'avances récupérables\".",
+   "cofunding_pct": 55,
+   "is_automatic": false,
+   "application_url": "https://www.picxel.bpifrance.fr/accueil",
+   "application_channel": "portal",
+   "deadline_type": "annual_call",
+   "deadline_note": "Recurring waves. The most recent wave published on the Bpifrance call page at verification was vague 14, open 10 July to 1 October 2024; the catalogue offer page for i-Nov now returns 'cette offre n'est plus disponible'. Dates of the next wave were not confirmed.",
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Read the cahier des charges of the current wave and check the project fits one of the four themes (Numérique; Santé; Transports, mobilités, villes et bâtiments durables; Energies, ressources et milieux naturels).",
+     "url": "https://www.bpifrance.fr/nos-appels-a-projets-concours/appel-a-projets-concours-dinnovation-i-nov"
+    },
+    {
+     "step": 2,
+     "detail": "Complete the dossier de candidature and the impact grid.",
+     "url": null
+    },
+    {
+     "step": 3,
+     "detail": "Submit exclusively on the Bpifrance PICXEL platform before the wave deadline.",
+     "url": "https://www.picxel.bpifrance.fr/accueil"
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "Dossier de candidature - Concours i-Nov (dépôt unique)",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Grille d'impact",
+     "mandatory": true,
+     "note": null
+    }
+   ],
+   "eligibility": {
+    "entity": "startup",
+    "company_age_months_min": null,
+    "company_age_months_max": null,
+    "headcount_min": null,
+    "headcount_max": 250,
+    "turnover_annual_max": null,
+    "sme_category": "any",
+    "sectors": [
+     "deeptech",
+     "health",
+     "climate",
+     "ai"
+    ],
+    "stages": [
+     "seed",
+     "series_a",
+     "growth"
+    ],
+    "requires_local_entity": true,
+    "requires_incorporation": true,
+    "rd_focus": true,
+    "female_founder_only": false,
+    "underrepresented_focus": false,
+    "de_minimis": false,
+    "other_note": "Single-partner projects carried by a single SME; project duration 12 to 36 months; total eligible spend €1M–€5M. Awarded as State aid under EU State-aid rules, not de minimis."
+   },
+   "source_url": "https://www.bpifrance.fr/nos-appels-a-projets-concours/appel-a-projets-concours-dinnovation-i-nov",
+   "source_snippet": "Les taux maximums d'intervention sont de 45 % pour les petites entreprises et 35 % pour les moyennes entreprises. Le financement apporté dans le cadre du Concours d'innovation se fera sous forme d'aides d'Etat constituées pour 60 % de subventions et 40 % d'avances récupérables.",
+   "last_verified_at": "2026-08-14",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "fr-credit-impot-innovation",
+   "name_local": "Crédit d'impôt innovation (CII)",
+   "name_en": "Innovation Tax Credit",
+   "country_code": "fr",
+   "admin_level": "national",
+   "admin_area": null,
+   "funder": "Direction générale des finances publiques (DGFiP)",
+   "funder_type": "public",
+   "grant_type": "tax_credit",
+   "category": "startup",
+   "amount_min": null,
+   "amount_max": 80000,
+   "amount_currency": "EUR",
+   "amount_note": "Rate in metropolitan France is 20% (cut from 30% by the loi de finances pour 2025). \"Le montant des dépenses prises en compte dans le calcul du crédit d'impôt ne peut pas dépasser 400 000 €\", i.e. a maximum credit of €80,000 per year in métropole. Overseas departments 60%; Corsica 40% (small) / 35% (medium).",
+   "cofunding_pct": null,
+   "is_automatic": true,
+   "application_url": "https://www.impots.gouv.fr/",
+   "application_channel": "online",
+   "deadline_type": "annual_call",
+   "deadline_note": "Declared with the annual tax return. Scheme runs \"jusqu'au 31 décembre 2027\".",
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Identify eligible expenditure on the design of prototypes or pilot installations of a new product.",
+     "url": null
+    },
+    {
+     "step": 2,
+     "detail": "Declare the expenses on the CIR/CII form (2069-A-SD) with the annual tax return.",
+     "url": null
+    },
+    {
+     "step": 3,
+     "detail": "Offset against corporate tax; the unused balance is refundable for SMEs.",
+     "url": null
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "Formulaire n° 2069-A-SD (innovation section)",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Technical file justifying the novelty of the prototype/pilot installation",
+     "mandatory": true,
+     "note": "For audit purposes"
+    }
+   ],
+   "eligibility": {
+    "entity": "startup",
+    "company_age_months_min": null,
+    "company_age_months_max": null,
+    "headcount_min": null,
+    "headcount_max": 250,
+    "turnover_annual_max": 50000000,
+    "sme_category": "any",
+    "sectors": [
+     "any"
+    ],
+    "stages": [
+     "pre_seed",
+     "seed",
+     "series_a",
+     "growth"
+    ],
+    "requires_local_entity": true,
+    "requires_incorporation": true,
+    "rd_focus": false,
+    "female_founder_only": false,
+    "underrepresented_focus": false,
+    "de_minimis": false,
+    "other_note": "Reserved to SMEs within the EU definition. The official page does not describe the CII as a de minimis aid; it is granted under the EU State-aid framework for innovation aid to SMEs."
+   },
+   "source_url": "https://entreprendre.service-public.gouv.fr/vosdroits/F35494",
+   "source_snippet": "Le taux du crédit d'impôt innovation est de 20 %. […] Le montant des dépenses prises en compte dans le calcul du crédit d'impôt ne peut pas dépasser 400 000 €.",
+   "last_verified_at": "2026-08-14",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "fr-credit-impot-recherche",
+   "name_local": "Crédit d'impôt recherche (CIR)",
+   "name_en": "Research Tax Credit",
+   "country_code": "fr",
+   "admin_level": "national",
+   "admin_area": null,
+   "funder": "Direction générale des finances publiques (DGFiP)",
+   "funder_type": "public",
+   "grant_type": "tax_credit",
+   "category": "startup",
+   "amount_min": null,
+   "amount_max": null,
+   "amount_currency": "EUR",
+   "amount_note": "Métropole: \"Le taux est de 30 % pour la partie des dépenses inférieure ou égale à 100 000 000 €\" and \"Le taux est de 5 % pour la partie des dépenses supérieure à 100 000 000 €\". DOM: 50% up to €100M, 5% above. The 'forfait de fonctionnement' on personnel expenses was cut from 43% to 40% for expenses incurred from 15 February 2025 (BOFiP ACTU-2025-00105), which also removed patent costs, veille technologique and the young-doctor doubling from the base. No cap on the credit itself.",
+   "cofunding_pct": null,
+   "is_automatic": true,
+   "application_url": "https://www.impots.gouv.fr/",
+   "application_channel": "online",
+   "deadline_type": "annual_call",
+   "deadline_note": "Declared with the annual corporate tax return; no separate call.",
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Identify and document eligible R&D expenditure for the financial year.",
+     "url": null
+    },
+    {
+     "step": 2,
+     "detail": "Complete form n° 2069-A-SD and file it with the tax return.",
+     "url": null
+    },
+    {
+     "step": 3,
+     "detail": "If R&D spend is €10–100M or above €100M, also file form 2069-A-1-SD with details on doctorate-holding personnel.",
+     "url": null
+    },
+    {
+     "step": 4,
+     "detail": "Offset the credit against corporate tax; SMEs may request immediate refund of the unused balance.",
+     "url": null
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "Formulaire n° 2069-A-SD",
+     "mandatory": true,
+     "note": "Filed with the tax return"
+    },
+    {
+     "doc": "Formulaire n° 2069-A-1-SD",
+     "mandatory": false,
+     "note": "Mandatory where R&D expenditure is between €10m and €100m, or exceeds €100m"
+    },
+    {
+     "doc": "Technical and financial justification file for the R&D works",
+     "mandatory": true,
+     "note": "Required in case of a tax audit"
+    }
+   ],
+   "eligibility": {
+    "entity": "startup",
+    "company_age_months_min": null,
+    "company_age_months_max": null,
+    "headcount_min": null,
+    "headcount_max": null,
+    "turnover_annual_max": null,
+    "sme_category": "any",
+    "sectors": [
+     "any"
+    ],
+    "stages": [
+     "pre_seed",
+     "seed",
+     "series_a",
+     "growth"
+    ],
+    "requires_local_entity": true,
+    "requires_incorporation": true,
+    "rd_focus": true,
+    "female_founder_only": false,
+    "underrepresented_focus": false,
+    "de_minimis": false,
+    "other_note": "Open to companies taxed on their real profits (IS or IR), including certain exempt entities such as jeunes entreprises innovantes and companies in designated development zones. Not a de minimis aid."
+   },
+   "source_url": "https://entreprendre.service-public.gouv.fr/vosdroits/F23533",
+   "source_snippet": "Le taux est de 30 % pour la partie des dépenses inférieure ou égale à 100 000 000 € […] Le taux est de 5 % pour la partie des dépenses supérieure à 100 000 000 €",
+   "last_verified_at": "2026-08-14",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "fr-france-2030-regionalise-projets-innovation",
+   "name_local": "France 2030 régionalisé – action « Projets d'innovation »",
+   "name_en": "France 2030 Regionalised – Innovation Projects",
+   "country_code": "fr",
+   "admin_level": "national",
+   "admin_area": null,
+   "funder": "Bpifrance / Régions (France 2030)",
+   "funder_type": "ppp",
+   "grant_type": "grant",
+   "category": "startup",
+   "amount_min": 75000,
+   "amount_max": 500000,
+   "amount_currency": "EUR",
+   "amount_note": "\"Aide sous forme d'avance récupérable ou de subvention comprise entre 75 000 € et 500 000 €.\"",
+   "cofunding_pct": null,
+   "is_automatic": false,
+   "application_url": "https://contacts.bpifrance.fr/contactez-bpifrance-formulaire-de-contact/",
+   "application_channel": "portal",
+   "deadline_type": "annual_call",
+   "deadline_note": "Operated as regional calls for projects; each région publishes its own cahier des charges and windows.",
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Identify the regional cahier des charges for the applicable région.",
+     "url": null
+    },
+    {
+     "step": 2,
+     "detail": "Respond to the regional call for projects via Bpifrance.",
+     "url": "https://contacts.bpifrance.fr/contactez-bpifrance-formulaire-de-contact/"
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "Application responding to the regional cahier des charges",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "R&D project budget",
+     "mandatory": true,
+     "note": null
+    }
+   ],
+   "eligibility": {
+    "entity": "startup",
+    "company_age_months_min": null,
+    "company_age_months_max": null,
+    "headcount_min": null,
+    "headcount_max": null,
+    "turnover_annual_max": null,
+    "sme_category": "any",
+    "sectors": [
+     "any"
+    ],
+    "stages": [
+     "seed",
+     "series_a",
+     "growth"
+    ],
+    "requires_local_entity": true,
+    "requires_incorporation": true,
+    "rd_focus": true,
+    "female_founder_only": false,
+    "underrepresented_focus": false,
+    "de_minimis": false,
+    "other_note": "\"TPE, PME ou ETI selon les régions.\" Individual R&D projects with high growth potential."
+   },
+   "source_url": "https://www.bpifrance.fr/catalogue-offres/france-2030-regionalise-action-projets-dinnovation",
+   "source_snippet": "Aide sous forme d'avance récupérable ou de subvention comprise entre 75 000 € et 500 000 €.",
+   "last_verified_at": "2026-08-14",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "fr-french-tech-tremplin",
+   "name_local": "French Tech Tremplin",
+   "name_en": "French Tech Springboard",
+   "country_code": "fr",
+   "admin_level": "national",
+   "admin_area": null,
+   "funder": "Bpifrance / Mission French Tech (Entrepreneuriat Quartiers 2030)",
+   "funder_type": "public",
+   "grant_type": "accelerator",
+   "category": "startup",
+   "amount_min": null,
+   "amount_max": 15000,
+   "amount_currency": "EUR",
+   "amount_note": "\"Un financement jusqu'à 15 000 €\" alongside incubation, mentoring and workshops. Two phases: Prépa (2 months) and Incubation (12 months) with a partner incubator.",
+   "cofunding_pct": null,
+   "is_automatic": false,
+   "application_url": "https://www.bpifrance.fr/catalogue-offres/eq-30-french-tech-tremplin",
+   "application_channel": "online",
+   "deadline_type": "annual_call",
+   "deadline_note": "Recurring annual promotions; the specific application window was not published on the offer page at the time of verification.",
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Check eligibility as a project holder or startup founder from a QPV/ZRR or under-represented background.",
+     "url": null
+    },
+    {
+     "step": 2,
+     "detail": "Apply to the Prépa phase (2 months) to test and structure the idea, or directly to Incubation if the startup is under 3 years old.",
+     "url": null
+    },
+    {
+     "step": 3,
+     "detail": "If selected for Incubation, join a partner incubator for 12 months and receive the grant.",
+     "url": null
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "Project or startup presentation",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Evidence of eligibility (QPV/ZRR residence, or status as boursier, minima sociaux beneficiary, refugee, pupille de l'État)",
+     "mandatory": true,
+     "note": null
+    }
+   ],
+   "eligibility": {
+    "entity": "startup",
+    "company_age_months_min": null,
+    "company_age_months_max": 36,
+    "headcount_min": null,
+    "headcount_max": null,
+    "turnover_annual_max": null,
+    "sme_category": "micro",
+    "sectors": [
+     "any"
+    ],
+    "stages": [
+     "idea",
+     "pre_seed",
+     "seed"
+    ],
+    "requires_local_entity": true,
+    "requires_incorporation": false,
+    "rd_focus": false,
+    "female_founder_only": false,
+    "underrepresented_focus": true,
+    "de_minimis": false,
+    "other_note": "\"porteurs de projet non immatriculés (phase incubation) ou […] start ups immatriculées depuis moins de 3 ans, en priorité issus ou implantés en QPV, ZRR, ou s'adressant à un public sous-représenté (boursier, bénéficiaire minima sociaux, réfugié, pupille de l'État)\"."
+   },
+   "source_url": "https://www.bpifrance.fr/catalogue-offres/eq-30-french-tech-tremplin",
+   "source_snippet": "Un financement jusqu'à 15 000 € […] Porteurs d'un projet innovant ou pour start ups de moins de 3 ans. Résidants en QPV, ZRR, ou appartenant à un public sous-représenté",
+   "last_verified_at": "2026-08-14",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "fr-initiative-france-pret-honneur",
+   "name_local": "Prêt d'honneur Initiative",
+   "name_en": "Initiative France Honour Loan",
+   "country_code": "fr",
+   "admin_level": "national",
+   "admin_area": null,
+   "funder": "Initiative France",
+   "funder_type": "private",
+   "grant_type": "loan",
+   "category": "startup",
+   "amount_min": null,
+   "amount_max": null,
+   "amount_currency": "EUR",
+   "amount_note": "Amounts are set by each of the 207 local associations and are not published nationally. \"Le prêt d'honneur Initiative à taux 0, sans garantie demandée, constitue le pilier de l'offre de services d'Initiative France\" — zero interest, no collateral, granted to the entrepreneur personally to strengthen equity.",
+   "cofunding_pct": null,
+   "is_automatic": false,
+   "application_url": "https://www.initiative-france.fr/",
+   "application_channel": "online",
+   "deadline_type": "rolling",
+   "deadline_note": "Continuous; decision by the local platform's committee.",
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Contact the nearest local Initiative France association.",
+     "url": "https://www.initiative-france.fr/"
+    },
+    {
+     "step": 2,
+     "detail": "Submit the business creation, takeover or growth project for review.",
+     "url": null
+    },
+    {
+     "step": 3,
+     "detail": "Present to the local committee; if approved, receive the zero-interest honour loan and accompanying mentoring.",
+     "url": null
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "Business plan and financing plan",
+     "mandatory": true,
+     "note": "Requirements set by each local association"
+    }
+   ],
+   "eligibility": {
+    "entity": "startup",
+    "company_age_months_min": null,
+    "company_age_months_max": null,
+    "headcount_min": null,
+    "headcount_max": null,
+    "turnover_annual_max": null,
+    "sme_category": "any",
+    "sectors": [
+     "any"
+    ],
+    "stages": [
+     "idea",
+     "pre_seed",
+     "seed"
+    ],
+    "requires_local_entity": true,
+    "requires_incorporation": false,
+    "rd_focus": false,
+    "female_founder_only": false,
+    "underrepresented_focus": false,
+    "de_minimis": false,
+    "other_note": "Three routes: business creation, business takeover and business growth. Delivered through 207 local associations; eligibility and amounts are decided locally."
+   },
+   "source_url": "https://www.initiative-france.fr/",
+   "source_snippet": "Le prêt d'honneur Initiative à taux 0, sans garantie demandée, constitue le pilier de l'offre de services d'Initiative France",
+   "last_verified_at": "2026-08-14",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "fr-innovup-ile-de-france",
+   "name_local": "Innov'up",
+   "name_en": "Innov'up (Île-de-France innovation aid)",
+   "country_code": "fr",
+   "admin_level": "regional",
+   "admin_area": "Île-de-France",
+   "funder": "Région Île-de-France (operated with Bpifrance)",
+   "funder_type": "public",
+   "grant_type": "grant",
+   "category": "startup",
+   "amount_min": null,
+   "amount_max": 3000000,
+   "amount_currency": "EUR",
+   "amount_note": "Maximum subvention €500,000; maximum repayable advance / loan €3,000,000. Intervention rates from 25% to 70% depending on company size and project type. Covers feasibility, development and experimentation phases.",
+   "cofunding_pct": 30,
+   "is_automatic": false,
+   "application_url": "https://mesdemarches.iledefrance.fr/",
+   "application_channel": "portal",
+   "deadline_type": "rolling",
+   "deadline_note": "Applications reviewed continuously throughout the year; quarterly webinars explain priorities and eligibility.",
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Check the project matches a regional priority sector and is not an excluded activity (marketing, standard HR software, non-edtech training).",
+     "url": "https://www.iledefrance.fr/aides-et-appels-a-projets/innovup"
+    },
+    {
+     "step": 2,
+     "detail": "Submit the request on mesdemarches.iledefrance.fr BEFORE the project starts — \"toute dépense antérieure ne peut être prise en compte\".",
+     "url": "https://mesdemarches.iledefrance.fr/"
+    },
+    {
+     "step": 3,
+     "detail": "Instruction by Bpifrance on behalf of the Région; decision and contracting.",
+     "url": null
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "Innovation project dossier and budget",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Evidence of an establishment in Île-de-France or intent to relocate there",
+     "mandatory": true,
+     "note": "R&D expenditure must be carried out in the region"
+    }
+   ],
+   "eligibility": {
+    "entity": "startup",
+    "company_age_months_min": null,
+    "company_age_months_max": null,
+    "headcount_min": null,
+    "headcount_max": null,
+    "turnover_annual_max": null,
+    "sme_category": "any",
+    "sectors": [
+     "deeptech",
+     "health",
+     "climate",
+     "ai",
+     "agri",
+     "any"
+    ],
+    "stages": [
+     "pre_seed",
+     "seed",
+     "series_a",
+     "growth"
+    ],
+    "requires_local_entity": true,
+    "requires_incorporation": true,
+    "rd_focus": true,
+    "female_founder_only": false,
+    "underrepresented_focus": false,
+    "de_minimis": false,
+    "other_note": "Open to TPE/PME and ETI regardless of legal form, including associations with an economic activity. Priority sectors include health, aerospace, sustainable urbanism, green energy, smart mobility, agri-food, luxury/cosmetics, deeptech, AI, quantum and social innovation."
+   },
+   "source_url": "https://www.iledefrance.fr/aides-et-appels-a-projets/innovup",
+   "source_snippet": "TPE/PME and ETI, regardless of legal form, including associations with economic activity […] toute dépense antérieure ne peut être prise en compte",
+   "last_verified_at": "2026-08-14",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "fr-jeune-entreprise-innovante",
+   "name_local": "Statut Jeune entreprise innovante (JEI)",
+   "name_en": "Young Innovative Company status",
+   "country_code": "fr",
+   "admin_level": "national",
+   "admin_area": null,
+   "funder": "État français (URSSAF / DGFiP)",
+   "funder_type": "public",
+   "grant_type": "tax_credit",
+   "category": "startup",
+   "amount_min": null,
+   "amount_max": null,
+   "amount_currency": "EUR",
+   "amount_note": "Not a cash grant. Employer social-contribution exemption on the pay of R&D staff, capped at 4.5 SMIC per person and at 5 times the annual social security ceiling per establishment per year, for 7 years from creation. The corporate income tax exemption (100% on the first profitable year, 50% on the second) NO LONGER applies to companies created from 1 January 2024. Local tax (CFE / taxe foncière) exemptions remain for companies created up to 31 December 2028 and are capped by the de minimis regulation (€300,000 over a rolling 3 years).",
+   "cofunding_pct": null,
+   "is_automatic": true,
+   "application_url": "https://bpifrance-creation.fr/encyclopedie/aides-a-creation-a-reprise-dentreprise/aides-a-linnovation/jei-jeune-entreprise",
+   "application_channel": "online",
+   "deadline_type": "rolling",
+   "deadline_note": "Self-assessed status applied each year; an optional rescrit may be requested from the tax administration.",
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Check the company meets the JEI criteria for the financial year, including the R&D expenditure share of total charges.",
+     "url": null
+    },
+    {
+     "step": 2,
+     "detail": "Optionally request a rescrit fiscal from the tax administration to confirm the status.",
+     "url": null
+    },
+    {
+     "step": 3,
+     "detail": "Apply the social-contribution exemption directly in the monthly DSN filings to URSSAF.",
+     "url": null
+    },
+    {
+     "step": 4,
+     "detail": "Claim the local tax exemptions where the local authority has voted them.",
+     "url": null
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "Evidence that R&D expenditure represents at least the required share of deductible charges",
+     "mandatory": true,
+     "note": "20% threshold for JEI; the JEC (jeune entreprise de croissance) variant covers 5–20%"
+    },
+    {
+     "doc": "Capital ownership structure evidence",
+     "mandatory": true,
+     "note": "Independence condition"
+    },
+    {
+     "doc": "Rescrit fiscal request",
+     "mandatory": false,
+     "note": "Optional confirmation from the tax administration"
+    }
+   ],
+   "eligibility": {
+    "entity": "startup",
+    "company_age_months_min": null,
+    "company_age_months_max": 96,
+    "headcount_min": null,
+    "headcount_max": 250,
+    "turnover_annual_max": 50000000,
+    "sme_category": "any",
+    "sectors": [
+     "deeptech",
+     "any"
+    ],
+    "stages": [
+     "pre_seed",
+     "seed",
+     "series_a"
+    ],
+    "requires_local_entity": true,
+    "requires_incorporation": true,
+    "rd_focus": true,
+    "female_founder_only": false,
+    "underrepresented_focus": false,
+    "de_minimis": true,
+    "other_note": "Company created less than 8 years ago, R&D spend at least 20% of deductible charges (raised from 15% by the 2024/2025 reforms), independent ownership. Reform position as at August 2026: IS exemption withdrawn for companies created from 1 January 2024; social-contribution exemption on R&D staff retained; local tax exemptions available for companies created up to 31 December 2028 and capped by de minimis (€300,000 / 3 years)."
+   },
+   "source_url": "https://bpifrance-creation.fr/encyclopedie/aides-a-creation-a-reprise-dentreprise/aides-a-linnovation/jei-jeune-entreprise",
+   "source_snippet": "Cet avantage fiscal concerne les entreprises créées jusqu'au 31 décembre 2028. Cette exonération est limitée par la réglementation de minimis",
+   "last_verified_at": "2026-08-14",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "fr-pret-amorcage-invest-eu",
+   "name_local": "Prêt d'amorçage Invest EU",
+   "name_en": "Invest EU Seed Loan",
+   "country_code": "fr",
+   "admin_level": "national",
+   "admin_area": null,
+   "funder": "Bpifrance",
+   "funder_type": "public",
+   "grant_type": "loan",
+   "category": "startup",
+   "amount_min": 50000,
+   "amount_max": 100000,
+   "amount_currency": "EUR",
+   "amount_note": "\"Montant : de 50 000 à 100 000 € par intervention, dans la limite des fonds propres et quasi-fonds propres de l'entreprise.\" \"Le prêt d'amorçage peut être porté à 300 000 € si la Région intervient en garantie.\"",
+   "cofunding_pct": null,
+   "is_automatic": false,
+   "application_url": "https://www.bpifrance.fr/catalogue-offres/pret-damorcage-invest-eu-0",
+   "application_channel": "portal",
+   "deadline_type": "rolling",
+   "deadline_note": "Continuous; granted alongside preparation of a fundraising round.",
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Have previously received an innovation aid under the RDI State-aid framework.",
+     "url": null
+    },
+    {
+     "step": 2,
+     "detail": "Apply to Bpifrance; loan granted without any security over company assets or the founder's personal estate.",
+     "url": "https://www.bpifrance.fr/contactez-nous"
+    },
+    {
+     "step": 3,
+     "detail": "On disbursement a 5% retention (garantie) is deducted; file fees of 0.40% of the loan amount apply.",
+     "url": null
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "Proof of a previous innovation aid under the RDI regime",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Business plan and fundraising plan",
+     "mandatory": true,
+     "note": null
+    }
+   ],
+   "eligibility": {
+    "entity": "startup",
+    "company_age_months_min": null,
+    "company_age_months_max": 60,
+    "headcount_min": null,
+    "headcount_max": 250,
+    "turnover_annual_max": 50000000,
+    "sme_category": "any",
+    "sectors": [
+     "any"
+    ],
+    "stages": [
+     "seed"
+    ],
+    "requires_local_entity": true,
+    "requires_incorporation": true,
+    "rd_focus": true,
+    "female_founder_only": false,
+    "underrepresented_focus": false,
+    "de_minimis": false,
+    "other_note": "PME au sens européen (moins de 250 salariés, bilan < 43 M€ ou CA < 50 M€), innovantes de moins de 5 ans, en phase d'amorçage, ayant bénéficié d'une aide à l'innovation adossée au régime RDI. Excluded: companies that have distributed profits, taken over another company's activity, or are in difficulty under EU law. Term 8 years with 3 years' capital grace."
+   },
+   "source_url": "https://bpifrance-creation.fr/encyclopedie/financements/lemprunt/pret-damorcage-bpifrance",
+   "source_snippet": "Montant : de 50 000 à 100 000 € par intervention, dans la limite des fonds propres et quasi-fonds propres de l'entreprise. Durée : 8 ans dont 3 ans de différé d'amortissement en capital",
+   "last_verified_at": "2026-08-14",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "fr-pret-amorcage-investissement-invest-eu",
+   "name_local": "Prêt d'amorçage investissement Invest EU",
+   "name_en": "Invest EU Seed Investment Loan",
+   "country_code": "fr",
+   "admin_level": "national",
+   "admin_area": null,
+   "funder": "Bpifrance",
+   "funder_type": "public",
+   "grant_type": "loan",
+   "category": "startup",
+   "amount_min": 100000,
+   "amount_max": 1000000,
+   "amount_currency": "EUR",
+   "amount_note": "\"Montant : de 100 000 à 1 000 000 € (jusqu'à 2 000 000 € si dérogation), dans la limite de la moitié de la levée de fonds réalisée et de la nouvelle situation nette de l'emprunteur après levée de fonds\".",
+   "cofunding_pct": null,
+   "is_automatic": false,
+   "application_url": "https://www.bpifrance.fr/catalogue-offres/pret-damorcage-investissement-invest-eu",
+   "application_channel": "portal",
+   "deadline_type": "rolling",
+   "deadline_note": "Continuous; granted concurrently with a completed seed round.",
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Close a seed round of at least €200,000 with professional 'avisés' investors (VC funds, professional business angels, AMF/ORIAS-registered CIP/IFP/PSI crowdfunding platforms).",
+     "url": null
+    },
+    {
+     "step": 2,
+     "detail": "Apply to Bpifrance for the loan, granted without security over company assets or founder's estate.",
+     "url": "https://www.bpifrance.fr/contactez-nous"
+    },
+    {
+     "step": 3,
+     "detail": "On disbursement a 5% retention is deducted; file fees of 0.40% of the loan amount apply.",
+     "url": null
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "Evidence of a completed seed round of at least €200,000",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Cap table and investor identity showing 'avisés' professional investors",
+     "mandatory": true,
+     "note": null
+    }
+   ],
+   "eligibility": {
+    "entity": "startup",
+    "company_age_months_min": null,
+    "company_age_months_max": 96,
+    "headcount_min": null,
+    "headcount_max": 250,
+    "turnover_annual_max": 50000000,
+    "sme_category": "any",
+    "sectors": [
+     "any"
+    ],
+    "stages": [
+     "seed",
+     "series_a"
+    ],
+    "requires_local_entity": true,
+    "requires_incorporation": true,
+    "rd_focus": false,
+    "female_founder_only": false,
+    "underrepresented_focus": false,
+    "de_minimis": false,
+    "other_note": "PME innovantes de moins de 8 ans ayant réussi leur levée de fonds d'amorçage pour au moins 200 000 euros. Term 8 years with 3 years' capital grace. Same exclusions as the Prêt d'amorçage."
+   },
+   "source_url": "https://bpifrance-creation.fr/encyclopedie/financements/lemprunt/pret-damorcage-bpifrance",
+   "source_snippet": "Le prêt d'amorçage investissement Invest EU s'adresse aux petites et moyennes entreprises au sens de la définition européenne […] innovantes de moins de 8 ans, et ayant réussi leur levée de fonds d'amorçage pour au moins 200 000 euros.",
+   "last_verified_at": "2026-08-14",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "fr-reseau-entreprendre-pret-honneur",
+   "name_local": "Prêt d'honneur Réseau Entreprendre",
+   "name_en": "Réseau Entreprendre Honour Loan",
+   "country_code": "fr",
+   "admin_level": "national",
+   "admin_area": null,
+   "funder": "Réseau Entreprendre",
+   "funder_type": "private",
+   "grant_type": "loan",
+   "category": "startup",
+   "amount_min": 15000,
+   "amount_max": 90000,
+   "amount_currency": "EUR",
+   "amount_note": "\"15 000 à 90 000 euros selon les parcours d'accompagnement\", interest-free and without collateral, over 60 months with an 18-month repayment deferral. Amounts and thresholds are set by each local association; figures verified on the Réseau Entreprendre Aquitaine page.",
+   "cofunding_pct": null,
+   "is_automatic": false,
+   "application_url": "https://www.reseau-entreprendre.org/",
+   "application_channel": "online",
+   "deadline_type": "rolling",
+   "deadline_note": "Applications accepted continuously by each local association; selection by a committee of business leaders.",
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Apply to the local Réseau Entreprendre association covering the project's territory.",
+     "url": "https://www.reseau-entreprendre.org/"
+    },
+    {
+     "step": 2,
+     "detail": "Present the business plan (or signed letter of intent for a takeover) to the selection committee of entrepreneurs.",
+     "url": null
+    },
+    {
+     "step": 3,
+     "detail": "If selected as lauréat, receive the interest-free honour loan and individual mentoring by an experienced chef d'entreprise for two years plus monthly peer meetings.",
+     "url": null
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "Business plan, or signed Letter of Intent for a takeover",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Evidence of personal equity contribution of at least €15,000",
+     "mandatory": true,
+     "note": "Aquitaine association criterion"
+    },
+    {
+     "doc": "Employment projection (at least 5 FTE permanent jobs within 3 years, excluding founders)",
+     "mandatory": true,
+     "note": "Aquitaine association criterion"
+    }
+   ],
+   "eligibility": {
+    "entity": "startup",
+    "company_age_months_min": null,
+    "company_age_months_max": 24,
+    "headcount_min": null,
+    "headcount_max": null,
+    "turnover_annual_max": null,
+    "sme_category": "any",
+    "sectors": [
+     "any"
+    ],
+    "stages": [
+     "pre_seed",
+     "seed"
+    ],
+    "requires_local_entity": true,
+    "requires_incorporation": false,
+    "rd_focus": false,
+    "female_founder_only": false,
+    "underrepresented_focus": false,
+    "de_minimis": false,
+    "other_note": "Applications accepted from 6 months before to 24 months after company registration. Founder must retain majority ownership and operational control and be fully available. Financing need above €70,000. Criteria are set locally and vary between associations."
+   },
+   "source_url": "https://www.reseau-entreprendre.org/aquitaine/entreprendre/",
+   "source_snippet": "15 000 à 90 000 euros selon les parcours d'accompagnement",
+   "last_verified_at": "2026-08-14",
+   "verification_status": "verified"
+  }
+ ]
+}

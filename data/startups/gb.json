@@ -1,0 +1,1676 @@
+{
+ "country_code": "gb",
+ "country_name": "United Kingdom",
+ "currency": "GBP",
+ "language": "en",
+ "entity": "startup",
+ "programmes": [
+  {
+   "slug": "uk-biomedical-catalyst",
+   "name_local": "Innovate UK Biomedical Catalyst",
+   "name_en": "Innovate UK Biomedical Catalyst",
+   "country_code": "gb",
+   "admin_level": "national",
+   "admin_area": null,
+   "funder": "Innovate UK (UK Research and Innovation)",
+   "funder_type": "public",
+   "grant_type": "grant",
+   "category": "startup",
+   "amount_min": null,
+   "amount_max": 500000,
+   "amount_currency": "GBP",
+   "amount_note": "Figures are for the 'Biomedical Catalyst 2025: Industry led R&D small projects' round: total project costs up to £1 million with a grant funding request of no more than £500,000, from a £25 million programme pot. Larger-project rounds run alongside with different caps. A new round's caps must be re-checked when it opens.",
+   "cofunding_pct": null,
+   "is_automatic": false,
+   "application_url": "https://apply-for-innovation-funding.service.gov.uk/competition/search",
+   "application_channel": "online",
+   "deadline_type": "annual_call",
+   "deadline_note": "Recurring competition rounds. The 2025 small-projects round opened 10 November 2025 and closed 11 December 2025 at 11:00; projects had to start by 1 July 2026 and end by 30 June 2028. Check the Innovation Funding Service for the current round.",
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Find the current Biomedical Catalyst competition on the Innovation Funding Service.",
+     "url": "https://apply-for-innovation-funding.service.gov.uk/competition/search"
+    },
+    {
+     "step": 2,
+     "detail": "Register for the competition before the registration deadline.",
+     "url": null
+    },
+    {
+     "step": 3,
+     "detail": "Submit the application including project plan, finances and impact case.",
+     "url": null
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "Innovation Funding Service application",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Project finance forms for each partner",
+     "mandatory": true,
+     "note": null
+    }
+   ],
+   "eligibility": {
+    "entity": "startup",
+    "company_age_months_min": null,
+    "company_age_months_max": null,
+    "headcount_min": null,
+    "headcount_max": 250,
+    "turnover_annual_max": null,
+    "sme_category": "medium",
+    "sectors": [
+     "health",
+     "deeptech"
+    ],
+    "stages": [
+     "pre_seed",
+     "seed",
+     "series_a"
+    ],
+    "requires_local_entity": true,
+    "requires_incorporation": true,
+    "rd_focus": true,
+    "female_founder_only": false,
+    "underrepresented_focus": false,
+    "de_minimis": false,
+    "other_note": "The lead applicant claiming grant funding must be a UK registered micro, small or medium sized enterprise. Projects in the 2025 small-projects round had to last between 6 and 24 months. Open to single applicants and collaborations."
+   },
+   "source_url": "https://iuk-business-connect.org.uk/opportunities/biomedical-catalyst-2025-industry-led-rd-small-projects/",
+   "source_snippet": "up to £25 million from the Innovate UK Biomedical Catalyst programme ... total project costs up to £1 million ... last between 6 months and 24 months",
+   "last_verified_at": "2026-08-14",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "uk-defence-innovation-open-calls",
+   "name_local": "UK Defence Innovation (formerly Defence and Security Accelerator, DASA)",
+   "name_en": "UK Defence Innovation (UKDI) open calls and themed competitions",
+   "country_code": "gb",
+   "admin_level": "national",
+   "admin_area": null,
+   "funder": "UK Defence Innovation, Ministry of Defence",
+   "funder_type": "public",
+   "grant_type": "grant",
+   "category": "startup",
+   "amount_min": null,
+   "amount_max": null,
+   "amount_currency": "GBP",
+   "amount_note": "Award sizes are set per competition and were not verifiable from a single official page at the time of checking. DASA's Open Call for Innovation historically ran in cycles with phased funding; the collection page now states the Open Call is closed and there are currently no cycles open. Live opportunities under UKDI (e.g. the Security Open Call, Innovation Support to Operations) publish their own funding levels.",
+   "cofunding_pct": null,
+   "is_automatic": false,
+   "application_url": "https://www.gov.uk/government/organisations/uk-defence-innovation",
+   "application_channel": "portal",
+   "deadline_type": "rolling",
+   "deadline_note": "DASA is now part of UK Defence Innovation. The DASA Open Call for Innovation collection was updated on 13 January 2026 to reflect that it is closed and there are currently no cycles open; other UKDI calls such as the Security Open Call remain live. Check UKDI live funding opportunities for current cycles and cut-offs.",
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Register for a UKDI account.",
+     "url": "https://www.gov.uk/government/organisations/uk-defence-innovation"
+    },
+    {
+     "step": 2,
+     "detail": "Review live funding opportunities and read the relevant competition document.",
+     "url": null
+    },
+    {
+     "step": 3,
+     "detail": "Submit a proposal through the UKDI submission portal before the cycle cut-off.",
+     "url": null
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "Competition proposal via the UKDI portal",
+     "mandatory": true,
+     "note": "Format defined in each competition document"
+    }
+   ],
+   "eligibility": {
+    "entity": "startup",
+    "company_age_months_min": null,
+    "company_age_months_max": null,
+    "headcount_min": null,
+    "headcount_max": null,
+    "turnover_annual_max": null,
+    "sme_category": "any",
+    "sectors": [
+     "deeptech",
+     "ai",
+     "manufacturing",
+     "any"
+    ],
+    "stages": [
+     "pre_seed",
+     "seed",
+     "series_a",
+     "growth"
+    ],
+    "requires_local_entity": false,
+    "requires_incorporation": true,
+    "rd_focus": true,
+    "female_founder_only": false,
+    "underrepresented_focus": false,
+    "de_minimis": false,
+    "other_note": "Open to innovators of any size including startups and academia; specific eligibility, security requirements and any nationality restrictions are set in each competition document. Note the organisational change from DASA to UKDI — DASA-branded pages are being superseded."
+   },
+   "source_url": "https://www.gov.uk/government/collections/defence-and-security-accelerator-dasa-open-call-for-innovation",
+   "source_snippet": "You can view our Open Call for Innovation competitions currently accepting submissions here. For a list of DASA open themed competitions, please see here.",
+   "last_verified_at": "2026-08-14",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "uk-development-bank-of-wales",
+   "name_local": "Development Bank of Wales — start-up and micro loans",
+   "name_en": "Development Bank of Wales start-up finance",
+   "country_code": "gb",
+   "admin_level": "regional",
+   "admin_area": "Wales",
+   "funder": "Development Bank of Wales (Welsh Government)",
+   "funder_type": "public",
+   "grant_type": "loan",
+   "category": "startup",
+   "amount_min": 1000,
+   "amount_max": 10000000,
+   "amount_currency": "GBP",
+   "amount_note": "Micro loans from £1,000 to £100,000 for early-stage businesses; loans and equity funding from £50,000 to £10 million for start-up and growth companies. Pricing and terms are set per deal.",
+   "cofunding_pct": null,
+   "is_automatic": false,
+   "application_url": "https://developmentbank.wales/",
+   "application_channel": "online",
+   "deadline_type": "rolling",
+   "deadline_note": "Applications accepted at any time.",
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Check that your company is based in Wales or relocating to Wales.",
+     "url": "https://developmentbank.wales/"
+    },
+    {
+     "step": 2,
+     "detail": "Submit an enquiry describing the business and the amount sought.",
+     "url": null
+    },
+    {
+     "step": 3,
+     "detail": "Work with an investment executive through due diligence to a funding decision.",
+     "url": null
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "Business plan",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Financial forecasts",
+     "mandatory": true,
+     "note": null
+    }
+   ],
+   "eligibility": {
+    "entity": "startup",
+    "company_age_months_min": null,
+    "company_age_months_max": null,
+    "headcount_min": null,
+    "headcount_max": null,
+    "turnover_annual_max": null,
+    "sme_category": "any",
+    "sectors": [
+     "any"
+    ],
+    "stages": [
+     "idea",
+     "pre_seed",
+     "seed",
+     "series_a",
+     "growth"
+    ],
+    "requires_local_entity": true,
+    "requires_incorporation": false,
+    "rd_focus": false,
+    "female_founder_only": false,
+    "underrepresented_focus": false,
+    "de_minimis": false,
+    "other_note": "Finance is available for companies based in Wales, or relocating to Wales. The bank also invests equity in tech start-ups and early-stage businesses. Free advisory and mentoring support for Welsh start-ups is provided separately by Business Wales, funded by the Welsh Government (businesswales.gov.wales, helpline 03000 6 03000)."
+   },
+   "source_url": "https://developmentbank.wales/",
+   "source_snippet": "Micro loans £1,000 - £100,000 ... Loans and equity funding from £50,000 - £10 million",
+   "last_verified_at": "2026-08-14",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "uk-eis",
+   "name_local": "Enterprise Investment Scheme (EIS)",
+   "name_en": "Enterprise Investment Scheme (EIS)",
+   "country_code": "gb",
+   "admin_level": "national",
+   "admin_area": null,
+   "funder": "HM Revenue & Customs",
+   "funder_type": "public",
+   "grant_type": "tax_credit",
+   "category": "startup",
+   "amount_min": null,
+   "amount_max": 24000000,
+   "amount_currency": "GBP",
+   "amount_note": "Most companies can raise up to £10 million in any 12-month period from venture capital schemes, and up to £24 million over the company's lifetime (£5 million / £12 million for 'specified companies'). Knowledge-intensive companies have higher limits. NOTE: like SEIS this is an INVESTOR relief — HMRC gives income tax and CGT reliefs to individuals subscribing for shares; the figures are caps on qualifying investment the company may take in, not a grant to the company.",
+   "cofunding_pct": null,
+   "is_automatic": false,
+   "application_url": "https://www.gov.uk/guidance/venture-capital-schemes-apply-for-the-enterprise-investment-scheme",
+   "application_channel": "online",
+   "deadline_type": "rolling",
+   "deadline_note": "No deadline; advance assurance available at any time, compliance statement (EIS1) filed after shares are issued.",
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Optionally apply to HMRC for advance assurance.",
+     "url": null
+    },
+    {
+     "step": 2,
+     "detail": "Issue shares to investors.",
+     "url": null
+    },
+    {
+     "step": 3,
+     "detail": "Submit compliance statement form EIS1 to HMRC.",
+     "url": null
+    },
+    {
+     "step": 4,
+     "detail": "Issue EIS3 certificates to investors once HMRC authorises them.",
+     "url": null
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "Compliance statement (form EIS1)",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Business plan and financial forecasts",
+     "mandatory": false,
+     "note": "For advance assurance"
+    }
+   ],
+   "eligibility": {
+    "entity": "startup",
+    "company_age_months_min": null,
+    "company_age_months_max": 84,
+    "headcount_min": null,
+    "headcount_max": 250,
+    "turnover_annual_max": null,
+    "sme_category": "medium",
+    "sectors": [
+     "any"
+    ],
+    "stages": [
+     "seed",
+     "series_a",
+     "growth"
+    ],
+    "requires_local_entity": true,
+    "requires_incorporation": true,
+    "rd_focus": false,
+    "female_founder_only": false,
+    "underrepresented_focus": false,
+    "de_minimis": false,
+    "other_note": "Shares must normally be issued within 7 years of the company's first commercial sale. Gross assets must be less than £30 million before the share issue and not more than £35 million immediately afterwards (£15m/£16m for specified companies). Fewer than 250 full-time equivalent employees. Knowledge-intensive companies have extended age, headcount and funding limits — exact KIC thresholds were not re-confirmed on the page read, so treat them as unverified."
+   },
+   "source_url": "https://www.gov.uk/guidance/venture-capital-schemes-apply-for-the-enterprise-investment-scheme",
+   "source_snippet": "Most companies can raise up to £10 million in total in any 12 month period ... up to £24 million from these sources in your company's lifetime.",
+   "last_verified_at": "2026-08-14",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "uk-england-growth-hubs",
+   "name_local": "Growth Hubs",
+   "name_en": "Local Growth Hubs (England)",
+   "country_code": "gb",
+   "admin_level": "regional",
+   "admin_area": "England (local growth hub areas)",
+   "funder": "Department for Business and Trade / local authorities and combined authorities",
+   "funder_type": "public",
+   "grant_type": "in_kind",
+   "category": "startup",
+   "amount_min": null,
+   "amount_max": null,
+   "amount_currency": "GBP",
+   "amount_note": "Growth Hubs themselves provide free advice and signposting rather than a fixed grant. Individual hubs run their own local grant schemes with amounts that vary by area and funding cycle; no national figure exists.",
+   "cofunding_pct": null,
+   "is_automatic": false,
+   "application_url": "https://www.gov.uk/business-support-helpline",
+   "application_channel": "online",
+   "deadline_type": "rolling",
+   "deadline_note": "Continuous service. Individual local grant calls run to their own timetables.",
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Find your local growth hub using the growth hub finder.",
+     "url": "https://www.gov.uk/business-support-helpline"
+    },
+    {
+     "step": 2,
+     "detail": "Contact the hub for free advice and a diagnostic of available local support.",
+     "url": null
+    },
+    {
+     "step": 3,
+     "detail": "Apply to any local grant or programme the hub signposts you to.",
+     "url": null
+    }
+   ],
+   "documents_required": [],
+   "eligibility": {
+    "entity": "startup",
+    "company_age_months_min": null,
+    "company_age_months_max": null,
+    "headcount_min": null,
+    "headcount_max": null,
+    "turnover_annual_max": null,
+    "sme_category": "any",
+    "sectors": [
+     "any"
+    ],
+    "stages": [
+     "idea",
+     "pre_seed",
+     "seed",
+     "series_a",
+     "growth"
+    ],
+    "requires_local_entity": true,
+    "requires_incorporation": false,
+    "rd_focus": false,
+    "female_founder_only": false,
+    "underrepresented_focus": false,
+    "de_minimis": false,
+    "other_note": "Growth hubs cover England only. Scotland, Wales and Northern Ireland have equivalent national services (Business Gateway/Scottish Enterprise, Business Wales, Invest NI)."
+   },
+   "source_url": "https://www.gov.uk/business-support-helpline",
+   "source_snippet": "You can also find free advice and financial help through your local 'growth hub'.",
+   "last_verified_at": "2026-08-14",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "uk-eris-rd-intensive-smes",
+   "name_local": "Enhanced R&D intensive support (ERIS)",
+   "name_en": "Enhanced R&D intensive support (ERIS) for loss-making R&D intensive SMEs",
+   "country_code": "gb",
+   "admin_level": "national",
+   "admin_area": null,
+   "funder": "HM Revenue & Customs",
+   "funder_type": "public",
+   "grant_type": "tax_credit",
+   "category": "startup",
+   "amount_min": null,
+   "amount_max": null,
+   "amount_currency": "GBP",
+   "amount_note": "Additional 86% deduction of qualifying costs on top of the normal 100% (total 186% deduction), plus a payable tax credit worth up to 14.5% of the surrenderable loss, which is not liable to tax. For accounting periods beginning on or after 1 April 2024. Subject to the PAYE cap of £20,000 plus 300% of relevant PAYE and NIC liabilities.",
+   "cofunding_pct": null,
+   "is_automatic": false,
+   "application_url": "https://www.gov.uk/guidance/research-and-development-rd-tax-relief-the-merged-scheme-and-enhanced-rd-intensive-support",
+   "application_channel": "online",
+   "deadline_type": "rolling",
+   "deadline_note": "Claimed through the Company Tax Return; claim notification and additional information form required.",
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Confirm you are a loss-making SME and meet the intensity condition (relevant R&D expenditure at least 30% of total expenditure, including connected companies).",
+     "url": null
+    },
+    {
+     "step": 2,
+     "detail": "Submit claim notification if required, then the additional information form.",
+     "url": "https://www.gov.uk/guidance/submit-detailed-information-before-you-claim-research-and-development-rd-tax-relief"
+    },
+    {
+     "step": 3,
+     "detail": "Claim in the Company Tax Return. You may instead choose merged RDEC, but not both for the same expenditure.",
+     "url": null
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "Company Tax Return (CT600) with R&D claim",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Additional information form",
+     "mandatory": true,
+     "note": null
+    }
+   ],
+   "eligibility": {
+    "entity": "startup",
+    "company_age_months_min": null,
+    "company_age_months_max": null,
+    "headcount_min": null,
+    "headcount_max": null,
+    "turnover_annual_max": null,
+    "sme_category": "any",
+    "sectors": [
+     "any"
+    ],
+    "stages": [
+     "pre_seed",
+     "seed",
+     "series_a"
+    ],
+    "requires_local_entity": true,
+    "requires_incorporation": true,
+    "rd_focus": true,
+    "female_founder_only": false,
+    "underrepresented_focus": false,
+    "de_minimis": false,
+    "other_note": "Only loss-making R&D intensive SMEs qualify. Intensity condition: relevant R&D expenditure at least 30% of total expenditure. Companies registered in Northern Ireland follow separate NI ERIS provisions and are not subject to the overseas contractor/EPW restrictions, but face sectoral de minimis limits; they can opt out in some circumstances."
+   },
+   "source_url": "https://www.gov.uk/guidance/research-and-development-rd-tax-relief-the-merged-scheme-and-enhanced-rd-intensive-support",
+   "source_snippet": "deduct an extra 86% of their qualifying costs in calculating their adjusted trading loss, as well as the 100% deduction which already appears in the accounts ... to make a total of 186% deduction; claim a payable tax credit, which is not liable to tax and is worth up to 14.5% of the surrenderable loss",
+   "last_verified_at": "2026-08-14",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "uk-growth-guarantee-scheme",
+   "name_local": "Growth Guarantee Scheme",
+   "name_en": "British Business Bank Growth Guarantee Scheme",
+   "country_code": "gb",
+   "admin_level": "national",
+   "admin_area": null,
+   "funder": "British Business Bank",
+   "funder_type": "public",
+   "grant_type": "loan",
+   "category": "startup",
+   "amount_min": null,
+   "amount_max": 2000000,
+   "amount_currency": "GBP",
+   "amount_note": "Facilities of up to £2m per business group for borrowers outside the scope of the Northern Ireland Protocol, and up to £1 million for NI Protocol borrowers. The scheme provides the lender with a 70% government-backed guarantee against the outstanding balance; the borrower remains 100% liable for the debt. Terms and pricing are set by the accredited lender.",
+   "cofunding_pct": null,
+   "is_automatic": false,
+   "application_url": "https://www.british-business-bank.co.uk/finance-options/debt-finance/growth-guarantee-scheme",
+   "application_channel": "online",
+   "deadline_type": "rolling",
+   "deadline_note": "Open for applications; applications are made through accredited lenders, not to the British Business Bank directly. No end date stated on the page.",
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Check eligibility (UK trading activity, turnover threshold, viability).",
+     "url": null
+    },
+    {
+     "step": 2,
+     "detail": "Choose an accredited lender from the published list and apply directly to them.",
+     "url": "https://www.british-business-bank.co.uk/finance-options/debt-finance/growth-guarantee-scheme"
+    },
+    {
+     "step": 3,
+     "detail": "The lender assesses the application under its normal credit process and applies the guarantee if needed.",
+     "url": null
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "Lender's standard credit application pack",
+     "mandatory": true,
+     "note": "Varies by accredited lender"
+    }
+   ],
+   "eligibility": {
+    "entity": "startup",
+    "company_age_months_min": null,
+    "company_age_months_max": null,
+    "headcount_min": null,
+    "headcount_max": null,
+    "turnover_annual_max": 45000000,
+    "sme_category": "any",
+    "sectors": [
+     "any"
+    ],
+    "stages": [
+     "seed",
+     "series_a",
+     "growth"
+    ],
+    "requires_local_entity": true,
+    "requires_incorporation": false,
+    "rd_focus": false,
+    "female_founder_only": false,
+    "underrepresented_focus": false,
+    "de_minimis": false,
+    "other_note": "Open to smaller businesses with turnover up to £45m on a group basis; the page notes this limit is being increased to £54m as part of enhancements announced in July 2026. Borrower must be carrying out trading activity in the UK and generating more than 50% of its income from trading activity (charities and FE colleges exempt from the income test)."
+   },
+   "source_url": "https://www.british-business-bank.co.uk/finance-options/debt-finance/growth-guarantee-scheme",
+   "source_snippet": "The scheme provides the lender with a 70% government-backed guarantee against the outstanding balance of the facility ... The scheme is open to smaller businesses with a turnover of up to £45m (on a group basis, where part of a group).",
+   "last_verified_at": "2026-08-14",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "uk-icure-explore",
+   "name_local": "ICURe Explore",
+   "name_en": "ICURe Explore (Innovation to Commercialisation of University Research)",
+   "country_code": "gb",
+   "admin_level": "national",
+   "admin_area": null,
+   "funder": "Innovate UK (UK Research and Innovation)",
+   "funder_type": "public",
+   "grant_type": "grant",
+   "category": "startup",
+   "amount_min": null,
+   "amount_max": 35000,
+   "amount_currency": "GBP",
+   "amount_note": "Up to £35,000 per team, of which a maximum of £20,000 is for the Entrepreneurial Lead's salary, with the balance funding assumption testing and customer discovery activities.",
+   "cofunding_pct": null,
+   "is_automatic": false,
+   "application_url": "https://iuk-business-connect.org.uk/opportunities/icure-explore/",
+   "application_channel": "online",
+   "deadline_type": "cutoff",
+   "deadline_note": "Runs as cohorts through the year. For the October 2026 cohort: applications opened 20 July 2026, close 4 September 2026, programme starts 14 October 2026 (hybrid delivery).",
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Complete ICURe Discover — a prerequisite for Explore.",
+     "url": "https://iuk-business-connect.org.uk/opportunities/icure-explore/"
+    },
+    {
+     "step": 2,
+     "detail": "Apply to an ICURe Explore cohort during its application window.",
+     "url": "https://iuk-business-connect.org.uk/opportunities/icure-explore/"
+    },
+    {
+     "step": 3,
+     "detail": "If selected, take part in the 12-16 week full-time market exploration programme with the Entrepreneurial Lead conducting customer discovery.",
+     "url": null
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "ICURe Explore application form",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Evidence of ICURe Discover completion",
+     "mandatory": true,
+     "note": null
+    }
+   ],
+   "eligibility": {
+    "entity": "startup",
+    "company_age_months_min": null,
+    "company_age_months_max": null,
+    "headcount_min": null,
+    "headcount_max": null,
+    "turnover_annual_max": null,
+    "sme_category": "any",
+    "sectors": [
+     "deeptech",
+     "health",
+     "climate",
+     "any"
+    ],
+    "stages": [
+     "idea",
+     "pre_seed"
+    ],
+    "requires_local_entity": true,
+    "requires_incorporation": false,
+    "rd_focus": true,
+    "female_founder_only": false,
+    "underrepresented_focus": false,
+    "de_minimis": false,
+    "other_note": "Aimed at university/research teams commercialising research, not at already-incorporated companies. Requires full-time participation for 12-16 weeks and prior completion of ICURe Discover."
+   },
+   "source_url": "https://iuk-business-connect.org.uk/opportunities/icure-explore/",
+   "source_snippet": "A fast-paced, full-time, 12-16-week market exploration programme ... Up to £35,000 per team, with a maximum of £20,000 for the Entrepreneurial Lead's salary",
+   "last_verified_at": "2026-08-14",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "uk-innovate-uk-innovation-loans",
+   "name_local": "Innovate UK Innovation Loans",
+   "name_en": "Innovate UK Innovation Loans",
+   "country_code": "gb",
+   "admin_level": "national",
+   "admin_area": null,
+   "funder": "Innovate UK (UK Research and Innovation)",
+   "funder_type": "public",
+   "grant_type": "loan",
+   "category": "startup",
+   "amount_min": 100000,
+   "amount_max": 5000000,
+   "amount_currency": "GBP",
+   "amount_note": "Loans range from £100,000 to £5 million. Interest rate 7.4% per annum: 3.7% pa payable during the project period on amounts drawn with a further 3.7% pa deferred; 7.4% pa payable during the repayment period alongside repayment of principal and deferred interest. Loans can cover up to 100% of eligible project costs.",
+   "cofunding_pct": 0,
+   "is_automatic": false,
+   "application_url": "https://iuk-business-connect.org.uk/opportunities/innovation-loans-expression-of-interest/",
+   "application_channel": "online",
+   "deadline_type": "rolling",
+   "deadline_note": "Expression of Interest route with no submission deadline; the team contacts applicants after an EOI is submitted.",
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Complete an Expression of Interest.",
+     "url": "https://iuk-business-connect.org.uk/opportunities/innovation-loans-expression-of-interest/"
+    },
+    {
+     "step": 2,
+     "detail": "Innovate UK Loans contacts you to discuss suitability; full application follows.",
+     "url": null
+    },
+    {
+     "step": 3,
+     "detail": "Provide historic and forecast financial information for credit assessment.",
+     "url": null
+    },
+    {
+     "step": 4,
+     "detail": "If approved, grant security by mortgage debenture (fixed and floating charge over company assets); no personal guarantees required.",
+     "url": null
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "Expression of Interest form",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Historic and forecast financial information",
+     "mandatory": true,
+     "note": "Including assumptions behind forecasts"
+    },
+    {
+     "doc": "Annual accounts and quarterly management accounts",
+     "mandatory": true,
+     "note": "Ongoing reporting obligation during the loan"
+    }
+   ],
+   "eligibility": {
+    "entity": "startup",
+    "company_age_months_min": null,
+    "company_age_months_max": null,
+    "headcount_min": null,
+    "headcount_max": 250,
+    "turnover_annual_max": null,
+    "sme_category": "medium",
+    "sectors": [
+     "deeptech",
+     "manufacturing",
+     "climate",
+     "health",
+     "any"
+    ],
+    "stages": [
+     "series_a",
+     "growth"
+    ],
+    "requires_local_entity": true,
+    "requires_incorporation": true,
+    "rd_focus": true,
+    "female_founder_only": false,
+    "underrepresented_focus": false,
+    "de_minimis": false,
+    "other_note": "UK registered micro, small or medium sized enterprises only, carrying out late-stage R&D (experimental development) and pre-commercial activities. Aimed at businesses 'scaling rather than starting' that are credit constrained. Covenants apply: liquidity ratio 1.1x throughout the loan and debt service coverage ratio 1.2x in the repayment period. Funding provided under the UK Subsidy Control Act 2022; Windsor Framework restrictions apply to Northern Ireland businesses."
+   },
+   "source_url": "https://iuk-business-connect.org.uk/programme/innovation-loans/",
+   "source_snippet": "Loans can range from £100,000 to £5 million and are offered on flexible, patient terms for businesses that are beyond the early stages of development ... The interest rate is 7.4% per annum (pa).",
+   "last_verified_at": "2026-08-14",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "uk-innovate-uk-smart-grants",
+   "name_local": "Innovate UK Smart Grants",
+   "name_en": "Innovate UK Smart Grants",
+   "country_code": "gb",
+   "admin_level": "national",
+   "admin_area": null,
+   "funder": "Innovate UK (UK Research and Innovation)",
+   "funder_type": "public",
+   "grant_type": "grant",
+   "category": "startup",
+   "amount_min": null,
+   "amount_max": null,
+   "amount_currency": "GBP",
+   "amount_note": "No amount recorded because the programme is not currently running. Smart Grants was Innovate UK's open, sector-agnostic grant competition; historic rounds funded projects across feasibility, industrial research and experimental development, but the current award ranges cannot be verified from an open call.",
+   "cofunding_pct": null,
+   "is_automatic": false,
+   "application_url": "https://apply-for-innovation-funding.service.gov.uk/competition/search",
+   "application_channel": "online",
+   "deadline_type": "closed",
+   "deadline_note": "PAUSED. Innovate UK paused the Smart Grants offer in January 2025 and confirmed there would be no Smart rounds in financial year 2025/26. No Smart grants competition appeared among the 18 competitions listed on the Innovation Funding Service on 14 August 2026. Retained here because Innovate UK has not announced permanent closure and states that future funding programmes are under consideration.",
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Monitor the Innovation Funding Service competition search for any reopening of Smart Grants or a successor open competition.",
+     "url": "https://apply-for-innovation-funding.service.gov.uk/competition/search"
+    }
+   ],
+   "documents_required": [],
+   "eligibility": {
+    "entity": "startup",
+    "company_age_months_min": null,
+    "company_age_months_max": null,
+    "headcount_min": null,
+    "headcount_max": null,
+    "turnover_annual_max": null,
+    "sme_category": "any",
+    "sectors": [
+     "any"
+    ],
+    "stages": [
+     "pre_seed",
+     "seed",
+     "series_a",
+     "growth"
+    ],
+    "requires_local_entity": true,
+    "requires_incorporation": true,
+    "rd_focus": true,
+    "female_founder_only": false,
+    "underrepresented_focus": false,
+    "de_minimis": false,
+    "other_note": "Historically open to UK registered SMEs applying alone, or UK registered businesses of any size in collaboration. Current eligibility cannot be confirmed while the programme is paused."
+   },
+   "source_url": "https://iuk-business-connect.org.uk/news/new-funding-and-support-packages-for-innovative-smes/",
+   "source_snippet": "In January 2025, we paused our Innovate UK Smart Grants offer, We can now confirm that there will be no Smart rounds in the financial year 2025/26 ... Planning for future funding programmes or pilots will be carefully considered as part of Innovate UK's long-term strategy.",
+   "last_verified_at": "2026-08-14",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "uk-invest-ni-business-innovation-grant",
+   "name_local": "Business Innovation Grant (BIG)",
+   "name_en": "Invest NI / Innovate NI Business Innovation Grant (BIG)",
+   "country_code": "gb",
+   "admin_level": "regional",
+   "admin_area": "Northern Ireland",
+   "funder": "Invest Northern Ireland (delivered via Innovate NI)",
+   "funder_type": "public",
+   "grant_type": "grant",
+   "category": "startup",
+   "amount_min": 5000,
+   "amount_max": 20000,
+   "amount_currency": "GBP",
+   "amount_note": "Grants range from £5,000 to £20,000 at a grant rate of 70%, so the business funds the remaining 30% of eligible costs.",
+   "cofunding_pct": 30,
+   "is_automatic": false,
+   "application_url": "https://www.investni.com/support-for-business/innovation-support/business-innovation-grant",
+   "application_channel": "online",
+   "deadline_type": "cutoff",
+   "deadline_note": "Applications for the current call close at 12:00 noon, Friday 4 September 2026. The grant runs in periodic calls.",
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Check that your business is a Northern Ireland micro or SME aligned with Innovate NI's definition of innovation.",
+     "url": "https://www.investni.com/support-for-business/innovation-support/business-innovation-grant"
+    },
+    {
+     "step": 2,
+     "detail": "Apply through the Innovate NI website (innovateni.com/business-innovation-grant) before the call closes.",
+     "url": null
+    },
+    {
+     "step": 3,
+     "detail": "If successful, receive the grant plus ongoing guidance through the Innovate NI programme.",
+     "url": null
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "Innovate NI Business Innovation Grant application",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Quotes / costings for the proposed innovation activity",
+     "mandatory": true,
+     "note": null
+    }
+   ],
+   "eligibility": {
+    "entity": "startup",
+    "company_age_months_min": null,
+    "company_age_months_max": null,
+    "headcount_min": null,
+    "headcount_max": 249,
+    "turnover_annual_max": null,
+    "sme_category": "medium",
+    "sectors": [
+     "any"
+    ],
+    "stages": [
+     "pre_seed",
+     "seed",
+     "series_a"
+    ],
+    "requires_local_entity": true,
+    "requires_incorporation": true,
+    "rd_focus": false,
+    "female_founder_only": false,
+    "underrepresented_focus": false,
+    "de_minimis": false,
+    "other_note": "Open to all sectors in Northern Ireland except primary agriculture. Applicants must be micro or small-to-medium enterprises. Funding supports market research, product development, market entry, trade fairs and exhibitions."
+   },
+   "source_url": "https://www.investni.com/support-for-business/innovation-support/business-innovation-grant",
+   "source_snippet": "Grants range from £5,000 to £20,000 at a grant rate of 70% ... The Business Innovation Grant is open to all sectors (except primary agriculture) in Northern Ireland. ... Applications close at 12:00 noon, Friday 4 September 2026.",
+   "last_verified_at": "2026-08-14",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "uk-invest-ni-innovation-vouchers",
+   "name_local": "Innovation Vouchers (Northern Ireland)",
+   "name_en": "Invest NI Innovation Vouchers",
+   "country_code": "gb",
+   "admin_level": "regional",
+   "admin_area": "Northern Ireland",
+   "funder": "Invest Northern Ireland",
+   "funder_type": "public",
+   "grant_type": "voucher",
+   "category": "startup",
+   "amount_min": null,
+   "amount_max": 10000,
+   "amount_currency": "GBP",
+   "amount_note": "Vouchers of up to £10,000 to buy expertise from an approved public sector knowledge provider.",
+   "cofunding_pct": null,
+   "is_automatic": false,
+   "application_url": "https://www.investni.com/support-for-business/innovation-support/innovation-vouchers",
+   "application_channel": "online",
+   "deadline_type": "cutoff",
+   "deadline_note": "Runs in periodic application calls. As of 14 August 2026 the Invest NI page states 'The application call for Innovation Vouchers is currently closed' and no next call date is published.",
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Check eligibility (NI small or medium enterprise, social enterprise or third sector organisation within the size thresholds).",
+     "url": "https://www.investni.com/support-for-business/innovation-support/innovation-vouchers"
+    },
+    {
+     "step": 2,
+     "detail": "Identify a public sector knowledge provider and scope the project.",
+     "url": null
+    },
+    {
+     "step": 3,
+     "detail": "Apply during an open call.",
+     "url": null
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "Innovation Voucher application form",
+     "mandatory": true,
+     "note": null
+    }
+   ],
+   "eligibility": {
+    "entity": "startup",
+    "company_age_months_min": null,
+    "company_age_months_max": null,
+    "headcount_min": null,
+    "headcount_max": 249,
+    "turnover_annual_max": null,
+    "sme_category": "medium",
+    "sectors": [
+     "any"
+    ],
+    "stages": [
+     "idea",
+     "pre_seed",
+     "seed"
+    ],
+    "requires_local_entity": true,
+    "requires_incorporation": false,
+    "rd_focus": true,
+    "female_founder_only": false,
+    "underrepresented_focus": false,
+    "de_minimis": false,
+    "other_note": "Small enterprises: under 50 employees and €10m turnover/balance sheet. Medium: 50-249 employees, €50m turnover or €43m balance sheet. Also open to potential entrepreneurs. Ineligible uses include business planning, market research, website/app development, marketing, training courses and engaging private sector providers. Businesses owned by Invest NI staff are excluded."
+   },
+   "source_url": "https://www.investni.com/support-for-business/innovation-support/innovation-vouchers",
+   "source_snippet": "Up to £10K Innovation Vouchers allow businesses or potential entrepreneurs to get expertise from a public sector knowledge provider ... The application call for Innovation Vouchers is currently closed.",
+   "last_verified_at": "2026-08-14",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "uk-knowledge-transfer-partnerships",
+   "name_local": "Knowledge Transfer Partnerships (KTP)",
+   "name_en": "Knowledge Transfer Partnerships (KTP)",
+   "country_code": "gb",
+   "admin_level": "national",
+   "admin_area": null,
+   "funder": "Innovate UK (UK Research and Innovation)",
+   "funder_type": "public",
+   "grant_type": "grant",
+   "category": "startup",
+   "amount_min": null,
+   "amount_max": null,
+   "amount_currency": "GBP",
+   "amount_note": "Grant covers 67% of the full project cost for SMEs and 50% for large companies; the business pays the remainder. Project costs are typically around £80,000-£100,000 per project year, so an SME typically contributes roughly £26,000-£33,000 per year. There is no published per-project cap.",
+   "cofunding_pct": 33,
+   "is_automatic": false,
+   "application_url": "https://iuk-ktp.org.uk/start-your-journey/business/",
+   "application_channel": "online",
+   "deadline_type": "cutoff",
+   "deadline_note": "Competition rounds run several times a year through the Innovation Funding Service; e.g. 'Knowledge Transfer Partnership (KTP): 2026 - 2027 Round 3' closing 14 October 2026 with up to £12.5 million available.",
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Contact a Knowledge Transfer Adviser or a university/research organisation partner to scope the project.",
+     "url": "https://iuk-ktp.org.uk/start-your-journey/business/"
+    },
+    {
+     "step": 2,
+     "detail": "Develop the project jointly with the knowledge base partner, defining the strategic innovation challenge and the associate role.",
+     "url": null
+    },
+    {
+     "step": 3,
+     "detail": "The knowledge base partner submits the application to the relevant KTP competition round.",
+     "url": "https://apply-for-innovation-funding.service.gov.uk/competition/search"
+    },
+    {
+     "step": 4,
+     "detail": "If funded, recruit the KTP associate and run the project with academic supervision.",
+     "url": null
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "Joint KTP application (submitted by the knowledge base partner)",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Company financial information",
+     "mandatory": true,
+     "note": "To demonstrate ability to fund the contribution"
+    }
+   ],
+   "eligibility": {
+    "entity": "startup",
+    "company_age_months_min": null,
+    "company_age_months_max": null,
+    "headcount_min": null,
+    "headcount_max": null,
+    "turnover_annual_max": null,
+    "sme_category": "any",
+    "sectors": [
+     "any"
+    ],
+    "stages": [
+     "seed",
+     "series_a",
+     "growth"
+    ],
+    "requires_local_entity": true,
+    "requires_incorporation": true,
+    "rd_focus": true,
+    "female_founder_only": false,
+    "underrepresented_focus": false,
+    "de_minimis": false,
+    "other_note": "Three-way partnership between a business, a UK knowledge base (university, college or research organisation) and a graduate 'associate'. The knowledge base partner is the formal applicant. Businesses must show willingness to build a long-term, multi-year working relationship."
+   },
+   "source_url": "https://iuk-ktp.org.uk/start-your-journey/business/",
+   "source_snippet": "The grant rate for small and medium-sized enterprises is 67% of the full cost. For large companies it is 50%. ... Costs are typically around £80,000-£100,000 per project year.",
+   "last_verified_at": "2026-08-14",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "uk-made-smarter-adoption",
+   "name_local": "Made Smarter Adoption",
+   "name_en": "Made Smarter Adoption programme",
+   "country_code": "gb",
+   "admin_level": "regional",
+   "admin_area": "England (delivered by regional partners; originated in the North West)",
+   "funder": "Made Smarter (Department for Business and Trade, delivered by regional partners)",
+   "funder_type": "ppp",
+   "grant_type": "grant",
+   "category": "startup",
+   "amount_min": null,
+   "amount_max": 20000,
+   "amount_currency": "GBP",
+   "amount_note": "Up to 50% match funding to a maximum of £20,000 for equipment and/or specialist advice to implement digital technology projects. The North West programme also funds digital interns at £13.45 per hour for up to 300 hours (up to £4,035). Offers vary by regional delivery partner.",
+   "cofunding_pct": 50,
+   "is_automatic": false,
+   "application_url": "https://www.madesmarter.uk/adoption/in-my-region/",
+   "application_channel": "online",
+   "deadline_type": "rolling",
+   "deadline_note": "Delivered continuously by regional partners; support available is determined by the postcode of your main manufacturing site.",
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Find your regional Made Smarter delivery partner by postcode.",
+     "url": "https://www.madesmarter.uk/adoption/in-my-region/"
+    },
+    {
+     "step": 2,
+     "detail": "Engage with a digital technology adviser for free impartial advice and a digital transformation roadmap.",
+     "url": null
+    },
+    {
+     "step": 3,
+     "detail": "Develop an action plan, which may include leadership development, a digital internship placement, or a match funded grant.",
+     "url": null
+    },
+    {
+     "step": 4,
+     "detail": "Apply for the match funded grant for hardware, software and/or specialist advice.",
+     "url": null
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "Digital transformation roadmap / action plan",
+     "mandatory": true,
+     "note": "Developed with the delivery partner"
+    },
+    {
+     "doc": "Quotes for equipment or specialist advice",
+     "mandatory": true,
+     "note": null
+    }
+   ],
+   "eligibility": {
+    "entity": "startup",
+    "company_age_months_min": null,
+    "company_age_months_max": null,
+    "headcount_min": null,
+    "headcount_max": 249,
+    "turnover_annual_max": 36000000,
+    "sme_category": "medium",
+    "sectors": [
+     "manufacturing"
+    ],
+    "stages": [
+     "seed",
+     "series_a",
+     "growth"
+    ],
+    "requires_local_entity": true,
+    "requires_incorporation": true,
+    "rd_focus": false,
+    "female_founder_only": false,
+    "underrepresented_focus": false,
+    "de_minimis": false,
+    "other_note": "SME manufacturing or engineering companies with 249 employees or less, turnover less than £36 million, or a balance sheet less than £18 million, with manufacturing premises in England."
+   },
+   "source_url": "https://www.madesmarter.uk/adoption/in-my-region/",
+   "source_snippet": "Made Smarter support is available to SME manufacturing or engineering companies that have 249 employees or less, a turnover of less than £36 million, or a balance sheet less than £18 million. ... up to 50% matched grant funding to adopt hardware and software",
+   "last_verified_at": "2026-08-14",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "uk-merged-rdec-scheme",
+   "name_local": "Merged R&D expenditure credit scheme (merged RDEC)",
+   "name_en": "Merged R&D expenditure credit scheme (merged RDEC)",
+   "country_code": "gb",
+   "admin_level": "national",
+   "admin_area": null,
+   "funder": "HM Revenue & Customs",
+   "funder_type": "public",
+   "grant_type": "tax_credit",
+   "category": "startup",
+   "amount_min": null,
+   "amount_max": null,
+   "amount_currency": "GBP",
+   "amount_note": "Taxable expenditure credit worth 20% of qualifying R&D expenditure, for accounting periods beginning on or after 1 April 2024. No fixed cap, but the credit received in a period cannot exceed the PAYE cap of £20,000 plus 300% of the company's relevant PAYE and NIC liabilities (excess carried forward). Replaced the old RDEC and SME schemes.",
+   "cofunding_pct": null,
+   "is_automatic": false,
+   "application_url": "https://www.gov.uk/guidance/research-and-development-rd-tax-relief-the-merged-scheme-and-enhanced-rd-intensive-support",
+   "application_channel": "online",
+   "deadline_type": "rolling",
+   "deadline_note": "Claimed through the Company Tax Return. Claim notification and an additional information form are required before/with the claim.",
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Check your project meets the HMRC definition of R&D (advance in science or technology resolving scientific or technological uncertainty).",
+     "url": "https://www.gov.uk/guidance/corporation-tax-research-and-development-rd-relief"
+    },
+    {
+     "step": 2,
+     "detail": "Check whether you must tell HMRC in advance that you plan to claim (claim notification).",
+     "url": "https://www.gov.uk/guidance/tell-hmrc-that-youre-planning-to-claim-research-and-development-rd-tax-relief"
+    },
+    {
+     "step": 3,
+     "detail": "Submit the additional information form before or at the same time as the claim.",
+     "url": "https://www.gov.uk/guidance/submit-detailed-information-before-you-claim-research-and-development-rd-tax-relief"
+    },
+    {
+     "step": 4,
+     "detail": "Claim the expenditure credit in your Company Tax Return.",
+     "url": null
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "Company Tax Return (CT600) with R&D claim",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Additional information form",
+     "mandatory": true,
+     "note": "Must be submitted before or with the claim"
+    },
+    {
+     "doc": "Claim notification form",
+     "mandatory": false,
+     "note": "Required for some companies; check HMRC guidance"
+    }
+   ],
+   "eligibility": {
+    "entity": "startup",
+    "company_age_months_min": null,
+    "company_age_months_max": null,
+    "headcount_min": null,
+    "headcount_max": null,
+    "turnover_annual_max": null,
+    "sme_category": "any",
+    "sectors": [
+     "any"
+    ],
+    "stages": [
+     "pre_seed",
+     "seed",
+     "series_a",
+     "growth"
+    ],
+    "requires_local_entity": true,
+    "requires_incorporation": true,
+    "rd_focus": true,
+    "female_founder_only": false,
+    "underrepresented_focus": false,
+    "de_minimis": false,
+    "other_note": "Company must be trading and chargeable to UK Corporation Tax. Restrictions apply to some overseas expenditure. Different rates apply to ring-fenced (oil, gas and mining) trades."
+   },
+   "source_url": "https://www.gov.uk/guidance/research-and-development-rd-tax-relief-the-merged-scheme-and-enhanced-rd-intensive-support",
+   "source_snippet": "The rate of R&D expenditure credit under the merged RDEC scheme is 20%.",
+   "last_verified_at": "2026-08-14",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "uk-nihr-i4i",
+   "name_local": "NIHR Invention for Innovation (i4i)",
+   "name_en": "NIHR Invention for Innovation (i4i) programme",
+   "country_code": "gb",
+   "admin_level": "national",
+   "admin_area": null,
+   "funder": "National Institute for Health and Care Research (NIHR)",
+   "funder_type": "public",
+   "grant_type": "grant",
+   "category": "startup",
+   "amount_min": null,
+   "amount_max": null,
+   "amount_currency": "GBP",
+   "amount_note": "UNVERIFIED: the NIHR website blocked automated access (human-verification interstitial) on 14 August 2026, so no funding figures could be read from the official page. i4i runs recurring calls including Product Development Awards (PDA), a PDA NICE early use strand, i4i Connect and i4i FAST, with an April 2026 PDA call listed on nihr.ac.uk. Amounts and durations must be taken from the specific call page before use.",
+   "cofunding_pct": null,
+   "is_automatic": false,
+   "application_url": "https://www.nihr.ac.uk/funding-programmes/invention-for-innovation",
+   "application_channel": "online",
+   "deadline_type": "annual_call",
+   "deadline_note": "Recurring competition calls (e.g. i4i Product Development Awards April 2026 and October 2025 rounds listed on nihr.ac.uk). Exact deadlines not verified — check the specific call page.",
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Identify the relevant open i4i call (PDA, PDA NICE early use, Connect, or FAST) on the NIHR funding pages.",
+     "url": "https://www.nihr.ac.uk/funding-programmes/invention-for-innovation"
+    },
+    {
+     "step": 2,
+     "detail": "Read the call specification and eligibility, then apply through the NIHR application system by the stated deadline.",
+     "url": null
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "NIHR application form for the specific i4i call",
+     "mandatory": true,
+     "note": "Requirements not verified — see call page"
+    }
+   ],
+   "eligibility": {
+    "entity": "startup",
+    "company_age_months_min": null,
+    "company_age_months_max": null,
+    "headcount_min": null,
+    "headcount_max": null,
+    "turnover_annual_max": null,
+    "sme_category": "any",
+    "sectors": [
+     "health"
+    ],
+    "stages": [
+     "pre_seed",
+     "seed",
+     "series_a"
+    ],
+    "requires_local_entity": true,
+    "requires_incorporation": true,
+    "rd_focus": true,
+    "female_founder_only": false,
+    "underrepresented_focus": false,
+    "de_minimis": false,
+    "other_note": "i4i funds translational research and development of medical technologies, devices and diagnostics for the NHS, typically involving SMEs, universities and NHS partners. Specific eligibility not verified from the official page — see the individual call."
+   },
+   "source_url": "https://www.nihr.ac.uk/funding-programmes/invention-for-innovation",
+   "source_snippet": null,
+   "last_verified_at": "2026-08-14",
+   "verification_status": "unverified"
+  },
+  {
+   "slug": "uk-patent-box",
+   "name_local": "Patent Box",
+   "name_en": "Patent Box",
+   "country_code": "gb",
+   "admin_level": "national",
+   "admin_area": null,
+   "funder": "HM Revenue & Customs",
+   "funder_type": "public",
+   "grant_type": "tax_credit",
+   "category": "startup",
+   "amount_min": null,
+   "amount_max": null,
+   "amount_currency": "GBP",
+   "amount_note": "Reduced Corporation Tax rate of 10% on profits earned from patented inventions. Value depends entirely on the company's qualifying IP income and the R&D fraction; there is no cap.",
+   "cofunding_pct": null,
+   "is_automatic": false,
+   "application_url": "https://www.gov.uk/guidance/corporation-tax-the-patent-box",
+   "application_channel": "online",
+   "deadline_type": "rolling",
+   "deadline_note": "Election must be made within 2 years after the end of the accounting period in which the relevant profits and income arose.",
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Confirm the company owns or exclusively licences-in qualifying patents (UK IPO, EPO or listed EEA offices) and has undertaken qualifying development.",
+     "url": null
+    },
+    {
+     "step": 2,
+     "detail": "Separate relevant IP income from other income (streaming) and work through the Patent Box calculation steps.",
+     "url": "https://www.gov.uk/hmrc-internal-manuals/corporate-intangibles-research-and-development-manual/cird275000"
+    },
+    {
+     "step": 3,
+     "detail": "Elect into the Patent Box in the computations accompanying the Company Tax Return, or separately in writing.",
+     "url": null
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "Written election into the Patent Box (or election in the CT computations)",
+     "mandatory": true,
+     "note": "No special form of words and no box on the CT return"
+    },
+    {
+     "doc": "Patent Box calculation showing relevant IP profits",
+     "mandatory": true,
+     "note": null
+    }
+   ],
+   "eligibility": {
+    "entity": "startup",
+    "company_age_months_min": null,
+    "company_age_months_max": null,
+    "headcount_min": null,
+    "headcount_max": null,
+    "turnover_annual_max": null,
+    "sme_category": "any",
+    "sectors": [
+     "any"
+    ],
+    "stages": [
+     "seed",
+     "series_a",
+     "growth"
+    ],
+    "requires_local_entity": true,
+    "requires_incorporation": true,
+    "rd_focus": true,
+    "female_founder_only": false,
+    "underrepresented_focus": false,
+    "de_minimis": false,
+    "other_note": "Company must be liable to Corporation Tax and make a profit from exploiting patented inventions. Certain medicinal or botanic innovation rights also qualify. Benefits restricted by the R&D fraction where patents were acquired or R&D was paid to connected parties (for elections after 30 June 2016)."
+   },
+   "source_url": "https://www.gov.uk/guidance/corporation-tax-the-patent-box",
+   "source_snippet": "Companies must elect into the Patent Box to apply the lower rate of Corporation Tax which is 10%.",
+   "last_verified_at": "2026-08-14",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "uk-rdec-pre-april-2024",
+   "name_local": "R&D expenditure credit (RDEC) — pre-April 2024 scheme",
+   "name_en": "R&D expenditure credit (RDEC) for accounting periods beginning before 1 April 2024",
+   "country_code": "gb",
+   "admin_level": "national",
+   "admin_area": null,
+   "funder": "HM Revenue & Customs",
+   "funder_type": "public",
+   "grant_type": "tax_credit",
+   "category": "startup",
+   "amount_min": null,
+   "amount_max": null,
+   "amount_currency": "GBP",
+   "amount_note": "Credit of 20% of qualifying costs incurred 1 April 2023 to 31 March 2024 (13% for 1 April 2020 to 31 March 2023). Only relevant now for late or amended claims covering accounting periods that began before 1 April 2024; superseded by the merged RDEC scheme.",
+   "cofunding_pct": null,
+   "is_automatic": false,
+   "application_url": "https://www.gov.uk/guidance/corporation-tax-research-and-development-tax-relief-for-large-companies",
+   "application_channel": "online",
+   "deadline_type": "closed",
+   "deadline_note": "Applies only to accounting periods beginning before 1 April 2024. New periods must use the merged RDEC scheme or ERIS. Included because amended/late claims for earlier periods are still possible.",
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Confirm the accounting period began before 1 April 2024 and you fall in an eligible category (large company, or SME claiming subcontracted, state-aided or otherwise subsidised work).",
+     "url": null
+    },
+    {
+     "step": 2,
+     "detail": "Claim through the Company Tax Return with the additional information form.",
+     "url": null
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "Company Tax Return (CT600) with R&D claim",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Additional information form",
+     "mandatory": true,
+     "note": "Mandatory for claims from 8 August 2023"
+    }
+   ],
+   "eligibility": {
+    "entity": "startup",
+    "company_age_months_min": null,
+    "company_age_months_max": null,
+    "headcount_min": null,
+    "headcount_max": null,
+    "turnover_annual_max": null,
+    "sme_category": "any",
+    "sectors": [
+     "any"
+    ],
+    "stages": [
+     "seed",
+     "series_a",
+     "growth"
+    ],
+    "requires_local_entity": true,
+    "requires_incorporation": true,
+    "rd_focus": true,
+    "female_founder_only": false,
+    "underrepresented_focus": false,
+    "de_minimis": false,
+    "other_note": "SMEs used this scheme where work was subcontracted to them, where they received notified State Aid, or where costs were subsidised (e.g. by a grant)."
+   },
+   "source_url": "https://www.gov.uk/guidance/corporation-tax-research-and-development-tax-relief-for-large-companies",
+   "source_snippet": "The tax credit is worked out as a percentage of your qualifying R&D costs. The rate on costs from: ... 1 April 2023 up to and including 31 March 2024 is 20%",
+   "last_verified_at": "2026-08-14",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "uk-scottish-enterprise-rd-grants",
+   "name_local": "Scottish Enterprise Research and Development (R&D) grants",
+   "name_en": "Scottish Enterprise Research and Development (R&D) grants",
+   "country_code": "gb",
+   "admin_level": "regional",
+   "admin_area": "Scotland (Scottish Enterprise area)",
+   "funder": "Scottish Enterprise",
+   "funder_type": "public",
+   "grant_type": "grant",
+   "category": "startup",
+   "amount_min": 250000,
+   "amount_max": null,
+   "amount_currency": "GBP",
+   "amount_note": "The minimum grant considered is £250,000. SMEs working independently may receive a grant covering between 35% and 50% of eligible project costs; large companies working independently between 25% and 40%. Consortiums of 2-6 companies may receive slightly higher rates in certain circumstances. Projects should represent at least £1 million of company spend.",
+   "cofunding_pct": 50,
+   "is_automatic": false,
+   "application_url": "https://www.scottish-enterprise.com/how-we-can-help/funding-and-grants/business-grants-and-funding-calls/research-and-development-grants",
+   "application_channel": "email",
+   "deadline_type": "rolling",
+   "deadline_note": "No fixed deadline; enquiries assessed on an ongoing basis.",
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Download and complete the enquiry form.",
+     "url": "https://www.scottish-enterprise.com/how-we-can-help/funding-and-grants/business-grants-and-funding-calls/research-and-development-grants"
+    },
+    {
+     "step": 2,
+     "detail": "Send the completed form to enquiries@scotent.co.uk.",
+     "url": null
+    },
+    {
+     "step": 3,
+     "detail": "Receive feedback and, if appropriate, meet an appraisal specialist.",
+     "url": null
+    },
+    {
+     "step": 4,
+     "detail": "Progress through the formal application process.",
+     "url": null
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "R&D grant enquiry form",
+     "mandatory": true,
+     "note": "Emailed to enquiries@scotent.co.uk"
+    },
+    {
+     "doc": "Project plan and costed budget",
+     "mandatory": true,
+     "note": "Required at formal application stage"
+    }
+   ],
+   "eligibility": {
+    "entity": "startup",
+    "company_age_months_min": null,
+    "company_age_months_max": null,
+    "headcount_min": null,
+    "headcount_max": null,
+    "turnover_annual_max": null,
+    "sme_category": "any",
+    "sectors": [
+     "any"
+    ],
+    "stages": [
+     "series_a",
+     "growth"
+    ],
+    "requires_local_entity": true,
+    "requires_incorporation": true,
+    "rd_focus": true,
+    "female_founder_only": false,
+    "underrepresented_focus": false,
+    "de_minimis": false,
+    "other_note": "Business must be based in, or planning to locate in, Scotland in the area served by Scottish Enterprise. Project must represent a significant innovation for the company and could not proceed (or would be significantly delayed or reduced) without the funding. Sole traders and charities are ineligible, as are companies relying primarily on third parties for the R&D or that have already started work. Note: the separate SMART: SCOTLAND grant scheme is currently on hold."
+   },
+   "source_url": "https://www.scottish-enterprise.com/how-we-can-help/funding-and-grants/business-grants-and-funding-calls/research-and-development-grants",
+   "source_snippet": "Small or medium-sized enterprises (SMEs) working independently on innovative projects may receive a grant to cover between 35% and 50% of their eligible project costs. ... The minimum grant considered is £250,000.",
+   "last_verified_at": "2026-08-14",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "uk-seis",
+   "name_local": "Seed Enterprise Investment Scheme (SEIS)",
+   "name_en": "Seed Enterprise Investment Scheme (SEIS)",
+   "country_code": "gb",
+   "admin_level": "national",
+   "admin_area": null,
+   "funder": "HM Revenue & Customs",
+   "funder_type": "public",
+   "grant_type": "tax_credit",
+   "category": "startup",
+   "amount_min": null,
+   "amount_max": 250000,
+   "amount_currency": "GBP",
+   "amount_note": "A company can receive a maximum of £250,000 through SEIS over its lifetime. NOTE: SEIS is an INVESTOR tax relief, not money paid to the company — HMRC gives income tax and CGT reliefs to individuals who subscribe for shares. It is recorded here as a tax_credit because SEIS status is in practice a precondition for most UK pre-seed rounds and materially improves a startup's ability to raise; the £250,000 is the cap on qualifying investment the company may take in, not a grant.",
+   "cofunding_pct": null,
+   "is_automatic": false,
+   "application_url": "https://www.gov.uk/guidance/venture-capital-schemes-apply-to-use-the-seed-enterprise-investment-scheme",
+   "application_channel": "online",
+   "deadline_type": "rolling",
+   "deadline_note": "No deadline; advance assurance can be requested at any time, and the compliance statement is filed after shares are issued.",
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Optionally apply to HMRC for advance assurance that the proposed share issue will qualify.",
+     "url": null
+    },
+    {
+     "step": 2,
+     "detail": "Issue the shares to investors.",
+     "url": null
+    },
+    {
+     "step": 3,
+     "detail": "Once you have carried out the qualifying trade for at least 4 months or spent at least 70% of the money raised, submit compliance statement form SEIS1 to HMRC.",
+     "url": null
+    },
+    {
+     "step": 4,
+     "detail": "HMRC issues compliance certificates (SEIS3) for you to pass to investors.",
+     "url": null
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "Compliance statement (form SEIS1)",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Business plan and financial forecasts",
+     "mandatory": false,
+     "note": "Needed for an advance assurance request"
+    }
+   ],
+   "eligibility": {
+    "entity": "startup",
+    "company_age_months_min": null,
+    "company_age_months_max": 36,
+    "headcount_min": null,
+    "headcount_max": 25,
+    "turnover_annual_max": null,
+    "sme_category": "micro",
+    "sectors": [
+     "any"
+    ],
+    "stages": [
+     "idea",
+     "pre_seed",
+     "seed"
+    ],
+    "requires_local_entity": true,
+    "requires_incorporation": true,
+    "rd_focus": false,
+    "female_founder_only": false,
+    "underrepresented_focus": false,
+    "de_minimis": false,
+    "other_note": "If already carrying out a qualifying trade, it must not have been carried out for more than 3 years. Gross assets must not exceed £350,000 when the shares are issued, and the company must have fewer than 25 full-time equivalent employees. Certain trades are excluded."
+   },
+   "source_url": "https://www.gov.uk/guidance/venture-capital-schemes-apply-to-use-the-seed-enterprise-investment-scheme",
+   "source_snippet": "You can receive a maximum of £250,000 through Seed Enterprise Investment Scheme.",
+   "last_verified_at": "2026-08-14",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "uk-start-up-loans",
+   "name_local": "Start Up Loans",
+   "name_en": "British Business Bank Start Up Loans",
+   "country_code": "gb",
+   "admin_level": "national",
+   "admin_area": null,
+   "funder": "The Start Up Loans Company (British Business Bank)",
+   "funder_type": "public",
+   "grant_type": "loan",
+   "category": "startup",
+   "amount_min": null,
+   "amount_max": 25000,
+   "amount_currency": "GBP",
+   "amount_note": "Unsecured personal loan of up to £25,000 (average loan £10,264) at a fixed interest rate of 7.5% per year, repayable over 1-5 years. No fees for arranging the loan or for early repayment. Includes 12 months of free business mentoring for first-time recipients.",
+   "cofunding_pct": null,
+   "is_automatic": false,
+   "application_url": "https://apply.startuploans.co.uk/s/register",
+   "application_channel": "online",
+   "deadline_type": "rolling",
+   "deadline_note": "Applications accepted at any time.",
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Check eligibility criteria (UK resident, business trading less than 60 months, credit check).",
+     "url": "https://www.startuploans.co.uk/about-the-loan/am-i-eligible"
+    },
+    {
+     "step": 2,
+     "detail": "Register and apply online.",
+     "url": "https://apply.startuploans.co.uk/s/register"
+    },
+    {
+     "step": 3,
+     "detail": "Work with a delivery partner to complete a business plan and cash flow forecast.",
+     "url": null
+    },
+    {
+     "step": 4,
+     "detail": "If approved, receive funds and 12 months of free mentoring.",
+     "url": null
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "Business plan",
+     "mandatory": true,
+     "note": "Support and templates provided"
+    },
+    {
+     "doc": "Cash flow forecast",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Personal survival budget",
+     "mandatory": true,
+     "note": "It is a personal loan, so personal finances are assessed"
+    }
+   ],
+   "eligibility": {
+    "entity": "startup",
+    "company_age_months_min": null,
+    "company_age_months_max": 60,
+    "headcount_min": null,
+    "headcount_max": null,
+    "turnover_annual_max": null,
+    "sme_category": "micro",
+    "sectors": [
+     "any"
+    ],
+    "stages": [
+     "idea",
+     "pre_seed",
+     "seed"
+    ],
+    "requires_local_entity": true,
+    "requires_incorporation": false,
+    "rd_focus": false,
+    "female_founder_only": false,
+    "underrepresented_focus": false,
+    "de_minimis": false,
+    "other_note": "Available to people starting a new business or trading for less than 60 months. It is an unsecured personal loan to the individual, not a company loan, so sole traders and partnerships qualify as well as limited companies."
+   },
+   "source_url": "https://www.startuploans.co.uk/",
+   "source_snippet": "Borrow up to £25,000 - Unsecured personal loan - Fixed interest rate of 7.5% per year - Repay the loan over a term of 1-5 years - 12 months of free mentoring - Government-backed",
+   "last_verified_at": "2026-08-14",
+   "verification_status": "verified"
+  }
+ ]
+}
