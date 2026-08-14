@@ -29,6 +29,15 @@
     }
   ],
 
+  // Encrypted document vault. The Worker stores and returns ciphertext it
+  // cannot read; keys never leave the user's device. See migrations/0002.
+  "r2_buckets": [
+    {
+      "binding": "VAULT",
+      "bucket_name": "unclaimed-vault"
+    }
+  ],
+
   "vars": {
     "APP_ORIGIN": "https://unclaimed.app",
     "STRIPE_PRICE_MONTHLY": "price_REPLACE_ME"
@@ -39,4 +48,7 @@
   //   wrangler secret put STRIPE_WEBHOOK_SECRET
   //   wrangler secret put SESSION_SIGNING_KEY
   //   wrangler secret put RESEND_API_KEY        (optional, for magic links)
+  //
+  // Bucket:
+  //   wrangler r2 bucket create unclaimed-vault
 }
