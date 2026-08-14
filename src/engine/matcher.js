@@ -40,6 +40,26 @@ const NATIONALITY_LABEL = {
   refugee_or_protected: 'refugees or people with protected status',
 };
 
+/**
+ * Which residency answers satisfy which programme requirement.
+ *
+ * Keyed by what the PROGRAMME asks for; the array is every answer the check
+ * offers that qualifies. Written this way round because the requirement
+ * vocabulary comes from the data and the answer vocabulary comes from the
+ * question — and the two drifting apart is exactly what broke this before.
+ *
+ * `any_resident` means what it says: lawful residence, whatever the route.
+ * An EU national and a person on a work visa are both legal residents, and a
+ * programme open to residents is open to them. Reading it any more narrowly
+ * told the people most likely to be missing money that they qualified for
+ * nothing at all.
+ */
+const NATIONALITY_SATISFIED_BY = {
+  any_resident: ['citizen_or_pr', 'eu_eea', 'other_legal', 'refugee_or_protected', 'any_resident'],
+  citizen_or_pr: ['citizen_or_pr'],
+  refugee_or_protected: ['refugee_or_protected'],
+};
+
 export const CATEGORY_LABEL = {
   business: 'Business & self-employment',
   education: 'Education & training',
@@ -502,18 +522,33 @@ function evalProgramme(p, profile, entry) {
       });
     } else {
       const g = profile.nationality_group;
-      const satisfied =
-        (g === 'citizen_or_pr' && (req === 'citizen_or_pr' || req === 'any_resident')) ||
-        (g === 'any_resident' && req === 'any_resident') ||
-        (g === 'refugee_or_protected' && (req === 'refugee_or_protected' || req === 'any_resident'));
-      verdicts.push({
-        outcome: satisfied ? 'pass' : 'fail',
-        attribute: 'nationality',
-        sentence: satisfied
-          ? 'Your residency status qualifies'
-          : `This programme is for ${NATIONALITY_LABEL[req] ?? req}`,
-        question: null,
-      });
+      const accepted = NATIONALITY_SATISFIED_BY[req];
+
+      if (!accepted) {
+        /* A requirement this build does not know about. Saying "no" would be
+           a confident rejection based on a string we cannot interpret, so it
+           becomes a question instead — the same rule as a missing answer. */
+        verdicts.push({
+          outcome: 'unknown',
+          attribute: 'nationality',
+          sentence: `This programme sets a residency condition we have not mapped (${req})`,
+          question: `Check the funder's page: does "${req}" describe you?`,
+        });
+      } else if (accepted.includes(g)) {
+        verdicts.push({
+          outcome: 'pass',
+          attribute: 'nationality',
+          sentence: 'Your residency status qualifies',
+          question: null,
+        });
+      } else {
+        verdicts.push({
+          outcome: 'fail',
+          attribute: 'nationality',
+          sentence: `This programme is for ${NATIONALITY_LABEL[req] ?? req}`,
+          question: null,
+        });
+      }
     }
   }
 
