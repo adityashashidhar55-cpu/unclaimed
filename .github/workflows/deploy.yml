@@ -25,8 +25,11 @@ jobs:
       # No dependencies. No npm install. The generator is plain Node.
       - name: Build static site
         env:
-          SITE_BASE: /unclaimed
-          SITE_ORIGIN: https://adityashashidhar55-cpu.github.io
+          # Custom domain: the site is served at the apex, so there is no
+          # path prefix. Changing this back to /unclaimed would break every
+          # absolute URL, the service worker scope and the manifest at once.
+          SITE_BASE: ''
+          SITE_ORIGIN: https://unlistedgrants.com
         run: node src/build.mjs
       - name: Verify build
         run: node scripts/verify.mjs

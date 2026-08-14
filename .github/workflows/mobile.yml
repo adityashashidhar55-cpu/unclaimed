@@ -1,0 +1,326 @@
+# Build and submit the native Android and iOS apps.
+#
+# The whole point of this file: neither store build needs a laptop. Push a tag
+# like v1.0.0, or run it by hand, and CI produces a signed .aab and a signed
+# .ipa and uploads them. The only things it needs from a human are secrets,
+# listed at the bottom.
+#
+# Android builds on ubuntu. iOS needs a macOS runner because only Xcode can
+# produce an .ipa — that is Apple's restriction, not a shortcut we are taking.
+
+name: Mobile apps
+
+on:
+  push:
+    tags: ['v*']
+  workflow_dispatch:
+    inputs:
+      track:
+        description: 'Play track'
+        default: internal
+        type: choice
+        options: [internal, alpha, beta, production]
+      submit:
+        description: 'Upload to the stores (off = build artefacts only)'
+        default: false
+        type: boolean
+
+concurrency:
+  group: mobile-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  # ------------------------------------------------------------------
+  # The web build is the app. Both platforms wrap this exact output, so
+  # there is one codebase and no chance of the app and the site drifting.
+  # ------------------------------------------------------------------
+  web:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: '22' }
+      - name: Build the site (the app bundles from it)
+        env:
+          SITE_BASE: ''
+          SITE_ORIGIN: https://unlistedgrants.com
+        run: node src/build.mjs
+      - name: Verify
+        run: node scripts/verify.mjs
+      # Icons first: prepare.mjs copies the raster icons into the bundle, and
+      # the shell's apple-touch-icon points at one of them. Assemble before
+      # they exist and the app ships with a missing home-screen icon.
+      - name: Generate icons and splash
+        working-directory: native
+        run: |
+          python3 -m pip install --quiet --break-system-packages pillow
+          python3 gen-assets.py
+      - name: Assemble the native web root
+        run: node native/prepare.mjs
+      - name: Verify the native bundle
+        run: node scripts/verify-native.mjs
+      - uses: actions/upload-artifact@v4
+        with:
+          name: resources
+          path: native/resources
+          retention-days: 3
+      - uses: actions/upload-artifact@v4
+        with:
+          name: www
+          path: native/www
+          retention-days: 3
+
+  android:
+    needs: web
+    runs-on: ubuntu-latest
+    # The `secrets` context is not available in step-level `if:` conditions —
+    # only `env` is. Hoisting them here is what makes "build unsigned when no
+    # keystore is configured" actually work instead of failing to evaluate.
+    env:
+      ANDROID_KEYSTORE_BASE64: ${{ secrets.ANDROID_KEYSTORE_BASE64 }}
+      PLAY_SERVICE_ACCOUNT_JSON: ${{ secrets.PLAY_SERVICE_ACCOUNT_JSON }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
+        with: { name: www, path: native/www }
+      - uses: actions/download-artifact@v4
+        with: { name: resources, path: native/resources }
+      - uses: actions/setup-node@v4
+        with: { node-version: '22' }
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '21'
+      - uses: android-actions/setup-android@v3
+
+      - name: Install Capacitor
+        working-directory: native
+        run: npm install
+
+      # Icons come from the web job as an artifact — generating them twice on
+      # two runners is two chances for the app icon and the store icon to
+      # differ, which is exactly the kind of drift nobody notices until review.
+      - name: Generate launcher icons and splash
+        working-directory: native
+        run: npx @capacitor/assets generate --android --assetPath resources
+
+      - name: Add the Android project
+        working-directory: native
+        run: npx cap add android || npx cap sync android
+
+      # The keystore lives only in secrets. A keystore committed to a repo is
+      # a keystore anyone can publish updates with, and Play will not let you
+      # change it after the first upload.
+      #
+      # Capacitor's generated build.gradle has no release signingConfig, so
+      # `bundleRelease` on a stock project emits an UNSIGNED bundle and Play
+      # rejects it with a message that does not mention signing. This injects
+      # one, reading the credentials from keystore.properties so nothing
+      # secret is ever written into a tracked file.
+      - name: Restore signing key
+        if: env.ANDROID_KEYSTORE_BASE64 != ''
+        env:
+          KEYSTORE_PASSWORD: ${{ secrets.ANDROID_KEYSTORE_PASSWORD }}
+          KEY_ALIAS: ${{ secrets.ANDROID_KEY_ALIAS }}
+          KEY_PASSWORD: ${{ secrets.ANDROID_KEY_PASSWORD }}
+        run: |
+          set -euo pipefail
+          echo "$ANDROID_KEYSTORE_BASE64" | base64 -d > native/android/app/upload.keystore
+          cat > native/android/keystore.properties <<EOF
+          storeFile=upload.keystore
+          storePassword=$KEYSTORE_PASSWORD
+          keyAlias=$KEY_ALIAS
+          keyPassword=$KEY_PASSWORD
+          EOF
+          python3 - <<'PY'
+          import re, pathlib
+          p = pathlib.Path('native/android/app/build.gradle')
+          s = p.read_text()
+          header = '''
+          def keystorePropsFile = rootProject.file("keystore.properties")
+          def keystoreProps = new Properties()
+          if (keystorePropsFile.exists()) {
+              keystoreProps.load(new FileInputStream(keystorePropsFile))
+          }
+          '''.replace('\n          ', '\n')
+          s = header + s
+          signing = '''
+              signingConfigs {
+                  release {
+                      if (keystoreProps['storeFile']) {
+                          storeFile file(keystoreProps['storeFile'])
+                          storePassword keystoreProps['storePassword']
+                          keyAlias keystoreProps['keyAlias']
+                          keyPassword keystoreProps['keyPassword']
+                      }
+                  }
+              }
+          '''.replace('\n              ', '\n    ').rstrip() + '\n'
+          s = re.sub(r'(\nandroid \{\n)', r'\1' + signing, s, count=1)
+          s = re.sub(r'(buildTypes \{\s*\n\s*release \{\n)',
+                     r'\1            signingConfig signingConfigs.release\n', s, count=1)
+          p.write_text(s)
+          print('signing config injected')
+          PY
+          grep -n "signingConfig" native/android/app/build.gradle
+
+      - name: Warn when unsigned
+        if: env.ANDROID_KEYSTORE_BASE64 == ''
+        run: echo "::warning::No ANDROID_KEYSTORE_BASE64 secret — building an unsigned bundle. Play will not accept it."
+
+      - name: Build the app bundle
+        working-directory: native/android
+        run: |
+          chmod +x ./gradlew
+          ./gradlew bundleRelease --no-daemon
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: android-aab
+          path: native/android/app/build/outputs/bundle/release/*.aab
+
+      - name: Upload to Play
+        if: ${{ inputs.submit && env.PLAY_SERVICE_ACCOUNT_JSON != '' }}
+        uses: r0adkll/upload-google-play@v1
+        with:
+          serviceAccountJsonPlainText: ${{ secrets.PLAY_SERVICE_ACCOUNT_JSON }}
+          packageName: com.unlistedgrants.app
+          releaseFiles: native/android/app/build/outputs/bundle/release/app-release.aab
+          track: ${{ inputs.track || 'internal' }}
+          status: completed
+
+  ios:
+    needs: web
+    runs-on: macos-14
+    # Same reason as the android job: `secrets` cannot be read from a step
+    # `if:`, so the "is signing configured?" flag has to live in env.
+    env:
+      IOS_CERT_P12_BASE64: ${{ secrets.IOS_CERT_P12_BASE64 }}
+      APPSTORE_API_KEY_BASE64: ${{ secrets.APPSTORE_API_KEY_BASE64 }}
+      APPLE_TEAM_ID: ${{ secrets.APPLE_TEAM_ID }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
+        with: { name: www, path: native/www }
+      - uses: actions/download-artifact@v4
+        with: { name: resources, path: native/resources }
+      - uses: actions/setup-node@v4
+        with: { node-version: '22' }
+
+      - name: Install Capacitor
+        working-directory: native
+        run: npm install
+
+      - name: Generate app icons and splash
+        working-directory: native
+        run: npx @capacitor/assets generate --ios --assetPath resources
+
+      - name: Add the iOS project
+        working-directory: native
+        run: npx cap add ios || npx cap sync ios
+
+      # Apple signing. Without these secrets the job still builds an
+      # unsigned archive, which is enough to prove the project compiles.
+      - name: Install certificate and profile
+        if: env.IOS_CERT_P12_BASE64 != ''
+        env:
+          CERT_PASSWORD: ${{ secrets.IOS_CERT_PASSWORD }}
+          PROFILE_B64: ${{ secrets.IOS_PROVISIONING_PROFILE_BASE64 }}
+        run: |
+          set -euo pipefail
+          KEYCHAIN=build.keychain
+          security create-keychain -p "" $KEYCHAIN
+          security default-keychain -s $KEYCHAIN
+          security unlock-keychain -p "" $KEYCHAIN
+          security set-keychain-settings -lut 21600 $KEYCHAIN
+          echo "$IOS_CERT_P12_BASE64" | base64 -d > cert.p12
+          security import cert.p12 -k $KEYCHAIN -P "$CERT_PASSWORD" -T /usr/bin/codesign
+          security set-key-partition-list -S apple-tool:,apple: -s -k "" $KEYCHAIN
+          mkdir -p ~/Library/MobileDevice/Provisioning\ Profiles
+          echo "$PROFILE_B64" | base64 -d > ~/Library/MobileDevice/Provisioning\ Profiles/app.mobileprovision
+
+      # Signed when a certificate is configured. Without one, the archive is
+      # still built with signing switched off — that proves the project
+      # compiles on every push instead of only when secrets are in place.
+      - name: Archive (signed)
+        if: env.IOS_CERT_P12_BASE64 != ''
+        working-directory: native/ios/App
+        run: |
+          xcodebuild -workspace App.xcworkspace -scheme App \
+            -configuration Release -destination 'generic/platform=iOS' \
+            -archivePath build/App.xcarchive \
+            -allowProvisioningUpdates archive
+
+      - name: Archive (unsigned compile check)
+        if: env.IOS_CERT_P12_BASE64 == ''
+        working-directory: native/ios/App
+        run: |
+          echo "::warning::No IOS_CERT_P12_BASE64 secret — unsigned archive only, not submittable."
+          xcodebuild -workspace App.xcworkspace -scheme App \
+            -configuration Release -destination 'generic/platform=iOS' \
+            -archivePath build/App.xcarchive archive \
+            CODE_SIGNING_ALLOWED=NO CODE_SIGNING_REQUIRED=NO CODE_SIGN_IDENTITY=""
+
+      - name: Export .ipa
+        if: env.IOS_CERT_P12_BASE64 != ''
+        working-directory: native/ios/App
+        run: |
+          cat > ExportOptions.plist <<PLIST
+          <?xml version="1.0" encoding="UTF-8"?>
+          <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+          <plist version="1.0"><dict>
+            <key>method</key><string>app-store-connect</string>
+            <key>teamID</key><string>${APPLE_TEAM_ID}</string>
+            <key>uploadSymbols</key><true/>
+          </dict></plist>
+          PLIST
+          xcodebuild -exportArchive -archivePath build/App.xcarchive \
+            -exportOptionsPlist ExportOptions.plist -exportPath build/ipa
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: ios-ipa
+          path: native/ios/App/build/ipa/*.ipa
+          if-no-files-found: warn
+
+      - name: Upload to App Store Connect
+        if: ${{ inputs.submit && env.APPSTORE_API_KEY_BASE64 != '' }}
+        env:
+          KEY_ID: ${{ secrets.APPSTORE_API_KEY_ID }}
+          ISSUER_ID: ${{ secrets.APPSTORE_API_ISSUER_ID }}
+        run: |
+          set -euo pipefail
+          mkdir -p ~/private_keys
+          echo "$APPSTORE_API_KEY_BASE64" | base64 -d > ~/private_keys/AuthKey_$KEY_ID.p8
+          IPA=$(ls native/ios/App/build/ipa/*.ipa | head -1)
+          xcrun altool --upload-app -f "$IPA" -t ios \
+            --apiKey "$KEY_ID" --apiIssuer "$ISSUER_ID"
+
+# ------------------------------------------------------------------------
+# Secrets this needs. Nothing here can be generated for you — each one comes
+# from an account only you can open.
+#
+# Android
+#   ANDROID_KEYSTORE_BASE64     base64 of the upload keystore you generate with
+#                               keytool. Back it up: Play will not let you swap
+#                               it later without an app-signing key reset.
+#   ANDROID_KEYSTORE_PASSWORD
+#   ANDROID_KEY_ALIAS
+#   ANDROID_KEY_PASSWORD
+#   PLAY_SERVICE_ACCOUNT_JSON   Play Console → Setup → API access → service
+#                               account with "Release apps to testing tracks".
+#
+# iOS
+#   IOS_CERT_P12_BASE64         Apple Distribution certificate exported as .p12
+#   IOS_CERT_PASSWORD
+#   IOS_PROVISIONING_PROFILE_BASE64
+#   APPLE_TEAM_ID               the 10-character team ID from the developer
+#                               portal's membership page. Without it the export
+#                               step cannot pick a team and fails.
+#   APPSTORE_API_KEY_ID / APPSTORE_API_ISSUER_ID / APPSTORE_API_KEY_BASE64
+#                               App Store Connect → Users and Access → Keys
+#
+# With none of these set the workflow still runs: it builds an unsigned bundle
+# and an unsigned archive, so a broken project is caught on the push that broke
+# it rather than on release day.
+# ------------------------------------------------------------------------
