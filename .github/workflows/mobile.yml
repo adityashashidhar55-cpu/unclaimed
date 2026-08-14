@@ -37,8 +37,8 @@ jobs:
   web:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
         with: { node-version: '22' }
       - name: Build the site (the app bundles from it)
         env:
@@ -59,12 +59,12 @@ jobs:
         run: node native/prepare.mjs
       - name: Verify the native bundle
         run: node scripts/verify-native.mjs
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v5
         with:
           name: resources
           path: native/resources
           retention-days: 3
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v5
         with:
           name: www
           path: native/www
@@ -80,14 +80,14 @@ jobs:
       ANDROID_KEYSTORE_BASE64: ${{ secrets.ANDROID_KEYSTORE_BASE64 }}
       PLAY_SERVICE_ACCOUNT_JSON: ${{ secrets.PLAY_SERVICE_ACCOUNT_JSON }}
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/download-artifact@v4
+      - uses: actions/checkout@v5
+      - uses: actions/download-artifact@v5
         with: { name: www, path: native/www }
-      - uses: actions/download-artifact@v4
+      - uses: actions/download-artifact@v5
         with: { name: resources, path: native/resources }
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v5
         with: { node-version: '22' }
-      - uses: actions/setup-java@v4
+      - uses: actions/setup-java@v5
         with:
           distribution: temurin
           java-version: '21'
@@ -97,16 +97,30 @@ jobs:
         working-directory: native
         run: npm install
 
-      # Icons come from the web job as an artifact — generating them twice on
-      # two runners is two chances for the app icon and the store icon to
-      # differ, which is exactly the kind of drift nobody notices until review.
-      - name: Generate launcher icons and splash
-        working-directory: native
-        run: npx @capacitor/assets generate --android --assetPath resources
-
       - name: Add the Android project
         working-directory: native
         run: npx cap add android || npx cap sync android
+
+      # AFTER `cap add`, not before. @capacitor/assets writes into the native
+      # project's res/ directory, so with no platform on disk it prints
+      # "No platforms found, exiting" — a warning, not an error — and the app
+      # ships with the default Capacitor icon. The grep is what turns that
+      # silent skip into a failed build.
+      #
+      # Icons come from the web job as an artifact rather than being generated
+      # again here: two runners generating them separately is two chances for
+      # the app icon and the store icon to drift apart.
+      - name: Generate launcher icons and splash
+        working-directory: native
+        run: |
+          set -euo pipefail
+          npx @capacitor/assets generate --android --assetPath resources 2>&1 | tee assets.log
+          if grep -q "No platforms found" assets.log; then
+            echo "::error::Icon generation skipped — the Android project was not on disk."
+            exit 1
+          fi
+          test -f android/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png
+          echo "launcher icons written"
 
       # The keystore lives only in secrets. A keystore committed to a repo is
       # a keystore anyone can publish updates with, and Play will not let you
@@ -174,7 +188,7 @@ jobs:
           chmod +x ./gradlew
           ./gradlew bundleRelease --no-daemon
 
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v5
         with:
           name: android-aab
           path: native/android/app/build/outputs/bundle/release/*.aab
@@ -199,25 +213,36 @@ jobs:
       APPSTORE_API_KEY_BASE64: ${{ secrets.APPSTORE_API_KEY_BASE64 }}
       APPLE_TEAM_ID: ${{ secrets.APPLE_TEAM_ID }}
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/download-artifact@v4
+      - uses: actions/checkout@v5
+      - uses: actions/download-artifact@v5
         with: { name: www, path: native/www }
-      - uses: actions/download-artifact@v4
+      - uses: actions/download-artifact@v5
         with: { name: resources, path: native/resources }
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v5
         with: { node-version: '22' }
 
       - name: Install Capacitor
         working-directory: native
         run: npm install
 
-      - name: Generate app icons and splash
-        working-directory: native
-        run: npx @capacitor/assets generate --ios --assetPath resources
-
       - name: Add the iOS project
         working-directory: native
         run: npx cap add ios || npx cap sync ios
+
+      # After `cap add` — see the note in the android job. Without the
+      # platform on disk this step warns and does nothing, and the app ships
+      # with the stock Capacitor icon.
+      - name: Generate app icons and splash
+        working-directory: native
+        run: |
+          set -euo pipefail
+          npx @capacitor/assets generate --ios --assetPath resources 2>&1 | tee assets.log
+          if grep -q "No platforms found" assets.log; then
+            echo "::error::Icon generation skipped — the iOS project was not on disk."
+            exit 1
+          fi
+          test -d "ios/App/App/Assets.xcassets/AppIcon.appiconset"
+          echo "app icons written"
 
       # Apple signing. Without these secrets the job still builds an
       # unsigned archive, which is enough to prove the project compiles.
@@ -277,7 +302,7 @@ jobs:
           xcodebuild -exportArchive -archivePath build/App.xcarchive \
             -exportOptionsPlist ExportOptions.plist -exportPath build/ipa
 
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v5
         with:
           name: ios-ipa
           path: native/ios/App/build/ipa/*.ipa
