@@ -86,7 +86,7 @@ Build verified: `node src/build.mjs` → 4,108 pages, `node scripts/verify.mjs` 
 - **Auto-apply engine** (`packages/autoapply/`) — turns a profile + programme into a
   submission-ready package: localised covering letter, filled field map, evidence list,
   ordered steps, verbatim attestations, readiness score. **all tests pass**
-  (`node scripts/test-autoapply.mjs`) — 216/216 — no dependencies.
+  (`node scripts/test-autoapply.mjs`) — 217/217 — no dependencies.
 - **Jurisdiction policy** (`packages/policy/`) — encodes, per country, how far automation
   may go and the pricing shapes that are refused outright, each with the statute it
   comes from. Enforced in code, not in a policy document.
@@ -420,6 +420,95 @@ rather than becoming zero.
   real product would close that loop; this ranks on published priors only.
 - **The haircuts are judgement.** They are documented and conservative, but
   they are not measured, and they are the weakest numbers in the model.
+
+### Scale, redesign and the mobile app (2026-08-14, sixth pass)
+
+#### Dataset: 203 → 1,684
+
+Eleven parallel research agents added **1,481 net new startup programmes**
+across **77 jurisdictions** (1,560 gathered, 79 dropped as duplicates by slug,
+source URL or intra-batch collision). Combined with the 2,216 personal
+benefits, the site now covers **3,900 programmes**.
+
+Depth rather than breadth was the point: 275 US records including all 50-state
+coverage and per-agency SBIR, 143 UK across devolved and combined authorities,
+99 French including all 13 régions and the DOM, 91 German across all 16 Länder,
+107 Indian across 25 states.
+
+#### Closed programmes are kept, and that is the feature
+
+**251 records are closed or paused. 246 carry reopening information.** A grant
+site that hides closed calls guarantees you miss them again next year; one that
+lists them as open wastes your afternoon. `packages/deadlines/` treats status as
+the most time-sensitive fact on the record rather than a filter:
+
+- Six statuses, each with a tone and an urgency: `closing` (within 14 days),
+  `open`, `soon` (reopening within 90 days), `later`, `stalled`, `unknown`.
+- **Next-window projection** in strict order of preference: a date the funder
+  published; the months this call usually opens; last close plus one cycle;
+  nothing. 137 reopenings are projected and every one is labelled a projection —
+  "Usually opens in March and October" reads differently from "Opens 2027-03-01",
+  and it should.
+- A published deadline that has already passed is reported as stale rather than
+  rendered as open. One record currently trips this.
+- Calendar export with two events per programme: the deadline, and a nudge two
+  weeks before, because a reminder on closing day arrives too late to write
+  anything.
+
+896 records are `unknown` — funders who publish no call calendar at all. That
+is a real number and it is shown rather than smoothed over.
+
+#### The redesign
+
+Rebuilt on the glass-frame system: pure black canvas, near-invisible panels
+whose edges are drawn by a masked gradient ring rather than a border,
+Instrument Serif italic carrying the identity. The class API was kept identical
+to the old light theme, so restyling `theme.css` restyled all 5,884 pages at
+once without touching the generator.
+
+- **Language switcher top and bottom** — a select in the masthead, a full pill
+  row in the footer, both with `hreflang`.
+- **Motion**: entry-only, fires once, never re-animates on scroll-up. Hero
+  headline blurs in word by word; the how-it-works flow draws its own
+  connecting line as the steps arrive; hero figures count up. All of it is off
+  under `prefers-reduced-motion`.
+- Features taken from the reference products: lifecycle framing (Granter's
+  match → write → manage), saved searches and weekly digests, deadline push to
+  calendar, pipeline and award tracking, portfolio view (Instrumentl).
+
+#### Pricing, split four ways
+
+Free (the number, forever) → Personal £4.99 → Business £29 → Enterprise custom.
+The enterprise tier gets a dashboard — portfolio matching, pipeline stages,
+deadline watch, de minimis ledger, saved searches, seats, SSO, API — and is
+**web only on purpose**. A pipeline board with forty companies and six columns
+is not a phone screen; cramming one in would make both products worse.
+
+#### The mobile app
+
+Shipped as an **installable PWA**, and that is a choice rather than a fallback.
+An Expo build needs a Mac, two developer accounts, signing certificates and a
+review queue before anyone can open it. A PWA installs from the browser on both
+Android and iOS, updates the moment we deploy, and runs the entire free check
+**on device** — the matcher is plain dependency-free JS, so it works with no
+signal at all. That matters here specifically: the people most likely to be
+owed money are the most likely to be on a metered plan or a poor connection.
+
+- Service worker with two caches — cache-first shell, stale-while-revalidate
+  data. A day-old benefits dataset beats a spinner on a train.
+- Individual scope only: check, results, deadlines, documents, settings.
+- iOS fires no install prompt, so the app detects Safari and explains Add to
+  Home Screen once. Silently failing to install is the main reason PWAs go
+  unused.
+- Answers live in `localStorage` and nowhere else; settings can clear them.
+
+**A real bug the build caught.** `src/engine/startup.js` imports
+`../../packages/scoring/`, correct in the repo — but once emitted to
+`dist/engine/`, that path escapes the published tree and would have 404'd in
+every browser. Node resolved it happily against the repo, so a naive existence
+check passed. `verify.mjs` now walks the app's whole module graph and asserts
+every specifier resolves *inside* `dist`. The Expo source stays in `mobile/`
+for store builds, still uncompiled.
 
 ### Where the residual risk actually lives
 
