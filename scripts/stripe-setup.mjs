@@ -27,7 +27,7 @@ const LIVE = KEY.startsWith('sk_live_');
 const PLANS = [
   {
     lookup: 'ug_personal_monthly_v1',
-    product: 'Unlisted Grants — Personal',
+    product: 'Unclaimed Grants — Personal',
     nickname: 'Personal, monthly',
     unit_amount: 700,
     interval: 'month',
@@ -35,7 +35,7 @@ const PLANS = [
   },
   {
     lookup: 'ug_personal_annual_v1',
-    product: 'Unlisted Grants — Personal',
+    product: 'Unclaimed Grants — Personal',
     nickname: 'Personal, annual',
     unit_amount: 5000,
     interval: 'year',
@@ -43,7 +43,7 @@ const PLANS = [
   },
   {
     lookup: 'ug_business_monthly_v1',
-    product: 'Unlisted Grants — Business',
+    product: 'Unclaimed Grants — Business',
     nickname: 'Business, per seat, monthly',
     unit_amount: 8000,
     interval: 'month',
@@ -126,7 +126,7 @@ Then, once:
 
 Webhook endpoint to add at https://dashboard.stripe.com/webhooks:
 
-  URL     https://unlistedgrants.com/webhooks/stripe
+  URL     https://unclaimedgrant.com/webhooks/stripe
   Events  checkout.session.completed
           customer.subscription.created
           customer.subscription.updated
