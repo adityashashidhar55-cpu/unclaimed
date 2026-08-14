@@ -97,6 +97,91 @@ export const PRICING = Object.freeze({
   NO_PROCUREMENT_CLAIMS: true,
 });
 
+/**
+ * The rails that actually exist for acting on someone's behalf.
+ *
+ * "Auto-apply" is not one feature that is switched on or off. It is a
+ * question of whether a real, named mechanism exists that a company can
+ * lawfully stand inside. Where one does, we use it. Where none does — which
+ * is most places — the honest product is a complete package the user sends,
+ * plus somewhere to keep the paperwork so they never assemble it twice.
+ *
+ * Nothing here is invented. Each rail names the instrument that creates it.
+ */
+export const RAIL = {
+  /** No third-party rail. We prepare; the user submits. */
+  NONE: 'none',
+  /** A registered power of attorney a legal person may hold. */
+  MANDATE: 'mandate',
+  /** Per-programme designation in writing, usually state by state. */
+  AUTH_REPRESENTATIVE: 'auth_representative',
+  /** Consented retrieval of the user's OWN documents. Never submission. */
+  DOCUMENT_CONSENT: 'document_consent',
+};
+
+/**
+ * Per country: what rail exists, what it costs to stand inside it, and
+ * whether it is honestly available to a for-profit company.
+ *
+ * `available` is the field that matters. A rail can exist in statute and
+ * still be closed to us in practice — US SNAP authorized representatives are
+ * real, and are a non-profit/state-agreement play, so `available: false`.
+ * Marking it true because the statute exists would be the DoNotPay mistake.
+ */
+export const SUBMISSION_RAILS = {
+  es: {
+    rail: RAIL.MANDATE,
+    available: true,
+    name: 'Registro Electrónico de Apoderamientos (REA)',
+    requires: [
+      'A Spanish legal entity whose articles authorise representation of third parties before public administrations (Orden ISM/189/2021 art. 4.2).',
+      'A per-user apoderamiento granted with qualified eID, scoped to named procedures.',
+      'Certificado de representante for the entity.',
+    ],
+    unlocks: 'presentar, subsanar o completar solicitudes, escritos, declaraciones y comunicaciones (Anexo I). Valid up to five years (art. 8.1).',
+  },
+  us: {
+    rail: RAIL.AUTH_REPRESENTATIVE,
+    available: false,
+    name: 'SNAP authorized representative (7 CFR 273.2)',
+    requires: [
+      'Written designation per household, per state.',
+      'In practice a state agreement — the working examples are non-profits such as mRelief.',
+    ],
+    unlocks: 'Signing and filing SNAP applications only. No other programme.',
+    why_unavailable:
+      'Real in statute, closed in practice to a for-profit consumer product. Claiming it would be an unsubstantiated capability claim of exactly the kind FTC v. DoNotPay penalised.',
+  },
+  in: {
+    rail: RAIL.DOCUMENT_CONSENT,
+    available: true,
+    name: 'DigiLocker / API Setu',
+    requires: ['Onboarding as a Requester organisation.', 'Per-fetch user consent.'],
+    unlocks:
+      'Pulling the user\'s OWN issued documents (Aadhaar, PAN, marksheets, certificates) into their vault with consent. Explicitly NOT submission — myScheme\'s terms forbid automated access outright.',
+  },
+};
+
+/** The rail for a country, if any. */
+export function railFor(cc) {
+  return SUBMISSION_RAILS[String(cc || '').toLowerCase()] ?? null;
+}
+
+/**
+ * What the product can actually do for this user, as one word.
+ *
+ *   'submit'   — we can file it, holding a registered mandate.
+ *   'fetch'    — we can pull their documents in with consent, they file.
+ *   'prepare'  — we assemble everything, they file. The honest default.
+ */
+export function autoApplyTier(cc) {
+  const r = railFor(cc);
+  if (!r || !r.available) return 'prepare';
+  if (r.rail === RAIL.MANDATE) return 'submit';
+  if (r.rail === RAIL.DOCUMENT_CONSENT) return 'fetch';
+  return 'prepare';
+}
+
 /** How far automation may go on the user's behalf. */
 export const AUTOMATION = {
   /** Generate a complete submission package. User submits, in their own
