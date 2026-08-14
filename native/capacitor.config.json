@@ -1,6 +1,6 @@
 {
-  "appId": "com.unlistedgrants.app",
-  "appName": "Unlisted Grants",
+  "appId": "com.unclaimedgrant.app",
+  "appName": "Unclaimed Grants",
   "webDir": "www",
   "bundledWebRuntime": false,
   "android": {

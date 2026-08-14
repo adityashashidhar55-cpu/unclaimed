@@ -100,7 +100,7 @@ const shell = fs
   /* The no-JS escape hatch links back to the site root, which is empty once
      the base path is stripped. In the app it must be an absolute URL or it
      is a dead link. */
-  .replace(/href="" style="color:#fff"/, 'href="https://unlistedgrants.com/" style="color:#fff"')
+  .replace(/href="" style="color:#fff"/, 'href="https://unclaimedgrant.com/" style="color:#fff"')
   .replace(/href="icon-192\.png"/, 'href="icon-180.png"');
 
 fs.writeFileSync(path.join(WWW, 'index.html'), shell);

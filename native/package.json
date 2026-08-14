@@ -1,8 +1,8 @@
 {
-  "name": "unlistedgrants-native",
+  "name": "unclaimedgrant-native",
   "version": "1.0.0",
   "private": true,
-  "description": "Unlisted Grants — native Android and iOS apps",
+  "description": "Unclaimed Grants — native Android and iOS apps",
   "scripts": {
     "sync": "node prepare.mjs && npx cap sync",
     "open:android": "npx cap open android",

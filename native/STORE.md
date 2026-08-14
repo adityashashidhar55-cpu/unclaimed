@@ -1,9 +1,9 @@
-# Store submission — Unlisted Grants
+# Store submission — Unclaimed Grants
 
 Everything a reviewer or a listing form asks for, written out. Copy from here
 rather than improvising in the console at 11pm.
 
-**Bundle ID / package:** `com.unlistedgrants.app`
+**Bundle ID / package:** `com.unclaimedgrant.app`
 **Category:** Finance (primary) · Productivity (secondary)
 **Content rating:** Everyone / 4+
 **Price:** Free, with an optional subscription sold on the web
@@ -13,7 +13,7 @@ rather than improvising in the console at 11pm.
 ## Listing copy
 
 ### App name
-`Unlisted Grants`
+`Unclaimed Grants`
 
 ### Subtitle (iOS, 30 char max)
 `Money you're owed, found`
@@ -28,7 +28,7 @@ rather than improvising in the console at 11pm.
 > startup grants — all published, all real, and scattered across thousands of
 > pages nobody reads.
 >
-> Unlisted Grants collects 3,900 programmes across 77 jurisdictions, each one
+> Unclaimed Grants collects 3,900 programmes across 77 jurisdictions, each one
 > linked to the funding body's own page with the date we last checked it, and
 > tells you which ones you qualify for.
 >
@@ -58,7 +58,7 @@ rather than improvising in the console at 11pm.
 > declaration is sworn by the person making it, and keeping it yours is what
 > protects you.
 >
-> Unlisted Grants is a discovery tool, not legal, tax or financial advice. Only
+> Unclaimed Grants is a discovery tool, not legal, tax or financial advice. Only
 > the official body named on each programme can confirm what you are entitled
 > to.
 
@@ -187,7 +187,7 @@ open, or a key only you should hold.
 4. Generate the Android upload keystore and **back it up somewhere you will
    still have in five years**:
    ```
-   keytool -genkey -v -keystore upload.keystore -alias unlistedgrants \
+   keytool -genkey -v -keystore upload.keystore -alias unclaimedgrant \
      -keyalg RSA -keysize 2048 -validity 10000
    base64 -w0 upload.keystore     # → ANDROID_KEYSTORE_BASE64 secret
    ```
