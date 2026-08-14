@@ -109,5 +109,32 @@ for (const entry of manifest.countries) {
 }
 noSource === 0 ? ok('every record has an http(s) source_url') : fail(`${noSource} records have no valid source_url`);
 
+
+/* --- Startup grants ------------------------------------------------ */
+const sMan = JSON.parse(fs.readFileSync(path.join(DIST, 'api/v1/startups/index.json'), 'utf8'));
+sMan.total === 203 && sMan.countries.length >= 25 ? ok('startup pool index is published') : fail('startup pool index is published');
+sMan.countries.every((c) => fs.existsSync(path.join(DIST, `api/v1/startups/${c.slug}.json`)))
+  ? ok('every startup pool has a JSON asset')
+  : fail('a startup pool JSON asset is missing');
+const sIndex = fs.readFileSync(path.join(DIST, 'startups/index.html'), 'utf8');
+sIndex.includes('<h1') && sIndex.includes('funding programmes') ? ok('startup index is server-rendered') : fail('startup index is server-rendered');
+sIndex.includes('300,000') ? ok('startup index states the de minimis ceiling') : fail('startup index states the de minimis ceiling');
+let sPages = 0;
+let sLeaks = 0;
+const walkStartups = (d) => {
+  for (const e of fs.readdirSync(d, { withFileTypes: true })) {
+    const f = path.join(d, e.name);
+    if (e.isDirectory()) walkStartups(f);
+    else if (e.name === 'index.html') {
+      sPages += 1;
+      const html = fs.readFileSync(f, 'utf8');
+      if (html.includes('${') || html.includes('[object Object]')) sLeaks += 1;
+    }
+  }
+};
+walkStartups(path.join(DIST, 'startups'));
+sLeaks === 0 ? ok(`no template leaks across ${sPages} startup pages`) : fail(`no template leaks across ${sPages} startup pages`);
+fs.readFileSync(path.join(DIST, 'sitemap.xml'), 'utf8').includes('/startups/') ? ok('startup pages are in the sitemap') : fail('startup pages are in the sitemap');
+
 console.log(`\n${checks} checks passed, ${failures} failed\n`);
 process.exit(failures ? 1 : 0);

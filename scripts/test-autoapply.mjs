@@ -223,5 +223,194 @@ ok('IVs are not reused', env2.iv.join() !== env3.iv.join());
 ok('data keys are not reused', env2.wrappedKey.join() !== env3.wrappedKey.join());
 ok('crypto provider is required', (() => { try { createVaultCrypto({}); return false; } catch { return true; } })());
 
+
+/* ================================================================== */
+/* Startup grants                                                      */
+/* ================================================================== */
+
+import {
+  smeCategory, reachFor, matchStartup, isFreeMoney, SME_THRESHOLDS, EU_MEMBERS,
+} from '../src/engine/startup.js';
+import {
+  DE_MINIMIS_CEILING_EUR, SGEI_CEILING_EUR, WINDOW_MONTHS, REGULATION,
+  headroom, canAccept, planWithinCeiling, declarationText, awardsInWindow,
+} from '../packages/stateaid/index.js';
+import {
+  registryFor, autofillAvailable, parseCIN, fromCompaniesHouse, fromSirene,
+  fromSamGov, projectCompany, lookupCompany,
+} from '../packages/registry/index.js';
+
+const sLoad = (cc) => JSON.parse(fs.readFileSync(new URL(`../data/startups/${cc}.json`, import.meta.url)));
+const S_ASOF = Date.parse('2026-08-14');
+const YEARS = (n) => S_ASOF - n * 365.25 * 24 * 3600 * 1000;
+
+console.log('\nEU SME definition');
+ok('micro band', smeCategory({ headcount: 5, turnover_annual_eur: 500_000 }) === 'micro');
+ok('small band', smeCategory({ headcount: 30, turnover_annual_eur: 5_000_000 }) === 'small');
+ok('medium band', smeCategory({ headcount: 200, turnover_annual_eur: 40_000_000 }) === 'medium');
+ok('large above thresholds', smeCategory({ headcount: 400, turnover_annual_eur: 90_000_000 }) === 'large');
+ok('headcount is the binding test', smeCategory({ headcount: 300, turnover_annual_eur: 1_000 }) === 'large');
+ok('turnover OR balance sheet, not AND - capital-heavy deeptech still qualifies',
+   smeCategory({ headcount: 20, turnover_annual_eur: 200_000, balance_sheet_eur: 40_000_000 }) === 'small');
+ok('unknown headcount yields null, never a guess', smeCategory({ headcount: null }) === null);
+ok('medium balance-sheet threshold is 43m not 50m', SME_THRESHOLDS.medium.balance_sheet === 43_000_000);
+
+console.log('\nProgramme reach');
+ok('EU member sees EU-level programmes', reachFor('fr').includes('eu'));
+ok('everyone sees global programmes', reachFor('br').includes('global'));
+ok('non-associated country sees no EU pool', !reachFor('br').includes('eu'));
+ok('Horizon-associated non-member still sees EU pool', reachFor('no').includes('eu'));
+ok('EU member list is complete', EU_MEMBERS.length === 27);
+
+console.log('\nInstrument honesty');
+ok('grants are non-dilutive cash', isFreeMoney('grant'));
+ok('cloud credits are NOT counted as cash', !isFreeMoney('in_kind'));
+ok('loans are NOT free money', !isFreeMoney('loan'));
+ok('equity is NOT free money', !isFreeMoney('equity'));
+
+console.log('\nStartup matching');
+const sDatasets = { fr: sLoad('fr'), eu: sLoad('eu'), global: sLoad('global') };
+const founder = {
+  country_code: 'fr', incorporated: true, incorporation_date: '2024-03-01',
+  headcount: 6, turnover_annual_eur: 180_000, sectors: ['deeptech', 'ai'],
+  stage: 'seed', rd_active: true, has_local_entity: true,
+};
+const sm = matchStartup(founder, sDatasets, S_ASOF);
+ok('finds eligible programmes across all three pools', sm.eligible.length > 20);
+ok('classifies the company', sm.sme_category === 'micro');
+ok('computes company age', Math.round(sm.age_months) === 29);
+ok('non-dilutive headline excludes credits, loans and equity',
+   sm.non_dilutive.count === (sm.totals.grant?.count ?? 0) + (sm.totals.prize?.count ?? 0) +
+     (sm.totals.voucher?.count ?? 0) + (sm.totals.tax_credit?.count ?? 0));
+ok('EUR and USD are never added together',
+   Object.keys(sm.non_dilutive.by_currency).length > 1 &&
+   sm.non_dilutive.by_currency.EUR.max !== sm.non_dilutive.by_currency.USD.max);
+ok('unpriced programmes are counted, not valued at zero', sm.non_dilutive.unpriced > 0);
+ok('credits are reported apart from grants', sm.totals.in_kind.count > 0 && !sm.totals.in_kind.non_dilutive);
+
+const oldCo = { ...founder, incorporation_date: '2010-01-01', headcount: 400, turnover_annual_eur: 90_000_000 };
+const smOld = matchStartup(oldCo, sDatasets, S_ASOF);
+ok('a large old company is excluded from young-SME schemes', smOld.eligible.length < sm.eligible.length);
+ok('every exclusion carries a stated reason', smOld.not_eligible.every((m) => m.fails.length > 0));
+
+const smVague = matchStartup({ country_code: 'fr', incorporated: true }, sDatasets, S_ASOF);
+ok('missing answers never read as failure', smVague.needs_answer.length > 0);
+ok('unanswered questions are ranked by what they unlock', smVague.unlocks.length > 0);
+ok('closed programmes are held out of eligible',
+   sm.eligible.every((m) => m.programme.deadline_type !== 'closed'));
+
+console.log('\nDe minimis - Regulation (EU) 2023/2831');
+ok('ceiling is EUR 300,000', DE_MINIMIS_CEILING_EUR === 300_000);
+ok('SGEI ceiling is EUR 750,000', SGEI_CEILING_EUR === 750_000);
+ok('window is 3 years', WINDOW_MONTHS === 36);
+ok('regulation is cited', REGULATION.general.id.includes('2023/2831'));
+
+const sAwards = [
+  { funder: 'Bpifrance', amount_eur: 180_000, granted_at: YEARS(1), member_state: 'fr' },
+  { funder: 'Region IDF', amount_eur: 90_000, granted_at: YEARS(2.5), member_state: 'fr' },
+  { funder: 'ZIM', amount_eur: 120_000, granted_at: YEARS(1), member_state: 'de' },
+  { funder: 'Old aid', amount_eur: 200_000, granted_at: YEARS(4), member_state: 'fr' },
+];
+const frRoom = headroom(sAwards, 'fr', S_ASOF);
+ok('rolling window excludes aid older than 3 years', frRoom.used_eur === 270_000);
+ok('window is rolling, not fiscal years', awardsInWindow(sAwards, S_ASOF, 'fr').length === 2);
+ok('headroom is computed', frRoom.headroom_eur === 30_000);
+ok('ceiling is per Member State - German aid does not eat the French pot',
+   headroom(sAwards, 'de', S_ASOF).used_eur === 120_000);
+ok('tells the founder when room frees up', frRoom.frees_up_at > S_ASOF && frRoom.frees_up_eur === 90_000);
+
+const verdict = canAccept({ programme: { eligibility: { de_minimis: true }, amount_max: 100_000 }, awards: sAwards, memberState: 'fr', asOf: S_ASOF });
+ok('an award over the headroom is blocked', verdict.allowed === false);
+ok('Art. 3(7) - the whole award is disqualified, not trimmed', /not reduced to fit/.test(verdict.message));
+ok('the message says when room frees up', /frees up on/.test(verdict.message));
+ok('an award within headroom is allowed',
+   canAccept({ programme: { eligibility: { de_minimis: true }, amount_max: 20_000 }, awards: sAwards, memberState: 'fr', asOf: S_ASOF }).allowed === true);
+ok('non-de-minimis programmes are unaffected',
+   canAccept({ programme: { eligibility: {} }, awards: sAwards, memberState: 'fr', asOf: S_ASOF }).applies === false);
+ok('unpriced de minimis aid returns null, not a guess',
+   canAccept({ programme: { eligibility: { de_minimis: true } }, awards: sAwards, memberState: 'fr', asOf: S_ASOF }).allowed === null);
+
+const dmPlan = planWithinCeiling(
+  [
+    { programme: { eligibility: { de_minimis: true }, amount_max: 25_000, name_en: 'A' } },
+    { programme: { eligibility: { de_minimis: true }, amount_max: 20_000, name_en: 'B' } },
+    { programme: { eligibility: {}, amount_max: 999_999, name_en: 'C' } },
+  ],
+  { awards: sAwards, memberState: 'fr', asOf: S_ASOF },
+);
+ok('plan takes the largest affordable award first', dmPlan.affordable[0].programme.name_en === 'A');
+ok('plan blocks what will not fit', dmPlan.blocked.length === 1 && dmPlan.blocked[0].programme.name_en === 'B');
+ok('non-de-minimis awards are untouched by the ceiling', dmPlan.unaffected.length === 1);
+ok('plan explains the exclusion', /disqualified in full/.test(dmPlan.note));
+
+const decl = declarationText(sAwards, 'fr', S_ASOF);
+ok('declaration lists the prior aid', /Bpifrance/.test(decl.text));
+ok('declaration explains single undertaking', /single undertaking/i.test(decl.text));
+ok('declaration says grant date, not payment date', /not the date of payment/.test(decl.text));
+ok('declaration is never pre-affirmed', decl.affirmed === false);
+
+console.log('\nCompany registry auto-fill');
+ok('UK has a machine-readable register', autofillAvailable('gb'));
+ok('France has an open register, no key', registryFor('fr').auth === 'none');
+ok('Germany is honestly marked unavailable', autofillAvailable('de') === false);
+ok('the German gap is explained, not hidden', /no free structured api/i.test(registryFor('de').note));
+ok('SAM.gov annual expiry is flagged', /EXPIRES ANNUALLY/.test(registryFor('us').note));
+
+const cin = parseCIN('U72900KA2019PTC123456');
+ok('CIN parses with no network call', cin && cin.incorporation_year === 2019);
+ok('CIN yields listing status, state and class',
+   cin.listed === false && cin.state_code === 'KA' && cin.ownership_class === 'PTC');
+ok('malformed CIN is rejected rather than guessed', parseCIN('NOTACIN') === null);
+
+const ch = fromCompaniesHouse({
+  company_name: 'Example Ltd', company_number: '12345678', date_of_creation: '2023-04-01',
+  company_status: 'active',
+  registered_office_address: { address_line_1: '1 High St', locality: 'London', postal_code: 'E1 1AA' },
+  sic_codes: ['62012'],
+});
+ok('Companies House normalises', ch.legal_name === 'Example Ltd' && ch.incorporation_date === '2023-04-01');
+ok('address is assembled', /London/.test(ch.registered_address));
+
+const sirene = fromSirene({ results: [{ nom_complet: 'ACME SAS', siren: '123456789', date_creation: '2022-06-15', etat_administratif: 'A', tranche_effectif_salarie: '11', siege: { adresse: '10 rue de Paris' }, activite_principale: '62.01Z' }] });
+ok('SIRENE normalises', sirene.company_number === '123456789');
+ok('INSEE headcount BAND is never presented as an exact headcount',
+   sirene.headcount === null && sirene.headcount_band === '11');
+
+const sam = fromSamGov({ entityData: [{ entityRegistration: { legalBusinessName: 'Acme Inc', ueiSAM: 'ABC123DEF456', registrationStatus: 'Active', registrationExpirationDate: '2027-03-01' }, coreData: { physicalAddress: { addressLine1: '1 Main St', city: 'Austin', stateOrProvinceCode: 'TX' }, naicsList: [{ naicsCode: '541715' }] } }] });
+ok('SAM.gov normalises', sam.company_number === 'ABC123DEF456');
+ok('SAM registration expiry is surfaced', sam.registration_expires_at === '2027-03-01');
+
+const proj = projectCompany({
+  company: ch,
+  programme: { documents_required: [{ doc: 'Business plan' }, { doc: 'Company accounts' }] },
+  profile: { headcount: 6, stage: 'seed' },
+});
+ok('registry fields are filled', proj.filled.legal_name === 'Example Ltd');
+ok('each field records where it came from', proj.source.legal_name === 'Companies House');
+ok('registry-sourced fields are counted separately from answers', proj.autofilled_from_registry >= 5);
+ok('narrative fields no register can supply are listed', proj.needs_narrative.length > 0);
+ok('the summary is honest about the split', /only you can write/.test(proj.honest_summary));
+
+const noReg = await lookupCompany({ countryCode: 'zz', identifier: 'x' });
+ok('unknown jurisdiction fails cleanly', noReg.ok === false && noReg.reason === 'no_registry_for_country');
+ok('malformed identifier is caught before any network call',
+   (await lookupCompany({ countryCode: 'gb', identifier: 'nope' })).reason === 'malformed_identifier');
+const offline = await lookupCompany({ countryCode: 'in', identifier: 'U72900KA2019PTC123456' });
+ok('India resolves with no network at all', offline.ok === true && offline.offline === true);
+
+console.log('\nStartup dataset');
+const sManifest = JSON.parse(fs.readFileSync(new URL('../data/startups/manifest.json', import.meta.url)));
+ok('dataset is loaded', sManifest.total === 203);
+ok('covers many jurisdictions', sManifest.countries.length >= 25);
+const sAll = [];
+for (const c of sManifest.countries) sAll.push(...sLoad(c.slug).programmes);
+ok('every programme has an official source', sAll.every((p) => /^https?:\/\//.test(p.source_url)));
+ok('every programme has an application route', sAll.every((p) => p.application_url));
+ok('every programme is typed as a startup record', sAll.every((p) => p.eligibility.entity === 'startup'));
+ok('no duplicate slugs', new Set(sAll.map((p) => p.slug)).size === sAll.length);
+ok('public and private funders both present',
+   sAll.some((p) => p.funder_type === 'public') && sAll.some((p) => p.funder_type === 'private'));
+
+
 console.log(`\n${pass} passed, ${fail} failed\n`);
 process.exit(fail ? 1 : 0);
