@@ -79,6 +79,68 @@ Build verified: `node src/build.mjs` → 4,108 pages, `node scripts/verify.mjs` 
   registry access in the build sandbox), so it is **unverified**, not "working", and carrying
   unverified code would misrepresent it. The static build fully replaces it.
 
+## Paywall, mobile app and auto-apply (2026-08-14)
+
+### What is real and tested here
+
+- **Auto-apply engine** (`packages/autoapply/`) — turns a profile + programme into a
+  submission-ready package: localised covering letter, filled field map, evidence list,
+  ordered steps, verbatim attestations, readiness score. **35/35 tests pass**
+  (`node scripts/test-autoapply.mjs`), no dependencies.
+- **Jurisdiction policy** (`packages/policy/`) — encodes, per country, whether the
+  beneficiary may be charged and how far automation may go, each with the statute it
+  comes from. Enforced in code, not in a policy document.
+- **Cloudflare Worker** (`worker/index.js`) — paywall, magic-link auth, Stripe checkout
+  and webhooks, consent ledger. Stripe signature verification (including ignoring the
+  decoy `v0` Stripe sends on test events) verified against a locally generated signature.
+- **Paywall split verified**: the free payload was tested to contain **zero** scheme
+  names and none of `application_url`, `procedure_steps`, `documents_required`,
+  `source_url`. It is enforced server-side, not in the client.
+- **Mobile app** (`mobile/`) — 7 Expo Router screens, shares a **byte-identical** copy of
+  the engine, policy and auto-apply core with web and Worker (verified with `diff`).
+
+### What could NOT be verified here, and why
+
+The build sandbox has **no npm registry access** (`registry.npmjs.org` returns 403) and
+`api.expo.dev` is unreachable. Therefore:
+
+- **The mobile app has never been compiled or run.** JSX cannot be parsed without babel,
+  which cannot be installed. What was verified: import resolution, JSX tag balance,
+  presence of default exports, and that the shared core files parse under `node --check`.
+  That is structural validation, not a build. **Treat the app as unbuilt source.**
+- **The Worker has never run.** `wrangler dev` needs npm. The route logic, SQL and crypto
+  were exercised in isolation; the deployment itself is unrun.
+- **No Stripe product, price or webhook exists.** `STRIPE_PRICE_MONTHLY` is a placeholder.
+- **No store submission.** Requires an Apple Developer account ($99/yr), a Play account
+  ($25) and code signing.
+
+### The finding that changes the business model
+
+Research against primary sources established that **charging the beneficiary for benefits
+help is an offence in France** — Code de la sécurité sociale art. **L554-2**, €4,500 fine
+for any intermediary offering services *"moyennant émoluments convenus d'avance"* to
+obtain benefits, replicated per benefit in CASF L262-51 (RSA), CCH L852-3 (APL), CSS
+L821-5 (AAH), L845-6, L815-14. No fraud element is required. ANAS has filed a complaint
+against Mes Allocs on this basis. France's own *Aidants Connect* excludes paid providers
+by rule.
+
+Germany reserves paid benefits advice to qualified lawyers (§13(5) SGB X + RDG). Italy
+reserves the intermediary role to non-profit patronati (L.152/2001). Spain is the one
+market where a **legal person** may be a registered *apoderado* and actually submit
+(Orden ISM/189/2021 art. 4.2).
+
+Consequently the paywall **refuses to take money in FR, DE, IT and PT** — server-side, in
+`handleCheckout`. The pricing page states this plainly rather than hiding it.
+
+On automation: no for-profit competitor in any researched market auto-submits. CAF's own
+procuration withholds authority to perform legal acts on the account; caf.fr's terms
+forbid sharing credentials with anyone. The engine therefore prepares everything and
+hands over at the submit step — which is also the only version that keeps the sworn
+declaration the user's, as the law requires.
+
+**This is research, not legal advice.** Local counsel is required in FR, DE and IT before
+charging anyone. Portugal is unresolved and is treated as free-to-user until it isn't.
+
 ## Income-threshold research (2026-08-13, second pass)
 
 Reported by the user: a French employee on €60,000 was being shown low-income
