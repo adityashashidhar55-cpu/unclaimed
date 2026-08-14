@@ -19,7 +19,7 @@
 
 import { match } from '../src/engine/matcher.js';
 import { buildPlan, buildPackage, recordConsent } from '../packages/autoapply/index.js';
-import { policyFor, mayCharge } from '../packages/policy/index.js';
+import { policyFor, mayCharge, mayChargeFor, PRODUCT } from '../packages/policy/index.js';
 
 const JSON_HEADERS = { 'content-type': 'application/json; charset=utf-8' };
 
@@ -86,15 +86,16 @@ async function readSession(env, cookieHeader) {
 /**
  * Whether this user may see paid content.
  *
- * Note the jurisdiction branch: in France, Germany, Italy and Portugal we do
- * not sell benefits help to the beneficiary — several legislatures have made
- * charging for it an offence or a reserved activity (see packages/policy).
- * Users in those countries are entitled by default rather than being shown a
- * wall we are not allowed to charge them to cross.
+ * `product` matters. DISCOVERY — the compiled database and the eligibility
+ * calculator — is sold in every country: publishing sourced reference material
+ * is not intermediation anywhere in the dataset. ASSISTANCE — drafting the
+ * user's letter and projecting their answers onto an agency form — is the
+ * conduct France, Germany and Italy regulate, so there it is given away rather
+ * than shown behind a wall we are not allowed to charge them to cross.
  */
-async function entitlementFor(env, userId, country) {
-  if (!mayCharge(country)) {
-    return { entitled: true, reason: 'free_jurisdiction', policy: policyFor(country) };
+async function entitlementFor(env, userId, country, product = PRODUCT.DISCOVERY) {
+  if (!mayChargeFor(country, product)) {
+    return { entitled: true, reason: 'free_in_jurisdiction', product, policy: policyFor(country) };
   }
   if (!userId) return { entitled: false, reason: 'anonymous' };
 
@@ -239,7 +240,7 @@ async function handlePlan(request, env) {
   if (!profile?.country_code) return bad('country_code required');
 
   const cc = String(profile.country_code).toLowerCase();
-  const ent = await entitlementFor(env, session.uid, cc);
+  const ent = await entitlementFor(env, session.uid, cc, PRODUCT.ASSISTANCE);
   if (!ent.entitled) return json({ error: 'subscription required', paywall: ent }, 402);
 
   const data = await loadCountry(env, request, cc);
@@ -401,13 +402,18 @@ async function handleCheckout(request, env) {
 
   const { country = 'gb' } = await request.json().catch(() => ({}));
 
-  /* Refuse to take money where taking it is the offence. This is a server-side
-     guard, not a UI nicety — see packages/policy for the statutes. */
+  /* Server-side guard, not a UI nicety. Today DISCOVERY is sellable in every
+     country in the dataset, so this branch is dormant — it exists so that if
+     research ever moves a country out of PRODUCT.DISCOVERY, billing stops
+     there without anyone remembering to change the checkout page. The
+     application-assistance restriction is enforced separately, at
+     /api/apply/plan, because it is a per-feature limit and not a per-country
+     one. See packages/policy for the statutes. */
   if (!mayCharge(country)) {
     return json(
       {
         error: 'billing_not_available_in_jurisdiction',
-        message: 'This country is free to use. We do not charge for benefits help here.',
+        message: 'We cannot sell a subscription in this country.',
         policy: policyFor(country),
       },
       403,
