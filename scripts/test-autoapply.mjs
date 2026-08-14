@@ -531,5 +531,56 @@ ok('non-dilutive cash heads the list', sFrRanked.eligible[0].scoring.band === 0)
 ok('the engine reports its rate coverage', sFrRanked.rate_coverage.total > 0);
 
 
+
+/* ================================================================== */
+/* The app's question set                                              */
+/* ================================================================== */
+
+/**
+ * The app shipped asking five friendly questions and returned a total of zero:
+ * every programme fell into "needs one more answer" because the matcher blocks
+ * on age, nationality and region and none were asked. A check that confidently
+ * returns nothing is worse than one that asks two more questions, and nothing
+ * in the build caught it. This does.
+ */
+import { readFileSync as rfs } from 'node:fs';
+
+console.log('\nApp question coverage');
+const appSrc = rfs(new URL('../src/pwa/app.js', import.meta.url), 'utf8');
+const appAsks = [...appSrc.matchAll(/id:\s*'([a-z_]+)'/g)].map((m) => m[1]);
+
+const gbEntry = man.countries.find((c) => c.slug === 'gb');
+const gbData = load('gb');
+const fullProfile = {
+  country_code: 'gb', status: 'employee', income_band: 'low',
+  household_size: 2, children_count: 2, housing_tenure: 'renting',
+  age: 34, nationality_group: 'citizen_or_pr', admin_area: null,
+};
+const gbResult = match(fullProfile, gbData, gbEntry);
+ok('a fully answered profile returns eligible programmes', gbResult.eligible.length > 5);
+ok('and a non-zero total', gbResult.total_max > 0);
+
+/* Every attribute the matcher can block on must be reachable in the app. */
+const blocking = new Set(gbResult.needs_one_more_answer.map((m) => m.blocking_attribute).filter(Boolean));
+const sparse = match(
+  { country_code: 'gb', status: 'employee', housing_tenure: 'renting' },
+  gbData, gbEntry,
+);
+for (const attr of new Set([...blocking, ...sparse.needs_one_more_answer.map((m) => m.blocking_attribute)])) {
+  if (!attr) continue;
+  const asked =
+    appAsks.includes(attr) ||
+    (attr === 'income' && (appAsks.includes('income_band') || appAsks.includes('income_annual'))) ||
+    (attr === 'nationality' && appAsks.includes('nationality_group')) ||
+    (attr === 'household' && appAsks.includes('household'));
+  ok(`app asks something that unblocks "${attr}"`, asked);
+}
+
+ok('app asks for age', appAsks.includes('age'));
+ok('app asks for region', appAsks.includes('admin_area'));
+ok('app asks for nationality', appAsks.includes('nationality_group'));
+ok('numeric answers are coerced, not left as strings', /f\.type === 'number' \? Number\(raw\)/.test(appSrc));
+
+
 console.log(`\n${pass} passed, ${fail} failed\n`);
 process.exit(fail ? 1 : 0);
