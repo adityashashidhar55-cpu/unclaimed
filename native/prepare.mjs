@@ -101,7 +101,10 @@ const shell = fs
      the base path is stripped. In the app it must be an absolute URL or it
      is a dead link. */
   .replace(/href="" style="color:#fff"/, 'href="https://unclaimedgrant.com/" style="color:#fff"')
-  .replace(/href="icon-192\.png"/, 'href="icon-180.png"');
+  .replace(/href="icon-192\.png"/, 'href="icon-180.png"')
+  /* Cache-busting query strings are for a CDN. Inside the binary the files are
+     local and the ?v= suffix just makes the reference miss. */
+  .replace(/(\.(?:css|js))\?v=\d+/g, '$1');
 
 fs.writeFileSync(path.join(WWW, 'index.html'), shell);
 files += 1;
