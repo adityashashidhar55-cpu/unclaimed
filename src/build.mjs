@@ -1124,7 +1124,7 @@ ${disclaimerBar(TR)}
         })}
         ${tier({
           delay: 220, eyebrow: 'Enterprise', price: 'From €80', per: '/seat/month',
-          second: 'teams, portfolios and public bodies',
+          second: 'or €800/seat/year · teams, portfolios and public bodies',
           blurb: 'For accelerators, funds, universities and anyone managing many applicants.',
           features: [
             '<strong>Team dashboard</strong> with pipeline and stages',
