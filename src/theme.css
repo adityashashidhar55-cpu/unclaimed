@@ -187,12 +187,21 @@ a:hover { opacity: .72; }
 /* ------------------------------------------------------------------ */
 
 .shell { width: min(100% - 2.5rem, var(--shell)); margin-inline: auto; }
+/* A reading column. Used by /methodology/, /privacy/ and every blog post —
+   and never defined, so all three rendered flush to the left edge of the
+   viewport with lines running the full width of a desktop screen. */
+.shell-narrow { width: min(100% - 2.5rem, 72ch); margin-inline: auto; }
+.shell-narrow p, .shell-narrow li { max-width: 68ch; }
 .section { padding: clamp(4rem, 9vw, 8rem) 0; }
 .section-tight { padding: clamp(2.5rem, 5vw, 4.5rem) 0; }
 .section-rule { border-top: 1px solid var(--line); }
 
 .grid { display: grid; gap: 1.1rem; }
 .grid-2 { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
+/* A genuine two-up. .grid-2 is auto-fit at 280px, which becomes four columns
+   on a wide screen — right for cards, wrong for a paragraph, which turns into
+   a 200px-wide column of two-word lines. */
+.grid-2x { grid-template-columns: repeat(auto-fit, minmax(min(100%, 420px), 1fr)); }
 .grid-3 { grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
 .grid-4 { grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); }
 
@@ -413,20 +422,35 @@ footer.site a:hover { color: var(--ink); opacity: 1; }
 }
 .audience__tab:hover { color: var(--ink); }
 
-/* The selected tab reads as the active surface. */
+/* The selected tab reads as the active surface.
+
+   Matched through `~ *` as well as `~`, because the switch now lives inside
+   the hero block rather than as a bare sibling of the radios. The earlier
+   sibling-only selector silently stopped matching the moment the switch was
+   nested, which looks exactly like "the toggle does nothing". */
 #aud-me:checked  ~ .audience__switch label[for="aud-me"],
+#aud-ent:checked ~ .audience__switch label[for="aud-ent"],
 #aud-biz:checked ~ .audience__switch label[for="aud-biz"],
-#aud-ent:checked ~ .audience__switch label[for="aud-ent"] {
+#aud-me:checked  ~ * .audience__switch label[for="aud-me"],
+#aud-ent:checked ~ * .audience__switch label[for="aud-ent"],
+#aud-biz:checked ~ * .audience__switch label[for="aud-biz"] {
   background: var(--teal); color: #fff;
 }
 
 /* Keyboard focus has to land somewhere visible, since the input itself is
    off-screen — without this the switch is unusable without a mouse. */
 #aud-me:focus-visible  ~ .audience__switch label[for="aud-me"],
+#aud-ent:focus-visible ~ .audience__switch label[for="aud-ent"],
 #aud-biz:focus-visible ~ .audience__switch label[for="aud-biz"],
-#aud-ent:focus-visible ~ .audience__switch label[for="aud-ent"] {
+#aud-me:focus-visible  ~ * .audience__switch label[for="aud-me"],
+#aud-ent:focus-visible ~ * .audience__switch label[for="aud-ent"],
+#aud-biz:focus-visible ~ * .audience__switch label[for="aud-biz"] {
   outline: 2px solid rgba(29,36,48,.6); outline-offset: 3px;
 }
+
+/* The hero placement: centred under the lede, and the thing you notice next
+   after the headline rather than a tab strip further down the page. */
+.audience__switch--hero { margin: 1.8rem auto 0; }
 
 .audience__panel { display: none; }
 #aud-me:checked  ~ .audience__panel--me,
@@ -813,3 +837,33 @@ div.q { margin-bottom: 2.4rem; }
   .jobrow { grid-template-columns: 1fr; gap: .4rem; }
   .jobrow__n { font-size: 1.6rem; }
 }
+
+/* An inline lock, for the remainder of a list whose first two rows are shown.
+   Flatter than .locked-bucket because it sits directly under real rows and
+   should read as the same list continuing, not as a separate advert. */
+.locked-bucket--inline {
+  margin-top: 0;
+  border-top: 0;
+  border-radius: 0 0 12px 12px;
+  padding-top: .8rem;
+}
+
+
+/* Feature lists on the pricing cards. A tick and a cross rather than two
+   bullet lists, because "what you do not get" is the half people scan for and
+   an unmarked list buries it. */
+.ticks { list-style: none; margin: 1.2rem 0 0; padding: 0; }
+.ticks li {
+  position: relative; padding-left: 1.5rem; margin-bottom: .45rem;
+  font-size: .9rem; line-height: 1.45;
+}
+.ticks li::before {
+  content: '✓'; position: absolute; left: 0; top: -.05em;
+  color: var(--green); font-weight: 700;
+}
+.ticks--no { margin-top: .9rem; padding-top: .8rem; border-top: 1px solid var(--line); }
+.ticks--no li { color: var(--ink-4); }
+.ticks--no li::before { content: '×'; color: var(--terracotta); }
+
+/* The recommended card, lifted just enough to be the default read. */
+.card--featured { outline: 2px solid rgba(15,111,118,.35); outline-offset: -1px; }

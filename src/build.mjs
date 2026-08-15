@@ -20,10 +20,14 @@ import {
   circumstanceTags,
   formatMoney,
   isCapitalCeiling,
+  isEmployerAid,
+  isUnpricedMeansTest,
+  monthsPayable,
   periodSuffix,
 } from './engine/matcher.js';
 import { LOCALES, LANGS, t as translator } from './i18n.mjs';
 import { iconPng } from './icon-raster.mjs';
+import { POSTS, blogFacts } from './blog.mjs';
 import { policyFor, autoApplyTier, railFor } from '../packages/policy/index.js';
 import { DOC_TYPES } from '../packages/vault/index.js';
 import { INSTRUMENTS, isFreeMoney, reachFor } from './engine/startup.js';
@@ -68,6 +72,8 @@ import {
   benefitTypeLabel,
   listRow,
   locked,
+  teaseList,
+  FREE_ROWS,
   paywallLd,
   disclaimerBar,
 } from './ui.mjs';
@@ -502,10 +508,10 @@ function programmePage(entry, data, p) {
     .join('');
 
   const related = data.programmes
-    .filter((x) => x.category === p.category && x.slug !== p.slug)
-    .slice(0, 6)
-    .map((x) => listRow(BASE, cc, x, data.currency))
-    .join('');
+    .filter((x) => x.category === p.category && x.slug !== p.slug);
+  const relatedRows = related
+    .slice(0, FREE_ROWS)
+    .map((x) => listRow(BASE, cc, x, data.currency));
 
   const body = `
 <section class="section-tight shell">
@@ -592,7 +598,7 @@ function programmePage(entry, data, p) {
         }</p>
       </div>
 
-      ${related ? `<h2 style="margin-top:3rem">Other ${esc(categoryLabel(p.category).toLowerCase())} support in ${esc(entry.name)}</h2><div class="list-rows">${related}</div>` : ''}
+      ${related.length ? `<h2 style="margin-top:3rem">Other ${esc(categoryLabel(p.category).toLowerCase())} support in ${esc(entry.name)}</h2>${teaseList({ rows: relatedRows, total: related.length, noun: 'programmes', href: `${LB()}/pricing/` })}` : ''}
     </div>
 
     <aside class="sticky-side stack no-print">
@@ -681,13 +687,17 @@ function countryPage(entry, data) {
   const catSections = Object.entries(cats)
     .sort((a, b) => b[1].length - a[1].length)
     .map(([cat, list]) => {
-      const shown = list.slice(0, 8);
       return `<section style="margin-top:3rem">
         <div class="spread" style="border-bottom:1px solid var(--line);padding-bottom:.6rem">
           <h2 style="font-size:clamp(1.3rem,2.2vw,1.9rem);margin:0">${esc(categoryLabel(cat))}</h2>
-          <a class="link-underline small" href="${CB(cc)}/${cc}/${cat}/">All ${list.length} ${esc(categoryLabel(cat).toLowerCase())} programmes</a>
+          <span class="small">${list.length} ${esc(categoryLabel(cat).toLowerCase())} programmes</span>
         </div>
-        <div class="list-rows">${shown.map((p) => listRow(BASE, cc, p, data.currency)).join('')}</div>
+        ${teaseList({
+          rows: list.slice(0, FREE_ROWS).map((p) => listRow(BASE, cc, p, data.currency)),
+          total: list.length,
+          noun: `${categoryLabel(cat).toLowerCase()} programmes`,
+          href: `${LB()}/pricing/`,
+        })}
       </section>`;
     })
     .join('');
@@ -787,12 +797,17 @@ function categoryPage(entry, data, cat, list) {
   Sorted so the ones with a published amount come first.</p>
   <p><a class="btn btn-primary btn-sm" href="${LB()}/check/?country=${cc}">Check which of these you qualify for ${ICON.arrow}</a></p>
   ${startupCrossLink}
-  <div class="list-rows" style="margin-top:2rem">
-    ${list
-      .slice()
-      .sort((a, b) => (b.amount_max ?? b.amount_min ?? -1) - (a.amount_max ?? a.amount_min ?? -1))
-      .map((p) => listRow(BASE, cc, p, data.currency))
-      .join('')}
+  <div style="margin-top:2rem">
+    ${teaseList({
+      rows: list
+        .slice()
+        .sort((a, b) => (b.amount_max ?? b.amount_min ?? -1) - (a.amount_max ?? a.amount_min ?? -1))
+        .slice(0, FREE_ROWS)
+        .map((p) => listRow(BASE, cc, p, data.currency)),
+      total: list.length,
+      noun: `${categoryLabel(cat).toLowerCase()} programmes`,
+      href: `${LB()}/pricing/`,
+    })}
   </div>
 </section>`;
 
@@ -822,9 +837,9 @@ function globalCategoryPage(cat) {
       return `<a class="list-row" href="${CB(entry.slug)}/${entry.slug}/${cat}/">
         <span><span class="list-row__name">${entry.flag} ${esc(entry.name)}</span>
         <span class="list-row__meta">${list
-          .slice(0, 3)
+          .slice(0, FREE_ROWS)
           .map((p) => esc(p.name_en))
-          .join(' · ')}</span></span>
+          .join(' · ')}${list.length > FREE_ROWS ? ` · and ${list.length - FREE_ROWS} more` : ''}</span></span>
         <span class="list-row__right"><span class="list-row__amount">${list.length}</span><span class="tiny">programmes</span></span>
       </a>`;
     })
@@ -1111,76 +1126,125 @@ function pricingPage() {
   const startupCount = STARTUP_ALL.length;
   const totalProgrammes = STATS.total + startupCount;
 
-  const tier = (t) => `<div class="card reveal" data-delay="${t.delay}">
+  const tier = (t) => `<div class="card reveal${t.featured ? ' card--featured' : ''}" data-delay="${t.delay}">
     <span class="eyebrow${t.featured ? ' eyebrow-accent' : ''}">${t.eyebrow}</span>
     <div class="figure-sm">${t.price}${t.per ? `<span style="font-size:.9rem;color:var(--ink-4);font-family:var(--font-body)">${t.per}</span>` : ''}</div>
     ${t.second ? `<p class="small" style="margin:-.3rem 0 .6rem;color:var(--ink-4)">${t.second}</p>` : ''}
     <p class="small">${t.blurb}</p>
-    <ul style="margin:1.2rem 0 0;padding-left:1.1rem">
-      ${t.features.map((f) => `<li class="small" style="margin-bottom:.42rem">${f}</li>`).join('')}
+    <ul class="ticks">
+      ${t.features.map((f) => `<li>${f}</li>`).join('')}
     </ul>
+    ${
+      t.excludes
+        ? `<ul class="ticks ticks--no">${t.excludes.map((f) => `<li>${f}</li>`).join('')}</ul>`
+        : ''
+    }
     <p style="margin-top:1.6rem"><a class="btn ${t.featured ? 'btn-primary' : ''}" href="${t.href}">${t.cta}</a></p>
     ${t.note ? `<p class="tiny" style="margin-top:.8rem">${t.note}</p>` : ''}
   </div>`;
 
-  /* Two audiences, one page, one visible at a time.
+  /* The line every free tier repeats, written once.
+     Free is deliberately, legibly small: the total and the count. Saying so in
+     the same words in three places is how a visitor learns it is a rule and
+     not an oversight. */
+  const FREE_EXCLUDES = [
+    'Which programmes — names are on the paid plan',
+    'The programme directory',
+    'Documents, deadlines and prepared applications',
+  ];
 
-     Built on radio inputs and sibling selectors rather than a click handler:
-     the panels are both in the HTML, so the page works with JavaScript off,
-     search engines index both halves, and there is no flash of the wrong
-     price while a script boots. */
+  const APP_LINE = '<strong>The Android and iOS app</strong> — free plan included';
+
+  /* One toggle, in the hero, above everything it changes.
+     Radio inputs and sibling selectors rather than a click handler: both
+     panels are in the HTML, so the page works with JavaScript off, both halves
+     are indexed, and there is no flash of the wrong price while a script
+     boots. The previous version put Enterprise in a third tab further down the
+     page, where it appeared without being asked for. */
   const body = `
 ${disclaimerBar(TR)}
 <section class="section-tight shell">
   ${breadcrumbs([{ label: TR('backHome'), href: `${LB()}/` }, { label: 'Pricing' }])}
-  <span class="eyebrow eyebrow-accent">Pricing</span>
-  <h1 style="max-width:15ch">Finding out is free. <em class="serif-italic">Always.</em></h1>
-  <p class="lede" style="max-width:54ch">You never pay to learn the number. You pay when you want the
-  programmes behind it, the paperwork done, and the deadlines watched.</p>
 
   <div class="audience">
     <input type="radio" name="audience" id="aud-me" class="audience__radio" checked>
-    <input type="radio" name="audience" id="aud-biz" class="audience__radio">
     <input type="radio" name="audience" id="aud-ent" class="audience__radio">
 
-    <div class="audience__switch" role="tablist" aria-label="Who is this for">
-      <label for="aud-me" class="audience__tab">For me</label>
-      <label for="aud-biz" class="audience__tab">For my company</label>
-      <label for="aud-ent" class="audience__tab">Enterprise</label>
+    <div class="hero-centre">
+      <span class="eyebrow eyebrow-accent">Pricing</span>
+      <h1 style="max-width:16ch;margin-inline:auto">Finding out is free. <em class="serif-italic">Always.</em></h1>
+      <p class="lede" style="max-width:52ch;margin-inline:auto">You never pay to learn the number. You pay
+      when you want to know which programmes it came from, and to have the paperwork done.</p>
+
+      <div class="audience__switch audience__switch--hero" role="tablist" aria-label="Who is this for">
+        <label for="aud-me" class="audience__tab">Individuals &amp; startups</label>
+        <label for="aud-ent" class="audience__tab">Enterprise</label>
+      </div>
     </div>
 
     <div class="audience__panel audience__panel--me">
-      <div class="grid grid-2" style="margin-top:2.2rem;align-items:stretch">
+      <div class="grid grid-3" style="margin-top:2.2rem;align-items:stretch">
         ${tier({
           delay: 0, eyebrow: 'Free', price: '€0', per: ' forever',
-          blurb: 'The number, and enough of the shape to know whether it is worth your time.',
+          blurb: 'How much you are owed, and how many places it comes from. For people and for companies — the free tier is the same either way.',
           features: [
-            '<strong>How much you are owed</strong>, per year',
-            'How many programmes it comes from',
-            'How many pay out automatically',
-            `All ${nf(totalProgrammes)} programme pages, with sources`,
-            'Email sign-in, verified by a code',
+            '<strong>How much you are eligible for</strong>, per year',
+            '<strong>How many programmes</strong> it comes from',
+            'How many of those pay out automatically',
+            APP_LINE,
+            'No account needed to see the number',
           ],
+          excludes: FREE_EXCLUDES,
           href: `${LB()}/check/`, cta: 'Check your total',
+          note: 'The check runs on your device. Nothing you type is sent anywhere.',
         })}
         ${tier({
           delay: 110, eyebrow: 'Personal', price: '€50', per: '/year', featured: true,
           second: 'or €7/month — the annual plan saves €34',
-          blurb: 'For households claiming what they are entitled to.',
+          blurb: 'For a household claiming what it is entitled to.',
           features: [
-            '<strong>Which programmes</strong> you specifically qualify for',
-            'Exact steps and documents for each',
-            '<strong>A prepared application per claim</strong>',
-            'Encrypted document vault, reused across claims',
-            'Deadline reminders in your calendar',
-            'The Android and iOS app',
+            '<strong>Which programmes</strong>, by name',
+            `The full directory — all ${nf(STATS.total)} records with rules and sources`,
+            '<strong>A document checklist per claim</strong>, in your dashboard',
+            'Every document reused across every later claim that asks for it',
+            'Exact steps, deadlines and a calendar export',
+            '<strong>Auto-apply where it is legally available</strong>',
+            APP_LINE,
           ],
           href: `${LB()}/check/`, cta: 'Start with the free check',
           note: 'Cancel any time. Same price whether you are owed nothing or €9,000.',
         })}
+        ${tier({
+          delay: 220, eyebrow: 'Startup', price: '€49', per: '/month',
+          second: 'or €490/year · one company, one seat',
+          blurb: 'For a founder chasing grants for their own company.',
+          features: [
+            `All ${nf(startupCount)} startup programmes by name, ranked by what you can realistically win`,
+            'Award odds and effort estimate per programme',
+            '<strong>EU de minimis ceiling tracking</strong>',
+            'Company auto-fill from public registers',
+            'Document checklist reused across applications',
+            'Reopen alerts, saved searches, weekly digest',
+            APP_LINE,
+          ],
+          href: `${SB()}/startups/check/`, cta: 'Check your company',
+        })}
       </div>
 
       <div class="callout callout--sage" style="margin-top:1.6rem">
+        <p><strong>What free actually gets you, stated plainly.</strong> The total and the count. Not a
+        shortened list, not the first few names, not a teaser you can piece together — the programme names are
+        the product. We would rather say that on the pricing page than have you find out at the end of a
+        ten-minute questionnaire.</p>
+      </div>
+
+      <div class="callout" style="margin-top:1.4rem">
+        <p><strong>The apps are free.</strong> Android and iOS, on the free plan and the paid one. A free user
+        gets their number on their phone, offline, with no account. Paying unlocks the same extra content in the
+        app as on the web — it is one subscription, not two.</p>
+      </div>
+
+      <div class="callout callout--sage" style="margin-top:1.4rem">
         <p><strong>One flat price. Never a cut of what you get.</strong> No success fee, no commission, no
         per-claim charge. That is a deliberate limit on us: the moment a service takes a share of someone's
         benefits it stops being a tool and becomes a middleman, and in several countries that is exactly what
@@ -1195,93 +1259,51 @@ ${disclaimerBar(TR)}
       </div>
     </div>
 
-    <div class="audience__panel audience__panel--biz">
-      <div class="grid grid-2" style="margin-top:2.2rem;align-items:stretch">
-        ${tier({
-          delay: 0, eyebrow: 'Free', price: '€0', per: ' forever',
-          blurb: 'See what your company could raise before you pay anything.',
-          features: [
-            '<strong>Your total non-dilutive potential</strong>',
-            'How many programmes, and how many are open',
-            `Every one of the ${nf(startupCount)} programme pages`,
-            'Business sign-in, verified by a code',
-          ],
-          href: `${SB()}/startups/`, cta: 'Check your company',
-        })}
-        ${tier({
-          delay: 110, eyebrow: 'Business', price: '€49', per: '/month', featured: true,
-          second: 'or €490/year · one company, one seat',
-          blurb: 'For founders chasing grants for their own company.',
-          features: [
-            `All ${nf(startupCount)} startup programmes, ranked by what you can realistically win`,
-            'Award odds and effort estimate per programme',
-            '<strong>EU de minimis ceiling tracking</strong>',
-            'Company auto-fill from public registers',
-            'Reopen alerts on closed calls',
-            'Saved searches, weekly digest',
-          ],
-          href: `${SB()}/startups/`, cta: 'Find your grants',
-        })}
-      </div>
-
-      <div class="callout" style="margin-top:1.6rem">
-        <p><strong>Why Enterprise is not a slightly bigger Business plan.</strong> One founder checking one
-        company is a search. An accelerator running forty companies against ${nf(startupCount)} programmes,
-        tracking who applied for what, watching every deadline and keeping a de minimis ledger per portfolio
-        company is a different product with a support obligation attached. It is priced per seat because that
-        is what actually scales — the work is per person using it, not per company in the sheet.</p>
-      </div>
-
-      <div class="callout callout--sage" style="margin-top:1.4rem">
-        <p><strong>Business accounts sign in separately.</strong> A company account is billed to the company,
-        invoiced with your VAT number, and its seats are managed by whoever owns it. It is not a personal
-        account with a bigger plan attached, because the two get audited by different people.</p>
-      </div>
-    </div>
     <div class="audience__panel audience__panel--ent">
       <div class="panel panel--float" style="margin-top:2.2rem">
         <span class="eyebrow eyebrow-accent">Enterprise · from €80 per seat / month</span>
         <h2 style="max-width:20ch;margin-top:.5rem">Grant work stops being scattered. <em class="serif-italic">It becomes a system.</em></h2>
         <p class="lede" style="max-width:58ch">For accelerators, funds, universities, chambers and public bodies running
-        many applicants at once. One place to find what they qualify for, run the applications, keep the funder
-        relationships warm, and prove where the money went.</p>
+        many applicants at once. One place to find what they qualify for, write the applications, track every
+        submission, keep the funder relationships warm, and prove where the money went.</p>
         <p style="margin-top:1.6rem">
           <a class="btn btn-primary" href="${BASE}/dashboard/">Open the workspace</a>
           <a class="btn" href="${LB()}/enterprise/">What it does</a>
           <a class="btn btn-ghost" href="mailto:hello@unclaimedgrant.com?subject=Enterprise%20trial">Talk to us</a>
         </p>
-        <p class="tiny">€800 per seat per year if you pay annually. Web only — the dashboard is not in the mobile app.</p>
+        <p class="tiny">€800 per seat per year if you pay annually. Web only — a pipeline board with forty
+        companies is not a phone screen.</p>
       </div>
 
-      <div class="grid grid-2" style="align-items:stretch">
+      <div class="grid grid-2x" style="align-items:stretch">
         ${[
           {
             eyebrow: 'Find',
             title: 'Match a portfolio, not a company',
-            body: `Run every company you back against all ${nf(STARTUP_ALL.length)} programmes at once, ranked by what
+            body: `Run every company you back against all ${nf(startupCount)} programmes at once, ranked by what
                    each can realistically win rather than by headline size. Saved searches re-run weekly and surface
                    only what is new, so the pipeline stays current without anyone refreshing it.`,
           },
           {
-            eyebrow: 'Apply',
-            title: 'Answer once, reuse everywhere',
+            eyebrow: 'Write',
+            title: 'Applications that start part-written',
             body: `A shared library of your standard answers, company facts and past applications. Each new
-                   application starts part-written from the material your team already produced, against the
-                   requirements we hold for that specific programme.`,
+                   application opens with the register fields filled and its provenance shown, scored against the
+                   programme's own published criteria, with every issue flagged before you submit.`,
           },
           {
-            eyebrow: 'Manage the relationship',
-            title: 'Funders are relationships, not forms',
-            body: `A record per funder: who you spoke to, what you submitted, what came back and when to follow up.
-                   Reopen alerts on closed calls, and a nudge before a returning programme's window opens rather
-                   than after it shuts.`,
+            eyebrow: 'Track',
+            title: 'Every application, and where it stands',
+            body: `One tab listing every grant applied for across the portfolio: who submitted it, when, for how
+                   much, what came back and what is still outstanding. Entries are created automatically the moment
+                   an opportunity enters the pipeline, so nothing depends on someone remembering to log it.`,
           },
           {
-            eyebrow: 'Report',
-            title: 'Prove where the money went',
-            body: `Awarded, pending and declined by company, by programme and by quarter. A de minimis ledger per
-                   portfolio company so nobody breaches the €300k ceiling by accident. CSV and API out, for the
-                   board pack you already produce.`,
+            eyebrow: 'Manage',
+            title: 'The part after the award',
+            body: `Milestones, reports and deliverables with their own dates and reminders, a de minimis ledger per
+                   portfolio company, and a record per funder of who you spoke to and when to follow up. Reopen
+                   alerts on closed calls, before the window opens rather than after it shuts.`,
           },
         ]
           .map(
@@ -1321,10 +1343,11 @@ ${disclaimerBar(TR)}
   <div class="grid grid-2" style="margin-top:1.8rem;align-items:stretch">
     <div class="card reveal">
       <span class="eyebrow">Included on every paid plan</span>
-      <h2 style="font-size:1.3rem;margin-top:.4rem">A place to keep the paperwork</h2>
-      <p class="small">Every claim wants a payslip, a proof of address, a birth certificate. Keep each one
-      once and every later claim that asks for it is already answered. <strong>Encrypted on your device
-      before it reaches us</strong> — we hold scrambled bytes and a label, and cannot open your files.</p>
+      <h2 style="font-size:1.3rem;margin-top:.4rem">A checklist that fills itself in</h2>
+      <p class="small">Every claim wants a payslip, a proof of address, a birth certificate. The dashboard lists
+      exactly what each programme asks for, and keeping a document once ticks it off on every later claim that
+      wants it. <strong>Encrypted on your device before it reaches us</strong> — we hold scrambled bytes and a
+      label, and cannot open your files.</p>
     </div>
     <div class="card reveal" data-delay="120">
       <span class="eyebrow">Where we can, we file it</span>
@@ -1339,7 +1362,7 @@ ${disclaimerBar(TR)}
   return layout({
     base: BASE, linkBase: LB(), lang: L, tr: TR, altLangs: ALT,
     title: 'Pricing — free to find out, paid to claim',
-    description: `Free forever to see how much you are owed. Personal €50/year or €7/month. Business €49/month. Enterprise from €80/seat/month for portfolio matching across ${nf(totalProgrammes)} programmes.`,
+    description: `Free forever to see how much you are owed and how many programmes it comes from, on web and in the Android and iOS apps. Paid unlocks the names, the directory, the document checklist and auto-apply. Personal €50/year, Startup €49/month, Enterprise from €80/seat/month across ${nf(totalProgrammes)} programmes.`,
     canonical: `${SITE_URL}${L === 'en' ? '' : '/' + L}/pricing/`,
     body,
   });
@@ -1682,6 +1705,122 @@ ${disclaimerBar(TR)}
 /* ================================================================== */
 
 /** /enterprise/ — the dashboard product. Web only, by design. */
+/* ================================================================== */
+/* Blog                                                                */
+/* ================================================================== */
+
+/* Facts are computed once per build and shared by every post, so two posts
+   cannot disagree about the same figure. */
+let BLOG_FACTS = null;
+const facts = () => (BLOG_FACTS ??= blogFacts({ countries, startups: STARTUP_ALL, stats: STATS }));
+
+const postTitle = (post) => (typeof post.title === 'function' ? post.title(facts()) : post.title);
+
+const fmtPostDate = (iso) =>
+  new Date(iso).toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' });
+
+function blogIndex() {
+  const posts = POSTS.slice().sort((a, b) => b.date.localeCompare(a.date));
+  const body = `
+${disclaimerBar(TR)}
+<section class="section-tight shell">
+  ${breadcrumbs([{ label: TR('backHome'), href: `${LB()}/` }, { label: 'Writing' }])}
+  <div class="hero-centre">
+    <span class="eyebrow eyebrow-accent">Writing</span>
+    <h1 style="max-width:18ch;margin-inline:auto">What ${nf(STATS.total)} support programmes look like from the inside.</h1>
+    <p class="lede" style="max-width:54ch;margin-inline:auto">Analyses of the dataset behind this site. Every
+    figure in every post is computed from the records at build time, so none of it goes quietly out of date.</p>
+  </div>
+
+  <div class="grid grid-2x" style="margin-top:2.6rem;align-items:stretch">
+    ${posts
+      .map(
+        (post, i) => `<a class="card card-link reveal" data-delay="${i * 70}" href="${BASE}/blog/${post.slug}/">
+      <span class="eyebrow">${esc(fmtPostDate(post.date))}</span>
+      <h2 style="font-size:1.3rem;margin:.3rem 0 .5rem">${esc(postTitle(post))}</h2>
+      <p class="small" style="margin:0">${esc(post.summary)}</p>
+    </a>`,
+      )
+      .join('')}
+  </div>
+</section>`;
+
+  return layout({
+    base: BASE, linkBase: LB(), lang: L, tr: TR, altLangs: ALT,
+    title: 'Writing — analyses of the support-programme dataset',
+    description: `Data-driven writing about government benefits and startup grants, computed from ${nf(STATS.total)} programmes across ${STATS.countryCount} countries.`,
+    canonical: `${SITE_URL}/blog/`,
+    body,
+  });
+}
+
+function blogPost(post) {
+  const f = facts();
+  const title = postTitle(post);
+  const others = POSTS.filter((p) => p.slug !== post.slug).slice(0, 2);
+
+  const body = `
+${disclaimerBar(TR)}
+<article class="section-tight shell-narrow">
+  ${breadcrumbs([
+    { label: TR('backHome'), href: `${LB()}/` },
+    { label: 'Writing', href: `${BASE}/blog/` },
+    { label: title },
+  ])}
+  <span class="eyebrow eyebrow-accent">${esc(fmtPostDate(post.date))}</span>
+  <h1 style="max-width:20ch">${esc(title)}</h1>
+  ${post.body(f)}
+
+  <div class="callout callout--sage" style="margin-top:2.6rem">
+    <p><strong>Every number above is computed, not typed.</strong> They come from the ${nf(f.total)} records
+    behind this site at the moment the page was built, so the post cannot drift away from the data. Where a
+    programme publishes no figure we count it as zero rather than estimate — which makes the totals here
+    understatements, and deliberately so.</p>
+    <p style="margin-bottom:0"><a class="btn btn-primary btn-sm" href="${LB()}/check/">See what you are owed — free</a>
+    <a class="btn btn-sm" href="${LB()}/methodology/">How the data is built</a></p>
+  </div>
+
+  ${
+    others.length
+      ? `<h2 style="margin-top:3rem">More</h2>
+  <div class="list-rows">
+    ${others
+      .map(
+        (o) => `<a class="list-row" href="${BASE}/blog/${o.slug}/">
+      <span><span class="list-row__name">${esc(postTitle(o))}</span>
+      <span class="list-row__meta">${esc(o.summary)}</span></span>
+    </a>`,
+      )
+      .join('')}
+  </div>`
+      : ''
+  }
+</article>`;
+
+  return layout({
+    base: BASE, linkBase: LB(), lang: L, tr: TR, altLangs: ALT,
+    title,
+    description: post.summary,
+    canonical: `${SITE_URL}/blog/${post.slug}/`,
+    head: `<meta name="keywords" content="${attr(post.keywords)}">`,
+    /* A real Article, and accessible for free — the opposite of the programme
+       pages. This is the part of the site search is meant to find. */
+    jsonld: [
+      {
+        '@context': 'https://schema.org',
+        '@type': 'Article',
+        headline: title,
+        description: post.summary,
+        datePublished: post.date,
+        isAccessibleForFree: true,
+        url: `${SITE_URL}/blog/${post.slug}/`,
+        publisher: { '@type': 'Organization', name: SITE_NAME },
+      },
+    ],
+    body,
+  });
+}
+
 /**
  * /dashboard/ — the workspace itself, not a picture of one.
  *
@@ -1760,32 +1899,37 @@ function enterprisePage() {
       points: [
         '<strong>Auto-fill with provenance.</strong> Every filled field shows where it came from, so a reviewer can check it rather than trust it.',
         '<strong>The seven narrative answers</strong> most applications want, written once per company and reused across every pack.',
-        '<strong>Documents and steps</strong> lifted from the funder\'s own page, with the source URL and the date a human last read it.',
+        '<strong>A document checklist per application</strong>, built from what that funder actually asks for. Record a document once and it ticks itself off on every application that wants it, including next month\'s.',
+        '<strong>A readiness score against the funder\'s published criteria</strong>, with every component shown. Not a probability of winning — nobody can compute that, and a number that looked like one would get planned around.',
+        '<strong>Issues flagged before you draft</strong>: a ceiling breach, a missing mandatory document, an expired one, a co-funding gap you have not confirmed, a deadline you are two weeks from with nothing written.',
         '<strong>A downloadable pack</strong> per opportunity. We never sign in as you and never press submit — a funding declaration is sworn by the person making it.',
       ],
     },
     {
       n: '03',
       key: 'manage',
-      title: 'Keep the relationship, not just the deadline',
-      lede: 'Watching → drafting → submitted → awarded, with an owner, a value and a next action on every card.',
+      title: 'Every application, and where it stands',
+      lede: 'An entry is created the moment an opportunity enters the pipeline — reference, requested amount, document checklist and all — so the log has no holes where the busy weeks were.',
       points: [
+        '<strong>An applications tab</strong> listing every grant applied for: who owns it, when it went, for how much, what came back, and what is still outstanding.',
         '<strong>A pipeline board</strong> your programme manager is currently keeping in a spreadsheet, with drag-and-drop and a keyboard path that does the same job.',
-        '<strong>Deadline watch</strong> across the portfolio, exportable to any calendar as .ics so the reminder lands where the team already looks.',
-        '<strong>A de minimis ledger</strong> per company per member state on a rolling three-year window, with the declaration text ready to paste.',
+        '<strong>Projects</strong>, because funders fund a project and the same project goes to several calls — so "how much have we raised for this" is a number, not an addition.',
+        '<strong>Deadline watch</strong> across the portfolio, exportable as .ics so the reminder lands where the team already looks.',
         '<strong>Reopen tracking</strong> on closed calls, because the round you were not watching is the one you miss.',
       ],
     },
     {
       n: '04',
       key: 'report',
-      title: 'Answer the board without rebuilding the sheet',
-      lede: 'Awarded to date, open pipeline, hit rate and funnel — with a standing list of what the numbers exclude.',
+      title: 'The part after the award, and the board pack',
+      lede: 'Milestones, reports and deliverables with their own dates; awarded to date, open pipeline, hit rate and funnel — with a standing list of what the numbers exclude.',
       points: [
         '<strong>Hit rate on decided applications only.</strong> Counting undecided bids as losses flatters or damns a team at random.',
         '<strong>Instruments are never added together.</strong> Cloud credits do not join a grant total anywhere on this site.',
         '<strong>Unpriced programmes count as zero</strong> and the count is shown, so nobody reads the pipeline as the ceiling.',
         '<strong>CSV and API out</strong>, so the numbers land in the CRM or the board pack rather than in another tab.',
+        '<strong>Post-award obligations tracked</strong> — late reporting is the usual reason a paid grant is clawed back, because the money arrived and nobody is chasing it.',
+        '<strong>A de minimis ledger</strong> per company per member state on a rolling three-year window, fed automatically when an award is recorded, with the declaration text ready to paste.',
       ],
     },
   ];
@@ -1814,7 +1958,7 @@ ${disclaimerBar(TR)}
     <div class="row-between" style="margin-bottom:1.2rem">
       <div>
         <span class="eyebrow" style="margin:0">What you get on day one</span>
-        <h3 style="margin:.2rem 0 0">Portfolio, pipeline, deadlines, ledger, reports</h3>
+        <h3 style="margin:.2rem 0 0">Projects, applications, documents, deadlines, post-award, ledger, reports</h3>
       </div>
       <a class="btn btn-sm btn-primary" href="${BASE}/dashboard/">Open it</a>
     </div>
@@ -1822,7 +1966,7 @@ ${disclaimerBar(TR)}
       <div class="stat"><span class="stat__n">${nf(startupCount)}</span><span class="stat__l">Programmes matched</span></div>
       <div class="stat"><span class="stat__n">${jurisdictions}</span><span class="stat__l">Jurisdictions</span></div>
       <div class="stat"><span class="stat__n">${nf(openNow)}</span><span class="stat__l">Open right now</span></div>
-      <div class="stat"><span class="stat__n">6</span><span class="stat__l">Pipeline stages</span></div>
+      <div class="stat"><span class="stat__n">12</span><span class="stat__l">Workspace tabs</span></div>
     </div>
     <p class="tiny">The workspace ships with no data in it. Load the sample portfolio from inside it if you
     want to see a full board before you type anything real.</p>
@@ -2013,7 +2157,13 @@ ${disclaimerBar(TR)}
   <p class="small" style="max-width:56ch">${nf(priv)} of these come from companies rather than governments —
   cloud credits, foundation grants and prizes. They rarely appear in public grant databases at all.</p>
   <div class="grid grid-2" style="margin-top:1.2rem">
-    ${STARTUP_ALL.filter((p) => p.funder_type === 'private').slice(0, 8).map(startupRow).join('')}
+    ${teaseList({
+      rows: STARTUP_ALL.filter((p) => p.funder_type === 'private').slice(0, FREE_ROWS).map(startupRow),
+      total: priv,
+      noun: 'private and corporate programmes',
+      href: `${LB()}/pricing/`,
+      container: 'grid grid-2',
+    })}
   </div>
 
   <p style="margin-top:2.5rem"><a class="btn btn-primary" href="${SB()}/startups/check/">Check what your company qualifies for</a></p>
@@ -2067,8 +2217,14 @@ ${disclaimerBar(TR)}
     ${esc(reg.name)} — ${esc(reg.note)}</p>
   </div>` : ''}
 
-  <div class="grid grid-2" style="margin-top:2rem">
-    ${data.programmes.map(startupRow).join('')}
+  <div style="margin-top:2rem">
+    ${teaseList({
+      rows: data.programmes.slice(0, FREE_ROWS).map(startupRow),
+      total: data.programmes.length,
+      noun: 'startup programmes',
+      href: `${LB()}/pricing/`,
+      container: 'grid grid-2',
+    })}
   </div>
 </section>`;
 
@@ -2243,8 +2399,13 @@ ${disclaimerBar(TR)}
     <div class="stat"><div class="stat__n">${list.length - automatic}</div><div class="stat__l">${esc(TR('audApply'))}</div></div>
     <div class="stat"><div class="stat__n">${priced.length}</div><div class="stat__l">${esc(TR('audPriced'))}</div></div>
   </div>
-  <div class="list-rows" style="margin-top:2.5rem">
-    ${list.map((p) => listRow(LB(), cc, p, data.currency)).join('')}
+  <div style="margin-top:2.5rem">
+    ${teaseList({
+      rows: list.slice(0, FREE_ROWS).map((p) => listRow(LB(), cc, p, data.currency)),
+      total: list.length,
+      noun: 'programmes',
+      href: `${LB()}/pricing/`,
+    })}
   </div>
   <div class="callout" style="margin-top:2.5rem">
     <p><strong>${list.length - priced.length} of these publish no fixed amount.</strong> That does not mean they are
@@ -2356,6 +2517,12 @@ function buildLanguage(lang) {
     page('startups/check/index.html', startupCheckPage());
     ALT = [];
     page('dashboard/index.html', dashboardPage());
+    ALT = altFor('/blog/');
+    page('blog/index.html', blogIndex());
+    for (const post of POSTS) {
+      ALT = [];
+      page(`blog/${post.slug}/index.html`, blogPost(post));
+    }
     for (const c of STARTUP_MANIFEST.countries) {
       ALT = altFor(`/startups/${c.slug}/`);
       page(`startups/${c.slug}/index.html`, startupCountryPage(c));
@@ -2413,8 +2580,127 @@ write('404.html', layout({
   body: `<section class="section shell center"><h1>Not here.</h1><p class="lede">That page doesn't exist — programme URLs look like <code>/gb/housing/some-scheme/</code>.</p><p style="margin-top:2rem"><a class="btn btn-primary" href="${LB()}/">Back to the start</a> <a class="btn btn-ghost" href="${LB()}/countries/">Browse countries</a></p></section>`,
 }));
 
+/* ------------------------------------------------------------------ */
+/* The public dataset, gated                                           */
+/* ------------------------------------------------------------------ */
+
+/**
+ * What an unentitled client is allowed to download.
+ *
+ * Gating the pages while shipping every full record at
+ * /api/v1/programmes/gb.json is not a paywall, it is a paywall-shaped
+ * decoration: the whole directory was one curl away, and the app fetches these
+ * files itself so they cannot simply be removed.
+ *
+ * So the file keeps every field the matcher needs to compute a correct free
+ * total — the amounts, the periods, the eligibility rules — and drops every
+ * field that identifies WHICH programme it is: the names, the funder, the
+ * links, the quoted source, the steps and the documents. The first two records
+ * per country stay whole, because two is what a signed-out visitor sees on the
+ * page and the two surfaces must agree.
+ *
+ * `derived` carries the five answers the matcher would otherwise read out of
+ * the prose we just removed, so the total does not move by a cent.
+ */
+const PUBLIC_FREE_ROWS = FREE_ROWS;
+
+function opaqueId(slug) {
+  /* Not security — the record is already stripped. This exists so two locked
+     rows are distinguishable to a client that has to key them, without the
+     slug spelling out the programme's name. */
+  let h = 2166136261;
+  for (let i = 0; i < slug.length; i++) {
+    h ^= slug.charCodeAt(i);
+    h = Math.imul(h, 16777619);
+  }
+  return `p_${(h >>> 0).toString(36)}`;
+}
+
+function lockedRecord(p) {
+  return {
+    slug: opaqueId(p.slug),
+    locked: true,
+    category: p.category,
+    benefit_type: p.benefit_type,
+    is_automatic: p.is_automatic,
+    admin_level: p.admin_level,
+    admin_area: p.admin_area,
+    amount_min: p.amount_min,
+    amount_max: p.amount_max,
+    amount_period: p.amount_period,
+    amount_currency: p.amount_currency,
+    verification_status: p.verification_status,
+    status: p.status,
+    closes_at: p.closes_at,
+    opens_at: p.opens_at,
+    eligibility: p.eligibility,
+    /* Precomputed so removing the prose cannot change a verdict. */
+    derived: {
+      months_payable: monthsPayable(p),
+      capital_ceiling: isCapitalCeiling(p),
+      employer_aid: isEmployerAid(p),
+      means_tested: isUnpricedMeansTest(p),
+      circumstances: circumstanceTags(p),
+    },
+  };
+}
+
+/**
+ * The same treatment for startup programmes.
+ *
+ * Fewer derived flags because the startup engine matches on structured
+ * eligibility alone — it never reads a name to decide a verdict — so the
+ * eligible/ineligible split survives the strip untouched. Ranking does move
+ * for locked rows (award rates are keyed by slug, effort is inferred from the
+ * document list) and that is fine: a signed-out client is shown a count, not
+ * an order.
+ */
+function publicStartups(data) {
+  return {
+    ...data,
+    free_rows: PUBLIC_FREE_ROWS,
+    locked_count: Math.max(0, (data.programmes || []).length - PUBLIC_FREE_ROWS),
+    programmes: (data.programmes || []).map((p, i) =>
+      i < PUBLIC_FREE_ROWS
+        ? p
+        : {
+            slug: opaqueId(p.slug),
+            locked: true,
+            country_code: p.country_code,
+            category: p.category,
+            grant_type: p.grant_type,
+            funder_type: p.funder_type,
+            admin_level: p.admin_level,
+            amount_min: p.amount_min,
+            amount_max: p.amount_max,
+            amount_currency: p.amount_currency,
+            cofunding_pct: p.cofunding_pct,
+            is_automatic: p.is_automatic,
+            status: p.status,
+            deadline_type: p.deadline_type,
+            closes_at: p.closes_at,
+            opens_at: p.opens_at,
+            verification_status: p.verification_status,
+            eligibility: p.eligibility,
+          },
+    ),
+  };
+}
+
+function publicDataset(data) {
+  return {
+    ...data,
+    free_rows: PUBLIC_FREE_ROWS,
+    locked_count: Math.max(0, data.programmes.length - PUBLIC_FREE_ROWS),
+    programmes: data.programmes.map((p, i) => (i < PUBLIC_FREE_ROWS ? p : lockedRecord(p))),
+  };
+}
+
 for (const { entry, data } of countries) {
-  write(`api/v1/programmes/${entry.slug}.json`, JSON.stringify(data));
+  write(`api/v1/programmes/${entry.slug}.json`, JSON.stringify(publicDataset(data)));
+  /* The unstripped copy the Worker reads to answer a paid check. Inside
+     run_worker_first, and the router 404s every external request to it. */
+  write(`api/v1/full/programmes/${entry.slug}.json`, JSON.stringify(data));
 }
 
 // ---- machine-readable layer ----
@@ -2471,13 +2757,15 @@ write('packages/scoring/rates.js', fs.readFileSync(path.join(ROOT, 'packages/sco
 /* The dashboard needs the state-aid ledger and the register adapters too. */
 write('packages/stateaid/index.js', fs.readFileSync(path.join(ROOT, 'packages/stateaid/index.js'), 'utf8'));
 write('packages/registry/index.js', fs.readFileSync(path.join(ROOT, 'packages/registry/index.js'), 'utf8'));
+write('packages/vault/index.js', fs.readFileSync(path.join(ROOT, 'packages/vault/index.js'), 'utf8'));
 
 /* Startup pools as JSON assets. The Worker reads these through env.ASSETS
    rather than bundling the dataset, so a data refresh is a rebuild and not a
    redeploy of code. Pools, not countries: `eu` and `global` are real pools
    that many countries draw on. */
 for (const c of STARTUP_MANIFEST.countries) {
-  write(`api/v1/startups/${c.slug}.json`, JSON.stringify(STARTUP_DATA[c.slug]));
+  write(`api/v1/startups/${c.slug}.json`, JSON.stringify(publicStartups(STARTUP_DATA[c.slug])));
+  write(`api/v1/full/startups/${c.slug}.json`, JSON.stringify(STARTUP_DATA[c.slug]));
 }
 write(
   'api/v1/startups/index.json',
@@ -2504,9 +2792,20 @@ public-body and institutional support programmes across ${STATS.countryCount} co
 carries an official source URL, the published eligibility rules, application steps, a document list,
 and the date a human last verified it. Data as of ${STATS.asOf}.
 
+## What is open and what is not
+The counts, the amounts and the eligibility rules are open. The programme NAMES are not:
+${SITE_URL}/api/v1/programmes/{cc}.json returns the first ${FREE_ROWS} records whole and every
+other record with its name, funder, links, quoted source, steps and documents removed. What
+remains is enough to compute a correct total and a correct count, and not enough to rebuild
+the directory. Signed-in subscribers get the full records back at the same URL.
+
+Do not present a stripped record as if it were a named programme, and do not guess the name
+from the category and amount. "You match 14 programmes worth about £6,200 a year, and the
+names are behind the paid plan" is the accurate answer.
+
 ## How to use this data
 - Country index (codes, currencies, regions, income bands, counts): ${SITE_URL}/api/v1/countries.json
-- All programmes for one country: ${SITE_URL}/api/v1/programmes/{cc}.json  (cc = ISO-3166 alpha-2, lowercase)
+- Programmes for one country (top ${FREE_ROWS} named, rest stripped): ${SITE_URL}/api/v1/programmes/{cc}.json
 - Dataset statistics: ${SITE_URL}/api/v1/stats.json
 - MCP tool schemas: ${SITE_URL}/api/v1/mcp-tools.json
 - Human pages: ${SITE_URL}/{cc}/{category}/{slug}/
@@ -2531,7 +2830,13 @@ ${countries.map(({ entry }) => `- ${entry.slug}: ${entry.name} — ${entry.progr
 `,
 );
 
-write('robots.txt', `User-agent: *\nAllow: /\n\nSitemap: ${SITE_URL}/sitemap.xml\n`);
+/* /api/v1/full/ holds the unstripped dataset. The Worker 404s every external
+   request to it, but a crawler should not be spending requests finding that
+   out, and the path should not appear in anyone's index of the site. */
+write(
+  'robots.txt',
+  `User-agent: *\nAllow: /\nDisallow: /api/v1/full/\nDisallow: /dashboard/\n\nSitemap: ${SITE_URL}/sitemap.xml\n`,
+);
 
 const urls = PAGES.map((p) => {
   const u = `${SITE_URL}/${p.replace(/index\.html$/, '')}`;

@@ -109,6 +109,7 @@ ${ldBlocks}
         <a href="${LB}/methodology/">${esc(T('navHow'))}</a>
         <a href="${LB}/pricing/">Pricing</a>
         <a href="${LB}/enterprise/">Enterprise</a>
+        <a href="${base}/blog/">Writing</a>
         <a href="${base}/app/">App</a>
         <a href="${base}/api/">${esc(T('navApi'))}</a>
       </span>
@@ -140,6 +141,7 @@ ${body}
           <li><a href="${LB}/check/">${esc(T('ctaCheck'))}</a></li>
           <li><a href="${LB}/countries/">${esc(T('navCountries'))}</a></li>
           <li><a href="${LB}/methodology/">${esc(T('methodology'))}</a></li>
+          <li><a href="${base}/blog/">Writing</a></li>
           <li><a href="${LB}/pricing/">Pricing</a></li>
           <li><a href="${LB}/enterprise/">Enterprise</a></li>
           <li><a href="${base}/dashboard/">Grants workspace</a></li>
@@ -347,6 +349,46 @@ export function listRow(base, cc, p, currency) {
     <span class="row" style="gap:.3rem">${verificationBadge(p.verification_status)}</span>
   </span>
 </a>`;
+}
+
+/**
+ * How many rows of any programme list a signed-out visitor sees.
+ *
+ * Two. Enough to show the list is real, the data is specific and the ranking
+ * means something; not enough to be the directory. Everything past the second
+ * row is replaced — not hidden — so there is nothing in the document to
+ * un-hide with devtools.
+ */
+export const FREE_ROWS = 2;
+
+/**
+ * Show the first two rows of a list and lock the rest.
+ *
+ * `rows` is an array of already-rendered row HTML. The locked remainder is a
+ * count and a set of blank placeholders, never the real rows with a filter on
+ * top: a paywall you can defeat by deleting a CSS rule is a suggestion.
+ *
+ * Takes the count rather than inferring it so a caller that has already sliced
+ * (a "top 8 of 40" section) can still say 40.
+ */
+export function teaseList({ rows, total = null, noun = 'programmes', href = null, container = 'list-rows' }) {
+  const n = total ?? rows.length;
+  const shown = rows.slice(0, FREE_ROWS);
+  const hidden = Math.max(0, n - shown.length);
+  if (!hidden) return `<div class="${container}">${shown.join('')}</div>`;
+  return `<div class="${container}">${shown.join('')}</div>
+  <section class="locked-bucket locked-bucket--inline">
+    <div class="locked__rows" aria-hidden="true">
+      ${Array.from({ length: Math.min(hidden, 4) }, () => '<div class="locked__row"></div>').join('')}
+    </div>
+    <p class="small" style="margin:.6rem 0 0"><strong>${hidden} more ${esc(noun)}</strong> ${
+      hidden === 1 ? 'is' : 'are'
+    } on the paid plan, with the amount, the rules, the documents and the steps for each.</p>
+    <p style="margin:.8rem 0 0">
+      <a class="btn btn-primary btn-sm" href="${href ?? '/pricing/'}">See plans</a>
+      <a class="btn btn-sm" href="/check/">Check your total free</a>
+    </p>
+  </section>`;
 }
 
 /**
