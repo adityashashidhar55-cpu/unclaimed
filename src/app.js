@@ -322,6 +322,19 @@ function gated(count, noun, buildHtml) {
   </section>`;
 }
 
+/* Matcher attribute names, in the words the question used. */
+const ATTR_LABEL = {
+  nationality: 'your residency status',
+  age: 'your age',
+  income: 'your household income',
+  income_annual_max: 'your household income',
+  admin_area: 'your region',
+  household: 'who lives with you',
+  housing_tenure: 'your housing',
+  status: 'your work status',
+  residency_months: 'how long you have lived there',
+};
+
 function money(n, cur) {
   return formatMoney(n, cur);
 }
@@ -562,14 +575,31 @@ function viewResults() {
         : `up to ${money(r.total_max, cur)}`
       : null;
 
+  /* Nothing qualifies YET, but things are pending on a question that was
+     skipped. "0 programmes" is not the answer, it is the absence of one, and
+     a reader who takes it as the answer closes the tab still not claiming.
+     Same rule as the app: never report a confident zero over an open question. */
+  const pending = r.eligible.length === 0 ? r.needs_one_more_answer.length : 0;
+  const blockers = pending
+    ? [...new Set(r.needs_one_more_answer.map((m) => m.blocking_attribute).filter(Boolean))]
+        .map((a) => ATTR_LABEL[a] ?? a)
+        .slice(0, 2)
+    : [];
+
   return `<div class="results" style="max-width:none">
   <section class="result-hero">
     <span class="eyebrow">${esc(S.entry.flag)} ${esc(S.entry.name)} · matched against ${S.data.programmes.length} programmes</span>
     ${
-      headline
-        ? `<p class="figure">${esc(headline)}</p>
+      pending
+        ? `<p class="figure" style="font-size:clamp(2rem,6vw,3.6rem)">${pending} waiting on you</p>
+           <p class="figure-unit" style="margin-top:1rem">We can't put a number on it yet. ${pending} programme${pending === 1 ? '' : 's'}
+           depend${pending === 1 ? 's' : ''} on ${blockers.length ? esc(blockers.join(' and ')) : 'a question'}, which you skipped.
+           Answer ${blockers.length === 1 ? 'it' : 'them'} and this becomes a figure.</p>
+           <p style="margin-top:1.4rem"><button class="btn btn-primary" type="button" data-act="restart">Answer ${blockers.length === 1 ? 'it' : 'them'} now</button></p>`
+        : headline
+          ? `<p class="figure">${esc(headline)}</p>
            <p class="figure-unit" style="margin-top:1rem">per year in published ceilings you appear to qualify for</p>`
-        : `<p class="figure" style="font-size:clamp(2.2rem,7vw,4.5rem)">${r.eligible.length} programmes</p>
+          : `<p class="figure" style="font-size:clamp(2.2rem,7vw,4.5rem)">${r.eligible.length} programmes</p>
            <p class="figure-unit" style="margin-top:1rem">you appear to qualify for</p>`
     }
     <p class="small" style="color:#a89c8a;max-width:60ch;margin-top:1.5rem">
