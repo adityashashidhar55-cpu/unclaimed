@@ -687,11 +687,11 @@ div.q { margin-bottom: 2.4rem; }
 
 .orbit {
   position: absolute; inset: 0; margin: auto;
-  width: min(41rem, 88vw); height: min(41rem, 88vw);
-  top: -4%; z-index: -1; pointer-events: none;
+  width: min(52rem, 96vw); height: min(52rem, 96vw);
+  top: -8%; z-index: -1; pointer-events: none;
   /* Low enough that the headline is never competing with it. This started at
      .85 and the marks read as foreground objects sitting on the words. */
-  opacity: .38;
+  opacity: .55;
 }
 .orbit svg { width: 100%; height: 100%; overflow: visible; }
 
@@ -707,12 +707,12 @@ div.q { margin-bottom: 2.4rem; }
 
 .orbit__marks { transform-origin: 160px 160px; }
 .orbit__chip {
-  fill: rgba(255,255,255,.82);
-  stroke: rgba(15,111,118,.22); stroke-width: 1;
+  fill: rgba(255,255,255,.34);
+  stroke: rgba(15,111,118,.13); stroke-width: 1;
 }
 .orbit__mark {
   font-family: var(--font-body); font-size: 12px; font-weight: 700;
-  fill: var(--teal);
+  fill: rgba(15,111,118,.38);
 }
 
 
