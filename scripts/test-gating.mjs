@@ -93,6 +93,22 @@ if (!failed) {
     : bad(`expected ${gb.free_rows} whole records, found ${whole.length}`);
 }
 
+/* The unstripped copies must not be published on a host that cannot refuse
+   requests for them. This is the check that would have caught shipping
+   /api/v1/full/ to GitHub Pages, where it was a complete, guessable copy of
+   the directory the paywall exists to protect. */
+{
+  const fullDir = path.join(DIST, 'api/v1/full');
+  const emitted = fs.existsSync(fullDir);
+  if (process.env.EMIT_FULL_DATASET === '1') {
+    emitted ? ok('full dataset emitted, as EMIT_FULL_DATASET asked') : bad('EMIT_FULL_DATASET=1 but no full dataset was written');
+  } else {
+    emitted
+      ? bad('api/v1/full/ was written without EMIT_FULL_DATASET — on a static host that publishes the whole directory')
+      : ok('no unstripped dataset in the build (set EMIT_FULL_DATASET=1 only behind the Worker)');
+  }
+}
+
 /* The startup dataset gets the same treatment, and the same assertion: the
    eligible/ineligible split must not move, because that split is what the free
    company check reports as a count. */
@@ -111,7 +127,18 @@ if (!failed) {
     pub[pool] = load('api/v1/startups', pool);
     full[pool] = load('api/v1/full/startups', pool);
   }
-  const a = matchStartup(profile, full, Date.parse('2026-06-01'));
+  /* Compare against the repo's own source when the full copies were not
+     emitted — the assertion is about the stripping, not about the build flag. */
+  const haveFull = Object.values(full).some((d) => (d.programmes || []).length);
+  const source = haveFull
+    ? full
+    : Object.fromEntries(
+        pools.map((pool) => {
+          const f = path.join(ROOT, 'data/startups', `${pool}.json`);
+          return [pool, fs.existsSync(f) ? JSON.parse(fs.readFileSync(f, 'utf8')) : { programmes: [] }];
+        }),
+      );
+  const a = matchStartup(profile, source, Date.parse('2026-06-01'));
   const b = matchStartup(profile, pub, Date.parse('2026-06-01'));
   a.eligible.length === b.eligible.length && a.not_eligible.length === b.not_eligible.length
     ? ok(`startup verdicts identical after stripping (${a.eligible.length} eligible)`)
