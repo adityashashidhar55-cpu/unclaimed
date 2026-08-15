@@ -175,7 +175,16 @@ const swSrc = fs.readFileSync(path.join(DIST, 'sw.js'), 'utf8');
 const landingHtml = fs.readFileSync(path.join(DIST, 'index.html'), 'utf8');
 landingHtml.includes('lang-select') ? ok('language switcher in the masthead') : fail('no language switcher at top');
 landingHtml.includes('class="langbar"') ? ok('language switcher in the footer') : fail('no language switcher at bottom');
-landingHtml.includes('class="flow"') ? ok('how-it-works flow is on the landing page') : fail('no how-it-works flow');
+/* The four numbered steps. Checks the step count too, not just the container —
+   an empty .steps4 div would have passed the old class-name-only assertion. */
+{
+  const steps = (landingHtml.match(/class="step4"/g) || []).length;
+  steps === 4
+    ? ok('how-it-works shows four numbered steps')
+    : fail(`how-it-works has ${steps} steps, expected 4`);
+}
+landingHtml.includes('class="orbit') ? ok('hero orbit graphic present') : fail('no hero orbit graphic');
+landingHtml.includes('hero-centre') ? ok('hero text is centred') : fail('hero is not centred');
 fs.existsSync(path.join(DIST, 'enterprise/index.html')) ? ok('enterprise page present') : fail('enterprise page MISSING');
 
 
