@@ -875,6 +875,7 @@ async function handleCheckout(request, env) {
     personal_monthly: { price: env.STRIPE_PRICE_PERSONAL_MONTHLY, seats: false, account: 'individual' },
     personal_annual: { price: env.STRIPE_PRICE_PERSONAL_ANNUAL, seats: false, account: 'individual' },
     business_monthly: { price: env.STRIPE_PRICE_BUSINESS_MONTHLY, seats: true, account: 'business' },
+    business_annual: { price: env.STRIPE_PRICE_BUSINESS_ANNUAL, seats: true, account: 'business' },
   };
 
   const planKey = String(body.plan ?? 'personal_annual');
