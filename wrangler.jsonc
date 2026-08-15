@@ -46,7 +46,8 @@
     // which prints the three lines to paste back here.
     "STRIPE_PRICE_PERSONAL_MONTHLY": "price_REPLACE_ME",
     "STRIPE_PRICE_PERSONAL_ANNUAL": "price_REPLACE_ME",
-    "STRIPE_PRICE_BUSINESS_MONTHLY": "price_REPLACE_ME"
+    "STRIPE_PRICE_BUSINESS_MONTHLY": "price_REPLACE_ME",
+    "STRIPE_PRICE_BUSINESS_ANNUAL": "price_REPLACE_ME"
   },
 
   "routes": [
