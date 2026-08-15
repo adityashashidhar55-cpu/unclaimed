@@ -43,6 +43,12 @@ jobs:
       # are lying to every free user about how much they are owed.
       - name: Paywall data tests
         run: node scripts/test-gating.mjs
+      # A missing translation raises no error — it just reads as English to
+      # someone who cannot read English. These two turn that into a failure.
+      - name: Translation completeness
+        run: node scripts/test-i18n.mjs
+      - name: Translation coverage on built pages
+        run: node scripts/check-i18n.mjs
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:
