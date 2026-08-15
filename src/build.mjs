@@ -64,6 +64,8 @@ import {
   categoryLabel,
   benefitTypeLabel,
   listRow,
+  locked,
+  paywallLd,
   disclaimerBar,
 } from './ui.mjs';
 
@@ -85,11 +87,19 @@ const BASE = (process.env.SITE_BASE ?? '').replace(/\/$/, '');
  * application for each), which is gated server-side in worker/index.js and
  * cannot be scraped.
  *
- * Set PAYWALL_SCHEMES=1 to gate them anyway — the page keeps its JSON-LD and
- * its title so it stays in the index, but the steps, documents and source are
- * replaced with a sign-in prompt.
+ * That was the reasoning for leaving them open. The owner has decided the
+ * other way, three times, and it is his product: the schemes are now gated by
+ * DEFAULT, and PAYWALL_SCHEMES=0 opens them again.
+ *
+ * Losing the traffic is not a foregone conclusion, because the pages are not
+ * simply hidden. Each one keeps its title, its funder, its category and its
+ * link to the official source — enough for a crawler to understand and rank
+ * it — and declares the gate with schema.org's isAccessibleForFree markup.
+ * That is Google's documented mechanism for paywalled content: without it,
+ * showing the crawler more than the visitor is cloaking and gets the site
+ * deindexed; with it, the page stays in the index and the human still pays.
  */
-const PAYWALL_SCHEMES = process.env.PAYWALL_SCHEMES === '1';
+const PAYWALL_SCHEMES = process.env.PAYWALL_SCHEMES !== '0';
 const ORIGIN = (process.env.SITE_ORIGIN ?? 'https://adityashashidhar55-cpu.github.io').replace(/\/$/, '');
 const SITE_URL = `${ORIGIN}${BASE}`;
 
@@ -440,17 +450,11 @@ function programmePage(entry, data, p) {
       ${p.name_local && p.name_local !== p.name_en ? `<p class="lede serif" style="margin-top:-.4rem">${esc(p.name_local)}</p>` : ''}
       <p class="small">Paid by <strong>${esc(p.funder)}</strong> · ${esc(entry.flag)} ${esc(entry.name)}</p>
 
-      ${
-        amt
-          ? `<div class="card" style="margin:2rem 0"><span class="eyebrow" style="margin-bottom:.4rem">Published value</span>
-             <div class="figure-sm" style="color:var(--sage)">${esc(amt)}</div>
-             ${p.amount_note ? `<p class="small" style="margin:.6rem 0 0">${esc(p.amount_note)}</p>` : ''}
-             ${isCapitalCeiling(p) ? `<p class="tiny" style="margin:.6rem 0 0"><strong>Note:</strong> this is a credit or capital ceiling, not cash in hand. It is excluded from the headline total in your results.</p>` : ''}
-             </div>`
-          : `<div class="callout" style="margin:2rem 0"><p><strong>Amount depends on your circumstances.</strong> ${esc(
-              p.amount_note || 'The official body calculates it from your situation — we do not guess a figure.',
-            )}</p></div>`
-      }
+      ${locked({
+        title: 'What this pays',
+        blurb: 'The published value, how it is calculated, and whether it is cash or a credit ceiling.',
+        rows: 2,
+      })}
 
       ${(() => {
         const tags = circumstanceTags(p);
@@ -461,8 +465,14 @@ function programmePage(entry, data, p) {
           Read the official page carefully before assuming you qualify.</p></div>`;
       })()}
 
-      <h2 style="margin-top:2.5rem">Who qualifies</h2>
-      <table class="rule-table">${ruleRows.join('')}</table>
+      ${PAYWALL_SCHEMES
+        ? locked({
+            title: 'Who qualifies',
+            blurb: `The ${ruleRows.length} published rules this programme tests you against — age, income, residency, household and the rest.`,
+            rows: Math.min(ruleRows.length, 4),
+          })
+        : `<h2 style="margin-top:2.5rem">Who qualifies</h2>
+      <table class="rule-table">${ruleRows.join('')}</table>`}
 
       ${PAYWALL_SCHEMES ? `<div class="callout callout--terracotta" style="margin:2rem 0">
         <p><strong>The steps, documents and official link are part of the paid plan.</strong>
@@ -482,11 +492,19 @@ function programmePage(entry, data, p) {
       }
 
       ${
-        docs
-          ? `<h2 style="margin-top:3rem">Documents you'll need</h2>
+        PAYWALL_SCHEMES
+          ? (p.documents_required || []).length
+            ? locked({
+                title: `${(p.documents_required || []).length} documents you'll need`,
+                blurb: 'Exactly what to gather before you start, so nothing sends you back to the beginning.',
+                rows: Math.min((p.documents_required || []).length, 4),
+              })
+            : ''
+          : docs
+            ? `<h2 style="margin-top:3rem">Documents you'll need</h2>
              <p class="small">Tick these off as you gather them. Nothing is saved anywhere.</p>
              <ul class="docs">${docs}</ul>`
-          : ''
+            : ''
       }
 
       <h2 style="margin-top:3rem">Where this comes from</h2>
@@ -555,6 +573,14 @@ function programmePage(entry, data, p) {
     };
   }
 
+  /* Declared, not hidden. See paywallLd(). */
+  const paywallMarkup = PAYWALL_SCHEMES
+    ? paywallLd({
+        headline: `${p.name_en} — ${entry.name}`,
+        url: `${SITE_URL}/${cc}/${p.category}/${p.slug}/`,
+      })
+    : '';
+
   return layout({
     base: BASE,
     linkBase: LB(),
@@ -564,7 +590,7 @@ function programmePage(entry, data, p) {
     title: `${p.name_en} — ${entry.name}`,
     description: `${p.name_en}${p.name_local !== p.name_en ? ` (${p.name_local})` : ''}: who qualifies, ${amt ? `worth ${amt}, ` : ''}documents needed, how to apply, and the official ${p.funder} source. Last checked ${p.last_verified_at}.`,
     canonical: `${SITE_URL}/${cc}/${p.category}/${p.slug}/`,
-    body,
+    body: paywallMarkup + body,
     jsonld: [ld, breadcrumbLd(crumbs.map((c) => ({ ...c, href: c.href })))],
   });
 }
@@ -2085,9 +2111,14 @@ L = 'en';
 TR = translator('en');
 ALT = [];
 page('api/index.html', apiPage());
+/* The nav and footer are built from TR(); without it every label rendered as
+   its own translation key — the live 404 read "navCountries  navHow  ctaCheck". */
 write('404.html', layout({
   base: BASE,
   linkBase: BASE,
+  lang: L,
+  tr: TR,
+  altLangs: ALT,
   title: 'Page not found',
   description: 'That page does not exist.',
   body: `<section class="section shell center"><h1>Not here.</h1><p class="lede">That page doesn't exist — programme URLs look like <code>/gb/housing/some-scheme/</code>.</p><p style="margin-top:2rem"><a class="btn btn-primary" href="${LB()}/">Back to the start</a> <a class="btn btn-ghost" href="${LB()}/countries/">Browse countries</a></p></section>`,

@@ -275,18 +275,73 @@ export function benefitTypeLabel(b) {
   return BENEFIT_TYPE_LABEL[b] || b;
 }
 
+/**
+ * A row in a browse list.
+ *
+ * The amount used to be printed here. It is the single most valuable field in
+ * the record — it is what someone is paying to find out — and putting it on a
+ * public page meant the product could be read for free by scrolling.
+ *
+ * What stays public is what a search engine needs to index the page and what
+ * a person needs to decide the page is worth opening: the name, who pays it,
+ * and whether a human has checked the record. What it is worth is locked.
+ */
 export function listRow(base, cc, p, currency) {
-  const amt = amountLabel(p, currency);
   return `<a class="list-row" href="${progHref(base, cc, p)}">
   <span>
     <span class="list-row__name">${esc(p.name_en)}</span>
     <span class="list-row__meta">${esc(p.name_local !== p.name_en ? p.name_local + ' · ' : '')}${esc(p.funder)}</span>
   </span>
   <span class="list-row__right">
-    ${amt ? `<span class="list-row__amount">${esc(amt)}</span>` : `<span class="tiny">Amount varies</span>`}
+    <span class="list-row__amount lock-chip" aria-label="Amount locked">&#9679;&#9679;&#9679;&#9679;</span>
     <span class="row" style="gap:.3rem">${verificationBadge(p.verification_status)}</span>
   </span>
 </a>`;
+}
+
+/**
+ * A locked panel, for content that is never rendered to an unentitled reader.
+ *
+ * `body` is a thunk and is only called when `entitled` is true, so the paid
+ * markup is not built and then hidden — there is nothing in the document to
+ * un-hide. On a static page `entitled` is always false at build time; the
+ * client fetches the real content from the gated API after sign-in.
+ */
+export function locked({ title, blurb, rows = 3, id = null }) {
+  return `<section class="locked-bucket"${id ? ` data-locked="${esc(id)}"` : ''}>
+    <div class="bucket__head"><h2 style="margin:0">${esc(title)}</h2></div>
+    ${blurb ? `<p class="small">${esc(blurb)}</p>` : ''}
+    <div class="locked__rows" aria-hidden="true">
+      ${Array.from({ length: rows }, () => '<div class="locked__row"></div>').join('')}
+    </div>
+    <p><a class="btn btn-primary" href="/account/">Sign in to unlock</a>
+       <a class="btn" href="/pricing/">See pricing</a></p>
+    <p class="tiny">Email and a six-digit code, then €50 a year. No password to forget.</p>
+  </section>`;
+}
+
+/**
+ * Google's markup for paywalled content.
+ *
+ * Without this, hiding the body from visitors while letting Googlebot see the
+ * page is cloaking, and the penalty is deindexing. With it, the paywall is
+ * declared: the crawler is told which section is gated and indexes the page
+ * anyway. This is the documented mechanism, and it is the only reason a hard
+ * wall and organic search can coexist.
+ */
+export function paywallLd({ headline, url, lockedSelector = '.locked-bucket' }) {
+  return `<script type="application/ld+json">${JSON.stringify({
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    headline,
+    url,
+    isAccessibleForFree: false,
+    hasPart: {
+      '@type': 'WebPageElement',
+      isAccessibleForFree: false,
+      cssSelector: lockedSelector,
+    },
+  })}</script>`;
 }
 
 export function disclaimerBar(tr) {
