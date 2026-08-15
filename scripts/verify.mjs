@@ -293,6 +293,19 @@ fs.readFileSync(path.join(DIST, 'theme.css'), 'utf8').includes('.shell-narrow')
   ? ok('.shell-narrow is defined')
   : fail('.shell-narrow is used but never defined — those pages will run full-bleed');
 
+/* The language switcher must offer every locale, and a localised page must
+   declare its own lang attribute — a French page claiming lang="en" is read
+   aloud in an English voice by every screen reader. */
+{
+  const fr = path.join(DIST, 'fr/index.html');
+  if (!fs.existsSync(fr)) fail('/fr/ MISSING');
+  else {
+    const html = fs.readFileSync(fr, 'utf8');
+    html.includes('<html lang="fr">') ? ok('localised pages declare their own lang') : fail('/fr/ does not declare lang="fr"');
+    html.includes('hreflang="fr"') ? ok('hreflang alternates are emitted') : fail('no hreflang alternates');
+  }
+}
+
 /* One theme-color, not two. A duplicate meta is a coin toss in some browsers. */
 {
   const n = (landingHtml.match(/name="theme-color"/g) || []).length;
