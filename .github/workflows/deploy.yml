@@ -33,6 +33,12 @@ jobs:
         run: node src/build.mjs
       - name: Verify build
         run: node scripts/verify.mjs
+      # A dead internal link is a bug the build can see, so the build fails on
+      # one rather than waiting for a visitor to find it.
+      - name: Check every internal link
+        run: node scripts/check-links.mjs
+      - name: Workspace logic tests
+        run: node scripts/test-dashboard.mjs
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:
