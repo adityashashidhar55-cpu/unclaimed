@@ -231,11 +231,14 @@ export function isUnpricedMeansTest(p) {
  * "23 things a student in France can claim" converts, "2,216 programmes"
  * does not.
  */
+/* `label` is the English fallback; `labelKey` is what the site renders, so the
+   audience name is translated like everything else rather than being the one
+   English word left in a French heading. */
 export const AUDIENCES = [
-  { id: 'students', blurbKey: 'audBlurbStudents', i18n: 'audStudents', label: 'Students & under-30s', blurb: 'Housing aid, transport passes, study grants, first-job and mobility help.' },
-  { id: 'parents', blurbKey: 'audBlurbParents', i18n: 'audParents', label: 'Parents at home', blurb: 'Family allowances, childcare costs, school and back-to-school help, energy support.' },
-  { id: 'freelancers', blurbKey: 'audBlurbFreelancers', i18n: 'audFreelancers', label: 'Freelancers & self-employed', blurb: 'Training credit, start-up aid, contribution relief and health cover.' },
-  { id: 'renters', blurbKey: 'audBlurbRenters', i18n: 'audRenters', label: 'Renters', blurb: 'Rent support, deposit guarantees, moving costs and social utility tariffs.' },
+  { id: 'students', blurbKey: 'audBlurbStudents', i18n: 'audStudents', labelKey: 'audLabelStudents', label: 'Students & under-30s', blurb: 'Housing aid, transport passes, study grants, first-job and mobility help.' },
+  { id: 'parents', blurbKey: 'audBlurbParents', i18n: 'audParents', labelKey: 'audLabelParents', label: 'Parents at home', blurb: 'Family allowances, childcare costs, school and back-to-school help, energy support.' },
+  { id: 'freelancers', blurbKey: 'audBlurbFreelancers', i18n: 'audFreelancers', labelKey: 'audLabelFreelancers', label: 'Freelancers & self-employed', blurb: 'Training credit, start-up aid, contribution relief and health cover.' },
+  { id: 'renters', blurbKey: 'audBlurbRenters', i18n: 'audRenters', labelKey: 'audLabelRenters', label: 'Renters', blurb: 'Rent support, deposit guarantees, moving costs and social utility tariffs.' },
 ];
 
 export function audienceTags(p) {
