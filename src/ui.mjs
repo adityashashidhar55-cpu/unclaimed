@@ -82,12 +82,17 @@ ${canonical ? `<link rel="canonical" href="${attr(canonical)}">` : ''}
 ${canonical ? `<meta property="og:url" content="${attr(canonical)}">` : ''}
 <meta property="og:site_name" content="${SITE_NAME}">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="theme-color" content="#000000">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="${base}/theme.css?v=${ASSET_V}">
 <noscript><style>.reveal,.blur-word,.flow::before{opacity:1!important;filter:none!important;transform:none!important}</style></noscript>
 <link rel="icon" href="${base}/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="${base}/icon-192.png" type="image/png" sizes="192x192">
+<!-- Safari ignores an SVG here, so without a PNG an iPhone home-screen
+     shortcut gets a screenshot of the page instead of the logo. -->
+<link rel="apple-touch-icon" sizes="180x180" href="${base}/icon-180.png">
+<link rel="manifest" href="${base}/manifest.webmanifest">
+<meta name="theme-color" content="#eef7f7">
 <link rel="alternate" type="application/json" href="${base}/api/v1/countries.json" title="Unclaimed programme API">
 ${altLangs.map((a) => `<link rel="alternate" hreflang="${a.lang}" href="${a.href}">`).join('\n')}
 ${head}
@@ -103,6 +108,7 @@ ${ldBlocks}
         <a href="${LB}/countries/">${esc(T('navCountries'))}</a>
         <a href="${LB}/methodology/">${esc(T('navHow'))}</a>
         <a href="${LB}/pricing/">Pricing</a>
+        <a href="${LB}/enterprise/">Enterprise</a>
         <a href="${base}/app/">App</a>
         <a href="${base}/api/">${esc(T('navApi'))}</a>
       </span>
@@ -136,6 +142,7 @@ ${body}
           <li><a href="${LB}/methodology/">${esc(T('methodology'))}</a></li>
           <li><a href="${LB}/pricing/">Pricing</a></li>
           <li><a href="${LB}/enterprise/">Enterprise</a></li>
+          <li><a href="${base}/dashboard/">Grants workspace</a></li>
           <li><a href="${base}/app/">Mobile app</a></li>
         </ul>
       </div>
@@ -206,7 +213,12 @@ ${body}
 
   document.querySelectorAll('[data-blur-words]').forEach(function (h) {
     if (reduce) return;
-    var words = h.textContent.trim().split(/\s+/);
+    /* Double-escaped on purpose: this whole document is a template literal, so
+       a single backslash is consumed by JS before the browser ever sees it.
+       With /s+/ the headline split on the letter s — "One workspace for every
+       company you support." shipped as "One work pace for every company you
+       upport." on every page with a blur-in heading. */
+    var words = h.textContent.trim().split(/\\s+/);
     h.textContent = '';
     words.forEach(function (w, i) {
       var span = document.createElement('span');

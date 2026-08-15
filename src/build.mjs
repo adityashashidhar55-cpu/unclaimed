@@ -23,6 +23,7 @@ import {
   periodSuffix,
 } from './engine/matcher.js';
 import { LOCALES, LANGS, t as translator } from './i18n.mjs';
+import { iconPng } from './icon-raster.mjs';
 import { policyFor, autoApplyTier, railFor } from '../packages/policy/index.js';
 import { DOC_TYPES } from '../packages/vault/index.js';
 import { INSTRUMENTS, isFreeMoney, reachFor } from './engine/startup.js';
@@ -126,6 +127,25 @@ const nf = (n) => new Intl.NumberFormat('en').format(n);
 /* ---- Language state. The whole page set is generated once per language. ---- */
 let L = 'en';
 const LB = () => (L === 'en' ? BASE : `${BASE}/${L}`);
+
+/* Not every page exists in every language. A localised build only generates the
+ * countries that actually speak the language, and the startups section is
+ * English-only — so prefixing those hrefs with the language code produced 701
+ * dead links (a German visitor on /de/countries/ could not open Japan).
+ *
+ * These two helpers pick the prefix per target rather than per page: link to
+ * the localised page when there is one, and fall back to English when there
+ * is not. Falling back beats hiding the link — the English page is a real
+ * answer, and a country list missing two thirds of the world is not. */
+
+/** Link base for a country's pages: localised if this language builds it. */
+function CB(cc) {
+  const only = LOCALES[L]?.countries;
+  return !only || only.includes(cc) ? LB() : BASE;
+}
+/** Link base for the startups section, which is only ever built in English. */
+const SB = () => BASE;
+
 let TR = translator('en');
 /** hreflang siblings for the page currently being rendered. */
 let ALT = [];
@@ -296,7 +316,7 @@ function landing() {
 
     <div class="row reveal" data-delay="340" style="margin-top:2.2rem;gap:.7rem;justify-content:center">
       <a class="btn btn-primary" href="${LB()}/check/">Check what you're owed</a>
-      <a class="btn" href="${LB()}/startups/">I'm a founder</a>
+      <a class="btn" href="${SB()}/startups/">I'm a founder</a>
     </div>
 
     <div class="grid grid-4 reveal" data-delay="460" style="margin-top:3.4rem">
@@ -365,7 +385,7 @@ function landing() {
         Means-tested rules modelled from the published thresholds, with every source linked.</p>
         <p class="small" style="color:#fff;margin-top:.8rem">Check what you're owed →</p>
       </a>
-      <a class="card card-link reveal" data-delay="120" href="${LB()}/startups/">
+      <a class="card card-link reveal" data-delay="120" href="${SB()}/startups/">
         <span class="eyebrow eyebrow-accent">For founders</span>
         <h3>${nf(startupCount)} grants across ${STARTUP_MANIFEST.countries.length} jurisdictions</h3>
         <p class="small">Public and private, ranked by what you can realistically win rather than headline
@@ -437,8 +457,8 @@ function programmePage(entry, data, p) {
   const amt = amountLabel(p, data.currency);
   const crumbs = [
     { label: 'Home', href: `${LB()}/` },
-    { label: entry.name, href: `${LB()}/${cc}/` },
-    { label: categoryLabel(p.category), href: `${LB()}/${cc}/${p.category}/` },
+    { label: entry.name, href: `${CB(cc)}/${cc}/` },
+    { label: categoryLabel(p.category), href: `${CB(cc)}/${cc}/${p.category}/` },
     { label: p.name_en },
   ];
 
@@ -665,7 +685,7 @@ function countryPage(entry, data) {
       return `<section style="margin-top:3rem">
         <div class="spread" style="border-bottom:1px solid var(--line);padding-bottom:.6rem">
           <h2 style="font-size:clamp(1.3rem,2.2vw,1.9rem);margin:0">${esc(categoryLabel(cat))}</h2>
-          <a class="link-underline small" href="${LB()}/${cc}/${cat}/">All ${list.length} ${esc(categoryLabel(cat).toLowerCase())} programmes</a>
+          <a class="link-underline small" href="${CB(cc)}/${cc}/${cat}/">All ${list.length} ${esc(categoryLabel(cat).toLowerCase())} programmes</a>
         </div>
         <div class="list-rows">${shown.map((p) => listRow(BASE, cc, p, data.currency)).join('')}</div>
       </section>`;
@@ -698,7 +718,7 @@ function countryPage(entry, data) {
   <div class="filters">
     ${Object.keys(cats)
       .sort()
-      .map((c) => `<a class="tag" href="${LB()}/${cc}/${c}/">${esc(categoryLabel(c))} <span class="tiny">${cats[c].length}</span></a>`)
+      .map((c) => `<a class="tag" href="${CB(cc)}/${cc}/${c}/">${esc(categoryLabel(c))} <span class="tiny">${cats[c].length}</span></a>`)
       .join('')}
   </div>
   ${catSections}
@@ -747,7 +767,7 @@ function categoryPage(entry, data, cat, list) {
     cat === 'business' && STARTUP_DATA[entry.slug]
       ? `<div class="callout callout--sage" style="margin-top:1.5rem">
     <p><strong>Building a startup rather than a small business?</strong> We keep a separate, deeper
-    dataset of <a href="${LB()}/startups/${esc(entry.slug)}/">${STARTUP_DATA[entry.slug].programmes.length}
+    dataset of <a href="${SB()}/startups/${esc(entry.slug)}/">${STARTUP_DATA[entry.slug].programmes.length}
     startup funding programmes in ${esc(entry.name)}</a> — grants, R&D credits and cloud credits, ranked by
     what you can realistically win rather than by headline size.</p>
   </div>`
@@ -755,7 +775,7 @@ function categoryPage(entry, data, cat, list) {
   const cc = entry.slug;
   const crumbs = [
     { label: 'Home', href: `${LB()}/` },
-    { label: entry.name, href: `${LB()}/${cc}/` },
+    { label: entry.name, href: `${CB(cc)}/${cc}/` },
     { label: categoryLabel(cat) },
   ];
   const body = `
@@ -799,7 +819,7 @@ function globalCategoryPage(cat) {
     .map(({ entry, data }) => {
       const list = data.programmes.filter((p) => p.category === cat);
       if (!list.length) return '';
-      return `<a class="list-row" href="${LB()}/${entry.slug}/${cat}/">
+      return `<a class="list-row" href="${CB(entry.slug)}/${entry.slug}/${cat}/">
         <span><span class="list-row__name">${entry.flag} ${esc(entry.name)}</span>
         <span class="list-row__meta">${list
           .slice(0, 3)
@@ -845,7 +865,7 @@ function countriesIndex() {
   const rows = countries
     .map(({ entry, data }) => {
       const verified = data.programmes.filter((p) => p.verification_status === 'verified').length;
-      return `<a class="list-row" href="${LB()}/${entry.slug}/">
+      return `<a class="list-row" href="${CB(entry.slug)}/${entry.slug}/">
       <span><span class="list-row__name">${entry.flag} ${esc(entry.name)}</span>
       <span class="list-row__meta">${entry.categories.length} categories · ${verified} verified · ${entry.currency}</span></span>
       <span class="list-row__right"><span class="list-row__amount">${entry.programme_count}</span><span class="tiny">programmes</span></span>
@@ -1186,7 +1206,7 @@ ${disclaimerBar(TR)}
             `Every one of the ${nf(startupCount)} programme pages`,
             'Business sign-in, verified by a code',
           ],
-          href: `${LB()}/startups/`, cta: 'Check your company',
+          href: `${SB()}/startups/`, cta: 'Check your company',
         })}
         ${tier({
           delay: 110, eyebrow: 'Business', price: '€49', per: '/month', featured: true,
@@ -1200,7 +1220,7 @@ ${disclaimerBar(TR)}
             'Reopen alerts on closed calls',
             'Saved searches, weekly digest',
           ],
-          href: `${LB()}/startups/`, cta: 'Find your grants',
+          href: `${SB()}/startups/`, cta: 'Find your grants',
         })}
       </div>
 
@@ -1226,8 +1246,9 @@ ${disclaimerBar(TR)}
         many applicants at once. One place to find what they qualify for, run the applications, keep the funder
         relationships warm, and prove where the money went.</p>
         <p style="margin-top:1.6rem">
-          <a class="btn btn-primary" href="${LB()}/enterprise/">See the dashboard</a>
-          <a class="btn" href="mailto:hello@unclaimedgrant.com?subject=Enterprise%20trial">Talk to us</a>
+          <a class="btn btn-primary" href="${BASE}/dashboard/">Open the workspace</a>
+          <a class="btn" href="${LB()}/enterprise/">What it does</a>
+          <a class="btn btn-ghost" href="mailto:hello@unclaimedgrant.com?subject=Enterprise%20trial">Talk to us</a>
         </p>
         <p class="tiny">€800 per seat per year if you pay annually. Web only — the dashboard is not in the mobile app.</p>
       </div>
@@ -1352,10 +1373,10 @@ function appShell() {
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Unclaimed</title>
 <meta name="description" content="Find the government money you are owed. Works offline, no account.">
-<meta name="theme-color" content="#000000">
+<meta name="theme-color" content="#eef7f7">
 <link rel="manifest" href="${BASE}/manifest.webmanifest">
 <link rel="stylesheet" href="${BASE}/app/app.css?v=${ASSET_V}">
-<link rel="apple-touch-icon" href="${BASE}/icon-192.png">
+<link rel="apple-touch-icon" sizes="180x180" href="${BASE}/icon-180.png">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="apple-mobile-web-app-title" content="Unclaimed">
@@ -1401,11 +1422,11 @@ function appIcon(size) {
   return `<svg xmlns="http://www.w3.org/2000/svg" width="${size}" height="${size}" viewBox="0 0 ${size} ${size}">
   <defs>
     <radialGradient id="g" cx="30%" cy="12%" r="90%">
-      <stop offset="0%" stop-color="#2a1a14"/><stop offset="55%" stop-color="#0a0a0a"/><stop offset="100%" stop-color="#000"/>
+      <stop offset="0%" stop-color="#125a63"/><stop offset="55%" stop-color="#0f3d47"/><stop offset="100%" stop-color="#0c333c"/>
     </radialGradient>
   </defs>
   <rect width="${size}" height="${size}" fill="url(#g)"/>
-  <circle cx="${r}" cy="${r}" r="${size * 0.27}" fill="none" stroke="#e8734a" stroke-width="${size * 0.055}"/>
+  <circle cx="${r}" cy="${r}" r="${size * 0.27}" fill="none" stroke="#4fd1c5" stroke-width="${size * 0.055}"/>
   <path d="M${r - size * 0.115} ${r + size * 0.005} l${size * 0.075} ${size * 0.085} l${size * 0.16} -${size * 0.175}"
         fill="none" stroke="#fff" stroke-width="${size * 0.055}" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>`;
@@ -1421,11 +1442,16 @@ function webManifest() {
     scope: `${BASE}/`,
     display: 'standalone',
     orientation: 'portrait',
-    background_color: '#000000',
-    theme_color: '#000000',
+    background_color: '#eef7f7',
+    theme_color: '#0f6f76',
     categories: ['finance', 'productivity', 'utilities'],
     lang: 'en',
     icons: [
+      /* PNG first: an installer that cannot rasterise SVG takes the second
+         entry rather than falling back to a screenshot of the page. */
+      { src: `${BASE}/icon-192.png`, sizes: '192x192', type: 'image/png', purpose: 'any' },
+      { src: `${BASE}/icon-512.png`, sizes: '512x512', type: 'image/png', purpose: 'any' },
+      { src: `${BASE}/icon-512.png`, sizes: '512x512', type: 'image/png', purpose: 'maskable' },
       { src: `${BASE}/icon-192.svg`, sizes: '192x192', type: 'image/svg+xml', purpose: 'any maskable' },
       { src: `${BASE}/icon-512.svg`, sizes: '512x512', type: 'image/svg+xml', purpose: 'any maskable' },
     ],
@@ -1656,64 +1682,183 @@ ${disclaimerBar(TR)}
 /* ================================================================== */
 
 /** /enterprise/ — the dashboard product. Web only, by design. */
+/**
+ * /dashboard/ — the workspace itself, not a picture of one.
+ *
+ * Shipped as a real page rather than gated behind sign-in because a dashboard
+ * nobody can open is indistinguishable from a screenshot, and the enterprise
+ * page has been describing this thing for weeks. The workspace is local to the
+ * browser until the Worker is deployed; the page says so rather than implying
+ * a sync that is not there.
+ */
+function dashboardPage() {
+  const body = `
+<section class="section-tight" style="padding-bottom:0">
+  <div class="shell">
+    ${breadcrumbs([{ label: TR('backHome'), href: `${LB()}/` }, { label: 'Enterprise', href: `${LB()}/enterprise/` }, { label: 'Workspace' }])}
+  </div>
+</section>
+<div id="dashboard">
+  <noscript>
+    <div class="shell" style="padding:2rem 0">
+      <div class="callout">
+        <p><strong>The workspace needs JavaScript.</strong> The matching runs in this tab, against the same
+        engine the rest of the site is built from, so that a portfolio never has to leave your machine.
+        Without JavaScript there is nothing to run it.</p>
+        <p><a class="link-underline" href="${SB()}/startups/">Browse the programmes instead</a></p>
+      </div>
+    </div>
+  </noscript>
+</div>
+<div class="shell" style="padding:0 0 4rem">
+  <p class="tiny" style="color:var(--ink-4);max-width:70ch">This workspace is stored in this browser only.
+  Nothing in it — company names, figures, pipeline — is sent anywhere, which is why it works before you have
+  an account and why a fund can try it on a real portfolio. Team sync, SSO and shared pipelines arrive with
+  the hosted plan; until then, export is the way to move a workspace between machines.</p>
+</div>
+<script type="module" src="${BASE}/dashboard/dashboard.js?v=${ASSET_V}"></script>`;
+
+  return layout({
+    base: BASE, linkBase: LB(), lang: L, tr: TR, altLangs: ALT,
+    title: 'Grants workspace — portfolio, pipeline and applications',
+    description:
+      'Match a whole portfolio against every funding programme, move applications through a pipeline, watch the deadlines, track the de minimis ceiling and generate an application pack per opportunity.',
+    canonical: `${SITE_URL}/dashboard/`,
+    head: `<link rel="stylesheet" href="${BASE}/dashboard/dashboard.css?v=${ASSET_V}">
+<meta name="robots" content="noindex">`,
+    body,
+  });
+}
+
 function enterprisePage() {
   const startupCount = STARTUP_ALL.length;
   const openNow = STARTUP_ALL.filter((p) => ['open', 'rolling'].includes(p.status)).length;
+  const jurisdictions = STARTUP_MANIFEST.countries.length;
+
+  /* The four jobs, in the order the work actually happens. Instrumentl
+     organises its site the same way for the same reason: a grants team does
+     not buy "features", it buys a way through find → apply → manage → report,
+     and a page arranged by feature makes the buyer do that mapping. */
+  const JOBS = [
+    {
+      n: '01',
+      key: 'find',
+      title: 'Find what every company can win',
+      lede: `One search across ${nf(startupCount)} programmes in ${jurisdictions} jurisdictions, run for the whole portfolio rather than one company at a time.`,
+      points: [
+        `<strong>Portfolio matching.</strong> Every company against every programme, ranked by amount × published award rate × whether a company that size could realistically deliver it.`,
+        `<strong>${nf(openNow)} open today</strong>, and the closed ones are kept rather than hidden — next year's applications come from this year's closed calls.`,
+        '<strong>Saved searches</strong> by sector, stage and geography, with a weekly digest of what is newly open.',
+        '<strong>Your own calls too.</strong> A regional fund or an internal budget line goes in through grant entry and behaves exactly like a programme we ship.',
+      ],
+    },
+    {
+      n: '02',
+      key: 'apply',
+      title: 'Get the application most of the way written',
+      lede: 'The workspace fills what a register and a stored profile can fill, and then names — field by field — what only a human can write.',
+      points: [
+        '<strong>Auto-fill with provenance.</strong> Every filled field shows where it came from, so a reviewer can check it rather than trust it.',
+        '<strong>The seven narrative answers</strong> most applications want, written once per company and reused across every pack.',
+        '<strong>Documents and steps</strong> lifted from the funder\'s own page, with the source URL and the date a human last read it.',
+        '<strong>A downloadable pack</strong> per opportunity. We never sign in as you and never press submit — a funding declaration is sworn by the person making it.',
+      ],
+    },
+    {
+      n: '03',
+      key: 'manage',
+      title: 'Keep the relationship, not just the deadline',
+      lede: 'Watching → drafting → submitted → awarded, with an owner, a value and a next action on every card.',
+      points: [
+        '<strong>A pipeline board</strong> your programme manager is currently keeping in a spreadsheet, with drag-and-drop and a keyboard path that does the same job.',
+        '<strong>Deadline watch</strong> across the portfolio, exportable to any calendar as .ics so the reminder lands where the team already looks.',
+        '<strong>A de minimis ledger</strong> per company per member state on a rolling three-year window, with the declaration text ready to paste.',
+        '<strong>Reopen tracking</strong> on closed calls, because the round you were not watching is the one you miss.',
+      ],
+    },
+    {
+      n: '04',
+      key: 'report',
+      title: 'Answer the board without rebuilding the sheet',
+      lede: 'Awarded to date, open pipeline, hit rate and funnel — with a standing list of what the numbers exclude.',
+      points: [
+        '<strong>Hit rate on decided applications only.</strong> Counting undecided bids as losses flatters or damns a team at random.',
+        '<strong>Instruments are never added together.</strong> Cloud credits do not join a grant total anywhere on this site.',
+        '<strong>Unpriced programmes count as zero</strong> and the count is shown, so nobody reads the pipeline as the ceiling.',
+        '<strong>CSV and API out</strong>, so the numbers land in the CRM or the board pack rather than in another tab.',
+      ],
+    },
+  ];
 
   const body = `
 ${disclaimerBar(TR)}
 <section class="section-tight shell">
   ${breadcrumbs([{ label: TR('backHome'), href: `${LB()}/` }, { label: 'Enterprise' }])}
   <span class="eyebrow eyebrow-accent">Enterprise</span>
-  <h1 style="max-width:16ch" data-blur-words>One dashboard for every company you support.</h1>
-  <p class="lede reveal" style="max-width:54ch;margin-top:1.2rem">
+  <h1 style="max-width:16ch" data-blur-words>One workspace for every company you support.</h1>
+  <p class="lede reveal" style="max-width:56ch;margin-top:1.2rem">
     Accelerators, funds, universities and economic development agencies run the same search dozens of times
-    a year. This is that search, done once, for a whole portfolio — with the deadlines watched.
+    a year. This is that search, done once, for a whole portfolio — with the applications drafted, the
+    deadlines watched and the state-aid ceiling tracked.
+  </p>
+  <div class="row reveal" data-delay="120" style="margin-top:1.6rem">
+    <a class="btn btn-primary" href="${BASE}/dashboard/">Open the workspace</a>
+    <a class="btn" href="${LB()}/pricing/">Pricing</a>
+  </div>
+  <p class="tiny reveal" data-delay="180" style="margin-top:.8rem;color:var(--ink-4)">
+    No account, no sales call. It runs in your browser on your own portfolio — which is also how a fund can
+    try it on real companies without the data leaving the building.
   </p>
 
-  <div class="card reveal" data-delay="200" style="margin-top:2.6rem;padding:1.6rem">
+  <div class="panel panel--float reveal" data-delay="200" style="margin-top:2.6rem">
     <div class="row-between" style="margin-bottom:1.2rem">
       <div>
-        <span class="eyebrow" style="margin:0">Portfolio</span>
-        <h3 style="margin:.2rem 0 0">42 companies · 3 programmes closing this week</h3>
+        <span class="eyebrow" style="margin:0">What you get on day one</span>
+        <h3 style="margin:.2rem 0 0">Portfolio, pipeline, deadlines, ledger, reports</h3>
       </div>
-      <span class="status status--closing">3 closing</span>
+      <a class="btn btn-sm btn-primary" href="${BASE}/dashboard/">Open it</a>
     </div>
     <div class="grid grid-4" style="margin-bottom:1.2rem">
-      <div class="stat"><span class="stat__n">€4.1M</span><span class="stat__l">In pipeline</span></div>
-      <div class="stat"><span class="stat__n">18</span><span class="stat__l">Submitted</span></div>
-      <div class="stat"><span class="stat__n">7</span><span class="stat__l">Awarded</span></div>
-      <div class="stat"><span class="stat__n">39%</span><span class="stat__l">Hit rate</span></div>
+      <div class="stat"><span class="stat__n">${nf(startupCount)}</span><span class="stat__l">Programmes matched</span></div>
+      <div class="stat"><span class="stat__n">${jurisdictions}</span><span class="stat__l">Jurisdictions</span></div>
+      <div class="stat"><span class="stat__n">${nf(openNow)}</span><span class="stat__l">Open right now</span></div>
+      <div class="stat"><span class="stat__n">6</span><span class="stat__l">Pipeline stages</span></div>
     </div>
-    <div class="list-rows">
-      ${[
-        ['Northwind Bio', 'EIC Accelerator', 'Drafting', 'closing', 'Closes in 9 days'],
-        ['Kestrel Energy', 'Innovation Fund', 'Submitted', 'open', 'Decision Q1'],
-        ['Halden Robotics', 'Eurostars', 'Eligible', 'soon', 'Opens 12 Mar'],
-        ['Vantage Health', 'EXIST Transfer', 'Blocked', 'stalled', 'De minimis ceiling'],
-      ]
-        .map(
-          (r) => `<div class="list-row">
-        <div><div class="list-row__name">${r[0]}</div><div class="list-row__meta">${r[1]} · ${r[2]}</div></div>
-        <div class="list-row__right"><span class="status status--${r[3]}">${r[4]}</span></div>
-      </div>`,
-        )
-        .join('')}
-    </div>
-    <p class="tiny" style="margin-top:1rem">Illustrative view. Figures are sample data, not a customer's.</p>
+    <p class="tiny">The workspace ships with no data in it. Load the sample portfolio from inside it if you
+    want to see a full board before you type anything real.</p>
   </div>
+</section>
 
-  <div class="grid grid-3" style="margin-top:2.6rem">
+<section class="section-tight shell">
+  ${JOBS.map(
+    (j, i) => `<div class="panel panel--float reveal" data-delay="${i * 80}" style="margin-top:1.4rem">
+    <div class="jobrow">
+      <div class="jobrow__n">${j.n}</div>
+      <div>
+        <h2 style="margin:0;font-size:1.5rem">${j.title}</h2>
+        <p class="small" style="margin:.5rem 0 0;max-width:62ch">${j.lede}</p>
+        <ul style="margin:1rem 0 0;padding-left:1.1rem">
+          ${j.points.map((p) => `<li class="small" style="margin-bottom:.5rem">${p}</li>`).join('')}
+        </ul>
+      </div>
+    </div>
+  </div>`,
+  ).join('')}
+</section>
+
+<section class="section-tight shell">
+  <h2 class="reveal">The parts nobody demos, which decide whether it gets used</h2>
+  <div class="grid grid-3" style="margin-top:1.4rem">
     ${[
-      ['Portfolio matching', `Run every company in your portfolio against all ${nf(startupCount)} programmes at once. ${nf(openNow)} are open today. Bulk import by company number — public registers fill the rest.`],
-      ['Pipeline and stages', 'Eligible → drafting → submitted → awarded, with owner, value and next action on each. The board view your programme manager is currently keeping in a spreadsheet.'],
-      ['Deadline watch', 'Every closing date and projected reopening across the portfolio, pushed to calendars and email. Closed calls are tracked, not hidden — that is where next quarter\'s applications come from.'],
-      ['De minimis ledger', 'Cumulative state aid per company per member state, on a rolling three-year window. Flags an award that would breach the ceiling before anyone spends six weeks on it.'],
-      ['Saved searches', 'Standing queries by sector, stage and geography, with a weekly digest of what is newly open. New programmes surface without anyone re-running a search.'],
-      ['Seats and visibility', 'Unlimited seats with role-based visibility, so a founder sees their own row and the programme team sees everything. SSO, audit log, data residency.'],
+      ['Seats and visibility', 'Role-based visibility, so a founder sees their own row and the programme team sees everything. SSO, audit log and data residency on the hosted plan.'],
+      ['Data out, not just in', `Everything in the workspace is reachable over the API and exports to CSV. Webhooks fire on stage change and on a call reopening. <a class="link-underline" href="${BASE}/api/">See the API →</a>`],
+      ['Bring a spreadsheet', 'Import a portfolio as CSV. Columns we do not recognise are reported, never guessed at — a mis-mapped column that silently becomes the headcount is the bug you find in month three.'],
+      ['Onboarding that is not a PDF', 'We load your portfolio with you and hand back a ranked plan per company. If the answer is that we have thin coverage in your jurisdictions, you hear that in week one.'],
+      ['Honest coverage', `Coverage is uneven and published: ${jurisdictions} jurisdictions, ${nf(openNow)} calls open today, and every record dated with when a human last read it.`],
+      ['Web, on purpose', 'A board with forty companies and six columns is not a phone screen. The mobile app is for individuals checking what they personally qualify for — different job, different device.'],
     ]
       .map(
-        (f, i) => `<div class="card reveal" data-delay="${i * 90}">
+        (f, i) => `<div class="card reveal" data-delay="${i * 70}">
       <h3 style="font-size:1.1rem">${f[0]}</h3>
       <p class="small">${f[1]}</p>
     </div>`,
@@ -1721,43 +1866,29 @@ ${disclaimerBar(TR)}
       .join('')}
   </div>
 
-  <div class="callout" style="margin-top:2.4rem">
-    <p><strong>Enterprise is web only, on purpose.</strong> A pipeline board with forty companies and six
-    columns is not a phone screen. The mobile app is for individuals checking what they personally qualify
-    for — different job, different device, so we built it as a different product rather than cramming a
-    dashboard into a 390px viewport.</p>
-  </div>
-
-  <div class="grid grid-2" style="margin-top:1.4rem">
-    <div class="card reveal">
-      <span class="eyebrow">Data out</span>
-      <h3 style="font-size:1.1rem">API, webhooks and CSV</h3>
-      <p class="small">Everything in the dashboard is reachable over the API, so matches land in your own
-      CRM rather than in another tab. Webhooks fire on status change and on reopening.
-      <a class="link-underline" href="${BASE}/api/">See the API →</a></p>
-    </div>
-    <div class="card reveal" data-delay="120">
-      <span class="eyebrow">Getting started</span>
-      <h3 style="font-size:1.1rem">Bring a spreadsheet</h3>
-      <p class="small">Upload your portfolio as CSV with company numbers. We resolve each against its public
-      register, match it, and hand back a ranked plan per company on day one.</p>
-    </div>
+  <div class="callout callout--sage" style="margin-top:2rem">
+    <p><strong>What we will not do, and why it is on this page.</strong> We do not take a percentage of what
+    you win, we do not sign in to a funder's portal as you, and we do not write the innovation claim. The
+    first is a middleman fee dressed as alignment; the second is impersonation; the third is a false
+    declaration with your name on it. Every grant tool that promises the third one is promising something
+    the applicant carries the liability for.</p>
   </div>
 
   <div style="margin-top:3rem;text-align:center">
-    <h2 class="reveal" style="max-width:20ch;margin-inline:auto">See it against your own portfolio.</h2>
-    <p class="lede reveal" data-delay="100" style="max-width:38ch;margin:1rem auto 1.8rem">Send a CSV, get a ranked plan back.</p>
+    <h2 class="reveal" style="max-width:22ch;margin-inline:auto">Open it against your own portfolio.</h2>
+    <p class="lede reveal" data-delay="100" style="max-width:40ch;margin:1rem auto 1.8rem">Nothing to install, nothing to sign, nothing sent anywhere.</p>
     <div class="row reveal" data-delay="180" style="justify-content:center">
-      <a class="btn btn-primary" href="${LB()}/pricing/">Pricing</a>
-      <a class="btn" href="${BASE}/api/">API docs</a>
+      <a class="btn btn-primary" href="${BASE}/dashboard/">Open the workspace</a>
+      <a class="btn" href="${LB()}/pricing/">Pricing</a>
+      <a class="btn btn-ghost" href="${BASE}/api/">API docs</a>
     </div>
   </div>
 </section>`;
 
   return layout({
     base: BASE, linkBase: LB(), lang: L, tr: TR, altLangs: ALT,
-    title: 'Enterprise — portfolio grant matching and deadline tracking',
-    description: `Match a whole portfolio against ${nf(startupCount)} funding programmes at once. Pipeline, deadline watch, de minimis tracking, saved searches, SSO and API access.`,
+    title: 'Enterprise — a grants workspace for a whole portfolio',
+    description: `Match a whole portfolio against ${nf(startupCount)} funding programmes at once, draft the applications, watch the deadlines, track the de minimis ceiling and report it. Open the workspace with no account.`,
     canonical: `${SITE_URL}${L === 'en' ? '' : '/' + L}/enterprise/`,
     body,
   });
@@ -1780,7 +1911,7 @@ function startupRow(p) {
   const amt = p.amount_max ?? p.amount_min;
   return `<article class="card">
   <div class="row-between">
-    <h3 style="margin:0"><a href="${LB()}/startups/${esc(p.country_code)}/${esc(p.slug)}/">${esc(p.name_en)}</a></h3>
+    <h3 style="margin:0"><a href="${SB()}/startups/${esc(p.country_code)}/${esc(p.slug)}/">${esc(p.name_en)}</a></h3>
     ${instrumentBadge(p)}
   </div>
   ${p.name_local && p.name_local !== p.name_en ? `<p class="small" style="margin:.2rem 0 0;color:var(--ink-3)">${esc(p.name_local)}</p>` : ''}
@@ -1793,6 +1924,45 @@ function startupRow(p) {
 }
 
 /** /startups/ — the index. */
+/**
+ * /startups/check/ — the company wizard.
+ *
+ * Same bundle as /check/, mounted in company mode. Two entry points into one
+ * matcher rather than two matchers: a founder who lands here and a founder who
+ * taps the tile in the app must get identical answers, and the surest way to
+ * guarantee that is for there to be only one implementation.
+ */
+function startupCheckPage() {
+  const body = `
+${disclaimerBar(TR)}
+<section class="section-tight shell">
+  ${breadcrumbs([
+    { label: TR('backHome'), href: `${LB()}/` },
+    { label: 'Startup grants', href: `${SB()}/startups/` },
+    { label: 'Check' },
+  ])}
+  <div id="app" class="wizard" data-mode="startup" data-view="check">
+    <noscript>
+      <div class="callout">
+        <p><strong>The company check needs JavaScript</strong> — it runs in your browser so your figures
+        never reach a server. Without it you can still read every programme:</p>
+        <p><a class="link-underline" href="${SB()}/startups/">Browse all ${nf(STARTUP_ALL.length)} startup programmes</a></p>
+      </div>
+    </noscript>
+  </div>
+</section>
+<script type="module" src="${BASE}/app.js?v=${ASSET_V}"></script>`;
+
+  return layout({
+    base: BASE, linkBase: LB(), lang: L, tr: TR, altLangs: ALT,
+    title: 'Check what your company qualifies for',
+    description: `Match your company against ${nf(STARTUP_ALL.length)} startup funding programmes in ${STARTUP_MANIFEST.countries.length} jurisdictions. Runs in your browser; your figures are not sent anywhere.`,
+    canonical: `${SITE_URL}/startups/check/`,
+    body,
+    nav: `<a class="btn btn-sm btn-ghost" href="${SB()}/startups/">Browse instead</a>`,
+  });
+}
+
 function startupsIndex() {
   const byType = {};
   for (const p of STARTUP_ALL) byType[p.grant_type] = (byType[p.grant_type] || 0) + 1;
@@ -1833,7 +2003,7 @@ ${disclaimerBar(TR)}
 
   <h2 style="margin-top:3rem">By country</h2>
   <div class="grid grid-3" style="margin-top:1.2rem">
-    ${STARTUP_MANIFEST.countries.map((c) => `<a class="card card-link" href="${LB()}/startups/${esc(c.slug)}/">
+    ${STARTUP_MANIFEST.countries.map((c) => `<a class="card card-link" href="${SB()}/startups/${esc(c.slug)}/">
       <div class="row-between"><strong>${c.flag} ${esc(c.name)}</strong><span class="small">${c.count}</span></div>
       <p class="small" style="margin:.4rem 0 0;color:var(--ink-3)">${c.priced} with published amounts</p>
     </a>`).join('')}
@@ -1846,7 +2016,7 @@ ${disclaimerBar(TR)}
     ${STARTUP_ALL.filter((p) => p.funder_type === 'private').slice(0, 8).map(startupRow).join('')}
   </div>
 
-  <p style="margin-top:2.5rem"><a class="btn btn-primary" href="${LB()}/startups/check/">Check what your company qualifies for</a></p>
+  <p style="margin-top:2.5rem"><a class="btn btn-primary" href="${SB()}/startups/check/">Check what your company qualifies for</a></p>
 </section>`;
 
   return layout({
@@ -1875,7 +2045,7 @@ function startupCountryPage(c) {
   const body = `
 ${disclaimerBar(TR)}
 <section class="section-tight shell">
-  ${breadcrumbs([{ label: TR('backHome'), href: `${LB()}/` }, { label: 'Startup grants', href: `${LB()}/startups/` }, { label: c.name }])}
+  ${breadcrumbs([{ label: TR('backHome'), href: `${LB()}/` }, { label: 'Startup grants', href: `${SB()}/startups/` }, { label: c.name }])}
   <span class="eyebrow eyebrow-accent">${c.flag} ${esc(c.name)}</span>
   <h1>Startup funding in ${esc(c.name)}</h1>
   <p class="lede" style="max-width:56ch">${c.count} programmes, ${c.priced} with a published amount.
@@ -1885,7 +2055,7 @@ ${disclaimerBar(TR)}
     hasPersonalBusiness(c.slug)
       ? `<div class="callout" style="margin-top:1.5rem">
     <p><strong>Also worth checking:</strong> the
-    <a href="${LB()}/${esc(c.slug)}/business/">business support schemes in our benefits dataset</a> for
+    <a href="${CB(c.slug)}/${esc(c.slug)}/business/">business support schemes in our benefits dataset</a> for
     ${esc(c.name)} — SME and self-employment programmes aimed at sole traders and very small firms rather
     than at funded startups.</p>
   </div>`
@@ -1932,8 +2102,8 @@ ${disclaimerBar(TR)}
 <section class="section-tight shell">
   ${breadcrumbs([
     { label: TR('backHome'), href: `${LB()}/` },
-    { label: 'Startup grants', href: `${LB()}/startups/` },
-    { label: c.name, href: `${LB()}/startups/${c.slug}/` },
+    { label: 'Startup grants', href: `${SB()}/startups/` },
+    { label: c.name, href: `${SB()}/startups/${c.slug}/` },
     { label: p.name_en },
   ])}
   <span class="eyebrow eyebrow-accent">${esc(INSTRUMENTS[p.grant_type]?.label ?? p.grant_type)}</span>
@@ -2054,7 +2224,7 @@ function audienceCountryPage(entry, data, aud) {
   const priced = list.filter((p) => p.amount_max != null || p.amount_min != null);
   const crumbs = [
     { label: TR('backHome'), href: `${LB()}/` },
-    { label: entry.name, href: `${LB()}/${cc}/` },
+    { label: entry.name, href: `${CB(cc)}/${cc}/` },
     { label: aud.label },
   ];
   const body = `
@@ -2111,7 +2281,7 @@ ${disclaimerBar(TR)}
   <div class="list-rows" style="margin-top:2rem">
     ${rows
       .map(
-        (r) => `<a class="list-row" href="${LB()}/${r.entry.slug}/for/${aud.id}/">
+        (r) => `<a class="list-row" href="${CB(r.entry.slug)}/${r.entry.slug}/for/${aud.id}/">
       <span><span class="list-row__name">${r.entry.flag} ${esc(r.entry.name)}</span></span>
       <span class="list-row__right"><span class="list-row__amount">${r.n}</span><span class="tiny">programmes</span></span>
     </a>`,
@@ -2143,7 +2313,7 @@ fs.mkdirSync(path.join(OUT, 'engine'), { recursive: true });
 fs.copyFileSync(path.join(__dirname, 'engine/matcher.js'), path.join(OUT, 'engine/matcher.js'));
 write(
   'favicon.svg',
-  `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><rect width="24" height="24" rx="5" fill="#1c1a16"/><circle cx="12" cy="12" r="7.5" fill="none" stroke="#faf6ef" stroke-width="1"/><path d="M8.4 12.2l2.5 2.5 4.7-5.2" fill="none" stroke="#e08a5a" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>`,
+  `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><rect width="24" height="24" rx="5" fill="#0f3d47"/><circle cx="12" cy="12" r="7.5" fill="none" stroke="#4fd1c5" stroke-width="1"/><path d="M8.4 12.2l2.5 2.5 4.7-5.2" fill="none" stroke="#ffffff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>`,
 );
 
 /* ---- Generate the whole page set once per language. ------------------
@@ -2182,6 +2352,10 @@ function buildLanguage(lang) {
   if (lang === 'en') {
     ALT = altFor('/startups/');
     page('startups/index.html', startupsIndex());
+    ALT = altFor('/startups/check/');
+    page('startups/check/index.html', startupCheckPage());
+    ALT = [];
+    page('dashboard/index.html', dashboardPage());
     for (const c of STARTUP_MANIFEST.countries) {
       ALT = altFor(`/startups/${c.slug}/`);
       page(`startups/${c.slug}/index.html`, startupCountryPage(c));
@@ -2266,11 +2440,21 @@ write('app/app.css', fs.readFileSync(path.join(SRC, 'pwa/app.css'), 'utf8'));
 write('app/app.js', fs.readFileSync(path.join(SRC, 'pwa/app.js'), 'utf8'));
 write('app/native.js', fs.readFileSync(path.join(SRC, 'pwa/native.js'), 'utf8'));
 write('app/auth.js', fs.readFileSync(path.join(SRC, 'pwa/auth.js'), 'utf8'));
+/* The workspace. One directory deep, like /app/, so its ../packages/ and
+   ../engine/ specifiers resolve to the copies written at the root. */
+write('dashboard/dashboard.js', fs.readFileSync(path.join(SRC, 'pwa/dashboard.js'), 'utf8'));
+write('dashboard/dashboard.css', fs.readFileSync(path.join(SRC, 'pwa/dashboard.css'), 'utf8'));
 /* The service worker must sit at the root to claim the whole scope. */
 write('sw.js', fs.readFileSync(path.join(SRC, 'pwa/sw.js'), 'utf8'));
 write('manifest.webmanifest', webManifest());
 write('icon-192.svg', appIcon(192));
 write('icon-512.svg', appIcon(512));
+/* PNGs as well as SVGs, because Safari ignores an SVG apple-touch-icon and
+   several Android launchers still prefer a raster. See src/icon-raster.mjs. */
+for (const s of [180, 192, 512]) {
+  fs.writeFileSync(path.join(OUT, `icon-${s}.png`), iconPng(s));
+  PAGES.push(`icon-${s}.png`);
+}
 /* The app imports these by relative path, so they must exist alongside it. */
 /* The source lives at src/engine/startup.js and imports ../../packages/...,
    which is correct in the repo but escapes dist/ once emitted. Rewrite the
@@ -2284,6 +2468,9 @@ write(
 write('packages/deadlines/index.js', fs.readFileSync(path.join(ROOT, 'packages/deadlines/index.js'), 'utf8'));
 write('packages/scoring/index.js', fs.readFileSync(path.join(ROOT, 'packages/scoring/index.js'), 'utf8'));
 write('packages/scoring/rates.js', fs.readFileSync(path.join(ROOT, 'packages/scoring/rates.js'), 'utf8'));
+/* The dashboard needs the state-aid ledger and the register adapters too. */
+write('packages/stateaid/index.js', fs.readFileSync(path.join(ROOT, 'packages/stateaid/index.js'), 'utf8'));
+write('packages/registry/index.js', fs.readFileSync(path.join(ROOT, 'packages/registry/index.js'), 'utf8'));
 
 /* Startup pools as JSON assets. The Worker reads these through env.ASSETS
    rather than bundling the dataset, so a data refresh is a rebuild and not a

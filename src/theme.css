@@ -341,14 +341,14 @@ footer.site a:hover { color: var(--ink); opacity: 1; }
 .status--closing::after { background: var(--terracotta); animation: pulse 2s ease-in-out infinite; }
 .status--open    { color: var(--sage); background: rgba(46,125,91,.12); }
 .status--open::after { background: var(--sage); }
-.status--soon    { color: #f0d089; background: rgba(227,178,60,.12); }
+.status--soon    { color: #7a5a05; background: rgba(227,178,60,.16); }
 .status--soon::after { background: var(--gold); }
 .status--later   { color: var(--ink-3); background: rgba(29,36,48,.06); }
 .status--later::after { background: var(--ink-4); }
 .status--stalled { color: var(--ink-4); background: rgba(29,36,48,.05); }
 .status--stalled::after { background: var(--ink-4); }
 .status--unknown { color: var(--ink-4); background: rgba(29,36,48,.04); }
-.status--unknown::after { background: rgba(255,255,255,.25); }
+.status--unknown::after { background: var(--ink-4); }
 @keyframes pulse { 0%,100% { opacity: 1; transform: scale(1); } 50% { opacity: .45; transform: scale(.8); } }
 
 /* ------------------------------------------------------------------ */
@@ -796,4 +796,20 @@ div.q { margin-bottom: 2.4rem; }
 
 @media (prefers-reduced-motion: reduce) {
   .step4, .step4__n { opacity: 1; transform: none; }
+}
+
+/* Numbered job rows on /enterprise/ — a grants team buys a way through
+   find → apply → manage → report, so the page is arranged that way and the
+   number is the thing the eye lands on first. */
+.jobrow { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 1.2rem; align-items: start; }
+.jobrow__n {
+  font-family: var(--font-heading);
+  font-size: 2.2rem;
+  line-height: 1;
+  color: var(--teal);
+  opacity: .35;
+}
+@media (max-width: 620px) {
+  .jobrow { grid-template-columns: 1fr; gap: .4rem; }
+  .jobrow__n { font-size: 1.6rem; }
 }
