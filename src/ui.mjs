@@ -34,6 +34,18 @@ export const ICON = {
 /* Layout                                                              */
 /* ------------------------------------------------------------------ */
 
+/**
+ * Cache-busting stamp for the stylesheet.
+ *
+ * GitHub Pages serves assets with a max-age, so after a deploy a returning
+ * visitor keeps the OLD theme.css against the NEW html until it expires. That
+ * is not a theoretical problem: it is why several rounds of "the colours did
+ * not change" were reported against changes that were already live. Appending
+ * the build stamp makes the URL change whenever the file does, so the browser
+ * has no stale copy to reuse.
+ */
+export const ASSET_V = process.env.ASSET_V || String(Date.now());
+
 export function layout({
   base,
   linkBase,
@@ -73,7 +85,7 @@ ${canonical ? `<meta property="og:url" content="${attr(canonical)}">` : ''}
 <meta name="theme-color" content="#000000">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="${base}/theme.css">
+<link rel="stylesheet" href="${base}/theme.css?v=${ASSET_V}">
 <noscript><style>.reveal,.blur-word,.flow::before{opacity:1!important;filter:none!important;transform:none!important}</style></noscript>
 <link rel="icon" href="${base}/favicon.svg" type="image/svg+xml">
 <link rel="alternate" type="application/json" href="${base}/api/v1/countries.json" title="Unclaimed programme API">
@@ -250,6 +262,32 @@ export function applyBadge(p) {
   return p.is_automatic
     ? `<span class="badge badge-auto-apply">Automatic — no application</span>`
     : `<span class="badge badge-action">You must apply</span>`;
+}
+
+/**
+ * What to say when there is no published figure.
+ *
+ * 1,462 of the 3,900 records have no amount_min or amount_max — the award is
+ * calculated from the claimant's circumstances and the funder does not
+ * publish a ceiling. Every one of them does carry an amount_note, and 915 of
+ * those notes contain digits: percentages, contribution rates, revenue
+ * thresholds, decree numbers.
+ *
+ * It would be easy to regex a range out of those and print "€200–€3,000". It
+ * would also be inventing benefit amounts, which is the single worst thing
+ * this product can do — someone plans around the number. So the rule is: a
+ * range only ever comes from amount_min/amount_max. Where there is none, name
+ * who decides and on what basis, which is information the record actually
+ * contains, instead of the dead phrase "Amount varies".
+ */
+export function amountBasis(p) {
+  const note = (p.amount_note || '').trim();
+  if (/means[- ]test|income[- ]based|depending on|based on your|calculated/i.test(note)) {
+    return `Calculated by ${p.funder}`;
+  }
+  if (/%/.test(note)) return `A percentage — set by ${p.funder}`;
+  if (note) return `Set by ${p.funder}`;
+  return `Set by ${p.funder}`;
 }
 
 export function amountLabel(p, currency) {

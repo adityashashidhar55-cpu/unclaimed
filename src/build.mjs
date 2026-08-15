@@ -60,6 +60,8 @@ import {
   verificationBadge,
   applyBadge,
   amountLabel,
+  amountBasis,
+  ASSET_V,
   progHref,
   categoryLabel,
   benefitTypeLabel,
@@ -847,7 +849,7 @@ ${disclaimerBar(TR)}
     </noscript>
   </div>
 </section>
-<script type="module" src="${BASE}/app.js"></script>`;
+<script type="module" src="${BASE}/app.js?v=${ASSET_V}"></script>`;
 
   return layout({
     base: BASE,
@@ -1239,7 +1241,7 @@ function appShell() {
 <meta name="description" content="Find the government money you are owed. Works offline, no account.">
 <meta name="theme-color" content="#000000">
 <link rel="manifest" href="${BASE}/manifest.webmanifest">
-<link rel="stylesheet" href="${BASE}/app/app.css">
+<link rel="stylesheet" href="${BASE}/app/app.css?v=${ASSET_V}">
 <link rel="apple-touch-icon" href="${BASE}/icon-192.png">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
