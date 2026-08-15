@@ -2604,6 +2604,26 @@ write('404.html', layout({
  */
 const PUBLIC_FREE_ROWS = FREE_ROWS;
 
+/**
+ * Whether to emit the unstripped copies at all. Off by default, and that
+ * default is load-bearing.
+ *
+ * The design is that /api/v1/full/ sits inside run_worker_first, so the Worker
+ * can read it through env.ASSETS while its router 404s every external request.
+ * That is true the moment the Worker is deployed — and completely false until
+ * then. The site is on GitHub Pages today, where there is no router, so
+ * emitting the full copies published the entire directory at a guessable path
+ * and undid the whole paywall. robots.txt disallowing it is a request, not a
+ * control.
+ *
+ * So: the full copies ship only when someone sets EMIT_FULL_DATASET=1, which
+ * should happen in the same change that puts the Worker in front of the site.
+ * Without them the Worker falls back to the stripped file (see loadCountry),
+ * which degrades a paid answer rather than leaking an unpaid one — the right
+ * direction to fail in.
+ */
+const EMIT_FULL = process.env.EMIT_FULL_DATASET === '1';
+
 function opaqueId(slug) {
   /* Not security — the record is already stripped. This exists so two locked
      rows are distinguishable to a client that has to key them, without the
@@ -2698,9 +2718,9 @@ function publicDataset(data) {
 
 for (const { entry, data } of countries) {
   write(`api/v1/programmes/${entry.slug}.json`, JSON.stringify(publicDataset(data)));
-  /* The unstripped copy the Worker reads to answer a paid check. Inside
-     run_worker_first, and the router 404s every external request to it. */
-  write(`api/v1/full/programmes/${entry.slug}.json`, JSON.stringify(data));
+  /* The unstripped copy the Worker reads to answer a paid check — only where
+     there is a Worker in front of it to refuse direct requests. */
+  if (EMIT_FULL) write(`api/v1/full/programmes/${entry.slug}.json`, JSON.stringify(data));
 }
 
 // ---- machine-readable layer ----
@@ -2765,7 +2785,7 @@ write('packages/vault/index.js', fs.readFileSync(path.join(ROOT, 'packages/vault
    that many countries draw on. */
 for (const c of STARTUP_MANIFEST.countries) {
   write(`api/v1/startups/${c.slug}.json`, JSON.stringify(publicStartups(STARTUP_DATA[c.slug])));
-  write(`api/v1/full/startups/${c.slug}.json`, JSON.stringify(STARTUP_DATA[c.slug]));
+  if (EMIT_FULL) write(`api/v1/full/startups/${c.slug}.json`, JSON.stringify(STARTUP_DATA[c.slug]));
 }
 write(
   'api/v1/startups/index.json',
