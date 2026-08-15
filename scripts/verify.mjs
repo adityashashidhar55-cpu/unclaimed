@@ -198,5 +198,59 @@ landingHtml.includes('Safety net')
   ? ok('timeout fallback reveals content if the observer fails')
   : fail('no timeout fallback for the reveal animation');
 
+
+/* Raster icons. Safari ignores an SVG apple-touch-icon, so an SVG-only icon
+   set means every iPhone home-screen install gets a page screenshot instead of
+   a logo — a failure nobody reports because it looks like it worked. */
+for (const s of [180, 192, 512]) {
+  const f = path.join(DIST, `icon-${s}.png`);
+  if (!fs.existsSync(f)) { fail(`icon-${s}.png missing`); continue; }
+  const b = fs.readFileSync(f);
+  const sig = b.subarray(0, 8).toString('hex') === '89504e470d0a1a0a';
+  const w = b.readUInt32BE(16);
+  sig && w === s ? ok(`icon-${s}.png is a ${s}px PNG`) : fail(`icon-${s}.png is not a valid ${s}px PNG`);
+}
+landingHtml.includes('icon-180.png') ? ok('apple-touch-icon points at a PNG') : fail('apple-touch-icon is not a PNG');
+
+/* The company wizard has its own URL. It is linked from the startups index, so
+   if it stops being generated that link dies silently. */
+fs.existsSync(path.join(DIST, 'startups/check/index.html'))
+  ? ok('company check page present')
+  : fail('/startups/check/ MISSING');
+
+
+/* The workspace. The enterprise page now links to it as the product, so a
+   build that ships the page without the app is a broken promise, not a
+   missing nicety. */
+for (const f of ['dashboard/index.html', 'dashboard/dashboard.js', 'dashboard/dashboard.css',
+                 'packages/stateaid/index.js', 'packages/registry/index.js']) {
+  fs.existsSync(path.join(DIST, f)) ? ok(`${f} present`) : fail(`${f} MISSING`);
+}
+{
+  /* The dashboard sits one directory deep so its ../packages/ and ../engine/
+     specifiers resolve. Assert every relative import actually exists, because
+     a module that 404s leaves a blank page and no error the visitor can see. */
+  const js = fs.readFileSync(path.join(DIST, 'dashboard/dashboard.js'), 'utf8');
+  let bad = 0;
+  for (const m of js.matchAll(/from '(\.[^']+)'/g)) {
+    const target = path.resolve(path.join(DIST, 'dashboard'), m[1]);
+    if (!fs.existsSync(target)) { fail(`dashboard imports ${m[1]}, which was not emitted`); bad += 1; }
+  }
+  if (!bad) ok('every dashboard import resolves in dist');
+}
+
+/* The headline splitter. The whole document is a template literal, so a
+   single-escaped \s silently became the letter s and shipped headlines like
+   "One work pace for every company you upport." Assert the emitted regex. */
+landingHtml.includes(String.raw`split(/\s+/)`)
+  ? ok('blur-word splitter emits a real \\s regex')
+  : fail('blur-word splitter lost its backslash — headlines will split on the letter s');
+
+/* One theme-color, not two. A duplicate meta is a coin toss in some browsers. */
+{
+  const n = (landingHtml.match(/name="theme-color"/g) || []).length;
+  n === 1 ? ok('exactly one theme-color meta') : fail(`${n} theme-color metas`);
+}
+
 console.log(`\n${checks} checks passed, ${failures} failed\n`);
 process.exit(failures ? 1 : 0);
