@@ -313,34 +313,33 @@ function landing() {
 <section class="hero-centre" style="padding:clamp(3.5rem,8vw,6rem) 0 clamp(3rem,6vw,5rem);position:relative">
   <div class="shell">
     ${orbit(jurisdictions)}
-    <span class="eyebrow eyebrow-accent reveal">${nf(STATS.total + startupCount)} sourced programmes · ${jurisdictions} jurisdictions</span>
-    <h1 style="max-width:18ch;margin-inline:auto" data-blur-words>The money you are owed, and nobody told you about.</h1>
+    <span class="eyebrow eyebrow-accent reveal">${esc(TR('homeEyebrow', nf(STATS.total + startupCount), jurisdictions))}</span>
+    <h1 style="max-width:18ch;margin-inline:auto" data-blur-words>${esc(TR('homeH1'))}</h1>
     <p class="lede reveal" data-delay="200" style="max-width:54ch;margin:1.4rem auto 0">
-      Governments and funders hand out rent support, family payments, R&amp;D credits and startup grants
-      every year. Most of it goes unclaimed because nobody can find it. We found it, sourced it, and dated it.
+      ${esc(TR('homeLede'))}
     </p>
 
     <div class="row reveal" data-delay="340" style="margin-top:2.2rem;gap:.7rem;justify-content:center">
-      <a class="btn btn-primary" href="${LB()}/check/">Check what you're owed</a>
-      <a class="btn" href="${SB()}/startups/">I'm a founder</a>
+      <a class="btn btn-primary" href="${LB()}/check/">${esc(TR('ctaCheck'))}</a>
+      <a class="btn" href="${SB()}/startups/">${esc(TR('homeFounderCta'))}</a>
     </div>
 
     <div class="grid grid-4 reveal" data-delay="460" style="margin-top:3.4rem">
       <div class="stat">
         <span class="stat__n tally" data-tally="${STATS.total + startupCount}">${nf(STATS.total + startupCount)}</span>
-        <span class="stat__l">Programmes</span>
+        <span class="stat__l">${esc(TR('statProgrammes'))}</span>
       </div>
       <div class="stat">
         <span class="stat__n tally" data-tally="${openNow}">${nf(openNow)}</span>
-        <span class="stat__l">Open right now</span>
+        <span class="stat__l">${esc(TR('statOpenNow'))}</span>
       </div>
       <div class="stat">
         <span class="stat__n tally" data-tally="${reopening}">${nf(reopening)}</span>
-        <span class="stat__l">Closed, with a reopen date</span>
+        <span class="stat__l">${esc(TR('statReopen'))}</span>
       </div>
       <div class="stat">
         <span class="stat__n tally" data-tally="${jurisdictions}">${jurisdictions}</span>
-        <span class="stat__l">Jurisdictions</span>
+        <span class="stat__l">${esc(TR('statJurisdictions'))}</span>
       </div>
     </div>
   </div>
@@ -349,29 +348,28 @@ function landing() {
 <section class="section-tight">
   <div class="shell">
     <div class="callout reveal">
-      <p><strong>Closed does not mean hidden.</strong> Every grant site either buries closed calls — so you
-      never learn they exist and miss them again next year — or lists them as open and wastes your afternoon.
-      We show them with the only fact that matters: <em class="serif-italic">when they come back</em>.</p>
+      <p><strong>${esc(TR('homeClosedTitle'))}</strong> ${esc(TR('homeClosedBody'))}
+      <em class="serif-italic">${esc(TR('homeClosedEm'))}</em>.</p>
     </div>
   </div>
 </section>
 
 <section class="section">
   <div class="shell">
-    <span class="eyebrow reveal">How it works</span>
-    <h2 class="reveal" style="max-width:16ch">Four questions. <em class="serif-italic">Then the money.</em></h2>
+    <span class="eyebrow reveal">${esc(TR('homeHowEyebrow'))}</span>
+    <h2 class="reveal" style="max-width:16ch">${esc(TR('homeHowH2a'))} <em class="serif-italic">${esc(TR('homeHowH2b'))}</em></h2>
     <div class="steps4">
       ${[
-        ['1', 'Tell us about you', 'Country, situation, rough income. No account, no email, nothing stored — the matcher runs in your browser.'],
-        ['2', 'See the number', 'What you are owed across every programme you qualify for. Free, always, no wall.'],
-        ['3', 'Get the list and the paperwork', 'Which schemes, what each needs, and a prepared application per claim with the fields already filled.'],
-        ['4', 'Never miss the window', 'Deadlines in your calendar, and an alert when a closed programme reopens.'],
+        ['1', TR('step1T'), TR('step1B')],
+        ['2', TR('step2T'), TR('step2B')],
+        ['3', TR('step3T'), TR('step3B')],
+        ['4', TR('step4T'), TR('step4B')],
       ]
         .map(
           (st) => `<div class="step4">
         <div class="step4__n">${st[0]}</div>
-        <h3>${st[1]}</h3>
-        <p>${st[2]}</p>
+        <h3>${esc(st[1])}</h3>
+        <p>${esc(st[2])}</p>
       </div>`,
         )
         .join('')}
@@ -381,22 +379,20 @@ function landing() {
 
 <section class="section-rule section">
   <div class="shell">
-    <span class="eyebrow reveal">Two products</span>
-    <h2 class="reveal" style="max-width:18ch">Households and founders need different things.</h2>
+    <span class="eyebrow reveal">${esc(TR('homeTwoEyebrow'))}</span>
+    <h2 class="reveal" style="max-width:18ch">${esc(TR('homeTwoH2'))}</h2>
     <div class="grid grid-2" style="margin-top:2.4rem">
       <a class="card card-link reveal" href="${LB()}/check/">
-        <span class="eyebrow">For people</span>
-        <h3>${nf(STATS.total)} benefits across ${countries.length} countries</h3>
-        <p class="small">Rent support, family payments, energy help, transport concessions, tax credits.
-        Means-tested rules modelled from the published thresholds, with every source linked.</p>
-        <p class="small" style="color:#fff;margin-top:.8rem">Check what you're owed →</p>
+        <span class="eyebrow">${esc(TR('homeForPeople'))}</span>
+        <h3>${esc(TR('homePeopleH3', nf(STATS.total), countries.length))}</h3>
+        <p class="small">${esc(TR('homePeopleB'))}</p>
+        <p class="small" style="color:#fff;margin-top:.8rem">${esc(TR('ctaCheck'))} →</p>
       </a>
       <a class="card card-link reveal" data-delay="120" href="${SB()}/startups/">
-        <span class="eyebrow eyebrow-accent">For founders</span>
-        <h3>${nf(startupCount)} grants across ${STARTUP_MANIFEST.countries.length} jurisdictions</h3>
-        <p class="small">Public and private, ranked by what you can realistically win rather than headline
-        size — with the EU de minimis ceiling applied so the plan is one you can lawfully execute.</p>
-        <p class="small" style="color:#fff;margin-top:.8rem">Find startup funding →</p>
+        <span class="eyebrow eyebrow-accent">${esc(TR('homeForFounders'))}</span>
+        <h3>${esc(TR('homeFoundersH3', nf(startupCount), STARTUP_MANIFEST.countries.length))}</h3>
+        <p class="small">${esc(TR('homeFoundersB'))}</p>
+        <p class="small" style="color:#fff;margin-top:.8rem">${esc(TR('homeFindFunding'))} →</p>
       </a>
     </div>
   </div>
@@ -404,18 +400,18 @@ function landing() {
 
 <section class="section">
   <div class="shell">
-    <span class="eyebrow reveal">Why trust the number</span>
-    <h2 class="reveal" style="max-width:20ch">Every figure is a published rule, <em class="serif-italic">not a guess.</em></h2>
+    <span class="eyebrow reveal">${esc(TR('homeTrustEyebrow'))}</span>
+    <h2 class="reveal" style="max-width:20ch">${esc(TR('homeTrustH2a'))} <em class="serif-italic">${esc(TR('homeTrustH2b'))}</em></h2>
     <div class="grid grid-3" style="margin-top:2.2rem">
       ${[
-        ['Sourced and dated', 'Every programme links to the funder\'s own page with a verbatim quote and the date we last read it. Records we have not re-checked say so.'],
-        ['Nulls, never estimates', 'Where a funder publishes no amount we show no amount. An invented figure is worse than a blank.'],
-        ['Nothing leaves your device', 'The free check runs entirely in your browser. No account, no tracking, no answers stored anywhere.'],
+        [TR('trust1T'), TR('trust1B')],
+        [TR('trust2T'), TR('trust2B')],
+        [TR('trust3T'), TR('trust3B')],
       ]
         .map(
           (c, i) => `<div class="card reveal" data-delay="${i * 110}">
-        <h3 style="font-size:1.12rem">${c[0]}</h3>
-        <p class="small">${c[1]}</p>
+        <h3 style="font-size:1.12rem">${esc(c[0])}</h3>
+        <p class="small">${esc(c[1])}</p>
       </div>`,
         )
         .join('')}
@@ -425,13 +421,13 @@ function landing() {
 
 <section class="section-rule section">
   <div class="shell" style="text-align:center">
-    <h2 class="reveal" style="max-width:18ch;margin-inline:auto">Find out in ninety seconds.</h2>
+    <h2 class="reveal" style="max-width:18ch;margin-inline:auto">${esc(TR('homeFinalH2'))}</h2>
     <p class="lede reveal" data-delay="120" style="max-width:40ch;margin:1rem auto 2rem">
-      No sign-up. No card. The number is free forever.
+      ${esc(TR('homeFinalLede'))}
     </p>
     <div class="row reveal" data-delay="220" style="justify-content:center">
-      <a class="btn btn-primary" href="${LB()}/check/">Check what you're owed</a>
-      <a class="btn" href="${LB()}/pricing/">See pricing</a>
+      <a class="btn btn-primary" href="${LB()}/check/">${esc(TR('ctaCheck'))}</a>
+      <a class="btn" href="${LB()}/pricing/">${esc(TR('seePricing'))}</a>
     </div>
   </div>
 </section>`;
@@ -462,7 +458,7 @@ function programmePage(entry, data, p) {
   const cur = p.amount_currency || data.currency;
   const amt = amountLabel(p, data.currency);
   const crumbs = [
-    { label: 'Home', href: `${LB()}/` },
+    { label: TR('backHome'), href: `${LB()}/` },
     { label: entry.name, href: `${CB(cc)}/${cc}/` },
     { label: categoryLabel(p.category), href: `${CB(cc)}/${cc}/${p.category}/` },
     { label: p.name_en },
@@ -702,7 +698,7 @@ function countryPage(entry, data) {
     })
     .join('');
 
-  const crumbs = [{ label: 'Home', href: `${LB()}/` }, { label: 'Countries', href: `${LB()}/countries/` }, { label: entry.name }];
+  const crumbs = [{ label: TR('backHome'), href: `${LB()}/` }, { label: TR('navCountries'), href: `${LB()}/countries/` }, { label: entry.name }];
 
   const body = `
 <section class="section-tight shell">
@@ -784,7 +780,7 @@ function categoryPage(entry, data, cat, list) {
       : '';
   const cc = entry.slug;
   const crumbs = [
-    { label: 'Home', href: `${LB()}/` },
+    { label: TR('backHome'), href: `${LB()}/` },
     { label: entry.name, href: `${CB(cc)}/${cc}/` },
     { label: categoryLabel(cat) },
   ];
@@ -845,7 +841,7 @@ function globalCategoryPage(cat) {
     })
     .join('');
 
-  const crumbs = [{ label: 'Home', href: `${LB()}/` }, { label: 'Browse' }, { label: categoryLabel(cat) }];
+  const crumbs = [{ label: TR('backHome'), href: `${LB()}/` }, { label: 'Browse' }, { label: categoryLabel(cat) }];
   const total = STATS.byCategory[cat] || 0;
 
   const body = `
@@ -882,23 +878,22 @@ function countriesIndex() {
       const verified = data.programmes.filter((p) => p.verification_status === 'verified').length;
       return `<a class="list-row" href="${CB(entry.slug)}/${entry.slug}/">
       <span><span class="list-row__name">${entry.flag} ${esc(entry.name)}</span>
-      <span class="list-row__meta">${entry.categories.length} categories · ${verified} verified · ${entry.currency}</span></span>
-      <span class="list-row__right"><span class="list-row__amount">${entry.programme_count}</span><span class="tiny">programmes</span></span>
+      <span class="list-row__meta">${entry.categories.length} ${esc(TR('ctryCategories'))} · ${verified} ${esc(TR('ctryVerified'))} · ${entry.currency}</span></span>
+      <span class="list-row__right"><span class="list-row__amount">${entry.programme_count}</span><span class="tiny">${esc(TR('ctryProgrammes'))}</span></span>
     </a>`;
     })
     .join('');
 
   const body = `
 <section class="section-tight shell">
-  ${breadcrumbs([{ label: 'Home', href: `${LB()}/` }, { label: 'Countries' }])}
-  <span class="eyebrow eyebrow-accent">Coverage</span>
-  <h1>${STATS.countryCount} countries, ${nf(STATS.total)} programmes</h1>
-  <p class="lede" style="max-width:56ch">Coverage is deliberately uneven — we went deep on national schemes everywhere
-  and added regional and city schemes where they matter most. Counts below are live from the dataset.</p>
+  ${breadcrumbs([{ label: TR('backHome'), href: `${LB()}/` }, { label: TR('navCountries') }])}
+  <span class="eyebrow eyebrow-accent">${esc(TR('ctryEyebrow'))}</span>
+  <h1>${esc(TR('ctryH1n', STATS.countryCount, nf(STATS.total)))}</h1>
+  <p class="lede" style="max-width:56ch">${esc(TR('ctryLede2'))}</p>
   <div class="list-rows" style="margin-top:2rem">${rows}</div>
   <div class="callout" style="margin-top:2.5rem">
-    <p><strong>Country not here?</strong> The engine and schema are country-agnostic — adding one is a data job, not a code job.
-    Open an issue on <a class="link-underline" href="https://github.com/adityashashidhar55-cpu/unclaimed/issues">GitHub</a> and say which one.</p>
+    <p><strong>${esc(TR('ctryNotHereT'))}</strong> ${esc(TR('ctryNotHereB'))}
+    <a class="link-underline" href="https://github.com/adityashashidhar55-cpu/unclaimed/issues">GitHub</a></p>
   </div>
 </section>`;
 
@@ -912,7 +907,7 @@ function countriesIndex() {
     description: `Benefit and grant coverage across ${STATS.countryCount} countries — ${nf(STATS.total)} sourced programmes with eligibility rules and official links.`,
     canonical: `${SITE_URL}/countries/`,
     body,
-    jsonld: [breadcrumbLd([{ label: 'Home', href: `${LB()}/` }, { label: 'Countries' }])],
+    jsonld: [breadcrumbLd([{ label: TR('backHome'), href: `${LB()}/` }, { label: TR('navCountries') }])],
   });
 }
 
@@ -927,9 +922,8 @@ ${disclaimerBar(TR)}
   <div id="app" class="wizard">
     <noscript>
       <div class="callout">
-        <p><strong>The eligibility check needs JavaScript</strong> — it runs entirely in your browser so that
-        nothing you type ever reaches a server. Without it you can still browse every programme by country:</p>
-        <p><a class="link-underline" href="${LB()}/countries/">Browse all ${STATS.countryCount} countries</a></p>
+        <p><strong>${esc(TR('checkNoJsTitle'))}</strong> — ${esc(TR('checkNoJsBody'))}</p>
+        <p><a class="link-underline" href="${LB()}/countries/">${esc(TR('checkBrowseAll', STATS.countryCount))}</a></p>
       </div>
     </noscript>
   </div>
@@ -942,11 +936,11 @@ ${disclaimerBar(TR)}
     lang: L,
     tr: TR,
     altLangs: ALT,
-    title: 'Check what you are owed',
-    description: `A 90-second anonymous eligibility check against ${nf(STATS.total)} government support programmes in ${STATS.countryCount} countries. Nothing is stored on a server.`,
+    title: TR('checkTitle'),
+    description: TR('checkDesc', nf(STATS.total), STATS.countryCount),
     canonical: `${SITE_URL}/check/`,
     body,
-    nav: `<a class="btn btn-sm btn-ghost" href="${LB()}/countries/">Browse instead</a>`,
+    nav: `<a class="btn btn-sm btn-ghost" href="${LB()}/countries/">${esc(TR('navBrowseInstead'))}</a>`,
   });
 }
 
@@ -957,91 +951,54 @@ ${disclaimerBar(TR)}
 function methodologyPage() {
   const body = `
 <section class="section-tight shell-narrow">
-  ${breadcrumbs([{ label: 'Home', href: `${LB()}/` }, { label: 'Methodology' }])}
-  <span class="eyebrow eyebrow-accent">Trust</span>
-  <h1>How we know what we say we know</h1>
-  <p class="lede">Everything on this site is checkable. This page tells you exactly how the data was
-  built, what the confidence levels mean, and — importantly — what is still wrong with it.</p>
+  ${breadcrumbs([{ label: TR('backHome'), href: `${LB()}/` }, { label: TR('methodology') }])}
+  <span class="eyebrow eyebrow-accent">${esc(TR('methEyebrow'))}</span>
+  <h1>${esc(TR('methH1'))}</h1>
+  <p class="lede">${esc(TR('methLede'))}</p>
 
-  <h2 id="sourcing" style="margin-top:3rem">Sourcing</h2>
-  <p>Every record is a real, currently-running programme published by a government, public body or
-  well-known institution. Each one carries an official <code>source_url</code> on the funder's own domain
-  and, where we quoted it, a verbatim <code>source_snippet</code> from that page.</p>
-  <p>Rules we hold ourselves to, and which you can check us against:</p>
-  <ul>
-    <li>No invented URLs. If we couldn't find the exact deep link, we link the official landing page.</li>
-    <li>No guessed amounts. If the amount depends on your circumstances, the fields are left empty and
-    a note explains why — we never fabricate a plausible-looking figure.</li>
-    <li>No ended programmes. Schemes that closed were deliberately excluded during curation.</li>
-    <li>Every record is dated. <code>last_verified_at</code> is when a human last looked.</li>
-  </ul>
+  <h2 id="sourcing" style="margin-top:3rem">${esc(TR('methSrcH'))}</h2>
+  <p>${TR('methSrcP1')}</p>
+  <p>${esc(TR('methSrcP2'))}</p>
+  <ul>${TR('methSrcL').map((x) => `<li>${x}</li>`).join('')}</ul>
 
-  <h2 id="verification" style="margin-top:3rem">The two verification states</h2>
+  <h2 id="verification" style="margin-top:3rem">${esc(TR('methVerH'))}</h2>
   <div class="grid grid-2" style="margin:1.5rem 0">
-    <div class="card"><p>${verificationBadge('verified')}</p><p class="small">A researcher opened the official page
-    and confirmed the rule, amount and link. <strong>${nf(STATS.verified)} records</strong> (${STATS.verifiedPct}%).</p></div>
-    <div class="card"><p>${verificationBadge('auto_extracted')}</p><p class="small">Extracted from an official source
-    during curation, but not re-read by a person since. Treat it as a strong lead, not a guarantee.
-    <strong>${nf(STATS.total - STATS.verified)} records</strong>.</p></div>
+    <div class="card"><p>${verificationBadge('verified')}</p><p class="small">${esc(TR('methVerVerified'))}
+    <strong>${nf(STATS.verified)} ${esc(TR('methVerRecords'))}</strong> (${STATS.verifiedPct}%).</p></div>
+    <div class="card"><p>${verificationBadge('auto_extracted')}</p><p class="small">${esc(TR('methVerAuto'))}
+    <strong>${nf(STATS.total - STATS.verified)} ${esc(TR('methVerRecords'))}</strong>.</p></div>
   </div>
-  <p>We show the difference on every card rather than flattening both into one confident-looking badge.
-  A site that claims uniform accuracy across ${nf(STATS.total)} programmes in ${STATS.countryCount} countries is lying to you.</p>
+  <p>${esc(TR('methVerP', nf(STATS.total), STATS.countryCount))}</p>
 
-  <h2 id="matching" style="margin-top:3rem">How matching works</h2>
-  <p>Your answers are evaluated against nine published rule types: geography, work or life status, student
-  status, age, household income, dependent children, residency status, length of residence, and housing
-  tenure. Each programme lands in one of three buckets:</p>
-  <ul>
-    <li><strong>Eligible</strong> — you pass every rule the record publishes.</li>
-    <li><strong>Needs one more answer</strong> — you pass everything we can test, but one rule needs a
-    detail you haven't given. We show you the exact question.</li>
-    <li><strong>Not eligible</strong> — you fail at least one rule, and we name it in plain language.</li>
-  </ul>
-  <p>A record with no published restriction on a given attribute passes that attribute. This is deliberate:
-  it is better to surface a programme you might not get than to silently hide one you would.</p>
+  <h2 id="matching" style="margin-top:3rem">${esc(TR('methMatH'))}</h2>
+  <p>${esc(TR('methMatP1'))}</p>
+  <ul>${TR('methMatL').map((x) => `<li>${x}</li>`).join('')}</ul>
+  <p>${esc(TR('methMatP2'))}</p>
 
-  <h2 id="money" style="margin-top:3rem">What the big number means (and doesn't)</h2>
-  <p>The headline figure is the sum of published annualised maximums for programmes in your
-  <em>eligible</em> bucket only. Monthly amounts are multiplied by twelve; one-off amounts are counted once.</p>
-  <ul>
-    <li>It is an <strong>upper bound of published ceilings</strong>, not a prediction of your payment.
-    Most means-tested schemes taper — you get the maximum only at the bottom of the income range.</li>
-    <li>Programmes with no published amount contribute <strong>zero</strong>. Your real entitlement is
-    almost certainly higher than the number shown, not lower.</li>
-    <li>Loan and credit-facility ceilings are <strong>excluded</strong> from the headline and reported
-    separately, because borrowing capacity is not income.</li>
-  </ul>
+  <h2 id="money" style="margin-top:3rem">${esc(TR('methMoneyH'))}</h2>
+  <p>${TR('methMoneyP')}</p>
+  <ul>${TR('methMoneyL').map((x) => `<li>${x}</li>`).join('')}</ul>
 
-  <h2 id="privacy" style="margin-top:3rem">Privacy</h2>
-  <p>The eligibility check runs entirely in your browser. Your answers are never transmitted anywhere —
-  there is no server to transmit them to. This site is static files. If you use the "copy link" feature,
-  your answers are encoded in the URL you choose to share, and nowhere else. There are no accounts,
-  no cookies for tracking, and no analytics that identify you.</p>
+  <h2 id="privacy" style="margin-top:3rem">${esc(TR('methPrivH'))}</h2>
+  <p>${esc(TR('methPrivP'))}</p>
 
-  <h2 id="limits" style="margin-top:3rem">Known limitations</h2>
-  <p>The honest list. If any of this changes, this section changes with it.</p>
+  <h2 id="limits" style="margin-top:3rem">${esc(TR('methLimH'))}</h2>
+  <p>${esc(TR('methLimP'))}</p>
   <ol>
-    <li><strong>Income bands are approximations.</strong> Band thresholds are fractions of estimated median
-    household income per country, not official poverty lines. Enter an exact income when the wizard offers
-    it and matching gets sharper.</li>
-    <li><strong>${nf(STATS.total - STATS.priced)} of ${nf(STATS.total)} records have no published amount.</strong>
-    They are real programmes; the amount simply depends on circumstances the official body calculates.</li>
-    <li><strong>${nf(STATS.total - STATS.verified)} records are not human-verified.</strong> Rules may have moved since curation.</li>
-    <li><strong>Snapshot, not a live feed.</strong> Data is a curated snapshot dated ${esc(STATS.asOf)}. There is no
-    scraper re-checking these pages daily.</li>
-    <li><strong>Regional coverage is uneven.</strong> National schemes are well covered everywhere; city-level
-    schemes are covered for major cities only.</li>
-    <li><strong>Not legal or financial advice.</strong> We describe published criteria. Only the named authority
-    can decide your case.</li>
+    <li>${TR('methLim1')}</li>
+    <li>${TR('methLim2', nf(STATS.total - STATS.priced), nf(STATS.total))}</li>
+    <li>${TR('methLim3', nf(STATS.total - STATS.verified))}</li>
+    <li>${TR('methLim4', esc(STATS.asOf))}</li>
+    <li>${TR('methLim5')}</li>
+    <li>${TR('methLim6')}</li>
   </ol>
 
-  <h2 id="corrections" style="margin-top:3rem">Corrections</h2>
-  <p>Every programme page has a "report it" link that opens a public GitHub issue with the programme and
-  page pre-filled. Public tracker, public fix history — no feedback form that disappears into nothing.</p>
+  <h2 id="corrections" style="margin-top:3rem">${esc(TR('methCorrH'))}</h2>
+  <p>${esc(TR('methCorrP'))}</p>
 
-  <h2 style="margin-top:3rem">The data is yours</h2>
-  <p>The full dataset is open. <a class="link-underline" href="${BASE}/api/">Use the JSON API or plug it into an AI assistant over MCP</a>,
-  or take the whole repository from <a class="link-underline" href="https://github.com/adityashashidhar55-cpu/unclaimed">GitHub</a>.</p>
+  <h2 style="margin-top:3rem">${esc(TR('methOpenH'))}</h2>
+  <p>${esc(TR('methOpenP1'))} <a class="link-underline" href="${BASE}/api/">${esc(TR('methOpenApi'))}</a>,
+  ${esc(TR('methOpenP2'))} <a class="link-underline" href="https://github.com/adityashashidhar55-cpu/unclaimed">GitHub</a>.</p>
 </section>`;
 
   return layout({
@@ -1050,8 +1007,8 @@ function methodologyPage() {
     lang: L,
     tr: TR,
     altLangs: ALT,
-    title: 'Methodology, sources and known limitations',
-    description: 'How the Unclaimed dataset is sourced, verified and dated — including an honest list of what is still wrong with it.',
+    title: `${TR('methodology')} — ${TR('methH1')}`,
+    description: TR('methLede'),
     canonical: `${SITE_URL}/methodology/`,
     body,
   });
@@ -1064,7 +1021,7 @@ function methodologyPage() {
 function apiPage() {
   const body = `
 <section class="section-tight shell-narrow">
-  ${breadcrumbs([{ label: 'Home', href: `${LB()}/` }, { label: 'API & MCP' }])}
+  ${breadcrumbs([{ label: TR('backHome'), href: `${LB()}/` }, { label: 'API & MCP' }])}
   <span class="eyebrow eyebrow-accent">Developers</span>
   <h1>Plug the whole dataset into anything</h1>
   <p class="lede">Static JSON, no key, no rate limit, CORS-open by virtue of being files on a CDN.
@@ -1147,13 +1104,9 @@ function pricingPage() {
      Free is deliberately, legibly small: the total and the count. Saying so in
      the same words in three places is how a visitor learns it is a rule and
      not an oversight. */
-  const FREE_EXCLUDES = [
-    'Which programmes — names are on the paid plan',
-    'The programme directory',
-    'Documents, deadlines and prepared applications',
-  ];
+  const FREE_EXCLUDES = [TR('priceNo1'), TR('priceNo2'), TR('priceNo3')];
 
-  const APP_LINE = '<strong>The Android and iOS app</strong> — free plan included';
+  const APP_LINE = TR('priceAppLine');
 
   /* One toggle, in the hero, above everything it changes.
      Radio inputs and sibling selectors rather than a click handler: both
@@ -1164,146 +1117,117 @@ function pricingPage() {
   const body = `
 ${disclaimerBar(TR)}
 <section class="section-tight shell">
-  ${breadcrumbs([{ label: TR('backHome'), href: `${LB()}/` }, { label: 'Pricing' }])}
+  ${breadcrumbs([{ label: TR('backHome'), href: `${LB()}/` }, { label: TR('navPricing') }])}
 
   <div class="audience">
     <input type="radio" name="audience" id="aud-me" class="audience__radio" checked>
     <input type="radio" name="audience" id="aud-ent" class="audience__radio">
 
     <div class="hero-centre">
-      <span class="eyebrow eyebrow-accent">Pricing</span>
-      <h1 style="max-width:16ch;margin-inline:auto">Finding out is free. <em class="serif-italic">Always.</em></h1>
-      <p class="lede" style="max-width:52ch;margin-inline:auto">You never pay to learn the number. You pay
-      when you want to know which programmes it came from, and to have the paperwork done.</p>
+      <span class="eyebrow eyebrow-accent">${esc(TR('priceEyebrow'))}</span>
+      <h1 style="max-width:16ch;margin-inline:auto">${esc(TR('priceH1a'))} <em class="serif-italic">${esc(TR('priceH1b'))}</em></h1>
+      <p class="lede" style="max-width:52ch;margin-inline:auto">${esc(TR('priceLede'))}</p>
 
       <div class="audience__switch audience__switch--hero" role="tablist" aria-label="Who is this for">
-        <label for="aud-me" class="audience__tab">Individuals &amp; startups</label>
-        <label for="aud-ent" class="audience__tab">Enterprise</label>
+        <label for="aud-me" class="audience__tab">${esc(TR('priceTabMe'))}</label>
+        <label for="aud-ent" class="audience__tab">${esc(TR('priceTabEnt'))}</label>
       </div>
     </div>
 
     <div class="audience__panel audience__panel--me">
       <div class="grid grid-3" style="margin-top:2.2rem;align-items:stretch">
         ${tier({
-          delay: 0, eyebrow: 'Free', price: '€0', per: ' forever',
-          blurb: 'How much you are owed, and how many places it comes from. For people and for companies — the free tier is the same either way.',
-          features: [
-            '<strong>How much you are eligible for</strong>, per year',
-            '<strong>How many programmes</strong> it comes from',
-            'How many of those pay out automatically',
-            APP_LINE,
-            'No account needed to see the number',
-          ],
+          delay: 0, eyebrow: TR('priceFree'), price: '€0', per: TR('priceForever'),
+          blurb: TR('priceFreeBlurb'),
+          features: [TR('priceFree1'), TR('priceFree2'), TR('priceFree3'), APP_LINE, TR('priceFree5')],
           excludes: FREE_EXCLUDES,
-          href: `${LB()}/check/`, cta: 'Check your total',
-          note: 'The check runs on your device. Nothing you type is sent anywhere.',
+          href: `${LB()}/check/`, cta: TR('priceCheckTotal'),
+          note: TR('priceFreeNote'),
         })}
         ${tier({
-          delay: 110, eyebrow: 'Personal', price: '€50', per: '/year', featured: true,
-          second: 'or €7/month — the annual plan saves €34',
-          blurb: 'For a household claiming what it is entitled to.',
+          delay: 110, eyebrow: TR('pricePersonal'), price: '€50', per: TR('pricePerYear'), featured: true,
+          second: TR('pricePersonalSecond'),
+          blurb: TR('pricePersonalBlurb'),
           features: [
-            '<strong>Which programmes</strong>, by name',
-            `The full directory — all ${nf(STATS.total)} records with rules and sources`,
-            '<strong>A document checklist per claim</strong>, in your dashboard',
-            'Every document reused across every later claim that asks for it',
-            'Exact steps, deadlines and a calendar export',
-            '<strong>Auto-apply where it is legally available</strong>',
+            TR('pricePers1'),
+            TR('pricePers2', nf(STATS.total)),
+            TR('pricePers3'),
+            TR('pricePers4'),
+            TR('pricePers5'),
+            TR('pricePers6'),
             APP_LINE,
           ],
-          href: `${LB()}/check/`, cta: 'Start with the free check',
-          note: 'Cancel any time. Same price whether you are owed nothing or €9,000.',
+          href: `${LB()}/check/`, cta: TR('priceStartWithFree'),
+          note: TR('pricePersonalNote'),
         })}
         ${tier({
-          delay: 220, eyebrow: 'Startup', price: '€49', per: '/month',
-          second: 'or €490/year · one company, one seat',
-          blurb: 'For a founder chasing grants for their own company.',
+          delay: 220, eyebrow: TR('priceStartup'), price: '€49', per: TR('pricePerMonth'),
+          second: TR('priceStartupSecond'),
+          blurb: TR('priceStartupBlurb'),
           features: [
-            `All ${nf(startupCount)} startup programmes by name, ranked by what you can realistically win`,
-            'Award odds and effort estimate per programme',
-            '<strong>EU de minimis ceiling tracking</strong>',
-            'Company auto-fill from public registers',
-            'Document checklist reused across applications',
-            'Reopen alerts, saved searches, weekly digest',
+            TR('priceStart1', nf(startupCount)),
+            TR('priceStart2'),
+            TR('priceStart3'),
+            TR('priceStart4'),
+            TR('priceStart5'),
+            TR('priceStart6'),
             APP_LINE,
           ],
-          href: `${SB()}/startups/check/`, cta: 'Check your company',
+          href: `${SB()}/startups/check/`, cta: TR('priceCheckCompany'),
         })}
       </div>
 
       <div class="callout callout--sage" style="margin-top:1.6rem">
-        <p><strong>What free actually gets you, stated plainly.</strong> The total and the count. Not a
-        shortened list, not the first few names, not a teaser you can piece together — the programme names are
-        the product. We would rather say that on the pricing page than have you find out at the end of a
-        ten-minute questionnaire.</p>
+        <p><strong>${esc(TR('priceWhatFreeT'))}</strong> ${esc(TR('priceWhatFreeB'))}</p>
       </div>
 
       <div class="callout" style="margin-top:1.4rem">
-        <p><strong>The apps are free.</strong> Android and iOS, on the free plan and the paid one. A free user
-        gets their number on their phone, offline, with no account. Paying unlocks the same extra content in the
-        app as on the web — it is one subscription, not two.</p>
+        <p><strong>${esc(TR('priceAppsT'))}</strong> ${esc(TR('priceAppsB'))}</p>
       </div>
 
       <div class="callout callout--sage" style="margin-top:1.4rem">
-        <p><strong>One flat price. Never a cut of what you get.</strong> No success fee, no commission, no
-        per-claim charge. That is a deliberate limit on us: the moment a service takes a share of someone's
-        benefits it stops being a tool and becomes a middleman, and in several countries that is exactly what
-        the law is there to stop.</p>
+        <p><strong>${esc(TR('priceFlatT'))}</strong> ${esc(TR('priceFlatB'))}</p>
       </div>
 
       <div class="callout" style="margin-top:1.4rem">
-        <p><strong>What we don't do.</strong> We never sign in to a government website as you, and we never
-        press submit on your behalf outside Spain. Every application we prepare is sent by you, from your own
-        account. A benefits declaration is sworn by the person making it, and keeping it yours is what the law
-        requires and what protects you.</p>
+        <p><strong>${esc(TR('priceNotDoT'))}</strong> ${esc(TR('priceNotDoB'))}</p>
       </div>
     </div>
 
     <div class="audience__panel audience__panel--ent">
       <div class="panel panel--float" style="margin-top:2.2rem">
-        <span class="eyebrow eyebrow-accent">Enterprise · from €80 per seat / month</span>
-        <h2 style="max-width:20ch;margin-top:.5rem">Grant work stops being scattered. <em class="serif-italic">It becomes a system.</em></h2>
-        <p class="lede" style="max-width:58ch">For accelerators, funds, universities, chambers and public bodies running
-        many applicants at once. One place to find what they qualify for, write the applications, track every
-        submission, keep the funder relationships warm, and prove where the money went.</p>
+        <span class="eyebrow eyebrow-accent">${esc(TR('entPriceEyebrow'))}</span>
+        <h2 style="max-width:20ch;margin-top:.5rem">${esc(TR('entPriceH2a'))} <em class="serif-italic">${esc(TR('entPriceH2b'))}</em></h2>
+        <p class="lede" style="max-width:58ch">${esc(TR('entPriceLede'))}</p>
         <p style="margin-top:1.6rem">
-          <a class="btn btn-primary" href="${BASE}/dashboard/">Open the workspace</a>
-          <a class="btn" href="${LB()}/enterprise/">What it does</a>
-          <a class="btn btn-ghost" href="mailto:hello@unclaimedgrant.com?subject=Enterprise%20trial">Talk to us</a>
+          <a class="btn btn-primary" href="${BASE}/dashboard/">${esc(TR('entOpenWorkspace'))}</a>
+          <a class="btn" href="${LB()}/enterprise/">${esc(TR('entWhatItDoes'))}</a>
+          <a class="btn btn-ghost" href="mailto:hello@unclaimedgrant.com?subject=Enterprise%20trial">${esc(TR('entTalkToUs'))}</a>
         </p>
-        <p class="tiny">€800 per seat per year if you pay annually. Web only — a pipeline board with forty
-        companies is not a phone screen.</p>
+        <p class="tiny">${esc(TR('entPriceNote'))}</p>
       </div>
 
       <div class="grid grid-2x" style="align-items:stretch">
         ${[
           {
-            eyebrow: 'Find',
-            title: 'Match a portfolio, not a company',
-            body: `Run every company you back against all ${nf(startupCount)} programmes at once, ranked by what
-                   each can realistically win rather than by headline size. Saved searches re-run weekly and surface
-                   only what is new, so the pipeline stays current without anyone refreshing it.`,
+            eyebrow: TR('entFindT').split(' ')[0],
+            title: TR('entFindT'),
+            body: TR('entFindL', nf(startupCount), STARTUP_MANIFEST.countries.length),
           },
           {
-            eyebrow: 'Write',
-            title: 'Applications that start part-written',
-            body: `A shared library of your standard answers, company facts and past applications. Each new
-                   application opens with the register fields filled and its provenance shown, scored against the
-                   programme's own published criteria, with every issue flagged before you submit.`,
+            eyebrow: TR('priceEyebrow'),
+            title: TR('entApplyT'),
+            body: TR('entApplyL'),
           },
           {
-            eyebrow: 'Track',
-            title: 'Every application, and where it stands',
-            body: `One tab listing every grant applied for across the portfolio: who submitted it, when, for how
-                   much, what came back and what is still outstanding. Entries are created automatically the moment
-                   an opportunity enters the pipeline, so nothing depends on someone remembering to log it.`,
+            eyebrow: TR('entTrackT'),
+            title: TR('entTrackT'),
+            body: TR('entTrackL'),
           },
           {
-            eyebrow: 'Manage',
-            title: 'The part after the award',
-            body: `Milestones, reports and deliverables with their own dates and reminders, a de minimis ledger per
-                   portfolio company, and a record per funder of who you spoke to and when to follow up. Reopen
-                   alerts on closed calls, before the window opens rather than after it shuts.`,
+            eyebrow: TR('entReportT'),
+            title: TR('entReportT'),
+            body: TR('entReportL'),
           },
         ]
           .map(
@@ -1318,9 +1242,9 @@ ${disclaimerBar(TR)}
 
       <div class="grid grid-3" style="align-items:stretch">
         ${[
-          ['Up and running in days', 'No implementation fee and no scoping call. Import your companies, invite the team, start matching.'],
-          ['Fits your existing tools', 'Deadlines to your calendar, records to your CRM, exports to your sheet. API and webhooks for anything else.'],
-          ['Accountable to a board', 'SSO, an audit log of who saw and sent what, role-based visibility, and EU data residency.'],
+          [TR('entQuickT'), TR('entQuickB')],
+          [TR('entToolsT'), TR('entToolsB')],
+          [TR('entBoardT'), TR('entBoardB')],
         ]
           .map(
             (c, i) => `<div class="panel panel--float reveal" data-delay="${i * 110}">
@@ -1332,36 +1256,28 @@ ${disclaimerBar(TR)}
       </div>
 
       <div class="callout" style="margin-top:1.6rem">
-        <p><strong>Why this is priced per seat and the other plans are not.</strong> A founder checking one company
-        is a search, and it costs us the same whether they run it once or fifty times. An accelerator is people:
-        each analyst has their own pipeline, their own funder conversations and their own deadlines to miss. The
-        work scales with the number of people doing it, so the price does too.</p>
+        <p><strong>${esc(TR('entSeatWhyT'))}</strong> ${esc(TR('entSeatWhyB'))}</p>
       </div>
     </div>
   </div>
 
   <div class="grid grid-2" style="margin-top:1.8rem;align-items:stretch">
     <div class="card reveal">
-      <span class="eyebrow">Included on every paid plan</span>
-      <h2 style="font-size:1.3rem;margin-top:.4rem">A checklist that fills itself in</h2>
-      <p class="small">Every claim wants a payslip, a proof of address, a birth certificate. The dashboard lists
-      exactly what each programme asks for, and keeping a document once ticks it off on every later claim that
-      wants it. <strong>Encrypted on your device before it reaches us</strong> — we hold scrambled bytes and a
-      label, and cannot open your files.</p>
+      <span class="eyebrow">${esc(TR('priceIncluded'))}</span>
+      <h2 style="font-size:1.3rem;margin-top:.4rem">${esc(TR('priceChecklistT'))}</h2>
+      <p class="small">${TR('priceChecklistB')}</p>
     </div>
     <div class="card reveal" data-delay="120">
-      <span class="eyebrow">Where we can, we file it</span>
-      <h2 style="font-size:1.3rem;margin-top:.4rem">Auto-apply, honestly scoped</h2>
-      <p class="small">In <strong>Spain</strong> a company can hold a registered power of attorney and submit
-      for you, so there we do. That is one country and we would rather say so. Everywhere else you get the
-      complete package and press send yourself.</p>
+      <span class="eyebrow">${esc(TR('priceWhereWeFile'))}</span>
+      <h2 style="font-size:1.3rem;margin-top:.4rem">${esc(TR('priceAutoApplyT'))}</h2>
+      <p class="small">${TR('priceAutoApplyB')}</p>
     </div>
   </div>
 </section>`;
 
   return layout({
     base: BASE, linkBase: LB(), lang: L, tr: TR, altLangs: ALT,
-    title: 'Pricing — free to find out, paid to claim',
+    title: TR('priceTitle'),
     description: `Free forever to see how much you are owed and how many programmes it comes from, on web and in the Android and iOS apps. Paid unlocks the names, the directory, the document checklist and auto-apply. Personal €50/year, Startup €49/month, Enterprise from €80/seat/month across ${nf(totalProgrammes)} programmes.`,
     canonical: `${SITE_URL}${L === 'en' ? '' : '/' + L}/pricing/`,
     body,
@@ -1508,64 +1424,59 @@ function accountPage() {
   const body = `
 ${disclaimerBar(TR)}
 <section class="section-tight shell" style="max-width:34rem">
-  ${breadcrumbs([{ label: TR('backHome'), href: `${LB()}/` }, { label: 'Sign in' }])}
-  <span class="eyebrow eyebrow-accent">Sign in</span>
-  <h1 style="max-width:16ch">No password. <em class="serif-italic">Just your email.</em></h1>
-  <p class="lede" style="max-width:46ch">We send a six-digit code. It works once, expires in ten
-  minutes, and there is nothing for anyone to steal or for you to forget.</p>
+  ${breadcrumbs([{ label: TR('backHome'), href: `${LB()}/` }, { label: TR('acctCrumb') }])}
+  <span class="eyebrow eyebrow-accent">${esc(TR('acctCrumb'))}</span>
+  <h1 style="max-width:16ch">${esc(TR('acctH1a'))} <em class="serif-italic">${esc(TR('acctH1b'))}</em></h1>
+  <p class="lede" style="max-width:46ch">${esc(TR('acctLede2'))}</p>
 
   <div class="card" style="margin-top:2.4rem" id="auth-card">
     <div class="audience" style="margin-bottom:1.4rem">
       <input type="radio" name="acct" id="acct-me" class="audience__radio" checked>
       <input type="radio" name="acct" id="acct-biz" class="audience__radio">
       <div class="audience__switch">
-        <label for="acct-me" class="audience__tab">Personal</label>
-        <label for="acct-biz" class="audience__tab">Business</label>
+        <label for="acct-me" class="audience__tab">${esc(TR('acctPersonal'))}</label>
+        <label for="acct-biz" class="audience__tab">${esc(TR('acctBusiness'))}</label>
       </div>
     </div>
 
     <form id="auth-form" novalidate>
       <div id="step-email">
-        <label class="tiny" for="auth-email">Your email</label>
+        <label class="tiny" for="auth-email">${esc(TR('acctYourEmail'))}</label>
         <input class="field" type="email" id="auth-email" name="email" autocomplete="email"
                inputmode="email" required placeholder="you@example.com" style="width:100%;margin:.4rem 0 1rem">
-        <button class="btn btn-primary" type="submit" id="auth-send" style="width:100%">Send me a code</button>
+        <button class="btn btn-primary" type="submit" id="auth-send" style="width:100%">${esc(TR('acctSendCode'))}</button>
       </div>
 
       <div id="step-code" hidden>
         <p class="small" id="code-sent-to" style="margin-top:0"></p>
-        <label class="tiny" for="auth-code">Six-digit code</label>
+        <label class="tiny" for="auth-code">${esc(TR('acctCode'))}</label>
         <input class="field" type="text" id="auth-code" name="code" autocomplete="one-time-code"
                inputmode="numeric" pattern="[0-9]{6}" maxlength="6" required
                placeholder="000000" style="width:100%;margin:.4rem 0 1rem;letter-spacing:.4em;font-size:1.3rem">
-        <button class="btn btn-primary" type="submit" id="auth-verify" style="width:100%">Verify and sign in</button>
-        <p style="margin:.9rem 0 0"><button class="btn btn-sm" type="button" id="auth-back">Use a different email</button></p>
+        <button class="btn btn-primary" type="submit" id="auth-verify" style="width:100%">${esc(TR('acctVerify'))}</button>
+        <p style="margin:.9rem 0 0"><button class="btn btn-sm" type="button" id="auth-back">${esc(TR('acctDiffEmail'))}</button></p>
       </div>
 
       <p class="small" id="auth-msg" role="status" aria-live="polite" style="margin:1rem 0 0;min-height:1.2em"></p>
     </form>
 
     <noscript>
-      <p class="small"><strong>Sign-in needs JavaScript.</strong> The code is exchanged for a session
-      without leaving this page, and that cannot be done with a plain form post. Everything else on this
-      site — every programme, every source, the whole database — works without it.</p>
+      <p class="small">${TR('acctNoJs2')}</p>
     </noscript>
   </div>
 
   <div id="auth-signed-in" hidden class="card" style="margin-top:1.2rem">
-    <span class="eyebrow eyebrow-accent">Signed in</span>
+    <span class="eyebrow eyebrow-accent">${esc(TR('acctSignedIn'))}</span>
     <h2 style="font-size:1.3rem;margin-top:.4rem" id="acct-email"></h2>
     <p class="small" id="acct-plan"></p>
     <p style="margin-top:1.2rem">
-      <a class="btn btn-primary" href="${LB()}/check/">Go to my check</a>
-      <a class="btn" href="/auth/signout">Sign out</a>
+      <a class="btn btn-primary" href="${LB()}/check/">${esc(TR('acctGoCheck'))}</a>
+      <a class="btn" href="/auth/signout">${esc(TR('acctSignOut'))}</a>
     </p>
   </div>
 
   <div class="callout" style="margin-top:1.6rem">
-    <p><strong>What signing in does and does not do.</strong> It keeps your answers and your unlocked
-    programmes across devices. It does not make us able to read your documents — those are encrypted on
-    your device before they reach us, and the key never leaves it.</p>
+    <p><strong>${esc(TR('acctWhatT'))}</strong> ${esc(TR('acctWhatB'))}</p>
   </div>
 </section>
 
@@ -1638,63 +1549,28 @@ $('#auth-back').addEventListener('click', () => {
 function privacyPage() {
   const body = `
 ${disclaimerBar(TR)}
-<section class="section-tight shell" style="max-width:44rem">
-  ${breadcrumbs([{ label: TR('backHome'), href: `${LB()}/` }, { label: 'Privacy' }])}
-  <span class="eyebrow eyebrow-accent">Privacy</span>
-  <h1 style="max-width:18ch">What we know about you, which is almost nothing.</h1>
-  <p class="lede">Last updated 14 August 2026.</p>
+<section class="section-tight shell-narrow">
+  ${breadcrumbs([{ label: TR('backHome'), href: `${LB()}/` }, { label: TR('footPrivacy') }])}
+  <span class="eyebrow eyebrow-accent">${esc(TR('footPrivacy'))}</span>
+  <h1 style="max-width:18ch">${esc(TR('privH1'))}</h1>
+  <p class="lede">${esc(TR('privUpdated'))}</p>
 
   <div class="callout callout--sage" style="margin-top:1.6rem">
-    <p><strong>The short version.</strong> The eligibility check runs on your device. Your answers are not
-    sent to us and we cannot see them. If you create an account we store your email address. If you use the
-    document vault, your files are encrypted on your device before upload and we cannot open them.</p>
+    <p><strong>${esc(TR('privShortT'))}</strong> ${esc(TR('privShortB'))}</p>
   </div>
 
-  <h2 style="margin-top:2.4rem">The free check</h2>
-  <p>When you answer the questions, the matching happens in your browser or in the app, against data already
-  downloaded to your device. Your country, age, income band, household and housing answers are stored on
-  your device only. They are never transmitted to us. You can erase them at any time from Settings, and
-  clearing your browser data or uninstalling the app removes them completely.</p>
-
-  <h2 style="margin-top:2rem">If you create an account</h2>
-  <p>We store your email address, to sign you in and to send the magic link. We do not use passwords. If you
-  subscribe, our payment processor (Stripe) holds your card details — we never see or store them. We keep a
-  record of your subscription status so we know what to show you.</p>
-
-  <h2 style="margin-top:2rem">The document vault</h2>
-  <p>Documents are encrypted on your device with a key derived from your passphrase, before anything leaves
-  it. We receive ciphertext, a coarse type label such as "proof of income", a file size and two dates. We
-  deliberately do not store filenames, because a filename can reveal exactly what the encryption is there to
-  protect. <strong>We cannot decrypt your documents.</strong> Neither can anyone who obtains our database and
-  our storage. If you forget your passphrase, they are unrecoverable — that is the cost of the guarantee.</p>
-
-  <h2 style="margin-top:2rem">What we do not collect</h2>
-  <p>No advertising identifiers. No location. No contacts, photos or messages. No cross-site tracking, and no
-  third-party analytics or advertising SDKs in the app. We do not sell or share personal data with anyone,
-  and there is no category of data we would sell.</p>
-
-  <h2 style="margin-top:2rem">Notifications</h2>
-  <p>Deadline reminders are scheduled locally on your device. There is no push server and no message about
-  you leaves your phone.</p>
-
-  <h2 style="margin-top:2rem">Your rights</h2>
-  <p>Under the GDPR and equivalent laws you can ask for a copy of your data, correct it, or have it deleted.
-  Account deletion is available in the app and on the web and removes your email, subscription record and all
-  stored documents. Write to <a class="link-underline" href="mailto:privacy@unclaimedgrant.com">privacy@unclaimedgrant.com</a>
-  and we will respond within 30 days.</p>
-
-  <h2 style="margin-top:2rem">Children</h2>
-  <p>The service is not directed at children under 13 and we do not knowingly collect their data.</p>
-
-  <h2 style="margin-top:2rem">Changes</h2>
-  <p>If this policy changes materially we will say so on this page and, for account holders, by email. The
-  date at the top always reflects the current version.</p>
+  ${TR('privSecs')
+    .map(
+      ([h, b]) => `<h2 style="margin-top:2.2rem">${esc(h)}</h2>
+  <p>${b}</p>`,
+    )
+    .join('\n')}
 </section>`;
 
   return layout({
     base: BASE, linkBase: LB(), lang: L, tr: TR, altLangs: ALT,
-    title: 'Privacy',
-    description: 'The eligibility check runs on your device. Your answers are never sent to us, and documents are encrypted before they leave your phone.',
+    title: TR('footPrivacy'),
+    description: TR('privShortB'),
     canonical: `${SITE_URL}${L === 'en' ? '' : '/' + L}/privacy/`,
     body,
   });
@@ -1724,7 +1600,7 @@ function blogIndex() {
   const body = `
 ${disclaimerBar(TR)}
 <section class="section-tight shell">
-  ${breadcrumbs([{ label: TR('backHome'), href: `${LB()}/` }, { label: 'Writing' }])}
+  ${breadcrumbs([{ label: TR('backHome'), href: `${LB()}/` }, { label: TR('navWriting') }])}
   <div class="hero-centre">
     <span class="eyebrow eyebrow-accent">Writing</span>
     <h1 style="max-width:18ch;margin-inline:auto">What ${nf(STATS.total)} support programmes look like from the inside.</h1>
@@ -1764,7 +1640,7 @@ ${disclaimerBar(TR)}
 <article class="section-tight shell-narrow">
   ${breadcrumbs([
     { label: TR('backHome'), href: `${LB()}/` },
-    { label: 'Writing', href: `${BASE}/blog/` },
+    { label: TR('navWriting'), href: `${BASE}/blog/` },
     { label: title },
   ])}
   <span class="eyebrow eyebrow-accent">${esc(fmtPostDate(post.date))}</span>
@@ -1834,7 +1710,7 @@ function dashboardPage() {
   const body = `
 <section class="section-tight" style="padding-bottom:0">
   <div class="shell">
-    ${breadcrumbs([{ label: TR('backHome'), href: `${LB()}/` }, { label: 'Enterprise', href: `${LB()}/enterprise/` }, { label: 'Workspace' }])}
+    ${breadcrumbs([{ label: TR('backHome'), href: `${LB()}/` }, { label: TR('navEnterprise'), href: `${LB()}/enterprise/` }, { label: 'Workspace' }])}
   </div>
 </section>
 <div id="dashboard">
@@ -1882,54 +1758,54 @@ function enterprisePage() {
     {
       n: '01',
       key: 'find',
-      title: 'Find what every company can win',
-      lede: `One search across ${nf(startupCount)} programmes in ${jurisdictions} jurisdictions, run for the whole portfolio rather than one company at a time.`,
+      title: TR('entFindT'),
+      lede: TR('entFindL', nf(startupCount), jurisdictions),
       points: [
-        `<strong>Portfolio matching.</strong> Every company against every programme, ranked by amount × published award rate × whether a company that size could realistically deliver it.`,
-        `<strong>${nf(openNow)} open today</strong>, and the closed ones are kept rather than hidden — next year's applications come from this year's closed calls.`,
-        '<strong>Saved searches</strong> by sector, stage and geography, with a weekly digest of what is newly open.',
-        '<strong>Your own calls too.</strong> A regional fund or an internal budget line goes in through grant entry and behaves exactly like a programme we ship.',
+        TR('entP11'),
+        TR('entP12', nf(openNow)),
+        TR('entP13'),
+        TR('entP14'),
       ],
     },
     {
       n: '02',
       key: 'apply',
-      title: 'Get the application most of the way written',
-      lede: 'The workspace fills what a register and a stored profile can fill, and then names — field by field — what only a human can write.',
+      title: TR('entApplyT'),
+      lede: TR('entApplyL'),
       points: [
-        '<strong>Auto-fill with provenance.</strong> Every filled field shows where it came from, so a reviewer can check it rather than trust it.',
-        '<strong>The seven narrative answers</strong> most applications want, written once per company and reused across every pack.',
-        '<strong>A document checklist per application</strong>, built from what that funder actually asks for. Record a document once and it ticks itself off on every application that wants it, including next month\'s.',
-        '<strong>A readiness score against the funder\'s published criteria</strong>, with every component shown. Not a probability of winning — nobody can compute that, and a number that looked like one would get planned around.',
-        '<strong>Issues flagged before you draft</strong>: a ceiling breach, a missing mandatory document, an expired one, a co-funding gap you have not confirmed, a deadline you are two weeks from with nothing written.',
-        '<strong>A downloadable pack</strong> per opportunity. We never sign in as you and never press submit — a funding declaration is sworn by the person making it.',
+        TR('entP21'),
+        TR('entP22'),
+        TR('entP23'),
+        TR('entP24'),
+        TR('entP25'),
+        TR('entP26'),
       ],
     },
     {
       n: '03',
       key: 'manage',
-      title: 'Every application, and where it stands',
-      lede: 'An entry is created the moment an opportunity enters the pipeline — reference, requested amount, document checklist and all — so the log has no holes where the busy weeks were.',
+      title: TR('entTrackT'),
+      lede: TR('entTrackL'),
       points: [
-        '<strong>An applications tab</strong> listing every grant applied for: who owns it, when it went, for how much, what came back, and what is still outstanding.',
-        '<strong>A pipeline board</strong> your programme manager is currently keeping in a spreadsheet, with drag-and-drop and a keyboard path that does the same job.',
-        '<strong>Projects</strong>, because funders fund a project and the same project goes to several calls — so "how much have we raised for this" is a number, not an addition.',
-        '<strong>Deadline watch</strong> across the portfolio, exportable as .ics so the reminder lands where the team already looks.',
-        '<strong>Reopen tracking</strong> on closed calls, because the round you were not watching is the one you miss.',
+        TR('entP31'),
+        TR('entP32'),
+        TR('entP33'),
+        TR('entP34'),
+        TR('entP35'),
       ],
     },
     {
       n: '04',
       key: 'report',
-      title: 'The part after the award, and the board pack',
-      lede: 'Milestones, reports and deliverables with their own dates; awarded to date, open pipeline, hit rate and funnel — with a standing list of what the numbers exclude.',
+      title: TR('entReportT'),
+      lede: TR('entReportL'),
       points: [
-        '<strong>Hit rate on decided applications only.</strong> Counting undecided bids as losses flatters or damns a team at random.',
-        '<strong>Instruments are never added together.</strong> Cloud credits do not join a grant total anywhere on this site.',
-        '<strong>Unpriced programmes count as zero</strong> and the count is shown, so nobody reads the pipeline as the ceiling.',
-        '<strong>CSV and API out</strong>, so the numbers land in the CRM or the board pack rather than in another tab.',
-        '<strong>Post-award obligations tracked</strong> — late reporting is the usual reason a paid grant is clawed back, because the money arrived and nobody is chasing it.',
-        '<strong>A de minimis ledger</strong> per company per member state on a rolling three-year window, fed automatically when an award is recorded, with the declaration text ready to paste.',
+        TR('entP41'),
+        TR('entP42'),
+        TR('entP43'),
+        TR('entP44'),
+        TR('entP45'),
+        TR('entP46'),
       ],
     },
   ];
@@ -1937,39 +1813,31 @@ function enterprisePage() {
   const body = `
 ${disclaimerBar(TR)}
 <section class="section-tight shell">
-  ${breadcrumbs([{ label: TR('backHome'), href: `${LB()}/` }, { label: 'Enterprise' }])}
+  ${breadcrumbs([{ label: TR('backHome'), href: `${LB()}/` }, { label: TR('navEnterprise') }])}
   <span class="eyebrow eyebrow-accent">Enterprise</span>
-  <h1 style="max-width:16ch" data-blur-words>One workspace for every company you support.</h1>
-  <p class="lede reveal" style="max-width:56ch;margin-top:1.2rem">
-    Accelerators, funds, universities and economic development agencies run the same search dozens of times
-    a year. This is that search, done once, for a whole portfolio — with the applications drafted, the
-    deadlines watched and the state-aid ceiling tracked.
-  </p>
+  <h1 style="max-width:16ch" data-blur-words>${esc(TR('entH1'))}</h1>
+  <p class="lede reveal" style="max-width:56ch;margin-top:1.2rem">${esc(TR('entLede'))}</p>
   <div class="row reveal" data-delay="120" style="margin-top:1.6rem">
-    <a class="btn btn-primary" href="${BASE}/dashboard/">Open the workspace</a>
-    <a class="btn" href="${LB()}/pricing/">Pricing</a>
+    <a class="btn btn-primary" href="${BASE}/dashboard/">${esc(TR('entOpenWorkspace'))}</a>
+    <a class="btn" href="${LB()}/pricing/">${esc(TR('navPricing'))}</a>
   </div>
-  <p class="tiny reveal" data-delay="180" style="margin-top:.8rem;color:var(--ink-4)">
-    No account, no sales call. It runs in your browser on your own portfolio — which is also how a fund can
-    try it on real companies without the data leaving the building.
-  </p>
+  <p class="tiny reveal" data-delay="180" style="margin-top:.8rem;color:var(--ink-4)">${esc(TR('entNoSales'))}</p>
 
   <div class="panel panel--float reveal" data-delay="200" style="margin-top:2.6rem">
     <div class="row-between" style="margin-bottom:1.2rem">
       <div>
-        <span class="eyebrow" style="margin:0">What you get on day one</span>
-        <h3 style="margin:.2rem 0 0">Projects, applications, documents, deadlines, post-award, ledger, reports</h3>
+        <span class="eyebrow" style="margin:0">${esc(TR('entDayOne'))}</span>
+        <h3 style="margin:.2rem 0 0">${esc(TR('entDayOneH3'))}</h3>
       </div>
-      <a class="btn btn-sm btn-primary" href="${BASE}/dashboard/">Open it</a>
+      <a class="btn btn-sm btn-primary" href="${BASE}/dashboard/">${esc(TR('entOpenWorkspace'))}</a>
     </div>
     <div class="grid grid-4" style="margin-bottom:1.2rem">
-      <div class="stat"><span class="stat__n">${nf(startupCount)}</span><span class="stat__l">Programmes matched</span></div>
-      <div class="stat"><span class="stat__n">${jurisdictions}</span><span class="stat__l">Jurisdictions</span></div>
-      <div class="stat"><span class="stat__n">${nf(openNow)}</span><span class="stat__l">Open right now</span></div>
-      <div class="stat"><span class="stat__n">12</span><span class="stat__l">Workspace tabs</span></div>
+      <div class="stat"><span class="stat__n">${nf(startupCount)}</span><span class="stat__l">${esc(TR('entStatMatched'))}</span></div>
+      <div class="stat"><span class="stat__n">${jurisdictions}</span><span class="stat__l">${esc(TR('entStatJurisdictions'))}</span></div>
+      <div class="stat"><span class="stat__n">${nf(openNow)}</span><span class="stat__l">${esc(TR('entStatOpen'))}</span></div>
+      <div class="stat"><span class="stat__n">12</span><span class="stat__l">${esc(TR('entStatTabs'))}</span></div>
     </div>
-    <p class="tiny">The workspace ships with no data in it. Load the sample portfolio from inside it if you
-    want to see a full board before you type anything real.</p>
+    <p class="tiny">${esc(TR('entSampleNote'))}</p>
   </div>
 </section>
 
@@ -1991,15 +1859,15 @@ ${disclaimerBar(TR)}
 </section>
 
 <section class="section-tight shell">
-  <h2 class="reveal">The parts nobody demos, which decide whether it gets used</h2>
+  <h2 class="reveal">${esc(TR('entExtrasH2'))}</h2>
   <div class="grid grid-3" style="margin-top:1.4rem">
     ${[
-      ['Seats and visibility', 'Role-based visibility, so a founder sees their own row and the programme team sees everything. SSO, audit log and data residency on the hosted plan.'],
-      ['Data out, not just in', `Everything in the workspace is reachable over the API and exports to CSV. Webhooks fire on stage change and on a call reopening. <a class="link-underline" href="${BASE}/api/">See the API →</a>`],
-      ['Bring a spreadsheet', 'Import a portfolio as CSV. Columns we do not recognise are reported, never guessed at — a mis-mapped column that silently becomes the headcount is the bug you find in month three.'],
-      ['Onboarding that is not a PDF', 'We load your portfolio with you and hand back a ranked plan per company. If the answer is that we have thin coverage in your jurisdictions, you hear that in week one.'],
-      ['Honest coverage', `Coverage is uneven and published: ${jurisdictions} jurisdictions, ${nf(openNow)} calls open today, and every record dated with when a human last read it.`],
-      ['Web, on purpose', 'A board with forty companies and six columns is not a phone screen. The mobile app is for individuals checking what they personally qualify for — different job, different device.'],
+      [TR('entSeatsT'), TR('entSeatsB')],
+      [TR('entDataT'), `${TR('entDataB2')} <a class="link-underline" href="${BASE}/api/">${esc(TR('entSeeApi'))} →</a>`],
+      [TR('entImportT'), TR('entImportB')],
+      [TR('entOnboardT'), TR('entOnboardB')],
+      [TR('entCoverageT'), TR('entCoverageB', jurisdictions, nf(openNow))],
+      [TR('entWebT'), TR('entWebB')],
     ]
       .map(
         (f, i) => `<div class="card reveal" data-delay="${i * 70}">
@@ -2011,27 +1879,23 @@ ${disclaimerBar(TR)}
   </div>
 
   <div class="callout callout--sage" style="margin-top:2rem">
-    <p><strong>What we will not do, and why it is on this page.</strong> We do not take a percentage of what
-    you win, we do not sign in to a funder's portal as you, and we do not write the innovation claim. The
-    first is a middleman fee dressed as alignment; the second is impersonation; the third is a false
-    declaration with your name on it. Every grant tool that promises the third one is promising something
-    the applicant carries the liability for.</p>
+    <p><strong>${esc(TR('entWontT'))}</strong> ${esc(TR('entWontB'))}</p>
   </div>
 
   <div style="margin-top:3rem;text-align:center">
-    <h2 class="reveal" style="max-width:22ch;margin-inline:auto">Open it against your own portfolio.</h2>
-    <p class="lede reveal" data-delay="100" style="max-width:40ch;margin:1rem auto 1.8rem">Nothing to install, nothing to sign, nothing sent anywhere.</p>
+    <h2 class="reveal" style="max-width:22ch;margin-inline:auto">${esc(TR('entFinalH2'))}</h2>
+    <p class="lede reveal" data-delay="100" style="max-width:40ch;margin:1rem auto 1.8rem">${esc(TR('entFinalLede'))}</p>
     <div class="row reveal" data-delay="180" style="justify-content:center">
-      <a class="btn btn-primary" href="${BASE}/dashboard/">Open the workspace</a>
-      <a class="btn" href="${LB()}/pricing/">Pricing</a>
-      <a class="btn btn-ghost" href="${BASE}/api/">API docs</a>
+      <a class="btn btn-primary" href="${BASE}/dashboard/">${esc(TR('entOpenWorkspace'))}</a>
+      <a class="btn" href="${LB()}/pricing/">${esc(TR('navPricing'))}</a>
+      <a class="btn btn-ghost" href="${BASE}/api/">${esc(TR('entApiDocs'))}</a>
     </div>
   </div>
 </section>`;
 
   return layout({
     base: BASE, linkBase: LB(), lang: L, tr: TR, altLangs: ALT,
-    title: 'Enterprise — a grants workspace for a whole portfolio',
+    title: TR('entTitle'),
     description: `Match a whole portfolio against ${nf(startupCount)} funding programmes at once, draft the applications, watch the deadlines, track the de minimis ceiling and report it. Open the workspace with no account.`,
     canonical: `${SITE_URL}${L === 'en' ? '' : '/' + L}/enterprise/`,
     body,
@@ -2381,14 +2245,14 @@ function audienceCountryPage(entry, data, aud) {
   const crumbs = [
     { label: TR('backHome'), href: `${LB()}/` },
     { label: entry.name, href: `${CB(cc)}/${cc}/` },
-    { label: aud.label },
+    { label: TR(aud.labelKey) },
   ];
   const body = `
 ${disclaimerBar(TR)}
 <section class="section-tight shell">
   ${breadcrumbs(crumbs)}
   <span class="eyebrow eyebrow-accent">${entry.flag} ${esc(entry.name)} · ${esc(TR(aud.i18n))}</span>
-  <h1 style="max-width:18ch">${esc(TR('audHead')(list.length, TR(aud.i18n), entry.name))}</h1>
+  <h1 style="max-width:18ch">${esc(TR('audHead', list.length, TR(aud.i18n), entry.name))}</h1>
   <p class="lede" style="max-width:56ch">${esc(TR(aud.blurbKey))}</p>
   <div class="hero__cta">
     <a class="btn btn-primary" href="${LB()}/check/?country=${cc}">${esc(TR('ctaCheck'))} ${ICON.arrow}</a>
@@ -2415,8 +2279,8 @@ ${disclaimerBar(TR)}
 </section>`;
   return layout({
     base: BASE, linkBase: LB(), lang: L, tr: TR, altLangs: ALT,
-    title: `${aud.label} in ${entry.name} — ${list.length} things you can claim`,
-    description: `${list.length} real support programmes for ${aud.label.toLowerCase()} in ${entry.name}: ${aud.blurb} Official sources, eligibility rules and application steps. Free anonymous check.`,
+    title: TR('audHead', list.length, TR(aud.i18n), entry.name),
+    description: `${TR('audHead', list.length, TR(aud.i18n), entry.name)} ${TR(aud.blurbKey)} ${TR('disclaimerRest')}`,
     canonical: `${SITE_URL}${L === 'en' ? '' : '/' + L}/${cc}/for/${aud.id}/`,
     body,
     jsonld: [breadcrumbLd(crumbs)],
@@ -2430,21 +2294,20 @@ function audienceIndexPage(aud) {
     .filter((r) => r.n)
     .sort((a, b) => b.n - a.n);
   const total = rows.reduce((s2, r) => s2 + r.n, 0);
-  const crumbs = [{ label: TR('backHome'), href: `${LB()}/` }, { label: aud.label }];
+  const crumbs = [{ label: TR('backHome'), href: `${LB()}/` }, { label: TR(aud.labelKey) }];
   const body = `
 ${disclaimerBar(TR)}
 <section class="section-tight shell">
   ${breadcrumbs(crumbs)}
   <span class="eyebrow eyebrow-accent">${esc(TR('whoFor'))}</span>
-  <h1>${esc(aud.label)}</h1>
-  <p class="lede" style="max-width:56ch">${esc(TR(aud.blurbKey))} ${nf(total)} programmes across ${rows.length} countries.
-  Pick your country to see the list that applies to you.</p>
+  <h1>${esc(TR(aud.labelKey))}</h1>
+  <p class="lede" style="max-width:56ch">${esc(TR(aud.blurbKey))} ${esc(TR('audIndexCount', nf(total), rows.length))}</p>
   <div class="list-rows" style="margin-top:2rem">
     ${rows
       .map(
         (r) => `<a class="list-row" href="${CB(r.entry.slug)}/${r.entry.slug}/for/${aud.id}/">
       <span><span class="list-row__name">${r.entry.flag} ${esc(r.entry.name)}</span></span>
-      <span class="list-row__right"><span class="list-row__amount">${r.n}</span><span class="tiny">programmes</span></span>
+      <span class="list-row__right"><span class="list-row__amount">${r.n}</span><span class="tiny">${esc(TR('ctryProgrammes'))}</span></span>
     </a>`,
       )
       .join('')}
@@ -2452,8 +2315,8 @@ ${disclaimerBar(TR)}
 </section>`;
   return layout({
     base: BASE, linkBase: LB(), lang: L, tr: TR, altLangs: ALT,
-    title: `${aud.label} — what you can claim`,
-    description: `${total} support programmes for ${aud.label.toLowerCase()} across ${rows.length} countries, with official sources and eligibility rules.`,
+    title: `${TR(aud.labelKey)} — ${TR('audTitleSuffix')}`,
+    description: `${TR(aud.blurbKey)} ${TR('audIndexCount', nf(total), rows.length)}`,
     canonical: `${SITE_URL}${L === 'en' ? '' : '/' + L}/for/${aud.id}/`,
     body,
     jsonld: [breadcrumbLd(crumbs)],

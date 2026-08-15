@@ -1,254 +1,60 @@
 /**
  * UNCLAIMED — interface translations.
  *
- * Scope is deliberate and stated on every translated page: the INTERFACE is
- * translated, and programme names are shown in their real local language
- * because the dataset already stores `name_local`. Eligibility prose that came
- * from an official source is NOT machine-translated — on a site whose whole
- * claim is accuracy, a mistranslated benefit rule is worse than an English one.
+ * The strings live in src/i18n/<lang>.mjs, one file per language, with English
+ * as the source of truth for the key set. This module is the entry point and
+ * holds only the locale table and the lookup.
+ *
+ * Scope, stated on every localised page via `langNote`: everything WE wrote is
+ * translated — interface, marketing copy, headings, explanations. Everything a
+ * FUNDER wrote is not: programme names, quoted source snippets, eligibility
+ * wording and document names stay in the language the authority published
+ * them in. On a site whose entire claim is accuracy, a machine-translated
+ * benefit rule is worse than an English one, and the reader has to open the
+ * official page in that language regardless.
  */
 
+import en from './i18n/en.mjs';
+import fr from './i18n/fr.mjs';
+import es from './i18n/es.mjs';
+import de from './i18n/de.mjs';
+import it from './i18n/it.mjs';
+import pt from './i18n/pt.mjs';
+import hi from './i18n/hi.mjs';
+
 export const LOCALES = {
-  en: { name: 'English',    native: 'English',  countries: null }, // null = all
-  fr: { name: 'French',     native: 'Français', countries: ['fr', 'be', 'ch', 'ca'] },
-  es: { name: 'Spanish',    native: 'Español',  countries: ['es', 'mx'] },
-  de: { name: 'German',     native: 'Deutsch',  countries: ['de', 'at', 'ch'] },
-  it: { name: 'Italian',    native: 'Italiano', countries: ['it', 'ch'] },
+  en: { name: 'English',    native: 'English',   countries: null }, // null = all
+  fr: { name: 'French',     native: 'Français',  countries: ['fr', 'be', 'ch', 'ca'] },
+  es: { name: 'Spanish',    native: 'Español',   countries: ['es', 'mx'] },
+  de: { name: 'German',     native: 'Deutsch',   countries: ['de', 'at', 'ch'] },
+  it: { name: 'Italian',    native: 'Italiano',  countries: ['it', 'ch'] },
   pt: { name: 'Portuguese', native: 'Português', countries: ['pt', 'br'] },
-  hi: { name: 'Hindi',      native: 'हिन्दी',    countries: ['in'] },
+  hi: { name: 'Hindi',      native: 'हिन्दी',     countries: ['in'] },
 };
 
-const T = {
-  en: {
-    tagline: 'Find the government money you are entitled to and are not claiming.',
-    heroA: 'How much money are you', heroB: 'leaving on the table', heroQ: '?',
-    heroLede:
-      'Governments hand out rent support, family payments, energy discounts, tax credits and transport concessions — and most of it goes unclaimed because nobody tells you it exists. Answer a few questions and get a sourced list of what you can actually apply for, with the documents, the steps and the official link.',
-    ctaCheck: "Check what you're owed", ctaBrowse: 'Browse by country',
-    free: 'Free. Anonymous. No sign-up, no email, nothing stored on a server — the check runs in your browser.',
-    navCountries: 'Countries', navHow: 'How we know', navApi: 'API & MCP',
-    disclaimerShort: 'Discovery tool, not advice.',
-    disclaimerRest: 'Every figure is the published rule, not a decision on your case.',
-    statProgrammes: 'Programmes catalogued', statCountries: 'Countries covered',
-    statVerified: 'Human-verified records', statFunders: 'Distinct funding bodies',
-    whoFor: 'Who is this for?', browseCat: 'Browse by category', coverage: 'Coverage',
-    verified: 'Verified', notChecked: 'Not human-checked',
-    mustApply: 'You must apply', automatic: 'Automatic — no application',
-    whoQualifies: 'Who qualifies', howApply: 'How to apply',
-    documents: "Documents you'll need", source: 'Where this comes from',
-    lastChecked: 'Last checked', applyOfficial: 'Apply on the official site',
-    fullRules: 'Full rules & documents', amountVaries: 'Amount depends on your circumstances',
-    langNote:
-      'The interface is in English. Programme names are shown in the local language as published by the funder.',
-    audStudents: 'students & under-30s', audParents: 'parents at home',
-    audFreelancers: 'freelancers & self-employed', audRenters: 'renters',
-    audHead: (n, a, c) => `${n} things ${a} in ${c} can claim`,
-    audFor: 'Programmes for you', audAuto: 'Paid automatically',
-    audApply: 'Need an application', audPriced: 'With a published amount',
-    audBlurbStudents: 'Housing aid, transport passes, study grants, first-job and mobility help.',
-    audBlurbParents: 'Family allowances, childcare costs, school and back-to-school help, energy support.',
-    audBlurbFreelancers: 'Training credit, start-up aid, contribution relief and health cover.',
-    audBlurbRenters: 'Rent support, deposit guarantees, moving costs and social utility tariffs.',
-    methodology: 'Methodology', backHome: 'Home',
-  },
-  fr: {
-    tagline: "Trouvez les aides publiques auxquelles vous avez droit et que vous ne demandez pas.",
-    heroA: "Combien d'argent", heroB: 'laissez-vous de côté', heroQ: ' ?',
-    heroLede:
-      "L'État verse des aides au logement, des prestations familiales, des chèques énergie, des crédits d'impôt et des réductions de transport — et la plupart ne sont jamais demandés, faute d'information. Répondez à quelques questions et obtenez la liste sourcée de ce que vous pouvez réellement demander, avec les pièces justificatives, les démarches et le lien officiel.",
-    ctaCheck: 'Vérifier mes droits', ctaBrowse: 'Parcourir par pays',
-    free: "Gratuit. Anonyme. Sans inscription, sans e-mail, rien n'est stocké sur un serveur — le calcul se fait dans votre navigateur.",
-    navCountries: 'Pays', navHow: 'Nos sources', navApi: 'API & MCP',
-    disclaimerShort: "Outil d'information, pas un conseil.",
-    disclaimerRest: "Chaque montant est la règle publiée, pas une décision sur votre dossier.",
-    statProgrammes: 'Dispositifs recensés', statCountries: 'Pays couverts',
-    statVerified: 'Fiches vérifiées par un humain', statFunders: 'Organismes financeurs',
-    whoFor: 'Pour qui ?', browseCat: 'Parcourir par catégorie', coverage: 'Couverture',
-    verified: 'Vérifié', notChecked: 'Non vérifié par un humain',
-    mustApply: 'Demande nécessaire', automatic: 'Automatique — aucune démarche',
-    whoQualifies: 'Conditions', howApply: 'Comment faire la demande',
-    documents: 'Pièces à fournir', source: 'Source officielle',
-    lastChecked: 'Dernière vérification', applyOfficial: 'Faire la demande sur le site officiel',
-    fullRules: 'Conditions et pièces', amountVaries: 'Le montant dépend de votre situation',
-    langNote:
-      "L'interface est en français. Les conditions détaillées reprennent le texte de la source officielle et ne sont pas traduites automatiquement.",
-    audStudents: 'les étudiants et les moins de 30 ans', audParents: 'les parents au foyer',
-    audFreelancers: 'les indépendants', audRenters: 'les locataires',
-    audHead: (n, a, c) => `${n} aides que ${a} peuvent demander en ${c}`,
-    audFor: 'Aides pour vous', audAuto: 'Versées automatiquement',
-    audApply: 'Demande nécessaire', audPriced: 'Avec un montant publié',
-    audBlurbStudents: "Aides au logement, abonnements de transport, bourses d'études, aide au premier emploi et à la mobilité.",
-    audBlurbParents: "Prestations familiales, frais de garde, aides scolaires et de rentrée, chèque énergie.",
-    audBlurbFreelancers: "Compte de formation, aide à la création d'entreprise, exonérations de cotisations et complémentaire santé.",
-    audBlurbRenters: "Aides au loyer, garanties de caution, frais de déménagement et tarifs sociaux.",
-    methodology: 'Méthodologie', backHome: 'Accueil',
-  },
-  es: {
-    tagline: 'Encuentra las ayudas públicas a las que tienes derecho y no estás pidiendo.',
-    heroA: 'żCuánto dinero estás', heroB: 'dejando sobre la mesa', heroQ: '?',
-    heroLede:
-      'Las administraciones dan ayudas al alquiler, prestaciones familiares, descuentos en la luz, deducciones fiscales y abonos de transporte — y la mayoría no se solicita nunca porque nadie te dice que existen. Responde a unas preguntas y obtén una lista con fuentes de lo que puedes pedir de verdad, con los documentos, los pasos y el enlace oficial.',
-    ctaCheck: 'Comprobar mis ayudas', ctaBrowse: 'Ver por país',
-    free: 'Gratis. Anónimo. Sin registro, sin correo, nada se guarda en un servidor — el cálculo ocurre en tu navegador.',
-    navCountries: 'Países', navHow: 'Nuestras fuentes', navApi: 'API y MCP',
-    disclaimerShort: 'Herramienta informativa, no asesoramiento.',
-    disclaimerRest: 'Cada cifra es la norma publicada, no una resolución sobre tu caso.',
-    statProgrammes: 'Ayudas catalogadas', statCountries: 'Países cubiertos',
-    statVerified: 'Fichas verificadas por una persona', statFunders: 'Organismos financiadores',
-    whoFor: 'żPara quién es?', browseCat: 'Ver por categoría', coverage: 'Cobertura',
-    verified: 'Verificado', notChecked: 'Sin verificar por una persona',
-    mustApply: 'Hay que solicitarla', automatic: 'Automática — sin solicitud',
-    whoQualifies: 'Requisitos', howApply: 'Cómo solicitarla',
-    documents: 'Documentos necesarios', source: 'Fuente oficial',
-    lastChecked: 'Última comprobación', applyOfficial: 'Solicitar en la web oficial',
-    fullRules: 'Requisitos y documentos', amountVaries: 'El importe depende de tu situación',
-    langNote:
-      'La interfaz está en español. Las condiciones detalladas reproducen el texto de la fuente oficial y no se traducen automáticamente.',
-    audStudents: 'los estudiantes y menores de 30', audParents: 'los padres en casa',
-    audFreelancers: 'los autónomos', audRenters: 'los inquilinos',
-    audHead: (n, a, c) => `${n} ayudas que ${a} pueden pedir en ${c}`,
-    audFor: 'Ayudas para ti', audAuto: 'Se pagan automáticamente',
-    audApply: 'Hay que solicitarlas', audPriced: 'Con importe publicado',
-    audBlurbStudents: 'Ayudas al alquiler, abonos de transporte, becas de estudio y apoyo al primer empleo.',
-    audBlurbParents: 'Prestaciones familiares, gastos de guardería, ayudas escolares y bono social eléctrico.',
-    audBlurbFreelancers: 'Formación, ayudas al emprendimiento, bonificaciones de cuota y cobertura sanitaria.',
-    audBlurbRenters: 'Ayudas al alquiler, avales de fianza, gastos de mudanza y tarifas sociales.',
-    methodology: 'Metodología', backHome: 'Inicio',
-  },
-  de: {
-    tagline: 'Finden Sie die staatlichen Leistungen, die Ihnen zustehen und die Sie nicht beantragen.',
-    heroA: 'Wie viel Geld lassen Sie', heroB: 'einfach liegen', heroQ: '?',
-    heroLede:
-      'Der Staat zahlt Wohngeld, Familienleistungen, Energiezuschüsse, Steuerermäßigungen und Fahrpreisnachlässe — und das meiste wird nie beantragt, weil niemand davon erzählt. Beantworten Sie ein paar Fragen und erhalten Sie eine belegte Liste dessen, was Sie tatsächlich beantragen können, mit Unterlagen, Schritten und dem offiziellen Link.',
-    ctaCheck: 'Ansprüche prüfen', ctaBrowse: 'Nach Land suchen',
-    free: 'Kostenlos. Anonym. Keine Anmeldung, keine E-Mail, nichts wird auf einem Server gespeichert — die Prüfung läuft in Ihrem Browser.',
-    navCountries: 'Länder', navHow: 'Unsere Quellen', navApi: 'API & MCP',
-    disclaimerShort: 'Informationswerkzeug, keine Beratung.',
-    disclaimerRest: 'Jede Zahl ist die veröffentlichte Regel, keine Entscheidung über Ihren Fall.',
-    statProgrammes: 'Erfasste Leistungen', statCountries: 'Abgedeckte Länder',
-    statVerified: 'Von Menschen geprüfte Einträge', statFunders: 'Fördernde Stellen',
-    whoFor: 'Für wen ist das?', browseCat: 'Nach Kategorie', coverage: 'Abdeckung',
-    verified: 'Geprüft', notChecked: 'Nicht von Menschen geprüft',
-    mustApply: 'Antrag erforderlich', automatic: 'Automatisch — kein Antrag',
-    whoQualifies: 'Voraussetzungen', howApply: 'So beantragen Sie',
-    documents: 'Benötigte Unterlagen', source: 'Offizielle Quelle',
-    lastChecked: 'Zuletzt geprüft', applyOfficial: 'Auf der offiziellen Seite beantragen',
-    fullRules: 'Voraussetzungen & Unterlagen', amountVaries: 'Die Höhe hängt von Ihrer Situation ab',
-    langNote:
-      'Die Oberfläche ist auf Deutsch. Die ausführlichen Voraussetzungen geben den Text der offiziellen Quelle wieder und werden nicht maschinell übersetzt.',
-    audStudents: 'Studierende und unter 30-Jährige', audParents: 'Eltern zu Hause',
-    audFreelancers: 'Selbstständige', audRenters: 'Mieterinnen und Mieter',
-    audHead: (n, a, c) => `${n} Leistungen, die ${a} in ${c} beantragen können`,
-    audFor: 'Leistungen für Sie', audAuto: 'Automatisch gezahlt',
-    audApply: 'Antrag erforderlich', audPriced: 'Mit veröffentlichtem Betrag',
-    audBlurbStudents: 'Wohngeld, Fahrkarten, Studienförderung, Hilfen für den Berufseinstieg und Mobilität.',
-    audBlurbParents: 'Familienleistungen, Kinderbetreuungskosten, Schul- und Einschulungshilfen, Energiezuschüsse.',
-    audBlurbFreelancers: 'Weiterbildungsförderung, Gründungszuschuss, Beitragsentlastung und Krankenversicherung.',
-    audBlurbRenters: 'Mietzuschüsse, Kautionsbürgschaften, Umzugskosten und Sozialtarife.',
-    methodology: 'Methodik', backHome: 'Startseite',
-  },
-  it: {
-    tagline: 'Trova i contributi pubblici a cui hai diritto e che non stai chiedendo.',
-    heroA: 'Quanti soldi stai', heroB: 'lasciando sul tavolo', heroQ: '?',
-    heroLede:
-      "Lo Stato eroga contributi per l'affitto, assegni familiari, bonus energia, detrazioni fiscali e agevolazioni sui trasporti — e la maggior parte non viene mai richiesta perché nessuno ti dice che esiste. Rispondi a poche domande e ottieni un elenco con le fonti di ciò che puoi davvero richiedere, con i documenti, i passaggi e il link ufficiale.",
-    ctaCheck: 'Verifica i tuoi diritti', ctaBrowse: 'Sfoglia per paese',
-    free: 'Gratuito. Anonimo. Nessuna registrazione, nessuna email, nulla viene salvato su un server — il calcolo avviene nel tuo browser.',
-    navCountries: 'Paesi', navHow: 'Le nostre fonti', navApi: 'API e MCP',
-    disclaimerShort: 'Strumento informativo, non consulenza.',
-    disclaimerRest: 'Ogni importo è la regola pubblicata, non una decisione sul tuo caso.',
-    statProgrammes: 'Misure catalogate', statCountries: 'Paesi coperti',
-    statVerified: 'Schede verificate da una persona', statFunders: 'Enti erogatori',
-    whoFor: 'Per chi è?', browseCat: 'Sfoglia per categoria', coverage: 'Copertura',
-    verified: 'Verificato', notChecked: 'Non verificato da una persona',
-    mustApply: 'Serve fare domanda', automatic: 'Automatico — nessuna domanda',
-    whoQualifies: 'Requisiti', howApply: 'Come fare domanda',
-    documents: 'Documenti necessari', source: 'Fonte ufficiale',
-    lastChecked: 'Ultima verifica', applyOfficial: 'Fai domanda sul sito ufficiale',
-    fullRules: 'Requisiti e documenti', amountVaries: 'L’importo dipende dalla tua situazione',
-    langNote:
-      "L'interfaccia è in italiano. I requisiti dettagliati riportano il testo della fonte ufficiale e non sono tradotti automaticamente.",
-    audStudents: 'gli studenti e gli under 30', audParents: 'i genitori a casa',
-    audFreelancers: 'i lavoratori autonomi', audRenters: 'gli inquilini',
-    audHead: (n, a, c) => `${n} misure che ${a} possono richiedere in ${c}`,
-    audFor: 'Misure per te', audAuto: 'Erogate automaticamente',
-    audApply: 'Serve fare domanda', audPriced: 'Con importo pubblicato',
-    audBlurbStudents: 'Contributi affitto, abbonamenti ai trasporti, borse di studio e aiuti per il primo lavoro.',
-    audBlurbParents: 'Assegni familiari, spese per asilo nido, contributi scolastici e bonus energia.',
-    audBlurbFreelancers: 'Formazione, incentivi all\u2019avvio di attività, sgravi contributivi e copertura sanitaria.',
-    audBlurbRenters: 'Contributi affitto, garanzie sulla cauzione, spese di trasloco e tariffe sociali.',
-    methodology: 'Metodologia', backHome: 'Home',
-  },
-  pt: {
-    tagline: 'Descubra os apoios públicos a que tem direito e não está a pedir.',
-    heroA: 'Quanto dinheiro está a', heroB: 'deixar em cima da mesa', heroQ: '?',
-    heroLede:
-      'O Estado paga apoios à renda, abonos de família, descontos na energia, benefícios fiscais e passes de transporte — e a maior parte nunca é pedida porque ninguém diz que existe. Responda a algumas perguntas e receba uma lista com fontes do que pode mesmo pedir, com os documentos, os passos e o link oficial.',
-    ctaCheck: 'Ver os meus apoios', ctaBrowse: 'Ver por país',
-    free: 'Gratuito. Anónimo. Sem registo, sem email, nada é guardado num servidor — o cálculo corre no seu navegador.',
-    navCountries: 'Países', navHow: 'As nossas fontes', navApi: 'API e MCP',
-    disclaimerShort: 'Ferramenta informativa, não aconselhamento.',
-    disclaimerRest: 'Cada valor é a regra publicada, não uma decisão sobre o seu caso.',
-    statProgrammes: 'Apoios catalogados', statCountries: 'Países abrangidos',
-    statVerified: 'Registos verificados por uma pessoa', statFunders: 'Entidades financiadoras',
-    whoFor: 'Para quem é?', browseCat: 'Ver por categoria', coverage: 'Cobertura',
-    verified: 'Verificado', notChecked: 'Não verificado por uma pessoa',
-    mustApply: 'É preciso candidatar-se', automatic: 'Automático — sem candidatura',
-    whoQualifies: 'Requisitos', howApply: 'Como pedir',
-    documents: 'Documentos necessários', source: 'Fonte oficial',
-    lastChecked: 'Última verificação', applyOfficial: 'Pedir no site oficial',
-    fullRules: 'Requisitos e documentos', amountVaries: 'O valor depende da sua situação',
-    langNote:
-      'A interface está em português. Os requisitos detalhados reproduzem o texto da fonte oficial e não são traduzidos automaticamente.',
-    audStudents: 'os estudantes e menores de 30', audParents: 'os pais em casa',
-    audFreelancers: 'os trabalhadores independentes', audRenters: 'os inquilinos',
-    audHead: (n, a, c) => `${n} apoios que ${a} podem pedir em ${c}`,
-    audFor: 'Apoios para si', audAuto: 'Pagos automaticamente',
-    audApply: 'É preciso candidatar-se', audPriced: 'Com valor publicado',
-    audBlurbStudents: 'Apoios à renda, passes de transporte, bolsas de estudo e ajuda ao primeiro emprego.',
-    audBlurbParents: 'Abonos de família, custos de creche, apoios escolares e tarifa social de energia.',
-    audBlurbFreelancers: 'Formação, apoios à criação de empresa, isenções contributivas e cobertura de saúde.',
-    audBlurbRenters: 'Apoios à renda, garantias de caução, custos de mudança e tarifas sociais.',
-    methodology: 'Metodologia', backHome: 'Início',
-  },
-  hi: {
-    tagline: 'वे सरकारी लाभ खोजें जिनके आप हकदार हैं और जिन्हें आप नहीं ले रहे।',
-    heroA: 'आप कितना पैसा', heroB: 'छोड़ रहे हैं', heroQ: '?',
-    heroLede:
-      'सरकारें किराया सहायता, परिवार लाभ, बिजली छूट, कर छूट और यात्रा रियायतें देती हैं — और इनमें से अधिकांश का दावा कभी नहीं किया जाता, क्योंकि कोई बताता ही नहीं कि ये मौजूद हैं। कुछ सवालों के जवाब दें और पाएँ उन योजनाओं की स्रोत-सहित सूची जिनके लिए आप वाकई आवेदन कर सकते हैं — दस्तावेज़, चरण और आधिकारिक लिंक के साथ।',
-    ctaCheck: 'मेरे लाभ देखें', ctaBrowse: 'देश से देखें',
-    free: 'नि:शुल्क। गुमनाम। कोई साइन-अप नहीं, कोई ईमेल नहीं, सर्वर पर कुछ भी संग्रहीत नहीं — जाँच आपके ब्राउज़र में चलती है।',
-    navCountries: 'देश', navHow: 'हमारे स्रोत', navApi: 'API और MCP',
-    disclaimerShort: 'जानकारी का साधन, सलाह नहीं।',
-    disclaimerRest: 'हर आँकड़ा प्रकाशित नियम है, आपके मामले पर निर्णय नहीं।',
-    statProgrammes: 'सूचीबद्ध योजनाएँ', statCountries: 'शामिल देश',
-    statVerified: 'मानव-सत्यापित प्रविष्टियाँ', statFunders: 'वित्तपोषक संस्थाएँ',
-    whoFor: 'यह किसके लिए है?', browseCat: 'श्रेणी से देखें', coverage: 'कवरेज',
-    verified: 'सत्यापित', notChecked: 'मानव-सत्यापित नहीं',
-    mustApply: 'आवेदन करना होगा', automatic: 'स्वचालित — आवेदन नहीं',
-    whoQualifies: 'पात्रता', howApply: 'आवेदन कैसे करें',
-    documents: 'ज़रूरी दस्तावेज़', source: 'आधिकारिक स्रोत',
-    lastChecked: 'अंतिम जाँच', applyOfficial: 'आधिकारिक साइट पर आवेदन करें',
-    fullRules: 'पात्रता और दस्तावेज़', amountVaries: 'राशि आपकी परिस्थिति पर निर्भर करती है',
-    langNote:
-      'इंटरफ़ेस हिंदी में है। विस्तृत पात्रता शर्तें आधिकारिक स्रोत का पाठ हैं और उनका मशीनी अनुवाद नहीं किया गया।',
-    audStudents: 'छात्र और 30 से कम उम्र के लोग', audParents: 'घर पर रहने वाले अभिभावक',
-    audFreelancers: 'स्वरोज़गार करने वाले', audRenters: 'किरायेदार',
-    audHead: (n, a, c) => `${c} में ${a} ${n} लाभ ले सकते हैं`,
-    audFor: 'आपके लिए योजनाएँ', audAuto: 'स्वतः भुगतान',
-    audApply: 'आवेदन आवश्यक', audPriced: 'प्रकाशित राशि के साथ',
-    audBlurbStudents: 'आवास सहायता, यात्रा पास, छात्रवृत्ति, पहली नौकरी और आवागमन में मदद।',
-    audBlurbParents: 'परिवार भत्ते, शिशु देखभाल खर्च, स्कूल सहायता और ऊर्जा छूट।',
-    audBlurbFreelancers: 'प्रशिक्षण सहायता, उद्यम शुरू करने की मदद, अंशदान छूट और स्वास्थ्य कवर।',
-    audBlurbRenters: 'किराया सहायता, जमा गारंटी, स्थानांतरण खर्च और सामाजिक शुल्क दरें।',
-    methodology: 'कार्यप्रणाली', backHome: 'मुख्य पृष्ठ',
-  },
-};
+const T = { en, fr, es, de, it, pt, hi };
 
+/**
+ * Look up a string, or call it with arguments if it is a function.
+ *
+ * The fallback to English is a safety net for a runtime that has somehow got a
+ * key the dictionary lacks — not a workflow. `scripts/test-i18n.mjs` fails the
+ * build on any key present in English and missing elsewhere, because relying
+ * on the fallback is exactly how a French page ends up with English paragraphs
+ * and nobody notices: a missing translation raises no error, it just reads as
+ * English to someone who cannot read English.
+ */
 export function t(lang) {
   const base = T.en;
   const loc = T[lang] || base;
-  return (key) => loc[key] ?? base[key] ?? key;
+  return (key, ...args) => {
+    const v = loc[key] ?? base[key];
+    if (v === undefined) return key;
+    return typeof v === 'function' ? v(...args) : v;
+  };
 }
+
+/** Every key English defines — the contract the other languages must meet. */
+export const KEYS = Object.keys(en);
 
 export const LANGS = Object.keys(LOCALES);

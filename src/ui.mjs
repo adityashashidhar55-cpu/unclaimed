@@ -99,7 +99,7 @@ ${head}
 ${ldBlocks}
 </head>
 <body class="${bodyClass}">
-<a href="#main" class="btn btn-sm" style="position:absolute;left:-9999px;top:0;z-index:100" onfocus="this.style.left='8px';this.style.top='8px'" onblur="this.style.left='-9999px'">Skip to content</a>
+<a href="#main" class="btn btn-sm" style="position:absolute;left:-9999px;top:0;z-index:100" onfocus="this.style.left='8px';this.style.top='8px'" onblur="this.style.left='-9999px'">${esc(T('skipToContent'))}</a>
 <header class="masthead">
   <div class="shell masthead__inner">
     <a class="wordmark" href="${LB}/">${ICON.seal}${SITE_NAME}</a>
@@ -107,15 +107,15 @@ ${ldBlocks}
       <span class="nav nav--links">
         <a href="${LB}/countries/">${esc(T('navCountries'))}</a>
         <a href="${LB}/methodology/">${esc(T('navHow'))}</a>
-        <a href="${LB}/pricing/">Pricing</a>
-        <a href="${LB}/enterprise/">Enterprise</a>
-        <a href="${base}/blog/">Writing</a>
-        <a href="${base}/app/">App</a>
+        <a href="${LB}/pricing/">${esc(T('navPricing'))}</a>
+        <a href="${LB}/enterprise/">${esc(T('navEnterprise'))}</a>
+        <a href="${base}/blog/">${esc(T('navWriting'))}</a>
+        <a href="${base}/app/">${esc(T('navApp'))}</a>
         <a href="${base}/api/">${esc(T('navApi'))}</a>
       </span>
       ${
         altLangs.length > 1
-          ? `<label class="tiny" style="position:absolute;left:-9999px" for="lang-top">Language</label>
+          ? `<label class="tiny" style="position:absolute;left:-9999px" for="lang-top">${esc(T('language'))}</label>
       <select class="lang-select" id="lang-top" onchange="if(this.value)location.href=this.value" aria-label="Change language">
         ${altLangs.map((a) => `<option value="${attr(a.href)}"${a.lang === lang ? ' selected' : ''}>${esc(a.native)}</option>`).join('')}
       </select>`
@@ -133,23 +133,23 @@ ${body}
     <div class="grid grid-4">
       <div>
         <a class="wordmark" href="${LB}/">${ICON.seal}${SITE_NAME}</a>
-        <p class="small" style="margin-top:.8rem;max-width:32ch">${esc(TAGLINE)} Free, anonymous, no sign-up.</p>
+        <p class="small" style="margin-top:.8rem;max-width:32ch">${esc(T('tagline'))} ${esc(T('footFreeLine'))}</p>
       </div>
       <div>
-        <h4>Product</h4>
+        <h4>${esc(T('footProduct'))}</h4>
         <ul>
           <li><a href="${LB}/check/">${esc(T('ctaCheck'))}</a></li>
           <li><a href="${LB}/countries/">${esc(T('navCountries'))}</a></li>
           <li><a href="${LB}/methodology/">${esc(T('methodology'))}</a></li>
-          <li><a href="${base}/blog/">Writing</a></li>
-          <li><a href="${LB}/pricing/">Pricing</a></li>
-          <li><a href="${LB}/enterprise/">Enterprise</a></li>
-          <li><a href="${base}/dashboard/">Grants workspace</a></li>
-          <li><a href="${base}/app/">Mobile app</a></li>
+          <li><a href="${base}/blog/">${esc(T('navWriting'))}</a></li>
+          <li><a href="${LB}/pricing/">${esc(T('navPricing'))}</a></li>
+          <li><a href="${LB}/enterprise/">${esc(T('navEnterprise'))}</a></li>
+          <li><a href="${base}/dashboard/">${esc(T('footWorkspace'))}</a></li>
+          <li><a href="${base}/app/">${esc(T('footMobileApp'))}</a></li>
         </ul>
       </div>
       <div>
-        <h4>Developers</h4>
+        <h4>${esc(T('footDevelopers'))}</h4>
         <ul>
           <li><a href="${base}/api/">REST &amp; MCP</a></li>
           <li><a href="${base}/api/v1/countries.json">countries.json</a></li>
@@ -157,19 +157,19 @@ ${body}
         </ul>
       </div>
       <div>
-        <h4>Trust</h4>
+        <h4>${esc(T('footTrust'))}</h4>
         <ul>
-          <li><a href="${LB}/privacy/">Privacy</a></li>
-          <li><a href="${LB}/methodology/#limits">Known limitations</a></li>
-          <li><a href="${LB}/methodology/#verification">Verification status</a></li>
-          <li><a href="https://github.com/adityashashidhar55-cpu/unclaimed">Source on GitHub</a></li>
+          <li><a href="${LB}/privacy/">${esc(T('footPrivacy'))}</a></li>
+          <li><a href="${LB}/methodology/#limits">${esc(T('footLimits'))}</a></li>
+          <li><a href="${LB}/methodology/#verification">${esc(T('footVerification'))}</a></li>
+          <li><a href="https://github.com/adityashashidhar55-cpu/unclaimed">${esc(T('footSource'))}</a></li>
         </ul>
       </div>
     </div>
     ${
       altLangs.length > 1
         ? `<div style="margin-top:2.5rem;padding-top:1.6rem;border-top:1px solid var(--line)">
-      <h4 style="margin-bottom:.7rem">Language</h4>
+      <h4 style="margin-bottom:.7rem">${esc(T('language'))}</h4>
       <div class="langbar">${altLangs
         .map((a) => `<a href="${a.href}"${a.lang === lang ? ' aria-current="true"' : ''} hreflang="${a.lang}">${esc(a.native)}</a>`)
         .join('')}</div>
@@ -177,9 +177,7 @@ ${body}
         : ''
     }
     <p class="tiny" style="margin-top:2.5rem;max-width:none;border-top:1px solid var(--line);padding-top:1.2rem">
-      ${SITE_NAME} is a discovery tool, not legal, tax or financial advice. Eligibility rules change; only the
-      official body named on each programme page can confirm what you are entitled to. Always read the source
-      page before applying.
+      ${esc(T('footDisclaimer', SITE_NAME))}
     </p>
   </div>
 </footer>
@@ -371,7 +369,11 @@ export const FREE_ROWS = 2;
  * Takes the count rather than inferring it so a caller that has already sliced
  * (a "top 8 of 40" section) can still say 40.
  */
-export function teaseList({ rows, total = null, noun = 'programmes', href = null, container = 'list-rows' }) {
+export function teaseList({
+  rows, total = null, noun = 'programmes', href = null,
+  container = 'list-rows', tr = null, checkHref = null,
+}) {
+  const T = tr ?? ((k) => k);
   const n = total ?? rows.length;
   const shown = rows.slice(0, FREE_ROWS);
   const hidden = Math.max(0, n - shown.length);
@@ -381,12 +383,10 @@ export function teaseList({ rows, total = null, noun = 'programmes', href = null
     <div class="locked__rows" aria-hidden="true">
       ${Array.from({ length: Math.min(hidden, 4) }, () => '<div class="locked__row"></div>').join('')}
     </div>
-    <p class="small" style="margin:.6rem 0 0"><strong>${hidden} more ${esc(noun)}</strong> ${
-      hidden === 1 ? 'is' : 'are'
-    } on the paid plan, with the amount, the rules, the documents and the steps for each.</p>
+    <p class="small" style="margin:.6rem 0 0">${T('moreLocked', hidden, esc(noun))}</p>
     <p style="margin:.8rem 0 0">
-      <a class="btn btn-primary btn-sm" href="${href ?? '/pricing/'}">See plans</a>
-      <a class="btn btn-sm" href="/check/">Check your total free</a>
+      <a class="btn btn-primary btn-sm" href="${href ?? '/pricing/'}">${esc(T('seePlans'))}</a>
+      <a class="btn btn-sm" href="${checkHref ?? '/check/'}">${esc(T('checkFree'))}</a>
     </p>
   </section>`;
 }
@@ -399,16 +399,17 @@ export function teaseList({ rows, total = null, noun = 'programmes', href = null
  * un-hide. On a static page `entitled` is always false at build time; the
  * client fetches the real content from the gated API after sign-in.
  */
-export function locked({ title, blurb, rows = 3, id = null }) {
+export function locked({ title, blurb, rows = 3, id = null, tr = null, base = '' }) {
+  const T = tr ?? ((k) => k);
   return `<section class="locked-bucket"${id ? ` data-locked="${esc(id)}"` : ''}>
     <div class="bucket__head"><h2 style="margin:0">${esc(title)}</h2></div>
     ${blurb ? `<p class="small">${esc(blurb)}</p>` : ''}
     <div class="locked__rows" aria-hidden="true">
       ${Array.from({ length: rows }, () => '<div class="locked__row"></div>').join('')}
     </div>
-    <p><a class="btn btn-primary" href="/account/">Sign in to unlock</a>
-       <a class="btn" href="/pricing/">See pricing</a></p>
-    <p class="tiny">Email and a six-digit code, then €50 a year. No password to forget.</p>
+    <p><a class="btn btn-primary" href="${base}/account/">${esc(T('signInUnlock'))}</a>
+       <a class="btn" href="${base}/pricing/">${esc(T('seePricing'))}</a></p>
+    <p class="tiny">${esc(T('lockedNote'))}</p>
   </section>`;
 }
 
