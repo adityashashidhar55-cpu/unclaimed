@@ -37,6 +37,7 @@ import {
   DE_MINIMIS_CEILING_EUR, REGULATION, headroom, canAccept, declarationText,
 } from '../packages/stateaid/index.js';
 import { registryFor, autofillAvailable, projectCompany, COMPANY_FIELDS } from '../packages/registry/index.js';
+import { classifyRequirement, coverageFor, docLabel, isExpired, DOC_TYPES } from '../packages/vault/index.js';
 
 /* ------------------------------------------------------------------ */
 /* Helpers                                                             */
@@ -55,6 +56,24 @@ function money(n, cur = 'EUR') {
   const sym = { EUR: '€', GBP: '£', USD: '$' }[cur];
   return sym ? `${sym}${nf(Math.round(n))}` : `${nf(Math.round(n))} ${cur}`;
 }
+
+/**
+ * What to call a programme we are not allowed to name.
+ *
+ * The public dataset ships the first two records per country whole and strips
+ * the rest, so an unentitled workspace genuinely does not know most names —
+ * printing the opaque id (`p_rh63dr`) would read as a bug rather than as a
+ * paywall. Say what it is instead. The Worker returns the real records at the
+ * same URL once someone is signed in and paid, and every one of these labels
+ * becomes a name with no other change.
+ */
+function programmeName(p, fallback = 'Programme') {
+  if (!p) return fallback;
+  if (p.locked || !p.name_en) return 'Name on the paid plan';
+  return p.name_en || p.name_local;
+}
+
+const isLocked = (p) => !!p?.locked;
 
 /** A short, honest id. Not a UUID — this is a local workspace, not a database. */
 const uid = () => `${Date.now().toString(36)}${Math.floor(Math.random() * 1e6).toString(36)}`;
@@ -90,7 +109,21 @@ const EMPTY = {
   v: 1,
   org: { name: '', country_code: '' },
   companies: [],
+  /* One record per grant applied for, or about to be. Created automatically
+     when an opportunity is added — see addApplication() — because an
+     application log that depends on someone remembering to write a row in it
+     is an application log with holes in it exactly where the busy weeks were. */
   pipeline: [],
+  /* Projects sit between a company and its applications: most funders fund a
+     project, not a company, and the same project is pitched to several calls.
+     Optional — an application with no project still works. */
+  projects: [],
+  /* Documents held once and reused. Metadata only in this build: the encrypted
+     bytes need the vault service, and claiming to store a file we have not
+     stored would be worse than saying so. */
+  documents: [],
+  /* Milestones, reports and deliverables owed after an award. */
+  postaward: [],
   awards: [],
   grants: [],
   searches: [],
@@ -282,20 +315,28 @@ function hitRate(entries) {
 const NAV = [
   ['overview', 'Overview'],
   ['companies', 'Companies'],
+  ['projects', 'Projects'],
   ['opportunities', 'Opportunities'],
   ['pipeline', 'Pipeline'],
+  ['applications', 'Applications'],
+  ['documents', 'Documents'],
   ['deadlines', 'Deadlines'],
+  ['postaward', 'Post-award'],
   ['stateaid', 'State aid'],
   ['grants', 'Grant entry'],
   ['reports', 'Reports'],
 ];
 
-const view = { name: 'overview', companyId: null, entryId: null, filter: {} };
+const view = { name: 'overview', companyId: null, entryId: null, projectId: null, filter: {} };
 
 function chrome(inner) {
   const counts = {
     companies: ws.companies.length,
+    projects: ws.projects.length,
     pipeline: ws.pipeline.length,
+    applications: ws.pipeline.length,
+    documents: ws.documents.length,
+    postaward: ws.postaward.filter((i) => !i.done).length,
     grants: ws.grants.length,
   };
   return `
@@ -309,9 +350,37 @@ function chrome(inner) {
   </nav>
   <main class="dash__main">
     ${saveFailed ? `<div class="callout callout--warn"><p><strong>This browser refused to save.</strong> Your changes are in this tab only and will be lost when you close it. Private browsing and a full disk both do this.</p></div>` : ''}
+    ${lockedBanner()}
     ${inner}
   </main>
 </div>`;
+}
+
+/**
+ * Said once, at the top, rather than implied by forty placeholders.
+ *
+ * The workspace loads the same public dataset as everything else, and that
+ * dataset only names the first two programmes per pool. Everything else works
+ * — matching, ranking, deadlines, the ceiling ledger — because none of it
+ * needs a name. The row labels do, so this explains why they read the way they
+ * do instead of leaving someone to conclude the data is broken.
+ */
+/* Only where programme names actually appear. On Companies or Documents it is
+   a paragraph explaining something the screen never showed. */
+const NAME_VIEWS = new Set(['overview', 'company', 'opportunities', 'pipeline', 'entry', 'applications', 'deadlines', 'postaward', 'project']);
+
+function lockedBanner() {
+  if (!NAME_VIEWS.has(view.name)) return '';
+  let locked = 0;
+  let named = 0;
+  for (const d of pools.values()) {
+    for (const p of d?.programmes || []) (p.locked ? locked++ : named++);
+  }
+  if (!locked) return '';
+  return `<div class="callout"><p><strong>${nf(named)} of ${nf(named + locked)} programme names are visible.</strong>
+  Matching, ranking, deadlines and the state-aid ledger all work on every programme — none of them need the
+  name. The names themselves are on the paid plan, so most rows below read "Name on the paid plan" until this
+  workspace is signed in to a paid account.</p></div>`;
 }
 
 function empty(title, blurb, cta) {
@@ -362,6 +431,38 @@ function overviewView() {
     ${stat(nf(rate.won), 'Awarded', rate.decided ? `${rate.decided} decided` : 'none decided yet')}
     ${stat(rate.pct == null ? '—' : `${rate.pct}%`, 'Hit rate', rate.pct == null ? 'needs a decision first' : `${rate.won} of ${rate.decided}`)}
   </div>
+
+  ${(() => {
+    /* The whole portfolio's problems, on the first screen. A dashboard that
+       makes you open forty records to discover one of them breaches the state
+       aid ceiling has told you nothing you could not have found yourself. */
+    const issues = allIssues();
+    const blocking = issues.filter((i) => i.level === 'block' || i.level === 'urgent');
+    if (!issues.length) return '';
+    return `<section class="dash__section">
+    <div class="row-between">
+      <h2>${issues.length} thing${issues.length === 1 ? '' : 's'} need attention</h2>
+      ${blocking.length ? `<span class="status status--closing">${blocking.length} blocking</span>` : ''}
+    </div>
+    <div class="list-rows">
+      ${[...blocking, ...issues.filter((i) => !blocking.includes(i))]
+        .slice(0, 6)
+        .map((i) => {
+          const [cls, label] = ISSUE_STYLE[i.level] || ISSUE_STYLE.info;
+          const p2 = programmeBySlug(i.entry.slug);
+          return `<button class="list-row list-row--btn" data-entry-open="${i.entry.id}">
+        <div class="list-row__body">
+          <div class="list-row__name">${esc(i.title)}</div>
+          <div class="list-row__meta">${esc(programmeName(p2))} · ${esc(companyById(i.entry.company_id)?.legal_name || '')}</div>
+        </div>
+        <div class="list-row__right"><span class="status status--${cls}">${esc(label)}</span></div>
+      </button>`;
+        })
+        .join('')}
+    </div>
+    ${issues.length > 6 ? `<p class="tiny dash__muted">and ${issues.length - 6} more across the portfolio.</p>` : ''}
+  </section>`;
+  })()}
 
   <section class="dash__section">
     <div class="row-between">
@@ -577,8 +678,8 @@ function matchRow(r, company, inPipeline) {
   const added = inPipeline.has(p.slug);
   return `<div class="list-row">
     <div class="list-row__body">
-      <div class="list-row__name">${esc(p.name_en || p.name_local)}</div>
-      <div class="list-row__meta">${esc(p.funder || '')} · ${esc(INSTRUMENTS[p.grant_type]?.label || p.grant_type)}${
+      <div class="list-row__name">${esc(programmeName(p))}</div>
+      <div class="list-row__meta">${esc(p.funder || (isLocked(p) ? 'funder on the paid plan' : ''))} · ${esc(INSTRUMENTS[p.grant_type]?.label || p.grant_type)}${
         isFreeMoney(p.grant_type) ? ' · non-dilutive' : ''
       }</div>
       <div class="list-row__meta">
@@ -662,8 +763,8 @@ function opportunitiesView() {
             .map(
               ({ c, p, d }) => `<div class="list-row">
       <div class="list-row__body">
-        <div class="list-row__name">${esc(p.name_en || p.name_local)}</div>
-        <div class="list-row__meta">${esc(c.legal_name)} · ${esc(p.funder || '')}</div>
+        <div class="list-row__name">${esc(programmeName(p))}</div>
+        <div class="list-row__meta">${esc(c.legal_name)} · ${esc(p.funder || (isLocked(p) ? 'funder on the paid plan' : ''))}</div>
         <div class="list-row__meta">${
           amountEur(p) != null ? `<strong>${esc(money(p.amount_max ?? p.amount_min, p.amount_currency))}</strong>` : '<span class="dash__muted">amount not published</span>'
         }</div>
@@ -728,7 +829,7 @@ function cardFor(e) {
   const d = p ? deadlineState(p, Date.now()) : null;
   const v = e.value_eur ?? amountEur(p);
   return `<article class="board__card" draggable="true" data-entry="${e.id}" tabindex="0">
-    <div class="board__cardname">${esc(p?.name_en || e.slug)}</div>
+    <div class="board__cardname">${esc(programmeName(p))}</div>
     <div class="tiny dash__muted">${esc(c?.legal_name || 'unknown company')}</div>
     ${v != null ? `<div class="board__val">${esc(money(v, 'EUR'))}</div>` : '<div class="tiny dash__muted">amount not published</div>'}
     ${d ? `<span class="status status--${esc(d.urgency)}">${esc(d.headline)}</span>` : ''}
@@ -749,8 +850,8 @@ function entryView() {
   <header class="dash__head">
     <div>
       <button class="dash__back" data-view="pipeline">← Pipeline</button>
-      <h1>${esc(p?.name_en || e.slug)}</h1>
-      <p class="small dash__muted">${esc(c?.legal_name || '')}${p?.funder ? ` · ${esc(p.funder)}` : ''}</p>
+      <h1>${esc(programmeName(p))}</h1>
+      <p class="small dash__muted">${esc(e.reference || '')}${e.reference ? ' · ' : ''}${esc(c?.legal_name || '')}${p?.funder ? ` · ${esc(p.funder)}` : ''}</p>
     </div>
     <div class="row">
       ${p?.application_url ? `<a class="btn btn-sm" href="${esc(p.application_url)}" target="_blank" rel="noopener noreferrer">Funder's page</a>` : ''}
@@ -764,13 +865,28 @@ function entryView() {
       : ''
   }
 
+  ${issuesPanel(e)}
+  ${readinessPanel(e)}
+
   <form class="dash__form" id="entry-form" data-id="${e.id}">
     <div class="fieldgrid">
       <label class="fld"><span>Stage</span><select class="field" name="stage">
         ${STAGES.map((s) => `<option value="${s.id}"${e.stage === s.id ? ' selected' : ''}>${esc(s.label)}</option>`).join('')}
       </select></label>
+      <label class="fld"><span>Project</span><select class="field" name="project_id">
+        <option value="">— none —</option>
+        ${ws.projects
+          .filter((x) => x.company_id === e.company_id)
+          .map((x) => `<option value="${x.id}"${e.project_id === x.id ? ' selected' : ''}>${esc(x.name)}</option>`)
+          .join('')}
+      </select></label>
       <label class="fld"><span>Owner</span><input class="field" name="owner" value="${esc(e.owner || '')}"></label>
-      <label class="fld"><span>Value (EUR)</span><input class="field" type="number" name="value_eur" value="${esc(e.value_eur ?? '')}" placeholder="${amountEur(p) ?? ''}"></label>
+      <label class="fld"><span>Amount requested (EUR)</span><input class="field" type="number" name="requested_eur" value="${esc(e.requested_eur ?? '')}" placeholder="${amountEur(p) ?? ''}"></label>
+      <label class="fld"><span>Amount awarded (EUR)</span><input class="field" type="number" name="awarded_eur" value="${esc(e.awarded_eur ?? '')}"></label>
+      <label class="fld"><span>Submitted on</span><input class="field" type="date" name="submitted_at" value="${esc(e.submitted_at || '')}"></label>
+      <label class="fld"><span>Decision on</span><input class="field" type="date" name="decided_at" value="${esc(e.decided_at || '')}"></label>
+      <label class="fld"><span>Funder's reference</span><input class="field" name="funder_reference" value="${esc(e.funder_reference || '')}"></label>
+      <label class="fld"><span>Pipeline value (EUR)</span><input class="field" type="number" name="value_eur" value="${esc(e.value_eur ?? '')}" placeholder="${amountEur(p) ?? ''}"></label>
       <label class="fld"><span>Next action</span><input class="field" name="next_action" value="${esc(e.next_action || '')}"></label>
       <label class="fld"><span>Internal due date</span><input class="field" type="date" name="due" value="${esc(e.due || '')}"></label>
     </div>
@@ -778,10 +894,115 @@ function entryView() {
     <div class="row" style="margin-top:1rem"><button class="btn btn-primary" type="submit">Save</button></div>
   </form>
 
+  ${checklistPanel(e)}
+
   ${d ? `<section class="dash__section"><h2>Deadline</h2><p class="small"><strong>${esc(d.headline)}</strong> — ${esc(d.detail)}</p>${d.stale ? '<p class="tiny dash__muted">The published date has passed and the funder has not posted a new one. Treat the record as out of date.</p>' : ''}</section>` : ''}
 
   ${p && c ? autofillSection(c, p) : ''}
   `;
+}
+
+
+/* ------------------------------------------------------------------ */
+/* Application panels                                                  */
+/* ------------------------------------------------------------------ */
+
+const ISSUE_STYLE = {
+  block: ['closing', 'Blocking'],
+  urgent: ['closing', 'Urgent'],
+  warn: ['soon', 'Worth fixing'],
+  info: ['later', 'Note'],
+};
+
+function issuesPanel(e) {
+  const list = issuesFor(e);
+  if (!list.length) {
+    return `<div class="callout callout--sage"><p><strong>Nothing flagged.</strong> Eligibility passes, the
+    mandatory documents are held, the deadline is not close and the ceiling has room.</p></div>`;
+  }
+  return `<section class="dash__section">
+    <h2>${list.length} thing${list.length === 1 ? '' : 's'} to deal with</h2>
+    <div class="list-rows">
+      ${list
+        .map((i) => {
+          const [cls, label] = ISSUE_STYLE[i.level] || ISSUE_STYLE.info;
+          return `<div class="list-row">
+        <div class="list-row__body">
+          <div class="list-row__name">${esc(i.title)}</div>
+          <div class="list-row__meta">${esc(i.detail)}</div>
+          <div class="list-row__meta tiny">→ ${esc(i.fix)}</div>
+        </div>
+        <div class="list-row__right"><span class="status status--${cls}">${esc(label)}</span></div>
+      </div>`;
+        })
+        .join('')}
+    </div>
+  </section>`;
+}
+
+/**
+ * The score, with its working shown.
+ *
+ * A bare percentage next to a grant application gets read as a probability of
+ * winning. This one is a readiness score against the funder's own published
+ * criteria and nothing else, so every component is listed with its own
+ * fraction — you can disagree with the number by looking at it.
+ */
+function readinessPanel(e) {
+  const r = readinessFor(e);
+  if (!r) return '';
+  return `<section class="dash__section">
+    <div class="row-between">
+      <h2>Readiness</h2>
+      <strong>${r.score}%</strong>
+    </div>
+    <div class="meter"><div class="meter__bar meter__bar--${r.score < 40 ? 'hot' : r.score < 75 ? 'warm' : ''}" style="width:${r.score}%"></div></div>
+    <ul class="small" style="margin:.4rem 0 0;padding-left:1.1rem">
+      ${r.parts.map((x) => `<li>${esc(x.label)}</li>`).join('')}
+    </ul>
+    <p class="tiny dash__muted" style="margin-top:.6rem">This is how complete the application is against the
+    criteria the funder published. It is not a probability of winning — nobody can compute that, and a number
+    that looked like one would get planned around.</p>
+  </section>`;
+}
+
+function checklistPanel(e) {
+  const cov = checklistFor(e);
+  if (!cov || !cov.required.length) {
+    return `<section class="dash__section"><h2>Documents</h2>
+    <p class="small dash__muted">This programme's record lists no required documents. That usually means the
+    funder does not publish the list, not that there are none — check the official page.</p></section>`;
+  }
+  const have = new Set(cov.satisfied.map((r) => r.doc));
+  return `<section class="dash__section">
+    <div class="row-between">
+      <h2>Document checklist</h2>
+      <span class="small">${cov.satisfied.length} of ${cov.required.length}</span>
+    </div>
+    <div class="meter"><div class="meter__bar" style="width:${cov.pct}%"></div></div>
+    <div class="list-rows">
+      ${cov.required
+        .map((r) => {
+          const ok = have.has(r.doc);
+          return `<div class="list-row">
+        <div class="list-row__body">
+          <div class="list-row__name">${ok ? '✓ ' : ''}${esc(r.doc)}</div>
+          <div class="list-row__meta">${r.mandatory ? 'Mandatory' : 'Optional'}${r.type !== 'other' ? ` · counts as ${esc(docLabel(r.type))}` : ' · nothing in the shared library matches this one'}</div>
+        </div>
+        <div class="list-row__right">${
+          ok
+            ? '<span class="status status--open">held</span>'
+            : r.type === 'other'
+              ? '<span class="status status--later">one-off</span>'
+              : `<button class="btn btn-sm" data-action="new-document" data-type="${esc(r.type)}">Add it</button>`
+        }</div>
+      </div>`;
+        })
+        .join('')}
+    </div>
+    <p class="tiny dash__muted" style="margin-top:.6rem">Ticks come from the shared library, so adding one
+    document here ticks it on every other application that wants the same thing.</p>
+  </section>`;
 }
 
 /* ------------------------------------------------------------------ */
@@ -903,7 +1124,7 @@ function packText(e) {
     profile: { ...companyProfile(c), ...(c.narrative || {}) },
   });
   const lines = [
-    `APPLICATION PACK — ${p.name_en}`,
+    `APPLICATION PACK — ${programmeName(p)}`,
     `Funder: ${p.funder || 'unknown'}`,
     `Applicant: ${c.legal_name}`,
     `Prepared: ${new Date().toISOString().slice(0, 10)}`,
@@ -953,7 +1174,7 @@ function deadlineRow({ e, p, d }) {
   const days = Math.max(0, d.days_until ?? 0);
   return `<button class="list-row list-row--btn" data-entry-open="${e.id}">
     <div class="list-row__body">
-      <div class="list-row__name">${esc(p.name_en || p.slug)}</div>
+      <div class="list-row__name">${esc(programmeName(p))}</div>
       <div class="list-row__meta">${esc(c?.legal_name || '')} · ${esc(STAGES.find((s) => s.id === e.stage)?.label || e.stage)}</div>
     </div>
     <div class="list-row__right">
@@ -991,7 +1212,7 @@ function deadlinesView() {
           .map(({ e, p }) => {
             const d = deadlineState(p, Date.now());
             return `<button class="list-row list-row--btn" data-entry-open="${e.id}">
-              <div class="list-row__body"><div class="list-row__name">${esc(p.name_en)}</div>
+              <div class="list-row__body"><div class="list-row__name">${esc(programmeName(p))}</div>
               <div class="list-row__meta">${esc(companyById(e.company_id)?.legal_name || '')} — ${esc(d.detail)}</div></div>
               <div class="list-row__right"><span class="status status--${esc(d.urgency)}">${esc(d.headline)}</span></div>
             </button>`;
@@ -1226,6 +1447,516 @@ function reportsView() {
 }
 
 /* ------------------------------------------------------------------ */
+/* Applications — created automatically, never by hand                 */
+/* ------------------------------------------------------------------ */
+
+/**
+ * Turn an opportunity into an application record.
+ *
+ * "Automatic application entries" means this: the moment a programme enters
+ * the pipeline it becomes a row in the applications log, with the reference,
+ * the amount the funder publishes, the document checklist derived from that
+ * programme's own `documents_required`, and the owner inherited from the
+ * company. Nothing about it waits for a human to fill a form.
+ *
+ * What it does NOT do is invent facts. `requested_eur` starts at the published
+ * ceiling because that is a published number; the narrative fields start empty
+ * because nobody has written them; `submitted_at` stays null until someone
+ * says it was submitted, because the log is evidence and a guessed date in it
+ * is worse than a blank.
+ */
+function addApplication(companyId, slug, { projectId = null } = {}) {
+  const p = programmeBySlug(slug);
+  const c = companyById(companyId);
+  const required = (p?.documents_required || [])
+    .map((d) => ({ doc: d.doc, mandatory: d.mandatory !== false, type: classifyRequirement(d.doc) }))
+    .filter((r) => r.type !== 'not_required');
+
+  return {
+    id: uid(),
+    company_id: companyId,
+    project_id: projectId,
+    slug,
+    /* Human-readable and stable, so it can be quoted in an email to a funder
+       before the funder has issued a reference of their own. */
+    reference: `UG-${(c?.legal_name || 'CO').replace(/[^A-Za-z]/g, '').slice(0, 3).toUpperCase() || 'CO'}-${String(ws.pipeline.length + 1).padStart(3, '0')}`,
+    stage: 'watch',
+    owner: c?.owner || '',
+    value_eur: null,
+    requested_eur: amountEur(p),
+    awarded_eur: null,
+    submitted_at: null,
+    decided_at: null,
+    funder_reference: '',
+    next_action: '',
+    due: '',
+    notes: '',
+    /* One entry per document the funder asks for, resolved against the shared
+       library at render time rather than copied — a document added later must
+       tick this checklist without anyone reopening the application. */
+    required_docs: required,
+    auto: true,
+    created_at: Date.now(),
+  };
+}
+
+const applicationsFor = (companyId) => ws.pipeline.filter((e) => e.company_id === companyId);
+
+/** Applications that have actually been sent — the log a board asks about. */
+const submitted = () => ws.pipeline.filter((e) => e.submitted_at || ['submitted', 'awarded', 'declined'].includes(e.stage));
+
+/* ------------------------------------------------------------------ */
+/* Documents — held once, counted everywhere                           */
+/* ------------------------------------------------------------------ */
+
+/**
+ * Holdings visible to one application.
+ *
+ * A document belongs either to a company or to the whole workspace. Shared is
+ * the default for things like a standard capability statement; company-scoped
+ * for a certificate of incorporation. Both are in scope for that company's
+ * applications, and only those.
+ */
+function holdingsFor(companyId) {
+  return ws.documents
+    .filter((d) => !d.company_id || d.company_id === companyId)
+    .map((d) => ({ id: d.id, type: d.type, issuedAt: d.issued_at ? Date.parse(d.issued_at) : null, createdAt: d.added_at }));
+}
+
+/** Checklist state for one application, resolved live against the library. */
+function checklistFor(e) {
+  const p = programmeBySlug(e.slug);
+  if (!p) return null;
+  return coverageFor(p, holdingsFor(e.company_id), Date.now());
+}
+
+/* ------------------------------------------------------------------ */
+/* Issue flagging                                                      */
+/* ------------------------------------------------------------------ */
+
+/**
+ * Everything wrong with an application, found rather than waited for.
+ *
+ * Ordered by how expensive the mistake is: a de minimis breach disqualifies
+ * the award in full and is worth knowing before anyone drafts; a missing
+ * optional document is worth knowing the week before submission. Each issue
+ * names the fix, because a warning you cannot act on is just anxiety.
+ */
+function issuesFor(e) {
+  const out = [];
+  const p = programmeBySlug(e.slug);
+  const c = companyById(e.company_id);
+  if (!p || !c) return out;
+  const now = Date.now();
+
+  const aid = aidCheck(c, p);
+  if (aid && !aid.ok && aid.headline.includes('breach')) {
+    out.push({ level: 'block', title: 'Would breach the de minimis ceiling', detail: aid.detail, fix: 'Record the earlier awards, or wait for headroom to free up.' });
+  }
+
+  const cov = checklistFor(e);
+  if (cov) {
+    const missingMandatory = cov.missing.filter((r) => r.mandatory && r.type !== 'other');
+    if (missingMandatory.length) {
+      out.push({
+        level: 'warn',
+        title: `${missingMandatory.length} mandatory document${missingMandatory.length === 1 ? '' : 's'} missing`,
+        detail: missingMandatory.map((r) => r.doc).join('; '),
+        fix: 'Add them once in Documents and every other application that wants them ticks too.',
+      });
+    }
+    if (cov.stale.length) {
+      out.push({ level: 'warn', title: `${cov.stale.length} document${cov.stale.length === 1 ? '' : 's'} out of date`, detail: 'Held, but past the validity window for this kind of evidence.', fix: 'Replace the expired copy in Documents.' });
+    }
+  }
+
+  const d = deadlineState(p, now);
+  if (d.days_until != null && d.days_until <= 14 && ['watch', 'drafting'].includes(e.stage)) {
+    out.push({ level: 'urgent', title: d.headline, detail: `Still at "${STAGES.find((s) => s.id === e.stage)?.label}" with ${d.days_until} day${d.days_until === 1 ? '' : 's'} to go.`, fix: 'Move it forward or drop it, but do not leave it here.' });
+  }
+  if (d.stale) {
+    out.push({ level: 'warn', title: 'The published deadline has passed', detail: d.detail, fix: "Check the funder's page for a new round." });
+  }
+
+  const cofunding = p.cofunding_pct ?? 0;
+  if (cofunding > 0 && c.has_cofunding !== true) {
+    const need = amountEur(p) != null ? money((amountEur(p) * cofunding) / (100 - cofunding), 'EUR') : null;
+    out.push({
+      level: 'warn',
+      title: `Needs ${cofunding}% co-funding`,
+      detail: need ? `Roughly ${need} of your own money alongside the grant.` : 'The funder covers only part of the project cost.',
+      fix: 'Confirm the co-funding on the company, or deprioritise this one.',
+    });
+  }
+
+  const narrative = c.narrative || {};
+  const unwritten = NARRATIVE_FIELDS.filter((f) => !narrative[f.field]);
+  if (unwritten.length) {
+    out.push({ level: 'info', title: `${unwritten.length} narrative answer${unwritten.length === 1 ? '' : 's'} unwritten`, detail: unwritten.slice(0, 3).map((f) => f.label).join('; '), fix: 'Write them once on the company; every application reuses them.' });
+  }
+
+  if (e.stage === 'submitted' && !e.submitted_at) {
+    out.push({ level: 'info', title: 'Marked submitted with no date', detail: 'The applications log shows a blank where the submission date should be.', fix: 'Set the date on the application.' });
+  }
+
+  const RANK = { block: 0, urgent: 1, warn: 2, info: 3 };
+  return out.sort((a, b) => RANK[a.level] - RANK[b.level]);
+}
+
+const allIssues = () => ws.pipeline.flatMap((e) => issuesFor(e).map((i) => ({ ...i, entry: e })));
+
+/* ------------------------------------------------------------------ */
+/* Readiness score                                                     */
+/* ------------------------------------------------------------------ */
+
+/**
+ * How ready this application is, against the programme's own published
+ * criteria. Not a prediction of whether it will win.
+ *
+ * That distinction is the whole design. A number labelled "score" next to a
+ * grant application will be read as a probability, and a probability we cannot
+ * measure is a made-up number that people plan around. So every component here
+ * is something countable that the funder actually published: rules passed,
+ * documents held, narrative answers written, issues outstanding. The panel
+ * shows the components, not just the total, so the number can be argued with.
+ */
+function readinessFor(e) {
+  const p = programmeBySlug(e.slug);
+  const c = companyById(e.company_id);
+  if (!p || !c) return null;
+
+  const parts = [];
+
+  const verdict = (matchFor(c).buckets.eligible || []).some((m) => m.programme.slug === p.slug)
+    ? { got: 1, of: 1, label: 'Passes every published eligibility rule' }
+    : (matchFor(c).buckets.needs_answer || []).some((m) => m.programme.slug === p.slug)
+      ? { got: 0.5, of: 1, label: 'One eligibility field still blank' }
+      : { got: 0, of: 1, label: 'Fails at least one published rule' };
+  parts.push({ ...verdict, weight: 3 });
+
+  const cov = checklistFor(e);
+  parts.push({
+    got: cov ? cov.satisfied.length : 0,
+    of: cov ? Math.max(1, cov.required.length) : 1,
+    label: cov && cov.required.length ? `${cov.satisfied.length} of ${cov.required.length} documents held` : 'No documents required',
+    weight: 2,
+  });
+
+  const narrative = c.narrative || {};
+  const written = NARRATIVE_FIELDS.filter((f) => narrative[f.field]).length;
+  parts.push({ got: written, of: NARRATIVE_FIELDS.length, label: `${written} of ${NARRATIVE_FIELDS.length} narrative answers written`, weight: 3 });
+
+  const blocking = issuesFor(e).filter((i) => i.level === 'block' || i.level === 'urgent').length;
+  parts.push({ got: blocking ? 0 : 1, of: 1, label: blocking ? `${blocking} blocking issue${blocking === 1 ? '' : 's'}` : 'No blocking issues', weight: 2 });
+
+  const total = parts.reduce((s, x) => s + x.weight, 0);
+  const score = Math.round((parts.reduce((s, x) => s + (x.got / x.of) * x.weight, 0) / total) * 100);
+  return { score, parts };
+}
+
+/* ------------------------------------------------------------------ */
+/* Projects                                                            */
+/* ------------------------------------------------------------------ */
+
+function projectsView() {
+  if (!ws.companies.length) {
+    return empty('Add a company first.', 'A project belongs to a company, and gets pitched to several calls.', '<button class="btn btn-primary" data-action="new-company">Add a company</button>');
+  }
+  return `
+  <header class="dash__head">
+    <div><span class="eyebrow">What you are actually funding</span><h1>Projects</h1></div>
+    <button class="btn btn-sm btn-primary" data-action="new-project">Add a project</button>
+  </header>
+  <p class="small dash__muted" style="max-width:62ch">Most funders fund a project, not a company, and the same
+  project goes to several calls. Grouping applications by project is what lets you answer "how much have we
+  raised for this" without adding the rows up by hand.</p>
+  ${
+    ws.projects.length
+      ? `<div class="list-rows" style="margin-top:1.2rem">${ws.projects
+          .map((pr) => {
+            const apps = ws.pipeline.filter((e) => e.project_id === pr.id);
+            const won = apps.filter((e) => e.stage === 'awarded');
+            const wonEur = won.reduce((s, e) => s + (e.awarded_eur ?? 0), 0);
+            return `<button class="list-row list-row--btn" data-project="${pr.id}">
+        <div class="list-row__body">
+          <div class="list-row__name">${esc(pr.name)}</div>
+          <div class="list-row__meta">${esc(companyById(pr.company_id)?.legal_name || 'unknown company')}${pr.budget_eur ? ` · budget ${esc(money(pr.budget_eur, 'EUR'))}` : ''}</div>
+          <div class="list-row__meta">${apps.length} application${apps.length === 1 ? '' : 's'} · ${won.length} awarded${wonEur ? ` · ${esc(money(wonEur, 'EUR'))} raised` : ''}</div>
+        </div>
+        <div class="list-row__right">${
+          pr.budget_eur && wonEur
+            ? `<span class="status status--${wonEur >= pr.budget_eur ? 'open' : 'soon'}">${Math.round((wonEur / pr.budget_eur) * 100)}% funded</span>`
+            : ''
+        }</div>
+      </button>`;
+          })
+          .join('')}</div>`
+      : '<div class="dash__empty" style="margin-top:1.2rem"><p class="small">No projects yet. Applications work without one — this is for when the same project goes to more than one funder.</p></div>'
+  }`;
+}
+
+function projectFormView(pr) {
+  const v = (k, d = '') => esc(pr?.[k] ?? d);
+  return `
+  <header class="dash__head">
+    <div><span class="eyebrow">${pr?.id ? 'Edit' : 'New'}</span><h1>${pr?.id ? esc(pr.name) : 'Add a project'}</h1></div>
+    <button class="btn btn-sm btn-ghost" data-view="projects">Cancel</button>
+  </header>
+  <form class="dash__form" id="project-form" data-id="${pr?.id || ''}">
+    <div class="fieldgrid">
+      <label class="fld"><span>Project name</span><input class="field" name="name" value="${v('name')}" required></label>
+      <label class="fld"><span>Company</span><select class="field" name="company_id">
+        ${ws.companies.map((c) => `<option value="${c.id}"${pr?.company_id === c.id ? ' selected' : ''}>${esc(c.legal_name)}</option>`).join('')}
+      </select></label>
+      <label class="fld"><span>Total budget (EUR)</span><input class="field" type="number" name="budget_eur" value="${v('budget_eur')}"></label>
+      <label class="fld"><span>Starts</span><input class="field" type="date" name="starts" value="${v('starts')}"></label>
+      <label class="fld"><span>Ends</span><input class="field" type="date" name="ends" value="${v('ends')}"></label>
+    </div>
+    <label class="fld"><span>What the project does</span><textarea class="field" name="summary" rows="4">${v('summary')}</textarea></label>
+    <div class="row" style="margin-top:1rem">
+      <button class="btn btn-primary" type="submit">Save</button>
+      ${pr?.id ? `<button class="btn btn-ghost" type="button" data-action="delete-project" data-id="${pr.id}">Delete</button>` : ''}
+    </div>
+  </form>`;
+}
+
+function projectView() {
+  const pr = ws.projects.find((x) => x.id === view.projectId);
+  if (!pr) return empty('That project is gone.', '', '<button class="btn" data-view="projects">Back</button>');
+  const apps = ws.pipeline.filter((e) => e.project_id === pr.id);
+  return `
+  <header class="dash__head">
+    <div>
+      <button class="dash__back" data-view="projects">← Projects</button>
+      <h1>${esc(pr.name)}</h1>
+      <p class="small dash__muted">${esc(companyById(pr.company_id)?.legal_name || '')}</p>
+    </div>
+    <button class="btn btn-sm" data-action="edit-project" data-id="${pr.id}">Edit</button>
+  </header>
+  ${pr.summary ? `<p class="small" style="max-width:64ch">${esc(pr.summary)}</p>` : ''}
+  <section class="dash__section">
+    <h2>Applications for this project</h2>
+    ${apps.length ? `<div class="list-rows">${apps.map(applicationRow).join('')}</div>` : '<p class="small dash__muted">None yet. Add an opportunity from the company or the portfolio view and set its project.</p>'}
+  </section>`;
+}
+
+/* ------------------------------------------------------------------ */
+/* Applications                                                        */
+/* ------------------------------------------------------------------ */
+
+function applicationRow(e) {
+  const p = programmeBySlug(e.slug);
+  const c = companyById(e.company_id);
+  const r = readinessFor(e);
+  const issues = issuesFor(e);
+  const blocking = issues.filter((i) => i.level === 'block' || i.level === 'urgent').length;
+  return `<button class="list-row list-row--btn" data-entry-open="${e.id}">
+    <div class="list-row__body">
+      <div class="list-row__name">${esc(programmeName(p))}</div>
+      <div class="list-row__meta">${esc(e.reference || '')} · ${esc(c?.legal_name || '')}${e.owner ? ` · ${esc(e.owner)}` : ''}</div>
+      <div class="list-row__meta">
+        ${e.submitted_at ? `submitted ${fmtDate(Date.parse(e.submitted_at))}` : 'not yet submitted'}
+        ${e.requested_eur != null ? ` · asked ${esc(money(e.requested_eur, 'EUR'))}` : ''}
+        ${e.awarded_eur != null ? ` · <strong>awarded ${esc(money(e.awarded_eur, 'EUR'))}</strong>` : ''}
+      </div>
+    </div>
+    <div class="list-row__right">
+      ${blocking ? `<span class="status status--closing">${blocking} to fix</span>` : ''}
+      ${r ? `<span class="pill">${r.score}% ready</span>` : ''}
+      <span class="status status--${e.stage === 'awarded' ? 'open' : e.stage === 'declined' ? 'stalled' : e.stage === 'submitted' ? 'soon' : 'later'}">${esc(STAGES.find((s) => s.id === e.stage)?.label || e.stage)}</span>
+    </div>
+  </button>`;
+}
+
+function applicationsView() {
+  if (!ws.pipeline.length) {
+    return empty(
+      'No applications yet.',
+      'Every opportunity you add becomes an application record here automatically, with its own reference, checklist and log.',
+      '<button class="btn btn-primary" data-view="opportunities">Find opportunities</button>',
+    );
+  }
+  const sent = submitted();
+  const awarded = ws.pipeline.filter((e) => e.stage === 'awarded');
+  const askedTotal = sent.reduce((s, e) => s + (e.requested_eur ?? 0), 0);
+  const wonTotal = awarded.reduce((s, e) => s + (e.awarded_eur ?? 0), 0);
+  const rate = hitRate(ws.pipeline);
+
+  const group = (title, list, blurb) =>
+    list.length
+      ? `<section class="dash__section"><h2>${esc(title)} <span class="dash__muted">${list.length}</span></h2>
+      ${blurb ? `<p class="small dash__muted">${blurb}</p>` : ''}
+      <div class="list-rows">${list.map(applicationRow).join('')}</div></section>`
+      : '';
+
+  return `
+  <header class="dash__head">
+    <div><span class="eyebrow">Every grant applied for</span><h1>Applications</h1></div>
+    <button class="btn btn-sm btn-ghost" data-action="export-applications">Export CSV</button>
+  </header>
+
+  <div class="grid grid-4 dash__stats">
+    ${stat(nf(ws.pipeline.length), 'Applications', 'created automatically')}
+    ${stat(nf(sent.length), 'Submitted', askedTotal ? `${money(askedTotal, 'EUR')} requested` : 'no amounts recorded')}
+    ${stat(money(wonTotal, 'EUR') || '€0', 'Awarded', `${awarded.length} won`)}
+    ${stat(rate.pct == null ? '—' : `${rate.pct}%`, 'Hit rate', rate.decided ? `${rate.decided} decided` : 'nothing decided yet')}
+  </div>
+
+  ${group('Awarded', awarded, 'What came in, and what it was for.')}
+  ${group('With the funder', ws.pipeline.filter((e) => e.stage === 'submitted'), 'Submitted and awaiting a decision.')}
+  ${group('Being written', ws.pipeline.filter((e) => e.stage === 'drafting'))}
+  ${group('Watching', ws.pipeline.filter((e) => e.stage === 'watch'), 'Eligible, not started.')}
+  ${group('Blocked', ws.pipeline.filter((e) => e.stage === 'blocked'), 'Something has to be resolved before these can move.')}
+  ${group('Declined', ws.pipeline.filter((e) => e.stage === 'declined'), 'Kept, because most of these run again.')}`;
+}
+
+/* ------------------------------------------------------------------ */
+/* Documents                                                           */
+/* ------------------------------------------------------------------ */
+
+function documentsView() {
+  const progs = ws.pipeline.map((e) => programmeBySlug(e.slug)).filter(Boolean);
+  /* Which single missing document unblocks the most applications. This is the
+     entire reason to hold documents centrally rather than per application. */
+  const unlocks = new Map();
+  for (const e of ws.pipeline) {
+    const cov = checklistFor(e);
+    if (!cov) continue;
+    for (const r of cov.missing) {
+      if (r.type === 'other') continue;
+      if (!unlocks.has(r.type)) unlocks.set(r.type, { type: r.type, label: docLabel(r.type), count: 0 });
+      unlocks.get(r.type).count += 1;
+    }
+  }
+  const ranked = [...unlocks.values()].sort((a, b) => b.count - a.count);
+
+  return `
+  <header class="dash__head">
+    <div><span class="eyebrow">Held once, reused everywhere</span><h1>Documents</h1></div>
+    <button class="btn btn-sm btn-primary" data-action="new-document">Add a document</button>
+  </header>
+
+  <p class="small dash__muted" style="max-width:64ch">Every application asks for the same handful of things.
+  Record a document here once and it ticks itself off on every application that wants it — including ones you
+  add next month. ${progs.length ? `Checked against the ${progs.length} programme${progs.length === 1 ? '' : 's'} in your pipeline.` : ''}</p>
+
+  ${
+    ranked.length
+      ? `<section class="dash__section">
+    <h2>Add these first</h2>
+    <p class="small dash__muted">Ordered by how many applications each one unblocks.</p>
+    <div class="list-rows">
+      ${ranked
+        .slice(0, 8)
+        .map(
+          (u) => `<div class="list-row">
+        <div class="list-row__body">
+          <div class="list-row__name">${esc(u.label)}</div>
+          <div class="list-row__meta">Wanted by ${u.count} application${u.count === 1 ? '' : 's'}</div>
+        </div>
+        <div class="list-row__right"><button class="btn btn-sm" data-action="new-document" data-type="${esc(u.type)}">Add</button></div>
+      </div>`,
+        )
+        .join('')}
+    </div>
+  </section>`
+      : ''
+  }
+
+  <section class="dash__section">
+    <h2>Your library <span class="dash__muted">${ws.documents.length}</span></h2>
+    ${
+      ws.documents.length
+        ? `<div class="list-rows">${ws.documents
+            .map((d) => {
+              const expired = isExpired({ type: d.type, issuedAt: d.issued_at ? Date.parse(d.issued_at) : null, createdAt: d.added_at }, Date.now());
+              return `<div class="list-row">
+        <div class="list-row__body">
+          <div class="list-row__name">${esc(d.label || docLabel(d.type))}</div>
+          <div class="list-row__meta">${esc(docLabel(d.type))} · ${d.company_id ? esc(companyById(d.company_id)?.legal_name || 'a company') : 'shared across the workspace'}${d.issued_at ? ` · issued ${esc(d.issued_at)}` : ''}</div>
+        </div>
+        <div class="list-row__right">
+          ${expired ? '<span class="status status--closing">out of date</span>' : '<span class="status status--open">current</span>'}
+          <button class="btn btn-sm btn-ghost" data-action="remove-document" data-id="${d.id}">Remove</button>
+        </div>
+      </div>`;
+            })
+            .join('')}</div>`
+        : '<p class="small dash__muted">Nothing recorded yet.</p>'
+    }
+  </section>
+
+  <div class="callout" style="margin-top:1.6rem">
+    <p><strong>This records that you hold a document, not the document.</strong> The encrypted file store needs
+    the hosted service, and telling you a file is safely kept when it is not would be the worst kind of
+    reassurance. What this gives you today is the checklist: what each funder asks for, what you already have,
+    and what is out of date.</p>
+  </div>`;
+}
+
+/* ------------------------------------------------------------------ */
+/* Post-award                                                          */
+/* ------------------------------------------------------------------ */
+
+const OBLIGATION_KINDS = [
+  ['milestone', 'Milestone'],
+  ['report', 'Report'],
+  ['deliverable', 'Deliverable'],
+  ['payment', 'Payment claim'],
+];
+
+function postawardView() {
+  const awarded = ws.pipeline.filter((e) => e.stage === 'awarded');
+  if (!awarded.length) {
+    return empty(
+      'Nothing awarded yet.',
+      'When an application is marked awarded, its reporting obligations live here — milestones, reports, deliverables and payment claims, each with a date.',
+      '<button class="btn btn-primary" data-view="applications">Applications</button>',
+    );
+  }
+  const now = Date.now();
+  const items = ws.postaward
+    .slice()
+    .sort((a, b) => (Date.parse(a.due || '') || 9e15) - (Date.parse(b.due || '') || 9e15));
+  const overdue = items.filter((i) => !i.done && i.due && Date.parse(i.due) < now);
+
+  return `
+  <header class="dash__head">
+    <div><span class="eyebrow">${awarded.length} awarded · ${items.filter((i) => !i.done).length} outstanding</span><h1>Post-award</h1></div>
+    <div class="row">
+      <button class="btn btn-sm btn-primary" data-action="new-obligation">Add an obligation</button>
+      <button class="btn btn-sm btn-ghost" data-action="download-postaward-ics"${items.some((i) => i.due) ? '' : ' disabled'}>Add to calendar</button>
+    </div>
+  </header>
+
+  ${overdue.length ? `<div class="callout callout--warn"><p><strong>${overdue.length} overdue.</strong> Late reporting is the most common reason a paid grant is clawed back — the money arrived, so nobody is chasing it, and the deadline passes.</p></div>` : ''}
+
+  ${
+    items.length
+      ? `<div class="list-rows">${items
+          .map((i) => {
+            const e = ws.pipeline.find((x) => x.id === i.application_id);
+            const p = e ? programmeBySlug(e.slug) : null;
+            const late = !i.done && i.due && Date.parse(i.due) < now;
+            const days = i.due ? Math.round((Date.parse(i.due) - now) / DAY) : null;
+            return `<div class="list-row">
+        <div class="list-row__body">
+          <div class="list-row__name">${i.done ? '<span class="dash__muted">✓ </span>' : ''}${esc(i.title)}</div>
+          <div class="list-row__meta">${esc(OBLIGATION_KINDS.find((k) => k[0] === i.kind)?.[1] || i.kind)} · ${esc(p ? programmeName(p) : 'unlinked')} · ${esc(companyById(e?.company_id)?.legal_name || '')}</div>
+        </div>
+        <div class="list-row__right">
+          ${i.due ? `<span class="status status--${i.done ? 'later' : late ? 'closing' : days <= 30 ? 'soon' : 'open'}">${late ? 'overdue' : i.done ? 'done' : `${days} day${days === 1 ? '' : 's'}`} · ${fmtDate(Date.parse(i.due))}</span>` : ''}
+          <button class="btn btn-sm" data-action="toggle-obligation" data-id="${i.id}">${i.done ? 'Reopen' : 'Done'}</button>
+          <button class="btn btn-sm btn-ghost" data-action="remove-obligation" data-id="${i.id}">Remove</button>
+        </div>
+      </div>`;
+          })
+          .join('')}</div>`
+      : '<p class="small dash__muted">No obligations recorded. Add the reporting dates from your grant agreement — they are the ones nobody diarises.</p>'
+  }`;
+}
+
+/* ------------------------------------------------------------------ */
 /* Render                                                              */
 /* ------------------------------------------------------------------ */
 
@@ -1242,6 +1973,12 @@ const VIEWS = {
   grants: grantsView,
   'grant-form': () => grantFormView(ws.grants.find((g) => g.slug === view.grantSlug) || null),
   reports: reportsView,
+  projects: projectsView,
+  project: projectView,
+  'project-form': () => projectFormView(ws.projects.find((x) => x.id === view.projectId) || null),
+  applications: applicationsView,
+  documents: documentsView,
+  postaward: postawardView,
 };
 
 function render() {
@@ -1282,7 +2019,7 @@ function exportPipeline() {
     const c = companyById(e.company_id);
     const d = p ? deadlineState(p, Date.now()) : null;
     rows.push([
-      c?.legal_name, p?.name_en || e.slug, p?.funder, e.stage, e.value_eur ?? amountEur(p),
+      c?.legal_name, programmeName(p), p?.funder, e.stage, e.value_eur ?? amountEur(p),
       e.owner, e.next_action, e.due, d?.at ? new Date(d.at).toISOString().slice(0, 10) : '',
       p?.application_url,
     ]);
@@ -1409,6 +2146,9 @@ document.addEventListener('click', (ev) => {
   const co = ev.target.closest('[data-company]');
   if (co && !ev.target.closest('[data-action]')) return void go('company', { companyId: co.dataset.company });
 
+  const proj = ev.target.closest('[data-project]');
+  if (proj && !ev.target.closest('[data-action]')) return void go('project', { projectId: proj.dataset.project });
+
   const openEntry = ev.target.closest('[data-entry-open]');
   if (openEntry) return void go('entry', { entryId: openEntry.dataset.entryOpen });
 
@@ -1434,13 +2174,8 @@ document.addEventListener('click', (ev) => {
 
   if (a === 'add-to-pipeline') {
     const { company, slug } = btn.dataset;
-    commit((w) => {
-      w.pipeline.push({
-        id: uid(), company_id: company, slug, stage: 'watch',
-        owner: companyById(company)?.owner || '', value_eur: null,
-        next_action: '', due: '', notes: '', created_at: Date.now(),
-      });
-    });
+    const rec = addApplication(company, slug);
+    commit((w) => { w.pipeline.push(rec); });
     return;
   }
   if (a === 'remove-entry') {
@@ -1448,6 +2183,58 @@ document.addEventListener('click', (ev) => {
     commit((w) => { w.pipeline = w.pipeline.filter((e) => e.id !== id); });
     return void go('pipeline');
   }
+
+  if (a === 'new-project') return void go('project-form', { projectId: null });
+  if (a === 'edit-project') return void go('project-form', { projectId: btn.dataset.id });
+  if (a === 'delete-project') {
+    const id = btn.dataset.id;
+    commit((w) => {
+      w.projects = w.projects.filter((x) => x.id !== id);
+      /* Unlink rather than delete: the applications are the log, and deleting
+         a project must not delete the record that money was applied for. */
+      for (const e of w.pipeline) if (e.project_id === id) e.project_id = null;
+    });
+    return void go('projects');
+  }
+
+  if (a === 'new-document') return void addDocumentPrompt(btn.dataset.type || null);
+  if (a === 'remove-document') {
+    const id = btn.dataset.id;
+    commit((w) => { w.documents = w.documents.filter((d) => d.id !== id); });
+    return;
+  }
+
+  if (a === 'new-obligation') return void addObligationPrompt();
+  if (a === 'toggle-obligation') {
+    const id = btn.dataset.id;
+    commit((w) => {
+      const i = w.postaward.find((x) => x.id === id);
+      if (i) i.done = !i.done;
+    });
+    return;
+  }
+  if (a === 'remove-obligation') {
+    const id = btn.dataset.id;
+    commit((w) => { w.postaward = w.postaward.filter((x) => x.id !== id); });
+    return;
+  }
+  if (a === 'download-postaward-ics') {
+    const events = ws.postaward
+      .filter((i) => i.due && !i.done)
+      .map((i) => {
+        const e = ws.pipeline.find((x) => x.id === i.application_id);
+        const p2 = e ? programmeBySlug(e.slug) : null;
+        return {
+          at: Date.parse(i.due),
+          title: `${i.title} — ${programmeName(p2, 'grant')}`,
+          body: `${OBLIGATION_KINDS.find((k) => k[0] === i.kind)?.[1] || i.kind} for ${companyById(e?.company_id)?.legal_name || 'your company'}.`,
+          url: p2?.application_url || '',
+        };
+      });
+    download('unclaimed-post-award.ics', toICS(events, { name: 'Grant reporting' }), 'text/calendar');
+    return;
+  }
+  if (a === 'export-applications') return void exportApplications();
 
   if (a === 'new-grant') return void go('grant-form', { grantSlug: null });
   if (a === 'edit-grant') return void go('grant-form', { grantSlug: btn.dataset.id });
@@ -1581,9 +2368,56 @@ document.addEventListener('submit', (ev) => {
       e.next_action = g('next_action');
       e.due = g('due');
       e.notes = g('notes');
+      e.project_id = g('project_id') || null;
+      e.requested_eur = num('requested_eur');
+      e.awarded_eur = num('awarded_eur');
+      e.submitted_at = g('submitted_at') || null;
+      e.decided_at = g('decided_at') || null;
+      e.funder_reference = g('funder_reference');
+      /* Moving a card to submitted without a date leaves a hole in the log
+         that nobody fills in later. Stamp today rather than nag. */
+      /* Awarded and declined both imply it was submitted. Without this the log
+         read "awarded €120,000 · not yet submitted", which is nonsense on the
+         one screen a board looks at. */
+      if (['submitted', 'awarded', 'declined'].includes(e.stage) && !e.submitted_at) {
+        e.submitted_at = new Date().toISOString().slice(0, 10);
+      }
+      if (['awarded', 'declined'].includes(e.stage) && !e.decided_at) e.decided_at = new Date().toISOString().slice(0, 10);
+      /* An award is de minimis aid the moment it lands. Recording it here is
+         what keeps the ceiling ledger honest without a second data entry. */
+      if (e.stage === 'awarded' && e.awarded_eur && !w.awards.some((x) => x.application_id === e.id)) {
+        const p2 = programmeBySlug(e.slug);
+        if (p2?.eligibility?.de_minimis) {
+          w.awards.push({
+            id: uid(), application_id: e.id, company_id: e.company_id,
+            programme: programmeName(p2), amount_eur: e.awarded_eur,
+            member_state: (companyById(e.company_id)?.country_code || '').toLowerCase(),
+            granted_at: Date.parse(e.decided_at || '') || Date.now(),
+          });
+        }
+      }
       e.updated_at = Date.now();
     });
     return;
+  }
+
+  if (form.id === 'project-form') {
+    const id = form.dataset.id || uid();
+    const rec = {
+      id,
+      name: g('name'),
+      company_id: g('company_id'),
+      budget_eur: num('budget_eur'),
+      starts: g('starts'),
+      ends: g('ends'),
+      summary: g('summary'),
+    };
+    commit((w) => {
+      const i = w.projects.findIndex((x) => x.id === id);
+      if (i >= 0) w.projects[i] = rec;
+      else w.projects.push(rec);
+    });
+    return void go('project', { projectId: id });
   }
 
   if (form.id === 'grant-form') {
@@ -1663,6 +2497,81 @@ function pickFile() {
   input.click();
 }
 
+function pickCompany(promptText) {
+  if (!ws.companies.length) return null;
+  if (ws.companies.length === 1) return ws.companies[0];
+  const name = prompt(`${promptText}\n\n${ws.companies.map((c) => `· ${c.legal_name}`).join('\n')}`, ws.companies[0].legal_name);
+  if (!name) return null;
+  return ws.companies.find((c) => (c.legal_name || '').toLowerCase() === name.trim().toLowerCase()) || null;
+}
+
+function addDocumentPrompt(presetType) {
+  const types = Object.keys(DOC_TYPES);
+  const type = presetType || prompt(`Which kind of document?\n\n${types.join(', ')}`, types[0]);
+  if (!type || !DOC_TYPES[type]) return void (type && alert('Not a document type this build knows about.'));
+  const label = prompt('Give it a label you will recognise', docLabel(type));
+  if (label === null) return;
+  const issued = prompt('Issued on (YYYY-MM-DD), or leave blank', '');
+  const scope = ws.companies.length
+    ? confirm('OK = shared across the whole workspace.\nCancel = tie it to one company.')
+    : true;
+  let companyId = null;
+  if (!scope) {
+    const c = pickCompany('Which company holds it?');
+    if (!c) return;
+    companyId = c.id;
+  }
+  commit((w) => {
+    w.documents.push({
+      id: uid(), type, label: label || docLabel(type),
+      issued_at: issued || null, company_id: companyId, added_at: Date.now(),
+    });
+  });
+}
+
+function addObligationPrompt() {
+  const awarded = ws.pipeline.filter((e) => e.stage === 'awarded');
+  if (!awarded.length) return void alert('Mark an application as awarded first — obligations hang off an award.');
+  if (awarded.length === 1) return void obligationFor(awarded[0]);
+  const list = awarded.map((e) => `· ${programmeName(programmeBySlug(e.slug))}`).join('\n');
+  const which = prompt(`Which award?\n\n${list}`, programmeName(programmeBySlug(awarded[0].slug)));
+  if (!which) return;
+  const e = awarded.find((x) => programmeName(programmeBySlug(x.slug)).toLowerCase() === which.trim().toLowerCase());
+  if (!e) return void alert('No award by that name.');
+  return void obligationFor(e);
+}
+
+function obligationFor(e) {
+  const kind = prompt(`What kind?\n\n${OBLIGATION_KINDS.map((k) => k[0]).join(', ')}`, 'report');
+  if (!kind || !OBLIGATION_KINDS.some((k) => k[0] === kind)) return;
+  const title = prompt('What is owed?');
+  if (!title) return;
+  const due = prompt('Due on (YYYY-MM-DD)', '');
+  commit((w) => {
+    w.postaward.push({ id: uid(), application_id: e.id, kind, title, due: due || '', done: false, created_at: Date.now() });
+  });
+}
+
+/** The applications log, as the sheet a finance team already keeps. */
+function exportApplications() {
+  const rows = [[
+    'reference', 'company', 'project', 'programme', 'funder', 'stage', 'owner',
+    'requested_eur', 'awarded_eur', 'submitted_at', 'decided_at', 'funder_reference',
+    'readiness_pct', 'open_issues', 'application_url',
+  ]];
+  for (const e of ws.pipeline) {
+    const p = programmeBySlug(e.slug);
+    const c = companyById(e.company_id);
+    const pr = ws.projects.find((x) => x.id === e.project_id);
+    rows.push([
+      e.reference, c?.legal_name, pr?.name, programmeName(p), p?.funder, e.stage, e.owner,
+      e.requested_eur, e.awarded_eur, e.submitted_at, e.decided_at, e.funder_reference,
+      readinessFor(e)?.score, issuesFor(e).length, p?.application_url,
+    ]);
+  }
+  download('unclaimed-applications.csv', toCsv(rows), 'text/csv');
+}
+
 function addAwardPrompt() {
   const c = ws.companies[0];
   if (!c) return;
@@ -1707,4 +2616,4 @@ window.addEventListener('storage', (e) => {
   render();
 });
 
-export { importCsv, parseCsv, pipelineValue, hitRate, packText, STAGES };
+export { importCsv, parseCsv, pipelineValue, hitRate, packText, STAGES, OBLIGATION_KINDS, programmeName, issuesFor, readinessFor };

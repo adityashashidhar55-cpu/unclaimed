@@ -61,7 +61,11 @@ const save = (p) => {
   store.set(STORE, json);
 };
 
-const state = { profile: load(), manifest: null, result: null, view: 'home', mode: 'person' };
+/* `entitled` is the one piece of state the client must never decide for
+   itself. It is set only from what the server said in /api/me or /api/check,
+   and it defaults to false — including when the network is down, because an
+   offline client is not a paying one. */
+const state = { profile: load(), manifest: null, result: null, view: 'home', mode: 'person', entitled: false };
 
 /* ------------------------------------------------------------------ */
 /* Data                                                                */
@@ -248,27 +252,21 @@ async function checkView() {
 /**
  * What an unentitled visitor sees instead of their programme list.
  *
- * It shows the shape of the answer — how many programmes, how many pay out
- * automatically, what categories — because a wall with nothing behind it that
- * you can see the outline of is just a wall. The names, amounts, links and
- * steps are the thing being sold, and none of them are in this markup.
+ * Two numbers and nothing else: how many programmes match, and how many of
+ * those pay out automatically. No names, no categories, no amounts per
+ * programme, no deadlines. The free answer is "you are owed roughly this much,
+ * from about this many places" — everything that turns that into a to-do list
+ * is the paid product, and none of it is in this markup to be un-hidden.
  */
 function lockedPanel(gate, r, sym) {
   const n = gate.counts?.eligible ?? r.eligible.length;
   const auto = gate.counts?.automatic ?? r.eligible.filter((m) => m.programme.is_automatic).length;
   const signedIn = gate.paywall?.reason && gate.paywall.reason !== 'anonymous';
 
-  const cats = Object.entries(gate.by_category || {})
-    .sort((a, b) => b[1] - a[1])
-    .slice(0, 6)
-    .map(([c, k]) => `<span class="chip">${esc(c.replace(/_/g, ' '))} · ${k}</span>`)
-    .join('');
-
   return `<section class="locked">
     <h2>${n} programme${n === 1 ? '' : 's'} match you</h2>
     <p class="small">${auto ? `${auto} of them pay out automatically once you are registered. ` : ''}Unlock to see
     which ones, what each pays, what documents they want, and when they close.</p>
-    ${cats ? `<div class="chips">${cats}</div>` : ''}
     <div class="locked__rows" aria-hidden="true">
       ${Array.from({ length: Math.min(n, 4) }, () => '<div class="locked__row"></div>').join('')}
     </div>
@@ -315,6 +313,7 @@ async function resultsView() {
     : [];
 
   const gate = await fetchMatch({ ...p, country_code: cc }).catch(() => ({ ok: false }));
+  state.entitled = !!gate.entitled;
 
   const serverRow = (m) => {
     const d = deadlineState(m, Date.now());
@@ -377,9 +376,15 @@ async function resultsView() {
     }`
       : lockedPanel(gate, r, sym)}
 
-    <button class="btn btn-block" data-action="ics">Add deadlines to my calendar</button>
+    ${gate.entitled
+      ? '<button class="btn btn-block" data-action="ics">Add deadlines to my calendar</button>'
+      : /* The .ics would carry every programme name in its SUMMARY lines — a
+           complete export of the paid list through a button labelled
+           "calendar". Withheld rather than emptied, so nothing implies the
+           export happened and came back blank. */
+        '<p class="tiny">Deadline reminders and the calendar export are part of the paid plan.</p>'}
     ${
-      isNative
+      gate.entitled && isNative
         ? `<button class="btn btn-block" data-action="notify">Remind me before each deadline</button>
            <p class="tiny" id="notify-state"></p>`
         : `<p class="tiny">Install the app to get a reminder on your phone before each deadline closes.</p>`
@@ -415,6 +420,28 @@ async function deadlinesView() {
         .join('')}</div>
     </section>`
       : '';
+
+  /* This screen is the paid list in date order. Naming a programme here would
+     hand over exactly what the results screen withholds, so an unentitled
+     visitor gets the counts and nothing else. The counts are honest and
+     useful — "three things close in the next fortnight" is a real answer —
+     and they are also all a free plan promises. */
+  if (!state.entitled) {
+    const total = cal.ordered.length;
+    return shell(
+      `<section class="locked">
+        <h2>${total} dated deadline${total === 1 ? '' : 's'}</h2>
+        <p class="small">${cal.counts.closing || 0} closing within two weeks · ${cal.counts.open || 0} open now ·
+        ${cal.counts.soon || 0} reopening within 90 days.</p>
+        <div class="locked__rows" aria-hidden="true">
+          ${Array.from({ length: Math.min(total, 4) }, () => '<div class="locked__row"></div>').join('')}
+        </div>
+        <p class="small">Which programme each date belongs to, and the calendar export, are on the paid plan.</p>
+        <button class="btn btn-block btn-primary" data-action="signin">Sign in to unlock</button>
+      </section>`,
+      { back: 'home', title: 'Deadlines' },
+    );
+  }
 
   return shell(
     `${group('closing', 'Closing soon')}
@@ -588,7 +615,7 @@ document.addEventListener('click', async (e) => {
     }
     return;
   }
-  if (action.dataset.action === 'ics' && state.result) {
+  if (action.dataset.action === 'ics' && state.result && state.entitled) {
     const evts = reminders(state.result.eligible, Date.now());
     await files.saveAndShare({
       filename: 'unclaimed-grants-deadlines.ics',
@@ -676,6 +703,19 @@ function g_back() {
 }
 
 initShell();
+
+/* Ask the server who this is before the first render settles. Without it a
+   paying subscriber who opens the deadlines screen directly sees the locked
+   panel until they visit results, which reads as the subscription not
+   working. Failure leaves entitled false, which is the safe direction. */
+me()
+  .then((who) => {
+    if (who.entitled && !state.entitled) {
+      state.entitled = true;
+      render(state.view);
+    }
+  })
+  .catch(() => {});
 
 /* The mount point can declare where to start. /check/ wants the household
    wizard and /startups/check/ wants the company one; landing both on the same
