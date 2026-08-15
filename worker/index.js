@@ -123,8 +123,30 @@ async function entitlementFor(env, userId, country, product = PRODUCT.DISCOVERY)
 /* Data access                                                         */
 /* ------------------------------------------------------------------ */
 
-/** Programme data is served from the same static assets the site uses. */
+/**
+ * The full dataset, which the public files are not.
+ *
+ * /api/v1/programmes/{cc}.json ships with every record past the second one
+ * stripped of its name, funder, links and prose, so that gating the pages is
+ * not undone by one curl. The Worker needs the whole thing to answer a paid
+ * check, so the build also emits an unstripped copy under /api/v1/full/. That
+ * prefix is inside run_worker_first, and the router below refuses every
+ * external request to it — env.ASSETS.fetch does not re-enter the router, so
+ * this code can read what no visitor can.
+ */
+async function loadFullAsset(env, request, rel) {
+  const url = new URL(request.url);
+  url.pathname = `/api/v1/full/${rel}`;
+  url.search = '';
+  const res = await env.ASSETS.fetch(new Request(url.toString()));
+  return res.ok ? res.json() : null;
+}
+
 async function loadCountry(env, request, cc) {
+  const full = await loadFullAsset(env, request, `programmes/${cc}.json`);
+  if (full) return full;
+  /* No full copy deployed (an older build). Fall back to the public file
+     rather than 500: a stripped answer is wrong-ish, a broken one is worse. */
   const url = new URL(request.url);
   url.pathname = `/api/v1/programmes/${cc}.json`;
   url.search = '';
@@ -700,6 +722,10 @@ async function handleVaultDelete(request, env, id) {
 
 async function loadStartupPool(env, request, pool) {
   const url = new URL(request.url);
+  /* Same split as the benefits data: the full copy for a paid answer, the
+     stripped public file only as a fallback. */
+  const fullPool = await loadFullAsset(env, request, `startups/${pool}.json`);
+  if (fullPool) return fullPool;
   url.pathname = `/api/v1/startups/${pool}.json`;
   url.search = '';
   const res = await env.ASSETS.fetch(new Request(url.toString()));
@@ -1118,6 +1144,33 @@ export default {
         if (request.method === 'DELETE') return await handleVaultDelete(request, env, id);
         return bad('method not allowed', 405);
       }
+      /* The unstripped copies are for this Worker, not for the internet. */
+      if (pathname.startsWith('/api/v1/full/')) {
+        return new Response('Not found', { status: 404 });
+      }
+
+      /* Same URL, more data if you have paid for it. An entitled client asking
+         for the dataset it already fetches gets the whole file; everyone else
+         falls through to the stripped static asset below. Serving the paid
+         data at a different URL would mean the app needed to know which one to
+         ask for, and a client that picks its own privilege level is not a
+         gate. */
+      if (request.method === 'GET') {
+        const m = pathname.match(/^\/api\/v1\/(programmes|startups)\/([a-z0-9_-]+)\.json$/);
+        if (m) {
+          const session = await readSession(env, request.headers.get('cookie'));
+          const ent = session?.uid ? await entitlementFor(env, session.uid, m[2]) : null;
+          if (ent?.entitled) {
+            const full = await loadFullAsset(env, request, `${m[1]}/${m[2]}.json`);
+            if (full) {
+              return new Response(JSON.stringify(full), {
+                headers: { 'content-type': 'application/json', 'cache-control': 'private, no-store' },
+              });
+            }
+          }
+        }
+      }
+
       if (pathname === '/api/me') return await handleMe(request, env);
       if (pathname === '/api/profile') return await handleProfile(request, env);
       if (pathname === '/api/billing/checkout' && request.method === 'POST') return await handleCheckout(request, env);
