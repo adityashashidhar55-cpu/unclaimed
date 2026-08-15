@@ -1,0 +1,138 @@
+#!/usr/bin/env node
+/**
+ * The public dataset must not change the answer.
+ *
+ * /api/v1/programmes/{cc}.json ships stripped records past the second one, so
+ * a signed-out client cannot download the directory. The whole design rests on
+ * one claim: the free total computed from the stripped file equals the total
+ * computed from the full one. If that ever stops being true we are quietly
+ * lying to every free user about how much they are owed — the single worst
+ * bug this product can have — so it is asserted per country, not spot-checked.
+ *
+ * It also asserts the negative: no name, no funder, no link and no quoted
+ * source survives into a locked record.
+ */
+import fs from 'node:fs';
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
+import { match } from '../src/engine/matcher.js';
+
+const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
+const DATA = path.join(ROOT, 'data');
+const DIST = path.join(ROOT, 'dist');
+
+let passed = 0;
+let failed = 0;
+const ok = (m) => { passed += 1; console.log(`  ✓ ${m}`); };
+const bad = (m) => { failed += 1; console.error(`  ✗ ${m}`); };
+
+const manifest = JSON.parse(fs.readFileSync(path.join(DIST, 'api/v1/countries.json'), 'utf8'));
+
+/* A profile deliberately light on answers, so plenty of programmes land in
+   "needs one more answer" too — the buckets have to agree, not just the sum. */
+const PROFILES = [
+  { age: 34, status: 'employee', income_band: 'low', housing_tenure: 'renting', nationality_group: 'citizen_or_pr', household: 'alone' },
+  { age: 68, status: 'retired', income_band: 'medium', housing_tenure: 'owner', nationality_group: 'citizen_or_pr' },
+  { age: 21, status: 'student', nationality_group: 'eu_eea' },
+];
+
+let compared = 0;
+let leaks = 0;
+const LEAKY = ['name_en', 'name_local', 'funder', 'source_url', 'application_url', 'source_snippet',
+               'amount_note', 'deadline_note', 'procedure_steps', 'documents_required'];
+
+for (const entry of manifest.countries) {
+  const cc = entry.slug;
+  const fullPath = path.join(DATA, `${cc}.json`);
+  const pubPath = path.join(DIST, `api/v1/programmes/${cc}.json`);
+  if (!fs.existsSync(fullPath) || !fs.existsSync(pubPath)) continue;
+  const full = JSON.parse(fs.readFileSync(fullPath, 'utf8'));
+  const pub = JSON.parse(fs.readFileSync(pubPath, 'utf8'));
+
+  if (full.programmes.length !== pub.programmes.length) {
+    bad(`${cc}: public file has ${pub.programmes.length} records, source has ${full.programmes.length} — the total cannot match`);
+    continue;
+  }
+
+  for (const p of pub.programmes) {
+    if (!p.locked) continue;
+    for (const f of LEAKY) {
+      if (p[f] != null && !(Array.isArray(p[f]) && !p[f].length)) {
+        bad(`${cc}: locked record still carries ${f}`);
+        leaks += 1;
+      }
+    }
+  }
+
+  for (const profile of PROFILES) {
+    const a = match({ ...profile, country_code: cc }, full, entry);
+    const b = match({ ...profile, country_code: cc }, pub, entry);
+    compared += 1;
+    if (a.total_min !== b.total_min || a.total_max !== b.total_max) {
+      bad(`${cc}: total moved — full ${a.total_min}-${a.total_max}, public ${b.total_min}-${b.total_max}`);
+    } else if (a.eligible.length !== b.eligible.length) {
+      bad(`${cc}: eligible count moved — ${a.eligible.length} vs ${b.eligible.length}`);
+    } else if (a.needs_one_more_answer.length !== b.needs_one_more_answer.length) {
+      bad(`${cc}: pending count moved — ${a.needs_one_more_answer.length} vs ${b.needs_one_more_answer.length}`);
+    }
+  }
+}
+
+if (!failed) {
+  ok(`free total identical across ${compared} country/profile pairs`);
+  ok('no locked record leaks a name, funder, link or quoted source');
+}
+
+/* And the positive: the first two per country are whole, so the page and the
+   API agree about what a signed-out visitor may see. */
+{
+  const gb = JSON.parse(fs.readFileSync(path.join(DIST, 'api/v1/programmes/gb.json'), 'utf8'));
+  const whole = gb.programmes.filter((p) => !p.locked);
+  whole.length === gb.free_rows && whole.every((p) => p.name_en)
+    ? ok(`the first ${gb.free_rows} records per country are whole`)
+    : bad(`expected ${gb.free_rows} whole records, found ${whole.length}`);
+}
+
+/* The startup dataset gets the same treatment, and the same assertion: the
+   eligible/ineligible split must not move, because that split is what the free
+   company check reports as a count. */
+{
+  const idx = JSON.parse(fs.readFileSync(path.join(DIST, 'api/v1/startups/index.json'), 'utf8'));
+  const { matchStartup, reachFor } = await import('../src/engine/startup.js');
+  const profile = { country_code: 'de', incorporated: true, incorporation_date: '2023-01-01', headcount: 8, turnover_annual_eur: 300000, stage: 'seed', sectors: [], rd_active: true };
+  const load = (dir, pool) => {
+    const f = path.join(DIST, dir, `${pool}.json`);
+    return fs.existsSync(f) ? JSON.parse(fs.readFileSync(f, 'utf8')) : { programmes: [] };
+  };
+  const pools = reachFor('de');
+  const pub = {};
+  const full = {};
+  for (const pool of pools) {
+    pub[pool] = load('api/v1/startups', pool);
+    full[pool] = load('api/v1/full/startups', pool);
+  }
+  const a = matchStartup(profile, full, Date.parse('2026-06-01'));
+  const b = matchStartup(profile, pub, Date.parse('2026-06-01'));
+  a.eligible.length === b.eligible.length && a.not_eligible.length === b.not_eligible.length
+    ? ok(`startup verdicts identical after stripping (${a.eligible.length} eligible)`)
+    : bad(`startup verdicts moved: ${a.eligible.length}/${a.not_eligible.length} vs ${b.eligible.length}/${b.not_eligible.length}`);
+  idx.countries.length ? ok(`startup index lists ${idx.countries.length} jurisdictions`) : bad('startup index empty');
+}
+
+/* The unstripped copies must never be linked from a page. They are only
+   reachable through env.ASSETS inside the Worker, and the router 404s any
+   external request — but a link in the HTML would invite a crawler to try. */
+{
+  const links = [];
+  (function walk(d) {
+    for (const e of fs.readdirSync(d, { withFileTypes: true })) {
+      const f = path.join(d, e.name);
+      if (e.isDirectory()) { if (e.name !== 'full') walk(f); }
+      else if (e.name.endsWith('.html') && fs.readFileSync(f, 'utf8').includes('/api/v1/full/')) links.push(f);
+    }
+  })(DIST);
+  links.length ? bad(`${links.length} pages link to /api/v1/full/`) : ok('no page links to the unstripped dataset');
+}
+
+console.log(`\n${passed} passed, ${failed} failed\n`);
+process.exit(failed ? 1 : 0);

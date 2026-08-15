@@ -51,7 +51,8 @@ globalThis.fetch = async () => ({ ok: false, json: async () => ({}) });
    ../engine/ specifiers point at nothing — they resolve only once the build
    has written the copies alongside it. Testing the emitted artefact also
    means these assertions cover what actually ships. */
-const { parseCsv, importCsv, pipelineValue, hitRate, STAGES } = await import('../dist/dashboard/dashboard.js');
+const { parseCsv, importCsv, pipelineValue, hitRate, STAGES, OBLIGATION_KINDS, programmeName } =
+  await import('../dist/dashboard/dashboard.js');
 
 /* -- CSV parsing -------------------------------------------------------- */
 
@@ -148,6 +149,29 @@ test('blocked is a stage of its own, not a flavour of declined', () => {
   const ids = STAGES.map((s) => s.id);
   assert.ok(ids.includes('blocked'));
   assert.ok(ids.includes('declined'));
+});
+
+/* -- locked programmes -------------------------------------------------- */
+
+test('a locked programme is named as locked, not as its opaque id', () => {
+  /* The public dataset strips names past the second record per pool. Printing
+     the id reads as a bug; the label has to say what it is. */
+  assert.strictEqual(programmeName({ slug: 'p_rh63dr', locked: true }), 'Name on the paid plan');
+  assert.strictEqual(programmeName({ slug: 'x', name_en: 'EIC Accelerator' }), 'EIC Accelerator');
+  assert.strictEqual(programmeName(null, 'grant'), 'grant');
+});
+
+test('a record with no name is treated as locked rather than blank', () => {
+  assert.strictEqual(programmeName({ slug: 'x' }), 'Name on the paid plan');
+});
+
+/* -- post-award --------------------------------------------------------- */
+
+test('obligation kinds cover reports, not just milestones', () => {
+  /* Late reporting is the usual reason a paid grant is clawed back, so a
+     post-award tab that only models milestones misses the expensive one. */
+  const ids = OBLIGATION_KINDS.map((k) => k[0]);
+  for (const k of ['milestone', 'report', 'deliverable', 'payment']) assert.ok(ids.includes(k), `missing ${k}`);
 });
 
 console.log(`\n${passed} passed, ${failed} failed\n`);

@@ -223,7 +223,7 @@ fs.existsSync(path.join(DIST, 'startups/check/index.html'))
    build that ships the page without the app is a broken promise, not a
    missing nicety. */
 for (const f of ['dashboard/index.html', 'dashboard/dashboard.js', 'dashboard/dashboard.css',
-                 'packages/stateaid/index.js', 'packages/registry/index.js']) {
+                 'packages/stateaid/index.js', 'packages/registry/index.js', 'packages/vault/index.js']) {
   fs.existsSync(path.join(DIST, f)) ? ok(`${f} present`) : fail(`${f} MISSING`);
 }
 {
@@ -245,6 +245,53 @@ for (const f of ['dashboard/index.html', 'dashboard/dashboard.js', 'dashboard/da
 landingHtml.includes(String.raw`split(/\s+/)`)
   ? ok('blur-word splitter emits a real \\s regex')
   : fail('blur-word splitter lost its backslash — headlines will split on the letter s');
+
+/* Every workspace tab the enterprise page promises has to exist. This list is
+   the promise; the check is that the code kept it. */
+{
+  const js = fs.readFileSync(path.join(DIST, 'dashboard/dashboard.js'), 'utf8');
+  for (const tab of ['projects', 'applications', 'documents', 'postaward', 'stateaid', 'reports']) {
+    js.includes(`  ${tab}: `) || js.includes(`${tab}View`)
+      ? ok(`workspace has a ${tab} view`)
+      : fail(`workspace is missing the ${tab} view`);
+  }
+}
+
+/* The pricing page's free tier must say what it excludes. Selling "free" and
+   leaving the limits to be discovered after a questionnaire is the thing this
+   rewrite existed to stop. */
+{
+  const pricing = fs.readFileSync(path.join(DIST, 'pricing/index.html'), 'utf8');
+  pricing.includes('ticks--no') ? ok('free tier lists what it excludes') : fail('free tier has no exclusions list');
+  pricing.includes('aud-ent') && pricing.includes('audience__switch--hero')
+    ? ok('individual/enterprise toggle is in the hero')
+    : fail('audience toggle is not in the hero');
+  /Android and iOS app/.test(pricing) ? ok('pricing states the apps are included') : fail('pricing does not mention the apps');
+}
+
+/* The blog is the SEO surface now that the directory is paid, so an empty or
+   missing blog is a strategy failure, not a cosmetic one. And each post must
+   declare itself free — the opposite of the programme pages. */
+{
+  const idx = path.join(DIST, 'blog/index.html');
+  if (!fs.existsSync(idx)) fail('/blog/ MISSING');
+  else {
+    const dirs = fs.readdirSync(path.join(DIST, 'blog'), { withFileTypes: true }).filter((e) => e.isDirectory());
+    dirs.length >= 3 ? ok(`blog has ${dirs.length} posts`) : fail(`blog has only ${dirs.length} posts`);
+    let free = 0;
+    for (const d of dirs) {
+      const html = fs.readFileSync(path.join(DIST, 'blog', d.name, 'index.html'), 'utf8');
+      if (html.includes('"isAccessibleForFree":true')) free += 1;
+    }
+    free === dirs.length ? ok('every post declares itself free to read') : fail(`${dirs.length - free} posts do not declare isAccessibleForFree`);
+  }
+}
+
+/* .shell-narrow is used by methodology, privacy and every post. It was used
+   for months without being defined, so all three ran edge to edge. */
+fs.readFileSync(path.join(DIST, 'theme.css'), 'utf8').includes('.shell-narrow')
+  ? ok('.shell-narrow is defined')
+  : fail('.shell-narrow is used but never defined — those pages will run full-bleed');
 
 /* One theme-color, not two. A duplicate meta is a coin toss in some browsers. */
 {
