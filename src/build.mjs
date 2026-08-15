@@ -1218,8 +1218,6 @@ ${disclaimerBar(TR)}
         account with a bigger plan attached, because the two get audited by different people.</p>
       </div>
     </div>
-  </div>
-
     <div class="audience__panel audience__panel--ent">
       <div class="panel panel--float" style="margin-top:2.2rem">
         <span class="eyebrow eyebrow-accent">Enterprise · from €80 per seat / month</span>
@@ -1297,6 +1295,7 @@ ${disclaimerBar(TR)}
         work scales with the number of people doing it, so the price does too.</p>
       </div>
     </div>
+  </div>
 
   <div class="grid grid-2" style="margin-top:1.8rem;align-items:stretch">
     <div class="card reveal">
