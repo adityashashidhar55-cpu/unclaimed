@@ -681,13 +681,17 @@ div.q { margin-bottom: 2.4rem; }
 /* ==================================================================== */
 
 .hero-centre { text-align: center; }
+/* The headline must sit above the graphic, not inside it. */
+.hero-centre .shell > *:not(.orbit) { position: relative; z-index: 1; }
 .hero-centre .eyebrow { display: block; }
 
 .orbit {
   position: absolute; inset: 0; margin: auto;
-  width: min(46rem, 92vw); height: min(46rem, 92vw);
-  top: -6%; z-index: -1; pointer-events: none;
-  opacity: .85;
+  width: min(41rem, 88vw); height: min(41rem, 88vw);
+  top: -4%; z-index: -1; pointer-events: none;
+  /* Low enough that the headline is never competing with it. This started at
+     .85 and the marks read as foreground objects sitting on the words. */
+  opacity: .38;
 }
 .orbit svg { width: 100%; height: 100%; overflow: visible; }
 
@@ -701,7 +705,7 @@ div.q { margin-bottom: 2.4rem; }
 .orbit__ring--mid  { animation: spin 44s linear infinite reverse; stroke-dasharray: 2 14; }
 .orbit__ring--fast { animation: spin 30s linear infinite; stroke-dasharray: 1 9; }
 
-.orbit__marks { transform-origin: 160px 160px; animation: spin 96s linear infinite; }
+.orbit__marks { transform-origin: 160px 160px; }
 .orbit__chip {
   fill: rgba(255,255,255,.82);
   stroke: rgba(15,111,118,.22); stroke-width: 1;
@@ -710,20 +714,11 @@ div.q { margin-bottom: 2.4rem; }
   font-family: var(--font-body); font-size: 12px; font-weight: 700;
   fill: var(--teal);
 }
-/* Counter-rotate the glyphs so they stay upright while the ring turns. */
-.orbit__marks g { animation: spin-back 96s linear infinite; transform-origin: center; transform-box: fill-box; }
 
-.orbit__core { transform-origin: 160px 160px; animation: breathe 9s ease-in-out infinite; }
-.orbit__disc { fill: rgba(255,255,255,.55); stroke: rgba(15,111,118,.18); stroke-width: 1; }
-.orbit__n { font-family: var(--font-heading); font-size: 40px; fill: var(--teal); }
-.orbit__l { font-family: var(--font-body); font-size: 11px; letter-spacing: .12em;
-            text-transform: uppercase; fill: var(--ink-4); }
 
-@keyframes spin      { to { transform: rotate(360deg); } }
-@keyframes spin-back { to { transform: rotate(-360deg); } }
-@keyframes breathe   { 0%,100% { transform: scale(1); } 50% { transform: scale(1.035); } }
+@keyframes spin { to { transform: rotate(360deg); } }
 
-@media (max-width: 720px) { .orbit { opacity: .45; top: -2%; } }
+@media (max-width: 720px) { .orbit { opacity: .2; top: -1%; } }
 
 /* ==================================================================== */
 /* Sections in boxes, with a slow float                                 */

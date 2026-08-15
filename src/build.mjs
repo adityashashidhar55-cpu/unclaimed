@@ -227,6 +227,12 @@ function breadcrumbLd(items) {
 /**
  * The rotating hero graphic.
  *
+ * First attempt put a labelled disc in the middle and orbited the currency
+ * marks. Both were wrong on the live page: the disc landed on top of the
+ * headline and repeated the eyebrow, and the counter-rotation meant to keep
+ * the glyphs upright only half-worked, so they drifted through the words at
+ * an angle. Now the dashed rings turn and the marks hold still.
+ *
  * Drawn rather than sourced: an image file would be one more thing to host,
  * would need an alt text that says nothing, and would not know how many
  * jurisdictions are in the dataset. This does — the ring is generated from the
@@ -239,15 +245,15 @@ function breadcrumbLd(items) {
  */
 function orbit(jurisdictions) {
   const marks = ['€', '£', '$', '¥', '₹', 'kr', 'CHF', 'R$', '₩', 'AED', 'zł', 'MX$'];
-  const R = 128;
+  const R = 150;
   const dots = marks
     .map((m, i) => {
       const a = (i / marks.length) * Math.PI * 2 - Math.PI / 2;
       const x = 160 + R * Math.cos(a);
       const y = 160 + R * Math.sin(a);
       return `<g transform="translate(${x.toFixed(1)} ${y.toFixed(1)})">
-        <circle r="17" class="orbit__chip"/>
-        <text y="5" text-anchor="middle" class="orbit__mark">${m}</text>
+        <circle r="15" class="orbit__chip"/>
+        <text y="4" text-anchor="middle" class="orbit__mark">${m}</text>
       </g>`;
     })
     .join('');
@@ -261,15 +267,10 @@ function orbit(jurisdictions) {
           <stop offset="100%" stop-color="var(--blue)" stop-opacity=".5"/>
         </linearGradient>
       </defs>
-      <circle cx="160" cy="160" r="152" class="orbit__ring orbit__ring--slow"/>
-      <circle cx="160" cy="160" r="128" class="orbit__ring orbit__ring--mid"/>
-      <circle cx="160" cy="160" r="96"  class="orbit__ring orbit__ring--fast"/>
+      <circle cx="160" cy="160" r="150" class="orbit__ring orbit__ring--slow"/>
+      <circle cx="160" cy="160" r="119" class="orbit__ring orbit__ring--mid"/>
+      <circle cx="160" cy="160" r="88"  class="orbit__ring orbit__ring--fast"/>
       <g class="orbit__marks">${dots}</g>
-      <g class="orbit__core">
-        <circle cx="160" cy="160" r="70" class="orbit__disc"/>
-        <text x="160" y="152" text-anchor="middle" class="orbit__n">${jurisdictions}</text>
-        <text x="160" y="176" text-anchor="middle" class="orbit__l">jurisdictions</text>
-      </g>
     </svg>
   </div>`;
 }
