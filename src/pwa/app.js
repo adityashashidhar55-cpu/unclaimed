@@ -561,19 +561,7 @@ document.addEventListener('click', async (e) => {
   if (action.dataset.action === 'clear') {
     localStorage.removeItem(STORE);
     state.profile = {};
-    return void /* Android hardware back walks our own view stack before the OS closes the
-   app — otherwise the first press quits from a results screen. */
-g_back();
-function g_back() {
-  globalThis.__unclaimedBack = () => {
-    if (state.view === 'home') return false;
-    render(state.view === 'results' ? 'home' : 'home');
-    return true;
-  };
-}
-
-initShell();
-render('home');
+    return void render('home');
   }
   if (action.dataset.action === 'recheck') {
     render('check');
@@ -688,4 +676,13 @@ function g_back() {
 }
 
 initShell();
-render('home');
+
+/* The mount point can declare where to start. /check/ wants the household
+   wizard and /startups/check/ wants the company one; landing both on the same
+   tile grid and asking the visitor to choose again — after they already chose,
+   by following that link — is a wasted step and a bounce. */
+{
+  const mount = $('#app');
+  if (mount?.dataset.mode) state.mode = mount.dataset.mode;
+  render(mount?.dataset.view || 'home');
+}
