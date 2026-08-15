@@ -49,6 +49,14 @@ const PLANS = [
     interval: 'month',
     description: 'Grant discovery across 77 jurisdictions, de minimis tracking, exports and a team dashboard.',
   },
+  {
+    lookup: 'ug_business_annual_v1',
+    product: 'Unclaimed Grants — Business',
+    nickname: 'Business, per seat, annual',
+    unit_amount: 80000,
+    interval: 'year',
+    description: 'The business plan, billed yearly per seat. Two months cheaper than monthly.',
+  },
 ];
 
 const api = async (path, params, method = 'POST') => {
@@ -110,6 +118,7 @@ for (const plan of PLANS) {
     ug_personal_monthly_v1: 'STRIPE_PRICE_PERSONAL_MONTHLY',
     ug_personal_annual_v1: 'STRIPE_PRICE_PERSONAL_ANNUAL',
     ug_business_monthly_v1: 'STRIPE_PRICE_BUSINESS_MONTHLY',
+    ug_business_annual_v1: 'STRIPE_PRICE_BUSINESS_ANNUAL',
   }[plan.lookup];
   out.push(`    "${varName}": "${price.id}",`);
 }
