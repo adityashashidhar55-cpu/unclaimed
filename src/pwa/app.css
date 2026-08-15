@@ -5,14 +5,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Comic+Neue:ital,wght@0,300;0,400;0,700;1,400;1,700&display=swap');
 
 :root {
-  --ink:   #1d2430;
+  --ink:   #12303a;
   --ink-2: rgba(29,36,48,.82);
   --ink-3: rgba(29,36,48,.66);
   --ink-4: rgba(29,36,48,.5);
   --line:  rgba(29,36,48,.12);
-  --terracotta: #b4491f;
-  --sage: #22684a;
-  --gold: #7a5a09;
+  --terracotta: #a8442a;
+  --sage: #1f7a52;
+  --gold: #715c0d;
   --font-heading: 'Comic Sans MS', 'Comic Neue', 'Chalkboard SE', cursive;
   --font-body: 'Comic Sans MS', 'Comic Neue', 'Chalkboard SE', cursive;
 }
@@ -21,7 +21,7 @@
 
 body {
   margin: 0;
-  background: #f4f1ea;
+  background: #eef7f7;
   color: var(--ink);
   font-family: var(--font-body);
   font-weight: 300;
@@ -35,9 +35,9 @@ body {
 body::before {
   content: ''; position: fixed; inset: -20%; z-index: -1; pointer-events: none;
   background:
-    radial-gradient(30rem 30rem at 10% -6%, rgba(232,145,100,.22), transparent 62%),
-    radial-gradient(26rem 26rem at 92% 8%, rgba(120,190,165,.16), transparent 64%),
-    linear-gradient(180deg, #faf8f4 0%, #f4f1ea 60%, #efebe2 100%);
+    radial-gradient(30rem 30rem at 10% -6%, rgba(45,190,190,.30), transparent 62%),
+    radial-gradient(26rem 26rem at 92% 8%, rgba(80,170,235,.22), transparent 64%),
+    linear-gradient(165deg, #f2fbfa 0%, #eef7f7 55%, #e7f2f4 100%);
 }
 
 /* Glass primitive */
@@ -118,7 +118,7 @@ p { margin: 0 0 .8rem; color: var(--ink-2); }
 .choices { display: flex; flex-wrap: wrap; gap: .5rem; }
 .choice { border-radius: 9999px; padding: .65rem 1.05rem; min-height: 44px;
           color: var(--ink-2); font-family: var(--font-body); font-size: .93rem; cursor: pointer; }
-.choice.is-on { background: #1d2430; color: #fff; }
+.choice.is-on { background: #0f6f76; color: #fff; }
 
 .stepper-row { display: flex; gap: 1rem; }
 .stepper-row label { flex: 1; font-size: .85rem; color: var(--ink-3); }
