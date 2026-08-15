@@ -120,7 +120,15 @@ const WORD_NUM = { one: 1, two: 2, three: 3, four: 4, five: 5, six: 6, seven: 7,
  * ~AED 60,000 into a AED 240,000/yr headline. Where the record states a
  * duration, we honour it.
  */
+/* Each of these five reads programme prose. That matters beyond tidiness: the
+   public JSON strips names and notes from every record past the second one, so
+   an unentitled client has no prose to read. The build precomputes each answer
+   into `derived` and every function below prefers it, which keeps the free
+   total identical to the paid one while the words that identify a programme
+   stay behind the wall. Full records still carry no `derived`, so the paid
+   path computes from source and the two cannot drift. */
 export function monthsPayable(p) {
+  if (p.derived?.months_payable != null) return p.derived.months_payable;
   const note = `${p.amount_note ?? ''} ${p.deadline_note ?? ''}`;
   const m = note.match(/\b(?:up to|maximum of|max\.?|for)\s+(\d{1,2}|one|two|three|four|five|six|seven|eight|nine|ten|twelve)\s+(month|week)s?\b/i);
   if (!m) return 12;
@@ -147,6 +155,7 @@ const CAPITAL_HINTS =
   /\b(loan|credit facility|mudra|collateral|repay|interest subsid|guarantee|capital subsid|term loan|working capital|mortgage|borrow)\b/i;
 
 export function isCapitalCeiling(p) {
+  if (p.derived?.capital_ceiling != null) return p.derived.capital_ceiling;
   if (p.category === 'business' && (p.amount_max ?? 0) > 0 && p.amount_period === 'one_off') {
     const text = `${p.name_en} ${p.name_local} ${p.amount_note ?? ''}`;
     if (CAPITAL_HINTS.test(text)) return true;
@@ -181,6 +190,7 @@ const EMPLOYER_AIMED =
   /\b(employer|employers|hiring aid|recruitment (aid|subsidy|bonus)|aid for (hiring|recruiting)|apprentice.{0,20}(employer|hiring)|arbeitgeber|aide (à l'|a l')embauche|prime à l'embauche)\b/i;
 
 export function isEmployerAid(p) {
+  if (p.derived?.employer_aid != null) return p.derived.employer_aid;
   return EMPLOYER_AIMED.test(`${p.name_en} ${p.name_local}`);
 }
 
@@ -203,6 +213,7 @@ export function isUnpricedMeansTest(p) {
   const declared = p.eligibility?.income_test;
   if (declared === 'none') return false;
   if (declared === 'unpublished') return true;
+  if (p.derived?.means_tested != null) return p.derived.means_tested;
   return MEANS_TESTED.test(
     `${p.eligibility?.income_note ?? ''} ${p.source_snippet ?? ''} ${p.amount_note ?? ''}`,
   );
@@ -304,6 +315,7 @@ export const CIRCUMSTANCES = [
 
 /** Which unmodelled circumstance, if any, this programme is gated on. */
 export function circumstanceTags(p) {
+  if (p.derived?.circumstances) return p.derived.circumstances;
   // Names only, deliberately. Matching on the source snippet or amount note
   // produced false positives (a childcare credit mentioning disabled children
   // is not a disability programme), and a false positive here hides money the
