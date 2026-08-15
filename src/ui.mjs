@@ -179,7 +179,7 @@ ${body}
    because re-animating is the thing that makes a page feel restless. */
 (function () {
   var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  var els = document.querySelectorAll('.reveal, .flow, .flow__step');
+  var els = document.querySelectorAll('.reveal, .flow, .flow__step, .steps4');
   if (reduce || !('IntersectionObserver' in window)) {
     els.forEach(function (el) { el.classList.add('in'); });
   } else {

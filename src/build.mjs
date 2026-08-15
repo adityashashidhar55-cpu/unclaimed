@@ -224,6 +224,56 @@ function breadcrumbLd(items) {
 /* 1. Landing page                                                     */
 /* ================================================================== */
 
+/**
+ * The rotating hero graphic.
+ *
+ * Drawn rather than sourced: an image file would be one more thing to host,
+ * would need an alt text that says nothing, and would not know how many
+ * jurisdictions are in the dataset. This does — the ring is generated from the
+ * real count, so the picture cannot drift from the data underneath it.
+ *
+ * Three rings turning at different speeds and directions, with currency marks
+ * riding the outer one. Marked aria-hidden: it is atmosphere, and a screen
+ * reader announcing sixteen currency symbols would be actively worse than
+ * silence.
+ */
+function orbit(jurisdictions) {
+  const marks = ['€', '£', '$', '¥', '₹', 'kr', 'CHF', 'R$', '₩', 'AED', 'zł', 'MX$'];
+  const R = 128;
+  const dots = marks
+    .map((m, i) => {
+      const a = (i / marks.length) * Math.PI * 2 - Math.PI / 2;
+      const x = 160 + R * Math.cos(a);
+      const y = 160 + R * Math.sin(a);
+      return `<g transform="translate(${x.toFixed(1)} ${y.toFixed(1)})">
+        <circle r="17" class="orbit__chip"/>
+        <text y="5" text-anchor="middle" class="orbit__mark">${m}</text>
+      </g>`;
+    })
+    .join('');
+
+  return `<div class="orbit reveal" aria-hidden="true">
+    <svg viewBox="0 0 320 320" role="presentation">
+      <defs>
+        <linearGradient id="orbitStroke" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="var(--teal)" stop-opacity=".55"/>
+          <stop offset="50%" stop-color="var(--teal)" stop-opacity=".08"/>
+          <stop offset="100%" stop-color="var(--blue)" stop-opacity=".5"/>
+        </linearGradient>
+      </defs>
+      <circle cx="160" cy="160" r="152" class="orbit__ring orbit__ring--slow"/>
+      <circle cx="160" cy="160" r="128" class="orbit__ring orbit__ring--mid"/>
+      <circle cx="160" cy="160" r="96"  class="orbit__ring orbit__ring--fast"/>
+      <g class="orbit__marks">${dots}</g>
+      <g class="orbit__core">
+        <circle cx="160" cy="160" r="70" class="orbit__disc"/>
+        <text x="160" y="152" text-anchor="middle" class="orbit__n">${jurisdictions}</text>
+        <text x="160" y="176" text-anchor="middle" class="orbit__l">jurisdictions</text>
+      </g>
+    </svg>
+  </div>`;
+}
+
 function landing() {
   const startupCount = STARTUP_ALL.length;
   const openNow = STARTUP_ALL.filter((p) => ['open', 'rolling'].includes(p.status)).length;
@@ -233,16 +283,17 @@ function landing() {
   const jurisdictions = new Set([...countries.map((c) => c.entry.slug), ...STARTUP_MANIFEST.countries.map((c) => c.slug)]).size;
 
   const body = `
-<section style="padding:clamp(4rem,10vw,8rem) 0 clamp(3rem,6vw,5rem);position:relative">
+<section class="hero-centre" style="padding:clamp(3.5rem,8vw,6rem) 0 clamp(3rem,6vw,5rem);position:relative">
   <div class="shell">
+    ${orbit(jurisdictions)}
     <span class="eyebrow eyebrow-accent reveal">${nf(STATS.total + startupCount)} sourced programmes · ${jurisdictions} jurisdictions</span>
-    <h1 style="max-width:15ch" data-blur-words>The money you are owed, and nobody told you about.</h1>
-    <p class="lede reveal" data-delay="200" style="max-width:52ch;margin-top:1.4rem">
+    <h1 style="max-width:18ch;margin-inline:auto" data-blur-words>The money you are owed, and nobody told you about.</h1>
+    <p class="lede reveal" data-delay="200" style="max-width:54ch;margin:1.4rem auto 0">
       Governments and funders hand out rent support, family payments, R&amp;D credits and startup grants
       every year. Most of it goes unclaimed because nobody can find it. We found it, sourced it, and dated it.
     </p>
 
-    <div class="row reveal" data-delay="340" style="margin-top:2.2rem;gap:.7rem">
+    <div class="row reveal" data-delay="340" style="margin-top:2.2rem;gap:.7rem;justify-content:center">
       <a class="btn btn-primary" href="${LB()}/check/">Check what you're owed</a>
       <a class="btn" href="${LB()}/startups/">I'm a founder</a>
     </div>
@@ -282,20 +333,18 @@ function landing() {
   <div class="shell">
     <span class="eyebrow reveal">How it works</span>
     <h2 class="reveal" style="max-width:16ch">Four questions. <em class="serif-italic">Then the money.</em></h2>
-    <div class="flow" style="margin-top:2.6rem;max-width:46rem">
+    <div class="steps4">
       ${[
-        ['1', 'Tell us about you', 'Country, situation, rough income. No account, no email, nothing stored. The matcher runs in your browser.'],
-        ['2', 'See the number', 'What you are owed across every programme you qualify for — free, always, no wall.'],
+        ['1', 'Tell us about you', 'Country, situation, rough income. No account, no email, nothing stored — the matcher runs in your browser.'],
+        ['2', 'See the number', 'What you are owed across every programme you qualify for. Free, always, no wall.'],
         ['3', 'Get the list and the paperwork', 'Which schemes, what each needs, and a prepared application per claim with the fields already filled.'],
         ['4', 'Never miss the window', 'Deadlines in your calendar, and an alert when a closed programme reopens.'],
       ]
         .map(
-          (st, i) => `<div class="flow__step reveal" data-delay="${i * 130}">
-        <div class="flow__dot">${st[0]}</div>
-        <div>
-          <h3 style="margin-bottom:.25rem">${st[1]}</h3>
-          <p class="small" style="max-width:40ch">${st[2]}</p>
-        </div>
+          (st) => `<div class="step4">
+        <div class="step4__n">${st[0]}</div>
+        <h3>${st[1]}</h3>
+        <p>${st[2]}</p>
       </div>`,
         )
         .join('')}
@@ -1071,10 +1120,12 @@ ${disclaimerBar(TR)}
   <div class="audience">
     <input type="radio" name="audience" id="aud-me" class="audience__radio" checked>
     <input type="radio" name="audience" id="aud-biz" class="audience__radio">
+    <input type="radio" name="audience" id="aud-ent" class="audience__radio">
 
     <div class="audience__switch" role="tablist" aria-label="Who is this for">
-      <label for="aud-me" class="audience__tab">For me and my household</label>
-      <label for="aud-biz" class="audience__tab">For my company or team</label>
+      <label for="aud-me" class="audience__tab">For me</label>
+      <label for="aud-biz" class="audience__tab">For my company</label>
+      <label for="aud-ent" class="audience__tab">Enterprise</label>
     </div>
 
     <div class="audience__panel audience__panel--me">
@@ -1124,7 +1175,7 @@ ${disclaimerBar(TR)}
     </div>
 
     <div class="audience__panel audience__panel--biz">
-      <div class="grid grid-3" style="margin-top:2.2rem;align-items:stretch">
+      <div class="grid grid-2" style="margin-top:2.2rem;align-items:stretch">
         ${tier({
           delay: 0, eyebrow: 'Free', price: '€0', per: ' forever',
           blurb: 'See what your company could raise before you pay anything.',
@@ -1150,22 +1201,6 @@ ${disclaimerBar(TR)}
           ],
           href: `${LB()}/startups/`, cta: 'Find your grants',
         })}
-        ${tier({
-          delay: 220, eyebrow: 'Enterprise', price: 'From €80', per: '/seat/month',
-          second: 'or €800/seat/year · teams, portfolios and public bodies',
-          blurb: 'For accelerators, funds, universities and anyone managing many applicants.',
-          features: [
-            '<strong>Team dashboard</strong> with pipeline and stages',
-            'Portfolio view across every company you back',
-            'Bulk matching and CSV export',
-            'A de minimis ledger per portfolio company',
-            'API access and webhooks',
-            'SSO, audit log, data residency',
-            'Named support and onboarding',
-          ],
-          href: `${LB()}/enterprise/`, cta: 'See the dashboard',
-          note: 'Web only — the dashboard is not in the mobile app.',
-        })}
       </div>
 
       <div class="callout" style="margin-top:1.6rem">
@@ -1183,6 +1218,84 @@ ${disclaimerBar(TR)}
       </div>
     </div>
   </div>
+
+    <div class="audience__panel audience__panel--ent">
+      <div class="panel panel--float" style="margin-top:2.2rem">
+        <span class="eyebrow eyebrow-accent">Enterprise · from €80 per seat / month</span>
+        <h2 style="max-width:20ch;margin-top:.5rem">Grant work stops being scattered. <em class="serif-italic">It becomes a system.</em></h2>
+        <p class="lede" style="max-width:58ch">For accelerators, funds, universities, chambers and public bodies running
+        many applicants at once. One place to find what they qualify for, run the applications, keep the funder
+        relationships warm, and prove where the money went.</p>
+        <p style="margin-top:1.6rem">
+          <a class="btn btn-primary" href="${LB()}/enterprise/">See the dashboard</a>
+          <a class="btn" href="mailto:hello@unclaimedgrant.com?subject=Enterprise%20trial">Talk to us</a>
+        </p>
+        <p class="tiny">€800 per seat per year if you pay annually. Web only — the dashboard is not in the mobile app.</p>
+      </div>
+
+      <div class="grid grid-2" style="align-items:stretch">
+        ${[
+          {
+            eyebrow: 'Find',
+            title: 'Match a portfolio, not a company',
+            body: `Run every company you back against all ${nf(STARTUP_ALL.length)} programmes at once, ranked by what
+                   each can realistically win rather than by headline size. Saved searches re-run weekly and surface
+                   only what is new, so the pipeline stays current without anyone refreshing it.`,
+          },
+          {
+            eyebrow: 'Apply',
+            title: 'Answer once, reuse everywhere',
+            body: `A shared library of your standard answers, company facts and past applications. Each new
+                   application starts part-written from the material your team already produced, against the
+                   requirements we hold for that specific programme.`,
+          },
+          {
+            eyebrow: 'Manage the relationship',
+            title: 'Funders are relationships, not forms',
+            body: `A record per funder: who you spoke to, what you submitted, what came back and when to follow up.
+                   Reopen alerts on closed calls, and a nudge before a returning programme's window opens rather
+                   than after it shuts.`,
+          },
+          {
+            eyebrow: 'Report',
+            title: 'Prove where the money went',
+            body: `Awarded, pending and declined by company, by programme and by quarter. A de minimis ledger per
+                   portfolio company so nobody breaches the €300k ceiling by accident. CSV and API out, for the
+                   board pack you already produce.`,
+          },
+        ]
+          .map(
+            (c, i) => `<div class="panel panel--float reveal" data-delay="${i * 110}">
+          <span class="eyebrow eyebrow-accent">${c.eyebrow}</span>
+          <h3 style="font-size:1.25rem;margin:.4rem 0 .5rem">${c.title}</h3>
+          <p class="small" style="margin:0">${c.body}</p>
+        </div>`,
+          )
+          .join('')}
+      </div>
+
+      <div class="grid grid-3" style="align-items:stretch">
+        ${[
+          ['Up and running in days', 'No implementation fee and no scoping call. Import your companies, invite the team, start matching.'],
+          ['Fits your existing tools', 'Deadlines to your calendar, records to your CRM, exports to your sheet. API and webhooks for anything else.'],
+          ['Accountable to a board', 'SSO, an audit log of who saw and sent what, role-based visibility, and EU data residency.'],
+        ]
+          .map(
+            (c, i) => `<div class="panel panel--float reveal" data-delay="${i * 110}">
+          <h3 style="font-size:1.1rem;margin:0 0 .4rem">${c[0]}</h3>
+          <p class="small" style="margin:0">${c[1]}</p>
+        </div>`,
+          )
+          .join('')}
+      </div>
+
+      <div class="callout" style="margin-top:1.6rem">
+        <p><strong>Why this is priced per seat and the other plans are not.</strong> A founder checking one company
+        is a search, and it costs us the same whether they run it once or fifty times. An accelerator is people:
+        each analyst has their own pipeline, their own funder conversations and their own deadlines to miss. The
+        work scales with the number of people doing it, so the price does too.</p>
+      </div>
+    </div>
 
   <div class="grid grid-2" style="margin-top:1.8rem;align-items:stretch">
     <div class="card reveal">

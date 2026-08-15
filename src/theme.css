@@ -415,20 +415,23 @@ footer.site a:hover { color: var(--ink); opacity: 1; }
 
 /* The selected tab reads as the active surface. */
 #aud-me:checked  ~ .audience__switch label[for="aud-me"],
-#aud-biz:checked ~ .audience__switch label[for="aud-biz"] {
+#aud-biz:checked ~ .audience__switch label[for="aud-biz"],
+#aud-ent:checked ~ .audience__switch label[for="aud-ent"] {
   background: var(--teal); color: #fff;
 }
 
 /* Keyboard focus has to land somewhere visible, since the input itself is
    off-screen — without this the switch is unusable without a mouse. */
 #aud-me:focus-visible  ~ .audience__switch label[for="aud-me"],
-#aud-biz:focus-visible ~ .audience__switch label[for="aud-biz"] {
+#aud-biz:focus-visible ~ .audience__switch label[for="aud-biz"],
+#aud-ent:focus-visible ~ .audience__switch label[for="aud-ent"] {
   outline: 2px solid rgba(29,36,48,.6); outline-offset: 3px;
 }
 
 .audience__panel { display: none; }
 #aud-me:checked  ~ .audience__panel--me,
-#aud-biz:checked ~ .audience__panel--biz { display: block; }
+#aud-biz:checked ~ .audience__panel--biz,
+#aud-ent:checked ~ .audience__panel--ent { display: block; }
 
 @media (max-width: 560px) {
   .audience__switch { display: flex; width: 100%; }
@@ -671,4 +674,131 @@ div.q { margin-bottom: 2.4rem; }
 .lock-chip {
   letter-spacing: .18em; color: var(--ink-4);
   font-family: var(--font-body); font-size: .8rem;
+}
+
+/* ==================================================================== */
+/* Hero: centred, with the rotating orbit behind it                     */
+/* ==================================================================== */
+
+.hero-centre { text-align: center; }
+.hero-centre .eyebrow { display: block; }
+
+.orbit {
+  position: absolute; inset: 0; margin: auto;
+  width: min(46rem, 92vw); height: min(46rem, 92vw);
+  top: -6%; z-index: -1; pointer-events: none;
+  opacity: .85;
+}
+.orbit svg { width: 100%; height: 100%; overflow: visible; }
+
+.orbit__ring {
+  fill: none; stroke: url(#orbitStroke); stroke-width: 1.4;
+  stroke-dasharray: 3 10; transform-origin: 160px 160px;
+}
+/* Three speeds, two directions — a single rotating ring reads as a loading
+   spinner, which is the last thing a landing page should suggest. */
+.orbit__ring--slow { animation: spin 68s linear infinite; }
+.orbit__ring--mid  { animation: spin 44s linear infinite reverse; stroke-dasharray: 2 14; }
+.orbit__ring--fast { animation: spin 30s linear infinite; stroke-dasharray: 1 9; }
+
+.orbit__marks { transform-origin: 160px 160px; animation: spin 96s linear infinite; }
+.orbit__chip {
+  fill: rgba(255,255,255,.82);
+  stroke: rgba(15,111,118,.22); stroke-width: 1;
+}
+.orbit__mark {
+  font-family: var(--font-body); font-size: 12px; font-weight: 700;
+  fill: var(--teal);
+}
+/* Counter-rotate the glyphs so they stay upright while the ring turns. */
+.orbit__marks g { animation: spin-back 96s linear infinite; transform-origin: center; transform-box: fill-box; }
+
+.orbit__core { transform-origin: 160px 160px; animation: breathe 9s ease-in-out infinite; }
+.orbit__disc { fill: rgba(255,255,255,.55); stroke: rgba(15,111,118,.18); stroke-width: 1; }
+.orbit__n { font-family: var(--font-heading); font-size: 40px; fill: var(--teal); }
+.orbit__l { font-family: var(--font-body); font-size: 11px; letter-spacing: .12em;
+            text-transform: uppercase; fill: var(--ink-4); }
+
+@keyframes spin      { to { transform: rotate(360deg); } }
+@keyframes spin-back { to { transform: rotate(-360deg); } }
+@keyframes breathe   { 0%,100% { transform: scale(1); } 50% { transform: scale(1.035); } }
+
+@media (max-width: 720px) { .orbit { opacity: .45; top: -2%; } }
+
+/* ==================================================================== */
+/* Sections in boxes, with a slow float                                 */
+/* ==================================================================== */
+
+.panel {
+  position: relative; isolation: isolate;
+  border-radius: 1.5rem; padding: clamp(1.6rem, 3.5vw, 3rem);
+  margin: clamp(1.4rem, 3vw, 2.4rem) 0;
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(6px);
+}
+.panel::before {
+  content: ''; position: absolute; inset: 0; border-radius: inherit; padding: 1px;
+  background: linear-gradient(140deg, rgba(15,111,118,.26), rgba(15,111,118,.07) 45%, rgba(31,95,168,.2));
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor; mask-composite: exclude; pointer-events: none;
+}
+
+/* The float is deliberately tiny and slow. Anything faster than ~11s or
+   further than ~7px stops reading as "floating" and starts reading as
+   "drifting", which makes text harder to track while reading. */
+@media (prefers-reduced-motion: no-preference) {
+  .panel--float { animation: float 13s ease-in-out infinite; }
+  .panel--float:nth-of-type(even) { animation-duration: 16s; animation-delay: -4s; }
+}
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-7px); }
+}
+
+/* ==================================================================== */
+/* The four steps                                                       */
+/* ==================================================================== */
+
+.steps4 { display: grid; gap: 1rem; margin-top: 1.8rem;
+          grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr)); position: relative; }
+
+.step4 {
+  position: relative; isolation: isolate;
+  border-radius: 1.15rem; padding: 1.4rem 1.3rem 1.5rem;
+  background: rgba(255,255,255,.66);
+  opacity: 0; transform: translateY(22px);
+  transition: opacity .7s ease-out, transform .7s ease-out;
+}
+.step4::before {
+  content: ''; position: absolute; inset: 0; border-radius: inherit; padding: 1px;
+  background: linear-gradient(140deg, rgba(15,111,118,.24), rgba(15,111,118,.06) 45%, rgba(31,122,82,.2));
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor; mask-composite: exclude; pointer-events: none;
+}
+.steps4.in .step4 { opacity: 1; transform: none; }
+/* Staggered so the eye is walked 1 → 4 rather than shown four things at once. */
+.steps4.in .step4:nth-child(1) { transition-delay: .05s; }
+.steps4.in .step4:nth-child(2) { transition-delay: .22s; }
+.steps4.in .step4:nth-child(3) { transition-delay: .39s; }
+.steps4.in .step4:nth-child(4) { transition-delay: .56s; }
+
+.step4__n {
+  display: grid; place-items: center;
+  width: 2.6rem; height: 2.6rem; border-radius: 9999px;
+  font-family: var(--font-heading); font-size: 1.15rem;
+  color: #fff; background: var(--teal);
+  margin-bottom: .9rem;
+  transform: scale(.6); opacity: 0;
+  transition: transform .55s cubic-bezier(.2,.9,.3,1.2), opacity .45s ease-out;
+}
+.steps4.in .step4 .step4__n { transform: scale(1); opacity: 1; }
+.steps4.in .step4:nth-child(2) .step4__n { transition-delay: .3s; }
+.steps4.in .step4:nth-child(3) .step4__n { transition-delay: .47s; }
+.steps4.in .step4:nth-child(4) .step4__n { transition-delay: .64s; }
+
+.step4 h3 { margin: 0 0 .35rem; font-size: 1.12rem; }
+.step4 p  { margin: 0; font-size: .93rem; color: var(--ink-3); }
+
+@media (prefers-reduced-motion: reduce) {
+  .step4, .step4__n { opacity: 1; transform: none; }
 }
