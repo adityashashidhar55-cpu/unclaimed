@@ -313,15 +313,36 @@ function landing() {
 <section class="hero-centre" style="padding:clamp(3.5rem,8vw,6rem) 0 clamp(3rem,6vw,5rem);position:relative">
   <div class="shell">
     ${orbit(jurisdictions)}
-    <span class="eyebrow eyebrow-accent reveal">${esc(TR('homeEyebrow', nf(STATS.total + startupCount), jurisdictions))}</span>
-    <h1 style="max-width:18ch;margin-inline:auto" data-blur-words>${esc(TR('homeH1'))}</h1>
-    <p class="lede reveal" data-delay="200" style="max-width:54ch;margin:1.4rem auto 0">
+    <span class="eyebrow eyebrow-accent reveal aud-me">${esc(TR('homeEyebrow', nf(STATS.total + startupCount), jurisdictions))}</span>
+    <span class="eyebrow eyebrow-accent reveal aud-biz">${esc(TR('homeEntEyebrow', nf(startupCount), jurisdictions))}</span>
+
+    <!-- The switch sits directly under the eyebrow and above everything it
+         changes, so the first thing a visitor reads is a question they can
+         answer, and the second thing is the answer. Putting it below the fold
+         (or on the pricing page, where it used to live) means most people
+         never learn there are two products. -->
+    <div class="audswitch" role="tablist" aria-label="${esc(TR('audAria'))}">
+      <button class="audswitch__tab" type="button" role="tab" data-aud-set="me" aria-selected="true">${esc(TR('audTabMe'))}</button>
+      <button class="audswitch__tab" type="button" role="tab" data-aud-set="biz" aria-selected="false">${esc(TR('audTabBiz'))}</button>
+    </div>
+
+    <h1 class="aud-me" style="max-width:18ch;margin:1.6rem auto 0" data-blur-words>${esc(TR('homeH1'))}</h1>
+    <h1 class="aud-biz" style="max-width:18ch;margin:1.6rem auto 0" data-blur-words>${esc(TR('homeEntH1'))}</h1>
+
+    <p class="lede reveal aud-me" data-delay="200" style="max-width:54ch;margin:1.4rem auto 0">
       ${esc(TR('homeLede'))}
     </p>
+    <p class="lede reveal aud-biz" data-delay="200" style="max-width:54ch;margin:1.4rem auto 0">
+      ${esc(TR('homeEntLede'))}
+    </p>
 
-    <div class="row reveal" data-delay="340" style="margin-top:2.2rem;gap:.7rem;justify-content:center">
+    <div class="row reveal aud-me" data-delay="340" style="margin-top:2.2rem;gap:.7rem;justify-content:center">
       <a class="btn btn-primary" href="${LB()}/check/">${esc(TR('ctaCheck'))}</a>
-      <a class="btn" href="${SB()}/startups/">${esc(TR('homeFounderCta'))}</a>
+      <a class="btn" href="${LB()}/countries/">${esc(TR('navCountries'))}</a>
+    </div>
+    <div class="row reveal aud-biz" data-delay="340" style="margin-top:2.2rem;gap:.7rem;justify-content:center">
+      <a class="btn btn-primary" href="${SB()}/startups/check/">${esc(TR('ctaCheckCompany'))}</a>
+      <a class="btn" href="${SB()}/enterprise/">${esc(TR('navEnterprise'))}</a>
     </div>
 
     <div class="grid grid-4 reveal" data-delay="460" style="margin-top:3.4rem">
@@ -1120,21 +1141,22 @@ ${disclaimerBar(TR)}
   ${breadcrumbs([{ label: TR('backHome'), href: `${LB()}/` }, { label: TR('navPricing') }])}
 
   <div class="audience">
-    <input type="radio" name="audience" id="aud-me" class="audience__radio" checked>
-    <input type="radio" name="audience" id="aud-ent" class="audience__radio">
-
     <div class="hero-centre">
       <span class="eyebrow eyebrow-accent">${esc(TR('priceEyebrow'))}</span>
       <h1 style="max-width:16ch;margin-inline:auto">${esc(TR('priceH1a'))} <em class="serif-italic">${esc(TR('priceH1b'))}</em></h1>
       <p class="lede" style="max-width:52ch;margin-inline:auto">${esc(TR('priceLede'))}</p>
 
-      <div class="audience__switch audience__switch--hero" role="tablist" aria-label="Who is this for">
-        <label for="aud-me" class="audience__tab">${esc(TR('priceTabMe'))}</label>
-        <label for="aud-ent" class="audience__tab">${esc(TR('priceTabEnt'))}</label>
+      <!-- The same switch as the landing hero, driving the same cookie.
+           Pricing used to own a private pair of radios, so someone who chose
+           "my company" on the home page arrived here and was shown household
+           plans. A switch that appears to forget is worse than no switch. -->
+      <div class="audswitch" role="tablist" aria-label="${esc(TR('audAria'))}">
+        <button class="audswitch__tab" type="button" role="tab" data-aud-set="me" aria-selected="true">${esc(TR('priceTabMe'))}</button>
+        <button class="audswitch__tab" type="button" role="tab" data-aud-set="biz" aria-selected="false">${esc(TR('priceTabEnt'))}</button>
       </div>
     </div>
 
-    <div class="audience__panel audience__panel--me">
+    <div class="aud-me">
       <div class="grid grid-3" style="margin-top:2.2rem;align-items:stretch">
         ${tier({
           delay: 0, eyebrow: TR('priceFree'), price: '€0', per: TR('priceForever'),
@@ -1194,7 +1216,7 @@ ${disclaimerBar(TR)}
       </div>
     </div>
 
-    <div class="audience__panel audience__panel--ent">
+    <div class="aud-biz">
       <div class="panel panel--float" style="margin-top:2.2rem">
         <span class="eyebrow eyebrow-accent">${esc(TR('entPriceEyebrow'))}</span>
         <h2 style="max-width:20ch;margin-top:.5rem">${esc(TR('entPriceH2a'))} <em class="serif-italic">${esc(TR('entPriceH2b'))}</em></h2>
@@ -2710,6 +2732,9 @@ write('dashboard/dashboard.css', fs.readFileSync(path.join(SRC, 'pwa/dashboard.c
    resolves; holds no secret, since the Worker checks the session. */
 write('admin/admin.js', fs.readFileSync(path.join(SRC, 'pwa/admin.js'), 'utf8'));
 write('beacon.js', fs.readFileSync(path.join(SRC, 'pwa/beacon.js'), 'utf8'));
+/* The audience switch, at the root so every page and every language can load
+   the same copy — the cookie it sets is shared across all of them. */
+write('audience.js', fs.readFileSync(path.join(SRC, 'pwa/audience.js'), 'utf8'));
 /* The service worker must sit at the root to claim the whole scope. */
 write('sw.js', fs.readFileSync(path.join(SRC, 'pwa/sw.js'), 'utf8'));
 write('manifest.webmanifest', webManifest());

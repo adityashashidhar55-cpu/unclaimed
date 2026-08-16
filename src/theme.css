@@ -880,3 +880,54 @@ div.q { margin-bottom: 2.4rem; }
 
 /* The recommended card, lifted just enough to be the default read. */
 .card--featured { outline: 2px solid rgba(15,111,118,.35); outline-offset: -1px; }
+
+/* ------------------------------------------------------------------ */
+/* Audience — one switch, whole site                                   */
+/* ------------------------------------------------------------------ */
+
+/* `.aud-me` and `.aud-biz` mark the two halves of every page that differs.
+   The default, and the state with JavaScript disabled or a cookie blocked, is
+   the individual site: it is the one a stranger arriving from a search result
+   almost always wants, and it is the half that works without an account.
+
+   Both halves are in the HTML. That is deliberate — it means the switch is
+   instant, both are indexable, and there is nothing to fetch. The cost is page
+   weight, which for two navs and two headlines is nothing. */
+.aud-biz { display: none; }
+html[data-audience='biz'] .aud-biz { display: revert; }
+html[data-audience='biz'] .aud-me  { display: none; }
+
+/* Printing loses half the page otherwise, and a printed pricing sheet that
+   silently omits the enterprise tier is worse than one that shows both. */
+@media print {
+  .aud-me, .aud-biz { display: revert !important; }
+}
+
+/* The hero switch. Same pill as the pricing tabs, but these are real buttons
+   rather than labels over hidden radios, because this one has to persist a
+   cookie and tell the rest of the page — which a radio cannot do on its own. */
+.audswitch {
+  display: inline-flex; gap: .25rem; padding: .28rem; margin: 1.8rem auto 0;
+  border-radius: 9999px; position: relative; isolation: isolate;
+  background: rgba(255, 255, 255, 0.6);
+}
+.audswitch::before {
+  content: ''; position: absolute; inset: 0; border-radius: inherit; padding: 1px;
+  background: linear-gradient(140deg, rgba(15,111,118,.26), rgba(15,111,118,.08) 42%, rgba(15,111,118,.18));
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor; mask-composite: exclude; pointer-events: none;
+}
+.audswitch__tab {
+  padding: .62rem 1.35rem; border-radius: 9999px; cursor: pointer; border: 0;
+  background: transparent; font-family: var(--font-body); font-size: .92rem;
+  color: var(--ink-4); white-space: nowrap;
+  transition: color .3s ease, background .3s ease;
+}
+.audswitch__tab:hover { color: var(--ink); }
+.audswitch__tab[aria-selected='true'] { background: var(--teal); color: #fff; }
+.audswitch__tab:focus-visible { outline: 2px solid rgba(29,36,48,.6); outline-offset: 3px; }
+
+@media (max-width: 560px) {
+  .audswitch { display: flex; width: 100%; }
+  .audswitch__tab { flex: 1; text-align: center; padding: .62rem .5rem; font-size: .84rem; }
+}

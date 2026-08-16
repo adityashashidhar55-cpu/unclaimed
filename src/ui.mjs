@@ -3,6 +3,7 @@
  * Plain template literals. No dependencies.
  */
 import { CATEGORY_LABEL, BENEFIT_TYPE_LABEL, formatMoney, periodSuffix } from './engine/matcher.js';
+import { BOOT_SCRIPT } from './pwa/audience.js';
 
 export const SITE_NAME = 'Unclaimed';
 export const TAGLINE = 'Find the government money you are entitled to and are not claiming.';
@@ -73,6 +74,11 @@ export function layout({
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Individual or company, decided before the first paint. This runs ahead of
+     the stylesheet on purpose: read the cookie a frame later and the visitor
+     sees the household site flash before the company one replaces it, which
+     is worse than not having the switch at all. -->
+<script>${BOOT_SCRIPT}</script>
 <title>${esc(fullTitle)}</title>
 <meta name="description" content="${attr(description)}">
 ${canonical ? `<link rel="canonical" href="${attr(canonical)}">` : ''}
@@ -104,13 +110,22 @@ ${ldBlocks}
   <div class="shell masthead__inner">
     <a class="wordmark" href="${LB}/">${ICON.seal}${SITE_NAME}</a>
     <nav class="nav" aria-label="Main">
-      <span class="nav nav--links">
+      <!-- Two navs, one shown. The switch in the hero is meaningless if the
+           menu above it still offers the other product's pages. -->
+      <span class="nav nav--links aud-me">
         <a href="${LB}/countries/">${esc(T('navCountries'))}</a>
         <a href="${LB}/methodology/">${esc(T('navHow'))}</a>
         <a href="${LB}/pricing/">${esc(T('navPricing'))}</a>
-        <a href="${LB}/enterprise/">${esc(T('navEnterprise'))}</a>
         <a href="${base}/blog/">${esc(T('navWriting'))}</a>
         <a href="${base}/app/">${esc(T('navApp'))}</a>
+        <a href="${base}/api/">${esc(T('navApi'))}</a>
+      </span>
+      <span class="nav nav--links aud-biz">
+        <a href="${base}/enterprise/">${esc(T('navEnterprise'))}</a>
+        <a href="${base}/startups/">${esc(T('navProgrammes'))}</a>
+        <a href="${base}/dashboard/">${esc(T('footWorkspace'))}</a>
+        <a href="${LB}/pricing/">${esc(T('navPricing'))}</a>
+        <a href="${LB}/methodology/">${esc(T('navHow'))}</a>
         <a href="${base}/api/">${esc(T('navApi'))}</a>
       </span>
       ${
@@ -121,7 +136,11 @@ ${ldBlocks}
       </select>`
           : ''
       }
-      ${nav || `<a class="btn btn-sm btn-primary" href="${LB}/check/">${esc(T('ctaCheck'))}</a>`}
+      ${
+        nav ||
+        `<a class="btn btn-sm btn-primary aud-me" href="${LB}/check/">${esc(T('ctaCheck'))}</a>
+         <a class="btn btn-sm btn-primary aud-biz" href="${base}/startups/check/">${esc(T('ctaCheckCompany'))}</a>`
+      }
     </nav>
   </div>
 </header>
@@ -138,14 +157,16 @@ ${body}
       <div>
         <h4>${esc(T('footProduct'))}</h4>
         <ul>
-          <li><a href="${LB}/check/">${esc(T('ctaCheck'))}</a></li>
-          <li><a href="${LB}/countries/">${esc(T('navCountries'))}</a></li>
+          <li class="aud-me"><a href="${LB}/check/">${esc(T('ctaCheck'))}</a></li>
+          <li class="aud-biz"><a href="${base}/startups/check/">${esc(T('ctaCheckCompany'))}</a></li>
+          <li class="aud-me"><a href="${LB}/countries/">${esc(T('navCountries'))}</a></li>
+          <li class="aud-biz"><a href="${base}/startups/">${esc(T('navProgrammes'))}</a></li>
           <li><a href="${LB}/methodology/">${esc(T('methodology'))}</a></li>
-          <li><a href="${base}/blog/">${esc(T('navWriting'))}</a></li>
+          <li class="aud-me"><a href="${base}/blog/">${esc(T('navWriting'))}</a></li>
           <li><a href="${LB}/pricing/">${esc(T('navPricing'))}</a></li>
-          <li><a href="${LB}/enterprise/">${esc(T('navEnterprise'))}</a></li>
-          <li><a href="${base}/dashboard/">${esc(T('footWorkspace'))}</a></li>
-          <li><a href="${base}/app/">${esc(T('footMobileApp'))}</a></li>
+          <li class="aud-biz"><a href="${base}/enterprise/">${esc(T('navEnterprise'))}</a></li>
+          <li class="aud-biz"><a href="${base}/dashboard/">${esc(T('footWorkspace'))}</a></li>
+          <li class="aud-me"><a href="${base}/app/">${esc(T('footMobileApp'))}</a></li>
         </ul>
       </div>
       <div>
@@ -260,6 +281,8 @@ ${scripts}
      delay first paint, and it fails silently when the API is not there. -->
 <script type="module">
 import { track } from "${base}/beacon.js?v=${ASSET_V}";
+import { initAudience } from "${base}/audience.js?v=${ASSET_V}";
+initAudience();
 track('land');
 /* Stripe sends a paid customer back to /account/?welcome=1, which is the only
    moment the browser knows a payment completed. The webhook knows too, but it
