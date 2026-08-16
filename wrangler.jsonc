@@ -24,19 +24,21 @@
     {
       "binding": "DB",
       "database_name": "unclaimedgrant-prod",
-      "database_id": "REPLACE_AFTER_wrangler_d1_create",
+      "database_id": "96793498-0a14-4314-aaa8-227530951494",
       "migrations_dir": "./migrations"
     }
   ],
 
   // Encrypted document vault. The Worker stores and returns ciphertext it
   // cannot read; keys never leave the user's device. See migrations/0002.
-  "r2_buckets": [
-    {
-      "binding": "VAULT",
-      "bucket_name": "unclaimedgrant-vault"
-    }
-  ],
+  //
+  // Commented out until R2 is enabled on the account. Every vault route checks
+  // for the binding and returns 503 without it, so the rest of the product
+  // deploys and works meanwhile — a missing bucket must not take sign-in down
+  // with it. Uncomment after `Enable R2` in the dashboard.
+  // "r2_buckets": [
+  //   { "binding": "VAULT", "bucket_name": "unclaimedgrant-vault" }
+  // ],
 
   "vars": {
     "APP_ORIGIN": "https://unclaimedgrant.com",
