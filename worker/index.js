@@ -62,9 +62,56 @@ async function sha256Hex(s) {
 /* Sessions — signed cookie, no server-side session store              */
 /* ------------------------------------------------------------------ */
 
+/**
+ * The key every session cookie is signed with.
+ *
+ * It used to be a `wrangler secret`, which meant sign-in was broken until
+ * somebody remembered to set it — and a missing secret does not announce
+ * itself, it just makes every cookie unverifiable, so the symptom is "sign-in
+ * silently does nothing for everyone". That is exactly the failure this
+ * deployment shipped with.
+ *
+ * So the Worker provisions its own on first use and keeps it in D1. The trust
+ * boundary is unchanged: a Cloudflare secret is readable by this Worker, and
+ * so is its own D1 database — nothing else can read either. What changes is
+ * that there is no setup step left to forget.
+ *
+ * `env.SESSION_SIGNING_KEY` still wins if it is set, so rotating by hand stays
+ * possible, and an existing deployment keeps every live session.
+ *
+ * Cached per isolate. The read is one indexed lookup, but it is on the path of
+ * every authenticated request and there is no reason to pay for it twice.
+ */
+let SIGNING_KEY_CACHE = null;
+
+async function signingKey(env) {
+  if (env.SESSION_SIGNING_KEY) return env.SESSION_SIGNING_KEY;
+  if (SIGNING_KEY_CACHE) return SIGNING_KEY_CACHE;
+
+  const row = await env.DB.prepare("SELECT value FROM worker_config WHERE key = 'session_signing_key'").first();
+  if (row?.value) {
+    SIGNING_KEY_CACHE = row.value;
+    return SIGNING_KEY_CACHE;
+  }
+
+  const fresh = toHex(crypto.getRandomValues(new Uint8Array(32)));
+  /* INSERT OR IGNORE, then read back. Two isolates can reach this line at the
+     same moment on a cold deploy; whichever loses the race must adopt the
+     winner's key rather than overwrite it, or the first users to sign in are
+     signed out again a second later. */
+  await env.DB.prepare(
+    "INSERT OR IGNORE INTO worker_config (key, value, created_at) VALUES ('session_signing_key', ?, ?)",
+  )
+    .bind(fresh, Date.now())
+    .run();
+  const settled = await env.DB.prepare("SELECT value FROM worker_config WHERE key = 'session_signing_key'").first();
+  SIGNING_KEY_CACHE = settled?.value ?? fresh;
+  return SIGNING_KEY_CACHE;
+}
+
 async function signSession(env, payload) {
   const body = btoa(JSON.stringify(payload)).replace(/=+$/, '');
-  const sig = toHex(await hmac(enc.encode(env.SESSION_SIGNING_KEY), body));
+  const sig = toHex(await hmac(enc.encode(await signingKey(env)), body));
   return `${body}.${sig}`;
 }
 
@@ -73,7 +120,7 @@ async function readSession(env, cookieHeader) {
   if (!raw) return null;
   const [body, sig] = raw.slice('ua_session='.length).split('.');
   if (!body || !sig) return null;
-  const expect = toHex(await hmac(enc.encode(env.SESSION_SIGNING_KEY), body));
+  const expect = toHex(await hmac(enc.encode(await signingKey(env)), body));
   if (!timingSafeEqual(sig, expect)) return null;
   try {
     const payload = JSON.parse(atob(body));
@@ -1190,13 +1237,39 @@ const dayKey = (ts) => new Date(ts).toISOString().slice(0, 10);
  * password required", which is the single most common way an admin door is
  * left unlocked.
  */
+/**
+ * The operator credential, from secrets if they are set, from D1 if not.
+ *
+ * Same reasoning as the signing key: a `wrangler secret` that nobody has set
+ * yet is indistinguishable, from the outside, from a broken login. The three
+ * rows in worker_config hold the email, the PBKDF2 salt and the hash — never
+ * the password, which exists only in whatever `scripts/admin-password.mjs`
+ * printed once.
+ *
+ * Secrets still take precedence, so setting them later overrides the row
+ * without a code change, and returns null when neither source has a full set —
+ * which keeps the fail-closed behaviour below exactly as it was.
+ */
+async function adminCredential(env) {
+  if (env.ADMIN_EMAIL && env.ADMIN_PASSWORD_HASH && env.ADMIN_PASSWORD_SALT) {
+    return { email: env.ADMIN_EMAIL, salt: env.ADMIN_PASSWORD_SALT, hash: env.ADMIN_PASSWORD_HASH };
+  }
+  const rows = await env.DB.prepare(
+    "SELECT key, value FROM worker_config WHERE key IN ('admin_email','admin_password_salt','admin_password_hash')",
+  ).all();
+  const m = Object.fromEntries((rows.results || []).map((r) => [r.key, r.value]));
+  if (!m.admin_email || !m.admin_password_salt || !m.admin_password_hash) return null;
+  return { email: m.admin_email, salt: m.admin_password_salt, hash: m.admin_password_hash };
+}
+
 async function handleAdminLogin(request, env) {
-  if (!env.ADMIN_EMAIL || !env.ADMIN_PASSWORD_HASH || !env.ADMIN_PASSWORD_SALT) {
+  const cred = await adminCredential(env);
+  if (!cred) {
     return json({ error: 'admin_disabled', message: 'No operator account is configured.' }, 503);
   }
 
   const ip = request.headers.get('cf-connecting-ip') ?? 'unknown';
-  const ipHash = await sha256Hex(`${ip}:${env.SESSION_SIGNING_KEY}`);
+  const ipHash = await sha256Hex(`${ip}:${await signingKey(env)}`);
   const since = Date.now() - 3600e3;
   const recent = await env.DB.prepare(
     'SELECT COUNT(*) AS n FROM admin_attempts WHERE ip_hash = ? AND ok = 0 AND ts > ?',
@@ -1211,11 +1284,11 @@ async function handleAdminLogin(request, env) {
   const email = String(body.email ?? '').trim().toLowerCase();
   const password = String(body.password ?? '');
 
-  const expected = await pbkdf2Hex(password, env.ADMIN_PASSWORD_SALT);
+  const expected = await pbkdf2Hex(password, cred.salt);
   /* Both comparisons run whatever happens, so a wrong email and a wrong
      password take the same time and cost the same attempt. */
-  const emailOk = timingSafeEqual(email, String(env.ADMIN_EMAIL).trim().toLowerCase());
-  const passOk = timingSafeEqual(expected, env.ADMIN_PASSWORD_HASH);
+  const emailOk = timingSafeEqual(email, String(cred.email).trim().toLowerCase());
+  const passOk = timingSafeEqual(expected, cred.hash);
   const ok = emailOk && passOk;
 
   await env.DB.prepare('INSERT INTO admin_attempts (id, ts, ip_hash, ok) VALUES (?, ?, ?, ?)')
