@@ -1183,7 +1183,11 @@ async function handleProfile(request, env) {
 
 async function handleMe(request, env) {
   const session = await readSession(env, request.headers.get('cookie'));
-  if (!session?.uid) return json({ signed_in: false });
+  /* An operator session carries `adm` and no `uid` — it is not a user account,
+     it is a role. Testing for `uid` alone reported a signed-in operator as
+     signed out, which made the admin dashboard bounce straight back to its own
+     login form after a successful login. */
+  if (!session || (!session.uid && !session.adm)) return json({ signed_in: false });
   const url = new URL(request.url);
   const country = url.searchParams.get('country') || 'gb';
   const ent = await entitlementFor(env, session, country);
