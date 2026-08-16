@@ -1437,6 +1437,10 @@ ${disclaimerBar(TR)}
         <label for="acct-me" class="audience__tab">${esc(TR('acctPersonal'))}</label>
         <label for="acct-biz" class="audience__tab">${esc(TR('acctBusiness'))}</label>
       </div>
+      <!-- The switch used to set a hidden variable and nothing else, so it
+           read as broken. Each side now says what it actually changes. -->
+      <p class="small audience__panel audience__panel--me" style="margin:1rem 0 0">${esc(TR('acctPanelMe'))}</p>
+      <p class="small audience__panel audience__panel--biz" style="margin:1rem 0 0">${esc(TR('acctPanelBiz'))}</p>
     </div>
 
     <form id="auth-form" novalidate>
@@ -1474,14 +1478,11 @@ ${disclaimerBar(TR)}
       <a class="btn" href="/auth/signout">${esc(TR('acctSignOut'))}</a>
     </p>
   </div>
-
-  <div class="callout" style="margin-top:1.6rem">
-    <p><strong>${esc(TR('acctWhatT'))}</strong> ${esc(TR('acctWhatB'))}</p>
-  </div>
 </section>
 
 <script type="module">
 import { requestCode, verifyCode, me } from '${LB()}/app/auth.js';
+import { track } from '${BASE}/beacon.js';
 
 const $ = (s) => document.querySelector(s);
 const msg = $('#auth-msg');
@@ -1508,6 +1509,7 @@ form.addEventListener('submit', async (e) => {
   if (!onCode) {
     email = $('#auth-email').value.trim();
     if (!/^[^@\\s]+@[^@\\s]+\\.[^@\\s]+$/.test(email)) { msg.textContent = 'That does not look like an email address.'; return; }
+    track('signin_start');
     const btn = $('#auth-send'); btn.disabled = true; btn.textContent = 'Sending…';
     const res = await requestCode(email, acctType());
     btn.disabled = false; btn.textContent = 'Send me a code';
@@ -1527,6 +1529,7 @@ form.addEventListener('submit', async (e) => {
   const res = await verifyCode(email, code, acctType());
   btn.disabled = false; btn.textContent = 'Verify and sign in';
   if (!res.ok) { msg.textContent = res.message || 'That code is wrong or has expired.'; return; }
+  track('signin_done');
   location.href = '${LB()}/check/';
 });
 
@@ -1741,6 +1744,94 @@ function dashboardPage() {
     canonical: `${SITE_URL}/dashboard/`,
     head: `<link rel="stylesheet" href="${BASE}/dashboard/dashboard.css?v=${ASSET_V}">
 <meta name="robots" content="noindex">`,
+    body,
+  });
+}
+
+/**
+ * /admin/ — the operator's door and the operator's dashboard, one page.
+ *
+ * English-only and `noindex`, and it does no gating of its own: the login form
+ * posts to the Worker, every figure on it comes from an endpoint that checks
+ * the session server-side, and with no session the page renders an empty
+ * shell. There is nothing here worth hiding from view-source, which is the
+ * point — an admin page whose secret is that you have to know the URL is not
+ * an admin page.
+ */
+function adminPage() {
+  const body = `
+<section class="section-tight shell" style="max-width:70rem">
+  ${breadcrumbs([{ label: TR('backHome'), href: `${LB()}/` }, { label: 'Operator' }])}
+  <span class="eyebrow eyebrow-accent">Operator</span>
+  <h1 style="max-width:20ch">Who is here, and <em class="serif-italic">where they stop</em></h1>
+
+  <div class="card" id="admin-login" style="margin-top:2rem;max-width:32rem">
+    <p class="small" style="margin-top:0">Signing in here unlocks every paid surface on the site for this
+    browser for twelve hours, so you can walk the product as a subscriber sees it.</p>
+    <form id="admin-form" novalidate>
+      <label class="tiny" for="admin-email">Operator email</label>
+      <input class="field" type="email" id="admin-email" autocomplete="username" required
+             style="width:100%;margin:.4rem 0 1rem">
+      <label class="tiny" for="admin-pass">Password</label>
+      <input class="field" type="password" id="admin-pass" autocomplete="current-password" required
+             style="width:100%;margin:.4rem 0 1rem">
+      <button class="btn btn-primary" type="submit" style="width:100%">Sign in</button>
+      <p class="small" id="admin-msg" role="status" aria-live="polite" style="margin:1rem 0 0;min-height:1.2em"></p>
+    </form>
+  </div>
+
+  <div id="admin-panel" hidden>
+    <div class="row" style="gap:.6rem;margin:1.6rem 0">
+      <span class="small" id="admin-who"></span>
+      <span class="small">·</span>
+      <label class="tiny" for="admin-days">Window</label>
+      <select class="field" id="admin-days" style="width:auto">
+        <option value="7">7 days</option>
+        <option value="30" selected>30 days</option>
+        <option value="90">90 days</option>
+      </select>
+      <button class="btn btn-sm" type="button" id="admin-refresh">Refresh</button>
+      <a class="btn btn-sm btn-ghost" href="/auth/signout">Sign out</a>
+    </div>
+
+    <div class="grid grid-4" id="admin-kpis"></div>
+
+    <section class="bucket">
+      <div class="bucket__head"><h2>Where traffic stops</h2>
+        <span class="bucket__count" id="admin-worst"></span></div>
+      <div id="admin-funnel"></div>
+    </section>
+
+    <section class="bucket">
+      <div class="bucket__head"><h2>Visitors per day</h2></div>
+      <div id="admin-days-chart"></div>
+    </section>
+
+    <div class="grid grid-2x">
+      <section class="bucket"><div class="bucket__head"><h2>By country checked</h2></div>
+        <div id="admin-countries"></div></section>
+      <section class="bucket"><div class="bucket__head"><h2>By language</h2></div>
+        <div id="admin-locales"></div></section>
+    </div>
+
+    <section class="bucket">
+      <div class="bucket__head"><h2>Who signed in</h2>
+        <span class="bucket__count">most recent first</span></div>
+      <div id="admin-logins"></div>
+    </section>
+  </div>
+
+  <noscript><p class="small">The dashboard needs JavaScript — every figure is fetched.</p></noscript>
+</section>
+
+<script type="module" src="${BASE}/admin/admin.js?v=${ASSET_V}"></script>`;
+
+  return layout({
+    base: BASE, linkBase: LB(), lang: L, tr: TR, altLangs: [],
+    title: 'Operator — traffic, sign-ins and funnel drop-off',
+    description: 'Operator dashboard.',
+    canonical: `${SITE_URL}/admin/`,
+    head: '<meta name="robots" content="noindex, nofollow">',
     body,
   });
 }
@@ -2380,6 +2471,8 @@ function buildLanguage(lang) {
     page('startups/check/index.html', startupCheckPage());
     ALT = [];
     page('dashboard/index.html', dashboardPage());
+    ALT = [];
+    page('admin/index.html', adminPage());
     ALT = altFor('/blog/');
     page('blog/index.html', blogIndex());
     for (const post of POSTS) {
@@ -2613,6 +2706,10 @@ write('app/auth.js', fs.readFileSync(path.join(SRC, 'pwa/auth.js'), 'utf8'));
    ../engine/ specifiers resolve to the copies written at the root. */
 write('dashboard/dashboard.js', fs.readFileSync(path.join(SRC, 'pwa/dashboard.js'), 'utf8'));
 write('dashboard/dashboard.css', fs.readFileSync(path.join(SRC, 'pwa/dashboard.css'), 'utf8'));
+/* The operator dashboard. Same depth rule as /dashboard/ so ../packages/
+   resolves; holds no secret, since the Worker checks the session. */
+write('admin/admin.js', fs.readFileSync(path.join(SRC, 'pwa/admin.js'), 'utf8'));
+write('beacon.js', fs.readFileSync(path.join(SRC, 'pwa/beacon.js'), 'utf8'));
 /* The service worker must sit at the root to claim the whole scope. */
 write('sw.js', fs.readFileSync(path.join(SRC, 'pwa/sw.js'), 'utf8'));
 write('manifest.webmanifest', webManifest());
@@ -2641,6 +2738,8 @@ write('packages/scoring/rates.js', fs.readFileSync(path.join(ROOT, 'packages/sco
 write('packages/stateaid/index.js', fs.readFileSync(path.join(ROOT, 'packages/stateaid/index.js'), 'utf8'));
 write('packages/registry/index.js', fs.readFileSync(path.join(ROOT, 'packages/registry/index.js'), 'utf8'));
 write('packages/vault/index.js', fs.readFileSync(path.join(ROOT, 'packages/vault/index.js'), 'utf8'));
+/* The funnel's step names, shared so the dashboard cannot invent one. */
+write('packages/analytics/index.js', fs.readFileSync(path.join(ROOT, 'packages/analytics/index.js'), 'utf8'));
 
 /* Startup pools as JSON assets. The Worker reads these through env.ASSETS
    rather than bundling the dataset, so a data refresh is a rebuild and not a

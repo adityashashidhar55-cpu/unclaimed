@@ -14,6 +14,7 @@ import {
   estimateShareText,
   DISCLAIMER,
 } from './engine/matcher.js';
+import { track } from './beacon.js';
 
 const BASE = new URL('.', import.meta.url).pathname.replace(/\/$/, '');
 const app = document.getElementById('app');
@@ -46,6 +47,12 @@ const S = {
 
 const esc = (s) =>
   String(s ?? '').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+
+/** "a", "a and b", "a, b and c" — parts are already-escaped HTML. */
+function listPhrase(parts) {
+  if (parts.length <= 1) return parts[0] || '';
+  return `${parts.slice(0, -1).join(', ')} and ${parts[parts.length - 1]}`;
+}
 
 /* ---- URL state (shareable, no accounts) ---- */
 function encodeState() {
@@ -501,12 +508,12 @@ function viewNoMatches() {
     <section class="result-hero">
       <span class="eyebrow">${esc(S.entry.flag)} ${esc(S.entry.name)} · matched against ${S.data.programmes.length} programmes</span>
       <p class="figure" style="font-size:clamp(2rem,5vw,3.4rem)">Nothing matched — and that's worth knowing why</p>
-      <p class="small" style="color:#a89c8a;max-width:60ch;margin-top:1.5rem">
+      <p class="small" style="color:var(--ink-3);max-width:60ch;margin-top:1.5rem">
         A blank result is usually a rule about who a country pays, not a bug. Here is exactly what blocked you,
         counted from the ${S.data.programmes.length} ${esc(S.entry.name)} programmes we hold.</p>
       <div class="row" style="margin-top:2rem">
         <button class="btn btn-sm" type="button" data-act="restart">Change my answers</button>
-        <a class="btn btn-sm btn-ghost" style="color:#faf6ef;border-color:#4a453c" href="${BASE}/${S.entry.slug}/">Browse all ${S.data.programmes.length} anyway</a>
+        <a class="btn btn-sm btn-ghost" href="${BASE}/${S.entry.slug}/">Browse all ${S.data.programmes.length} anyway</a>
       </div>
     </section>
 
@@ -541,12 +548,57 @@ function viewNoMatches() {
       <p style="margin-bottom:0"><a class="link-underline" href="${BASE}/${S.entry.slug}/employment/">Work &amp; employment entitlements in ${esc(S.entry.name)}</a></p>
     </div>
 
-    <details class="fold" style="margin-top:2.5rem">
+    ${ENTITLED
+      ? `<details class="fold" style="margin-top:2.5rem">
       <summary>Show all ${r.not_eligible.length} programmes and the rule each one failed on</summary>
       <div class="bucket-list" style="margin-top:1rem">${r.not_eligible.slice(0, 40).map((m) => progCard(m, 'no')).join('')}</div>
-    </details>
+    </details>`
+      : ''}
     <p class="tiny" style="margin-top:1.5rem">${esc(DISCLAIMER)} Data as of ${esc(r.data_as_of)}.</p>
   </div>`;
+}
+
+/**
+ * The "you don't qualify for these" list, or the reasons behind it.
+ *
+ * Names are stripped from the public dataset, so for an unentitled visitor
+ * every one of these cards renders with an empty title and an empty funder —
+ * forty blank boxes, which reads as a broken page rather than as a paywall.
+ * The failing RULE is not paid content and is genuinely the useful half here
+ * ("what would have to change"), so the free version is the rules, counted.
+ */
+function ruledOutBlock(r) {
+  if (!r.not_eligible.length) return '';
+  if (ENTITLED) {
+    return `<details class="fold" style="margin-top:3rem">
+    <summary>Show the ${r.not_eligible.length} programmes you don't qualify for, and why</summary>
+    <p class="small" style="margin-top:1rem">Worth a scan: circumstances change, and the failing rule tells you what would have to change.</p>
+    <div class="bucket-list" style="margin-top:1rem">${r.not_eligible.slice(0, 40).map((m) => progCard(m, 'no')).join('')}</div>
+    ${r.not_eligible.length > 40 ? `<p class="small">Showing 40 of ${r.not_eligible.length}. <a class="link-underline" href="${BASE}/${S.entry.slug}/">Browse all ${S.data.programmes.length} programmes in ${esc(S.entry.name)}</a>.</p>` : ''}
+  </details>`;
+  }
+
+  const counts = {};
+  for (const m of r.not_eligible) {
+    for (const reason of new Set(m.rules_failed)) counts[reason] = (counts[reason] || 0) + 1;
+  }
+  const top = Object.entries(counts).sort((a, b) => b[1] - a[1]).slice(0, 6);
+  if (!top.length) return '';
+
+  return `<details class="fold" style="margin-top:3rem">
+    <summary>Why ${r.not_eligible.length} programmes ruled you out</summary>
+    <p class="small" style="margin-top:1rem">The rules are free — which programmes they belong to is not. Circumstances change, and this is the list of what would have to.</p>
+    <div class="list-rows">
+      ${top
+        .map(
+          ([reason, count]) => `<div class="list-row" style="cursor:default">
+        <span><span class="list-row__name">${esc(reason)}</span></span>
+        <span class="list-row__right"><span class="list-row__amount">${count}</span><span class="tiny">programmes</span></span>
+      </div>`,
+        )
+        .join('')}
+    </div>
+  </details>`;
 }
 
 function viewResults() {
@@ -559,14 +611,30 @@ function viewResults() {
   const apply = r.eligible.filter((m) => !m.programme.is_automatic);
   // Eligible programmes whose amount the authority calculates — these count as
   // zero in the headline, so name the biggest ones rather than hiding them.
-  const unpricedTop = r.eligible
+  /* Names are stripped from the public dataset, so `name_en` is empty for
+     everyone who has not paid — which used to render as "Yours include , ,
+     and 7 more". Fall back to what the free record does carry: the category.
+     A free reader gets "two housing payments and a disability payment", which
+     is true, useful, and gives nothing away. */
+  const unpricedAll = r.eligible
     .filter((m) => !m.is_capital && m.programme.amount_min == null && m.programme.amount_max == null)
     .sort((a, b) => {
       const rank = (m) => (m.programme.verification_status === 'verified' ? 0 : 1);
       return rank(a) - rank(b);
-    })
+    });
+  const unpricedTop = unpricedAll
     .slice(0, 3)
-    .map((m) => m.programme.name_en);
+    .map((m) => m.programme.name_en)
+    .filter(Boolean);
+  /* Distinct categories, biggest group first, at most three. */
+  const unpricedKinds = (() => {
+    const n = new Map();
+    for (const m of unpricedAll) {
+      const k = CATEGORY_LABEL[m.programme.category] || m.programme.category;
+      if (k) n.set(k, (n.get(k) || 0) + 1);
+    }
+    return [...n.entries()].sort((a, b) => b[1] - a[1]).slice(0, 3);
+  })();
 
   const headline =
     r.total_max > 0
@@ -602,26 +670,38 @@ function viewResults() {
           : `<p class="figure" style="font-size:clamp(2.2rem,7vw,4.5rem)">${r.eligible.length} programmes</p>
            <p class="figure-unit" style="margin-top:1rem">you appear to qualify for</p>`
     }
-    <p class="small" style="color:#a89c8a;max-width:60ch;margin-top:1.5rem">
+    <p class="small" style="color:var(--ink-3);max-width:60ch;margin-top:1.5rem">
       ${r.eligible.length} eligible · ${r.needs_one_more_answer.length} need one more answer · ${r.conditional.length} depend on a circumstance you didn't claim · ${r.not_eligible.length} ruled out.
       ${r.capital_max > 0 ? `A further ${money(r.capital_max, cur)} in loan and credit ceilings is excluded, because borrowing is not income.` : ''}
     </p>
     ${
-      unpricedTop.length
-        ? `<div style="position:relative;margin-top:1.5rem;padding:1rem 1.2rem;border:1px solid #3d3831;border-radius:10px;background:rgba(255,255,255,.03)">
-        <p class="small" style="color:#cfc7b8;margin:0;max-width:62ch"><strong style="color:#f0c8a8">The figure above is not your real total.</strong>
+      unpricedAll.length
+        ? `<div style="position:relative;margin-top:1.5rem;padding:1rem 1.2rem;border:1px solid var(--line-2);border-radius:10px;background:var(--paper-2)">
+        <p class="small" style="color:var(--ink-2);margin:0;max-width:62ch"><strong style="color:var(--terracotta)">The figure above is not your real total.</strong>
         ${r.unpriced_count} of your matches publish no fixed amount — the authority calculates it from your circumstances —
-        so they count as <strong>zero</strong> here. They are often the largest payments of all. Yours include
-        ${unpricedTop.map((n) => `<strong style="color:#faf6ef">${esc(n)}</strong>`).join(', ')}${
-          r.unpriced_count > unpricedTop.length ? ` and ${r.unpriced_count - unpricedTop.length} more` : ''
-        }. We would rather show you a small honest number than a big invented one.</p>
+        so they count as <strong>zero</strong> here. They are often the largest payments of all.${
+          unpricedTop.length
+            ? ` Yours include ${unpricedTop.map((n) => `<strong style="color:var(--ink)">${esc(n)}</strong>`).join(', ')}${
+                r.unpriced_count > unpricedTop.length
+                  ? ` and ${r.unpriced_count - unpricedTop.length} more`
+                  : ''
+              }.`
+            : unpricedKinds.length
+              ? ` Yours are ${listPhrase(
+                  unpricedKinds.map(
+                    ([label, n]) =>
+                      `<strong style="color:var(--ink)">${n} ${esc(label.toLowerCase())}</strong> ${n === 1 ? 'payment' : 'payments'}`,
+                  ),
+                )}.`
+              : ''
+        } We would rather show you a small honest number than a big invented one.</p>
       </div>`
         : ''
     }
-    <div class="row" style="margin-top:2rem" class="no-print">
+    <div class="row no-print" style="margin-top:2rem">
       <button class="btn btn-sm" type="button" data-act="share">Copy my result link</button>
-      <button class="btn btn-sm btn-ghost" style="color:#faf6ef;border-color:#4a453c" type="button" onclick="window.print()">Print / save as PDF</button>
-      <button class="btn btn-sm btn-ghost" style="color:#faf6ef;border-color:#4a453c" type="button" data-act="restart">Change my answers</button>
+      <button class="btn btn-sm btn-ghost" type="button" onclick="window.print()">Print / save as PDF</button>
+      <button class="btn btn-sm btn-ghost" type="button" data-act="restart">Change my answers</button>
     </div>
   </section>
 
@@ -671,12 +751,7 @@ function viewResults() {
     <div class="bucket-list" style="margin-top:1rem">${r.needs_one_more_answer.slice(0, 25).map((m) => progCard(m, 'maybe')).join('')}</div>
   </section>`)}
 
-  <details class="fold" style="margin-top:3rem">
-    <summary>Show the ${r.not_eligible.length} programmes you don't qualify for, and why</summary>
-    <p class="small" style="margin-top:1rem">Worth a scan: circumstances change, and the failing rule tells you what would have to change.</p>
-    <div class="bucket-list" style="margin-top:1rem">${r.not_eligible.slice(0, 40).map((m) => progCard(m, 'no')).join('')}</div>
-    ${r.not_eligible.length > 40 ? `<p class="small">Showing 40 of ${r.not_eligible.length}. <a class="link-underline" href="${BASE}/${S.entry.slug}/">Browse all ${S.data.programmes.length} programmes in ${esc(S.entry.name)}</a>.</p>` : ''}
-  </details>
+  ${ruledOutBlock(r)}
 
   <div class="callout" style="margin-top:3rem">
     <p><strong>What this number is.</strong> ${esc(r.coverage_note)} The figure sums published maximums for the
@@ -729,14 +804,29 @@ function buildIcs() {
 /* Controller                                                          */
 /* ------------------------------------------------------------------ */
 
+/* One beacon per funnel step, fired from the one place that knows which step
+   is on screen. Scattering track() calls through the click handlers is how a
+   funnel ends up counting the Back button. */
+function trackStep(st) {
+  const i = S.step;
+  track('check_start');
+  if (i >= 1) track('country', { country: S.profile.country_code });
+  if (i >= 2) track('answers_1', { country: S.profile.country_code });
+  if (i >= Math.ceil(st.length / 2)) track('answers_half', { country: S.profile.country_code });
+}
+
 async function render() {
   const st = steps();
   if (S.result) {
     /* Ask before drawing: rendering the list and then hiding it would put the
        whole paid product one devtools panel away. */
     await refreshEntitlement();
+    track('answers_done', { country: S.profile.country_code });
+    track('result', { country: S.profile.country_code });
+    if (!ENTITLED) track('paywall_seen', { country: S.profile.country_code });
     app.innerHTML = viewResults();
   } else {
+    trackStep(st);
     const which = st[S.step];
     app.innerHTML =
       which === 'country'

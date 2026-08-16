@@ -255,6 +255,17 @@ ${body}
 })();
 </script>
 ${scripts}
+<!-- One event per visit: "somebody arrived". Everything else in the funnel is
+     fired by the screen it belongs to. Deferred as a module so it cannot
+     delay first paint, and it fails silently when the API is not there. -->
+<script type="module">
+import { track } from "${base}/beacon.js?v=${ASSET_V}";
+track('land');
+/* Stripe sends a paid customer back to /account/?welcome=1, which is the only
+   moment the browser knows a payment completed. The webhook knows too, but it
+   arrives with no visitor id and so cannot close the funnel. */
+if (new URLSearchParams(location.search).has('welcome')) track('checkout_done');
+</script>
 </body>
 </html>`;
 }

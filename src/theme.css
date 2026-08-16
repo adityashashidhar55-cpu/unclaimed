@@ -428,23 +428,31 @@ footer.site a:hover { color: var(--ink); opacity: 1; }
    the hero block rather than as a bare sibling of the radios. The earlier
    sibling-only selector silently stopped matching the moment the switch was
    nested, which looks exactly like "the toggle does nothing". */
-#aud-me:checked  ~ .audience__switch label[for="aud-me"],
+#aud-me:checked ~ .audience__switch label[for="aud-me"],
 #aud-ent:checked ~ .audience__switch label[for="aud-ent"],
 #aud-biz:checked ~ .audience__switch label[for="aud-biz"],
-#aud-me:checked  ~ * .audience__switch label[for="aud-me"],
+#acct-me:checked ~ .audience__switch label[for="acct-me"],
+#acct-biz:checked ~ .audience__switch label[for="acct-biz"],
+#aud-me:checked ~ * .audience__switch label[for="aud-me"],
 #aud-ent:checked ~ * .audience__switch label[for="aud-ent"],
-#aud-biz:checked ~ * .audience__switch label[for="aud-biz"] {
+#aud-biz:checked ~ * .audience__switch label[for="aud-biz"],
+#acct-me:checked ~ * .audience__switch label[for="acct-me"],
+#acct-biz:checked ~ * .audience__switch label[for="acct-biz"] {
   background: var(--teal); color: #fff;
 }
 
 /* Keyboard focus has to land somewhere visible, since the input itself is
    off-screen — without this the switch is unusable without a mouse. */
-#aud-me:focus-visible  ~ .audience__switch label[for="aud-me"],
+#aud-me:focus-visible ~ .audience__switch label[for="aud-me"],
 #aud-ent:focus-visible ~ .audience__switch label[for="aud-ent"],
 #aud-biz:focus-visible ~ .audience__switch label[for="aud-biz"],
-#aud-me:focus-visible  ~ * .audience__switch label[for="aud-me"],
+#acct-me:focus-visible ~ .audience__switch label[for="acct-me"],
+#acct-biz:focus-visible ~ .audience__switch label[for="acct-biz"],
+#aud-me:focus-visible ~ * .audience__switch label[for="aud-me"],
 #aud-ent:focus-visible ~ * .audience__switch label[for="aud-ent"],
-#aud-biz:focus-visible ~ * .audience__switch label[for="aud-biz"] {
+#aud-biz:focus-visible ~ * .audience__switch label[for="aud-biz"],
+#acct-me:focus-visible ~ * .audience__switch label[for="acct-me"],
+#acct-biz:focus-visible ~ * .audience__switch label[for="acct-biz"] {
   outline: 2px solid rgba(29,36,48,.6); outline-offset: 3px;
 }
 
@@ -455,7 +463,12 @@ footer.site a:hover { color: var(--ink); opacity: 1; }
 .audience__panel { display: none; }
 #aud-me:checked  ~ .audience__panel--me,
 #aud-biz:checked ~ .audience__panel--biz,
-#aud-ent:checked ~ .audience__panel--ent { display: block; }
+#aud-ent:checked ~ .audience__panel--ent,
+#aud-me:checked  ~ * .audience__panel--me,
+#aud-biz:checked ~ * .audience__panel--biz,
+#aud-ent:checked ~ * .audience__panel--ent,
+#acct-me:checked  ~ .audience__panel--me,
+#acct-biz:checked ~ .audience__panel--biz { display: block; }
 
 @media (max-width: 560px) {
   .audience__switch { display: flex; width: 100%; }
