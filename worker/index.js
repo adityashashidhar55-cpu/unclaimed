@@ -1383,6 +1383,18 @@ export default {
       if (pathname === '/api/startups/check' && request.method === 'POST') return await handleStartupCheck(request, env);
       if (pathname === '/api/startups/plan' && request.method === 'POST') return await handleStartupPlan(request, env);
       if (pathname === '/api/startups/autofill' && request.method === 'POST') return await handleStartupAutofill(request, env);
+      /* The vault needs R2. If the bucket is not bound — a fresh account where
+         R2 has not been enabled yet — say so plainly on the vault routes and
+         leave every other route working. A storage feature that is not turned
+         on must not take sign-in and checkout down with it. */
+      if (pathname === '/api/vault' || pathname.startsWith('/api/vault/')) {
+        if (!env.VAULT) {
+          return json(
+            { error: 'vault_unavailable', message: 'Document storage is not switched on for this deployment yet.' },
+            503,
+          );
+        }
+      }
       if (pathname === '/api/vault' && request.method === 'GET') return await handleVaultList(request, env);
       if (pathname.startsWith('/api/vault/')) {
         const id = pathname.slice('/api/vault/'.length);
