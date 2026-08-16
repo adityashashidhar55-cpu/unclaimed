@@ -103,6 +103,16 @@ t('length mismatch is rejected without throwing', !mod.timingSafeEqual('abc', h1
     'an operator session counts as signed in',
     /if \(!session \|\| \(!session\.uid && !session\.adm\)\) return json\(\{ signed_in: false \}\);/.test(meBody),
   );
+
+  /* Caching. /api/me is per-user by definition; an edge cache that keeps one
+     answer and replays it is at best "sign-in appears not to work" and at
+     worst one subscriber's entitlement handed to the next visitor through the
+     same colo. Asserted on the shared header block, so it covers every JSON
+     response rather than the one endpoint that got caught. */
+  const headers = worker.slice(worker.indexOf('const JSON_HEADERS'), worker.indexOf('const json ='));
+  t('JSON responses are marked private', /private/.test(headers));
+  t('JSON responses are marked no-store', /no-store/.test(headers));
+  t('JSON responses vary on Cookie', /vary:\s*'Cookie'/i.test(headers));
 }
 
 console.log(`\n${pass} passed, ${fail} failed\n`);
