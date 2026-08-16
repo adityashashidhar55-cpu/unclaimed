@@ -16,6 +16,8 @@
  * a token JavaScript can read is a token any injected script can steal.
  */
 
+import { track } from '../beacon.js';
+
 const API = '';
 
 /** Every call carries the session cookie; none of them carry a token. */
@@ -113,6 +115,7 @@ export async function fetchMatch(profile) {
 }
 
 export async function startCheckout(plan = 'personal_annual', seats = 1) {
+  track('checkout_start');
   const { ok, data } = await post('/api/billing/checkout', { plan, seats });
   if (!ok) return { ok: false, error: data.error, message: data.message };
   return { ok: true, url: data.url };
