@@ -2735,6 +2735,9 @@ write('beacon.js', fs.readFileSync(path.join(SRC, 'pwa/beacon.js'), 'utf8'));
 /* The audience switch, at the root so every page and every language can load
    the same copy — the cookie it sets is shared across all of them. */
 write('audience.js', fs.readFileSync(path.join(SRC, 'pwa/audience.js'), 'utf8'));
+/* The workspace's sync layer. At the root, one directory above /dashboard/,
+   which is how dashboard.js's `../workspace-sync.js` resolves. */
+write('workspace-sync.js', fs.readFileSync(path.join(SRC, 'pwa/workspace-sync.js'), 'utf8'));
 /* The service worker must sit at the root to claim the whole scope. */
 write('sw.js', fs.readFileSync(path.join(SRC, 'pwa/sw.js'), 'utf8'));
 write('manifest.webmanifest', webManifest());
