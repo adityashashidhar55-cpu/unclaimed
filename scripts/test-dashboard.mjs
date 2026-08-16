@@ -174,5 +174,76 @@ test('obligation kinds cover reports, not just milestones', () => {
   for (const k of ['milestone', 'report', 'deliverable', 'payment']) assert.ok(ids.includes(k), `missing ${k}`);
 });
 
+/* ------------------------------------------------------------------ */
+/* The workspace gate                                                  */
+/* ------------------------------------------------------------------ */
+
+/* The workspace is the paid product. Two separate things have to hold and only
+   one of them is the UI:
+     - the page must not render the workspace to someone who is not entitled —
+       a courtesy, removable with devtools, and still worth having, because
+       otherwise the whole product looks free and empty;
+     - /api/workspace must refuse to read or write for that same person — the
+       real gate, and the only one that counts.
+   Asserting only the first is the classic mistake, so both are here. */
+{
+  const fs = await import('node:fs');
+  const path = await import('node:path');
+  const { fileURLToPath } = await import('node:url');
+  const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
+  const read = (r) => fs.readFileSync(path.join(ROOT, r), 'utf8');
+  const dash = read('src/pwa/dashboard.js');
+  const worker = read('worker/index.js');
+  const syncSrc = read('src/pwa/workspace-sync.js');
+  const ck = (name, cond) => test(name, () => assert.ok(cond, name));
+
+  ck('render() refuses to draw the workspace before the gate opens',
+    /if \(gate !== sync\.STATUS\.READY && !bypass\) \{[\s\S]{0,140}gateScreen\(gate\)/.test(dash));
+  ck('the gate starts closed, not open', /let gate = sync\.STATUS\.CHECKING;/.test(dash));
+  ck('boot asks the server before rendering the workspace',
+    /async function boot\(\)[\s\S]{0,500}await sync\.open\(\)/.test(dash));
+
+  /* A failed check must close the gate, not open it. This is the single
+     inversion that would turn the paywall back into a free product. */
+  ck('an unreachable API leaves the gate closed',
+    /catch\(\(\) => \(\{ status: sync\.STATUS\.OFFLINE/.test(dash));
+
+  /* Server side. */
+  ck('the workspace API checks entitlement server-side',
+    /async function workspaceGate[\s\S]{0,900}if \(!ent\.entitled\)[\s\S]{0,140}402/.test(worker));
+  ck('a signed-out caller gets 401 from the workspace API',
+    /async function workspaceGate[\s\S]{0,400}if \(!session\?\.uid\) return \{ error: json\(\{ error: 'signed_out' \}, 401\) \}/.test(worker));
+  for (const fn of ['handleWorkspaceGet', 'handleWorkspacePut']) {
+    const body = worker.slice(worker.indexOf(`async function ${fn}`));
+    ck(`${fn} goes through the gate before touching the database`,
+      /const gate = await workspaceGate\(request, env\);\s*\n\s*if \(gate\.error\) return gate\.error;/.test(body.slice(0, 400)));
+  }
+  ck('an operator session gets no workspace of its own',
+    /Returns null for an operator session/.test(worker));
+
+  /* Concurrency. Without the revision check a second tab silently erases the
+     first tab's work, and the only evidence is a missing pipeline row. */
+  ck('a PUT with a stale revision is refused', /if \(rev !== currentRev\)[\s\S]{0,240}409/.test(worker));
+  ck('a conflict hands back the current document so the client can reconcile',
+    /error: 'conflict'[\s\S]{0,240}doc: current \? JSON\.parse\(current\.doc\) : null/.test(worker));
+  ck('a conflict is surfaced, not silently merged',
+    /onConflict/.test(dash) && /Merging two portfolios/.test(syncSrc));
+
+  /* Never strand the anonymous workspace: someone who built a portfolio and
+     then paid must not be shown an empty board as the reward. */
+  ck('a local workspace with content is adopted on first sign-in',
+    /if \(hasContent\(local\)\)[\s\S]{0,240}await push\(local, 0\)/.test(syncSrc));
+  ck('an empty local workspace is not pushed over the server copy',
+    /export function hasContent/.test(syncSrc));
+
+  /* Saving must never sit between a keystroke and the screen. */
+  ck('commit writes locally first, then queues the server write',
+    /sync\.writeLocal\(ws\);[\s\S]{0,140}saver\.queue/.test(dash));
+  ck('the last edit is flushed when the tab goes away',
+    /pagehide[\s\S]{0,140}flushNow\(\)/.test(dash));
+  ck('a failed save is visible rather than silent',
+    /syncState === 'error'/.test(dash) && /Not saved to your account/.test(dash));
+}
+
 console.log(`\n${passed} passed, ${failed} failed\n`);
 process.exit(failed ? 1 : 0);
