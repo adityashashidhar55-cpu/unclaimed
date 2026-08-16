@@ -20,7 +20,9 @@ const nf = new Intl.NumberFormat('en');
 const pct = (x) => `${(x * 100).toFixed(x < 0.1 ? 1 : 0)}%`;
 
 async function get(path) {
-  const res = await fetch(path, { credentials: 'same-origin' });
+  /* Never from a cache — see the note in auth.js. Every figure here is
+     per-operator and a stale one is worse than no figure. */
+  const res = await fetch(path, { credentials: 'same-origin', cache: 'no-store' });
   if (!res.ok) throw Object.assign(new Error(String(res.status)), { status: res.status });
   return res.json();
 }
@@ -191,7 +193,7 @@ async function load() {
 }
 
 /* Already signed in from an earlier visit? Skip the form. */
-fetch('/api/me', { credentials: 'same-origin' })
+fetch('/api/me', { credentials: 'same-origin', cache: 'no-store' })
   .then((r) => r.json())
   .then((s) => {
     if (s.admin) open(s.email);

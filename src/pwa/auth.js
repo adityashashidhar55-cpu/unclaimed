@@ -78,7 +78,14 @@ export async function verifyCode(email, code, accountType = 'individual') {
  */
 export async function me() {
   try {
-    const res = await fetch('/api/me', { credentials: 'same-origin' });
+    /* `cache: 'no-store'` on the request as well as no-store on the response.
+       Belt and braces, and both are load-bearing: the response header stops
+       Cloudflare's edge keeping a copy, and this stops the BROWSER reusing one
+       it already has — which it will, because a Worker deployed without the
+       header cached a `signed_in: false` answer that then outlived the fix.
+       An authentication check is the one request in a product that must never
+       be answered from a cache at any layer. */
+    const res = await fetch('/api/me', { credentials: 'same-origin', cache: 'no-store' });
     if (!res.ok) return { signedIn: false, entitled: false };
     const data = await res.json();
     /* Read the shape the Worker actually sends. This used to look for
