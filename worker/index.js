@@ -591,6 +591,38 @@ async function handleAuthVerify(request, env) {
       .run();
   }
 
+  /* A business account owns an organisation, and the organisation owns the
+     workspace. Created on first business sign-in rather than asked for in a
+     form: nobody wants a "name your organisation" step before they have seen
+     the product, and the name is editable in the workspace afterwards.
+     Individual accounts get no org — a solo business user's workspace is keyed
+     to them directly, and joining an org later moves the row. */
+  if (user.account_type === 'business') {
+    const member = await env.DB.prepare('SELECT org_id FROM org_members WHERE user_id = ? LIMIT 1')
+      .bind(user.id)
+      .first();
+    if (!member) {
+      const orgId = crypto.randomUUID();
+      /* Named from the email domain, which is right far more often than not
+         for a business address and harmless when it is not. Free-mail domains
+         would produce "Gmail", so those fall back to the local part. */
+      const domain = email.split('@')[1] ?? '';
+      const freeMail = ['gmail.com', 'outlook.com', 'hotmail.com', 'yahoo.com', 'icloud.com', 'proton.me'];
+      const label = freeMail.includes(domain) ? email.split('@')[0] : domain.split('.')[0];
+      const name = label ? label[0].toUpperCase() + label.slice(1) : 'My organisation';
+      await env.DB.prepare(
+        'INSERT INTO orgs (id, name, domain, owner_id, seats, created_at) VALUES (?, ?, ?, ?, 1, ?)',
+      )
+        .bind(orgId, name, freeMail.includes(domain) ? null : domain || null, user.id, now)
+        .run();
+      await env.DB.prepare(
+        "INSERT INTO org_members (org_id, user_id, role, added_at) VALUES (?, ?, 'owner', ?)",
+      )
+        .bind(orgId, user.id, now)
+        .run();
+    }
+  }
+
   /* The admin dashboard's "who signed in" table. Written here rather than
      derived from `users.created_at`, because a sign-in is an event and an
      account is a row — a returning user creates no row at all, and they are
@@ -1177,6 +1209,140 @@ async function handlePortal(request, env) {
 }
 
 /* ------------------------------------------------------------------ */
+/* The enterprise workspace, held on the server                        */
+/* ------------------------------------------------------------------ */
+
+/* A workspace document is a whole portfolio, so it is not small — but it is
+   also not a file store, and something has gone wrong if it approaches this.
+   Rejected with a clear message rather than truncated, because a silently
+   truncated pipeline is worse than a failed save. */
+const MAX_WORKSPACE_BYTES = 2 * 1024 * 1024;
+
+/**
+ * Which workspace this session may touch.
+ *
+ * An org workspace if the user belongs to one, their own otherwise. A solo
+ * business account should not need an organisation invented for it, and a user
+ * who later joins an org should move to that org's workspace rather than end
+ * up with two.
+ *
+ * Returns null for an operator session: /admin/ is for reading the business,
+ * not for editing a customer's pipeline. An admin who wants to see the product
+ * signs in as themselves.
+ */
+async function workspaceKeyFor(env, session) {
+  if (!session?.uid) return null;
+  const row = await env.DB.prepare('SELECT org_id FROM org_members WHERE user_id = ? LIMIT 1')
+    .bind(session.uid)
+    .first();
+  return row?.org_id
+    ? { id: `org:${row.org_id}`, scope: 'org', owner_id: row.org_id }
+    : { id: `user:${session.uid}`, scope: 'user', owner_id: session.uid };
+}
+
+/**
+ * Everything under /api/workspace needs a signed-in, entitled business user.
+ *
+ * Entitlement is checked here rather than trusted from the client for the
+ * ordinary reason: the workspace is the paid product, and a gate the browser
+ * enforces is a gate a devtools panel removes. The page can hide itself all it
+ * likes; this is the part that decides.
+ */
+async function workspaceGate(request, env) {
+  const session = await readSession(env, request.headers.get('cookie'));
+  if (!session?.uid) return { error: json({ error: 'signed_out' }, 401) };
+
+  const url = new URL(request.url);
+  const country = url.searchParams.get('country') || 'gb';
+  const ent = await entitlementFor(env, session, country, PRODUCT.DISCOVERY);
+  if (!ent.entitled) {
+    return { error: json({ error: 'not_entitled', reason: ent.reason, entitlement: ent }, 402) };
+  }
+
+  const key = await workspaceKeyFor(env, session);
+  if (!key) return { error: json({ error: 'no_workspace' }, 403) };
+  return { session, key, ent };
+}
+
+/** GET /api/workspace — the document and its revision. */
+async function handleWorkspaceGet(request, env) {
+  const gate = await workspaceGate(request, env);
+  if (gate.error) return gate.error;
+
+  const row = await env.DB.prepare('SELECT doc, rev, updated_at, updated_by FROM workspaces WHERE id = ?')
+    .bind(gate.key.id)
+    .first();
+
+  /* No row yet is not an error — it is a new customer. rev 0 means "nothing
+     stored", and a PUT at rev 0 is how the first save happens. */
+  if (!row) return json({ rev: 0, doc: null, scope: gate.key.scope });
+
+  return json({
+    rev: row.rev,
+    doc: JSON.parse(row.doc),
+    scope: gate.key.scope,
+    updated_at: row.updated_at,
+    updated_by_you: row.updated_by === gate.session.uid,
+  });
+}
+
+/**
+ * PUT /api/workspace — { rev, doc }.
+ *
+ * `rev` must match what is stored. Two tabs, or a laptop and a phone, will
+ * both write; without this the second write erases whatever the first added
+ * and the only evidence is a pipeline entry that vanished. On a mismatch this
+ * returns 409 WITH the current document, so the client can merge rather than
+ * be told to try again with no way to know what changed.
+ */
+async function handleWorkspacePut(request, env) {
+  const gate = await workspaceGate(request, env);
+  if (gate.error) return gate.error;
+
+  const body = await request.json().catch(() => null);
+  if (!body || typeof body.doc !== 'object' || body.doc === null) return bad('doc required');
+  const rev = Number.isInteger(body.rev) ? body.rev : null;
+  if (rev === null || rev < 0) return bad('rev required');
+
+  const text = JSON.stringify(body.doc);
+  if (text.length > MAX_WORKSPACE_BYTES) {
+    return json(
+      { error: 'too_large', message: 'That workspace is larger than we store. Export and split it.' },
+      413,
+    );
+  }
+
+  const now = Date.now();
+  const current = await env.DB.prepare('SELECT doc, rev FROM workspaces WHERE id = ?').bind(gate.key.id).first();
+  const currentRev = current?.rev ?? 0;
+
+  if (rev !== currentRev) {
+    return json(
+      {
+        error: 'conflict',
+        message: 'Someone else saved first.',
+        rev: currentRev,
+        doc: current ? JSON.parse(current.doc) : null,
+      },
+      409,
+    );
+  }
+
+  const nextRev = currentRev + 1;
+  await env.DB.prepare(
+    `INSERT INTO workspaces (id, scope, owner_id, doc, rev, bytes, updated_by, updated_at, created_at)
+     VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)
+     ON CONFLICT(id) DO UPDATE SET
+       doc = excluded.doc, rev = excluded.rev, bytes = excluded.bytes,
+       updated_by = excluded.updated_by, updated_at = excluded.updated_at`,
+  )
+    .bind(gate.key.id, gate.key.scope, gate.key.owner_id, text, nextRev, text.length, gate.session.uid, now, now)
+    .run();
+
+  return json({ ok: true, rev: nextRev });
+}
+
+/* ------------------------------------------------------------------ */
 /* Profile                                                             */
 /* ------------------------------------------------------------------ */
 
@@ -1539,6 +1705,8 @@ export default {
         }
       }
 
+      if (pathname === '/api/workspace' && request.method === 'GET') return await handleWorkspaceGet(request, env);
+      if (pathname === '/api/workspace' && request.method === 'PUT') return await handleWorkspacePut(request, env);
       if (pathname === '/api/me') return await handleMe(request, env);
       if (pathname === '/api/profile') return await handleProfile(request, env);
       if (pathname === '/api/billing/checkout' && request.method === 'POST') return await handleCheckout(request, env);
