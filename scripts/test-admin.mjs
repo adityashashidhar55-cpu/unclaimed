@@ -58,14 +58,38 @@ is(worstDrop(empty).lost, 0, 'and names no drop-off');
 
 const worker = fs.readFileSync(path.join(ROOT, 'worker/index.js'), 'utf8');
 
-/* Fail-closed. If this assertion ever needs relaxing, the change is wrong. */
-const guard = worker.match(/if \(!env\.ADMIN_EMAIL \|\| !env\.ADMIN_PASSWORD_HASH \|\| !env\.ADMIN_PASSWORD_SALT\)[\s\S]{0,200}?503/);
-guard ? ok('an unset admin secret returns 503, it does not skip the check') : bad('admin login does not fail closed on a missing secret');
+/* Fail-closed. If this assertion ever needs relaxing, the change is wrong.
+   The credential now comes from secrets OR from worker_config, so the check is
+   that a MISSING credential (either source) still refuses, rather than that a
+   particular env var is read. */
+const guard = worker.match(/const cred = await adminCredential\(env\);[\s\S]{0,200}?if \(!cred\)[\s\S]{0,200}?503/);
+guard ? ok('a missing admin credential returns 503, it does not skip the check') : bad('admin login does not fail closed on a missing credential');
+/without a full set/.test(worker) || /if \(!m\.admin_email \|\| !m\.admin_password_salt \|\| !m\.admin_password_hash\) return null;/.test(worker)
+  ? ok('a partial credential in the database is treated as none')
+  : bad('a partial admin credential would be accepted');
+/* The password itself must never be stored — only the salt and the hash. */
+/worker_config[\s\S]{0,300}admin_password(?!_salt|_hash)/.test(worker)
+  ? bad('something writes an admin password, not just its hash')
+  : ok('only the salt and hash are ever read back, never a password');
 
 is(
   /if \(session\?\.adm\) return \{ entitled: true/.test(worker),
   true,
   'an operator session is entitled',
+);
+
+/* The signing key must never fall back to a constant. An empty or fixed key
+   means every session cookie on the internet is forgeable, and it would not
+   look broken — it would look like it worked. */
+is(
+  /crypto\.getRandomValues\(new Uint8Array\(32\)\)/.test(worker),
+  true,
+  'a missing signing key is generated at random, not defaulted',
+);
+is(
+  /INSERT OR IGNORE INTO worker_config \(key, value, created_at\) VALUES \('session_signing_key'/.test(worker),
+  true,
+  'two isolates racing to create the key cannot sign users out',
 );
 is(
   /function requireAdmin[\s\S]{0,200}session\?\.adm \? session : null/.test(worker),
