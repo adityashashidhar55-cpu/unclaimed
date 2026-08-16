@@ -113,6 +113,15 @@ t('length mismatch is rejected without throwing', !mod.timingSafeEqual('abc', h1
   t('JSON responses are marked private', /private/.test(headers));
   t('JSON responses are marked no-store', /no-store/.test(headers));
   t('JSON responses vary on Cookie', /vary:\s*'Cookie'/i.test(headers));
+
+  /* And the request side. The response header stops an edge keeping a copy;
+     this stops the browser reusing one it already has — which it did, because
+     a deploy without the header cached a signed-out answer that outlived the
+     fix. Both layers are load-bearing and neither is redundant. */
+  t(
+    'the client asks for /api/me with cache: no-store',
+    /fetch\('\/api\/me',\s*\{[^}]*cache: 'no-store'/.test(client),
+  );
 }
 
 console.log(`\n${pass} passed, ${fail} failed\n`);
