@@ -1751,10 +1751,15 @@ function dashboardPage() {
   </noscript>
 </div>
 <div class="shell" style="padding:0 0 4rem">
-  <p class="tiny" style="color:var(--ink-4);max-width:70ch">This workspace is stored in this browser only.
-  Nothing in it — company names, figures, pipeline — is sent anywhere, which is why it works before you have
-  an account and why a fund can try it on a real portfolio. Team sync, SSO and shared pipelines arrive with
-  the hosted plan; until then, export is the way to move a workspace between machines.</p>
+  <!-- This paragraph said "nothing is sent anywhere" for as long as the
+       workspace was localStorage-only. It now syncs, so leaving the old
+       sentence there would be a privacy claim that is no longer true — the
+       worst kind of stale copy, because it is the kind someone relies on. -->
+  <p class="tiny" style="color:var(--ink-4);max-width:70ch">Signed out, this workspace stays in this browser and
+  nothing in it leaves the machine — which is why you can try it on a real portfolio before you have an account.
+  Signed in, the workspace itself syncs to your account so it survives a new laptop and your team sees the same
+  pipeline. The <em>matching</em> never moves either way: every company is scored in this tab, against the same
+  engine the rest of the site is built from, so a portfolio is never shipped somewhere to be analysed.</p>
 </div>
 <script type="module" src="${BASE}/dashboard/dashboard.js?v=${ASSET_V}"></script>`;
 
