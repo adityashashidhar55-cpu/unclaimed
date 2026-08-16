@@ -263,9 +263,27 @@ landingHtml.includes(String.raw`split(/\s+/)`)
 {
   const pricing = fs.readFileSync(path.join(DIST, 'pricing/index.html'), 'utf8');
   pricing.includes('ticks--no') ? ok('free tier lists what it excludes') : fail('free tier has no exclusions list');
-  pricing.includes('aud-ent') && pricing.includes('audience__switch--hero')
-    ? ok('individual/enterprise toggle is in the hero')
-    : fail('audience toggle is not in the hero');
+  /* The switch is now one control on every page, not a pair of radios per
+     page. Three things have to be true or it silently stops working:
+     the control exists in the hero, the runtime that persists the choice is
+     loaded, and the pre-paint boot script sets the attribute the CSS keys on.
+     Miss the third and the site flashes the wrong audience on every load. */
+  const home = fs.readFileSync(path.join(DIST, 'index.html'), 'utf8');
+  for (const [label, html] of [['landing', home], ['pricing', pricing]]) {
+    html.includes('data-aud-set="me"') && html.includes('data-aud-set="biz"')
+      ? ok(`${label} carries the individual/company switch`)
+      : fail(`${label} has no audience switch`);
+    html.includes("setAttribute('data-audience'")
+      ? ok(`${label} sets the audience before first paint`)
+      : fail(`${label} would flash the wrong audience`);
+    html.includes('audience.js')
+      ? ok(`${label} loads the audience runtime`)
+      : fail(`${label} switch would not persist`);
+  }
+  /* Both halves must actually be present, or the switch flips to nothing. */
+  home.includes('aud-me') && home.includes('aud-biz')
+    ? ok('landing ships both audiences')
+    : fail('landing is missing one audience');
   /Android and iOS app/.test(pricing) ? ok('pricing states the apps are included') : fail('pricing does not mention the apps');
 }
 
