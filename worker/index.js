@@ -24,6 +24,7 @@ import { DOC_TYPES, expiresAt, KDF_ITERATIONS } from '../packages/vault/index.js
 import { matchStartup, reachFor } from '../src/engine/startup.js';
 import { planWithinCeiling, declarationText, headroom } from '../packages/stateaid/index.js';
 import { lookupCompany, projectCompany, autofillAvailable } from '../packages/registry/index.js';
+import { isStep, funnelRows, worstDrop } from '../packages/analytics/index.js';
 
 const JSON_HEADERS = { 'content-type': 'application/json; charset=utf-8' };
 
@@ -97,10 +98,16 @@ async function readSession(env, cookieHeader) {
  * conduct France, Germany and Italy regulate, so there it is given away rather
  * than shown behind a wall we are not allowed to charge them to cross.
  */
-async function entitlementFor(env, userId, country, product = PRODUCT.DISCOVERY) {
+async function entitlementFor(env, session, country, product = PRODUCT.DISCOVERY) {
+  /* An operator session is entitled to everything, everywhere. This is how the
+     owner reviews the paid product without holding a subscription, and it is
+     deliberately a property of the SESSION rather than a row in entitlements:
+     revoking it is rotating one secret, not editing anyone's billing. */
+  if (session?.adm) return { entitled: true, reason: 'admin', product, admin: true };
   if (!mayChargeFor(country, product)) {
     return { entitled: true, reason: 'free_in_jurisdiction', product, policy: policyFor(country) };
   }
+  const userId = session?.uid;
   if (!userId) return { entitled: false, reason: 'anonymous' };
 
   const row = await env.DB.prepare(
@@ -187,7 +194,7 @@ async function handleCheck(request, env) {
   const result = match(profile, data, entry);
 
   const session = await readSession(env, request.headers.get('cookie'));
-  const ent = await entitlementFor(env, session?.uid, cc);
+  const ent = await entitlementFor(env, session, cc);
 
   /* Free payload — the number, never the list. */
   const free = {
@@ -266,7 +273,7 @@ async function handlePlan(request, env) {
   if (!profile?.country_code) return bad('country_code required');
 
   const cc = String(profile.country_code).toLowerCase();
-  const ent = await entitlementFor(env, session.uid, cc, PRODUCT.ASSISTANCE);
+  const ent = await entitlementFor(env, session, cc, PRODUCT.ASSISTANCE);
   if (!ent.entitled) return json({ error: 'subscription required', paywall: ent }, 402);
 
   const data = await loadCountry(env, request, cc);
@@ -500,6 +507,7 @@ async function handleAuthVerify(request, env) {
 
   const now = Date.now();
   let user = await env.DB.prepare('SELECT id, account_type FROM users WHERE email = ?').bind(email).first();
+  const isNewUser = !user;
   if (!user) {
     const id = crypto.randomUUID();
     await env.DB.prepare(
@@ -516,6 +524,25 @@ async function handleAuthVerify(request, env) {
       .bind(now, user.id)
       .run();
   }
+
+  /* The admin dashboard's "who signed in" table. Written here rather than
+     derived from `users.created_at`, because a sign-in is an event and an
+     account is a row — a returning user creates no row at all, and they are
+     exactly who the retention number is about. */
+  await env.DB.prepare(
+    `INSERT INTO login_events (id, ts, day, user_id, email, account_type, is_new, kind)
+     VALUES (?, ?, ?, ?, ?, ?, ?, 'otp')`,
+  )
+    .bind(
+      crypto.randomUUID(),
+      now,
+      new Date(now).toISOString().slice(0, 10),
+      user.id,
+      email,
+      user.account_type,
+      isNewUser ? 1 : 0,
+    )
+    .run();
 
   const cookie = await signSession(env, {
     uid: user.id,
@@ -780,7 +807,7 @@ async function handleStartupPlan(request, env) {
   if (!profile?.country_code) return bad('country_code required');
 
   const cc = String(profile.country_code).toLowerCase();
-  const ent = await entitlementFor(env, session.uid, cc, PRODUCT.ASSISTANCE);
+  const ent = await entitlementFor(env, session, cc, PRODUCT.ASSISTANCE);
   if (!ent.entitled) return json({ error: 'subscription required', paywall: ent }, 402);
 
   const datasets = {};
@@ -1112,8 +1139,229 @@ async function handleMe(request, env) {
   if (!session?.uid) return json({ signed_in: false });
   const url = new URL(request.url);
   const country = url.searchParams.get('country') || 'gb';
-  const ent = await entitlementFor(env, session.uid, country);
-  return json({ signed_in: true, email: session.email, entitlement: ent });
+  const ent = await entitlementFor(env, session, country);
+  return json({
+    signed_in: true,
+    email: session.email,
+    admin: !!session.adm,
+    entitlement: ent,
+  });
+}
+
+/* ------------------------------------------------------------------ */
+/* Admin — one operator login, and the analytics it exists to read     */
+/* ------------------------------------------------------------------ */
+
+/* Deliberately shorter than a user session. An operator session is a key to
+   the whole paid product; leaving one alive on a laptop for a month is the
+   only realistic way this leaks. */
+const ADMIN_SESSION_MS = 12 * 3600e3;
+const ADMIN_PBKDF2_ITERATIONS = 210_000;
+const ADMIN_MAX_ATTEMPTS_PER_HOUR = 8;
+
+/**
+ * PBKDF2-SHA256, the same shape `scripts/admin-password.mjs` produces.
+ *
+ * Not SHA-256 of the password, which the rest of this file uses for six-digit
+ * codes: a code lives ten minutes and has a million possibilities, so a fast
+ * hash is fine. A password lives until someone rotates it and is drawn from a
+ * distribution an attacker can guess, so it needs to be slow on purpose.
+ */
+async function pbkdf2Hex(password, saltHex, iterations = ADMIN_PBKDF2_ITERATIONS) {
+  const salt = Uint8Array.from(saltHex.match(/.{2}/g).map((h) => parseInt(h, 16)));
+  const key = await crypto.subtle.importKey('raw', enc.encode(password), 'PBKDF2', false, ['deriveBits']);
+  const bits = await crypto.subtle.deriveBits(
+    { name: 'PBKDF2', salt, iterations, hash: 'SHA-256' },
+    key,
+    256,
+  );
+  return toHex(new Uint8Array(bits));
+}
+
+/** UTC 'YYYY-MM-DD'. Grouping by local time would move the day boundary per visitor. */
+const dayKey = (ts) => new Date(ts).toISOString().slice(0, 10);
+
+/**
+ * POST /auth/admin — { email, password } → an operator session.
+ *
+ * Three secrets, all set with `wrangler secret put`: ADMIN_EMAIL,
+ * ADMIN_PASSWORD_SALT, ADMIN_PASSWORD_HASH. With any of them unset the
+ * endpoint is off rather than open — a missing secret must never mean "no
+ * password required", which is the single most common way an admin door is
+ * left unlocked.
+ */
+async function handleAdminLogin(request, env) {
+  if (!env.ADMIN_EMAIL || !env.ADMIN_PASSWORD_HASH || !env.ADMIN_PASSWORD_SALT) {
+    return json({ error: 'admin_disabled', message: 'No operator account is configured.' }, 503);
+  }
+
+  const ip = request.headers.get('cf-connecting-ip') ?? 'unknown';
+  const ipHash = await sha256Hex(`${ip}:${env.SESSION_SIGNING_KEY}`);
+  const since = Date.now() - 3600e3;
+  const recent = await env.DB.prepare(
+    'SELECT COUNT(*) AS n FROM admin_attempts WHERE ip_hash = ? AND ok = 0 AND ts > ?',
+  )
+    .bind(ipHash, since)
+    .first();
+  if ((recent?.n ?? 0) >= ADMIN_MAX_ATTEMPTS_PER_HOUR) {
+    return json({ error: 'too_many_attempts', message: 'Locked for an hour.' }, 429);
+  }
+
+  const body = await request.json().catch(() => ({}));
+  const email = String(body.email ?? '').trim().toLowerCase();
+  const password = String(body.password ?? '');
+
+  const expected = await pbkdf2Hex(password, env.ADMIN_PASSWORD_SALT);
+  /* Both comparisons run whatever happens, so a wrong email and a wrong
+     password take the same time and cost the same attempt. */
+  const emailOk = timingSafeEqual(email, String(env.ADMIN_EMAIL).trim().toLowerCase());
+  const passOk = timingSafeEqual(expected, env.ADMIN_PASSWORD_HASH);
+  const ok = emailOk && passOk;
+
+  await env.DB.prepare('INSERT INTO admin_attempts (id, ts, ip_hash, ok) VALUES (?, ?, ?, ?)')
+    .bind(crypto.randomUUID(), Date.now(), ipHash, ok ? 1 : 0)
+    .run();
+
+  if (!ok) return json({ error: 'invalid', message: 'Wrong email or password.' }, 401);
+
+  const now = Date.now();
+  await env.DB.prepare(
+    `INSERT INTO login_events (id, ts, day, user_id, email, account_type, is_new, kind)
+     VALUES (?, ?, ?, NULL, ?, 'admin', 0, 'admin')`,
+  )
+    .bind(crypto.randomUUID(), now, dayKey(now), email)
+    .run();
+
+  const cookie = await signSession(env, { adm: true, email, exp: now + ADMIN_SESSION_MS });
+  return json({ ok: true, email, expires_in: ADMIN_SESSION_MS / 1000 }, 200, {
+    'set-cookie': `ua_session=${cookie}; Path=/; HttpOnly; Secure; SameSite=Lax; Max-Age=${ADMIN_SESSION_MS / 1000}`,
+  });
+}
+
+/** Every /api/admin/* route goes through this. */
+async function requireAdmin(request, env) {
+  const session = await readSession(env, request.headers.get('cookie'));
+  return session?.adm ? session : null;
+}
+
+/**
+ * POST /api/v1/event — the beacon.
+ *
+ * Open to anonymous callers, because the whole point is measuring people who
+ * have not signed in. That makes it forgeable, and it is worth being clear
+ * about what that does and does not cost: someone could inflate a step count.
+ * They cannot read anything, and they cannot deflate a count, so the failure
+ * mode is a wrong number in a private dashboard rather than a breach. The
+ * alternatives — a signed beacon, a bot check — cost more than the number is
+ * worth. Unknown step names are rejected so the table cannot be used as free
+ * storage.
+ */
+async function handleEvent(request, env) {
+  const body = await request.json().catch(() => ({}));
+  const step = String(body.step ?? '');
+  if (!isStep(step)) return bad('unknown step');
+
+  const visitor = String(body.visitor ?? '').slice(0, 40);
+  if (!/^[A-Za-z0-9_-]{8,40}$/.test(visitor)) return bad('bad visitor id');
+
+  const now = Date.now();
+  await env.DB.prepare(
+    `INSERT INTO events (id, ts, day, step, visitor, country, locale, surface)
+     VALUES (?, ?, ?, ?, ?, ?, ?, ?)`,
+  )
+    .bind(
+      crypto.randomUUID(),
+      now,
+      dayKey(now),
+      step,
+      visitor,
+      String(body.country ?? '').slice(0, 8) || null,
+      String(body.locale ?? '').slice(0, 8) || null,
+      ['web', 'pwa', 'native'].includes(body.surface) ? body.surface : 'web',
+    )
+    .run();
+
+  return json({ ok: true }, 202);
+}
+
+const clampDays = (v) => Math.min(365, Math.max(1, parseInt(v, 10) || 30));
+
+/** GET /api/admin/overview?days=30 — traffic, by day and by dimension. */
+async function handleAdminOverview(request, env) {
+  if (!(await requireAdmin(request, env))) return bad('admin only', 403);
+  const days = clampDays(new URL(request.url).searchParams.get('days'));
+  const since = Date.now() - days * 864e5;
+
+  const [byDay, byCountry, byLocale, bySurface, totals] = await Promise.all([
+    env.DB.prepare(
+      `SELECT day, COUNT(DISTINCT visitor) AS visitors, COUNT(*) AS events
+         FROM events WHERE ts > ? GROUP BY day ORDER BY day`,
+    ).bind(since).all(),
+    env.DB.prepare(
+      `SELECT COALESCE(country, 'unknown') AS k, COUNT(DISTINCT visitor) AS n
+         FROM events WHERE ts > ? GROUP BY k ORDER BY n DESC LIMIT 12`,
+    ).bind(since).all(),
+    env.DB.prepare(
+      `SELECT COALESCE(locale, 'en') AS k, COUNT(DISTINCT visitor) AS n
+         FROM events WHERE ts > ? GROUP BY k ORDER BY n DESC LIMIT 12`,
+    ).bind(since).all(),
+    env.DB.prepare(
+      `SELECT surface AS k, COUNT(DISTINCT visitor) AS n
+         FROM events WHERE ts > ? GROUP BY k ORDER BY n DESC`,
+    ).bind(since).all(),
+    env.DB.prepare(
+      `SELECT COUNT(DISTINCT visitor) AS visitors, COUNT(*) AS events FROM events WHERE ts > ?`,
+    ).bind(since).first(),
+  ]);
+
+  const logins = await env.DB.prepare(
+    `SELECT COUNT(*) AS n, COUNT(DISTINCT email) AS people,
+            SUM(CASE WHEN is_new = 1 THEN 1 ELSE 0 END) AS new_accounts
+       FROM login_events WHERE ts > ? AND kind = 'otp'`,
+  ).bind(since).first();
+
+  return json({
+    days,
+    totals: { ...totals, ...logins },
+    by_day: byDay.results,
+    by_country: byCountry.results,
+    by_locale: byLocale.results,
+    by_surface: bySurface.results,
+  });
+}
+
+/** GET /api/admin/funnel?days=30 — where people stop. */
+async function handleAdminFunnel(request, env) {
+  if (!(await requireAdmin(request, env))) return bad('admin only', 403);
+  const days = clampDays(new URL(request.url).searchParams.get('days'));
+  const since = Date.now() - days * 864e5;
+
+  /* Distinct visitors per step, not events. Someone who reloads the results
+     screen four times is one person who got to the results screen. */
+  const rowsRaw = await env.DB.prepare(
+    `SELECT step, COUNT(DISTINCT visitor) AS n FROM events WHERE ts > ? GROUP BY step`,
+  ).bind(since).all();
+
+  const reached = Object.fromEntries(rowsRaw.results.map((r) => [r.step, r.n]));
+  const rows = funnelRows(reached);
+  return json({ days, rows, worst: worstDrop(rows) });
+}
+
+/** GET /api/admin/logins?limit=100 — who signed in. */
+async function handleAdminLogins(request, env) {
+  if (!(await requireAdmin(request, env))) return bad('admin only', 403);
+  const url = new URL(request.url);
+  const limit = Math.min(500, Math.max(1, parseInt(url.searchParams.get('limit'), 10) || 100));
+
+  const rows = await env.DB.prepare(
+    `SELECT l.ts, l.email, l.account_type, l.is_new, l.kind,
+            e.status AS ent_status, e.plan AS ent_plan
+       FROM login_events l
+       LEFT JOIN entitlements e ON e.user_id = l.user_id
+      ORDER BY l.ts DESC LIMIT ?`,
+  ).bind(limit).all();
+
+  return json({ logins: rows.results });
 }
 
 /* ------------------------------------------------------------------ */
@@ -1159,7 +1407,7 @@ export default {
         const m = pathname.match(/^\/api\/v1\/(programmes|startups)\/([a-z0-9_-]+)\.json$/);
         if (m) {
           const session = await readSession(env, request.headers.get('cookie'));
-          const ent = session?.uid ? await entitlementFor(env, session.uid, m[2]) : null;
+          const ent = session ? await entitlementFor(env, session, m[2]) : null;
           if (ent?.entitled) {
             const full = await loadFullAsset(env, request, `${m[1]}/${m[2]}.json`);
             if (full) {
@@ -1175,6 +1423,11 @@ export default {
       if (pathname === '/api/profile') return await handleProfile(request, env);
       if (pathname === '/api/billing/checkout' && request.method === 'POST') return await handleCheckout(request, env);
       if (pathname === '/api/billing/portal' && request.method === 'POST') return await handlePortal(request, env);
+      if (pathname === '/api/v1/event' && request.method === 'POST') return await handleEvent(request, env);
+      if (pathname === '/api/admin/overview') return await handleAdminOverview(request, env);
+      if (pathname === '/api/admin/funnel') return await handleAdminFunnel(request, env);
+      if (pathname === '/api/admin/logins') return await handleAdminLogins(request, env);
+      if (pathname === '/auth/admin' && request.method === 'POST') return await handleAdminLogin(request, env);
       if (pathname === '/auth/request' && request.method === 'POST') return await handleAuthRequest(request, env);
       if (pathname === '/auth/verify' && request.method === 'POST') return await handleAuthVerify(request, env);
       if (pathname === '/auth/signout') {
