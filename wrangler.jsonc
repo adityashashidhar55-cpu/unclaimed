@@ -61,6 +61,13 @@
   //   wrangler secret put SESSION_SIGNING_KEY
   //   wrangler secret put RESEND_API_KEY        (optional, for magic links)
   //
+  // Operator login for /admin/ — run `node scripts/admin-password.mjs <email>`
+  // and it prints all three. With any of them unset, /auth/admin returns 503
+  // rather than letting anyone in. See docs/ADMIN.md.
+  //   wrangler secret put ADMIN_EMAIL
+  //   wrangler secret put ADMIN_PASSWORD_SALT
+  //   wrangler secret put ADMIN_PASSWORD_HASH
+  //
   // Bucket:
   //   wrangler r2 bucket create unclaimedgrant-vault
 }
