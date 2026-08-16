@@ -161,5 +161,29 @@ if (!failed) {
   links.length ? bad(`${links.length} pages link to /api/v1/full/`) : ok('no page links to the unstripped dataset');
 }
 
+/* Every call site that renders a programme CARD must be behind an entitlement
+   check. Not because a nameless card leaks anything — it does not — but
+   because forty boxes with empty titles is what the paywall looks like when
+   someone forgets, and it reads as a broken page rather than a locked one.
+   Asserted on the source, since the bug is a missing branch, not bad output. */
+{
+  const app = fs.readFileSync(path.join(ROOT, 'src/app.js'), 'utf8');
+  const lines = app.split('\n');
+  const stray = [];
+  lines.forEach((line, i) => {
+    if (!/progCard\(/.test(line) || /^function progCard/.test(line)) return;
+    /* Walk back to the nearest function head and require a gate between. */
+    let guarded = false;
+    for (let j = i; j >= 0 && j > i - 60; j--) {
+      if (/^function /.test(lines[j])) break;
+      if (/gated\(|ENTITLED/.test(lines[j])) { guarded = true; break; }
+    }
+    if (!guarded) stray.push(i + 1);
+  });
+  stray.length
+    ? bad(`programme cards rendered with no entitlement check at src/app.js:${stray.join(', ')}`)
+    : ok('every programme card render is behind an entitlement check');
+}
+
 console.log(`\n${passed} passed, ${failed} failed\n`);
 process.exit(failed ? 1 : 0);
