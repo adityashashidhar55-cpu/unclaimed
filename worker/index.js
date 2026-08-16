@@ -26,7 +26,26 @@ import { planWithinCeiling, declarationText, headroom } from '../packages/statea
 import { lookupCompany, projectCompany, autofillAvailable } from '../packages/registry/index.js';
 import { isStep, funnelRows, worstDrop } from '../packages/analytics/index.js';
 
-const JSON_HEADERS = { 'content-type': 'application/json; charset=utf-8' };
+/**
+ * Every JSON response this Worker sends is per-user and must never be cached.
+ *
+ * `/api/me` went out with no cache headers at all, so Cloudflare's own edge
+ * cached the `{"signed_in": false}` it returned before anybody logged in and
+ * kept serving it afterwards — sign-in worked, the cookie was set, the paid
+ * dataset came back unlocked, and the account page still said signed out
+ * because it was reading a cached answer.
+ *
+ * That is the mild version of the bug. The severe version is the same
+ * mechanism with the entitlement in it: one subscriber's answer cached at an
+ * edge and handed to the next person through it. `private` keeps it out of
+ * shared caches, `no-store` keeps it out of the browser's, and `Vary: Cookie`
+ * is belt and braces for anything that ignores both.
+ */
+const JSON_HEADERS = {
+  'content-type': 'application/json; charset=utf-8',
+  'cache-control': 'private, no-store, max-age=0, must-revalidate',
+  vary: 'Cookie',
+};
 
 const json = (data, status = 200, extra = {}) =>
   new Response(JSON.stringify(data), { status, headers: { ...JSON_HEADERS, ...extra } });
