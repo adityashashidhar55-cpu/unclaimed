@@ -128,7 +128,10 @@ const script = fs.readFileSync(path.join(ROOT, 'scripts/admin-password.mjs'), 'u
 const scriptIters = script.match(/const ITERATIONS = ([\d_]+)/)?.[1].replace(/_/g, '');
 const workerIters = worker.match(/ADMIN_PBKDF2_ITERATIONS = ([\d_]+)/)?.[1].replace(/_/g, '');
 is(scriptIters, workerIters, 'script and Worker use the same PBKDF2 iteration count');
-is(Number(workerIters) >= 210000, true, 'at or above the OWASP figure for PBKDF2-SHA256');
+/* Exactly the Workers ceiling. Higher is not "more secure" here — Workers'
+   Web Crypto rejects it, so every operator login 500s with a correct
+   password. Lower is a real weakening. Both directions are bugs. */
+is(Number(workerIters), 100000, 'PBKDF2 runs at the Cloudflare Workers maximum, which is 100,000');
 
 /* And that the hash the script prints is the one the Worker will compute. */
 const salt = crypto.randomBytes(16).toString('hex');

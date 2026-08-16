@@ -9,13 +9,15 @@
  * verify it. The password itself is never stored anywhere — not in this repo,
  * not in wrangler.jsonc, not in D1. Lose it and you run this again.
  *
- * PBKDF2-SHA256 at 210,000 iterations, which is OWASP's 2023 figure for this
- * primitive and matches `pbkdf2Hex` in worker/index.js. If you change the count
- * in one place, change it in the other or every login fails.
+ * PBKDF2-SHA256 at 100,000 iterations, matching `pbkdf2Hex` in worker/index.js.
+ * That number is the Cloudflare Workers ceiling, not a choice — their Web
+ * Crypto rejects anything higher, so a "safer" count here produces a hash the
+ * Worker physically cannot verify and every login fails with a correct
+ * password. If you change the count in one place, change it in the other.
  */
 import crypto from 'node:crypto';
 
-const ITERATIONS = 210_000;
+const ITERATIONS = 100_000;
 
 /* Base32-ish alphabet with the characters that get misread over a phone call
    removed: no 0/O, no 1/l/I. A password you retype wrong four times is a
