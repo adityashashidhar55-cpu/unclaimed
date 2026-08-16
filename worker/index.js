@@ -1203,7 +1203,7 @@ async function handleMe(request, env) {
    the whole paid product; leaving one alive on a laptop for a month is the
    only realistic way this leaks. */
 const ADMIN_SESSION_MS = 12 * 3600e3;
-const ADMIN_PBKDF2_ITERATIONS = 210_000;
+const ADMIN_PBKDF2_ITERATIONS = 100_000;
 const ADMIN_MAX_ATTEMPTS_PER_HOUR = 8;
 
 /**
@@ -1213,6 +1213,18 @@ const ADMIN_MAX_ATTEMPTS_PER_HOUR = 8;
  * codes: a code lives ten minutes and has a million possibilities, so a fast
  * hash is fine. A password lives until someone rotates it and is drawn from a
  * distribution an attacker can guess, so it needs to be slow on purpose.
+ *
+ * 100,000 is not a preference, it is the ceiling: Workers' Web Crypto refuses
+ * PBKDF2 above it outright —
+ *
+ *   Pbkdf2 failed: iteration counts above 100000 are not supported
+ *
+ * — with a 500, which is how this was found. OWASP's figure for PBKDF2-SHA256
+ * is higher, and the gap is covered at the other end: the generated password
+ * carries ~99 bits, where the iteration count stops mattering because nobody
+ * is brute-forcing it at any speed. It matters for a password a human chooses,
+ * so `scripts/admin-password.mjs` generates one by default and only accepts a
+ * chosen one if you insist.
  */
 async function pbkdf2Hex(password, saltHex, iterations = ADMIN_PBKDF2_ITERATIONS) {
   const salt = Uint8Array.from(saltHex.match(/.{2}/g).map((h) => parseInt(h, 16)));
