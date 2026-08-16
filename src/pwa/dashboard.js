@@ -8,13 +8,15 @@
  *
  * Three decisions worth defending.
  *
- * 1. It runs on device. The workspace lives in localStorage and the matching
- *    happens in this tab against the same engine the marketing pages are built
- *    from. That means the dashboard is real and usable before the Worker is
- *    deployed, and it means a fund's portfolio — which is commercially
- *    sensitive — does not have to leave the building for the product to work.
- *    When the Worker is live this module gets a sync layer; it does not get
- *    rewritten, because every mutation already goes through one function.
+ * 1. Matching runs on device, storage does not. Every match happens in this
+ *    tab against the same engine the marketing pages are built from, so a
+ *    fund's portfolio is never shipped anywhere to be scored. The workspace
+ *    document itself syncs to the server, because per-browser storage is not
+ *    a product: it does not survive a new laptop, a cleared cache, or a
+ *    second person on the team, and one shared pipeline is most of what an
+ *    enterprise buyer is paying for. The promise made when this was
+ *    localStorage-only — "one mutation point, so the sync layer is an
+ *    addition rather than a rewrite" — is the reason that change is small.
  *
  * 2. Nothing is invented. Amounts come from amount_min/amount_max or they are
  *    reported as not published. Award odds come from packages/scoring, which
@@ -38,6 +40,7 @@ import {
 } from '../packages/stateaid/index.js';
 import { registryFor, autofillAvailable, projectCompany, COMPANY_FIELDS } from '../packages/registry/index.js';
 import { classifyRequirement, coverageFor, docLabel, isExpired, DOC_TYPES } from '../packages/vault/index.js';
+import * as sync from '../workspace-sync.js';
 
 /* ------------------------------------------------------------------ */
 /* Helpers                                                             */
@@ -130,13 +133,9 @@ const EMPTY = {
 };
 
 function load() {
-  try {
-    const raw = JSON.parse(localStorage.getItem(STORE));
-    if (!raw || raw.v !== 1) return structuredClone(EMPTY);
-    return { ...structuredClone(EMPTY), ...raw };
-  } catch {
-    return structuredClone(EMPTY);
-  }
+  const raw = sync.readLocal();
+  if (!raw || raw.v !== 1) return structuredClone(EMPTY);
+  return { ...structuredClone(EMPTY), ...raw };
 }
 
 let ws = load();
@@ -150,17 +149,18 @@ let ws = load();
  * hook into, and that a failed write is noticed rather than silently dropped.
  */
 let saveFailed = false;
+/* 'saved' | 'saving' | 'error' | 'conflict' | 'local' — what the header tells
+   the user about where their work actually is. 'local' means signed out: the
+   board works, it just lives in this browser. */
+let syncState = 'local';
+let saver = null;
+
 function commit(fn) {
   fn(ws);
-  try {
-    localStorage.setItem(STORE, JSON.stringify(ws));
-    saveFailed = false;
-  } catch {
-    /* Quota, or Safari private mode. Say so — a workspace that looks saved and
-       is not is the worst possible failure for something someone is planning a
-       funding round around. */
-    saveFailed = true;
-  }
+  /* Local first, always. The server round-trip is debounced and must never sit
+     between a keystroke and the thing appearing on screen. */
+  saveFailed = !sync.writeLocal(ws);
+  if (saver) saver.queue(structuredClone(ws));
   render();
 }
 
@@ -329,6 +329,93 @@ const NAV = [
 
 const view = { name: 'overview', companyId: null, entryId: null, projectId: null, filter: {} };
 
+/**
+ * Where the work currently is, in one line, and only when it is worth saying.
+ *
+ * Silence means saved. A save indicator that blinks on every keystroke trains
+ * people to ignore it, which is exactly the wrong reflex for the one moment it
+ * matters. So: nothing while things are fine, and a sentence when they are not.
+ */
+function syncBanner() {
+  if (syncState === 'conflict') {
+    return `<div class="callout callout--warn"><p><strong>Someone else saved this workspace while you were editing.</strong>
+      Their version is now on screen and your unsaved edits are in the export below —
+      <button class="btn btn-sm" type="button" data-act="export-json">download my version</button>
+      so nothing is lost, then re-apply what you need.</p></div>`;
+  }
+  if (syncState === 'error') {
+    return `<div class="callout callout--warn"><p><strong>Not saved to your account.</strong>
+      This browser has your changes, but the server has not accepted them — check your connection.
+      Do not clear this browser until the message goes.</p></div>`;
+  }
+  if (syncState === 'local') {
+    return `<div class="callout"><p><strong>This workspace is in this browser only.</strong>
+      <a class="link-underline" href="/account/">Sign in</a> to keep it across devices and share it with your team.</p></div>`;
+  }
+  return '';
+}
+
+/**
+ * The door.
+ *
+ * The workspace used to render for anybody who typed the URL. The programme
+ * DATA was never exposed — names come from a server-gated dataset and locked
+ * records read "Name on the paid plan" — so this was not a data leak, but it
+ * was a bad answer to "what does a company get for the money": the whole
+ * product appeared to be free and empty rather than paid and full.
+ *
+ * Note what this function is and is not. It is the UI gate, and a UI gate is
+ * a courtesy — a devtools panel removes it in a second. The real gate is
+ * /api/workspace refusing to read or write for a session that is not entitled,
+ * and the dataset itself arriving stripped. This makes the product legible;
+ * the Worker makes it enforced.
+ */
+function gateScreen(state) {
+  const shell = (inner) => `<div class="shell" style="max-width:40rem;padding:3rem 0 5rem">${inner}</div>`;
+
+  if (state === sync.STATUS.CHECKING) {
+    return shell(`<p class="small" role="status">Checking your account…</p>`);
+  }
+
+  if (state === sync.STATUS.NOT_ENTITLED) {
+    return shell(`
+      <span class="eyebrow eyebrow-accent">Workspace</span>
+      <h1 style="max-width:18ch">Your account does not include the <em class="serif-italic">workspace</em> yet</h1>
+      <p class="lede" style="max-width:44ch">The portfolio, the pipeline, the shared document vault and the
+      generated application packs are on the business plan.</p>
+      <p style="margin-top:1.6rem">
+        <a class="btn btn-primary" href="/pricing/">See what it costs</a>
+        <a class="btn" href="/enterprise/">What is in it</a>
+      </p>
+      <p class="tiny" style="margin-top:1.4rem">Anything you built in this browser before signing in is still here and
+      will be adopted into your account the moment the plan is active.</p>`);
+  }
+
+  /* Signed out, or the API is unreachable. Same screen, different sentence:
+     both mean "we cannot confirm a plan", and in both cases the honest move is
+     to offer the door rather than to guess generously. */
+  const offline = state === sync.STATUS.OFFLINE;
+  return shell(`
+    <span class="eyebrow eyebrow-accent">Workspace</span>
+    <h1 style="max-width:18ch">Sign in to open your <em class="serif-italic">workspace</em></h1>
+    <p class="lede" style="max-width:44ch">${
+      offline
+        ? 'We could not reach your account just now, so we cannot tell whether you are signed in.'
+        : 'Your portfolio, pipeline and documents live with your account, not with one browser.'
+    }</p>
+    <p style="margin-top:1.6rem">
+      <a class="btn btn-primary" href="/account/">Sign in</a>
+      <a class="btn" href="/enterprise/">What the workspace does</a>
+    </p>
+    ${
+      sync.hasContent(sync.readLocal())
+        ? `<div class="callout" style="margin-top:1.8rem"><p><strong>There is a workspace in this browser.</strong>
+           It has not been lost. Sign in and it becomes your account's workspace, on every device.</p>
+           <p style="margin-bottom:0"><button class="btn btn-sm" type="button" data-act="use-local">Keep working here for now</button></p></div>`
+        : ''
+    }`);
+}
+
 function chrome(inner) {
   const counts = {
     companies: ws.companies.length,
@@ -350,6 +437,7 @@ function chrome(inner) {
   </nav>
   <main class="dash__main">
     ${saveFailed ? `<div class="callout callout--warn"><p><strong>This browser refused to save.</strong> Your changes are in this tab only and will be lost when you close it. Private browsing and a full disk both do this.</p></div>` : ''}
+    ${syncBanner()}
     ${lockedBanner()}
     ${inner}
   </main>
@@ -1981,9 +2069,20 @@ const VIEWS = {
   postaward: postawardView,
 };
 
+/* Until open() resolves, or if it resolves to anything other than READY, the
+   workspace does not render at all. `bypass` is the "keep working here for
+   now" escape hatch for someone who is signed out and already has a board in
+   this browser — it changes nothing about what the server will hand over. */
+let gate = sync.STATUS.CHECKING;
+let bypass = false;
+
 function render() {
   const root = $('#dashboard');
   if (!root) return;
+  if (gate !== sync.STATUS.READY && !bypass) {
+    root.innerHTML = gateScreen(gate);
+    return;
+  }
   root.innerHTML = chrome((VIEWS[view.name] || overviewView)());
 }
 
@@ -2140,6 +2239,22 @@ function loadDemo() {
 /* ------------------------------------------------------------------ */
 
 document.addEventListener('click', (ev) => {
+  /* Gate actions. These are the only two clicks that work before the gate
+     opens, so they are handled first and return. */
+  const gateAct = ev.target.closest('[data-act]');
+  if (gateAct?.dataset.act === 'use-local') {
+    bypass = true;
+    render();
+    refresh();
+    return;
+  }
+  if (gateAct?.dataset.act === 'export-json') {
+    /* The escape hatch from a conflict: whatever is in this browser, as a
+       file, before anything overwrites it. */
+    download('unclaimed-workspace.json', JSON.stringify(sync.readLocal() ?? ws, null, 2), 'application/json');
+    return;
+  }
+
   const nav = ev.target.closest('[data-view]');
   if (nav) return void go(nav.dataset.view);
 
@@ -2604,14 +2719,65 @@ async function refresh() {
   render();
 }
 
-render();
-refresh();
+/**
+ * Boot.
+ *
+ * Ask the server who this is before drawing anything. The old boot rendered
+ * the whole workspace immediately and asked questions never — which is why it
+ * "just showed up" for anyone with the URL.
+ */
+async function boot() {
+  render(); // the checking state, so the page is never blank
+  const opened = await sync.open().catch(() => ({ status: sync.STATUS.OFFLINE, doc: sync.readLocal(), rev: 0 }));
+  gate = opened.status;
+
+  if (opened.status === sync.STATUS.READY) {
+    /* The server wins on load. It is the shared copy, and a stale local one
+       would otherwise be pushed back over a colleague's work on first edit. */
+    if (opened.doc) {
+      ws = { ...structuredClone(EMPTY), ...opened.doc };
+    }
+    syncState = 'saved';
+    saver = sync.createSaver({
+      onState: (st) => {
+        if (st === syncState) return;
+        syncState = st;
+        render();
+      },
+      onConflict: (serverDoc) => {
+        /* Take the server's document — it is what everyone else can see — and
+           say so loudly. Merging two portfolios silently is how work quietly
+           disappears; the banner points at an export of the local version so
+           nothing is actually lost. */
+        ws = { ...structuredClone(EMPTY), ...serverDoc };
+        matchCache.clear();
+        render();
+      },
+    });
+    if (opened.rev) saver.setRev(opened.rev);
+    if (opened.adopted) syncState = 'saved';
+  } else {
+    syncState = 'local';
+  }
+
+  render();
+  if (gate === sync.STATUS.READY || bypass) refresh();
+}
+
+boot();
+
+/* Last edit before the tab goes away. `pagehide` rather than `beforeunload`:
+   it fires on mobile Safari when the app is backgrounded, which is where a
+   lost final edit is most likely and least forgivable. */
+window.addEventListener('pagehide', () => {
+  if (saver) saver.flushNow();
+});
 
 /* Another tab changed the workspace. Reload rather than let the two diverge
    and have one silently overwrite the other on the next keystroke. */
 window.addEventListener('storage', (e) => {
   if (e.key !== STORE) return;
-  ws = load();
+  ws = sync.readLocal() || structuredClone(EMPTY);
   matchCache.clear();
   render();
 });
