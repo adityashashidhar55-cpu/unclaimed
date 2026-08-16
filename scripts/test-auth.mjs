@@ -55,5 +55,55 @@ t('a wrong code does not match', !mod.timingSafeEqual(await mod.hashCode('123457
 t('the right code matches', mod.timingSafeEqual(await mod.hashCode('123456', 'salt-a'), h1));
 t('length mismatch is rejected without throwing', !mod.timingSafeEqual('abc', h1));
 
+/* ------------------------------------------------------------------ */
+/* The wire contract between /api/me and the client                    */
+/* ------------------------------------------------------------------ */
+
+/* This is the bug class that made "sign-in does not work for anyone" true
+   without a single error anywhere: the client read `data.user`, /api/me sends
+   `signed_in` and `email`, so a valid session parsed to signedIn:false and the
+   account page kept showing the sign-in form. Nothing throws when two sides of
+   a JSON contract disagree — it just silently behaves as signed out, which is
+   the worst possible default to fail into and the hardest to spot.
+
+   So both sides are pinned here, read out of the source rather than guessed. */
+{
+  const fs = await import('node:fs');
+  const path = await import('node:path');
+  const { fileURLToPath } = await import('node:url');
+  const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
+  const worker = fs.readFileSync(path.join(ROOT, 'worker/index.js'), 'utf8');
+  const client = fs.readFileSync(path.join(ROOT, 'src/pwa/auth.js'), 'utf8');
+
+  /* What the Worker actually puts in the /api/me body. */
+  const meBody = worker.slice(worker.indexOf('async function handleMe'));
+  const sends = new Set(
+    [...meBody.slice(0, 900).matchAll(/^\s{4}(\w+):/gm)].map((m) => m[1]),
+  );
+  for (const field of ['signed_in', 'email', 'admin', 'entitlement']) {
+    t(`/api/me sends ${field}`, sends.has(field));
+  }
+
+  /* What the client reads back out of it. */
+  /* Comments mention the old field by name on purpose, so strip them before
+     scanning — otherwise this test fails on its own explanation. */
+  const meFn = client
+    .slice(client.indexOf('export async function me()'))
+    .slice(0, 1600)
+    .replace(/\/\*[\s\S]*?\*\//g, ' ')
+    .replace(/\/\/.*/g, ' ');
+  const reads = [...meFn.matchAll(/data\.(\w+)/g)].map((m) => m[1]);
+  t('the client reads signed_in, not a field that does not exist', reads.includes('signed_in'));
+  const unknown = [...new Set(reads)].filter((f) => !sends.has(f));
+  t(`the client reads no field /api/me never sends (saw: ${unknown.join(', ') || 'none'})`, unknown.length === 0);
+
+  /* An operator session has a role and no user id. Testing for uid alone
+     reported a signed-in operator as signed out. */
+  t(
+    'an operator session counts as signed in',
+    /if \(!session \|\| \(!session\.uid && !session\.adm\)\) return json\(\{ signed_in: false \}\);/.test(meBody),
+  );
+}
+
 console.log(`\n${pass} passed, ${fail} failed\n`);
 process.exit(fail ? 1 : 0);
