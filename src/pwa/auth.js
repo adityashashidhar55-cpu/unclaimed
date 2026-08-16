@@ -81,9 +81,16 @@ export async function me() {
     const res = await fetch('/api/me', { credentials: 'same-origin' });
     if (!res.ok) return { signedIn: false, entitled: false };
     const data = await res.json();
+    /* Read the shape the Worker actually sends. This used to look for
+       `data.user`, which /api/me has never returned — so `signedIn` was false
+       for everybody, including people holding a perfectly valid session
+       cookie. Nothing errored; the account page simply kept showing the
+       sign-in form after a successful sign-in, which is indistinguishable from
+       "sign-in does not work" and was reported as exactly that. */
     return {
-      signedIn: !!data.user,
-      user: data.user ?? null,
+      signedIn: !!data.signed_in,
+      admin: !!data.admin,
+      user: data.signed_in ? { email: data.email ?? null } : null,
       entitled: !!data.entitlement?.entitled,
       plan: data.entitlement?.plan ?? null,
       reason: data.entitlement?.reason ?? null,
