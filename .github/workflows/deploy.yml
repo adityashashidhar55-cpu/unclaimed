@@ -45,6 +45,10 @@ jobs:
         run: node scripts/test-gating.mjs
       # The operator door is one inverted boolean away from being open to the
       # internet, so the negative cases are asserted, not reviewed.
+      # A whole advertised feature returned nothing for the entire individual
+      # side, silently, because two datasets have two deadline shapes.
+      - name: Deadline tests
+        run: EMIT_FULL_DATASET=1 node scripts/test-deadlines.mjs
       - name: Admin and analytics tests
         run: node scripts/test-admin.mjs
       # A missing translation raises no error — it just reads as English to
