@@ -134,10 +134,27 @@ async function signSession(env, payload) {
   return `${body}.${sig}`;
 }
 
-async function readSession(env, cookieHeader) {
-  const raw = (cookieHeader || '').split(';').map((c) => c.trim()).find((c) => c.startsWith('ua_session='));
-  if (!raw) return null;
-  const [body, sig] = raw.slice('ua_session='.length).split('.');
+/**
+ * The session, from a cookie or a bearer token.
+ *
+ * The web sends a cookie, which JavaScript cannot read and an injected script
+ * therefore cannot steal. The packaged app cannot: Capacitor serves from
+ * `https://localhost`, so every API call is cross-origin and a SameSite=Lax
+ * cookie is simply not attached. It sends the same signed string as a bearer
+ * token instead.
+ *
+ * Both carry identical authority because both are the same value — this adds a
+ * second envelope, not a second kind of credential. What it does add is an
+ * XSS-readable copy on device, which is why only the app is ever handed one:
+ * `/auth/verify` returns the session in the body only when the client asks,
+ * and only the app asks.
+ */
+async function readSession(env, cookieHeader, authHeader) {
+  const bearer = /^Bearer\s+(.+)$/i.exec(authHeader || '')?.[1]?.trim();
+  const cookie = (cookieHeader || '').split(';').map((c) => c.trim()).find((c) => c.startsWith('ua_session='));
+  const token = bearer || (cookie ? cookie.slice('ua_session='.length) : null);
+  if (!token) return null;
+  const [body, sig] = token.split('.');
   if (!body || !sig) return null;
   const expect = toHex(await hmac(enc.encode(await signingKey(env)), body));
   if (!timingSafeEqual(sig, expect)) return null;
@@ -259,7 +276,7 @@ async function handleCheck(request, env) {
   const entry = manifest.countries.find((c) => c.slug === cc);
   const result = match(profile, data, entry);
 
-  const session = await readSession(env, request.headers.get('cookie'));
+  const session = await readSession(env, request.headers.get('cookie'), request.headers.get('authorization'));
   const ent = await entitlementFor(env, session, cc);
 
   /* Free payload — the number, never the list. */
@@ -332,7 +349,7 @@ async function handleCheck(request, env) {
  * Builds submission-ready packages for everything the user qualifies for.
  */
 async function handlePlan(request, env) {
-  const session = await readSession(env, request.headers.get('cookie'));
+  const session = await readSession(env, request.headers.get('cookie'), request.headers.get('authorization'));
   if (!session?.uid) return bad('sign in required', 401);
 
   const { profile, lang = 'en' } = await request.json().catch(() => ({}));
@@ -380,7 +397,7 @@ async function handlePlan(request, env) {
  * Written BEFORE any package is handed over for submission.
  */
 async function handleConsent(request, env) {
-  const session = await readSession(env, request.headers.get('cookie'));
+  const session = await readSession(env, request.headers.get('cookie'), request.headers.get('authorization'));
   if (!session?.uid) return bad('sign in required', 401);
 
   const { programme_slug, country, attestations, values } = await request.json().catch(() => ({}));
@@ -649,8 +666,18 @@ async function handleAuthVerify(request, env) {
     exp: now + 30 * 864e5,
   });
 
+  /* The packaged app asks for the session in the body because it cannot use
+     the cookie — see readSession(). Everyone else gets the cookie only, so no
+     browser is ever handed a token it did not need and could not protect. */
+  const native = body.client === 'native';
+
   return json(
-    { ok: true, user: { id: user.id, email, account_type: user.account_type }, verified: true },
+    {
+      ok: true,
+      user: { id: user.id, email, account_type: user.account_type },
+      verified: true,
+      ...(native ? { session: cookie } : {}),
+    },
     200,
     {
       'set-cookie': `ua_session=${cookie}; Path=/; HttpOnly; Secure; SameSite=Lax; Max-Age=${30 * 86400}`,
@@ -712,7 +739,7 @@ async function vaultSalt(env, userId) {
 
 /** GET /api/vault — metadata list plus the KDF parameters for this user. */
 async function handleVaultList(request, env) {
-  const session = await readSession(env, request.headers.get('cookie'));
+  const session = await readSession(env, request.headers.get('cookie'), request.headers.get('authorization'));
   if (!session?.uid) return bad('sign in required', 401);
 
   const { results } = await env.DB.prepare(
@@ -732,7 +759,7 @@ async function handleVaultList(request, env) {
  * stays a clean byte stream. Everything here was produced on the client.
  */
 async function handleVaultPut(request, env, id) {
-  const session = await readSession(env, request.headers.get('cookie'));
+  const session = await readSession(env, request.headers.get('cookie'), request.headers.get('authorization'));
   if (!session?.uid) return bad('sign in required', 401);
 
   const h = request.headers;
@@ -791,7 +818,7 @@ async function handleVaultPut(request, env, id) {
 
 /** GET /api/vault/:id — ciphertext plus the parameters needed to decrypt it. */
 async function handleVaultGet(request, env, id) {
-  const session = await readSession(env, request.headers.get('cookie'));
+  const session = await readSession(env, request.headers.get('cookie'), request.headers.get('authorization'));
   if (!session?.uid) return bad('sign in required', 401);
 
   const row = await env.DB.prepare(
@@ -823,7 +850,7 @@ async function handleVaultGet(request, env, id) {
 
 /** DELETE /api/vault/:id — object first, then the row. */
 async function handleVaultDelete(request, env, id) {
-  const session = await readSession(env, request.headers.get('cookie'));
+  const session = await readSession(env, request.headers.get('cookie'), request.headers.get('authorization'));
   if (!session?.uid) return bad('sign in required', 401);
 
   const row = await env.DB.prepare('SELECT object_key FROM vault_documents WHERE id = ? AND user_id = ?')
@@ -898,7 +925,7 @@ async function handleStartupCheck(request, env) {
 
 /** POST /api/startups/plan — paid. The list, plus the de minimis ceiling applied. */
 async function handleStartupPlan(request, env) {
-  const session = await readSession(env, request.headers.get('cookie'));
+  const session = await readSession(env, request.headers.get('cookie'), request.headers.get('authorization'));
   if (!session?.uid) return bad('sign in required', 401);
 
   const { profile, prior_aid = [] } = await request.json().catch(() => ({}));
@@ -940,7 +967,7 @@ async function handleStartupPlan(request, env) {
  * here are ours, and live in Worker secrets.
  */
 async function handleStartupAutofill(request, env) {
-  const session = await readSession(env, request.headers.get('cookie'));
+  const session = await readSession(env, request.headers.get('cookie'), request.headers.get('authorization'));
   if (!session?.uid) return bad('sign in required', 401);
 
   const { country_code, identifier, programme_slug, profile = {} } = await request.json().catch(() => ({}));
@@ -976,7 +1003,7 @@ async function handleStartupAutofill(request, env) {
 }
 
 async function handleCheckout(request, env) {
-  const session = await readSession(env, request.headers.get('cookie'));
+  const session = await readSession(env, request.headers.get('cookie'), request.headers.get('authorization'));
   if (!session?.uid) return bad('sign in required', 401);
 
   const body = await request.json().catch(() => ({}));
@@ -1195,7 +1222,7 @@ async function applyStripeEvent(event, env) {
 }
 
 async function handlePortal(request, env) {
-  const session = await readSession(env, request.headers.get('cookie'));
+  const session = await readSession(env, request.headers.get('cookie'), request.headers.get('authorization'));
   if (!session?.uid) return bad('sign in required', 401);
   const row = await env.DB.prepare('SELECT stripe_customer_id FROM entitlements WHERE user_id = ?')
     .bind(session.uid)
@@ -1249,7 +1276,7 @@ async function workspaceKeyFor(env, session) {
  * likes; this is the part that decides.
  */
 async function workspaceGate(request, env) {
-  const session = await readSession(env, request.headers.get('cookie'));
+  const session = await readSession(env, request.headers.get('cookie'), request.headers.get('authorization'));
   if (!session?.uid) return { error: json({ error: 'signed_out' }, 401) };
 
   const url = new URL(request.url);
@@ -1347,7 +1374,7 @@ async function handleWorkspacePut(request, env) {
 /* ------------------------------------------------------------------ */
 
 async function handleProfile(request, env) {
-  const session = await readSession(env, request.headers.get('cookie'));
+  const session = await readSession(env, request.headers.get('cookie'), request.headers.get('authorization'));
   if (!session?.uid) return bad('sign in required', 401);
 
   if (request.method === 'GET') {
@@ -1367,7 +1394,7 @@ async function handleProfile(request, env) {
 }
 
 async function handleMe(request, env) {
-  const session = await readSession(env, request.headers.get('cookie'));
+  const session = await readSession(env, request.headers.get('cookie'), request.headers.get('authorization'));
   /* An operator session carries `adm` and no `uid` — it is not a user account,
      it is a role. Testing for `uid` alone reported a signed-in operator as
      signed out, which made the admin dashboard bounce straight back to its own
@@ -1514,7 +1541,7 @@ async function handleAdminLogin(request, env) {
 
 /** Every /api/admin/* route goes through this. */
 async function requireAdmin(request, env) {
-  const session = await readSession(env, request.headers.get('cookie'));
+  const session = await readSession(env, request.headers.get('cookie'), request.headers.get('authorization'));
   return session?.adm ? session : null;
 }
 
@@ -1639,6 +1666,37 @@ async function handleAdminLogins(request, env) {
 }
 
 /* ------------------------------------------------------------------ */
+/* CORS — for the packaged app, and nobody else                        */
+/* ------------------------------------------------------------------ */
+
+/**
+ * The only cross-origin callers we want are our own app shells.
+ *
+ * Capacitor serves the bundle from `https://localhost` on both platforms (the
+ * `androidScheme`/`iosScheme` in capacitor.config.json), and the iOS simulator
+ * sometimes uses `capacitor://localhost`. Those three, and nothing else.
+ *
+ * Deliberately NOT a wildcard. `Access-Control-Allow-Origin: *` cannot be
+ * combined with credentials at all, and reflecting whatever Origin arrives
+ * would let any page on the internet make authenticated calls with a user's
+ * bearer token — which is the entire attack this list exists to prevent.
+ */
+const APP_ORIGINS = new Set(['https://localhost', 'capacitor://localhost', 'http://localhost']);
+
+function corsHeaders(request) {
+  const origin = request.headers.get('origin');
+  if (!origin || !APP_ORIGINS.has(origin)) return null;
+  return {
+    'access-control-allow-origin': origin,
+    'access-control-allow-credentials': 'true',
+    'access-control-allow-headers': 'content-type, authorization',
+    'access-control-allow-methods': 'GET, POST, PUT, DELETE, OPTIONS',
+    'access-control-max-age': '86400',
+    vary: 'Origin',
+  };
+}
+
+/* ------------------------------------------------------------------ */
 /* Router                                                              */
 /* ------------------------------------------------------------------ */
 
@@ -1646,41 +1704,60 @@ export default {
   async fetch(request, env, ctx) {
     const url = new URL(request.url);
     const { pathname } = url;
+    const cors = corsHeaders(request);
+
+    /* Preflight. Answered before anything else and without touching the
+       database — a browser sending OPTIONS is asking a question about policy,
+       not making a request. */
+    if (request.method === 'OPTIONS' && cors) {
+      return new Response(null, { status: 204, headers: cors });
+    }
+
+    /* Every API answer below picks up the CORS headers on the way out, so no
+       individual handler has to remember. Asset responses do not: they are
+       public, cacheable, and adding a Vary: Origin to 5,900 files would cost
+       cache hits for nothing. */
+    const withCors = (res) => {
+      if (!cors || !res) return res;
+      const out = new Response(res.body, res);
+      for (const [k, v] of Object.entries(cors)) out.headers.set(k, v);
+      return out;
+    };
 
     try {
       if (pathname === '/webhooks/stripe' && request.method === 'POST') {
-        return await handleStripeWebhook(request, env, ctx);
+        return withCors(await handleStripeWebhook(request, env, ctx));
       }
-      if (pathname === '/api/check' && request.method === 'POST') return await handleCheck(request, env);
-      if (pathname === '/api/apply/plan' && request.method === 'POST') return await handlePlan(request, env);
-      if (pathname === '/api/apply/consent' && request.method === 'POST') return await handleConsent(request, env);
-      if (pathname === '/api/startups/check' && request.method === 'POST') return await handleStartupCheck(request, env);
-      if (pathname === '/api/startups/plan' && request.method === 'POST') return await handleStartupPlan(request, env);
-      if (pathname === '/api/startups/autofill' && request.method === 'POST') return await handleStartupAutofill(request, env);
+      if (pathname === '/api/check' && request.method === 'POST') return withCors(await handleCheck(request, env));
+      if (pathname === '/api/apply/plan' && request.method === 'POST') return withCors(await handlePlan(request, env));
+      if (pathname === '/api/apply/consent' && request.method === 'POST') return withCors(await handleConsent(request, env));
+      if (pathname === '/api/startups/check' && request.method === 'POST') return withCors(await handleStartupCheck(request, env));
+      if (pathname === '/api/startups/plan' && request.method === 'POST') return withCors(await handleStartupPlan(request, env));
+      if (pathname === '/api/startups/autofill' && request.method === 'POST') return withCors(await handleStartupAutofill(request, env));
       /* The vault needs R2. If the bucket is not bound — a fresh account where
          R2 has not been enabled yet — say so plainly on the vault routes and
          leave every other route working. A storage feature that is not turned
          on must not take sign-in and checkout down with it. */
       if (pathname === '/api/vault' || pathname.startsWith('/api/vault/')) {
         if (!env.VAULT) {
-          return json(
+          return withCors(json(
             { error: 'vault_unavailable', message: 'Document storage is not switched on for this deployment yet.' },
             503,
-          );
+          ));
         }
       }
-      if (pathname === '/api/vault' && request.method === 'GET') return await handleVaultList(request, env);
+      if (pathname === '/api/vault' && request.method === 'GET') return withCors(await handleVaultList(request, env));
       if (pathname.startsWith('/api/vault/')) {
         const id = pathname.slice('/api/vault/'.length);
-        if (!/^[A-Za-z0-9_-]{8,64}$/.test(id)) return bad('bad document id');
-        if (request.method === 'PUT') return await handleVaultPut(request, env, id);
-        if (request.method === 'GET') return await handleVaultGet(request, env, id);
-        if (request.method === 'DELETE') return await handleVaultDelete(request, env, id);
-        return bad('method not allowed', 405);
+        if (!/^[A-Za-z0-9_-]{8,64}$/.test(id)) return withCors(bad('bad document id'));
+        if (request.method === 'PUT') return withCors(await handleVaultPut(request, env, id));
+        if (request.method === 'GET') return withCors(await handleVaultGet(request, env, id));
+        if (request.method === 'DELETE') return withCors(await handleVaultDelete(request, env, id));
+        return withCors(bad('method not allowed', 405));
       }
       /* The unstripped copies are for this Worker, not for the internet. */
       if (pathname.startsWith('/api/v1/full/')) {
-        return new Response('Not found', { status: 404 });
+        return withCors(new Response('Not found', { status: 404 }));
       }
 
       /* Same URL, more data if you have paid for it. An entitled client asking
@@ -1692,44 +1769,44 @@ export default {
       if (request.method === 'GET') {
         const m = pathname.match(/^\/api\/v1\/(programmes|startups)\/([a-z0-9_-]+)\.json$/);
         if (m) {
-          const session = await readSession(env, request.headers.get('cookie'));
+          const session = await readSession(env, request.headers.get('cookie'), request.headers.get('authorization'));
           const ent = session ? await entitlementFor(env, session, m[2]) : null;
           if (ent?.entitled) {
             const full = await loadFullAsset(env, request, `${m[1]}/${m[2]}.json`);
             if (full) {
-              return new Response(JSON.stringify(full), {
+              return withCors(new Response(JSON.stringify(full), {
                 headers: { 'content-type': 'application/json', 'cache-control': 'private, no-store' },
-              });
+              }));
             }
           }
         }
       }
 
-      if (pathname === '/api/workspace' && request.method === 'GET') return await handleWorkspaceGet(request, env);
-      if (pathname === '/api/workspace' && request.method === 'PUT') return await handleWorkspacePut(request, env);
-      if (pathname === '/api/me') return await handleMe(request, env);
-      if (pathname === '/api/profile') return await handleProfile(request, env);
-      if (pathname === '/api/billing/checkout' && request.method === 'POST') return await handleCheckout(request, env);
-      if (pathname === '/api/billing/portal' && request.method === 'POST') return await handlePortal(request, env);
-      if (pathname === '/api/v1/event' && request.method === 'POST') return await handleEvent(request, env);
-      if (pathname === '/api/admin/overview') return await handleAdminOverview(request, env);
-      if (pathname === '/api/admin/funnel') return await handleAdminFunnel(request, env);
-      if (pathname === '/api/admin/logins') return await handleAdminLogins(request, env);
-      if (pathname === '/auth/admin' && request.method === 'POST') return await handleAdminLogin(request, env);
-      if (pathname === '/auth/request' && request.method === 'POST') return await handleAuthRequest(request, env);
-      if (pathname === '/auth/verify' && request.method === 'POST') return await handleAuthVerify(request, env);
+      if (pathname === '/api/workspace' && request.method === 'GET') return withCors(await handleWorkspaceGet(request, env));
+      if (pathname === '/api/workspace' && request.method === 'PUT') return withCors(await handleWorkspacePut(request, env));
+      if (pathname === '/api/me') return withCors(await handleMe(request, env));
+      if (pathname === '/api/profile') return withCors(await handleProfile(request, env));
+      if (pathname === '/api/billing/checkout' && request.method === 'POST') return withCors(await handleCheckout(request, env));
+      if (pathname === '/api/billing/portal' && request.method === 'POST') return withCors(await handlePortal(request, env));
+      if (pathname === '/api/v1/event' && request.method === 'POST') return withCors(await handleEvent(request, env));
+      if (pathname === '/api/admin/overview') return withCors(await handleAdminOverview(request, env));
+      if (pathname === '/api/admin/funnel') return withCors(await handleAdminFunnel(request, env));
+      if (pathname === '/api/admin/logins') return withCors(await handleAdminLogins(request, env));
+      if (pathname === '/auth/admin' && request.method === 'POST') return withCors(await handleAdminLogin(request, env));
+      if (pathname === '/auth/request' && request.method === 'POST') return withCors(await handleAuthRequest(request, env));
+      if (pathname === '/auth/verify' && request.method === 'POST') return withCors(await handleAuthVerify(request, env));
       if (pathname === '/auth/signout') {
-        return new Response(null, {
+        return withCors(new Response(null, {
           status: 302,
           headers: { location: `${env.APP_ORIGIN}/`, 'set-cookie': 'ua_session=; Path=/; Max-Age=0' },
-        });
+        }));
       }
 
       /* Everything else is a static asset — free, and not billed as a Worker
          request, which is why 4,000 SEO pages cost nothing. */
       return env.ASSETS.fetch(request);
     } catch (err) {
-      return json({ error: 'internal', detail: String(err?.message ?? err) }, 500);
+      return withCors(json({ error: 'internal', detail: String(err?.message ?? err) }, 500));
     }
   },
 };
