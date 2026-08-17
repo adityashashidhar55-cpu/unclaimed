@@ -18,14 +18,66 @@
 
 import { track } from '../beacon.js';
 
-const API = '';
+/**
+ * Where the API lives, and how this client proves who it is.
+ *
+ * On the web both answers are trivial: same origin, HttpOnly cookie, done.
+ *
+ * Inside the packaged app neither is. Capacitor serves the bundle from
+ * `https://localhost`, so a relative `/api/me` resolves to a file that is not
+ * there — the request does not fail loudly, it 404s and the client concludes
+ * "signed out", which is precisely the silent-logout bug this codebase has
+ * already been bitten by once on the web. And once the URL is absolute the
+ * request is cross-origin, where a SameSite=Lax cookie is not sent at all.
+ *
+ * So the native build gets an absolute base and a bearer token. The token is
+ * the same signed session string the cookie carries; the Worker accepts either.
+ * The web build keeps the cookie and never stores a token, because a token in
+ * localStorage is readable by any injected script and a cookie is not — the
+ * app takes that trade only because on a device there is no alternative, and
+ * there is no third-party script in the bundle to do the injecting.
+ *
+ * `window.__UA_API__` is stamped in by native/prepare.mjs. Absent on the web,
+ * which is what makes the web path byte-identical to what it was.
+ */
+const API = (typeof window !== 'undefined' && window.__UA_API__) || '';
+const NATIVE = API !== '';
+const TOKEN_KEY = 'ua_session_token';
 
-/** Every call carries the session cookie; none of them carry a token. */
+const readToken = () => {
+  if (!NATIVE) return null;
+  try {
+    return localStorage.getItem(TOKEN_KEY);
+  } catch {
+    return null;
+  }
+};
+
+const writeToken = (t) => {
+  if (!NATIVE) return;
+  try {
+    if (t) localStorage.setItem(TOKEN_KEY, t);
+    else localStorage.removeItem(TOKEN_KEY);
+  } catch {
+    /* Storage refused. The session lasts this launch only, which is a bad
+       session and not a broken app. */
+  }
+};
+
+/** Auth headers for the current surface: nothing on web, bearer on device. */
+export function authHeaders() {
+  const t = readToken();
+  return t ? { authorization: `Bearer ${t}` } : {};
+}
+
+export { NATIVE as IS_NATIVE, writeToken as setSessionToken };
+
+/** Cookie on the web, bearer token on device. Never both. */
 async function post(path, body) {
   const res = await fetch(`${API}${path}`, {
     method: 'POST',
-    headers: { 'content-type': 'application/json' },
-    credentials: 'same-origin',
+    headers: { 'content-type': 'application/json', ...authHeaders() },
+    credentials: NATIVE ? 'omit' : 'same-origin',
     body: JSON.stringify(body ?? {}),
   });
   const data = await res.json().catch(() => ({}));
@@ -63,9 +115,23 @@ export async function requestCode(email, accountType = 'individual') {
  * membership oracle anyone can query.
  */
 export async function verifyCode(email, code, accountType = 'individual') {
-  const { ok, status, data } = await post('/auth/verify', { email, code, account_type: accountType });
+  /* `client: 'native'` asks the Worker to put the session in the body as well
+     as the Set-Cookie header. Only the app sends it, so the web response is
+     unchanged and no token is ever minted into a browser that does not need
+     one. */
+  const { ok, status, data } = await post('/auth/verify', {
+    email,
+    code,
+    account_type: accountType,
+    ...(NATIVE ? { client: 'native' } : {}),
+  });
   if (status === 429) return { ok: false, error: 'too_many_attempts', message: data.message };
   if (!ok) return { ok: false, error: 'invalid_code', message: 'That code is wrong or has expired.' };
+  /* On device this is the only copy of the session there will ever be — the
+     cookie the Worker also set cannot be replayed cross-origin from a
+     WKWebView. Store it before returning, or the user is signed in for exactly
+     one function call. */
+  if (NATIVE && data.session) writeToken(data.session);
   return { ok: true, user: data.user };
 }
 
@@ -85,7 +151,11 @@ export async function me() {
        header cached a `signed_in: false` answer that then outlived the fix.
        An authentication check is the one request in a product that must never
        be answered from a cache at any layer. */
-    const res = await fetch('/api/me', { credentials: 'same-origin', cache: 'no-store' });
+    const res = await fetch(`${API}/api/me`, {
+      credentials: NATIVE ? 'omit' : 'same-origin',
+      cache: 'no-store',
+      headers: authHeaders(),
+    });
     if (!res.ok) return { signedIn: false, entitled: false };
     const data = await res.json();
     /* Read the shape the Worker actually sends. This used to look for
@@ -111,7 +181,11 @@ export async function me() {
 }
 
 export async function signOut() {
-  await fetch('/auth/signout', { credentials: 'same-origin' });
+  writeToken(null);
+  await fetch(`${API}/auth/signout`, {
+    credentials: NATIVE ? 'omit' : 'same-origin',
+    headers: authHeaders(),
+  });
 }
 
 /**
