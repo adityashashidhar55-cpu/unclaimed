@@ -1503,7 +1503,14 @@ ${disclaimerBar(TR)}
 </section>
 
 <script type="module">
-import { requestCode, verifyCode, me } from '${LB()}/app/auth.js';
+/* BASE, not LB(). The auth module is written once, to /app/auth.js — there is
+   no /de/app/auth.js and there never was. A module specifier that 404s does
+   not fail loudly: it kills the whole <script type="module">, so the submit
+   handler below is never attached and the form does nothing at all when you
+   press the button. Sign-in was silently dead on all six localised account
+   pages, and check-links does not resolve module imports so nothing caught
+   it. */
+import { requestCode, verifyCode, me } from '${BASE}/app/auth.js';
 import { track } from '${BASE}/beacon.js';
 
 const $ = (s) => document.querySelector(s);
@@ -2067,7 +2074,7 @@ ${disclaimerBar(TR)}
     { label: 'Startup grants', href: `${SB()}/startups/` },
     { label: 'Check' },
   ])}
-  <div id="app" class="wizard" data-mode="startup" data-view="check">
+  <div id="app" class="wizard" data-base="${BASE}">
     <noscript>
       <div class="callout">
         <p><strong>The company check needs JavaScript</strong> — it runs in your browser so your figures
@@ -2077,7 +2084,11 @@ ${disclaimerBar(TR)}
     </noscript>
   </div>
 </section>
-<script type="module" src="${BASE}/app.js?v=${ASSET_V}"></script>`;
+<!-- The COMPANY wizard. This page used to load /app.js — the household one —
+     with a data-mode="startup" attribute that nothing has ever read, so the
+     primary business CTA asked founders about their children and matched them
+     against personal benefits. -->
+<script type="module" src="${BASE}/startup-check.js?v=${ASSET_V}"></script>`;
 
   return layout({
     base: BASE, linkBase: LB(), lang: L, tr: TR, altLangs: ALT,
@@ -2740,6 +2751,7 @@ write('beacon.js', fs.readFileSync(path.join(SRC, 'pwa/beacon.js'), 'utf8'));
 /* The audience switch, at the root so every page and every language can load
    the same copy — the cookie it sets is shared across all of them. */
 write('audience.js', fs.readFileSync(path.join(SRC, 'pwa/audience.js'), 'utf8'));
+write('startup-check.js', fs.readFileSync(path.join(SRC, 'pwa/startup-check.js'), 'utf8'));
 /* The workspace's sync layer. At the root, one directory above /dashboard/,
    which is how dashboard.js's `../workspace-sync.js` resolves. */
 write('workspace-sync.js', fs.readFileSync(path.join(SRC, 'pwa/workspace-sync.js'), 'utf8'));
