@@ -147,5 +147,67 @@ fs.existsSync(path.join(ROOT, 'dist/privacy/index.html'))
   ? ok('privacy policy page built (both stores require a live URL)')
   : fail('no privacy policy page — neither store will accept the listing');
 
+/* ------------------------------------------------------------------ */
+/* Accounts on a device                                                */
+/* ------------------------------------------------------------------ */
+
+/* Every failure mode in this section is silent, which is why it is tested
+   rather than eyeballed. Capacitor serves the bundle from https://localhost.
+   A relative /api/me therefore resolves to a file inside the app, 404s, and
+   the client concludes "signed out" — the app would never log anyone in and
+   nothing would say why. And once the URL is absolute the call is
+   cross-origin, where a SameSite=Lax cookie is not attached at all, so a
+   cookie-only client is signed out a second time for a second reason. */
+{
+  const shell = fs.readFileSync(path.join(WWW, 'index.html'), 'utf8');
+  const authJs = fs.readFileSync(path.join(WWW, 'app', 'auth.js'), 'utf8');
+  const worker = fs.readFileSync(path.join(ROOT, 'worker/index.js'), 'utf8');
+
+  shell.includes('window.__UA_API__="https://unclaimedgrant.com"')
+    ? ok('the bundle knows where the API is')
+    : fail('no API base in the native shell — every account call would 404 inside the app');
+
+  /a relative `\/api\/me` resolves to a file/.test(shell) || /__UA_API__/.test(authJs)
+    ? ok('auth.js reads the stamped API base')
+    : fail('auth.js ignores the API base');
+
+  /const API = \(typeof window !== 'undefined' && window\.__UA_API__\) \|\| '';/.test(authJs)
+    ? ok('the web build is unchanged when the base is absent')
+    : fail('the API base does not fall back to same-origin on the web');
+
+  /credentials: NATIVE \? 'omit' : 'same-origin'/.test(authJs)
+    ? ok('the app does not rely on a cookie that cross-origin will not send')
+    : fail('the app still sends credentials as if it were same-origin');
+
+  /if \(NATIVE && data\.session\) writeToken\(data\.session\);/.test(authJs)
+    ? ok('the app stores the session it is given')
+    : fail('the app would be signed in for exactly one function call');
+
+  /* Only the app gets a token. A browser that can hold an HttpOnly cookie must
+     never be handed an XSS-readable copy of the same credential. */
+  /const native = body\.client === 'native';/.test(worker) &&
+  /\.\.\.\(native \? \{ session: cookie \} : \{\}\)/.test(worker)
+    ? ok('the session is only put in the body when the app asks')
+    : fail('the web response may be leaking a bearer token');
+
+  /* CORS must not be a wildcard, and must not reflect. Reflecting Origin with
+     credentials lets any page on the internet make authenticated calls. */
+  /const APP_ORIGINS = new Set\(\[/.test(worker)
+    ? ok('cross-origin access is an allow-list')
+    : fail('no CORS allow-list — the app cannot call the API, or anyone can');
+
+  const corsFn = worker.slice(worker.indexOf('function corsHeaders'), worker.indexOf('function corsHeaders') + 600);
+  /!APP_ORIGINS\.has\(origin\)/.test(corsFn)
+    ? ok('an unknown origin gets no CORS headers at all')
+    : fail('CORS reflects whatever origin arrives');
+  /allow-origin': '\*'/.test(corsFn)
+    ? fail('wildcard CORS cannot carry credentials and would break the app')
+    : ok('no wildcard origin');
+
+  worker.includes("readSession(env, request.headers.get('cookie'), request.headers.get('authorization'))")
+    ? ok('the Worker reads the bearer token the app sends')
+    : fail('the Worker ignores the app\'s bearer token');
+}
+
 console.log(`\n${checks} checks passed, ${failures} failed\n`);
 process.exit(failures ? 1 : 0);

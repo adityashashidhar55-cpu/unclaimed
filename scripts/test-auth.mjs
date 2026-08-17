@@ -118,9 +118,17 @@ t('length mismatch is rejected without throwing', !mod.timingSafeEqual('abc', h1
      this stops the browser reusing one it already has — which it did, because
      a deploy without the header cached a signed-out answer that outlived the
      fix. Both layers are load-bearing and neither is redundant. */
+  /* The URL is now a template literal, because the packaged app needs an
+     absolute base — so match the call by its target rather than by its exact
+     spelling, and assert the property that matters. */
+  /* Anchor on the fetch itself — `/api/me` also appears in the comments that
+     explain why this matters, and slicing from the first mention lands in
+     prose rather than in code. */
+  const meCall = client.slice(client.indexOf('fetch(`${API}/api/me`'));
+  t('the client asks for /api/me with cache: no-store', /cache: 'no-store'/.test(meCall.slice(0, 300)));
   t(
-    'the client asks for /api/me with cache: no-store',
-    /fetch\('\/api\/me',\s*\{[^}]*cache: 'no-store'/.test(client),
+    'the API base falls back to same origin on the web',
+    /const API = \(typeof window !== 'undefined' && window\.__UA_API__\) \|\| '';/.test(client),
   );
 }
 
