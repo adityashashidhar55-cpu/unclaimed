@@ -18,7 +18,7 @@
  * connection or a metered plan.
  */
 
-const VERSION = 'v1';
+const VERSION = 'v2';
 const SHELL = `unclaimed-shell-${VERSION}`;
 const DATA = `unclaimed-data-${VERSION}`;
 
@@ -61,14 +61,52 @@ self.addEventListener('activate', (event) => {
   );
 });
 
+/* Programme data — the only API responses that may be cached, and only when
+   the server says they are public. */
 const isData = (url) => url.pathname.includes('/api/v1/');
+
+/**
+ * Anything per-user must never touch CacheStorage.
+ *
+ * This is the layer the HTTP cache headers do not reach. `cache-control:
+ * private, no-store` on the response and `cache: 'no-store'` on the request
+ * both stop the browser's HTTP cache and Cloudflare's edge — and neither has
+ * any effect on `cache.put()`, which stores exactly what it is handed.
+ *
+ * The bug that was live: `isData` matched only `/api/v1/`, so `/api/me` fell
+ * through to the cache-first branch at the bottom and was stored in the shell
+ * cache. Consequences, in order of how bad they are:
+ *
+ *   - On a shared device, the next person to open the app was served the
+ *     previous person's `/api/me` — their email address and their entitlement.
+ *   - Someone who paid kept the pre-payment `entitled: false` answer, and the
+ *     paywall stayed up with no way to clear it.
+ *   - Someone who signed out stayed "signed in" until the cache version
+ *     changed.
+ *
+ * So the rule is now an allow-list, not a deny-list. `/api/v1/` public data is
+ * cacheable; every other `/api/` path and every `/auth/` path goes straight to
+ * the network and is never stored.
+ */
+const isPrivatePath = (url) =>
+  (url.pathname.startsWith('/api/') && !isData(url)) || url.pathname.startsWith('/auth/');
+
+/** The server's own opinion. Belt and braces with the path rule above. */
+const isPrivateResponse = (res) => /private|no-store/i.test(res.headers.get('cache-control') || '');
 
 self.addEventListener('fetch', (event) => {
   const { request } = event;
-  if (request.method !== 'GET') return;
-
   const url = new URL(request.url);
   if (url.origin !== self.location.origin) return;
+
+  /* Never intercept a non-GET. `cache.put` rejects on a POST request, which
+     turned every analytics beacon into an unhandled rejection in the SW. */
+  if (request.method !== 'GET') return;
+
+  /* Sessions, entitlement, the workspace, the admin figures. Network only,
+     stored nowhere. Not even respondWith — letting it fall through to the
+     browser is both correct and cheaper than proxying it. */
+  if (isPrivatePath(url)) return;
 
   /* Programme data: serve from cache at once, refresh behind the user's back. */
   if (isData(url)) {
@@ -78,11 +116,19 @@ self.addEventListener('fetch', (event) => {
         const hit = await cache.match(request);
         const network = fetch(request)
           .then((res) => {
-            if (res.ok) cache.put(request, res.clone());
+            /* An entitled user gets the UNSTRIPPED dataset at this same URL —
+               same path, more data, marked private. Caching that would leave
+               the paid directory in CacheStorage after sign-out, readable by
+               anything on the origin. Only the public copy is stored. */
+            if (res.ok && !isPrivateResponse(res)) cache.put(request, res.clone());
             return res;
           })
           .catch(() => null);
-        return hit || (await network) || new Response('{"programmes":[]}', {
+        /* And a cached PUBLIC copy must not be served to someone who has since
+           paid — they would see stripped rows with blank names. When the
+           network answers, prefer it. */
+        const fresh = await Promise.race([network, new Promise((r) => setTimeout(() => r(null), 1500))]);
+        return fresh || hit || (await network) || new Response('{"programmes":[]}', {
           headers: { 'content-type': 'application/json' },
         });
       })(),
