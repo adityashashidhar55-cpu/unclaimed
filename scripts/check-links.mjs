@@ -71,6 +71,44 @@ for (const file of htmlFiles) {
   }
 }
 
+/* ------------------------------------------------------------------ */
+/* Module specifiers inside inline <script type="module">              */
+/* ------------------------------------------------------------------ */
+
+/* The link checker above walks href/src. It does not look inside a
+   `<script type="module">`, and that blind spot shipped a real outage: the
+   localised account pages imported `/de/app/auth.js`, which has never existed,
+   because the template used the language-prefixed base instead of the site
+   base. A 404 on a module specifier is the quietest failure in the browser —
+   it does not throw anywhere visible, it just abandons the whole script, so
+   the sign-in form's submit handler was never attached and pressing the button
+   did nothing on six of the seven languages.
+ 
+   Every absolute specifier in an inline module must resolve to a real file. */
+{
+  let checked = 0;
+  const broken = [];  // shadows the href map above on purpose — different check
+  for (const file of htmlFiles) {
+    const html = fs.readFileSync(file, 'utf8');
+    for (const block of html.matchAll(/<script[^>]*type="module"[^>]*>([\s\S]*?)<\/script>/g)) {
+      for (const m of block[1].matchAll(/(?:from|import)\s+['"](\/[^'"]+)['"]/g)) {
+        checked += 1;
+        const spec = m[1].split('?')[0];
+        if (!fs.existsSync(path.join(DIST, spec.replace(/^\//, '')))) {
+          broken.push(`${path.relative(DIST, file)} imports ${spec}`);
+        }
+      }
+    }
+  }
+  if (broken.length) {
+    console.error(`\n  ✗ ${broken.length} inline module imports do not resolve:`);
+    for (const b of broken.slice(0, 10)) console.error(`      ${b}`);
+    console.error('');
+    process.exit(1);
+  }
+  console.log(`  ✓ all ${checked} inline module imports resolve`);
+}
+
 console.log(`\nChecked ${checked} internal links across ${htmlFiles.length} pages.\n`);
 
 if (!broken.size) {

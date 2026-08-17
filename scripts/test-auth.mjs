@@ -132,5 +132,43 @@ t('length mismatch is rejected without throwing', !mod.timingSafeEqual('abc', h1
   );
 }
 
+/* ------------------------------------------------------------------ */
+/* The third cache layer: CacheStorage                                 */
+/* ------------------------------------------------------------------ */
+
+/* `cache-control: private, no-store` stops Cloudflare's edge. `cache:
+   'no-store'` on the request stops the browser's HTTP cache. Neither has any
+   effect on `cache.put()`, which stores exactly what the service worker hands
+   it — and the service worker was handed /api/me, because its data matcher
+   only looked for /api/v1/ and everything else fell through to a cache-first
+   branch.
+
+   What that meant in practice, worst first: on a shared device the next person
+   to open the app was served the previous person's /api/me — their email and
+   their entitlement. Someone who paid kept the pre-payment `entitled: false`
+   answer with no way to clear it. Someone who signed out stayed signed in.
+
+   Two tests above assert the two layers that were already right. This asserts
+   the one that was wrong. */
+{
+  const fs = await import('node:fs');
+  const path = await import('node:path');
+  const { fileURLToPath } = await import('node:url');
+  const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
+  const sw = fs.readFileSync(path.join(ROOT, 'src/pwa/sw.js'), 'utf8');
+
+  t('the service worker has an explicit private-path rule', /const isPrivatePath = /.test(sw));
+  t(
+    'sessions and the workspace are never intercepted',
+    /url\.pathname\.startsWith\('\/api\/'\) && !isData\(url\)/.test(sw) && /url\.pathname\.startsWith\('\/auth\/'\)/.test(sw),
+  );
+  t('and the check runs before any caching branch', sw.indexOf('isPrivatePath(url)) return') < sw.indexOf('if (isData(url))'));
+  t(
+    'a response the server marks private is never stored',
+    /const isPrivateResponse = /.test(sw) && /!isPrivateResponse\(res\)\) cache\.put/.test(sw),
+  );
+  t('non-GET requests are not intercepted at all', /request\.method !== 'GET'\) return;/.test(sw));
+}
+
 console.log(`\n${pass} passed, ${fail} failed\n`);
 process.exit(fail ? 1 : 0);
