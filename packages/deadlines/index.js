@@ -135,6 +135,42 @@ export function nextWindow(programme, asOf = Date.now()) {
  *   'unknown'  — we could not establish anything. Say so.
  */
 export function deadlineState(programme, asOf = Date.now()) {
+  /* Two datasets, two shapes.
+   *
+   * Startup programmes carry `status` and sometimes `closes_at` — real dates,
+   * which everything below is written for.
+   *
+   * Benefit programmes carry neither. All 2,216 of them describe their
+   * calendar as a `deadline_type` (rolling / annual / window / none) plus a
+   * prose `deadline_note` ("Scheme runs 1 November to 31 March each year").
+   * Running the date logic over them fell straight through to the terminal
+   * branch, so every benefit row in the app read "Status not published" and
+   * the whole deadlines screen was empty — a feature the pricing page sells,
+   * returning nothing, for the entire individual side.
+   *
+   * So benefits get their own branch, built from what the data actually says.
+   * `at` stays null on purpose: there is no date, and a reminder for a date we
+   * invented would be worse than no reminder. That is why the calendar export
+   * legitimately has nothing to offer here, and the UI should say so rather
+   * than imply the data is missing.
+   */
+  if (!programme?.status && programme?.deadline_type) {
+    const note = programme.deadline_note || null;
+    const shared = { status: 'published', meta: STATUS_META.rolling, days_until: null, at: null, from_prose: true };
+    switch (programme.deadline_type) {
+      case 'rolling':
+        return { ...shared, urgency: 'open', headline: 'Apply any time', detail: note || 'No closing date — claims are accepted year round.' };
+      case 'annual':
+        return { ...shared, urgency: 'later', headline: 'Opens once a year', detail: note || 'Runs on an annual cycle. Check the official page for this year\'s dates.' };
+      case 'window':
+        return { ...shared, urgency: 'soon', headline: 'Open in a set window', detail: note || 'Only open during part of the year. Check the official page for the current window.' };
+      case 'none':
+        return { ...shared, urgency: 'open', headline: 'No deadline', detail: note || 'Nothing to miss — this one has no closing date.' };
+      default:
+        break;
+    }
+  }
+
   const status = programme?.status || STATUS.UNKNOWN;
   const meta = STATUS_META[status] ?? STATUS_META.unknown;
   const closes = parse(programme?.closes_at);
@@ -202,6 +238,29 @@ export function deadlineState(programme, asOf = Date.now()) {
         stale: false,
       };
     }
+    /* Last resort before giving up: the record has no opening date, but it may
+       still have a published CLOSING date in the future. Five programmes were
+       in exactly this state — status 'upcoming', closes_at a month away — and
+       were being reported as "Closed for now" with no date attached, so they
+       appeared in no reminder, no calendar export and no deadline list. A
+       programme that opens next month and closes the month after is the most
+       actionable thing on the page, and it was the one thing being hidden. */
+    if (closes && closes > asOf) {
+      const days = Math.ceil((closes - asOf) / DAY);
+      return {
+        status,
+        meta,
+        urgency: days <= 90 ? 'soon' : 'later',
+        headline: status === STATUS.UPCOMING ? `Opens soon, closes in ${days} days` : `Closes in ${days} days`,
+        detail:
+          (programme?.reopen_note ? `${programme.reopen_note} ` : '') +
+          `Applications close ${new Date(closes).toISOString().slice(0, 10)}.`,
+        days_until: days,
+        at: closes,
+        stale: false,
+      };
+    }
+
     return {
       status,
       meta,
