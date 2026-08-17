@@ -60,6 +60,12 @@ for (const asset of [
   'app/app.js',
   'app/native.js',
   'app/auth.js',
+  /* auth.js imports ../beacon.js. Missing here, that import does not resolve,
+     and a failed module import takes the WHOLE graph down — app.js never
+     evaluates and the app opens to a blank screen. Nothing in the shell logs
+     it anywhere a store reviewer would think to look. */
+  'beacon.js',
+  'audience.js',
   'engine',
   'packages',
   'api/v1',
@@ -104,7 +110,20 @@ const shell = fs
   .replace(/href="icon-192\.png"/, 'href="icon-180.png"')
   /* Cache-busting query strings are for a CDN. Inside the binary the files are
      local and the ?v= suffix just makes the reference miss. */
-  .replace(/(\.(?:css|js))\?v=\d+/g, '$1');
+  .replace(/(\.(?:css|js))\?v=\d+/g, '$1')
+  /* The one line that makes accounts work on a device.
+     Capacitor serves this bundle from https://localhost, so a relative
+     `/api/me` resolves to a file inside the app — which does not exist, 404s,
+     and makes the client conclude "signed out". Not loudly: the app would
+     simply never log anybody in, and nothing in the logs would say why.
+     Stamping an absolute base here is what turns every API call in the bundle
+     into a call to the real Worker. auth.js reads it and switches to bearer
+     tokens at the same time, because a SameSite=Lax cookie is not sent
+     cross-origin from a WKWebView either. */
+  .replace(
+    '<head>',
+    '<head>\n<script>window.__UA_API__="https://unclaimedgrant.com";</script>',
+  );
 
 fs.writeFileSync(path.join(WWW, 'index.html'), shell);
 files += 1;
