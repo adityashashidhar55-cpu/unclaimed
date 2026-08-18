@@ -1783,7 +1783,13 @@ export default {
       }
 
       if (pathname === '/api/workspace' && request.method === 'GET') return withCors(await handleWorkspaceGet(request, env));
-      if (pathname === '/api/workspace' && request.method === 'PUT') return withCors(await handleWorkspacePut(request, env));
+      /* POST as a synonym for PUT. `navigator.sendBeacon` can only POST, and
+         the beacon is how the last edit survives a tab closing mid-save —
+         flush() returns early while a save is in flight, and the retry never
+         runs because the page is unloading. */
+      if (pathname === '/api/workspace' && (request.method === 'PUT' || request.method === 'POST')) {
+        return withCors(await handleWorkspacePut(request, env));
+      }
       if (pathname === '/api/me') return withCors(await handleMe(request, env));
       if (pathname === '/api/profile') return withCors(await handleProfile(request, env));
       if (pathname === '/api/billing/checkout' && request.method === 'POST') return withCors(await handleCheckout(request, env));
