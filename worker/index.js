@@ -1154,7 +1154,12 @@ async function applyStripeEvent(event, env) {
        VALUES (?, ?, ?, ?, ?, ?, ?)
        ON CONFLICT(user_id) DO UPDATE SET
          status = excluded.status,
-         plan = excluded.plan,
+         /* COALESCE, not a straight assignment. Stripe sends
+            checkout.session.completed and customer.subscription.created for
+            the same purchase, and only one of them carries our plan metadata
+            depending on how the session was made. Overwriting with whatever
+            the second event happened to know threw the plan away again. */
+         plan = COALESCE(excluded.plan, entitlements.plan),
          stripe_customer_id = COALESCE(excluded.stripe_customer_id, entitlements.stripe_customer_id),
          stripe_subscription_id = COALESCE(excluded.stripe_subscription_id, entitlements.stripe_subscription_id),
          current_period_end = excluded.current_period_end,
@@ -1163,7 +1168,14 @@ async function applyStripeEvent(event, env) {
       .bind(
         userId,
         fields.status,
-        fields.plan ?? 'monthly',
+        /* A hardcoded "monthly" default used to sit here, and nothing ever
+           passed a plan — so every subscriber in the table, annual and
+           business alike, was recorded as monthly, and the account page
+           dutifully told an annual subscriber their monthly was active. The
+           plan travels in metadata on both the session and the subscription;
+           read it, and when it is genuinely absent write null so the COALESCE
+           above keeps what we already knew rather than inventing a plan. */
+        fields.plan ?? null,
         fields.customer ?? null,
         fields.subscription ?? null,
         fields.period_end ?? null,
@@ -1171,6 +1183,13 @@ async function applyStripeEvent(event, env) {
       )
       .run();
   };
+
+  /* Which plan this purchase is for, in the Worker's own vocabulary.
+     Set on the checkout session as metadata[plan] and copied onto the
+     subscription as subscription_data[metadata][plan], so whichever event
+     arrives first can answer. Never derived from the price id: that would put
+     a second copy of the price table in a second place. */
+  const planFrom = (obj) => obj?.metadata?.plan ?? null;
 
   const userIdFrom = async (obj) => {
     const direct = obj.metadata?.user_id || obj.client_reference_id;
@@ -1190,6 +1209,7 @@ async function applyStripeEvent(event, env) {
       if (uid) {
         await upsert(uid, {
           status: 'active',
+          plan: planFrom(o),
           customer: o.customer,
           subscription: o.subscription,
           period_end: null,
@@ -1204,6 +1224,7 @@ async function applyStripeEvent(event, env) {
       if (uid) {
         await upsert(uid, {
           status: event.type === 'customer.subscription.deleted' ? 'canceled' : o.status,
+          plan: planFrom(o),
           customer: o.customer,
           subscription: o.id,
           period_end: o.current_period_end ?? null,
