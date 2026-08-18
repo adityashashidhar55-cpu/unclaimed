@@ -605,7 +605,7 @@ document.addEventListener('click', async (e) => {
   if (action.dataset.action === 'signin') {
     /* Carry the intent across sign-in. Landing on a bare account page loses
        the reason they clicked, and the reason was to pay. */
-    location.href = `${BASE}/account/?plan=personal_annual`;
+    location.href = `${BASE}/account/?plan=auto`;
     return;
   }
 
@@ -615,7 +615,10 @@ document.addEventListener('click', async (e) => {
   if (action.dataset.action === 'upgrade') {
     action.disabled = true;
     action.textContent = 'Opening checkout…';
-    const res = await startCheckout('personal_annual');
+    /* 'auto' resolves to the annual plan for whichever account type this
+       session signed in by — a business account buying Personal at 7 euros a
+       month is not the licence their colleagues need. */
+    const res = await startCheckout('auto');
     if (res.ok && res.url) {
       if (isNative) await openExternal(res.url);
       else location.href = res.url;

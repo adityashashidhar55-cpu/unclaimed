@@ -168,6 +168,7 @@ export async function me() {
       signedIn: !!data.signed_in,
       admin: !!data.admin,
       user: data.signed_in ? { email: data.email ?? null } : null,
+      accountType: data.account_type ?? null,
       entitled: !!data.entitlement?.entitled,
       plan: data.entitlement?.plan ?? null,
       reason: data.entitlement?.reason ?? null,
@@ -182,7 +183,12 @@ export async function me() {
 
 export async function signOut() {
   writeToken(null);
+  /* POST, not GET. The Worker now refuses a cross-site GET to /auth/signout —
+     otherwise any page on the internet could log our users out with an <img>
+     tag — and POST is the branch that always passes, which is what the
+     packaged app needs since it sends a bearer token and no cookie. */
   await fetch(`${API}/auth/signout`, {
+    method: 'POST',
     credentials: NATIVE ? 'omit' : 'same-origin',
     headers: authHeaders(),
   });
