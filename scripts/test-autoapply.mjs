@@ -592,5 +592,73 @@ ok('app asks for nationality', appAsks.includes('nationality_group'));
 ok('numeric answers are coerced, not left as strings', /f\.type === 'number' \? Number\(raw\)/.test(appSrc));
 
 
+/* ------------------------------------------------------------------ */
+/* The company applicant                                               */
+/* ------------------------------------------------------------------ */
+
+/* Every jurisdiction rule in packages/policy is a consumer-protection statute
+ * about a person claiming a social benefit. Applying them to a company's grant
+ * application was a category error, and it quietly disabled the enterprise
+ * product — the thing the enterprise product IS. Filing a company's funding
+ * application as its appointed agent is what an entire profession does; what
+ * it needs is a signed authorisation, not a statutory carve-out.
+ */
+{
+  console.log('\nCompany applicant');
+  const { companyPolicyFor, mayFileOnBehalf, COMPANY_RAIL } = await import('../packages/policy/index.js');
+  const { authorisationRequest } = await import('../packages/autoapply/index.js');
+
+  ok('a company may be filed for even where a person may not', mayFileOnBehalf('fr', 'company') === true && mayFileOnBehalf('fr', 'person') === false);
+  ok('the person model is untouched', mayFileOnBehalf('es', 'person') === true && mayFileOnBehalf('gb', 'person') === false);
+  ok('an unresearched country still allows agent filing for a company', companyPolicyFor('zz').may_submit === true);
+  ok('and still demands an authorisation first', companyPolicyFor('zz').requires_authorisation === true);
+  ok('the EU rail is a delegated account, not a shared password', companyPolicyFor('eu').rail === COMPANY_RAIL.DELEGATED_ACCOUNT);
+  ok('France carries an explicit note that the benefit prohibition does not cross over',
+     /do not apply here|does not apply here|must not be carried across/i.test(companyPolicyFor('fr').notes));
+
+  const startupMan = JSON.parse(rfs(new URL('../data/startups/manifest.json', import.meta.url), 'utf8'));
+  const sc = startupMan.countries.find((c) => c.slug === 'fr') || startupMan.countries[0];
+  const sd = JSON.parse(rfs(new URL(`../data/startups/${sc.slug}.json`, import.meta.url), 'utf8'));
+  const prog = sd.programmes[0];
+  const org = { id: 'org1', name: 'Acme GmbH' };
+  const NOW = 1786000000000;
+
+  const auth = authorisationRequest({ org, programmes: [prog], cc: sc.slug, now: NOW });
+  ok('the authorisation names the programmes rather than being blanket', auth.scope.length === 1 && auth.scope[0].slug === prog.slug);
+  ok('it expires', typeof auth.expires_at === 'number' && auth.expires_at > NOW);
+  ok('it is revocable', auth.revocable === true);
+  ok('it requires a signatory who can bind the company', auth.signatory_required === true);
+  ok('it states in the artefact that no credentials are requested', auth.credentials_requested === false);
+  ok('and the steps say the client keeps their own password', auth.steps.some((x) => /never receive your password/i.test(x)));
+
+  const pkgNone = buildPackage({ profile: { country_code: sc.slug }, programme: prog, entry: sc, applicant: 'company', asOf: NOW });
+  ok('with no authorisation, filing is blocked', pkgNone.submit.we_submit === false);
+  ok('and the block is a missing artefact with a remedy, not a refusal',
+     pkgNone.blockers.some((b) => b.code === 'authorisation_required' && b.remedy === 'authorisation'));
+
+  const signed = { ...auth, id: 'auth_1' };
+  const pkgOk = buildPackage({ profile: { country_code: sc.slug }, programme: prog, entry: sc, applicant: 'company', authorisation: signed, asOf: NOW });
+  ok('with an authorisation on file, WE submit', pkgOk.submit.we_submit === true && pkgOk.submit.tier === 'submit');
+  ok('and the client does nothing per application', pkgOk.submit.requires_user_action === false);
+  ok('every filing carries the authorisation it was made under', pkgOk.submit.authorisation_id === 'auth_1');
+  ok('and never the client credentials', pkgOk.submit.uses_client_credentials === false);
+
+  const other = { ...signed, scope: [{ slug: 'something-else' }] };
+  ok('a programme outside the scope is refused',
+     buildPackage({ profile: { country_code: sc.slug }, programme: prog, entry: sc, applicant: 'company', authorisation: other, asOf: NOW })
+       .blockers.some((b) => b.code === 'programme_out_of_scope'));
+  ok('a revoked authorisation stops filing',
+     buildPackage({ profile: { country_code: sc.slug }, programme: prog, entry: sc, applicant: 'company', authorisation: { ...signed, revoked_at: NOW }, asOf: NOW })
+       .submit.we_submit === false);
+  ok('an expired one does too',
+     buildPackage({ profile: { country_code: sc.slug }, programme: prog, entry: sc, applicant: 'company', authorisation: { ...signed, expires_at: NOW - 1 }, asOf: NOW })
+       .submit.we_submit === false);
+
+  /* The person path must be exactly as cautious as it was. */
+  const person = buildPackage({ profile: { country_code: sc.slug }, programme: prog, entry: sc, applicant: 'person', asOf: NOW });
+  ok('a person is still never filed for in France', person.submit.requires_user_action === true && person.submit.tier !== 'submit');
+  ok('and the person package has no we_submit flag at all', person.submit.we_submit === undefined);
+}
+
 console.log(`\n${pass} passed, ${fail} failed\n`);
 process.exit(fail ? 1 : 0);

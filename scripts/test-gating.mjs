@@ -306,9 +306,18 @@ if (!failed) {
     linked >= 25
       ? ok(`every one of the ${linked} countries is placed in a tier`)
       : bad(`only ${linked} countries appear on the auto-apply page`);
-    /credential/.test(html)
+    /credential|password/i.test(html)
       ? ok('and it states plainly that we never use your portal credentials')
       : bad('the auto-apply page does not say what prepare-only means');
+    /* The enterprise product IS filing on the company's behalf. A page that
+       tells a company it must submit its own applications is selling the
+       individual product to the wrong buyer. */
+    /we file it/i.test(html)
+      ? ok('the page says plainly that we file for companies')
+      : bad('the auto-apply page applies the individual answer to companies');
+    /consumer-protection/i.test(html)
+      ? ok('and says why the individual answer is different')
+      : bad('the two applicant types are not distinguished');
   }
 }
 
