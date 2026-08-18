@@ -314,6 +314,10 @@ async function resultsView() {
 
   const gate = await fetchMatch({ ...p, country_code: cc }).catch(() => ({ ok: false }));
   state.entitled = !!gate.entitled;
+  /* Remembered for the deadlines screen, which gates on the same answer but
+     renders long after this call and used to offer "sign in to unlock" to
+     people who were already signed in. */
+  state.signedIn = !!(gate.paywall?.reason && gate.paywall.reason !== 'anonymous');
 
   const serverRow = (m) => {
     const d = deadlineState(m, Date.now());
@@ -437,7 +441,11 @@ async function deadlinesView() {
           ${Array.from({ length: Math.min(total, 4) }, () => '<div class="locked__row"></div>').join('')}
         </div>
         <p class="small">Which programme each date belongs to, and the calendar export, are on the paid plan.</p>
-        <button class="btn btn-block btn-primary" data-action="signin">Sign in to unlock</button>
+        ${
+          state.signedIn
+            ? `<button class="btn btn-block btn-primary" data-action="upgrade">Unlock — €50/year</button>`
+            : `<button class="btn btn-block btn-primary" data-action="signin">Sign in to unlock</button>`
+        }
       </section>`,
       { back: 'home', title: 'Deadlines' },
     );
@@ -595,7 +603,9 @@ document.addEventListener('click', async (e) => {
     return;
   }
   if (action.dataset.action === 'signin') {
-    location.href = `${BASE}/account/`;
+    /* Carry the intent across sign-in. Landing on a bare account page loses
+       the reason they clicked, and the reason was to pay. */
+    location.href = `${BASE}/account/?plan=personal_annual`;
     return;
   }
 
