@@ -1547,9 +1547,20 @@ ${disclaimerBar(TR)}
    press the button. Sign-in was silently dead on all six localised account
    pages, and check-links does not resolve module imports so nothing caught
    it. */
-import { requestCode, verifyCode, me } from '${BASE}/app/auth.js';
-import { accountState, awaitEntitlement, upgrade } from '${BASE}/app/checkout.js';
-import { track } from '${BASE}/beacon.js';
+/* ?v= on every one of these, and it is load-bearing rather than tidy.
+   
+   A module specifier that resolves to a STALE copy fails exactly as loudly as
+   one that 404s, which is to say silently: the browser refuses the import, the
+   whole <script type="module"> is abandoned, and the sign-in form goes dead
+   with nothing in the page to show for it. That is precisely how sign-in broke
+   on six localised account pages once already. It happened again the moment
+   checkout.js grew a new export — every browser holding yesterday's copy got
+   "does not provide an export named 'accountState'" and a page that could
+   neither sign in nor pay. Everywhere else on the site already versions its
+   modules; this block was the one that did not. */
+import { requestCode, verifyCode, me } from '${BASE}/app/auth.js?v=${ASSET_V}';
+import { accountState, awaitEntitlement, upgrade } from '${BASE}/app/checkout.js?v=${ASSET_V}';
+import { track } from '${BASE}/beacon.js?v=${ASSET_V}';
 
 const $ = (s) => document.querySelector(s);
 const msg = $('#auth-msg');
