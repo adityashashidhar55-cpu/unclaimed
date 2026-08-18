@@ -32,7 +32,7 @@ import {
 import { LOCALES, LANGS, t as translator } from './i18n.mjs';
 import { iconPng } from './icon-raster.mjs';
 import { POSTS, blogFacts } from './blog.mjs';
-import { policyFor, autoApplyTier, railFor, AUTOMATION } from '../packages/policy/index.js';
+import { policyFor, autoApplyTier, railFor, AUTOMATION, companyPolicyFor } from '../packages/policy/index.js';
 import { DOC_TYPES } from '../packages/vault/index.js';
 import { INSTRUMENTS, isFreeMoney, reachFor } from './engine/startup.js';
 import { DE_MINIMIS_CEILING_EUR, REGULATION } from '../packages/stateaid/index.js';
@@ -1510,15 +1510,49 @@ function autoApplyPage() {
     },
   ];
 
+  const companyRows = manifest.countries
+    .map((c) => ({ c, pol: companyPolicyFor(c.slug) }))
+    .sort((a, b) => a.c.name.localeCompare(b.c.name));
+  const RAIL_LABEL = {
+    delegated_account: 'a delegated account on your own portal login',
+    registered_power: 'a government-registered power of attorney',
+    signed_mandate: 'a signed letter of authorisation',
+  };
+
   const body = `
 ${disclaimerBar(TR)}
 <section class="section-tight shell">
   ${breadcrumbs([{ label: TR('backHome'), href: `${LB()}/` }, { label: 'Auto-apply by country' }])}
   <span class="eyebrow eyebrow-accent">Auto-apply</span>
-  <h1 style="max-width:20ch">Where we can <em class="serif-italic">press submit</em>, and where you must</h1>
-  <p class="lede" style="max-width:60ch">Auto-apply is a legal question, not a feature toggle, and it has a different answer in
-  every country. This is the whole list — read from the same policy table the software obeys, so it cannot promise something
-  the product will then refuse to do.</p>
+  <h1 style="max-width:24ch">We file for <em class="serif-italic">companies</em>. For individuals, you press submit.</h1>
+  <p class="lede" style="max-width:62ch">These are two different legal questions and they have opposite answers, so the product
+  gives two different guarantees. Both are read from the same policy table the software obeys, so this page cannot promise
+  something the product will then refuse to do.</p>
+
+  <div class="panel panel--float" style="margin-top:2rem;border-left:3px solid var(--accent,#2f6f4f)">
+    <span class="eyebrow eyebrow-accent">Companies · every jurisdiction we cover</span>
+    <h2 style="font-size:1.45rem;margin:.4rem 0 .5rem">We prepare it, we file it, we chase it</h2>
+    <p class="small" style="max-width:64ch">Appointing an agent to prepare and submit funding applications is ordinary
+    commercial practice — it is what grant consultants, R&amp;D tax credit firms and EU funding advisors do, and the portals are
+    built for it. Horizon Europe has the LEAR precisely so a legal entity can appoint people to act for it. You sign one scoped
+    authorisation naming the programmes; after that there is nothing per application.</p>
+    <p class="small" style="max-width:64ch;margin-top:.8rem"><strong>What we never ask for is your password.</strong> Authority
+    reaches us the way the portal intends: ${[...new Set(companyRows.map((r) => RAIL_LABEL[r.pol.rail]))].join(', or ')}. Your
+    administrator grants it from inside your own account and revokes it in one click. Every filing we make carries the id of the
+    authorisation it was made under, so the audit trail answers "who allowed this" without anyone reconstructing it.</p>
+    <p class="small" style="margin-top:.9rem"><strong>Scoped, not blanket.</strong> The mandate names the programmes, the
+    signatory and an expiry date — the version a finance director will actually sign, and the version a funder will accept if it
+    asks to see it.</p>
+    <p style="margin-top:1.4rem">
+      <a class="btn btn-primary" href="${SB()}/startups/check/">See what your company qualifies for</a>
+      <a class="btn" href="${LB()}/enterprise/">What the workspace does</a>
+    </p>
+  </div>
+
+  <h2 style="margin-top:3rem;font-size:1.3rem">Individuals: a different law, and a different answer</h2>
+  <p class="small" style="max-width:62ch">The statutes here are consumer-protection ones — they exist because someone on
+  subsistence benefits is vulnerable to an intermediary taking a cut. They are addressed to benefit claims by a natural person
+  and they do not reach a company's grant application, which is why the two halves of this page disagree.</p>
 
   ${TIERS.map((t) => {
     const list = rows.filter((r) => r.pol.automation === t.id);
@@ -1533,15 +1567,10 @@ ${disclaimerBar(TR)}
   }).join('')}
 
   <div class="callout" style="margin-top:1.8rem">
-    <p><strong>What "prepare" actually means.</strong> Not a checklist. The application is filled in from the answers you already
-    gave, the supporting documents are named and attached from your vault, the wording is drafted, and the deadline is tracked.
-    What is left is the signature and the submit button, which have to be yours.</p>
-  </div>
-
-  <div class="callout callout--sage" style="margin-top:1.2rem">
-    <p><strong>Business accounts.</strong> Company and enterprise plans get the same preparation across every jurisdiction in the
-    startup dataset, plus mandate handling where the law allows it. See <a class="link-underline" href="${LB()}/enterprise/">what the
-    workspace does</a>.</p>
+    <p><strong>What "prepare" actually means for an individual.</strong> Not a checklist. The application is filled in from the
+    answers you already gave, the supporting documents are named and attached from your vault, the wording is drafted, and the
+    deadline is tracked. What is left is the signature and the submit button, which have to be yours — and that is the part the
+    law is about, not a gap in the software.</p>
   </div>
 </section>`;
 
