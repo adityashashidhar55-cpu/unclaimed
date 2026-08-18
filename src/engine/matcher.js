@@ -202,7 +202,131 @@ export function isEmployerAid(p) {
  * invent the threshold, but we can stop pretending the test passed.
  */
 const MEANS_TESTED =
-  /\b(means-test|means test|income-test|income test|subject to (income|resource)|sous condition de ressources|conditions de ressources|selon les ressources|einkommensabhängig|bedürftigkeitsprüfung|en función de la renta|prova dei mezzi|income (limit|threshold|ceiling|cap)|low-income|modest income|income-related|inkomensafhankelijk)\b/i;
+  /\b(means-test|means test|income-test|income test|subject to (income|resource)|sous condition de ressources|conditions de ressources|selon les ressources|einkommensabhängig|bedürftigkeitsprüfung|en función de la renta|prova dei mezzi|income (limit|threshold|ceiling|cap)|low[- ]income|modest income|income-related|inkomensafhankelijk)\b/i;
+
+/**
+ * "You must already be receiving X."
+ *
+ * This is the single biggest source of wrong answers in the product, and it is
+ * one concept the matcher simply did not have. A very large share of records
+ * are PASSPORTED: they are not means-tested in their own right, they are open
+ * to whoever already holds another benefit. The structured fields have nothing
+ * to say about that, so the rule survives only in prose —
+ *
+ *   Navigo 50%%: "Île-de-France residents receiving listed CAF solidarity benefits"
+ *   BT Home Essentials: "customers on Universal Credit, Pension Credit, Income Support"
+ *   Blue Badge: "Automatic eligibility for certain benefits (higher-rate DLA, PIP…)"
+ *
+ * — and the matcher, seeing no structured constraint, passed every one of them
+ * and told a person on EUR 60,000 a year they could claim a fare reserved for
+ * people on subsistence benefits. Every social tariff, every travel
+ * concession, every "help with NHS costs" scheme has this shape.
+ *
+ * We cannot verify receipt, and we must not guess it. What we can do is stop
+ * asserting it: these move to the conditional bucket, out of the total, and
+ * say which benefit they hang off, so the reader can answer for themselves.
+ */
+const PASSPORT_BENEFITS = [
+  ['Universal Credit', /\buniversal credit\b/i],
+  ['Pension Credit', /\bpension credit\b/i],
+  ['Income Support', /\bincome support\b/i],
+  ['Jobseeker\u2019s Allowance', /\bjobseeker'?s allowance\b|\bJSA\b/i],
+  ['Employment and Support Allowance', /\bemployment and support allowance\b|\bESA\b/i],
+  ['PIP or DLA', /\bpersonal independence payment\b|\bPIP\b|\bdisability living allowance\b|\bDLA\b|\battendance allowance\b/i],
+  ['Tax Credits', /\bworking tax credit\b|\bchild tax credit\b/i],
+  ['RSA', /\bRSA\b|revenu de solidarit[ée]/i],
+  ['ASS or AAH', /\bASS\b|\bAAH\b|allocation aux adultes handicap/i],
+  ['a CAF solidarity benefit', /\bCAF\b|prestations? de solidarit[ée]|minima sociaux/i],
+  ['C2S / CMU', /\bC2S\b|\bCMU\b|compl[ée]mentaire sant[ée] solidaire/i],
+  ['Bürgergeld', /b[üu]rgergeld|sozialhilfe|grundsicherung|wohngeld/i],
+  ['a social-assistance payment', /\bIMV\b|ingreso m[íi]nimo vital|reddito di cittadinanza|assegno di inclusione|bijstandsuitkering|social assistance|sozialleistung/i],
+];
+
+const PASSPORT_SHAPE =
+  /\b(recipients? of|receiving|in receipt of|claimants? of|people on|anyone on|customers on|those on|households? on|open to (anyone|people) on|b[ée]n[ée]ficiaires? d[eu]|titulaires? d[eu]|perceptores de|beneficiari d[ie]|automatic eligibility for certain benefits|passported|means-tested benefits?)\b/i;
+
+/**
+ * Which benefit a record is passported from, or null if it is not passported.
+ * Returns a human phrase, because "you must already receive something" is not
+ * an answer anyone can act on.
+ */
+export function passportedFrom(p) {
+  if (p.derived?.passported !== undefined) return p.derived.passported;
+  const e = p.eligibility || {};
+  /* A record that a researcher has priced and status-gated is not passported
+     by accident; only trust the prose where the structured rule is silent. */
+  const prose = `${e.income_note ?? ''} ${p.source_snippet ?? ''} ${p.amount_note ?? ''}`;
+  if (!PASSPORT_SHAPE.test(prose)) return null;
+  /* A record must not be passported from itself. Universal Credit's own page
+     says "Universal Credit" in every other sentence, and reading that as a
+     precondition told a claimant they could have Universal Credit if only they
+     already had Universal Credit. */
+  const own = `${p.name_en ?? ''} ${p.name_local ?? ''}`;
+  const named = PASSPORT_BENEFITS.filter(([, re]) => re.test(prose) && !re.test(own)).map(([label]) => label);
+  /* Only ever report a passport we can NAME.
+     
+     The first version fell back to "another benefit you must already be
+     receiving" whenever the sentence shape appeared without a benefit it
+     recognised. That fired on Universal Credit's own record — whose page
+     naturally discusses benefits at length — and produced the absurd condition
+     that you may have Universal Credit provided you already receive something.
+     An unnamed passport is also useless to the reader: "you already receive
+     Universal Credit" is a question they can answer, "another benefit" is not.
+     Where we cannot name it, we say nothing, and the record is judged on the
+     rules we do hold. */
+  return named.length ? named.slice(0, 3).join(', ') : null;
+}
+
+/**
+ * Not money you can claim.
+ *
+ * Statutory annual leave, a dispute-resolution service, the absence of income
+ * tax, a wage-protection register — these are rights and services, and several
+ * datasets carry them because the government publishes them on the same
+ * "what you are entitled to" pages. They are worth knowing about and they are
+ * not a grant, so counting them as things you can claim makes the list read as
+ * padding and makes the total meaningless.
+ */
+const STATUTORY_RIGHT =
+  /\b(annual leave|statutory leave|sick leave|dispute resolution|labour claims?|wage protection|end-of-service|gratuity|no (personal )?income tax|tax[- ]free (income|salary)|law protections?|workers'? rights|employment rights|notice period|working hours|health and safety)\b/i;
+
+export function isStatutoryRight(p) {
+  if (p.derived?.statutory_right != null) return p.derived.statutory_right;
+  return STATUTORY_RIGHT.test(`${p.name_en} ${p.name_local}`);
+}
+
+/**
+ * Citizens only, said in the title rather than in the nationality field.
+ *
+ * 98%% of records carry a `nationality` value, and a great many of them say
+ * `any_resident` while the programme's own name says "for Emiratis" or "for
+ * UAE Nationals". An expatriate reading the results was being told they could
+ * claim free university tuition reserved for citizens.
+ */
+const CITIZENS_ONLY =
+  /\b(for (emiratis|uae nationals|nationals|citizens)|emiratis? only|nationals only|citizens only|saudi nationals|qatari nationals|kuwaiti nationals|bahraini nationals|omani nationals)\b/i;
+
+export function isCitizensOnly(p) {
+  if (p.derived?.citizens_only != null) return p.derived.citizens_only;
+  return CITIZENS_ONLY.test(`${p.name_en} ${p.name_local} ${p.eligibility?.income_note ?? ''}`);
+}
+
+/**
+ * Discretionary hardship aid: a caseworker decides, not a rule.
+ *
+ * Red Crescent grants, Zakat funds, church and charity hardship funds, debt
+ * relief funds. They publish no threshold because there is not one — an
+ * assessor looks at your circumstances. Listing them flat alongside a
+ * statutory allowance tells the reader they qualify for something no algorithm
+ * can promise them.
+ */
+const HARDSHIP_AID =
+  /\b(red crescent|red cross|zakat|charit(y|able)|humanitarian aid|hardship fund|emergency (fund|assistance|relief)|debt relief|benevolent|almon|caritas|st vincent|social fund|discretionary (assistance|payment|fund)|crisis (grant|payment|support|scheme)|welfare assistance|dar al ber|society assistance)\b/i;
+
+export function isHardshipAid(p) {
+  if (p.derived?.hardship_aid != null) return p.derived.hardship_aid;
+  return HARDSHIP_AID.test(`${p.name_en} ${p.name_local} ${p.funder_en ?? ''} ${p.funder_local ?? ''}`);
+}
 
 export function isUnpricedMeansTest(p) {
   if (p.eligibility?.income_annual_max != null) return false;
@@ -215,7 +339,9 @@ export function isUnpricedMeansTest(p) {
   if (declared === 'unpublished') return true;
   if (p.derived?.means_tested != null) return p.derived.means_tested;
   return MEANS_TESTED.test(
-    `${p.eligibility?.income_note ?? ''} ${p.source_snippet ?? ''} ${p.amount_note ?? ''}`,
+    /* The name counts. "NHS Low Income Scheme" announces its own means test in
+       four words, and scanning only the notes missed it. */
+    `${p.name_en} ${p.name_local ?? ''} ${p.eligibility?.income_note ?? ''} ${p.source_snippet ?? ''} ${p.amount_note ?? ''}`,
   );
 }
 
@@ -277,42 +403,71 @@ export function audienceTags(p) {
  * the user has said the circumstance applies to them. They are never counted
  * in the headline figure.
  */
+/*
+ * NOTE ON THESE REGEXES: leading \b, never a trailing one.
+ *
+ * They used to end `)\b/i`, and every alternative in them is a STEM — so the
+ * trailing boundary made each stem unable to match the very word it is the
+ * stem of. `disab` and `disabilit` both failed on "disability", because the
+ * next character is a letter. `bereave` failed on "Bereavement". The result
+ * was that the disability tag matched almost nothing, and disability
+ * programmes were presented as straight matches to people who had never said
+ * they were disabled — which is exactly what a reader on EUR 60,000 saw when
+ * they were offered a disabled parking permit.
+ */
 export const CIRCUMSTANCES = [
+  {
+    /* Not a life event like the rest, but it behaves identically: a thing only
+       the reader can confirm, which unlocks a large set of records when true.
+       Putting it here means the whole conditional mechanism — the caveat line,
+       the "this does apply to me" button, the recount — works for passporting
+       without inventing a second one. */
+    id: 'on_benefits',
+    label: 'I already receive an income-related benefit (Universal Credit, RSA, Bürgergeld, or similar)',
+    short: 'already receiving an income-related benefit',
+    re: /$a^/,
+  },
+  {
+    id: 'hardship',
+    label: 'I am in financial hardship and would pass a caseworker assessment',
+    short: 'in financial hardship, assessed case by case',
+    re: /$a^/,
+  },
   {
     id: 'disability',
     label: 'I have a disability or long-term health condition',
     short: 'disability or long-term condition',
-    re: /\b(disab|disabilit|personal independence payment|\bPIP\b|attendance allowance|disability living|\bDLA\b|invalidity|invalidez|incapacit|behinderung|handicap|wheelchair|blind|deaf|visually impaired|hearing impaired|impairment|discapacidad|disabilit[àa]|invalidité|handicapé)/i,
+    re: /\b(disab|disabilit|personal independence payment|\bPIP\b|attendance allowance|disability living|\bDLA\b|invalidity|invalidez|incapacit|behinderung|handicap|wheelchair|blind|deaf|visually impaired|hearing impaired|impairment|discapacidad|disabilit[àa]|invalidité|handicapé|blue badge|reduced mobility|mobility scheme|accessible parking|disabled parking|badge de stationnement|carte mobilit[ée] inclusion|schwerbehinder|people of determination|determination card)/i,
   },
   {
     id: 'carer',
     label: 'I care unpaid for someone who is ill, elderly or disabled',
     short: 'unpaid carer',
-    re: /\b(carer|caregiver|caring for|care allowance|pflegegeld|aidant|cuidador|badante|care leave)\b/i,
+    re: /\b(carer|caregiver|caring for|care allowance|pflegegeld|aidant|cuidador|badante|care leave)/i,
   },
   {
     id: 'sickness',
     label: "I'm off work sick, or recovering from illness or injury",
     short: 'off work sick or injured',
-    re: /\b(sick pay|sickness benefit|sickness allowance|illness benefit|injury benefit|incapacity benefit|krankengeld|arbeitsunfähig|indemnité journalière|baja por enfermedad)\b/i,
+    re: /\b(sick pay|sickness benefit|sickness allowance|illness benefit|injury benefit|incapacity benefit|krankengeld|arbeitsunfähig|indemnité journalière|baja por enfermedad)/i,
   },
   {
     id: 'newbaby',
     label: "I'm pregnant, or have a baby or newly adopted child",
     short: 'pregnancy, new baby or adoption',
-    re: /\b(maternity|paternity|parental (leave|allowance|benefit|pay)|pregnan|newborn|new born|birth grant|baby bonus|adoption (grant|allowance|pay)|elterngeld|mutterschaft|congé parental|maternidad|natalidad)\b/i,
+    re: /\b(maternity|paternity|parental (leave|allowance|benefit|pay)|pregnan|newborn|new born|birth grant|baby bonus|adoption (grant|allowance|pay)|elterngeld|mutterschaft|congé parental|maternidad|natalidad)/i,
   },
   {
     id: 'bereavement',
     label: "I've recently lost a partner or close family member",
     short: 'recent bereavement',
-    re: /\b(bereave|widow|widower|funeral|survivor'?s? (pension|benefit|allowance)|death grant|orphan|hinterbliebenen|viudedad|pension de r[ée]version)\b/i,
+    re: /\b(bereave|widow|widower|funeral|survivor'?s? (pension|benefit|allowance)|death grant|orphan|hinterbliebenen|viudedad|pension de r[ée]version)/i,
   },
   {
     id: 'veteran',
     label: "I'm a veteran or served in the armed forces",
     short: 'armed-forces service',
-    re: /\b(veteran|war pension|armed forces|ex-service|military service|anciens combattants)\b/i,
+    re: /\b(veteran|war pension|armed forces|ex-service|military service|anciens combattants)/i,
   },
 ];
 
@@ -391,7 +546,26 @@ function evalProgramme(p, profile, entry) {
 
   // 2. Status
   if (e.statuses && e.statuses.length > 0) {
-    if (e.statuses.includes(profile.status)) {
+    /* `status` is one answer, and "parent" is not one of the things it can be.
+       
+       The wizard asks what you do — employed, self-employed, student, retired,
+       out of work — and separately how many children live with you. But the
+       dataset uses `parent` as a status, so an employed mother of two failed
+       Child Benefit on the sentence "This programme is for parents". She is a
+       parent; she just also has a job. `jobseeker` and `unemployed` are the
+       same word in most datasets and were the same kind of near-miss.
+       
+       So a status requirement is satisfied by the ANSWERS, not only by the one
+       radio button: being a parent is having children, and a jobseeker is
+       someone out of work. */
+    const satisfiesStatus = (want) => {
+      if (want === profile.status) return true;
+      if (want === 'parent') return (profile.children_count ?? 0) > 0;
+      if (want === 'jobseeker') return profile.status === 'unemployed';
+      if (want === 'unemployed') return profile.status === 'jobseeker';
+      return false;
+    };
+    if (e.statuses.some(satisfiesStatus)) {
       verdicts.push({
         outcome: 'pass',
         attribute: 'status',
@@ -632,6 +806,10 @@ export function match(profile, countryData, manifestEntry) {
   const notEligible = [];
   const conditional = [];
   const tapered = [];
+  /* Entitlements that are not money: statutory leave, dispute resolution, the
+     absence of an income tax. Separate bucket so they can be shown without
+     inflating either the count or the total. */
+  const rights = [];
   const claimed = new Set(profile.circumstances || []);
   let dataAsOf = '';
 
@@ -665,6 +843,60 @@ export function match(profile, countryData, manifestEntry) {
     if (isUnpricedMeansTest(p)) {
       caveats.push("an income test whose published threshold we don't hold");
     }
+
+    /* Passporting. The rule lives in prose and cannot be checked from the
+       answers, so it becomes a stated condition rather than a silent pass —
+       and it names the benefit, because "you must already receive something"
+       is not an answer anyone can act on. Declaring `on_benefits` clears it,
+       which is how a claimant on Universal Credit gets the social tariffs they
+       really are entitled to. */
+    /* Charity and hardship funds are assessed case by case by a caseworker who
+       looks at your circumstances. There is no published rule to match on, so
+       presenting one as "you can claim this" is a promise nobody made. */
+    if (isHardshipAid(p) && !claimed.has('hardship')) {
+      caveats.push('you are in financial hardship and pass a caseworker assessment');
+      if (!unmet.includes('hardship')) unmet.push('hardship');
+    }
+
+    /* Some records only say "for people with a disability or health condition"
+       in prose — New Style ESA does exactly that. The tag regexes read names
+       only, on purpose (a childcare credit that mentions disabled children is
+       not a disability programme), so the prose gets its own narrow check and
+       produces a stated condition rather than a tag. */
+    if (
+      !m.circumstances.includes('disability') &&
+      /\bfor people with a (disability|health condition)|requires? a (disability|health condition)|limited capability for work\b/i.test(
+        `${p.eligibility?.income_note ?? ''}`,
+      ) &&
+      !claimed.has('disability')
+    ) {
+      caveats.push('a disability or health condition affecting work');
+      if (!unmet.includes('disability')) unmet.push('disability');
+    }
+
+    const passport = passportedFrom(p);
+    if (passport && !claimed.has('on_benefits')) {
+      caveats.push(`you already receive ${passport}`);
+      if (!unmet.includes('on_benefits')) unmet.push('on_benefits');
+    }
+
+    /* Said in the title, absent from the nationality field. An expatriate was
+       being shown free university tuition reserved for citizens. */
+    if (isCitizensOnly(p) && profile.nationality_group && profile.nationality_group !== 'citizen_or_pr') {
+      m.rules_failed = [...m.rules_failed, 'This programme is for citizens of this country'];
+      notEligible.push(m);
+      continue;
+    }
+
+    /* Rights and services, not claimable money. Kept and shown, because
+       statutory leave and a wage-protection register are worth knowing about,
+       but never counted as something to claim and never added to a total. */
+    if (isStatutoryRight(p)) {
+      m.is_right = true;
+      rights.push(m);
+      continue;
+    }
+
     if (failed.length > 0) {
       notEligible.push(m);
     } else if (tapering.length > 0) {
@@ -773,6 +1005,7 @@ export function match(profile, countryData, manifestEntry) {
     conditional,
     conditional_max: conditionalMax,
     tapered,
+    rights,
     blockers,
     total_min: totalMin,
     total_max: totalMax,
