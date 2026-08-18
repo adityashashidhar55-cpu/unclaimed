@@ -329,6 +329,7 @@ const NAV = [
   ['opportunities', 'Opportunities'],
   ['pipeline', 'Pipeline'],
   ['applications', 'Applications'],
+  ['filing', 'Auto-file'],
   ['documents', 'Documents'],
   ['deadlines', 'Deadlines'],
   ['postaward', 'Post-award'],
@@ -2083,6 +2084,212 @@ function postawardView() {
 /* Render                                                              */
 /* ------------------------------------------------------------------ */
 
+/* ------------------------------------------------------------------ */
+/* Auto-file: the queue we run on the company's behalf                 */
+/* ------------------------------------------------------------------ */
+
+/**
+ * The enterprise product, on screen.
+ *
+ * Everything else in this workspace is a place to keep track of work the
+ * client does. This is the one screen where the work is ours: the company
+ * signs one scoped authorisation, and after that filings move through the
+ * queue without anybody here remembering to do anything.
+ *
+ * Server-owned state, deliberately. The pipeline and the companies live in the
+ * workspace document because they are the client's notes and nobody else needs
+ * them; a filing is a thing we did on their behalf and its history has to
+ * survive a browser, be readable by two colleagues at once, and be answerable
+ * to a funder. That is a table, not a JSON blob.
+ */
+const filing = { authorisations: [], applications: [], counts: {}, loaded: false, error: null, busy: false };
+
+const FILING_STATE_LABEL = {
+  queued: 'Queued',
+  preparing: 'Preparing',
+  needs_input: 'Needs something from you',
+  ready: 'Ready to file',
+  submitted: 'Filed',
+  acknowledged: 'Acknowledged by funder',
+  awarded: 'Awarded',
+  rejected: 'Rejected',
+  withdrawn: 'Withdrawn',
+  failed: 'Could not file',
+};
+
+async function filingFetch(path, init) {
+  const res = await fetch(`/api/enterprise/${path}`, {
+    credentials: 'same-origin',
+    cache: 'no-store',
+    headers: { 'content-type': 'application/json' },
+    ...init,
+  });
+  let body = null;
+  try {
+    body = await res.json();
+  } catch {
+    /* A non-JSON body from this API means something upstream answered. */
+  }
+  return { ok: res.ok, status: res.status, body };
+}
+
+export async function loadFiling() {
+  const [a, f] = await Promise.all([filingFetch('authorisations'), filingFetch('applications')]);
+  filing.loaded = true;
+  if (!a.ok) {
+    /* 403 no_organisation is the common one and it is not an error state —
+       it is a personal account looking at a company feature. */
+    filing.error = a.body?.message || a.body?.error || 'could not load';
+    filing.authorisations = [];
+  } else {
+    filing.error = null;
+    filing.authorisations = a.body.authorisations || [];
+  }
+  filing.applications = f.ok ? f.body.applications || [] : [];
+  filing.counts = f.ok ? f.body.counts || {} : {};
+  render();
+}
+
+function liveAuth() {
+  return filing.authorisations.find((x) => x.live) || null;
+}
+
+function authorisationPanel() {
+  const live = liveAuth();
+  if (live) {
+    const until = live.expires_at ? new Date(live.expires_at).toISOString().slice(0, 10) : 'no expiry';
+    return `<div class="panel">
+      <div class="panel__head"><h2>Authority to file</h2>
+        <button class="btn btn-sm" data-act="revoke-auth" data-id="${esc(live.id)}">Revoke</button></div>
+      <p class="small">Signed by <strong>${esc(live.signed_by_name)}</strong> (${esc(live.signed_by_role)}) ·
+      covers ${live.scope.length} programme${live.scope.length === 1 ? '' : 's'} · valid until ${esc(until)}.</p>
+      <p class="tiny">Revoking stops everything not yet filed, immediately. Filings already submitted stay on the
+      record — we cannot unsend them, and showing otherwise would be the lie.</p>
+    </div>`;
+  }
+  return `<div class="panel">
+    <div class="panel__head"><h2>Authority to file</h2></div>
+    <p class="small">We file as your appointed agent, which needs one signature from someone who can bind the company.
+    It names the programmes, expires, and you revoke it in one click. We never ask for your portal password.</p>
+    <form id="auth-form" style="margin-top:1rem;display:grid;gap:.6rem;max-width:32rem">
+      <input class="field" name="signed_by_name" placeholder="Name of the person signing" required>
+      <input class="field" name="signed_by_role" placeholder="Their role (e.g. Director, CFO)" required>
+      <input class="field" name="signed_by_email" type="email" placeholder="Their email (optional)">
+      <button class="btn btn-primary" type="submit">Sign and authorise</button>
+    </form>
+    <p class="tiny" style="margin-top:.6rem">Scope defaults to every opportunity currently shortlisted in your pipeline.</p>
+  </div>`;
+}
+
+function filingRow(a) {
+  const money =
+    a.amount_max ? `${a.currency || ''}${nf(a.amount_max)}`.trim() : a.amount_min ? `${a.currency || ''}${nf(a.amount_min)}`.trim() : '';
+  const next = {
+    queued: ['preparing', 'Start preparing'],
+    preparing: ['ready', 'Mark ready'],
+    needs_input: ['preparing', 'Resume'],
+    ready: ['submitted', 'File it'],
+    submitted: ['acknowledged', 'Mark acknowledged'],
+    acknowledged: ['awarded', 'Mark awarded'],
+  }[a.state];
+  return `<tr>
+    <td><strong>${esc(a.programme_name || a.programme_slug)}</strong>
+      ${a.funder ? `<div class="tiny">${esc(a.funder)}</div>` : ''}
+      ${a.reference ? `<div class="tiny">Ref ${esc(a.reference)}</div>` : ''}
+      ${a.error ? `<div class="tiny" style="color:var(--warn,#a33)">${esc(a.error)}</div>` : ''}</td>
+    <td><span class="chip">${esc(FILING_STATE_LABEL[a.state] || a.state)}</span></td>
+    <td>${esc(money)}</td>
+    <td>${a.deadline_at ? esc(new Date(a.deadline_at).toISOString().slice(0, 10)) : '—'}</td>
+    <td style="white-space:nowrap">
+      ${next ? `<button class="btn btn-sm" data-act="advance" data-id="${esc(a.id)}" data-to="${next[0]}">${next[1]}</button>` : ''}
+      <button class="btn btn-sm btn-ghost" data-act="trail" data-id="${esc(a.id)}">Trail</button>
+    </td>
+  </tr>`;
+}
+
+function filingView() {
+  if (!filing.loaded) {
+    loadFiling();
+    return `<div class="panel"><p class="small">Loading the filing queue…</p></div>`;
+  }
+  if (filing.error) {
+    return `<div class="panel"><div class="panel__head"><h2>Auto-file</h2></div>
+      <p class="small">${esc(filing.error)}</p>
+      <p class="tiny">Filing is done on behalf of a company, so it needs a business account with an organisation.</p></div>`;
+  }
+
+  const live = liveAuth();
+  const shortlisted = openEntries(ws.pipeline).filter((e) => e.stage === 'shortlist' || e.stage === 'preparing');
+  const already = new Set(filing.applications.map((a) => a.programme_slug));
+  const queueable = shortlisted.filter((e) => !already.has(e.slug));
+
+  const order = ['needs_input', 'ready', 'preparing', 'queued', 'submitted', 'acknowledged', 'awarded', 'rejected', 'withdrawn', 'failed'];
+  const summary = order
+    .filter((k) => filing.counts[k])
+    .map((k) => `<span class="chip">${filing.counts[k]} ${esc(FILING_STATE_LABEL[k].toLowerCase())}</span>`)
+    .join(' ');
+
+  return `
+  ${authorisationPanel()}
+
+  ${
+    live && queueable.length
+      ? `<div class="panel">
+          <div class="panel__head"><h2>Queue ${queueable.length} more</h2>
+            <button class="btn btn-primary btn-sm" data-act="queue-all">File all shortlisted</button></div>
+          <p class="small">${queueable.map((e) => esc(e.name || e.slug)).slice(0, 6).join(' · ')}${queueable.length > 6 ? ` and ${queueable.length - 6} more` : ''}</p>
+        </div>`
+      : ''
+  }
+
+  <p class="small" id="filing-note" role="status" aria-live="polite" style="min-height:1.2em"></p>
+  <pre id="filing-trail" hidden class="tiny" style="white-space:pre-wrap;background:var(--paper-2,#f6f5f2);padding:.8rem;border-radius:.5rem"></pre>
+
+  <div class="panel">
+    <div class="panel__head"><h2>Filing queue</h2></div>
+    ${summary ? `<p class="small">${summary}</p>` : ''}
+    ${
+      filing.applications.length
+        ? `<table class="table"><thead><tr><th>Programme</th><th>State</th><th>Value</th><th>Deadline</th><th></th></tr></thead>
+           <tbody>${filing.applications.map(filingRow).join('')}</tbody></table>`
+        : `<p class="small">Nothing queued yet. Shortlist opportunities, then file them all in one go.</p>`
+    }
+    <p class="tiny" style="margin-top:.8rem">Every state change is written to an append-only trail with who made it and when,
+    so "on what authority did you submit this" has an answer that is a record rather than a recollection.</p>
+  </div>`;
+}
+
+document.addEventListener('submit', async (ev) => {
+  const form = ev.target.closest('#auth-form');
+  if (!form) return;
+  ev.preventDefault();
+  const fd = new FormData(form);
+  /* Scope defaults to what is shortlisted. Blanket authority would be one less
+     field and exactly the thing a finance director will not sign. */
+  const scope = openEntries(ws.pipeline)
+    .filter((e) => e.stage === 'shortlist' || e.stage === 'preparing')
+    .map((e) => ({ slug: e.slug, name: e.name, funder: e.funder }));
+  if (!scope.length) {
+    const note = document.getElementById('filing-note');
+    if (note) note.textContent = 'Shortlist at least one opportunity first — an authorisation names the programmes it covers.';
+    return;
+  }
+  const btn = form.querySelector('button[type=submit]');
+  btn.disabled = true;
+  btn.textContent = 'Signing…';
+  await filingFetch('authorisations', {
+    method: 'POST',
+    body: JSON.stringify({
+      signed_by_name: fd.get('signed_by_name'),
+      signed_by_role: fd.get('signed_by_role'),
+      signed_by_email: fd.get('signed_by_email') || null,
+      country: (ws.companies?.[0]?.country || 'gb').toLowerCase(),
+      scope,
+    }),
+  });
+  await loadFiling();
+});
+
 const VIEWS = {
   overview: overviewView,
   companies: companiesView,
@@ -2100,6 +2307,7 @@ const VIEWS = {
   project: projectView,
   'project-form': () => projectFormView(ws.projects.find((x) => x.id === view.projectId) || null),
   applications: applicationsView,
+  filing: filingView,
   documents: documentsView,
   postaward: postawardView,
 };
@@ -2273,6 +2481,80 @@ function loadDemo() {
 /* Events                                                              */
 /* ------------------------------------------------------------------ */
 
+async function handleFilingAction(el) {
+  if (filing.busy) return;
+  const act = el.dataset.act;
+  const label = el.textContent;
+  filing.busy = true;
+  el.disabled = true;
+  el.textContent = 'Working…';
+
+  try {
+    if (act === 'queue-all') {
+      const auth = liveAuth();
+      const already = new Set(filing.applications.map((x) => x.programme_slug));
+      const items = openEntries(ws.pipeline)
+        .filter((e) => (e.stage === 'shortlist' || e.stage === 'preparing') && !already.has(e.slug))
+        .map((e) => ({
+          slug: e.slug, name: e.name, funder: e.funder, country: e.country,
+          amount_min: e.amount_min ?? null, amount_max: e.amount_max ?? null,
+          currency: e.currency ?? null, deadline_at: e.deadline_at ?? null,
+        }));
+      const res = await filingFetch('applications', {
+        method: 'POST',
+        body: JSON.stringify({ authorisation_id: auth?.id, programmes: items }),
+      });
+      /* Refusals are shown, not swallowed. "already_in_flight" in particular
+         is the guard against filing the same thing at a funder twice, and the
+         user should see that it worked rather than wonder what happened. */
+      if (res.body?.refused?.length) {
+        alertRefusals(res.body.refused);
+      }
+    } else if (act === 'advance') {
+      await filingFetch(`applications/${el.dataset.id}/advance`, {
+        method: 'POST',
+        body: JSON.stringify({ to: el.dataset.to }),
+      });
+    } else if (act === 'revoke-auth') {
+      await filingFetch(`authorisations/${el.dataset.id}/revoke`, { method: 'POST', body: '{}' });
+    } else if (act === 'trail') {
+      const res = await filingFetch(`applications/${el.dataset.id}/events`);
+      showTrail(res.body?.events || []);
+      filing.busy = false;
+      el.disabled = false;
+      el.textContent = label;
+      return;
+    }
+    await loadFiling();
+  } finally {
+    filing.busy = false;
+  }
+}
+
+function alertRefusals(refused) {
+  const say = {
+    already_in_flight: 'already queued or filed',
+    programme_out_of_scope: 'not named in your authorisation',
+    authorisation_revoked: 'authorisation revoked',
+    authorisation_expired: 'authorisation expired',
+  };
+  const el = document.getElementById('filing-note');
+  const text = refused.map((r) => `${r.slug}: ${say[r.code] || r.code}`).join('; ');
+  if (el) el.textContent = text;
+  else console.warn('[filing] refused —', text);
+}
+
+function showTrail(events) {
+  const rows = events
+    .map((e) => `${new Date(e.at).toISOString().slice(0, 16).replace('T', ' ')}  ${e.from_state || 'new'} → ${e.to_state}  (${e.actor === 'system' ? 'system' : 'you'})`)
+    .join('\n');
+  const box = document.getElementById('filing-trail');
+  if (box) {
+    box.textContent = rows || 'No events yet.';
+    box.hidden = false;
+  }
+}
+
 document.addEventListener('click', (ev) => {
   /* Gate actions. These are the only two clicks that work before the gate
      opens, so they are handled first and return. */
@@ -2313,6 +2595,15 @@ document.addEventListener('click', (ev) => {
 
   const card = ev.target.closest('.board__card');
   if (card) return void go('entry', { entryId: card.dataset.entry });
+
+  /* Auto-file. Its own namespace because every one of these hits the server
+     and none of them touch the workspace document — a filing is a thing we did
+     on the client's behalf, not a note they wrote. */
+  const fa = ev.target.closest('[data-act]');
+  if (fa && ['queue-all', 'advance', 'revoke-auth', 'trail'].includes(fa.dataset.act)) {
+    ev.preventDefault();
+    return void handleFilingAction(fa);
+  }
 
   const btn = ev.target.closest('[data-action]');
   if (!btn) return;
