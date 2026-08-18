@@ -288,6 +288,125 @@ export const JURISDICTIONS = {
   },
 };
 
+/* ------------------------------------------------------------------ */
+/* The company applicant, which is a different legal question entirely  */
+/* ------------------------------------------------------------------ */
+
+/**
+ * Everything above this line is about a NATURAL PERSON claiming a social
+ * security benefit, and every instrument cited is a consumer-protection one:
+ * CSS L554-2 protects benefit claimants from paid intermediaries, Legge
+ * 152/2001 reserves the INPS intermediary role to non-profit patronati, the
+ * DWP appointee route is a safeguarding mechanism. They exist because a person
+ * on subsistence benefits is vulnerable to someone charging a cut of it.
+ *
+ * None of that is about a COMPANY applying for a grant, and applying it there
+ * was a category error that quietly disabled the enterprise product. A company
+ * appointing an agent to prepare and file its funding applications is ordinary
+ * commercial practice with its own established profession — grant consultants,
+ * R&D tax credit firms, EU funding advisors — and the portals are built for
+ * it. Horizon Europe has the LEAR precisely so a legal entity can appoint
+ * people to act for it. Innovate UK submits under an authorised representative
+ * of the organisation. Bpifrance accounts carry delegated users.
+ *
+ * So the company path is a separate model with a separate default, and the
+ * default is that we can submit. What it requires is not a statutory carve-out
+ * but the ordinary thing any agent needs: a signed, scoped, revocable
+ * authorisation from a person who can bind the company, and delegated access
+ * granted BY the company on its own portal account — never the company's
+ * password. That distinction is the whole of it: a delegated account is
+ * something the portal issues to us, a shared credential is something we would
+ * be hiding behind.
+ *
+ * `rail` names how authority actually reaches us in that jurisdiction.
+ */
+export const COMPANY_RAIL = {
+  /** The portal issues us our own delegated login under the client's entity. */
+  DELEGATED_ACCOUNT: 'delegated_account',
+  /** A signed letter of authorisation accompanies the application. */
+  SIGNED_MANDATE: 'signed_mandate',
+  /** A registered, government-held power of attorney. */
+  REGISTERED_POWER: 'registered_power',
+};
+
+export const COMPANY_DEFAULT = {
+  /* Submitting a company's grant application as its appointed agent is
+     ordinary practice. The cautious default here is not "we cannot", it is
+     "not without a signed authorisation on file". */
+  may_submit: true,
+  rail: COMPANY_RAIL.SIGNED_MANDATE,
+  requires_authorisation: true,
+  notes:
+    'No jurisdiction-specific research on file for company grants. A signed letter of authorisation naming the programme and the signatory is the working default, and it is what funders ask for when they ask at all.',
+};
+
+export const COMPANY_JURISDICTIONS = {
+  eu: {
+    may_submit: true,
+    rail: COMPANY_RAIL.DELEGATED_ACCOUNT,
+    requires_authorisation: true,
+    basis: [
+      'EU Funding & Tenders Portal — the Legal Entity Appointed Representative (LEAR) appoints Account Administrators and Legal Signatories for the entity; consultants are routinely appointed this way.',
+      'Horizon Europe Grant Agreement — the beneficiary acts through persons it has authorised in the portal.',
+    ],
+    notes: 'Delegated account under the client entity, granted by their LEAR. We never hold the client\u2019s own credentials.',
+  },
+  gb: {
+    may_submit: true,
+    rail: COMPANY_RAIL.DELEGATED_ACCOUNT,
+    requires_authorisation: true,
+    basis: [
+      'Innovate UK Funding Service — applications are submitted by a named person authorised by the organisation; collaborators and consultants are added to the application team.',
+      'HMRC R&D relief is filed by the company or its agent under an agent authorisation.',
+    ],
+    notes: 'Added to the application team by the client. Agent authorisation is the norm in UK innovation funding.',
+  },
+  fr: {
+    may_submit: true,
+    rail: COMPANY_RAIL.DELEGATED_ACCOUNT,
+    requires_authorisation: true,
+    basis: [
+      'Bpifrance / France 2030 portals issue accounts to the company, which may add users, including external advisors.',
+      'CSS L554-2 and the CASF/CCH prohibitions are addressed to intermediaries procuring SOCIAL BENEFITS for individuals; they do not reach a company\u2019s subsidy application.',
+    ],
+    notes:
+      'The French benefit prohibition does not apply here and must not be carried across. Different applicant, different statute, different product.',
+  },
+  es: {
+    may_submit: true,
+    rail: COMPANY_RAIL.REGISTERED_POWER,
+    requires_authorisation: true,
+    basis: ['Registro Electr\u00f3nico de Apoderamientos \u2014 a legal person may hold a registered apoderamiento to act before the administration.'],
+    notes: 'The strongest rail we have: a government-registered power, already modelled for the person side.',
+  },
+  de: {
+    may_submit: true,
+    rail: COMPANY_RAIL.SIGNED_MANDATE,
+    requires_authorisation: true,
+    basis: [
+      'F\u00f6rderportal des Bundes / easy-Online \u2014 the applicant entity submits through authorised persons.',
+      'RDG reserves individual legal ASSESSMENT; preparing and filing a subsidy application on published criteria is not that.',
+    ],
+    notes: 'Signed authorisation plus a portal user under the client entity.',
+  },
+};
+
+/** How a company\u2019s grant application may be filed in this jurisdiction. */
+export function companyPolicyFor(cc) {
+  return COMPANY_JURISDICTIONS[String(cc || '').toLowerCase()] ?? COMPANY_DEFAULT;
+}
+
+/**
+ * One question, two very different answers depending on who is applying.
+ *
+ * Ask this rather than policyFor().automation whenever the applicant might be
+ * a company; policyFor() answers only for a natural person claiming a benefit.
+ */
+export function mayFileOnBehalf(cc, applicant = 'person') {
+  if (applicant === 'company') return companyPolicyFor(cc).may_submit === true;
+  return maySubmitOnBehalf(cc);
+}
+
 /** Countries with no explicit entry default to the cautious position. */
 export const DEFAULT_POLICY = {
   chargeable: SELLS_EVERYTHING,
