@@ -557,7 +557,17 @@ const fullProfile = {
   age: 34, nationality_group: 'citizen_or_pr', admin_area: null,
 };
 const gbResult = match(fullProfile, gbData, gbEntry);
-ok('a fully answered profile returns eligible programmes', gbResult.eligible.length > 5);
+/* This used to demand more than five straight matches, and it got them by
+   counting records whose real rule ("you must already be on Universal Credit",
+   "you must be disabled") lived in prose the matcher never read. Tightening
+   that dropped the number, correctly. What matters is that a fully answered
+   profile gets a usable answer — matches plus clearly-labelled conditions —
+   not that the first bucket is padded. */
+ok('a fully answered profile returns eligible programmes', gbResult.eligible.length > 0);
+ok(
+  'and every conditional record says what the condition is',
+  gbResult.conditional.length > 0 && gbResult.conditional.every((m) => (m.condition_label || '').length > 3),
+);
 ok('and a non-zero total', gbResult.total_max > 0);
 
 /* Every attribute the matcher can block on must be reachable in the app. */

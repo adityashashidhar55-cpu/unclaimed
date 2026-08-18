@@ -273,5 +273,44 @@ if (!failed) {
     : bad('a second webhook event overwrites the stored plan with null');
 }
 
+/* The answers must survive signing in.
+   
+   They lived only in the location hash. Signing in navigates to /account/ and
+   back, so country, age, income and household were all gone by the time the
+   user returned — thrown away at the exact moment someone has decided to pay. */
+{
+  const app = fs.readFileSync(path.join(ROOT, 'src/app.js'), 'utf8');
+  /PROFILE_KEY/.test(app) && /localStorage\.setItem\(PROFILE_KEY/.test(app)
+    ? ok('the wizard keeps the answers on the device')
+    : bad('the answers exist only in the URL and are lost on any navigation');
+  /const saved = loadProfile\(\)/.test(app)
+    ? ok('and reads them back when there is no hash to restore from')
+    : bad('saved answers are written and never read');
+  /saved_at/.test(app) && /90 \* 864e5/.test(app)
+    ? ok('stale answers expire rather than being silently reused')
+    : bad('a year-old income figure would be reused without asking');
+}
+
+/* Auto-apply is a legal question with a different answer per country, and the
+   product sells it. The page that says which is which must exist and must be
+   generated from the policy table rather than written by hand. */
+{
+  const f = path.join(DIST, 'auto-apply/index.html');
+  if (!fs.existsSync(f)) bad('there is no page saying where auto-apply is possible');
+  else {
+    const html = fs.readFileSync(f, 'utf8');
+    /registered mandate/.test(html)
+      ? ok('the auto-apply page names the mandate tier')
+      : bad('the auto-apply page does not distinguish submit-for-you from prepare-only');
+    const linked = (html.match(/class="link-underline" href="[^"]*\/[a-z]{2}\//g) || []).length;
+    linked >= 25
+      ? ok(`every one of the ${linked} countries is placed in a tier`)
+      : bad(`only ${linked} countries appear on the auto-apply page`);
+    /credential/.test(html)
+      ? ok('and it states plainly that we never use your portal credentials')
+      : bad('the auto-apply page does not say what prepare-only means');
+  }
+}
+
 console.log(`\n${passed} passed, ${failed} failed\n`);
 process.exit(failed ? 1 : 0);
