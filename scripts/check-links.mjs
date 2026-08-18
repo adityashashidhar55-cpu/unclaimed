@@ -100,6 +100,30 @@ for (const file of htmlFiles) {
       }
     }
   }
+  /* Resolving is not enough: an unversioned specifier resolves perfectly and
+     still loads YESTERDAY's copy out of the browser cache. When that copy
+     predates an export the page now imports, the browser refuses the module
+     and abandons the entire <script type="module"> — no error on the page, no
+     sign-in, no checkout. That has now happened twice, once from a 404 and
+     once from a stale cache, and both times it read as "sign-in is broken for
+     everyone". Every first-party module import must carry the asset version. */
+  const unversioned = [];
+  for (const file of htmlFiles) {
+    const html = fs.readFileSync(file, 'utf8');
+    for (const block of html.matchAll(/<script[^>]*type="module"[^>]*>([\s\S]*?)<\/script>/g)) {
+      for (const m of block[1].matchAll(/(?:from|import)\s+['"](\/[^'"]+)['"]/g)) {
+        if (!/[?&]v=/.test(m[1])) unversioned.push(`${path.relative(DIST, file)} imports ${m[1]}`);
+      }
+    }
+  }
+  if (unversioned.length) {
+    console.error(`\n  ✗ ${unversioned.length} inline module imports carry no ?v= and can load a stale copy:`);
+    for (const b of unversioned.slice(0, 10)) console.error(`      ${b}`);
+    console.error('');
+    process.exit(1);
+  }
+  console.log(`  ✓ every inline module import is version-pinned`);
+
   if (broken.length) {
     console.error(`\n  ✗ ${broken.length} inline module imports do not resolve:`);
     for (const b of broken.slice(0, 10)) console.error(`      ${b}`);
