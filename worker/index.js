@@ -1056,7 +1056,18 @@ async function handleCheckout(request, env) {
     business_annual: { price: env.STRIPE_PRICE_BUSINESS_ANNUAL, seats: true, account: 'business' },
   };
 
-  const planKey = String(body.plan ?? 'personal_annual');
+  /* 'auto' is what the locked panels ask for.
+     
+     They are rendered into a static page long before anyone signs in, so they
+     cannot name a plan — and hardcoding personal_annual sold a business
+     account a single seat at 7 euros a month, which is not the licence their
+     colleagues need. The session knows which door this user came in by, and
+     the session lives here, so the resolution lives here too: one rule, in the
+     one place that holds the authoritative answer. Annual, because that is the
+     plan every button that says "auto" is labelled with. */
+  const requested = String(body.plan ?? 'personal_annual');
+  const planKey =
+    requested === 'auto' ? (session.typ === 'business' ? 'business_annual' : 'personal_annual') : requested;
   const plan = PLANS[planKey];
   if (!plan) return bad(`unknown plan: ${planKey}`);
   if (!plan.price || plan.price.startsWith('price_REPLACE')) {
@@ -1428,6 +1439,11 @@ async function handleMe(request, env) {
     signed_in: true,
     email: session.email,
     admin: !!session.adm,
+    /* Which door they came in by. The account page needs this to offer the
+       right plan: a business account was being shown Personal at 7 euros a
+       month, which is not the product they signed up for and not the seat
+       licence their colleagues need. Operator sessions carry no account type. */
+    account_type: session.typ ?? null,
     entitlement: ent,
   });
 }
@@ -1823,9 +1839,29 @@ export default {
       if (pathname === '/auth/request' && request.method === 'POST') return withCors(await handleAuthRequest(request, env));
       if (pathname === '/auth/verify' && request.method === 'POST') return withCors(await handleAuthVerify(request, env));
       if (pathname === '/auth/signout') {
+        /* Signing out is a state change, so a GET has to prove it came from a
+           click and not from an <img src="/auth/signout"> on someone else's
+           page. Sec-Fetch-* is set by the browser and cannot be forged by
+           page script; a cross-site image request arrives as dest=image,
+           site=cross-site and is refused. POST is always accepted — that is
+           the packaged app, which sends a bearer token and no cookie.
+           Requests with no Sec-Fetch headers at all (older clients, curl) are
+           allowed through: refusing them would break sign-out for the sake of
+           an attack that needs a browser to work. */
+        const dest = request.headers.get('sec-fetch-dest');
+        const site = request.headers.get('sec-fetch-site');
+        const topLevel = !dest || dest === 'document' || dest === 'empty';
+        const ourOwn = !site || site === 'same-origin' || site === 'same-site' || site === 'none';
+        if (request.method !== 'POST' && !(topLevel && ourOwn)) {
+          return withCors(json({ error: 'cross_site_signout_refused' }, 403));
+        }
+        const clear = 'ua_session=; Path=/; HttpOnly; Secure; SameSite=Lax; Max-Age=0';
+        if (request.method === 'POST') {
+          return withCors(json({ ok: true }, 200, { 'set-cookie': clear }));
+        }
         return withCors(new Response(null, {
           status: 302,
-          headers: { location: `${env.APP_ORIGIN}/`, 'set-cookie': 'ua_session=; Path=/; Max-Age=0' },
+          headers: { location: `${env.APP_ORIGIN}/`, 'set-cookie': clear },
         }));
       }
 
