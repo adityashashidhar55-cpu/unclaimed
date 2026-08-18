@@ -233,7 +233,21 @@ export function planWithinCeiling(matches, { awards, memberState, asOf = Date.no
 export function declarationText(awards, memberState, asOf = Date.now(), lang = 'en') {
   const room = headroom(awards, memberState, asOf);
   const listed = awardsInWindow(awards, asOf, memberState)
-    .map((a) => `  - ${a.funder || 'Unnamed body'}: €${Number(a.amount_eur).toLocaleString('en')} (${String(a.granted_at).slice(0, 10)})`)
+    /* Tolerant about the field names and the date format on purpose. This is a
+       sworn declaration someone pastes into a real application, and the
+       workspace has been writing `programme` where this read `funder`, and an
+       epoch number where this sliced the first ten characters of a string. The
+       result was a line reading "- Unnamed body: €50,000 (1748736000)". Being
+       strict here would only mean the wrong text is produced more loudly. */
+    .map((a) => {
+      const who = a.funder || a.programme || a.name || 'Unnamed body';
+      const when = a.granted_at ?? a.awarded_at ?? a.decided_at;
+      const iso =
+        typeof when === 'number' || /^\d+$/.test(String(when ?? ''))
+          ? new Date(Number(when)).toISOString().slice(0, 10)
+          : String(when ?? '').slice(0, 10);
+      return `  - ${who}: €${Number(a.amount_eur).toLocaleString('en')} (${iso || 'date not recorded'})`;
+    })
     .join('\n');
 
   const T = {
