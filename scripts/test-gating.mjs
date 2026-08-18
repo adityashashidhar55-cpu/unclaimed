@@ -185,5 +185,85 @@ if (!failed) {
     : ok('every programme card render is behind an entitlement check');
 }
 
+/* A paywall with no way through it.
+   
+   For most of this product's life the Worker's /api/billing/checkout was
+   correct, tested, and completely unreachable: pricing's CTAs pointed at the
+   free check, every locked panel pointed at /account/, and /account/ offered
+   sign-in and sign-out and nothing else. A signed-in free user could not buy
+   the product from the interface at all. Nothing errored — every button
+   worked, they just all led back to the free half — so no test caught it.
+   
+   These assert the property that was missing: from each screen that shows a
+   price or a lock, there is a control that starts checkout. */
+{
+  const readOut = (rel) => {
+    const f = path.join(DIST, rel);
+    return fs.existsSync(f) ? fs.readFileSync(f, 'utf8') : null;
+  };
+
+  const pricing = readOut('pricing/index.html');
+  if (!pricing) bad('no pricing page built');
+  else {
+    const plans = [...pricing.matchAll(/data-plan="([a-z_]+)"/g)].map((m) => m[1]);
+    plans.includes('personal_annual') && plans.includes('personal_monthly')
+      ? ok('pricing sells both personal plans')
+      : bad(`pricing has no personal checkout control (found: ${plans.join(', ') || 'none'})`);
+    plans.some((x) => x.startsWith('business'))
+      ? ok('pricing sells a business plan')
+      : bad('pricing has no business checkout control');
+  }
+
+  const account = readOut('account/index.html');
+  if (!account) bad('no account page built');
+  else {
+    /data-checkout/.test(account)
+      ? ok('the account page can start checkout')
+      : bad('the account page offers no way to subscribe');
+    /data-portal/.test(account)
+      ? ok('a subscriber can reach the billing portal')
+      : bad('the account page offers no way to manage an existing subscription');
+    /* The bug that made an annual subscriber read "Your monthly is active":
+       the raw plan column, printed into a sentence. */
+    /planLabel\(/.test(account)
+      ? ok('the plan name is rendered through planLabel, not raw')
+      : bad('the account page prints the raw plan column');
+  }
+
+  /* Every localised account page too — these are the ones that quietly rot,
+     because nobody clicks through /pt/account/ before a demo. */
+  const locales = ['de', 'fr', 'es', 'it', 'pt', 'hi'];
+  const missing = locales.filter((l) => {
+    const h = readOut(`${l}/account/index.html`);
+    return !h || !/data-checkout/.test(h);
+  });
+  missing.length
+    ? bad(`localised account pages with no checkout control: ${missing.join(', ')}`)
+    : ok('all 6 localised account pages can start checkout');
+
+  /* The locked results panel. Asserted on source, because the markup only
+     exists after a wizard run. */
+  const app = fs.readFileSync(path.join(ROOT, 'src/app.js'), 'utf8');
+  /SIGNED_IN/.test(app) && /data-checkout/.test(app)
+    ? ok('the locked results panel offers checkout to a signed-in visitor')
+    : bad('the locked results panel still dead-ends at /account/');
+}
+
+/* The plan a subscriber bought must survive the webhook.
+   Every branch wrote `fields.plan ?? 'monthly'` while nothing passed a plan,
+   so the column read "monthly" for every subscriber on every tier. */
+{
+  const w = fs.readFileSync(path.join(ROOT, 'worker/index.js'), 'utf8');
+  /planFrom\(o\)/.test(w)
+    ? ok('the webhook reads the plan from Stripe metadata')
+    : bad('the webhook never reads a plan — every subscriber is stored the same');
+  /\?\?\s*'monthly'/.test(w)
+    ? bad("the webhook still defaults the plan to 'monthly'")
+    : ok('the webhook no longer invents a plan');
+  /COALESCE\(excluded\.plan/.test(w)
+    ? ok('a later event cannot erase a known plan')
+    : bad('a second webhook event overwrites the stored plan with null');
+}
+
 console.log(`\n${passed} passed, ${failed} failed\n`);
 process.exit(failed ? 1 : 0);
