@@ -337,10 +337,10 @@ function gated(count, noun, buildHtml) {
     </div>
     ${
       SIGNED_IN
-        ? `<p><button class="btn btn-primary" type="button" data-checkout data-plan="personal_annual">Unlock — €50 a year</button>
+        ? `<p><button class="btn btn-primary" type="button" data-checkout data-plan="auto">Unlock — €50 a year</button>
              <a class="btn" href="/pricing/">See all plans</a></p>
            <p class="tiny">Or €7 a month on the pricing page. Cancel any time.</p>`
-        : `<p><a class="btn btn-primary" href="/account/?next=${encodeURIComponent('/check/')}&plan=personal_annual">Sign in to unlock</a>
+        : `<p><a class="btn btn-primary" href="/account/?next=${encodeURIComponent('/check/')}&plan=auto">Sign in to unlock</a>
              <a class="btn" href="/pricing/">See pricing</a></p>
            <p class="tiny">Email and a six-digit code. No password to forget.</p>`
     }

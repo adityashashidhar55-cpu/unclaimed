@@ -1519,8 +1519,8 @@ ${disclaimerBar(TR)}
          the script shows the one that applies. -->
     <div id="acct-upgrade" hidden>
       <p style="margin-top:1.2rem">
-        <button class="btn btn-primary" type="button" data-checkout data-plan="personal_annual">${esc(TR('acctSubYear'))}</button>
-        <button class="btn" type="button" data-checkout data-plan="personal_monthly">${esc(TR('acctSubMonth'))}</button>
+        <button class="btn btn-primary" type="button" data-checkout data-plan="personal_annual" id="acct-buy-year">${esc(TR('acctSubYear'))}</button>
+        <button class="btn" type="button" data-checkout data-plan="personal_monthly" id="acct-buy-month">${esc(TR('acctSubMonth'))}</button>
       </p>
       <p class="tiny"><a class="link-underline" href="${LB()}/pricing/">${esc(TR('acctSubNote'))}</a></p>
     </div>
@@ -1548,7 +1548,7 @@ ${disclaimerBar(TR)}
    pages, and check-links does not resolve module imports so nothing caught
    it. */
 import { requestCode, verifyCode, me } from '${BASE}/app/auth.js';
-import { planLabel, upgrade } from '${BASE}/app/checkout.js';
+import { accountState, awaitEntitlement, upgrade } from '${BASE}/app/checkout.js';
 import { track } from '${BASE}/beacon.js';
 
 const $ = (s) => document.querySelector(s);
@@ -1568,27 +1568,69 @@ const nextPath = (() => {
 })();
 const wantPlan = params.get('plan');
 
-if (params.has('welcome')) $('#acct-welcome').hidden = false;
+/* The localised strings the state machine needs. Computed at build time, so
+   /de/account/ says it in German — the previous version of this screen
+   interpolated TR() directly and I very nearly shipped an English-only
+   rewrite of it. */
+const TR = ${JSON.stringify({
+  active: TR('acctActive'),
+  free: TR('acctFreeAcct'),
+  pastDue: TR('acctPastDue'),
+  lapsed: TR('acctLapsed'),
+  admin: TR('acctAdminLine'),
+  freeHere: TR('acctFreeHere'),
+  personal_monthly: TR('planPersonalMonthly'),
+  personal_annual: TR('planPersonalAnnual'),
+  business_monthly: TR('planBusinessMonthly'),
+  business_annual: TR('planBusinessAnnual'),
+  planNone: TR('planNone'),
+})};
 
-/* Already signed in? Show the account, not another sign-in form. */
-me().then((s) => {
-  if (!s.signedIn) return;
+const welcomed = params.has('welcome');
+if (welcomed) $('#acct-welcome').hidden = false;
+
+/* Paint one signed-in state.
+   
+   Every branch here used to be "entitled or not", which put a failed card
+   payment and a brand new free account in the same box — and offered the
+   same fix, buying a second subscription, which repairs neither. */
+function paint(s) {
   $('#auth-card').hidden = true;
   $('#auth-signed-in').hidden = false;
   $('#acct-email').textContent = s.user?.email ?? '';
-  /* planLabel, not the raw column. This line used to read
-     "Your monthly is active" for an annual subscriber, because nothing ever
-     wrote a real plan into the row. */
-  $('#acct-plan').textContent = s.entitled
-    ? planLabel(s.plan) + ' — ' + ${JSON.stringify(TR('acctActive'))}
-    : ${JSON.stringify(TR('acctFreeAcct'))};
-  $('#acct-upgrade').hidden = !!s.entitled;
-  $('#acct-manage').hidden = !s.entitled;
-  $('#acct-check-free').hidden = !!s.entitled;
+
+  const st = accountState(s, TR);
+  $('#acct-plan').textContent = st.line;
+
+  const canBuy = st.action === 'subscribe' || st.action === 'both';
+  const canManage = st.action === 'portal' || st.action === 'both';
+  $('#acct-upgrade').hidden = !canBuy;
+  $('#acct-manage').hidden = !canManage;
+  $('#acct-check-free').hidden = canManage;
+
+  /* A business account was being sold Personal at 7 euros a month. The plan
+     a button buys now follows the door they signed in by. */
+  $('#acct-buy-year').dataset.plan = st.plans.annual;
+  $('#acct-buy-month').dataset.plan = st.plans.monthly;
+}
+
+/* Already signed in? Show the account, not another sign-in form. */
+me().then(async (s) => {
+  if (!s.signedIn) return;
+  paint(s);
+
+  /* Just paid. Stripe redirects the moment the card clears; the webhook that
+     actually grants the entitlement can land a second or two later. Wait for
+     it rather than printing "Free account" at someone who has just been
+     charged and telling them to reload. */
+  if (welcomed && !s.entitled) {
+    $('#acct-plan').textContent = ${JSON.stringify(TR('acctConfirming'))};
+    paint(await awaitEntitlement());
+  }
 
   /* Arrived here from a locked panel with a plan in hand: finish the job
      rather than making them find the button a second time. */
-  if (!s.entitled && wantPlan) upgrade(wantPlan);
+  if (!s.entitled && !welcomed && wantPlan) upgrade(wantPlan);
 });
 
 form.addEventListener('submit', async (e) => {
