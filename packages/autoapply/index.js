@@ -7,19 +7,31 @@
  * attestations spelled out — so the user's remaining work is one tap inside
  * the government's own authenticated session.
  *
- * What this deliberately does NOT do: hold government credentials, log into
- * portals, or submit. See packages/policy — in France the CAF procuration
- * expressly withholds authority to perform legal acts on the account, and
- * caf.fr's own terms forbid sharing credentials with anyone. The one market
- * where a company may submit is Spain, via a registered REA apoderamiento;
- * that path is modelled here as MANDATED_SUBMIT and still requires a
- * per-user, user-executed mandate.
+ * There are two applicants here, and they are not the same legal animal.
+ *
+ * A PERSON claiming a social benefit: we prepare, they submit. Every statute
+ * in packages/policy — CSS L554-2, Legge 152/2001, the DWP appointee route —
+ * exists to protect a benefit claimant from a paid intermediary, and the CAF
+ * procuration expressly withholds authority to perform legal acts on the
+ * account. Spain is the one market with a person-side rail, via a registered
+ * REA apoderamiento. We hold no credentials on this path, ever.
+ *
+ * A COMPANY applying for a grant: we file it. None of those statutes reach a
+ * company's subsidy application — different applicant, different law — and
+ * appointing an agent to prepare and submit funding applications is what an
+ * entire profession does. What it needs is a signed, scoped, revocable
+ * authorisation and a delegated portal account granted BY the client, which is
+ * a thing the portals issue on purpose. It does not need, and must never use,
+ * the client's own password.
  *
  * Pure JS, zero dependencies — runs in the browser, in React Native and in a
  * Cloudflare Worker unchanged.
  */
 
-import { policyFor, maySubmitOnBehalf, mayAssist, autoApplyTier, railFor, AUTOMATION } from '../policy/index.js';
+import {
+  policyFor, maySubmitOnBehalf, mayAssist, autoApplyTier, railFor, AUTOMATION,
+  companyPolicyFor, mayFileOnBehalf, COMPANY_RAIL,
+} from '../policy/index.js';
 import { coverageFor, documentPlan } from '../vault/index.js';
 
 /* ------------------------------------------------------------------ */
@@ -291,12 +303,79 @@ export function attestationsFor(programme, entry, lang = 'en') {
  * half-built package. A package is never returned in a state that would let a
  * user submit something inaccurate without noticing.
  */
-export function buildPackage({ profile, programme, entry, lang = 'en', holdings = [], asOf = 0 }) {
+/* ------------------------------------------------------------------ */
+/* The authorisation a company signs                                    */
+/* ------------------------------------------------------------------ */
+
+/**
+ * What we need on file before filing anything for a client company.
+ *
+ * Scoped rather than blanket, on purpose. A mandate that says "act for us"
+ * forever is the thing that makes an agent relationship feel like a liability;
+ * one that names the programmes, the signatory and an expiry is what a finance
+ * director will actually sign, and what a funder will accept if it asks to see
+ * it. Revocable in one call, and every filing carries the id of the
+ * authorisation it was made under, so the audit trail answers "who allowed
+ * this" without anyone reconstructing it from memory.
+ */
+export function authorisationRequest({ org, programmes = [], signatory = null, cc, months = 12, now = 0 }) {
+  const pol = companyPolicyFor(cc);
+  return {
+    org_id: org?.id ?? null,
+    org_name: org?.name ?? null,
+    country: String(cc || '').toLowerCase(),
+    /** Named, not blanket. */
+    scope: programmes.map((p) => ({ slug: p.slug, name: p.name_en ?? p.name ?? p.slug, funder: p.funder_en ?? null })),
+    rail: pol.rail,
+    /** What the client actually has to do to make this real. */
+    steps: railSteps(pol.rail, org),
+    signatory: signatory
+      ? { name: signatory.name ?? null, role: signatory.role ?? null, email: signatory.email ?? null }
+      : null,
+    /* A person who can bind the company. We ask for the role because
+       "authorised signatory" is the whole basis of the mandate and a funder
+       may ask who it was. */
+    signatory_required: true,
+    expires_at: now ? now + months * 30 * 864e5 : null,
+    revocable: true,
+    /** Never. Stated in the artefact so it is not merely a policy in a doc. */
+    credentials_requested: false,
+  };
+}
+
+function railSteps(rail, org) {
+  const name = org?.name ?? 'your company';
+  if (rail === COMPANY_RAIL.DELEGATED_ACCOUNT) {
+    return [
+      `Add us as a user on ${name}'s existing portal account, with submit rights on the named programmes.`,
+      'Your administrator does this from inside your own account — we never receive your password.',
+      'Countersign the authorisation so the funder can see who appointed us.',
+    ];
+  }
+  if (rail === COMPANY_RAIL.REGISTERED_POWER) {
+    return [
+      'Grant a registered power of attorney naming us, through the government register.',
+      'This is held by the administration itself, so the funder verifies it directly.',
+      'Powers are time-limited and revocable from the same register.',
+    ];
+  }
+  return [
+    `An authorised signatory of ${name} signs the letter of authorisation.`,
+    'We attach it to each application it covers.',
+    'Revoke it in one click; filings already made stay on the record with the authorisation id.',
+  ];
+}
+
+export function buildPackage({ profile, programme, entry, lang = 'en', holdings = [], asOf = 0, applicant = 'person', authorisation = null }) {
   const cc = (entry?.slug || profile?.country_code || '').toLowerCase();
   const policy = policyFor(cc);
   const blockers = [];
+  const isCompany = applicant === 'company';
 
-  if (!mayAssist(cc)) {
+  /* The person-side jurisdiction rules are about benefit claimants and must
+     not be applied to a company's grant application: doing so is what silently
+     disabled the enterprise product. */
+  if (!isCompany && !mayAssist(cc)) {
     blockers.push({
       code: 'jurisdiction_discovery_only',
       message:
@@ -309,6 +388,34 @@ export function buildPackage({ profile, programme, entry, lang = 'en', holdings 
   const message = draftMessage(programme, projection, lang);
   const attestations = attestationsFor(programme, entry, lang);
 
+  /* A company filing needs authority on file. Not a legal impossibility like
+     the person-side blockers above — a missing artefact, with a clear way to
+     produce it, so the UI can ask for it rather than refuse. */
+  const companyPolicy = isCompany ? companyPolicyFor(cc) : null;
+  if (isCompany && !authorisation) {
+    blockers.push({
+      code: 'authorisation_required',
+      message:
+        'We file this as your appointed agent, which needs a signed authorisation from someone who can bind the company. It takes one signature and covers every programme you name.',
+      remedy: 'authorisation',
+      rail: companyPolicy.rail,
+    });
+  } else if (isCompany && authorisation) {
+    const covered = (authorisation.scope || []).some((x) => x.slug === programme.slug);
+    if (!covered) {
+      blockers.push({
+        code: 'programme_out_of_scope',
+        message: `Your authorisation does not name this programme. Add it — scoped mandates are the point, and widening one is a signature, not a renegotiation.`,
+        remedy: 'extend_authorisation',
+      });
+    }
+    if (authorisation.revoked_at) {
+      blockers.push({ code: 'authorisation_revoked', message: 'This authorisation has been revoked.', remedy: 'authorisation' });
+    } else if (authorisation.expires_at && asOf && authorisation.expires_at < asOf) {
+      blockers.push({ code: 'authorisation_expired', message: 'This authorisation has expired.', remedy: 'authorisation' });
+    }
+  }
+
   const channel = programme.is_automatic
     ? 'automatic'
     : programme.application_channel || 'online';
@@ -317,10 +424,11 @@ export function buildPackage({ profile, programme, entry, lang = 'en', holdings 
     programme_slug: programme.slug,
     country: cc,
     generated_for: profile?.id ?? null,
+    applicant,
     policy: {
       monetisation: policy.monetisation,
       automation: policy.automation,
-      may_submit_on_behalf: maySubmitOnBehalf(cc),
+      may_submit_on_behalf: mayFileOnBehalf(cc, applicant),
     },
     blockers,
     /** Fields we filled, and the ones we still need from the user. */
@@ -341,19 +449,35 @@ export function buildPackage({ profile, programme, entry, lang = 'en', holdings 
     evidence: coverageFor(programme, holdings, asOf),
     /** Ordered steps taken from the official page. */
     steps: (programme.procedure_steps || []).slice().sort((a, b) => a.step - b.step),
-    /** Where the user goes to finish. Their session, their device, their tap. */
-    submit: {
-      channel,
-      url: programme.application_url || programme.source_url,
-      /** True only where a statutory instrument lets a legal person submit. */
-      company_may_submit: maySubmitOnBehalf(cc),
-      /** 'submit' | 'fetch' | 'prepare' — what we can actually do here. */
-      tier: autoApplyTier(cc),
-      /** The named mechanism, where one exists. Null is the honest answer. */
-      rail: railFor(cc),
-      /** Always true. The user performs the submission act. */
-      requires_user_action: !maySubmitOnBehalf(cc),
-    },
+    /** Who performs the submission act, and on what authority. */
+    submit: isCompany
+      ? {
+          channel,
+          url: programme.application_url || programme.source_url,
+          applicant: 'company',
+          /** We file it. That is the enterprise product. */
+          we_submit: blockers.length === 0,
+          tier: 'submit',
+          rail: companyPolicy.rail,
+          /** One signature, then nothing per application. */
+          requires_user_action: blockers.length > 0,
+          authorisation_id: authorisation?.id ?? null,
+          /** Stated in the artefact, not only in a policy document. */
+          uses_client_credentials: false,
+        }
+      : {
+          channel,
+          url: programme.application_url || programme.source_url,
+          applicant: 'person',
+          /** True only where a statutory instrument lets a legal person submit. */
+          company_may_submit: maySubmitOnBehalf(cc),
+          /** 'submit' | 'fetch' | 'prepare' — what we can actually do here. */
+          tier: autoApplyTier(cc),
+          /** The named mechanism, where one exists. Null is the honest answer. */
+          rail: railFor(cc),
+          /** The user performs the submission act. */
+          requires_user_action: !maySubmitOnBehalf(cc),
+        },
     attestations,
     source: {
       url: programme.source_url,
