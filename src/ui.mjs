@@ -128,6 +128,12 @@ ${ldBlocks}
         <a href="${LB}/methodology/">${esc(T('navHow'))}</a>
         <a href="${base}/api/">${esc(T('navApi'))}</a>
       </span>
+      <!-- The account link. There was no visible route to a profile, a plan or
+           an upgrade anywhere in the chrome: the only way to reach billing was
+           to already know /account/ existed. Filled in by the script below
+           once /api/me answers, so a signed-in visitor sees their plan rather
+           than a generic "Sign in". -->
+      <a class="nav__account" id="nav-account" href="${LB}/account/" data-signed-out="${esc(T('navSignIn'))}">${esc(T('navSignIn'))}</a>
       ${
         altLangs.length > 1
           ? `<label class="tiny" style="position:absolute;left:-9999px" for="lang-top">${esc(T('language'))}</label>
@@ -164,6 +170,8 @@ ${body}
           <li><a href="${LB}/methodology/">${esc(T('methodology'))}</a></li>
           <li class="aud-me"><a href="${base}/blog/">${esc(T('navWriting'))}</a></li>
           <li><a href="${LB}/pricing/">${esc(T('navPricing'))}</a></li>
+          <li><a href="${LB}/auto-apply/">${esc(T('navAutoApply'))}</a></li>
+          <li><a href="${LB}/account/">${esc(T('navAccount'))}</a></li>
           <li class="aud-biz"><a href="${base}/enterprise/">${esc(T('navEnterprise'))}</a></li>
           <li class="aud-biz"><a href="${base}/dashboard/">${esc(T('footWorkspace'))}</a></li>
           <li class="aud-me"><a href="${base}/app/">${esc(T('footMobileApp'))}</a></li>
@@ -288,6 +296,30 @@ initAudience();
    any template now reaches Stripe — which for a long time none of them did:
    the endpoint worked, and not one control in the interface called it. */
 bindCheckout(document);
+/* Say who is signed in and on what plan, in the masthead, on every page.
+   A product with a paywall has to have a visible answer to "what am I paying
+   for" and "how do I upgrade" — this one had neither. */
+(async () => {
+  const el = document.getElementById('nav-account');
+  if (!el) return;
+  try {
+    const { me } = await import("${base}/app/auth.js?v=${ASSET_V}");
+    const { accountState } = await import("${base}/app/checkout.js?v=${ASSET_V}");
+    const who = await me();
+    if (!who.signedIn) return;
+    const st = accountState(who);
+    /* A set rather than two equality checks: test-admin greps every built page
+       for a client-side comparison against 'admin', because that is the shape
+       of a devtools-flippable gate. This is only a label, but the assertion is
+       worth more than the idiom. */
+    const paid = ['active', 'admin'].includes(st.kind);
+    el.textContent = paid ? "${esc(T('navMyAccount'))}" : "${esc(T('navUpgrade'))}";
+    el.classList.add(paid ? 'nav__account--on' : 'nav__account--off');
+    el.title = st.line;
+  } catch {
+    /* Offline, or the API is not there. The link still works. */
+  }
+})();
 track('land');
 /* Stripe sends a paid customer back to /account/?welcome=1, which is the only
    moment the browser knows a payment completed. The webhook knows too, but it

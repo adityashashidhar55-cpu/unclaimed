@@ -56,6 +56,49 @@ function listPhrase(parts) {
 }
 
 /* ---- URL state (shareable, no accounts) ---- */
+/**
+ * The answers, kept on the device.
+ *
+ * Deliberately the same shape the URL hash carries, and deliberately local:
+ * an unsigned-in visitor's household details are nobody's business but theirs,
+ * and the paid workspace on the server is a separate, opt-in thing.
+ */
+const PROFILE_KEY = 'unclaimed.check.profile.v1';
+
+function saveProfile() {
+  try {
+    if (!S.profile || !S.profile.country_code) return;
+    localStorage.setItem(PROFILE_KEY, JSON.stringify({ ...S.profile, saved_at: Date.now() }));
+  } catch {
+    /* Private mode, or a full quota. The session still works; it just will not
+       survive the round trip through sign-in, which is the pre-existing
+       behaviour rather than a new failure. */
+  }
+}
+
+function loadProfile() {
+  try {
+    const raw = localStorage.getItem(PROFILE_KEY);
+    if (!raw) return null;
+    const p = JSON.parse(raw);
+    /* Answers go stale. Income, household and status all change, and silently
+       reusing a year-old answer is its own wrong result. */
+    if (!p || Date.now() - (p.saved_at ?? 0) > 90 * 864e5) return null;
+    delete p.saved_at;
+    return p;
+  } catch {
+    return null;
+  }
+}
+
+export function clearProfile() {
+  try {
+    localStorage.removeItem(PROFILE_KEY);
+  } catch {
+    /* Nothing to do. */
+  }
+}
+
 function encodeState() {
   const json = JSON.stringify(S.profile);
   return btoa(unescape(encodeURIComponent(json))).replace(/\+/g, '-').replace(/\//g, '_').replace(/=+$/, '');
@@ -905,11 +948,15 @@ function compute() {
   const url = new URL(location.href);
   url.hash = `r=${encodeState()}`;
   history.replaceState(null, '', url);
+  /* Both, on every result. The hash is for sharing and for the back button;
+     the local copy is what survives the trip to /account/ and back. */
+  saveProfile();
   render();
 }
 
 function advance() {
   readInputs();
+  saveProfile();
   const st = steps();
   if (S.step >= st.length - 1) compute();
   else {
@@ -1027,10 +1074,27 @@ bindCheckout(document);
     const p = decodeState(hash[1]);
     if (p && p.country_code) {
       Object.assign(S.profile, p);
+      saveProfile();
       await loadCountry(p.country_code.toLowerCase());
       compute();
       return;
     }
+  }
+
+  /* Nothing in the URL — but this browser may have answered already.
+     
+     Signing in navigates away to /account/ and back, and the answers lived
+     ONLY in the location hash, so every one of them was gone by the time the
+     user returned: country, age, income, household, all of it, re-entered from
+     scratch immediately after proving who they are. That is the single worst
+     moment in the product to throw work away, because it happens to exactly
+     the people who have decided to pay. */
+  const saved = loadProfile();
+  if (saved && saved.country_code) {
+    Object.assign(S.profile, saved);
+    await loadCountry(saved.country_code.toLowerCase());
+    compute();
+    return;
   }
   if (qc && S.manifest.countries.some((c) => c.slug === qc)) {
     await loadCountry(qc);

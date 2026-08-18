@@ -22,13 +22,17 @@ import {
   isCapitalCeiling,
   isEmployerAid,
   isUnpricedMeansTest,
+  passportedFrom,
+  isStatutoryRight,
+  isCitizensOnly,
+  isHardshipAid,
   monthsPayable,
   periodSuffix,
 } from './engine/matcher.js';
 import { LOCALES, LANGS, t as translator } from './i18n.mjs';
 import { iconPng } from './icon-raster.mjs';
 import { POSTS, blogFacts } from './blog.mjs';
-import { policyFor, autoApplyTier, railFor } from '../packages/policy/index.js';
+import { policyFor, autoApplyTier, railFor, AUTOMATION } from '../packages/policy/index.js';
 import { DOC_TYPES } from '../packages/vault/index.js';
 import { INSTRUMENTS, isFreeMoney, reachFor } from './engine/startup.js';
 import { DE_MINIMIS_CEILING_EUR, REGULATION } from '../packages/stateaid/index.js';
@@ -1455,6 +1459,103 @@ function webManifest() {
  * managed by whoever owns it — landing there by accident from a personal
  * sign-in would put the wrong entity on the invoice.
  */
+/**
+ * Where we can press submit, and where we cannot.
+ *
+ * "Auto-apply" is not one feature that is on or off — it is a legal question
+ * with a different answer in every country, and the honest version of the
+ * product says which answer applies before someone buys it expecting the other
+ * one. Three tiers, read straight from packages/policy so this page cannot
+ * drift from what the software will actually do:
+ *
+ *   MANDATED_SUBMIT  a statutory instrument lets a legal person file on your
+ *                    behalf under a registered mandate, so we can submit.
+ *   PREPARE_ONLY     we produce the complete, pre-filled package; you submit
+ *                    it in your own authenticated session. This is not a
+ *                    limitation of the software — filing as you, with your
+ *                    credentials, is the thing regulators object to.
+ *   DISCOVERY_ONLY   no application-assistance product at all here.
+ */
+function autoApplyPage() {
+  const rows = manifest.countries
+    .map((c) => ({ c, pol: policyFor(c.slug) }))
+    .sort((a, b) => a.c.name.localeCompare(b.c.name));
+
+  const TIERS = [
+    {
+      id: AUTOMATION.MANDATED_SUBMIT,
+      eyebrow: 'We can submit for you',
+      title: 'Filed on your behalf, under a registered mandate',
+      body:
+        'A statutory instrument in these countries lets a legal person file on your behalf once you have signed a mandate. ' +
+        'We prepare the claim, you sign the mandate, we submit and track it.',
+      tone: 'callout--sage',
+    },
+    {
+      id: AUTOMATION.PREPARE_ONLY,
+      eyebrow: 'We prepare, you press submit',
+      title: 'Everything filled in, filed in your own session',
+      body:
+        'We produce the complete application: every field pre-filled from your answers, every document listed and attached, ' +
+        'the deadline in your calendar. You submit it yourself, signed in as you. We never ask for, hold or use your credentials ' +
+        'on a government portal — that is the part regulators object to, and it is the part we will not build.',
+      tone: '',
+    },
+    {
+      id: AUTOMATION.DISCOVERY_ONLY,
+      eyebrow: 'Discovery only',
+      title: 'We tell you what exists, and stop there',
+      body: 'Application assistance is not a product we can sell here. You get the directory, the rules and the deadlines.',
+      tone: '',
+    },
+  ];
+
+  const body = `
+${disclaimerBar(TR)}
+<section class="section-tight shell">
+  ${breadcrumbs([{ label: TR('backHome'), href: `${LB()}/` }, { label: 'Auto-apply by country' }])}
+  <span class="eyebrow eyebrow-accent">Auto-apply</span>
+  <h1 style="max-width:20ch">Where we can <em class="serif-italic">press submit</em>, and where you must</h1>
+  <p class="lede" style="max-width:60ch">Auto-apply is a legal question, not a feature toggle, and it has a different answer in
+  every country. This is the whole list — read from the same policy table the software obeys, so it cannot promise something
+  the product will then refuse to do.</p>
+
+  ${TIERS.map((t) => {
+    const list = rows.filter((r) => r.pol.automation === t.id);
+    if (!list.length) return '';
+    return `<div class="panel panel--float" style="margin-top:1.8rem">
+      <span class="eyebrow eyebrow-accent">${esc(t.eyebrow)}</span>
+      <h2 style="font-size:1.35rem;margin:.4rem 0 .5rem">${esc(t.title)}</h2>
+      <p class="small" style="max-width:64ch">${esc(t.body)}</p>
+      <p class="small" style="margin-top:1rem"><strong>${list.length} ${list.length === 1 ? 'country' : 'countries'}:</strong>
+        ${list.map((r) => `<a class="link-underline" href="${CB(r.c.slug)}/${r.c.slug}/">${esc(r.c.name)}</a>`).join(' · ')}</p>
+    </div>`;
+  }).join('')}
+
+  <div class="callout" style="margin-top:1.8rem">
+    <p><strong>What "prepare" actually means.</strong> Not a checklist. The application is filled in from the answers you already
+    gave, the supporting documents are named and attached from your vault, the wording is drafted, and the deadline is tracked.
+    What is left is the signature and the submit button, which have to be yours.</p>
+  </div>
+
+  <div class="callout callout--sage" style="margin-top:1.2rem">
+    <p><strong>Business accounts.</strong> Company and enterprise plans get the same preparation across every jurisdiction in the
+    startup dataset, plus mandate handling where the law allows it. See <a class="link-underline" href="${LB()}/enterprise/">what the
+    workspace does</a>.</p>
+  </div>
+</section>`;
+
+  return layout({
+    base: BASE, linkBase: LB(), lang: L, tr: TR, altLangs: ALT,
+    title: 'Auto-apply by country — Unclaimed Grants',
+    description:
+      'Which countries we can file a claim in on your behalf under a registered mandate, and which ones we prepare the ' +
+      'complete application for you to submit yourself. Read from the policy table the software obeys.',
+    canonical: `${SITE_URL}${L === 'en' ? '' : '/' + L}/auto-apply/`,
+    body,
+  });
+}
+
 function accountPage() {
   const body = `
 ${disclaimerBar(TR)}
@@ -2615,6 +2716,8 @@ function buildLanguage(lang) {
   page(`${pre}enterprise/index.html`, enterprisePage());
   ALT = altFor('/privacy/');
   page(`${pre}privacy/index.html`, privacyPage());
+  ALT = altFor('/auto-apply/');
+  page(`${pre}auto-apply/index.html`, autoApplyPage());
   page(`${pre}account/index.html`, accountPage());
 
   for (const aud of AUDIENCES) {
@@ -2775,6 +2878,15 @@ function lockedRecord(p) {
       employer_aid: isEmployerAid(p),
       means_tested: isUnpricedMeansTest(p),
       circumstances: circumstanceTags(p),
+      /* The four gates added when the matcher learned that most of its wrong
+         answers came from rules living in prose. They read names, funders and
+         source snippets — exactly the fields stripped below — so they must be
+         answered here or a locked record silently loses its condition and
+         reappears as a straight match. */
+      passported: passportedFrom(p),
+      statutory_right: isStatutoryRight(p),
+      citizens_only: isCitizensOnly(p),
+      hardship_aid: isHardshipAid(p),
     },
   };
 }
