@@ -1449,6 +1449,339 @@ async function handleMe(request, env) {
 }
 
 /* ------------------------------------------------------------------ */
+/* Filing on a company's behalf                                        */
+/* ------------------------------------------------------------------ */
+
+/**
+ * The enterprise product, server side.
+ *
+ * A company signs one scoped authorisation; after that, filings are queued,
+ * prepared, submitted and tracked here rather than by a person remembering.
+ * Three rules hold the whole thing up:
+ *
+ *   1. No filing may exist without a recorded authority. `authorisation_id` is
+ *      NOT NULL and every write re-checks that the authority is live and names
+ *      the programme — checking once at queue time would let a revocation be
+ *      outrun by a job that is already moving.
+ *   2. Every transition is appended, never overwritten. When a funder or an
+ *      auditor asks "on what authority did you submit this on 3 March", the
+ *      answer must be a row.
+ *   3. The org boundary is enforced on every read and write. A filing is
+ *      commercially sensitive — which grants a company is chasing is strategy —
+ *      so a query without an org scope is a bug, not an optimisation.
+ */
+
+/** The state machine, and the only transitions that exist. */
+const FILING_STATES = {
+  queued: ['preparing', 'withdrawn', 'failed'],
+  preparing: ['needs_input', 'ready', 'failed'],
+  needs_input: ['preparing', 'ready', 'withdrawn', 'failed'],
+  ready: ['submitted', 'needs_input', 'withdrawn', 'failed'],
+  submitted: ['acknowledged', 'rejected', 'awarded', 'failed'],
+  acknowledged: ['awarded', 'rejected'],
+  awarded: [],
+  rejected: [],
+  withdrawn: [],
+  failed: ['queued'],
+};
+const TERMINAL_STATES = new Set(['awarded', 'rejected', 'withdrawn']);
+
+/** Only an org account may file: there is no company to bind otherwise. */
+async function orgGate(request, env) {
+  const session = await readSession(env, request.headers.get('cookie'), request.headers.get('authorization'));
+  if (!session?.uid) return { error: json({ error: 'signed_out' }, 401) };
+  const ent = await entitlementFor(env, session, 'gb', PRODUCT.DISCOVERY);
+  if (!ent.entitled) return { error: json({ error: 'not_entitled', entitlement: ent }, 402) };
+
+  const member = await env.DB.prepare('SELECT org_id, role FROM org_members WHERE user_id = ? LIMIT 1')
+    .bind(session.uid)
+    .first();
+  if (!member) {
+    return {
+      error: json(
+        {
+          error: 'no_organisation',
+          message: 'Filing is done on behalf of a company. Sign in with a business account to create one.',
+        },
+        403,
+      ),
+    };
+  }
+  return { session, orgId: member.org_id, role: member.role };
+}
+
+const uuid = () => crypto.randomUUID();
+
+async function recordEvent(env, { app, from, to, note, actor }) {
+  await env.DB.prepare(
+    'INSERT INTO application_events (id, application_id, org_id, from_state, to_state, note, actor, at) VALUES (?, ?, ?, ?, ?, ?, ?, ?)',
+  )
+    .bind(uuid(), app.id, app.org_id, from ?? null, to, note ?? null, actor, Date.now())
+    .run();
+}
+
+/**
+ * Is this authority live, and does it cover this programme?
+ *
+ * Re-checked on every transition rather than once at queue time. An
+ * authorisation revoked at 10:00 must stop a filing that was queued at 09:00
+ * and is still moving — otherwise "revoke" means "revoke eventually", which is
+ * not what the word means to the person clicking it.
+ */
+async function liveAuthorisation(env, orgId, authId, programmeSlug) {
+  const row = await env.DB.prepare('SELECT * FROM authorisations WHERE id = ? AND org_id = ?')
+    .bind(authId, orgId)
+    .first();
+  if (!row) return { ok: false, code: 'authorisation_not_found' };
+  if (row.revoked_at) return { ok: false, code: 'authorisation_revoked' };
+  if (row.expires_at && row.expires_at < Date.now()) return { ok: false, code: 'authorisation_expired' };
+  if (programmeSlug) {
+    let scope = [];
+    try {
+      scope = JSON.parse(row.scope);
+    } catch {
+      scope = [];
+    }
+    if (!scope.some((x) => x.slug === programmeSlug)) return { ok: false, code: 'programme_out_of_scope' };
+  }
+  return { ok: true, row };
+}
+
+/** POST /api/enterprise/authorisations — the company signs. */
+async function handleAuthorisationCreate(request, env) {
+  const gate = await orgGate(request, env);
+  if (gate.error) return gate.error;
+  /* Only an owner or admin can appoint an agent. A seat holder cannot bind the
+     company, and pretending otherwise would make the mandate worthless. */
+  if (gate.role !== 'owner' && gate.role !== 'admin') {
+    return json({ error: 'not_authorised_to_sign', message: 'Only an owner or admin can sign an authorisation.' }, 403);
+  }
+
+  const body = await request.json().catch(() => ({}));
+  const name = String(body.signed_by_name ?? '').trim();
+  const role = String(body.signed_by_role ?? '').trim();
+  const country = String(body.country ?? 'gb').toLowerCase();
+  const scope = Array.isArray(body.scope) ? body.scope.filter((x) => x && x.slug) : [];
+
+  if (!name || !role) return bad('the name and role of the person signing are required');
+  if (!scope.length) return bad('an authorisation must name at least one programme');
+  /* Scoped, not blanket — enforced here rather than trusted from the client. */
+  if (scope.length > 200) return bad('an authorisation may name at most 200 programmes');
+
+  const rail = ['delegated_account', 'signed_mandate', 'registered_power'].includes(body.rail)
+    ? body.rail
+    : 'signed_mandate';
+  const now = Date.now();
+  const months = Math.min(Math.max(parseInt(body.months, 10) || 12, 1), 36);
+  const id = uuid();
+
+  await env.DB.prepare(
+    `INSERT INTO authorisations
+       (id, org_id, country, rail, scope, signed_by_name, signed_by_role, signed_by_email,
+        signed_at, signed_ip, signed_ua, expires_at, created_by, created_at)
+     VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`,
+  )
+    .bind(
+      id, gate.orgId, country, rail, JSON.stringify(scope), name, role,
+      body.signed_by_email ?? null, now,
+      request.headers.get('cf-connecting-ip') ?? null,
+      (request.headers.get('user-agent') ?? '').slice(0, 300),
+      now + months * 30 * 864e5, gate.session.uid, now,
+    )
+    .run();
+
+  return json({ ok: true, id, expires_at: now + months * 30 * 864e5, scope_count: scope.length }, 201);
+}
+
+/** GET /api/enterprise/authorisations */
+async function handleAuthorisationList(request, env) {
+  const gate = await orgGate(request, env);
+  if (gate.error) return gate.error;
+  const rows = await env.DB.prepare(
+    `SELECT id, country, rail, scope, signed_by_name, signed_by_role, signed_at, expires_at, revoked_at
+       FROM authorisations WHERE org_id = ? ORDER BY signed_at DESC`,
+  )
+    .bind(gate.orgId)
+    .all();
+  const now = Date.now();
+  return json({
+    authorisations: rows.results.map((r) => ({
+      ...r,
+      scope: JSON.parse(r.scope || '[]'),
+      live: !r.revoked_at && (!r.expires_at || r.expires_at > now),
+    })),
+  });
+}
+
+/** POST /api/enterprise/authorisations/<id>/revoke — one click, immediate. */
+async function handleAuthorisationRevoke(request, env, id) {
+  const gate = await orgGate(request, env);
+  if (gate.error) return gate.error;
+  if (gate.role !== 'owner' && gate.role !== 'admin') return json({ error: 'not_authorised_to_sign' }, 403);
+
+  const now = Date.now();
+  const res = await env.DB.prepare(
+    'UPDATE authorisations SET revoked_at = ?, revoked_by = ? WHERE id = ? AND org_id = ? AND revoked_at IS NULL',
+  )
+    .bind(now, gate.session.uid, id, gate.orgId)
+    .run();
+  if (res.meta.changes === 0) return json({ error: 'not_found_or_already_revoked' }, 404);
+
+  /* Everything still in flight under this authority stops now. Filings already
+     submitted are NOT retracted — we cannot unsend them, and pretending
+     otherwise on screen would be the lie. They stay on the record. */
+  const live = await env.DB.prepare(
+    `SELECT id, org_id, state FROM filings
+      WHERE org_id = ? AND authorisation_id = ? AND state IN ('queued','preparing','needs_input','ready')`,
+  )
+    .bind(gate.orgId, id)
+    .all();
+  for (const app of live.results) {
+    /* org_id in the WHERE as well as in the SELECT that found the row. Both
+       are scoped today; if they ever drift apart, the write is the one that
+       must not be the weak side. */
+    await env.DB.prepare('UPDATE filings SET state = ?, error = ?, updated_at = ? WHERE id = ? AND org_id = ?')
+      .bind('withdrawn', 'authorisation revoked', now, app.id, gate.orgId)
+      .run();
+    await recordEvent(env, { app, from: app.state, to: 'withdrawn', note: 'authorisation revoked', actor: gate.session.uid });
+  }
+
+  return json({ ok: true, revoked_at: now, withdrawn: live.results.length });
+}
+
+/** POST /api/enterprise/applications — queue filings. */
+async function handleFilingCreate(request, env) {
+  const gate = await orgGate(request, env);
+  if (gate.error) return gate.error;
+
+  const body = await request.json().catch(() => ({}));
+  const authId = String(body.authorisation_id ?? '');
+  const items = Array.isArray(body.programmes) ? body.programmes.filter((p) => p && p.slug) : [];
+  if (!authId) return bad('authorisation_id is required — nothing is filed without a recorded authority');
+  if (!items.length) return bad('no programmes given');
+  if (items.length > 100) return bad('queue at most 100 filings at a time');
+
+  const now = Date.now();
+  const queued = [];
+  const refused = [];
+
+  for (const p of items) {
+    const auth = await liveAuthorisation(env, gate.orgId, authId, p.slug);
+    if (!auth.ok) {
+      refused.push({ slug: p.slug, code: auth.code });
+      continue;
+    }
+    const id = uuid();
+    try {
+      await env.DB.prepare(
+        `INSERT INTO filings
+           (id, org_id, authorisation_id, programme_slug, programme_name, funder, country, state,
+            amount_min, amount_max, currency, deadline_at, created_by, created_at, updated_at)
+         VALUES (?, ?, ?, ?, ?, ?, ?, 'queued', ?, ?, ?, ?, ?, ?, ?)`,
+      )
+        .bind(
+          id, gate.orgId, authId, p.slug, p.name ?? null, p.funder ?? null,
+          (p.country ?? auth.row.country ?? 'gb').toLowerCase(),
+          p.amount_min ?? null, p.amount_max ?? null, p.currency ?? null, p.deadline_at ?? null,
+          gate.session.uid, now, now,
+        )
+        .run();
+      await recordEvent(env, { app: { id, org_id: gate.orgId }, from: null, to: 'queued', note: null, actor: gate.session.uid });
+      queued.push({ id, slug: p.slug });
+    } catch (err) {
+      /* The unique index on (org_id, programme_slug) for non-terminal states.
+         Queueing the same programme twice is a double submission to the funder,
+         which is worse than a refused button. */
+      refused.push({ slug: p.slug, code: /UNIQUE/i.test(String(err?.message)) ? 'already_in_flight' : 'insert_failed' });
+    }
+  }
+
+  return json({ ok: true, queued, refused }, queued.length ? 201 : 409);
+}
+
+/** GET /api/enterprise/applications — the queue. */
+async function handleFilingList(request, env) {
+  const gate = await orgGate(request, env);
+  if (gate.error) return gate.error;
+  const rows = await env.DB.prepare(
+    `SELECT id, authorisation_id, programme_slug, programme_name, funder, country, state,
+            amount_min, amount_max, currency, deadline_at, reference, missing, error,
+            submitted_at, decided_at, created_at, updated_at
+       FROM filings WHERE org_id = ? ORDER BY
+         CASE state WHEN 'needs_input' THEN 0 WHEN 'ready' THEN 1 WHEN 'preparing' THEN 2
+                    WHEN 'queued' THEN 3 WHEN 'submitted' THEN 4 WHEN 'acknowledged' THEN 5 ELSE 6 END,
+         COALESCE(deadline_at, 9e18) ASC`,
+  )
+    .bind(gate.orgId)
+    .all();
+
+  const apps = rows.results.map((r) => ({ ...r, missing: r.missing ? JSON.parse(r.missing) : [] }));
+  const counts = {};
+  for (const a of apps) counts[a.state] = (counts[a.state] ?? 0) + 1;
+  return json({ applications: apps, counts });
+}
+
+/** POST /api/enterprise/applications/<id>/advance — move one filing along. */
+async function handleFilingAdvance(request, env, id) {
+  const gate = await orgGate(request, env);
+  if (gate.error) return gate.error;
+
+  const body = await request.json().catch(() => ({}));
+  const to = String(body.to ?? '');
+  const app = await env.DB.prepare('SELECT * FROM filings WHERE id = ? AND org_id = ?')
+    .bind(id, gate.orgId)
+    .first();
+  if (!app) return json({ error: 'not_found' }, 404);
+
+  const allowed = FILING_STATES[app.state] ?? [];
+  if (!allowed.includes(to)) {
+    return json(
+      { error: 'illegal_transition', message: `A filing cannot go from ${app.state} to ${to}.`, allowed },
+      409,
+    );
+  }
+
+  /* Authority is re-checked here, not only at queue time — see
+     liveAuthorisation(). Withdrawing does not need it: stopping is always
+     allowed, and requiring authority to stop would be perverse. */
+  if (to !== 'withdrawn' && to !== 'failed') {
+    const auth = await liveAuthorisation(env, gate.orgId, app.authorisation_id, app.programme_slug);
+    if (!auth.ok) return json({ error: auth.code, message: 'The authority for this filing is no longer valid.' }, 403);
+  }
+
+  const now = Date.now();
+  await env.DB.prepare(
+    `UPDATE filings SET state = ?, reference = COALESCE(?, reference), missing = ?, error = ?,
+            submitted_at = CASE WHEN ? = 'submitted' THEN ? ELSE submitted_at END,
+            decided_at = CASE WHEN ? IN ('awarded','rejected') THEN ? ELSE decided_at END,
+            updated_at = ?
+      WHERE id = ? AND org_id = ?`,
+  )
+    .bind(
+      to, body.reference ?? null,
+      Array.isArray(body.missing) ? JSON.stringify(body.missing) : app.missing,
+      to === 'failed' ? String(body.error ?? 'unspecified') : null,
+      to, now, to, now, now, id, gate.orgId,
+    )
+    .run();
+
+  await recordEvent(env, { app, from: app.state, to, note: body.note ?? null, actor: gate.session.uid });
+  return json({ ok: true, id, state: to, terminal: TERMINAL_STATES.has(to) });
+}
+
+/** GET /api/enterprise/applications/<id>/events — the audit trail. */
+async function handleFilingEvents(request, env, id) {
+  const gate = await orgGate(request, env);
+  if (gate.error) return gate.error;
+  const rows = await env.DB.prepare(
+    'SELECT from_state, to_state, note, actor, at FROM application_events WHERE application_id = ? AND org_id = ? ORDER BY at ASC',
+  )
+    .bind(id, gate.orgId)
+    .all();
+  return json({ events: rows.results });
+}
+
+/* ------------------------------------------------------------------ */
 /* Admin — one operator login, and the analytics it exists to read     */
 /* ------------------------------------------------------------------ */
 
@@ -1832,6 +2165,35 @@ export default {
       if (pathname === '/api/billing/checkout' && request.method === 'POST') return withCors(await handleCheckout(request, env));
       if (pathname === '/api/billing/portal' && request.method === 'POST') return withCors(await handlePortal(request, env));
       if (pathname === '/api/v1/event' && request.method === 'POST') return withCors(await handleEvent(request, env));
+      /* Filing on a company's behalf. Every one of these is org-scoped inside
+         the handler; there is deliberately no route that reads a filing
+         without an org, because which grants a company is chasing is strategy
+         and a missing scope would be a data leak rather than a slow query. */
+      if (pathname === '/api/enterprise/authorisations' && request.method === 'POST') {
+        return withCors(await handleAuthorisationCreate(request, env));
+      }
+      if (pathname === '/api/enterprise/authorisations' && request.method === 'GET') {
+        return withCors(await handleAuthorisationList(request, env));
+      }
+      {
+        const m = pathname.match(/^\/api\/enterprise\/authorisations\/([A-Za-z0-9-]+)\/revoke$/);
+        if (m && request.method === 'POST') return withCors(await handleAuthorisationRevoke(request, env, m[1]));
+      }
+      if (pathname === '/api/enterprise/applications' && request.method === 'POST') {
+        return withCors(await handleFilingCreate(request, env));
+      }
+      if (pathname === '/api/enterprise/applications' && request.method === 'GET') {
+        return withCors(await handleFilingList(request, env));
+      }
+      {
+        const m = pathname.match(/^\/api\/enterprise\/applications\/([A-Za-z0-9-]+)\/advance$/);
+        if (m && request.method === 'POST') return withCors(await handleFilingAdvance(request, env, m[1]));
+      }
+      {
+        const m = pathname.match(/^\/api\/enterprise\/applications\/([A-Za-z0-9-]+)\/events$/);
+        if (m && request.method === 'GET') return withCors(await handleFilingEvents(request, env, m[1]));
+      }
+
       if (pathname === '/api/admin/overview') return withCors(await handleAdminOverview(request, env));
       if (pathname === '/api/admin/funnel') return withCors(await handleAdminFunnel(request, env));
       if (pathname === '/api/admin/logins') return withCors(await handleAdminLogins(request, env));
