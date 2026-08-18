@@ -1117,7 +1117,11 @@ function pricingPage() {
         ? `<ul class="ticks ticks--no">${t.excludes.map((f) => `<li>${f}</li>`).join('')}</ul>`
         : ''
     }
-    <p style="margin-top:1.6rem"><a class="btn ${t.featured ? 'btn-primary' : ''}" href="${t.href}">${t.cta}</a></p>
+    <p style="margin-top:1.6rem">${
+      t.plan
+        ? `<button class="btn ${t.featured ? 'btn-primary' : ''}" type="button" data-checkout data-plan="${t.plan}">${t.cta}</button>`
+        : `<a class="btn ${t.featured ? 'btn-primary' : ''}" href="${t.href}">${t.cta}</a>`
+    }${t.alt ? ` <a class="btn btn-sm" href="${t.alt.href}"${t.alt.plan ? ` data-checkout data-plan="${t.alt.plan}"` : ''}>${t.alt.label}</a>` : ''}</p>
     ${t.note ? `<p class="tiny" style="margin-top:.8rem">${t.note}</p>` : ''}
   </div>`;
 
@@ -1179,7 +1183,13 @@ ${disclaimerBar(TR)}
             TR('pricePers6'),
             APP_LINE,
           ],
-          href: `${LB()}/check/`, cta: TR('priceStartWithFree'),
+          /* This used to link to /check/ with the copy "start with the free
+             check" — which is where the visitor has almost always just come
+             from. Every route to Stripe on this page pointed back at the free
+             product, so the pricing page sold nothing. */
+          plan: 'personal_annual', cta: TR('priceSubYear'),
+          alt: { href: '#', plan: 'personal_monthly', label: TR('priceSubMonth') },
+          href: `${LB()}/check/`,
           note: TR('pricePersonalNote'),
         })}
         ${tier({
@@ -1195,7 +1205,10 @@ ${disclaimerBar(TR)}
             TR('priceStart6'),
             APP_LINE,
           ],
-          href: `${SB()}/startups/check/`, cta: TR('priceCheckCompany'),
+          plan: 'business_monthly', cta: TR('priceSubSeat'),
+          alt: { href: `${SB()}/startups/check/`, label: TR('priceCheckCompany') },
+          href: `${SB()}/startups/check/`,
+          note: TR('priceSeatNote'),
         })}
       </div>
 
@@ -1491,13 +1504,37 @@ ${disclaimerBar(TR)}
     </noscript>
   </div>
 
+  <div id="acct-welcome" hidden class="callout callout--sage" style="margin-top:1.2rem">
+    <p><strong>${esc(TR('acctPaidT'))}</strong> ${esc(TR('acctPaidB'))}</p>
+  </div>
+
   <div id="auth-signed-in" hidden class="card" style="margin-top:1.2rem">
     <span class="eyebrow eyebrow-accent">${esc(TR('acctSignedIn'))}</span>
     <h2 style="font-size:1.3rem;margin-top:.4rem" id="acct-email"></h2>
     <p class="small" id="acct-plan"></p>
+
+    <!-- The whole reason this page existed and could not be paid from: a
+         signed-in free account had two buttons, "go to my check" and "sign
+         out", and no way to subscribe. Both branches are rendered here and
+         the script shows the one that applies. -->
+    <div id="acct-upgrade" hidden>
+      <p style="margin-top:1.2rem">
+        <button class="btn btn-primary" type="button" data-checkout data-plan="personal_annual">${esc(TR('acctSubYear'))}</button>
+        <button class="btn" type="button" data-checkout data-plan="personal_monthly">${esc(TR('acctSubMonth'))}</button>
+      </p>
+      <p class="tiny"><a class="link-underline" href="${LB()}/pricing/">${esc(TR('acctSubNote'))}</a></p>
+    </div>
+
+    <div id="acct-manage" hidden>
+      <p style="margin-top:1.2rem">
+        <a class="btn btn-primary" href="${LB()}/check/">${esc(TR('acctGoCheck'))}</a>
+        <button class="btn" type="button" data-portal>${esc(TR('acctManage'))}</button>
+      </p>
+    </div>
+
     <p style="margin-top:1.2rem">
-      <a class="btn btn-primary" href="${LB()}/check/">${esc(TR('acctGoCheck'))}</a>
-      <a class="btn" href="/auth/signout">${esc(TR('acctSignOut'))}</a>
+      <a class="btn btn-sm" href="${LB()}/check/" id="acct-check-free">${esc(TR('acctGoCheck'))}</a>
+      <a class="btn btn-sm" href="/auth/signout">${esc(TR('acctSignOut'))}</a>
     </p>
   </div>
 </section>
@@ -1511,6 +1548,7 @@ ${disclaimerBar(TR)}
    pages, and check-links does not resolve module imports so nothing caught
    it. */
 import { requestCode, verifyCode, me } from '${BASE}/app/auth.js';
+import { planLabel, upgrade } from '${BASE}/app/checkout.js';
 import { track } from '${BASE}/beacon.js';
 
 const $ = (s) => document.querySelector(s);
@@ -1519,15 +1557,38 @@ const form = $('#auth-form');
 let email = '';
 const acctType = () => ($('#acct-biz').checked ? 'business' : 'individual');
 
+const params = new URLSearchParams(location.search);
+
+/* Where to go after signing in, and what to do when we get there.
+   Same-origin paths only: an open redirect that begins with a sign-in form is
+   a phishing kit with our domain on it. */
+const nextPath = (() => {
+  const n = params.get('next');
+  return n && n.startsWith('/') && !n.startsWith('//') ? n : null;
+})();
+const wantPlan = params.get('plan');
+
+if (params.has('welcome')) $('#acct-welcome').hidden = false;
+
 /* Already signed in? Show the account, not another sign-in form. */
 me().then((s) => {
   if (!s.signedIn) return;
   $('#auth-card').hidden = true;
   $('#auth-signed-in').hidden = false;
   $('#acct-email').textContent = s.user?.email ?? '';
+  /* planLabel, not the raw column. This line used to read
+     "Your monthly is active" for an annual subscriber, because nothing ever
+     wrote a real plan into the row. */
   $('#acct-plan').textContent = s.entitled
-    ? 'Your ' + (s.plan || 'subscription') + ' is active — every programme you match is unlocked.'
-    : 'Free account. You can see your total; unlock to see which programmes it comes from.';
+    ? planLabel(s.plan) + ' — ' + ${JSON.stringify(TR('acctActive'))}
+    : ${JSON.stringify(TR('acctFreeAcct'))};
+  $('#acct-upgrade').hidden = !!s.entitled;
+  $('#acct-manage').hidden = !s.entitled;
+  $('#acct-check-free').hidden = !!s.entitled;
+
+  /* Arrived here from a locked panel with a plan in hand: finish the job
+     rather than making them find the button a second time. */
+  if (!s.entitled && wantPlan) upgrade(wantPlan);
 });
 
 form.addEventListener('submit', async (e) => {
@@ -1559,7 +1620,13 @@ form.addEventListener('submit', async (e) => {
   btn.disabled = false; btn.textContent = 'Verify and sign in';
   if (!res.ok) { msg.textContent = res.message || 'That code is wrong or has expired.'; return; }
   track('signin_done');
-  location.href = '${LB()}/check/';
+  /* Back where they came from, if they came from somewhere. Someone who
+     clicked "sign in to unlock" on their results wants their results. */
+  if (wantPlan) {
+    const started = await upgrade(wantPlan, { btn });
+    if (started.ok) return;
+  }
+  location.href = nextPath || '${LB()}/check/';
 });
 
 $('#auth-back').addEventListener('click', () => {
@@ -2740,6 +2807,7 @@ write('app/app.css', fs.readFileSync(path.join(SRC, 'pwa/app.css'), 'utf8'));
 write('app/app.js', fs.readFileSync(path.join(SRC, 'pwa/app.js'), 'utf8'));
 write('app/native.js', fs.readFileSync(path.join(SRC, 'pwa/native.js'), 'utf8'));
 write('app/auth.js', fs.readFileSync(path.join(SRC, 'pwa/auth.js'), 'utf8'));
+  write('app/checkout.js', fs.readFileSync(path.join(SRC, 'pwa/checkout.js'), 'utf8'));
 /* The workspace. One directory deep, like /app/, so its ../packages/ and
    ../engine/ specifiers resolve to the copies written at the root. */
 write('dashboard/dashboard.js', fs.readFileSync(path.join(SRC, 'pwa/dashboard.js'), 'utf8'));

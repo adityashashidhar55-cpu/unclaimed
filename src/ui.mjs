@@ -282,7 +282,12 @@ ${scripts}
 <script type="module">
 import { track } from "${base}/beacon.js?v=${ASSET_V}";
 import { initAudience } from "${base}/audience.js?v=${ASSET_V}";
+import { bindCheckout } from "${base}/app/checkout.js?v=${ASSET_V}";
 initAudience();
+/* Bound site-wide, once, rather than per page. Any data-checkout button in
+   any template now reaches Stripe — which for a long time none of them did:
+   the endpoint worked, and not one control in the interface called it. */
+bindCheckout(document);
 track('land');
 /* Stripe sends a paid customer back to /account/?welcome=1, which is the only
    moment the browser knows a payment completed. The webhook knows too, but it

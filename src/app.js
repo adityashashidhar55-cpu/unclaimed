@@ -15,6 +15,7 @@ import {
   DISCLAIMER,
 } from './engine/matcher.js';
 import { track } from './beacon.js';
+import { bindCheckout } from './app/checkout.js';
 
 const BASE = new URL('.', import.meta.url).pathname.replace(/\/$/, '');
 const app = document.getElementById('app');
@@ -296,15 +297,26 @@ function viewHousing() {
 /* ------------------------------------------------------------------ */
 
 let ENTITLED = false;
+/* Signed in but not paying is its own state, and the reason this page had a
+   dead end in it. The old code tracked entitlement alone, so it could only
+   ever offer "sign in to unlock" — including to someone who had signed in
+   twenty seconds earlier and had nowhere left to click. */
+let SIGNED_IN = false;
 
 async function refreshEntitlement() {
   try {
-    const res = await fetch('/api/me', { credentials: 'same-origin' });
-    if (!res.ok) { ENTITLED = false; return; }
+    const res = await fetch('/api/me', { credentials: 'same-origin', cache: 'no-store' });
+    if (!res.ok) { ENTITLED = false; SIGNED_IN = false; return; }
     const data = await res.json();
     ENTITLED = !!data?.entitlement?.entitled;
+    SIGNED_IN = !!data?.signed_in;
   } catch {
+    /* Offline. Assume the least generous answer for the gate and the least
+       confusing one for the button: an unreachable API is not a signed-in
+       user, and offering checkout to someone we cannot identify ends at a
+       401 they cannot act on. */
     ENTITLED = false;
+    SIGNED_IN = false;
   }
 }
 
@@ -323,9 +335,15 @@ function gated(count, noun, buildHtml) {
     <div class="locked__rows" aria-hidden="true">
       ${Array.from({ length: Math.min(count, 4) }, () => '<div class="locked__row"></div>').join('')}
     </div>
-    <p><a class="btn btn-primary" href="/account/">Sign in to unlock</a>
-       <a class="btn" href="/pricing/">See pricing</a></p>
-    <p class="tiny">Email and a six-digit code. No password to forget.</p>
+    ${
+      SIGNED_IN
+        ? `<p><button class="btn btn-primary" type="button" data-checkout data-plan="personal_annual">Unlock — €50 a year</button>
+             <a class="btn" href="/pricing/">See all plans</a></p>
+           <p class="tiny">Or €7 a month on the pricing page. Cancel any time.</p>`
+        : `<p><a class="btn btn-primary" href="/account/?next=${encodeURIComponent('/check/')}&plan=personal_annual">Sign in to unlock</a>
+             <a class="btn" href="/pricing/">See pricing</a></p>
+           <p class="tiny">Email and a six-digit code. No password to forget.</p>`
+    }
   </section>`;
 }
 
@@ -997,6 +1015,8 @@ window.addEventListener('hashchange', async () => {
 });
 
 /* ---- boot ---- */
+bindCheckout(document);
+
 (async () => {
   S.manifest = await (await fetch(`${BASE}/api/v1/countries.json`)).json();
 
