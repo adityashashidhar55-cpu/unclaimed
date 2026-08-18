@@ -154,6 +154,8 @@ let saveFailed = false;
    board works, it just lives in this browser. */
 let syncState = 'local';
 let saver = null;
+/* The document that lost a conflict, kept only so it can be exported. */
+let conflictLoser = null;
 
 function commit(fn) {
   fn(ws);
@@ -278,6 +280,14 @@ function programmeBySlug(slug) {
  * zero reads as a smaller opportunity than it is; one that guesses reads as a
  * bigger one. Both are wrong in a way a board paper would repeat.
  */
+/* Stages that are no longer in play. "Open pipeline" must exclude them, or the
+   same awards are counted twice on one screen — once under "Awarded to date"
+   and again inside the pipeline figure they have already left. */
+const CLOSED_STAGES = new Set(['awarded', 'declined']);
+
+/** Only what is still in play. Used wherever a figure is labelled "pipeline". */
+const openEntries = (entries) => (entries || []).filter((e) => !CLOSED_STAGES.has(e.stage));
+
 function pipelineValue(entries) {
   let eur = 0;
   let priced = 0;
@@ -348,6 +358,18 @@ function syncBanner() {
       This browser has your changes, but the server has not accepted them — check your connection.
       Do not clear this browser until the message goes.</p></div>`;
   }
+  /* An anonymous board this browser had, displaced by the account's copy. The
+     server version wins on screen because it is the one the team can see —
+     but the displaced work is not thrown away, and this is where we say so. */
+  const stranded = sync.readStranded?.();
+  if (stranded?.doc) {
+    return `<div class="callout"><p><strong>This browser had a separate workspace before you signed in.</strong>
+      Your account's version is on screen. The other one is not lost —
+      <button class="btn btn-sm" type="button" data-act="export-json">download it</button>
+      and add anything you still need, then
+      <button class="btn btn-sm btn-ghost" type="button" data-act="dismiss-stranded">dismiss this</button>.</p></div>`;
+  }
+
   if (syncState === 'local') {
     return `<div class="callout"><p><strong>This workspace is in this browser only.</strong>
       <a class="link-underline" href="/account/">Sign in</a> to keep it across devices and share it with your team.</p></div>`;
@@ -437,7 +459,7 @@ function chrome(inner) {
   </nav>
   <main class="dash__main">
     ${saveFailed ? `<div class="callout callout--warn"><p><strong>This browser refused to save.</strong> Your changes are in this tab only and will be lost when you close it. Private browsing and a full disk both do this.</p></div>` : ''}
-    ${syncBanner()}
+    <div id="sync-banner">${syncBanner()}</div>
     ${lockedBanner()}
     ${inner}
   </main>
@@ -497,7 +519,7 @@ function overviewView() {
     );
   }
 
-  const value = pipelineValue(ws.pipeline);
+  const value = pipelineValue(openEntries(ws.pipeline));
   const rate = hitRate(ws.pipeline);
   const soon = closingSoon(21);
 
@@ -570,7 +592,7 @@ function overviewView() {
       ${ws.companies
         .map((c) => {
           const mine = ws.pipeline.filter((e) => e.company_id === c.id);
-          const v = pipelineValue(mine);
+          const v = pipelineValue(openEntries(mine));
           const room = companyHeadroom(c);
           return `<button class="list-row list-row--btn" data-company="${c.id}">
             <div>
@@ -886,10 +908,11 @@ function pipelineView() {
       '<button class="btn btn-primary" data-view="opportunities">Find opportunities</button>',
     );
   }
-  const value = pipelineValue(ws.pipeline);
+  const open = openEntries(ws.pipeline);
+  const value = pipelineValue(open);
   return `
   <header class="dash__head">
-    <div><span class="eyebrow">${money(value.eur, 'EUR')} across ${ws.pipeline.length}</span><h1>Pipeline</h1></div>
+    <div><span class="eyebrow">${money(value.eur, 'EUR')} across ${open.length} open</span><h1>Pipeline</h1></div>
     <button class="btn btn-sm btn-ghost" data-action="export-pipeline">Export CSV</button>
   </header>
   ${value.unpriced ? `<p class="tiny dash__muted">${value.unpriced} of these publish no amount and contribute nothing to the total. The real figure is higher than the one above, not lower.</p>` : ''}
@@ -1397,7 +1420,16 @@ function stateaidView() {
               .join('')}</div>`
           : '<p class="small dash__muted">No de minimis aid recorded. If this company has taken small public grants in the last three years, they count — record them here before the next application.</p>'
       }
-      ${list.length ? `<details class="dash__details"><summary>Declaration text for this company</summary><pre class="pre">${esc(declarationText(list, (c.country_code || '').toLowerCase(), Date.now()))}</pre></details>` : ''}
+      ${list.length ? `${(() => {
+        /* declarationText() returns { title, text, basis, affirmed }. Dropping
+           the object straight into the template rendered the literal string
+           "[object Object]" as the sworn declaration a user copies into a real
+           grant application. */
+        const d = declarationText(list, (c.country_code || '').toLowerCase(), Date.now());
+        return `<details class="dash__details"><summary>${esc(d.title || 'Declaration text for this company')}</summary><pre class="pre">${esc(d.text || '')}</pre>${
+          d.basis ? `<p class="tiny">${esc(d.basis)}</p>` : ''
+        }</details>`;
+      })()}` : ''}
     </section>`;
     })
     .join('')}`;
@@ -1484,7 +1516,10 @@ function grantFormView(g) {
 
 function reportsView() {
   const rate = hitRate(ws.pipeline);
-  const value = pipelineValue(ws.pipeline);
+  /* Reports used to put the same awards inside "Open pipeline" AND under
+     "Awarded to date", on one screen, contradicting itself in the figure most
+     likely to be lifted straight into a board pack. */
+  const value = pipelineValue(openEntries(ws.pipeline));
   const byStage = STAGES.map((s) => {
     const entries = ws.pipeline.filter((e) => e.stage === s.id);
     return { s, n: entries.length, v: pipelineValue(entries).eur };
@@ -2248,10 +2283,19 @@ document.addEventListener('click', (ev) => {
     refresh();
     return;
   }
+  if (gateAct?.dataset.act === 'dismiss-stranded') {
+    sync.clearStranded();
+    render();
+    return;
+  }
   if (gateAct?.dataset.act === 'export-json') {
     /* The escape hatch from a conflict: whatever is in this browser, as a
        file, before anything overwrites it. */
-    download('unclaimed-workspace.json', JSON.stringify(sync.readLocal() ?? ws, null, 2), 'application/json');
+    download(
+      'unclaimed-workspace.json',
+      JSON.stringify(conflictLoser ?? sync.readStranded()?.doc ?? sync.readLocal() ?? ws, null, 2),
+      'application/json',
+    );
     return;
   }
 
@@ -2505,9 +2549,14 @@ document.addEventListener('submit', (ev) => {
         if (p2?.eligibility?.de_minimis) {
           w.awards.push({
             id: uid(), application_id: e.id, company_id: e.company_id,
-            programme: programmeName(p2), amount_eur: e.awarded_eur,
+            programme: programmeName(p2),
+            /* `funder` is what packages/stateaid reads, and an ISO string is
+               what it formats. Writing `programme` and an epoch produced
+               "- Unnamed body: €50,000 (1748736000)" in the declaration. */
+            funder: p2?.funder || programmeName(p2),
+            amount_eur: e.awarded_eur,
             member_state: (companyById(e.company_id)?.country_code || '').toLowerCase(),
-            granted_at: Date.parse(e.decided_at || '') || Date.now(),
+            granted_at: new Date(Date.parse(e.decided_at || '') || Date.now()).toISOString().slice(0, 10),
           });
         }
       }
@@ -2742,9 +2791,27 @@ async function boot() {
       onState: (st) => {
         if (st === syncState) return;
         syncState = st;
-        render();
+        /* Patch the banner, do NOT re-render.
+         *
+         * render() does an unconditional root.innerHTML = …, and every save
+         * fires this twice ('saving' then 'saved'). So: open an entry, start
+         * typing in Notes, and about a second later the textarea is rebuilt
+         * from `ws` — the characters typed since the last commit are gone and
+         * so is the caret. The one thing a background save must never do is
+         * interrupt the foreground.
+         *
+         * The opportunities search box already saves and restores
+         * selectionStart for exactly this hazard; this path did not, and could
+         * not, because the re-render came from a timer rather than a
+         * keystroke. */
+        const el = $('#sync-banner');
+        if (el) el.innerHTML = syncBanner();
+        else render();
       },
-      onConflict: (serverDoc) => {
+      onConflict: (serverDoc, _rev, losingDoc) => {
+        /* Hold the version that lost, so "download my version" in the banner
+           hands over the actual work rather than whatever is on screen now. */
+        conflictLoser = losingDoc ?? null;
         /* Take the server's document — it is what everyone else can see — and
            say so loudly. Merging two portfolios silently is how work quietly
            disappears; the banner points at an export of the local version so

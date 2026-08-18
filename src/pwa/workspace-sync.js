@@ -24,6 +24,8 @@
 
 const LOCAL_KEY = 'unclaimed.workspace.v1';
 const REV_KEY = 'unclaimed.workspace.rev';
+/* Where an anonymous board goes when a server copy displaces it. */
+const STRANDED_KEY = 'unclaimed.workspace.stranded';
 const SAVE_DEBOUNCE_MS = 1200;
 
 /** 'offline' until we know better — never assume entitled. */
@@ -121,9 +123,50 @@ export async function open() {
     return { status: STATUS.READY, doc: null, rev: 0, email: me.body.email };
   }
 
+  /* The server has a document, and this browser may also have one that was
+     built before signing in. The old code called writeLocal(serverDoc) here
+     unconditionally, which erased that anonymous work with no warning, no
+     merge and no export — the exact failure the module header promises not to
+     have. It only looked safe because the common case is an empty local board.
+
+     Two portfolios cannot be merged automatically: which of two different
+     headcounts for the same company is right is a question only a person can
+     answer. So the local copy is preserved under a recovery key and reported,
+     and the UI offers it as a download. The server copy still wins on screen,
+     because it is the one the team can see. */
+  const local = readLocal();
+  let stranded = false;
+  if (hasContent(local) && JSON.stringify(local) !== JSON.stringify(serverDoc)) {
+    try {
+      localStorage.setItem(STRANDED_KEY, JSON.stringify({ at: Date.now(), doc: local }));
+      stranded = true;
+    } catch {
+      /* No room to stash it. Better to say nothing than to claim a rescue we
+         did not perform — `stranded` stays false and the copy is overwritten,
+         which is the pre-existing behaviour and the only option left. */
+    }
+  }
+
   writeLocal(serverDoc);
   writeRev(serverRev);
-  return { status: STATUS.READY, doc: serverDoc, rev: serverRev, email: me.body.email, scope: ws.body.scope };
+  return { status: STATUS.READY, doc: serverDoc, rev: serverRev, email: me.body.email, scope: ws.body.scope, stranded };
+}
+
+/** The anonymous board that was displaced by a server copy, if there is one. */
+export function readStranded() {
+  try {
+    return JSON.parse(localStorage.getItem(STRANDED_KEY));
+  } catch {
+    return null;
+  }
+}
+
+export function clearStranded() {
+  try {
+    localStorage.removeItem(STRANDED_KEY);
+  } catch {
+    /* Nothing to do; it is only a recovery copy. */
+  }
 }
 
 /** One save. Returns {ok, rev} or {ok:false, conflict, doc, rev}. */
@@ -156,6 +199,9 @@ export function createSaver({ onState = () => {}, onConflict = null } = {}) {
   let pending = null;
   let rev = readRev();
   let inFlight = false;
+  /* Set for exactly one turn of the loop, to stop the retry below re-sending a
+     document that has just lost a conflict. */
+  let conflictFailed = false;
 
   async function flush() {
     if (inFlight || pending === null) return;
@@ -172,17 +218,36 @@ export function createSaver({ onState = () => {}, onConflict = null } = {}) {
       } else if (res.conflict) {
         rev = res.rev;
         writeRev(rev);
+        /* Drop anything queued. It was composed against the revision we just
+           lost, so re-sending it would succeed at the NEW revision and erase
+           the colleague's save we were just told about — silently, while the
+           screen shows their version. The user would reload and watch the
+           board flip back to the copy they had been told they lost.
+           
+           The losing document is handed to onConflict instead, so it can be
+           offered as an export rather than thrown away or force-pushed. */
+        const losing = pending ?? doc;
+        pending = null;
+        conflictFailed = true;
         onState('conflict');
-        if (onConflict && res.doc) onConflict(res.doc, rev);
+        if (onConflict) onConflict(res.doc ?? null, rev, losing);
       } else {
+        /* A failed push must not lose the document. `pending` was cleared
+           before the await, so without this the edit exists only in
+           localStorage and never reaches the server again unless the user
+           happens to type something else. */
+        if (pending === null) pending = doc;
         onState('error');
       }
     } catch {
+      if (pending === null) pending = doc;
       onState('error');
     } finally {
       inFlight = false;
-      /* Something arrived while we were writing. Go again rather than drop it. */
-      if (pending !== null) setTimeout(flush, 0);
+      /* Something arrived while we were writing. Go again rather than drop it —
+         but never straight after a conflict, for the reason above. */
+      if (pending !== null && !conflictFailed) setTimeout(flush, 0);
+      conflictFailed = false;
     }
   }
 
@@ -193,10 +258,28 @@ export function createSaver({ onState = () => {}, onConflict = null } = {}) {
       clearTimeout(timer);
       timer = setTimeout(flush, SAVE_DEBOUNCE_MS);
     },
-    /** Force a write now — used on page hide, so a closed tab does not lose the last edit. */
+    /**
+     * Force a write now — used on page hide, so a closed tab does not lose the
+     * last edit.
+     *
+     * `flush()` returns immediately when a save is already in flight, and the
+     * usual `setTimeout` retry never runs because the page is unloading. So
+     * when that happens the edit is written with `sendBeacon`, which the
+     * browser is obliged to deliver after the page is gone. It carries no
+     * cookies in some engines, hence the token when we have one — and if
+     * neither is available the local copy is still intact, which is the
+     * failure we can live with.
+     */
     flushNow() {
       clearTimeout(timer);
-      return flush();
+      if (!inFlight || pending === null) return flush();
+      try {
+        const body = JSON.stringify({ rev, doc: pending });
+        navigator.sendBeacon?.('/api/workspace', new Blob([body], { type: 'application/json' }));
+      } catch {
+        /* Nothing more we can do at unload. localStorage still has it. */
+      }
+      return Promise.resolve();
     },
     setRev(r) {
       rev = r;
