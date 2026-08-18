@@ -245,5 +245,103 @@ test('obligation kinds cover reports, not just milestones', () => {
     /syncState === 'error'/.test(dash) && /Not saved to your account/.test(dash));
 }
 
+/* ------------------------------------------------------------------ */
+/* Data loss in the sync layer                                         */
+/* ------------------------------------------------------------------ */
+
+/* These are behavioural, not source greps: the conflict path is where work
+   actually disappears, and the failure is a sequence of states rather than a
+   line of code. The saver is driven for real against a fake server. */
+{
+  const fs = await import('node:fs');
+  const path = await import('node:path');
+  const { fileURLToPath } = await import('node:url');
+  const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
+  const ck = (name, cond) => test(name, () => assert.ok(cond, name));
+
+  /* A minimal browser for the module: localStorage and fetch. */
+  const store = new Map();
+  globalThis.localStorage = {
+    getItem: (k) => (store.has(k) ? store.get(k) : null),
+    setItem: (k, v) => store.set(k, String(v)),
+    removeItem: (k) => store.delete(k),
+  };
+
+  const server = { rev: 1, doc: { v: 1, companies: [{ id: 'theirs' }] } };
+  let puts = 0;
+  globalThis.fetch = async (url, init = {}) => {
+    const body = init.body ? JSON.parse(init.body) : null;
+    if (String(url).startsWith('/api/workspace') && (init.method === 'PUT' || init.method === 'POST')) {
+      puts += 1;
+      /* Slow on purpose. The bug only exists when the user types WHILE a save
+         is in flight, so an instant server never reproduces it — which is how
+         the first version of this test passed against the broken code. */
+      await new Promise((r) => setTimeout(r, 200));
+      if (body.rev !== server.rev) {
+        return { ok: false, status: 409, json: async () => ({ error: 'conflict', rev: server.rev, doc: server.doc }) };
+      }
+      server.rev += 1;
+      server.doc = body.doc;
+      return { ok: true, status: 200, json: async () => ({ ok: true, rev: server.rev }) };
+    }
+    return { ok: false, status: 404, json: async () => ({}) };
+  };
+
+  const sync = await import('../src/pwa/workspace-sync.js');
+
+  /* The scenario that erased a colleague's work: we are on a stale revision,
+     the user keeps typing during the in-flight save, the PUT 409s. The old
+     code adopted the server's revision and then re-sent the local document at
+     it — succeeding, and wiping the other person's board while the screen
+     showed theirs. */
+  const states = [];
+  let handedServerDoc = null;
+  let handedLosing = null;
+  store.set('unclaimed.workspace.rev', '0'); // stale on purpose
+  const saver = sync.createSaver({
+    onState: (s2) => states.push(s2),
+    onConflict: (serverDoc, _rev, losing) => {
+      handedServerDoc = serverDoc;
+      handedLosing = losing;
+    },
+  });
+
+  saver.queue({ v: 1, companies: [{ id: 'mine' }] });
+  /* Past the debounce, so the PUT is in flight and stuck in that 200ms... */
+  await new Promise((r) => setTimeout(r, 1300));
+  /* ...and NOW the user types. This is the edit the broken code re-sent at the
+     server's revision, erasing the other person's board. */
+  saver.queue({ v: 1, companies: [{ id: 'mine' }, { id: 'mine2' }] });
+  await new Promise((r) => setTimeout(r, 2500));
+
+  ck('a conflict is reported', states.includes('conflict'));
+  ck(
+    'a conflict does not force the local copy over the server copy',
+    server.doc.companies.length === 1 && server.doc.companies[0].id === 'theirs',
+  );
+  ck('and does not silently retry after losing', !states.slice(states.indexOf('conflict') + 1).includes('saved'));
+  ck('the server document is handed to the UI', handedServerDoc?.companies?.[0]?.id === 'theirs');
+  ck('so is the document that lost, so it can be exported', handedLosing != null);
+
+  /* The anonymous board must never be discarded without trace. */
+  store.set('unclaimed.workspace.v1', JSON.stringify({ v: 1, companies: [{ id: 'anon' }] }));
+  const src = fs.readFileSync(path.join(ROOT, 'src/pwa/workspace-sync.js'), 'utf8');
+  ck('a displaced anonymous board is stashed, not overwritten', /STRANDED_KEY/.test(src) && /export function readStranded/.test(src));
+  ck('and the UI offers it back', /dismiss-stranded/.test(fs.readFileSync(path.join(ROOT, 'src/pwa/dashboard.js'), 'utf8')));
+
+  /* A failed (non-conflict) push must keep the document for the next attempt. */
+  ck('a failed push re-queues rather than dropping the edit', /if \(pending === null\) pending = doc;/.test(src));
+
+  /* And a background save must not rebuild the DOM under the user's cursor. */
+  const dash = fs.readFileSync(path.join(ROOT, 'src/pwa/dashboard.js'), 'utf8');
+  ck(
+    'a sync state change patches the banner instead of re-rendering',
+    /const el = \$\('#sync-banner'\);/.test(dash) && /el\.innerHTML = syncBanner\(\)/.test(dash),
+  );
+
+  /* Figures labelled "pipeline" must exclude what has left it. */
+  ck('open pipeline excludes awarded and declined', /const openEntries = /.test(dash) && /CLOSED_STAGES/.test(dash));
+}
+
 console.log(`\n${passed} passed, ${failed} failed\n`);
 process.exit(failed ? 1 : 0);
