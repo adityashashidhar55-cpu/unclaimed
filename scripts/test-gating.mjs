@@ -224,10 +224,18 @@ if (!failed) {
       ? ok('a subscriber can reach the billing portal')
       : bad('the account page offers no way to manage an existing subscription');
     /* The bug that made an annual subscriber read "Your monthly is active":
-       the raw plan column, printed into a sentence. */
-    /planLabel\(/.test(account)
-      ? ok('the plan name is rendered through planLabel, not raw')
+       the raw plan column, printed into a sentence. Assert the replacement —
+       one state per entitlement reason, computed in one place — rather than
+       the name of whichever helper happens to format the label today. */
+    /accountState\(/.test(account)
+      ? ok('the plan line comes from the entitlement state machine')
       : bad('the account page prints the raw plan column');
+    /awaitEntitlement\(/.test(account)
+      ? ok('a payment waits for its webhook instead of asking for a reload')
+      : bad('the post-payment page renders whatever /api/me says at that instant');
+    /data-portal/.test(account) && /acct-buy-year/.test(account)
+      ? ok('both the buy and the manage controls exist to be switched between')
+      : bad('the account page cannot show one state and hide the other');
   }
 
   /* Every localised account page too — these are the ones that quietly rot,

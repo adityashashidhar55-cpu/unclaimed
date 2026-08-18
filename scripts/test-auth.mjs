@@ -75,10 +75,17 @@ t('length mismatch is rejected without throwing', !mod.timingSafeEqual('abc', h1
   const worker = fs.readFileSync(path.join(ROOT, 'worker/index.js'), 'utf8');
   const client = fs.readFileSync(path.join(ROOT, 'src/pwa/auth.js'), 'utf8');
 
-  /* What the Worker actually puts in the /api/me body. */
-  const meBody = worker.slice(worker.indexOf('async function handleMe'));
+  /* What the Worker actually puts in the /api/me body.
+     Comments are stripped first: this used to scan a fixed 900-character
+     window of raw source, so adding an explanatory comment above a field
+     pushed a real field out of the window and failed the test for a reason
+     that had nothing to do with the contract. */
+  const meBody = worker
+    .slice(worker.indexOf('async function handleMe'))
+    .replace(/\/\*[\s\S]*?\*\//g, ' ')
+    .replace(/\/\/.*/g, ' ');
   const sends = new Set(
-    [...meBody.slice(0, 900).matchAll(/^\s{4}(\w+):/gm)].map((m) => m[1]),
+    [...meBody.slice(0, meBody.indexOf('\n}')).matchAll(/^\s{4}(\w+):/gm)].map((m) => m[1]),
   );
   for (const field of ['signed_in', 'email', 'admin', 'entitlement']) {
     t(`/api/me sends ${field}`, sends.has(field));
@@ -168,6 +175,45 @@ t('length mismatch is rejected without throwing', !mod.timingSafeEqual('abc', h1
     /const isPrivateResponse = /.test(sw) && /!isPrivateResponse\(res\)\) cache\.put/.test(sw),
   );
   t('non-GET requests are not intercepted at all', /request\.method !== 'GET'\) return;/.test(sw));
+}
+
+/* Signing out is a state change, so a GET has to have come from a click.
+   Before this, any page on the internet could log our users out with
+   <img src="https://unclaimedgrant.com/auth/signout">. Harmless in isolation
+   and extremely annoying in the middle of a demo. */
+{
+  const route = src.slice(src.indexOf("pathname === '/auth/signout'"), src.indexOf("pathname === '/auth/signout'") + 1600);
+  t('a cross-site GET signout is refused', /cross_site_signout_refused/.test(route));
+  t('the decision uses Sec-Fetch, which page script cannot forge', /sec-fetch-dest/.test(route) && /sec-fetch-site/.test(route));
+  t('POST is always accepted, because the packaged app has no cookie', /request\.method === 'POST'/.test(route));
+  t('a client with no Sec-Fetch headers is still allowed to sign out', /!dest \|\|/.test(route) && /!site \|\|/.test(route));
+  t('the cleared cookie keeps its security attributes', /ua_session=; Path=\/; HttpOnly; Secure; SameSite=Lax; Max-Age=0/.test(route));
+
+  const client = fs.readFileSync('/home/claude/unclaimed/src/pwa/auth.js', 'utf8');
+  const so = client.slice(client.indexOf('export async function signOut'), client.indexOf('export async function signOut') + 700);
+  t('the client signs out with POST, matching the branch that always passes', /method: 'POST'/.test(so));
+}
+
+/* /api/me is the only place the client learns which door someone came in by,
+   and the account page needs it to offer the right plan. A business account
+   was being sold a single personal seat at 7 euros a month. */
+{
+  const me = grab('handleMe');
+  t('/api/me reports the account type', /account_type: session\.typ/.test(me));
+
+  const client = fs.readFileSync('/home/claude/unclaimed/src/pwa/auth.js', 'utf8');
+  t('and the client reads the field the Worker actually sends', /accountType: data\.account_type/.test(client));
+}
+
+/* 'auto' is resolved server-side, where the session lives. A client that
+   resolves it is a client that can get it wrong, and the locked panels are
+   rendered into static HTML long before anyone signs in. */
+{
+  const co = grab('handleCheckout');
+  t("checkout resolves 'auto' from the session", /requested === 'auto'/.test(co));
+  t('and business sessions get the business plan', /session\.typ === 'business' \? 'business_annual'/.test(co));
+  t('an unknown plan is still refused', /unknown plan/.test(co));
+  t('the price table is not client-supplied', /body\.price/.test(co) === false);
 }
 
 console.log(`\n${pass} passed, ${fail} failed\n`);
