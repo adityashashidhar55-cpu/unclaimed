@@ -120,10 +120,32 @@ const SITE_URL = `${ORIGIN}${BASE}`;
 /* Helpers                                                             */
 /* ------------------------------------------------------------------ */
 
+/**
+ * Version every first-party import, including the ones INSIDE JavaScript files.
+ *
+ * The inline imports in HTML already carried ?v=. The imports inside the
+ * modules did not — `src/app.js` asks for './engine/matcher.js' with no
+ * version — and the service worker caches by URL, so it pinned the matcher
+ * from whichever build a visitor first saw and served it forever. The result
+ * was a deploy that looked complete from the server side and changed nothing
+ * for a returning user: /app.js was fresh, and the matching logic it imported
+ * was months old. That is the third time this class of bug has landed, after
+ * a 404 specifier and an HTTP-cached one, so it is fixed at the build step
+ * where it cannot be forgotten per file.
+ *
+ * Only relative specifiers, only .js, only ones without a query already.
+ */
+function versionImports(code) {
+  return code.replace(
+    /(\bfrom\s*|\bimport\s*\(\s*)(['"])(\.\.?\/[^'"?]+\.js)\2/g,
+    (_m, lead, q, spec) => `${lead}${q}${spec}?v=${ASSET_V}${q}`,
+  );
+}
+
 function write(rel, content) {
   const full = path.join(OUT, rel);
   fs.mkdirSync(path.dirname(full), { recursive: true });
-  fs.writeFileSync(full, content);
+  fs.writeFileSync(full, rel.endsWith('.js') && typeof content === 'string' ? versionImports(content) : content);
 }
 
 function page(rel, html) {
@@ -2711,9 +2733,12 @@ fs.mkdirSync(OUT, { recursive: true });
 
 // static assets
 fs.copyFileSync(path.join(__dirname, 'theme.css'), path.join(OUT, 'theme.css'));
-fs.copyFileSync(path.join(__dirname, 'app.js'), path.join(OUT, 'app.js'));
+/* Through write(), not copyFileSync: these two need their internal imports
+   version-stamped, and a straight copy is exactly how the stale matcher got
+   pinned in every returning visitor's service worker. */
+write('app.js', fs.readFileSync(path.join(__dirname, 'app.js'), 'utf8'));
 fs.mkdirSync(path.join(OUT, 'engine'), { recursive: true });
-fs.copyFileSync(path.join(__dirname, 'engine/matcher.js'), path.join(OUT, 'engine/matcher.js'));
+write('engine/matcher.js', fs.readFileSync(path.join(__dirname, 'engine/matcher.js'), 'utf8'));
 write(
   'favicon.svg',
   `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><rect width="24" height="24" rx="5" fill="#0f3d47"/><circle cx="12" cy="12" r="7.5" fill="none" stroke="#4fd1c5" stroke-width="1"/><path d="M8.4 12.2l2.5 2.5 4.7-5.2" fill="none" stroke="#ffffff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>`,
