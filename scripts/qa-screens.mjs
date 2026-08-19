@@ -63,10 +63,10 @@ const SCREENS = [
   ['french home', '/fr/', 'me'],
 ];
 
-const WIDTHS = [[1280, 900, 'desktop'], [390, 844, 'phone']];
+const WIDTHS = [[1536, 900, 'wide'], [1280, 900, 'desktop'], [900, 800, 'tablet'], [390, 844, 'phone']];
 
 const AUDIT = () => {
-  const out = { overflow: [], tiny: [], crowded: [], overlap: [] };
+  const out = { overflow: [], tiny: [], crowded: [], overlap: [], wrapped: [] };
   const vw = document.documentElement.clientWidth;
   const seen = (el) => {
     const s = getComputedStyle(el);
@@ -136,6 +136,17 @@ const AUDIT = () => {
       else if (hGap < -2 && vGap < -2 && a.width && b.width) out.overlap.push(`${name(controls[i])} overlaps ${name(controls[j])}`);
     }
   }
+  /* 4. Menu labels that wrapped. A nav item reading "Grants / workspace" over
+        two lines is the bar telling you it does not fit, and it takes the
+        whole masthead 20px taller with it. */
+  for (const el of document.querySelectorAll('.nav--links a, .masthead .btn, .nav__account, .breadcrumb a')) {
+    if (!seen(el)) continue;
+    const r = el.getBoundingClientRect();
+    const lh = parseFloat(getComputedStyle(el).lineHeight) || 16;
+    const pad = parseFloat(getComputedStyle(el).paddingTop) + parseFloat(getComputedStyle(el).paddingBottom);
+    if (r.height - pad > lh * 1.6) out.wrapped.push(`${name(el)} wraps onto ${Math.round((r.height - pad) / lh)} lines`);
+  }
+
   for (const k of Object.keys(out)) out[k] = [...new Set(out[k])].slice(0, 6);
   return out;
 };
