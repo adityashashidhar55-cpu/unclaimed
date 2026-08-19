@@ -4,6 +4,7 @@
  */
 import { CATEGORY_LABEL, BENEFIT_TYPE_LABEL, formatMoney, periodSuffix } from './engine/matcher.js';
 import { BOOT_SCRIPT } from './pwa/audience.js';
+import { t as translate } from './i18n.mjs';
 
 export const SITE_NAME = 'Unclaimed';
 export const TAGLINE = 'Find the government money you are entitled to and are not claiming.';
@@ -65,7 +66,7 @@ export function layout({
 }) {
   const fullTitle = title === SITE_NAME ? title : `${title} · ${SITE_NAME}`;
   const LB = linkBase ?? base;
-  const T = tr ?? ((k) => k);
+  const T = tr ?? EN;
   const ldBlocks = jsonld
     .map((o) => `<script type="application/ld+json">${JSON.stringify(o).replace(/</g, '\\u003c')}</script>`)
     .join('\n');
@@ -167,20 +168,19 @@ ${body}
           <li class="aud-biz"><a href="${base}/startups/check/">${esc(T('ctaCheckCompany'))}</a></li>
           <li class="aud-me"><a href="${LB}/countries/">${esc(T('navCountries'))}</a></li>
           <li class="aud-biz"><a href="${base}/startups/">${esc(T('navProgrammes'))}</a></li>
-          <li><a href="${LB}/methodology/">${esc(T('methodology'))}</a></li>
+          <li><a href="${LB}/methodology/">${esc(T('navHow'))}</a></li>
           <li class="aud-me"><a href="${base}/blog/">${esc(T('navWriting'))}</a></li>
           <li><a href="${LB}/pricing/">${esc(T('navPricing'))}</a></li>
           <li><a href="${LB}/auto-apply/">${esc(T('navAutoApply'))}</a></li>
-          <li><a href="${LB}/account/">${esc(T('navAccount'))}</a></li>
           <li class="aud-biz"><a href="${base}/enterprise/">${esc(T('navEnterprise'))}</a></li>
           <li class="aud-biz"><a href="${base}/dashboard/">${esc(T('footWorkspace'))}</a></li>
-          <li class="aud-me"><a href="${base}/app/">${esc(T('footMobileApp'))}</a></li>
+          <li class="aud-me"><a href="${base}/app/">${esc(T('navApp'))}</a></li>
         </ul>
       </div>
       <div>
         <h4>${esc(T('footDevelopers'))}</h4>
         <ul>
-          <li><a href="${base}/api/">REST &amp; MCP</a></li>
+          <li><a href="${base}/api/">${esc(T('navApi'))}</a></li>
           <li><a href="${base}/api/v1/countries.json">countries.json</a></li>
           <li><a href="${base}/llms.txt">llms.txt</a></li>
         </ul>
@@ -428,6 +428,21 @@ export function listRow(base, cc, p, currency) {
  * row is replaced — not hidden — so there is nothing in the document to
  * un-hide with devtools.
  */
+/**
+ * The fallback translator, and why it is not `(k) => k`.
+ *
+ * Three shared components took an optional `tr` and, when a caller forgot it,
+ * "fell back" to returning the key name. That is not a fallback, it is
+ * printing source code at the reader: 4,063 of 5,891 built pages carried at
+ * least one, and the primary paywall button on every programme page read
+ * `signInUnlock` instead of "Sign in to unlock". It went unnoticed because a
+ * missing translation is invisible to every test that checks the page renders.
+ *
+ * English is the only defensible fallback. A German page that says "Sign in to
+ * unlock" is imperfect; one that says `signInUnlock` is broken.
+ */
+const EN = translate('en');
+
 export const FREE_ROWS = 2;
 
 /**
@@ -444,7 +459,7 @@ export function teaseList({
   rows, total = null, noun = 'programmes', href = null,
   container = 'list-rows', tr = null, checkHref = null,
 }) {
-  const T = tr ?? ((k) => k);
+  const T = tr ?? EN;
   const n = total ?? rows.length;
   const shown = rows.slice(0, FREE_ROWS);
   const hidden = Math.max(0, n - shown.length);
@@ -455,7 +470,7 @@ export function teaseList({
       ${Array.from({ length: Math.min(hidden, 4) }, () => '<div class="locked__row"></div>').join('')}
     </div>
     <p class="small" style="margin:.6rem 0 0">${T('moreLocked', hidden, esc(noun))}</p>
-    <p style="margin:.8rem 0 0">
+    <p class="btn-row" style="margin:.8rem 0 0">
       <a class="btn btn-primary btn-sm" href="${href ?? '/pricing/'}">${esc(T('seePlans'))}</a>
       <a class="btn btn-sm" href="${checkHref ?? '/check/'}">${esc(T('checkFree'))}</a>
     </p>
@@ -470,17 +485,29 @@ export function teaseList({
  * un-hide. On a static page `entitled` is always false at build time; the
  * client fetches the real content from the gated API after sign-in.
  */
-export function locked({ title, blurb, rows = 3, id = null, tr = null, base = '' }) {
-  const T = tr ?? ((k) => k);
+export function locked({ title, blurb, rows = 3, id = null, tr = null, base = '', cta = true }) {
+  const T = tr ?? EN;
+  /* Only the FIRST locked panel on a page argues for the subscription.
+     
+     A programme page has three of these — what it pays, who qualifies, the
+     documents — and every one of them was carrying the full pitch, so the
+     reader met "Sign in to unlock" and "See pricing" three times on one
+     screen, plus a fourth pair from the inline tease below. Repeating a call
+     to action does not double the conversion; it reads as a page that is
+     mostly wall. The later panels say what is behind them and stop. */
   return `<section class="locked-bucket"${id ? ` data-locked="${esc(id)}"` : ''}>
     <div class="bucket__head"><h2 style="margin:0">${esc(title)}</h2></div>
     ${blurb ? `<p class="small">${esc(blurb)}</p>` : ''}
     <div class="locked__rows" aria-hidden="true">
       ${Array.from({ length: rows }, () => '<div class="locked__row"></div>').join('')}
     </div>
-    <p><a class="btn btn-primary" href="${base}/account/">${esc(T('signInUnlock'))}</a>
+    ${
+      cta
+        ? `<p class="btn-row"><a class="btn btn-primary" href="${base}/account/">${esc(T('signInUnlock'))}</a>
        <a class="btn" href="${base}/pricing/">${esc(T('seePricing'))}</a></p>
-    <p class="tiny">${esc(T('lockedNote'))}</p>
+    <p class="tiny">${esc(T('lockedNote'))}</p>`
+        : `<p class="tiny">${esc(T('lockedNote'))}</p>`
+    }
   </section>`;
 }
 

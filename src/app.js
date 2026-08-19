@@ -369,9 +369,20 @@ async function refreshEntitlement() {
  * Takes a thunk rather than a string so the programme markup is never built
  * for an unentitled viewer — nothing to find in the DOM, nothing to un-hide.
  */
+/* Only the first locked bucket on the results screen argues for the plan.
+   
+   There are six of these down one page, and every one carried the full pitch —
+   so a signed-out visitor met the identical "Sign in to unlock" and "See
+   pricing" pair six times, plus the one in the masthead. It reads as a page
+   that is mostly wall, and it is the "sign in appears twice" complaint,
+   understated by four. The later buckets say what is behind them and stop. */
+let gatedShown = 0;
+
 function gated(count, noun, buildHtml) {
   if (ENTITLED) return buildHtml();
   if (!count) return '';
+  const first = gatedShown === 0;
+  gatedShown += 1;
   return `<section class="bucket locked-bucket">
     <div class="bucket__head"><h2>${count} ${noun}</h2></div>
     <p class="small">Unlock to see which ones, what each pays, what documents they want and when they close.</p>
@@ -379,11 +390,13 @@ function gated(count, noun, buildHtml) {
       ${Array.from({ length: Math.min(count, 4) }, () => '<div class="locked__row"></div>').join('')}
     </div>
     ${
-      SIGNED_IN
-        ? `<p><button class="btn btn-primary" type="button" data-checkout data-plan="auto">Unlock — €50 a year</button>
+      !first
+        ? ''
+        : SIGNED_IN
+          ? `<p class="btn-row"><button class="btn btn-primary" type="button" data-checkout data-plan="auto">Unlock — €50 a year</button>
              <a class="btn" href="/pricing/">See all plans</a></p>
            <p class="tiny">Or €7 a month on the pricing page. Cancel any time.</p>`
-        : `<p><a class="btn btn-primary" href="/account/?next=${encodeURIComponent('/check/')}&plan=auto">Sign in to unlock</a>
+          : `<p class="btn-row"><a class="btn btn-primary" href="/account/?next=${encodeURIComponent('/check/')}&plan=auto">Sign in to unlock</a>
              <a class="btn" href="/pricing/">See pricing</a></p>
            <p class="tiny">Email and a six-digit code. No password to forget.</p>`
     }
@@ -574,6 +587,7 @@ function viewNoMatches() {
         counted from the ${S.data.programmes.length} ${esc(S.entry.name)} programmes we hold.</p>
       <div class="row" style="margin-top:2rem">
         <button class="btn btn-sm" type="button" data-act="restart">Change my answers</button>
+        <button class="btn btn-sm" type="button" data-act="start-over">Start again in another country</button>
         <a class="btn btn-sm btn-ghost" href="${BASE}/${S.entry.slug}/">Browse all ${S.data.programmes.length} anyway</a>
       </div>
     </section>
@@ -763,6 +777,7 @@ function viewResults() {
       <button class="btn btn-sm" type="button" data-act="share">Copy my result link</button>
       <button class="btn btn-sm btn-ghost" type="button" onclick="window.print()">Print / save as PDF</button>
       <button class="btn btn-sm btn-ghost" type="button" data-act="restart">Change my answers</button>
+      <button class="btn btn-sm btn-ghost" type="button" data-act="start-over">Another country</button>
     </div>
   </section>
 
@@ -877,6 +892,10 @@ function trackStep(st) {
 }
 
 async function render() {
+  /* Reset here, not only in compute(): the results screen re-renders on its
+     own (entitlement resolving, a circumstance being claimed) and the counter
+     has to start from zero each time or the pitch disappears entirely. */
+  gatedShown = 0;
   const st = steps();
   if (S.result) {
     /* Ask before drawing: rendering the list and then hiding it would put the
@@ -944,6 +963,7 @@ function readInputs() {
 }
 
 function compute() {
+  gatedShown = 0;
   S.result = match(S.profile, S.data, S.entry);
   const url = new URL(location.href);
   url.hash = `r=${encodeState()}`;
@@ -1017,8 +1037,29 @@ app.addEventListener('click', async (ev) => {
     return;
   }
   if (act === 'restart') {
+    /* Step 1, not 0, so "change my answers" keeps the country and drops you at
+       the first real question. */
     S.result = null;
     S.step = 1;
+    render();
+    return;
+  }
+  /* Start completely over, country included.
+     
+     "Change my answers" went to step 1, which is the region question — so the
+     country was the one answer you could never change. Combined with the
+     profile now being remembered between visits, a person who picked the wrong
+     country once was stuck in it permanently, with no control anywhere on the
+     page to escape. That is the dead end reported as "there is no way I can go
+     back to choosing another set of answers". */
+  if (act === 'start-over') {
+    clearProfile();
+    S.result = null;
+    S.profile = {};
+    S.data = null;
+    S.entry = null;
+    S.step = 0;
+    history.replaceState(null, '', location.pathname);
     render();
     return;
   }

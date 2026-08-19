@@ -500,6 +500,82 @@ function landing() {
 /* 2. Programme detail page                                            */
 /* ================================================================== */
 
+/* Enum values are database vocabulary, not English.
+   
+   The "At a glance" table printed them raw: "Level: private" (a funder type,
+   not a level of government), "Deadline: none" (which reads as a missing value
+   rather than "no deadline"), "Applying: post". Lowercase identifiers in a
+   labelled table are the clearest possible signal that nobody wrote this page,
+   and they were on 2,388 of them. */
+const CHANNEL_LABEL = {
+  online: 'Online',
+  post: 'By post',
+  in_person: 'In person',
+  via_employer: 'Through your employer',
+  phone: 'By phone',
+  email: 'By email',
+};
+const DEADLINE_LABEL = {
+  rolling: 'Open all year',
+  none: 'No deadline',
+  annual: 'Once a year',
+  window: 'Open in set windows',
+};
+/** "a, b and c" — an Oxford-free list in the language the page is written in. */
+function listAnd(items) {
+  const a = items.filter(Boolean);
+  if (a.length <= 1) return a[0] ?? '';
+  return `${a.slice(0, -1).join(', ')} and ${a[a.length - 1]}`;
+}
+function sentenceCase(s) {
+  return s ? s[0].toUpperCase() + s.slice(1) : s;
+}
+
+/* Funding-stage and company-size vocabulary. "series_a" is a column value;
+   "Series A" is what an investor calls it. */
+const STAGE_LABEL = {
+  idea: 'idea stage',
+  pre_seed: 'pre-seed',
+  seed: 'seed',
+  series_a: 'Series A',
+  growth: 'growth',
+};
+const SME_LABEL = {
+  micro: 'micro',
+  small: 'small',
+  medium: 'medium-sized',
+  medium_sized: 'medium-sized',
+  large: 'large',
+};
+const STATUS_LABEL = {
+  employee: 'employees',
+  jobseeker: 'jobseekers',
+  parent: 'parents',
+  retired: 'pensioners',
+  self_employed: 'self-employed people',
+  student: 'students',
+  unemployed: 'people out of work',
+};
+const TENURE_LABEL = {
+  homeless: 'People without settled housing',
+  owner: 'Homeowners',
+  renting: 'Renters',
+  student_housing: 'People in student housing',
+};
+const NATIONALITY_LABEL = {
+  any_resident: 'Any legal resident',
+  citizen_or_pr: 'Citizens and permanent residents',
+  refugee_or_protected: 'Refugees and people with protected status',
+};
+const LEVEL_LABEL = {
+  national: 'National government',
+  region: 'Regional government',
+  state: 'State government',
+  city: 'City or council',
+  private: 'Private or charitable funder',
+  eu: 'European Union',
+};
+
 function programmePage(entry, data, p) {
   const cc = entry.slug;
   const cur = p.amount_currency || data.currency;
@@ -514,7 +590,12 @@ function programmePage(entry, data, p) {
   const e = p.eligibility;
   const ruleRows = [];
   const push = (k, v) => v && ruleRows.push(`<tr><th>${esc(k)}</th><td>${v}</td></tr>`);
-  push('Who it is for', (e.statuses || []).length ? esc(e.statuses.join(', ').replace(/_/g, ' ')) : 'No status restriction published');
+  push(
+    'Who it is for',
+    (e.statuses || []).length
+      ? esc(sentenceCase(listAnd((e.statuses || []).map((x) => STATUS_LABEL[x] ?? x.replace(/_/g, ' ')))))
+      : 'No status restriction published',
+  );
   if (e.age_min != null || e.age_max != null) {
     push('Age', esc(e.age_min != null && e.age_max != null ? `${e.age_min}–${e.age_max}` : e.age_min != null ? `${e.age_min}+` : `Up to ${e.age_max}`));
   }
@@ -525,8 +606,8 @@ function programmePage(entry, data, p) {
     );
   }
   if (e.requires_children) push('Children', 'At least one dependent child required');
-  if (e.housing_tenure) push('Housing', esc(String(e.housing_tenure).replace(/_/g, ' ')));
-  if (e.nationality && e.nationality !== 'any') push('Residency status', esc(String(e.nationality).replace(/_/g, ' ')));
+  if (e.housing_tenure) push('Housing', esc(TENURE_LABEL[e.housing_tenure] ?? String(e.housing_tenure).replace(/_/g, ' ')));
+  if (e.nationality && e.nationality !== 'any') push('Residency status', esc(NATIONALITY_LABEL[e.nationality] ?? String(e.nationality).replace(/_/g, ' ')));
   if (e.residency_months_min != null) push('Time in country', `At least ${e.residency_months_min} months`);
   if (e.student_required) push('Student status', 'Must be enrolled as a student');
   if ((e.admin_areas || []).length) push('Where it applies', esc(e.admin_areas.join(', ')));
@@ -557,7 +638,7 @@ function programmePage(entry, data, p) {
     .map((x) => listRow(BASE, cc, x, data.currency));
 
   const body = `
-<section class="section-tight shell">
+<section class="section-tight shell" data-programme="${esc(p.slug)}" data-country="${esc(entry.slug)}">
   ${breadcrumbs(crumbs)}
   <div class="detail-grid">
     <div>
@@ -572,10 +653,10 @@ function programmePage(entry, data, p) {
       <p class="small">Paid by <strong>${esc(p.funder)}</strong> · ${esc(entry.flag)} ${esc(entry.name)}</p>
 
       ${locked({
-        title: 'What this pays',
-        blurb: 'The published value, how it is calculated, and whether it is cash or a credit ceiling.',
-        rows: 2,
-      })}
+        title: TR('whatThisPays'),
+        blurb: TR('whatThisPaysBlurb'),
+        id: 'pays',
+        rows: 2, tr: TR, base: LB(), })}
 
       ${(() => {
         const tags = circumstanceTags(p);
@@ -588,19 +669,18 @@ function programmePage(entry, data, p) {
 
       ${PAYWALL_SCHEMES
         ? locked({
-            title: 'Who qualifies',
-            blurb: `The ${ruleRows.length} published rules this programme tests you against — age, income, residency, household and the rest.`,
-            rows: Math.min(ruleRows.length, 4),
-          })
+            title: TR('whoQualifies'),
+            blurb: TR('whoQualifiesBlurb'),
+            id: 'rules',
+            rows: Math.min(ruleRows.length, 4), tr: TR, base: LB(), cta: false })
         : `<h2 style="margin-top:2.5rem">Who qualifies</h2>
       <table class="rule-table">${ruleRows.join('')}</table>`}
 
-      ${PAYWALL_SCHEMES ? `<div class="callout callout--terracotta" style="margin:2rem 0">
-        <p><strong>The steps, documents and official link are part of the paid plan.</strong>
-        Checking how much you're owed is free and always will be.</p>
-        <p style="margin-bottom:0"><a class="btn btn-primary btn-sm" href="${LB()}/pricing/">See plans</a>
-        <a class="btn btn-ghost btn-sm" href="${LB()}/check/">Check your total free</a></p>
-      </div>` : ''}
+      ${/* The fourth pitch on one page. The locked panel above already carries
+            the buttons; this said the same thing again in a louder colour.
+            One sentence, no buttons — the reader has not forgotten. */
+        PAYWALL_SCHEMES ? `<p class="small" data-paywall-note style="margin:2rem 0;color:var(--ink-3)">The steps,
+        documents and official link are part of the paid plan. Checking how much you're owed stays free.</p>` : ''}
       ${
         PAYWALL_SCHEMES ? '' : steps
           ? `<h2 style="margin-top:3rem">${esc(TR('howApply'))}</h2>
@@ -616,10 +696,13 @@ function programmePage(entry, data, p) {
         PAYWALL_SCHEMES
           ? (p.documents_required || []).length
             ? locked({
-                title: `${(p.documents_required || []).length} documents you'll need`,
-                blurb: 'Exactly what to gather before you start, so nothing sends you back to the beginning.',
-                rows: Math.min((p.documents_required || []).length, 4),
-              })
+                /* "1 documents you'll need" was on 1,132 pages. A count in a
+                   heading has to agree with its noun or the page reads as
+                   generated rather than written. */
+                title: `${(p.documents_required || []).length} ${(p.documents_required || []).length === 1 ? 'document' : 'documents'} you'll need`,
+                blurb: TR('documentsBlurb'),
+                id: 'documents',
+                rows: Math.min((p.documents_required || []).length, 4), tr: TR, base: LB(), cta: false })
             : ''
           : docs
             ? `<h2 style="margin-top:3rem">Documents you'll need</h2>
@@ -641,7 +724,7 @@ function programmePage(entry, data, p) {
         }</p>
       </div>
 
-      ${related.length ? `<h2 style="margin-top:3rem">Other ${esc(categoryLabel(p.category).toLowerCase())} support in ${esc(entry.name)}</h2>${teaseList({ rows: relatedRows, total: related.length, noun: 'programmes', href: `${LB()}/pricing/` })}` : ''}
+      ${related.length ? `<h2 style="margin-top:3rem">Other ${esc(categoryLabel(p.category).toLowerCase())} support in ${esc(entry.name)}</h2>${teaseList({ rows: relatedRows, total: related.length, noun: 'programmes', href: `${LB()}/pricing/`, tr: TR, checkHref: `${LB()}/check/`, })}` : ''}
     </div>
 
     <aside class="sticky-side stack no-print">
@@ -656,9 +739,9 @@ function programmePage(entry, data, p) {
         <h4 style="margin-bottom:.7rem">At a glance</h4>
         <table class="rule-table" style="font-size:.85rem">
           <tr><th>Type</th><td>${esc(benefitTypeLabel(p.benefit_type))}</td></tr>
-          <tr><th>Applying</th><td>${p.is_automatic ? 'Automatic' : esc(String(p.application_channel || 'online').replace(/_/g, ' '))}</td></tr>
-          <tr><th>Deadline</th><td>${esc(p.deadline_note || String(p.deadline_type || 'rolling').replace(/_/g, ' '))}</td></tr>
-          <tr><th>Level</th><td>${esc(p.admin_level)}${p.admin_area ? ` · ${esc(p.admin_area)}` : ''}</td></tr>
+          <tr><th>Applying</th><td>${p.is_automatic ? 'Automatic — no application' : esc(CHANNEL_LABEL[p.application_channel] ?? 'Online')}</td></tr>
+          <tr><th>Deadline</th><td>${esc(p.deadline_note || DEADLINE_LABEL[p.deadline_type] || 'Open all year')}</td></tr>
+          <tr><th>Run by</th><td>${esc(LEVEL_LABEL[p.admin_level] ?? 'National government')}${p.admin_area ? ` · ${esc(p.admin_area)}` : ''}</td></tr>
           <tr><th>Checked</th><td>${esc(p.last_verified_at)}</td></tr>
         </table>
       </div>
@@ -708,6 +791,14 @@ function programmePage(entry, data, p) {
     lang: L,
     tr: TR,
     altLangs: ALT,
+    /* A subscriber must get the page they paid for. The static file ships
+       locked — the real content is not in the document, which is what makes
+       the paywall real — and this asks the server and fills it in when the
+       answer is yes. Without it, paying changed nothing on 4,000 pages. */
+    scripts: `<script type="module">
+import { unlockProgramme } from "${BASE}/app/unlock.js?v=${ASSET_V}";
+unlockProgramme();
+</script>`,
     title: `${p.name_en} — ${entry.name}`,
     description: `${p.name_en}${p.name_local !== p.name_en ? ` (${p.name_local})` : ''}: who qualifies, ${amt ? `worth ${amt}, ` : ''}documents needed, how to apply, and the official ${p.funder} source. Last checked ${p.last_verified_at}.`,
     canonical: `${SITE_URL}/${cc}/${p.category}/${p.slug}/`,
@@ -739,8 +830,7 @@ function countryPage(entry, data) {
           rows: list.slice(0, FREE_ROWS).map((p) => listRow(BASE, cc, p, data.currency)),
           total: list.length,
           noun: `${categoryLabel(cat).toLowerCase()} programmes`,
-          href: `${LB()}/pricing/`,
-        })}
+          href: `${LB()}/pricing/`, tr: TR, checkHref: `${LB()}/check/`, })}
       </section>`;
     })
     .join('');
@@ -849,8 +939,7 @@ function categoryPage(entry, data, cat, list) {
         .map((p) => listRow(BASE, cc, p, data.currency)),
       total: list.length,
       noun: `${categoryLabel(cat).toLowerCase()} programmes`,
-      href: `${LB()}/pricing/`,
-    })}
+      href: `${LB()}/pricing/`, tr: TR, checkHref: `${LB()}/check/`, })}
   </div>
 </section>`;
 
@@ -1260,7 +1349,7 @@ ${disclaimerBar(TR)}
         <span class="eyebrow eyebrow-accent">${esc(TR('entPriceEyebrow'))}</span>
         <h2 style="max-width:20ch;margin-top:.5rem">${esc(TR('entPriceH2a'))} <em class="serif-italic">${esc(TR('entPriceH2b'))}</em></h2>
         <p class="lede" style="max-width:58ch">${esc(TR('entPriceLede'))}</p>
-        <p style="margin-top:1.6rem">
+        <p class="btn-row" style="margin-top:1.6rem">
           <a class="btn btn-primary" href="${BASE}/dashboard/">${esc(TR('entOpenWorkspace'))}</a>
           <a class="btn" href="${LB()}/enterprise/">${esc(TR('entWhatItDoes'))}</a>
           <a class="btn btn-ghost" href="mailto:hello@unclaimedgrant.com?subject=Enterprise%20trial">${esc(TR('entTalkToUs'))}</a>
@@ -1565,7 +1654,7 @@ ${disclaimerBar(TR)}
     <p class="small" style="margin-top:.9rem"><strong>Scoped, not blanket.</strong> The mandate names the programmes, the
     signatory and an expiry date — the version a finance director will actually sign, and the version a funder will accept if it
     asks to see it.</p>
-    <p style="margin-top:1.4rem">
+    <p class="btn-row" style="margin-top:1.4rem">
       <a class="btn btn-primary" href="${SB()}/startups/check/">See what your company qualifies for</a>
       <a class="btn" href="${LB()}/enterprise/">What the workspace does</a>
     </p>
@@ -2427,8 +2516,7 @@ ${disclaimerBar(TR)}
       total: priv,
       noun: 'private and corporate programmes',
       href: `${LB()}/pricing/`,
-      container: 'grid grid-2',
-    })}
+      container: 'grid grid-2', tr: TR, checkHref: `${LB()}/check/`, })}
   </div>
 
   <p style="margin-top:2.5rem"><a class="btn btn-primary" href="${SB()}/startups/check/">Check what your company qualifies for</a></p>
@@ -2488,8 +2576,7 @@ ${disclaimerBar(TR)}
       total: data.programmes.length,
       noun: 'startup programmes',
       href: `${LB()}/pricing/`,
-      container: 'grid grid-2',
-    })}
+      container: 'grid grid-2', tr: TR, checkHref: `${LB()}/check/`, })}
   </div>
 </section>`;
 
@@ -2510,9 +2597,9 @@ function startupProgrammePage(c, p) {
     e.company_age_months_max != null ? `Under ${Math.round(e.company_age_months_max / 12)} years old` : null,
     e.headcount_max != null ? `Up to ${e.headcount_max} employees` : null,
     e.turnover_annual_max != null ? `Turnover up to ${nf(e.turnover_annual_max)}` : null,
-    e.sme_category && e.sme_category !== 'any' ? `${e.sme_category} enterprises` : null,
+    e.sme_category && e.sme_category !== 'any' ? `${SME_LABEL[e.sme_category] ?? e.sme_category} enterprises` : null,
     (e.sectors || []).filter((x) => x && x !== 'any').length ? `Sectors: ${e.sectors.join(', ')}` : null,
-    (e.stages || []).length ? `Stage: ${e.stages.join(', ')}` : null,
+    (e.stages || []).length ? `Stage: ${listAnd(e.stages.map((x) => STAGE_LABEL[x] ?? x.replace(/_/g, ' ')))}` : null,
     e.rd_focus ? 'R&D activity required' : null,
     e.female_founder_only ? 'Female founders' : null,
     e.requires_local_entity ? 'Locally registered entity required' : null,
@@ -2669,8 +2756,7 @@ ${disclaimerBar(TR)}
       rows: list.slice(0, FREE_ROWS).map((p) => listRow(LB(), cc, p, data.currency)),
       total: list.length,
       noun: 'programmes',
-      href: `${LB()}/pricing/`,
-    })}
+      href: `${LB()}/pricing/`, tr: TR, checkHref: `${LB()}/check/`, })}
   </div>
   <div class="callout" style="margin-top:2.5rem">
     <p><strong>${list.length - priced.length} of these publish no fixed amount.</strong> That does not mean they are
@@ -3027,6 +3113,7 @@ write('app/app.js', fs.readFileSync(path.join(SRC, 'pwa/app.js'), 'utf8'));
 write('app/native.js', fs.readFileSync(path.join(SRC, 'pwa/native.js'), 'utf8'));
 write('app/auth.js', fs.readFileSync(path.join(SRC, 'pwa/auth.js'), 'utf8'));
   write('app/checkout.js', fs.readFileSync(path.join(SRC, 'pwa/checkout.js'), 'utf8'));
+  write('app/unlock.js', fs.readFileSync(path.join(SRC, 'pwa/unlock.js'), 'utf8'));
 /* The workspace. One directory deep, like /app/, so its ../packages/ and
    ../engine/ specifiers resolve to the copies written at the root. */
 write('dashboard/dashboard.js', fs.readFileSync(path.join(SRC, 'pwa/dashboard.js'), 'utf8'));
