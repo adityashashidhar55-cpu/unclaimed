@@ -18,7 +18,11 @@
  * connection or a metered plan.
  */
 
-const VERSION = 'v2';
+/* v3: v2 caches hold a matcher from before the eligibility gates existed, and
+   an unversioned import meant they were pinned there permanently. Bumping the
+   version is what actually evicts them from every browser already carrying
+   one. */
+const VERSION = 'v3';
 const SHELL = `unclaimed-shell-${VERSION}`;
 const DATA = `unclaimed-data-${VERSION}`;
 
