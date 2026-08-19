@@ -1362,6 +1362,24 @@ ${disclaimerBar(TR)}
     </div>
 
     <div class="aud-biz">
+      <!-- Self-serve, before the enterprise pitch.
+
+           Flipping the switch to "For my company" removed every buyable thing
+           from the pricing page: the enterprise panel is a mailto and a link
+           to the workspace, and the €49 startup tier lived only in the
+           individual half. A founder who told the site they were a company
+           was shown three prices and no way to pay any of them. -->
+      <div class="panel panel--float" style="margin-top:2.2rem">
+        <span class="eyebrow eyebrow-accent">${esc(TR('priceStartup'))}</span>
+        <h2 style="max-width:22ch;margin-top:.5rem">${esc(TR('priceStartupBlurb'))}</h2>
+        <p class="lede" style="max-width:56ch">${esc(TR('priceStartupSecond'))}</p>
+        <p class="btn-row" style="margin-top:1.4rem">
+          <button class="btn btn-primary" type="button" data-checkout data-plan="business_monthly">${esc(TR('priceSubSeat'))}</button>
+          <a class="btn btn-sm" href="${SB()}/startups/check/">${esc(TR('priceCheckCompany'))}</a>
+        </p>
+        <p class="tiny">${esc(TR('priceSeatNote'))}</p>
+      </div>
+
       <div class="panel panel--float" style="margin-top:2.2rem">
         <span class="eyebrow eyebrow-accent">${esc(TR('entPriceEyebrow'))}</span>
         <h2 style="max-width:20ch;margin-top:.5rem">${esc(TR('entPriceH2a'))} <em class="serif-italic">${esc(TR('entPriceH2b'))}</em></h2>
