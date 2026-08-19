@@ -1085,6 +1085,19 @@ async function handleCheckout(request, env) {
      unbounded invoice pointed at whoever's card is on file. */
   const seats = plan.seats ? Math.min(Math.max(parseInt(body.seats, 10) || 1, 1), 500) : 1;
 
+  /* Reuse the Stripe customer if this account already has one. It is also what
+     makes `customer_update` legal below — Stripe rejects the whole session
+     with "`customer_update` can only be used with `customer`" when it is sent
+     alongside a bare customer_email, which is what every business checkout
+     did: a 500 from the endpoint, on the one plan an enterprise buyer would
+     press. Passing both `customer` and `customer_email` is also an error, so
+     it is one or the other. */
+  const existing = await env.DB.prepare('SELECT stripe_customer_id FROM entitlements WHERE user_id = ?')
+    .bind(session.uid)
+    .first()
+    .catch(() => null);
+  const customerId = existing?.stripe_customer_id || null;
+
   const cs = await stripeCall(env, 'checkout/sessions', {
     mode: 'subscription',
     'line_items[0][price]': plan.price,
@@ -1095,13 +1108,20 @@ async function handleCheckout(request, env) {
     client_reference_id: session.uid,
     'metadata[user_id]': session.uid,
     'metadata[plan]': planKey,
-    customer_email: session.email,
+    ...(customerId ? { customer: customerId } : { customer_email: session.email }),
     'subscription_data[metadata][user_id]': session.uid,
     'subscription_data[metadata][plan]': planKey,
     /* A business buying software wants an invoice with their VAT number on it,
        and collecting it after the fact means reissuing every invoice. */
     ...(plan.seats
-      ? { 'tax_id_collection[enabled]': 'true', 'customer_update[name]': 'auto', billing_address_collection: 'required' }
+      ? {
+          'tax_id_collection[enabled]': 'true',
+          billing_address_collection: 'required',
+          /* Only with a customer on the session. Without one there is nothing
+             to update, and Stripe treats it as a hard error rather than
+             ignoring it. */
+          ...(customerId ? { 'customer_update[name]': 'auto', 'customer_update[address]': 'auto' } : {}),
+        }
       : {}),
     allow_promotion_codes: 'true',
   });
