@@ -15,6 +15,7 @@
    resolves once the build has laid beacon.js out at the root, which is where
    the browser loads it from. Testing the built file also means a broken copy
    step fails here rather than in production. */
+import fs from 'node:fs';
 import { accountState, planLabel, PLANS } from '../dist/app/checkout.js';
 
 let pass = 0, fail = 0;
@@ -133,6 +134,32 @@ for (const reason of ['canceled', 'expired', 'unpaid', 'incomplete_expired']) {
   /* The built pages must carry the table, not just the source. */
   const acct = fs.readFileSync(new URL('../dist/de/account/index.html', import.meta.url), 'utf8');
   t('the built German account page ships its own strings', acct.includes(de.acctPastDue) && acct.includes(de.planPersonalAnnual));
+}
+
+/* ---- the Stripe session Stripe will actually accept ---- */
+/*
+ * A 500 from POST /api/billing/checkout, on the enterprise plan, with the
+ * body: "`customer_update` can only be used with `customer`". The session
+ * sent `customer_update[name]` next to a bare `customer_email`, so every
+ * business checkout died before the redirect and the only visible symptom was
+ * a button that did nothing. Stripe's two rules here are exact, so assert
+ * them against the source rather than hoping.
+ */
+{
+  console.log('\nStripe checkout session');
+  const worker = fs.readFileSync(new URL('../worker/index.js', import.meta.url), 'utf8');
+  const start = worker.indexOf("stripeCall(env, 'checkout/sessions'");
+  const block = worker.slice(start, worker.indexOf('});', start));
+  t('the checkout session is built somewhere in the Worker', start > 0);
+  const guarded = (needle) => {
+    const i = block.indexOf(needle);
+    if (i < 0) return true; // not sent at all is fine
+    /* It must sit inside a conditional keyed on having a customer id. */
+    return /customerId \?/.test(block.slice(Math.max(0, i - 400), i));
+  };
+  t('customer_update is only sent when a customer id is', guarded('customer_update'));
+  t('customer and customer_email are never both unconditional', !(/\n\s+customer:/.test(block) && /\n\s+customer_email:/.test(block)));
+  t('the customer id is looked up before the session is built', worker.slice(0, start).includes('stripe_customer_id FROM entitlements WHERE user_id'));
 }
 
 console.log(`\n${pass} passed, ${fail} failed\n`);
