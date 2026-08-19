@@ -160,7 +160,11 @@ let absent = 0;
   if (!file.startsWith(distReal + path.sep)) { escapes += 1; return; }
   const src = fs.readFileSync(file, 'utf8');
   for (const m of src.matchAll(/from\s+['"](\.[^'"]+)['"]/g)) {
-    walkApp(path.resolve(path.dirname(file), m[1]));
+    /* Strip the cache-busting query before resolving. The build stamps ?v= on
+       every first-party import inside a JS file — without it the service
+       worker pinned an old matcher in every returning browser — and the file
+       on disk of course has no query in its name. */
+    walkApp(path.resolve(path.dirname(file), m[1].split('?')[0]));
   }
 })(path.join(distReal, 'app/app.js'));
 escapes === 0 ? ok(`app module graph stays inside dist (${walked.size} modules)`) : fail(`${escapes} app imports escape dist and would 404`);
@@ -233,7 +237,7 @@ for (const f of ['dashboard/index.html', 'dashboard/dashboard.js', 'dashboard/da
   const js = fs.readFileSync(path.join(DIST, 'dashboard/dashboard.js'), 'utf8');
   let bad = 0;
   for (const m of js.matchAll(/from '(\.[^']+)'/g)) {
-    const target = path.resolve(path.join(DIST, 'dashboard'), m[1]);
+    const target = path.resolve(path.join(DIST, 'dashboard'), m[1].split('?')[0]);
     if (!fs.existsSync(target)) { fail(`dashboard imports ${m[1]}, which was not emitted`); bad += 1; }
   }
   if (!bad) ok('every dashboard import resolves in dist');

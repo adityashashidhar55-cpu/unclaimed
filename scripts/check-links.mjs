@@ -124,6 +124,44 @@ for (const file of htmlFiles) {
   }
   console.log(`  ✓ every inline module import is version-pinned`);
 
+  /* And the imports INSIDE the JavaScript. This is the one that actually bit:
+     /app.js was fresh on the server and imported './engine/matcher.js' with no
+     version, so the service worker kept serving the matcher from whichever
+     build a visitor first saw. The deploy was complete and the user saw no
+     change at all — for weeks, in principle, since nothing would ever evict
+     it. Checking only the HTML missed it entirely. */
+  const jsFiles = [];
+  (function walkJs(dir) {
+    for (const e of fs.readdirSync(dir, { withFileTypes: true })) {
+      const f = path.join(dir, e.name);
+      if (e.isDirectory()) walkJs(f);
+      else if (e.name.endsWith('.js')) jsFiles.push(f);
+    }
+  })(DIST);
+
+  const staleImports = [];
+  for (const f of jsFiles) {
+    const code = fs.readFileSync(f, 'utf8');
+    for (const m of code.matchAll(/(?:\bfrom\s*|\bimport\s*\(\s*)['"](\.\.?\/[^'"]+\.js)(\?[^'"]*)?['"]/g)) {
+      if (!/[?&]v=/.test(m[2] || '')) staleImports.push(`${path.relative(DIST, f)} imports ${m[1]}`);
+    }
+  }
+  if (staleImports.length) {
+    console.error(`\n  ✗ ${staleImports.length} imports inside JS files carry no ?v= — a cached copy can be pinned forever:`);
+    for (const b of staleImports.slice(0, 10)) console.error(`      ${b}`);
+    console.error('');
+    process.exit(1);
+  }
+  console.log(`  ✓ every import inside a JS file is version-pinned too`);
+
+  /* And the service worker version must move whenever the shell does, or the
+     caches holding the old copies are never dropped. */
+  const sw = fs.readFileSync(path.join(DIST, 'sw.js'), 'utf8');
+  const v = sw.match(/VERSION\s*=\s*'([^']+)'/)?.[1];
+  v && v !== 'v2'
+    ? console.log(`  ✓ the service worker cache version is ${v}, past the poisoned v2`)
+    : (console.error('\n  ✗ the service worker is still on v2, whose caches hold the pre-gate matcher\n'), process.exit(1));
+
   if (broken.length) {
     console.error(`\n  ✗ ${broken.length} inline module imports do not resolve:`);
     for (const b of broken.slice(0, 10)) console.error(`      ${b}`);
