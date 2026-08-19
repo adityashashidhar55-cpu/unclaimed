@@ -1736,9 +1736,23 @@ function accountPage() {
 ${disclaimerBar(TR)}
 <section class="section-tight shell" style="max-width:34rem">
   ${breadcrumbs([{ label: TR('backHome'), href: `${LB()}/` }, { label: TR('acctCrumb') }])}
-  <span class="eyebrow eyebrow-accent">${esc(TR('acctCrumb'))}</span>
-  <h1 style="max-width:16ch">${esc(TR('acctH1a'))} <em class="serif-italic">${esc(TR('acctH1b'))}</em></h1>
-  <p class="lede" style="max-width:46ch">${esc(TR('acctLede2'))}</p>
+  <!-- Two headers, one shown.
+
+       A signed-in subscriber opening this page was met with SIGN IN / "No
+       password. Just your email." and, below it, a card telling them they
+       were signed in and what plan they held. The page argued for signing in
+       to somebody who already had. The script at the bottom swaps these once
+       /api/me answers; signed out is the default because that is who this
+       page is usually for. -->
+  <div id="acct-hero-out">
+    <span class="eyebrow eyebrow-accent">${esc(TR('acctCrumb'))}</span>
+    <h1 style="max-width:16ch">${esc(TR('acctH1a'))} <em class="serif-italic">${esc(TR('acctH1b'))}</em></h1>
+    <p class="lede" style="max-width:46ch">${esc(TR('acctLede2'))}</p>
+  </div>
+  <div id="acct-hero-in" hidden>
+    <span class="eyebrow eyebrow-accent">${esc(TR('acctSignedIn'))}</span>
+    <h1 style="max-width:16ch">${esc(TR('navMyAccount'))}</h1>
+  </div>
 
   <div class="card" style="margin-top:2.4rem" id="auth-card">
     <div class="audience" style="margin-bottom:1.4rem">
@@ -1904,6 +1918,10 @@ function paint(s) {
 /* Already signed in? Show the account, not another sign-in form. */
 me().then(async (s) => {
   if (!s.signedIn) return;
+  /* The page stops arguing for something they have already done. */
+  $('#acct-hero-out').hidden = true;
+  $('#acct-hero-in').hidden = false;
+  document.title = ${JSON.stringify(`${TR('navMyAccount')} · ${SITE_NAME}`)};
   paint(s);
 
   /* Just paid. Stripe redirects the moment the card clears; the webhook that
