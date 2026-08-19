@@ -14,16 +14,22 @@
      - fill is ~1% white. Past 0.02 it reads as milky 2016 glassmorphism.
      - no `border` anywhere. The edge is a ::before ring, bright at top
        and bottom, gone at the sides — light catching the lip of a pane.
-     - Comic Sans carries the identity, headings and body alike.
+     - an editorial serif carries the headlines, a UI sans the body.
      - motion is entry-only and never bounces.
    =================================================================== */
 
-/* Comic Neue is loaded alongside Comic Sans MS because Comic Sans ships with
-   Windows and macOS but not with Linux or Android — without a webfont, a
-   third of visitors would silently fall back to a system sans and see a
-   different site from everyone else. Comic Neue is the same shapes, drawn
-   properly, so the two are near-indistinguishable at body size. */
-@import url('https://fonts.googleapis.com/css2?family=Comic+Neue:ital,wght@0,300;0,400;0,700;1,400;1,700&display=swap');
+/* Two faces, one job each.
+
+   Instrument Serif sets the headlines: a high-contrast editorial serif, which
+   is the register a page about public money and entitlements has to be read
+   in. Inter sets everything else, because the body of this site is dense —
+   rule tables, amounts, eligibility conditions — and Inter is drawn for
+   exactly that at small sizes.
+
+   Both carry a full fallback stack, so a visitor whose browser blocks Google
+   Fonts gets Georgia and their platform's UI sans rather than a cursive
+   default, and the page still reads as the same page. */
+@import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600;700&display=swap');
 
 :root {
   --lg-fill: rgba(255, 255, 255, 0.72);
@@ -31,8 +37,8 @@
   --lg-blur-strong: 50px;
   --lg-stroke: 1.4px;
 
-  --font-heading: 'Comic Sans MS', 'Comic Neue', 'Chalkboard SE', cursive;
-  --font-body: 'Comic Sans MS', 'Comic Neue', 'Chalkboard SE', cursive;
+  --font-heading: 'Instrument Serif', Georgia, 'Times New Roman', serif;
+  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
 
   --ink:   #12303a;
   --ink-2: rgba(18, 48, 58, 0.82);
