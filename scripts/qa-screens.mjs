@@ -180,6 +180,16 @@ for (const [w, h, wname] of WIDTHS) {
       if (!res || res.status() >= 400) { report.push([`${wname} · ${label}`, { http: [`HTTP ${res ? res.status() : 'no response'}`] }]); problems += 1; await ctx.close(); continue; }
       await page.waitForTimeout(400);
       const out = await page.evaluate(AUDIT);
+      /* Pricing must be buyable in whichever half the visitor is looking at.
+         Flipping to "For my company" used to leave three prices on screen and
+         no control that starts a checkout — the €49 tier was in the other
+         half and the enterprise panel is a mailto. */
+      if (url === '/pricing/') {
+        const buyable = await page.evaluate(
+          () => [...document.querySelectorAll('[data-checkout]')].filter((b) => b.getBoundingClientRect().width > 0).length,
+        );
+        if (!buyable) out.unbuyable = ['pricing shows no control that starts a checkout in this audience'];
+      }
       if (consoleErrors.length) out.console = [...new Set(consoleErrors)].slice(0, 4);
       const n = Object.values(out).reduce((a, v) => a + v.length, 0);
       if (n) { problems += n; report.push([`${wname} · ${label}`, out]); }
