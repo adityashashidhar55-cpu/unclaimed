@@ -204,6 +204,23 @@ for (const file of htmlFiles) {
   console.log(`  ✓ all ${used.size} class names used in the build are styled`);
 }
 
+/* `hidden` must actually hide.
+
+   The UA rule is `[hidden] { display: none }` and any author `display` beats
+   it, so `.btn { display: inline-flex }` quietly disabled the attribute for
+   every button on the site. The account page correctly set
+   `#acct-check-free.hidden = true` for a subscriber and the duplicate button
+   stayed on screen anyway. */
+{
+  const css = fs.readFileSync(path.join(ROOT, 'src/theme.css'), 'utf8').replace(/\/\*[\s\S]*?\*\//g, ' ');
+  const ok = /\[hidden\][^{]*\{[^}]*display\s*:\s*none\s*!important/.test(css);
+  if (!ok) {
+    console.error('\n  ✗ theme.css has no `[hidden] { display: none !important }` — the attribute does not work on any styled element\n');
+    process.exit(1);
+  }
+  console.log('  ✓ the hidden attribute beats every display rule in the sheet');
+}
+
 /* The audience switch may only ever hide.
 
    `html[data-audience='biz'] .aud-biz { display: revert }` looks like it
