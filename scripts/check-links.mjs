@@ -171,6 +171,65 @@ for (const file of htmlFiles) {
   console.log(`  ✓ all ${checked} inline module imports resolve`);
 }
 
+/* Every class name in the built HTML must have a rule behind it.
+
+   This found thirteen that did not, several on thousands of pages:
+   `.detail-grid` (the programme page's two-column layout — so there was no
+   second column), `.breadcrumb`, `.stack` and `.sticky-side` (three full-width
+   buttons flush against each other), `.stat-strip`, `.badge-auto-apply` and
+   `.badge-action` (the two states a reader most needs to tell apart, drawn
+   identically), `.no-print`. None of them errors. The page renders; it is just
+   not the page anyone designed. */
+{
+  const sheets = ['src/theme.css', 'src/pwa/app.css', 'src/pwa/dashboard.css']
+    .map((f) => path.join(ROOT, f))
+    .filter((f) => fs.existsSync(f))
+    .map((f) => fs.readFileSync(f, 'utf8'))
+    .join('\n')
+    .replace(/\/\*[\s\S]*?\*\//g, ' ');
+  const styled = new Set([...sheets.matchAll(/\.(-?[_a-zA-Z][\w-]*)/g)].map((m) => m[1]));
+  const used = new Map();
+  for (const f of htmlFiles) {
+    for (const m of fs.readFileSync(f, 'utf8').matchAll(/class="([^"]+)"/g)) {
+      for (const c of m[1].split(/\s+/)) if (c) used.set(c, (used.get(c) || 0) + 1);
+    }
+  }
+  const orphans = [...used.entries()].filter(([c]) => !styled.has(c)).sort((a, b) => b[1] - a[1]);
+  if (orphans.length) {
+    console.error('\n  ✗ class names in the built HTML with no rule in any stylesheet:');
+    for (const [c, n] of orphans.slice(0, 15)) console.error(`      .${c} — on ${n} element${n === 1 ? '' : 's'}`);
+    console.error('');
+    process.exit(1);
+  }
+  console.log(`  ✓ all ${used.size} class names used in the build are styled`);
+}
+
+/* The audience switch may only ever hide.
+
+   `html[data-audience='biz'] .aud-biz { display: revert }` looks like it
+   restores the element, and it restores the *browser's* default instead — so
+   the enterprise nav, a flex row with a 1.3rem gap, rendered as inline text
+   with its links 4px apart. Nothing errors, nothing 404s, and it is invisible
+   in the individual view. So: no rule scoped to an audience may set `display`
+   to anything but `none`. */
+{
+  /* Comments first — this file explains the bug it is guarding against, and a
+     scanner that reads its own explanation as code fails on a correct file. */
+  const css = fs.readFileSync(path.join(ROOT, 'src/theme.css'), 'utf8').replace(/\/\*[\s\S]*?\*\//g, ' ');
+  const bad = [];
+  for (const m of css.matchAll(/([^{}]*data-audience[^{}]*)\{([^}]*)\}/g)) {
+    const decl = m[2].match(/display\s*:\s*([^;!]+)/);
+    if (decl && decl[1].trim() !== 'none') bad.push(`${m[1].trim()} sets display: ${decl[1].trim()}`);
+  }
+  if (bad.length) {
+    console.error('\n  ✗ an audience rule sets display to something other than none:');
+    for (const b of bad) console.error(`      ${b}`);
+    console.error('');
+    process.exit(1);
+  }
+  console.log('  ✓ the audience switch only ever hides');
+}
+
 console.log(`\nChecked ${checked} internal links across ${htmlFiles.length} pages.\n`);
 
 if (!broken.size) {
