@@ -156,6 +156,17 @@ function page(rel, html) {
 const PAGES = [];
 const nf = (n) => new Intl.NumberFormat('en').format(n);
 
+/* "2026-08-12" is a column value. "12 August 2026" is a date. The former was
+   printed twice on every programme page, including in the At a glance table
+   directly under three rows of ordinary English. */
+const dateLabel = (iso) => {
+  if (!iso) return '';
+  const d = new Date(`${String(iso).slice(0, 10)}T00:00:00Z`);
+  return Number.isNaN(d.getTime())
+    ? String(iso)
+    : d.toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric', timeZone: 'UTC' });
+};
+
 /* ---- Language state. The whole page set is generated once per language. ---- */
 let L = 'en';
 const LB = () => (L === 'en' ? BASE : `${BASE}/${L}`);
@@ -249,13 +260,13 @@ const STATS = (() => {
 /* Shared fragments                                                    */
 /* ------------------------------------------------------------------ */
 
+/* The separators are drawn by CSS (`.breadcrumb > * + *::before`), not written
+   here. They used to be real `<span>/</span>` elements, which a screen reader
+   announces as "slash" between every step and which, once the trail was
+   styled, rendered next to the CSS separator: "Home › / › Pricing". */
 function breadcrumbs(items) {
   return `<nav class="breadcrumb" aria-label="Breadcrumb">${items
-    .map((it, i) =>
-      it.href
-        ? `<a href="${it.href}">${esc(it.label)}</a>${i < items.length - 1 ? '<span>/</span>' : ''}`
-        : `<span style="opacity:1;margin:0">${esc(it.label)}</span>`,
-    )
+    .map((it) => (it.href ? `<a href="${it.href}">${esc(it.label)}</a>` : `<span aria-current="page">${esc(it.label)}</span>`))
     .join('')}</nav>`;
 }
 
@@ -646,7 +657,7 @@ function programmePage(entry, data, p) {
         ${verificationBadge(p.verification_status)} ${applyBadge(p)}
         <span class="badge badge-neutral">${esc(categoryLabel(p.category))}</span>
         <span class="badge badge-neutral">${esc(benefitTypeLabel(p.benefit_type))}</span>
-        ${p.admin_level !== 'national' ? `<span class="badge badge-neutral">${esc(p.admin_level)}${p.admin_area ? ` · ${esc(p.admin_area)}` : ''}</span>` : ''}
+        ${p.admin_level !== 'national' ? `<span class="badge badge-neutral">${esc(LEVEL_LABEL[p.admin_level] ?? p.admin_level)}${p.admin_area ? ` · ${esc(p.admin_area)}` : ''}</span>` : ''}
       </div>
       <h1 style="font-size:clamp(2rem,4.5vw,3.4rem)">${esc(p.name_en)}</h1>
       ${p.name_local && p.name_local !== p.name_en ? `<p class="lede serif" style="margin-top:-.4rem">${esc(p.name_local)}</p>` : ''}
@@ -717,7 +728,7 @@ function programmePage(entry, data, p) {
         <p style="margin:.6rem 0 0"><a class="link-underline" href="${attr(p.source_url)}" rel="nofollow noopener" target="_blank">${esc(
           p.source_url,
         )}</a></p>
-        <p class="tiny" style="margin:.6rem 0 0">Last checked ${esc(p.last_verified_at)} · ${
+        <p class="tiny" style="margin:.6rem 0 0">Last checked ${esc(dateLabel(p.last_verified_at))} · ${
           p.verification_status === 'verified'
             ? 'a researcher confirmed this against the official page'
             : 'extracted from the official source, not yet re-read by a human'
@@ -742,7 +753,7 @@ function programmePage(entry, data, p) {
           <tr><th>Applying</th><td>${p.is_automatic ? 'Automatic — no application' : esc(CHANNEL_LABEL[p.application_channel] ?? 'Online')}</td></tr>
           <tr><th>Deadline</th><td>${esc(p.deadline_note || DEADLINE_LABEL[p.deadline_type] || 'Open all year')}</td></tr>
           <tr><th>Run by</th><td>${esc(LEVEL_LABEL[p.admin_level] ?? 'National government')}${p.admin_area ? ` · ${esc(p.admin_area)}` : ''}</td></tr>
-          <tr><th>Checked</th><td>${esc(p.last_verified_at)}</td></tr>
+          <tr><th>Checked</th><td>${esc(dateLabel(p.last_verified_at))}</td></tr>
         </table>
       </div>
       <p class="tiny">Rule changed or link dead? <a class="link-underline" href="https://github.com/adityashashidhar55-cpu/unclaimed/issues/new?title=${encodeURIComponent(
@@ -1232,7 +1243,7 @@ function pricingPage() {
         ? `<ul class="ticks ticks--no">${t.excludes.map((f) => `<li>${f}</li>`).join('')}</ul>`
         : ''
     }
-    <p style="margin-top:1.6rem">${
+    <p class="btn-row" style="margin-top:1.6rem">${
       t.plan
         ? `<button class="btn ${t.featured ? 'btn-primary' : ''}" type="button" data-checkout data-plan="${t.plan}">${t.cta}</button>`
         : `<a class="btn ${t.featured ? 'btn-primary' : ''}" href="${t.href}">${t.cta}</a>`
@@ -1759,7 +1770,7 @@ ${disclaimerBar(TR)}
          out", and no way to subscribe. Both branches are rendered here and
          the script shows the one that applies. -->
     <div id="acct-upgrade" hidden>
-      <p style="margin-top:1.2rem">
+      <p class="btn-row" style="margin-top:1.2rem">
         <button class="btn btn-primary" type="button" data-checkout data-plan="personal_annual" id="acct-buy-year">${esc(TR('acctSubYear'))}</button>
         <button class="btn" type="button" data-checkout data-plan="personal_monthly" id="acct-buy-month">${esc(TR('acctSubMonth'))}</button>
       </p>
@@ -1767,13 +1778,13 @@ ${disclaimerBar(TR)}
     </div>
 
     <div id="acct-manage" hidden>
-      <p style="margin-top:1.2rem">
+      <p class="btn-row" style="margin-top:1.2rem">
         <a class="btn btn-primary" href="${LB()}/check/">${esc(TR('acctGoCheck'))}</a>
         <button class="btn" type="button" data-portal>${esc(TR('acctManage'))}</button>
       </p>
     </div>
 
-    <p style="margin-top:1.2rem">
+    <p class="btn-row" style="margin-top:1.2rem">
       <a class="btn btn-sm" href="${LB()}/check/" id="acct-check-free">${esc(TR('acctGoCheck'))}</a>
       <a class="btn btn-sm" href="/auth/signout">${esc(TR('acctSignOut'))}</a>
     </p>
@@ -2693,7 +2704,7 @@ ${disclaimerBar(TR)}
 
   <div class="callout" style="margin-top:2rem">
     <p><strong>Source.</strong> <a href="${esc(p.source_url)}" rel="nofollow noopener">${esc(p.source_url)}</a>
-    ${p.last_verified_at ? ` — checked ${esc(p.last_verified_at)}` : ''}
+    ${p.last_verified_at ? ` — checked ${esc(dateLabel(p.last_verified_at))}` : ''}
     ${p.verification_status !== 'verified' ? ' · <strong>not human-checked</strong>' : ''}</p>
     ${p.source_snippet ? `<p class="small" style="margin-top:.6rem">"${esc(String(p.source_snippet).slice(0, 300))}"</p>` : ''}
   </div>
