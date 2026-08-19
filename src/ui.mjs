@@ -291,7 +291,16 @@ ${scripts}
 import { track } from "${base}/beacon.js?v=${ASSET_V}";
 import { initAudience } from "${base}/audience.js?v=${ASSET_V}";
 import { bindCheckout } from "${base}/app/checkout.js?v=${ASSET_V}";
+import { unlockLists } from "${base}/app/unlock.js?v=${ASSET_V}";
 initAudience();
+/* Site-wide, because the locks are site-wide. Every browse list ships with
+   ●●●● where the amount goes and a "26 more programmes — see plans" block at
+   the bottom, on the country pages, the category pages and under every
+   programme. A subscriber was being shown the lock and then sold the plan
+   they already hold. This asks the server and, when the records come back
+   whole, puts the figures and the rows back. It no-ops on a page with no
+   lists, and on a session with no entitlement. */
+unlockLists();
 /* Bound site-wide, once, rather than per page. Any data-checkout button in
    any template now reaches Stripe — which for a long time none of them did:
    the endpoint worked, and not one control in the interface called it. */
@@ -408,13 +417,19 @@ export function benefitTypeLabel(b) {
  * and whether a human has checked the record. What it is worth is locked.
  */
 export function listRow(base, cc, p, currency) {
-  return `<a class="list-row" href="${progHref(base, cc, p)}">
+  /* The data-* pair is how a paying reader gets the amount back. The static
+     page cannot know who is reading it, so it ships the lock; unlock.js asks
+     the Worker for the country's records and, if they come back whole, writes
+     the real figure into the chip. Without the slug there is nothing to match
+     the record against, so a subscriber kept seeing ●●●● on every list on the
+     site even though they had paid for exactly that number. */
+  return `<a class="list-row" href="${progHref(base, cc, p)}" data-row="${esc(p.slug)}" data-row-cc="${esc(cc)}">
   <span>
     <span class="list-row__name">${esc(p.name_en)}</span>
     <span class="list-row__meta">${esc(p.name_local !== p.name_en ? p.name_local + ' · ' : '')}${esc(p.funder)}</span>
   </span>
   <span class="list-row__right">
-    <span class="list-row__amount lock-chip" aria-label="Amount locked">&#9679;&#9679;&#9679;&#9679;</span>
+    <span class="list-row__amount lock-chip" data-row-amount aria-label="Amount locked">&#9679;&#9679;&#9679;&#9679;</span>
     <span class="row" style="gap:.3rem">${verificationBadge(p.verification_status)}</span>
   </span>
 </a>`;
@@ -458,14 +473,23 @@ export const FREE_ROWS = 2;
 export function teaseList({
   rows, total = null, noun = 'programmes', href = null,
   container = 'list-rows', tr = null, checkHref = null,
+  cc = null, hiddenSlugs = null, base = '',
 }) {
   const T = tr ?? EN;
   const n = total ?? rows.length;
   const shown = rows.slice(0, FREE_ROWS);
   const hidden = Math.max(0, n - shown.length);
   if (!hidden) return `<div class="${container}">${shown.join('')}</div>`;
+  /* `data-tease-*` names the records this block is standing in for, so a
+     subscriber gets the list itself rather than an advertisement for the plan
+     they are already paying for. Selling someone something they own is worse
+     than showing them nothing. */
+  const teaseAttrs =
+    cc && hiddenSlugs && hiddenSlugs.length
+      ? ` data-tease-cc="${esc(cc)}" data-tease-base="${esc(base)}" data-tease-slugs="${esc(hiddenSlugs.join(','))}"`
+      : '';
   return `<div class="${container}">${shown.join('')}</div>
-  <section class="locked-bucket locked-bucket--inline">
+  <section class="locked-bucket locked-bucket--inline"${teaseAttrs}>
     <div class="locked__rows" aria-hidden="true">
       ${Array.from({ length: Math.min(hidden, 4) }, () => '<div class="locked__row"></div>').join('')}
     </div>

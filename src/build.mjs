@@ -735,7 +735,7 @@ function programmePage(entry, data, p) {
         }</p>
       </div>
 
-      ${related.length ? `<h2 style="margin-top:3rem">Other ${esc(categoryLabel(p.category).toLowerCase())} support in ${esc(entry.name)}</h2>${teaseList({ rows: relatedRows, total: related.length, noun: 'programmes', href: `${LB()}/pricing/`, tr: TR, checkHref: `${LB()}/check/`, })}` : ''}
+      ${related.length ? `<h2 style="margin-top:3rem">Other ${esc(categoryLabel(p.category).toLowerCase())} support in ${esc(entry.name)}</h2>${teaseList({ rows: relatedRows, total: related.length, noun: 'programmes', href: `${LB()}/pricing/`, tr: TR, checkHref: `${LB()}/check/`, cc, base: BASE, hiddenSlugs: related.slice(FREE_ROWS).map((x) => x.slug) })}` : ''}
     </div>
 
     <aside class="sticky-side stack no-print">
@@ -841,7 +841,8 @@ function countryPage(entry, data) {
           rows: list.slice(0, FREE_ROWS).map((p) => listRow(BASE, cc, p, data.currency)),
           total: list.length,
           noun: `${categoryLabel(cat).toLowerCase()} programmes`,
-          href: `${LB()}/pricing/`, tr: TR, checkHref: `${LB()}/check/`, })}
+          href: `${LB()}/pricing/`, tr: TR, checkHref: `${LB()}/check/`,
+          cc, base: BASE, hiddenSlugs: list.slice(FREE_ROWS).map((p) => p.slug) })}
       </section>`;
     })
     .join('');
@@ -932,6 +933,12 @@ function categoryPage(entry, data, cat, list) {
     { label: entry.name, href: `${CB(cc)}/${cc}/` },
     { label: categoryLabel(cat) },
   ];
+  /* Sorted once, so the rows that show and the slugs the tease names come
+     from the same order — otherwise a subscriber's unlocked list repeats two
+     of the rows already on screen and silently drops two others. */
+  const sortedForTease = list
+    .slice()
+    .sort((a, b) => (b.amount_max ?? b.amount_min ?? -1) - (a.amount_max ?? a.amount_min ?? -1));
   const body = `
 <section class="section-tight shell">
   ${breadcrumbs(crumbs)}
@@ -943,14 +950,13 @@ function categoryPage(entry, data, cat, list) {
   ${startupCrossLink}
   <div style="margin-top:2rem">
     ${teaseList({
-      rows: list
-        .slice()
-        .sort((a, b) => (b.amount_max ?? b.amount_min ?? -1) - (a.amount_max ?? a.amount_min ?? -1))
+      rows: sortedForTease
         .slice(0, FREE_ROWS)
         .map((p) => listRow(BASE, cc, p, data.currency)),
       total: list.length,
       noun: `${categoryLabel(cat).toLowerCase()} programmes`,
-      href: `${LB()}/pricing/`, tr: TR, checkHref: `${LB()}/check/`, })}
+      href: `${LB()}/pricing/`, tr: TR, checkHref: `${LB()}/check/`,
+      cc, base: BASE, hiddenSlugs: sortedForTease.slice(FREE_ROWS).map((p) => p.slug) })}
   </div>
 </section>`;
 
