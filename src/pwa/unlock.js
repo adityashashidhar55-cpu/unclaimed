@@ -133,6 +133,97 @@ function fill(el, html) {
   el.innerHTML = (head ? head.outerHTML : '') + html;
 }
 
+/* ---- lists ------------------------------------------------------- */
+
+/* One fetch per country per page, shared between the row amounts and the
+   teases, and cached so three category blocks on one country page do not ask
+   three times. */
+const countryCache = new Map();
+function countryRecords(cc) {
+  if (!countryCache.has(cc)) {
+    countryCache.set(
+      cc,
+      fetch(`/api/v1/programmes/${cc}.json`, { credentials: 'same-origin', cache: 'no-store' })
+        .then((r) => (r.ok ? r.json() : null))
+        .then((d) => {
+          const list = d?.programmes || [];
+          /* A stripped record has no name. If the server sent stripped
+             records, this session is not entitled and nothing below runs. */
+          if (!list.length || !list[0].name_en) return null;
+          return new Map(list.map((p) => [p.slug, p]));
+        })
+        .catch(() => null),
+    );
+  }
+  return countryCache.get(cc);
+}
+
+function amountChip(p) {
+  const lo = p.amount_min;
+  const hi = p.amount_max;
+  if (lo == null && hi == null) return 'Calculated';
+  const per = periodSuffix(p.amount_period) || '';
+  const val = lo != null && hi != null && lo !== hi
+    ? `${formatMoney(lo, p.amount_currency)}–${formatMoney(hi, p.amount_currency)}`
+    : formatMoney(hi ?? lo, p.amount_currency);
+  return `${val}${per}`;
+}
+
+function rowHtml(base, cc, p) {
+  return `<a class="list-row" href="${base}/${cc}/${esc(p.category)}/${esc(p.slug)}/">
+  <span>
+    <span class="list-row__name">${esc(p.name_en)}</span>
+    <span class="list-row__meta">${esc(p.name_local && p.name_local !== p.name_en ? `${p.name_local} · ` : '')}${esc(p.funder)}</span>
+  </span>
+  <span class="list-row__right"><span class="list-row__amount">${esc(amountChip(p))}</span></span>
+</a>`;
+}
+
+/**
+ * Put the amounts back into every list, and turn every "26 more programmes,
+ * see plans" block into the 26 programmes.
+ *
+ * A subscriber was being shown ●●●● where the figure should be and then sold
+ * the plan they already hold, on the country pages, the category pages and
+ * the bottom of every programme page. Both are the same failure as the locked
+ * panels: the static page cannot know who is reading it, so it ships the
+ * locked version and this asks the server afterwards.
+ */
+export async function unlockLists() {
+  const rows = [...document.querySelectorAll('[data-row][data-row-cc]')];
+  const teases = [...document.querySelectorAll('[data-tease-cc][data-tease-slugs]')];
+  if (!rows.length && !teases.length) return;
+
+  const codes = new Set([...rows.map((r) => r.dataset.rowCc), ...teases.map((t) => t.dataset.teaseCc)]);
+  const byCc = new Map(await Promise.all([...codes].map(async (cc) => [cc, await countryRecords(cc)])));
+
+  for (const el of rows) {
+    const p = byCc.get(el.dataset.rowCc)?.get(el.dataset.row);
+    const chip = el.querySelector('[data-row-amount]');
+    if (!p || !chip) continue;
+    chip.textContent = amountChip(p);
+    chip.classList.remove('lock-chip');
+    chip.removeAttribute('aria-label');
+  }
+
+  for (const el of teases) {
+    const recs = byCc.get(el.dataset.teaseCc);
+    if (!recs) continue;
+    const base = el.dataset.teaseBase || '';
+    const html = el.dataset.teaseSlugs
+      .split(',')
+      .map((slug) => recs.get(slug))
+      .filter(Boolean)
+      .map((p) => rowHtml(base, el.dataset.teaseCc, p))
+      .join('');
+    if (!html) continue;
+    const holder = document.createElement('div');
+    holder.className = 'list-rows';
+    holder.innerHTML = html;
+    el.replaceWith(holder);
+  }
+}
+
 export async function unlockProgramme() {
   const root = document.querySelector('[data-programme]');
   if (!root) return;
