@@ -1735,7 +1735,10 @@ function accountPage() {
   const body = `
 ${disclaimerBar(TR)}
 <section class="section-tight shell" style="max-width:34rem">
-  ${breadcrumbs([{ label: TR('backHome'), href: `${LB()}/` }, { label: TR('acctCrumb') }])}
+  ${breadcrumbs([{ label: TR('backHome'), href: `${LB()}/` }, { label: TR('acctCrumb') }]).replace(
+    '</nav>',
+    `<span id="acct-crumb-in" hidden>${esc(TR('navMyAccount'))}</span></nav>`,
+  )}
   <!-- Two headers, one shown.
 
        A signed-in subscriber opening this page was met with SIGN IN / "No
@@ -1750,7 +1753,8 @@ ${disclaimerBar(TR)}
     <p class="lede" style="max-width:46ch">${esc(TR('acctLede2'))}</p>
   </div>
   <div id="acct-hero-in" hidden>
-    <span class="eyebrow eyebrow-accent">${esc(TR('acctSignedIn'))}</span>
+    <!-- No eyebrow: the card below already says SIGNED IN, and saying it
+         twice on one screen is the same repetition the headline had. -->
     <h1 style="max-width:16ch">${esc(TR('navMyAccount'))}</h1>
   </div>
 
@@ -1921,6 +1925,9 @@ me().then(async (s) => {
   /* The page stops arguing for something they have already done. */
   $('#acct-hero-out').hidden = true;
   $('#acct-hero-in').hidden = false;
+  const crumbOut = document.querySelector('.breadcrumb > span:not(#acct-crumb-in)');
+  if (crumbOut) crumbOut.hidden = true;
+  $('#acct-crumb-in').hidden = false;
   document.title = ${JSON.stringify(`${TR('navMyAccount')} · ${SITE_NAME}`)};
   paint(s);
 

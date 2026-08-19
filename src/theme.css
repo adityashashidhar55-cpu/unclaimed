@@ -252,6 +252,19 @@ a:hover { opacity: .72; }
 }
 .eyebrow-accent { color: var(--terracotta); }
 
+/* `hidden` must actually hide.
+
+   The user-agent rule is `[hidden] { display: none }`, and any author rule
+   that sets `display` beats it — so `.btn { display: inline-flex }` meant
+   every button in this codebase ignored the attribute. The account page set
+   `#acct-check-free.hidden = true` for a subscriber and the duplicate "Go to
+   my check" button stayed on the screen next to the real one. Nothing errors;
+   the state machine is correct and the page disagrees with it.
+
+   First rule in this section so it is impossible to miss, and `!important`
+   because the point is to beat every author rule that follows. */
+[hidden] { display: none !important; }
+
 .btn {
   display: inline-flex; align-items: center; gap: .5rem;
   border-radius: 9999px; padding: .72rem 1.4rem;
