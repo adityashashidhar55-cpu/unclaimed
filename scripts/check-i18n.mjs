@@ -133,6 +133,88 @@ for (const r of rows) {
   );
 }
 
+/* No i18n key may ever appear as visible text.
+   
+   Three shared components took an optional `tr` and, when a caller forgot it,
+   returned the KEY NAME. 4,063 of 5,891 pages rendered at least one, and the
+   primary paywall button on every programme page read `signInUnlock`. No test
+   caught it because the page rendered fine — it just spoke in identifiers.
+   Checked against the real key list, so a new key is covered the day it is
+   added and an ordinary camelCase word in prose is not a false positive. */
+{
+  const en = (await import('../src/i18n/en.mjs')).default;
+  /* Only camelCase keys. `documents`, `source` and `verified` are also
+     ordinary English words and appear in prose on thousands of pages; an
+     internal capital is what makes a string unmistakably an identifier rather
+     than something a person wrote. Every key that actually leaked —
+     signInUnlock, seePricing, lockedNote, seePlans, moreLocked, checkFree —
+     is caught by this. */
+  const keys = Object.keys(en).filter((k) => k.length > 5 && /[a-z][A-Z]/.test(k));
+  const offenders = [];
+  const htmlFiles = [];
+  (function walk(dir) {
+    for (const e of fs.readdirSync(dir, { withFileTypes: true })) {
+      const f = path.join(dir, e.name);
+      if (e.isDirectory()) walk(f);
+      else if (e.name.endsWith('.html')) htmlFiles.push(f);
+    }
+  })(DIST);
+  for (const f of htmlFiles) {
+    const text = fs
+      .readFileSync(f, 'utf8')
+      .replace(/<script[\s\S]*?<\/script>/g, ' ')
+      .replace(/<style[\s\S]*?<\/style>/g, ' ')
+      .replace(/<[^>]+>/g, ' ');
+    for (const k of keys) {
+      if (new RegExp(`\\b${k}\\b`).test(text)) {
+        offenders.push(`${path.relative(DIST, f)} shows the raw key "${k}"`);
+        break;
+      }
+    }
+    if (offenders.length > 8) break;
+  }
+  if (offenders.length) {
+    console.error(`\n  \u2717 raw i18n key names are visible to users:`);
+    for (const o of offenders) console.error(`      ${o}`);
+    console.error('');
+    process.exit(1);
+  }
+  console.log('  \u2713 no page displays a raw i18n key name');
+
+  /* And the same failure in the other dialect: database enum identifiers.
+     `statuses: self_employed`, `Housing: student_housing`, `Stage: series_a`
+     are all values the schema uses to talk to itself, and they were being
+     printed into labelled tables on thousands of pages. A snake_case token in
+     visible text is never something a person typed. */
+  const ENUMS = [
+    'self_employed', 'student_housing', 'any_resident', 'citizen_or_pr',
+    'refugee_or_protected', 'in_person', 'via_employer', 'pre_seed',
+    'series_a', 'medium_sized',
+  ];
+  const enumOffenders = [];
+  for (const f of htmlFiles) {
+    const text = fs
+      .readFileSync(f, 'utf8')
+      .replace(/<script[\s\S]*?<\/script>/g, ' ')
+      .replace(/<style[\s\S]*?<\/style>/g, ' ')
+      .replace(/<[^>]+>/g, ' ');
+    for (const k of ENUMS) {
+      if (new RegExp(`\\b${k}\\b`).test(text)) {
+        enumOffenders.push(`${path.relative(DIST, f)} shows the raw value "${k}"`);
+        break;
+      }
+    }
+    if (enumOffenders.length > 8) break;
+  }
+  if (enumOffenders.length) {
+    console.error(`\n  \u2717 raw database values are visible to users:`);
+    for (const o of enumOffenders) console.error(`      ${o}`);
+    console.error('');
+    process.exit(1);
+  }
+  console.log('  \u2713 no page displays a raw database enum value');
+}
+
 console.log(
   `\n${checked - bad} of ${checked} pages under the ${(THRESHOLD * 100).toFixed(0)}% threshold` +
     `, ${bad} still substantially English.\n`,

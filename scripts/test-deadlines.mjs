@@ -39,8 +39,14 @@ const startups = read('api/v1/startups/index.json');
   let noHeadline = 0;
   let invented = 0;
   for (const c of manifest.countries) {
-    const f = path.join(DIST, `api/v1/full/programmes/${c.slug}.json`);
-    if (!fs.existsSync(f)) continue;
+    /* The full copies under dist/ only exist when EMIT_FULL_DATASET=1, so read
+       the source dataset when they are absent. Reading only the optional
+       artefact is how this loop quietly ran over zero records. */
+    const f = [
+      path.join(DIST, `api/v1/full/programmes/${c.slug}.json`),
+      path.join(ROOT, 'data', `${c.slug}.json`),
+    ].find((x) => fs.existsSync(x));
+    if (!f) continue;
     for (const p of JSON.parse(fs.readFileSync(f, 'utf8')).programmes) {
       if (p.status) continue; // a startup-shaped record; covered below
       n += 1;
