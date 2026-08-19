@@ -616,7 +616,15 @@ function overviewView() {
 /* Companies                                                           */
 /* ------------------------------------------------------------------ */
 
-const STAGE_OPTIONS = ['idea', 'pre_seed', 'seed', 'series_a', 'growth'];
+const SME_LABEL = { micro: 'Micro', small: 'Small', medium: 'Medium-sized', medium_sized: 'Medium-sized', large: 'Large' };
+
+const STAGE_OPTIONS = [
+  ['idea', 'Idea stage'],
+  ['pre_seed', 'Pre-seed'],
+  ['seed', 'Seed'],
+  ['series_a', 'Series A'],
+  ['growth', 'Growth'],
+];
 
 function companiesView() {
   if (!ws.companies.length) {
@@ -653,7 +661,7 @@ function companiesView() {
           ${eligible == null ? 'Loading programmes…' : `<strong>${eligible}</strong> programmes it qualifies for`}
           · ${ws.pipeline.filter((e) => e.company_id === c.id).length} in pipeline
         </p>
-        <p class="tiny dash__muted" style="margin:.4rem 0 0">${esc(sme ? `${sme.replace('_', ' ')} under the EU definition` : 'size not given')}</p>
+        <p class="tiny dash__muted" style="margin:.4rem 0 0">${esc(sme ? `${SME_LABEL[sme] ?? sme.replace('_', ' ')} under the EU definition` : 'size not given')}</p>
       </button>`;
       })
       .join('')}
@@ -680,7 +688,7 @@ function companyFormView(c) {
       <label class="fld"><span>Balance sheet (EUR)</span><input class="field" type="number" min="0" name="balance_sheet_eur" value="${v('balance_sheet_eur')}"></label>
       <label class="fld"><span>Stage</span><select class="field" name="stage">
         <option value="">—</option>
-        ${STAGE_OPTIONS.map((s) => `<option value="${s}"${c?.stage === s ? ' selected' : ''}>${esc(s.replace('_', ' '))}</option>`).join('')}
+        ${STAGE_OPTIONS.map(([s, label]) => `<option value="${s}"${c?.stage === s ? ' selected' : ''}>${esc(label)}</option>`).join('')}
       </select></label>
       <label class="fld"><span>Region</span><input class="field" name="admin_area" value="${v('admin_area')}" placeholder="optional"></label>
       <label class="fld"><span>Sectors</span><input class="field" name="sectors" value="${esc((c?.sectors || []).join(', '))}" placeholder="deeptech, health"></label>
@@ -2139,7 +2147,16 @@ export async function loadFiling() {
   if (!a.ok) {
     /* 403 no_organisation is the common one and it is not an error state —
        it is a personal account looking at a company feature. */
-    filing.error = a.body?.message || a.body?.error || 'could not load';
+    /* The Worker returns several bodies with a code and no message —
+       signed_out, not_entitled, no_workspace — and this printed the code at
+       the user. "not_entitled" is not a sentence. */
+    const SAY = {
+      signed_out: 'Sign in to see your filings.',
+      not_entitled: 'Filing is part of a paid plan. Upgrade from your account page to switch it on.',
+      no_workspace: 'This account has no workspace yet.',
+      no_organisation: 'Filing is done on behalf of a company, so it needs a business account with an organisation.',
+    };
+    filing.error = a.body?.message || SAY[a.body?.error] || 'We could not load your filings just now.';
     filing.authorisations = [];
   } else {
     filing.error = null;
@@ -2537,6 +2554,10 @@ function alertRefusals(refused) {
     programme_out_of_scope: 'not named in your authorisation',
     authorisation_revoked: 'authorisation revoked',
     authorisation_expired: 'authorisation expired',
+    /* The Worker emits these two as well; without them the note read
+       "housing-benefit: insert_failed". */
+    authorisation_not_found: 'we could not find that authorisation',
+    insert_failed: 'could not be queued — try again',
   };
   const el = document.getElementById('filing-note');
   const text = refused.map((r) => `${r.slug}: ${say[r.code] || r.code}`).join('; ');
@@ -2546,7 +2567,14 @@ function alertRefusals(refused) {
 
 function showTrail(events) {
   const rows = events
-    .map((e) => `${new Date(e.at).toISOString().slice(0, 16).replace('T', ' ')}  ${e.from_state || 'new'} → ${e.to_state}  (${e.actor === 'system' ? 'system' : 'you'})`)
+    /* FILING_STATE_LABEL exists three hundred lines up and this ignored it, so
+       the trail read "needs_input → acknowledged" at the customer. */
+    .map(
+      (e) =>
+        `${new Date(e.at).toISOString().slice(0, 16).replace('T', ' ')}  ${
+          e.from_state ? FILING_STATE_LABEL[e.from_state] || e.from_state : 'Created'
+        } → ${FILING_STATE_LABEL[e.to_state] || e.to_state}  (${e.actor === 'system' ? 'automatically' : 'by you'})`,
+    )
     .join('\n');
   const box = document.getElementById('filing-trail');
   if (box) {

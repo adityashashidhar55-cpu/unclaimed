@@ -188,11 +188,16 @@ export async function upgrade(plan = 'personal_annual', { btn = null, seats = 1,
     return { ok: true, redirected: 'signin' };
   }
   if (who.entitled) {
-    /* Already paying. Sending them to Stripe again would sell a second
-       subscription to the same person, which is a refund request wearing a
-       success message. */
-    fail('You already have an active plan.');
-    return { ok: false, error: 'already_entitled' };
+    /* Already paying — but "already have a plan" was a dead end. The button
+       kept that text forever, there was no route onward, and a Personal
+       subscriber who wanted Business simply could not buy it. Changing plan is
+       what the billing portal is for, so send them there instead of refusing.
+       Selling a second subscription would be a refund request wearing a
+       success message; doing nothing is a lost upgrade. */
+    if (btn) btn.textContent = 'Opening your billing settings…';
+    const moved = await manageBilling(null);
+    if (!moved.ok) fail('You already have a plan. Manage or change it from your account page.');
+    return { ok: false, error: 'already_entitled', redirected: moved.ok };
   }
 
   const res = await startCheckout(plan, seats);

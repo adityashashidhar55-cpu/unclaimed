@@ -67,7 +67,21 @@ export function initAudience() {
     const el = ev.target.closest('[data-aud-set]');
     if (!el) return;
     ev.preventDefault();
+    /* Keep the switch where the eye already is.
+       
+       The two panels are genuinely different lengths — measured, the pricing
+       page grows 429px when you pick Enterprise — so switching yanks the
+       content out from under the pointer and the reader loses their place.
+       Nothing can make the panels the same height honestly, but the thing they
+       are looking at can stay still: note where the switch sits in the
+       viewport, swap, then restore it to the same spot. */
+    const box = el.getBoundingClientRect();
     setAudience(el.dataset.audSet);
+    requestAnimationFrame(() => {
+      const after = el.getBoundingClientRect();
+      const drift = after.top - box.top;
+      if (Math.abs(drift) > 1) window.scrollBy({ top: drift, behavior: 'instant' });
+    });
   });
   /* Keyboard: a tablist should move with the arrow keys, and these are
      <button role="tab">, so nothing gives us that for free. */
