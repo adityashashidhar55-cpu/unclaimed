@@ -158,6 +158,28 @@ function toSignIn(plan) {
 }
 
 /**
+ * Put a checkout error beside a control, politely announced.
+ *
+ * Reused rather than inlined so every entry point fails the same way, and so
+ * the message is in a live region — a sentence that silently replaces a button
+ * label is not announced to a screen reader at all.
+ */
+function showCheckoutError(btn, message) {
+  const host = btn.closest('p, div, section, li') || btn.parentElement;
+  if (!host) return;
+  let note = host.querySelector('[data-checkout-error]');
+  if (!note) {
+    note = document.createElement('p');
+    note.setAttribute('data-checkout-error', '');
+    note.className = 'small notice notice--error';
+    note.setAttribute('role', 'status');
+    note.setAttribute('aria-live', 'polite');
+    host.appendChild(note);
+  }
+  note.textContent = message;
+}
+
+/**
  * Start checkout for `plan`, or route through sign-in first.
  *
  * `btn` is optional and only used to say something while the round trip is in
@@ -165,18 +187,32 @@ function toSignIn(plan) {
  */
 export async function upgrade(plan = 'personal_annual', { btn = null, seats = 1, onError = null } = {}) {
   const label = btn?.textContent;
+
+  /* The error goes NEXT TO the button, never into it.
+     
+     This used to restore the label and then immediately overwrite it with the
+     message, with nothing to put it back: one failed attempt turned
+     "€50 a year" into "Could not open checkout — try again." permanently, and
+     the monthly link beside it into the same sentence. After one 500 the
+     pricing page had no prices on it until the reader thought to reload. A
+     price is the thing this page exists to state; it does not get spent on an
+     error message. */
   const fail = (m) => {
     if (btn) {
       btn.disabled = false;
       btn.textContent = label;
+      showCheckoutError(btn, m);
     }
     if (onError) onError(m);
-    else if (btn) btn.textContent = m;
   };
 
   if (btn) {
     btn.disabled = true;
-    btn.textContent = 'Opening checkout…';
+    /* `.btn__spinner` and `@keyframes btn-spin` have been in theme.css since
+       the button system landed and had no caller anywhere: every pending path
+       in the product changed the label and nothing else, so a click on a slow
+       connection looked like a button that had simply stopped working. */
+    btn.innerHTML = '<span class="btn__spinner" aria-hidden="true"></span>Opening checkout…';
   }
 
   const who = await me();
@@ -194,7 +230,7 @@ export async function upgrade(plan = 'personal_annual', { btn = null, seats = 1,
        what the billing portal is for, so send them there instead of refusing.
        Selling a second subscription would be a refund request wearing a
        success message; doing nothing is a lost upgrade. */
-    if (btn) btn.textContent = 'Opening your billing settings…';
+    if (btn) btn.innerHTML = '<span class="btn__spinner" aria-hidden="true"></span>Opening your billing settings…';
     const moved = await manageBilling(null);
     if (!moved.ok) fail('You already have a plan. Manage or change it from your account page.');
     return { ok: false, error: 'already_entitled', redirected: moved.ok };
@@ -205,7 +241,10 @@ export async function upgrade(plan = 'personal_annual', { btn = null, seats = 1,
     fail(res.message || 'Could not open checkout — try again.');
     return { ok: false, error: res.error, message: res.message };
   }
-  track('checkout_redirect');
+  /* Nothing is tracked here. The step this used to emit was not in FUNNEL, so
+     the Worker answered 400 and dropped it on every single checkout attempt —
+     an analytics call that had never once been recorded. checkout_start, in
+     auth.js, already marks this moment. */
   location.href = res.url;
   return { ok: true, redirected: 'stripe' };
 }

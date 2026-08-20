@@ -265,3 +265,65 @@ export async function unlockProgramme() {
   document.querySelectorAll('[data-paywall-note]').forEach((n) => n.remove());
   root.classList.add('is-unlocked');
 }
+
+/**
+ * POST /api/apply/plan — the prepared-application pack.
+ *
+ * The Worker has answered this route since auto-apply landed and no shipped
+ * client ever called it: the one control that reaches it, "Prepare my
+ * applications" on the /check/ results screen, had no handler branch, so a
+ * subscriber clicked it and nothing happened — no request, no error, no
+ * change on screen. The route lives here rather than inline in the caller so
+ * scripts/test-reachability.mjs can prove there is exactly one call site and
+ * that it is real.
+ *
+ * mobile/src/lib/api.js has its own copy of this contract. It cannot import
+ * this one: that module is an Expo bundle (expo-secure-store, expo-constants)
+ * and replays a session cookie by hand because React Native's fetch does not
+ * persist cookies. The two are kept in step by test-reachability.mjs, which
+ * checks both clients against the Worker's route table.
+ */
+/* The route is written out at the fetch, not held in a constant.
+   scripts/test-reachability.mjs resolves a call site by reading the argument
+   of the call, which is the only thing a browser resolves either — and a
+   route that only a variable knows is a route the guard cannot see. */
+export async function applyPlan(profile, lang = 'en') {
+  const res = await fetch('/api/apply/plan', {
+    method: 'POST',
+    credentials: 'same-origin',
+    cache: 'no-store',
+    headers: { 'content-type': 'application/json' },
+    body: JSON.stringify({ profile, lang }),
+  });
+  /* 402 is a real answer, not a transport failure: it carries the paywall
+     reason. Hand it back rather than throwing, so the caller can say which
+     of "sign in", "subscribe" and "we broke" actually happened. */
+  const data = await res.json().catch(() => ({}));
+  return { ok: res.ok, status: res.status, data };
+}
+
+/**
+ * POST /api/apply/consent — the declaration record.
+ *
+ * Every pack carries `attestations`: the statements the applicant is signing
+ * up to. The Worker has stored them since auto-apply landed and, like
+ * /api/apply/plan, nothing shipped ever asked. A pack handed over with no
+ * recorded declaration is the one artefact in this product that a regulator
+ * would ask about, so the control that produces it lives beside the pack.
+ */
+export async function recordApplyConsent({ programmeSlug, country, attestations, values }) {
+  const res = await fetch('/api/apply/consent', {
+    method: 'POST',
+    credentials: 'same-origin',
+    cache: 'no-store',
+    headers: { 'content-type': 'application/json' },
+    body: JSON.stringify({
+      programme_slug: programmeSlug,
+      country,
+      attestations,
+      values: values ?? {},
+    }),
+  });
+  const data = await res.json().catch(() => ({}));
+  return { ok: res.ok, status: res.status, data };
+}

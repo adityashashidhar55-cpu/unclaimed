@@ -108,6 +108,23 @@ const STAGES = [
 ];
 const STAGE_IDS = STAGES.map((s) => s.id);
 
+/**
+ * The stages an entry can be in and still be worth filing.
+ *
+ * The filing queue used to filter on `shortlist` and `preparing`. Neither is a
+ * stage. Nothing in this file ever wrote them — the only assignment anywhere
+ * is stage:'watch' — so the filter matched zero entries always, "Auto-file"
+ * answered every submission with "Shortlist at least one opportunity first",
+ * and no POST to /api/enterprise/* was ever issued from the UI. An entire
+ * enterprise feature with a full Worker state machine behind it, unreachable,
+ * with 43 green assertions over it, because not one of them checked that the
+ * filter named a stage that exists.
+ *
+ * Derived from STAGE_IDS rather than written out again, so the next rename
+ * cannot recreate the same silence.
+ */
+const PRE_SUBMISSION = new Set(STAGE_IDS.filter((id) => id === 'watch' || id === 'drafting'));
+
 const EMPTY = {
   v: 1,
   org: { name: '', country_code: '' },
@@ -414,21 +431,42 @@ function gateScreen(state) {
       will be adopted into your account the moment the plan is active.</p>`);
   }
 
-  /* Signed out, or the API is unreachable. Same screen, different sentence:
-     both mean "we cannot confirm a plan", and in both cases the honest move is
-     to offer the door rather than to guess generously. */
+  /* Two states, not one.
+     
+     A genuine fetch failure and a first visit were sharing a screen, and the
+     screen said "We could not reach your account just now, so we cannot tell
+     whether you are signed in." The ordinary first visit — by far the most
+     common way anyone arrives here — was announced as a system failure, on the
+     screen where a fund decides whether this is a real product. Worse, the
+     page's own copy promises a try-before-account path and rendered no control
+     for it, and the workspace's designed empty state sat unused two functions
+     away. */
   const offline = state === sync.STATUS.OFFLINE;
+  if (offline) {
+    return shell(`
+    <span class="eyebrow eyebrow-accent">Workspace</span>
+    <h1 style="max-width:18ch">We could not reach your <em class="serif-italic">account</em></h1>
+    <p class="lede" style="max-width:44ch">Something between this browser and us is not answering, so we cannot
+    tell whether you are signed in. Nothing you have built is affected.</p>
+    <p class="row" style="margin-top:1.6rem">
+      <button class="btn btn-primary" type="button" data-act="retry-sync">Try again</button>
+      <button class="btn" type="button" data-act="use-local">Work offline in this browser</button>
+    </p>`);
+  }
+
   return shell(`
     <span class="eyebrow eyebrow-accent">Workspace</span>
-    <h1 style="max-width:18ch">Sign in to open your <em class="serif-italic">workspace</em></h1>
-    <p class="lede" style="max-width:44ch">${
-      offline
-        ? 'We could not reach your account just now, so we cannot tell whether you are signed in.'
-        : 'Your portfolio, pipeline and documents live with your account, not with one browser.'
-    }</p>
+    ${empty(
+      'Start a workspace',
+      `Signed out, this workspace stays in this browser and nothing in it leaves the machine. Load a sample
+       portfolio to see the shape of it, or sign in to keep one across devices.`,
+      `<p class="btn-row"><button class="btn btn-primary" type="button" data-act="start-sample">Start a workspace</button>
+       <a class="btn" href="/account/">Sign in</a></p>`,
+    )}
+    <p class="lede" style="max-width:44ch;margin-top:1.8rem">Your portfolio, pipeline and documents live with your
+    account, not with one browser.</p>
     <p style="margin-top:1.6rem">
-      <a class="btn btn-primary" href="/account/">Sign in</a>
-      <a class="btn" href="/enterprise/">What the workspace does</a>
+      <a class="btn btn-ghost" href="/enterprise/">What the workspace does</a>
     </p>
     ${
       sync.hasContent(sync.readLocal())
@@ -488,6 +526,25 @@ function lockedBanner() {
     for (const p of d?.programmes || []) (p.locked ? locked++ : named++);
   }
   if (!locked) return '';
+
+  /* Two different situations wearing one sentence.
+     
+     This keyed off `locked` in the fetched pool and nothing else, so an
+     ENTITLED business session — someone paying per seat — was told the names
+     were "on the paid plan… until this workspace is signed in to a paid
+     account", over rows reading "Name on the paid plan · funder on the paid
+     plan · £50,000,000". They had paid. What had actually happened is that the
+     full dataset did not deploy. Telling a customer to buy the thing they
+     bought is the worst available sentence, and it also hides a real outage
+     behind a marketing line. */
+  if (gate === sync.STATUS.READY) {
+    return `<div class="callout callout--warn"><p><strong>The full programme list did not load.</strong>
+    ${nf(named)} of ${nf(named + locked)} names are showing. This is not your plan — your account has access to
+    all of them; the server answered with the public extract instead of the full dataset. Matching, ranking,
+    deadlines and the state-aid ledger below are all still correct, because none of them need the name.
+    Reload in a moment, and tell us if it persists.</p></div>`;
+  }
+
   return `<div class="callout"><p><strong>${nf(named)} of ${nf(named + locked)} programme names are visible.</strong>
   Matching, ranking, deadlines and the state-aid ledger all work on every programme — none of them need the
   name. The names themselves are on the paid plan, so most rows below read "Name on the paid plan" until this
@@ -715,13 +772,21 @@ function companyFormView(c) {
       <button class="btn btn-primary" type="submit">${c?.id ? 'Save' : 'Add company'}</button>
       ${c?.id ? `<button class="btn btn-ghost" type="button" data-action="delete-company" data-id="${c.id}">Delete</button>` : ''}
     </div>
+    <!-- The route behind this button has always existed and always worked
+         (Companies House / SIRENE / SAM.gov). What was here instead was a
+         passive sentence — "can fill most of this from the company number once
+         the API key is set on the server" — with no button, no handler and no
+         fetch, so a Startup subscriber paying for "company auto-fill from
+         public registers" typed all eleven fields by hand and was handed our
+         server-configuration status as the explanation. -->
     ${
       reg
-        ? `<p class="tiny dash__muted" style="margin-top:1rem">${esc(reg.name)}${
-            autofillAvailable(c?.country_code || '')
-              ? ' can fill most of this from the company number once the API key is set on the server.'
-              : ' has no open API we can use, so these fields are yours to enter.'
-          }</p>`
+        ? autofillAvailable(c?.country_code || '')
+          ? `<div class="row" style="margin-top:1rem;align-items:center;gap:.6rem">
+              <button class="btn btn-sm" type="button" data-action="autofill-company">Fetch from ${esc(reg.name)}</button>
+              <span class="tiny dash__muted" id="autofill-note" role="status" aria-live="polite">Enter the company number above, then fetch.</span>
+            </div>`
+          : `<p class="tiny dash__muted" style="margin-top:1rem">There is no open company register for this country, so these fields are yours to enter. ${esc(reg.name)} does not publish a machine-readable API.</p>`
         : ''
     }
   </form>`;
@@ -849,7 +914,27 @@ function opportunitiesView() {
       rows.push({ c, r, p, d, eur: amountEur(p) ?? 0 });
     }
   }
-  rows.sort((a, b) => b.eur - a.eur);
+  /* Keep the order rankMatches() already computed.
+     This view is the one that implements the promise on /enterprise/ and
+     /pricing/ — "ranked by amount × published award rate × whether a company
+     that size could realistically deliver it" — and it threw the whole
+     composite away for `b.eur - a.eur`. The sample portfolio came out led by
+     a GBP 50,000,000 investment bank facility, a EUR 30,000,000 EIC call and
+     GBP 24,000,000 of EIS relief: pure descending amount, which is the one
+     ranking the copy explicitly says it is not. matchStartup() ranks every
+     bucket before it hands it over, so each row already carries `scoring`;
+     the cross-company merge just has to respect it. */
+  rows.sort((a, b) => {
+    const A = a.r.scoring;
+    const B = b.r.scoring;
+    if (!A || !B) return b.eur - a.eur;
+    if (A.band !== B.band) return A.band - B.band;
+    if (A.unpriced !== B.unpriced) return A.unpriced ? 1 : -1;
+    if (A.score !== B.score) return (B.score ?? 0) - (A.score ?? 0);
+    const av = a.p.verification_status === 'verified' ? 1 : 0;
+    const bv = b.p.verification_status === 'verified' ? 1 : 0;
+    return bv - av;
+  });
 
   const inPipeline = new Set(ws.pipeline.map((e) => `${e.company_id}:${e.slug}`));
 
@@ -880,13 +965,21 @@ function opportunitiesView() {
         ? rows
             .slice(0, 200)
             .map(
-              ({ c, p, d }) => `<div class="list-row">
+              ({ c, p, d }) => {
+                /* The same odds-and-effort fragment matchRow() shows per
+                   company. Without it the row printed only name, company,
+                   funder, amount and deadline — so the view that claims to
+                   rank by winnability never showed a reader what it thought
+                   the odds were. */
+                const odds = awardLikelihood(p);
+                const effort = effortFor(p);
+                return `<div class="list-row">
       <div class="list-row__body">
         <div class="list-row__name">${esc(programmeName(p))}</div>
         <div class="list-row__meta">${esc(c.legal_name)} · ${esc(p.funder || (isLocked(p) ? 'funder on the paid plan' : ''))}</div>
         <div class="list-row__meta">${
           amountEur(p) != null ? `<strong>${esc(money(p.amount_max ?? p.amount_min, p.amount_currency))}</strong>` : '<span class="dash__muted">amount not published</span>'
-        }</div>
+        }${odds?.p != null ? ` · ~${Math.round(odds.p * 100)}% award rate` : ''}${effort?.label ? ` · ${esc(effort.label)}` : ''}</div>
       </div>
       <div class="list-row__right">
         <span class="status status--${esc(d.urgency)}">${esc(d.headline)}</span>
@@ -896,13 +989,14 @@ function opportunitiesView() {
             : `<button class="btn btn-sm" data-action="add-to-pipeline" data-company="${c.id}" data-slug="${esc(p.slug)}">Add</button>`
         }
       </div>
-    </div>`,
+    </div>`;
+              },
             )
             .join('')
         : '<p class="small dash__muted">Nothing matches that filter.</p>'
     }
   </div>
-  ${rows.length > 200 ? `<p class="tiny dash__muted">Showing the 200 largest of ${nf(rows.length)}. Narrow the filter to see the rest — nothing has been dropped.</p>` : ''}`;
+  ${rows.length > 200 ? `<p class="tiny dash__muted">Showing the 200 best-ranked of ${nf(rows.length)}. The rest are further down the same ranking, not excluded — narrow the filter to reach them.</p>` : ''}`;
 }
 
 /* ------------------------------------------------------------------ */
@@ -2236,7 +2330,7 @@ function filingView() {
   }
 
   const live = liveAuth();
-  const shortlisted = openEntries(ws.pipeline).filter((e) => e.stage === 'shortlist' || e.stage === 'preparing');
+  const shortlisted = openEntries(ws.pipeline).filter((e) => PRE_SUBMISSION.has(e.stage));
   const already = new Set(filing.applications.map((a) => a.programme_slug));
   const queueable = shortlisted.filter((e) => !already.has(e.slug));
 
@@ -2284,7 +2378,7 @@ document.addEventListener('submit', async (ev) => {
   /* Scope defaults to what is shortlisted. Blanket authority would be one less
      field and exactly the thing a finance director will not sign. */
   const scope = openEntries(ws.pipeline)
-    .filter((e) => e.stage === 'shortlist' || e.stage === 'preparing')
+    .filter((e) => PRE_SUBMISSION.has(e.stage))
     .map((e) => ({ slug: e.slug, name: e.name, funder: e.funder }));
   if (!scope.length) {
     const note = document.getElementById('filing-note');
@@ -2511,7 +2605,7 @@ async function handleFilingAction(el) {
       const auth = liveAuth();
       const already = new Set(filing.applications.map((x) => x.programme_slug));
       const items = openEntries(ws.pipeline)
-        .filter((e) => (e.stage === 'shortlist' || e.stage === 'preparing') && !already.has(e.slug))
+        .filter((e) => (PRE_SUBMISSION.has(e.stage)) && !already.has(e.slug))
         .map((e) => ({
           slug: e.slug, name: e.name, funder: e.funder, country: e.country,
           amount_min: e.amount_min ?? null, amount_max: e.amount_max ?? null,
@@ -2583,7 +2677,7 @@ function showTrail(events) {
   }
 }
 
-document.addEventListener('click', (ev) => {
+document.addEventListener('click', async (ev) => {
   /* Gate actions. These are the only two clicks that work before the gate
      opens, so they are handled first and return. */
   const gateAct = ev.target.closest('[data-act]');
@@ -2591,6 +2685,20 @@ document.addEventListener('click', (ev) => {
     bypass = true;
     render();
     refresh();
+    return;
+  }
+  /* The try-before-account path the copy has always promised. Opens the
+     workspace in local-only mode and puts the sample portfolio in it, so the
+     first thing a reader sees is the shape of the product rather than a
+     sign-in wall over an empty board. */
+  if (gateAct?.dataset.act === 'start-sample') {
+    bypass = true;
+    render();
+    loadDemo();
+    return;
+  }
+  if (gateAct?.dataset.act === 'retry-sync') {
+    location.reload();
     return;
   }
   if (gateAct?.dataset.act === 'dismiss-stranded') {
@@ -2637,6 +2745,52 @@ document.addEventListener('click', (ev) => {
   if (!btn) return;
   const a = btn.dataset.action;
 
+  /* Register auto-fill, the Startup tier's headline convenience. Merges into
+     the form the reader is looking at rather than saving behind their back:
+     a register can be out of date, and the person filling the form is the one
+     who knows. */
+  if (a === 'autofill-company') {
+    const form = document.getElementById('company-form');
+    const note = document.getElementById('autofill-note');
+    if (!form) return;
+    const fd = new FormData(form);
+    const cc = String(fd.get('country_code') || '').trim().toLowerCase();
+    const identifier = String(fd.get('company_number') || '').trim();
+    const say = (m) => { if (note) note.textContent = m; };
+    if (!cc || !identifier) return void say('Enter the country and the company number first.');
+    btn.disabled = true;
+    say('Looking it up…');
+    try {
+      const res = await fetch('/api/startups/autofill', {
+        method: 'POST',
+        credentials: 'same-origin',
+        headers: { 'content-type': 'application/json' },
+        body: JSON.stringify({ country_code: cc, identifier }),
+      });
+      const body = await res.json().catch(() => ({}));
+      if (res.status === 402) say('Register look-ups are part of a paid plan. Upgrade from your account page.');
+      else if (res.status === 429) say(body.message || 'Daily look-up limit reached for this account.');
+      else if (!res.ok || body.ok === false) {
+        say(
+          body.reason === 'no_machine_readable_register'
+            ? 'There is no open register for this country — these fields are yours to enter.'
+            : body.message || 'The register did not answer. Try again, or fill the fields by hand.',
+        );
+      } else {
+        let filled = 0;
+        for (const [k, v] of Object.entries(body.company || {})) {
+          const el = form.elements.namedItem(k);
+          if (el && v != null && v !== '') { el.value = String(v); filled += 1; }
+        }
+        say(filled ? `Filled ${filled} field${filled === 1 ? '' : 's'} — check them, then save.` : 'The register had nothing we could use.');
+      }
+    } catch {
+      say('We could not reach the register. Fill the fields by hand for now.');
+    } finally {
+      btn.disabled = false;
+    }
+    return;
+  }
   if (a === 'new-company') return void go('company-form', { companyId: null });
   if (a === 'edit-company') return void go('company-form', { companyId: btn.dataset.id });
   if (a === 'delete-company') {
@@ -2759,9 +2913,11 @@ document.addEventListener('click', (ev) => {
 
   if (a === 'import') return void pickFile();
   if (a === 'save-search') {
-    const name = prompt('Name this search');
-    if (!name) return;
-    commit((w) => { w.searches.push({ id: uid(), name, filter: { ...view.filter } }); });
+    const answers = await askForm('Save this search', [
+      { name: 'name', label: 'Call it', required: true, hint: 'So you recognise it in the sidebar.' },
+    ]);
+    if (!answers?.name) return;
+    commit((w) => { w.searches.push({ id: uid(), name: answers.name, filter: { ...view.filter } }); });
     return;
   }
   if (a === 'run-search') {
@@ -2971,67 +3127,166 @@ function pickFile() {
     if (!f) return;
     const res = importCsv(await f.text());
     await refresh();
-    alert(
+    /* An import summary belongs on the page, not in a modal a reader has to
+       dismiss before they can look at what arrived. */
+    notice(
       `Imported ${res.added} ${res.added === 1 ? 'company' : 'companies'}.` +
-        (res.skipped ? `\n${res.skipped} rows had no company name and were skipped.` : '') +
-        (res.unmapped.length ? `\n\nColumns we did not recognise and therefore ignored:\n${res.unmapped.join(', ')}` : ''),
+        (res.skipped ? ` ${res.skipped} rows had no company name and were skipped.` : '') +
+        (res.unmapped.length ? ` Columns ignored: ${res.unmapped.join(', ')}.` : ''),
     );
   });
   input.click();
 }
 
-function pickCompany(promptText) {
-  if (!ws.companies.length) return null;
-  if (ws.companies.length === 1) return ws.companies[0];
-  const name = prompt(`${promptText}\n\n${ws.companies.map((c) => `· ${c.legal_name}`).join('\n')}`, ws.companies[0].legal_name);
-  if (!name) return null;
-  return ws.companies.find((c) => (c.legal_name || '').toLowerCase() === name.trim().toLowerCase()) || null;
+/* ------------------------------------------------------------------ */
+/* Add-flows, as forms                                                  */
+/*                                                                      */
+/* Three of thirteen tabs in a €49–€80/seat product were driven by       */
+/* browser modals showing database identifiers: "Which kind of           */
+/* document?" over "id_proof, proof_of_address, income_proof,            */
+/* tax_return, …". Every other tab uses a real form — the company form   */
+/* exposes 21 named fields. These also broke silently: the moment a      */
+/* reader ticks Chrome's "prevent this page from creating additional     */
+/* dialogs", prompt() returns null and the three tabs stop accepting     */
+/* input with no error and no explanation.                               */
+/*                                                                      */
+/* So: one small modal form, built from a field spec, resolving a        */
+/* promise. Labels throughout — docLabel() and the OBLIGATION_KINDS      */
+/* labels, never the enum key. No prompt, no confirm, no alert.          */
+/* ------------------------------------------------------------------ */
+
+/**
+ * Show a modal form and resolve with its values, or null if dismissed.
+ *
+ * @param {string} title
+ * @param {Array<{name:string,label:string,type?:string,options?:Array<[string,string]>,value?:string,required?:boolean,hint?:string}>} fields
+ */
+/** Something to say, said on the page. Never a modal a reader must dismiss. */
+function notice(message) {
+  let el = document.getElementById('dash-notice');
+  if (!el) {
+    el = document.createElement('p');
+    el.id = 'dash-notice';
+    el.className = 'small notice';
+    el.setAttribute('role', 'status');
+    el.setAttribute('aria-live', 'polite');
+    (document.querySelector('.dash__main') || document.body).prepend(el);
+  }
+  el.textContent = message;
 }
 
-function addDocumentPrompt(presetType) {
-  const types = Object.keys(DOC_TYPES);
-  const type = presetType || prompt(`Which kind of document?\n\n${types.join(', ')}`, types[0]);
-  if (!type || !DOC_TYPES[type]) return void (type && alert('Not a document type this build knows about.'));
-  const label = prompt('Give it a label you will recognise', docLabel(type));
-  if (label === null) return;
-  const issued = prompt('Issued on (YYYY-MM-DD), or leave blank', '');
-  const scope = ws.companies.length
-    ? confirm('OK = shared across the whole workspace.\nCancel = tie it to one company.')
-    : true;
-  let companyId = null;
-  if (!scope) {
-    const c = pickCompany('Which company holds it?');
-    if (!c) return;
-    companyId = c.id;
-  }
+function askForm(title, fields) {
+  return new Promise((resolve) => {
+    const host = document.createElement('div');
+    host.className = 'dash__modal';
+    /* Inline, not in theme.css: an unstyled div appended to <body> would drop
+       the form off the bottom of a long page with nothing to say it is there.
+       The class stays so it can be themed properly later. */
+    host.style.cssText =
+      'position:fixed;inset:0;z-index:9999;display:flex;align-items:center;justify-content:center;' +
+      'padding:1.5rem;background:rgba(0,0,0,.45);overflow:auto';
+    host.setAttribute('role', 'dialog');
+    host.setAttribute('aria-modal', 'true');
+    host.setAttribute('aria-label', title);
+    host.innerHTML = `
+      <form class="dash__form panel" id="ask-form" style="background:var(--paper,#fff);max-width:34rem;width:100%;padding:1.4rem;border-radius:.6rem">
+        <div class="panel__head"><h2>${esc(title)}</h2></div>
+        <div class="fieldgrid">
+          ${fields
+            .map((f) => {
+              const id = `ask-${f.name}`;
+              const control =
+                f.options
+                  ? `<select class="field" id="${id}" name="${esc(f.name)}"${f.required ? ' required' : ''}>${f.options
+                      .map(([v, l]) => `<option value="${esc(v)}"${String(f.value) === String(v) ? ' selected' : ''}>${esc(l)}</option>`)
+                      .join('')}</select>`
+                  : `<input class="field" id="${id}" name="${esc(f.name)}" type="${esc(f.type || 'text')}" value="${esc(f.value ?? '')}"${f.required ? ' required' : ''}${f.type === 'number' ? ' min="0" step="any"' : ''}>`;
+              return `<label class="fld" for="${id}"><span>${esc(f.label)}</span>${control}${
+                f.hint ? `<span class="tiny dash__muted">${esc(f.hint)}</span>` : ''
+              }</label>`;
+            })
+            .join('')}
+        </div>
+        <div class="row" style="margin-top:1.2rem">
+          <button class="btn btn-primary" type="submit">Add</button>
+          <button class="btn btn-ghost" type="button" data-ask="cancel">Cancel</button>
+        </div>
+      </form>`;
+    document.body.appendChild(host);
+    const form = host.querySelector('form');
+    const done = (value) => { host.remove(); resolve(value); };
+    form.addEventListener('submit', (ev) => {
+      ev.preventDefault();
+      done(Object.fromEntries(new FormData(form).entries()));
+    });
+    host.querySelector('[data-ask="cancel"]').addEventListener('click', () => done(null));
+    host.addEventListener('keydown', (ev) => { if (ev.key === 'Escape') done(null); });
+    form.querySelector('.field')?.focus();
+  });
+}
+
+/** Companies as a select, not as a name to retype. */
+function companyOptions() {
+  return ws.companies.map((c) => [c.id, c.legal_name || '(unnamed company)']);
+}
+
+async function addDocumentPrompt(presetType) {
+  const types = Object.keys(DOC_TYPES).map((k) => [k, docLabel(k)]);
+  const answers = await askForm('Add a document', [
+    ...(presetType ? [] : [{ name: 'type', label: 'Kind of document', options: types, value: types[0]?.[0], required: true }]),
+    { name: 'label', label: 'A label you will recognise', value: docLabel(presetType || types[0]?.[0]), required: true },
+    { name: 'issued', label: 'Issued on', type: 'date', hint: 'Optional.' },
+    {
+      name: 'company_id',
+      label: 'Who it belongs to',
+      options: [['', 'Shared across the whole workspace'], ...companyOptions()],
+      value: '',
+    },
+  ]);
+  if (!answers) return;
+  const type = presetType || answers.type;
+  if (!DOC_TYPES[type]) return;
   commit((w) => {
     w.documents.push({
-      id: uid(), type, label: label || docLabel(type),
-      issued_at: issued || null, company_id: companyId, added_at: Date.now(),
+      id: uid(), type, label: answers.label || docLabel(type),
+      issued_at: answers.issued || null, company_id: answers.company_id || null, added_at: Date.now(),
     });
   });
 }
 
-function addObligationPrompt() {
+async function addObligationPrompt() {
   const awarded = ws.pipeline.filter((e) => e.stage === 'awarded');
-  if (!awarded.length) return void alert('Mark an application as awarded first — obligations hang off an award.');
+  if (!awarded.length) {
+    return void notice('Mark an application as awarded first — obligations hang off an award.');
+  }
   if (awarded.length === 1) return void obligationFor(awarded[0]);
-  const list = awarded.map((e) => `· ${programmeName(programmeBySlug(e.slug))}`).join('\n');
-  const which = prompt(`Which award?\n\n${list}`, programmeName(programmeBySlug(awarded[0].slug)));
-  if (!which) return;
-  const e = awarded.find((x) => programmeName(programmeBySlug(x.slug)).toLowerCase() === which.trim().toLowerCase());
-  if (!e) return void alert('No award by that name.');
-  return void obligationFor(e);
+  const answers = await askForm('Which award?', [
+    {
+      name: 'application_id',
+      label: 'Award',
+      options: awarded.map((e) => [e.id, programmeName(programmeBySlug(e.slug))]),
+      value: awarded[0].id,
+      required: true,
+    },
+  ]);
+  if (!answers) return;
+  const e = awarded.find((x) => x.id === answers.application_id);
+  if (e) await obligationFor(e);
 }
 
-function obligationFor(e) {
-  const kind = prompt(`What kind?\n\n${OBLIGATION_KINDS.map((k) => k[0]).join(', ')}`, 'report');
-  if (!kind || !OBLIGATION_KINDS.some((k) => k[0] === kind)) return;
-  const title = prompt('What is owed?');
-  if (!title) return;
-  const due = prompt('Due on (YYYY-MM-DD)', '');
+async function obligationFor(e) {
+  const answers = await askForm('Add an obligation', [
+    { name: 'kind', label: 'What kind', options: OBLIGATION_KINDS, value: 'report', required: true },
+    { name: 'title', label: 'What is owed', required: true, hint: 'In the words the funder used.' },
+    { name: 'due', label: 'Due on', type: 'date' },
+  ]);
+  if (!answers) return;
+  if (!OBLIGATION_KINDS.some((k) => k[0] === answers.kind)) return;
   commit((w) => {
-    w.postaward.push({ id: uid(), application_id: e.id, kind, title, due: due || '', done: false, created_at: Date.now() });
+    w.postaward.push({
+      id: uid(), application_id: e.id, kind: answers.kind, title: answers.title,
+      due: answers.due || '', done: false, created_at: Date.now(),
+    });
   });
 }
 
@@ -3055,22 +3310,23 @@ function exportApplications() {
   download('unclaimed-applications.csv', toCsv(rows), 'text/csv');
 }
 
-function addAwardPrompt() {
+async function addAwardPrompt() {
   const c = ws.companies[0];
   if (!c) return;
-  const name = prompt('Which company? Type the name.', c.legal_name);
-  if (!name) return;
-  const target = ws.companies.find((x) => (x.legal_name || '').toLowerCase() === name.trim().toLowerCase());
-  if (!target) return void alert('No company by that name in this workspace.');
-  const programme = prompt('What was the award for?');
-  if (!programme) return;
-  const amount = Number(prompt('Amount in EUR'));
-  if (!Number.isFinite(amount) || amount <= 0) return void alert('That is not an amount.');
-  const when = prompt('Granted on (YYYY-MM-DD)', new Date().toISOString().slice(0, 10));
-  const at = Date.parse(when || '');
+  const answers = await askForm('Record an award', [
+    { name: 'company_id', label: 'Company', options: companyOptions(), value: c.id, required: true },
+    { name: 'programme', label: 'What the award was for', required: true },
+    { name: 'amount_eur', label: 'Amount in EUR', type: 'number', required: true },
+    { name: 'granted_at', label: 'Granted on', type: 'date', value: new Date().toISOString().slice(0, 10) },
+  ]);
+  if (!answers) return;
+  const target = ws.companies.find((x) => x.id === answers.company_id);
+  const amount = Number(answers.amount_eur);
+  if (!target || !Number.isFinite(amount) || amount <= 0) return;
+  const at = Date.parse(answers.granted_at || '');
   commit((w) => {
     w.awards.push({
-      id: uid(), company_id: target.id, programme,
+      id: uid(), company_id: target.id, programme: answers.programme,
       amount_eur: amount, member_state: (target.country_code || '').toLowerCase(),
       granted_at: Number.isNaN(at) ? Date.now() : at,
     });
@@ -3168,4 +3424,4 @@ window.addEventListener('storage', (e) => {
   render();
 });
 
-export { importCsv, parseCsv, pipelineValue, hitRate, packText, STAGES, OBLIGATION_KINDS, programmeName, issuesFor, readinessFor };
+export { importCsv, parseCsv, pipelineValue, hitRate, packText, STAGES, STAGE_IDS, PRE_SUBMISSION, OBLIGATION_KINDS, docLabel, programmeName, issuesFor, readinessFor };

@@ -360,7 +360,11 @@ async function resultsView() {
       : `<section class="total">
       <p class="eyebrow">You could be owed, per year</p>
       <div class="total__n">${sym}${nf(r.total_min)}–${sym}${nf(r.total_max)}</div>
-      <p class="small">across ${r.eligible.length} programmes${r.unpriced_count ? `, plus ${r.unpriced_count} with no published amount` : ''}.</p>
+      <p class="small">across ${r.recurring_count ?? r.eligible.length} programmes paid every year${r.unpriced_count ? `, plus ${r.unpriced_count} with no published amount` : ''}.</p>
+      <!-- One-off money gets its own line for the same reason the web results
+           screen does: this eyebrow says "per year", and a grant paid once is
+           not per year. See the split in src/engine/matcher.js. -->
+      ${(r.one_off_max ?? 0) > 0 ? `<p class="small"><strong>Plus ${sym}${nf(r.one_off_max)} one-off</strong> across ${r.one_off_count} programme${r.one_off_count === 1 ? '' : 's'} paid once.</p>` : ''}
       ${cal.counts.closing ? `<p class="warn">${cal.counts.closing} closing within two weeks.</p>` : ''}
     </section>`}
 

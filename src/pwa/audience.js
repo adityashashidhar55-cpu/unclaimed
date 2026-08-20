@@ -28,11 +28,31 @@ const COOKIE = 'ua_aud';
 const DEFAULT = 'me';
 
 /** The inline <head> script, as source. Kept here so it cannot drift. */
-export const BOOT_SCRIPT = `(function(){try{var m=document.cookie.match(/(?:^|; )ua_aud=(me|biz)/);document.documentElement.setAttribute('data-audience',m?m[1]:'me')}catch(e){document.documentElement.setAttribute('data-audience','me')}})()`;
+/* The inline <head> script, as source. Kept here so it cannot drift.
+   
+   It leaves an already-set data-audience alone. Some pages are one audience
+   and only one — /enterprise/, /dashboard/, /startups/** — and the server
+   states that in the markup. Overwriting it from the cookie before first paint
+   would hand a reader with ua_aud=me the individual masthead on a page that is
+   entirely about the company product. */
+export const BOOT_SCRIPT = `(function(){try{var d=document.documentElement;if(d.getAttribute('data-audience'))return;var m=document.cookie.match(/(?:^|; )ua_aud=(me|biz)/);d.setAttribute('data-audience',m?m[1]:'me')}catch(e){document.documentElement.setAttribute('data-audience','me')}})()`;
 
 export function readAudience() {
   const m = document.cookie.match(/(?:^|; )ua_aud=(me|biz)/);
   return m ? m[1] : DEFAULT;
+}
+
+/**
+ * Is this page one where the audience is the reader's to choose?
+ *
+ * A page carrying a switch is asking the question, so the cookie answers it. A
+ * page with no switch has already been answered server-side, and the runtime's
+ * job there is to leave it alone. Detected from the switch rather than from a
+ * flag the other lane emits, so there is no contract between us to keep in
+ * sync — the switch is the thing that means "you may choose".
+ */
+export function audienceIsSwitchable(root = document) {
+  return root.querySelector('[data-aud-set]') !== null;
 }
 
 export function setAudience(value, { reload = false } = {}) {
@@ -58,6 +78,17 @@ export function setAudience(value, { reload = false } = {}) {
  * handler per switch.
  */
 export function initAudience() {
+  /* On a page with no switch, the server's answer stands. Writing the cookie
+     value over it here was the whole bug: /enterprise/ with ua_aud=me would
+     paint the enterprise markup and then flip to the individual masthead a
+     moment later, on a page that has no individual half to show. */
+  if (!audienceIsSwitchable()) {
+    if (!document.documentElement.getAttribute('data-audience')) {
+      document.documentElement.setAttribute('data-audience', readAudience());
+    }
+    return;
+  }
+
   const current = readAudience();
   document.documentElement.setAttribute('data-audience', current);
   for (const el of document.querySelectorAll('[data-aud-set]')) {
