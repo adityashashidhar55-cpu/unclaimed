@@ -2354,6 +2354,34 @@ export default {
                 headers: { 'content-type': 'application/json', 'cache-control': 'private, no-store' },
               }));
             }
+            /* The full file is missing and this caller has paid for it.
+               Falling through to the stripped asset unmarked is what shipped
+               for three rounds: the browser client fetches THIS route (not
+               POST /api/check, which is the only place loadCountry() sets the
+               flag), so the reader was handed rows whose names and links had
+               been stripped out, with nothing in the payload to say so, and
+               the screen rendered dozens of blank cards under a heading
+               promising money. Say it in the payload, in the same words
+               loadCountry() logs, so the client can tell a service failure
+               from the free tier. */
+            const stripped = await env.ASSETS.fetch(
+              new Request(new URL(`/api/v1/${m[1]}/${m[2]}.json`, request.url).toString()),
+            );
+            if (stripped.ok) {
+              const data = await stripped.json().catch(() => null);
+              if (data && typeof data === 'object') {
+                console.error(
+                  `dataset_degraded: /api/v1/full/${m[1]}/${m[2]}.json is absent; ` +
+                    'an entitled request is being answered from the stripped public file. ' +
+                    'The build did not emit the full dataset (EMIT_FULL_DATASET).',
+                );
+                data.dataset_degraded = true;
+                data.dataset_degraded_reason = 'full_dataset_missing';
+                return withCors(new Response(JSON.stringify(data), {
+                  headers: { 'content-type': 'application/json', 'cache-control': 'private, no-store' },
+                }));
+              }
+            }
           }
         }
       }
