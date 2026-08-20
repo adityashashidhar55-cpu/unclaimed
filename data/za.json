@@ -65,7 +65,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.sassa.gov.za",
    "source_snippet": "Older Persons Grant, Disability Grant and Care Dependency Grant will increase by R80 to R2 400 ... from April 2026 (SASSA/SAnews 2026/27 announcement)",
@@ -138,7 +139,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.sassa.gov.za",
    "source_snippet": "Disability Grant ... will increase by R80 to R2 400 (Budget Speech increases effective April 2026)",
@@ -211,7 +213,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.sassa.gov.za",
    "source_snippet": "Child Support Grant and Grant-In-Aid will increase by R20 to R580 (Budget increases effective April 2026)",
@@ -287,7 +290,8 @@
     "admin_areas": [],
     "income_test": "none",
     "income_source_url": "https://services.sassa.gov.za/portal/r/sassa/files/static/v61/GRANTSINFO2021-22.pdf",
-    "income_confidence": "high"
+    "income_confidence": "high",
+    "gender": "any"
    },
    "source_url": "https://www.sassa.gov.za",
    "source_snippet": "Foster Child Grant will increase by R40 to R1 290 (Budget increases effective April 2026)",
@@ -361,7 +365,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.sassa.gov.za",
    "source_snippet": "Care Dependency Grant will increase by R80 to R2 400 (Budget increases effective April 2026)",
@@ -427,7 +432,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.sassa.gov.za",
    "source_snippet": "Grant-In-Aid will increase by R20 to R580 (Budget increases effective April 2026)",
@@ -498,7 +504,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.sassa.gov.za",
    "source_snippet": "War Veterans Grant will increase by R80 to R2 420 (Budget increases effective April 2026)",
@@ -562,7 +569,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://srd.sassa.gov.za",
    "source_snippet": "The R370 provision would be paid to successful applicants for the 01 April 2026 to 31 March 2027 extension period (DSD/SAnews)",
@@ -638,7 +646,8 @@
     "admin_areas": [],
     "income_test": "numeric",
     "income_source_url": "https://www.gov.za/news/media-statements/sassa-clarifies-review-social-grants-and-assures-no-suspension-07-jul-2025",
-    "income_confidence": "medium"
+    "income_confidence": "medium",
+    "gender": "any"
    },
    "source_url": "https://www.sassa.gov.za",
    "source_snippet": "SASSA administers ... Child Support Grant Top-Up alongside the other children's grants",
@@ -710,7 +719,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.eskom.co.za",
    "source_snippet": "The policy aims to provide a monthly allocation of 50 kilowatt-hours (kWh) of electricity to indigent households identified by municipalities (NERSA EBSST policy)",
@@ -771,7 +781,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.cogta.gov.za",
    "source_snippet": "The general rule is that indigent households are entitled to 6 kl of free water per household per month and 50 kWh of free electricity",
@@ -827,7 +838,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.cogta.gov.za",
    "source_snippet": "All metropolitan municipalities provide free basic services to qualifying indigent households, including water, electricity, sanitation, and refuse removal (COGTA parliamentary reply)",
@@ -883,7 +895,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.cogta.gov.za",
    "source_snippet": "Refuse removal: Generally 100% subsidised (COGTA parliamentary reply on metro indigent programmes)",
@@ -939,7 +952,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.energy.gov.za",
    "source_snippet": "Non-grid indigent households may receive free basic alternative energy such as paraffin or LPG under municipal indigent policies",
@@ -1006,11 +1020,13 @@
     "housing_tenure": null,
     "student_required": false,
     "admin_areas": [
-     "Gauteng"
+     "Gauteng",
+     "City of Johannesburg"
     ],
     "income_test": "numeric",
     "income_source_url": "https://www.joburg.org.za/services_/Pages/City%20Services/Social%20Package/Expanded-Social-Package0217-1439.aspx",
-    "income_confidence": "medium"
+    "income_confidence": "medium",
+    "gender": "any"
    },
    "source_url": "https://www.joburg.org.za",
    "source_snippet": null,
@@ -1078,8 +1094,10 @@
     "housing_tenure": null,
     "student_required": false,
     "admin_areas": [
-     "Western Cape"
-    ]
+     "Western Cape",
+     "City of Cape Town"
+    ],
+    "gender": "any"
    },
    "source_url": "https://www.capetown.gov.za",
    "source_snippet": null,
@@ -1146,8 +1164,10 @@
     "housing_tenure": null,
     "student_required": false,
     "admin_areas": [
-     "KwaZulu-Natal"
-    ]
+     "KwaZulu-Natal",
+     "eThekwini"
+    ],
+    "gender": "any"
    },
    "source_url": "https://www.durban.gov.za",
    "source_snippet": null,
@@ -1214,8 +1234,10 @@
     "housing_tenure": null,
     "student_required": false,
     "admin_areas": [
-     "Gauteng"
-    ]
+     "Gauteng",
+     "City of Tshwane"
+    ],
+    "gender": "any"
    },
    "source_url": "https://www.tshwane.gov.za",
    "source_snippet": null,
@@ -1282,8 +1304,10 @@
     "housing_tenure": null,
     "student_required": false,
     "admin_areas": [
-     "Gauteng"
-    ]
+     "Gauteng",
+     "City of Ekurhuleni"
+    ],
+    "gender": "any"
    },
    "source_url": "https://www.ekurhuleni.gov.za",
    "source_snippet": null,
@@ -1350,8 +1374,10 @@
     "housing_tenure": null,
     "student_required": false,
     "admin_areas": [
-     "Eastern Cape"
-    ]
+     "Eastern Cape",
+     "Nelson Mandela Bay"
+    ],
+    "gender": "any"
    },
    "source_url": "https://www.nelsonmandelabay.gov.za",
    "source_snippet": null,
@@ -1415,8 +1441,10 @@
     "housing_tenure": "owner",
     "student_required": false,
     "admin_areas": [
-     "Gauteng"
-    ]
+     "Gauteng",
+     "City of Johannesburg"
+    ],
+    "gender": "any"
    },
    "source_url": "https://www.joburg.org.za",
    "source_snippet": null,
@@ -1492,7 +1520,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.dhs.gov.za",
    "source_snippet": "In most cases, BNG housing is aimed at households earning less than R3 500 per month ... must not have previously owned property",
@@ -1568,7 +1597,8 @@
     "residency_months_min": null,
     "housing_tenure": "owner",
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.nhfc.co.za",
    "source_snippet": "The benefit ranges from anything between R38,911 and R169,265 depending on your monthly income ... earning between R3,501 and R22,000 a month",
@@ -1629,7 +1659,8 @@
     "residency_months_min": null,
     "housing_tenure": "renting",
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.shra.org.za",
    "source_snippet": "Social housing provides subsidised rental accommodation to low- and middle-income households through accredited social housing institutions",
@@ -1680,7 +1711,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.dhs.gov.za",
    "source_snippet": "The Emergency Housing Programme assists households in emergency situations with temporary settlement and shelter",
@@ -1706,7 +1738,13 @@
    "application_channel": "automatic",
    "deadline_type": "none",
    "deadline_note": null,
-   "procedure_steps": [],
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "No application needed — this is paid automatically to everyone who qualifies. Check that the authority holds your current address and bank details; a missing detail is the usual reason an automatic payment does not arrive.",
+     "url": "https://www.dhs.gov.za"
+    }
+   ],
    "documents_required": [],
    "eligibility": {
     "statuses": [],
@@ -1719,7 +1757,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.dhs.gov.za",
    "source_snippet": "The UISP provides for the phased upgrading of informal settlements, starting with basic services and tenure security",
@@ -1797,7 +1836,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": true,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.nsfas.org.za",
    "source_snippet": "Come from a household earning R350,000 or less per year ... funding covers tuition, accommodation, study materials, and living allowances for students at public universities and TVET colleges",
@@ -1870,7 +1910,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": true,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.education.gov.za",
    "source_snippet": "The Funza Lushaka Bursary covers tuition fees, accommodation and meals, books and learning materials, teaching practice costs and a small living allowance; recipients must teach in public schools for the years funded",
@@ -1896,7 +1937,13 @@
    "application_channel": "automatic",
    "deadline_type": "none",
    "deadline_note": null,
-   "procedure_steps": [],
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "No application needed — this is paid automatically to everyone who qualifies. Check that the authority holds your current address and bank details; a missing detail is the usual reason an automatic payment does not arrive.",
+     "url": "https://www.education.gov.za"
+    }
+   ],
    "documents_required": [],
    "eligibility": {
     "statuses": [],
@@ -1909,7 +1956,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.education.gov.za",
    "source_snippet": "The National School Nutrition Programme (NSNP), a national initiative providing meals to vulnerable learners in Quintile 1-3 no-fee-paying schools, continues without disruption",
@@ -1977,7 +2025,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.education.gov.za",
    "source_snippet": "Parents who cannot afford school fees may apply to the school governing body for full or partial exemption in terms of the South African Schools Act",
@@ -2003,7 +2052,13 @@
    "application_channel": "automatic",
    "deadline_type": "none",
    "deadline_note": null,
-   "procedure_steps": [],
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "No application needed — this is paid automatically to everyone who qualifies. Check that the authority holds your current address and bank details; a missing detail is the usual reason an automatic payment does not arrive.",
+     "url": "https://www.education.gov.za"
+    }
+   ],
    "documents_required": [],
    "eligibility": {
     "statuses": [],
@@ -2016,7 +2071,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": true,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.education.gov.za",
    "source_snippet": "The National School Nutrition Programme (NSNP) ... providing meals to vulnerable learners in Quintile 1-3 no-fee-paying schools",
@@ -2064,7 +2120,8 @@
     "admin_areas": [],
     "income_test": "unpublished",
     "income_source_url": "https://mpeducation.mpg.gov.za/PF/ECD/202627%20subsidy%20ECD%20application%20forms%20programmes%201.pdf",
-    "income_confidence": "medium"
+    "income_confidence": "medium",
+    "gender": "any"
    },
    "source_url": "https://www.education.gov.za",
    "source_snippet": "R10 billion has been set aside over the next three years to support ECD, increasing the subsidy from R17 to R24 per child per day",
@@ -2121,7 +2178,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.dhet.gov.za",
    "source_snippet": "The National Skills Fund finances skills development initiatives including bursaries, learnerships and workplace-based learning for the unemployed",
@@ -2186,7 +2244,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.dhet.gov.za",
    "source_snippet": "Learnerships combine structured learning with workplace experience; unemployed learners receive a monthly allowance for the duration of the learnership",
@@ -2250,7 +2309,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.epwp.gov.za",
    "source_snippet": "EPWP workers are paid a minimum daily rate, which varies by municipality. Typical stipend range: R2 500 - R3 500 per month",
@@ -2309,7 +2369,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.cogta.gov.za",
    "source_snippet": "The CWP provides a regular part-time work opportunity of two days a week for unemployed people of working age in the poorest wards",
@@ -2373,7 +2434,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.education.gov.za",
    "source_snippet": "Phase 5 of the Basic Education Employment Initiative (BEEI) was launched in June 2025, creating 204 676 job opportunities for youth aged 18-34",
@@ -2432,7 +2494,9 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any",
+    "rule_source": "geography_unknown"
    },
    "source_url": "https://www.yes4youth.co.za",
    "source_snippet": "YES gives youth a 12-month quality work experience and gives businesses B-BBEE level ups for creating youth jobs",
@@ -2505,7 +2569,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.labour.gov.za",
    "source_snippet": "UIF benefit payments capped at R17,712/month. Benefits: 38%-58% of salary. Max claim period: up to 365 days",
@@ -2578,7 +2643,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "female"
    },
    "source_url": "https://www.labour.gov.za",
    "source_snippet": "Contributors on maternity leave can claim up to 121 days of UIF maternity benefits",
@@ -2651,7 +2717,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.labour.gov.za",
    "source_snippet": "Illness benefits are paid to contributors who cannot work because of illness for more than two weeks",
@@ -2722,7 +2789,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.labour.gov.za",
    "source_snippet": "The dependants of a deceased contributor can claim UIF benefits from the Fund",
@@ -2790,7 +2858,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.labour.gov.za",
    "source_snippet": "Contributors who adopt a child under the age of two can claim adoption benefits",
@@ -2863,7 +2932,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.labour.gov.za",
    "source_snippet": "The Compensation Fund is a South African government fund established under the Compensation for Occupational Injuries and Diseases Act (COIDA)",
@@ -2920,7 +2990,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.sars.gov.za/types-of-tax/pay-as-you-earn/employment-tax-incentive-eti/how-does-the-employment-tax-incentive-eti-work/",
    "source_snippet": "The Monthly Calculated ETI amount per qualifying employee is within the prescribed legislated threshold (SARS ETI tables)",
@@ -2965,7 +3036,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.health.gov.za",
    "source_snippet": "Under the NHA framework, irrespective of nationality and migration status: Everyone is entitled to free primary health services, including people with communicable diseases such as HIV and TB",
@@ -3010,7 +3082,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.health.gov.za",
    "source_snippet": "Maternity care is an integral component of primary health care and a free health service for pregnant women (National Department of Health maternity care guidelines)",
@@ -3055,7 +3128,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.health.gov.za",
    "source_snippet": "Free services include services for ... infectious diseases such as HIV and TB (national free health services policy)",
@@ -3100,7 +3174,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.health.gov.za",
    "source_snippet": "Free services include services for ... infectious diseases such as HIV and TB (national free health services policy)",
@@ -3151,7 +3226,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.health.gov.za",
    "source_snippet": "Immunisation against vaccine-preventable diseases is provided free of charge at public health facilities under the Expanded Programme on Immunisation",
@@ -3227,7 +3303,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.raf.co.za/Claims/Pages/How-To-Claim.aspx",
    "source_snippet": "RAF claims documentation includes RAF 4 Serious Injury Report, employer's certificate showing remuneration, and itemised tax invoices for past medical expenses",
@@ -3291,7 +3368,8 @@
     "admin_areas": [],
     "income_test": "numeric",
     "income_source_url": "https://legal-aid.co.za/how-it-works/",
-    "income_confidence": "high"
+    "income_confidence": "high",
+    "gender": "any"
    },
    "source_url": "https://legal-aid.co.za",
    "source_snippet": "Legal Aid SA provides legal aid at state expense to those who cannot afford legal representation, subject to a means test",
@@ -3353,7 +3431,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.dmv.gov.za",
    "source_snippet": "The Military Veterans Act provides benefits including housing, health care, education support and a pension for qualifying military veterans",
@@ -3414,7 +3493,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.dha.gov.za",
    "source_snippet": "First-time applicants receive their smart ID card free of charge; birth registration within 30 days is free",
@@ -3482,7 +3562,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.sefa.org.za",
    "source_snippet": "sefa provides financial products and services to survivalist, micro, small and medium enterprises",
@@ -3535,7 +3616,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.seda.org.za",
    "source_snippet": "SEDA provides non-financial business development and support services to small enterprises through its national branch network",
@@ -3599,7 +3681,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.nyda.gov.za",
    "source_snippet": "The NYDA Grant Programme provides young entrepreneurs with grant funding and business development support to start and grow businesses",
@@ -3657,7 +3740,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.dsbd.gov.za",
    "source_snippet": "TREP supports township and rural enterprises through blended finance (grant plus loan) and business development support",
@@ -3720,7 +3804,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.thedtic.gov.za",
    "source_snippet": "The Black Industrialists Scheme offers a cost-sharing grant towards capital investment, feasibility studies and business development services",
@@ -3783,7 +3868,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.thedtic.gov.za",
    "source_snippet": "EMIA aims to develop export markets for South African goods and services by partially compensating exporters for qualifying marketing costs",
@@ -3846,7 +3932,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.dalrrd.gov.za",
    "source_snippet": "CASP provides post-settlement support to targeted beneficiaries of land reform and other producers who have acquired land through private means",
@@ -3904,7 +3991,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.dalrrd.gov.za",
    "source_snippet": "The Ilima/Letsema programme aims to increase food production through support to subsistence, smallholder and household food producers",
@@ -3972,7 +4060,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.landbank.co.za",
    "source_snippet": "The Blended Finance Scheme combines a government grant with a Land Bank loan to support black commercial farmers",
@@ -4017,7 +4106,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.metrorail.co.za",
    "source_snippet": "Metrorail commuter rail fares are subsidised by the state to keep commuter rail affordable for low-income passengers",
@@ -4079,8 +4169,10 @@
     "housing_tenure": null,
     "student_required": false,
     "admin_areas": [
-     "Western Cape"
-    ]
+     "Western Cape",
+     "City of Cape Town"
+    ],
+    "gender": "any"
    },
    "source_url": "https://www.capetown.gov.za",
    "source_snippet": "Dial-a-Ride provides subsidised kerb-to-kerb transport for registered persons with disabilities in Cape Town",
@@ -4151,7 +4243,8 @@
      "North West",
      "Free State",
      "Northern Cape"
-    ]
+    ],
+    "gender": "any"
    },
    "source_url": "https://www.education.gov.za",
    "source_snippet": "Provincial education departments provide scholar transport to learners who live more than a prescribed distance (usually 5 km) from the nearest suitable school",

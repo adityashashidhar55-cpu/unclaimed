@@ -71,7 +71,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://pmkisan.gov.in",
    "source_snippet": "Eligible landholding farmer families receive ₹6,000 per year in three instalments of ₹2,000 each through Direct Benefit Transfer.",
@@ -144,7 +145,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://pmayg.nic.in",
    "source_snippet": "Financial assistance of ₹1.20 lakh (plain) / ₹1.30 lakh (hilly areas) is provided to eligible rural households to construct a pucca house.",
@@ -218,7 +220,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://pmay-urban.gov.in",
    "source_snippet": "PMAY-U 2.0 provides central assistance and home-loan interest subsidy to urban EWS/LIG/MIG families without a pucca house.",
@@ -292,7 +295,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "female"
    },
    "source_url": "https://www.pmuy.gov.in",
    "source_snippet": "PMUY provides a deposit-free LPG connection in the name of an adult woman of a poor household; Ujjwala consumers also get ₹300 per refill subsidy via DBT.",
@@ -356,7 +360,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.pmjay.gov.in",
    "source_snippet": "PM-JAY gives free health cover of ₹5 lakh per family per year for secondary and tertiary hospitalisation; expanded in 2024 to all citizens aged 70+.",
@@ -424,7 +429,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://pmjdy.gov.in",
    "source_snippet": "PMJDY offers a zero-minimum-balance account with RuPay debit card, ₹2 lakh accident cover and overdraft up to ₹10,000.",
@@ -500,7 +506,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.mudra.org.in",
    "source_snippet": "PMMY gives collateral-free loans up to ₹20 lakh (Tarun Plus) to non-farm micro and small enterprises through banks and NBFCs.",
@@ -571,7 +578,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://pmsvanidhi.mohua.gov.in",
    "source_snippet": "PM SVANidhi provides collateral-free working-capital loans of ₹10,000–₹50,000 with 7% interest subsidy to urban street vendors.",
@@ -647,7 +655,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.standupmitra.in",
    "source_snippet": "Stand-Up India facilitates bank loans of ₹10 lakh to ₹1 crore for SC/ST and women entrepreneurs for greenfield enterprises.",
@@ -723,7 +732,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://pmvishwakarma.gov.in",
    "source_snippet": "PM Vishwakarma gives artisans training stipend, ₹15,000 toolkit support and loans up to ₹3 lakh at 5% interest.",
@@ -802,7 +812,8 @@
     "admin_areas": [],
     "income_test": "none",
     "income_source_url": "https://pmegp.msme.gov.in/Home/FAQ",
-    "income_confidence": "high"
+    "income_confidence": "high",
+    "gender": "any"
    },
    "source_url": "https://www.kviconline.gov.in",
    "source_snippet": "PMEGP gives 15–35% margin-money subsidy on bank loans for setting up new manufacturing/service micro-enterprises.",
@@ -871,7 +882,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.jansuraksha.gov.in",
    "source_snippet": "APY guarantees a ₹1,000–₹5,000 monthly pension after 60 against modest contributions from age 18–40.",
@@ -939,7 +951,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.jansuraksha.gov.in",
    "source_snippet": "PMJJBY offers ₹2 lakh term life cover at ₹436 per year for bank account holders aged 18–50.",
@@ -1007,7 +1020,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.jansuraksha.gov.in",
    "source_snippet": "PMSBY provides ₹2 lakh accidental death/disability cover at ₹20 per year for bank account holders aged 18–70.",
@@ -1075,7 +1089,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.nsiindia.gov.in",
    "source_snippet": "SSY is a small-savings scheme for girls under 10: ₹250–₹1.5 lakh/year deposits earn a government-notified rate (currently 8.2%) with full tax exemption.",
@@ -1161,7 +1176,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": true,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://scholarships.gov.in",
    "source_snippet": "Centrally sponsored post-matric scholarship pays fees plus maintenance allowance to SC students with family income up to ₹2.5 lakh a year.",
@@ -1242,7 +1258,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": true,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://scholarships.gov.in",
    "source_snippet": "Post-matric scholarship for ST students covers fees and a maintenance allowance where family income is up to ₹2.5 lakh a year.",
@@ -1323,7 +1340,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": true,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://scholarships.gov.in",
    "source_snippet": "PM-YASASVI post-matric scholarship supports OBC/EBC/DNT students with fees and allowance where family income is up to ₹2.5 lakh.",
@@ -1409,7 +1427,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": true,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://scholarships.gov.in",
    "source_snippet": "Merit-cum-Means scholarship reimburses course fees up to ₹20,000 a year plus maintenance for minority students in professional courses.",
@@ -1490,7 +1509,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": true,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://scholarships.gov.in",
    "source_snippet": "PMSS pays a monthly scholarship to wards and widows of CAPF, Assam Rifles and police personnel pursuing first professional degrees.",
@@ -1567,7 +1587,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://pminternship.mca.gov.in",
    "source_snippet": "PM Internship Scheme pays ₹5,000 a month plus a ₹6,000 grant for a 12-month internship at 500+ top companies for youth aged 21–24 with family income under ₹8 lakh.",
@@ -1640,7 +1661,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://nrega.nic.in",
    "source_snippet": "MGNREGA legally guarantees 100 days of paid unskilled work per rural household per year at state-notified wage rates.",
@@ -1703,7 +1725,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://nfsa.gov.in",
    "source_snippet": "NFSA/PMGKAY provides 5 kg of free food grains per person per month to priority ration-card households and 35 kg to AAY families.",
@@ -1771,7 +1794,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://nsap.nic.in",
    "source_snippet": "Annapurna gives 10 kg of free food grains monthly to destitute senior citizens who are not covered by the old-age pension.",
@@ -1847,7 +1871,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "female"
    },
    "source_url": "https://pmmvy.wcd.gov.in",
    "source_snippet": "PMMVY provides ₹5,000 maternity benefit in instalments for the first child and ₹6,000 for a second girl child via DBT.",
@@ -1922,7 +1947,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://nhm.gov.in",
    "source_snippet": "JSY gives a cash incentive to pregnant women for delivering in a health institution to reduce maternal and infant mortality.",
@@ -1997,7 +2023,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://nsap.nic.in",
    "source_snippet": "IGNOAPS pays ₹200–₹500 a month (centre's share; states top up) to BPL senior citizens aged 60 and above.",
@@ -2075,7 +2102,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://nsap.nic.in",
    "source_snippet": "IGNWPS pays ₹300 a month (centre's share) to BPL widows aged 40–79, with state top-ups.",
@@ -2153,7 +2181,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://nsap.nic.in",
    "source_snippet": "IGNDPS pays ₹300 a month (centre's share) to BPL persons with severe or multiple disabilities aged 18–79.",
@@ -2225,7 +2254,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://eshram.gov.in",
    "source_snippet": "e-Shram registers unorganised workers free and provides ₹2 lakh accidental insurance plus access to central social-security schemes.",
@@ -2297,7 +2327,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://maandhan.in",
    "source_snippet": "PM-SYM gives unorganised workers earning up to ₹15,000/month an assured ₹3,000 monthly pension after 60 with equal government contribution.",
@@ -2354,7 +2385,8 @@
     "admin_areas": [],
     "income_test": "none",
     "income_source_url": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=1812421",
-    "income_confidence": "high"
+    "income_confidence": "high",
+    "gender": "any"
    },
    "source_url": "https://pmposhan.education.gov.in",
    "source_snippet": "PM POSHAN serves a free hot cooked meal on every school day to children up to Class VIII in government and aided schools.",
@@ -2431,7 +2463,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": true,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://coaching.dosje.gov.in",
    "source_snippet": "The scheme funds free coaching in empanelled institutes plus a monthly stipend for SC/OBC students with family income up to ₹8 lakh.",
@@ -2486,7 +2519,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": true,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://diksha.gov.in",
    "source_snippet": "DIKSHA under PM eVIDYA gives every student free digital textbooks and curriculum-linked e-content.",
@@ -2563,7 +2597,8 @@
     "admin_areas": [],
     "income_test": "none",
     "income_source_url": "https://www.myscheme.gov.in/schemes/pmsgmb",
-    "income_confidence": "medium"
+    "income_confidence": "medium",
+    "gender": "any"
    },
    "source_url": "https://pmsuryaghar.gov.in",
    "source_snippet": "PM Surya Ghar gives up to ₹78,000 subsidy for residential rooftop solar, targeting 300 units of free electricity a month for 1 crore households.",
@@ -2638,7 +2673,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://pmkusum.mnre.gov.in",
    "source_snippet": "PM-KUSUM subsidises solar agriculture pumps and pump solarisation with about 60% central-plus-state support.",
@@ -2711,7 +2747,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.myscheme.gov.in",
    "source_snippet": "KCC provides revolving crop credit at 7% (effectively 4% on prompt repayment) for limits up to ₹3 lakh.",
@@ -2765,7 +2802,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://agricoop.gov.in",
    "source_snippet": "The interest subvention scheme delivers short-term crop loans at an effective 4% to farmers who repay promptly.",
@@ -2839,7 +2877,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://pmfby.gov.in",
    "source_snippet": "PMFBY insures crops against natural risks at subsidised farmer premiums of 1.5–5% of the sum insured.",
@@ -2915,7 +2954,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.startupindia.gov.in",
    "source_snippet": "SISFS provides up to ₹20 lakh in grants and ₹50 lakh in investment to early-stage DPIIT-recognised startups via incubators.",
@@ -2991,7 +3031,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": true,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.vidyalakshmi.co.in",
    "source_snippet": "CSIS waives the interest during study and moratorium on education loans up to ₹7.5 lakh for students with family income up to ₹4.5 lakh.",
@@ -3056,7 +3097,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.mylpg.in",
    "source_snippet": "PAHAL/DBTL credits the LPG refill subsidy directly to the Aadhaar-linked bank account; PMUY consumers get ₹300 per cylinder.",
@@ -3124,7 +3166,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://indianrailways.gov.in",
    "source_snippet": "Indian Railways grants 25–75% fare concessions to persons with disabilities, certain patients and students on authorised journeys.",
@@ -3200,7 +3243,8 @@
     "student_required": false,
     "admin_areas": [
      "Karnataka"
-    ]
+    ],
+    "gender": "any"
    },
    "source_url": "https://sevasindhugs.karnataka.gov.in",
    "source_snippet": "Gruha Jyothi gives Karnataka households free electricity up to 200 units a month, merged from the earlier Bhagya Jyothi/Kuteera Jyothi schemes.",
@@ -3271,7 +3315,8 @@
     "student_required": false,
     "admin_areas": [
      "Karnataka"
-    ]
+    ],
+    "gender": "female"
    },
    "source_url": "https://sevasindhugs.karnataka.gov.in",
    "source_snippet": "Gruha Lakshmi pays ₹2,000 a month to women heads of ration-card households in Karnataka.",
@@ -3337,7 +3382,8 @@
     "student_required": false,
     "admin_areas": [
      "Karnataka"
-    ]
+    ],
+    "gender": "any"
    },
    "source_url": "https://ahara.kar.nic.in",
    "source_snippet": "Anna Bhagya gives BPL households 10 kg of rice per person per month, with the state share partly paid as DBT cash.",
@@ -3399,7 +3445,8 @@
     "student_required": false,
     "admin_areas": [
      "Karnataka"
-    ]
+    ],
+    "gender": "female"
    },
    "source_url": "https://sevasindhugs.karnataka.gov.in",
    "source_snippet": "Shakti allows women domiciled in Karnataka to travel free on non-premium state transport buses within the state.",
@@ -3478,7 +3525,8 @@
     "student_required": false,
     "admin_areas": [
      "Karnataka"
-    ]
+    ],
+    "gender": "any"
    },
    "source_url": "https://sevasindhugs.karnataka.gov.in",
    "source_snippet": "Yuva Nidhi pays ₹1,500–₹3,000 a month to unemployed diploma holders and graduates in Karnataka for up to two years.",
@@ -3534,7 +3582,8 @@
     "student_required": false,
     "admin_areas": [
      "Delhi NCT"
-    ]
+    ],
+    "gender": "any"
    },
    "source_url": "https://www.bsesdelhi.com",
    "source_snippet": "Delhi households pay ₹0 for up to 200 units a month and half price for 201–400 units (capped), funded by the Delhi government.",
@@ -3590,7 +3639,8 @@
     "student_required": false,
     "admin_areas": [
      "Delhi NCT"
-    ]
+    ],
+    "gender": "any"
    },
    "source_url": "https://djb.gov.in",
    "source_snippet": "DJB domestic consumers using up to 20 kilolitres a month get a zero water bill.",
@@ -3646,7 +3696,8 @@
     "student_required": false,
     "admin_areas": [
      "Delhi NCT"
-    ]
+    ],
+    "gender": "female"
    },
    "source_url": "https://dtc.delhi.gov.in",
    "source_snippet": "Women travel free on DTC and cluster buses in Delhi with a pink ticket issued on board.",
@@ -3721,7 +3772,8 @@
     "student_required": false,
     "admin_areas": [
      "Delhi NCT"
-    ]
+    ],
+    "gender": "any"
    },
    "source_url": "https://www.delhi.gov.in",
    "source_snippet": "Ladli builds a maturity fund for Delhi girls from low-income families through staged deposits linked to schooling.",
@@ -3782,7 +3834,8 @@
     "student_required": false,
     "admin_areas": [
      "Delhi NCT"
-    ]
+    ],
+    "gender": "any"
    },
    "source_url": "https://nfs.delhi.gov.in",
    "source_snippet": "The scheme delivers NFSA rations to the homes of Delhi cardholders; availability depends on the current rollout.",
@@ -3838,7 +3891,8 @@
     "student_required": false,
     "admin_areas": [
      "Tamil Nadu"
-    ]
+    ],
+    "gender": "female"
    },
    "source_url": "https://www.tn.gov.in",
    "source_snippet": "Vidiyal Payanam lets women and transgender persons ride ordinary state buses in Tamil Nadu free of charge.",
@@ -3894,7 +3948,8 @@
     "student_required": true,
     "admin_areas": [
      "Tamil Nadu"
-    ]
+    ],
+    "gender": "any"
    },
    "source_url": "https://tnschools.gov.in",
    "source_snippet": "The Chief Minister's Breakfast Scheme serves a free breakfast every school day to primary students across Tamil Nadu.",
@@ -3975,7 +4030,8 @@
     "student_required": false,
     "admin_areas": [
      "Tamil Nadu"
-    ]
+    ],
+    "gender": "female"
    },
    "source_url": "https://kmut.tn.gov.in",
    "source_snippet": "KMUT pays ₹1,000 a month to over 1.3 crore eligible women heads of families in Tamil Nadu.",
@@ -4052,7 +4108,8 @@
     "student_required": true,
     "admin_areas": [
      "Tamil Nadu"
-    ]
+    ],
+    "gender": "any"
    },
    "source_url": "https://www.tn.gov.in",
    "source_snippet": "Pudhumai Penn pays ₹1,000 a month to girls from government schools pursuing college education in Tamil Nadu.",
@@ -4133,7 +4190,8 @@
     "student_required": false,
     "admin_areas": [
      "Maharashtra"
-    ]
+    ],
+    "gender": "any"
    },
    "source_url": "https://ladakibahin.maharashtra.gov.in",
    "source_snippet": "Ladki Bahin pays ₹1,500 a month to eligible women aged 21–65 in Maharashtra with family income under ₹2.5 lakh.",
@@ -4203,7 +4261,8 @@
     "student_required": false,
     "admin_areas": [
      "Telangana"
-    ]
+    ],
+    "gender": "any"
    },
    "source_url": "https://rythubandhu.telangana.gov.in",
    "source_snippet": "Rythu Bandhu gives Telangana landholding farmers ₹5,000 per acre per season as agriculture investment support.",
@@ -4281,7 +4340,8 @@
     ],
     "income_test": "numeric",
     "income_source_url": "https://mahabubnagar.telangana.gov.in/scheme/maha-lakshmi-scheme/",
-    "income_confidence": "medium"
+    "income_confidence": "medium",
+    "gender": "female"
    },
    "source_url": "https://www.telangana.gov.in",
    "source_snippet": "Mahalakshmi pays ₹2,500 a month to eligible women heads of households in Telangana.",
@@ -4362,7 +4422,8 @@
     "student_required": false,
     "admin_areas": [
      "West Bengal"
-    ]
+    ],
+    "gender": "female"
    },
    "source_url": "https://wb.gov.in",
    "source_snippet": "Lakshmir Bhandar pays a monthly allowance (₹1,500 general / ₹1,700 SC-ST after the 2026 hike) to over 2.2 crore women in West Bengal.",
@@ -4449,7 +4510,8 @@
     "student_required": true,
     "admin_areas": [
      "West Bengal"
-    ]
+    ],
+    "gender": "any"
    },
    "source_url": "https://www.wbkanyashree.gov.in",
    "source_snippet": "Kanyashree gives unmarried school-going girls ₹1,000 a year (K1) and a ₹25,000 one-time grant at 18 (K2) via DBT.",
@@ -4520,7 +4582,8 @@
     "student_required": false,
     "admin_areas": [
      "West Bengal"
-    ]
+    ],
+    "gender": "any"
    },
    "source_url": "https://swasthyasathi.gov.in",
    "source_snippet": "Swasthya Sathi provides cashless health cover of ₹5 lakh per family per year to West Bengal households.",
@@ -4603,7 +4666,8 @@
     ],
     "income_test": "numeric",
     "income_source_url": "https://lsgkerala.gov.in/en/welfarepension/iop",
-    "income_confidence": "medium"
+    "income_confidence": "medium",
+    "gender": "any"
    },
    "source_url": "https://welfarepension.lsgkerala.gov.in",
    "source_snippet": "Kerala's welfare pension system pays ₹1,600 a month to elderly, widows, persons with disabilities and other eligible categories.",
@@ -4674,7 +4738,8 @@
     "student_required": false,
     "admin_areas": [
      "Kerala"
-    ]
+    ],
+    "gender": "any"
    },
    "source_url": "https://sha.kerala.gov.in",
    "source_snippet": "KASP gives Kerala's eligible families ₹5 lakh cashless annual health cover integrated with Ayushman Bharat.",
@@ -4757,7 +4822,8 @@
     "student_required": true,
     "admin_areas": [
      "Gujarat"
-    ]
+    ],
+    "gender": "any"
    },
    "source_url": "https://mysy.guj.nic.in",
    "source_snippet": "MYSY funds tuition, hostel and book assistance for meritorious Gujarat students from families earning up to ₹6 lakh a year.",
@@ -4843,7 +4909,8 @@
     "student_required": false,
     "admin_areas": [
      "Uttar Pradesh"
-    ]
+    ],
+    "gender": "any"
    },
    "source_url": "https://mksy.up.gov.in",
    "source_snippet": "Kanya Sumangala gives ₹15,000 in six stages for each eligible girl child in Uttar Pradesh from birth to higher education.",

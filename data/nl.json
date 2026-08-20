@@ -425,7 +425,8 @@
     "housing_tenure": null,
     "student_required": false,
     "admin_areas": [],
-    "gender": "any"
+    "gender": "any",
+    "rule_source": "geography_unknown"
    },
    "source_url": "https://www.rijksoverheid.nl/onderwerpen/bijstand",
    "source_snippet": "Alleenstaande of alleenstaande ouder zonder kostendelende medebewoners € 1.348,49 | € 70,97 | € 1.419,46",
@@ -1984,7 +1985,8 @@
     "housing_tenure": null,
     "student_required": false,
     "admin_areas": [],
-    "gender": "any"
+    "gender": "any",
+    "rule_source": "geography_unknown"
    },
    "source_url": "https://www.rijksoverheid.nl/onderwerpen/bijstand",
    "source_snippet": "Zelfstandig ondernemers kunnen bij de gemeente een uitkering of lening aanvragen op grond van het Besluit bijstandverlening zelfstandigen (Bbz).",
@@ -2932,7 +2934,7 @@
     "housing_tenure": null,
     "student_required": false,
     "admin_areas": [],
-    "gender": "any"
+    "gender": "female"
    },
    "source_url": "https://www.uwv.nl",
    "source_snippet": "De zwangerschaps- en bevallingsuitkering is voor zelfstandigen en werknemers zonder loondoorbetaling tijdens het zwangerschapsverlof van 16 weken.",
@@ -4029,7 +4031,8 @@
     "housing_tenure": null,
     "student_required": false,
     "admin_areas": [],
-    "gender": "any"
+    "gender": "any",
+    "rule_source": "geography_unknown"
    },
    "source_url": "https://voedselbankennederland.nl/",
    "source_snippet": "Voedselbanken helpen mensen die tijdelijk onvoldoende geld hebben voor voeding met een wekelijks voedselpakket.",
@@ -4091,7 +4094,8 @@
     "housing_tenure": null,
     "student_required": false,
     "admin_areas": [],
-    "gender": "any"
+    "gender": "any",
+    "rule_source": "geography_unknown"
    },
    "source_url": "https://www.ns.nl/",
    "source_snippet": "Met Dal Voordeel krijgt u 40% korting in de daluren, in het weekend en tijdens feestdagen.",
@@ -4148,7 +4152,8 @@
     "housing_tenure": null,
     "student_required": false,
     "admin_areas": [],
-    "gender": "any"
+    "gender": "any",
+    "rule_source": "geography_unknown"
    },
    "source_url": "https://www.ns.nl/",
    "source_snippet": "Reist u samen met iemand die een NS-abonnement heeft? Dan reist u in de daluren met 40% korting met Samenreiskorting.",
@@ -4207,7 +4212,8 @@
     "housing_tenure": null,
     "student_required": false,
     "admin_areas": [],
-    "gender": "any"
+    "gender": "any",
+    "rule_source": "geography_unknown"
    },
    "source_url": "https://www.rijksoverheid.nl/",
    "source_snippet": "Voor een fiets van de zaak geldt een bijtelling van 7% van de consumentenadviesprijs als u de fiets ook privé gebruikt; veel werkgevers vergoeden (een deel van) het fietsplan.",
@@ -4267,7 +4273,8 @@
     "housing_tenure": null,
     "student_required": false,
     "admin_areas": [],
-    "gender": "any"
+    "gender": "any",
+    "rule_source": "geography_unknown"
    },
    "source_url": "https://www.rijksoverheid.nl/",
    "source_snippet": "Via een collectieve zorgverzekering bij uw werkgever of vereniging krijgt u vaak korting op de premie van de basis- en aanvullende verzekering.",
@@ -4739,7 +4746,13 @@
    "application_channel": "automatic",
    "deadline_type": "annual",
    "deadline_note": "Applied automatically in the income tax return",
-   "procedure_steps": [],
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "No application needed — this is paid automatically to everyone who qualifies. Check that the authority holds your current address and bank details; a missing detail is the usual reason an automatic payment does not arrive.",
+     "url": "https://www.belastingdienst.nl/wps/wcm/connect/nl/ondernemers/ondernemers"
+    }
+   ],
    "documents_required": [],
    "eligibility": {
     "statuses": [
@@ -5109,7 +5122,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "rule_source": "geography_unknown"
    },
    "source_url": "https://www.rijksoverheid.nl/onderwerpen/schulden",
    "source_snippet": "Elke gemeente biedt schuldhulpverlening; hulp is gratis voor inwoners met problematische schulden.",
@@ -5166,7 +5180,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "rule_source": "geography_unknown"
    },
    "source_url": "https://www.rijksoverheid.nl/onderwerpen/jeugdhulp",
    "source_snippet": "Jeugdhulp is gratis voor ouders en kinderen; de gemeente regelt en betaalt de hulp.",
@@ -5223,7 +5238,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "rule_source": "geography_unknown"
    },
    "source_url": "https://www.pgb.nl/",
    "source_snippet": "Met een pgb-Jeugdwet kiezen ouders zelf de jeugdhulpverleners; de SVB betaalt vanuit het budget.",
@@ -5249,7 +5265,13 @@
    "application_channel": "automatic",
    "deadline_type": "none",
    "deadline_note": "Automatic via the parents' basisverzekering; the child must be co-insured with a zorgverzekeraar",
-   "procedure_steps": [],
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "No application needed — this is paid automatically to everyone who qualifies. Check that the authority holds your current address and bank details; a missing detail is the usual reason an automatic payment does not arrive.",
+     "url": "https://www.rijksoverheid.nl/onderwerpen/zorgverzekering"
+    }
+   ],
    "documents_required": [],
    "eligibility": {
     "statuses": [],
@@ -5517,7 +5539,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "rule_source": "geography_unknown"
    },
    "source_url": "https://www.rijksoverheid.nl/onderwerpen/mantelzorg",
    "source_snippet": "Gemeenten moeten mantelzorgers ondersteunen en waarderen (Wmo); veel gemeenten geven een jaarlijks mantelzorgcompliment.",
@@ -5543,7 +5566,13 @@
    "application_channel": "automatic",
    "deadline_type": "none",
    "deadline_note": "Applied automatically on the installer's invoice; older situations can still reclaim via the aangifte omzetbelasting",
-   "procedure_steps": [],
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "No application needed — this is paid automatically to everyone who qualifies. Check that the authority holds your current address and bank details; a missing detail is the usual reason an automatic payment does not arrive.",
+     "url": "https://www.belastingdienst.nl/wps/wcm/connect/nl/btw/btw"
+    }
+   ],
    "documents_required": [],
    "eligibility": {
     "statuses": [],

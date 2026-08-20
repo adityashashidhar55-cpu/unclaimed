@@ -2693,7 +2693,8 @@
     "housing_tenure": null,
     "student_required": false,
     "admin_areas": [
-     "Bayern"
+     "Bayern",
+     "München"
     ],
     "gender": "any",
     "income_test": "numeric",
@@ -2751,7 +2752,8 @@
     "housing_tenure": null,
     "student_required": false,
     "admin_areas": [
-     "Hessen"
+     "Hessen",
+     "Frankfurt am Main"
     ],
     "gender": "any",
     "income_test": "numeric",
@@ -3141,7 +3143,8 @@
     "gender": "any",
     "income_test": "unpublished",
     "income_source_url": "https://www.stromspar-check.de/",
-    "income_confidence": "medium"
+    "income_confidence": "medium",
+    "rule_source": "geography_unknown"
    },
    "source_url": "https://www.stromspar-check.de",
    "source_snippet": "Der Stromspar-Check berät einkommensschwache Haushalte kostenlos zu Hause und installiert unentgeltlich Stromsparhelfer",
@@ -3685,7 +3688,8 @@
     "housing_tenure": null,
     "student_required": false,
     "admin_areas": [],
-    "gender": "any"
+    "gender": "any",
+    "rule_source": "geography_unknown"
    },
    "source_url": "https://www.mikrokreditfonds.de",
    "source_snippet": "Der Mikrokreditfonds Deutschland vergibt Kleinstkredite bis 25.000 Euro an Kleinstunternehmer über lokale Mikrofinanzinstitute",
@@ -4340,7 +4344,8 @@
     "housing_tenure": null,
     "student_required": false,
     "admin_areas": [],
-    "gender": "any"
+    "gender": "any",
+    "rule_source": "geography_unknown"
    },
    "source_url": "https://www.bmas.de",
    "source_snippet": "Mehrere Bundesländer zahlen ein monatliches Blindengeld in unterschiedlicher Höhe; einkommensschwache Blinde erhalten zusätzlich Blindenhilfe nach § 72 SGB XII",
@@ -4392,7 +4397,8 @@
     "housing_tenure": null,
     "student_required": false,
     "admin_areas": [],
-    "gender": "any"
+    "gender": "any",
+    "rule_source": "geography_unknown"
    },
    "source_url": "https://www.bafin.de",
    "source_snippet": "Nach dem Zahlungskontengesetz hat jede Person mit rechtmäßigem Aufenthalt in der EU Anspruch auf ein Basiskonto mit Grundfunktionen",
@@ -5855,7 +5861,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "rule_source": "geography_unknown"
    },
    "source_url": "https://www.tafel.de",
    "source_snippet": "They collect qualitatively good food that would otherwise land in the garbage and distribute it for free or a symbolic amount to socially and economically disadvantaged people.",

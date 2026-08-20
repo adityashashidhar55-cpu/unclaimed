@@ -70,7 +70,8 @@
         "residency_months_min": null,
         "housing_tenure": null,
         "student_required": false,
-        "admin_areas": []
+        "admin_areas": [],
+        "gender": "any"
       },
       "source_url": "https://programasparaelbienestar.gob.mx/",
       "source_snippet": "En 2026, el monto bimestral se incrementó a 6,400 pesos... Adultos mayores (65 años y más): $6,400 MXN bimestrales",
@@ -143,7 +144,8 @@
         "residency_months_min": null,
         "housing_tenure": null,
         "student_required": false,
-        "admin_areas": []
+        "admin_areas": [],
+        "gender": "female"
       },
       "source_url": "https://programasparaelbienestar.gob.mx/",
       "source_snippet": "Pensión Mujeres Bienestar: Dirigida a mujeres de 60 a 64 años en situación de vulnerabilidad. El apoyo será de 3 mil 100 pesos bimestrales, con ampliación gradual del padrón.",
@@ -219,7 +221,8 @@
         "residency_months_min": null,
         "housing_tenure": null,
         "student_required": false,
-        "admin_areas": []
+        "admin_areas": [],
+        "gender": "any"
       },
       "source_url": "https://programasparaelbienestar.gob.mx/",
       "source_snippet": "El apoyo es de tres mil 300 pesos bimestrales... personas de cero a 64 años con discapacidad permanente, directamente en una tarjeta del Banco del Bienestar",
@@ -295,7 +298,8 @@
         "residency_months_min": null,
         "housing_tenure": null,
         "student_required": false,
-        "admin_areas": []
+        "admin_areas": [],
+        "gender": "any"
       },
       "source_url": "https://www.gob.mx/bienestar",
       "source_snippet": "El Seguro de Vida para Jefas de Familia protege económicamente a las hijas e hijos de mujeres jefas de familia en caso de fallecimiento de la asegurada.",
@@ -368,7 +372,8 @@
         "residency_months_min": null,
         "housing_tenure": null,
         "student_required": false,
-        "admin_areas": []
+        "admin_areas": [],
+        "gender": "any"
       },
       "source_url": "https://www.gob.mx/agricultura",
       "source_snippet": "El monto mínimo que se ofrece es de 6,000 pesos, y el máximo, de 24,000 pesos por persona.",
@@ -436,7 +441,8 @@
         "residency_months_min": null,
         "housing_tenure": null,
         "student_required": false,
-        "admin_areas": []
+        "admin_areas": [],
+        "gender": "any"
       },
       "source_url": "https://www.gob.mx/segalmex",
       "source_snippet": "SEGALMEX paga un precio de garantía por la cosecha de maíz, frijol, trigo, arroz y leche a pequeños y medianos productores.",
@@ -514,7 +520,8 @@
         "residency_months_min": null,
         "housing_tenure": null,
         "student_required": false,
-        "admin_areas": []
+        "admin_areas": [],
+        "gender": "any"
       },
       "source_url": "https://www.imss.gob.mx/pensiones",
       "source_snippet": "El IMSS otorga pensiones de Cesantía en Edad Avanzada y Vejez a los trabajadores que cumplen edad y semanas de cotización requeridas.",
@@ -577,7 +584,8 @@
         "residency_months_min": null,
         "housing_tenure": null,
         "student_required": false,
-        "admin_areas": []
+        "admin_areas": [],
+        "gender": "any"
       },
       "source_url": "https://www.imss.gob.mx/derechoH/incapacidades",
       "source_snippet": "En caso de enfermedad general el subsidio equivale al 60% del salario; por riesgo de trabajo o maternidad se paga el 100%.",
@@ -652,7 +660,8 @@
         "student_required": false,
         "admin_areas": [
           "Ciudad de México"
-        ]
+        ],
+        "gender": "any"
       },
       "source_url": "https://www.iaam.cdmx.gob.mx/",
       "source_snippet": "Pensión Alimentaria CDMX (IAAM): tener 68 años o más y residir en la Ciudad de México; el apoyo se entrega de forma bimestral mediante tarjeta.",
@@ -713,7 +722,8 @@
         "residency_months_min": null,
         "housing_tenure": null,
         "student_required": false,
-        "admin_areas": []
+        "admin_areas": [],
+        "gender": "any"
       },
       "source_url": "https://www.gob.mx/salud/prensa/155-imss-bienestar-coordinara-servicios-de-salud-para-personas-sin-seguridad-social",
       "source_snippet": "IMSS-Bienestar será el eje central del sistema que garantice el acceso a servicios para población sin seguridad social... bajo los principios de gratuidad, cobertura universal, accesibilidad, oportunidad y calidad",
@@ -784,7 +794,8 @@
         "residency_months_min": null,
         "housing_tenure": null,
         "student_required": false,
-        "admin_areas": []
+        "admin_areas": [],
+        "gender": "any"
       },
       "source_url": "https://www.imss.gob.mx/tramites/imss02008",
       "source_snippet": "Cualquier persona que no cuente con seguridad social puede incorporarse al Seguro de Salud para la Familia pagando una cuota anual anticipada.",
@@ -850,7 +861,8 @@
         "residency_months_min": null,
         "housing_tenure": null,
         "student_required": false,
-        "admin_areas": []
+        "admin_areas": [],
+        "gender": "any"
       },
       "source_url": "https://www.gob.mx/salud",
       "source_snippet": "El Seguro Médico para una Nueva Generación garantiza atención gratuita a niños nacidos después del 1 de diciembre de 2006 sin otra seguridad social.",
@@ -913,7 +925,8 @@
         "residency_months_min": null,
         "housing_tenure": null,
         "student_required": false,
-        "admin_areas": []
+        "admin_areas": [],
+        "gender": "any"
       },
       "source_url": "https://www.imss.gob.mx/derechoH/riesgos-trabajo",
       "source_snippet": "El seguro de riesgos de trabajo cubre atención médica, incapacidades al 100% y, en su caso, pensiones por invalidez o muerte.",
@@ -972,7 +985,8 @@
         "residency_months_min": null,
         "housing_tenure": null,
         "student_required": false,
-        "admin_areas": []
+        "admin_areas": [],
+        "gender": "any"
       },
       "source_url": "https://www.gob.mx/issste",
       "source_snippet": "El ISSSTE presta servicios médicos integrales a los trabajadores al servicio del Estado y sus derechohabientes.",
@@ -1023,7 +1037,8 @@
         "residency_months_min": null,
         "housing_tenure": null,
         "student_required": false,
-        "admin_areas": []
+        "admin_areas": [],
+        "gender": "any"
       },
       "source_url": "https://www.gob.mx/salud/acciones-y-programas/vacunacion",
       "source_snippet": "La vacunación en México es gratuita y universal conforme a la Cartilla Nacional de Salud.",
@@ -1094,7 +1109,8 @@
         "residency_months_min": null,
         "housing_tenure": null,
         "student_required": true,
-        "admin_areas": []
+        "admin_areas": [],
+        "gender": "any"
       },
       "source_url": "https://programasparaelbienestar.gob.mx/beca-rita-cetina-montos-requisitos-y-como-funciona-para-primaria-y-secundaria/",
       "source_snippet": "Secundaria: 1,900 pesos bimestrales por un estudiante... Primaria: 2,500 pesos anuales por estudiante registrado este 2026",
@@ -1165,7 +1181,8 @@
         "residency_months_min": null,
         "housing_tenure": null,
         "student_required": true,
-        "admin_areas": []
+        "admin_areas": [],
+        "gender": "any"
       },
       "source_url": "https://www.gob.mx/becasbenitojuarez/articulos/conoce-todo-sobre-la-beca-universal-de-educacion-media-superior-benito-juarez",
       "source_snippet": "1,900 pesos bimestrales que se otorgan por los 10 meses que dura el ciclo escolar, hasta por un máximo de 40 meses",
@@ -1236,7 +1253,8 @@
         "residency_months_min": null,
         "housing_tenure": null,
         "student_required": true,
-        "admin_areas": []
+        "admin_areas": [],
+        "gender": "any"
       },
       "source_url": "https://www.gob.mx/becasbenitojuarez",
       "source_snippet": "La beca es de 5,800 pesos bimestrales que se otorgan durante los cinco bimestres que dura el ciclo escolar con un máximo de 45 mensualidades",
@@ -1302,7 +1320,8 @@
         "residency_months_min": null,
         "housing_tenure": null,
         "student_required": true,
-        "admin_areas": []
+        "admin_areas": [],
+        "gender": "any"
       },
       "source_url": "https://www.becas.unam.mx/",
       "source_snippet": "En el marco del Programa de Becas “Elisa Acuña”, la UNAM, a través de la Secretaría General y la Coordinación General de Estudios de Posgrado, emite las convocatorias de Becas para Estudios de Posgrado.",
@@ -1373,7 +1392,8 @@
         "residency_months_min": null,
         "housing_tenure": null,
         "student_required": true,
-        "admin_areas": []
+        "admin_areas": [],
+        "gender": "any"
       },
       "source_url": "https://secihti.mx/",
       "source_snippet": "En 2025, el organismo fue integrado a la nueva Secretaría de Ciencia, Humanidades, Tecnología e Innovación (SECIHTI)... el programa de Becas Nacionales para Estudios de Posgrado continúa siendo el principal mecanismo de financiamiento",
@@ -1444,7 +1464,8 @@
         "residency_months_min": null,
         "housing_tenure": null,
         "student_required": true,
-        "admin_areas": []
+        "admin_areas": [],
+        "gender": "any"
       },
       "source_url": "https://secihti.mx/",
       "source_snippet": "Las Becas Apoyos Complementarios Maternidad Paternidad Posgrado Nacional y al extranjero otorgan una dotación económica complementaria a personas becarias de la Secihti.",
@@ -1495,7 +1516,8 @@
         "residency_months_min": null,
         "housing_tenure": null,
         "student_required": true,
-        "admin_areas": []
+        "admin_areas": [],
+        "gender": "any"
       },
       "source_url": "https://www.gob.mx/sep",
       "source_snippet": "Las Escuelas de Tiempo Completo amplían la jornada escolar y ofrecen alimentación y actividades formativas sin costo en escuelas públicas.",
@@ -1551,7 +1573,9 @@
         "residency_months_min": null,
         "housing_tenure": null,
         "student_required": true,
-        "admin_areas": []
+        "admin_areas": [],
+        "gender": "any",
+        "rule_source": "geography_unknown"
       },
       "source_url": "https://www.fundaciontelmextelcel.org/",
       "source_snippet": "Fundación Telmex Telcel otorga becas a estudiantes mexicanos de excelencia académica y escasos recursos.",
@@ -1612,7 +1636,9 @@
         "residency_months_min": null,
         "housing_tenure": null,
         "student_required": true,
-        "admin_areas": []
+        "admin_areas": [],
+        "gender": "any",
+        "rule_source": "geography_unknown"
       },
       "source_url": "https://www.becas-santander.com/",
       "source_snippet": "Becas Santander ofrece programas de becas de estudios, movilidad e idiomas para estudiantes universitarios en México.",
@@ -1685,7 +1711,8 @@
         "student_required": true,
         "admin_areas": [
           "Ciudad de México"
-        ]
+        ],
+        "gender": "any"
       },
       "source_url": "https://www.elfinanciero.com.mx/cdmx/2025/12/16/mi-beca-para-empezar-cdmx-cuando-termina-el-registro-para-el-apoyo-a-ninos-de-preescolar-y-primaria/",
       "source_snippet": "Los alumnos de preescolar reciben 600 pesos mensuales. Los estudiantes de primaria reciben 650 pesos mensuales.",
@@ -1753,7 +1780,8 @@
         "student_required": true,
         "admin_areas": [
           "Ciudad de México"
-        ]
+        ],
+        "gender": "any"
       },
       "source_url": "https://www.sectei.cdmx.gob.mx/",
       "source_snippet": "Actualmente el programa entrega 1,500 pesos bimestrales. Monto que aumentará a partir de enero de 2026",
@@ -1816,7 +1844,8 @@
         "student_required": true,
         "admin_areas": [
           "Nuevo León"
-        ]
+        ],
+        "gender": "any"
       },
       "source_url": "https://www.nl.gob.mx/",
       "source_snippet": "La Beca Violeta del Gobierno de Nuevo León apoya económicamente a mujeres estudiantes para que continúen sus estudios.",
@@ -1884,7 +1913,8 @@
         "residency_months_min": null,
         "housing_tenure": null,
         "student_required": false,
-        "admin_areas": []
+        "admin_areas": [],
+        "gender": "any"
       },
       "source_url": "https://www.imss.gob.mx/guarderias",
       "source_snippet": "Las Estancias de Bienestar y Desarrollo Infantil del IMSS brindan cuidado y educación inicial a hijas e hijos de personas trabajadoras aseguradas.",
@@ -1955,7 +1985,8 @@
         "residency_months_min": null,
         "housing_tenure": null,
         "student_required": false,
-        "admin_areas": []
+        "admin_areas": [],
+        "gender": "female"
       },
       "source_url": "https://www.gob.mx/bienestar",
       "source_snippet": "Apoyos para Madres Trabajadoras: mantiene subsidios directos para cuidado infantil y apoyo económico a familias monoparentales.",
@@ -2006,7 +2037,8 @@
         "residency_months_min": null,
         "housing_tenure": null,
         "student_required": false,
-        "admin_areas": []
+        "admin_areas": [],
+        "gender": "any"
       },
       "source_url": "https://www.gob.mx/difnacional",
       "source_snippet": "Los comedores comunitarios del DIF ofrecen alimentación subsidiada a población en situación de vulnerabilidad.",
@@ -2057,7 +2089,8 @@
         "residency_months_min": null,
         "housing_tenure": null,
         "student_required": true,
-        "admin_areas": []
+        "admin_areas": [],
+        "gender": "any"
       },
       "source_url": "https://www.gob.mx/difnacional",
       "source_snippet": "El DIF entrega desayunos escolares gratuitos a alumnos de escuelas públicas ubicadas en zonas de alta marginación.",
@@ -2108,7 +2141,8 @@
         "residency_months_min": null,
         "housing_tenure": null,
         "student_required": false,
-        "admin_areas": []
+        "admin_areas": [],
+        "gender": "female"
       },
       "source_url": "https://www.gob.mx/inmujeres",
       "source_snippet": "El PAIMEF fortalece a las instancias de las mujeres para prevenir y atender la violencia contra las mujeres en las entidades federativas.",
@@ -2159,7 +2193,9 @@
         "residency_months_min": null,
         "housing_tenure": null,
         "student_required": false,
-        "admin_areas": []
+        "admin_areas": [],
+        "gender": "female",
+        "rule_source": "geography_unknown"
       },
       "source_url": "https://www.gob.mx/inmujeres",
       "source_snippet": "Los Centros de Justicia para las Mujeres concentran servicios de atención jurídica, psicológica y social a mujeres víctimas de violencia.",
@@ -2230,7 +2266,8 @@
         "residency_months_min": null,
         "housing_tenure": null,
         "student_required": false,
-        "admin_areas": []
+        "admin_areas": [],
+        "gender": "any"
       },
       "source_url": "https://www.liconsa.gob.mx/",
       "source_snippet": "En 2025, el litro de leche Liconsa tiene un costo subsidiado de 7.50 pesos para los beneficiarios registrados en el programa",
@@ -2281,7 +2318,8 @@
         "residency_months_min": null,
         "housing_tenure": null,
         "student_required": false,
-        "admin_areas": []
+        "admin_areas": [],
+        "gender": "any"
       },
       "source_url": "https://www.gob.mx/diconsa",
       "source_snippet": "Diconsa opera una red de tiendas rurales y comunitarias que ofrecen productos básicos a bajo costo en zonas de alta marginación.",
@@ -2355,7 +2393,8 @@
         "residency_months_min": null,
         "housing_tenure": null,
         "student_required": false,
-        "admin_areas": []
+        "admin_areas": [],
+        "gender": "any"
       },
       "source_url": "https://jovenesconstruyendoelfuturo.stps.gob.mx/",
       "source_snippet": "En 2026, cada aprendiz recibe un apoyo económico mensual de 9,582.47 pesos, cifra que equivale exactamente al salario mínimo general vigente en México",
@@ -2421,7 +2460,8 @@
         "residency_months_min": null,
         "housing_tenure": null,
         "student_required": false,
-        "admin_areas": []
+        "admin_areas": [],
+        "gender": "any"
       },
       "source_url": "https://www.empleo.gob.mx/",
       "source_snippet": "El Servicio Nacional de Empleo vincula gratuitamente a personas buscadoras de empleo con vacantes en todo el país.",
@@ -2490,7 +2530,8 @@
         "residency_months_min": null,
         "housing_tenure": null,
         "student_required": false,
-        "admin_areas": []
+        "admin_areas": [],
+        "gender": "any"
       },
       "source_url": "https://www.gob.mx/tramites/ficha/programa-de-apoyo-al-empleo-pae/STPS806",
       "source_snippet": "El Programa de Apoyo al Empleo otorga un apoyo económico durante la capacitación para el trabajo de personas desempleadas.",
@@ -2570,7 +2611,8 @@
         "student_required": false,
         "admin_areas": [
           "Ciudad de México"
-        ]
+        ],
+        "gender": "any"
       },
       "source_url": "https://www.trabajo.cdmx.gob.mx/",
       "source_snippet": "Este programa ofrece un apoyo económico mensual de 3 mil 439 pesos con 46 centavos, el cual podrá otorgarse por un máximo de tres meses",
@@ -2641,7 +2683,8 @@
         "student_required": false,
         "admin_areas": [
           "Estado de México"
-        ]
+        ],
+        "gender": "any"
       },
       "source_url": "https://bienestar.edomex.gob.mx/",
       "source_snippet": "Jóvenes con Bienestar Edomex: busca apoyar a jóvenes de 18 a 29 años mediante la entrega de 2 mil 500 pesos bimestrales para enfrentar condiciones de pobreza y falta de acceso a la seguridad social.",
@@ -2719,7 +2762,8 @@
         "residency_months_min": null,
         "housing_tenure": null,
         "student_required": false,
-        "admin_areas": []
+        "admin_areas": [],
+        "gender": "any"
       },
       "source_url": "https://www.gob.mx/finabien",
       "source_snippet": "La primera tanda de $6,000 pesos no genera intereses si los pagos se realizan de forma puntual... montos que van desde los $6,000 hasta los $45,000 pesos",
@@ -2792,7 +2836,8 @@
         "residency_months_min": null,
         "housing_tenure": null,
         "student_required": false,
-        "admin_areas": []
+        "admin_areas": [],
+        "gender": "any"
       },
       "source_url": "https://www.gob.mx/bienestar",
       "source_snippet": "El Crédito Ganadero a la Palabra financia a pequeños productores pecuarios con base en su palabra, sin avales ni garantías.",
@@ -2860,7 +2905,8 @@
         "residency_months_min": null,
         "housing_tenure": null,
         "student_required": false,
-        "admin_areas": []
+        "admin_areas": [],
+        "gender": "any"
       },
       "source_url": "https://www.gob.mx/agricultura/bajacalifornia/articulos/inicio-agricultura-con-la-entrega-de-fertilizantes-del-bienestar-2025-a-productores-de-baja-california?idiom=es",
       "source_snippet": "Otros, como el de Cosechando Soberanía, que otorga créditos con intereses del 8.5% a pequeños y medianos productores.",
@@ -2918,7 +2964,8 @@
         "residency_months_min": null,
         "housing_tenure": null,
         "student_required": false,
-        "admin_areas": []
+        "admin_areas": [],
+        "gender": "any"
       },
       "source_url": "https://www.nafin.com/portalnf/",
       "source_snippet": "PRONAFIM canaliza financiamiento a microempresas a través de intermediarios financieros en todo el país.",
@@ -2976,7 +3023,8 @@
         "residency_months_min": null,
         "housing_tenure": null,
         "student_required": false,
-        "admin_areas": []
+        "admin_areas": [],
+        "gender": "any"
       },
       "source_url": "https://www.fnd.gob.mx/",
       "source_snippet": "La FND ofrece financiamiento a productores del sector agropecuario, rural, forestal y pesquero.",
@@ -3049,7 +3097,8 @@
         "residency_months_min": null,
         "housing_tenure": null,
         "student_required": false,
-        "admin_areas": []
+        "admin_areas": [],
+        "gender": "any"
       },
       "source_url": "https://programasparaelbienestar.gob.mx/sembrando-vida/",
       "source_snippet": "Las personas derechohabientes de este programa reciben un pago mensual de $6,450 pesos entregados de manera directa a través de la tarjeta del Banco del Bienestar",
@@ -3127,7 +3176,8 @@
         "residency_months_min": null,
         "housing_tenure": null,
         "student_required": false,
-        "admin_areas": []
+        "admin_areas": [],
+        "gender": "any"
       },
       "source_url": "https://www.gob.mx/agricultura/prensa/agricultura-impulsa-la-productividad-del-campo-hidalguense-con-fertilizantes-para-el-bienestar-2025?idiom=es",
       "source_snippet": "Cada derechohabiente recibirá hasta 300 kilogramos de fertilizantes por hectárea (12 bultos de 25 kg), con un límite de hasta 2 hectáreas por persona",
@@ -3200,7 +3250,8 @@
         "residency_months_min": null,
         "housing_tenure": null,
         "student_required": false,
-        "admin_areas": []
+        "admin_areas": [],
+        "gender": "any"
       },
       "source_url": "https://www.gob.mx/agricultura/prensa/gobierno-de-mexico-dispersara-mas-de-mil-200-mdp-para-el-pago-de-bienpesca-a-mas-de-168-mil-950-derechohabientes",
       "source_snippet": "Cada pescador y pescadora derechohabiente recibirá 7 mil 500 pesos correspondientes al ejercicio fiscal 2025",
@@ -3268,7 +3319,8 @@
         "residency_months_min": null,
         "housing_tenure": null,
         "student_required": false,
-        "admin_areas": []
+        "admin_areas": [],
+        "gender": "any"
       },
       "source_url": "https://portalmx.infonavit.org.mx/",
       "source_snippet": "El Infonavit ofrece créditos hipotecarios con tasas fijas subsidiadas según el nivel de ingreso del trabajador.",
@@ -3331,7 +3383,8 @@
         "residency_months_min": null,
         "housing_tenure": "owner",
         "student_required": false,
-        "admin_areas": []
+        "admin_areas": [],
+        "gender": "any"
       },
       "source_url": "https://portalmx.infonavit.org.mx/",
       "source_snippet": "Mejoravit es el crédito del Infonavit para remodelar o mejorar tu vivienda con descuentos vía nómina.",
@@ -3394,7 +3447,8 @@
         "residency_months_min": null,
         "housing_tenure": null,
         "student_required": false,
-        "admin_areas": []
+        "admin_areas": [],
+        "gender": "any"
       },
       "source_url": "https://www.fovissste.gob.mx/",
       "source_snippet": "FOVISSSTE otorga créditos de vivienda con tasas preferenciales y subsidios a trabajadores del Estado.",
@@ -3460,7 +3514,8 @@
         "residency_months_min": null,
         "housing_tenure": null,
         "student_required": false,
-        "admin_areas": []
+        "admin_areas": [],
+        "gender": "any"
       },
       "source_url": "https://www.gob.mx/conavi",
       "source_snippet": "El Programa de Vivienda Social de CONAVI otorga subsidios para que familias de bajos ingresos accedan a una vivienda digna.",
@@ -3521,7 +3576,8 @@
         "residency_months_min": null,
         "housing_tenure": "owner",
         "student_required": false,
-        "admin_areas": []
+        "admin_areas": [],
+        "gender": "any"
       },
       "source_url": "https://www.gob.mx/conavi",
       "source_snippet": "Las acciones de mejoramiento de vivienda financian ampliaciones y mejoras de la vivienda existente para familias de bajos ingresos.",
@@ -3572,7 +3628,8 @@
         "residency_months_min": null,
         "housing_tenure": null,
         "student_required": false,
-        "admin_areas": []
+        "admin_areas": [],
+        "gender": "any"
       },
       "source_url": "https://www.gob.mx/sedatu",
       "source_snippet": "El Programa de Mejoramiento Urbano ejecuta obras de infraestructura y equipamiento en colonias populares para reducir la desigualdad urbana.",
@@ -3643,7 +3700,8 @@
         "residency_months_min": null,
         "housing_tenure": null,
         "student_required": false,
-        "admin_areas": []
+        "admin_areas": [],
+        "gender": "any"
       },
       "source_url": "https://www.gob.mx/inapam/acciones-y-programas/beneficios-test",
       "source_snippet": "El Instituto Nacional de Las Personas Adultas Mayores ofrece diversos beneficios y descuentos a quienes ya tienen su credencial INAPAM.",
@@ -3701,7 +3759,8 @@
         "student_required": false,
         "admin_areas": [
           "Ciudad de México"
-        ]
+        ],
+        "gender": "any"
       },
       "source_url": "https://www.gob.mx/inapam/acciones-y-programas/beneficios-test",
       "source_snippet": "Los Adultos Mayores tienen derecho a ingresar de forma gratuita al Metro CDMX, Metrobús, Cablebús, RTP, Trolebús y el Tren Ligero.",
@@ -3757,7 +3816,8 @@
         "residency_months_min": null,
         "housing_tenure": null,
         "student_required": false,
-        "admin_areas": []
+        "admin_areas": [],
+        "gender": "any"
       },
       "source_url": "https://www.gob.mx/inapam/acciones-y-programas/beneficios-test",
       "source_snippet": "El descuento puede alcanzar hasta el 50% del costo del boleto y está sujeto a la disponibilidad de entre dos y ocho asientos por autobús.",
@@ -3823,7 +3883,8 @@
         "student_required": false,
         "admin_areas": [
           "Jalisco"
-        ]
+        ],
+        "gender": "any"
       },
       "source_url": "https://siteur.jalisco.gob.mx/",
       "source_snippet": "SITEUR otorga tarifa preferente a estudiantes, personas adultas mayores y personas con discapacidad en el Tren Ligero y Mi Macro.",
@@ -3889,7 +3950,8 @@
         "student_required": false,
         "admin_areas": [
           "Nuevo León"
-        ]
+        ],
+        "gender": "any"
       },
       "source_url": "https://www.nl.gob.mx/",
       "source_snippet": "Metrorrey mantiene una tarifa preferente para estudiantes, adultos mayores y personas con discapacidad.",
@@ -3945,7 +4007,8 @@
         "residency_months_min": null,
         "housing_tenure": null,
         "student_required": false,
-        "admin_areas": []
+        "admin_areas": [],
+        "gender": "any"
       },
       "source_url": "https://www.cfe.mx/",
       "source_snippet": "Las tarifas domésticas de CFE gozan de un subsidio que se aplica en bloques de consumo básico e intermedio, mayor en regiones de clima cálido durante el verano.",
@@ -3996,7 +4059,8 @@
         "residency_months_min": null,
         "housing_tenure": null,
         "student_required": false,
-        "admin_areas": []
+        "admin_areas": [],
+        "gender": "any"
       },
       "source_url": "https://gasbienestar.gob.mx/",
       "source_snippet": "Gas Bienestar vende gas LP a precio justo, por debajo del precio comercial, en zonas de alta marginación.",
@@ -4047,7 +4111,8 @@
         "residency_months_min": null,
         "housing_tenure": null,
         "student_required": false,
-        "admin_areas": []
+        "admin_areas": [],
+        "gender": "any"
       },
       "source_url": "https://www.sat.gob.mx/",
       "source_snippet": "La SHCP publica semanalmente en el DOF los estímulos fiscales al IEPS aplicables a gasolinas y diésel.",
@@ -4098,7 +4163,8 @@
         "residency_months_min": null,
         "housing_tenure": null,
         "student_required": false,
-        "admin_areas": []
+        "admin_areas": [],
+        "gender": "any"
       },
       "source_url": "https://www.sat.gob.mx/",
       "source_snippet": "El Decreto de estímulos fiscales exenta del ISAN a los vehículos eléctricos e híbridos que cumplan los requisitos y límites de precio.",
@@ -4161,7 +4227,8 @@
         "residency_months_min": null,
         "housing_tenure": null,
         "student_required": false,
-        "admin_areas": []
+        "admin_areas": [],
+        "gender": "any"
       },
       "source_url": "https://www.sat.gob.mx/",
       "source_snippet": "El RESICO permite a las personas físicas con ingresos de hasta 3.5 millones de pesos pagar tasas de ISR de 1% a 2.5%.",

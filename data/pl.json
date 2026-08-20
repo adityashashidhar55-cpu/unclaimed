@@ -2800,7 +2800,8 @@
         "housing_tenure": null,
         "student_required": true,
         "admin_areas": [],
-        "gender": "any"
+        "gender": "any",
+        "rule_source": "geography_unknown"
       },
       "source_url": "https://www.gov.pl/web/edukacja",
       "source_snippet": "Fundusz Stypendialny i Szkoleniowy wspiera uczniów m.in. z niepełnosprawnością sprzężoną oraz zagrożonych niedostosowaniem społecznym w finansowaniu kształcenia i terapii.",
@@ -3966,7 +3967,8 @@
         "housing_tenure": null,
         "student_required": false,
         "admin_areas": [
-          "Mazowieckie"
+          "Mazowieckie",
+          "Warszawa"
         ],
         "gender": "any"
       },
@@ -4020,7 +4022,8 @@
         "housing_tenure": null,
         "student_required": false,
         "admin_areas": [
-          "Mazowieckie"
+          "Mazowieckie",
+          "Warszawa"
         ],
         "gender": "any"
       },
@@ -4128,7 +4131,8 @@
         "housing_tenure": null,
         "student_required": false,
         "admin_areas": [
-          "Małopolskie"
+          "Małopolskie",
+          "Kraków"
         ],
         "gender": "any"
       },
@@ -4234,7 +4238,8 @@
         "housing_tenure": null,
         "student_required": true,
         "admin_areas": [],
-        "gender": "any"
+        "gender": "any",
+        "rule_source": "geography_unknown"
       },
       "source_url": "https://isic.pl",
       "source_snippet": "ISIC to jedyna międzynarodowo uznawana legitymacja studencka uprawniająca do zniżek u partnerów w Polsce i na świecie.",
@@ -4251,7 +4256,7 @@
       "category": "tax",
       "benefit_type": "tax_credit",
       "amount_min": 1112.04,
-      "amount_max": 2700.0,
+      "amount_max": 2700,
       "amount_currency": "PLN",
       "amount_period": "annual",
       "amount_note": "1112,04 zł rocznie na 1. i 2. dziecko, 2000,04 zł na 3., 2700 zł na 4. i kolejne; przy 1 dziecku limit dochodów 56 000 zł (112 000 zł małżonkowie); brak limitu przy dziecku z niepełnosprawnością",
@@ -5546,7 +5551,7 @@
       "category": "education",
       "benefit_type": "cash_monthly",
       "amount_min": 3570.5,
-      "amount_max": 5500.0,
+      "amount_max": 5500,
       "amount_currency": "PLN",
       "amount_period": "monthly",
       "amount_note": "37% wynagrodzenia profesora (3570,50 zł brutto) do oceny śródokresowej, 57% (5500,00 zł brutto) po pozytywnej ocenie; +30% dla doktoranta z orzeczeniem o niepełnosprawności; max 4 lata; zwolnione z PIT",

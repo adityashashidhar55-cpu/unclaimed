@@ -751,7 +751,13 @@
    "application_channel": "automatic",
    "deadline_type": "rolling",
    "deadline_note": null,
-   "procedure_steps": [],
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "No application needed — this is paid automatically to everyone who qualifies. Check that the authority holds your current address and bank details; a missing detail is the usual reason an automatic payment does not arrive.",
+     "url": "https://www.seg-social.es"
+    }
+   ],
    "documents_required": [],
    "eligibility": {
     "statuses": [],
@@ -1485,7 +1491,13 @@
    "application_channel": "automatic",
    "deadline_type": "rolling",
    "deadline_note": null,
-   "procedure_steps": [],
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "No application needed — this is paid automatically to everyone who qualifies. Check that the authority holds your current address and bank details; a missing detail is the usual reason an automatic payment does not arrive.",
+     "url": "https://www.miteco.gob.es"
+    }
+   ],
    "documents_required": [],
    "eligibility": {
     "statuses": [],
@@ -1538,7 +1550,9 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": [],
+    "admin_areas": [
+     "Barcelona"
+    ],
     "gender": "any"
    },
    "source_url": "https://www.aiguesdebarcelona.cat",
@@ -2566,7 +2580,8 @@
     "housing_tenure": null,
     "student_required": false,
     "admin_areas": [],
-    "gender": "any"
+    "gender": "any",
+    "rule_source": "geography_unknown"
    },
    "source_url": "https://www.microbank.com",
    "source_snippet": "Microcréditos de hasta 25.000 EUR para emprendedores y hasta 50.000 EUR para microempresas, sin necesidad de avales para proyectos viables; también microcréditos a familias con fines sociales.",
@@ -3076,7 +3091,13 @@
    "application_channel": "automatic",
    "deadline_type": "rolling",
    "deadline_note": null,
-   "procedure_steps": [],
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "No application needed — this is paid automatically to everyone who qualifies. Check that the authority holds your current address and bank details; a missing detail is the usual reason an automatic payment does not arrive.",
+     "url": "https://www.sanidad.gob.es"
+    }
+   ],
    "documents_required": [],
    "eligibility": {
     "statuses": [],
@@ -3129,7 +3150,9 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": [],
+    "admin_areas": [
+     "Madrid"
+    ],
     "gender": "any"
    },
    "source_url": "https://www.madrid.es",
@@ -3262,7 +3285,8 @@
     "housing_tenure": null,
     "student_required": false,
     "admin_areas": [
-     "Cataluña"
+     "Cataluña",
+     "Àrea Metropolitana de Barcelona"
     ]
    },
    "source_url": "https://lesmevesajudes.barcelona.cat/ca/llistat-dajudes/t-metropolitana-targeta-rosa/",
@@ -3326,7 +3350,8 @@
     "housing_tenure": null,
     "student_required": false,
     "admin_areas": [
-     "Comunidad Valenciana"
+     "Comunidad Valenciana",
+     "Comunitat Valenciana"
     ]
    },
    "source_url": "https://www.atmv.gva.es",
@@ -3464,7 +3489,8 @@
     "housing_tenure": null,
     "student_required": false,
     "admin_areas": [
-     "Comunidad Valenciana"
+     "Comunidad Valenciana",
+     "Comunitat Valenciana"
     ]
    },
    "source_url": "https://www.gva.es",
@@ -3674,7 +3700,8 @@
     "student_required": false,
     "admin_areas": [
      "Andalucía",
-     "Extremadura"
+     "Extremadura",
+     "Andalucía y Extremadura"
     ]
    },
    "source_url": "https://www.sepe.es",

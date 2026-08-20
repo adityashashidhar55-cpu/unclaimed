@@ -2827,7 +2827,8 @@
     "housing_tenure": null,
     "student_required": false,
     "admin_areas": [],
-    "gender": "any"
+    "gender": "any",
+    "rule_source": "geography_unknown"
    },
    "source_url": "https://www.1177.se/",
    "source_snippet": "Tandvård är kostnadsfri för barn och unga upp till en ålder som regionen bestämmer, oftast 23 år",
@@ -2884,7 +2885,8 @@
     "housing_tenure": null,
     "student_required": false,
     "admin_areas": [],
-    "gender": "any"
+    "gender": "any",
+    "rule_source": "geography_unknown"
    },
    "source_url": "https://www.1177.se/",
    "source_snippet": "Du kan ha rätt till ersättning från regionen för resor i samband med vård",
@@ -2988,7 +2990,8 @@
     "housing_tenure": null,
     "student_required": false,
     "admin_areas": [],
-    "gender": "any"
+    "gender": "any",
+    "rule_source": "geography_unknown"
    },
    "source_url": "https://www.1177.se/",
    "source_snippet": "I många regioner kan unga få preventivmedel utan kostnad",
@@ -4048,7 +4051,8 @@
     "housing_tenure": null,
     "student_required": false,
     "admin_areas": [],
-    "gender": "any"
+    "gender": "any",
+    "rule_source": "geography_unknown"
    },
    "source_url": "https://www.1177.se/",
    "source_snippet": "Färdtjänsten är till för dig som har stora svårigheter att resa med den vanliga kollektivtrafiken",
@@ -4262,7 +4266,8 @@
     "housing_tenure": null,
     "student_required": true,
     "admin_areas": [],
-    "gender": "any"
+    "gender": "any",
+    "rule_source": "geography_unknown"
    },
    "source_url": "https://www.sj.se/",
    "source_snippet": "Som student reser du med rabatt hos SJ mot uppvisande av giltig studentlegitimation",
@@ -4314,7 +4319,8 @@
     "housing_tenure": null,
     "student_required": true,
     "admin_areas": [],
-    "gender": "any"
+    "gender": "any",
+    "rule_source": "geography_unknown"
    },
    "source_url": "https://mecenat.se/",
    "source_snippet": "Mecenat samlar studentrabatter och fungerar som studentlegitimation hos kollektivtrafik och företag",
@@ -4635,7 +4641,8 @@
     "housing_tenure": null,
     "student_required": false,
     "admin_areas": [],
-    "gender": "any"
+    "gender": "any",
+    "rule_source": "geography_unknown"
    },
    "source_url": "https://www.fritidsbanken.se/",
    "source_snippet": "Hos Fritidsbanken kan alla låna sport- och friluftsprylar gratis, som i ett bibliotek",
@@ -5049,7 +5056,8 @@
     "residency_months_min": 36,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "rule_source": "geography_unknown"
    },
    "source_url": "https://lund.se/omsorg-och-stod/stod-for-nyanlanda/rad-och-stod-for-dig-som-ar-ny-i-sverige/samhallsorientering-for-nyanlanda",
    "source_snippet": "Kursen hålls på ditt modersmål eller något annat språk som du kan, i minst 100 timmar ... Kursen är gratis för dig som deltar",
@@ -5225,7 +5233,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "rule_source": "geography_unknown"
    },
    "source_url": "https://viss.nu/kunskapsstod/vardprogram/tinnitus",
    "source_snippet": "Betalar patienten en engångsavgift på 600 kr för utprovning av hörapparat, som sedan lånas av Region Stockholm",
@@ -5277,7 +5286,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "rule_source": "geography_unknown"
    },
    "source_url": "https://vard.regionstockholm.se/mottagning/ungdomsmottagningar/",
    "source_snippet": "Ungdomsmottagningen är för dig som är mellan 12-22 år ... Alla besök hos ungdomsmottagningen är kostnadsfria",
@@ -5329,7 +5339,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "rule_source": "geography_unknown"
    },
    "source_url": "https://www.1177.se/barn--gravid/vard-och-stod-for-barn/besok-pa-barnavardscentralen-bvc/",
    "source_snippet": "Du betalar ingenting när ni besöker BVC",
@@ -5381,7 +5392,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "rule_source": "geography_unknown"
    },
    "source_url": "https://www.1177.se/Vastra-Gotaland/liv--halsa/psykisk-halsa/att-soka-stod-och-hjalp/att-ma-psykiskt-daligt-som-ung/",
    "source_snippet": "All sjukvård för barn och ungdomar till och med 19 år är avgiftsfri. Besök på Bup och ungdomsmottagning är gratis",
@@ -5433,7 +5445,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "rule_source": "geography_unknown"
    },
    "source_url": "https://www.1177.se/",
    "source_snippet": "Cellprov inom screeningprogrammet är avgiftsfritt (gynekologisk cellprovskontroll kallas till inom det nationella screeningprogrammet)",
@@ -5495,7 +5508,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "rule_source": "geography_unknown"
    },
    "source_url": "https://www.1177.se/Stockholm/sa-fungerar-varden/kostnader-och-ersattningar/glasogonbidrag-for-barn-och-unga2/",
    "source_snippet": "Barn 0–7 år kan få maximalt 500 kronor i bidrag. Barn och unga 8–19 år kan få maximalt 800 kronor i bidrag",
@@ -5557,7 +5571,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "rule_source": "geography_unknown"
    },
    "source_url": "https://www.1177.se/",
    "source_snippet": "Hjälpmedel förskrivs av regionen efter individuell bedömning och lånas i regel utan kostnad via hjälpmedelscentralen",
@@ -5619,7 +5634,8 @@
     "residency_months_min": null,
     "housing_tenure": "renting",
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "rule_source": "geography_unknown"
    },
    "source_url": "https://vara.se/kommunochpolitik/varorganisationochverksamhet/planerochstyrandedokument/riktlinjerochrutiner/riktlinjerkommunalhyresgaranti.1455.html",
    "source_snippet": "Hyresgarantin ska ställas ut för en person som har ekonomisk förmåga att klara boendekostnaderna men som ändå inte får kontrakt för en hyresrätt med besittningsskydd",
@@ -5879,7 +5895,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "rule_source": "geography_unknown"
    },
    "source_url": "https://www.trr.se/",
    "source_snippet": "För att ha rätt till TRRs omställningsstöd måste du vara uppsagd från ett TRR-anslutet företag",
@@ -5983,7 +6000,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "rule_source": "geography_unknown"
    },
    "source_url": "https://www.kulturskolor.se/",
    "source_snippet": "Kulturskolan är en kommunal fritidsverksamhet med undervisning inom flera konstnärliga ämnen till subventionerad avgift",
@@ -6035,7 +6053,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "rule_source": "geography_unknown"
    },
    "source_url": "https://www.riksdagen.se/sv/dokument-och-lagar/dokument/svensk-forfattningssamling/bibliotekslag-2013801_sfs-2013-801/",
    "source_snippet": "Alla har rätt att låna bibliotekets medier utan avgift (bibliotekslagen 2013:801)",

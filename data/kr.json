@@ -68,7 +68,8 @@
         "residency_months_min": null,
         "housing_tenure": null,
         "student_required": false,
-        "admin_areas": []
+        "admin_areas": [],
+        "gender": "any"
       },
       "source_url": "https://www.bokjiro.go.kr",
       "source_snippet": "2026년 생계급여 최대 급여액은 1인 가구 기준 82만 556원으로, 선정 기준은 기준중위소득 32%를 적용한다.",
@@ -134,7 +135,8 @@
         "residency_months_min": null,
         "housing_tenure": null,
         "student_required": false,
-        "admin_areas": []
+        "admin_areas": [],
+        "gender": "any"
       },
       "source_url": "https://www.bokjiro.go.kr",
       "source_snippet": "가구 소득인정액이 기준중위소득 40% 이하이면 의료급여 수급자로 선정되어 의료급여 등을 받을 수 있다.",
@@ -200,7 +202,8 @@
         "residency_months_min": null,
         "housing_tenure": null,
         "student_required": false,
-        "admin_areas": []
+        "admin_areas": [],
+        "gender": "any"
       },
       "source_url": "https://www.bokjiro.go.kr",
       "source_snippet": "주거급여 선정 기준은 기준중위소득 48%이며, 2026년 1인 가구 기준 약 123만 834원 이하이다.",
@@ -266,7 +269,8 @@
         "residency_months_min": null,
         "housing_tenure": null,
         "student_required": false,
-        "admin_areas": []
+        "admin_areas": [],
+        "gender": "any"
       },
       "source_url": "https://www.bokjiro.go.kr",
       "source_snippet": "가구 소득인정액이 기준중위소득 50% 이하이면 교육급여 수급자로 선정되어 교육급여를 받을 수 있다.",
@@ -327,7 +331,8 @@
         "residency_months_min": null,
         "housing_tenure": null,
         "student_required": false,
-        "admin_areas": []
+        "admin_areas": [],
+        "gender": "any"
       },
       "source_url": "https://www.bokjiro.go.kr",
       "source_snippet": "소득인정액이 기준중위소득 50% 이하이면서 기초생활수급 대상이 아닌 가구를 차상위계층으로 확인해 각종 감면·지원 사업과 연계한다.",
@@ -388,7 +393,8 @@
         "residency_months_min": null,
         "housing_tenure": null,
         "student_required": false,
-        "admin_areas": []
+        "admin_areas": [],
+        "gender": "any"
       },
       "source_url": "https://www.bokjiro.go.kr",
       "source_snippet": "갑작스러운 위기 상황으로 생계유지가 곤란한 가구에 생계·의료·주거지원 등을 신속하게 지원한다.",
@@ -459,7 +465,8 @@
         "residency_months_min": null,
         "housing_tenure": null,
         "student_required": false,
-        "admin_areas": []
+        "admin_areas": [],
+        "gender": "any"
       },
       "source_url": "https://www.nps.or.kr",
       "source_snippet": "기초연금의 월 최대 수급액인 기준연금액이 2026년 1월부터 34만 9,700원으로 인상되었다.",
@@ -520,7 +527,8 @@
         "residency_months_min": null,
         "housing_tenure": null,
         "student_required": false,
-        "admin_areas": []
+        "admin_areas": [],
+        "gender": "any"
       },
       "source_url": "https://www.bokjiro.go.kr",
       "source_snippet": "일과 소득활동이 어려운 중증장애인의 생활 안정을 위해 매월 연금을 지급한다.",
@@ -576,7 +584,8 @@
         "residency_months_min": null,
         "housing_tenure": null,
         "student_required": false,
-        "admin_areas": []
+        "admin_areas": [],
+        "gender": "any"
       },
       "source_url": "https://www.bokjiro.go.kr",
       "source_snippet": "경증장애인 중 저소득층에게 매월 장애수당을 지급한다.",
@@ -632,7 +641,8 @@
         "residency_months_min": null,
         "housing_tenure": null,
         "student_required": false,
-        "admin_areas": []
+        "admin_areas": [],
+        "gender": "any"
       },
       "source_url": "https://www.bokjiro.go.kr",
       "source_snippet": "장애로 인해 일상생활에 어려움이 있는 만 18세 미만 장애아동 가구에 매월 수당을 지급한다.",
@@ -693,7 +703,8 @@
         "residency_months_min": null,
         "housing_tenure": null,
         "student_required": false,
-        "admin_areas": []
+        "admin_areas": [],
+        "gender": "any"
       },
       "source_url": "https://www.bokjiro.go.kr",
       "source_snippet": "아동수당 지급 대상이 8세 미만에서 2030년까지 13세 미만으로 단계 확대되며, 월 10만원을 지급한다.",
@@ -754,7 +765,8 @@
         "residency_months_min": null,
         "housing_tenure": null,
         "student_required": false,
-        "admin_areas": []
+        "admin_areas": [],
+        "gender": "any"
       },
       "source_url": "https://www.bokjiro.go.kr",
       "source_snippet": "부모급여는 만 0세 월 100만원, 만 1세 월 50만원을 지급한다.",
@@ -815,7 +827,8 @@
         "residency_months_min": null,
         "housing_tenure": null,
         "student_required": false,
-        "admin_areas": []
+        "admin_areas": [],
+        "gender": "any"
       },
       "source_url": "https://www.gov.kr",
       "source_snippet": "출생아 1명당 바우처 형태로 첫째 200만원, 둘째 이상 300만원을 지원한다.",
@@ -871,7 +884,8 @@
         "residency_months_min": null,
         "housing_tenure": null,
         "student_required": false,
-        "admin_areas": []
+        "admin_areas": [],
+        "gender": "any"
       },
       "source_url": "https://www.mogef.go.kr",
       "source_snippet": "다자녀 가구, 청소년 한부모 등을 위해 아이돌봄서비스 정부지원을 지속적으로 확대하고 있다.",
@@ -927,7 +941,8 @@
         "residency_months_min": null,
         "housing_tenure": null,
         "student_required": false,
-        "admin_areas": []
+        "admin_areas": [],
+        "gender": "any"
       },
       "source_url": "https://www.bokjiro.go.kr",
       "source_snippet": "어린이집을 이용하는 영유아에게 소득에 관계없이 보육료를 지원한다.",
@@ -983,7 +998,8 @@
         "residency_months_min": null,
         "housing_tenure": null,
         "student_required": false,
-        "admin_areas": []
+        "admin_areas": [],
+        "gender": "any"
       },
       "source_url": "https://www.moe.go.kr",
       "source_snippet": "만 3~5세 유아에게 유아학비를 지원하여 사실상 무상 유아교육·보육을 실현한다.",
@@ -1030,7 +1046,8 @@
         "student_required": true,
         "admin_areas": [
           "Seoul"
-        ]
+        ],
+        "gender": "any"
       },
       "source_url": "https://www.seoul.go.kr",
       "source_snippet": "서울시는 시내 초·중·고등학생 전원에게 친환경 무상급식을 제공한다.",
@@ -1091,7 +1108,8 @@
         "residency_months_min": null,
         "housing_tenure": null,
         "student_required": false,
-        "admin_areas": []
+        "admin_areas": [],
+        "gender": "any"
       },
       "source_url": "https://www.bokjiro.go.kr",
       "source_snippet": "(한부모) ('23) 자녀 1인당 월 20만 원 → ('24) 월 21만 원, 지원기준 중위 63%",
@@ -1147,7 +1165,8 @@
         "residency_months_min": null,
         "housing_tenure": null,
         "student_required": false,
-        "admin_areas": []
+        "admin_areas": [],
+        "gender": "any"
       },
       "source_url": "https://www.bokjiro.go.kr",
       "source_snippet": "보호대상아동이 위탁가정에서 건강하게 성장할 수 있도록 양육보조금 등을 지원한다.",
@@ -1203,7 +1222,8 @@
         "residency_months_min": null,
         "housing_tenure": null,
         "student_required": false,
-        "admin_areas": []
+        "admin_areas": [],
+        "gender": "any"
       },
       "source_url": "https://www.bokjiro.go.kr",
       "source_snippet": "보호종결 아동의 안정적 사회 정착을 위해 자립정착금과 자립수당, 전담기관 사례관리를 지원한다.",
@@ -1271,7 +1291,8 @@
         "residency_months_min": null,
         "housing_tenure": null,
         "student_required": true,
-        "admin_areas": []
+        "admin_areas": [],
+        "gender": "any"
       },
       "source_url": "https://www.kosaf.go.kr",
       "source_snippet": "기초·차상위 등록금 전액, 1~3구간 연 600만원, 4~6구간 440만원, 7~8구간 360만원, 9구간 연 100만원 지원.",
@@ -1329,7 +1350,8 @@
         "residency_months_min": null,
         "housing_tenure": null,
         "student_required": true,
-        "admin_areas": []
+        "admin_areas": [],
+        "gender": "any"
       },
       "source_url": "https://www.kosaf.go.kr",
       "source_snippet": "2026년부터 8구간 이하 다자녀 가구의 셋째 이상 자녀 모두 등록금 전액 지원으로 확대.",
@@ -1387,7 +1409,8 @@
         "residency_months_min": null,
         "housing_tenure": null,
         "student_required": true,
-        "admin_areas": []
+        "admin_areas": [],
+        "gender": "any"
       },
       "source_url": "https://www.kosaf.go.kr",
       "source_snippet": "비수도권 출신 우수 신입생에게 등록금과 생활비를 지원하는 지역인재 장학금을 운영한다.",
@@ -1450,7 +1473,8 @@
         "residency_months_min": null,
         "housing_tenure": null,
         "student_required": true,
-        "admin_areas": []
+        "admin_areas": [],
+        "gender": "any"
       },
       "source_url": "https://www.kosaf.go.kr",
       "source_snippet": "중소·중견기업 취업을 희망하는 대학생에게 등록금 전액을 지원하는 희망사다리 장학금을 운영한다.",
@@ -1508,7 +1532,8 @@
         "residency_months_min": null,
         "housing_tenure": null,
         "student_required": true,
-        "admin_areas": []
+        "admin_areas": [],
+        "gender": "any"
       },
       "source_url": "https://www.kosaf.go.kr",
       "source_snippet": "대학생이 안정적으로 학업에 전념할 수 있도록 근로 기회를 제공하고 근로장학금을 지급한다.",
@@ -1566,7 +1591,8 @@
         "residency_months_min": null,
         "housing_tenure": null,
         "student_required": true,
-        "admin_areas": []
+        "admin_areas": [],
+        "gender": "any"
       },
       "source_url": "https://www.kosaf.go.kr",
       "source_snippet": "취업후 상환 학자금대출은 소득 9구간 이하(다자녀는 소득무관) 대학생에게 이자 면제 혜택 등을 제공한다.",
@@ -1627,7 +1653,8 @@
         "residency_months_min": null,
         "housing_tenure": null,
         "student_required": false,
-        "admin_areas": []
+        "admin_areas": [],
+        "gender": "any"
       },
       "source_url": "https://www.work24.go.kr",
       "source_snippet": "국민내일배움카드는 훈련비를 5년간 기본 300만원, 요건 충족 시 최대 500만원까지 지원하는 고용노동부 직업능력개발 제도다.",
@@ -1696,7 +1723,8 @@
         "residency_months_min": null,
         "housing_tenure": null,
         "student_required": false,
-        "admin_areas": []
+        "admin_areas": [],
+        "gender": "any"
       },
       "source_url": "https://www.work24.go.kr",
       "source_snippet": "1유형(구직촉진수당): 월 50만원 × 6개월(최대 300만원 현금). 2유형(취업활동비): 직업훈련비 지원 + 월 최대 28.4만원.",
@@ -1765,7 +1793,8 @@
         "residency_months_min": null,
         "housing_tenure": null,
         "student_required": false,
-        "admin_areas": []
+        "admin_areas": [],
+        "gender": "any"
       },
       "source_url": "https://www.ei.go.kr",
       "source_snippet": "2026년 1월 1일 이후 퇴사자는 8시간 기준 하루 상한액 6만 8,100원, 하한액 6만 6,048원을 적용받는다.",
@@ -1824,7 +1853,8 @@
         "residency_months_min": null,
         "housing_tenure": null,
         "student_required": false,
-        "admin_areas": []
+        "admin_areas": [],
+        "gender": "any"
       },
       "source_url": "https://www.ei.go.kr",
       "source_snippet": "소정급여일수의 2분의 1 이상을 남기고 재취업한 경우 남은 급여의 2분의 1을 조기재취업수당으로 지급한다.",
@@ -1883,7 +1913,8 @@
         "residency_months_min": null,
         "housing_tenure": null,
         "student_required": false,
-        "admin_areas": []
+        "admin_areas": [],
+        "gender": "any"
       },
       "source_url": "https://www.comwel.or.kr",
       "source_snippet": "직업훈련에 참여하는 실업자 등의 생계 부담 완화를 위해 저리로 생계비를 대부한다.",
@@ -1941,7 +1972,8 @@
         "residency_months_min": null,
         "housing_tenure": null,
         "student_required": false,
-        "admin_areas": []
+        "admin_areas": [],
+        "gender": "any"
       },
       "source_url": "https://www.bokjiro.go.kr",
       "source_snippet": "어르신의 활기찬 노후생활을 위해 다양한 유형의 노인일자리와 사회활동을 지원한다.",
@@ -2002,7 +2034,8 @@
         "residency_months_min": null,
         "housing_tenure": null,
         "student_required": false,
-        "admin_areas": []
+        "admin_areas": [],
+        "gender": "any"
       },
       "source_url": "https://www.kinfa.or.kr",
       "source_snippet": "만 19~34세, 개인소득 7,500만 원 이하 청년이 월 70만원까지 납입하면 정부가 소득구간별 기여금(월 최대 3.3만원)을 추가 지원한다.",
@@ -2063,7 +2096,8 @@
         "residency_months_min": null,
         "housing_tenure": null,
         "student_required": false,
-        "admin_areas": []
+        "admin_areas": [],
+        "gender": "any"
       },
       "source_url": "https://www.bokjiro.go.kr",
       "source_snippet": "매월 10만원 이상 저축하면 정부가 월 30만원의 근로소득장려금을 추가로 적립해 주는 사업이다. 3년 만기 시 최대 1440만원의 목돈을 마련할 수 있다.",
@@ -2129,7 +2163,8 @@
         "residency_months_min": null,
         "housing_tenure": "renting",
         "student_required": false,
-        "admin_areas": []
+        "admin_areas": [],
+        "gender": "any"
       },
       "source_url": "https://www.bokjiro.go.kr",
       "source_snippet": "만 19~34세 청년을 대상으로 월세 20만원을 최대 12개월(총 240만원) 지원하는 청년 월세 지원을 운영한다.",
@@ -2192,7 +2227,8 @@
         "student_required": false,
         "admin_areas": [
           "Seoul"
-        ]
+        ],
+        "gender": "any"
       },
       "source_url": "https://housing.seoul.go.kr",
       "source_snippet": "서울시는 청년들의 주거비 부담 완화를 위해 월 20만원의 청년월세를 지원한다.",
@@ -2253,7 +2289,8 @@
         "residency_months_min": null,
         "housing_tenure": "renting",
         "student_required": false,
-        "admin_areas": []
+        "admin_areas": [],
+        "gender": "any"
       },
       "source_url": "https://nhuf.molit.go.kr",
       "source_snippet": "청년층의 주거안정을 위해 전세자금을 저금리로 대출한다.",
@@ -2314,7 +2351,8 @@
         "residency_months_min": null,
         "housing_tenure": "renting",
         "student_required": false,
-        "admin_areas": []
+        "admin_areas": [],
+        "gender": "any"
       },
       "source_url": "https://www.lh.or.kr",
       "source_snippet": "행복주택은 대학생, 청년, 신혼부부 등 젊은 계층의 주거안정을 위해 시세보다 저렴하게 공급하는 공공임대주택이다.",
@@ -2370,7 +2408,8 @@
         "residency_months_min": null,
         "housing_tenure": "renting",
         "student_required": false,
-        "admin_areas": []
+        "admin_areas": [],
+        "gender": "any"
       },
       "source_url": "https://www.lh.or.kr",
       "source_snippet": "국민임대주택은 무주택 저소득층의 주거안정을 위해 국가·지자체 재정과 기금으로 건설해 저렴하게 임대하는 주택이다.",
@@ -2431,7 +2470,8 @@
         "residency_months_min": null,
         "housing_tenure": null,
         "student_required": false,
-        "admin_areas": []
+        "admin_areas": [],
+        "gender": "any"
       },
       "source_url": "https://www.bokjiro.go.kr",
       "source_snippet": "암으로 인한 저소득 가구의 의료비 부담 완화를 위해 암환자 의료비를 지원한다.",
@@ -2487,7 +2527,8 @@
         "residency_months_min": null,
         "housing_tenure": null,
         "student_required": false,
-        "admin_areas": []
+        "admin_areas": [],
+        "gender": "any"
       },
       "source_url": "https://www.kdca.go.kr",
       "source_snippet": "희귀질환자의 의료비 부담 경감을 위해 본인부담금 등을 지원한다.",
@@ -2548,7 +2589,8 @@
         "residency_months_min": null,
         "housing_tenure": null,
         "student_required": false,
-        "admin_areas": []
+        "admin_areas": [],
+        "gender": "any"
       },
       "source_url": "https://www.nhis.or.kr",
       "source_snippet": "연간 병원비가 내 소득 기준을 넘으면 초과분을 환급하는 본인부담상한제를 운영한다.",
@@ -2609,7 +2651,8 @@
         "residency_months_min": null,
         "housing_tenure": null,
         "student_required": false,
-        "admin_areas": []
+        "admin_areas": [],
+        "gender": "any"
       },
       "source_url": "https://www.bokjiro.go.kr",
       "source_snippet": "과도한 의료비 지출로 경제적 어려움을 겪는 국민에게 의료비 일부를 지원한다.",
@@ -2665,7 +2708,8 @@
         "residency_months_min": null,
         "housing_tenure": null,
         "student_required": false,
-        "admin_areas": []
+        "admin_areas": [],
+        "gender": "female"
       },
       "source_url": "https://www.ecoemall.go.kr",
       "source_snippet": "임산부에게 친환경농산물 꾸러미를 공급해 건강한 식생활을 지원한다.",
@@ -2716,7 +2760,8 @@
         "residency_months_min": null,
         "housing_tenure": null,
         "student_required": false,
-        "admin_areas": []
+        "admin_areas": [],
+        "gender": "any"
       },
       "source_url": "https://www.kdca.go.kr",
       "source_snippet": "국가예방접종사업으로 어린이 필수 예방접종과 어르신 인플루엔자 접종 등을 무료로 지원한다.",
@@ -2767,7 +2812,8 @@
         "residency_months_min": null,
         "housing_tenure": null,
         "student_required": false,
-        "admin_areas": []
+        "admin_areas": [],
+        "gender": "any"
       },
       "source_url": "https://www.nhis.or.kr",
       "source_snippet": "6대 암에 대한 국가암검진을 실시하며 건강보험료 하위 50%와 의료급여수급권자는 검진비 전액을 지원한다.",
@@ -2828,7 +2874,8 @@
         "residency_months_min": null,
         "housing_tenure": null,
         "student_required": false,
-        "admin_areas": []
+        "admin_areas": [],
+        "gender": "any"
       },
       "source_url": "https://www.bokjiro.go.kr",
       "source_snippet": "영양 위험이 큰 임산부와 영유아에게 보충식품과 영양교육을 제공한다.",
@@ -2884,7 +2931,8 @@
         "residency_months_min": null,
         "housing_tenure": null,
         "student_required": false,
-        "admin_areas": []
+        "admin_areas": [],
+        "gender": "any"
       },
       "source_url": "https://www.bokjiro.go.kr",
       "source_snippet": "난임부부의 시술비 부담 완화를 위해 시술비 일부를 지원한다.",
@@ -2940,7 +2988,8 @@
         "residency_months_min": null,
         "housing_tenure": null,
         "student_required": false,
-        "admin_areas": []
+        "admin_areas": [],
+        "gender": "female"
       },
       "source_url": "https://www.bokjiro.go.kr",
       "source_snippet": "고위험 임신질환 임산부의 입원 진료비를 지원해 안전한 분만 환경을 조성한다.",
@@ -2996,7 +3045,8 @@
         "residency_months_min": null,
         "housing_tenure": null,
         "student_required": false,
-        "admin_areas": []
+        "admin_areas": [],
+        "gender": "any"
       },
       "source_url": "https://www.bokjiro.go.kr",
       "source_snippet": "미숙아 및 선천성이상아의 의료비 부담을 줄이기 위해 의료비를 지원한다.",
@@ -3052,7 +3102,8 @@
         "residency_months_min": null,
         "housing_tenure": null,
         "student_required": false,
-        "admin_areas": []
+        "admin_areas": [],
+        "gender": "female"
       },
       "source_url": "https://www.bokjiro.go.kr",
       "source_snippet": "청소년 산모의 건강한 임신·출산을 위해 의료비를 지원한다.",
@@ -3108,7 +3159,8 @@
         "residency_months_min": null,
         "housing_tenure": null,
         "student_required": false,
-        "admin_areas": []
+        "admin_areas": [],
+        "gender": "any"
       },
       "source_url": "https://www.bokjiro.go.kr",
       "source_snippet": "신체적·정신적 사유로 일상생활이 어려운 장애인에게 활동지원급여를 제공한다.",
@@ -3164,7 +3216,8 @@
         "residency_months_min": null,
         "housing_tenure": null,
         "student_required": false,
-        "admin_areas": []
+        "admin_areas": [],
+        "gender": "any"
       },
       "source_url": "https://www.korea-pass.kr",
       "source_snippet": "K-패스는 대중교통을 탈 때 카드를 사용하면 일반 20%, 청년 30%, 저소득층 53%가 적립되는 정부 사업이다.",
@@ -3222,7 +3275,8 @@
         "student_required": false,
         "admin_areas": [
           "Seoul"
-        ]
+        ],
+        "gender": "any"
       },
       "source_url": "https://news.seoul.go.kr/traffic/archives/510651",
       "source_snippet": "기후동행카드 30일권 62,000원, 따릉이 포함 65,000원, 청소년·청년할인 55,000원/58,000원, 저소득 할인 45,000원/48,000원.",
@@ -3280,7 +3334,8 @@
         "student_required": false,
         "admin_areas": [
           "Gyeonggi"
-        ]
+        ],
+        "gender": "any"
       },
       "source_url": "https://www.gg.go.kr",
       "source_snippet": "The 경기패스는 경기도민이 전국의 대중교통을 이용할 경우 사용한 교통비의 일부를 환급해 주는 카드로, 이용횟수 제한이 없다.",
@@ -3331,7 +3386,8 @@
         "residency_months_min": null,
         "housing_tenure": null,
         "student_required": false,
-        "admin_areas": []
+        "admin_areas": [],
+        "gender": "any"
       },
       "source_url": "https://www.gov.kr",
       "source_snippet": "만 65세 이상 어르신은 지하철을 무료로 이용할 수 있다(경로우대).",
@@ -3387,7 +3443,8 @@
         "residency_months_min": null,
         "housing_tenure": null,
         "student_required": false,
-        "admin_areas": []
+        "admin_areas": [],
+        "gender": "any"
       },
       "source_url": "https://www.bokjiro.go.kr",
       "source_snippet": "장애인 등 교통약자의 이동 편의를 위해 특별교통수단(장애인 콜택시)을 운영한다.",
@@ -3445,7 +3502,8 @@
         "student_required": false,
         "admin_areas": [
           "Gyeonggi"
-        ]
+        ],
+        "gender": "any"
       },
       "source_url": "https://www.gg.go.kr",
       "source_snippet": "경기도는 만 13~23세 청소년에게 대중교통비 일부를 연 최대 24만원까지 지원한다.",
@@ -3501,7 +3559,8 @@
         "residency_months_min": null,
         "housing_tenure": null,
         "student_required": false,
-        "admin_areas": []
+        "admin_areas": [],
+        "gender": "any"
       },
       "source_url": "https://www.bokjiro.go.kr",
       "source_snippet": "2026년 에너지바우처는 1인 세대 295,200원부터 4인 이상 세대 701,300원까지 지원한다.",
@@ -3557,7 +3616,8 @@
         "residency_months_min": null,
         "housing_tenure": null,
         "student_required": false,
-        "admin_areas": []
+        "admin_areas": [],
+        "gender": "any"
       },
       "source_url": "https://www.kree.or.kr",
       "source_snippet": "에너지 취약계층의 주거환경 에너지효율 개선(단열·창호·고효율기기)을 지원한다.",
@@ -3613,7 +3673,8 @@
         "residency_months_min": null,
         "housing_tenure": null,
         "student_required": false,
-        "admin_areas": []
+        "admin_areas": [],
+        "gender": "any"
       },
       "source_url": "https://www.kepco.co.kr",
       "source_snippet": "장애인·기초생활수급자·다자녀 가구 등에 월 최대 16,000원의 전기요금을 감면한다.",
@@ -3669,7 +3730,8 @@
         "residency_months_min": null,
         "housing_tenure": null,
         "student_required": false,
-        "admin_areas": []
+        "admin_areas": [],
+        "gender": "any"
       },
       "source_url": "https://www.bokjiro.go.kr",
       "source_snippet": "취약계층의 가스요금 부담 완화를 위해 도시가스 요금을 경감한다.",
@@ -3725,7 +3787,8 @@
         "residency_months_min": null,
         "housing_tenure": null,
         "student_required": false,
-        "admin_areas": []
+        "admin_areas": [],
+        "gender": "any"
       },
       "source_url": "https://www.bokjiro.go.kr",
       "source_snippet": "연탄 사용 저소득 가구의 난방비 부담 완화를 위해 연탄쿠폰을 지원한다.",
@@ -3784,7 +3847,8 @@
         "residency_months_min": null,
         "housing_tenure": null,
         "student_required": false,
-        "admin_areas": []
+        "admin_areas": [],
+        "gender": "any"
       },
       "source_url": "https://www.hometax.go.kr",
       "source_snippet": "근로장려금은 단독 가구 165만원, 홑벌이 가구 285만원, 맞벌이 가구 330만원까지 지급된다.",
@@ -3844,7 +3908,8 @@
         "residency_months_min": null,
         "housing_tenure": null,
         "student_required": false,
-        "admin_areas": []
+        "admin_areas": [],
+        "gender": "any"
       },
       "source_url": "https://www.hometax.go.kr",
       "source_snippet": "자녀장려금은 부양자녀 1명당 최소 50만원에서 최대 100만원까지 준다. 소득 기준은 부부합산 7천만원 미만이다.",
@@ -3907,7 +3972,8 @@
         "residency_months_min": null,
         "housing_tenure": null,
         "student_required": false,
-        "admin_areas": []
+        "admin_areas": [],
+        "gender": "any"
       },
       "source_url": "https://www.hometax.go.kr",
       "source_snippet": "중소기업에 취업한 청년에게 소득세의 90%를 5년간 감면한다.",
@@ -3960,7 +4026,8 @@
         "residency_months_min": null,
         "housing_tenure": null,
         "student_required": false,
-        "admin_areas": []
+        "admin_areas": [],
+        "gender": "any"
       },
       "source_url": "https://www.hometax.go.kr",
       "source_snippet": "청년이 창업한 중소기업에 대해 5년간 소득세·법인세를 50~100% 감면한다.",
@@ -4018,7 +4085,8 @@
         "residency_months_min": null,
         "housing_tenure": null,
         "student_required": false,
-        "admin_areas": []
+        "admin_areas": [],
+        "gender": "any"
       },
       "source_url": "https://www.hometax.go.kr",
       "source_snippet": "총급여 7천만원 이하 무주택 세대주는 주택청약종합저축 납입액의 40%(연 240만원 한도)를 소득공제받는다.",
@@ -4081,7 +4149,8 @@
         "residency_months_min": null,
         "housing_tenure": "renting",
         "student_required": false,
-        "admin_areas": []
+        "admin_areas": [],
+        "gender": "any"
       },
       "source_url": "https://www.hometax.go.kr",
       "source_snippet": "총급여 8천만원 이하 무주택 근로자는 월세액의 15~17%를 세액공제받을 수 있다.",
@@ -4128,7 +4197,8 @@
         "residency_months_min": null,
         "housing_tenure": null,
         "student_required": false,
-        "admin_areas": []
+        "admin_areas": [],
+        "gender": "any"
       },
       "source_url": "https://www.hometax.go.kr",
       "source_snippet": "신용카드 등 사용액이 총급여의 25%를 초과하면 초과분에 대해 소득공제를 적용한다.",
@@ -4179,7 +4249,8 @@
         "residency_months_min": null,
         "housing_tenure": null,
         "student_required": false,
-        "admin_areas": []
+        "admin_areas": [],
+        "gender": "any"
       },
       "source_url": "https://www.hometax.go.kr",
       "source_snippet": "연금계좌 납입액은 연 900만원 한도로 13.2~16.5% 세액공제된다.",
@@ -4235,7 +4306,8 @@
         "residency_months_min": null,
         "housing_tenure": null,
         "student_required": false,
-        "admin_areas": []
+        "admin_areas": [],
+        "gender": "any"
       },
       "source_url": "https://www.fsc.go.kr",
       "source_snippet": "ISA는 계좌 내 이자·배당소득에 대해 서민형 400만원까지 비과세하고 초과분은 9.9%로 분리과세한다.",
@@ -4293,7 +4365,8 @@
         "residency_months_min": null,
         "housing_tenure": null,
         "student_required": false,
-        "admin_areas": []
+        "admin_areas": [],
+        "gender": "any"
       },
       "source_url": "https://www.kised.or.kr",
       "source_snippet": "청년창업사관학교는 우수 창업아이템을 보유한 청년 창업자에게 사업비(최대 1억원)와 창업 공간·교육을 지원한다.",
@@ -4356,7 +4429,8 @@
         "residency_months_min": null,
         "housing_tenure": null,
         "student_required": false,
-        "admin_areas": []
+        "admin_areas": [],
+        "gender": "any"
       },
       "source_url": "https://www.k-startup.go.kr",
       "source_snippet": "초기창업패키지는 유망 초기 창업기업의 사업 안정화를 위해 사업화 자금과 특화 프로그램을 지원한다.",
@@ -4419,7 +4493,8 @@
         "residency_months_min": null,
         "housing_tenure": null,
         "student_required": false,
-        "admin_areas": []
+        "admin_areas": [],
+        "gender": "any"
       },
       "source_url": "https://www.semas.or.kr",
       "source_snippet": "소상공인의 경영 안정과 성장을 위해 저금리 정책자금을 융자 지원한다.",
@@ -4477,7 +4552,8 @@
         "residency_months_min": null,
         "housing_tenure": null,
         "student_required": false,
-        "admin_areas": []
+        "admin_areas": [],
+        "gender": "any"
       },
       "source_url": "https://www.fsc.go.kr",
       "source_snippet": "새출발기금은 소상공인·자영업자의 대출 상환 부담을 낮추는 채무조정 프로그램이다.",
@@ -4535,7 +4611,8 @@
         "residency_months_min": null,
         "housing_tenure": null,
         "student_required": false,
-        "admin_areas": []
+        "admin_areas": [],
+        "gender": "any"
       },
       "source_url": "https://www.semas.or.kr",
       "source_snippet": "희망리턴패키지는 폐업 소상공인의 사업정리부터 재취업·재창업까지 패키지로 지원한다.",
@@ -4598,7 +4675,9 @@
         "residency_months_min": null,
         "housing_tenure": null,
         "student_required": false,
-        "admin_areas": []
+        "admin_areas": [],
+        "gender": "any",
+        "rule_source": "geography_unknown"
       },
       "source_url": "https://www.koreg.or.kr",
       "source_snippet": "지역신용보증재단은보력이 부족한 지역 소기업·소상공인에게 신용보증을 지원한다.",
@@ -4654,7 +4733,9 @@
         "residency_months_min": null,
         "housing_tenure": null,
         "student_required": false,
-        "admin_areas": []
+        "admin_areas": [],
+        "gender": "any",
+        "rule_source": "geography_unknown"
       },
       "source_url": "https://www.bokjiro.go.kr",
       "source_snippet": "기초생활수급자(생계·의료급여)는 월 최대 21,500원의 이동통신 요금을 감면받는다.",
@@ -4715,7 +4796,8 @@
         "student_required": false,
         "admin_areas": [
           "Seoul"
-        ]
+        ],
+        "gender": "any"
       },
       "source_url": "https://youth.seoul.go.kr",
       "source_snippet": "선정된 청년에게는 월 50만 원씩 최대 6개월간 수당이 지급된다. 중위소득 150% 이하 만 19~34세 서울 거주 미취업 청년이면 신청 가능하다.",
@@ -4773,7 +4855,8 @@
         "student_required": false,
         "admin_areas": [
           "Gyeonggi"
-        ]
+        ],
+        "gender": "any"
       },
       "source_url": "https://www.gg.go.kr",
       "source_snippet": "경기도는 만 24세 청년에게 분기별 25만원씩 연 최대 100만원의 청년기본소득을 지역화폐로 지급한다.",
@@ -4834,7 +4917,8 @@
         "student_required": false,
         "admin_areas": [
           "Gwangju"
-        ]
+        ],
+        "gender": "any"
       },
       "source_url": "https://www.gwangju.go.kr",
       "source_snippet": "만 19세부터 39세까지의 광주 지역 미취업 청년에게 매월 50만원씩 6개월간 총 300만원의 구직활동비를 지원한다.",

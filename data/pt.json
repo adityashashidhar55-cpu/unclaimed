@@ -387,7 +387,13 @@
    "application_channel": "automatic",
    "deadline_type": "rolling",
    "deadline_note": null,
-   "procedure_steps": [],
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "No application needed — this is paid automatically to everyone who qualifies. Check that the authority holds your current address and bank details; a missing detail is the usual reason an automatic payment does not arrive.",
+     "url": "https://www.seg-social.pt/garantia-para-a-infancia"
+    }
+   ],
    "documents_required": [],
    "eligibility": {
     "statuses": [],
@@ -1294,7 +1300,13 @@
    "application_channel": "automatic",
    "deadline_type": "annual",
    "deadline_note": null,
-   "procedure_steps": [],
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "No application needed — this is paid automatically to everyone who qualifies. Check that the authority holds your current address and bank details; a missing detail is the usual reason an automatic payment does not arrive.",
+     "url": "https://www.dgeste.gov.pt"
+    }
+   ],
    "documents_required": [],
    "eligibility": {
     "statuses": [],
@@ -1349,7 +1361,8 @@
     "student_required": false,
     "admin_areas": [
      "Açores",
-     "Madeira"
+     "Madeira",
+     "Açores e Madeira"
     ],
     "gender": "any"
    },
@@ -1377,7 +1390,13 @@
    "application_channel": "automatic",
    "deadline_type": "rolling",
    "deadline_note": null,
-   "procedure_steps": [],
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "No application needed — this is paid automatically to everyone who qualifies. Check that the authority holds your current address and bank details; a missing detail is the usual reason an automatic payment does not arrive.",
+     "url": "https://www.dgeg.gov.pt"
+    }
+   ],
    "documents_required": [],
    "eligibility": {
     "statuses": [],
@@ -1417,7 +1436,13 @@
    "application_channel": "automatic",
    "deadline_type": "rolling",
    "deadline_note": null,
-   "procedure_steps": [],
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "No application needed — this is paid automatically to everyone who qualifies. Check that the authority holds your current address and bank details; a missing detail is the usual reason an automatic payment does not arrive.",
+     "url": "https://www.dgeg.gov.pt"
+    }
+   ],
    "documents_required": [],
    "eligibility": {
     "statuses": [],
@@ -1808,7 +1833,13 @@
    "application_channel": "automatic",
    "deadline_type": "rolling",
    "deadline_note": null,
-   "procedure_steps": [],
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "No application needed — this is paid automatically to everyone who qualifies. Check that the authority holds your current address and bank details; a missing detail is the usual reason an automatic payment does not arrive.",
+     "url": "https://www.portaldasfinancas.gov.pt"
+    }
+   ],
    "documents_required": [],
    "eligibility": {
     "statuses": [],
@@ -2130,7 +2161,13 @@
    "application_channel": "automatic",
    "deadline_type": "annual",
    "deadline_note": null,
-   "procedure_steps": [],
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "No application needed — this is paid automatically to everyone who qualifies. Check that the authority holds your current address and bank details; a missing detail is the usual reason an automatic payment does not arrive.",
+     "url": "https://info.portaldasfinancas.gov.pt"
+    }
+   ],
    "documents_required": [],
    "eligibility": {
     "statuses": [],
@@ -2170,7 +2207,13 @@
    "application_channel": "automatic",
    "deadline_type": "annual",
    "deadline_note": null,
-   "procedure_steps": [],
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "No application needed — this is paid automatically to everyone who qualifies. Check that the authority holds your current address and bank details; a missing detail is the usual reason an automatic payment does not arrive.",
+     "url": "https://info.portaldasfinancas.gov.pt"
+    }
+   ],
    "documents_required": [],
    "eligibility": {
     "statuses": [],
@@ -2210,7 +2253,13 @@
    "application_channel": "automatic",
    "deadline_type": "annual",
    "deadline_note": null,
-   "procedure_steps": [],
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "No application needed — this is paid automatically to everyone who qualifies. Check that the authority holds your current address and bank details; a missing detail is the usual reason an automatic payment does not arrive.",
+     "url": "https://info.portaldasfinancas.gov.pt"
+    }
+   ],
    "documents_required": [],
    "eligibility": {
     "statuses": [],
@@ -2250,7 +2299,13 @@
    "application_channel": "automatic",
    "deadline_type": "annual",
    "deadline_note": null,
-   "procedure_steps": [],
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "No application needed — this is paid automatically to everyone who qualifies. Check that the authority holds your current address and bank details; a missing detail is the usual reason an automatic payment does not arrive.",
+     "url": "https://info.portaldasfinancas.gov.pt"
+    }
+   ],
    "documents_required": [],
    "eligibility": {
     "statuses": [],
@@ -3199,7 +3254,13 @@
    "application_channel": "automatic",
    "deadline_type": "none",
    "deadline_note": null,
-   "procedure_steps": [],
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "No application needed — this is paid automatically to everyone who qualifies. Check that the authority holds your current address and bank details; a missing detail is the usual reason an automatic payment does not arrive.",
+     "url": "https://www.sns.gov.pt"
+    }
+   ],
    "documents_required": [],
    "eligibility": {
     "statuses": [],
@@ -3239,7 +3300,13 @@
    "application_channel": "automatic",
    "deadline_type": "rolling",
    "deadline_note": null,
-   "procedure_steps": [],
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "No application needed — this is paid automatically to everyone who qualifies. Check that the authority holds your current address and bank details; a missing detail is the usual reason an automatic payment does not arrive.",
+     "url": "https://www.dgs.pt"
+    }
+   ],
    "documents_required": [],
    "eligibility": {
     "statuses": [],
@@ -3279,7 +3346,13 @@
    "application_channel": "automatic",
    "deadline_type": "rolling",
    "deadline_note": null,
-   "procedure_steps": [],
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "No application needed — this is paid automatically to everyone who qualifies. Check that the authority holds your current address and bank details; a missing detail is the usual reason an automatic payment does not arrive.",
+     "url": "https://www.dgs.pt"
+    }
+   ],
    "documents_required": [],
    "eligibility": {
     "statuses": [],
@@ -3319,7 +3392,13 @@
    "application_channel": "automatic",
    "deadline_type": "rolling",
    "deadline_note": null,
-   "procedure_steps": [],
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "No application needed — this is paid automatically to everyone who qualifies. Check that the authority holds your current address and bank details; a missing detail is the usual reason an automatic payment does not arrive.",
+     "url": "https://www.seg-social.pt"
+    }
+   ],
    "documents_required": [],
    "eligibility": {
     "statuses": [],
@@ -4480,7 +4559,8 @@
     "housing_tenure": null,
     "student_required": true,
     "admin_areas": [
-     "Porto"
+     "Porto",
+     "Área Metropolitana do Porto"
     ]
    },
    "source_url": "https://www.andante.pt",

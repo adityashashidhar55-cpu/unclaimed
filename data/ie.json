@@ -148,7 +148,7 @@
    "amount_min": 299,
    "amount_max": 299,
    "amount_currency": "EUR",
-   "amount_period": "monthly",
+   "amount_period": "weekly",
    "amount_note": "€299 per week (2026), paid for 26 weeks; PRSI-based, not means-tested",
    "is_automatic": false,
    "application_url": "https://services.mywelfare.ie/en/topics/parents-children-family/",
@@ -219,7 +219,7 @@
    "amount_min": 299,
    "amount_max": 299,
    "amount_currency": "EUR",
-   "amount_period": "monthly",
+   "amount_period": "weekly",
    "amount_note": "€299 per week (2026) for 2 weeks of paternity leave taken within 6 months of the birth or adoption",
    "is_automatic": false,
    "application_url": "https://services.mywelfare.ie/en/topics/parents-children-family/",
@@ -285,7 +285,7 @@
    "amount_min": 299,
    "amount_max": 299,
    "amount_currency": "EUR",
-   "amount_period": "monthly",
+   "amount_period": "weekly",
    "amount_note": "€299 per week (2026) for each parent during parent's leave: 9 weeks per child for children born/adopted after 1 August 2024, taken before the child turns 2 (or within 2 years of adoption)",
    "is_automatic": false,
    "application_url": "https://services.mywelfare.ie/en/topics/parents-children-family/",
@@ -351,7 +351,7 @@
    "amount_min": 299,
    "amount_max": 299,
    "amount_currency": "EUR",
-   "amount_period": "monthly",
+   "amount_period": "weekly",
    "amount_note": "€299 per week (2026) paid for 24 weeks of adoptive leave from placement of the child",
    "is_automatic": false,
    "application_url": "https://services.mywelfare.ie/en/topics/parents-children-family/",
@@ -417,7 +417,7 @@
    "amount_min": null,
    "amount_max": 254,
    "amount_currency": "EUR",
-   "amount_period": "monthly",
+   "amount_period": "weekly",
    "amount_note": "Maximum €254 per week (2026); for pregnant or breastfeeding employees granted health and safety leave because their workplace risk cannot be removed",
    "is_automatic": false,
    "application_url": "https://services.mywelfare.ie",
@@ -676,7 +676,7 @@
    "amount_min": null,
    "amount_max": 254,
    "amount_currency": "EUR",
-   "amount_period": "monthly",
+   "amount_period": "weekly",
    "amount_note": "PRSI-based payment; maximum personal rate €254 per week (2026) where average weekly earnings were €300+; paid for up to 9 months (6 months with fewer than 260 contributions)",
    "is_automatic": false,
    "application_url": "https://services.mywelfare.ie/en/topics/jobseekers/",
@@ -746,7 +746,7 @@
    "amount_min": null,
    "amount_max": 254,
    "amount_currency": "EUR",
-   "amount_period": "monthly",
+   "amount_period": "weekly",
    "amount_note": "Means-tested payment; maximum personal rate €254 per week aged 25+ (2026), €163.70 aged 18-24 (€254 if living independently with State housing support); no time limit while eligible",
    "is_automatic": false,
    "application_url": "https://services.mywelfare.ie/en/topics/jobseekers/",
@@ -816,7 +816,7 @@
    "amount_min": null,
    "amount_max": 254,
    "amount_currency": "EUR",
-   "amount_period": "monthly",
+   "amount_period": "weekly",
    "amount_note": "Maximum personal rate €254 per week (2026) plus €58 per child under 12 and €78 per child aged 12+; means-tested, for lone parents whose youngest child is under 7 (exceptions apply)",
    "is_automatic": false,
    "application_url": "https://services.mywelfare.ie/en/topics/families-and-children/",
@@ -887,7 +887,7 @@
    "amount_min": null,
    "amount_max": 254,
    "amount_currency": "EUR",
-   "amount_period": "monthly",
+   "amount_period": "weekly",
    "amount_note": "Maximum personal rate €254 per week (2026) plus child increases; for lone parents whose youngest child is aged 7-13; no requirement to be available for full-time work",
    "is_automatic": false,
    "application_url": "https://services.mywelfare.ie/en/topics/jobseekers/",
@@ -1020,7 +1020,7 @@
    "amount_min": 271,
    "amount_max": 271,
    "amount_currency": "EUR",
-   "amount_period": "monthly",
+   "amount_period": "weekly",
    "amount_note": "€271 per week (2026); PRSI-based, not means-tested; for people who leave work (up to 2 years, unpaid) to care full-time for someone who needs full-time care",
    "is_automatic": false,
    "application_url": "https://services.mywelfare.ie/en/topics/carers/",
@@ -1084,7 +1084,7 @@
    "amount_min": null,
    "amount_max": 254,
    "amount_currency": "EUR",
-   "amount_period": "monthly",
+   "amount_period": "weekly",
    "amount_note": "Maximum personal rate €254 per week (2026); means-tested payment for people aged 16-65 with a disability expected to last at least one year that substantially restricts work",
    "is_automatic": false,
    "application_url": "https://services.mywelfare.ie/en/topics/disability-and-illness/",
@@ -1151,7 +1151,7 @@
    "amount_min": 259.5,
    "amount_max": 259.5,
    "amount_currency": "EUR",
-   "amount_period": "monthly",
+   "amount_period": "weekly",
    "amount_note": "€259.50 per week personal rate (2026); PRSI-based, not means-tested; for people permanently incapable of work who meet the contribution conditions",
    "is_automatic": false,
    "application_url": "https://services.mywelfare.ie/en/topics/disability-and-illness/",
@@ -1213,7 +1213,7 @@
    "amount_min": null,
    "amount_max": 254,
    "amount_currency": "EUR",
-   "amount_period": "monthly",
+   "amount_period": "weekly",
    "amount_note": "Maximum personal rate €254 per week (2026); means-tested payment for people aged 18+ who are blind or have low vision",
    "is_automatic": false,
    "application_url": "https://services.mywelfare.ie/en/topics/disability-and-illness/",
@@ -1275,7 +1275,7 @@
    "amount_min": null,
    "amount_max": 299.3,
    "amount_currency": "EUR",
-   "amount_period": "monthly",
+   "amount_period": "weekly",
    "amount_note": "Maximum personal rate €299.30 per week at age 66 (2026); higher rates if deferred to 67 (€313.40), 68 (€328.90) or later; taxable but not means-tested",
    "is_automatic": false,
    "application_url": "https://services.mywelfare.ie/en/topics/older-and-retired-people/",
@@ -1420,7 +1420,7 @@
    "amount_min": null,
    "amount_max": 259.5,
    "amount_currency": "EUR",
-   "amount_period": "monthly",
+   "amount_period": "weekly",
    "amount_note": "Maximum personal rate €259.50 per week if under 66 (2026), moving to the State Pension (Contributory) rate at 66; based on the late spouse/partner's PRSI record; not means-tested",
    "is_automatic": false,
    "application_url": "https://services.mywelfare.ie/en/topics/death-and-bereavement/",
@@ -1487,7 +1487,7 @@
    "amount_min": null,
    "amount_max": 254,
    "amount_currency": "EUR",
-   "amount_period": "monthly",
+   "amount_period": "weekly",
    "amount_note": "Maximum personal rate €254 per week (2026); means-tested pension for widowed people and surviving civil partners under 66 without enough PRSI contributions",
    "is_automatic": false,
    "application_url": "https://services.mywelfare.ie",
@@ -1554,7 +1554,7 @@
    "amount_min": null,
    "amount_max": 254,
    "amount_currency": "EUR",
-   "amount_period": "monthly",
+   "amount_period": "weekly",
    "amount_note": "Maximum personal rate €254 per week (2026); PRSI-based short-term payment if you cannot work due to illness; paid for up to 2 years (or 1 year with fewer contributions)",
    "is_automatic": false,
    "application_url": "https://services.mywelfare.ie/en/topics/illness-disability-and-caring/",
@@ -1624,7 +1624,7 @@
    "amount_min": null,
    "amount_max": 254,
    "amount_currency": "EUR",
-   "amount_period": "monthly",
+   "amount_period": "weekly",
    "amount_note": "Maximum personal rate €254 per week (2026); paid for up to 26 weeks if you are unfit for work due to an accident at work or a prescribed occupational disease (Occupational Injuries Benefit Scheme)",
    "is_automatic": false,
    "application_url": "https://services.mywelfare.ie/en/topics/illness-disability-and-caring/",
@@ -2323,7 +2323,8 @@
      "Limerick",
      "Kildare",
      "Meath",
-     "Donegal"
+     "Donegal",
+     "Local authority area"
     ],
     "gender": "any"
    },
@@ -2474,7 +2475,8 @@
      "Limerick",
      "Kildare",
      "Meath",
-     "Donegal"
+     "Donegal",
+     "Local authority area"
     ],
     "gender": "any"
    },
@@ -2616,7 +2618,8 @@
      "Limerick",
      "Kildare",
      "Meath",
-     "Donegal"
+     "Donegal",
+     "Local authority area"
     ],
     "gender": "any"
    },
@@ -2849,7 +2852,8 @@
      "Limerick",
      "Kildare",
      "Meath",
-     "Donegal"
+     "Donegal",
+     "Local authority area"
     ],
     "gender": "any"
    },
@@ -2929,7 +2933,8 @@
      "Limerick",
      "Kildare",
      "Meath",
-     "Donegal"
+     "Donegal",
+     "Local authority area"
     ],
     "gender": "any"
    },
@@ -2999,7 +3004,8 @@
      "Limerick",
      "Kildare",
      "Meath",
-     "Donegal"
+     "Donegal",
+     "Local authority area"
     ],
     "gender": "any"
    },
@@ -3074,7 +3080,8 @@
      "Limerick",
      "Kildare",
      "Meath",
-     "Donegal"
+     "Donegal",
+     "Local authority area"
     ],
     "gender": "any"
    },
@@ -3306,7 +3313,7 @@
    "amount_min": 38,
    "amount_max": 38,
    "amount_currency": "EUR",
-   "amount_period": "monthly",
+   "amount_period": "weekly",
    "amount_note": "€38 per week (2026) during the fuel season (September to April, 28 weeks, extended by 4 weeks in 2026); option of two lump sums; only one payment per household",
    "is_automatic": false,
    "application_url": "https://services.mywelfare.ie/en/topics/older-and-retired-people/",
@@ -4403,7 +4410,7 @@
    "amount_min": 259.5,
    "amount_max": 259.5,
    "amount_currency": "EUR",
-   "amount_period": "monthly",
+   "amount_period": "weekly",
    "amount_note": "€259.50 per week (2026) for a 6-month, 30-hours-per-week work experience placement for people unemployed 6+ months (or on certain payments); no cost to the host employer",
    "is_automatic": false,
    "application_url": "https://www.gov.ie/en/service/work-placement-experience-programme/",
@@ -5434,7 +5441,8 @@
      "Limerick",
      "Kildare",
      "Meath",
-     "Donegal"
+     "Donegal",
+     "Local Enterprise Office area"
     ],
     "gender": "any"
    },
@@ -5511,7 +5519,8 @@
      "Limerick",
      "Kildare",
      "Meath",
-     "Donegal"
+     "Donegal",
+     "Local Enterprise Office area"
     ],
     "gender": "any"
    },
@@ -5583,7 +5592,8 @@
      "Limerick",
      "Kildare",
      "Meath",
-     "Donegal"
+     "Donegal",
+     "Local Enterprise Office area"
     ],
     "gender": "any"
    },
@@ -5655,7 +5665,8 @@
      "Limerick",
      "Kildare",
      "Meath",
-     "Donegal"
+     "Donegal",
+     "Local Enterprise Office area"
     ],
     "gender": "any"
    },
@@ -5860,7 +5871,8 @@
      "Limerick",
      "Kildare",
      "Meath",
-     "Donegal"
+     "Donegal",
+     "Local Action Group area"
     ],
     "gender": "any"
    },
@@ -5940,7 +5952,7 @@
    "amount_min": 22,
    "amount_max": 22,
    "amount_currency": "EUR",
-   "amount_period": "monthly",
+   "amount_period": "weekly",
    "amount_note": "€22 per week (2026) extra on your social welfare pension or certain other payments if you live alone; automatic for people getting a pension at 66+ who live alone",
    "is_automatic": true,
    "application_url": "https://services.mywelfare.ie/en/topics/older-and-retired-people/",
@@ -5997,7 +6009,7 @@
    "amount_min": 2.5,
    "amount_max": 2.5,
    "amount_currency": "EUR",
-   "amount_period": "monthly",
+   "amount_period": "weekly",
    "amount_note": "€2.50 per week extra (2026) for people on certain social welfare payments who are living alone and also get the Living Alone Increase and Fuel Allowance (helps with phone or personal alarm costs)",
    "is_automatic": true,
    "application_url": "https://services.mywelfare.ie",
@@ -6242,7 +6254,7 @@
    "amount_min": null,
    "amount_max": 237,
    "amount_currency": "EUR",
-   "amount_period": "monthly",
+   "amount_period": "weekly",
    "amount_note": "EUR237 per week (2026) for a person caring for an orphan (child under 18, or 22 in full-time education, whose parents are dead, unknown or have abandoned them). Contributory version is based on a parent's PRSI and is not means-tested; non-contributory version is means-tested on the orphan's own means",
    "is_automatic": false,
    "application_url": "https://www.citizensinformation.ie/en/social-welfare/death-related-benefits/guardian-and-orphan-payments/",
@@ -7145,7 +7157,8 @@
     "residency_months_min": null,
     "housing_tenure": "owner",
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "rule_source": "geography_unknown"
    },
    "source_url": "https://www.citizensinformation.ie/en/housing/owning-a-home/mortgage-arrears/mortgage-to-rent-scheme/",
    "source_snippet": "If you are having trouble paying your mortgage, the mortgage-to-rent scheme lets you switch from owning your home to renting it as a social housing tenant.",
@@ -7207,7 +7220,8 @@
     "residency_months_min": null,
     "housing_tenure": "owner",
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "rule_source": "geography_unknown"
    },
    "source_url": "https://www.citizensinformation.ie/en/housing/owning-a-home/help-with-buying-a-home/local-authority-mortgages/",
    "source_snippet": "If you want to buy and renovate a derelict or non-habitable home, you may be able to get the Local Authority Purchase and Renovation Loan.",
@@ -7304,7 +7318,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "rule_source": "geography_unknown"
    },
    "source_url": "https://www.svp.ie/get-help",
    "source_snippet": "We assist individuals in need, regardless of faith, ethnicity, status, or sexual orientation... You can request help directly or someone can refer you or your family during times of need.",
