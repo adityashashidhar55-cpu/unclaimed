@@ -32,6 +32,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600;700&display=swap');
 
 :root {
+  /* One focus colour, and not terracotta.
+     Terracotta is simultaneously the error family (.notice--error,
+     .ticks--no li::before, .status--closing) and the eyebrow accent, so a
+     focus ring in it reads as "you have done something wrong". Four local
+     overrides used slate rgba(29,36,48,.6) instead, which meant 14 consecutive
+     focus stops in the wizard were slate while the rest of the site was
+     terracotta. One variable, one colour, no local overrides. */
+  --focus: #1f5fa8;
+
   --lg-fill: rgba(255, 255, 255, 0.72);
   --lg-blur: 4px;
   --lg-blur-strong: 50px;
@@ -42,8 +51,18 @@
 
   --ink:   #12303a;
   --ink-2: rgba(18, 48, 58, 0.82);
-  --ink-3: rgba(18, 48, 58, 0.68);
-  --ink-4: rgba(18, 48, 58, 0.54);
+  /* The secondary ramp, darkened one notch each.
+     --ink-4 was .54, which composites to 3.25–3.34:1 against the real card
+     and paper backgrounds at 11.5–14.7px — under AA 1.4.3 everywhere it is
+     used, and it is used by 23 rules: the footer legal disclaimer on ~5,900
+     pages, the monthly price on /pricing/, the programme count on every
+     /check/ country tile, every .tiny and .eyebrow on the site. It is not a
+     decorative grey; it is the label layer. .68 lands at ≈4.75:1 on --paper
+     and higher on a card. --ink-3 moves with it so the ramp keeps three
+     distinguishable steps (≈12.8 / 6.5 / 4.75) rather than collapsing into
+     two. */
+  --ink-3: rgba(18, 48, 58, 0.78);
+  --ink-4: rgba(18, 48, 58, 0.68);
   --line:   rgba(18, 48, 58, 0.13);
   --line-2: rgba(18, 48, 58, 0.19);
 
@@ -55,9 +74,14 @@
   --teal:    #0f6f76;
   --teal-2:  #14868d;
   --blue:    #1f5fa8;
-  --green:   #1f7a52;
+  /* #1f7a52 measured 4.44:1 behind .badge-verified, whose chip is a tinted
+     rgb(227,237,238) rather than the paper it was picked against — under the
+     4.5 floor on the one badge whose whole job is to be believed. Darkened to
+     5.09:1 on that chip and 5.82:1 on paper. --green moves with it; they were
+     the same colour and drifting them apart would be two greens, not one. */
+  --green:   #1c7049;
   --terracotta: #a8442a;
-  --sage: #1f7a52;
+  --sage: #1c7049;
   --gold: #715c0d;
 
   --shell: 1180px;
@@ -169,8 +193,19 @@ h1, h2, h3, h4 {
 h1 { font-size: clamp(2.6rem, 6.4vw, 5rem); letter-spacing: -.035em; line-height: .95; }
 h2 { font-size: clamp(1.9rem, 3.6vw, 3rem); letter-spacing: -.028em; }
 h3 { font-size: 1.3rem; letter-spacing: -.018em; }
-h4 { font-size: .82rem; font-family: var(--font-body); font-weight: 500;
-     text-transform: uppercase; letter-spacing: .18em; color: var(--ink-4); }
+/* The uppercase eyebrow is a LOOK, not a heading level.
+   Binding it to `h4` meant the tag was picked for its typography, so the
+   footer jumped h2 → h4 and /account/ and /check/ ran h1 → h4 with nothing in
+   between — a screen-reader user hears two missing levels and assumes content
+   was skipped. The class carries the treatment now; the tag carries the
+   level. `h4` keeps the same skin only so any call site not yet converted
+   does not change appearance mid-migration. */
+h4, .h-eyebrow {
+  font-size: .82rem; font-family: var(--font-body); font-weight: 500;
+  text-transform: uppercase; letter-spacing: .18em; color: var(--ink-4);
+  line-height: 1.3;
+}
+h2.h-eyebrow, h3.h-eyebrow { letter-spacing: .18em; }
 
 /* The signature move: one clause upright, one italic at reduced opacity. */
 .serif-italic, em.display { font-style: italic; color: var(--ink-3); }
@@ -186,7 +221,7 @@ a:hover { opacity: .72; }
                   text-decoration-color: rgba(29,36,48,.35); }
 .link-underline:hover { text-decoration-color: rgba(29,36,48,.85); }
 
-:focus-visible { outline: 2px solid var(--terracotta); outline-offset: 3px; border-radius: 4px; }
+:focus-visible { outline: 2px solid var(--focus); outline-offset: 3px; border-radius: 4px; }
 
 /* ------------------------------------------------------------------ */
 /* Layout                                                              */
@@ -198,8 +233,46 @@ a:hover { opacity: .72; }
    viewport with lines running the full width of a desktop screen. */
 .shell-narrow { width: min(100% - 2.5rem, 72ch); margin-inline: auto; }
 .shell-narrow p, .shell-narrow li { max-width: 68ch; }
-.section { padding: clamp(4rem, 9vw, 8rem) 0; }
-.section-tight { padding: clamp(2.5rem, 5vw, 4.5rem) 0; }
+/* Vertical rhythm, measured rather than asserted.
+
+   Both `.section` and `.section-tight` paid full padding on both edges, so at
+   1536px two adjacent home-page sections left 256px of nothing between them,
+   /us/ left a 144px dead band between the stat strip and the filters that
+   filter it, and every page left 145px above the footer. The old comment
+   claimed "the ambient gradient field does the separating"; that gradient
+   runs at 24–30% alpha and separates nothing. Adjacent sections of the same
+   kind now share one gap instead of stacking two. */
+.section { padding-block: clamp(3rem, 6vw, 5rem); }
+.section-tight { padding-block: clamp(2.5rem, 5vw, 4.5rem); }
+.section + .section,
+.section-tight + .section-tight,
+/* The home page's sequence is hero-centre → section-tight → section → …, and
+   only like-with-like collapsed — so the first two joints measured 119px and
+   139px while the last three measured 56–58px. Every adjacency between these
+   four, not just the matching pairs. */
+.section-tight + .section,
+.section + .section-tight,
+.hero-centre + .section,
+.hero-centre + .section-tight { padding-top: 0; }
+
+/* And the other half of the same arithmetic: a trailing margin on the LAST
+   thing inside a section stacks on top of the section's own padding-bottom.
+   /startups/gb/ ends in a `.locked-bucket--inline`, whose `margin: 2.6rem 0`
+   put 42px under the last row before the section's 72px even began — 195px
+   of blank above the footer, against a 152px budget the two blocks actually
+   declare. The margin is right between siblings and wrong at the end.
+
+   Written three levels deep on purpose: the offending margin is not on the
+   section's own last child but on the last child of the last child of it, and
+   because the wrapper has neither padding nor a border the inner margin
+   COLLAPSES OUT through it — the wrapper's own computed margin-bottom reads
+   0px while the space is still there. Zeroing only the outer element
+   therefore changes nothing at all, which is exactly what the first version
+   of this rule did. */
+main > section > *:last-child,
+main > section > *:last-child > *:last-child,
+main > section > *:last-child > *:last-child > *:last-child { margin-bottom: 0; }
+
 .section-rule { border-top: 1px solid var(--line); }
 
 .grid { display: grid; gap: 1.1rem; }
@@ -228,6 +301,20 @@ a:hover { opacity: .72; }
 .card:hover { background: #fff; }
 .card-link { display: block; }
 .card-link:hover { transform: translateY(-2px); opacity: 1; }
+/* The "Check what you're owed →" line at the foot of each home-page product
+   card was an inline `color:#fff` left over from the dark theme: 1.02:1
+   against the composited rgb(250,253,253) card, so on all seven home pages
+   the only call to action inside the card was invisible. It is a real
+   component now, in --teal, and the arrow slides on hover the way a link
+   should rather than the text disappearing. */
+.card-link__go {
+  color: var(--teal); font-size: .9rem; margin-top: .8rem;
+  display: inline-flex; align-items: center; gap: .35rem;
+  transition: gap .2s ease;
+}
+.card-link__go svg { width: 14px; height: 14px; }
+.card-link:hover .card-link__go { gap: .6rem; }
+
 .card-flat { background: transparent; box-shadow: none; }
 .card-flat::before { display: none; }
 
@@ -243,6 +330,34 @@ a:hover { opacity: .72; }
   border-radius: 9999px; padding: .3rem .8rem;
   font-size: .78rem; font-weight: 400; color: var(--ink-2);
   letter-spacing: .01em; white-space: nowrap;
+}
+/* One rule used to draw both `a.tag` (navigates to a category listing) and
+   `span.badge-neutral` (inert, same label text, same page family), so the two
+   were pixel-identical glass pills. A reader who learns the pill is clickable
+   on /us/ clicks a dead one on the programme page and concludes the site is
+   broken. The affordance now lives in the skin: a tag lifts and turns teal
+   under the pointer, a badge is flat and cannot. */
+a.tag { cursor: pointer; }
+a.tag:hover, a.tag:focus-visible { background: #fff; color: var(--teal); opacity: 1; }
+.tag__n { font-variant-numeric: tabular-nums; color: var(--ink-3); margin-left: .4rem; }
+a.tag:hover .tag__n, a.tag:focus-visible .tag__n { color: var(--teal); }
+.badge { cursor: auto; box-shadow: none; background: rgba(18,48,58,.05); }
+/* The recommended tier, said in words. `.card--featured`'s 2px outline is the
+   same visual device as :focus-visible, so on a keyboard pass it read as a
+   focus ring on whatever card happened to be featured. */
+.badge-pick { background: rgba(15,111,118,.10); color: var(--teal); }
+
+/* The programme page's primary action, repeated for narrow screens only.
+
+   Below 900px `.sticky-side` goes static and lands about 4,000px down, after
+   three locked panels — so on a phone the only conversion on the page was the
+   last thing on it. Exactly one of the two is ever in the layout, so a test
+   counting visible primaries still finds one. */
+.prog-hoist { display: none; margin: 1.2rem 0 0; }
+@media (max-width: 900px) {
+  .prog-hoist { display: block; }
+  .prog-hoist > .btn { width: 100%; justify-content: center; }
+  .sticky-side .btn-primary { display: none; }
 }
 .pill-accent, .badge-verified { color: var(--sage); }
 .badge-auto { color: var(--ink-4); }
@@ -265,8 +380,14 @@ a:hover { opacity: .72; }
    because the point is to beat every author rule that follows. */
 [hidden] { display: none !important; }
 
+/* justify-content is a no-op on an auto-width button and the whole fix on a
+   full-width one. Without it /account/'s "Send me a code" was a 499px pill
+   with its label 22px from the left and 366px of empty space to the right, and
+   both sidebar primaries on all 2,216 programme pages did the same. The
+   stacked-button rules below used text-align: center, which does nothing to a
+   flex container — .prog-hoist > .btn already carried the real fix. */
 .btn {
-  display: inline-flex; align-items: center; gap: .5rem;
+  display: inline-flex; align-items: center; justify-content: center; gap: .5rem;
   border-radius: 9999px; padding: .72rem 1.4rem;
   font-family: var(--font-body); font-size: .95rem; font-weight: 400;
   color: var(--ink); cursor: pointer; transition: background .2s ease, transform .2s ease;
@@ -279,6 +400,35 @@ a:hover { opacity: .72; }
 }
 .btn-primary:hover { background: var(--teal-2); }
 .btn-ghost { background: transparent; }
+
+/* A disabled button must stop behaving like a button.
+
+   There was no `:disabled` rule anywhere in this file, while `.btn` sets
+   `cursor:pointer` and `.btn:hover` turns the surface white and scales it up
+   unconditionally. Watched with a MutationObserver against a slow
+   /auth/request, a button correctly showing "Sending…" with `disabled=true`
+   still lit up and grew under the pointer — the exact feedback that means
+   "press me", offered to someone whose press will be swallowed. Hence the
+   per-variant :hover overrides as well: the generic rule alone loses to
+   `.btn-primary:hover`. */
+.btn:disabled, .btn[aria-disabled='true'] {
+  opacity: .55; cursor: default; transform: none;
+}
+.btn:disabled:hover, .btn[aria-disabled='true']:hover {
+  transform: none; background: var(--lg-fill);
+}
+.btn-primary:disabled:hover, .btn-primary[aria-disabled='true']:hover { background: var(--teal); }
+.btn-ghost:disabled:hover, .btn-ghost[aria-disabled='true']:hover { background: transparent; }
+
+/* Pending work needs a sign that something is happening, not just a label
+   that stopped responding. 14px so it sits on the cap height of .btn text. */
+.btn__spinner {
+  width: 14px; height: 14px; flex: none; border-radius: 50%;
+  border: 2px solid currentColor; border-right-color: transparent;
+  opacity: .7; animation: btn-spin .7s linear infinite;
+}
+@keyframes btn-spin { to { transform: rotate(360deg); } }
+@media (prefers-reduced-motion: reduce) { .btn__spinner { animation-duration: 2.4s; } }
 
 .stat { border-radius: var(--r-card); padding: 1.1rem 1.2rem; }
 .stat__n { font-family: var(--font-heading); font-size: 2.4rem; line-height: 1; color: var(--ink); display: block; }
@@ -296,10 +446,22 @@ a:hover { opacity: .72; }
   border-bottom: 1px solid var(--line);
   transition: background .2s ease, padding-left .2s ease;
 }
-.list-row:hover { background: #fff; padding-left: .7rem; }
+/* Only rows that go somewhere. This slid the inert "What blocked you" and
+   "Why N ruled you out" tables 8px right and filled them solid white on hover
+   — the markup at src/app.js already patched style="cursor:default" onto them
+   because someone knew they were inert. An affordance on a dead row is a
+   promise the row cannot keep. */
+a.list-row:hover { background: #fff; padding-left: .7rem; }
 .list-row__name { font-size: 1.02rem; color: var(--ink); }
 .list-row__meta { font-size: .82rem; color: var(--ink-4); margin-top: .15rem; }
-.list-row__right { text-align: right; flex-shrink: 0; }
+/* The templates emit `</span><span` with no whitespace between the count and
+   its unit, so /countries/, /browse/, the results screen and 46 built pages
+   rendered "16programmes". A gap, not a literal space: a space in the markup
+   is one edit away from being lost again and says nothing about intent. */
+.list-row__right {
+  display: flex; align-items: baseline; justify-content: flex-end;
+  gap: .35rem; text-align: right; flex-shrink: 0;
+}
 .list-row__amount { font-family: var(--font-heading); font-size: 1.25rem; color: var(--ink); }
 
 /* ------------------------------------------------------------------ */
@@ -352,7 +514,7 @@ a:hover { opacity: .72; }
 @media (max-width: 560px) {
   /* Stacked, full width, so a thumb cannot land between two of them. */
   .btn-row { flex-direction: column; align-items: stretch; }
-  .btn-row > .btn { width: 100%; text-align: center; }
+  .btn-row > .btn { width: 100%; }
 }
 
 /* The hero's pair of calls to action is the same row, and had no layout rule
@@ -362,7 +524,17 @@ a:hover { opacity: .72; }
 .hero__cta { display: flex; flex-wrap: wrap; gap: .6rem .7rem; align-items: center; }
 @media (max-width: 560px) {
   .hero__cta { flex-direction: column; align-items: stretch; }
-  .hero__cta > .btn { width: 100%; text-align: center; }
+  .hero__cta > .btn { width: 100%; }
+
+  /* The hero was not the only place two buttons sit in a row. The closing
+     block on the home page, /enterprise/'s pair and the workspace's empty
+     state all use the generic .row, and at 390px they split the width two
+     ways — "Voir les tarifs" came out 132px wide. Same treatment, scoped with
+     :has() so it only reaches a row that actually holds a button pair and
+     leaves the many .row elements holding chips, badges and meta text alone.
+     .wizard-nav is exempt: back-and-forward genuinely belong side by side. */
+  .row:has(> .btn + .btn):not(.wizard-nav .row) { flex-direction: column; align-items: stretch; }
+  .row:has(> .btn + .btn):not(.wizard-nav .row) > .btn { width: 100%; margin-left: 0; }
 }
 
 /* ------------------------------------------------------------------ */
@@ -412,9 +584,11 @@ a:hover { opacity: .72; }
 .callout--terracotta::before { background: linear-gradient(180deg, rgba(176, 88, 56, .55), transparent 45%, rgba(176, 88, 56, .35)); }
 
 /* Four numbers under a country hero, and the category tags under those. */
-.stat-strip { display: flex; flex-wrap: wrap; gap: .7rem; margin-top: 2rem; }
+.stat-strip { display: flex; flex-wrap: wrap; gap: .7rem; margin-top: 2rem; margin-bottom: 1.75rem; }
 .stat-strip > .stat { flex: 1 1 8rem; padding: .9rem 1.1rem; border-radius: 1.1rem; }
-.filters { display: flex; flex-wrap: wrap; gap: .5rem; margin-bottom: 2rem; }
+/* The category filters belong to the numbers above them; 144px of air said
+   they were a separate thing. */
+.filters { display: flex; flex-wrap: wrap; gap: .5rem; margin-bottom: 1.25rem; }
 
 .center { text-align: center; }
 
@@ -503,9 +677,13 @@ a:hover { opacity: .72; }
   padding: .5rem 0; text-align: center; font-size: .8rem; color: var(--ink-3);
 }
 
-footer.site { padding: 4rem 0 3rem; margin-top: 5rem; border-top: 1px solid var(--line); }
+footer.site { padding: 3rem 0 2.5rem; margin-top: 2rem; border-top: 1px solid var(--line); }
 footer.site ul { list-style: none; padding: 0; margin: .6rem 0 0; }
-footer.site li { margin-bottom: .4rem; font-size: .9rem; }
+/* 14 inline footer anchors per page were 16px-tall targets 22.4px apart at
+   390px. Padding on the anchor, not margin on the li, so the target itself
+   grows rather than the space between targets. */
+footer.site li { margin-bottom: .1rem; font-size: .9rem; }
+footer.site a { display: inline-block; padding-block: .3rem; }
 footer.site a { color: var(--ink-3); }
 footer.site a:hover { color: var(--ink); opacity: 1; }
 
@@ -614,7 +792,10 @@ footer.site a:hover { color: var(--ink); opacity: 1; }
   white-space: nowrap;
 }
 .audience__tab:hover { color: var(--ink); }
-
+/* The unselected half of a two-state control is a control, not a label: it
+   needs a boundary the eye can find. 1.4.11 asks 3:1 for the shape itself,
+   which a colour-only distinction between the two halves does not give. */
+.audience__tab { box-shadow: inset 0 0 0 1px rgba(18,48,58,.42); }
 /* The selected tab reads as the active surface.
 
    Matched through `~ *` as well as `~`, because the switch now lives inside
@@ -631,7 +812,9 @@ footer.site a:hover { color: var(--ink); opacity: 1; }
 #aud-biz:checked ~ * .audience__switch label[for="aud-biz"],
 #acct-me:checked ~ * .audience__switch label[for="acct-me"],
 #acct-biz:checked ~ * .audience__switch label[for="acct-biz"] {
-  background: var(--teal); color: #fff;
+  /* The ring belongs to the unselected half only: the selected one is a
+     filled teal surface and already has all the edge it needs. */
+  background: var(--teal); color: #fff; box-shadow: none;
 }
 
 /* Keyboard focus has to land somewhere visible, since the input itself is
@@ -646,7 +829,7 @@ footer.site a:hover { color: var(--ink); opacity: 1; }
 #aud-biz:focus-visible ~ * .audience__switch label[for="aud-biz"],
 #acct-me:focus-visible ~ * .audience__switch label[for="acct-me"],
 #acct-biz:focus-visible ~ * .audience__switch label[for="acct-biz"] {
-  outline: 2px solid rgba(29,36,48,.6); outline-offset: 3px;
+  outline: 2px solid var(--focus); outline-offset: 3px;
 }
 
 /* The hero placement: centred under the lede, and the thing you notice next
@@ -738,6 +921,17 @@ select.field option, .field select option { background: #fff; }
   background: #fff;
   box-shadow: inset 0 0 0 1px var(--line-2);
 }
+/* `.notice` was dead — nothing in src/ carried the class — and /account/ drew
+   "Could not send the code." as a `p.small` in --ink-3, typographically
+   identical to the marketing sentence beside it. A failure the reader has to
+   notice cannot be styled like prose. Terracotta family, no new hues. */
+.notice--error {
+  background: rgba(176,88,56,.09);
+  color: #8c3413;
+  box-shadow: inset 0 0 0 1px rgba(176,88,56,.35);
+}
+.notice--error a { color: #8c3413; text-decoration: underline; }
+.notice:focus-visible { outline: 2px solid var(--terracotta); outline-offset: 3px; }
 
 @media print {
   body::before, body::after { display: none; }
@@ -762,15 +956,31 @@ select.field option, .field select option { background: #fff; }
 
 .wizard { max-width: 62rem; margin-inline: auto; }
 
-.step {
+/* This rule was written for the step counter. The counter is emitted as
+   `<p class="tiny progress-caption">`, and `.step` only ever matched each
+   wizard view's WRAPPER div — so every question screen, every field label and
+   every .q-why in both wizards rendered at 13.12px in 68% ink, and .q-why's
+   62ch max-width resolved to 452px under a 992px headline. The wrapper is
+   `.wizard-step` now and this points where it always meant to. */
+.progress-caption {
   font-size: .82rem; letter-spacing: .04em; color: var(--ink-4);
-  margin-bottom: 1.6rem;
 }
+
+.wizard-step { margin-bottom: 1.6rem; }
 
 /* .q is the question HEADING in this wizard, not a wrapper. */
 h1.q, h2.q { margin: 0 0 .45rem; }
 div.q { margin-bottom: 2.4rem; }
 .q-why, .hint { color: var(--ink-3); margin: 0 0 1.6rem; max-width: 62ch; }
+/* Body copy under a question, not fine print. */
+.q-why { font-size: 1.05rem; color: var(--ink-2); max-width: 58ch; }
+
+/* A value the wizard silently rewrote. Type 99 into household size and you get
+   20 — and the sentence explaining that was styled identically to the static
+   help text beside it, so the correction read as instructions. */
+.hint--corrected { color: #8c3413; font-weight: 500; }
+.hint--corrected::before { content: '⚠ '; }
+.field input[aria-invalid='true'] { box-shadow: inset 0 0 0 2px var(--terracotta); }
 
 /* --- options ------------------------------------------------------- */
 
@@ -800,9 +1010,19 @@ div.q { margin-bottom: 2.4rem; }
   -webkit-mask-composite: xor; mask-composite: exclude; pointer-events: none;
 }
 .opt:hover { background: #fff; }
-.opt:focus-visible { outline: 2px solid rgba(29,36,48,.6); outline-offset: 3px; }
+/* No local colour: the global :focus-visible rule is the one voice. */
+.opt:focus-visible { outline-offset: 3px; }
 .opt[aria-pressed="true"] { background: var(--teal); color: #fff; }
 .opt[aria-pressed="true"]::before { opacity: 0; }
+
+/* A tile that commits your answer and moves you on, as distinct from one that
+   only ticks. Four behaviours shared one appearance; this is the one that
+   navigates. */
+.opt--go::after {
+  content: '›'; margin-left: auto; padding-left: .6rem;
+  font-size: 1.3rem; line-height: 1; color: var(--ink-4);
+}
+.opt--go[aria-pressed="true"]::after { color: #fff; }
 
 /* The label and its count were running together as one string. */
 .opt > span { display: flex; flex-direction: column; gap: .18rem; min-width: 0; }
@@ -834,12 +1054,19 @@ div.q { margin-bottom: 2.4rem; }
 .wizard-nav .row { display: flex; gap: .6rem; align-items: center; }
 
 .progress-rail { display: flex; gap: .35rem; margin-bottom: 2rem; }
-.progress-rail i {
+/* The segments are `<span>`s.
+   These three rules were written against `.progress-rail i`, which nothing in
+   src/app.js or src/pwa/startup-check.js has ever emitted, so the rail
+   measured 0px tall on every step of a six-screen income form: the .done and
+   .current classes were computed correctly and painted nothing. Matched on
+   the child rather than the tag so the next markup change cannot silently
+   unstyle it again. */
+.progress-rail > * {
   flex: 1; height: 3px; border-radius: 2px; background: rgba(29,36,48,.12);
   transition: background .3s ease;
 }
-.progress-rail i.done { background: rgba(15,111,118,.45); }
-.progress-rail i.current { background: var(--teal); }
+.progress-rail > *.done { background: rgba(15,111,118,.45); }
+.progress-rail > *.current { background: var(--teal); }
 
 /* --- results ------------------------------------------------------- */
 
@@ -891,11 +1118,63 @@ div.q { margin-bottom: 2.4rem; }
 .locked-bucket .btn { margin-right: .5rem; }
 
 .locked__rows { display: grid; gap: .5rem; margin: 1.1rem 0 1.3rem; }
-.locked__row { height: 3.4rem; border-radius: .8rem;
-  background: linear-gradient(90deg, rgba(29,36,48,.10), rgba(29,36,48,.045) 60%, rgba(29,36,48,.085)); }
-.locked__row:nth-child(2) { opacity: .72; }
-.locked__row:nth-child(3) { opacity: .48; }
-.locked__row:nth-child(4) { opacity: .26; }
+
+/* A withheld record, not a loading skeleton.
+
+   `.locked__row` used to be a shimmer gradient bar with a descending
+   nth-child opacity ramp (.72 / .48 / .26). That is the universal signifier
+   for "content is on its way" — a fade-out reads as still arriving — and it
+   sat next to `.lock-chip`, which draws ●●●● in the slot a real amount
+   occupies and is the correct idiom. On one load of /us/ the reader met 18 of
+   one and 29 of the other. One pattern now: the shape of the record is shown
+   — a blurred name bar on the left, the redacted amount right-aligned in the
+   same column real amounts use — and every row is at full strength, because
+   nothing here is loading. */
+.locked__row {
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 1rem; height: 3.4rem; padding: 0 1rem; border-radius: .8rem;
+  background: rgba(18,48,58,.055);
+  box-shadow: inset 0 0 0 1px rgba(18,48,58,.09);
+}
+.locked__row::before {
+  content: ''; display: block; height: .7rem; width: min(58%, 16rem);
+  border-radius: 999px; background: rgba(18,48,58,.16);
+  /* Blur, not fade: the name is present and obscured, which is what a
+     redaction looks like. */
+  filter: blur(2.5px);
+}
+.locked__row::after {
+  content: '●●●●'; letter-spacing: .18em; font-size: .8rem;
+  font-family: var(--font-body); color: var(--ink-3); white-space: nowrap;
+}
+/* The first row says the word out loud, once, so the pattern is taught
+   rather than guessed at. */
+.locked__row:first-child { position: relative; }
+.locked__row__lock {
+  position: absolute; left: 1rem; top: -.62rem;
+  display: inline-flex; align-items: center; gap: .3rem;
+  padding: .1rem .5rem; border-radius: 999px;
+  background: var(--paper-2); box-shadow: inset 0 0 0 1px rgba(18,48,58,.14);
+  font-size: .68rem; letter-spacing: .1em; text-transform: uppercase;
+  color: var(--ink-3);
+}
+.locked__row__lock svg { width: 10px; height: 10px; }
+
+/* The marker every withheld value carries — the redacted rows above and the
+   ●●●● amount chip in a list row. One class so a test can enumerate them and
+   confirm the site speaks about withheld content in exactly one voice. A
+   redaction is not selectable text; saying so is the honest declaration. */
+.withheld { user-select: none; -webkit-user-select: none; }
+
+/* The control for a secondary locked panel lives in its heading row.
+   `.bucket__head` is already `display:flex; justify-content:space-between`,
+   so this needs no layout of its own. */
+.bucket__unlock {
+  display: inline-flex; align-items: center; gap: .3rem;
+  font-size: .9rem; color: var(--teal); white-space: nowrap;
+}
+.bucket__unlock svg { width: 14px; height: 14px; transition: transform .2s ease; }
+.bucket__unlock:hover svg { transform: translateX(2px); }
 
 @media (max-width: 640px) {
   .opts { grid-template-columns: 1fr; }
@@ -906,7 +1185,7 @@ div.q { margin-bottom: 2.4rem; }
 /* The locked amount on a browse row: reads as a value that exists and is
    withheld, rather than as missing data. */
 .lock-chip {
-  letter-spacing: .18em; color: var(--ink-4);
+  letter-spacing: .18em; color: var(--ink-3);
   font-family: var(--font-body); font-size: .8rem;
 }
 
@@ -1142,8 +1421,11 @@ div.q { margin-bottom: 2.4rem; }
   transition: color .3s ease, background .3s ease;
 }
 .audswitch__tab:hover { color: var(--ink); }
-.audswitch__tab[aria-selected='true'] { background: var(--teal); color: #fff; }
-.audswitch__tab:focus-visible { outline: 2px solid rgba(29,36,48,.6); outline-offset: 3px; }
+/* Same reasoning as .audience__tab: the unselected half must have a visible
+   edge of its own, or it reads as static text next to a button. */
+.audswitch__tab { box-shadow: inset 0 0 0 1px rgba(18,48,58,.42); }
+.audswitch__tab[aria-selected='true'] { background: var(--teal); color: #fff; box-shadow: none; }
+.audswitch__tab:focus-visible { outline-offset: 3px; }
 
 @media (max-width: 560px) {
   .audswitch { display: flex; width: 100%; }

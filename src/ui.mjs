@@ -30,7 +30,30 @@ export const ICON = {
   seal: `<svg class="wordmark__seal" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="10.5" stroke="currentColor" stroke-width="1.2"/><circle cx="12" cy="12" r="7" stroke="currentColor" stroke-width="0.8" stroke-dasharray="2 2"/><path d="M8.4 12.2l2.5 2.5 4.7-5.2" stroke="#a8431d" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>`,
   check: `<svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8.4l3.2 3.2L13 4.8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>`,
   arrow: `<svg viewBox="0 0 16 16" width="14" height="14" fill="none" aria-hidden="true"><path d="M2 8h11M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>`,
+  lock: `<svg viewBox="0 0 16 16" width="10" height="10" fill="none" aria-hidden="true"><rect x="3" y="7" width="10" height="7" rx="1.6" stroke="currentColor" stroke-width="1.5"/><path d="M5.5 7V5a2.5 2.5 0 015 0v2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>`,
 };
+
+/**
+ * The rows that stand in for records a signed-out reader may not see.
+ *
+ * One idiom, everywhere. These used to be shimmer bars with a descending
+ * opacity ramp, which is the loading-skeleton pattern — a reader waits for
+ * them to resolve, and they never do. They are drawn as redacted records now:
+ * the shape of the row, a blurred name, ●●●● in the column a real amount
+ * occupies, and the word "Locked" once at the top so the pattern is stated
+ * rather than inferred. `withheld` is the class every withheld value on the
+ * site carries, `.lock-chip` included, so a test can find them all.
+ */
+export function lockedRows(count, T = EN) {
+  const n = Math.max(0, count);
+  return `<div class="locked__rows" aria-hidden="true">
+      ${Array.from({ length: n }, (_, i) =>
+        `<div class="locked__row withheld">${
+          i === 0 ? `<span class="locked__row__lock">${ICON.lock}${esc(T('lockedWord'))}</span>` : ''
+        }</div>`,
+      ).join('')}
+    </div>`;
+}
 
 /* ------------------------------------------------------------------ */
 /* Layout                                                              */
@@ -63,6 +86,25 @@ export function layout({
   scripts = '',
   head = '',
   nav = '',
+  /**
+   * Who this page is for, decided by the generator.
+   *
+   * `data-audience` on <html> switches the masthead CTA, the nav and half the
+   * marketing copy between the consumer product and the company one. It used
+   * to be written only by the boot script from a cookie, defaulting to "me" —
+   * so /enterprise/, /dashboard/ and every /startups/** page, the company
+   * product's own surfaces, were wrapped in navigation for households
+   * claiming rent support unless the visitor had first clicked the toggle on
+   * the home page. Search arrivals never had.
+   *
+   *   'biz' | 'me' — a page with only one half. The attribute is generated,
+   *                  the boot script and initAudience() are not shipped, and
+   *                  the page is correct with JavaScript disabled.
+   *   null         — a page that genuinely carries both halves (the home
+   *                  hero, /pricing/, and the shared chrome pages). Renders
+   *                  "me" server-side and lets the cookie take over.
+   */
+  audience = null,
 }) {
   const fullTitle = title === SITE_NAME ? title : `${title} · ${SITE_NAME}`;
   const LB = linkBase ?? base;
@@ -70,16 +112,25 @@ export function layout({
   const ldBlocks = jsonld
     .map((o) => `<script type="application/ld+json">${JSON.stringify(o).replace(/</g, '\\u003c')}</script>`)
     .join('\n');
+  const dualAudience = audience == null;
   return `<!doctype html>
-<html lang="${lang}">
+<html lang="${lang}" data-audience="${dualAudience ? 'me' : esc(audience)}">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<!-- Individual or company, decided before the first paint. This runs ahead of
+${
+  dualAudience
+    ? `<!-- Individual or company, decided before the first paint. This runs ahead of
      the stylesheet on purpose: read the cookie a frame later and the visitor
      sees the household site flash before the company one replaces it, which
-     is worse than not having the switch at all. -->
-<script>${BOOT_SCRIPT}</script>
+     is worse than not having the switch at all. Only on pages that carry both
+     halves: on a single-audience page the generator has already answered the
+     question, and letting a stale cookie overwrite it is the bug this
+     attribute was added to fix. -->
+<script>${BOOT_SCRIPT}</script>`
+    : `<!-- Single-audience page: data-audience is generated above and nothing
+     client-side may change it. -->`
+}
 <title>${esc(fullTitle)}</title>
 <meta name="description" content="${attr(description)}">
 ${canonical ? `<link rel="canonical" href="${attr(canonical)}">` : ''}
@@ -122,8 +173,8 @@ ${ldBlocks}
         <a href="${base}/api/">${esc(T('navApi'))}</a>
       </span>
       <span class="nav nav--links aud-biz">
-        <a href="${base}/enterprise/">${esc(T('navEnterprise'))}</a>
-        <a href="${base}/startups/">${esc(T('navProgrammes'))}</a>
+        <a href="${LB}/enterprise/">${esc(T('navEnterprise'))}</a>
+        <a href="${LB}/startups/">${esc(T('navProgrammes'))}</a>
         <a href="${base}/dashboard/">${esc(T('footWorkspace'))}</a>
         <a href="${LB}/pricing/">${esc(T('navPricing'))}</a>
         <a href="${LB}/methodology/">${esc(T('navHow'))}</a>
@@ -146,7 +197,7 @@ ${ldBlocks}
       ${
         nav ||
         `<a class="btn btn-sm btn-primary aud-me" href="${LB}/check/">${esc(T('ctaCheck'))}</a>
-         <a class="btn btn-sm btn-primary aud-biz" href="${base}/startups/check/">${esc(T('ctaCheckCompany'))}</a>`
+         <a class="btn btn-sm btn-primary aud-biz" href="${LB}/startups/check/">${esc(T('ctaCheckCompany'))}</a>`
       }
     </nav>
   </div>
@@ -162,23 +213,28 @@ ${body}
         <p class="small" style="margin-top:.8rem;max-width:32ch">${esc(T('tagline'))} ${esc(T('footFreeLine'))}</p>
       </div>
       <div>
-        <h4>${esc(T('footProduct'))}</h4>
+        ${/* The eyebrow look is a class now, not a tag. These were <h4>
+              because they should look like eyebrows, which put an h2 → h4
+              skip in the footer of every one of ~5,900 pages: a screen-reader
+              user hears two levels vanish and reasonably assumes content was
+              skipped. Same pixels, honest outline. */''}
+        <h2 class="h-eyebrow">${esc(T('footProduct'))}</h2>
         <ul>
           <li class="aud-me"><a href="${LB}/check/">${esc(T('ctaCheck'))}</a></li>
-          <li class="aud-biz"><a href="${base}/startups/check/">${esc(T('ctaCheckCompany'))}</a></li>
+          <li class="aud-biz"><a href="${LB}/startups/check/">${esc(T('ctaCheckCompany'))}</a></li>
           <li class="aud-me"><a href="${LB}/countries/">${esc(T('navCountries'))}</a></li>
-          <li class="aud-biz"><a href="${base}/startups/">${esc(T('navProgrammes'))}</a></li>
+          <li class="aud-biz"><a href="${LB}/startups/">${esc(T('navProgrammes'))}</a></li>
           <li><a href="${LB}/methodology/">${esc(T('navHow'))}</a></li>
           <li class="aud-me"><a href="${base}/blog/">${esc(T('navWriting'))}</a></li>
           <li><a href="${LB}/pricing/">${esc(T('navPricing'))}</a></li>
           <li><a href="${LB}/auto-apply/">${esc(T('navAutoApply'))}</a></li>
-          <li class="aud-biz"><a href="${base}/enterprise/">${esc(T('navEnterprise'))}</a></li>
+          <li class="aud-biz"><a href="${LB}/enterprise/">${esc(T('navEnterprise'))}</a></li>
           <li class="aud-biz"><a href="${base}/dashboard/">${esc(T('footWorkspace'))}</a></li>
           <li class="aud-me"><a href="${base}/app/">${esc(T('navApp'))}</a></li>
         </ul>
       </div>
       <div>
-        <h4>${esc(T('footDevelopers'))}</h4>
+        <h2 class="h-eyebrow">${esc(T('footDevelopers'))}</h2>
         <ul>
           <li><a href="${base}/api/">${esc(T('navApi'))}</a></li>
           <li><a href="${base}/api/v1/countries.json">countries.json</a></li>
@@ -186,7 +242,7 @@ ${body}
         </ul>
       </div>
       <div>
-        <h4>${esc(T('footTrust'))}</h4>
+        <h2 class="h-eyebrow">${esc(T('footTrust'))}</h2>
         <ul>
           <li><a href="${LB}/privacy/">${esc(T('footPrivacy'))}</a></li>
           <li><a href="${LB}/methodology/#limits">${esc(T('footLimits'))}</a></li>
@@ -198,7 +254,7 @@ ${body}
     ${
       altLangs.length > 1
         ? `<div style="margin-top:2.5rem;padding-top:1.6rem;border-top:1px solid var(--line)">
-      <h4 style="margin-bottom:.7rem">${esc(T('language'))}</h4>
+      <h2 class="h-eyebrow" style="margin-bottom:.7rem">${esc(T('language'))}</h2>
       <div class="langbar">${altLangs
         .map((a) => `<a href="${a.href}"${a.lang === lang ? ' aria-current="true"' : ''} hreflang="${a.lang}">${esc(a.native)}</a>`)
         .join('')}</div>
@@ -289,10 +345,10 @@ ${scripts}
      delay first paint, and it fails silently when the API is not there. -->
 <script type="module">
 import { track } from "${base}/beacon.js?v=${ASSET_V}";
-import { initAudience } from "${base}/audience.js?v=${ASSET_V}";
+${dualAudience ? `import { initAudience } from "${base}/audience.js?v=${ASSET_V}";` : ''}
 import { bindCheckout } from "${base}/app/checkout.js?v=${ASSET_V}";
 import { unlockLists } from "${base}/app/unlock.js?v=${ASSET_V}";
-initAudience();
+${dualAudience ? 'initAudience();' : ''}
 /* Site-wide, because the locks are site-wide. Every browse list ships with
    ●●●● where the amount goes and a "26 more programmes — see plans" block at
    the bottom, on the country pages, the category pages and under every
@@ -429,7 +485,7 @@ export function listRow(base, cc, p, currency) {
     <span class="list-row__meta">${esc(p.name_local !== p.name_en ? p.name_local + ' · ' : '')}${esc(p.funder)}</span>
   </span>
   <span class="list-row__right">
-    <span class="list-row__amount lock-chip" data-row-amount aria-label="Amount locked">&#9679;&#9679;&#9679;&#9679;</span>
+    <span class="list-row__amount lock-chip withheld" data-row-amount aria-label="Amount locked">&#9679;&#9679;&#9679;&#9679;</span>
     <span class="row" style="gap:.3rem">${verificationBadge(p.verification_status)}</span>
   </span>
 </a>`;
@@ -490,9 +546,7 @@ export function teaseList({
       : '';
   return `<div class="${container}">${shown.join('')}</div>
   <section class="locked-bucket locked-bucket--inline"${teaseAttrs}>
-    <div class="locked__rows" aria-hidden="true">
-      ${Array.from({ length: Math.min(hidden, 4) }, () => '<div class="locked__row"></div>').join('')}
-    </div>
+    ${lockedRows(Math.min(hidden, 4), T)}
     <p class="small" style="margin:.6rem 0 0">${T('moreLocked', hidden, esc(noun))}</p>
     <p class="btn-row" style="margin:.8rem 0 0">
       <a class="btn btn-primary btn-sm" href="${href ?? '/pricing/'}">${esc(T('seePlans'))}</a>
@@ -519,18 +573,28 @@ export function locked({ title, blurb, rows = 3, id = null, tr = null, base = ''
      screen, plus a fourth pair from the inline tease below. Repeating a call
      to action does not double the conversion; it reads as a page that is
      mostly wall. The later panels say what is behind them and stop. */
+  /* A price with no button beside it is nagging, not selling.
+
+     The `cta:false` panels used to keep `lockedNote` — "Email and a six-digit
+     code, then €50 a year" — with nothing to click, so a programme page
+     quoted €50 three times and offered a control once, and on the results
+     screen the largest withheld bucket (23 programmes) rendered four bars,
+     no buttons and no note at all. The heading row is already a flex
+     space-between, so the control goes there: one quiet "Unlock" link
+     pointing at the same target the primary CTA uses. The price is stated
+     once, next to the button that acts on it. */
   return `<section class="locked-bucket"${id ? ` data-locked="${esc(id)}"` : ''}>
-    <div class="bucket__head"><h2 style="margin:0">${esc(title)}</h2></div>
+    <div class="bucket__head"><h2 style="margin:0">${esc(title)}</h2>${
+      cta ? '' : `<a class="bucket__unlock" href="${base}/account/">${esc(T('unlockLink'))} ${ICON.arrow}</a>`
+    }</div>
     ${blurb ? `<p class="small">${esc(blurb)}</p>` : ''}
-    <div class="locked__rows" aria-hidden="true">
-      ${Array.from({ length: rows }, () => '<div class="locked__row"></div>').join('')}
-    </div>
+    ${lockedRows(rows, T)}
     ${
       cta
         ? `<p class="btn-row"><a class="btn btn-primary" href="${base}/account/">${esc(T('signInUnlock'))}</a>
        <a class="btn" href="${base}/pricing/">${esc(T('seePricing'))}</a></p>
     <p class="tiny">${esc(T('lockedNote'))}</p>`
-        : `<p class="tiny">${esc(T('lockedNote'))}</p>`
+        : ''
     }
   </section>`;
 }
