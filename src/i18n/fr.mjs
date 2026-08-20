@@ -504,6 +504,40 @@ export default {
      A string that is absent here renders in English, which is what the page
      did for all of them before this section existed. */
   wizard: {
+    "Programmes checked in {country}: {n}.": "Dispositifs examinés en {country} : {n}.",
+    "These all pass the same tests already: {list}. Each card below shows only what is true of that one.": "Tous passent déjà les mêmes tests : {list}. Chaque fiche ci-dessous n'indique que ce qui lui est propre.",
+    "Anyone with that link sees the answers you gave — where the company is registered, its stage, its headcount and its turnover.": "Toute personne disposant de ce lien voit les réponses que vous avez données : le pays d'immatriculation de l'entreprise, son stade, son effectif et son chiffre d'affaires.",
+    "The dataset covers {n} jurisdictions so far — yours may simply not be in it yet.": "Le jeu de données couvre {n} juridictions pour l'instant — la vôtre n'y est peut-être tout simplement pas encore.",
+    "one=One is borrowing rather than income, which is why it is in no total here.|other={c} are borrowing rather than income, which is why they are in no total here.": "one=L'un d'eux est un emprunt et non un revenu, c'est pourquoi il n'entre dans aucun total ici.|other={c} d'entre eux sont des emprunts et non des revenus, c'est pourquoi ils n'entrent dans aucun total ici.",
+    "We do not have a publishable figure for every one of these, so nothing on this page adds them into a single total.": "Nous n'avons pas de montant publiable pour chacun d'eux, donc rien sur cette page ne les additionne en un total unique.",
+    /* The results screen, rebuilt: one heading, one claim that has to add up,
+       one action above the fold, and one "answer one more thing" bucket in
+       place of the two that said the same thing. Every literal below is new
+       copy on that screen — added here in the same commit, because a string
+       added to src/app.js and to no locale file renders English and nothing
+       fails until the whole screen is measured. */
+    "one={n} programme you appear to qualify for|other={n} programmes you appear to qualify for": "one={n} dispositif auquel vous semblez avoir droit|other={n} dispositifs auxquels vous semblez avoir droit",
+    "one={money} a year is what one of them publishes as a ceiling.|other={money} a year is what {p} of them publish as ceilings.": "one={money} par an : c'est le plafond publié par l'un d'eux.|other={money} par an : ce sont les plafonds publiés par {p} d'entre eux.",
+    "one={money} paid once is what one of them publishes as a ceiling.|other={money} paid once is what {p} of them publish as ceilings.": "one={money} versés une seule fois : c'est le plafond publié par l'un d'eux.|other={money} versés une seule fois : ce sont les plafonds publiés par {p} d'entre eux.",
+    "one=One publishes no figure at all — the authority works it out from your circumstances — so nothing on this page counts it.|other={u} publish no figure at all — the authority works those out from your circumstances — so nothing on this page counts them.": "one=L'un d'eux ne publie aucun montant — l'administration le calcule selon votre situation — donc rien sur cette page ne le compte.|other={u} d'entre eux ne publient aucun montant — l'administration les calcule selon votre situation — donc rien sur cette page ne les compte.",
+    "one=One is borrowing rather than income ({v} of credit), which is why it is in no total here.|other={c} are borrowing rather than income ({v} of credit), which is why they are in no total here.": "one=L'un d'eux est un emprunt et non un revenu ({v} de crédit), c'est pourquoi il n'entre dans aucun total ici.|other={c} d'entre eux sont des emprunts et non des revenus ({v} de crédit), c'est pourquoi ils n'entrent dans aucun total ici.",
+    "Not one of them publishes a figure. The authority works your amount out from your circumstances, and we would rather show you nothing than a number we invented.": "Aucun d'eux ne publie de montant. L'administration calcule le vôtre selon votre situation, et nous préférons ne rien vous montrer plutôt qu'un chiffre inventé.",
+    "one=Prepare my application|other=Prepare my {n} applications": "one=Préparer ma demande|other=Préparer mes {n} demandes",
+    "See what to apply for": "Voir ce qu'il faut demander",
+    "Answer one more thing": "Répondez à une chose de plus",
+    "one={n} programme · one fact decides it|other={n} programmes · one fact each": "one={n} dispositif · un seul fait décide|other={n} dispositifs · un fait chacun",
+    "Each of these passes every rule we could test. One fact decides it — a circumstance you haven't mentioned, or a detail our questions never asked. None of them are counted in the figure above, because counting money you might not be able to get is how a tool like this becomes useless. Say the missing thing on any card and it moves the moment you do.": "Chacun d'eux passe toutes les règles que nous pouvions tester. Un seul fait décide — une situation que vous n'avez pas mentionnée, ou un détail que nos questions n'ont jamais demandé. Aucun n'est compté dans le chiffre ci-dessus, parce que compter de l'argent que vous ne pourrez peut-être pas obtenir est précisément ce qui rend un outil comme celui-ci inutile. Indiquez l'élément manquant sur n'importe quelle fiche et elle change de place aussitôt.",
+    "Showing the largest 30 of {n}.": "Les 30 plus importants sur {n} sont affichés.",
+    "one=Show the last one|other=Show the other {n}": "one=Afficher le dernier|other=Afficher les {n} autres",
+    "which single fact decides each one": "quel fait unique décide de chacun",
+    "What's on this page": "Ce que contient cette page",
+    "Ruled out": "Écartés",
+    "We could not load the full programme details, so the names and links below are missing. The counts and figures on this page are right. Reload the page to try again.": "Nous n'avons pas pu charger le détail complet des dispositifs : les noms et les liens ci-dessous manquent. Les décomptes et les chiffres de cette page sont justes. Rechargez la page pour réessayer.",
+    "Name unavailable": "Nom indisponible",
+    "Read the rules": "Lire les règles",
+    "Check the deadline for {name}": "Vérifier l'échéance de {name}",
+    "We couldn't load the list of countries. Check your connection and try again.": "Nous n'avons pas pu charger la liste des pays. Vérifiez votre connexion et réessayez.",
+    "Try again": "Réessayer",
     "Give an exact figure instead (sharper results)": "Donner un montant exact (résultats plus précis)",
     "An exact figure turns \"needs one more answer\" into a straight yes or no on income-tested schemes.": "Un montant exact transforme « il manque une réponse » en un oui ou non net pour les dispositifs sous conditions de ressources.",
     "Some programmes have a minimum residence period. Blank means we flag them rather than rule them out.": "Certains dispositifs exigent une durée minimale de résidence. Laissé vide, nous les signalons plutôt que de les écarter.",

@@ -511,6 +511,40 @@ export default {
      A string that is absent here renders in English, which is what the page
      did for all of them before this section existed. */
   wizard: {
+    "Programmes checked in {country}: {n}.": "{country} में जाँची गई योजनाएँ: {n}।",
+    "These all pass the same tests already: {list}. Each card below shows only what is true of that one.": "ये सभी पहले ही एक जैसी जाँचों पर खरे उतरते हैं: {list}। नीचे हर कार्ड सिर्फ़ वही दिखाता है जो उसी पर लागू होता है।",
+    "Anyone with that link sees the answers you gave — where the company is registered, its stage, its headcount and its turnover.": "जिसके पास यह लिंक होगा वह आपके दिए उत्तर देख सकेगा — कंपनी कहाँ पंजीकृत है, वह किस चरण में है, कितने लोग काम करते हैं और उसका कारोबार कितना है।",
+    "The dataset covers {n} jurisdictions so far — yours may simply not be in it yet.": "इस डेटासेट में अभी {n} अधिकार-क्षेत्र शामिल हैं — हो सकता है आपका अभी इसमें न आया हो।",
+    "one=One is borrowing rather than income, which is why it is in no total here.|other={c} are borrowing rather than income, which is why they are in no total here.": "one=उनमें से एक उधार है, आय नहीं, इसीलिए वह यहाँ किसी भी जोड़ में शामिल नहीं है।|other=उनमें से {c} उधार हैं, आय नहीं, इसीलिए वे यहाँ किसी भी जोड़ में शामिल नहीं हैं।",
+    "We do not have a publishable figure for every one of these, so nothing on this page adds them into a single total.": "इनमें से हर एक के लिए हमारे पास प्रकाशित करने योग्य आँकड़ा नहीं है, इसलिए इस पृष्ठ पर इन्हें एक कुल जोड़ में नहीं जोड़ा गया है।",
+    /* The results screen, rebuilt: one heading, one claim that has to add up,
+       one action above the fold, and one "answer one more thing" bucket in
+       place of the two that said the same thing. Every literal below is new
+       copy on that screen — added here in the same commit, because a string
+       added to src/app.js and to no locale file renders English and nothing
+       fails until the whole screen is measured. */
+    "one={n} programme you appear to qualify for|other={n} programmes you appear to qualify for": "one={n} योजना जिसके आप पात्र दिखते हैं|other={n} योजनाएँ जिनके आप पात्र दिखते हैं",
+    "one={money} a year is what one of them publishes as a ceiling.|other={money} a year is what {p} of them publish as ceilings.": "one={money} प्रति वर्ष — यही अधिकतम सीमा उनमें से एक ने प्रकाशित की है।|other={money} प्रति वर्ष — यही अधिकतम सीमाएँ उनमें से {p} ने प्रकाशित की हैं।",
+    "one={money} paid once is what one of them publishes as a ceiling.|other={money} paid once is what {p} of them publish as ceilings.": "one={money} एकमुश्त — यही अधिकतम सीमा उनमें से एक ने प्रकाशित की है।|other={money} एकमुश्त — यही अधिकतम सीमाएँ उनमें से {p} ने प्रकाशित की हैं।",
+    "one=One publishes no figure at all — the authority works it out from your circumstances — so nothing on this page counts it.|other={u} publish no figure at all — the authority works those out from your circumstances — so nothing on this page counts them.": "one=उनमें से एक कोई राशि प्रकाशित नहीं करता — विभाग उसे आपकी परिस्थितियों से तय करता है — इसलिए इस पृष्ठ पर कहीं भी उसे नहीं गिना गया है।|other=उनमें से {u} कोई राशि प्रकाशित नहीं करते — विभाग उन्हें आपकी परिस्थितियों से तय करता है — इसलिए इस पृष्ठ पर कहीं भी उन्हें नहीं गिना गया है।",
+    "one=One is borrowing rather than income ({v} of credit), which is why it is in no total here.|other={c} are borrowing rather than income ({v} of credit), which is why they are in no total here.": "one=उनमें से एक उधार है, आय नहीं ({v} का ऋण), इसीलिए वह यहाँ किसी भी जोड़ में शामिल नहीं है।|other=उनमें से {c} उधार हैं, आय नहीं ({v} का ऋण), इसीलिए वे यहाँ किसी भी जोड़ में शामिल नहीं हैं।",
+    "Not one of them publishes a figure. The authority works your amount out from your circumstances, and we would rather show you nothing than a number we invented.": "इनमें से कोई भी राशि प्रकाशित नहीं करता। विभाग आपकी राशि आपकी परिस्थितियों से तय करता है, और हम गढ़ा हुआ आँकड़ा दिखाने के बजाय कुछ न दिखाना पसंद करेंगे।",
+    "one=Prepare my application|other=Prepare my {n} applications": "one=मेरा आवेदन तैयार करें|other=मेरे {n} आवेदन तैयार करें",
+    "See what to apply for": "देखें किनके लिए आवेदन करना है",
+    "Answer one more thing": "एक और बात बताइए",
+    "one={n} programme · one fact decides it|other={n} programmes · one fact each": "one={n} योजना · एक तथ्य तय करता है|other={n} योजनाएँ · हर एक के लिए एक तथ्य",
+    "Each of these passes every rule we could test. One fact decides it — a circumstance you haven't mentioned, or a detail our questions never asked. None of them are counted in the figure above, because counting money you might not be able to get is how a tool like this becomes useless. Say the missing thing on any card and it moves the moment you do.": "इनमें से हर एक हर उस नियम पर खरा उतरता है जिसे हम जाँच सके। एक ही तथ्य इसे तय करता है — कोई परिस्थिति जो आपने नहीं बताई, या कोई ब्योरा जो हमारे प्रश्नों ने कभी पूछा ही नहीं। इनमें से कोई भी ऊपर दिए आँकड़े में नहीं गिना गया है, क्योंकि ऐसा पैसा गिनना जो शायद आपको मिले ही नहीं, ऐसे औज़ार को बेकार बना देता है। किसी भी कार्ड पर छूटी हुई बात बता दीजिए और वह उसी क्षण अपनी जगह बदल लेगा।",
+    "Showing the largest 30 of {n}.": "{n} में से सबसे बड़े 30 दिखाए जा रहे हैं।",
+    "one=Show the last one|other=Show the other {n}": "one=आख़िरी एक दिखाएँ|other=बाक़ी {n} दिखाएँ",
+    "which single fact decides each one": "हर एक को कौन-सा एक तथ्य तय करता है",
+    "What's on this page": "इस पृष्ठ पर क्या है",
+    "Ruled out": "बाहर हुईं",
+    "We could not load the full programme details, so the names and links below are missing. The counts and figures on this page are right. Reload the page to try again.": "हम योजनाओं का पूरा विवरण लोड नहीं कर सके, इसलिए नीचे नाम और लिंक नहीं दिख रहे। इस पृष्ठ की गिनती और आँकड़े सही हैं। दोबारा कोशिश करने के लिए पृष्ठ फिर से लोड करें।",
+    "Name unavailable": "नाम उपलब्ध नहीं",
+    "Read the rules": "नियम पढ़ें",
+    "Check the deadline for {name}": "{name} की समय-सीमा जाँचें",
+    "We couldn't load the list of countries. Check your connection and try again.": "हम देशों की सूची लोड नहीं कर सके। अपना कनेक्शन जाँचें और फिर कोशिश करें।",
+    "Try again": "फिर कोशिश करें",
     "Give an exact figure instead (sharper results)": "इसके बजाय सटीक राशि दें (परिणाम अधिक सटीक)",
     "An exact figure turns \"needs one more answer\" into a straight yes or no on income-tested schemes.": "सटीक राशि देने पर आय-आधारित योजनाओं में «एक और उत्तर चाहिए» सीधे हाँ या ना में बदल जाता है।",
     "Some programmes have a minimum residence period. Blank means we flag them rather than rule them out.": "कुछ योजनाओं में न्यूनतम निवास अवधि होती है। खाली छोड़ने पर हम उन्हें हटाते नहीं, चिह्नित करते हैं।",
