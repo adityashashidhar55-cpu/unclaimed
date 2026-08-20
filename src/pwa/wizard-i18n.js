@@ -48,27 +48,149 @@ export function wizardDict() {
 }
 
 /**
- * Translate one English string. Safe to call with anything — an unknown string
- * comes back unchanged, which is what makes it safe to sprinkle.
+ * The page's language, read once from <html lang>. 'en' when absent.
+ *
+ * Everything locale-shaped hangs off this: plural selection, number grouping,
+ * currency placement, and the /fr/ prefix on links. Reading it from the
+ * document rather than from the module URL is deliberate — /app.js is served
+ * from one path for all seven locales, which is exactly why the link prefix
+ * computed from import.meta.url was always empty.
  */
+let LANG = null;
+export function wizardLang() {
+  if (LANG) return LANG;
+  const raw = (typeof document !== 'undefined' && document.documentElement.lang) || 'en';
+  LANG = String(raw).toLowerCase().split('-')[0] || 'en';
+  return LANG;
+}
+
 /**
+ * Translate one English string, with {token} substitution and plurals.
+ *
  * @param {string} english  the exact English source string, which is the key
  * @param {Record<string, string|number>} [vars]  {token} substitutions
+ * @param {number} [count]  the number the plural forms select on; defaults to
+ *                          vars.n when that is a number
  *
  * Interpolation happens AFTER lookup, never before. A sentence built by
  * concatenation — "Step " + n + " of " + total — can never whole-node match a
  * dictionary entry, which is why the rail caption stayed English in all six
  * non-English locales on all seven steps while everything around it was
- * translated. So the key is the whole sentence with `{n}`-style tokens in it,
- * and the numbers are substituted into whichever language came back.
+ * translated, and why the entire results screen — where every sentence
+ * carries a number — stayed English after the questions were fixed. So the
+ * key is the whole sentence with `{n}`-style tokens in it, and the numbers are
+ * substituted into whichever language came back.
+ *
+ * PLURALS. `${n === 1 ? '' : 's'}` reproduces the same unmatchable-node
+ * problem one layer down, and it is wrong in most of the languages here: hi
+ * and pt have more than two forms and Slavic-shaped rules exist for locales
+ * this site will add. So a plural key carries every form, labelled with its
+ * CLDR category:
+ *
+ *     T('one={n} programme|other={n} programmes', { n }, n)
+ *
+ * and Intl.PluralRules picks the one this language wants for this number. The
+ * English key is itself a valid form set, so an untranslated page — where the
+ * dictionary is {} by design — still resolves rather than printing "one=…".
  */
-export function T(english, vars) {
+const FORMS = /(?:^|\|)\s*(zero|one|two|few|many|other)=/;
+
+function selectForm(text, count) {
+  if (!FORMS.test(text)) return text;
+  const forms = {};
+  for (const part of text.split('|')) {
+    const m = /^\s*(zero|one|two|few|many|other)=([\s\S]*)$/.exec(part);
+    if (m) forms[m[1]] = m[2];
+  }
+  let cat = 'other';
+  if (typeof count === 'number' && Number.isFinite(count)) {
+    try {
+      cat = new Intl.PluralRules(wizardLang()).select(count);
+    } catch {
+      cat = count === 1 ? 'one' : 'other';
+    }
+  }
+  /* A language whose rules name a category the translation does not carry
+     falls back to `other`, then to whatever is there. Never to the raw
+     "one=…|other=…" string, which is the one output a reader must not see. */
+  return forms[cat] ?? forms.other ?? Object.values(forms)[0] ?? text;
+}
+
+export function T(english, vars, count) {
   if (typeof english !== 'string' || !english) return english;
   const d = wizardDict();
   const v = d[english];
-  const out = typeof v === 'string' && v ? v : english;
+  let out = typeof v === 'string' && v ? v : english;
+  const n = count ?? (vars && typeof vars.n === 'number' ? vars.n : undefined);
+  out = selectForm(out, n);
   if (!vars) return out;
   return out.replace(/\{(\w+)\}/g, (m, k) => (k in vars ? String(vars[k]) : m));
+}
+
+/** A figure in the reader's own grouping. 1 234 567 in fr, 12,34,567 in hi. */
+export function NUM(n) {
+  const v = Number(n);
+  if (!Number.isFinite(v)) return String(n ?? '');
+  try {
+    return new Intl.NumberFormat(wizardLang(), { maximumFractionDigits: 0 }).format(v);
+  } catch {
+    return String(Math.round(v));
+  }
+}
+
+/**
+ * A path on this site, in this locale.
+ *
+ * app.js is served from /app.js on every localised page, so a prefix computed
+ * from import.meta.url is always '' — which is how the paywall control on
+ * /fr/check/ came to send a French reader to the English /pricing/. The lang
+ * attribute is the only thing on the page that knows.
+ *
+ * Only paths that HAVE a localised counterpart are prefixed. Country and
+ * programme pages exist in a locale only for the countries that locale covers
+ * (src/i18n.mjs LOCALES[lang].countries), so the table below mirrors it — and
+ * anything not listed is left alone, because a wrong prefix is a 404 and an
+ * absent one is merely English.
+ */
+const LOCALISED_SECTIONS = new Set([
+  'pricing', 'account', 'methodology', 'startups', 'enterprise', 'business',
+  'privacy', 'countries', 'check', 'for', 'auto-apply',
+]);
+
+/* Mirrors LOCALES[lang].countries in src/i18n.mjs. */
+const LOCALE_COUNTRIES = {
+  fr: ['fr', 'be', 'ch', 'ca'],
+  es: ['es', 'mx'],
+  de: ['de', 'at', 'ch'],
+  it: ['it', 'ch'],
+  pt: ['pt', 'br'],
+  hi: ['in'],
+};
+
+export function localePath(path) {
+  const lang = wizardLang();
+  if (lang === 'en') return path;
+  const p = String(path || '/');
+  if (!p.startsWith('/')) return p;
+  const seg = p.split('/')[1] || '';
+  const known = LOCALISED_SECTIONS.has(seg) || (LOCALE_COUNTRIES[lang] || []).includes(seg);
+  return known ? `/${lang}${p}` : p;
+}
+
+/**
+ * Write HTML into a node and translate what was written.
+ *
+ * translateTree() runs once per render, so anything written to the DOM
+ * afterwards — a status line, an error, the whole prepared-applications pack —
+ * was permanently English however good the dictionary was: two strings shipped
+ * correct French and rendered English because of it. Every post-render write
+ * goes through here.
+ */
+export function setHTML(el, html) {
+  if (!el) return el;
+  el.innerHTML = html;
+  translateTree(el);
+  return el;
 }
 
 /* Attributes that hold reader-facing prose. title/aria-label are read aloud;

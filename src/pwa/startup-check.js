@@ -32,15 +32,21 @@ import { track } from '../beacon.js';
    not just checkout — rendered nothing. Nothing errored server-side and the
    page still painted its shell, which is why it looked fine. */
 import { bindCheckout } from './app/checkout.js';
-import { T, translateTree } from './wizard-i18n.js';
+import { T, translateTree, NUM, localePath, setHTML } from './wizard-i18n.js';
 
 const $ = (s) => document.querySelector(s);
 const esc = (s) =>
   String(s ?? '').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
-const nf = new Intl.NumberFormat('en');
-
 const root = document.getElementById('app');
 const BASE = root?.dataset.base ?? '';
+/**
+ * A link into the site, in the language the reader is reading.
+ *
+ * BASE comes from data-base, which the build sets to SITE_BASE — empty — so
+ * `${BASE}/pricing/` on /fr/startups/check/ was the English pricing page. The
+ * shape was right and the value was never anything but ''.
+ */
+const href = (p) => `${BASE}${localePath(p)}`;
 
 const S = {
   step: 0,
@@ -128,39 +134,41 @@ async function refreshEntitlement() {
    and no error. src/pwa/dashboard.js has always used the data's spelling; the
    two clients disagreed about one field.
    scripts/test-vocabulary.mjs now diffs this list against the data. */
+/* Value first — the vocabulary the data speaks — then copy, wrapped here so
+   the strings are findable rather than only reachable. */
 const STAGES = [
-  ['idea', 'Idea or pre-incorporation', 'Not trading yet'],
-  ['pre_seed', 'Pre-seed', 'Building, little or no revenue'],
-  ['seed', 'Seed', 'Early revenue or first round raised'],
-  ['series_a', 'Series A or later', 'Scaling'],
-  ['growth', 'Growth', 'Trading for several years and scaling up'],
+  ['idea', T('Idea or pre-incorporation'), T('Not trading yet')],
+  ['pre_seed', T('Pre-seed'), T('Building, little or no revenue')],
+  ['seed', T('Seed'), T('Early revenue or first round raised')],
+  ['series_a', T('Series A or later'), T('Scaling')],
+  ['growth', T('Growth'), T('Trading for several years and scaling up')],
 ];
 
 const HEADCOUNT = [
-  [1, 'Just me'],
-  [4, '2 to 5'],
-  [15, '6 to 25'],
-  [60, '26 to 99'],
-  [180, '100 to 249'],
-  [400, '250 or more'],
+  [1, T('Just me')],
+  [4, T('2 to 5')],
+  [15, T('6 to 25')],
+  [60, T('26 to 99')],
+  [180, T('100 to 249')],
+  [400, T('250 or more')],
 ];
 
 const TURNOVER = [
-  [0, 'No revenue yet'],
-  [100000, 'Under €250k'],
-  [750000, '€250k to €2m'],
-  [5000000, '€2m to €10m'],
-  [30000000, 'Over €10m'],
+  [0, T('No revenue yet')],
+  [100000, T('Under €250k')],
+  [750000, T('€250k to €2m')],
+  [5000000, T('€2m to €10m')],
+  [30000000, T('Over €10m')],
 ];
 
 const SECTORS = [
-  ['deeptech', 'Deep tech or R&D heavy'],
-  ['software', 'Software or SaaS'],
-  ['health', 'Health or life sciences'],
-  ['climate', 'Climate, energy or environment'],
-  ['manufacturing', 'Manufacturing or hardware'],
-  ['creative', 'Creative or media'],
-  ['agri', 'Agriculture or food'],
+  ['deeptech', T('Deep tech or R&D heavy')],
+  ['software', T('Software or SaaS')],
+  ['health', T('Health or life sciences')],
+  ['climate', T('Climate, energy or environment')],
+  ['manufacturing', T('Manufacturing or hardware')],
+  ['creative', T('Creative or media')],
+  ['agri', T('Agriculture or food')],
 ];
 
 const steps = () => ['country', 'stage', 'headcount', 'turnover', 'sectors', 'rd'];
@@ -173,11 +181,11 @@ const rail = () => {
     ${st.map((_, i) => `<span class="${i < S.step ? 'done' : i === S.step ? 'current' : ''}"></span>`).join('')}
   </div>
   <p class="tiny progress-caption">${esc(
-    T('Step {n} of {total} · nothing you type is sent to a server', { n: S.step + 1, total: st.length }),
+    T('Step {n} of {total} · nothing you type is sent to a server', { n: NUM(S.step + 1), total: NUM(st.length) }),
   )}</p>`;
 };
 
-const nav = (next = 'Continue', skip = null) => `<div class="wizard-nav">
+const nav = (next = T('Continue'), skip = null) => `<div class="wizard-nav">
   ${S.step > 0 ? `<button class="btn btn-ghost btn-sm" type="button" data-act="back">${esc(T('← Back'))}</button>` : '<span></span>'}
   <span class="row">
     ${skip ? `<button class="btn btn-ghost btn-sm" type="button" data-act="skip">${esc(T(skip))}</button>` : ''}
@@ -206,8 +214,15 @@ export const MANIFEST_FIELDS_READ = ['slug', 'name', 'flag', 'count', 'verified'
 function jurisdictionCount(c) {
   const n = c.count ?? c.programme_count;
   if (n == null) return '';
-  /* Same shape as the individual wizard's country picker. */
-  return `${nf.format(n)} programmes${c.verified ? ` · ${nf.format(c.verified)} verified` : ''}`;
+  /* Same shape as the individual wizard's country picker, which renders this
+     exact sentence through T('{n} programmes · {v} verified') — a key that is
+     in every dictionary and working. This one returned a raw template literal,
+     so 77 jurisdiction tiles were English on every localised company wizard
+     while the working translation sat unused in the same dictionary on the
+     same page. */
+  return c.verified
+    ? T('{n} programmes · {v} verified', { n: NUM(n), v: NUM(c.verified) })
+    : T('one={n} programme|other={n} programmes', { n: NUM(n) }, n);
 }
 
 function viewCountry() {
@@ -215,14 +230,14 @@ function viewCountry() {
   return `<div class="wizard-step">${rail()}
     <h1 class="q">${esc(T('Where is the company registered?'))}</h1>
     <p class="q-why">${esc(T('Funding is national, and most programmes will not look at a company registered elsewhere. We only load the jurisdictions you can actually reach.'))}</p>
-    <div class="field"><label for="csearch">${esc(T('Search {n} jurisdictions', { n: cs.length }))}</label>
+    <div class="field"><label for="csearch">${esc(T('Search {n} jurisdictions', { n: NUM(cs.length) }))}</label>
       <input id="csearch" type="search" placeholder="${esc(T('Start typing…'))}"></div>
     <div class="opts" id="clist">
       ${cs
         .map(
           (c) => `<button class="opt" type="button" data-act="country" data-cc="${esc(c.slug)}" data-name="${esc(c.name.toLowerCase())}">
             <span style="font-size:1.3rem;line-height:1">${c.flag ?? ''}</span>
-            <span>${esc(c.name)}<span class="opt__sub">${jurisdictionCount(c)}</span></span>
+            <span>${esc(c.name)}<span class="opt__sub">${esc(jurisdictionCount(c))}</span></span>
           </button>`,
         )
         .join('')}
@@ -243,24 +258,33 @@ const viewHeadcount = () => `<div class="wizard-step">${rail()}
 const viewTurnover = () => `<div class="wizard-step">${rail()}
   <h1 class="q">${esc(T('Annual turnover?'))}</h1>
   <p class="q-why">${esc(T('The other half of the SME test. A rough band is enough — nothing here is checked against a filing.'))}</p>
-  ${opts(TURNOVER, 'turnover_annual_eur')}${nav(undefined, 'Rather not say')}</div>`;
+  ${opts(TURNOVER, 'turnover_annual_eur')}${nav(undefined, T("I'd rather not say"))}</div>`;
 
 const viewSectors = () => `<div class="wizard-step">${rail()}
   <h1 class="q">${esc(T('What does it do?'))}</h1>
   <p class="q-why">${esc(T('Pick any that apply. Sector-restricted programmes are excluded rather than guessed at, so leaving this blank costs you matches.'))}</p>
-  ${opts(SECTORS, 'sectors', true)}${nav('Continue', 'None of these')}</div>`;
+  ${opts(SECTORS, 'sectors', true)}${nav(T('Continue'), T('None of these'))}</div>`;
 
 const viewRd = () => `<div class="wizard-step">${rail()}
   <h1 class="q">${esc(T('Does it do research or development?'))}</h1>
-  <p class="q-why">${esc(T('R&amp;D unlocks a distinct pool — tax credits, innovation grants, Horizon calls. It is the highest-value question on this page.'))}</p>
-  ${opts([[true, 'Yes, actively'], [false, 'No']], 'rd_active')}
-  ${nav('See what it qualifies for')}</div>`;
+  <!-- The literal used to carry the ampersand pre-escaped, so T returned a
+       value containing the entity, esc() escaped it again, and every reader in
+       every locale — English included — was shown the characters "R&amp;D" on
+       the highest-value question in this wizard. Write it once, escape it
+       once. -->
+  <p class="q-why">${esc(T('R&D unlocks a distinct pool — tax credits, innovation grants, Horizon calls. It is the highest-value question on this page.'))}</p>
+  ${opts([[true, 'Yes, actively'], [false, 'No, not really']], 'rd_active')}
+  ${nav(T('See what it qualifies for'))}</div>`;
 
 /* Currencies are never added together — two currencies stay two figures.
    Module scope because the entitled programme rows need it too. */
+/* Grouping follows the page, not the source file. This used an
+   Intl.NumberFormat pinned to 'en', so a French reader saw "€3,082,500" where
+   the convention is "3 082 500 €", and a Hindi reader saw Western grouping for
+   a number their language groups differently. NUM() reads <html lang>. */
 const money = (byCurrency) =>
   Object.entries(byCurrency || {})
-    .map(([cur, v]) => `${cur === 'EUR' ? '€' : cur === 'GBP' ? '£' : cur === 'USD' ? '$' : cur + ' '}${nf.format(Math.round(v.max ?? v.min ?? 0))}`)
+    .map(([cur, v]) => `${cur === 'EUR' ? '€' : cur === 'GBP' ? '£' : cur === 'USD' ? '$' : cur + ' '}${NUM(Math.round(v.max ?? v.min ?? 0))}`)
     .join(' + ');
 
 /* ---- result --------------------------------------------------------- */
@@ -309,22 +333,28 @@ function viewResult() {
 
   return `<div class="results" style="max-width:none">
     <section class="result-hero">
-      <span class="eyebrow">${esc(S.manifest.countries.find((c) => c.slug === S.profile.country_code)?.name ?? '')} · matched against ${nf.format(
-        Object.values(S.pools).reduce((n, p) => n + (p.programmes?.length ?? 0), 0),
-      )} programmes</span>
+      <span class="eyebrow">${esc(S.manifest.countries.find((c) => c.slug === S.profile.country_code)?.name ?? '')} · ${esc(
+        T('matched against {n} programmes', {
+          n: NUM(Object.values(S.pools).reduce((n, p) => n + (p.programmes?.length ?? 0), 0)),
+        }),
+      )}</span>
       ${
         eligible.length
-          ? `<p class="figure">${headline ? esc(headline) : `${eligible.length} programmes`}</p>
-             <p class="figure-unit" style="margin-top:1rem">${
+          ? `<p class="figure">${esc(
+              headline ? headline : T('one={n} programme|other={n} programmes', { n: NUM(eligible.length) }, eligible.length),
+            )}</p>
+             <p class="figure-unit" style="margin-top:1rem">${esc(
                headline
-                 ? T('in published non-dilutive ceilings across {n} of the {total} programmes this company appears to qualify for', { n: headlineCount, total: eligible.length })
-                 : T('this company appears to qualify for')
-             }</p>`
+                 ? T('in published non-dilutive ceilings across {n} of the {total} programmes this company appears to qualify for', { n: NUM(headlineCount), total: NUM(eligible.length) })
+                 : T('this company appears to qualify for'),
+             )}</p>`
           : `<p class="figure" style="font-size:clamp(2rem,5vw,3.4rem)">${esc(T('Nothing matched outright'))}</p>
-             <p class="figure-unit" style="margin-top:1rem">${esc(T('{n} depend on details we did not ask for.', { n: conditional.length + needsAnswer.length }))}</p>`
+             <p class="figure-unit" style="margin-top:1rem">${esc(
+               T('one={n} depends on details we did not ask for.|other={n} depend on details we did not ask for.', { n: NUM(conditional.length + needsAnswer.length) }, conditional.length + needsAnswer.length),
+             )}</p>`
       }
       <p class="small" style="color:var(--ink-3);max-width:62ch;margin-top:1.4rem">
-        ${esc(T('{a} eligible · {b} depend on a circumstance · {c} need one more answer.', { a: eligible.length, b: conditional.length, c: needsAnswer.length }))}
+        ${esc(T('{a} eligible · {b} depend on a circumstance · {c} need one more answer.', { a: NUM(eligible.length), b: NUM(conditional.length), c: NUM(needsAnswer.length) }))}
         ${esc(T('Amounts are published ceilings, not offers, and programmes with no published amount count as zero.'))}
       </p>
     </section>
@@ -336,11 +366,18 @@ function viewResult() {
         .slice(0, 6)
         .map(
           (b) => `<div class="card card-flat">
-        <div class="figure-sm">${b.count}</div>
-        <p class="small" style="margin:.35rem 0 0"><strong>${esc(b.label)}</strong></p>
-        <p class="tiny" style="margin:.2rem 0 0">${
-          b.non_dilutive ? T('Non-dilutive') : T('Dilutive or in kind')
-        }${b.unpriced ? ` · ${b.unpriced} publish no amount` : ''}</p>
+        <div class="figure-sm">${esc(NUM(b.count))}</div>
+        <!-- The band label comes out of INSTRUMENTS in src/engine/startup.js as
+             a finished English noun — "Grants", "Vouchers", "Tax credits" — and
+             was interpolated raw, so six tiles rendered English on every
+             localised company results screen. Single content nouns like these
+             are also invisible to an English-marker metric, which is how this
+             screen measured 2.9% "English" in French while being visibly part
+             English. -->
+        <p class="small" style="margin:.35rem 0 0"><strong>${esc(T(b.label))}</strong></p>
+        <p class="tiny" style="margin:.2rem 0 0">${esc(
+          b.non_dilutive ? T('Non-dilutive') : T('Dilutive or in kind'),
+        )}${b.unpriced ? esc(T('one= · {n} publishes no amount|other= · {n} publish no amount', { n: NUM(b.unpriced) }, b.unpriced)) : ''}</p>
         ${money(b.by_currency) ? `<p class="tiny" style="margin:.3rem 0 0">${esc(T('up to {v}', { v: money(b.by_currency) }))}</p>` : ''}
       </div>`,
         )
@@ -353,7 +390,7 @@ function viewResult() {
 
     <div class="row no-print" style="margin-top:2rem">
       <button class="btn btn-sm" type="button" data-act="restart">${esc(T('Change my answers'))}</button>
-      <a class="btn btn-sm btn-ghost" href="${BASE}/startups/">${esc(T('Browse programmes instead'))}</a>
+      <a class="btn btn-sm btn-ghost" href="${href('/startups/')}">${esc(T('Browse programmes instead'))}</a>
     </div>
 
     <p class="tiny" style="margin-top:1.6rem;max-width:70ch">${esc(
@@ -378,10 +415,10 @@ function programmeRow(m) {
   return `<div class="card card-flat" style="margin-top:1rem">
     <div class="list-row__name"><strong>${esc(p.name_en)}</strong>
       ${p.funder ? `<span class="tiny">${esc(p.funder)}</span>` : ''}</div>
-    ${amount ? `<p class="figure-sm" style="margin:.3rem 0 0">up to ${esc(amount)}</p>` : '<p class="tiny" style="margin:.3rem 0 0">No published amount — the funder sets it.</p>'}
-    ${p.cofunding_pct != null && p.cofunding_pct > 0 ? `<p class="tiny" style="margin:.2rem 0 0">You must co-fund ${p.cofunding_pct}%</p>` : ''}
-    ${p.deadline_note ? `<p class="tiny" style="margin:.2rem 0 0">${esc(p.deadline_note)}</p>` : ''}
-    ${docs.length ? `<p class="tiny" style="margin:.2rem 0 0">Documents: ${docs.map(esc).join(', ')}</p>` : ''}
+    ${amount ? `<p class="figure-sm" style="margin:.3rem 0 0">${esc(T('up to {v}', { v: amount }))}</p>` : `<p class="tiny" style="margin:.3rem 0 0">${esc(T('No published amount — the funder sets it.'))}</p>`}
+    ${p.cofunding_pct != null && p.cofunding_pct > 0 ? `<p class="tiny" style="margin:.2rem 0 0">${esc(T('You must co-fund {pct}%', { pct: NUM(p.cofunding_pct) }))}</p>` : ''}
+    ${p.deadline_note ? `<p class="tiny" style="margin:.2rem 0 0">${esc(T(p.deadline_note))}</p>` : ''}
+    ${docs.length ? `<p class="tiny" style="margin:.2rem 0 0">${esc(T('Documents: {list}', { list: docs.map((d) => T(d)).join(', ') }))}</p>` : ''}
     ${
       p.application_url
         ? `<p class="btn-row" style="margin-top:.6rem"><a class="btn btn-sm" href="${esc(
@@ -398,12 +435,12 @@ function eligibleList(eligible) {
      paywall, and it must not silently look like one. */
   if (!rows) {
     return `<section class="bucket" style="margin-top:2.4rem">
-      <div class="bucket__head"><h2>Your ${eligible.length} programmes</h2></div>
-      <p class="small notice notice--error" role="alert">Your plan is active but the full dataset did not load. Reload the page — if it keeps happening, tell us.</p>
+      <div class="bucket__head"><h2>${esc(T('one=Your {n} programme|other=Your {n} programmes', { n: NUM(eligible.length) }, eligible.length))}</h2></div>
+      <p class="small notice notice--error" role="alert">${esc(T('Your plan is active but the full dataset did not load. Reload the page — if it keeps happening, tell us.'))}</p>
     </section>`;
   }
   return `<section class="bucket" style="margin-top:2.4rem">
-    <div class="bucket__head"><h2>Your ${eligible.length} programmes</h2><span class="bucket__count">${eligible.length} eligible</span></div>
+    <div class="bucket__head"><h2>${esc(T('one=Your {n} programme|other=Your {n} programmes', { n: NUM(eligible.length) }, eligible.length))}</h2><span class="bucket__count">${esc(T('{n} eligible', { n: NUM(eligible.length) }))}</span></div>
     <p class="small">${esc(T('Names, amounts, documents, deadlines and the official application link for every match.'))}</p>
     <p class="btn-row" style="margin-top:1rem"><button class="btn btn-primary" type="button" data-act="prepare-company">${esc(T('Prepare these applications'))}</button></p>
     <div id="startup-plan-out" role="status" aria-live="polite"></div>
@@ -413,7 +450,7 @@ function eligibleList(eligible) {
 
 function lockedBucket(eligible) {
   return `<section class="bucket locked-bucket" style="margin-top:2.4rem">
-    <div class="bucket__head"><h2>Which ${eligible.length} programmes</h2></div>
+    <div class="bucket__head"><h2>${esc(T('one=Which {n} programme|other=Which {n} programmes', { n: NUM(eligible.length) }, eligible.length))}</h2></div>
     <p class="small">${esc(T('The names, the amounts each one pays, what documents they want, when they close, and the application links are on the paid plan.'))}</p>
     <div class="locked__rows" aria-hidden="true">
       ${Array.from({ length: Math.min(eligible.length, 4) }, (_, i) => `<div class="locked__row withheld">${
@@ -421,11 +458,11 @@ function lockedBucket(eligible) {
       }</div>`).join('')}
     </div>
     <p style="margin-top:1.2rem">
-      <button class="btn btn-primary" type="button" data-checkout data-plan="business_monthly">${
-        SIGNED_IN ? T('Upgrade to see the list') : T('Unlock the full list')
-      }</button>
-      <a class="btn" href="${BASE}/pricing/">${esc(T('See the plans'))}</a>
-      <a class="btn btn-ghost" href="${BASE}/enterprise/">${esc(T('What the workspace does'))}</a>
+      <button class="btn btn-primary" type="button" data-checkout data-plan="business_monthly">${esc(
+        SIGNED_IN ? T('Upgrade to see the list') : T('Unlock the full list'),
+      )}</button>
+      <a class="btn" href="${href('/pricing/')}">${esc(T('See the plans'))}</a>
+      <a class="btn btn-ghost" href="${href('/enterprise/')}">${esc(T('What the workspace does'))}</a>
     </p>
   </section>`;
 }
@@ -537,8 +574,12 @@ document.addEventListener('click', async (ev) => {
       if (!out) break;
       const label = el.textContent;
       el.disabled = true;
-      el.innerHTML = '<span class="btn__spinner" aria-hidden="true"></span>Preparing…';
-      out.innerHTML = '<p class="small" style="margin-top:1rem">Building your packs…</p>';
+      /* Written after the single translateTree() call, so every one of these
+         was permanently English however good the dictionary was — 'Building
+         your packs…' has shipped correct French since the dictionary landed
+         and has never once rendered in it. */
+      el.innerHTML = `<span class="btn__spinner" aria-hidden="true"></span>${esc(T('Preparing…'))}`;
+      setHTML(out, `<p class="small" style="margin-top:1rem">${esc(T('Building your packs…'))}</p>`);
       try {
         const res = await fetch('/api/startups/plan', {
           method: 'POST',
@@ -548,17 +589,19 @@ document.addEventListener('click', async (ev) => {
           body: JSON.stringify({ profile: S.profile }),
         });
         const data = await res.json().catch(() => ({}));
-        out.innerHTML = res.ok
-          ? `<p class="small" style="margin-top:1rem">${esc(
-              `${data.ready_count ?? (data.packages || []).length} pack${
-                (data.packages || []).length === 1 ? '' : 's'
-              } prepared.`,
-            )}</p>`
-          : `<p class="small notice notice--error" role="alert" style="margin-top:1rem">${esc(
-              data.message || data.error || 'Something went wrong preparing your packs.',
-            )}</p>`;
+        const ready = data.ready_count ?? (data.packages || []).length;
+        setHTML(
+          out,
+          res.ok
+            ? `<p class="small" style="margin-top:1rem">${esc(
+                T('one={n} pack prepared.|other={n} packs prepared.', { n: NUM(ready) }, ready),
+              )}</p>`
+            : `<p class="small notice notice--error" role="alert" style="margin-top:1rem">${esc(
+                T(data.message || data.error || '') || T('Something went wrong preparing your packs.'),
+              )}</p>`,
+        );
       } catch {
-        out.innerHTML = '<p class="small notice notice--error" role="alert" style="margin-top:1rem">We could not reach the server. Try again.</p>';
+        setHTML(out, `<p class="small notice notice--error" role="alert" style="margin-top:1rem">${esc(T('We could not reach the server. Try again.'))}</p>`);
       }
       el.disabled = false;
       el.textContent = label;
