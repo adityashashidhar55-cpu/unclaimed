@@ -87,13 +87,25 @@ for (const file of emitters) {
     const raw = m[1] ?? m[2] ?? m[3] ?? '';
     /* Pull literals out of ${...} first, then strip the interpolations. */
     for (const inner of raw.matchAll(/\$\{[^}]*\}/g)) {
-      for (const lit of inner[0].matchAll(/['"`]([a-zA-Z][\w -]*)['"`]/g)) {
+      /* The literal inside an interpolation is usually written with its
+         leading separator space — `class="opt${go ? ' opt--go' : ''}"` — so a
+         pattern anchored at [a-zA-Z] misses every one of them. Allow the
+         space and strip it. */
+      for (const lit of inner[0].matchAll(/['"`]\s*([a-zA-Z][\w -]*)['"`]/g)) {
         for (const c of lit[1].trim().split(/\s+/)) note(c, file, true);
       }
     }
     for (const c of raw.replace(/\$\{[^}]*\}/g, ' ').trim().split(/\s+/)) note(c, file);
   }
-  for (const m of src.matchAll(/classList\.(?:add|remove|toggle)\(\s*['"]([\w-]+)['"]/g)) note(m[1], file);
+  /* classList.add(paid ? 'nav__account--on' : 'nav__account--off') puts the
+     class names behind a conditional, so matching only a literal in the first
+     argument position reports both halves as dead rules. Read every quoted
+     literal in the argument list. */
+  for (const m of src.matchAll(/classList\.(?:add|remove|toggle)\(([^)]*)\)/g)) {
+    for (const lit of m[1].matchAll(/['"`]\s*([a-zA-Z][\w -]*)['"`]/g)) {
+      for (const c of lit[1].trim().split(/\s+/)) note(c, file);
+    }
+  }
 }
 
 /* Classes that are emitted today with no rule anywhere. Every one is a real
@@ -141,12 +153,15 @@ console.log('\nClasses and the rules that are supposed to style them\n');
   const dead = [...defined]
     .filter((c) => !emittedSet.has(c))
     .filter((c) => !/^(is-|has-|js-)/.test(c))
-    /* Bases of a modifier that IS emitted, e.g. `.notice` when only
-       `.notice--error` appears, and vice versa. */
+    /* A BASE whose modifier is emitted is alive: `.notice` still styles
+       `.notice--error`. The reverse is NOT true and the "and vice versa" that
+       used to be here is how two dead rules shipped — `.prog-card--ask` and
+       `.prog-card__ask` were written, given rules, and emitted by nothing, and
+       this check waved them through because `.prog-card` is emitted. A
+       modifier nobody writes is exactly the dead rule this guard is for, so
+       only the base direction is exempt. */
     .filter((c) => {
-      const base = c.split(/--|__/)[0];
-      if (base !== c && emittedSet.has(base)) return false;
-      for (const e of emittedSet) if (e.split(/--|__/)[0] === c) return false;
+      for (const e of emittedSet) if (e !== c && e.split(/--|__/)[0] === c) return false;
       return true;
     })
     /* Emitted by a stylesheet-adjacent surface this test does not read:

@@ -28,6 +28,7 @@ import { fileURLToPath } from 'node:url';
    wizard driver, so the two guards cannot drift apart. */
 import { englishShare, englishRuns } from './lib/english-share.mjs';
 import { stepThrough } from './lib/wizard-drive.mjs';
+import { settle } from './lib/settle.mjs';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 /* Overridable so a pre-build dry run can point at a staged copy. Defaults to
@@ -481,7 +482,10 @@ for (const [w, h, wname] of WIDTHS) {
       await page
         .waitForFunction(() => !document.querySelector('.reveal:not(.in), .blur-word:not(.in)'), null, { timeout: 6000 })
         .catch(() => {});
-      await page.waitForTimeout(200);
+      /* Wait for geometry to stop moving before measuring it. The why —
+         and the two obvious fixes that hang or stall the suite — is in
+         scripts/lib/settle.mjs. */
+      await settle(page);
       const out = await page.evaluate(AUDIT, { fonts: FONT_STACKS, contrast: CONTRAST_PAGES.has(url) });
       /* Pricing must be buyable in whichever half the visitor is looking at.
          Flipping to "For my company" used to leave three prices on screen and
@@ -1147,6 +1151,13 @@ const QA_HASH = Buffer.from(JSON.stringify(QA_PROFILE), 'utf8')
            23px failure on a correct page, once, under load. Wait for the
            scroll position to stop moving instead. */
         await settle();
+        /* Under load — several browsers on one box — the click sometimes
+           lands before the page is listening and the scroll position never
+           leaves 1400, which reads as "this anchor is 1400px behind the
+           masthead" and is a lie about a working link. A second click costs
+           nothing and cannot rescue a genuinely broken anchor: that one
+           stays put after both. */
+        if (Math.round(window.scrollY) === 1400) { a.click(); await settle(); }
         const mast = document.querySelector('.masthead');
         const bar = mast ? mast.getBoundingClientRect().bottom : 0;
         const top = target.getBoundingClientRect().top;

@@ -23,7 +23,7 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { match, annualizeAmount } from '../src/engine/matcher.js';
 import { matchStartup, reachFor } from '../src/engine/startup.js';
-import { extractPayment } from './lib/amount-extract.mjs';
+import { extractPayment, extractAidIntensity } from './lib/amount-extract.mjs';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const DATA = path.join(ROOT, 'data');
@@ -264,6 +264,40 @@ t('annualize(null, weekly) is null', annualizeAmount(null, 'weekly') === null);
     }
   }
   t('every is_automatic record says so in procedure_steps', bad.length === 0, bad.slice(0, 10).join('\n      '));
+}
+
+/* ------------------------------------------------------------------ *
+ * 8. A co-funding rate is money the applicant must find themselves.
+ *
+ * An equity stake, a loan's share of project cost, a tax-credit rate and a
+ * fund-of-funds allocation are all percentages and none of them is that.
+ * Run over the live startup corpus, extractAidIntensity() fired on twelve
+ * records and six were wrong in exactly that way — including the British
+ * Business Bank equity case the function's own comment says it exists to
+ * refuse, and eu-esa-incubed's "up to 50-80%", where it silently picked the
+ * upper bound and so understated what the applicant must put in.
+ *
+ * These are the real sentences, quoted from the records named. They are
+ * asserted rather than the regex, because a regex test passes on a pattern
+ * that no longer matches anything.
+ * ------------------------------------------------------------------ */
+{
+  const CASES = [
+    ['at-ffg-basisprogramm', 'Funds up to 70% of project costs for innovative R&D; loan repayment falls due five years after the project ends.', 70],
+    ['fr-business-france-cheque-relance-export', 'Voucher that covered up to 50% of the cost of a Team France Export collective export action', 50],
+    ['eu-esa-incubed', 'ESA typically covers up to 50-80% of project cost depending on the size.', null],
+    ['gb-bbb-future-fund-breakthrough', "Co-investment into R&D-intensive companies, with the Bank taking up to 30% of the round.", null],
+    ['in-fund-of-funds-for-startups', 'SIDBI contributes up to 15% of an AIF corpus.', null],
+    ['us-ny-excelsior-jobs', 'an investment tax credit of up to 2% of qualifying investment costs', null],
+    ['us-ut-jets', 'a post-performance refundable tax credit worth up to 30% of new state tax revenue', null],
+    ['us-or-obdf', 'Direct state loans of up to $1 million (typically covering up to 40% of project cost) for land.', null],
+    ['us-oh-ohio-microenterprise', 'provides fixed-rate loans of up to $500,000 covering up to 50% of eligible project costs', null],
+    ['us-il-edge', 'A non-refundable credit against Illinois income tax based on income tax withholding - up to 50% of withholdings', null],
+  ];
+  const wrong = CASES.filter(([, text, want]) => extractAidIntensity(text) !== want)
+    .map(([slug, text, want]) => `${slug}: got ${extractAidIntensity(text)}, expected ${want}`);
+  t('a co-funding rate is only read off money the applicant actually has to match',
+    wrong.length === 0, wrong.join('\n      '));
 }
 
 console.log(`\n${pass} passed, ${fail} failed\n`);

@@ -182,15 +182,45 @@ if (!failed) {
   const app = fs.readFileSync(path.join(ROOT, 'src/app.js'), 'utf8');
   const lines = app.split('\n');
   const stray = [];
+  /* A line is guarded if walking back to the nearest function head passes a
+     gate. A card render may also live inside a named helper (`const foo = (x)
+     => \`…progCard(x)…\``); that is not a leak so long as EVERY reference to
+     the helper is itself guarded, so follow the name rather than reporting the
+     definition. Checking only the 60 lines above the render would either miss
+     a real leak in a helper or, as it did, call a fully gated one stray. */
+  const guardedAt = (i) => {
+    for (let j = i; j >= 0 && j > i - 60; j--) {
+      if (/^function /.test(lines[j])) return false;
+      if (/^\s*const \w+ = (\([^)]*\)|\w+) =>/.test(lines[j]) && j !== i) return null; // helper head
+      if (/gated\(|ENTITLED/.test(lines[j])) return true;
+    }
+    return false;
+  };
+  const helperName = (i) => {
+    for (let j = i; j >= 0 && j > i - 60; j--) {
+      const m = lines[j].match(/^\s*const (\w+) = (?:\([^)]*\)|\w+) =>/);
+      if (m && j !== i) return m[1];
+      if (/^function /.test(lines[j])) return null;
+    }
+    return null;
+  };
   lines.forEach((line, i) => {
     if (!/progCard\(/.test(line) || /^function progCard/.test(line)) return;
-    /* Walk back to the nearest function head and require a gate between. */
-    let guarded = false;
-    for (let j = i; j >= 0 && j > i - 60; j--) {
-      if (/^function /.test(lines[j])) break;
-      if (/gated\(|ENTITLED/.test(lines[j])) { guarded = true; break; }
+    const g = guardedAt(i);
+    if (g === true) return;
+    if (g === null) {
+      const name = helperName(i);
+      const refs = [];
+      lines.forEach((l, k) => {
+        if (k === i) return;
+        if (!new RegExp(`\\b${name}\\b`).test(l)) return;
+        if (new RegExp(`^\\s*const ${name}\\b`).test(l)) return;
+        refs.push(k);
+      });
+      /* No call sites at all is dead code, not a gate. */
+      if (refs.length && refs.every((k) => guardedAt(k) === true)) return;
     }
-    if (!guarded) stray.push(i + 1);
+    stray.push(i + 1);
   });
   stray.length
     ? bad(`programme cards rendered with no entitlement check at src/app.js:${stray.join(', ')}`)

@@ -657,7 +657,17 @@ fs.readFileSync(path.join(DIST, 'theme.css'), 'utf8').includes('.shell-narrow')
       /* The rule only fired on a non-empty list, so 115 sub-national records
          with an empty one were offered to the whole country — a Quebec
          resident told they could claim a City of Toronto transit discount. */
-      if (p.admin_level && p.admin_level !== 'national' && areas.length === 0 && e.rule_source !== 'geography_unknown') {
+      /* `private` is a FUNDER type, not a geography — a railcard, a water
+         company's social tariff, a telecom's youth plan. Round 1 read it as
+         sub-national and flagged 74 nationwide offers `geography_unknown`,
+         which routed every one of them into "needs one more answer" for every
+         profile in every locale: the SBB Half Fare travelcard, sold in every
+         Swiss canton, asked the reader which part of Switzerland they lived
+         in and then matched none of the sixteen answers. A private offer that
+         IS local says so in admin_areas (six do, e.g. gb/network-railcard →
+         ["London"]); one with no areas at all is nationwide. */
+      const subNational = p.admin_level && p.admin_level !== 'national' && p.admin_level !== 'private';
+      if (subNational && areas.length === 0 && e.rule_source !== 'geography_unknown') {
         ungated += 1;
         if (!ungatedWhere) ungatedWhere = `${entry.slug}/${p.slug} (${p.admin_level})`;
       }
