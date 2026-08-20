@@ -19,6 +19,8 @@
  * wanted to.
  */
 import { matchStartup, reachFor, isFreeMoney } from '../engine/startup.js';
+/* formatMoney, not a hand-rolled symbol table: see money() below. */
+import { formatMoney } from '../engine/matcher.js';
 import { track } from '../beacon.js';
 /* The company funnel's paywall moment had no checkout on it at all: the only
    two controls sent the buyer to /pricing/ to choose again. The individual
@@ -32,7 +34,7 @@ import { track } from '../beacon.js';
    not just checkout — rendered nothing. Nothing errored server-side and the
    page still painted its shell, which is why it looked fine. */
 import { bindCheckout } from './app/checkout.js';
-import { T, translateTree, NUM, localePath, setHTML } from './wizard-i18n.js';
+import { T, translateTree, NUM, wizardLang, localePath, setHTML } from './wizard-i18n.js';
 
 const $ = (s) => document.querySelector(s);
 const esc = (s) =>
@@ -64,6 +66,71 @@ const S = {
     rd_active: null,
   },
 };
+
+/* ------------------------------------------------------------------ */
+/* URL state                                                           */
+/*                                                                     */
+/* This wizard wrote nothing to the URL at all. Six steps of answers    */
+/* lived in one JS object and nowhere else: one Back press left the     */
+/* site, a reload emptied the form, and a founder who reached a result  */
+/* had no way to send it to a co-founder — while the household wizard   */
+/* fifty metres away has had all three since syncHistory() was written  */
+/* for exactly this complaint. Same shapes, same hashes: #s=N per step, */
+/* #r=<base64 profile> for a result.                                    */
+/* ------------------------------------------------------------------ */
+function encodeState() {
+  return btoa(unescape(encodeURIComponent(JSON.stringify(S.profile))))
+    .replace(/\+/g, '-').replace(/\//g, '_').replace(/=+$/, '');
+}
+
+function decodeState(str) {
+  try {
+    const json = decodeURIComponent(escape(atob(String(str).replace(/-/g, '+').replace(/_/g, '/'))));
+    const p = JSON.parse(json);
+    return p && typeof p === 'object' ? p : null;
+  } catch {
+    /* Anything that comes out of a URL is accident- and attacker-shaped. A
+       hash we cannot read means "start at the beginning", never a throw. */
+    return null;
+  }
+}
+
+let lastHistoryKey = null;
+
+function syncHistory() {
+  const key = S.result ? 'result' : `step-${S.step}`;
+  if (key === lastHistoryKey) return;
+  const first = lastHistoryKey === null;
+  lastHistoryKey = key;
+  try {
+    const url = S.result ? `${location.pathname}#r=${encodeState()}` : `${location.pathname}#s=${S.step}`;
+    if (first) history.replaceState({ key }, '', url);
+    else history.pushState({ key }, '', url);
+  } catch {
+    /* Non-navigable context (a test harness, an embedded view). The wizard's
+       own Back button still works; only the browser's is degraded. */
+  }
+}
+
+window.addEventListener('popstate', async () => {
+  const step = location.hash.match(/^#s=(\d+)$/);
+  if (step) {
+    if (!S.profile.country_code) return; // nothing loaded to draw a step from
+    S.result = null;
+    S.step = Math.max(0, Math.min(steps().length - 1, Number(step[1])));
+    lastHistoryKey = `step-${S.step}`;
+    render();
+    return;
+  }
+  const res = location.hash.match(/r=([A-Za-z0-9_-]+)/);
+  if (res) {
+    const p = decodeState(res[1]);
+    if (!p || !p.country_code) return;
+    Object.assign(S.profile, p);
+    lastHistoryKey = 'result';
+    await compute();
+  }
+});
 
 /* ---- data ---------------------------------------------------------- */
 
@@ -231,7 +298,10 @@ function viewCountry() {
     <h1 class="q">${esc(T('Where is the company registered?'))}</h1>
     <p class="q-why">${esc(T('Funding is national, and most programmes will not look at a company registered elsewhere. We only load the jurisdictions you can actually reach.'))}</p>
     <div class="field"><label for="csearch">${esc(T('Search {n} jurisdictions', { n: NUM(cs.length) }))}</label>
-      <input id="csearch" type="search" placeholder="${esc(T('Start typing…'))}"></div>
+      <input id="csearch" type="search" placeholder="${esc(T('Start typing…'))}"
+        aria-describedby="csearch-count"><span class="tiny" id="csearch-count" aria-live="polite">${esc(
+          T('{n} of {total} shown', { n: NUM(cs.length), total: NUM(cs.length) }),
+        )}</span></div>
     <div class="opts" id="clist">
       ${cs
         .map(
@@ -241,6 +311,16 @@ function viewCountry() {
           </button>`,
         )
         .join('')}
+    </div>
+    <!-- Typing something that matches nothing used to leave this screen
+         completely blank under a label still claiming 77 jurisdictions:
+         indistinguishable from a broken page. The household wizard has shown
+         an explanation and a way back since that was reported there; this is
+         the same one, because the two screens are the same screen. -->
+    <div class="dash__empty" id="clist-empty" hidden>
+      <h2 id="clist-empty-h"></h2>
+      <p class="small">${esc(T('The dataset covers {n} jurisdictions so far — yours may simply not be in it yet.', { n: NUM(cs.length) }))}</p>
+      <p class="btn-row"><button class="btn btn-sm" type="button" data-act="csearch-clear">${esc(T('Clear the search'))}</button></p>
     </div>
   </div>`;
 }
@@ -278,13 +358,18 @@ const viewRd = () => `<div class="wizard-step">${rail()}
 
 /* Currencies are never added together — two currencies stay two figures.
    Module scope because the entitled programme rows need it too. */
-/* Grouping follows the page, not the source file. This used an
-   Intl.NumberFormat pinned to 'en', so a French reader saw "€3,082,500" where
-   the convention is "3 082 500 €", and a Hindi reader saw Western grouping for
-   a number their language groups differently. NUM() reads <html lang>. */
+/* Grouping AND placement follow the page, not the source file.
+   The last pass fixed half of this: NUM() gave a French reader French
+   grouping, and then the symbol was still concatenated in front of it, so the
+   headline figure of the company product read "€3 082 500" where the
+   convention is "3 082 500 €" — and outside EUR/GBP/USD the table fell
+   through to a raw ISO code, so an Indian founder was shown "INR 52,50,000"
+   while the household wizard on the same page language renders ₹. The
+   personal side has done this correctly through formatMoney() since it was
+   written; there is no reason for this file to hold its own currency table. */
 const money = (byCurrency) =>
   Object.entries(byCurrency || {})
-    .map(([cur, v]) => `${cur === 'EUR' ? '€' : cur === 'GBP' ? '£' : cur === 'USD' ? '$' : cur + ' '}${NUM(Math.round(v.max ?? v.min ?? 0))}`)
+    .map(([cur, v]) => formatMoney(Math.round(v.max ?? v.min ?? 0), cur, wizardLang()))
     .join(' + ');
 
 /* ---- result --------------------------------------------------------- */
@@ -388,10 +473,21 @@ function viewResult() {
 
     ${ENTITLED ? eligibleList(eligible) : lockedBucket(eligible)}
 
+    <!-- Parity with the household result, which has been shareable since the
+         answers were put in the fragment: a founder who reaches this screen
+         has something a co-founder needs, and until now the only way to pass
+         it on was to describe it. The link carries the answers, so it says
+         so. -->
     <div class="row no-print" style="margin-top:2rem">
       <button class="btn btn-sm" type="button" data-act="restart">${esc(T('Change my answers'))}</button>
+      <button class="btn btn-sm" type="button" data-act="share" aria-describedby="startup-share-what">${esc(
+        T('Copy a link that contains my answers'),
+      )}</button>
       <a class="btn btn-sm btn-ghost" href="${href('/startups/')}">${esc(T('Browse programmes instead'))}</a>
     </div>
+    <p class="tiny" id="startup-share-what" style="margin-top:.6rem">${esc(
+      T('Anyone with that link sees the answers you gave — where the company is registered, its stage, its headcount and its turnover.'),
+    )}</p>
 
     <p class="tiny" style="margin-top:1.6rem;max-width:70ch">${esc(
       T('This ran entirely in your browser. Nothing you entered was sent anywhere — which is also why nothing was saved. Sign in to keep it.'),
@@ -483,16 +579,37 @@ function render() {
      exists by the time the buyer reaches the locked panel. */
   bindCheckout(root);
   window.scrollTo({ top: 0, behavior: 'instant' });
+  /* After the paint, so the entry that is pushed describes the screen that is
+     on it — pushing before render is how the household wizard once ended up
+     with a result entry wearing the last question's hash. */
+  syncHistory();
 
   const search = $('#csearch');
   if (search) {
     search.focus();
-    search.addEventListener('input', () => {
-      const q = search.value.toLowerCase();
+    const empty = document.getElementById('clist-empty');
+    const count = document.getElementById('csearch-count');
+    const apply = () => {
+      const q = search.value.trim().toLowerCase();
+      let shown = 0;
       document.querySelectorAll('#clist .opt').forEach((el) => {
-        el.style.display = el.dataset.name.includes(q) ? '' : 'none';
+        const hit = el.dataset.name.includes(q);
+        el.style.display = hit ? '' : 'none';
+        if (hit) shown += 1;
       });
-    });
+      /* Either a list or an explanation, never neither. */
+      if (empty) {
+        empty.hidden = shown !== 0;
+        /* Written after translateTree() has already run, so it goes through
+           T() rather than waiting for a walk that will never come again. */
+        const h = document.getElementById('clist-empty-h');
+        if (h) h.textContent = T('No country matches “{q}”', { q: search.value.trim() });
+      }
+      const total = document.querySelectorAll('#clist .opt').length;
+      if (count) count.textContent = T('{n} of {total} shown', { n: NUM(shown), total: NUM(total) });
+    };
+    search.addEventListener('input', apply);
+    apply();
   }
 
   /* Funnel steps, named the same as the individual side so one dashboard
@@ -563,6 +680,33 @@ document.addEventListener('click', async (ev) => {
       S.step = 0;
       render();
       break;
+    /* The empty state's way back. Dispatching input rather than calling the
+       filter directly keeps one code path for "what the search shows". */
+    case 'share': {
+      const url = `${location.origin}${location.pathname}#r=${encodeState()}`;
+      const label = el.textContent;
+      try {
+        if (navigator.share) await navigator.share({ title: 'Unclaimed', url });
+        else {
+          await navigator.clipboard.writeText(url);
+          el.textContent = T('Link copied ✓');
+          setTimeout(() => { el.textContent = label; }, 2200);
+        }
+      } catch {
+        /* Dismissed, or a clipboard the browser will not give us. The link is
+           in the address bar either way. */
+      }
+      break;
+    }
+    case 'csearch-clear': {
+      const el2 = document.getElementById('csearch');
+      if (el2) {
+        el2.value = '';
+        el2.dispatchEvent(new Event('input', { bubbles: true }));
+        el2.focus();
+      }
+      break;
+    }
     /* POST /api/startups/plan. The Worker has answered this route since the
        company product landed and nothing called it — it is entitlement-gated
        and belonged on this screen, which until now had no notion of
@@ -615,4 +759,20 @@ document.addEventListener('click', async (ev) => {
 /* Entitlement is resolved before the first paint, so an entitled subscriber
    never sees the lock flash and then disappear — and, more importantly, so
    the result screen has an answer to branch on the moment it is drawn. */
-Promise.all([manifest(), refreshEntitlement()]).then(render);
+Promise.all([manifest(), refreshEntitlement()]).then(async () => {
+  /* A shared link, or a reload of a finished result: the answers are in the
+     fragment, so restore them and recompute rather than opening on "Where is
+     the company registered?" with everything the reader typed thrown away. */
+  const res = location.hash.match(/r=([A-Za-z0-9_-]+)/);
+  if (res) {
+    const p = decodeState(res[1]);
+    if (p && p.country_code) {
+      Object.assign(S.profile, p);
+      await compute();
+      return;
+    }
+  }
+  const step = location.hash.match(/^#s=(\d+)$/);
+  if (step && S.profile.country_code) S.step = Math.max(0, Math.min(steps().length - 1, Number(step[1])));
+  render();
+});

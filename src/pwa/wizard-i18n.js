@@ -167,6 +167,48 @@ const LOCALE_COUNTRIES = {
   hi: ['in'],
 };
 
+/**
+ * Does this locale own this country?
+ *
+ * /fr/ exists for France, Belgium, Switzerland and Canada; that is exactly the
+ * set where "the page language is the language the authority writes in" is a
+ * safe bet, so it is the set where a card leads with `name_local` rather than
+ * with the English gloss. A French reader was being shown "Active Solidarity
+ * Income (RSA)" as the headline of a French benefit — a name that appears on
+ * no form they will ever fill in.
+ */
+export function localeOwnsCountry(slug) {
+  const lang = wizardLang();
+  if (lang === 'en' || !slug) return false;
+  return (LOCALE_COUNTRIES[lang] || []).includes(String(slug).toLowerCase());
+}
+
+/*
+ * The country manifest carries one name per country and it is English, so a
+ * French reader met "8 dispositifs ... COMPARÉ À 114 DISPOSITIFS" under an
+ * eyebrow reading "UNITED KINGDOM", and "Dispositifs examinés en United
+ * Kingdom". Intl.DisplayNames turns the ISO code we already hold into the name
+ * that language actually uses, so there is no per-locale table to maintain and
+ * nobody has to invent a translation of a country's name. Falls back to the
+ * manifest name if the runtime has no data for the code.
+ */
+const REGION_NAMES = new Map();
+export function countryName(entry) {
+  if (!entry) return '';
+  const fallback = entry.name || '';
+  const code = String(entry.country_code || '').toUpperCase();
+  if (!/^[A-Z]{2}$/.test(code)) return fallback;
+  const lang = wizardLang();
+  if (!REGION_NAMES.has(lang)) {
+    let dn = null;
+    try { dn = new Intl.DisplayNames([lang], { type: 'region' }); } catch { dn = null; }
+    REGION_NAMES.set(lang, dn);
+  }
+  const dn = REGION_NAMES.get(lang);
+  if (!dn) return fallback;
+  try { return dn.of(code) || fallback; } catch { return fallback; }
+}
+
 export function localePath(path) {
   const lang = wizardLang();
   if (lang === 'en') return path;

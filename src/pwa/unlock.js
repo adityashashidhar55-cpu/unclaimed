@@ -129,7 +129,11 @@ function fill(el, html) {
   if (!el) return;
   const head = el.querySelector('.bucket__head');
   el.classList.remove('locked-bucket');
-  el.classList.add('bucket', 'bucket--unlocked');
+  /* `bucket--unlocked` used to be added here. Nothing styled it and nothing
+     queried it — one write, no reader, in either direction. A marker class
+     that no rule and no selector ever sees is not documentation, it is the
+     appearance of one. */
+  el.classList.add('bucket');
   el.innerHTML = (head ? head.outerHTML : '') + html;
 }
 
