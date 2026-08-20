@@ -13,13 +13,17 @@
  * source survives into a locked record.
  */
 import fs from 'node:fs';
+import http from 'node:http';
+import { createRequire } from 'node:module';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { match } from '../src/engine/matcher.js';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const DATA = path.join(ROOT, 'data');
-const DIST = path.join(ROOT, 'dist');
+/* Overridable so a pre-build dry run can point at a staged copy. Defaults to
+   the real dist/, which is what CI reads. */
+const DIST = process.env.UNCLAIMED_DIST || path.join(ROOT, 'dist');
 
 let passed = 0;
 let failed = 0;
@@ -100,12 +104,20 @@ if (!failed) {
 {
   const fullDir = path.join(DIST, 'api/v1/full');
   const emitted = fs.existsSync(fullDir);
-  if (process.env.EMIT_FULL_DATASET === '1') {
-    emitted ? ok('full dataset emitted, as EMIT_FULL_DATASET asked') : bad('EMIT_FULL_DATASET=1 but no full dataset was written');
+  /* The default flipped when the Worker went in front of the site: the copies
+     now ship unless EMIT_FULL_DATASET=0 asks for a public-only build. Mirror
+     src/build.mjs's predicate exactly rather than restating it — the assertion
+     is "the build emitted what it was asked to emit, and nothing else", which
+     holds in both directions and is what a static-host deploy would break. */
+  const wanted = process.env.EMIT_FULL_DATASET !== '0';
+  if (wanted) {
+    emitted
+      ? ok('full dataset emitted, as this build asked')
+      : bad('no full dataset was written — every paid answer would serve stripped rows');
   } else {
     emitted
-      ? bad('api/v1/full/ was written without EMIT_FULL_DATASET — on a static host that publishes the whole directory')
-      : ok('no unstripped dataset in the build (set EMIT_FULL_DATASET=1 only behind the Worker)');
+      ? bad('api/v1/full/ was written despite EMIT_FULL_DATASET=0 — a static host would publish the whole directory')
+      : ok('no unstripped dataset in this public-only build');
   }
 }
 
@@ -202,17 +214,85 @@ if (!failed) {
     return fs.existsSync(f) ? fs.readFileSync(f, 'utf8') : null;
   };
 
-  const pricing = readOut('pricing/index.html');
-  if (!pricing) bad('no pricing page built');
-  else {
-    const plans = [...pricing.matchAll(/data-plan="([a-z_]+)"/g)].map((m) => m[1]);
-    plans.includes('personal_annual') && plans.includes('personal_monthly')
-      ? ok('pricing sells both personal plans')
-      : bad(`pricing has no personal checkout control (found: ${plans.join(', ') || 'none'})`);
-    plans.some((x) => x.startsWith('business'))
-      ? ok('pricing sells a business plan')
-      : bad('pricing has no business checkout control');
+  /* ---------------------------------------------------------------- *
+   * The property, not three hardcoded names.
+   *
+   * This used to assert that pricing contained data-plan="personal_annual",
+   * "personal_monthly" and something starting with "business". Three string
+   * memberships. They cannot see a plan key the Worker will reject, they
+   * cannot see a locked screen with no checkout on it, and they passed all the
+   * way through /startups/check/ shipping a paywall with no way to pay.
+   *
+   * So: every plan key any shipped screen can ask for must be one the Worker
+   * sells, and every screen that shows a price or a lock must carry a control
+   * that starts checkout — in both audiences and all seven locales.
+   * ---------------------------------------------------------------- */
+  const workerSrc = fs.readFileSync(path.join(ROOT, 'worker/index.js'), 'utf8');
+  const planBlock = workerSrc.slice(workerSrc.indexOf('const PLANS = {'));
+  const WORKER_PLANS = new Set(
+    [...planBlock.slice(0, planBlock.indexOf('};')).matchAll(/^\s*([a-z_]+):\s*\{/gm)].map((m) => m[1]),
+  );
+  WORKER_PLANS.size >= 4 ? ok(`the Worker's plan table holds ${WORKER_PLANS.size} plans`) : bad('could not read the Worker plan table');
+
+  /* Cross-check the client's own table against it: a plan advertised on one
+     side and absent from the other is a checkout that 400s. */
+  {
+    const co = fs.readFileSync(path.join(ROOT, 'src/pwa/checkout.js'), 'utf8');
+    const clientBlock = co.slice(co.indexOf('export const PLANS = {'));
+    const clientPlans = [...clientBlock.slice(0, clientBlock.indexOf('};')).matchAll(/^\s*([a-z_]+):\s*\{/gm)].map((m) => m[1]);
+    const rogue = clientPlans.filter((k) => !WORKER_PLANS.has(k));
+    rogue.length === 0
+      ? ok(`every plan the client advertises is one the Worker sells (${clientPlans.length})`)
+      : bad(`the client advertises plans the Worker will reject: ${rogue.join(', ')}`);
   }
+
+  /* Every rendered plan key across the whole built site, in every locale. */
+  {
+    const files = [];
+    const walkAll = (d) => {
+      for (const e of fs.readdirSync(d, { withFileTypes: true })) {
+        const f = path.join(d, e.name);
+        if (e.isDirectory()) walkAll(f);
+        else if (/\.(html|js)$/.test(e.name)) files.push(f);
+      }
+    };
+    walkAll(DIST);
+    const unsellable = new Map();
+    const priced = new Map();
+    for (const f of files) {
+      const html = fs.readFileSync(f, 'utf8');
+      for (const m of html.matchAll(/data-plan="([a-z_]+)"/g)) {
+        /* 'auto' is legal by design: the Worker resolves it from the session's
+           account type, which is the one place that knows. */
+        if (m[1] !== 'auto' && !WORKER_PLANS.has(m[1])) unsellable.set(m[1], f);
+      }
+      /* B17: a control asking for 'auto' must not print a price, because the
+         client cannot yet know which plan 'auto' will resolve to. The /check/
+         panel said "Unlock — €50 a year" on a button that resolves to
+         business_annual for a business session: a €490 checkout behind a €50
+         label. */
+      for (const m of html.matchAll(/<(button|a)[^>]*data-plan="auto"[^>]*>([\s\S]{0,120}?)<\/\1>/g)) {
+        if (/[€$£¥]\s?\d|\d+\s?(a year|a month|per seat)/i.test(m[2])) priced.set(m[2].replace(/\s+/g, ' ').trim(), f);
+      }
+    }
+    unsellable.size === 0
+      ? ok(`every data-plan in dist/ resolves to a plan the Worker sells (${files.length} files)`)
+      : bad(`controls ask for plans the Worker does not sell: ${[...unsellable].map(([k, f]) => `${k} in ${path.relative(DIST, f)}`).join(', ')}`);
+    priced.size === 0
+      ? ok('no data-plan="auto" control claims a price it cannot know')
+      : bad(`data-plan="auto" controls carry a currency figure: ${[...priced.keys()].join(' | ')}`);
+  }
+
+  /* The behavioural version of this check lives in lockedScreenBehaviour()
+     at the bottom of this file. What used to be here read src/app.js and
+     src/pwa/startup-check.js as TEXT and asserted that if `locked-bucket`
+     appears anywhere then `data-checkout` appears somewhere too — so it
+     printed "✓ the company check offers checkout at its lock" over a screen
+     whose paywall could not be lifted by paying, because viewResult() had no
+     entitlement branch at all. It tested that a lock has a way to pay. It
+     never tested that paying removes the lock, which is the entire product.
+     It also read src/, while its sibling test-reachability.mjs makes the case
+     that what is in src/ is not what a browser downloads. */
 
   const account = readOut('account/index.html');
   if (!account) bad('no account page built');
@@ -320,6 +400,266 @@ if (!failed) {
       : bad('the two applicant types are not distinguished');
   }
 }
+
+/* ==================================================================== *
+ * Does paying actually remove the lock?
+ *
+ * Driven in Chromium over dist/, the way scripts/qa-screens.mjs drives it,
+ * because this is a question about what a browser renders after /api/me
+ * answers — and neither half of that is visible in the source. The check it
+ * replaces read src/ as text and asserted that a lock has a checkout button
+ * beside it. It printed a tick over /startups/check/, whose viewResult() had
+ * no entitlement branch at all: an entitled business subscriber, served the
+ * unstripped pool byte-for-byte as the Worker hands it to a paying session,
+ * still read "Which 15 programmes … are on the paid plan" with one control on
+ * the screen, and clicking it sent them to the Stripe billing portal.
+ *
+ * The property, in both directions:
+ *   entitled → zero .locked__row, and a real programme name from the dataset
+ *              is on the page;
+ *   free     → at least one .locked__row, and at least one [data-checkout].
+ * ==================================================================== */
+async function lockedScreenBehaviour() {
+  const require_ = createRequire(import.meta.url);
+  let chromium;
+  try {
+    ({ chromium } = require_('/home/claude/.npm-global/lib/node_modules/playwright/index.js'));
+  } catch {
+    bad('Playwright is not resolvable — run with NODE_PATH=/home/claude/.npm-global/lib/node_modules');
+    return;
+  }
+
+  const TYPES = {
+    '.html': 'text/html', '.css': 'text/css', '.js': 'text/javascript', '.mjs': 'text/javascript',
+    '.json': 'application/json', '.svg': 'image/svg+xml', '.png': 'image/png',
+    '.webmanifest': 'application/manifest+json', '.ico': 'image/x-icon',
+  };
+  const server = http.createServer((req, res) => {
+    const p = decodeURIComponent(req.url.split('?')[0]);
+    let f = path.join(DIST, p);
+    if (fs.existsSync(f) && fs.statSync(f).isDirectory()) f = path.join(f, 'index.html');
+    if (!fs.existsSync(f)) { res.writeHead(404); return res.end('not found'); }
+    res.writeHead(200, { 'content-type': TYPES[path.extname(f)] || 'application/octet-stream' });
+    fs.createReadStream(f).pipe(res);
+  });
+  const PORT = 8217;
+  await new Promise((r) => server.listen(PORT, r));
+  const base = `http://127.0.0.1:${PORT}`;
+  const browser = await chromium.launch();
+
+  /* A GB earner, encoded the way src/app.js encodes a shared result, so the
+     wizard computes a real result on load instead of being clicked through
+     seven times per locale. */
+  const profile = {
+    country_code: 'GB', admin_area: null, status: 'employee', age: 40, income_band: null,
+    income_annual: 18000, household_size: 2, children_count: 1, housing_tenure: 'renting',
+    nationality_group: 'citizen_or_pr', residency_months: 240, circumstances: [],
+  };
+  const hash = Buffer.from(JSON.stringify(profile), 'utf8')
+    .toString('base64').replace(/\+/g, '-').replace(/\//g, '_').replace(/=+$/, '');
+
+  /* A name that is genuinely in the GB dataset and genuinely behind the wall,
+     so "entitled sees names" is asserted against the data rather than against
+     the absence of a CSS class. */
+  const gb = JSON.parse(fs.readFileSync(path.join(ROOT, 'data/gb.json'), 'utf8'));
+  const realNames = gb.programmes.map((p) => p.name_en).filter(Boolean);
+
+  const LOCALES = ['', 'fr/', 'de/', 'es/', 'it/', 'pt/', 'hi/'];
+
+  async function screen({ url, entitled, waitFor }) {
+    const ctx = await browser.newContext({ viewport: { width: 1280, height: 900 } });
+    await ctx.route('**/api/me*', (route) =>
+      route.fulfill({
+        status: 200,
+        contentType: 'application/json',
+        body: JSON.stringify(
+          entitled
+            ? { signed_in: true, account_type: 'business', entitlement: { entitled: true, plan: 'business_monthly' } }
+            /* Signed in and NOT paying is the state the paywall is aimed at:
+               a signed-out reader is correctly sent through sign-in first, so
+               testing only that state would let a missing checkout button
+               hide behind a sign-in link. */
+            : { signed_in: true, account_type: 'personal', entitlement: { entitled: false } },
+        ),
+      }));
+    /* An entitled session is served the UNSTRIPPED pool. dist/api/v1/full/ is
+       byte-for-byte what worker/index.js:2332 returns to one, so the stub is
+       the real payload rather than a hand-made one. */
+    if (entitled) {
+      await ctx.route('**/api/v1/startups/*.json', (route) => {
+        const name = route.request().url().split('/').pop().split('?')[0];
+        const full = path.join(DIST, 'api/v1/full/startups', name);
+        if (name === 'index.json' || !fs.existsSync(full)) return route.continue();
+        route.fulfill({ status: 200, contentType: 'application/json', body: fs.readFileSync(full, 'utf8') });
+      });
+      await ctx.route('**/api/v1/programmes/*.json', (route) => {
+        const name = route.request().url().split('/').pop().split('?')[0];
+        const full = path.join(DIST, 'api/v1/full/programmes', name);
+        if (!fs.existsSync(full)) return route.continue();
+        route.fulfill({ status: 200, contentType: 'application/json', body: fs.readFileSync(full, 'utf8') });
+      });
+    }
+    const page = await ctx.newPage();
+    await page.goto(url, { waitUntil: 'networkidle' });
+    if (waitFor) await page.waitForSelector(waitFor, { timeout: 8000 }).catch(() => {});
+    await page.waitForTimeout(400);
+    const state = await page.evaluate(() => ({
+      lockedRows: document.querySelectorAll('.locked__row').length,
+      /* Either a control that opens checkout, or a link that carries the plan
+         through sign-in and back. Both are a road to paying; a bare link to
+         /pricing/ is not. */
+      checkouts: document.querySelectorAll('[data-checkout], a[href*="plan="]').length,
+      text: document.body.innerText,
+    }));
+    await ctx.close();
+    return state;
+  }
+
+  /* ---- /check/ results, in all seven locales ---------------------- */
+  for (const loc of LOCALES) {
+    const url = `${base}/${loc}check/#r=${hash}`;
+    const free = await screen({ url, entitled: false, waitFor: '.result-hero' });
+    free.lockedRows > 0
+      ? ok(`/${loc}check/ free: ${free.lockedRows} withheld rows`)
+      : bad(`/${loc}check/ free: the paywall rendered no withheld rows at all`);
+    free.checkouts > 0
+      ? ok(`/${loc}check/ free: a control that starts checkout is on the screen`)
+      : bad(`/${loc}check/ free: a lock with no way to pay`);
+
+    const paid = await screen({ url, entitled: true, waitFor: '.result-hero' });
+    paid.lockedRows === 0
+      ? ok(`/${loc}check/ entitled: no withheld rows`)
+      : bad(`/${loc}check/ entitled: ${paid.lockedRows} rows are still redacted for a paying subscriber`);
+    const named = realNames.filter((n) => paid.text.includes(n));
+    named.length > 0
+      ? ok(`/${loc}check/ entitled: ${named.length} real programme names are on the page`)
+      : bad(`/${loc}check/ entitled: the wall is gone and no programme is named`);
+  }
+
+  /* ---- /startups/check/ results ----------------------------------- */
+  for (const loc of LOCALES) {
+    const url = `${base}/${loc}startups/check/`;
+    /* The company wizard has no shareable hash, so it is clicked through. */
+    async function drive(entitled) {
+      const ctx = await browser.newContext({ viewport: { width: 1280, height: 900 } });
+      await ctx.route('**/api/me*', (route) =>
+        route.fulfill({
+          status: 200, contentType: 'application/json',
+          body: JSON.stringify(entitled
+            ? { signed_in: true, account_type: 'business', entitlement: { entitled: true, plan: 'business_monthly' } }
+            : { signed_in: false, entitlement: { entitled: false } }),
+        }));
+      if (entitled) {
+        await ctx.route('**/api/v1/startups/*.json', (route) => {
+          const name = route.request().url().split('/').pop().split('?')[0];
+          const full = path.join(DIST, 'api/v1/full/startups', name);
+          if (name === 'index.json' || !fs.existsSync(full)) return route.continue();
+          route.fulfill({ status: 200, contentType: 'application/json', body: fs.readFileSync(full, 'utf8') });
+        });
+      }
+      const page = await ctx.newPage();
+      await page.goto(url, { waitUntil: 'networkidle' });
+      await page.waitForSelector('[data-act="country"]', { timeout: 8000 });
+      await page.click('[data-cc="gb"]');
+      await page.click('[data-field="stage"][data-value="seed"]');
+      await page.click('[data-act="next"]');
+      await page.click('[data-field="headcount"][data-value="15"]');
+      await page.click('[data-act="next"]');
+      await page.click('[data-field="turnover_annual_eur"][data-value="750000"]');
+      await page.click('[data-act="next"]');
+      await page.click('[data-field="sectors"][data-value="software"]');
+      await page.click('[data-act="next"]');
+      await page.click('[data-field="rd_active"][data-value="true"]');
+      await page.click('[data-act="next"]');
+      await page.waitForSelector('.result-hero', { timeout: 8000 });
+      await page.waitForTimeout(300);
+      const state = await page.evaluate(() => ({
+        lockedRows: document.querySelectorAll('.locked__row').length,
+        checkouts: document.querySelectorAll('[data-checkout]').length,
+        text: document.body.innerText,
+      }));
+      await ctx.close();
+      return state;
+    }
+    let free;
+    let paid;
+    try {
+      free = await drive(false);
+      paid = await drive(true);
+    } catch (e) {
+      bad(`/${loc}startups/check/ could not be driven to a result: ${e.message.split('\n')[0]}`);
+      continue;
+    }
+    free.lockedRows > 0
+      ? ok(`/${loc}startups/check/ free: ${free.lockedRows} withheld rows`)
+      : bad(`/${loc}startups/check/ free: the paywall rendered no withheld rows`);
+    free.checkouts > 0
+      ? ok(`/${loc}startups/check/ free: a control that starts checkout is on the screen`)
+      : bad(`/${loc}startups/check/ free: a lock with no way to pay`);
+    paid.lockedRows === 0
+      ? ok(`/${loc}startups/check/ entitled: no withheld rows`)
+      : bad(`/${loc}startups/check/ entitled: ${paid.lockedRows} rows are still redacted for a paying subscriber`);
+    const startupNames = (() => {
+      const f = path.join(DIST, 'api/v1/full/startups/gb.json');
+      if (!fs.existsSync(f)) return [];
+      return JSON.parse(fs.readFileSync(f, 'utf8')).programmes.map((p) => p.name_en).filter(Boolean);
+    })();
+    const named = startupNames.filter((n) => paid.text.includes(n));
+    named.length > 0
+      ? ok(`/${loc}startups/check/ entitled: ${named.length} real programme names are on the page`)
+      : bad(`/${loc}startups/check/ entitled: the wall is gone and no programme is named`);
+  }
+
+  /* ---- one voice for withheld content ----------------------------- *
+   * theme.css:1079 states the contract: "One class so a test can enumerate
+   * them and confirm the site speaks about withheld content in exactly one
+   * voice." src/app.js emitted bare `<div class="locked__row">` while
+   * src/ui.mjs emitted `locked__row withheld` with a lock chip, so on the one
+   * screen where redaction IS the product there were zero
+   * `.locked__row__lock` elements, user-select was 'auto', and the grey bars
+   * read as failed loading rather than as withheld records.
+   */
+  for (const loc of LOCALES) {
+    for (const rel of ['check/', 'gb/']) {
+      const ctx = await browser.newContext({ viewport: { width: 1280, height: 900 } });
+      await ctx.route('**/api/me*', (route) =>
+        route.fulfill({ status: 200, contentType: 'application/json', body: JSON.stringify({ signed_in: false, entitlement: { entitled: false } }) }));
+      const page = await ctx.newPage();
+      const url = rel === 'check/' ? `${base}/${loc}check/#r=${hash}` : `${base}/${loc}${rel}`;
+      await page.goto(url, { waitUntil: 'networkidle' });
+      await page.waitForTimeout(400);
+      const r = await page.evaluate(() => {
+        const rows = [...document.querySelectorAll('.locked__rows > *')];
+        const dots = [...document.querySelectorAll('*')].filter(
+          (el) => el.children.length === 0 && el.textContent.trim() === '●●●●',
+        );
+        return {
+          rows: rows.length,
+          rowsUnmarked: rows.filter((el) => !el.classList.contains('withheld')).length,
+          dots: dots.length,
+          dotsUnmarked: dots.filter((el) => !el.closest('.withheld')).length,
+          chips: document.querySelectorAll('.locked__row__lock').length,
+        };
+      });
+      await ctx.close();
+      if (r.rows === 0) continue; // nothing withheld on this page
+      r.rowsUnmarked === 0
+        ? ok(`/${loc}${rel}: all ${r.rows} withheld rows carry .withheld`)
+        : bad(`/${loc}${rel}: ${r.rowsUnmarked} of ${r.rows} redacted rows are not marked .withheld`);
+      r.dotsUnmarked === 0
+        ? ok(`/${loc}${rel}: every ●●●● is inside a .withheld element`)
+        : bad(`/${loc}${rel}: ${r.dotsUnmarked} ●●●● elements are not marked withheld`);
+      r.chips > 0
+        ? ok(`/${loc}${rel}: the lock chip names the pattern once`)
+        : bad(`/${loc}${rel}: redacted rows with no lock chip — they read as failed loading`);
+    }
+  }
+
+  await browser.close();
+  server.close();
+}
+
+await lockedScreenBehaviour();
 
 console.log(`\n${passed} passed, ${failed} failed\n`);
 process.exit(failed ? 1 : 0);

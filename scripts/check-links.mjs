@@ -154,6 +154,44 @@ for (const file of htmlFiles) {
   }
   console.log(`  ✓ every import inside a JS file is version-pinned too`);
 
+  /* Pinned is not the same as reachable, and the loop above only asked about
+     the query string. /startup-check.js shipped `import ... from
+     './checkout.js'` — correctly pinned, and 404 in every browser, because
+     checkout.js is emitted at /app/checkout.js. A 404 specifier does not
+     degrade a module, it discards the whole module: the entire company wizard
+     was inert on /startups/check/ in all seven locales, and the page still
+     painted its shell, so nothing anywhere said so.
+ 
+     Specifiers in src/pwa/ are written relative to where build.mjs EMITS the
+     file, not to the source directory, which is exactly the kind of convention
+     a person gets wrong once per year. So resolve them the way a browser does
+     — including clamping a leading '..' at the document root, which is what
+     makes /startup-check.js's '../beacon.js' legitimately work — and require
+     the target to exist on disk. */
+  const unreachable = [];
+  for (const f of jsFiles) {
+    const code = fs.readFileSync(f, 'utf8');
+    for (const m of code.matchAll(/(?:\bfrom\s*|\bimport\s*\(\s*)['"]([^'"]+\.js)(?:\?[^'"]*)?['"]/g)) {
+      const spec = m[1];
+      if (!spec.startsWith('.') && !spec.startsWith('/')) continue; // bare = not ours
+      /* Resolve against the URL the file is served at, then clamp to DIST the
+         way an origin clamps '..' — never escape the published root. */
+      const fromUrl = '/' + path.relative(DIST, f).split(path.sep).join('/');
+      const abs = spec.startsWith('/') ? spec : path.posix.resolve(path.posix.dirname(fromUrl), spec);
+      const target = path.join(DIST, abs.replace(/^\/+/, ''));
+      if (!fs.existsSync(target)) {
+        unreachable.push(`${path.relative(DIST, f)} imports ${spec} → ${abs} (no such file)`);
+      }
+    }
+  }
+  if (unreachable.length) {
+    console.error(`\n  ✗ ${unreachable.length} imports inside JS files do not resolve — each one silently kills its whole module:`);
+    for (const b of unreachable.slice(0, 10)) console.error(`      ${b}`);
+    console.error('');
+    process.exit(1);
+  }
+  console.log(`  ✓ every import inside a JS file resolves to a file that exists`);
+
   /* And the service worker version must move whenever the shell does, or the
      caches holding the old copies are never dropped. */
   const sw = fs.readFileSync(path.join(DIST, 'sw.js'), 'utf8');

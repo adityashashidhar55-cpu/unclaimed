@@ -343,5 +343,59 @@ test('obligation kinds cover reports, not just milestones', () => {
   ck('open pipeline excludes awarded and declined', /const openEntries = /.test(dash) && /CLOSED_STAGES/.test(dash));
 }
 
+/* ------------------------------------------------------------------ *
+ * Input, and what the workspace says when it has nothing to show.
+ *
+ * Three of thirteen tabs in a per-seat product were driven by browser modals
+ * printing database identifiers at the reader — prompt("Which kind of
+ * document?\n\nid_proof, proof_of_address, income_proof, …"). They also broke
+ * silently: once a reader ticks Chrome's "prevent this page from creating
+ * additional dialogs", prompt() returns null and those tabs stop accepting
+ * input with no error at all. Asserted as a property of the module, so it
+ * cannot come back in a fourth flow.
+ * ------------------------------------------------------------------ */
+{
+  const fs = await import('node:fs');
+  const path = await import('node:path');
+  const { fileURLToPath } = await import('node:url');
+  const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
+  const ck = (name, cond) => test(name, () => assert.ok(cond, name));
+  const dash = fs.readFileSync(path.join(ROOT, 'src/pwa/dashboard.js'), 'utf8');
+  /* Comments talk about the old behaviour on purpose; strip them first. */
+  const code = dash.replace(/\/\*[\s\S]*?\*\//g, ' ').replace(/(^|[^:])\/\/[^\n]*/g, '$1 ');
+
+  for (const fn of ['prompt', 'confirm', 'alert']) {
+    const hits = [...code.matchAll(new RegExp(`(^|[^.\\w])${fn}\\s*\\(`, 'g'))].length;
+    ck(`the workspace never calls ${fn}() — every add-flow is a real form`, hits === 0);
+  }
+
+  ck('add-flows go through the shared form helper', /function askForm\(/.test(dash));
+  ck('the document form offers labels, not enum keys', /docLabel\(k\)/.test(dash));
+  ck('the obligation form offers labels, not enum keys', /options: OBLIGATION_KINDS/.test(dash));
+  ck('companies are picked from a list, not retyped', /function companyOptions\(/.test(dash));
+
+  /* Every surface that can render zero items must render the designed empty
+     state — the workspace owns one and the first-visit hero did not use it,
+     announcing an ordinary first visit as a system failure instead. */
+  const emptyCalls = (code.match(/\bempty\(/g) || []).length;
+  ck(`the designed empty state is used on every zero-item surface (${emptyCalls} call sites)`, emptyCalls >= 4);
+  ck('the signed-out hero uses it too, rather than an error sentence', /empty\(\s*\n?\s*'Start a workspace'/.test(dash));
+  ck(
+    'a genuine fetch failure keeps its own copy',
+    /could not reach your/i.test(dash) && /data-act="retry-sync"/.test(dash),
+  );
+
+  /* An entitled session must never be told to buy what it has bought. The
+     locked banner keyed off the fetched pool alone, so a paying business
+     session read "The names themselves are on the paid plan" over its own
+     rows — which also hid a real dataset outage behind a sales line. */
+  const banner = dash.slice(dash.indexOf('function lockedBanner()'));
+  const body = banner.slice(0, banner.indexOf('\n}'));
+  ck('the locked banner branches on entitlement, not only on the data', /gate === sync\.STATUS\.READY/.test(body));
+  const entitledArm = body.slice(body.indexOf('gate === sync.STATUS.READY'), body.lastIndexOf('return `<div class="callout">'));
+  ck('and the entitled arm never says "paid plan"', !/paid plan/i.test(entitledArm));
+  ck('it names the real cause instead', /did not load/i.test(entitledArm));
+}
+
 console.log(`\n${passed} passed, ${failed} failed\n`);
 process.exit(failed ? 1 : 0);

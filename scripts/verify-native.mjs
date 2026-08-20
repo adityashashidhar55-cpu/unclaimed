@@ -113,9 +113,15 @@ fs.existsSync(path.join(ROOT, 'native/STORE.md')) ? ok('store listing copy and r
   const counts = { total: 0, jurisdictions: new Set(), closed: 0 };
   const tally = (dir, files) => {
     for (const f of files) {
-      if (!f.endsWith('.json') || f === 'manifest.json' || f === 'mcp-tools.json') continue;
+      if (!f.endsWith('.json')) continue;
       const d = JSON.parse(fs.readFileSync(path.join(dir, f), 'utf8'));
-      const list = d.programmes ?? [];
+      /* Count datasets, not filenames. data/ also holds support files —
+         manifest.json, mcp-tools.json, and now fx-rates.json — and the old
+         name-based skip list silently promoted the next one added to a
+         jurisdiction with nothing in it. A jurisdiction is a file that carries
+         a programmes array; anything else is not one, whatever it is called. */
+      if (!Array.isArray(d.programmes)) continue;
+      const list = d.programmes;
       counts.total += list.length;
       counts.jurisdictions.add(f.replace('.json', ''));
       for (const p of list) if (p.status === 'closed') counts.closed += 1;

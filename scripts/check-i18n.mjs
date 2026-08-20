@@ -215,6 +215,175 @@ for (const r of rows) {
   console.log('  \u2713 no page displays a raw database enum value');
 }
 
+
+/* ------------------------------------------------------------------ */
+/* Every key a template asks for must exist                            */
+/*                                                                     */
+/* The translator falls back to the key name when a key is absent, and  */
+/* nothing errors. src/ui.mjs asked for `checkFree`, no locale file     */
+/* defined it, and the literal string "checkFree" shipped as a button   */
+/* label on 3,957 pages. This is the static half of that: read the      */
+/* templates, read the English dictionary, and hold one against the     */
+/* other before anything is even built.                                 */
+/* ------------------------------------------------------------------ */
+{
+  const en = (await import('../src/i18n/en.mjs')).default;
+  const known = new Set(Object.keys(en));
+  const SOURCES = ['src/ui.mjs', 'src/build.mjs', 'src/blog.mjs'];
+  const missing = [];
+
+  for (const rel of SOURCES) {
+    const src = fs.readFileSync(path.join(ROOT, rel), 'utf8');
+    /* Match the call, then read only its FIRST argument — up to the first
+       comma or close paren at depth zero. A ternary lives there too
+       (`TR(cond ? 'a' : 'b', x)`), so every quoted literal in that span is a
+       key, not just the leading one. */
+    for (const m of src.matchAll(/(?<![\w$.])(?:T|TR)\(/g)) {
+      let i = m.index + m[0].length;
+      let depth = 0;
+      let arg = '';
+      for (; i < src.length; i += 1) {
+        const c = src[i];
+        if (c === '(' || c === '[' || c === '{') depth += 1;
+        else if (c === ')' && depth === 0) break;
+        else if (c === ')' || c === ']' || c === '}') depth -= 1;
+        else if (c === ',' && depth === 0) break;
+        arg += c;
+        if (arg.length > 400) break;
+      }
+      for (const lit of arg.matchAll(/(['"])([A-Za-z_$][\w$]*)\1/g)) {
+        if (!known.has(lit[2])) {
+          const line = src.slice(0, m.index).split('\n').length;
+          missing.push(`${rel}:${line} asks for "${lit[2]}", which en.mjs does not define`);
+        }
+      }
+    }
+  }
+
+  if (missing.length) {
+    console.error('\n  ✗ a template asks for a key that does not exist:');
+    for (const x of missing.slice(0, 12)) console.error(`      ${x}`);
+    console.error('');
+    process.exit(1);
+  }
+  console.log(`  ✓ every T()/TR() key in ${SOURCES.length} templates exists in en.mjs`);
+}
+
+/* ------------------------------------------------------------------ */
+/* And nothing that LOOKS like a key reached a control                  */
+/*                                                                     */
+/* The key-name scan above is exact: it can only catch keys that exist  */
+/* in the dictionary today. This one is shaped: an anchor or button     */
+/* whose entire label is a camelCase token is an identifier, whatever   */
+/* the dictionary happens to contain. It is the check that would have   */
+/* caught `checkFree` on the day it was written, when no locale file    */
+/* had ever heard of it.                                                */
+/* ------------------------------------------------------------------ */
+{
+  /* A real sample, not the nine hub pages above. The button that leaked was on
+     country and category pages — 3,957 of them — and never on a hub, so a
+     hub-only crawl would have reported everything fine. */
+  const manifest = JSON.parse(fs.readFileSync(path.join(ROOT, 'data/manifest.json'), 'utf8'));
+  const sampleCountries = manifest.countries.slice(0, 3);
+  const targets = [];
+  for (const lang of ['', ...LANGS]) {
+    for (const [rel] of SURFACES) targets.push(path.join(DIST, lang, rel, 'index.html'));
+    for (const c of sampleCountries) {
+      targets.push(path.join(DIST, lang, c.slug, 'index.html'));
+      const data = JSON.parse(fs.readFileSync(path.join(ROOT, 'data', `${c.slug}.json`), 'utf8'));
+      const cat = data.programmes[0]?.category;
+      if (cat) targets.push(path.join(DIST, lang, c.slug, cat, 'index.html'));
+    }
+  }
+
+  const IDENTIFIER = /^[a-z]+[A-Z][A-Za-z]*$/;
+  const shaped = [];
+  let scanned = 0;
+  for (const f of targets) {
+    if (!fs.existsSync(f)) continue;
+    scanned += 1;
+    const html = fs.readFileSync(f, 'utf8');
+    for (const m of html.matchAll(/<(a|button)\b[^>]*>([\s\S]*?)<\/\1>/gi)) {
+      const text = m[2].replace(/<[^>]+>/g, '').replace(/&[a-z]+;|&#\d+;/gi, ' ').trim();
+      if (IDENTIFIER.test(text)) shaped.push(`${path.relative(DIST, f)}: <${m[1]}> reads "${text}"`);
+    }
+  }
+  if (shaped.length) {
+    console.error('\n  ✗ a control is labelled with something shaped like a variable name:');
+    for (const x of shaped.slice(0, 12)) console.error(`      ${x}`);
+    console.error('');
+    process.exit(1);
+  }
+  console.log(`  ✓ no control on ${scanned} sampled pages is labelled with an identifier`);
+}
+
+/* ------------------------------------------------------------------ */
+/* The head, not just the body                                         */
+/*                                                                     */
+/* This file measured visible text and stopped at </head>, so two title */
+/* bugs lived under it for as long as they liked: the home page passed  */
+/* SITE_NAME and got a one-word <title>, and /startups/check/ and       */
+/* /auto-apply/ carried hardcoded English titles in all seven locales.  */
+/* A <title> is the one string a reader sees before they open the page. */
+/* ------------------------------------------------------------------ */
+{
+  const SITE_NAME = 'Unclaimed';
+  const HUBS = ['', 'pricing/', 'startups/', 'startups/check/', 'auto-apply/', 'countries/', 'account/'];
+  const titleOf = (f) => {
+    if (!fs.existsSync(f)) return null;
+    const head = fs.readFileSync(f, 'utf8').split('</head>')[0];
+    return {
+      title: (head.match(/<title>([\s\S]*?)<\/title>/) || [])[1]?.trim() ?? null,
+      og: (head.match(/<meta property="og:title" content="([^"]*)"/) || [])[1]?.trim() ?? null,
+    };
+  };
+
+  const problems = [];
+
+  /* A title equal to the site name, anywhere. layout() skips the " · Unclaimed"
+     suffix when the title already IS the site name, which is what turned the
+     home page into a one-word search result. */
+  const everyPage = [];
+  (function walk(dir) {
+    for (const e of fs.readdirSync(dir, { withFileTypes: true })) {
+      const f = path.join(dir, e.name);
+      if (e.isDirectory()) walk(f);
+      else if (e.name === 'index.html') everyPage.push(f);
+    }
+  })(DIST);
+  for (const f of everyPage) {
+    /* The PWA shell is exempt: its <title> becomes the standalone window's
+       title bar and the home-screen label, where the product name on its own is
+       the right answer. It is not a document anybody arrives at from a search
+       result. */
+    if (path.relative(DIST, f).startsWith(`app${path.sep}`)) continue;
+    const t = titleOf(f);
+    if (t && t.title === SITE_NAME) problems.push(`${path.relative(DIST, f)} has a <title> of just "${SITE_NAME}"`);
+    if (problems.length > 6) break;
+  }
+
+  /* And a localised hub whose head is byte-identical to the English one has not
+     been localised — it has been copied. */
+  for (const rel of HUBS) {
+    const enT = titleOf(path.join(DIST, rel, 'index.html'));
+    if (!enT || !enT.title) continue;
+    for (const lang of LANGS) {
+      const locT = titleOf(path.join(DIST, lang, rel, 'index.html'));
+      if (!locT || !locT.title) continue;
+      if (locT.title === enT.title) problems.push(`/${lang}/${rel} has the English <title> "${enT.title}"`);
+      else if (locT.og && enT.og && locT.og === enT.og) problems.push(`/${lang}/${rel} has the English og:title "${enT.og}"`);
+    }
+  }
+
+  if (problems.length) {
+    console.error('\n  ✗ page titles:');
+    for (const x of problems.slice(0, 12)) console.error(`      ${x}`);
+    console.error('');
+    process.exit(1);
+  }
+  console.log(`  ✓ every hub page has a localised <title> and no page is titled only "${SITE_NAME}"`);
+}
+
 console.log(
   `\n${checked - bad} of ${checked} pages under the ${(THRESHOLD * 100).toFixed(0)}% threshold` +
     `, ${bad} still substantially English.\n`,

@@ -16,6 +16,7 @@
 import fs from 'node:fs';
 import {
   match, passportedFrom, isStatutoryRight, isCitizensOnly, isHardshipAid, CIRCUMSTANCES,
+  isStale, STALE_AFTER_DAYS,
 } from '../src/engine/matcher.js';
 
 let pass = 0, fail = 0;
@@ -160,6 +161,221 @@ const EARNER = (cc, o = {}) => ({
     }
   }
   t(`no gated record reaches the eligible bucket in any of ${checked} countries (found ${unconditioned})`, unconditioned === 0);
+}
+
+/* ------------------------------------------------------------------ *
+ * The breakdown on the results screen must account for everything.
+ *
+ * The screen says "MATCHED AGAINST 114 PROGRAMMES" over "8 eligible · 0 need
+ * one more answer · 41 depend on a circumstance · 64 ruled out" — which is
+ * 113. The missing record was the taper bucket, omitted from the sentence and
+ * shown separately two lines down as "1 at a reduced amount". Personas with no
+ * taper matches summed to exactly 114, which is why it read as correct.
+ *
+ * Asserted on the matcher's own buckets rather than on the rendered string:
+ * the render can only be right if the partition is total, and a partition is
+ * a property of the engine.
+ * ------------------------------------------------------------------ */
+{
+  const manifest = JSON.parse(fs.readFileSync(new URL('data/manifest.json', ROOT), 'utf8'));
+  const PERSONAS = [
+    { label: 'employed, one child, renting', status: 'employee', age: 34, income_annual: 22000, household_size: 3, children_count: 1, housing_tenure: 'renting' },
+    { label: 'retired owner', status: 'retired', age: 72, income_annual: 14000, household_size: 2, children_count: 0, housing_tenure: 'owner' },
+    { label: 'student', status: 'student', age: 21, income_annual: 4000, household_size: 1, children_count: 0, housing_tenure: 'student_housing' },
+    { label: 'out of work, low income', status: 'unemployed', age: 45, income_annual: 6000, household_size: 4, children_count: 2, housing_tenure: 'renting' },
+    { label: 'high earner', status: 'employee', age: 41, income_annual: 185000, household_size: 4, children_count: 2, housing_tenure: 'owner' },
+    { label: 'self-employed', status: 'self_employed', age: 38, income_annual: 31000, household_size: 2, children_count: 0, housing_tenure: 'renting' },
+    { label: 'everything skipped', status: null, age: null, income_annual: null, household_size: 1, children_count: 0, housing_tenure: null },
+    { label: 'resident on a permit', status: 'employee', age: 29, income_annual: 18000, household_size: 1, children_count: 0, housing_tenure: 'renting', nationality_group: 'any_resident' },
+  ];
+
+  let pairs = 0;
+  let short = 0;
+  let first = '';
+  for (const entry of manifest.countries) {
+    const data = JSON.parse(fs.readFileSync(new URL(`data/${entry.slug}.json`, ROOT), 'utf8'));
+    for (const persona of PERSONAS) {
+      const r = match(
+        { nationality_group: 'citizen_or_pr', circumstances: [], admin_area: null, ...persona, country_code: entry.country_code },
+        data,
+        entry,
+      );
+      pairs += 1;
+      const parts =
+        r.eligible.length + (r.tapered || []).length + (r.rights || []).length +
+        r.conditional.length + r.needs_one_more_answer.length + r.not_eligible.length;
+      if (parts !== data.programmes.length) {
+        short += 1;
+        if (!first) first = `${entry.slug} / ${persona.label}: parts sum to ${parts}, matched against ${data.programmes.length}`;
+      }
+    }
+  }
+  t(
+    `the breakdown accounts for every programme across ${pairs} country/persona pairs${short ? ` (first gap: ${first})` : ''}`,
+    short === 0,
+  );
+}
+
+/* ---- gender: a dead field that was silently passing ---------------- *
+ *
+ * eligibility.gender was populated on 1,235 of 2,216 records and read by no
+ * code at all — the matcher, the build, both wizards and every pwa module all
+ * returned 0 for `grep -c gender`. Four sex-restricted programmes reached the
+ * eligible bucket for male-plausible profiles, and six Indian cash schemes
+ * were offered to a male profile at up to INR 30,000/yr on pages that
+ * themselves say "pays ₹2,500 a month to eligible women heads of households".
+ *
+ * The wizard asks no gender question yet, by design, so the profile is silent
+ * and the correct outcome is "needs one more answer". The one outcome that
+ * must never come back is a silent pass.
+ */
+{
+  const man2 = JSON.parse(fs.readFileSync(new URL('data/manifest.json', ROOT), 'utf8'));
+  const leaked = [];
+  for (const entry of man2.countries) {
+    const data = JSON.parse(fs.readFileSync(new URL(`data/${entry.slug}.json`, ROOT), 'utf8'));
+    for (const age of [25, 35, 45, 60]) {
+      const r = match(
+        {
+          country_code: entry.country_code, admin_area: null, status: 'employee', age,
+          income_band: null, income_annual: null, household_size: 1, children_count: 0,
+          housing_tenure: 'renting', nationality_group: 'citizen_or_pr', residency_months: 600,
+          circumstances: [],
+        },
+        data, entry,
+      );
+      for (const m of r.eligible) {
+        if (m.programme.eligibility?.gender === 'female') leaked.push(`${entry.slug}/${m.programme.slug} at ${age}`);
+      }
+      /* Same profile, same records, with the answer given: the gate has to
+         subtract AND give back, or it is just a different wrong answer. */
+      const withAnswer = match(
+        {
+          country_code: entry.country_code, admin_area: null, status: 'employee', age,
+          income_band: null, income_annual: null, household_size: 1, children_count: 0,
+          housing_tenure: 'renting', nationality_group: 'citizen_or_pr', residency_months: 600,
+          circumstances: [], gender: 'female',
+        },
+        data, entry,
+      );
+      if (entry.slug === 'in' && age === 35) {
+        t('declaring female gives the women-only schemes back',
+          withAnswer.eligible.some((m) => m.programme.eligibility?.gender === 'female'));
+      }
+    }
+  }
+  t(`no women-only record reaches the eligible bucket for a profile that never said so (${man2.countries.length} countries × 4 ages)`,
+    leaked.length === 0, leaked.slice(0, 6).join(', '));
+
+  /* And the data half: the field is REQUIRED by docs/data-spec.md. */
+  const absent = [];
+  const FEMALE_NAME = /women|mothers?|maternity|pregnan|breast ?(cancer|screening)|cervical|femminile|mujeres|frauen/i;
+  /* Reviewed and deliberately left `any`: each of these has a route open to
+     anyone in its own prose, so restricting it would reject real claimants.
+     Checked one by one against source_snippet, not pattern-matched. */
+  const REVIEWED_ANY = new Set([
+    'ei-maternity-parental-benefits',   // parental half is open to either parent
+    'erstausstattung-sgb2',             // household and clothing grants, pregnancy is one trigger
+    'stand-up-india',                   // SC/ST *or* women entrepreneurs
+    'on-nuove-imprese-tasso-zero',      // youth-led *or* women-led
+    'incapacidad-temporal-imss',        // sickness *and* maternity
+    'kraamzorg-vergoeding',             // "everyone with Dutch basic health insurance"
+    'swiadczenie-rodzicielskie-kosiniakowe', // "osobom" — persons without maternity allowance
+    'zasilek-macierzynski',             // maternity *and* parental leave
+    'za-zyciem-opieka-medyczna',        // pregnant women *and* children
+    'szczepienia-grypa-bezplatne',      // children, 65+, *and* pregnant women
+    'wic-women-infants-children',       // women, infants *and* children under 5
+  ]);
+  const stillAny = [];
+  for (const entry of man2.countries) {
+    const data = JSON.parse(fs.readFileSync(new URL(`data/${entry.slug}.json`, ROOT), 'utf8'));
+    for (const p of data.programmes) {
+      if (p.eligibility?.gender == null) absent.push(`${entry.slug}/${p.slug}`);
+      else if (FEMALE_NAME.test(p.name_en || '') && p.eligibility.gender === 'any' && !REVIEWED_ANY.has(p.slug)) {
+        stillAny.push(`${entry.slug}/${p.slug}`);
+      }
+    }
+  }
+  t('every record carries eligibility.gender', absent.length === 0, `${absent.length} absent, e.g. ${absent.slice(0, 4).join(', ')}`);
+  t('no unreviewed women-only-by-name record is still marked "any"', stillAny.length === 0, stillAny.slice(0, 8).join(', '));
+}
+
+/* ---- staleness: a field that could never mean anything ------------- *
+ *
+ * All 2,216 records carry the identical last_verified_at 2026-08-12, so
+ * `if (verification_status === 'stale') continue` was unreachable and no
+ * record could ever age out. The rule now derives staleness from the date at a
+ * named threshold — and produces a caveat, never a drop, because deleting real
+ * money from a real answer on the strength of a constant date is worse than
+ * showing it.
+ */
+{
+  const day = 86400000;
+  const now = Date.parse('2026-08-20T00:00:00Z');
+  const dated = (days) => ({ last_verified_at: new Date(now - days * day).toISOString().slice(0, 10) });
+  t(`isStale fires at ${STALE_AFTER_DAYS + 1} days`, isStale(dated(STALE_AFTER_DAYS + 1), now));
+  t(`isStale does not fire at ${STALE_AFTER_DAYS - 1} days`, !isStale(dated(STALE_AFTER_DAYS - 1), now));
+  t('a record with no date is not called stale', !isStale({ last_verified_at: null }, now));
+
+  /* Behaviour, not just the predicate: a stale record still lands in the
+     eligible bucket, carrying a note. */
+  const gbEntry = man.countries.find((c) => c.slug === 'gb');
+  const gb = load('gb');
+  const synthetic = JSON.parse(JSON.stringify(gb));
+  for (const p of synthetic.programmes) p.last_verified_at = new Date(now - (STALE_AFTER_DAYS + 30) * day).toISOString().slice(0, 10);
+  const fresh = match(EARNER('gb'), gb, gbEntry, now);
+  const old = match(EARNER('gb'), synthetic, gbEntry, now);
+  t('going stale does not drop a single programme from the eligible bucket',
+    old.eligible.length === fresh.eligible.length, `${old.eligible.length} vs ${fresh.eligible.length}`);
+  t('going stale does not change the total',
+    old.total_max === fresh.total_max, `${old.total_max} vs ${fresh.total_max}`);
+  t('a stale match carries a note the screen can print',
+    old.eligible.length === 0 || old.eligible.every((m) => typeof m.stale_note === 'string' && m.stale_note.length > 0));
+  t('a fresh match carries no stale note', fresh.eligible.every((m) => !m.stale_note));
+}
+
+/* ---- one_off money never enters a per-year total ------------------- *
+ * Full coverage lives in scripts/test-amounts.mjs; this is the persona the
+ * bug was reported against, kept here because this is the file anyone reads
+ * when a total looks wrong.
+ */
+{
+  const sg = load('sg');
+  const entry = entryFor('sg');
+  const r = match(
+    {
+      country_code: 'SG', admin_area: null, status: 'retired', age: 72, income_band: 'b2',
+      income_annual: null, household_size: 2, children_count: 0, housing_tenure: 'owner',
+      nationality_group: 'citizen_or_pr', residency_months: 600, circumstances: [],
+    },
+    sg, entry,
+  );
+  const oneOffInTotal = r.eligible
+    .filter((m) => !m.is_capital && m.programme.amount_period === 'one_off')
+    .reduce((n, m) => n + (m.est_annual_max ?? 0), 0);
+  t('the SG retiree has one-off grants at all', oneOffInTotal > 0, `${oneOffInTotal}`);
+  t('none of that one-off money is inside the per-year total',
+    r.total_max + oneOffInTotal === r.total_max + r.one_off_max && r.one_off_max === oneOffInTotal,
+    `per-year ${r.total_max}, one-off ${r.one_off_max}, expected one-off ${oneOffInTotal}`);
+}
+
+/* ---- the no-match screen must not claim you qualify ---------------- */
+{
+  const sg = load('sg');
+  const r = match(
+    {
+      country_code: 'SG', admin_area: null, status: 'employee', age: 28, income_band: 'b5',
+      income_annual: null, household_size: 1, children_count: 0, housing_tenure: 'hosted',
+      nationality_group: 'any_resident', residency_months: 6, circumstances: [],
+    },
+    sg, entryFor('sg'),
+  );
+  t('the Singapore migrant persona matches nothing', r.eligible.length === 0, `${r.eligible.length} eligible`);
+  t('with nothing eligible the disclaimer drops "You appear to meet the published criteria"',
+    !/appear to meet/.test(r.disclaimer), r.disclaimer);
+  const some = match(EARNER('gb'), load('gb'), entryFor('gb'));
+  t('with something eligible the clause is back',
+    some.eligible.length === 0 || /appear to meet/.test(some.disclaimer));
 }
 
 console.log(`\n${pass} passed, ${fail} failed\n`);

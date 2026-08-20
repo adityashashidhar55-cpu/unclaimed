@@ -135,5 +135,50 @@ const FILING_STATES = (await import('data:text/javascript,' + encodeURIComponent
   t('revoking says what it does and does not do', /cannot unsend/.test(dash));
 }
 
+/* ---- the vocabulary the queue filters on ---------------------------
+ *
+ * The 43 assertions above all passed while the entire feature was
+ * unreachable. The filing queue filtered on `e.stage === 'shortlist' ||
+ * e.stage === 'preparing'`; STAGES defines watch, drafting, submitted,
+ * awarded, declined, blocked; nothing in the file ever wrote either of the
+ * two names the filter used. So it matched zero entries, always. "Auto-file"
+ * answered every submission with "Shortlist at least one opportunity first"
+ * and no POST to /api/enterprise/* was ever issued from the UI.
+ *
+ * Not one of the assertions above could see that, because none of them asked
+ * whether the filter named a stage that exists. This one does. */
+{
+  const dash = fs.readFileSync(new URL('src/pwa/dashboard.js', ROOT), 'utf8');
+  const mod = await import(new URL('src/pwa/dashboard.js', ROOT)).catch(() => null);
+
+  /* Read STAGE_IDS from the module where possible; fall back to the source so
+     this still runs in a plain Node context with no DOM. */
+  const stageIds = mod?.STAGE_IDS ?? [
+    ...dash.slice(dash.indexOf('const STAGES = ['), dash.indexOf('const STAGE_IDS')).matchAll(/id: '([a-z_]+)'/g),
+  ].map((m) => m[1]);
+
+  t('STAGES defines at least the six board columns', stageIds.length >= 6);
+
+  /* Every stage name the filing code compares against, whatever form the
+     comparison takes. A literal in a filter that is not a stage is the bug. */
+  const filterBlock = dash.slice(dash.indexOf('async function filingView'));
+  const compared = new Set([
+    ...[...dash.matchAll(/e\.stage === '([a-z_]+)'/g)].map((m) => m[1]),
+    ...[...filterBlock.matchAll(/stage === '([a-z_]+)'/g)].map((m) => m[1]),
+  ]);
+  const rogue = [...compared].filter((x) => !stageIds.includes(x));
+  t(`every stage the filing filters name is a real stage${rogue.length ? ` (rogue: ${rogue.join(', ')})` : ''}`, rogue.length === 0);
+
+  /* And the set itself, where it is now declared once. */
+  if (mod?.PRE_SUBMISSION) {
+    const pre = [...mod.PRE_SUBMISSION];
+    t('the pre-submission set is a subset of STAGE_IDS', pre.every((x) => stageIds.includes(x)));
+    t('and it is not empty — an empty filter is the same outage with different code', pre.length > 0);
+  } else {
+    const declared = /const PRE_SUBMISSION = new Set\(STAGE_IDS\.filter/.test(dash);
+    t('the pre-submission set is derived from STAGE_IDS, not written out again', declared);
+  }
+}
+
 console.log(`\n${pass} passed, ${fail} failed\n`);
 process.exit(fail ? 1 : 0);
