@@ -4238,8 +4238,7 @@
         "housing_tenure": null,
         "student_required": true,
         "admin_areas": [],
-        "gender": "any",
-        "rule_source": "geography_unknown"
+        "gender": "any"
       },
       "source_url": "https://isic.pl",
       "source_snippet": "ISIC to jedyna międzynarodowo uznawana legitymacja studencka uprawniająca do zniżek u partnerów w Polsce i na świecie.",

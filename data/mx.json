@@ -1574,8 +1574,7 @@
         "housing_tenure": null,
         "student_required": true,
         "admin_areas": [],
-        "gender": "any",
-        "rule_source": "geography_unknown"
+        "gender": "any"
       },
       "source_url": "https://www.fundaciontelmextelcel.org/",
       "source_snippet": "Fundación Telmex Telcel otorga becas a estudiantes mexicanos de excelencia académica y escasos recursos.",
@@ -1637,8 +1636,7 @@
         "housing_tenure": null,
         "student_required": true,
         "admin_areas": [],
-        "gender": "any",
-        "rule_source": "geography_unknown"
+        "gender": "any"
       },
       "source_url": "https://www.becas-santander.com/",
       "source_snippet": "Becas Santander ofrece programas de becas de estudios, movilidad e idiomas para estudiantes universitarios en México.",
@@ -1714,10 +1712,10 @@
         ],
         "gender": "any"
       },
-      "source_url": "https://www.elfinanciero.com.mx/cdmx/2025/12/16/mi-beca-para-empezar-cdmx-cuando-termina-el-registro-para-el-apoyo-a-ninos-de-preescolar-y-primaria/",
+      "source_url": "https://mibecaparaempezar.cdmx.gob.mx/",
       "source_snippet": "Los alumnos de preescolar reciben 600 pesos mensuales. Los estudiantes de primaria reciben 650 pesos mensuales.",
       "last_verified_at": "2026-08-12",
-      "verification_status": "verified"
+      "verification_status": "auto_extracted"
     },
     {
       "slug": "beca-transporte-universitarios-cdmx",

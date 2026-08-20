@@ -2495,8 +2495,7 @@
     "housing_tenure": null,
     "student_required": false,
     "admin_areas": [],
-    "gender": "any",
-    "rule_source": "geography_unknown"
+    "gender": "any"
    },
    "source_url": "https://www.yes4youth.co.za",
    "source_snippet": "YES gives youth a 12-month quality work experience and gives businesses B-BBEE level ups for creating youth jobs",

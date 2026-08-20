@@ -3125,8 +3125,7 @@
     "housing_tenure": null,
     "student_required": false,
     "admin_areas": [],
-    "gender": "any",
-    "rule_source": "geography_unknown"
+    "gender": "any"
    },
    "source_url": "https://www.sbb.ch/de/angebote/halbtax",
    "source_snippet": "Erwachsene ab 25 Jahre bekommen das erste Halbtax für 190 Franken und Jugendliche von 16 bis 24,99 Jahren für 120 Franken pro Jahr",
@@ -3178,8 +3177,7 @@
     "housing_tenure": null,
     "student_required": false,
     "admin_areas": [],
-    "gender": "any",
-    "rule_source": "geography_unknown"
+    "gender": "any"
    },
    "source_url": "https://www.sbb.ch",
    "source_snippet": "Mit der Junior-Karte reisen Kinder von 6 bis 15,99 Jahren gratis in Begleitung eines Elternteils im öffentlichen Verkehr",
@@ -3287,8 +3285,7 @@
     "housing_tenure": null,
     "student_required": false,
     "admin_areas": [],
-    "gender": "any",
-    "rule_source": "geography_unknown"
+    "gender": "any"
    },
    "source_url": "https://www.museumspass.ch",
    "source_snippet": "Der Museumspass ermöglicht während eines Jahres den freien Eintritt in über 500 Museen in der ganzen Schweiz",
@@ -3854,8 +3851,7 @@
     "housing_tenure": null,
     "student_required": false,
     "admin_areas": [],
-    "gender": "any",
-    "rule_source": "geography_unknown"
+    "gender": "any"
    },
    "source_url": "https://www.venturekick.ch",
    "source_snippet": "Venture Kick unterstützt Schweizer Hochschul-Spin-offs mit bis zu 150'000 Franken Starthilfe in drei Stufen",
@@ -4190,8 +4186,7 @@
     "housing_tenure": null,
     "student_required": false,
     "admin_areas": [],
-    "gender": "any",
-    "rule_source": "geography_unknown"
+    "gender": "any"
    },
    "source_url": "https://www.caritas.ch",
    "source_snippet": "Caritas Schweiz unterstützt Menschen in Notlagen mit finanzieller Hilfe, Beratung und regionalen Angeboten",
@@ -4243,8 +4238,7 @@
     "housing_tenure": null,
     "student_required": false,
     "admin_areas": [],
-    "gender": "any",
-    "rule_source": "geography_unknown"
+    "gender": "any"
    },
    "source_url": "https://www.winterhilfe.ch",
    "source_snippet": "Die Schweizer Winterhilfe unterstützt notleidende Menschen in der Schweiz, in der Regel vermittelt durch Sozialdienste",
@@ -5139,8 +5133,7 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": [],
-    "rule_source": "geography_unknown"
+    "admin_areas": []
    },
    "source_url": "https://www.kmu-buergschaften.ch/en/",
    "source_snippet": "BG SAFFA ... operates throughout Switzerland and focuses on women entrepreneurs.",
@@ -5373,8 +5366,7 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": [],
-    "rule_source": "geography_unknown"
+    "admin_areas": []
    },
    "source_url": "https://schweizertafel.ch/",
    "source_snippet": "Die Schweizer Tafel rettet täglich einwandfreie Lebensmittel vor dem Abfall und verteilt sie an soziale Institutionen und Abgabestellen in der ganzen Schweiz.",
@@ -5431,8 +5423,7 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": [],
-    "rule_source": "geography_unknown"
+    "admin_areas": []
    },
    "source_url": "https://www.tischlein.ch/lebensmittel-beziehen/",
    "source_snippet": "Die Kundenkarte wird ausschliesslich von privaten oder öffentlichen Sozialfachstellen ausgestellt. Diese prüfen die finanziellen Umstände der Betroffenen.",
@@ -5478,8 +5469,7 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": [],
-    "rule_source": "geography_unknown"
+    "admin_areas": []
    },
    "source_url": "https://www.prosenectute.ch/de/dienstleistungen/beratung.html",
    "source_snippet": "Unsere Fachpersonen vor Ort beraten Sie kostenlos, vertraulich und kompetent zu Finanzen, Pensionierung, Gesundheit, Lebensgestaltung, persönlicher Vorsorge und Wohnen.",

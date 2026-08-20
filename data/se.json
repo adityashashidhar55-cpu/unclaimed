@@ -4266,8 +4266,7 @@
     "housing_tenure": null,
     "student_required": true,
     "admin_areas": [],
-    "gender": "any",
-    "rule_source": "geography_unknown"
+    "gender": "any"
    },
    "source_url": "https://www.sj.se/",
    "source_snippet": "Som student reser du med rabatt hos SJ mot uppvisande av giltig studentlegitimation",
@@ -4319,8 +4318,7 @@
     "housing_tenure": null,
     "student_required": true,
     "admin_areas": [],
-    "gender": "any",
-    "rule_source": "geography_unknown"
+    "gender": "any"
    },
    "source_url": "https://mecenat.se/",
    "source_snippet": "Mecenat samlar studentrabatter och fungerar som studentlegitimation hos kollektivtrafik och företag",
@@ -4641,8 +4639,7 @@
     "housing_tenure": null,
     "student_required": false,
     "admin_areas": [],
-    "gender": "any",
-    "rule_source": "geography_unknown"
+    "gender": "any"
    },
    "source_url": "https://www.fritidsbanken.se/",
    "source_snippet": "Hos Fritidsbanken kan alla låna sport- och friluftsprylar gratis, som i ett bibliotek",
@@ -4701,7 +4698,8 @@
     "statuses": [
      "employee",
      "self_employed",
-     "unemployed"
+     "unemployed",
+     "student"
     ],
     "age_min": 27,
     "age_max": 62,
@@ -5895,8 +5893,7 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": [],
-    "rule_source": "geography_unknown"
+    "admin_areas": []
    },
    "source_url": "https://www.trr.se/",
    "source_snippet": "För att ha rätt till TRRs omställningsstöd måste du vara uppsagd från ett TRR-anslutet företag",

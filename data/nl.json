@@ -4031,8 +4031,7 @@
     "housing_tenure": null,
     "student_required": false,
     "admin_areas": [],
-    "gender": "any",
-    "rule_source": "geography_unknown"
+    "gender": "any"
    },
    "source_url": "https://voedselbankennederland.nl/",
    "source_snippet": "Voedselbanken helpen mensen die tijdelijk onvoldoende geld hebben voor voeding met een wekelijks voedselpakket.",
@@ -4094,8 +4093,7 @@
     "housing_tenure": null,
     "student_required": false,
     "admin_areas": [],
-    "gender": "any",
-    "rule_source": "geography_unknown"
+    "gender": "any"
    },
    "source_url": "https://www.ns.nl/",
    "source_snippet": "Met Dal Voordeel krijgt u 40% korting in de daluren, in het weekend en tijdens feestdagen.",
@@ -4152,8 +4150,7 @@
     "housing_tenure": null,
     "student_required": false,
     "admin_areas": [],
-    "gender": "any",
-    "rule_source": "geography_unknown"
+    "gender": "any"
    },
    "source_url": "https://www.ns.nl/",
    "source_snippet": "Reist u samen met iemand die een NS-abonnement heeft? Dan reist u in de daluren met 40% korting met Samenreiskorting.",
@@ -4212,8 +4209,7 @@
     "housing_tenure": null,
     "student_required": false,
     "admin_areas": [],
-    "gender": "any",
-    "rule_source": "geography_unknown"
+    "gender": "any"
    },
    "source_url": "https://www.rijksoverheid.nl/",
    "source_snippet": "Voor een fiets van de zaak geldt een bijtelling van 7% van de consumentenadviesprijs als u de fiets ook privé gebruikt; veel werkgevers vergoeden (een deel van) het fietsplan.",
@@ -4273,8 +4269,7 @@
     "housing_tenure": null,
     "student_required": false,
     "admin_areas": [],
-    "gender": "any",
-    "rule_source": "geography_unknown"
+    "gender": "any"
    },
    "source_url": "https://www.rijksoverheid.nl/",
    "source_snippet": "Via een collectieve zorgverzekering bij uw werkgever of vereniging krijgt u vaak korting op de premie van de basis- en aanvullende verzekering.",

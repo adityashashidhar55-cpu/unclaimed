@@ -4184,7 +4184,8 @@
     "statuses": [
      "unemployed",
      "jobseeker",
-     "parent"
+     "parent",
+     "student"
     ],
     "age_min": 18,
     "age_max": null,
@@ -7318,8 +7319,7 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": [],
-    "rule_source": "geography_unknown"
+    "admin_areas": []
    },
    "source_url": "https://www.svp.ie/get-help",
    "source_snippet": "We assist individuals in need, regardless of faith, ethnicity, status, or sexual orientation... You can request help directly or someone can refer you or your family during times of need.",

@@ -2580,8 +2580,7 @@
     "housing_tenure": null,
     "student_required": false,
     "admin_areas": [],
-    "gender": "any",
-    "rule_source": "geography_unknown"
+    "gender": "any"
    },
    "source_url": "https://www.microbank.com",
    "source_snippet": "Microcréditos de hasta 25.000 EUR para emprendedores y hasta 50.000 EUR para microempresas, sin necesidad de avales para proyectos viables; también microcréditos a familias con fines sociales.",
