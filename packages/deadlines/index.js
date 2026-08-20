@@ -274,6 +274,33 @@ export function deadlineState(programme, asOf = Date.now()) {
   }
 
   if (status === STATUS.PAUSED) {
+    /* Paused is not the same as undated. A funder can suspend a call and still
+       publish when it comes back — california-competes is paused between its
+       August and January windows and carries opens_at 2027-01-04. The branch
+       used to return at:null unconditionally and print "Suspended with no
+       restart date announced", which contradicted the record's own field, kept
+       the programme out of every reminder and calendar export, and dropped the
+       only date on it. So paused asks nextWindow() the same question closed
+       does, and only falls through to the bare form when there is no answer. */
+    const w = nextWindow(programme, asOf);
+    if (w.at) {
+      const days = Math.ceil((w.at - asOf) / DAY);
+      return {
+        status,
+        meta,
+        urgency: days <= 90 ? 'soon' : 'later',
+        headline: w.confident
+          ? `Paused, reopens ${new Date(w.at).toISOString().slice(0, 10)}`
+          : w.text || `Paused, expected around ${new Date(w.at).toISOString().slice(0, 10)}`,
+        detail: w.confident
+          ? 'Suspended for now. The reopening date above is published by the funder.'
+          : `Suspended for now. Reopening projected from ${w.basis === 'pattern' ? 'the months this call usually opens' : 'its published cycle'} — not a date the funder has confirmed.`,
+        days_until: days,
+        at: w.at,
+        projected: !w.confident,
+        stale: false,
+      };
+    }
     return {
       status,
       meta,
