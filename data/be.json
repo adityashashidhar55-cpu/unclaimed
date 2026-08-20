@@ -857,7 +857,7 @@
    "amount_period": "annual",
    "amount_note": "Yearly amount depends on household income and study level (from a few hundred up to several thousand EUR per year); application each academic year via the allocation service",
    "is_automatic": false,
-   "application_url": "http://www.enseignement.be",
+   "application_url": "https://www.enseignement.be",
    "application_channel": "online",
    "deadline_type": "window",
    "deadline_note": "Yearly application window per academic year",
@@ -883,7 +883,7 @@
     ],
     "gender": "any"
    },
-   "source_url": "http://www.enseignement.be",
+   "source_url": "https://www.enseignement.be",
    "source_snippet": "Annual income-tested study grant of the French Community for students in secondary, higher and university education in the Wallonia-Brussels Federation",
    "last_verified_at": "2026-08-12",
    "verification_status": "auto_extracted"
@@ -3304,8 +3304,7 @@
     "housing_tenure": null,
     "student_required": false,
     "admin_areas": [],
-    "gender": "any",
-    "rule_source": "geography_unknown"
+    "gender": "any"
    },
    "source_url": "https://www.belgiantrain.be",
    "source_snippet": "Discounted school season tickets for pupils and students commuting by train, plus youth fares (Go Pass 10, Youth Multi) for occasional travel under 26",

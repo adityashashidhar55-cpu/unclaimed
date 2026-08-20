@@ -3046,8 +3046,7 @@
     "housing_tenure": null,
     "student_required": false,
     "admin_areas": [],
-    "gender": "any",
-    "rule_source": "geography_unknown"
+    "gender": "any"
    },
    "source_url": "https://www.transitlink.com.sg/",
    "source_snippet": "Singapore Citizens and PRs aged 60 and above travel at concessionary fares on basic bus and train services with the Senior Citizen Concession Card; monthly concession passes are also available.",
@@ -3087,8 +3086,7 @@
     "housing_tenure": null,
     "student_required": true,
     "admin_areas": [],
-    "gender": "any",
-    "rule_source": "geography_unknown"
+    "gender": "any"
    },
    "source_url": "https://www.transitlink.com.sg/",
    "source_snippet": "Eligible students pay concessionary fares on basic bus and train services, with monthly concession passes and the Bus Pass/Train Pass options for unlimited travel.",
@@ -3128,8 +3126,7 @@
     "housing_tenure": null,
     "student_required": false,
     "admin_areas": [],
-    "gender": "any",
-    "rule_source": "geography_unknown"
+    "gender": "any"
    },
    "source_url": "https://www.transitlink.com.sg/",
    "source_snippet": "Persons with disabilities can travel at concessionary fares on basic bus and train services with the PWD Concession Card; a monthly concession pass is available and travel for eligible PWDs on basic services is free from 6 July 2025 under the enhanced scheme.",
@@ -3172,8 +3169,7 @@
     "housing_tenure": null,
     "student_required": false,
     "admin_areas": [],
-    "gender": "any",
-    "rule_source": "geography_unknown"
+    "gender": "any"
    },
    "source_url": "https://www.transitlink.com.sg/",
    "source_snippet": "Lower-wage workers receiving Workfare Income Supplement enjoy up to 15% off adult fares on basic bus and train services with the Workfare Transport Concession Card; a monthly WTC hybrid pass is also available.",

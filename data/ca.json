@@ -1876,8 +1876,7 @@
     "income_test": "unpublished",
     "income_source_url": "https://ised-isde.canada.ca/site/ised/en/programs-and-initiatives/connecting-families-initiative/eligibility",
     "income_confidence": "high",
-    "gender": "any",
-    "rule_source": "geography_unknown"
+    "gender": "any"
    },
    "source_url": "https://ised-isde.canada.ca/site/connecting-families/en",
    "source_snippet": "Through Connecting Families, participating Internet service providers offer $20 a month high-speed Internet to hundreds of thousands of low-income families and seniors.",

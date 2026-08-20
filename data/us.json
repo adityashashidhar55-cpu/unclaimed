@@ -4683,8 +4683,7 @@
     "housing_tenure": null,
     "student_required": false,
     "admin_areas": [],
-    "gender": "any",
-    "rule_source": "geography_unknown"
+    "gender": "any"
    },
    "source_url": "https://www.internetessentials.com",
    "source_snippet": "Internet Essentials provides affordable high-speed home internet to qualifying low-income households.",
@@ -4746,8 +4745,7 @@
     "housing_tenure": null,
     "student_required": false,
     "admin_areas": [],
-    "gender": "any",
-    "rule_source": "geography_unknown"
+    "gender": "any"
    },
    "source_url": "https://www.att.com/internet/access/",
    "source_snippet": "Access from AT&T provides low-cost wireline home internet service to qualifying limited-income households.",
@@ -4812,8 +4810,7 @@
     "income_test": "none",
     "income_source_url": "https://www.spectrum.com/internet/spectrum-internet-assist",
     "income_confidence": "high",
-    "gender": "any",
-    "rule_source": "geography_unknown"
+    "gender": "any"
    },
    "source_url": "https://www.spectrum.com/internet/spectrum-internet-assist",
    "source_snippet": "Spectrum Internet Assist offers high-speed internet at a discounted price to eligible low-income households.",
@@ -5022,8 +5019,7 @@
     "income_test": "none",
     "income_source_url": "https://joinbankon.org/accounts/",
     "income_confidence": "medium",
-    "gender": "any",
-    "rule_source": "geography_unknown"
+    "gender": "any"
    },
    "source_url": "https://joinbankon.org",
    "source_snippet": "Bank On certified accounts are safe, affordable transaction accounts with no overdraft fees and monthly costs of $5 or less.",

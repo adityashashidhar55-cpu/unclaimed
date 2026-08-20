@@ -4924,8 +4924,7 @@
     "housing_tenure": null,
     "student_required": false,
     "admin_areas": [],
-    "gender": "any",
-    "rule_source": "geography_unknown"
+    "gender": "any"
    },
    "source_url": "https://nils.com.au/",
    "source_snippet": "NILs let you borrow money for essential goods, like white goods or car repairs. You pay no interest, and you only repay what you borrow.",

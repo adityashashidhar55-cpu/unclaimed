@@ -3173,8 +3173,7 @@
     "housing_tenure": null,
     "student_required": false,
     "admin_areas": [],
-    "gender": "any",
-    "rule_source": "geography_unknown"
+    "gender": "any"
    },
    "source_url": "https://www.16-25railcard.co.uk",
    "source_snippet": "A 16-25 Railcard gets you 1/3 off rail fares to travel across Britain for just £30 a year, for anyone aged 16-25 or a mature student in full-time study.",
@@ -3216,8 +3215,7 @@
     "housing_tenure": null,
     "student_required": false,
     "admin_areas": [],
-    "gender": "any",
-    "rule_source": "geography_unknown"
+    "gender": "any"
    },
    "source_url": "https://www.senior-railcard.co.uk",
    "source_snippet": "The Senior Railcard gives everyone aged 60 and over 1/3 off Standard and First Class Anytime, Off-Peak and Advance fares across Britain.",
@@ -3257,8 +3255,7 @@
     "housing_tenure": null,
     "student_required": false,
     "admin_areas": [],
-    "gender": "any",
-    "rule_source": "geography_unknown"
+    "gender": "any"
    },
    "source_url": "https://www.disabledpersons-railcard.co.uk",
    "source_snippet": "The Disabled Persons Railcard allows you and an adult companion to get 1/3 off rail fares across Britain; it costs £20 for one year.",
@@ -3298,8 +3295,7 @@
     "housing_tenure": null,
     "student_required": false,
     "admin_areas": [],
-    "gender": "any",
-    "rule_source": "geography_unknown"
+    "gender": "any"
    },
    "source_url": "https://www.twotogether-railcard.co.uk",
    "source_snippet": "The Two Together Railcard saves two named people 1/3 off rail fares when they travel together, for £30 a year.",
@@ -3392,8 +3388,7 @@
     "housing_tenure": null,
     "student_required": false,
     "admin_areas": [],
-    "gender": "any",
-    "rule_source": "geography_unknown"
+    "gender": "any"
    },
    "source_url": "https://www.motability.co.uk",
    "source_snippet": "The Motability Scheme enables disabled people to exchange their qualifying mobility allowance to lease a new car, scooter or powered wheelchair, with insurance, maintenance and breakdown cover included.",
@@ -4176,8 +4171,7 @@
     "housing_tenure": null,
     "student_required": false,
     "admin_areas": [],
-    "gender": "any",
-    "rule_source": "geography_unknown"
+    "gender": "any"
    },
    "source_url": "https://www.tvlicensing.co.uk",
    "source_snippet": "If you're 75 or over and you or your partner receive Pension Credit, you can get a free TV licence; if you're blind (severely sight impaired) you can get a 50% concession.",
@@ -4217,8 +4211,7 @@
     "housing_tenure": null,
     "student_required": false,
     "admin_areas": [],
-    "gender": "any",
-    "rule_source": "geography_unknown"
+    "gender": "any"
    },
    "source_url": "https://www.bt.com/home-essentials",
    "source_snippet": "BT Home Essentials is a low-cost broadband and phone plan for customers on Universal Credit and other means-tested benefits.",
@@ -4258,8 +4251,7 @@
     "housing_tenure": null,
     "student_required": false,
     "admin_areas": [],
-    "gender": "any",
-    "rule_source": "geography_unknown"
+    "gender": "any"
    },
    "source_url": "https://www.virginmedia.com/broadband/low-income-families",
    "source_snippet": "Essential broadband is Virgin Media's social tariff: low-cost broadband for customers receiving Universal Credit and certain other benefits.",
@@ -4299,8 +4291,7 @@
     "housing_tenure": null,
     "student_required": false,
     "admin_areas": [],
-    "gender": "any",
-    "rule_source": "geography_unknown"
+    "gender": "any"
    },
    "source_url": "https://www.voxi.co.uk/voxi-for-now",
    "source_snippet": "VOXI For Now is a discounted mobile plan giving unlimited data, minutes and texts at a low monthly price to people receiving government benefits.",
@@ -4340,8 +4331,7 @@
     "housing_tenure": null,
     "student_required": false,
     "admin_areas": [],
-    "gender": "any",
-    "rule_source": "geography_unknown"
+    "gender": "any"
    },
    "source_url": "https://www.sky.com/help/articles/sky-broadband-basics",
    "source_snippet": "Sky Broadband Basics is a lower-cost broadband tariff available to Sky customers who claim Universal Credit or Pension Credit.",
@@ -4546,8 +4536,7 @@
     "housing_tenure": null,
     "student_required": false,
     "admin_areas": [],
-    "gender": "any",
-    "rule_source": "geography_unknown"
+    "gender": "any"
    },
    "source_url": "https://www.turn2us.org.uk",
    "source_snippet": "Turn2us is a national charity that helps people in financial hardship access welfare benefits and charitable grants through its benefits calculator and grants search.",
@@ -4649,8 +4638,7 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": [],
-    "rule_source": "geography_unknown"
+    "admin_areas": []
    },
    "source_url": "https://www.vodafone.co.uk/broadband/essentials",
    "source_snippet": "Vodafone Essentials Broadband is available to new and existing customers receiving Jobseeker's Allowance, Universal Credit, Pension Credit, Employment Support Allowance, Income Support, Reduced Earnings Allowance, Personal Independence Payment or Disability Allowance.",
@@ -4702,8 +4690,7 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": [],
-    "rule_source": "geography_unknown"
+    "admin_areas": []
    },
    "source_url": "https://www.o2.co.uk/",
    "source_snippet": "O2 Essential Plan: mobile social tariff offering unlimited data from £10 a month for customers on qualifying benefits.",
@@ -5599,8 +5586,7 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": [],
-    "rule_source": "geography_unknown"
+    "admin_areas": []
    },
    "source_url": "https://www.16-17saver.co.uk/",
    "source_snippet": "The 16-17 Saver costs £30 and gives 50% off most rail fares for 16 and 17 year olds, including season tickets.",
@@ -5959,8 +5945,7 @@
     "admin_areas": [],
     "income_test": "none",
     "income_source_url": "https://www.familyfund.org.uk/grants/are-we-eligible/",
-    "income_confidence": "high",
-    "rule_source": "geography_unknown"
+    "income_confidence": "high"
    },
    "source_url": "https://www.familyfund.org.uk/",
    "source_snippet": "Family Fund looks at your income and the impact of disability on your child; you can apply if you are the parent/carer of a child or young person with a disability or serious illness and are on a low income or receiving benefits.",

@@ -2366,8 +2366,7 @@
         "housing_tenure": null,
         "student_required": true,
         "admin_areas": [],
-        "gender": "any",
-        "rule_source": "geography_unknown"
+        "gender": "any"
       },
       "source_url": "https://www.jreast.co.jp/",
       "source_snippet": "JRでは指定学校の学生が片道101km以上の乗車券について2割引となる学生割引(学割)を実施",
@@ -2419,8 +2418,7 @@
         "housing_tenure": null,
         "student_required": false,
         "admin_areas": [],
-        "gender": "any",
-        "rule_source": "geography_unknown"
+        "gender": "any"
       },
       "source_url": "https://www.jreast.co.jp/",
       "source_snippet": "障害者手帳をお持ちの方はJRの乗車券が割引となる障害者割引制度",
@@ -2472,8 +2470,7 @@
         "housing_tenure": null,
         "student_required": false,
         "admin_areas": [],
-        "gender": "any",
-        "rule_source": "geography_unknown"
+        "gender": "any"
       },
       "source_url": "https://www.docomo.ne.jp/",
       "source_snippet": "障害者手帳をお持ちの方向けの携帯電話基本料金割引サービス(NTTドコモ)",
@@ -3259,8 +3256,7 @@
         "housing_tenure": null,
         "student_required": false,
         "admin_areas": [],
-        "gender": "any",
-        "rule_source": "geography_unknown"
+        "gender": "any"
       },
       "source_url": "https://www.ideco-koushiki.jp/",
       "source_snippet": "掛金が全額所得控除の対象となり、運用益も非課税となる私的年金制度(iDeCo公式サイト)",
@@ -3749,8 +3745,7 @@
         "housing_tenure": null,
         "student_required": false,
         "admin_areas": [],
-        "gender": "any",
-        "rule_source": "geography_unknown"
+        "gender": "any"
       },
       "source_url": "https://www.zsjsc.or.jp/",
       "source_snippet": "高年齢者の多様な就業機会を確保するため、各市町村にシルバー人材センターが設置されている(全国シルバー人材センター事業協会)",
@@ -3802,8 +3797,7 @@
         "housing_tenure": null,
         "student_required": false,
         "admin_areas": [],
-        "gender": "any",
-        "rule_source": "geography_unknown"
+        "gender": "any"
       },
       "source_url": "https://musubie.org/",
       "source_snippet": "こども食堂は、地域の子どもたちに無料または低額で食事を提供する場(全国こども食堂支援センター・むすびえ)",
@@ -3855,8 +3849,7 @@
         "housing_tenure": null,
         "student_required": false,
         "admin_areas": [],
-        "gender": "any",
-        "rule_source": "geography_unknown"
+        "gender": "any"
       },
       "source_url": "https://2hj.org/",
       "source_snippet": "まだ食べられるのに廃棄される食品を、必要としている人々のもとへ届けるフードバンク活動(セカンドハーベスト・ジャパン)",

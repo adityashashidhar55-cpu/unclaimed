@@ -3407,8 +3407,7 @@
     "housing_tenure": null,
     "student_required": false,
     "admin_areas": [],
-    "gender": "any",
-    "rule_source": "geography_unknown"
+    "gender": "any"
    },
    "source_url": "https://swyp.ae",
    "source_snippet": "Swyp is e&'s digital mobile plan for 18-25 year olds with discounted bundles and bonus benefits.",
@@ -3448,8 +3447,7 @@
     "housing_tenure": null,
     "student_required": false,
     "admin_areas": [],
-    "gender": "any",
-    "rule_source": "geography_unknown"
+    "gender": "any"
    },
    "source_url": "https://www.du.ae",
    "source_snippet": "du offers a youth plan with discounted bundles and benefits for customers aged 18 to 25.",
@@ -3491,8 +3489,7 @@
     "housing_tenure": null,
     "student_required": true,
     "admin_areas": [],
-    "gender": "any",
-    "rule_source": "geography_unknown"
+    "gender": "any"
    },
    "source_url": "https://www.emirates.com",
    "source_snippet": "Emirates offers student fares with discounts and additional baggage allowance for eligible students.",
@@ -3534,8 +3531,7 @@
     "housing_tenure": null,
     "student_required": true,
     "admin_areas": [],
-    "gender": "any",
-    "rule_source": "geography_unknown"
+    "gender": "any"
    },
    "source_url": "https://www.isic.org",
    "source_snippet": "The ISIC card is the internationally accepted proof of student status, providing access to thousands of student discounts.",

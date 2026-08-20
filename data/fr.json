@@ -3357,8 +3357,7 @@
     "housing_tenure": null,
     "student_required": false,
     "admin_areas": [],
-    "gender": "any",
-    "rule_source": "geography_unknown"
+    "gender": "any"
    },
    "source_url": "https://www.sncf-connect.com",
    "source_snippet": "The Carte Avantage Jeune gives 12-27 year-olds 30 % off SNCF long-distance trains for an annual fee.",
@@ -3417,8 +3416,7 @@
     "housing_tenure": null,
     "student_required": false,
     "admin_areas": [],
-    "gender": "any",
-    "rule_source": "geography_unknown"
+    "gender": "any"
    },
    "source_url": "https://www.sncf-connect.com",
    "source_snippet": "The Carte Avantage Senior gives travellers aged 60+ 30 % off SNCF long-distance trains for an annual fee.",
@@ -4670,8 +4668,7 @@
     "housing_tenure": null,
     "student_required": false,
     "admin_areas": [],
-    "gender": "any",
-    "rule_source": "geography_unknown"
+    "gender": "any"
    },
    "source_url": "https://www.initiative-france.fr",
    "source_snippet": "Initiative France grants interest-free honour loans to entrepreneurs to strengthen equity and unlock bank financing.",
@@ -5507,8 +5504,7 @@
     "admin_areas": [],
     "income_test": "none",
     "income_source_url": "https://www.adie.org/fiches-pratiques/le-micro-credit/",
-    "income_confidence": "high",
-    "rule_source": "geography_unknown"
+    "income_confidence": "high"
    },
    "source_url": "https://www.adie.org/fiches-pratiques/le-micro-credit/",
    "source_snippet": "Le montant maximum pour un prêt de l'Adie est de 15 000 EUR.",

@@ -4128,8 +4128,7 @@
         "housing_tenure": null,
         "student_required": false,
         "admin_areas": [],
-        "gender": "any",
-        "rule_source": "geography_unknown"
+        "gender": "any"
       },
       "source_url": "https://www.trenitalia.com",
       "source_snippet": "Offerta Young: sconti sui biglietti per i viaggiatori con meno di 30 anni, soggetti a disponibilita'.",
@@ -4183,8 +4182,7 @@
         "housing_tenure": null,
         "student_required": false,
         "admin_areas": [],
-        "gender": "any",
-        "rule_source": "geography_unknown"
+        "gender": "any"
       },
       "source_url": "https://www.bancaditalia.it",
       "source_snippet": "Il conto di base e' gratuito per i consumatori con ISEE non superiore a 11.600 euro e per i pensionati con trattamento pensionistico lordo annuo non superiore a 18.000 euro.",
