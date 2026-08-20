@@ -2,11 +2,12 @@
   "name": "unclaimedgrant",
   "private": true,
   "type": "module",
-  "description": "Static site generator, matching engine and Cloudflare Worker for unclaimedgrant.com. No runtime dependencies by design — the whole thing is plain Node and plain Web APIs.",
+  "description": "Static site generator, matching engine and Cloudflare Worker for unclaimedgrant.com. No runtime dependencies by design \u2014 the whole thing is plain Node and plain Web APIs.",
   "scripts": {
     "build": "SITE_BASE= SITE_ORIGIN=https://unclaimedgrant.com EMIT_FULL_DATASET=1 node src/build.mjs",
-    "test": "EMIT_FULL_DATASET=1 node scripts/verify.mjs && node scripts/check-links.mjs && node scripts/test-dashboard.mjs && node scripts/test-gating.mjs && node scripts/test-admin.mjs && node scripts/test-i18n.mjs && node scripts/check-i18n.mjs && node scripts/test-autoapply.mjs && node scripts/test-auth.mjs && node scripts/test-account-states.mjs && node scripts/test-eligibility.mjs && node scripts/test-filing.mjs && node scripts/test-deadlines.mjs && node scripts/test-vocabulary.mjs",
-    "deploy": "npm run build && npx wrangler@latest deploy"
+    "test": "EMIT_FULL_DATASET=1 node scripts/verify.mjs && node scripts/verify-render.mjs && node scripts/verify-native.mjs && node scripts/check-links.mjs && node scripts/test-dashboard.mjs && node scripts/test-gating.mjs && node scripts/test-admin.mjs && node scripts/test-i18n.mjs && node scripts/check-i18n.mjs && node scripts/test-autoapply.mjs && node scripts/test-auth.mjs && node scripts/test-account-states.mjs && node scripts/test-eligibility.mjs && node scripts/test-filing.mjs && node scripts/test-deadlines.mjs && node scripts/test-vocabulary.mjs && node scripts/test-reachability.mjs",
+    "deploy": "npm run build && npx wrangler@latest deploy",
+    "test:browser": "NODE_PATH=/home/claude/.npm-global/lib/node_modules node scripts/test-wizard-boot.mjs && NODE_PATH=/home/claude/.npm-global/lib/node_modules node scripts/qa-screens.mjs"
   },
   "devDependencies": {
     "wrangler": "^4"

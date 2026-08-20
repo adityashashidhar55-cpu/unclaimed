@@ -4,10 +4,10 @@
 
 A static, crawlable, zero-dependency site over a curated dataset of **2,216 real
 government and institutional support programmes across 25 countries** — each with the
-published eligibility rules, an official source URL, a document checklist, numbered
-application steps, and the date a human last verified it.
+published eligibility rules, an official source URL, a document checklist and numbered
+application steps.
 
-- **Live site:** https://adityashashidhar55-cpu.github.io/unclaimed/
+- **Live site:** https://unclaimedgrant.com
 - **Eligibility check:** `/check/` — runs entirely in the browser, nothing is sent anywhere
 - **API:** `/api/v1/countries.json`, `/api/v1/programmes/{cc}.json`, `/api/v1/stats.json`
 - **For LLMs:** `/llms.txt`
@@ -32,14 +32,15 @@ and 2,216 sets of published criteria get evaluated against your answers.
 | **Deadline `.ics` export** | Time-limited programmes go into your calendar |
 | **Shareable result link** | Answers are encoded in the URL. No account, no database, no email. |
 | **Printable claim pack** | Print stylesheet with every source URL expanded — for a caseworker, an adviser, or a relative offline |
-| **Sources on every record** | Official URL, verbatim snippet, funder, and last-verified date. No source, no entry. |
+| **Sources on every record** | Official URL, verbatim snippet, funder, and whether a person has read the record against that page. No source, no entry. |
+| **One date, stated once** | `last_verified_at` is currently identical on every record — it is the day the catalogue was extracted, not the day a researcher opened that page. So it is stated once, on `/methodology/`, and no programme page claims a date of its own. |
 
 ## Architecture
 
 ```
 data/               25 curated country datasets + manifest (the source of truth)
 src/engine/         the matcher — pure JS, zero deps, runs in Node AND the browser
-src/build.mjs       static site generator → dist/  (2,503 pages, ~1.7s, no npm install)
+src/build.mjs       static site generator → dist/  (no npm install; `find dist -name '*.html' | wc -l` for the page count)
 src/app.js          the browser wizard, importing the same engine
 src/theme.css       hand-written design system
 scripts/verify.mjs  build verification (runs in CI)
@@ -63,7 +64,7 @@ would have meant shipping something unverified.
 
 ```bash
 node src/build.mjs        # → dist/
-node scripts/verify.mjs   # 22 checks
+node scripts/verify.mjs   # build verification; prints the count it ran
 npx serve dist            # or: python3 -m http.server -d dist 8000
 ```
 
@@ -71,15 +72,37 @@ No `npm install`. No dependencies. Node 18+.
 
 Environment variables:
 
-- `SITE_BASE` — path prefix when hosted in a subdirectory (`/unclaimed` on GitHub Pages)
-- `SITE_ORIGIN` — origin used for canonicals, sitemap and JSON-LD
+- `SITE_BASE` — path prefix when hosted in a subdirectory. **Leave it empty for the real
+  deploy**: the site is served at the apex of `unclaimedgrant.com`, and setting a prefix breaks
+  every absolute URL, the service worker scope and the web manifest at the same time.
+- `SITE_ORIGIN` — origin used for canonicals, sitemap and JSON-LD (`https://unclaimedgrant.com`)
 
 ## Deployment
 
-Pushing to `main` triggers `.github/workflows/deploy.yml`, which builds, runs verification, and
-publishes `dist/` to GitHub Pages. To serve it from a custom domain
-(e.g. `unclaimed.involve-consulting.com`), set the CNAME in repository settings and build with
-`SITE_BASE=""` and the matching `SITE_ORIGIN`.
+**The live site is a Cloudflare Worker, not GitHub Pages.** This paragraph used to say the
+opposite, and that is the most expensive thing a README can be wrong about: you follow it, edit
+the wrong pipeline, and watch a correct change never appear.
+
+`wrangler.jsonc` is the deployment. Cloudflare Workers Builds watches `main` and, on every
+push, runs the build and deploys one bundle containing both the Worker (`worker/index.js`) and
+the static tree:
+
+- `assets.directory` is `./dist`, bound as `ASSETS`. Asset requests are free and do not count
+  against the Worker request limit, which is why several thousand SEO pages cost nothing.
+- `assets.run_worker_first` is `/api/*`, `/auth/*`, `/webhooks/*` — only those paths execute
+  code. Everything else is served straight off the asset tree.
+- `routes` claims `unclaimedgrant.com` and `www.unclaimedgrant.com` as custom domains, and
+  `dist/CNAME` carries the same apex.
+- State lives in the D1 binding `DB` (`unclaimedgrant-prod`), migrated from `./migrations`.
+  Secrets — Stripe keys, the session signing key, the operator credentials — are set with
+  `wrangler secret put` and are listed, unset, at the foot of `wrangler.jsonc`.
+
+Work that is not on `origin/main` is not deployed, and there is no manual publish step.
+
+`.github/workflows/deploy.yml` still runs on `main` as well. Treat it as the test gate — it
+builds and runs `verify.mjs`, `check-links.mjs`, the gating, deadline, admin and translation
+suites — and as a mirror. It is not the production path, and it builds with `SITE_BASE: ''`
+like everything else.
 
 ## MCP / AI integration
 
