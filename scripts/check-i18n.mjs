@@ -20,30 +20,14 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
+/* The marker list and the counter live in scripts/lib so the browser guard
+   that measures the client-rendered results screen counts the same way this
+   does — see scripts/test-results-i18n.mjs. */
+import { englishShare } from './lib/english-share.mjs';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const DIST = path.join(ROOT, 'dist');
 const LANGS = ['fr', 'es', 'de', 'it', 'pt', 'hi'];
-
-/* Words that are English and are not also common in the target languages.
-   "no" is Spanish, "non" is French, "die" is German — none of those are here. */
-const ENGLISH_MARKERS = new Set([
-  'the', 'and', 'you', 'your', 'yours', 'with', 'from', 'that', 'this', 'these', 'those',
-  'what', 'which', 'when', 'where', 'who', 'why', 'how', 'are', 'is', 'was', 'were',
-  'have', 'has', 'had', 'been', 'being', 'will', 'would', 'should', 'could', 'can',
-  'about', 'into', 'over', 'under', 'between', 'before', 'after', 'because', 'through',
-  'every', 'each', 'both', 'other', 'another', 'same', 'than', 'then', 'there', 'their',
-  'them', 'they', 'it', 'its', 'we', 'our', 'us', 'not', 'but', 'for', 'nor', 'yet',
-  'free', 'paid', 'money', 'owed', 'check', 'apply', 'grant', 'grants', 'programme',
-  'programmes', 'country', 'countries', 'people', 'company', 'companies', 'something',
-  'nothing', 'anything', 'everything', 'someone', 'nobody', 'anyone', 'everyone',
-  'more', 'most', 'less', 'least', 'much', 'many', 'few', 'some', 'any', 'all', 'none',
-  'here', 'now', 'never', 'always', 'often', 'sometimes', 'already', 'still', 'once',
-  'first', 'second', 'third', 'last', 'next', 'only', 'also', 'even', 'just', 'very',
-  'does', 'did', 'doing', 'done', 'make', 'makes', 'made', 'take', 'takes', 'taken',
-  'get', 'gets', 'got', 'give', 'gives', 'given', 'know', 'knows', 'known', 'see',
-  'sees', 'seen', 'want', 'wants', 'need', 'needs', 'needed', 'pay', 'pays', 'paid',
-]);
 
 /* Legitimately untranslated, and documented as such on every localised page:
    programme names and funder-sourced prose stay in the language the funder
@@ -82,13 +66,6 @@ function visibleText(html) {
     .trim();
 }
 
-function englishShare(text) {
-  const words = text.toLowerCase().match(/[a-z']{2,}/g) || [];
-  if (words.length < 40) return { share: 0, words: words.length, hits: [] };
-  const hits = words.filter((w) => ENGLISH_MARKERS.has(w));
-  return { share: hits.length / words.length, words: words.length, hits };
-}
-
 /** One representative page per surface, rather than all 5,900. */
 const SURFACES = [
   ['', 'landing'],
@@ -115,7 +92,7 @@ for (const lang of LANGS) {
     const f = path.join(DIST, lang, rel, 'index.html');
     if (!fs.existsSync(f)) continue;
     checked += 1;
-    const { share, words, hits } = englishShare(visibleText(fs.readFileSync(f, 'utf8')));
+    const { share, words, hits } = englishShare(visibleText(fs.readFileSync(f, 'utf8')), { lang });
     const ok = share <= THRESHOLD;
     if (!ok) bad += 1;
     rows.push({ lang, label, rel, share, words, ok, sample: [...new Set(hits)].slice(0, 8) });

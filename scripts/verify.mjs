@@ -322,11 +322,18 @@ fs.existsSync(path.join(DIST, 'enterprise/index.html')) ? ok('enterprise page pr
 /* Entry motion hides content until JS runs. If it never runs, the page must
    still be readable — a blank landing page is a total failure, and an
    animation is only a nicety. Two independent fallbacks, both asserted. */
-landingHtml.includes('<noscript><style>.reveal')
-  ? ok('noscript fallback reveals hidden content')
+/* Both of these used to be substring searches, and the second one searched
+   for the words "Safety net" — which are in a COMMENT. Deleting the comment
+   failed the test on a working page; deleting the setTimeout it describes
+   passed it on a blank one. They now match the mechanism rather than the
+   prose, and the property itself — "the words are on the screen when the
+   animation never runs" — is measured in a real browser, with JS off and
+   again with a dead IntersectionObserver, by scripts/qa-screens.mjs. */
+/<noscript><style>[^<]*\.reveal[^<]*opacity:\s*1/.test(landingHtml)
+  ? ok('noscript fallback forces the hidden content visible')
   : fail('no noscript fallback — page would be blank without JS');
-landingHtml.includes('Safety net')
-  ? ok('timeout fallback reveals content if the observer fails')
+/setTimeout\(function \(\)[\s\S]{0,300}?classList\.add\('in'\)[\s\S]{0,60}?\},\s*\d{3,}\)/.test(landingHtml)
+  ? ok('a timeout adds .in if the observer never fires')
   : fail('no timeout fallback for the reveal animation');
 
 

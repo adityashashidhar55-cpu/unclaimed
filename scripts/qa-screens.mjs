@@ -24,6 +24,10 @@ import http from 'node:http';
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
+/* Shared with scripts/test-results-i18n.mjs: one English-marker list and one
+   wizard driver, so the two guards cannot drift apart. */
+import { englishShare, englishRuns } from './lib/english-share.mjs';
+import { stepThrough } from './lib/wizard-drive.mjs';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 /* Overridable so a pre-build dry run can point at a staged copy. Defaults to
@@ -882,43 +886,6 @@ for (const lg of LOCALES) {
  * corrected value described in the same voice as help text.
  * ==================================================================== */
 
-/**
- * Walk the wizard the way a person does: answer what is in front of you, then
- * press whatever moves you on.
- *
- * Not "press Continue eight times". The status step renders no Continue until
- * something is chosen and no Skip at all, and the region, status and income
- * steps commit and advance on the tile click itself — so a loop that only
- * presses nav buttons stalls on step 2 and reports "the wizard never reached
- * a result" about a wizard that works.
- */
-async function stepThrough(page, { onStep = null, max = 12 } = {}) {
-  for (let i = 0; i < max; i += 1) {
-    if (await page.$('.result-hero')) return true;
-    if (onStep) await onStep(page);
-    const before = await page.evaluate(() => document.querySelector('.progress-caption')?.textContent || '');
-    const picked = await page.evaluate(() => {
-      const tiles = [...document.querySelectorAll('.opt[data-field]')];
-      if (!tiles.length) return false;
-      if (tiles.some((t) => t.getAttribute('aria-pressed') === 'true')) return false;
-      tiles[0].click();
-      return true;
-    });
-    if (picked) {
-      await page.waitForTimeout(280);
-      if (await page.$('.result-hero')) return true;
-      const after = await page.evaluate(() => document.querySelector('.progress-caption')?.textContent || '');
-      if (after !== before) continue; // the tile advanced us; nothing to press
-    }
-    const next = await page.$('[data-act="next"]');
-    const skip = await page.$('[data-act="skip"]');
-    if (!next && !skip) return !!(await page.$('.result-hero'));
-    await (next || skip).click();
-    await page.waitForTimeout(280);
-  }
-  return !!(await page.$('.result-hero'));
-}
-
 /* A GB earner, encoded exactly the way src/app.js encodes a shared result. */
 const QA_PROFILE = {
   country_code: 'GB', admin_area: null, status: 'employee', age: 40, income_band: null,
@@ -981,70 +948,213 @@ const QA_HASH = Buffer.from(JSON.stringify(QA_PROFILE), 'utf8')
   }
 }
 
-/* -- /fr/ wizards must not be English -------------------------------- *
+/* -- The wizard must not be English on a localised page -------------- *
  *
- * On /fr/check/ the step headings and nav were French while all seven steps
- * showed the rail caption "Step 1 of 7 · about 105 seconds left · nothing is
- * saved to a server", step 2's h1 was "Which part of France?", and the whole
- * results screen was English. The caption could not be translated because it
- * was built by concatenation and so could never whole-node match the
- * dictionary; it goes through T() with {n}-style tokens now.
+ * What this used to be: a list of eight English sentences, reported only if
+ * the shipped dictionary already contained a translation for the sentence
+ * containing them. That gate is why it never fired on the bug it was written
+ * for. Three of the eight had no dictionary key at all, so the gate switched
+ * them off; the other five were step-screen strings that a results screen
+ * never renders. It passed on a /fr/ results screen that measured 26% English.
  *
- * The sentinels are sentences that only appear if a literal never reached the
- * translator. A missing dictionary entry still renders English and is lane A's
- * to fill — but a literal that never reaches T() can never be translated at
- * all, and that is what this catches.
+ * A sentence assembled by interpolation can never BE a dictionary key, and
+ * that is the definition of this bug — so a trigger condition that depends on
+ * the dictionary's contents cannot detect it. The property does not need the
+ * dictionary: a French page must not be in English, whatever the reason.
+ *
+ * The step screens are measured here because qa-screens already has them
+ * open. The results screen — the one that was broken — is measured in every
+ * locale, on all three routes onto it, by scripts/test-results-i18n.mjs.
  */
 {
-  const SENTINELS = [
-    'nothing is saved to a server',
-    'nothing you type is sent to a server',
-    'Which part of France?',
-    'Search 25 countries',
-    'of 25 shown',
-    'Where is the company registered?',
-    'What stage is the company at?',
-    'programmes · ',
-  ];
+  /* Far above translated, far below English: the translated company wizard
+     measures 2-3% and the untranslated personal one 20-29%, so nothing lands
+     near this by accident. Same number as check-i18n, same reason. */
+  const THRESHOLD = 0.06;
   const dictFor = async (page) =>
     page.evaluate(() => {
       const el = document.getElementById('i18n-wizard');
       try { return el ? JSON.parse(el.textContent) : {}; } catch { return {}; }
     });
 
-  for (const [label, url, drive] of [
-    ['/fr/check/', `/fr/check/#r=${QA_HASH}`, null],
-    ['/fr/startups/check/', '/fr/startups/check/', async (page) => {
-      await page.waitForSelector('[data-act="country"]', { timeout: 8000 });
-      await page.click('[data-cc="fr"]');
-      await page.click('[data-field="stage"][data-value="seed"]');
-      await page.click('[data-act="next"]');
-      await page.click('[data-field="headcount"][data-value="15"]');
-      await page.click('[data-act="next"]');
-      await page.click('[data-field="turnover_annual_eur"][data-value="750000"]');
-      await page.click('[data-act="next"]');
-      await page.click('[data-field="sectors"][data-value="software"]');
-      await page.click('[data-act="next"]');
-      await page.click('[data-field="rd_active"][data-value="true"]');
-      await page.click('[data-act="next"]');
-      await page.waitForSelector('.result-hero', { timeout: 8000 });
-    }],
-  ]) {
+  for (const url of ['/fr/check/', '/fr/startups/check/']) {
     const { ctx, page } = await open(url);
-    if (drive) await drive(page);
     await page.waitForTimeout(400);
-    const dict = await dictFor(page);
-    const text = await page.evaluate(() => document.body.innerText);
     const found = [];
+    const dict = await dictFor(page);
     if (!Object.keys(dict).length) found.push('the page ships an empty i18n-wizard dictionary — nothing can be translated');
-    for (const sentinel of SENTINELS) {
-      /* Only a failure if the dictionary HAS a translation for the sentence
-         that contains it. Otherwise English is the correct fallback and the
-         gap is a missing entry, not an unreachable literal. */
-      const key = Object.keys(dict).find((k) => k.includes(sentinel));
-      if (key && text.includes(sentinel)) found.push(`"${sentinel}" is still English although the dictionary translates it`);
+    const text = await page.evaluate(() => document.getElementById('app')?.innerText || '');
+    const { share, words, hits } = englishShare(text, { lang: 'fr', script: 'any', minWords: 30 });
+    if (words < 30) found.push(`the wizard rendered only ${words} words — it did not draw`);
+    else {
+      if (share > THRESHOLD) {
+        found.push(`${(share * 100).toFixed(0)}% of the ${words} words on screen are English — e.g. ${[...new Set(hits)].slice(0, 6).join(', ')}`);
+      }
+      /* And each paragraph on its own, because twenty-five country names —
+         data, correctly untranslated — dilute one English sentence to under
+         any page-wide threshold worth having. This is what catches "Your
+         country isn't listed? The dataset covers 25 countries so far" at the
+         bottom of an otherwise entirely French step 1. */
+      for (const run of englishRuns(text.split('\n'), { lang: 'fr' })) {
+        found.push(`English sentence on a French page: "${run.text}"`);
+      }
     }
-    say(label, 'untranslated wizard copy', found);
+    say(url, 'untranslated wizard copy', found);
+    await ctx.close();
+  }
+}
+
+/* -- The landing page is readable when the animation is not ---------- *
+ *
+ * Entry motion starts every .reveal at opacity 0 and an IntersectionObserver
+ * adds .in. Two fallbacks exist for when that never happens — a <noscript>
+ * override and a 3s timeout — and both were asserted by searching the built
+ * HTML for a string: one for the literal "<noscript><style>.reveal", the
+ * other for the words "Safety net", which are in a COMMENT. Delete the
+ * comment and the test fails on a working page; delete the setTimeout it
+ * describes and the test passes on a blank one.
+ *
+ * The property is that the words are on the screen. So: load the page with
+ * JavaScript off, and load it again with IntersectionObserver replaced by one
+ * that never calls back, and look at whether anything is still invisible.
+ */
+{
+  const HIDDEN = () => {
+    const out = [];
+    const els = [...document.querySelectorAll('.reveal, .flow, .flow__step, .blur-word')];
+    if (!els.length) return ['nothing on the page uses the entry animation — this check measured nothing'];
+    for (const el of els) {
+      const cs = getComputedStyle(el);
+      if (parseFloat(cs.opacity) < 0.9 || cs.visibility === 'hidden') {
+        out.push(`${el.tagName.toLowerCase()}.${(el.className || '').toString().split(' ')[0]} is at opacity ${cs.opacity}`);
+      }
+    }
+    return [...new Set(out)];
+  };
+
+  {
+    const { ctx, page } = await open('/', { js: false });
+    say('/ without JavaScript', 'content never revealed', (await page.evaluate(HIDDEN)).slice(0, 4));
+    await ctx.close();
+  }
+  {
+    const ctx = await browser.newContext({ viewport: { width: 1280, height: 900 } });
+    await ctx.addCookies([{ name: 'ua_aud', value: 'me', url: `http://localhost:${PORT}` }]);
+    /* An observer that accepts observe() and never reports. This is what a
+       failed polyfill, a broken threshold or an element that never intersects
+       all look like from the page's point of view. */
+    await ctx.addInitScript(() => {
+      window.IntersectionObserver = class { constructor() {} observe() {} unobserve() {} disconnect() {} takeRecords() { return []; } };
+    });
+    const page = await ctx.newPage();
+    await page.goto(`http://localhost:${PORT}/`, { waitUntil: 'networkidle' });
+    /* The safety net is a 3s timeout; wait past it and a little over. */
+    await page.waitForTimeout(3600);
+    say('/ with a dead IntersectionObserver', 'content never revealed', (await page.evaluate(HIDDEN)).slice(0, 4));
+    await ctx.close();
+  }
+}
+
+/* -- The pre-footer joint is the same joint on every page ------------- *
+ *
+ * theme.css zeroes the bottom margin of the last thing in a block so that a
+ * paragraph's trailing 16px does not stack on top of the section's own 64px
+ * of padding. The rule was written `main > section > *:last-child`, and
+ * /dashboard/ ends in a bare <div class="shell"> — which matches none of it,
+ * and so carried exactly 16px more air above its footer than every other
+ * page, for as long as it has existed.
+ *
+ * Measured as computed margin, not as a pixel gap between the last line of
+ * text and the footer: that gap legitimately varies by 40px across pages with
+ * line-height and descenders and button padding, so an equality test on it
+ * would be a test that fails on correct pages. The margin is the thing that
+ * is supposed to be zero, and it is zero or it is not.
+ *
+ * This also catches a stylesheet that stopped parsing. While writing the fix
+ * above I closed the block comment one line early; every rule after it was
+ * dropped for every page at once, the site still rendered, and this guard
+ * turned red on ten pages in one run.
+ */
+{
+  const PAGES = ['/', '/check/', '/pricing/', '/countries/', '/gb/', '/account/',
+    '/startups/', '/enterprise/', '/dashboard/', '/methodology/'];
+  const bad = [];
+  for (const url of PAGES) {
+    const { ctx, page, status } = await open(url, { aud: 'biz' });
+    if (status >= 400) { bad.push(`${url} is HTTP ${status}`); await ctx.close(); continue; }
+    const found = await page.evaluate(() => {
+      const main = document.querySelector('main');
+      if (!main) return ['no <main> on this page'];
+      const painted = (el) => [...el.children].filter((c) => c.getBoundingClientRect().height > 0);
+      const out = [];
+      let el = painted(main).at(-1);
+      /* Three deep, which is how deep the rule reaches. A margin further in
+         than that collapses out through its wrappers and is a different bug. */
+      for (let d = 0; el && d < 3; d += 1) {
+        const mb = parseFloat(getComputedStyle(el).marginBottom) || 0;
+        if (mb > 0.5) out.push(`${el.tagName.toLowerCase()}.${(el.className || '').toString().split(' ')[0]} leaves ${Math.round(mb)}px hanging above the footer`);
+        el = painted(el).at(-1);
+      }
+      return out;
+    });
+    for (const f of found) bad.push(`${url} ${f}`);
+    await ctx.close();
+  }
+  say('every page', 'pre-footer joint', bad);
+}
+
+/* -- An anchor jump has to land below the sticky masthead ------------- *
+ *
+ * .masthead is position:sticky;top:0 and 83px tall (129px under 560px), and
+ * the document had no scroll-padding-top at all — so every in-page anchor
+ * scrolled its target to y=0 and left the heading, and the first line under
+ * it, behind the bar. The skip link is the one that fires today: a keyboard
+ * reader who has scrolled, then tabs back to "Skip to content" and presses
+ * it, arrives at a #main whose top 83px are covered.
+ *
+ * Asserted as the property, not as `scroll-padding-top: 6rem` — the value has
+ * to clear whatever the masthead's height happens to be, and the CSS says
+ * nothing about whether it does.
+ */
+{
+  for (const [url, width] of [['/gb/', 1280], ['/gb/', 390], ['/check/', 1280]]) {
+    const { ctx, page } = await open(url, { width });
+    const found = await page.evaluate(async () => {
+      const out = [];
+      const settle = async () => {
+        let last = -1;
+        for (let i = 0; i < 40; i += 1) {
+          await new Promise((r) => setTimeout(r, 100));
+          const y = Math.round(window.scrollY);
+          if (y === last) return;
+          last = y;
+        }
+      };
+      const links = [...document.querySelectorAll('a[href^="#"]')]
+        .filter((a) => a.getAttribute('href').length > 1);
+      if (!links.length) { out.push('no in-page anchor on this page — this check measured nothing'); return out; }
+      for (const a of links.slice(0, 6)) {
+        const id = decodeURIComponent(a.getAttribute('href').slice(1));
+        const target = document.getElementById(id);
+        if (!target) { out.push(`the anchor "#${id}" points at nothing`); continue; }
+        /* From a scrolled position: at the top of the document the target is
+           already in the right place and every arrangement passes. */
+        window.scrollTo({ top: 1400, behavior: 'instant' });
+        await new Promise((r) => setTimeout(r, 80));
+        a.click();
+        /* html has scroll-behavior:smooth, so measuring on a fixed timeout
+           measures wherever the animation happens to be — which read as a
+           23px failure on a correct page, once, under load. Wait for the
+           scroll position to stop moving instead. */
+        await settle();
+        const mast = document.querySelector('.masthead');
+        const bar = mast ? mast.getBoundingClientRect().bottom : 0;
+        const top = target.getBoundingClientRect().top;
+        if (top < bar - 1) out.push(`"#${id}" lands ${Math.round(bar - top)}px under the masthead`);
+      }
+      return out;
+    });
+    say(`${url} @${width}`, 'anchor lands behind the sticky header', found);
     await ctx.close();
   }
 }

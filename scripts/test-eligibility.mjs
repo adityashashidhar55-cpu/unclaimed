@@ -329,9 +329,15 @@ const EARNER = (cc, o = {}) => ({
     old.eligible.length === fresh.eligible.length, `${old.eligible.length} vs ${fresh.eligible.length}`);
   t('going stale does not change the total',
     old.total_max === fresh.total_max, `${old.total_max} vs ${fresh.total_max}`);
+  /* `length === 0 ||` was the gate here, which is the same shape as the
+     sentinel gate in qa-screens: an assertion that switches itself off in
+     exactly the state it should be loudest about. If the GB earner ever stops
+     matching anything, this has to go red, not quiet. */
   t('a stale match carries a note the screen can print',
-    old.eligible.length === 0 || old.eligible.every((m) => typeof m.stale_note === 'string' && m.stale_note.length > 0));
-  t('a fresh match carries no stale note', fresh.eligible.every((m) => !m.stale_note));
+    old.eligible.length > 0 && old.eligible.every((m) => typeof m.stale_note === 'string' && m.stale_note.length > 0),
+    `${old.eligible.length} stale matches`);
+  t('a fresh match carries no stale note',
+    fresh.eligible.length > 0 && fresh.eligible.every((m) => !m.stale_note), `${fresh.eligible.length} fresh matches`);
 }
 
 /* ---- one_off money never enters a per-year total ------------------- *
@@ -376,6 +382,41 @@ const EARNER = (cc, o = {}) => ({
   const some = match(EARNER('gb'), load('gb'), entryFor('gb'));
   t('with something eligible the clause is back',
     some.eligible.length === 0 || /appear to meet/.test(some.disclaimer));
+}
+
+/* ---- a record's own locality has to be in the list geography reads ----- *
+ *
+ * Two fields carry the same fact. `admin_area` at the top level is the human
+ * label — "Steiermark", "Ontario" — and `eligibility.admin_areas` is the list
+ * evalProgramme actually gates on (matcher.js:597). Nothing folds one into the
+ * other at load time, so a record whose locality was never copied across is
+ * geographically invisible: either offered to the whole country or gated to
+ * somewhere its own label says it is not. It cannot error and it cannot be
+ * seen in a diff.
+ *
+ * It holds at 490 of 490 today. This is here so that the next record added
+ * without the fold is a failing test rather than a wrong answer in Quebec.
+ */
+{
+  const dir = new URL('data/', ROOT);
+  const files = fs.readdirSync(dir)
+    .filter((f) => f.endsWith('.json') && !['manifest.json', 'fx-rates.json', 'mcp-tools.json'].includes(f));
+  const unfolded = [];
+  let folded = 0;
+  for (const f of files) {
+    const doc = JSON.parse(fs.readFileSync(new URL(f, dir), 'utf8'));
+    for (const p of (doc.programmes || doc)) {
+      if (p.admin_area === null || p.admin_area === undefined) continue;
+      const areas = p.eligibility && p.eligibility.admin_areas;
+      if (Array.isArray(areas) && areas.includes(p.admin_area)) folded += 1;
+      else unfolded.push(`${f} ${p.id || p.slug}: admin_area "${p.admin_area}" is not in eligibility.admin_areas ${JSON.stringify(areas)}`);
+    }
+  }
+  t(`every programme's own admin_area is in the list geography gates on (${folded} records)`,
+    unfolded.length === 0, unfolded.slice(0, 4).join(' | '));
+  /* Non-vacuous: if the field is ever renamed, the loop above finds nothing
+     and passes. A guard that can pass by measuring zero things is not one. */
+  t('and there are records with a locality to check at all', folded > 400, `${folded} folded`);
 }
 
 console.log(`\n${pass} passed, ${fail} failed\n`);
