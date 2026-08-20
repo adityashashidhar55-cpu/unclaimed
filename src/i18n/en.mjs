@@ -40,14 +40,24 @@ export default {
   seePricing: 'See pricing',
   signInUnlock: 'Sign in to unlock',
   lockedNote: 'Email and a six-digit code, then €50 a year. No password to forget.',
+  lockedWord: 'Locked',
+  unlockLink: 'Unlock',
   moreLocked: (n, noun) =>
     `<strong>${n} more ${noun}</strong> ${n === 1 ? 'is' : 'are'} on the paid plan, with the amount, the rules, the documents and the steps for each.`,
-  checkFree: 'Check your total free',
   langNote:
     'The interface is in English. Programme names, quoted sources and eligibility wording stay in the language the funder published them in — a machine-translated benefit rule would be less accurate, and you will read the official page in that language anyway.',
 
   /* -- landing -------------------------------------------------------- */
   homeEyebrow: (n, j) => `${n} sourced programmes · ${j} jurisdictions`,
+  /* Hub-page <title>s. These were English literals in build.mjs, so the six
+     non-English versions of the site's main entry points shared one English
+     title and og:title — the single string a search result and a share card
+     are made of. */
+  countriesTitle: 'All countries',
+  autoApplyTitle: 'Auto-apply, country by country',
+  startupCheckTitle: 'Check what your company qualifies for',
+  startupsTitle: (j) => `Startup grants — non-dilutive funding across ${j} jurisdictions`,
+  startupsHeroCta: 'Check what your company qualifies for',
   homeH1: 'The money you are owed, and nobody told you about.',
   homeLede:
     'Governments and funders hand out rent support, family payments, R&D credits and startup grants every year. Most of it goes unclaimed because nobody can find it. We found it, sourced it, and dated it.',
@@ -69,8 +79,8 @@ export default {
   step2B: 'What you are owed across every programme you qualify for. Free, always, no wall.',
   step3T: 'Get the list and the paperwork',
   step3B: 'Which schemes, what each needs, and a prepared application per claim with the fields already filled.',
-  step4T: 'Never miss the window',
-  step4B: 'Deadlines in your calendar, and an alert when a closed programme reopens.',
+  step4T: 'Put the window in your calendar',
+  step4B: 'Deadlines export as an .ics file, so the date lands in the place you already look.',
   homeTwoEyebrow: 'Two products',
   homeTwoH2: 'Households and founders need different things.',
   homeForPeople: 'For people',
@@ -155,7 +165,26 @@ export default {
   paidPlanNote:
     '<strong>The steps, documents and official link are part of the paid plan.</strong> Checking how much you are owed is free and always will be.',
   seePlans: 'See plans',
+  /* The free-check escape hatch beside every 'See plans' button. This key was
+     referenced by ui.mjs's teaseList long before it existed anywhere, and the
+     translator's identity fallback printed the literal 'checkFree' as a button
+     label on 3,957 pages — the one control on the page that costs nothing was
+     advertised as a variable name. */
+  checkFree: 'Run the free check',
   otherSupport: (cat, country) => `Other ${cat} support in ${country}`,
+  /* Two paywall sentences, not one. The page used to promise "the steps,
+     documents and official link" on every programme, but 344 records have no
+     steps, no documents and an application_url identical to source_url — so on
+     those pages we were selling three things that do not exist. The thin
+     variant names what is genuinely locked there: the amount and the rules. */
+  paidPlanNoteFull: "The steps, documents and official link are part of the paid plan. Checking how much you're owed stays free.",
+  paidPlanNoteThin: "What this pays and the eligibility rules are part of the paid plan. Checking how much you're owed stays free.",
+  provVerified: 'A researcher has read this record against the official page.',
+  provAuto: 'Extracted from the official source, not yet re-read by a human.',
+  provVerifiedShort: 'Read by a researcher',
+  provAutoShort: 'Not yet re-read',
+  atGlanceChecked: 'Record',
+  otherSupportIn: (cat, country) => `Other ${cat} in ${country}`,
   countryCoverage: 'Country coverage',
   rawJson: 'Raw JSON',
   checkWhichQualify: 'Check which of these you qualify for',
@@ -184,8 +213,6 @@ export default {
   priceH1b: 'Always.',
   priceLede:
     'You never pay to learn the number. You pay when you want to know which programmes it came from, and to have the paperwork done.',
-  priceTabMe: 'Individuals & startups',
-  priceTabEnt: 'Enterprise',
   priceFree: 'Free',
   priceForever: ' forever',
   priceFreeBlurb:
@@ -193,12 +220,11 @@ export default {
   priceFree1: '<strong>How much you are eligible for</strong>, per year',
   priceFree2: '<strong>How many programmes</strong> it comes from',
   priceFree3: 'How many of those pay out automatically',
-  priceAppLine: '<strong>The Android and iOS app</strong> — free plan included',
+  priceAppLine: '<strong><a href="/app/">The installable web app at /app/</a></strong> — offline, free plan included',
   priceFree5: 'No account needed to see the number',
   priceNo1: 'Which programmes — names are on the paid plan',
   priceNo2: 'The programme directory',
   priceNo3: 'Documents, deadlines and prepared applications',
-  priceCheckTotal: 'Check your total',
   priceFreeNote: 'The check runs on your device. Nothing you type is sent anywhere.',
   pricePersonal: 'Personal',
   pricePerYear: '/year',
@@ -214,6 +240,14 @@ export default {
   priceStartWithFree: 'Start with the free check',
   pricePersonalNote: 'Cancel any time. Same price whether you are owed nothing or €9,000.',
   priceStartup: 'Startup',
+  /* One button label for every priced tier. It used to carry the price —
+     "Subscribe — €49 a seat a month" — which was the fourth place the Startup
+     card stated €49. The figure above the button says it once. */
+  subscribeShort: 'Subscribe',
+  pricePerSeatMonth: ' per seat / month',
+  priceStartupYear: 'or €490 per seat / year',
+  priceEnterprise: 'Enterprise',
+  priceEnterpriseYear: 'or €800 per seat / year — billed annually',
   priceStartupSecond: 'or €490/year · one company, one seat',
   priceStartupBlurb: 'For a founder chasing grants for their own company.',
   priceStart1: (n) => `All ${n} startup programmes by name, ranked by what you can realistically win`,
@@ -221,14 +255,12 @@ export default {
   priceStart3: '<strong>EU de minimis ceiling tracking</strong>',
   priceStart4: 'Company auto-fill from public registers',
   priceStart5: 'Document checklist reused across applications',
-  priceStart6: 'Reopen alerts, saved searches, weekly digest',
-  priceCheckCompany: 'Check your company',
+  priceStart6: 'Saved searches by sector, stage and geography',
   priceWhatFreeT: 'What free actually gets you, stated plainly.',
   priceWhatFreeB:
     'The total and the count. Not a shortened list, not the first few names, not a teaser you can piece together — the programme names are the product. We would rather say that on the pricing page than have you find out at the end of a ten-minute questionnaire.',
-  priceAppsT: 'The apps are free.',
-  priceAppsB:
-    'Android and iOS, on the free plan and the paid one. A free user gets their number on their phone, offline, with no account. Paying unlocks the same extra content in the app as on the web — it is one subscription, not two.',
+  priceAppsT: 'The app is free, and it is a web app.',
+  priceAppsB: 'Open /app/ and add it to your home screen on Android or iOS: it installs, works offline and needs no account. There is no store listing. A free user gets their number on their phone; paying unlocks the same extra content in the app as on the web, and it is one subscription, not two.',
   priceFlatT: 'One flat price. Never a cut of what you get.',
   priceFlatB:
     'No success fee, no commission, no per-claim charge. That is a deliberate limit on us: the moment a service takes a share of someone\'s benefits it stops being a tool and becomes a middleman, and in several countries that is exactly what the law is there to stop.',
@@ -236,8 +268,7 @@ export default {
   priceNotDoB:
     'We never sign in to a government website as you, and we never press submit on your behalf outside Spain. Every application we prepare is sent by you, from your own account. A benefits declaration is sworn by the person making it, and keeping it yours is what the law requires and what protects you.',
   priceChecklistT: 'A checklist that fills itself in',
-  priceChecklistB:
-    'Every claim wants a payslip, a proof of address, a birth certificate. The dashboard lists exactly what each programme asks for, and keeping a document once ticks it off on every later claim that wants it. <strong>Encrypted on your device before it reaches us</strong> — we hold scrambled bytes and a label, and cannot open your files.',
+  priceChecklistB: 'Every claim wants a payslip, a proof of address, a birth certificate. The dashboard lists exactly what each programme asks for, and ticking a document off once ticks it off on every later claim that wants it. <strong>It is a checklist of labels, not a document store</strong> — we hold the name of the document and the date you got it. Your files stay where they are.',
   priceIncluded: 'Included on every paid plan',
   priceWhereWeFile: 'Where we can, we file it',
   priceAutoApplyT: 'Auto-apply, honestly scoped',
@@ -274,11 +305,16 @@ export default {
     'Milestones, reports and deliverables with their own dates; awarded to date, open pipeline, hit rate and funnel — with a standing list of what the numbers exclude.',
   entExtrasH2: 'The parts nobody demos, which decide whether it gets used',
   entSeatsT: 'Seats and visibility',
-  entSeatsB:
-    'Role-based visibility, so a founder sees their own row and the programme team sees everything. SSO, audit log and data residency on the hosted plan.',
+  /* "with EU data residency on the hosted plan" used to sit in this sentence.
+     wrangler.jsonc's D1 binding carries no jurisdiction and no location hint,
+     and the R2 vault is commented out entirely, so nothing pins customer state
+     to the EU — the clause was selling a config line that does not exist. It is
+     removed rather than softened, in the same voice as the sentence that
+     follows it: the honest form of a thing we have not built is silence or an
+     explicit "not yet", never an implication. */
+  entSeatsB: "One workspace per company, shared by whoever you give the link to. Per-person permissions are not built yet, so this page does not sell them, and storage is not pinned to an EU region yet either.",
   entDataT: 'Data out, not just in',
-  entDataB:
-    'Everything in the workspace is reachable over the API and exports to CSV. Webhooks fire on stage change and on a call reopening.',
+  entDataB: 'Everything in the workspace exports to CSV, and every deadline exports as .ics. Nothing is locked inside it.',
   entImportT: 'Bring a spreadsheet',
   entImportB:
     'Import a portfolio as CSV. Columns we do not recognise are reported, never guessed at — a mis-mapped column that silently becomes the headcount is the bug you find in month three.',
@@ -312,9 +348,9 @@ export default {
   entQuickT: 'Up and running in days',
   entQuickB: 'No implementation fee and no scoping call. Import your companies, invite the team, start matching.',
   entToolsT: 'Fits your existing tools',
-  entToolsB: 'Deadlines to your calendar, records to your CRM, exports to your sheet. API and webhooks for anything else.',
+  entToolsB: 'Deadlines to your calendar as an .ics file, records to your spreadsheet as CSV.',
   entBoardT: 'Accountable to a board',
-  entBoardB: 'SSO, an audit log of who saw and sent what, role-based visibility, and EU data residency.',
+  entBoardB: 'Every number in a report is traceable to the programme record and the funder\'s own page it was read from.',
   ctryEyebrow: 'Coverage',
   ctryH1n: (c, n) => `${c} countries, ${n} programmes`,
   ctryLede2: 'Coverage is deliberately uneven — we went deep on national schemes everywhere and added regional and city schemes where they matter most. The counts below are live from the dataset.',
@@ -332,8 +368,6 @@ export default {
   acctH1a: 'No password.',
   acctH1b: 'Just your email.',
   acctLede2: 'We send a six-digit code. It works once, expires in ten minutes, and there is nothing for anyone to steal or for you to forget.',
-  acctPersonal: 'Personal',
-  acctBusiness: 'Business',
   ctaCheckCompany: 'Check what my company is owed',
   navProgrammes: 'Programmes',
   audTabMe: 'For me',
@@ -342,8 +376,8 @@ export default {
   homeEntH1: 'Your company is leaving grant money on the table.',
   homeEntLede: 'Match a whole portfolio against every open programme, track every application in one pipeline, and let the workspace fill the forms.',
   audAria: 'Who is this for',
-  acctPanelMe: 'A personal account keeps your answers and your unlocked programmes on every device you sign in from. Your documents are encrypted on your device before they reach us, and the key never leaves it.',
-  acctPanelBiz: 'A business account adds the workspace: companies, projects, a shared document vault, application tracking, deadline reminders and reports for your whole team.',
+  acctPanelMe: "A personal account keeps your answers and your unlocked programmes on every device you sign in from. The document list is a checklist of labels and dates — we do not hold your files, and there is nowhere here to upload one.",
+  acctPanelBiz: "A business account adds the workspace: companies, projects, a shared document checklist, application tracking, deadline export and reports for your whole team.",
   acctYourEmail: 'Your email',
   acctDiffEmail: 'Use a different email',
   acctSignedIn: 'Signed in',
@@ -355,9 +389,6 @@ export default {
   acctPaidB: "Your plan is active. If the programmes still look locked, give the confirmation from Stripe a few seconds and reload.",
   acctActive: "active. Every programme you match is unlocked.",
   acctFreeAcct: "Free account. You can see your total; unlock to see which programmes it comes from.",
-  priceSubYear: "Subscribe — €50 a year",
-  priceSubMonth: "or €7 a month",
-  priceSubSeat: "Subscribe — €49 a seat",
   priceSeatNote: "Billed per seat. Add or remove seats at checkout and on any renewal.",
   unlockYear: "Unlock — €50 a year",
   unlockAll: "See all plans",
@@ -379,9 +410,9 @@ export default {
   navAutoApply: "Auto-apply by country",
   acctGoCheck: 'Go to my check',
   acctNoJs2: '<strong>Sign-in needs JavaScript.</strong> The code is exchanged for a session without leaving this page, and that cannot be done with a plain form post. Everything else on this site works without it.',
-  entP11: (n) => `<strong>Portfolio matching.</strong> Every company against every programme, ranked by amount × published award rate × whether a company that size could realistically deliver it.`,
+  entP11: () => `<strong>Portfolio matching.</strong> Every company against every programme, ranked by amount × published award rate × whether a company that size could realistically deliver it.`,
   entP12: (n) => `<strong>${n} open today</strong>, and the closed ones are kept rather than hidden — next year's applications come from this year's closed calls.`,
-  entP13: '<strong>Saved searches</strong> by sector, stage and geography, with a weekly digest of what is newly open.',
+  entP13: '<strong>Saved searches</strong> by sector, stage and geography, re-run against the current dataset every time you open the workspace.',
   entP14: '<strong>Your own calls too.</strong> A regional fund or an internal budget line goes in through grant entry and behaves exactly like a programme we ship.',
   entP21: '<strong>Auto-fill with provenance.</strong> Every filled field shows where it came from, so a reviewer can check it rather than trust it.',
   entP22: '<strong>The seven narrative answers</strong> most applications want, written once per company and reused across every pack.',
@@ -397,21 +428,26 @@ export default {
   entP41: '<strong>Hit rate on decided applications only.</strong> Counting undecided bids as losses flatters or damns a team at random.',
   entP42: '<strong>Instruments are never added together.</strong> Cloud credits do not join a grant total anywhere on this site.',
   entP43: '<strong>Unpriced programmes count as zero</strong> and the count is shown, so nobody reads the pipeline as the ceiling.',
-  entP44: '<strong>CSV and API out</strong>, so the numbers land in the CRM or the board pack rather than in another tab.',
+  /* This said "CSV and API out" while entDataB2, on the same page, said "There
+     is no outbound API and no webhook layer yet". Both cannot be true, and the
+     true one is the second: worker/index.js exposes no export endpoint, and the
+     only ways out are the client-side CSV and .ics in src/pwa/dashboard.js. A
+     page that contradicts itself teaches the reader to discount both halves. */
+  entP44: '<strong>CSV out</strong>, so the numbers land in the CRM or the board pack rather than in another tab.',
   entP45: '<strong>Post-award obligations tracked</strong> — late reporting is the usual reason a paid grant is clawed back, because the money arrived and nobody is chasing it.',
   entP46: '<strong>A de minimis ledger</strong> per company per member state on a rolling three-year window, fed automatically when an award is recorded, with the declaration text ready to paste.',
-  entDataB2: 'Everything in the workspace is reachable over the API and exports to CSV. Webhooks fire on stage change and on a call reopening.',
+  entDataB2: "Everything in the workspace exports to CSV, and every deadline exports as .ics. There is no outbound API and no webhook layer yet — when there is, it will be documented at /api/ before it is sold.",
   entSeeApi: 'See the API',
 
   /* -- privacy ---------------------------------------------------------- */
   privH1: `What we know about you, which is almost nothing.`,
   privUpdated: `Last updated 14 August 2026.`,
   privShortT: `The short version.`,
-  privShortB: `The eligibility check runs on your device. Your answers are not sent to us and we cannot see them. If you create an account we store your email address. If you use the document vault, your files are encrypted on your device before upload and we cannot open them.`,
+  privShortB: "The eligibility check runs on your device. Your answers are not sent to us and we cannot see them. If you create an account we store your email address. The document checklist holds labels and dates only — there is no upload anywhere in this product, and we hold none of your files.",
   privSecs: [
     [`The free check`, `When you answer the questions, the matching happens in your browser or in the app, against data already downloaded to your device. Your country, age, income band, household and housing answers are stored on your device only. They are never transmitted to us. You can erase them at any time from Settings, and clearing your browser data or uninstalling the app removes them completely.`],
     [`If you create an account`, `We store your email address, to sign you in and to send the code. We do not use passwords. If you subscribe, our payment processor (Stripe) holds your card details — we never see or store them. We keep a record of your subscription status so we know what to show you.`],
-    [`The document vault`, `Documents are encrypted on your device with a key derived from your passphrase, before anything leaves it. We receive ciphertext, a coarse type label such as "proof of income", a file size and two dates. We deliberately do not store filenames, because a filename can reveal exactly what the encryption is there to protect. <strong>We cannot decrypt your documents.</strong> Neither can anyone who obtains our database and our storage. If you forget your passphrase, they are unrecoverable — that is the cost of the guarantee.`],
+    [`The document checklist`, `This is a checklist, not a vault. It records the NAME of a document you have gathered — "proof of income" — and the date, so a later claim that wants the same paper can tick it off for you. There is no file input anywhere in this product: your documents never leave your own machine, because we never ask for them. Encrypted client-side storage is designed (see packages/vault) and not shipped; when it is, this section will describe it and not before.`],
     [`What we do not collect`, `No advertising identifiers. No location. No contacts, photos or messages. No cross-site tracking, and no third-party analytics or advertising SDKs in the app. We do not sell or share personal data with anyone, and there is no category of data we would sell.`],
     [`Notifications`, `Deadline reminders are scheduled locally on your device. There is no push server and no message about you leaves your phone.`],
     [`Your rights`, `Under the GDPR and equivalent laws you can ask for a copy of your data, correct it, or have it deleted. Account deletion is available in the app and on the web and removes your email, subscription record and all stored documents. Write to <a class="link-underline" href="mailto:privacy@unclaimedgrant.com">privacy@unclaimedgrant.com</a> and we will respond within 30 days.`],
@@ -427,6 +463,9 @@ export default {
   methSrcP1: `Every record is a real, currently-running programme published by a government, public body or well-known institution. Each one carries an official <code>source_url</code> on the funder's own domain and, where we quoted it, a verbatim <code>source_snippet</code> from that page.`,
   methSrcP2: `Rules we hold ourselves to, and which you can check us against:`,
   methVerH: `The two verification states`,
+  /* Said once, here, because it is a fact about the catalogue and not about any
+     one programme. */
+  methCorpusDate: (d) => `Every record carries the same date: the whole catalogue was last re-extracted on ${d}. Individual programmes are not re-checked on their own schedule yet, so no programme page claims a date of its own.`,
   methVerVerified: `A researcher opened the official page and confirmed the rule, amount and link.`,
   methVerAuto: `Extracted from an official source during curation, but not re-read by a person since. Treat it as a strong lead, not a guarantee.`,
   methVerRecords: `records`,
@@ -468,4 +507,55 @@ export default {
   methLim2: (a, b) => `<strong>${a} of ${b} records have no published amount.</strong> They are real programmes; the amount simply depends on circumstances the official body calculates.`,
   methLim3: (n) => `<strong>${n} records are not human-verified.</strong> Rules may have moved since curation.`,
   methLim4: (d) => `<strong>Snapshot, not a live feed.</strong> The data is a curated snapshot dated ${d}. There is no scraper re-checking these pages daily.`,
+
+  /* A9 — the price a button shows is derived from the plan key it buys.
+
+     /account/ hardcoded "Subscribe — €50 a year" and then rewrote only
+     dataset.plan, so a business account's button read €50 and sent the buyer
+     to a €490 checkout: a 9.8x gap between the label and the charge. A label
+     that lives next to the plan key cannot disagree with it. These must match
+     what /pricing/ prints for the same key. */
+  planPrice: {
+    personal_annual: '€50 a year',
+    personal_monthly: '€7 a month',
+    business_monthly: '€49 a seat a month',
+    business_annual: '€490 a seat a year',
+  },
+  subscribeCta: (price) => `Subscribe — ${price}`,
+  orAlt: (price) => `or ${price}`,
+  /* Rendered server-side, before /api/me has said which account this is.
+     Neutral on purpose: a price shown before we know the plan is a guess. */
+  planNeutralCta: 'Choose a plan',
+  /* A11 — said out loud instead of implied by a 2px outline, which is the
+     same device as :focus-visible and reads as a focus ring. */
+  priceMostPick: 'Most people pick this',
+  /* A20(d) — the enterprise cards borrowed their eyebrows from other keys:
+     one said "PRICING" above "Get the application most of the way written",
+     two repeated their own heading verbatim, and one took the first word of
+     its title, which in another language is an article. */
+  entEyeFind: 'Discovery',
+  entEyeApply: 'Drafting',
+  entEyeTrack: 'Pipeline',
+  entEyeReport: 'Reporting',
+  /* A18(b) — "Could not send the code." named neither the cause nor the way
+     out, and was drawn as ordinary prose in --ink-3. */
+  authSendFail: "We couldn't send the code — the sign-in service didn't answer. Try again in a moment, or email hello@unclaimedgrant.com.",
+  /* A21(a) — /browse/ was a 404 sitting above ten live category directories,
+     with a breadcrumb inviting the reader to trim the URL to it. */
+  browseAll: 'All categories',
+  browseAllLede: "Every support programme in the dataset, grouped by what it is for. Pick a category to see it across all countries.",
+
+  /* A22 — the wizard's own strings, keyed by the exact English literal.
+
+     /fr/check/ served <html lang="fr"> with a fully French shell and an
+     entirely English wizard: every question, option, hint and bucket heading,
+     in six locales, because src/app.js has no translator and every locale's
+     page loads the same /app.js. check-i18n.mjs never saw it — the strings
+     are injected client-side, after the file it reads was written.
+
+     Keyed by the English source string rather than by invented key names, so
+     the wizard can call T('Where do you live?') with the literal it already
+     has and fall back to it when the key is absent. English therefore needs
+     no entries at all: the fallback IS the English copy. */
+  wizard: {},
 };
