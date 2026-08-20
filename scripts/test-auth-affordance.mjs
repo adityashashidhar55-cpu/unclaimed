@@ -76,7 +76,7 @@ for (const [state, body] of Object.entries(STATES)) {
     const seen = await page.evaluate(async () => {
       const vis = (e) => e && e.getBoundingClientRect().width > 0 && getComputedStyle(e).visibility !== 'hidden';
       const chip = document.getElementById('nav-account');
-      const out = { chip: chip && vis(chip) ? chip.textContent.trim() : null, signOut: [], account: [] };
+      const out = { chip: chip && vis(chip) ? chip.textContent.trim() : null, signOut: [], account: [], who: null, whoEmpty: false };
       /* Open whatever the chip opens before looking for the items — a control
          a person can reach in one click counts, one they cannot does not. */
       /* Only when the script has actually wired it into a menu. Signed out the
@@ -92,6 +92,13 @@ for (const [state, body] of Object.entries(STATES)) {
         if (/sign ?out|se déconnecter|abmelden|cerrar sesión|esci|terminar sessão|साइन आउट/i.test(text)) out.signOut.push(text);
         if (/my account|mon compte|mein konto|mi cuenta|il mio account|minha conta|मेरा खाता/i.test(text)) out.account.push(text);
       }
+      /* The strip that names the account. Present and empty is worse than
+         absent: a bordered blank line reads as a component that broke. */
+      const whoEl = document.getElementById('acct-menu-email');
+      if (whoEl) {
+        out.who = whoEl.textContent.trim();
+        out.whoEmpty = vis(whoEl) && !out.who;
+      }
       return out;
     });
 
@@ -103,6 +110,8 @@ for (const [state, body] of Object.entries(STATES)) {
       t(`${where}: can reach their account`, seen.account.length > 0, `chip=${JSON.stringify(seen.chip)}`);
       t(`${where}: can sign out`, seen.signOut.length > 0, `chip=${JSON.stringify(seen.chip)}, none found`);
       /* The label names the person, not the plan we would like to sell them. */
+      t(`${where}: the menu names the account`, seen.who === 'someone@example.com', `who=${JSON.stringify(seen.who)}`);
+      t(`${where}: no empty strip where the address goes`, !seen.whoEmpty);
       t(`${where}: the chip is not a sales pitch`,
         !/upgrade|passer à|upgraden|mejorar|aggiorna|atualizar/i.test(seen.chip || ''),
         `chip=${JSON.stringify(seen.chip)}`);
