@@ -89,7 +89,10 @@ You are curating ONE country's file: `/mnt/agents/output/data/{COUNTRY_CODE}.jso
 - `admin_level`: `national | region | state | city | private`
 - `category`: `housing | income_support | health | transport | energy | education | family | employment | tax | business`
 - `benefit_type`: `cash_monthly | cash_one_off | tax_credit | discount | in_kind | free_slab`
-- `amount_period`: `monthly | annual | one_off`
+- `amount_period`: `weekly | fortnightly | monthly | annual | one_off`
+  Store the figure in the unit the source publishes it in. Ireland, the UK and
+  Canada publish social-security rates per week; putting a weekly rate under
+  `monthly` understates the annual figure by a factor of 4.33.
 - `application_channel`: `online | in_person | post | via_employer | automatic`
 - `deadline_type`: `rolling | annual | window | none`
 - `eligibility.statuses`: subset of `["student","employee","self_employed","unemployed","retired","parent","jobseeker"]`; EMPTY ARRAY = any status
