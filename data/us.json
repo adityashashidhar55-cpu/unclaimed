@@ -68,7 +68,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.fns.usda.gov/snap",
    "source_snippet": "USDA FNS administers SNAP; households must meet income limits and apply through their state agency.",
@@ -139,7 +140,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.fns.usda.gov/wic",
    "source_snippet": "WIC is available for women who are currently pregnant, recently pregnant, or breastfeeding, and babies and kids under 5.",
@@ -205,7 +207,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": true,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.fns.usda.gov/nslp",
    "source_snippet": "Students from households with incomes at or below 130 percent of the Federal poverty line can receive a free lunch; between 130 and 185 percent a reduced-price lunch.",
@@ -266,7 +269,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.fns.usda.gov/summer/sunbucks",
    "source_snippet": "SUN Bucks provides grocery-buying benefits to eligible school-aged children during the summer when schools are closed.",
@@ -325,7 +329,8 @@
     "admin_areas": [],
     "income_test": "unpublished",
     "income_source_url": "https://www.usda.gov/sites/default/files/guidance-documents/fns.tefap-income-guidelines-2026.pdf",
-    "income_confidence": "high"
+    "income_confidence": "high",
+    "gender": "any"
    },
    "source_url": "https://www.fns.usda.gov/tefap",
    "source_snippet": "TEFAP provides USDA foods to low-income Americans through food banks and emergency feeding organizations.",
@@ -395,7 +400,8 @@
     "admin_areas": [],
     "income_test": "numeric",
     "income_source_url": "https://www.usda.gov/sites/default/files/guidance-documents/fns.csfp-income-guidelines-2026.pdf",
-    "income_confidence": "high"
+    "income_confidence": "high",
+    "gender": "any"
    },
    "source_url": "https://www.fns.usda.gov/csfp",
    "source_snippet": "CSFP works to improve the health of low-income persons at least 60 years of age by supplementing their diets with nutritious USDA foods.",
@@ -465,7 +471,8 @@
     "admin_areas": [],
     "income_test": "numeric",
     "income_source_url": "https://www.usda.gov/sites/default/files/guidance-documents/fns.sfmnp-ieg-2026-27.pdf",
-    "income_confidence": "high"
+    "income_confidence": "high",
+    "gender": "any"
    },
    "source_url": "https://www.fns.usda.gov/sfmnp",
    "source_snippet": "SFMNP provides low-income seniors with coupons that can be exchanged for eligible foods at farmers' markets, roadside stands, and community supported agriculture programs.",
@@ -544,7 +551,8 @@
     "admin_areas": [],
     "income_test": "unpublished",
     "income_source_url": "https://www.acf.hhs.gov/ofa/programs/temporary-assistance-needy-families-tanf",
-    "income_confidence": "high"
+    "income_confidence": "high",
+    "gender": "any"
    },
    "source_url": "https://www.acf.hhs.gov/ofa/programs/temporary-assistance-needy-families-tanf",
    "source_snippet": "TANF provides states with flexible funding for programs aimed at promoting stability, family preservation, and access to employment among low-income households with children.",
@@ -624,7 +632,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.ssa.gov/ssi",
    "source_snippet": "In 2026, the maximum federal SSI payment rose to $994 per month for an eligible individual and $1,491 for an eligible couple, reflecting the 2.8 percent cost-of-living adjustment.",
@@ -695,7 +704,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.ssa.gov/disability",
    "source_snippet": "Social Security pays disability benefits through 2 programs: Social Security Disability Insurance (SSDI) and Supplemental Security Income (SSI).",
@@ -768,7 +778,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.ssa.gov/retirement",
    "source_snippet": "You can start receiving Social Security retirement benefits as early as age 62, but benefits are reduced before full retirement age.",
@@ -839,7 +850,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.va.gov/pension/",
    "source_snippet": "The Veterans Pension program provides monthly payments to wartime Veterans who meet certain age or disability requirements, and who have income and net worth within certain limits.",
@@ -913,7 +925,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.dol.gov/general/topic/unemployment-insurance",
    "source_snippet": "Unemployment Insurance provides temporary financial assistance to eligible workers who lost their jobs through no fault of their own; claims are filed with the state unemployment agency.",
@@ -986,7 +999,8 @@
     "admin_areas": [],
     "income_test": "none",
     "income_source_url": "https://www.dol.gov/agencies/eta/wioa",
-    "income_confidence": "medium"
+    "income_confidence": "medium",
+    "gender": "any"
    },
    "source_url": "https://www.dol.gov/agencies/eta/wioa",
    "source_snippet": "WIOA funds employment and training services for adults, dislocated workers and youth through a nationwide network of American Job Centers.",
@@ -1065,7 +1079,8 @@
     "admin_areas": [],
     "income_test": "unpublished",
     "income_source_url": "https://enrollmenthelp.jobcorps.gov/hc/en-us/articles/38111853723917-Am-I-eligible-for-Job-Corps",
-    "income_confidence": "medium"
+    "income_confidence": "medium",
+    "gender": "any"
    },
    "source_url": "https://www.jobcorps.gov",
    "source_snippet": "Job Corps is the nation's largest free residential education and job training program for young adults ages 16-24.",
@@ -1130,7 +1145,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.dol.gov/agencies/eta/tradeact",
    "source_snippet": "TAA provides assistance to workers who have lost their jobs as a result of increased imports or shifts in production outside the United States.",
@@ -1195,7 +1211,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.ssa.gov/work",
    "source_snippet": "The Ticket to Work program supports career development for Social Security disability beneficiaries ages 18 through 64 who want to work.",
@@ -1264,7 +1281,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.irs.gov/credits-deductions/individuals/earned-income-tax-credit/earned-income-and-earned-income-tax-credit-eitc-tables",
    "source_snippet": "If you earned less than $68,675 (Married Filing Jointly) or $61,555 (Single, Qualifying Surviving Spouse or Head of Household) in tax year 2025, you may qualify for the Earned Income Credit.",
@@ -1334,7 +1352,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.irs.gov/credits-deductions/individuals/child-tax-credit",
    "source_snippet": "The Child Tax Credit provides a credit of up to $2,200 per qualifying child under age 17 for tax year 2025.",
@@ -1398,7 +1417,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.irs.gov/retirement-plans/plan-participant-employee/retirement-savings-contributions-savers-credit",
    "source_snippet": "The Saver's Credit is a tax credit for eligible contributions to retirement plans; the credit rate is 50%, 20% or 10% of contributions depending on adjusted gross income.",
@@ -1466,7 +1486,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": true,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.irs.gov/credits-deductions/individuals/aotc",
    "source_snippet": "The American Opportunity Tax Credit is a credit for qualified education expenses paid for an eligible student for the first four years of higher education, up to $2,500 per eligible student.",
@@ -1536,7 +1557,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.irs.gov/credits-deductions/individuals/education-credits-aotc-and-llc",
    "source_snippet": "The Lifetime Learning Credit is worth up to $2,000 per tax return for qualified tuition and related expenses at eligible educational institutions.",
@@ -1610,7 +1632,8 @@
     "admin_areas": [],
     "income_test": "numeric",
     "income_source_url": "https://www.irs.gov/individuals/free-tax-return-preparation-for-qualifying-taxpayers",
-    "income_confidence": "high"
+    "income_confidence": "high",
+    "gender": "any"
    },
    "source_url": "https://www.irs.gov/individuals/free-tax-return-preparation-for-qualifying-taxpayers",
    "source_snippet": "VITA and TCE sites offer free basic tax return preparation to qualified individuals, generally people who make $67,000 or less, persons with disabilities and limited English-speaking taxpayers.",
@@ -1685,7 +1708,8 @@
     "admin_areas": [],
     "income_test": "unpublished",
     "income_source_url": "https://www.medicaid.gov/medicaid/eligibility",
-    "income_confidence": "high"
+    "income_confidence": "high",
+    "gender": "any"
    },
    "source_url": "https://www.medicaid.gov",
    "source_snippet": "Medicaid provides health coverage to millions of Americans, including eligible low-income adults, children, pregnant women, elderly adults and people with disabilities.",
@@ -1752,7 +1776,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.medicaid.gov/chip",
    "source_snippet": "Children eligible for CHIP are in families with incomes too high to qualify for Medicaid, but too low to afford private coverage.",
@@ -1828,7 +1853,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.healthcare.gov/lower-costs/",
    "source_snippet": "When you apply for Marketplace coverage, you'll find out if you qualify for a premium tax credit that lowers your monthly premium.",
@@ -1889,7 +1915,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.healthcare.gov/lower-costs/",
    "source_snippet": "If your income qualifies, you can get extra savings on out-of-pocket costs like deductibles and copayments — but only if you enroll in a Silver plan.",
@@ -1957,7 +1984,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.medicare.gov",
    "source_snippet": "Medicare is federal health insurance for people 65 or older, and some people under 65 with certain disabilities or conditions.",
@@ -2025,7 +2053,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.ssa.gov/extrahelp",
    "source_snippet": "Medicare Part D Extra Help is a program that covers some of the Part D prescription drug plan costs; its estimated average annual value is $5,700 per person.",
@@ -2093,7 +2122,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.medicare.gov",
    "source_snippet": "Medicare Savings Programs help pay Medicare premiums and in some cases deductibles, coinsurance and copayments for people with limited income and resources.",
@@ -2159,7 +2189,8 @@
     "residency_months_min": null,
     "housing_tenure": "renting",
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.usa.gov/housing-voucher-section-8",
    "source_snippet": "The Housing Choice Voucher (HCV) Program, also called Section 8, is run by the Department of Housing and Urban Development (HUD). The program gives you a voucher to help you afford safe, private housing.",
@@ -2233,7 +2264,8 @@
     "admin_areas": [],
     "income_test": "unpublished",
     "income_source_url": "https://www.hud.gov/helping-americans/public-housing",
-    "income_confidence": "high"
+    "income_confidence": "high",
+    "gender": "any"
    },
    "source_url": "https://www.hud.gov/topics/public_housing",
    "source_snippet": "Public housing provides decent and safe rental housing for eligible low-income families, the elderly, and persons with disabilities.",
@@ -2308,7 +2340,8 @@
     "admin_areas": [],
     "income_test": "unpublished",
     "income_source_url": "https://www.rd.usda.gov/programs-services/single-family-housing-direct-home-loans",
-    "income_confidence": "high"
+    "income_confidence": "high",
+    "gender": "any"
    },
    "source_url": "https://www.rd.usda.gov/programs-services/single-family-housing-direct-home-loans",
    "source_snippet": "Section 502 direct loans assist low- and very-low-income applicants obtain decent, safe and sanitary housing in eligible rural areas with payment assistance that increases repayment ability.",
@@ -2383,7 +2416,8 @@
     "admin_areas": [],
     "income_test": "unpublished",
     "income_source_url": "https://liheappm.acf.gov/eligibility-methodology",
-    "income_confidence": "high"
+    "income_confidence": "high",
+    "gender": "any"
    },
    "source_url": "https://www.acf.hhs.gov/ocs/programs/liheap",
    "source_snippet": "LIHEAP assists eligible low-income households with their heating and cooling energy costs, bill payment assistance, energy crisis assistance, weatherization and energy-related home repairs.",
@@ -2450,7 +2484,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.energy.gov/scep/wap/weatherization-assistance-program",
    "source_snippet": "Households that fall at or below 200% of the federal poverty guidelines or receive Supplemental Security Income (SSI) are eligible for weatherization assistance; services are 100% free for those who qualify.",
@@ -2516,7 +2551,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.lifelinesupport.org/about-lifeline/",
    "source_snippet": "Qualifying consumers can get a monthly discount of up to $9.25 off the cost of their phone, internet, or bundled services. Consumers living on qualifying Tribal lands can get up to $34.25 per month.",
@@ -2589,7 +2625,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": true,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://studentaid.gov/understand-aid/types/grants/pell",
    "source_snippet": "For both the 2025-26 and 2026-27 award years, the maximum Pell Grant award is $7,395; eligible students can receive between $740 and $7,395.",
@@ -2652,7 +2689,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": true,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://studentaid.gov/understand-aid/types/grants/fseog",
    "source_snippet": "FSEOG awards range from $100 to $4,000 a year; priority is given to students with the greatest financial need who also receive Pell Grants.",
@@ -2720,7 +2758,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": true,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://studentaid.gov/understand-aid/types/work-study",
    "source_snippet": "Federal Work-Study provides part-time jobs for undergraduate and graduate students with financial need, allowing them to earn money to help pay education expenses.",
@@ -2788,7 +2827,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://studentaid.gov/manage-loans/forgiveness-cancellation/public-service",
    "source_snippet": "PSLF forgives the remaining balance on your Direct Loans after you have made 120 qualifying monthly payments under a qualifying repayment plan while working full-time for a qualifying employer.",
@@ -2857,7 +2897,8 @@
     "admin_areas": [],
     "income_test": "numeric",
     "income_source_url": "https://www.federalregister.gov/documents/2026/01/15/2026-00755/annual-update-of-the-hhs-poverty-guidelines",
-    "income_confidence": "medium"
+    "income_confidence": "medium",
+    "gender": "any"
    },
    "source_url": "https://www.acf.hhs.gov/ohs",
    "source_snippet": "Head Start programs promote school readiness of infants, toddlers, and preschool-aged children from low-income families through education, health and family services.",
@@ -2937,7 +2978,8 @@
     "admin_areas": [],
     "income_test": "unpublished",
     "income_source_url": "https://www.ecfr.gov/current/title-45/subtitle-A/subchapter-A/part-98/subpart-C/section-98.20",
-    "income_confidence": "high"
+    "income_confidence": "high",
+    "gender": "any"
    },
    "source_url": "https://www.acf.hhs.gov/occ",
    "source_snippet": "CCDF helps low-income families access child care so parents can work or attend education and training, administered by state, territory and tribal lead agencies.",
@@ -3002,7 +3044,8 @@
     "admin_areas": [],
     "income_test": "numeric",
     "income_source_url": "https://www.federalregister.gov/documents/2026/04/09/2026-06842/child-nutrition-programs-income-eligibility-guidelines",
-    "income_confidence": "medium"
+    "income_confidence": "medium",
+    "gender": "any"
    },
    "source_url": "https://www.fns.usda.gov/cacfp",
    "source_snippet": "CACFP provides aid to child and adult care institutions and family or group day care homes for the provision of nutritious foods.",
@@ -3076,7 +3119,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.sba.gov/federal-contracting/contracting-assistance-programs/8a-business-development-program",
    "source_snippet": "The 8(a) program helps small businesses owned by socially and economically disadvantaged people compete for set-aside and sole-source federal contracts.",
@@ -3147,7 +3191,8 @@
     "admin_areas": [],
     "income_test": "none",
     "income_source_url": "https://www.sba.gov/funding-programs/loans/microloans",
-    "income_confidence": "high"
+    "income_confidence": "high",
+    "gender": "any"
    },
    "source_url": "https://www.sba.gov/funding-programs/loans/microloans",
    "source_snippet": "The Microloan program provides loans up to $50,000 to help small businesses and certain not-for-profit childcare centers start up and expand.",
@@ -3219,7 +3264,8 @@
     "student_required": false,
     "admin_areas": [
      "California"
-    ]
+    ],
+    "gender": "any"
    },
    "source_url": "https://www.ftb.ca.gov/caleitc",
    "source_snippet": "Under CalEITC, individuals and families earning less than $31,950 may qualify for a cash back tax credit; claim it with Form FTB 3514 on your state return.",
@@ -3291,7 +3337,8 @@
     "student_required": false,
     "admin_areas": [
      "California"
-    ]
+    ],
+    "gender": "any"
    },
    "source_url": "https://www.ftb.ca.gov/file/personal/credits/young-child-tax-credit.html",
    "source_snippet": "The Young Child Tax Credit provides a credit of up to $1,189 per tax return for Californians who qualify for CalEITC and have a child under 6 years old.",
@@ -3364,7 +3411,8 @@
     "student_required": false,
     "admin_areas": [
      "California"
-    ]
+    ],
+    "gender": "any"
    },
    "source_url": "https://www.cdss.ca.gov/calfresh",
    "source_snippet": "CalFresh, federally known as SNAP, issues monthly electronic benefits that can be used to buy most foods at many markets and food stores.",
@@ -3437,7 +3485,8 @@
     "student_required": false,
     "admin_areas": [
      "California"
-    ]
+    ],
+    "gender": "any"
    },
    "source_url": "https://www.dhcs.ca.gov/services/medi-cal",
    "source_snippet": "Medi-Cal is California's Medicaid program, offering free or low-cost health coverage for children and adults with limited income and resources.",
@@ -3517,7 +3566,8 @@
     ],
     "income_test": "none",
     "income_source_url": "https://www.cdss.ca.gov/calworks",
-    "income_confidence": "medium"
+    "income_confidence": "medium",
+    "gender": "any"
    },
    "source_url": "https://www.cdss.ca.gov/calworks",
    "source_snippet": "CalWORKs is California's TANF program providing cash aid and services to eligible needy California families with children.",
@@ -3591,7 +3641,8 @@
     "student_required": false,
     "admin_areas": [
      "New York"
-    ]
+    ],
+    "gender": "any"
    },
    "source_url": "https://otda.ny.gov/programs/heap/",
    "source_snippet": "Eligible households can receive up to $996 through the Regular HEAP benefit, depending on how they heat their home; payments go directly to your utility company or energy provider.",
@@ -3663,7 +3714,8 @@
     "student_required": false,
     "admin_areas": [
      "New York"
-    ]
+    ],
+    "gender": "any"
    },
    "source_url": "https://www.tax.ny.gov/pit/credits/",
    "source_snippet": "The Empire State Child Credit is a refundable credit for New York taxpayers with qualifying children under age 17.",
@@ -3733,7 +3785,8 @@
     "student_required": true,
     "admin_areas": [
      "New York"
-    ]
+    ],
+    "gender": "any"
    },
    "source_url": "https://www.hesc.ny.gov/excelsior/",
    "source_snippet": "The Excelsior Scholarship, in combination with other student financial aid programs, allows students to attend a SUNY or CUNY college tuition-free.",
@@ -3803,7 +3856,8 @@
     "student_required": true,
     "admin_areas": [
      "New York"
-    ]
+    ],
+    "gender": "any"
    },
    "source_url": "https://www.hesc.ny.gov/",
    "source_snippet": "TAP is a New York State grant that helps eligible residents pay tuition at approved colleges and schools in New York.",
@@ -3871,7 +3925,8 @@
     "student_required": false,
     "admin_areas": [
      "New York"
-    ]
+    ],
+    "gender": "any"
    },
    "source_url": "https://info.nystateofhealth.ny.gov/essentialplan",
    "source_snippet": "The Essential Plan offers comprehensive health insurance with no monthly premium and low out-of-pocket costs to eligible lower-income New Yorkers.",
@@ -3944,7 +3999,8 @@
     "student_required": false,
     "admin_areas": [
      "Texas"
-    ]
+    ],
+    "gender": "any"
    },
    "source_url": "https://www.tdhca.texas.gov/",
    "source_snippet": "CEAP assists low-income households in meeting their immediate energy needs, including utility payments and energy-related crisis assistance.",
@@ -4017,7 +4073,8 @@
     "student_required": false,
     "admin_areas": [
      "Florida"
-    ]
+    ],
+    "gender": "any"
    },
    "source_url": "https://www.floridakidcare.org",
    "source_snippet": "Florida KidCare offers quality, affordable health and dental insurance for children from birth through age 18.",
@@ -4088,7 +4145,8 @@
     "student_required": false,
     "admin_areas": [
      "Illinois"
-    ]
+    ],
+    "gender": "any"
    },
    "source_url": "https://tax.illinois.gov/",
    "source_snippet": "The Illinois Earned Income Credit is a refundable credit equal to 20% of the federal earned income tax credit.",
@@ -4164,7 +4222,8 @@
     ],
     "income_test": "numeric",
     "income_source_url": "https://access.nyc.gov/programs/fair-fares/",
-    "income_confidence": "high"
+    "income_confidence": "high",
+    "gender": "any"
    },
    "source_url": "https://access.nyc.gov/programs/fair-fares/",
    "source_snippet": "Fair Fares NYC helps low-income New Yorkers save 50% on public transportation including subway fares, eligible bus fares, and Access-A-Ride paratransit trips.",
@@ -4228,7 +4287,8 @@
     "student_required": false,
     "admin_areas": [
      "New York City"
-    ]
+    ],
+    "gender": "any"
    },
    "source_url": "https://portal.311.nyc.gov/article/?kanumber=KA-03558",
    "source_snippet": "NYCHA residents in eligible developments can receive for free: internet connections with download speeds of up to 300 Mbps, wireless router, modem, and basic cable TV.",
@@ -4301,7 +4361,8 @@
     "student_required": false,
     "admin_areas": [
      "New York City"
-    ]
+    ],
+    "gender": "any"
    },
    "source_url": "https://www.nyc.gov/site/hra/help/cityfheps-documents.page",
    "source_snippet": "CityFHEPS is a rental supplement program administered by DSS that helps individuals and families in shelter or facing eviction move to or keep permanent housing.",
@@ -4374,7 +4435,8 @@
     "student_required": false,
     "admin_areas": [
      "New York City"
-    ]
+    ],
+    "gender": "any"
    },
    "source_url": "https://www.nyc.gov/site/rentfreeze/index.page",
    "source_snippet": "The NYC Rent Freeze Program freezes the rent of eligible senior citizens and people with disabilities in rent-regulated apartments; landlords receive a corresponding property tax abatement.",
@@ -4445,7 +4507,8 @@
     ],
     "income_test": "numeric",
     "income_source_url": "https://www.metro.net/riding/fares/life/",
-    "income_confidence": "high"
+    "income_confidence": "high",
+    "gender": "any"
    },
    "source_url": "https://www.metro.net/riding/fares/life/",
    "source_snippet": "The LIFE program provides fare subsidies to low-income transit riders in Los Angeles County.",
@@ -4509,7 +4572,8 @@
     "student_required": false,
     "admin_areas": [
      "Seattle"
-    ]
+    ],
+    "gender": "any"
    },
    "source_url": "https://kingcounty.gov/en/dept/metro",
    "source_snippet": "ORCA LIFT is a reduced transit fare program for riders whose household income is at or below 200% of the federal poverty level.",
@@ -4556,7 +4620,8 @@
     "student_required": false,
     "admin_areas": [
      "San Francisco"
-    ]
+    ],
+    "gender": "any"
    },
    "source_url": "https://www.sfmta.com/",
    "source_snippet": "Free Muni for All Youth lets everyone 18 years old and younger ride Muni for free, regardless of household income.",
@@ -4617,7 +4682,9 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any",
+    "rule_source": "geography_unknown"
    },
    "source_url": "https://www.internetessentials.com",
    "source_snippet": "Internet Essentials provides affordable high-speed home internet to qualifying low-income households.",
@@ -4678,7 +4745,9 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any",
+    "rule_source": "geography_unknown"
    },
    "source_url": "https://www.att.com/internet/access/",
    "source_snippet": "Access from AT&T provides low-cost wireline home internet service to qualifying limited-income households.",
@@ -4742,7 +4811,9 @@
     "admin_areas": [],
     "income_test": "none",
     "income_source_url": "https://www.spectrum.com/internet/spectrum-internet-assist",
-    "income_confidence": "high"
+    "income_confidence": "high",
+    "gender": "any",
+    "rule_source": "geography_unknown"
    },
    "source_url": "https://www.spectrum.com/internet/spectrum-internet-assist",
    "source_snippet": "Spectrum Internet Assist offers high-speed internet at a discounted price to eligible low-income households.",
@@ -4811,7 +4882,8 @@
     "student_required": false,
     "admin_areas": [
      "California"
-    ]
+    ],
+    "gender": "any"
    },
    "source_url": "https://www.pge.com/",
    "source_snippet": "CARE provides a monthly discount on energy bills for income-qualified PG&E households.",
@@ -4879,7 +4951,8 @@
     "student_required": false,
     "admin_areas": [
      "New York"
-    ]
+    ],
+    "gender": "any"
    },
    "source_url": "https://www.coned.com/",
    "source_snippet": "Con Edison's Energy Affordability Program provides monthly bill discounts to customers enrolled in certain government assistance programs.",
@@ -4948,7 +5021,9 @@
     "admin_areas": [],
     "income_test": "none",
     "income_source_url": "https://joinbankon.org/accounts/",
-    "income_confidence": "medium"
+    "income_confidence": "medium",
+    "gender": "any",
+    "rule_source": "geography_unknown"
    },
    "source_url": "https://joinbankon.org",
    "source_snippet": "Bank On certified accounts are safe, affordable transaction accounts with no overdraft fees and monthly costs of $5 or less.",

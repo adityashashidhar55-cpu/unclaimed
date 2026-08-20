@@ -58,7 +58,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.canada.ca/en/revenue-agency/services/child-family-benefits/canada-child-benefit-overview.html",
    "source_snippet": "A tax-free monthly payment made to eligible families to help with the cost of raising children under 18 years of age.",
@@ -109,7 +110,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.canada.ca/en/revenue-agency/services/child-family-benefits/canada-groceries-essentials-benefit/how-much.html",
    "source_snippet": "The Canada Groceries and Essentials Benefit (CGEB) payments are not taxable... $679 if you are a single individual, $890 if you are married or have a common-law partner, $234 for each eligible child under the age of 19.",
@@ -171,7 +173,8 @@
     "admin_areas": [],
     "income_test": "numeric",
     "income_source_url": "https://www.canada.ca/en/revenue-agency/services/child-family-benefits/acwb-amount.html",
-    "income_confidence": "high"
+    "income_confidence": "high",
+    "gender": "any"
    },
    "source_url": "https://www.canada.ca/en/revenue-agency/services/child-family-benefits/witb-canada-workers-benefit.html",
    "source_snippet": "A refundable tax credit to help eligible working low-income individuals and families; up to 50% can be received as advance payments.",
@@ -238,7 +241,8 @@
     "admin_areas": [],
     "income_test": "numeric",
     "income_source_url": "https://www.canada.ca/en/services/benefits/publicpensions/cpp/old-age-security/recovery-tax.html",
-    "income_confidence": "high"
+    "income_confidence": "high",
+    "gender": "any"
    },
    "source_url": "https://www.canada.ca/en/services/benefits/publicpensions/cpp/old-age-security.html",
    "source_snippet": "Old Age Security pension (age 65 to 74) maximum monthly amount $743.05 (April to June 2026).",
@@ -307,7 +311,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.canada.ca/en/services/benefits/publicpensions/cpp/old-age-security/guaranteed-income-supplement.html",
    "source_snippet": "Guaranteed Income Supplement single person who receives an OAS pension: maximum monthly amount $1,109.85, annual income level cut-off $22,512.",
@@ -363,7 +368,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.canada.ca/en/services/benefits/publicpensions/cpp/old-age-security/guaranteed-income-supplement/allowance-survivor.html",
    "source_snippet": "Allowance $1,411.13; Allowance for the Survivor $1,682.15 (maximum monthly amounts, April to June 2026).",
@@ -421,7 +427,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.canada.ca/en/services/benefits/publicpensions/cpp.html",
    "source_snippet": "Retirement pension (at age 65): maximum $1,507.65 per month (January 2026).",
@@ -482,7 +489,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.canada.ca/en/services/benefits/publicpensions/cpp/cpp-disability-benefit.html",
    "source_snippet": "Disability pension: flat rate portion $610.46, earnings-related portion $1,130.74, total $1,741.20 (January 2026).",
@@ -552,7 +560,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.canada.ca/en/services/benefits/ei/ei-regular-benefit/benefit-amount.html",
    "source_snippet": "For most people, the basic rate for calculating EI benefits is 55% of their average insurable weekly earnings, up to a maximum amount... you can receive a maximum amount of $729 per week.",
@@ -616,7 +625,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.canada.ca/en/services/benefits/ei/ei-maternity-parental.html",
    "source_snippet": "EI maternity benefits are offered to biological mothers who cannot work because they are pregnant or have recently given birth; parental benefits are available to parents of a newborn or newly adopted child.",
@@ -680,7 +690,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.canada.ca/en/services/benefits/ei/ei-sickness.html",
    "source_snippet": "EI sickness benefits provide up to 26 weeks of financial assistance if you can't work for medical reasons; you could receive 55% of your earnings up to a maximum of $729 a week.",
@@ -744,7 +755,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.canada.ca/en/services/benefits/ei/caregiving.html",
    "source_snippet": "EI caregiving benefits provide financial assistance while you're away from work to care for a critically ill or injured person or a person needing end-of-life care.",
@@ -810,7 +822,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.canada.ca/en/services/benefits/dental/dental-care-plan/qualify.html",
    "source_snippet": "To apply for the Canadian Dental Care Plan (CDCP), you must meet all 4 requirements... Your adjusted family net income is less than $90,000.",
@@ -874,7 +887,8 @@
     "admin_areas": [],
     "income_test": "numeric",
     "income_source_url": "https://www.canada.ca/en/employment-social-development/services/student-financial-aid/education-savings/resp/resp-promoters/bulletin/notice-2025-1095.html",
-    "income_confidence": "high"
+    "income_confidence": "high",
+    "gender": "any"
    },
    "source_url": "https://www.canada.ca/en/employment-social-development/services/education-savings/canada-learning-bond.html",
    "source_snippet": "The Canada Learning Bond offers up to $2,000 for eligible low-income families with no contributions required.",
@@ -936,7 +950,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.canada.ca/en/employment-social-development/services/education-savings.html",
    "source_snippet": "The basic CESG adds 20% on the first $2,500 of annual RESP contributions, up to $500 per year, with a lifetime limit of $7,200.",
@@ -1002,7 +1017,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.canada.ca/en/employment-social-development/programs/disability/savings/how-much.html",
    "source_snippet": "The Canada Disability Savings Bond is money the government contributes to the RDSPs of low- and modest-income individuals... The maximum yearly bond amount is $1,000 until you reach the limit of $20,000.",
@@ -1063,7 +1079,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.canada.ca/en/employment-social-development/programs/disability/savings/how-much.html",
    "source_snippet": "The Canada Disability Savings Grant is a matching grant... The maximum yearly grant amount is $3,500, with a limit of $70,000 over your lifetime.",
@@ -1124,7 +1141,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.canada.ca/en/revenue-agency/services/tax/individuals/segments/tax-credits-deductions-persons-disabilities/disability-tax-credit.html",
    "source_snippet": "The disability tax credit (DTC) is a non-refundable tax credit that helps people with disabilities, or their supporting family member, reduce the amount of income tax they may have to pay.",
@@ -1180,7 +1198,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.canada.ca/en/revenue-agency/services/child-family-benefits/child-disability-benefit.html",
    "source_snippet": "The child disability benefit is a tax-free monthly payment made to families who care for a child under age 18 with a severe and prolonged impairment in physical or mental functions.",
@@ -1197,7 +1216,7 @@
    "category": "education",
    "benefit_type": "cash_one_off",
    "amount_min": null,
-   "amount_max": null,
+   "amount_max": 4200,
    "amount_currency": "CAD",
    "amount_period": "annual",
    "amount_note": "Needs-based; full-time grant has been up to $4,200/year in recent program years, plus grants for students with dependants or disabilities; amounts vary by year and province (Quebec, Nunavut, Northwest Territories run their own systems).",
@@ -1248,7 +1267,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": true,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.canada.ca/en/services/benefits/education/student-aid/grants-loans.html",
    "source_snippet": "Canada Student Grants are money you do not have to pay back, awarded based on financial need and eligibility factors such as family income and family size.",
@@ -1307,7 +1327,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.canada.ca/en/employment-social-development/services/funding/canada-summer-jobs.html",
    "source_snippet": "Canada Summer Jobs provides wage subsidies to employers from not-for-profit organizations, the public sector, and private sector organizations with 50 or fewer full-time employees, to create quality summer work experiences for young people aged 15 to 30 years.",
@@ -1370,7 +1391,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.canada.ca/en/employment-social-development/services/apprentices/loan.html",
    "source_snippet": "You can get up to $4,000 in interest-free loans per period of technical training, for up to 5 periods of technical training.",
@@ -1436,7 +1458,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.canada.ca/en/revenue-agency/services/tax/individuals/topics/rrsps-related-plans/what-home-buyers-plan.html",
    "source_snippet": "The Home Buyers' Plan (HBP) allows you to withdraw up to $60,000 from your registered retirement savings plans (RRSPs) to buy or build a qualifying home.",
@@ -1497,7 +1520,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.canada.ca/en/revenue-agency/services/tax/individuals/topics/first-home-savings-account.html",
    "source_snippet": "The FHSA is a registered plan which allows you, as a prospective first-time home buyer, to save to buy your first home tax-free (up to certain limits).",
@@ -1563,7 +1587,8 @@
     "residency_months_min": null,
     "housing_tenure": "owner",
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://natural-resources.canada.ca/energy-efficiency/home-energy-efficiency/canada-greener-homes-initiative",
    "source_snippet": "CGHAP uses a direct-install model: a delivery organization in your province assesses your home, arranges the retrofit, and pays for it directly; eligible households pay nothing out of pocket.",
@@ -1619,7 +1644,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.canada.ca/en/early-learning-child-care.html",
    "source_snippet": "Fees will reduce every year, reaching an average fee of $10/day by 2025-2026 for children under the age of six; as a parent or guardian of a child under the age of six, you do not need to apply to get a fee reduction.",
@@ -1675,7 +1701,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.canada.ca/en/revenue-agency/services/tax/individuals/topics/about-your-tax-return/tax-return/completing-a-tax-return/deductions-credits-expenses/canada-caregiver-amount.html",
    "source_snippet": "The Canada caregiver credit is a non-refundable tax credit for individuals who support a spouse, common-law partner, or dependant with a physical or mental impairment.",
@@ -1731,7 +1758,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.canada.ca/en/immigration-refugees-citizenship/services/settle-canada/language-skills.html",
    "source_snippet": "The Government of Canada, in cooperation with local school boards, community colleges and immigrant-serving organizations, offers free language training across the country for adult permanent residents.",
@@ -1787,7 +1815,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.canada.ca/en/immigration-refugees-citizenship/services/refugees/help-within-canada/financial.html",
    "source_snippet": "Financial assistance for resettled refugees can include income support for up to one year or until they become self-sufficient, whichever comes first.",
@@ -1846,7 +1875,9 @@
     "admin_areas": [],
     "income_test": "unpublished",
     "income_source_url": "https://ised-isde.canada.ca/site/ised/en/programs-and-initiatives/connecting-families-initiative/eligibility",
-    "income_confidence": "high"
+    "income_confidence": "high",
+    "gender": "any",
+    "rule_source": "geography_unknown"
    },
    "source_url": "https://ised-isde.canada.ca/site/connecting-families/en",
    "source_snippet": "Through Connecting Families, participating Internet service providers offer $20 a month high-speed Internet to hundreds of thousands of low-income families and seniors.",
@@ -1903,7 +1934,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.veterans.gc.ca/en/financial-support/emergency-funds/veterans-emergency-fund",
    "source_snippet": "The Veterans Emergency Fund provides emergency financial support to Veterans, their families and survivors whose well-being is at risk due to an urgent and unexpected situation.",
@@ -1966,7 +1998,8 @@
     "student_required": false,
     "admin_areas": [
      "Ontario"
-    ]
+    ],
+    "gender": "any"
    },
    "source_url": "https://www.ontario.ca/page/ontario-trillium-benefit",
    "source_snippet": "Depending on your income level, location, and family size, you may receive up to $2,100 annually through the Ontario Trillium Benefit (2025-26 benefit year components).",
@@ -2037,7 +2070,8 @@
     "student_required": false,
     "admin_areas": [
      "Ontario"
-    ]
+    ],
+    "gender": "any"
    },
    "source_url": "https://www.ontario.ca/page/ontario-works",
    "source_snippet": "Ontario Works provides money for food, shelter and other costs to people in financial need who meet the eligibility criteria.",
@@ -2105,7 +2139,8 @@
     "student_required": false,
     "admin_areas": [
      "Ontario"
-    ]
+    ],
+    "gender": "any"
    },
    "source_url": "https://www.ontario.ca/page/ontario-disability-support-program",
    "source_snippet": "As of July 1, 2025, the Provincial Government raised Ontario Disability Support Program (ODSP) rates by 2.8 per cent; ODSP's single maximum rate is $1,408 per month.",
@@ -2178,7 +2213,8 @@
     ],
     "income_test": "unpublished",
     "income_source_url": "https://www.ontario.ca/page/osap-ontario-student-assistance-program",
-    "income_confidence": "medium"
+    "income_confidence": "medium",
+    "gender": "any"
    },
    "source_url": "https://www.ontario.ca/page/osap-ontario-student-assistance-program",
    "source_snippet": "OSAP offers funding through grants (money you don't have to pay back) and loans (money you need to repay once you're done school), based on financial need.",
@@ -2232,7 +2268,8 @@
     "student_required": false,
     "admin_areas": [
      "Ontario"
-    ]
+    ],
+    "gender": "any"
    },
    "source_url": "https://www.ontario.ca/page/learn-about-ohip-plus",
    "source_snippet": "OHIP+ provides free prescription medications for children and youth age 24 and under who are covered by OHIP and not covered by a private plan.",
@@ -2298,7 +2335,8 @@
     ],
     "income_test": "numeric",
     "income_source_url": "https://www.oeb.ca/consumer-information-and-protection/bill-assistance-programs/ontario-electricity-support-program",
-    "income_confidence": "high"
+    "income_confidence": "high",
+    "gender": "any"
    },
    "source_url": "https://ontarioelectricitysupport.ca/",
    "source_snippet": "The OESP provides a monthly credit to lower-income households based on household income and household size, applied directly to the electricity bill.",
@@ -2365,7 +2403,8 @@
     ],
     "income_test": "unpublished",
     "income_source_url": "https://www.canada.ca/en/revenue-agency/services/child-family-benefits/provincial-territorial-programs/province-ontario.html",
-    "income_confidence": "high"
+    "income_confidence": "high",
+    "gender": "any"
    },
    "source_url": "https://www.ontario.ca/page/ontario-child-benefit",
    "source_snippet": "The Ontario Child Benefit is a provincial program that helps low-income families provide for their children; payments are combined with the Canada Child Benefit.",
@@ -2426,7 +2465,8 @@
     "student_required": false,
     "admin_areas": [
      "Ontario"
-    ]
+    ],
+    "gender": "any"
    },
    "source_url": "https://www.ontario.ca/page/senior-homeowners-property-tax-grant",
    "source_snippet": "This grant helps low- to moderate-income seniors with the cost of their property taxes.",
@@ -2492,7 +2532,8 @@
     ],
     "income_test": "unpublished",
     "income_source_url": "https://www.ontario.ca/page/services-covered-by-healthy-smiles-ontario",
-    "income_confidence": "medium"
+    "income_confidence": "medium",
+    "gender": "any"
    },
    "source_url": "https://www.ontario.ca/page/healthy-smiles-ontario",
    "source_snippet": "Healthy Smiles Ontario is a government-funded dental program that provides free preventive, routine, and emergency dental services for children and youth 17 years old and under from low-income households.",
@@ -2549,7 +2590,8 @@
     "student_required": false,
     "admin_areas": [
      "Ontario"
-    ]
+    ],
+    "gender": "any"
    },
    "source_url": "https://www.ontario.ca/page/low-income-individuals-and-families-tax-credit",
    "source_snippet": "The LIFT credit provides up to $875 in Ontario personal income tax relief to tax filers who have employment income, including those earning minimum wage.",
@@ -2617,7 +2659,8 @@
     "student_required": false,
     "admin_areas": [
      "Ontario"
-    ]
+    ],
+    "gender": "any"
    },
    "source_url": "https://www.ontario.ca/page/canada-ontario-housing-benefit",
    "source_snippet": "The COHB pays the difference between 30 per cent of the household's income and average market rent in the area, and is portable across Ontario.",
@@ -2688,10 +2731,13 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": [],
+    "admin_areas": [
+     "Toronto"
+    ],
     "income_test": "numeric",
     "income_source_url": "https://www.toronto.ca/community-people/employment-social-support/support-for-people-in-financial-need/assistance-through-ontario-works/transit-discount/",
-    "income_confidence": "high"
+    "income_confidence": "high",
+    "gender": "any"
    },
    "source_url": "https://www.toronto.ca/community-people/employment-social-support/support-for-people-in-financial-need/assistance-through-ontario-works/transit-discount/",
    "source_snippet": "The Fair Pass Transit Discount Program provides a full year of savings on TTC and Wheel-Trans trips by offering a 36 per cent discount on adult single fares and a 21 per cent discount on adult monthly passes.",
@@ -2753,7 +2799,10 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [
+     "Toronto"
+    ],
+    "gender": "any"
    },
    "source_url": "https://www.toronto.ca/community-people/employment-social-support/support-for-people-in-financial-need/",
    "source_snippet": "The Welcome Policy provides a fee subsidy to help low-income individuals and families access City of Toronto recreation programs.",
@@ -2816,7 +2865,8 @@
     "student_required": false,
     "admin_areas": [
      "British Columbia"
-    ]
+    ],
+    "gender": "any"
    },
    "source_url": "https://www2.gov.bc.ca/gov/content/family-social-supports/affordability/family-benefit",
    "source_snippet": "The maximum annual benefit you may receive is: $1,750 for your first child; $1,100 for your second child; $900 for each additional child.",
@@ -2881,7 +2931,8 @@
     "student_required": false,
     "admin_areas": [
      "British Columbia"
-    ]
+    ],
+    "gender": "any"
    },
    "source_url": "https://www.bchousing.org/housing-assistance/rental-assistance-financial-aid/shelter-aid-elderly-renters",
    "source_snippet": "SAFER provides monthly cash payments to subsidize rents for eligible BC residents who are age 60 or over and pay rent for their homes.",
@@ -2950,7 +3001,8 @@
     ],
     "income_test": "numeric",
     "income_source_url": "https://www.bchousing.org/housing-assistance/rental-assistance-programs/RAP",
-    "income_confidence": "high"
+    "income_confidence": "high",
+    "gender": "any"
    },
    "source_url": "https://www.bchousing.org/housing-assistance/rental-assistance-financial-aid/rental-assistance-program",
    "source_snippet": "The Rental Assistance Program provides eligible low-income working families with cash assistance to help with their monthly rent payments.",
@@ -3014,7 +3066,8 @@
     ],
     "income_test": "none",
     "income_source_url": "https://www2.gov.bc.ca/gov/content/transportation/passenger-travel/buses-taxis-limos/bus-pass/seniors",
-    "income_confidence": "high"
+    "income_confidence": "high",
+    "gender": "any"
    },
    "source_url": "https://www2.gov.bc.ca/gov/content/transportation/pass-and-travel/bus-pass",
    "source_snippet": "The BC Bus Pass Program offers a reduced cost, annual bus pass for low income seniors and individuals receiving disability assistance from the Province of British Columbia.",
@@ -3081,7 +3134,8 @@
     "student_required": false,
     "admin_areas": [
      "British Columbia"
-    ]
+    ],
+    "gender": "any"
    },
    "source_url": "https://www2.gov.bc.ca/gov/content/family-social-supports/income-assistance",
    "source_snippet": "B.C. Employment and Assistance provides help with essential living costs and employment services to British Columbians in need.",
@@ -3144,7 +3198,8 @@
     "student_required": false,
     "admin_areas": [
      "British Columbia"
-    ]
+    ],
+    "gender": "any"
    },
    "source_url": "https://www2.gov.bc.ca/gov/content/family-social-supports/services-for-people-with-disabilities/disability-assistance",
    "source_snippet": "Disability assistance can help you if you need financial or health support; you must be designated as a Person with Disabilities (PWD) to receive this type of assistance.",
@@ -3212,7 +3267,8 @@
     "student_required": false,
     "admin_areas": [
      "British Columbia"
-    ]
+    ],
+    "gender": "any"
    },
    "source_url": "https://www2.gov.bc.ca/gov/content/family-social-supports/caring-for-young-children/child-care-funding/child-care-benefit",
    "source_snippet": "The Affordable Child Care Benefit is a monthly payment to help eligible families with the cost of child care; factors like income, family size, and type of care determine how much families can get.",
@@ -3270,7 +3326,8 @@
     "student_required": false,
     "admin_areas": [
      "British Columbia"
-    ]
+    ],
+    "gender": "any"
    },
    "source_url": "https://www2.gov.bc.ca/gov/content/health/health-drug-coverage/pharmacare-for-bc-residents/who-we-cover/fair-pharmacare-plan",
    "source_snippet": "Fair PharmaCare helps B.C. families pay for eligible prescription drugs, dispensing fees and some medical supplies; the less a family earns, the more help they get.",
@@ -3333,7 +3390,8 @@
     "student_required": false,
     "admin_areas": [
      "Quebec"
-    ]
+    ],
+    "gender": "any"
    },
    "source_url": "https://www.retraitequebec.gouv.qc.ca/en/famille/allocation-famille/",
    "source_snippet": "Pour 2026, le montant maximal est de 3 068 $ par enfant par année, et le montant minimal est de 1 221 $ par enfant.",
@@ -3399,7 +3457,8 @@
     ],
     "income_test": "numeric",
     "income_source_url": "https://www.revenuquebec.ca/en/citizens/tax-credits/solidarity-tax-credit/calculation-of-the-credit/",
-    "income_confidence": "medium"
+    "income_confidence": "medium",
+    "gender": "any"
    },
    "source_url": "https://www.revenuquebec.ca/en/citizens/tax-credits/solidarity-tax-credit/",
    "source_snippet": "Le crédit d'impôt pour solidarité aide les personnes à faible revenu qui résident au Québec; depuis juillet 2025, la fréquence des versements varie selon le montant (mensuelle à partir de 800 $).",
@@ -3458,7 +3517,8 @@
     "student_required": false,
     "admin_areas": [
      "Quebec"
-    ]
+    ],
+    "gender": "any"
    },
    "source_url": "https://www.quebec.ca/en/family-and-support-for-individuals/childcare-services/subsidized-childcare-service",
    "source_snippet": "Subsidized childcare in Quebec is offered at a reduced contribution set by the government and indexed annually ($9.35 per day in 2025).",
@@ -3528,7 +3588,8 @@
     "student_required": true,
     "admin_areas": [
      "Quebec"
-    ]
+    ],
+    "gender": "any"
    },
    "source_url": "https://www.quebec.ca/en/education/student-financial-assistance",
    "source_snippet": "The Loans and Bursaries Program enables students with insufficient financial resources to pursue full-time secondary, college or university studies.",
@@ -3599,7 +3660,8 @@
     "student_required": false,
     "admin_areas": [
      "Quebec"
-    ]
+    ],
+    "gender": "any"
    },
    "source_url": "https://www.quebec.ca/en/family-and-support-for-individuals/financial-assistance/last-resort-financial-assistance",
    "source_snippet": "Aide sociale: personne seule 845 $ par mois; Solidarité sociale: personne seule 1 318 $ par mois (montants 2026, vivant à son compte).",
@@ -3666,7 +3728,8 @@
     "student_required": false,
     "admin_areas": [
      "Quebec"
-    ]
+    ],
+    "gender": "any"
    },
    "source_url": "https://www.rqap.gouv.qc.ca/en",
    "source_snippet": "The Québec Parental Insurance Plan pays benefits to all eligible workers - salaried or self-employed - taking maternity, paternity, parental or adoption leave.",
@@ -3725,7 +3788,8 @@
     ],
     "income_test": "numeric",
     "income_source_url": "https://www.revenuquebec.ca/en/citizens/tax-credits/work-premium-tax-credits/eligibility-requirements-for-the-work-premium-tax-credits/",
-    "income_confidence": "high"
+    "income_confidence": "high",
+    "gender": "any"
    },
    "source_url": "https://www.revenuquebec.ca/en/citizens/tax-credits/work-premium-tax-credits/",
    "source_snippet": "The work premium is a refundable tax credit intended to encourage people to join or stay in the labour market.",
@@ -3792,7 +3856,8 @@
     ],
     "income_test": "none",
     "income_source_url": "https://www.ramq.gouv.qc.ca/en/citizens/prescription-drug-insurance",
-    "income_confidence": "high"
+    "income_confidence": "high",
+    "gender": "any"
    },
    "source_url": "https://www.ramq.gouv.qc.ca/en/citizens/prescription-drug-insurance",
    "source_snippet": "The Public Prescription Drug Insurance Plan covers persons who do not have access to a private plan; the amount of the annual premium varies according to net family income.",
@@ -3861,7 +3926,8 @@
     "student_required": false,
     "admin_areas": [
      "Alberta"
-    ]
+    ],
+    "gender": "any"
    },
    "source_url": "https://www.alberta.ca/aish",
    "source_snippet": "AISH provides a maximum monthly living allowance of $1,901 to eligible Albertans with a severe and permanent disability, plus health benefits and personal benefits.",
@@ -3927,7 +3993,8 @@
     "student_required": false,
     "admin_areas": [
      "Alberta"
-    ]
+    ],
+    "gender": "any"
    },
    "source_url": "https://www.alberta.ca/income-support",
    "source_snippet": "Income Support can help you and your family with basic needs like food, clothing and shelter if you do not have enough money.",
@@ -3990,7 +4057,8 @@
     "student_required": false,
     "admin_areas": [
      "Alberta"
-    ]
+    ],
+    "gender": "any"
    },
    "source_url": "https://www.alberta.ca/alberta-child-and-family-benefit",
    "source_snippet": "The ACFB is a tax-free amount paid to families that have children under 18 years of age; it is made up of a base component and a working component.",
@@ -4053,7 +4121,8 @@
     ],
     "income_test": "numeric",
     "income_source_url": "https://www.alberta.ca/alberta-seniors-benefit",
-    "income_confidence": "high"
+    "income_confidence": "high",
+    "gender": "any"
    },
    "source_url": "https://www.alberta.ca/alberta-seniors-benefit",
    "source_snippet": "The Alberta Seniors Benefit provides a monthly benefit to eligible seniors with low-income to assist with living expenses.",
@@ -4115,10 +4184,13 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": [],
+    "admin_areas": [
+     "Calgary"
+    ],
     "income_test": "numeric",
     "income_source_url": "https://www.calgary.ca/social-services/low-income/fair-entry-subsidy/should-I-apply.html",
-    "income_confidence": "medium"
+    "income_confidence": "medium",
+    "gender": "any"
    },
    "source_url": "https://www.calgary.ca/social-services/low-income/fair-entry.html",
    "source_snippet": "Fair Entry is an application process that helps Calgarians access City of Calgary subsidized programs and services, using one application for multiple programs.",
@@ -4185,7 +4257,8 @@
     "student_required": false,
     "admin_areas": [
      "Manitoba"
-    ]
+    ],
+    "gender": "any"
    },
    "source_url": "https://www.gov.mb.ca/fs/eia/",
    "source_snippet": "The Employment and Income Assistance Program (EIA) provides financial help to Manitobans who have no other way to support themselves or their families.",
@@ -4251,7 +4324,8 @@
     ],
     "income_test": "numeric",
     "income_source_url": "https://www.gov.mb.ca/fs/eia/rent_assist.html",
-    "income_confidence": "high"
+    "income_confidence": "high",
+    "gender": "any"
    },
    "source_url": "https://www.gov.mb.ca/fs/eia/rent_assist.html",
    "source_snippet": "Rent Assist is a monthly shelter-related financial benefit to help low-income Manitobans who pay rent in the private market.",
@@ -4316,7 +4390,8 @@
     ],
     "income_test": "numeric",
     "income_source_url": "https://www.gov.mb.ca/fs/eia/55plus.html",
-    "income_confidence": "high"
+    "income_confidence": "high",
+    "gender": "any"
    },
    "source_url": "https://www.gov.mb.ca/fs/eia/55plus.html",
    "source_snippet": "The 55 PLUS Program provides quarterly income supplements to low-income Manitobans who are 55 years of age and over.",
@@ -4391,7 +4466,8 @@
     ],
     "income_test": "none",
     "income_source_url": "https://www.saskatchewan.ca/residents/family-and-social-support/financial-help/saskatchewan-income-support-sis",
-    "income_confidence": "high"
+    "income_confidence": "high",
+    "gender": "any"
    },
    "source_url": "https://www.saskatchewan.ca/residents/family-and-social-support/financial-help/saskatchewan-income-support-sis",
    "source_snippet": "The Saskatchewan Income Support (SIS) program helps people meet their basic needs while they become more self-sufficient and independent to the best of their abilities.",
@@ -4455,7 +4531,8 @@
     "student_required": false,
     "admin_areas": [
      "Saskatchewan"
-    ]
+    ],
+    "gender": "any"
    },
    "source_url": "https://www.saskatchewan.ca/residents/family-and-social-support/people-with-disabilities/saskatchewan-assured-income-for-disability",
    "source_snippet": "The Saskatchewan Assured Income for Disability (SAID) program provides income support to people with significant and enduring disabilities.",
@@ -4521,7 +4598,8 @@
     "student_required": false,
     "admin_areas": [
      "Nova Scotia"
-    ]
+    ],
+    "gender": "any"
    },
    "source_url": "https://novascotia.ca/coms/employment/income_assistance/",
    "source_snippet": "Income Assistance provides financial support to Nova Scotians who cannot meet their basic needs.",
@@ -4584,7 +4662,8 @@
     "student_required": false,
     "admin_areas": [
      "Nova Scotia"
-    ]
+    ],
+    "gender": "any"
    },
    "source_url": "https://novascotia.ca/child-benefit/",
    "source_snippet": "The Nova Scotia Child Benefit is a non-taxable amount paid monthly to help low- and modest-income families with the cost of raising children under 18.",
@@ -4642,7 +4721,8 @@
     "student_required": false,
     "admin_areas": [
      "Nova Scotia"
-    ]
+    ],
+    "gender": "any"
    },
    "source_url": "https://www.canada.ca/en/revenue-agency/services/child-family-benefits/provincial-territorial-programs/province-nova-scotia.html",
    "source_snippet": "The Nova Scotia affordable living tax credit is a tax-free amount paid to make life more affordable for low and modest incomes; $255 for individuals and couples plus $60 for each child.",
@@ -4659,7 +4739,7 @@
    "category": "income_support",
    "benefit_type": "cash_monthly",
    "amount_min": null,
-   "amount_max": null,
+   "amount_max": 600,
    "amount_currency": "CAD",
    "amount_period": "monthly",
    "amount_note": "Monthly assistance (transitional, interim and extended benefits streams) for basic needs of low-income New Brunswickers; single employable rate historically around $600/month, higher for persons with disabilities.",
@@ -4708,7 +4788,8 @@
     "student_required": false,
     "admin_areas": [
      "New Brunswick"
-    ]
+    ],
+    "gender": "any"
    },
    "source_url": "https://www2.gnb.ca/content/gnb/en/departments/social_development/services/services_renderer.199496.Social_Assistance.html",
    "source_snippet": "The Social Assistance Program helps eligible individuals and families meet their basic needs when they are unable to do so themselves.",
@@ -4771,7 +4852,8 @@
     "student_required": false,
     "admin_areas": [
      "New Brunswick"
-    ]
+    ],
+    "gender": "any"
    },
    "source_url": "https://www.canada.ca/en/revenue-agency/services/child-family-benefits/provincial-territorial-programs/province-new-brunswick.html",
    "source_snippet": "The New Brunswick child tax benefit is a non-taxable amount paid monthly to qualifying families with children under 18 years of age; $250 annually for each child.",
@@ -4837,7 +4919,8 @@
     "student_required": false,
     "admin_areas": [
      "Newfoundland and Labrador"
-    ]
+    ],
+    "gender": "any"
    },
    "source_url": "https://www.gov.nl.ca/cssd/income-support/",
    "source_snippet": "Income Support provides financial benefits and other services to eligible low-income people to assist in meeting daily living expenses.",
@@ -4903,7 +4986,8 @@
     ],
     "income_test": "unpublished",
     "income_source_url": "https://www.canada.ca/en/revenue-agency/services/child-family-benefits/provincial-territorial-programs/province-newfoundland-labrador.html",
-    "income_confidence": "high"
+    "income_confidence": "high",
+    "gender": "any"
    },
    "source_url": "https://www.canada.ca/en/revenue-agency/services/child-family-benefits/provincial-territorial-programs/province-newfoundland-labrador.html",
    "source_snippet": "The Newfoundland and Labrador child benefit is a non-taxable amount paid monthly to help low-income families with the cost of raising children under 18 years of age.",
@@ -4970,7 +5054,8 @@
     "student_required": false,
     "admin_areas": [
      "Prince Edward Island"
-    ]
+    ],
+    "gender": "any"
    },
    "source_url": "https://www.princeedwardisland.ca/en/information/social-development-and-housing/social-assistance-program",
    "source_snippet": "Social Assistance helps Prince Edward Island residents meet their basic needs when they are unable to provide for themselves.",
@@ -5031,10 +5116,13 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": [],
+    "admin_areas": [
+     "Vancouver"
+    ],
     "income_test": "numeric",
     "income_source_url": "https://vancouver.ca/parks-recreation-culture/leisure-access-card.aspx",
-    "income_confidence": "high"
+    "income_confidence": "high",
+    "gender": "any"
    },
    "source_url": "https://vancouver.ca/parks-recreation-culture/leisure-access-card.aspx",
    "source_snippet": "The Leisure Access Program helps low-income residents access Park Board programs and services at reduced cost.",
@@ -5094,7 +5182,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.canada.ca/en/revenue-agency/services/tax/individuals/topics/about-your-tax-return/tax-return/completing-a-tax-return/deductions-credits-expenses/canada-training-credit.html",
    "source_snippet": "The Canada Training Credit is a refundable tax credit to help Canadians with the cost of eligible training fees; you accumulate $250 each year you are eligible, up to a lifetime limit of $5,000.",
@@ -5157,7 +5246,8 @@
     "residency_months_min": null,
     "housing_tenure": "owner",
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.canada.ca/en/revenue-agency/services/tax/individuals/topics/about-your-tax-return/tax-return/completing-a-tax-return/deductions-credits-expenses/line-31285-home-accessibility-expenses.html",
    "source_snippet": "The home accessibility tax credit is a non-refundable tax credit for qualifying expenses incurred for work performed or goods acquired in respect of a qualifying renovation of an eligible dwelling.",
@@ -5218,7 +5308,8 @@
     "residency_months_min": null,
     "housing_tenure": "owner",
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.canada.ca/en/revenue-agency/services/tax/individuals/topics/about-your-tax-return/tax-return/completing-a-tax-return/deductions-credits-expenses/line-45355-multigenerational-home-renovation-tax-credit.html",
    "source_snippet": "The MHRTC is a refundable tax credit that can be claimed for eligible renovation expenses to create a self-contained secondary unit for a qualifying relation to live with a qualifying individual.",
@@ -5279,7 +5370,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.canada.ca/en/revenue-agency/services/forms-publications/publications/t778.html",
    "source_snippet": "Child care expenses are amounts you paid to have someone look after an eligible child so that you could earn income, go to school, or conduct research.",
@@ -5340,7 +5432,8 @@
     "residency_months_min": null,
     "housing_tenure": "owner",
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.canada.ca/en/revenue-agency/services/forms-publications/publications/rc4028/gst-hst-new-housing-rebate.html",
    "source_snippet": "You may be eligible for a new housing rebate for some of the GST/HST paid if you purchased a new or substantially renovated house from a builder, built your own house, or substantially renovated your own house.",
@@ -5396,7 +5489,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.canada.ca/en/services/benefits/publicpensions/cpp/cpp-survivor-pension.html",
    "source_snippet": "Survivor's pension - 65 and older: maximum $904.59 per month; younger than 65: $803.54 (January 2026).",
@@ -5452,7 +5546,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.canada.ca/en/indigenous-services-canada/services/first-nations-inuit-health/non-insured-health-benefits.html",
    "source_snippet": "The Non-Insured Health Benefits program provides eligible First Nations and Inuit clients with coverage for a range of health benefits that are not covered through other programs.",
@@ -5508,7 +5603,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.canada.ca/en/immigration-refugees-citizenship/services/refugees/help-within-canada/health.html",
    "source_snippet": "The Interim Federal Health Program provides limited, temporary coverage of health-care benefits to people in Canada who are not yet eligible for provincial or territorial health insurance.",
@@ -5569,7 +5665,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.canada.ca/en/indigenous-services-canada/services/jordans-principle.html",
    "source_snippet": "Jordan's Principle makes sure all First Nations children living in Canada can access the products, services and supports they need, when they need them.",
@@ -5632,7 +5729,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.veterans.gc.ca/en/financial-support/thriving-education/veterans-education-and-training-benefit",
    "source_snippet": "The Education and Training Benefit is a taxable benefit that provides funding to Veterans to achieve their education and career goals after release.",

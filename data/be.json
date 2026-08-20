@@ -59,7 +59,8 @@
     ],
     "income_test": "none",
     "income_source_url": "https://www.vlaanderen.be/vlaams-groeipakket/toeslagen/sociale-toeslag",
-    "income_confidence": "high"
+    "income_confidence": "high",
+    "gender": "any"
    },
    "source_url": "https://www.vlaanderen.be/vlaams-groeipakket/toeslagen/basisbedrag",
    "source_snippet": "\"Kinderen geboren vanaf 1 januari 2019: 184,62 euro per maand\" - fixed monthly amount per child, usually paid automatically around the 8th of the month",
@@ -119,7 +120,8 @@
      "Gent",
      "Brugge",
      "Leuven"
-    ]
+    ],
+    "gender": "any"
    },
    "source_url": "https://www.vlaanderen.be/vlaams-groeipakket",
    "source_snippet": "One-off premium of 1.269,25 euro at the birth or adoption of a child, paid by the Groeipakket payer",
@@ -145,7 +147,13 @@
    "application_channel": "automatic",
    "deadline_type": "rolling",
    "deadline_note": null,
-   "procedure_steps": [],
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "No application needed — this is paid automatically to everyone who qualifies. Check that the authority holds your current address and bank details; a missing detail is the usual reason an automatic payment does not arrive.",
+     "url": "https://www.aviq.be"
+    }
+   ],
    "documents_required": [],
    "eligibility": {
     "statuses": [
@@ -166,7 +174,8 @@
     ],
     "income_test": "none",
     "income_source_url": "https://www.famiwal.be/actualites/1er-juillet-2026-tout-ce-qui-change-dans-les-allocations-familiales-wallonnes",
-    "income_confidence": "medium"
+    "income_confidence": "medium",
+    "gender": "any"
    },
    "source_url": "https://www.aviq.be",
    "source_snippet": "Since 2020 family allowances are regionalised; Wallonia applies its own scheme with base amounts rising by birth rank plus age and social supplements",
@@ -193,7 +202,13 @@
    "application_channel": "automatic",
    "deadline_type": "rolling",
    "deadline_note": null,
-   "procedure_steps": [],
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "No application needed — this is paid automatically to everyone who qualifies. Check that the authority holds your current address and bank details; a missing detail is the usual reason an automatic payment does not arrive.",
+     "url": "https://famiris.brussels"
+    }
+   ],
    "documents_required": [],
    "eligibility": {
     "statuses": [
@@ -213,7 +228,8 @@
     ],
     "income_test": "none",
     "income_source_url": "https://famiris.brussels/fr/faq/paiements-allocations-familiales/montants-allocations-familiales/",
-    "income_confidence": "high"
+    "income_confidence": "high",
+    "gender": "any"
    },
    "source_url": "https://famiris.brussels",
    "source_snippet": "Famiris is the Brussels family allowance fund paying the allocation de base plus possible income-related supplément social",
@@ -270,7 +286,8 @@
     "admin_areas": [
      "Wallonië",
      "Liège"
-    ]
+    ],
+    "gender": "any"
    },
    "source_url": "https://www.camille.be/prime-de-naissance",
    "source_snippet": "\"A partir du 1er mars 2026, la prime de naissance s'eleve a 1.395,02 euro par enfant, peu importe le rang de naissance\"",
@@ -325,7 +342,8 @@
     "student_required": false,
     "admin_areas": [
      "Brussel"
-    ]
+    ],
+    "gender": "any"
    },
    "source_url": "https://famiris.brussels/fr/faq/allocation-naissance-adoption/allocation-de-naissance/",
    "source_snippet": "\"la prime de naissance s'eleve a 1.367,74 euros a Bruxelles. A partir du deuxieme enfant, vous recevez une allocation de 621,70 euros\" (indexed amounts; multiple births get the full premium per child)",
@@ -351,7 +369,13 @@
    "application_channel": "automatic",
    "deadline_type": "rolling",
    "deadline_note": null,
-   "procedure_steps": [],
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "No application needed — this is paid automatically to everyone who qualifies. Check that the authority holds your current address and bank details; a missing detail is the usual reason an automatic payment does not arrive.",
+     "url": "https://famiris.brussels"
+    }
+   ],
    "documents_required": [],
    "eligibility": {
     "statuses": [
@@ -368,7 +392,8 @@
     "student_required": false,
     "admin_areas": [
      "Brussel"
-    ]
+    ],
+    "gender": "any"
    },
    "source_url": "https://famiris.brussels",
    "source_snippet": "Annual age-graded school premium paid automatically in August on top of Brussels family allowances",
@@ -394,7 +419,13 @@
    "application_channel": "automatic",
    "deadline_type": "rolling",
    "deadline_note": null,
-   "procedure_steps": [],
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "No application needed — this is paid automatically to everyone who qualifies. Check that the authority holds your current address and bank details; a missing detail is the usual reason an automatic payment does not arrive.",
+     "url": "https://www.vlaanderen.be/vlaams-groeipakket"
+    }
+   ],
    "documents_required": [],
    "eligibility": {
     "statuses": [
@@ -415,7 +446,8 @@
      "Gent",
      "Brugge",
      "Leuven"
-    ]
+    ],
+    "gender": "any"
    },
    "source_url": "https://www.vlaanderen.be/vlaams-groeipakket",
    "source_snippet": "Yearly supplement within the Groeipakket for 3- and 4-year-olds with sufficient attendance in Dutch-medium nursery education, for lower-income families",
@@ -441,7 +473,13 @@
    "application_channel": "automatic",
    "deadline_type": "rolling",
    "deadline_note": null,
-   "procedure_steps": [],
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "No application needed — this is paid automatically to everyone who qualifies. Check that the authority holds your current address and bank details; a missing detail is the usual reason an automatic payment does not arrive.",
+     "url": "https://www.vlaanderen.be/vlaams-groeipakket"
+    }
+   ],
    "documents_required": [],
    "eligibility": {
     "statuses": [
@@ -462,7 +500,8 @@
      "Gent",
      "Brugge",
      "Leuven"
-    ]
+    ],
+    "gender": "any"
    },
    "source_url": "https://www.vlaanderen.be/vlaams-groeipakket",
    "source_snippet": "A child placed in a foster family is entitled to a pleegzorgtoeslag of 71,30 euro paid monthly on top of the Groeipakket",
@@ -521,7 +560,8 @@
      "Gent",
      "Brugge",
      "Leuven"
-    ]
+    ],
+    "gender": "any"
    },
    "source_url": "https://www.vlaanderen.be/vlaams-groeipakket",
    "source_snippet": "Monthly supplement of 346,15 euro for children and young people with a support need of at least 12 points on the medical-social scale",
@@ -547,7 +587,13 @@
    "application_channel": "automatic",
    "deadline_type": "rolling",
    "deadline_note": null,
-   "procedure_steps": [],
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "No application needed — this is paid automatically to everyone who qualifies. Check that the authority holds your current address and bank details; a missing detail is the usual reason an automatic payment does not arrive.",
+     "url": "https://www.vlaanderen.be/vlaams-groeipakket"
+    }
+   ],
    "documents_required": [],
    "eligibility": {
     "statuses": [
@@ -568,7 +614,8 @@
      "Gent",
      "Brugge",
      "Leuven"
-    ]
+    ],
+    "gender": "any"
    },
    "source_url": "https://www.vlaanderen.be/vlaams-groeipakket",
    "source_snippet": "Schoolbonus paid each year in August if the child was entitled to the sociale toeslag in July; 23,07 to 69,22 euro depending on age",
@@ -610,7 +657,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.famifed.be",
    "source_snippet": "FAMIFED is the federal family allowance agency paying child benefits for children of federal civil servants, with supplements by rank and situation",
@@ -636,7 +684,13 @@
    "application_channel": "automatic",
    "deadline_type": "rolling",
    "deadline_note": null,
-   "procedure_steps": [],
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "No application needed — this is paid automatically to everyone who qualifies. Check that the authority holds your current address and bank details; a missing detail is the usual reason an automatic payment does not arrive.",
+     "url": "https://www.vlaanderen.be/vlaams-groeipakket"
+    }
+   ],
    "documents_required": [],
    "eligibility": {
     "statuses": [
@@ -658,7 +712,8 @@
      "Gent",
      "Brugge",
      "Leuven"
-    ]
+    ],
+    "gender": "any"
    },
    "source_url": "https://www.vlaanderen.be/vlaams-groeipakket",
    "source_snippet": "Income-tested yearly school allowance within the Groeipakket for children in nursery, primary or secondary education; amount varies with education type and family income",
@@ -727,7 +782,8 @@
      "Gent",
      "Brugge",
      "Leuven"
-    ]
+    ],
+    "gender": "any"
    },
    "source_url": "https://www.vlaanderen.be/onderwijs-en-vorming/studietoelage",
    "source_snippet": "\"De studietoelage dient als financiele ondersteuning om studiekosten te dekken... Het is een bedrag dat je een keer per academiejaar ontvangt als je voldoet aan alle voorwaarden\"",
@@ -777,7 +833,8 @@
     ],
     "income_test": "numeric",
     "income_source_url": "https://www.vlaanderen.be/onderwijs-en-vorming/studietoelage/voorwaarden/financiele-voorwaarden/inkomensgrenzen-voor-een-studietoelage",
-    "income_confidence": "medium"
+    "income_confidence": "medium",
+    "gender": "any"
    },
    "source_url": "https://www.vlaanderen.be/onderwijs-en-vorming/studietoelage",
    "source_snippet": "\"Krijg je een studietoelage voor het hoger onderwijs? Dan heb je ook recht op verminderd studiegeld bij je onderwijsinstelling in Vlaanderen\"",
@@ -823,7 +880,8 @@
      "Wallonië",
      "Brussel",
      "Liège"
-    ]
+    ],
+    "gender": "any"
    },
    "source_url": "http://www.enseignement.be",
    "source_snippet": "Annual income-tested study grant of the French Community for students in secondary, higher and university education in the Wallonia-Brussels Federation",
@@ -872,7 +930,8 @@
      "Gent",
      "Brugge",
      "Leuven"
-    ]
+    ],
+    "gender": "any"
    },
    "source_url": "https://www.vdab.be",
    "source_snippet": "VDAB offers free vocational training courses, career counselling and job matching for jobseekers and workers in Flanders",
@@ -918,7 +977,8 @@
      "Gent",
      "Brugge",
      "Leuven"
-    ]
+    ],
+    "gender": "any"
    },
    "source_url": "https://www.integratie-inburgering.be",
    "source_snippet": "Newcomers entitled or obliged to civic integration receive a free integration trajectory including Dutch lessons pathway, social orientation course and career guidance",
@@ -982,7 +1042,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.rva.be/documentatie/bedragen",
    "source_snippet": "First compensation period: 65% of last wage (capped, highest wage ceiling 4.265,98 EUR/month) during the first 3 months, then 60%; afterwards a flat-rate amount by family situation. New rules from 01.03.2026 including time limitation.",
@@ -1036,7 +1097,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.rva.be",
    "source_snippet": "Flat-rate benefit for young people who finished studies and remain registered as jobseeker after a waiting period (wachttijd) based on age",
@@ -1077,7 +1139,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.rva.be",
    "source_snippet": "Benefits for workers temporarily suspended by their employer for economic reasons or force majeure; in 2026 temporary unemployment is a percentage of the capped daily wage",
@@ -1124,7 +1187,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.rva.be",
    "source_snippet": "Flat RVA allowance during full-time, half-time or 1/5 career break with a recognised reason (care for child under 12/21, palliative care, serious illness, training of at least 360 hours); 2026 net amounts roughly 770 EUR (full-time) / 385 EUR (half-time) with 5 years seniority",
@@ -1165,7 +1229,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.rva.be",
    "source_snippet": "Older workers (55+, sometimes 50+ in heavy occupations) can reduce working time to half-time or 4/5 in a landing job with a higher RVA allowance, subject to a long career condition",
@@ -1206,7 +1271,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.rva.be/documentatie/bedragen",
    "source_snippet": "Dismissed older workers can receive unemployment benefits plus a monthly company supplement until pension age; minimum age and career conditions apply (generally 60+ after restructuring, earlier after long careers)",
@@ -1259,7 +1325,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": true,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.studentatwork.be",
    "source_snippet": "Students can work 650 hours per calendar year paying only a solidarity contribution of 2,71% (employer 5,42-5,43%) instead of ordinary social contributions, and pay no withholding tax within the quota",
@@ -1304,7 +1371,8 @@
     "admin_areas": [],
     "income_test": "numeric",
     "income_source_url": "https://fin.belgium.be/nl/particulieren/belastingaangifte/inkomsten/flexi-jobs",
-    "income_confidence": "high"
+    "income_confidence": "high",
+    "gender": "any"
    },
    "source_url": "https://www.socialsecurity.be",
    "source_snippet": "Workers already employed at least 4/5 (or pensioners, teachers from a certain age) can take a flexi-job in horeca, retail and other listed sectors without employee social contributions and with tax-free pay within limits",
@@ -1347,7 +1415,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.mi-is.be",
    "source_snippet": "The OCMW/CPAS can hire a social assistance beneficiary with an employer using their benefit as the wage subsidy, giving a paid job, training path and preservation of social rights",
@@ -1400,7 +1469,8 @@
      "Gent",
      "Brugge",
      "Leuven"
-    ]
+    ],
+    "gender": "any"
    },
    "source_url": "https://www.vdab.be",
    "source_snippet": "Premium for Flemish employers who hire a jobseeker from a disadvantaged target group (young low-skilled, older workers, persons with disabilities, long-term unemployed...) for at least half-time",
@@ -1444,7 +1514,8 @@
     "student_required": false,
     "admin_areas": [
      "Brussel"
-    ]
+    ],
+    "gender": "any"
    },
    "source_url": "https://www.actiris.brussels",
    "source_snippet": "Brussels employers can receive hiring incentives (activation of unemployment benefits and other premiums) when engaging registered Brussels jobseekers, notably in training paths",
@@ -1489,7 +1560,9 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any",
+    "rule_source": "geography_unknown"
    },
    "source_url": "https://www.wikifin.be/nl/belasting-werk-en-inkomen/belastingaangifte/belastingverminderingen/dienstencheques-en-pwa-cheques",
    "source_snippet": "\"Sinds 2025 is de belastingvermindering voor dienstencheques geschrapt in het Vlaams Gewest; sinds 2026 ook in het Brussels Gewest. In Wallonie blijft een vermindering van 0,90 euro per cheque (eerste 150 cheques).\" The voucher itself buys one hour of subsidised household help.",
@@ -1550,7 +1623,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.mi-is.be",
    "source_snippet": "\"A partir du 1er mars 2026, le montant du RIS est de: cohabitant 893,65 euros; isole 1.340,47 euros; personne avec famille a charge 1.811,57 euros\" - identical amounts for all CPAS",
@@ -1606,7 +1680,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://handicap.belgium.be",
    "source_snippet": "Monthly allowance for adults whose disability reduces their capacity to earn an income to one third or less; category B (living alone) increased by an extra 2% in 2026",
@@ -1651,7 +1726,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://handicap.belgium.be",
    "source_snippet": "Monthly allowance compensating reduced autonomy for persons with a recognised disability; from 2026 paid only via bank account",
@@ -1701,7 +1777,8 @@
     "admin_areas": [],
     "income_test": "numeric",
     "income_source_url": "https://www.sfpd.fgov.be/nl/recht-op-pensioen/igo/",
-    "income_confidence": "high"
+    "income_confidence": "high",
+    "gender": "any"
    },
    "source_url": "https://www.sfpd.fgov.be",
    "source_snippet": "Means-tested top-up to a guaranteed minimum income for persons aged 65+ whose resources are below the threshold",
@@ -1741,7 +1818,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.fedasil.be",
    "source_snippet": "Asylum seekers are entitled to reception (housing, meals, clothing, medical care and a small daily allowance) in a Fedasil or partner centre during their procedure",
@@ -1799,7 +1877,8 @@
      "Gent",
      "Brugge",
      "Leuven"
-    ]
+    ],
+    "gender": "any"
    },
    "source_url": "https://www.uitpas.be",
    "source_snippet": "\"Wie een UiTPAS aan kansentarief heeft, krijgt 80% korting\" - people with a low income pay only 20% of the price for culture, sports and youth activities in participating regions",
@@ -1838,7 +1917,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.bipt.be",
    "source_snippet": "Certain protected categories (e.g. persons entitled to verhoogde tegemoetkoming, IGO, IVT) get a discount on a basic internet or telecom subscription with participating operators",
@@ -1877,7 +1957,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://justitie.belgium.be",
    "source_snippet": "Free first-line legal information for everyone; free or partly free second-line legal assistance (pro-Deo lawyer) depending on income and situation",
@@ -1931,7 +2012,8 @@
     "admin_areas": [],
     "income_test": "numeric",
     "income_source_url": "https://www.riziv.fgov.be/nl/thema-s/verzorging-kosten-en-terugbetaling/financiele-toegankelijkheid/verhoogde-tegemoetkoming-grensbedragen-van-de-inkomsten",
-    "income_confidence": "high"
+    "income_confidence": "high",
+    "gender": "any"
    },
    "source_url": "https://www.riziv.fgov.be",
    "source_snippet": "\"De verhoogde tegemoetkoming (VT) is de nieuwe naam voor het vroegere BIM-statuut. Het is een regeling die zorgt voor een verlaagd tarief voor gezondheidszorg\" - lower personal share for doctor visits, medicines and treatments for low-income people",
@@ -1958,7 +2040,13 @@
    "application_channel": "automatic",
    "deadline_type": "rolling",
    "deadline_note": null,
-   "procedure_steps": [],
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "No application needed — this is paid automatically to everyone who qualifies. Check that the authority holds your current address and bank details; a missing detail is the usual reason an automatic payment does not arrive.",
+     "url": "https://www.riziv.fgov.be/nl/thema-s/verzorging-kosten-en-terugbetaling/financiele-toegankelijkheid/de-maximumfactuur-maf"
+    }
+   ],
    "documents_required": [],
    "eligibility": {
     "statuses": [],
@@ -1971,7 +2059,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.riziv.fgov.be/nl/thema-s/verzorging-kosten-en-terugbetaling/financiele-toegankelijkheid/de-maximumfactuur-maf",
    "source_snippet": "\"Als de medische kosten van u en uw gezinsleden in de loop van het jaar een maximumbedrag bereiken, dan betaalt uw ziekenfonds de kosten die daar later nog bijkomen volledig terug\" - income-MAF ceiling depends on net taxable family income; social MAF 527,27 EUR (2025), child MAF 761,61 EUR (2025)",
@@ -1997,7 +2086,13 @@
    "application_channel": "automatic",
    "deadline_type": "rolling",
    "deadline_note": null,
-   "procedure_steps": [],
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "No application needed — this is paid automatically to everyone who qualifies. Check that the authority holds your current address and bank details; a missing detail is the usual reason an automatic payment does not arrive.",
+     "url": "https://www.riziv.fgov.be"
+    }
+   ],
    "documents_required": [],
    "eligibility": {
     "statuses": [],
@@ -2013,7 +2108,8 @@
     "admin_areas": [],
     "income_test": "unpublished",
     "income_source_url": "https://www.riziv.fgov.be/nl/thema-s/verzorging-kosten-en-terugbetaling/financiele-toegankelijkheid/verhoogde-tegemoetkoming-grensbedragen-van-de-inkomsten",
-    "income_confidence": "medium"
+    "income_confidence": "medium",
+    "gender": "any"
    },
    "source_url": "https://www.riziv.fgov.be",
    "source_snippet": "Patients with high medical costs over consecutive years and limited income receive the omnio status: increased reimbursement similar to the VT status without having to apply",
@@ -2040,7 +2136,13 @@
    "application_channel": "automatic",
    "deadline_type": "rolling",
    "deadline_note": null,
-   "procedure_steps": [],
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "No application needed — this is paid automatically to everyone who qualifies. Check that the authority holds your current address and bank details; a missing detail is the usual reason an automatic payment does not arrive.",
+     "url": "https://www.riziv.fgov.be"
+    }
+   ],
    "documents_required": [],
    "eligibility": {
     "statuses": [],
@@ -2053,7 +2155,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.riziv.fgov.be",
    "source_snippet": "Patients (in particular with verhoogde tegemoetkoming or omnio status) pay only their personal share at the doctor or pharmacist; the health insurance fund pays the rest directly",
@@ -2098,7 +2201,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.riziv.fgov.be/nl/professionals/individuele-zorgverleners/klinisch-psychologen/eerstelijns-psychologische-zorg-verlenen-via-netwerken-voor-geestelijke-gezondheid",
    "source_snippet": "\"Voor volwassenen vanaf 24 jaar betaalt de patient 11 euro per individuele sessie (4 euro met verhoogde tegemoetkoming); voor kinderen en jongeren tot 23 jaar volledig gedekt. De eerste sessie is altijd gratis.\"",
@@ -2124,7 +2228,13 @@
    "application_channel": "automatic",
    "deadline_type": "rolling",
    "deadline_note": null,
-   "procedure_steps": [],
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "No application needed — this is paid automatically to everyone who qualifies. Check that the authority holds your current address and bank details; a missing detail is the usual reason an automatic payment does not arrive.",
+     "url": "https://www.riziv.fgov.be"
+    }
+   ],
    "documents_required": [],
    "eligibility": {
     "statuses": [],
@@ -2137,7 +2247,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.riziv.fgov.be",
    "source_snippet": "Automatically granted to patients with at least 400,20 EUR health costs per quarter during 8 consecutive quarters (2025 indexed): lower MAF ceiling and third-party payer system",
@@ -2184,7 +2295,8 @@
      "Gent",
      "Brugge",
      "Leuven"
-    ]
+    ],
+    "gender": "any"
    },
    "source_url": "https://www.kindengezin.be",
    "source_snippet": "Free consultation centres and free recommended vaccinations for babies and children in Flanders, plus development follow-up",
@@ -2210,7 +2322,13 @@
    "application_channel": "automatic",
    "deadline_type": "rolling",
    "deadline_note": null,
-   "procedure_steps": [],
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "No application needed — this is paid automatically to everyone who qualifies. Check that the authority holds your current address and bank details; a missing detail is the usual reason an automatic payment does not arrive.",
+     "url": "https://www.bevolkingsonderzoek.be"
+    }
+   ],
    "documents_required": [],
    "eligibility": {
     "statuses": [],
@@ -2232,7 +2350,8 @@
      "Brugge",
      "Leuven",
      "Liège"
-    ]
+    ],
+    "gender": "female"
    },
    "source_url": "https://www.bevolkingsonderzoek.be",
    "source_snippet": "Women aged 50-69 are invited every 2 years for a free screening mammography within the population screening programme",
@@ -2258,7 +2377,13 @@
    "application_channel": "automatic",
    "deadline_type": "rolling",
    "deadline_note": null,
-   "procedure_steps": [],
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "No application needed — this is paid automatically to everyone who qualifies. Check that the authority holds your current address and bank details; a missing detail is the usual reason an automatic payment does not arrive.",
+     "url": "https://www.bevolkingsonderzoek.be"
+    }
+   ],
    "documents_required": [],
    "eligibility": {
     "statuses": [],
@@ -2280,7 +2405,8 @@
      "Brugge",
      "Leuven",
      "Liège"
-    ]
+    ],
+    "gender": "any"
    },
    "source_url": "https://www.bevolkingsonderzoek.be",
    "source_snippet": "Men and women aged 50-74 receive a free stool test by post every two years for early detection of colorectal cancer",
@@ -2336,7 +2462,8 @@
     ],
     "income_test": "none",
     "income_source_url": "https://www.vlaanderen.be/gezondheid-en-welzijn/gezondheid/zorgkassen-in-vlaanderen/zorgbudget-van-de-vlaamse-sociale-bescherming/zorgbudget-voor-zwaar-zorgbehoevenden-van-de-vlaamse-sociale-bescherming",
-    "income_confidence": "high"
+    "income_confidence": "high",
+    "gender": "any"
    },
    "source_url": "https://www.vlaamsezorgkas.be",
    "source_snippet": "Persons affiliated to the Flemish Social Protection who need permanent help with daily living receive a monthly care budget; financed by the yearly zorgpremie (100 EUR in 2026, 35 EUR reduced)",
@@ -2384,7 +2511,8 @@
      "Gent",
      "Brugge",
      "Leuven"
-    ]
+    ],
+    "gender": "any"
    },
    "source_url": "https://www.vlaamsezorgkas.be",
    "source_snippet": "Allowance for people aged 60+ with reduced self-reliance (score on the BEL scale) and limited income to help pay for assistance and services",
@@ -2451,7 +2579,8 @@
      "Gent",
      "Brugge",
      "Leuven"
-    ]
+    ],
+    "gender": "any"
    },
    "source_url": "https://www.wonenvlaanderen.be",
    "source_snippet": "Subsidised rental homes let by social housing companies at income-dependent rents to registered candidates on the waiting list",
@@ -2508,7 +2637,8 @@
      "Gent",
      "Brugge",
      "Leuven"
-    ]
+    ],
+    "gender": "any"
    },
    "source_url": "https://www.vlaanderen.be/bouwen-wonen-en-energie/bouwen-en-verbouwen/premies-voor-renovatie/mijn-verbouwpremie",
    "source_snippet": "\"Mijn VerbouwPremie is een premie van de Vlaamse overheid voor renovatie en energiebesparende investeringen\" - 4 income categories: 50% (cat 4), 35% (cat 3), 25% (cat 2), 20% (cat 1) of the invoice; from 1 March 2026 the two highest categories only qualify for heat pump (boiler) premiums",
@@ -2553,7 +2683,8 @@
      "Gent",
      "Brugge",
      "Leuven"
-    ]
+    ],
+    "gender": "any"
    },
    "source_url": "https://www.vlaanderen.be/bouwen-wonen-en-energie/bouwen-en-verbouwen/premies-voor-renovatie/mijn-verbouwpremie",
    "source_snippet": "\"kunt u ook de voordelige Mijn VerbouwLening tot 60.000 euro aanvragen... Sinds 2026 werd Mijn VerbouwLening nog interessanter voor de laagste inkomenscategorieen\"",
@@ -2600,7 +2731,8 @@
      "Gent",
      "Brugge",
      "Leuven"
-    ]
+    ],
+    "gender": "any"
    },
    "source_url": "https://www.vlaanderen.be/premies-voor-renovatie/vlaamse-aanpassingspremie-om-de-woning-aan-te-passen-aan-een-oudere-bewoner/voor-wie-is-de-vlaamse-aanpassingspremie",
    "source_snippet": "\"Het inkomen van alle 65-plussers mag niet meer bedragen dan 39.300 euro voor een aanvrager zonder persoon ten laste (aanvragen in 2026)\" - premium to adapt the home for an older resident",
@@ -2645,7 +2777,8 @@
     ],
     "income_test": "unpublished",
     "income_source_url": "https://www.wallonie.be/fr/actualites/le-gouvernement-wallon-adopte-un-nouveau-regime-de-soutien-temporaire-des-primes-energie",
-    "income_confidence": "medium"
+    "income_confidence": "medium",
+    "gender": "any"
    },
    "source_url": "https://energie.wallonie.be",
    "source_snippet": "Walloon grants for energy audits, insulation, heating and renovation works, with amounts scaled by income category and a possible audit bonus",
@@ -2687,7 +2820,8 @@
     "student_required": false,
     "admin_areas": [
      "Brussel"
-    ]
+    ],
+    "gender": "any"
    },
    "source_url": "https://www.renolution.brussels",
    "source_snippet": "Brussels premium system (since 2022) bundling renovation, energy and facade premiums in about 47 categories, scaled by income category; note: applications for invoices dated 2025/2026 are suspended pending a government decision",
@@ -2734,7 +2868,8 @@
     "student_required": false,
     "admin_areas": [
      "Brussel"
-    ]
+    ],
+    "gender": "any"
    },
    "source_url": "https://www.fonds.brussels",
    "source_snippet": "Renovation credit available again since January 2026 at preferential rates of about 2,5-3,5%; consumer credit up to 25.000 EUR or mortgage credit for larger energy renovations",
@@ -2782,7 +2917,8 @@
     ],
     "income_test": "numeric",
     "income_source_url": "https://www.vlaanderen.be/bouwen-wonen-en-energie/huren-en-verhuren/een-huis-of-appartement-huren/een-sociale-woning-huren-bij-een-woonmaatschappij/voorwaarden-voor-een-sociale-woning",
-    "income_confidence": "high"
+    "income_confidence": "high",
+    "gender": "any"
    },
    "source_url": "https://www.wonenvlaanderen.be",
    "source_snippet": "Social letting agencies rent out private homes below market price to low-income tenants and manage the property for the owner",
@@ -2824,7 +2960,8 @@
     "student_required": false,
     "admin_areas": [
      "Brussel"
-    ]
+    ],
+    "gender": "any"
    },
    "source_url": "https://logement.brussels",
    "source_snippet": "Monthly premium for households registered on the Brussels social housing waiting list who rent on the private market",
@@ -2875,7 +3012,8 @@
      "Gent",
      "Brugge",
      "Leuven"
-    ]
+    ],
+    "gender": "any"
    },
    "source_url": "https://www.vlaanderen.be/belastingen-en-begroting",
    "source_snippet": "Purchase of the only own home in Flanders is taxed at 2% registration duties instead of 12%, and at 1% when committing to a thorough energy renovation (since 1 January 2024)",
@@ -2901,7 +3039,13 @@
    "application_channel": "automatic",
    "deadline_type": "rolling",
    "deadline_note": null,
-   "procedure_steps": [],
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "No application needed — this is paid automatically to everyone who qualifies. Check that the authority holds your current address and bank details; a missing detail is the usual reason an automatic payment does not arrive.",
+     "url": "https://www.creg.be"
+    }
+   ],
    "documents_required": [],
    "eligibility": {
     "statuses": [],
@@ -2917,7 +3061,8 @@
     "admin_areas": [],
     "income_test": "none",
     "income_source_url": "https://economie.fgov.be/nl/themas/energie/sociale-energie/sociaal-tarief-voor-energie",
-    "income_confidence": "high"
+    "income_confidence": "high",
+    "gender": "any"
    },
    "source_url": "https://www.creg.be",
    "source_snippet": "\"In vergelijking met de gemiddelde marktprijs zijn de sociale tarieven voor gas en elektriciteit ongeveer 30% lager\" - federally regulated all-in tariff for protected customers, revised quarterly by the CREG and identical at every supplier",
@@ -2963,7 +3108,8 @@
      "Gent",
      "Brugge",
      "Leuven"
-    ]
+    ],
+    "gender": "any"
    },
    "source_url": "https://www.vlaanderen.be/minimale-levering-van-aardgas-voor-wie-betaalt-via-prepaid",
    "source_snippet": "\"Ook in winter 2025-2026 is er financiele tussenkomst voor de verwarmingskosten van kwetsbare gezinnen\" - half-monthly contributions e.g. 31,66 to 54,66 EUR (protected customers) for gas and 78,77 to 135,77 EUR for electricity depending on dwelling type",
@@ -2989,7 +3135,13 @@
    "application_channel": "automatic",
    "deadline_type": "rolling",
    "deadline_note": null,
-   "procedure_steps": [],
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "No application needed — this is paid automatically to everyone who qualifies. Check that the authority holds your current address and bank details; a missing detail is the usual reason an automatic payment does not arrive.",
+     "url": "https://www.vmm.be"
+    }
+   ],
    "documents_required": [],
    "eligibility": {
     "statuses": [],
@@ -3005,7 +3157,9 @@
     "admin_areas": [],
     "income_test": "none",
     "income_source_url": "https://www.vlaanderen.be/sociaal-tarief-voor-water",
-    "income_confidence": "high"
+    "income_confidence": "high",
+    "gender": "any",
+    "rule_source": "geography_unknown"
    },
    "source_url": "https://www.vmm.be",
    "source_snippet": "Protected customers pay a reduced price or receive a free basic quantity of drinking water depending on the region and water company",
@@ -3055,7 +3209,8 @@
     "student_required": false,
     "admin_areas": [
      "Brussel"
-    ]
+    ],
+    "gender": "any"
    },
    "source_url": "https://www.stib-mivb.be",
    "source_snippet": "\"From 1 July 2023, over 65s in Brussels will be able to enjoy an annual pass for 12 EUR, amounting to just 1 EUR a month\"; for seniors living outside Brussels the 65+ annual pass costs 60 EUR",
@@ -3105,7 +3260,8 @@
     ],
     "income_test": "none",
     "income_source_url": "https://www.delijn.be/nl/content/abonnementen/omnipas-65plus/",
-    "income_confidence": "high"
+    "income_confidence": "high",
+    "gender": "any"
    },
    "source_url": "https://www.delijn.be/nl/content/abonnementen/omnipas-65plus/",
    "source_snippet": "\"Met de Omnipas 65+ reis je voor slechts 71 euro een heel jaar lang onbeperkt met alle bussen en (Kust)trams van De Lijn in Vlaanderen en Brussel\"",
@@ -3147,7 +3303,9 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any",
+    "rule_source": "geography_unknown"
    },
    "source_url": "https://www.belgiantrain.be",
    "source_snippet": "Discounted school season tickets for pupils and students commuting by train, plus youth fares (Go Pass 10, Youth Multi) for occasional travel under 26",
@@ -3192,7 +3350,8 @@
      "Gent",
      "Brugge",
      "Leuven"
-    ]
+    ],
+    "gender": "any"
    },
    "source_url": "https://www.delijn.be",
    "source_snippet": "Strongly discounted annual season ticket for young people aged 12 to 24 on all De Lijn buses and trams in Flanders",
@@ -3233,7 +3392,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.vlaanderen.be/fietsvergoeding",
    "source_snippet": "\"De fiscaal vrijgestelde fietsvergoeding ligt vandaag op maximaal 0,36 euro per kilometer (inkomstenjaar 2025, aanslagjaar 2026)\" - since cao nr 164 a bicycle allowance is a right in the private sector",
@@ -3284,7 +3444,8 @@
      "Gent",
      "Brugge",
      "Leuven"
-    ]
+    ],
+    "gender": "any"
    },
    "source_url": "https://www.delijn.be",
    "source_snippet": "\"Personen met een handicap (PMH-abonnement) kunnen gratis reizen met De Lijn\" via their Omnipas; companions of certain categories travel free on several Belgian networks",
@@ -3329,7 +3490,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://mobilit.belgium.be",
    "source_snippet": "Parking card giving access to reserved parking spaces and local parking advantages, valid across the EU",
@@ -3377,7 +3539,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.wikifin.be/nl/belasting-werk-en-inkomen/belastingaangifte/belastingverminderingen/pensioensparen",
    "source_snippet": "\"basisplafond van maximaal 1050 euro: belastingvermindering van 30%... verhoogde plafond van maximaal 1350 euro: belastingvermindering van 25%\" (2026)",
@@ -3419,7 +3582,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.wikifin.be",
    "source_snippet": "30% tax reduction on premiums for long-term savings life insurance, with a 2026 maximum savings amount of about 2.530 EUR depending on net taxable professional income",
@@ -3462,7 +3626,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://financien.belgium.be",
    "source_snippet": "Tax reduction for donations of at least 40 EUR per year and per approved institution; the rate drops from 45% to 30% from assessment year 2026",
@@ -3488,7 +3653,13 @@
    "application_channel": "automatic",
    "deadline_type": "rolling",
    "deadline_note": null,
-   "procedure_steps": [],
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "No application needed — this is paid automatically to everyone who qualifies. Check that the authority holds your current address and bank details; a missing detail is the usual reason an automatic payment does not arrive.",
+     "url": "https://financien.belgium.be"
+    }
+   ],
    "documents_required": [],
    "eligibility": {
     "statuses": [
@@ -3503,7 +3674,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://financien.belgium.be",
    "source_snippet": "Each dependent child raises the parents' tax-free allowance; the supplements for the first two children are being increased to 2.650 EUR per child by 2029",
@@ -3529,7 +3701,13 @@
    "application_channel": "automatic",
    "deadline_type": "rolling",
    "deadline_note": null,
-   "procedure_steps": [],
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "No application needed — this is paid automatically to everyone who qualifies. Check that the authority holds your current address and bank details; a missing detail is the usual reason an automatic payment does not arrive.",
+     "url": "https://financien.belgium.be"
+    }
+   ],
    "documents_required": [],
    "eligibility": {
     "statuses": [
@@ -3544,7 +3722,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://financien.belgium.be",
    "source_snippet": "Extra tax-free allowance supplement for a taxpayer living alone with at least one dependent child; from 2026 reserved to genuinely single parents (no longer for de facto cohabiting parents)",
@@ -3570,7 +3749,13 @@
    "application_channel": "via_employer",
    "deadline_type": "rolling",
    "deadline_note": null,
-   "procedure_steps": [],
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "No application needed — this is paid automatically to everyone who qualifies. Check that the authority holds your current address and bank details; a missing detail is the usual reason an automatic payment does not arrive.",
+     "url": "https://www.socialsecurity.be"
+    }
+   ],
    "documents_required": [],
    "eligibility": {
     "statuses": [
@@ -3585,7 +3770,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.socialsecurity.be",
    "source_snippet": "Social work bonus reduces the employee's 13,07% social contributions for low wages (referteloon up to about 3.271 EUR); the fiscal work bonus adds a tax reduction of 33,14% (low wages) or 52,54% rising to 63% from income year 2026 (very low wages), capped at 765 EUR rising to 970 EUR",
@@ -3626,7 +3812,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.socialsecurity.be",
    "source_snippet": "Employers can grant eco-vouchers exempt from social contributions and tax, up to 250 EUR per year, usable for ecological products and services",
@@ -3685,7 +3872,8 @@
      "Gent",
      "Brugge",
      "Leuven"
-    ]
+    ],
+    "gender": "any"
    },
    "source_url": "https://www.vlaio.be/nl/subsidies-financiering/kmo-portefeuille",
    "source_snippet": "\"Kleine ondernemingen krijgen 30% steun, middelgrote ondernemingen 20%. Je kan maximaal 7.500 steun per jaar krijgen.\" Higher rates (45%/35%) for energy-efficiency and cybersecurity themes; since 1 Feb 2026 advice only for cybersecurity.",
@@ -3726,7 +3914,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://financien.belgium.be",
    "source_snippet": "Companies (mainly SMEs) can deduct a percentage of qualifying investments from taxable profit: 8% ordinary one-off deduction, higher thematic deduction (up to 20-25% and more for energy/climate/R&D investments from 2025)",
@@ -3767,7 +3956,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://financien.belgium.be",
    "source_snippet": "Private investors get a tax reduction of 45% (micro), 30% (small) or 25% (growth companies) on investments up to 100.000 EUR per year in qualifying young companies",
@@ -3793,7 +3983,13 @@
    "application_channel": "via_employer",
    "deadline_type": "rolling",
    "deadline_note": null,
-   "procedure_steps": [],
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "No application needed — this is paid automatically to everyone who qualifies. Check that the authority holds your current address and bank details; a missing detail is the usual reason an automatic payment does not arrive.",
+     "url": "https://www.socialsecurity.be"
+    }
+   ],
    "documents_required": [],
    "eligibility": {
     "statuses": [
@@ -3808,7 +4004,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.socialsecurity.be",
    "source_snippet": "Structural reduction of employer social contributions plus target group reductions (first employees, young workers, older workers, low wages...) lowering the cost of hiring",
@@ -3850,7 +4047,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.riziv.fgov.be",
    "source_snippet": "Employees unable to work due to illness or accident receive a primary disability benefit (first year) and afterwards an invalidity benefit, calculated on the capped wage and family situation",
@@ -3893,7 +4091,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "female"
    },
    "source_url": "https://www.riziv.fgov.be",
    "source_snippet": "Paid maternity leave of 15 weeks (more for multiple births): benefit of about 82% of uncapped wage for the first 30 days, then 75% of the capped wage for employees; self-employed mothers receive a flat weekly benefit",
@@ -3936,7 +4135,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.rva.be",
    "source_snippet": "Co-parents get 20 days of birth leave after the birth of their child, paid at 82% of the capped wage (employees) or a flat amount (self-employed)",
@@ -3978,7 +4178,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.rva.be",
    "source_snippet": "Up to 4 months of full-time (or longer part-time) parental leave per parent per child under 12, with a flat RVA allowance",
@@ -4025,7 +4226,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.rva.be",
    "source_snippet": "Employees can fully or partly interrupt their career to provide palliative care, care for a seriously ill family member or a disabled child, with flat RVA allowances higher than ordinary time credit",
@@ -4068,7 +4270,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://financien.belgium.be",
    "source_snippet": "45% tax reduction on childcare expenses for children under 14 (or 18/21 with disability), capped at a maximum per day and per child (16,90 EUR/day for income year 2026)",
@@ -4115,7 +4318,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.sfpd.fgov.be",
    "source_snippet": "Career-based state pension from the legal pension age (66, rising to 67), calculated on career length and capped career wages, with minimum guarantees per career year",
@@ -4141,7 +4345,13 @@
    "application_channel": "via_employer",
    "deadline_type": "rolling",
    "deadline_note": null,
-   "procedure_steps": [],
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "No application needed — this is paid automatically to everyone who qualifies. Check that the authority holds your current address and bank details; a missing detail is the usual reason an automatic payment does not arrive.",
+     "url": "https://fedris.be"
+    }
+   ],
    "documents_required": [],
    "eligibility": {
     "statuses": [
@@ -4156,7 +4366,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://fedris.be",
    "source_snippet": "Employees are insured by their employer against accidents at work and on the way to work: medical costs fully covered plus compensation for temporary or permanent incapacity",
@@ -4197,7 +4408,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.socialsecurity.be",
    "source_snippet": "Employers can grant one meal voucher per worked day, exempt from social contributions and tax, with a maximum face value of 8 EUR (employer pays at least 6,91 EUR, employee at most 1,09 EUR)",

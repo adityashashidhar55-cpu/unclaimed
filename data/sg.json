@@ -48,7 +48,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.govbenefits.gov.sg/government-benefits-schemes/gst-voucher/",
    "source_snippet": "GSTV – Cash provides lower-income Singaporeans with cash for their immediate needs. Paid in August each year.",
@@ -65,7 +66,7 @@
    "category": "energy",
    "benefit_type": "discount",
    "amount_min": null,
-   "amount_max": null,
+   "amount_max": 570,
    "amount_currency": "SGD",
    "amount_period": "annual",
    "amount_note": "Quarterly rebate credited to utilities account; quantum depends on HDB flat type (up to about $570/year in FY2026, 1.5x the regular amount to cushion the carbon tax increase)",
@@ -74,7 +75,13 @@
    "application_channel": "automatic",
    "deadline_type": "none",
    "deadline_note": null,
-   "procedure_steps": [],
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "No application needed — this is paid automatically to everyone who qualifies. Check that the authority holds your current address and bank details; a missing detail is the usual reason an automatic payment does not arrive.",
+     "url": "https://www.govbenefits.gov.sg/government-benefits-schemes/gst-voucher/"
+    }
+   ],
    "documents_required": [],
    "eligibility": {
     "statuses": [],
@@ -87,7 +94,8 @@
     "residency_months_min": null,
     "housing_tenure": "owner",
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.govbenefits.gov.sg/government-benefits-schemes/gst-voucher/",
    "source_snippet": "U-Save provides eligible HDB households with quarterly rebates to offset their utilities bills. Paid in January, April, July, and October each year.",
@@ -113,7 +121,13 @@
    "application_channel": "automatic",
    "deadline_type": "none",
    "deadline_note": null,
-   "procedure_steps": [],
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "No application needed — this is paid automatically to everyone who qualifies. Check that the authority holds your current address and bank details; a missing detail is the usual reason an automatic payment does not arrive.",
+     "url": "https://www.govbenefits.gov.sg/government-benefits-schemes/gst-voucher/"
+    }
+   ],
    "documents_required": [],
    "eligibility": {
     "statuses": [],
@@ -126,7 +140,8 @@
     "residency_months_min": null,
     "housing_tenure": "owner",
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.govbenefits.gov.sg/government-benefits-schemes/gst-voucher/",
    "source_snippet": "S&CC Rebate provides eligible HDB households with quarterly rebates to offset their S&CC. Paid in January, April, July, and October each year.",
@@ -152,7 +167,13 @@
    "application_channel": "automatic",
    "deadline_type": "annual",
    "deadline_note": null,
-   "procedure_steps": [],
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "No application needed — this is paid automatically to everyone who qualifies. Check that the authority holds your current address and bank details; a missing detail is the usual reason an automatic payment does not arrive.",
+     "url": "https://www.govbenefits.gov.sg/government-benefits-schemes/gst-voucher/"
+    }
+   ],
    "documents_required": [],
    "eligibility": {
     "statuses": [],
@@ -165,7 +186,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.govbenefits.gov.sg/government-benefits-schemes/gst-voucher/",
    "source_snippet": "GSTV – MediSave provides Singaporeans aged 65 and above with a CPF MediSave account top-up to support their medical needs. Paid in August each year.",
@@ -191,7 +213,13 @@
    "application_channel": "automatic",
    "deadline_type": "annual",
    "deadline_note": "Final AP Cash tranche in December 2026",
-   "procedure_steps": [],
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "No application needed — this is paid automatically to everyone who qualifies. Check that the authority holds your current address and bank details; a missing detail is the usual reason an automatic payment does not arrive.",
+     "url": "https://www.govbenefits.gov.sg/"
+    }
+   ],
    "documents_required": [],
    "eligibility": {
     "statuses": [],
@@ -204,7 +232,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.govbenefits.gov.sg/",
    "source_snippet": "The Assurance Package cushions the impact of the GST increase: AP Cash is paid every December (2022–2026) to all adult Singaporeans, with lower-income citizens receiving more.",
@@ -268,7 +297,8 @@
     "admin_areas": [],
     "income_test": "none",
     "income_source_url": "https://vouchers.cdc.gov.sg/",
-    "income_confidence": "medium"
+    "income_confidence": "medium",
+    "gender": "any"
    },
    "source_url": "https://vouchers.cdc.gov.sg/",
    "source_snippet": "As announced in Budget 2025, all Singaporean households will receive an additional $800 in CDC Vouchers to help with daily expenses — $500 in May 2025 and $300 in January 2026.",
@@ -322,7 +352,8 @@
     "admin_areas": [],
     "income_test": "none",
     "income_source_url": "https://www.cdc.gov.sg/common-flagship-programmes/sg60-vouchers/",
-    "income_confidence": "high"
+    "income_confidence": "high",
+    "gender": "any"
    },
    "source_url": "https://www.cdc.gov.sg/common-flagship-programmes/sg60-vouchers/",
    "source_snippet": "All Singapore Citizens aged 21 and above in 2025 will receive $600 in SG60 Vouchers. SC seniors aged 60 and above in 2025 will receive $200 more – a total of $800 in SG60 Vouchers.",
@@ -397,7 +428,8 @@
     "admin_areas": [],
     "income_test": "numeric",
     "income_source_url": "https://www.msf.gov.sg/docs/default-source/mediaroom-document/summary-of-comcare-lta-and-smta-schemes.pdf",
-    "income_confidence": "medium"
+    "income_confidence": "medium",
+    "gender": "any"
    },
    "source_url": "https://www.msf.gov.sg/what-we-do/comcare",
    "source_snippet": "Temporary support for families and individuals who are unable to work for a period of time (e.g. due to illness, caregiving responsibilities), are looking for a job, or are earning a low income.",
@@ -454,7 +486,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.msf.gov.sg/what-we-do/comcare",
    "source_snippet": "Long-term support for persons who are permanently unable to work due to old age, illness or disability, have limited or no means of income, and have little or no family support.",
@@ -499,7 +532,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.msf.gov.sg/what-we-do/comcare",
    "source_snippet": "Immediate financial assistance to individuals and families who require urgent and temporary financial relief.",
@@ -538,7 +572,8 @@
     "residency_months_min": null,
     "housing_tenure": "renting",
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.msf.gov.sg/",
    "source_snippet": "ComLink+ provides enhanced support to lower-income families with children living in rental housing, including support packages tied to employment, debt clearance, saving for a home and preschool enrolment.",
@@ -586,7 +621,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.mom.gov.sg/employment-practices/schemes-for-employers-and-employees/workfare",
    "source_snippet": "WIS supplements the incomes and CPF savings of lower-wage Singaporean workers and encourages them to work regularly. Older workers and all persons with disabilities will receive the highest payments.",
@@ -628,7 +664,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.mom.gov.sg/employment-practices/schemes-for-employers-and-employees/workfare",
    "source_snippet": "Workfare is a key pillar of Singapore's social security landscape... What it comprises: Workfare Income Supplement (WIS) Scheme; Workfare Skills Support (WSS) Scheme.",
@@ -654,7 +691,13 @@
    "application_channel": "automatic",
    "deadline_type": "annual",
    "deadline_note": null,
-   "procedure_steps": [],
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "No application needed — this is paid automatically to everyone who qualifies. Check that the authority holds your current address and bank details; a missing detail is the usual reason an automatic payment does not arrive.",
+     "url": "https://www.iras.gov.sg/"
+    }
+   ],
    "documents_required": [],
    "eligibility": {
     "statuses": [
@@ -669,7 +712,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.iras.gov.sg/",
    "source_snippet": "The PWCS provides transitional wage support: the Government co-funds eligible wage increases for Singapore Citizens and Permanent Residents from 2022 to 2026 (40% co-funding for 2025, 20% for 2026).",
@@ -695,7 +739,13 @@
    "application_channel": "automatic",
    "deadline_type": "rolling",
    "deadline_note": null,
-   "procedure_steps": [],
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "No application needed — this is paid automatically to everyone who qualifies. Check that the authority holds your current address and bank details; a missing detail is the usual reason an automatic payment does not arrive.",
+     "url": "https://www.togetherforbetter.gov.sg/lifestage/seniors/"
+    }
+   ],
    "documents_required": [],
    "eligibility": {
     "statuses": [],
@@ -708,7 +758,8 @@
     "residency_months_min": null,
     "housing_tenure": "owner",
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.togetherforbetter.gov.sg/lifestage/seniors/",
    "source_snippet": "The Silver Support Scheme provides quarterly cash payments of up to $1,080 for Singapore Citizens aged 65 and above (previously $900), who had low incomes during their working years.",
@@ -753,7 +804,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.cpf.gov.sg/",
    "source_snippet": "The Government matches dollar-for-dollar cash top-ups to the Retirement Account of eligible seniors with lower retirement savings, up to $2,000 per year with a $20,000 lifetime cap; from 2026 extended to eligible persons with disabilities of all ages.",
@@ -803,7 +855,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.iras.gov.sg/taxes/individual-income-tax",
    "source_snippet": "Tax relief of up to $8,000 per year for cash top-ups to your own CPF Special/Retirement/MediSave Account, plus up to another $8,000 for top-ups to family members' accounts.",
@@ -829,7 +882,13 @@
    "application_channel": "automatic",
    "deadline_type": "rolling",
    "deadline_note": null,
-   "procedure_steps": [],
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "No application needed — this is paid automatically to everyone who qualifies. Check that the authority holds your current address and bank details; a missing detail is the usual reason an automatic payment does not arrive.",
+     "url": "https://www.healthhub.sg/support-and-tools/costs-and-financing/medishield-life"
+    }
+   ],
    "documents_required": [],
    "eligibility": {
     "statuses": [],
@@ -842,7 +901,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.healthhub.sg/support-and-tools/costs-and-financing/medishield-life",
    "source_snippet": "The government will also provide significant support to keep your MediShield Life premium affordable... Premium subsidies for the lower- to middle-income; Pioneer Generation Subsidy; Merdeka Generation Subsidy.",
@@ -898,7 +958,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.chas.sg/about-the-scheme",
    "source_snippet": "The Community Health Assist Scheme (CHAS) enables all Singapore Citizens, including Pioneer Generation (PG) and Merdeka Generation (MG) cardholders, to receive subsidies for medical and/or dental care at participating General Practitioner (GP) and dental clinics.",
@@ -948,7 +1009,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.healthiersg.gov.sg/",
    "source_snippet": "Healthier SG enrolment with a regular family doctor provides a fully subsidised first Health Plan consultation, free nationally recommended screenings and vaccinations at enrolled clinics, and chronic-drug subsidies at prices comparable to polyclinics.",
@@ -993,7 +1055,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.healthhub.sg/programmes/screen_for_life/screening-journey",
    "source_snippet": "Pioneer Generation $0; Merdeka Generation or CHAS Blue or Orange $2; Eligible Singapore Citizens / CHAS Green cardholders $5. This fee includes the cost for the GP consult, as well as the first follow-up visit (if required).",
@@ -1019,7 +1082,13 @@
    "application_channel": "automatic",
    "deadline_type": "rolling",
    "deadline_note": null,
-   "procedure_steps": [],
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "No application needed — this is paid automatically to everyone who qualifies. Check that the authority holds your current address and bank details; a missing detail is the usual reason an automatic payment does not arrive.",
+     "url": "https://www.pioneers.gov.sg/"
+    }
+   ],
    "documents_required": [],
    "eligibility": {
     "statuses": [],
@@ -1032,7 +1101,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.pioneers.gov.sg/",
    "source_snippet": "Lifelong benefits for Pioneers (born on or before 31 December 1949 and citizen by 31 December 1986): annual MediSave top-ups, additional 50% off subsidised bills at polyclinics/SOCs, enhanced CHAS subsidies, and 40–60% MediShield Life premium subsidies.",
@@ -1058,7 +1128,13 @@
    "application_channel": "automatic",
    "deadline_type": "rolling",
    "deadline_note": null,
-   "procedure_steps": [],
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "No application needed — this is paid automatically to everyone who qualifies. Check that the authority holds your current address and bank details; a missing detail is the usual reason an automatic payment does not arrive.",
+     "url": "https://www.merdekageneration.gov.sg/"
+    }
+   ],
    "documents_required": [],
    "eligibility": {
     "statuses": [],
@@ -1071,7 +1147,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.merdekageneration.gov.sg/",
    "source_snippet": "Benefits for the Merdeka Generation (born 1950–1959 and citizen by 31 December 1996): additional 25% off subsidised bills at polyclinics and SOCs, enhanced CHAS subsidies and MediShield Life premium subsidies of 5% (rising to 10% from age 76).",
@@ -1097,7 +1174,13 @@
    "application_channel": "automatic",
    "deadline_type": "rolling",
    "deadline_note": null,
-   "procedure_steps": [],
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "No application needed — this is paid automatically to everyone who qualifies. Check that the authority holds your current address and bank details; a missing detail is the usual reason an automatic payment does not arrive.",
+     "url": "https://www.cpf.gov.sg/"
+    }
+   ],
    "documents_required": [],
    "eligibility": {
     "statuses": [],
@@ -1110,7 +1193,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.cpf.gov.sg/",
    "source_snippet": "A MediSave grant is automatically credited to every Singapore Citizen newborn's CPF MediSave Account to help pay for healthcare needs such as MediShield Life premiums, childhood vaccinations and outpatient treatments.",
@@ -1166,7 +1250,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.moh.gov.sg/cost-financing/healthcare-schemes-subsidies",
    "source_snippet": "MediFund is an endowment fund that acts as a safety net to help Singaporeans who are unable to afford their subsidised healthcare bills even after government subsidies, MediShield Life and MediSave.",
@@ -1211,7 +1296,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.aic.sg/",
    "source_snippet": "SMF provides subsidies for assistive devices (e.g. wheelchairs, commodes, hospital beds) and home healthcare items for seniors, as well as transport subsidies to eldercare centres.",
@@ -1256,7 +1342,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.sgenable.sg/",
    "source_snippet": "The Assistive Technology Fund helps persons with disabilities defray the cost of assistive technology devices for education, employment, training or independent living, with means-tested subsidies up to 90% of the device cost, subject to a lifetime cap.",
@@ -1312,7 +1399,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.aic.sg/Financial-Assistance/Home-Caregiving-Grant",
    "source_snippet": "The grant amount depends on your monthly household income per person as well as the number of properties owned. $0 – $1,500 (or AV ≤ $21,000 for households without income): $600; $1,501 – $3,600: $400; $3,601 - $4,800: $200.",
@@ -1338,7 +1426,13 @@
    "application_channel": "automatic",
    "deadline_type": "rolling",
    "deadline_note": null,
-   "procedure_steps": [],
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "No application needed — this is paid automatically to everyone who qualifies. Check that the authority holds your current address and bank details; a missing detail is the usual reason an automatic payment does not arrive.",
+     "url": "https://www.moh.gov.sg/cost-financing/healthcare-schemes-subsidies"
+    }
+   ],
    "documents_required": [],
    "eligibility": {
     "statuses": [],
@@ -1351,7 +1445,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.moh.gov.sg/cost-financing/healthcare-schemes-subsidies",
    "source_snippet": "Patients in Class C and B2 wards at public hospitals receive government subsidies of up to 80% and 65% respectively, means-tested by income or Annual Value; subsidised specialist outpatient and polyclinic services are also available.",
@@ -1390,7 +1485,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.sgenable.sg/",
    "source_snippet": "The Enabling Lives Initiative funds ground-up and organisation-led projects that improve the quality of life of persons with disabilities and their caregivers, including social inclusion and assistive technology projects.",
@@ -1449,7 +1545,8 @@
     "admin_areas": [],
     "income_test": "none",
     "income_source_url": "https://www.madeforfamilies.gov.sg/support-measures/child-raising/financial-support/baby-bonus-scheme",
-    "income_confidence": "high"
+    "income_confidence": "high",
+    "gender": "any"
    },
    "source_url": "https://www.madeforfamilies.gov.sg/support-measures/child-raising/financial-support/baby-bonus-scheme",
    "source_snippet": "The BBCG ranges from $11,000 (for first and second child) to $13,000 (for third and subsequent child). It is disbursed once every six months over the first six-and-a-half years of a child's life.",
@@ -1495,7 +1592,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.madeforfamilies.gov.sg/support-measures/child-raising/financial-support/baby-bonus-scheme",
    "source_snippet": "The CDA First Step Grant of $5,000 for the first and second child, and $10,000 for the third and subsequent child born on or after 18 February 2025 will be automatically deposited when you open the CDA.",
@@ -1543,7 +1641,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "female"
    },
    "source_url": "https://www.profamilyleave.gov.sg/",
    "source_snippet": "Working mothers of Singapore Citizen children are entitled to 16 weeks of paid maternity leave under the GPML scheme; the Government pays/reimburses the salary for part or all of the leave, subject to a cap.",
@@ -1591,7 +1690,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "female"
    },
    "source_url": "https://www.iras.gov.sg/taxes/individual-income-tax",
    "source_snippet": "Working mothers can claim WMCR for each qualifying Singapore Citizen child; for children born from 1 January 2024 the relief is a fixed dollar amount ($8,000 first, $10,000 second, $12,000 third and each subsequent child) per year.",
@@ -1636,7 +1736,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.mom.gov.sg/",
    "source_snippet": "Eligible households pay a concessionary FDW levy of $60 a month (instead of the standard levy) when they employ a foreign domestic worker to care for a child below 16, an elderly person aged 67 or above, or a person with disabilities.",
@@ -1692,7 +1793,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.ecda.gov.sg/",
    "source_snippet": "All Singapore Citizen children enrolled in ECDA-licensed infant care and childcare centres receive a Basic Subsidy: $600 a month for infant care and $300 a month for childcare where the mother works; lower amounts for non-working mothers.",
@@ -1743,7 +1845,8 @@
     "admin_areas": [],
     "income_test": "numeric",
     "income_source_url": "https://www.ecda.gov.sg/parents/preschool-subsidies/infant-and-childcare-subsidy-scheme/overview",
-    "income_confidence": "high"
+    "income_confidence": "high",
+    "gender": "any"
    },
    "source_url": "https://www.ecda.gov.sg/",
    "source_snippet": "Lower-income working families receive a means-tested Additional Subsidy on top of the Basic Subsidy — up to $710 a month for infant care and up to $467 a month for childcare, tiered by household income.",
@@ -1789,7 +1892,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.msf.gov.sg/what-we-do/comcare",
    "source_snippet": "Kindergarten Fee Assistance Scheme (KiFAS) — support to defray kindergarten fees for Singaporean children.",
@@ -1834,7 +1938,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.msf.gov.sg/what-we-do/comcare",
    "source_snippet": "Fee assistance for children from working families enrolled in MSF-registered Student Care Centres.",
@@ -1860,7 +1965,13 @@
    "application_channel": "automatic",
    "deadline_type": "rolling",
    "deadline_note": null,
-   "procedure_steps": [],
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "No application needed — this is paid automatically to everyone who qualifies. Check that the authority holds your current address and bank details; a missing detail is the usual reason an automatic payment does not arrive.",
+     "url": "https://www.madeforfamilies.gov.sg/"
+    }
+   ],
    "documents_required": [],
    "eligibility": {
     "statuses": [],
@@ -1876,7 +1987,8 @@
     "admin_areas": [],
     "income_test": "none",
     "income_source_url": "https://www.madeforfamilies.gov.sg/support-measures/child-raising/financial-support/large-families-scheme",
-    "income_confidence": "high"
+    "income_confidence": "high",
+    "gender": "any"
    },
    "source_url": "https://www.madeforfamilies.gov.sg/",
    "source_snippet": "Announced at Budget 2025 for third and subsequent Singapore Citizen children born from 18 February 2025: an increased CDA First Step Grant of $10,000, a $5,000 increase in the MediSave Grant for Newborns, and $1,000 a year in Large Family LifeSG Credits until the child turns 6.",
@@ -1933,7 +2045,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": true,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.moe.gov.sg/financial-matters/financial-assistance",
    "source_snippet": "Eligibility: Gross household income ≤ $4,000 per month or per capita income ≤ $1,000. Provisions: 100% fee subsidies; free textbooks and uniforms; meal subsidies; transport subsidies of $21 per month.",
@@ -1959,7 +2072,13 @@
    "application_channel": "automatic",
    "deadline_type": "rolling",
    "deadline_note": null,
-   "procedure_steps": [],
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "No application needed — this is paid automatically to everyone who qualifies. Check that the authority holds your current address and bank details; a missing detail is the usual reason an automatic payment does not arrive.",
+     "url": "https://www.moe.gov.sg/"
+    }
+   ],
    "documents_required": [],
    "eligibility": {
     "statuses": [],
@@ -1972,7 +2091,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": true,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.moe.gov.sg/",
    "source_snippet": "Singapore Citizen students aged 7–16 receive annual Edusave contributions, and students can receive Edusave awards such as the Edusave Merit Bursary, Edusave Good Progress Award and Edusave Awards for Achievement, Good Leadership and Service.",
@@ -2017,7 +2137,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": true,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.moe.gov.sg/financial-matters/financial-assistance",
    "source_snippet": "Singapore Citizen students in independent schools receive tiered school-fee subsidies based on gross household income — 100% subsidy plus free textbooks, transport and meal subsidies for households earning ≤ $4,000/month (or PCI ≤ $1,000).",
@@ -2043,7 +2164,13 @@
    "application_channel": "automatic",
    "deadline_type": "rolling",
    "deadline_note": null,
-   "procedure_steps": [],
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "No application needed — this is paid automatically to everyone who qualifies. Check that the authority holds your current address and bank details; a missing detail is the usual reason an automatic payment does not arrive.",
+     "url": "https://www.moe.gov.sg/"
+    }
+   ],
    "documents_required": [],
    "eligibility": {
     "statuses": [],
@@ -2056,7 +2183,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.moe.gov.sg/",
    "source_snippet": "The PSEA is opened automatically for every Singapore Citizen child; balances from Edusave and the Child Development Account roll into it, and the Government has made top-ups to PSEA in Budget packages; funds pay approved fees at post-secondary institutions.",
@@ -2101,7 +2229,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.myskillsfuture.gov.sg/",
    "source_snippet": "All Singapore Citizens aged 25 and above receive a SkillsFuture Credit base tier of $500 (which does not expire) to offset out-of-pocket course fees for a wide range of approved skills-related courses.",
@@ -2146,7 +2275,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.myskillsfuture.gov.sg/content/portal/en/header/faqs/SkillsFuture_Level-Up_Programme.html",
    "source_snippet": "On 1 May 2024, the remaining credit balance from the Additional SkillsFuture Credit (Mid-Career Support) was merged with the top-up of $4,000 to form the new SkillsFuture Credit (Mid-Career).",
@@ -2191,7 +2321,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.myskillsfuture.gov.sg/content/portal/en/header/faqs/SkillsFuture_Level-Up_Programme.html",
    "source_snippet": "Under the SkillsFuture Level-Up Programme, mid-career Singaporeans aged 40 and above receive the $4,000 SkillsFuture Credit (Mid-Career) top-up and a training allowance when they take up selected full-time courses.",
@@ -2239,7 +2370,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.wsg.gov.sg/",
    "source_snippet": "Career Conversion Programmes help mid-career individuals reskill and switch into new occupations or sectors, with employers receiving salary support and course fee subsidies for the reskilling period.",
@@ -2278,7 +2410,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.skillsfuture.gov.sg/",
    "source_snippet": "The SkillsFuture Enterprise Credit provides eligible employers a one-off $10,000 credit to cover up to 90% of out-of-pocket expenses for enterprise transformation and workforce transformation programmes.",
@@ -2326,7 +2459,8 @@
     "admin_areas": [],
     "income_test": "numeric",
     "income_source_url": "https://file.go.gov.sg/digitalaccess-faq.pdf",
-    "income_confidence": "high"
+    "income_confidence": "high",
+    "gender": "any"
    },
    "source_url": "https://www.digitalaccess.gov.sg/",
    "source_snippet": "DigitalAccess@Home provides subsidised broadband and/or laptop/tablet bundles to low-income households with school-going children or persons with disabilities.",
@@ -2386,7 +2520,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.mynicehome.gov.sg/get-started/hdb-grants-guide/",
    "source_snippet": "Eligible first-timer households can receive up to $120,000, depending on your household income; eligible first-timer single citizens up to $60,000.",
@@ -2431,7 +2566,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.mynicehome.gov.sg/get-started/hdb-grants-guide/",
    "source_snippet": "First-timer couples buying a resale HDB flat can receive the CPF Housing Grant for Resale Flats (Families) of up to $80,000 for four-room or smaller resale flats, and $50,000 for five-room or larger resale flats.",
@@ -2479,7 +2615,8 @@
     "admin_areas": [],
     "income_test": "none",
     "income_source_url": "https://www.hdb.gov.sg/buying-a-flat/flat-grant-and-loan-eligibility/couples-and-families/proximity-housing-grant",
-    "income_confidence": "high"
+    "income_confidence": "high",
+    "gender": "any"
    },
    "source_url": "https://www.mynicehome.gov.sg/get-started/hdb-grants-guide/",
    "source_snippet": "You may receive a Proximity Housing Grant of $20,000 if you buy a resale flat to live near (within 4km of) your parents or child, or $30,000 if you buy a resale flat to live with your parents or child.",
@@ -2525,7 +2662,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.hdb.gov.sg/",
    "source_snippet": "Eligible first-timer single citizens aged 35 and above buying a resale flat can receive the CPF Housing Grant for Resale Flats (Singles) of up to $40,000 for 2- to 4-room flats and $25,000 for 5-room flats.",
@@ -2570,7 +2708,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.hdb.gov.sg/",
    "source_snippet": "The Step-Up CPF Housing Grant of $15,000 helps second-timer families living in public rental flats or 2-room subsidised flats buy a 3-room new flat in a non-mature estate.",
@@ -2620,7 +2759,8 @@
     "residency_months_min": null,
     "housing_tenure": "owner",
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://supportgowhere.life.gov.sg/schemes/LEASE_BUYBACK/lease-buyback-scheme",
    "source_snippet": "Provides seniors with a steady stream of retirement income when they sell the tail-end of their flat lease to HDB while they continue to occupy the flat for the lease they retained.",
@@ -2665,7 +2805,8 @@
     "residency_months_min": null,
     "housing_tenure": "owner",
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.hdb.gov.sg/",
    "source_snippet": "The Silver Housing Bonus gives elderly households a cash bonus of up to $30,000 when they right-size to a smaller HDB flat and use part of the sale proceeds to top up their CPF Retirement Account and join CPF LIFE.",
@@ -2691,7 +2832,13 @@
    "application_channel": "automatic",
    "deadline_type": "rolling",
    "deadline_note": null,
-   "procedure_steps": [],
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "No application needed — this is paid automatically to everyone who qualifies. Check that the authority holds your current address and bank details; a missing detail is the usual reason an automatic payment does not arrive.",
+     "url": "https://www.hdb.gov.sg/"
+    }
+   ],
    "documents_required": [],
    "eligibility": {
     "statuses": [],
@@ -2704,7 +2851,8 @@
     "residency_months_min": null,
     "housing_tenure": "owner",
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.hdb.gov.sg/",
    "source_snippet": "Under the Home Improvement Programme, HDB renovates ageing flats (built up to 1997); the Government fully pays for essential improvements and heavily subsidises optional items, with flat owners paying only a small share.",
@@ -2754,7 +2902,8 @@
     "residency_months_min": null,
     "housing_tenure": "renting",
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.hdb.gov.sg/buying-a-flat/bto-sbf-and-open-booking-of-flats/process-for-buying-a-new-flat/application/fresh-start-housing-scheme",
    "source_snippet": "Second-timers will receive the Fresh Start Housing Grant (FSHG)... Applications made from Jul 2025 sales exercise: upfront disbursement before key collection $60,000; disbursement after key collection over 5 years up to $15,000; total grant amount $75,000.",
@@ -2799,7 +2948,8 @@
     "residency_months_min": null,
     "housing_tenure": "homeless",
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.hdb.gov.sg/",
    "source_snippet": "HDB's Public Rental Scheme provides heavily subsidised 1-room and 2-room rental flats for lower-income Singapore Citizen households who have no other housing options; rents are tiered by household income.",
@@ -2849,7 +2999,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.mot.gov.sg/what-we-do/public-transport/public-transport-vouchers/",
    "source_snippet": "Following the implementation of a fare adjustment from 27 December 2025, the Government has made available PTVs worth $60 each for resident households with monthly household income per person of not more than $1,800, as part of the 2025 PTV Exercise.",
@@ -2894,7 +3045,9 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any",
+    "rule_source": "geography_unknown"
    },
    "source_url": "https://www.transitlink.com.sg/",
    "source_snippet": "Singapore Citizens and PRs aged 60 and above travel at concessionary fares on basic bus and train services with the Senior Citizen Concession Card; monthly concession passes are also available.",
@@ -2933,7 +3086,9 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": true,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any",
+    "rule_source": "geography_unknown"
    },
    "source_url": "https://www.transitlink.com.sg/",
    "source_snippet": "Eligible students pay concessionary fares on basic bus and train services, with monthly concession passes and the Bus Pass/Train Pass options for unlimited travel.",
@@ -2972,7 +3127,9 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any",
+    "rule_source": "geography_unknown"
    },
    "source_url": "https://www.transitlink.com.sg/",
    "source_snippet": "Persons with disabilities can travel at concessionary fares on basic bus and train services with the PWD Concession Card; a monthly concession pass is available and travel for eligible PWDs on basic services is free from 6 July 2025 under the enhanced scheme.",
@@ -3014,7 +3171,9 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any",
+    "rule_source": "geography_unknown"
    },
    "source_url": "https://www.transitlink.com.sg/",
    "source_snippet": "Lower-wage workers receiving Workfare Income Supplement enjoy up to 15% off adult fares on basic bus and train services with the Workfare Transport Concession Card; a monthly WTC hybrid pass is also available.",
@@ -3059,7 +3218,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.sgenable.sg/",
    "source_snippet": "The Taxi Subsidy Scheme provides means-tested subsidies for taxi travel to persons with disabilities who need to take taxis to school or work because they cannot use public transport or drive.",
@@ -3125,7 +3285,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.gobusiness.gov.sg/productivity-solutions-grant/",
    "source_snippet": "The PSG supports local SMEs in adopting pre-approved IT solutions and equipment, providing up to 50% funding support for qualifying costs, capped at $30,000 per company per financial year.",
@@ -3170,7 +3331,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.enterprisesg.gov.sg/",
    "source_snippet": "The Enterprise Development Grant supports Singapore companies in projects that upgrade, innovate or venture overseas — funding a share of qualifying project costs such as consultancy, manpower, and software and equipment.",
@@ -3215,7 +3377,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.enterprisesg.gov.sg/",
    "source_snippet": "The MRA grant supports SMEs taking their first steps overseas, funding up to 50% of eligible costs capped at $100,000 per company per new market, covering overseas market promotion, business development and set-up.",
@@ -3276,7 +3439,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.startupsg.gov.sg/programmes/4894/startup-sg-founder",
    "source_snippet": "With effect from 1 April 2024, EnterpriseSG will support all successful startup grant recipients on a 1:1 support ratio, for a grant amount from S$20,000 to S$50,000.",
@@ -3321,7 +3485,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.startupsg.gov.sg/",
    "source_snippet": "Startup SG Tech fast-tracks the development of proprietary technology solutions with Proof-of-Concept (POC) and Proof-of-Value (POV) grants for startups with innovative and scalable technologies.",
@@ -3366,7 +3531,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.startupsg.gov.sg/",
    "source_snippet": "Under Startup SG Equity, the Government co-invests with independent, qualified third-party investors into eligible Singapore-based technology startups, on a shared-risk basis.",
@@ -3411,7 +3577,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.enterprisesg.gov.sg/",
    "source_snippet": "The Enterprise Financing Scheme enables Singapore enterprises to access financing more readily across growth stages — Government shares the loan default risk with participating financial institutions for SME working capital, trade, fixed assets, venture debt and mergers & acquisitions loans.",
@@ -3456,7 +3623,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.gobusiness.gov.sg/",
    "source_snippet": "The Energy Efficiency Grant supports local businesses in the food services, food manufacturing and retail sectors (extended to more sectors) to adopt energy-efficient equipment, co-funding up to 70% of qualifying costs.",
@@ -3501,7 +3669,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.enterprisesg.gov.sg/",
    "source_snippet": "The Hawkers' Productivity Grant co-funds hawkers' purchase of automation and productivity equipment (e.g. dishwashers, ordering systems), covering up to 80% of qualifying equipment costs capped at $5,000 over three years.",
@@ -3547,7 +3716,8 @@
     "admin_areas": [],
     "income_test": "none",
     "income_source_url": "https://www.content.mycareersfuture.gov.sg/about-careers-connect/",
-    "income_confidence": "medium"
+    "income_confidence": "medium",
+    "gender": "any"
    },
    "source_url": "https://www.wsg.gov.sg/",
    "source_snippet": "Careers Connect centres and WSG's career matching services provide free career coaching, job search assistance and access to job fairs for Singaporeans seeking employment or career changes.",
@@ -3574,7 +3744,13 @@
    "application_channel": "automatic",
    "deadline_type": "rolling",
    "deadline_note": null,
-   "procedure_steps": [],
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "No application needed — this is paid automatically to everyone who qualifies. Check that the authority holds your current address and bank details; a missing detail is the usual reason an automatic payment does not arrive.",
+     "url": "https://www.sgenable.sg/"
+    }
+   ],
    "documents_required": [],
    "eligibility": {
     "statuses": [
@@ -3589,7 +3765,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.sgenable.sg/",
    "source_snippet": "The Enabling Employment Credit is a wage offset for employers who hire Singaporean persons with disabilities, co-funding part of the employee's wages for a period to support sustained employment.",
@@ -3634,7 +3811,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.sgenable.sg/",
    "source_snippet": "The Open Door Programme provides funding support to employers who hire, train and integrate persons with disabilities — covering recruitment, training, job redesign and workplace modification costs.",
@@ -3686,7 +3864,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.mom.gov.sg/",
    "source_snippet": "Under WICA, employees (or their dependants) can claim compensation from the employer's mandatory work injury insurance for injuries or diseases arising out of and in the course of employment, without needing to prove fault.",
@@ -3734,7 +3913,8 @@
     "admin_areas": [],
     "income_test": "numeric",
     "income_source_url": "https://lab.mlaw.gov.sg/legal-services/taking-the-means-test/",
-    "income_confidence": "high"
+    "income_confidence": "high",
+    "gender": "any"
    },
    "source_url": "https://lab.mlaw.gov.sg/",
    "source_snippet": "The Legal Aid Bureau provides legal aid, advice and representation in civil matters to persons of limited means who satisfy the means and merits tests, at no or nominal cost.",

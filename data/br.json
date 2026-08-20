@@ -68,7 +68,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.gov.br/mds/pt-br/acoes-e-programas/bolsa-familia",
    "source_snippet": "Benefício de Renda de Cidadania – BRC, no valor de R$ 142,00 por integrante da família... Benefício Complementar pago às famílias que receberem valor inferior a R$ 600,00.",
@@ -144,7 +145,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.gov.br/inss/pt-br/direitos-e-deveres/assistencia-social/bpc-loas",
    "source_snippet": "Garante um salário mínimo mensal ao idoso com 65 anos ou mais e à pessoa com deficiência cuja renda familiar per capita não ultrapasse 1/4 do salário mínimo, sem exigir contribuição ao INSS.",
@@ -217,7 +219,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.gov.br/inss/pt-br/direitos-e-deveres/assistencia-social/auxilio-inclusao",
    "source_snippet": "Benefício pago pelo INSS para pessoas com deficiência que recebem ou já receberam o BPC... trabalhador passa a receber 50% do salário mínimo como incentivo financeiro.",
@@ -283,7 +286,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://wiki-sagi.mds.gov.br/home/DS/PGP",
    "source_snippet": "Com o Programa Gás do Povo, a família beneficiária recebe um vale para realizar a recarga gratuita do botijão de gás de 13kg em uma revenda varejista credenciada.",
@@ -349,7 +353,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.gov.br/mds/pt-br/acoes-e-programas/assistencia-social",
    "source_snippet": "Os benefícios eventuais são garantias previstas na Lei Orgânica da Assistência Social (Lei nº 8.742/1993) para suprir necessidades transitórias de vulnerabilidade, como nascimento, morte e calamidades.",
@@ -422,7 +427,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.gov.br/inss/pt-br/direitos-e-deveres/salario-familia",
    "source_snippet": "O trabalhador com renda bruta de até R$ 1.906,04 tem direito a receber R$ 65,00 por filho ou dependente, mensalmente.",
@@ -496,7 +502,8 @@
     "admin_areas": [],
     "income_test": "none",
     "income_source_url": "https://www.gov.br/inss/pt-br/direitos-e-deveres/pensoes/pensao-por-morte",
-    "income_confidence": "high"
+    "income_confidence": "high",
+    "gender": "any"
    },
    "source_url": "https://www.gov.br/inss/pt-br/direitos-e-deveres/pensoes/pensao-por-morte",
    "source_snippet": "Benefício previdenciário pago aos dependentes do segurado da Previdência Social que falecer, conforme Lei nº 8.213/1991.",
@@ -572,7 +579,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "female"
    },
    "source_url": "https://www.gov.br/inss/pt-br/direitos-e-deveres/salario-maternidade",
    "source_snippet": "Benefício previdenciário de 120 dias pago à segurada por ocasião do nascimento do filho, adoção ou guarda judicial para fins de adoção.",
@@ -646,7 +654,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.gov.br/inss/pt-br/direitos-e-deveres/auxilio-por-incapacidade",
    "source_snippet": "Benefício devido ao segurado que ficar temporariamente incapaz para o trabalho por motivo de doença ou acidente, por mais de 15 dias consecutivos.",
@@ -720,7 +729,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.gov.br/inss/pt-br/direitos-e-deveres/aposentadoria/aposentadoria-por-incapacidade-permanente",
    "source_snippet": "Será concedida ao segurado que, cumprida a carência, for considerado incapaz e insuscetível de reabilitação para o exercício de atividade que lhe garanta a subsistência.",
@@ -788,7 +798,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.gov.br/inss/pt-br/direitos-e-deveres/auxilio-por-incapacidade",
    "source_snippet": "Benefício de natureza indenizatória pago ao segurado empregado que, após acidente, ficar com sequelas permanentes que reduzam a capacidade para o trabalho.",
@@ -862,7 +873,8 @@
     "admin_areas": [],
     "income_test": "numeric",
     "income_source_url": "https://www.gov.br/inss/pt-br/direitos-e-deveres/auxilio-reclusao/valor-limite-para-direito-ao-auxilio-reclusao",
-    "income_confidence": "high"
+    "income_confidence": "high",
+    "gender": "any"
    },
    "source_url": "https://www.gov.br/inss/pt-br/direitos-e-deveres/pensoes/auxilio-reclusao",
    "source_snippet": "Benefício previdenciário pago aos dependentes do segurado de baixa renda recolhido à prisão em regime fechado (Lei nº 8.213/1991, art. 80).",
@@ -936,7 +948,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.gov.br/trabalho-e-emprego/pt-br/assuntos/seguro-desemprego",
    "source_snippet": "Valor mínimo do seguro desemprego é de R$ 1.518 em 2025... quem ganha acima de R$ 3.564,96: o valor será sempre de R$ 2.424,11.",
@@ -1004,7 +1017,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.gov.br/pt-br/servicos/receber-o-abono-salarial",
    "source_snippet": "O valor do abono salarial é proporcional aos meses trabalhados, com base no salário mínimo; cada mês trabalhado equivale a 1/12 do salário mínimo.",
@@ -1072,7 +1086,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.caixa.gov.br/beneficios-trabalhador/fgts/Paginas/default.aspx",
    "source_snippet": "O trabalhador pode sacar o FGTS nas modalidades saque-rescisão, saque-aniversário, saque calamidade e demais hipóteses legais, conforme regras do Conselho Curador do FGTS.",
@@ -1145,7 +1160,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.gov.br/inss/pt-br/direitos-e-deveres/seguro-defeso",
    "source_snippet": "Benefício previdenciário de um salário mínimo mensal pago ao pescador profissional artesanal durante o período de defeso (proibição de pesca).",
@@ -1216,7 +1232,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.gov.br/esporte/pt-br/acoes-e-programas-1/programa-bolsa-atleta",
    "source_snippet": "O valor da Bolsa Atleta varia de R$ 410,00 até R$ 16.629,00, conforme categoria do atleta... O pagamento é realizado pelo período de 12 meses.",
@@ -1285,7 +1302,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.gov.br/trabalho-e-emprego/pt-br/assuntos/qualificacao-profissional",
    "source_snippet": "O trabalhador em situação de desemprego pode receber bolsa-formação de um salário mínimo durante curso de qualificação profissional, com suspensão das parcelas do seguro-desemprego.",
@@ -1359,7 +1377,8 @@
     "admin_areas": [],
     "income_test": "numeric",
     "income_source_url": "https://www.gov.br/aneel/pt-br/assuntos/tarifas/tarifa-social",
-    "income_confidence": "high"
+    "income_confidence": "high",
+    "gender": "any"
    },
    "source_url": "https://www.gov.br/aneel/pt-br/assuntos/tarifas/tarifa-social",
    "source_snippet": "Descontos de 65% para famílias com consumo de até 30 kWh por mês; 40% para consumo entre 31 e 100 kWh; 10% entre 101 e 220 kWh.",
@@ -1436,7 +1455,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.caixa.gov.br/poder-publico/habitacao/minha-casa-minha-vida/mcmv-cidades/Paginas/default.aspx",
    "source_snippet": "Faixa 1 - até R$ 2.850,00 - aporte máximo até R$ 55 mil; famílias com renda mensal bruta de até R$ 8.600,00 podem participar do MCMV.",
@@ -1507,7 +1527,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.caixa.gov.br/poder-publico/habitacao/minha-casa-minha-vida/mcmv-cidades/Paginas/default.aspx",
    "source_snippet": "Faixa 2: R$ 2.850,01 a R$ 4.700,00 - até R$ 35 mil de aporte; Faixa 3: R$ 4.700,01 a R$ 8.600,00 - até R$ 20 mil.",
@@ -1578,7 +1599,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.gov.br/cidades/pt-br/acesso-a-informacao/acoes-e-programas/habitacao/minha-casa-minha-vida",
    "source_snippet": "Modalidade rural do programa habitacional destinada a famílias que vivem no campo e exercem atividade agropecuária, pesqueira ou extrativista.",
@@ -1649,7 +1671,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": true,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.gov.br/mec/pt-br/pe-de-meia",
    "source_snippet": "Estudantes do ensino médio regular poderão receber até nove parcelas de R$ 200 ao longo do ano, mediante comprovação de frequência.",
@@ -1720,7 +1743,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": true,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.gov.br/pt-br/servicos/obter-financiamento-do-fies",
    "source_snippet": "Taxa de juros ZERO para todos os estudantes; sem necessidade de fiador se sua renda familiar for até 1,5 salário mínimo por pessoa.",
@@ -1791,7 +1815,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": true,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.gov.br/mec/pt-br/acesso-a-informacao/institucional/programas-e-acoes/prouni",
    "source_snippet": "Bolsa integral (100%): renda familiar bruta mensal per capita de até 1,5 salário mínimo; bolsa parcial (50%): até 3 salários mínimos.",
@@ -1857,7 +1882,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": true,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem",
    "source_snippet": "Estudantes que estão cursando o último ano do ensino médio em escolas públicas, assim como aqueles que comprovaram ser de baixa renda ou inscritos no CadÚnico, têm direito à isenção.",
@@ -1931,7 +1957,8 @@
     "admin_areas": [],
     "income_test": "numeric",
     "income_source_url": "https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2024/lei/l14914.htm",
-    "income_confidence": "high"
+    "income_confidence": "high",
+    "gender": "any"
    },
    "source_url": "https://www.gov.br/mec/pt-br/acesso-a-informacao/institucional/programas-e-acoes/assistencia-estudantil",
    "source_snippet": "A Pnaes garante ações de assistência estudantil nas instituições federais de ensino superior, incluindo auxílios moradia, transporte e alimentação para estudantes em vulnerabilidade socioeconômica.",
@@ -2006,7 +2033,8 @@
     "admin_areas": [],
     "income_test": "numeric",
     "income_source_url": "https://www.planalto.gov.br/ccivil_03/_ato2011-2014/2012/lei/l12711.htm",
-    "income_confidence": "high"
+    "income_confidence": "high",
+    "gender": "any"
    },
    "source_url": "https://www.planalto.gov.br/ccivil_03/_ato2011-2014/2012/lei/l12711.htm",
    "source_snippet": "Art. 1º As instituições federais de educação superior vinculadas ao Ministério da Educação reservarão, no mínimo, 50% de suas vagas para estudantes oriundos integralmente de escola pública.",
@@ -2073,7 +2101,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.planalto.gov.br/ccivil_03/leis/2003/l10.741.htm",
    "source_snippet": "Art. 39. É assegurada, no sistema de transporte coletivo, a gratuidade aos maiores de 65 anos... reservados 10% dos assentos, devidamente identificados.",
@@ -2144,7 +2173,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.gov.br/antt/pt-br",
    "source_snippet": "Benefício que garante gratuidade no transporte coletivo interestadual para pessoas com deficiência que comprovem situação de hipossuficiência econômica.",
@@ -2210,7 +2240,8 @@
     "admin_areas": [],
     "income_test": "none",
     "income_source_url": "https://www.planalto.gov.br/ccivil_03/leis/l7418.htm",
-    "income_confidence": "high"
+    "income_confidence": "high",
+    "gender": "any"
    },
    "source_url": "https://www.planalto.gov.br/ccivil_03/leis/l7418.htm",
    "source_snippet": "O empregador antecipará ao empregado o Vale-Transporte para utilização efetiva em despesas de deslocamento residência-trabalho e vice-versa, com desconto de até 6% do salário básico.",
@@ -2282,7 +2313,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.gov.br/mdh/pt-br/navegue-por-temas/juventude/id-jovem",
    "source_snippet": "O benefício da meia-entrada é assegurado ao estudante, ao idoso, à pessoa com deficiência e ao jovem de baixa renda, nos termos da Lei nº 12.933/2013.",
@@ -2348,7 +2380,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.gov.br/saude/pt-br/acesso-a-informacao/acoes-e-programas/farmacia-popular",
    "source_snippet": "Programa Farmácia Popular do Brasil disponibiliza medicamentos gratuitos para o tratamento de diabetes, asma e hipertensão.",
@@ -2419,7 +2452,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.gov.br/saude/pt-br/composicao/sectics/daf/assistencia-farmaceutica-no-sus",
    "source_snippet": "O Componente Especializado da Assistência Farmacêutica garante medicamentos estratégicos e de alto custo gratuitamente à população, conforme Protocolos Clínicos e Diretrizes Terapêuticas.",
@@ -2485,7 +2519,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.gov.br/saude/pt-br/acesso-a-informacao/acoes-e-programas/brasil-sorridente",
    "source_snippet": "A Política Nacional de Saúde Bucal (Brasil Sorridente) garante ações de promoção, prevenção e tratamento odontológico gratuito na rede SUS.",
@@ -2551,7 +2586,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.gov.br/saude/pt-br/acesso-a-informacao/acoes-e-programas/academia-da-saude",
    "source_snippet": "O Programa Academia da Saúde oferece gratuitamente espaços públicos com profissionais qualificados para a prática de atividade física e promoção da saúde.",
@@ -2612,7 +2648,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "female"
    },
    "source_url": "https://www.gov.br/saude/pt-br/acesso-a-informacao/acoes-e-programas/saude-menstrual",
    "source_snippet": "O programa garante a distribuição gratuita de absorventes a estudantes de baixa renda de escolas públicas e a mulheres em situação de vulnerabilidade (Lei nº 14.214/2021).",
@@ -2672,7 +2709,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2025/lei/l15270.htm",
    "source_snippet": "A Lei nº 15.270/2025 institui redução do imposto sobre a renda das pessoas físicas, com isenção para rendimentos mensais de até R$ 5.000.",
@@ -2740,7 +2778,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.gov.br/receitafederal/pt-br/assuntos/orientacao-tributaria/isencoes/imposto-sobre-a-renda",
    "source_snippet": "São isentos do imposto sobre a renda os rendimentos de aposentadoria, reforma e pensão percebidos por portadores de moléstia grave, conforme o art. 6º, XIV, da Lei nº 7.713/1988.",
@@ -2813,7 +2852,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.gov.br/empresas-e-negocios/pt-br/empreendedor",
    "source_snippet": "A formalização é gratuita e o MEI paga mensalmente um valor fixo que inclui INSS, ICMS e/ou ISS, com direito a benefícios previdenciários.",
@@ -2881,7 +2921,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www8.receita.fazenda.gov.br/SimplesNacional/",
    "source_snippet": "Regime tributário compartilhado de arrecadação, cobrança e fiscalização, aplicável às Microempresas e Empresas de Pequeno Porte, previsto na LC nº 123/2006.",
@@ -2954,7 +2995,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.bnb.gov.br/microcredito/crediamigo",
    "source_snippet": "O CrediAmigo é o programa de microcrédito produtivo orientado do Banco do Nordeste, voltado a microempreendedores urbanos e rurais.",
@@ -3022,7 +3064,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.gov.br/trabalho-e-emprego/pt-br/assuntos/microcredito",
    "source_snippet": "O PNMPO orienta e financia microempreendedores formais e informais, combinando crédito produtivo com assistência técnica.",
@@ -3095,7 +3138,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.gov.br/agricultura/pt-br/assuntos/sustentabilidade/pronaf",
    "source_snippet": "O Pronaf é o programa do Governo Federal de apoio à agricultura familiar, com linhas de crédito de custeio e investimento a juros subvencionados.",
@@ -3168,7 +3212,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.gov.br/agricultura/pt-br/assuntos/politica-agricola/plano-safra",
    "source_snippet": "O Pronamp financia custeio e investimento do médio produtor rural com receita bruta anual de até R$ 3 milhões, com juros subvencionados no Plano Safra.",
@@ -3234,7 +3279,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.caixa.gov.br/desenrola/Paginas/default.aspx",
    "source_snippet": "Descontos aplicados sobre o valor da dívida original; taxa de juros de 1,99% ao mês; prazos de pagamento entre 12 e 48 meses; parcela mínima de R$ 50,00.",
@@ -3300,7 +3346,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.gov.br/mds/pt-br/acoes-e-programas/inclusao-produtiva-rural/cisternas",
    "source_snippet": "O Programa Cisternas financia a construção de tecnologias sociais de acesso à água para consumo humano e produção de alimentos no Semiárido brasileiro.",
@@ -3373,7 +3420,8 @@
     "student_required": false,
     "admin_areas": [
      "São Paulo"
-    ]
+    ],
+    "gender": "any"
    },
    "source_url": "https://www.sabesp.com.br",
    "source_snippet": "Famílias de baixa renda podem reduzir custos, pagando de R$ 16,42 a R$ 21 pelo consumo mensal de até 10 m³, conforme a renda registrada no CadÚnico.",
@@ -3446,7 +3494,8 @@
     "student_required": false,
     "admin_areas": [
      "Minas Gerais"
-    ]
+    ],
+    "gender": "any"
    },
    "source_url": "https://www.copasa.com.br/web/portal",
    "source_snippet": "A Copasa mantém tarifa social para famílias de baixa renda inscritas no Cadastro Único nos municípios onde opera.",
@@ -3519,7 +3568,8 @@
     "student_required": false,
     "admin_areas": [
      "São Paulo"
-    ]
+    ],
+    "gender": "any"
    },
    "source_url": "https://www.cdhu.sp.gov.br/",
    "source_snippet": "A CDHU promove a construção de moradias, urbanização de favelas e programas como o Cheque-Moradia para famílias de baixa renda do Estado de São Paulo.",
@@ -3594,7 +3644,8 @@
      "Bahia",
      "Distrito Federal",
      "Pernambuco"
-    ]
+    ],
+    "gender": "any"
    },
    "source_url": "https://www.gov.br/mulheres/pt-br/central-de-conteudos/noticias/2026/defeso-eleitoral/cnh-social-saiba-como-acessar-o-programa-que-preve-gratuidade-na-habilitacao-para-pessoas-de-baixa-renda",
    "source_snippet": "A Lei nº 15.153/2025 passou a prever que órgãos de trânsito estaduais e do Distrito Federal utilizem recursos arrecadados com multas para custear a formação de condutores de baixa renda, por meio do programa CNH Social.",
@@ -3667,7 +3718,8 @@
     "student_required": true,
     "admin_areas": [
      "São Paulo"
-    ]
+    ],
+    "gender": "any"
    },
    "source_url": "https://www.sptrans.com.br/bilhete-unico/estudante",
    "source_snippet": "A gratuidade estudantil garante acesso gratuito aos ônibus municipais para estudantes da rede pública da cidade de São Paulo, por meio do Bilhete Único Estudante.",
@@ -3740,7 +3792,8 @@
     "student_required": true,
     "admin_areas": [
      "Rio de Janeiro"
-    ]
+    ],
+    "gender": "any"
    },
    "source_url": "https://www.rio.rj.gov.br/web/smt/passe-livre-estudantil",
    "source_snippet": "O Passe Livre Estudantil assegura gratuidade nos ônibus municipais do Rio de Janeiro para estudantes da rede pública municipal, conforme legislação municipal.",
@@ -3808,7 +3861,8 @@
     "student_required": false,
     "admin_areas": [
      "Rio de Janeiro"
-    ]
+    ],
+    "gender": "any"
    },
    "source_url": "https://www.rio.rj.gov.br/web/smas",
    "source_snippet": "O Cartão Família Carioca é o programa municipal de transferência de renda da Prefeitura do Rio voltado a famílias em situação de vulnerabilidade inscritas no CadÚnico.",
@@ -3876,7 +3930,8 @@
     "student_required": false,
     "admin_areas": [
      "Rio de Janeiro"
-    ]
+    ],
+    "gender": "any"
    },
    "source_url": "https://www.rj.gov.br/sasdh/",
    "source_snippet": "O SuperaRJ é o programa estadual de transferência de renda do Rio de Janeiro para famílias em situação de pobreza e extrema pobreza inscritas no CadÚnico.",
@@ -3952,7 +4007,8 @@
     "student_required": false,
     "admin_areas": [
      "São Paulo"
-    ]
+    ],
+    "gender": "any"
    },
    "source_url": "https://www.desenvolvimentosocial.sp.gov.br/acoes-do-governo/bolsa-do-povo/",
    "source_snippet": "O Bolsa do Povo reúne os programas de transferência de renda do Estado de São Paulo, como Bolsa Trabalho, Ação Jovem, Bolsa Empreendedor e Renda Básica.",
@@ -4020,7 +4076,8 @@
     "student_required": true,
     "admin_areas": [
      "Bahia"
-    ]
+    ],
+    "gender": "any"
    },
    "source_url": "https://www.educacao.ba.gov.br/",
    "source_snippet": "O Bolsa Presença é o programa baiano de incentivo à permanência escolar de estudantes da rede estadual em vulnerabilidade, condicionado à frequência.",
@@ -4088,7 +4145,8 @@
     "student_required": false,
     "admin_areas": [
      "Ceará"
-    ]
+    ],
+    "gender": "any"
    },
    "source_url": "https://www.sps.ce.gov.br/",
    "source_snippet": "O Cartão Mais Infância Ceará transfere R$ 100 mensais por criança de 0 a 6 anos de famílias em extrema pobreza, com condicionalidades de saúde e educação.",
@@ -4156,7 +4214,8 @@
     "student_required": false,
     "admin_areas": [
      "Paraná"
-    ]
+    ],
+    "gender": "any"
    },
    "source_url": "https://www.seab.pr.gov.br/Pagina/Programa-Leite-das-Criancas",
    "source_snippet": "O Programa Leite das Crianças distribui leite em pó gratuitamente a crianças de famílias de baixa renda do Paraná.",
@@ -4224,7 +4283,8 @@
     "student_required": false,
     "admin_areas": [
      "Rio Grande do Sul"
-    ]
+    ],
+    "gender": "any"
    },
    "source_url": "https://www.devolveicms.rs.gov.br/",
    "source_snippet": "O Devolve ICMS devolve mensalmente às famílias de baixa renda gaúchas parte do imposto embutido no preço de produtos e serviços essenciais.",
@@ -4292,7 +4352,8 @@
     "student_required": false,
     "admin_areas": [
      "Distrito Federal"
-    ]
+    ],
+    "gender": "any"
    },
    "source_url": "https://www.sedes.df.gov.br/",
    "source_snippet": "O Renda Mais DF é o programa de transferência de renda do Distrito Federal para famílias em situação de pobreza e extrema pobreza.",
@@ -4309,7 +4370,7 @@
    "category": "housing",
    "benefit_type": "cash_monthly",
    "amount_min": null,
-   "amount_max": null,
+   "amount_max": 400,
    "amount_currency": "BRL",
    "amount_period": "monthly",
    "amount_note": "Monthly grant (rent-type aid, about R$ 400/month per reference rules) for families leaving street situations or without housing, supporting rental while the family reintegrates; operated with the municipal social assistance network.",
@@ -4360,7 +4421,8 @@
     "student_required": false,
     "admin_areas": [
      "Minas Gerais"
-    ]
+    ],
+    "gender": "any"
    },
    "source_url": "https://www.social.mg.gov.br/",
    "source_snippet": "O Programa Travessia oferece auxílio financeiro mensal a famílias em situação de rua de Minas Gerais para apoiar o aluguel e a reinserção habitacional.",
@@ -4438,7 +4500,8 @@
      "Paraná",
      "Rio Grande do Sul",
      "Distrito Federal"
-    ]
+    ],
+    "gender": "any"
    },
    "source_url": "https://www.fazenda.sp.gov.br/",
    "source_snippet": "As secretarias estaduais da Fazenda concedem isenção de IPVA a veículos de pessoas com deficiência, nos termos da legislação de cada estado.",
@@ -4511,7 +4574,8 @@
     "student_required": false,
     "admin_areas": [
      "São Paulo"
-    ]
+    ],
+    "gender": "any"
    },
    "source_url": "https://www.prefeitura.sp.gov.br/cidade/secretarias/fazenda/",
    "source_snippet": "A Prefeitura de São Paulo concede isenção de IPTU a aposentados, pensionistas e idosos proprietários do único imóvel residencial, dentro dos limites de renda e valor venal definidos em lei municipal.",
@@ -4583,8 +4647,10 @@
     "housing_tenure": "renting",
     "student_required": false,
     "admin_areas": [
-     "Minas Gerais"
-    ]
+     "Minas Gerais",
+     "Belo Horizonte"
+    ],
+    "gender": "any"
    },
    "source_url": "https://prefeitura.pbh.gov.br/politica-urbana",
    "source_snippet": "O auxílio moradia/aluguel social de Belo Horizonte garante subsídio temporário de aluguel a famílias em vulnerabilidade ou removidas de áreas de risco.",
@@ -4647,7 +4713,8 @@
     "student_required": false,
     "admin_areas": [
      "São Paulo"
-    ]
+    ],
+    "gender": "any"
    },
    "source_url": "https://www.emtu.sp.gov.br/",
    "source_snippet": "A EMTU garante a gratuidade do transporte intermunicipal para pessoas com 65 anos ou mais na Região Metropolitana de São Paulo.",
@@ -4716,7 +4783,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.gov.br/trabalho-e-emprego/pt-br/assuntos/aprendizagem",
    "source_snippet": "A Lei da Aprendizagem garante a jovens de 14 a 24 anos contrato de aprendizagem com salário, FGTS, 13º e férias, em vagas de empresas de médio e grande porte.",

@@ -71,7 +71,8 @@
     "residency_months_min": 24,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.workandincome.govt.nz/products/a-z-benefits/jobseeker-support.html",
    "source_snippet": "Jobseeker Support is a weekly payment that helps people until they find work.",
@@ -135,7 +136,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": true,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.workandincome.govt.nz/products/a-z-benefits/jobseeker-support-student-hardship.html",
    "source_snippet": "Students may apply for Jobseeker Support Student Hardship while they are looking for a job over the summer holiday.",
@@ -203,7 +205,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.workandincome.govt.nz/products/a-z-benefits/sole-parent-support.html",
    "source_snippet": "Sole Parent $521.52 weekly (net, from 1 April 2026) per published Work and Income benefit rates.",
@@ -269,7 +272,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.workandincome.govt.nz/products/a-z-benefits/supported-living-payment.html",
    "source_snippet": "For people who are permanently and severely restricted in their capacity to work, or caring for someone full-time.",
@@ -337,7 +341,8 @@
     "residency_months_min": 120,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.workandincome.govt.nz/eligibility/seniors/superannuation/",
    "source_snippet": "Single (living alone) $555.15 weekly after tax (M); couple both qualifying $854.08 total — rates from 1 April 2026.",
@@ -405,7 +410,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.workandincome.govt.nz/products/a-z-benefits/veterans-pension.html",
    "source_snippet": "Veteran's Pension is paid at the same rates as NZ Superannuation to qualifying veterans.",
@@ -469,7 +475,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.workandincome.govt.nz/products/a-z-benefits/youth-payment.html",
    "source_snippet": "Weekly payment for 16 and 17 year olds with no parental support, managed with a youth service provider.",
@@ -532,7 +539,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.workandincome.govt.nz/products/a-z-benefits/young-parent-payment.html",
    "source_snippet": "Payment for young parents aged 16 to 19 who have dependent children in their care.",
@@ -593,7 +601,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.workandincome.govt.nz/products/a-z-benefits/emergency-benefit.html",
    "source_snippet": "Hardship assistance for people who cannot get another benefit, for example because they do not meet residency requirements.",
@@ -654,7 +663,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.workandincome.govt.nz/products/a-z-benefits/temporary-additional-support.html",
    "source_snippet": "A weekly payment that helps to cover essential living costs that cannot be met from income and through other resources; paid for a maximum of 13 weeks.",
@@ -705,7 +715,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.workandincome.govt.nz/",
    "source_snippet": "Special Benefit was largely replaced by Temporary Additional Support; Work and Income assesses which ongoing extra help applies.",
@@ -766,7 +777,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.workandincome.govt.nz/products/a-z-benefits/orphans-benefit.html",
    "source_snippet": "Weekly payment for people caring for a child whose parents have died, cannot be found or are unable to care for them.",
@@ -827,7 +839,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.workandincome.govt.nz/products/a-z-benefits/unsupported-childs-benefit.html",
    "source_snippet": "Weekly payment for someone caring for a child whose parents are unable to care for them due to a family breakdown.",
@@ -883,7 +896,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.workandincome.govt.nz/",
    "source_snippet": "If you have an urgent or unexpected cost like food, Work and Income may be able to help with a Special Needs Grant you do not have to pay back.",
@@ -944,7 +958,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.workandincome.govt.nz/",
    "source_snippet": "Recoverable Assistance is an interest-free payment for essential costs that you pay back later.",
@@ -1005,7 +1020,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.workandincome.govt.nz/",
    "source_snippet": "An advance of your benefit for essential costs, repaid interest-free out of your future payments.",
@@ -1066,7 +1082,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.workandincome.govt.nz/",
    "source_snippet": "Work and Income can help with urgent dental treatment up to $1,000 in any 12-month period through a Special Needs Grant.",
@@ -1127,7 +1144,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.workandincome.govt.nz/",
    "source_snippet": "A Funeral Grant helps with actual and reasonable funeral costs when someone dies and there is hardship.",
@@ -1188,7 +1206,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.workandincome.govt.nz/",
    "source_snippet": "Civil Defence Payments help people affected by an emergency with immediate costs such as food, bedding and accommodation.",
@@ -1262,7 +1281,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.acc.co.nz/im-injured/financial-support/weekly-compensation",
    "source_snippet": "We pay up to 80% of your income as weekly compensation if you can't work because of your injury.",
@@ -1279,9 +1299,9 @@
    "category": "family",
    "benefit_type": "tax_credit",
    "amount_min": null,
-   "amount_max": null,
+   "amount_max": 144,
    "amount_currency": "NZD",
-   "amount_period": "annual",
+   "amount_period": "weekly",
    "amount_note": "Weekly payment per child; from 1 Apr 2024 up to $144/week for the eldest child and $117/week for each additional child. Abates from family income over $42,700. Paid by IRD (or Work and Income if on a benefit).",
    "is_automatic": false,
    "application_url": "https://www.ird.govt.nz/working-for-families/types/family-tax-credit",
@@ -1327,7 +1347,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.ird.govt.nz/working-for-families/types",
    "source_snippet": "The most you can get each week from 1 April 2024: eldest child $144.00, each other child $117.00 (IR201, Inland Revenue).",
@@ -1344,9 +1365,9 @@
    "category": "family",
    "benefit_type": "tax_credit",
    "amount_min": null,
-   "amount_max": null,
+   "amount_max": 97,
    "amount_currency": "NZD",
-   "amount_period": "annual",
+   "amount_period": "weekly",
    "amount_note": "Weekly payment for families normally in paid work; from 31 Jul 2024 up to $97/week for the first 3 children plus $15 for each additional child. Not payable while on a main benefit or student allowance.",
    "is_automatic": false,
    "application_url": "https://www.ird.govt.nz/working-for-families/types/in-work-tax-credit",
@@ -1392,7 +1413,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.ird.govt.nz/working-for-families/types",
    "source_snippet": "From 31 July 2024: $97.00 a week for the first 3 children, $15.00 for each other child (IR201, Inland Revenue).",
@@ -1455,7 +1477,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.ird.govt.nz/working-for-families/types/best-start",
    "source_snippet": "Best Start is a payment of $73 a week for families with a new baby; from 1 April 2026 the weekly payment of $77 is reduced when the family income exceeds $79,000.",
@@ -1519,7 +1542,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.ird.govt.nz/working-for-families/types",
    "source_snippet": "This payment tops up your family's income to at least $679 a week after tax (IR201, Inland Revenue, April 2025).",
@@ -1594,7 +1618,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.ird.govt.nz/paid-parental-leave/working-out-your-entitlement/employees",
    "source_snippet": "Your maximum paid parental leave payment (before tax) is: 1 July 2025 to 30 June 2026 — $788.66 a week.",
@@ -1665,7 +1690,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.workandincome.govt.nz/products/a-z-benefits/accommodation-supplement.html",
    "source_snippet": "The Accommodation Supplement is a weekly payment to assist people who are not in public housing, with their rent, board or the cost of owning a home.",
@@ -1736,7 +1762,8 @@
     "residency_months_min": null,
     "housing_tenure": "renting",
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.workandincome.govt.nz/",
    "source_snippet": "MSD calculates the amount of Income Related Rent that public housing tenants are charged by Kāinga Ora or registered Community Housing Providers.",
@@ -1797,7 +1824,8 @@
     "residency_months_min": null,
     "housing_tenure": "homeless",
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.workandincome.govt.nz/",
    "source_snippet": "If you have nowhere to stay, Work and Income may help with emergency housing paid through an Emergency Housing Special Needs Grant.",
@@ -1863,7 +1891,8 @@
     "residency_months_min": null,
     "housing_tenure": "renting",
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.msd.govt.nz/",
    "source_snippet": "Bond grant up to four weeks' rent (max $2,000) and up to two weeks' rent in advance (max $1,000) — you don't have to pay these back.",
@@ -1929,7 +1958,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.govt.nz/browse/housing-and-property/buying-or-selling-a-home/buying-your-first-home/",
    "source_snippet": "With a First Home Loan, you only need a 5% deposit. Kāinga Ora underwrite the loan... (First Home Grant and First Home Partner are no longer available).",
@@ -1995,7 +2025,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.ird.govt.nz/kiwisaver",
    "source_snippet": "You may be able to withdraw your KiwiSaver savings to put towards buying your first home.",
@@ -2056,7 +2087,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.govt.nz/browse/housing-and-property/buying-or-selling-a-home/buying-your-first-home/",
    "source_snippet": "The Kāinga Whenua Loan is an opportunity for Māori to build, purchase or relocate a house on Māori land that has shared ownership.",
@@ -2117,7 +2149,8 @@
     "residency_months_min": null,
     "housing_tenure": "renting",
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.govt.nz/browse/housing-and-property/buying-or-selling-a-home/buying-your-first-home/",
    "source_snippet": "The tenant home ownership grant is a gift of 10% of the purchase price of selected Kāinga Ora houses up to a maximum of $20,000.",
@@ -2191,7 +2224,8 @@
     "admin_areas": [],
     "income_test": "none",
     "income_source_url": "https://www.govt.nz/browse/housing-and-property/getting-help-with-housing/getting-a-rates-rebate/eligibility/",
-    "income_confidence": "high"
+    "income_confidence": "high",
+    "gender": "any"
    },
    "source_url": "https://www.beehive.govt.nz/release/rates-relief-66000-more-supergold-cardholders",
    "source_snippet": "The maximum rebate for the scheme will also increase from $790 to $805... income abatement threshold... lifted from $31,510 to $45,000.",
@@ -2259,7 +2293,8 @@
      "Auckland",
      "Wellington",
      "Canterbury"
-    ]
+    ],
+    "gender": "any"
    },
    "source_url": "https://wellington.govt.nz/property-rates-and-building/rates",
    "source_snippet": "Councils may allow ratepayers, including older homeowners, to postpone rates with repayment when the property is sold.",
@@ -2323,7 +2358,8 @@
     "admin_areas": [],
     "income_test": "numeric",
     "income_source_url": "https://www.workandincome.govt.nz/products/a-z-benefits/community-services-card.html",
-    "income_confidence": "high"
+    "income_confidence": "high",
+    "gender": "any"
    },
    "source_url": "https://www.workandincome.govt.nz/products/a-z-benefits/community-services-card.html",
    "source_snippet": "Benefit recipients and people on low incomes can get a Community Services Card for subsidised health services.",
@@ -2380,7 +2416,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.healthnz.govt.nz/health-topics/tests-and-treatments/medicines/prescriptions",
    "source_snippet": "A High Use Health Card is a card that your healthcare provider can apply for if you have a long-term condition... 12 or more times in 1 year. Unlike the Community Services Card, the HUHC doesn't depend on your income.",
@@ -2441,7 +2478,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.healthnz.govt.nz/health-topics/tests-and-treatments/medicines/prescriptions",
    "source_snippet": "People need to pay the standard $5 prescription charge, with exemptions for people aged 13 years or under, holding a Community Services Card, aged 65 years or over, or holding a Prescription Subsidy Card.",
@@ -2502,7 +2540,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.workandincome.govt.nz/products/a-z-benefits/disability-allowance.html",
    "source_snippet": "Weekly payment for people who have regular, ongoing costs because of a disability, such as visits to the doctor or hospital, medicines or extra travel.",
@@ -2563,7 +2602,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.workandincome.govt.nz/products/a-z-benefits/child-disability-allowance.html",
    "source_snippet": "A fortnightly payment to the main carer of a child who has a serious disability and needs constant care and attention.",
@@ -2619,7 +2659,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "female"
    },
    "source_url": "https://www.timetoscreen.nz/breast-screening/",
    "source_snippet": "Free mammograms every 2 years for women aged 45 to 69 through BreastScreen Aotearoa.",
@@ -2670,7 +2711,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "female"
    },
    "source_url": "https://www.timetoscreen.nz/cervical-screening/",
    "source_snippet": "Regular cervical screening, including HPV self-testing, is offered free to priority groups aged 25 to 69.",
@@ -2721,7 +2763,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.timetoscreen.nz/bowel-screening/",
    "source_snippet": "Free bowel screening every 2 years for eligible New Zealanders, with a home test kit sent by post.",
@@ -2777,7 +2820,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.healthnz.govt.nz/",
    "source_snippet": "Children under 14 years enrolled with a general practice are eligible for free GP visits and after-hours services.",
@@ -2838,7 +2882,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.acc.co.nz/im-injured",
    "source_snippet": "Along with financial support if you can't work or have a permanent injury, we can pay for things like transport to get you to appointments or work, childcare and help around the home.",
@@ -2901,7 +2946,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.workandincome.govt.nz/map/income-support/extra-help/home-help/multiple-births-01.html",
    "source_snippet": "240 hours of funded home help for twins with an older sibling under five; 1,560 hours for triplets or higher order multiples.",
@@ -2971,7 +3017,8 @@
      "Auckland",
      "Wellington",
      "Canterbury"
-    ]
+    ],
+    "gender": "any"
    },
    "source_url": "https://at.govt.nz/bus-train-ferry/at-hop-card/card-concessions-and-discounted-fares/community-connect-concession",
    "source_snippet": "This gives you 50% off most buses, trains and ferries when using your registered AT HOP card.",
@@ -3029,7 +3076,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.govt.nz/browse/tax-benefits-and-finance/supergold-card/",
    "source_snippet": "Use your SuperGold card or Veteran SuperGold card to get business discounts, free or discounted council services, and free off-peak travel on public transport.",
@@ -3097,7 +3145,8 @@
      "Waikato",
      "Bay of Plenty",
      "Otago"
-    ]
+    ],
+    "gender": "any"
    },
    "source_url": "https://www.nzta.govt.nz/resources/total-mobility-scheme/",
    "source_snippet": "The Total Mobility scheme subsidises taxi travel for people who cannot use public transport because of a serious mobility impairment.",
@@ -3162,7 +3211,8 @@
     "student_required": true,
     "admin_areas": [
      "Auckland"
-    ]
+    ],
+    "gender": "any"
    },
    "source_url": "https://at.govt.nz/",
    "source_snippet": "Eligible full-time tertiary students get discounted fares on AT bus, train and ferry services with a registered AT HOP card.",
@@ -3218,7 +3268,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.workandincome.govt.nz/products/a-z-benefits/winter-energy-payment.html",
    "source_snippet": "If you are a single person with no dependent children, you'll receive $20.46 per week. For couples and people with dependent children, you'll receive $31.82 per week.",
@@ -3284,7 +3335,8 @@
     "residency_months_min": null,
     "housing_tenure": "owner",
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.eeca.govt.nz/co-funding-and-support/products/warmer-kiwi-homes-programme/information/",
    "source_snippet": "You may be able to get a 90% grant (up to $3,450) if you have a Community Services Card, SuperGold Combo card, or live in the highest-need areas.",
@@ -3349,7 +3401,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.workandincome.govt.nz/map/deskfile/extra-help-information/childcare-assistance-tables/childcare-subsidy-current.html",
    "source_snippet": "Up to $6.52 per child per hour, paid to licensed ECE provider; up to 50 hours per week if both parents are working or studying.",
@@ -3414,7 +3467,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.workandincome.govt.nz/products/a-z-benefits/oscar-subsidy.html",
    "source_snippet": "OSCAR Subsidy helps with the cost of before-school, after-school and school holiday programmes for children aged 5 to 13.",
@@ -3475,7 +3529,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.education.govt.nz/education-professionals/early-learning/funding-and-financials/ece-funding-handbook/glossary",
    "source_snippet": "20 Hours ECE enables services to provide early childhood education to 3-year-olds, 4-year-olds and 5-year-olds for up to a maximum of 6 hours per child per day and 20 hours per child per week without charging fees.",
@@ -3543,7 +3598,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": true,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.ird.govt.nz/fees-free",
    "source_snippet": "Fees Free covers fees for the final year of tertiary study or final 2 years of work-based learning... up to $12,000. The Government has announced it is ending Fees Free at the end of 2026.",
@@ -3614,7 +3670,8 @@
     "admin_areas": [],
     "income_test": "unpublished",
     "income_source_url": "https://www.studylink.govt.nz/in-study/income/how-income-affects-student-allowance.html",
-    "income_confidence": "high"
+    "income_confidence": "high",
+    "gender": "any"
    },
    "source_url": "https://www.studylink.govt.nz/products/a-z-products/student-allowance/index.html",
    "source_snippet": "Student Allowance is a weekly payment that can help with your living expenses while you're studying. You don't have to pay the money back.",
@@ -3678,7 +3735,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": true,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.studylink.govt.nz/products/a-z-products/student-loan/index.html",
    "source_snippet": "A Student Loan can help pay for your course fees, study materials and living costs — you have to pay it back.",
@@ -3741,7 +3799,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": true,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.studylink.govt.nz/products/a-z-products/student-loan/index.html",
    "source_snippet": "You can borrow up to $1,000 a year for course-related costs such as textbooks and equipment.",
@@ -3807,7 +3866,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.workandincome.govt.nz/products/a-z-benefits/training-incentive-allowance.html",
    "source_snippet": "Training Incentive Allowance helps with the costs of studying an approved course while on certain benefits.",
@@ -3863,7 +3923,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.education.govt.nz/our-work/publications/education-circulars/education-circular-202103",
    "source_snippet": "Decile 1-7 state and state-integrated schools have been able to choose to receive a $150 per student, per year payment if they agree not to ask parents and caregivers for donations.",
@@ -3914,7 +3975,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.education.govt.nz/",
    "source_snippet": "Ka Ora, Ka Ako provides a free healthy lunch every school day to students at participating schools and kura.",
@@ -3965,7 +4027,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.education.govt.nz/",
    "source_snippet": "Free period products are provided to students in participating state and state-integrated schools to improve access to education.",
@@ -4030,7 +4093,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.workandincome.govt.nz/employers/subsidies-and-other-assistance/index.html",
    "source_snippet": "Flexi-wage is a subsidy to help employers hire people who are at risk of staying on a benefit long term, and can support self-employment.",
@@ -4095,7 +4159,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.workandincome.govt.nz/employers/subsidies-and-other-assistance/index.html",
    "source_snippet": "Work and Income may help with the costs of starting a business if you are on a benefit and have a viable business plan.",
@@ -4158,7 +4223,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.tec.govt.nz/funding/fund-finder/apprenticeship-boost",
    "source_snippet": "From 1 January 2025, employers can receive up to 12 months of support per eligible apprentice. Payments are currently $500 per month (excluding GST).",
@@ -4222,7 +4288,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.workandincome.govt.nz/employers/subsidies-and-other-assistance/index.html",
    "source_snippet": "Mana in Mahi supports employers to hire people on a benefit into jobs that come with industry training towards a qualification.",
@@ -4280,7 +4347,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.ird.govt.nz/ietc",
    "source_snippet": "If you're using a ME or ME SL tax code you'll need to change this with your employer when you apply for Working for Families — you cannot receive both (IR201).",
@@ -4339,7 +4407,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.ird.govt.nz/kiwisaver",
    "source_snippet": "The Government contributes 25c for every dollar you contribute to KiwiSaver, up to $260.72 a year.",
@@ -4407,7 +4476,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.mbie.govt.nz/science-and-technology/science-and-innovation/funding-information-and-opportunities/r-d-tax-incentive",
    "source_snippet": "The main features of the R&D tax incentive include a credit rate of 15%, a $120 million cap on eligible expenditure, and a minimum R&D expenditure threshold of $50,000 per year.",
@@ -4470,7 +4540,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.ird.govt.nz/research-and-development/loss-tax-credit",
    "source_snippet": "Cash refund for loss-making startups (must be repaid once the company becomes profitable).",
@@ -4523,7 +4594,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.ird.govt.nz/",
    "source_snippet": "Investment Boost allows businesses an upfront deduction equal to 20 per cent of the cost of eligible assets purchased on or after 22 May 2025, in addition to standard depreciation.",
@@ -4591,7 +4663,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.business.govt.nz/strategy-and-performance/regional-business-partner-network",
    "source_snippet": "The Management Capability Development Voucher Fund provides financial subsidy of up to 50% towards the cost of management capability building... maximum $5,000 excluding GST per business in one year.",
@@ -4659,7 +4732,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.business.govt.nz/tax-and-money/innovation-funding/r-and-d-experience-grant",
    "source_snippet": "A grant that reimburses up to $11,960 plus GST toward a student intern's wages for a 10-week, full-time R&D placement.",
@@ -4722,7 +4796,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://funds.business.govt.nz/",
    "source_snippet": "MBIE continues to co-fund... innovation grants including the New to R&D Grant (now under Innovation Services at funds.business.govt.nz).",
@@ -4780,7 +4855,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.tpk.govt.nz/",
    "source_snippet": "Te Puni Kōkiri delivers the Māori Development Fund, business growth advisors, and connections to Māori business networks.",
@@ -4841,7 +4917,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.englishlanguage.org.nz/",
    "source_snippet": "English Language Partners provides government-funded English language classes for eligible migrants and former refugees.",
@@ -4897,7 +4974,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.moneytalks.co.nz/",
    "source_snippet": "MoneyTalks is a free helpline providing independent financial mentoring and connecting people to local budgeting services.",
@@ -4958,7 +5036,9 @@
     "residency_months_min": null,
     "housing_tenure": "owner",
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any",
+    "rule_source": "geography_unknown"
    },
    "source_url": "https://www.anz.co.nz/",
    "source_snippet": "The four major banks (ANZ, ASB, BNZ and Kiwibank) each offer an energy-upgrade loan capped at $80,000, fixed at around 1% p.a. for three years.",

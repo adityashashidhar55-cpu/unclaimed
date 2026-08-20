@@ -71,7 +71,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.servicesaustralia.gov.au/jobseeker-payment",
    "source_snippet": "Main income support payment for people aged 22 to Age Pension age who are looking for work or temporarily unable to work.",
@@ -144,7 +145,8 @@
     "admin_areas": [],
     "income_test": "unpublished",
     "income_source_url": "https://www.servicesaustralia.gov.au/what-parental-income-test-for-youth-allowance-students-and-australian-apprentices?context=43916",
-    "income_confidence": "high"
+    "income_confidence": "high",
+    "gender": "any"
    },
    "source_url": "https://www.servicesaustralia.gov.au/youth-allowance",
    "source_snippet": "Income support for young people who are studying, training or looking for work.",
@@ -213,7 +215,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": true,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.servicesaustralia.gov.au/austudy",
    "source_snippet": "Financial help if you are 25 or older and studying or undertaking an Australian Apprenticeship full time.",
@@ -281,7 +284,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": true,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.servicesaustralia.gov.au/abstudy",
    "source_snippet": "Help with costs for Aboriginal and Torres Strait Islander Australians who are studying or undertaking an apprenticeship.",
@@ -349,7 +353,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.servicesaustralia.gov.au/parenting-payment",
    "source_snippet": "Principal carer of a child under 14 if single (or under 6 if partnered), meeting residence, income and assets rules.",
@@ -417,7 +422,8 @@
     "residency_months_min": 120,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.servicesaustralia.gov.au/residence-rules-for-age-pension?context=22526",
    "source_snippet": "To get Age Pension you generally need to have been an Australian resident for at least 10 years in total. For at least 5 of these years, there must be no break in your residence.",
@@ -483,7 +489,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.servicesaustralia.gov.au/disability-support-pension",
    "source_snippet": "Financial support if you have a permanent physical, intellectual or psychiatric condition that stops you from working.",
@@ -549,7 +556,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://my.gov.au/en/services/health-and-disability/caring-for-someone/becoming-a-carer/government-support-for-carers/carer-payment",
    "source_snippet": "To get this payment, you must: care for someone who needs constant care, which stops you from working full time; care for someone who'll have these needs for at least 6 months; be under the income and assets test limits; meet the residence rules.",
@@ -566,9 +574,9 @@
    "category": "income_support",
    "benefit_type": "cash_monthly",
    "amount_min": null,
-   "amount_max": null,
+   "amount_max": 160,
    "amount_currency": "AUD",
-   "amount_period": "monthly",
+   "amount_period": "fortnightly",
    "amount_note": "Fortnightly supplement (around $160 per fortnight, indexed) for people who provide daily care at home to someone with a disability or medical condition; income tested only, no assets test.",
    "is_automatic": false,
    "application_url": "https://www.servicesaustralia.gov.au/carer-allowance",
@@ -615,7 +623,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.servicesaustralia.gov.au/carer-allowance",
    "source_snippet": "A supplementary payment for carers who provide additional daily care and attention to someone with a disability or medical condition.",
@@ -681,7 +690,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.servicesaustralia.gov.au/special-benefit",
    "source_snippet": "Help if you are in severe financial need and cannot get any other income support payment from us.",
@@ -742,7 +752,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.servicesaustralia.gov.au/crisis-payment",
    "source_snippet": "A one-off payment if you have experienced an extreme circumstance and are in severe financial hardship.",
@@ -798,7 +809,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.servicesaustralia.gov.au/advance-payments",
    "source_snippet": "You can ask to get part of your income support payment in advance; we recover it by deductions from future payments.",
@@ -815,9 +827,9 @@
    "category": "transport",
    "benefit_type": "cash_monthly",
    "amount_min": null,
-   "amount_max": null,
+   "amount_max": 120,
    "amount_currency": "AUD",
-   "amount_period": "monthly",
+   "amount_period": "fortnightly",
    "amount_note": "Small fortnightly payment (around $120 per fortnight standard rate) for people with disability who cannot use public transport without substantial assistance and are working, training or volunteering.",
    "is_automatic": false,
    "application_url": "https://www.servicesaustralia.gov.au/mobility-allowance",
@@ -863,7 +875,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.servicesaustralia.gov.au/mobility-allowance",
    "source_snippet": "Help with transport costs if you have a disability and cannot use public transport without substantial assistance.",
@@ -936,7 +949,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.servicesaustralia.gov.au/farm-household-allowance",
    "source_snippet": "Support for eligible farmers and their partners experiencing financial hardship.",
@@ -1009,7 +1023,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.servicesaustralia.gov.au/family-tax-benefit-part-a",
    "source_snippet": "A two-part payment that helps with the cost of raising children; Part A is paid per child depending on family circumstances.",
@@ -1072,7 +1087,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.servicesaustralia.gov.au/family-tax-benefit-part-b",
    "source_snippet": "Extra help for single parents and families with one main income, paid per family based on the age of the youngest child.",
@@ -1145,7 +1161,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.servicesaustralia.gov.au/child-care-subsidy",
    "source_snippet": "To get Child Care Subsidy (CCS) you must: care for a child 13 or younger who's not attending secondary school, unless an exemption applies; use an approved child care service; be responsible for paying the child care fees; meet residence and immunisation requirements.",
@@ -1223,7 +1240,8 @@
     "admin_areas": [],
     "income_test": "numeric",
     "income_source_url": "https://www.servicesaustralia.gov.au/meeting-income-test-for-parental-leave-pay?context=64479",
-    "income_confidence": "high"
+    "income_confidence": "high",
+    "gender": "any"
    },
    "source_url": "https://www.servicesaustralia.gov.au/about-paid-parental-leave-scheme?context=23121",
    "source_snippet": "This payment is taxable and paid at the rate of the National Minimum Wage. From 1 July 2026, the rate of Parental Leave Pay is $1,004.70 per week, before tax.",
@@ -1282,7 +1300,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.servicesaustralia.gov.au/newborn-upfront-payment-and-newborn-supplement",
    "source_snippet": "A lump sum and an increase to your Family Tax Benefit Part A for up to 13 weeks to help with the upfront costs of a newborn or adopted child.",
@@ -1340,7 +1359,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.servicesaustralia.gov.au/double-orphan-pension",
    "source_snippet": "Help with the costs of caring for a child whose parents cannot care for them or have died; the carer must care for the child at least 35% of the time.",
@@ -1404,7 +1424,8 @@
     "admin_areas": [],
     "income_test": "numeric",
     "income_source_url": "https://www.servicesaustralia.gov.au/income-test-for-low-income-health-care-card?context=21916",
-    "income_confidence": "high"
+    "income_confidence": "high",
+    "gender": "any"
    },
    "source_url": "https://www.servicesaustralia.gov.au/low-income-health-care-card",
    "source_snippet": "A concession card to get cheaper health care and medicines if your income is below the limit.",
@@ -1458,7 +1479,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.servicesaustralia.gov.au/pensioner-concession-card",
    "source_snippet": "Get cheaper health care, medicines and some discounts if you get certain payments from us.",
@@ -1521,7 +1543,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.servicesaustralia.gov.au/commonwealth-seniors-health-card",
    "source_snippet": "A card for older Australians who do not get an income support payment, giving access to cheaper medicines and other concessions.",
@@ -1582,7 +1605,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.servicesaustralia.gov.au/medicare-safety-nets",
    "source_snippet": "Once your annual out-of-pocket medical costs reach a threshold, Medicare gives you a higher benefit for the rest of the calendar year.",
@@ -1643,7 +1667,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.pbs.gov.au/info/about-the-pbs",
    "source_snippet": "The PBS Safety Net reduces the cost of prescription medicines once you or your family spend a certain amount on PBS medicines in a calendar year.",
@@ -1699,7 +1724,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.servicesaustralia.gov.au/child-dental-benefits-schedule",
    "source_snippet": "Covers part or the full cost of some basic dental services for eligible children aged 0 to 17 whose family gets a qualifying payment.",
@@ -1765,7 +1791,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.ndis.gov.au/applying/eligibility-requirements/what-are-ndis-eligibility-requirements",
    "source_snippet": "You must be aged from 0 to 64 years when you apply... You must be living in Australia and be either an Australian citizen, a permanent resident or a Protected Special Category visa holder.",
@@ -1826,7 +1853,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.servicesaustralia.gov.au/essential-medical-equipment-payment",
    "source_snippet": "An annual payment to help with the extra costs of running essential medical equipment at home.",
@@ -1843,7 +1871,7 @@
    "category": "health",
    "benefit_type": "cash_one_off",
    "amount_min": null,
-   "amount_max": null,
+   "amount_max": 700,
    "amount_currency": "AUD",
    "amount_period": "annual",
    "amount_note": "Annual payment (around $700 per year, indexed) paid in instalments to help people aged 5 or over with permanent and severe incontinence buy continence products.",
@@ -1887,7 +1915,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.servicesaustralia.gov.au/continence-aids-payment-scheme",
    "source_snippet": "A payment to help eligible people who have permanent and severe incontinence meet some of the costs of continence products.",
@@ -1955,7 +1984,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": true,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.studyassist.gov.au/help-loans/hecs-help",
    "source_snippet": "HECS-HELP is a loan scheme that helps eligible Commonwealth supported students pay their student contribution amounts; repayments are made through the tax system once income reaches the threshold.",
@@ -2026,7 +2056,8 @@
     "admin_areas": [],
     "income_test": "numeric",
     "income_source_url": "https://www.servicesaustralia.gov.au/parental-income-limits-for-tertiary-access-payment?context=53447",
-    "income_confidence": "high"
+    "income_confidence": "high",
+    "gender": "any"
    },
    "source_url": "https://www.servicesaustralia.gov.au/tertiary-access-payment",
    "source_snippet": "A payment to help with the cost of moving from a regional or remote area for tertiary study straight after finishing year 12.",
@@ -2090,7 +2121,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": true,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.servicesaustralia.gov.au/student-start-up-loan",
    "source_snippet": "A voluntary loan you can get up to twice a year if you are an eligible student; you pay it back through the tax system once you earn over the threshold.",
@@ -2153,7 +2185,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.australianapprenticeships.gov.au/",
    "source_snippet": "Australian Apprentices may be eligible to receive financial support through Trade Support Loans, with a 20 per cent discount applied if apprentices successfully complete the apprenticeship.",
@@ -2170,9 +2203,9 @@
    "category": "housing",
    "benefit_type": "cash_monthly",
    "amount_min": null,
-   "amount_max": null,
+   "amount_max": 77,
    "amount_currency": "AUD",
-   "amount_period": "monthly",
+   "amount_period": "weekly",
    "amount_note": "Tapering allowance over 3 years for apprentices who have to move away from their parental home for the first time to start or stay in an apprenticeship (around $77/week in year 1, reducing in later years).",
    "is_automatic": false,
    "application_url": "https://www.australianapprenticeships.gov.au/",
@@ -2216,7 +2249,8 @@
     "residency_months_min": null,
     "housing_tenure": "renting",
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.australianapprenticeships.gov.au/",
    "source_snippet": "Australian Apprentices undertaking a Certificate II or higher-level qualification may be eligible for the Living Away from Home Allowance if they have to move away from their parental/guardian home for the first time.",
@@ -2275,7 +2309,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.workforceaustralia.gov.au/",
    "source_snippet": "Workforce Australia is the front door for government employment and skills services, helping Australians find and keep a job.",
@@ -2339,7 +2374,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.dss.gov.au/",
    "source_snippet": "Disability Employment Services help people with disability, injury or health condition find and keep a job.",
@@ -2400,7 +2436,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.dss.gov.au/",
    "source_snippet": "A one-off payment of up to $1,500 to help young people transition from formal out-of-home care to independent living.",
@@ -2454,7 +2491,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.ato.gov.au/",
    "source_snippet": "The low income tax offset provides up to $700 for Australian resident taxpayers with taxable income up to $37,500, reducing to nil at $66,667.",
@@ -2518,7 +2556,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.ato.gov.au/individuals-and-families/super-for-individuals-and-families/super/growing-and-keeping-track-of-your-super/how-to-save-more-in-your-super/government-super-contributions",
    "source_snippet": "The super co-contribution is a government payment of up to $500 into your super fund if you are a low or middle income earner who makes personal after-tax contributions.",
@@ -2572,7 +2611,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.ato.gov.au/individuals-and-families/super-for-individuals-and-families/super/growing-and-keeping-track-of-your-super/how-to-save-more-in-your-super/government-super-contributions",
    "source_snippet": "LISTO is a government payment of up to $500 a year to help low income earners save for retirement, effectively refunding the tax on their concessional contributions.",
@@ -2633,7 +2673,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.privatehealth.gov.au/health_insurance/surcharges_incentives/insurance_rebate.htm",
    "source_snippet": "The private health insurance rebate is an amount the government contributes towards the cost of your private hospital health insurance premiums, income tested in tiers.",
@@ -2699,7 +2740,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.ato.gov.au/individuals-and-families/super-for-individuals-and-families/super/withdrawing-and-using-your-super/withdrawal-options/first-home-super-saver-scheme",
    "source_snippet": "Voluntary super contributions of up to $15,000 per year, with a maximum lifetime cap of $50,000, can be withdrawn to help buy your first home.",
@@ -2762,7 +2804,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.ato.gov.au/businesses-and-organisations/income-and-deductions-for-business",
    "source_snippet": "Eligible businesses can claim an immediate deduction for the business portion of the cost of an asset in the year it is first used or installed ready for use.",
@@ -2830,7 +2873,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://business.gov.au/grants-and-programs/research-and-development-tax-incentive/overview-of-rd-tax-incentive",
    "source_snippet": "If your company's annual aggregated turnover is less than 20 million, the refundable offset rate is equal to your company tax rate plus a premium of 18.5 per cent.",
@@ -2903,7 +2947,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.austrade.gov.au/en/export/export-grants",
    "source_snippet": "The EMDG program provides grants to Australian small and medium enterprises and their representative bodies to market and promote their goods and services globally and undertake export training.",
@@ -2964,7 +3009,8 @@
     "residency_months_min": null,
     "housing_tenure": "renting",
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.dva.gov.au/what-we-help-with/housing-and-home-life/rent-assistance",
    "source_snippet": "For every $1 of rent you pay over the rent threshold you will receive $0.75 of Rent Assistance up to a maximum amount.",
@@ -3035,7 +3081,8 @@
     "residency_months_min": null,
     "housing_tenure": "owner",
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.housingaustralia.gov.au/",
    "source_snippet": "The Australian Government 5% Deposit Scheme supports home buyers who have saved a small deposit to purchase a home sooner, with a minimum 5% deposit for first home buyers and no LMI.",
@@ -3103,7 +3150,8 @@
     "residency_months_min": null,
     "housing_tenure": "owner",
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.servicesaustralia.gov.au/home-equity-access-scheme",
    "source_snippet": "The Home Equity Access Scheme lets older Australians get a voluntary non-taxable loan from the government using Australian property as security.",
@@ -3166,7 +3214,8 @@
     "student_required": false,
     "admin_areas": [
      "New South Wales"
-    ]
+    ],
+    "gender": "any"
    },
    "source_url": "https://www.revenue.nsw.gov.au/",
    "source_snippet": "The NSW First Home Owner Grant is worth $10,000 for eligible first home buyers building or buying a new home, capped at $600,000 (new homes) or $750,000 (house and land).",
@@ -3229,7 +3278,8 @@
     "student_required": false,
     "admin_areas": [
      "Victoria"
-    ]
+    ],
+    "gender": "any"
    },
    "source_url": "https://www.sro.vic.gov.au/first-home-owner-grant",
    "source_snippet": "$10,000 grant for buying or building a new home in Victoria valued up to $750,000; $20,000 for new homes in regional Victoria (regional top-up subject to current program dates).",
@@ -3292,7 +3342,8 @@
     "student_required": false,
     "admin_areas": [
      "Queensland"
-    ]
+    ],
+    "gender": "any"
    },
    "source_url": "https://qro.qld.gov.au/property-concessions-grants/first-home-grant/",
    "source_snippet": "$30,000 grant for buying or building a new home in Queensland valued under $750,000 for contracts signed before 30 June 2026 (reverts to $15,000 afterwards); check the Queensland Revenue Office for the current amount.",
@@ -3355,7 +3406,8 @@
     "student_required": false,
     "admin_areas": [
      "South Australia"
-    ]
+    ],
+    "gender": "any"
    },
    "source_url": "https://www.revenuesa.sa.gov.au/grants-and-concessions/first-home-owner-grant",
    "source_snippet": "$15,000 grant for eligible first home buyers buying or building a new home in South Australia.",
@@ -3418,7 +3470,8 @@
     "student_required": false,
     "admin_areas": [
      "Western Australia"
-    ]
+    ],
+    "gender": "any"
    },
    "source_url": "https://www.wa.gov.au/organisation/department-of-finance/first-home-owner-grant",
    "source_snippet": "$10,000 grant for buying or building a new home in Western Australia; property value caps apply (different caps north and south of the 26th parallel).",
@@ -3486,7 +3539,8 @@
     "student_required": false,
     "admin_areas": [
      "New South Wales"
-    ]
+    ],
+    "gender": "any"
    },
    "source_url": "https://www.nsw.gov.au/housing-and-construction/buying-and-selling-property/home-buying-assistance/first-home-buyers-assistance-scheme",
    "source_snippet": "Eligible first home buyers purchasing an existing property for $800,000 or less won't pay any transfer duty at all. Those who buy a property worth between $800,000 and $1 million will pay a reduced rate.",
@@ -3554,7 +3608,8 @@
     "student_required": false,
     "admin_areas": [
      "Victoria"
-    ]
+    ],
+    "gender": "any"
    },
    "source_url": "https://www.sro.vic.gov.au/first-home-owner",
    "source_snippet": "First home buyers pay no stamp duty on properties valued at $600,000 or less, with a concession available for homes valued up to $750,000.",
@@ -3622,7 +3677,8 @@
     "student_required": false,
     "admin_areas": [
      "Queensland"
-    ]
+    ],
+    "gender": "any"
    },
    "source_url": "https://qro.qld.gov.au/",
    "source_snippet": "Queensland first home buyers can claim a transfer duty concession, with a full concession applying to new homes and eligible vacant land.",
@@ -3693,7 +3749,8 @@
     ],
     "income_test": "numeric",
     "income_source_url": "https://www.qld.gov.au/housing/renting/help-to-find-a-rental-home/bond-loan/check-eligibility",
-    "income_confidence": "high"
+    "income_confidence": "high",
+    "gender": "any"
    },
    "source_url": "https://www.qld.gov.au/housing/renting/assistance/bond-loans",
    "source_snippet": "A Bond Loan is an interest-free loan to cover your rental bond when moving into private rental accommodation.",
@@ -3762,7 +3819,8 @@
     "student_required": false,
     "admin_areas": [
      "New South Wales"
-    ]
+    ],
+    "gender": "any"
    },
    "source_url": "https://www.nsw.gov.au/departments-and-agencies/homes-nsw/social-housing-resources/factsheets-for-tenants/rentstart-bond-loan-factsheet-for-clients",
    "source_snippet": "The NSW Government offers an interest-free loan to cover part or all of the rental bond for eligible clients.",
@@ -3818,7 +3876,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.energy.gov.au/energy-bill-relief-fund",
    "source_snippet": "Australian households and eligible small businesses with electricity bills have received up to $150 in energy bill rebates from 1 July 2025 to the end of 2025. The Energy Bill Relief Fund ended on 31 December 2025.",
@@ -3881,7 +3940,8 @@
     "student_required": false,
     "admin_areas": [
      "New South Wales"
-    ]
+    ],
+    "gender": "any"
    },
    "source_url": "https://www.service.nsw.gov.au/transaction/apply-for-the-low-income-household-rebate-retail-customers",
    "source_snippet": "The NSW Low Income Household Rebate helps eligible concession cardholders pay their electricity bills. If you're a retail (on-market) customer, you need to contact your electricity retailer to apply.",
@@ -3949,7 +4009,8 @@
     "student_required": false,
     "admin_areas": [
      "New South Wales"
-    ]
+    ],
+    "gender": "any"
    },
    "source_url": "https://www.service.nsw.gov.au/",
    "source_snippet": "EAPA helps people experiencing a short-term financial crisis or emergency to pay their electricity or natural gas bills through $50 vouchers.",
@@ -4012,7 +4073,8 @@
     "student_required": false,
     "admin_areas": [
      "Victoria"
-    ]
+    ],
+    "gender": "any"
    },
    "source_url": "https://www.energy.vic.gov.au/",
    "source_snippet": "Eligible concession card holders living in Victoria can receive a 17.5% concession on their electricity bills.",
@@ -4029,7 +4091,7 @@
    "category": "energy",
    "benefit_type": "discount",
    "amount_min": null,
-   "amount_max": null,
+   "amount_max": 386,
    "amount_currency": "AUD",
    "amount_period": "annual",
    "amount_note": "Fixed annual rebate (around $386 per year, indexed) deducted from electricity bills for Queenslanders holding an eligible concession card; apply via your electricity retailer.",
@@ -4075,7 +4137,8 @@
     "student_required": false,
     "admin_areas": [
      "Queensland"
-    ]
+    ],
+    "gender": "any"
    },
    "source_url": "https://www.qld.gov.au/housing/home-energy-savings/energy-and-utility-rebates",
    "source_snippet": "Contact your electricity retailer... you will need copies of your bills and concession card handy so you can verify your eligibility. Rebates are automatically deducted from your bill.",
@@ -4136,7 +4199,8 @@
     ],
     "income_test": "none",
     "income_source_url": "https://www.sa.gov.au/topics/care-and-support/concessions/household-concessions/cost-of-living-concessions",
-    "income_confidence": "medium"
+    "income_confidence": "medium",
+    "gender": "any"
    },
    "source_url": "https://www.sa.gov.au/",
    "source_snippet": "The Cost of Living Concession helps South Australians on low or fixed incomes with everyday living expenses.",
@@ -4200,7 +4264,8 @@
     "student_required": false,
     "admin_areas": [
      "Australian Capital Territory"
-    ]
+    ],
+    "gender": "any"
    },
    "source_url": "https://www.revenue.act.gov.au/",
    "source_snippet": "The Utilities Concession provides eligible ACT residents with help on their electricity, gas, water and sewerage costs.",
@@ -4263,7 +4328,8 @@
     "student_required": false,
     "admin_areas": [
      "Tasmania"
-    ]
+    ],
+    "gender": "any"
    },
    "source_url": "https://www.concessions.tas.gov.au/",
    "source_snippet": "The Annual Electricity Concession provides a daily discount on electricity accounts for eligible concession card holders.",
@@ -4326,7 +4392,8 @@
     "student_required": false,
     "admin_areas": [
      "Western Australia"
-    ]
+    ],
+    "gender": "any"
    },
    "source_url": "https://www.wa.gov.au/",
    "source_snippet": "The Energy Concession Extension Scheme provides electricity concessions to eligible Western Australian concession card holders, with additional rebates for dependent children.",
@@ -4389,7 +4456,8 @@
     "student_required": false,
     "admin_areas": [
      "New South Wales"
-    ]
+    ],
+    "gender": "any"
    },
    "source_url": "https://transportnsw.info/tickets-opal/opal/fares-payments/concessions",
    "source_snippet": "Eligible concession card holders pay half the adult fare, and Gold Senior/Pensioner Opal card holders travel for no more than $2.50 a day on the Opal network.",
@@ -4451,7 +4519,8 @@
     "student_required": false,
     "admin_areas": [
      "Victoria"
-    ]
+    ],
+    "gender": "any"
    },
    "source_url": "https://www.ptv.vic.gov.au/tickets/fares/concession/",
    "source_snippet": "Concession myki fares are around half the full fare for eligible concession card holders in Victoria.",
@@ -4513,7 +4582,8 @@
     "student_required": false,
     "admin_areas": [
      "Queensland"
-    ]
+    ],
+    "gender": "any"
    },
    "source_url": "https://translink.com.au/",
    "source_snippet": "Concession fares are available to eligible pensioners, seniors, students and concession card holders on Translink services.",
@@ -4576,7 +4646,8 @@
     "student_required": false,
     "admin_areas": [
      "New South Wales"
-    ]
+    ],
+    "gender": "any"
    },
    "source_url": "https://www.service.nsw.gov.au/",
    "source_snippet": "The Taxi Transport Subsidy Scheme subsidises taxi travel for people with a severe permanent disability who cannot use public transport.",
@@ -4646,7 +4717,8 @@
     "student_required": false,
     "admin_areas": [
      "New South Wales"
-    ]
+    ],
+    "gender": "any"
    },
    "source_url": "https://www.service.nsw.gov.au/guidelines/active-and-creative-kids-voucher",
    "source_snippet": "The Active and Creative Kids Voucher program aims to support certain families with school-aged children by providing two $50 vouchers per calendar year.",
@@ -4712,7 +4784,8 @@
     "student_required": false,
     "admin_areas": [
      "Victoria"
-    ]
+    ],
+    "gender": "any"
    },
    "source_url": "https://www.vic.gov.au/camps-sports-and-excursions-fund",
    "source_snippet": "CSEF provides payments to assist eligible families to cover the costs of school trips, camps and sporting activities.",
@@ -4778,7 +4851,8 @@
     "student_required": false,
     "admin_areas": [
      "Queensland"
-    ]
+    ],
+    "gender": "any"
    },
    "source_url": "https://www.qld.gov.au/recreation/sports/funding/fairplay",
    "source_snippet": "FairPlay vouchers support eligible Queensland children and young people to participate in sport and active recreation.",
@@ -4849,7 +4923,9 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any",
+    "rule_source": "geography_unknown"
    },
    "source_url": "https://nils.com.au/",
    "source_snippet": "NILs let you borrow money for essential goods, like white goods or car repairs. You pay no interest, and you only repay what you borrow.",
@@ -4905,7 +4981,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://ndh.org.au/",
    "source_snippet": "The National Debt Helpline is a not-for-profit service that helps people tackle their debt problems with free, independent and confidential advice.",
@@ -4966,7 +5043,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.nationallegalaid.org/",
    "source_snippet": "Legal Aid commissions provide free legal information and advice to all, and legal representation to people who meet means and merits tests.",
@@ -5044,7 +5122,8 @@
     ],
     "income_test": "numeric",
     "income_source_url": "https://www.nsw.gov.au/departments-and-agencies/homes-nsw/social-housing-resources/social-housing-eligibility-and-allocations-policy-supplement/eligibility-for-social-housing-income",
-    "income_confidence": "medium"
+    "income_confidence": "medium",
+    "gender": "any"
    },
    "source_url": "https://www.nsw.gov.au/housing-and-construction/homes-nsw/social-housing",
    "source_snippet": "Social housing is secure and affordable rental housing for people on low incomes with housing needs, with rent set as a proportion of household income.",
@@ -5112,7 +5191,8 @@
      "Tasmania",
      "Australian Capital Territory",
      "Northern Territory"
-    ]
+    ],
+    "gender": "any"
    },
    "source_url": "https://www.seniorscard.nsw.gov.au/",
    "source_snippet": "The NSW Seniors Card gives permanent residents aged 60 or over access to transport concessions and discounts from thousands of businesses.",
@@ -5175,7 +5255,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": true,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.servicesaustralia.gov.au/pensioner-education-supplement",
    "source_snippet": "A regular extra payment to help with study costs if you get certain income support payments.",
@@ -5238,7 +5319,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.servicesaustralia.gov.au/assistance-for-isolated-children",
    "source_snippet": "Help for families with children who cannot go to an appropriate state school because they live too far away or have special needs.",
@@ -5295,7 +5377,8 @@
     "admin_areas": [],
     "income_test": "unpublished",
     "income_source_url": "https://www.servicesaustralia.gov.au/work-bonus",
-    "income_confidence": "high"
+    "income_confidence": "high",
+    "gender": "any"
    },
    "source_url": "https://www.servicesaustralia.gov.au/work-bonus",
    "source_snippet": "The Work Bonus helps you keep more of your pension if you are of Age Pension age and earn income from work.",
@@ -5357,7 +5440,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.unitingvictas.org.au/community-services/family-and-relationship-services/escaping-violence-payment/",
    "source_snippet": "The Escaping Violence Payment provides financial assistance of up to $5,000 (including up to $1,500 in cash) to people escaping intimate partner violence.",

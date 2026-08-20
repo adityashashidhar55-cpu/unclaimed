@@ -61,7 +61,8 @@
     "admin_areas": [],
     "income_test": "numeric",
     "income_source_url": "https://www.moei.gov.ae/en/services/housing-assistance-request",
-    "income_confidence": "high"
+    "income_confidence": "high",
+    "gender": "any"
    },
    "source_url": "https://u.ae/en/information-and-services/housing/housing-authorities-and-programmes",
    "source_snippet": "Sheikh Zayed Housing Programme (SZHP), established in 1999, provides interest-free loans repayable over a 25-year period to citizens with low incomes.",
@@ -125,7 +126,8 @@
     "student_required": false,
     "admin_areas": [
      "Abu Dhabi"
-    ]
+    ],
+    "gender": "any"
    },
    "source_url": "https://u.ae/en/information-and-services/housing/housing-authorities-and-programmes",
    "source_snippet": "Abu Dhabi Housing Authority (ADHA) was created to provide suitable housing for Abu Dhabi citizens, manage housing loans' programme and coordinate all housing-related projects.",
@@ -188,7 +190,8 @@
     "student_required": false,
     "admin_areas": [
      "Dubai"
-    ]
+    ],
+    "gender": "any"
    },
    "source_url": "https://u.ae/en/information-and-services/housing/housing-authorities-and-programmes",
    "source_snippet": "Mohammed Bin Rashid Housing Establishment (MBRHE) was established in 2007. It aims at providing appropriate housing to the nationals of the emirate of Dubai.",
@@ -229,7 +232,8 @@
     "student_required": false,
     "admin_areas": [
      "Abu Dhabi"
-    ]
+    ],
+    "gender": "any"
    },
    "source_url": "https://u.ae/en/information-and-services/housing/housing-authorities-and-programmes",
    "source_snippet": "Iskan Abu Dhabi is a one-stop service centre for citizens eligible for housing benefits in the emirate of Abu Dhabi.",
@@ -270,7 +274,8 @@
     "student_required": false,
     "admin_areas": [
      "Sharjah"
-    ]
+    ],
+    "gender": "any"
    },
    "source_url": "https://sharjah.ae",
    "source_snippet": "Sharjah's Directorate of Housing administers emirate-level housing assistance for Emirati citizens, alongside the federal Sheikh Zayed Housing Programme.",
@@ -311,7 +316,8 @@
     "student_required": false,
     "admin_areas": [
      "Ras Al Khaimah"
-    ]
+    ],
+    "gender": "any"
    },
    "source_url": "https://www.rak.ae",
    "source_snippet": "The Sheikh Saud Housing Programme provides housing support to nationals of Ras Al Khaimah, complementing federal housing assistance.",
@@ -352,7 +358,8 @@
     "student_required": false,
     "admin_areas": [
      "Abu Dhabi"
-    ]
+    ],
+    "gender": "any"
    },
    "source_url": "https://www.adha.gov.ae",
    "source_snippet": "ADHA housing benefit packages include housing loan reductions for citizens under the Emirati Family Growth programme.",
@@ -399,7 +406,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://nafis.gov.ae",
    "source_snippet": "Salary support: monthly top-up to the Emirati employee's salary for a defined period (commonly five years).",
@@ -441,7 +449,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://nafis.gov.ae",
    "source_snippet": "Emiratis earning below AED 50,000 per month and working in the private sector can now receive AED 800 per child monthly, with no upper limit on children.",
@@ -483,7 +492,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://nafis.gov.ae",
    "source_snippet": "An unemployed Emirati receives AED 7,000 per month; their unemployed spouse receives AED 4,500; eligible children receive up to AED 3,000.",
@@ -524,7 +534,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://nafis.gov.ae",
    "source_snippet": "GPSSA pension contribution: federal contribution to the General Pension and Social Security Authority scheme, equivalent to the employer contribution.",
@@ -567,7 +578,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://nafis.gov.ae",
    "source_snippet": "On-the-job training support and apprenticeship support for young Emiratis and recent graduates.",
@@ -593,7 +605,13 @@
    "application_channel": "via_employer",
    "deadline_type": "rolling",
    "deadline_note": null,
-   "procedure_steps": [],
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "No application needed — this is paid automatically to everyone who qualifies. Check that the authority holds your current address and bank details; a missing detail is the usual reason an automatic payment does not arrive.",
+     "url": "https://u.ae/en/information-and-services/jobs/working-in-uae-government-sector/pensions-and-social-security-for-uae-citizens"
+    }
+   ],
    "documents_required": [],
    "eligibility": {
     "statuses": [
@@ -609,7 +627,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://u.ae/en/information-and-services/jobs/working-in-uae-government-sector/pensions-and-social-security-for-uae-citizens",
    "source_snippet": "An Emirati national is entitled to a pension if he/she as an insured person reaches retirement age of 60 years and completes an insured service period of 15 years.",
@@ -648,7 +667,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.gpssa.gov.ae",
    "source_snippet": "GPSSA manages disability pensions and survivor benefits distributed to eligible family members of a deceased insured member or pensioner.",
@@ -674,7 +694,13 @@
    "application_channel": "via_employer",
    "deadline_type": "rolling",
    "deadline_note": null,
-   "procedure_steps": [],
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "No application needed — this is paid automatically to everyone who qualifies. Check that the authority holds your current address and bank details; a missing detail is the usual reason an automatic payment does not arrive.",
+     "url": "https://www.pension.gov.ae"
+    }
+   ],
    "documents_required": [],
    "eligibility": {
     "statuses": [
@@ -692,7 +718,8 @@
     "student_required": false,
     "admin_areas": [
      "Abu Dhabi"
-    ]
+    ],
+    "gender": "any"
    },
    "source_url": "https://www.pension.gov.ae",
    "source_snippet": "ADPF covers UAE nationals working in Abu Dhabi under a separate emirate-level pension system equivalent to the federal GPSSA scheme.",
@@ -761,7 +788,8 @@
     "admin_areas": [],
     "income_test": "unpublished",
     "income_source_url": "https://www.moce.gov.ae/en/w/social-welfare",
-    "income_confidence": "high"
+    "income_confidence": "high",
+    "gender": "any"
    },
    "source_url": "https://u.ae/en/information-and-services/social-affairs/social-welfare/social-welfare-programmes",
    "source_snippet": "The Social Welfare Programme is a federal initiative implemented by Ministry of Community Empowerment (MoCE). It provides an integrated social safety net to Emirati families.",
@@ -804,7 +832,8 @@
     "admin_areas": [],
     "income_test": "numeric",
     "income_source_url": "https://u.ae/en/information-and-services/social-affairs/social-welfare/social-welfare-programmes",
-    "income_confidence": "high"
+    "income_confidence": "high",
+    "gender": "any"
    },
    "source_url": "https://u.ae/en/information-and-services/social-affairs/social-welfare/social-welfare-programmes",
    "source_snippet": "The UAE's social welfare framework offers a Supplementary Allowance including housing and inflation-related (fuel, food) components administered by the Ministry of Community Empowerment.",
@@ -846,7 +875,8 @@
     "student_required": false,
     "admin_areas": [
      "Abu Dhabi"
-    ]
+    ],
+    "gender": "any"
    },
    "source_url": "https://u.ae/en/information-and-services/social-affairs/social-welfare/social-welfare-programmes",
    "source_snippet": "Apply for financial assistance if your monthly income is less than the approved support line in Abu Dhabi - The Abu Dhabi Social Support Programme.",
@@ -887,7 +917,8 @@
     "student_required": false,
     "admin_areas": [
      "Dubai"
-    ]
+    ],
+    "gender": "any"
    },
    "source_url": "https://u.ae/en/information-and-services/social-affairs/social-welfare/social-welfare-programmes",
    "source_snippet": "Apply for periodic social assistance - for nationals from Dubai - Community Development Authority.",
@@ -928,7 +959,8 @@
     "student_required": false,
     "admin_areas": [
      "Sharjah"
-    ]
+    ],
+    "gender": "any"
    },
    "source_url": "https://u.ae/en/information-and-services/social-affairs/social-welfare/social-welfare-programmes",
    "source_snippet": "Apply for financial assistance if your income is equal to or less than the assistance provided by the Ministry of Community Development (for nationals of Sharjah only) - Social Services Department in Sharjah.",
@@ -994,7 +1026,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.moce.gov.ae",
    "source_snippet": "Under Cabinet Resolution No. (5) of 2017, eligible Emirati couples can receive a one-time marriage grant of Dh70,000.",
@@ -1035,7 +1068,8 @@
     "student_required": false,
     "admin_areas": [
      "Abu Dhabi"
-    ]
+    ],
+    "gender": "any"
    },
    "source_url": "https://www.addcd.gov.ae",
    "source_snippet": "The Medeem model supports new Emirati families in Abu Dhabi with marriage support and family development services.",
@@ -1061,7 +1095,13 @@
    "application_channel": "automatic",
    "deadline_type": "rolling",
    "deadline_note": null,
-   "procedure_steps": [],
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "No application needed — this is paid automatically to everyone who qualifies. Check that the authority holds your current address and bank details; a missing detail is the usual reason an automatic payment does not arrive.",
+     "url": "https://www.doh.gov.ae"
+    }
+   ],
    "documents_required": [],
    "eligibility": {
     "statuses": [],
@@ -1076,7 +1116,8 @@
     "student_required": false,
     "admin_areas": [
      "Abu Dhabi"
-    ]
+    ],
+    "gender": "any"
    },
    "source_url": "https://www.doh.gov.ae",
    "source_snippet": "Thiqa is a fully government-funded insurance programme for UAE nationals only, administered by Daman since 2008. Emiratis access Thiqa free.",
@@ -1121,7 +1162,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.mohap.gov.ae",
    "source_snippet": "UAE nationals receive free or heavily subsidised care at MOHAP public facilities with a health card.",
@@ -1147,7 +1189,13 @@
    "application_channel": "automatic",
    "deadline_type": "rolling",
    "deadline_note": null,
-   "procedure_steps": [],
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "No application needed — this is paid automatically to everyone who qualifies. Check that the authority holds your current address and bank details; a missing detail is the usual reason an automatic payment does not arrive.",
+     "url": "https://u.ae/en/information-and-services/education"
+    }
+   ],
    "documents_required": [],
    "eligibility": {
     "statuses": [],
@@ -1160,7 +1208,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://u.ae/en/information-and-services/education",
    "source_snippet": "Education in government schools and federal higher education institutions is free for UAE nationals.",
@@ -1201,7 +1250,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": true,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://u.ae/en/information-and-services/education/higher-education/joining-higher-education-institutions-/scholarships-for-uae-nationals",
    "source_snippet": "Ministry Of Higher Education & Scientific Research (MoHESR) provides scholarships to UAE nationals for graduate and undergraduate programmes to study abroad in one of the recognised universities.",
@@ -1242,7 +1292,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": true,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://u.ae/en/information-and-services/education/higher-education/joining-higher-education-institutions-/scholarships-for-uae-nationals",
    "source_snippet": "Scholarship Office at Ministry of Presidential Affairs selects outstanding Emirati students to travel abroad to pursue education at prestigious international universities.",
@@ -1283,7 +1334,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": true,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://u.ae/en/information-and-services/education/higher-education/joining-higher-education-institutions-/scholarships-for-uae-nationals",
    "source_snippet": "Through its ICT Fund, Telecommunications and Digital Government Regulatory Authority offers Betha programme for undergraduate and graduate students wishing to study ICT-related subjects.",
@@ -1324,7 +1376,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": true,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://u.ae/en/information-and-services/education/higher-education/joining-higher-education-institutions-/scholarships-for-uae-nationals",
    "source_snippet": "Under the Masar programme, Ministry of Finance (MoF) offers college scholarships to assist UAE high-school graduates in completing their studies in finance, accounting and other disciplines.",
@@ -1367,7 +1420,8 @@
     "student_required": true,
     "admin_areas": [
      "Abu Dhabi"
-    ]
+    ],
+    "gender": "any"
    },
    "source_url": "https://u.ae/en/information-and-services/education/higher-education/joining-higher-education-institutions-/scholarships-for-uae-nationals",
    "source_snippet": "Department of Education and Knowledge provides scholarships to distinguished UAE students by partnering with organisations throughout the UAE.",
@@ -1410,7 +1464,8 @@
     "student_required": true,
     "admin_areas": [
      "Dubai"
-    ]
+    ],
+    "gender": "any"
    },
    "source_url": "https://u.ae/en/information-and-services/education/higher-education/joining-higher-education-institutions-/scholarships-for-uae-nationals",
    "source_snippet": "Hamdan bin Mohammed Scholarship Program - Dubai Government.",
@@ -1453,7 +1508,8 @@
     "student_required": true,
     "admin_areas": [
      "Ras Al Khaimah"
-    ]
+    ],
+    "gender": "any"
    },
    "source_url": "https://www.alqasimifoundation.com",
    "source_snippet": "Candidates must be UAE citizens from Ras Al Khaimah (or children of a UAE national mother residing there), demonstrating exceptional academic records.",
@@ -1479,7 +1535,13 @@
    "application_channel": "automatic",
    "deadline_type": "rolling",
    "deadline_note": null,
-   "procedure_steps": [],
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "No application needed — this is paid automatically to everyone who qualifies. Check that the authority holds your current address and bank details; a missing detail is the usual reason an automatic payment does not arrive.",
+     "url": "https://u.ae/en/information-and-services/defence-and-armed-forces/national-service"
+    }
+   ],
    "documents_required": [],
    "eligibility": {
     "statuses": [],
@@ -1492,7 +1554,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://u.ae/en/information-and-services/defence-and-armed-forces/national-service",
    "source_snippet": "Employees called for national service keep their employment rights, with service periods counting toward pension and benefits.",
@@ -1533,7 +1596,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.moccae.gov.ae",
    "source_snippet": "MOCCAE supports licensed Emirati fishermen through registration services, equipment support and assistance programmes.",
@@ -1576,7 +1640,8 @@
     "student_required": false,
     "admin_areas": [
      "Abu Dhabi"
-    ]
+    ],
+    "gender": "any"
    },
    "source_url": "https://www.adafsa.gov.ae",
    "source_snippet": "ADAFSA provides subsidised inputs, veterinary care and technical extension services to farms in the Emirate of Abu Dhabi.",
@@ -1625,7 +1690,8 @@
     "student_required": false,
     "admin_areas": [
      "Abu Dhabi"
-    ]
+    ],
+    "gender": "any"
    },
    "source_url": "https://www.khalifafund.ae",
    "source_snippet": "Khalifa Fund: AED 100,000-5,000,000 loans at 0% interest for UAE nationals.",
@@ -1668,7 +1734,8 @@
     "student_required": false,
     "admin_areas": [
      "Dubai"
-    ]
+    ],
+    "gender": "any"
    },
    "source_url": "https://sme.ae",
    "source_snippet": "Dubai SME, formally the Mohammed Bin Rashid Establishment for SME Development under Dubai's Department of Economy and Tourism, runs the Dubai Startup Hub for mentorship, incubation, and networking.",
@@ -1711,7 +1778,8 @@
     "student_required": false,
     "admin_areas": [
      "Sharjah"
-    ]
+    ],
+    "gender": "any"
    },
    "source_url": "https://sheraa.ae",
    "source_snippet": "Sheraa (Sharjah Entrepreneurship Centre): Incubation, seed funding, and networking for early-stage entrepreneurs. Open to UAE residents of all nationalities.",
@@ -1752,7 +1820,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.edb.gov.ae",
    "source_snippet": "Emirates Development Bank provides SME financing solutions for UAE-registered businesses in priority economic sectors.",
@@ -1793,7 +1862,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://mbrif.ae",
    "source_snippet": "MBRIF supports innovative entrepreneurs from around the world who wish to establish economic activities in the UAE, offering financing solutions and an accelerator programme.",
@@ -1836,7 +1906,8 @@
     "student_required": false,
     "admin_areas": [
      "Dubai"
-    ]
+    ],
+    "gender": "any"
    },
    "source_url": "https://www.dubaifuture.ae",
    "source_snippet": "Dubai Future Accelerators connects startups with Government of Dubai entities to pilot solutions, with no equity taken.",
@@ -1877,7 +1948,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://tax.gov.ae",
    "source_snippet": "Small Business Relief allows eligible businesses with revenue at or below AED 3 million to elect no taxable income for corporate tax purposes.",
@@ -1903,7 +1975,13 @@
    "application_channel": "online",
    "deadline_type": "rolling",
    "deadline_note": null,
-   "procedure_steps": [],
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "No application needed — this is paid automatically to everyone who qualifies. Check that the authority holds your current address and bank details; a missing detail is the usual reason an automatic payment does not arrive.",
+     "url": "https://tax.gov.ae"
+    }
+   ],
    "documents_required": [],
    "eligibility": {
     "statuses": [
@@ -1918,7 +1996,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://tax.gov.ae",
    "source_snippet": "A Qualifying Free Zone Person is subject to 0% corporate tax on qualifying income under the UAE corporate tax regime.",
@@ -1944,7 +2023,13 @@
    "application_channel": "automatic",
    "deadline_type": "none",
    "deadline_note": null,
-   "procedure_steps": [],
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "No application needed — this is paid automatically to everyone who qualifies. Check that the authority holds your current address and bank details; a missing detail is the usual reason an automatic payment does not arrive.",
+     "url": "https://tax.gov.ae"
+    }
+   ],
    "documents_required": [],
    "eligibility": {
     "statuses": [],
@@ -1957,7 +2042,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://tax.gov.ae",
    "source_snippet": "The UAE does not levy personal income tax on individuals' employment or personal income.",
@@ -2011,7 +2097,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://u.ae/en/information-and-services/visa-and-emirates-id/residence-visas/golden-visa",
    "source_snippet": "The Golden visa is a long-term residence visa which enables foreign talents to live, work or study in the UAE while enjoying exclusive benefits.",
@@ -2052,7 +2139,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://u.ae/en/information-and-services/visa-and-emirates-id/residence-visas",
    "source_snippet": "The Green residence for freelancing/self-employment is a 5-year visa that does not require a sponsor or employer.",
@@ -2095,7 +2183,8 @@
     "student_required": false,
     "admin_areas": [
      "Dubai"
-    ]
+    ],
+    "gender": "any"
    },
    "source_url": "https://www.retireindubai.com",
    "source_snippet": "The Retire in Dubai programme offers a 5-year renewable residency visa to retirees aged 55 and over who meet financial criteria.",
@@ -2164,7 +2253,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.iloe.ae",
    "source_snippet": "The scheme pays eligible workers up to three months of compensation (60% of basic salary, capped).",
@@ -2190,7 +2280,13 @@
    "application_channel": "via_employer",
    "deadline_type": "rolling",
    "deadline_note": null,
-   "procedure_steps": [],
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "No application needed — this is paid automatically to everyone who qualifies. Check that the authority holds your current address and bank details; a missing detail is the usual reason an automatic payment does not arrive.",
+     "url": "https://u.ae/en/information-and-services/jobs/employment-in-the-private-sector/end-of-service-benefits"
+    }
+   ],
    "documents_required": [],
    "eligibility": {
     "statuses": [
@@ -2205,7 +2301,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://u.ae/en/information-and-services/jobs/employment-in-the-private-sector/end-of-service-benefits",
    "source_snippet": "21 days' basic salary for each year of service for the first five years; 30 days' basic salary for each subsequent year of service.",
@@ -2231,7 +2328,13 @@
    "application_channel": "via_employer",
    "deadline_type": "rolling",
    "deadline_note": null,
-   "procedure_steps": [],
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "No application needed — this is paid automatically to everyone who qualifies. Check that the authority holds your current address and bank details; a missing detail is the usual reason an automatic payment does not arrive.",
+     "url": "https://u.ae/en/information-and-services/jobs/employment-in-the-private-sector/types-of-leaves"
+    }
+   ],
    "documents_required": [],
    "eligibility": {
     "statuses": [
@@ -2247,7 +2350,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "female"
    },
    "source_url": "https://u.ae/en/information-and-services/jobs/employment-in-the-private-sector/types-of-leaves",
    "source_snippet": "Female employees in the private sector are entitled to 60 calendar days of maternity leave - 45 days at full pay and 15 days at half pay.",
@@ -2273,7 +2377,13 @@
    "application_channel": "via_employer",
    "deadline_type": "rolling",
    "deadline_note": null,
-   "procedure_steps": [],
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "No application needed — this is paid automatically to everyone who qualifies. Check that the authority holds your current address and bank details; a missing detail is the usual reason an automatic payment does not arrive.",
+     "url": "https://u.ae/en/information-and-services/jobs/employment-in-the-private-sector/types-of-leaves"
+    }
+   ],
    "documents_required": [],
    "eligibility": {
     "statuses": [
@@ -2289,7 +2399,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://u.ae/en/information-and-services/jobs/employment-in-the-private-sector/types-of-leaves",
    "source_snippet": "Both parents are entitled to 5 working days of paid parental leave within 6 months of the child's birth.",
@@ -2315,7 +2426,13 @@
    "application_channel": "via_employer",
    "deadline_type": "rolling",
    "deadline_note": null,
-   "procedure_steps": [],
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "No application needed — this is paid automatically to everyone who qualifies. Check that the authority holds your current address and bank details; a missing detail is the usual reason an automatic payment does not arrive.",
+     "url": "https://u.ae/en/information-and-services/jobs/employment-in-the-private-sector/types-of-leaves"
+    }
+   ],
    "documents_required": [],
    "eligibility": {
     "statuses": [
@@ -2330,7 +2447,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://u.ae/en/information-and-services/jobs/employment-in-the-private-sector/types-of-leaves",
    "source_snippet": "Employees are entitled to up to 90 days of sick leave per year: 15 days with full pay, 30 days with half pay and 45 days without pay.",
@@ -2356,7 +2474,13 @@
    "application_channel": "via_employer",
    "deadline_type": "rolling",
    "deadline_note": null,
-   "procedure_steps": [],
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "No application needed — this is paid automatically to everyone who qualifies. Check that the authority holds your current address and bank details; a missing detail is the usual reason an automatic payment does not arrive.",
+     "url": "https://u.ae/en/information-and-services/jobs/employment-in-the-private-sector/types-of-leaves"
+    }
+   ],
    "documents_required": [],
    "eligibility": {
     "statuses": [
@@ -2371,7 +2495,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://u.ae/en/information-and-services/jobs/employment-in-the-private-sector/types-of-leaves",
    "source_snippet": "Employees are entitled to annual leave of 30 calendar days for each year of service.",
@@ -2397,7 +2522,13 @@
    "application_channel": "via_employer",
    "deadline_type": "rolling",
    "deadline_note": null,
-   "procedure_steps": [],
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "No application needed — this is paid automatically to everyone who qualifies. Check that the authority holds your current address and bank details; a missing detail is the usual reason an automatic payment does not arrive.",
+     "url": "https://www.mohre.gov.ae"
+    }
+   ],
    "documents_required": [],
    "eligibility": {
     "statuses": [
@@ -2412,7 +2543,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.mohre.gov.ae",
    "source_snippet": "The Wage Protection System ensures employees' wages are paid in full and on time through monitored electronic transfers.",
@@ -2460,7 +2592,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.mohre.gov.ae",
    "source_snippet": "Workers can file labour complaints free of charge with MOHRE for mediation and, where needed, referral to the labour courts.",
@@ -2501,7 +2634,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://u.ae/en/information-and-services/jobs/employment-of-domestic-workers",
    "source_snippet": "Federal law on domestic workers guarantees rest days, annual leave, sick leave and end-of-service benefits for household workers.",
@@ -2527,7 +2661,13 @@
    "application_channel": "via_employer",
    "deadline_type": "rolling",
    "deadline_note": null,
-   "procedure_steps": [],
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "No application needed — this is paid automatically to everyone who qualifies. Check that the authority holds your current address and bank details; a missing detail is the usual reason an automatic payment does not arrive.",
+     "url": "https://www.dha.gov.ae"
+    }
+   ],
    "documents_required": [],
    "eligibility": {
     "statuses": [
@@ -2544,7 +2684,8 @@
     "student_required": false,
     "admin_areas": [
      "Dubai"
-    ]
+    ],
+    "gender": "any"
    },
    "source_url": "https://www.dha.gov.ae",
    "source_snippet": "Health insurance is mandatory in Dubai: employers must cover employees, and the Essential Benefits Plan sets the minimum cover for lower-income workers.",
@@ -2570,7 +2711,13 @@
    "application_channel": "via_employer",
    "deadline_type": "rolling",
    "deadline_note": null,
-   "procedure_steps": [],
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "No application needed — this is paid automatically to everyone who qualifies. Check that the authority holds your current address and bank details; a missing detail is the usual reason an automatic payment does not arrive.",
+     "url": "https://www.doh.gov.ae"
+    }
+   ],
    "documents_required": [],
    "eligibility": {
     "statuses": [
@@ -2587,7 +2734,8 @@
     "student_required": false,
     "admin_areas": [
      "Abu Dhabi"
-    ]
+    ],
+    "gender": "any"
    },
    "source_url": "https://www.doh.gov.ae",
    "source_snippet": "Mandatory cover means employers must provide a minimum-standard plan to every employee in Abu Dhabi.",
@@ -2642,7 +2790,8 @@
     "student_required": false,
     "admin_areas": [
      "Dubai"
-    ]
+    ],
+    "gender": "any"
    },
    "source_url": "https://www.rta.ae",
    "source_snippet": "Concession Blue cards exist for students, senior citizens, and people of determination with 50% off all fares; People of Determination travel free.",
@@ -2683,7 +2832,8 @@
     "student_required": false,
     "admin_areas": [
      "Abu Dhabi"
-    ]
+    ],
+    "gender": "any"
    },
    "source_url": "https://www.dmt.gov.ae",
    "source_snippet": "Abu Dhabi's transport regulator issues concession Hafilat cards providing free or discounted bus travel to seniors, People of Determination and students.",
@@ -2735,7 +2885,8 @@
     "student_required": false,
     "admin_areas": [
      "Dubai"
-    ]
+    ],
+    "gender": "any"
    },
    "source_url": "https://www.salik.ae",
    "source_snippet": "People of Determination in Dubai can register one vehicle for exemption from Salik toll gates.",
@@ -2776,7 +2927,8 @@
     "student_required": false,
     "admin_areas": [
      "Dubai"
-    ]
+    ],
+    "gender": "any"
    },
    "source_url": "https://www.rta.ae",
    "source_snippet": "RTA Dubai issues free parking permits to People of Determination for use of designated public parking spaces.",
@@ -2817,7 +2969,8 @@
     "student_required": false,
     "admin_areas": [
      "Dubai"
-    ]
+    ],
+    "gender": "any"
    },
    "source_url": "https://www.dewa.gov.ae",
    "source_snippet": "Shams Dubai allows customers to install photovoltaic panels and connect them to the DEWA grid, offsetting their electricity bills.",
@@ -2843,7 +2996,13 @@
    "application_channel": "automatic",
    "deadline_type": "rolling",
    "deadline_note": null,
-   "procedure_steps": [],
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "No application needed — this is paid automatically to everyone who qualifies. Check that the authority holds your current address and bank details; a missing detail is the usual reason an automatic payment does not arrive.",
+     "url": "https://www.etihadwe.ae"
+    }
+   ],
    "documents_required": [],
    "eligibility": {
     "statuses": [],
@@ -2856,7 +3015,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.etihadwe.ae",
    "source_snippet": "EtihadWE applies subsidised utility tariff categories for UAE nationals' residential properties in the northern emirates.",
@@ -2882,7 +3042,13 @@
    "application_channel": "automatic",
    "deadline_type": "rolling",
    "deadline_note": null,
-   "procedure_steps": [],
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "No application needed — this is paid automatically to everyone who qualifies. Check that the authority holds your current address and bank details; a missing detail is the usual reason an automatic payment does not arrive.",
+     "url": "https://www.addc.ae"
+    }
+   ],
    "documents_required": [],
    "eligibility": {
     "statuses": [],
@@ -2897,7 +3063,8 @@
     "student_required": false,
     "admin_areas": [
      "Abu Dhabi"
-    ]
+    ],
+    "gender": "any"
    },
    "source_url": "https://www.addc.ae",
    "source_snippet": "UAE nationals in Abu Dhabi are billed on subsidised residential electricity and water tariff slabs.",
@@ -2938,7 +3105,8 @@
     "student_required": false,
     "admin_areas": [
      "Dubai"
-    ]
+    ],
+    "gender": "any"
    },
    "source_url": "https://esaad.dubaipolice.gov.ae",
    "source_snippet": "The Esaad card is a loyalty programme launched in March 2017 by the Dubai Police; cardholders are entitled to discounts and benefits.",
@@ -2979,7 +3147,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.fazaa.ae",
    "source_snippet": "Fazaa provides discounts and benefits to Ministry of Interior employees and eligible member groups across the UAE.",
@@ -3020,7 +3189,8 @@
     "student_required": false,
     "admin_areas": [
      "Dubai"
-    ]
+    ],
+    "gender": "any"
    },
    "source_url": "https://www.cda.gov.ae",
    "source_snippet": "CDA's Thukher programme offers Dubai's senior citizens a card with discounts and dedicated services.",
@@ -3070,7 +3240,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://u.ae/en/information-and-services/social-affairs/people-with-special-needs",
    "source_snippet": "The People of Determination card entitles holders to a package of discounts and service privileges across the UAE.",
@@ -3109,7 +3280,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.emiratesrc.ae",
    "source_snippet": "Emirates Red Crescent provides financial assistance and relief to individuals and families in hardship inside the UAE.",
@@ -3153,7 +3325,8 @@
     ],
     "income_test": "unpublished",
     "income_source_url": "https://daralber.ae/en/home",
-    "income_confidence": "medium"
+    "income_confidence": "medium",
+    "gender": "any"
    },
    "source_url": "https://www.daralber.ae",
    "source_snippet": "Dar Al Ber Society assists low-income families and residents in Dubai with financial and in-kind aid.",
@@ -3193,7 +3366,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any"
    },
    "source_url": "https://www.farajfund.ae",
    "source_snippet": "Faraj Fund settles the debts of insolvent inmates in financial cases and supports their families in the UAE.",
@@ -3232,7 +3406,9 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any",
+    "rule_source": "geography_unknown"
    },
    "source_url": "https://swyp.ae",
    "source_snippet": "Swyp is e&'s digital mobile plan for 18-25 year olds with discounted bundles and bonus benefits.",
@@ -3271,7 +3447,9 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any",
+    "rule_source": "geography_unknown"
    },
    "source_url": "https://www.du.ae",
    "source_snippet": "du offers a youth plan with discounted bundles and benefits for customers aged 18 to 25.",
@@ -3312,7 +3490,9 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": true,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any",
+    "rule_source": "geography_unknown"
    },
    "source_url": "https://www.emirates.com",
    "source_snippet": "Emirates offers student fares with discounts and additional baggage allowance for eligible students.",
@@ -3353,7 +3533,9 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": true,
-    "admin_areas": []
+    "admin_areas": [],
+    "gender": "any",
+    "rule_source": "geography_unknown"
    },
    "source_url": "https://www.isic.org",
    "source_snippet": "The ISIC card is the internationally accepted proof of student status, providing access to thousands of student discounts.",

@@ -939,7 +939,7 @@
    "amount_min": null,
    "amount_max": 123.25,
    "amount_currency": "GBP",
-   "amount_period": "monthly",
+   "amount_period": "weekly",
    "amount_note": "£123.25 per week or 80% of average weekly earnings, whichever is lower, for up to 28 weeks; from 6 April 2026 payable from the first day of sickness with no minimum earnings threshold",
    "is_automatic": false,
    "application_url": null,
@@ -1134,7 +1134,7 @@
    "amount_min": null,
    "amount_max": 86.45,
    "amount_currency": "GBP",
-   "amount_period": "monthly",
+   "amount_period": "weekly",
    "amount_note": "£86.45 per week (2026/27) for people caring for someone at least 35 hours a week; earnings limit applies (£204/week 2026/27); Scotland uses Carer Support Payment",
    "is_automatic": false,
    "application_url": "https://www.gov.uk/carers-allowance/how-to-claim",
@@ -1382,7 +1382,13 @@
    "application_channel": "automatic",
    "deadline_type": "rolling",
    "deadline_note": null,
-   "procedure_steps": [],
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "No application needed — this is paid automatically to everyone who qualifies. Check that the authority holds your current address and bank details; a missing detail is the usual reason an automatic payment does not arrive.",
+     "url": "https://www.mygov.scot/carers-allowance-supplement"
+    }
+   ],
    "documents_required": [],
    "eligibility": {
     "statuses": [],
@@ -1666,9 +1672,9 @@
    "category": "health",
    "benefit_type": "in_kind",
    "amount_min": null,
-   "amount_max": null,
+   "amount_max": 4.25,
    "amount_currency": "GBP",
-   "amount_period": "monthly",
+   "amount_period": "weekly",
    "amount_note": "Prepaid card worth £4.25 per week during pregnancy and for each child aged 1-4, and £8.50 per week for each baby under 1, to buy milk, fruit, vegetables and infant formula, plus free vitamins",
    "is_automatic": false,
    "application_url": "https://www.healthystart.nhs.uk/how-to-apply/",
@@ -1780,7 +1786,13 @@
    "application_channel": "automatic",
    "deadline_type": "rolling",
    "deadline_note": null,
-   "procedure_steps": [],
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "No application needed — this is paid automatically to everyone who qualifies. Check that the authority holds your current address and bank details; a missing detail is the usual reason an automatic payment does not arrive.",
+     "url": "https://www.gov.uk/apply-free-school-meals"
+    }
+   ],
    "documents_required": [],
    "eligibility": {
     "statuses": [],
@@ -1917,7 +1929,7 @@
    "category": "education",
    "benefit_type": "cash_monthly",
    "amount_min": null,
-   "amount_max": null,
+   "amount_max": 1200,
    "amount_currency": "GBP",
    "amount_period": "annual",
    "amount_note": "Bursaries to help with education costs (travel, books, equipment, meals); vulnerable students can get a bursary of up to £1,200 a year; discretionary amounts set by the school or college",
@@ -1980,7 +1992,13 @@
    "application_channel": "automatic",
    "deadline_type": "annual",
    "deadline_note": "Discount applied to electricity bills between October and March each winter; scheme confirmed to run until 2030/31",
-   "procedure_steps": [],
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "No application needed — this is paid automatically to everyone who qualifies. Check that the authority holds your current address and bank details; a missing detail is the usual reason an automatic payment does not arrive.",
+     "url": "https://www.gov.uk/the-warm-home-discount-scheme"
+    }
+   ],
    "documents_required": [],
    "eligibility": {
     "statuses": [
@@ -2027,7 +2045,13 @@
    "application_channel": "automatic",
    "deadline_type": "annual",
    "deadline_note": null,
-   "procedure_steps": [],
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "No application needed — this is paid automatically to everyone who qualifies. Check that the authority holds your current address and bank details; a missing detail is the usual reason an automatic payment does not arrive.",
+     "url": "https://www.gov.uk/winter-fuel-payment"
+    }
+   ],
    "documents_required": [],
    "eligibility": {
     "statuses": [
@@ -2073,7 +2097,13 @@
    "application_channel": "automatic",
    "deadline_type": "window",
    "deadline_note": "Scheme runs 1 November to 31 March each year",
-   "procedure_steps": [],
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "No application needed — this is paid automatically to everyone who qualifies. Check that the authority holds your current address and bank details; a missing detail is the usual reason an automatic payment does not arrive.",
+     "url": "https://www.gov.uk/cold-weather-payment"
+    }
+   ],
    "documents_required": [],
    "eligibility": {
     "statuses": [
@@ -2119,7 +2149,13 @@
    "application_channel": "automatic",
    "deadline_type": "annual",
    "deadline_note": null,
-   "procedure_steps": [],
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "No application needed — this is paid automatically to everyone who qualifies. Check that the authority holds your current address and bank details; a missing detail is the usual reason an automatic payment does not arrive.",
+     "url": "https://www.mygov.scot/winter-heating-payment"
+    }
+   ],
    "documents_required": [],
    "eligibility": {
     "statuses": [],
@@ -2161,7 +2197,13 @@
    "application_channel": "automatic",
    "deadline_type": "annual",
    "deadline_note": null,
-   "procedure_steps": [],
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "No application needed — this is paid automatically to everyone who qualifies. Check that the authority holds your current address and bank details; a missing detail is the usual reason an automatic payment does not arrive.",
+     "url": "https://www.mygov.scot/pension-age-winter-heating-payment"
+    }
+   ],
    "documents_required": [],
    "eligibility": {
     "statuses": [
@@ -2598,7 +2640,13 @@
    "application_channel": "automatic",
    "deadline_type": "rolling",
    "deadline_note": null,
-   "procedure_steps": [],
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "No application needed — this is paid automatically to everyone who qualifies. Check that the authority holds your current address and bank details; a missing detail is the usual reason an automatic payment does not arrive.",
+     "url": "https://www.nidirect.gov.uk"
+    }
+   ],
    "documents_required": [],
    "eligibility": {
     "statuses": [],
@@ -3125,7 +3173,8 @@
     "housing_tenure": null,
     "student_required": false,
     "admin_areas": [],
-    "gender": "any"
+    "gender": "any",
+    "rule_source": "geography_unknown"
    },
    "source_url": "https://www.16-25railcard.co.uk",
    "source_snippet": "A 16-25 Railcard gets you 1/3 off rail fares to travel across Britain for just £30 a year, for anyone aged 16-25 or a mature student in full-time study.",
@@ -3167,7 +3216,8 @@
     "housing_tenure": null,
     "student_required": false,
     "admin_areas": [],
-    "gender": "any"
+    "gender": "any",
+    "rule_source": "geography_unknown"
    },
    "source_url": "https://www.senior-railcard.co.uk",
    "source_snippet": "The Senior Railcard gives everyone aged 60 and over 1/3 off Standard and First Class Anytime, Off-Peak and Advance fares across Britain.",
@@ -3207,7 +3257,8 @@
     "housing_tenure": null,
     "student_required": false,
     "admin_areas": [],
-    "gender": "any"
+    "gender": "any",
+    "rule_source": "geography_unknown"
    },
    "source_url": "https://www.disabledpersons-railcard.co.uk",
    "source_snippet": "The Disabled Persons Railcard allows you and an adult companion to get 1/3 off rail fares across Britain; it costs £20 for one year.",
@@ -3247,7 +3298,8 @@
     "housing_tenure": null,
     "student_required": false,
     "admin_areas": [],
-    "gender": "any"
+    "gender": "any",
+    "rule_source": "geography_unknown"
    },
    "source_url": "https://www.twotogether-railcard.co.uk",
    "source_snippet": "The Two Together Railcard saves two named people 1/3 off rail fares when they travel together, for £30 a year.",
@@ -3340,7 +3392,8 @@
     "housing_tenure": null,
     "student_required": false,
     "admin_areas": [],
-    "gender": "any"
+    "gender": "any",
+    "rule_source": "geography_unknown"
    },
    "source_url": "https://www.motability.co.uk",
    "source_snippet": "The Motability Scheme enables disabled people to exchange their qualifying mobility allowance to lease a new car, scooter or powered wheelchair, with insurance, maintenance and breakdown cover included.",
@@ -4123,7 +4176,8 @@
     "housing_tenure": null,
     "student_required": false,
     "admin_areas": [],
-    "gender": "any"
+    "gender": "any",
+    "rule_source": "geography_unknown"
    },
    "source_url": "https://www.tvlicensing.co.uk",
    "source_snippet": "If you're 75 or over and you or your partner receive Pension Credit, you can get a free TV licence; if you're blind (severely sight impaired) you can get a 50% concession.",
@@ -4163,7 +4217,8 @@
     "housing_tenure": null,
     "student_required": false,
     "admin_areas": [],
-    "gender": "any"
+    "gender": "any",
+    "rule_source": "geography_unknown"
    },
    "source_url": "https://www.bt.com/home-essentials",
    "source_snippet": "BT Home Essentials is a low-cost broadband and phone plan for customers on Universal Credit and other means-tested benefits.",
@@ -4203,7 +4258,8 @@
     "housing_tenure": null,
     "student_required": false,
     "admin_areas": [],
-    "gender": "any"
+    "gender": "any",
+    "rule_source": "geography_unknown"
    },
    "source_url": "https://www.virginmedia.com/broadband/low-income-families",
    "source_snippet": "Essential broadband is Virgin Media's social tariff: low-cost broadband for customers receiving Universal Credit and certain other benefits.",
@@ -4243,7 +4299,8 @@
     "housing_tenure": null,
     "student_required": false,
     "admin_areas": [],
-    "gender": "any"
+    "gender": "any",
+    "rule_source": "geography_unknown"
    },
    "source_url": "https://www.voxi.co.uk/voxi-for-now",
    "source_snippet": "VOXI For Now is a discounted mobile plan giving unlimited data, minutes and texts at a low monthly price to people receiving government benefits.",
@@ -4283,7 +4340,8 @@
     "housing_tenure": null,
     "student_required": false,
     "admin_areas": [],
-    "gender": "any"
+    "gender": "any",
+    "rule_source": "geography_unknown"
    },
    "source_url": "https://www.sky.com/help/articles/sky-broadband-basics",
    "source_snippet": "Sky Broadband Basics is a lower-cost broadband tariff available to Sky customers who claim Universal Credit or Pension Credit.",
@@ -4488,7 +4546,8 @@
     "housing_tenure": null,
     "student_required": false,
     "admin_areas": [],
-    "gender": "any"
+    "gender": "any",
+    "rule_source": "geography_unknown"
    },
    "source_url": "https://www.turn2us.org.uk",
    "source_snippet": "Turn2us is a national charity that helps people in financial hardship access welfare benefits and charitable grants through its benefits calculator and grants search.",
@@ -4590,7 +4649,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "rule_source": "geography_unknown"
    },
    "source_url": "https://www.vodafone.co.uk/broadband/essentials",
    "source_snippet": "Vodafone Essentials Broadband is available to new and existing customers receiving Jobseeker's Allowance, Universal Credit, Pension Credit, Employment Support Allowance, Income Support, Reduced Earnings Allowance, Personal Independence Payment or Disability Allowance.",
@@ -4642,7 +4702,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "rule_source": "geography_unknown"
    },
    "source_url": "https://www.o2.co.uk/",
    "source_snippet": "O2 Essential Plan: mobile social tariff offering unlimited data from £10 a month for customers on qualifying benefits.",
@@ -5538,7 +5599,8 @@
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": []
+    "admin_areas": [],
+    "rule_source": "geography_unknown"
    },
    "source_url": "https://www.16-17saver.co.uk/",
    "source_snippet": "The 16-17 Saver costs £30 and gives 50% off most rail fares for 16 and 17 year olds, including season tickets.",
@@ -5897,7 +5959,8 @@
     "admin_areas": [],
     "income_test": "none",
     "income_source_url": "https://www.familyfund.org.uk/grants/are-we-eligible/",
-    "income_confidence": "high"
+    "income_confidence": "high",
+    "rule_source": "geography_unknown"
    },
    "source_url": "https://www.familyfund.org.uk/",
    "source_snippet": "Family Fund looks at your income and the impact of disability on your child; you can apply if you are the parent/carer of a child or young person with a disability or serious illness and are on a low income or receiving benefits.",

@@ -58,7 +58,8 @@
         "residency_months_min": null,
         "housing_tenure": null,
         "student_required": false,
-        "admin_areas": []
+        "admin_areas": [],
+        "gender": "any"
       },
       "source_url": "https://www.cfa.go.jp/policies/jidouteate/",
       "source_snippet": "所得制限撤廃後の児童手当:0〜3歳未満15,000円、3歳〜高校生年代10,000円、第3子以降30,000円(こども家庭庁制度)",
@@ -119,7 +120,8 @@
         "residency_months_min": null,
         "housing_tenure": null,
         "student_required": false,
-        "admin_areas": []
+        "admin_areas": [],
+        "gender": "any"
       },
       "source_url": "https://www.cfa.go.jp/policies/jidouteate/jido-fuyo-teate",
       "source_snippet": "第1子の金額 全部支給48,050円、一部支給11,340円〜48,040円(令和8年4月分から、練馬区公表情報)",
@@ -180,7 +182,8 @@
         "residency_months_min": null,
         "housing_tenure": null,
         "student_required": false,
-        "admin_areas": []
+        "admin_areas": [],
+        "gender": "any"
       },
       "source_url": "https://www.fukushi.metro.tokyo.lg.jp/shisetsu/jigyosyo/shinsho/teate/toku_ji",
       "source_snippet": "手当月額は1級58,450円、2級38,930円です(東京都福祉局「特別児童扶養手当(国制度)」)",
@@ -238,7 +241,8 @@
         "student_required": false,
         "admin_areas": [
           "Tokyo"
-        ]
+        ],
+        "gender": "any"
       },
       "source_url": "https://018support.metro.tokyo.lg.jp/",
       "source_snippet": "都内在住の0歳から18歳までの子供たちに一人あたり月額5,000円を支給...所得制限はありません(018サポート公式ポータル 018support.metro.tokyo.lg.jp)",
@@ -289,7 +293,8 @@
         "residency_months_min": null,
         "housing_tenure": null,
         "student_required": false,
-        "admin_areas": []
+        "admin_areas": [],
+        "gender": "any"
       },
       "source_url": "https://www.cfa.go.jp/policies/kokoseido/kosodate-ouenteate",
       "source_snippet": "対象児童1人につき2万円(1回限り)(笠岡市公表:こども家庭庁「物価高対応子育て応援手当」)",
@@ -357,7 +362,8 @@
         "residency_months_min": null,
         "housing_tenure": null,
         "student_required": false,
-        "admin_areas": []
+        "admin_areas": [],
+        "gender": "any"
       },
       "source_url": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/0000135090_00001.html",
       "source_snippet": "育休開始から180日間:67%、181日目以降:50%(厚生労働省「育児休業等給付について」)",
@@ -413,7 +419,8 @@
         "residency_months_min": null,
         "housing_tenure": null,
         "student_required": false,
-        "admin_areas": []
+        "admin_areas": [],
+        "gender": "any"
       },
       "source_url": "https://www.kyoukaikenpo.or.jp/senpo/case/011/index.html",
       "source_snippet": "出産育児一時金および家族出産育児一時金の額は、一児につき50万円が支給されます(協会けんぽ)",
@@ -466,7 +473,8 @@
         "residency_months_min": null,
         "housing_tenure": null,
         "student_required": false,
-        "admin_areas": []
+        "admin_areas": [],
+        "gender": "female"
       },
       "source_url": "https://www.kyoukaikenpo.or.jp/senpo/case/011/index.html",
       "source_snippet": "出産のため休業した期間について標準報酬日額の3分の2が支給される(協会けんぽの制度)",
@@ -522,7 +530,8 @@
         "residency_months_min": null,
         "housing_tenure": null,
         "student_required": false,
-        "admin_areas": []
+        "admin_areas": [],
+        "gender": "any"
       },
       "source_url": "https://www.shakyo.or.jp/",
       "source_snippet": "母子・父子家庭や寡婦の経済的自立と生活意欲の助長を図るため各種資金を貸し付ける制度",
@@ -578,7 +587,8 @@
         "residency_months_min": null,
         "housing_tenure": null,
         "student_required": false,
-        "admin_areas": []
+        "admin_areas": [],
+        "gender": "any"
       },
       "source_url": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/hukushi_kaigo/seikatsuhogo/",
       "source_snippet": "生活保護制度は、生活に困窮する方に対し、困窮の程度に応じて必要な保護を行い、健康で文化的な最低限度の生活を保障する制度(厚生労働省)",
@@ -649,7 +659,8 @@
         "residency_months_min": null,
         "housing_tenure": "renting",
         "student_required": false,
-        "admin_areas": []
+        "admin_areas": [],
+        "gender": "any"
       },
       "source_url": "https://corona-support.mhlw.go.jp/jukyokakuhokyufukin/index.html",
       "source_snippet": "住居を失うおそれが生じている方々に一定期間家賃相当額を支給します(厚生労働省生活支援特設サイト)",
@@ -700,7 +711,8 @@
         "residency_months_min": null,
         "housing_tenure": null,
         "student_required": false,
-        "admin_areas": []
+        "admin_areas": [],
+        "gender": "any"
       },
       "source_url": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/0000059425.html",
       "source_snippet": "生活困窮者自立支援制度について紹介しています(厚生労働省)",
@@ -751,7 +763,8 @@
         "residency_months_min": null,
         "housing_tenure": null,
         "student_required": false,
-        "admin_areas": []
+        "admin_areas": [],
+        "gender": "any"
       },
       "source_url": "https://www.shakyo.or.jp/",
       "source_snippet": "緊急かつ一時的に生計の維持が困難となった場合に少額の貸付を行う生活福祉資金の一種(社会福祉協議会)",
@@ -807,7 +820,8 @@
         "residency_months_min": null,
         "housing_tenure": null,
         "student_required": false,
-        "admin_areas": []
+        "admin_areas": [],
+        "gender": "any"
       },
       "source_url": "https://www.shakyo.or.jp/",
       "source_snippet": "生活再建までの間に必要な生活費用を貸し付ける生活福祉資金(社会福祉協議会)",
@@ -858,7 +872,8 @@
         "residency_months_min": null,
         "housing_tenure": null,
         "student_required": false,
-        "admin_areas": []
+        "admin_areas": [],
+        "gender": "any"
       },
       "source_url": "https://corona-support.mhlw.go.jp/",
       "source_snippet": "住民税非課税世帯等への価格高騰重点支援給付金(自治体実施の国の時限措置)",
@@ -916,7 +931,8 @@
         "residency_months_min": null,
         "housing_tenure": null,
         "student_required": false,
-        "admin_areas": []
+        "admin_areas": [],
+        "gender": "any"
       },
       "source_url": "https://www.kyoukaikenpo.or.jp/faq/benefit/002/index.html",
       "source_snippet": "1日当たりの金額:【支給開始日の以前12ヵ月間の各標準報酬月額を平均した額】÷30日×(2/3)(協会けんぽ)",
@@ -980,7 +996,8 @@
         "residency_months_min": null,
         "housing_tenure": null,
         "student_required": false,
-        "admin_areas": []
+        "admin_areas": [],
+        "gender": "any"
       },
       "source_url": "https://www.hellowork.mhlw.go.jp/insurance/insurance_basicbenefit.html",
       "source_snippet": "賃金日額のおよそ50〜80%(60歳〜64歳については45〜80%)...所定給付日数は90日〜360日(ハローワークインターネットサービス)",
@@ -1039,7 +1056,8 @@
         "residency_months_min": null,
         "housing_tenure": null,
         "student_required": false,
-        "admin_areas": []
+        "admin_areas": [],
+        "gender": "any"
       },
       "source_url": "https://www.mhlw.go.jp/",
       "source_snippet": "雇用保険を受給できない求職者が職業訓練を受講する間、月10万円の生活支援給付金を支給(厚生労働省 求職者支援制度)",
@@ -1093,7 +1111,8 @@
         "residency_months_min": null,
         "housing_tenure": null,
         "student_required": false,
-        "admin_areas": []
+        "admin_areas": [],
+        "gender": "any"
       },
       "source_url": "https://www.hellowork.mhlw.go.jp/",
       "source_snippet": "基本手当の支給残日数に応じ60〜70%の一時金が支給される再就職手当(ハローワーク)",
@@ -1152,7 +1171,8 @@
         "residency_months_min": null,
         "housing_tenure": null,
         "student_required": false,
-        "admin_areas": []
+        "admin_areas": [],
+        "gender": "any"
       },
       "source_url": "https://www.hellowork.mhlw.go.jp/insurance/insurance_education.html",
       "source_snippet": "厚生労働大臣の指定する教育訓練講座を修了した場合、受講料等の一定割合を支給(ハローワーク 教育訓練給付)",
@@ -1205,7 +1225,8 @@
         "residency_months_min": null,
         "housing_tenure": null,
         "student_required": false,
-        "admin_areas": []
+        "admin_areas": [],
+        "gender": "any"
       },
       "source_url": "https://www.hellowork.mhlw.go.jp/insurance/insurance_continue.html",
       "source_snippet": "60歳到達時等の賃金に比べ低下した場合に支給される雇用継続給付(ハローワーク)",
@@ -1261,7 +1282,8 @@
         "residency_months_min": null,
         "housing_tenure": null,
         "student_required": false,
-        "admin_areas": []
+        "admin_areas": [],
+        "gender": "any"
       },
       "source_url": "https://www.nenkin.go.jp/service/jukyu/seido/shougainenkin/jukyu-yoken/20150514.html",
       "source_snippet": "障害基礎年金の年金額(令和8年4月分から) 1級 1,059,125円+子の加算額、2級 847,300円+子の加算額(日本年金機構)",
@@ -1314,7 +1336,8 @@
         "residency_months_min": null,
         "housing_tenure": null,
         "student_required": false,
-        "admin_areas": []
+        "admin_areas": [],
+        "gender": "any"
       },
       "source_url": "https://www.nenkin.go.jp/service/jukyu/seido/shougainenkin/jukyu-yoken/20150401-02.html",
       "source_snippet": "障害厚生年金の受給要件・請求時期・年金額(日本年金機構)。3級の最低保障額は635,500円(令和8年度)",
@@ -1365,7 +1388,8 @@
         "residency_months_min": null,
         "housing_tenure": null,
         "student_required": false,
-        "admin_areas": []
+        "admin_areas": [],
+        "gender": "any"
       },
       "source_url": "https://www.nenkin.go.jp/service/kokunen/menjo/20150428.html",
       "source_snippet": "全額免除は保険料を全額納付した場合の年金額の2分の1...4分の3免除(納めた保険料額4,480円:令和8年度)(日本年金機構)",
@@ -1418,7 +1442,8 @@
         "residency_months_min": null,
         "housing_tenure": null,
         "student_required": true,
-        "admin_areas": []
+        "admin_areas": [],
+        "gender": "any"
       },
       "source_url": "https://www.nenkin.go.jp/service/kokunen/menjo/20150428.html",
       "source_snippet": "学生の方は、前年の所得が一定以下の場合、学生納付特例により保険料の納付が猶予される(日本年金機構)",
@@ -1471,7 +1496,8 @@
         "residency_months_min": null,
         "housing_tenure": null,
         "student_required": false,
-        "admin_areas": []
+        "admin_areas": [],
+        "gender": "any"
       },
       "source_url": "https://www.nenkin.go.jp/",
       "source_snippet": "障害年金生活者支援給付金:1級 7,025円、2級 5,620円(月額、令和8年度)",
@@ -1522,7 +1548,8 @@
         "residency_months_min": null,
         "housing_tenure": null,
         "student_required": false,
-        "admin_areas": []
+        "admin_areas": [],
+        "gender": "any"
       },
       "source_url": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/kenkou_iryou/iryouhoken/juuyou/kougakuiryou.html",
       "source_snippet": "同一月内に支払う医療費が自己負担限度額を超えたときは、超えた額が「高額療養費」として支給されます。自己負担限度額は年齢と所得に応じて定められています(厚生労働省)",
@@ -1578,7 +1605,8 @@
         "residency_months_min": null,
         "housing_tenure": null,
         "student_required": false,
-        "admin_areas": []
+        "admin_areas": [],
+        "gender": "any"
       },
       "source_url": "https://www.kyoukaikenpo.or.jp/",
       "source_snippet": "限度額適用認定証を提示すれば窓口負担が自己負担限度額までとなる(協会けんぽ)",
@@ -1639,7 +1667,8 @@
         "residency_months_min": null,
         "housing_tenure": null,
         "student_required": false,
-        "admin_areas": []
+        "admin_areas": [],
+        "gender": "any"
       },
       "source_url": "https://www.nanbyou.or.jp/",
       "source_snippet": "指定医療機関で行われる指定難病に対する医療について、医療保険適用後の自己負担分を助成。月ごとの自己負担上限額を超えた分は全額助成(難病情報センター・都道府県)",
@@ -1695,7 +1724,8 @@
         "residency_months_min": null,
         "housing_tenure": null,
         "student_required": false,
-        "admin_areas": []
+        "admin_areas": [],
+        "gender": "any"
       },
       "source_url": "https://www.shouman.jp/",
       "source_snippet": "対象疾病にかかっている満18歳未満の方が対象。自己負担割合が2割に軽減されるほか、世帯の所得に応じて1か月あたりの自己負担限度額が設けられます(小児慢性特定疾病情報センター・東京都福祉局)",
@@ -1751,7 +1781,8 @@
         "residency_months_min": null,
         "housing_tenure": null,
         "student_required": false,
-        "admin_areas": []
+        "admin_areas": [],
+        "gender": "any"
       },
       "source_url": "https://www.mhlw.go.jp/kokoro/",
       "source_snippet": "心身の障害を除去・軽減するための医療について、医療費の自己負担額を軽減する公費負担医療制度。医療費の1割負担(厚生労働省)",
@@ -1807,7 +1838,8 @@
         "residency_months_min": null,
         "housing_tenure": null,
         "student_required": false,
-        "admin_areas": []
+        "admin_areas": [],
+        "gender": "any"
       },
       "source_url": "https://www.mhlw.go.jp/",
       "source_snippet": "B型・C型肝炎の治療費を助成する肝炎治療特別促進事業(厚生労働省)",
@@ -1865,7 +1897,8 @@
         "residency_months_min": null,
         "housing_tenure": null,
         "student_required": false,
-        "admin_areas": []
+        "admin_areas": [],
+        "gender": "any"
       },
       "source_url": "https://www.mhlw.go.jp/",
       "source_snippet": "生計困難と認められる者は4分の1、老齢福祉年金受給者は2分の1、生活保護受給者は個室の居住費・滞在費の利用者負担額の全額を軽減(介護保険の軽減制度実施要綱)",
@@ -1921,7 +1954,8 @@
         "residency_months_min": null,
         "housing_tenure": null,
         "student_required": false,
-        "admin_areas": []
+        "admin_areas": [],
+        "gender": "any"
       },
       "source_url": "https://www.nhk.or.jp/jushinryo/menjo/",
       "source_snippet": "「日本放送協会受信料免除基準」に該当する場合は、受信料の全額または半額が免除となります(NHK)",
@@ -1977,7 +2011,8 @@
         "residency_months_min": null,
         "housing_tenure": null,
         "student_required": false,
-        "admin_areas": []
+        "admin_areas": [],
+        "gender": "any"
       },
       "source_url": "https://www.mhlw.go.jp/kokoro/",
       "source_snippet": "精神障害者保健福祉手帳は、精神障害のある方の自立と社会参加を支援する手帳で、各種割引・支援が受けられる(厚生労働省こころの健康)",
@@ -2035,7 +2070,8 @@
         "student_required": false,
         "admin_areas": [
           "Tokyo"
-        ]
+        ],
+        "gender": "any"
       },
       "source_url": "https://www.fukushi.metro.tokyo.lg.jp/seikatsu/josei/maruoya",
       "source_snippet": "国民健康保険や健康保険など各種医療保険の自己負担分から一部負担金を差し引いた額を助成します(住民税非課税世帯は、医療保険の自己負担分を助成)(東京都福祉局)",
@@ -2098,7 +2134,8 @@
         "student_required": false,
         "admin_areas": [
           "Tokyo"
-        ]
+        ],
+        "gender": "any"
       },
       "source_url": "https://www.fukushi.metro.tokyo.lg.jp/seikatsu/josei/marusyo",
       "source_snippet": "身体障害者手帳1級・2級の方...愛の手帳1度・2度の方...精神障害者保健福祉手帳1級の方(東京都福祉局 マル障対象者)",
@@ -2151,7 +2188,8 @@
         "student_required": false,
         "admin_areas": [
           "Tokyo"
-        ]
+        ],
+        "gender": "any"
       },
       "source_url": "https://www.fukushi.metro.tokyo.lg.jp/seikatsu/josei/maruao",
       "source_snippet": "東京都内の区市町村では、高校生等に係る医療費を助成する「高校生等医療費助成事業(マル青)」を、令和5年4月から開始しました(東京都福祉局)",
@@ -2209,7 +2247,8 @@
         "student_required": false,
         "admin_areas": [
           "Tokyo"
-        ]
+        ],
+        "gender": "any"
       },
       "source_url": "https://www.city.chuo.lg.jp/a0020/kosodate/kosodate/teatejosei/iryouhijosei/akimoto.html",
       "source_snippet": "この制度は、お子さんが病院・薬局等で診療や調剤を受ける際に、健康保険の適用される医療について保護者の負担する額を区が助成するものです。所得による制限はありません(中央区)",
@@ -2267,7 +2306,8 @@
         "student_required": false,
         "admin_areas": [
           "Tokyo"
-        ]
+        ],
+        "gender": "any"
       },
       "source_url": "https://www.city.minato.tokyo.jp/zaitakushien/kenko/fukushi/koresha/sekatsu/silver-pass.html",
       "source_snippet": "都内に住民登録している70歳以上の人...非課税の人・・・1,000円(東京都シルバーパスの交付)",
@@ -2325,7 +2365,9 @@
         "residency_months_min": null,
         "housing_tenure": null,
         "student_required": true,
-        "admin_areas": []
+        "admin_areas": [],
+        "gender": "any",
+        "rule_source": "geography_unknown"
       },
       "source_url": "https://www.jreast.co.jp/",
       "source_snippet": "JRでは指定学校の学生が片道101km以上の乗車券について2割引となる学生割引(学割)を実施",
@@ -2376,7 +2418,9 @@
         "residency_months_min": null,
         "housing_tenure": null,
         "student_required": false,
-        "admin_areas": []
+        "admin_areas": [],
+        "gender": "any",
+        "rule_source": "geography_unknown"
       },
       "source_url": "https://www.jreast.co.jp/",
       "source_snippet": "障害者手帳をお持ちの方はJRの乗車券が割引となる障害者割引制度",
@@ -2427,7 +2471,9 @@
         "residency_months_min": null,
         "housing_tenure": null,
         "student_required": false,
-        "admin_areas": []
+        "admin_areas": [],
+        "gender": "any",
+        "rule_source": "geography_unknown"
       },
       "source_url": "https://www.docomo.ne.jp/",
       "source_snippet": "障害者手帳をお持ちの方向けの携帯電話基本料金割引サービス(NTTドコモ)",
@@ -2478,7 +2524,8 @@
         "residency_months_min": null,
         "housing_tenure": null,
         "student_required": false,
-        "admin_areas": []
+        "admin_areas": [],
+        "gender": "any"
       },
       "source_url": "https://www.enecho.meti.go.jp/",
       "source_snippet": "電気・ガス料金の負担を緩和するため、料金の単価を値引きする支援(資源エネルギー庁)",
@@ -2536,7 +2583,8 @@
         "student_required": false,
         "admin_areas": [
           "Tokyo"
-        ]
+        ],
+        "gender": "any"
       },
       "source_url": "https://www.city.fuchu.tokyo.jp/kurashi/sekatu/jogesuido/genmenseido.html",
       "source_snippet": "障害者を含む世帯に属し、その構成員全員の市民税が非課税である世帯の下水道使用料の基本料金を減免します(府中市)",
@@ -2599,7 +2647,8 @@
         "residency_months_min": null,
         "housing_tenure": null,
         "student_required": true,
-        "admin_areas": []
+        "admin_areas": [],
+        "gender": "any"
       },
       "source_url": "https://www.jasso.go.jp/shogakukin/kyufu/index.html",
       "source_snippet": "返還を要しない給付型奨学金と授業料・入学金の免除または減額により、大学・短期大学、高等専門学校、専門学校を無償化する制度です(日本学生支援機構)",
@@ -2657,7 +2706,8 @@
         "residency_months_min": null,
         "housing_tenure": null,
         "student_required": true,
-        "admin_areas": []
+        "admin_areas": [],
+        "gender": "any"
       },
       "source_url": "https://www.jasso.go.jp/shogakukin/",
       "source_snippet": "日本学生支援機構の貸与型奨学金(第一種は無利子、第二種は有利子)",
@@ -2715,7 +2765,8 @@
         "residency_months_min": null,
         "housing_tenure": null,
         "student_required": true,
-        "admin_areas": []
+        "admin_areas": [],
+        "gender": "any"
       },
       "source_url": "https://www.mext.go.jp/a_menu/shotou/mushouka/1343993.htm",
       "source_snippet": "国公私立問わず、高等学校等に通う一定の収入額未満の世帯の生徒に対し、授業料に充てるための就学支援金を給付する制度(文部科学省)",
@@ -2771,7 +2822,8 @@
         "residency_months_min": null,
         "housing_tenure": null,
         "student_required": false,
-        "admin_areas": []
+        "admin_areas": [],
+        "gender": "any"
       },
       "source_url": "https://www.mext.go.jp/",
       "source_snippet": "学校教育法第19条:経済的理由によって就学困難と認められる学齢児童・生徒の保護者に対しては、市町村は、必要な援助を与えなければならない",
@@ -2838,7 +2890,8 @@
           "Saitama",
           "Chiba",
           "Hyogo"
-        ]
+        ],
+        "gender": "any"
       },
       "source_url": "https://www.pref.osaka.lg.jp/",
       "source_snippet": "生活保護世帯:52,600円、非課税世帯(全日制・定時制):152,000円(大阪府私立高等学校等奨学のための給付金、令和8年度)",
@@ -2894,7 +2947,8 @@
         "residency_months_min": null,
         "housing_tenure": null,
         "student_required": false,
-        "admin_areas": []
+        "admin_areas": [],
+        "gender": "any"
       },
       "source_url": "https://www.jfc.go.jp/n/finance/search/ippan_kyoiku_t.html",
       "source_snippet": "ご入学・ご進学の費用に、お子さまお一人あたり350万円以内のご融資(日本政策金融公庫 国の教育ローン)",
@@ -2945,7 +2999,8 @@
         "residency_months_min": null,
         "housing_tenure": null,
         "student_required": false,
-        "admin_areas": []
+        "admin_areas": [],
+        "gender": "any"
       },
       "source_url": "https://www8.cao.go.jp/shoushi/shinseido/mushouka/index.html",
       "source_snippet": "幼稚園、保育所、認定こども園などを利用する3歳から5歳児クラスの子どもたち及び、住民税非課税世帯の0歳から2歳児クラスまでの子どもたちの利用料が無料(内閣府)",
@@ -3014,7 +3069,8 @@
         "residency_months_min": null,
         "housing_tenure": null,
         "student_required": false,
-        "admin_areas": []
+        "admin_areas": [],
+        "gender": "any"
       },
       "source_url": "https://www.soumu.go.jp/main_sosiki/jichi_zeisei/czaisei/czaisei_seido/furusato/",
       "source_snippet": "手続きをすると、寄附金のうち2,000円を超える部分については所得税の還付、住民税の控除を受けられる仕組み(総務省ふるさと納税ポータルサイト)",
@@ -3085,7 +3141,8 @@
         "residency_months_min": null,
         "housing_tenure": "owner",
         "student_required": false,
-        "admin_areas": []
+        "admin_areas": [],
+        "gender": "any"
       },
       "source_url": "https://www.mlit.go.jp/jutakukentiku/house/jutakukentiku_house_tk2_000017.html",
       "source_snippet": "令和８年度税制改正により、住宅ローン減税が5年間延長されました(国土交通省)",
@@ -3141,7 +3198,8 @@
         "residency_months_min": null,
         "housing_tenure": null,
         "student_required": false,
-        "admin_areas": []
+        "admin_areas": [],
+        "gender": "any"
       },
       "source_url": "https://www.fsa.go.jp/policy/nisa2/index.html",
       "source_snippet": "NISA特設ウェブサイト(金融庁)。少額からの長期・分散・積立投資を支援する非課税制度",
@@ -3200,7 +3258,9 @@
         "residency_months_min": null,
         "housing_tenure": null,
         "student_required": false,
-        "admin_areas": []
+        "admin_areas": [],
+        "gender": "any",
+        "rule_source": "geography_unknown"
       },
       "source_url": "https://www.ideco-koushiki.jp/",
       "source_snippet": "掛金が全額所得控除の対象となり、運用益も非課税となる私的年金制度(iDeCo公式サイト)",
@@ -3256,7 +3316,8 @@
         "residency_months_min": null,
         "housing_tenure": null,
         "student_required": false,
-        "admin_areas": []
+        "admin_areas": [],
+        "gender": "any"
       },
       "source_url": "https://www.nta.go.jp/users/gensen/teigakugenzei/index.htm",
       "source_snippet": "令和６年度税制改正に伴い、令和６年分所得税について定額による所得税の特別控除(定額減税)が適用されます(国税庁 定額減税特設サイト)",
@@ -3324,7 +3385,8 @@
         "residency_months_min": null,
         "housing_tenure": null,
         "student_required": false,
-        "admin_areas": []
+        "admin_areas": [],
+        "gender": "any"
       },
       "source_url": "https://www.monodukuri-hojo.jp/",
       "source_snippet": "中小企業・小規模事業者が取り組む革新的な製品・サービス開発や生産プロセスの改善のための設備投資等を支援する制度(ものづくり補助金総合サイト)",
@@ -3382,7 +3444,8 @@
         "residency_months_min": null,
         "housing_tenure": null,
         "student_required": false,
-        "admin_areas": []
+        "admin_areas": [],
+        "gender": "any"
       },
       "source_url": "https://it-hojo.jp/",
       "source_snippet": "サービス等生産性向上IT導入支援事業(IT導入補助金)の公式ポータルサイト(中小企業庁所管)",
@@ -3445,7 +3508,8 @@
         "residency_months_min": null,
         "housing_tenure": null,
         "student_required": false,
-        "admin_areas": []
+        "admin_areas": [],
+        "gender": "any"
       },
       "source_url": "https://jizokukahojokin.info/",
       "source_snippet": "小規模事業者の販路開拓等の取組を支援する持続化補助金(日本商工会議所・全国商工会連合会)",
@@ -3505,7 +3569,8 @@
         "student_required": false,
         "admin_areas": [
           "Tokyo"
-        ]
+        ],
+        "gender": "any"
       },
       "source_url": "https://www.hataraku.metro.tokyo.lg.jp/sodan/sogyo/",
       "source_snippet": "都内で創業を予定している方や創業して間もない中小企業者等に、創業初期に必要な経費の一部を助成(東京都)",
@@ -3564,7 +3629,8 @@
         "residency_months_min": null,
         "housing_tenure": null,
         "student_required": false,
-        "admin_areas": []
+        "admin_areas": [],
+        "gender": "any"
       },
       "source_url": "https://www.mhlw.go.jp/",
       "source_snippet": "有期雇用労働者、短時間労働者、派遣労働者など非正規雇用労働者の企業内でのキャリアアップを促進するため、正社員化等の取組を実施した事業主に支給(厚生労働省)",
@@ -3623,7 +3689,8 @@
         "residency_months_min": null,
         "housing_tenure": null,
         "student_required": false,
-        "admin_areas": []
+        "admin_areas": [],
+        "gender": "any"
       },
       "source_url": "https://www.mhlw.go.jp/",
       "source_snippet": "事業活動の縮小を余儀なくされた事業主が労働者の雇用維持を図った場合に休業手当等の一部を助成(厚生労働省)",
@@ -3681,7 +3748,9 @@
         "residency_months_min": null,
         "housing_tenure": null,
         "student_required": false,
-        "admin_areas": []
+        "admin_areas": [],
+        "gender": "any",
+        "rule_source": "geography_unknown"
       },
       "source_url": "https://www.zsjsc.or.jp/",
       "source_snippet": "高年齢者の多様な就業機会を確保するため、各市町村にシルバー人材センターが設置されている(全国シルバー人材センター事業協会)",
@@ -3732,7 +3801,9 @@
         "residency_months_min": null,
         "housing_tenure": null,
         "student_required": false,
-        "admin_areas": []
+        "admin_areas": [],
+        "gender": "any",
+        "rule_source": "geography_unknown"
       },
       "source_url": "https://musubie.org/",
       "source_snippet": "こども食堂は、地域の子どもたちに無料または低額で食事を提供する場(全国こども食堂支援センター・むすびえ)",
@@ -3783,7 +3854,9 @@
         "residency_months_min": null,
         "housing_tenure": null,
         "student_required": false,
-        "admin_areas": []
+        "admin_areas": [],
+        "gender": "any",
+        "rule_source": "geography_unknown"
       },
       "source_url": "https://2hj.org/",
       "source_snippet": "まだ食べられるのに廃棄される食品を、必要としている人々のもとへ届けるフードバンク活動(セカンドハーベスト・ジャパン)",
@@ -3839,7 +3912,8 @@
         "residency_months_min": null,
         "housing_tenure": null,
         "student_required": false,
-        "admin_areas": []
+        "admin_areas": [],
+        "gender": "any"
       },
       "source_url": "https://www.mhlw.go.jp/",
       "source_snippet": "一般企業等への就労を希望する障害のある方に、就労に必要な知識・能力向上の訓練を行う障害福祉サービス(厚生労働省)",
@@ -3890,7 +3964,8 @@
         "residency_months_min": null,
         "housing_tenure": null,
         "student_required": false,
-        "admin_areas": []
+        "admin_areas": [],
+        "gender": "any"
       },
       "source_url": "https://www.mlit.go.jp/jutakukentiku/house/jutakukentiku_house_fr7_000026.html",
       "source_snippet": "住宅確保要配慮者(低額所得者、被災者、高齢者、障害者、子供を養育する者等)の民間賃貸住宅への円滑な入居の促進を図るため...居住支援法人(国土交通省)",
