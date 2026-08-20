@@ -43,7 +43,7 @@ rather than improvising in the console at 11pm.
 >
 > **Never miss a deadline again.**
 > Grants close. Get a reminder before each one does, and another when a closed
-> programme is due to reopen — we track 226 closed programmes with their
+> programme is due to reopen — we track 227 closed programmes with their
 > expected return dates, because a grant you miss by a week is worth nothing.
 >
 > **Keep your paperwork once.**
