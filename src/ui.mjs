@@ -185,7 +185,37 @@ ${ldBlocks}
            to already know /account/ existed. Filled in by the script below
            once /api/me answers, so a signed-in visitor sees their plan rather
            than a generic "Sign in". -->
-      <a class="nav__account" id="nav-account" href="${LB}/account/" data-signed-out="${esc(T('navSignIn'))}">${esc(T('navSignIn'))}</a>
+      <!-- The account control, and why it is a menu rather than a label.
+
+           It used to be one link whose text became "Upgrade" as soon as you
+           signed in without a subscription. That is the majority state — every
+           free account, and every paid one between signing in and paying — and
+           in it the only account affordance anywhere in the chrome was a filled
+           green button that reads as a purchase. There was no "My account" and
+           no "Sign out" on any page but /account/ itself, which you could only
+           reach by guessing that the Upgrade button went there. Measured across
+           /, /check/, /gb/ and /account/ in all three auth states: signed-in
+           free found zero sign-out controls on three of the four.
+
+           So the chip now always says who you are, never what we would like to
+           sell you, and the two things a signed-in person needs — their account
+           and the way out — are one click away from every page. Upgrade is
+           still in the menu, and still on /account/ and /pricing/ where it
+           belongs.
+
+           It stays an <a> to /account/: with no JavaScript the click navigates
+           there, which is the same place the menu's first item goes. -->
+      <span class="acct">
+        <a class="nav__account" id="nav-account" href="${LB}/account/"
+           aria-haspopup="true" aria-expanded="false"
+           data-signed-out="${esc(T('navSignIn'))}">${esc(T('navSignIn'))}</a>
+        <span class="acct__menu" id="acct-menu" role="menu" hidden>
+          <span class="acct__who" id="acct-menu-email"></span>
+          <a role="menuitem" href="${LB}/account/">${esc(T('navMyAccount'))}</a>
+          <a role="menuitem" href="${LB}/pricing/" id="acct-menu-upgrade">${esc(T('navUpgrade'))}</a>
+          <a role="menuitem" href="${base}/auth/signout" id="acct-menu-signout">${esc(T('acctSignOut'))}</a>
+        </span>
+      </span>
       ${
         altLangs.length > 1
           ? `<label class="tiny" style="position:absolute;left:-9999px" for="lang-top">${esc(T('language'))}</label>
@@ -378,9 +408,34 @@ bindCheckout(document);
        of a devtools-flippable gate. This is only a label, but the assertion is
        worth more than the idiom. */
     const paid = ['active', 'admin'].includes(st.kind);
-    el.textContent = paid ? "${esc(T('navMyAccount'))}" : "${esc(T('navUpgrade'))}";
+    /* The label is who you are, in both states. It used to be the plan we
+       wanted you on, which left an unpaid signed-in visitor with no route to
+       their own account or to sign out from anywhere but /account/. */
+    el.textContent = "${esc(T('navMyAccount'))}";
     el.classList.add(paid ? 'nav__account--on' : 'nav__account--off');
     el.title = st.line;
+
+    const menu = document.getElementById('acct-menu');
+    if (!menu) return;
+    document.getElementById('acct-menu-email').textContent = who.email || '';
+    /* Nothing to upgrade to if they already pay. */
+    document.getElementById('acct-menu-upgrade').hidden = paid;
+    el.setAttribute('role', 'button');
+
+    const close = () => { menu.hidden = true; el.setAttribute('aria-expanded', 'false'); };
+    el.addEventListener('click', (ev) => {
+      ev.preventDefault();
+      const open = menu.hidden;
+      menu.hidden = !open;
+      el.setAttribute('aria-expanded', String(open));
+      if (open) menu.querySelector('a')?.focus();
+    });
+    /* Escape and a click anywhere else close it — a menu you cannot dismiss is
+       worse than no menu. */
+    document.addEventListener('keydown', (ev) => { if (ev.key === 'Escape') close(); });
+    document.addEventListener('click', (ev) => {
+      if (!menu.hidden && !ev.target.closest('.acct')) close();
+    });
   } catch {
     /* Offline, or the API is not there. The link still works. */
   }
