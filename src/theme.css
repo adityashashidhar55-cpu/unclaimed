@@ -91,7 +91,16 @@
 
 *, *::before, *::after { box-sizing: border-box; }
 
-html { scroll-behavior: smooth; }
+/* The masthead is sticky, so an anchored target scrolls to y=0 and arrives
+   underneath it: 83px of the heading hidden on desktop, 129px on a phone —
+   the whole heading and the first line of what follows. scroll-padding-top is
+   the only thing that fixes it for every route in (a #link, the skip link
+   from a scrolled position, scrollIntoView, a page loaded on a #fragment);
+   a scroll-margin on each target only fixes the targets somebody remembered.
+   The values clear the two heights the masthead actually has — measured, not
+   assumed — with a little over. The 560px breakpoint is where it grows. */
+html { scroll-behavior: smooth; scroll-padding-top: 6rem; }
+@media (max-width: 560px) { html { scroll-padding-top: 8.5rem; } }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   *, *::before, *::after { animation-duration: .001ms !important; transition-duration: .001ms !important; }
@@ -268,10 +277,16 @@ a:hover { opacity: .72; }
    COLLAPSES OUT through it — the wrapper's own computed margin-bottom reads
    0px while the space is still there. Zeroing only the outer element
    therefore changes nothing at all, which is exactly what the first version
-   of this rule did. */
-main > section > *:last-child,
-main > section > *:last-child > *:last-child,
-main > section > *:last-child > *:last-child > *:last-child { margin-bottom: 0; }
+   of this rule did.
+
+   And `main > *`, not `main > section`: /dashboard/ ends in a bare
+   <div class="shell"> and so matched none of these, which is the entire
+   16px by which its pre-footer joint differed from every other page. The
+   block is a <section> now, but the selector is broadened as well — either
+   fix alone leaves the trap set for the next top-level <div> anyone adds. */
+main > * > *:last-child,
+main > * > *:last-child > *:last-child,
+main > * > *:last-child > *:last-child > *:last-child { margin-bottom: 0; }
 
 .section-rule { border-top: 1px solid var(--line); }
 

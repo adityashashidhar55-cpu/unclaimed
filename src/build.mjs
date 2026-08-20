@@ -2674,7 +2674,11 @@ function dashboardPage() {
     </div>
   </noscript>
 </div>
-<div class="shell" style="padding:0 0 4rem">
+<!-- A <section>, not a <div>: the main > section > *:last-child margin-bottom:0
+     rule in theme.css is what closes the pre-footer joint on every page, and a
+     bare <div> could not match it — /dashboard/ carried 16px more space above its
+     footer than /startups/, /enterprise/ and /check/ for exactly that reason. -->
+<section class="shell" style="padding:0 0 4rem">
   <!-- This paragraph said "nothing is sent anywhere" for as long as the
        workspace was localStorage-only. It now syncs, so leaving the old
        sentence there would be a privacy claim that is no longer true — the
@@ -2684,7 +2688,7 @@ function dashboardPage() {
   Signed in, the workspace itself syncs to your account so it survives a new laptop and your team sees the same
   pipeline. The <em>matching</em> never moves either way: every company is scored in this tab, against the same
   engine the rest of the site is built from, so a portfolio is never shipped somewhere to be analysed.</p>
-</div>
+</section>
 <script type="module" src="${BASE}/dashboard/dashboard.js?v=${ASSET_V}"></script>`;
 
   return layout({
