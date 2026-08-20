@@ -12,6 +12,36 @@
 export const DISCLAIMER =
   'This is a discovery tool, not legal, tax or financial advice. You appear to meet the published criteria — only the official body can confirm your entitlement. Always check the source page before applying.';
 
+/**
+ * The same disclaimer, minus the clause that is false when nothing matched.
+ *
+ * "You appear to meet the published criteria" was printed under the heading
+ * "Nothing matched — and that's worth knowing why", and under "N programmes
+ * are waiting on 2 answers" where the eligible count is zero. A sentence that
+ * contradicts the heading above it is worse than no sentence: it is the
+ * product telling a migrant worker blocked on citizenship by all 80 records
+ * that they qualify.
+ */
+export const DISCLAIMER_NO_MATCH =
+  'This is a discovery tool, not legal, tax or financial advice. Only the official body can confirm your entitlement. Always check the source page before applying.';
+
+/**
+ * How old a check has to be before we say so. Named, so the number is
+ * arguable in one place rather than buried in a comparison.
+ */
+export const STALE_AFTER_DAYS = 365;
+
+/** True when this record's last check is older than STALE_AFTER_DAYS. */
+export function isStale(programme, asOf = Date.now()) {
+  const d = Date.parse(`${programme?.last_verified_at ?? ''}T00:00:00Z`);
+  if (!Number.isFinite(d)) return false; // no date is not the same as an old one
+  return asOf - d > STALE_AFTER_DAYS * 86400000;
+}
+
+export function disclaimerFor(eligibleCount) {
+  return eligibleCount > 0 ? DISCLAIMER : DISCLAIMER_NO_MATCH;
+}
+
 /* ------------------------------------------------------------------ */
 /* Labels                                                              */
 /* ------------------------------------------------------------------ */
@@ -138,11 +168,35 @@ export function monthsPayable(p) {
   return Math.min(12, Math.max(0, months));
 }
 
+/* Social-security rates in Ireland, the UK and Canada are published per week,
+   not per month, and 25 records stored the weekly figure under
+   amount_period 'monthly' because the enum had no weekly value. Multiplying a
+   weekly rate by twelve told a retired Irish reader the contributory State
+   Pension pays EUR 898 a year against a real EUR 15,563 — an answer wrong by a
+   factor of four and a third, in the direction that loses them the money.
+   The enum now carries the two periods the data actually uses. */
+const PERIODS_PER_YEAR = { weekly: 52, fortnightly: 26 };
+
 function annualize(amount, period, p) {
   if (amount === null || amount === undefined) return null;
+  const per = PERIODS_PER_YEAR[period];
+  if (per) {
+    /* Deliberately NOT scaled by monthsPayable(). That helper reads
+       deadline_note as well as amount_note, and Ireland's State Pension says
+       "Apply up to 3 months ... before your 66th birthday" — an application
+       window, not a payment duration. Feeding a weekly rate through it turned
+       EUR 15,563 into EUR 3,890. The duration reader is wrong for the monthly
+       path too, but fixing that moves totals in every country and belongs in
+       its own change; here we take the published rate at its published rate. */
+    return Math.round(amount * per * 100) / 100;
+  }
   if (period !== 'monthly') return amount;
   return Math.round(amount * (p ? monthsPayable(p) : 12));
 }
+
+/* Exported so the amount tests can pin the arithmetic without reaching into
+   module internals. */
+export const annualizeAmount = annualize;
 
 /**
  * Some programmes are credit facilities or capital ceilings (loan schemes,
@@ -519,7 +573,28 @@ function evalProgramme(p, profile, entry) {
   const country = entry.name;
 
   // 1. Geography
-  if (e.admin_areas && e.admin_areas.length > 0) {
+  /* A sub-national scheme with nothing to gate on is not a national scheme.
+     
+     The rule only fired when admin_areas was non-empty, so 115 records marked
+     region-, state- or city-level with an empty list were offered to everyone
+     in the country. Run over data/ca.json, users in Ontario, British Columbia
+     and Quebec were each handed the identical four city schemes — a Quebec
+     resident told they could claim a City of Toronto transit discount.
+     Geography is the one gate a reader cannot work around by trying harder, so
+     getting it wrong is not an optimistic estimate, it is a wasted afternoon.
+     
+     Where the locality is genuinely not in the data yet, the record is marked
+     `geography_unknown` and routed to "needs one more answer" — the bucket
+     that already exists for exactly this. It says "we do not know", which is
+     true, instead of "yes", which is not. */
+  if (e.rule_source === 'geography_unknown') {
+    verdicts.push({
+      outcome: 'unknown',
+      attribute: 'admin_area',
+      sentence: `This is a local scheme and we have not yet recorded which parts of ${country} it covers`,
+      question: `Which part of ${country} do you live in?`,
+    });
+  } else if (e.admin_areas && e.admin_areas.length > 0) {
     if (profile.admin_area === null || profile.admin_area === undefined) {
       verdicts.push({
         outcome: 'unknown',
@@ -577,6 +652,47 @@ function evalProgramme(p, profile, entry) {
         outcome: 'fail',
         attribute: 'status',
         sentence: `This programme is for ${listAnd(e.statuses.map((s) => STATUS_LABEL[s] ?? s))}`,
+        question: null,
+      });
+    }
+  }
+
+  /* 2b. Sex-restricted programmes.
+   *
+   * eligibility.gender was populated on 1,235 of 2,216 records and read by no
+   * code anywhere — `grep -c gender` returned 0 for the matcher, the build,
+   * both wizards and every pwa module. So four sex-restricted programmes
+   * reached the eligible bucket for male-plausible profiles, and six Indian
+   * cash schemes were offered at up to INR 30,000/yr on pages that themselves
+   * print "pays ₹2,500 a month to eligible women heads of households".
+   *
+   * The wizard asks no gender question today, and adding one is a product
+   * decision, not a bug fix. So the default when the profile is silent is
+   * `unknown` — "needs one more answer" — never a silent pass and never a
+   * hard fail. A silent pass is the single outcome that has to stop.
+   */
+  if (e.gender && e.gender !== 'any') {
+    const label = e.gender === 'female' ? 'women' : 'men';
+    const mine = profile.gender;
+    if (mine == null || mine === '' || mine === 'unknown') {
+      verdicts.push({
+        outcome: 'unknown',
+        attribute: 'gender',
+        sentence: `This programme is only open to ${label}`,
+        question: `This programme is only open to ${label}. Does that apply to you?`,
+      });
+    } else if (mine === e.gender) {
+      verdicts.push({
+        outcome: 'pass',
+        attribute: 'gender',
+        sentence: `This programme is open to ${label}, as you told us applies`,
+        question: null,
+      });
+    } else {
+      verdicts.push({
+        outcome: 'fail',
+        attribute: 'gender',
+        sentence: `This programme is only open to ${label}`,
         question: null,
       });
     }
@@ -800,7 +916,7 @@ function evalProgramme(p, profile, entry) {
 /* Matcher                                                             */
 /* ------------------------------------------------------------------ */
 
-export function match(profile, countryData, manifestEntry) {
+export function match(profile, countryData, manifestEntry, asOf = Date.now()) {
   const eligible = [];
   const needsOne = [];
   const notEligible = [];
@@ -815,6 +931,17 @@ export function match(profile, countryData, manifestEntry) {
 
   for (const p of countryData.programmes) {
     if (p.verification_status === 'stale') continue;
+    /* ...which no record has ever been. All 2,216 carry the identical
+       last_verified_at 2026-08-12 and verification_status is only ever
+       'verified' or 'unverified', so the line above is unreachable and no
+       record can age out however long it sits. Setting real per-record dates
+       needs provenance from the extraction run, which this tree does not
+       have; making the FIELD capable of meaning something does not. So
+       staleness is derived from the date rather than waiting for a literal
+       status, and it produces a caveat, not a drop: dropping programmes from
+       the eligible bucket on the strength of a constant date would delete
+       real money from real answers on a bug. */
+    const stale = isStale(p, asOf);
     if (p.last_verified_at > dataAsOf) dataAsOf = p.last_verified_at;
 
     const verdicts = evalProgramme(p, profile, manifestEntry);
@@ -830,7 +957,16 @@ export function match(profile, countryData, manifestEntry) {
       blocking_question: null,
       blocking_attribute: null,
       est_annual_min: annualize(p.amount_min, p.amount_period, p),
-      est_annual_max: annualize(p.amount_max, p.amount_period, p),
+      /* A flat-rate benefit states one figure, in amount_min, and leaves
+         amount_max null — 16 records do, including bolsa-familia at 600/mo and
+         auxilio-reclusao at 1,518/mo. annualize(null) returns null, `?? 0` in
+         the totaller then added zero to the ceiling while the floor got the
+         real number, so R$25,416 of a low-income Brazilian household's answer
+         sat inside the displayed minimum and was absent from the maximum:
+         "I found R$61,848–R$192,305/yr", a range that with enough such matches
+         inverts outright. For a flat rate the floor IS the ceiling, so say so
+         here rather than papering over it in the sum. */
+      est_annual_max: annualize(p.amount_max ?? p.amount_min, p.amount_period, p),
       is_capital: isCapitalCeiling(p),
       circumstances: circumstanceTags(p),
     };
@@ -839,6 +975,14 @@ export function match(profile, countryData, manifestEntry) {
     // match, never counted in the total — surfaced as a caveat instead.
     const unmet = m.circumstances.filter((c) => !claimed.has(c));
     const caveats = unmet.map((id) => CIRCUMSTANCES.find((c) => c.id === id)?.short || id);
+    if (stale) {
+      /* Visible, but NOT pushed onto `caveats`. A caveat routes a programme
+         into the conditional bucket, which would take it out of the eligible
+         list and out of the total — dropping real money on the strength of a
+         date. This is a note that travels with the match, nothing more. */
+      m.is_stale = true;
+      m.stale_note = `Nobody has re-checked the official page since ${p.last_verified_at}. Confirm the amount there before you rely on it.`;
+    }
     if (isEmployerAid(p)) caveats.push('paid to an employer, not to you');
     if (isUnpricedMeansTest(p)) {
       caveats.push("an income test whose published threshold we don't hold");
@@ -924,9 +1068,23 @@ export function match(profile, countryData, manifestEntry) {
     }
   }
 
-  // Headline value: eligible bucket, cash-equivalent programmes only.
+  /* Headline value: eligible bucket, cash-equivalent programmes only.
+   *
+   * A one-off grant is not a per-year figure and must not be summed into one.
+   * A Singapore retiree was shown "$126,010–$419,695 per year" of which
+   * $350,305 was three housing and export grants paid once — the cards under
+   * the same headline labelled them one-off, and /methodology/ already states
+   * the convention out loud ("one-off amounts are counted once"). The total
+   * and the caption disagreed by a factor of five. So the two kinds of money
+   * are counted into two totals and the screen renders both; nothing is
+   * dropped, it is just no longer described in a unit it is not measured in.
+   */
   let totalMin = 0;
   let totalMax = 0;
+  let oneOffMin = 0;
+  let oneOffMax = 0;
+  let oneOffCount = 0;
+  let recurringCount = 0;
   let verifiedMin = 0;
   let verifiedMax = 0;
   let capitalMax = 0;
@@ -937,6 +1095,13 @@ export function match(profile, countryData, manifestEntry) {
       continue;
     }
     if ((m.est_annual_max ?? 0) === 0 && (m.est_annual_min ?? 0) === 0) unpricedCount += 1;
+    if (m.programme.amount_period === 'one_off') {
+      oneOffMin += m.est_annual_min ?? 0;
+      oneOffMax += m.est_annual_max ?? 0;
+      if ((m.est_annual_max ?? 0) > 0 || (m.est_annual_min ?? 0) > 0) oneOffCount += 1;
+      continue;
+    }
+    if ((m.est_annual_max ?? 0) > 0 || (m.est_annual_min ?? 0) > 0) recurringCount += 1;
     totalMin += m.est_annual_min ?? 0;
     totalMax += m.est_annual_max ?? 0;
     if (m.programme.verification_status === 'verified') {
@@ -1009,6 +1174,16 @@ export function match(profile, countryData, manifestEntry) {
     blockers,
     total_min: totalMin,
     total_max: totalMax,
+    /* Per-year money and paid-once money, kept apart so a caller can never
+       print one under the other's unit. total_* is recurring only. */
+    recurring_count: recurringCount,
+    one_off_min: oneOffMin,
+    one_off_max: oneOffMax,
+    one_off_count: oneOffCount,
+    /* How many of the eligible matches carry a stale-data note. Zero today,
+       because every record shares one last_verified_at; the point is that the
+       field can now mean something. */
+    stale_count: eligible.filter((m) => m.is_stale).length,
     capital_max: capitalMax,
     unpriced_count: unpricedCount,
     currency,
@@ -1016,7 +1191,7 @@ export function match(profile, countryData, manifestEntry) {
     verified_total_max: verifiedMax,
     coverage_note: `Matched your answers against ${countryData.programmes.length} programmes in ${countryData.country_name} — ${verifiedCount} human-verified, the rest auto-extracted from official sources.`,
     data_as_of: dataAsOf,
-    disclaimer: DISCLAIMER,
+    disclaimer: disclaimerFor(eligible.length),
   };
 }
 

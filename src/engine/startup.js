@@ -184,9 +184,25 @@ export function testProgramme(programme, profile, asOf) {
   if (e.headcount_min != null && profile.headcount != null && profile.headcount < e.headcount_min) {
     fails.push(`At least ${e.headcount_min} employees required`);
   }
+  /* The EUR sibling, never the raw local figure.
+     
+     turnover_annual_max holds the funder's PUBLISHED number, in the funder's
+     own currency — SEK 10,000,000 for se-vinnova-innovativa-startups, INR
+     2,000,000,000 for in-dpiit-startup-recognition — and the profile carries
+     turnover_annual_eur. Comparing the two directly said yes to a company
+     roughly 3.4x over Vinnova's published ceiling, with an empty `fails`
+     array, which is the most confident way to be wrong. The local figure stays
+     in the record because that is the number to SHOW; the derived
+     turnover_annual_max_eur is the only one the engine reads.
+     
+     A record with a ceiling but no derived sibling is a data error, not a
+     reason to fall back to the local figure — falling back is what produced
+     the bug. It is treated as an unanswerable question instead, and
+     scripts/verify.mjs fails the build on it. */
   if (e.turnover_annual_max != null) {
-    if (profile.turnover_annual_eur == null) unknowns.push('turnover_annual_eur');
-    else if (profile.turnover_annual_eur > e.turnover_annual_max) fails.push('Turnover above the ceiling');
+    if (e.turnover_annual_max_eur == null) unknowns.push('turnover_annual_eur');
+    else if (profile.turnover_annual_eur == null) unknowns.push('turnover_annual_eur');
+    else if (profile.turnover_annual_eur > e.turnover_annual_max_eur) fails.push('Turnover above the ceiling');
   }
 
   const smeOk = meetsSme(e.sme_category, sme);
@@ -229,7 +245,25 @@ export function testProgramme(programme, profile, asOf) {
     fails.push('Requires a locally registered entity');
   }
 
-  const closed = programme.deadline_type === 'closed';
+  /* Closed means closed, whichever field says so.
+     
+     This read deadline_type only. The field the dataset actually populates is
+     `status`, and the two disagreed on 168 of the 226 records marked closed —
+     so 168 closed programmes were never marked closed by the engine, 27 of
+     them came back 'eligible' for an ordinary seed-stage profile, and their
+     amounts were summed into a headline total. `paused` is in here too: a
+     programme between application windows is not something a founder can
+     apply for today, and telling them otherwise wastes the one resource a
+     small team has.
+     
+     `asOf` is passed in rather than read from the clock, so this stays a pure
+     function and a test can pin the date. */
+  const todayIso = new Date(asOf ?? Date.now()).toISOString().slice(0, 10);
+  const closed =
+    programme.status === 'closed' ||
+    programme.status === 'paused' ||
+    programme.deadline_type === 'closed' ||
+    (typeof programme.closes_at === 'string' && programme.closes_at < todayIso);
 
   let verdict;
   if (closed) verdict = 'closed';
