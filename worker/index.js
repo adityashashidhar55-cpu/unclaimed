@@ -232,17 +232,45 @@ async function loadFullAsset(env, request, rel) {
   return res.ok ? res.json() : null;
 }
 
-async function loadCountry(env, request, cc) {
+/**
+ * Load a country's programmes.
+ *
+ * The fallback to the stripped public file used to be silent, and silence is
+ * what made it dangerous: a build that forgot EMIT_FULL_DATASET=1 left a
+ * paying subscriber's answer byte-identical in shape to a free one — 69 cards
+ * with empty titles pointing at 404s — and nothing anywhere said so. The
+ * stripped copy is still the right thing to serve an unpaid caller, so keep
+ * it; but when the caller has paid, mark the payload degraded and log it, so
+ * an entitled response can never be mistaken for an unpaid one.
+ */
+async function loadCountry(env, request, cc, opts = {}) {
   const full = await loadFullAsset(env, request, `programmes/${cc}.json`);
-  if (full) return full;
-  /* No full copy deployed (an older build). Fall back to the public file
-     rather than 500: a stripped answer is wrong-ish, a broken one is worse. */
+  if (full) {
+    full.dataset_degraded = false;
+    return full;
+  }
+
   const url = new URL(request.url);
   url.pathname = `/api/v1/programmes/${cc}.json`;
   url.search = '';
   const res = await env.ASSETS.fetch(new Request(url.toString()));
   if (!res.ok) return null;
-  return res.json();
+  const data = await res.json();
+
+  /* Only the paid path is a real incident. An unpaid caller is meant to get
+     the stripped rows, so do not cry wolf on every anonymous /api/check. */
+  if (opts.entitled) {
+    console.error(
+      `dataset_degraded: /api/v1/full/programmes/${cc}.json is absent; ` +
+        'an entitled request is being answered from the stripped public file. ' +
+        'The build did not emit the full dataset (EMIT_FULL_DATASET).',
+    );
+    data.dataset_degraded = true;
+    data.dataset_degraded_reason = 'full_dataset_missing';
+  } else {
+    data.dataset_degraded = false;
+  }
+  return data;
 }
 
 async function loadManifest(env, request) {
@@ -269,15 +297,18 @@ async function handleCheck(request, env) {
   if (!profile?.country_code) return bad('country_code required');
 
   const cc = String(profile.country_code).toLowerCase();
-  const data = await loadCountry(env, request, cc);
+
+  /* Entitlement is resolved before the data load, not after: loadCountry needs
+     to know whether a missing full dataset is a non-event or an incident. */
+  const session = await readSession(env, request.headers.get('cookie'), request.headers.get('authorization'));
+  const ent = await entitlementFor(env, session, cc);
+
+  const data = await loadCountry(env, request, cc, { entitled: ent.entitled });
   const manifest = await loadManifest(env, request);
   if (!data || !manifest) return bad('unknown country', 404);
 
   const entry = manifest.countries.find((c) => c.slug === cc);
   const result = match(profile, data, entry);
-
-  const session = await readSession(env, request.headers.get('cookie'), request.headers.get('authorization'));
-  const ent = await entitlementFor(env, session, cc);
 
   /* Free payload — the number, never the list. */
   const free = {
@@ -285,6 +316,13 @@ async function handleCheck(request, env) {
     currency: result.currency,
     total_min: result.total_min,
     total_max: result.total_max,
+    /* total_* is per-year money only. One-off grants are carried separately so
+       no client can print them under a "per year" caption — the web results
+       screen used to, to the tune of SGD 350,305 out of SGD 419,695. */
+    one_off_min: result.one_off_min,
+    one_off_max: result.one_off_max,
+    one_off_count: result.one_off_count,
+    recurring_count: result.recurring_count,
     counts: {
       eligible: result.eligible.length,
       tapered: (result.tapered || []).length,
@@ -336,6 +374,11 @@ async function handleCheck(request, env) {
 
   return json({
     ...free,
+    /* Explicit rather than silent: a paid answer built from stripped rows says
+       so, so the client can show "the full list did not load" instead of a
+       page of blank titles that reads exactly like the free tier. */
+    dataset_degraded: data.dataset_degraded === true,
+    dataset_degraded_reason: data.dataset_degraded ? data.dataset_degraded_reason : null,
     eligible: result.eligible.map(strip),
     tapered: (result.tapered || []).map(strip),
     conditional: result.conditional.map(strip),
@@ -359,10 +402,19 @@ async function handlePlan(request, env) {
   const ent = await entitlementFor(env, session, cc, PRODUCT.ASSISTANCE);
   if (!ent.entitled) return json({ error: 'subscription required', paywall: ent }, 402);
 
-  const data = await loadCountry(env, request, cc);
+  const data = await loadCountry(env, request, cc, { entitled: true });
   const manifest = await loadManifest(env, request);
   if (!data || !manifest) return bad('unknown country', 404);
   const entry = manifest.countries.find((c) => c.slug === cc);
+
+  /* Building a submission package out of nameless stripped rows would produce
+     a plausible-looking application addressed to nobody. Refuse instead. */
+  if (data.dataset_degraded) {
+    return json(
+      { error: 'dataset unavailable', message: 'The full programme dataset did not load. Please try again shortly.' },
+      503,
+    );
+  }
 
   const result = match(profile, data, entry);
 
@@ -959,6 +1011,56 @@ async function handleStartupPlan(request, env) {
   });
 }
 
+/* Look-ups a single account may make against a public register in one day.
+   Generous for the real workflow — a fund checking a portfolio — and far
+   below anything that looks like a scrape. */
+const AUTOFILL_MAX_PER_DAY = 100;
+
+/**
+ * Count a use against a per-user, per-day budget and record it.
+ *
+ * Deliberately a D1 row rather than an in-memory counter: Workers isolates are
+ * per-colo and short-lived, so anything held in memory resets whenever the
+ * platform feels like it, which is not a rate limit at all.
+ */
+async function countAndBumpDailyUse(env, userId, kind, max) {
+  const day = new Date().toISOString().slice(0, 10);
+  try {
+    /* Created here rather than in a migration because the limiter must not be
+       the thing that is missing when a deploy runs ahead of the schema — a
+       rate limiter that is absent is a rate limiter that is off. */
+    await env.DB.prepare(
+      `CREATE TABLE IF NOT EXISTS daily_usage (
+         user_id TEXT NOT NULL,
+         kind TEXT NOT NULL,
+         day TEXT NOT NULL,
+         used INTEGER NOT NULL DEFAULT 0,
+         PRIMARY KEY (user_id, kind, day)
+       )`,
+    ).run();
+    const row = await env.DB.prepare(
+      'SELECT used FROM daily_usage WHERE user_id = ? AND kind = ? AND day = ?',
+    )
+      .bind(userId, kind, day)
+      .first();
+    const used = row?.used ?? 0;
+    if (used >= max) return { ok: false, used, max };
+    await env.DB.prepare(
+      `INSERT INTO daily_usage (user_id, kind, day, used) VALUES (?, ?, ?, 1)
+       ON CONFLICT(user_id, kind, day) DO UPDATE SET used = daily_usage.used + 1`,
+    )
+      .bind(userId, kind, day)
+      .run();
+    return { ok: true, used: used + 1, max };
+  } catch (err) {
+    /* The table is missing or D1 is down. Fail CLOSED: the thing being
+       protected is a third-party quota and our standing with the registers,
+       and neither survives an outage that quietly disables the limiter. */
+    console.error('daily_usage unavailable, refusing the request', err);
+    return { ok: false, used: max, max };
+  }
+}
+
 /**
  * POST /api/startups/autofill — one identifier, most of a form.
  *
@@ -972,6 +1074,31 @@ async function handleStartupAutofill(request, env) {
 
   const { country_code, identifier, programme_slug, profile = {} } = await request.json().catch(() => ({}));
   if (!country_code || !identifier) return bad('country_code and identifier required');
+
+  /* Entitlement, the same as handleStartupPlan.
+     
+     This route spends OUR Companies House / SIRENE / SAM.gov quota under OUR
+     keys, and /pricing/ sells it inside the Startup tier. Without this check
+     any free account that could complete one OTP could enumerate those
+     registers through us at whatever rate it liked — a quota bill and a
+     proxy-abuse complaint pointed at our keys, for a feature nobody had paid
+     for. */
+  const ent = await entitlementFor(env, session, String(country_code).toLowerCase(), PRODUCT.ASSISTANCE);
+  if (!ent.entitled) return json({ error: 'subscription required', paywall: ent }, 402);
+
+  /* A daily ceiling per account on top of the paywall. Entitlement stops the
+     free abuse; this stops one paid seat from becoming the enumeration proxy,
+     which a subscription does not buy. */
+  const cap = await countAndBumpDailyUse(env, session.uid, 'startup_autofill', AUTOFILL_MAX_PER_DAY);
+  if (!cap.ok) {
+    return json(
+      {
+        error: 'rate_limited',
+        message: `Register look-ups are limited to ${AUTOFILL_MAX_PER_DAY} a day per account. Try again tomorrow.`,
+      },
+      429,
+    );
+  }
 
   if (!autofillAvailable(country_code)) {
     return json({ ok: false, reason: 'no_machine_readable_register', country: country_code }, 200);
@@ -1098,7 +1225,9 @@ async function handleCheckout(request, env) {
     .catch(() => null);
   const customerId = existing?.stripe_customer_id || null;
 
-  const cs = await stripeCall(env, 'checkout/sessions', {
+  let cs;
+  try {
+    cs = await stripeCall(env, 'checkout/sessions', {
     mode: 'subscription',
     'line_items[0][price]': plan.price,
     'line_items[0][quantity]': String(seats),
@@ -1123,8 +1252,22 @@ async function handleCheckout(request, env) {
           ...(customerId ? { 'customer_update[name]': 'auto', 'customer_update[address]': 'auto' } : {}),
         }
       : {}),
-    allow_promotion_codes: 'true',
-  });
+      allow_promotion_codes: 'true',
+    });
+  } catch (err) {
+    /* stripeCall throws Stripe's own message. Uncaught, it reached the router
+       catch-all, which returns 500 with `detail` set to that message — so a
+       misconfigured price answered the browser with
+       "No such price: price_1U5kbA…", publishing our configuration to anyone
+       who clicked Subscribe. The client, meanwhile, looked for `message`,
+       found none, and showed the generic error anyway: all of the leak and
+       none of the benefit. */
+    console.error(`stripe_checkout_failed plan=${planKey} uid=${session.uid}`, err);
+    return json(
+      { error: 'stripe_unavailable', message: 'We could not open checkout just now. Please try again in a moment.' },
+      503,
+    );
+  }
 
   return json({ url: cs.url, plan: planKey, seats });
 }
@@ -1170,8 +1313,41 @@ async function handleStripeWebhook(request, env, ctx) {
   if (ins.meta.changes === 0) return json({ received: true, duplicate: true });
 
   /* Acknowledge immediately; do the writes after. Stripe times out around 10s
-     and the free plan gives 10ms CPU per invocation. */
-  ctx.waitUntil(applyStripeEvent(event, env));
+     and the free plan gives 10ms CPU per invocation.
+     
+     The dedupe row above is correct and stays where it is. What was missing is
+     what happens when the write it guards never lands: applyStripeEvent had no
+     try/catch, so a D1 failure meant the customer had been charged, Stripe had
+     its 200 and would not redeliver, and the id was already in stripe_events
+     so a manual redelivery was dropped as a duplicate. A paid subscription
+     that no code path can ever grant. Releasing the id on failure is what
+     makes the redelivery — automatic or by hand — actually reprocess. */
+  ctx.waitUntil(
+    applyStripeEvent(event, env).catch(async (err) => {
+      console.error(`stripe_event_failed id=${event.id} type=${event.type}`, err);
+      try {
+        await env.DB.prepare('DELETE FROM stripe_events WHERE id = ?').bind(event.id).run();
+      } catch (e2) {
+        console.error(`stripe_event_release_failed id=${event.id} — redelivery will be dropped as a duplicate`, e2);
+      }
+      /* Somewhere an operator can see it, not only in a log line that scrolls. */
+      try {
+        await env.DB.prepare(
+          `CREATE TABLE IF NOT EXISTS stripe_event_failures (
+             id TEXT PRIMARY KEY, type TEXT, error TEXT, failed_at INTEGER
+           )`,
+        ).run();
+        await env.DB.prepare(
+          'INSERT OR REPLACE INTO stripe_event_failures (id, type, error, failed_at) VALUES (?, ?, ?, ?)',
+        )
+          .bind(event.id, event.type, String(err?.message ?? err).slice(0, 500), Date.now())
+          .run();
+      } catch {
+        /* The failures table is itself unavailable. The console line above is
+           then the only record, which is why it is logged first. */
+      }
+    }),
+  );
   return json({ received: true });
 }
 
@@ -1280,10 +1456,20 @@ async function handlePortal(request, env) {
     .bind(session.uid)
     .first();
   if (!row?.stripe_customer_id) return bad('no subscription', 404);
-  const portal = await stripeCall(env, 'billing_portal/sessions', {
-    customer: row.stripe_customer_id,
-    return_url: `${env.APP_ORIGIN}/account/`,
-  });
+  let portal;
+  try {
+    portal = await stripeCall(env, 'billing_portal/sessions', {
+      customer: row.stripe_customer_id,
+      return_url: `${env.APP_ORIGIN}/account/`,
+    });
+  } catch (err) {
+    /* Same rule as checkout: the detail is ours, the sentence is theirs. */
+    console.error(`stripe_portal_failed uid=${session.uid}`, err);
+    return json(
+      { error: 'stripe_unavailable', message: 'We could not open your billing settings just now. Please try again in a moment.' },
+      503,
+    );
+  }
   return json({ url: portal.url });
 }
 
