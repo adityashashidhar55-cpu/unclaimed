@@ -15,7 +15,7 @@ import {
   DISCLAIMER,
 } from './engine/matcher.js';
 import { track } from './beacon.js';
-import { T, wizardDict, translateTree, wizardLang, NUM, localePath, setHTML } from './wizard-i18n.js';
+import { T, wizardDict, translateTree, wizardLang, NUM, localePath, localeOwnsCountry, countryName, setHTML } from './wizard-i18n.js';
 import { bindCheckout } from './app/checkout.js';
 import { applyPlan, recordApplyConsent } from './app/unlock.js';
 
@@ -62,13 +62,17 @@ function t(key, english) {
 /* State                                                               */
 /* ------------------------------------------------------------------ */
 
-const S = {
-  manifest: null,
-  entry: null,
-  data: null,
-  step: 0,
-  result: null,
-  profile: {
+/**
+ * The shape an unanswered wizard starts in.
+ *
+ * A factory rather than a literal because "Another country" used to reset with
+ * `S.profile = {}`, which drops the defaults with the answers: the household
+ * step renders `value="${p.household_size}"` and so shipped the literal string
+ * value="undefined" into two number inputs, which the browser then refuses to
+ * display. The reader got two empty boxes where a first visit gets 1 and 0.
+ */
+function blankProfile() {
+  return {
     country_code: null,
     admin_area: null,
     status: null,
@@ -81,27 +85,30 @@ const S = {
     nationality_group: null,
     residency_months: null,
     circumstances: [],
-  },
+  };
+}
+
+const S = {
+  manifest: null,
+  entry: null,
+  data: null,
+  step: 0,
+  result: null,
+  profile: blankProfile(),
 };
 
 const esc = (s) =>
   String(s ?? '').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 
-/**
- * "a", "a and b", "a, b and c" — parts are already-escaped HTML.
- *
- * The joiner is not " and " in six of the seven languages, and it is not even
- * a word in hi. Intl.ListFormat knows all of them and needs no dictionary
- * entry; the manual join is kept only for a runtime that lacks it.
- */
-function listPhrase(parts) {
-  if (parts.length <= 1) return parts[0] || '';
-  try {
-    return new Intl.ListFormat(wizardLang(), { style: 'long', type: 'conjunction' }).format(parts);
-  } catch {
-    return parts.join(', ');
-  }
-}
+/* listPhrase() lived here and had exactly two callers, both inside the hero's
+   "your unpriced matches" box. Both appended " and N more" AFTER the joiner
+   had already supplied the final conjunction, so every locale read
+   "… and Legal Aid and 2 more" / "… et Legal Aid et 2 autres" — two "and"s
+   before the last item, on a page whose whole pitch is that its sentences are
+   careful. The box is gone with the rest of the hero's retractions. If a
+   sentence here ever enumerates a list with a remainder again, the remainder
+   must be a MEMBER of the list handed to the joiner, never a suffix glued on
+   after it. */
 
 /* ---- URL state (shareable, no accounts) ---- */
 /**
@@ -313,7 +320,16 @@ function navRow({ back = true, next = null, skip = null } = {}) {
 /* ------------------------------------------------------------------ */
 
 function viewCountry() {
-  const cs = S.manifest.countries.slice().sort((a, b) => a.name.localeCompare(b.name));
+  /* Sorted and labelled in the reader's language, not in English. The search
+     key keeps BOTH names, so "Royaume-Uni" and "United Kingdom" each find the
+     same row — a reader who knows the English name should not be stranded. */
+  /* Paired, not merged: scripts/test-vocabulary.mjs reads every `c.<field>` in
+     this function as a field the country manifest has to carry, and spreading
+     a derived name onto the entry makes a local look like a manifest field.
+     `c` stays the manifest record; the localised name rides beside it. */
+  const cs = S.manifest.countries
+    .map((c) => [c, countryName(c)])
+    .sort((a, b) => a[1].localeCompare(b[1], wizardLang()));
   return `<div class="wizard-step">
     ${rail()}
     <h1 class="q">${esc(T('Where do you live?'))}</h1>
@@ -324,17 +340,17 @@ function viewCountry() {
     <div class="opts" id="clist">
       ${cs
         .map(
-          (c) =>
+          ([c, label]) =>
             (() => {
               /* One sentence, translated once, used twice. The visible
                  sub-label was translated and the aria-label was composed in
                  English from the same numbers one line above it, so the
                  country picker announced in English on a French page. */
               const sub = T('{n} programmes · {v} verified', { n: NUM(c.programme_count), v: NUM(c.verified_count) });
-              return `<button class="opt" type="button" data-act="country" data-cc="${c.slug}" data-name="${esc(c.name.toLowerCase())}"
-              aria-label="${esc(T('{label}, {sub}', { label: c.name, sub }))}">
+              return `<button class="opt" type="button" data-act="country" data-cc="${c.slug}" data-name="${esc(`${label} ${c.name}`.toLowerCase())}"
+              aria-label="${esc(T('{label}, {sub}', { label, sub }))}">
               <span aria-hidden="true" style="font-size:1.3rem;line-height:1">${c.flag}</span>
-              <span aria-hidden="true">${esc(c.name)}<span class="opt__sub">${esc(sub)}</span></span>
+              <span aria-hidden="true">${esc(label)}<span class="opt__sub">${esc(sub)}</span></span>
             </button>`;
             })(),
         )
@@ -356,7 +372,7 @@ function viewCountry() {
     <!-- Coming back here with a country already chosen used to leave the
          screen with no nav at all: the only way forward was to click the
          country again. Same dead end as the status step. -->
-    ${S.entry ? navRow({ back: false, next: T('Continue with {country}', { country: S.entry.name }) }) : ''}
+    ${S.entry ? navRow({ back: false, next: T('Continue with {country}', { country: countryName(S.entry) }) }) : ''}
     <!-- One sentence with the link as a token, not three text nodes around an
          anchor. Split like that, none of the three could ever match a key. -->
     <div class="callout" style="margin-top:1.5rem"><p class="small" style="margin:0">${T(
@@ -373,7 +389,7 @@ function viewRegion() {
   const regions = S.entry.regions || [];
   return `<div class="wizard-step">
     ${rail()}
-    <h1 class="q">${esc(T('Which part of {country}?', { country: S.entry.name }))}</h1>
+    <h1 class="q">${esc(T('Which part of {country}?', { country: countryName(S.entry) }))}</h1>
     <p class="q-why">${esc(T('Regional and city schemes are the ones people miss most — council tax reductions, local transport concessions, regional housing grants.'))}</p>
     <div class="opts">
       ${regions.map((r) => optButton(r, r, null, 'admin_area')).join('')}
@@ -489,9 +505,9 @@ function viewHousing() {
     <p class="q-why">${esc(T('Housing support is the largest unclaimed category almost everywhere. Residency status decides what a country will pay a non-citizen.'))}</p>
     <h2 class="h-eyebrow" style="margin-top:1.5rem">${esc(T('Your housing situation'))}</h2>
     <div class="opts">${TENURES.map(([v, l, s]) => optButton(v, l, s, 'housing_tenure')).join('')}</div>
-    <h2 class="h-eyebrow" style="margin-top:2rem">${esc(T('Your status in {country}', { country: S.entry.name }))}</h2>
+    <h2 class="h-eyebrow" style="margin-top:2rem">${esc(T('Your status in {country}', { country: countryName(S.entry) }))}</h2>
     <div class="opts">${NATIONALITY.map(([v, l, s]) => optButton(v, l, s, 'nationality_group')).join('')}</div>
-    <div class="field" style="margin-top:1.5rem"><label for="res">${esc(T('How many months have you lived in {country}?', { country: S.entry.name }))}</label>
+    <div class="field" style="margin-top:1.5rem"><label for="res">${esc(T('How many months have you lived in {country}?', { country: countryName(S.entry) }))}</label>
       <input id="res" type="number" inputmode="numeric" min="0" value="${S.profile.residency_months ?? ''}" placeholder="${esc(T('Leave blank if unsure'))}">
       <div class="hint">${esc(T('Some programmes have a minimum residence period. Blank means we flag them rather than rule them out.'))}</div>
     </div>
@@ -582,13 +598,17 @@ const BUCKETS = {
     head: (n) => T('one={n} programme at a reduced amount|other={n} programmes at a reduced amount', { n: NUM(n) }, n),
     lock: T('how much of each one you would still get'),
   },
-  conditional: {
-    head: (n) => T('one={n} programme that depends on your circumstances|other={n} programmes that depend on your circumstances', { n: NUM(n) }, n),
-    lock: T('which circumstance each one turns on'),
-  },
-  needs: {
-    head: (n) => T('one={n} programme that needs one more answer|other={n} programmes that need one more answer', { n: NUM(n) }, n),
-    lock: T('which single answer opens each one'),
+  /* 'conditional' and 'needs' used to be two locked buckets here. They are one
+     bucket now — see 'ask' below and the #ask section in viewResults — because
+     "we have not asked you" and "you have not told us" are the same fact to
+     the person reading. Their dictionary entries stay in src/i18n/*.mjs; a
+     translated string costs nothing to keep and something to re-commission. */
+  /* One locked head for the merged bucket, and no money in it. The
+     conditional head used to read "54 programmes · £40,814 not counted" — a
+     figure advertised in a heading and disowned in the next paragraph. */
+  ask: {
+    head: (n) => T('one={n} programme · one fact decides it|other={n} programmes · one fact each', { n: NUM(n) }, n),
+    lock: T('which single fact decides each one'),
   },
   rights: {
     head: (n) => T('one={n} right you already have|other={n} rights you already have', { n: NUM(n) }, n),
@@ -608,7 +628,7 @@ const BUCKETS = {
   },
 };
 
-function gated(count, kind, buildHtml) {
+function gated(count, kind, id, buildHtml) {
   /* The zero guard sits ABOVE the entitled branch, not below it.
      With it below, a paying reader with nothing in a bucket got the heading,
      the count "0 programmes" and the reassuring blurb over an empty list,
@@ -626,7 +646,7 @@ function gated(count, kind, buildHtml) {
      selectable grey bars, and nothing tying it to the vocabulary the rest of
      the site uses. theme.css:1079 states the contract; test-gating.mjs
      enforces it now. */
-  return `<section class="bucket locked-bucket">
+  return `<section class="bucket locked-bucket" id="${esc(id)}">
     <div class="bucket__head"><h2>${esc(b.head(count))}</h2>${
       first ? '' : `<a class="bucket__unlock" href="${href('/pricing/')}">${esc(T('Unlock →'))}</a>`
     }</div>
@@ -641,6 +661,11 @@ function gated(count, kind, buildHtml) {
       ).join('')}
     </div>
     ${
+      /* The unlock control moved into the hero, where a reader meets it
+         before scrolling a page and a half. Rendering it here as well would
+         put two filled buttons on one screen saying the same thing, so what
+         is left in the first locked bucket is the quieter half: where the
+         prices are, and what signing in costs. */
       !first
         ? ''
         : SIGNED_IN
@@ -649,18 +674,14 @@ function gated(count, kind, buildHtml) {
              business_annual — so a "€50 a year" label was a €490 checkout.
              The client cannot know the price until the plan is resolved, so
              it does not claim one. */
-          ? `<p class="btn-row"><button class="btn btn-primary" type="button" data-checkout data-plan="auto">${esc(T('Unlock the full list'))}</button>
-             <a class="btn" href="${href('/pricing/')}">${esc(T('See all plans and prices'))}</a></p>
+          ? `<p class="btn-row"><a class="btn" href="${href('/pricing/')}">${esc(T('See all plans and prices'))}</a></p>
            <p class="tiny">${esc(T('Your plan and its price are shown before you pay. Cancel any time.'))}</p>`
           /* `next` used to be the hardcoded English '/check/', so a French
              reader who signed in to unlock was returned to the ENGLISH wizard
              with their answers gone — the answers live in the fragment, which
              a hardcoded path does not carry. Send them back to the page they
              are standing on, hash and all. */
-          : `<p class="btn-row"><a class="btn btn-primary" href="${esc(href('/account/'))}?next=${encodeURIComponent(
-              location.pathname + location.hash,
-            )}&plan=auto">${esc(T('Sign in to unlock'))}</a>
-             <a class="btn" href="${href('/pricing/')}">${esc(T('See pricing'))}</a></p>
+          : `<p class="btn-row"><a class="btn" href="${href('/pricing/')}">${esc(T('See pricing'))}</a></p>
            <p class="tiny">${esc(T('Email and a six-digit code. No password to forget.'))}</p>`
     }
   </section>`;
@@ -716,8 +737,54 @@ function money(n, cur) {
   return formatMoney(n, cur, wizardLang());
 }
 
-function progCard(m, kind) {
+/**
+ * The name to lead with.
+ *
+ * A French subscriber reading /fr/check/ about France was shown "Active
+ * Solidarity Income (RSA)" as the headline of every card, and that English
+ * translation was also the only name in the checklist, the deadline list and
+ * the calendar export — none of which matches anything printed on the form
+ * they will fill in. Where the page language is the language of the country
+ * being checked, the authority's own name leads and the English gloss becomes
+ * the subtitle. Everywhere else it is the other way round, because a name in a
+ * language the reader does not read is not a name.
+ */
+function progName(p) {
+  const local = p.name_local || '';
+  const en = p.name_en || '';
+  return localeOwnsCountry(S.entry?.slug) ? local || en : en || local;
+}
+
+function progAlt(p) {
+  const lead = progName(p);
+  const other = lead === p.name_local ? p.name_en : p.name_local;
+  return other && other !== lead ? other : '';
+}
+
+/**
+ * A date in the reader's own convention.
+ *
+ * "Données au 2026-08-12" — an ISO string dropped into translated prose, on
+ * the line that asks the reader to trust how careful we are with data.
+ */
+function localDate(iso) {
+  if (!iso) return '';
+  const d = new Date(`${String(iso).slice(0, 10)}T00:00:00Z`);
+  if (Number.isNaN(d.getTime())) return String(iso);
+  try {
+    return new Intl.DateTimeFormat(wizardLang(), { year: 'numeric', month: 'long', day: 'numeric', timeZone: 'UTC' }).format(d);
+  } catch {
+    return String(iso);
+  }
+}
+
+function progCard(m, kind, opts = {}) {
   const p = m.programme;
+  /* The merged "answer one more thing" bucket carries 66 cards, so a card
+     there is a name, a figure, the one missing fact and the one control that
+     settles it. Seven badges and a second link per card is what made two
+     buckets 9,375px long and taught the reader nothing. */
+  const compact = kind === 'ask';
   const cur = p.amount_currency || S.data.currency;
   let amt = null;
   if (p.amount_min != null || p.amount_max != null) {
@@ -747,46 +814,91 @@ function progCard(m, kind) {
      and vars instead of prose is the other half of this fix, and when it
      lands these call sites already translate. */
   if (kind === 'eligible' && m.rules_met.length) {
-    why = `<div class="why"><strong>${esc(T('Why you match:'))}</strong><ul>${m.rules_met.slice(0, 4).map((r) => `<li>${esc(T(r))}</li>`).join('')}</ul></div>`;
+    const own = m.rules_met.filter((x) => (SHARED_RULES.get(x) || 0) <= 3).slice(0, 4);
+    why = own.length
+      ? `<div class="why"><strong>${esc(T('Why you match:'))}</strong><ul>${own.map((x) => `<li>${esc(T(x))}</li>`).join('')}</ul></div>`
+      : '';
   } else if (kind === 'maybe' && m.blocking_question) {
     why = `<div class="why why--ask"><strong>${esc(T('One thing missing:'))}</strong> ${esc(T(m.blocking_question))}
-      <div style="margin-top:.6rem"><button class="btn btn-ghost btn-sm" type="button" data-act="answer" data-attr="${esc(m.blocking_attribute)}">${esc(T('Answer this now'))}</button></div></div>`;
+      ${
+        ANSWER_STEP[m.blocking_attribute]
+          ? `<div style="margin-top:.6rem"><button class="btn btn-ghost btn-sm" type="button" data-act="answer" data-attr="${esc(m.blocking_attribute)}">${esc(T('Answer this now'))}</button></div>`
+          : ''
+      }</div>`;
   } else if (kind === 'no' && m.rules_failed.length) {
     why = `<div class="why why--fail"><strong>${esc(T('Why not:'))}</strong> ${esc(T(m.rules_failed[0]))}</div>`;
   } else if (kind === 'taper') {
     why = `<div class="why why--ask"><strong>${esc(T('Above the maximum-award ceiling, but probably not ruled out:'))}</strong>
       ${esc(T(m.taper_note))}<br><span class="tiny">${esc(T("We can't compute your reduced amount — the authority does that. Use their calculator on the official page."))}</span></div>`;
-  } else if (kind === 'conditional') {
-    why = `<div class="why why--ask"><strong>${esc(T('Only if this is you:'))}</strong> ${esc(T(m.condition_label))}.
-      ${esc(T("You didn't tell us it applies, so we've kept it out of your total."))}
-      <!-- The card names the exact circumstance and the button used to throw it
-           away: data-attr was the hardcoded string "circumstance", so all 20
-           conditional cards mapped to the same generic step and clicking one
-           landed you on #s=3 with the named circumstance still off. The tags
-           are on the match already (condition_ids); emit them. -->
-      <div style="margin-top:.6rem"><button class="btn btn-ghost btn-sm" type="button" data-act="answer" data-attr="circumstance"
-        data-circ="${esc((m.condition_ids || []).join(','))}">${esc(T('This does apply to me'))}</button></div></div>`;
+  } else if (compact) {
+    /* One line, one control. "You didn't tell us it applies, so we've kept it
+       out of your total" was repeated verbatim on all twenty conditional
+       cards; a disclaimer read twice is a disclaimer, read twenty times it is
+       wallpaper. It is said once now, in this section's intro. */
+    const isCond = !!m.condition_label;
+    const attr = isCond ? 'circumstance' : m.blocking_attribute || '';
+    /* Silent where the group heading above already says it — see askGroups
+       in viewResults. The control stays; the sentence does not need saying
+       ten times under the heading that says it once. */
+    const line = opts.silentWhy
+      ? ''
+      : isCond
+        ? `<strong>${esc(T('Only if this is you:'))}</strong> ${esc(T(m.condition_label))}.`
+        : `<strong>${esc(T('One thing missing:'))}</strong> ${esc(T(m.blocking_question || ''))}`;
+    /* A button is only offered where a question exists that can answer it.
+       'gender' has no control anywhere in this wizard, so 59 cards promised
+       "Answer this now" and dropped the reader on the housing question. Where
+       we cannot ask, the card says the condition and offers the rules instead
+       of a promise it cannot keep. */
+    const control = isCond
+      ? `<button class="btn btn-ghost btn-sm" type="button" data-act="answer" data-attr="circumstance"
+          data-circ="${esc((m.condition_ids || []).join(','))}">${esc(T('This does apply to me'))}</button>`
+      : ANSWER_STEP[attr]
+        ? `<button class="btn btn-ghost btn-sm" type="button" data-act="answer" data-attr="${esc(attr)}">${esc(T('Answer this now'))}</button>`
+        : DEGRADED
+          ? ''
+          : `<a class="btn btn-ghost btn-sm" href="${url}">${esc(T('Read the rules'))}</a>`;
+    /* No `.why` box here. On a card whose group heading already states the
+       fact, `line` is empty, and a tinted panel wrapped round nothing but a
+       button paints an empty grey rectangle the width of the card — which is
+       what shipped. The ask card is head + (at most) one sentence + one
+       control, and `prog-card--ask` is what makes it the compact shape its
+       rule in theme.css was written for. That rule had no emitter at all, so
+       every one-question card was still being drawn at full lead-card
+       padding. */
+    why = `${line ? `<p class="prog-card__ask">${line}</p>` : ''}
+      <div style="margin-top:.6rem">${control}</div>`;
   }
 
-  return `<article class="card prog-card">
+  const title = progName(p);
+  const alt = progAlt(p);
+  return `<article class="card prog-card${compact ? ' prog-card--ask' : ''}">
     <div class="prog-card__head">
       <div style="min-width:0">
-        <h3 class="prog-card__title"><a href="${url}" style="text-decoration:none">${esc(p.name_en)}</a></h3>
-        <p class="prog-card__sub">${esc(p.name_local !== p.name_en ? p.name_local + ' · ' : '')}${esc(p.funder)}</p>
+        <h3 class="prog-card__title">${
+          DEGRADED || !title
+            ? esc(title || T('Name unavailable'))
+            : `<a href="${url}" style="text-decoration:none">${esc(title)}</a>`
+        }</h3>
+        <p class="prog-card__sub">${esc(alt ? alt + ' · ' : '')}${esc(p.funder)}</p>
       </div>
       <div class="prog-card__value">
         ${amt ? `<div class="prog-card__amount">${esc(amt)}</div>` : `<div class="tiny">${esc(T('Amount depends on you'))}</div>`}
       </div>
     </div>
     ${why}
-    ${m.stale_note ? `<p class="tiny notice">${esc(T(m.stale_note))}</p>` : ''}
+    ${compact ? '' : `${m.stale_note ? `<p class="tiny notice">${esc(T(m.stale_note))}</p>` : ''}
+    <!-- Six badges per card, 147 of them on one screen, and three of the six
+         said something the reader had already been told: the section heading
+         above the card is "Apply for these" or "You should already be getting
+         these", and the document and step counts are the document checklist's
+         job. What is left is what the card alone can say — whether a person
+         checked it, what kind of support it is, and whether it is credit
+         rather than money. -->
     <div class="prog-card__meta">
       ${verified}
-      ${p.is_automatic ? `<span class="badge badge-auto-apply">${esc(T('Automatic — no application'))}</span>` : `<span class="badge badge-action">${esc(T('You must apply'))}</span>`}
       ${m.is_capital ? `<span class="badge badge-neutral" title="${esc(T('Borrowing capacity, not money in pocket — excluded from your total'))}">${esc(T('Loan or credit — not counted'))}</span>` : ''}
       <span class="badge badge-neutral">${esc(T(CATEGORY_LABEL[p.category] || p.category))}</span>
-      ${(p.documents_required || []).length ? `<span class="badge badge-neutral">${esc(T('one={n} document|other={n} documents', { n: NUM(p.documents_required.length) }, p.documents_required.length))}</span>` : ''}
-      ${(p.procedure_steps || []).length ? `<span class="badge badge-neutral">${esc(T('one={n} step|other={n} steps', { n: NUM(p.procedure_steps.length) }, p.procedure_steps.length))}</span>` : ''}
     </div>
     <div class="row" style="margin-top:1rem">
       <!-- This literal used to carry the ampersand pre-escaped as an HTML
@@ -795,9 +907,9 @@ function progCard(m, kind) {
            lookup could never hit — on the most repeated control on the paid
            screen, in six languages, with correct translations shipped for all
            six. Write the ampersand once and let esc() escape it. -->
-      <a class="btn btn-sm btn-ghost" href="${url}">${esc(T('Full rules & documents'))}</a>
+      ${DEGRADED ? '' : `<a class="btn btn-sm btn-ghost" href="${url}">${esc(T('Full rules & documents'))}</a>`}
       ${p.application_url ? `<a class="btn btn-sm" href="${esc(p.application_url)}" target="_blank" rel="nofollow noopener">${esc(T('Apply on official site'))}</a>` : ''}
-    </div>
+    </div>`}
   </article>`;
 }
 
@@ -897,7 +1009,7 @@ function documentRows(r) {
       if (!map.has(key)) map.set(key, { id: key, doc: canonical, unlocks: [], mandatory: false, raw: new Set() });
       map.get(key).raw.add(d.doc);
       const rec = map.get(key);
-      rec.unlocks.push(m.programme.name_en);
+      rec.unlocks.push(progName(m.programme));
       if (d.mandatory !== false) rec.mandatory = true;
     }
   }
@@ -966,7 +1078,7 @@ function deadlineSection(r) {
             const meta = m.programme.deadline_note ? T(m.programme.deadline_note) : sentence;
             const badge = short || null;
             return `<div class="list-row">
-        <span><span class="list-row__name">${esc(m.programme.name_en)}</span>
+        <span><span class="list-row__name">${esc(progName(m.programme))}</span>
         ${meta ? `<span class="list-row__meta">${esc(meta)}</span>` : ''}</span>
         ${badge && badge !== meta ? `<span class="list-row__right"><span class="badge badge-neutral">${esc(badge)}</span></span>` : ''}
       </div>`;
@@ -991,16 +1103,24 @@ function viewNoMatches() {
      match. One key per sentence, with the counts as tokens. */
   return `<div class="results" style="max-width:none">
     <section class="result-hero">
-      <span class="eyebrow">${esc(S.entry.flag)} ${esc(S.entry.name)} · ${esc(T('matched against {n} programmes', { n: NUM(n) }))}</span>
+      <span class="eyebrow">${esc(S.entry.flag)} ${esc(countryName(S.entry))} · ${esc(T('matched against {n} programmes', { n: NUM(n) }))}</span>
       <h1 class="figure" style="font-size:clamp(2rem,5vw,3.4rem);color:var(--ink)">${esc(T("Nothing matched — and that's worth knowing why"))}</h1>
       <p class="small" style="color:var(--ink-3);max-width:60ch;margin-top:1.5rem">${esc(
         T(
           'A blank result is usually a rule about who a country pays, not a bug. Here is exactly what blocked you, counted from the {n} {country} programmes we hold.',
-          { n: NUM(n), country: S.entry.name },
+          { n: NUM(n), country: countryName(S.entry) },
         ),
       )}</p>
+      <!-- The only screen on the site with no primary action was the one
+           that most needs to earn a second attempt. But this page's own
+           argument is "a blank result is a rule, not a bug", so the row also
+           carries the thing that pays out regardless of the rule that blocked
+           them — statutory employment entitlements do not depend on residence.
+           Without it, "Change my answers" reads as an invitation to keep
+           answering differently until the tool agrees. -->
       <div class="row" style="margin-top:2rem">
-        <button class="btn btn-sm" type="button" data-act="restart">${esc(T('Change my answers'))}</button>
+        <button class="btn btn-primary" type="button" data-act="restart">${esc(T('Change my answers'))}</button>
+        <a class="btn" href="${href(`/${S.entry.slug}/employment/`)}">${esc(T('Work & employment entitlements in {country}', { country: countryName(S.entry) }))}</a>
         <button class="btn btn-sm" type="button" data-act="start-over">${esc(T('Start again in another country'))}</button>
         <a class="btn btn-sm btn-ghost" href="${href(`/${S.entry.slug}/`)}">${esc(T('Browse all {n} anyway', { n: NUM(n) }))}</a>
       </div>
@@ -1039,9 +1159,6 @@ function viewNoMatches() {
       <p>${T('{emph} Residence-based welfare is only part of the picture. Employment law usually gives you things regardless of nationality — end-of-service payments, statutory leave, wage protection, mandatory insurance. Several are catalogued here:', {
         emph: `<strong>${esc(T('Look at statutory entitlements instead.'))}</strong>`,
       })}</p>
-      <p style="margin-bottom:0"><a class="link-underline" href="${href(`/${S.entry.slug}/employment/`)}">${esc(
-        T('Work & employment entitlements in {country}', { country: S.entry.name }),
-      )}</a></p>
     </div>
 
     ${ENTITLED
@@ -1050,7 +1167,7 @@ function viewNoMatches() {
       <div class="bucket-list" style="margin-top:1rem">${r.not_eligible.slice(0, 40).map((m) => progCard(m, 'no')).join('')}</div>
     </details>`
       : ''}
-    <p class="tiny" style="margin-top:1.5rem">${esc(T(r.disclaimer || DISCLAIMER))} ${esc(T('Data as of {date}.', { date: r.data_as_of }))}</p>
+    <p class="tiny" style="margin-top:1.5rem">${esc(T(r.disclaimer || DISCLAIMER))} ${esc(T('Data as of {date}.', { date: localDate(r.data_as_of) }))}</p>
   </div>`;
 }
 
@@ -1066,14 +1183,26 @@ function viewNoMatches() {
 function ruledOutBlock(r) {
   if (!r.not_eligible.length) return '';
   if (ENTITLED) {
-    return `<details class="fold" style="margin-top:3rem">
+    /* Forty full cards — badges, amounts, two buttons each — for the bucket
+       the reader is NOT getting anything from. The useful half of a rejection
+       is the rule it failed on, so this is a list of exactly that: what would
+       have to change, next to the name it would change for. */
+    return `<details class="fold" id="ruled-out" style="margin-top:3rem">
     <summary>${esc(T("Show the {n} programmes you don't qualify for, and why", { n: NUM(r.not_eligible.length) }))}</summary>
     <p class="small" style="margin-top:1rem">${esc(T('Worth a scan: circumstances change, and the failing rule tells you what would have to change.'))}</p>
-    <div class="bucket-list" style="margin-top:1rem">${r.not_eligible.slice(0, 40).map((m) => progCard(m, 'no')).join('')}</div>
+    <div class="list-rows" style="margin-top:1rem">${r.not_eligible
+      .slice(0, 40)
+      .map(
+        (m) => `<div class="list-row">
+        <span><span class="list-row__name">${esc(progName(m.programme) || T('Name unavailable'))}</span>
+        <span class="list-row__meta">${esc(T(m.rules_failed[0] || ''))}</span></span>
+      </div>`,
+      )
+      .join('')}</div>
     ${r.not_eligible.length > 40 ? `<p class="small">${T('Showing {shown} of {n}. {link}.', {
       shown: NUM(40),
       n: NUM(r.not_eligible.length),
-      link: `<a class="link-underline" href="${href(`/${S.entry.slug}/`)}">${esc(T('Browse all {n} programmes in {country}', { n: NUM(S.data.programmes.length), country: S.entry.name }))}</a>`,
+      link: `<a class="link-underline" href="${href(`/${S.entry.slug}/`)}">${esc(T('Browse all {n} programmes in {country}', { n: NUM(S.data.programmes.length), country: countryName(S.entry) }))}</a>`,
     })}</p>` : ''}
   </details>`;
   }
@@ -1085,7 +1214,7 @@ function ruledOutBlock(r) {
   const top = Object.entries(counts).sort((a, b) => b[1] - a[1]).slice(0, 6);
   if (!top.length) return '';
 
-  return `<details class="fold" style="margin-top:3rem">
+  return `<details class="fold" id="ruled-out" style="margin-top:3rem">
     <summary>${esc(T('Why {n} programmes ruled you out', { n: NUM(r.not_eligible.length) }))}</summary>
     <p class="small" style="margin-top:1rem">${esc(T('The rules are free — which programmes they belong to is not. Circumstances change, and this is the list of what would have to.'))}</p>
     <div class="list-rows">
@@ -1101,6 +1230,46 @@ function ruledOutBlock(r) {
   </details>`;
 }
 
+/* Set by viewResults(), read by progCard().
+
+   An entitled reader whose full dataset did not load gets the same stripped
+   file a free reader gets: two names out of 114. The paid screen then rendered
+   a hundred cards with an empty <h3> wrapped in a live link — a blank wall
+   that reads as a broken product, not as a network failure. When we can see
+   that the names are missing we say so once and stop linking to pages the
+   reader would land on empty-handed. */
+let DEGRADED = false;
+
+/* How many eligible cards each "why you match" line appears on.
+   The matcher's reasons are true and generic: "Your residency status
+   qualifies" was on all seven cards of one screen and "Your work or life
+   status qualifies" on four. A line every card carries is not a reason, it is
+   a heading — the reader learns nothing from the fourth copy and stops
+   reading the block that also contains the specific ones. Anything shared by
+   more than three cards is said once, above the list. */
+let SHARED_RULES = new Map();
+
+/* Which step can answer a matcher attribute.
+
+   `attrMap[attr] || 'housing'` sent every unknown attribute to the housing
+   question: a woman in India pressed "Answer this now" on nine LPG and
+   maternity schemes and landed on a question about her tenancy, because the
+   wizard has no gender control at all (matcher.js rule 2b). One table, read
+   both by the card that offers the button and by the handler that acts on it,
+   so a card can only promise an answer the wizard can actually take. */
+const ANSWER_STEP = {
+  income: 'income',
+  income_annual_max: 'income',
+  age: 'household',
+  household: 'household',
+  admin_area: 'region',
+  housing_tenure: 'housing',
+  nationality: 'housing',
+  residency_months: 'housing',
+  status: 'status',
+  circumstance: 'circumstances',
+};
+
 function viewResults() {
   const r = S.result;
   if (r.eligible.length === 0 && r.conditional.length === 0 && (r.tapered || []).length === 0) {
@@ -1109,38 +1278,12 @@ function viewResults() {
   const cur = r.currency;
   const auto = r.eligible.filter((m) => m.programme.is_automatic);
   const apply = r.eligible.filter((m) => !m.programme.is_automatic);
-  // Eligible programmes whose amount the authority calculates — these count as
-  // zero in the headline, so name the biggest ones rather than hiding them.
-  /* Names are stripped from the public dataset, so `name_en` is empty for
-     everyone who has not paid — which used to render as "Yours include , ,
-     and 7 more". Fall back to what the free record does carry: the category.
-     A free reader gets "two housing payments and a disability payment", which
-     is true, useful, and gives nothing away. */
-  const unpricedAll = r.eligible
-    .filter((m) => !m.is_capital && m.programme.amount_min == null && m.programme.amount_max == null)
-    .sort((a, b) => {
-      const rank = (m) => (m.programme.verification_status === 'verified' ? 0 : 1);
-      return rank(a) - rank(b);
-    });
-  const unpricedTop = unpricedAll
-    .slice(0, 3)
-    .map((m) => m.programme.name_en)
-    .filter(Boolean);
-  /* Distinct categories, biggest group first, at most three. */
-  const unpricedKinds = (() => {
-    const n = new Map();
-    for (const m of unpricedAll) {
-      const k = T(CATEGORY_LABEL[m.programme.category] || m.programme.category);
-      if (k) n.set(k, (n.get(k) || 0) + 1);
-    }
-    return [...n.entries()].sort((a, b) => b[1] - a[1]).slice(0, 3);
-  })();
+  const named = S.data.programmes.filter((p) => p.name_en || p.name_local).length;
+  DEGRADED = ENTITLED && S.data.programmes.length > 4 && named * 2 < S.data.programmes.length;
 
-  /* Two units, two figures. The matcher now totals recurring money and
-     paid-once money separately (see matcher.js), because this caption says
-     "per year" and a one-off housing grant is not per year. When there is
-     only one-off money the one-off figure IS the hero — the alternative was
-     a headline of nothing over a page full of grants. */
+  /* Two units, two figures. The matcher totals recurring money and paid-once
+     money separately (see matcher.js), because "per year" and a one-off
+     housing grant are not the same thing and never were. */
   const perYear =
     r.total_max > 0
       ? r.total_min > 0 && r.total_min !== r.total_max
@@ -1153,14 +1296,10 @@ function viewResults() {
         ? `${money(r.one_off_min, cur)}–${money(r.one_off_max, cur)}`
         : T('up to {v}', { v: money(r.one_off_max, cur) })
       : null;
-  const headline = perYear ?? oneOff;
-  const headlineIsPerYear = perYear != null;
-  const headlineCount = headlineIsPerYear ? (r.recurring_count ?? 0) : (r.one_off_count ?? 0);
 
   /* Nothing qualifies YET, but things are pending on a question that was
      skipped. "0 programmes" is not the answer, it is the absence of one, and
-     a reader who takes it as the answer closes the tab still not claiming.
-     Same rule as the app: never report a confident zero over an open question. */
+     a reader who takes it as the answer closes the tab still not claiming. */
   const pending = r.eligible.length === 0 ? r.needs_one_more_answer.length : 0;
   const blockers = pending
     ? [...new Set(r.needs_one_more_answer.map((m) => m.blocking_attribute).filter(Boolean))]
@@ -1168,160 +1307,332 @@ function viewResults() {
         .slice(0, 2)
     : [];
 
+  /* ---------------------------------------------------------------- */
+  /* One statement, and it has to add up.                              */
+  /*                                                                   */
+  /* The hero used to hand the reader a figure and then retract it four */
+  /* times: a "counts as zero" line, a six-fact run-on, a bordered box  */
+  /* headed "The figure above is not your real total", and a loans      */
+  /* footnote. Four retractions is not four times as honest as one — it */
+  /* reads as a tool that does not trust its own arithmetic.           */
+  /*                                                                   */
+  /* So the COUNT is the heading, because the count is complete and    */
+  /* needs no hedge, and the money lives inside the one sentence that   */
+  /* says how partial it is. That sentence must account for every       */
+  /* eligible programme: priced-per-year, priced-once, unpriced and     */
+  /* capital. If those four do not sum to the total we do not print an  */
+  /* enumeration at all — a breakdown that loses a programme is exactly */
+  /* the bug this screen has shipped twice already.                    */
+  /* ---------------------------------------------------------------- */
+  const capitalCount = r.eligible.filter((m) => m.is_capital).length;
+  const capitalMax =
+    r.capital_max > 0
+      ? r.capital_max
+      : Math.max(0, ...r.eligible.filter((m) => m.is_capital).map((m) => m.programme.amount_max ?? m.programme.amount_min ?? 0));
+  const recurringCount = r.recurring_count || 0;
+  const oneOffCount = r.one_off_count || 0;
+  const unpricedCount = r.unpriced_count || 0;
+  let sums = recurringCount + oneOffCount + unpricedCount + capitalCount === r.eligible.length;
+  const clauses = [];
+  if (sums && recurringCount) {
+    if (perYear) {
+      clauses.push(
+        T('one={money} a year is what one of them publishes as a ceiling.|other={money} a year is what {p} of them publish as ceilings.',
+          { money: perYear, p: NUM(recurringCount) }, recurringCount),
+      );
+    } else sums = false;
+  }
+  if (sums && oneOffCount) {
+    if (oneOff) {
+      clauses.push(
+        T('one={money} paid once is what one of them publishes as a ceiling.|other={money} paid once is what {p} of them publish as ceilings.',
+          { money: oneOff, p: NUM(oneOffCount) }, oneOffCount),
+      );
+    } else sums = false;
+  }
+  if (sums && unpricedCount) {
+    clauses.push(
+      T('one=One publishes no figure at all — the authority works it out from your circumstances — so nothing on this page counts it.|other={u} publish no figure at all — the authority works those out from your circumstances — so nothing on this page counts them.',
+        { u: NUM(unpricedCount) }, unpricedCount),
+    );
+  }
+  if (sums && capitalCount) {
+    /* A loan whose ceiling nobody publishes is still a loan. Naming the
+       credit line is better where we have it, but the absence of a figure is
+       not a reason to drop the programme out of a sentence that has to
+       account for all of them — that is how the count and the breakdown come
+       apart. */
+    clauses.push(
+      capitalMax > 0
+        ? T('one=One is borrowing rather than income ({v} of credit), which is why it is in no total here.|other={c} are borrowing rather than income ({v} of credit), which is why they are in no total here.',
+            { c: NUM(capitalCount), v: money(capitalMax, cur) }, capitalCount)
+        : T('one=One is borrowing rather than income, which is why it is in no total here.|other={c} are borrowing rather than income, which is why they are in no total here.',
+            { c: NUM(capitalCount) }, capitalCount),
+    );
+  }
+  const heroClaim =
+    /* Three states, and each sentence is only used where it is true. The
+       all-unpriced sentence says "not one of them publishes a figure", which
+       is a lie the moment one of them does — so it is reserved for the case
+       it describes, and the arithmetic-failed case gets a sentence that
+       claims no breakdown at all. */
+    unpricedCount === r.eligible.length
+      ? T('Not one of them publishes a figure. The authority works your amount out from your circumstances, and we would rather show you nothing than a number we invented.')
+      : sums && clauses.length
+        ? clauses.join(' ')
+        : T('We do not have a publishable figure for every one of these, so nothing on this page adds them into a single total.');
+
+  /* ---- The sections, built once so the index can link to what exists ---- */
+  const askList = [...r.conditional, ...r.needs_one_more_answer].sort(
+    /* Largest first, and deliberately only that: this ranks a one-off ceiling
+       against an annual one, so the copy claims an order and never an annual
+       equivalence between the two. */
+    (a, b) =>
+      (b.est_annual_max ?? b.programme.amount_max ?? b.programme.amount_min ?? 0) -
+      (a.est_annual_max ?? a.programme.amount_max ?? a.programme.amount_min ?? 0),
+  );
+  /* Grouped by the fact that decides them, not listed flat.
+     Ten cards each repeating "Only if this is you: an income test whose
+     published threshold we don't hold" is one sentence printed ten times and
+     read once; the fact is a heading, and what belongs on the card is the
+     programme and the control. Groups are ordered by their largest member, and
+     members inside a group stay largest-first, so the section still opens on
+     the biggest thing in it. */
+  const askKey = (m) => (m.condition_label ? `c:${m.condition_label}` : `q:${m.blocking_question || ''}`);
+  const askGroups = (() => {
+    const g = new Map();
+    for (const m of askList) {
+      const k = askKey(m);
+      if (!g.has(k))
+        g.set(k, {
+          label: m.condition_label ? T(m.condition_label) : T(m.blocking_question || ''),
+          lead: m.condition_label ? T('Only if this is you:') : T('One thing missing:'),
+          items: [],
+        });
+      g.get(k).items.push(m);
+    }
+    return [...g.values()];
+  })();
+  /* Up to 30 cards, and never a group split across the disclosure — a group
+     is one fact, and half of it above the fold with the other half hidden is
+     worse than either. Once a group would take the list past 30, the rest go
+     behind the disclosure in the order they were in. */
+  const askShown = [];
+  const askRest = [];
+  {
+    let shown = 0;
+    let full = false;
+    for (const grp of askGroups) {
+      if (!full && (shown === 0 || shown + grp.items.length <= 30)) {
+        askShown.push(grp);
+        shown += grp.items.length;
+      } else {
+        full = true;
+        askRest.push(grp);
+      }
+    }
+  }
+  const askRestCount = askRest.reduce((a, x) => a + x.items.length, 0);
+  const askGroupHtml = (grp) => `<div class="ask-group" style="margin-top:1.4rem">
+      ${
+        grp.label
+          ? `<h3 class="ask-group__head">${esc(`${grp.lead} ${grp.label}`)} <span class="tiny">${esc(
+              T('one={n} programme|other={n} programmes', { n: NUM(grp.items.length) }, grp.items.length),
+            )}</span></h3>`
+          : ''
+      }
+      <div class="bucket-list bucket-list--ask" style="margin-top:.6rem">${grp.items
+        .map((m) => progCard(m, 'ask', { silentWhy: !!grp.label }))
+        .join('')}</div>
+    </div>`;
+  const docRows = documentRows(r);
+  const dated = datedProgrammes(r);
+  const paperCount = docRows.length + dated.length;
+  const paperKind = docRows.length && dated.length ? 'paperwork' : docRows.length ? 'documents' : 'deadlines';
+
+  SHARED_RULES = new Map();
+  for (const m of r.eligible) for (const x of new Set(m.rules_met || [])) SHARED_RULES.set(x, (SHARED_RULES.get(x) || 0) + 1);
+  const shared = [...SHARED_RULES.entries()].filter(([, n]) => n > 3).map(([x]) => T(x));
+
+  const sections = [];
+  const push = (id, label, count, html) => {
+    if (html) sections.push({ id, label, count, html });
+  };
+
+  push(
+    'apply', T('Apply for these'), apply.length,
+    gated(apply.length, 'apply', 'apply', () => `<section class="bucket" id="apply">
+    <div class="bucket__head"><h2>${esc(T('Apply for these'))}</h2><span class="bucket__count">${esc(T('one={n} programme · nobody will remind you|other={n} programmes · nobody will remind you', { n: NUM(apply.length) }, apply.length))}</span></div>
+    ${
+      shared.length
+        ? `<p class="small" style="max-width:62ch">${esc(
+            T('These all pass the same tests already: {list}. Each card below shows only what is true of that one.', { list: shared.join(', ') }),
+          )}</p>`
+        : ''
+    }
+    <div class="bucket-list bucket-list--lead">${apply.map((m) => progCard(m, 'eligible')).join('')}</div>
+  </section>`),
+  );
+
+  push(
+    'automatic', T('You should already be getting these'), auto.length,
+    gated(auto.length, 'auto', 'automatic', () => `<section class="bucket" id="automatic">
+    <div class="bucket__head"><h2>${esc(T('You should already be getting these'))}</h2><span class="bucket__count">${esc(T('{n} automatic', { n: NUM(auto.length) }))}</span></div>
+    <p class="small">${esc(T('No application needed — but "automatic" assumes the authority has your correct details. If one of these isn\'t reaching you, that is the gap worth chasing.'))}</p>
+    <div class="bucket-list bucket-list--lead" style="margin-top:1rem">${auto.map((m) => progCard(m, 'eligible')).join('')}</div>
+  </section>`),
+  );
+
+  push(
+    'taper', T('Reduced amount, probably still yours'), (r.tapered || []).length,
+    gated((r.tapered || []).length, 'taper', 'taper', () => `<section class="bucket" id="taper">
+    <div class="bucket__head"><h2>${esc(T('Reduced amount, probably still yours'))}</h2><span class="bucket__count">${esc(T('one={n} programme|other={n} programmes', { n: NUM(r.tapered.length) }, r.tapered.length))}</span></div>
+    <p class="small" style="max-width:62ch">${T('Your income is above the published ceiling — but that ceiling is the threshold for the {emph} award, and each of these records says in its own words that the payment tapers rather than stops. A tool that treated the ceiling as a cut-off would tell you "no" here. We\'d rather tell you "probably less, go and check".', { emph: `<em>${esc(T('maximum'))}</em>` })}</p>
+    <div class="bucket-list bucket-list--lead" style="margin-top:1rem">${r.tapered.slice(0, 15).map((m) => progCard(m, 'taper')).join('')}</div>
+  </section>`),
+  );
+
+  push(
+    'rights', T('Rights you already have'), (r.rights || []).length,
+    gated((r.rights || []).length, 'rights', 'rights', () => `<section class="bucket" id="rights">
+    <div class="bucket__head"><h2>${esc(T('Rights you already have'))}</h2><span class="bucket__count">${esc(T('{n} · nothing to claim', { n: NUM(r.rights.length) }))}</span></div>
+    <p class="small" style="max-width:62ch">${esc(T('These are not payments and there is no application. They are things the law already entitles you to, and they are kept out of your total for that reason — but they are worth knowing about, because the commonest way to lose one is not to know it exists.'))}</p>
+    <div class="bucket-list bucket-list--lead" style="margin-top:1rem">${r.rights.slice(0, 20).map((m) => progCard(m, 'eligible')).join('')}</div>
+  </section>`),
+  );
+
+  /* Auto-apply. The button that starts it now lives in the hero, where a
+     reader meets it before scrolling; what is left here is the explanation
+     and the output target, and they belong beside the documents the pack is
+     made of rather than 1,500px above them. */
+  const prepareSection =
+    ENTITLED && r.eligible.length && !DEGRADED
+      ? `<section class="bucket" id="prepare">
+    <div class="bucket__head"><h2>${esc(T('Prepare these applications'))}</h2><span class="bucket__count">${esc(T('one={n} programme|other={n} programmes', { n: NUM(r.eligible.length) }, r.eligible.length))}</span></div>
+    <p class="small" style="max-width:62ch">${esc(T('We fill what we can from the answers you already gave, list the documents each one still needs, and hand you a pack per programme. Nothing is sent anywhere on your behalf until you say so.'))}</p>
+    <div id="prepare-out" role="status" aria-live="polite" tabindex="-1"></div>
+  </section>`
+      : '';
+
+  push('prepare', T('Prepare these applications'), null, prepareSection);
+
+  const paperwork = gated(paperCount, paperKind, 'documents', () => documentPlan(r) + deadlineSection(r));
+
+  /* "Only if this is you" and "One answer away" were two headings for one
+     fact — we have not asked you, and you have not told us are the same thing
+     to the person reading — and between them they took 9,375px and taught
+     nothing. One section, largest first, with the missing fact named on each
+     card, and the disclaimer said once here instead of twenty times below. */
+  const askSection = gated(askList.length, 'ask', 'ask', () => `<section class="bucket" id="ask">
+    <div class="bucket__head"><h2>${esc(T('Answer one more thing'))}</h2><span class="bucket__count">${esc(T('one={n} programme · one fact decides it|other={n} programmes · one fact each', { n: NUM(askList.length) }, askList.length))}</span></div>
+    <p class="small" style="max-width:62ch">${esc(T("Each of these passes every rule we could test. One fact decides it — a circumstance you haven't mentioned, or a detail our questions never asked. None of them are counted in the figure above, because counting money you might not be able to get is how a tool like this becomes useless. Say the missing thing on any card and it moves the moment you do."))}</p>
+    ${askShown.map(askGroupHtml).join('')}
+    ${
+      askRestCount
+        ? `<p class="small" style="margin-top:1rem">${esc(T('Showing the largest 30 of {n}.', { n: NUM(askList.length) }))}</p>
+       <details class="fold" style="margin-top:.6rem">
+         <summary>${esc(T('one=Show the last one|other=Show the other {n}', { n: NUM(askRestCount) }, askRestCount))}</summary>
+         ${askRest.map(askGroupHtml).join('')}
+       </details>`
+        : ''
+    }
+  </section>`);
+
+  push('documents', T('Your document checklist'), null, paperwork);
+  push('ask', T('Answer one more thing'), askList.length, askSection);
+  push('ruled-out', T('Ruled out'), r.not_eligible.length, ruledOutBlock(r));
+
+  /* ---- The index: what is on this page, and does it add up ---- */
+  const total = S.data.programmes.length;
+  const indexRows = sections
+    .map(
+      (s) =>
+        `<li><a href="#${s.id}"><span>${esc(s.label)}</span>${
+          /* A row without a <b> is a section that counts nothing of its own —
+             the checklist counts documents, not programmes, and adding it to
+             this column would break the one property this index is for: the
+             rows sum to the number of programmes we checked. */
+          s.count === null ? '' : ` <b>${esc(NUM(s.count))}</b>`
+        }</a></li>`,
+    )
+    .join('');
+
+  /* ---- The one primary action, above the fold ---- */
+  const firstLead = sections.find((s) => s.count)?.id || 'ask';
+  const heroActions = DEGRADED
+    ? ''
+    : pending
+      ? `<p class="btn-row"><button class="btn btn-primary" type="button" data-act="restart">${esc(
+          blockers.length === 1 ? T('Answer it now') : T('Answer them now'),
+        )}</button></p>`
+      : ENTITLED && r.eligible.length
+        ? `<p class="btn-row"><button class="btn btn-primary" type="button" data-act="prepare">${esc(
+            T('one=Prepare my application|other=Prepare my {n} applications', { n: NUM(r.eligible.length) }, r.eligible.length),
+          )}</button>
+         <a class="btn" href="#${esc(firstLead)}">${esc(T('See what to apply for'))}</a></p>`
+        : SIGNED_IN
+          /* The same two literals the paywall bucket used, moved rather than
+             rewritten: this control is now above the fold in seven locales
+             and takes on no new translation debt to get there. */
+          ? `<p class="btn-row"><button class="btn btn-primary" type="button" data-checkout data-plan="auto">${esc(T('Unlock the full list'))}</button>
+           <a class="btn" href="${href('/pricing/')}">${esc(T('See all plans and prices'))}</a></p>`
+          : `<p class="btn-row"><a class="btn btn-primary" href="${esc(href('/account/'))}?next=${encodeURIComponent(
+              `${location.pathname}#r=${encodeState()}`,
+            )}&plan=auto">${esc(T('Sign in to unlock'))}</a>
+           <a class="btn" href="${href('/pricing/')}">${esc(T('See pricing'))}</a></p>`;
+
   return `<div class="results" style="max-width:none">
+  <div class="result-top">
   <section class="result-hero">
-    <span class="eyebrow">${esc(S.entry.flag)} ${esc(S.entry.name)} · ${esc(T('matched against {n} programmes', { n: NUM(S.data.programmes.length) }))}</span>
+    <span class="eyebrow">${esc(S.entry.flag)} ${esc(countryName(S.entry))} · ${esc(T('matched against {n} programmes', { n: NUM(total) }))}</span>
     <!-- The payoff screen used to render its headline as a <p>, so a document
-         that finally had something to say had no h1 at all and its headings
-         started at H2 — while the wizard steps it came from each had one. The
-         figure IS the heading here, so it is marked up as one, in --ink: the
-         hero is not a secondary note. -->
-    <!-- Every sentence in this hero carries a number, and a count spliced
-         into a template literal with a bare "s" on the end is not a text node
-         any dictionary can match. That is why the whole payoff screen rendered
-         in English on /fr/check/ while the questions that led to it were
-         French. One key per sentence, counts as tokens, plurals in the key. -->
+         that finally had something to say had no h1 at all. The COUNT is the
+         heading now: it is the one number on this page that needs no hedge.
+         The inline clamp is load-bearing — the default .figure clamp tops out
+         at 5.5rem, which sets this sentence at 88px and wraps it to four
+         lines. -->
     ${
       pending
-        ? `<h1 class="figure" style="font-size:clamp(2rem,6vw,3.6rem);color:var(--ink)">${esc(
+        ? `<h1 class="figure" style="font-size:clamp(1.9rem,3.6vw,3rem);line-height:1.12;color:var(--ink)">${esc(
             blockers.length === 1
               ? T('one={n} programme is waiting on one answer|other={n} programmes are waiting on one answer', { n: NUM(pending) }, pending)
               : blockers.length
                 ? T('one={n} programme is waiting on {q} answers|other={n} programmes are waiting on {q} answers', { n: NUM(pending), q: NUM(blockers.length) }, pending)
                 : T('one={n} programme is waiting on an answer|other={n} programmes are waiting on an answer', { n: NUM(pending) }, pending),
           )}</h1>
-           <p class="figure-unit" style="margin-top:1rem">${esc(
+           <p class="hero-claim">${esc(
              blockers.length
                ? T("We can't put a number on it yet — these are the questions that decide it.")
                : T("We can't put a number on it yet — one question decides it."),
-           )}</p>
-           ${
-             blockers.length
-               ? `<p class="row" style="margin-top:1rem;gap:.5rem">${blockers
-                   .map((b) => `<span class="badge badge-neutral">${esc(b)}</span>`)
-                   .join('')}</p>`
-               : ''
-           }
-           <p style="margin-top:1.4rem"><button class="btn btn-primary" type="button" data-act="restart">${esc(
-             blockers.length === 1 ? T('Answer it now') : T('Answer them now'),
-           )}</button></p>`
-        : headline
-          ? `<h1 class="figure" style="color:var(--ink)">${esc(headline)}</h1>
-           <p class="figure-unit" style="margin-top:1rem">${esc(
-             headlineIsPerYear
-               ? T('one=per year in published ceilings across {n} programme you appear to qualify for|other=per year in published ceilings across {n} programmes you appear to qualify for', { n: NUM(headlineCount) }, headlineCount)
-               : T('one=paid once in published ceilings across {n} programme you appear to qualify for|other=paid once in published ceilings across {n} programmes you appear to qualify for', { n: NUM(headlineCount) }, headlineCount),
-           )}</p>
-           ${
-             headlineIsPerYear && oneOff
-               ? `<p class="figure-unit" style="margin-top:.6rem">${T(
-                   'one={emph} across {n} programme paid once rather than every year — not included in the figure above.|other={emph} across {n} programmes paid once rather than every year — not included in the figure above.',
-                   {
-                     emph: `<strong style="color:var(--ink)">${esc(T('plus {v} one-off', { v: oneOff }))}</strong>`,
-                     n: NUM(r.one_off_count),
-                   },
-                   r.one_off_count,
-                 )}</p>`
-               : ''
-           }
-           ${
-             r.unpriced_count
-               ? `<p class="figure-unit" style="margin-top:.6rem">${esc(
-                   T('one={n} further match publishes no figure at all and counts as zero in both.|other={n} further matches publish no figure at all and count as zero in both.', { n: NUM(r.unpriced_count) }, r.unpriced_count),
-                 )}</p>`
-               : ''
-           }`
-          : `<h1 class="figure" style="font-size:clamp(2.2rem,7vw,4.5rem);color:var(--ink)">${esc(
-              T('one={n} programme|other={n} programmes', { n: NUM(r.eligible.length) }, r.eligible.length),
-            )}</h1>
-           <p class="figure-unit" style="margin-top:1rem">${esc(T('you appear to qualify for'))}</p>`
+           )}</p>`
+        : `<h1 class="figure" style="font-size:clamp(1.9rem,3.6vw,3rem);line-height:1.12;color:var(--ink)">${esc(
+            T('one={n} programme you appear to qualify for|other={n} programmes you appear to qualify for', { n: NUM(r.eligible.length) }, r.eligible.length),
+          )}</h1>
+           <p class="hero-claim">${esc(heroClaim)}</p>`
     }
-    <!-- The breakdown has to account for every programme it says it matched
-         against. It omitted the taper bucket, so it summed to 113 of 114 and
-         showed the missing record separately two lines down. -->
-    <p class="small" style="color:var(--ink-3);max-width:60ch;margin-top:1.5rem">
-      ${esc(
-        T(
-          "{a} eligible · {b} at a reduced amount · {c} statutory rights rather than payments · {d} need one more answer · {e} depend on a circumstance you didn't claim · {f} ruled out.",
-          {
-            a: NUM(r.eligible.length),
-            b: NUM((r.tapered || []).length),
-            c: NUM((r.rights || []).length),
-            d: NUM(r.needs_one_more_answer.length),
-            e: NUM(r.conditional.length),
-            f: NUM(r.not_eligible.length),
-          },
-        ),
-      )}
-      ${r.capital_max > 0 ? esc(T('A further {v} in loan and credit ceilings is excluded, because borrowing is not income.', { v: money(r.capital_max, cur) })) : ''}
-    </p>
+    ${heroActions}
     ${
-      unpricedAll.length
-        ? `<div style="position:relative;margin-top:1.5rem;padding:1rem 1.2rem;border:1px solid var(--line-2);border-radius:10px;background:var(--paper-2)">
-        <!-- Five sentences that used to be one paragraph glued together with
-             two inline <strong>s and three counts: nine text nodes, not one of
-             which could match a key. The lead-in was the only French line on
-             the entire French results screen for exactly that reason. -->
-        <p class="small" style="color:var(--ink-2);margin:0;max-width:62ch">${T(
-          'one={lead} {n} of your matches publishes no fixed amount — the authority calculates it from your circumstances — so it {zero} here. It is often the largest payment of all.|other={lead} {n} of your matches publish no fixed amount — the authority calculates it from your circumstances — so they {zero} here. They are often the largest payments of all.',
-          {
-            lead: `<strong style="color:var(--terracotta)">${esc(T('The figure above is not your real total.'))}</strong>`,
-            n: NUM(r.unpriced_count),
-            /* The emphasis covers the whole clause rather than the bare word:
-               "zero" is the same word in several of these languages, and a
-               one-word token is a poor unit of translation anywhere. */
-            zero: `<strong>${esc(T('one=counts as zero|other=count as zero', {}, r.unpriced_count))}</strong>`,
-          },
-          r.unpriced_count,
-        )}${
-          unpricedTop.length
-            ? ' ' +
-              T('Yours include {names}.', {
-                names:
-                  listPhrase(unpricedTop.map((n) => `<strong style="color:var(--ink)">${esc(n)}</strong>`)) +
-                  (r.unpriced_count > unpricedTop.length
-                    ? T(' and {n} more', { n: NUM(r.unpriced_count - unpricedTop.length) })
-                    : ''),
-              })
-            : unpricedKinds.length
-              /* The name-based branch above has an "and N more" tail; this
-                 one sliced to three categories and did not, so the sentence
-                 said "6 of your matches ... Yours are" and then enumerated
-                 four. Every enumerated list has to sum to its own total. */
-              ? (() => {
-                  const shown = unpricedKinds.reduce((a, [, n]) => a + n, 0);
-                  const rest = unpricedAll.length - shown;
-                  return (
-                    ' ' +
-                    T('Yours are {names}.', {
-                      names:
-                        listPhrase(
-                          unpricedKinds.map(
-                            ([label, n]) =>
-                              `<strong style="color:var(--ink)">${esc(
-                                /* Not lower-cased: `label` is now the
-                                   translated category name, and German nouns
-                                   do not lose their capital because they
-                                   landed mid-sentence. */
-                                T('one={n} {kind} payment|other={n} {kind} payments', { n: NUM(n), kind: label }, n),
-                              )}</strong>`,
-                          ),
-                        ) + (rest > 0 ? T('one= and {n} other|other= and {n} others', { n: NUM(rest) }, rest) : ''),
-                    })
-                  );
-                })()
-              : ''
-        } ${esc(T('We would rather show you a small honest number than a big invented one.'))}</p>
-      </div>`
+      pending && blockers.length
+        ? `<div class="row" style="margin-top:1rem;gap:.5rem">${blockers
+            .map((b) => `<span class="badge badge-neutral">${esc(b)}</span>`)
+            .join('')}</div>`
         : ''
     }
-    <div class="row no-print" style="margin-top:2rem">
+  </section>
+
+  <!-- Share, print, re-answer, change country: four utilities, and none of
+       them advances a claim. They sit under the hero rather than inside it so
+       the hero is one heading, one claim and one action — at 390 those four
+       buttons and the note under them were 180px of the first screen, above
+       the first thing the reader can actually do. All four are ghost now:
+       the hero carries exactly one filled control. -->
+  <div class="row no-print" style="margin-top:2rem">
       <!-- "Copy my result link" said nothing about what the link carries.
            The fragment holds the whole profile — status, exact income,
            household, and any circumstance ticked, including a self-declared
            disability — base64'd, which reads as encryption to a reader who has
            been told on every step that nothing is saved to a server. -->
-      <button class="btn btn-sm" type="button" data-act="share"
+      <button class="btn btn-sm btn-ghost" type="button" data-act="share"
         aria-describedby="share-what">${esc(t('check.share.button', 'Copy a link that contains my answers'))}</button>
       <button class="btn btn-sm btn-ghost" type="button" onclick="window.print()">${esc(T('Print / save as PDF'))}</button>
       <button class="btn btn-sm btn-ghost" type="button" data-act="restart">${esc(T('Change my answers'))}</button>
@@ -1333,104 +1644,46 @@ function viewResults() {
         'Anyone with that link sees the answers you gave — where you live, your age, your household, your income and anything you ticked.',
       ),
     )}</p>
-  </section>
 
-  <!-- With nothing eligible yet, these three tiles are three zeroes, and the
-       middle one is set in terracotta: a red 0 is the first thing the eye
-       lands on, on the screen the whole product exists to produce. When the
-       real answer is "answer two more questions", the instruction is the hero
-       and the tiles are not rendered at all. -->
-  ${pending ? '' : `<div class="grid grid-3" style="margin-top:2rem">
-    <div class="card card-flat"><div class="figure-sm">${esc(NUM(auto.length))}</div><p class="small" style="margin:.4rem 0 0">${T('{emph} If you\'re not getting these, the authority is missing a detail about you — worth one phone call.', { emph: `<strong>${esc(T('Should arrive automatically.'))}</strong>` })}</p></div>
-    <!-- The one number here that represents claimable money was painted in
-         --terracotta, which everywhere else on this site means failure:
-         .notice--error, .ticks--no li::before, .status--closing. The two
-         zeroes beside it were neutral ink, so the eye landed on a red figure
-         on the screen the whole product exists to produce. -->
-    <div class="card card-flat"><div class="figure-sm"${apply.length ? ' style="color:var(--green)"' : ''}>${esc(NUM(apply.length))}</div><p class="small" style="margin:.4rem 0 0">${T('{emph} Nobody will prompt you. This is where the unclaimed money actually is.', { emph: `<strong>${esc(T('Need an application.'))}</strong>` })}</p></div>
-    <div class="card card-flat"><div class="figure-sm">${esc(NUM(r.eligible.filter((m) => m.programme.verification_status === 'verified').length))}</div><p class="small" style="margin:.4rem 0 0">${T('{emph} A researcher confirmed these against the official page.', { emph: `<strong>${esc(T('Human-verified matches.'))}</strong>` })}</p></div>
-  </div>`}
-
-  <!-- Auto-apply. The Worker has served POST /api/apply/plan and
-       /api/apply/consent since the feature landed, packages/autoapply is the
-       largest tested module in the repo, and until now no shipped client asked
-       for either route: "we prepare the application" was sold, built, tested,
-       and unreachable. scripts/test-reachability.mjs is the guard. -->
   ${
-    ENTITLED && r.eligible.length
-      ? `<section class="bucket" id="prepare">
-    <div class="bucket__head"><h2>${esc(T('Prepare these applications'))}</h2><span class="bucket__count">${esc(T('one={n} programme|other={n} programmes', { n: NUM(r.eligible.length) }, r.eligible.length))}</span></div>
-    <p class="small" style="max-width:62ch">${esc(T('We fill what we can from the answers you already gave, list the documents each one still needs, and hand you a pack per programme. Nothing is sent anywhere on your behalf until you say so.'))}</p>
-    <p class="btn-row"><button class="btn btn-primary" type="button" data-act="prepare">${esc(T('Prepare my applications'))}</button></p>
-    <div id="prepare-out" role="status" aria-live="polite"></div>
-  </section>`
+    /* Outside the hero deliberately: the hero is one heading and one claim,
+       and a network failure is neither. */
+    DEGRADED
+      ? `<div class="notice notice--error" role="alert" style="margin-top:1.2rem;max-width:62ch">
+      <p style="margin:0">${esc(
+        T('We could not load the full programme details, so the names and links below are missing. The counts and figures on this page are right. Reload the page to try again.'),
+      )}</p></div>`
       : ''
   }
 
-  ${gated(apply.length, 'apply', () => `<section class="bucket">
-    <div class="bucket__head"><h2>${esc(T('Apply for these'))}</h2><span class="bucket__count">${esc(T('one={n} programme · nobody will remind you|other={n} programmes · nobody will remind you', { n: NUM(apply.length) }, apply.length))}</span></div>
-    <div class="bucket-list">${apply.map((m) => progCard(m, 'eligible')).join('')}</div>
-  </section>`)}
+  <!-- The composition used to be a 257-character run-on of six facts in the
+       hero, which nobody could check and nothing could link to. Same numbers,
+       as an index: every row is a jump to the section it counts, and the rows
+       add up to the number of programmes we checked, so a reader can audit
+       the arithmetic without leaving the screen. -->
+  <nav class="result-index" aria-label="${esc(T("What's on this page"))}">
+    <ul>${indexRows}</ul>
+    <p class="tiny result-index__total">${esc(
+      /* The count sits at the END of this sentence on purpose: it is the
+         figure the rows above have to add up to, and a total a reader (or a
+         guard) has to hunt for in the middle of a clause is a total nobody
+         checks. */
+      T('Programmes checked in {country}: {n}.', { country: countryName(S.entry), n: NUM(total) }),
+    )}</p>
+  </nav>
+  </div>
 
-  ${gated(auto.length, 'auto', () => `<section class="bucket">
-    <div class="bucket__head"><h2>${esc(T('You should already be getting these'))}</h2><span class="bucket__count">${esc(T('{n} automatic', { n: NUM(auto.length) }))}</span></div>
-    <p class="small">${esc(T('No application needed — but "automatic" assumes the authority has your correct details. If one of these isn\'t reaching you, that is the gap worth chasing.'))}</p>
-    <div class="bucket-list" style="margin-top:1rem">${auto.map((m) => progCard(m, 'eligible')).join('')}</div>
-  </section>`)}
-
-  ${gated((r.tapered || []).length, 'taper', () => `<section class="bucket">
-    <div class="bucket__head"><h2>${esc(T('Reduced amount, probably still yours'))}</h2><span class="bucket__count">${esc(T('one={n} programme|other={n} programmes', { n: NUM(r.tapered.length) }, r.tapered.length))}</span></div>
-    <p class="small" style="max-width:62ch">${T('Your income is above the published ceiling — but that ceiling is the threshold for the {emph} award, and each of these records says in its own words that the payment tapers rather than stops. A tool that treated the ceiling as a cut-off would tell you "no" here. We\'d rather tell you "probably less, go and check".', { emph: `<em>${esc(T('maximum'))}</em>` })}</p>
-    <div class="bucket-list" style="margin-top:1rem">${r.tapered.slice(0, 15).map((m) => progCard(m, 'taper')).join('')}</div>
-  </section>`)}
-
-  ${gated(r.conditional.length, 'conditional', () => `<section class="bucket">
-    <div class="bucket__head"><h2>${esc(T('Only if this is you'))}</h2><span class="bucket__count">${esc(T('one={n} programme|other={n} programmes', { n: NUM(r.conditional.length) }, r.conditional.length))}${
-      r.conditional_max > 0 ? esc(T(' · {v} not counted', { v: money(r.conditional_max, cur) })) : ''
-    }</span></div>
-    <p class="small" style="max-width:62ch">${T("These depend on a situation you didn't tell us about — a disability, caring for someone, being off sick, a new baby, a bereavement, military service. They pass every other rule you gave us. {emph}, because counting money you probably can't get is how these tools end up useless. If one of them describes you, it's likely the biggest thing on this page.", { emph: `<strong>${esc(T('They are deliberately excluded from your headline figure'))}</strong>` })}</p>
-    <div class="bucket-list" style="margin-top:1rem">${r.conditional.slice(0, 20).map((m) => progCard(m, 'conditional')).join('')}</div>
-    ${r.conditional.length > 20 ? `<p class="small">${esc(T('Showing {shown} of {n}.', { shown: NUM(20), n: NUM(r.conditional.length) }))}</p>` : ''}
-  </section>`)}
-
-  <!-- This bucket used to be labelled with the programme count, so eight
-       eligible programmes read as "8 documents and deadlines" — a count of one
-       thing wearing the name of another. Count what is in the bucket. -->
-  ${(() => {
-    const docs = documentRows(r).length;
-    const dated = datedProgrammes(r).length;
-    const n = docs + dated;
-    const kind = docs && dated ? 'paperwork' : docs ? 'documents' : 'deadlines';
-    return gated(n, kind, () => documentPlan(r) + deadlineSection(r));
-  })()}
-
-  <!-- The matcher has always computed a rights bucket — statutory
-       entitlements like 90 days' sick leave or a wage-protection scheme, which
-       are not payments you apply for — and nothing on this screen rendered it.
-       Seven AE records for one persona, computed and dropped, which is also
-       why the breakdown above never summed to the number beside it. -->
-  ${gated((r.rights || []).length, 'rights', () => `<section class="bucket">
-    <div class="bucket__head"><h2>${esc(T('Rights you already have'))}</h2><span class="bucket__count">${esc(T('{n} · nothing to claim', { n: NUM(r.rights.length) }))}</span></div>
-    <p class="small" style="max-width:62ch">${esc(T('These are not payments and there is no application. They are things the law already entitles you to, and they are kept out of your total for that reason — but they are worth knowing about, because the commonest way to lose one is not to know it exists.'))}</p>
-    <div class="bucket-list" style="margin-top:1rem">${r.rights.slice(0, 20).map((m) => progCard(m, 'eligible')).join('')}</div>
-  </section>`)}
-
-  ${gated(r.needs_one_more_answer.length, 'needs', () => `<section class="bucket">
-    <div class="bucket__head"><h2>${esc(T('One answer away'))}</h2><span class="bucket__count">${esc(T('one={n} programme|other={n} programmes', { n: NUM(r.needs_one_more_answer.length) }, r.needs_one_more_answer.length))}</span></div>
-    <p class="small">${esc(T('You pass everything we can test. Each of these needs one more detail — answer it and it moves bucket immediately.'))}</p>
-    <div class="bucket-list" style="margin-top:1rem">${r.needs_one_more_answer.slice(0, 25).map((m) => progCard(m, 'maybe')).join('')}</div>
-  </section>`)}
-
-  ${ruledOutBlock(r)}
+  ${sections.map((s) => s.html).join('\n')}
 
   <div class="callout" style="margin-top:3rem">
     <p>${T("{emph} {note} The figure sums published maximums for the programmes you're eligible for. Means-tested schemes taper, so treat it as a ceiling of what is on the table — and remember programmes with no published amount counted as zero.", {
       emph: `<strong>${esc(T('What this number is.'))}</strong>`,
       note: esc(T(r.coverage_note)),
-    })}</p>
+    })}
+    ${esc(T('We would rather show you a small honest number than a big invented one.'))}</p>
     <p style="margin-bottom:0"><a class="link-underline" href="${href('/methodology/')}">${esc(T("How this is calculated and what's wrong with it"))}</a></p>
   </div>
-  <p class="tiny" style="margin-top:1.5rem">${esc(T(r.disclaimer || DISCLAIMER))} ${esc(T('Data as of {date}.', { date: r.data_as_of }))}</p>
+  <p class="tiny" style="margin-top:1.5rem">${esc(T(r.disclaimer || DISCLAIMER))} ${esc(T('Data as of {date}.', { date: localDate(r.data_as_of) }))}</p>
 </div>`;
 }
 
@@ -1456,7 +1709,11 @@ function buildIcs() {
       `UID:unclaimed-${S.entry.slug}-${p.slug}@unclaimed`,
       `DTSTAMP:${stamp}`,
       `DTSTART;VALUE=DATE:${day}`,
-      `SUMMARY:Apply: ${p.name_en}`,
+      /* "Apply: <English name>" on a date this file invented — today+30+i,
+         printed next to a DESCRIPTION saying the window opens in September.
+         An imperative on a made-up date is a worse reminder than none; this
+         one says what it is, and says it in the reader's language. */
+      `SUMMARY:${T('Check the deadline for {name}', { name: progName(p) })}`,
       `DESCRIPTION:${(p.deadline_note || p.deadline_type || '').replace(/\n/g, ' ')}\\n\\nFunder: ${p.funder}\\nOfficial page: ${p.application_url || p.source_url}\\n\\nReminder created by Unclaimed. Check the official page for the exact deadline.`,
       `URL:${p.application_url || p.source_url}`,
       'END:VEVENT',
@@ -1611,6 +1868,25 @@ function syncHistory() {
 window.addEventListener('popstate', () => {
   const m = location.hash.match(/^#s=(\d+)$/);
   if (!m) return;
+  /* A step view without a loaded country dereferences S.entry and S.data on
+     its first line. After "Another country" both are null while the #s=N
+     entries this session pushed are still in history, so pressing Back threw
+     "Cannot read properties of null" once per press and left the reader on a
+     question whose Continue button could never advance. History is not a
+     reason to render a screen we cannot draw: go back to the country list,
+     which is the only screen that is always true. */
+  if (!S.entry || !S.data) {
+    S.result = null;
+    S.step = 0;
+    lastHistoryKey = 'step-0';
+    try {
+      history.replaceState({ key: 'step-0' }, '', location.pathname);
+    } catch {
+      /* Non-navigable context. */
+    }
+    render();
+    return;
+  }
   const want = Math.max(0, Math.min(steps().length - 1, Number(m[1])));
   if (S.result) S.result = null;
   S.step = want;
@@ -1792,6 +2068,16 @@ function renderPlanPack(plan) {
     )}</p>`;
   }
   const gaps = plan.gaps || [];
+  /* The Worker labels every missing field in the reader's language and sends
+     those labels in `gaps`; this card was printing the raw keys next to them
+     — "date_of_birth, address_postcode, bank_iban" — because T(field) can
+     only hit a key the dictionary names, and it names none of these. Read the
+     labels the engine already localised. */
+  const gapLabel = new Map(gaps.filter((g) => g && g.field).map((g) => [g.field, g.label || g.field]));
+  const nameOf = (slug) => {
+    const p = (S.data?.programmes || []).find((x) => x.slug === slug);
+    return p ? progName(p) || slug : slug;
+  };
   const head = `<p class="small" style="margin-top:1rem">${T(
     'one={emph} pack is ready to send.|other={emph} packs are ready to send.',
     { emph: `<strong>${esc(T('{ready} of {total}', { ready: NUM(plan.ready_count), total: NUM(packs.length) }))}</strong>` },
@@ -1813,15 +2099,30 @@ function renderPlanPack(plan) {
       const steps = pkg.steps || [];
       const url = pkg.submit?.url;
       return `<div class="card card-flat" style="margin-top:1rem">
-      <div class="list-row__name"><strong>${esc(pkg.programme_slug)}</strong>
+      <!-- The title was the raw URL slug: a subscriber's finished pack was
+           headed "apl-aide-personnalisee-au-logement". The dataset in memory
+           has the name. -->
+      <div class="list-row__name"><strong>${esc(nameOf(pkg.programme_slug))}</strong>
         <span class="badge ${pkg.readiness?.ready ? 'badge-auto-apply' : 'badge-neutral'}">${esc(
           pkg.readiness?.ready ? T('ready to send') : T('{pct}% filled', { pct: NUM(pkg.readiness?.fields_pct ?? 0) }),
         )}</span></div>
       ${(pkg.blockers || []).length ? `<p class="small notice notice--error" style="margin-top:.6rem">${esc(T(pkg.blockers[0].message))}</p>` : ''}
-      ${pkg.message ? `<p class="small" style="margin-top:.6rem;white-space:pre-wrap">${esc(pkg.message)}</p>` : ''}
+      <!-- THE LETTER. buildPackage() returns {subject, body} — a complete,
+           correctly localised covering letter, the single most expensive
+           artefact this site produces and the thing the subscription is sold
+           on. esc() on the object stringified it, so where the letter should
+           be, every locale printed "[object Object]". -->
+      ${
+        pkg.message
+          ? typeof pkg.message === 'string'
+            ? `<p class="small" style="margin-top:.6rem;white-space:pre-wrap">${esc(pkg.message)}</p>`
+            : `${pkg.message.subject ? `<p class="tiny" style="margin-top:.6rem"><strong>${esc(pkg.message.subject)}</strong></p>` : ''}
+               ${pkg.message.body ? `<p class="small" style="margin-top:.3rem;white-space:pre-wrap">${esc(pkg.message.body)}</p>` : ''}`
+          : ''
+      }
       ${
         (pkg.fields_missing || []).length
-          ? `<p class="tiny" style="margin-top:.6rem">${esc(T('Still needs from you: {list}', { list: pkg.fields_missing.map((f) => T(f)).join(', ') }))}</p>`
+          ? `<p class="tiny" style="margin-top:.6rem">${esc(T('Still needs from you: {list}', { list: pkg.fields_missing.map((f) => T(gapLabel.get(f) || f)).join(', ') }))}</p>`
           : ''
       }
       ${
@@ -1906,7 +2207,12 @@ app.addEventListener('click', async (ev) => {
     if (st === 'circumstances') S.profile.circumstances = [];
     if (st === 'income') {
       S.profile.income_band = null;
-      S.profile.income_annual = null;
+      /* "Give an exact figure instead (sharper results)" — and then the only
+         control that could advance the step threw the figure away, because
+         the income step has no Continue and skip nulled both fields. A number
+         a reader typed under a label calling it sharper is an answer; only the
+         band is being skipped. */
+      readInputs();
     }
     S.step = nextStep(S.step, 1);
     render();
@@ -1950,17 +2256,35 @@ app.addEventListener('click', async (ev) => {
   if (act === 'start-over') {
     clearProfile();
     S.result = null;
-    S.profile = {};
+    S.profile = blankProfile();
     S.data = null;
     S.entry = null;
     S.step = 0;
-    history.replaceState(null, '', location.pathname);
+    /* The #s=N entries this session pushed still sit in history, and they
+       point at a country that is no longer loaded. lastHistoryKey has to go
+       with them, or the next screen believes it is already in history and
+       pushes nothing. The popstate handler refuses to render a step without a
+       country for the same reason: back from here used to throw twice and
+       strand the reader on a question with a Continue button that did
+       nothing. */
+    lastHistoryKey = null;
+    try {
+      history.replaceState(null, '', location.pathname);
+    } catch {
+      /* Non-navigable context. The reset above still holds. */
+    }
     render();
     return;
   }
   if (act === 'answer') {
-    const attrMap = { income: 'income', age: 'household', admin_area: 'region', housing_tenure: 'housing', nationality: 'housing', residency_months: 'housing', status: 'status', circumstance: 'circumstances' };
-    const target = attrMap[btn.dataset.attr] || 'housing';
+    /* One table, shared with the card that draws the button (ANSWER_STEP).
+       `|| 'housing'` used to be the fallback, which is how a reader who
+       pressed "Answer this now" on a women-only scheme landed on a question
+       about her tenancy: there is no gender step, so the attribute mapped to
+       nothing and the fallback sent her somewhere unrelated. No step, no
+       button — and if one is somehow clicked anyway, nothing happens rather
+       than the wrong thing. */
+    const target = ANSWER_STEP[btn.dataset.attr];
     /* "This does apply to me" now means it. The circumstance the card named is
        turned on and the result recomputed, rather than dumping the reader on
        the circumstances step with that option still unticked — which is what
@@ -1976,6 +2300,7 @@ app.addEventListener('click', async (ev) => {
       compute();
       return;
     }
+    if (!target) return;
     S.result = null;
     S.step = Math.max(0, steps().indexOf(target));
     render();
@@ -1999,6 +2324,22 @@ app.addEventListener('click', async (ev) => {
     setHTML(out, `<p class="small" style="margin-top:1rem">${esc(
       t('check.prepare.pending', 'Building your packs — this reads every match, so give it a moment.'),
     )}</p>`);
+    /* The button that starts this sits in the hero and its answer lands
+       roughly 1,500px below, in the section that holds the documents. A
+       control that fires and paints its result off-screen is the same defect
+       as a control that does nothing: the reader presses it, the page appears
+       unchanged, and nothing they were told would happen has visibly happened.
+       So move the view and the focus to the answer NOW, at the pending state,
+       not on the success path only — the paths that matter most here are the
+       ones that fail (offline, signed out, unpaid), and revealing the pack but
+       not the refusal is how a reader concludes the button is broken.
+       #prepare-out is role=status, so a screen reader hears every one of these
+       either way; tabindex="-1" is what lets a pointer user's focus follow. */
+    const reveal = () => {
+      out.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      try { out.focus({ preventScroll: true }); } catch { out.focus(); }
+    };
+    reveal();
     const done = () => {
       btn.disabled = false;
       btn.textContent = label;
@@ -2032,6 +2373,9 @@ app.addEventListener('click', async (ev) => {
        call, so it was 100% English in all six locales no matter what the
        dictionary held. */
     setHTML(out, renderPlanPack(r.data));
+    /* Already revealed at the pending state; keep the focus on the answer now
+       that it has grown from one line into the pack. */
+    reveal();
     done();
     return;
   }
@@ -2072,7 +2416,7 @@ app.addEventListener('click', async (ev) => {
     const url = `${location.origin}${location.pathname}#r=${encodeState()}`;
     try {
       if (navigator.share) {
-        await navigator.share({ title: 'Unclaimed', text: estimateShareText(S.result, S.entry.name), url });
+        await navigator.share({ title: 'Unclaimed', text: estimateShareText(S.result, countryName(S.entry)), url });
       } else {
         await navigator.clipboard.writeText(url);
         const label = t('check.share.button', 'Copy a link that contains my answers');
@@ -2103,7 +2447,23 @@ window.addEventListener('hashchange', async () => {
 bindCheckout(document);
 
 (async () => {
-  S.manifest = await (await fetch(`${BASE}/api/v1/countries.json`)).json();
+  /* One unguarded await used to decide whether this page existed at all: if
+     the country manifest did not come back, the whole boot threw and #app was
+     left empty — no heading, no message, no retry, masthead and footer
+     rendering normally around a blank hole. That reads as a broken product
+     rather than a network that dropped one file, and the only way out was
+     editing the URL. Every other network path here already says so out loud. */
+  try {
+    const res = await fetch(`${BASE}/api/v1/countries.json`);
+    if (!res.ok) throw new Error(String(res.status));
+    S.manifest = await res.json();
+  } catch {
+    setHTML(app, `<div class="notice notice--error" role="alert">
+      <p>${esc(T("We couldn't load the list of countries. Check your connection and try again."))}</p>
+      <p class="btn-row" style="margin-bottom:0"><button class="btn btn-primary" type="button" onclick="location.reload()">${esc(T('Try again'))}</button></p>
+    </div>`);
+    return;
+  }
 
   const hash = location.hash.match(/r=([A-Za-z0-9_-]+)/);
   const qc = new URLSearchParams(location.search).get('country');

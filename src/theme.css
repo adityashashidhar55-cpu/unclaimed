@@ -1090,6 +1090,51 @@ div.q { margin-bottom: 2.4rem; }
           line-height: 1.02; margin: .6rem 0 0; }
 .figure-unit { color: var(--ink-3); max-width: 46ch; }
 
+/* The hero's one sentence. It used to inherit .figure-unit's 46ch, which is
+   the right measure for the two words under the number and the wrong one for
+   the claim — and an inline max-width:60ch on the deleted paragraph fought it
+   for the same space. One rule, one owner. */
+.hero-claim { max-width: 36rem; color: var(--ink-2); font-size: 1.02rem;
+              line-height: 1.55; margin: 1rem 0 0; }
+
+/* --- the hero and the map of the page, side by side ----------------- *
+ *
+ * Measured before this existed: `.results` is 1180px wide at BOTH 1536 and
+ * 1280 (the container is capped, so it is one problem at two widths), the
+ * widest painted run in the hero was 748px, and the remaining 432px — 37% of
+ * the container — was empty, while the reader's only map of a 14,800px page
+ * was nowhere.
+ *
+ * The index is a SIBLING of .result-hero, not a child. Nesting it inside the
+ * hero makes it part of the hero's measured height, which at 390px adds
+ * ~264px to the one box this round exists to shrink. */
+/* Below 1100px this is one column and the index follows the hero — stated
+   rather than left to an empty rule, so it is clear that the single column is
+   a decision. */
+.result-top { display: block; }
+@media (min-width: 1100px) {
+  .result-top {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(18rem, 22rem);
+    column-gap: 3rem;
+    align-items: start;
+  }
+}
+/* The index is a <ul> for screen readers, not for the bullets. Without this
+   reset every row paints a disc in the gutter and the column reads as a
+   bulleted list of links rather than a table of contents with counts. */
+.result-index ul { list-style: none; margin: 0; padding: 0; }
+.result-index li { margin: 0; }
+.result-index a {
+  display: flex; justify-content: space-between; gap: 1rem;
+  padding: .55rem 0; border-bottom: 1px solid var(--line-2);
+  /* 44px because this is the only navigation on the screen and it is used on
+     a phone with a thumb. */
+  min-height: 44px; align-items: center; text-decoration: none;
+}
+.result-index b { font-variant-numeric: tabular-nums; }
+.result-index__total { display: block; padding: .55rem 0; color: var(--ink-4); font-size: .86rem; }
+
 .bucket { margin: 2.6rem 0; }
 .bucket__head {
   display: flex; align-items: baseline; justify-content: space-between;
@@ -1098,6 +1143,19 @@ div.q { margin-bottom: 2.4rem; }
 .bucket__head h2 { margin: 0; }
 .bucket__count { font-size: .85rem; color: var(--ink-4); }
 .bucket-list { display: grid; gap: .8rem; }
+/* Two columns for the cards that carry money, three for the ones that carry a
+   question. 1000px rather than 900: at a 900px viewport `.results` measures
+   860px, and two 415px columns for a card with three bullets and three chips
+   is tighter than the layout wants. */
+@media (min-width: 1000px) {
+  .bucket-list--lead { grid-template-columns: repeat(2, minmax(0, 1fr)); align-items: start; }
+}
+@media (min-width: 1100px) {
+  .bucket-list--ask { grid-template-columns: repeat(3, minmax(0, 1fr)); align-items: start; }
+}
+@media (min-width: 700px) and (max-width: 1099px) {
+  .bucket-list--ask { grid-template-columns: repeat(2, minmax(0, 1fr)); align-items: start; }
+}
 
 .prog-card { position: relative; isolation: isolate; border-radius: 1rem; padding: 1.1rem 1.2rem;
              background: rgba(255,255,255,.7); }
@@ -1107,11 +1165,34 @@ div.q { margin-bottom: 2.4rem; }
   -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
   -webkit-mask-composite: xor; mask-composite: exclude; pointer-events: none;
 }
-.prog-card__head { display: flex; justify-content: space-between; gap: 1rem; align-items: flex-start; flex-wrap: wrap; }
-.prog-card__title { margin: 0; font-size: 1.08rem; }
+.prog-card__head { display: flex; justify-content: space-between; column-gap: 1rem; gap: 1rem; align-items: flex-start; flex-wrap: wrap; }
+/* The eye is meant to land on the name of the thing you can claim. It landed
+   on the amount: 1.35rem in the heading face against 1.08rem of body face for
+   the programme name, on every one of seventy-nine identically weighted
+   boxes. */
+.prog-card__title { margin: 0; font-size: 1.15rem; font-weight: 600; color: var(--ink); }
+/* A link is a target for a finger as well as a pointer; 19px was under the
+   24px minimum. */
+.prog-card__title a { min-height: 24px; display: inline-block; }
 .prog-card__sub, .prog-card__meta { font-size: .84rem; color: var(--ink-4); margin: .25rem 0 0; }
 .prog-card__amount { text-align: right; white-space: nowrap; }
-.prog-card__value { font-family: var(--font-heading); font-size: 1.35rem; }
+.prog-card__value { font-family: var(--font-heading); font-size: 1.05rem; color: var(--ink-2); flex: 0 0 auto; }
+
+/* A card that says one thing and asks one question, dressed as one. The 20
+   conditional cards carried 94 chips and 58 buttons across 5,933px for one
+   sentence of content each. */
+/* "Only if this is you" and "one answer away", gathered under the thing they
+   have in common instead of repeated on every card. The head is a label for a
+   group of one-line cards, so it sits between a section heading and body
+   text — bigger than the cards it introduces, smaller than the section. */
+.ask-group { margin-top: 1.4rem; }
+.ask-group__head {
+  margin: 0; font-family: var(--font-heading); font-size: 1.02rem;
+  font-weight: 600; color: var(--ink-2);
+}
+
+.prog-card--ask { padding: .85rem 1rem; }
+.prog-card--ask .prog-card__ask { margin: .45rem 0 .6rem; font-size: .9rem; color: var(--ink-2); }
 
 .why { margin: .8rem 0 0; padding: .7rem .9rem; border-radius: .7rem; font-size: .87rem;
        background: rgba(29,36,48,.04); color: var(--ink-3); }
