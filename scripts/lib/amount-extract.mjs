@@ -20,9 +20,13 @@
 const CURRENCY = String.raw`(?:[€£$₹¥]|EUR|GBP|USD|AUD|NZD|CAD|SGD|CHF|SEK|PLN|ZAR|INR|JPY|KRW|MXN|BRL|AED|R\$|Rs\.?|kr|zł)`;
 const NUM = String.raw`\d{1,3}(?:[.,  ]\d{3})*(?:\.\d{1,2})?|\d+(?:\.\d{1,2})?`;
 
-/** Words that mean the number beside them is a TEST, not a payment. */
+/** Words that mean the number beside them is a TEST, not a payment.
+    `earning` is in the list explicitly: the present participle was missing,
+    so sg/progressive-wage-credit-scheme's wage cap — "employees earning
+    $3,000–$4,000/month" — was not disqualified, and any widening of the
+    extractor would have written a means test into amount_max. */
 const DISQUALIFY =
-  /\b(income|earn(?:s|ings|ed)?|revenue|turnover|threshold|means[- ]test|capital|savings|assets?|property value|house price|rateable|valuation|salary|wage|below|under £?[\d]|if you (?:earn|have)|limit|average|cost|costs|price|fee|charge|you pay|plan)\b/i;
+  /\b(income|earn(?:s|ing|ings|ed)?|revenue|turnover|threshold|means[- ]test|capital|savings|assets?|property value|house price|rateable|valuation|salary|wage|below|under £?[\d]|if you (?:earn|have)|limit|average|cost|costs|price|fee|charge|you pay|plan)\b/i;
 
 /** The note has to describe money CHANGING HANDS TO the reader. Without this
     the extractor lifted the £30 annual PRICE of a Senior Railcard as if the
@@ -97,7 +101,26 @@ export function extractPayment(note) {
    would put "You must co-fund 20%" on a page about a loan guarantee. Only
    grant-shaped aid gets a co-funding figure. */
 const NOT_AID_INTENSITY =
-  /\b(guarantee[sd]?|guaranteeing|equity|co-?invest|stake|shareholding|interest rate|of (?:a |the )?(?:commercial )?lender)/i;
+  /\b(guarantee[sd]?|guaranteeing|equity|co-?invest|taking|stake|shareholding|contributes?|contribution of|tax credit|tax revenue|corpus|interest rate|of (?:a |the )?(?:commercial )?lender)/i;
+
+/* Two bounds and no way to choose between them. "up to 50-80% of project
+   cost" (eu/eu-esa-incubed) matched the last pattern below on the 80 and
+   would have written the UPPER bound as the applicant's guaranteed rate —
+   the more dangerous of the two wrong answers, because it understates what
+   they must find themselves. A range is a refusal, not a coin toss. */
+const RANGE = /\d{1,3}\s?[-–—]\s?\d{1,3}\s?%/;
+
+/* A share OF A LOAN is not aid intensity — the applicant repays all of it.
+   Deliberately tested only on the text BEFORE the percentage, because the
+   word's position decides its meaning: us-or-obdf reads "Direct state loans
+   ... covering up to 40% of project cost", where the loan governs the share,
+   while at-ffg-basisprogramm reads "up to 70% of project costs" and then, in
+   the next clause, "loan repayment falls due five years after" — a genuine
+   grant rate followed by an irrelevant sentence. A whole-window test throws
+   the good one away with the bad one. "credit against ... withholdings"
+   (us-il-edge) is here for the same reason: it is a tax credit rate, and
+   what it is a percentage OF is named before the number. */
+const NOT_AID_BEFORE = /\b(loans?|lending|repayable advance|credit against|withholdings?)\b/i;
 
 /**
  * Aid-intensity / co-funding rate stated in prose.
@@ -124,6 +147,8 @@ export function extractAidIntensity(text) {
     if (!m) continue;
     const window = text.slice(Math.max(0, m.index - 70), m.index + m[0].length + 50);
     if (NOT_AID_INTENSITY.test(window)) continue;
+    if (RANGE.test(text.slice(Math.max(0, m.index - 20), m.index + m[0].length + 10))) continue;
+    if (NOT_AID_BEFORE.test(text.slice(Math.max(0, m.index - 90), m.index))) continue;
     const pct = Number(m[1]);
     /* 100% aid is not co-funding, and 0% is not a rate. Both are noise. */
     if (!Number.isFinite(pct) || pct <= 0 || pct >= 100) continue;
