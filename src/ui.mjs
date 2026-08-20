@@ -417,7 +417,14 @@ bindCheckout(document);
 
     const menu = document.getElementById('acct-menu');
     if (!menu) return;
-    document.getElementById('acct-menu-email').textContent = who.email || '';
+    /* me() normalises the Worker's snake_case into { user: { email } } — the
+       address is not on the top level, and reading it there left a bordered
+       empty strip above the first item, which looks like a component that
+       failed rather than one with nothing to say. It is hidden when there is
+       genuinely no address. */
+    const whoEl = document.getElementById('acct-menu-email');
+    whoEl.textContent = who.user?.email || '';
+    whoEl.hidden = !whoEl.textContent;
     /* Nothing to upgrade to if they already pay. */
     document.getElementById('acct-menu-upgrade').hidden = paid;
     el.setAttribute('role', 'button');
