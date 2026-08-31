@@ -100,3 +100,81 @@ fired under a name that is not in it is rejected at the API rather than showing
 up as a silent 100% drop-off. Insert in the middle only when the product order
 genuinely changed — the drop-off between adjacent rows is the whole table, and
 a row in the wrong place produces a real-looking number that means nothing.
+
+---
+
+# Granting someone a plan
+
+The other half of `/admin/`, under **Customers**. Search for an email, press
+Grant, pick a plan, say why. The account is unlocked on their next request —
+no Stripe, no invoice, no card.
+
+## What a grant is, and what it deliberately is not
+
+A grant is a row in `grants`. It is **not** a row in `entitlements`, and
+nothing about granting touches Stripe. That separation is the whole design,
+for two reasons:
+
+1. **`entitlements` belongs to the Stripe webhook.** `applyStripeEvent()`
+   upserts on `user_id` and assigns `status` unconditionally. Anything written
+   there by hand survives until that customer's next invoice event and then
+   disappears, leaving nothing to say it was ever there.
+
+2. **Comped accounts must never look like revenue.** A granted account sitting
+   in the entitlements table with `status='active'` makes MRR count people who
+   have never paid, silently, forever.
+
+So access is the union of *has a live subscription* and *has a live grant*,
+computed in `entitlementFor()`. A paying subscriber is always reported as
+`active`, never as `granted`, so the paying column stays honest. Granting
+creates no Stripe customer; revoking cancels no subscription.
+
+## The Enterprise tier
+
+`enterprise` is a grantable plan with **no Stripe price, on purpose**. The
+pricing page quotes €80/seat/month for a tier that is sold on a call — this is
+where that call gets switched on. Grant it with the seat count you agreed and
+invoice outside the product.
+
+## Fields
+
+| Field | What it does |
+|---|---|
+| Plan | One of the five in `packages/grants/index.js`. The form is populated from the Worker, so it can never offer a plan the Worker would reject. |
+| Seats | Business and enterprise only. Clamped to 500 — an unbounded seat count is an unbounded licence. |
+| Days | `0` means no end date. Otherwise it becomes an absolute `expires_at` at grant time, and access stops on its own with nothing scheduled to run. |
+| Why | **Required.** In six months this is the only thing that tells a comped account apart from a billing bug, and the person who has to tell them apart is you. |
+
+Granting to an address with no account is refused by default and offers a
+tickbox to create it — so a typo in the email box cannot quietly create a
+customer. That creation is its own audited event.
+
+## Superseding, revoking, and the trail
+
+Granting a second plan **revokes the first in the same request** and records
+that as a `supersede`. Exactly one grant is ever live, so "what does this
+account have" has one answer.
+
+Revoking asks for a reason and closes access immediately. Nothing is deleted:
+`admin_audit` is append-only, and a revoked grant keeps its row. "What did this
+account have on 3 March, and who decided that" has to be answerable from rows.
+
+## What the customer sees
+
+Their account page says the plan is *unlocked for you by Unclaimed Grants,
+there is nothing to pay and nothing to manage*, in their own language, and
+offers **no billing control at all**. This matters: a granted account has no
+Stripe customer, so a Manage billing button there would open a portal session
+that cannot be created and fail with an error they can do nothing about.
+
+## Before any of this works
+
+```
+npx wrangler d1 execute unclaimed --remote --file=migrations/0008_grants.sql
+```
+
+Until that runs, `liveGrantFor()` catches the missing table and answers null —
+"nobody has been granted anything", which is exactly true. The site keeps
+working and paying customers are unaffected; the audit panel says the migration
+has not been applied. It fails closed in every case: a database error can never
+manufacture an entitlement, only fail to find one.
