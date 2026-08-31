@@ -2735,6 +2735,16 @@ function adminPage() {
       <label class="tiny" for="admin-pass">Password</label>
       <input class="field" type="password" id="admin-pass" autocomplete="current-password" required
              style="width:100%;margin:.4rem 0 1rem">
+
+      <!-- Hidden until the server says a code is wanted. Showing it always
+           would tell anyone who loads this page whether a second factor is
+           enrolled, which is a fact worth not publishing. -->
+      <span id="admin-code-wrap" hidden>
+        <label class="tiny" for="admin-code">Six-digit code</label>
+        <input class="field" type="text" id="admin-code" inputmode="numeric" autocomplete="one-time-code"
+               pattern="[0-9]*" maxlength="6" style="width:100%;margin:.4rem 0 1rem;letter-spacing:.3em">
+      </span>
+
       <button class="btn btn-primary" type="submit" style="width:100%">Sign in</button>
       <p class="small" id="admin-msg" role="status" aria-live="polite" style="margin:1rem 0 0;min-height:1.2em"></p>
     </form>
@@ -2753,6 +2763,15 @@ function adminPage() {
       <button class="btn btn-sm" type="button" id="admin-refresh">Refresh</button>
       <a class="btn btn-sm btn-ghost" href="/auth/signout">Sign out</a>
     </div>
+
+    <section class="bucket" id="admin-security">
+      <div class="bucket__head"><h2>This door</h2>
+        <span class="bucket__count" id="admin-2fa-state">checking…</span></div>
+      <p class="small" style="margin:.2rem 0 1rem;max-width:62ch">Signing in here unlocks every paid surface on the
+      site. A password on a guessable URL is one secret between the internet and the whole product, so add a second
+      one from an authenticator app.</p>
+      <div id="admin-2fa"></div>
+    </section>
 
     <div class="grid grid-4" id="admin-kpis"></div>
 

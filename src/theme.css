@@ -1560,3 +1560,23 @@ div.q { margin-bottom: 2.4rem; }
   .audswitch { display: flex; width: 100%; }
   .audswitch__tab { flex: 1; text-align: center; padding: .62rem .5rem; font-size: .84rem; }
 }
+
+/* The authenticator setup key, on /admin/.
+ *
+ * A bare <code> inherits the page's body size and the browser's monospace,
+ * which puts a 32-character key at a size somebody has to squint at while
+ * typing it into a phone. It is typed exactly once and getting a character
+ * wrong means starting over. */
+.admin-key {
+  display: block;
+  font: 500 1.05rem/1.7 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  letter-spacing: .08em;
+  word-break: break-all;
+  color: var(--ink);
+  background: rgba(255, 255, 255, .7);
+  border: 1px solid rgba(15, 111, 118, .2);
+  border-radius: 10px;
+  padding: .7rem .9rem;
+  margin: 0 0 .9rem;
+  user-select: all;
+}
