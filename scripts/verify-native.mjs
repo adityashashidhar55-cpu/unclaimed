@@ -215,5 +215,6 @@ fs.existsSync(path.join(ROOT, 'dist/privacy/index.html'))
     : fail('the Worker ignores the app\'s bearer token');
 }
 
+
 console.log(`\n${checks} checks passed, ${failures} failed\n`);
 process.exit(failures ? 1 : 0);

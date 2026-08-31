@@ -55,6 +55,7 @@ const ok = (m) => { passed += 1; console.log(`  ✓ ${m}`); };
 const bad = (m) => { failed += 1; console.error(`  ✗ ${m}`); };
 const is = (a, b, m) => (Object.is(a, b) ? ok(m) : bad(`${m} — got ${JSON.stringify(a)}, wanted ${JSON.stringify(b)}`));
 const yes = (v, m) => (v ? ok(m) : bad(m));
+const no = (v, m) => (!v ? ok(m) : bad(`${m} — it did not`));
 
 if (!fs.existsSync(WWW)) {
   console.error('native/www is missing — run `node native/prepare.mjs` first.');
@@ -170,6 +171,77 @@ const bundled = fs.existsSync(path.join(WWW, 'api/v1/programmes'))
   ? fs.readdirSync(path.join(WWW, 'api/v1/programmes')).filter((f) => f.endsWith('.json')).length
   : 0;
 yes(bundled >= 20, `${bundled} country datasets are bundled, so the check works with no network`);
+
+/* ---- hidden means hidden ------------------------------------------- */
+
+/* `#install` sets `display: flex`, which beats the user-agent
+ * `[hidden] { display: none }` — and the app shell loads only app/app.css,
+ * not theme.css, where the `!important` override lives. So the
+ * "Install Unclaimed for offline use" bar was pinned across the bottom of
+ * every screen of the packaged app, over the results, inside the app somebody
+ * had already installed.
+ *
+ * Measured rather than read: computed style is the only thing that settles
+ * whether an author rule beat the attribute.
+ */
+{
+  const hiddenButShown = await page.evaluate(() =>
+    [...document.querySelectorAll('[hidden]')]
+      .filter((el) => getComputedStyle(el).display !== 'none')
+      .map((el) => el.id || el.className || el.tagName));
+  is(hiddenButShown.length, 0,
+    `every element marked hidden is actually hidden${hiddenButShown.length ? ` — visible: ${hiddenButShown.join(', ')}` : ''}`);
+}
+
+/* ---- nothing tells you to install what you are holding ------------- */
+
+/* The deadlines screen offered "Install the app to get a reminder on your
+ * phone" to anyone who was not BOTH native and entitled — so inside the app,
+ * an unpaid reader was told to install the app, on the screen that sells the
+ * paid plan.
+ *
+ * A source check cannot catch this: `gate.entitled && isNative ? A : B` and
+ * `isNative ? (entitled ? A : B) : C` look almost identical and behave
+ * completely differently. So this renders the screen with Capacitor stubbed in
+ * — which is what makes isNative true — and reads what it actually says.
+ */
+{
+  const ctx = await browser.newContext({ viewport: { width: 390, height: 844 } });
+  /* Injected before any module evaluates: isNative is computed at import time
+     from window.Capacitor, so setting it afterwards would be too late. */
+  await ctx.addInitScript(() => {
+    window.Capacitor = { isNativePlatform: () => true, getPlatform: () => 'android', Plugins: {} };
+  });
+  const native = await ctx.newPage();
+  await native.goto(`${origin}/index.html`, { waitUntil: 'networkidle' });
+  await native.waitForTimeout(800);
+
+  const reallyNative = await native.evaluate(() => !!window.Capacitor?.isNativePlatform?.());
+  yes(reallyNative, 'the app can be driven as the packaged build');
+
+  /* The deadlines screen returns the home view until a profile exists, so the
+     wizard has to be answered first — the bug lives past that gate. */
+  const start = await native.$('[data-nav="check"]');
+  if (start) { await start.click(); await native.waitForTimeout(700); }
+
+  /* The app's own check screen, which is NOT the web wizard — one long form of
+     selects and choice buttons rather than a stepped flow, so
+     lib/wizard-drive.mjs does not apply to it. Country is the only answer the
+     deadlines screen needs. */
+  await native.selectOption('select[data-q="country_code"]', 'gb').catch(() => {});
+  await native.waitForTimeout(400);
+  const see = await native.$('[data-nav="results"]');
+  if (see) { await see.click(); await native.waitForTimeout(1400); }
+
+  const tile = await native.$('[data-nav="deadlines"]');
+  if (tile) { await tile.click(); await native.waitForTimeout(1400); }
+
+  const copy = await native.evaluate(() => document.body.innerText);
+  yes(/deadline/i.test(copy), 'and the deadlines screen was actually reached');
+  no(/install the app/i.test(copy),
+    'the deadlines screen does not tell a reader inside the app to install the app');
+  await ctx.close();
+}
 
 await browser.close();
 server.close();
