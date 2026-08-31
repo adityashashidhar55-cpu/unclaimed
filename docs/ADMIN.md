@@ -24,7 +24,7 @@ npx wrangler secret put ADMIN_PASSWORD_HASH
 
 Pass your own password as a second argument if you would rather choose one.
 The password itself is stored nowhere — not in the repo, not in wrangler.jsonc,
-not in D1. Only a PBKDF2-SHA256 hash at 210,000 iterations, and its salt.
+not in D1. Only a PBKDF2-SHA256 hash at 100,000 iterations, and its salt. (This doc said 210,000 for a while; the code has always said 100,000. Raising it means re-running the script and re-putting the two secrets, because an existing hash cannot be re-derived.)
 
 **With any of the three secrets unset, `/auth/admin` returns 503.** A missing
 secret means the door is off, never that the door is open — that inversion is
@@ -34,6 +34,56 @@ Rotating is running the script again and re-putting the two password secrets.
 That invalidates nothing already issued, so also rotate `SESSION_SIGNING_KEY`
 if you need existing operator sessions dead immediately; that signs out every
 user too, which is the price.
+
+## The second factor
+
+Signing in here unlocks every paid surface on the site for twelve hours. The URL
+is guessable and so is the email, which leaves one secret between the internet
+and the whole product. Rate limiting makes guessing slow; it does nothing about
+a password that has leaked.
+
+So `/admin/` offers a TOTP second factor — the six digits from any
+authenticator app. RFC 6238, HMAC-SHA1 over a 30-second counter, done with Web
+Crypto. No dependency, because the whole repo has none.
+
+**Turning it on.** Sign in, find *This door* at the top of the panel, choose
+**enter a setup key** in your authenticator app, type the key, then type the six
+digits back. That is it.
+
+Nothing is stored until that code checks out. A key that fails to type, or a tab
+closed halfway, leaves the door exactly as it was — you cannot lock yourself out
+by starting and not finishing.
+
+There is deliberately **no QR code**. Drawing one means either a QR library (this
+repo has no dependencies) or sending the TOTP secret to an image service to be
+rendered, which would hand the second factor to whoever draws it.
+
+**How it behaves once on.**
+
+| | |
+|---|---|
+| Password alone | Refused, and the response says a code is wanted — *only after the password has already checked out*, so the field is not an oracle for guessing the email. |
+| Wrong password, right code | "Wrong email or password". Nothing is said about the code. |
+| Wrong code | Costs a rate-limited attempt, exactly like a wrong password. Eight failures an hour per IP and the door shuts. |
+| The same code twice | Refused. A six-digit code is valid for up to 90 seconds across the drift window, and anything that can read it once — a shoulder, a screenshot, a phishing page relaying it — can replay it inside that window. The last accepted step is stored, and a code at or before it is dead. |
+| Clock drift | One 30-second step either side is accepted. Wider would only lengthen the replay window. |
+| The stored secret cannot be read | The door **shuts**, with a 503. A database hiccup must never silently downgrade this to one password. |
+
+**Turning it off** needs a current code, not just a session — otherwise a stolen
+session could switch the factor off, which would make it a speed bump rather
+than a factor.
+
+**If you lose the phone.** Delete the row and the door is back to a password:
+
+```
+npx wrangler d1 execute unclaimedgrant --remote \
+  --command "DELETE FROM worker_config WHERE key LIKE 'admin_totp%'"
+```
+
+That is a deliberate act requiring Cloudflare access, which is the right shape
+for a recovery path — nobody can reach it through the product.
+
+Both switching it on and switching it off are written to `admin_audit`.
 
 ## What the operator session does
 
