@@ -67,7 +67,9 @@ const startups = read('api/v1/startups/index.json');
 {
   let n = 0;
   let dated = 0;
-  let withDates = 0;
+  let withFutureDates = 0;
+  let pastStillOpen = 0;
+  const now = Date.now();
   for (const c of startups.countries) {
     const f = path.join(DIST, `api/v1/startups/${c.slug}.json`);
     if (!fs.existsSync(f)) continue;
@@ -75,14 +77,21 @@ const startups = read('api/v1/startups/index.json');
       if (!p.status) continue;
       n += 1;
       const d = deadlineState(p);
-      if (p.closes_at) {
-        withDates += 1;
+      /* A closing date that has already passed is not a date worth carrying.
+         The test used to require that EVERY closes_at survived into `at`,
+         which meant a calendar export offering to remind somebody about a
+         deadline three weeks in the past. What must survive is a date they can
+         still act on. */
+      if (p.closes_at && Date.parse(p.closes_at) > now) {
+        withFutureDates += 1;
         if (d.at != null) dated += 1;
       }
+      if (p.closes_at && Date.parse(p.closes_at) < now && d.urgency === 'open') pastStillOpen += 1;
     }
   }
   t(`${n} startup records still use the date path`, n > 0);
-  t(`every one of the ${withDates} with a real closing date keeps it`, withDates === 0 || dated === withDates);
+  t(`every one of the ${withFutureDates} with a closing date still ahead keeps it`, withFutureDates > 0 && dated === withFutureDates);
+  t('no record whose closing date has passed still reads as open', pastStillOpen === 0);
 }
 
 /* ---- the branch must not swallow a startup record ---- */

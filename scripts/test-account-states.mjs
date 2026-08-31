@@ -95,11 +95,25 @@ for (const reason of ['canceled', 'expired', 'unpaid', 'incomplete_expired']) {
   /* `reason: live ? ... : row.status` also passes Stripe statuses through. */
   for (const s of ['past_due', 'canceled', 'unpaid', 'incomplete_expired']) reasons.add(s);
 
+  /* A reason has to be tested with the entitlement it actually arrives with.
+     Asking what the screen says for `{ entitled: false, reason: 'active' }`
+     is asking about a state the Worker cannot produce, and the answer — the
+     generic free line — read as a missing branch. */
+  const ENTITLED_REASONS = new Set(['active', 'granted', 'admin', 'free_in_jurisdiction']);
+
   const unhandled = [...reasons].filter((r) => {
-    const st = accountState({ entitled: false, reason: r });
+    const st = accountState({ entitled: ENTITLED_REASONS.has(r), reason: r });
     return st.kind === 'free' && r !== 'no_subscription' && r !== 'anonymous';
   });
   t(`every entitlement reason has its own state (unhandled: ${unhandled.join(', ') || 'none'})`, unhandled.length === 0);
+
+  /* And the entitled ones must not merely avoid the free line — they must not
+     be handed a billing control they cannot use. A granted account has no
+     Stripe customer, so 'portal' there opens a session that cannot be created
+     and fails with an error the customer can do nothing about. */
+  t('a granted account is offered no billing control', accountState({ entitled: true, reason: 'granted', plan: 'enterprise' }).action === 'none');
+  t('a granted account is not described as a purchase', accountState({ entitled: true, reason: 'granted', plan: 'enterprise' }).kind === 'granted');
+  t('a paying account still gets the billing portal', accountState({ entitled: true, reason: 'active', plan: 'personal_annual' }).action === 'portal');
 }
 
 /* Half-translated is worse than untranslated: "Personal, annual" sitting in

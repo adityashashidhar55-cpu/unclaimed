@@ -2,10 +2,16 @@
    hash+salt, and the constant-time compare. Pulled out of worker/index.js by
    text so the test cannot drift from the shipped implementation. */
 import fs from 'node:fs';
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
 
-
-
-const src = fs.readFileSync('/home/claude/unclaimed/worker/index.js', 'utf8');
+/* Resolved from this file, not from an absolute path.
+   It was `/home/claude/unclaimed/...`, which is one particular checkout on one
+   particular machine: the test passed there and threw ENOENT everywhere else,
+   including in a fresh clone. A test that only runs in one directory is a test
+   that does not run. */
+const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
+const src = fs.readFileSync(path.join(ROOT, 'worker/index.js'), 'utf8');
 const grab = (name) => {
   let i = src.indexOf(`async function ${name}(`);
   if (i < 0) i = src.indexOf(`function ${name}(`);
@@ -189,7 +195,7 @@ t('length mismatch is rejected without throwing', !mod.timingSafeEqual('abc', h1
   t('a client with no Sec-Fetch headers is still allowed to sign out', /!dest \|\|/.test(route) && /!site \|\|/.test(route));
   t('the cleared cookie keeps its security attributes', /ua_session=; Path=\/; HttpOnly; Secure; SameSite=Lax; Max-Age=0/.test(route));
 
-  const client = fs.readFileSync('/home/claude/unclaimed/src/pwa/auth.js', 'utf8');
+  const client = fs.readFileSync(path.join(ROOT, 'src/pwa/auth.js'), 'utf8');
   const so = client.slice(client.indexOf('export async function signOut'), client.indexOf('export async function signOut') + 700);
   t('the client signs out with POST, matching the branch that always passes', /method: 'POST'/.test(so));
 }
@@ -201,7 +207,7 @@ t('length mismatch is rejected without throwing', !mod.timingSafeEqual('abc', h1
   const me = grab('handleMe');
   t('/api/me reports the account type', /account_type: session\.typ/.test(me));
 
-  const client = fs.readFileSync('/home/claude/unclaimed/src/pwa/auth.js', 'utf8');
+  const client = fs.readFileSync(path.join(ROOT, 'src/pwa/auth.js'), 'utf8');
   t('and the client reads the field the Worker actually sends', /accountType: data\.account_type/.test(client));
 }
 

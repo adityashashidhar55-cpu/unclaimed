@@ -7,6 +7,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { testProgramme } from '../src/engine/startup.js';
+import { effectiveStatus } from '../packages/deadlines/index.js';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const DIST = path.join(ROOT, 'dist');
@@ -595,10 +596,18 @@ fs.readFileSync(path.join(DIST, 'theme.css'), 'utf8').includes('.shell-narrow')
           if (!disagreeWhere) disagreeWhere = `${f}:${p.slug} → ${v}`;
         }
       }
-      /* A date in the past is not an open programme. */
-      if (typeof p.closes_at === 'string' && p.closes_at < today && p.status === 'open') {
+      /* A date in the past is not an open programme.
+       *
+       * This used to assert that the STORED status agreed, which made it a
+       * check on how recently a human had edited the file: five records went
+       * red eight days after the last data pass, with nothing having changed
+       * except the date. The property that actually matters is that the site
+       * does not call them open — so it is the derived status that is asserted
+       * here, and the source check below is what stops anything reading the
+       * raw field to make that decision. */
+      if (typeof p.closes_at === 'string' && p.closes_at < today && effectiveStatus(p) !== 'closed') {
         pastOpen += 1;
-        if (!pastOpenWhere) pastOpenWhere = `${f}:${p.slug} closed ${p.closes_at}`;
+        if (!pastOpenWhere) pastOpenWhere = `${f}:${p.slug} closed ${p.closes_at} → ${effectiveStatus(p)}`;
       }
       const e = p.eligibility || {};
       if (e.turnover_annual_max != null) {
@@ -633,7 +642,23 @@ fs.readFileSync(path.join(DIST, 'theme.css'), 'utf8').includes('.shell-narrow')
       ? ok(`every one of the ${closedRecords} records the data calls closed is scored closed by the engine`)
       : fail(`${disagree} of ${closedRecords} closed startup records are not scored closed (first: ${disagreeWhere})`))
     : fail('no startup record reads as closed at all — the closedness check is measuring nothing');
-  pastOpen === 0 ? ok('no startup record has a past closes_at while status=open') : fail(`${pastOpen} startup records closed in the past but still say open (first: ${pastOpenWhere})`);
+  pastOpen === 0
+    ? ok('every startup record whose closing date has passed reads as closed, whatever the stored field says')
+    : fail(`${pastOpen} startup records closed in the past do not derive as closed (first: ${pastOpenWhere})`);
+
+  /* And nothing decides "open" from the stored field. A derivation that exists
+     but is bypassed by the one count on the enterprise landing page is not a
+     derivation; it is a second opinion nobody reads. */
+  {
+    const build = fs.readFileSync(path.join(ROOT, 'src/build.mjs'), 'utf8');
+    const raw = build.match(/\['open', 'rolling'\]\.includes\(p\.status\)/g) || [];
+    raw.length === 0
+      ? ok('no page counts open programmes from the stored status field')
+      : fail(`${raw.length} places in build.mjs count openness from p.status — they will age into a wrong number between deploys`);
+    /(effectiveStatus)/.test(build)
+      ? ok('the build derives status rather than trusting it')
+      : fail('build.mjs never calls effectiveStatus');
+  }
   noEur === 0 ? ok('every turnover ceiling has a derived EUR sibling') : fail(`${noEur} records set turnover_annual_max with no turnover_annual_max_eur (first: ${noEurWhere}) — the engine would compare a local figure against a EUR profile`);
   badRate === 0 ? ok(`derived EUR ceilings match the rate table (as of ${fx.rates_as_of})`) : fail(`${badRate} derived EUR ceilings do not match data/fx-rates.json (first: ${badRateWhere})`);
 }

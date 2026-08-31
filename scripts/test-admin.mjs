@@ -167,5 +167,44 @@ if (fs.existsSync(adminHtml)) {
   ok('/admin/ not built in this run — skipped page checks');
 }
 
+
+
+/* ---- no admin route without a guard ------------------------------ */
+
+/* The functional tests in test-grants.mjs prove that today's endpoints refuse
+   a stranger. This proves it about tomorrow's: it enumerates every
+   /api/admin/* route the router registers, finds the handler each one names,
+   and requires that handler's body to call requireAdmin. Adding an endpoint
+   and forgetting the guard is the single most likely way this door reopens,
+   and it would not look broken — it would look like it worked. */
+{
+  const routes = [...worker.matchAll(/pathname === '\/api\/admin\/([a-z]+)'[^\n]*?(handleAdmin[A-Za-z]+)\(/g)];
+  routes.length >= 7
+    ? ok(`${routes.length} admin routes are registered`)
+    : bad(`only ${routes.length} admin routes found — the enumeration regex has drifted from the router`);
+
+  const unguarded = [];
+  for (const [, route, fn] of routes) {
+    const start = worker.indexOf(`async function ${fn}(`);
+    if (start < 0) { unguarded.push(`${route} (no handler named ${fn})`); continue; }
+    /* The handler body, to the start of the next top-level function. */
+    const next = worker.indexOf('\nasync function ', start + 1);
+    const body = worker.slice(start, next < 0 ? worker.length : next);
+    if (!/requireAdmin\(request, env\)/.test(body)) unguarded.push(`${route} → ${fn}`);
+  }
+  unguarded.length === 0
+    ? ok('every registered admin route calls requireAdmin')
+    : bad(`admin routes with no operator check: ${unguarded.join(', ')}`);
+}
+
+/* Writes must be POST-only at the router. A grant reachable by GET is a grant
+   that can be made by putting a URL in an <img src> on any page a signed-in
+   operator visits. */
+for (const route of ['grant', 'revoke']) {
+  new RegExp(`pathname === '/api/admin/${route}' && request\\.method === 'POST'`).test(worker)
+    ? ok(`/api/admin/${route} is POST-only`)
+    : bad(`/api/admin/${route} is reachable by GET`);
+}
+
 console.log(`\n${passed} passed, ${failed} failed\n`);
 process.exit(failed ? 1 : 0);
