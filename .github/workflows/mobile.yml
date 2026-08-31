@@ -59,6 +59,16 @@ jobs:
         run: node native/prepare.mjs
       - name: Verify the native bundle
         run: node scripts/verify-native.mjs
+      # Static checks catch a missing file. This launches the bundle in a real
+      # browser and fails if the app does not render — which is the failure the
+      # store reviewer sees, and the one nothing else here would catch. The
+      # blank screen this exists for was live on main: five module specifiers
+      # kept a ?v= query that a real bundle has no server to forgive.
+      - name: Boot the packaged app in a browser
+        run: |
+          npm install --no-save playwright@1
+          npx playwright install --with-deps chromium
+          node scripts/test-native-boot.mjs
       - uses: actions/upload-artifact@v5
         with:
           name: resources
