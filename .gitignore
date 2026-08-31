@@ -18,3 +18,7 @@ native/ios/
 native/node_modules/
 native/www/
 harvest/pages/
+# Store screenshots are generated from native/www by scripts/store-screens.mjs.
+# Regenerating them is one command; committing 5MB of PNGs that go stale the
+# moment the UI changes is how a listing ends up showing last quarter's app.
+store/
