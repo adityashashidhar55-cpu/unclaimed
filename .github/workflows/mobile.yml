@@ -198,6 +198,29 @@ jobs:
           chmod +x ./gradlew
           ./gradlew bundleRelease --no-daemon
 
+      # A debug APK as well as the bundle.
+      #
+      # These are not alternatives and it is worth being blunt about which is
+      # which, because "build me the APK" is what everyone says and Play has
+      # not accepted an APK for a new app since August 2021:
+      #
+      #   .aab  is what you upload to Play. It must be signed with YOUR upload
+      #         key, which lives only in secrets. Without ANDROID_KEYSTORE_BASE64
+      #         the bundle above is unsigned and Play rejects it.
+      #   .apk  is what you install on a phone. This one is debug-signed with
+      #         the throwaway key the Android SDK generates, so it installs
+      #         over USB or from a file manager and can never be uploaded
+      #         anywhere. It exists so the app can be held in a hand before
+      #         anybody pays $25 or waits fourteen days for testers.
+      - name: Build a debug APK to sideload
+        working-directory: native/android
+        run: ./gradlew assembleDebug --no-daemon
+
+      - uses: actions/upload-artifact@v5
+        with:
+          name: android-apk-debug
+          path: native/android/app/build/outputs/apk/debug/*.apk
+
       - uses: actions/upload-artifact@v5
         with:
           name: android-aab
