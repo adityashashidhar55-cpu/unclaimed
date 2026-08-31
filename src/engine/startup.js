@@ -28,6 +28,7 @@
  */
 
 import { rankMatches, rateCoverage } from '../../packages/scoring/index.js';
+import { effectiveStatus } from '../../packages/deadlines/index.js';
 
 /* ------------------------------------------------------------------ */
 /* EU SME definition — Recommendation 2003/361/EC, Annex Art. 2        */
@@ -258,12 +259,10 @@ export function testProgramme(programme, profile, asOf) {
      
      `asOf` is passed in rather than read from the clock, so this stays a pure
      function and a test can pin the date. */
-  const todayIso = new Date(asOf ?? Date.now()).toISOString().slice(0, 10);
   const closed =
-    programme.status === 'closed' ||
+    effectiveStatus(programme, asOf ?? Date.now()) === 'closed' ||
     programme.status === 'paused' ||
-    programme.deadline_type === 'closed' ||
-    (typeof programme.closes_at === 'string' && programme.closes_at < todayIso);
+    programme.deadline_type === 'closed';
 
   let verdict;
   if (closed) verdict = 'closed';
