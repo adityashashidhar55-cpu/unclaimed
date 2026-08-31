@@ -277,3 +277,22 @@
 
 /* The workspace is a tool, not a page. Nothing here should animate in. */
 .dash .reveal { opacity: 1 !important; transform: none !important; }
+
+/* Generated documents and the brief they were written from.
+ *
+ * A <pre> with no rule inherits the browser's default monospace at a size
+ * nothing else on this page uses, overflows its container on a narrow
+ * viewport, and takes the page's horizontal scrollbar with it — which
+ * qa-screens.mjs fails on, correctly. Scrolling is contained here instead. */
+.dash__pre {
+  font: 400 .82rem/1.6 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  color: var(--ink-2);
+  background: rgba(255,255,255,.6);
+  border: 1px solid rgba(15,111,118,.18);
+  border-radius: 12px;
+  padding: 1rem 1.1rem;
+  margin: 0;
+  max-height: 34rem;
+  overflow: auto;
+  overscroll-behavior: contain;
+}

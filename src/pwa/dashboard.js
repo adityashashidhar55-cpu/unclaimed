@@ -346,6 +346,7 @@ const NAV = [
   ['opportunities', 'Opportunities'],
   ['pipeline', 'Pipeline'],
   ['applications', 'Applications'],
+  ['write', 'Write'],
   ['filing', 'Auto-file'],
   ['documents', 'Documents'],
   ['deadlines', 'Deadlines'],
@@ -2401,6 +2402,223 @@ document.addEventListener('submit', async (ev) => {
   await loadFiling();
 });
 
+/* ------------------------------------------------------------------ */
+/* Write — metered document generation                                 */
+/* ------------------------------------------------------------------ */
+
+/**
+ * The half of the product that costs money to run.
+ *
+ * Two rules shape this screen, and both are about trust rather than layout.
+ *
+ * The ceiling is on the page before anything is spent, not in a dialog that
+ * appears at the moment the answer is "no". A company that discovers a cap
+ * mid-deadline does not renew, and there is no version of that surprise that
+ * lands well.
+ *
+ * And nothing is generated blind. "See the brief" is free, spends nothing, and
+ * shows exactly what the model will be given — the funder's own criteria, the
+ * company's own numbers, and the gaps it will be told to mark rather than
+ * guess. A generation whose input is hidden is a generation nobody can argue
+ * with when it comes back wrong.
+ */
+
+const gen = { quota: null, generators: [], packs: [], loaded: false, busy: false, error: null, output: null, brief: null };
+
+async function loadQuota() {
+  try {
+    const res = await fetch('/api/enterprise/quota', { credentials: 'same-origin', cache: 'no-store' });
+    const body = await res.json().catch(() => ({}));
+    if (!res.ok) {
+      gen.error = body.message || (res.status === 402 ? 'Writing is part of the company plan.' : 'Could not load your allowance.');
+    } else {
+      gen.quota = body.quota;
+      gen.generators = body.generators || [];
+      gen.packs = body.packs || [];
+      gen.error = null;
+    }
+  } catch {
+    gen.error = 'Could not reach the server.';
+  }
+  gen.loaded = true;
+  render();
+}
+
+function quotaStrip(q) {
+  if (!q) return '';
+  const pct = q.allowance ? Math.min(100, Math.round((q.used / q.allowance) * 100)) : 0;
+  return `<div class="grid grid-4 dash__stats">
+    ${stat(nf(q.allowance_left), 'Left this month', q.allowance ? `of ${nf(q.allowance)} on ${esc(q.plan || 'your plan')}` : 'no monthly allowance on this plan')}
+    ${stat(nf(q.credits), 'Bought credits', q.credits ? 'these do not expire' : 'none bought')}
+    ${stat(nf(q.total_left), 'Total available', 'allowance is spent first')}
+    ${stat(`${pct}%`, 'Allowance used', `resets on the 1st (${esc(q.month)})`)}
+  </div>`;
+}
+
+function writeView() {
+  if (!gen.loaded) {
+    loadQuota();
+    return `<header class="dash__head"><div><span class="eyebrow">Documents, written for the funder</span><h1>Write</h1></div></header>
+      <p class="small dash__muted">Loading your allowance…</p>`;
+  }
+
+  const entries = openEntries(ws.pipeline);
+  const q = gen.quota;
+  const metered = gen.generators.filter((g) => !g.free);
+  const free = gen.generators.filter((g) => g.free);
+
+  const head = `<header class="dash__head">
+    <div><span class="eyebrow">Documents, written for the funder</span><h1>Write</h1></div>
+    <button class="btn btn-sm btn-ghost" data-action="gen-refresh">Refresh</button>
+  </header>`;
+
+  if (gen.error) {
+    return `${head}<div class="callout"><p>${esc(gen.error)}</p></div>`;
+  }
+
+  if (!entries.length) {
+    return `${head}${quotaStrip(q)}${empty(
+      'Nothing in the pipeline to write for.',
+      'Add an opportunity first. Every document here is written against one programme’s published criteria, so there has to be a programme.',
+      '<button class="btn btn-primary" data-view="opportunities">Find opportunities</button>',
+    )}`;
+  }
+
+  const entryOptions = entries
+    .map((e) => {
+      const p = programmeBySlug(e.slug);
+      const c = companyById(e.company_id);
+      return `<option value="${esc(e.id)}">${esc(c?.legal_name || 'Company')} — ${esc(programmeName(p))}</option>`;
+    })
+    .join('');
+
+  const typeOptions = metered
+    .map((g) => `<option value="${esc(g.type)}">${esc(g.label)} — ${g.units} unit${g.units === 1 ? '' : 's'}</option>`)
+    .join('');
+
+  return `${head}
+
+  <p class="small dash__muted" style="max-width:68ch">Each document is written against the funder’s own published
+  criteria, in their order and their vocabulary, using only the figures already in this workspace. Where something
+  is missing it is marked as a placeholder for you to fill in — never guessed.</p>
+
+  ${quotaStrip(q)}
+
+  <section class="dash__section">
+    <h2>Write something</h2>
+    <div class="row" style="gap:.8rem;flex-wrap:wrap;align-items:flex-end">
+      <span style="flex:2;min-width:18rem">
+        <label class="tiny" for="gen-entry">For which application</label>
+        <select class="field" id="gen-entry" style="width:100%;margin-top:.35rem">${entryOptions}</select>
+      </span>
+      <span style="flex:1;min-width:14rem">
+        <label class="tiny" for="gen-type">What to write</label>
+        <select class="field" id="gen-type" style="width:100%;margin-top:.35rem">${typeOptions}</select>
+      </span>
+      <button class="btn btn-sm btn-ghost" data-action="gen-preview">See the brief — free</button>
+      <button class="btn btn-sm btn-primary" data-action="gen-run"${gen.busy ? ' disabled' : ''}>${gen.busy ? 'Writing…' : 'Write it'}</button>
+    </div>
+    <p class="tiny dash__muted" style="margin:.6rem 0 0">${
+      free.length
+        ? `${free.map((g) => esc(g.label)).join(' and ')} cost nothing and are unlimited — find them on the application itself.`
+        : ''
+    }</p>
+  </section>
+
+  ${
+    gen.brief
+      ? `<section class="dash__section">
+      <h2>What the model will be given</h2>
+      <p class="small dash__muted">Nothing has been spent. This would cost ${gen.brief.would_cost} unit${gen.brief.would_cost === 1 ? '' : 's'}.</p>
+      <pre class="dash__pre" style="white-space:pre-wrap;overflow-x:auto">${esc(gen.brief.brief_text)}</pre>
+    </section>`
+      : ''
+  }
+
+  ${
+    gen.output
+      ? `<section class="dash__section">
+      <h2>${esc(gen.output.label)}</h2>
+      <p class="small dash__muted">${gen.output.units} unit${gen.output.units === 1 ? '' : 's'} spent. Check every placeholder before you send it.</p>
+      <div class="row" style="gap:.6rem;margin-bottom:.8rem">
+        <button class="btn btn-sm" data-action="gen-download">Download as markdown</button>
+        <button class="btn btn-sm btn-ghost" data-action="gen-copy">Copy</button>
+      </div>
+      <pre class="dash__pre" style="white-space:pre-wrap;overflow-x:auto">${esc(gen.output.document)}</pre>
+    </section>`
+      : ''
+  }
+
+  <section class="dash__section">
+    <h2>Buy more</h2>
+    <p class="small dash__muted">Credits never expire, and the monthly allowance is always spent before them.</p>
+    <div class="list-rows">
+      ${gen.packs
+        .map(
+          (p) => `<div class="list-row">
+        <div class="list-row__body">
+          <div class="list-row__name">${esc(p.label)}</div>
+          <div class="list-row__meta">€${(p.price_cents / 100).toFixed(0)} once — €${(p.price_cents / 100 / p.units).toFixed(2)} per generation</div>
+        </div>
+        <div class="list-row__right"><button class="btn btn-sm" data-action="gen-buy" data-pack="${esc(p.id)}">Buy</button></div>
+      </div>`,
+        )
+        .join('')}
+    </div>
+  </section>`;
+}
+
+/** The programme and country behind the selected pipeline entry. */
+function selectedTarget() {
+  const id = $('#gen-entry')?.value;
+  const entry = ws.pipeline.find((e) => e.id === id);
+  if (!entry) return null;
+  const p = programmeBySlug(entry.slug);
+  return { entry, slug: entry.slug, country: p?.country_code || entry.country || '', label: programmeName(p) };
+}
+
+async function generate({ dryRun }) {
+  const target = selectedTarget();
+  const type = $('#gen-type')?.value;
+  if (!target || !type) return;
+
+  gen.busy = !dryRun;
+  gen.error = null;
+  if (!dryRun) { gen.output = null; gen.brief = null; }
+  render();
+
+  try {
+    const res = await fetch('/api/enterprise/generate', {
+      method: 'POST',
+      credentials: 'same-origin',
+      headers: { 'content-type': 'application/json' },
+      body: JSON.stringify({ type, slug: target.slug, country: target.country, dry_run: !!dryRun }),
+    });
+    const body = await res.json().catch(() => ({}));
+
+    if (!res.ok) {
+      /* 422 is the eligibility refusal, and it is the most useful error this
+         endpoint returns: it names the funder's own rule the company fails,
+         and it costs nothing. Shown as the answer rather than as a failure. */
+      gen.error = body.message || `Could not write that (${res.status}).`;
+      if (body.quota) gen.quota = body.quota;
+    } else if (dryRun) {
+      gen.brief = { brief_text: body.brief_text, would_cost: body.would_cost };
+      gen.quota = body.quota || gen.quota;
+    } else {
+      const label = (gen.generators.find((g) => g.type === type) || {}).label || type;
+      gen.output = { document: body.document, units: body.units, label: `${label} — ${target.label}` };
+      gen.brief = null;
+      gen.quota = body.quota || gen.quota;
+    }
+  } catch {
+    gen.error = 'Could not reach the server.';
+  } finally {
+    gen.busy = false;
+    render();
+  }
+}
+
 const VIEWS = {
   overview: overviewView,
   companies: companiesView,
@@ -2418,6 +2636,7 @@ const VIEWS = {
   project: projectView,
   'project-form': () => projectFormView(ws.projects.find((x) => x.id === view.projectId) || null),
   applications: applicationsView,
+  write: writeView,
   filing: filingView,
   documents: documentsView,
   postaward: postawardView,
@@ -2744,6 +2963,38 @@ document.addEventListener('click', async (ev) => {
   const btn = ev.target.closest('[data-action]');
   if (!btn) return;
   const a = btn.dataset.action;
+
+  if (a === 'gen-refresh') { gen.loaded = false; gen.brief = null; return void render(); }
+  if (a === 'gen-preview') return void generate({ dryRun: true });
+  if (a === 'gen-run') return void generate({ dryRun: false });
+  if (a === 'gen-download') {
+    if (gen.output) download(`${gen.output.label.replace(/[^\w-]+/g, '-').toLowerCase()}.md`, gen.output.document, 'text/markdown');
+    return;
+  }
+  if (a === 'gen-copy') {
+    if (gen.output) navigator.clipboard?.writeText(gen.output.document).catch(() => {});
+    return;
+  }
+  if (a === 'gen-buy') {
+    btn.disabled = true;
+    try {
+      const res = await fetch('/api/enterprise/packs/checkout', {
+        method: 'POST',
+        credentials: 'same-origin',
+        headers: { 'content-type': 'application/json' },
+        body: JSON.stringify({ pack_id: btn.dataset.pack }),
+      });
+      const body = await res.json().catch(() => ({}));
+      if (body.url) location.href = body.url;
+      else { gen.error = body.message || 'Could not open checkout.'; render(); }
+    } catch {
+      gen.error = 'Could not reach the server.';
+      render();
+    } finally {
+      btn.disabled = false;
+    }
+    return;
+  }
 
   /* Register auto-fill, the Startup tier's headline convenience. Merges into
      the form the reader is looking at rather than saving behind their back:
