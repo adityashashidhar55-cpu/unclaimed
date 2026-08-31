@@ -82,6 +82,35 @@ const card = { benefit_type: 'free_slab', funder: 'MOHAP', amount_note: 'Health 
 is(amountShape(card).kind, KIND.IN_KIND, 'a free allocation with no percentage is in-kind, not an unpublished rate');
 no(/A percentage/i.test(amountSentence(card)), 'and is not described as a percentage nobody published');
 
+/* ---- the sentence has to survive the corpus's prose --------------- */
+
+/* 28 in-kind notes open by saying money is NOT involved, and the answer is in
+   the clause after. Taking the first clause answered the question with its own
+   premise: "What you get — no standard grant". */
+yes(/paid pilot projects/i.test(amountSentence({ benefit_type: 'in_kind', grant_type: 'in_kind', funder: 'Bosch', amount_note: 'No standard grant. Provides paid pilot projects and commercial contracts with Bosch business units.' })),
+  'a clause saying there is no cash is skipped for the one saying what there is');
+
+/* But a negation about the READER's costs is the benefit itself. */
+yes(/no childcare fees/i.test(amountSentence({ benefit_type: 'in_kind', funder: 'BMBWF', amount_note: 'No childcare fees from the kindergarten year after the 4th birthday until school entry.' })),
+  'a negation about what you stop paying is kept — it is the award');
+
+/* Lowercasing the first letter to make the phrase read as a continuation
+   turned "BAS provides" into "bAS provides" on a real page. */
+yes(/— BAS provides/.test(amountSentence({ benefit_type: 'in_kind', funder: 'BAS', amount_note: 'BAS provides in-kind support: coaching and mentoring.' })),
+  'an acronym at the start of the phrase is not lowercased');
+yes(/— housing loans/.test(amountSentence({ benefit_type: 'in_kind', funder: 'ADHA', amount_note: 'Housing loans and land grants for citizens.' })),
+  'an ordinary word still is');
+
+/* A long list is trimmed at a word boundary rather than dropped for the
+   generic sentence, which named the funder and nothing else. */
+{
+  const long = { benefit_type: 'in_kind', funder: 'X', amount_note: 'Provides coaching, mentoring, expertise and training, access to global corporate partners, investor matchmaking, ecosystem access, peer learning and showcase opportunities at demo days.' };
+  const sentence = amountSentence(long);
+  yes(/coaching/.test(sentence), 'a long list keeps its beginning');
+  yes(sentence.length < 200, 'and is trimmed rather than printed whole');
+  no(/,…|:…/.test(sentence), 'and does not trim mid-punctuation');
+}
+
 /* ---- the harvest worklist ---------------------------------------- */
 
 yes(needsFigure({ benefit_type: 'cash_monthly', funder: 'X', amount_note: 'Monthly support for eligible families.' }),

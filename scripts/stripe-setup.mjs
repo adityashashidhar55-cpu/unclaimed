@@ -45,7 +45,12 @@ const PLANS = [
     lookup: 'ug_business_monthly_v1',
     product: 'Unclaimed Grants — Business',
     nickname: 'Business, per seat, monthly',
-    unit_amount: 8000,
+    /* €49, because that is what /pricing/ says in all seven languages. It said
+       8000 here — so anyone running this script would have created a price
+       that charges €80 against a page promising €49, and the first anyone
+       would know is a chargeback. scripts/test-pricing.mjs now asserts the two
+       agree. */
+    unit_amount: 4900,
     interval: 'month',
     description: 'Grant discovery across 77 jurisdictions, de minimis tracking, exports and a team dashboard.',
   },
@@ -53,10 +58,21 @@ const PLANS = [
     lookup: 'ug_business_annual_v1',
     product: 'Unclaimed Grants — Business',
     nickname: 'Business, per seat, annual',
-    unit_amount: 80000,
+    unit_amount: 49000,
     interval: 'year',
     description: 'The business plan, billed yearly per seat. Two months cheaper than monthly.',
   },
+];
+
+/* Generation credit packs — one-off payments, not subscriptions.
+ *
+ * Units, prices and the margin they clear live in packages/quota, and
+ * scripts/test-quota.mjs fails the build if any of them drops below the floor.
+ * This script only creates the Stripe prices that match them. */
+const PACKS = [
+  { lookup: 'ug_pack_25_v1',  id: 'pack_25',  nickname: '25 generations',  unit_amount: 2900 },
+  { lookup: 'ug_pack_100_v1', id: 'pack_100', nickname: '100 generations', unit_amount: 9900 },
+  { lookup: 'ug_pack_300_v1', id: 'pack_300', nickname: '300 generations', unit_amount: 24900 },
 ];
 
 const api = async (path, params, method = 'POST') => {
@@ -121,6 +137,30 @@ for (const plan of PLANS) {
     ug_business_annual_v1: 'STRIPE_PRICE_BUSINESS_ANNUAL',
   }[plan.lookup];
   out.push(`    "${varName}": "${price.id}",`);
+}
+
+/* The packs. One product, three prices, no recurring interval — a pack is
+   bought, not subscribed to, and giving it an interval would bill it monthly
+   forever. */
+{
+  const productId = await productFor('Unclaimed Grants — Generations', 'Documents written for a specific funder’s published criteria. Bought once; they do not expire.');
+  for (const p of PACKS) {
+    const existing = await api(`prices?lookup_keys[]=${encodeURIComponent(p.lookup)}&limit=1`, null, 'GET');
+    let price = existing.data?.[0];
+    if (price) {
+      console.log(`  = ${p.nickname.padEnd(28)} already exists  ${price.id}`);
+    } else {
+      price = await api('prices', {
+        product: productId,
+        currency: 'eur',
+        unit_amount: String(p.unit_amount),
+        nickname: p.nickname,
+        lookup_key: p.lookup,
+      });
+      console.log(`  + ${p.nickname.padEnd(28)} created         ${price.id}`);
+    }
+    out.push(`    "STRIPE_PRICE_${p.id.toUpperCase()}": "${price.id}",`);
+  }
 }
 
 console.log('\nPaste into the "vars" block of wrangler.jsonc:\n');
