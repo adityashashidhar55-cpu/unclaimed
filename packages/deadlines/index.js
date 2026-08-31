@@ -51,6 +51,50 @@ const parse = (d) => {
 };
 
 /* ------------------------------------------------------------------ */
+/* Effective status — the one that cannot go stale                     */
+/* ------------------------------------------------------------------ */
+
+/**
+ * What a programme's status IS, rather than what somebody last typed.
+ *
+ * `status` is a stored field. `closes_at` is a fact. Once the second is in the
+ * past the first is wrong, and it becomes wrong on its own, with nobody
+ * touching the file — which is exactly what happened: five German and Austrian
+ * calls closed on 23 August 2026 and the dataset still called them open eight
+ * days later, because keeping a stored status true requires a human to revisit
+ * every record forever.
+ *
+ * That is the same failure the startup engine was fixed for once already, in
+ * one place, while every count, badge and filter on the site kept reading the
+ * raw field. So the derivation lives here and everything reads it: the engine,
+ * the build's "open now" counts, the badges, and the verifier.
+ *
+ * It only ever moves a record TOWARDS closed. A stored `closed` with a future
+ * `closes_at` stays closed — the funder may have pulled the call early, and
+ * guessing otherwise would send somebody to a form that is not there.
+ */
+export function effectiveStatus(programme, asOf = Date.now()) {
+  const stored = programme?.status || STATUS.UNKNOWN;
+  if (stored === STATUS.CLOSED || stored === STATUS.PAUSED) return stored;
+
+  const closes = parse(programme?.closes_at);
+  if (closes != null && closes < asOf) return STATUS.CLOSED;
+
+  /* An `upcoming` call whose opening date has arrived is open, provided its
+     own close date has not also passed (checked above). Without this an
+     announced round stays "Opens soon" forever. */
+  if (stored === STATUS.UPCOMING) {
+    const opens = parse(programme?.opens_at);
+    if (opens != null && opens <= asOf) return STATUS.OPEN;
+  }
+  return stored;
+}
+
+/** Whether a founder could act on this today. Derived, never stored. */
+export const isActionable = (programme, asOf = Date.now()) =>
+  STATUS_META[effectiveStatus(programme, asOf)]?.actionable === true;
+
+/* ------------------------------------------------------------------ */
 /* Projecting the next window                                          */
 /* ------------------------------------------------------------------ */
 
