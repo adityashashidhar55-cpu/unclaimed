@@ -148,5 +148,5 @@ export function describeGrant(grant, now = Date.now(), { includeReason = false }
 }
 
 /** The audit actions that exist. Anything else is a typo, and is refused. */
-export const AUDIT_ACTIONS = ['grant', 'revoke', 'supersede', 'create_user'];
+export const AUDIT_ACTIONS = ['grant', 'revoke', 'supersede', 'create_user', 'totp_enable', 'totp_disable'];
 export const isAuditAction = (a) => AUDIT_ACTIONS.includes(a);
