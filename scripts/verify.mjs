@@ -8,6 +8,7 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { testProgramme } from '../src/engine/startup.js';
 import { effectiveStatus } from '../packages/deadlines/index.js';
+import { isVagueSource, pathDepth } from './harvest-sources.mjs';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const DIST = path.join(ROOT, 'dist');
@@ -645,6 +646,46 @@ fs.readFileSync(path.join(DIST, 'theme.css'), 'utf8').includes('.shell-narrow')
   pastOpen === 0
     ? ok('every startup record whose closing date has passed reads as closed, whatever the stored field says')
     : fail(`${pastOpen} startup records closed in the past do not derive as closed (first: ${pastOpenWhere})`);
+
+  /* ---- sources that cannot describe one programme -------------------
+   *
+   * A ratchet, not a pass/fail. 2,358 records cite a bare domain or a
+   * one-segment path as their source — `https://www.caf.fr` where the CAF page
+   * about the prime à la naissance belongs — and 740 of them are marked
+   * `verified`, which means somebody verified them against a homepage. That is
+   * pre-existing debt and failing the build on it today would only teach
+   * everyone to skip this check.
+   *
+   * So the ceiling is today's number. Adding a record with a homepage for a
+   * source fails immediately; the harvest lowering it is what moves the
+   * ceiling down. scripts/harvest-sources.mjs generates the worklist.
+   */
+  {
+    const VAGUE_CEILING = 2358;
+    /* Both datasets, read here rather than threaded through from a caller —
+       this block is the only thing that needs the whole corpus at once. */
+    const everyProgramme = [];
+    for (const [dir, skip] of [[DATA, ['manifest.json', 'mcp-tools.json', 'fx-rates.json']], [path.join(DATA, 'startups'), ['manifest.json']]]) {
+      for (const f of fs.readdirSync(dir)) {
+        if (!f.endsWith('.json') || skip.includes(f)) continue;
+        const st = fs.statSync(path.join(dir, f));
+        if (!st.isFile()) continue;
+        for (const p of JSON.parse(fs.readFileSync(path.join(dir, f), 'utf8')).programmes || []) everyProgramme.push(p);
+      }
+    }
+
+    const vague = everyProgramme.filter((p) => isVagueSource(p.source_url));
+    vague.length <= VAGUE_CEILING
+      ? ok(`${vague.length} records cite a homepage rather than the programme's own page (ceiling ${VAGUE_CEILING}) — lower the ceiling as the harvest lands`)
+      : fail(`${vague.length} records cite a homepage as their source, up from ${VAGUE_CEILING}. A source that cannot describe one programme is not a source.`);
+
+    /* One thing that is a hard failure rather than a ratchet: a source URL
+       that does not parse at all. There are none, and there must stay none. */
+    const broken = everyProgramme.filter((p) => pathDepth(p.source_url) < 0);
+    broken.length === 0
+      ? ok('every source_url is a URL')
+      : fail(`${broken.length} source_url values do not parse (first: ${broken[0].slug})`);
+  }
 
   /* And nothing decides "open" from the stored field. A derivation that exists
      but is bypassed by the one count on the enterprise landing page is not a
