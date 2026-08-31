@@ -147,10 +147,23 @@ yes(scriptBuilt.controls >= 3, `the boot script built the interface (${scriptBui
 
 /* 3. No uncaught errors. A module that throws after loading takes the rest of
       the graph with it just as thoroughly as one that 404s. */
-/* Errors caused by this sandbox having no egress are not the bundle's fault:
-   the app calling its own API on launch is correct behaviour. Anything else
-   is a module that threw, which takes the graph down as thoroughly as a 404. */
-const realErrors = consoleErrors.filter((e) => !/ERR_TUNNEL_CONNECTION_FAILED|ERR_NAME_NOT_RESOLVED|ERR_INTERNET_DISCONNECTED|net::ERR_/.test(e));
+/* The app asks its own API who is signed in on launch. That call is correct
+   behaviour, and in a test harness it fails one of two ways depending on the
+   machine, neither of which is the bundle's fault:
+
+     - no egress (this container): net::ERR_* / tunnel / DNS failures;
+     - egress (a CI runner): a CORS refusal, because the Worker's APP_ORIGINS
+       allow-list covers capacitor://localhost and https://localhost — the
+       real device origins — and not a throwaway http://127.0.0.1:PORT server.
+
+   Both are recognised by the fact that the failing URL is OUR OWN API. Any
+   other console error is a module that threw, which takes the graph down as
+   thoroughly as a 404, so it still fails the test. */
+const API_ORIGIN = 'https://unclaimedgrant.com';
+const environmental = (e) =>
+  /ERR_TUNNEL_CONNECTION_FAILED|ERR_NAME_NOT_RESOLVED|ERR_INTERNET_DISCONNECTED|net::ERR_/.test(e) ||
+  (e.includes(API_ORIGIN) && /CORS|Access-Control-Allow-Origin|Failed to fetch|NetworkError/i.test(e));
+const realErrors = consoleErrors.filter((e) => !environmental(e));
 is(realErrors.length, 0, `no console errors on boot${realErrors.length ? ` — first: ${realErrors[0].slice(0, 160)}` : ''}`);
 
 /* 4. Nothing points at the live site for its code. The app has to work in
