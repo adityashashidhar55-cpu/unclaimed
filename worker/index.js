@@ -25,6 +25,7 @@ import { matchStartup, reachFor } from '../src/engine/startup.js';
 import { planWithinCeiling, declarationText, headroom } from '../packages/stateaid/index.js';
 import { lookupCompany, projectCompany, autofillAvailable } from '../packages/registry/index.js';
 import { isStep, funnelRows, worstDrop } from '../packages/analytics/index.js';
+import { normaliseGrant, pickLive, isGrantablePlan, GRANTABLE_PLANS } from '../packages/grants/index.js';
 
 /**
  * Every JSON response this Worker sends is per-user and must never be cached.
@@ -181,6 +182,38 @@ async function readSession(env, cookieHeader, authHeader) {
  * conduct France, Germany and Italy regulate, so there it is given away rather
  * than shown behind a wall we are not allowed to charge them to cross.
  */
+/**
+ * The live grant for a user, or null.
+ *
+ * Wrapped in a try/catch that answers null, which is not laziness. This runs on
+ * every gated request. If `migrations/0008_grants.sql` has not been applied to
+ * the production database yet, the SELECT throws "no such table" — and an
+ * uncaught throw here would 500 every unlock call on the site, so a migration
+ * the owner has not run yet would take the paid product down for people who
+ * are paying. Answering null means "nobody has been granted anything", which
+ * is exactly true when the table does not exist.
+ *
+ * Note which way this fails: closed. A database error can never manufacture an
+ * entitlement, only fail to find one.
+ */
+async function liveGrantFor(env, userId, now = Date.now()) {
+  if (!userId) return null;
+  try {
+    const rows = await env.DB.prepare(
+      `SELECT id, plan, seats, gen_allowance, reason, granted_at, expires_at, revoked_at
+         FROM grants
+        WHERE user_id = ? AND revoked_at IS NULL AND (expires_at IS NULL OR expires_at > ?)
+        ORDER BY granted_at DESC LIMIT 8`,
+    )
+      .bind(userId, now)
+      .all();
+    return pickLive(rows.results ?? [], now);
+  } catch (err) {
+    console.error('grants_unavailable', String(err?.message ?? err));
+    return null;
+  }
+}
+
 async function entitlementFor(env, session, country, product = PRODUCT.DISCOVERY) {
   /* An operator session is entitled to everything, everywhere. This is how the
      owner reviews the paid product without holding a subscription, and it is
@@ -193,18 +226,44 @@ async function entitlementFor(env, session, country, product = PRODUCT.DISCOVERY
   const userId = session?.uid;
   if (!userId) return { entitled: false, reason: 'anonymous' };
 
-  const row = await env.DB.prepare(
-    'SELECT status, plan, current_period_end FROM entitlements WHERE user_id = ?',
-  )
-    .bind(userId)
-    .first();
+  const now = Date.now();
+  const [row, grant] = await Promise.all([
+    env.DB.prepare('SELECT status, plan, current_period_end FROM entitlements WHERE user_id = ?')
+      .bind(userId)
+      .first(),
+    liveGrantFor(env, userId, now),
+  ]);
+
+  /* Access is the union of paying and granted, and the paid subscription is
+     checked first so that a customer who is actually paying is reported as
+     paying. That ordering is not cosmetic: `reason` is what the account page
+     renders and what the funnel counts, and a paying subscriber described as
+     'granted' would quietly disappear from the paying column. */
+  const subLive = row ? row.status === 'active' || row.status === 'trialing' : false;
+  const subNotExpired = !row?.current_period_end || row.current_period_end * 1000 > now;
+  if (row && subLive && subNotExpired) {
+    return { entitled: true, reason: 'active', plan: row.plan };
+  }
+
+  if (grant) {
+    return {
+      entitled: true,
+      reason: 'granted',
+      plan: grant.plan,
+      seats: grant.seats,
+      granted: {
+        id: grant.id,
+        plan: grant.plan,
+        seats: grant.seats,
+        expires_at: grant.expires_at ?? null,
+      },
+    };
+  }
 
   if (!row) return { entitled: false, reason: 'no_subscription' };
-  const live = row.status === 'active' || row.status === 'trialing';
-  const notExpired = !row.current_period_end || row.current_period_end * 1000 > Date.now();
   return {
-    entitled: live && notExpired,
-    reason: live ? (notExpired ? 'active' : 'expired') : row.status,
+    entitled: false,
+    reason: subLive ? 'expired' : row.status,
     plan: row.plan,
   };
 }
@@ -2242,6 +2301,254 @@ async function handleAdminLogins(request, env) {
 }
 
 /* ------------------------------------------------------------------ */
+/* Customers, and granting them a plan                                 */
+/* ------------------------------------------------------------------ */
+
+/**
+ * The other half of the operator's job.
+ *
+ * The dashboard above answers "is the business working". This answers "give
+ * that specific person the thing I promised them on a call" — which until now
+ * had no answer at all except editing D1 by hand, and the sales motion for the
+ * enterprise tier depends on it: the pricing page quotes €80/seat/month and no
+ * Stripe price exists at that number, because enterprise was always meant to
+ * be closed on a call and switched on here.
+ *
+ * Everything in this section is behind requireAdmin, and every write appends a
+ * row to `admin_audit` before it answers.
+ */
+
+/** Append to the trail. Never throws into the caller: a write that succeeded
+ *  must not be reported as failed because its audit row could not be written —
+ *  but the failure is logged loudly, because a silent hole in an audit trail is
+ *  worse than a noisy one. */
+async function audit(env, { actor, action, subject, userId, grantId, detail }) {
+  try {
+    await env.DB.prepare(
+      'INSERT INTO admin_audit (id, ts, actor, action, subject, user_id, grant_id, detail) VALUES (?, ?, ?, ?, ?, ?, ?, ?)',
+    )
+      .bind(
+        crypto.randomUUID(),
+        Date.now(),
+        actor,
+        action,
+        subject ?? null,
+        userId ?? null,
+        grantId ?? null,
+        detail ? JSON.stringify(detail).slice(0, 2000) : null,
+      )
+      .run();
+  } catch (err) {
+    console.error('audit_write_failed', action, subject, String(err?.message ?? err));
+  }
+}
+
+/** Every grant a user holds, newest first, live or not. */
+async function grantsFor(env, userId) {
+  try {
+    const rows = await env.DB.prepare(
+      `SELECT id, user_id, plan, seats, gen_allowance, reason, granted_by, granted_at,
+              expires_at, revoked_at, revoked_by, revoke_reason
+         FROM grants WHERE user_id = ? ORDER BY granted_at DESC LIMIT 50`,
+    )
+      .bind(userId)
+      .all();
+    return rows.results ?? [];
+  } catch (err) {
+    console.error('grants_unavailable', String(err?.message ?? err));
+    return [];
+  }
+}
+
+/**
+ * GET /api/admin/customers?q=&limit=
+ *
+ * The search is a LIKE over email, bound as a parameter rather than
+ * interpolated. `%` and `_` from the operator are escaped, so a search for
+ * `a_b@x.com` finds that address instead of every address shaped like it.
+ */
+async function handleAdminCustomers(request, env) {
+  const session = await requireAdmin(request, env);
+  if (!session) return bad('admin only', 403);
+
+  const url = new URL(request.url);
+  const q = String(url.searchParams.get('q') ?? '').trim().slice(0, 120);
+  const limit = Math.min(200, Math.max(1, parseInt(url.searchParams.get('limit'), 10) || 50));
+  const like = `%${q.replace(/[\\%_]/g, (c) => `\\${c}`)}%`;
+
+  const rows = await env.DB.prepare(
+    `SELECT u.id, u.email, u.account_type, u.country, u.created_at,
+            e.status AS ent_status, e.plan AS ent_plan, e.current_period_end,
+            e.stripe_customer_id
+       FROM users u
+       LEFT JOIN entitlements e ON e.user_id = u.id
+      WHERE (? = '' OR u.email LIKE ? ESCAPE '\\')
+      ORDER BY u.created_at DESC
+      LIMIT ?`,
+  )
+    .bind(q, like, limit)
+    .all();
+
+  const now = Date.now();
+  const customers = [];
+  for (const r of rows.results ?? []) {
+    const grants = await grantsFor(env, r.id);
+    const live = pickLive(grants, now);
+    customers.push({
+      ...r,
+      /* Reported the same way entitlementFor() decides it, so the admin table
+         and the customer's own account page can never disagree. */
+      paying: (r.ent_status === 'active' || r.ent_status === 'trialing') &&
+        (!r.current_period_end || r.current_period_end * 1000 > now),
+      grant: live,
+      grants,
+    });
+  }
+  return json({ customers, plans: GRANTABLE_PLANS });
+}
+
+/**
+ * POST /api/admin/grant — { email | user_id, plan, days, seats, reason, create }
+ *
+ * Supersedes rather than stacks: any live grant the user already holds is
+ * revoked with reason 'superseded' in the same request, so exactly one grant
+ * is live and "what does this account have" has one answer. The superseding is
+ * audited separately from the new grant, because an upgrade and a fresh comp
+ * are different events and reading the trail should not require inferring
+ * which one happened.
+ */
+async function handleAdminGrant(request, env) {
+  const session = await requireAdmin(request, env);
+  if (!session) return bad('admin only', 403);
+
+  const body = await request.json().catch(() => ({}));
+  const now = Date.now();
+
+  const check = normaliseGrant(body, now);
+  if (!check.ok) return json({ error: check.error, message: check.message }, 400);
+  const g = check.grant;
+
+  /* Find the account. An operator types an email; a user id only comes from
+     the table above, so it is trusted less, not more. */
+  const email = String(body.email ?? '').trim().toLowerCase();
+  let user = null;
+  if (body.user_id) {
+    user = await env.DB.prepare('SELECT id, email, account_type FROM users WHERE id = ?').bind(String(body.user_id)).first();
+  } else if (email) {
+    user = await env.DB.prepare('SELECT id, email, account_type FROM users WHERE email = ?').bind(email).first();
+  }
+
+  if (!user) {
+    /* Granting to somebody who has not signed up yet is the normal enterprise
+       case: the deal closes, then they sign in. It is still an account being
+       created by an operator, so it takes an explicit flag and its own audit
+       row rather than happening as a side effect of a typo in an email box. */
+    if (!email) return json({ error: 'no_such_user', message: 'Give an email address or pick a customer.' }, 404);
+    if (!body.create) {
+      return json(
+        { error: 'no_such_user', message: `No account for ${email}. Tick "create the account" to grant anyway.`, email },
+        404,
+      );
+    }
+    const id = crypto.randomUUID();
+    const accountType = planMetaAccount(g.plan);
+    await env.DB.prepare('INSERT INTO users (id, email, locale, account_type, created_at) VALUES (?, ?, ?, ?, ?)')
+      .bind(id, email, 'en', accountType, now)
+      .run();
+    user = { id, email, account_type: accountType };
+    await audit(env, { actor: session.email, action: 'create_user', subject: email, userId: id, detail: { plan: g.plan } });
+  }
+
+  const existing = pickLive(await grantsFor(env, user.id), now);
+  if (existing) {
+    await env.DB.prepare('UPDATE grants SET revoked_at = ?, revoked_by = ?, revoke_reason = ? WHERE id = ?')
+      .bind(now, session.email, 'superseded', existing.id)
+      .run();
+    await audit(env, {
+      actor: session.email, action: 'supersede', subject: user.email, userId: user.id, grantId: existing.id,
+      detail: { from: existing.plan, to: g.plan },
+    });
+  }
+
+  const id = crypto.randomUUID();
+  await env.DB.prepare(
+    `INSERT INTO grants (id, user_id, plan, seats, gen_allowance, reason, granted_by, granted_at, expires_at)
+     VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)`,
+  )
+    .bind(id, user.id, g.plan, g.seats, g.gen_allowance, g.reason, session.email, now, g.expires_at)
+    .run();
+
+  await audit(env, {
+    actor: session.email, action: 'grant', subject: user.email, userId: user.id, grantId: id,
+    detail: { plan: g.plan, seats: g.seats, days: g.days, reason: g.reason },
+  });
+
+  return json({
+    ok: true,
+    grant: { id, user_id: user.id, plan: g.plan, seats: g.seats, reason: g.reason, granted_by: session.email, granted_at: now, expires_at: g.expires_at, revoked_at: null },
+    user: { id: user.id, email: user.email },
+    superseded: existing?.id ?? null,
+  });
+}
+
+/** The account type a plan implies, without importing the whole table twice. */
+function planMetaAccount(plan) {
+  return GRANTABLE_PLANS.find((p) => p.plan === plan)?.account ?? 'individual';
+}
+
+/**
+ * POST /api/admin/revoke — { grant_id, reason }
+ *
+ * An UPDATE with `revoked_at IS NULL` in the WHERE, so revoking twice is not an
+ * error and does not overwrite who revoked it the first time.
+ */
+async function handleAdminRevoke(request, env) {
+  const session = await requireAdmin(request, env);
+  if (!session) return bad('admin only', 403);
+
+  const body = await request.json().catch(() => ({}));
+  const grantId = String(body.grant_id ?? '').trim();
+  if (!grantId) return bad('grant_id required');
+  const reason = String(body.reason ?? '').trim().slice(0, 300) || 'revoked by operator';
+
+  const row = await env.DB.prepare('SELECT g.id, g.user_id, g.plan, g.revoked_at, u.email FROM grants g LEFT JOIN users u ON u.id = g.user_id WHERE g.id = ?')
+    .bind(grantId)
+    .first();
+  if (!row) return json({ error: 'no_such_grant' }, 404);
+  if (row.revoked_at) return json({ ok: true, already: true, grant_id: grantId });
+
+  await env.DB.prepare('UPDATE grants SET revoked_at = ?, revoked_by = ?, revoke_reason = ? WHERE id = ? AND revoked_at IS NULL')
+    .bind(Date.now(), session.email, reason, grantId)
+    .run();
+
+  await audit(env, {
+    actor: session.email, action: 'revoke', subject: row.email, userId: row.user_id, grantId,
+    detail: { plan: row.plan, reason },
+  });
+
+  return json({ ok: true, grant_id: grantId });
+}
+
+/** GET /api/admin/audit?limit=100 — the trail, newest first. */
+async function handleAdminAudit(request, env) {
+  if (!(await requireAdmin(request, env))) return bad('admin only', 403);
+  const limit = Math.min(500, Math.max(1, parseInt(new URL(request.url).searchParams.get('limit'), 10) || 100));
+  try {
+    const rows = await env.DB.prepare(
+      'SELECT id, ts, actor, action, subject, user_id, grant_id, detail FROM admin_audit ORDER BY ts DESC LIMIT ?',
+    )
+      .bind(limit)
+      .all();
+    return json({ audit: rows.results ?? [] });
+  } catch (err) {
+    /* The table not existing is a migration that has not run, not a failure of
+       the request. Say so in the payload rather than answering 500 and making
+       the whole panel look broken. */
+    return json({ audit: [], unavailable: String(err?.message ?? err) });
+  }
+}
+
+/* ------------------------------------------------------------------ */
 /* CORS — for the packaged app, and nobody else                        */
 /* ------------------------------------------------------------------ */
 
@@ -2431,6 +2738,10 @@ export default {
       if (pathname === '/api/admin/overview') return withCors(await handleAdminOverview(request, env));
       if (pathname === '/api/admin/funnel') return withCors(await handleAdminFunnel(request, env));
       if (pathname === '/api/admin/logins') return withCors(await handleAdminLogins(request, env));
+      if (pathname === '/api/admin/customers') return withCors(await handleAdminCustomers(request, env));
+      if (pathname === '/api/admin/grant' && request.method === 'POST') return withCors(await handleAdminGrant(request, env));
+      if (pathname === '/api/admin/revoke' && request.method === 'POST') return withCors(await handleAdminRevoke(request, env));
+      if (pathname === '/api/admin/audit') return withCors(await handleAdminAudit(request, env));
       if (pathname === '/auth/admin' && request.method === 'POST') return withCors(await handleAdminLogin(request, env));
       if (pathname === '/auth/request' && request.method === 'POST') return withCors(await handleAuthRequest(request, env));
       if (pathname === '/auth/verify' && request.method === 'POST') return withCors(await handleAuthVerify(request, env));
@@ -2468,4 +2779,33 @@ export default {
       return withCors(json({ error: 'internal', detail: String(err?.message ?? err) }, 500));
     }
   },
+};
+
+/* ------------------------------------------------------------------ */
+/* Test surface                                                        */
+/* ------------------------------------------------------------------ */
+
+/**
+ * The handlers the grant tests drive directly, against a fake D1.
+ *
+ * Exported as one object rather than a dozen names so the Worker's export
+ * surface stays "a default fetch handler and nothing else" — Cloudflare treats
+ * named exports as potential entrypoints, and a plain object is not one.
+ *
+ * This exists because the alternative was another file of regexes over this
+ * one. A regex can tell you the string `revoked_at IS NULL` appears somewhere;
+ * it cannot tell you that revoking a grant actually stops the paywall lifting,
+ * which is the only property anybody cares about.
+ */
+export const __test = {
+  signSession,
+  readSession,
+  entitlementFor,
+  liveGrantFor,
+  grantsFor,
+  handleAdminCustomers,
+  handleAdminGrant,
+  handleAdminRevoke,
+  handleAdminAudit,
+  audit,
 };
