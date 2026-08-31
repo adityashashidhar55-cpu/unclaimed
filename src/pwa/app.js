@@ -392,9 +392,21 @@ async function resultsView() {
            export happened and came back blank. */
         '<p class="tiny">Deadline reminders and the calendar export are part of the paid plan.</p>'}
     ${
-      gate.entitled && isNative
-        ? `<button class="btn btn-block" data-action="notify">Remind me before each deadline</button>
-           <p class="tiny" id="notify-state"></p>`
+      /* Three states, not two.
+       *
+       * This was a ternary, so everyone who was not both native AND entitled
+       * was told to "install the app" — including somebody reading it INSIDE
+       * the app, on the screen that sells the paid plan. Telling a person to
+       * install the thing they are holding makes the product look broken at
+       * the exact moment it is asking them for money.
+       *
+       * What is missing differs by who is asking: on the web it is the app,
+       * in the app it is the plan. */
+      isNative
+        ? gate.entitled
+          ? `<button class="btn btn-block" data-action="notify">Remind me before each deadline</button>
+             <p class="tiny" id="notify-state"></p>`
+          : `<p class="tiny">Reminders before each deadline are part of the paid plan.</p>`
         : `<p class="tiny">Install the app to get a reminder on your phone before each deadline closes.</p>`
     }
     <p class="tiny">Amounts are published maximums. Means-tested payments taper — most people get less than the ceiling.</p>`,
@@ -651,8 +663,12 @@ document.addEventListener('click', async (e) => {
     const el = $('#notify-state');
     if (el) {
       el.textContent =
+        /* This button only exists inside the app, so "install the app" was
+           never a sentence anyone pressing it could act on. If scheduling is
+           unsupported here, the honest answer is that this device cannot do
+           it — not that they are missing software they already have. */
         res.reason === 'unsupported'
-          ? 'Install the app to get deadline reminders on your phone.'
+          ? 'This device cannot schedule reminders. The deadlines are all listed above.'
           : res.reason === 'denied'
             ? 'Notifications are off. Turn them on in your phone settings to get deadline reminders.'
             : `${res.scheduled} reminders set.${res.capped ? ` ${res.capped} more will be added as these pass — your phone limits how many can be pending at once.` : ''}`;
@@ -696,6 +712,11 @@ if ('serviceWorker' in navigator) {
 let deferredPrompt = null;
 window.addEventListener('beforeinstallprompt', (e) => {
   e.preventDefault();
+  /* Never inside the packaged app. The event does not fire in a Capacitor
+     WebView today, so this is a belt rather than a fix — but "install this
+     app" offered to somebody who has already installed it is the single most
+     absurd thing this product could say, and it costs one line not to. */
+  if (isNative) return;
   deferredPrompt = e;
   const bar = $('#install');
   if (bar) bar.hidden = false;

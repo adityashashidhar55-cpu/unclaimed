@@ -16,6 +16,24 @@
    platform sans, which is the designed fallback, not a broken page. */
 @import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600;700&display=swap');
 
+/* `hidden` must actually hide — and in the app this file is the ONLY
+   stylesheet loaded.
+
+   theme.css carries `[hidden] { display: none !important; }` for exactly this
+   reason, with a comment explaining that any author `display` beats the
+   user-agent rule. The app shell does not load theme.css. So `#install` below,
+   which sets `display: flex`, ignored its own `hidden` attribute and the
+   "Install Unclaimed for offline use" bar was pinned across the bottom of
+   every screen of the packaged app — inside the app somebody had already
+   installed, over the results.
+
+   Nothing errored. The state machine was right and the screen disagreed with
+   it, which is the same shape as the account page's duplicate button.
+
+   First rule here so it is impossible to miss, and `!important` because the
+   point is to beat every author rule that follows. */
+[hidden] { display: none !important; }
+
 :root {
   --ink:   #12303a;
   --ink-2: rgba(29,36,48,.82);
