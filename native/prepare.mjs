@@ -128,6 +128,37 @@ const shell = fs
 fs.writeFileSync(path.join(WWW, 'index.html'), shell);
 files += 1;
 
+/* The same cache-busting strip, over every module in the bundle.
+ *
+ * It was applied to index.html only, and index.html is not where most of the
+ * specifiers are: `app/app.js` imports `../engine/matcher.js?v=1788159185479`
+ * and four others the same way. Over HTTP the query is ignored and the file
+ * loads. Inside the binary it is part of the path, the file is not found, and
+ * a failed import in a `<script type="module">` takes down the ENTIRE graph
+ * with no error anybody sees — the app opens to a blank screen, and the store
+ * reviewer who sees it has no way to report anything more useful than "does
+ * not work".
+ *
+ * This is the same silent-failure shape the repo keeps rediscovering, so the
+ * strip is a walk over what was actually copied rather than a list of files
+ * somebody has to remember to extend. scripts/verify-native.mjs resolves the
+ * whole module graph afterwards and fails if any specifier still misses.
+ */
+{
+  let stripped = 0;
+  (function walk(dir) {
+    for (const e of fs.readdirSync(dir, { withFileTypes: true })) {
+      const full = path.join(dir, e.name);
+      if (e.isDirectory()) { walk(full); continue; }
+      if (!/\.(js|css)$/.test(e.name)) continue;
+      const before = fs.readFileSync(full, 'utf8');
+      const after = before.replace(/(\.(?:css|js))\?v=\d+/g, '$1');
+      if (after !== before) { fs.writeFileSync(full, after); stripped += 1; }
+    }
+  })(WWW);
+  if (stripped) console.log(`stripped ?v= cache-busting from ${stripped} bundled modules`);
+}
+
 /* app.js registers the service worker itself — strip that too. */
 const appJs = path.join(WWW, 'app', 'app.js');
 fs.writeFileSync(
