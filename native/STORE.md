@@ -145,6 +145,23 @@ info** and be conservative.
 
 ---
 
+### One thing to be able to say truthfully
+
+The bundle contacts **no third party on launch**. `theme.css` and `app/app.css`
+both opened with an `@import` of Google Fonts, which would have meant a request
+to Google on every single start — while this form says no data is shared with
+third parties, and while the listing says the app works in airplane mode.
+`native/prepare.mjs` strips it from every stylesheet in the bundle, both faces
+already carry full fallback stacks, and `scripts/test-native-boot.mjs` loads
+the packaged bundle in a real browser and fails if anything but our own API is
+contacted.
+
+The only network call the app makes on launch is `GET /api/me` to our own
+origin, to see whether this device is signed in. Everything else — the
+programme data, the matcher, the UI — is bundled.
+
+---
+
 ## App Store privacy labels
 
 - **Data Not Collected** for the app's core function.

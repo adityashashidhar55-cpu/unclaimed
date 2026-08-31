@@ -111,6 +111,9 @@ const shell = fs
   /* Cache-busting query strings are for a CDN. Inside the binary the files are
      local and the ?v= suffix just makes the reference miss. */
   .replace(/(\.(?:css|js))\?v=\d+/g, '$1')
+  /* Preconnect hints for a host the bundle no longer talks to. Harmless, and
+     still a DNS lookup to Google on every launch. */
+  .replace(/<link rel="(?:preconnect|dns-prefetch)"[^>]*fonts\.(?:googleapis|gstatic)\.com[^>]*>/g, '')
   /* The one line that makes accounts work on a device.
      Capacitor serves this bundle from https://localhost, so a relative
      `/api/me` resolves to a file inside the app — which does not exist, 404s,
@@ -127,6 +130,44 @@ const shell = fs
 
 fs.writeFileSync(path.join(WWW, 'index.html'), shell);
 files += 1;
+
+/* No third party on launch.
+ *
+ * theme.css opens with an @import of Google Fonts. On the web that is fine.
+ * Inside a packaged app it is three problems at once:
+ *
+ *   - the store listing says the app works in airplane mode, and a font that
+ *     has to be fetched does not;
+ *   - the Play Data Safety declaration says no data is shared with third
+ *     parties, and a font request hands the user's IP to Google on every
+ *     single launch;
+ *   - it is a network round trip in front of first paint, on a cold start,
+ *     over whatever connection the user has.
+ *
+ * Both faces already carry a full fallback stack — Georgia for the headings,
+ * the platform UI sans for everything else — so removing the import changes
+ * the typeface and nothing else about the layout. scripts/test-native-boot.mjs
+ * loads the bundle in a real browser and fails if anything third-party is
+ * requested.
+ */
+{
+  /* Every stylesheet in the bundle, not a named one. theme.css was the obvious
+     import and app/app.css carried a second copy — stripping only the file
+     somebody thought of left the launch request exactly where it was, and the
+     browser test still saw fonts.googleapis.com. */
+  let stripped = 0;
+  (function walk(dir) {
+    for (const e of fs.readdirSync(dir, { withFileTypes: true })) {
+      const full = path.join(dir, e.name);
+      if (e.isDirectory()) { walk(full); continue; }
+      if (!e.name.endsWith('.css')) continue;
+      const before = fs.readFileSync(full, 'utf8');
+      const after = before.replace(/@import url\((?:'|")?https:\/\/fonts\.googleapis\.com[^)]*\);?/g, '');
+      if (after !== before) { fs.writeFileSync(full, after); stripped += 1; }
+    }
+  })(WWW);
+  if (stripped) console.log(`removed the Google Fonts @import from ${stripped} stylesheet${stripped === 1 ? '' : 's'} — the app loads no third-party asset`);
+}
 
 /* The same cache-busting strip, over every module in the bundle.
  *
