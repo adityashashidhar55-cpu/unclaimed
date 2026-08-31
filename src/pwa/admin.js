@@ -38,14 +38,26 @@ $('#admin-form').addEventListener('submit', async (e) => {
       method: 'POST',
       credentials: 'same-origin',
       headers: { 'content-type': 'application/json' },
-      body: JSON.stringify({ email: $('#admin-email').value, password: $('#admin-pass').value }),
+      body: JSON.stringify({
+        email: $('#admin-email').value,
+        password: $('#admin-pass').value,
+        code: $('#admin-code').value,
+      }),
     });
     const out = await res.json().catch(() => ({}));
     if (!res.ok) {
+      /* The server only says a code is wanted once the password has checked
+         out, so this is the first moment the field is worth showing — and
+         showing it any earlier would publish whether a second factor exists. */
+      if (out.error === 'code_required') {
+        $('#admin-code-wrap').hidden = false;
+        $('#admin-code').focus();
+      }
       msg.textContent = out.message || 'Sign-in failed.';
       return;
     }
     $('#admin-pass').value = '';
+    $('#admin-code').value = '';
     msg.textContent = '';
     open(out.email);
   } catch {
@@ -179,6 +191,7 @@ async function load() {
     /* Customers and the audit trail are not windowed by the date selector and
        are slower to change, so they load alongside rather than blocking the
        numbers. A failure in either must not blank the dashboard. */
+    loadSecurity().catch(() => {});
     loadCustomers().catch(() => {});
     loadAudit().catch(() => {});
   } catch (err) {
@@ -384,6 +397,57 @@ $('#admin-search').addEventListener('submit', (e) => {
   });
 });
 
+/* ---- the second factor's two buttons ------------------------------ */
+
+$('#admin-security').addEventListener('click', async (e) => {
+  const btn = e.target.closest('[data-action]');
+  if (!btn) return;
+  const msg = $('#admin-2fa-msg');
+  const say = (m) => { if (msg) msg.textContent = m; };
+
+  if (btn.dataset.action === 'totp-enable') {
+    if (!offered) return;
+    btn.disabled = true;
+    say('Checking…');
+    try {
+      const res = await fetch('/api/admin/totp/enable', {
+        method: 'POST',
+        credentials: 'same-origin',
+        headers: { 'content-type': 'application/json' },
+        body: JSON.stringify({ secret: offered.secret, code: $('#admin-2fa-code').value }),
+      });
+      const out = await res.json().catch(() => ({}));
+      if (!res.ok) return void say(out.message || 'That did not work.');
+      await loadSecurity();
+    } catch {
+      say('Could not reach the server.');
+    } finally {
+      btn.disabled = false;
+    }
+    return;
+  }
+
+  if (btn.dataset.action === 'totp-disable') {
+    btn.disabled = true;
+    say('Checking…');
+    try {
+      const res = await fetch('/api/admin/totp/disable', {
+        method: 'POST',
+        credentials: 'same-origin',
+        headers: { 'content-type': 'application/json' },
+        body: JSON.stringify({ code: $('#admin-2fa-off-code').value }),
+      });
+      const out = await res.json().catch(() => ({}));
+      if (!res.ok) return void say(out.message || 'That did not work.');
+      await loadSecurity();
+    } catch {
+      say('Could not reach the server.');
+    } finally {
+      btn.disabled = false;
+    }
+  }
+});
+
 $('#admin-customers-section').addEventListener('click', async (e) => {
   const grant = e.target.closest('[data-grant]');
   if (grant) {
@@ -411,3 +475,81 @@ $('#admin-customers-section').addEventListener('click', async (e) => {
     await Promise.all([loadCustomers(), loadAudit()]);
   }
 });
+
+
+/* ------------------------------------------------------------------ */
+/* The second factor                                                   */
+/* ------------------------------------------------------------------ */
+
+/**
+ * The setup key, in fours.
+ *
+ * There is deliberately no QR code here. Rendering one means either a QR
+ * library as a dependency — this repo has none, by design — or handing the
+ * TOTP secret to an image service to be drawn, which would give the second
+ * factor away to whoever renders it. Writing an encoder by hand was the third
+ * option and it is untestable here: a subtly wrong matrix produces a picture
+ * that looks like a QR code and encodes the wrong secret.
+ *
+ * Every authenticator app has "enter a setup key". Grouped in fours, this is
+ * about fifteen seconds of typing, once.
+ */
+const groups = (secret) => String(secret).replace(/(.{4})/g, '$1 ').trim();
+
+/**
+ * Enrolling, from the panel, with a phone in hand.
+ *
+ * The secret the server offers is not stored until a code generated from it
+ * comes back — so a QR code that fails to scan, or a tab closed halfway,
+ * leaves the door exactly as it was. That is the difference between a second
+ * factor somebody actually turns on and one that sits in a runbook.
+ *
+ * The QR image is drawn by an inline SVG built here rather than fetched from
+ * a chart service: handing a TOTP secret to a third-party image API to render
+ * would defeat the entire point.
+ */
+let offered = null;
+
+async function loadSecurity() {
+  const host = $('#admin-2fa');
+  const state = $('#admin-2fa-state');
+  try {
+    const d = await get('/api/admin/totp');
+    if (d.enrolled) {
+      offered = null;
+      state.textContent = 'protected by a second factor';
+      host.innerHTML = `<div class="row" style="gap:.6rem;align-items:flex-end;flex-wrap:wrap">
+        <span><label class="tiny" for="admin-2fa-off-code">Current code</label>
+          <input class="field" type="text" id="admin-2fa-off-code" inputmode="numeric" maxlength="6"
+                 style="width:9rem;margin-top:.35rem;letter-spacing:.3em"></span>
+        <button class="btn btn-sm btn-ghost" type="button" data-action="totp-disable">Turn it off</button>
+        <span class="small" id="admin-2fa-msg" role="status" aria-live="polite"></span>
+      </div>
+      <p class="tiny" style="margin:.8rem 0 0;opacity:.75">Lost the phone? Delete the
+      <code>admin_totp_secret</code> row from <code>worker_config</code> in D1 and the door is back to a password.</p>`;
+      return;
+    }
+
+    offered = d;
+    state.textContent = 'password only';
+    host.innerHTML = `<div class="row" style="gap:1.2rem;align-items:flex-start;flex-wrap:wrap">
+      <span style="flex:1;min-width:16rem">
+        <p class="small" style="margin:0 0 .6rem">In your authenticator app choose <strong>enter a setup key</strong>,
+        name it <em>Unclaimed Grants</em>, and type this:</p>
+        <code class="admin-key">${esc(groups(d.secret))}</code>
+        <label class="tiny" for="admin-2fa-code">Then enter the six digits it shows</label>
+        <div class="row" style="gap:.6rem;align-items:flex-end;margin-top:.35rem">
+          <input class="field" type="text" id="admin-2fa-code" inputmode="numeric" maxlength="6"
+                 style="width:9rem;letter-spacing:.3em">
+          <button class="btn btn-sm btn-primary" type="button" data-action="totp-enable">Turn it on</button>
+        </div>
+        <p class="tiny" style="margin:.7rem 0 0;opacity:.75">Nothing is stored until that code checks out, so a
+        scan that fails cannot lock you out.</p>
+        <p class="small" id="admin-2fa-msg" role="status" aria-live="polite" style="margin:.6rem 0 0;min-height:1.2em"></p>
+      </span>
+    </div>`;
+  } catch (err) {
+    state.textContent = '';
+    host.innerHTML = `<p class="small">Could not read the door's state${err.status === 403 ? '' : ' — the Worker may not be deployed yet'}.</p>`;
+  }
+}
