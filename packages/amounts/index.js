@@ -154,20 +154,38 @@ export function amountShape(p) {
 }
 
 /** The funder's own description of what an in-kind award consists of. */
+/* A clause that only says money is NOT involved. 28 in-kind records open with
+   one — "No standard grant. Provides paid pilot projects and commercial
+   contracts with Bosch business units." — and taking the first clause left the
+   page saying "What you get — no standard grant", which answers the question
+   with its own premise. What you get is in the clause after it.
+
+   Deliberately narrow. "No childcare fees from the kindergarten year after the
+   4th birthday" is also a negation and IS the benefit, so only negations about
+   the absence of an award are skipped, never negations about the reader's own
+   costs. */
+const MONEY_ABSENCE =
+  /^no (cash|standard grant|grant|grants|equity|award|funding|monetary|direct cash|money)\b/i;
+
 function inKindPhrase(note) {
   if (!note) return null;
-  /* The first clause, up to a semicolon or full stop, is reliably the "what".
-     Later clauses are conditions. Capped so a page never renders a paragraph
-     where a phrase belongs. */
-  const first = note.split(/[;.]/)[0].trim();
+  /* Clauses, in order. The first that says something other than "there is no
+     money here" is the "what". Later clauses are conditions. Capped so a page
+     never renders a paragraph where a phrase belongs. */
+  const clauses = note.split(/[;.]/).map((c) => c.trim()).filter(Boolean);
+  const first = clauses.find((c) => !MONEY_ABSENCE.test(c)) ?? clauses[0] ?? '';
   if (!first) return null;
   /* Long enough to carry a real list — "Housing loans, land grants,
      ready-built homes and loan repayment exemptions" is 93 characters and was
      being thrown away for being 3 over, leaving the page saying nothing at
-     all. Short enough that a page never renders a paragraph in a slot sized
-     for a phrase. */
-  if (first.length > 140) return null;
-  return first;
+     all. Beyond that it is trimmed at a word boundary rather than dropped:
+     "coaching, mentoring, expertise and training, access to global corporate
+     partners…" is most of the answer, and the alternative was a sentence that
+     named the funder and nothing else. */
+  if (first.length <= 140) return first;
+  const cut = first.slice(0, 130);
+  const at = Math.max(cut.lastIndexOf(', '), cut.lastIndexOf(' '));
+  return `${cut.slice(0, at > 60 ? at : 130).replace(/[,:;]$/, '')}…`;
 }
 
 /**
@@ -236,7 +254,16 @@ export function amountSentence(p, { funder = null } = {}) {
   }
 }
 
-const lowerFirst = (s) => (s ? s.charAt(0).toLowerCase() + s.slice(1) : s);
+/* Lowercase the first letter so the phrase reads as a continuation — but not
+   when the first word is an acronym or an initialism. A blanket toLowerCase
+   turned "BAS provides in-kind support" into "bAS provides", and "EDIHs" into
+   "eDIHs", on the pages of two of the better-known programmes in the corpus.
+   A second capital letter is the tell. */
+const lowerFirst = (s) => {
+  if (!s) return s;
+  if (/^[A-Z][A-Z]/.test(s)) return s;
+  return s.charAt(0).toLowerCase() + s.slice(1);
+};
 const trimPct = (n) => (Number.isInteger(n) ? String(n) : String(n).replace(/\.?0+$/, ''));
 
 /**
