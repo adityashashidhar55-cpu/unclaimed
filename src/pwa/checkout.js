@@ -75,6 +75,7 @@ export function accountState({ entitled, reason, plan, accountType } = {}, tr = 
     pastDue: 'the last payment failed. Update your card to keep your programmes unlocked.',
     lapsed: 'ended. Your saved work is still here; resubscribe to see programme names again.',
     admin: 'Operator session — everything is unlocked.',
+    granted: 'unlocked for you by Unclaimed Grants. There is nothing to pay and nothing to manage.',
     freeHere: 'Free where you are. Your country regulates this as advice, so we do not charge for it.',
     ...tr,
   };
@@ -111,6 +112,20 @@ export function accountState({ entitled, reason, plan, accountType } = {}, tr = 
       kind: 'lapsed',
       line: `${label(plan)} — ${T.lapsed}`,
       action: 'both',
+      plans,
+    };
+  }
+  /* Granted, not bought. This must come before the `entitled` branch below,
+     which offers the billing portal — and a granted account has no Stripe
+     customer, so that button opens a portal session that cannot be created and
+     fails with an error the customer cannot act on. There is nothing for them
+     to manage: somebody switched this on for them, and the honest screen says
+     so and offers no billing control at all. */
+  if (reason === 'granted') {
+    return {
+      kind: 'granted',
+      line: `${label(plan)} — ${T.granted}`,
+      action: 'none',
       plans,
     };
   }

@@ -176,6 +176,11 @@ async function load() {
     renderOverview(overview);
     renderFunnel(funnel);
     renderLogins(logins);
+    /* Customers and the audit trail are not windowed by the date selector and
+       are slower to change, so they load alongside rather than blocking the
+       numbers. A failure in either must not blank the dashboard. */
+    loadCustomers().catch(() => {});
+    loadAudit().catch(() => {});
   } catch (err) {
     if (err.status === 403 || err.status === 401) {
       /* The session expired while the tab was open. Back to the door rather
@@ -199,3 +204,210 @@ fetch('/api/me', { credentials: 'same-origin', cache: 'no-store' })
     if (s.admin) open(s.email);
   })
   .catch(() => {});
+
+
+/* ------------------------------------------------------------------ */
+/* Customers, and granting them a plan                                 */
+/* ------------------------------------------------------------------ */
+
+/**
+ * The half of this page that changes something.
+ *
+ * Everything above is a renderer over read-only endpoints. Below, two buttons
+ * decide who can see the paid product — so the rules are stricter:
+ *
+ *   - The plan list is whatever `/api/admin/customers` returned, never a copy
+ *     hardcoded here. A form offering a plan the Worker rejects is a dead
+ *     button, and this codebase has shipped one of those before.
+ *   - Revoking asks first, because it is the one action here that takes
+ *     something away from a customer who is using it.
+ *   - Every response is re-read from the server rather than patched into the
+ *     table optimistically. The whole point of this screen is that it agrees
+ *     with what the Worker will actually do on the next request.
+ */
+
+let PLANS = [];
+let lastQuery = '';
+
+const when = (ts) => (ts ? new Date(ts).toLocaleDateString(undefined, { year: 'numeric', month: 'short', day: 'numeric' }) : '');
+
+function grantBadge(c) {
+  if (c.paying) return `<span class="badge badge-good">Paying · ${esc(c.ent_plan || 'active')}</span>`;
+  const g = c.grant;
+  if (!g) return '<span class="badge badge-neutral">Free</span>';
+  const label = PLANS.find((p) => p.plan === g.plan)?.label || g.plan;
+  const ends = g.expires_at ? ` · until ${esc(when(g.expires_at))}` : ' · no end date';
+  return `<span class="badge badge-good">Granted · ${esc(label)}${ends}</span>`;
+}
+
+function renderCustomers(d) {
+  PLANS = d.plans || PLANS;
+  const rows = d.customers || [];
+  const host = $('#admin-customer-list');
+  if (!rows.length) {
+    host.innerHTML = `<p class="small">No account matches that.${
+      lastQuery.includes('@')
+        ? ` <button class="btn btn-sm" type="button" data-grant-new="${esc(lastQuery)}">Grant to ${esc(lastQuery)} anyway</button>`
+        : ''
+    }</p>`;
+    return;
+  }
+  host.innerHTML = `<div class="list-rows">${rows
+    .map(
+      (c) => `<div class="list-row" style="cursor:default;align-items:center">
+      <span style="flex:1;min-width:0">
+        <span class="list-row__name">${esc(c.email)}</span>
+        <span class="list-row__meta">${esc(c.account_type || 'individual')} · joined ${esc(when(c.created_at))}${
+          c.grant && c.grant.reason ? ` · ${esc(c.grant.reason)}` : ''
+        }</span>
+      </span>
+      <span class="list-row__right" style="display:flex;gap:.5rem;align-items:center;flex-wrap:wrap;justify-content:flex-end">
+        ${grantBadge(c)}
+        <button class="btn btn-sm" type="button" data-grant="${esc(c.id)}" data-email="${esc(c.email)}">${
+          c.grant ? 'Change' : 'Grant'
+        }</button>
+        ${c.grant ? `<button class="btn btn-sm btn-ghost" type="button" data-revoke="${esc(c.grant.id)}" data-email="${esc(c.email)}">Revoke</button>` : ''}
+      </span>
+    </div>`,
+    )
+    .join('')}</div>`;
+}
+
+async function loadCustomers(q = lastQuery) {
+  lastQuery = q;
+  renderCustomers(await get(`/api/admin/customers?q=${encodeURIComponent(q)}&limit=50`));
+}
+
+function renderAudit(d) {
+  const rows = d.audit || [];
+  const host = $('#admin-audit');
+  if (d.unavailable) {
+    host.innerHTML = '<p class="small">The audit table is not there yet. Apply <code>migrations/0008_grants.sql</code>.</p>';
+    return;
+  }
+  if (!rows.length) {
+    host.innerHTML = '<p class="small">Nothing has been granted or revoked yet.</p>';
+    return;
+  }
+  const verb = { grant: 'granted', revoke: 'revoked', supersede: 'replaced the plan of', create_user: 'created an account for' };
+  host.innerHTML = `<div class="list-rows">${rows
+    .map((r) => {
+      let detail = '';
+      try {
+        const d2 = r.detail ? JSON.parse(r.detail) : null;
+        if (d2) {
+          detail = [d2.plan && (PLANS.find((p) => p.plan === d2.plan)?.label || d2.plan), d2.seats > 1 && `${d2.seats} seats`, d2.days ? `${d2.days} days` : d2.plan && 'no end date', d2.reason]
+            .filter(Boolean)
+            .join(' · ');
+        }
+      } catch {
+        /* A detail we cannot parse is not a reason to hide the event. */
+      }
+      return `<div class="list-row" style="cursor:default">
+        <span>
+          <span class="list-row__name">${esc(r.actor)} ${esc(verb[r.action] || r.action)} ${esc(r.subject || '—')}</span>
+          <span class="list-row__meta">${esc(new Date(r.ts).toLocaleString())}${detail ? ` · ${esc(detail)}` : ''}</span>
+        </span>
+      </div>`;
+    })
+    .join('')}</div>`;
+}
+
+async function loadAudit() {
+  renderAudit(await get('/api/admin/audit?limit=100'));
+}
+
+/* ---- the grant dialog -------------------------------------------- */
+
+const dialog = $('#admin-grant-dialog');
+let target = null; // { user_id } or { email, create: true }
+
+function openGrant(t, label) {
+  target = t;
+  $('#admin-grant-who').textContent = label;
+  $('#admin-grant-plan').innerHTML = PLANS.map((p) => `<option value="${esc(p.plan)}">${esc(p.label)}</option>`).join('');
+  $('#admin-grant-msg').textContent = '';
+  $('#admin-grant-reason').value = '';
+  $('#admin-grant-create-wrap').hidden = !t.create;
+  $('#admin-grant-create').checked = !!t.create;
+  dialog.showModal();
+}
+
+$('#admin-grant-cancel').addEventListener('click', () => dialog.close());
+
+$('#admin-grant-form').addEventListener('submit', async (e) => {
+  /* The dialog's own method="dialog" would close it on submit before the
+     request finished, and the operator would never see the error. */
+  e.preventDefault();
+  const msg = $('#admin-grant-msg');
+  const submit = $('#admin-grant-submit');
+  submit.disabled = true;
+  msg.textContent = 'Granting…';
+  try {
+    const res = await fetch('/api/admin/grant', {
+      method: 'POST',
+      credentials: 'same-origin',
+      headers: { 'content-type': 'application/json' },
+      body: JSON.stringify({
+        ...target,
+        create: $('#admin-grant-create').checked,
+        plan: $('#admin-grant-plan').value,
+        seats: parseInt($('#admin-grant-seats').value, 10) || 1,
+        days: parseInt($('#admin-grant-days').value, 10) || 0,
+        reason: $('#admin-grant-reason').value,
+      }),
+    });
+    const out = await res.json().catch(() => ({}));
+    if (!res.ok) {
+      msg.textContent = out.message || `Refused (${res.status}).`;
+      if (out.error === 'no_such_user') {
+        $('#admin-grant-create-wrap').hidden = false;
+        target = { ...target, create: true };
+      }
+      return;
+    }
+    dialog.close();
+    await Promise.all([loadCustomers(), loadAudit()]);
+  } catch {
+    msg.textContent = 'Could not reach the server.';
+  } finally {
+    submit.disabled = false;
+  }
+});
+
+/* ---- wiring ------------------------------------------------------ */
+
+$('#admin-search').addEventListener('submit', (e) => {
+  e.preventDefault();
+  loadCustomers($('#admin-q').value.trim()).catch(() => {
+    $('#admin-customer-list').innerHTML = '<p class="small">Could not load customers.</p>';
+  });
+});
+
+$('#admin-customers-section').addEventListener('click', async (e) => {
+  const grant = e.target.closest('[data-grant]');
+  if (grant) {
+    openGrant({ user_id: grant.dataset.grant }, grant.dataset.email);
+    return;
+  }
+  const fresh = e.target.closest('[data-grant-new]');
+  if (fresh) {
+    openGrant({ email: fresh.dataset.grantNew, create: true }, fresh.dataset.grantNew);
+    return;
+  }
+  const revoke = e.target.closest('[data-revoke]');
+  if (revoke) {
+    /* The only destructive action on this page, so it is the only one that
+       asks. `prompt` rather than `confirm`: the reason goes in the trail, and
+       asking for it is also the confirmation. */
+    const reason = window.prompt(`Revoke granted access for ${revoke.dataset.email}?\n\nWhy:`, '');
+    if (reason === null) return;
+    await fetch('/api/admin/revoke', {
+      method: 'POST',
+      credentials: 'same-origin',
+      headers: { 'content-type': 'application/json' },
+      body: JSON.stringify({ grant_id: revoke.dataset.revoke, reason }),
+    });
+    await Promise.all([loadCustomers(), loadAudit()]);
+  }
+});
