@@ -21,11 +21,16 @@ import { match } from '../src/engine/matcher.js';
 import { buildPlan, buildPackage, recordConsent } from '../packages/autoapply/index.js';
 import { policyFor, mayCharge, mayChargeFor, PRODUCT, PRICING } from '../packages/policy/index.js';
 import { DOC_TYPES, expiresAt, KDF_ITERATIONS } from '../packages/vault/index.js';
-import { matchStartup, reachFor } from '../src/engine/startup.js';
+import { matchStartup, reachFor, testProgramme as testStartupProgramme } from '../src/engine/startup.js';
 import { planWithinCeiling, declarationText, headroom } from '../packages/stateaid/index.js';
 import { lookupCompany, projectCompany, autofillAvailable } from '../packages/registry/index.js';
 import { isStep, funnelRows, worstDrop } from '../packages/analytics/index.js';
 import { normaliseGrant, pickLive, isGrantablePlan, GRANTABLE_PLANS } from '../packages/grants/index.js';
+import {
+  GENERATORS, isGenerator, generator, allowanceFor, spend, monthKey,
+  exhaustedMessage, PACKS, pack as packById, PLAN_ALLOWANCE,
+} from '../packages/quota/index.js';
+import { buildBrief, briefText } from '../packages/brief/index.js';
 
 /**
  * Every JSON response this Worker sends is per-user and must never be cached.
@@ -1472,6 +1477,20 @@ async function applyStripeEvent(event, env) {
   switch (event.type) {
     case 'checkout.session.completed': {
       const uid = await userIdFrom(o);
+
+      /* A completed session is not necessarily a subscription.
+       *
+       * Generation credit packs are one-off payments through the same
+       * endpoint family, and this branch used to set status='active' on
+       * anything that completed. Left alone, a €29 pack would have handed the
+       * buyer the entire paid product — a free account, one small purchase,
+       * full entitlement, and nothing anywhere saying why. The mode and our
+       * own metadata both have to agree that this was a subscription. */
+      if (o.mode === 'payment' || o.metadata?.kind === 'credit_pack') {
+        await creditPack(env, o);
+        break;
+      }
+
       if (uid) {
         await upsert(uid, {
           status: 'active',
@@ -2549,6 +2568,349 @@ async function handleAdminAudit(request, env) {
 }
 
 /* ------------------------------------------------------------------ */
+/* Generation credit packs                                             */
+/* ------------------------------------------------------------------ */
+
+/**
+ * Turn a paid Stripe session into units.
+ *
+ * Idempotent on the session id, which is a UNIQUE column: Stripe redelivers
+ * webhooks, and a redelivery that credited a second pack would be free money
+ * for whoever noticed. The insert simply loses the race and the customer keeps
+ * exactly what they paid for.
+ *
+ * Never touches `entitlements`. Buying compute is not buying a subscription,
+ * and the branch above exists because conflating them handed the whole product
+ * away for the price of a small pack.
+ */
+async function creditPack(env, session) {
+  const packId = session?.metadata?.pack_id;
+  const userId = session?.metadata?.user_id;
+  const p = packById(packId);
+  if (!p || !userId) {
+    console.error('credit_pack_ignored', packId, userId, session?.id);
+    return;
+  }
+  try {
+    await env.DB.prepare(
+      `INSERT OR IGNORE INTO generation_credits
+         (id, org_id, user_id, pack_id, units, remaining, price_cents, source, stripe_session_id, purchased_at)
+       VALUES (?, ?, ?, ?, ?, ?, ?, 'stripe', ?, ?)`,
+    )
+      .bind(crypto.randomUUID(), session.metadata?.org_id ?? null, userId, p.id, p.units, p.units,
+        p.price_cents, session.id, Date.now())
+      .run();
+  } catch (err) {
+    /* Loud, because a customer has paid and has nothing. The Stripe dashboard
+       has the session id in this log line, so it can be credited by hand. */
+    console.error('credit_pack_failed', session?.id, packId, userId, String(err?.message ?? err));
+    throw err;
+  }
+}
+
+/**
+ * POST /api/enterprise/packs/checkout — { pack_id }
+ *
+ * One-off payment, not a subscription. The price comes from a fixed table
+ * here, never from the request: a client-supplied amount is a client that can
+ * buy 300 generations for a cent.
+ */
+async function handlePackCheckout(request, env) {
+  const gate = await orgGate(request, env);
+  if (gate.error) return gate.error;
+
+  const body = await request.json().catch(() => ({}));
+  const p = packById(String(body.pack_id ?? ''));
+  if (!p) return json({ error: 'unknown_pack', message: 'No such pack.', packs: PACKS }, 400);
+
+  const priceId = env[`STRIPE_PRICE_${p.id.toUpperCase()}`];
+  if (!priceId || String(priceId).startsWith('price_REPLACE')) {
+    return json(
+      { error: 'price_not_configured', message: `No Stripe price is configured for ${p.id}. Run scripts/stripe-setup.mjs and set STRIPE_PRICE_${p.id.toUpperCase()}.` },
+      503,
+    );
+  }
+
+  const existing = await env.DB.prepare('SELECT stripe_customer_id FROM entitlements WHERE user_id = ?')
+    .bind(gate.session.uid).first().catch(() => null);
+  const customerId = existing?.stripe_customer_id || null;
+
+  let cs;
+  try {
+    cs = await stripeCall(env, 'checkout/sessions', {
+      mode: 'payment',
+      'line_items[0][price]': priceId,
+      'line_items[0][quantity]': '1',
+      success_url: `${env.APP_ORIGIN}/dashboard/?credits=1&session_id={CHECKOUT_SESSION_ID}`,
+      cancel_url: `${env.APP_ORIGIN}/dashboard/`,
+      client_reference_id: gate.session.uid,
+      'metadata[kind]': 'credit_pack',
+      'metadata[pack_id]': p.id,
+      'metadata[user_id]': gate.session.uid,
+      ...(gate.orgId ? { 'metadata[org_id]': gate.orgId } : {}),
+      'tax_id_collection[enabled]': 'true',
+      billing_address_collection: 'required',
+      ...(customerId ? { customer: customerId, 'customer_update[name]': 'auto', 'customer_update[address]': 'auto' } : { customer_email: gate.session.email }),
+    });
+  } catch (err) {
+    console.error(`stripe_pack_checkout_failed pack=${p.id} uid=${gate.session.uid}`, err);
+    return json({ error: 'stripe_unavailable', message: 'We could not open checkout just now. Please try again in a moment.' }, 503);
+  }
+
+  return json({ url: cs.url, pack: p });
+}
+
+/* ------------------------------------------------------------------ */
+/* Metered generation                                                  */
+/* ------------------------------------------------------------------ */
+
+/**
+ * The company product can produce documents that cost money to make.
+ *
+ * The deterministic half — the application pack and the document checklist —
+ * costs nothing to produce and stays free and unlimited on every plan. What is
+ * metered is the work that goes to a language model, because a language model
+ * has a bill and the margin has to survive a customer who uses every unit they
+ * are entitled to. See packages/quota for the numbers and for why a unit is a
+ * generated document rather than an application filed.
+ *
+ * Every read below is scoped to the org, or to the user when there is no org.
+ * A quota is a billing fact and leaking one across a tenancy boundary tells a
+ * company how much its competitor is doing.
+ */
+
+/** The billing unit: the org if there is one, otherwise the person. */
+function billingScope(gate) {
+  return gate.orgId ? { column: 'org_id', id: gate.orgId } : { column: 'user_id', id: gate.session.uid };
+}
+
+/**
+ * Allowance, spend and purchased credits for this billing unit, this month.
+ *
+ * Usage is a SUM over rows rather than a counter on the org, because a counter
+ * is one number to keep correct under concurrency and its failure mode is a
+ * silent overspend on somebody else's API bill.
+ */
+async function quotaFor(env, gate, ent, now = Date.now()) {
+  const scope = billingScope(gate);
+  const month = monthKey(now);
+
+  let used = 0;
+  let credits = 0;
+  try {
+    const [u, c] = await Promise.all([
+      env.DB.prepare(`SELECT COALESCE(SUM(units), 0) AS n FROM generation_usage WHERE ${scope.column} = ? AND month = ? AND ok = 1`)
+        .bind(scope.id, month)
+        .first(),
+      env.DB.prepare(`SELECT COALESCE(SUM(remaining), 0) AS n FROM generation_credits WHERE ${scope.column} = ?`)
+        .bind(scope.id)
+        .first(),
+    ]);
+    used = u?.n ?? 0;
+    credits = c?.n ?? 0;
+  } catch (err) {
+    /* Migration 0009 not applied. Reporting a zero allowance would lock out
+       every paying customer, and reporting an unlimited one would uncap the
+       bill. Neither: the tables not existing means nothing has been spent, and
+       the allowance the plan already grants still stands. */
+    console.error('quota_tables_unavailable', String(err?.message ?? err));
+  }
+
+  const plan = ent?.plan ?? null;
+  const seats = ent?.seats ?? ent?.granted?.seats ?? 1;
+  const allowance = allowanceFor({ plan, seats });
+
+  return {
+    month,
+    plan,
+    seats,
+    allowance,
+    used,
+    allowance_left: Math.max(0, allowance - used),
+    credits,
+    total_left: Math.max(0, allowance - used) + credits,
+  };
+}
+
+/** GET /api/enterprise/quota — what is left, and what can be made. */
+async function handleQuota(request, env) {
+  const gate = await orgGate(request, env);
+  if (gate.error) return gate.error;
+  const ent = await entitlementFor(env, gate.session, 'gb', PRODUCT.DISCOVERY);
+  const q = await quotaFor(env, gate, ent);
+  return json({
+    quota: q,
+    generators: GENERATORS,
+    packs: PACKS,
+    /* Stated rather than implied. A customer who cannot see the ceiling
+       discovers it mid-deadline, and that is the moment they do not renew. */
+    note: 'The application pack and document checklist are deterministic — free and unlimited on every plan. Everything else counts against the monthly allowance.',
+  });
+}
+
+/**
+ * Take the units for one generation, or refuse.
+ *
+ * Written before the model is called, not after. If the write fails the
+ * generation does not happen; if the model call fails afterwards the row is
+ * marked `ok = 0` and stops counting. That order is the wrong way round for
+ * throughput and the right way round for a bill: the failure mode of writing
+ * afterwards is a customer who can spend units faster than they can be
+ * recorded.
+ */
+async function takeUnits(env, gate, decision, { type, programmeSlug }) {
+  const scope = billingScope(gate);
+  const id = crypto.randomUUID();
+  const now = Date.now();
+
+  await env.DB.prepare(
+    `INSERT INTO generation_usage (id, ts, month, org_id, user_id, type, units, from_allowance, from_credits, programme_slug, ok)
+     VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, 1)`,
+  )
+    .bind(id, now, monthKey(now), gate.orgId ?? null, gate.session.uid, type, decision.units,
+      decision.from_allowance, decision.from_credits, programmeSlug ?? null)
+    .run();
+
+  /* Credits come out of the oldest pack first, so a customer never watches a
+     newer pack drain while an older one sits full. */
+  let owed = decision.from_credits;
+  if (owed > 0) {
+    const packs = await env.DB.prepare(
+      `SELECT id, remaining FROM generation_credits WHERE ${scope.column} = ? AND remaining > 0 ORDER BY purchased_at ASC`,
+    )
+      .bind(scope.id)
+      .all();
+    for (const row of packs.results ?? []) {
+      if (owed <= 0) break;
+      const take = Math.min(owed, row.remaining);
+      await env.DB.prepare('UPDATE generation_credits SET remaining = remaining - ? WHERE id = ? AND remaining >= ?')
+        .bind(take, row.id, take)
+        .run();
+      owed -= take;
+    }
+  }
+  return id;
+}
+
+/** Mark a taken unit as not spent, because the generation failed. */
+async function releaseUnits(env, usageId) {
+  try {
+    await env.DB.prepare('UPDATE generation_usage SET ok = 0 WHERE id = ?').bind(usageId).run();
+  } catch (err) {
+    console.error('unit_release_failed', usageId, String(err?.message ?? err));
+  }
+}
+
+/**
+ * POST /api/enterprise/generate — { type, slug, country, dry_run }
+ *
+ * `dry_run` returns the brief and the cost and spends nothing. It exists
+ * because a generation whose input is hidden is a generation nobody can
+ * debug, and because a customer about to spend four units is entitled to see
+ * what they are spending them on.
+ */
+async function handleGenerate(request, env) {
+  const gate = await orgGate(request, env);
+  if (gate.error) return gate.error;
+
+  const body = await request.json().catch(() => ({}));
+  const type = String(body.type ?? '');
+  if (!isGenerator(type)) {
+    return json({ error: 'unknown_type', message: `No such generator: ${type || '(none)'}`, generators: GENERATORS }, 400);
+  }
+
+  const cc = String(body.country ?? '').toLowerCase().slice(0, 5);
+  const slug = String(body.slug ?? '');
+  if (!cc || !slug) return bad('country and slug are required');
+
+  const data = await loadStartupPool(env, request, cc);
+  const programme = (data?.programmes ?? []).find((p) => p.slug === slug);
+  if (!programme) return json({ error: 'no_such_programme', message: `${slug} is not in ${cc}.` }, 404);
+
+  const profileRow = await env.DB.prepare('SELECT data FROM profiles WHERE user_id = ?').bind(gate.session.uid).first();
+  const profile = profileRow ? JSON.parse(profileRow.data) : {};
+
+  const verdict = testStartupProgramme(programme, profile, Date.now());
+  const brief = buildBrief({ type, programme, profile, verdict });
+  if (!brief.ok) {
+    /* A hard eligibility failure costs nothing and produces nothing. Billing
+       for a document that cannot succeed is the thing this product exists to
+       be better than. */
+    return json({ error: brief.error, message: brief.message, fails: brief.fails ?? [] }, 422);
+  }
+
+  const ent = await entitlementFor(env, gate.session, cc || 'gb', PRODUCT.DISCOVERY);
+  const q = await quotaFor(env, gate, ent);
+  const decision = spend({ type, allowance: q.allowance, usedThisMonth: q.used, credits: q.credits });
+
+  if (body.dry_run) {
+    return json({ dry_run: true, would_cost: decision.units ?? 0, affordable: decision.ok, quota: q, brief, brief_text: briefText(brief) });
+  }
+
+  if (!decision.ok) {
+    return json({ error: decision.reason, message: exhaustedMessage(decision), quota: q, packs: PACKS }, 402);
+  }
+
+  const usageId = decision.free ? null : await takeUnits(env, gate, decision, { type, programmeSlug: slug });
+
+  try {
+    const document = await generateDocument(env, brief);
+    return json({ ok: true, type, units: decision.units, document, brief_text: briefText(brief), quota: await quotaFor(env, gate, ent) });
+  } catch (err) {
+    if (usageId) await releaseUnits(env, usageId);
+    const message = String(err?.message ?? err);
+    if (message === 'generation_not_configured') {
+      return json(
+        { error: 'generation_not_configured', message: 'Document generation is not switched on for this deployment. Set the LLM_API_KEY secret.' },
+        503,
+      );
+    }
+    console.error('generation_failed', type, slug, message);
+    return json({ error: 'generation_failed', message: 'The document could not be produced. Nothing was charged.' }, 502);
+  }
+}
+
+/**
+ * Call the model.
+ *
+ * Fails closed on a missing key, the same way the admin door does: an unset
+ * secret means the feature is off, never that it is open. The brief is the
+ * user message and the rules travel inside it, so a caller that assembles the
+ * request differently still carries them.
+ */
+async function generateDocument(env, brief) {
+  const key = env.LLM_API_KEY;
+  if (!key) throw new Error('generation_not_configured');
+
+  const res = await fetch('https://api.anthropic.com/v1/messages', {
+    method: 'POST',
+    headers: {
+      'content-type': 'application/json',
+      'x-api-key': key,
+      'anthropic-version': '2023-06-01',
+    },
+    body: JSON.stringify({
+      model: env.LLM_MODEL || 'claude-sonnet-4-5',
+      max_tokens: 8000,
+      system:
+        'You write grant applications that answer the funder\'s published criteria, in the funder\'s own order and vocabulary. ' +
+        'You never state a monetary amount that is not given to you, never claim an application will succeed, and never invent a fact about the applicant. ' +
+        'Where a fact is missing you write a clearly marked placeholder. Output markdown with one heading per requested section.',
+      messages: [{ role: 'user', content: briefText(brief) }],
+    }),
+  });
+
+  if (!res.ok) {
+    const detail = await res.text().catch(() => '');
+    throw new Error(`model_${res.status}: ${detail.slice(0, 200)}`);
+  }
+  const out = await res.json();
+  const text = (out.content ?? []).filter((c) => c.type === 'text').map((c) => c.text).join('\n').trim();
+  if (!text) throw new Error('model_returned_nothing');
+  return text;
+}
+
+/* ------------------------------------------------------------------ */
 /* CORS — for the packaged app, and nobody else                        */
 /* ------------------------------------------------------------------ */
 
@@ -2742,6 +3104,9 @@ export default {
       if (pathname === '/api/admin/grant' && request.method === 'POST') return withCors(await handleAdminGrant(request, env));
       if (pathname === '/api/admin/revoke' && request.method === 'POST') return withCors(await handleAdminRevoke(request, env));
       if (pathname === '/api/admin/audit') return withCors(await handleAdminAudit(request, env));
+      if (pathname === '/api/enterprise/quota') return withCors(await handleQuota(request, env));
+      if (pathname === '/api/enterprise/packs/checkout' && request.method === 'POST') return withCors(await handlePackCheckout(request, env));
+      if (pathname === '/api/enterprise/generate' && request.method === 'POST') return withCors(await handleGenerate(request, env));
       if (pathname === '/auth/admin' && request.method === 'POST') return withCors(await handleAdminLogin(request, env));
       if (pathname === '/auth/request' && request.method === 'POST') return withCors(await handleAuthRequest(request, env));
       if (pathname === '/auth/verify' && request.method === 'POST') return withCors(await handleAuthVerify(request, env));
@@ -2798,6 +3163,12 @@ export default {
  * which is the only property anybody cares about.
  */
 export const __test = {
+  creditPack,
+  applyStripeEvent,
+  quotaFor,
+  takeUnits,
+  handleQuota,
+  handleGenerate,
   signSession,
   readSession,
   entitlementFor,
