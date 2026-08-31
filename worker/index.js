@@ -31,6 +31,7 @@ import {
   exhaustedMessage, PACKS, pack as packById, PLAN_ALLOWANCE,
 } from '../packages/quota/index.js';
 import { buildBrief, briefText } from '../packages/brief/index.js';
+import { verify as verifyTotp, newSecret as newTotpSecret, otpauthUri, isReplay } from '../packages/totp/index.js';
 
 /**
  * Every JSON response this Worker sends is per-user and must never be cached.
@@ -2144,6 +2145,43 @@ async function adminCredential(env) {
   return { email: m.admin_email, salt: m.admin_password_salt, hash: m.admin_password_hash };
 }
 
+/**
+ * The enrolled second factor, or null.
+ *
+ * Stored in `worker_config` beside the password hash rather than in a secret,
+ * because enrolling has to be something the owner can do from the panel with
+ * their phone in their hand — a factor that needs a `wrangler secret put` to
+ * turn on is a factor that never gets turned on.
+ *
+ * Null means no second factor is enrolled, and the door works exactly as it
+ * did before. That is the whole opt-in: deploying this cannot lock anybody
+ * out, and enrolling requires proving you can already generate a code.
+ */
+async function adminTotp(env) {
+  try {
+    const rows = await env.DB.prepare(
+      "SELECT key, value FROM worker_config WHERE key IN ('admin_totp_secret','admin_totp_last_step')",
+    ).all();
+    const m = Object.fromEntries((rows.results ?? []).map((r) => [r.key, r.value]));
+    if (!m.admin_totp_secret) return null;
+    return { secret: m.admin_totp_secret, lastStep: m.admin_totp_last_step ? Number(m.admin_totp_last_step) : null };
+  } catch (err) {
+    /* A read failure must not mean "no second factor". If the enrolled factor
+       cannot be read, the safe answer is that the door stays shut — the owner
+       can still get in by clearing the row, which is a deliberate act. */
+    console.error('admin_totp_unreadable', String(err?.message ?? err));
+    return { secret: null, unreadable: true };
+  }
+}
+
+async function rememberTotpStep(env, step) {
+  await env.DB.prepare(
+    "INSERT INTO worker_config (key, value, created_at) VALUES ('admin_totp_last_step', ?, ?)\n     ON CONFLICT(key) DO UPDATE SET value = excluded.value",
+  )
+    .bind(String(step), Date.now())
+    .run();
+}
+
 async function handleAdminLogin(request, env) {
   const cred = await adminCredential(env);
   if (!cred) {
@@ -2171,13 +2209,55 @@ async function handleAdminLogin(request, env) {
      password take the same time and cost the same attempt. */
   const emailOk = timingSafeEqual(email, String(cred.email).trim().toLowerCase());
   const passOk = timingSafeEqual(expected, cred.hash);
-  const ok = emailOk && passOk;
+  const credentialOk = emailOk && passOk;
+
+  /* The second factor, if one is enrolled.
+   *
+   * Checked AFTER the password, and never instead of it. Checking the code
+   * first — or answering "code required" before the password has been
+   * verified — would turn the code field into a free oracle telling an
+   * attacker which email is the operator's.
+   *
+   * A wrong code costs an attempt exactly like a wrong password does, so the
+   * six-digit space cannot be walked at speed. */
+  const factor = await adminTotp(env);
+  let totpOk = true;
+  let totpStep = null;
+  let totpNeeded = false;
+
+  if (factor?.unreadable) {
+    /* The enrolled factor cannot be read. Fail closed: the alternative is that
+       a database hiccup silently downgrades the door to one password. */
+    return json({ error: 'admin_unavailable', message: 'The second factor could not be checked. Try again shortly.' }, 503);
+  }
+  if (factor?.secret) {
+    totpNeeded = true;
+    const code = String(body.code ?? '').trim();
+    totpStep = code ? await verifyTotp(factor.secret, code) : null;
+    /* A code that is right but already used is not right. Six digits live for
+       up to 90 seconds across the drift window, and anything that can read one
+       once can replay it inside that window. */
+    totpOk = totpStep !== null && !isReplay(totpStep, factor.lastStep);
+  }
+
+  const ok = credentialOk && totpOk;
 
   await env.DB.prepare('INSERT INTO admin_attempts (id, ts, ip_hash, ok) VALUES (?, ?, ?, ?)')
     .bind(crypto.randomUUID(), Date.now(), ipHash, ok ? 1 : 0)
     .run();
 
-  if (!ok) return json({ error: 'invalid', message: 'Wrong email or password.' }, 401);
+  if (!ok) {
+    /* One message for every failure mode, with one exception: somebody who has
+       proved the password is entitled to know a code is wanted, or they will
+       sit there retyping a correct password forever. Nothing is revealed by
+       that which they did not already have. */
+    if (credentialOk && totpNeeded) {
+      return json({ error: 'code_required', message: 'Enter the six-digit code from your authenticator app.', totp: true }, 401);
+    }
+    return json({ error: 'invalid', message: 'Wrong email or password.' }, 401);
+  }
+
+  if (totpStep !== null) await rememberTotpStep(env, totpStep);
 
   const now = Date.now();
   await env.DB.prepare(
@@ -2546,6 +2626,87 @@ async function handleAdminRevoke(request, env) {
   });
 
   return json({ ok: true, grant_id: grantId });
+}
+
+/* ------------------------------------------------------------------ */
+/* Enrolling the second factor                                         */
+/* ------------------------------------------------------------------ */
+
+/**
+ * GET /api/admin/totp — is one enrolled, and a fresh secret if not.
+ *
+ * The secret returned here is NOT stored. It becomes real only when a code
+ * generated from it is posted back to /enable, which proves the app scanned it
+ * and that the clocks agree. Storing it at this point would be the classic
+ * way to lock somebody out: the QR code fails to scan, they close the tab, and
+ * the door now wants a code nothing can produce.
+ */
+async function handleAdminTotpStatus(request, env) {
+  const session = await requireAdmin(request, env);
+  if (!session) return bad('admin only', 403);
+
+  const factor = await adminTotp(env);
+  if (factor?.secret) return json({ enrolled: true });
+
+  const secret = newTotpSecret();
+  return json({
+    enrolled: false,
+    secret,
+    uri: otpauthUri({ secret, account: session.email || 'operator' }),
+    note: 'Scan this, then enter the code it shows. Nothing is stored until that code checks out.',
+  });
+}
+
+/** POST /api/admin/totp/enable — { secret, code } */
+async function handleAdminTotpEnable(request, env) {
+  const session = await requireAdmin(request, env);
+  if (!session) return bad('admin only', 403);
+
+  const existing = await adminTotp(env);
+  if (existing?.secret) return json({ error: 'already_enrolled', message: 'A second factor is already enrolled. Turn it off first.' }, 409);
+
+  const body = await request.json().catch(() => ({}));
+  const secret = String(body.secret ?? '').trim();
+  const step = await verifyTotp(secret, String(body.code ?? ''));
+  if (step === null) {
+    return json({ error: 'bad_code', message: 'That code does not match. Check your phone’s clock is set automatically.' }, 400);
+  }
+
+  const now = Date.now();
+  await env.DB.batch([
+    env.DB.prepare("INSERT INTO worker_config (key, value, created_at) VALUES ('admin_totp_secret', ?, ?) ON CONFLICT(key) DO UPDATE SET value = excluded.value").bind(secret, now),
+    /* The enrolling code is burned immediately, so the same six digits cannot
+       also be used to sign in during the window they are still valid. */
+    env.DB.prepare("INSERT INTO worker_config (key, value, created_at) VALUES ('admin_totp_last_step', ?, ?) ON CONFLICT(key) DO UPDATE SET value = excluded.value").bind(String(step), now),
+  ]);
+
+  await audit(env, { actor: session.email, action: 'totp_enable', subject: session.email, detail: { at: now } });
+  return json({ ok: true, enrolled: true });
+}
+
+/**
+ * POST /api/admin/totp/disable — { code }
+ *
+ * A current code is required even though the caller already holds an operator
+ * session. Without that, a stolen session can switch the second factor off,
+ * which makes it a speed bump rather than a factor.
+ */
+async function handleAdminTotpDisable(request, env) {
+  const session = await requireAdmin(request, env);
+  if (!session) return bad('admin only', 403);
+
+  const factor = await adminTotp(env);
+  if (!factor?.secret) return json({ ok: true, enrolled: false });
+
+  const body = await request.json().catch(() => ({}));
+  const step = await verifyTotp(factor.secret, String(body.code ?? ''));
+  if (step === null || isReplay(step, factor.lastStep)) {
+    return json({ error: 'bad_code', message: 'Enter a current code from your authenticator app to turn this off.' }, 400);
+  }
+
+  await env.DB.prepare("DELETE FROM worker_config WHERE key IN ('admin_totp_secret','admin_totp_last_step')").run();
+  await audit(env, { actor: session.email, action: 'totp_disable', subject: session.email, detail: { at: Date.now() } });
+  return json({ ok: true, enrolled: false });
 }
 
 /** GET /api/admin/audit?limit=100 — the trail, newest first. */
@@ -3104,6 +3265,9 @@ export default {
       if (pathname === '/api/admin/grant' && request.method === 'POST') return withCors(await handleAdminGrant(request, env));
       if (pathname === '/api/admin/revoke' && request.method === 'POST') return withCors(await handleAdminRevoke(request, env));
       if (pathname === '/api/admin/audit') return withCors(await handleAdminAudit(request, env));
+      if (pathname === '/api/admin/totp') return withCors(await handleAdminTotpStatus(request, env));
+      if (pathname === '/api/admin/totp/enable' && request.method === 'POST') return withCors(await handleAdminTotpEnable(request, env));
+      if (pathname === '/api/admin/totp/disable' && request.method === 'POST') return withCors(await handleAdminTotpDisable(request, env));
       if (pathname === '/api/enterprise/quota') return withCors(await handleQuota(request, env));
       if (pathname === '/api/enterprise/packs/checkout' && request.method === 'POST') return withCors(await handlePackCheckout(request, env));
       if (pathname === '/api/enterprise/generate' && request.method === 'POST') return withCors(await handleGenerate(request, env));
@@ -3163,6 +3327,11 @@ export default {
  * which is the only property anybody cares about.
  */
 export const __test = {
+  handleAdminLogin,
+  adminTotp,
+  handleAdminTotpStatus,
+  handleAdminTotpEnable,
+  handleAdminTotpDisable,
   creditPack,
   applyStripeEvent,
   quotaFor,
