@@ -38,7 +38,7 @@ import { INSTRUMENTS, isFreeMoney, reachFor } from './engine/startup.js';
 import { DE_MINIMIS_CEILING_EUR, REGULATION } from '../packages/stateaid/index.js';
 import { REGISTRIES, autofillAvailable } from '../packages/registry/index.js';
 import { awardLikelihood, effortFor, bandFor, BAND_LABELS } from '../packages/scoring/index.js';
-import { deadlineState, STATUS_META } from '../packages/deadlines/index.js';
+import { deadlineState, STATUS_META, effectiveStatus } from '../packages/deadlines/index.js';
 
 const BUILD_NOW = Date.parse('2026-08-14');
 
@@ -465,9 +465,9 @@ function orbit(jurisdictions) {
 
 function landing() {
   const startupCount = STARTUP_ALL.length;
-  const openNow = STARTUP_ALL.filter((p) => ['open', 'rolling'].includes(p.status)).length;
+  const openNow = STARTUP_ALL.filter((p) => ['open', 'rolling'].includes(effectiveStatus(p))).length;
   const reopening = STARTUP_ALL.filter(
-    (p) => ['closed', 'paused'].includes(p.status) && (p.reopen_note || p.opens_at || (p.typical_months || []).length),
+    (p) => ['closed', 'paused'].includes(effectiveStatus(p)) && (p.reopen_note || p.opens_at || (p.typical_months || []).length),
   ).length;
   const jurisdictions = new Set([...countries.map((c) => c.entry.slug), ...STARTUP_MANIFEST.countries.map((c) => c.slug)]).size;
 
@@ -2356,11 +2356,13 @@ const TR = ${JSON.stringify({
   pastDue: TR('acctPastDue'),
   lapsed: TR('acctLapsed'),
   admin: TR('acctAdminLine'),
+  granted: TR('acctGranted'),
   freeHere: TR('acctFreeHere'),
   personal_monthly: TR('planPersonalMonthly'),
   personal_annual: TR('planPersonalAnnual'),
   business_monthly: TR('planBusinessMonthly'),
   business_annual: TR('planBusinessAnnual'),
+  enterprise: TR('planEnterprise'),
   planNone: TR('planNone'),
 })};
 
@@ -2721,7 +2723,7 @@ function adminPage() {
 <section class="section-tight shell" style="max-width:70rem">
   ${breadcrumbs([{ label: TR('backHome'), href: `${LB()}/` }, { label: 'Operator' }])}
   <span class="eyebrow eyebrow-accent">Operator</span>
-  <h1 style="max-width:20ch">Who is here, and <em class="serif-italic">where they stop</em></h1>
+  <h1 style="max-width:22ch">Who is here, where they stop, and <em class="serif-italic">who gets in</em></h1>
 
   <div class="card" id="admin-login" style="margin-top:2rem;max-width:32rem">
     <p class="small" style="margin-top:0">Signing in here unlocks every paid surface on the site for this
@@ -2777,7 +2779,77 @@ function adminPage() {
         <span class="bucket__count">most recent first</span></div>
       <div id="admin-logins"></div>
     </section>
+
+    <section class="bucket" id="admin-customers-section">
+      <div class="bucket__head"><h2>Customers</h2>
+        <span class="bucket__count">grant a plan without taking money</span></div>
+
+      <p class="small" style="margin:.2rem 0 1rem;max-width:62ch">A grant is not a subscription. It never
+      touches Stripe, it never appears in the revenue tables, and it can be revoked here in one click. This
+      is how the Enterprise tier is sold: closed on a call, switched on from this row.</p>
+
+      <form id="admin-search" class="row" style="gap:.6rem;align-items:flex-end;margin-bottom:1rem" novalidate>
+        <span style="flex:1;min-width:14rem">
+          <label class="tiny" for="admin-q">Find a customer</label>
+          <input class="field" type="search" id="admin-q" placeholder="email address, or part of one"
+                 autocomplete="off" style="width:100%;margin-top:.35rem">
+        </span>
+        <button class="btn btn-sm" type="submit">Search</button>
+      </form>
+
+      <div id="admin-customer-list"></div>
+    </section>
+
+    <section class="bucket">
+      <div class="bucket__head"><h2>What operators have changed</h2>
+        <span class="bucket__count">append-only</span></div>
+      <div id="admin-audit"></div>
+    </section>
   </div>
+
+  <!-- The grant form. One dialog, filled in from whichever row was clicked, so
+       there is no chance of the form and the customer it is about drifting
+       apart the way two copies of a form would. -->
+  <dialog id="admin-grant-dialog" class="card" style="max-width:34rem;width:calc(100% - 2rem);border:0;padding:1.5rem">
+    <form id="admin-grant-form" method="dialog" novalidate>
+      <h2 style="margin:0 0 .3rem;font-size:1.25rem">Grant a plan</h2>
+      <p class="small" id="admin-grant-who" style="margin:0 0 1rem"></p>
+
+      <label class="tiny" for="admin-grant-plan">Plan</label>
+      <select class="field" id="admin-grant-plan" style="width:100%;margin:.35rem 0 1rem"></select>
+
+      <div class="row" style="gap:.8rem">
+        <span style="flex:1">
+          <label class="tiny" for="admin-grant-seats">Seats</label>
+          <input class="field" type="number" id="admin-grant-seats" min="1" max="500" value="1"
+                 style="width:100%;margin-top:.35rem">
+        </span>
+        <span style="flex:1">
+          <label class="tiny" for="admin-grant-days">Days <span style="opacity:.6">(0 = no end date)</span></label>
+          <input class="field" type="number" id="admin-grant-days" min="0" max="3650" value="0"
+                 style="width:100%;margin-top:.35rem">
+        </span>
+      </div>
+
+      <label class="tiny" for="admin-grant-reason" style="display:block;margin-top:1rem">Why</label>
+      <input class="field" type="text" id="admin-grant-reason" required maxlength="300"
+             placeholder="closed on a call, invoice #1042" style="width:100%;margin:.35rem 0 .3rem">
+      <p class="tiny" style="margin:0 0 1rem;opacity:.75">Required. In six months this is the only thing that
+      tells a comped account apart from a billing bug.</p>
+
+      <label class="small" style="display:flex;gap:.5rem;align-items:flex-start;margin-bottom:1rem" id="admin-grant-create-wrap" hidden>
+        <input type="checkbox" id="admin-grant-create" style="margin-top:.2rem">
+        <span>No account exists for this address yet — create it and grant anyway.</span>
+      </label>
+
+      <p class="small" id="admin-grant-msg" role="status" aria-live="polite" style="margin:0 0 1rem;min-height:1.2em"></p>
+
+      <div class="row" style="gap:.6rem;justify-content:flex-end">
+        <button class="btn btn-sm btn-ghost" type="button" id="admin-grant-cancel">Cancel</button>
+        <button class="btn btn-sm btn-primary" type="submit" id="admin-grant-submit">Grant</button>
+      </div>
+    </form>
+  </dialog>
 
   <noscript><p class="small">The dashboard needs JavaScript — every figure is fetched.</p></noscript>
 </section>
@@ -2796,7 +2868,7 @@ function adminPage() {
 
 function enterprisePage() {
   const startupCount = STARTUP_ALL.length;
-  const openNow = STARTUP_ALL.filter((p) => ['open', 'rolling'].includes(p.status)).length;
+  const openNow = STARTUP_ALL.filter((p) => ['open', 'rolling'].includes(effectiveStatus(p))).length;
   const jurisdictions = STARTUP_MANIFEST.countries.length;
 
   /* The four jobs, in the order the work actually happens. Instrumentl
@@ -3630,7 +3702,7 @@ function lockedRecord(p) {
     amount_period: p.amount_period,
     amount_currency: p.amount_currency,
     verification_status: p.verification_status,
-    status: p.status,
+    status: effectiveStatus(p),
     closes_at: p.closes_at,
     opens_at: p.opens_at,
     eligibility: p.eligibility,
@@ -3685,7 +3757,7 @@ function publicStartups(data) {
             amount_currency: p.amount_currency,
             cofunding_pct: p.cofunding_pct,
             is_automatic: p.is_automatic,
-            status: p.status,
+            status: effectiveStatus(p),
             deadline_type: p.deadline_type,
             closes_at: p.closes_at,
             opens_at: p.opens_at,

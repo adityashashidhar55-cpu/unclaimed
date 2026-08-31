@@ -3,6 +3,7 @@
  * Plain template literals. No dependencies.
  */
 import { CATEGORY_LABEL, BENEFIT_TYPE_LABEL, formatMoney, periodSuffix } from './engine/matcher.js';
+import { amountSentence, amountShape, KIND as AMOUNT_KIND, needsFigure } from '../packages/amounts/index.js';
 import { BOOT_SCRIPT } from './pwa/audience.js';
 import { t as translate } from './i18n.mjs';
 
@@ -491,13 +492,18 @@ export function applyBadge(p) {
  * contains, instead of the dead phrase "Amount varies".
  */
 export function amountBasis(p) {
-  const note = (p.amount_note || '').trim();
-  if (/means[- ]test|income[- ]based|depending on|based on your|calculated/i.test(note)) {
-    return `Calculated by ${p.funder}`;
-  }
-  if (/%/.test(note)) return `A percentage — set by ${p.funder}`;
-  if (note) return `Set by ${p.funder}`;
-  return `Set by ${p.funder}`;
+  /* This function used to be four lines and answered "Set by <funder>" on
+     2,432 of 3,900 pages — true, useless, and the single most common sentence
+     in the paid product. The classification moved to packages/amounts, which
+     sorts a missing figure into what it actually is: an in-kind award (825
+     records, where there is no sum and never will be), a rate (332), a
+     case-by-case decision (28), or a genuine gap (1,247, of which 1,224 are
+     cash-shaped and are the harvest worklist).
+
+     The invariant is unchanged: nothing here reads a number out of prose and
+     presents it as the award. A monetary figure still comes only from
+     amount_min / amount_max, via amountLabel() below. */
+  return amountSentence(p);
 }
 
 export function amountLabel(p, currency) {
