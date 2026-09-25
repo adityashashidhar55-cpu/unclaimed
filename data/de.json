@@ -4829,10 +4829,10 @@
    "category": "energy",
    "benefit_type": "discount",
    "amount_min": null,
-   "amount_max": 100000000,
+   "amount_max": null,
    "amount_currency": "EUR",
    "amount_period": "one_off",
-   "amount_note": "Low-interest loan for plants generating electricity and/or heat from renewable energies (photovoltaics, wind, biogas, heat pumps etc.); up to 100% of eligible costs, up to 100 million EUR per project",
+   "amount_note": "Low-interest LOAN (not a cash grant) for plants generating electricity and/or heat from renewable energies (photovoltaics, wind, biogas, heat pumps etc.); up to 100% of eligible project costs. The EUR 100,000,000 figure previously shown here is a KfW facility-wide/per-project loan ceiling, not a per-household amount, and has been removed pending direct reverification of the current per-project cap (kfw.de blocks automated fetches).",
    "is_automatic": false,
    "application_url": "https://www.kfw.de/270",
    "application_channel": "in_person",
@@ -4870,7 +4870,7 @@
    },
    "source_url": "https://www.kfw.de/270",
    "source_snippet": "Die KfW fördert mit dem Programm Erneuerbare Energien – Standard (270) Anlagen zur Strom- und Wärmeerzeugung aus erneuerbaren Energien mit zinsgünstigen Krediten.",
-   "last_verified_at": "2026-08-12",
+   "last_verified_at": "2026-09-25",
    "verification_status": "auto_extracted"
   },
   {

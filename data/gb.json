@@ -2302,7 +2302,7 @@
    "application_url": null,
    "application_channel": "online",
    "deadline_type": "window",
-   "deadline_note": "Closed to new applicants in October 2025; all installations completed by 31 March 2026 when the scheme ended",
+   "deadline_note": "Ended: closed to new applicants in October 2025; all installations completed by 31 March 2026 when the scheme ended. See Warm Homes: Local Grant for successor support.",
    "procedure_steps": [],
    "documents_required": [],
    "eligibility": {
@@ -2325,7 +2325,7 @@
    },
    "source_url": "https://www.gov.uk/apply-great-british-insulation-scheme",
    "source_snippet": "The Great British Insulation Scheme (GBIS) was a UK Government-backed scheme to help homes in England, Scotland and Wales get free or cheaper insulation; GBIS ended on 31 March 2026.",
-   "last_verified_at": "2026-08-12",
+   "last_verified_at": "2026-09-25",
    "verification_status": "verified"
   },
   {
@@ -4416,7 +4416,7 @@
    "application_url": "https://www.gov.uk/browse/benefits",
    "application_channel": "in_person",
    "deadline_type": "rolling",
-   "deadline_note": null,
+   "deadline_note": "Ended: the Household Support Fund ran to 31 March 2026 and has been replaced by the Crisis and Resilience Fund, administered by councils in England from 1 April 2026 (gov.uk).",
    "procedure_steps": [
     {
      "step": 1,
@@ -4443,7 +4443,7 @@
    },
    "source_url": "https://www.gov.uk/browse/benefits",
    "source_snippet": "The Household Support Fund provides funding to local councils in England to help vulnerable households with the cost of essentials such as food and energy bills.",
-   "last_verified_at": "2026-08-12",
+   "last_verified_at": "2026-09-25",
    "verification_status": "auto_extracted"
   },
   {
@@ -6060,6 +6060,54 @@
    "source_url": "https://www.nhs.uk/nhs-services/help-with-health-costs/wigs-and-fabric-supports-on-the-nhs/",
    "source_snippet": "You can get free wigs and fabric supports if you are under 16, 16 to 18 and in full-time education, a hospital inpatient, a war pensioner, or receiving qualifying benefits or named on a valid HC2 certificate.",
    "last_verified_at": "2026-08-12",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "crisis-and-resilience-fund",
+   "name_local": "Crisis and Resilience Fund",
+   "name_en": "Crisis and Resilience Fund (England)",
+   "admin_level": "region",
+   "admin_area": "England",
+   "funder": "Department for Work and Pensions (DWP) via local councils",
+   "category": "income_support",
+   "benefit_type": "cash_one_off",
+   "amount_min": null,
+   "amount_max": null,
+   "amount_currency": "GBP",
+   "amount_period": "one_off",
+   "amount_note": "Council-delivered help with food, energy and essential costs for vulnerable households; successor to the Household Support Fund from 1 April 2026. The type of support (vouchers, grants, cash) and criteria vary by council.",
+   "is_automatic": false,
+   "application_url": "https://www.gov.uk/find-local-council",
+   "application_channel": "in_person",
+   "deadline_type": "rolling",
+   "deadline_note": null,
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Contact your local council to ask what Crisis and Resilience Fund help is available",
+     "url": "https://www.gov.uk/find-local-council"
+    }
+   ],
+   "documents_required": [],
+   "eligibility": {
+    "statuses": [],
+    "age_min": null,
+    "age_max": null,
+    "income_annual_max": null,
+    "income_note": "DWP-funded council crisis support (food, energy, essentials); each English council sets its own eligibility, usually targeting low-income households not captured by benefit criteria — thresholds vary locally.",
+    "requires_children": false,
+    "nationality": "any_resident",
+    "residency_months_min": null,
+    "housing_tenure": null,
+    "student_required": false,
+    "admin_areas": [
+     "England"
+    ],
+    "gender": "any"
+   },
+   "source_url": "https://www.gov.uk/government/publications/crisis-and-resilience-fund-guidance-for-local-authorities-in-england-1-april-2026-to-31-march-2029/the-crisis-and-resilience-fund-guidance-for-local-authorities-in-england-1-april-2026-to-31-march-2029",
+   "source_snippet": "Crisis and Resilience Fund: Guidance for local authorities in England (1 April 2026 to 31 March 2029) - a GBP 1 billion resilience fund providing a safety net for families.",
+   "last_verified_at": "2026-09-25",
    "verification_status": "verified"
   }
  ]

@@ -1711,10 +1711,10 @@
       "category": "tax",
       "benefit_type": "tax_credit",
       "amount_min": null,
-      "amount_max": 48000,
+      "amount_max": 4800,
       "amount_currency": "EUR",
       "amount_period": "annual",
-      "amount_note": "Detrazione IRPEF 50% per l'abitazione principale e 36% per gli altri immobili sulle spese 2025-2026 (36% e 30% nel 2027), su spesa massima di 96.000 euro per unita' immobiliare, ripartita in 10 rate annuali",
+      "amount_note": "Detrazione IRPEF 50% per l'abitazione principale e 36% per gli altri immobili sulle spese 2025-2026 (36% e 30% nel 2027), su spesa massima di 96.000 euro per unita' immobiliare. EUR 48,000 e' il totale detraibile nell'arco di 10 anni (50% di 96.000), ripartito in 10 rate annuali da EUR 4.800 (non un importo annuale di 48.000 euro).",
       "is_automatic": false,
       "application_url": "https://www.agenziaentrate.gov.it",
       "application_channel": "online",
@@ -1760,7 +1760,7 @@
       },
       "source_url": "https://www.agenziaentrate.gov.it",
       "source_snippet": "Dal 1° gennaio 2025 al 31 dicembre 2026 il Bonus Ristrutturazione prevede una detrazione del 50% per gli interventi sulle abitazioni principali e del 36% per gli altri immobili, fino a 96.000 euro per unita' immobiliare.",
-      "last_verified_at": "2026-08-12",
+      "last_verified_at": "2026-09-25",
       "verification_status": "verified"
     },
     {

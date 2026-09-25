@@ -1153,6 +1153,7 @@
     "income_annual_max": 79980,
     "income_note": "2026 rights (2024 income): full-rate ceiling EUR 66,652 + EUR 6,664/child => EUR 79,980 for 2 children; half-rate up to EUR 93,276 + EUR 6,664/child (EUR 106,604 for 2 children); above that a quarter-rate AF is still paid (arrete, caf.fr).",
     "requires_children": true,
+    "requires_children_min": 2,
     "nationality": "any_resident",
     "residency_months_min": null,
     "housing_tenure": null,
@@ -5189,8 +5190,8 @@
     ],
     "age_min": null,
     "age_max": null,
-    "income_annual_max": 21611,
-    "income_note": "2026-27 (RFR 2025, avis 2026): ceiling for the lowest (1st) echelon EUR 21,611 with 1 child, rising to EUR 49,870 with 8+ children (service-public F616).",
+    "income_annual_max": 22037,
+    "income_note": "2026-27 (RFR 2025, avis 2026): ceiling for the lowest (1st) echelon EUR 22,037 with 1 child (service-public.gouv.fr F616), rising with additional children.",
     "requires_children": true,
     "gender": "any",
     "nationality": "any_resident",
@@ -5201,7 +5202,7 @@
    },
    "source_url": "https://www.service-public.fr/particuliers/vosdroits/F616",
    "source_snippet": "La bourse comporte 6 échelons, qui prennent en compte le nombre d'enfants à charge composant votre foyer et les ressources de ce foyer à ne pas dépasser.",
-   "last_verified_at": "2026-08-12",
+   "last_verified_at": "2026-09-25",
    "verification_status": "verified"
   },
   {
