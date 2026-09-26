@@ -114,9 +114,22 @@ export function amountShape(p) {
 
   /* 3. A rate. `cofunding_pct` is structured and trusted; a percentage in
         prose is quoted, not computed, and only for the award shapes where a
-        percentage IS the award. */
+        percentage IS the award.
+
+        `cofunding_pct` is the APPLICANT'S OWN SHARE of the project, not the
+        grant intensity: "Funding rate is 80% of eligible costs" is recorded
+        as 20, "Covers 75% of advisory costs" as 25, "A 20% non-federal match
+        is required" as 20 — every page that shows the field says "You must
+        co-fund N%", and the co-funding calculator converts ?pct=N to a 100-N
+        intensity. The award itself is therefore 100 minus it. Reading the
+        field as the award rate printed "20% of eligible costs" on an 80%
+        grant — the one direction of error that makes a good scheme look
+        not worth applying to. */
   if (p.cofunding_pct != null) {
-    return { kind: KIND.RATE, pct: p.cofunding_pct, of: 'eligible costs', source: 'field', note: note || null };
+    const own = Number(p.cofunding_pct);
+    if (Number.isFinite(own) && own >= 0 && own <= 100) {
+      return { kind: KIND.RATE, pct: 100 - own, of: 'eligible costs', source: 'field', note: note || null };
+    }
   }
   if (RATE_TYPES.has(type)) {
     const m = note.match(PCT);
