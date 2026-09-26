@@ -75,6 +75,7 @@ const SURFACES = [
   ['enterprise/', 'enterprise'],
   ['methodology/', 'methodology'],
   ['privacy/', 'privacy'],
+  ['trust/', 'trust centre'],
   ['account/', 'account'],
   ['for/renters/', 'audience'],
 ];

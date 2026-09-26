@@ -16,7 +16,7 @@
 import fs from 'node:fs';
 import {
   match, passportedFrom, isStatutoryRight, isCitizensOnly, isHardshipAid, CIRCUMSTANCES,
-  isStale, STALE_AFTER_DAYS,
+  isStale, STALE_AFTER_DAYS, monthsPayable, isEndedScheme,
 } from '../src/engine/matcher.js';
 
 let pass = 0, fail = 0;
@@ -27,7 +27,7 @@ const man = JSON.parse(fs.readFileSync(new URL('data/manifest.json', ROOT), 'utf
 const load = (cc) => JSON.parse(fs.readFileSync(new URL(`data/${cc}.json`, ROOT), 'utf8'));
 const entryFor = (cc) => man.countries.find((c) => c.slug === cc);
 const find = (r, re) => {
-  for (const b of ['eligible', 'conditional', 'needs_one_more_answer', 'not_eligible', 'tapered', 'rights']) {
+  for (const b of ['eligible', 'conditional', 'needs_one_more_answer', 'not_eligible', 'tapered', 'rights', 'ended']) {
     const m = (r[b] || []).find((x) => re.test(x.programme.name_en));
     if (m) return { bucket: b, m };
   }
@@ -136,10 +136,13 @@ const EARNER = (cc, o = {}) => ({
 {
   /* Every one of these reads a name, a funder or a source snippet — fields the
      public dataset removes. If they are not precomputed at build time, a
-     locked record silently loses its condition and comes back as a match. */
-  const build = fs.readFileSync(new URL('src/build.mjs', ROOT), 'utf8');
+     locked record silently loses its condition and comes back as a match.
+     This logic moved out of src/build.mjs into src/pages/free-tier.mjs (the
+     free-tier conversion feature's showcase-selection module), so it checks
+     there now rather than in the generator itself. */
+  const freeTier = fs.readFileSync(new URL('src/pages/free-tier.mjs', ROOT), 'utf8');
   for (const flag of ['passported', 'statutory_right', 'citizens_only', 'hardship_aid']) {
-    t(`${flag} is precomputed into the public dataset`, new RegExp(`${flag}: `).test(build));
+    t(`${flag} is precomputed into the public dataset`, new RegExp(`${flag}: `).test(freeTier));
   }
   const src = fs.readFileSync(new URL('src/engine/matcher.js', ROOT), 'utf8');
   for (const flag of ['passported', 'statutory_right', 'citizens_only', 'hardship_aid']) {
@@ -203,6 +206,7 @@ const EARNER = (cc, o = {}) => ({
       pairs += 1;
       const parts =
         r.eligible.length + (r.tapered || []).length + (r.rights || []).length +
+        (r.ended || []).length +
         r.conditional.length + r.needs_one_more_answer.length + r.not_eligible.length;
       if (parts !== data.programmes.length) {
         short += 1;
@@ -417,6 +421,128 @@ const EARNER = (cc, o = {}) => ({
   /* Non-vacuous: if the field is ever renamed, the loop above finds nothing
      and passes. A guard that can pass by measuring zero things is not one. */
   t('and there are records with a locality to check at all', folded > 400, `${folded} folded`);
+}
+
+/* ---- Adoptive Benefit: "Adoptive" is not "adoption" --------------------- *
+ *
+ * The newbaby circumstance regex required the literal word "adoption"
+ * immediately followed by "grant/allowance/pay". Ireland's own record is
+ * named "Adoptive Benefit" — the word is "Adoptive" — so it never matched,
+ * circumstanceTags() returned [] for it, and it passed as an unconditional
+ * EUR 15,548/yr match for any employed or self-employed person, adopting or
+ * not.
+ */
+{
+  const nb = CIRCUMSTANCES.find((c) => c.id === 'newbaby');
+  t('the newbaby regex matches "Adoptive Benefit"', nb.re.test('Adoptive Benefit'));
+  t('it still matches "Adoption Grant"', nb.re.test('Adoption Grant'));
+  t('and "Adopted Child Tax Credit"', nb.re.test('Adopted Child Tax Credit'));
+  t('and every alternative it had before still matches (maternity, e.g.)', nb.re.test('Maternity Benefit'));
+
+  const ie = load('ie');
+  const e = entryFor('ie');
+  const childless = EARNER('ie', { admin_area: 'Dublin' });
+  const r = match(childless, ie, e);
+  const ab = find(r, /Adoptive Benefit/);
+  t('Adoptive Benefit is no longer a straight match for someone who never said a child was placed with them',
+    ab.bucket !== 'eligible', ab.bucket);
+  t('and it names the condition, not just disappears',
+    /pregnancy, new baby or adoption/.test(ab.m?.condition_label || ''), ab.m?.condition_label);
+
+  const adopting = match({ ...childless, circumstances: ['newbaby'] }, ie, e);
+  const abAfter = find(adopting, /Adoptive Benefit/);
+  t('and declaring the circumstance gives the entitlement back', abAfter.bucket === 'eligible', abAfter.bucket);
+}
+
+/* ---- monthsPayable reads amount_note only, never deadline_note ---------- *
+ *
+ * German Kindergeld's deadline_note ("Can be paid retroactively for up to 6
+ * months") describes the backdating window for a late claim, not how long
+ * the benefit is paid — it is an ongoing per-child payment with no duration
+ * at all. Reading deadline_note here computed 6 instead of 12, so a 2-child
+ * household's shown total (EUR 1,554/yr) was roughly a quarter of the real
+ * figure.
+ */
+{
+  const kg = load('de').programmes.find((p) => p.slug === 'kindergeld');
+  t('Kindergeld exists in the fixture', !!kg);
+  t('its own deadline_note is the retroactive-claim window, read by no other code path',
+    kg && /retroactively for up to 6 months/i.test(kg.deadline_note || ''));
+  t('monthsPayable(Kindergeld) is 12, not 6 (the backdating window must not read as a duration)',
+    kg && monthsPayable(kg) === 12, `got ${kg && monthsPayable(kg)}`);
+
+  /* The general rule, not just this one record: a synthetic benefit whose
+     ONLY "up to N months" phrase sits in deadline_note must ignore it. */
+  const synthetic = { amount_note: 'EUR 100 per month, ongoing', deadline_note: 'Can be paid retroactively for up to 6 months' };
+  t('a record with a duration phrase only in deadline_note gets the 12-month default',
+    monthsPayable(synthetic) === 12, `got ${monthsPayable(synthetic)}`);
+  /* And the sibling case: a genuine duration published in amount_note is
+     still honoured — this fix must not also blind the function to real
+     time-limited benefits. */
+  const timeLimited = { amount_note: 'Pays 60% of salary for up to 3 months per claim' };
+  t('a genuine duration in amount_note is still read', monthsPayable(timeLimited) === 3, `got ${monthsPayable(timeLimited)}`);
+}
+
+/* ---- Allocations Familiales: no money at all for a first child ---------- *
+ *
+ * France's Family Allowances pay nothing for an only child, by law.
+ * `eligibility.requires_children` was only ever a boolean, so a single
+ * parent with one child was shown a flat "pass," headline annualised at the
+ * 4-children rate (EUR 542.38 x 12 = EUR 6,509) — money they cannot get at
+ * all today. `requires_children_min: 2` is now on the record and enforced.
+ */
+{
+  const fr = load('fr');
+  const e = entryFor('fr');
+  const af = fr.programmes.find((p) => p.slug === 'allocations-familiales');
+  t('Allocations Familiales carries requires_children_min: 2', af && af.eligibility.requires_children_min === 2);
+
+  const oneChild = EARNER('fr', { status: 'employee', children_count: 1, income_annual: 25000 });
+  const r1 = find(match(oneChild, fr, e), /^Family Allowances/);
+  t('a household with 1 child does not get Family Allowances', r1.bucket !== 'eligible', r1.bucket);
+
+  const twoChildren = { ...oneChild, children_count: 2 };
+  const r2 = find(match(twoChildren, fr, e), /^Family Allowances/);
+  t('a household with 2 children does', r2.bucket === 'eligible', r2.bucket);
+
+  const zeroChildren = { ...oneChild, children_count: 0 };
+  const r0 = find(match(zeroChildren, fr, e), /^Family Allowances/);
+  t('and a household with none still fails, same as before this fix', r0.bucket !== 'eligible', r0.bucket);
+
+  /* Records that only ever asked for "at least one child" must keep working
+     exactly as before — this is an addition, not a behaviour change for the
+     common case. */
+  const cb = find(match(oneChild, load('gb'), entryFor('gb')), /^Child Benefit/);
+  t('an ordinary requires_children record (no _min) still passes on a single child',
+    cb.bucket === 'eligible' || cb.bucket === 'MISSING', cb.bucket);
+}
+
+/* ---- Ended schemes are excluded, not shown as live money ---------------- *
+ *
+ * The Great British Insulation Scheme's own deadline_note says "Closed to
+ * new applicants in October 2025... the scheme ended 31 March 2026" — there
+ * is no `status` field on individual-benefit records at all, so this was the
+ * only place the fact lived, and nothing read it. It passed as an
+ * unconditional match with the headline "Open in a set window".
+ */
+{
+  const gbis = load('gb').programmes.find((p) => p.slug === 'great-british-insulation-scheme');
+  t('GBIS exists in the fixture', !!gbis);
+  t('its own deadline_note says the scheme ended', gbis && isEndedScheme(gbis) === true);
+
+  t('"discontinued" is recognised too', isEndedScheme({ deadline_note: 'This scheme was discontinued in 2025' }));
+  t('"replaced by" is recognised too', isEndedScheme({ deadline_note: 'Replaced by the Warm Homes: Local Grant' }));
+  t('a record with no matching phrase is not called ended',
+    !isEndedScheme({ deadline_note: 'Applications open all year, rolling basis' }));
+  t('no deadline_note at all is not called ended', !isEndedScheme({ deadline_note: null }));
+
+  const owner = EARNER('gb', { admin_area: 'England', housing_tenure: 'owner' });
+  const r = match(owner, load('gb'), entryFor('gb'));
+  const hit = find(r, /Great British Insulation Scheme/);
+  t('GBIS is routed to the ended bucket, not eligible', hit.bucket === 'ended', hit.bucket);
+  t('the ended bucket is exposed on the result and is an array', Array.isArray(r.ended));
+  t('an ended scheme is never counted in the eligible bucket', r.eligible.every((m) => !m.is_ended));
+  t('and it carries a note explaining why', hit.m && typeof hit.m.ended_note === 'string' && hit.m.ended_note.length > 0);
 }
 
 console.log(`\n${pass} passed, ${fail} failed\n`);

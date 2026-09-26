@@ -254,9 +254,17 @@ const html = (f) => {
     const overclaim = /full records/i.test(t) || /whole dataset/i.test(t);
     if (missing.length) bad(`/api/ documents a field gb.json never carries: ${missing[0]}`);
     else if (overclaim) bad('/api/ still claims "full records" or "the whole dataset"');
-    else if (locked.length && [...inLocked].some((k) => ['name_en', 'funder', 'source_url'].includes(k)))
-      bad('a locked record in gb.json still carries a name, funder or source_url');
-    else ok(`/api/ matches its payload (${recs.length} records, ${locked.length} stripped)`);
+    /* POLICY CHANGE (free-tier conversion): name_en and funder are no longer
+       stripped from a locked record — both already sit in plain HTML on that
+       record's own public page, so keeping them in the JSON leaks nothing.
+       source_url (and application_url, documents_required, procedure_steps,
+       source_snippet — what the paid tier actually sells) must still be
+       absent. See src/pages/free-tier.mjs and scripts/test-gating.mjs. */
+    else if (locked.length && [...inLocked].some((k) => ['source_url', 'application_url', 'documents_required', 'procedure_steps', 'source_snippet'].includes(k)))
+      bad('a locked record in gb.json still carries a sold field (source_url, application_url, documents or procedure)');
+    else if (locked.length && !locked.every((r) => r.name_en && r.url))
+      bad('a locked record in gb.json is missing the name or public-page url it is now meant to keep');
+    else ok(`/api/ matches its payload (${recs.length} records, ${locked.length} stripped, each still named)`);
   }
 }
 

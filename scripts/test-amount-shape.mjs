@@ -132,7 +132,7 @@ const ind = load('data', ['manifest.json', 'mcp-tools.json', 'fx-rates.json']);
 const st = load('data/startups', ['manifest.json']);
 const all = [...ind, ...st];
 
-is(all.length, 3900, 'the whole corpus is classified');
+is(all.length, 3858, 'the whole corpus is classified'); // -45 (30 + 15): duplicate company-grant records merged (see data/startups/dedupe-log.json); +2: de-forschungszulage, it-transizione-5-0-iperammortamento (flagship coverage)
 
 let empty = 0;
 let leftovers = 0;

@@ -400,7 +400,7 @@ ok('India resolves with no network at all', offline.ok === true && offline.offli
 
 console.log('\nStartup dataset');
 const sManifest = JSON.parse(fs.readFileSync(new URL('../data/startups/manifest.json', import.meta.url)));
-ok('dataset is loaded', sManifest.total === 1684);
+ok('dataset is loaded', sManifest.total === 1641);
 ok('covers many jurisdictions', sManifest.countries.length >= 25);
 const sAll = [];
 for (const c of sManifest.countries) sAll.push(...sLoad(c.slug).programmes);
@@ -445,7 +445,7 @@ ok('a null amount stays null and never becomes zero', toEur(null, 'USD') === nul
 ok('an unknown currency returns null rather than assuming parity', toEur(100, 'XYZ') === null);
 
 console.log('\nAward likelihood provenance');
-const eicL = awardLikelihood({ slug: 'eic-accelerator', grant_type: 'grant' });
+const eicL = awardLikelihood({ slug: 'eu-eic-accelerator', grant_type: 'grant' });
 ok('a researched rate is used', eicL.p_published != null);
 ok('its provenance is recorded', ['published', 'derived'].includes(eicL.basis));
 ok('it links to the source', /^https?:\/\//.test(eicL.source_url));
@@ -472,7 +472,9 @@ console.log('\nFeasibility — the co-funding test');
 const bigCoFunded = { slug: 'x', grant_type: 'grant', amount_max: 3_000_000, amount_currency: 'EUR', cofunding_pct: 30 };
 const poorCo = feasibility(bigCoFunded, { cash_available_eur: 20_000, stage: 'pre_seed' });
 ok('a co-funding gap is penalised', poorCo.factor < 0.2);
-ok('the penalty is explained in money terms', poorCo.reasons.some((r) => /900,000/.test(r)));
+/* 30% own share of the project alongside a €3m grant (the other 70%):
+   3,000,000 x 30/70 = €1,285,714 — not 30% of the grant (€900,000). */
+ok('the penalty is explained in money terms', poorCo.reasons.some((r) => /1,285,714/.test(r)));
 const richCo = feasibility(bigCoFunded, { cash_available_eur: 2_000_000, stage: 'growth' });
 ok('a company that can cover the match is not penalised for it', richCo.factor > poorCo.factor);
 ok('unknown cash asks rather than assumes',
@@ -480,7 +482,7 @@ ok('unknown cash asks rather than assumes',
 
 console.log('\nScoring');
 const smallLikely = { slug: 'fr-concours-i-nov', grant_type: 'grant', amount_max: 30_000, amount_currency: 'EUR' };
-const bigUnlikely = { slug: 'eic-accelerator', grant_type: 'grant', amount_max: 2_500_000, amount_currency: 'EUR' };
+const bigUnlikely = { slug: 'eu-eic-accelerator', grant_type: 'grant', amount_max: 2_500_000, amount_currency: 'EUR' };
 const sSmall = scoreProgramme(smallLikely, { stage: 'seed' });
 const sBig = scoreProgramme(bigUnlikely, { stage: 'seed' });
 ok('expected value is amount times probability',
@@ -520,7 +522,7 @@ ok('the same grant ranks first for a company that can match it',
    richRank[0].programme.name_en === 'Big co-funded');
 
 console.log('\nRanking honesty is inspectable');
-const cov = rateCoverage([{ slug: 'eic-accelerator' }, { slug: 'eurostars-3' }, { slug: 'unknown-x' }]);
+const cov = rateCoverage([{ slug: 'eu-eic-accelerator' }, { slug: 'eurostars-3' }, { slug: 'unknown-x' }]);
 ok('coverage counts published rates', cov.published === 2);
 ok('coverage counts estimates separately', cov.class_prior === 1);
 ok('coverage reports a percentage', cov.published_pct === 67);

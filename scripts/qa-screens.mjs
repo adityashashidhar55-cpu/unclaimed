@@ -437,8 +437,10 @@ for (const [w, h, wname] of WIDTHS) {
     /* Two things fail here and mean nothing: the Google Fonts request, because
        this sandbox has no route to the internet, and /api/me and /api/v1/event,
        because those are the Worker's and this server only has the static
-       build. Reporting them on all 34 renders buries the real findings. */
-    const NOISE = /fonts\.googleapis|fonts\.gstatic|\/api\/me|\/api\/v1\/event|ERR_TUNNEL/;
+       build. Reporting them on all 34 renders buries the real findings.
+       /api/alerts/status is the same kind of Worker-only route: the alerts box
+       asks it whether to show itself and stays hidden when it cannot answer. */
+    const NOISE = /fonts\.googleapis|fonts\.gstatic|\/api\/me|\/api\/v1\/event|\/api\/alerts\/status|ERR_TUNNEL/;
     page.on('console', (m) => {
       if (m.type() !== 'error') return;
       const text = m.text();
@@ -471,7 +473,11 @@ for (const [w, h, wname] of WIDTHS) {
           window.scrollTo(0, y);
           await new Promise((r) => setTimeout(r, 30));
         }
-        window.scrollTo(0, 0);
+        /* instant, not the page's own scroll-behavior: smooth — a smooth
+           ride back up a 3,700px page can outlast the 300ms below under load,
+           and the audit then measures the sticky nav mid-scroll, sitting on
+           top of the audience switch, and reports it as an overlap. */
+        window.scrollTo({ top: 0, behavior: 'instant' });
         await new Promise((r) => setTimeout(r, 300));
       });
       /* The observer uses threshold 0.12 and unobserves on first hit, so a
