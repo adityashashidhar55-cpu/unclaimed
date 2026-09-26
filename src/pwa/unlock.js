@@ -151,9 +151,11 @@ function countryRecords(cc) {
         .then((r) => (r.ok ? r.json() : null))
         .then((d) => {
           const list = d?.programmes || [];
-          /* A stripped record has no name. If the server sent stripped
-             records, this session is not entitled and nothing below runs. */
-          if (!list.length || !list[0].name_en) return null;
+          /* A stripped record carries `locked: true` (it keeps its name since
+             the free-tier conversion, so the name is no longer the signal).
+             If the server sent any, this session is not entitled and nothing
+             below runs. */
+          if (!list.length || list.some((p) => p.locked || !p.name_en)) return null;
           return new Map(list.map((p) => [p.slug, p]));
         })
         .catch(() => null),
@@ -246,9 +248,10 @@ export async function unlockProgramme() {
   }
 
   const p = (data.programmes || []).find((x) => x.slug === slug);
-  /* A stripped record has no name. Getting one back means we are not entitled,
-     and the page must stay locked — the client does not decide this. */
-  if (!p || !p.name_en) return;
+  /* A stripped record is `locked` (and keeps its name, so the name alone is
+     not the signal). Getting one back means we are not entitled, and the page
+     must stay locked — the client does not decide this. */
+  if (!p || p.locked || !p.name_en) return;
 
   fill(
     document.querySelector('[data-locked="pays"]'),

@@ -409,7 +409,21 @@ async function resultsView() {
           : `<p class="tiny">Reminders before each deadline are part of the paid plan.</p>`
         : `<p class="tiny">Install the app to get a reminder on your phone before each deadline closes.</p>`
     }
-    <p class="tiny">Amounts are published maximums. Means-tested payments taper — most people get less than the ceiling.</p>`,
+    <p class="tiny">Amounts are published maximums. Means-tested payments taper — most people get less than the ceiling.</p>
+    ${
+      /* Web only: /help/expert/ is not bundled into the native app, so the link
+         would 404 there, and a paid third-party referral inside a store build is
+         a review question we do not need. */
+      isNative
+        ? ''
+        : `<div class="card" style="margin-top:1.6rem;border-style:dashed">
+      <p class="eyebrow">Paid, separate from Unclaimed</p>
+      <h3 style="margin:.2rem 0 .4rem">Want a human to review your application?</h3>
+      <p class="small" style="margin:0 0 .8rem">Involve Consulting can help — paid service, separate from this free
+      check. A flat fee agreed up front, never a share of what you receive.</p>
+      <a class="btn btn-sm" href="${BASE}/help/expert/?audience=household&country=${encodeURIComponent(cc)}">Talk to Involve Consulting</a>
+    </div>`
+    }`,
     { back: 'home', title: entry?.name || '' },
   );
 }

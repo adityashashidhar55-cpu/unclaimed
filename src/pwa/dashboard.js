@@ -34,7 +34,7 @@
 
 import { matchStartup, reachFor, INSTRUMENTS, isFreeMoney, smeCategory } from '../engine/startup.js';
 import { rankMatches, awardLikelihood, effortFor, toEur } from '../packages/scoring/index.js';
-import { deadlineState, reminders, toICS } from '../packages/deadlines/index.js';
+import { deadlineState, reminders, toICS, nextWindow } from '../packages/deadlines/index.js';
 import {
   DE_MINIMIS_CEILING_EUR, REGULATION, headroom, canAccept, declarationText,
 } from '../packages/stateaid/index.js';
@@ -61,18 +61,18 @@ function money(n, cur = 'EUR') {
 }
 
 /**
- * What to call a programme we are not allowed to name.
+ * What to call a programme.
  *
- * The public dataset ships the first two records per country whole and strips
- * the rest, so an unentitled workspace genuinely does not know most names —
- * printing the opaque id (`p_rh63dr`) would read as a bug rather than as a
- * paywall. Say what it is instead. The Worker returns the real records at the
- * same URL once someone is signed in and paid, and every one of these labels
- * becomes a name with no other change.
+ * A locked record now carries name_en and funder too — the free-tier gate
+ * only ever withheld the application link, the documents, the procedure and
+ * the source quote, and both surfaces (the JSON and the programme's own
+ * static page) already agreed on the name. Only a record with no name at all
+ * (an older cached copy, or a genuine data gap) falls back to the paywall
+ * label.
  */
 function programmeName(p, fallback = 'Programme') {
   if (!p) return fallback;
-  if (p.locked || !p.name_en) return 'Name on the paid plan';
+  if (!p.name_en) return 'Name on the paid plan';
   return p.name_en || p.name_local;
 }
 
@@ -107,6 +107,23 @@ const STAGES = [
   { id: 'blocked', label: 'Blocked', hint: 'Ceiling, co-funding or fit' },
 ];
 const STAGE_IDS = STAGES.map((s) => s.id);
+
+/**
+ * Why a declined application was declined.
+ *
+ * A free-text note alone answers "what happened" for one entry read carefully.
+ * It does not answer "why do we lose", which is the question a partner asks
+ * across forty of them — that needs a value that can be counted, hence the
+ * fixed set. The note stays free text alongside it because "not competitive"
+ * covers a spread of actual reasons a reviewer said, and those are worth
+ * keeping even though they cannot be grouped.
+ */
+const DECLINE_REASONS = [
+  ['not_eligible', 'Not eligible after all'],
+  ['budget_exhausted', 'Round budget exhausted'],
+  ['not_competitive', 'Not competitive enough'],
+  ['other', 'Other'],
+];
 
 /**
  * The stages an entry can be in and still be worth filing.
@@ -335,6 +352,68 @@ function hitRate(entries) {
   return { won, lost, decided, pct: decided ? Math.round((won / decided) * 100) : null };
 }
 
+/**
+ * "Remind me next cycle" — what nextWindow() says, in a sentence a board
+ * would read.
+ *
+ * The distinction that matters: a date the funder actually published reads
+ * as a fact ("Opens 3 March 2027"); everything else is this codebase's own
+ * projection from the call's typical months or its past cadence, and has to
+ * say so ("~March 2027 (projected)") rather than borrow the confidence of a
+ * real date. `at` is null, with a plain explanation, when nothing published
+ * or observed lets nextWindow() guess at all — a null reminder is filed as
+ * "no projection available", never silently dropped.
+ */
+function nextCycleReminder(programme, asOf = Date.now()) {
+  const w = nextWindow(programme, asOf);
+  if (w.at == null) {
+    return { at: null, basis: 'unknown', label: w.text || 'No reopening date published or observed for this call.' };
+  }
+  const when = new Date(w.at).toLocaleDateString('en-GB', { month: 'long', year: 'numeric' });
+  const label = w.confident
+    ? `Next window: ${new Date(w.at).toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' })}`
+    : `Next window: ~${when} (projected)`;
+  return { at: w.at, basis: w.basis, label };
+}
+
+/**
+ * Funding forecast: expected value, not a wish list.
+ *
+ * Sum(amount x probability of award) per stage and in total, using the same
+ * award-likelihood model packages/scoring gives the matching engine — a
+ * published funder rate where one exists, a labelled class estimate where it
+ * does not. Every entry either contributes a number or is counted as
+ * `unestimated`, and the caller is told which, because a forecast that
+ * silently treats "no matching programme" as zero would understate exactly
+ * the entries closest to a decision.
+ */
+function pipelineForecast(entries) {
+  const byStage = new Map();
+  let totalEur = 0;
+  let estimated = 0;
+  let unestimated = 0;
+
+  for (const e of entries) {
+    const p = programmeBySlug(e.slug);
+    const value = e.value_eur ?? amountEur(p);
+    const row = byStage.get(e.stage) || { stage: e.stage, expected_eur: 0, estimated: 0, unestimated: 0 };
+    if (value == null || !p) {
+      row.unestimated += 1;
+      unestimated += 1;
+    } else {
+      const likelihood = awardLikelihood(p);
+      const expected = value * likelihood.p;
+      row.expected_eur += expected;
+      row.estimated += 1;
+      totalEur += expected;
+      estimated += 1;
+    }
+    byStage.set(e.stage, row);
+  }
+
+  return { total_eur: totalEur, estimated, unestimated, by_stage: [...byStage.values()] };
+}
+
 /* ------------------------------------------------------------------ */
 /* Chrome                                                              */
 /* ------------------------------------------------------------------ */
@@ -540,16 +619,16 @@ function lockedBanner() {
      behind a marketing line. */
   if (gate === sync.STATUS.READY) {
     return `<div class="callout callout--warn"><p><strong>The full programme list did not load.</strong>
-    ${nf(named)} of ${nf(named + locked)} names are showing. This is not your plan — your account has access to
+    ${nf(locked)} of ${nf(named + locked)} programmes arrived without their application links, documents and procedures. This is not your plan — your account has access to
     all of them; the server answered with the public extract instead of the full dataset. Matching, ranking,
     deadlines and the state-aid ledger below are all still correct, because none of them need the name.
     Reload in a moment, and tell us if it persists.</p></div>`;
   }
 
-  return `<div class="callout"><p><strong>${nf(named)} of ${nf(named + locked)} programme names are visible.</strong>
-  Matching, ranking, deadlines and the state-aid ledger all work on every programme — none of them need the
-  name. The names themselves are on the paid plan, so most rows below read "Name on the paid plan" until this
-  workspace is signed in to a paid account.</p></div>`;
+  return `<div class="callout"><p><strong>${nf(locked)} of ${nf(named + locked)} programmes are on the free extract.</strong>
+  Their names and funders are shown, and matching, ranking, deadlines and the state-aid ledger all work on
+  every programme. The application links, document lists and procedures for those programmes are on the paid
+  plan, and appear here once this workspace is signed in to a paid account.</p></div>`;
 }
 
 function empty(title, blurb, cta) {
@@ -1014,12 +1093,18 @@ function pipelineView() {
   }
   const open = openEntries(ws.pipeline);
   const value = pipelineValue(open);
+  const forecast = pipelineForecast(open);
   return `
   <header class="dash__head">
     <div><span class="eyebrow">${money(value.eur, 'EUR')} across ${open.length} open</span><h1>Pipeline</h1></div>
-    <button class="btn btn-sm btn-ghost" data-action="export-pipeline">Export CSV</button>
+    <div class="row">
+      <button class="btn btn-sm btn-ghost" data-action="open-pipeline-import">Import CSV</button>
+      <button class="btn btn-sm btn-ghost" data-action="export-pipeline">Export CSV</button>
+    </div>
   </header>
   ${value.unpriced ? `<p class="tiny dash__muted">${value.unpriced} of these publish no amount and contribute nothing to the total. The real figure is higher than the one above, not lower.</p>` : ''}
+  ${forecastPanel(forecast)}
+  ${calendarFeedPanel()}
   <div class="board">
     ${STAGES.map((s) => {
       const entries = ws.pipeline.filter((e) => e.stage === s.id);
@@ -1038,13 +1123,96 @@ function pipelineView() {
   <p class="tiny dash__muted" style="margin-top:1rem">Drag a card between columns, or open it and change the stage — both work, because dragging is impossible with a keyboard.</p>`;
 }
 
+/**
+ * Funding forecast, front and centre: expected value, not a wish list.
+ *
+ * Labelled "estimate" in the heading, in the callout, and in the number's own
+ * caption — three places on purpose, because this is the one figure on the
+ * board a partner will otherwise quote as a fact in an LP letter.
+ */
+function forecastPanel(forecast) {
+  const rows = STAGES.filter((s) => !CLOSED_STAGES.has(s.id))
+    .map((s) => forecast.by_stage.find((r) => r.stage === s.id) || { stage: s.id, expected_eur: 0, estimated: 0, unestimated: 0 })
+    .filter((r) => r.estimated || r.unestimated);
+  if (!rows.length) return '';
+  return `<div class="callout" style="margin-top:1rem">
+    <p><strong>Funding forecast (estimate): ${esc(money(forecast.total_eur, 'EUR') || '€0')}</strong>
+      — the sum of each entry's amount × its likelihood of being awarded, not money that has been won.</p>
+    <div class="list-rows" style="margin-top:.6rem">
+      ${rows
+        .map((r) => {
+          const label = STAGES.find((s) => s.id === r.stage)?.label || r.stage;
+          return `<div class="list-row"><div class="list-row__body">
+            <div class="list-row__name">${esc(label)} — <strong>${esc(money(r.expected_eur, 'EUR') || '€0')}</strong></div>
+            <div class="list-row__meta">${r.estimated} estimated${r.unestimated ? ` · ${r.unestimated} not estimated (no amount or no matching programme)` : ''}</div>
+          </div></div>`;
+        })
+        .join('')}
+    </div>
+    ${forecast.unestimated ? `<p class="tiny dash__muted" style="margin-top:.6rem">${forecast.unestimated} ${forecast.unestimated === 1 ? 'entry contributes' : 'entries contribute'} nothing to this total — no published amount, or no programme this workspace can still match against.</p>` : ''}
+  </div>`;
+}
+
+/**
+ * The private calendar feed: one URL, revocable, shown once.
+ *
+ * The token itself is never re-displayed after it is issued — the Worker only
+ * ever stores its hash (see /api/workspace/calendar-token in worker/index.js)
+ * — so this panel either offers to create one or offers to revoke the one
+ * that exists, never both at once, and the freshly-issued URL is held in
+ * memory only for the current render.
+ */
+const calendarFeed = { url: null, active: null, loaded: false }; // active stays null until checked
+
+async function loadCalendarFeedStatus() {
+  /* Marked loaded before the request, not after: render() calls this, and a
+     failed fetch (offline, signed out) must not turn every render into
+     another request. */
+  calendarFeed.loaded = true;
+  try {
+    const res = await fetch('/api/workspace/calendar-token', { credentials: 'same-origin', cache: 'no-store' });
+    const body = await res.json().catch(() => ({}));
+    calendarFeed.active = res.ok ? !!body.active : false;
+  } catch {
+    calendarFeed.active = false;
+  }
+  render();
+}
+
+function calendarFeedPanel() {
+  if (!calendarFeed.loaded) {
+    loadCalendarFeedStatus();
+    return '';
+  }
+  if (calendarFeed.url) {
+    return `<div class="callout callout--sage" style="margin-top:1rem">
+      <p><strong>Calendar feed created.</strong> Add this URL as a subscribed calendar (not a one-off import) in your
+      calendar app — it updates itself as the pipeline changes. Copy it now; it will not be shown again.</p>
+      <p class="small" style="word-break:break-all;font-family:monospace">${esc(calendarFeed.url)}</p>
+      <button class="btn btn-sm btn-ghost" data-action="revoke-calendar-token">Revoke this link</button>
+    </div>`;
+  }
+  return `<div class="callout" style="margin-top:1rem">
+    <p><strong>Private calendar feed.</strong> ${
+      calendarFeed.active
+        ? 'A feed is live — anyone with the link can see your pipeline’s deadlines and due dates. Revoke it if the link has leaked.'
+        : 'Subscribe your calendar app to this pipeline’s deadlines and internal due dates, so they show up without opening Unclaimed.'
+    }</p>
+    ${
+      calendarFeed.active
+        ? '<button class="btn btn-sm btn-ghost" data-action="revoke-calendar-token">Revoke feed</button>'
+        : '<button class="btn btn-sm" data-action="create-calendar-token">Create calendar link</button>'
+    }
+  </div>`;
+}
+
 function cardFor(e) {
   const p = programmeBySlug(e.slug);
   const c = companyById(e.company_id);
   const d = p ? deadlineState(p, Date.now()) : null;
   const v = e.value_eur ?? amountEur(p);
   return `<article class="board__card" draggable="true" data-entry="${e.id}" tabindex="0">
-    <div class="board__cardname">${esc(programmeName(p))}</div>
+    <div class="board__cardname">${esc(programmeName(p, e.custom_name || 'Programme'))}</div>
     <div class="tiny dash__muted">${esc(c?.legal_name || 'unknown company')}</div>
     ${v != null ? `<div class="board__val">${esc(money(v, 'EUR'))}</div>` : '<div class="tiny dash__muted">amount not published</div>'}
     ${d ? `<span class="status status--${esc(d.urgency)}">${esc(d.headline)}</span>` : ''}
@@ -1065,8 +1233,8 @@ function entryView() {
   <header class="dash__head">
     <div>
       <button class="dash__back" data-view="pipeline">← Pipeline</button>
-      <h1>${esc(programmeName(p))}</h1>
-      <p class="small dash__muted">${esc(e.reference || '')}${e.reference ? ' · ' : ''}${esc(c?.legal_name || '')}${p?.funder ? ` · ${esc(p.funder)}` : ''}</p>
+      <h1>${esc(programmeName(p, e.custom_name || 'Programme'))}</h1>
+      <p class="small dash__muted">${esc(e.reference || '')}${e.reference ? ' · ' : ''}${esc(c?.legal_name || '')}${(p?.funder || e.custom_funder) ? ` · ${esc(p?.funder || e.custom_funder)}` : ''}</p>
     </div>
     <div class="row">
       ${p?.application_url ? `<a class="btn btn-sm" href="${esc(p.application_url)}" target="_blank" rel="noopener noreferrer">Funder's page</a>` : ''}
@@ -1105,9 +1273,24 @@ function entryView() {
       <label class="fld"><span>Next action</span><input class="field" name="next_action" value="${esc(e.next_action || '')}"></label>
       <label class="fld"><span>Internal due date</span><input class="field" type="date" name="due" value="${esc(e.due || '')}"></label>
     </div>
+    ${
+      e.stage === 'declined'
+        ? `<div class="fieldgrid" style="margin-top:1rem">
+            <label class="fld"><span>Decline reason</span><select class="field" name="decline_reason">
+              <option value="">— not recorded —</option>
+              ${DECLINE_REASONS.map(([id, label]) => `<option value="${id}"${e.decline_reason === id ? ' selected' : ''}>${esc(label)}</option>`).join('')}
+            </select></label>
+            <label class="fld" style="grid-column:1/-1"><span>Funder's response, in their words</span>
+              <textarea class="field" name="decline_note" rows="2" placeholder="What the funder or reviewer actually said, if anything">${esc(e.decline_note || '')}</textarea>
+            </label>
+          </div>`
+        : ''
+    }
     <label class="fld"><span>Notes</span><textarea class="field" name="notes" rows="4">${esc(e.notes || '')}</textarea></label>
     <div class="row" style="margin-top:1rem"><button class="btn btn-primary" type="submit">Save</button></div>
   </form>
+
+  ${e.stage === 'declined' ? remindNextCyclePanel(e, p) : ''}
 
   ${checklistPanel(e)}
 
@@ -1117,6 +1300,29 @@ function entryView() {
   `;
 }
 
+/**
+ * "Remind me next cycle" — for a declined entry, one click files away when
+ * to look again, computed from nextWindow() rather than typed by hand, so
+ * the projection is the same one the deadlines screen would show and not a
+ * second guess living only in this entry.
+ */
+function remindNextCyclePanel(e, p) {
+  if (!p) {
+    return `<section class="dash__section"><h2>Remind me next cycle</h2>
+      <p class="small dash__muted">This entry's programme is no longer in the dataset this workspace can match against, so no reopening can be projected for it.</p></section>`;
+  }
+  if (e.reminder_at) {
+    return `<section class="dash__section"><h2>Remind me next cycle</h2>
+      <p class="small"><strong>${esc(e.reminder_label)}</strong></p>
+      <p class="tiny dash__muted">Feeds your private calendar feed (create one on the Pipeline screen). Recompute it if the funder has since published a firmer date.</p>
+      <button class="btn btn-sm btn-ghost" data-action="remind-next-cycle" data-id="${esc(e.id)}">Recompute</button></section>`;
+  }
+  const w = nextCycleReminder(p);
+  return `<section class="dash__section"><h2>Remind me next cycle</h2>
+    <p class="small">${esc(w.label)}</p>
+    ${w.at ? `<button class="btn btn-sm" data-action="remind-next-cycle" data-id="${esc(e.id)}">Save this reminder</button>` : ''}
+  </section>`;
+}
 
 /* ------------------------------------------------------------------ */
 /* Application panels                                                  */
@@ -1718,6 +1924,11 @@ function addApplication(companyId, slug, { projectId = null } = {}) {
     next_action: '',
     due: '',
     notes: '',
+    decline_reason: null,
+    decline_note: '',
+    reminder_at: null,
+    reminder_label: '',
+    reminder_basis: null,
     /* One entry per document the funder asks for, resolved against the shared
        library at render time rather than copied — a document added later must
        tick this checklist without anyone reopening the application. */
@@ -2531,7 +2742,14 @@ function writeView() {
       <h2>What the model will be given</h2>
       <p class="small dash__muted">Nothing has been spent. This would cost ${gen.brief.would_cost} unit${gen.brief.would_cost === 1 ? '' : 's'}.</p>
       <pre class="dash__pre" style="white-space:pre-wrap;overflow-x:auto">${esc(gen.brief.brief_text)}</pre>
-    </section>`
+    </section>
+    <div class="card" style="margin-top:1rem;border-style:dashed">
+      <p class="eyebrow">Paid, separate from Unclaimed</p>
+      <h3 style="margin:.2rem 0 .4rem">Want a human to review this application?</h3>
+      <p class="small" style="margin:0 0 .8rem">Involve Consulting can help — paid service, separate from this
+      workspace. A flat fee agreed up front, never a share of what you receive.</p>
+      <a class="btn btn-sm" href="${BASE}/help/expert/?audience=company">Talk to Involve Consulting</a>
+    </div>`
       : ''
   }
 
@@ -2626,6 +2844,7 @@ const VIEWS = {
   'company-form': () => companyFormView(view.companyId ? companyById(view.companyId) : null),
   opportunities: opportunitiesView,
   pipeline: pipelineView,
+  'pipeline-import': pipelineImportView,
   entry: entryView,
   deadlines: deadlinesView,
   stateaid: stateaidView,
@@ -2691,7 +2910,7 @@ function exportPipeline() {
     const c = companyById(e.company_id);
     const d = p ? deadlineState(p, Date.now()) : null;
     rows.push([
-      c?.legal_name, programmeName(p), p?.funder, e.stage, e.value_eur ?? amountEur(p),
+      c?.legal_name, programmeName(p, e.custom_name || 'Programme'), p?.funder || e.custom_funder, e.stage, e.value_eur ?? amountEur(p),
       e.owner, e.next_action, e.due, d?.at ? new Date(d.at).toISOString().slice(0, 10) : '',
       p?.application_url,
     ]);
@@ -2783,6 +3002,154 @@ function importCsv(text) {
     }
   });
   return { added, skipped, unmapped };
+}
+
+/* ------------------------------------------------------------------ */
+/* CSV import into the pipeline — column mapping, preview, dedupe       */
+/* ------------------------------------------------------------------ */
+
+/** Fields a pipeline row can carry, and the header spellings that guess them. */
+const PIPELINE_IMPORT_FIELDS = [
+  ['company', 'Company', ['company', 'company_name', 'legal_name', 'name', 'portfolio_company', 'entity']],
+  ['programme', 'Grant / programme', ['programme', 'program', 'grant', 'grant_name', 'scheme', 'call']],
+  ['funder', 'Funder', ['funder', 'agency', 'body']],
+  ['stage', 'Stage', ['stage', 'status']],
+  ['value_eur', 'Value (EUR)', ['value_eur', 'value', 'amount', 'amount_eur']],
+  ['owner', 'Owner', ['owner', 'manager', 'analyst']],
+  ['due', 'Internal due date', ['due', 'due_date', 'internal_due_date']],
+  ['notes', 'Notes', ['notes', 'note', 'comment', 'comments']],
+];
+
+/** Best-guess column index for each field, from the file's own headers. */
+function guessPipelineMapping(header) {
+  const norm = header.map((h) => h.trim().toLowerCase().replace(/[\s-]+/g, '_'));
+  const mapping = {};
+  for (const [field, , aliases] of PIPELINE_IMPORT_FIELDS) {
+    const i = norm.findIndex((h) => aliases.includes(h));
+    if (i >= 0) mapping[field] = i;
+  }
+  return mapping;
+}
+
+/**
+ * A best-effort match to a real programme, by name — never invented.
+ *
+ * Tries the company's own reachable pools first (an exact, case-insensitive
+ * name match), because a CSV of "existing grant records" is describing calls
+ * this workspace may well already carry. A record that names nothing this
+ * dataset recognises still imports — as its own typed name, not as a made-up
+ * slug — because a portfolio's history includes plenty of money that came
+ * from a programme Unclaimed has never listed.
+ */
+function matchProgrammeByName(company, name) {
+  if (!name) return null;
+  const target = name.trim().toLowerCase();
+  if (!target) return null;
+  for (const pool of reachFor(company.country_code)) {
+    const d = pools.get(pool);
+    for (const p of d?.programmes || []) {
+      if ((p.name_en || '').trim().toLowerCase() === target || (p.name_local || '').trim().toLowerCase() === target) {
+        return p;
+      }
+    }
+  }
+  return null;
+}
+
+/**
+ * Import parsed CSV rows into the pipeline, given a confirmed column mapping.
+ *
+ * `rows` is the full parseCsv() result including its header row; `mapping` is
+ * `{ field: columnIndex }` from the mapping UI (or guessPipelineMapping()'s
+ * default, unedited). Companies are matched by name or created, exactly as
+ * the portfolio importer does; programmes are matched by name where possible
+ * and otherwise kept as typed text, never invented. Deduping is by company +
+ * programme name, case-insensitive — the same record pasted in twice, or
+ * already sitting in the pipeline, is skipped rather than duplicated.
+ */
+function importPipelineCsv(rows, mapping, { dedupe = true } = {}) {
+  if (rows.length < 2) return { added: 0, skipped: 0, duplicates: 0 };
+  const get = (row, field) => {
+    const i = mapping[field];
+    return i == null ? '' : String(row[i] ?? '').trim();
+  };
+
+  const existingKeys = new Set(
+    ws.pipeline.map((e) => `${e.company_id}::${(e.slug ? programmeBySlug(e.slug)?.name_en : e.custom_name || '')?.trim().toLowerCase()}`),
+  );
+
+  let added = 0;
+  let skipped = 0;
+  let duplicates = 0;
+
+  commit((w) => {
+    for (const row of rows.slice(1)) {
+      const companyName = get(row, 'company');
+      const programmeName_ = get(row, 'programme');
+      if (!companyName) { skipped += 1; continue; }
+
+      let company = w.companies.find((c) => c.legal_name.trim().toLowerCase() === companyName.trim().toLowerCase());
+      if (!company) {
+        company = {
+          id: uid(),
+          legal_name: companyName,
+          country_code: (w.org.country_code || '').toLowerCase().slice(0, 2),
+          company_number: null,
+          incorporation_date: null,
+          headcount: null,
+          turnover_annual_eur: null,
+          stage: null,
+          owner: null,
+          incorporated: true,
+          sectors: [],
+          narrative: {},
+          updated_at: Date.now(),
+        };
+        w.companies.push(company);
+      }
+
+      const matched = matchProgrammeByName(company, programmeName_);
+      const dedupeKey = `${company.id}::${(matched?.name_en || programmeName_).trim().toLowerCase()}`;
+      if (dedupe && existingKeys.has(dedupeKey)) { duplicates += 1; continue; }
+      existingKeys.add(dedupeKey);
+
+      const stageRaw = get(row, 'stage').toLowerCase().replace(/\s+/g, '_');
+      const stage = STAGE_IDS.includes(stageRaw) ? stageRaw : 'watch';
+      const valueRaw = get(row, 'value_eur').replace(/[^\d.-]/g, '');
+
+      w.pipeline.push({
+        id: uid(),
+        company_id: company.id,
+        project_id: null,
+        slug: matched?.slug || null,
+        custom_name: matched ? '' : programmeName_ || 'Imported record',
+        custom_funder: matched ? '' : get(row, 'funder'),
+        reference: `UG-${(company.legal_name || 'CO').replace(/[^A-Za-z]/g, '').slice(0, 3).toUpperCase() || 'CO'}-${String(w.pipeline.length + 1).padStart(3, '0')}`,
+        stage,
+        owner: get(row, 'owner'),
+        value_eur: valueRaw && Number.isFinite(Number(valueRaw)) ? Number(valueRaw) : null,
+        requested_eur: null,
+        awarded_eur: null,
+        submitted_at: null,
+        decided_at: null,
+        funder_reference: '',
+        next_action: '',
+        due: get(row, 'due') || '',
+        notes: get(row, 'notes') || (matched ? '' : 'Imported from CSV — no matching programme in this dataset; funder and terms are exactly what the file said.'),
+        decline_reason: null,
+        decline_note: '',
+        reminder_at: null,
+        reminder_label: '',
+        reminder_basis: null,
+        required_docs: [],
+        auto: false,
+        created_at: Date.now(),
+      });
+      added += 1;
+    }
+  });
+
+  return { added, skipped, duplicates };
 }
 
 /* ------------------------------------------------------------------ */
@@ -3162,6 +3529,66 @@ document.addEventListener('click', async (ev) => {
     return;
   }
 
+  if (a === 'remind-next-cycle') {
+    const id = btn.dataset.id;
+    commit((w) => {
+      const e = w.pipeline.find((x) => x.id === id);
+      if (!e) return;
+      const p = programmeBySlug(e.slug);
+      if (!p) return;
+      const r = nextCycleReminder(p);
+      e.reminder_at = r.at;
+      e.reminder_label = r.label;
+      e.reminder_basis = r.basis;
+      e.updated_at = Date.now();
+    });
+    return;
+  }
+
+  if (a === 'create-calendar-token') {
+    btn.disabled = true;
+    const res = await fetch('/api/workspace/calendar-token', { method: 'POST', credentials: 'same-origin' }).catch(() => null);
+    const body = res ? await res.json().catch(() => ({})) : {};
+    if (res?.ok && body.url) {
+      calendarFeed.url = body.url;
+      calendarFeed.active = true;
+    } else {
+      notice('Could not create a calendar link just now. Try again in a moment.');
+    }
+    render();
+    return;
+  }
+  if (a === 'revoke-calendar-token') {
+    btn.disabled = true;
+    const res = await fetch('/api/workspace/calendar-token', { method: 'DELETE', credentials: 'same-origin' }).catch(() => null);
+    if (res?.ok) {
+      calendarFeed.url = null;
+      calendarFeed.active = false;
+    } else {
+      /* Saying "revoked" when it was not would leave a leaked link live. */
+      notice('Could not revoke the calendar link just now. Try again in a moment.');
+    }
+    render();
+    return;
+  }
+
+  if (a === 'open-pipeline-import') return void go('pipeline-import', { pipelineImport: { step: 'pick' } });
+  if (a === 'pipeline-import-pick') return void pickPipelineCsvFile();
+  if (a === 'pipeline-import-cancel') return void go('pipeline');
+  if (a === 'pipeline-import-confirm') {
+    const state = view.pipelineImport;
+    if (!state?.rows) return;
+    const res = importPipelineCsv(state.rows, state.mapping, { dedupe: true });
+    view.pipelineImport = null;
+    go('pipeline');
+    notice(
+      `Imported ${res.added} ${res.added === 1 ? 'record' : 'records'}.` +
+        (res.duplicates ? ` ${res.duplicates} already in the pipeline were skipped.` : '') +
+        (res.skipped ? ` ${res.skipped} rows had no company name and were skipped.` : ''),
+    );
+    return;
+  }
+
   if (a === 'import') return void pickFile();
   if (a === 'save-search') {
     const answers = await askForm('Save this search', [
@@ -3259,6 +3686,10 @@ document.addEventListener('submit', (ev) => {
       e.submitted_at = g('submitted_at') || null;
       e.decided_at = g('decided_at') || null;
       e.funder_reference = g('funder_reference');
+      if (e.stage === 'declined') {
+        e.decline_reason = g('decline_reason') || null;
+        e.decline_note = g('decline_note');
+      }
       /* Moving a card to submitted without a date leaves a hole in the log
          that nobody fills in later. Stamp today rather than nag. */
       /* Awarded and declined both imply it was submitted. Without this the log
@@ -3367,6 +3798,12 @@ document.addEventListener('input', (ev) => {
 document.addEventListener('change', (ev) => {
   if (ev.target.id === 'opp-open') { view.filter.open = ev.target.checked; render(); }
   if (ev.target.id === 'opp-free') { view.filter.free = ev.target.checked; render(); }
+  const mapField = ev.target.dataset.pipelineMap;
+  if (mapField && view.pipelineImport) {
+    const idx = ev.target.value === '' ? null : Number(ev.target.value);
+    view.pipelineImport.mapping = { ...view.pipelineImport.mapping, [mapField]: idx };
+    render();
+  }
 });
 
 function pickFile() {
@@ -3387,6 +3824,77 @@ function pickFile() {
     );
   });
   input.click();
+}
+
+/** File picker for the pipeline importer — parses, guesses the mapping, and
+ *  hands the reader a preview instead of importing straight away. */
+function pickPipelineCsvFile() {
+  const input = document.createElement('input');
+  input.type = 'file';
+  input.accept = '.csv,text/csv';
+  input.addEventListener('change', async () => {
+    const f = input.files?.[0];
+    if (!f) return;
+    const rows = parseCsv(await f.text());
+    if (rows.length < 1) { notice('That file has no rows to import.'); return; }
+    go('pipeline-import', {
+      pipelineImport: { step: 'map', rows, header: rows[0], mapping: guessPipelineMapping(rows[0]) },
+    });
+  });
+  input.click();
+}
+
+/**
+ * Column mapping, preview, import — three steps in one view, because the
+ * state (the parsed file, the mapping the reader is adjusting) belongs to
+ * this screen and nowhere else. Loses the file on refresh, which is correct:
+ * an in-progress import surviving a reload as a phantom pending action would
+ * be a stranger bug to explain than "reload and pick the file again".
+ */
+function pipelineImportView() {
+  const state = view.pipelineImport;
+  if (!state?.rows) {
+    return empty('Nothing picked yet.', '', '<button class="btn btn-primary" data-action="open-pipeline-import">Choose a CSV file</button>');
+  }
+  const { header, mapping, rows } = state;
+  const previewRows = rows.slice(1, 6);
+
+  return `
+  <header class="dash__head">
+    <div><button class="dash__back" data-view="pipeline">← Pipeline</button><h1>Import CSV into the pipeline</h1></div>
+  </header>
+  <p class="small dash__muted">${rows.length - 1} row${rows.length - 1 === 1 ? '' : 's'} found. Match each column below, check the preview, then import.
+  A company or grant this workspace does not already have is created from exactly what the file says — nothing is guessed.</p>
+
+  <div class="fieldgrid" style="margin-top:1rem">
+    ${PIPELINE_IMPORT_FIELDS.map(([field, label]) => `
+      <label class="fld"><span>${esc(label)}</span>
+        <select class="field" data-pipeline-map="${field}">
+          <option value="">— not in this file —</option>
+          ${header.map((h, i) => `<option value="${i}"${mapping[field] === i ? ' selected' : ''}>${esc(h || `Column ${i + 1}`)}</option>`).join('')}
+        </select>
+      </label>`).join('')}
+  </div>
+
+  <section class="dash__section">
+    <h2>Preview</h2>
+    <table class="table">
+      <thead><tr>${PIPELINE_IMPORT_FIELDS.map(([, label]) => `<th>${esc(label)}</th>`).join('')}</tr></thead>
+      <tbody>
+        ${previewRows
+          .map(
+            (r) => `<tr>${PIPELINE_IMPORT_FIELDS.map(([field]) => `<td>${esc(mapping[field] != null ? r[mapping[field]] ?? '' : '')}</td>`).join('')}</tr>`,
+          )
+          .join('')}
+      </tbody>
+    </table>
+    ${rows.length - 1 > previewRows.length ? `<p class="tiny dash__muted">…and ${rows.length - 1 - previewRows.length} more row${rows.length - 1 - previewRows.length === 1 ? '' : 's'}.</p>` : ''}
+  </section>
+
+  <div class="row" style="margin-top:1rem">
+    <button class="btn btn-primary" data-action="pipeline-import-confirm">Import ${rows.length - 1} row${rows.length - 1 === 1 ? '' : 's'}</button>
+    <button class="btn btn-ghost" data-action="pipeline-import-cancel">Cancel</button>
+  </div>`;
 }
 
 /* ------------------------------------------------------------------ */
@@ -3553,7 +4061,7 @@ function exportApplications() {
     const c = companyById(e.company_id);
     const pr = ws.projects.find((x) => x.id === e.project_id);
     rows.push([
-      e.reference, c?.legal_name, pr?.name, programmeName(p), p?.funder, e.stage, e.owner,
+      e.reference, c?.legal_name, pr?.name, programmeName(p, e.custom_name || 'Programme'), p?.funder || e.custom_funder, e.stage, e.owner,
       e.requested_eur, e.awarded_eur, e.submitted_at, e.decided_at, e.funder_reference,
       readinessFor(e)?.score, issuesFor(e).length, p?.application_url,
     ]);
@@ -3675,4 +4183,8 @@ window.addEventListener('storage', (e) => {
   render();
 });
 
-export { importCsv, parseCsv, pipelineValue, hitRate, packText, STAGES, STAGE_IDS, PRE_SUBMISSION, OBLIGATION_KINDS, docLabel, programmeName, issuesFor, readinessFor };
+export {
+  importCsv, parseCsv, pipelineValue, hitRate, packText, STAGES, STAGE_IDS, PRE_SUBMISSION, OBLIGATION_KINDS,
+  docLabel, programmeName, issuesFor, readinessFor, DECLINE_REASONS, nextCycleReminder, pipelineForecast,
+  guessPipelineMapping, importPipelineCsv, PIPELINE_IMPORT_FIELDS,
+};

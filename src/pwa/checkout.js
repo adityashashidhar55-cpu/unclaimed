@@ -77,6 +77,10 @@ export function accountState({ entitled, reason, plan, accountType } = {}, tr = 
     admin: 'Operator session — everything is unlocked.',
     granted: 'unlocked for you by Unclaimed Grants. There is nothing to pay and nothing to manage.',
     freeHere: 'Free where you are. Your country regulates this as advice, so we do not charge for it.',
+    /* Filled in by the caller with a real, already-formatted date — this
+       module knows nothing about locales or date formatting, only the
+       account page does. */
+    paused: 'Paused.',
     ...tr,
   };
   /* Plan names are localised too. "Personal, annual" in the middle of a German
@@ -126,6 +130,20 @@ export function accountState({ entitled, reason, plan, accountType } = {}, tr = 
       kind: 'granted',
       line: `${label(plan)} — ${T.granted}`,
       action: 'none',
+      plans,
+    };
+  }
+  if (reason === 'paused') {
+    /* Not entitled while paused — entitlementFor() on the Worker already
+       decided that — but this is not a lapsed subscription either: there is
+       nothing to resubscribe to and no billing portal to send them to for
+       it, only the one button that ends the pause early. `T.paused` is
+       expected to already contain the resume date, formatted by the caller,
+       which is why it is not built here the way every other line is. */
+    return {
+      kind: 'paused',
+      line: `${label(plan)} — ${T.paused}`,
+      action: 'resume',
       plans,
     };
   }
@@ -316,6 +334,65 @@ export async function manageBilling(btn = null) {
       btn.textContent = label;
     }
     return { ok: false };
+  }
+}
+
+/**
+ * Pause instead of cancel. `months` is 1, 2 or 3 — the Worker refuses
+ * anything else, so a bad value here fails loudly server-side rather than
+ * silently rounding.
+ */
+export async function pauseBilling(months, btn = null) {
+  const label = btn?.textContent;
+  if (btn) { btn.disabled = true; btn.textContent = 'Pausing…'; }
+  try {
+    const res = await fetch('/api/billing/pause', {
+      method: 'POST',
+      credentials: 'same-origin',
+      cache: 'no-store',
+      headers: { 'content-type': 'application/json' },
+      body: JSON.stringify({ months }),
+    });
+    const data = await res.json().catch(() => ({}));
+    if (btn) { btn.disabled = false; btn.textContent = label; }
+    if (!res.ok) return { ok: false, error: data.error, message: data.message };
+    return { ok: true, pausedUntil: data.paused_until };
+  } catch {
+    if (btn) { btn.disabled = false; btn.textContent = label; }
+    return { ok: false, error: 'network' };
+  }
+}
+
+/** End a pause early. */
+export async function resumeBilling(btn = null) {
+  const label = btn?.textContent;
+  if (btn) { btn.disabled = true; btn.textContent = 'Resuming…'; }
+  try {
+    const res = await fetch('/api/billing/resume', {
+      method: 'POST',
+      credentials: 'same-origin',
+      cache: 'no-store',
+      headers: { 'content-type': 'application/json' },
+      body: '{}',
+    });
+    const data = await res.json().catch(() => ({}));
+    if (btn) { btn.disabled = false; btn.textContent = label; }
+    if (!res.ok) return { ok: false, error: data.error, message: data.message };
+    return { ok: true };
+  } catch {
+    if (btn) { btn.disabled = false; btn.textContent = label; }
+    return { ok: false, error: 'network' };
+  }
+}
+
+/** What this signed-in person's billing unit has left this month. */
+export async function fetchQuota() {
+  try {
+    const res = await fetch('/api/quota', { credentials: 'same-origin', cache: 'no-store' });
+    if (!res.ok) return null;
+    return await res.json();
+  } catch {
+    return null;
   }
 }
 

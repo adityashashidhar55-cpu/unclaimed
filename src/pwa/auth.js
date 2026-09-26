@@ -127,10 +127,29 @@ export async function verifyCode(email, code, accountType = 'individual') {
   });
   if (status === 429) return { ok: false, error: 'too_many_attempts', message: data.message };
   if (!ok) return { ok: false, error: 'invalid_code', message: 'That code is wrong or has expired.' };
+  /* An account with two-factor on: the email code was right, but no session
+     exists yet. Reporting this as success would send the person onward
+     signed out; the caller asks for the authenticator code and calls
+     finishTotp() with the pending token instead. */
+  if (data.totp_required) return { ok: false, totp_required: true, pending: data.pending };
   /* On device this is the only copy of the session there will ever be — the
      cookie the Worker also set cannot be replayed cross-origin from a
      WKWebView. Store it before returning, or the user is signed in for exactly
      one function call. */
+  if (NATIVE && data.session) writeToken(data.session);
+  return { ok: true, user: data.user };
+}
+
+/**
+ * Second step of sign-in for an account with TOTP enrolled. `value` is either
+ * the six digits from the authenticator app or one of the recovery codes.
+ */
+export async function finishTotp(pending, value) {
+  const v = String(value || '').trim();
+  const body = /^\d{6}$/.test(v.replace(/\s+/g, '')) ? { pending, code: v.replace(/\s+/g, '') } : { pending, recovery_code: v };
+  const { ok, status, data } = await post('/auth/totp', body);
+  if (status === 429) return { ok: false, error: 'too_many_attempts', message: data.message };
+  if (!ok) return { ok: false, error: data.error || 'invalid_code', message: data.message || 'That code is wrong or has expired.' };
   if (NATIVE && data.session) writeToken(data.session);
   return { ok: true, user: data.user };
 }
@@ -172,6 +191,9 @@ export async function me() {
       entitled: !!data.entitlement?.entitled,
       plan: data.entitlement?.plan ?? null,
       reason: data.entitlement?.reason ?? null,
+      /* Only ever set alongside reason === 'paused'. Carried through so the
+         account page can print a date without a second round trip. */
+      pausedUntil: data.entitlement?.paused_until ?? null,
     };
   } catch {
     /* Offline. Assume signed out rather than assume entitled — guessing
