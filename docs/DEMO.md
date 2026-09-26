@@ -93,9 +93,9 @@ Every figure is computed from the dataset at build time — none are typed in.
 
 | | |
 | --- | --- |
-| Benefit programmes | 2,216 across 25 countries |
+| Benefit programmes | 2,217 across 25 countries |
 | Human-verified against the official page | 1,015 (46%) |
-| Company funding programmes | 1,684 across 77 jurisdictions |
+| Company funding programmes | 1,641 across 77 jurisdictions |
 | Languages | 7, full-page, checked by a build test |
 | Pages served | ~5,900 static, at no per-request cost |
 | Runtime dependencies | none |

@@ -116,3 +116,13 @@ Think like a local advisor: include the programmes a resident would actually mis
 social tariffs, transport concessions, tax credits, family allowances, student grants,
 housing aid, energy subsidies, unemployment supports, small-business grants, health
 subsidies. This database is the product; thin or generic data is a failed deliverable.
+
+## Company records (`data/startups/*.json`): `cofunding_pct`
+
+`cofunding_pct` is the **applicant's own share** of the project, in percent —
+not the grant intensity. "Funding rate is 80% of eligible costs" is recorded
+as `20`; "a 20% match is required" as `20`; no own contribution is `0`; unknown
+is `null`. The award rate is therefore `100 - cofunding_pct`. Pages say "You
+must co-fund N%", the co-funding calculator takes `?pct=N` and converts it,
+and `packages/amounts` renders `(100 - N)% of eligible costs`.
+`scripts/test-cofunding-semantics.mjs` checks the data and every reader agree.
