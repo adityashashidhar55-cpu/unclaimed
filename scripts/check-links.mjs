@@ -30,7 +30,7 @@ const htmlFiles = [];
 /* Routes the Worker answers before the static assets are consulted — they are
    real URLs with no file behind them, and wrangler.jsonc's run_worker_first is
    the source of truth. Kept in sync by test, not by memory: see verify.mjs. */
-const WORKER_ROUTES = [/^\/api\//, /^\/auth\//, /^\/webhooks\//];
+const WORKER_ROUTES = [/^\/api\//, /^\/auth\//, /^\/webhooks\//, /^\/mcp$/];
 
 /** Does this href resolve to something on disk? */
 function resolves(href) {

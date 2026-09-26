@@ -1,0 +1,710 @@
+[
+ {
+  "country": "at",
+  "a": "at-aws-preseed-deep-tech",
+  "b": "at-aws-seedfinancing-deep-tech",
+  "reason": "reviewed: distinct programme/track sharing a funder or landing page, not a duplicate"
+ },
+ {
+  "country": "at",
+  "a": "at-ffg-impact-innovation",
+  "b": "at-ffg-impact-innovation-social",
+  "reason": "distinct funding lines of the same FFG call: Social has a higher aid intensity (70% vs 50%) and cap (105k vs 75k) for social-impact projects"
+ },
+ {
+  "country": "ca",
+  "a": "ca-nrc-irap",
+  "b": "ca-nrc-irap-financial-support",
+  "reason": "reviewed: distinct programme/track sharing a funder or landing page, not a duplicate"
+ },
+ {
+  "country": "ch",
+  "a": "ch-innosuisse-core-coaching",
+  "b": "ch-innosuisse-initial-coaching",
+  "reason": "reviewed: distinct programme/track sharing a funder or landing page, not a duplicate"
+ },
+ {
+  "country": "ch",
+  "a": "ch-innosuisse-core-coaching",
+  "b": "ch-innosuisse-scaleup-coaching",
+  "reason": "reviewed: distinct programme/track sharing a funder or landing page, not a duplicate"
+ },
+ {
+  "country": "ch",
+  "a": "ch-innosuisse-initial-coaching",
+  "b": "ch-innosuisse-scaleup-coaching",
+  "reason": "reviewed: distinct programme/track sharing a funder or landing page, not a duplicate"
+ },
+ {
+  "country": "ch",
+  "a": "ch-zg-innovationsfoerderung",
+  "b": "ch-zg-nachhaltigkeitsfoerderung",
+  "reason": "reviewed: distinct programme/track sharing a funder or landing page, not a duplicate"
+ },
+ {
+  "country": "cz",
+  "a": "cz-api-aplikace",
+  "b": "cz-api-oppik-inovace",
+  "reason": "reviewed: distinct programme/track sharing a funder or landing page, not a duplicate"
+ },
+ {
+  "country": "de",
+  "a": "de-bw-innovationsgutschein-bw",
+  "b": "de-bw-innovationsgutschein-hightech",
+  "reason": "distinct voucher tiers with different caps (EUR 7,500 standard vs EUR 20,000 Hightech)"
+ },
+ {
+  "country": "de",
+  "a": "de-bw-innovationsgutschein-bw",
+  "b": "de-bw-innovationsgutschein-start-up",
+  "reason": "distinct voucher tier (Start-up) of the same Baden-Württemberg innovation voucher scheme"
+ },
+ {
+  "country": "de",
+  "a": "de-bw-innovationsgutschein-hightech",
+  "b": "de-bw-innovationsgutschein-start-up",
+  "reason": "distinct voucher tiers of the same Baden-Württemberg innovation voucher scheme"
+ },
+ {
+  "country": "de",
+  "a": "de-exist-forschungstransfer",
+  "b": "de-exist-forschungstransfer-phase-1",
+  "reason": "reviewed: distinct programme/track sharing a funder or landing page, not a duplicate"
+ },
+ {
+  "country": "de",
+  "a": "de-exist-forschungstransfer",
+  "b": "de-exist-forschungstransfer-phase-2",
+  "reason": "reviewed: distinct programme/track sharing a funder or landing page, not a duplicate"
+ },
+ {
+  "country": "de",
+  "a": "de-exist-forschungstransfer-phase-1",
+  "b": "de-exist-forschungstransfer-phase-2",
+  "reason": "reviewed: distinct programme/track sharing a funder or landing page, not a duplicate"
+ },
+ {
+  "country": "de",
+  "a": "de-go-bio-next-phase-1",
+  "b": "de-go-bio-next-phase-2",
+  "reason": "reviewed: distinct programme/track sharing a funder or landing page, not a duplicate"
+ },
+ {
+  "country": "de",
+  "a": "de-he-distral-linie-1",
+  "b": "de-he-distral-linie-3",
+  "reason": "reviewed: distinct programme/track sharing a funder or landing page, not a duplicate"
+ },
+ {
+  "country": "de",
+  "a": "de-invest-erwerbszuschuss",
+  "b": "de-invest-exitzuschuss",
+  "reason": "distinct components of the INVEST scheme: an acquisition grant paid on investment vs an exit grant paid on sale"
+ },
+ {
+  "country": "de",
+  "a": "de-kmu-innovativ-biomedizin",
+  "b": "de-kmu-innovativ-biooekonomie",
+  "reason": "reviewed: distinct programme/track sharing a funder or landing page, not a duplicate"
+ },
+ {
+  "country": "de",
+  "a": "de-kmu-innovativ-biomedizin",
+  "b": "de-kmu-innovativ-ikt",
+  "reason": "reviewed: distinct programme/track sharing a funder or landing page, not a duplicate"
+ },
+ {
+  "country": "de",
+  "a": "de-kmu-innovativ-biomedizin",
+  "b": "de-kmu-innovativ-materialforschung",
+  "reason": "reviewed: distinct programme/track sharing a funder or landing page, not a duplicate"
+ },
+ {
+  "country": "de",
+  "a": "de-kmu-innovativ-biomedizin",
+  "b": "de-kmu-innovativ-medizintechnik",
+  "reason": "reviewed: distinct programme/track sharing a funder or landing page, not a duplicate"
+ },
+ {
+  "country": "de",
+  "a": "de-kmu-innovativ-biomedizin",
+  "b": "de-kmu-innovativ-photonik-quantentechnologien",
+  "reason": "reviewed: distinct programme/track sharing a funder or landing page, not a duplicate"
+ },
+ {
+  "country": "de",
+  "a": "de-kmu-innovativ-biomedizin",
+  "b": "de-kmu-innovativ-ressourcen-kreislaufwirtschaft",
+  "reason": "reviewed: distinct programme/track sharing a funder or landing page, not a duplicate"
+ },
+ {
+  "country": "de",
+  "a": "de-kmu-innovativ-biomedizin",
+  "b": "de-kmu-innovativ-zukunft-der-wertschoepfung",
+  "reason": "reviewed: distinct programme/track sharing a funder or landing page, not a duplicate"
+ },
+ {
+  "country": "de",
+  "a": "de-kmu-innovativ-biooekonomie",
+  "b": "de-kmu-innovativ-ikt",
+  "reason": "reviewed: distinct programme/track sharing a funder or landing page, not a duplicate"
+ },
+ {
+  "country": "de",
+  "a": "de-kmu-innovativ-biooekonomie",
+  "b": "de-kmu-innovativ-materialforschung",
+  "reason": "reviewed: distinct programme/track sharing a funder or landing page, not a duplicate"
+ },
+ {
+  "country": "de",
+  "a": "de-kmu-innovativ-biooekonomie",
+  "b": "de-kmu-innovativ-medizintechnik",
+  "reason": "reviewed: distinct programme/track sharing a funder or landing page, not a duplicate"
+ },
+ {
+  "country": "de",
+  "a": "de-kmu-innovativ-biooekonomie",
+  "b": "de-kmu-innovativ-photonik-quantentechnologien",
+  "reason": "reviewed: distinct programme/track sharing a funder or landing page, not a duplicate"
+ },
+ {
+  "country": "de",
+  "a": "de-kmu-innovativ-biooekonomie",
+  "b": "de-kmu-innovativ-ressourcen-kreislaufwirtschaft",
+  "reason": "reviewed: distinct programme/track sharing a funder or landing page, not a duplicate"
+ },
+ {
+  "country": "de",
+  "a": "de-kmu-innovativ-biooekonomie",
+  "b": "de-kmu-innovativ-zukunft-der-wertschoepfung",
+  "reason": "reviewed: distinct programme/track sharing a funder or landing page, not a duplicate"
+ },
+ {
+  "country": "de",
+  "a": "de-kmu-innovativ-ikt",
+  "b": "de-kmu-innovativ-interaktive-technologien-gesundheit",
+  "reason": "reviewed: distinct programme/track sharing a funder or landing page, not a duplicate"
+ },
+ {
+  "country": "de",
+  "a": "de-kmu-innovativ-ikt",
+  "b": "de-kmu-innovativ-photonik-quantentechnologien",
+  "reason": "reviewed: distinct programme/track sharing a funder or landing page, not a duplicate"
+ },
+ {
+  "country": "de",
+  "a": "de-kmu-innovativ-interaktive-technologien-gesundheit",
+  "b": "de-kmu-innovativ-photonik-quantentechnologien",
+  "reason": "reviewed: distinct programme/track sharing a funder or landing page, not a duplicate"
+ },
+ {
+  "country": "de",
+  "a": "de-kmu-innovativ-materialforschung",
+  "b": "de-kmu-innovativ-medizintechnik",
+  "reason": "reviewed: distinct programme/track sharing a funder or landing page, not a duplicate"
+ },
+ {
+  "country": "de",
+  "a": "de-rp-innovationsassistent",
+  "b": "de-rp-startup-innovativ",
+  "reason": "reviewed: distinct programme/track sharing a funder or landing page, not a duplicate"
+ },
+ {
+  "country": "de",
+  "a": "de-wipano-normung-transfer",
+  "b": "de-wipano-normung-unternehmen",
+  "reason": "reviewed: distinct programme/track sharing a funder or landing page, not a duplicate"
+ },
+ {
+  "country": "de",
+  "a": "de-wipano-normung-unternehmen",
+  "b": "de-wipano-patente-unternehmen",
+  "reason": "reviewed: distinct programme/track sharing a funder or landing page, not a duplicate"
+ },
+ {
+  "country": "de",
+  "a": "de-zim-einzelprojekt",
+  "b": "de-zim-internationale-kooperation",
+  "reason": "reviewed: distinct programme/track sharing a funder or landing page, not a duplicate"
+ },
+ {
+  "country": "de",
+  "a": "de-zim-einzelprojekt",
+  "b": "de-zim-kooperationsprojekt",
+  "reason": "reviewed: distinct programme/track sharing a funder or landing page, not a duplicate"
+ },
+ {
+  "country": "es",
+  "a": "es-enisa-emprendedoras-digitales",
+  "b": "es-enisa-jovenes-emprendedores",
+  "reason": "reviewed: distinct programme/track sharing a funder or landing page, not a duplicate"
+ },
+ {
+  "country": "eu",
+  "a": "eic-step-scale-up",
+  "b": "eic-step-scale-up-defence",
+  "reason": "STEP Scale Up and STEP Scale Up Defence are genuinely separate tracks (civil vs defence technologies)"
+ },
+ {
+  "country": "eu",
+  "a": "eu-creative-europe-media-slate-development",
+  "b": "eu-creative-europe-media-video-games",
+  "reason": "reviewed: distinct programme/track sharing a funder or landing page, not a duplicate"
+ },
+ {
+  "country": "eu",
+  "a": "eu-eie-connect",
+  "b": "eu-eie-scaleup",
+  "reason": "distinct Horizon Europe European Innovation Ecosystems strands (CONNECT vs SCALEUP)"
+ },
+ {
+  "country": "eu",
+  "a": "eu-eie-scaleup",
+  "b": "european-innovation-ecosystems-connect",
+  "reason": "distinct EIE strand pages (SCALEUP vs CONNECT/INNOVSMES)"
+ },
+ {
+  "country": "eu",
+  "a": "eu-euipo-sme-fund-cigi",
+  "b": "eu-euipo-sme-fund-voucher1-ipscan",
+  "reason": "reviewed: distinct programme/track sharing a funder or landing page, not a duplicate"
+ },
+ {
+  "country": "eu",
+  "a": "eu-euipo-sme-fund-cigi",
+  "b": "eu-euipo-sme-fund-voucher2-tm-design",
+  "reason": "reviewed: distinct programme/track sharing a funder or landing page, not a duplicate"
+ },
+ {
+  "country": "eu",
+  "a": "eu-euipo-sme-fund-cigi",
+  "b": "eu-euipo-sme-fund-voucher3-patents",
+  "reason": "reviewed: distinct programme/track sharing a funder or landing page, not a duplicate"
+ },
+ {
+  "country": "eu",
+  "a": "eu-euipo-sme-fund-cigi",
+  "b": "eu-euipo-sme-fund-voucher4-plant",
+  "reason": "reviewed: distinct programme/track sharing a funder or landing page, not a duplicate"
+ },
+ {
+  "country": "eu",
+  "a": "eu-euipo-sme-fund-voucher1-ipscan",
+  "b": "eu-euipo-sme-fund-voucher2-tm-design",
+  "reason": "reviewed: distinct programme/track sharing a funder or landing page, not a duplicate"
+ },
+ {
+  "country": "eu",
+  "a": "eu-euipo-sme-fund-voucher1-ipscan",
+  "b": "eu-euipo-sme-fund-voucher3-patents",
+  "reason": "reviewed: distinct programme/track sharing a funder or landing page, not a duplicate"
+ },
+ {
+  "country": "eu",
+  "a": "eu-euipo-sme-fund-voucher1-ipscan",
+  "b": "eu-euipo-sme-fund-voucher4-plant",
+  "reason": "reviewed: distinct programme/track sharing a funder or landing page, not a duplicate"
+ },
+ {
+  "country": "eu",
+  "a": "eu-euipo-sme-fund-voucher2-tm-design",
+  "b": "eu-euipo-sme-fund-voucher3-patents",
+  "reason": "reviewed: distinct programme/track sharing a funder or landing page, not a duplicate"
+ },
+ {
+  "country": "eu",
+  "a": "eu-euipo-sme-fund-voucher3-patents",
+  "b": "eu-euipo-sme-fund-voucher4-plant",
+  "reason": "reviewed: distinct programme/track sharing a funder or landing page, not a duplicate"
+ },
+ {
+  "country": "eu",
+  "a": "eu-horizon-cluster6-food-bioeconomy",
+  "b": "horizon-europe-collaborative-calls",
+  "reason": "reviewed: distinct programme/track sharing a funder or landing page, not a duplicate"
+ },
+ {
+  "country": "eu",
+  "a": "eu-innovation-fund-battery-call",
+  "b": "eu-innovation-fund-nzt-call",
+  "reason": "reviewed: distinct programme/track sharing a funder or landing page, not a duplicate"
+ },
+ {
+  "country": "eu",
+  "a": "eu-innovation-fund-heat-auction",
+  "b": "eu-innovation-fund-hydrogen-auction",
+  "reason": "reviewed: distinct programme/track sharing a funder or landing page, not a duplicate"
+ },
+ {
+  "country": "eu",
+  "a": "eu-mission-cancer",
+  "b": "eu-mission-climate-adaptation",
+  "reason": "reviewed: distinct programme/track sharing a funder or landing page, not a duplicate"
+ },
+ {
+  "country": "eu",
+  "a": "eu-mission-cancer",
+  "b": "eu-mission-soil",
+  "reason": "reviewed: distinct programme/track sharing a funder or landing page, not a duplicate"
+ },
+ {
+  "country": "eu",
+  "a": "eu-mission-cities",
+  "b": "eu-mission-climate-adaptation",
+  "reason": "reviewed: distinct programme/track sharing a funder or landing page, not a duplicate"
+ },
+ {
+  "country": "fr",
+  "a": "fr-bft-agri",
+  "b": "fr-bft-culture",
+  "reason": "reviewed: distinct programme/track sharing a funder or landing page, not a duplicate"
+ },
+ {
+  "country": "fr",
+  "a": "fr-bft-agri",
+  "b": "fr-bft-deeptech",
+  "reason": "reviewed: distinct programme/track sharing a funder or landing page, not a duplicate"
+ },
+ {
+  "country": "fr",
+  "a": "fr-bft-agri",
+  "b": "fr-bft-green",
+  "reason": "reviewed: distinct programme/track sharing a funder or landing page, not a duplicate"
+ },
+ {
+  "country": "fr",
+  "a": "fr-bft-agri",
+  "b": "fr-bft-lab",
+  "reason": "reviewed: distinct programme/track sharing a funder or landing page, not a duplicate"
+ },
+ {
+  "country": "fr",
+  "a": "fr-bft-agri",
+  "b": "fr-bourse-french-tech-emergence",
+  "reason": "reviewed: distinct programme/track sharing a funder or landing page, not a duplicate"
+ },
+ {
+  "country": "fr",
+  "a": "fr-bft-culture",
+  "b": "fr-bft-deeptech",
+  "reason": "reviewed: distinct programme/track sharing a funder or landing page, not a duplicate"
+ },
+ {
+  "country": "fr",
+  "a": "fr-bft-culture",
+  "b": "fr-bft-green",
+  "reason": "reviewed: distinct programme/track sharing a funder or landing page, not a duplicate"
+ },
+ {
+  "country": "fr",
+  "a": "fr-bft-culture",
+  "b": "fr-bft-lab",
+  "reason": "reviewed: distinct programme/track sharing a funder or landing page, not a duplicate"
+ },
+ {
+  "country": "fr",
+  "a": "fr-bft-culture",
+  "b": "fr-bourse-french-tech-emergence",
+  "reason": "reviewed: distinct programme/track sharing a funder or landing page, not a duplicate"
+ },
+ {
+  "country": "fr",
+  "a": "fr-bft-deeptech",
+  "b": "fr-bft-green",
+  "reason": "reviewed: distinct programme/track sharing a funder or landing page, not a duplicate"
+ },
+ {
+  "country": "fr",
+  "a": "fr-bft-deeptech",
+  "b": "fr-bft-lab",
+  "reason": "reviewed: distinct programme/track sharing a funder or landing page, not a duplicate"
+ },
+ {
+  "country": "fr",
+  "a": "fr-bft-deeptech",
+  "b": "fr-bourse-french-tech-emergence",
+  "reason": "reviewed: distinct programme/track sharing a funder or landing page, not a duplicate"
+ },
+ {
+  "country": "fr",
+  "a": "fr-bft-green",
+  "b": "fr-bft-lab",
+  "reason": "reviewed: distinct programme/track sharing a funder or landing page, not a duplicate"
+ },
+ {
+  "country": "fr",
+  "a": "fr-bft-green",
+  "b": "fr-bourse-french-tech-emergence",
+  "reason": "reviewed: distinct programme/track sharing a funder or landing page, not a duplicate"
+ },
+ {
+  "country": "fr",
+  "a": "fr-bft-lab",
+  "b": "fr-bourse-french-tech-emergence",
+  "reason": "reviewed: distinct programme/track sharing a funder or landing page, not a duplicate"
+ },
+ {
+  "country": "fr",
+  "a": "fr-cnc-credit-impot-jeu-video",
+  "b": "fr-cnc-fonds-aide-jeu-video",
+  "reason": "reviewed: distinct programme/track sharing a funder or landing page, not a duplicate"
+ },
+ {
+  "country": "fr",
+  "a": "fr-cvl-cap-developpement",
+  "b": "fr-cvl-cap-innovation",
+  "reason": "reviewed: distinct programme/track sharing a funder or landing page, not a duplicate"
+ },
+ {
+  "country": "fr",
+  "a": "fr-idf-innovup",
+  "b": "fr-idf-innovup-experimentation",
+  "reason": "reviewed: distinct programme/track sharing a funder or landing page, not a duplicate"
+ },
+ {
+  "country": "fr",
+  "a": "fr-idf-innovup",
+  "b": "fr-idf-innovup-faisabilite",
+  "reason": "reviewed: distinct programme/track sharing a funder or landing page, not a duplicate"
+ },
+ {
+  "country": "fr",
+  "a": "fr-idf-innovup-experimentation",
+  "b": "fr-idf-innovup-faisabilite",
+  "reason": "reviewed: distinct programme/track sharing a funder or landing page, not a duplicate"
+ },
+ {
+  "country": "fr",
+  "a": "fr-pret-amorcage-invest-eu",
+  "b": "fr-pret-amorcage-investissement-invest-eu",
+  "reason": "reviewed: distinct programme/track sharing a funder or landing page, not a duplicate"
+ },
+ {
+  "country": "gb",
+  "a": "gb-iuk-quantum-computing-applications",
+  "b": "gb-iuk-quantum-computing-hardware-scaling",
+  "reason": "reviewed: distinct programme/track sharing a funder or landing page, not a duplicate"
+ },
+ {
+  "country": "ie",
+  "a": "ie-ei-agile-innovation",
+  "b": "ie-ei-innovation-partnership",
+  "reason": "reviewed: distinct programme/track sharing a funder or landing page, not a duplicate"
+ },
+ {
+  "country": "ie",
+  "a": "ie-ei-innovation-voucher",
+  "b": "ie-innovation-voucher",
+  "reason": "reviewed: distinct programme/track sharing a funder or landing page, not a duplicate"
+ },
+ {
+  "country": "ie",
+  "a": "ie-ei-pre-seed-start-fund",
+  "b": "ie-pre-seed-start-fund",
+  "reason": "reviewed: distinct programme/track sharing a funder or landing page, not a duplicate"
+ },
+ {
+  "country": "ie",
+  "a": "ie-leo-business-expansion-grant",
+  "b": "ie-leo-feasibility-grant",
+  "reason": "reviewed: distinct programme/track sharing a funder or landing page, not a duplicate"
+ },
+ {
+  "country": "ie",
+  "a": "ie-leo-business-expansion-grant",
+  "b": "ie-leo-priming-grant",
+  "reason": "reviewed: distinct programme/track sharing a funder or landing page, not a duplicate"
+ },
+ {
+  "country": "ie",
+  "a": "ie-leo-feasibility-grant",
+  "b": "ie-leo-priming-grant",
+  "reason": "reviewed: distinct programme/track sharing a funder or landing page, not a duplicate"
+ },
+ {
+  "country": "ie",
+  "a": "ie-rd-tax-credit",
+  "b": "ie-revenue-rd-tax-credit",
+  "reason": "reviewed: distinct programme/track sharing a funder or landing page, not a duplicate"
+ },
+ {
+  "country": "il",
+  "a": "il-iia-innovation-labs",
+  "b": "il-iia-mofet-manufacturing-accelerators",
+  "reason": "reviewed: distinct programme/track sharing a funder or landing page, not a duplicate"
+ },
+ {
+  "country": "il",
+  "a": "il-iia-innovation-labs",
+  "b": "il-iia-rd-fund",
+  "reason": "reviewed: distinct programme/track sharing a funder or landing page, not a duplicate"
+ },
+ {
+  "country": "il",
+  "a": "il-iia-innovation-labs",
+  "b": "il-iia-startup-fund-early-stage",
+  "reason": "reviewed: distinct programme/track sharing a funder or landing page, not a duplicate"
+ },
+ {
+  "country": "il",
+  "a": "il-iia-mofet-manufacturing-accelerators",
+  "b": "il-iia-rd-fund",
+  "reason": "reviewed: distinct programme/track sharing a funder or landing page, not a duplicate"
+ },
+ {
+  "country": "in",
+  "a": "in-kl-scaleup-seed-fund",
+  "b": "in-kl-seed-fund",
+  "reason": "Scaleup Seed Fund is a distinct, larger follow-on facility from the base Seed Fund"
+ },
+ {
+  "country": "in",
+  "a": "in-rj-istart-seed-funding",
+  "b": "in-rj-istart-sustenance",
+  "reason": "reviewed: distinct programme/track sharing a funder or landing page, not a duplicate"
+ },
+ {
+  "country": "is",
+  "a": "is-tths-einkaleyfastyrkur",
+  "b": "is-tths-frae",
+  "reason": "reviewed: distinct programme/track sharing a funder or landing page, not a duplicate"
+ },
+ {
+  "country": "is",
+  "a": "is-tths-einkaleyfastyrkur",
+  "b": "is-tths-markadsstyrkur",
+  "reason": "reviewed: distinct programme/track sharing a funder or landing page, not a duplicate"
+ },
+ {
+  "country": "is",
+  "a": "is-tths-einkaleyfastyrkur",
+  "b": "is-tths-sproti",
+  "reason": "reviewed: distinct programme/track sharing a funder or landing page, not a duplicate"
+ },
+ {
+  "country": "is",
+  "a": "is-tths-einkaleyfastyrkur",
+  "b": "is-tths-voxtur",
+  "reason": "reviewed: distinct programme/track sharing a funder or landing page, not a duplicate"
+ },
+ {
+  "country": "is",
+  "a": "is-tths-frae",
+  "b": "is-tths-markadsstyrkur",
+  "reason": "reviewed: distinct programme/track sharing a funder or landing page, not a duplicate"
+ },
+ {
+  "country": "is",
+  "a": "is-tths-frae",
+  "b": "is-tths-sproti",
+  "reason": "reviewed: distinct programme/track sharing a funder or landing page, not a duplicate"
+ },
+ {
+  "country": "is",
+  "a": "is-tths-frae",
+  "b": "is-tths-voxtur",
+  "reason": "reviewed: distinct programme/track sharing a funder or landing page, not a duplicate"
+ },
+ {
+  "country": "is",
+  "a": "is-tths-markadsstyrkur",
+  "b": "is-tths-sproti",
+  "reason": "reviewed: distinct programme/track sharing a funder or landing page, not a duplicate"
+ },
+ {
+  "country": "is",
+  "a": "is-tths-markadsstyrkur",
+  "b": "is-tths-voxtur",
+  "reason": "reviewed: distinct programme/track sharing a funder or landing page, not a duplicate"
+ },
+ {
+  "country": "is",
+  "a": "is-tths-sproti",
+  "b": "is-tths-voxtur",
+  "reason": "reviewed: distinct programme/track sharing a funder or landing page, not a duplicate"
+ },
+ {
+  "country": "ma",
+  "a": "ma-innov-idea",
+  "b": "ma-innov-start",
+  "reason": "reviewed: distinct programme/track sharing a funder or landing page, not a duplicate"
+ },
+ {
+  "country": "nl",
+  "a": "nl-mit-rd-samenwerking",
+  "b": "nl-mit-rd-samenwerking-ai",
+  "reason": "reviewed: distinct programme/track sharing a funder or landing page, not a duplicate"
+ },
+ {
+  "country": "nz",
+  "a": "nz-arohia-evidence-grant",
+  "b": "nz-arohia-trailblazer-grant",
+  "reason": "reviewed: distinct programme/track sharing a funder or landing page, not a duplicate"
+ },
+ {
+  "country": "se",
+  "a": "se-almi-innovationslan",
+  "b": "se-almi-mikrolan",
+  "reason": "reviewed: distinct programme/track sharing a funder or landing page, not a duplicate"
+ },
+ {
+  "country": "us",
+  "a": "us-dow-sbir-sttr",
+  "b": "us-sbir-dow",
+  "reason": "reviewed: distinct programme/track sharing a funder or landing page, not a duplicate"
+ },
+ {
+  "country": "us",
+  "a": "us-dow-sbir-sttr",
+  "b": "us-sttr-dow",
+  "reason": "reviewed: distinct programme/track sharing a funder or landing page, not a duplicate"
+ },
+ {
+  "country": "us",
+  "a": "us-mbda-business-center",
+  "b": "us-mbda-rural-business-center",
+  "reason": "reviewed: distinct programme/track sharing a funder or landing page, not a duplicate"
+ },
+ {
+  "country": "us",
+  "a": "us-oh-tvsf-phase1",
+  "b": "us-oh-tvsf-phase2",
+  "reason": "genuinely separate phases of the Ohio TVSF programme, each its own award"
+ },
+ {
+  "country": "us",
+  "a": "us-sba-7a-loan",
+  "b": "us-sba-export-express",
+  "reason": "reviewed: distinct programme/track sharing a funder or landing page, not a duplicate"
+ },
+ {
+  "country": "us",
+  "a": "us-sba-ca-sblc",
+  "b": "us-sba-community-advantage-sblc",
+  "reason": "reviewed: distinct programme/track sharing a funder or landing page, not a duplicate"
+ },
+ {
+  "country": "us",
+  "a": "us-usda-rbdg",
+  "b": "us-usda-rural-business-development-grants",
+  "reason": "reviewed: distinct programme/track sharing a funder or landing page, not a duplicate"
+ },
+ {
+  "country": "us",
+  "a": "us-usda-reap",
+  "b": "us-usda-reap-renewable-energy",
+  "reason": "reviewed: distinct programme/track sharing a funder or landing page, not a duplicate"
+ },
+ {
+  "country": "us",
+  "a": "us-usda-value-added-producer-grants",
+  "b": "us-usda-vapg",
+  "reason": "reviewed: distinct programme/track sharing a funder or landing page, not a duplicate"
+ },
+ {
+  "country": "eu",
+  "a": "eic-pathfinder-challenges",
+  "b": "eu-eic-pathfinder",
+  "reason": "reviewed: Pathfinder Challenges is a separate thematic call from the general (Open) Pathfinder record; both cite the same EIC Pathfinder page"
+ }
+]

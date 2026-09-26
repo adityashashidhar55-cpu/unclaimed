@@ -51,8 +51,10 @@ globalThis.fetch = async () => ({ ok: false, json: async () => ({}) });
    ../engine/ specifiers point at nothing — they resolve only once the build
    has written the copies alongside it. Testing the emitted artefact also
    means these assertions cover what actually ships. */
-const { parseCsv, importCsv, pipelineValue, hitRate, STAGES, OBLIGATION_KINDS, programmeName } =
-  await import('../dist/dashboard/dashboard.js');
+const {
+  parseCsv, importCsv, pipelineValue, hitRate, STAGES, OBLIGATION_KINDS, programmeName,
+  DECLINE_REASONS, nextCycleReminder, pipelineForecast, guessPipelineMapping, importPipelineCsv,
+} = await import('../dist/dashboard/dashboard.js');
 
 /* -- CSV parsing -------------------------------------------------------- */
 
@@ -110,6 +112,64 @@ test('a header-only file adds nothing', () => {
   assert.strictEqual(importCsv('name,country').added, 0);
 });
 
+/* -- CSV import into the pipeline ---------------------------------------- */
+
+test('the mapping guesser reads common header spellings', () => {
+  const m = guessPipelineMapping(['Company', 'Grant', 'Stage', 'Value (EUR)', 'Owner', 'Due date', 'Notes']);
+  assert.strictEqual(m.company, 0);
+  assert.strictEqual(m.programme, 1);
+  assert.strictEqual(m.stage, 2);
+});
+
+test('an imported record with no matching programme is kept as typed text, never invented', () => {
+  localStorage._v = {};
+  const rows = parseCsv('company,programme,stage,value_eur,owner,due,notes\nNorthwind Bio Test,Made-Up Regional Grant,drafting,50000,Jamie,2027-01-15,call the funder back');
+  const mapping = guessPipelineMapping(rows[0]);
+  const res = importPipelineCsv(rows, mapping, { dedupe: true });
+  assert.strictEqual(res.added, 1);
+  assert.strictEqual(res.skipped, 0);
+
+  const ws = JSON.parse(localStorage.getItem('unclaimed.workspace.v1'));
+  const company = ws.companies.find((c) => c.legal_name === 'Northwind Bio Test');
+  assert.ok(company, 'the company is created from what the row said');
+  const entry = ws.pipeline.find((e) => e.company_id === company.id);
+  assert.strictEqual(entry.slug, null, 'no programme this dataset does not have is invented a slug');
+  assert.strictEqual(entry.custom_name, 'Made-Up Regional Grant');
+  assert.strictEqual(entry.stage, 'drafting');
+  assert.strictEqual(entry.value_eur, 50000);
+  assert.strictEqual(entry.owner, 'Jamie');
+  assert.strictEqual(entry.due, '2027-01-15');
+});
+
+test('a row with no company name is skipped and counted, not guessed at', () => {
+  localStorage._v = {};
+  const rows = parseCsv('company,programme\n,Ghost Grant\nHalden Robotics Test,Real Enough Grant');
+  const mapping = guessPipelineMapping(rows[0]);
+  const res = importPipelineCsv(rows, mapping);
+  assert.strictEqual(res.added, 1);
+  assert.strictEqual(res.skipped, 1);
+});
+
+test('the same company + programme pasted twice is deduped, not doubled', () => {
+  localStorage._v = {};
+  const rows = parseCsv('company,programme\nKestrel Energy Test,Repeat Grant\nKestrel Energy Test,Repeat Grant');
+  const mapping = guessPipelineMapping(rows[0]);
+  const res = importPipelineCsv(rows, mapping, { dedupe: true });
+  assert.strictEqual(res.added, 1);
+  assert.strictEqual(res.duplicates, 1);
+});
+
+test('an unknown stage falls back to watching rather than a made-up stage', () => {
+  localStorage._v = {};
+  const rows = parseCsv('company,programme,stage\nFallback Stage Co,Some Grant,Won');
+  const mapping = guessPipelineMapping(rows[0]);
+  importPipelineCsv(rows, mapping);
+  const ws = JSON.parse(localStorage.getItem('unclaimed.workspace.v1'));
+  const company = ws.companies.find((c) => c.legal_name === 'Fallback Stage Co');
+  const entry = ws.pipeline.find((e) => e.company_id === company.id);
+  assert.strictEqual(entry.stage, 'watch');
+});
+
 /* -- Money -------------------------------------------------------------- */
 
 test('pipeline value counts only what has an amount, and says how many it skipped', () => {
@@ -141,6 +201,55 @@ test('hit rate ignores undecided applications', () => {
 test('hit rate is null, not zero, before anything is decided', () => {
   /* 0% and "no data yet" mean opposite things to whoever reads the board pack. */
   assert.strictEqual(hitRate([{ stage: 'submitted' }]).pct, null);
+});
+
+/* -- Decline reasons ------------------------------------------------------ */
+
+test('other is always an escape hatch in the decline reasons', () => {
+  const ids = DECLINE_REASONS.map(([id]) => id);
+  for (const id of ['not_eligible', 'budget_exhausted', 'not_competitive', 'other']) assert.ok(ids.includes(id), `missing ${id}`);
+});
+
+/* -- Remind me next cycle ------------------------------------------------ */
+
+test('a funder-published reopening date is stated as a fact, not a projection', () => {
+  const r = nextCycleReminder({ opens_at: '2027-03-03T00:00:00Z' }, Date.UTC(2026, 8, 25));
+  assert.strictEqual(r.basis, 'published');
+  assert.ok(/^Next window: 3 March 2027$/.test(r.label), r.label);
+  assert.ok(!/projected/.test(r.label));
+});
+
+test('a call with typical months but no published date is labelled a projection', () => {
+  const r = nextCycleReminder({ typical_months: [3] }, Date.UTC(2026, 8, 25));
+  assert.strictEqual(r.basis, 'pattern');
+  assert.ok(/^Next window: ~March 2027 \(projected\)$/.test(r.label), r.label);
+});
+
+test('nothing published or observed says so plainly rather than inventing a date', () => {
+  const r = nextCycleReminder({}, Date.UTC(2026, 8, 25));
+  assert.strictEqual(r.at, null);
+  assert.strictEqual(r.basis, 'unknown');
+  assert.ok(r.label.length > 0);
+});
+
+/* -- Funding forecast ----------------------------------------------------- */
+
+test('an entry with no matching programme contributes nothing and is counted, not silently zeroed', () => {
+  const f = pipelineForecast([{ stage: 'drafting', slug: null, value_eur: 20000 }]);
+  assert.strictEqual(f.total_eur, 0);
+  assert.strictEqual(f.estimated, 0);
+  assert.strictEqual(f.unestimated, 1);
+  assert.strictEqual(f.by_stage[0].stage, 'drafting');
+  assert.strictEqual(f.by_stage[0].unestimated, 1);
+});
+
+test('the forecast groups by stage', () => {
+  const f = pipelineForecast([
+    { stage: 'drafting', slug: null, value_eur: null },
+    { stage: 'submitted', slug: null, value_eur: null },
+  ]);
+  const stages = f.by_stage.map((r) => r.stage).sort();
+  assert.deepStrictEqual(stages, ['drafting', 'submitted']);
 });
 
 /* -- Stages ------------------------------------------------------------- */

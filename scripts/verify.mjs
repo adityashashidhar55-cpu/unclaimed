@@ -170,7 +170,7 @@ noSource === 0 ? ok('every record has an http(s) source_url') : fail(`${noSource
 
 /* --- Startup grants ------------------------------------------------ */
 const sMan = JSON.parse(fs.readFileSync(path.join(DIST, 'api/v1/startups/index.json'), 'utf8'));
-sMan.total === 1684 && sMan.countries.length >= 25 ? ok('startup pool index is published') : fail('startup pool index is published');
+sMan.total === 1641 && sMan.countries.length >= 25 ? ok('startup pool index is published') : fail('startup pool index is published');
 sMan.countries.every((c) => fs.existsSync(path.join(DIST, `api/v1/startups/${c.slug}.json`)))
   ? ok('every startup pool has a JSON asset')
   : fail('a startup pool JSON asset is missing');

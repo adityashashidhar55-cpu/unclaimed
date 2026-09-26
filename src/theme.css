@@ -287,6 +287,13 @@ a:hover { opacity: .72; }
 main > * > *:last-child,
 main > * > *:last-child > *:last-child,
 main > * > *:last-child > *:last-child > *:last-child { margin-bottom: 0; }
+/* The deadline-alerts slot (src/pages/alerts.mjs) stays hidden unless the
+   Worker says alerts are configured. While hidden it is still the section's
+   last child, so the block the reader actually sees last would miss the rule
+   above and leave its bottom margin hanging over the footer. */
+.alerts-slot { margin-top: 2rem; }
+main > * > *:has(+ .alerts-slot[hidden]:last-child),
+main > * > *:has(+ .alerts-slot[hidden]:last-child) > *:last-child { margin-bottom: 0; }
 
 .section-rule { border-top: 1px solid var(--line); }
 
@@ -507,6 +514,32 @@ a.list-row:hover { background: #fff; padding-left: .7rem; }
 /* A menu item is a label, not a sentence: it wraps as a whole or not at all. */
 .nav--links a { color: var(--ink-3); white-space: nowrap; }
 .nav--links a:hover { color: var(--ink); opacity: 1; }
+
+/* Site-wide search box, in every masthead — an icon pill that expands to a
+   readable field only on focus (:focus-within, no script), so the header's
+   resting width barely changes: the row already carries a wordmark, six
+   links, a language menu, an account chip and a CTA at --shell, and an
+   always-open ~11rem field here is what wrapped "Check what you're owed"
+   onto two lines at 1536px and overlapped the sign-in link with the home
+   page's audience switch at 1280px (scripts/qa-screens.mjs). */
+.header-search {
+  position: relative; display: flex; align-items: center; flex: 0 0 auto;
+  width: 2.3rem; margin: 0; border-radius: 9999px;
+  background: rgba(255,255,255,.55); border: 1px solid var(--line);
+  transition: width .18s ease;
+}
+.header-search:focus-within { width: 11rem; }
+.header-search__icon {
+  position: absolute; left: .6rem; top: 50%; transform: translateY(-50%);
+  color: var(--ink-3); display: flex; pointer-events: none;
+}
+.header-search__input {
+  width: 100%; min-width: 0; font: inherit; font-size: .85rem; color: var(--ink);
+  background: none; border: 0; border-radius: inherit; padding: .4rem .7rem .4rem 1.9rem;
+}
+.header-search__input::placeholder { color: var(--ink-3); }
+.header-search:focus-within { outline: 2px solid var(--teal); outline-offset: 1px; }
+@media (max-width: 620px) { .header-search { display: none; } }
 
 /* The account chip. Deliberately the one thing in the masthead with a border:
    "what am I paying for, and how do I change it" is the question a paywalled
@@ -1279,6 +1312,17 @@ div.q { margin-bottom: 2.4rem; }
 /* The first row says the word out loud, once, so the pattern is taught
    rather than guessed at. */
 .locked__row:first-child { position: relative; }
+/* A withheld row that DOES carry a name: the free-tier conversion feature
+   keeps the programme's name, funder and public-page link on every locked
+   row now (only the application link, documents, procedure and source quote
+   are sold) — so the CSS-drawn "shape of the record" bar and dots are
+   switched off in favour of the real link, reusing .list-row__name and
+   .lock-chip exactly as the static list rows do (src/ui.mjs's listRow()).
+   One voice for "this is withheld", named or not. */
+.locked__row--named { text-decoration: none; }
+.locked__row--named::before, .locked__row--named::after { content: none; }
+.locked__row--named .list-row__name { font-size: 1rem; }
+.locked__row--named:hover { background: rgba(18,48,58,.09); }
 .locked__row__lock {
   position: absolute; left: 1rem; top: -.62rem;
   display: inline-flex; align-items: center; gap: .3rem;

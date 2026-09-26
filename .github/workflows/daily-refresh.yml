@@ -1,0 +1,35 @@
+name: Daily refresh
+
+# Programme status is derived from dates (packages/deadlines effectiveStatus),
+# but only when the site is built. Cloudflare Workers Builds rebuilds on every
+# push to main, so a daily stamp commit is what keeps "Open now", countdowns
+# and the homepage counts true without anyone touching the data.
+on:
+  schedule:
+    - cron: '17 1 * * *'   # 06:47 IST, before Europe's working day
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  stamp:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
+        with:
+          node-version: '22'
+      # Refuse to publish a build that would fail: verify before stamping.
+      - name: Build and verify
+        run: |
+          SITE_BASE= SITE_ORIGIN=https://unclaimedgrant.com node src/build.mjs
+          node scripts/verify.mjs
+      - name: Stamp
+        run: |
+          date -u +%Y-%m-%dT%H:%M:%SZ > .refresh-stamp
+          git config user.name "unclaimed-refresh"
+          git config user.email "actions@users.noreply.github.com"
+          git add .refresh-stamp
+          git commit -m "Daily refresh $(date -u +%F)" || exit 0
+          git push

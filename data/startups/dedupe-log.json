@@ -1,0 +1,407 @@
+[
+  {
+    "country": "eu",
+    "removed": "eic-accelerator",
+    "removed_name": "European Innovation Council Accelerator",
+    "kept": "eu-eic-accelerator",
+    "kept_name": "European Innovation Council Accelerator",
+    "reason": "same page, same scheme as the canonical Accelerator record",
+    "merged_at": "2026-09-25"
+  },
+  {
+    "country": "eu",
+    "removed": "eu-eic-accelerator-open",
+    "removed_name": "European Innovation Council Accelerator (Open)",
+    "kept": "eu-eic-accelerator",
+    "kept_name": "European Innovation Council Accelerator",
+    "reason": "\"Open\" is the default Accelerator call, not a separate track (unlike Challenges, which is kept)",
+    "merged_at": "2026-09-25"
+  },
+  {
+    "country": "eu",
+    "removed": "eic-pathfinder-open",
+    "removed_name": "European Innovation Council Pathfinder Open",
+    "kept": "eu-eic-pathfinder",
+    "kept_name": "European Innovation Council Pathfinder",
+    "reason": "duplicate of the general Pathfinder record; its more specific source snippet was folded in",
+    "merged_at": "2026-09-25"
+  },
+  {
+    "country": "eu",
+    "removed": "eu-eic-pathfinder-open",
+    "removed_name": "EIC Pathfinder Open",
+    "kept": "eu-eic-pathfinder",
+    "kept_name": "European Innovation Council Pathfinder",
+    "reason": "unverified duplicate of the general Pathfinder record (no snippet, marked closed)",
+    "merged_at": "2026-09-25"
+  },
+  {
+    "country": "eu",
+    "removed": "eu-eic-pathfinder-challenges",
+    "removed_name": "EIC Pathfinder Challenges",
+    "kept": "eic-pathfinder-challenges",
+    "kept_name": "European Innovation Council Pathfinder Challenges",
+    "reason": "unverified duplicate; eic-pathfinder-challenges has the verified, specific source",
+    "merged_at": "2026-09-25"
+  },
+  {
+    "country": "eu",
+    "removed": "eu-eic-transition",
+    "removed_name": "EIC Transition",
+    "kept": "eic-transition",
+    "kept_name": "European Innovation Council Transition",
+    "reason": "unverified duplicate of the same eic-transition_en page",
+    "merged_at": "2026-09-25"
+  },
+  {
+    "country": "eu",
+    "removed": "eu-eic-pre-accelerator",
+    "removed_name": "EIC Pre-Accelerator for widening countries",
+    "kept": "eic-pre-accelerator",
+    "kept_name": "European Innovation Council Pre-Accelerator",
+    "reason": "generic duplicate; eic-pre-accelerator has the actual award amounts",
+    "merged_at": "2026-09-25"
+  },
+  {
+    "country": "eu",
+    "removed": "eu-eic-step-scale-up",
+    "removed_name": "EIC STEP Scale Up equity investment",
+    "kept": "eic-step-scale-up",
+    "kept_name": "European Innovation Council STEP Scale Up",
+    "reason": "duplicate of the same STEP Scale Up scheme; eic-step-scale-up has the award amounts",
+    "merged_at": "2026-09-25"
+  },
+  {
+    "country": "eu",
+    "removed": "eu-eic-scaleup-step",
+    "removed_name": "EIC STEP Scale-Up",
+    "kept": "eic-step-scale-up",
+    "kept_name": "European Innovation Council STEP Scale Up",
+    "reason": "unverified duplicate with a mismatched source_url (points at the Accelerator page)",
+    "merged_at": "2026-09-25"
+  },
+  {
+    "country": "eu",
+    "removed": "eu-eic-step-scale-up-defence",
+    "removed_name": "EIC STEP Scale Up Defence",
+    "kept": "eic-step-scale-up-defence",
+    "kept_name": "European Innovation Council STEP Scale Up Defence",
+    "reason": "duplicate of the same STEP Scale Up Defence scheme; eic-step-scale-up-defence has the award amounts",
+    "merged_at": "2026-09-25"
+  },
+  {
+    "country": "eu",
+    "removed": "eu-eic-business-acceleration-services",
+    "removed_name": "EIC Business Acceleration Services (BAS)",
+    "kept": "eic-business-acceleration-services",
+    "kept_name": "European Innovation Council Business Acceleration Services",
+    "reason": "unverified duplicate of the same EIC Business Acceleration Services page",
+    "merged_at": "2026-09-25"
+  },
+  {
+    "country": "eu",
+    "removed": "eu-eurostars-3",
+    "removed_name": "Eurostars (Eureka / Horizon Europe co-funded partnership)",
+    "kept": "eurostars-3",
+    "kept_name": "Eurostars (Eureka / European Partnership on Innovative SMEs)",
+    "reason": "same Eurostars call, same source page; eurostars-3 already carries the deadline facts",
+    "merged_at": "2026-09-25"
+  },
+  {
+    "country": "eu",
+    "removed": "eu-digital-europe-programme",
+    "removed_name": "Digital Europe Programme (DIGITAL)",
+    "kept": "digital-europe-programme",
+    "kept_name": "Digital Europe Programme",
+    "reason": "same Digital Europe Programme page, unverified duplicate",
+    "merged_at": "2026-09-25"
+  },
+  {
+    "country": "eu",
+    "removed": "eu-eit-food-accelerator-network",
+    "removed_name": "EIT Food Accelerator Network (FAN)",
+    "kept": "eit-food-accelerator-network",
+    "kept_name": "EIT Food Accelerator Network",
+    "reason": "same EIT Food Accelerator Network; eit-food-accelerator-network has the actual prize amounts",
+    "merged_at": "2026-09-25"
+  },
+  {
+    "country": "global",
+    "removed": "global-aws-activate",
+    "removed_name": "AWS Activate",
+    "kept": "aws-activate",
+    "kept_name": "AWS Activate",
+    "reason": "same AWS Activate credits programme, less detailed duplicate",
+    "merged_at": "2026-09-25"
+  },
+  {
+    "country": "global",
+    "removed": "techstars-accelerator",
+    "removed_name": "Techstars Accelerator",
+    "kept": "global-techstars",
+    "kept_name": "Techstars Accelerator",
+    "reason": "same Techstars investment terms; global-techstars has the more current APAC/discontinuation detail",
+    "merged_at": "2026-09-25"
+  },
+  {
+    "country": "global",
+    "removed": "global-earthshot-prize",
+    "removed_name": "The Earthshot Prize",
+    "kept": "earthshot-prize",
+    "kept_name": "The Earthshot Prize",
+    "reason": "same Earthshot Prize, unverified duplicate",
+    "merged_at": "2026-09-25"
+  },
+  {
+    "country": "global",
+    "removed": "global-mongodb-for-startups",
+    "removed_name": "MongoDB for Startups",
+    "kept": "mongodb-for-startups",
+    "kept_name": "MongoDB for Startups",
+    "reason": "same MongoDB for Startups programme; mongodb-for-startups has the current tier detail",
+    "merged_at": "2026-09-25"
+  },
+  {
+    "country": "gb",
+    "removed": "uk-innovate-uk-smart-grants",
+    "removed_name": "Innovate UK Smart Grants",
+    "kept": "gb-iuk-smart-grants",
+    "kept_name": "Innovate UK Smart Grants",
+    "reason": "same Innovate UK Smart Grants; gb-iuk-smart-grants has the fuller procedure and reopen note",
+    "merged_at": "2026-09-25"
+  },
+  {
+    "country": "gb",
+    "removed": "gb-investni-innovation-vouchers",
+    "removed_name": "Invest NI Innovation Vouchers",
+    "kept": "uk-invest-ni-innovation-vouchers",
+    "kept_name": "Invest NI Innovation Vouchers",
+    "reason": "same Invest NI Innovation Vouchers; uk-invest-ni-innovation-vouchers has the verified, current amount",
+    "merged_at": "2026-09-25"
+  },
+  {
+    "country": "gb",
+    "removed": "uk-nihr-i4i",
+    "removed_name": "NIHR Invention for Innovation (i4i) programme",
+    "kept": "gb-nihr-invention-for-innovation",
+    "kept_name": "NIHR Invention for Innovation programme",
+    "reason": "same NIHR i4i programme, duplicate whose only addition was a note that the source page blocked automated access",
+    "merged_at": "2026-09-25"
+  },
+  {
+    "country": "fr",
+    "removed": "fr-cir",
+    "removed_name": "Research Tax Credit",
+    "kept": "fr-credit-impot-recherche",
+    "kept_name": "Research Tax Credit",
+    "reason": "same Credit d’impot recherche; fr-credit-impot-recherche is verified with a quoted source snippet",
+    "merged_at": "2026-09-25"
+  },
+  {
+    "country": "fr",
+    "removed": "fr-cii",
+    "removed_name": "Innovation Tax Credit",
+    "kept": "fr-credit-impot-innovation",
+    "kept_name": "Innovation Tax Credit",
+    "reason": "same Credit d’impot innovation; fr-credit-impot-innovation is verified with a quoted source snippet",
+    "merged_at": "2026-09-25"
+  },
+  {
+    "country": "fr",
+    "removed": "fr-bft-emergence",
+    "removed_name": "French Tech Grant Emergence",
+    "kept": "fr-bourse-french-tech-emergence",
+    "kept_name": "French Tech Emergence Grant",
+    "reason": "same Bourse French Tech Emergence grant; fr-bourse-french-tech-emergence is verified with the award ceiling",
+    "merged_at": "2026-09-25"
+  },
+  {
+    "country": "de",
+    "removed": "de-invest-zuschuss-wagniskapital",
+    "removed_name": "INVEST – Venture Capital Grant",
+    "kept": "de-invest-erwerbszuschuss",
+    "kept_name": "INVEST – Grant for venture capital (acquisition grant)",
+    "reason": "same INVEST acquisition grant (Erwerbszuschuss), just an older source_url; distinct from the exit grant, which is kept",
+    "merged_at": "2026-09-25"
+  },
+  {
+    "country": "nl",
+    "removed": "nl-dei-plus-demonstratie-energie-klimaatinnovatie",
+    "removed_name": "Dutch Demonstration Energy and Climate Innovation scheme (DEI+)",
+    "kept": "nl-dei-plus",
+    "kept_name": "DEI+ Energy and Climate Innovation Demonstration",
+    "reason": "same DEI+ scheme spelled out in full; nl-dei-plus is the name actually used on the RVO page",
+    "merged_at": "2026-09-25"
+  },
+  {
+    "country": "us",
+    "removed": "us-ca-california-competes-tax-credit",
+    "removed_name": "California Competes Tax Credit",
+    "kept": "us-ca-california-competes",
+    "kept_name": "California Competes Tax Credit (CCTC)",
+    "reason": "same California Competes Tax Credit, same source page",
+    "merged_at": "2026-09-25"
+  },
+  {
+    "country": "us",
+    "removed": "us-sbir-nsf",
+    "removed_name": "NSF SBIR/STTR Program (America's Seed Fund powered by NSF)",
+    "kept": "us-nsf-americas-seed-fund",
+    "kept_name": "NSF America's Seed Fund (SBIR/STTR)",
+    "reason": "same NSF SBIR/STTR program; us-nsf-americas-seed-fund cites the newer NSF 26-511 solicitation figures",
+    "merged_at": "2026-09-25"
+  },
+  {
+    "country": "us",
+    "removed": "us-sba-growth-accelerator-fund-competition",
+    "removed_name": "SBA Growth Accelerator Fund Competition (GAFC)",
+    "kept": "us-sba-gafc",
+    "kept_name": "SBA Growth Accelerator Fund Competition (GAFC)",
+    "reason": "same SBA GAFC prize competition; us-sba-gafc has the actual prize-tier amounts",
+    "merged_at": "2026-09-25"
+  },
+  {
+    "country": "za",
+    "removed": "za-spii-matching-scheme",
+    "removed_name": "Support Programme for Industrial Innovation (SPII) - Matching Scheme",
+    "kept": "za-spii",
+    "kept_name": "Support Programme for Industrial Innovation (SPII)",
+    "reason": "za-spii already documents the Matching Scheme as one of its two schemes",
+    "merged_at": "2026-09-25"
+  },
+  {
+    "country": "gb",
+    "removed": "gb-hmrc-eis",
+    "removed_name": "Enterprise Investment Scheme (EIS)",
+    "kept": "uk-eis",
+    "kept_name": "Enterprise Investment Scheme (EIS)",
+    "reason": "same HMRC Enterprise Investment Scheme; uk-eis is verified with a quoted source and is the slug packages/scoring/rates.js uses",
+    "merged_at": "2026-09-25"
+  },
+  {
+    "country": "gb",
+    "removed": "gb-hmrc-seis",
+    "removed_name": "Seed Enterprise Investment Scheme (SEIS)",
+    "kept": "uk-seis",
+    "kept_name": "Seed Enterprise Investment Scheme (SEIS)",
+    "reason": "same HMRC Seed Enterprise Investment Scheme; uk-seis is verified with a quoted source and is the slug packages/scoring/rates.js uses",
+    "merged_at": "2026-09-25"
+  },
+  {
+    "country": "gb",
+    "removed": "gb-iuk-icure-explore",
+    "removed_name": "ICURe Explore",
+    "kept": "uk-icure-explore",
+    "kept_name": "ICURe Explore (Innovation to Commercialisation of University Research)",
+    "reason": "same ICURe Explore programme, same source page; uk-icure-explore is verified (the earlier \"distinct track\" allowlist entry was wrong)",
+    "merged_at": "2026-09-25"
+  },
+  {
+    "country": "us",
+    "removed": "us-ny-innovation-vc-fund",
+    "removed_name": "New York State Innovation Venture Capital Fund",
+    "kept": "us-ny-innovation-venture-capital-fund",
+    "kept_name": "New York State Innovation Venture Capital Fund",
+    "reason": "same NYS Innovation Venture Capital Fund; the survivor cites the fund's own page rather than the ESD venture-capital overview",
+    "merged_at": "2026-09-25"
+  },
+  {
+    "country": "us",
+    "removed": "us-sba-504-loan",
+    "removed_name": "SBA 504 Loan Program (CDC/504)",
+    "kept": "us-sba-504",
+    "kept_name": "SBA 504 Loan Program",
+    "reason": "same SBA 504 (CDC/504) loan, same source page; us-sba-504 has the fuller procedure and documents (the earlier \"distinct track\" allowlist entry was wrong)",
+    "merged_at": "2026-09-25"
+  },
+  {
+    "country": "us",
+    "removed": "us-tx-pdsbi",
+    "removed_name": "Texas Product Development and Small Business Incubator Fund (PDSBI)",
+    "kept": "us-tx-product-development-small-business-incubator-fund",
+    "kept_name": "Texas Product Development and Small Business Incubator Fund",
+    "reason": "same Texas PDSBI fund; the survivor is verified with the loan ceiling",
+    "merged_at": "2026-09-25"
+  },
+  {
+    "country": "eu",
+    "removed": "eu-creative-europe-media",
+    "removed_name": "Creative Europe MEDIA strand",
+    "kept": "creative-europe-media",
+    "kept_name": "Creative Europe MEDIA strand",
+    "reason": "same Creative Europe MEDIA strand; unverified duplicate marked closed. The MEDIA sub-schemes (Innovative Tools, Slate Development, Video Games) are distinct and kept",
+    "merged_at": "2026-09-25"
+  },
+  {
+    "country": "eu",
+    "removed": "eu-women-techeu",
+    "removed_name": "Women TechEU",
+    "kept": "women-techeu",
+    "kept_name": "Women TechEU",
+    "reason": "same Women TechEU call; women-techeu cites the current 2026 round and has the procedure",
+    "merged_at": "2026-09-25"
+  },
+  {
+    "country": "eu",
+    "removed": "eu-eit-jumpstarter",
+    "removed_name": "EIT Jumpstarter (cross-KIC pre-accelerator)",
+    "kept": "eit-jumpstarter",
+    "kept_name": "EIT Jumpstarter",
+    "reason": "same EIT Jumpstarter pre-accelerator, same source page; eit-jumpstarter is verified with the prize amounts",
+    "merged_at": "2026-09-25"
+  },
+  {
+    "country": "fr",
+    "removed": "fr-i-nov",
+    "removed_name": "i-Nov Innovation Competition",
+    "kept": "fr-concours-i-nov",
+    "kept_name": "i-Nov Innovation Competition",
+    "reason": "same i-Nov competition; fr-concours-i-nov is verified and cites the call page, not the generic calls listing",
+    "merged_at": "2026-09-25"
+  },
+  {
+    "country": "fr",
+    "removed": "fr-jei",
+    "removed_name": "Young Innovative Company Status",
+    "kept": "fr-jeune-entreprise-innovante",
+    "kept_name": "Young Innovative Company status",
+    "reason": "same Jeune Entreprise Innovante status; the survivor is verified with a quoted source",
+    "merged_at": "2026-09-25"
+  },
+  {
+    "country": "fr",
+    "removed": "fr-reseau-entreprendre",
+    "removed_name": "Reseau Entreprendre Honour Loan",
+    "kept": "fr-reseau-entreprendre-pret-honneur",
+    "kept_name": "Réseau Entreprendre Honour Loan",
+    "reason": "same Reseau Entreprendre honour loan (national network, amounts set locally); the survivor quotes the published 15k-90k range",
+    "merged_at": "2026-09-25"
+  },
+  {
+    "country": "fr",
+    "removed": "fr-first-factory",
+    "removed_name": "First Factory",
+    "kept": "fr-premiere-usine",
+    "kept_name": "First Factory (Premiere Usine)",
+    "reason": "same Premiere Usine / First Factory call, same source page; the survivor has the procedure and documents",
+    "merged_at": "2026-09-25"
+  },
+  {
+    "country": "ch",
+    "removed": "ch-innosuisse-innovationsprojekte-umsetzungspartner",
+    "removed_name": "Innosuisse innovation projects with an implementation partner",
+    "kept": "ch-innosuisse-innovation-project-implementation-partner",
+    "kept_name": "Innosuisse – Innovation projects with implementation partner",
+    "reason": "same Innosuisse innovation project with an implementation partner, recorded once from the German page and once from the English one",
+    "merged_at": "2026-09-25"
+  },
+  {
+    "country": "ch",
+    "removed": "ch-innosuisse-startup-innovationsprojekte",
+    "removed_name": "Innosuisse start-up innovation projects",
+    "kept": "ch-innosuisse-startup-innovation-projects",
+    "kept_name": "Innosuisse – Start-up innovation projects",
+    "reason": "same Innosuisse start-up innovation projects, recorded once from the German page and once from the English one",
+    "merged_at": "2026-09-25"
+  }
+]

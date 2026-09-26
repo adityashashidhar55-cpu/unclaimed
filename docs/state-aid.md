@@ -161,11 +161,25 @@ being the overall cap for SGEI-related aid. Where the exact interaction matters 
 Article 5 of both regulations rather than relying on a summary.
 
 **Other de minimis regulations that exist and have their own, much lower ceilings** (relevant if a
-company touches farming or fishing):
-- Agriculture: Regulation (EU) No 1408/2013 as amended (primary agricultural production).
-- Fishery and aquaculture: Regulation (EU) No 717/2014 as amended.
-Both are cross-referenced in Article 5(2) of Regulation (EU) 2023/2831. Their ceilings were **not**
-verified here and must be read from the current consolidated texts before being quoted.
+company touches farming or fishing). Both are cross-referenced in Article 5(2) of Regulation (EU)
+2023/2831. Verified against EUR-Lex on 2026-09-25 (see `packages/stateaid/index.js` for the code):
+
+- **Agriculture — Regulation (EU) No 1408/2013**, as amended by **Commission Regulation (EU)
+  2024/3118 of 10 December 2024**. Article 3(2): "The total amount of de minimis aid granted per
+  Member State to a single undertaking shall not exceed **EUR 50 000 over any period of 3
+  years**." In force from 16 December 2024; recital 1 of the amendment cites inflation since the
+  2019 revision as the reason for the increase. Like the general Regulation, this is now a
+  **rolling** 3-year period, not fiscal years.
+  https://eur-lex.europa.eu/eli/reg/2013/1408
+- **Fishery and aquaculture — Regulation (EU) No 717/2014**, as amended by **Commission Regulation
+  (EU) 2023/2391 of 4 October 2023**. Article 3(2): "The total amount of de minimis aid granted per
+  Member State to a single undertaking shall not exceed **EUR 30 000 over any period of three
+  fiscal years**." Article 3(2a): a Member State may raise this to **EUR 40 000** over the same
+  period if it operates a central register meeting the Article's conditions. Unlike the other three
+  regulations here, this one is still expressed as **three fiscal years**, not a rolling period — a
+  real difference our calculator approximates rather than ignores (see `/startups/de-minimis/`).
+  In force from 5 October 2023 (twentieth day after OJ publication).
+  https://eur-lex.europa.eu/eli/reg/2014/717
 
 ---
 
@@ -286,8 +300,6 @@ EIC Accelerator says "Small mid-caps (up to 499 employees)" and EIC STEP Scale U
 - The exact small mid-cap thresholds in Commission Recommendation (EU) 2025/1099 (headcount and
   financial ceilings). The recommendation's existence, date and OJ reference are confirmed; the
   numbers are not, and are deliberately omitted rather than guessed.
-- The current ceilings in the agricultural (Reg. (EU) No 1408/2013) and fishery (Reg. (EU) No
-  717/2014) de minimis regulations, both of which have been amended since adoption.
 - Whether any Member State's national central register was live and covering a full three years as
   at the verification date; this determines locally whether the Article 7(4) declaration is still
   required.
@@ -300,4 +312,6 @@ EIC Accelerator says "Small mid-caps (up to 499 employees)" and EIC STEP Scale U
 - Commission Regulation (EU) 2023/2832 (SGEI) — https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=OJ:L_202302832
 - Commission Recommendation 2003/361/EC (SME definition) — https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32003H0361
 - Commission Recommendation (EU) 2025/1099 (small mid-caps) — https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=OJ%3AL_202501099
+- Regulation (EU) No 1408/2013 (agriculture, as amended by (EU) 2024/3118) — https://eur-lex.europa.eu/eli/reg/2013/1408
+- Regulation (EU) No 717/2014 (fisheries, as amended by (EU) 2023/2391) — https://eur-lex.europa.eu/eli/reg/2014/717
 - EUR-Lex summary, "De minimis rule – exemption of small amounts of State aid from notification (from 2024)" — https://eur-lex.europa.eu/EN/legal-content/summary/de-minimis-rule-exemption-of-small-amounts-of-state-aid-from-notification-from-2024.html

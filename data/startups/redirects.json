@@ -1,0 +1,227 @@
+[
+  {
+    "country": "eu",
+    "from": "eic-accelerator",
+    "to": "eu-eic-accelerator"
+  },
+  {
+    "country": "eu",
+    "from": "eu-eic-accelerator-open",
+    "to": "eu-eic-accelerator"
+  },
+  {
+    "country": "eu",
+    "from": "eic-pathfinder-open",
+    "to": "eu-eic-pathfinder"
+  },
+  {
+    "country": "eu",
+    "from": "eu-eic-pathfinder-open",
+    "to": "eu-eic-pathfinder"
+  },
+  {
+    "country": "eu",
+    "from": "eu-eic-pathfinder-challenges",
+    "to": "eic-pathfinder-challenges"
+  },
+  {
+    "country": "eu",
+    "from": "eu-eic-transition",
+    "to": "eic-transition"
+  },
+  {
+    "country": "eu",
+    "from": "eu-eic-pre-accelerator",
+    "to": "eic-pre-accelerator"
+  },
+  {
+    "country": "eu",
+    "from": "eu-eic-step-scale-up",
+    "to": "eic-step-scale-up"
+  },
+  {
+    "country": "eu",
+    "from": "eu-eic-scaleup-step",
+    "to": "eic-step-scale-up"
+  },
+  {
+    "country": "eu",
+    "from": "eu-eic-step-scale-up-defence",
+    "to": "eic-step-scale-up-defence"
+  },
+  {
+    "country": "eu",
+    "from": "eu-eic-business-acceleration-services",
+    "to": "eic-business-acceleration-services"
+  },
+  {
+    "country": "eu",
+    "from": "eu-eurostars-3",
+    "to": "eurostars-3"
+  },
+  {
+    "country": "eu",
+    "from": "eu-digital-europe-programme",
+    "to": "digital-europe-programme"
+  },
+  {
+    "country": "eu",
+    "from": "eu-eit-food-accelerator-network",
+    "to": "eit-food-accelerator-network"
+  },
+  {
+    "country": "global",
+    "from": "global-aws-activate",
+    "to": "aws-activate"
+  },
+  {
+    "country": "global",
+    "from": "techstars-accelerator",
+    "to": "global-techstars"
+  },
+  {
+    "country": "global",
+    "from": "global-earthshot-prize",
+    "to": "earthshot-prize"
+  },
+  {
+    "country": "global",
+    "from": "global-mongodb-for-startups",
+    "to": "mongodb-for-startups"
+  },
+  {
+    "country": "gb",
+    "from": "uk-innovate-uk-smart-grants",
+    "to": "gb-iuk-smart-grants"
+  },
+  {
+    "country": "gb",
+    "from": "gb-investni-innovation-vouchers",
+    "to": "uk-invest-ni-innovation-vouchers"
+  },
+  {
+    "country": "gb",
+    "from": "uk-nihr-i4i",
+    "to": "gb-nihr-invention-for-innovation"
+  },
+  {
+    "country": "fr",
+    "from": "fr-cir",
+    "to": "fr-credit-impot-recherche"
+  },
+  {
+    "country": "fr",
+    "from": "fr-cii",
+    "to": "fr-credit-impot-innovation"
+  },
+  {
+    "country": "fr",
+    "from": "fr-bft-emergence",
+    "to": "fr-bourse-french-tech-emergence"
+  },
+  {
+    "country": "de",
+    "from": "de-invest-zuschuss-wagniskapital",
+    "to": "de-invest-erwerbszuschuss"
+  },
+  {
+    "country": "nl",
+    "from": "nl-dei-plus-demonstratie-energie-klimaatinnovatie",
+    "to": "nl-dei-plus"
+  },
+  {
+    "country": "us",
+    "from": "us-ca-california-competes-tax-credit",
+    "to": "us-ca-california-competes"
+  },
+  {
+    "country": "us",
+    "from": "us-sbir-nsf",
+    "to": "us-nsf-americas-seed-fund"
+  },
+  {
+    "country": "us",
+    "from": "us-sba-growth-accelerator-fund-competition",
+    "to": "us-sba-gafc"
+  },
+  {
+    "country": "za",
+    "from": "za-spii-matching-scheme",
+    "to": "za-spii"
+  },
+  {
+    "country": "gb",
+    "from": "gb-hmrc-eis",
+    "to": "uk-eis"
+  },
+  {
+    "country": "gb",
+    "from": "gb-hmrc-seis",
+    "to": "uk-seis"
+  },
+  {
+    "country": "gb",
+    "from": "gb-iuk-icure-explore",
+    "to": "uk-icure-explore"
+  },
+  {
+    "country": "us",
+    "from": "us-ny-innovation-vc-fund",
+    "to": "us-ny-innovation-venture-capital-fund"
+  },
+  {
+    "country": "us",
+    "from": "us-sba-504-loan",
+    "to": "us-sba-504"
+  },
+  {
+    "country": "us",
+    "from": "us-tx-pdsbi",
+    "to": "us-tx-product-development-small-business-incubator-fund"
+  },
+  {
+    "country": "eu",
+    "from": "eu-creative-europe-media",
+    "to": "creative-europe-media"
+  },
+  {
+    "country": "eu",
+    "from": "eu-women-techeu",
+    "to": "women-techeu"
+  },
+  {
+    "country": "eu",
+    "from": "eu-eit-jumpstarter",
+    "to": "eit-jumpstarter"
+  },
+  {
+    "country": "fr",
+    "from": "fr-i-nov",
+    "to": "fr-concours-i-nov"
+  },
+  {
+    "country": "fr",
+    "from": "fr-jei",
+    "to": "fr-jeune-entreprise-innovante"
+  },
+  {
+    "country": "fr",
+    "from": "fr-reseau-entreprendre",
+    "to": "fr-reseau-entreprendre-pret-honneur"
+  },
+  {
+    "country": "fr",
+    "from": "fr-first-factory",
+    "to": "fr-premiere-usine"
+  },
+  {
+    "country": "ch",
+    "from": "ch-innosuisse-innovationsprojekte-umsetzungspartner",
+    "to": "ch-innosuisse-innovation-project-implementation-partner"
+  },
+  {
+    "country": "ch",
+    "from": "ch-innosuisse-startup-innovationsprojekte",
+    "to": "ch-innosuisse-startup-innovation-projects"
+  }
+]

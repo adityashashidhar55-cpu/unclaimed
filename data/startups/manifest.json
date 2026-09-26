@@ -1,50 +1,50 @@
 {
- "generated_at": "2026-08-14",
- "total": 1684,
+ "generated_at": "2026-09-25",
+ "total": 1641,
  "countries": [
   {
    "slug": "us",
    "name": "United States",
    "flag": "🇺🇸",
    "currency": "USD",
-   "count": 275,
-   "verified": 78,
-   "priced": 123,
-   "open": 165,
-   "closed": 35
+   "count": 269,
+   "verified": 73,
+   "priced": 122,
+   "open": 158,
+   "closed": 34
   },
   {
    "slug": "gb",
    "name": "United Kingdom",
    "flag": "🇬🇧",
    "currency": "GBP",
-   "count": 143,
-   "verified": 37,
-   "priced": 96,
-   "open": 104,
-   "closed": 29
+   "count": 137,
+   "verified": 36,
+   "priced": 93,
+   "open": 98,
+   "closed": 28
   },
   {
    "slug": "eu",
    "name": "European Union",
    "flag": "🇪🇺",
    "currency": "EUR",
-   "count": 130,
-   "verified": 53,
-   "priced": 35,
-   "open": 61,
-   "closed": 40
+   "count": 113,
+   "verified": 45,
+   "priced": 27,
+   "open": 54,
+   "closed": 33
   },
   {
    "slug": "global",
    "name": "Global",
    "flag": "🌐",
    "currency": "USD",
-   "count": 122,
-   "verified": 53,
-   "priced": 46,
-   "open": 79,
-   "closed": 12
+   "count": 118,
+   "verified": 52,
+   "priced": 42,
+   "open": 75,
+   "closed": 11
   },
   {
    "slug": "in",
@@ -62,10 +62,10 @@
    "name": "France",
    "flag": "🇫🇷",
    "currency": "EUR",
-   "count": 99,
-   "verified": 21,
+   "count": 92,
+   "verified": 20,
    "priced": 16,
-   "open": 49,
+   "open": 44,
    "closed": 4
   },
   {
@@ -75,9 +75,9 @@
    "currency": "EUR",
    "count": 91,
    "verified": 67,
-   "priced": 34,
-   "open": 72,
-   "closed": 10
+   "priced": 36,
+   "open": 70,
+   "closed": 7
   },
   {
    "slug": "be",
@@ -117,10 +117,10 @@
    "name": "Netherlands",
    "flag": "🇳🇱",
    "currency": "EUR",
-   "count": 39,
+   "count": 38,
    "verified": 11,
    "priced": 4,
-   "open": 18,
+   "open": 17,
    "closed": 3
   },
   {
@@ -128,10 +128,10 @@
    "name": "Switzerland",
    "flag": "🇨🇭",
    "currency": "CHF",
-   "count": 35,
-   "verified": 33,
+   "count": 33,
+   "verified": 31,
    "priced": 11,
-   "open": 31,
+   "open": 29,
    "closed": 1
   },
   {
@@ -205,10 +205,10 @@
    "name": "Italy",
    "flag": "🇮🇹",
    "currency": "EUR",
-   "count": 17,
-   "verified": 4,
+   "count": 18,
+   "verified": 5,
    "priced": 4,
-   "open": 8,
+   "open": 9,
    "closed": 2
   },
   {
@@ -260,10 +260,10 @@
    "name": "South Africa",
    "flag": "🇿🇦",
    "currency": "ZAR",
-   "count": 12,
-   "verified": 4,
-   "priced": 9,
-   "open": 7,
+   "count": 11,
+   "verified": 3,
+   "priced": 8,
+   "open": 6,
    "closed": 0
   },
   {

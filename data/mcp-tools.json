@@ -4468,12 +4468,12 @@
         "properties": {
           "country_code": {
             "type": "string",
-            "pattern": "^[A-Za-z]{2}$",
-            "description": "ISO alpha-2 country code (any case)."
+            "pattern": "^([A-Za-z]{2}|[Gg][Ll][Oo][Bb][Aa][Ll])$",
+            "description": "ISO alpha-2 country code (any case) for a household programme. For a company grant from search_company_grants, pass its jurisdiction instead (a country code, \"eu\" or \"global\")."
           },
           "slug": {
             "type": "string",
-            "description": "Programme slug, unique within the country."
+            "description": "Programme slug, unique within the country (or company-grant jurisdiction). A company-grant slug that was merged into another record as a duplicate still resolves: the canonical record is returned with redirected_from set."
           }
         },
         "required": [
@@ -6270,12 +6270,12 @@
         "properties": {
           "country_code": {
             "type": "string",
-            "pattern": "^[A-Za-z]{2}$",
-            "description": "ISO alpha-2 country code (any case)."
+            "pattern": "^([A-Za-z]{2}|[Gg][Ll][Oo][Bb][Aa][Ll])$",
+            "description": "ISO alpha-2 country code (any case) for a household programme. For a company grant from search_company_grants, pass its jurisdiction instead (a country code, \"eu\" or \"global\")."
           },
           "slug": {
             "type": "string",
-            "description": "Programme slug, unique within the country."
+            "description": "Programme slug, unique within the country (or company-grant jurisdiction). A company-grant slug that was merged into another record as a duplicate still resolves: the canonical record is returned with redirected_from set."
           }
         },
         "required": [
@@ -8085,12 +8085,12 @@
         "properties": {
           "country_code": {
             "type": "string",
-            "pattern": "^[A-Za-z]{2}$",
-            "description": "ISO alpha-2 country code (any case)."
+            "pattern": "^([A-Za-z]{2}|[Gg][Ll][Oo][Bb][Aa][Ll])$",
+            "description": "ISO alpha-2 country code (any case) for a household programme. For a company grant from search_company_grants, pass its jurisdiction instead (a country code, \"eu\" or \"global\")."
           },
           "slug": {
             "type": "string",
-            "description": "Programme slug, unique within the country."
+            "description": "Programme slug, unique within the country (or company-grant jurisdiction). A company-grant slug that was merged into another record as a duplicate still resolves: the canonical record is returned with redirected_from set."
           }
         },
         "required": [

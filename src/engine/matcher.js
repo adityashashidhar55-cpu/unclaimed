@@ -159,7 +159,15 @@ const WORD_NUM = { one: 1, two: 2, three: 3, four: 4, five: 5, six: 6, seven: 7,
    path computes from source and the two cannot drift. */
 export function monthsPayable(p) {
   if (p.derived?.months_payable != null) return p.derived.months_payable;
-  const note = `${p.amount_note ?? ''} ${p.deadline_note ?? ''}`;
+  /* amount_note ONLY. deadline_note describes the application/claim window
+     ("Can be paid retroactively for up to 6 months"), not how long the
+     benefit is paid — reading it here is what made German Kindergeld, an
+     ongoing per-child payment with no duration at all, compute at 6/12 of
+     its real annual value: the backdating window for a late claim was read
+     as the payment duration. Ireland's State Pension has the identical shape
+     ("Apply up to 3 months...before your 66th birthday", an application
+     window) and would have failed the same way had it reached this path. */
+  const note = `${p.amount_note ?? ''}`;
   const m = note.match(/\b(?:up to|maximum of|max\.?|for)\s+(\d{1,2}|one|two|three|four|five|six|seven|eight|nine|ten|twelve)\s+(month|week)s?\b/i);
   if (!m) return 12;
   const n = /^\d+$/.test(m[1]) ? Number(m[1]) : WORD_NUM[m[1].toLowerCase()];
@@ -350,6 +358,32 @@ export function isStatutoryRight(p) {
 }
 
 /**
+ * A scheme that has genuinely ended, not merely a scheme we haven't checked.
+ *
+ * The individual-benefit schema carries no `status` field at all (that is a
+ * startup-engine concept — see `effectiveStatus` in packages/deadlines), so
+ * "this has ended for good" survives only in a record's own `deadline_note`.
+ * The Great British Insulation Scheme says exactly that in its own words —
+ * "Closed to new applicants in October 2025... the scheme ended 31 March
+ * 2026" — and nothing else on the record disagrees, yet it was shown as an
+ * unconditional match with the headline "Open in a set window" because
+ * nothing read `deadline_note` for this. Detected here rather than assumed
+ * closed by default, because most `deadline_note`s describe a rolling or
+ * seasonal window, not an ending, and treating every one of them as ended
+ * would delete real, currently-claimable money from the results.
+ *
+ * A build-time badge for this belongs elsewhere (the derivation here is for
+ * the matcher only); this function exists so `match()` can stop counting an
+ * ended scheme as eligible money regardless of what the badge shows.
+ */
+const ENDED_SCHEME = /\b(ended|closed to new applicants|discontinued|replaced by)\b/i;
+
+export function isEndedScheme(p) {
+  if (p.derived?.ended != null) return p.derived.ended;
+  return ENDED_SCHEME.test(`${p.deadline_note ?? ''}`);
+}
+
+/**
  * Citizens only, said in the title rather than in the nationality field.
  *
  * 98%% of records carry a `nationality` value, and a great many of them say
@@ -509,7 +543,17 @@ export const CIRCUMSTANCES = [
     id: 'newbaby',
     label: "I'm pregnant, or have a baby or newly adopted child",
     short: 'pregnancy, new baby or adoption',
-    re: /\b(maternity|paternity|parental (leave|allowance|benefit|pay)|pregnan|newborn|new born|birth grant|baby bonus|adoption (grant|allowance|pay)|elterngeld|mutterschaft|congé parental|maternidad|natalidad)/i,
+    /* The adoption alternative used to be "adoption (grant|allowance|pay)",
+       which requires the literal word "adoption" — so Ireland's own
+       "Adoptive Benefit" (the word is "Adoptive", not "adoption") never
+       matched, and a straight, unconditional EUR 15,548/yr was shown to anyone
+       employed or self-employed, whether or not a child had been placed with
+       them. \badopt(ion|ive|ed)?\b is a stem match with its OWN boundaries on
+       both ends (unlike the rest of this alternation, which is deliberately
+       leading-\b-only — see the file-level note above), so it catches
+       "adopt", "adoption", "adoptive" and "adopted" without also catching
+       unrelated words that merely start with the same letters. */
+    re: /\b(maternity|paternity|parental (leave|allowance|benefit|pay)|pregnan|newborn|new born|birth grant|baby bonus|elterngeld|mutterschaft|congé parental|maternidad|natalidad)|\badopt(ion|ive|ed)?\b/i,
   },
   {
     id: 'bereavement',
@@ -801,15 +845,30 @@ function evalProgramme(p, profile, entry) {
 
   // 6. Children
   if (e.requires_children) {
+    /* Some family allowances only start from a SECOND child, not the first —
+       France's Allocations Familiales pays nothing at all for an only child,
+       by law, and its own amount_note says so implicitly ("152,25 EUR/month
+       for 2 children"). `requires_children` was only ever a boolean, so a
+       single parent with one child was shown a flat "pass," headline
+       annualised at the 4-child rate — money they cannot get at all today.
+       `requires_children_min` (populated per record from source) is checked
+       when the profile has actually answered how many children there are;
+       when it hasn't, this falls back to the plain "at least one child"
+       question the field already asked, which is the existing, unrelated
+       behaviour for every other requires_children record. */
+    const min = e.requires_children_min ?? 1;
+    const known = profile.children_count !== null && profile.children_count !== undefined;
     const n = profile.children_count ?? 0;
+    const ok = known ? n >= min : n > 0;
     verdicts.push({
-      outcome: n > 0 ? 'pass' : 'fail',
+      outcome: ok ? 'pass' : 'fail',
       attribute: 'children',
-      sentence:
-        n > 0
-          ? n === 1
-            ? 'You have a child in your household'
-            : `You have ${n} children in your household`
+      sentence: ok
+        ? n === 1
+          ? 'You have a child in your household'
+          : `You have ${n} children in your household`
+        : min > 1
+          ? `This programme requires at least ${min} children in your household`
           : 'This programme requires at least one child in your household',
       question: null,
     });
@@ -926,6 +985,10 @@ export function match(profile, countryData, manifestEntry, asOf = Date.now()) {
      absence of an income tax. Separate bucket so they can be shown without
      inflating either the count or the total. */
   const rights = [];
+  /* Schemes that have genuinely ended. Kept and shown — a founder should
+     still be able to find out a scheme existed and why it no longer applies
+     — but never counted as eligible money and never added to a total. */
+  const ended = [];
   const claimed = new Set(profile.circumstances || []);
   let dataAsOf = '';
 
@@ -970,6 +1033,17 @@ export function match(profile, countryData, manifestEntry, asOf = Date.now()) {
       is_capital: isCapitalCeiling(p),
       circumstances: circumstanceTags(p),
     };
+
+    /* A scheme that has ended is not a caveat to weigh against everything
+       else — it is not something anyone can apply for today, whatever the
+       structured rules say. Checked before the caveat machinery below so an
+       ended scheme is never also computed as "eligible with conditions". */
+    if (isEndedScheme(p)) {
+      m.is_ended = true;
+      m.ended_note = 'This scheme has ended and is no longer accepting applications.';
+      ended.push(m);
+      continue;
+    }
 
     // Gates we cannot evaluate from the answers given. Never counted as a
     // match, never counted in the total — surfaced as a caveat instead.
@@ -1159,6 +1233,7 @@ export function match(profile, countryData, manifestEntry, asOf = Date.now()) {
   notEligible.sort(byValue);
   conditional.sort(byValue);
   tapered.sort(byValue);
+  ended.sort(byValue);
 
   let conditionalMax = 0;
   for (const m of conditional) conditionalMax += m.est_annual_max ?? 0;
@@ -1171,6 +1246,7 @@ export function match(profile, countryData, manifestEntry, asOf = Date.now()) {
     conditional_max: conditionalMax,
     tapered,
     rights,
+    ended,
     blockers,
     total_min: totalMin,
     total_max: totalMax,

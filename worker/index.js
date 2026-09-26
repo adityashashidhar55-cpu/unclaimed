@@ -31,7 +31,17 @@ import {
   exhaustedMessage, PACKS, pack as packById, PLAN_ALLOWANCE,
 } from '../packages/quota/index.js';
 import { buildBrief, briefText } from '../packages/brief/index.js';
-import { verify as verifyTotp, newSecret as newTotpSecret, otpauthUri, isReplay } from '../packages/totp/index.js';
+import { verify as verifyTotp, newSecret as newTotpSecret, otpauthUri, isReplay, base32Encode } from '../packages/totp/index.js';
+import { effectiveStatus, deadlineState } from '../packages/deadlines/index.js';
+import { validateLeadInput, leadNotificationText } from '../packages/leads/index.js';
+/* Old company-grant slug -> surviving canonical slug, for the 45 records merged
+   as duplicates (scripts/merge-duplicates.mjs). The static site 301s the old
+   pages via _redirects; this is the same table for MCP's get_* tools, so an
+   assistant holding an old slug from before the merge still gets the record. */
+import STARTUP_REDIRECTS from '../data/startups/redirects.json' with { type: 'json' };
+import {
+  validateSubscribeInput, genToken, dayKeyUTC, planDigest, digestEmailText, confirmEmailText,
+} from '../packages/alerts/index.js';
 
 /**
  * Every JSON response this Worker sends is per-user and must never be cached.
@@ -58,6 +68,42 @@ const json = (data, status = 200, extra = {}) =>
   new Response(JSON.stringify(data), { status, headers: { ...JSON_HEADERS, ...extra } });
 
 const bad = (msg, status = 400) => json({ error: msg }, status);
+
+/* ------------------------------------------------------------------ */
+/* Deploy-before-migrate tolerance                                     */
+/* ------------------------------------------------------------------ */
+
+/* Workers Builds deploys the code on push; `wrangler d1 migrations apply`
+   is a separate, manual step. So there is always a window in which this
+   Worker runs against a database that does not yet have the tables and
+   columns from migrations 0010-0013 (alert_subscriptions/alert_sends, leads,
+   calendar_tokens/user_totp/user_totp_recovery_codes, entitlements.
+   paused_until). In that window every query against them must read as
+   "this feature is not in use yet" — no 2FA enrolled, no pause, no calendar
+   feed — and never as a 500 on sign-in, /api/me or checkout. Endpoints that
+   exist only to serve a new feature (alerts, leads, TOTP enrolment, pause)
+   answer 503, which the router's catch-all does for any error this matches.
+   scripts/test-premigration.mjs runs the Worker against migrations
+   0001-0009 only and holds this. */
+function isMissingSchema(err) {
+  /* SQLite words it three ways: "no such table: x", "no such column: x"
+     (reads, UPDATE SET) and "table x has no column named y" (INSERT). */
+  return /no such (table|column)|has no column named/i.test(String(err?.message ?? err));
+}
+
+/** Run `fn`; if it fails only because a migration has not been applied, return `fallback` instead. */
+async function unlessMissing(fn, fallback) {
+  try {
+    return await fn();
+  } catch (err) {
+    if (!isMissingSchema(err)) throw err;
+    console.warn('schema_missing', String(err?.message ?? err));
+    return typeof fallback === 'function' ? fallback(err) : fallback;
+  }
+}
+
+const featureUnavailable = () =>
+  json({ error: 'feature_unavailable', message: 'This feature is not available yet. Try again shortly.' }, 503);
 
 /* ------------------------------------------------------------------ */
 /* Crypto helpers (Web Crypto only — no node:crypto in Workers)        */
@@ -174,6 +220,28 @@ async function readSession(env, cookieHeader, authHeader) {
   }
 }
 
+/**
+ * Verify a signed payload that did NOT arrive as the session cookie or
+ * bearer token — the short-lived "pending 2FA" token handed back by
+ * /auth/verify while a TOTP code is still owed. Same envelope as
+ * signSession()/readSession() (HMAC over a base64 body, checked in constant
+ * time, an `exp` that is honoured), kept as its own function rather than
+ * bent into readSession() so a bug in one cannot silently open the other.
+ */
+async function verifySignedPayload(env, token) {
+  const [body, sig] = String(token || '').split('.');
+  if (!body || !sig) return null;
+  const expect = toHex(await hmac(enc.encode(await signingKey(env)), body));
+  if (!timingSafeEqual(sig, expect)) return null;
+  try {
+    const payload = JSON.parse(atob(body));
+    if (payload.exp && payload.exp < Date.now()) return null;
+    return payload;
+  } catch {
+    return null;
+  }
+}
+
 /* ------------------------------------------------------------------ */
 /* Entitlement                                                         */
 /* ------------------------------------------------------------------ */
@@ -234,9 +302,16 @@ async function entitlementFor(env, session, country, product = PRODUCT.DISCOVERY
 
   const now = Date.now();
   const [row, grant] = await Promise.all([
-    env.DB.prepare('SELECT status, plan, current_period_end FROM entitlements WHERE user_id = ?')
-      .bind(userId)
-      .first(),
+    /* paused_until arrives with migration 0013; before it, nobody can be
+       paused, so the pre-0013 read is exactly "not paused". */
+    unlessMissing(
+      () => env.DB.prepare('SELECT status, plan, current_period_end, paused_until FROM entitlements WHERE user_id = ?')
+        .bind(userId)
+        .first(),
+      () => env.DB.prepare('SELECT status, plan, current_period_end, NULL AS paused_until FROM entitlements WHERE user_id = ?')
+        .bind(userId)
+        .first(),
+    ),
     liveGrantFor(env, userId, now),
   ]);
 
@@ -247,6 +322,16 @@ async function entitlementFor(env, session, country, product = PRODUCT.DISCOVERY
      'granted' would quietly disappear from the paying column. */
   const subLive = row ? row.status === 'active' || row.status === 'trialing' : false;
   const subNotExpired = !row?.current_period_end || row.current_period_end * 1000 > now;
+
+  /* Paused reads as NOT entitled. Stripe's pause_collection leaves `status`
+     at 'active' — nothing about the subscription object says "do not serve
+     this customer", that is a decision this product makes and it is made
+     here, once, rather than at every call site that reads `entitled`. A
+     paused account keeps its row and its plan; it simply does not unlock
+     anything until paused_until has passed or the customer resumes early. */
+  if (row && subLive && subNotExpired && row.paused_until && row.paused_until > now) {
+    return { entitled: false, reason: 'paused', plan: row.plan, paused_until: row.paused_until };
+  }
   if (row && subLive && subNotExpired) {
     return { entitled: true, reason: 'active', plan: row.plan };
   }
@@ -281,8 +366,10 @@ async function entitlementFor(env, session, country, product = PRODUCT.DISCOVERY
 /**
  * The full dataset, which the public files are not.
  *
- * /api/v1/programmes/{cc}.json ships with every record past the second one
- * stripped of its name, funder, links and prose, so that gating the pages is
+ * /api/v1/programmes/{cc}.json ships with every record past the free
+ * showcase stripped of its application link, documents, procedure and
+ * quoted source — the name, funder and public page link stay, since those
+ * are already public HTML — so that gating the sold half of the record is
  * not undone by one curl. The Worker needs the whole thing to answer a paid
  * check, so the build also emits an unstripped copy under /api/v1/full/. That
  * prefix is inside run_worker_first, and the router below refuses every
@@ -776,17 +863,40 @@ async function handleAuthVerify(request, env) {
     )
     .run();
 
+  /* The packaged app asks for the session in the body because it cannot use
+     the cookie — see readSession(). Everyone else gets the cookie only, so no
+     browser is ever handed a token it did not need and could not protect. */
+  const native = body.client === 'native';
+
+  /* Optional second factor, opt-in per account (see "Optional TOTP for
+     account holders" below). The email code just proved above is already
+     consumed at this point, so a wrong or missing TOTP code cannot be fixed
+     by resubmitting it — the client goes back to /auth/totp with the pending
+     token instead, which is why this is a distinct 200 answer and not the
+     401 the OTP step itself would return. */
+  /* Before migration 0012 nobody can have enrolled, so a missing user_totp
+     table is "no second factor", never a failed sign-in. */
+  const totpRow = await unlessMissing(
+    () => env.DB.prepare('SELECT user_id FROM user_totp WHERE user_id = ?').bind(user.id).first(),
+    null,
+  );
+  if (totpRow) {
+    const pending = await signSession(env, {
+      pend_uid: user.id,
+      pend_email: email,
+      pend_typ: user.account_type,
+      pend_native: native,
+      exp: now + 5 * 60e3,
+    });
+    return json({ ok: true, totp_required: true, pending }, 200);
+  }
+
   const cookie = await signSession(env, {
     uid: user.id,
     email,
     typ: user.account_type,
     exp: now + 30 * 864e5,
   });
-
-  /* The packaged app asks for the session in the body because it cannot use
-     the cookie — see readSession(). Everyone else gets the cookie only, so no
-     browser is ever handed a token it did not need and could not protect. */
-  const native = body.client === 'native';
 
   return json(
     {
@@ -800,6 +910,321 @@ async function handleAuthVerify(request, env) {
       'set-cookie': `ua_session=${cookie}; Path=/; HttpOnly; Secure; SameSite=Lax; Max-Age=${30 * 86400}`,
     },
   );
+}
+
+/* ------------------------------------------------------------------ */
+/* Deadline alerts                                                     */
+/* ------------------------------------------------------------------ */
+
+/**
+ * Resend, same fetch-only pattern as sendCodeEmail — a distinct sender
+ * identity (ALERTS_FROM, not MAIL_FROM) so a deliverability problem on one
+ * stream (a digest marked spam) cannot take sign-in down with it, and vice
+ * versa. Extra headers are how List-Unsubscribe rides along on the digest
+ * without the confirm email carrying a header that makes no sense on it.
+ */
+async function sendAlertEmail(env, { to, subject, text, headers = {} }) {
+  if (!env.RESEND_API_KEY) return false;
+  const res = await fetch('https://api.resend.com/emails', {
+    method: 'POST',
+    headers: { authorization: `Bearer ${env.RESEND_API_KEY}`, 'content-type': 'application/json' },
+    body: JSON.stringify({
+      from: env.ALERTS_FROM || 'Unclaimed <alerts@unclaimedgrant.com>',
+      to,
+      subject,
+      text,
+      headers,
+    }),
+  });
+  return res.ok;
+}
+
+/**
+ * The full dataset for one jurisdiction, one audience, as plain programme
+ * rows — not the paid-vs-free split loadCountry() does, because the cron
+ * sends to a confirmed email address, not to a browser that might be lying
+ * about who it is. There is no per-request Request to hang env.ASSETS.fetch
+ * off in a scheduled run, so this builds one from APP_ORIGIN the same way
+ * every other absolute link in this file already does.
+ */
+async function loadJurisdictionProgrammes(env, cc, audience) {
+  const base = env.APP_ORIGIN || 'https://unclaimedgrant.com';
+  const rel = audience === 'companies' ? `startups/${cc}` : `programmes/${cc}`;
+  const res = await env.ASSETS.fetch(new Request(`${base}/api/v1/full/${rel}.json`));
+  if (!res.ok) return [];
+  const data = await res.json().catch(() => null);
+  return Array.isArray(data?.programmes) ? data.programmes : [];
+}
+
+/** GET /api/alerts/status — whether the subscribe form should even render. */
+async function handleAlertsStatus(request, env) {
+  return json({ configured: !!env.RESEND_API_KEY });
+}
+
+/**
+ * POST /api/alerts/subscribe — { email, jurisdictions[], audience }.
+ *
+ * Signed out is the common case (this is a lead-capture box on a public
+ * page), so entitlement is only checked when a session is actually present;
+ * an anonymous caller is capped at the free limit exactly like an anonymous
+ * caller of /api/check is unentitled. Rate-limited the same way auth codes
+ * are — this sends mail to an address nobody has proven belongs to the
+ * caller, so it is a spam vector on the same shape as the OTP endpoint.
+ */
+async function handleAlertsSubscribe(request, env) {
+  if (!env.RESEND_API_KEY) return json({ error: 'alerts_not_configured' }, 503);
+
+  const body = await request.json().catch(() => null);
+  if (!body) return bad('body required');
+
+  const ip = request.headers.get('cf-connecting-ip') ?? 'unknown';
+  if (!(await underSendLimit(env, `alert_ip:${ip}`, MAX_SENDS_PER_HOUR.ip))) {
+    return json({ error: 'too_many_requests', message: 'Too many requests. Try again in an hour.' }, 429);
+  }
+
+  const session = await readSession(env, request.headers.get('cookie'), request.headers.get('authorization'));
+  let entitled = false;
+  if (session) {
+    const cc = Array.isArray(body.jurisdictions) && body.jurisdictions[0] ? String(body.jurisdictions[0]) : 'gb';
+    entitled = (await entitlementFor(env, session, cc)).entitled;
+  }
+
+  const v = validateSubscribeInput(body, entitled);
+  if (!v.ok) return json({ error: v.error, ...(v.limit ? { limit: v.limit } : {}) }, 422);
+
+  if (!(await underSendLimit(env, `alert_email:${v.email}`, MAX_SENDS_PER_HOUR.email))) {
+    return json({ error: 'too_many_requests', message: 'Too many requests. Try again in an hour.' }, 429);
+  }
+
+  const now = Date.now();
+  const existing = await env.DB.prepare('SELECT id, token FROM alert_subscriptions WHERE email = ? AND audience = ?')
+    .bind(v.email, v.audience)
+    .first();
+
+  /* The token is kept across re-subscribes: it is also the unsubscribe token
+     in every digest already sitting in that inbox, and rotating it would turn
+     each of those List-Unsubscribe links into a dead end. */
+  const token = existing?.token || genToken();
+  if (existing) {
+    /* Re-subscribing resets confirmation: the jurisdictions changed, and the
+       only thing standing between "anyone types in an address" and "that
+       address gets mail on a schedule" is proving it again. */
+    await env.DB.prepare(
+      `UPDATE alert_subscriptions
+          SET jurisdictions = ?, token = ?, confirmed_at = NULL, unsubscribed_at = NULL
+        WHERE id = ?`,
+    )
+      .bind(JSON.stringify(v.jurisdictions), token, existing.id)
+      .run();
+  } else {
+    await env.DB.prepare(
+      `INSERT INTO alert_subscriptions (id, email, jurisdictions, audience, token, created_at, user_id)
+       VALUES (?, ?, ?, ?, ?, ?, ?)`,
+    )
+      .bind(crypto.randomUUID(), v.email, JSON.stringify(v.jurisdictions), v.audience, token, now, session?.uid ?? null)
+      .run();
+  }
+
+  const confirmUrl = `${env.APP_ORIGIN || 'https://unclaimedgrant.com'}/api/alerts/confirm?token=${token}`;
+  const sent = await sendAlertEmail(env, confirmEmailText(confirmUrl, v.jurisdictions));
+  return json({ ok: true, sent });
+}
+
+const ALERTS_HTML = (title, body) =>
+  new Response(
+    `<!doctype html><html lang="en"><meta charset="utf-8"><title>${title} — Unclaimed</title>` +
+      `<body style="font:16px/1.5 system-ui;max-width:32rem;margin:4rem auto;padding:0 1.5rem">` +
+      `<h1 style="font-size:1.3rem">${title}</h1><p>${body}</p><p><a href="/">Back to Unclaimed</a></p></body></html>`,
+    { status: 200, headers: { 'content-type': 'text/html; charset=utf-8' } },
+  );
+
+/** GET /api/alerts/confirm?token= — the second half of double opt-in. */
+async function handleAlertsConfirm(request, env) {
+  const token = new URL(request.url).searchParams.get('token');
+  if (!token) return bad('token required');
+
+  const row = await env.DB.prepare('SELECT id FROM alert_subscriptions WHERE token = ? AND unsubscribed_at IS NULL')
+    .bind(token)
+    .first();
+  if (!row) return ALERTS_HTML('That link has expired', 'Subscribe again to get a fresh confirmation email.');
+
+  /* Idempotent: clicking twice, or a mail client that pre-fetches links, must
+     not error and must not disturb an already-confirmed row. */
+  await env.DB.prepare('UPDATE alert_subscriptions SET confirmed_at = COALESCE(confirmed_at, ?) WHERE id = ?')
+    .bind(Date.now(), row.id)
+    .run();
+  return ALERTS_HTML('Confirmed', "You're set — we'll only email you when a deadline is close or something on your list changes.");
+}
+
+/**
+ * GET or POST /api/alerts/unsubscribe?token= — one click, no sign-in.
+ *
+ * POST is what RFC 8058 one-click unsubscribe (the List-Unsubscribe-Post
+ * header) actually sends — a mail client's own "Unsubscribe" button fires a
+ * POST with no confirmation page, so it must succeed silently. GET is the
+ * same token clicked as an ordinary link and gets the human-readable page.
+ */
+async function handleAlertsUnsubscribe(request, env) {
+  const token = new URL(request.url).searchParams.get('token');
+  if (!token) return bad('token required');
+
+  const row = await env.DB.prepare('SELECT id FROM alert_subscriptions WHERE token = ?').bind(token).first();
+  if (row) {
+    await env.DB.prepare('UPDATE alert_subscriptions SET unsubscribed_at = COALESCE(unsubscribed_at, ?) WHERE id = ?')
+      .bind(Date.now(), row.id)
+      .run();
+  }
+
+  if (request.method === 'POST') return new Response(null, { status: 200 });
+  return ALERTS_HTML('Unsubscribed', row ? "You won't get any more of these." : 'That link was already used.');
+}
+
+/* ------------------------------------------------------------------ */
+/* "Get expert help" leads -> involve-consulting.com                   */
+/* ------------------------------------------------------------------ */
+
+/**
+ * POST /api/leads — { name, email, country?, audience?, programme_slug?,
+ * message?, consent }.
+ *
+ * A referral to involve-consulting.com, the owner's separate paid consulting
+ * business, run alongside Unclaimed rather than folded into it: the CTA copy
+ * says so, and this endpoint never quotes a price or a success fee — that is
+ * a policy, not just a copy choice (packages/policy/index.js forbids
+ * contingent fees for the same reason).
+ *
+ * Stored even with no RESEND_API_KEY — the lead is not lost, it just is not
+ * emailed until a key and env.LEADS_TO are configured — and rate-limited the
+ * same way alert subscribe is, since this also sends mail to an address
+ * nobody has proven belongs to the caller.
+ */
+async function handleLeadsSubmit(request, env) {
+  const body = await request.json().catch(() => null);
+  if (!body) return bad('body required');
+
+  const ip = request.headers.get('cf-connecting-ip') ?? 'unknown';
+  if (!(await underSendLimit(env, `lead_ip:${ip}`, MAX_SENDS_PER_HOUR.ip))) {
+    return json({ error: 'too_many_requests', message: 'Too many requests. Try again in an hour.' }, 429);
+  }
+
+  const v = validateLeadInput(body);
+  if (!v.ok) return json({ error: v.error }, 422);
+
+  if (!(await underSendLimit(env, `lead_email:${v.email}`, MAX_SENDS_PER_HOUR.email))) {
+    return json({ error: 'too_many_requests', message: 'Too many requests. Try again in an hour.' }, 429);
+  }
+
+  const id = crypto.randomUUID();
+  const now = Date.now();
+  await env.DB.prepare(
+    `INSERT INTO leads (id, name, email, country, audience, programme_slug, message, consent, created_at, ip)
+     VALUES (?, ?, ?, ?, ?, ?, ?, 1, ?, ?)`,
+  )
+    .bind(id, v.name, v.email, v.country || null, v.audience || null, v.programme_slug || null, v.message || null, now, ip)
+    .run();
+
+  let notified = false;
+  if (env.RESEND_API_KEY && env.LEADS_TO) {
+    notified = await sendAlertEmail(env, {
+      to: env.LEADS_TO,
+      subject: `New Unclaimed lead: ${v.name}`,
+      text: leadNotificationText(v),
+    });
+    if (notified) {
+      await env.DB.prepare('UPDATE leads SET notified_at = ? WHERE id = ?').bind(Date.now(), id).run();
+    }
+  }
+
+  return json({ ok: true, notified });
+}
+
+/**
+ * GET /api/admin/leads?limit=100 — same requireAdmin gate and shape as
+ * handleAdminLogins above.
+ */
+async function handleAdminLeads(request, env) {
+  if (!(await requireAdmin(request, env))) return bad('admin only', 403);
+  const url = new URL(request.url);
+  const limit = Math.min(500, Math.max(1, parseInt(url.searchParams.get('limit'), 10) || 100));
+
+  const rows = await env.DB.prepare(
+    `SELECT id, name, email, country, audience, programme_slug, message, notified_at, created_at
+       FROM leads ORDER BY created_at DESC LIMIT ?`,
+  ).bind(limit).all();
+
+  return json({ leads: rows.results });
+}
+
+/**
+ * The scheduled digest. Runs once a day (see wrangler.jsonc's cron); every
+ * step is written to survive being run twice in the same UTC day without
+ * duplicating mail, because "the cron fired again" is a normal thing for a
+ * platform to do on a retry, not an incident.
+ */
+async function runAlertsCron(env, opts = {}) {
+  const asOf = opts.asOf ?? Date.now();
+  if (!env.RESEND_API_KEY) return { sent: 0, skipped: 'not_configured' };
+
+  const today = dayKeyUTC(asOf);
+  const subs = await unlessMissing(
+    () => env.DB.prepare(
+      'SELECT * FROM alert_subscriptions WHERE confirmed_at IS NOT NULL AND unsubscribed_at IS NULL',
+    ).all(),
+    null,
+  );
+  if (!subs) return { sent: 0, skipped: 'schema_missing' }; // pre-0010: nobody can have subscribed
+
+  const rawLoad = opts.loadJurisdictionProgrammes ?? ((cc, audience) => loadJurisdictionProgrammes(env, cc, audience));
+  /* Memoised per run: a thousand subscribers watching GB is one asset read,
+     not a thousand — the per-invocation subrequest budget is finite. */
+  const cache = new Map();
+  const load = (cc, audience) => {
+    const k = `${audience}:${cc}`;
+    if (!cache.has(k)) cache.set(k, Promise.resolve(rawLoad(cc, audience)).catch(() => []));
+    return cache.get(k);
+  };
+
+  /* Today's sends in one query rather than one per subscriber. */
+  const sentToday = new Set(
+    ((await env.DB.prepare('SELECT subscription_id FROM alert_sends WHERE sent_date = ?').bind(today).all()).results ?? [])
+      .map((r) => r.subscription_id),
+  );
+
+  let sent = 0;
+  for (const sub of subs.results ?? []) {
+    if (sentToday.has(sub.id)) continue; // one digest per subscription per UTC day, however many times this runs
+
+    let jurisdictions = [];
+    try { jurisdictions = JSON.parse(sub.jurisdictions); } catch { continue; }
+    const programmes = [];
+    // eslint-disable-next-line no-await-in-loop
+    for (const cc of jurisdictions) programmes.push(...(await load(cc, sub.audience)));
+
+    const items = planDigest(programmes, { asOf, lastSentAt: sub.last_sent_at });
+    if (!items.length) continue; // never send an empty digest
+
+    const unsubscribeUrl = `${env.APP_ORIGIN || 'https://unclaimedgrant.com'}/api/alerts/unsubscribe?token=${sub.token}`;
+    const { subject, text } = digestEmailText(items, { asOf, unsubscribeUrl });
+    // eslint-disable-next-line no-await-in-loop
+    const ok = await sendAlertEmail(env, {
+      to: sub.email,
+      subject,
+      text,
+      headers: { 'List-Unsubscribe': `<${unsubscribeUrl}>`, 'List-Unsubscribe-Post': 'List-Unsubscribe=One-Click' },
+    });
+    if (!ok) continue;
+
+    // eslint-disable-next-line no-await-in-loop
+    await env.DB.prepare(
+      'INSERT INTO alert_sends (id, subscription_id, sent_date, programme_slugs, created_at) VALUES (?, ?, ?, ?, ?)',
+    )
+      .bind(crypto.randomUUID(), sub.id, today, JSON.stringify(items.map((i) => i.programme.slug)), asOf)
+      .run();
+    // eslint-disable-next-line no-await-in-loop
+    await env.DB.prepare('UPDATE alert_subscriptions SET last_sent_at = ? WHERE id = ?').bind(asOf, sub.id).run();
+    sent += 1;
+  }
+  return { sent };
 }
 
 /* ------------------------------------------------------------------ */
@@ -1284,7 +1709,7 @@ async function handleCheckout(request, env) {
      did: a 500 from the endpoint, on the one plan an enterprise buyer would
      press. Passing both `customer` and `customer_email` is also an error, so
      it is one or the other. */
-  const existing = await env.DB.prepare('SELECT stripe_customer_id FROM entitlements WHERE user_id = ?')
+  const existing = await env.DB.prepare('SELECT stripe_subscription_id, stripe_customer_id FROM entitlements WHERE user_id = ?')
     .bind(session.uid)
     .first()
     .catch(() => null);
@@ -1315,6 +1740,18 @@ async function handleCheckout(request, env) {
              to update, and Stripe treats it as a hard error rather than
              ignoring it. */
           ...(customerId ? { 'customer_update[name]': 'auto', 'customer_update[address]': 'auto' } : {}),
+          /* 14 days free on the Startup (business) plans only — never on
+             personal, and never anywhere near a credit pack, which is a
+             one-off `mode: 'payment'` session handled by a completely
+             different function and never reaches this branch. Checkout in
+             `mode: 'subscription'` always collects a card up front regardless
+             of a trial being attached, so "payment method collected" holds
+             without a separate flag. */
+          /* First subscription only. Anyone who has ever held a subscription
+             (cancelled, lapsed, or a previous trial) already has
+             stripe_subscription_id on their row; without this check a cancel
+             and resubscribe restarted the 14 free days every time. */
+          ...(existing?.stripe_subscription_id ? {} : { 'subscription_data[trial_period_days]': '14' }),
         }
       : {}),
       allow_promotion_codes: 'true',
@@ -1421,9 +1858,33 @@ async function applyStripeEvent(event, env) {
   const now = Date.now();
 
   const upsert = async (userId, fields) => {
-    await env.DB.prepare(
-      `INSERT INTO entitlements (user_id, status, plan, stripe_customer_id, stripe_subscription_id, current_period_end, updated_at)
-       VALUES (?, ?, ?, ?, ?, ?, ?)
+    /* paused_until is COALESCEd like plan and customer — EXCEPT when the
+       caller is reporting the subscription's actual pause state (the
+       customer.subscription.* branch below), where a Stripe dashboard resume
+       has to be able to write null over whatever we had. COALESCE(null,
+       existing) would silently keep the old value in that case, which is the
+       one bug this column exists to avoid, so that branch sets `syncPause`
+       and gets the excluded value verbatim instead. */
+    const setPause = 'syncPause' in fields;
+    /* `plan` is NOT NULL, and SQLite enforces that on the row an UPSERT would
+       insert even when a conflict redirects it to the UPDATE branch below —
+       COALESCE(excluded.plan, entitlements.plan) only ever runs if the insert
+       is allowed to happen at all, which a null `plan` on a genuinely-null
+       write can prevent outright. This only ever does the extra read on the
+       branches that do not already know the plan (`invoice.payment_failed`, a
+       cancellation with no metadata) — everywhere else `fields.plan` is
+       already set and the query below is skipped. */
+    let planValue = fields.plan ?? null;
+    if (planValue === null) {
+      const prior = await env.DB.prepare('SELECT plan FROM entitlements WHERE user_id = ?').bind(userId).first();
+      planValue = prior?.plan ?? null;
+    }
+    /* withPause=false is the pre-migration-0013 shape (no paused_until
+       column): a checkout that completes in the window between deploy and
+       migrate must still grant the subscription it paid for. */
+    const write = (withPause) => env.DB.prepare(
+      `INSERT INTO entitlements (user_id, status, plan, stripe_customer_id, stripe_subscription_id, current_period_end${withPause ? ', paused_until' : ''}, updated_at)
+       VALUES (?, ?, ?, ?, ?, ?, ?${withPause ? ', ?' : ''})
        ON CONFLICT(user_id) DO UPDATE SET
          status = excluded.status,
          /* COALESCE, not a straight assignment. Stripe sends
@@ -1435,6 +1896,7 @@ async function applyStripeEvent(event, env) {
          stripe_customer_id = COALESCE(excluded.stripe_customer_id, entitlements.stripe_customer_id),
          stripe_subscription_id = COALESCE(excluded.stripe_subscription_id, entitlements.stripe_subscription_id),
          current_period_end = excluded.current_period_end,
+         ${withPause ? `paused_until = ${setPause ? 'excluded.paused_until' : 'COALESCE(excluded.paused_until, entitlements.paused_until)'},` : ''}
          updated_at = excluded.updated_at`,
     )
       .bind(
@@ -1445,15 +1907,30 @@ async function applyStripeEvent(event, env) {
            business alike, was recorded as monthly, and the account page
            dutifully told an annual subscriber their monthly was active. The
            plan travels in metadata on both the session and the subscription;
-           read it, and when it is genuinely absent write null so the COALESCE
-           above keeps what we already knew rather than inventing a plan. */
-        fields.plan ?? null,
+           read it, and when it is genuinely absent fall back to what the row
+           already has (`planValue`, above) so this write can never violate
+           the column's NOT NULL constraint while still leaving the COALESCE
+           below in place as the belt to this brace. */
+        planValue,
         fields.customer ?? null,
         fields.subscription ?? null,
         fields.period_end ?? null,
+        ...(withPause ? [fields.paused_until ?? null] : []),
         now,
       )
       .run();
+    await unlessMissing(() => write(true), () => write(false));
+  };
+
+  /* What Stripe's own subscription object says about being paused, read as
+     the source of truth. `resumes_at` absent with `pause_collection` present
+     means an indefinite pause — Stripe allows that shape even though this
+     product's own /api/billing/pause always sets a resume date — so it is
+     recorded as "paused essentially forever" rather than mistaken for "not
+     paused". */
+  const pausedUntilFrom = (obj) => {
+    if (!obj?.pause_collection) return null;
+    return obj.pause_collection.resumes_at ? obj.pause_collection.resumes_at * 1000 : Number.MAX_SAFE_INTEGER;
   };
 
   /* Which plan this purchase is for, in the Worker's own vocabulary.
@@ -1514,6 +1991,12 @@ async function applyStripeEvent(event, env) {
           customer: o.customer,
           subscription: o.id,
           period_end: o.current_period_end ?? null,
+          /* A cancelled subscription is not "paused" — 'canceled' already
+             reads as unentitled on its own, and a stale paused_until surviving
+             the cancellation would misreport `reason` if it were ever
+             resubscribed with the row still in place. */
+          syncPause: true,
+          paused_until: event.type === 'customer.subscription.deleted' ? null : pausedUntilFrom(o),
         });
       }
       break;
@@ -1552,6 +2035,131 @@ async function handlePortal(request, env) {
   return json({ url: portal.url });
 }
 
+/** Months a customer may pause for. Longer than three and the product looks
+ *  paused, not billed — at that point a cancel-and-rejoin is the honest
+ *  shape. */
+const PAUSE_MONTHS = new Set([1, 2, 3]);
+const DAY_MS = 24 * 60 * 60 * 1000;
+
+/**
+ * POST /api/billing/pause { months: 1|2|3 }
+ *
+ * Stripe stops invoicing (`pause_collection.behavior = 'void'`, never
+ * `'mark_uncollectible'` — void never generates the invoice at all, which is
+ * the only shape a customer would call "paused" rather than "an invoice I
+ * have to go argue about"). The webhook is not waited for: Stripe answers the
+ * update synchronously and the row it will confirm a moment later is set
+ * here too, so the account page reads "paused" back immediately rather than
+ * on whichever request the webhook happens to beat.
+ */
+async function handleBillingPause(request, env) {
+  const session = await readSession(env, request.headers.get('cookie'), request.headers.get('authorization'));
+  if (!session?.uid) return bad('sign in required', 401);
+
+  const body = await request.json().catch(() => ({}));
+  const months = parseInt(body.months, 10);
+  if (!PAUSE_MONTHS.has(months)) {
+    return json({ error: 'invalid_months', message: 'Pause for 1, 2 or 3 months.' }, 400);
+  }
+
+  const row = await env.DB.prepare('SELECT status, stripe_subscription_id, paused_until FROM entitlements WHERE user_id = ?')
+    .bind(session.uid)
+    .first();
+  if (!row?.stripe_subscription_id) return bad('no subscription', 404);
+  /* Only a live subscription can be paused. A cancelled one makes Stripe
+     error (which surfaced as a misleading "try again"), and pausing a
+     past_due one would void the very invoice the customer owes. */
+  if (row.status !== 'active' && row.status !== 'trialing') {
+    return json({ error: 'not_active', message: 'Only an active subscription can be paused.' }, 409);
+  }
+  if (row.paused_until && row.paused_until > Date.now()) {
+    return json({ error: 'already_paused', message: 'This subscription is already paused.', paused_until: row.paused_until }, 409);
+  }
+
+  const resumesAtSec = Math.floor((Date.now() + months * 30 * DAY_MS) / 1000);
+  try {
+    await stripeCall(env, `subscriptions/${row.stripe_subscription_id}`, {
+      'pause_collection[behavior]': 'void',
+      'pause_collection[resumes_at]': String(resumesAtSec),
+    });
+  } catch (err) {
+    console.error(`stripe_pause_failed uid=${session.uid}`, err);
+    return json({ error: 'stripe_unavailable', message: 'We could not pause your subscription just now. Please try again in a moment.' }, 503);
+  }
+
+  const pausedUntil = resumesAtSec * 1000;
+  await env.DB.prepare('UPDATE entitlements SET paused_until = ?, updated_at = ? WHERE user_id = ?')
+    .bind(pausedUntil, Date.now(), session.uid)
+    .run();
+
+  return json({ ok: true, paused_until: pausedUntil });
+}
+
+/**
+ * POST /api/billing/resume — end a pause early.
+ *
+ * Stripe removes `pause_collection` from a subscription when it is sent as
+ * an empty value rather than a nested object; `URLSearchParams` already
+ * form-encodes a bare key with no bracketed children as exactly that, so no
+ * special-casing is needed in stripeCall for this one call.
+ */
+async function handleBillingResume(request, env) {
+  const session = await readSession(env, request.headers.get('cookie'), request.headers.get('authorization'));
+  if (!session?.uid) return bad('sign in required', 401);
+
+  const row = await env.DB.prepare('SELECT stripe_subscription_id, paused_until FROM entitlements WHERE user_id = ?')
+    .bind(session.uid)
+    .first();
+  if (!row?.stripe_subscription_id) return bad('no subscription', 404);
+  if (!row.paused_until) return json({ error: 'not_paused', message: 'This subscription is not paused.' }, 409);
+
+  try {
+    await stripeCall(env, `subscriptions/${row.stripe_subscription_id}`, {
+      pause_collection: '',
+    });
+  } catch (err) {
+    console.error(`stripe_resume_failed uid=${session.uid}`, err);
+    return json({ error: 'stripe_unavailable', message: 'We could not resume your subscription just now. Please try again in a moment.' }, 503);
+  }
+
+  await env.DB.prepare('UPDATE entitlements SET paused_until = NULL, updated_at = ? WHERE user_id = ?')
+    .bind(Date.now(), session.uid)
+    .run();
+
+  return json({ ok: true });
+}
+
+/**
+ * GET /api/quota — what THIS signed-in person's billing unit has left.
+ *
+ * Distinct from GET /api/enterprise/quota, which requires an org and is what
+ * the workspace dashboard reads. The account page has no workspace open and a
+ * personal subscriber has no org at all, so this route accepts any signed-in
+ * session and resolves the same org-or-user scope `quotaFor` already expects
+ * — an individual account simply has a zero allowance on every plan, which
+ * `quotaFor` already reports correctly with no special-casing here.
+ */
+async function handleAccountQuota(request, env) {
+  const session = await readSession(env, request.headers.get('cookie'), request.headers.get('authorization'));
+  if (!session?.uid) return bad('sign in required', 401);
+  const ent = await entitlementFor(env, session, 'gb', PRODUCT.DISCOVERY);
+  const member = await env.DB.prepare('SELECT org_id FROM org_members WHERE user_id = ? LIMIT 1')
+    .bind(session.uid)
+    .first();
+  const gate = { session, orgId: member?.org_id ?? null };
+  /* A paused, lapsed or cancelled row still carries its plan, and quotaFor
+     reads the allowance off the plan alone — so without this the account page
+     promised a paused customer a monthly allowance that orgGate refuses to let
+     them spend. Not entitled means no allowance; purchased credits still show. */
+  const q = await quotaFor(env, gate, ent.entitled ? ent : { ...ent, plan: null, seats: 1, granted: null });
+  return json({
+    quota: q,
+    generators: GENERATORS,
+    packs: PACKS,
+    entitlement: ent,
+  });
+}
+
 /* ------------------------------------------------------------------ */
 /* The enterprise workspace, held on the server                        */
 /* ------------------------------------------------------------------ */
@@ -1574,14 +2182,18 @@ const MAX_WORKSPACE_BYTES = 2 * 1024 * 1024;
  * not for editing a customer's pipeline. An admin who wants to see the product
  * signs in as themselves.
  */
-async function workspaceKeyFor(env, session) {
-  if (!session?.uid) return null;
+async function workspaceKeyForUser(env, userId) {
   const row = await env.DB.prepare('SELECT org_id FROM org_members WHERE user_id = ? LIMIT 1')
-    .bind(session.uid)
+    .bind(userId)
     .first();
   return row?.org_id
     ? { id: `org:${row.org_id}`, scope: 'org', owner_id: row.org_id }
-    : { id: `user:${session.uid}`, scope: 'user', owner_id: session.uid };
+    : { id: `user:${userId}`, scope: 'user', owner_id: userId };
+}
+
+async function workspaceKeyFor(env, session) {
+  if (!session?.uid) return null;
+  return workspaceKeyForUser(env, session.uid);
 }
 
 /**
@@ -1684,6 +2296,256 @@ async function handleWorkspacePut(request, env) {
     .run();
 
   return json({ ok: true, rev: nextRev });
+}
+
+/* ------------------------------------------------------------------ */
+/* A private calendar feed for the pipeline                            */
+/*                                                                      */
+/* GET /api/workspace/calendar-token  — is one issued                  */
+/* POST /api/workspace/calendar-token — issue or rotate one            */
+/* DELETE /api/workspace/calendar-token — revoke                       */
+/* GET /api/calendar/<token>.ics      — the feed itself, no sign-in     */
+/* ------------------------------------------------------------------ */
+
+/**
+ * RFC 5545 §3.1: content lines must not exceed 75 octets; longer ones are
+ * folded with CRLF + a single space. Same algorithm src/pages/closing-soon.mjs
+ * uses for the build-time startup-deadline feeds — counted in UTF-8 octets,
+ * because a funder's name can carry accents, and never split inside a
+ * multi-byte character. Kept as a small local copy rather than imported: that
+ * module is a build-time page generator pulled in for its side of the site,
+ * and this Worker should not carry its weight for eleven lines of folding.
+ */
+function foldICSLine(line) {
+  const enc2 = new TextEncoder();
+  if (enc2.encode(line).length <= 75) return line;
+  const out = [];
+  let cur = '';
+  let curBytes = 0;
+  let limit = 75;
+  for (const ch of line) {
+    const b = enc2.encode(ch).length;
+    if (curBytes + b > limit) {
+      out.push(cur);
+      cur = '';
+      curBytes = 0;
+      limit = 74;
+    }
+    cur += ch;
+    curBytes += b;
+  }
+  out.push(cur);
+  return out.join('\r\n ');
+}
+
+/** events: [{ uid, at, title, body, url }], each already timestamped in ms. */
+function buildICS(events, { name = 'Unclaimed pipeline deadlines' } = {}) {
+  const stamp = (t) => new Date(t).toISOString().replace(/[-:]/g, '').split('.')[0] + 'Z';
+  const esc2 = (s) => String(s ?? '').replace(/([,;\\])/g, '\\$1').replace(/\r\n?|\n/g, '\\n');
+  /* UID and URL are not TEXT values and cannot be backslash-escaped, so a
+     stray CR/LF (an entry id or URL typed into the workspace doc) is dropped
+     outright rather than allowed to start a new content line. */
+  const raw = (s) => String(s ?? '').replace(/[\r\n]/g, '');
+  const now = stamp(Date.now());
+  const lines = [
+    'BEGIN:VCALENDAR',
+    'VERSION:2.0',
+    'PRODID:-//Unclaimed//Pipeline deadlines//EN',
+    'CALSCALE:GREGORIAN',
+    'METHOD:PUBLISH',
+    `X-WR-CALNAME:${esc2(name)}`,
+  ];
+  for (const e of events) {
+    lines.push(
+      'BEGIN:VEVENT',
+      `UID:${raw(e.uid)}`,
+      `DTSTAMP:${now}`,
+      `DTSTART:${stamp(e.at)}`,
+      `SUMMARY:${esc2(e.title)}`,
+      `DESCRIPTION:${esc2(e.body)}${e.url ? esc2('\n' + e.url) : ''}`,
+      ...(e.url ? [`URL:${raw(e.url)}`] : []),
+      'END:VEVENT',
+    );
+  }
+  lines.push('END:VCALENDAR');
+  return lines.map(foldICSLine).join('\r\n') + '\r\n';
+}
+
+/**
+ * The programmes a workspace's companies can reach, keyed by slug.
+ *
+ * Loaded the same way /api/startups/check loads them — the per-country static
+ * pool, through env.ASSETS — rather than pulling in the matching engine here.
+ * The calendar feed only needs one field off each programme (its close date),
+ * never a match verdict, so there is nothing to compute, only to look up.
+ */
+async function calendarProgrammeIndex(env, request, companies) {
+  const poolNames = new Set();
+  for (const c of companies) for (const p of reachFor(c.country_code)) poolNames.add(p);
+  const bySlug = new Map();
+  for (const name of poolNames) {
+    const d = await loadStartupPool(env, request, name);
+    for (const p of d?.programmes || []) if (!bySlug.has(p.slug)) bySlug.set(p.slug, p);
+  }
+  return bySlug;
+}
+
+const CALENDAR_CLOSED_STAGES = new Set(['awarded', 'declined']);
+
+/** POST — issue a fresh token, revoking whatever this user held before. */
+async function handleCalendarTokenCreate(request, env) {
+  const gate = await workspaceGate(request, env);
+  if (gate.error) return gate.error;
+
+  const token = genToken();
+  const hash = await sha256Hex(token);
+  const now = Date.now();
+  await env.DB.batch([
+    env.DB.prepare('UPDATE calendar_tokens SET revoked_at = COALESCE(revoked_at, ?) WHERE user_id = ? AND revoked_at IS NULL')
+      .bind(now, gate.session.uid),
+    env.DB.prepare('INSERT INTO calendar_tokens (id, user_id, token_hash, created_at) VALUES (?, ?, ?, ?)')
+      .bind(crypto.randomUUID(), gate.session.uid, hash, now),
+  ]);
+
+  /* The plaintext token is returned exactly once, here — the row only ever
+     keeps its hash, the same shape as the login codes and the admin
+     password, so a dump of this table hands nobody a working feed. */
+  const url = `${env.APP_ORIGIN || 'https://unclaimedgrant.com'}/api/calendar/${token}.ics`;
+  return json({ ok: true, url });
+}
+
+/** GET — whether a feed is live, without ever showing the token again. */
+async function handleCalendarTokenStatus(request, env) {
+  const gate = await workspaceGate(request, env);
+  if (gate.error) return gate.error;
+
+  const row = await unlessMissing(
+    () => env.DB.prepare(
+      'SELECT created_at FROM calendar_tokens WHERE user_id = ? AND revoked_at IS NULL ORDER BY created_at DESC LIMIT 1',
+    )
+      .bind(gate.session.uid)
+      .first(),
+    null, // pre-0012: no feed can exist
+  );
+  return json({ ok: true, active: !!row, created_at: row?.created_at ?? null });
+}
+
+/** DELETE — one click to kill a link that leaked. */
+async function handleCalendarTokenRevoke(request, env) {
+  const gate = await workspaceGate(request, env);
+  if (gate.error) return gate.error;
+
+  await env.DB.prepare('UPDATE calendar_tokens SET revoked_at = COALESCE(revoked_at, ?) WHERE user_id = ? AND revoked_at IS NULL')
+    .bind(Date.now(), gate.session.uid)
+    .run();
+  return json({ ok: true });
+}
+
+/**
+ * GET /api/calendar/<token>.ics — no sign-in, the token IS the credential.
+ *
+ * Three kinds of event, all built from fields the workspace document already
+ * carries or a static programme lookup, never from a fresh match run:
+ *   - a programme's own published close date, for anything still open;
+ *   - the internal due date a person set on the entry (packages/deadlines
+ *     knows nothing about that field — it lives only in the doc);
+ *   - a declined entry's projected reopening, once "Remind me next cycle"
+ *     has been used on it (see the pipeline UI).
+ */
+async function handleCalendarFeed(request, env, rawToken) {
+  const notFound = () => new Response('Not found', { status: 404 });
+  const token = String(rawToken || '');
+  if (!/^[0-9a-f]{64}$/.test(token)) return notFound();
+
+  const hash = await sha256Hex(token);
+  const row = await unlessMissing(
+    () => env.DB.prepare('SELECT user_id FROM calendar_tokens WHERE token_hash = ? AND revoked_at IS NULL')
+      .bind(hash)
+      .first(),
+    null, // pre-0012: no token can be valid
+  );
+  if (!row) return notFound();
+
+  /* The feed carries full programme names and close dates from the paid pool,
+     so it lapses with the subscription exactly as the workspace itself does
+     (same product, same default jurisdiction as workspaceGate()). */
+  const ent = await entitlementFor(env, { uid: row.user_id }, 'gb', PRODUCT.DISCOVERY);
+  if (!ent.entitled) {
+    return new Response('This calendar feed is paused: the subscription behind it is no longer active.', {
+      status: 402,
+      headers: { 'content-type': 'text/plain; charset=utf-8', 'cache-control': 'no-store' },
+    });
+  }
+
+  const key = await workspaceKeyForUser(env, row.user_id);
+  const wsRow = await env.DB.prepare('SELECT doc FROM workspaces WHERE id = ?').bind(key.id).first();
+  let doc = null;
+  try {
+    doc = wsRow ? JSON.parse(wsRow.doc) : null;
+  } catch {
+    doc = null;
+  }
+  const pipeline = doc?.pipeline || [];
+  const companies = doc?.companies || [];
+  const companyName = new Map(companies.map((c) => [c.id, c.legal_name]));
+
+  const idx = await calendarProgrammeIndex(env, request, companies);
+  const now = Date.now();
+  const events = [];
+
+  for (const e of pipeline) {
+    const closed = CALENDAR_CLOSED_STAGES.has(e.stage);
+    const p = idx.get(e.slug);
+    const name = p?.name_en || p?.name_local || e.custom_name || 'Grant';
+    const co = companyName.get(e.company_id);
+
+    if (!closed && p) {
+      const d = deadlineState(p, now);
+      if (d.at && d.at > now) {
+        events.push({
+          uid: `unclaimed-pipeline-${e.id}-deadline@unclaimedgrant.com`,
+          at: d.at,
+          title: `${name} closes${co ? ` — ${co}` : ''}`,
+          body: d.detail,
+          url: p.application_url || '',
+        });
+      }
+    }
+
+    if (!closed && e.due) {
+      const at = Date.parse(e.due);
+      if (Number.isFinite(at)) {
+        events.push({
+          uid: `unclaimed-pipeline-${e.id}-due@unclaimedgrant.com`,
+          at,
+          title: `Internal due date — ${name}${co ? ` (${co})` : ''}`,
+          body: e.next_action || 'Internal follow-up date set in your pipeline.',
+          url: p?.application_url || '',
+        });
+      }
+    }
+
+    if (e.stage === 'declined' && Number.isFinite(Number(e.reminder_at)) && Number(e.reminder_at) > 0) {
+      events.push({
+        uid: `unclaimed-pipeline-${e.id}-reminder@unclaimedgrant.com`,
+        at: Number(e.reminder_at),
+        title: `${name} — next window${co ? ` (${co})` : ''}`,
+        body: e.reminder_label || 'Projected reopening — confirm on the funder’s page.',
+        url: p?.application_url || '',
+      });
+    }
+  }
+
+  events.sort((a, b) => a.at - b.at);
+  const ics = buildICS(events, { name: 'Unclaimed — pipeline deadlines' });
+  return new Response(ics, {
+    status: 200,
+    headers: {
+      'content-type': 'text/calendar; charset=utf-8',
+      'cache-control': 'private, max-age=900',
+      'content-disposition': 'inline; filename="unclaimed-pipeline.ics"',
+    },
+  });
 }
 
 /* ------------------------------------------------------------------ */
@@ -2709,6 +3571,214 @@ async function handleAdminTotpDisable(request, env) {
   return json({ ok: true, enrolled: false });
 }
 
+/* ------------------------------------------------------------------ */
+/* Optional TOTP for account holders                                    */
+/*                                                                      */
+/* Same primitive as the operator door above (packages/totp), offered   */
+/* to a signed-in user rather than the operator. Opt-in, never inferred:*/
+/* no row in user_totp means sign-in works exactly as it always has —   */
+/* the email code alone — so shipping this cannot lock anyone out.      */
+/* ------------------------------------------------------------------ */
+
+function accountSession(request, env) {
+  return readSession(env, request.headers.get('cookie'), request.headers.get('authorization'));
+}
+
+/** Ten single-use codes for a lost phone. Returned once, in the clear. */
+function newRecoveryCodes(n = 10) {
+  const out = [];
+  for (let i = 0; i < n; i += 1) {
+    const bytes = new Uint8Array(5);
+    crypto.getRandomValues(bytes);
+    out.push(base32Encode(bytes).toLowerCase().match(/.{1,4}/g).join('-'));
+  }
+  return out;
+}
+
+/** Attempts allowed per account per hour, sign-in and disable combined. */
+const MAX_TOTP_ATTEMPTS_PER_HOUR = 10;
+
+/**
+ * { code } or { recovery_code } against one user's enrolment. A TOTP step is
+ * claimed with a conditional UPDATE (so two concurrent requests cannot both
+ * spend the same code), and a recovery code is burned the same way — the
+ * UPDATE only succeeds while used_at IS NULL, and only a successful UPDATE
+ * counts as a pass. Every unused code is compared, match or not, so the
+ * loop's timing does not say which row matched.
+ */
+async function checkSecondFactor(env, userId, row, body, { recordStep = false } = {}) {
+  const code = String(body?.code ?? '').trim();
+  const recoveryCode = String(body?.recovery_code ?? '').trim().toLowerCase();
+  if (code) {
+    const step = await verifyTotp(row.secret, code);
+    if (step === null || isReplay(step, row.last_step)) return false;
+    if (!recordStep) return true;
+    const res = await env.DB.prepare(
+      'UPDATE user_totp SET last_step = ? WHERE user_id = ? AND (last_step IS NULL OR last_step < ?)',
+    )
+      .bind(step, userId, step)
+      .run();
+    return (res?.meta?.changes ?? 1) > 0;
+  }
+  if (recoveryCode) {
+    const hash = await sha256Hex(recoveryCode);
+    const rows = await env.DB.prepare('SELECT id, code_hash FROM user_totp_recovery_codes WHERE user_id = ? AND used_at IS NULL')
+      .bind(userId)
+      .all();
+    let matchId = null;
+    for (const r of rows.results ?? []) {
+      if (timingSafeEqual(hash, r.code_hash) && matchId === null) matchId = r.id;
+    }
+    if (!matchId) return false;
+    const res = await env.DB.prepare('UPDATE user_totp_recovery_codes SET used_at = ? WHERE id = ? AND used_at IS NULL')
+      .bind(Date.now(), matchId)
+      .run();
+    return (res?.meta?.changes ?? 1) > 0;
+  }
+  return false;
+}
+
+/** GET /api/account/totp — is one enrolled, and a fresh secret if not. */
+async function handleAccountTotpStatus(request, env) {
+  const session = await accountSession(request, env);
+  if (!session?.uid) return bad('sign in required', 401);
+
+  const MISSING = Symbol('missing');
+  const row = await unlessMissing(
+    () => env.DB.prepare('SELECT user_id FROM user_totp WHERE user_id = ?').bind(session.uid).first(),
+    MISSING,
+  );
+  /* Pre-0012: not enrolled, and no secret offered — enrolling would 503. */
+  if (row === MISSING) return json({ enrolled: false, available: false });
+  if (row) return json({ enrolled: true });
+
+  const secret = newTotpSecret();
+  return json({
+    enrolled: false,
+    secret,
+    uri: otpauthUri({ secret, account: session.email || 'you' }),
+    note: 'Scan this, then enter the code it shows. Nothing is stored until that code checks out.',
+  });
+}
+
+/** POST /api/account/totp/enable — { secret, code } → recovery codes, once. */
+async function handleAccountTotpEnable(request, env) {
+  const session = await accountSession(request, env);
+  if (!session?.uid) return bad('sign in required', 401);
+
+  const existing = await env.DB.prepare('SELECT user_id FROM user_totp WHERE user_id = ?').bind(session.uid).first();
+  if (existing) return json({ error: 'already_enrolled', message: 'Two-factor is already on. Turn it off first.' }, 409);
+
+  const body = await request.json().catch(() => ({}));
+  const secret = String(body.secret ?? '').trim().toUpperCase();
+  /* The secret comes back from the client (it was offered, never stored), so
+     refuse anything shorter than 80 bits rather than let a hand-edited
+     request enrol a guessable one. */
+  if (!/^[A-Z2-7]{16,}=*$/.test(secret)) {
+    return json({ error: 'bad_secret', message: 'Start again from the QR code — that setup key is not valid.' }, 400);
+  }
+  const step = await verifyTotp(secret, String(body.code ?? ''));
+  if (step === null) {
+    return json({ error: 'bad_code', message: 'That code does not match. Check your phone’s clock is set automatically.' }, 400);
+  }
+
+  const now = Date.now();
+  const codes = newRecoveryCodes();
+  const hashed = await Promise.all(codes.map((c) => sha256Hex(c)));
+  await env.DB.batch([
+    env.DB.prepare('INSERT INTO user_totp (user_id, secret, last_step, enabled_at, created_at) VALUES (?, ?, ?, ?, ?)')
+      .bind(session.uid, secret, step, now, now),
+    ...hashed.map((h) =>
+      env.DB.prepare('INSERT INTO user_totp_recovery_codes (id, user_id, code_hash, created_at) VALUES (?, ?, ?, ?)')
+        .bind(crypto.randomUUID(), session.uid, h, now),
+    ),
+  ]);
+
+  return json({ ok: true, enrolled: true, recovery_codes: codes });
+}
+
+/**
+ * POST /api/account/totp/disable — { code } or { recovery_code } — proof of
+ * the factor being turned off is required even from a signed-in session, or a
+ * stolen session turns it off on its own. A recovery code is accepted here
+ * too, same as at sign-in — the ordinary reason someone wants this off is a
+ * lost phone, and a lost phone is exactly when a code from it is unavailable.
+ */
+async function handleAccountTotpDisable(request, env) {
+  const session = await accountSession(request, env);
+  if (!session?.uid) return bad('sign in required', 401);
+
+  const row = await env.DB.prepare('SELECT secret, last_step FROM user_totp WHERE user_id = ?').bind(session.uid).first();
+  if (!row) return json({ ok: true, enrolled: false });
+
+  /* A stolen session must not be able to grind through the code space to
+     turn the factor off: attempts are counted per account, not per IP. */
+  if (!(await underSendLimit(env, `totp_uid:${session.uid}`, MAX_TOTP_ATTEMPTS_PER_HOUR))) {
+    return json({ error: 'too_many_attempts', message: 'Too many attempts. Try again in an hour.' }, 429);
+  }
+
+  const body = await request.json().catch(() => ({}));
+  const ok = await checkSecondFactor(env, session.uid, row, body);
+
+  if (!ok) {
+    return json({ error: 'bad_code', message: 'Enter a current code from your authenticator app, or a recovery code, to turn this off.' }, 400);
+  }
+
+  await env.DB.batch([
+    env.DB.prepare('DELETE FROM user_totp WHERE user_id = ?').bind(session.uid),
+    env.DB.prepare('DELETE FROM user_totp_recovery_codes WHERE user_id = ?').bind(session.uid),
+  ]);
+  return json({ ok: true, enrolled: false });
+}
+
+/**
+ * POST /auth/totp — { pending, code } or { pending, recovery_code }.
+ *
+ * The second step of sign-in for an account with TOTP enrolled. `pending` is
+ * the short-lived token /auth/verify hands back instead of a session the
+ * moment it sees a row in user_totp — the email code has already been
+ * checked and consumed by that point, so this never re-asks for it.
+ */
+async function handleAuthTotp(request, env) {
+  const ip = request.headers.get('cf-connecting-ip') ?? 'unknown';
+  if (!(await underSendLimit(env, `totp_ip:${ip}`, MAX_SENDS_PER_HOUR.ip))) {
+    return json({ error: 'too_many_attempts', message: 'Too many attempts. Try again in an hour.' }, 429);
+  }
+
+  const body = await request.json().catch(() => ({}));
+  const payload = await verifySignedPayload(env, String(body.pending || ''));
+  if (!payload?.pend_uid) {
+    return json({ error: 'invalid_pending', message: 'That sign-in has expired. Start again.' }, 401);
+  }
+
+  const row = await env.DB.prepare('SELECT secret, last_step FROM user_totp WHERE user_id = ?').bind(payload.pend_uid).first();
+  if (!row) return json({ error: 'invalid_pending', message: 'That sign-in has expired. Start again.' }, 401);
+
+  /* The IP bucket above is trivially sidestepped by rotating addresses; the
+     account bucket is what actually bounds guessing against one person's
+     six-digit code (the email code is already spent by now). */
+  if (!(await underSendLimit(env, `totp_uid:${payload.pend_uid}`, MAX_TOTP_ATTEMPTS_PER_HOUR))) {
+    return json({ error: 'too_many_attempts', message: 'Too many attempts. Try again in an hour.' }, 429);
+  }
+
+  const ok = await checkSecondFactor(env, payload.pend_uid, row, body, { recordStep: true });
+
+  if (!ok) return json({ error: 'invalid_code', message: 'That code is wrong or has expired.' }, 401);
+
+  const now = Date.now();
+  const cookie = await signSession(env, { uid: payload.pend_uid, email: payload.pend_email, typ: payload.pend_typ, exp: now + 30 * 864e5 });
+  return json(
+    {
+      ok: true,
+      user: { id: payload.pend_uid, email: payload.pend_email, account_type: payload.pend_typ },
+      verified: true,
+      ...(payload.pend_native ? { session: cookie } : {}),
+    },
+    200,
+    { 'set-cookie': `ua_session=${cookie}; Path=/; HttpOnly; Secure; SameSite=Lax; Max-Age=${30 * 86400}` },
+  );
+}
+
 /** GET /api/admin/audit?limit=100 — the trail, newest first. */
 async function handleAdminAudit(request, env) {
   if (!(await requireAdmin(request, env))) return bad('admin only', 403);
@@ -3103,6 +4173,510 @@ function corsHeaders(request) {
 }
 
 /* ------------------------------------------------------------------ */
+/* MCP — Streamable HTTP, at /mcp                                      */
+/* ------------------------------------------------------------------ */
+
+/**
+ * The bridge every visitor's page loads (`/.webmcp/bridge.js`) POSTs
+ * `tools/list` here so a page can be driven by whatever chatbot the visitor
+ * already has open. This is also the same endpoint any external MCP client —
+ * Claude, ChatGPT, Cursor — plugs in by URL: https://unclaimedgrant.com/mcp.
+ *
+ * Streamable HTTP per the 2025-06-18 spec (2025-03-26 clients are accepted
+ * too — the request/response shape did not change, only optional session
+ * mechanics did). Deliberately stateless: no session is required, because
+ * every tool here is a read over public data or a pass-through to the same
+ * free/paid check the website itself calls. A server that needed a session
+ * just to answer "what programmes exist in France" would be pretending this
+ * were a stateful product when it is a dataset with a paywall on one field:
+ * the programme name.
+ *
+ * CORS is wide open here (Access-Control-Allow-Origin: *) — deliberately
+ * unlike corsHeaders() above, which exists to keep *cookies* off origins we
+ * don't control. This endpoint never reads a cookie: a bearer token in
+ * Authorization is the only credential it forwards, and a bearer token is
+ * not attached automatically by a browser the way a cookie is, so the attack
+ * corsHeaders() guards against does not apply here.
+ */
+
+const MCP_PROTOCOL_VERSIONS = ['2025-06-18', '2025-03-26'];
+const MCP_DEFAULT_PROTOCOL_VERSION = '2025-06-18';
+const MCP_SERVER_INFO = Object.freeze({ name: 'unclaimed', version: '1.0.0' });
+
+const MCP_CORS = Object.freeze({
+  'access-control-allow-origin': '*',
+  'access-control-allow-methods': 'POST, GET, OPTIONS',
+  'access-control-allow-headers': 'content-type, mcp-session-id, mcp-protocol-version, authorization',
+  'access-control-max-age': '86400',
+});
+
+const mcpJson = (data, status = 200, extra = {}) =>
+  new Response(data == null ? null : JSON.stringify(data), {
+    status,
+    headers: { 'content-type': 'application/json', 'cache-control': 'no-store', ...MCP_CORS, ...extra },
+  });
+
+const rpcResult = (id, result) => ({ jsonrpc: '2.0', id, result });
+const rpcError = (id, code, message, data) => ({
+  jsonrpc: '2.0',
+  id: id ?? null,
+  error: { code, message, ...(data !== undefined ? { data } : {}) },
+});
+
+/** /api/v1/mcp-tools.json, cached for the life of the isolate — it is build
+ *  output, immutable until the next deploy. */
+let _mcpToolsCache = null;
+async function loadMcpTools(env, request) {
+  if (_mcpToolsCache) return _mcpToolsCache;
+  const url = new URL(request.url);
+  url.pathname = '/api/v1/mcp-tools.json';
+  url.search = '';
+  const res = await env.ASSETS.fetch(new Request(url.toString()));
+  if (!res.ok) return null;
+  _mcpToolsCache = await res.json();
+  return _mcpToolsCache;
+}
+
+/** The published schema's shape, trimmed to what an MCP client needs. */
+function toMcpTool(tool) {
+  return {
+    name: tool.name,
+    title: tool.title,
+    description: tool.description,
+    inputSchema: tool.inputSchema,
+    ...(tool.readOnlyHint != null ? { annotations: { readOnlyHint: tool.readOnlyHint } } : {}),
+  };
+}
+
+const nowIso = () => new Date().toISOString();
+
+/** Every tool handler returns this shape; mcpHandleSingle adds governance and
+ *  status_as_of uniformly rather than every handler repeating it. */
+const toolResult = (structuredContent, isError = false) => ({ structuredContent, isError });
+
+async function loadStartupIndex(env, request) {
+  const url = new URL(request.url);
+  url.pathname = '/api/v1/startups/index.json';
+  url.search = '';
+  const res = await env.ASSETS.fetch(new Request(url.toString()));
+  return res.ok ? res.json() : null;
+}
+
+async function findFullProgramme(env, request, cc, slug) {
+  const data = await loadFullAsset(env, request, `programmes/${cc}.json`);
+  if (!data) return null;
+  return (data.programmes || []).find((p) => p.slug === slug) || null;
+}
+
+/** Follow data/startups/redirects.json from a merged-away company slug to the
+ *  record that survived. Bounded, in case a later merge ever chains two. */
+function canonicalStartupSlug(pool, slug) {
+  let cur = slug;
+  for (let hop = 0; hop < 5; hop += 1) {
+    const r = STARTUP_REDIRECTS.find((x) => x.country === pool && x.from === cur);
+    if (!r) break;
+    cur = r.to;
+  }
+  return cur;
+}
+
+/**
+ * One record for get_programme / get_documents / get_procedure, household or
+ * company, with the URL of the page that actually renders it:
+ *   household  /<cc>/<category>/<slug>/   (data/<cc>.json)
+ *   company    /startups/<pool>/<slug>/   (data/startups/<pool>.json)
+ * country_code is tried as a household country first, then as a company-grant
+ * pool (a country, or eu / global) — the same code search_company_grants takes
+ * as `jurisdiction`. A company slug removed as a duplicate resolves to its
+ * canonical record and says so in redirected_from.
+ */
+async function resolveProgramme(env, request, cc, slug) {
+  /* cc and slug become asset paths; keep them to the shapes the data uses. */
+  if (!/^[a-z]{2,12}$/.test(cc) || !slug) return null;
+  const origin = new URL(request.url).origin;
+  const s = String(slug);
+  const hh = await findFullProgramme(env, request, cc, s);
+  if (hh) return { p: hh, kind: 'household', page_url: `${origin}/${cc}/${hh.category}/${hh.slug}/`, redirected_from: null };
+  const pool = await loadFullAsset(env, request, `startups/${cc}.json`);
+  if (!pool) return null;
+  const canon = canonicalStartupSlug(cc, s);
+  const co = (pool.programmes || []).find((p) => p.slug === canon);
+  if (!co) return null;
+  return {
+    p: co,
+    kind: 'company',
+    page_url: `${origin}/startups/${cc}/${co.slug}/`,
+    redirected_from: canon !== s ? s : null,
+  };
+}
+
+/**
+ * check_entitlements — reuses handleCheck exactly, via a synthetic Request
+ * carrying the same body and the caller's own Authorization header, so a
+ * paying user's bearer token unlocks the same full answer here that it
+ * unlocks on the website. An unentitled caller gets the same totals-only
+ * shape /api/check has always returned — the free/paid line is drawn once,
+ * in handleCheck, and MCP does not get its own copy of that decision.
+ */
+async function mcpCheckEntitlements(env, request, args) {
+  const origin = new URL(request.url).origin;
+  const authHeader = request.headers.get('authorization');
+  const synthetic = new Request(`${origin}/api/check`, {
+    method: 'POST',
+    headers: { 'content-type': 'application/json', ...(authHeader ? { authorization: authHeader } : {}) },
+    body: JSON.stringify(args || {}),
+  });
+  const res = await handleCheck(synthetic, env);
+  const data = await res.json().catch(() => null);
+  if (!res.ok || !data) return toolResult({ error: data?.error || 'check_failed' }, true);
+  return toolResult({
+    ...data,
+    results_url: `${origin}/check/`,
+    note: 'This is totals and counts only. Send the person to results_url to see the actual matching programmes.',
+  });
+}
+
+/** check_company_eligibility — same pattern as above, over /api/startups/check. */
+async function mcpCheckCompanyEligibility(env, request, args) {
+  const origin = new URL(request.url).origin;
+  if (!args?.jurisdiction) return toolResult({ error: 'jurisdiction is required' }, true);
+  const authHeader = request.headers.get('authorization');
+  const profile = {
+    country_code: args.jurisdiction,
+    stage: args.stage,
+    sectors: args.sector ? [args.sector] : undefined,
+    headcount: args.employee_count,
+  };
+  const synthetic = new Request(`${origin}/api/startups/check`, {
+    method: 'POST',
+    headers: { 'content-type': 'application/json', ...(authHeader ? { authorization: authHeader } : {}) },
+    body: JSON.stringify(profile),
+  });
+  const res = await handleStartupCheck(synthetic, env);
+  const data = await res.json().catch(() => null);
+  if (!res.ok || !data) return toolResult({ error: data?.error || 'check_failed' }, true);
+  return toolResult({
+    ...data,
+    results_url: `${origin}/startups/check/`,
+    note: 'This is totals and counts only. Send the company to results_url to see the actual matching grants.',
+  });
+}
+
+/**
+ * search_programmes / search_company_grants — these ARE allowed to name
+ * names. Every fact returned here (name, funder, amount, status, deadline,
+ * source_url) is already public on that programme's own HTML page; the
+ * paywall is on the *directory* (the paid API's full country list), not on
+ * any single record. loadFullAsset reads the worker-internal unstripped
+ * copy so the search can run over every record, not just the free rows.
+ */
+async function mcpSearchProgrammes(env, request, args) {
+  const origin = new URL(request.url).origin;
+  const cc = String(args?.country_code || '').toLowerCase();
+  if (!cc) return toolResult({ error: 'country_code is required' }, true);
+  const data = await loadFullAsset(env, request, `programmes/${cc}.json`);
+  if (!data) return toolResult({ error: `unknown country_code: ${cc}` }, true);
+  const manifest = await loadManifest(env, request);
+  const entry = manifest?.countries?.find((c) => c.slug === cc);
+
+  const q = String(args?.query || '').trim().toLowerCase();
+  let rows = data.programmes || [];
+  if (args?.category) rows = rows.filter((p) => p.category === args.category);
+  if (args?.benefit_type) rows = rows.filter((p) => p.benefit_type === args.benefit_type);
+  if (args?.verification_status) rows = rows.filter((p) => p.verification_status === args.verification_status);
+  if (typeof args?.is_automatic === 'boolean') rows = rows.filter((p) => p.is_automatic === args.is_automatic);
+  if (q) {
+    rows = rows.filter((p) => [p.name_en, p.name_local, p.funder, p.source_snippet]
+      .some((v) => typeof v === 'string' && v.toLowerCase().includes(q)));
+  }
+
+  const total_matched = rows.length;
+  const offset = Math.max(0, Number(args?.offset) || 0);
+  const limit = Math.min(25, Math.max(1, Number(args?.limit) || 20));
+  const page = rows.slice(offset, offset + limit);
+
+  return toolResult({
+    country: entry?.name ?? cc.toUpperCase(),
+    country_code: cc,
+    total_matched,
+    returned: page.length,
+    offset,
+    limit,
+    results: page.map((p) => ({
+      country_code: cc,
+      slug: p.slug,
+      name_en: p.name_en,
+      name_local: p.name_local,
+      funder: p.funder,
+      category: p.category,
+      benefit_type: p.benefit_type,
+      amount_min: p.amount_min,
+      amount_max: p.amount_max,
+      amount_currency: p.amount_currency,
+      amount_period: p.amount_period,
+      is_automatic: p.is_automatic,
+      verification_status: p.verification_status,
+      last_verified_at: p.last_verified_at,
+      source_url: p.source_url,
+      page_url: `${origin}/${cc}/${p.category}/${p.slug}/`,
+    })),
+  });
+}
+
+async function mcpSearchCompanyGrants(env, request, args) {
+  const origin = new URL(request.url).origin;
+  const pool = String(args?.jurisdiction || 'global').toLowerCase();
+  const data = await loadFullAsset(env, request, `startups/${pool}.json`);
+  if (!data) return toolResult({ error: `unknown jurisdiction: ${pool}` }, true);
+
+  const q = String(args?.query || '').trim().toLowerCase();
+  const now = Date.now();
+  let rows = data.programmes || [];
+  if (args?.category) rows = rows.filter((p) => p.category === args.category);
+  if (args?.grant_type) rows = rows.filter((p) => p.grant_type === args.grant_type);
+  if (args?.funder_type) rows = rows.filter((p) => p.funder_type === args.funder_type);
+  if (args?.verification_status) rows = rows.filter((p) => p.verification_status === args.verification_status);
+  if (q) {
+    rows = rows.filter((p) => [p.name_en, p.name_local, p.funder]
+      .some((v) => typeof v === 'string' && v.toLowerCase().includes(q)));
+  }
+
+  const total_matched = rows.length;
+  const limit = Math.min(25, Math.max(1, Number(args?.limit) || 25));
+  const page = rows.slice(0, limit);
+
+  return toolResult({
+    jurisdiction: pool,
+    total_matched,
+    returned: page.length,
+    limit,
+    results: page.map((p) => ({
+      jurisdiction: pool,
+      country_code: p.country_code ?? pool,
+      slug: p.slug,
+      name_en: p.name_en,
+      name_local: p.name_local,
+      funder: p.funder,
+      funder_type: p.funder_type,
+      grant_type: p.grant_type,
+      category: p.category,
+      amount_min: p.amount_min,
+      amount_max: p.amount_max,
+      amount_currency: p.amount_currency,
+      /* Never the raw stored value alone — see effectiveStatus in
+         packages/deadlines: a closed call must never read "open" just
+         because nobody has rebuilt the site since it closed. */
+      status: effectiveStatus(p, now),
+      status_stored: p.status,
+      closes_at: p.closes_at ?? null,
+      opens_at: p.opens_at ?? null,
+      reopen_note: p.reopen_note ?? null,
+      verification_status: p.verification_status,
+      last_verified_at: p.last_verified_at,
+      source_url: p.source_url,
+      page_url: `${origin}/startups/${pool}/${p.slug}/`,
+    })),
+  });
+}
+
+/** get_programme / get_documents / get_procedure — one record's public-page
+ *  facts, by country + slug. Same loadFullAsset read as search_programmes;
+ *  what changes per tool is only which fields are surfaced. */
+async function mcpGetProgramme(env, request, args) {
+  const cc = String(args?.country_code || '').toLowerCase();
+  const hit = await resolveProgramme(env, request, cc, args?.slug);
+  if (!hit) return toolResult({ error: 'programme not found' }, true);
+  const { p } = hit;
+  return toolResult({
+    ...p,
+    ...(hit.kind === 'company' ? { jurisdiction: cc, status: effectiveStatus(p, Date.now()), status_stored: p.status } : {}),
+    country_code: hit.kind === 'company' ? (p.country_code ?? cc) : cc,
+    record_type: hit.kind,
+    ...(hit.redirected_from ? { redirected_from: hit.redirected_from } : {}),
+    page_url: hit.page_url,
+  });
+}
+
+async function mcpGetDocuments(env, request, args) {
+  const cc = String(args?.country_code || '').toLowerCase();
+  const hit = await resolveProgramme(env, request, cc, args?.slug);
+  if (!hit) return toolResult({ error: 'programme not found' }, true);
+  const { p } = hit;
+  return toolResult({
+    country_code: cc,
+    slug: p.slug,
+    record_type: hit.kind,
+    ...(hit.redirected_from ? { redirected_from: hit.redirected_from } : {}),
+    programme_name: p.name_en,
+    documents_required: p.documents_required || [],
+    source_url: p.source_url,
+    last_verified_at: p.last_verified_at,
+    verification_status: p.verification_status,
+    page_url: hit.page_url,
+  });
+}
+
+async function mcpGetProcedure(env, request, args) {
+  const cc = String(args?.country_code || '').toLowerCase();
+  const hit = await resolveProgramme(env, request, cc, args?.slug);
+  if (!hit) return toolResult({ error: 'programme not found' }, true);
+  const { p } = hit;
+  return toolResult({
+    country_code: cc,
+    slug: p.slug,
+    record_type: hit.kind,
+    ...(hit.redirected_from ? { redirected_from: hit.redirected_from } : {}),
+    programme_name: p.name_en,
+    is_automatic: p.is_automatic,
+    application_url: p.application_url,
+    application_channel: p.application_channel,
+    deadline_type: p.deadline_type,
+    deadline_note: p.deadline_note,
+    procedure_steps: p.procedure_steps || [],
+    source_url: p.source_url,
+    last_verified_at: p.last_verified_at,
+    verification_status: p.verification_status,
+    page_url: hit.page_url,
+  });
+}
+
+async function mcpGetCoverage(env, request, args) {
+  const manifest = await loadManifest(env, request);
+  const startupIndex = await loadStartupIndex(env, request);
+  const cc = args?.country_code ? String(args.country_code).toLowerCase() : null;
+
+  let countries = manifest?.countries || [];
+  if (cc) countries = countries.filter((c) => c.slug === cc);
+  let startupJurisdictions = startupIndex?.countries || [];
+  if (cc) startupJurisdictions = startupJurisdictions.filter((c) => c.slug === cc);
+
+  return toolResult({
+    generated_at: manifest?.generated_at ?? null,
+    countries_total: manifest?.countries?.length ?? 0,
+    programmes_total: manifest?.total_programmes ?? 0,
+    verified_total: manifest?.total_verified ?? 0,
+    countries,
+    company_grants: {
+      generated_at: startupIndex?.generated_at ?? null,
+      jurisdictions_total: startupIndex?.countries?.length ?? 0,
+      programmes_total: startupIndex?.total ?? 0,
+      jurisdictions: startupJurisdictions,
+    },
+    disclaimer: 'This is a discovery tool, not legal, tax or financial advice. You appear to meet the '
+      + 'published criteria — only the official body can confirm your entitlement. Always check the source '
+      + 'page before applying.',
+  });
+}
+
+/**
+ * report_issue — no migration for this: none of the existing tables fit an
+ * arbitrary correction report without new, unindexed columns, and the brief
+ * is to prefer an existing table over a migration that needs manual
+ * application. Logged so it is visible in the Worker's own logs/tail, with a
+ * reference the reporter can quote if they follow up.
+ */
+async function mcpReportIssue(env, request, args) {
+  const reference = `mcp-${Date.now().toString(36)}-${Math.random().toString(36).slice(2, 8)}`;
+  console.log('mcp_report_issue', JSON.stringify({ reference, ts: Date.now(), ...args }));
+  return toolResult({
+    received: true,
+    reference,
+    triage_sla_working_days: 5,
+    message: 'Logged for review. There is no live ticket lookup yet — quote the reference if you follow up.',
+  });
+}
+
+const MCP_TOOL_HANDLERS = Object.freeze({
+  check_entitlements: mcpCheckEntitlements,
+  search_programmes: mcpSearchProgrammes,
+  get_programme: mcpGetProgramme,
+  get_documents: mcpGetDocuments,
+  get_procedure: mcpGetProcedure,
+  get_coverage: mcpGetCoverage,
+  report_issue: mcpReportIssue,
+  search_company_grants: mcpSearchCompanyGrants,
+  check_company_eligibility: mcpCheckCompanyEligibility,
+});
+
+/** One JSON-RPC message in, one response (or null for a notification). */
+async function mcpHandleSingle(env, request, msg, toolsDoc) {
+  if (msg == null || typeof msg !== 'object' || Array.isArray(msg)) {
+    return rpcError(null, -32600, 'Invalid Request');
+  }
+  const { id, method, params } = msg;
+  const isNotification = id === undefined;
+
+  if (typeof method === 'string' && method.startsWith('notifications/')) {
+    return null; // a notification never gets a response, whatever id was sent
+  }
+  if (method === 'initialize') {
+    const requested = params?.protocolVersion;
+    const protocolVersion = MCP_PROTOCOL_VERSIONS.includes(requested) ? requested : MCP_DEFAULT_PROTOCOL_VERSION;
+    return isNotification ? null : rpcResult(id, { protocolVersion, capabilities: { tools: {} }, serverInfo: MCP_SERVER_INFO });
+  }
+  if (method === 'ping') {
+    return isNotification ? null : rpcResult(id, {});
+  }
+  if (method === 'tools/list') {
+    const tools = (toolsDoc?.tools || []).map(toMcpTool);
+    return isNotification ? null : rpcResult(id, { tools });
+  }
+  if (method === 'tools/call') {
+    const name = params?.name;
+    const handler = MCP_TOOL_HANDLERS[name];
+    if (!handler) return isNotification ? null : rpcError(id, -32602, `Unknown tool: ${name}`);
+    let out;
+    try {
+      out = await handler(env, request, params?.arguments || {});
+    } catch (err) {
+      out = toolResult({ error: String(err?.message ?? err) }, true);
+    }
+    /* Every result carries the governance note and a status_as_of, added
+       here once rather than by every handler — see the build requirement
+       this satisfies in data/mcp-tools.json's own "governance" field. */
+    const structuredContent = {
+      ...out.structuredContent,
+      governance: toolsDoc?.governance ?? null,
+      status_as_of: out.structuredContent?.status_as_of ?? nowIso(),
+    };
+    const result = {
+      content: [{ type: 'text', text: JSON.stringify(structuredContent, null, 2) }],
+      structuredContent,
+      isError: out.isError === true,
+    };
+    return isNotification ? null : rpcResult(id, result);
+  }
+  return isNotification ? null : rpcError(id, -32601, `Method not found: ${method}`);
+}
+
+async function handleMcp(request, env) {
+  if (request.method !== 'POST') return mcpJson({ error: 'method_not_allowed' }, 405, { allow: 'POST' });
+
+  let body;
+  try {
+    body = await request.json();
+  } catch {
+    return mcpJson(rpcError(null, -32700, 'Parse error'), 400);
+  }
+
+  const toolsDoc = await loadMcpTools(env, request);
+  const batch = Array.isArray(body) ? body : [body];
+  if (!batch.length) return mcpJson(rpcError(null, -32600, 'Invalid Request: empty batch'), 400);
+
+  const results = [];
+  for (const msg of batch) {
+    // eslint-disable-next-line no-await-in-loop
+    const r = await mcpHandleSingle(env, request, msg, toolsDoc);
+    if (r) results.push(r);
+  }
+
+  /* Every message was a notification: no body, per JSON-RPC 2.0. */
+  if (!results.length) return new Response(null, { status: 202, headers: MCP_CORS });
+
+  return mcpJson(Array.isArray(body) ? results : results[0]);
+}
+
+/* ------------------------------------------------------------------ */
 /* Router                                                              */
 /* ------------------------------------------------------------------ */
 
@@ -3110,6 +4684,20 @@ export default {
   async fetch(request, env, ctx) {
     const url = new URL(request.url);
     const { pathname } = url;
+
+    /* The MCP endpoint has its own, deliberately open CORS policy (see the
+       comment above handleMcp) and answers before anything else here,
+       including the app's own restrictive preflight below — an MCP client is
+       never the packaged app and must not need to be on the APP_ORIGINS list. */
+    if (pathname === '/mcp') {
+      if (request.method === 'OPTIONS') return new Response(null, { status: 204, headers: MCP_CORS });
+      try {
+        return await handleMcp(request, env);
+      } catch (err) {
+        return mcpJson(rpcError(null, -32603, 'Internal error', String(err?.message ?? err)), 500);
+      }
+    }
+
     const cors = corsHeaders(request);
 
     /* Preflight. Answered before anything else and without touching the
@@ -3175,12 +4763,30 @@ export default {
       if (request.method === 'GET') {
         const m = pathname.match(/^\/api\/v1\/(programmes|startups)\/([a-z0-9_-]+)\.json$/);
         if (m) {
+          /* Status can go stale the moment a stored `closes_at` passes — see
+             effectiveStatus() in packages/deadlines. It only ever applies to
+             company/startup records: household programmes carry no `status`
+             field at all, so this is a no-op for /api/v1/programmes/. Applied
+             here, on every GET of this route — entitled, degraded-fallback,
+             AND the plain public read — because all three used to serve
+             whatever `status` a past build happened to freeze, sometimes
+             weeks after the funder's own deadline passed. */
+          const refreshStatus = (data) => {
+            if (m[1] !== 'startups' || !data || !Array.isArray(data.programmes)) return data;
+            const now = Date.now();
+            data.programmes = data.programmes.map((p) => (p && typeof p === 'object' && 'status' in p
+              ? { ...p, status_stored: p.status, status: effectiveStatus(p, now) }
+              : p));
+            data.status_as_of = new Date(now).toISOString();
+            return data;
+          };
+
           const session = await readSession(env, request.headers.get('cookie'), request.headers.get('authorization'));
           const ent = session ? await entitlementFor(env, session, m[2]) : null;
           if (ent?.entitled) {
             const full = await loadFullAsset(env, request, `${m[1]}/${m[2]}.json`);
             if (full) {
-              return withCors(new Response(JSON.stringify(full), {
+              return withCors(new Response(JSON.stringify(refreshStatus(full)), {
                 headers: { 'content-type': 'application/json', 'cache-control': 'private, no-store' },
               }));
             }
@@ -3207,11 +4813,27 @@ export default {
                 );
                 data.dataset_degraded = true;
                 data.dataset_degraded_reason = 'full_dataset_missing';
-                return withCors(new Response(JSON.stringify(data), {
+                return withCors(new Response(JSON.stringify(refreshStatus(data)), {
                   headers: { 'content-type': 'application/json', 'cache-control': 'private, no-store' },
                 }));
               }
             }
+          } else {
+            /* The public read. This used to fall straight through to the
+               static asset below with whatever status the last build wrote —
+               the ASSETS fetch never re-enters this router, so nothing after
+               it could ever have fixed a stale status either. Answer it here
+               instead, so a closed call still reads closed between builds. */
+            const res = await env.ASSETS.fetch(request);
+            if (m[1] === 'startups' && res.ok) {
+              const data = await res.json().catch(() => null);
+              if (data && typeof data === 'object') {
+                return withCors(new Response(JSON.stringify(refreshStatus(data)), {
+                  headers: { 'content-type': 'application/json', 'cache-control': 'public, max-age=300, must-revalidate' },
+                }));
+              }
+            }
+            return withCors(res);
           }
         }
       }
@@ -3224,10 +4846,42 @@ export default {
       if (pathname === '/api/workspace' && (request.method === 'PUT' || request.method === 'POST')) {
         return withCors(await handleWorkspacePut(request, env));
       }
+      if (pathname === '/api/workspace/calendar-token' && request.method === 'GET') {
+        return withCors(await handleCalendarTokenStatus(request, env));
+      }
+      if (pathname === '/api/workspace/calendar-token' && request.method === 'POST') {
+        return withCors(await handleCalendarTokenCreate(request, env));
+      }
+      if (pathname === '/api/workspace/calendar-token' && request.method === 'DELETE') {
+        return withCors(await handleCalendarTokenRevoke(request, env));
+      }
+      {
+        const m = pathname.match(/^\/api\/calendar\/([0-9a-f]{64})\.ics$/);
+        if (m && request.method === 'GET') return withCors(await handleCalendarFeed(request, env, m[1]));
+      }
+      if (pathname === '/api/account/totp') return withCors(await handleAccountTotpStatus(request, env));
+      if (pathname === '/api/account/totp/enable' && request.method === 'POST') {
+        return withCors(await handleAccountTotpEnable(request, env));
+      }
+      if (pathname === '/api/account/totp/disable' && request.method === 'POST') {
+        return withCors(await handleAccountTotpDisable(request, env));
+      }
+      if (pathname === '/api/alerts/status') return withCors(await handleAlertsStatus(request, env));
+      if (pathname === '/api/alerts/subscribe' && request.method === 'POST') {
+        return withCors(await handleAlertsSubscribe(request, env));
+      }
+      if (pathname === '/api/alerts/confirm' && request.method === 'GET') return withCors(await handleAlertsConfirm(request, env));
+      if (pathname === '/api/alerts/unsubscribe' && (request.method === 'GET' || request.method === 'POST')) {
+        return withCors(await handleAlertsUnsubscribe(request, env));
+      }
+      if (pathname === '/api/leads' && request.method === 'POST') return withCors(await handleLeadsSubmit(request, env));
       if (pathname === '/api/me') return withCors(await handleMe(request, env));
       if (pathname === '/api/profile') return withCors(await handleProfile(request, env));
       if (pathname === '/api/billing/checkout' && request.method === 'POST') return withCors(await handleCheckout(request, env));
       if (pathname === '/api/billing/portal' && request.method === 'POST') return withCors(await handlePortal(request, env));
+      if (pathname === '/api/billing/pause' && request.method === 'POST') return withCors(await handleBillingPause(request, env));
+      if (pathname === '/api/billing/resume' && request.method === 'POST') return withCors(await handleBillingResume(request, env));
+      if (pathname === '/api/quota' && request.method === 'GET') return withCors(await handleAccountQuota(request, env));
       if (pathname === '/api/v1/event' && request.method === 'POST') return withCors(await handleEvent(request, env));
       /* Filing on a company's behalf. Every one of these is org-scoped inside
          the handler; there is deliberately no route that reads a filing
@@ -3265,6 +4919,7 @@ export default {
       if (pathname === '/api/admin/grant' && request.method === 'POST') return withCors(await handleAdminGrant(request, env));
       if (pathname === '/api/admin/revoke' && request.method === 'POST') return withCors(await handleAdminRevoke(request, env));
       if (pathname === '/api/admin/audit') return withCors(await handleAdminAudit(request, env));
+      if (pathname === '/api/admin/leads') return withCors(await handleAdminLeads(request, env));
       if (pathname === '/api/admin/totp') return withCors(await handleAdminTotpStatus(request, env));
       if (pathname === '/api/admin/totp/enable' && request.method === 'POST') return withCors(await handleAdminTotpEnable(request, env));
       if (pathname === '/api/admin/totp/disable' && request.method === 'POST') return withCors(await handleAdminTotpDisable(request, env));
@@ -3274,6 +4929,7 @@ export default {
       if (pathname === '/auth/admin' && request.method === 'POST') return withCors(await handleAdminLogin(request, env));
       if (pathname === '/auth/request' && request.method === 'POST') return withCors(await handleAuthRequest(request, env));
       if (pathname === '/auth/verify' && request.method === 'POST') return withCors(await handleAuthVerify(request, env));
+      if (pathname === '/auth/totp' && request.method === 'POST') return withCors(await handleAuthTotp(request, env));
       if (pathname === '/auth/signout') {
         /* Signing out is a state change, so a GET has to prove it came from a
            click and not from an <img src="/auth/signout"> on someone else's
@@ -3305,8 +4961,20 @@ export default {
          request, which is why 4,000 SEO pages cost nothing. */
       return env.ASSETS.fetch(request);
     } catch (err) {
+      /* A table or column from a migration that has not been applied yet:
+         the feature behind this route is not live, which is a 503, not a
+         bug. See isMissingSchema(). */
+      if (isMissingSchema(err)) return withCors(featureUnavailable());
       return withCors(json({ error: 'internal', detail: String(err?.message ?? err) }, 500));
     }
+  },
+
+  /* One cron, one job — see wrangler.jsonc's "triggers". ctx.waitUntil() so
+     the invocation does not get torn down the instant the handler returns,
+     which for a loop over every confirmed subscriber would otherwise race
+     the last few sends. */
+  async scheduled(event, env, ctx) {
+    ctx.waitUntil(runAlertsCron(env));
   },
 };
 
@@ -3348,4 +5016,33 @@ export const __test = {
   handleAdminRevoke,
   handleAdminAudit,
   audit,
+  handleMcp,
+  handleCheck,
+  handleStartupCheck,
+  handleAlertsStatus,
+  handleAlertsSubscribe,
+  handleAlertsConfirm,
+  handleAlertsUnsubscribe,
+  runAlertsCron,
+  handleLeadsSubmit,
+  handleAdminLeads,
+  handleCheckout,
+  handleBillingPause,
+  handleBillingResume,
+  handleAccountQuota,
+  handleAuthRequest,
+  handleAuthVerify,
+  handleAuthTotp,
+  handleAccountTotpStatus,
+  handleAccountTotpEnable,
+  handleAccountTotpDisable,
+  handleWorkspaceGet,
+  handleWorkspacePut,
+  handleCalendarTokenCreate,
+  handleCalendarTokenStatus,
+  handleCalendarTokenRevoke,
+  handleCalendarFeed,
+  buildICS,
+  foldICSLine,
+  workspaceKeyForUser,
 };

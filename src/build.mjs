@@ -19,14 +19,6 @@ import {
   CIRCUMSTANCES,
   circumstanceTags,
   formatMoney,
-  isCapitalCeiling,
-  isEmployerAid,
-  isUnpricedMeansTest,
-  passportedFrom,
-  isStatutoryRight,
-  isCitizensOnly,
-  isHardshipAid,
-  monthsPayable,
   periodSuffix,
 } from './engine/matcher.js';
 import { LOCALES, LANGS, t as translator } from './i18n.mjs';
@@ -39,13 +31,50 @@ import { DE_MINIMIS_CEILING_EUR, REGULATION } from '../packages/stateaid/index.j
 import { REGISTRIES, autofillAvailable } from '../packages/registry/index.js';
 import { awardLikelihood, effortFor, bandFor, BAND_LABELS } from '../packages/scoring/index.js';
 import { deadlineState, STATUS_META, effectiveStatus } from '../packages/deadlines/index.js';
+import { buildClosingSoonPages, closingSoonPromoBlock, countryClosingSoonLink } from './pages/closing-soon.mjs';
+import { alertsSubscribeBox } from './pages/alerts.mjs';
+import { renderDeMinimisPage, EU_MEMBER_STATES } from './pages/de-minimis.mjs';
+import { startupToolsIndex, renderCofundingPage, renderForschungszulagePage } from './pages/startup-tools.mjs';
+import {
+  pickHouseholdShowcase,
+  pickStartupShowcase,
+  lockedHouseholdRecord,
+  lockedStartupRecord,
+} from './pages/free-tier.mjs';
+import { COMPETITORS, compareHub, comparePage } from './pages/compare.mjs';
+import { sourceTrust } from './pages/trust.mjs';
+import { similarHousehold, similarCompany, similarHouseholdBlock, similarCompanyBlock } from './pages/similar.mjs';
+import { buildSearchIndexes, searchPage, SEARCH_CLIENT_JS } from './pages/search.mjs';
+import { expertHelpCta, renderExpertHelpPage } from './pages/expert-help.mjs';
+import { renderConnectPage } from './pages/connect.mjs';
+import { renderReadinessPage } from './pages/readiness.mjs';
+import { trustCentrePage } from './pages/trust-centre.mjs';
+import { scamsPage } from './pages/scams.mjs';
+import { accessibilityPage } from './pages/accessibility.mjs';
+import { changelogPage } from './pages/changelog.mjs';
+import { buildStartupFeeds } from './pages/feeds.mjs';
+import { openApiSpec, startupCsv } from './pages/openapi.mjs';
+import { buildFunderDirectory, funderKey, fundersIndexPage, funderProfilePage } from './pages/funders.mjs';
+import { TERMS, learnIndexPage, learnTermPage, learnLinksFor } from './pages/learn.mjs';
 
-const BUILD_NOW = Date.parse('2026-08-14');
+/* The clock every status badge is computed against. It was once pinned to a
+   fixed date for reproducible builds, which froze every countdown on the site:
+   the EIC Accelerator read "Closes in 19 days" three weeks after it closed.
+   Now it is the real build time (overridable for tests), the site rebuilds
+   daily (.github/workflows/daily-refresh.yml), and a small script in every
+   page re-checks each badge against the visitor's own clock. */
+const BUILD_NOW = process.env.BUILD_NOW ? Date.parse(process.env.BUILD_NOW) : Date.now();
 
 /** Status chip. The most time-sensitive fact on any programme, so it goes first. */
+/** Dates the in-page freshness script needs to re-derive a badge. */
+function liveAttrs(p) {
+  const live = p && ['open', 'rolling', 'upcoming'].includes(p.status);
+  return live && p.closes_at ? ` data-closes="${attr(String(p.closes_at).slice(0, 10))}"` : '';
+}
+
 function statusChip(p) {
   const d = deadlineState(p, BUILD_NOW);
-  return `<span class="status status--${d.urgency}" title="${attr(d.detail)}">${esc(d.headline)}</span>`;
+  return `<span class="status status--${d.urgency}"${liveAttrs(p)} title="${attr(d.detail)}">${esc(d.headline)}</span>`;
 }
 
 /* Startup grants live in their own namespace with their own engine — a
@@ -59,6 +88,10 @@ const STARTUP_DATA = Object.fromEntries(
   ]),
 );
 const STARTUP_ALL = STARTUP_MANIFEST.countries.flatMap((c) => STARTUP_DATA[c.slug].programmes);
+/* Merged-duplicate company-grant pages (see scripts/merge-duplicates.mjs,
+   scripts/find-duplicates.mjs and data/startups/dedupe-log.json) — the old
+   page's URL gets a permanent redirect below rather than a 404. */
+const STARTUP_REDIRECTS = JSON.parse(fs.readFileSync(new URL('../data/startups/redirects.json', import.meta.url)));
 import {
   SITE_NAME,
   TAGLINE,
@@ -124,6 +157,18 @@ const PAYWALL_SCHEMES = process.env.PAYWALL_SCHEMES !== '0';
    deindex you in favour of somewhere that no longer answers. */
 const ORIGIN = (process.env.SITE_ORIGIN ?? 'https://unclaimedgrant.com').replace(/\/$/, '');
 const SITE_URL = `${ORIGIN}${BASE}`;
+
+/**
+ * The day this build actually ran, for the "status as of" caption next to the
+ * homepage open/reopening counters.
+ *
+ * This is deliberately Date.now(), not BUILD_NOW above: BUILD_NOW is the
+ * known-frozen constant that per-record status badges use (tracked and fixed
+ * elsewhere). The homepage counters already derive from effectiveStatus(p)
+ * with its default `Date.now()` argument, so they are live as of build time —
+ * this just says so next to the number instead of implying "right now" forever.
+ */
+const BUILD_DATE_STR = new Date().toISOString().slice(0, 10);
 
 /* ------------------------------------------------------------------ */
 /* Helpers                                                             */
@@ -329,6 +374,17 @@ const STATS = (() => {
   };
 })();
 
+// ---- Same computed-not-hardcoded discipline, for the company side. ----
+const STARTUP_STATS = (() => {
+  const total = STARTUP_ALL.length;
+  const verified = STARTUP_ALL.filter((p) => p.verification_status === 'verified').length;
+  return {
+    total,
+    verified,
+    countryCount: STARTUP_MANIFEST.countries.length,
+  };
+})();
+
 /**
  * The one date the corpus is entitled to state.
  *
@@ -354,6 +410,38 @@ const CORPUS_EXTRACTED_AT = STATS.asOf;
  * search result, which is the first sentence of ours that most people read.
  */
 const catEndsInSupport = (cat) => /(^|\s)support$/i.test(categoryLabel(cat));
+
+/* Funder profile pages (/funders/**, src/pages/funders.mjs) — built once,
+   here, for the same reason CLOSING_SOON is built before the language loop:
+   the directory is language-invariant (it groups English-sourced records)
+   and every locale's programme pages need funderLink() below to decide
+   whether a funder's name links anywhere. */
+const FUNDER_DIRECTORY = buildFunderDirectory({ countries, STARTUP_MANIFEST, STARTUP_DATA });
+const FUNDER_BY_KEY = new Map(FUNDER_DIRECTORY.map((f) => [f.key, f]));
+/** A funder's page href, or null when it has too few programmes for one. */
+function funderHref(raw) {
+  const f = FUNDER_BY_KEY.get(funderKey(raw));
+  return f && f.hasPage ? `${BASE}/funders/${f.slug}/` : null;
+}
+/** The funder's name, linked to its profile page when one exists. */
+function funderNameHtml(raw) {
+  const href = funderHref(raw);
+  return href ? `<a class="link-underline" href="${attr(href)}">${esc(raw)}</a>` : esc(raw);
+}
+
+const TERM_BY_SLUG = new Map(TERMS.map((t) => [t.slug, t]));
+/** A short "Related reading" box linking to /learn/ terms matched by keyword,
+    plus any slugs a caller already knows apply (see learnLinksFor). Empty
+    string when nothing matched — most programmes link to none of these. */
+function relatedLearnBox(text, extraSlugs = [], label = 'Related reading') {
+  const slugs = learnLinksFor(text, extraSlugs);
+  if (!slugs.length) return '';
+  return `<div class="callout" style="margin-top:2rem">
+    <p class="small" style="margin:0"><strong>${esc(label)}:</strong> ${slugs
+      .map((s) => `<a class="link-underline" href="${BASE}/learn/${s}/">${esc(TERM_BY_SLUG.get(s).title)}</a>`)
+      .join(' · ')}</p>
+  </div>`;
+}
 
 /* ------------------------------------------------------------------ */
 /* Shared fragments                                                    */
@@ -521,16 +609,19 @@ function landing() {
       <div class="stat">
         <span class="stat__n tally" data-tally="${openNow}">${nf(openNow)}</span>
         <span class="stat__l">${esc(TR('statOpenNow'))}</span>
+        <span class="stat__l small" style="opacity:.7">${esc(TR('statScopeNote', nf(startupCount)))}</span>
       </div>
       <div class="stat">
         <span class="stat__n tally" data-tally="${reopening}">${nf(reopening)}</span>
         <span class="stat__l">${esc(TR('statReopen'))}</span>
+        <span class="stat__l small" style="opacity:.7">${esc(TR('statScopeNote', nf(startupCount)))}</span>
       </div>
       <div class="stat">
         <span class="stat__n tally" data-tally="${jurisdictions}">${jurisdictions}</span>
         <span class="stat__l">${esc(TR('statJurisdictions'))}</span>
       </div>
     </div>
+    <p class="tiny" style="margin-top:1rem;opacity:.65">${esc(TR('statAsOf', BUILD_DATE_STR))}</p>
   </div>
 </section>
 
@@ -746,6 +837,7 @@ function programmePage(entry, data, p) {
   const cc = entry.slug;
   const cur = p.amount_currency || data.currency;
   const amt = amountLabel(p, data.currency);
+  const trust = sourceTrust(p.source_url);
   const crumbs = [
     { label: TR('backHome'), href: `${LB()}/` },
     { label: entry.name, href: `${CB(cc)}/${cc}/` },
@@ -816,7 +908,7 @@ function programmePage(entry, data, p) {
       </div>
       <h1 style="font-size:clamp(2rem,4.5vw,3.4rem)">${esc(p.name_en)}</h1>
       ${p.name_local && p.name_local !== p.name_en ? `<p class="lede serif" style="margin-top:-.4rem">${esc(p.name_local)}</p>` : ''}
-      <p class="small">Paid by <strong>${esc(p.funder)}</strong> · ${esc(entry.flag)} ${esc(entry.name)}</p>
+      <p class="small">Paid by <strong>${funderNameHtml(p.funder)}</strong> · ${esc(entry.flag)} ${esc(entry.name)}</p>
 
       ${/* At ≤900px the sidebar stops being a sidebar: it goes static and
             lands roughly 4,000px down the page, below three paywalled
@@ -929,6 +1021,10 @@ function programmePage(entry, data, p) {
         <p class="tiny" style="margin:.6rem 0 0">${esc(
           p.verification_status === 'verified' ? TR('provVerified') : TR('provAuto'),
         )}</p>
+        <p class="tiny" style="margin:.3rem 0 0">${esc(TR('trustVerifiedOn', dateLabel(p.last_verified_at)))}</p>
+        <p class="tiny" style="margin:.2rem 0 0">${esc(
+          trust.homepage ? TR('trustSourceHomepage') : TR('trustSourceHost', trust.host),
+        )}</p>
       </div>
 
       ${/* The heading was assembled as "Other {label} support in {country}",
@@ -938,6 +1034,8 @@ function programmePage(entry, data, p) {
             locales got an English frame besides. The frame comes from i18n now,
             and a label that already says "support" picks the frame that does
             not say it again. */''}
+      ${relatedLearnBox(`${p.name_en} ${p.funder} ${p.category}`, ['how-to-read-an-eligibility-rule'], TR('relatedReading'))}
+
       ${related.length ? `<h2 style="margin-top:3rem">${esc(
         TR(
           catEndsInSupport(p.category) ? 'otherSupportIn' : 'otherSupport',
@@ -945,6 +1043,15 @@ function programmePage(entry, data, p) {
           entry.name,
         ),
       )}</h2>${teaseList({ rows: relatedRows, total: related.length, noun: 'programmes', href: `${LB()}/pricing/`, tr: TR, checkHref: `${LB()}/check/`, cc, base: BASE, hiddenSlugs: related.slice(FREE_ROWS).map((x) => x.slug) })}` : ''}
+
+      ${/* Deterministic, build-time similarity across the WHOLE country pool
+            (not just this category) — see src/pages/similar.mjs. This is a
+            different cut from `related` above: `related` is "everything else
+            in this same category, paywalled past two rows"; this is "the
+            handful of other programmes most like this one, whatever
+            category they are in", always public — the same names, funders
+            and public page links already on their own programme pages. */
+        similarHouseholdBlock({ base: LB(), cc, items: similarHousehold(data.programmes, p), TR, esc })}
     </div>
 
     <aside class="sticky-side stack no-print">
@@ -1458,6 +1565,9 @@ function methodologyPage() {
   <h2 id="corrections" style="margin-top:3rem">${esc(TR('methCorrH'))}</h2>
   <p>${esc(TR('methCorrP'))}</p>
 
+  <h2 id="company-grants" style="margin-top:3rem">${esc(TR('methCompH'))}</h2>
+  <p>${esc(TR('methCompP', nf(STARTUP_ALL.length), STARTUP_MANIFEST.countries.length))}</p>
+
   <h2 style="margin-top:3rem">${esc(TR('methOpenH'))}</h2>
   <p>${esc(TR('methOpenP1'))} <a class="link-underline" href="${BASE}/api/">${esc(TR('methOpenApi'))}</a>,
   ${esc(TR('methOpenP2'))} <a class="link-underline" href="https://github.com/adityashashidhar55-cpu/unclaimed">GitHub</a>.</p>
@@ -1483,7 +1593,7 @@ function methodologyPage() {
 function apiPage() {
   const body = `
 <section class="section-tight shell-narrow">
-  ${breadcrumbs([{ label: TR('backHome'), href: `${LB()}/` }, { label: 'API & MCP' }])}
+  ${breadcrumbs([{ label: TR('backHome'), href: `${LB()}/` }, { label: 'API' }])}
   <span class="eyebrow eyebrow-accent">Developers</span>
   ${/* The hero used to say "Plug the whole dataset into anything … Static
         JSON, no key, no rate limit", above a row promising "full records".
@@ -1495,39 +1605,66 @@ function apiPage() {
   <h1>The structured half of the dataset, as files</h1>
   <p class="lede">Static JSON, no key, no rate limit, CORS-open by virtue of being files on a CDN.
   The structured fields — amounts, categories, eligibility rules, verification status — are public.
-  Programme names and the prose around them are part of the paid plan and come back at the same
-  URLs in an entitled session.</p>
+  Programme names, funders and each programme's public page are public too. The application link,
+  the quoted source, the steps and the document list are part of the paid plan and come back at the
+  same URLs in an entitled session.</p>
 
   <h2 style="margin-top:2.5rem">REST-shaped endpoints</h2>
   <table class="rule-table">
     <tr><th><code>/api/v1/countries.json</code></th><td>Country index: codes, currencies, regions, income bands, counts.</td></tr>
     <tr><th><code>/api/v1/programmes/{cc}.json</code></th><td>Every programme for one country. The
-      first ${FREE_ROWS} records are whole; the rest carry only
-      <code>slug</code> (an opaque id), <code>category</code>, <code>benefit_type</code>,
+      ${FREE_ROWS} showcase records (open and verified where possible) are whole; the rest carry
+      <code>slug</code> (an opaque id), <code>name_en</code>, <code>funder</code>,
+      <code>url</code> (the public programme page), <code>category</code>, <code>benefit_type</code>,
       <code>amount_min</code>, <code>amount_max</code>, <code>amount_currency</code>,
       <code>amount_period</code>, <code>admin_level</code>, <code>admin_area</code>,
       <code>eligibility</code>, <code>is_automatic</code>, <code>verification_status</code>,
-      <code>derived</code> and <code>locked: true</code>. No <code>name_en</code>,
-      <code>funder</code>, <code>source_url</code>, <code>procedure_steps</code> or
+      <code>derived</code> and <code>locked: true</code>. No <code>application_url</code>,
+      <code>source_url</code>, <code>procedure_steps</code> or
       <code>documents_required</code> — those need an entitled session.</td></tr>
     <tr><th><code>/api/v1/stats.json</code></th><td>Live dataset statistics — the same numbers this site renders.</td></tr>
     <tr><th><code>/api/v1/mcp-tools.json</code></th><td>Tool schemas (JSON Schema 2020-12) for the MCP layer.</td></tr>
     <tr><th><code>/llms.txt</code></th><td>Plain-text orientation for language models.</td></tr>
   </table>
 
-  <h2 style="margin-top:2.5rem">MCP layer</h2>
-  <p>The MCP tool definitions ship as data at <code>/api/v1/mcp-tools.json</code>. Any MCP server that can
-  fetch JSON can expose these tools with a thin adapter — the tools are pure reads over the static files,
-  so the server needs no database and no state:</p>
+  <h2 style="margin-top:2.5rem">MCP server — live at <code>/mcp</code></h2>
+  <p>A hosted MCP server (Streamable HTTP, spec 2025-06-18) answers at
+  <code>${SITE_URL}/mcp</code> — no key, no install, no rate limit. Nine tools, over both products.
+  For step-by-step setup in Claude, ChatGPT, Claude Code or Cursor, see <a href="${LB()}/connect/">/connect/</a>.</p>
   <table class="rule-table">
-    <tr><th><code>list_countries</code></th><td>Coverage and counts.</td></tr>
-    <tr><th><code>search_programmes</code></th><td>Filter by country, category, keyword, verification status.</td></tr>
-    <tr><th><code>get_programme</code></th><td>Full record including steps, documents and source.</td></tr>
-    <tr><th><code>match_profile</code></th><td>Run the eligibility engine over a profile and return the three buckets.</td></tr>
+    <tr><th><code>check_entitlements</code></th><td>Match a person's profile against every published benefit in a country.</td></tr>
+    <tr><th><code>search_programmes</code></th><td>Filter benefits by country, category, keyword, verification status.</td></tr>
+    <tr><th><code>get_programme</code></th><td>Full benefit record including steps, documents and source.</td></tr>
+    <tr><th><code>get_documents</code></th><td>The document checklist for one benefit.</td></tr>
+    <tr><th><code>get_procedure</code></th><td>How to apply for one benefit: steps, channel, deadline.</td></tr>
+    <tr><th><code>get_coverage</code></th><td>Dataset coverage: countries, counts, verification stats.</td></tr>
+    <tr><th><code>report_issue</code></th><td>Flag a record that looks wrong.</td></tr>
+    <tr><th><code>check_company_eligibility</code></th><td>Match a company's profile against every published company grant.</td></tr>
+    <tr><th><code>search_company_grants</code></th><td>Filter company grants by jurisdiction, category, funder type, keyword.</td></tr>
   </table>
-  <p class="small"><strong>Status: schemas shipped, server not deployed.</strong> We won't call a documented
-  interface a running one. The matcher itself (<code>src/engine/matcher.js</code>) is dependency-free and
-  imports into a Node MCP server unchanged.</p>
+  <p class="small">Every tool result is a sourced record with <code>last_verified_at</code> and
+  <code>source_url</code>, plus a <code>status_as_of</code> timestamp — see the governance note returned with
+  every call. <code>check_entitlements</code> and <code>check_company_eligibility</code> return totals and
+  counts only, same as the free web check; <code>search_programmes</code> and <code>search_company_grants</code>
+  return the named record, because those facts are already public on that record's own page.</p>
+
+  <h2 style="margin-top:2.5rem">How to connect</h2>
+  <p>Point any MCP-capable client at <code>${SITE_URL}/mcp</code>:</p>
+  <table class="rule-table">
+    <tr><th>Claude</th><td>Settings → Connectors → Add custom connector → paste the URL.</td></tr>
+    <tr><th>ChatGPT</th><td>Settings → Connectors (developer mode) → Add connector → paste the URL.</td></tr>
+    <tr><th>Cursor / Claude Code</th><td>Add to your MCP config file:
+      ${/* pre-wrap, not overflow-x:auto: inside an auto-layout table cell the
+            cell grows to the pre's widest line, so the scroller never engages
+            and the whole table ran 80px past a 390px phone. Wrapping keeps the
+            snippet inside the cell; every line still copies as valid JSON. */''}
+      <pre style="white-space:pre-wrap;overflow-wrap:anywhere"><code>{
+  "mcpServers": {
+    "unclaimed": { "url": "${SITE_URL}/mcp" }
+  }
+}</code></pre>
+    </td></tr>
+  </table>
 
   <h2 style="margin-top:2.5rem">Licence</h2>
   <p>MIT. Attribution appreciated, not required. The underlying programme information belongs to the
@@ -1596,6 +1733,13 @@ function pricingPage() {
       ${t.featured ? `<span class="badge badge-pick">${esc(TR('priceMostPick'))}</span>` : ''}
     </div>
     <div class="figure-sm">${esc(t.price)}${t.per ? `<span class="tiny">${esc(t.per)}</span>` : ''}</div>
+    ${
+      /* Only the Startup checkout carries `t.trial` — never Personal, and
+         never a credit pack, which isn't a tier card at all. Its own line,
+         not folded into `.ticks`, because a trial is a term of the purchase
+         rather than a feature of the product. */
+      t.trial ? `<p class="small" style="margin:-.3rem 0 .6rem;color:var(--accent, inherit)"><strong>${esc(t.trial)}</strong></p>` : ''
+    }
     ${
       t.second
         ? `<p class="small" style="margin:-.3rem 0 .6rem;color:var(--ink-4)">${
@@ -1759,6 +1903,10 @@ ${disclaimerBar(TR)}
         ${tier({
           key: 'startup', delay: 110, eyebrow: TR('priceStartup'), price: '€49', per: TR('pricePerSeatMonth'),
           featured: true,
+          /* 14 days free, card collected up front — worker/index.js sets
+             `subscription_data[trial_period_days]` for business plans only,
+             so this line and the checkout it points at cannot drift apart. */
+          trial: TR('priceTrialLine'),
           second: TR('priceStartupYear'), secondPlan: 'business_annual',
           blurb: TR('priceStartupBlurb'),
           features: [
@@ -1846,6 +1994,13 @@ ${disclaimerBar(TR)}
       <div class="callout" style="margin-top:1.6rem">
         <p><strong>${esc(TR('entSeatWhyT'))}</strong> ${esc(TR('entSeatWhyB'))}</p>
       </div>
+
+      ${/* Stripe's `allow_promotion_codes` on the subscription checkout lets
+            the owner hand out a coupon code by hand — see docs/PAYWALL.md for
+            the exact steps to create one. This line is the only thing that
+            has to ship on the page; the coupon itself is created in the
+            Stripe Dashboard, not by this build. */''}
+      <p class="small" style="margin-top:1rem">${esc(TR('priceStudentLine'))} <a class="link-underline" href="mailto:hello@unclaimedgrant.com?subject=Student%2Fnonprofit%20discount">${esc(TR('entTalkToUs'))}</a></p>
     </div>
   </div>
 
@@ -1975,6 +2130,27 @@ This app needs JavaScript. The full site works without it — <a href="${BASE}/"
   });
 })();
 </script>
+<script>
+/* Status badges are computed when the site is built. This re-checks each one
+   against today's date so a call that closed since the last build never reads
+   as open. It only ever moves a badge towards closed, or refreshes a countdown. */
+(function () {
+  var DAY = 864e5, now = Date.now();
+  var els = document.querySelectorAll('[data-closes]');
+  for (var i = 0; i < els.length; i++) {
+    var el = els[i], at = Date.parse(el.getAttribute('data-closes'));
+    if (isNaN(at)) continue;
+    var days = Math.ceil((at + DAY - now) / DAY) - 1, kind = el.getAttribute('data-live');
+    if (days < 0) {
+      if (kind === 'detail') el.textContent = 'The last published deadline was ' + el.getAttribute('data-closes') + ". Check the funder's page for a new round.";
+      else el.textContent = kind === 'headline' ? 'Deadline has passed' : 'Closed';
+      if (el.classList.contains('status')) el.className = 'status status--unknown';
+    } else if (/^Closes (in \\d+ days|today|tomorrow)$/.test(el.textContent.trim())) {
+      el.textContent = days === 0 ? 'Closes today' : days === 1 ? 'Closes tomorrow' : 'Closes in ' + days + ' days';
+    }
+  }
+})();
+</script>
 </body>
 </html>`;
 }
@@ -2001,7 +2177,7 @@ function webManifest() {
     name: 'Unclaimed — money you are owed',
     short_name: 'Unclaimed',
     description:
-      'Find the government benefits and grants you are entitled to. Works offline, no account, nothing leaves your device.',
+      'Find the government benefits and grants you are entitled to. Works offline for the eligibility check, no account needed, your answers are never sent to us.',
     start_url: `${BASE}/app/`,
     scope: `${BASE}/`,
     display: 'standalone',
@@ -2285,7 +2461,38 @@ ${disclaimerBar(TR)}
         <a class="btn btn-primary" href="${LB()}/check/">${esc(TR('acctGoCheck'))}</a>
         <button class="btn" type="button" data-portal>${esc(TR('acctManage'))}</button>
       </p>
+      ${/* Pause is only offered to a subscriber who is actually paying —
+            never to admin/granted/free-in-jurisdiction, which have no Stripe
+            subscription behind them for pause_collection to act on. Sitting
+            inside #acct-manage keeps that the same condition paint() already
+            uses for the portal button, rather than a second rule to keep in
+            sync with it. */''}
+      <div id="acct-pause-row">
+      <p class="btn-row" style="margin-top:.6rem;align-items:center">
+        <select class="field" id="acct-pause-months" aria-label="${attr(TR('acctPauseCta'))}" style="width:auto;display:inline-block">
+          <option value="1">${esc(TR('acctPauseMonthsLabel', 1))}</option>
+          <option value="2">${esc(TR('acctPauseMonthsLabel', 2))}</option>
+          <option value="3">${esc(TR('acctPauseMonthsLabel', 3))}</option>
+        </select>
+        <button class="btn" type="button" id="acct-pause-btn">${esc(TR('acctPauseCta'))}</button>
+      </p>
+      <p class="tiny" style="margin-top:.4rem">${esc(TR('acctPauseHint'))}</p>
+      </div>
     </div>
+
+    <div id="acct-paused" hidden class="callout" style="margin-top:1.2rem">
+      <p id="acct-paused-line" style="margin:0"></p>
+      <p class="btn-row" style="margin-top:.8rem">
+        <button class="btn btn-primary" type="button" id="acct-resume-btn">${esc(TR('acctResumeCta'))}</button>
+      </p>
+    </div>
+
+    <div id="acct-quota" hidden class="card" style="margin-top:1.2rem">
+      <span class="eyebrow">${esc(TR('acctQuotaT'))}</span>
+      <p class="small" id="acct-quota-line" style="margin-top:.4rem"></p>
+    </div>
+
+    <p id="acct-msg" role="status" aria-live="polite" tabindex="-1" hidden class="notice notice--error" style="margin-top:1rem"></p>
 
     <p class="btn-row" style="margin-top:1.2rem">
       <a class="btn btn-sm" href="${LB()}/check/" id="acct-check-free">${esc(TR('acctGoCheck'))}</a>
@@ -2313,8 +2520,8 @@ ${disclaimerBar(TR)}
    "does not provide an export named 'accountState'" and a page that could
    neither sign in nor pay. Everywhere else on the site already versions its
    modules; this block was the one that did not. */
-import { requestCode, verifyCode, me } from '${BASE}/app/auth.js?v=${ASSET_V}';
-import { accountState, awaitEntitlement, upgrade } from '${BASE}/app/checkout.js?v=${ASSET_V}';
+import { requestCode, verifyCode, finishTotp, me } from '${BASE}/app/auth.js?v=${ASSET_V}';
+import { accountState, awaitEntitlement, upgrade, pauseBilling, resumeBilling, fetchQuota } from '${BASE}/app/checkout.js?v=${ASSET_V}';
 import { track } from '${BASE}/beacon.js?v=${ASSET_V}';
 
 const $ = (s) => document.querySelector(s);
@@ -2333,6 +2540,9 @@ function fail(text) {
 function clearMsg() { msg.textContent = ''; msg.className = ''; msg.hidden = true; }
 const form = $('#auth-form');
 let email = '';
+/* Set once the email code checks out on an account with two-factor on: the
+   same code field then takes the authenticator (or recovery) code. */
+let totpPending = null;
 const acctType = () => ($('#acct-biz').checked ? 'business' : 'individual');
 
 const params = new URLSearchParams(location.search);
@@ -2382,6 +2592,15 @@ const PRICE = ${JSON.stringify(TR('planPrice'))};
    so a price containing a dollar-ampersand cannot be re-interpreted. */
 const CTA_FOR = (k) => ${JSON.stringify(TR('subscribeCta', '{price}'))}.replace('{price}', () => PRICE[k] ?? '');
 const ALT_FOR = (k) => ${JSON.stringify(TR('orAlt', '{price}'))}.replace('{price}', () => PRICE[k] ?? '');
+/* Same placeholder trick as CTA_FOR/ALT_FOR above, for the two lines that
+   need a value only known at runtime: the resume date, and this month's
+   usage numbers. */
+const PAUSED_LINE = (date) => ${JSON.stringify(TR('acctPaused', '{date}'))}.replace('{date}', () => date);
+const QUOTA_LINE = (left, allowance) => ${JSON.stringify(TR('acctQuotaLine', '{left}', '{allowance}'))}
+  .replace('{left}', () => left).replace('{allowance}', () => allowance);
+const QUOTA_CREDITS = (n) => ${JSON.stringify(TR('acctQuotaCredits', '{n}'))}.replace('{n}', () => n);
+const QUOTA_NONE = ${JSON.stringify(TR('acctQuotaNone'))};
+const PAUSED_OPEN = ${JSON.stringify(TR('acctPausedOpen'))};
 
 const welcomed = params.has('welcome');
 if (welcomed) $('#acct-welcome').hidden = false;
@@ -2396,14 +2615,33 @@ function paint(s) {
   $('#auth-signed-in').hidden = false;
   $('#acct-email').textContent = s.user?.email ?? '';
 
+  /* The one place a runtime value is spliced into a line accountState()
+     builds. s.pausedUntil is only ever set alongside reason === 'paused'. */
+  /* A pause set in the Stripe Dashboard with no resume date is stored as
+     Number.MAX_SAFE_INTEGER, which is past the largest valid Date — and
+     toLocaleDateString throws RangeError on it, which took down the whole
+     paint(). Only print a date that is a real one. */
+  if (s.pausedUntil) {
+    const d = new Date(s.pausedUntil);
+    TR.paused = Number.isFinite(d.getTime()) && s.pausedUntil < 4e15
+      ? PAUSED_LINE(d.toLocaleDateString(${JSON.stringify(L)}))
+      : PAUSED_OPEN;
+  }
+
   const st = accountState(s, TR);
   $('#acct-plan').textContent = st.line;
 
   const canBuy = st.action === 'subscribe' || st.action === 'both';
   const canManage = st.action === 'portal' || st.action === 'both';
+  const isPaused = st.action === 'resume';
   $('#acct-upgrade').hidden = !canBuy;
   $('#acct-manage').hidden = !canManage;
-  $('#acct-check-free').hidden = canManage;
+  /* The portal is right for past_due and lapsed too; pausing is not — only a
+     live, paying subscription has anything to pause. */
+  $('#acct-pause-row').hidden = st.kind !== 'active';
+  $('#acct-paused').hidden = !isPaused;
+  if (isPaused) $('#acct-paused-line').textContent = st.line;
+  $('#acct-check-free').hidden = canManage || isPaused;
 
   /* A business account was being sold Personal at 7 euros a month. The plan
      a button buys now follows the door they signed in by — and the label is
@@ -2441,6 +2679,46 @@ me().then(async (s) => {
   /* Arrived here from a locked panel with a plan in hand: finish the job
      rather than making them find the button a second time. */
   if (!s.entitled && !welcomed && wantPlan) upgrade(wantPlan);
+
+  /* Usage and credits. Fetched for every signed-in visitor rather than only
+     the ones known to have an allowance: an individual account still gets a
+     true answer (zero, on every plan), and QUOTA_NONE says so instead of the
+     panel just staying hidden and reading as broken. */
+  const quota = await fetchQuota();
+  if (quota?.quota) {
+    const q = quota.quota;
+    $('#acct-quota').hidden = false;
+    const bits = [];
+    bits.push(q.allowance > 0 ? QUOTA_LINE(q.allowance_left, q.allowance) : QUOTA_NONE);
+    if (q.credits > 0) bits.push(QUOTA_CREDITS(q.credits));
+    $('#acct-quota-line').textContent = bits.join(' — ');
+  }
+});
+
+/* Its own error slot rather than #auth-msg: that one lives inside #auth-card,
+   which paint() hides the moment someone is signed in — exactly the state
+   these two buttons only ever appear in. Reusing it would write a failure
+   message into an element nobody can see. */
+function failAcct(text) {
+  const el = $('#acct-msg');
+  el.textContent = text;
+  el.hidden = false;
+  el.focus();
+}
+
+$('#acct-pause-btn').addEventListener('click', async () => {
+  const btn = $('#acct-pause-btn');
+  const months = parseInt($('#acct-pause-months').value, 10);
+  const res = await pauseBilling(months, btn);
+  if (res.ok) paint(await me());
+  else failAcct(res.message || 'Could not pause your subscription — try again.');
+});
+
+$('#acct-resume-btn').addEventListener('click', async () => {
+  const btn = $('#acct-resume-btn');
+  const res = await resumeBilling(btn);
+  if (res.ok) paint(await me());
+  else failAcct(res.message || 'Could not resume your subscription — try again.');
 });
 
 form.addEventListener('submit', async (e) => {
@@ -2468,9 +2746,29 @@ form.addEventListener('submit', async (e) => {
 
   const code = $('#auth-code').value.trim();
   const btn = $('#auth-verify'); btn.disabled = true; btn.textContent = 'Checking…';
-  const res = await verifyCode(email, code, acctType());
+  const res = totpPending ? await finishTotp(totpPending, code) : await verifyCode(email, code, acctType());
   btn.disabled = false; btn.textContent = 'Verify and sign in';
-  if (!res.ok) { fail(res.message || 'That code is wrong or has expired.'); return; }
+  if (!res.ok && res.totp_required) {
+    totpPending = res.pending;
+    const input = $('#auth-code');
+    input.value = '';
+    input.removeAttribute('pattern');
+    input.removeAttribute('maxlength');
+    input.setAttribute('inputmode', 'text');
+    input.setAttribute('placeholder', '000000');
+    $('#code-sent-to').textContent = 'Two-factor is on for this account. Enter the 6-digit code from your authenticator app, or one of your recovery codes.';
+    input.focus();
+    return;
+  }
+  if (!res.ok) {
+    if (totpPending && res.error === 'invalid_pending') {
+      totpPending = null;
+      $('#step-code').hidden = true;
+      $('#step-email').hidden = false;
+    }
+    fail(res.message || 'That code is wrong or has expired.');
+    return;
+  }
   track('signin_done');
   /* Back where they came from, if they came from somewhere. Someone who
      clicked "sign in to unlock" on their results wants their results. */
@@ -2482,6 +2780,7 @@ form.addEventListener('submit', async (e) => {
 });
 
 $('#auth-back').addEventListener('click', () => {
+  totpPending = null;
   $('#step-code').hidden = true;
   $('#step-email').hidden = false;
   clearMsg();
@@ -3128,7 +3427,7 @@ ${disclaimerBar(TR)}
   });
 }
 
-function startupsIndex() {
+function startupsIndex(closingSoonStats) {
   const byType = {};
   for (const p of STARTUP_ALL) byType[p.grant_type] = (byType[p.grant_type] || 0) + 1;
   const nonDilutive = STARTUP_ALL.filter((p) => isFreeMoney(p.grant_type)).length;
@@ -3169,6 +3468,8 @@ ${disclaimerBar(TR)}
     </div>`).join('')}
   </div>
 
+  ${closingSoonStats ? closingSoonPromoBlock({ base: BASE, totalClosingSoon: closingSoonStats.total, jurisdictionCount: closingSoonStats.jurisdictions }) : ''}
+
   <div class="callout callout--sage" style="margin-top:2rem">
     <p><strong>Credits are not cash, and we never add them together.</strong> ${nf(byType.in_kind ?? 0)} of
     these are cloud or software credits. They are worth having, but a headline that mixed $100,000 of AWS
@@ -3181,7 +3482,14 @@ ${disclaimerBar(TR)}
     are capped at <strong>€${nf(DE_MINIMIS_CEILING_EUR)} per company per member state over a rolling three
     years</strong> (${esc(REGULATION.general.id)}, ${esc(REGULATION.general.article)}). Go over it and the new
     award does not get trimmed — under Article 3(7) it is disqualified in full. We track what you have already
-    taken and tell you before you spend six weeks on an application you are barred from.</p>
+    taken and tell you before you spend six weeks on an application you are barred from.
+    <a class="link-underline" href="${BASE}/startups/de-minimis/">Check your headroom</a>.</p>
+  </div>
+
+  <div class="callout" style="margin-top:1.2rem">
+    <p><strong>Free calculators.</strong> Work out your co-funding cash need, or estimate the German
+    Forschungszulage R&D tax credit — both run in your browser, nothing sent to a server.
+    <a class="link-underline" href="${BASE}/startups/tools/">See the tools</a>.</p>
   </div>
 
   <h2 style="margin-top:3rem">By country</h2>
@@ -3205,6 +3513,11 @@ ${disclaimerBar(TR)}
   </div>
 
   <p style="margin-top:2.5rem"><a class="btn btn-primary" href="${SB()}/startups/check/">Check what your company qualifies for</a></p>
+
+  ${alertsSubscribeBox({
+    jurisdictionOptions: STARTUP_MANIFEST.countries.map((c) => ({ slug: c.slug, name: c.name })),
+    audience: 'companies',
+  })}
 </section>`;
 
   return layout({
@@ -3230,7 +3543,7 @@ function hasPersonalBusiness(cc) {
   return entry ? entry.data.programmes.some((p) => p.category === 'business') : false;
 }
 
-function startupCountryPage(c) {
+function startupCountryPage(c, closingSoonSlugs) {
   const data = STARTUP_DATA[c.slug];
   const reg = REGISTRIES[c.slug];
   const body = `
@@ -3258,6 +3571,8 @@ ${disclaimerBar(TR)}
     ${esc(reg.name)} — ${esc(reg.note)}</p>
   </div>` : ''}
 
+  ${countryClosingSoonLink({ base: BASE, cc: c.slug, has: closingSoonSlugs?.has(c.slug) })}
+
   ${/* The cards are <h3>. Without a section heading above them the page ran
         h1 → h3 on all 27 startup country pages: two levels missing, which a
         screen reader reports as skipped content. */''}
@@ -3270,6 +3585,8 @@ ${disclaimerBar(TR)}
       href: `${LB()}/pricing/`,
       container: 'grid grid-2', tr: TR, checkHref: `${LB()}/check/`, })}
   </div>
+
+  ${alertsSubscribeBox({ jurisdiction: c.slug, audience: 'companies' })}
 </section>`;
 
   return layout({
@@ -3288,6 +3605,7 @@ ${disclaimerBar(TR)}
 function startupProgrammePage(c, p) {
   const amt = p.amount_max ?? p.amount_min;
   const e = p.eligibility || {};
+  const trust = sourceTrust(p.source_url);
   const crit = [
     e.company_age_months_max != null ? `Under ${Math.round(e.company_age_months_max / 12)} years old` : null,
     e.headcount_max != null ? `Up to ${e.headcount_max} employees` : null,
@@ -3319,10 +3637,10 @@ ${disclaimerBar(TR)}
       <div class="row-between">
         <div>
           <span class="eyebrow" style="margin:0">Status</span>
-          <h2 style="font-size:1.5rem;margin:.2rem 0 .3rem">${esc(d.headline)}</h2>
-          <p class="small" style="margin:0;max-width:52ch">${esc(d.detail)}</p>
+          <h2 style="font-size:1.5rem;margin:.2rem 0 .3rem"${liveAttrs(p)} data-live="headline">${esc(d.headline)}</h2>
+          <p class="small" style="margin:0;max-width:52ch"${liveAttrs(p)} data-live="detail">${esc(d.detail)}</p>
         </div>
-        <span class="status status--${d.urgency}">${esc(d.meta.label)}</span>
+        <span class="status status--${d.urgency}"${liveAttrs(p)}>${esc(d.meta.label)}</span>
       </div>
       ${d.projected ? '<p class="tiny" style="margin-top:.8rem">Projected from the pattern of past calls — confirm on the funder\'s page before planning around it.</p>' : ''}
     </div>`;
@@ -3333,11 +3651,11 @@ ${disclaimerBar(TR)}
       <span class="eyebrow">Amount</span>
       <div class="figure-sm">${amt != null ? esc(money(amt, p.amount_currency)) : 'Not published'}</div>
       ${p.amount_note ? `<p class="small">${esc(p.amount_note)}</p>` : ''}
-      ${p.cofunding_pct != null ? `<p class="small"><strong>You must co-fund ${p.cofunding_pct}%.</strong></p>` : ''}
+      ${p.cofunding_pct != null ? `<p class="small"><strong>You must co-fund ${p.cofunding_pct}%.</strong>${p.cofunding_pct > 0 && p.cofunding_pct < 100 ? ` <a class="link-underline" href="${BASE}/startups/tools/co-funding/?pct=${encodeURIComponent(p.cofunding_pct)}">Work out the cash you need</a>` : ''}</p>` : ''}
     </div>
     <div class="card">
       <span class="eyebrow">Funder</span>
-      <p style="margin:.4rem 0 0"><strong>${esc(p.funder)}</strong></p>
+      <p style="margin:.4rem 0 0"><strong>${funderNameHtml(p.funder)}</strong></p>
       <p class="small">${esc(p.funder_type)} · ${esc(p.admin_level)}</p>
       <p class="small">Deadline: ${esc(DEADLINE_LABEL[p.deadline_type] || p.deadline_type || 'Not stated')}${p.deadline_note ? ` — ${esc(p.deadline_note)}` : ''}</p>
     </div>
@@ -3371,7 +3689,8 @@ ${disclaimerBar(TR)}
     <p><strong>This is de minimis aid.</strong> It counts against the €${nf(DE_MINIMIS_CEILING_EUR)} ceiling
     that applies to your company across a rolling three years in this member state
     (${esc(REGULATION.general.id)}). If a new award would take you over, Article 3(7) disqualifies that award
-    in full rather than reducing it — so check your headroom before you apply, not after.</p>
+    in full rather than reducing it — so check your headroom before you apply, not after.
+    ${EU_MEMBER_STATES.includes(c.slug) ? `<a class="link-underline" href="${BASE}/startups/de-minimis/">Check your headroom for ${esc(c.name)}</a>.` : ''}</p>
   </div>` : ''}
 
   ${crit.length ? `<h2 style="margin-top:2.5rem">Who can apply</h2>
@@ -3384,15 +3703,47 @@ ${disclaimerBar(TR)}
   ${(p.documents_required || []).length ? `<h2 style="margin-top:2rem">What you will need</h2>
   <ul>${p.documents_required.map((d) => `<li>${esc(d.doc)}${d.mandatory === false ? ' <span class="small">(if applicable)</span>' : ''}</li>`).join('')}</ul>` : ''}
 
+  ${(() => {
+    /* First conditional match only — keeps the box to the deadline
+       explainer plus at most one specific term, rather than crowding out a
+       genuine keyword match (e.g. "EIC Accelerator" in the programme name)
+       with several registry links at once. */
+    const conditional =
+      (e.de_minimis && 'de-minimis-aid') ||
+      (e.sme_category && e.sme_category !== 'any' && 'eu-sme-definition') ||
+      (p.grant_type === 'tax_credit' && c.slug === 'de' && 'forschungszulage') ||
+      (p.grant_type === 'tax_credit' && 'rd-tax-credit-vs-grant') ||
+      (c.slug === 'us' && 'uei-sam-registration') ||
+      (c.slug === 'fr' && 'siren-siret') ||
+      (c.slug === 'gb' && 'companies-house-number') ||
+      (c.slug === 'in' && 'dpiit-recognition') ||
+      null;
+    return relatedLearnBox(`${p.name_en} ${p.funder}`, ['how-grant-deadlines-work', ...(conditional ? [conditional] : [])]);
+  })()}
+
   <p style="margin-top:2rem"><a class="btn btn-primary" href="${esc(p.application_url)}" rel="nofollow noopener">Apply on the funder's site</a></p>
 
   <div class="callout" style="margin-top:2rem">
     <p><strong>Source.</strong> <a href="${esc(p.source_url)}" rel="nofollow noopener">${esc(p.source_url)}</a>
-    ${/* Every startup record shares one last_verified_at too, so the date said
-          nothing about this programme. Status is per record; the date is not. */''}
     ${p.verification_status !== 'verified' ? ' · <strong>not human-checked</strong>' : ''}</p>
     ${p.source_snippet ? `<p class="small" style="margin-top:.6rem">"${esc(String(p.source_snippet).slice(0, 300))}"</p>` : ''}
+    <p class="tiny" style="margin-top:.6rem">Verified on ${esc(dateLabel(p.last_verified_at))}</p>
+    <p class="tiny" style="margin-top:.2rem">${
+      trust.homepage
+        ? "Source: funder's homepage — the programme page was not found"
+        : `Source: ${esc(trust.host)}`
+    }</p>
   </div>
+
+  ${similarCompanyBlock({
+    base: BASE,
+    items: similarCompany(STARTUP_DATA[c.slug].programmes, p, BUILD_NOW, effectiveStatus),
+    asOf: BUILD_NOW,
+    esc, attr, deadlineState, liveAttrs,
+  })}
+
+  ${alertsSubscribeBox({ jurisdiction: c.slug, audience: 'companies', heading: `Get deadline alerts for ${c.name} programmes` })}
+  ${expertHelpCta({ base: BASE, audience: 'company', programmeSlug: `${c.slug}/${p.slug}`, country: c.slug })}
 </section>`;
 
   return layout({
@@ -3555,6 +3906,8 @@ function buildLanguage(lang) {
   page(`${pre}enterprise/index.html`, enterprisePage());
   ALT = altFor('/privacy/');
   page(`${pre}privacy/index.html`, privacyPage());
+  ALT = altFor('/trust/');
+  page(`${pre}trust/index.html`, trustCentrePage({ BASE, LB, L, TR, ALT, SITE_URL, ORIGIN, layout }));
   ALT = altFor('/auto-apply/');
   page(`${pre}auto-apply/index.html`, autoApplyPage());
   page(`${pre}account/index.html`, accountPage());
@@ -3570,7 +3923,7 @@ function buildLanguage(lang) {
      and per-programme startup pages below stay English — they are 2,000
      records of funder-written prose that we do not translate. */
   ALT = altFor('/startups/');
-  page(`${pre}startups/index.html`, startupsIndex());
+  page(`${pre}startups/index.html`, startupsIndex(CLOSING_SOON.stats));
   ALT = altFor('/startups/check/');
   page(`${pre}startups/check/index.html`, startupCheckPage());
 
@@ -3587,12 +3940,47 @@ function buildLanguage(lang) {
     }
     for (const c of STARTUP_MANIFEST.countries) {
       ALT = altFor(`/startups/${c.slug}/`);
-      page(`startups/${c.slug}/index.html`, startupCountryPage(c));
+      page(`startups/${c.slug}/index.html`, startupCountryPage(c, CLOSING_SOON.countriesWithPage));
       for (const p2 of STARTUP_DATA[c.slug].programmes) {
         ALT = altFor(`/startups/${c.slug}/${p2.slug}/`);
         page(`startups/${c.slug}/${p2.slug}/index.html`, startupProgrammePage(c, p2));
       }
     }
+
+    /* EU de minimis headroom calculator. English-only like the rest of
+       /startups/**, and generated from its own file (src/pages/de-minimis.mjs)
+       per the multi-builder convention of keeping new page generators out of
+       this file. */
+    ALT = [];
+    page('startups/de-minimis/index.html', renderDeMinimisPage({
+      BASE, LB, SB, TR, L, ALT, SITE_URL, STARTUP_MANIFEST, STARTUP_DATA,
+    }));
+
+    /* Grant readiness quiz — src/pages/readiness.mjs, same convention. */
+    ALT = [];
+    page('startups/readiness/index.html', renderReadinessPage({ BASE, LB, SB, SITE_URL }));
+
+    /* Involve Consulting lead form — src/pages/expert-help.mjs. Not under
+       /startups/** (it serves both company and household leads), so it gets
+       its own top-level path. */
+    ALT = [];
+    page('help/expert/index.html', renderExpertHelpPage({ BASE, LB, SITE_URL }));
+
+    /* /connect/ (the MCP landing page) is generated further down, once the
+       9-tool list (data/mcp-tools.json plus the two company tools appended
+       at build time) exists to render it from — see near
+       'api/v1/mcp-tools.json' below. */
+
+    /* Free calculators — /startups/tools/**. English-only like de-minimis
+       above, generated from src/pages/startup-tools.mjs per the same
+       multi-builder convention of keeping new page generators out of this
+       file. */
+    ALT = [];
+    page('startups/tools/index.html', startupToolsIndex({ BASE, LB, SB, TR, L, ALT, SITE_URL }));
+    ALT = [];
+    page('startups/tools/co-funding/index.html', renderCofundingPage({ BASE, LB, SB, TR, L, ALT, SITE_URL }));
+    ALT = [];
+    page('startups/tools/forschungszulage/index.html', renderForschungszulagePage({ BASE, LB, SB, TR, L, ALT, SITE_URL }));
 
     /* No hreflang siblings: /browse/ is generated in English only, and a
        hreflang pointing at a URL that 404s is worse than none. */
@@ -3601,6 +3989,64 @@ function buildLanguage(lang) {
     for (const cat of Object.keys(STATS.byCategory)) {
       ALT = altFor(`/browse/${cat}/`);
       page(`browse/${cat}/index.html`, globalCategoryPage(cat));
+    }
+
+    /* /compare/ — English only, like /browse/ above: SEO landing pages for
+       competitor-brand searches, not a surface a non-English reader arrives
+       at directly. See src/pages/compare.mjs for the page bodies. */
+    const compareCtx = {
+      esc, attr, layout, breadcrumbs, breadcrumbLd, LB, BASE, SITE_URL, TR, ICON,
+      nf, STATS, STARTUP_STATS, STARTUP_MANIFEST,
+      get ALT() { return ALT; }, get L() { return L; },
+    };
+    ALT = [];
+    page('compare/index.html', compareHub(compareCtx));
+    for (const comp of COMPETITORS) {
+      ALT = [];
+      page(`compare/${comp.slug}/index.html`, comparePage(comp, compareCtx));
+    }
+
+    /* Trust/content/open-data pages — English only, like /compare/ and
+       /browse/ above. Kept in their own files per the multi-builder
+       convention; build.mjs only imports and calls in. See
+       src/pages/scams.mjs, accessibility.mjs, changelog.mjs, feeds.mjs and
+       openapi.mjs. */
+    ALT = [];
+    page('scams/index.html', scamsPage({ BASE, SITE_URL, ORIGIN, layout, TR }));
+    ALT = [];
+    page('accessibility/index.html', accessibilityPage({ BASE, SITE_URL, ORIGIN, layout, TR }));
+    ALT = [];
+    page('changelog/index.html', changelogPage({ BASE, SITE_URL, ORIGIN, layout, TR }));
+
+    buildStartupFeeds({ STARTUP_MANIFEST, STARTUP_DATA, SITE_URL, ORIGIN, write, BUILD_NOW });
+
+    write('api/v1/openapi.json', JSON.stringify(openApiSpec({ SITE_URL, STATS, STARTUP_STATS })));
+    for (const c of STARTUP_MANIFEST.countries) {
+      write(`api/v1/csv/startups-${c.slug}.csv`, startupCsv(STARTUP_DATA[c.slug].programmes, { SITE_URL, asOf: BUILD_NOW }));
+    }
+
+    /* /funders/ — English only, same reasoning as /compare/ above: the
+       household side of it links to English programme pages regardless of
+       which locale is generating right now. See src/pages/funders.mjs. */
+    const funderCtx = { esc, attr, layout, breadcrumbs, breadcrumbLd, LB, BASE, SITE_URL, TR, ICON, nf, BUILD_NOW,
+      get ALT() { return ALT; }, get L() { return L; } };
+    ALT = [];
+    page('funders/index.html', fundersIndexPage(FUNDER_DIRECTORY, funderCtx));
+    for (const f of FUNDER_DIRECTORY) {
+      if (!f.hasPage) continue;
+      ALT = [];
+      page(`funders/${f.slug}/index.html`, funderProfilePage(f, funderCtx));
+    }
+
+    /* /learn/ — the knowledge base. English only: evergreen explainers, not
+       prose worth translating seven times over. See src/pages/learn.mjs. */
+    const learnCtx = { esc, attr, layout, breadcrumbs, breadcrumbLd, LB, BASE, SITE_URL, TR,
+      get ALT() { return ALT; }, get L() { return L; } };
+    ALT = [];
+    page('learn/index.html', learnIndexPage(TERMS, learnCtx));
+    for (const term of TERMS) {
+      ALT = [];
+      page(`learn/${term.slug}/index.html`, learnTermPage(term, learnCtx));
     }
   }
 
@@ -3627,6 +4073,33 @@ function buildLanguage(lang) {
     }
   }
 }
+
+/* Closing-soon, calendar and ICS pages: English-only and language-invariant,
+   so built once here rather than once per locale inside buildLanguage() —
+   calling it from there would write the same files LANGS.length times and
+   push duplicate entries onto PAGES for the sitemap. Computed before the
+   language loop so the very first (English) pass of startupsIndex() and
+   startupCountryPage() below already has the stats and slugs to link with. */
+const CLOSING_SOON = buildClosingSoonPages({
+  STARTUP_MANIFEST, STARTUP_DATA, STARTUP_ALL, BUILD_NOW, BASE, ORIGIN, SITE_URL, page, write, TR: translator('en'),
+});
+
+/* Search index + /search/ page: built once, English-only, same reasoning as
+   CLOSING_SOON above — see src/pages/search.mjs for why one shared page
+   rather than one per locale. */
+write('search.js', SEARCH_CLIENT_JS);
+const SEARCH_STATS = buildSearchIndexes({
+  countries, STARTUP_MANIFEST, STARTUP_DATA, BUILD_NOW, effectiveStatus, write,
+});
+page(
+  'search/index.html',
+  searchPage({
+    base: BASE, layout, esc, breadcrumbs, breadcrumbLd, SITE_URL, disclaimerBar,
+    TR: translator('en'), ASSET_V,
+    householdCount: SEARCH_STATS.householdCount,
+    companyCount: SEARCH_STATS.companyCount,
+  }),
+);
 
 for (const lang of LANGS) buildLanguage(lang);
 L = 'en';
@@ -3659,14 +4132,19 @@ write('404.html', layout({
  * files itself so they cannot simply be removed.
  *
  * So the file keeps every field the matcher needs to compute a correct free
- * total — the amounts, the periods, the eligibility rules — and drops every
- * field that identifies WHICH programme it is: the names, the funder, the
- * links, the quoted source, the steps and the documents. The first two records
- * per country stay whole, because two is what a signed-out visitor sees on the
- * page and the two surfaces must agree.
+ * total — the amounts, the periods, the eligibility rules — plus the name,
+ * funder and public page URL (all already public HTML), and drops what the
+ * paid plan sells: the application link, the quoted source, the steps and the
+ * documents. Two showcase records per country stay whole.
  *
  * `derived` carries the five answers the matcher would otherwise read out of
  * the prose we just removed, so the total does not move by a cent.
+ *
+ * Which two: not "whichever the source file lists first" any more — for the
+ * US and India that was a closed or wound-down programme, because the source
+ * data carries no ordering promise at all. src/pages/free-tier.mjs picks the
+ * two that are actually open (or rolling), verified, broadly-eligible cash
+ * programmes, highest amount as the tiebreak — see pickHouseholdShowcase().
  */
 const PUBLIC_FREE_ROWS = FREE_ROWS;
 
@@ -3707,44 +4185,6 @@ function opaqueId(slug) {
   return `p_${(h >>> 0).toString(36)}`;
 }
 
-function lockedRecord(p) {
-  return {
-    slug: opaqueId(p.slug),
-    locked: true,
-    category: p.category,
-    benefit_type: p.benefit_type,
-    is_automatic: p.is_automatic,
-    admin_level: p.admin_level,
-    admin_area: p.admin_area,
-    amount_min: p.amount_min,
-    amount_max: p.amount_max,
-    amount_period: p.amount_period,
-    amount_currency: p.amount_currency,
-    verification_status: p.verification_status,
-    status: effectiveStatus(p),
-    closes_at: p.closes_at,
-    opens_at: p.opens_at,
-    eligibility: p.eligibility,
-    /* Precomputed so removing the prose cannot change a verdict. */
-    derived: {
-      months_payable: monthsPayable(p),
-      capital_ceiling: isCapitalCeiling(p),
-      employer_aid: isEmployerAid(p),
-      means_tested: isUnpricedMeansTest(p),
-      circumstances: circumstanceTags(p),
-      /* The four gates added when the matcher learned that most of its wrong
-         answers came from rules living in prose. They read names, funders and
-         source snippets — exactly the fields stripped below — so they must be
-         answered here or a locked record silently loses its condition and
-         reappears as a straight match. */
-      passported: passportedFrom(p),
-      statutory_right: isStatutoryRight(p),
-      citizens_only: isCitizensOnly(p),
-      hardship_aid: isHardshipAid(p),
-    },
-  };
-}
-
 /**
  * The same treatment for startup programmes.
  *
@@ -3756,48 +4196,31 @@ function lockedRecord(p) {
  * an order.
  */
 function publicStartups(data) {
+  const showcase = pickStartupShowcase(data.programmes || [], BUILD_NOW, PUBLIC_FREE_ROWS);
   return {
     ...data,
     free_rows: PUBLIC_FREE_ROWS,
     locked_count: Math.max(0, (data.programmes || []).length - PUBLIC_FREE_ROWS),
     programmes: (data.programmes || []).map((p, i) =>
-      i < PUBLIC_FREE_ROWS
-        ? p
-        : {
-            slug: opaqueId(p.slug),
-            locked: true,
-            country_code: p.country_code,
-            category: p.category,
-            grant_type: p.grant_type,
-            funder_type: p.funder_type,
-            admin_level: p.admin_level,
-            amount_min: p.amount_min,
-            amount_max: p.amount_max,
-            amount_currency: p.amount_currency,
-            cofunding_pct: p.cofunding_pct,
-            is_automatic: p.is_automatic,
-            status: effectiveStatus(p),
-            deadline_type: p.deadline_type,
-            closes_at: p.closes_at,
-            opens_at: p.opens_at,
-            verification_status: p.verification_status,
-            eligibility: p.eligibility,
-          },
+      showcase.has(i) ? p : lockedStartupRecord(p, { base: BASE, opaqueId }),
     ),
   };
 }
 
-function publicDataset(data) {
+function publicDataset(data, cc) {
+  const showcase = pickHouseholdShowcase(data.programmes, BUILD_NOW, PUBLIC_FREE_ROWS);
   return {
     ...data,
     free_rows: PUBLIC_FREE_ROWS,
     locked_count: Math.max(0, data.programmes.length - PUBLIC_FREE_ROWS),
-    programmes: data.programmes.map((p, i) => (i < PUBLIC_FREE_ROWS ? p : lockedRecord(p))),
+    programmes: data.programmes.map((p, i) =>
+      showcase.has(i) ? p : lockedHouseholdRecord(p, { cc, base: BASE, opaqueId }),
+    ),
   };
 }
 
 for (const { entry, data } of countries) {
-  write(`api/v1/programmes/${entry.slug}.json`, JSON.stringify(publicDataset(data)));
+  write(`api/v1/programmes/${entry.slug}.json`, JSON.stringify(publicDataset(data, entry.slug)));
   /* The unstripped copy the Worker reads to answer a paid check — only where
      there is a Worker in front of it to refuse direct requests. */
   if (EMIT_FULL) write(`api/v1/full/programmes/${entry.slug}.json`, JSON.stringify(data));
@@ -3840,6 +4263,20 @@ write('beacon.js', fs.readFileSync(path.join(SRC, 'pwa/beacon.js'), 'utf8'));
    the same copy — the cookie it sets is shared across all of them. */
 write('audience.js', fs.readFileSync(path.join(SRC, 'pwa/audience.js'), 'utf8'));
 write('startup-check.js', fs.readFileSync(path.join(SRC, 'pwa/startup-check.js'), 'utf8'));
+/* The de minimis calculator. At the root so its './packages/stateaid/...'
+   import resolves the same way startup-check.js's sibling imports do. */
+write('de-minimis.js', fs.readFileSync(path.join(SRC, 'pwa/de-minimis.js'), 'utf8'));
+/* The readiness quiz. Self-contained (no sibling imports), but at the root
+   for the same reason as the other /startups/** client scripts above. */
+write('readiness.js', fs.readFileSync(path.join(SRC, 'pwa/readiness.js'), 'utf8'));
+/* The two /startups/tools/** calculators. At the root for the same reason:
+   their './packages/rdcalc/...' import resolves the same way. */
+write('cofunding.js', fs.readFileSync(path.join(SRC, 'pwa/cofunding.js'), 'utf8'));
+write('forschungszulage.js', fs.readFileSync(path.join(SRC, 'pwa/forschungszulage.js'), 'utf8'));
+/* Shared by both check flows' "copy a link to these results" button — see
+   src/pwa/share-link.js. Emitted at dist root, same as the two files that
+   import it, so './share-link.js' resolves from either. */
+write('share-link.js', fs.readFileSync(path.join(SRC, 'pwa/share-link.js'), 'utf8'));
 /* Shared by both client-rendered wizards, which are both emitted at the dist
    root, so './wizard-i18n.js' resolves for each of them. */
 write('wizard-i18n.js', fs.readFileSync(path.join(SRC, 'pwa/wizard-i18n.js'), 'utf8'));
@@ -3872,6 +4309,7 @@ write('packages/scoring/index.js', fs.readFileSync(path.join(ROOT, 'packages/sco
 write('packages/scoring/rates.js', fs.readFileSync(path.join(ROOT, 'packages/scoring/rates.js'), 'utf8'));
 /* The dashboard needs the state-aid ledger and the register adapters too. */
 write('packages/stateaid/index.js', fs.readFileSync(path.join(ROOT, 'packages/stateaid/index.js'), 'utf8'));
+write('packages/rdcalc/index.js', fs.readFileSync(path.join(ROOT, 'packages/rdcalc/index.js'), 'utf8'));
 write('packages/registry/index.js', fs.readFileSync(path.join(ROOT, 'packages/registry/index.js'), 'utf8'));
 write('packages/vault/index.js', fs.readFileSync(path.join(ROOT, 'packages/vault/index.js'), 'utf8'));
 /* The funnel's step names, shared so the dashboard cannot invent one. */
@@ -3896,8 +4334,85 @@ write(
     })),
   }),
 );
+/**
+ * MCP tool schemas, regenerated at build time rather than copied verbatim.
+ *
+ * data/mcp-tools.json is the template: it holds the hand-written tool
+ * definitions (names, descriptions, input/output schemas) for the individual
+ * side, which are stable and not worth re-deriving here. What drifts is the
+ * metadata around them — the description's record counts, the homepage URL —
+ * and those are now taken from STATS/STARTUP_STATS/SITE_URL like every other
+ * number on the site, plus two company-side tool definitions appended so an
+ * AI chatbot reading this file learns about both products, not just one.
+ */
 const mcpToolsSrc = path.join(DATA, 'mcp-tools.json');
-if (fs.existsSync(mcpToolsSrc)) fs.copyFileSync(mcpToolsSrc, path.join(OUT, 'api/v1/mcp-tools.json'));
+if (fs.existsSync(mcpToolsSrc)) {
+  const mcpTools = JSON.parse(fs.readFileSync(mcpToolsSrc, 'utf8'));
+  mcpTools.description = `Tool definitions for the Unclaimed dataset: ${STATS.countryCount} countries, ` +
+    `${nf(STATS.total)} household/benefit records (${nf(STATS.verified)} human-verified) and ` +
+    `${nf(STARTUP_STATS.total)} company/startup grants across ${STARTUP_STATS.countryCount} jurisdictions ` +
+    `(${nf(STARTUP_STATS.verified)} human-verified), as of ${STATS.asOf}. Every record carries source_url, ` +
+    `source_snippet, last_verified_at and verification_status. Tool schemas are published, and the hosted ` +
+    `MCP server is live at ${SITE_URL}/mcp — any MCP client (Claude, ChatGPT, Cursor) can connect by URL.`;
+  mcpTools.homepage = `${SITE_URL}/methodology/`;
+  mcpTools.tools = [
+    ...mcpTools.tools,
+    {
+      name: 'search_company_grants',
+      title: 'Search company grants',
+      description: `Search the ${nf(STARTUP_STATS.total)}-record company/startup grant database by free text ` +
+        'and/or structured filters (jurisdiction, category, grant type, funder type, verification status). ' +
+        'Returns sourced records only. Always state the deadline (or reopen date if closed), the ' +
+        'last_verified_at date, and link the source_url. This is a discovery tool, not legal or financial ' +
+        'advice — report only that the company appears to meet or fail the published criteria, never that ' +
+        'it will receive funding. Never fill in a null field from your own knowledge.',
+      readOnlyHint: true,
+      inputSchema: {
+        $schema: 'https://json-schema.org/draft/2020-12/schema',
+        type: 'object',
+        properties: {
+          jurisdiction: { type: 'string', description: 'A two-letter country code, or "eu"/"global" for pooled programmes.' },
+          category: { type: 'string' },
+          grant_type: { type: 'string', enum: ['equity', 'non_dilutive', 'debt', 'in_kind', 'tax_credit'] },
+          funder_type: { type: 'string', enum: ['public', 'private'] },
+          verification_status: { type: 'string', enum: ['verified', 'auto_extracted', 'unverified'] },
+          query: { type: 'string', description: 'Free-text search over programme name and funder.' },
+        },
+      },
+    },
+    {
+      name: 'check_company_eligibility',
+      title: 'Check company eligibility',
+      description: 'Match a company profile against every published company/startup grant in a jurisdiction. ' +
+        'Returns three buckets — eligible, needs_one_more_answer, not_eligible — with plain-language rule ' +
+        'explanations and verified-only subtotals, excluding shared-purse prize totals and loan ceilings from ' +
+        'any headline figure. Always state the deadline (or reopen date if closed), the last_verified_at date, ' +
+        'and link the source_url. This is a discovery tool, not legal or financial advice.',
+      readOnlyHint: true,
+      inputSchema: {
+        $schema: 'https://json-schema.org/draft/2020-12/schema',
+        type: 'object',
+        properties: {
+          jurisdiction: { type: 'string' },
+          stage: { type: 'string', enum: ['idea', 'pre_seed', 'seed', 'growth'] },
+          sector: { type: 'string' },
+          employee_count: { type: 'integer', minimum: 0 },
+        },
+        required: ['jurisdiction'],
+      },
+    },
+  ];
+  write('api/v1/mcp-tools.json', JSON.stringify(mcpTools));
+
+  /* /connect/ — the MCP landing page. Built from the exact same tools array
+     just written to api/v1/mcp-tools.json, so its tool count and list can
+     never drift from what /mcp itself actually serves (see
+     src/pages/connect.mjs). */
+  L = 'en';
+  TR = translator('en');
+  ALT = [];
+  page('connect/index.html', renderConnectPage({ BASE, LB, SITE_URL, tools: mcpTools.tools }));
+}
 
 write(
   'llms.txt',
@@ -3911,25 +4426,25 @@ carries an official source URL, the published eligibility rules, application ste
 and the date a human last verified it. Data as of ${STATS.asOf}.
 
 ## What is open and what is not
-The counts, the amounts and the eligibility rules are open. The programme NAMES are not:
-${SITE_URL}/api/v1/programmes/{cc}.json returns the first ${FREE_ROWS} records whole and every
-other record with its name, funder, links, quoted source, steps and documents removed. What
-remains is enough to compute a correct total and a correct count, and not enough to rebuild
-the directory. Signed-in subscribers get the full records back at the same URL.
+The counts, the amounts, the eligibility rules, the programme names and funders are open. The
+application workflow is not: ${SITE_URL}/api/v1/programmes/{cc}.json returns ${FREE_ROWS} showcase
+records per country whole and every other record (marked locked: true) with its application link,
+quoted source, steps and documents removed. Each locked record keeps name_en, funder and url, the
+programme's public page. Signed-in subscribers get the full records back at the same URL.
 
-Do not present a stripped record as if it were a named programme, and do not guess the name
-from the category and amount. "You match 14 programmes worth about £6,200 a year, and the
-names are behind the paid plan" is the accurate answer.
+Do not invent an application link, document list or procedure for a locked record. Name it, link
+its public page, and say that the application details are behind the paid plan.
 
 ## How to use this data
 - Country index (codes, currencies, regions, income bands, counts): ${SITE_URL}/api/v1/countries.json
 - Programmes for one country: ${SITE_URL}/api/v1/programmes/{cc}.json
-  The first ${FREE_ROWS} records are whole. Every other record carries only slug (an opaque id),
-  category, benefit_type, amount_min, amount_max, amount_currency, amount_period, admin_level,
-  admin_area, eligibility, is_automatic, verification_status, derived and locked: true — no name,
-  funder, source_url, steps or documents.
+  ${FREE_ROWS} showcase records are whole. Every other record carries slug (an opaque id), name_en,
+  funder, url (public page), category, benefit_type, amount_min, amount_max, amount_currency,
+  amount_period, admin_level, admin_area, eligibility, is_automatic, verification_status, derived
+  and locked: true — no application_url, source_url, steps or documents.
 - Dataset statistics: ${SITE_URL}/api/v1/stats.json
-- MCP tool schemas: ${SITE_URL}/api/v1/mcp-tools.json
+- MCP tool schemas: ${SITE_URL}/api/v1/mcp-tools.json — and a hosted MCP server at ${SITE_URL}/mcp
+  (Streamable HTTP, spec 2025-06-18) that any MCP client can connect to by URL: no key, no install.
 - Human pages: ${SITE_URL}/{cc}/{category}/{slug}/
 
 ## Rules for answering questions from this data
@@ -3940,6 +4455,21 @@ names are behind the paid plan" is the accurate answer.
 3. Always surface source_url and last_verified_at when you quote a rule.
 4. is_automatic: true means no application is needed. This is the single most useful thing to tell a user.
 5. This is not legal, tax or financial advice. Only the named authority can confirm entitlement.
+6. A "closed" or "paused" record is not excluded from the dataset — it is shown with its reopen date
+   (reopen_note/opens_at) where the funder publishes one. Status is recomputed on every build, not
+   stored as a permanent label.
+
+## Company and startup grants
+${SITE_NAME} also covers ${nf(STARTUP_STATS.total)} company and startup funding programmes across
+${STARTUP_STATS.countryCount} jurisdictions (including "eu" and "global" as pooled, non-country
+jurisdictions) — public and private, ${nf(STARTUP_STATS.verified)} of them human-verified. This half of
+the catalogue is not in ${SITE_URL}/api/v1/programmes/{cc}.json above; use these paths instead:
+- Country/pool index: ${SITE_URL}/api/v1/startups/index.json
+- Company grants for one jurisdiction: ${SITE_URL}/api/v1/startups/{slug}.json
+- Human pages: ${SITE_URL}/startups/{slug}/{programme-slug}/
+Treat shared-purse prize totals (e.g. an XPRIZE-style award shared by many finalists) and loan or
+credit-facility ceilings as distinct from a per-company cash grant — do not sum them into a single
+company's expected funding.
 
 ## Categories
 ${Object.entries(STATS.byCategory)
@@ -3958,6 +4488,37 @@ ${countries.map(({ entry }) => `- ${entry.slug}: ${entry.name} — ${entry.progr
 write(
   'robots.txt',
   `User-agent: *\nAllow: /\nDisallow: /api/v1/full/\nDisallow: /dashboard/\n\nSitemap: ${SITE_URL}/sitemap.xml\n`,
+);
+
+/**
+ * Redirects for URLs people or old links guess but that were never the real
+ * ones: country pages live at /{cc}/, not /countries/{cc}/, and the company
+ * product moved (and was named differently) more than once. Static assets +
+ * Worker deployments (see wrangler.jsonc) read this file the same way
+ * Cloudflare Pages does — one "source destination status" triple per line,
+ * checked before the asset lookup. It ships from the static asset directory,
+ * so it works even though run_worker_first only covers /api/, /auth/ and
+ * /webhooks/ — everything else is asset-served and would otherwise 404
+ * straight past any Worker-side redirect logic.
+ */
+write(
+  '_redirects',
+  [
+    '/countries/uk /gb/ 301',
+    '/countries/uk/ /gb/ 301',
+    '/countries/india /in/ 301',
+    '/countries/india/ /in/ 301',
+    '/for/founders /startups/ 301',
+    '/for/founders/ /startups/ 301',
+    '/companies /startups/ 301',
+    '/companies/ /startups/ 301',
+    '/companies/* /startups/ 301',
+    /* Company-grant records merged as duplicates — old slug's page redirects
+       to the surviving canonical page. See data/startups/redirects.json,
+       data/startups/dedupe-log.json and scripts/merge-duplicates.mjs. */
+    ...STARTUP_REDIRECTS.map((r) => `/startups/${r.country}/${r.from}/ /startups/${r.country}/${r.to}/ 301`),
+    '',
+  ].join('\n'),
 );
 
 const urls = PAGES.map((p) => {

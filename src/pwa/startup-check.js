@@ -13,10 +13,12 @@
  * and the paid answer cannot disagree.
  *
  * The paywall line is the same as the individual side and for the same reason:
- * FREE is how much and how many, PAID is which ones. That is not enforced
- * here — it is enforced by the dataset, which arrives with names stripped for
- * anyone the server has not entitled. This file could not show the names if it
- * wanted to.
+ * FREE is how much and how many (plus which ones, by name — the name, the
+ * funder and the public programme page are not the thing being sold), PAID is
+ * the application link, the documents, the procedure and the source quote.
+ * That split is enforced by the dataset, not by this file: a locked record
+ * simply does not carry application_url/documents_required/procedure_steps/
+ * source_snippet, whatever this screen does with it.
  */
 import { matchStartup, reachFor, isFreeMoney } from '../engine/startup.js';
 /* formatMoney, not a hand-rolled symbol table: see money() below. */
@@ -35,12 +37,19 @@ import { track } from '../beacon.js';
    page still painted its shell, which is why it looked fine. */
 import { bindCheckout } from './app/checkout.js';
 import { T, translateTree, NUM, wizardLang, localePath, setHTML } from './wizard-i18n.js';
+import { utmQuery } from './share-link.js';
 
 const $ = (s) => document.querySelector(s);
 const esc = (s) =>
   String(s ?? '').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 const root = document.getElementById('app');
 const BASE = root?.dataset.base ?? '';
+/* Same fix as the household wizard's — see the comment beside INITIAL_UTM in
+   src/app.js. syncHistory() below replaces the URL with location.pathname
+   alone on the very first render, which drops any ?utm_* the visitor arrived
+   with before the share button — or this module's own history entries —
+   ever see it. */
+const INITIAL_UTM = utmQuery();
 /**
  * A link into the site, in the language the reader is reading.
  *
@@ -103,7 +112,9 @@ function syncHistory() {
   const first = lastHistoryKey === null;
   lastHistoryKey = key;
   try {
-    const url = S.result ? `${location.pathname}#r=${encodeState()}` : `${location.pathname}#s=${S.step}`;
+    const url = S.result
+      ? `${location.pathname}${INITIAL_UTM}#r=${encodeState()}`
+      : `${location.pathname}${INITIAL_UTM}#s=${S.step}`;
     if (first) history.replaceState({ key }, '', url);
     else history.pushState({ key }, '', url);
   } catch {
@@ -175,6 +186,38 @@ async function loadPools(cc) {
  */
 let ENTITLED = false;
 let SIGNED_IN = false;
+
+/**
+ * "Hide this match" — same feature and same reasoning as the household
+ * wizard's (see loadHidden()/saveHidden() in src/app.js): a card a founder
+ * dismisses because it is already being claimed, or was decided against,
+ * without disputing that it matched. Kept per registration country in this
+ * browser only, and every access wrapped — private browsing or a blocked
+ * storage API degrades to "nothing is hidden", never a thrown error.
+ */
+let HIDDEN = new Set();
+let SHOW_HIDDEN = false;
+
+const HIDDEN_KEY = (cc) => `unclaimed.startup-check.hidden.${cc}`;
+
+function loadHidden(cc) {
+  try {
+    const raw = localStorage.getItem(HIDDEN_KEY(cc));
+    const arr = raw ? JSON.parse(raw) : [];
+    return new Set(Array.isArray(arr) ? arr : []);
+  } catch {
+    return new Set();
+  }
+}
+
+function saveHidden(cc, set) {
+  try {
+    localStorage.setItem(HIDDEN_KEY(cc), JSON.stringify([...set]));
+  } catch {
+    /* Best-effort only. The toggle still works for the rest of this
+       session; it just will not survive a reload. */
+  }
+}
 
 async function refreshEntitlement() {
   try {
@@ -490,18 +533,31 @@ function viewResult() {
     )}</p>
 
     <p class="tiny" style="margin-top:1.6rem;max-width:70ch">${esc(
-      T('This ran entirely in your browser. Nothing you entered was sent anywhere — which is also why nothing was saved. Sign in to keep it.'),
+      T('This ran entirely in your browser. Your stage, headcount, turnover and every other detail you gave stayed on this device and were never sent anywhere — which is also why nothing was saved; sign in to keep it. The only thing that leaves this device is an anonymous, cookieless note of which country you checked and which screen you reached, so we can see where people get stuck — see /trust/.'),
     )}</p>
+
+    <div class="card no-print" style="margin-top:1.6rem;border-style:dashed">
+      <p class="eyebrow">${esc(T('Paid, separate from Unclaimed'))}</p>
+      <h3 style="margin:.2rem 0 .4rem">${esc(T('Want a human to review your application?'))}</h3>
+      <p class="small" style="margin:0 0 .8rem">${esc(
+        T('Involve Consulting can help — paid service, separate from this free check. A flat fee agreed up front, never a share of what you receive.'),
+      )}</p>
+      <a class="btn btn-sm" href="${href(`/help/expert/?audience=company&country=${encodeURIComponent(S.profile.country_code || '')}`)}">${esc(
+        T('Talk to Involve Consulting'),
+      )}</a>
+    </div>
   </div>`;
 }
 
 /** A named programme, for someone who paid for the names. */
 function programmeRow(m) {
   const p = m.programme ?? m;
-  /* A stripped record has no name_en. If the pool we were served is the free
-     one, say nothing rather than render an empty row — the client does not
-     get to decide it is entitled, and the server is what strips. */
-  if (!p?.name_en) return '';
+  /* A stripped record is `locked` (it keeps name_en since the free-tier
+     conversion, but not the application link, documents or procedure). If
+     the pool we were served is the free one, say nothing rather than render a
+     row with nothing to act on — the client does not get to decide it is
+     entitled, and the server is what strips. */
+  if (!p?.name_en || p.locked) return '';
   const amount = money(
     p.amount_max != null || p.amount_min != null
       ? { [p.amount_currency || 'EUR']: { min: p.amount_min ?? 0, max: p.amount_max ?? p.amount_min ?? 0 } }
@@ -515,21 +571,57 @@ function programmeRow(m) {
     ${p.cofunding_pct != null && p.cofunding_pct > 0 ? `<p class="tiny" style="margin:.2rem 0 0">${esc(T('You must co-fund {pct}%', { pct: NUM(p.cofunding_pct) }))}</p>` : ''}
     ${p.deadline_note ? `<p class="tiny" style="margin:.2rem 0 0">${esc(T(p.deadline_note))}</p>` : ''}
     ${docs.length ? `<p class="tiny" style="margin:.2rem 0 0">${esc(T('Documents: {list}', { list: docs.map((d) => T(d)).join(', ') }))}</p>` : ''}
-    ${
-      p.application_url
-        ? `<p class="btn-row" style="margin-top:.6rem"><a class="btn btn-sm" href="${esc(
-            p.application_url,
-          )}" target="_blank" rel="noopener">${esc(T('Apply on the official site'))}</a></p>`
-        : ''
-    }
+    <p class="btn-row" style="margin-top:.6rem">
+      ${
+        p.application_url
+          ? `<a class="btn btn-sm" href="${esc(p.application_url)}" target="_blank" rel="noopener">${esc(T('Apply on the official site'))}</a>`
+          : ''
+      }
+      <button class="btn btn-sm btn-ghost" type="button" data-act="hide-match" data-slug="${esc(p.slug)}">${esc(T('Hide this match'))}</button>
+    </p>
   </div>`;
 }
 
 function eligibleList(eligible) {
-  const rows = eligible.map(programmeRow).filter(Boolean).join('');
+  /* Named before the hide filter runs: "every card is hidden" and "the data
+     incident where no card ever had a name" are different situations, and
+     the message below must not confuse a reader's own dismissals for a
+     broken plan. */
+  const anyNamed = eligible.some((m) => (m.programme ?? m)?.name_en);
+  const visible = eligible.filter((m) => !HIDDEN.has((m.programme ?? m)?.slug));
+  const hiddenCount = eligible.length - visible.length;
+  const rows = visible.map(programmeRow).filter(Boolean).join('');
+  /* Same invariant as the household wizard: hiding a match only changes
+     which cards render. The headline figure and the non-dilutive bands in
+     viewResult() are computed over the FULL eligible list, before this
+     filter runs, so hiding never disputes the result — it only declutters
+     the list under it. */
+  const hiddenToggle = hiddenCount
+    ? `<p class="small" style="margin-top:1rem">
+      <button class="btn btn-ghost btn-sm" type="button" data-act="hidden-toggle" aria-expanded="${SHOW_HIDDEN}">
+        ${esc(T('one={n} hidden match — show all|other={n} hidden matches — show all', { n: NUM(hiddenCount) }, hiddenCount))}
+      </button>
+    </p>
+    ${
+      SHOW_HIDDEN
+        ? `<div class="list-rows">${eligible
+            .filter((m) => HIDDEN.has((m.programme ?? m)?.slug))
+            .map((m) => {
+              const p = m.programme ?? m;
+              return `<div class="list-row">
+          <span class="list-row__name">${esc(p?.name_en || T('Name unavailable'))}</span>
+          <span class="list-row__right"><button class="btn btn-ghost btn-sm" type="button" data-act="unhide-match" data-slug="${esc(p?.slug)}">${esc(T('Show'))}</button></span>
+        </div>`;
+            })
+            .join('')}</div>`
+        : ''
+    }`
+    : '';
   /* Entitled but the pool came back stripped: that is a data incident, not a
-     paywall, and it must not silently look like one. */
-  if (!rows) {
+     paywall, and it must not silently look like one. Checked against
+     anyNamed, not against `rows` — a reader who hid every card sees an
+     empty section with the toggle above it, never this error. */
+  if (!anyNamed) {
     return `<section class="bucket" style="margin-top:2.4rem">
       <div class="bucket__head"><h2>${esc(T('one=Your {n} programme|other=Your {n} programmes', { n: NUM(eligible.length) }, eligible.length))}</h2></div>
       <p class="small notice notice--error" role="alert">${esc(T('Your plan is active but the full dataset did not load. Reload the page — if it keeps happening, tell us.'))}</p>
@@ -541,17 +633,30 @@ function eligibleList(eligible) {
     <p class="btn-row" style="margin-top:1rem"><button class="btn btn-primary" type="button" data-act="prepare-company">${esc(T('Prepare these applications'))}</button></p>
     <div id="startup-plan-out" role="status" aria-live="polite"></div>
     ${rows}
+    ${hiddenToggle}
   </section>`;
+}
+
+/** A withheld row for one company programme \u2014 named when the record still
+ *  carries a name (every locked record does now; see src/pages/free-tier.mjs
+ *  lockedStartupRecord()), a blank bar otherwise. */
+function lockedStartupRow(m, first) {
+  const p = m?.programme ?? m;
+  const lock = '<span class="locked__row__lock withheld" aria-hidden="true">\u25CF\u25CF\u25CF\u25CF</span>';
+  if (!p?.name_en) return `<div class="locked__row withheld">${first ? lock : ''}</div>`;
+  return `<a class="locked__row locked__row--named" href="${esc(p.url || '#')}">
+    ${first ? lock : ''}
+    <span class="list-row__name">${esc(p.name_en)}</span>
+    <span class="list-row__amount lock-chip withheld" aria-label="${esc(T('Amount locked'))}">&#9679;&#9679;&#9679;&#9679;</span>
+  </a>`;
 }
 
 function lockedBucket(eligible) {
   return `<section class="bucket locked-bucket" style="margin-top:2.4rem">
     <div class="bucket__head"><h2>${esc(T('one=Which {n} programme|other=Which {n} programmes', { n: NUM(eligible.length) }, eligible.length))}</h2></div>
-    <p class="small">${esc(T('The names, the amounts each one pays, what documents they want, when they close, and the application links are on the paid plan.'))}</p>
-    <div class="locked__rows" aria-hidden="true">
-      ${Array.from({ length: Math.min(eligible.length, 4) }, (_, i) => `<div class="locked__row withheld">${
-        i === 0 ? '<span class="locked__row__lock" aria-hidden="true">\u25CF\u25CF\u25CF\u25CF</span>' : ''
-      }</div>`).join('')}
+    <p class="small">${esc(T('The amounts each one pays, what documents they want, when they close, and the application links are on the paid plan.'))}</p>
+    <div class="locked__rows">
+      ${eligible.slice(0, 4).map((m, i) => lockedStartupRow(m, i === 0)).join('')}
     </div>
     <p style="margin-top:1.2rem">
       <button class="btn btn-primary" type="button" data-checkout data-plan="business_monthly">${esc(
@@ -627,6 +732,8 @@ function render() {
 
 async function compute() {
   await loadPools(S.profile.country_code);
+  HIDDEN = loadHidden(S.profile.country_code);
+  SHOW_HIDDEN = false;
   S.result = matchStartup(S.profile, S.pools, Date.now());
   render();
 }
@@ -680,10 +787,33 @@ document.addEventListener('click', async (ev) => {
       S.step = 0;
       render();
       break;
+    case 'hide-match':
+      if (el.dataset.slug) {
+        HIDDEN.add(el.dataset.slug);
+        saveHidden(S.profile.country_code, HIDDEN);
+        render();
+      }
+      break;
+    case 'unhide-match':
+      if (el.dataset.slug) {
+        HIDDEN.delete(el.dataset.slug);
+        saveHidden(S.profile.country_code, HIDDEN);
+        render();
+      }
+      break;
+    case 'hidden-toggle':
+      SHOW_HIDDEN = !SHOW_HIDDEN;
+      render();
+      break;
     /* The empty state's way back. Dispatching input rather than calling the
        filter directly keeps one code path for "what the search shows". */
     case 'share': {
-      const url = `${location.origin}${location.pathname}#r=${encodeState()}`;
+      /* Same reasoning as the household wizard's share button: keep the
+         campaign attribution when a founder passes their result on.
+         INITIAL_UTM, not utmQuery() — see the comment beside its
+         declaration; by the time this runs syncHistory() has already
+         stripped the query string off the live location. */
+      const url = `${location.origin}${location.pathname}${INITIAL_UTM}#r=${encodeState()}`;
       const label = el.textContent;
       try {
         if (navigator.share) await navigator.share({ title: 'Unclaimed', url });

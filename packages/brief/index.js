@@ -239,7 +239,8 @@ export function briefText(brief) {
     brief.funder.instrument ? `Instrument: ${brief.funder.instrument}` : null,
     `Status: ${brief.funder.status}`,
     brief.funder.deadline ? `Deadline: ${brief.funder.deadline}` : null,
-    brief.funder.cofunding_pct != null ? `Applicant must co-fund: ${100 - brief.funder.cofunding_pct}%` : null,
+    /* cofunding_pct is already the applicant's own share (see packages/amounts). */
+    brief.funder.cofunding_pct != null ? `Applicant must co-fund: ${brief.funder.cofunding_pct}%` : null,
   ].filter(Boolean).join('\n'));
 
   section('The award', brief.funder.amount_stated

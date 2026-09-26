@@ -2,15 +2,33 @@
 /**
  * The public dataset must not change the answer.
  *
- * /api/v1/programmes/{cc}.json ships stripped records past the second one, so
- * a signed-out client cannot download the directory. The whole design rests on
- * one claim: the free total computed from the stripped file equals the total
- * computed from the full one. If that ever stops being true we are quietly
- * lying to every free user about how much they are owed — the single worst
- * bug this product can have — so it is asserted per country, not spot-checked.
+ * /api/v1/programmes/{cc}.json ships stripped records past the free showcase,
+ * so a signed-out client cannot download the whole product for the price of
+ * one curl. The whole design rests on one claim: the free total computed from
+ * the stripped file equals the total computed from the full one. If that ever
+ * stops being true we are quietly lying to every free user about how much
+ * they are owed — the single worst bug this product can have — so it is
+ * asserted per country, not spot-checked.
  *
- * It also asserts the negative: no name, no funder, no link and no quoted
- * source survives into a locked record.
+ * POLICY CHANGE (free-tier conversion audit, see src/pages/free-tier.mjs):
+ * a locked record used to strip name_en, name_local and funder along with
+ * everything else. An audit of the built site found the two records left
+ * WHOLE per country — the "showcase" — were simply whichever two the source
+ * file happened to list first, which for the US and India was a closed or
+ * wound-down programme: the worst possible advertisement for a paid product
+ * that promises open ones. Two changes:
+ *
+ *   1. Showcase selection is no longer source order. It is ranked: open or
+ *      rolling status first, verified first, broadly-eligible cash over a
+ *      narrow in-kind one, highest amount as the tiebreak — never a closed,
+ *      paused or unknown record if an open alternative exists.
+ *   2. A LOCKED record now also keeps name_en, funder and the public
+ *      programme page's own URL. All three already sit in plain HTML on that
+ *      exact URL, so withholding them from the JSON leaked nothing and only
+ *      cost the product a "which one is this?" moment on every list and every
+ *      results screen. What is actually sold — application_url, documents,
+ *      procedure, source_snippet, eligibility prose — still strips, and the
+ *      assertions below now check for exactly that, not for an absent name.
  */
 import fs from 'node:fs';
 import http from 'node:http';
@@ -18,6 +36,7 @@ import { createRequire } from 'node:module';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { match } from '../src/engine/matcher.js';
+import { effectiveStatus } from '../packages/deadlines/index.js';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const DATA = path.join(ROOT, 'data');
@@ -42,8 +61,15 @@ const PROFILES = [
 
 let compared = 0;
 let leaks = 0;
-const LEAKY = ['name_en', 'name_local', 'funder', 'source_url', 'application_url', 'source_snippet',
+/* What the paid tier actually sells, and what must never survive into a
+   locked record. name_en, name_local and funder moved OUT of this list — see
+   the policy-change note above — and url is new and expected to be PRESENT,
+   asserted separately below rather than here. */
+const LEAKY = ['source_url', 'application_url', 'source_snippet',
                'amount_note', 'deadline_note', 'procedure_steps', 'documents_required'];
+
+let namedLocked = 0;
+let showcaseRankings = 0;
 
 for (const entry of manifest.countries) {
   const cc = entry.slug;
@@ -66,6 +92,29 @@ for (const entry of manifest.countries) {
         leaks += 1;
       }
     }
+    /* The positive half of the policy change: a locked record must still say
+       which programme it is and where to read about it, or the "which one is
+       this?" complaint the change exists to fix comes right back. */
+    if (!p.name_en) bad(`${cc}: a locked record has no name_en — the paywall reads as 40 blank boxes again`);
+    else namedLocked += 1;
+    if (!p.url || !p.url.includes(`/${cc}/`)) bad(`${cc}: a locked record's url does not point at its own public page`);
+  }
+
+  /* The showcase must never be a closed, paused or unknown record while an
+     open or rolling alternative exists in the same country. This is the exact
+     bug the audit found — for the US and India, "first two in the source
+     file" was a closed or wound-down programme — asserted against the actual
+     effective status computed the same way the badges are. */
+  {
+    const OPEN = new Set(['open', 'rolling']);
+    const whole = pub.programmes.filter((p) => !p.locked);
+    const anyOpenExists = full.programmes.some((p) => OPEN.has(effectiveStatus(p)));
+    const showcaseAllClosed = whole.length && whole.every((p) => !OPEN.has(effectiveStatus(p)));
+    if (anyOpenExists && showcaseAllClosed) {
+      bad(`${cc}: the showcase is entirely closed/paused/unknown while an open or rolling programme exists`);
+    } else {
+      showcaseRankings += 1;
+    }
   }
 
   for (const profile of PROFILES) {
@@ -84,16 +133,20 @@ for (const entry of manifest.countries) {
 
 if (!failed) {
   ok(`free total identical across ${compared} country/profile pairs`);
-  ok('no locked record leaks a name, funder, link or quoted source');
+  ok('no locked record leaks an application link, documents, procedure or quoted source');
+  ok(`${namedLocked} locked records carry a name, funder and a public-page url`);
+  ok(`showcase is never all-closed while an open alternative exists, in ${showcaseRankings} countries`);
 }
 
-/* And the positive: the first two per country are whole, so the page and the
-   API agree about what a signed-out visitor may see. */
+/* And the positive: two per country are whole, so the page and the API agree
+   about what a signed-out visitor may see. NOT "the first two" any more —
+   see the policy note above — so this checks membership and shape, not
+   position. */
 {
   const gb = JSON.parse(fs.readFileSync(path.join(DIST, 'api/v1/programmes/gb.json'), 'utf8'));
   const whole = gb.programmes.filter((p) => !p.locked);
   whole.length === gb.free_rows && whole.every((p) => p.name_en)
-    ? ok(`the first ${gb.free_rows} records per country are whole`)
+    ? ok(`${gb.free_rows} records per country are whole (the showcase, ranked — not "first")`)
     : bad(`expected ${gb.free_rows} whole records, found ${whole.length}`);
 }
 
@@ -648,7 +701,15 @@ async function lockedScreenBehaviour() {
    * screen where redaction IS the product there were zero
    * `.locked__row__lock` elements, user-select was 'auto', and the grey bars
    * read as failed loading rather than as withheld records.
-   */
+   *
+   * POLICY CHANGE: a locked row that has a name now renders it as a real,
+   * selectable link (`.locked__row--named`) — the name is not the thing being
+   * withheld any more, so marking the WHOLE row `withheld` (user-select:none)
+   * would make a public programme name uncopyable for no reason. What must
+   * still carry `.withheld` is the part that IS withheld: the amount
+   * lock-chip inside it. A row counts as properly marked when either the row
+   * itself is `.withheld` (the blank, nameless fallback) or it is
+   * `.locked__row--named` and contains a `.lock-chip.withheld`. */
   for (const loc of LOCALES) {
     for (const rel of ['check/', 'gb/']) {
       const ctx = await browser.newContext({ viewport: { width: 1280, height: 900 } });
@@ -665,7 +726,12 @@ async function lockedScreenBehaviour() {
         );
         return {
           rows: rows.length,
-          rowsUnmarked: rows.filter((el) => !el.classList.contains('withheld')).length,
+          rowsUnmarked: rows.filter(
+            (el) =>
+              !el.classList.contains('withheld') &&
+              !(el.classList.contains('locked__row--named') && el.querySelector('.lock-chip.withheld')),
+          ).length,
+          named: rows.filter((el) => el.classList.contains('locked__row--named')).length,
           dots: dots.length,
           dotsUnmarked: dots.filter((el) => !el.closest('.withheld')).length,
           chips: document.querySelectorAll('.locked__row__lock').length,
@@ -674,7 +740,7 @@ async function lockedScreenBehaviour() {
       await ctx.close();
       if (r.rows === 0) continue; // nothing withheld on this page
       r.rowsUnmarked === 0
-        ? ok(`/${loc}${rel}: all ${r.rows} withheld rows carry .withheld`)
+        ? ok(`/${loc}${rel}: all ${r.rows} withheld rows are marked (${r.named} named, ${r.rows - r.named} blank)`)
         : bad(`/${loc}${rel}: ${r.rowsUnmarked} of ${r.rows} redacted rows are not marked .withheld`);
       r.dotsUnmarked === 0
         ? ok(`/${loc}${rel}: every ●●●● is inside a .withheld element`)

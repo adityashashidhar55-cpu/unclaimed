@@ -1,0 +1,49 @@
+{
+  "entries": [
+    {
+      "date": "2026-09-25",
+      "title": "Status freshness on every record",
+      "body": "Whether a programme reads \"open\", \"closing soon\", \"closed\" or \"reopens on...\" is now computed fresh on every build from each record's own dates, instead of being a label someone set once and forgot. A scheme that closed last week now says so the next time the site rebuilds, not months later."
+    },
+    {
+      "date": "2026-09-25",
+      "title": "An MCP server any AI assistant can query",
+      "body": "A hosted MCP server at /mcp lets Claude, ChatGPT, Cursor or any other MCP-capable assistant look up programmes, check coverage and read a document checklist directly, over the same public dataset the site is built from — no install, no API key."
+    },
+    {
+      "date": "2026-09-25",
+      "title": "Closing-soon pages, a 6-month calendar, and .ics feeds",
+      "body": "New pages for every jurisdiction list what is closing within 120 days, plus a rolling 6-month calendar of known and typical deadlines. Both a global and a per-country calendar feed (.ics) can be added to any calendar app that supports subscribing to a URL."
+    },
+    {
+      "date": "2026-09-25",
+      "title": "Email deadline alerts",
+      "body": "A free, double opt-in email subscription that tells you when a programme in your chosen jurisdictions is newly closing soon, instead of relying on you to come back and check."
+    },
+    {
+      "date": "2026-09-25",
+      "title": "An EU de minimis headroom calculator",
+      "body": "For companies claiming EU state aid: a calculator that tracks how much of the rolling three-year de minimis ceiling has already been used, so a new application doesn't quietly breach it."
+    },
+    {
+      "date": "2026-09-25",
+      "title": "Comparison pages against other grant-discovery products",
+      "body": "Sourced, dated comparisons against the other tools people already use to search for grants — what they do better, what this site does differently, and a link to the pricing page each fact was checked against."
+    },
+    {
+      "date": "2026-09-25",
+      "title": "Flagship record coverage",
+      "body": "A guarantee that every jurisdiction's page set includes at least a handful of thoroughly verified, well-known programmes, so a first-time visitor to any country never lands on a page of only thin, unverified leads."
+    },
+    {
+      "date": "2026-09-25",
+      "title": "Duplicate company-grant records merged",
+      "body": "Where the same programme had been catalogued twice under slightly different names, the records were merged into one canonical page, with the old URL permanently redirected rather than left to 404."
+    },
+    {
+      "date": "2026-09-25",
+      "title": "Shareable results links",
+      "body": "The eligibility check can now produce a link that carries your answers in the URL itself, so you can hand your results to a co-founder or a family member without either of you creating an account or anything being stored on a server."
+    }
+  ]
+}

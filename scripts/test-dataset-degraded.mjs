@@ -19,10 +19,18 @@
  * without reference to any field name on the way in:
  *
  *   IF the response an entitled caller receives cannot be rendered as usable
- *   cards (most rows have no name), THEN the response says so.
+ *   cards (most rows carry nothing a paid workflow needs), THEN the response
+ *   says so.
  *
  * and the converse, which is what stops the flag being hardcoded true:
  *   IF the rows are usable, the response does NOT claim to be degraded.
+ *
+ * POLICY CHANGE (free-tier conversion): a locked row now keeps its name_en,
+ * funder and public-page url — that is no longer what distinguishes a paid
+ * row from a degraded one. What a paying reader is actually owed and a
+ * locked row still lacks is application_url (the free-money product's whole
+ * "prepare and file this" workflow needs it); "usable" is measured on that
+ * instead.
  *
  * It drives the real Worker's fetch handler. Nothing here re-implements it.
  */
@@ -84,11 +92,17 @@ const get = (env, cookie) =>
     { waitUntil() {} },
   );
 
-/** The reader-facing question: could these rows be rendered as usable cards? */
+/** The reader-facing question: could these rows be rendered as usable cards?
+ *  A locked row keeps its name now (see src/pages/free-tier.mjs), so name_en
+ *  no longer distinguishes a paid row from a degraded one. source_url does:
+ *  every real record cites one (100% coverage in the source data, unlike
+ *  application_url which legitimately runs under 90% for automatic/rights
+ *  records with no application step), and it is one of the fields a locked
+ *  record still strips — see scripts/test-gating.mjs's LEAKY list. */
 const usableShare = (body) => {
   const rows = body?.programmes || [];
   if (!rows.length) return 0;
-  return rows.filter((p) => p && typeof p.name_en === 'string' && p.name_en.trim()).length / rows.length;
+  return rows.filter((p) => p && typeof p.source_url === 'string' && p.source_url.trim()).length / rows.length;
 };
 
 const cookie = `ua_session=${await token({ uid: 'u_test', exp: Date.now() + 3600e3 })}`;
@@ -104,7 +118,7 @@ if (!fs.existsSync(path.join(DIST, 'api/v1/programmes/gb.json'))) {
   const body = await res.json().catch(() => null);
   t('an entitled request still gets an answer when the full dataset is missing', res.status === 200 && !!body);
   const share = usableShare(body);
-  t('and those rows are indeed unusable — most have no name', share < 0.5, `name share ${(share * 100).toFixed(0)}%`);
+  t('and those rows are indeed unusable — most have no source citation', share < 0.5, `source_url share ${(share * 100).toFixed(0)}%`);
   t(
     'and the answer says so, instead of looking exactly like the free tier',
     body?.dataset_degraded === true,
@@ -118,7 +132,7 @@ if (fs.existsSync(path.join(DIST, 'api/v1/full/programmes/gb.json'))) {
   const res = await get(assetsEnv({ fullPresent: true }), cookie);
   const body = await res.json().catch(() => null);
   const share = usableShare(body);
-  t('with the full dataset present an entitled reader gets usable rows', share > 0.9, `name share ${(share * 100).toFixed(0)}%`);
+  t('with the full dataset present an entitled reader gets usable rows', share > 0.9, `source_url share ${(share * 100).toFixed(0)}%`);
   t('and the response does not claim to be degraded', body?.dataset_degraded !== true);
 } else {
   t('dist/ carries the full dataset to test the healthy case against', false, 'api/v1/full/programmes/gb.json absent');
