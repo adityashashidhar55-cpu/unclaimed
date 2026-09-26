@@ -125,6 +125,77 @@ export function isFreeMoney(grantType) {
 }
 
 /* ------------------------------------------------------------------ */
+/* Shared prize purses                                                 */
+/* ------------------------------------------------------------------ */
+
+/**
+ * Some `grant_type: "prize"` records store the ENTIRE multi-year,
+ * multi-winner competition purse in `amount_max`, in their own words —
+ * "US$119m total prize purse, the largest active XPRIZE", "USD 3 million
+ * distributed annually across seven winners". Counting that as money one
+ * company could receive told a two-person pre-seed team it had USD 239.2
+ * million of non-dilutive cash on the table, of which USD 220m was two
+ * XPRIZE purses alone. These records stay in the eligible list — a founder
+ * should still hear the competition exists — but are pulled out of the
+ * headline "you could get" sum and labelled for what they are, rather than
+ * added at face value alongside a real, single-winner grant.
+ *
+ * `derived.shared_purse`, once the extraction pipeline sets it, always wins
+ * over the guess below, in either direction.
+ */
+const SHARED_PURSE_HINTS = /\b(total prize purse|prize pool|purse across|purse\.|split across winners|distributed (annually )?across)\b/i;
+const SHARED_PURSE_FLOOR = 5_000_000;
+
+export function isSharedPurse(programme) {
+  if (programme?.derived?.shared_purse != null) return programme.derived.shared_purse;
+  if (SHARED_PURSE_HINTS.test(`${programme?.amount_note ?? ''}`)) return true;
+  // A prize this large with no stated per-winner split is a stopgap read,
+  // not a guess about any specific competition's rules — see the file-level
+  // comment on isSharedPurse for why the threshold sits at 5,000,000.
+  return programme?.grant_type === 'prize' && (programme?.amount_max ?? 0) > SHARED_PURSE_FLOOR;
+}
+
+/* ------------------------------------------------------------------ */
+/* Consortium-only calls                                               */
+/* ------------------------------------------------------------------ */
+
+/**
+ * Whether a company must join a multi-partner consortium to apply at all —
+ * EIC Pathfinder Open needs "at least three different independent legal
+ * entities... from three countries"; a solo founder cannot apply, however
+ * well everything else about them matches. There is no structured field for
+ * this in the schema `testProgramme` otherwise reads, so a solo two-person
+ * UK company was shown "you're eligible for EUR 4,000,000" with no way to
+ * learn from the product that the call is normally a 3-country consortium
+ * grant, not a solo award.
+ *
+ * The wizard has no "I have a consortium" question, so this is never a hard
+ * fail — it goes to the same `conditional` bucket the founder-criteria gates
+ * below already use, with a caveat naming the condition. Detected from the
+ * record's own name and `eligibility.other_note`, narrowly (the literal word
+ * "consortium"), because a false positive here hides real money and a false
+ * negative shows money nobody can actually claim solo. `eligibility.
+ * requires_consortium`, once research populates it, always wins over the
+ * text guess, in either direction — including an explicit `false` for a
+ * record whose prose merely discusses consortia without requiring one.
+ */
+const CONSORTIUM_HINTS = /\bconsortium\b/i;
+
+export function requiresConsortium(programme) {
+  const e = programme?.eligibility || {};
+  if (e.requires_consortium != null) return e.requires_consortium;
+  return CONSORTIUM_HINTS.test(`${programme?.name_en ?? ''} ${e.other_note ?? ''}`);
+}
+
+/** Human-readable reason for each `conditions` id `testProgramme` can return. */
+export const CONDITION_LABEL = Object.freeze({
+  female_founder_only: 'restricted to women-led founding teams',
+  underrepresented_focus: 'restricted to underrepresented founders',
+  requires_consortium: "requires a multi-partner consortium — you can't apply solo",
+  status_unknown: 'we could not confirm this call is currently open — check with the funder',
+});
+
+/* ------------------------------------------------------------------ */
 /* Matching                                                            */
 /* ------------------------------------------------------------------ */
 
@@ -233,13 +304,41 @@ export function testProgramme(programme, profile, asOf) {
     else if (profile.rd_active === false) fails.push('Requires R&D activity');
   }
 
-  /* Founder criteria. These widen access rather than narrowing it, so an
-     unanswered question routes to "conditional" and is never a hard fail. */
-  let conditional = false;
-  if (e.female_founder_only === true) {
-    if (profile.female_founder !== true) conditional = true;
+  /* Founder criteria, and the other gates the schema has no hard field for.
+     None of these widen access by narrowing it — an unanswered founder
+     question, a required consortium, or a status we could not confirm all
+     route to "conditional" rather than a hard fail or a silent pass, and
+     each is named so the caller can render why. */
+  const conditions = [];
+  if (e.female_founder_only === true && profile.female_founder !== true) {
+    conditions.push('female_founder_only');
   }
-  if (e.underrepresented_focus === true && profile.underrepresented !== true) conditional = true;
+  if (e.underrepresented_focus === true && profile.underrepresented !== true) {
+    conditions.push('underrepresented_focus');
+  }
+
+  /* Consortium-only calls, shown as solo full-amount wins.
+
+     EIC Pathfinder Open needs at least three independent legal entities from
+     three countries; nothing in the structured eligibility schema gates on
+     that, so a two-person UK company passed every rule the engine checked and
+     the full EUR 4,000,000 was counted as an eligible, non-dilutive match
+     with no caveat at all. There is no "I have a consortium" question in the
+     wizard today, so this can never be cleared by an answer — it goes to the
+     conditional bucket every time the record needs one, same as the founder
+     criteria above. */
+  if (requiresConsortium(programme)) conditions.push('requires_consortium');
+
+  /* An unconfirmed status is not the same thing as an open one.
+     effectiveStatus() already tells the truth here — STATUS_META.unknown is
+     "Check with the funder" — but until now that only ever routed a
+     programme to `closed`; a record the engine could not confirm was open
+     fell straight through to a silent, unconditional `eligible`, ranked and
+     summed exactly like a verified-open, sourced one. About a quarter of the
+     1,684-record company dataset carries this status. */
+  if (effectiveStatus(programme, asOf ?? Date.now()) === 'unknown') conditions.push('status_unknown');
+
+  const conditional = conditions.length > 0;
 
   /* Local presence */
   if (e.requires_local_entity === true && profile.has_local_entity === false) {
@@ -271,7 +370,7 @@ export function testProgramme(programme, profile, asOf) {
   else if (conditional) verdict = 'conditional';
   else verdict = 'eligible';
 
-  return { verdict, fails, unknowns: [...new Set(unknowns)], sme_category: sme, age_months: age };
+  return { verdict, fails, unknowns: [...new Set(unknowns)], conditions, sme_category: sme, age_months: age };
 }
 
 /**
@@ -317,11 +416,20 @@ export function matchStartup(profile, datasets, asOf = Date.now()) {
   for (const m of buckets.eligible) {
     const t = m.programme.grant_type;
     const cur = m.programme.amount_currency || 'EUR';
+    /* Tag it on the match itself, not only inside `totals` — the UI renders
+       from the match list, and a shared purse still needs its own label
+       wherever it is shown, not only in the aggregate. */
+    m.is_shared_purse = isSharedPurse(m.programme);
     totals[t] = totals[t] || {
       count: 0,
       priced: 0,
       unpriced: 0,
       by_currency: {},
+      /* Shared competition purses, tracked apart so a caller can say
+         "8 prizes matched, of which 2 are shared purses not counted toward
+         your total" without redoing the arithmetic. Never folded into
+         `by_currency`, which is what the headline below reads. */
+      shared_purse_by_currency: {},
       label: INSTRUMENTS[t]?.label ?? t,
       non_dilutive: isFreeMoney(t),
     };
@@ -333,7 +441,12 @@ export function matchStartup(profile, datasets, asOf = Date.now()) {
       continue;
     }
     totals[t].priced += 1;
-    const c = (totals[t].by_currency[cur] = totals[t].by_currency[cur] || { min: 0, max: 0, count: 0 });
+    if (m.is_shared_purse) {
+      m.shared_purse_note =
+        'This is the total prize purse for the whole competition, not a single-winner amount — do not count the full figure as money you alone would receive.';
+    }
+    const dest = m.is_shared_purse ? totals[t].shared_purse_by_currency : totals[t].by_currency;
+    const c = (dest[cur] = dest[cur] || { min: 0, max: 0, count: 0 });
     c.min += m.programme.amount_min ?? 0;
     c.max += max;
     c.count += 1;
@@ -343,8 +456,13 @@ export function matchStartup(profile, datasets, asOf = Date.now()) {
      than a number, because for most founders it genuinely is more than one
      currency and pretending otherwise would require inventing an FX rate. */
   const nonDilutiveByCurrency = {};
+  /* Shared purses among the non-dilutive instruments, kept apart from
+     `by_currency` on the same principle as `totals[t].shared_purse_by_currency`
+     above — visible, never summed into the headline. */
+  const nonDilutiveSharedPurseByCurrency = {};
   let nonDilutiveCount = 0;
   let nonDilutiveUnpriced = 0;
+  let nonDilutiveSharedPurseCount = 0;
   for (const [t, v] of Object.entries(totals)) {
     if (!isFreeMoney(t)) continue;
     nonDilutiveCount += v.count;
@@ -355,12 +473,24 @@ export function matchStartup(profile, datasets, asOf = Date.now()) {
       acc.max += c.max;
       acc.count += c.count;
     }
+    for (const [cur, c] of Object.entries(v.shared_purse_by_currency || {})) {
+      nonDilutiveSharedPurseCount += c.count;
+      const acc = (nonDilutiveSharedPurseByCurrency[cur] = nonDilutiveSharedPurseByCurrency[cur] || { min: 0, max: 0, count: 0 });
+      acc.min += c.min;
+      acc.max += c.max;
+      acc.count += c.count;
+    }
   }
 
   const nonDilutive = {
     count: nonDilutiveCount,
     unpriced: nonDilutiveUnpriced,
     by_currency: nonDilutiveByCurrency,
+    /* Shared prize purses are already excluded from `by_currency`/`headline`
+       above; these two fields exist so a caller can still say how many there
+       were and for how much, without doing the arithmetic itself. */
+    shared_purse_count: nonDilutiveSharedPurseCount,
+    shared_purse_by_currency: nonDilutiveSharedPurseByCurrency,
     /* Largest single currency pot, for the one-line headline. */
     headline: Object.entries(nonDilutiveByCurrency).sort((a, b) => b[1].max - a[1].max)[0] ?? null,
   };
