@@ -17,7 +17,7 @@ export const RATE_DATA = Object.freeze({
  "note": "Award likelihoods from funder-published figures only. Nulls are programmes where no official rate exists; they are never replaced with a guess.",
  "rates": [
   {
-   "slug": "eic-accelerator",
+   "slug": "eu-eic-accelerator",
    "p": 0.0586,
    "confidence": "derived",
    "stage": "post_filter",
@@ -26,7 +26,7 @@ export const RATE_DATA = Object.freeze({
    "source_url": "https://eic.ec.europa.eu/news/eic-accelerator-71-companies-selected-most-competitive-funding-round-so-far-2025-02-17_en"
   },
   {
-   "slug": "eic-pathfinder-open",
+   "slug": "eu-eic-pathfinder",
    "p": 0.0211,
    "confidence": "derived",
    "stage": "end_to_end",
@@ -206,7 +206,7 @@ export const RATE_DATA = Object.freeze({
    "source_url": "https://hello-tomorrow.org/from-over-5000-applications-to-80-finalists/"
   },
   {
-   "slug": "techstars-accelerator",
+   "slug": "global-techstars",
    "p": 0.01,
    "confidence": "published",
    "stage": "unstated",
@@ -296,7 +296,7 @@ export const RATE_DATA = Object.freeze({
    "source_url": "https://www.enterprise-ireland.com/en/supports/hpsu-feasibility-study-grant"
   },
   {
-   "slug": "uk-innovate-uk-smart-grants",
+   "slug": "gb-iuk-smart-grants",
    "p": null,
    "confidence": "absent",
    "stage": "unstated",

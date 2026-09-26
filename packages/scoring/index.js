@@ -3,7 +3,7 @@
  *
  * This module exists because ranking by headline amount is bad advice, and we
  * shipped exactly that bug. A three-person pre-seed company with no revenue was
- * shown a €3,000,000 regional grant requiring 30% co-funding — €900,000 they do
+ * shown a €3,000,000 regional grant requiring 30% co-funding — over €1.2m they do
  * not have — above every award they could actually win, with cloud credits and
  * a dilutive accelerator ranked above real grants beneath it.
  *
@@ -231,7 +231,7 @@ const EFFORT_WEIGHT = { quick: 1, moderate: 0.85, major: 0.6 };
  * Can this company actually take the money if offered?
  *
  * The co-funding test is the one that matters and the one nobody models. A
- * grant covering 70% of a €3,000,000 project needs €900,000 from the company.
+ * €3,000,000 grant covering 70% of the project needs about €1,285,714 from the company.
  * Ranking that first for a pre-seed team is not ambition, it is noise.
  */
 export function feasibility(programme, profile) {
@@ -241,8 +241,13 @@ export function feasibility(programme, profile) {
   const pct = programme.cofunding_pct;
   const amountEur = toEur(programme.amount_max ?? programme.amount_min, programme.amount_currency);
 
-  if (pct != null && pct > 0 && amountEur != null) {
-    const needed = amountEur * (pct / 100);
+  if (pct != null && pct > 0 && pct < 100 && amountEur != null) {
+    /* cofunding_pct is the applicant's share of the whole project and the
+       amount is the grant, i.e. the other (100 - pct)%. So the company's own
+       money is grant x pct / (100 - pct) — the same arithmetic the pipeline
+       nudge in src/pwa/dashboard.js uses, so the two never quote different
+       figures for the same programme. */
+    const needed = amountEur * (pct / (100 - pct));
     const capacity =
       profile?.cash_available_eur ??
       (profile?.turnover_annual_eur != null ? profile.turnover_annual_eur * 0.25 : null);
