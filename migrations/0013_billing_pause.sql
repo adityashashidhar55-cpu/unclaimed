@@ -1,0 +1,12 @@
+-- Pause instead of cancel.
+--
+-- Stripe's pause_collection stops invoicing without touching `status` — a
+-- paused subscription is still reported back to us as status='active'. If
+-- entitlement kept reading status alone, a paused customer would stay fully
+-- entitled for as long as they liked, for nothing. paused_until is our own
+-- record of what pause_collection currently says, kept in sync by
+-- applyStripeEvent on every customer.subscription.* event (Stripe's object is
+-- read as the source of truth, not merely set by our own pause endpoint), so
+-- a change made from the Stripe dashboard is honoured exactly like one made
+-- from our own /account/ page.
+ALTER TABLE entitlements ADD COLUMN paused_until INTEGER;
