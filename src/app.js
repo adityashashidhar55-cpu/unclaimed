@@ -18,9 +18,19 @@ import { track } from './beacon.js';
 import { T, wizardDict, translateTree, wizardLang, NUM, localePath, localeOwnsCountry, countryName, setHTML } from './wizard-i18n.js';
 import { bindCheckout } from './app/checkout.js';
 import { applyPlan, recordApplyConsent } from './app/unlock.js';
+import { utmQuery } from './share-link.js';
 
 const BASE = new URL('.', import.meta.url).pathname.replace(/\/$/, '');
 const app = document.getElementById('app');
+
+/* Read once, at the top of the module, and never from `location.search`
+   again. syncHistory() below calls history.replaceState() with a URL built
+   from `location.pathname` alone the moment the first step renders — before
+   a reader has clicked anything — which drops any `?utm_source=…` the link
+   that brought them here was carrying. A campaign link into /check/ measured
+   zero conversions after that point: not just "the share button forgot the
+   campaign", the browser's own address bar had already forgotten it. */
+const INITIAL_UTM = utmQuery();
 
 /**
  * A link into the site, in the language the reader is already reading.
@@ -151,6 +161,38 @@ export function clearProfile() {
     localStorage.removeItem(PROFILE_KEY);
   } catch {
     /* Nothing to do. */
+  }
+}
+
+/**
+ * "Hide this match" — a reader dismissing a card that is genuinely eligible
+ * but is not one they want to see again (already claiming it, decided
+ * against it, whatever the reason). Kept per country, in this browser only:
+ * a slug hidden while checking the UK means nothing when the same reader
+ * later checks France, and the slug space is per-country anyway.
+ *
+ * Every read and write is wrapped — private browsing, a full quota, or
+ * storage disabled by policy must degrade to "nothing is hidden", never to a
+ * thrown error that takes the results screen down with it.
+ */
+const HIDDEN_KEY = (cc) => `unclaimed.check.hidden.${cc}`;
+
+function loadHidden(cc) {
+  try {
+    const raw = localStorage.getItem(HIDDEN_KEY(cc));
+    const arr = raw ? JSON.parse(raw) : [];
+    return new Set(Array.isArray(arr) ? arr : []);
+  } catch {
+    return new Set();
+  }
+}
+
+function saveHidden(cc, set) {
+  try {
+    localStorage.setItem(HIDDEN_KEY(cc), JSON.stringify([...set]));
+  } catch {
+    /* Best-effort only — see loadHidden(). The toggle still works for the
+       rest of this session; it just will not survive a reload. */
   }
 }
 
@@ -539,6 +581,12 @@ let ENTITLED = false;
    twenty seconds earlier and had nowhere left to click. */
 let SIGNED_IN = false;
 
+/* "Hide this match" state for the current country — see loadHidden()/
+   saveHidden() above. Reset on every loadCountry(), so switching country
+   never carries a "show hidden" toggle left open on a different dataset. */
+let HIDDEN = new Set();
+let SHOW_HIDDEN = false;
+
 async function refreshEntitlement() {
   try {
     const res = await fetch('/api/me', { credentials: 'same-origin', cache: 'no-store' });
@@ -628,7 +676,36 @@ const BUCKETS = {
   },
 };
 
-function gated(count, kind, id, buildHtml) {
+/**
+ * A withheld row, standing in for one programme.
+ *
+ * A locked record now carries name_en, funder and the public programme
+ * page's own URL — all three already sit in plain HTML on that page, so
+ * withholding them from this screen leaked nothing and cost the reader the
+ * one thing that would make the wall legible: which programme is this?
+ * Where a name is available it renders as a real link to the public page,
+ * with the paid fields (amount, documents, deadline, application link)
+ * still behind the same ●●●● lock-chip the static list rows use
+ * (src/ui.mjs's listRow()) — one voice for "this is withheld" across the
+ * whole site. A row with no name at all (an older cached copy, or a genuine
+ * data gap) falls back to the blank bar it always was.
+ */
+function lockedRow(m, first) {
+  const p = m?.programme ?? m;
+  const lockChip = first
+    ? `<span class="locked__row__lock">${esc(T('Locked'))}</span>`
+    : '';
+  if (!p?.name_en) return `<div class="locked__row withheld">${lockChip}</div>`;
+  return `<a class="locked__row locked__row--named" href="${esc(p.url || '#')}">
+    ${lockChip}
+    <span class="list-row__name">${esc(p.name_en)}</span>
+    <span class="list-row__amount lock-chip withheld" aria-label="${esc(T('Amount locked'))}">&#9679;&#9679;&#9679;&#9679;</span>
+  </a>`;
+}
+
+function gated(items, kind, id, buildHtml) {
+  const list = Array.isArray(items) ? items : null;
+  const count = list ? list.length : items;
   /* The zero guard sits ABOVE the entitled branch, not below it.
      With it below, a paying reader with nothing in a bucket got the heading,
      the count "0 programmes" and the reassuring blurb over an empty list,
@@ -639,26 +716,28 @@ function gated(count, kind, id, buildHtml) {
   const first = gatedShown === 0;
   gatedShown += 1;
   const b = BUCKETS[kind] || BUCKETS.apply;
-  /* Every redacted row carries `withheld`, and the first one carries the lock
-     chip, exactly as src/ui.mjs's lockedRows() does on the static pages. This
-     screen emitted bare `<div class="locked__row">`, so the one place where
-     redaction IS the product had zero `.locked__row__lock` elements,
-     selectable grey bars, and nothing tying it to the vocabulary the rest of
-     the site uses. theme.css:1079 states the contract; test-gating.mjs
+  /* Every redacted row carries `withheld` (or, for a named row, wraps its
+     redacted half in `withheld`), and the first one carries the lock chip,
+     exactly as src/ui.mjs's lockedRows() does on the static pages. This
+     screen used to emit bare `<div class="locked__row">` with no name at
+     all, so the one place where redaction IS the product had zero
+     `.locked__row__lock` elements and rows that could not say what they were
+     standing in for. theme.css:1079 states the contract; test-gating.mjs
      enforces it now. */
   return `<section class="bucket locked-bucket" id="${esc(id)}">
     <div class="bucket__head"><h2>${esc(b.head(count))}</h2>${
       first ? '' : `<a class="bucket__unlock" href="${href('/pricing/')}">${esc(T('Unlock →'))}</a>`
     }</div>
     <p class="small">${esc(T('Unlock to see {what}.', { what: b.lock }))}</p>
-    <div class="locked__rows" aria-hidden="true">
-      ${Array.from(
-        { length: Math.min(count, 4) },
-        (_, i) =>
-          `<div class="locked__row withheld">${
-            first && i === 0 ? `<span class="locked__row__lock">${esc(T('Locked'))}</span>` : ''
-          }</div>`,
-      ).join('')}
+    <div class="locked__rows">
+      ${
+        list
+          ? list.slice(0, 4).map((m, i) => lockedRow(m, first && i === 0)).join('')
+          : Array.from(
+              { length: Math.min(count, 4) },
+              (_, i) => lockedRow(null, first && i === 0),
+            ).join('')
+      }
     </div>
     ${
       /* The unlock control moved into the hero, where a reader meets it
@@ -909,6 +988,15 @@ function progCard(m, kind, opts = {}) {
            six. Write the ampersand once and let esc() escape it. -->
       ${DEGRADED ? '' : `<a class="btn btn-sm btn-ghost" href="${url}">${esc(T('Full rules & documents'))}</a>`}
       ${p.application_url ? `<a class="btn btn-sm" href="${esc(p.application_url)}" target="_blank" rel="nofollow noopener">${esc(T('Apply on official site'))}</a>` : ''}
+      ${
+        /* Only on the two buckets that actually count toward the headline
+           figure (apply, automatic) — see viewResults(). "Rights you already
+           have" and the taper bucket are informational, not a list a reader
+           is choosing between, and there is nothing to declutter there. */
+        opts.hideable
+          ? `<button class="btn btn-sm btn-ghost" type="button" data-act="hide-match" data-slug="${esc(p.slug)}">${esc(T('Hide this match'))}</button>`
+          : ''
+      }
     </div>`}
   </article>`;
 }
@@ -1180,6 +1268,31 @@ function viewNoMatches() {
  * The failing RULE is not paid content and is genuinely the useful half here
  * ("what would have to change"), so the free version is the rules, counted.
  */
+/* Schemes that have ended. The matcher keeps them in their own bucket —
+   never eligible, never in the figure — but this screen used to drop them on
+   the floor, so the index's rows summed to two fewer than the "Programmes
+   checked" total printed under them (113 of 115 for a GB renter: the Great
+   British Insulation Scheme and the Household Support Fund). They are a row
+   of their own now, so the arithmetic holds and a reader looking for a
+   scheme they remember finds out it has gone rather than that we missed it.
+   Names only for an entitled reader, as everywhere else on this screen. */
+function endedBlock(r) {
+  const list = r.ended || [];
+  if (!list.length) return '';
+  const rows = ENTITLED && !DEGRADED
+    ? `<div class="list-rows" style="margin-top:1rem">${list
+      .map((m) => `<div class="list-row"><span><a class="list-row__name link-underline" href="${esc(
+        href(`/${S.entry.slug}/${m.programme.category}/${m.programme.slug}/`),
+      )}">${esc(progName(m.programme) || T('Name unavailable'))}</a></span></div>`)
+      .join('')}</div>`
+    : '';
+  return `<details class="fold" id="ended" style="margin-top:3rem">
+    <summary>${esc(T('one=Show the {n} scheme that has ended|other=Show the {n} schemes that have ended', { n: NUM(list.length) }, list.length))}</summary>
+    <p class="small" style="margin-top:1rem">${esc(T('These existed and have closed for good. They are listed so you know they have gone rather than been missed. None can be applied for today, and none is counted in your figure.'))}</p>
+    ${rows}
+  </details>`;
+}
+
 function ruledOutBlock(r) {
   if (!r.not_eligible.length) return '';
   if (ENTITLED) {
@@ -1276,9 +1389,19 @@ function viewResults() {
     return viewNoMatches();
   }
   const cur = r.currency;
-  const auto = r.eligible.filter((m) => m.programme.is_automatic);
-  const apply = r.eligible.filter((m) => !m.programme.is_automatic);
-  const named = S.data.programmes.filter((p) => p.name_en || p.name_local).length;
+  /* "Hide this match" only ever affects which cards render — the headline
+     figure, the recurring/one-off/unpriced counts and the document plan all
+     still add up over the FULL eligible set, exactly as if nothing were
+     hidden. Hiding a match is decluttering a list, not disputing a result. */
+  const autoAll = r.eligible.filter((m) => m.programme.is_automatic);
+  const applyAll = r.eligible.filter((m) => !m.programme.is_automatic);
+  const auto = autoAll.filter((m) => !HIDDEN.has(m.programme.slug));
+  const apply = applyAll.filter((m) => !HIDDEN.has(m.programme.slug));
+  const hiddenCount = autoAll.length + applyAll.length - auto.length - apply.length;
+  /* `locked`, not "has a name": a locked record keeps its name now (the
+     free-tier conversion, src/pages/free-tier.mjs), so counting names would
+     never notice an entitled reader being served the public extract. */
+  const named = S.data.programmes.filter((p) => !p.locked && (p.name_en || p.name_local)).length;
   DEGRADED = ENTITLED && S.data.programmes.length > 4 && named * 2 < S.data.programmes.length;
 
   /* Two units, two figures. The matcher totals recurring money and paid-once
@@ -1461,7 +1584,7 @@ function viewResults() {
 
   push(
     'apply', T('Apply for these'), apply.length,
-    gated(apply.length, 'apply', 'apply', () => `<section class="bucket" id="apply">
+    gated(apply, 'apply', 'apply', () => `<section class="bucket" id="apply">
     <div class="bucket__head"><h2>${esc(T('Apply for these'))}</h2><span class="bucket__count">${esc(T('one={n} programme · nobody will remind you|other={n} programmes · nobody will remind you', { n: NUM(apply.length) }, apply.length))}</span></div>
     ${
       shared.length
@@ -1470,22 +1593,58 @@ function viewResults() {
           )}</p>`
         : ''
     }
-    <div class="bucket-list bucket-list--lead">${apply.map((m) => progCard(m, 'eligible')).join('')}</div>
+    <div class="bucket-list bucket-list--lead">${apply.map((m) => progCard(m, 'eligible', { hideable: true })).join('')}</div>
   </section>`),
   );
 
   push(
     'automatic', T('You should already be getting these'), auto.length,
-    gated(auto.length, 'auto', 'automatic', () => `<section class="bucket" id="automatic">
+    gated(auto, 'auto', 'automatic', () => `<section class="bucket" id="automatic">
     <div class="bucket__head"><h2>${esc(T('You should already be getting these'))}</h2><span class="bucket__count">${esc(T('{n} automatic', { n: NUM(auto.length) }))}</span></div>
     <p class="small">${esc(T('No application needed — but "automatic" assumes the authority has your correct details. If one of these isn\'t reaching you, that is the gap worth chasing.'))}</p>
-    <div class="bucket-list bucket-list--lead" style="margin-top:1rem">${auto.map((m) => progCard(m, 'eligible')).join('')}</div>
+    <div class="bucket-list bucket-list--lead" style="margin-top:1rem">${auto.map((m) => progCard(m, 'eligible', { hideable: true })).join('')}</div>
   </section>`),
+  );
+
+  /* The "N hidden · show" toggle, and the hidden cards themselves when it is
+     open — each with its own "Show" control, which un-hides that one card
+     rather than the whole set (a reader who hid four and wants one back
+     should not have to re-hide the other three). */
+  push(
+    /* count is always null, never hiddenCount: a hidden match is still one of
+       the apply/automatic rows counted above, so giving this row its own
+       count would double-count it against the index's "add up to the
+       corpus" invariant (scripts/test-results-shape.mjs). This row is a
+       view toggle over cards already counted elsewhere, not a new bucket. */
+    'hidden-matches', T('Hidden matches'), null,
+    hiddenCount
+      ? `<section class="bucket" id="hidden-matches">
+    <div class="bucket__head">
+      <h2>${esc(T('Hidden matches'))}</h2>
+      <button class="btn btn-ghost btn-sm" type="button" data-act="hidden-toggle" aria-expanded="${SHOW_HIDDEN}">
+        ${esc(T('one={n} hidden match — show all|other={n} hidden matches — show all', { n: NUM(hiddenCount) }, hiddenCount))}
+      </button>
+    </div>
+    ${
+      SHOW_HIDDEN
+        ? `<div class="bucket-list" style="margin-top:1rem">${[...autoAll, ...applyAll]
+            .filter((m) => HIDDEN.has(m.programme.slug))
+            .map(
+              (m) => `<div class="list-row">
+          <span><span class="list-row__name">${esc(progName(m.programme) || T('Name unavailable'))}</span></span>
+          <span class="list-row__right"><button class="btn btn-ghost btn-sm" type="button" data-act="unhide-match" data-slug="${esc(m.programme.slug)}">${esc(T('Show'))}</button></span>
+        </div>`,
+            )
+            .join('')}</div>`
+        : ''
+    }
+  </section>`
+      : '',
   );
 
   push(
     'taper', T('Reduced amount, probably still yours'), (r.tapered || []).length,
-    gated((r.tapered || []).length, 'taper', 'taper', () => `<section class="bucket" id="taper">
+    gated(r.tapered || [], 'taper', 'taper', () => `<section class="bucket" id="taper">
     <div class="bucket__head"><h2>${esc(T('Reduced amount, probably still yours'))}</h2><span class="bucket__count">${esc(T('one={n} programme|other={n} programmes', { n: NUM(r.tapered.length) }, r.tapered.length))}</span></div>
     <p class="small" style="max-width:62ch">${T('Your income is above the published ceiling — but that ceiling is the threshold for the {emph} award, and each of these records says in its own words that the payment tapers rather than stops. A tool that treated the ceiling as a cut-off would tell you "no" here. We\'d rather tell you "probably less, go and check".', { emph: `<em>${esc(T('maximum'))}</em>` })}</p>
     <div class="bucket-list bucket-list--lead" style="margin-top:1rem">${r.tapered.slice(0, 15).map((m) => progCard(m, 'taper')).join('')}</div>
@@ -1494,7 +1653,7 @@ function viewResults() {
 
   push(
     'rights', T('Rights you already have'), (r.rights || []).length,
-    gated((r.rights || []).length, 'rights', 'rights', () => `<section class="bucket" id="rights">
+    gated(r.rights || [], 'rights', 'rights', () => `<section class="bucket" id="rights">
     <div class="bucket__head"><h2>${esc(T('Rights you already have'))}</h2><span class="bucket__count">${esc(T('{n} · nothing to claim', { n: NUM(r.rights.length) }))}</span></div>
     <p class="small" style="max-width:62ch">${esc(T('These are not payments and there is no application. They are things the law already entitles you to, and they are kept out of your total for that reason — but they are worth knowing about, because the commonest way to lose one is not to know it exists.'))}</p>
     <div class="bucket-list bucket-list--lead" style="margin-top:1rem">${r.rights.slice(0, 20).map((m) => progCard(m, 'eligible')).join('')}</div>
@@ -1523,7 +1682,7 @@ function viewResults() {
      to the person reading — and between them they took 9,375px and taught
      nothing. One section, largest first, with the missing fact named on each
      card, and the disclaimer said once here instead of twenty times below. */
-  const askSection = gated(askList.length, 'ask', 'ask', () => `<section class="bucket" id="ask">
+  const askSection = gated(askList, 'ask', 'ask', () => `<section class="bucket" id="ask">
     <div class="bucket__head"><h2>${esc(T('Answer one more thing'))}</h2><span class="bucket__count">${esc(T('one={n} programme · one fact decides it|other={n} programmes · one fact each', { n: NUM(askList.length) }, askList.length))}</span></div>
     <p class="small" style="max-width:62ch">${esc(T("Each of these passes every rule we could test. One fact decides it — a circumstance you haven't mentioned, or a detail our questions never asked. None of them are counted in the figure above, because counting money you might not be able to get is how a tool like this becomes useless. Say the missing thing on any card and it moves the moment you do."))}</p>
     ${askShown.map(askGroupHtml).join('')}
@@ -1540,6 +1699,7 @@ function viewResults() {
 
   push('documents', T('Your document checklist'), null, paperwork);
   push('ask', T('Answer one more thing'), askList.length, askSection);
+  push('ended', T('No longer open'), (r.ended || []).length, endedBlock(r));
   push('ruled-out', T('Ruled out'), r.not_eligible.length, ruledOutBlock(r));
 
   /* ---- The index: what is on this page, and does it add up ---- */
@@ -1577,7 +1737,7 @@ function viewResults() {
           ? `<p class="btn-row"><button class="btn btn-primary" type="button" data-checkout data-plan="auto">${esc(T('Unlock the full list'))}</button>
            <a class="btn" href="${href('/pricing/')}">${esc(T('See all plans and prices'))}</a></p>`
           : `<p class="btn-row"><a class="btn btn-primary" href="${esc(href('/account/'))}?next=${encodeURIComponent(
-              `${location.pathname}#r=${encodeState()}`,
+              `${location.pathname}${INITIAL_UTM}#r=${encodeState()}`,
             )}&plan=auto">${esc(T('Sign in to unlock'))}</a>
            <a class="btn" href="${href('/pricing/')}">${esc(T('See pricing'))}</a></p>`;
 
@@ -1856,7 +2016,9 @@ function syncHistory() {
        duplicate #r entry left behind: from the result, one Back press changed
        nothing observable, the second landed on #s=5, and #s=6 was unreachable
        however many times you pressed. */
-    const url = S.result ? `${location.pathname}#r=${encodeState()}` : `${location.pathname}#s=${S.step}`;
+    const url = S.result
+      ? `${location.pathname}${INITIAL_UTM}#r=${encodeState()}`
+      : `${location.pathname}${INITIAL_UTM}#s=${S.step}`;
     if (first) history.replaceState({ key }, '', url);
     else history.pushState({ key }, '', url);
   } catch {
@@ -1926,6 +2088,8 @@ async function loadCountry(cc) {
   }
   S.entry = entry;
   S.profile.country_code = entry.country_code;
+  HIDDEN = loadHidden(cc);
+  SHOW_HIDDEN = false;
   const res = await fetch(`${BASE}/api/v1/programmes/${cc}.json`);
   if (!res.ok) {
     S.data = null;
@@ -2227,6 +2391,29 @@ app.addEventListener('click', async (ev) => {
     }
     return;
   }
+  if (act === 'hide-match') {
+    const slug = btn.dataset.slug;
+    if (slug && S.entry) {
+      HIDDEN.add(slug);
+      saveHidden(S.entry.slug, HIDDEN);
+      render();
+    }
+    return;
+  }
+  if (act === 'unhide-match') {
+    const slug = btn.dataset.slug;
+    if (slug && S.entry) {
+      HIDDEN.delete(slug);
+      saveHidden(S.entry.slug, HIDDEN);
+      render();
+    }
+    return;
+  }
+  if (act === 'hidden-toggle') {
+    SHOW_HIDDEN = !SHOW_HIDDEN;
+    render();
+    return;
+  }
   if (act === 'restart') {
     /* Step 1, not 0, so "change my answers" keeps the country and drops you at
        the first real question. */
@@ -2413,7 +2600,12 @@ app.addEventListener('click', async (ev) => {
   }
   if (act === 'ics') return buildIcs();
   if (act === 'share') {
-    const url = `${location.origin}${location.pathname}#r=${encodeState()}`;
+    /* A visitor who arrived from a campaign link and shares their result
+       should still be attributed to it on every visit that link produces —
+       not just the first. utm_* only: see share-link.js. INITIAL_UTM, not a
+       fresh utmQuery() call — syncHistory() has long since stripped the
+       query string off the live location by the time this runs. */
+    const url = `${location.origin}${location.pathname}${INITIAL_UTM}#r=${encodeState()}`;
     try {
       if (navigator.share) {
         await navigator.share({ title: 'Unclaimed', text: estimateShareText(S.result, countryName(S.entry)), url });

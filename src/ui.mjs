@@ -32,6 +32,7 @@ export const ICON = {
   check: `<svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8.4l3.2 3.2L13 4.8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>`,
   arrow: `<svg viewBox="0 0 16 16" width="14" height="14" fill="none" aria-hidden="true"><path d="M2 8h11M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>`,
   lock: `<svg viewBox="0 0 16 16" width="10" height="10" fill="none" aria-hidden="true"><rect x="3" y="7" width="10" height="7" rx="1.6" stroke="currentColor" stroke-width="1.5"/><path d="M5.5 7V5a2.5 2.5 0 015 0v2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>`,
+  search: `<svg viewBox="0 0 16 16" width="14" height="14" fill="none" aria-hidden="true"><circle cx="7" cy="7" r="5" stroke="currentColor" stroke-width="1.5"/><path d="M11 11l3.5 3.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>`,
 };
 
 /**
@@ -181,6 +182,29 @@ ${ldBlocks}
         <a href="${LB}/methodology/">${esc(T('navHow'))}</a>
         <a href="${base}/api/">${esc(T('navApi'))}</a>
       </span>
+      <!-- Site-wide keyword search. One shared page (/search/, English UI,
+           built once) rather than one per locale: programme names are not
+           translated per interface language in this dataset (only name_en
+           and a single name_local survive from the source), so a per-locale
+           copy of the same index and the same results screen would be
+           duplicate weight for zero extra translation. Every locale still
+           gets the box and the placeholder in its own language — only the
+           destination page is shared. See src/pages/search.mjs.
+
+           Collapsed to an icon by default, pure CSS (:focus-within) — no
+           script, so it still expands with JavaScript disabled. The masthead
+           already carries a wordmark, six links, a language menu, an account
+           chip and a CTA at the --shell width, and scripts/qa-screens.mjs
+           measures exactly this: an always-open ~11rem field here wrapped
+           "Check what you're owed" onto two lines at 1536px and made the
+           sign-in link overlap the home page's audience switch at 1280px. An
+           icon that expands only on focus costs the row about 2.5rem instead. -->
+      <form class="header-search" action="${base}/search/" method="get" role="search">
+        <label for="site-search" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)">${esc(T('searchAriaLabel'))}</label>
+        <span class="header-search__icon" aria-hidden="true">${ICON.search}</span>
+        <input id="site-search" class="header-search__input" type="search" name="q" autocomplete="off"
+          placeholder="${attr(T('searchPlaceholder'))}" aria-label="${attr(T('searchAriaLabel'))}">
+      </form>
       <!-- The account link. There was no visible route to a profile, a plan or
            an upgrade anywhere in the chrome: the only way to reach billing was
            to already know /account/ existed. Filled in by the script below
@@ -257,6 +281,8 @@ ${body}
           <li class="aud-biz"><a href="${LB}/startups/">${esc(T('navProgrammes'))}</a></li>
           <li><a href="${LB}/methodology/">${esc(T('navHow'))}</a></li>
           <li class="aud-me"><a href="${base}/blog/">${esc(T('navWriting'))}</a></li>
+          <li><a href="${base}/learn/">${esc(T('footLearn'))}</a></li>
+          <li><a href="${base}/funders/">${esc(T('footFunders'))}</a></li>
           <li><a href="${LB}/pricing/">${esc(T('navPricing'))}</a></li>
           <li><a href="${LB}/auto-apply/">${esc(T('navAutoApply'))}</a></li>
           <li class="aud-biz"><a href="${LB}/enterprise/">${esc(T('navEnterprise'))}</a></li>
@@ -268,16 +294,24 @@ ${body}
         <h2 class="h-eyebrow">${esc(T('footDevelopers'))}</h2>
         <ul>
           <li><a href="${base}/api/">${esc(T('navApi'))}</a></li>
+          <li><a href="${base}/connect/">Connect (MCP)</a></li>
           <li><a href="${base}/api/v1/countries.json">countries.json</a></li>
+          <li><a href="${base}/api/v1/openapi.json">openapi.json</a></li>
+          <li><a href="${base}/startups/feed.xml">RSS</a></li>
           <li><a href="${base}/llms.txt">llms.txt</a></li>
         </ul>
       </div>
       <div>
         <h2 class="h-eyebrow">${esc(T('footTrust'))}</h2>
         <ul>
+          <li><a href="${LB}/trust/">${esc(T('footTrustCentre'))}</a></li>
           <li><a href="${LB}/privacy/">${esc(T('footPrivacy'))}</a></li>
           <li><a href="${LB}/methodology/#limits">${esc(T('footLimits'))}</a></li>
           <li><a href="${LB}/methodology/#verification">${esc(T('footVerification'))}</a></li>
+          <li><a href="${base}/scams/">${esc(T('footScams'))}</a></li>
+          <li><a href="${base}/accessibility/">${esc(T('footAccessibility'))}</a></li>
+          <li><a href="${base}/changelog/">${esc(T('footChangelog'))}</a></li>
+          <li><a href="${base}/compare/">${esc(T('footCompare'))}</a></li>
           <li><a href="https://github.com/adityashashidhar55-cpu/unclaimed">${esc(T('footSource'))}</a></li>
         </ul>
       </div>
@@ -289,6 +323,7 @@ ${body}
       <div class="langbar">${altLangs
         .map((a) => `<a href="${a.href}"${a.lang === lang ? ' aria-current="true"' : ''} hreflang="${a.lang}">${esc(a.native)}</a>`)
         .join('')}</div>
+      <p class="tiny" style="margin-top:.8rem;max-width:none">${esc(T('langNote'))}</p>
     </div>`
         : ''
     }
@@ -453,6 +488,27 @@ track('land');
    moment the browser knows a payment completed. The webhook knows too, but it
    arrives with no visitor id and so cannot close the funnel. */
 if (new URLSearchParams(location.search).has('welcome')) track('checkout_done');
+</script>
+<script>
+/* Status badges are computed when the site is built. This re-checks each one
+   against today's date so a call that closed since the last build never reads
+   as open. It only ever moves a badge towards closed, or refreshes a countdown. */
+(function () {
+  var DAY = 864e5, now = Date.now();
+  var els = document.querySelectorAll('[data-closes]');
+  for (var i = 0; i < els.length; i++) {
+    var el = els[i], at = Date.parse(el.getAttribute('data-closes'));
+    if (isNaN(at)) continue;
+    var days = Math.ceil((at + DAY - now) / DAY) - 1, kind = el.getAttribute('data-live');
+    if (days < 0) {
+      if (kind === 'detail') el.textContent = 'The last published deadline was ' + el.getAttribute('data-closes') + ". Check the funder's page for a new round.";
+      else el.textContent = kind === 'headline' ? 'Deadline has passed' : 'Closed';
+      if (el.classList.contains('status')) el.className = 'status status--unknown';
+    } else if (/^Closes (in \\d+ days|today|tomorrow)$/.test(el.textContent.trim())) {
+      el.textContent = days === 0 ? 'Closes today' : days === 1 ? 'Closes tomorrow' : 'Closes in ' + days + ' days';
+    }
+  }
+})();
 </script>
 </body>
 </html>`;
