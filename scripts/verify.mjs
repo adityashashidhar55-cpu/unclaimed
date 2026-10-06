@@ -9,8 +9,10 @@ import { fileURLToPath } from 'node:url';
 import { testProgramme } from '../src/engine/startup.js';
 import { effectiveStatus } from '../packages/deadlines/index.js';
 import { isVagueSource, pathDepth } from './harvest-sources.mjs';
+import { computeCounts } from './lib/counts.mjs';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
+import { readAllSitemaps } from './_sitemaps.mjs';
 const DIST = path.join(ROOT, 'dist');
 const DATA = path.join(ROOT, 'data');
 
@@ -155,7 +157,7 @@ for (const f of pages) {
 leaked === 0 ? ok(`no template leaks across ${pages.length} pages`) : fail(`${leaked} pages contain leaked template output`);
 
 /* 7. Sitemap covers every page */
-const sitemap = fs.readFileSync(path.join(DIST, 'sitemap.xml'), 'utf8');
+const sitemap = readAllSitemaps(DIST);
 const locs = (sitemap.match(/<loc>/g) || []).length;
 locs >= pages.length - 1 ? ok(`sitemap lists ${locs} URLs`) : fail(`sitemap lists ${locs} but ${pages.length} pages exist`);
 
@@ -170,7 +172,12 @@ noSource === 0 ? ok('every record has an http(s) source_url') : fail(`${noSource
 
 /* --- Startup grants ------------------------------------------------ */
 const sMan = JSON.parse(fs.readFileSync(path.join(DIST, 'api/v1/startups/index.json'), 'utf8'));
-sMan.total === 1641 && sMan.countries.length >= 25 ? ok('startup pool index is published') : fail('startup pool index is published');
+/* The totals come from the data files, not from a literal: a record added,
+   retired or merged must never be what breaks this line. */
+const LIVE = computeCounts(ROOT);
+sMan.total === LIVE.company.total && sMan.countries.length === LIVE.company.jurisdictions
+  ? ok(`startup pool index is published (${LIVE.company.total} records, ${LIVE.company.jurisdictions} jurisdictions)`)
+  : fail(`startup pool index is published — index says ${sMan.total}/${sMan.countries.length}, data has ${LIVE.company.total}/${LIVE.company.jurisdictions}`);
 sMan.countries.every((c) => fs.existsSync(path.join(DIST, `api/v1/startups/${c.slug}.json`)))
   ? ok('every startup pool has a JSON asset')
   : fail('a startup pool JSON asset is missing');
@@ -207,7 +214,7 @@ const walkStartups = (d) => {
 };
 walkStartups(path.join(DIST, 'startups'));
 sLeaks === 0 ? ok(`no template leaks across ${sPages} startup pages`) : fail(`no template leaks across ${sPages} startup pages`);
-fs.readFileSync(path.join(DIST, 'sitemap.xml'), 'utf8').includes('/startups/') ? ok('startup pages are in the sitemap') : fail('startup pages are in the sitemap');
+readAllSitemaps(DIST).includes('/startups/') ? ok('startup pages are in the sitemap') : fail('startup pages are in the sitemap');
 
 
 /* --- The app (PWA) -------------------------------------------------- */
@@ -661,7 +668,10 @@ fs.readFileSync(path.join(DIST, 'theme.css'), 'utf8').includes('.shell-narrow')
    * ceiling down. scripts/harvest-sources.mjs generates the worklist.
    */
   {
-    const VAGUE_CEILING = 2358;
+    /* The ceiling lives in scripts/baselines.json, and scripts/regen-counts.mjs
+       only ever lowers it — a verification run that replaces homepages with
+       programme pages tightens the ratchet; nothing loosens it. */
+    const VAGUE_CEILING = JSON.parse(fs.readFileSync(path.join(ROOT, 'scripts/baselines.json'), 'utf8')).vague_source_ceiling;
     /* Both datasets, read here rather than threaded through from a caller —
        this block is the only thing that needs the whole corpus at once. */
     const everyProgramme = [];

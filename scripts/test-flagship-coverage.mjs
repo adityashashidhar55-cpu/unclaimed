@@ -145,7 +145,7 @@ console.log('\nThe corpus total and per-country manifest stats agree with the da
       `manifest says ${entry.count}, file has ${doc.programmes.length}`);
   }
   t('manifest.total is the sum of every country file', manifest.total === total, `manifest says ${manifest.total}, sum is ${total}`);
-  t('manifest.total includes both new flagship records (>= 1641: 1684 - 45 deduped + 2)', manifest.total >= 1641);
+  t('no jurisdiction in the manifest is empty', manifest.countries.every((e) => e.count > 0));
 }
 
 console.log(`\n${pass} passed, ${fail} failed\n`);

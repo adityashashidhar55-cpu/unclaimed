@@ -167,7 +167,8 @@ if (fs.existsSync(gbDir)) {
 t('found a household programme page to check', !!householdProgrammeFile);
 if (householdProgrammeFile) {
   const html = fs.readFileSync(householdProgrammeFile, 'utf8');
-  t('household programme page prints "Verified on"', /Verified on /.test(html));
+  t('household programme page says when it was last checked, or that it has not been', /Last checked against the official page on /.test(html) || /Not yet re-checked/.test(html));
+  t('household programme page links to the error report form', /href="[^"]*\/report-error\/\?/.test(html));
   t('household programme page prints a Source line', /Source: /.test(html) || html.includes("funder's homepage"));
 }
 
@@ -186,7 +187,8 @@ if (fs.existsSync(startupsDir)) {
 t('found a company programme page to check', !!startupProgrammeFile);
 if (startupProgrammeFile) {
   const html = fs.readFileSync(startupProgrammeFile, 'utf8');
-  t('company programme page prints "Verified on"', /Verified on /.test(html));
+  t('company programme page says when it was last checked, or that it has not been', /Last checked against the official page on /.test(html) || /Not yet re-checked/.test(html));
+  t('company programme page links to the error report form', /href="[^"]*\/report-error\/\?/.test(html));
   t('company programme page prints a Source line', /Source: /.test(html) || html.includes("funder's homepage"));
 }
 

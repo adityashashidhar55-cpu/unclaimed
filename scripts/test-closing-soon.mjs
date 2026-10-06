@@ -16,6 +16,7 @@ import { fileURLToPath } from 'node:url';
 import { effectiveStatus, deadlineState } from '../packages/deadlines/index.js';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
+import { readAllSitemaps } from './_sitemaps.mjs';
 const DIST = path.join(ROOT, 'dist');
 const DAY = 24 * 60 * 60 * 1000;
 const HORIZON_DAYS = 120;
@@ -214,7 +215,7 @@ t('/startups/ links to the ICS feed', read('startups/index.html').includes('/sta
 
 /* ---- Sitemap carries the two HTML pages; the ICS feeds are not webpages ---- */
 {
-  const sitemap = read('sitemap.xml');
+  const sitemap = readAllSitemaps(DIST);
   t('sitemap includes /startups/closing-soon/', sitemap.includes('/startups/closing-soon/'));
   t('sitemap includes /startups/calendar/', sitemap.includes('/startups/calendar/'));
 }

@@ -6,8 +6,8 @@
  * Workers Builds ships the code on push; `wrangler d1 migrations apply` is a
  * separate step someone runs by hand. Between the two, the Worker is live
  * against a schema missing alert_subscriptions/alert_sends (0010), leads
- * (0011), calendar_tokens/user_totp/user_totp_recovery_codes (0012) and
- * entitlements.paused_until (0013). In that window sign-in, /api/me,
+ * (0011), calendar_tokens/user_totp/user_totp_recovery_codes (0012),
+ * entitlements.paused_until (0013) and result_subscribers (0014). In that window sign-in, /api/me,
  * /api/check, checkout and /mcp must keep working exactly as before, and the
  * endpoints that exist only for the new features answer 503 — never 500.
  *
@@ -35,18 +35,22 @@ const bad = (m) => { failed += 1; console.error(`  ✗ ${m}`); };
 const is = (a, b, m) => (Object.is(a, b) ? ok(m) : bad(`${m} — got ${JSON.stringify(a)}, wanted ${JSON.stringify(b)}`));
 const yes = (v, m, extra = '') => (v ? ok(m) : bad(`${m}${extra ? ` — ${extra}` : ''}`));
 
-console.log('\nThe Worker before migrations 0010-0013 are applied\n');
+console.log('\nThe Worker before migrations 0010-0014 are applied\n');
 
 /* Only 0001-0009. Selected by number rather than by count, so adding 0014
    later does not silently move this test's baseline. */
 const PRE = allMigrations(ROOT).filter((f) => Number(path.basename(f).slice(0, 4)) <= 9);
 is(PRE.length, 9, 'the baseline is exactly migrations 0001-0009');
 const POST = allMigrations(ROOT).map((f) => path.basename(f)).filter((f) => Number(f.slice(0, 4)) >= 10);
+/* 0010-0013 are the ones this file has specific expectations about; later ones
+   (0016_issue_reports.sql, and whatever follows) must also be absent from the
+   baseline, and each new feature gets its own "503, never 500" check below. */
 is(
-  POST.join(','),
-  '0010_alerts.sql,0011_leads.sql,0012_calendar_tokens.sql,0013_billing_pause.sql',
-  'and the migrations this test holds off are 0010-0013, in that order',
+  POST.slice(0, 5).join(','),
+  '0010_alerts.sql,0011_leads.sql,0012_calendar_tokens.sql,0013_billing_pause.sql,0014_result_subscribers.sql',
+  'and the first migrations this test holds off are 0010-0014, in that order',
 );
+yes(POST.includes('0016_issue_reports.sql'), 'and 0016_issue_reports.sql is among the ones held off');
 
 /* Stripe is stubbed for the duration: no test run should reach the real API. */
 const realFetch = globalThis.fetch;
@@ -85,7 +89,7 @@ const ctx = { waitUntil() {} };
   const tables = new Set(
     env.DB._raw.prepare("SELECT name FROM sqlite_master WHERE type = 'table'").all().map((r) => r.name),
   );
-  for (const t of ['alert_subscriptions', 'alert_sends', 'leads', 'calendar_tokens', 'user_totp', 'user_totp_recovery_codes']) {
+  for (const t of ['alert_subscriptions', 'alert_sends', 'leads', 'calendar_tokens', 'user_totp', 'user_totp_recovery_codes', 'result_subscribers']) {
     yes(!tables.has(t), `${t} does not exist yet`);
   }
   const cols = env.DB._raw.prepare('PRAGMA table_info(entitlements)').all().map((r) => r.name);
@@ -206,6 +210,17 @@ let uid = '';
   });
   is(leads.status, 503, 'POST /api/leads answers 503 before migration 0011');
 
+  const issue = await call('/api/report-issue', {
+    method: 'POST',
+    body: { slug: 'gb/x', country_code: 'gb', issue_type: 'dead_link', description: 'The link is dead' },
+  });
+  is(issue.status, 503, 'POST /api/report-issue answers 503 before migration 0016');
+  const mcpIssue = await call('/mcp', {
+    method: 'POST',
+    body: { jsonrpc: '2.0', id: 9, method: 'tools/call', params: { name: 'report_issue', arguments: { country_code: 'gb', slug: 'gb/x', issue_type: 'dead_link', description: 'The link is dead' } } },
+  });
+  yes(mcpIssue.status === 200, 'the MCP report_issue tool still answers before migration 0016 (logged, not stored)', String(mcpIssue.status));
+
   const sub = await call('/api/alerts/subscribe', { method: 'POST', body: { email: 'a@example.com', audience: 'companies', jurisdictions: ['gb'] }, envExtra: MAIL });
   is(sub.status, 503, 'POST /api/alerts/subscribe answers 503 before migration 0010');
   const conf = await call(`/api/alerts/confirm?token=${'a'.repeat(64)}`);
@@ -232,6 +247,18 @@ let uid = '';
   if (cal.status === 200) is((await cal.json()).active, false, 'and reports no feed');
   const feed = await call(`/api/calendar/${'b'.repeat(64)}.ics`);
   is(feed.status, 404, 'a calendar feed URL is a 404, not a 500');
+
+  const emailRes = await call('/api/results/email', {
+    method: 'POST',
+    body: { email: 'visitor@example.com', audience: 'household', consent: true, profile: { country_code: 'GB', age: 34, household_size: 2 } },
+    envExtra: MAIL,
+  });
+  is(emailRes.status, 503, 'POST /api/results/email answers 503 before migration 0014');
+  const emailUnsub = await call(`/api/results/unsubscribe?token=${'a'.repeat(64)}`);
+  is(emailUnsub.status, 503, 'GET /api/results/unsubscribe answers 503');
+  const resCron = await __test.runResultsCron({ ...env, ...MAIL });
+  is(resCron.sent, 0, 'the result-email cron sends nothing and does not throw');
+  is(resCron.skipped, 'schema_missing', 'and says why');
 
   const pause = await call('/api/billing/pause', { method: 'POST', cookie, body: { months: 1 } });
   is(pause.status, 503, 'POST /api/billing/pause answers 503 before migration 0013');
