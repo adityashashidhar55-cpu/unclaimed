@@ -117,6 +117,9 @@
             "type": "string",
             "enum": [
               "citizen_or_pr",
+              "eu_eea",
+              "work_visa",
+              "student_visa",
               "any_resident",
               "refugee_or_protected"
             ]
@@ -991,6 +994,9 @@
             "type": "string",
             "enum": [
               "citizen_or_pr",
+              "eu_eea",
+              "work_visa",
+              "student_visa",
               "any_resident",
               "refugee_or_protected"
             ]
@@ -1871,6 +1877,9 @@
             "type": "string",
             "enum": [
               "citizen_or_pr",
+              "eu_eea",
+              "work_visa",
+              "student_visa",
               "any_resident",
               "refugee_or_protected"
             ]
@@ -2780,6 +2789,9 @@
             "type": "string",
             "enum": [
               "citizen_or_pr",
+              "eu_eea",
+              "work_visa",
+              "student_visa",
               "any_resident",
               "refugee_or_protected"
             ]
@@ -3697,6 +3709,9 @@
             "type": "string",
             "enum": [
               "citizen_or_pr",
+              "eu_eea",
+              "work_visa",
+              "student_visa",
               "any_resident",
               "refugee_or_protected"
             ]
@@ -4587,6 +4602,9 @@
             "type": "string",
             "enum": [
               "citizen_or_pr",
+              "eu_eea",
+              "work_visa",
+              "student_visa",
               "any_resident",
               "refugee_or_protected"
             ]
@@ -5499,6 +5517,9 @@
             "type": "string",
             "enum": [
               "citizen_or_pr",
+              "eu_eea",
+              "work_visa",
+              "student_visa",
               "any_resident",
               "refugee_or_protected"
             ]
@@ -6389,6 +6410,9 @@
             "type": "string",
             "enum": [
               "citizen_or_pr",
+              "eu_eea",
+              "work_visa",
+              "student_visa",
               "any_resident",
               "refugee_or_protected"
             ]
@@ -7314,6 +7338,9 @@
             "type": "string",
             "enum": [
               "citizen_or_pr",
+              "eu_eea",
+              "work_visa",
+              "student_visa",
               "any_resident",
               "refugee_or_protected"
             ]
@@ -8204,6 +8231,9 @@
             "type": "string",
             "enum": [
               "citizen_or_pr",
+              "eu_eea",
+              "work_visa",
+              "student_visa",
               "any_resident",
               "refugee_or_protected"
             ]
@@ -9164,6 +9194,9 @@
             "type": "string",
             "enum": [
               "citizen_or_pr",
+              "eu_eea",
+              "work_visa",
+              "student_visa",
               "any_resident",
               "refugee_or_protected"
             ]
@@ -10047,6 +10080,9 @@
             "type": "string",
             "enum": [
               "citizen_or_pr",
+              "eu_eea",
+              "work_visa",
+              "student_visa",
               "any_resident",
               "refugee_or_protected"
             ]
@@ -10964,6 +11000,9 @@
             "type": "string",
             "enum": [
               "citizen_or_pr",
+              "eu_eea",
+              "work_visa",
+              "student_visa",
               "any_resident",
               "refugee_or_protected"
             ]
@@ -11879,6 +11918,9 @@
             "type": "string",
             "enum": [
               "citizen_or_pr",
+              "eu_eea",
+              "work_visa",
+              "student_visa",
               "any_resident",
               "refugee_or_protected"
             ]

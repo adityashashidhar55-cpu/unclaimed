@@ -14,12 +14,12 @@
    "category": "income_support",
    "benefit_type": "cash_monthly",
    "amount_min": 2400,
-   "amount_max": 2420,
+   "amount_max": 2400,
    "amount_currency": "ZAR",
    "amount_period": "monthly",
-   "amount_note": "R2,400/month for ages 60-74 and R2,420/month for ages 75+ from April 2026 (2026/27 Budget); reviewed each April and October. Paid on a sliding scale if you have some income.",
+   "amount_note": "R2,400/month from April 2026 (2026/27 Budget), a R80 increase; one rate for all ages 60+. Paid on a sliding scale if income/assets are below the means-test limit.",
    "is_automatic": false,
-   "application_url": "https://www.sassa.gov.za",
+   "application_url": "https://services.sassa.gov.za",
    "application_channel": "in_person",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -68,9 +68,9 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.sassa.gov.za",
-   "source_snippet": "Older Persons Grant, Disability Grant and Care Dependency Grant will increase by R80 to R2 400 ... from April 2026 (SASSA/SAnews 2026/27 announcement)",
-   "last_verified_at": "2026-08-12",
+   "source_url": "https://services.sassa.gov.za/portal/r/sassa/sassa/grants-information",
+   "source_snippet": "Effective from April 2026, the Older Persons Grant, Disability Grant and Care Dependency Grant will increase by R80 to R2 400, while the War Veterans Grant will rise to R2 420.",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -86,9 +86,9 @@
    "amount_max": 2400,
    "amount_currency": "ZAR",
    "amount_period": "monthly",
-   "amount_note": "R2,400/month from April 2026. Temporary grants of 6-12 months are issued where the disability is temporary; permanent otherwise.",
+   "amount_note": "R2,400/month from April 2026 (2026/27 Budget); may be paid at a lower rate depending on the means test. Temporary grants run 6-12 months.",
    "is_automatic": false,
-   "application_url": "https://www.sassa.gov.za",
+   "application_url": "https://services.sassa.gov.za",
    "application_channel": "in_person",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -142,9 +142,9 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.sassa.gov.za",
-   "source_snippet": "Disability Grant ... will increase by R80 to R2 400 (Budget Speech increases effective April 2026)",
-   "last_verified_at": "2026-08-12",
+   "source_url": "https://services.sassa.gov.za/portal/r/sassa/sassa/grants-information",
+   "source_snippet": "The applicant must be 18 to 59 years of age. The applicant must submit a medical / assessment report confirming the impact of disability.",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -160,9 +160,9 @@
    "amount_max": 580,
    "amount_currency": "ZAR",
    "amount_period": "monthly",
-   "amount_note": "R580 per child per month from April 2026, paid to the primary caregiver (parent, grandparent or guardian) of a child under 18.",
+   "amount_note": "R580 per child per month from April 2026 (2026/27 Budget).",
    "is_automatic": false,
-   "application_url": "https://www.sassa.gov.za",
+   "application_url": "https://services.sassa.gov.za",
    "application_channel": "in_person",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -216,9 +216,9 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.sassa.gov.za",
-   "source_snippet": "Child Support Grant and Grant-In-Aid will increase by R20 to R580 (Budget increases effective April 2026)",
-   "last_verified_at": "2026-08-12",
+   "source_url": "https://services.sassa.gov.za/portal/r/sassa/sassa/grants-information",
+   "source_snippet": "The primary care giver must be a South African citizen, permanent resident or refugee. ... The child/children must be under the age of 18 years",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -230,13 +230,13 @@
    "funder": "South African Social Security Agency (SASSA)",
    "category": "income_support",
    "benefit_type": "cash_monthly",
-   "amount_min": 1290,
-   "amount_max": 1290,
+   "amount_min": 1300,
+   "amount_max": 1300,
    "amount_currency": "ZAR",
    "amount_period": "monthly",
-   "amount_note": "R1,290 per foster child per month from April 2026. Not means-tested; requires a court order placing the child in your foster care.",
+   "amount_note": "R1,290/month from April 2026, rising to R1,300/month from October 2026 (2026/27 Budget). No means test on foster parent income.",
    "is_automatic": false,
-   "application_url": "https://www.sassa.gov.za",
+   "application_url": "https://services.sassa.gov.za",
    "application_channel": "in_person",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -293,9 +293,9 @@
     "income_confidence": "high",
     "gender": "any"
    },
-   "source_url": "https://www.sassa.gov.za",
-   "source_snippet": "Foster Child Grant will increase by R40 to R1 290 (Budget increases effective April 2026)",
-   "last_verified_at": "2026-08-12",
+   "source_url": "https://services.sassa.gov.za/portal/r/sassa/sassa/grants-information",
+   "source_snippet": "The foster care grant goes up to R1 290 in April, a R40 increase and to R1 300 in October, a R10 increase.",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified",
    "income_reviewed_at": "2026-08-13"
   },
@@ -312,9 +312,9 @@
    "amount_max": 2400,
    "amount_currency": "ZAR",
    "amount_period": "monthly",
-   "amount_note": "R2,400 per month from April 2026 for the caregiver of a child under 18 with a severe disability needing full-time home care.",
+   "amount_note": "R2,400/month from April 2026 (2026/27 Budget).",
    "is_automatic": false,
-   "application_url": "https://www.sassa.gov.za",
+   "application_url": "https://services.sassa.gov.za",
    "application_channel": "in_person",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -368,9 +368,9 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.sassa.gov.za",
-   "source_snippet": "Care Dependency Grant will increase by R80 to R2 400 (Budget increases effective April 2026)",
-   "last_verified_at": "2026-08-12",
+   "source_url": "https://services.sassa.gov.za/portal/r/sassa/sassa/grants-information",
+   "source_snippet": "The applicant and child must be resident in South Africa. Child must be under the age of 18 years. The applicant must submit a medical / assessment report confirming permanent, severe disability.",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -386,9 +386,9 @@
    "amount_max": 580,
    "amount_currency": "ZAR",
    "amount_period": "monthly",
-   "amount_note": "R580 per month from April 2026, paid in addition to an Older Person's, Disability or War Veterans Grant when the beneficiary needs full-time care from another person.",
+   "amount_note": "R580/month from April 2026 (2026/27 Budget). Only payable on top of an Older Persons, Disability or War Veterans grant.",
    "is_automatic": false,
-   "application_url": "https://www.sassa.gov.za",
+   "application_url": "https://services.sassa.gov.za",
    "application_channel": "in_person",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -435,9 +435,9 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.sassa.gov.za",
-   "source_snippet": "Grant-In-Aid will increase by R20 to R580 (Budget increases effective April 2026)",
-   "last_verified_at": "2026-08-12",
+   "source_url": "https://services.sassa.gov.za/portal/r/sassa/sassa/grants-information",
+   "source_snippet": "The applicant must be in receipt of a grant for Older Persons, Disability grant or a War Veteran's grant, and require regular attendance by another person for activities of daily living",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -453,9 +453,9 @@
    "amount_max": 2420,
    "amount_currency": "ZAR",
    "amount_period": "monthly",
-   "amount_note": "R2,420 per month from April 2026 for veterans of the First/Second World War or the Korean War who are 60+ or disabled and meet the means test. Very few beneficiaries remain.",
+   "amount_note": "R2,420/month from April 2026 (2026/27 Budget). Open only to surviving WWII/Korean War veterans aged 60+ or disabled.",
    "is_automatic": false,
-   "application_url": "https://www.sassa.gov.za",
+   "application_url": "https://services.sassa.gov.za",
    "application_channel": "in_person",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -507,9 +507,9 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.sassa.gov.za",
-   "source_snippet": "War Veterans Grant will increase by R80 to R2 420 (Budget increases effective April 2026)",
-   "last_verified_at": "2026-08-12",
+   "source_url": "https://services.sassa.gov.za/portal/r/sassa/sassa/grants-information",
+   "source_snippet": "Effective from April 2026, the Older Persons Grant, Disability Grant and Care Dependency Grant will increase by R80 to R2 400, while the War Veterans Grant will rise to R2 420.",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -668,7 +668,7 @@
    "amount_max": null,
    "amount_currency": "ZAR",
    "amount_period": "monthly",
-   "amount_note": "50 kWh free electricity per household per month under the Electricity Basic Services Support Tariff policy (some municipalities give 60 kWh; Cape Town is tiered 25-60 units). NERSA set the 2026/27 FBE rate at 238.60c/kWh.",
+   "amount_note": "50 kWh free electricity per household per month for indigent households (municipalities may give more, e.g. Tshwane 100 kWh, Ekurhuleni up to 50-100 kWh, eThekwini 65 kWh); municipalities set own means tests.",
    "is_automatic": false,
    "application_url": null,
    "application_channel": "in_person",
@@ -722,9 +722,9 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.eskom.co.za",
-   "source_snippet": "The policy aims to provide a monthly allocation of 50 kilowatt-hours (kWh) of electricity to indigent households identified by municipalities (NERSA EBSST policy)",
-   "last_verified_at": "2026-08-12",
+   "source_url": "https://www.gov.za/faq/government-services/how-do-i-access-free-basic-municipal-services",
+   "source_snippet": "Free basic electricity of 50kWh per household per month for a grid-energy system (connected through the national electrification programme) is provided.",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -784,9 +784,9 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.cogta.gov.za",
-   "source_snippet": "The general rule is that indigent households are entitled to 6 kl of free water per household per month and 50 kWh of free electricity",
-   "last_verified_at": "2026-08-12",
+   "source_url": "https://www.gov.za/faq/government-services/how-do-i-access-free-basic-municipal-services",
+   "source_snippet": "Free basic water consists of at least a basic amount of 6 kl (6 000 l) of water per month per household. This amount may differ among municipalities",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -841,10 +841,10 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.cogta.gov.za",
-   "source_snippet": "All metropolitan municipalities provide free basic services to qualifying indigent households, including water, electricity, sanitation, and refuse removal (COGTA parliamentary reply)",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www.gov.za/faq/government-services/how-do-i-access-free-basic-municipal-services",
+   "source_snippet": "Sewerage and sanitation as well as solid waste management are subsidised up to R50 per month or 100% subsidy to indigent households.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "free-basic-refuse-removal",
@@ -898,10 +898,10 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.cogta.gov.za",
-   "source_snippet": "Refuse removal: Generally 100% subsidised (COGTA parliamentary reply on metro indigent programmes)",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www.gov.za/faq/government-services/how-do-i-access-free-basic-municipal-services",
+   "source_snippet": "Sewerage and sanitation as well as solid waste management are subsidised up to R50 per month or 100% subsidy to indigent households.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "free-basic-alternative-energy",
@@ -955,10 +955,10 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.energy.gov.za",
-   "source_snippet": "Non-grid indigent households may receive free basic alternative energy such as paraffin or LPG under municipal indigent policies",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www.gov.za/faq/government-services/how-do-i-access-free-basic-municipal-services",
+   "source_snippet": "Consumers who do not have access to grid electricity could be provided with non-grid electricity by their municipalities.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "joburg-expanded-social-package",
@@ -973,12 +973,12 @@
    "amount_max": null,
    "amount_currency": "ZAR",
    "amount_period": "monthly",
-   "amount_note": "Rebates of 50-100% on property rates, water, electricity, refuse and sewerage for qualifying low-income households; general threshold is a combined household income of up to about R7,800/month (pensioners assessed on property value).",
+   "amount_note": "Free basic services on rates, refuse, sewer, water and electricity for indigent citizens: electricity 10/20/30 kWh by poverty-index band (capped 150 kWh), extra free water 25-50 L per person per day (capped 10-15 kl); pensioners (60+) with property up to R2.5m and working-age/unemployed with property up to R500,000 get 70-100% rates/sewer/refuse rebates. Income limit R7,503.01/month.",
    "is_automatic": false,
-   "application_url": null,
+   "application_url": "https://joburg.org.za/services_/Pages/City%20Services/Social%20Package/Expanded-Social-Package0217-1439.aspx",
    "application_channel": "in_person",
    "deadline_type": "annual",
-   "deadline_note": "Indigent registration must usually be renewed yearly",
+   "deadline_note": "Re-apply every six months; income threshold rises each 1 November with CPI",
    "procedure_steps": [
     {
      "step": 1,
@@ -1028,10 +1028,10 @@
     "income_confidence": "medium",
     "gender": "any"
    },
-   "source_url": "https://www.joburg.org.za",
-   "source_snippet": null,
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted",
+   "source_url": "https://joburg.org.za/services_/Pages/City%20Services/Social%20Package/Expanded-Social-Package0217-1439.aspx",
+   "source_snippet": "Must be a South African Citizen; Must reside within the City of Johannesburg boundaries; Income should not exceed R7 503.01 on a monthly basis (this includes pensions, investments and other financial resources available).",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified",
    "income_reviewed_at": "2026-08-13"
   },
   {
@@ -1049,10 +1049,10 @@
    "amount_period": "monthly",
    "amount_note": "Indigent grant: free basic services (water, sanitation, refuse, electricity) plus rates relief for households with a combined monthly income of up to about R7,500 (property value caps apply). Pensioner rates rebates also available.",
    "is_automatic": false,
-   "application_url": null,
+   "application_url": "https://www.capetown.gov.za/City-Connect/Apply/Financial-relief-and-rebates/Individuals/apply-for-indigent-rates-relief",
    "application_channel": "in_person",
    "deadline_type": "annual",
-   "deadline_note": "Indigent registration must usually be renewed yearly",
+   "deadline_note": "Re-apply every 12 months from approval (about three years, to next General Valuation, for residents 60+)",
    "procedure_steps": [
     {
      "step": 1,
@@ -1086,8 +1086,8 @@
     "statuses": [],
     "age_min": null,
     "age_max": null,
-    "income_annual_max": null,
-    "income_note": "Indigent grant: free basic services (water, sanitation, refuse, electricity) plus rates relief for households with a combined monthly income of up to about R7,500 (property value caps apply). Pensioner rates rebates also available.",
+    "income_annual_max": 90000,
+    "income_note": "Official page: total household income R7,500 or less per month (R90,000/year) may qualify for discounts on water, sewerage, electricity, waste collection and property rates.",
     "requires_children": false,
     "nationality": "citizen_or_pr",
     "residency_months_min": null,
@@ -1099,10 +1099,10 @@
     ],
     "gender": "any"
    },
-   "source_url": "https://www.capetown.gov.za",
-   "source_snippet": null,
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www.capetown.gov.za/City-Connect/Apply/Financial-relief-and-rebates/Individuals/apply-for-indigent-rates-relief",
+   "source_snippet": "If your total household income is R7 500 or less per month, you could qualify for a discount on your water, sewerage, electricity, waste collection and property rates.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "ethekwini-indigent-support",
@@ -1117,7 +1117,7 @@
    "amount_max": null,
    "amount_currency": "ZAR",
    "amount_period": "monthly",
-   "amount_note": "Free basic water, electricity, sanitation and refuse plus rates relief for registered indigent households (eThekwini has the largest indigent register of the metros).",
+   "amount_note": "Indigent households: free basic electricity (65 kWh/month on prepaid meter), 6 kl free water per month, plus sanitation/refuse/rates relief under the Indigent Support Policy 2026/27 (approved 4 June 2026).",
    "is_automatic": false,
    "application_url": null,
    "application_channel": "in_person",
@@ -1157,7 +1157,7 @@
     "age_min": null,
     "age_max": null,
     "income_annual_max": null,
-    "income_note": "Free basic water, electricity, sanitation and refuse plus rates relief for registered indigent households (eThekwini has the largest indigent register of the metros).",
+    "income_note": "Income ceiling is set annually by Council at its budget meeting; the figure is not stated in the 2026/27 policy text, so income_annual_max remains null.",
     "requires_children": false,
     "nationality": "citizen_or_pr",
     "residency_months_min": null,
@@ -1169,10 +1169,10 @@
     ],
     "gender": "any"
    },
-   "source_url": "https://www.durban.gov.za",
-   "source_snippet": null,
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://economic.durban.gov.za/uploads/0000/16/2026/07/01/indigent-support-policy-2026-2027.pdf",
+   "source_snippet": "The applicant must be a person who is a South African citizen or be a permanent South African resident. ... The total household income must not exceed the total household income determined by Council at its annual budget meeting.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "tshwane-indigent-support",
@@ -1327,12 +1327,12 @@
    "amount_max": null,
    "amount_currency": "ZAR",
    "amount_period": "monthly",
-   "amount_note": "ATTP subsidy: free basic water, electricity, sanitation and refuse for registered poor households, assessed against household income.",
+   "amount_note": "Full credit on rates and refuse; 6 kl water and sewerage credit; 50 kWh free electricity per month (prepaid). Valid up to 3 years then re-apply.",
    "is_automatic": false,
    "application_url": null,
    "application_channel": "in_person",
    "deadline_type": "annual",
-   "deadline_note": "Indigent registration must usually be renewed yearly",
+   "deadline_note": "Assistance valid for a maximum of 3 years; re-application compulsory after that",
    "procedure_steps": [
     {
      "step": 1,
@@ -1366,8 +1366,8 @@
     "statuses": [],
     "age_min": null,
     "age_max": null,
-    "income_annual_max": null,
-    "income_note": "ATTP subsidy: free basic water, electricity, sanitation and refuse for registered poor households, assessed against household income.",
+    "income_annual_max": 57600,
+    "income_note": "Policy v6 (29 May 2026): joint income of account holder and co-owner must not exceed 2 x the maximum state pension per month. 2 x R2,400 = R4,800/month = R57,600/year (derived); property value cap R2m.",
     "requires_children": false,
     "nationality": "citizen_or_pr",
     "residency_months_min": null,
@@ -1379,10 +1379,10 @@
     ],
     "gender": "any"
    },
-   "source_url": "https://www.nelsonmandelabay.gov.za",
-   "source_snippet": null,
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www.nelsonmandelabay.gov.za/DataRepository/Documents/adopted-attp-version-629may26_z5KO6.pdf",
+   "source_snippet": "Where the joint income of an account holder and co-owner does not exceed (2) times the maximum state pension amount per month, such household shall be deemed to be indigent.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "joburg-pensioners-rates-rebate",
@@ -1397,9 +1397,9 @@
    "amount_max": null,
    "amount_currency": "ZAR",
    "amount_period": "monthly",
-   "amount_note": "Property rates rebate of up to 100% for pensioners aged 60+ (70+ in some brackets) who own and occupy their home; depends on household income and property value.",
+   "amount_note": "Rebate of 70-100% on rates, sewer and refuse for pensioners aged 60+ whose property value does not exceed R2,500,000 (account in applicant's name).",
    "is_automatic": false,
-   "application_url": "https://www.joburg.org.za",
+   "application_url": "https://joburg.org.za/services_/Pages/City%20Services/Rebates/Expanded-Social-Package-Rebates.aspx",
    "application_channel": "in_person",
    "deadline_type": "annual",
    "deadline_note": "Rebates are renewed periodically; re-apply before expiry",
@@ -1433,8 +1433,8 @@
     ],
     "age_min": 60,
     "age_max": null,
-    "income_annual_max": null,
-    "income_note": "Income and property-value thresholds set in the City's rates policy",
+    "income_annual_max": 90036,
+    "income_note": "Official: individual monthly income must not exceed R7,503.01 (R90,036/yr), changes annually on 1 November with CPIX; property value cap R2,500,000 for pensioners (60+); rebate 70-100%.",
     "requires_children": false,
     "nationality": "citizen_or_pr",
     "residency_months_min": null,
@@ -1446,10 +1446,10 @@
     ],
     "gender": "any"
    },
-   "source_url": "https://www.joburg.org.za",
-   "source_snippet": null,
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://joburg.org.za/services_/Pages/City%20Services/Rebates/Expanded-Social-Package-Rebates.aspx",
+   "source_snippet": "Their individual monthly income should not exceed R7503.01 (This changes annually on 01 November in line with the CPIX).",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "bng-rdp-housing",
@@ -1523,9 +1523,9 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.dhs.gov.za",
-   "source_snippet": "In most cases, BNG housing is aimed at households earning less than R3 500 per month ... must not have previously owned property",
-   "last_verified_at": "2026-08-12",
+   "source_url": "https://www.dhs.gov.za/FAQ",
+   "source_snippet": "Who qualifies for a Government House? Be a South African citizen. Earn less than R3500.01 per month per household.",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -1538,7 +1538,7 @@
    "category": "housing",
    "benefit_type": "cash_one_off",
    "amount_min": 38911,
-   "amount_max": 169265,
+   "amount_max": 169264,
    "amount_currency": "ZAR",
    "amount_period": "one_off",
    "amount_note": "Once-off subsidy of R38,911 to R169,265 for first-time home buyers earning R3,501-R22,000/month; subsidy decreases as income rises. Paid to reduce the home loan or as deposit.",
@@ -1600,9 +1600,9 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.nhfc.co.za",
-   "source_snippet": "The benefit ranges from anything between R38,911 and R169,265 depending on your monthly income ... earning between R3,501 and R22,000 a month",
-   "last_verified_at": "2026-08-12",
+   "source_url": "https://www.westerncape.gov.za/service/first-home-finance-0",
+   "source_snippet": "The subsidy amount depends on your income and ranges between R38, 911 – R169 264",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -1650,10 +1650,10 @@
    ],
    "eligibility": {
     "statuses": [],
-    "age_min": null,
+    "age_min": 21,
     "age_max": null,
-    "income_annual_max": null,
-    "income_note": "Income bands set by SHRA policy (about R1,850-R22,000/month)",
+    "income_annual_max": 264000,
+    "income_note": "Official: households earning between R1,850 and R22,000 per month (gross) = R22,200 to R264,000 per year.",
     "requires_children": false,
     "nationality": "citizen_or_pr",
     "residency_months_min": null,
@@ -1662,10 +1662,10 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.shra.org.za",
-   "source_snippet": "Social housing provides subsidised rental accommodation to low- and middle-income households through accredited social housing institutions",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www.shra.org.za/social-housing-in-south-africa-what-you-need-to-know/",
+   "source_snippet": "These units are specifically aimed at households earning between R1,850 and R22 000 per month.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "emergency-housing-programme",
@@ -1780,10 +1780,10 @@
    "amount_period": "annual",
    "amount_note": "Full-cost bursary (not repayable if you pass) covering tuition and registration plus allowances: university accommodation actual/capped cost, living allowance about R15,000/yr, transport up to R7,500/yr, learning materials about R5,200/yr, personal care R2,900/yr; TVET accommodation R15,750-R24,000/yr depending on location.",
    "is_automatic": false,
-   "application_url": "https://www.nsfas.org.za",
+   "application_url": "https://my.nsfas.org.za/",
    "application_channel": "online",
    "deadline_type": "window",
-   "deadline_note": "Applications open around September-November for the following academic year (e.g. closed 31 January for 2026 intake); returning students re-register",
+   "deadline_note": "2027 academic year applications open 18 September 2026 and close 31 October 2026 at 23:59 SAST; late applications cannot be accepted.",
    "procedure_steps": [
     {
      "step": 1,
@@ -1839,9 +1839,9 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.nsfas.org.za",
-   "source_snippet": "Come from a household earning R350,000 or less per year ... funding covers tuition, accommodation, study materials, and living allowances for students at public universities and TVET colleges",
-   "last_verified_at": "2026-08-12",
+   "source_url": "https://www.nsfas.org.za/content/how-to-apply.html",
+   "source_snippet": "Applications open 18 September 2026 and close 31 October 2026 at 23:59 South African time.",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -1857,9 +1857,9 @@
    "amount_max": null,
    "amount_currency": "ZAR",
    "amount_period": "annual",
-   "amount_note": "Multi-year bursary for teaching students (BEd, priority phases/subjects): covers tuition, accommodation, meals, books, teaching practice and a small living allowance. Recipients must teach at a public school for the same number of years funded.",
+   "amount_note": "Covers tuition, accommodation incl. meals, books, teaching practice and a small living allowance, up to a cap that differs by university. PGCE is NOT funded in 2027. Service obligation: teach one year per year funded.",
    "is_automatic": false,
-   "application_url": "https://www.eservices.gov.za",
+   "application_url": "https://www.funzalushaka.doe.gov.za",
    "application_channel": "online",
    "deadline_type": "window",
    "deadline_note": "Opens around October; closes late November for re-applications and late January for new applications",
@@ -1902,7 +1902,7 @@
      "student"
     ],
     "age_min": null,
-    "age_max": 30,
+    "age_max": 29,
     "income_annual_max": null,
     "income_note": "First-time applicants must generally be 30 or younger; academic merit and priority subjects required",
     "requires_children": false,
@@ -1913,9 +1913,9 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.education.gov.za",
-   "source_snippet": "The Funza Lushaka Bursary covers tuition fees, accommodation and meals, books and learning materials, teaching practice costs and a small living allowance; recipients must teach in public schools for the years funded",
-   "last_verified_at": "2026-08-12",
+   "source_url": "https://www.funzalushaka.doe.gov.za/Content/Documents/Funza%20Lushaka%20Bursary%20Application%20Notes%202027.pdf",
+   "source_snippet": "The bursary is only awarded to South African citizens with a valid South African ID card. ... Applicants should be below the age of 30 years to qualify for the Funza Lushaka Bursary.",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -1959,9 +1959,9 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.education.gov.za",
-   "source_snippet": "The National School Nutrition Programme (NSNP), a national initiative providing meals to vulnerable learners in Quintile 1-3 no-fee-paying schools, continues without disruption",
-   "last_verified_at": "2026-08-12",
+   "source_url": "https://www.education.gov.za/informationfor/parentsandguardians/schoolfees.aspx",
+   "source_snippet": "schools serving disadvantaged communities (Quintiles 1–3) may be declared no‑fee schools by provincial departments and do not charge school fees.",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -1977,7 +1977,7 @@
    "amount_max": null,
    "amount_currency": "ZAR",
    "amount_period": "annual",
-   "amount_note": "Full, partial or conditional exemption from school fees at fee-paying public schools, granted based on parents' combined income relative to the school fee (total exemption where income is very low relative to fees; automatic for SASSA grant recipients).",
+   "amount_note": "Full exemption if fees exceed 10% of family income; partial between 3.5% and 10%; conditional if a temporary crisis. Automatic for orphans, children in foster/youth care or child-headed households and children receiving social grants.",
    "is_automatic": false,
    "application_url": null,
    "application_channel": "in_person",
@@ -2028,10 +2028,10 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.education.gov.za",
-   "source_snippet": "Parents who cannot afford school fees may apply to the school governing body for full or partial exemption in terms of the South African Schools Act",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www.gov.za/faq/education/where-can-i-get-information-about-school-fees-and-no-fee-schools",
+   "source_snippet": "Full if fees exceed 10% of family income. Partial if between 3.5%–10%. Conditional if financial crisis is temporary.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "nsnp-school-meals",
@@ -2074,9 +2074,9 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.education.gov.za",
-   "source_snippet": "The National School Nutrition Programme (NSNP) ... providing meals to vulnerable learners in Quintile 1-3 no-fee-paying schools",
-   "last_verified_at": "2026-08-12",
+   "source_url": "https://www.gov.za/faq/education/what-national-school-nutrition-programme-nsnp",
+   "source_snippet": "Targets learners in the 60% poorest schools (Quintiles 1–3).",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -2092,7 +2092,7 @@
    "amount_max": null,
    "amount_currency": "ZAR",
    "amount_period": "monthly",
-   "amount_note": "Subsidy of R24 per child per day (increased from R17 in the 2025 Budget) paid to registered ECD programmes for children from poor households; funds staff, nutrition and operating costs, lowering or removing parent fees.",
+   "amount_note": "Subsidy is R17 per eligible child per day paid to registered ECD programmes; children qualify via an income-based means test (Child Support Grant recipients etc.).",
    "is_automatic": true,
    "application_url": null,
    "application_channel": "automatic",
@@ -2123,9 +2123,9 @@
     "income_confidence": "medium",
     "gender": "any"
    },
-   "source_url": "https://www.education.gov.za",
-   "source_snippet": "R10 billion has been set aside over the next three years to support ECD, increasing the subsidy from R17 to R24 per child per day",
-   "last_verified_at": "2026-08-12",
+   "source_url": "https://www.parliament.gov.za/news/early-childhood-development-need-better-funding-says-basic-education-committee",
+   "source_snippet": "the current subsidy is R17 per child per day",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified",
    "income_reviewed_at": "2026-08-13"
   },
@@ -2181,10 +2181,10 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.dhet.gov.za",
-   "source_snippet": "The National Skills Fund finances skills development initiatives including bursaries, learnerships and workplace-based learning for the unemployed",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www.dhet.gov.za/SitePages/NSF.aspx",
+   "source_snippet": "The NSF periodically invites expressions of interest and skills development proposals in multiple sectors from qualifying applicants nationally or related to a specific region.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "seta-learnerships",
@@ -2201,7 +2201,7 @@
    "amount_period": "monthly",
    "amount_note": "Employed and unemployed learners on registered learnerships receive a monthly stipend (amount set per learnership agreement/SETA, commonly R2,000-R6,500/month for unemployed learners) plus free accredited training.",
    "is_automatic": false,
-   "application_url": null,
+   "application_url": "https://www.sayouth.mobi",
    "application_channel": "in_person",
    "deadline_type": "window",
    "deadline_note": "Employers and SETAs advertise learnership intakes",
@@ -2247,10 +2247,10 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.dhet.gov.za",
-   "source_snippet": "Learnerships combine structured learning with workplace experience; unemployed learners receive a monthly allowance for the duration of the learnership",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www.gov.za/faq/government-services/how-do-i-register-learnership-if-unemployed",
+   "source_snippet": "Register as a work-seeker at your nearest Labour Centre so that employers can find you if they want to start a learnership.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "epwp",
@@ -2372,10 +2372,10 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.cogta.gov.za",
-   "source_snippet": "The CWP provides a regular part-time work opportunity of two days a week for unemployed people of working age in the poorest wards",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www.gov.za/CommunityWorkProgramme",
+   "source_snippet": "The CWP is designed to provide predictable local work opportunities in areas with high unemployment, serving both as an income safety net and a pathway to valuable work experience",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "beei-education-assistants",
@@ -2390,12 +2390,12 @@
    "amount_max": null,
    "amount_currency": "ZAR",
    "amount_period": "monthly",
-   "amount_note": "Short-term contracts as education assistants, general school assistants and eCadres in public schools, paid a monthly stipend (about R4,000/month in recent phases, less for part-time). Phase 5 (2025) created 204,676 opportunities for youth 18-34.",
+   "amount_note": "Short-term contracts as education assistants, general school assistants and eCadres in public schools, paid a monthly stipend (set per phase; the official page does not state the amount). Currently Phase V; youth aged 18-35.",
    "is_automatic": false,
    "application_url": "https://www.sayouth.mobi",
    "application_channel": "online",
    "deadline_type": "window",
-   "deadline_note": "Phases are announced; applications via SAYouth.mobi (zero-rated)",
+   "deadline_note": "Applications open only when a phase's application period is open; applications via SAYouth.mobi",
    "procedure_steps": [
     {
      "step": 1,
@@ -2428,7 +2428,7 @@
     "age_min": 18,
     "age_max": 35,
     "income_annual_max": null,
-    "income_note": "Unemployed youth 18-34; must live near the school",
+    "income_note": "Unemployed youth 18-35 not in education/training and not receiving a government grant; must live near the school",
     "requires_children": false,
     "nationality": "citizen_or_pr",
     "residency_months_min": null,
@@ -2437,10 +2437,10 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.education.gov.za",
-   "source_snippet": "Phase 5 of the Basic Education Employment Initiative (BEEI) was launched in June 2025, creating 204 676 job opportunities for youth aged 18-34",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www.education.gov.za/Programmes/BEEI.aspx",
+   "source_snippet": "Youth who are currently neither in education/training, nor receiving any form of government grant, as well as young people living with disability and women, are eligible and encouraged to apply",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "yes-youth-employment-service",
@@ -2455,9 +2455,9 @@
    "amount_max": null,
    "amount_currency": "ZAR",
    "amount_period": "monthly",
-   "amount_note": "12-month paid quality work experience for unemployed youth 18-35 at host companies, paid at least the national minimum wage; participating companies gain B-BBEE level recognition.",
+   "amount_note": "12-month paid work experience at host companies for unemployed youth. B-BBEE-specific programmes: black, aged 18-34, South African citizen; non-B-BBEE programmes: all races and ages may participate. Wage level is not stated on the YES FAQ page.",
    "is_automatic": false,
-   "application_url": "https://www.yes4youth.co.za",
+   "application_url": "https://www.sayouth.mobi",
    "application_channel": "online",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -2488,7 +2488,7 @@
     "age_min": 18,
     "age_max": 34,
     "income_annual_max": null,
-    "income_note": "Unemployed black youth 18-34 prioritised",
+    "income_note": "Unemployed youth; B-BBEE-specific programmes require black South African citizens aged 18-34; non-B-BBEE programmes open to all races and ages",
     "requires_children": false,
     "nationality": "citizen_or_pr",
     "residency_months_min": null,
@@ -2497,10 +2497,10 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.yes4youth.co.za",
-   "source_snippet": "YES gives youth a 12-month quality work experience and gives businesses B-BBEE level ups for creating youth jobs",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www.yes4youth.co.za/faqs/youth",
+   "source_snippet": "For a B-BBEE-specific programme candidates must be: Black, in accordance with the BEE definition, between the ages of 18 - 34 (as this is the definition of youth); and a South African citizen.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "uif-unemployment-benefit",
@@ -2512,10 +2512,10 @@
    "category": "employment",
    "benefit_type": "cash_monthly",
    "amount_min": null,
-   "amount_max": 17712,
+   "amount_max": 6730,
    "amount_currency": "ZAR",
    "amount_period": "monthly",
-   "amount_note": "38%-58% of your previous salary (lower earners get a higher percentage), capped at a remuneration ceiling of R17,712/month; payable for up to 365 days depending on credits (1 day per 4 days worked).",
+   "amount_note": "About 38% of your previous salary at the top (calculated on a salary capped at R17,712/month; maximum about R221.28 per day, roughly R6,730/month); lower earners get a higher percentage. Payable for up to 365 days, depending on credits (1 credit day per 4 days worked).",
    "is_automatic": false,
    "application_url": "https://ufiling.labour.gov.za",
    "application_channel": "online",
@@ -2571,9 +2571,9 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.labour.gov.za",
-   "source_snippet": "UIF benefit payments capped at R17,712/month. Benefits: 38%-58% of salary. Max claim period: up to 365 days",
-   "last_verified_at": "2026-08-12",
+   "source_url": "https://www.labour.gov.za/DocumentCenter/Publications/Unemployment%20Insurance%20Fund/Fact%20Sheet%20on%20the%20Calculation%20of%20normal%20UIF%20benefit.pdf",
+   "source_snippet": "the salary is capped at the ceiling amount of R17712 per month ... for every four days that you work as a contributor, you receive one day's credits subject to a maximum of 365 credit days",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -2586,10 +2586,10 @@
    "category": "family",
    "benefit_type": "cash_monthly",
    "amount_min": null,
-   "amount_max": 17712,
+   "amount_max": 11690,
    "amount_currency": "ZAR",
    "amount_period": "monthly",
-   "amount_note": "38%-58% of salary (capped at the R17,712/month ceiling) for up to 121 days (4 months) of maternity leave for contributors; also for miscarriage/stillbirth and commissioning parents.",
+   "amount_note": "Paid at a flat rate of 66% of salary (salary capped at R17,712/month, so up to about R11,690/month) for a maximum of 121 days.",
    "is_automatic": false,
    "application_url": "https://ufiling.labour.gov.za",
    "application_channel": "online",
@@ -2645,10 +2645,10 @@
     "admin_areas": [],
     "gender": "female"
    },
-   "source_url": "https://www.labour.gov.za",
-   "source_snippet": "Contributors on maternity leave can claim up to 121 days of UIF maternity benefits",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www.labour.gov.za/DocumentCenter/Publications/Unemployment%20Insurance%20Fund/KNOW%20YOUR%20UIF%20RIGHTS%202022.pdf",
+   "source_snippet": "Benefits are payable at a flat rate of 66% to a female contributor, for confinement or the period after birth of a child. Maternity benefits will be paid for a maximum of 121 days.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "uif-illness-benefit",
@@ -2660,10 +2660,10 @@
    "category": "employment",
    "benefit_type": "cash_monthly",
    "amount_min": null,
-   "amount_max": 17712,
+   "amount_max": 11690,
    "amount_currency": "ZAR",
    "amount_period": "monthly",
-   "amount_note": "38%-58% of salary (capped at the R17,712/month ceiling) when a contributor cannot work due to illness for more than 14 days and receives reduced or no pay.",
+   "amount_note": "Paid at 66% of salary (salary capped at R17,712/month, so up to about R11,690/month), as the difference between what your employer pays and the prescribed rate; up to 365 days depending on credits.",
    "is_automatic": false,
    "application_url": "https://ufiling.labour.gov.za",
    "application_channel": "online",
@@ -2719,10 +2719,10 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.labour.gov.za",
-   "source_snippet": "Illness benefits are paid to contributors who cannot work because of illness for more than two weeks",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www.labour.gov.za/DocumentCenter/Publications/Unemployment%20Insurance%20Fund/Fact%20Sheet%20on%20the%20Calculation%20of%20normal%20UIF%20benefit.pdf",
+   "source_snippet": "MATERNITY, ILLNESS, PARENTAL AND ADOPTION: Daily benefit amount (DBA) = 66% of income capped at R17712 per month.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "uif-dependants-benefit",
@@ -2734,10 +2734,10 @@
    "category": "family",
    "benefit_type": "cash_monthly",
    "amount_min": null,
-   "amount_max": 17712,
+   "amount_max": null,
    "amount_currency": "ZAR",
    "amount_period": "monthly",
-   "amount_note": "38%-58% of the deceased contributor's salary (capped at the R17,712/month ceiling) paid to the surviving spouse/life partner, then dependent children, of a deceased UIF contributor.",
+   "amount_note": "Paid to the surviving spouse/life partner and dependent children of a deceased UIF contributor at the rate in the UI Act benefits schedule, based on the deceased's salary capped at R17,712/month. The surviving spouse must apply within 18 months of the contributor's death.",
    "is_automatic": false,
    "application_url": "https://ufiling.labour.gov.za",
    "application_channel": "in_person",
@@ -2791,10 +2791,10 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.labour.gov.za",
-   "source_snippet": "The dependants of a deceased contributor can claim UIF benefits from the Fund",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www.labour.gov.za/DocumentCenter/Publications/Unemployment%20Insurance%20Fund/KNOW%20YOUR%20UIF%20RIGHTS%202022.pdf",
+   "source_snippet": "The surviving spouse/life partner must apply for benefits within 18 months from the date of death of the contributor.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "uif-adoption-benefit",
@@ -2806,10 +2806,10 @@
    "category": "family",
    "benefit_type": "cash_monthly",
    "amount_min": null,
-   "amount_max": 17712,
+   "amount_max": 11690,
    "amount_currency": "ZAR",
    "amount_period": "monthly",
-   "amount_note": "38%-58% of salary (capped at the R17,712/month ceiling) for contributors who legally adopt a child under two years old and take adoption leave; only one adopting parent may claim.",
+   "amount_note": "Paid at 66% of salary (salary capped at R17,712/month, so up to about R11,690/month), as the difference between what your employer pays and the prescribed rate.",
    "is_automatic": false,
    "application_url": "https://ufiling.labour.gov.za",
    "application_channel": "online",
@@ -2860,10 +2860,10 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.labour.gov.za",
-   "source_snippet": "Contributors who adopt a child under the age of two can claim adoption benefits",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www.labour.gov.za/DocumentCenter/Publications/Unemployment%20Insurance%20Fund/Fact%20Sheet%20on%20the%20Calculation%20of%20normal%20UIF%20benefit.pdf",
+   "source_snippet": "MATERNITY, ILLNESS, PARENTAL AND ADOPTION: Daily benefit amount (DBA) = 66% of income capped at R17712 per month.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "coida-compensation-fund",
@@ -2934,10 +2934,10 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.labour.gov.za",
-   "source_snippet": "The Compensation Fund is a South African government fund established under the Compensation for Occupational Injuries and Diseases Act (COIDA)",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www.gov.za/services/compensation-fund/claim-occupational-injuries-or-disease",
+   "source_snippet": "You can claim if you are: an apprentice or trainee farm worker; a domestic worker employed at a private home; a worker who doesn't work under the control of an employer, for example a sub-contractor.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "employment-tax-incentive",
@@ -3038,9 +3038,9 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.health.gov.za",
+   "source_url": "https://www.ldoh.gov.za/ldoh-admin/documents/latestnews/documents/LDoH%20Departmental%20Revenue%20circular%2013%20of%202025%20on%20UPFS%202025-2026.pdf",
    "source_snippet": "Under the NHA framework, irrespective of nationality and migration status: Everyone is entitled to free primary health services, including people with communicable diseases such as HIV and TB",
-   "last_verified_at": "2026-08-12",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -3084,9 +3084,9 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.health.gov.za",
+   "source_url": "https://www.ldoh.gov.za/ldoh-admin/documents/latestnews/documents/LDoH%20Departmental%20Revenue%20circular%2013%20of%202025%20on%20UPFS%202025-2026.pdf",
    "source_snippet": "Maternity care is an integral component of primary health care and a free health service for pregnant women (National Department of Health maternity care guidelines)",
-   "last_verified_at": "2026-08-12",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -3251,7 +3251,7 @@
    "application_url": "https://www.raf.co.za",
    "application_channel": "in_person",
    "deadline_type": "rolling",
-   "deadline_note": "Claims generally within 3 years of the accident (2 years for hit-and-run)",
+   "deadline_note": "Claims against an identified driver must be lodged within three years of the accident and finalised within five years",
    "procedure_steps": [
     {
      "step": 1,
@@ -3305,9 +3305,9 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.raf.co.za/Claims/Pages/How-To-Claim.aspx",
-   "source_snippet": "RAF claims documentation includes RAF 4 Serious Injury Report, employer's certificate showing remuneration, and itemised tax invoices for past medical expenses",
-   "last_verified_at": "2026-08-12",
+   "source_url": "https://www.raf.co.za/Claims/Pages/FAQ.aspx",
+   "source_snippet": "Identified claims ... must be lodged with the Fund within three years from the date of the accident and must be finalised within five years from the date of the accident.",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -3323,7 +3323,7 @@
    "amount_max": null,
    "amount_currency": "ZAR",
    "amount_period": "one_off",
-   "amount_note": "Free legal representation and advice in criminal and qualifying civil matters for people who cannot afford a lawyer (means test: income roughly below R8,200/month single or per household rule-of-thumb; children always qualify).",
+   "amount_note": "Free legal representation and advice in criminal and qualifying civil matters for people who cannot afford a lawyer. Means test: an employed individual must earn less than R9,400/month after tax; households less than R10,200/month; land matters R13,625/month.",
    "is_automatic": false,
    "application_url": "https://legal-aid.co.za",
    "application_channel": "in_person",
@@ -3358,9 +3358,9 @@
     "age_min": null,
     "age_max": null,
     "income_annual_max": 112800,
-    "income_note": "Legal Aid SA's official means test (page live 2026): an employed individual must earn less than R9,400 per month after tax — R112,800/year. For a household sharing costs, the combined limit is R10,200/month. Asset tests also apply. Children in criminal matters qualify regardless of means; thresholds are adjusted annually with CPI.",
+    "income_note": "Legal Aid SA means test: employed individual under R9,400/month after tax (R112,800/year); household under R10,200/month; land matters R13,625/month. Children in criminal cases qualify automatically. Non-citizens living in SA can get legal aid only in criminal matters, matters involving children, and asylum applications under the Refugees Act; in civil cases legal aid is not available to non-citizens.",
     "requires_children": false,
-    "nationality": "any_resident",
+    "nationality": "citizen_or_pr",
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
@@ -3370,9 +3370,9 @@
     "income_confidence": "high",
     "gender": "any"
    },
-   "source_url": "https://legal-aid.co.za",
-   "source_snippet": "Legal Aid SA provides legal aid at state expense to those who cannot afford legal representation, subject to a means test",
-   "last_verified_at": "2026-08-12",
+   "source_url": "https://legal-aid.co.za/how-it-works/",
+   "source_snippet": "Legal aid is available to anyone who lives in South Africa (not only South African citizens) if the case: is criminal, involves children, involves asylum seekers ... In civil cases legal aid is not available to non-citizens.",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified",
    "income_reviewed_at": "2026-08-13"
   },
@@ -3433,10 +3433,10 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.dmv.gov.za",
-   "source_snippet": "The Military Veterans Act provides benefits including housing, health care, education support and a pension for qualifying military veterans",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "http://www.dmv.gov.za/",
+   "source_snippet": "MILITARY VETERANS BENEFITS - Benefits as listed in the Military Veterans Act - Burial Support - Education Support - Health Care - Housing - Military Veterans Pension",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "free-first-id-birth-registration",
@@ -3509,13 +3509,13 @@
    "funder": "Small Enterprise Finance Agency (sefa, under DSBD)",
    "category": "business",
    "benefit_type": "cash_one_off",
-   "amount_min": null,
-   "amount_max": null,
+   "amount_min": 50000,
+   "amount_max": 5000000,
    "amount_currency": "ZAR",
    "amount_period": "one_off",
-   "amount_note": "Development loan finance for small and micro enterprises (survivalist, micro, small and medium loans, and property/bridging finance), ranging from tens of thousands up to R15 million, at development rates; not a grant - repayable.",
+   "amount_note": "Development loan finance for small and micro enterprises, loan range R50,000 to R5 million, at development rates; repayable (not a grant).",
    "is_automatic": false,
-   "application_url": "https://www.sefa.org.za",
+   "application_url": "https://systems.sefa.org.za/onlineapplication/admin/onlineapplication/OnlineApplicationTC.aspx",
    "application_channel": "online",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -3565,9 +3565,9 @@
     "gender": "any"
    },
    "source_url": "https://www.sefa.org.za",
-   "source_snippet": "sefa provides financial products and services to survivalist, micro, small and medium enterprises",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_snippet": "Loan Range R50K to R5m All races with specific emphasis on women, rural and peri-urban",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "seda-small-business-support",
@@ -3619,9 +3619,9 @@
     "gender": "any"
    },
    "source_url": "https://www.seda.org.za",
-   "source_snippet": "SEDA provides non-financial business development and support services to small enterprises through its national branch network",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_snippet": "SEDA Talk - clients who want information on starting a business; SEDA Build - skills to sustain and strengthen their businesses; SEDA Grow - grow and expand nationally and internationally",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "nyda-youth-enterprise-support",
@@ -3633,12 +3633,12 @@
    "category": "business",
    "benefit_type": "cash_one_off",
    "amount_min": null,
-   "amount_max": null,
+   "amount_max": 200000,
    "amount_currency": "ZAR",
    "amount_period": "one_off",
-   "amount_note": "Grant funding and business development vouchers for youth-owned (18-35) enterprises: grants have historically ranged from R1,000 to R250,000 (typically R5,000-R100,000 for micro-enterprises) plus free mentorship and business skills training.",
+   "amount_note": "NYDA Grant Programme: an individual or business may not receive more than R200,000 cumulative grant funding from NYDA in their lifetime (cooperatives in agriculture and technology up to R250,000). The page does not mention vouchers.",
    "is_automatic": false,
-   "application_url": "https://erp.nyda.gov.za",
+   "application_url": "https://erp.nyda.gov.za/register",
    "application_channel": "online",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -3674,7 +3674,7 @@
     "age_min": 18,
     "age_max": 35,
     "income_annual_max": null,
-    "income_note": "Youth-owned businesses (ownership 26%+ by youth aged 18-35)",
+    "income_note": "Youth aged 18-35, South African citizens and residents, with relevant skills; must apply 3 months before turning 35; business management training and a 10-minute pitch required",
     "requires_children": false,
     "nationality": "citizen_or_pr",
     "residency_months_min": null,
@@ -3683,10 +3683,10 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.nyda.gov.za",
-   "source_snippet": "The NYDA Grant Programme provides young entrepreneurs with grant funding and business development support to start and grow businesses",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www.nyda.gov.za/Products-Services/NYDA-Grant-Programme.html",
+   "source_snippet": "An individual or business shall not receive a cumulative grant amount above R200 000 from NYDA during their lifetime except for cooperatives (for agriculture and technology related projects the maximum cumulative value is R250,000.00).",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "trep-township-rural-entrepreneurship",
@@ -3701,7 +3701,7 @@
    "amount_max": null,
    "amount_currency": "ZAR",
    "amount_period": "one_off",
-   "amount_note": "Blended grant-and-loan support for township and rural micro and small enterprises (informal traders, general dealers, spazas, clothing, automotive repair, bakeries etc.), combining a grant component with sefa development finance plus capacity support.",
+   "amount_note": "Blended finance of 50% grant and 50% loan for township and rural enterprises; maximum grant R50,000 in the programme brochure (the application form states a higher cap for some schemes); at least 60% of support for women-owned and 40% for youth-owned businesses. Business development support also offered.",
    "is_automatic": false,
    "application_url": "https://www.dsbd.gov.za",
    "application_channel": "online",
@@ -3742,10 +3742,10 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.dsbd.gov.za",
-   "source_snippet": "TREP supports township and rural enterprises through blended finance (grant plus loan) and business development support",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "http://www.dsbd.gov.za/sites/default/files/publications/trep-brochure.pdf",
+   "source_snippet": "The financial package will be offered in the form of a blended finance with 50% of the total approved amount being a Grant (i.e. maximum grant amount of R50 000).",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "black-industrialists-scheme",
@@ -3762,10 +3762,10 @@
    "amount_period": "one_off",
    "amount_note": "Cost-sharing grant of 30%-50% of qualifying investment (up to R50 million) for majority black-owned manufacturers to expand productive capacity, machinery and working capital.",
    "is_automatic": false,
-   "application_url": "https://www.thedtic.gov.za",
+   "application_url": "https://www.thedtic.gov.za/financial-and-non-financial-support/incentives/black-industrialists-scheme-bis/",
    "application_channel": "in_person",
    "deadline_type": "window",
-   "deadline_note": "Applications per dtic incentive guidelines",
+   "deadline_note": "Applications must be submitted through the dtic Online Incentive Solution (OIS) since 1 June 2026; email applications no longer accepted",
    "procedure_steps": [
     {
      "step": 1,
@@ -3797,7 +3797,7 @@
     "age_min": null,
     "age_max": null,
     "income_annual_max": null,
-    "income_note": "Majority black-owned and managed manufacturing enterprises",
+    "income_note": "Majority (>51%) black-owned and managed manufacturing enterprises; 'black people' means South African citizens by birth/descent or naturalised before 27 April 1994 (or entitled to be)",
     "requires_children": false,
     "nationality": "citizen_or_pr",
     "residency_months_min": null,
@@ -3806,10 +3806,10 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.thedtic.gov.za",
-   "source_snippet": "The Black Industrialists Scheme offers a cost-sharing grant towards capital investment, feasibility studies and business development services",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www.thedtic.gov.za/financial-and-non-financial-support/incentives/black-industrialists-scheme-bis/",
+   "source_snippet": "The BIS offers a cost-sharing grant ranging from 30% to 50% to approved entities to a maximum of R50 million.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "emia-export-marketing",
@@ -3826,7 +3826,7 @@
    "amount_period": "one_off",
    "amount_note": "Partial reimbursement of export marketing costs: participation in international trade exhibitions, missions and primary export market research for emerging exporters (including individuals and SMMEs).",
    "is_automatic": false,
-   "application_url": "https://www.thedtic.gov.za",
+   "application_url": "https://www.thedtic.gov.za/financial-and-non-financial-support/incentives/export-marketing-and-investment-assistance/",
    "application_channel": "online",
    "deadline_type": "window",
    "deadline_note": "Apply before the event per EMIA guidelines",
@@ -3861,7 +3861,7 @@
     "age_min": null,
     "age_max": null,
     "income_annual_max": null,
-    "income_note": "Emerging exporters, SMMEs, HDI-owned entities get preferential rates",
+    "income_note": "Entities must have traded for more than one financial year, irrespective of turnover; third-party payments are not reimbursed",
     "requires_children": false,
     "nationality": "citizen_or_pr",
     "residency_months_min": null,
@@ -3870,10 +3870,10 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.thedtic.gov.za",
-   "source_snippet": "EMIA aims to develop export markets for South African goods and services by partially compensating exporters for qualifying marketing costs",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www.thedtic.gov.za/financial-and-non-financial-support/incentives/export-marketing-and-investment-assistance/",
+   "source_snippet": "all entities accessing the EMIA fund should have traded for more than one financial year irrespective of the annual turnover.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "casp-agricultural-support",
@@ -3922,7 +3922,7 @@
     "statuses": [
      "self_employed"
     ],
-    "age_min": null,
+    "age_min": 18,
     "age_max": null,
     "income_annual_max": null,
     "income_note": "Subsistence, smallholder and previously disadvantaged commercial farmers",
@@ -3934,10 +3934,10 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.dalrrd.gov.za",
-   "source_snippet": "CASP provides post-settlement support to targeted beneficiaries of land reform and other producers who have acquired land through private means",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www.nda.gov.za/images/Branches/Economica%20Development%20Trade%20and%20Marketing/agro-processing/casp-projects/casp-contact-list.pdf",
+   "source_snippet": "Who may apply? smallholder farmers; must be 18 years or older; land and agrarian reform beneficiaries; farm workers; self-help groups (SHGs)/cooperatives; small agribusinesses;",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "ilima-letsema-grants",
@@ -3981,7 +3981,7 @@
     "statuses": [
      "self_employed"
     ],
-    "age_min": null,
+    "age_min": 18,
     "age_max": null,
     "income_annual_max": null,
     "income_note": "Vulnerable households, subsistence and smallholder producers",
@@ -3993,10 +3993,10 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.dalrrd.gov.za",
-   "source_snippet": "The Ilima/Letsema programme aims to increase food production through support to subsistence, smallholder and household food producers",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www.nda.gov.za/images/Branches/FoodSecurityAgrReform/national-extension-reform/nat-extent-reform-docs/approved_national-policy-on-comprehensive-producer-development-support-npcpds.pdf",
+   "source_snippet": "The purpose of the Ilima/Letsema Program is to provide grant to household producers to increase agricultural production.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "landbank-blended-finance",
@@ -4062,10 +4062,10 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.landbank.co.za",
-   "source_snippet": "The Blended Finance Scheme combines a government grant with a Land Bank loan to support black commercial farmers",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://landbank.co.za/Products-and-Services/Documents/Blended-Finance/Blended%20Finance%20brochure.pdf",
+   "source_snippet": "QUALIFYING CRITERIA South African citizens with a valid ID and/or registered business entity. Applicant must be a black South African as defined by the ...",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "prasa-metrorail-subsidised-fares",
@@ -4245,10 +4245,10 @@
     ],
     "gender": "any"
    },
-   "source_url": "https://www.education.gov.za",
-   "source_snippet": "Provincial education departments provide scholar transport to learners who live more than a prescribed distance (usually 5 km) from the nearest suitable school",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www.education.gov.za/ArchivedDocuments/ArchivedArticles/Learner-Transport-broadens-access-to-quality-education-in-South-Africa-0224.aspx",
+   "source_snippet": "According to the Policy, learners who walk a minimum of 5 kilometres to and from the nearest appropriate schools qualify as scholar transport beneficiaries.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   }
  ]
 }

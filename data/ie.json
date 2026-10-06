@@ -17,9 +17,9 @@
    "amount_max": 140,
    "amount_currency": "EUR",
    "amount_period": "monthly",
-   "amount_note": "€140 per month per child (2026); €210/month for twins, €280/month for triplets; a €280 New Baby Grant is paid for each new child in addition to the first month's Child Benefit",
+   "amount_note": "€140 per month per child; twins €210 for each child; other multiple births €280 for each child. A €280 Newborn Baby Grant is paid in addition to the first month of Child Benefit for children born on or after 1 December 2024. Paid for children under 16, or under 19 in full-time education/training or with a disability.",
    "is_automatic": true,
-   "application_url": "https://services.mywelfare.ie/en/topics/parents-children-family/",
+   "application_url": "https://services.mywelfare.ie/en/topics/parents-children-family/child-benefit/",
    "application_channel": "automatic",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -52,7 +52,7 @@
     "age_min": null,
     "age_max": null,
     "income_annual_max": null,
-    "income_note": null,
+    "income_note": "Not means-tested. Habitual Residence Condition applies to all applicants regardless of nationality.",
     "requires_children": true,
     "nationality": "any_resident",
     "residency_months_min": null,
@@ -61,9 +61,9 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.citizensinformation.ie/en/social-welfare/families-and-children/child-benefit/",
-   "source_snippet": "Rates: €140/month standard, €210/month twins, €280/month triplets, €280 New Baby Grant",
-   "last_verified_at": "2026-08-12",
+   "source_url": "https://www.gov.ie/en/department-of-social-protection/services/child-benefit/",
+   "source_snippet": "Child Benefit is a monthly payment of €140 to support parents and guardians. A Newborn Baby Grant of €280, in addition to the first month of Child Benefit, will be paid to children born on or after 1 December 2024.",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -78,10 +78,10 @@
    "amount_min": null,
    "amount_max": null,
    "amount_currency": "EUR",
-   "amount_period": "monthly",
+   "amount_period": "weekly",
    "amount_note": "Tax-free weekly payment equal to 60% of the gap between net family income and the income limit for family size (minimum €20/week); 2026 weekly limits: 1 child €765, 2 children €866, 3 children €967",
    "is_automatic": false,
-   "application_url": "https://services.mywelfare.ie/en/topics/families-and-children/",
+   "application_url": "https://services.mywelfare.ie/en/topics/parents-children-family/working-family-payment/",
    "application_channel": "online",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -131,9 +131,9 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.citizensinformation.ie/en/social-welfare/families-and-children/working-family-payment/",
-   "source_snippet": "As of 1st January 2026, the weekly and annual family income limits for Working Family Payment are: One child - Weekly Limit €765 - Annual Limit €39,780",
-   "last_verified_at": "2026-08-12",
+   "source_url": "https://www.gov.ie/en/department-of-social-protection/services/working-family-payment-wfp/",
+   "source_snippet": "The Working Family Payment you receive is 60% of the difference between your average weekly family income and the income limit that applies to your family. One child | €765 | €39,780",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -151,7 +151,7 @@
    "amount_period": "weekly",
    "amount_note": "€299 per week (2026), paid for 26 weeks; PRSI-based, not means-tested",
    "is_automatic": false,
-   "application_url": "https://services.mywelfare.ie/en/topics/parents-children-family/",
+   "application_url": "https://services.mywelfare.ie/en/topics/parents-children-family/maternity-benefit/",
    "application_channel": "online",
    "deadline_type": "rolling",
    "deadline_note": "Apply at least 6 weeks before you intend to start maternity leave (12 weeks if self-employed)",
@@ -202,9 +202,9 @@
     "admin_areas": [],
     "gender": "female"
    },
-   "source_url": "https://www.citizensinformation.ie/en/social-welfare/families-and-children/maternity-benefit/",
-   "source_snippet": "Maternity Benefit 2026: €299 per week (up from €289 in 2025)",
-   "last_verified_at": "2026-08-12",
+   "source_url": "https://www.gov.ie/en/department-of-social-protection/services/maternity-benefit/",
+   "source_snippet": "Maternity Benefit is €299 a week for 26 weeks, or 156 days.",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -222,7 +222,7 @@
    "amount_period": "weekly",
    "amount_note": "€299 per week (2026) for 2 weeks of paternity leave taken within 6 months of the birth or adoption",
    "is_automatic": false,
-   "application_url": "https://services.mywelfare.ie/en/topics/parents-children-family/",
+   "application_url": "https://services.mywelfare.ie/en/topics/parents-children-family/paternity-benefit/",
    "application_channel": "online",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -268,9 +268,9 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.citizensinformation.ie/en/social-welfare/families-and-children/paternity-benefit/",
-   "source_snippet": "Paternity Benefit 2026: €299 per week",
-   "last_verified_at": "2026-08-12",
+   "source_url": "https://www.gov.ie/en/department-of-social-protection/services/paternity-benefit/",
+   "source_snippet": "Paternity Benefit is €299 a week, for two weeks, which must be taken consecutively.",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -288,7 +288,7 @@
    "amount_period": "weekly",
    "amount_note": "€299 per week (2026) for each parent during parent's leave: 9 weeks per child for children born/adopted after 1 August 2024, taken before the child turns 2 (or within 2 years of adoption)",
    "is_automatic": false,
-   "application_url": "https://services.mywelfare.ie/en/topics/parents-children-family/",
+   "application_url": "https://services.mywelfare.ie/en/topics/parents-children-family/parents-benefit/",
    "application_channel": "online",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -334,9 +334,9 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.citizensinformation.ie/en/social-welfare/families-and-children/parents-benefit/",
-   "source_snippet": "Parent's Benefit 2026: €299 per week",
-   "last_verified_at": "2026-08-12",
+   "source_url": "https://www.gov.ie/en/department-of-social-protection/services/parents-benefit/",
+   "source_snippet": "Parent’s Benefit is currently €299 a week for nine weeks.",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -354,7 +354,7 @@
    "amount_period": "weekly",
    "amount_note": "€299 per week (2026) paid for 24 weeks of adoptive leave from placement of the child",
    "is_automatic": false,
-   "application_url": "https://services.mywelfare.ie/en/topics/parents-children-family/",
+   "application_url": "https://www.gov.ie/en/department-of-social-protection/services/adoptive-benefit/",
    "application_channel": "online",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -400,9 +400,9 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.citizensinformation.ie/en/social-welfare/families-and-children/adoptive-benefit/",
-   "source_snippet": "Adoptive Benefit 2026: €299 per week",
-   "last_verified_at": "2026-08-12",
+   "source_url": "https://www.gov.ie/en/department-of-social-protection/services/adoptive-benefit/",
+   "source_snippet": "Adoptive Benefit is €299 per week for 24 weeks.",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -414,13 +414,13 @@
    "funder": "Department of Social Protection (DSP)",
    "category": "family",
    "benefit_type": "cash_monthly",
-   "amount_min": null,
+   "amount_min": 114,
    "amount_max": 254,
    "amount_currency": "EUR",
    "amount_period": "weekly",
-   "amount_note": "Maximum €254 per week (2026); for pregnant or breastfeeding employees granted health and safety leave because their workplace risk cannot be removed",
+   "amount_note": "Standard rate €254 a week if average weekly earnings are €300+ in the relevant tax year (2024 for 2026 claims); reduced personal rates €198.90, €163.70 or €114 for lower earnings. Employer pays normal wage for the first 3 weeks.",
    "is_automatic": false,
-   "application_url": "https://services.mywelfare.ie",
+   "application_url": "https://www.gov.ie/en/department-of-social-protection/services/health-and-safety-benefit/",
    "application_channel": "post",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -469,9 +469,9 @@
     "admin_areas": [],
     "gender": "female"
    },
-   "source_url": "https://www.citizensinformation.ie/en/social-welfare/families-and-children/health-safety-benefit/",
-   "source_snippet": "Health and Safety Benefit maximum personal rate 2026: €254 per week; employer pays normal wage for the first 21 days",
-   "last_verified_at": "2026-08-12",
+   "source_url": "https://www.gov.ie/en/department-of-social-protection/services/health-and-safety-benefit/",
+   "source_snippet": "The standard rate is €254 a week. However, the weekly rate you may get depends on how much you earn in the relevant tax year.",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -489,7 +489,7 @@
    "amount_period": "monthly",
    "amount_note": "€380 per month (2026) per qualifying child; not means-tested; paid on the third Tuesday of each month; DCA children also qualify for a medical card without a means test and the annual Carer's Support Grant",
    "is_automatic": false,
-   "application_url": "https://services.mywelfare.ie/en/topics/carers/",
+   "application_url": "https://services.mywelfare.ie/en/topics/health-disability-illness/",
    "application_channel": "online",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -539,9 +539,9 @@
     "income_source_url": "https://www.citizensinformation.ie/en/social-welfare/disability-and-illness/domiciliary-care-allowance/",
     "income_confidence": "high"
    },
-   "source_url": "https://www.citizensinformation.ie/en/social-welfare/disability-and-illness/domiciliary-care-allowance/",
-   "source_snippet": "In 2026, the Domiciliary Care Allowance (DCA) rate is €380 per month. DCA is paid on the third Tuesday of every month for the current month.",
-   "last_verified_at": "2026-08-12",
+   "source_url": "https://www.gov.ie/en/department-of-social-protection/services/domiciliary-care-allowance/",
+   "source_snippet": "Domiciliary Care Allowance is a monthly payment for a child with a severe disability. Full rate (when you care for your child five to seven days a week) | €380.00",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified",
    "income_reviewed_at": "2026-08-13"
   },
@@ -560,7 +560,7 @@
    "amount_period": "annual",
    "amount_note": "€2,000 per year for each person you care for; not means-tested and not taxable; paid on the first Thursday in June",
    "is_automatic": true,
-   "application_url": "https://services.mywelfare.ie/en/topics/carers/",
+   "application_url": "https://www.gov.ie/en/department-of-social-protection/services/carers-support-grant/",
    "application_channel": "automatic",
    "deadline_type": "annual",
    "deadline_note": "Paid automatically each June; if not on a qualifying payment, apply between April of the payment year and 31 December of the following year",
@@ -597,9 +597,9 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.citizensinformation.ie/en/social-welfare/carers/carers-support-grant/",
-   "source_snippet": "The Respite Care Grant is worth €2,000 in 2026 for each eligible person receiving care. It is paid annually on the first Thursday in June; not means-tested, fully exempt from income tax.",
-   "last_verified_at": "2026-08-12",
+   "source_url": "https://www.gov.ie/en/department-of-social-protection/services/carers-support-grant/",
+   "source_snippet": "The Carer’s Support Grant is €2,000 for each person you are caring for. It is paid once each year, usually on the first Thursday in June.",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -620,7 +620,7 @@
    "application_url": "https://services.mywelfare.ie/en/topics/parents-children-family/back-to-school-clothing-footwear-allowance/",
    "application_channel": "automatic",
    "deadline_type": "window",
-   "deadline_note": "Applications open in June and close on 30 September each year",
+   "deadline_note": "Scheme is open 1 June to 30 September each year. Applications for 2026 closed on 30 September 2026; the 2027 scheme opens in June 2027.",
    "procedure_steps": [
     {
      "step": 1,
@@ -647,8 +647,8 @@
    ],
    "eligibility": {
     "statuses": [],
-    "age_min": null,
-    "age_max": null,
+    "age_min": 2,
+    "age_max": 22,
     "income_annual_max": 36088,
     "income_note": "Weekly household income limits x52: 1 child EUR694 = EUR36,088/yr (value shown); 2 children EUR756; 3 EUR818; 4 EUR880; +EUR62/wk per additional child (2025 limits). WFP, Child Benefit, HAP, Rent Supplement, DCA and Guardian's payments are excluded from means.",
     "requires_children": true,
@@ -660,8 +660,8 @@
     "gender": "any"
    },
    "source_url": "https://www.gov.ie/en/department-of-social-protection/services/back-to-school-clothing-and-footwear-allowance/",
-   "source_snippet": "The payment rate for the BSCFA in 2026 is: €160 for a child aged 2 to 11, €285 for a child aged 12 to 22 years in full-time school education",
-   "last_verified_at": "2026-08-12",
+   "source_snippet": "Applications for the 2026 Back to School Clothing and Footwear Allowance closed on 30 September 2026. The 2027 Back to School Clothing and Footwear Allowance will open in June 2027.",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -677,9 +677,9 @@
    "amount_max": 254,
    "amount_currency": "EUR",
    "amount_period": "weekly",
-   "amount_note": "PRSI-based payment; maximum personal rate €254 per week (2026) where average weekly earnings were €300+; paid for up to 9 months (6 months with fewer than 260 contributions)",
+   "amount_note": "PRSI-based payment; maximum personal rate €254 per week (2026) where average weekly earnings were €300+; paid for up to 9 months (6 months with fewer than 260 contributions) NOTE: from 31 March 2025 Jobseeker's Pay-Related Benefit replaces Jobseeker's Benefit for people who are fully unemployed and whose last day of employment was on or after 28 March 2025; Jobseeker's Benefit now mainly covers part-time, casual, short-time and seasonal workers.",
    "is_automatic": false,
-   "application_url": "https://services.mywelfare.ie/en/topics/jobseekers/",
+   "application_url": "https://services.mywelfare.ie/en/topics/out-of-work-payments/apply-for-jobseekers-payment/",
    "application_channel": "online",
    "deadline_type": "rolling",
    "deadline_note": "Claim as soon as you become unemployed; payment only starts from the date of application",
@@ -718,7 +718,7 @@
      "jobseeker"
     ],
     "age_min": 18,
-    "age_max": null,
+    "age_max": 66,
     "income_annual_max": null,
     "income_note": "Not means-tested but depends on PRSI record; rate bands: €254/€198.90/€163.70/€114 depending on previous average weekly earnings",
     "requires_children": false,
@@ -729,9 +729,9 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.citizensinformation.ie/en/social-welfare/unemployed-people/jobseekers-benefit/",
-   "source_snippet": "Jobseeker's Benefit maximum personal rate 2026: €254 per week (average weekly earnings €300 or more); normally paid for a maximum of 9 months",
-   "last_verified_at": "2026-08-12",
+   "source_url": "https://www.gov.ie/en/department-of-social-protection/services/jobseekers-benefit/",
+   "source_snippet": "Jobseeker's Benefit is a payment for people between 18 and 66 years of age who are part-time, casual, short-time and seasonal workers. Full weekly payment | €254",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -749,7 +749,7 @@
    "amount_period": "weekly",
    "amount_note": "Means-tested payment; maximum personal rate €254 per week aged 25+ (2026), €163.70 aged 18-24 (€254 if living independently with State housing support); no time limit while eligible",
    "is_automatic": false,
-   "application_url": "https://services.mywelfare.ie/en/topics/jobseekers/",
+   "application_url": "https://services.mywelfare.ie/en/topics/out-of-work-payments/apply-for-jobseekers-payment/",
    "application_channel": "online",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -788,7 +788,7 @@
      "jobseeker"
     ],
     "age_min": 18,
-    "age_max": null,
+    "age_max": 65,
     "income_annual_max": 13208,
     "income_note": "Weekly means test on income, capital (first EUR20,000 disregarded) and partner's earnings. Indicative single-person ceiling: max personal rate EUR254/wk x52 = EUR13,208 (value shown); part-time earnings disregards mean the effective ceiling is higher.",
     "requires_children": false,
@@ -799,9 +799,9 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.citizensinformation.ie/en/social-welfare/unemployed-people/jobseekers-allowance/",
-   "source_snippet": "Jobseeker's Allowance maximum personal rate 2026: €254 per week (aged 25 and over); your income, savings, and your partner's income are all assessed",
-   "last_verified_at": "2026-08-12",
+   "source_url": "https://www.gov.ie/en/department-of-social-protection/services/jobseekers-allowance/",
+   "source_snippet": "If you have no means, are aged 25 or over, and you are single, you will get the full weekly payment of €254.",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -819,7 +819,7 @@
    "amount_period": "weekly",
    "amount_note": "Maximum personal rate €254 per week (2026) plus €58 per child under 12 and €78 per child aged 12+; means-tested, for lone parents whose youngest child is under 7 (exceptions apply)",
    "is_automatic": false,
-   "application_url": "https://services.mywelfare.ie/en/topics/families-and-children/",
+   "application_url": "https://www.gov.ie/en/department-of-social-protection/services/one-parent-family-payment/",
    "application_channel": "online",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -870,9 +870,9 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.citizensinformation.ie/en/social-welfare/families-and-children/one-parent-family-payment/",
-   "source_snippet": "One-Parent Family Payment rate 2026: maximum personal weekly rate €254; child under 12: €58; child aged 12 and over: €78",
-   "last_verified_at": "2026-08-12",
+   "source_url": "https://www.gov.ie/en/department-of-social-protection/services/one-parent-family-payment/",
+   "source_snippet": "The maximum rate of One-Parent Family Payment is €254 a week, plus a Child Support Payment for each qualified child.",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -890,7 +890,7 @@
    "amount_period": "weekly",
    "amount_note": "Maximum personal rate €254 per week (2026) plus child increases; for lone parents whose youngest child is aged 7-13; no requirement to be available for full-time work",
    "is_automatic": false,
-   "application_url": "https://services.mywelfare.ie/en/topics/jobseekers/",
+   "application_url": "https://www.gov.ie/en/department-of-social-protection/services/jobseekers-transitional-payment/",
    "application_channel": "online",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -936,10 +936,10 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.citizensinformation.ie/en/social-welfare/unemployed-people/jobseekers-transitional-payment/",
-   "source_snippet": "Jobseeker's Transitional Payment supports lone parents whose youngest child is aged 7 to 13, without the full jobseeker availability condition",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www.gov.ie/en/department-of-social-protection/services/jobseekers-transitional-payment/",
+   "source_snippet": "The rate on Jobseeker’s Transitional Payment is €254 a week, plus a Child Support Payment for each qualified child.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "carers-allowance",
@@ -953,10 +953,10 @@
    "amount_min": null,
    "amount_max": 308,
    "amount_currency": "EUR",
-   "amount_period": "monthly",
-   "amount_note": "Maximum €270 per week if under 66, €308 if aged 66+ (2026); means-tested payment for full-time carers; half-rate Carer's Allowance can be paid with certain other social welfare payments",
+   "amount_period": "weekly",
+   "amount_note": "Maximum weekly rate (no income): €270 if the carer is under 66, €308 if aged 66 and over; half rate €135 / €154. Means-tested, so actual payment depends on the means test. Child Support Payment extra for children (€58 under 12, €78 aged 12+). Taxable from 1 January 2026.",
    "is_automatic": false,
-   "application_url": "https://services.mywelfare.ie/en/topics/carers/",
+   "application_url": "https://www.gov.ie/en/department-of-social-protection/services/carers-allowance/",
    "application_channel": "online",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -991,7 +991,7 @@
    ],
    "eligibility": {
     "statuses": [],
-    "age_min": null,
+    "age_min": 18,
     "age_max": null,
     "income_annual_max": 23400,
     "income_note": "Weekly means limit EUR450 for a single carer = EUR23,400/yr (value shown); EUR900/wk for a couple = EUR46,800/yr. Means include cash income and capital above EUR50,000.",
@@ -1003,9 +1003,9 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.citizensinformation.ie/en/social-welfare/carers/carers-allowance/",
-   "source_snippet": "Carer's Allowance maximum weekly rates 2026: under 66 €270; aged 66 and over €308",
-   "last_verified_at": "2026-08-12",
+   "source_url": "https://www.gov.ie/en/department-of-social-protection/services/carers-allowance/",
+   "source_snippet": "Carer under 66 | €270 | €135. Carer 66 and over | €308 | €154.",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -1087,7 +1087,7 @@
    "amount_period": "weekly",
    "amount_note": "Maximum personal rate €254 per week (2026); means-tested payment for people aged 16-65 with a disability expected to last at least one year that substantially restricts work",
    "is_automatic": false,
-   "application_url": "https://services.mywelfare.ie/en/topics/disability-and-illness/",
+   "application_url": "https://services.mywelfare.ie/en/topics/health-disability-illness/disability-allowance/",
    "application_channel": "online",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -1134,9 +1134,9 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.citizensinformation.ie/en/social-welfare/disability-and-illness/disability-allowance/",
-   "source_snippet": "Disability Allowance maximum personal rate 2026: €254 per week",
-   "last_verified_at": "2026-08-12",
+   "source_url": "https://www.gov.ie/en/department-of-social-protection/services/disability-allowance/",
+   "source_snippet": "Your personal rate | €254. Extra for dependent adult | €168.60.",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -1154,7 +1154,7 @@
    "amount_period": "weekly",
    "amount_note": "€259.50 per week personal rate (2026); PRSI-based, not means-tested; for people permanently incapable of work who meet the contribution conditions",
    "is_automatic": false,
-   "application_url": "https://services.mywelfare.ie/en/topics/disability-and-illness/",
+   "application_url": "https://www.gov.ie/en/department-of-social-protection/services/invalidity-pension/",
    "application_channel": "online",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -1196,9 +1196,9 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.citizensinformation.ie/en/social-welfare/disability-and-illness/invalidity-pension/",
-   "source_snippet": "Invalidity Pension maximum personal rate 2026: €259.50 per week",
-   "last_verified_at": "2026-08-12",
+   "source_url": "https://www.gov.ie/en/department-of-social-protection/services/invalidity-pension/",
+   "source_snippet": "Personal Rate | €259.50 | Increase for a qualified adult | €185.40",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -1216,7 +1216,7 @@
    "amount_period": "weekly",
    "amount_note": "Maximum personal rate €254 per week (2026); means-tested payment for people aged 18+ who are blind or have low vision",
    "is_automatic": false,
-   "application_url": "https://services.mywelfare.ie/en/topics/disability-and-illness/",
+   "application_url": "https://www.gov.ie/en/department-of-social-protection/services/blind-pension/",
    "application_channel": "online",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -1258,9 +1258,9 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.citizensinformation.ie/en/social-welfare/disability-and-illness/blind-pension/",
-   "source_snippet": "Blind Pension maximum personal rate 2026: €254 per week",
-   "last_verified_at": "2026-08-12",
+   "source_url": "https://www.gov.ie/en/department-of-social-protection/services/blind-pension/",
+   "source_snippet": "The maximum personal rate for Blind Pension is €254 per week.",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -1278,10 +1278,10 @@
    "amount_period": "weekly",
    "amount_note": "Maximum personal rate €299.30 per week at age 66 (2026); higher rates if deferred to 67 (€313.40), 68 (€328.90) or later; taxable but not means-tested",
    "is_automatic": false,
-   "application_url": "https://services.mywelfare.ie/en/topics/older-and-retired-people/",
+   "application_url": "https://services.mywelfare.ie/en/topics/pensions-and-older-people/state-pension/",
    "application_channel": "online",
    "deadline_type": "rolling",
-   "deadline_note": "Apply up to 3 months (6 months if you have insurance abroad) before your 66th birthday",
+   "deadline_note": "Apply about six months before you wish to start claiming (recommended). If born on or after 1 January 1958 you can choose a start date between age 66 and 70 (higher rate if later).",
    "procedure_steps": [
     {
      "step": 1,
@@ -1334,9 +1334,9 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.citizensinformation.ie/en/social-welfare/older-and-retired-people/state-pension-contributory/",
-   "source_snippet": "The maximum SPC rates in 2026 are: Age 66 at SPC draw down €299.30; Age 67 €313.40; Age 68 €328.90",
-   "last_verified_at": "2026-08-12",
+   "source_url": "https://www.gov.ie/en/department-of-social-protection/services/state-pension-contributory/",
+   "source_snippet": "We recommend you apply for State Pension (Contributory) six months before you wish to start claiming your pension.",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -1349,15 +1349,15 @@
    "category": "income_support",
    "benefit_type": "cash_monthly",
    "amount_min": null,
-   "amount_max": 264,
+   "amount_max": 298,
    "amount_currency": "EUR",
-   "amount_period": "monthly",
-   "amount_note": "Maximum €254 per week aged 66-79 and €264 aged 80+ (2026); means-tested pension for people aged 66+ who do not qualify for the contributory pension",
+   "amount_period": "weekly",
+   "amount_note": "Maximum weekly personal rate (no means): €288 if aged 66-79 and €298 if aged 80+ (from 2 January 2026). Actual amount depends on the means test.",
    "is_automatic": false,
-   "application_url": "https://services.mywelfare.ie",
+   "application_url": "https://services.mywelfare.ie/en/topics/pensions-and-older-people/state-pension/",
    "application_channel": "post",
    "deadline_type": "rolling",
-   "deadline_note": null,
+   "deadline_note": "Apply about six months before you turn 66.",
    "procedure_steps": [
     {
      "step": 1,
@@ -1393,8 +1393,8 @@
     ],
     "age_min": 66,
     "age_max": null,
-    "income_annual_max": 13208,
-    "income_note": "Strict means test on cash income, capital and property value. Indicative single-person ceiling: max personal rate EUR254/wk x52 = EUR13,208 (value shown); disregards (e.g. earnings, sale-of-home proceeds up to EUR337,500) mean the effective income ceiling is higher.",
+    "income_annual_max": null,
+    "income_note": "Means-tested on income, capital and property; the official page gives the maximum rates but no annual income ceiling.",
     "requires_children": false,
     "nationality": "any_resident",
     "residency_months_min": null,
@@ -1403,27 +1403,27 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.citizensinformation.ie/en/social-welfare/older-and-retired-people/state-pension-non-contributory/",
-   "source_snippet": "The maximum rate is €264 per week (aged 80+). Every €2.50 of weekly means above the disregard reduces the payment by €2.50 per week.",
-   "last_verified_at": "2026-08-12",
+   "source_url": "https://www.gov.ie/en/department-of-social-protection/services/state-pension-non-contributory/",
+   "source_snippet": "if you are aged 66 and under 80, the maximum rate is €288 from 2 January 2026. if you are aged 80 and over, the maximum rate is €298 from 2 January 2026",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
    "slug": "widows-widowers-contributory-pension",
-   "name_local": "Widow's, Widower's or Surviving Civil Partner's (Contributory) Pension",
-   "name_en": "Widow's, Widower's or Surviving Civil Partner's (Contributory) Pension",
+   "name_local": "Bereaved Partner's (Contributory) Pension (formerly Widow's, Widower's or Surviving Civil Partner's Contributory Pension)",
+   "name_en": "Bereaved Partner's (Contributory) Pension",
    "admin_level": "national",
    "admin_area": null,
    "funder": "Department of Social Protection (DSP)",
    "category": "income_support",
    "benefit_type": "cash_monthly",
-   "amount_min": null,
-   "amount_max": 259.5,
+   "amount_min": 252.6,
+   "amount_max": 299.3,
    "amount_currency": "EUR",
    "amount_period": "weekly",
-   "amount_note": "Maximum personal rate €259.50 per week if under 66 (2026), moving to the State Pension (Contributory) rate at 66; based on the late spouse/partner's PRSI record; not means-tested",
+   "amount_note": "Weekly personal rate depends on contribution average: under 66 €259.50 (48+ contributions), €255.50 (36-47), €252.60 (24-35); aged 66+ €299.30, €293.50, €286.60. Surviving qualified cohabitants eligible since 21 July 2025.",
    "is_automatic": false,
-   "application_url": "https://services.mywelfare.ie/en/topics/death-and-bereavement/",
+   "application_url": "https://www.gov.ie/en/department-of-social-protection/services/bereaved-partners-contributory-pension/",
    "application_channel": "post",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -1470,15 +1470,15 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.citizensinformation.ie/en/social-welfare/death-related-benefits/widowed-persons-contributory-pension/",
-   "source_snippet": "Contributory pension for widows, widowers and surviving civil partners, paid from the late spouse's or civil partner's social insurance record",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www.gov.ie/en/department-of-social-protection/services/bereaved-partners-contributory-pension/",
+   "source_snippet": "Since 21 July 2025, surviving Qualified Cohabitants are eligible for Bereaved Partner’s (Contributory) Pension. 48 or more contributions | €259.50 | €299.30",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "widows-widowers-non-contributory-pension",
-   "name_local": "Widow's, Widower's or Surviving Civil Partner's (Non-Contributory) Pension",
-   "name_en": "Widow's, Widower's or Surviving Civil Partner's (Non-Contributory) Pension",
+   "name_local": "Bereaved Partner's (Non-Contributory) Pension (formerly Widow's, Widower's or Surviving Civil Partner's Non-Contributory Pension)",
+   "name_en": "Bereaved Partner's (Non-Contributory) Pension",
    "admin_level": "national",
    "admin_area": null,
    "funder": "Department of Social Protection (DSP)",
@@ -1490,7 +1490,7 @@
    "amount_period": "weekly",
    "amount_note": "Maximum personal rate €254 per week (2026); means-tested pension for widowed people and surviving civil partners under 66 without enough PRSI contributions",
    "is_automatic": false,
-   "application_url": "https://services.mywelfare.ie",
+   "application_url": "https://www.gov.ie/en/department-of-social-protection/services/bereaved-partners-non-contributory-pension/",
    "application_channel": "post",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -1537,10 +1537,10 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.citizensinformation.ie/en/social-welfare/death-related-benefits/widowed-persons-non-contributory-pension/",
-   "source_snippet": "Means-tested pension for widows, widowers and surviving civil partners aged under 66 who do not qualify for the contributory pension",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www.gov.ie/en/department-of-social-protection/services/bereaved-partners-non-contributory-pension/",
+   "source_snippet": "The maximum amount payable is €254 weekly. Bereaved Partner’s (Non-contributory) Pension is a means-tested payment payable to a widow, widower, surviving civil partner or surviving qualified cohabitant",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "illness-benefit",
@@ -1557,7 +1557,7 @@
    "amount_period": "weekly",
    "amount_note": "Maximum personal rate €254 per week (2026); PRSI-based short-term payment if you cannot work due to illness; paid for up to 2 years (or 1 year with fewer contributions)",
    "is_automatic": false,
-   "application_url": "https://services.mywelfare.ie/en/topics/illness-disability-and-caring/",
+   "application_url": "https://services.mywelfare.ie/en/topics/health-disability-illness/illness-benefit/",
    "application_channel": "online",
    "deadline_type": "rolling",
    "deadline_note": "Apply within 6 weeks of becoming ill; your doctor submits the Certificate of Incapacity electronically",
@@ -1607,9 +1607,9 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.citizensinformation.ie/en/social-welfare/disability-and-illness/illness-benefit/",
-   "source_snippet": "Illness Benefit maximum personal rate 2026: €254 per week",
-   "last_verified_at": "2026-08-12",
+   "source_url": "https://www.gov.ie/en/department-of-social-protection/services/illness-benefit/",
+   "source_snippet": "€300 or more | €254.00 | €168.60 | €422.60",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -1627,7 +1627,7 @@
    "amount_period": "weekly",
    "amount_note": "Maximum personal rate €254 per week (2026); paid for up to 26 weeks if you are unfit for work due to an accident at work or a prescribed occupational disease (Occupational Injuries Benefit Scheme)",
    "is_automatic": false,
-   "application_url": "https://services.mywelfare.ie/en/topics/illness-disability-and-caring/",
+   "application_url": "https://www.gov.ie/en/department-of-social-protection/services/injury-benefit/",
    "application_channel": "online",
    "deadline_type": "rolling",
    "deadline_note": "Report the accident to your employer immediately and apply within 6 weeks (you lose payment for delay)",
@@ -1676,9 +1676,9 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.citizensinformation.ie/en/social-welfare/disability-and-illness/injury-benefit/",
-   "source_snippet": "Injury Benefit maximum weekly rate 2026: €254 (Occupational Injuries Benefit Scheme)",
-   "last_verified_at": "2026-08-12",
+   "source_url": "https://www.gov.ie/en/department-of-social-protection/services/injury-benefit/",
+   "source_snippet": "Personal rate | €254. Injury Benefit is a weekly payment made to you if you are unfit for work due to an accident at work ... or a disease that you contract in the course of your employment",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -1815,9 +1815,9 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www2.hse.ie/services/medical-cards/",
-   "source_snippet": "The Medical Card covers free GP visits, free public hospital inpatient and outpatient care, and prescriptions at €1.50 per item capped at €15/month",
-   "last_verified_at": "2026-08-12",
+   "source_url": "https://www2.hse.ie/services/schemes-allowances/medical-cards/",
+   "source_snippet": "Single person living alone aged up to 65: €184 (basic weekly net income rate). The online application includes a quick assessment of your finances.",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -1877,9 +1877,9 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www2.hse.ie/services/gp-visit-cards/",
-   "source_snippet": "The GP Visit Card provides free GP visits; children under 8 and adults aged 70 and over qualify without a means test",
-   "last_verified_at": "2026-08-12",
+   "source_url": "https://www2.hse.ie/services/schemes-allowances/gp-visit-cards/",
+   "source_snippet": "Anyone age 8 to 69 can apply for a GP visit card. Single person living alone age 69 and under: €418",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -1897,7 +1897,7 @@
    "amount_period": "monthly",
    "amount_note": "Caps what your household pays for approved prescribed medicines at €80 per calendar month; the HSE pays the rest; not means-tested",
    "is_automatic": false,
-   "application_url": "https://www.hse.ie/eng/services/list/1/schemes/dps/",
+   "application_url": "https://www2.hse.ie/services/schemes-allowances/drugs-payment-scheme/apply/",
    "application_channel": "in_person",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -1939,9 +1939,9 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.hse.ie/eng/services/list/1/schemes/dps/",
-   "source_snippet": "Under the scheme, you and your family pay a maximum of €80 in a calendar month for approved prescribed drugs, medicines and certain appliances",
-   "last_verified_at": "2026-08-12",
+   "source_url": "https://www2.hse.ie/services/schemes-allowances/drugs-payment-scheme/",
+   "source_snippet": "Apply for a Drugs Payment Scheme card if you pay more than €80 a month for approved drugs, medicines and appliances",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -1959,7 +1959,7 @@
    "amount_period": "monthly",
    "amount_note": "Free medicines and approved appliances for specified long-term conditions (e.g. diabetes, epilepsy, cystic fibrosis, multiple sclerosis, Parkinson's disease); no prescription charges and no means test",
    "is_automatic": false,
-   "application_url": "https://www.hse.ie/eng/services/list/1/schemes/lti/",
+   "application_url": "https://www2.hse.ie/services/schemes-allowances/lti/apply/",
    "application_channel": "in_person",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -2001,10 +2001,10 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.hse.ie/eng/services/list/1/schemes/lti/",
-   "source_snippet": "Under the Long Term Illness Scheme you can get free drugs, medicines and medical and surgical appliances for the treatment of specified conditions",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www2.hse.ie/services/schemes-allowances/lti/",
+   "source_snippet": "Under the Long-Term Illness (LTI) Scheme you can get some drugs, medicines and medical appliances for certain medical conditions for free. There is no means test for the LTI Scheme.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "maternity-and-infant-care-scheme",
@@ -2021,7 +2021,7 @@
    "amount_period": "one_off",
    "amount_note": "Free GP care during pregnancy and for mother and baby for 6 weeks after birth, plus free public hospital maternity care; open to all women ordinarily resident in Ireland regardless of income",
    "is_automatic": false,
-   "application_url": "https://www.hse.ie/eng/services/list/3/maternity/",
+   "application_url": "https://www2.hse.ie/pregnancy-birth/pregnancy-care/public-care/",
    "application_channel": "in_person",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -2058,10 +2058,10 @@
     "admin_areas": [],
     "gender": "female"
    },
-   "source_url": "https://www2.hse.ie/pregnancy-birth/",
-   "source_snippet": "The Maternity and Infant Care Scheme provides an agreed programme of care to all expectant mothers who are ordinarily resident in Ireland, free of charge",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www2.hse.ie/pregnancy-birth/pregnancy-care/care-options/",
+   "source_snippet": "If you live in Ireland or intend to live here for at least 1 year, you can get free maternity care through the Maternity and Infant Care Scheme.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "childhood-immunisation-programme",
@@ -2076,7 +2076,7 @@
    "amount_max": null,
    "amount_currency": "EUR",
    "amount_period": "one_off",
-   "amount_note": "All recommended childhood vaccines are free under the HSE's national immunisation programme (birth to age 13), including the 6-in-1, MMR, MenACWY and HPV vaccines",
+   "amount_note": "All recommended childhood vaccines are free under the HSE's national immunisation programme (birth to age 13), including the 6-in-1, MMR, MenACWY and HPV vaccines Children born on or after 1 October 2024 also get the chickenpox (varicella) vaccine, free from the GP.",
    "is_automatic": true,
    "application_url": "https://www2.hse.ie/babies-children/vaccines/",
    "application_channel": "in_person",
@@ -2115,10 +2115,10 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www2.hse.ie/babies-children/vaccines/",
-   "source_snippet": "Vaccines in the childhood immunisation schedule are free of charge through the HSE national immunisation programme",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www2.hse.ie/babies-children/vaccines-your-child/",
+   "source_snippet": "Children born on or after 1 October 2024 will get a chickenpox (varicella) vaccine. This is free from your GP.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "treatment-benefit-scheme",
@@ -2130,12 +2130,12 @@
    "category": "health",
    "benefit_type": "in_kind",
    "amount_min": null,
-   "amount_max": null,
+   "amount_max": 500,
    "amount_currency": "EUR",
    "amount_period": "annual",
-   "amount_note": "PRSI-based entitlements: free dental examination plus €42 towards a scale and polish (or €15 towards periodontal treatment) and a free eye test plus a grant towards glasses or contact lenses (once every 2 or 4 years)",
+   "amount_note": "PRSI-based (Class A, E, P, H or S). Dental: full cost of an oral exam once a calendar year plus €50 towards a scale and polish (you pay the balance, capped at €15) or €42 towards periodontal treatment if clinically necessary. Optical: free eye test and a payment towards one pair of glasses/contact lenses every second calendar year (basic frames free; €42 towards dearer frames); medical lenses up to €500 each. Hearing aids up to €500 each plus repairs up to €100 per aid, once every 4 years. Hair replacement product up to €500 per year for hair loss from illness or treatment. Claim through your provider.",
    "is_automatic": false,
-   "application_url": "https://services.mywelfare.ie/en/topics/health/",
+   "application_url": "https://www.gov.ie/en/department-of-social-protection/services/treatment-benefit-scheme/",
    "application_channel": "in_person",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -2180,10 +2180,10 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.citizensinformation.ie/en/social-welfare/disability-and-illness/treatment-benefit-scheme/",
-   "source_snippet": "The Treatment Benefit Scheme entitles qualified insured people to free dental examinations, subsidised dental cleaning and free eye tests with grants towards glasses or contact lenses",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www.gov.ie/en/department-of-social-protection/services/treatment-benefit-scheme/",
+   "source_snippet": "The department pays the full cost of an oral examination once a calendar year. A payment is provided towards either: a scale and polish - €50 a periodontal treatment - €42 (if clinically necessary)",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "free-contraception-scheme",
@@ -2200,7 +2200,7 @@
    "amount_period": "monthly",
    "amount_note": "Free GP consultations for contraception plus free prescribed contraceptives (pill, patch, ring, injection, implant, coil) for women and people who need contraception aged 17 to 35; no means test",
    "is_automatic": false,
-   "application_url": "https://www2.hse.ie/services/contraception/free-contraception-service/",
+   "application_url": "https://www2.hse.ie/services/sexual-health/free-contraception/",
    "application_channel": "in_person",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -2242,9 +2242,9 @@
     "admin_areas": [],
     "gender": "female"
    },
-   "source_url": "https://www2.hse.ie/services/contraception/free-contraception-service/",
-   "source_snippet": "Free contraception for ages 17-35 (expanded July 2024): GP consultations for contraception and all prescribed contraceptives are free under the HSE scheme",
-   "last_verified_at": "2026-08-12",
+   "source_url": "https://www2.hse.ie/services/sexual-health/free-contraception/",
+   "source_snippet": "Free contraception is available in Ireland to women, girls, trans, non-binary and intersex people. To get free contraception, you need to: be age 17 to 35",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -2262,7 +2262,7 @@
    "amount_period": "monthly",
    "amount_note": "Local authority pays your rent directly to your landlord, subject to HAP rent limits for your household type and area; you pay a weekly income-based rent contribution to the local authority (and any top-up above the rent limit)",
    "is_automatic": false,
-   "application_url": "https://www.hap.ie",
+   "application_url": "https://www.hap.ie/apply",
    "application_channel": "in_person",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -2328,9 +2328,9 @@
     ],
     "gender": "any"
    },
-   "source_url": "https://www.citizensinformation.ie/en/housing/renting-a-home/help-with-renting/housing-assistance-payment/",
-   "source_snippet": "The Housing Assistance Payment (HAP) is a social housing support for people who have a long-term housing need... your local authority pays your rent directly to your landlord. And you pay a weekly HAP rent contribution to your local authority, based on your income.",
-   "last_verified_at": "2026-08-12",
+   "source_url": "https://www.hap.ie/whatishap/",
+   "source_snippet": "The Housing Assistance Payment (HAP) is a form of social housing support provided by your local authority.",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -2348,10 +2348,10 @@
    "amount_period": "monthly",
    "amount_note": "Short-term, means-tested rent support calculated after a minimum household contribution; long-term claimants are normally transferred to HAP",
    "is_automatic": false,
-   "application_url": "https://services.mywelfare.ie/en/topics/supplementary-welfare-allowance/",
+   "application_url": "https://www.gov.ie/en/department-of-social-protection/services/rent-supplement/",
    "application_channel": "in_person",
    "deadline_type": "rolling",
-   "deadline_note": null,
+   "deadline_note": "Mostly closed to new claimants: available only if you got Rent Supplement within the last 12 months, or lived in private rented housing (or homeless/institutional housing) for 183 days in the last 12 months and do not qualify for social housing support. Others should apply for HAP.",
    "procedure_steps": [
     {
      "step": 1,
@@ -2399,10 +2399,10 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.citizensinformation.ie/en/social-welfare/supplementary-welfare-schemes/rent-supplement/",
-   "source_snippet": "Rent Supplement is a means-tested payment for certain people living in private rented accommodation who cannot meet the cost of their accommodation from their own resources",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www.gov.ie/en/department-of-social-protection/services/rent-supplement/",
+   "source_snippet": "The minimum payment for a single person who is not subject to an age related reduction on their social welfare payment is €30 per week. A couple’s expected minimum weekly payment is €40.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "social-housing-support",
@@ -2480,9 +2480,9 @@
     ],
     "gender": "any"
    },
-   "source_url": "https://www.gov.ie/en/policy-topic/affordable-and-social-housing/",
-   "source_snippet": "To qualify for social housing support your income must be below a certain amount, you must not have suitable alternative accommodation, and you must be in need of social housing",
-   "last_verified_at": "2026-08-12",
+   "source_url": "https://www.gov.ie/en/department-of-housing-local-government-and-heritage/press-releases/government-approves-increase-in-social-housing-income-eligibility-thresholds/",
+   "source_snippet": "Social housing income eligibility thresholds are the net income thresholds below which a person is entitled to social housing supports (i.e. social housing or the Housing Assistance Payment).",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -2500,7 +2500,7 @@
    "amount_period": "monthly",
    "amount_note": "Rent set at a minimum 25% below open-market rents in the area, linked to the cost of delivering and maintaining the home; tenancy is long-term with strong security",
    "is_automatic": false,
-   "application_url": "https://www.gov.ie/en/publication/cost-rental/",
+   "application_url": "https://www.gov.ie/en/department-of-housing-local-government-and-heritage/services/cost-rental-homes/",
    "application_channel": "online",
    "deadline_type": "window",
    "deadline_note": "Homes are advertised when available (e.g. on AHB/LDA websites); applications are open for a limited window per development",
@@ -2542,10 +2542,10 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.gov.ie/en/policy-topic/affordable-and-social-housing/",
-   "source_snippet": "Cost rental homes have rents that are at least 25% below regular market rents in the area",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www.gov.ie/en/department-of-housing-local-government-and-heritage/services/cost-rental-homes/",
+   "source_snippet": "your net household income is below €66,000 per year if applying for a tenancy in one of the four Dublin Local Authority areas and below €59,000 per year if applying for a tenancy anywhere else in Ireland",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "local-authority-home-loan",
@@ -2562,7 +2562,7 @@
    "amount_period": "monthly",
    "amount_note": "Government-backed mortgage at fixed rates: 4.00% fixed for up to 25 years (APR 4.07%) or 4.05% fixed up to 30 years (APR 4.13%); you can borrow up to 90% of the market value of new or second-hand homes",
    "is_automatic": false,
-   "application_url": "https://localauthorityhomeloan.ie",
+   "application_url": "https://localauthorityhomeloan.ie/apply/",
    "application_channel": "online",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -2602,10 +2602,10 @@
    ],
    "eligibility": {
     "statuses": [],
-    "age_min": null,
-    "age_max": null,
-    "income_annual_max": 80000,
-    "income_note": "Gross annual income below EUR80,000 for single applicants from 1 April 2026 (EUR70,000 before that date) - value shown; EUR85,000 for joint applicants. Same limits apply to the Local Authority Purchase and Renovation Loan.",
+    "age_min": 18,
+    "age_max": 70,
+    "income_annual_max": 85000,
+    "income_note": "Maximum gross annual income €80,000 for a single applicant and €85,000 for joint applicants (increases effective 1 April 2026). Two years continuous employment for the primary earner.",
     "requires_children": false,
     "nationality": "any_resident",
     "residency_months_min": null,
@@ -2623,9 +2623,9 @@
     ],
     "gender": "any"
    },
-   "source_url": "https://www.citizensinformation.ie/en/housing/owning-a-home/help-with-buying-a-home/local-authority-mortgages/",
-   "source_snippet": "The Local Authority Home Loan offers two fixed interest rate products: 4.00% fixed for up to 25 years (APR 4.07%). 4.05% fixed for up to 30 years (APR 4.13%).",
-   "last_verified_at": "2026-08-12",
+   "source_url": "https://localauthorityhomeloan.ie/eligibility/",
+   "source_snippet": "as a single applicant have an annual gross income of not more than €80,000 (gross). as joint applicants have an annual gross income of not more than €85,000 (gross)",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -2700,7 +2700,7 @@
    },
    "source_url": "https://www.citizensinformation.ie/en/housing/owning-a-home/help-with-buying-a-home/first-home-scheme/",
    "source_snippet": "You can get up to 30% of the market value of your new property with the First Home Scheme. This is reduced to 20% if you are also getting the Help to Buy Scheme.",
-   "last_verified_at": "2026-08-12",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified",
    "income_reviewed_at": "2026-08-13"
   },
@@ -2722,7 +2722,7 @@
    "application_url": "https://www.revenue.ie/en/property/help-to-buy-incentive/index.aspx",
    "application_channel": "online",
    "deadline_type": "rolling",
-   "deadline_note": "Approval must be in place before you draw down the mortgage",
+   "deadline_note": "Enhanced relief (up to EUR30,000) applies to applications up to 31 December 2029. Approval must be in place before you draw down the mortgage",
    "procedure_steps": [
     {
      "step": 1,
@@ -2771,9 +2771,9 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.revenue.ie/en/property/help-to-buy-incentive/index.aspx",
+   "source_url": "https://www.revenue.ie/en/property/help-to-buy-incentive/how-much-can-you-claim.aspx",
    "source_snippet": "Help to Buy (HTB): refund of Income Tax and DIRT from the last 4 years, up to €30,000 or 10% of the price, for first-time buyers of newly-built homes under €500,000",
-   "last_verified_at": "2026-08-12",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -2859,7 +2859,7 @@
    },
    "source_url": "https://www.citizensinformation.ie/en/housing/housing-grants-and-schemes/local-authority-housing-grants-and-supports/vacant-property-refurbishment-grant/",
    "source_snippet": "You can get a grant of up to: €50,000 to renovate a vacant property; €70,000 if the property is derelict. The grant must be approved before any work begins.",
-   "last_verified_at": "2026-08-12",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -2877,7 +2877,7 @@
    "amount_period": "one_off",
    "amount_note": "Means-tested local authority grant; maximum EUR40,000 or 100% of approved costs (whichever is less) for homes over 12 months old (max EUR20,000 for newer homes); income bands: 100% <= EUR37,500, tapering to 30% at EUR62,501-75,000",
    "is_automatic": false,
-   "application_url": "https://www.gov.ie/en/publication/housing-grants-for-older-people-and-people-with-a-disability/",
+   "application_url": "https://www.gov.ie/en/department-of-housing-local-government-and-heritage/services/housing-adaptation-grant-for-disabled-people/",
    "application_channel": "in_person",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -2938,9 +2938,9 @@
     ],
     "gender": "any"
    },
-   "source_url": "https://www.gov.ie/en/publication/housing-grants-for-older-people-and-people-with-a-disability/",
+   "source_url": "https://www.citizensinformation.ie/en/housing/housing-grants-and-schemes/housing-supports-for-older-people-and-people-with-disabilities/housing-adaptation-grant-for-people-with-disability/",
    "source_snippet": "A grant is not available if the household income is more than €75,000, after the disregards and deductions are applied.",
-   "last_verified_at": "2026-08-12",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -2958,7 +2958,7 @@
    "amount_period": "one_off",
    "amount_note": "Fast-track grant of up to EUR8,000, which may cover 100% of the cost of mobility works (grab rails, ramps, accessible shower, stairlift)",
    "is_automatic": false,
-   "application_url": "https://www.gov.ie/en/publication/housing-grants-for-older-people-and-people-with-a-disability/",
+   "application_url": "https://www.citizensinformation.ie/en/housing/housing-grants-and-schemes/housing-supports-for-older-people-and-people-with-disabilities/mobility-aids-grant-scheme/",
    "application_channel": "in_person",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -3009,9 +3009,9 @@
     ],
     "gender": "any"
    },
-   "source_url": "https://www.gov.ie/en/publication/housing-grants-for-older-people-and-people-with-a-disability/",
+   "source_url": "https://www.citizensinformation.ie/en/housing/housing-grants-and-schemes/housing-supports-for-older-people-and-people-with-disabilities/mobility-aids-grant-scheme/",
    "source_snippet": "The Mobility Aids Grant covers up to €6,000 towards basic works to address mobility issues in the home",
-   "last_verified_at": "2026-08-12",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -3029,7 +3029,7 @@
    "amount_period": "one_off",
    "amount_note": "Means-tested grant up to EUR10,700 or 100% of costs for essential repairs (roof, wiring, heating, doors/windows) for people aged 66+; 100% if household income <= EUR37,500, tapering to 30% at EUR62,501-75,000",
    "is_automatic": false,
-   "application_url": "https://www.gov.ie/en/publication/housing-grants-for-older-people-and-people-with-a-disability/",
+   "application_url": "https://www.gov.ie/en/department-of-housing-local-government-and-heritage/services/housing-aid-for-older-people-grant/",
    "application_channel": "in_person",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -3085,9 +3085,9 @@
     ],
     "gender": "any"
    },
-   "source_url": "https://www.gov.ie/en/publication/housing-grants-for-older-people-and-people-with-a-disability/",
+   "source_url": "https://www.citizensinformation.ie/en/housing/housing-grants-and-schemes/housing-supports-for-older-people-and-people-with-disabilities/housing-aid-for-older-people-grant/",
    "source_snippet": "The Housing Aid for Older People Grant is for people aged 66 and over and provides up to €10,700 for essential home repairs; means-tested based on household income",
-   "last_verified_at": "2026-08-12",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -3100,10 +3100,10 @@
    "category": "energy",
    "benefit_type": "cash_one_off",
    "amount_min": 700,
-   "amount_max": 8000,
+   "amount_max": 14500,
    "amount_currency": "EUR",
    "amount_period": "one_off",
-   "amount_note": "Individual SEAI grants (owner-occupied homes built and occupied before 2011 for insulation/heat pumps): attic insulation EUR1,100-2,000; cavity wall EUR700-1,800; internal dry lining EUR1,500-4,500; external wall wrap EUR3,000-8,000; heat pump EUR4,500-6,500 plus EUR4,000 renewable heat bonus and EUR200 technical assessment; heating controls EUR700; solar water heating EUR1,200; windows EUR1,500-4,000; external doors EUR800/door (max 2); post-works BER EUR50; higher values on offshore islands",
+   "amount_note": "Individual SEAI grants (maximum per measure): attic insulation EUR2,000 (EUR2,500 for first-time buyers and homeowners on qualifying welfare payments); wall insulation EUR8,000; windows EUR4,000; external doors EUR1,600; heat pump system EUR14,500 (includes Renewable Heat Bonus); heating controls EUR700; solar PV EUR1,800; battery storage EUR600 flat rate; solar water heating EUR1,200",
    "is_automatic": false,
    "application_url": "https://www.seai.ie/grants/home-energy-grants/individual-grants/",
    "application_channel": "online",
@@ -3157,9 +3157,9 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.citizensinformation.ie/en/housing/housing-grants-and-schemes/grants-for-home-renovations-and-improvements/better-energy-homes-scheme/",
+   "source_url": "https://www.seai.ie/grants/home-energy-grants/individual-grants/",
    "source_snippet": "Heat pump grant nearly doubled — the maximum heat pump grant rose from €6,500 to €12,500 for houses (€9,500 for apartments); includes a €4,000 Renewable Heat Bonus and up to €2,000 for central heating upgrades",
-   "last_verified_at": "2026-08-12",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -3177,7 +3177,7 @@
    "amount_period": "one_off",
    "amount_note": "€700 per kWp for the first 2 kWp and €200 per additional kWp up to 4 kWp; maximum €1,800 for a 4 kWp+ domestic solar PV system (2026)",
    "is_automatic": false,
-   "application_url": "https://www.seai.ie/grants/home-energy-grants/solar-pv-grant/",
+   "application_url": "https://www.seai.ie/grants/home-energy-grants/individual-grants/solar-electricity-grant",
    "application_channel": "online",
    "deadline_type": "rolling",
    "deadline_note": "Apply before installation; you must receive a Letter of Offer from SEAI before works begin",
@@ -3229,9 +3229,9 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.seai.ie/grants/home-energy-grants/solar-pv-grant/",
+   "source_url": "https://www.seai.ie/grants/home-energy-grants/individual-grants/solar-electricity-grant",
    "source_snippet": "The maximum domestic solar PV grant remains €1,800 in 2026: €700 per kWp up to 2 kWp, then €200 per additional kWp from 2 kWp to 4 kWp",
-   "last_verified_at": "2026-08-12",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -3249,7 +3249,7 @@
    "amount_period": "one_off",
    "amount_note": "Fully funded (free) home energy upgrades for eligible energy-poor households — typically attic and wall insulation, draught proofing, lagging jackets, heating upgrades and, where suitable, deeper retrofit measures",
    "is_automatic": false,
-   "application_url": "https://www.seai.ie/grants/home-energy-grants/free-upgrades-for-eligible-homes/",
+   "application_url": "https://www.seai.ie/grants/home-energy-grants/fully-funded-upgrades-for-eligible-homes",
    "application_channel": "online",
    "deadline_type": "rolling",
    "deadline_note": "There can be a significant waiting list; a survey determines which upgrades are suitable for your home",
@@ -3287,7 +3287,7 @@
     "age_min": null,
     "age_max": null,
     "income_annual_max": null,
-    "income_note": "You must own and live in the home and receive a qualifying payment (e.g. Fuel Allowance as part of the Household Benefits Package, Working Family Payment, Domiciliary Care Allowance, Carer's Allowance, One-Parent Family Payment, or Disability Allowance for 6+ months with a child under 7)",
+    "income_note": "No income test; you must own and live in the home, it must have been built before 2006, you must receive an eligible social welfare payment, and a home survey must show it is suitable for upgrades.",
     "requires_children": false,
     "nationality": "any_resident",
     "residency_months_min": null,
@@ -3296,9 +3296,9 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.seai.ie/grants/home-energy-grants/free-upgrades-for-eligible-homes/",
+   "source_url": "https://www.seai.ie/grants/home-energy-grants/fully-funded-upgrades-for-eligible-homes",
    "source_snippet": "From March 2026, those on qualifying welfare payments (including Fuel Allowance) also receive enhanced individual grants: a flat €2,500 for attic insulation and €2,300 for cavity wall insulation; the Warmer Homes Scheme itself is completely free",
-   "last_verified_at": "2026-08-12",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -3314,7 +3314,7 @@
    "amount_max": 38,
    "amount_currency": "EUR",
    "amount_period": "weekly",
-   "amount_note": "€38 per week (2026) during the fuel season (September to April, 28 weeks, extended by 4 weeks in 2026); option of two lump sums; only one payment per household",
+   "amount_note": "EUR38 per week (2026) during the fuel season (late September to April, 28 weeks); only one payment per household",
    "is_automatic": false,
    "application_url": "https://services.mywelfare.ie/en/topics/older-and-retired-people/",
    "application_channel": "online",
@@ -3349,7 +3349,7 @@
     "age_min": null,
     "age_max": null,
     "income_annual_max": 27248,
-    "income_note": "Means test for applicants aged 66+: weekly means up to EUR524 single = EUR27,248/yr (value shown); EUR1,048/wk couple = EUR54,496; capital disregard EUR50,000. Under 66 you must receive a qualifying long-term social welfare payment (means test tied to that payment); from March 2026 Working Family Payment also qualifies.",
+    "income_note": "Means test for aged 66+: weekly means up to EUR534 single = EUR27,768/yr (value shown, 534 x 52); EUR1,068/wk couple = EUR55,536/yr; first EUR50,000 of capital disregarded. Under 66 you must get a qualifying social welfare payment and means must not exceed the max State Pension (Contributory) plus EUR200 (about EUR499.30 single, 2026); first EUR20,000 of capital disregarded. You must live in Ireland and live alone or only with certain people.",
     "requires_children": false,
     "nationality": "any_resident",
     "residency_months_min": null,
@@ -3360,7 +3360,7 @@
    },
    "source_url": "https://www.citizensinformation.ie/en/social-welfare/extra-social-welfare-benefits/fuel-allowance/",
    "source_snippet": "The weekly rate increased to €38 in January 2026 (up from €33), and the scheme was also expanded to include Working Family Payment recipients",
-   "last_verified_at": "2026-08-12",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -3372,11 +3372,11 @@
    "funder": "Department of Social Protection (DSP)",
    "category": "energy",
    "benefit_type": "cash_monthly",
-   "amount_min": 35,
-   "amount_max": 35,
+   "amount_min": 34.5,
+   "amount_max": 34.5,
    "amount_currency": "EUR",
    "amount_period": "monthly",
-   "amount_note": "€35 per month Electricity or Gas Allowance plus a free TV licence (worth €160/year); everyone aged 70+ qualifies regardless of income; some people aged 66-69 qualify on a means test or qualifying payment",
+   "amount_note": "EUR1.15 per day (about EUR34.50 a month) Electricity or Gas Allowance (you choose one) plus a free TV licence; everyone aged 70+ qualifies regardless of income; some people aged 66-70 qualify on a means test or qualifying payment; one Package per household",
    "is_automatic": false,
    "application_url": "https://services.mywelfare.ie/en/topics/older-and-retired-people/",
    "application_channel": "online",
@@ -3411,7 +3411,7 @@
     "age_min": 66,
     "age_max": null,
     "income_annual_max": null,
-    "income_note": "No fixed euro ceiling is published (2026). Aged 70+ there is no means test. Aged 66-69 without a qualifying payment, the means limit is defined relative to another rate: the current maximum State Pension (Contributory) including any age, living-alone and dependant increases, plus €200 a week — so it moves with the pension rate and household composition. Rent-a-room income up to €14,000 a year is disregarded.",
+    "income_note": "No fixed euro ceiling is published. Aged 70+ there is no means test. Aged 66-70 without a qualifying payment, weekly means must not exceed the maximum State Pension (Contributory) plus EUR200 a week, so it moves with the pension rate. You can rent a room earning up to EUR269.23 a week without affecting the Package.",
     "requires_children": false,
     "nationality": "any_resident",
     "residency_months_min": null,
@@ -3425,7 +3425,7 @@
    },
    "source_url": "https://www.citizensinformation.ie/en/social-welfare/extra-social-welfare-benefits/household-benefits-package/",
    "source_snippet": "The Household Benefits Package includes the Electricity or Gas Allowance and Free TV Licence. If you are aged 70 or over, you qualify regardless of your income or who lives with you.",
-   "last_verified_at": "2026-08-12",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified",
    "income_reviewed_at": "2026-08-13"
   },
@@ -3488,7 +3488,7 @@
    },
    "source_url": "https://www.citizensinformation.ie/en/social-welfare/extra-social-welfare-benefits/free-travel/",
    "source_snippet": "Everyone aged 66 and over, living permanently in Ireland, qualifies for the Free Travel Scheme.",
-   "last_verified_at": "2026-08-12",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -3550,10 +3550,10 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://about.leapcard.ie/discounted-fares",
+   "source_url": "https://about.leapcard.ie/young-adult-and-student-card-launch",
    "source_snippet": "Young Adult (19-25) and Student Leap Card holders get 50% off TFI fares, subject to daily and weekly fare caps",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "cycle-to-work-scheme",
@@ -3616,7 +3616,7 @@
    },
    "source_url": "https://www.revenue.ie/en/jobs-and-pensions/taxation-of-employer-benefits/cycle-to-work-scheme.aspx",
    "source_snippet": "The current limits set by Revenue are €1,250 for a standard bicycle, €1,500 for an electric bicycle (e-bike), and €3,000 for an e-cargo bicycle; safety equipment is included within these limits; specifically exempt from benefit-in-kind (BIK) tax",
-   "last_verified_at": "2026-08-12",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -3632,7 +3632,7 @@
    "amount_max": null,
    "amount_currency": "EUR",
    "amount_period": "annual",
-   "amount_note": "Employees save Income Tax, USC and PRSI on the cost of monthly or annual public transport commuter tickets bought through their employer — typically saving 28.5%-52% of the ticket price depending on your tax rate",
+   "amount_note": "Employees save Income Tax, USC and PRSI on the cost of commuter tickets bought through their employer by salary deduction - typically 27.2%-52.2% off the normal price depending on ticket type and your tax rate",
    "is_automatic": false,
    "application_url": "https://www.taxsaver.ie",
    "application_channel": "via_employer",
@@ -3673,10 +3673,10 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.taxsaver.ie",
+   "source_url": "https://www.taxsaver.ie/en-ie/employee/employee",
    "source_snippet": "TaxSaver commuter tickets give employees tax savings on annual and monthly bus and rail tickets purchased through their employer",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "susi-student-grant",
@@ -3696,7 +3696,7 @@
    "application_url": "https://www.susi.ie",
    "application_channel": "online",
    "deadline_type": "window",
-   "deadline_note": "Applications open each spring for the following academic year (e.g. April 2026 for 2026/27); priority deadlines apply",
+   "deadline_note": "2026/27 priority closing dates (11 June 2026 renewing, 9 July 2026 new applicants) have passed; late applications are still accepted - the final closing date is usually in November. Applications for the following year open in spring",
    "procedure_steps": [
     {
      "step": 1,
@@ -3740,8 +3740,8 @@
     "income_annual_max": 120000,
     "income_note": "Reckonable household income (2026/27, <4 dependent children): special rate <EUR28,600; full maintenance (Band 1) <EUR47,010; part maintenance bands up to <EUR58,470; 50% tuition+100% contribution <EUR64,315; EUR500 contribution grant up to <EUR120,000 (value shown = highest threshold for any SUSI support). Thresholds rise with dependent children (+EUR4,950 per additional person). Holiday earnings disregard EUR8,830.",
     "requires_children": false,
-    "nationality": "any_resident",
-    "residency_months_min": null,
+    "nationality": "citizen_or_pr",
+    "residency_months_min": 36,
     "housing_tenure": null,
     "student_required": true,
     "admin_areas": [],
@@ -3749,7 +3749,7 @@
    },
    "source_url": "https://www.citizensinformation.ie/en/education/third-level-education/fees-and-supports-for-third-level-education/student-grant-scheme/",
    "source_snippet": "Rates for the Student Grant Scheme 2026-2027: Special rate €7,936 non-adjacent / €3,230 adjacent; Full maintenance Band 1 €4,722 / €1,774",
-   "last_verified_at": "2026-08-12",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -3765,7 +3765,7 @@
    "amount_max": null,
    "amount_currency": "EUR",
    "amount_period": "annual",
-   "amount_note": "The State pays tuition fees to the college for eligible full-time undergraduate students; you still pay the annual student contribution (€2,500 from 2026/27, reduced permanently from €3,000) unless covered by a SUSI fee grant",
+   "amount_note": "The State pays tuition fees to the college for eligible full-time undergraduates; you still pay the annual student contribution (maximum EUR2,500) unless covered by a SUSI fee grant",
    "is_automatic": true,
    "application_url": "https://www.studentfinance.ie",
    "application_channel": "automatic",
@@ -3799,8 +3799,8 @@
     "income_annual_max": null,
     "income_note": "Not means-tested for tuition; you must be a first-time undergraduate, EU/EEA/Swiss national or meet residence criteria, on an approved full-time course",
     "requires_children": false,
-    "nationality": "any_resident",
-    "residency_months_min": null,
+    "nationality": "citizen_or_pr",
+    "residency_months_min": 36,
     "housing_tenure": null,
     "student_required": true,
     "admin_areas": [],
@@ -3808,7 +3808,7 @@
    },
    "source_url": "https://www.citizensinformation.ie/en/education/third-level-education/fees-and-supports-for-third-level-education/fees/",
    "source_snippet": "Most undergraduate students attending publicly funded third-level courses do not have to pay tuition fees. The Free Fees Initiative means the Department pays the fees to the colleges instead.",
-   "last_verified_at": "2026-08-12",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -3872,8 +3872,8 @@
    },
    "source_url": "https://hea.ie/funding-governance-performance/funding/student-finance/student-assistance-fund/",
    "source_snippet": "The Student Assistance Fund provides financial assistance to full-time or part-time higher education students experiencing financial difficulties while attending college",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "1916-bursary-fund",
@@ -3890,7 +3890,7 @@
    "amount_period": "annual",
    "amount_note": "€5,000 per year for each year of undergraduate study for students from groups under-represented in higher education (e.g. socio-economically disadvantaged, lone parents, ethnic minorities, students with disabilities), awarded through participating colleges",
    "is_automatic": false,
-   "application_url": "https://1916.ie",
+   "application_url": "https://hea.ie/funding-governance-performance/funding/student-finance/1916-bursary/",
    "application_channel": "online",
    "deadline_type": "window",
    "deadline_note": "Applications are made in autumn of first year through your college's access office",
@@ -3934,10 +3934,10 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://1916.ie",
+   "source_url": "https://hea.ie/funding-governance-performance/funding/student-finance/1916-bursary/",
    "source_snippet": "The 1916 Bursary provides €5,000 per year of study to students who are socio-economically disadvantaged and from groups most under-represented in higher education",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "springboard-plus",
@@ -3952,7 +3952,7 @@
    "amount_max": null,
    "amount_currency": "EUR",
    "amount_period": "annual",
-   "amount_note": "Free part-time higher education courses (certificate to masters level) in skills-shortage areas for unemployed people; employed people pay 10% of the course fee",
+   "amount_note": "Free part-time higher education courses for unemployed people and returners to the workforce; people in employment typically pay 10% of the course fee (level 6 fully funded; micro-credential courses funded at 50%)",
    "is_automatic": false,
    "application_url": "https://springboardcourses.ie",
    "application_channel": "online",
@@ -4001,10 +4001,10 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://springboardcourses.ie",
+   "source_url": "https://hea.ie/skills-engagement/springboard/",
    "source_snippet": "Springboard+ provides free higher education courses for people who are unemployed and 90% funded courses for people in employment, in areas of identified skills need",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "school-transport-scheme",
@@ -4021,7 +4021,7 @@
    "amount_period": "annual",
    "amount_note": "Subsidised bus transport for eligible primary pupils living 3.2km+ and post-primary pupils living 4.8km+ from their nearest school; annual ticket fee capped per family, free for children with medical cards; Remote Area Grants support families not served by a route",
    "is_automatic": false,
-   "application_url": "https://www.gov.ie/en/service/school-transport/",
+   "application_url": "https://www.gov.ie/en/department-of-education/services/school-transport/",
    "application_channel": "online",
    "deadline_type": "window",
    "deadline_note": "Applications and payments must be made before the deadline for the school year (usually in spring/summer)",
@@ -4063,10 +4063,10 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.gov.ie/en/service/school-transport/",
+   "source_url": "https://www.gov.ie/en/department-of-education/services/school-transport/",
    "source_snippet": "School Transport is a significant operation managed by Bus Éireann on behalf of the Department of Education, providing transport for eligible children to their nearest school",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "hear-dare-access-schemes",
@@ -4086,7 +4086,7 @@
    "application_url": "https://accesscollege.ie",
    "application_channel": "online",
    "deadline_type": "window",
-   "deadline_note": "Apply via the CAO by 1 February, complete the HEAR/DARE sections by 1 March, and submit documents by mid-March",
+   "deadline_note": "Apply to the CAO by 5pm on 1 February; complete the HEAR/DARE application by 5pm on 1 March (DARE applicants must be under 23 on 1 January of the entry year); dates repeat each year",
    "procedure_steps": [
     {
      "step": 1,
@@ -4132,10 +4132,10 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://accesscollege.ie",
+   "source_url": "https://handbook.cao.ie/page/applying-for-hear-and-dare",
    "source_snippet": "HEAR (Higher Education Access Route) and DARE (Disability Access Route to Education) are third-level alternative admissions schemes for school-leavers whose socio-economic background or disability has negatively impacted their education",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "back-to-education-allowance",
@@ -4150,7 +4150,7 @@
    "amount_max": 254,
    "amount_currency": "EUR",
    "amount_period": "monthly",
-   "amount_note": "Weekly payment (up to €254, 2026) equal to your qualifying social welfare rate while you study an approved second-level or further/higher education course; an annual Cost of Education Allowance also applies",
+   "amount_note": "Weekly payment at the same rate as your qualifying social welfare payment (plus any qualified-adult/child increases) while you study; an annual Cost of Education Allowance of EUR500 applies if you have a dependent child",
    "is_automatic": false,
    "application_url": "https://services.mywelfare.ie/en/topics/back-to-education/",
    "application_channel": "online",
@@ -4201,8 +4201,8 @@
    },
    "source_url": "https://www.citizensinformation.ie/en/social-welfare/back-to-education/back-to-education-allowance/",
    "source_snippet": "The Back to Education Allowance lets people on certain social welfare payments keep a payment while studying an approved full-time second-level or third-level course",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "community-employment",
@@ -4217,7 +4217,7 @@
    "amount_max": null,
    "amount_currency": "EUR",
    "amount_period": "monthly",
-   "amount_note": "Part-time (19.5 hours/week) paid work placements in local community projects for long-term unemployed people; CE rate is based on your social welfare payment plus a top-up (minimum €259.50/week personal rate for new participants, 2026)",
+   "amount_note": "Part-time (19.5 hours/week) paid work placements in local community projects; minimum weekly payment for new participants is EUR286.50 (2026), or your social welfare rate plus EUR32.50 if higher; usually 1 year",
    "is_automatic": false,
    "application_url": "https://www.gov.ie/en/service/community-employment-scheme/",
    "application_channel": "in_person",
@@ -4266,8 +4266,8 @@
    },
    "source_url": "https://www.citizensinformation.ie/en/employment/unemployment-and-redundancy/employment-support-schemes/community-employment-scheme/",
    "source_snippet": "Community Employment helps people get back to work by offering part-time and temporary placements in jobs based within local communities",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "tus-community-work-placement",
@@ -4282,7 +4282,7 @@
    "amount_max": null,
    "amount_currency": "EUR",
    "amount_period": "monthly",
-   "amount_note": "12-month, 19.5-hours-per-week quality work placements in community and voluntary organisations for people unemployed for 12+ months on Jobseeker's Allowance; payment equivalent to your JA rate plus a weekly top-up (minimum €259.50, 2026)",
+   "amount_note": "12-month, 19.5-hours-per-week work placements in community and voluntary organisations; minimum weekly payment EUR286.50 (2026), or your Jobseeker's Allowance rate plus EUR32.50 if higher",
    "is_automatic": false,
    "application_url": "https://www.gov.ie/en/service/tus-initiative/",
    "application_channel": "in_person",
@@ -4331,8 +4331,8 @@
    },
    "source_url": "https://www.citizensinformation.ie/en/employment/unemployment-and-redundancy/employment-support-schemes/tus/",
    "source_snippet": "Tús provides short-term, quality work opportunities for people who are unemployed for more than a year, in community and voluntary organisations",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "jobsplus",
@@ -4347,7 +4347,7 @@
    "amount_max": 10000,
    "amount_currency": "EUR",
    "amount_period": "one_off",
-   "amount_note": "Grant paid monthly over 2 years to employers who recruit a person unemployed long-term: €7,500 for someone unemployed 12+ months, €10,000 for someone unemployed 24+ months (or under 25 and 4+ months, and certain other groups)",
+   "amount_note": "Incentive paid to employers monthly in arrears over 18 months: EUR7,500 for recruiting someone on a qualifying payment (Jobseeker, Disability Allowance or Blind Pension) for 12 of the previous 18 months; EUR10,000 if the employee is over 50 or has been on a qualifying payment for 24 of the previous 30 months",
    "is_automatic": false,
    "application_url": "https://www.gov.ie/en/service/jobsplus/",
    "application_channel": "online",
@@ -4396,8 +4396,8 @@
    },
    "source_url": "https://www.citizensinformation.ie/en/employment/unemployment-and-redundancy/employment-support-schemes/jobsplus/",
    "source_snippet": "JobsPlus provides a direct monthly payment to employers who recruit people from the live register: €7,500 over two years for those unemployed 12 months or more, €10,000 for those unemployed 24 months or more",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "work-placement-experience-programme",
@@ -4408,13 +4408,13 @@
    "funder": "Department of Social Protection (DSP)",
    "category": "employment",
    "benefit_type": "cash_monthly",
-   "amount_min": 259.5,
-   "amount_max": 259.5,
+   "amount_min": 369,
+   "amount_max": 369,
    "amount_currency": "EUR",
    "amount_period": "weekly",
-   "amount_note": "€259.50 per week (2026) for a 6-month, 30-hours-per-week work experience placement for people unemployed 6+ months (or on certain payments); no cost to the host employer",
+   "amount_note": "EUR369 per week for a 6-month, 30-hours-per-week work experience placement for people aged 18-65 on a qualifying social welfare payment for 4 months (under 30) or 6 months (over 30); no cost to the host employer",
    "is_automatic": false,
-   "application_url": "https://www.gov.ie/en/service/work-placement-experience-programme/",
+   "application_url": "https://www.gov.ie/en/department-of-social-protection/services/work-placement-experience-programme/",
    "application_channel": "online",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -4459,10 +4459,10 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.gov.ie/en/service/work-placement-experience-programme/",
+   "source_url": "https://www.citizensinformation.ie/en/employment/unemployment-and-redundancy/employment-support-schemes/work-placement-experience-programme/",
    "source_snippet": "WPEP gives people who have never had a job or who have lost their job the opportunity to get quality work experience for 6 months while keeping a weekly payment",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "back-to-work-enterprise-allowance",
@@ -4477,7 +4477,7 @@
    "amount_max": 254,
    "amount_currency": "EUR",
    "amount_period": "monthly",
-   "amount_note": "Paid at 100% of your weekly social welfare rate in year 1 and 75% in year 2 while you set up as self-employed; for people on Jobseeker's payments (12+ months, or 9 months on JB) with a viable business plan",
+   "amount_note": "Paid at 100% of your weekly social welfare rate in year 1 and 75% in year 2 while you set up as self-employed; for people on Jobseeker's Benefit/Allowance (or certain other payments) continuously for at least 9 months with a business plan approved in advance",
    "is_automatic": false,
    "application_url": "https://services.mywelfare.ie/en/topics/self-employment-supports/",
    "application_channel": "in_person",
@@ -4527,8 +4527,8 @@
    },
    "source_url": "https://www.citizensinformation.ie/en/social-welfare/social-welfare-payments-and-work/back-to-work-enterprise-allowance/",
    "source_snippet": "The Back to Work Enterprise Allowance encourages people getting certain social welfare payments to become self-employed by keeping a portion of their payment while their business is being established",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "short-term-enterprise-allowance",
@@ -4593,8 +4593,8 @@
    },
    "source_url": "https://www.citizensinformation.ie/en/social-welfare/social-welfare-payments-and-work/short-term-enterprise-allowance/",
    "source_snippet": "The Short-Term Enterprise Allowance supports people who have lost their job and qualify for Jobseeker's Benefit to start their own business while keeping their payment",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "skills-to-advance",
@@ -4611,7 +4611,7 @@
    "amount_period": "one_off",
    "amount_note": "Free or heavily subsidised upskilling and reskilling courses for employees, especially those in lower-skilled jobs or vulnerable sectors, delivered by ETBs (day, evening and online options)",
    "is_automatic": false,
-   "application_url": "https://www.skillstoadvance.ie",
+   "application_url": "https://www.solas.ie/programmes/skills-to-advance/",
    "application_channel": "online",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -4655,10 +4655,10 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.skillstoadvance.ie",
+   "source_url": "https://www.solas.ie/programmes/skills-to-advance/",
    "source_snippet": "Skills to Advance offers upskilling and reskilling opportunities to employees in jobs undergoing change and to those currently employed in vulnerable sectors, at low or no cost",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "rent-tax-credit",
@@ -4675,7 +4675,7 @@
    "amount_period": "annual",
    "amount_note": "Up to €1,000 per year for a single person or €2,000 for a jointly assessed couple, capped at 20% of rent paid; for tenants in RTB-registered private rented homes, rent-a-room or digs for work, or student accommodation",
    "is_automatic": false,
-   "application_url": "https://www.revenue.ie/en/property/rental-income/rent-tax-credit/index.aspx",
+   "application_url": "https://www.revenue.ie/en/personal-tax-credits-reliefs-and-exemptions/land-and-property/rent-credit/how-to-claim.aspx",
    "application_channel": "online",
    "deadline_type": "rolling",
    "deadline_note": "Claims can be made for the current year and backdated up to 4 years (2022 onwards)",
@@ -4722,9 +4722,9 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.revenue.ie/en/property/rental-income/rent-tax-credit/index.aspx",
+   "source_url": "https://www.revenue.ie/en/personal-tax-credits-reliefs-and-exemptions/land-and-property/rent-credit/index.aspx",
    "source_snippet": "The Rent Tax Credit is €1,000 per year for single tenants and €2,000 for married/civil partners (2024-2025 rates); requires RTB-registered tenancy as principal private residence",
-   "last_verified_at": "2026-08-12",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -4742,7 +4742,7 @@
    "amount_period": "annual",
    "amount_note": "Temporary credit on the increase in mortgage interest paid since 2022, for homeowners with an outstanding mortgage of €80,000-€500,000 at end-2022; maximum €1,250 for 2025 and a reduced maximum of €625 for 2026 (extended to 31 December 2026 on a tapered basis)",
    "is_automatic": false,
-   "application_url": "https://www.revenue.ie/en/property/owning-a-home/mortgage-interest-tax-credit/index.aspx",
+   "application_url": "https://www.revenue.ie/en/personal-tax-credits-reliefs-and-exemptions/land-and-property/mortgage/index.aspx",
    "application_channel": "online",
    "deadline_type": "annual",
    "deadline_note": "The 2025 credit (max €1,250) is claimed from 2026; the 2026 credit (max €625) from 2027",
@@ -4784,9 +4784,9 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.gov.ie/en/department-of-finance/press-releases/minister-donohoe-publishes-finance-bill-2025/",
+   "source_url": "https://www.revenue.ie/en/personal-tax-credits-reliefs-and-exemptions/land-and-property/mortgage/index.aspx",
    "source_snippet": "The Finance Bill extends Mortgage Interest Tax Relief, on a tapered basis, for two further years, to 31 December 2026... maximum tax credit of €1,250 per property available to claim from 2026... a maximum tax credit of €625 per property available to claim from 2027",
-   "last_verified_at": "2026-08-12",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -4802,9 +4802,9 @@
    "amount_max": 1950,
    "amount_currency": "EUR",
    "amount_period": "annual",
-   "amount_note": "€1,950 per year (2025/2026) for jointly assessed couples where one spouse/partner cares at home for a child or dependent person; reduced where the home carer's own income exceeds €7,200 (clawed back fully at €11,300)",
+   "amount_note": "EUR1,950 per year (as previously recorded) for married/civil-partner couples jointly assessed where one partner cares at home for a dependent person; full credit if the carer's income is under EUR7,200, reduced above that, nil at EUR11,100 or more (2026)",
    "is_automatic": false,
-   "application_url": "https://www.revenue.ie/en/personal-tax-credits-reliefs-and-exemptions/family-and-dependant/home-carers/index.aspx",
+   "application_url": "https://www.revenue.ie/en/personal-tax-credits-reliefs-and-exemptions/health-and-age/home-carer-credit/index.aspx",
    "application_channel": "online",
    "deadline_type": "rolling",
    "deadline_note": "Claim for the current year or backdate up to 4 years",
@@ -4848,9 +4848,9 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.revenue.ie/en/personal-tax-credits-reliefs-and-exemptions/family-and-dependant/home-carers/index.aspx",
+   "source_url": "https://www.revenue.ie/en/personal-tax-credits-reliefs-and-exemptions/health-and-age/home-carer-credit/index.aspx",
    "source_snippet": "The Home Carer Tax Credit is €1,950 for couples taxed under joint assessment where one spouse or civil partner works in the home caring for a dependant",
-   "last_verified_at": "2026-08-12",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -4868,7 +4868,7 @@
    "amount_period": "annual",
    "amount_note": "€1,900 annual tax credit plus a €4,000 increase to your standard rate cut-off point, for a single parent (or primary claimant) with a qualifying child; only one claimant per child",
    "is_automatic": false,
-   "application_url": "https://www.revenue.ie/en/personal-tax-credits-reliefs-and-exemptions/family-and-dependant/single-person-child-carer/index.aspx",
+   "application_url": "https://www.revenue.ie/en/personal-tax-credits-reliefs-and-exemptions/children/single-person-child-carer-credit/how-claim-spccc.aspx",
    "application_channel": "online",
    "deadline_type": "rolling",
    "deadline_note": "Claim for the current year or backdate up to 4 years",
@@ -4905,10 +4905,10 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.revenue.ie/en/personal-tax-credits-reliefs-and-exemptions/family-and-dependant/single-person-child-carer/index.aspx",
+   "source_url": "https://www.revenue.ie/en/personal-tax-credits-reliefs-and-exemptions/children/single-person-child-carer-credit/index.aspx",
    "source_snippet": "The Single Person Child Carer Credit is €1,900, and the primary claimant is also entitled to an increase of €4,000 in the standard rate band",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "incapacitated-child-tax-credit",
@@ -4925,7 +4925,7 @@
    "amount_period": "annual",
    "amount_note": "€3,800 per year (2025/2026) per incapacitated child, for parents or guardians of a child who is permanently incapacitated (physically or mentally) from maintaining themselves",
    "is_automatic": false,
-   "application_url": "https://www.revenue.ie/en/personal-tax-credits-reliefs-and-exemptions/family-and-dependant/incapacitated-child/index.aspx",
+   "application_url": "https://www.revenue.ie/en/personal-tax-credits-reliefs-and-exemptions/children/incapacitated-child-credit/claiming.aspx",
    "application_channel": "online",
    "deadline_type": "rolling",
    "deadline_note": "Claim for the current year or backdate up to 4 years",
@@ -4967,10 +4967,10 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.revenue.ie/en/personal-tax-credits-reliefs-and-exemptions/family-and-dependant/incapacitated-child/index.aspx",
+   "source_url": "https://www.revenue.ie/en/personal-tax-credits-reliefs-and-exemptions/children/incapacitated-child-credit/index.aspx",
    "source_snippet": "The Incapacitated Child Tax Credit is €3,800 for each incapacitated child, where the child is permanently incapacitated from maintaining themselves",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "dependent-relative-tax-credit",
@@ -4987,7 +4987,7 @@
    "amount_period": "annual",
    "amount_note": "€305 per year (2025/2026) for maintaining a dependent relative at your own expense (e.g. widowed father or mother, elderly or incapacitated relative); the relative's income must not exceed the specified limit",
    "is_automatic": false,
-   "application_url": "https://www.revenue.ie/en/personal-tax-credits-reliefs-and-exemptions/family-and-dependant/dependent-relative/index.aspx",
+   "application_url": "https://www.revenue.ie/en/personal-tax-credits-reliefs-and-exemptions/health-and-age/dependant-relative-tax-credit/index.aspx",
    "application_channel": "online",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -5010,7 +5010,7 @@
     "age_min": null,
     "age_max": null,
     "income_annual_max": null,
-    "income_note": "The dependent relative's own income must not exceed the annual limit (around €18,000) for the credit to apply",
+    "income_note": "The dependent relative's own income must not exceed EUR18,548 (2026; EUR18,028 for 2025) for the credit to apply; all of the relative's income including social welfare and pensions counts.",
     "requires_children": false,
     "nationality": "any_resident",
     "residency_months_min": null,
@@ -5019,10 +5019,10 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.revenue.ie/en/personal-tax-credits-reliefs-and-exemptions/family-and-dependant/dependent-relative/index.aspx",
+   "source_url": "https://www.revenue.ie/en/personal-tax-credits-reliefs-and-exemptions/health-and-age/dependant-relative-tax-credit/index.aspx",
    "source_snippet": "You may claim the Dependent Relative Tax Credit if you maintain at your own expense a dependent relative such as a widowed parent or an incapacitated relative",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "age-tax-credit",
@@ -5039,7 +5039,7 @@
    "amount_period": "annual",
    "amount_note": "€245 per year for each person aged 65 or over (€490 for a married couple or civil partners, jointly assessed, where either is 65+)",
    "is_automatic": false,
-   "application_url": "https://www.revenue.ie/en/personal-tax-credits-reliefs-and-exemptions/income-tax-credits-and-reliefs/age-tax-credit.aspx",
+   "application_url": "https://www.revenue.ie/en/personal-tax-credits-reliefs-and-exemptions/health-and-age/age-tax-credit/index.aspx",
    "application_channel": "online",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -5075,10 +5075,10 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.revenue.ie",
+   "source_url": "https://www.revenue.ie/en/personal-tax-credits-reliefs-and-exemptions/health-and-age/age-tax-credit/index.aspx",
    "source_snippet": "The Age Tax Credit is €245 for a single person aged 65 or over and €490 for a married couple or civil partners (jointly assessed) where either partner is 65 or over",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "blind-persons-tax-credit",
@@ -5095,7 +5095,7 @@
    "amount_period": "annual",
    "amount_note": "€1,950 per year if you are blind (€3,900 where both spouses/civil partners are blind), plus a further Blind Person's Guide Dog Allowance (€825 at 20% = €165) if you have a trained guide dog",
    "is_automatic": false,
-   "application_url": "https://www.revenue.ie/en/personal-tax-credits-reliefs-and-exemptions/persons-with-disabilities/blind-persons/index.aspx",
+   "application_url": "https://www.revenue.ie/en/personal-tax-credits-reliefs-and-exemptions/health-and-age/blind-tax-credit/index.aspx",
    "application_channel": "online",
    "deadline_type": "rolling",
    "deadline_note": "Claim for the current year or backdate up to 4 years",
@@ -5132,10 +5132,10 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.revenue.ie/en/personal-tax-credits-reliefs-and-exemptions/persons-with-disabilities/blind-persons/index.aspx",
+   "source_url": "https://www.revenue.ie/en/personal-tax-credits-reliefs-and-exemptions/health-and-age/blind-tax-credit/index.aspx",
    "source_snippet": "The Blind Person's Tax Credit is €1,950; where both spouses or civil partners are blind the credit is €3,900",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "rent-a-room-relief",
@@ -5152,7 +5152,7 @@
    "amount_period": "annual",
    "amount_note": "Gross rental income from letting a room (or rooms) in your own home is exempt from Income Tax, USC and PRSI up to €14,000 per year; income above the limit is taxed in full",
    "is_automatic": false,
-   "application_url": "https://www.revenue.ie/en/property/rental-income/renting-a-room-in-your-home/index.aspx",
+   "application_url": "https://www.revenue.ie/en/personal-tax-credits-reliefs-and-exemptions/land-and-property/rent-a-room-relief/index.aspx",
    "application_channel": "automatic",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -5184,10 +5184,10 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.revenue.ie/en/property/rental-income/renting-a-room-in-your-home/index.aspx",
+   "source_url": "https://www.revenue.ie/en/personal-tax-credits-reliefs-and-exemptions/land-and-property/rent-a-room-relief/index.aspx",
    "source_snippet": "If you rent out a room in your home, rental income up to €14,000 per year is exempt from Income Tax, USC and PRSI under Rent-a-Room Relief",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "remote-working-relief",
@@ -5204,7 +5204,7 @@
    "amount_period": "annual",
    "amount_note": "Tax relief at your highest rate on 30% of the cost of electricity, heating and broadband for the days you work from home; alternatively your employer can pay €3.20 per day tax-free",
    "is_automatic": false,
-   "application_url": "https://www.revenue.ie/en/jobs-and-pensions/working-from-home/index.aspx",
+   "application_url": "https://www.revenue.ie/en/jobs-and-pensions/eworking/what-costs-can-you-claim-for.aspx",
    "application_channel": "online",
    "deadline_type": "rolling",
    "deadline_note": "Claim after the end of the tax year (backdate up to 4 years); employer daily payments are made through payroll",
@@ -5248,10 +5248,10 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.revenue.ie/en/jobs-and-pensions/working-from-home/index.aspx",
-   "source_snippet": "You can claim tax relief on 30% of the cost of electricity, heat and broadband apportioned over the number of days worked from home, or your employer can pay you up to €3.20 per day tax-free",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www.revenue.ie/en/jobs-and-pensions/eworking/what-costs-can-you-claim-for.aspx",
+   "source_snippet": "If your employer does not make a payment of €3.20 per day, or pays you less than your allowable costs, you can claim Remote Working Relief. The relief is given at your highest rate of tax.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "small-benefit-exemption",
@@ -5266,9 +5266,9 @@
    "amount_max": 1500,
    "amount_currency": "EUR",
    "amount_period": "annual",
-   "amount_note": "Employers can give employees up to two non-cash benefits (e.g. vouchers) per year tax-free, with a combined maximum value of €1,500, exempt from Income Tax, USC and PRSI",
+   "amount_note": "Employers can give an employee up to five qualifying non-cash incentives per tax year tax-free, with a cumulative annual value not exceeding €1,500 (from 1 January 2025); employer reports each benefit to Revenue in real time",
    "is_automatic": false,
-   "application_url": "https://www.revenue.ie/en/jobs-and-pensions/taxation-of-employer-benefits/small-benefit-exemption.aspx",
+   "application_url": "https://www.revenue.ie/en/employing-people/benefit-in-kind-for-employers/valuation-of-benefits/small-benefit-exemption.aspx",
    "application_channel": "via_employer",
    "deadline_type": "rolling",
    "deadline_note": "Maximum of two benefits per calendar year; any unused amount cannot be carried forward",
@@ -5302,10 +5302,10 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.revenue.ie/en/jobs-and-pensions/taxation-of-employer-benefits/small-benefit-exemption.aspx",
-   "source_snippet": "Employers may provide up to two non-cash benefits to employees in a year, tax-free, to a combined maximum value of €1,500",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www.revenue.ie/en/employing-people/benefit-in-kind-for-employers/valuation-of-benefits/small-benefit-exemption.aspx",
+   "source_snippet": "From 1 January 2025, employers can provide up to five qualifying incentives to an employee in any tax year, with a cumulative annual value not exceeding €1,500.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "health-expenses-tax-relief",
@@ -5365,9 +5365,9 @@
     "gender": "any"
    },
    "source_url": "https://www.revenue.ie/en/personal-tax-credits-reliefs-and-exemptions/health-and-age/health-expenses/index.aspx",
-   "source_snippet": "You can claim tax relief at the standard rate of 20% on qualifying health expenses; nursing home expenses qualify at your highest rate of tax (up to 40%)",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_snippet": "You generally receive tax relief at your standard rate of 20%. Nursing home expenses are given at your highest rate of tax (up to 40%). The four-year rule applies.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "trading-online-voucher",
@@ -5448,8 +5448,8 @@
     "gender": "any"
    },
    "source_url": "https://www.localenterprise.ie/discover-business-supports/trading-online-voucher-scheme/",
-   "source_snippet": "The Trading Online Voucher Scheme offers financial assistance of up to €2,500 with co-funding of 50% from the business to help your business trade online",
-   "last_verified_at": "2026-08-12",
+   "source_snippet": "Trading Online Voucher Scheme. This scheme is a matched-funding opportunity with up to €2,500 available",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -5462,12 +5462,12 @@
    "category": "business",
    "benefit_type": "cash_one_off",
    "amount_min": null,
-   "amount_max": 80000,
+   "amount_max": 150000,
    "amount_currency": "EUR",
    "amount_period": "one_off",
-   "amount_note": "Start-up grant for new micro-enterprises (up to 18 months old): normally up to 50% of eligible costs (salary, capital items, consultancy, marketing) to a maximum of €80,000 depending on location and jobs created",
+   "amount_note": "Normally up to 50% of investment, up to €80,000 (up to €150,000 in certain situations); start-ups within first 18 months, up to 10 employees",
    "is_automatic": false,
-   "application_url": "https://www.localenterprise.ie/discover-business-supports/financial-supports/",
+   "application_url": "https://www.localenterprise.ie/faqs/response/what-grants-are-available-from-the-leo-/",
    "application_channel": "online",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -5525,10 +5525,10 @@
     ],
     "gender": "any"
    },
-   "source_url": "https://www.localenterprise.ie/discover-business-supports/financial-supports/",
-   "source_snippet": "Priming Grants are available to start-up businesses trading for less than 18 months, normally for up to 50% of eligible investment costs",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www.localenterprise.ie/faqs/response/what-grants-are-available-from-the-leo-/",
+   "source_snippet": "up to €80,000 ... up to €150,000 in certain situations ... not exceed 50% of the investment ... within the first 18 months of start-up",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "leo-business-expansion-grant",
@@ -5540,12 +5540,12 @@
    "category": "business",
    "benefit_type": "cash_one_off",
    "amount_min": null,
-   "amount_max": 80000,
+   "amount_max": 150000,
    "amount_currency": "EUR",
    "amount_period": "one_off",
-   "amount_note": "Expansion grant for established micro-enterprises (trading over 18 months) to grow: normally up to 50% of eligible costs to a maximum of €80,000 (higher in exceptional cases), supporting job creation",
+   "amount_note": "Up to 50% of investment, maximum €150,000 or whichever is the lesser; for micro-enterprises with up to 10 employees after the initial 18-month start-up period",
    "is_automatic": false,
-   "application_url": "https://www.localenterprise.ie/discover-business-supports/financial-supports/",
+   "application_url": "https://www.localenterprise.ie/faqs/response/what-grants-are-available-from-the-leo-/",
    "application_channel": "online",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -5598,10 +5598,10 @@
     ],
     "gender": "any"
    },
-   "source_url": "https://www.localenterprise.ie/discover-business-supports/financial-supports/",
-   "source_snippet": "Business Expansion Grants assist established businesses that want to expand, covering part of eligible capital, salary, consultancy and marketing costs",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www.localenterprise.ie/faqs/response/what-grants-are-available-from-the-leo-/",
+   "source_snippet": "employing up to 10 staff in its growth phase after the initial 18-month start-up period ... €150,000 - or whichever is the lesser ... not exceed 50% of the investment",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "leo-feasibility-study-grant",
@@ -5616,9 +5616,9 @@
    "amount_max": 15000,
    "amount_currency": "EUR",
    "amount_period": "one_off",
-   "amount_note": "Up to 50-60% of the cost of researching the viability of a new business idea or innovation (market research, prototype development, consultancy), with maximum grants typically €15,000 depending on enterprise type",
+   "amount_note": "From 50% (South and East Region) to 60% (Border Midlands West Region) of investment, up to a maximum of €15,000",
    "is_automatic": false,
-   "application_url": "https://www.localenterprise.ie/discover-business-supports/financial-supports/",
+   "application_url": "https://www.localenterprise.ie/faqs/response/what-grants-are-available-from-the-leo-/",
    "application_channel": "online",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -5671,10 +5671,10 @@
     ],
     "gender": "any"
    },
-   "source_url": "https://www.localenterprise.ie/discover-business-supports/financial-supports/",
-   "source_snippet": "Feasibility Study Grants help promoters investigate the potential of a business idea before committing to start-up costs",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www.localenterprise.ie/faqs/response/what-grants-are-available-from-the-leo-/",
+   "source_snippet": "from 50% (in the South and East Region) to 60% (in the Borders Midlands, West Region) of investment ... up to a maximum of €15,000, whichever is the lesser",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "new-frontiers-programme",
@@ -5689,9 +5689,9 @@
    "amount_max": 15000,
    "amount_currency": "EUR",
    "amount_period": "one_off",
-   "amount_note": "National entrepreneur development programme for early-stage startups with export potential: intensive training and mentoring plus a tax-free scholarship stipend of €15,000 over 6 months for full-time participants",
+   "amount_note": "Support package worth over €30,000 with no equity taken; includes training, mentoring and a stipend. Application deadlines per programme location are listed on the calendar page",
    "is_automatic": false,
-   "application_url": "https://www.newfrontiers.ie",
+   "application_url": "https://www.newfrontiers.ie/calendar",
    "application_channel": "online",
    "deadline_type": "window",
    "deadline_note": "Programme phases run several times a year at partner campuses nationwide",
@@ -5736,9 +5736,9 @@
     "gender": "any"
    },
    "source_url": "https://www.newfrontiers.ie",
-   "source_snippet": "New Frontiers is Enterprise Ireland's national entrepreneurial development programme for ambitious early-stage entrepreneurs; Phase 2 participants receive a €15,000 stipend",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_snippet": "New Frontiers is ideal for first-time founders who want to build their startup toolkit, learn about the Irish startup ecosystem, and grow their professional network.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "competitive-start-fund",
@@ -5824,7 +5824,7 @@
    "amount_period": "one_off",
    "amount_note": "EU co-funded grants for rural enterprises, community groups and farmers: typically up to 50-75% of project costs (higher rates for community projects), for enterprise development, rural tourism, broadband and community infrastructure",
    "is_automatic": false,
-   "application_url": "https://ildn.ie",
+   "application_url": "https://www.gov.ie/en/department-of-rural-and-community-development-and-the-gaeltacht/services/leader-programme-for-rural-development/",
    "application_channel": "in_person",
    "deadline_type": "window",
    "deadline_note": "Calls and themes are set by each Local Action Group under its Local Development Strategy",
@@ -5877,10 +5877,10 @@
     ],
     "gender": "any"
    },
-   "source_url": "https://ildn.ie",
-   "source_snippet": "LEADER is a community-led approach to rural development, providing grant funding to rural enterprises, community organisations and farm families through Local Action Groups",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www.gov.ie/en/department-of-rural-and-community-development-and-the-gaeltacht/services/leader-programme-for-rural-development/",
+   "source_snippet": "Prospective applicants should contact their LAG through its Implementing Partner (where applicable) to register an expression of interest and discuss the eligibility of a project proposal",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "statutory-sick-pay",
@@ -5937,9 +5937,9 @@
     "gender": "any"
    },
    "source_url": "https://enterprise.gov.ie/en/what-we-do/workplace-and-skills/employment-rights/statutory-sick-pay/",
-   "source_snippet": "The statutory sick leave scheme gives employees the right to paid sick leave of 70% of normal wages, up to a maximum of €110 per day",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_snippet": "Workers will be entitled to up to 5 days of sick leave in a year, paid at 70% of gross earning, up to a cap of €110.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "living-alone-increase",
@@ -5993,9 +5993,9 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.citizensinformation.ie/en/social-welfare/older-and-retired-people/income-supports-for-older-people/",
-   "source_snippet": "The Living Alone Increase is a supplementary payment for people on social welfare pensions who are living alone. It is also available to people under the age of 66 who get certain other payments from the DSP.",
-   "last_verified_at": "2026-08-12",
+   "source_url": "https://www.citizensinformation.ie/en/social-welfare/extra-social-welfare-benefits/living-alone-allowance/",
+   "source_snippet": "If you are aged 66 or over and live alone, you will qualify for the Living Alone Increase if you are getting one of the following payments: State Pension (Contributory)...",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -6046,9 +6046,9 @@
     "gender": "any"
    },
    "source_url": "https://www.citizensinformation.ie/en/social-welfare/extra-social-welfare-benefits/telephone-support-allowance/",
-   "source_snippet": "The Telephone Support Allowance is a weekly payment of €2.50 for people on certain social welfare payments who are living alone, paid with the Living Alone Increase and Fuel Allowance",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_snippet": "Telephone Support Allowance €2.50 weekly; you must be getting both the Living Alone Increase and the Fuel Allowance",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "ecce-free-preschool",
@@ -6103,8 +6103,8 @@
     "admin_areas": []
    },
    "source_url": "https://www.citizensinformation.ie/en/education/pre-school-education-and-childcare/early-childhood-care-and-education-scheme/",
-   "source_snippet": "The 15 hours provided each week under ECCE are free. DCDE pays the pre-school provider for these ECCE hours.",
-   "last_verified_at": "2026-08-12",
+   "source_snippet": "The ECCE scheme provides up to 2 years of early childhood care and education for children of pre-school age.",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -6120,7 +6120,7 @@
    "amount_max": null,
    "amount_currency": "EUR",
    "amount_period": "monthly",
-   "amount_note": "Universal subsidy (not means-tested): EUR2.14/hour per child, up to 45 hours/week. Income-assessed subsidy: up to EUR5.10/hour depending on income, child's age and parents' work/study hours (20 hrs/week standard if not working). Paid to the Tusla-registered provider and deducted from the bill",
+   "amount_note": "Universal subsidy €2.14 per hour per child, up to 45 hours/week for enhanced; income-assessed subsidy up to €5.10 an hour depending on income",
    "is_automatic": false,
    "application_url": "https://ncs.gov.ie/en/",
    "application_channel": "online",
@@ -6163,9 +6163,9 @@
    "eligibility": {
     "statuses": [],
     "age_min": null,
-    "age_max": 15,
-    "income_annual_max": 60000,
-    "income_note": "Universal subsidy has no income test. Income-assessed subsidy requires reckonable household income below EUR60,000/yr (maximum rates at EUR26,000 or less; multiple-child discounts of EUR4,300/EUR8,600 raise the limits). From 31 August 2026 thresholds rise to EUR34,000 (full) and EUR68,000 (upper).",
+    "age_max": 14,
+    "income_annual_max": 68000,
+    "income_note": "Universal subsidy not means-tested. Income-assessed subsidy: maximum rate up to income threshold €34,000, tapering to cut-off threshold €68,000 (annual reckonable household income)",
     "requires_children": true,
     "gender": "any",
     "nationality": "any_resident",
@@ -6175,8 +6175,8 @@
     "admin_areas": []
    },
    "source_url": "https://www.citizensinformation.ie/en/education/pre-school-education-and-childcare/national-childcare-scheme/",
-   "source_snippet": "If your reckonable income is more than €60,000, you can apply for a universal subsidy, which is €2.14 an hour (per child) up to a maximum of 45 hours per week.",
-   "last_verified_at": "2026-08-12",
+   "source_snippet": "Aged between 6 months (24 weeks) and 15 years (children aged 15 do not qualify)",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -6188,11 +6188,11 @@
    "funder": "Department of Social Protection (DSP)",
    "category": "family",
    "benefit_type": "cash_monthly",
-   "amount_min": 58,
-   "amount_max": 312,
+   "amount_min": 29,
+   "amount_max": 78,
    "amount_currency": "EUR",
-   "amount_period": "monthly",
-   "amount_note": "Paid weekly for up to 2 years after moving from a jobseeker's payment or One-Parent Family Payment into work: year 1 EUR58/week per child under 12 and EUR78/week per child aged 12+ (2026 rates, max 4 children); half rate in year 2 (EUR29 / EUR39). Not taxable and paid regardless of earnings",
+   "amount_period": "weekly",
+   "amount_note": "From January 2026: year 1 €58/week per child under 12 and €78/week per child 12+; year 2 €29 and €39 per week respectively",
    "is_automatic": false,
    "application_url": "https://services.mywelfare.ie/en/topics/parents-children-family/",
    "application_channel": "online",
@@ -6240,7 +6240,7 @@
    },
    "source_url": "https://www.citizensinformation.ie/en/social-welfare/families-and-children/back-to-work-family-dividend/",
    "source_snippet": "From January 2026, the full BTWFD is €58 for a child aged under 12 and €78 for a child aged 12 and over. In the second year, it is reduced to €29 for a child aged under 12 and €39 for a child aged 12 and over.",
-   "last_verified_at": "2026-08-12",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -6302,7 +6302,7 @@
    },
    "source_url": "https://www.citizensinformation.ie/en/social-welfare/death-related-benefits/guardian-and-orphan-payments/",
    "source_snippet": "In 2026, the Guardian's Payment (Contributory) is paid at a standard rate of €237 per week and the maximum Guardian's Payment (Non-Contributory) is €237 per week.",
-   "last_verified_at": "2026-08-12",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -6364,7 +6364,7 @@
    },
    "source_url": "https://www.citizensinformation.ie/en/social-welfare/death-related-benefits/bereaved-parent-grant/",
    "source_snippet": "The Bereaved Parent Grant is a once-off payment of €8,000.",
-   "last_verified_at": "2026-08-12",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -6382,7 +6382,7 @@
    "amount_period": "one_off",
    "amount_note": "Free mammogram every 2 years for women aged 50 to 69; letter of invitation sent automatically to women registered with a GP / on the BreastCheck register",
    "is_automatic": true,
-   "application_url": "https://www.breastcheck.ie/",
+   "application_url": "https://www2.hse.ie/conditions/breast-screening/about/who-for/",
    "application_channel": "automatic",
    "deadline_type": "none",
    "deadline_note": null,
@@ -6413,10 +6413,10 @@
     "student_required": false,
     "admin_areas": []
    },
-   "source_url": "https://www.breastcheck.ie/",
-   "source_snippet": "BreastCheck provides free mammograms to women aged 50 to 69 every two years.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www2.hse.ie/conditions/breast-screening/about/who-for/",
+   "source_snippet": "Breast screening is for women and anyone age 50 to 69 with breasts or female breast tissue.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "cervicalcheck",
@@ -6433,7 +6433,7 @@
    "amount_period": "one_off",
    "amount_note": "Free cervical screening test (HPV cervical screening) for women and people with a cervix aged 25 to 65; frequency depends on age and results (every 3 or 5 years)",
    "is_automatic": false,
-   "application_url": "https://www.cervicalcheck.ie/",
+   "application_url": "https://www2.hse.ie/conditions/cervical-screening/about/who-for/",
    "application_channel": "in_person",
    "deadline_type": "none",
    "deadline_note": null,
@@ -6459,10 +6459,10 @@
     "student_required": false,
     "admin_areas": []
    },
-   "source_url": "https://www.cervicalcheck.ie/",
-   "source_snippet": "CervicalCheck provides free cervical screening tests to women and people with a cervix aged 25 to 65.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www2.hse.ie/conditions/cervical-screening/about/who-for/",
+   "source_snippet": "Free cervical screening is for women and anyone age 25 to 65 with a cervix.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "bowelscreen",
@@ -6477,9 +6477,9 @@
    "amount_max": null,
    "amount_currency": "EUR",
    "amount_period": "one_off",
-   "amount_note": "Free home bowel screening test (FIT) posted every 2 years to men and women aged 59 to 70 who are on the BowelScreen register",
+   "amount_note": "Free home bowel screening test (FIT) kit every 2 years for people aged 59 to 69",
    "is_automatic": true,
-   "application_url": "https://www.bowelscreen.ie/",
+   "application_url": "https://www2.hse.ie/conditions/bowel-screening/",
    "application_channel": "automatic",
    "deadline_type": "none",
    "deadline_note": null,
@@ -6499,7 +6499,7 @@
    "eligibility": {
     "statuses": [],
     "age_min": 59,
-    "age_max": 70,
+    "age_max": 69,
     "income_annual_max": null,
     "income_note": "Not means-tested; free for all aged 59-70",
     "requires_children": false,
@@ -6510,10 +6510,10 @@
     "student_required": false,
     "admin_areas": []
    },
-   "source_url": "https://www.bowelscreen.ie/",
-   "source_snippet": "BowelScreen offers free bowel screening to men and women aged 59 to 70 every two years.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www2.hse.ie/conditions/bowel-screening/",
+   "source_snippet": "The eligible age range for bowel screening is now 59 to 69 (previously 60 to 69).",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "flu-vaccine-free-groups",
@@ -6556,9 +6556,9 @@
     "student_required": false,
     "admin_areas": []
    },
-   "source_url": "https://www2.hse.ie/conditions/flu/vaccine/",
-   "source_snippet": "People age 60 and older are at higher risk of serious illness from flu... All children age between 2 and 17 can get the nasal flu vaccine.",
-   "last_verified_at": "2026-08-12",
+   "source_url": "https://www2.hse.ie/conditions/flu/get-vaccine/",
+   "source_snippet": "You can get a free flu vaccine if you: are age 60 and older are age 2 to 17 are a healthcare worker are pregnant live in a nursing home or other long-term care",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -6573,8 +6573,8 @@
    "amount_min": null,
    "amount_max": 254,
    "amount_currency": "EUR",
-   "amount_period": "monthly",
-   "amount_note": "Free full-time second-chance education courses (QQI levels 3-6, Junior/Leaving Cert, up to 2 years) with no fees, free books and materials, plus a VTOS training allowance paid at the maximum rate of your jobseeker's payment (up to EUR254/week, 2026, aged 25+), meal allowance and travel allowance; you keep secondary benefits (medical card, Fuel Allowance)",
+   "amount_period": "weekly",
+   "amount_note": "No fees; training allowance paid at the maximum rate of Jobseeker's Allowance (weekly); free books and materials may apply. Course up to 2 years",
    "is_automatic": false,
    "application_url": "https://www.citizensinformation.ie/en/education/further-education-and-training/vocational-training-opportunities-scheme/",
    "application_channel": "in_person",
@@ -6622,8 +6622,8 @@
     "admin_areas": []
    },
    "source_url": "https://www.citizensinformation.ie/en/education/further-education-and-training/vocational-training-opportunities-scheme/",
-   "source_snippet": "You can apply for VTOS if you are over 21 years of age, unemployed and have been getting certain social welfare payments for at least 6 months.",
-   "last_verified_at": "2026-08-12",
+   "source_snippet": "VTOS participants who move from jobseeker's payments get a VTOS training allowance at the maximum rate of the jobseeker's payment.",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -6679,8 +6679,8 @@
     "admin_areas": []
    },
    "source_url": "https://www.citizensinformation.ie/en/education/further-education-and-training/post-leaving-certificate-courses/",
-   "source_snippet": "You must pay a participant contribution fee of €200 per year to do a PLC course. You do not have to pay if you have a full medical card... are eligible for a student grant... get the Back to Education Allowance or a VTOS payment",
-   "last_verified_at": "2026-08-12",
+   "source_snippet": "You must pay a participant contribution fee of €200 per year to do a PLC course.",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -6749,10 +6749,10 @@
    "funder": "Department of Social Protection (DSP)",
    "category": "employment",
    "benefit_type": "cash_monthly",
-   "amount_min": 161,
-   "amount_max": 262,
+   "amount_min": 160.9,
+   "amount_max": 262.4,
    "amount_currency": "EUR",
-   "amount_period": "monthly",
+   "amount_period": "weekly",
    "amount_note": "Weekly allowance replacing Jobseeker's Allowance for long-term jobseekers who take up part-time work under 24 hours/week: EUR160.90/week single or EUR262.40/week with a qualified adult (2026); paid regardless of part-time earnings; not taxable; initially for one year (extendable) while seeking full-time work",
    "is_automatic": false,
    "application_url": "https://www.citizensinformation.ie/en/social-welfare/social-welfare-payments-and-work/part-time-job-incentive-scheme/",
@@ -6796,8 +6796,8 @@
     "admin_areas": []
    },
    "source_url": "https://www.citizensinformation.ie/en/social-welfare/social-welfare-payments-and-work/part-time-job-incentive-scheme/",
-   "source_snippet": "Instead of your usual payment, you will get a weekly allowance of: €160.90 per week if you are single; €262.40 per week if you are getting an increase for a qualified adult",
-   "last_verified_at": "2026-08-12",
+   "source_snippet": "€160.90 per week if you are single; €262.40 per week if you are getting an increase for a qualified adult. On long-term Jobseeker's Allowance (JA) for at least 312 days.",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -6813,7 +6813,7 @@
    "amount_max": 15210,
    "amount_currency": "EUR",
    "amount_period": "annual",
-   "amount_note": "Subsidy paid to private-sector employers of disabled workers whose productivity is 80% or less of normal: from April 2026, EUR7.50/hour per employee (1-6 employees), EUR8.50/hr (7-16), EUR10/hr (17+); max EUR15,210/yr per employee (39-hr week); Strand 3 grant of EUR30,000/yr towards an Employment Assistance Officer for employers with 25+ disabled employees. Employee must work at least 15 hours/week",
+   "amount_note": "From April 2026 per employee with a disability: €7.50/hour (1-6 subsidised employees), €8.50/hour (7-16), €10.00/hour (17+); maximum annual subsidy €15,210 based on a 39-hour week; employee must work at least 15 hours a week",
    "is_automatic": false,
    "application_url": "https://www.citizensinformation.ie/en/employment/employment-and-disability/wage-subsidy-scheme-for-people-with-disabilities/",
    "application_channel": "via_employer",
@@ -6855,8 +6855,8 @@
     "admin_areas": []
    },
    "source_url": "https://www.citizensinformation.ie/en/employment/employment-and-disability/wage-subsidy-scheme-for-people-with-disabilities/",
-   "source_snippet": "Since April 2026, the subsidy rates are: 1 to 6 employees: €7.50 per hour, per employee with a disability",
-   "last_verified_at": "2026-08-12",
+   "source_snippet": "The maximum annual subsidy to the employer is €15,210, based on a 39-hour week.",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -6872,7 +6872,7 @@
    "amount_max": 25000,
    "amount_currency": "EUR",
    "amount_period": "one_off",
-   "amount_note": "Suite of 7 supports (which replaced the Reasonable Accommodation Fund in 2024) to help disabled people get and keep work: Workplace Needs Assessment (up to EUR2,500), Workplace Adaptation (up to EUR25,000), Work Equipment (up to EUR12,000 workplace + EUR12,000 remote), In-work Support and Personal Reader (up to EUR12,500 each), Communication Support/ISL interpreting (up to 80 hours), Disability Equality and Inclusion Training for employers (up to EUR20,000)",
+   "amount_note": "Workplace Needs Assessment up to €2,500; In-Work Support up to €12,500 a year; Work Equipment up to €12,000; Workplace Adaptation up to €25,000; Disability Equality and Inclusion Training 80-90% of cost up to €20,000 over 12 months",
    "is_automatic": false,
    "application_url": "https://www.gov.ie/en/department-of-social-protection/services/work-and-access/",
    "application_channel": "post",
@@ -6921,8 +6921,8 @@
     "admin_areas": []
    },
    "source_url": "https://www.gov.ie/en/department-of-social-protection/services/work-and-access/",
-   "source_snippet": "Work and Access can pay up to €25,000 towards these changes... up to €12,000 for assistive equipment or technology used in the workplace",
-   "last_verified_at": "2026-08-12",
+   "source_snippet": "Work and Access can pay up to €25,000 towards these changes.",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -6980,8 +6980,8 @@
     "admin_areas": []
    },
    "source_url": "https://microfinanceireland.ie/",
-   "source_snippet": "We provide unsecured business loans of €2,000 to €50,000 for commercially viable proposals... with fewer than 10 full time employees and an annual turnover of less than €2 million",
-   "last_verified_at": "2026-08-12",
+   "source_snippet": "We provide business loans of €2,000 to €50,000",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -7047,7 +7047,7 @@
    },
    "source_url": "https://www.revenue.ie/en/personal-tax-credits-reliefs-and-exemptions/investment/relief-corporate/start-up-relief-for-entrepreneurs.aspx",
    "source_snippet": "SURE is a tax relief that provides a refund of Income Tax that you paid in previous years.",
-   "last_verified_at": "2026-08-12",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -7094,8 +7094,8 @@
     "admin_areas": []
    },
    "source_url": "https://www.revenue.ie/en/personal-tax-credits-reliefs-and-exemptions/income-and-employment/earned-income-credit/index.aspx",
-   "source_snippet": "The credit available is the lower of: €2,000, or 20% of your qualifying earned income.",
-   "last_verified_at": "2026-08-12",
+   "source_snippet": "The credit available is the lower of: €2,000 or 20% of your qualifying earned income.",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -7151,10 +7151,10 @@
     "age_min": null,
     "age_max": null,
     "income_annual_max": 40000,
-    "income_note": "You must qualify for social housing support: net household income below EUR40,000/yr (Band 1 areas) / EUR35,000 / EUR30,000 depending on location (single person; +5% per extra adult, +2.5% per child); assets under EUR20,000",
+    "income_note": "Net household income must not exceed limits that depend on area and household composition (social housing income limits table); property value limits apply (e.g. house €515,000 in Dublin, Kildare, Meath, Wicklow, Louth, Cork and Galway; €395,000 elsewhere)",
     "requires_children": false,
     "gender": "any",
-    "nationality": "any_resident",
+    "nationality": "citizen_or_pr",
     "residency_months_min": null,
     "housing_tenure": "owner",
     "student_required": false,
@@ -7162,8 +7162,8 @@
     "rule_source": "geography_unknown"
    },
    "source_url": "https://www.citizensinformation.ie/en/housing/owning-a-home/mortgage-arrears/mortgage-to-rent-scheme/",
-   "source_snippet": "If you are having trouble paying your mortgage, the mortgage-to-rent scheme lets you switch from owning your home to renting it as a social housing tenant.",
-   "last_verified_at": "2026-08-12",
+   "source_snippet": "You must have a long-term right to remain in the State.",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -7224,9 +7224,9 @@
     "admin_areas": [],
     "rule_source": "geography_unknown"
    },
-   "source_url": "https://www.citizensinformation.ie/en/housing/owning-a-home/help-with-buying-a-home/local-authority-mortgages/",
-   "source_snippet": "If you want to buy and renovate a derelict or non-habitable home, you may be able to get the Local Authority Purchase and Renovation Loan.",
-   "last_verified_at": "2026-08-12",
+   "source_url": "https://www.gov.ie/en/department-of-housing-local-government-and-heritage/services/local-authority-home-loan-scheme/",
+   "source_snippet": "Increased income limit for all single applicants in each local authority area: increase from €70,000 to €80,000 for all single applicants.",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -7270,9 +7270,9 @@
     "student_required": false,
     "admin_areas": []
    },
-   "source_url": "https://www.mabs.ie/",
-   "source_snippet": "MABS is the Irish money advice service... Our service is free of charge.",
-   "last_verified_at": "2026-08-12",
+   "source_url": "https://www.mabs.ie/en/",
+   "source_snippet": "Our service is free of charge. Helpline 0818 07 2000",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -7322,8 +7322,8 @@
     "admin_areas": []
    },
    "source_url": "https://www.svp.ie/get-help",
-   "source_snippet": "We assist individuals in need, regardless of faith, ethnicity, status, or sexual orientation... You can request help directly or someone can refer you or your family during times of need.",
-   "last_verified_at": "2026-08-12",
+   "source_snippet": "We assist individuals in need, regardless of faith, ethnicity, status, or sexual orientation.",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -7373,8 +7373,8 @@
     "admin_areas": []
    },
    "source_url": "https://www.transportforireland.ie/tfi-local-link/",
-   "source_snippet": "TFI Local Link provides local public transport in rural areas nationwide where other services are limited. The services are low-cost and available for anyone wishing to travel to or from their local town, village or parish.",
-   "last_verified_at": "2026-08-12",
+   "source_snippet": "Yes – the Free Travel Pass is accepted on all TFI Local Link Services.",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -7392,10 +7392,10 @@
    "amount_period": "one_off",
    "amount_note": "Annual grants to community and voluntary groups in the Dublin City Council area for local projects promoting social inclusion (2026 scheme fund EUR386,500); related supports include the Community Enhancement Programme/Local Enhancement Programme, Ballymun Social Regeneration Fund and Community Arts grants",
    "is_automatic": false,
-   "application_url": "https://www.dublincity.ie/people-and-communities/community-improvement-initiatives/find-community-grants-and-funding",
+   "application_url": "https://www.dublincity.ie/people-and-communities/community-improvement-initiatives/find-community-grants-and-funding/dublin-city-council-community-grant-scheme-2026",
    "application_channel": "online",
    "deadline_type": "window",
-   "deadline_note": "2026 scheme opened 22 January with closing date 20 February (1pm); runs annually",
+   "deadline_note": "2026 scheme opened 22 January 2026 and closed 13:00 on 20 February 2026 (total fund €386,500); next round not yet announced",
    "procedure_steps": [
     {
      "step": 1,
@@ -7426,9 +7426,760 @@
      "Dublin"
     ]
    },
-   "source_url": "https://www.dublincity.ie/people-and-communities/community-improvement-initiatives/find-community-grants-and-funding",
-   "source_snippet": "Dublin City Council's 2026 Community Grants Scheme opens 22 January, offering €386,500 to support local projects that promote social inclusion.",
-   "last_verified_at": "2026-08-12",
+   "source_url": "https://www.dublincity.ie/people-and-communities/community-improvement-initiatives/find-community-grants-and-funding/dublin-city-council-community-grant-scheme-2026",
+   "source_snippet": "The 2026 scheme opened for applications on Thursday 22nd January 2026 from 12 noon with a total fund of €386,500",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "nursing-homes-support-scheme-fair-deal",
+   "name_local": "Nursing Homes Support Scheme (Fair Deal)",
+   "name_en": "Nursing Homes Support Scheme (Fair Deal)",
+   "admin_level": "national",
+   "admin_area": null,
+   "funder": "Health Service Executive (HSE)",
+   "category": "health",
+   "benefit_type": "in_kind",
+   "amount_min": null,
+   "amount_max": null,
+   "amount_currency": "EUR",
+   "amount_period": "weekly",
+   "amount_note": "If approved you pay a fixed contribution (set by a financial assessment) towards long-term nursing home care and the HSE pays the balance of the approved cost. Funding is not backdated. An optional nursing home loan can be applied for as part of the application. Does not cover short-term care or extra fees such as hairdressing, therapies or activities.",
+   "is_automatic": false,
+   "application_url": "https://www2.hse.ie/services/schemes-allowances/fair-deal-scheme/application-process/",
+   "application_channel": "post",
+   "deadline_type": "rolling",
+   "deadline_note": "Funding is only paid from the date it is approved and cannot be backdated.",
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Complete the Fair Deal application form",
+     "url": "https://www2.hse.ie/services/schemes-allowances/fair-deal-scheme/application-process/"
+    },
+    {
+     "step": 2,
+     "detail": "HSE arranges a care needs assessment to see if you need long-term nursing home care",
+     "url": "https://www2.hse.ie/services/schemes-allowances/fair-deal-scheme/care-needs-assessment/"
+    },
+    {
+     "step": 3,
+     "detail": "HSE arranges a financial assessment to work out how much you pay",
+     "url": "https://www2.hse.ie/services/schemes-allowances/fair-deal-scheme/financial-assessment/"
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "Completed Nursing Homes Support Scheme application form",
+     "mandatory": true,
+     "note": null
+    }
+   ],
+   "eligibility": {
+    "statuses": [
+     "retired"
+    ],
+    "age_min": null,
+    "age_max": null,
+    "income_annual_max": null,
+    "income_note": "No fixed income ceiling: a financial assessment of your income and assets sets how much you contribute, and a 3 year cap applies to homes, farms and businesses. Approval also requires a care needs assessment showing you need long-term nursing home care.",
+    "requires_children": false,
+    "nationality": "any_resident",
+    "residency_months_min": null,
+    "housing_tenure": null,
+    "student_required": false,
+    "admin_areas": [],
+    "gender": "any",
+    "income_test": "unpublished",
+    "income_source_url": "https://www2.hse.ie/services/schemes-allowances/fair-deal-scheme/financial-assessment/",
+    "income_confidence": "high"
+   },
+   "source_url": "https://www2.hse.ie/services/schemes-allowances/fair-deal-scheme/about/",
+   "source_snippet": "If you're approved for Fair Deal, you pay a certain amount towards the total cost of nursing home care and HSE pays the balance.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "christmas-bonus-ireland",
+   "name_local": "Christmas Bonus (Ireland)",
+   "name_en": "Christmas Bonus (Ireland)",
+   "admin_level": "national",
+   "admin_area": null,
+   "funder": "Department of Social Protection (DSP)",
+   "category": "income_support",
+   "benefit_type": "cash_one_off",
+   "amount_min": 20,
+   "amount_max": null,
+   "amount_currency": "EUR",
+   "amount_period": "one_off",
+   "amount_note": "Once-off double week payment: in 2025 the Bonus was 100% of your normal weekly payment, with a minimum Bonus of €20. Paid in the first week of December to people getting a long-term social welfare payment. Not paid with Fuel Allowance alone. If you get 2 eligible payments you get the Bonus for both.",
+   "is_automatic": true,
+   "application_url": "https://www.citizensinformation.ie/en/social-welfare/irish-social-welfare-system/christmas-bonus/",
+   "application_channel": "automatic",
+   "deadline_type": "annual",
+   "deadline_note": "Paid automatically in the first week of December with your social welfare payment.",
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "No application needed: you are paid automatically with your qualifying payment",
+     "url": null
+    }
+   ],
+   "documents_required": [],
+   "eligibility": {
+    "statuses": [],
+    "age_min": null,
+    "age_max": null,
+    "income_annual_max": null,
+    "income_note": "No separate income test: entitlement follows getting a qualifying long-term social welfare payment (for example State Pension, Disability Allowance, Carer's Allowance, One-Parent Family Payment, or Jobseeker's Allowance for 12 months).",
+    "requires_children": false,
+    "nationality": "any_resident",
+    "residency_months_min": null,
+    "housing_tenure": null,
+    "student_required": false,
+    "admin_areas": [],
+    "gender": "any",
+    "income_test": "none",
+    "income_source_url": "https://www.citizensinformation.ie/en/social-welfare/irish-social-welfare-system/christmas-bonus/",
+    "income_confidence": "high"
+   },
+   "source_url": "https://www.citizensinformation.ie/en/social-welfare/irish-social-welfare-system/christmas-bonus/",
+   "source_snippet": "The Christmas Bonus is a once-off double week payment for people getting a long-term social welfare payment.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "disabled-drivers-and-passengers-tax-relief",
+   "name_local": "Disabled Drivers and Disabled Passengers Tax Relief Scheme",
+   "name_en": "Disabled Drivers and Disabled Passengers Tax Relief Scheme",
+   "admin_level": "national",
+   "admin_area": null,
+   "funder": "Revenue Commissioners",
+   "category": "transport",
+   "benefit_type": "tax_credit",
+   "amount_min": null,
+   "amount_max": 48000,
+   "amount_currency": "EUR",
+   "amount_period": "one_off",
+   "amount_note": "Remission or repayment of Value-Added Tax (VAT) and Vehicle Registration Tax (VRT) on a specially constructed or adapted vehicle, capped at €10,000, €16,000, €22,000, €32,000 or €48,000 depending on the category of adaptations and whether the Primary Medical Certificate holder is the driver or passenger. Also a fuel grant (up to 2,730 litres a year for a driver or passenger, 4,100 for an organisation) and possible motor tax exemption.",
+   "is_automatic": false,
+   "application_url": "https://www.revenue.ie/en/vrt/reliefs-and-exemptions/scheme-for-persons-with-disabilities.aspx",
+   "application_channel": "online",
+   "deadline_type": "rolling",
+   "deadline_note": "Only one vehicle can qualify per driver or passenger at any given time.",
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Get a Primary Medical Certificate (PMC) showing certain severe and permanent physical disabilities",
+     "url": null
+    },
+    {
+     "step": 2,
+     "detail": "Submit Form DD1 online through myAccount or ROS ('Drivers and Passengers with Disabilities' under Vehicle Services), or post a paper form to the Central Repayments Office, Limerick",
+     "url": "https://www.revenue.ie/en/vrt/documents/vrt/form-dd1.pdf"
+    },
+    {
+     "step": 3,
+     "detail": "Claim the fuel grant online with form FG1",
+     "url": null
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "Primary Medical Certificate",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Form DD1",
+     "mandatory": true,
+     "note": null
+    }
+   ],
+   "eligibility": {
+    "statuses": [],
+    "age_min": null,
+    "age_max": null,
+    "income_annual_max": null,
+    "income_note": "Not income-tested. Requires a Primary Medical Certificate (certain severe and permanent physical disabilities) and a vehicle specially constructed or adapted to carry the PMC holder.",
+    "requires_children": false,
+    "nationality": "any_resident",
+    "residency_months_min": null,
+    "housing_tenure": null,
+    "student_required": false,
+    "admin_areas": [],
+    "gender": "any",
+    "income_test": "none",
+    "income_source_url": "https://www.revenue.ie/en/vrt/reliefs-and-exemptions/scheme-for-persons-with-disabilities.aspx",
+    "income_confidence": "high"
+   },
+   "source_url": "https://www.revenue.ie/en/vrt/reliefs-and-exemptions/scheme-for-persons-with-disabilities.aspx",
+   "source_snippet": "A person must have certain severe and permanent physical disabilities to obtain a PMC.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "home-support-service",
+   "name_local": "Home Support Service (HSE)",
+   "name_en": "Home Support Service (HSE)",
+   "admin_level": "national",
+   "admin_area": null,
+   "funder": "Health Service Executive (HSE)",
+   "category": "health",
+   "benefit_type": "in_kind",
+   "amount_min": null,
+   "amount_max": null,
+   "amount_currency": "EUR",
+   "amount_period": "weekly",
+   "amount_note": "HSE funding for home care hours, allocated after a needs assessment based on the level of care you require. You can ask for Consumer Directed Home Support (CDHS), where you choose your provider and arrange the timing of calls and HSE pays the funding to your chosen provider.",
+   "is_automatic": false,
+   "application_url": "https://www2.hse.ie/services/home-support-service/how-to-apply/",
+   "application_channel": "post",
+   "deadline_type": "rolling",
+   "deadline_note": "You can apply at home, in hospital (ask the person managing your discharge plan) or from a nursing home if you want to return home.",
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Get the home support application form online or from your local home support office",
+     "url": "https://www2.hse.ie/documents/7820/Home_support_service_application_form.pdf"
+    },
+    {
+     "step": 2,
+     "detail": "Fill in the form yourself or ask a family member, GP, nurse or other healthcare professional to complete it for you",
+     "url": null
+    },
+    {
+     "step": 3,
+     "detail": "Post the form to your local home support office",
+     "url": "https://www2.hse.ie/services/home-support-service/contact/"
+    },
+    {
+     "step": 4,
+     "detail": "HSE carries out a needs assessment; if approved you are allocated funding",
+     "url": null
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "Completed Home Support Service application form",
+     "mandatory": true,
+     "note": "Declaration and consent in part 12 must be signed by you or a person legally allowed to act for you"
+    }
+   ],
+   "eligibility": {
+    "statuses": [],
+    "age_min": null,
+    "age_max": null,
+    "income_annual_max": null,
+    "income_note": "No income ceiling is published on the how-to-apply page; the service is allocated on assessed care needs.",
+    "requires_children": false,
+    "nationality": "any_resident",
+    "residency_months_min": null,
+    "housing_tenure": null,
+    "student_required": false,
+    "admin_areas": [],
+    "gender": "any",
+    "income_test": "none",
+    "income_source_url": "https://www2.hse.ie/services/home-support-service/how-to-apply/",
+    "income_confidence": "medium"
+   },
+   "source_url": "https://www2.hse.ie/services/home-support-service/how-to-apply/",
+   "source_snippet": "You can apply for the Home Support Service if you are:",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "fund-for-students-with-disabilities",
+   "name_local": "Fund for Students with Disabilities (FSD)",
+   "name_en": "Fund for Students with Disabilities (FSD)",
+   "admin_level": "national",
+   "admin_area": null,
+   "funder": "Higher Education Authority (HEA) for the Department of Further and Higher Education, Research, Innovation and Science",
+   "category": "education",
+   "benefit_type": "in_kind",
+   "amount_min": null,
+   "amount_max": null,
+   "amount_currency": "EUR",
+   "amount_period": "annual",
+   "amount_note": "Funds assistive technology equipment and software, non-medical helpers (for example personal assistants, notetakers), academic and learning support, supports for deaf or hard of hearing students and transport support. Funding is allocated to the college, not the student; your college organises supports with you.",
+   "is_automatic": false,
+   "application_url": "https://hea.ie/funding-governance-performance/funding/student-finance/fund-for-students-with-disabilities/",
+   "application_channel": "in_person",
+   "deadline_type": "annual",
+   "deadline_note": "Register with your college's disability or access office as soon as possible; students do not apply directly to the HEA.",
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Register with the disability or access office in your college",
+     "url": null
+    },
+    {
+     "step": 2,
+     "detail": "Meet the college's criteria and have your support needs verified",
+     "url": null
+    },
+    {
+     "step": 3,
+     "detail": "Your college arranges services, supports or equipment in consultation with you",
+     "url": null
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "Evidence of a verifiable disability in one of the HEA categories (for example autism, ADHD, dyslexia, deaf or hard of hearing, mental health condition)",
+     "mandatory": true,
+     "note": null
+    }
+   ],
+   "eligibility": {
+    "statuses": [
+     "student"
+    ],
+    "age_min": null,
+    "age_max": null,
+    "income_annual_max": null,
+    "income_note": "Not income-tested. You must have a verifiable disability, a verified need for supports, be legally resident in Ireland for at least 3 of the 5 years before your course starts, and be an Irish, EU, EEA, UK or Swiss national (non-EU nationals eligible for free or reduced fees under the Free Fees Initiative may also be considered).",
+    "requires_children": false,
+    "nationality": "citizen_or_pr",
+    "residency_months_min": 36,
+    "housing_tenure": null,
+    "student_required": true,
+    "admin_areas": [],
+    "gender": "any",
+    "income_test": "none",
+    "income_source_url": "https://hea.ie/funding-governance-performance/funding/student-finance/fund-for-students-with-disabilities/",
+    "income_confidence": "high"
+   },
+   "source_url": "https://hea.ie/funding-governance-performance/funding/student-finance/fund-for-students-with-disabilities/",
+   "source_snippet": "The FSD is one of the main funding sources supporting participation by students with disabilities in approved higher education courses in Ireland.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "employee-tax-credit",
+   "name_local": "Employee Tax Credit (PAYE Tax Credit)",
+   "name_en": "Employee Tax Credit (PAYE Tax Credit)",
+   "admin_level": "national",
+   "admin_area": null,
+   "funder": "Revenue Commissioners",
+   "category": "tax",
+   "benefit_type": "tax_credit",
+   "amount_min": null,
+   "amount_max": 2000,
+   "amount_currency": "EUR",
+   "amount_period": "annual",
+   "amount_note": "Maximum €2,000 for 2026. Full amount if your yearly PAYE income (employment or pension income) is €10,000 or more; if below €10,000 the credit is capped at 20% of that income. If you and your spouse or civil partner both have PAYE income, you can each claim it. You cannot transfer it. Only one Employee Tax Credit regardless of how many jobs.",
+   "is_automatic": false,
+   "application_url": "https://www.revenue.ie/en/personal-tax-credits-reliefs-and-exemptions/income-and-employment/employee-tax-credit/index.aspx",
+   "application_channel": "online",
+   "deadline_type": "rolling",
+   "deadline_note": "You can claim for the current year or the previous 4 years through myAccount.",
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Sign in to Revenue myAccount",
+     "url": null
+    },
+    {
+     "step": 2,
+     "detail": "Under 'PAYE Services' choose 'Manage your Tax for the current year' then 'Claim tax credits'",
+     "url": null
+    }
+   ],
+   "documents_required": [],
+   "eligibility": {
+    "statuses": [
+     "employee",
+     "retired"
+    ],
+    "age_min": null,
+    "age_max": null,
+    "income_annual_max": null,
+    "income_note": "No income ceiling: the credit is full at PAYE income of €10,000 or more and is capped at 20% of PAYE income below that. Not available to proprietary directors on directorship income, or to the spouse, civil partner or child of the person paying the income (with exceptions).",
+    "requires_children": false,
+    "nationality": "any_resident",
+    "residency_months_min": null,
+    "housing_tenure": null,
+    "student_required": false,
+    "admin_areas": [],
+    "gender": "any",
+    "income_test": "none",
+    "income_source_url": "https://www.revenue.ie/en/personal-tax-credits-reliefs-and-exemptions/income-and-employment/employee-tax-credit/index.aspx",
+    "income_confidence": "high"
+   },
+   "source_url": "https://www.revenue.ie/en/personal-tax-credits-reliefs-and-exemptions/income-and-employment/employee-tax-credit/index.aspx",
+   "source_snippet": "The maximum employee tax credit for 2026 is €2,000.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "disablement-benefit",
+   "name_local": "Disablement Benefit (Occupational Injuries Scheme)",
+   "name_en": "Disablement Benefit (Occupational Injuries Scheme)",
+   "admin_level": "national",
+   "admin_area": null,
+   "funder": "Department of Social Protection (DSP)",
+   "category": "income_support",
+   "benefit_type": "cash_monthly",
+   "amount_min": 57,
+   "amount_max": 285,
+   "amount_currency": "EUR",
+   "amount_period": "weekly",
+   "amount_note": "2026 weekly Disablement Pension depends on assessed disablement: €285 at 100%, €256.50 at 90%, €228 at 80%, €199.50 at 70%, €171 at 60%, €142.50 at 50%, €114 at 40%, €85.50 at 30%, €57 at 20%. Under 20% disablement a lump sum (Disablement Gratuity) of up to €19,940 may be paid. Extras: Incapacity Supplement (from €254 a week) and Constant Attendance Allowance (€271 a week).",
+   "is_automatic": false,
+   "application_url": "https://www.gov.ie/en/department-of-social-protection/forms/disablement-benefit-or-incapacity-supplement-application-form-ob21/",
+   "application_channel": "post",
+   "deadline_type": "window",
+   "deadline_note": "If you can work, claim within 3 months of the accident or onset of disease; if you were on Injury Benefit, claim within 3 months of that claim ending.",
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Fill in the Disablement Benefit claim form OB21",
+     "url": "https://www.gov.ie/en/department-of-social-protection/forms/disablement-benefit-or-incapacity-supplement-application-form-ob21/"
+    },
+    {
+     "step": 2,
+     "detail": "Post it to the Disablement Benefit Section, Department of Social Protection, Social Welfare Services Office, Government Buildings, Ballinalee Road, Longford",
+     "url": null
+    },
+    {
+     "step": 3,
+     "detail": "A Department medical assessor decides your level of disablement",
+     "url": null
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "Disablement Benefit claim form (OB21)",
+     "mandatory": true,
+     "note": null
+    }
+   ],
+   "eligibility": {
+    "statuses": [
+     "employee"
+    ],
+    "age_min": null,
+    "age_max": null,
+    "income_annual_max": null,
+    "income_note": "Not means-tested: a compensation payment disregarded for most means tests (counted for Supplementary Welfare Allowance and Working Family Payment). Requires insurable employment (PRSI Class A, B, D, J or M) when the accident or disease occurred and disablement of 15% or more.",
+    "requires_children": false,
+    "nationality": "any_resident",
+    "residency_months_min": null,
+    "housing_tenure": null,
+    "student_required": false,
+    "admin_areas": [],
+    "gender": "any",
+    "income_test": "none",
+    "income_source_url": "https://www.citizensinformation.ie/en/social-welfare/disability-and-illness/disablement-benefit/",
+    "income_confidence": "high"
+   },
+   "source_url": "https://www.citizensinformation.ie/en/social-welfare/disability-and-illness/disablement-benefit/",
+   "source_snippet": "Payment is only made where the level of disablement following the accident or disease is assessed at 15% or more.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "civil-legal-aid",
+   "name_local": "Civil Legal Aid (Legal Aid Board)",
+   "name_en": "Civil Legal Aid (Legal Aid Board)",
+   "admin_level": "national",
+   "admin_area": null,
+   "funder": "Legal Aid Board",
+   "category": "employment",
+   "benefit_type": "in_kind",
+   "amount_min": null,
+   "amount_max": null,
+   "amount_currency": "EUR",
+   "amount_period": "one_off",
+   "amount_note": "Legal advice and representation in civil matters (such as family law) provided by Law Centres; you may have to pay a contribution (see the Legal Aid Board contributions page). Financial eligibility is a disposable income test and the Board also applies a merits test.",
+   "is_automatic": false,
+   "application_url": "https://www.legalaidboard.ie/our-legal-aid-service/apply-now/online-applicatio-form/",
+   "application_channel": "online",
+   "deadline_type": "rolling",
+   "deadline_note": "Waiting times vary by Law Centre.",
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Check your financial eligibility with the online calculator",
+     "url": "https://www.legalaidboard.ie/our-legal-aid-service/apply-now/financial-eligibility-and-merits-test/financial-eligibility-calculator/"
+    },
+    {
+     "step": 2,
+     "detail": "Complete the online application form or contact your local Law Centre",
+     "url": "https://www.legalaidboard.ie/our-legal-aid-service/apply-now/online-applicatio-form/"
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "Details of income and assets",
+     "mandatory": true,
+     "note": null
+    }
+   ],
+   "eligibility": {
+    "statuses": [],
+    "age_min": null,
+    "age_max": null,
+    "income_annual_max": 18000,
+    "income_note": "You must have disposable income under €18,000 (income left after deducting allowances such as tax, accommodation costs and childcare). Not household gross income: the Board also assesses assets and applies a merits test.",
+    "requires_children": false,
+    "nationality": "any_resident",
+    "residency_months_min": null,
+    "housing_tenure": null,
+    "student_required": false,
+    "admin_areas": [],
+    "gender": "any"
+   },
+   "source_url": "https://www.legalaidboard.ie/our-legal-aid-service/apply-now/financial-eligibility-and-merits-test/",
+   "source_snippet": "To qualify for Legal Aid Services you must have disposable income under €18,000.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "personal-tax-credit",
+   "name_local": "Personal Tax Credit",
+   "name_en": "Personal Tax Credit",
+   "admin_level": "national",
+   "admin_area": null,
+   "funder": "Revenue Commissioners",
+   "category": "tax",
+   "benefit_type": "tax_credit",
+   "amount_min": 2000,
+   "amount_max": 4000,
+   "amount_currency": "EUR",
+   "amount_period": "annual",
+   "amount_note": "2026 amounts: single person €2,000; married person or civil partner €4,000; widowed person or surviving civil partner €2,540 without dependent children or €2,000 with; year of death €4,000; Widowed Parent credit €3,600 in the 1st year after death falling to €1,800 in the 5th year.",
+   "is_automatic": false,
+   "application_url": "https://www.revenue.ie/en/personal-tax-credits-reliefs-and-exemptions/marital-and-civil-status/personal-tax-credit/index.aspx",
+   "application_channel": "online",
+   "deadline_type": "rolling",
+   "deadline_note": "Claim through Revenue myAccount.",
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Sign in to Revenue myAccount and make sure your marital status and tax credits are correct",
+     "url": null
+    }
+   ],
+   "documents_required": [],
+   "eligibility": {
+    "statuses": [],
+    "age_min": null,
+    "age_max": null,
+    "income_annual_max": null,
+    "income_note": "No income ceiling: due to anyone resident in Ireland for tax purposes; amount depends on marital or civil status.",
+    "requires_children": false,
+    "nationality": "any_resident",
+    "residency_months_min": null,
+    "housing_tenure": null,
+    "student_required": false,
+    "admin_areas": [],
+    "gender": "any",
+    "income_test": "none",
+    "income_source_url": "https://www.revenue.ie/en/personal-tax-credits-reliefs-and-exemptions/marital-and-civil-status/personal-tax-credit/index.aspx",
+    "income_confidence": "high"
+   },
+   "source_url": "https://www.revenue.ie/en/personal-tax-credits-reliefs-and-exemptions/marital-and-civil-status/personal-tax-credit/index.aspx",
+   "source_snippet": "You are due a Personal Tax Credit if you are resident in Ireland.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "rural-social-scheme",
+   "name_local": "Rural Social Scheme (RSS)",
+   "name_en": "Rural Social Scheme (RSS)",
+   "admin_level": "national",
+   "admin_area": null,
+   "funder": "Department of Social Protection (DSP)",
+   "category": "employment",
+   "benefit_type": "cash_monthly",
+   "amount_min": 286.5,
+   "amount_max": null,
+   "amount_currency": "EUR",
+   "amount_period": "weekly",
+   "amount_note": "Supplementary income for low-income farmers and fishers: minimum weekly payment €286.50 (for Jobseeker's Allowance, Farm Assist, Fish Assist or One-Parent Family Payment recipients this is €254 plus a €32.50 top-up; recipients of Disability Allowance and certain pensions keep their payment with a top-up of at least €32.50). Participants work 19.5 hours a week on a farmer- or fisher-friendly schedule.",
+   "is_automatic": false,
+   "application_url": "https://www.gov.ie/en/department-of-social-protection/services/rural-social-scheme/",
+   "application_channel": "in_person",
+   "deadline_type": "annual",
+   "deadline_note": "Contracts run from the start date to 31 March; three-year contracts may follow. Participants retire the day before their 66th birthday.",
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Contact your local Implementing Body for information and an application form",
+     "url": "https://www.gov.ie/en/department-of-social-protection/publications/rural-social-scheme-list-of-implementing-bodies/"
+    },
+    {
+     "step": 2,
+     "detail": "Provide proof you are actively farming at least 1 hectare (BISS application with farming number) or fishing (licence documentation)",
+     "url": null
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "Basic Income Support for Sustainability (BISS) application with farming number, or fishing evidence",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "RSS2 form (Use of Farming Number/Fishing Licence Agreement)",
+     "mandatory": false,
+     "note": "Needed for the defined connection or couples route"
+    }
+   ],
+   "eligibility": {
+    "statuses": [
+     "self_employed"
+    ],
+    "age_min": 25,
+    "age_max": 65,
+    "income_annual_max": null,
+    "income_note": "The same means rules that apply to your original qualifying social welfare payment also apply, so no separate income figure is published on the RSS page. You must be 25 or over, actively farming or fishing, and getting a qualifying payment (for example Farm Assist, Jobseeker's Allowance, Disability Allowance, One-Parent Family Payment). From 1 January 2026 a pilot also opens RSS to rural dwellers aged 50 or over on a qualifying payment without a farming number or fishing licence.",
+    "requires_children": false,
+    "nationality": "any_resident",
+    "residency_months_min": null,
+    "housing_tenure": null,
+    "student_required": false,
+    "admin_areas": [],
+    "gender": "any",
+    "income_test": "unpublished",
+    "income_source_url": "https://www.gov.ie/en/department-of-social-protection/services/rural-social-scheme/",
+    "income_confidence": "high"
+   },
+   "source_url": "https://www.gov.ie/en/department-of-social-protection/services/rural-social-scheme/",
+   "source_snippet": "The Rural Social Scheme provides a supplementary income for low-income farmers and fishers who are unable to earn an adequate living.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "government-of-ireland-international-education-scholarship",
+   "name_local": "Government of Ireland International Education Scholarship",
+   "name_en": "Government of Ireland International Education Scholarship (GOI-IES)",
+   "admin_level": "national",
+   "admin_area": null,
+   "funder": "Higher Education Authority (HEA) / Government of Ireland",
+   "category": "education",
+   "benefit_type": "cash_one_off",
+   "amount_min": 10000,
+   "amount_max": 10000,
+   "amount_currency": "EUR",
+   "amount_period": "one_off",
+   "amount_note": "Stipend of EUR 10,000 for one year of full-time study at NFQ level 9 or 10, plus a full fee waiver from the host institution; 60 scholarships a year",
+   "is_automatic": false,
+   "application_url": "https://hea.ie/policy/internationalisation/goi-ies/",
+   "application_channel": "online",
+   "deadline_type": "annual",
+   "deadline_note": "2026 call closed 12 March 2026 (5pm Irish time); outcome early June 2026. Next call dates not yet published, check the HEA page",
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Get an offer from an eligible Irish higher education institution",
+     "url": null
+    },
+    {
+     "step": 2,
+     "detail": "Apply on the HEA online portal when the annual call is open",
+     "url": "https://hea.ie/policy/internationalisation/goi-ies/"
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "Conditional or final offer of admission",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Two references",
+     "mandatory": true,
+     "note": null
+    }
+   ],
+   "eligibility": {
+    "statuses": [],
+    "age_min": null,
+    "age_max": null,
+    "income_annual_max": null,
+    "income_note": "Not income-tested. Applicants must have a domiciliary of origin outside the EU/EEA, Switzerland and the United Kingdom; Russian and Belarusian nationals not eligible.",
+    "requires_children": false,
+    "nationality": "any",
+    "residency_months_min": null,
+    "housing_tenure": null,
+    "student_required": false,
+    "admin_areas": [],
+    "gender": "any"
+   },
+   "source_url": "https://hea.ie/policy/internationalisation/goi-ies/",
+   "source_snippet": "A Government of Ireland International Education Scholarship consists of a stipend amounting to €10,000 for one year of full-time study at NFQ levels 9 or 10.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "student-leap-card",
+   "name_local": "Student TFI Leap Card",
+   "name_en": "Student TFI Leap Card (50% off public transport, incl. international students)",
+   "admin_level": "national",
+   "admin_area": null,
+   "funder": "National Transport Authority (TFI Leap Card)",
+   "category": "transport",
+   "benefit_type": "discount",
+   "amount_min": null,
+   "amount_max": null,
+   "amount_currency": "EUR",
+   "amount_period": "annual",
+   "amount_note": "50% off adult public transport fares on TFI services (Dublin Bus, Bus Eireann, Irish Rail incl. DART, Luas, Go-Ahead Ireland, Local Link and participating operators); EUR 5 refundable deposit plus minimum EUR 5 credit",
+   "is_automatic": false,
+   "application_url": "https://about.leapcard.ie/young-adult-and-student-card-launch",
+   "application_channel": "online",
+   "deadline_type": "rolling",
+   "deadline_note": "Apply online once your course has started",
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Apply online and upload your college letter",
+     "url": "https://student.leapcard.ie/New-Card#dobCheck"
+    },
+    {
+     "step": 2,
+     "detail": "Collect your card from a Student Leap Card agent after the confirmation email",
+     "url": null
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "Letter from college confirming full-time (15+ hours) course over 6 months/25 weeks, with stamp or signature",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Proof of age ID",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "International students: acceptance letter from the Irish university",
+     "mandatory": true,
+     "note": null
+    }
+   ],
+   "eligibility": {
+    "statuses": [
+     "student"
+    ],
+    "age_min": null,
+    "age_max": null,
+    "income_annual_max": null,
+    "income_note": "Not income-tested. Student card is for full-time students aged 16-18 or 26+; ages 19-25 use the Young Adult Leap Card instead. Course must be at least 6 months/25 weeks; online courses not eligible.",
+    "requires_children": false,
+    "nationality": "any_resident",
+    "residency_months_min": null,
+    "housing_tenure": null,
+    "student_required": true,
+    "admin_areas": [],
+    "gender": "any"
+   },
+   "source_url": "https://about.leapcard.ie/young-adult-and-student-card-launch",
+   "source_snippet": "Full time international students who meet the criteria above are also entitled to apply for the Student Leap Card whilst in Ireland.",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   }
  ]

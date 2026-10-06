@@ -19,10 +19,10 @@
    "amount_period": "monthly",
    "amount_note": "Income-dependent contribution to rent; since 2026 no maximum-rent condition and servicekosten no longer count; calculation rent capped at EUR 932.93/month (EUR 498.20 for 18-20 yr); no fixed income ceiling - benefit tapers to zero.",
    "is_automatic": false,
-   "application_url": "https://www.belastingdienst.nl/wps/wcm/connect/nl/toeslagen/content/hoe-vraag-ik-toeslag-aan",
+   "application_url": "https://www.belastingdienst.nl/wps/wcm/connect/nl/huurtoeslag/content/hoe-moet-ik-huurtoeslag-aanvragen",
    "application_channel": "online",
    "deadline_type": "rolling",
-   "deadline_note": "Apply before 1 September of a year to receive it for that whole year; toeslagen can be requested per calendar year.",
+   "deadline_note": "Apply up to and including 31 December of the year after the benefit year (Dienst Toeslagen). Benefit starts on the 1st of the month you are registered at the address.",
    "procedure_steps": [
     {
      "step": 1,
@@ -75,8 +75,8 @@
     "income_confidence": "medium"
    },
    "source_url": "https://www.belastingdienst.nl/wps/wcm/connect/bldcontentnl/belastingdienst/prive/toeslagen/huurtoeslag/voorwaarden/voorwaarden",
-   "source_snippet": "U mag op 1 januari 2026 niet meer dan € 38.479 aan vermogen hebben om huurtoeslag te krijgen. Hebt u een toeslagpartner? Samen met uw toeslagpartner mag u in 2026 € 76.958 aan vermogen hebben.",
-   "last_verified_at": "2026-08-12",
+   "source_snippet": "U, uw toeslagpartner en medebewoners van 18 jaar en ouder hebben de Nederlandse nationaliteit of zijn legaal in Nederland. U bent 18 jaar of ouder. Tot en met 2025 gold nog een maximale huurgrens.",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified",
    "income_reviewed_at": "2026-08-13"
   },
@@ -89,13 +89,13 @@
    "funder": "Belastingdienst / Dienst Toeslagen",
    "category": "health",
    "benefit_type": "cash_monthly",
-   "amount_min": null,
-   "amount_max": null,
+   "amount_min": 3,
+   "amount_max": 129,
    "amount_currency": "EUR",
    "amount_period": "monthly",
-   "amount_note": "2026: max EUR 129/month (single) or EUR 246/month (with toeslagpartner); full amount up to drempelinkomen EUR 29,736, phased out at 13.73% of income above it.",
+   "amount_note": "2026 maximum EUR 129/month for a single person (EUR 246/month for you and a toeslagpartner together); amount tapers with income, zero above EUR 40,857 (single) / EUR 51,142 (with partner). Assets must not exceed EUR 146,011 (EUR 184,633 with partner) on 1 Jan 2026.",
    "is_automatic": false,
-   "application_url": "https://www.belastingdienst.nl/wps/wcm/connect/nl/toeslagen/content/hoe-vraag-ik-toeslag-aan",
+   "application_url": "https://www.belastingdienst.nl/wps/wcm/connect/nl/zorgtoeslag/content/kan-ik-zorgtoeslag-krijgen",
    "application_channel": "online",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -133,7 +133,7 @@
     "age_min": 18,
     "age_max": null,
     "income_annual_max": 40857,
-    "income_note": "2026: toetsingsinkomen max EUR 40,857 (single) / EUR 51,142 (with toeslagpartner). Full amount up to drempelinkomen EUR 29,736, then phased out at 13.73% of income above it. Asset cap 2026: EUR 146,011 / EUR 184,633.",
+    "income_note": "2026 limit: EUR 40,857 toetsingsinkomen without toeslagpartner; EUR 51,142 combined with a toeslagpartner (the stored figure is the single-person limit).",
     "requires_children": false,
     "nationality": "any_resident",
     "residency_months_min": null,
@@ -142,9 +142,9 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.belastingdienst.nl/wps/wcm/connect/nl/zorgtoeslag/content/maximaal-inkomen-voor-zorgtoeslag",
+   "source_url": "https://www.belastingdienst.nl/wps/wcm/connect/nl/zorgtoeslag/content/hoeveel-zorgtoeslag",
    "source_snippet": "U kunt in 2026 zorgtoeslag krijgen als uw jaarinkomen niet boven de grens van € 40.857 uitkomt. Hebt u in 2026 een toeslagpartner? Dan mag het inkomen van u allebei samen niet meer dan € 51.142 zijn.",
-   "last_verified_at": "2026-08-12",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -160,9 +160,9 @@
    "amount_max": null,
    "amount_currency": "EUR",
    "amount_period": "monthly",
-   "amount_note": "2026 maxima: EUR 2,580/yr for the first child (with toeslagpartner); single parents up to EUR 5,996/yr incl. alleenstaande-ouderskop of EUR 3,416; +EUR 724 per child aged 12-15, +EUR 964 per child aged 16-17.",
+   "amount_note": "Depends on income, number and age of children. Assets limit 2026: EUR 146,011 (single) / EUR 184,633 (with toeslagpartner), tested on 1 January. Requires receiving kinderbijslag from SVB (not always for 16-17 year olds).",
    "is_automatic": false,
-   "application_url": "https://www.belastingdienst.nl/wps/wcm/connect/nl/toeslagen/toeslagen",
+   "application_url": "https://www.belastingdienst.nl/wps/wcm/connect/nl/kindgebonden-budget/kindgebonden-budget",
    "application_channel": "online",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -206,9 +206,9 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.belastingdienst.nl/wps/wcm/connect/bldcontentnl/belastingdienst/prive/toeslagen/kindgebonden-budget/voorwaarden/vermogen/vermogen-kindgebonden-budget",
-   "source_snippet": "Met 1 kind krijg je in 2026 maximaal € 2.580 per jaar met toeslagpartner en € 5.996 als alleenstaande ouder.",
-   "last_verified_at": "2026-08-12",
+   "source_url": "https://www.belastingdienst.nl/wps/wcm/connect/bldcontentnl/belastingdienst/prive/toeslagen/kindgebonden-budget/voorwaarden/voorwaarden-kindgebonden-budget",
+   "source_snippet": "U hebt 1 of meer kinderen die jonger zijn dan 18 jaar. U krijgt kinderbijslag van de Sociale Verzekeringsbank (SVB). Uw (gezamenlijke) inkomen is niet te hoog. Uw (gezamenlijke) vermogen is niet te hoog.",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -220,11 +220,11 @@
    "funder": "Sociale Verzekeringsbank (SVB)",
    "category": "family",
    "benefit_type": "cash_monthly",
-   "amount_min": 1180.28,
-   "amount_max": 1686.12,
+   "amount_min": 1193.6,
+   "amount_max": 1705.16,
    "amount_currency": "EUR",
    "amount_period": "annual",
-   "amount_note": "Universal per-child allowance, no income test; paid quarterly after each quarter ends. 2026: EUR 295.07/quarter (0-5y), EUR 358.30 (6-11y), EUR 421.53 (12-17y). Amounts shown as annual totals per child.",
+   "amount_note": "Per child. SVB pays quarterly: from Q3 2026 EUR 298.40 (age 0-5), EUR 362.35 (6-11), EUR 426.29 (12-17) per quarter; annual figures shown are 4 x these. Not income-tested.",
    "is_automatic": true,
    "application_url": "https://www.svb.nl/nl/kinderbijslag/kinderbijslag-aanvragen",
    "application_channel": "automatic",
@@ -265,9 +265,9 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.svb.nl/nl/kinderbijslag",
-   "source_snippet": "1e kwartaal 2026: 0 t/m 5 jaar € 295,07; 6 t/m 11 jaar € 358,30; 12 t/m 17 jaar € 421,53 per kwartaal",
-   "last_verified_at": "2026-08-12",
+   "source_url": "https://www.svb.nl/nl/kinderbijslag/bedragen-betaaldagen/bedragen-kinderbijslag",
+   "source_snippet": "De kinderbijslagbedragen zijn per kind per kwartaal. Vanaf het derde kwartaal van 2026 gaat de kinderbijslag omhoog. 0 tot en met 5 jaar € 298,40; 6 tot en met 11 jaar € 362,35; 12 tot en met 17 jaar € 426,29.",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -283,12 +283,12 @@
    "amount_max": null,
    "amount_currency": "EUR",
    "amount_period": "monthly",
-   "amount_note": "Reimburses an income-dependent percentage (max 96% in 2026) of childcare costs up to maximum hourly rates (2026: dagopvang EUR 11.23, BSO EUR 9.98, gastouder EUR 8.49); max 230 hours/month per child.",
+   "amount_note": "Share of childcare costs up to a maximum hourly price (2026: EUR 11.23, EUR 9.98 or EUR 8.49 depending on type of care). Parents with joint income up to EUR 56,413 receive 96% of the maximum hourly price. You always pay an own contribution; registered (LRK) care required.",
    "is_automatic": false,
-   "application_url": "https://www.belastingdienst.nl/wps/wcm/connect/nl/toeslagen/content/hoe-vraag-ik-toeslag-aan",
+   "application_url": "https://www.belastingdienst.nl/wps/wcm/connect/nl/kinderopvangtoeslag/content/hoe-moet-ik-kinderopvangtoeslag-aanvragen",
    "application_channel": "online",
    "deadline_type": "rolling",
-   "deadline_note": "Apply within 3 months after the child starts childcare; costs are reimbursed retroactively for max 3 months.",
+   "deadline_note": "Apply as soon as the childcare contract is signed; at the latest within 3 months after care starts, otherwise you lose money.",
    "procedure_steps": [
     {
      "step": 1,
@@ -341,9 +341,9 @@
     "income_source_url": "https://www.belastingdienst.nl/wps/wcm/connect/nl/toeslagen-2026/topics/veranderingen-toeslagen-2026",
     "income_confidence": "high"
    },
-   "source_url": "https://www.belastingdienst.nl/wps/wcm/connect/nl/toeslagen/content/wat-is-kinderopvangtoeslag",
-   "source_snippet": "Elk type heeft een eigen maximum uurtarief (2026: dagopvang 11,23 euro, BSO 9,98 euro, gastouder 8,49 euro per uur)",
-   "last_verified_at": "2026-08-12",
+   "source_url": "https://www.belastingdienst.nl/wps/wcm/connect/nl/kinderopvangtoeslag/content/kan-ik-kinderopvangtoeslag-krijgen",
+   "source_snippet": "Vraag uw kinderopvangtoeslag zo snel mogelijk aan. Dit kan al zodra u het contract met de opvang hebt getekend. Doe dit uiterlijk binnen 3 maanden nadat de opvang is gestart. Anders loopt u geld mis.",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified",
    "income_reviewed_at": "2026-08-13"
   },
@@ -356,11 +356,11 @@
    "funder": "Gemeente (municipality), nation-wide under the Participatiewet",
    "category": "income_support",
    "benefit_type": "cash_monthly",
-   "amount_min": null,
-   "amount_max": null,
+   "amount_min": 1419.46,
+   "amount_max": 2027.79,
    "amount_currency": "EUR",
    "amount_period": "monthly",
-   "amount_note": "Net bijstandsnorm per 1 July 2026: single/single parent 21+ EUR 1,348.49 + EUR 70.97 vakantietoeslag = EUR 1,419.46/month; couples EUR 1,926.40 + EUR 101.39 = EUR 2,027.79/month; lower norms for 18-20 yr and kostendelers.",
+   "amount_note": "Bijstandsnorm per 1 July 2026 (net, excl. holiday pay detail): single 21-AOW age EUR 1,419.46/month; married/cohabiting EUR 2,027.79/month; from AOW age EUR 1,587.34 (single) / EUR 2,176.10 (couple). Lower norms below age 21.",
    "is_automatic": false,
    "application_url": "https://www.rijksoverheid.nl/onderwerpen/bijstand",
    "application_channel": "online",
@@ -418,7 +418,7 @@
     "age_min": 18,
     "age_max": null,
     "income_annual_max": 17034,
-    "income_note": "Household income must be below the bijstandsnorm. Norm per 1 July 2026: EUR 1,419.46/month net incl. vakantietoeslag (single/single parent 21+) = EUR 17,034/yr (12 x monthly); couples EUR 2,027.79/month = EUR 24,334/yr. Asset limits 2026: EUR 8,000 single, EUR 16,000 single parent or couple; home-equity exemption EUR 67,500. Kostendelersnorm may apply.",
+    "income_note": "Annualised bijstandsnorm for a single adult: EUR 1,419.46 x 12 = EUR 17,034 (from 1 July 2026). Couple norm EUR 2,027.79 x 12 = EUR 24,333. Assets also tested.",
     "requires_children": false,
     "nationality": "any_resident",
     "residency_months_min": null,
@@ -428,9 +428,9 @@
     "gender": "any",
     "rule_source": "geography_unknown"
    },
-   "source_url": "https://www.rijksoverheid.nl/onderwerpen/bijstand",
-   "source_snippet": "Alleenstaande of alleenstaande ouder zonder kostendelende medebewoners € 1.348,49 | € 70,97 | € 1.419,46",
-   "last_verified_at": "2026-08-12",
+   "source_url": "https://www.rijksoverheid.nl/vraag-en-antwoord/bijstand/hoe-hoog-is-mijn-bijstandsuitkering",
+   "source_snippet": "Alleenstaande 21 jaar tot AOW-leeftijd: € 1401,50 per 1 januari 2026, € 1419,46 per 1 juli 2026. Getrouwd of samenwonend 21 jaar tot AOW-leeftijd: € 2002,13 / € 2027,79.",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -504,9 +504,9 @@
     ],
     "gender": "any"
    },
-   "source_url": "https://www.juridischloket.nl/werk-en-inkomen/werkloosheid-en-bijstand/bijzondere-bijstand/",
-   "source_snippet": "Maximale inkomensgrens tot 110% van de bijstandsnorm per 1 juli 2026 (gemeente Velsen; grenzen verschillen per gemeente)",
-   "last_verified_at": "2026-08-12",
+   "source_url": "https://www.rijksoverheid.nl/vraag-en-antwoord/bijstand/wanneer-heb-ik-recht-op-bijzondere-bijstand",
+   "source_snippet": "U heeft mogelijk recht op bijzondere bijstand als u onder andere voldoet aan de volgende voorwaarden: u woont rechtmatig in Nederland; u heeft onvoldoende inkomen en vermogen om de kosten zelf te betalen; u bent 18 jaar of ouder.",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -515,7 +515,7 @@
    "name_en": "IOAW Benefit (bridge benefit for older unemployed persons)",
    "admin_level": "national",
    "admin_area": null,
-   "funder": "UWV",
+   "funder": "Gemeente (IOAW), information via Rijksoverheid",
    "category": "income_support",
    "benefit_type": "cash_monthly",
    "amount_min": null,
@@ -524,7 +524,7 @@
    "amount_period": "monthly",
    "amount_note": "Benefit up to bijstandsnorm level for people who became unemployed at 50 or older and whose WW ended; until AOW age.",
    "is_automatic": false,
-   "application_url": "https://www.uwv.nl",
+   "application_url": "https://www.rijksoverheid.nl/themas/belastingen-uitkeringen-en-toeslagen/uitkering-oudere-werklozen-ioaw-iow-ioaz/ioaw-iow-ioaz-uitkering",
    "application_channel": "online",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -560,7 +560,7 @@
     "age_min": 50,
     "age_max": null,
     "income_annual_max": 17034,
-    "income_note": "IOAW tops up income to about the bijstandsnorm; no benefit once own income reaches the norm (single norm EUR 17,034/yr in 2026, 12 x EUR 1,419.46/month). No asset test.",
+    "income_note": "Income-tested against the bijstandsnorm (EUR 1,419.46/month single from 1 July 2026 = EUR 17,034/yr). Only for people born before 1 January 1965 who became unemployed after age 50.",
     "requires_children": false,
     "nationality": "any_resident",
     "residency_months_min": null,
@@ -569,10 +569,10 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.uwv.nl",
-   "source_snippet": "De IOAW is een uitkering voor oudere werklozen die aanvulling nodig hebben tot aan de AOW-leeftijd.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www.rijksoverheid.nl/vraag-en-antwoord/uitkering-oudere-werklozen-ioaw-iow-ioaz/kom-ik-in-aanmerking-voor-een-ioaw-uitkering",
+   "source_snippet": "U kunt in aanmerking komen voor een IOAW-uitkering als u bent geboren vóór 1 januari 1965. En als u na uw 50e jaar werkloos bent geworden.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "ioaz-uitkering",
@@ -580,7 +580,7 @@
    "name_en": "IOAZ Benefit (bridge benefit for older former self-employed persons)",
    "admin_level": "national",
    "admin_area": null,
-   "funder": "UWV",
+   "funder": "Gemeente (IOAZ), information via Rijksoverheid",
    "category": "income_support",
    "benefit_type": "cash_monthly",
    "amount_min": null,
@@ -589,7 +589,7 @@
    "amount_period": "monthly",
    "amount_note": "Benefit up to bijstandsnorm level for former self-employed persons aged 55+ whose business ended; until AOW age.",
    "is_automatic": false,
-   "application_url": "https://www.uwv.nl",
+   "application_url": "https://www.rijksoverheid.nl/themas/belastingen-uitkeringen-en-toeslagen/uitkering-oudere-werklozen-ioaw-iow-ioaz",
    "application_channel": "online",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -639,10 +639,10 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.uwv.nl",
-   "source_snippet": "De IOAZ is een aanvullende uitkering voor oudere gewezen zelfstandigen tot aan de AOW-leeftijd.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www.rijksoverheid.nl/themas/belastingen-uitkeringen-en-toeslagen/uitkering-oudere-werklozen-ioaw-iow-ioaz",
+   "source_snippet": "Voor mensen die op oudere leeftijd werkloos worden bestaat na hun werkloosheidsuitkering een IOAW of IOW-uitkering. Voor zelfstandigen van 55 jaar of ouder ...",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "aow-pensioen",
@@ -653,13 +653,13 @@
    "funder": "Sociale Verzekeringsbank (SVB)",
    "category": "income_support",
    "benefit_type": "cash_monthly",
-   "amount_min": null,
-   "amount_max": null,
+   "amount_min": 1139.39,
+   "amount_max": 1662.16,
    "amount_currency": "EUR",
    "amount_period": "monthly",
-   "amount_note": "Universal state pension from AOW age (gradually rising, linked to life expectancy); amount depends on living situation (single/with partner) and years insured; 2% build-up per year of residence since 50 years before AOW age.",
+   "amount_note": "Gross per month from 1 July 2026, full AOW: EUR 1,662.16 if you live alone; EUR 1,139.39 per person if married/cohabiting. Plus holiday pay (EUR 104.78 / EUR 74.85 per month, paid in May). AOW builds up 2% per year lived/insured in NL between age 15 and AOW age.",
    "is_automatic": true,
-   "application_url": "https://www.svb.nl/nl/aow-pensioen/aow-pensioen-aanvragen",
+   "application_url": "https://www.svb.nl/nl/aow/uw-zaken-regelen/aow-aanvragen-in-nederland",
    "application_channel": "automatic",
    "deadline_type": "none",
    "deadline_note": "SVB usually invites you about 4-6 months before you reach AOW age; if not, apply via Mijn SVB.",
@@ -703,9 +703,9 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.svb.nl/nl/aow-pensioen",
-   "source_snippet": "Je bouwt AOW op voor ieder jaar dat je in Nederland woont of werkt, en dit begint 50 jaar voor je AOW-leeftijd.",
-   "last_verified_at": "2026-08-12",
+   "source_url": "https://www.svb.nl/nl/aow/bedragen-aow/aow-bedragen",
+   "source_snippet": "AOW bedragen vanaf 1 juli 2026. U woont alleen: Brutobedrag AOW € 1.662,16. U bent getrouwd of woont samen: Brutobedrag AOW € 1.139,39 per persoon.",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -718,12 +718,12 @@
    "category": "income_support",
    "benefit_type": "cash_monthly",
    "amount_min": null,
-   "amount_max": null,
+   "amount_max": 2067.29,
    "amount_currency": "EUR",
    "amount_period": "monthly",
-   "amount_note": "Tops up a low or missing AOW (and any other income) to the bijstandsnorm level for people of AOW age.",
+   "amount_note": "Maximum AIO supplement per month (excl. holiday pay): EUR 1,507.97 if you live alone; EUR 2,067.29 for a couple together. Holiday pay adds EUR 79.37 / EUR 108.81 per month. AIO tops up income to the social minimum if the AOW is incomplete; assets are tested.",
    "is_automatic": false,
-   "application_url": "https://www.svb.nl/nl/aio-aanvullingsuitkering",
+   "application_url": "https://www.svb.nl/nl/aio/kijk-of-u-een-aio-aanvulling-krijgt",
    "application_channel": "online",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -758,7 +758,7 @@
     "age_min": 67,
     "age_max": null,
     "income_annual_max": 19048,
-    "income_note": "AIO tops up the income of AOW-aged households to the AOW-age bijstandsnorm: EUR 1,587.34/month single = EUR 19,048/yr; couples EUR 2,176.10/month = EUR 26,113/yr (per 1 July 2026, 12 x monthly incl. vakantietoeslag).",
+    "income_note": "Single norm incl. holiday pay EUR 1,587.34/month x 12 = EUR 19,048 (1 July 2026); couple EUR 2,176.10 x 12 = EUR 26,113.",
     "requires_children": false,
     "nationality": "any_resident",
     "residency_months_min": null,
@@ -767,10 +767,10 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.svb.nl/nl/aio-aanvullingsuitkering",
-   "source_snippet": "De AIO-aanvullingsuitkering vult uw inkomen aan tot het sociaal minimum als uw AOW-pensioen laag is of ontbreekt.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www.svb.nl/nl/aio/bedragen-aio-aanvulling/aio-bedragen",
+   "source_snippet": "U woont alleen: Bedrag € 1.507,97, Vakantiegeld € 79,37, Totaal € 1.587,34. U woont met uw partner: Bedrag € 2.067,29, Vakantiegeld € 108,81, Totaal € 2.176,10.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "anw-uitkering",
@@ -782,12 +782,12 @@
    "category": "income_support",
    "benefit_type": "cash_monthly",
    "amount_min": null,
-   "amount_max": null,
+   "amount_max": 1698.3,
    "amount_currency": "EUR",
    "amount_period": "monthly",
-   "amount_note": "Benefit for surviving partners born before 1950, or with a child under 18, or 45%+ arbeidsongeschikt; also half-weeshuisuitkering for orphans.",
+   "amount_note": "Maximum gross EUR 1,698.30/month. Earned income is partly deducted: the first EUR 1,635.90 gross is ignored, income above that reduces the benefit by two thirds.",
    "is_automatic": false,
-   "application_url": "https://www.svb.nl/nl/anw-uitkering",
+   "application_url": "https://www.svb.nl/nl/anw/nabestaandenuitkering-aanvragen",
    "application_channel": "online",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -820,7 +820,7 @@
     "age_min": null,
     "age_max": null,
     "income_annual_max": null,
-    "income_note": "Income-tested by reduction, no fixed ceiling: the Anw benefit is reduced by income from work above a statutory exemption and by partner income/pension entitlements; the benefit falls to zero at higher incomes.",
+    "income_note": "No hard income ceiling; benefit is reduced by two thirds of gross income above EUR 1,635.90/month.",
     "requires_children": false,
     "nationality": "any_resident",
     "residency_months_min": null,
@@ -829,10 +829,10 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.svb.nl/nl/anw-uitkering",
-   "source_snippet": "De Anw verzekert nabestaanden van een uitkering na het overlijden van hun partner.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www.svb.nl/nl/anw/wat-zijn-de-voorwaarden/wat-zijn-de-voorwaarden-voor-een-nabestaandenuitkering",
+   "source_snippet": "Zorgt u voor een kind jonger dan 18 jaar dat bij u thuis woont? U kunt een nabestaandenuitkering krijgen als uw partner op de dag van overlijden verzekerd was voor de Anw. Anders: minimaal 45% arbeidsongeschikt.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "individuele-inkomenstoeslag",
@@ -840,7 +840,7 @@
    "name_en": "Individual Income Supplement (annual top-up for long-term benefit recipients)",
    "admin_level": "national",
    "admin_area": null,
-   "funder": "UWV / SVB / gemeente",
+   "funder": "Gemeente (municipality)",
    "category": "income_support",
    "benefit_type": "cash_one_off",
    "amount_min": null,
@@ -849,7 +849,7 @@
    "amount_period": "annual",
    "amount_note": "Annual payment (a few hundred euros) for people who have received a social security benefit (bijstand, WIA, WAO, Wajong, WW-related) for a long period; paid automatically, usually in January.",
    "is_automatic": true,
-   "application_url": "https://www.uwv.nl",
+   "application_url": "https://www.rijksoverheid.nl/vraag-en-antwoord/participatiewet/individuele-inkomenstoeslag",
    "application_channel": "automatic",
    "deadline_type": "none",
    "deadline_note": "No application needed; paid automatically by the institution paying your benefit if you meet the conditions.",
@@ -872,7 +872,7 @@
      "unemployed",
      "retired"
     ],
-    "age_min": null,
+    "age_min": 21,
     "age_max": null,
     "income_annual_max": 17034,
     "income_note": "For people who have lived at or below the bijstandsnorm for at least 3 years (broadly; municipalities may apply up to 110%). Bijstandsnorm single 2026: EUR 1,419.46/month incl. vakantietoeslag = EUR 17,034/yr (12 x monthly).",
@@ -884,10 +884,10 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.uwv.nl",
-   "source_snippet": "De individuele inkomenstoeslag is een jaarlijkse toeslag voor mensen die al langere tijd een uitkering op sociaalminimumniveau ontvangen.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www.rijksoverheid.nl/vraag-en-antwoord/participatiewet/individuele-inkomenstoeslag",
+   "source_snippet": "u bent ouder dan 21 jaar, maar nog niet AOW-gerechtigd; u heeft geen of weinig inkomen en vermogen; De gemeente kan nog andere voorwaarden stellen, bijvoorbeeld dat u heeft geprobeerd uw inkomen te verhogen.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "ww-uitkering",
@@ -904,7 +904,7 @@
    "amount_period": "monthly",
    "amount_note": "75% of last daily wage for the first 2 months, then 70% (capped at maximum dagloon); duration 3 to 24 months depending on employment history.",
    "is_automatic": false,
-   "application_url": "https://www.uwv.nl/nl/ww",
+   "application_url": "https://www.uwv.nl/nl/ww/ww-aanvragen",
    "application_channel": "online",
    "deadline_type": "rolling",
    "deadline_note": "Apply from 1 week before until 1 week after your last working day, or you lose benefit days.",
@@ -960,9 +960,9 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.uwv.nl/nl/ww",
-   "source_snippet": "Gedurende de eerste twee maanden dat u werkloos bent, ontvangt u 75 procent van dit berekende dagloon. Vanaf de derde maand daalt dit percentage naar 70 procent.",
-   "last_verified_at": "2026-08-12",
+   "source_url": "https://www.uwv.nl/nl/ww/wanneer-recht-op-ww",
+   "source_snippet": "U heeft in de laatste 36 weken voordat u werkloos werd minstens 26 weken gewerkt. U werkte gemiddeld minimaal 10 uur per week en verliest 5 uur of meer van uw werk per week. U bent direct beschikbaar voor betaald werk.",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -983,7 +983,7 @@
    "application_url": "https://www.uwv.nl/nl/ziek/ziek-wat-nu",
    "application_channel": "online",
    "deadline_type": "rolling",
-   "deadline_note": "Report sick no later than the 2nd sick day if you have no employer; employer reports ziek uit dienst at end of contract.",
+   "deadline_note": "Apply no later than the second day of sickness.",
    "procedure_steps": [
     {
      "step": 1,
@@ -1026,8 +1026,8 @@
     "gender": "any"
    },
    "source_url": "https://www.uwv.nl/nl/ziek/ziek-wat-nu",
-   "source_snippet": "Werkgevers betalen maximaal 2 jaar (104 weken) het loon door. In sommige situaties krijgt de werknemer een Ziektewet-uitkering.",
-   "last_verified_at": "2026-08-12",
+   "source_snippet": "In sommige situaties krijgt de werknemer een Ziektewet-uitkering: werkt flexibel (uitzend-, oproep-, nul-urencontract), ziek door zwangerschap of bevalling, orgaandonatie, no-riskpolis. Aanvragen uiterlijk op de tweede ziektedag.",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -1090,9 +1090,9 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.juridischloket.nl/werk-en-inkomen/ziekte-en-zwangerschap/wia-uitkering/",
-   "source_snippet": "Als u langer dan 2 jaar ziek bent, kunt u een WIA-uitkering krijgen. U moet dan minimaal 35% arbeidsongeschikt zijn.",
-   "last_verified_at": "2026-08-12",
+   "source_url": "https://www.uwv.nl/nl/wia",
+   "source_snippet": "Na bijna 2 jaar ziekte nog niet (helemaal) aan het werk? Kijk waar u recht op heeft in de wet Werk en Inkomen naar Arbeidsvermogen (WIA).",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -1110,10 +1110,10 @@
    "amount_period": "monthly",
    "amount_note": "75% of the statutory minimum wage for those unable to work due to illness/disability arisen at or before age 18 (or before 30 while studying); plus annual supplementary payment.",
    "is_automatic": false,
-   "application_url": "https://www.uwv.nl/nl/wajong",
+   "application_url": "https://www.uwv.nl/nl/wajong/wajong-aanvragen",
    "application_channel": "online",
    "deadline_type": "rolling",
-   "deadline_note": "Request beoordeling arbeidsvermogen at UWV from 6 months before your 18th birthday.",
+   "deadline_note": "You can apply from 6 months before your 18th birthday.",
    "procedure_steps": [
     {
      "step": 1,
@@ -1155,9 +1155,9 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.uwv.nl/nl/wajong",
-   "source_snippet": "Een Wajong-uitkering is een maandelijks bedrag van UWV voor mensen die door een ziekte of handicap niet kunnen werken.",
-   "last_verified_at": "2026-08-12",
+   "source_url": "https://www.uwv.nl/nl/wajong/wajong-aanvragen",
+   "source_snippet": "U kreeg klachten op of voor uw 18e verjaardag. Of u kreeg klachten voor uw 30e en volgde minimaal 6 maanden een opleiding. U woonde in Nederland op het moment dat u aan de voorwaarden van Wajong voldeed.",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -1175,10 +1175,10 @@
    "amount_period": "monthly",
    "amount_note": "Legacy disability benefit for people who became unfit for work before 1 January 2004; closed to new applicants (replaced by WIA).",
    "is_automatic": false,
-   "application_url": "https://www.uwv.nl",
+   "application_url": "https://www.uwv.nl/nl/wao",
    "application_channel": "automatic",
    "deadline_type": "none",
-   "deadline_note": "Closed scheme; existing beneficiaries keep their WAO as long as conditions are met.",
+   "deadline_note": "Closed to new claimants: WAO only exists for people who became ill before 1 January 2004.",
    "procedure_steps": [
     {
      "step": 1,
@@ -1210,10 +1210,10 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.uwv.nl",
-   "source_snippet": "De WAO is afgesloten voor nieuwe aanvragen; bestaande uitkeringsgerechtigden behouden hun WAO-uitkering.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www.uwv.nl/nl/wao",
+   "source_snippet": "De WAO-uitkering is er voor iemand die voor 1 januari 2004 ziek werd. En daardoor minder of niet kan werken.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "studiefinanciering-basisbeurs",
@@ -1224,13 +1224,13 @@
    "funder": "DUO (Dienst Uitvoering Onderwijs)",
    "category": "education",
    "benefit_type": "cash_monthly",
-   "amount_min": 130.21,
-   "amount_max": 324.52,
+   "amount_min": 107.26,
+   "amount_max": 350.03,
    "amount_currency": "EUR",
    "amount_period": "monthly",
-   "amount_note": "2026 (peilmaand Sept): basisbeurs hbo/wo EUR 324.52/month uitwonend, EUR 130.21 thuiswonend; mbo EUR 350.03 / EUR 107.26. Prestatiebeurs for hbo/wo: becomes a gift if diploma within 10 years; mbo niv 1-2 is a direct gift.",
+   "amount_note": "Maximum per month in 2026. hbo/university: EUR 130.21 living with parents, EUR 324.52 living away. mbo (bol): EUR 107.26 / EUR 350.03. Basisbeurs is a performance grant (converted to gift if you graduate in time; a gift for mbo 1-2).",
    "is_automatic": false,
-   "application_url": "https://duo.nl/particulier/studiefinanciering-aanvragen.jsp",
+   "application_url": "https://duo.nl/particulier/studiefinanciering/",
    "application_channel": "online",
    "deadline_type": "rolling",
    "deadline_note": "Apply at the latest on the last day of the first month of your programme to receive the grant from the start.",
@@ -1263,20 +1263,20 @@
      "student"
     ],
     "age_min": 18,
-    "age_max": null,
+    "age_max": 29,
     "income_annual_max": null,
     "income_note": "No parental income test for the basisbeurs; full-time mbo/hbo/university at a recognised institution",
     "requires_children": false,
-    "nationality": "any_resident",
+    "nationality": "citizen_or_pr",
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": true,
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://duo.nl/particulier/studiefinanciering.jsp",
-   "source_snippet": "De basisbeurs is afhankelijk van je woonsituatie: thuiswonend EUR 130,21 en uitwonend EUR 324,52 per maand (bedragen 2026, DUO).",
-   "last_verified_at": "2026-08-12",
+   "source_url": "https://duo.nl/particulier/studiefinanciering/voorwaarden.jsp",
+   "source_snippet": "U bent Nederlander of u hebt een verblijfsvergunning type II, III, IV of V. U moet jonger zijn dan 30 als uw studiefinanciering ingaat. Doet u mbo? Dan moet u minimaal 18 jaar zijn voor een beurs of rentedragende lening.",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -1292,9 +1292,9 @@
    "amount_max": 491.08,
    "amount_currency": "EUR",
    "amount_period": "monthly",
-   "amount_note": "Maximum EUR 491.08/month (2026); full amount when combined parental income is below approx. EUR 41,500; decreases with higher parental income. Prestatiebeurs: gift if diploma within 10 years; first 12 (mbo) or 5 (hbo/wo) months never repayable.",
+   "amount_note": "Maximum EUR 491.08/month for hbo/university in 2026; mbo maximum EUR 438.08-470.82 (varies by living situation and period). Depends on parents' income from two years ago and number of siblings studying.",
    "is_automatic": false,
-   "application_url": "https://duo.nl/particulier/aanvullende-beurs-aanvragen.jsp",
+   "application_url": "https://duo.nl/particulier/studiefinanciering/",
    "application_channel": "online",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -1322,20 +1322,20 @@
      "student"
     ],
     "age_min": null,
-    "age_max": null,
+    "age_max": 29,
     "income_annual_max": null,
-    "income_note": "Tested on parental income from 2 years prior: maximum aanvullende beurs (2026: EUR 491.08/month hbo/wo, EUR 470.82 mbo) when combined parental income is below roughly EUR 38,000-41,500; it tapers to a minimum around EUR 75,000-80,000 and stops above that. Number of studying siblings also counts.",
+    "income_note": "Based on parents' income from 2 years ago (and siblings); no single household ceiling published as one figure.",
     "requires_children": false,
-    "nationality": "any_resident",
+    "nationality": "citizen_or_pr",
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": true,
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://duo.nl/particulier/aanvullende-beurs-aanvragen.jsp",
-   "source_snippet": "Aanvullende beurs (max) € 491,08 (hbo/wo) / € 470,82 (mbo) per maand, peilmaand september 2026",
-   "last_verified_at": "2026-08-12",
+   "source_url": "https://duo.nl/particulier/aanvullende-beurs-studiefinanciering/hoeveel-is-het.jsp",
+   "source_snippet": "Maximale aanvullende beurs: Januari tot en met december 2026 € 491,08. Als uw ouders meer verdienen, kunt u vaak toch een (gedeeltelijke) aanvullende beurs krijgen.",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -1348,12 +1348,12 @@
    "category": "education",
    "benefit_type": "cash_monthly",
    "amount_min": null,
-   "amount_max": 216.75,
+   "amount_max": 224.5,
    "amount_currency": "EUR",
    "amount_period": "monthly",
-   "amount_note": "Interest-bearing loan of 1/12 of the wettelijk collegegeld per month (2026: EUR 216.75 at collegegeld EUR 2,601; EUR 224.50 at EUR 2,694 for 2026-27); repaid after study under DUO repayment rules.",
+   "amount_note": "Statutory tuition fee 2026-27 is EUR 2,694, so the standard credit is 1/12 = EUR 224.50/month from September 2026 (EUR 216.75 until August 2026). With institutional (higher) tuition fee you can borrow more, up to 5 x the statutory fee = EUR 1,122.50/month. It is a loan with interest.",
    "is_automatic": false,
-   "application_url": "https://duo.nl/particulier/collegegeldkrediet-aanvragen.jsp",
+   "application_url": "https://duo.nl/particulier/studiefinanciering/collegegeldkrediet.jsp",
    "application_channel": "online",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -1387,10 +1387,10 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://duo.nl/particulier/collegegeldkrediet-aanvragen.jsp",
-   "source_snippet": "Met het collegegeldkrediet leen je het collegegeld; het bedrag is 1/12 van het wettelijk collegegeld per maand.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://duo.nl/particulier/studiefinanciering/collegegeldkrediet.jsp",
+   "source_snippet": "Hebt u geen recht op studiefinanciering vanwege uw nationaliteit? Dan kunt u collegegeldkrediet krijgen als u aan de volgende voorwaarden voldoet: Uw opleiding duurt minimaal 1 jaar.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "studentenreisproduct",
@@ -1407,7 +1407,7 @@
    "amount_period": "monthly",
    "amount_note": "Free travel either on weekdays or weekends (student's choice) on all Dutch public transport, with 40% discount in the complementary period; prestatiebeurs: gift if diploma within 10 years.",
    "is_automatic": false,
-   "application_url": "https://duo.nl/particulier/student-ov-chipkaart.jsp",
+   "application_url": "https://duo.nl/particulier/ov-en-reizen/",
    "application_channel": "online",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -1439,17 +1439,17 @@
     "income_annual_max": null,
     "income_note": "For students entitled to studiefinanciering in mbo/hbo/wo; maximum 5 years in higher education",
     "requires_children": false,
-    "nationality": "any_resident",
+    "nationality": "citizen_or_pr",
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": true,
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://duo.nl/particulier/student-ov-chipkaart.jsp",
-   "source_snippet": "Met het studentenreisproduct reis je gratis of met korting met het openbaar vervoer in Nederland.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://duo.nl/particulier/ov-en-reizen/",
+   "source_snippet": "U krijgt een studentenreisproduct als u een voltijdopleiding doet aan mbo, hbo of universiteit, ook als u nog geen 18 bent. Uw opleiding moet recht ...",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "tegemoetkoming-scholieren",
@@ -1460,13 +1460,13 @@
    "funder": "DUO (Dienst Uitvoering Onderwijs)",
    "category": "education",
    "benefit_type": "cash_monthly",
-   "amount_min": null,
-   "amount_max": null,
+   "amount_min": 69.15,
+   "amount_max": 152.47,
    "amount_currency": "EUR",
    "amount_period": "monthly",
-   "amount_note": "Gift, not repayable. Basistoelage Jan-Jul 2026: EUR 147.65/month (thuiswonend) / EUR 344.26 (uitwonend); income-dependent aanvullende toelage max EUR 147/month (schooljaar 2025-2026).",
+   "amount_note": "Maximum aanvullende toelage per month, Aug-Dec 2026: vo onderbouw EUR 104.11, vo bovenbouw EUR 113.98, vso EUR 69.15, vavo EUR 152.47. Depends on parents' income.",
    "is_automatic": false,
-   "application_url": "https://duo.nl/particulier/tegemoetkoming-scholieren.jsp",
+   "application_url": "https://duo.nl/particulier/tegemoetkoming-scholieren/aanvragen-en-wijzigen.jsp",
    "application_channel": "online",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -1494,7 +1494,7 @@
      "student"
     ],
     "age_min": 18,
-    "age_max": null,
+    "age_max": 29,
     "income_annual_max": null,
     "income_note": "Basistoelage is not income-tested (2026: EUR 147.65/month thuiswonend, EUR 344.26 uitwonend, Jan-Jul 2026). The aanvullende toelage (max EUR 147/month, schooljaar 2025-2026) depends on the income of parent(s)/carer(s) from 2 years prior.",
     "requires_children": false,
@@ -1505,9 +1505,9 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://duo.nl/particulier/tegemoetkoming-scholieren.jsp",
-   "source_snippet": "Thuiswonend 142,96 -> 147,65; Uitwonend 333,10 -> 344,26 (basistoelage per maand)",
-   "last_verified_at": "2026-08-12",
+   "source_url": "https://duo.nl/particulier/tegemoetkoming-scholieren/voorwaarden.jsp",
+   "source_snippet": "Aanvullende toelage maximaal bedrag augustus tot en met december 2026: Voortgezet onderwijs bovenbouw € 113,98; vavo € 152,47. U moet minimaal 18 jaar zijn. U moet jonger zijn dan 30 als uw tegemoetkoming ingaat.",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -1525,7 +1525,7 @@
    "amount_period": "annual",
    "amount_note": "Low-interest DUO loan up to the annual collegegeld/leergeld per academic year for full-time, part-time or dual students aged up to 55 without regular studiefinanciering; still available in 2026 (STAP-budget ended 2023).",
    "is_automatic": false,
-   "application_url": "https://duo.nl/particulier/levenlanglerenkrediet.jsp",
+   "application_url": "https://duo.nl/particulier/levenlanglerenkrediet/aanvragen-en-wijzigen.jsp",
    "application_channel": "online",
    "deadline_type": "annual",
    "deadline_note": "Apply before the academic year starts; available until age 55 (until 57 under conditions).",
@@ -1561,7 +1561,7 @@
      "jobseeker"
     ],
     "age_min": null,
-    "age_max": 55,
+    "age_max": 56,
     "income_annual_max": null,
     "income_note": "No income test (it is a loan); for students up to age 55 who are not entitled to regular studiefinanciering. Still open for applications in 2026.",
     "requires_children": false,
@@ -1572,9 +1572,9 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://duo.nl/particulier/levenlanglerenkrediet.jsp",
-   "source_snippet": "Kan ik het Levenlanglerenkrediet ook na mijn 30e aanvragen? Ja ... Je kunt het tot je 56e aanvragen voor bekostigd HBO, WO, of MBO.",
-   "last_verified_at": "2026-08-12",
+   "source_url": "https://duo.nl/particulier/levenlanglerenkrediet/bedragen-en-uitbetaling.jsp",
+   "source_snippet": "Wilt u een opleiding volgen, maar hebt u geen recht meer op reguliere studiefinanciering? Als u jonger bent dan 57 jaar kunt u misschien toch geld lenen.",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -1590,12 +1590,12 @@
    "amount_max": null,
    "amount_currency": "EUR",
    "amount_period": "annual",
-   "amount_note": "2026: 36% deduction on the first EUR 391,020 of R&D wage costs (50% for starters), 16% above; self-employed get a fixed deduction. Settled via loonheffing/corporate tax.",
+   "amount_note": "Tax scheme: S&O-afdrachtvermindering (reduction of wage tax/social premiums for R&D); starters receive 50% instead of 36% on the first bracket (per Handleiding WBSO 2026).",
    "is_automatic": false,
    "application_url": "https://www.rvo.nl/subsidies-financiering/wbso",
    "application_channel": "online",
    "deadline_type": "rolling",
-   "deadline_note": "Apply BEFORE the R&D work starts; monthly application possible (max 4 per year for employers), no retroactive claims.",
+   "deadline_note": "Applications for the 2026 calendar year closed on Wednesday 30 September 2026 (last possible date). Applications for the next year/period are made with eHerkenning (level 3, RVO-services).",
    "procedure_steps": [
     {
      "step": 1,
@@ -1648,8 +1648,8 @@
     "gender": "any"
    },
    "source_url": "https://www.rvo.nl/subsidies-financiering/wbso",
-   "source_snippet": "The WBSO reduces the costs for Research & Development (R&D) for entrepreneurs in the Netherlands. Through a tax scheme, you receive a contribution towards the wage costs of employees working on innovation.",
-   "last_verified_at": "2026-08-12",
+   "source_snippet": "Let op: woensdag 30 september is de laatste mogelijkheid om een WBSO aanvraag in te dienen voor het jaar 2026.",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -1665,9 +1665,9 @@
    "amount_max": null,
    "amount_currency": "EUR",
    "amount_period": "annual",
-   "amount_note": "2026: deduct 40% of the investment in energy-saving assets (on top of normal depreciation) from taxable profit; minimum EUR 2,500 per asset; max EUR 153 million of investments per year.",
+   "amount_note": "Deduct 40% of the investment cost from taxable profit for investments on the Energielijst; unused deduction can be carried to other years.",
    "is_automatic": false,
-   "application_url": "https://www.rvo.nl/subsidies-financiering/eia",
+   "application_url": "https://www.rvo.nl/onderwerpen/eia",
    "application_channel": "online",
    "deadline_type": "rolling",
    "deadline_note": "Report the investment to RVO within 3 months after ordering.",
@@ -1716,9 +1716,9 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.belastingdienst.nl/wps/wcm/connect/bldcontentnl/belastingdienst/zakelijk/winst/inkomstenbelasting/inkomstenbelasting_voor_ondernemers/investeringsaftrek_en_desinvesteringsbijtelling/energie_investeringsaftrek_eia",
-   "source_snippet": "In 2025 en 2026 is de EIA 40% van de investering die u hebt gedaan.",
-   "last_verified_at": "2026-08-12",
+   "source_url": "https://www.rvo.nl/onderwerpen/eia",
+   "source_snippet": "Voor die investeringen kunt u 40% van de investeringskosten aftrekken van de fiscale winst.",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -1734,7 +1734,7 @@
    "amount_max": null,
    "amount_currency": "EUR",
    "amount_period": "annual",
-   "amount_note": "MIA: extra deduction of 27%, 36% or 45% of the investment depending on the Milieulijst category; Vamil: depreciate up to 75% of the investment at once; minimum EUR 2,500 per asset; cannot be combined with EIA for the same asset.",
+   "amount_note": "MIA: deduct up to 45% of the investment cost from profit. Vamil: depreciate up to 75% at a moment of your choice. Asset must be on the current Milieulijst; not for private individuals.",
    "is_automatic": false,
    "application_url": "https://www.rvo.nl/subsidies-financiering/mia-vamil",
    "application_channel": "online",
@@ -1786,9 +1786,9 @@
     "gender": "any"
    },
    "source_url": "https://www.rvo.nl/subsidies-financiering/mia-vamil",
-   "source_snippet": "MIA 27%, 36%, or 45% additional deduction; Vamil accelerated depreciation (75% in year 1) on qualifying investments; asset must be on the Milieulijst (published annually by RVO).",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_snippet": "Met de MIA kunt u voor uw investering tot 45% van de investeringskosten aftrekken van uw winst. Met Vamil kunt u tot 75% van uw investering afschrijven op een tijdstip dat u zelf bepaalt.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "bmkb",
@@ -1803,12 +1803,12 @@
    "amount_max": null,
    "amount_currency": "EUR",
    "amount_period": "one_off",
-   "amount_note": "The state guarantees part of a business loan (guarantee up to 90% for SMEs, via accredited banks) so that banks lend to businesses with insufficient collateral; guarantee fee applies.",
+   "amount_note": "Government guarantee of 90% on the bank loan (BMKB). Companies up to 250 FTE with turnover up to EUR 50 million or balance sheet up to EUR 43 million; sole traders and partnerships qualify. You apply through your financier, not directly.",
    "is_automatic": false,
    "application_url": "https://www.rvo.nl/subsidies-financiering/bmkb",
    "application_channel": "online",
    "deadline_type": "rolling",
-   "deadline_note": null,
+   "deadline_note": "Scheme open for applications (via financiers) until 1 July 2027.",
    "procedure_steps": [
     {
      "step": 1,
@@ -1855,9 +1855,9 @@
     "gender": "any"
    },
    "source_url": "https://www.rvo.nl/subsidies-financiering/bmkb",
-   "source_snippet": "Met de Borgstelling MKB-kredieten staat het Rijk gedeeltelijk borg voor uw bedrijfskrediet, zodat de bank u makkelijker financiert.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_snippet": "Op het BMKB-krediet is een overheidsborgstelling van 90% van toepassing. Aanvragen tot 1 juli 2027. Bedrijven vragen niet zelf aan. Dit gaat via financiers.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "zelfstandigenaftrek-startersaftrek",
@@ -1868,11 +1868,11 @@
    "funder": "Belastingdienst",
    "category": "tax",
    "benefit_type": "tax_credit",
-   "amount_min": null,
-   "amount_max": null,
+   "amount_min": 1200,
+   "amount_max": 3323,
    "amount_currency": "EUR",
    "amount_period": "annual",
-   "amount_note": "2026: zelfstandigenaftrek EUR 1,200 (halved from EUR 2,470 in 2025; EUR 900 in 2027) plus startersaftrek EUR 2,123 for starting entrepreneurs meeting the 1,225-hour criterion.",
+   "amount_note": "2026: zelfstandigenaftrek EUR 1,200 (limited to profit); startersaftrek EUR 2,123 on top (total EUR 3,323 for starters). Requires meeting the hours criterion.",
    "is_automatic": true,
    "application_url": "https://www.belastingdienst.nl/wps/wcm/connect/nl/winst/winst",
    "application_channel": "automatic",
@@ -1918,9 +1918,9 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.belastingdienst.nl/wps/wcm/connect/nl/winst/winst",
-   "source_snippet": "Zelfstandigenaftrek gehalveerd: van € 2.470 in 2025 naar € 1.200 in 2026. Startersaftrek ongewijzigd: € 2.123.",
-   "last_verified_at": "2026-08-12",
+   "source_url": "https://www.belastingdienst.nl/wps/wcm/connect/bldcontentnl/belastingdienst/zakelijk/winst/inkomstenbelasting/veranderingen-inkomstenbelasting-2026/ondernemersaftrek-2026/zelfstandigenaftrek-2026",
+   "source_snippet": "Dan is de zelfstandigenaftrek in 2026 een bedrag van € 1.200. De startersaftrek bedraagt € 2.123.",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -1938,7 +1938,7 @@
    "amount_period": "monthly",
    "amount_note": "Temporary income support (gift or loan) up to bijstandsnorm for self-employed with a viable business, or a business loan (bedrijfskrediet) at low interest.",
    "is_automatic": false,
-   "application_url": "https://www.rijksoverheid.nl/onderwerpen/bijstand",
+   "application_url": "https://www.rijksoverheid.nl/themas/werk/bijstand-voor-zelfstandigen-bbz",
    "application_channel": "in_person",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -1988,10 +1988,10 @@
     "gender": "any",
     "rule_source": "geography_unknown"
    },
-   "source_url": "https://www.rijksoverheid.nl/onderwerpen/bijstand",
-   "source_snippet": "Zelfstandig ondernemers kunnen bij de gemeente een uitkering of lening aanvragen op grond van het Besluit bijstandverlening zelfstandigen (Bbz).",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www.rijksoverheid.nl/themas/werk/bijstand-voor-zelfstandigen-bbz",
+   "source_snippet": "De gemeente ondersteunt zelfstandigen in financiële problemen met het Besluit bijstandverlening zelfstandigen (Bbz). Bijvoorbeeld door een renteloze lening.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "slim-subsidie-mkb",
@@ -2071,12 +2071,12 @@
    "amount_max": null,
    "amount_currency": "EUR",
    "amount_period": "one_off",
-   "amount_note": "Fixed amounts per measure: e.g. heat pump min EUR 500 (typical EUR 2,125 for a 4 kW hybrid, EUR 3,025 for 8 kW full-electric), insulation per m2 (doubled if combined with another measure within 24 months). Successor of the former SEEH scheme.",
+   "amount_note": "At least EUR 500 for a (hybrid) heat pump; actual amount depends on type/meldcode. Subsidy for insulation doubles if you combine two measures within 24 months. From 2026 lower amounts for a 2nd or further air-water heat pump.",
    "is_automatic": false,
    "application_url": "https://www.rvo.nl/subsidies-financiering/isde/woningeigenaren",
    "application_channel": "online",
    "deadline_type": "rolling",
-   "deadline_note": "Apply within 24 months after installation; the measure must be installed by a professional before applying.",
+   "deadline_note": "Apply after installation, within 24 months of completing the work (insulation and heat pump). From 2026 ventilation is also subsidised when combined with insulation.",
    "procedure_steps": [
     {
      "step": 1,
@@ -2131,8 +2131,8 @@
     "gender": "any"
    },
    "source_url": "https://www.rvo.nl/subsidies-financiering/isde/woningeigenaren",
-   "source_snippet": "U ontvangt altijd minimaal € 500 subsidie voor een (hybride)-warmtepomp. Gaat u binnen 24 maanden ook isoleren? Dan verdubbelt uw subsidiebedrag voor de isolatiemaatregel.",
-   "last_verified_at": "2026-08-12",
+   "source_snippet": "U ontvangt altijd minimaal € 500 subsidie voor een (hybride)-warmtepomp. U vraagt de subsidie aan, binnen 24 maanden na installatie.",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -2141,16 +2141,16 @@
    "name_en": "Energy Saving Loan (low-interest loan for home energy measures)",
    "admin_level": "national",
    "admin_area": null,
-   "funder": "Stimuleringsfonds Volkshuisvesting (SVn)",
+   "funder": "Nationaal Warmtefonds",
    "category": "energy",
    "benefit_type": "cash_one_off",
    "amount_min": 1000,
-   "amount_max": 25000,
+   "amount_max": 29000,
    "amount_currency": "EUR",
    "amount_period": "one_off",
-   "amount_note": "Loan of EUR 1,000-25,000 for energy-saving measures (insulation, heat pump, solar panels, HR++ glass); reduced or 0% interest for lower incomes; repayment in fixed monthly instalments.",
+   "amount_note": "Energy-saving loan for owner-occupiers via Nationaal Warmtefonds: EUR 1,000 to EUR 29,000 (up to EUR 8,500 for a home battery); 0% interest for owner-occupiers with taxable income under EUR 60,000. SVn stopped issuing these loans on 1 July 2021.",
    "is_automatic": false,
-   "application_url": "https://svn.nl/energiebespaarlening",
+   "application_url": "https://www.warmtefonds.nl",
    "application_channel": "online",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -2192,10 +2192,10 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://svn.nl/energiebespaarlening",
-   "source_snippet": "Met de Energiebespaarlening van SVn leent u geld tegen een lage rente voor energiebesparende maatregelen aan uw woning.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www.warmtefonds.nl",
+   "source_snippet": "Je kunt minimaal € 1.000 en maximaal € 29.000 lenen. Rente van 0% voor eigenaar-bewoners met verzamelinkomen van minder dan € 60.000.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "warmtefonds",
@@ -2206,11 +2206,11 @@
    "funder": "Nationaal Warmtefonds",
    "category": "energy",
    "benefit_type": "cash_one_off",
-   "amount_min": null,
-   "amount_max": null,
+   "amount_min": 1000,
+   "amount_max": 29000,
    "amount_currency": "EUR",
    "amount_period": "one_off",
-   "amount_note": "Loans for homeowners to finance insulation, heat pumps, solar panels and connection to heat networks; interest depends on income; no mortgage registration needed up to certain amounts.",
+   "amount_note": "Loan EUR 1,000-29,000 (EUR 8,500 max for a home battery). 0% interest for owner-occupiers with verzamelinkomen under EUR 60,000. Age and income do not restrict who can borrow; you must own and live in the home.",
    "is_automatic": false,
    "application_url": "https://www.warmtefonds.nl",
    "application_channel": "online",
@@ -2255,9 +2255,9 @@
     "gender": "any"
    },
    "source_url": "https://www.warmtefonds.nl",
-   "source_snippet": "Het Warmtefonds verstrekt leningen aan huiseigenaren voor energiebesparende maatregelen in en om het huis.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_snippet": "Je moet eigenaar en bewoner zijn van de te verduurzamen woning. Rente van 0% voor eigenaar-bewoners met verzamelinkomen van minder dan € 60.000. Je kunt minimaal € 1.000 en maximaal € 29.000 lenen.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "seve-subsidie-vve",
@@ -2274,10 +2274,10 @@
    "amount_period": "one_off",
    "amount_note": "Subsidy for Verenigingen van Eigenaren for energy advice (energieadvies) and energy-saving measures on the building envelope (roof, facade, glass) of apartment complexes; percentage of costs up to a maximum per dwelling.",
    "is_automatic": false,
-   "application_url": "https://www.rvo.nl/subsidies-financiering/seve",
+   "application_url": "https://www.rvo.nl/subsidies-financiering/svve",
    "application_channel": "online",
-   "deadline_type": "rolling",
-   "deadline_note": null,
+   "deadline_type": "none",
+   "deadline_note": "Ended: the SEEH/SEVE subsidy for VvEs no longer accepts applications; replaced by the Subsidieregeling verduurzaming voor verenigingen van eigenaars (SVVE), open since 23 January 2023.",
    "procedure_steps": [
     {
      "step": 1,
@@ -2321,10 +2321,10 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.rvo.nl/subsidies-financiering/seve",
-   "source_snippet": "Met de SEVE krijgen Verenigingen van Eigenaren subsidie voor energieadvies en energiebesparende maatregelen aan het gebouw.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www.rvo.nl/onderwerpen/subsidie-energiebesparing-eigen-huis-seeh-voor-vve",
+   "source_snippet": "Let op: aanvragen voor de SEEH is niet meer mogelijk. Op 23 januari 2023 opende de Subsidie verduurzamen voor verenigingen van eigenaars (SVVE).",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "algemene-heffingskorting",
@@ -2373,10 +2373,10 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.belastingdienst.nl",
-   "source_snippet": "De algemene heffingskorting is een korting op de inkomstenbelasting en de ingehouden premies volksverzekeringen; de hoogte hangt af van uw inkomen.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www.belastingdienst.nl/wps/wcm/connect/fisin/fisin2026/heffingskortingen",
+   "source_snippet": "De hoogte van de algemene heffingskorting is maximaal € 3.115.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "arbeidskorting",
@@ -2428,10 +2428,10 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.belastingdienst.nl",
-   "source_snippet": "De arbeidskorting is de korting die u krijgt als u werkt; de hoogte hangt af van uw arbeidsinkomen en uw leeftijd.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www.belastingdienst.nl/wps/wcm/connect/bldcontentnl/belastingdienst/prive/inkomstenbelasting/heffingskortingen_boxen_tarieven/heffingskortingen/arbeidskorting/tabel-arbeidskorting-2026",
+   "source_snippet": "U bereikt in 2026 nog niet de AOW-leeftijd: we nemen de arbeidskorting van uw werkgever over tot maximaal € 5.685. U hebt in 2026 het hele jaar de AOW-leeftijd: maximaal € 2.840.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "inkomensafhankelijke-combinatiekorting-iack",
@@ -2489,9 +2489,9 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.belastingdienst.nl",
-   "source_snippet": "IACK = min(€ 3.032, (arbeidsinkomen − € 6.239) × 11,45%) - korting voor werkende ouders met een kind jonger dan 12 jaar (Belastingdienst Tarieven 2026).",
-   "last_verified_at": "2026-08-12",
+   "source_url": "https://www.belastingdienst.nl/wps/wcm/connect/fisin/fisin2026/heffingskortingen",
+   "source_snippet": "Inkomensafhankelijke combinatiekorting: arbeidsinkomen vanaf € 6.239 tot € 32.710: 11,45% x (arbeidsinkomen - € 6.239).",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -2504,10 +2504,10 @@
    "category": "tax",
    "benefit_type": "tax_credit",
    "amount_min": null,
-   "amount_max": 2010,
+   "amount_max": 2067,
    "amount_currency": "EUR",
    "amount_period": "annual",
-   "amount_note": "2026: maximum EUR 2,010 for AOW-age taxpayers, phased out above a verzamelinkomen of approx. EUR 45,308; plus EUR 531 alleenstaande ouderenkorting for single elderly (indicative tariffs).",
+   "amount_note": "Ouderenkorting 2026 maximum EUR 2,067 (reduced by 15% of verzamelinkomen above about EUR 46,002). In addition the alleenstaandeouderenkorting is EUR 540 in 2026.",
    "is_automatic": true,
    "application_url": "https://www.belastingdienst.nl",
    "application_channel": "automatic",
@@ -2543,10 +2543,10 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.belastingdienst.nl",
-   "source_snippet": "De ouderenkorting is een heffingskorting voor mensen die de AOW-leeftijd hebben bereikt; hoe hoger het verzamelinkomen, hoe lager de korting.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www.belastingdienst.nl/wps/wcm/connect/bldcontentnl/belastingdienst/prive/inkomstenbelasting/heffingskortingen_boxen_tarieven/heffingskortingen/heffingskortingen_voor_aow_gerechtigden",
+   "source_snippet": "Ouderenkorting: vanaf € 46.003 tot en met € 59.782: € 2.067 - 15% x (verzamelinkomen - € 46.002). Alleenstaandeouderenkorting 2026: € 540.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "jonggehandicaptenkorting",
@@ -2558,10 +2558,10 @@
    "category": "tax",
    "benefit_type": "tax_credit",
    "amount_min": null,
-   "amount_max": null,
+   "amount_max": 923,
    "amount_currency": "EUR",
    "amount_period": "annual",
-   "amount_note": "Fixed heffingskorting of EUR 923 per year in 2026 (2025: EUR 909) for Wajong benefit recipients and others unable to earn the minimum wage due to long-term disability.",
+   "amount_note": "2026: EUR 923 per year.",
    "is_automatic": true,
    "application_url": "https://www.belastingdienst.nl",
    "application_channel": "automatic",
@@ -2598,8 +2598,8 @@
     "gender": "any"
    },
    "source_url": "https://www.belastingdienst.nl/wps/wcm/connect/bldcontentnl/belastingdienst/prive/inkomstenbelasting/heffingskortingen_boxen_tarieven/heffingskortingen/jonggehandicaptenkorting",
-   "source_snippet": "2026 | € 923 (jonggehandicaptenkorting, Belastingdienst)",
-   "last_verified_at": "2026-08-12",
+   "source_snippet": "In 2026 is de jonggehandicaptenkorting € 923.",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -2615,7 +2615,7 @@
    "amount_max": null,
    "amount_currency": "EUR",
    "amount_period": "annual",
-   "amount_note": "Interest on the mortgage for your main home is deductible in box 1 against a capped rate, for up to 30 years, minus the eigenwoningforfait; only for annuity/linear repayment mortgages taken out from 2013.",
+   "amount_note": "Mortgage interest on an owner-occupied home is deductible (annuity or linear 30-year mortgage). In 2026 the deduction is reduced for taxable income above EUR 78,426 (limited to the 37.56% rate); eigenwoningforfait adds taxable income.",
    "is_automatic": false,
    "application_url": "https://www.belastingdienst.nl/wps/wcm/connect/nl/eigen-woning/eigen-woning",
    "application_channel": "online",
@@ -2654,10 +2654,10 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.belastingdienst.nl/wps/wcm/connect/nl/eigen-woning/eigen-woning",
-   "source_snippet": "De rente en kosten van de lening voor uw eigen woning zijn aftrekbaar; hier staat tegenover dat u het eigenwoningforfait bij uw inkomen telt.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www.belastingdienst.nl/wps/wcm/connect/nl/koopwoning/content/tariefsaanpassing-eigen-woning",
+   "source_snippet": "Is uw inkomen in 2026 hoger dan € 78.426? Dan krijgt u minder hypotheekrenteaftrek voor uw koopwoning.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "startersvrijstelling-overdrachtsbelasting",
@@ -2672,9 +2672,9 @@
    "amount_max": null,
    "amount_currency": "EUR",
    "amount_period": "one_off",
-   "amount_note": "Buyers aged 18-35 buying their first owner-occupied home pay 0% overdrachtsbelasting (instead of 2%) on a purchase price up to EUR 555,000 in 2026.",
+   "amount_note": "0% transfer tax (instead of 2% or the standard rate) for a home you will live in, with market value up to EUR 555,000 (2026). Usable once.",
    "is_automatic": false,
-   "application_url": "https://www.belastingdienst.nl",
+   "application_url": "https://www.belastingdienst.nl/wps/wcm/connect/bldcontentnl/themaoverstijgend/programmas_en_formulieren/verklaring-overdrachtsbelasting-startersvrijstelling",
    "application_channel": "post",
    "deadline_type": "rolling",
    "deadline_note": "The notary applies the exemption at transfer; submit the Verklaring overdrachtsbelasting startersvrijstelling.",
@@ -2705,7 +2705,7 @@
    "eligibility": {
     "statuses": [],
     "age_min": 18,
-    "age_max": 35,
+    "age_max": 34,
     "income_annual_max": null,
     "income_note": "No income test. The Belastingdienst condition is a property-value cap: the woningwaarde may not exceed EUR 555,000 in 2026, the buyer must be 18-34 and must live in the home themselves.",
     "requires_children": false,
@@ -2719,9 +2719,9 @@
     "income_source_url": "https://www.belastingdienst.nl/wps/wcm/connect/bldcontentnl/belastingdienst/prive/woning/overdrachtsbelasting/startersvrijstelling/startersvrijstelling",
     "income_confidence": "high"
    },
-   "source_url": "https://www.belastingdienst.nl",
-   "source_snippet": "Geen overdrachtsbelasting tot €555.000 voor kopers tussen 18-35 jaar.",
-   "last_verified_at": "2026-08-12",
+   "source_url": "https://www.belastingdienst.nl/wps/wcm/connect/bldcontentnl/belastingdienst/prive/woning/overdrachtsbelasting/startersvrijstelling/startersvrijstelling",
+   "source_snippet": "U bent meerderjarig en jonger dan 35 jaar op het moment dat u de woning verkrijgt. Op het moment dat u de woning verkrijgt, mag de woningwaarde niet hoger zijn dan € 555.000.",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified",
    "income_reviewed_at": "2026-08-13"
   },
@@ -2738,7 +2738,7 @@
    "amount_max": null,
    "amount_currency": "EUR",
    "amount_period": "one_off",
-   "amount_note": "2026 NHG kostengrens EUR 470,000 (EUR 498,200 when financing energy-saving measures); one-off borgtochtprovisie 0.4% of the mortgage; lower interest rate (no risk surcharge) and possible restschuld-kwijtschelding.",
+   "amount_note": "NHG limit 2026: mortgage up to EUR 470,000 (EUR 498,200 when including energy-saving measures).",
    "is_automatic": false,
    "application_url": "https://www.nhg.nl",
    "application_channel": "online",
@@ -2787,9 +2787,9 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.nhg.nl",
-   "source_snippet": "In 2026 ligt de NHG-grens op €470.000 ... met energiebesparende maatregelen ... maximaal € 498.200.",
-   "last_verified_at": "2026-08-12",
+   "source_url": "https://www.nhg.nl/nhg-actueel/nhg-grens-in-2026-vastgesteld-op-470000/",
+   "source_snippet": "De NHG-grens stijgt in 2026 van € 450.000 naar € 470.000. Met Energie Besparende Voorzieningen wordt de NHG-grens € 498.200.",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -2801,11 +2801,11 @@
    "funder": "Gemeente / Stimuleringsfonds Volkshuisvesting (SVn)",
    "category": "housing",
    "benefit_type": "cash_one_off",
-   "amount_min": null,
+   "amount_min": 2500,
    "amount_max": null,
    "amount_currency": "EUR",
    "amount_period": "one_off",
-   "amount_note": "Extra loan (e.g. EUR 30,000-56,000 depending on the municipality) bridging the gap between purchase price and first mortgage; first 3 years no monthly payments; only in combination with an NHG mortgage; offered by roughly 250 municipalities.",
+   "amount_note": "Maximum 20% of purchase price or appraised value (and never above the municipality's cap); minimum EUR 2,500. Interest and repayment are paid by the municipality for the first 3 years; 30-year term; must be combined with an NHG mortgage.",
    "is_automatic": false,
    "application_url": "https://svn.nl/starterslening",
    "application_channel": "online",
@@ -2870,9 +2870,9 @@
     ],
     "gender": "any"
    },
-   "source_url": "https://svn.nl/starterslening",
-   "source_snippet": "Je vraag de Starterslening aan bij het SVn, het Stimuleringsfonds Volkshuisvestiging. De SVn Starterslening heeft een looptijd van 30 jaar. Na de eerste drie jaar worden de maandlasten bepaald op basis van je inkomen.",
-   "last_verified_at": "2026-08-12",
+   "source_url": "https://www.svn.nl/starterslening/",
+   "source_snippet": "De SVn Starterslening wordt verstrekt voor het aankopen van de eerste woning. Er kan alleen een aanvraag bij SVn gedaan worden als er een toewijzingsbrief van de gemeente of provincie is. De SVn Starterslening is minimaal € 2.500,-.",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -2890,10 +2890,10 @@
    "amount_period": "monthly",
    "amount_note": "At least 100% of the statutory minimum wage (self-employed: based on worked hours, max minimum wage) during 16 weeks of zwangerschapsverlof; employees receive the WAZO uitkering via employer/UWV at 100% of wage.",
    "is_automatic": false,
-   "application_url": "https://www.uwv.nl",
+   "application_url": "https://www.uwv.nl/nl/zez",
    "application_channel": "online",
-   "deadline_type": "rolling",
-   "deadline_note": "Self-employed: apply 2-4 weeks before the desired start of leave, but at least 2 weeks before due date.",
+   "deadline_type": "window",
+   "deadline_note": "Apply between 4 and 2 weeks before the date you want the benefit to start (up to 1 year retroactively). Benefit lasts at least 16 weeks.",
    "procedure_steps": [
     {
      "step": 1,
@@ -2936,10 +2936,10 @@
     "admin_areas": [],
     "gender": "female"
    },
-   "source_url": "https://www.uwv.nl",
-   "source_snippet": "De zwangerschaps- en bevallingsuitkering is voor zelfstandigen en werknemers zonder loondoorbetaling tijdens het zwangerschapsverlof van 16 weken.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www.uwv.nl/nl/zez",
+   "source_snippet": "De zwangerschaps- en bevallingsuitkering voor zelfstandigen (ZEZ-uitkering) duurt minstens 16 weken. Aanvragen kan tussen de 4 en 2 weken voor de datum dat u de uitkering wilt starten.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "betaald-ouderschapsverlof",
@@ -2954,12 +2954,12 @@
    "amount_max": null,
    "amount_currency": "EUR",
    "amount_period": "monthly",
-   "amount_note": "9 weeks of paid parental leave at 70% of the daily wage (capped at maximum dagloon), taken within the child's first year; plus 5 days (aanvullend) geboorteverlof at 100% for partners right after birth.",
+   "amount_note": "9 weeks of paid parental leave at 70% of the daily wage (dagloon; capped at 70% of the maximum dagloon), taken within the child's first year (adoption/foster: within 1 year of placement and before the child is 8). Employees only. The partner's aanvullend geboorteverlof is a separate UWV scheme that also pays 70% of dagloon.",
    "is_automatic": false,
-   "application_url": "https://www.uwv.nl",
+   "application_url": "https://www.uwv.nl/nl/betaald-ouderschapsverlof/betaald-ouderschapsverlof-aanvragen",
    "application_channel": "via_employer",
    "deadline_type": "rolling",
-   "deadline_note": "Request leave with your employer at least 2 months in advance; employer applies for the uitkering at UWV.",
+   "deadline_note": "Discuss the leave with your employer at least 2 months before the first leave day; take it within 1 year of the birth. The employer applies for the uitkering at UWV (decision within 4 weeks).",
    "procedure_steps": [
     {
      "step": 1,
@@ -2982,13 +2982,12 @@
    "eligibility": {
     "statuses": [
      "employee",
-     "self_employed",
      "parent"
     ],
     "age_min": null,
     "age_max": null,
     "income_annual_max": null,
-    "income_note": "For (former) employees and self-employed; only in the first year after birth; remaining ouderschapsverlof (up to 26 weeks total) is unpaid",
+    "income_note": "Employment-based (employees incl. on-call/agency workers, alfahulp, dga); the self-employed are not listed as eligible. Only in the first year after birth; the remaining 17 weeks of the 26-week parental leave are unpaid. Each parent has full entitlement.",
     "requires_children": true,
     "nationality": "any_resident",
     "residency_months_min": null,
@@ -2997,10 +2996,10 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.uwv.nl",
-   "source_snippet": "Ouders krijgen in het eerste levensjaar van hun kind 9 weken betaald ouderschapsverlof, tegen 70% van hun dagloon.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www.uwv.nl/nl/betaald-ouderschapsverlof",
+   "source_snippet": "Ouderschapsverlof bestaat uit 17 weken onbetaald verlof en 9 weken betaald verlof.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "adoptie-pleegzorguitkering",
@@ -3015,12 +3014,12 @@
    "amount_max": null,
    "amount_currency": "EUR",
    "amount_period": "monthly",
-   "amount_note": "100% of daily wage (capped) for 6 weeks of adoptie- or pleegzorgverlof around the placement of an adopted or foster child.",
+   "amount_note": "100% of the daily wage (dagloon) for employees, for up to 6 weeks of adoptie- or pleegzorgverlof; one benefit claim per adoption/placement, also for several children at once. Parents on WW, Ziektewet or loongerelateerde WGA get a benefit equal to their existing benefit.",
    "is_automatic": false,
-   "application_url": "https://www.uwv.nl",
+   "application_url": "https://www.uwv.nl/nl/adoptie-pleegzorg/adoptie-uitkering-pleegzorguitkering-aanvragen",
    "application_channel": "via_employer",
    "deadline_type": "rolling",
-   "deadline_note": "Apply 2-4 weeks before the leave; self-employed apply directly at UWV.",
+   "deadline_note": "The employer or the parent can apply between 4 and 2 weeks before the leave starts.",
    "procedure_steps": [
     {
      "step": 1,
@@ -3058,10 +3057,10 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.uwv.nl",
-   "source_snippet": "Bij adoptie of pleegzorg heeft u recht op 6 weken verlof met een uitkering van 100% van het dagloon.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www.uwv.nl/nl/adoptie-pleegzorg/adoptieverlof-pleegzorgverlof",
+   "source_snippet": "Voor ouders met een werkgever is de uitkering 100% van het dagloon. [...] Het verlof duurt maximaal 6 weken.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "wlz-zorg-langdurige-zorg",
@@ -3078,7 +3077,7 @@
    "amount_period": "monthly",
    "amount_note": "Care in kind (residential care, care at home with 24h supervision) under the Wlz; statutory eigen bijdrage (own contribution) applies, income- and age-dependent (low/high tariff).",
    "is_automatic": false,
-   "application_url": "https://www.rijksoverheid.nl/onderwerpen/wet-langdurige-zorg-wlz",
+   "application_url": "https://www.rijksoverheid.nl/vraag-en-antwoord/verpleeghuizen-en-zorginstellingen/wlz-indicatie-aanvragen",
    "application_channel": "online",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -3125,10 +3124,10 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.rijksoverheid.nl/onderwerpen/wet-langdurige-zorg-wlz",
-   "source_snippet": "De Wet langdurige zorg (Wlz) is bedoeld voor mensen die de hele dag toezicht of 24-uurszorg in de buurt nodig hebben.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www.rijksoverheid.nl/vraag-en-antwoord/verpleeghuizen-en-zorginstellingen/zorg-via-wet-langdurige-zorg",
+   "source_snippet": "Heeft u, of uw kind, 24 uur per dag zorg of toezicht nodig? Via de Wet langdurige zorg krijgt u alle zorg die u nodig heeft voor uw aandoening of beperking.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "persoonsgebonden-budget-pgb",
@@ -3145,10 +3144,10 @@
    "amount_period": "monthly",
    "amount_note": "Budget instead of care in kind, to hire your own care providers; amount based on the indicated care need; administration via SVB.",
    "is_automatic": false,
-   "application_url": "https://www.svb.nl/nl/persoonsgebonden-budget",
+   "application_url": "https://www.svb.nl/nl/pgb/starten-met-een-pgb/pgb-aanvragen-stap-voor-stap",
    "application_channel": "online",
    "deadline_type": "rolling",
-   "deadline_note": null,
+   "deadline_note": "Application route depends on the law: Wlz via CIZ indication then zorgkantoor; Wmo and Jeugdwet via the gemeente; Zvw via the zorgverzekeraar.",
    "procedure_steps": [
     {
      "step": 1,
@@ -3187,10 +3186,10 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.svb.nl/nl/persoonsgebonden-budget",
-   "source_snippet": "Met een persoonsgebonden budget (pgb) koopt u zelf de zorg of ondersteuning in die u nodig heeft.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www.svb.nl/nl/pgb/starten-met-een-pgb/pgb-aanvragen-stap-voor-stap",
+   "source_snippet": "Hoe u een PGB aanvraagt, hangt af van de wet waaruit u een PGB wilt ontvangen.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "tegemoetkoming-chronisch-zieken-gehandicapten",
@@ -3205,12 +3204,12 @@
    "amount_max": null,
    "amount_currency": "EUR",
    "amount_period": "annual",
-   "amount_note": "Fixed annual amount (varies per municipality, often a few hundred euros) to compensate extra costs due to long-term illness or disability; income-tested (usually around the bijstandsnorm or modal thresholds per gemeente).",
+   "amount_note": "There is no single national allowance: some municipalities pay a 'meerkostenregeling' to people who are permanently ill or have a disability. Amount and conditions differ per municipality; ask your gemeente.",
    "is_automatic": false,
-   "application_url": "https://www.juridischloket.nl",
+   "application_url": "https://www.rijksoverheid.nl/vraag-en-antwoord/zorgverzekering/extra-geld-bij-hoge-zorgkosten",
    "application_channel": "online",
    "deadline_type": "rolling",
-   "deadline_note": null,
+   "deadline_note": "Set by each municipality; check with your gemeente.",
    "procedure_steps": [
     {
      "step": 1,
@@ -3239,8 +3238,8 @@
     "statuses": [],
     "age_min": null,
     "age_max": null,
-    "income_annual_max": 22144,
-    "income_note": "Municipal scheme; typical income limit 130% of the bijstandsnorm: EUR 1,845.30/month single incl. vakantietoeslag (Jul 2026) = EUR 22,144/yr (conversion: 12 x monthly); couples 130% = EUR 2,636.13/month. Thresholds vary by municipality.",
+    "income_annual_max": null,
+    "income_note": "Income thresholds are set per municipality and are not published nationally; the previous single national figure (EUR 22,144) is not supported by an official source.",
     "requires_children": false,
     "nationality": "any_resident",
     "residency_months_min": null,
@@ -3258,10 +3257,10 @@
     ],
     "gender": "any"
    },
-   "source_url": "https://www.juridischloket.nl",
-   "source_snippet": "De tegemoetkoming chronisch zieken en gehandicapten is een gemeentelijke jaarlijkse vergoeding voor de meerkosten van een langdurige ziekte of handicap.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www.rijksoverheid.nl/vraag-en-antwoord/zorgverzekering/extra-geld-bij-hoge-zorgkosten",
+   "source_snippet": "Verschillende gemeenten betalen een bedrag uit aan blijvend zieke mensen en mensen met een beperking. Dit zijn de zogenaamde meerkostenregelingen. De hoogte van het bedrag en de voorwaarden kunnen per gemeente verschillen.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "wmo-hulpmiddelen",
@@ -3278,10 +3277,10 @@
    "amount_period": "one_off",
    "amount_note": "Loan or provision of aids (wheelchair, mobility scooter, home adaptations) based on a Wmo assessment; an eigen bijdrage (often capped, e.g. EUR 19 per 4 weeks per aid) may apply.",
    "is_automatic": false,
-   "application_url": "https://www.juridischloket.nl",
+   "application_url": "https://www.rijksoverheid.nl/vraag-en-antwoord/zorg-en-ondersteuning-thuis/ondersteuning-gemeente-wmo-2015-aanvragen",
    "application_channel": "in_person",
    "deadline_type": "rolling",
-   "deadline_note": null,
+   "deadline_note": "Apply at your gemeente; the gemeente investigates (usually a conversation) what you need. A wheelchair via the Wmo is only provided if needed for a longer period; temporary aids via the thuiszorgwinkel or your health insurer.",
    "procedure_steps": [
     {
      "step": 1,
@@ -3329,10 +3328,10 @@
     ],
     "gender": "any"
    },
-   "source_url": "https://www.juridischloket.nl",
-   "source_snippet": "Via de Wmo kunt u bij uw gemeente hulpmiddelen aanvragen, zoals een rolstoel, scootmobiel of aanpassingen in uw woning.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www.rijksoverheid.nl/vraag-en-antwoord/zorg-en-ondersteuning-thuis/ondersteuning-gemeente-wmo-2015",
+   "source_snippet": "Bent u onvoldoende zelfredzaam of kunt u niet goed meedoen in de maatschappij? En kan uw netwerk ook niet bijdragen? Dan is de gemeente verplicht ondersteuning te bieden.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "gehandicaptenparkeerkaart",
@@ -3347,12 +3346,12 @@
    "amount_max": null,
    "amount_currency": "EUR",
    "amount_period": "one_off",
-   "amount_note": "Allows parking in general disabled bays; many municipalities also exempt from parking fees or time limits; municipal issue fee applies (varies).",
+   "amount_note": "Allows parking in general disabled bays (EU-wide card, valid at most 5 years). Municipalities set their own fees (leges) for the application and the medical examination; there is no national maximum.",
    "is_automatic": false,
-   "application_url": "https://www.rijksoverheid.nl/onderwerpen/gehandicaptenparkeerkaart",
+   "application_url": "https://www.rijksoverheid.nl/vraag-en-antwoord/verkeersveiligheid/hoe-vraag-ik-een-gehandicaptenparkeerkaart-aan",
    "application_channel": "online",
    "deadline_type": "rolling",
-   "deadline_note": null,
+   "deadline_note": "Apply at the gemeente where you are registered (or at CBR if not registered in a municipality); renew with the gemeente before expiry (max. 5 years).",
    "procedure_steps": [
     {
      "step": 1,
@@ -3382,7 +3381,7 @@
     "age_min": null,
     "age_max": null,
     "income_annual_max": null,
-    "income_note": "For drivers or passengers who cannot walk more than 100 metres independently (chauffeurskaart for passengers possible)",
+    "income_note": "Driver card (B): cannot walk more than 100 metres independently with aids for at least half a year and holds a driving licence. Passenger card (P): same walking limit and needs continuous help of the driver for door-to-door transport. Assessed by a medical examiner. No income test.",
     "requires_children": false,
     "nationality": "any_resident",
     "residency_months_min": null,
@@ -3396,10 +3395,10 @@
     ],
     "gender": "any"
    },
-   "source_url": "https://www.rijksoverheid.nl/onderwerpen/gehandicaptenparkeerkaart",
-   "source_snippet": "Met een gehandicaptenparkeerkaart mag u parkeren op algemene gehandicaptenparkeerplaatsen in Nederland en andere EU-landen.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www.rijksoverheid.nl/vraag-en-antwoord/verkeersveiligheid/hoe-vraag-ik-een-gehandicaptenparkeerkaart-aan",
+   "source_snippet": "U kunt een gehandicaptenparkeerkaart aanvragen bij de gemeente waar u staat ingeschreven. Een keuringsarts bepaalt na medisch onderzoek of u voldoet aan de voorwaarden.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "kwijtschelding-gemeentelijke-belastingen",
@@ -3416,10 +3415,10 @@
    "amount_period": "annual",
    "amount_note": "Full or partial waiver of gemeentelijke belastingen (afvalstoffenheffing, rioolheffing, OZB) for households at or below (often) 100-130% of the bijstandsnorm; in many municipalities granted automatically to benefit recipients.",
    "is_automatic": true,
-   "application_url": "https://www.denhaag.nl/nl/belastingen-en-heffingen/",
+   "application_url": "https://www.denhaag.nl/nl/belastingen/kwijtschelding-belastingen-aanvragen-of-regelen/",
    "application_channel": "online",
    "deadline_type": "annual",
-   "deadline_note": "Apply per tax year; many municipalities waive automatically for bijstandsuitkering recipients.",
+   "deadline_note": "Den Haag: apply if the assessment is unpaid or was paid less than 3 months ago; you hear within 13 weeks. Other municipalities have their own rules and forms.",
    "procedure_steps": [
     {
      "step": 1,
@@ -3467,9 +3466,9 @@
     ],
     "gender": "any"
    },
-   "source_url": "https://www.denhaag.nl/nl/belastingen-en-heffingen/",
-   "source_snippet": "In artikel 16 van de Uitvoeringsregeling Invorderingswet 1990 staat een kwijtscheldingsnorm van 90% van de bijstandsnorm ... de kwijtscheldingsnorm wordt gesteld op 100% van de bijstandsnorm.",
-   "last_verified_at": "2026-08-12",
+   "source_url": "https://www.denhaag.nl/nl/belastingen/kwijtschelding-belastingen-aanvragen-of-regelen/",
+   "source_snippet": "Heeft u een laag inkomen? En kunt u uw rekeningen moeilijk betalen? Dan kunt u soms kwijtschelding van gemeentelijke belasting krijgen.",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -3487,10 +3486,10 @@
    "amount_period": "annual",
    "amount_note": "Free or heavily discounted access to swimming pools, museums, sports clubs and courses; holders with a low income get a green dot (groene stip) for the biggest discounts, plus schemes like free swimming lessons for children and the laptop scheme for school pupils.",
    "is_automatic": false,
-   "application_url": "https://www.amsterdam.nl/stadspas/",
+   "application_url": "https://stadspas.amsterdam.nl/informatie/stadspas-aanvragen",
    "application_channel": "online",
    "deadline_type": "rolling",
-   "deadline_note": null,
+   "deadline_note": "Apply online (DigiD) or on paper; response within 8 weeks, pass sent within 3 weeks. The pass is free.",
    "procedure_steps": [
     {
      "step": 1,
@@ -3522,24 +3521,25 @@
    ],
    "eligibility": {
     "statuses": [],
-    "age_min": null,
+    "age_min": 18,
     "age_max": null,
     "income_annual_max": 22144,
-    "income_note": "For Amsterdam residents with an income up to 130% of the bijstandsnorm (groene stip): ~EUR 1,845/month single incl. vakantiegeld = EUR 22,144/yr (12 x monthly, Jul 2026). Variants for children and 65+ (free GVB travel for AOW-age Stadspas holders).",
+    "income_note": "Amsterdam or Weesp residents aged 18+ with a low income and little assets (amounts on amsterdam.nl 'wat is een laag inkomen'). Students cannot apply if their study qualifies for studiefinanciering or WTOS, even if they do not receive it. The EUR 22,144/yr (130% bijstandsnorm) figure is not stated on the Stadspas page and is unverified.",
     "requires_children": false,
     "nationality": "any_resident",
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
     "admin_areas": [
-     "Amsterdam"
+     "Amsterdam",
+     "Weesp"
     ],
     "gender": "any"
    },
-   "source_url": "https://www.amsterdam.nl/stadspas/",
-   "source_snippet": "Met de Stadspas krijgen Amsterdammers met een laag inkomen korting of gratis toegang tot sport, cultuur en andere activiteiten in de stad.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://stadspas.amsterdam.nl/informatie/stadspas-aanvragen",
+   "source_snippet": "Vraag de Stadspas aan als je een laag inkomen en weinig vermogen hebt en woont in Amsterdam of Weesp. De Stadspas is gratis.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "rotterdampas",
@@ -3554,12 +3554,12 @@
    "amount_max": null,
    "amount_currency": "EUR",
    "amount_period": "annual",
-   "amount_note": "Free pass for Rotterdam residents on minimum income; free or discounted entry to swimming, museums, the zoo (Diergaarde Blijdorp discount), sports and courses; includes extra schemes for children.",
+   "amount_note": "Standard rate EUR 65 per person for everyone. Low rate (net monthly household income excl. toeslagen up to EUR 1,775 single / 2,000 single parent / 2,525 couple): EUR 5 per adult, EUR 0 per child up to 17. Middle rate EUR 32.50 per adult / EUR 10 per child. Child rate EUR 20; student rate EUR 20 (full-time MBO/HBO/WO up to 33). Pass year 1 March 2026 - 28 February 2027.",
    "is_automatic": false,
-   "application_url": "https://www.rotterdam.nl",
+   "application_url": "https://www.rotterdampas.nl/rotterdampas-bestellen",
    "application_channel": "online",
    "deadline_type": "rolling",
-   "deadline_note": null,
+   "deadline_note": "Pass year runs 1 March 2026 to 28 February 2027; order or renew online with DigiD or at a verkooppunt.",
    "procedure_steps": [
     {
      "step": 1,
@@ -3588,8 +3588,8 @@
     "statuses": [],
     "age_min": null,
     "age_max": null,
-    "income_annual_max": 17034,
-    "income_note": "For Rotterdam residents with an income at or near the bijstandsnorm (single norm EUR 1,419.46/month incl. vakantietoeslag = EUR 17,034/yr, Jul 2026); people with a bijstandsuitkering qualify automatically.",
+    "income_annual_max": 21300,
+    "income_note": "Low rate (EUR 5) net household income excl. toeslagen: EUR 1,775/month single = EUR 21,300/yr (x12); single parent EUR 2,000/month = EUR 24,000/yr; couple EUR 2,525/month = EUR 30,300/yr. Middle rate up to EUR 2,050 / 2,350 / 2,900 per month. Figure shown is the single-person low-rate limit. Note: 'free' in the old description is wrong for adults; the low rate is EUR 5.",
     "requires_children": false,
     "nationality": "any_resident",
     "residency_months_min": null,
@@ -3600,10 +3600,10 @@
     ],
     "gender": "any"
    },
-   "source_url": "https://www.rotterdam.nl",
-   "source_snippet": "Met de Rotterdampas doen Rotterdammers met een minimuminkomen gratis of met korting mee aan sport- en cultuuractiviteiten.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www.rotterdampas.nl/info-contact/tarieven-voorwaarden",
+   "source_snippet": "Je komt in aanmerking voor het laag tarief als het gezamenlijke netto-maandinkomen (excl. toeslagen) niet hoger is dan: EUR 1.775,- alleenstaanden; EUR 2.000,- alleenstaande ouders; EUR 2.525,- gehuwd/samenwonend.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "ooievaarspas-den-haag",
@@ -3684,10 +3684,10 @@
    "amount_period": "annual",
    "amount_note": "Free or discounted access to sports clubs, swimming, museums and courses for Utrecht residents with a low income; separate U-pas for children.",
    "is_automatic": false,
-   "application_url": "https://www.utrecht.nl",
+   "application_url": "https://www.u-pas.nl/aanvragen-of-verlengen",
    "application_channel": "online",
    "deadline_type": "rolling",
-   "deadline_note": null,
+   "deadline_note": "Pass year 2026-2027 runs 1 July 2026 to 30 June 2027. People with a municipal benefit receive the U-pas automatically; others apply or renew with DigiD (income shared via the Ockto app).",
    "procedure_steps": [
     {
      "step": 1,
@@ -3717,7 +3717,7 @@
     "age_min": null,
     "age_max": null,
     "income_annual_max": 17034,
-    "income_note": "For Utrecht residents with an income around the bijstandsnorm (single norm EUR 1,419.46/month incl. vakantietoeslag = EUR 17,034/yr, Jul 2026); municipal threshold may differ slightly.",
+    "income_note": "Gross income must not exceed the income limit of your municipality (published as an image table on u-pas.nl, not extractable); people with a municipal benefit get it automatically. Exceptions possible for debt restructuring (WSNP), a recent income drop or persistently high costs. The EUR 17,034/yr figure in the previous record is unverified.",
     "requires_children": false,
     "nationality": "any_resident",
     "residency_months_min": null,
@@ -3728,10 +3728,10 @@
     ],
     "gender": "any"
    },
-   "source_url": "https://www.utrecht.nl",
-   "source_snippet": "Met de U-pas kunnen Utrechters met een laag inkomen gratis of met korting sporten en deelnemen aan culturele activiteiten.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www.u-pas.nl/aanvragen-of-verlengen",
+   "source_snippet": "Heb je een uitkering van de gemeente? Dan krijg je de U-pas automatisch. [...] Dan mag je bruto inkomen niet hoger zijn dan de inkomensgrens van jouw gemeente.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "jeugdsportfonds",
@@ -3746,9 +3746,9 @@
    "amount_max": null,
    "amount_currency": "EUR",
    "amount_period": "annual",
-   "amount_note": "Pays the sports club membership fee and/or sports equipment for children aged 4-18 from families with insufficient means; applied for via an intermediair (teacher, social worker, gemeente).",
+   "amount_note": "Pays the membership fee (contributie) and often equipment (e.g. sports clothing) for children and young people aged 0 to 18 from families with too little money, usually most or all of the fee up to a maximum that differs per municipality. Paid directly to the club; no repayment; a new application each sport year. Application goes via an intermediary (teacher, youth worker, helper) or the kieseenclub.nl check.",
    "is_automatic": false,
-   "application_url": "https://jeugdfondssportencultuur.nl/",
+   "application_url": "https://check.jeugdfondssportencultuur.nl/",
    "application_channel": "in_person",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -3778,10 +3778,10 @@
    ],
    "eligibility": {
     "statuses": [],
-    "age_min": null,
-    "age_max": null,
-    "income_annual_max": 20440,
-    "income_note": "For families with a low income, typically up to ~110-120% of the bijstandsnorm (120% = EUR 1,703.35/month single incl. vakantiegeld = EUR 20,440/yr, 2026); exact criteria set locally by the Jeugdfonds Sport & Cultuur intermediaries.",
+    "age_min": 0,
+    "age_max": 17,
+    "income_annual_max": null,
+    "income_note": "No national income cap: 'Hoe hoog mag mijn inkomen zijn? Dit verschilt per gemeente.' No proof of income is required; the local fund decides. The earlier EUR 20,440 figure is not supported.",
     "requires_children": true,
     "nationality": "any_resident",
     "residency_months_min": null,
@@ -3790,10 +3790,10 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://jeugdfondssportencultuur.nl/",
-   "source_snippet": "Het Jeugdfonds Sport & Cultuur betaalt het lidmaatschap van de sportclub en de sportattributen voor kinderen uit gezinnen waar thuis niet genoeg geld voor is.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://jeugdfondssportencultuur.nl/veelgestelde-vragen/",
+   "source_snippet": "Het Jeugdfonds helpt kinderen en jongeren van 0 tot 18 jaar uit gezinnen waar te weinig geld is voor sport of cultuur.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "jeugdcultuurfonds",
@@ -3808,9 +3808,9 @@
    "amount_max": null,
    "amount_currency": "EUR",
    "amount_period": "annual",
-   "amount_note": "Pays for cultural lessons (music, dance, theatre, visual arts) for children aged 4-18 from families with insufficient means; application via an intermediair.",
+   "amount_note": "Pays lesson fees (music, dance, theatre, painting, singing, ballet) and often equipment such as an instrument for children and young people aged 0 to 18 from families with too little money, usually most or all of the fee up to a maximum that differs per municipality. Paid directly to the provider; no repayment; a new application each year. Application via an intermediary or the kieseenclub.nl check.",
    "is_automatic": false,
-   "application_url": "https://jeugdfondssportencultuur.nl/",
+   "application_url": "https://check.jeugdfondssportencultuur.nl/",
    "application_channel": "in_person",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -3835,10 +3835,10 @@
    ],
    "eligibility": {
     "statuses": [],
-    "age_min": null,
-    "age_max": null,
-    "income_annual_max": 20440,
-    "income_note": "For families with a low income, typically up to ~110-120% of the bijstandsnorm (120% = EUR 1,703.35/month single = EUR 20,440/yr, 2026); exact criteria set locally.",
+    "age_min": 0,
+    "age_max": 17,
+    "income_annual_max": null,
+    "income_note": "No national income cap: 'Hoe hoog mag mijn inkomen zijn? Dit verschilt per gemeente.' No proof of income is required; the local fund decides. The earlier EUR 20,440 figure is not supported.",
     "requires_children": true,
     "nationality": "any_resident",
     "residency_months_min": null,
@@ -3847,10 +3847,10 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://jeugdfondssportencultuur.nl/",
-   "source_snippet": "Het Jeugdfonds Sport & Cultuur betaalt creatieve lessen, zoals muziek of dans, voor kinderen uit gezinnen met een laag inkomen.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://jeugdfondssportencultuur.nl/veelgestelde-vragen/",
+   "source_snippet": "Cultuuractiviteiten bijvoorbeeld muziekles, dansen, toneel, schilderen, zangles of ballet.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "stichting-leergeld",
@@ -3865,9 +3865,9 @@
    "amount_max": null,
    "amount_currency": "EUR",
    "amount_period": "annual",
-   "amount_note": "Provides children aged 4-18 from families on minimum income with a laptop for school, school supplies, a bicycle, swimming lessons and club fees; via local Leergeld foundations.",
+   "amount_note": "Help for children aged 0 to 18 from families with money worries: e.g. a bicycle, a laptop/school costs and club fees; what can be claimed and the maximum differ per local Leergeld foundation. 16-17 year olds in MBO can use the mbo-studentenfonds. Only available where a local foundation is active (otherwise see Sam& voor alle kinderen).",
    "is_automatic": false,
-   "application_url": "https://leergeld.nl/",
+   "application_url": "https://www.leergeld.nl/zo-dien-je-een-aanvraag-in",
    "application_channel": "in_person",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -3892,10 +3892,10 @@
    ],
    "eligibility": {
     "statuses": [],
-    "age_min": null,
-    "age_max": null,
-    "income_annual_max": 20440,
-    "income_note": "For families with children 4-18 with an income up to about 120% of the bijstandsnorm (120% = EUR 1,703.35/month single = EUR 20,440/yr, 2026); local foundations apply the municipal minimabeleid criteria.",
+    "age_min": 0,
+    "age_max": 17,
+    "income_annual_max": null,
+    "income_note": "Household income must not be too high relative to the social minimum (page: EUR 1,348.49/month net single parent with children, EUR 1,926.40/month family with children, as of 1 July); each local foundation applies its own percentage, up to 150%. No single national euro cap, so the earlier EUR 20,440 figure is not supported.",
     "requires_children": true,
     "nationality": "any_resident",
     "residency_months_min": null,
@@ -3904,10 +3904,10 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://leergeld.nl/",
-   "source_snippet": "Stichting Leergeld zorgt dat kinderen uit gezinnen met geldzorgen kunnen meedoen, bijvoorbeeld met een laptop, fiets, zwemles of sportlidmaatschap.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www.leergeld.nl/voor-welke-kinderen-is-leergeld",
+   "source_snippet": "Leergeld is er voor kinderen in de leeftijd van 0 tot 18 jaar uit gezinnen met geldzorgen. De kinderen kunnen door geldgebrek niet meedoen met hun leeftijdsgenootjes.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "gesubsidieerde-rechtsbijstand",
@@ -3922,9 +3922,9 @@
    "amount_max": null,
    "amount_currency": "EUR",
    "amount_period": "one_off",
-   "amount_note": "The state pays most of the lawyer's costs; you pay an income-dependent eigen bijdrage; free advice at het Juridisch Loket for all.",
+   "amount_note": "The state pays most of the lawyer's costs; you pay an income-dependent eigen bijdrage (regular advocatuur toevoeging 2026: EUR 257 to EUR 1,084; family-law toevoeging EUR 448 to EUR 1,120; LAT EUR 101 or EUR 170). Free advice is available at het Juridisch Loket.",
    "is_automatic": false,
-   "application_url": "https://www.rvr.org/",
+   "application_url": "https://www.rvr.org/@20455/inkomen-vermogen-eigen-bijdrage-2026/",
    "application_channel": "in_person",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -3962,7 +3962,7 @@
     "age_min": null,
     "age_max": null,
     "income_annual_max": 35400,
-    "income_note": "2026 thresholds (income peiljaar 2024): fiscaal jaarinkomen max EUR 35,400 (single) / EUR 50,000 (couple or single-parent family). No right if box-3 assets in the peiljaar exceed the heffingsvrij vermogen (EUR 36,952 pp in 2024). Eigen bijdrage EUR 257-1,084 (regular cases) depending on income; lower for mediation.",
+    "income_note": "2026 thresholds (peiljaar 2024) for a regular toevoeging: fiscal annual income up to EUR 35,400 (single) / EUR 50,000 (couple or single parent); the own contribution rises with income (single: EUR 257 up to EUR 25,200, EUR 475, 678, 882, 1,084 up to EUR 35,400). Assets above EUR 36,952 per person (box 3, 2024) exclude you. The figure in income_annual_max is the single-person limit.",
     "requires_children": false,
     "nationality": "any_resident",
     "residency_months_min": null,
@@ -3971,9 +3971,9 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.rvr.org/",
-   "source_snippet": "Als u op basis van uw inkomen en vermogen in aanmerking komt voor gesubsidieerde rechtsbijstand, dan kunt u hiervoor een 'toevoeging' aanvragen bij de Raad voor Rechtsbijstand. U betaalt voor deze toevoeging wel een eigen bijdrage.",
-   "last_verified_at": "2026-08-12",
+   "source_url": "https://www.rvr.org/@20455/inkomen-vermogen-eigen-bijdrage-2026/",
+   "source_snippet": "Vanaf 1 januari 2026 gelden nieuwe inkomens- en vermogensnormen voor de gesubsidieerde rechtsbijstand en mediation.",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -3989,9 +3989,9 @@
    "amount_max": null,
    "amount_currency": "EUR",
    "amount_period": "monthly",
-   "amount_note": "Weekly food parcels donated by companies and supermarkets; intended as temporary help; threshold based on household income minus fixed costs (rule of thumb: less than approx. EUR 250-320 per person per month left after fixed expenses).",
+   "amount_note": "Free weekly food parcels (about 25 products, roughly 3 days of meals). You may collect for at least 4 weeks after sign-up; in principle help lasts 3 years.",
    "is_automatic": false,
-   "application_url": "https://voedselbankennederland.nl/",
+   "application_url": "https://voedselbankennederland.nl/gratis-boodschappen",
    "application_channel": "in_person",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -4024,7 +4024,7 @@
     "age_min": null,
     "age_max": null,
     "income_annual_max": null,
-    "income_note": "Not a fixed income ceiling: eligibility is based on residual income after fixed housing and healthcare costs (besteedbaar inkomen) below the Voedselbanken Nederland norm, roughly EUR 350/month for a single person plus per-person additions.",
+    "income_note": "No fixed income ceiling: you qualify if after paying fixed costs you have too little left for food. Example amounts left per month: single EUR 335; couple or single parent with 1 child EUR 460; family with 2 children EUR 710. Savings count only above EUR 5,220 (single) / 6,850 (couple) / 7,550 (family with 2 children).",
     "requires_children": false,
     "nationality": "any_resident",
     "residency_months_min": null,
@@ -4033,10 +4033,10 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://voedselbankennederland.nl/",
-   "source_snippet": "Voedselbanken helpen mensen die tijdelijk onvoldoende geld hebben voor voeding met een wekelijks voedselpakket.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://voedselbankennederland.nl/ik-zoek-hulp/",
+   "source_snippet": "Je kunt voedselhulp krijgen als je na het betalen van je vaste lasten te weinig geld overhoudt voor eten en andere belangrijke dingen.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "ns-dal-voordeel",
@@ -4051,9 +4051,9 @@
    "amount_max": null,
    "amount_currency": "EUR",
    "amount_period": "annual",
-   "amount_note": "Paid NS subscription giving 40% discount on train travel outside rush hours and in weekends (also for up to 3 fellow travellers); subscription fee per year, cancellable monthly in the Altijd Voordeel variant.",
+   "amount_note": "NS Flex Dal Voordeel: 40% discount on train travel in off-peak hours (Mon-Fri 9:00-16:00 and 18:30-6:30), all weekend and on public holidays; subscription EUR 6.35 per month (promotional price EUR 3.50/month shown on the page; the page's FAQ still says EUR 6.35). Dal Voordeel op saldo: EUR 76.20 per year paid up front. Discount applies only on trains (not bus/tram/metro).",
    "is_automatic": false,
-   "application_url": "https://www.ns.nl/",
+   "application_url": "https://www.ns.nl/abonnementen/dal-voordeel",
    "application_channel": "online",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -4095,10 +4095,10 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.ns.nl/",
-   "source_snippet": "Met Dal Voordeel krijgt u 40% korting in de daluren, in het weekend en tijdens feestdagen.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www.ns.nl/abonnementen/dal-voordeel",
+   "source_snippet": "Je reist met 40% korting in de daluren, het weekend en op feestdagen.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "ns-samenreiskorting",
@@ -4113,9 +4113,9 @@
    "amount_max": null,
    "amount_currency": "EUR",
    "amount_period": "one_off",
-   "amount_note": "People without an NS subscription get 40% off-peak discount when travelling together with an NS subscription holder; loaded as a one-off product onto the OV-chipkaart.",
+   "amount_note": "Subscription holders can give up to 3 fellow travellers 40% discount in off-peak hours and weekends/holidays; the fellow traveller receives a samenreiscode and arranges the discount on ns.nl or in the app.",
    "is_automatic": false,
-   "application_url": "https://www.ns.nl/",
+   "application_url": "https://www.ns.nl/service-en-contact/abonnementen-en-producten/samenreiskorting",
    "application_channel": "online",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -4152,10 +4152,10 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.ns.nl/",
-   "source_snippet": "Reist u samen met iemand die een NS-abonnement heeft? Dan reist u in de daluren met 40% korting met Samenreiskorting.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www.ns.nl/reizen/inchecken-uitchecken/reizen-met-ov-chipkaart/samenreiskorting",
+   "source_snippet": "Stap in met Samenreiskorting en krijg 40% korting op je treinrit. [...] Geef maximaal 3 medereizigers 40% korting in daluren + weekend.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "fiets-van-de-zaak",
@@ -4170,9 +4170,9 @@
    "amount_max": null,
    "amount_currency": "EUR",
    "amount_period": "monthly",
-   "amount_note": "Employers can provide a (lease) bicycle with tax advantage: via uitruil of gross salary or an addition (bijtelling) of 7% of the bike's value per year for private use; net saving of roughly 35-50% versus buying privately.",
+   "amount_note": "Bike you may also use privately: your employer adds 7% of the list price to your salary per year (bijtelling); business-only use is untaxed. Alternatively an interest-free employer loan (tax-free) with a tax-free allowance of up to EUR 0.25 per business km in 2026. With a bike plan the employer may not also pay a km allowance.",
    "is_automatic": false,
-   "application_url": "https://www.rijksoverheid.nl/",
+   "application_url": "https://www.belastingdienst.nl/wps/wcm/connect/nl/personeel-en-loon/content/mijn-werkgever-heeft-een-fietsplan-hoe-werkt-dat",
    "application_channel": "via_employer",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -4211,10 +4211,10 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.rijksoverheid.nl/",
-   "source_snippet": "Voor een fiets van de zaak geldt een bijtelling van 7% van de consumentenadviesprijs als u de fiets ook privé gebruikt; veel werkgevers vergoeden (een deel van) het fietsplan.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www.belastingdienst.nl/wps/wcm/connect/nl/personeel-en-loon/content/mijn-werkgever-heeft-een-fietsplan-hoe-werkt-dat",
+   "source_snippet": "Krijgt u van uw werkgever een fiets die u ook privé mag gebruiken? Dan telt uw werkgever 7% van de adviesprijs op bij uw loon. Dit heet de bijtelling.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "collectieve-zorgverzekering-korting",
@@ -4231,10 +4231,10 @@
    "amount_period": "annual",
    "amount_note": "Group contracts via employers, unions or associations typically give a premium discount (a few percent) on the basic and supplementary health insurance; compare with individual policies before choosing.",
    "is_automatic": false,
-   "application_url": "https://www.rijksoverheid.nl/",
+   "application_url": "https://www.rijksoverheid.nl/vraag-en-antwoord/zorgverzekering/korting-collectieve-zorgverzekering",
    "application_channel": "online",
    "deadline_type": "annual",
-   "deadline_note": "Switch possible once per year before 31 December (cancel old insurance by then; new insurer arranges transfer).",
+   "deadline_note": "Ended: since 2023 no discount is allowed on a collective BASIC health insurance. Collective discounts on supplementary insurance (aanvullende verzekering) and care-related agreements remain possible.",
    "procedure_steps": [
     {
      "step": 1,
@@ -4271,10 +4271,10 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.rijksoverheid.nl/",
-   "source_snippet": "Via een collectieve zorgverzekering bij uw werkgever of vereniging krijgt u vaak korting op de premie van de basis- en aanvullende verzekering.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www.rijksoverheid.nl/vraag-en-antwoord/zorgverzekering/korting-collectieve-zorgverzekering",
+   "source_snippet": "U kunt sinds 2023 geen korting meer krijgen op een collectieve basiszorgverzekering. Zorgverzekeraars kunnen nog wel zorginhoudelijke afspraken maken voor collectief verzekerden. Ook kortingen op aanvullende verzekeringen blijven mogelijk.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "kraamzorg-vergoeding",
@@ -4289,12 +4289,12 @@
    "amount_max": null,
    "amount_currency": "EUR",
    "amount_period": "one_off",
-   "amount_note": "Postnatal care at home after childbirth is largely covered by the mandatory basisverzekering; a statutory eigen bijdrage per hour applies (a few euros per hour; supplementary insurance may cover it).",
+   "amount_note": "Kraamzorg is paid from the basic health insurance: 24 to 80 hours depending on the situation, usually up to day 8 (sometimes 10) after birth. Own contribution at home in 2026: EUR 5.70 per hour; no contribution in hospital and none for assistance during the birth (partusassistentie). Not part of the mandatory eigen risico.",
    "is_automatic": false,
-   "application_url": "https://www.rijksoverheid.nl/",
+   "application_url": "https://www.zorginstituutnederland.nl/verzekerde-zorg/k/kraamzorg-zvw",
    "application_channel": "online",
    "deadline_type": "rolling",
-   "deadline_note": "Register with a kraamzorg agency by about the 16th week of pregnancy; arrange via your health insurer.",
+   "deadline_note": "Register with a kraamzorg organisation (often possible from week 12 of pregnancy); intake about 2 months before the due date; check your insurer's policy for contracted organisations.",
    "procedure_steps": [
     {
      "step": 1,
@@ -4321,7 +4321,7 @@
     "age_min": null,
     "age_max": null,
     "income_annual_max": null,
-    "income_note": "For everyone with Dutch basic health insurance; own contribution per hour applies",
+    "income_note": "Basic-package entitlement for everyone who lives or works in the Netherlands and holds basic health insurance; no income test. Own contribution EUR 5.70 per hour at home (2026).",
     "requires_children": true,
     "nationality": "any_resident",
     "residency_months_min": null,
@@ -4330,10 +4330,10 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.rijksoverheid.nl/",
-   "source_snippet": "Kraamzorg wordt vergoed vanuit de basisverzekering; u betaalt wel een wettelijke eigen bijdrage per uur.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www.zorginstituutnederland.nl/verzekerde-zorg/k/kraamzorg-zvw",
+   "source_snippet": "Voor kraamzorg thuis betaalt u in 2026 een eigen bijdrage van € 5,70 per uur. Voor de kraamzorg in ziekenhuis betaalt u geen eigen bijdrage.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "valys-bovenregionaal-vervoer",
@@ -4412,7 +4412,7 @@
    "amount_period": "monthly",
    "amount_note": "LBIO collects court-ordered or agreed child maintenance free of charge for the receiving parent; if the paying parent defaults, LBIO can pay an advance (voorschot) equal to the maintenance amount. Alimentatie indexation 2026: 4.6%.",
    "is_automatic": false,
-   "application_url": "https://lbio.nl/",
+   "application_url": "https://lbio.nl/alimentatie/alimentatie-ontvangen/aanvragen-inning-alimentatie/",
    "application_channel": "online",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -4454,9 +4454,9 @@
     "student_required": false,
     "admin_areas": []
    },
-   "source_url": "https://lbio.nl/",
-   "source_snippet": "Heeft u recht op alimentatie? Dan kost het innen van de alimentatie u niets (binnen Nederland).",
-   "last_verified_at": "2026-08-12",
+   "source_url": "https://lbio.nl/achterstallige-kinderalimentatie-opeisen/",
+   "source_snippet": "De dienstverlening door het LBIO is kosteloos voor de alimentatiegerechtigde. Het LBIO probeert dan altijd eerst om de rechtstreekse betalingen op gang te brengen.",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -4472,12 +4472,12 @@
    "amount_max": null,
    "amount_currency": "EUR",
    "amount_period": "monthly",
-   "amount_note": "Free travel by bus, tram and metro for residents with a minimum income in participating regions (Zuid-Holland Noord, Drechtsteden-Molenlanden-Gorinchem, Hoeksche Waard-Goeree Overflakkee); provincial pilot 2026-2029 with EUR 2.5 million per year.",
+   "amount_note": "Free travel in off-peak hours (weekdays after 9:00; all day at weekends and on public holidays) on Qbuzz buses in Zuid-Holland Noord and DMG, Transdev buses in Hoeksche Waard/Goeree-Overflakkee, the TAG line (NS) Alphen-Gouda, some Syntus lines, the Merwedelingelijn train and the Waterbus. Provincial pilot 2026-2029, EUR 2.5 million per year; 29 municipalities may take part and each decides whether to join; the Rotterdam-Den Haag metropolitan region is not included.",
    "is_automatic": false,
    "application_url": "https://wijmobiel.nl/gratis-ov-minima-pas/",
    "application_channel": "online",
    "deadline_type": "window",
-   "deadline_note": "Pilot runs 2026-2029; application via participating gemeente or the OV-minima pas portal",
+   "deadline_note": "Pilot 2026-2029; participating municipalities register eligible residents (via WijMobiel); check whether your gemeente takes part.",
    "procedure_steps": [
     {
      "step": 1,
@@ -4519,8 +4519,8 @@
     ]
    },
    "source_url": "https://wijmobiel.nl/gratis-ov-minima-pas/",
-   "source_snippet": "Vanaf januari 2026 kunnen inwoners met een laag inkomen gratis reizen met het openbaar vervoer in de regio Zuid-Holland Noord ... Van 2026 tot en met 2029.",
-   "last_verified_at": "2026-08-12",
+   "source_snippet": "Vanaf januari 2026 kunnen inwoners met een laag inkomen gratis reizen met het openbaar vervoer in de regio Zuid-Holland Noord.",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -4536,12 +4536,12 @@
    "amount_max": null,
    "amount_currency": "EUR",
    "amount_period": "monthly",
-   "amount_note": "Free travel on all HTM trams, RandstadRail lines and HTMbuzz buses (also on public holidays) for Den Haag residents of AOW age who hold an Ooievaarspas; product is loaded onto a personal OV-chipkaart and reassessed yearly.",
+   "amount_note": "Free travel on HTM bus, tram and RandstadRail for Den Haag residents who receive AOW and hold an Ooievaarspas. Free travel is loaded onto an OV-pas (EUR 6, from Primera or the HTM service shop) with a voucher code from the gemeente's letter; the OV-chipkaart is being replaced by OVpay in 2027.",
    "is_automatic": false,
-   "application_url": "https://www.denhaag.nl/nl/geld-en-schulden/gratis-reizen-regelen-op-uw-ov-chipkaart/",
+   "application_url": "https://www.denhaag.nl/nl/geld-en-schulden/gratis-reizen-met-uw-ov-pas/",
    "application_channel": "post",
    "deadline_type": "annual",
-   "deadline_note": "The gemeente reassesses Ooievaarspas eligibility each year and sends a 'Gratis reizen' letter with the registration form",
+   "deadline_note": "The gemeente checks Ooievaarspas eligibility every year and sends a new letter; if none arrives by December, contact the gemeente.",
    "procedure_steps": [
     {
      "step": 1,
@@ -4594,9 +4594,9 @@
      "Den Haag"
     ]
    },
-   "source_url": "https://www.denhaag.nl/nl/geld-en-schulden/gratis-reizen-regelen-op-uw-ov-chipkaart/",
-   "source_snippet": "Krijgt u AOW? Woont u in Den Haag en heeft u recht op een Ooievaarspas? Dan kunt u gratis met de bus, tram of RandstadRail.",
-   "last_verified_at": "2026-08-12",
+   "source_url": "https://www.denhaag.nl/nl/geld-en-schulden/gratis-reizen-met-uw-ov-pas/",
+   "source_snippet": "Krijgt u AOW? En heeft u recht op een Ooievaarspas? Dan kunt u gratis reizen met de bus, tram of RandstadRail.",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -4612,12 +4612,12 @@
    "amount_max": null,
    "amount_currency": "EUR",
    "amount_period": "monthly",
-   "amount_note": "Free bus/tram OV-subscription for residents with a lower income, AOW or pension (application open until 30 September 2026). Separately, invited low-income residents could join the NS Vooruitpas pilot: 6 months free train travel (1 July - 31 December 2026), intended to inform a future national low-income train product.",
+   "amount_note": "Free bus, tram, buurtbus and flex services of U-OV in the whole province of Utrecht for one year, off-peak: Mon-Fri before 6:30, 9:00-16:00 and after 18:30, all weekend and public holidays. Applications for 2026 closed on 30 September 2026. Separate NS 'Gratis reizen met de trein' trial: invitation-only (letter), not open to apply.",
    "is_automatic": false,
    "application_url": "https://www.amersfoort.nl/gratis-reizen",
    "application_channel": "online",
    "deadline_type": "window",
-   "deadline_note": "Gratis OV: apply until 30 September 2026; Vooruitpas pilot: invitation-only registration 15-31 May 2026",
+   "deadline_note": "Closed: applications for the 2026 free OV subscription were possible until 30 September 2026 and are no longer possible. The gemeente will say in spring 2027 whether the scheme is extended for 2027.",
    "procedure_steps": [
     {
      "step": 1,
@@ -4644,10 +4644,10 @@
    ],
    "eligibility": {
     "statuses": [],
-    "age_min": null,
+    "age_min": 18,
     "age_max": null,
-    "income_annual_max": 20440,
-    "income_note": "For residents with a lower income, AOW or pension; roughly around 100-120% of the bijstandsnorm (120% = EUR 20,440/yr single, 2026). Vooruitpas pilot: by gemeente invitation letter only.",
+    "income_annual_max": 23966,
+    "income_note": "Net monthly household income up to 150% of the bijstandsnorm excl. vakantiegeld: single (parent) EUR 1,997.13 (21 to AOW age) or EUR 2,229.69 (AOW age); couple EUR 2,853.03 / EUR 3,055.43. Annualised single 21-to-AOW figure = 12 x 1,997.13 = EUR 23,966 (couple EUR 34,236). Also requires residence in Amersfoort, DigiD and a personal OV-chipkaart with photo.",
     "requires_children": false,
     "gender": "any",
     "nationality": "any_resident",
@@ -4659,8 +4659,8 @@
     ]
    },
    "source_url": "https://www.amersfoort.nl/gratis-reizen",
-   "source_snippet": "Heb je een lager inkomen, AOW of pensioen? Dan kun je tot 30 september 2026 een gratis OV-abonnement aanvragen.",
-   "last_verified_at": "2026-08-12",
+   "source_snippet": "Inwoners met en lager inkomen, AOW of pensioen konden tot en met 30 september 2026 een gratis OV-abonnement aanvragen.",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -4678,7 +4678,7 @@
    "amount_period": "annual",
    "amount_note": "Extra profit deduction for entrepreneurs investing in business assets: 2026 table - 28% of total investments between EUR 2,901 and EUR 71,683; fixed EUR 20,072 between EUR 71,684 and EUR 132,746; then EUR 20,072 minus 7.56% of the excess above EUR 132,746 up to EUR 398,236; nil above. Minimum EUR 450 per asset.",
    "is_automatic": false,
-   "application_url": "https://www.belastingdienst.nl/wps/wcm/connect/nl/ondernemers/ondernemers",
+   "application_url": "https://www.belastingdienst.nl/wps/wcm/connect/bldcontentnl/belastingdienst/zakelijk/winst/inkomstenbelasting/veranderingen-inkomstenbelasting-2026/investeringsaftrek-2026/kleinschaligheidsinvesteringsaftrek-2026",
    "application_channel": "online",
    "deadline_type": "annual",
    "deadline_note": "Claimed in the income or corporation tax return for the year of investment",
@@ -4717,9 +4717,9 @@
     "student_required": false,
     "admin_areas": []
    },
-   "source_url": "https://www.belastingdienst.nl/wps/wcm/connect/nl/ondernemers/ondernemers",
-   "source_snippet": "€ 2.901 t/m € 71.683: 28% van het investeringsbedrag (KIA-tabel 2026)",
-   "last_verified_at": "2026-08-12",
+   "source_url": "https://www.belastingdienst.nl/wps/wcm/connect/bldcontentnl/belastingdienst/zakelijk/winst/inkomstenbelasting/veranderingen-inkomstenbelasting-2026/investeringsaftrek-2026/kleinschaligheidsinvesteringsaftrek-2026",
+   "source_snippet": "Om in 2026 in aanmerking te komen voor de kleinschaligheidsinvesteringsaftrek (KIA) moet u een bedrag tussen € 2.901 en € 398.236 investeren in bedrijfsmiddelen voor uw onderneming.",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -4735,9 +4735,9 @@
    "amount_max": null,
    "amount_currency": "EUR",
    "amount_period": "annual",
-   "amount_note": "Automatic exemption of 12.7% of profit (2026) after ondernemersaftrek for all income-tax entrepreneurs, including those not meeting the 1,225-hour criterion; also reduces a loss. No application needed - applied automatically in the tax return.",
+   "amount_note": "Automatic exemption of 12.7% of profit in 2026, after deducting the ondernemersaftrek. In 2026 the deduction value is limited: the benefit is calculated at a rate of 37.56%.",
    "is_automatic": true,
-   "application_url": "https://www.belastingdienst.nl/wps/wcm/connect/nl/ondernemers/ondernemers",
+   "application_url": "https://www.belastingdienst.nl/wps/wcm/connect/bldcontentnl/belastingdienst/zakelijk/winst/inkomstenbelasting/veranderingen-inkomstenbelasting-2026/mkb-winstvrijstelling-2026",
    "application_channel": "automatic",
    "deadline_type": "annual",
    "deadline_note": "Applied automatically in the income tax return",
@@ -4765,9 +4765,9 @@
     "student_required": false,
     "admin_areas": []
    },
-   "source_url": "https://www.belastingdienst.nl/wps/wcm/connect/nl/ondernemers/ondernemers",
-   "source_snippet": "In 2026 bedraagt deze vrijstelling 12,7% van de resterende winst ... het wordt in de aangifte automatisch toegepast.",
-   "last_verified_at": "2026-08-12",
+   "source_url": "https://www.belastingdienst.nl/wps/wcm/connect/bldcontentnl/belastingdienst/zakelijk/winst/inkomstenbelasting/veranderingen-inkomstenbelasting-2026/mkb-winstvrijstelling-2026",
+   "source_snippet": "In 2026 is de mkb-winstvrijstelling 12,7% van de winst, nadat u deze hebt verminderd met de ondernemersaftrek.",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -4785,7 +4785,7 @@
    "amount_period": "annual",
    "amount_note": "Profits from self-developed innovative activities (with a patent, plant breeder's right or WBSO R&D statement) are taxed in the innovatiebox at 9% vennootschapsbelasting instead of the regular 19%/25.8% (2026). Requires a ruling-style allocation of innovation profits.",
    "is_automatic": false,
-   "application_url": "https://www.belastingdienst.nl/wps/wcm/connect/nl/vennootschapsbelasting/vennootschapsbelasting",
+   "application_url": "https://www.belastingdienst.nl/wps/wcm/connect/bldcontentnl/belastingdienst/zakelijk/winst/vennootschapsbelasting/innovatiebox/innovatiebox",
    "application_channel": "online",
    "deadline_type": "annual",
    "deadline_note": "Elected in the corporation tax return; often combined with a vooroverleg/ruling",
@@ -4824,9 +4824,9 @@
     "student_required": false,
     "admin_areas": []
    },
-   "source_url": "https://www.belastingdienst.nl/wps/wcm/connect/nl/vennootschapsbelasting/vennootschapsbelasting",
-   "source_snippet": "winst uit innovatie tegen een verlaagd tarief van 9% Vpb ... De innovatiebox is in 2026 gecontinueerd.",
-   "last_verified_at": "2026-08-12",
+   "source_url": "https://www.belastingdienst.nl/wps/wcm/connect/bldcontentnl/belastingdienst/zakelijk/winst/vennootschapsbelasting/innovatiebox/innovatiebox",
+   "source_snippet": "Alle winsten die u behaalt met innovatieve activiteiten waarvoor RVO een S&O-verklaring heeft afgegeven, vallen in deze box. Het effectieve tarief van de vennootschapsbelasting voor deze winsten is 9%.",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -4839,12 +4839,12 @@
    "category": "tax",
    "benefit_type": "tax_credit",
    "amount_min": null,
-   "amount_max": 5000,
+   "amount_max": null,
    "amount_currency": "EUR",
    "amount_period": "annual",
-   "amount_note": "Profit deduction of EUR 5,000 (2026; unchanged for years) for an income-tax entrepreneur whose spouse/fiscal partner works 525 hours or more per year unpaid in the business.",
+   "amount_note": "Deduction as a percentage of profit, based on hours the fiscal partner works unpaid: 525-875 hours = 1.25%; 875-1,225 = 2%; 1,225-1,750 = 3%; 1,750 or more = 4%. Fewer than 525 hours gives no deduction. EUR 5,000 is NOT the deduction: it is the limit for any pay to the partner (below EUR 5,000 the pay is not deductible and not income for the partner).",
    "is_automatic": false,
-   "application_url": "https://www.belastingdienst.nl/wps/wcm/connect/nl/ondernemers/ondernemers",
+   "application_url": "https://www.belastingdienst.nl/wps/wcm/connect/bldcontentnl/belastingdienst/zakelijk/winst/inkomstenbelasting/inkomstenbelasting_voor_ondernemers/ondernemersaftrek/meewerkaftrek",
    "application_channel": "online",
    "deadline_type": "annual",
    "deadline_note": "Claimed in the income tax return",
@@ -4874,7 +4874,7 @@
     "age_min": null,
     "age_max": null,
     "income_annual_max": null,
-    "income_note": "No income test; entrepreneur must meet the 1,225-hour criterion themselves.",
+    "income_note": "No income test; you must be an entrepreneur who meets the urencriterium, and your fiscal partner must work at least 525 hours in the business unpaid or for pay below EUR 5,000. No deduction on profit as a medegerechtigde.",
     "requires_children": false,
     "gender": "any",
     "nationality": "any_resident",
@@ -4883,10 +4883,10 @@
     "student_required": false,
     "admin_areas": []
    },
-   "source_url": "https://www.belastingdienst.nl/wps/wcm/connect/nl/ondernemers/ondernemers",
-   "source_snippet": "Meewerkaftrek: EUR 5,000 deduction when the fiscal partner works at least 525 unpaid hours in the business.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www.belastingdienst.nl/wps/wcm/connect/bldcontentnl/belastingdienst/zakelijk/winst/inkomstenbelasting/inkomstenbelasting_voor_ondernemers/ondernemersaftrek/meewerkaftrek",
+   "source_snippet": "Uw fiscale partner werkt 525 uur of meer in uw onderneming. [...] 525 - 875: 1,25% van de winst; 875 - 1.225: 2% van de winst; 1.225 - 1.750: 3% van de winst; 1.750 of meer: 4% van de winst.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "lijfrenteaftrek",
@@ -4903,10 +4903,10 @@
    "amount_period": "annual",
    "amount_note": "Premiums/contributions for a qualifying lijfrente (annuity) are deductible from income in box 1 within the annual jaarruimte (30% of the premiegrondslag above the AOW-franchise) plus unused reserveringsruimte of the previous 10 years.",
    "is_automatic": false,
-   "application_url": "https://www.belastingdienst.nl/wps/wcm/connect/nl/aangifte-inkomstenbelasting/aangifte-inkomstenbelasting",
+   "application_url": "https://www.belastingdienst.nl/wps/wcm/connect/nl/aftrek-en-kortingen/content/hoe-bereken-ik-mijn-jaarruimte",
    "application_channel": "online",
    "deadline_type": "annual",
-   "deadline_note": "Claimed in the income tax return; voluntary lijfrente policy must meet fiscal conditions",
+   "deadline_note": "Claimed in the income tax return; the jaarruimte for 2025 is based on 2024 income and pension data (UPO). Unused jaarruimte of earlier years can be used as reserveringsruimte.",
    "procedure_steps": [
     {
      "step": 1,
@@ -4943,10 +4943,10 @@
     "student_required": false,
     "admin_areas": []
    },
-   "source_url": "https://www.belastingdienst.nl/",
-   "source_snippet": "Lijfrentepremies zijn aftrekbaar binnen de jaarruimte en reserveringsruimte (persoonsgebonden aftrek).",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www.belastingdienst.nl/wps/wcm/connect/nl/aftrek-en-kortingen/content/hoe-bereken-ik-mijn-jaarruimte",
+   "source_snippet": "Alleen als u in een jaar een pensioentekort hebt, mag u uw uitgaven voor een lijfrenteverzekering, lijfrenterekening of lijfrentebeleggingsrecht aftrekken. Dat mag tot het bedrag van uw jaarruimte.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "aftrek-specifieke-zorgkosten",
@@ -4961,9 +4961,9 @@
    "amount_max": null,
    "amount_currency": "EUR",
    "amount_period": "annual",
-   "amount_note": "Non-reimbursed qualifying healthcare costs (e.g. prescribed medicines, certain aids, travel for treatment, specific diets) are deductible above an income-dependent drempel. 2026 drempel with fiscal partner: EUR 328 (drempelinkomen up to EUR 19,360); 1.65% of drempelinkomen between EUR 19,360 and EUR 51,411; EUR 848 + 5.75% of the excess above EUR 51,411.",
+   "amount_note": "Qualifying healthcare costs above an income-dependent threshold are deductible. 2025 threshold (drempelinkomen EUR 9,535 to 50,635): 1.65% of drempelinkomen; at EUR 0-9,534: EUR 164; above EUR 50,635: EUR 835 + 5.75% of the part above EUR 50,635. With a fiscal partner the whole year, incomes are added: up to EUR 19,068: EUR 328.",
    "is_automatic": false,
-   "application_url": "https://www.belastingdienst.nl/wps/wcm/connect/nl/zorg/zorg",
+   "application_url": "https://www.belastingdienst.nl/wps/wcm/connect/bldcontentnl/belastingdienst/prive/relatie_familie_en_gezondheid/gezondheid/aftrek_zorgkosten/hoe_berekent_u_uw_aftrek/drempelbedrag_berekenen/drempelbedrag-2025",
    "application_channel": "online",
    "deadline_type": "annual",
    "deadline_note": "Claimed in the income tax return of the year the costs were paid",
@@ -5000,10 +5000,10 @@
     "student_required": false,
     "admin_areas": []
    },
-   "source_url": "https://www.belastingdienst.nl/",
-   "source_snippet": "De berekening voor het drempelbedrag voor aftrekbare zorgkosten in 2026 met een fiscale partner: € 0 t/m € 19.360 -> € 328; € 19.360 t/m € 51.411 -> 1,65% van het drempelinkomen.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www.belastingdienst.nl/wps/wcm/connect/bldcontentnl/belastingdienst/prive/relatie_familie_en_gezondheid/gezondheid/aftrek_zorgkosten/hoe_berekent_u_uw_aftrek/drempelbedrag_berekenen/drempelbedrag-2025",
+   "source_snippet": "Hebt u in 2025 veel zorgkosten gemaakt? Dan mag u alleen het deel van de uitgaven onder voorwaarden aftrekken dat uitkomt boven een bepaalde drempel.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "giftenaftrek",
@@ -5018,9 +5018,9 @@
    "amount_max": null,
    "amount_currency": "EUR",
    "amount_period": "annual",
-   "amount_note": "Donations to ANBI-registered charities are deductible: regular gifts above a drempel of 1% of drempelinkomen (minimum EUR 60), capped at 10% of drempelinkomen; periodieke giften (fixed for 5+ years, notarised/agreement) are fully deductible without drempel, capped at EUR 250,000.",
+   "amount_note": "Regular gifts: deductible above a threshold of 1% of drempelinkomen (minimum EUR 60), capped at 10% of drempelinkomen. Periodic gifts: fully deductible with no threshold, up to EUR 1,500,000 per year in 2026. Gifts to cultural ANBIs get an extra 25% uplift (max EUR 1,250 uplift).",
    "is_automatic": false,
-   "application_url": "https://www.belastingdienst.nl/wps/wcm/connect/nl/aangifte-inkomstenbelasting/aangifte-inkomstenbelasting",
+   "application_url": "https://www.belastingdienst.nl/wps/wcm/connect/bldcontentnl/belastingdienst/prive/inkomstenbelasting/aftrekposten/persoonsgebonden-aftrek/giften_aan_goede_doelen/hoeveel_aftrek_krijg_u/hoeveel_aftrek",
    "application_channel": "online",
    "deadline_type": "annual",
    "deadline_note": "Claimed in the income tax return",
@@ -5057,10 +5057,10 @@
     "student_required": false,
     "admin_areas": []
    },
-   "source_url": "https://www.belastingdienst.nl/",
-   "source_snippet": "Giften aan ANBI's zijn aftrekbaar boven een drempel van 1% van het drempelinkomen; periodieke giften zijn volledig aftrekbaar.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www.belastingdienst.nl/wps/wcm/connect/bldcontentnl/belastingdienst/prive/inkomstenbelasting/aftrekposten/persoonsgebonden-aftrek/giften_aan_goede_doelen/hoeveel_aftrek_krijg_u/hoeveel_aftrek",
+   "source_snippet": "Het drempelbedrag voor gewone giften is 1% van uw drempelinkomen met een minimum van € 60. Wat u meer hebt betaald dan dit drempelbedrag, mag u aftrekken.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "schuldhulpverlening-gemeente",
@@ -5077,10 +5077,10 @@
    "amount_period": "one_off",
    "amount_note": "Free, statutory debt counselling via your gemeente: budget coaching, debt restructuring (minnelijke sanering) and, as last resort, the Wsnp legal debt restructuring. Under the 'vroeg erbij' approach, gemeenten must proactively contact residents after signals such as missed zorgpremie payments.",
    "is_automatic": false,
-   "application_url": "https://www.rijksoverheid.nl/onderwerpen/schulden",
+   "application_url": "https://www.rijksoverheid.nl/vraag-en-antwoord/schulden/schuldhulpverlening-aanvragen",
    "application_channel": "in_person",
    "deadline_type": "rolling",
-   "deadline_note": null,
+   "deadline_note": "After you report to your gemeente you hear within 4 weeks what help to expect and the gemeente decides within 8 weeks; in a threatening situation (eviction, utilities cut off) the gemeente must help within 3 days.",
    "procedure_steps": [
     {
      "step": 1,
@@ -5110,7 +5110,7 @@
     "age_min": null,
     "age_max": null,
     "income_annual_max": null,
-    "income_note": "No fixed income ceiling; for residents with problematic debts they cannot resolve within ~3 years. Creditors may require repayment capacity assessment.",
+    "income_note": "No national income ceiling; the gemeente decides per case. No right to help if you reside in the Netherlands illegally; the gemeente may refuse if you are not a resident of that gemeente, used debt help before or committed fraud.",
     "requires_children": false,
     "gender": "any",
     "nationality": "any_resident",
@@ -5120,10 +5120,10 @@
     "admin_areas": [],
     "rule_source": "geography_unknown"
    },
-   "source_url": "https://www.rijksoverheid.nl/onderwerpen/schulden",
-   "source_snippet": "Elke gemeente biedt schuldhulpverlening; hulp is gratis voor inwoners met problematische schulden.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www.rijksoverheid.nl/vraag-en-antwoord/schulden/schuldhulpverlening-aanvragen",
+   "source_snippet": "Voor hulp bij uw schulden kunt u zich melden bij uw gemeente. U kunt daar terecht voor een advies of een aanvraag voor schuldbemiddeling of schuldsanering.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "jeugdhulp-jeugdwet",
@@ -5140,10 +5140,10 @@
    "amount_period": "one_off",
    "amount_note": "Free support for children under 18 and their parents: opvoedondersteuning via CJG/WIJ-teams, jeugd-ggz (accessed via the gemeente since the Jeugdwet), jeugdbescherming and jeugdzorgplus. No income test and no eigen bijdrage for families; the gemeente arranges and pays.",
    "is_automatic": false,
-   "application_url": "https://www.rijksoverheid.nl/onderwerpen/jeugdhulp",
+   "application_url": "https://www.rijksoverheid.nl/themas/familie-zorg-en-gezondheid/jeugdhulp/jeugdhulp-bij-gemeenten",
    "application_channel": "in_person",
    "deadline_type": "rolling",
-   "deadline_note": null,
+   "deadline_note": "Contact the gemeente where the child lives; from 1 January 2026 the Jeugdwet changed how municipalities organise specialist youth care, but nothing changes for children and families.",
    "procedure_steps": [
     {
      "step": 1,
@@ -5178,10 +5178,10 @@
     "admin_areas": [],
     "rule_source": "geography_unknown"
    },
-   "source_url": "https://www.rijksoverheid.nl/onderwerpen/jeugdhulp",
-   "source_snippet": "Jeugdhulp is gratis voor ouders en kinderen; de gemeente regelt en betaalt de hulp.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www.rijksoverheid.nl/themas/familie-zorg-en-gezondheid/jeugdhulp/jeugdhulp-bij-gemeenten",
+   "source_snippet": "Gemeenten zijn verantwoordelijk voor het beschikbaar stellen van alle vormen van jeugdhulp. Bijvoorbeeld hulp aan huis bij problemen in het gezin, maar ook bij psychische en gedragsproblemen van kinderen en jongeren.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "pgb-jeugdwet",
@@ -5198,10 +5198,10 @@
    "amount_period": "monthly",
    "amount_note": "Instead of care in natura, parents of a child with a jeugdhulp indication can receive a persoonsgebonden budget from the gemeente to buy the indicated youth care themselves; the SVB pays the providers from the budget.",
    "is_automatic": false,
-   "application_url": "https://www.pgb.nl/",
+   "application_url": "https://www.svb.nl/nl/pgb/starten-met-een-pgb/pgb-aanvragen-stap-voor-stap",
    "application_channel": "in_person",
    "deadline_type": "rolling",
-   "deadline_note": null,
+   "deadline_note": "Contact the gemeente where the child lives for an indication, then apply for the PGB; the gemeente decides, then the SVB handles the care agreement and payments. A legal representative is always needed for a child.",
    "procedure_steps": [
     {
      "step": 1,
@@ -5236,10 +5236,10 @@
     "admin_areas": [],
     "rule_source": "geography_unknown"
    },
-   "source_url": "https://www.pgb.nl/",
-   "source_snippet": "Met een pgb-Jeugdwet kiezen ouders zelf de jeugdhulpverleners; de SVB betaalt vanuit het budget.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www.svb.nl/nl/pgb/starten-met-een-pgb/pgb-aanvragen-stap-voor-stap",
+   "source_snippet": "Wilt u een persoonsgebonden budget (PGB) voor een kind aanvragen bij uw gemeente? Dat gaat via de Jeugdwet.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "mondzorg-kinderen-basisverzekering",
@@ -5254,9 +5254,9 @@
    "amount_max": null,
    "amount_currency": "EUR",
    "amount_period": "annual",
-   "amount_note": "Virtually all regular dental care for children and young people up to 18 is fully covered by the basisverzekering: check-ups, x-rays, fillings, extractions, root-canal treatments, cleaning and preventive care. Not covered: orthodontics (braces). No eigen risico for under-18s; children are co-insured free of premium.",
+   "amount_note": "Dental care for children under 18 is largely covered by the basic health insurance (check-ups, x-rays, fillings, etc.); orthodontics is not part of it. From age 18 most dental care is no longer covered.",
    "is_automatic": true,
-   "application_url": "https://www.rijksoverheid.nl/onderwerpen/zorgverzekering",
+   "application_url": "https://www.zorginstituutnederland.nl/verzekerde-zorg/t/tandarts-en-mondzorg-zvw",
    "application_channel": "automatic",
    "deadline_type": "none",
    "deadline_note": "Automatic via the parents' basisverzekering; the child must be co-insured with a zorgverzekeraar",
@@ -5282,9 +5282,9 @@
     "student_required": false,
     "admin_areas": []
    },
-   "source_url": "https://www.rijksoverheid.nl/onderwerpen/zorgverzekering",
-   "source_snippet": "Tandartskosten voor kinderen tot 18 jaar vallen onder de basisverzekering (orthodontie voor kinderen hoort hier niet bij).",
-   "last_verified_at": "2026-08-12",
+   "source_url": "https://www.zorginstituutnederland.nl/verzekerde-zorg/t/tandarts-en-mondzorg-zvw",
+   "source_snippet": "Mondzorg voor kinderen die jonger zijn dan 18 jaar wordt grotendeels vergoed uit het basispakket van de zorgverzekering.",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -5297,15 +5297,15 @@
    "category": "energy",
    "benefit_type": "cash_one_off",
    "amount_min": null,
-   "amount_max": null,
+   "amount_max": 2500,
    "amount_currency": "EUR",
    "amount_period": "one_off",
-   "amount_note": "Municipal subsidy for Amsterdam owner-occupiers and VvEs for insulation (gevel, dak, vloer, spouwmuur), HR++ glazing, heat pumps, zonneboilers and heat-network connections; per-measure contributions and a per-home cap are set annually in the subsidieregeling. Stackable with the national ISDE subsidy as long as total subsidy does not exceed the net investment. Apply before work starts.",
+   "amount_note": "Amsterdam 'Extra isolatie subsidie': up to EUR 2,500 per home for insulation, and ventilation combined with insulation, plus a bonus of up to EUR 250 for bio-based insulation; 70% paid as an advance. Only homes with WOZ value below EUR 666,000 (peiljaar 2024) and energy label D, E, F or G (or at least 2 poorly insulated building parts). Can be stacked with other subsidies up to the cost of the measure. The older 'Klimaatfonds' wording (heat pumps, HR++ glazing) is not on this page.",
    "is_automatic": false,
-   "application_url": "https://www.amsterdam.nl/subsidies/",
+   "application_url": "https://mijnsubsidies.amsterdam.nl/regeling/662b9df57342f634f56c9a26",
    "application_channel": "online",
    "deadline_type": "window",
-   "deadline_note": "Subject to annual budget; apply before starting the works",
+   "deadline_note": "Apply before starting the work; the application must be received before 1 July 2028; activities must be finished within 1 year of the grant decision and no later than 31 December 2028. Decision within 8 weeks.",
    "procedure_steps": [
     {
      "step": 1,
@@ -5335,7 +5335,7 @@
     "age_min": null,
     "age_max": null,
     "income_annual_max": null,
-    "income_note": "No income test for the standard Klimaatfonds; separate income-targeted insulation programmes can apply in specific wijken.",
+    "income_note": "No income test; owner-occupiers of single-family homes, VvEs and VvE members in Amsterdam. An energy advice report not older than 5 years (or an energy label from 2024 or later) is required; works must be done by a professional company and not started before applying.",
     "requires_children": false,
     "gender": "any",
     "nationality": "any_resident",
@@ -5346,10 +5346,10 @@
      "Amsterdam"
     ]
    },
-   "source_url": "https://www.amsterdam.nl/subsidies/",
-   "source_snippet": "Het Amsterdams Klimaatfonds biedt subsidie voor isolatie, warmtepompen en zonnepanelen. Speciaal voor Amsterdamse eigenaar-bewoners.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www.amsterdam.nl/subsidies/subsidieregelingen/subsidie-extra-isolatie-subsidie/",
+   "source_snippet": "Eigenaar-bewoners van eengezinswoningen, vereniging van eigenaars (VvE's) en VvE-leden in Amsterdam kunnen per woning €2500 subsidie aanvragen voor het nemen van isolatie- en ventilatiemaatregelen.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "delftpas",
@@ -5364,9 +5364,9 @@
    "amount_max": null,
    "amount_currency": "EUR",
    "amount_period": "annual",
-   "amount_note": "Free pass for Delft residents with a low income: free or discounted sports, culture and leisure activities and a tegemoetkoming in everyday school materials (leermiddelen); supplementary to bijzondere bijstand for necessary mbo books/materials for 16-17 year olds.",
+   "amount_note": "Delftpas costs EUR 5 per adult if net household income is low enough; free for children under 18 whose parents have a EUR 5 pass and for children in a Delft foster family. Free or discounted sports, culture and leisure; on the free pass the gemeente can deposit a tegemoetkoming in school costs (school and gym materials, part of the parental contribution).",
    "is_automatic": false,
-   "application_url": "https://www.delft.nl/",
+   "application_url": "https://www.delft.nl/delftpas-met-korting",
    "application_channel": "in_person",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -5398,8 +5398,8 @@
     "statuses": [],
     "age_min": null,
     "age_max": null,
-    "income_annual_max": 17034,
-    "income_note": "For Delft residents with a low income around the bijstandsnorm (single norm EUR 1,419.46/month incl. vakantietoeslag = EUR 17,034/yr, Jul 2026; conversion 12 x monthly).",
+    "income_annual_max": 20184,
+    "income_note": "EUR 5 pass: net monthly household income up to EUR 1,682 (single) / EUR 2,403 (couple or single parent) in 2026 = EUR 20,184 / EUR 28,836 per year (x12); AOW incl. pension EUR 1,878 / 2,573 per month; self-employed annual income up to EUR 20,763 / EUR 29,661. The figure shown is the employed single-person limit.",
     "requires_children": false,
     "gender": "any",
     "nationality": "any_resident",
@@ -5410,10 +5410,10 @@
      "Delft"
     ]
    },
-   "source_url": "https://www.delft.nl/bijzondere-bijstand-boekengeld-mbo-studenten",
-   "source_snippet": "Voor gewone leermiddelen kunt u een tegemoetkoming ontvangen met uw Delftpas.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www.delft.nl/delftpas-met-korting",
+   "source_snippet": "Heb je een laag inkomen? En woon je in Delft? Dan kun je de Delftpas gratis of met korting krijgen. [...] Je betaalt € 5 als het gezamenlijk netto maandinkomen niet hoger is dan: € 2.403 [...] € 1.682",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "iow-uitkering",
@@ -5430,10 +5430,10 @@
    "amount_period": "monthly",
    "amount_note": "Benefit for workers who were 60 or older on the first day of their WW and have fully exhausted WW (or loongerelateerde WGA): about 70% of the minimum wage for singles (per 1 July 2026 approx. EUR 76.75 bruto/day, ~EUR 1,669/month), paid until AOW age. Crucially no asset test and no partner-income test, unlike bijstand.",
    "is_automatic": false,
-   "application_url": "https://www.uwv.nl/",
+   "application_url": "https://www.uwv.nl/nl/iow",
    "application_channel": "online",
    "deadline_type": "rolling",
-   "deadline_note": "Apply at UWV before the WW benefit ends to avoid a gap",
+   "deadline_note": "The IOW follows your WW or loongerelateerde WGA benefit and starts when that benefit reaches its maximum duration; it lasts until your AOW age. You must be at least 60 years and 4 months on your first WW/WGA day.",
    "procedure_steps": [
     {
      "step": 1,
@@ -5478,9 +5478,9 @@
     "income_source_url": "https://www.uwv.nl/nl/iow/hoogte-iow",
     "income_confidence": "high"
    },
-   "source_url": "https://www.uwv.nl/",
-   "source_snippet": "Anders dan de bijstand kent de IOW geen vermogens- of partnertoets: je spaargeld en het inkomen van je partner tellen niet mee.",
-   "last_verified_at": "2026-08-12",
+   "source_url": "https://www.uwv.nl/nl/iow",
+   "source_snippet": "Dat kan als u de AOW-leeftijd nog niet heeft bereikt en u op uw eerste WW-/WGA-dag minstens 60 jaar en 4 maanden oud was.",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified",
    "income_reviewed_at": "2026-08-13"
   },
@@ -5499,10 +5499,10 @@
    "amount_period": "annual",
    "amount_note": "Nearly all gemeenten offer an annual token of appreciation for registered informal carers - typically a voucher, gift card or small cash amount (often a few hundred euros), plus access to respijtzorg (respite) and mantelzorg coaching. Form and amount vary per gemeente.",
    "is_automatic": false,
-   "application_url": "https://www.rijksoverheid.nl/onderwerpen/mantelzorg",
+   "application_url": "https://www.rijksoverheid.nl/vraag-en-antwoord/mantelzorg/mantelzorgcompliment-aanvragen",
    "application_channel": "in_person",
    "deadline_type": "rolling",
-   "deadline_note": null,
+   "deadline_note": "Request it from the gemeente of the person you care for; each municipality sets its own form (amount, discount pass or free activity) and conditions.",
    "procedure_steps": [
     {
      "step": 1,
@@ -5537,10 +5537,10 @@
     "admin_areas": [],
     "rule_source": "geography_unknown"
    },
-   "source_url": "https://www.rijksoverheid.nl/onderwerpen/mantelzorg",
-   "source_snippet": "Gemeenten moeten mantelzorgers ondersteunen en waarderen (Wmo); veel gemeenten geven een jaarlijks mantelzorgcompliment.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www.rijksoverheid.nl/vraag-en-antwoord/mantelzorg/mantelzorgcompliment-aanvragen",
+   "source_snippet": "U vraagt het mantelzorgcompliment aan bij de gemeente. Gemeenten beslissen zelf over de voorwaarden en vorm van het mantelzorgcompliment.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "nul-btw-zonnepanelen",
@@ -5555,9 +5555,9 @@
    "amount_max": null,
    "amount_currency": "EUR",
    "amount_period": "one_off",
-   "amount_note": "Since 1 January 2023 a 0% VAT rate applies to the supply and installation of solar panels on or next to homes, so homeowners no longer pay or reclaim 21% VAT on purchase and installation.",
+   "amount_note": "0% VAT (instead of 21%) on the supply and installation of solar panels on or near a home since 1 January 2023, incl. necessary cables, inverters and mounting; not on business premises without residence function, not for heat pumps/thuisbatterij/PVT, and integrated panels on a new-build home you buy are taxed at 21%.",
    "is_automatic": true,
-   "application_url": "https://www.belastingdienst.nl/wps/wcm/connect/nl/btw/btw",
+   "application_url": "https://www.belastingdienst.nl/wps/wcm/connect/bldcontentnl/belastingdienst/zakelijk/btw/tarieven_en_vrijstellingen/goederen_0_btw/btw-tarief-zonnepanelen",
    "application_channel": "automatic",
    "deadline_type": "none",
    "deadline_note": "Applied automatically on the installer's invoice; older situations can still reclaim via the aangifte omzetbelasting",
@@ -5583,10 +5583,10 @@
     "student_required": false,
     "admin_areas": []
    },
-   "source_url": "https://www.belastingdienst.nl/wps/wcm/connect/nl/btw/btw",
-   "source_snippet": "Voor zonnepanelen op of bij een woning geldt een btw-tarief van 0%.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www.belastingdienst.nl/wps/wcm/connect/bldcontentnl/belastingdienst/zakelijk/btw/tarieven_en_vrijstellingen/goederen_0_btw/btw-tarief-zonnepanelen",
+   "source_snippet": "Het btw-tarief voor de levering en installatie van zonnepanelen op of bij een woning is 0%.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "gratis-vog-vrijwilligers",
@@ -5601,9 +5601,9 @@
    "amount_max": null,
    "amount_currency": "EUR",
    "amount_period": "one_off",
-   "amount_note": "Volunteers who work with vulnerable groups (e.g. children, care clients) can get a Verklaring Omtrent Gedrag free of charge via Justis; the volunteering organisation registers for the scheme and applies on behalf of the volunteer.",
+   "amount_note": "Free VOG for volunteers when their organisation is registered in the Regeling Gratis VOG (apply via gratisvog.nl; the organisation prepares the application in MijnJustis). Otherwise the fee is EUR 33.85 for a digital VOG and EUR 41.35 on paper. Result in 1 to 8 weeks.",
    "is_automatic": false,
-   "application_url": "https://www.justis.nl/",
+   "application_url": "https://www.gratisvog.nl/",
    "application_channel": "online",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -5645,10 +5645,10 @@
     "student_required": false,
     "admin_areas": []
    },
-   "source_url": "https://www.justis.nl/",
-   "source_snippet": "Vrijwilligers die met kwetsbare groepen werken kunnen een gratis VOG aanvragen via Justis.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www.justis.nl/producten/verklaring-omtrent-het-gedrag/vog-voor-vrijwilligers-en-vrijwilligersorganisaties",
+   "source_snippet": "Is de organisatie waar u gaat werken aangesloten bij de Regeling Gratis VOG? Dan hoeft u niet te betalen voor de VOG-aanvraag. Anders zijn de behandelingskosten voor een digitale VOG-aanvraag € 33,85 en voor een schriftelijke VOG-aanvraag € 41,35.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "ov-begeleiderskaart",
@@ -5663,9 +5663,9 @@
    "amount_max": null,
    "amount_currency": "EUR",
    "amount_period": "annual",
-   "amount_note": "Travellers who cannot travel independently by public transport due to a disability can apply for an OV-begeleiderskaart: one companion then travels free with them on train, bus, tram and metro. The card is free and also serves as proof for Valys eligibility.",
+   "amount_note": "Free travel for one companion on train, metro, tram and bus; the card is in your name so you choose the companion. Applied for via Argonaut Advies (form on ov-begeleiderskaart.nl / argonaut.nl). The OV-begeleiderskaart also counts as proof for a Valys pass.",
    "is_automatic": false,
-   "application_url": "https://www.ns.nl/",
+   "application_url": "https://argonaut.nl/doelgroepen/clienten/ov-begeleiderskaart/",
    "application_channel": "online",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -5702,10 +5702,188 @@
     "student_required": false,
     "admin_areas": []
    },
-   "source_url": "https://www.ns.nl/",
-   "source_snippet": "Met een OV-begeleiderskaart reist uw begeleider gratis met u mee in trein, bus, tram en metro.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www.ns.nl/reizen/reizen-met-een-beperking/motorische-beperking",
+   "source_snippet": "Met een OV-Begeleiderskaart reist één begeleider gratis met je mee in trein, metro, tram en bus. De kaart staat op jouw naam, dus je kiest zelf wie je meeneemt.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "nl-scholarship-non-eea",
+   "name_local": "NL Scholarship",
+   "name_en": "NL Scholarship (formerly Holland Scholarship) for non-EEA students",
+   "admin_level": "national",
+   "admin_area": null,
+   "funder": "Dutch Ministry of Education, Culture and Science / Nuffic with participating institutions",
+   "category": "education",
+   "benefit_type": "cash_one_off",
+   "amount_min": 5000,
+   "amount_max": 5000,
+   "amount_currency": "EUR",
+   "amount_period": "one_off",
+   "amount_note": "EUR 5,000 in the first year of study; not a full-tuition scholarship",
+   "is_automatic": false,
+   "application_url": "https://www.studyinnl.org/finances/nl-scholarship",
+   "application_channel": "online",
+   "deadline_type": "annual",
+   "deadline_note": "Applications for 2026-2027 opened 1 November 2025; check the specific closing dates on the website of the institution you apply to",
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Apply for a full-time bachelor's or master's at a participating institution",
+     "url": null
+    },
+    {
+     "step": 2,
+     "detail": "Follow the institution's NL Scholarship application instructions",
+     "url": "https://www.studyinnl.org/finances/nl-scholarship"
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "Admission application",
+     "mandatory": true,
+     "note": null
+    }
+   ],
+   "eligibility": {
+    "statuses": [],
+    "age_min": null,
+    "age_max": null,
+    "income_annual_max": null,
+    "income_note": "Not income-tested. Non-EEA nationality, full-time bachelor's or master's at a participating institution, no earlier degree from a Dutch institution.",
+    "requires_children": false,
+    "nationality": "any",
+    "residency_months_min": null,
+    "housing_tenure": null,
+    "student_required": false,
+    "admin_areas": [],
+    "gender": "any"
+   },
+   "source_url": "https://www.studyinnl.org/finances/nl-scholarship",
+   "source_snippet": "The scholarship amounts to € 5,000. You will receive this in the first year of your studies.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "zorgtoeslag-buitenlandse-student",
+   "name_local": "Zorgtoeslag voor buitenlandse studenten",
+   "name_en": "Healthcare allowance (zorgtoeslag) for international students who work or have paid internships",
+   "admin_level": "national",
+   "admin_area": null,
+   "funder": "Dienst Toeslagen (Belastingdienst)",
+   "category": "health",
+   "benefit_type": "cash_monthly",
+   "amount_min": null,
+   "amount_max": 129,
+   "amount_currency": "EUR",
+   "amount_period": "monthly",
+   "amount_note": "2026: up to EUR 129 a month (single); phases out to nil at EUR 41,000 income. Only if you must take Dutch health insurance",
+   "is_automatic": false,
+   "application_url": "https://www.belastingdienst.nl/wps/wcm/connect/nl/zorgtoeslag/content/Zorgtoeslag-buitenlandse-student",
+   "application_channel": "online",
+   "deadline_type": "rolling",
+   "deadline_note": "Apply after taking out Dutch health insurance",
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Check whether you must take Dutch health insurance (e.g. you have a part-time job or a paid internship)",
+     "url": "https://www.belastingdienst.nl/wps/wcm/connect/nl/zorgtoeslag/content/Zorgtoeslag-buitenlandse-student"
+    },
+    {
+     "step": 2,
+     "detail": "Take out Dutch health insurance, then apply for zorgtoeslag",
+     "url": null
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "Dutch health insurance policy",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "BSN",
+     "mandatory": true,
+     "note": null
+    }
+   ],
+   "eligibility": {
+    "statuses": [
+     "student"
+    ],
+    "age_min": 18,
+    "age_max": null,
+    "income_annual_max": 40857,
+    "income_note": "2026: toetsingsinkomen max EUR 40,857 (single) or EUR 51,142 with toeslagpartner; asset cap EUR 146,011 / EUR 184,633. If you only study, with no job or paid internship, you stay insured in your home country and cannot get zorgtoeslag; a temporary visitor policy does not qualify.",
+    "requires_children": false,
+    "nationality": "any_resident",
+    "residency_months_min": null,
+    "housing_tenure": null,
+    "student_required": true,
+    "admin_areas": [],
+    "gender": "any"
+   },
+   "source_url": "https://www.belastingdienst.nl/wps/wcm/connect/nl/zorgtoeslag/content/Zorgtoeslag-buitenlandse-student",
+   "source_snippet": "Je kunt zorgtoeslag krijgen als je een Nederlandse zorgverzekering moet afsluiten. Dat moet bijvoorbeeld als je een bijbaantje hebt.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "amsterdam-merit-scholarship",
+   "name_local": "Amsterdam Merit Scholarship",
+   "name_en": "Amsterdam Merit Scholarship (University of Amsterdam, non-EU/EEA master's)",
+   "admin_level": "national",
+   "admin_area": null,
+   "funder": "University of Amsterdam",
+   "category": "education",
+   "benefit_type": "cash_one_off",
+   "amount_min": null,
+   "amount_max": null,
+   "amount_currency": "EUR",
+   "amount_period": "one_off",
+   "amount_note": "Amount not stated on the overview page; see the UvA faculty page",
+   "is_automatic": false,
+   "application_url": "https://www.uva.nl/en/education/fees-and-funding/masters-scholarships-and-loans/amsterdam-merit-scholarship/amsterdam-merit-scholarship.html",
+   "application_channel": "online",
+   "deadline_type": "annual",
+   "deadline_note": "Deadlines differ per Faculty or Graduate School",
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Apply for a UvA master's programme",
+     "url": null
+    },
+    {
+     "step": 2,
+     "detail": "Apply for the AMS via your faculty or graduate school",
+     "url": "https://www.uva.nl/en/education/fees-and-funding/masters-scholarships-and-loans/amsterdam-merit-scholarship/amsterdam-merit-scholarship.html"
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "UvA admission application",
+     "mandatory": true,
+     "note": null
+    }
+   ],
+   "eligibility": {
+    "statuses": [],
+    "age_min": null,
+    "age_max": null,
+    "income_annual_max": null,
+    "income_note": "Not income-tested. Requires a non-EU/EEA passport and an application to a UvA degree programme.",
+    "requires_children": false,
+    "nationality": "any",
+    "residency_months_min": null,
+    "housing_tenure": null,
+    "student_required": false,
+    "admin_areas": [],
+    "gender": "any"
+   },
+   "source_url": "https://www.uva.nl/en/education/fees-and-funding/masters-scholarships-and-loans/amsterdam-merit-scholarship/amsterdam-merit-scholarship.html",
+   "source_snippet": "Outstanding students from outside the EU/EEA can apply for an Amsterdam Merit Scholarship (AMS).",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   }
  ]
 }

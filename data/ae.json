@@ -17,9 +17,9 @@
    "amount_max": null,
    "amount_currency": "AED",
    "amount_period": null,
-   "amount_note": "Interest-free housing loans repayable over 25 years; non-reimbursable grants for the poorest groups. Amount depends on case.",
+   "amount_note": "Loans (amount determined by monthly income level) or grants (subject to annual government budget allocations). Interest-free loans repayable over 25 years. SZHP merged into the Ministry of Energy and Infrastructure in 2020.",
    "is_automatic": false,
-   "application_url": "https://www.moei.gov.ae",
+   "application_url": "https://www.moei.gov.ae/en/services/housing-assistance-request",
    "application_channel": "online",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -52,7 +52,7 @@
     "age_min": null,
     "age_max": null,
     "income_annual_max": 1200000,
-    "income_note": "MOEI's official Housing Assistance Request page states the applicant's monthly income should be no more than AED 100,000 — AED 1,200,000/year as an outer ceiling. Within that ceiling a housing calculator scores social, financial and residential circumstances, so grants go to much lower-income applicants.",
+    "income_note": "MOEI page: applicants with monthly salary/returns or commercial income above AED 100,000 are treated as financially capable and are ineligible (AED 1,200,000/year outer ceiling). Must not own suitable housing or have received prior housing assistance.",
     "requires_children": false,
     "nationality": "citizen_or_pr",
     "residency_months_min": null,
@@ -64,9 +64,9 @@
     "income_confidence": "high",
     "gender": "any"
    },
-   "source_url": "https://u.ae/en/information-and-services/housing/housing-authorities-and-programmes",
-   "source_snippet": "Sheikh Zayed Housing Programme (SZHP), established in 1999, provides interest-free loans repayable over a 25-year period to citizens with low incomes.",
-   "last_verified_at": "2026-08-12",
+   "source_url": "https://www.moei.gov.ae/en/services/housing-assistance-request",
+   "source_snippet": "The applicant must be a citizen holding a family data and an identity card",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified",
    "income_reviewed_at": "2026-08-13"
   },
@@ -85,7 +85,7 @@
    "amount_period": null,
    "amount_note": "Housing loans, land grants, ready-built homes and loan repayment exemptions for Abu Dhabi citizens; value depends on entitlement.",
    "is_automatic": false,
-   "application_url": "https://www.adha.gov.ae",
+   "application_url": "https://www.adha.gov.ae/en",
    "application_channel": "online",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -131,7 +131,7 @@
    },
    "source_url": "https://u.ae/en/information-and-services/housing/housing-authorities-and-programmes",
    "source_snippet": "Abu Dhabi Housing Authority (ADHA) was created to provide suitable housing for Abu Dhabi citizens, manage housing loans' programme and coordinate all housing-related projects.",
-   "last_verified_at": "2026-08-12",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -149,7 +149,7 @@
    "amount_period": null,
    "amount_note": "Residential plots, government houses, ready houses, maintenance/extension grants and housing loans for Dubai nationals; amount per policy.",
    "is_automatic": false,
-   "application_url": "https://www.mbrhe.gov.ae",
+   "application_url": "https://www.mbrhe.gov.ae/en/",
    "application_channel": "online",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -195,7 +195,7 @@
    },
    "source_url": "https://u.ae/en/information-and-services/housing/housing-authorities-and-programmes",
    "source_snippet": "Mohammed Bin Rashid Housing Establishment (MBRHE) was established in 2007. It aims at providing appropriate housing to the nationals of the emirate of Dubai.",
-   "last_verified_at": "2026-08-12",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -213,7 +213,7 @@
    "amount_period": null,
    "amount_note": "One-stop service for ADHA beneficiaries: housing grants, housing loans and purchase of residential land.",
    "is_automatic": false,
-   "application_url": "https://www.tamm.abudhabi",
+   "application_url": "https://www.iskan.abudhabi/en/Our-Services/Residential-Plot-of-Land-Grant",
    "application_channel": "in_person",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -237,8 +237,8 @@
    },
    "source_url": "https://u.ae/en/information-and-services/housing/housing-authorities-and-programmes",
    "source_snippet": "Iskan Abu Dhabi is a one-stop service centre for citizens eligible for housing benefits in the emirate of Abu Dhabi.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "sharjah-housing-department-aid",
@@ -255,7 +255,7 @@
    "amount_period": null,
    "amount_note": "Housing grants and loans for Emirati citizens of Sharjah; emirate-level counterpart to federal housing aid.",
    "is_automatic": false,
-   "application_url": "https://sharjah.ae",
+   "application_url": "https://dh.sharjah.ae/",
    "application_channel": "online",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -277,10 +277,10 @@
     ],
     "gender": "any"
    },
-   "source_url": "https://sharjah.ae",
-   "source_snippet": "Sharjah's Directorate of Housing administers emirate-level housing assistance for Emirati citizens, alongside the federal Sheikh Zayed Housing Programme.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://dh.sharjah.ae/",
+   "source_snippet": "Housing support services for citizen families in the Emirate of Sharjah including permanent housing services (loans and grants, residential complexes, emergency/temporary housing)",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "sheikh-saud-housing-programme-rak",
@@ -337,9 +337,9 @@
    "amount_max": null,
    "amount_currency": "AED",
    "amount_period": null,
-   "amount_note": "Reductions in outstanding ADHA housing loans for citizens who grow their families, per ADHA policy.",
+   "amount_note": "Emirati Family Growth Programme (Abu Dhabi): facilitated marriage loan, maternity leave support for women in the private sector, new-mother home visits, partial loan deduction initiative and extended housing loan repayment period. Amounts per programme rules.",
    "is_automatic": false,
-   "application_url": "https://www.adha.gov.ae",
+   "application_url": "https://medeem.gov.ae/emirati-family-growth/about-us/",
    "application_channel": "online",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -351,7 +351,7 @@
     "age_max": null,
     "income_annual_max": null,
     "income_note": null,
-    "requires_children": true,
+    "requires_children": false,
     "nationality": "citizen_or_pr",
     "residency_months_min": null,
     "housing_tenure": null,
@@ -361,10 +361,10 @@
     ],
     "gender": "any"
    },
-   "source_url": "https://www.adha.gov.ae",
-   "source_snippet": "ADHA housing benefit packages include housing loan reductions for citizens under the Emirati Family Growth programme.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://u.ae/en/information-and-services/social-affairs/social-welfare/Family-support-programmes",
+   "source_snippet": "The programme aims to empower families and enhance family stability. It targets newly married couples and families with children in the emirate of Abu Dhabi.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "nafis-salary-top-up",
@@ -423,13 +423,13 @@
    "funder": "Emirati Talent Competitiveness Council (Nafis)",
    "category": "family",
    "benefit_type": "cash_monthly",
-   "amount_min": 800,
-   "amount_max": 800,
+   "amount_min": null,
+   "amount_max": null,
    "amount_currency": "AED",
    "amount_period": "monthly",
-   "amount_note": "AED 800 per child per month for eligible Emirati private-sector employees; 2026 reform removed the previous cap on number of children.",
+   "amount_note": "Official Nafis page excerpt: below AED 50,000 monthly salary, AED 600 per month per eligible child. Earlier AED 800 figure (and 'no cap on children' reform) comes from news, not an official page reachable today; confirm on nafis.gov.ae.",
    "is_automatic": false,
-   "application_url": "https://nafis.gov.ae",
+   "application_url": "https://nafis.gov.ae/child-allowance-scheme",
    "application_channel": "online",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -452,9 +452,9 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://nafis.gov.ae",
-   "source_snippet": "Emiratis earning below AED 50,000 per month and working in the private sector can now receive AED 800 per child monthly, with no upper limit on children.",
-   "last_verified_at": "2026-08-12",
+   "source_url": "https://nafis.gov.ae/child-allowance-scheme",
+   "source_snippet": "Below AED 50,000 per month, AED 600 per month for each eligible ...",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -648,7 +648,7 @@
    "amount_max": null,
    "amount_currency": "AED",
    "amount_period": "monthly",
-   "amount_note": "Pension and compensation for insured Emiratis in case of work-related disability or death, paid to the insured or eligible family members.",
+   "amount_note": "Work-related total disability or death: pension calculated as if 35 years of service (100% of average pension-account salary); total disability also receives AED 75,000 compensation (partial disability pro-rata). Survivor shares: widow(s)/eligible husband 37.5%, children 50%, parents 12.5%.",
    "is_automatic": false,
    "application_url": "https://www.gpssa.gov.ae",
    "application_channel": "via_employer",
@@ -670,10 +670,10 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.gpssa.gov.ae",
-   "source_snippet": "GPSSA manages disability pensions and survivor benefits distributed to eligible family members of a deceased insured member or pensioner.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://gpssa.gov.ae/pages/en/help/faq",
+   "source_snippet": "Those with total disability receive AED 75,000 in compensation (GPSSA FAQ).",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "abudhabi-pension-fund",
@@ -739,9 +739,9 @@
    "amount_max": null,
    "amount_currency": "AED",
    "amount_period": "monthly",
-   "amount_note": "Structured monthly allowances for low-income Emirati families; amount calculated under Federal Decree-Law No. 23 of 2024 based on family composition and income.",
+   "amount_note": "Allowances: individual, spouse, child, job seeker/unemployment support, housing (families without government housing support), academic excellence (GPA 3.3+), seasonal and inflation allowances. Amounts depend on family composition and income; MoCE allowance calculator available.",
    "is_automatic": false,
-   "application_url": "https://www.moce.gov.ae",
+   "application_url": "https://www.moce.gov.ae/en/social-welfare-program",
    "application_channel": "online",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -791,9 +791,9 @@
     "income_confidence": "high",
     "gender": "any"
    },
-   "source_url": "https://u.ae/en/information-and-services/social-affairs/social-welfare/social-welfare-programmes",
+   "source_url": "https://www.moce.gov.ae/en/social-welfare-program",
    "source_snippet": "The Social Welfare Programme is a federal initiative implemented by Ministry of Community Empowerment (MoCE). It provides an integrated social safety net to Emirati families.",
-   "last_verified_at": "2026-08-12",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified",
    "income_reviewed_at": "2026-08-13"
   },
@@ -810,7 +810,7 @@
    "amount_max": null,
    "amount_currency": "AED",
    "amount_period": "monthly",
-   "amount_note": "Supplementary allowance for low-income Emirati households covering fuel price increases, food subsidies and a share of water/electricity costs.",
+   "amount_note": "Fuel: AED 300-900 per spouse; food: AED 500 per adult and AED 250 per child; electricity/water: AED 400 per month. Total family monthly income must be below AED 25,000. Paid on top of basic social welfare allowance.",
    "is_automatic": false,
    "application_url": "https://www.moce.gov.ae",
    "application_channel": "online",
@@ -836,8 +836,8 @@
     "gender": "any"
    },
    "source_url": "https://u.ae/en/information-and-services/social-affairs/social-welfare/social-welfare-programmes",
-   "source_snippet": "The UAE's social welfare framework offers a Supplementary Allowance including housing and inflation-related (fuel, food) components administered by the Ministry of Community Empowerment.",
-   "last_verified_at": "2026-08-12",
+   "source_snippet": "temporary support to mitigate the impact of rising living costs caused by global inflation",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified",
    "income_reviewed_at": "2026-08-13"
   },
@@ -856,7 +856,7 @@
    "amount_period": "monthly",
    "amount_note": "Financial assistance for Abu Dhabi citizens whose monthly income is below the approved support line.",
    "is_automatic": false,
-   "application_url": "https://www.tamm.abudhabi",
+   "application_url": "https://www.ssa.gov.ae/Programes/Activation-programs",
    "application_channel": "online",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -879,9 +879,9 @@
     "gender": "any"
    },
    "source_url": "https://u.ae/en/information-and-services/social-affairs/social-welfare/social-welfare-programmes",
-   "source_snippet": "Apply for financial assistance if your monthly income is less than the approved support line in Abu Dhabi - The Abu Dhabi Social Support Programme.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_snippet": "income-based scheme that is managed by the Department of Community Development",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "cda-dubai-social-assistance",
@@ -896,9 +896,9 @@
    "amount_max": null,
    "amount_currency": "AED",
    "amount_period": "monthly",
-   "amount_note": "Periodic financial assistance for Dubai nationals on low incomes, administered by the Community Development Authority.",
+   "amount_note": "Periodic benefits for daily living expenses; CDA also offers one-time benefits up to AED 50,000 (medical/education) and emergency benefit up to AED 25,000. Periodic amount per CDA assessment.",
    "is_automatic": false,
-   "application_url": "https://www.cda.gov.ae",
+   "application_url": "https://www.cda.gov.ae/en/socialcare/SocialBenefits/Pages/periodicbenefits.aspx",
    "application_channel": "online",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -922,8 +922,8 @@
    },
    "source_url": "https://u.ae/en/information-and-services/social-affairs/social-welfare/social-welfare-programmes",
    "source_snippet": "Apply for periodic social assistance - for nationals from Dubai - Community Development Authority.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "sharjah-social-services-assistance",
@@ -940,7 +940,7 @@
    "amount_period": "monthly",
    "amount_note": "Financial assistance for Sharjah citizens whose income is at or below the approved assistance line.",
    "is_automatic": false,
-   "application_url": "https://www.sssd.gov.ae",
+   "application_url": "https://sssd.shj.ae/e-service?app=aid_request",
    "application_channel": "online",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -964,8 +964,8 @@
    },
    "source_url": "https://u.ae/en/information-and-services/social-affairs/social-welfare/social-welfare-programmes",
    "source_snippet": "Apply for financial assistance if your income is equal to or less than the assistance provided by the Ministry of Community Development (for nationals of Sharjah only) - Social Services Department in Sharjah.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "marriage-fund-grant",
@@ -973,19 +973,19 @@
    "name_en": "Marriage Fund Grant (AED 70,000)",
    "admin_level": "national",
    "admin_area": null,
-   "funder": "Ministry of Community Empowerment (Marriage Fund)",
+   "funder": "Ministry of Family",
    "category": "family",
    "benefit_type": "cash_one_off",
    "amount_min": 70000,
    "amount_max": 70000,
    "amount_currency": "AED",
    "amount_period": "one_off",
-   "amount_note": "One-time AED 70,000 grant for first-time marriages where both spouses are UAE nationals; groom's net monthly income must not exceed AED 25,000.",
+   "amount_note": "One-time AED 70,000 grant; both spouses UAE nationals; groom at least 21 and bride at least 18; must not have previously received this or other UAE grants.",
    "is_automatic": false,
-   "application_url": "https://www.moce.gov.ae",
+   "application_url": "https://alusra.gov.ae/en/services/marriage-grant/",
    "application_channel": "online",
-   "deadline_type": "rolling",
-   "deadline_note": null,
+   "deadline_type": "window",
+   "deadline_note": "Apply within six months of the marriage contract date; both spouses must attend the Edaad premarital programme within one year.",
    "procedure_steps": [
     {
      "step": 1,
@@ -1017,10 +1017,10 @@
    ],
    "eligibility": {
     "statuses": [],
-    "age_min": 18,
+    "age_min": 21,
     "age_max": null,
-    "income_annual_max": null,
-    "income_note": "Groom's net monthly income must not exceed AED 25,000 after pension and housing deductions",
+    "income_annual_max": 300000,
+    "income_note": "Applicant's (groom's) monthly net income must not exceed AED 25,000 (= AED 300,000/year).",
     "requires_children": false,
     "nationality": "citizen_or_pr",
     "residency_months_min": null,
@@ -1029,9 +1029,9 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.moce.gov.ae",
-   "source_snippet": "Under Cabinet Resolution No. (5) of 2017, eligible Emirati couples can receive a one-time marriage grant of Dh70,000.",
-   "last_verified_at": "2026-08-12",
+   "source_url": "https://alusra.gov.ae/en/services/marriage-grant/",
+   "source_snippet": "The applicant's monthly net income must not exceed AED 25,000",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -1047,9 +1047,9 @@
    "amount_max": null,
    "amount_currency": "AED",
    "amount_period": null,
-   "amount_note": "Marriage grants and family-development support services for young Emirati couples in Abu Dhabi under the Medeem model; amount per entitlement.",
+   "amount_note": "Facilitated marriage loan to reduce financial burden on newly married couples, plus family support services (Emirati Family Growth Programme, Abu Dhabi). Amounts per programme.",
    "is_automatic": false,
-   "application_url": "https://www.addcd.gov.ae",
+   "application_url": "https://medeem.gov.ae/emirati-family-growth/about-us/",
    "application_channel": "online",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -1071,10 +1071,10 @@
     ],
     "gender": "any"
    },
-   "source_url": "https://www.addcd.gov.ae",
-   "source_snippet": "The Medeem model supports new Emirati families in Abu Dhabi with marriage support and family development services.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://u.ae/en/information-and-services/social-affairs/social-welfare/Family-support-programmes",
+   "source_snippet": "Facilitated marriage loan - to reduce financial burdens on newly married couples",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "thiqa-abu-dhabi-citizens-health",
@@ -1089,9 +1089,9 @@
    "amount_max": null,
    "amount_currency": "AED",
    "amount_period": null,
-   "amount_note": "Fully government-funded comprehensive health coverage for UAE nationals in Abu Dhabi, administered by Daman at SEHA and network facilities.",
+   "amount_note": "Government-funded health insurance via Daman for UAE nationals and those of similar status from Abu Dhabi, and non-UAE nationals sponsored by a UAE national family member. Enrol via Thiqa website or app.",
    "is_automatic": true,
-   "application_url": "https://www.doh.gov.ae",
+   "application_url": "https://www.damanhealth.ae/",
    "application_channel": "automatic",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -1119,9 +1119,9 @@
     ],
     "gender": "any"
    },
-   "source_url": "https://www.doh.gov.ae",
-   "source_snippet": "Thiqa is a fully government-funded insurance programme for UAE nationals only, administered by Daman since 2008. Emiratis access Thiqa free.",
-   "last_verified_at": "2026-08-12",
+   "source_url": "https://u.ae/en/information-and-services/health-and-fitness/Healthcare-access-and-insurance/getting-a-health-insurance",
+   "source_snippet": "UAE nationals and those with a similar status from Abu Dhabi and non-UAE nationals sponsored by a UAE national family member.",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -1137,7 +1137,7 @@
    "amount_max": null,
    "amount_currency": "AED",
    "amount_period": null,
-   "amount_note": "Health card giving UAE nationals free or heavily subsidised treatment at MOHAP public hospitals and clinics, mainly in the northern emirates.",
+   "amount_note": "MoHAP health card for Emirati and GCC citizens and residents giving access to services at MoHAP facilities; card valid 4 years for Emiratis/GCC citizens, 1 year renewable for non-citizens. Free card for People of Determination.",
    "is_automatic": false,
    "application_url": "https://www.mohap.gov.ae",
    "application_channel": "online",
@@ -1158,17 +1158,17 @@
     "income_annual_max": null,
     "income_note": null,
     "requires_children": false,
-    "nationality": "citizen_or_pr",
+    "nationality": "any_resident",
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.mohap.gov.ae",
-   "source_snippet": "UAE nationals receive free or heavily subsidised care at MOHAP public facilities with a health card.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://mohap.gov.ae/en/w/mohap-issues-and-renews-health-cards-in-7-minutes",
+   "source_snippet": "Emirati citizens and GCC citizens and residents are entitled to get this service",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "free-public-education-citizens",
@@ -1183,7 +1183,7 @@
    "amount_max": null,
    "amount_currency": "AED",
    "amount_period": null,
-   "amount_note": "Free public schooling and tuition-free undergraduate study at federal universities (UAE University, Zayed University, Higher Colleges of Technology) for UAE citizens.",
+   "amount_note": "Free education in UAE government schools for UAE nationals, UAE passport holders, GCC citizens and children of those naturalised by decree. Federal-university tuition-free claim not confirmed on this page.",
    "is_automatic": true,
    "application_url": "https://www.moe.gov.ae",
    "application_channel": "automatic",
@@ -1211,10 +1211,10 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://u.ae/en/information-and-services/education",
-   "source_snippet": "Education in government schools and federal higher education institutions is free for UAE nationals.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://u.ae/en/information-and-services/education/school-education-k-12/admission-to-uae-government-schools",
+   "source_snippet": "UAE nationals, those holding the UAE's passports, GCC citizens and the children of those who hold UAE nationality by decrees, get free education in government schools.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "mohesr-scholarships-abroad",
@@ -1255,7 +1255,7 @@
    },
    "source_url": "https://u.ae/en/information-and-services/education/higher-education/joining-higher-education-institutions-/scholarships-for-uae-nationals",
    "source_snippet": "Ministry Of Higher Education & Scientific Research (MoHESR) provides scholarships to UAE nationals for graduate and undergraduate programmes to study abroad in one of the recognised universities.",
-   "last_verified_at": "2026-08-12",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -1296,9 +1296,9 @@
     "gender": "any"
    },
    "source_url": "https://u.ae/en/information-and-services/education/higher-education/joining-higher-education-institutions-/scholarships-for-uae-nationals",
-   "source_snippet": "Scholarship Office at Ministry of Presidential Affairs selects outstanding Emirati students to travel abroad to pursue education at prestigious international universities.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_snippet": "selects outstanding Emirati students to travel abroad to pursue education at prestigious international universities",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "tdra-betha-ict-scholarships",
@@ -1313,7 +1313,7 @@
    "amount_max": null,
    "amount_currency": "AED",
    "amount_period": null,
-   "amount_note": "Bachelor and master scholarships in ICT-related subjects for Emirati students in the UAE and abroad.",
+   "amount_note": "Bachelor and master scholarships in ICT-related subjects, studying in the UAE, USA, Australia or Japan.",
    "is_automatic": false,
    "application_url": "https://tdra.gov.ae",
    "application_channel": "online",
@@ -1339,8 +1339,8 @@
    },
    "source_url": "https://u.ae/en/information-and-services/education/higher-education/joining-higher-education-institutions-/scholarships-for-uae-nationals",
    "source_snippet": "Through its ICT Fund, Telecommunications and Digital Government Regulatory Authority offers Betha programme for undergraduate and graduate students wishing to study ICT-related subjects.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "mof-masar-scholarships",
@@ -1381,8 +1381,8 @@
    },
    "source_url": "https://u.ae/en/information-and-services/education/higher-education/joining-higher-education-institutions-/scholarships-for-uae-nationals",
    "source_snippet": "Under the Masar programme, Ministry of Finance (MoF) offers college scholarships to assist UAE high-school graduates in completing their studies in finance, accounting and other disciplines.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "adek-scholarships-abu-dhabi",
@@ -1397,7 +1397,7 @@
    "amount_max": null,
    "amount_currency": "AED",
    "amount_period": null,
-   "amount_note": "Scholarships for distinguished UAE students in Abu Dhabi in priority disciplines such as science, technology, teaching and urban planning.",
+   "amount_note": "Scholarships for distinguished UAE students in disciplines such as science and technology, teaching, urban planning, food control and transportation, via partner organisations.",
    "is_automatic": false,
    "application_url": "https://www.adek.gov.ae",
    "application_channel": "online",
@@ -1425,8 +1425,8 @@
    },
    "source_url": "https://u.ae/en/information-and-services/education/higher-education/joining-higher-education-institutions-/scholarships-for-uae-nationals",
    "source_snippet": "Department of Education and Knowledge provides scholarships to distinguished UAE students by partnering with organisations throughout the UAE.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "hamdan-bin-mohammed-scholarship-dubai",
@@ -1441,20 +1441,20 @@
    "amount_max": null,
    "amount_currency": "AED",
    "amount_period": null,
-   "amount_note": "Scholarship programme for outstanding Dubai-based Emirati students to study at top universities.",
+   "amount_note": "AED 1.1 billion programme for outstanding Emirati school graduates; individual amounts not stated on requirements page. Minimum grades apply by curriculum (e.g. IB 28, US GPA 3.75, MOE 90%).",
    "is_automatic": false,
-   "application_url": "https://www.khda.gov.ae",
+   "application_url": "https://web.khda.gov.ae/en/Hamdan-bin-Mohammed-Scholarship-Programme/Application-Steps-and-deadlines",
    "application_channel": "online",
    "deadline_type": "annual",
-   "deadline_note": null,
+   "deadline_note": "Last published window: 8 May - 30 June 2025; check KHDA for the 2026 intake. Apply via Dubai Now app with Emirates ID.",
    "procedure_steps": [],
    "documents_required": [],
    "eligibility": {
     "statuses": [
      "student"
     ],
-    "age_min": null,
-    "age_max": null,
+    "age_min": 17,
+    "age_max": 20,
     "income_annual_max": null,
     "income_note": null,
     "requires_children": false,
@@ -1467,10 +1467,10 @@
     ],
     "gender": "any"
    },
-   "source_url": "https://u.ae/en/information-and-services/education/higher-education/joining-higher-education-institutions-/scholarships-for-uae-nationals",
-   "source_snippet": "Hamdan bin Mohammed Scholarship Program - Dubai Government.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://web.khda.gov.ae/en/Hamdan-bin-Mohammed-Scholarship-Programme/Application-Requirements",
+   "source_snippet": "Be a citizen of the United Arab Emirates holding a family book issued from the Emirate of Dubai ... Be between 17 and 20 years old.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "al-qasimi-foundation-scholarships-rak",
@@ -1485,12 +1485,12 @@
    "amount_max": null,
    "amount_currency": "AED",
    "amount_period": null,
-   "amount_note": "Undergraduate and postgraduate scholarships for UAE citizens from Ras Al Khaimah (and children of Emirati mothers resident there), domestic and overseas.",
+   "amount_note": "Domestic bachelor: 100% tuition at private universities or AED 3,000 monthly stipend at federal universities; domestic master 50% tuition. Overseas bachelor AED 3,000 monthly stipend; overseas Al Qasimi masters 100% tuition plus AED 12,000-15,000 monthly stipend. Overseas universities must be top 200 QS/THE.",
    "is_automatic": false,
-   "application_url": "https://www.alqasimifoundation.com",
+   "application_url": "https://www.alqasimifoundation.com/scholarships",
    "application_channel": "online",
    "deadline_type": "annual",
-   "deadline_note": null,
+   "deadline_note": "2026: domestic 1 Apr - 30 Jun 2026 (closed); overseas 2 Jan - 29 Dec 2026.",
    "procedure_steps": [],
    "documents_required": [],
    "eligibility": {
@@ -1511,10 +1511,10 @@
     ],
     "gender": "any"
    },
-   "source_url": "https://www.alqasimifoundation.com",
-   "source_snippet": "Candidates must be UAE citizens from Ras Al Khaimah (or children of a UAE national mother residing there), demonstrating exceptional academic records.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www.alqasimifoundation.com/scholarships",
+   "source_snippet": "Applicants must be Emirati nationals from Ras Al Khaimah and meet academic standards.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "national-service-benefits",
@@ -1529,7 +1529,7 @@
    "amount_max": null,
    "amount_currency": "AED",
    "amount_period": null,
-   "amount_note": "Employment protection, salary continuation and pension contribution coverage for Emiratis performing national service.",
+   "amount_note": "Working Emiratis keep their jobs (employer must retain the position or equivalent); service time is added to end-of-service and pension benefits. Completers get priority for government/private jobs, marriage grants, housing plots and scholarships. Salary during service not stated.",
    "is_automatic": true,
    "application_url": null,
    "application_channel": "automatic",
@@ -1557,10 +1557,10 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://u.ae/en/information-and-services/defence-and-armed-forces/national-service",
-   "source_snippet": "Employees called for national service keep their employment rights, with service periods counting toward pension and benefits.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://u.ae/en/information-and-services/justice-safety-and-the-law/Safety/armed-forces",
+   "source_snippet": "Working Emiratis will not be exempt and while serving in the military, time will be added to their end-of-service and pension benefits.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "moccae-fishermen-support",
@@ -1657,13 +1657,13 @@
    "funder": "Khalifa Fund for Enterprise Development",
    "category": "business",
    "benefit_type": "cash_one_off",
-   "amount_min": 100000,
-   "amount_max": 5000000,
+   "amount_min": null,
+   "amount_max": 3000000,
    "amount_currency": "AED",
    "amount_period": "one_off",
-   "amount_note": "Interest-free loans of roughly AED 100,000-5,000,000 for Emirati-owned SMEs; direct funding requires 100% Emirati ownership and an owner aged 21-60.",
+   "amount_note": "Funding up to AED 500,000 (microfinance), AED 1M-2M (small loan), AED 2M-3M (expansion; higher limit for manufacturing), up to AED 2M agri-tech; startup/expansion loans cover up to 80% of costs, repayment up to 84 months with up to 24 months grace. Interest rate not published; 0% claim unverified. Requires 100% Emirati-owned business under an individual licence, owner aged 21-60, established in Abu Dhabi.",
    "is_automatic": false,
-   "application_url": "https://www.khalifafund.ae",
+   "application_url": "https://www.khalifafund.ae/services/funding-scheme/",
    "application_channel": "online",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -1693,9 +1693,9 @@
     ],
     "gender": "any"
    },
-   "source_url": "https://www.khalifafund.ae",
-   "source_snippet": "Khalifa Fund: AED 100,000-5,000,000 loans at 0% interest for UAE nationals.",
-   "last_verified_at": "2026-08-12",
+   "source_url": "https://www.khalifafund.ae/faq/",
+   "source_snippet": "The business owner's age is 21+ years old, with the maximum age limit being 60",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -1711,9 +1711,9 @@
    "amount_max": null,
    "amount_currency": "AED",
    "amount_period": null,
-   "amount_note": "Business development services, mentorship, incubation, procurement access and funding pathways for Dubai-registered SMEs; some funding tracks are for Emirati founders.",
+   "amount_note": "Support organised as Launch (set-up, incubators, SME in a Box), Fund (funding options incl. Mohammed Bin Rashid Fund for SMEs, which supports Emirati entrepreneurs) and Grow (supplier programmes incl. Emirati Supplier Programme). sme.ae now redirects to Dubai Founders HQ.",
    "is_automatic": false,
-   "application_url": "https://sme.ae",
+   "application_url": "https://dubaifoundershq.com/en",
    "application_channel": "online",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -1737,10 +1737,10 @@
     ],
     "gender": "any"
    },
-   "source_url": "https://sme.ae",
-   "source_snippet": "Dubai SME, formally the Mohammed Bin Rashid Establishment for SME Development under Dubai's Department of Economy and Tourism, runs the Dubai Startup Hub for mentorship, incubation, and networking.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://dubaifoundershq.com/en",
+   "source_snippet": "The Fund supports Emirati entrepreneurs",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "sheraa-sharjah-entrepreneurship",
@@ -1755,12 +1755,12 @@
    "amount_max": null,
    "amount_currency": "AED",
    "amount_period": null,
-   "amount_note": "Incubation, acceleration, seed-funding access and mentorship for early-stage startups; open to UAE residents of all nationalities.",
+   "amount_note": "Programmes: Startup Blueprint (self-paced online), Startup Dojo (8 weeks), Sharjah Startup Studio (4 months), Sharjah Women Impact Fellowship (4 months), Access Sharjah Challenge. No funding amounts published on the homepage.",
    "is_automatic": false,
    "application_url": "https://sheraa.ae",
    "application_channel": "online",
    "deadline_type": "rolling",
-   "deadline_note": null,
+   "deadline_note": "Several programmes open by 'Get notified' sign-up (cohort-based).",
    "procedure_steps": [],
    "documents_required": [],
    "eligibility": {
@@ -1782,9 +1782,9 @@
     "gender": "any"
    },
    "source_url": "https://sheraa.ae",
-   "source_snippet": "Sheraa (Sharjah Entrepreneurship Centre): Incubation, seed funding, and networking for early-stage entrepreneurs. Open to UAE residents of all nationalities.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_snippet": "Startup Blueprint ... Startup Dojo ... Sharjah Startup Studio (S3) ... Sharjah Women Impact Fellowship ... Access Sharjah Challenge",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "edb-sme-financing",
@@ -1799,9 +1799,9 @@
    "amount_max": null,
    "amount_currency": "AED",
    "amount_period": "one_off",
-   "amount_note": "Direct and bank-partnered financing for UAE-registered SMEs in priority sectors (manufacturing, food security, healthcare, renewables, advanced technology).",
+   "amount_note": "Tailored SME financing (loan amount, term and rate set per SME) for nationals and residents who own and manage businesses in manufacturing, healthcare, renewables, food security and technology; also partial credit guarantees on partner-bank SME loans.",
    "is_automatic": false,
-   "application_url": "https://www.edb.gov.ae",
+   "application_url": "https://edb.gov.ae/customers/small-and-medium-enterprises",
    "application_channel": "online",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -1823,10 +1823,10 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.edb.gov.ae",
-   "source_snippet": "Emirates Development Bank provides SME financing solutions for UAE-registered businesses in priority economic sectors.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://edb.gov.ae/customers/small-and-medium-enterprises",
+   "source_snippet": "Our SME funding supports Nationals and residents who own and manage businesses across the manufacturing, healthcare, renewables, food security and technology sectors",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "mbrif-innovation-fund",
@@ -1841,7 +1841,7 @@
    "amount_max": null,
    "amount_currency": "AED",
    "amount_period": null,
-   "amount_note": "Innovation Accelerator (mentorship, market access) and Guarantee Scheme (loan guarantees) for innovative companies registered in the UAE; open to all nationalities.",
+   "amount_note": "Innovation Accelerator (services, experts, ecosystem; no equity taken), Guarantee Scheme (government-backed loan guarantees, supported by Emirates Development Bank) and Innovation Trailblazers application track. Applications via the MBRIF accelerator portal.",
    "is_automatic": false,
    "application_url": "https://mbrif.ae",
    "application_channel": "online",
@@ -1866,8 +1866,8 @@
     "gender": "any"
    },
    "source_url": "https://mbrif.ae",
-   "source_snippet": "MBRIF supports innovative entrepreneurs from around the world who wish to establish economic activities in the UAE, offering financing solutions and an accelerator programme.",
-   "last_verified_at": "2026-08-12",
+   "source_snippet": "government-backed loan guarantees; No equity taken - non-profit model",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -1883,9 +1883,9 @@
    "amount_max": null,
    "amount_currency": "AED",
    "amount_period": null,
-   "amount_note": "Cohort-based accelerator pairing startups with Dubai government entities; pilots and contracts without equity taken. Open to international founders.",
+   "amount_note": "Programme connecting startups, private entities and Government of Dubai entities to work on pre-specified challenges; applications shown as open on the official page. Equity/funding terms not stated on the page.",
    "is_automatic": false,
-   "application_url": "https://www.dubaifuture.ae",
+   "application_url": "https://www.dubaifuture.ae/initiatives/future-design-and-acceleration/dubai-future-accelerators/",
    "application_channel": "online",
    "deadline_type": "window",
    "deadline_note": null,
@@ -1909,10 +1909,10 @@
     ],
     "gender": "any"
    },
-   "source_url": "https://www.dubaifuture.ae",
-   "source_snippet": "Dubai Future Accelerators connects startups with Government of Dubai entities to pilot solutions, with no equity taken.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www.dubaifuture.ae/initiatives/future-design-and-acceleration/dubai-future-accelerators/",
+   "source_snippet": "Apply to co-create solutions to our current challenges.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "small-business-relief-corporate-tax",
@@ -1927,9 +1927,9 @@
    "amount_max": null,
    "amount_currency": "AED",
    "amount_period": "annual",
-   "amount_note": "Eligible resident taxable persons with revenue up to AED 3,000,000 per period can elect to be treated as having no taxable income (0% corporate tax) for periods ending on or before 31 December 2026.",
+   "amount_note": "Resident persons with revenue of AED 3,000,000 or less in the current and all previous tax periods can elect to be treated as having no taxable income, for tax periods ending on or before 31 December 2029 (extended by Ministerial Decision No. 131 of 2026, announced 7 Aug 2026). Not available to Qualifying Free Zone Persons or members of multinational groups with consolidated revenue above AED 3.15bn.",
    "is_automatic": false,
-   "application_url": "https://tax.gov.ae",
+   "application_url": "https://tax.gov.ae/en/taxes/corporate.tax/corporate.tax.topics/small.business.relief.23.aspx",
    "application_channel": "online",
    "deadline_type": "annual",
    "deadline_note": null,
@@ -1951,10 +1951,10 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://tax.gov.ae",
-   "source_snippet": "Small Business Relief allows eligible businesses with revenue at or below AED 3 million to elect no taxable income for corporate tax purposes.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://tax.gov.ae/en/taxes/corporate.tax/corporate.tax.topics/small.business.relief.23.aspx",
+   "source_snippet": "Revenue equal to or less than AED 3,000,000 in both the current and all previous Tax Periods",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "free-zone-0-corporate-tax",
@@ -1969,7 +1969,7 @@
    "amount_max": null,
    "amount_currency": "AED",
    "amount_period": "annual",
-   "amount_note": "Qualifying Free Zone Persons pay 0% corporate tax on qualifying income (standard 9% rate applies to non-qualifying taxable income above AED 375,000).",
+   "amount_note": "Qualifying Free Zone Persons pay 0% corporate tax on qualifying income; the general regime is 0% on taxable income up to AED 375,000 and 9% above.",
    "is_automatic": true,
    "application_url": "https://tax.gov.ae",
    "application_channel": "online",
@@ -1999,10 +1999,10 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://tax.gov.ae",
-   "source_snippet": "A Qualifying Free Zone Person is subject to 0% corporate tax on qualifying income under the UAE corporate tax regime.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://mof.gov.ae/en/public-finance/tax/corporate-tax/",
+   "source_snippet": "0% rate on taxable income up to AED 375,000, with a 9% rate applying to income exceeding that threshold. Qualifying Free Zone Persons benefit from a 0% rate on their qualifying income.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "no-personal-income-tax",
@@ -2045,10 +2045,10 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://tax.gov.ae",
-   "source_snippet": "The UAE does not levy personal income tax on individuals' employment or personal income.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://u.ae/en/information-and-services/finance-and-investment/taxation",
+   "source_snippet": "The UAE does not levy income tax on individuals.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "golden-visa-long-term-residence",
@@ -2063,7 +2063,7 @@
    "amount_max": null,
    "amount_currency": "AED",
    "amount_period": null,
-   "amount_note": "5- or 10-year renewable self-sponsored residence for investors, entrepreneurs, exceptional talents, outstanding students and frontline heroes; includes family sponsorship and no sponsor requirement.",
+   "amount_note": "Renewable 5- or 10-year self-sponsored residence for investors, entrepreneurs, exceptional talents, outstanding students and humanitarian pioneers/frontline heroes; holders can sponsor spouse and children.",
    "is_automatic": false,
    "application_url": "https://icp.gov.ae",
    "application_channel": "online",
@@ -2093,7 +2093,7 @@
     "income_annual_max": null,
     "income_note": "Category-dependent; e.g. property investment of AED 2 million or skilled salary thresholds",
     "requires_children": false,
-    "nationality": "any_resident",
+    "nationality": "any",
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
@@ -2101,8 +2101,8 @@
     "gender": "any"
    },
    "source_url": "https://u.ae/en/information-and-services/visa-and-emirates-id/residence-visas/golden-visa",
-   "source_snippet": "The Golden visa is a long-term residence visa which enables foreign talents to live, work or study in the UAE while enjoying exclusive benefits.",
-   "last_verified_at": "2026-08-12",
+   "source_snippet": "a long-term residence visa which enables foreign talents to live, work or study in the UAE",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -2142,10 +2142,10 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://u.ae/en/information-and-services/visa-and-emirates-id/residence-visas",
-   "source_snippet": "The Green residence for freelancing/self-employment is a 5-year visa that does not require a sponsor or employer.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://u.ae/en/information-and-services/visa-and-emirates-id/Types-of-visas/Investor-visa/Green-visa",
+   "source_snippet": "Green visa for investors - Freelancers and self-employed; a renewable residence visa valid for 5 years",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "retire-in-dubai-visa",
@@ -2160,9 +2160,9 @@
    "amount_max": null,
    "amount_currency": "AED",
    "amount_period": null,
-   "amount_note": "5-year renewable residence for retirees aged 55+ meeting financial criteria (savings, Dubai property, or monthly income thresholds).",
+   "amount_note": "5-year renewable residence for retirees aged 55 or over who meet one of the financial routes (property, savings deposit or retirement income); exact thresholds differ between official pages, so check the GDRFA service page.",
    "is_automatic": false,
-   "application_url": "https://www.retireindubai.com",
+   "application_url": "https://www.gdrfad.gov.ae/en/services/8ea80db0-f43e-11eb-0320-0050569629e8",
    "application_channel": "online",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -2186,10 +2186,10 @@
     ],
     "gender": "any"
    },
-   "source_url": "https://www.retireindubai.com",
-   "source_snippet": "The Retire in Dubai programme offers a 5-year renewable residency visa to retirees aged 55 and over who meet financial criteria.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www.gdrfad.gov.ae/en/services/8ea80db0-f43e-11eb-0320-0050569629e8",
+   "source_snippet": "completed (55) fifty-five Gregorian years of age ... issued for five years, renewable",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "iloe-unemployment-insurance",
@@ -2204,7 +2204,7 @@
    "amount_max": 20000,
    "amount_currency": "AED",
    "amount_period": "monthly",
-   "amount_note": "Pays 60% of average basic salary for up to 3 months per claim; capped at AED 10,000/month (Category A, salary up to AED 16,000, premium AED 5/month) or AED 20,000/month (Category B, premium AED 10/month). Requires 12 consecutive months of subscription; claim within 30 days of job loss.",
+   "amount_note": "Pays 60% of average basic salary over the last 6 months for up to 3 months per claim (max 12 monthly benefits in total); capped at AED 10,000/month (Category A, basic salary up to AED 16,000, premium AED 5+VAT/month) or AED 20,000/month (Category B, above AED 16,000, AED 10+VAT/month). Requires paying premiums for at least 12 consecutive months. Not available to company owners, domestic helpers, temporary workers, under-18s or pensioners.",
    "is_automatic": false,
    "application_url": "https://www.iloe.ae",
    "application_channel": "online",
@@ -2257,8 +2257,8 @@
     "gender": "any"
    },
    "source_url": "https://www.iloe.ae",
-   "source_snippet": "The scheme pays eligible workers up to three months of compensation (60% of basic salary, capped).",
-   "last_verified_at": "2026-08-12",
+   "source_snippet": "Emiratis and Residents working in the federal government and private sectors",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -2304,9 +2304,9 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://u.ae/en/information-and-services/jobs/employment-in-the-private-sector/end-of-service-benefits",
-   "source_snippet": "21 days' basic salary for each year of service for the first five years; 30 days' basic salary for each subsequent year of service.",
-   "last_verified_at": "2026-08-12",
+   "source_url": "https://u.ae/en/information-and-services/jobs/Sector-of-employment/employment-in-the-private-sector/end-of-service-benefits-for-employees-in-the-private-sector",
+   "source_snippet": "The total gratuity shall not exceed the wage of 2 years.",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -2322,7 +2322,7 @@
    "amount_max": null,
    "amount_currency": "AED",
    "amount_period": null,
-   "amount_note": "60 calendar days for female private-sector employees: 45 days at full pay plus 15 days at half pay, from day one of employment; extensions for pregnancy-related illness or a sick/disabled newborn.",
+   "amount_note": "60 calendar days for female private-sector employees: 45 days fully paid plus 15 days half paid; up to 45 further unpaid days with a medical certificate for pregnancy/childbirth complications; 30 extra fully paid days if the baby is sick or disabled.",
    "is_automatic": true,
    "application_url": null,
    "application_channel": "via_employer",
@@ -2353,9 +2353,9 @@
     "admin_areas": [],
     "gender": "female"
    },
-   "source_url": "https://u.ae/en/information-and-services/jobs/employment-in-the-private-sector/types-of-leaves",
-   "source_snippet": "Female employees in the private sector are entitled to 60 calendar days of maternity leave - 45 days at full pay and 15 days at half pay.",
-   "last_verified_at": "2026-08-12",
+   "source_url": "https://u.ae/en/information-and-services/jobs/Sector-of-employment/employment-in-the-private-sector/Types-of-leaves",
+   "source_snippet": "45 days will be fully-paid leave and 15 days will be half-paid leave",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -2402,9 +2402,9 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://u.ae/en/information-and-services/jobs/employment-in-the-private-sector/types-of-leaves",
-   "source_snippet": "Both parents are entitled to 5 working days of paid parental leave within 6 months of the child's birth.",
-   "last_verified_at": "2026-08-12",
+   "source_url": "https://u.ae/en/information-and-services/jobs/Sector-of-employment/employment-in-the-private-sector/Types-of-leaves",
+   "source_snippet": "Employees of the private sector are entitled to a parental leave of 5 working days from the day of the birth of their child to six months. The parental leave is a paid leave.",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -2420,7 +2420,7 @@
    "amount_max": null,
    "amount_currency": "AED",
    "amount_period": null,
-   "amount_note": "After probation and 3 months of service: up to 90 days of sick leave per year - first 15 days full pay, next 30 days half pay, remaining 45 days unpaid.",
+   "amount_note": "Up to 90 days sick leave per year: first 15 days full pay, next 30 days half pay, remaining 45 days unpaid. No paid sick leave during probation.",
    "is_automatic": true,
    "application_url": null,
    "application_channel": "via_employer",
@@ -2450,10 +2450,10 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://u.ae/en/information-and-services/jobs/employment-in-the-private-sector/types-of-leaves",
-   "source_snippet": "Employees are entitled to up to 90 days of sick leave per year: 15 days with full pay, 30 days with half pay and 45 days without pay.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://u.ae/en/information-and-services/jobs/Sector-of-employment/employment-in-the-private-sector/Types-of-leaves",
+   "source_snippet": "Although a worker is not entitled to paid sick leave during the probationary period, the employer may grant unpaid sick leave.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "annual-leave-30-days",
@@ -2468,7 +2468,7 @@
    "amount_max": null,
    "amount_currency": "AED",
    "amount_period": null,
-   "amount_note": "30 calendar days of fully paid annual leave per year of service (2 days per month for 6-12 months of service), under Federal Decree-Law No. 33 of 2021.",
+   "amount_note": "30 days fully paid annual leave after one year of service; 2 days per month of service if under one year.",
    "is_automatic": true,
    "application_url": null,
    "application_channel": "via_employer",
@@ -2498,10 +2498,10 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://u.ae/en/information-and-services/jobs/employment-in-the-private-sector/types-of-leaves",
-   "source_snippet": "Employees are entitled to annual leave of 30 calendar days for each year of service.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://u.ae/en/information-and-services/jobs/Sector-of-employment/employment-in-the-private-sector/Types-of-leaves",
+   "source_snippet": "Employees are entitled to a fully paid annual leave of 30 days, if they have completed one year of service.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "wage-protection-system",
@@ -2655,7 +2655,7 @@
    "amount_max": null,
    "amount_currency": "AED",
    "amount_period": null,
-   "amount_note": "Employers must provide health insurance to employees in Dubai; the Essential Benefits Plan is the DHA-regulated minimum plan (roughly AED 500-800/year) for lower-salaried workers.",
+   "amount_note": "Employers in Dubai must provide health insurance for employees; sponsors must insure their resident dependents. The AED 500-800 EBP premium figure is not published on the official page.",
    "is_automatic": true,
    "application_url": null,
    "application_channel": "via_employer",
@@ -2687,10 +2687,10 @@
     ],
     "gender": "any"
    },
-   "source_url": "https://www.dha.gov.ae",
-   "source_snippet": "Health insurance is mandatory in Dubai: employers must cover employees, and the Essential Benefits Plan sets the minimum cover for lower-income workers.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://u.ae/en/information-and-services/health-and-fitness/getting-a-health-insurance",
+   "source_snippet": "In the emirate of Dubai, employers are required to provide health insurance coverage for their employees. Sponsors are required to get insurance cover for their resident dependents.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "abu-dhabi-mandatory-health-insurance",
@@ -2705,7 +2705,7 @@
    "amount_max": null,
    "amount_currency": "AED",
    "amount_period": null,
-   "amount_note": "Employers and sponsors must provide health insurance in Abu Dhabi; Daman's Basic plan covers lower-income workers at a regulated premium.",
+   "amount_note": "In Abu Dhabi, employers and sponsors must provide health insurance for employees and their families (one spouse and three children under 18). Plan names and premiums are not stated on the official page.",
    "is_automatic": true,
    "application_url": null,
    "application_channel": "via_employer",
@@ -2737,10 +2737,10 @@
     ],
     "gender": "any"
    },
-   "source_url": "https://www.doh.gov.ae",
-   "source_snippet": "Mandatory cover means employers must provide a minimum-standard plan to every employee in Abu Dhabi.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://u.ae/en/information-and-services/health-and-fitness/getting-a-health-insurance",
+   "source_snippet": "In the emirate of Abu Dhabi, employers and sponsors are responsible for the providing health insurance coverage for their employees and their families (1 spouse and 3 children under 18).",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "nol-concession-cards-dubai",
@@ -2755,9 +2755,9 @@
    "amount_max": null,
    "amount_currency": "AED",
    "amount_period": null,
-   "amount_note": "Blue concession nol cards: 50% off metro, tram, bus fares and travel passes for students (5-23) and Emirati seniors (60+); free travel plus one free companion for People of Determination.",
+   "amount_note": "Blue personal nol card: 50% off Dubai metro and bus fares for students aged 5 to 23 enrolled in a UAE school/college/university and for senior Emiratis and residents aged 60+; People of Determination travel free on metro and buses. Concessions valid 1 year, renewable.",
    "is_automatic": false,
-   "application_url": "https://www.rta.ae",
+   "application_url": "https://www.rta.ae/wps/portal/rta/ae/home/rta-services/service-details?serviceId=634",
    "application_channel": "online",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -2793,9 +2793,9 @@
     ],
     "gender": "any"
    },
-   "source_url": "https://www.rta.ae",
-   "source_snippet": "Concession Blue cards exist for students, senior citizens, and people of determination with 50% off all fares; People of Determination travel free.",
-   "last_verified_at": "2026-08-12",
+   "source_url": "https://www.rta.ae/wps/portal/rta/ae/home/rta-services/service-details?serviceId=634",
+   "source_snippet": "students aged 5 to 23 enrolled in a school, college, or university within the UAE; Senior Emiratis and residents aged 60 and above",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -2888,10 +2888,10 @@
     ],
     "gender": "any"
    },
-   "source_url": "https://www.salik.ae",
-   "source_snippet": "People of Determination in Dubai can register one vehicle for exemption from Salik toll gates.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www.rta.ae/wps/portal/rta/ae/home/people-of-determination",
+   "source_snippet": "The People of Determination are entitled of having Salik toll exemption of one vehicle and the exemption us renewed every year.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "free-parking-people-of-determination-dubai",
@@ -2930,10 +2930,10 @@
     ],
     "gender": "any"
    },
-   "source_url": "https://www.rta.ae",
-   "source_snippet": "RTA Dubai issues free parking permits to People of Determination for use of designated public parking spaces.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www.rta.ae/wps/portal/rta/ae/home/people-of-determination",
+   "source_snippet": "free parking for the People of Determination",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "dewa-shams-dubai-solar",
@@ -2950,7 +2950,7 @@
    "amount_period": null,
    "amount_note": "Lets building owners install rooftop solar and offset electricity bills by exporting surplus power to the DEWA grid under net metering.",
    "is_automatic": false,
-   "application_url": "https://www.dewa.gov.ae",
+   "application_url": "https://www.dewa.gov.ae/en/consumer/solar-community/shams-dubai",
    "application_channel": "online",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -2972,10 +2972,10 @@
     ],
     "gender": "any"
    },
-   "source_url": "https://www.dewa.gov.ae",
-   "source_snippet": "Shams Dubai allows customers to install photovoltaic panels and connect them to the DEWA grid, offsetting their electricity bills.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www.dewa.gov.ae/en/consumer/solar-community/shams-dubai",
+   "source_snippet": "The electricity is used on site and the surplus is exported to DEWA's network.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "etihadwe-citizen-utility-tariff",
@@ -3170,7 +3170,7 @@
    "amount_period": null,
    "amount_note": "Privilege card for Dubai senior citizens (60+) offering discounts and priority services through the Thukher social club programme.",
    "is_automatic": false,
-   "application_url": "https://www.cda.gov.ae",
+   "application_url": "https://www.cda.gov.ae/en/services/seniors/issue-thukher-card",
    "application_channel": "online",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -3192,10 +3192,10 @@
     ],
     "gender": "any"
    },
-   "source_url": "https://www.cda.gov.ae",
-   "source_snippet": "CDA's Thukher programme offers Dubai's senior citizens a card with discounts and dedicated services.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www.cda.gov.ae/en/services/seniors/issue-thukher-card",
+   "source_snippet": "Thukher card is an electronic card issued to the seniors of the Emirate of Dubai who are over age of 60 years",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "people-of-determination-card",
@@ -3210,7 +3210,7 @@
    "amount_max": null,
    "amount_currency": "AED",
    "amount_period": null,
-   "amount_note": "Federal card certifying disability status; unlocks discounts and exemptions on transport, parking, telecom and government services across the UAE.",
+   "amount_note": "ID card for people of determination (issued by Ministry of Community Empowerment, with local cards such as Sanad in Dubai) giving facilities in transport and other sectors, including toll exemptions and discounted public transport (varies by emirate).",
    "is_automatic": false,
    "application_url": "https://www.moce.gov.ae",
    "application_channel": "online",
@@ -3243,10 +3243,10 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://u.ae/en/information-and-services/social-affairs/people-with-special-needs",
-   "source_snippet": "The People of Determination card entitles holders to a package of discounts and service privileges across the UAE.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://u.ae/en/information-and-services/social-affairs/Priority-groups/people-of-determination/protection-support-and-assistance-of-people-of-determination",
+   "source_snippet": "The ID card offers many facilities and benefits in transport sector and others",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "emirates-red-crescent-aid",
@@ -3467,9 +3467,9 @@
    "amount_max": null,
    "amount_currency": "AED",
    "amount_period": null,
-   "amount_note": "Discounted fares and extra baggage allowance for students aged 16-31 travelling on Emirates, with a valid student ID or university admission letter.",
+   "amount_note": "Full-time students aged 16 to 31: up to 10% off Economy and up to 5% off Premium Economy/Business with code STUDENT, plus an extra 10kg or 1 extra baggage piece. Requires Emirates Skywards membership and a student ID or school acceptance letter at check-in.",
    "is_automatic": false,
-   "application_url": "https://www.emirates.com",
+   "application_url": "https://www.emirates.com/english/special-offers/student-special-fares/",
    "application_channel": "online",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -3484,17 +3484,17 @@
     "income_annual_max": null,
     "income_note": null,
     "requires_children": false,
-    "nationality": "any_resident",
+    "nationality": "any",
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": true,
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.emirates.com",
-   "source_snippet": "Emirates offers student fares with discounts and additional baggage allowance for eligible students.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www.emirates.com/english/special-offers/student-special-fares/",
+   "source_snippet": "Our offer is for full-time students between 16 and 31 years old.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "isic-student-card-uae",

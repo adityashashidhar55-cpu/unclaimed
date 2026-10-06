@@ -17,7 +17,7 @@
    "amount_max": null,
    "amount_currency": "EUR",
    "amount_period": "monthly",
-   "amount_note": "Amount depends on rent (capped), household size, location (zone) and income over the last 12 months",
+   "amount_note": "Amount depends on rent (capped), household size, location (zone) and income over the last 12 months. Since 1 July 2026 non-EU/EEA students on a study permit qualify only if they receive a social-criteria grant, work, or hold an apprenticeship contract.",
    "is_automatic": false,
    "application_url": "https://www.caf.fr",
    "application_channel": "online",
@@ -71,9 +71,9 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.service-public.fr/particuliers/vosdroits/F12006",
-   "source_snippet": "L'aide personnalisée au logement (APL) permet de réduire le montant de votre loyer ou redevance si vous êtes locataire ou résident en établissement.",
-   "last_verified_at": "2026-08-12",
+   "source_url": "https://www.service-public.gouv.fr/particuliers/vosdroits/F12006",
+   "source_snippet": "vous pouvez bénéficier de l'APL ... à condition d'avoir un titre de séjour en cours de validité",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -89,7 +89,7 @@
    "amount_max": null,
    "amount_currency": "EUR",
    "amount_period": "monthly",
-   "amount_note": "Amount depends on rent, household and income; applies to non-conventionné housing not eligible for APL",
+   "amount_note": "Amount depends on rent, household and income; applies when APL or ALF cannot be claimed. Since 1 July 2026 non-EU/EEA students qualify only if they hold a CROUS social-criteria grant, work, or hold an apprenticeship/professional contract. Savings/property over EUR 30,000 reduce the aid.",
    "is_automatic": false,
    "application_url": "https://www.caf.fr",
    "application_channel": "online",
@@ -133,10 +133,10 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.caf.fr",
-   "source_snippet": "The ALS is the housing allowance paid when the dwelling is not conventionné (not APL-eligible), under household income conditions.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www.service-public.gouv.fr/particuliers/vosdroits/F1280",
+   "source_snippet": "Foreign nationals can access ALS provided they possess un titre de séjour en cours de validité",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "alf-allocation-logement-familiale",
@@ -217,7 +217,7 @@
    "amount_period": "one_off",
    "amount_note": "One-off or short-term aid for deposit, first bills, rent arrears or energy debts; amounts set by each département",
    "is_automatic": false,
-   "application_url": "https://www.service-public.fr",
+   "application_url": "https://www.service-public.gouv.fr/particuliers/vosdroits/F1334",
    "application_channel": "in_person",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -254,8 +254,8 @@
     "statuses": [],
     "age_min": null,
     "age_max": null,
-    "income_annual_max": 10320,
-    "income_note": "Means-tested; no national ceiling - each departement sets its rule in its reglement interieur. E.g. Metropole de Lyon: quotient familial <= EUR 860/month, i.e. ~EUR 10,320/year for a single person (QF x12); other departements often use ~1.5x RSA. Conversion QF monthly per part x 12 documented.",
+    "income_annual_max": null,
+    "income_note": "No national ceiling: each departement sets its own criteria (some require e.g. receipt of the prime d'activite). The earlier EUR 10,320 figure was a single departement example (Metropole de Lyon) and is not a national rule; contact your departement.",
     "requires_children": false,
     "nationality": "any_resident",
     "residency_months_min": null,
@@ -265,10 +265,10 @@
     "gender": "any",
     "rule_source": "geography_unknown"
    },
-   "source_url": "https://www.service-public.fr",
-   "source_snippet": "The FSL, financed by the départements, grants aid for moving in (deposit, first rent) and for staying housed (rent or energy arrears).",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www.service-public.gouv.fr/particuliers/vosdroits/F1334",
+   "source_snippet": "Chaque FSL a ses propres critères d'attribution.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "visale-garantie-locative",
@@ -285,7 +285,7 @@
    "amount_period": "one_off",
    "amount_note": "Free guarantee covering up to 36 months of unpaid rent and charges (advance recovered from the tenant); rent caps apply (higher in Île-de-France)",
    "is_automatic": false,
-   "application_url": "https://www.visale.fr",
+   "application_url": "https://www.visale.fr/",
    "application_channel": "online",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -339,9 +339,9 @@
     "income_source_url": "https://www.actionlogement.fr/actualites/nouvelles-conditions-visale-locataires",
     "income_confidence": "high"
    },
-   "source_url": "https://www.visale.fr",
-   "source_snippet": "La garantie Visale est la caution gratuite d'Action Logement : elle couvre les loyers et charges impayés du locataire.",
-   "last_verified_at": "2026-08-12",
+   "source_url": "https://www.visale.fr/visale-pour-les-locataires/eligibilite/",
+   "source_snippet": "J'ai entre 18 et 30 ans ... Gagnant jusqu'à 1710€ nets/mois",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified",
    "income_reviewed_at": "2026-08-13"
   },
@@ -355,12 +355,12 @@
    "category": "housing",
    "benefit_type": "cash_one_off",
    "amount_min": null,
-   "amount_max": null,
+   "amount_max": 1200,
    "amount_currency": "EUR",
    "amount_period": "one_off",
-   "amount_note": "Interest-free loan covering the security deposit (dépôt de garantie), repayable in instalments (ceiling published by Action Logement, historically up to 1 200 €)",
+   "amount_note": "Interest-free (0%) loan covering the security deposit, capped at EUR 1,200, repaid within 25 months maximum (min EUR 20/month, starting 3 months after payout).",
    "is_automatic": false,
-   "application_url": "https://www.actionlogement.fr",
+   "application_url": "https://www.actionlogement.fr/l-avance-loca-pass",
    "application_channel": "online",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -390,13 +390,14 @@
    ],
    "eligibility": {
     "statuses": [
+     "employee",
      "student",
-     "employee"
+     "jobseeker"
     ],
     "age_min": null,
-    "age_max": 30,
+    "age_max": null,
     "income_annual_max": null,
-    "income_note": "Mainly under-30s (students, young workers) and private-sector employees; conditions updated on actionlogement.fr",
+    "income_note": "Eligible: private-sector non-agricultural employees of any age; under-30s in work, apprenticeship or job search; working students (3-month contract, or State grant holders). Must be the main residence in France.",
     "requires_children": false,
     "nationality": "any_resident",
     "residency_months_min": null,
@@ -405,10 +406,10 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.actionlogement.fr",
-   "source_snippet": "Action Logement lends the security deposit interest-free to eligible tenants moving into the private rental stock.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www.actionlogement.fr/l-avance-loca-pass",
+   "source_snippet": "le financement du dépôt de garantie ne pourra excéder 1 200 €",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "mobili-pass-action-logement",
@@ -493,7 +494,7 @@
    "application_url": "https://www.messervices.etudiant.gouv.fr",
    "application_channel": "online",
    "deadline_type": "window",
-   "deadline_note": "Annual application window via the Dossier Social Étudiant (DSE), typically March–May; later allocations from waiting lists",
+   "deadline_note": "Annual Dossier Social Etudiant (DSE): 1 March to 31 May 2026 (cycle repeats each year); students coming from abroad apply from 7 July 2026 on trouverunlogement.lescrous.fr",
    "procedure_steps": [
     {
      "step": 1,
@@ -530,7 +531,7 @@
     "age_min": null,
     "age_max": null,
     "income_annual_max": null,
-    "income_note": "Students enrolled in higher education; priority by social criteria (grant level, distance from home)",
+    "income_note": "Priority to students whose families have low resources. Most international students cannot file a DSE and use the complementary phase on trouverunlogement.lescrous.fr.",
     "requires_children": false,
     "nationality": "any_resident",
     "residency_months_min": null,
@@ -539,10 +540,10 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.etudiant.gouv.fr",
-   "source_snippet": "CROUS residences offer students subsidised accommodation allocated on social criteria via the annual Dossier Social Étudiant.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www.service-public.gouv.fr/particuliers/vosdroits/F31912",
+   "source_snippet": "Du 1er mars au 31 mai 2026, vous devez remplir votre dossier social étudiant (DSE) et cocher la case « Je demande un logement ».",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "rsa-revenu-solidarite-active",
@@ -554,10 +555,10 @@
    "category": "income_support",
    "benefit_type": "cash_monthly",
    "amount_min": null,
-   "amount_max": 646.52,
+   "amount_max": 651.69,
    "amount_currency": "EUR",
    "amount_period": "monthly",
-   "amount_note": "Forfait amount for a single person without resources from 1 April 2025 (646,52 €/month); reduced by any resources and by the housing forfait; higher amounts for couples/children",
+   "amount_note": "Montant forfaitaire for a single person: EUR 651.69/month; couple EUR 977.54 (1 child 1,173.05; 2 children 1,368.55; +260.68 per extra child). Reduced by other resources and housing forfait.",
    "is_automatic": false,
    "application_url": "https://www.caf.fr",
    "application_channel": "online",
@@ -601,19 +602,19 @@
     "statuses": [],
     "age_min": 25,
     "age_max": null,
-    "income_annual_max": 7758,
-    "income_note": "Differential benefit: household resources must stay below the forfait. 2025 forfait EUR 646.52/month single => EUR 7,758/year; couple EUR 969.78/month (~EUR 11,637/yr); forfait logement deducted if housing aid received.",
+    "income_annual_max": 7820,
+    "income_note": "Differential benefit: resources (3-month average before application) must stay below the forfait. Single EUR 651.69/month x 12 = EUR 7,820/year; couple EUR 977.54/month = EUR 11,730/year.",
     "requires_children": false,
-    "nationality": "any_resident",
-    "residency_months_min": null,
+    "nationality": "citizen_or_pr",
+    "residency_months_min": 60,
     "housing_tenure": null,
     "student_required": false,
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.service-public.fr/particuliers/vosdroits/N19775",
-   "source_snippet": "Le montant forfaitaire du RSA pour une personne seule sans enfant passera à 646,52 € (au 1er avril 2025).",
-   "last_verified_at": "2026-08-12",
+   "source_url": "https://www.service-public.gouv.fr/particuliers/vosdroits/F19778",
+   "source_snippet": "Avoir depuis au moins 5 ans un titre de séjour permettant de travailler en France (cette condition n'est pas applicable aux personnes de nationalité algérienne)",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -629,7 +630,7 @@
    "amount_max": null,
    "amount_currency": "EUR",
    "amount_period": "monthly",
-   "amount_note": "Top-up for low-paid workers; computed from a forfait amount (633,21 € for a single person, April 2025) minus resources plus a bonus; indicative ceiling about 2 000 €/month salary for a single person",
+   "amount_note": "Base forfait for a single person EUR 638.28/month (formula: forfait + share of work income + bonus - household resources); payment starts from the 1st of the application month; minimum payout EUR 15.",
    "is_automatic": false,
    "application_url": "https://www.caf.fr",
    "application_channel": "online",
@@ -669,7 +670,7 @@
     "income_annual_max": 24000,
     "income_note": "No fixed official ceiling: formula-based (montant forfaitaire EUR 638.28/month single since Apr 2025 + 59.85% of work income + bonus - household resources - forfait logement). Approximate exit threshold ~EUR 2,000 net/month for a single wage-earner (~EUR 24,000/year) and ~EUR 3,450/month for a couple with 2 children and one earner (economie.gouv.fr).",
     "requires_children": false,
-    "nationality": "any_resident",
+    "nationality": "citizen_or_pr",
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
@@ -677,8 +678,8 @@
     "gender": "any"
    },
    "source_url": "https://www.service-public.fr/particuliers/vosdroits/F2882",
-   "source_snippet": "Le montant forfaitaire 2025-2026 est de 633,21 € (personne seule) ; montant moyen versé fin 2024 : 199 € par mois.",
-   "last_verified_at": "2026-08-12",
+   "source_snippet": "Non-EU: must have held a work permit for at least 5 years, or be an isolated parent with a child under 3, or hold a resident card, refugee status or subsidiary protection",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -813,18 +814,18 @@
     "age_min": 65,
     "age_max": null,
     "income_annual_max": 12523,
-    "income_note": "2026: annual resource ceiling EUR 12,523.14 single / EUR 19,442.21 couple (Jan 2026); differential benefit up to that level.",
+    "income_note": "2026: annual resource ceiling EUR 12,523.14 single / EUR 19,442.21 couple. Foreigners (non-EEA) need 10 continuous years of a work-permitting residence permit, or refugee / stateless / subsidiary protection status. Stable residence: more than 9 months in France in the payment year.",
     "requires_children": false,
-    "nationality": "any_resident",
-    "residency_months_min": 9,
+    "nationality": "citizen_or_pr",
+    "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
     "admin_areas": [],
     "gender": "any"
    },
    "source_url": "https://www.service-public.fr/particuliers/vosdroits/F16871",
-   "source_snippet": "En 2026, le montant mensuel maximum de l'ASPA est de 1 043,59 euros pour une personne seule et 1 620,18 euros pour un couple.",
-   "last_verified_at": "2026-08-12",
+   "source_snippet": "Avoir de façon continue depuis au moins 10 ans un titre de séjour autorisant à travailler",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -840,7 +841,7 @@
    "amount_max": null,
    "amount_currency": "EUR",
    "amount_period": "monthly",
-   "amount_note": "Differential allowance topping up a disability pension below the minimum level; same maximum amounts as ASPA but for people below retirement age; recoverable on estate",
+   "amount_note": "Differential: EUR 922.17 minus monthly resources (single); max EUR 583.86/month where it tops up the minimum invalidity pension of EUR 338.31. Recoverable on estate.",
    "is_automatic": false,
    "application_url": "https://www.service-public.fr/particuliers/vosdroits/F16940",
    "application_channel": "post",
@@ -874,10 +875,10 @@
     "statuses": [],
     "age_min": null,
     "age_max": null,
-    "income_annual_max": 10978,
-    "income_note": "Monthly resource ceiling EUR 914.85 single (April 2025) => EUR 10,978/year; couple EUR 1,601/month => EUR 19,212/year.",
+    "income_annual_max": 11066,
+    "income_note": "Monthly resource ceiling EUR 922.17 single (EUR 11,066/year); couple EUR 1,542.84/month (EUR 18,514/year). Not available once the Aspa age is reached.",
     "requires_children": false,
-    "nationality": "any_resident",
+    "nationality": "citizen_or_pr",
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
@@ -885,8 +886,8 @@
     "gender": "any"
    },
    "source_url": "https://www.service-public.fr/particuliers/vosdroits/F16940",
-   "source_snippet": "The ASI guarantees a minimum resource level to people receiving a disability pension and not yet entitled to the ASPA.",
-   "last_verified_at": "2026-08-12",
+   "source_snippet": "Vos revenus ne doivent pas dépasser 922,17 € par mois.",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -902,7 +903,7 @@
    "amount_max": null,
    "amount_currency": "EUR",
    "amount_period": "monthly",
-   "amount_note": "Daily allowance paid per month after exhaustion of ARE rights; amount revalued periodically (about 19 €/day in 2025); renewable every 6 months under conditions",
+   "amount_note": "EUR 19.48/day (EUR 584.40 per 30-day month); renewable under conditions; reduced rate possible.",
    "is_automatic": false,
    "application_url": "https://www.francetravail.fr",
    "application_channel": "online",
@@ -944,8 +945,8 @@
     ],
     "age_min": null,
     "age_max": null,
-    "income_annual_max": 16237,
-    "income_note": "Monthly resources must be below EUR 1,353.10 single / EUR 2,126.30 couple (April 2025) => EUR 16,237/year single. ASS itself: EUR 19.33/day (EUR 579.90/month).",
+    "income_annual_max": 16363,
+    "income_note": "Monthly resources must not exceed EUR 1,363.60 single (EUR 16,363/year) or EUR 2,142.80 couple. Must have worked 5 years in the 10 before the last contract and exhausted ARE rights.",
     "requires_children": false,
     "nationality": "any_resident",
     "residency_months_min": null,
@@ -955,8 +956,8 @@
     "gender": "any"
    },
    "source_url": "https://www.service-public.fr/particuliers/vosdroits/F12484",
-   "source_snippet": "The ASS is paid to jobseekers with a substantial work history whose unemployment insurance rights are exhausted, under a resource ceiling.",
-   "last_verified_at": "2026-08-12",
+   "source_snippet": "Son montant journalier est de 19,48 € (584,40 € pour 1 mois de 30 jours).",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -977,7 +978,7 @@
    "application_url": "https://www.service-public.fr/particuliers/vosdroits/F32700",
    "application_channel": "in_person",
    "deadline_type": "rolling",
-   "deadline_note": null,
+   "deadline_note": "Ended: replaced by the Contrat d'engagement jeune (CEJ) - ages 16-25 (to 29 if disabled), allowance up to EUR 566.17/month (EUR 339.70 if tax household taxable; EUR 226.48 for minors); not for students or people in training.",
    "procedure_steps": [
     {
      "step": 1,
@@ -1026,8 +1027,8 @@
    },
    "source_url": "https://www.service-public.fr/particuliers/vosdroits/F32700",
    "source_snippet": "La Garantie jeunes combines a monthly allowance with an intensive personalised pathway for NEET young people in hardship.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "aide-juridictionnelle",
@@ -1097,8 +1098,8 @@
     "gender": "any"
    },
    "source_url": "https://www.service-public.fr/particuliers/vosdroits/F18074",
-   "source_snippet": "Pour une personne seule, le RFR doit être inférieur ou égal à 12 957 € pour bénéficier d'une prise en charge totale (100 %) en 2026.",
-   "last_verified_at": "2026-08-12",
+   "source_snippet": "Revenu fiscal de référence : 12 957 € ... 55 % entre 12 958 € et 15 316 € ; 25 % entre 15 317 € et 19 433 €",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -1110,11 +1111,11 @@
    "funder": "Caisse d'allocations familiales (CAF) / MSA",
    "category": "family",
    "benefit_type": "cash_monthly",
-   "amount_min": 38.06,
-   "amount_max": 542.38,
+   "amount_min": 38.07,
+   "amount_max": 542.39,
    "amount_currency": "EUR",
    "amount_period": "monthly",
-   "amount_note": "152,25 €/month for 2 children, 347,32 € for 3, 542,38 € for 4 (full rate, April 2026); amount modulated by income (100 % / 50 % / 25 %); age supplements from 18 for newer claims",
+   "amount_note": "2 children: EUR 152.25 (full rate), 76.13, 38.07; 3 children: 347.32 / 173.67 / 86.83; 4 children: 542.39 / 271.20 / 135.60, plus age-14 supplements (EUR 76.13/38.07/19.03).",
    "is_automatic": true,
    "application_url": "https://www.caf.fr",
    "application_channel": "automatic",
@@ -1162,8 +1163,8 @@
     "gender": "any"
    },
    "source_url": "https://www.service-public.fr/particuliers/vosdroits/F13213",
-   "source_snippet": "En 2026, le montant de base s'élève à 152,25 € par mois pour deux enfants et atteint 347,32 € pour trois enfants.",
-   "last_verified_at": "2026-08-12",
+   "source_snippet": "2 enfants : 79 980 € ou moins = 152,25 € ; 3 enfants : 347,32 € ; 4 enfants : 542,39 €",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -1175,11 +1176,11 @@
    "funder": "Caisse d'allocations familiales (CAF) / MSA",
    "category": "family",
    "benefit_type": "cash_monthly",
-   "amount_min": null,
-   "amount_max": null,
+   "amount_min": 198.16,
+   "amount_max": 297.27,
    "amount_currency": "EUR",
    "amount_period": "monthly",
-   "amount_note": "Monthly supplement (standard amount ~200 €, increased ~300 € for the lowest incomes, revalued annually) for families with 3+ children aged 3-20 under an income ceiling",
+   "amount_note": "Standard EUR 198.16/month and increased EUR 297.27/month for the lowest incomes (families with 3+ children all aged 3 to under 21).",
    "is_automatic": false,
    "application_url": "https://www.caf.fr",
    "application_channel": "online",
@@ -1205,8 +1206,8 @@
     ],
     "age_min": null,
     "age_max": null,
-    "income_annual_max": 53758,
-    "income_note": "2025 ceilings (2023 income), couple with 2 incomes or single parent, 3 children: full CF (EUR 294.91/month) if resources <= EUR 26,883/year; reduced CF (EUR 196.60/month) up to EUR 53,758/year. One-income couples: EUR 21,977 / EUR 43,946.",
+    "income_annual_max": 54724,
+    "income_note": "Ceilings, 3 children: couple one income EUR 44,735; couple two incomes or isolated parent EUR 54,724; 4 children EUR 62,180 (two incomes); +EUR 7,456 per extra child. Increased rate up to EUR 27,367 (3 children, two incomes/isolated).",
     "requires_children": true,
     "nationality": "any_resident",
     "residency_months_min": null,
@@ -1216,8 +1217,8 @@
     "gender": "any"
    },
    "source_url": "https://www.service-public.fr/particuliers/vosdroits/F13214",
-   "source_snippet": "Le complément familial est versé au(x) parent(s) qui ont plus de trois enfants à charge, âgés entre 3 et 21 ans, sous condition de ressources.",
-   "last_verified_at": "2026-08-12",
+   "source_snippet": "Vous devez avoir au moins 3 enfants à charge, tous âgés de plus de 3 ans et de moins de 21 ans.",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -1229,11 +1230,11 @@
    "funder": "Caisse d'allocations familiales (CAF) / MSA",
    "category": "family",
    "benefit_type": "cash_monthly",
-   "amount_min": null,
-   "amount_max": null,
+   "amount_min": 200.78,
+   "amount_max": 267.63,
    "amount_currency": "EUR",
    "amount_period": "monthly",
-   "amount_note": "Fixed monthly amount per orphan child or child whose parent does not pay maintenance (revalued annually; about 200 €/month); no income condition",
+   "amount_note": "EUR 200.78/month per child for separated parents (differential: 200.78 minus maintenance received); EUR 267.63/month per child for a child taken in; revalued 1 April.",
    "is_automatic": false,
    "application_url": "https://www.caf.fr",
    "application_channel": "online",
@@ -1269,10 +1270,10 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.service-public.fr/particuliers/vosdroits/F13228",
-   "source_snippet": "The ASF supports people raising a child deprived of one or both parents' support, without income condition.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www.service-public.gouv.fr/particuliers/vosdroits/F815",
+   "source_snippet": "Le montant de l'ASF s'élève à 200,78 € par mois et par enfant.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "ars-allocation-rentree-scolaire",
@@ -1292,7 +1293,7 @@
    "application_url": "https://www.caf.fr",
    "application_channel": "automatic",
    "deadline_type": "annual",
-   "deadline_note": "Paid automatically in August to existing CAF recipients; non-recipients must apply",
+   "deadline_note": "Paid automatically from 18 August 2026 (4 August in La Reunion) to existing CAF recipients; others must apply.",
    "procedure_steps": [
     {
      "step": 1,
@@ -1328,9 +1329,9 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.service-public.fr/particuliers/vosdroits/F1878",
-   "source_snippet": "Pour la rentrée 2026 : 6 à 10 ans : 426,87 € ; 11 à 14 ans : 450,41 € ; 15 à 18 ans : 466,02 €.",
-   "last_verified_at": "2026-08-12",
+   "source_url": "https://www.service-public.gouv.fr/particuliers/vosdroits/F1878",
+   "source_snippet": "Pour la rentrée scolaire 2026, l'ARS est versée à partir du 18 août 2026.",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -1342,11 +1343,11 @@
    "funder": "Caisse d'allocations familiales (CAF) / MSA",
    "category": "family",
    "benefit_type": "cash_monthly",
-   "amount_min": null,
-   "amount_max": null,
+   "amount_min": 99.08,
+   "amount_max": 198.16,
    "amount_currency": "EUR",
    "amount_period": "monthly",
-   "amount_note": "Monthly allowance from birth to age 3 (full rate about 190 €/month, half-rate above an income band, revalued annually) under income ceilings",
+   "amount_note": "Full rate EUR 198.16/month, half rate EUR 99.08/month, under income ceilings; revalued annually.",
    "is_automatic": false,
    "application_url": "https://www.caf.fr",
    "application_channel": "online",
@@ -1387,9 +1388,9 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.caf.fr",
-   "source_snippet": "The Paje basic allowance helps with the upkeep and education costs of a child under 3, under income conditions.",
-   "last_verified_at": "2026-08-12",
+   "source_url": "https://www.service-public.gouv.fr/particuliers/vosdroits/F2552",
+   "source_snippet": "1 enfant | Moins de 31 066 € | 198,16 € | Entre 31 066 € et 37 118 € | 99,08 €",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -1401,16 +1402,16 @@
    "funder": "Caisse d'allocations familiales (CAF) / MSA",
    "category": "family",
    "benefit_type": "cash_one_off",
-   "amount_min": null,
-   "amount_max": null,
+   "amount_min": 1093.11,
+   "amount_max": 1093.11,
    "amount_currency": "EUR",
    "amount_period": "one_off",
-   "amount_note": "One-off grant paid around the 7th month of pregnancy for each child born (about 1 000 €, revalued annually) under income ceilings",
+   "amount_note": "EUR 1,093.11 per child, paid before the end of the calendar month following the 6th month of pregnancy, under income ceilings.",
    "is_automatic": true,
    "application_url": "https://www.caf.fr",
    "application_channel": "automatic",
    "deadline_type": "window",
-   "deadline_note": "Declare the pregnancy to the CAF before the 14th week",
+   "deadline_note": "Declare the pregnancy before the end of the 3rd month",
    "procedure_steps": [
     {
      "step": 1,
@@ -1437,7 +1438,7 @@
     "age_min": null,
     "age_max": null,
     "income_annual_max": 48186,
-    "income_note": "2026 (2024 income), 1 child: EUR 48,186 for a 2-income couple or single parent; EUR 36,461 for a 1-income couple; +EUR 8,751 per additional child (caf.fr barème).",
+    "income_note": "2026 (2024 net category income), 1 child: EUR 49,054 two-income couple or isolated parent; EUR 37,118 one-income couple; +EUR 8,908 per additional child.",
     "requires_children": true,
     "nationality": "any_resident",
     "residency_months_min": null,
@@ -1446,9 +1447,9 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.caf.fr",
-   "source_snippet": "The birth grant is a one-off Paje payment for each child expected, subject to the household income ceiling.",
-   "last_verified_at": "2026-08-12",
+   "source_url": "https://www.service-public.gouv.fr/particuliers/vosdroits/F2550",
+   "source_snippet": "Montant : 1 093,11 €",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -1530,11 +1531,11 @@
    "funder": "Caisse d'allocations familiales (CAF) / MSA",
    "category": "family",
    "benefit_type": "cash_monthly",
-   "amount_min": null,
-   "amount_max": null,
+   "amount_min": 171.42,
+   "amount_max": 459.7,
    "amount_currency": "EUR",
    "amount_period": "monthly",
-   "amount_note": "Monthly benefit during parental leave after a birth/adoption (full rate about 400 €, partial rates if working part-time; increased rate for single parents), duration depends on birth rank",
+   "amount_note": "Full interruption EUR 459.70/month; part-time up to 50% EUR 297.17; 50-80% EUR 171.42; increased PreParE majoree for some cases.",
    "is_automatic": false,
    "application_url": "https://www.caf.fr",
    "application_channel": "online",
@@ -1575,10 +1576,10 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.caf.fr",
-   "source_snippet": "The PreParE compensates a parent who stops or reduces work to raise a young child, shareable between both parents.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www.service-public.gouv.fr/particuliers/vosdroits/F32485",
+   "source_snippet": "Activité totalement interrompue | 459,70 €",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "aeeh-allocation-education-enfant-handicape",
@@ -1589,11 +1590,11 @@
    "funder": "CAF / MSA (on MDPH decision)",
    "category": "family",
    "benefit_type": "cash_monthly",
-   "amount_min": null,
+   "amount_min": 153.01,
    "amount_max": null,
    "amount_currency": "EUR",
    "amount_period": "monthly",
-   "amount_note": "Base amount about 150 €/month plus supplements in 6 categories according to the level of expense/support needed; up to age 20",
+   "amount_note": "Base amount EUR 153.01/month plus a supplement in 6 categories according to disability-related costs; up to age 20.",
    "is_automatic": false,
    "application_url": "https://www.caf.fr",
    "application_channel": "post",
@@ -1648,8 +1649,8 @@
     "income_confidence": "high"
    },
    "source_url": "https://www.service-public.fr/particuliers/vosdroits/F14809",
-   "source_snippet": "The AEEH compensates the extra costs of educating a child under 20 with a disability recognised by the MDPH.",
-   "last_verified_at": "2026-08-12",
+   "source_snippet": "Le montant de l'AEEH est de 153,01 €.",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified",
    "income_reviewed_at": "2026-08-13"
   },
@@ -1766,18 +1767,18 @@
     "age_min": null,
     "age_max": null,
     "income_annual_max": 10421,
-    "income_note": "Free C2S up to EUR 10,421/year single (metropole, April 2026); with participation (< EUR 1/day/person) between EUR 10,421 and EUR 14,069; +EUR 4,169 per extra member (service-public A17326).",
+    "income_note": "Free C2S up to EUR 10,421/year single, with participation between EUR 10,421 and EUR 14,069; 2 people EUR 15,632/21,103; +EUR 4,169 per extra member (free) . Foreigners need a valid residence permit and more than 3 months of uninterrupted residence. Participation EUR 8/month (age 29 and under) to EUR 30 (70+).",
     "requires_children": false,
     "nationality": "any_resident",
-    "residency_months_min": null,
+    "residency_months_min": 3,
     "housing_tenure": null,
     "student_required": false,
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.ameli.fr",
-   "source_snippet": "Au 1er avril 2026 : 10 421 € de ressources annuelles pour la C2S gratuite, 14 069 € pour la version avec participation, soit 8 € par mois maximum avant 29 ans.",
-   "last_verified_at": "2026-08-12",
+   "source_url": "https://www.service-public.gouv.fr/particuliers/vosdroits/F10027",
+   "source_snippet": "Avoir un titre de séjour valide pour séjourner en France ; Résider en France de manière ininterrompue depuis plus de 3 mois.",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -1793,7 +1794,7 @@
    "amount_max": null,
    "amount_currency": "EUR",
    "amount_period": "monthly",
-   "amount_note": "Funds a personalised care plan at home or in a care home for dependent people 60+; beneficiary contribution from 0 % (income below ~934 €/month) to 90 % according to income",
+   "amount_note": "Funds a personalised care plan; beneficiary contribution 0% up to EUR 933.89/month income, rising progressively to 90% at EUR 3,439.31/month and above.",
    "is_automatic": false,
    "application_url": "https://www.pour-les-personnes-agees.gouv.fr",
    "application_channel": "in_person",
@@ -1845,10 +1846,10 @@
     "gender": "any",
     "rule_source": "geography_unknown"
    },
-   "source_url": "https://www.pour-les-personnes-agees.gouv.fr",
-   "source_snippet": "The APA funds the care plan of dependent people aged 60+, at home or in an establishment, with an income-based participation.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www.service-public.gouv.fr/particuliers/vosdroits/F10009",
+   "source_snippet": "Seule la personne classée en Gir 1, Gir 2, Gir 3 ou Gir 4 peut obtenir l'Apa. Si vous êtes étranger, vous devez avoir une carte de résident ou un titre de séjour.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "pch-prestation-compensation-handicap",
@@ -1901,12 +1902,12 @@
    "eligibility": {
     "statuses": [],
     "age_min": null,
-    "age_max": null,
+    "age_max": 59,
     "income_annual_max": 31162.62,
-    "income_note": "PCH is awarded without a means test, but resources set the coverage rate: annual resources (revenu fiscal de référence) up to €31,162.62 give 100% coverage, above that 80% coverage — so this is a taper boundary, not a cut-off. Verified on the page dated 1 July 2026.",
+    "income_note": "No means test, but resources set the rate: EUR 31,162.62/year or less => 100% coverage, above => 80%. Under 60 (or already eligible before 60, or still working). Foreigners: valid residence permit and 3 months residence (not required for students/trainees).",
     "requires_children": false,
     "nationality": "any_resident",
-    "residency_months_min": null,
+    "residency_months_min": 3,
     "housing_tenure": null,
     "student_required": false,
     "admin_areas": [],
@@ -1916,8 +1917,8 @@
     "income_confidence": "high"
    },
    "source_url": "https://www.service-public.fr/particuliers/vosdroits/F14202",
-   "source_snippet": "The PCH funds human assistance, technical aids and adaptations so that disabled people can live autonomously.",
-   "last_verified_at": "2026-08-12",
+   "source_snippet": "vos dépenses sont prises en charge à 100 % de leur tarif si vos ressources annuelles sont inférieures ou égales à 31 162,62 €, ou 80 % si elles sont supérieures.",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified",
    "income_reviewed_at": "2026-08-13"
   },
@@ -2095,9 +2096,9 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.chequeenergie.gouv.fr",
-   "source_snippet": "Le montant du chèque énergie est compris entre 48 euros et 277 euros par an ; RFR par unité de consommation inférieur à 11 000 euros.",
-   "last_verified_at": "2026-08-12",
+   "source_url": "https://www.service-public.gouv.fr/particuliers/vosdroits/actualites/A17885",
+   "source_snippet": "Le montant des chèques énergie varie de 48 à 277 €, en fonction des revenus et de la composition du foyer fiscal.",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -2185,7 +2186,7 @@
    "amount_max": null,
    "amount_currency": "EUR",
    "amount_period": "one_off",
-   "amount_note": "Bonuses paid by energy suppliers for insulation/heating works (e.g. 'coup de pouce chauffage' and 'coup de pouce isolation'); amount depends on the operation and income; cumulable with MaPrimeRénov'",
+   "amount_note": "Bonuses paid by energy suppliers for heating/insulation works; minimum premium amounts of the former Coup de pouce charters no longer apply to operations engaged from 1 January 2026.",
    "is_automatic": false,
    "application_url": "https://france-renov.gouv.fr",
    "application_channel": "online",
@@ -2234,30 +2235,30 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.ecologie.gouv.fr",
-   "source_snippet": "Under the CEE scheme, energy suppliers must finance bonuses ('coup de pouce') for households carrying out eligible energy-saving works.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://france-renov.gouv.fr/aides/cee",
+   "source_snippet": "Les montants minimaux de primes des anciennes chartes Coup de pouce ne sont plus applicables pour les opérations engagées à compter du 1er janvier 2026.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "cheque-energie-paris",
-   "name_local": "Chèque énergie de la Ville de Paris",
-   "name_en": "Paris City Energy Cheque",
+   "name_local": "Paris Énergie Familles (aide énergie de la Ville de Paris)",
+   "name_en": "Paris Family Energy Aid (Paris Énergie Familles)",
    "admin_level": "city",
    "admin_area": "Paris",
    "funder": "Ville de Paris",
    "category": "energy",
    "benefit_type": "cash_one_off",
-   "amount_min": null,
-   "amount_max": null,
+   "amount_min": 138,
+   "amount_max": 275,
    "amount_currency": "EUR",
    "amount_period": "annual",
-   "amount_note": "Municipal top-up to the national chèque énergie for low-income Parisian households (CAF recipients meeting the city's criteria); amount and rules set by the City",
+   "amount_note": "138 EUR/year for families with 1 child (monthly income <= 2,000 EUR) or 2 children (<= 2,500 EUR); 275 EUR/year for 3+ children or 1 disabled child (<= 5,000 EUR). Granted for 1 year, paid to the energy supplier. Not cumulable with FSL énergie préventif. Replaces the previously listed 'chèque énergie top-up' (no such scheme found on paris.fr).",
    "is_automatic": false,
-   "application_url": "https://www.paris.fr",
+   "application_url": "https://www.paris.fr/pages/aides-au-logement-3827",
    "application_channel": "online",
-   "deadline_type": "annual",
-   "deadline_note": "Distributed according to the City's annual calendar; check paris.fr",
+   "deadline_type": "rolling",
+   "deadline_note": "Aid granted for 1 year; apply or renew with the form at your Maison des Solidarités (supporting documents within 2 months of filing)",
    "procedure_steps": [
     {
      "step": 1,
@@ -2281,11 +2282,11 @@
     "statuses": [],
     "age_min": null,
     "age_max": null,
-    "income_annual_max": 11000,
-    "income_note": "Reserved to Parisian households already receiving the national cheque energie, i.e. RFR < EUR 11,000 per UC (EUR 11,000/year single, EUR 16,500 couple).",
-    "requires_children": false,
+    "income_annual_max": 60000,
+    "income_note": "Published as monthly declared income ceilings by family size: <=2,000 EUR (1 child), <=2,500 EUR (2 children), <=5,000 EUR (3+ children or 1 disabled child). Annualised x12: 24,000 / 30,000 / 60,000 EUR; the figure stored is the highest (60,000).",
+    "requires_children": true,
     "nationality": "any_resident",
-    "residency_months_min": null,
+    "residency_months_min": 36,
     "housing_tenure": null,
     "student_required": false,
     "admin_areas": [
@@ -2293,10 +2294,10 @@
     ],
     "gender": "any"
    },
-   "source_url": "https://www.paris.fr",
+   "source_url": "https://www.paris.fr/pages/aides-au-logement-3827",
    "source_snippet": "The City of Paris pays a supplementary energy cheque to modest-income households to help pay energy bills.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "bourse-crous-criteres-sociaux",
@@ -2307,16 +2308,16 @@
    "funder": "État (ministère de l'Enseignement supérieur) via CROUS",
    "category": "education",
    "benefit_type": "cash_monthly",
-   "amount_min": null,
-   "amount_max": null,
+   "amount_min": 1454,
+   "amount_max": 6335,
    "amount_currency": "EUR",
    "amount_period": "annual",
    "amount_note": "1 454 € to 6 335 € per year (2025-2026 and 2026-2027, paid over 10 months; up to 7 602 € with summer maintenance) over 8 levels (0 bis to 7); also gives exemption from tuition fees and CVEC",
    "is_automatic": false,
-   "application_url": "https://www.messervices.etudiant.gouv.fr",
+   "application_url": "https://www.messervices.etudiant.gouv.fr/envole/",
    "application_channel": "online",
    "deadline_type": "annual",
-   "deadline_note": "Dossier Social Étudiant (DSE) to file typically from March to 31 May for the following academic year; late files until end of December",
+   "deadline_note": "DSE campaign for 2026-27 ran 2 March to 31 May 2026; files can still be submitted after 31 May until 31 December (via messervices.etudiant.gouv.fr)",
    "procedure_steps": [
     {
      "step": 1,
@@ -2353,18 +2354,18 @@
     "age_min": null,
     "age_max": 28,
     "income_annual_max": 33100,
-    "income_note": "Eligibility via points de charge: maximum revenu brut global (N-2) ~EUR 33,100/year with 0 charge point, rising to ~EUR 51,100 at 5 points (2025-2026 arrete); annual grant EUR 1,454 to EUR 6,335.",
+    "income_note": "Income ceilings are set each year by arrêté (published JO 10 April 2026) by points de charge; previously stored ~EUR 33,100 (0 charge point) not re-verified on official page.",
     "requires_children": false,
-    "nationality": "any_resident",
-    "residency_months_min": null,
+    "nationality": "citizen_or_pr",
+    "residency_months_min": 24,
     "housing_tenure": null,
     "student_required": true,
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.etudiant.gouv.fr",
+   "source_url": "https://www.etudiant.gouv.fr/fr/bourse-sur-criteres-sociaux-quels-montants-2986",
    "source_snippet": "Pour l'année universitaire 2026-2027, les montants s'échelonnent entre 1 454 € et 6 335 € par an (jusqu'à 7 602 € en cas de maintien de la bourse l'été).",
-   "last_verified_at": "2026-08-12",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -2375,17 +2376,17 @@
    "admin_area": null,
    "funder": "État via CROUS",
    "category": "education",
-   "benefit_type": "cash_one_off",
+   "benefit_type": "cash_monthly",
    "amount_min": 900,
    "amount_max": 900,
    "amount_currency": "EUR",
    "amount_period": "annual",
    "amount_note": "900 € per year supplement paid on top of the social-criteria grant",
    "is_automatic": true,
-   "application_url": "https://www.etudiant.gouv.fr",
+   "application_url": "https://www.etudiant.gouv.fr/fr/aide-au-merite-1291",
    "application_channel": "automatic",
    "deadline_type": "annual",
-   "deadline_note": "Awarded automatically with the grant; no separate application",
+   "deadline_note": "No application: paid automatically with the social-criteria grant (10 monthly instalments Sept-June); max 3 aides",
    "procedure_steps": [
     {
      "step": 1,
@@ -2401,18 +2402,18 @@
     "age_min": null,
     "age_max": 28,
     "income_annual_max": null,
-    "income_note": "Social-criteria grant holder with 'mention Très bien' at the baccalauréat (first year)",
+    "income_note": "No separate income test: must receive a social-criteria grant (or annual specific-aid allowance) and have obtained the mention 'très bien' at the bac (or received the aid the previous year).",
     "requires_children": false,
-    "nationality": "any_resident",
-    "residency_months_min": null,
+    "nationality": "citizen_or_pr",
+    "residency_months_min": 24,
     "housing_tenure": null,
     "student_required": true,
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.etudiant.gouv.fr",
+   "source_url": "https://www.etudiant.gouv.fr/fr/aide-au-merite-1291",
    "source_snippet": "Un complément de bourse au mérite de 900 € par an s'ajoute automatiquement (boursiers avec mention Très Bien au baccalauréat).",
-   "last_verified_at": "2026-08-12",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -2430,10 +2431,10 @@
    "amount_period": "one_off",
    "amount_note": "1 000 € one-off grant",
    "is_automatic": true,
-   "application_url": "https://www.etudiant.gouv.fr",
+   "application_url": "https://www.etudiant.gouv.fr/fr/aide-la-mobilite-en-master-1504",
    "application_channel": "automatic",
    "deadline_type": "annual",
-   "deadline_note": "Paid automatically after master admission via Mon Master; no application",
+   "deadline_note": "No application needed if eligible; paid in one go at the start of the month after your grant file is complete (supporting docs: licence certificate + M1 enrolment)",
    "procedure_steps": [
     {
      "step": 1,
@@ -2449,18 +2450,18 @@
     "age_min": null,
     "age_max": null,
     "income_annual_max": null,
-    "income_note": "Social-criteria grant holder enrolling in a master in a different académie from where the licence was obtained",
+    "income_note": "No separate income test: requires a social-criteria grant (or annual specific-aid allowance), a diplôme national de licence and M1 enrolment in a different région académique the year after the licence.",
     "requires_children": false,
-    "nationality": "any_resident",
-    "residency_months_min": null,
+    "nationality": "citizen_or_pr",
+    "residency_months_min": 24,
     "housing_tenure": null,
     "student_required": true,
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.etudiant.gouv.fr",
+   "source_url": "https://www.etudiant.gouv.fr/fr/aide-la-mobilite-en-master-1504",
    "source_snippet": "Si vous êtes boursier sur critères sociaux et que vous changez de région académique pour effectuer votre master, vous pouvez bénéficier d'une aide à la mobilité master de 1 000 €.",
-   "last_verified_at": "2026-08-12",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -2539,12 +2540,12 @@
    "category": "education",
    "benefit_type": "cash_one_off",
    "amount_min": null,
-   "amount_max": null,
+   "amount_max": 20000,
    "amount_currency": "EUR",
    "amount_period": "one_off",
-   "amount_note": "Bank loan up to 15 000 € guaranteed by the State (no parental guarantee or income condition required); terms (rate, deferred repayment) negotiated with partner banks",
+   "amount_note": "Bank loan up to 20,000 EUR in total (one or several loans), 70% State-guaranteed; no income or parental-guarantee condition; minimum 2 years duration, deferred repayment possible; banks keep discretion (not a right to credit)",
    "is_automatic": false,
-   "application_url": "https://www.etudiant.gouv.fr",
+   "application_url": "https://tokens.bpifrance.fr/",
    "application_channel": "in_person",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -2579,19 +2580,19 @@
     "age_min": null,
     "age_max": 28,
     "income_annual_max": null,
-    "income_note": "Student enrolled in a French higher-education institution preparing a degree; under 28; French or EU/EEA nationality (or long-term resident)",
+    "income_note": "No income condition. French nationals, or EU/EEA nationals with at least 2 years' uninterrupted regular residence in France.",
     "requires_children": false,
     "nationality": "citizen_or_pr",
-    "residency_months_min": null,
+    "residency_months_min": 24,
     "housing_tenure": null,
     "student_required": true,
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.etudiant.gouv.fr",
+   "source_url": "https://www.etudiant.gouv.fr/fr/pret-etudiant-garanti-par-l-etat-1723",
    "source_snippet": "The State guarantees student bank loans up to 15 000 € without requiring a personal guarantor.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "pass-culture",
@@ -2602,13 +2603,13 @@
    "funder": "Ministère de la Culture (SAS pass Culture)",
    "category": "education",
    "benefit_type": "in_kind",
-   "amount_min": null,
+   "amount_min": 50,
    "amount_max": 200,
    "amount_currency": "EUR",
    "amount_period": "one_off",
-   "amount_note": "Individual credit: 50 € at 17, 150 € at 18 (+50 € bonus for disabled or low-income youths, i.e. up to 200 €); credits from 17 and 18 are cumulative and usable until the eve of the 21st birthday; digital offers capped",
+   "amount_note": "50 EUR credit at 17; 150 EUR credit at 18, usable for 3 years; a further 50 EUR bonus at 18 (disabled youths, or low family quotient) was announced as 'in the coming months'",
    "is_automatic": false,
-   "application_url": "https://pass.culture.fr",
+   "application_url": "https://pass.culture.fr/le-pass-culture-cest-quoi",
    "application_channel": "online",
    "deadline_type": "rolling",
    "deadline_note": "Credits must be activated at 17/18; usable until the eve of 21",
@@ -2655,9 +2656,9 @@
     "income_source_url": "https://www.service-public.gouv.fr/particuliers/vosdroits/F34959",
     "income_confidence": "high"
    },
-   "source_url": "https://pass.culture.fr",
+   "source_url": "https://pass.culture.fr/le-pass-culture-cest-quoi",
    "source_snippet": "À 17 ans : 50 € ; à 18 ans : 150 € ; bonus de 50 € pour les jeunes en situation de handicap ou sous conditions de ressources, soit jusqu'à 200 € au total.",
-   "last_verified_at": "2026-08-12",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified",
    "income_reviewed_at": "2026-08-13"
   },
@@ -2670,16 +2671,16 @@
    "funder": "Ministère des Sports",
    "category": "education",
    "benefit_type": "discount",
-   "amount_min": 70,
-   "amount_max": 70,
+   "amount_min": 50,
+   "amount_max": 50,
    "amount_currency": "EUR",
    "amount_period": "one_off",
-   "amount_note": "70 € immediate deduction on membership of a sports club or gym for the 2025-2026 season; single use, cumulable with local aids",
+   "amount_note": "50 EUR immediate reduction on sports registration for the 2026-27 season; usable 1 September to 31 December 2026",
    "is_automatic": false,
-   "application_url": "https://www.pass.sports.gouv.fr",
+   "application_url": "https://www.pass.sports.gouv.fr/",
    "application_channel": "online",
    "deadline_type": "window",
-   "deadline_note": "Usable for registrations between September and December of the season; code sent to eligible youths",
+   "deadline_note": "Valid 1 September to 31 December 2026; code sent to eligible beneficiaries",
    "procedure_steps": [
     {
      "step": 1,
@@ -2703,10 +2704,10 @@
     "statuses": [
      "student"
     ],
-    "age_min": 14,
+    "age_min": 6,
     "age_max": 30,
     "income_annual_max": 28956,
-    "income_note": "For 14-30 year-olds receiving ARS (family ceiling EUR 28,956 for 1 child in 2026, +EUR 6,682/child), AEEH, AAH or a CROUS social-criteria grant; no separate income ceiling.",
+    "income_note": "Targeted: 6-17 with ARS (CAF/MSA family quotient <= 699 EUR), 6-19 with AEEH, 16-30 with AAH, students under 28 receiving CROUS or regional health/social-training grants. No separate income ceiling stored.",
     "requires_children": false,
     "nationality": "any_resident",
     "residency_months_min": null,
@@ -2715,9 +2716,9 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.pass.sports.gouv.fr",
+   "source_url": "https://www.pass.sports.gouv.fr/",
    "source_snippet": "Le Pass'Sport représente une réduction immédiate de 70 € sur l'inscription dans un club ou une salle de sport (saison 2025-2026).",
-   "last_verified_at": "2026-08-12",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -2729,16 +2730,16 @@
    "funder": "CROUS / État",
    "category": "education",
    "benefit_type": "free_slab",
-   "amount_min": null,
-   "amount_max": null,
+   "amount_min": 1,
+   "amount_max": 1,
    "amount_currency": "EUR",
    "amount_period": "one_off",
-   "amount_note": "Meals at 1 € in CROUS university restaurants for social-criteria grant holders and students in precarious situations; standard tariff around 3,30 € for other students; extended to all students since 2026",
+   "amount_note": "Meal at 1 EUR (per service) for all students since 4 May 2026 at all CROUS restaurants; also for apprentices, doctoral students and civic-service volunteers",
    "is_automatic": false,
-   "application_url": "https://www.etudiant.gouv.fr",
+   "application_url": "https://www.etudiant.gouv.fr/fr/comment-beneficier-du-repas-crous-1-eu-3123",
    "application_channel": "online",
-   "deadline_type": "rolling",
-   "deadline_note": null,
+   "deadline_type": "none",
+   "deadline_note": "No application: show a student card (from 4 May 2026)",
    "procedure_steps": [
     {
      "step": 1,
@@ -2774,10 +2775,10 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.etudiant.gouv.fr",
+   "source_url": "https://www.etudiant.gouv.fr/fr/comment-beneficier-du-repas-crous-1-eu-3123",
    "source_snippet": "Les étudiants boursiers (et, depuis 2026, tous les étudiants) bénéficient du tarif de 1 € par repas dans les restaurants universitaires du CROUS.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "bourse-regionale-sanitaire-sociale",
@@ -2829,7 +2830,7 @@
     "age_min": null,
     "age_max": null,
     "income_annual_max": 33100,
-    "income_note": "Aligned on CROUS social criteria in most regions: revenu brut global (N-2) up to ~EUR 33,100/year with 0 charge point (2025-26).",
+    "income_note": "Granted by the Region (except Normandie and Centre-Val de Loire, where the CROUS DSE is used). Amounts/ceilings are set per region; the ~EUR 33,100 CROUS-aligned figure previously stored was not confirmed on an official page.",
     "requires_children": false,
     "nationality": "any_resident",
     "residency_months_min": null,
@@ -2839,10 +2840,10 @@
     "gender": "any",
     "rule_source": "geography_unknown"
    },
-   "source_url": "https://sante.gouv.fr",
+   "source_url": "https://www.etudiant.gouv.fr/fr/bourses-sur-criteres-sociaux-pour-qui-2980",
    "source_snippet": "Regions fund means-tested grants for students in nursing and social-work training institutes.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "prime-a-la-conversion",
@@ -2859,10 +2860,10 @@
    "amount_period": "one_off",
    "amount_note": "Grant for scrapping an old diesel/petrol vehicle and buying a cleaner new or used vehicle; amount depends on income per tax part, vehicle type (electric, hybrid, Crit'Air 1) and ZFE residence; barème updated annually",
    "is_automatic": false,
-   "application_url": "https://primealaconversion.gouv.fr",
+   "application_url": "https://www.primealaconversion.gouv.fr/dboneco/accueil/",
    "application_channel": "online",
-   "deadline_type": "rolling",
-   "deadline_note": null,
+   "deadline_type": "none",
+   "deadline_note": "Ended: the vehicle scrappage 'prime à la conversion' is no longer offered (cycles closed 14 Feb 2025). The official portal now lists only the retrofit prime, social leasing 2025 (open to 31 Dec 2030) and a new social leasing 2026 (opens 16 July 2026).",
    "procedure_steps": [
     {
      "step": 1,
@@ -2911,9 +2912,9 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://primealaconversion.gouv.fr",
+   "source_url": "https://www.primealaconversion.gouv.fr/dboneco/accueil/",
    "source_snippet": "La prime à la conversion récompense le remplacement d'un véhicule ancien (diesel avant 2011, essence avant 2006) par un véhicule moins polluant, selon les revenus.",
-   "last_verified_at": "2026-08-12",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -2980,7 +2981,7 @@
   },
   {
    "slug": "solidarite-gratuite-navigo-idf",
-   "name_local": "Forfait Navigo Gratuité (Solidarité Gratuité)",
+   "name_local": "Solidarité Gratuité (forfait Navigo Gratuité)",
    "name_en": "Free Navigo Pass (Solidarity Free Travel)",
    "admin_level": "region",
    "admin_area": "Île-de-France",
@@ -2993,10 +2994,10 @@
    "amount_period": "annual",
    "amount_note": "100 % free travel on the Île-de-France public transport network, loaded on a Navigo pass; renewable every 3 months",
    "is_automatic": false,
-   "application_url": "https://www.solidaritetransport.fr",
+   "application_url": "https://solidarite-transport.iledefrance-mobilites.fr/",
    "application_channel": "online",
    "deadline_type": "rolling",
-   "deadline_note": null,
+   "deadline_note": "Right renewable every 3 months while criteria are met; apply online or call 0800 948 999",
    "procedure_steps": [
     {
      "step": 1,
@@ -3033,8 +3034,8 @@
     ],
     "age_min": null,
     "age_max": null,
-    "income_annual_max": 7758,
-    "income_note": "Reserved to RSA recipients (household resources below the RSA forfait: EUR 646.52/month single => EUR 7,758/year, 2025) or ASS recipients with free C2S (resources below EUR 10,421/year single).",
+    "income_annual_max": 10560,
+    "income_note": "RSA households whose RSA forfait + prime d'activité stays under IDFM ceilings (from 1 April 2026: 880 EUR/month single with no child, 1,320 EUR for a couple; +352 EUR per extra child) => 10,560 EUR/year single, 0 child. Or jobseekers receiving ASS and C2S without contribution.",
     "requires_children": false,
     "nationality": "any_resident",
     "residency_months_min": null,
@@ -3045,15 +3046,15 @@
     ],
     "gender": "any"
    },
-   "source_url": "https://www.iledefrance-mobilites.fr",
+   "source_url": "https://www.iledefrance-mobilites.fr/titres-et-tarifs/detail/le-forfait-navigo-gratuite",
    "source_snippet": "Faire partie d'un foyer allocataire du RSA sous certaines conditions de ressources, ou être chômeur bénéficiaire de l'ASS et de la Complémentaire Santé Solidaire sans participation.",
-   "last_verified_at": "2026-08-12",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
    "slug": "navigo-reduction-50-idf",
-   "name_local": "Forfait Navigo Réduction 50 % (tarification solidaire)",
-   "name_en": "Navigo 50 % Reduction (Solidarity Fare)",
+   "name_local": "Forfait Navigo Réduction 50 % (Solidarité transport)",
+   "name_en": "Navigo 50 % Reduction (Solidarity fare)",
    "admin_level": "region",
    "admin_area": "Île-de-France",
    "funder": "Île-de-France Mobilités",
@@ -3063,9 +3064,9 @@
    "amount_max": null,
    "amount_currency": "EUR",
    "amount_period": "annual",
-   "amount_note": "50 % reduction on Navigo monthly/weekly passes for beneficiaries of certain CAF allowances and specific situations listed by Île-de-France Mobilités",
+   "amount_note": "50 % off Navigo Mois/Semaine passes and single tickets; right granted for 1 to 12 months depending on the social right, renewable via Agence Solidarité Transport",
    "is_automatic": false,
-   "application_url": "https://www.solidaritetransport.fr",
+   "application_url": "https://solidarite-transport.iledefrance-mobilites.fr/",
    "application_channel": "online",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -3093,9 +3094,9 @@
     "age_min": null,
     "age_max": null,
     "income_annual_max": null,
-    "income_note": "Île-de-France residents receiving listed CAF solidarity benefits (e.g. AAH, ASS-type situations per IDFM rules)",
+    "income_note": "Only for recipients of AME (Aide médicale de l'État), which is itself means-tested; no separate transport income ceiling is published. Children 4-9 also get 50 % on single tickets.",
     "requires_children": false,
-    "nationality": "any_resident",
+    "nationality": "any",
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
@@ -3104,10 +3105,10 @@
     ],
     "gender": "any"
    },
-   "source_url": "https://www.iledefrance-mobilites.fr",
+   "source_url": "https://www.iledefrance-mobilites.fr/titres-et-tarifs/detail/reduction-50",
    "source_snippet": "Île-de-France Mobilités grants a 50 % reduction on Navigo passes to holders of specific CAF solidarity benefits.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "navigo-amethyste-idf",
@@ -3124,10 +3125,10 @@
    "amount_period": "annual",
    "amount_note": "Free annual travel on the Île-de-France network for people 65+ (or 60+ if disabled) whose income is below the ceiling and who are not liable for the IFI wealth tax",
    "is_automatic": false,
-   "application_url": "https://www.iledefrance-mobilites.fr",
+   "application_url": "https://www.iledefrance-mobilites.fr/titres-et-tarifs/detail/forfait-amethyste",
    "application_channel": "online",
    "deadline_type": "annual",
-   "deadline_note": "Annual card; renewal each year",
+   "deadline_note": "Apply to your Département or the CCAS of your commune (requires a personalised Navigo pass); renewal handled by the Département",
    "procedure_steps": [
     {
      "step": 1,
@@ -3159,7 +3160,7 @@
     "age_min": 65,
     "age_max": null,
     "income_annual_max": 27312,
-    "income_note": "65+ (60+ if disabled), not liable for IFI, below the departemental income ceiling - e.g. Paris Pass Seniors: RFR <= EUR 2,276/month, i.e. ~EUR 27,312/year for 1 part (2025).",
+    "income_note": "Eligibility, ceilings and zone are decided by each Île-de-France Département, so they vary. Previously stored figures (age 65, EUR 27,312/yr) are the Paris example and are not stated on the IDFM page.",
     "requires_children": false,
     "nationality": "any_resident",
     "residency_months_min": null,
@@ -3170,9 +3171,9 @@
     ],
     "gender": "any"
    },
-   "source_url": "https://www.iledefrance-mobilites.fr",
+   "source_url": "https://www.iledefrance-mobilites.fr/titres-et-tarifs/detail/forfait-amethyste",
    "source_snippet": "The Améthyste pass gives free transport to Île-de-France seniors and disabled people with modest incomes.",
-   "last_verified_at": "2026-08-12",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -3188,12 +3189,12 @@
    "amount_max": null,
    "amount_currency": "EUR",
    "amount_period": "annual",
-   "amount_note": "Heavily subsidised annual pass for under-26 students in Île-de-France (annual price roughly half the standard Navigo, subsidised by the Region); social-criteria grant holders get further reductions or free access under IDF schemes",
+   "amount_note": "Annual pass 401.30 EUR (incl. 8 EUR admin fee), payable in 9 instalments of 43.70 EUR, before any departmental/social subsidies; reimbursement of at least 50 % applied by the pass",
    "is_automatic": false,
-   "application_url": "https://www.imagine-r.com",
+   "application_url": "https://www.iledefrance-mobilites.fr/titres-et-tarifs/detail/forfait-imagine-r-etudiant",
    "application_channel": "online",
    "deadline_type": "annual",
-   "deadline_note": "Subscribe before the school year; social grant reductions applied via the Region",
+   "deadline_note": "2026-27 subscription open until 30 April 2027",
    "procedure_steps": [
     {
      "step": 1,
@@ -3223,7 +3224,7 @@
      "student"
     ],
     "age_min": null,
-    "age_max": 26,
+    "age_max": 25,
     "income_annual_max": null,
     "income_note": "Students under 26 enrolled in Île-de-France institutions",
     "requires_children": false,
@@ -3236,27 +3237,27 @@
     ],
     "gender": "any"
    },
-   "source_url": "https://www.imagine-r.com",
+   "source_url": "https://www.iledefrance-mobilites.fr/titres-et-tarifs/detail/forfait-imagine-r-etudiant",
    "source_snippet": "The imagine R pass is the subsidised student transport pass for under-26s studying in Île-de-France.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "gratuite-scolaire-lyceens-idf",
-   "name_local": "Gratuité transport scolaire lycéens et apprentis (Île-de-France)",
-   "name_en": "Free School Transport for High-Schoolers and Apprentices (Île-de-France)",
+   "name_local": "Forfait imagine R Scolaire (lycéens et apprentis, Île-de-France)",
+   "name_en": "imagine R Scolaire pass for high-schoolers and apprentices (Île-de-France)",
    "admin_level": "region",
    "admin_area": "Île-de-France",
    "funder": "Région Île-de-France",
    "category": "transport",
-   "benefit_type": "free_slab",
+   "benefit_type": "discount",
    "amount_min": null,
    "amount_max": null,
    "amount_currency": "EUR",
    "amount_period": "annual",
-   "amount_note": "The Region reimburses the imagine R scolaire forfait (100 %) for lycée pupils and apprentices; reduced-cost for low-income families and grant holders under regional schemes",
+   "amount_note": "The pass costs 401.30 EUR/year (incl. 8 EUR fee, 9 instalments of 43.70 EUR) before departmental and social subsidies; it is not free by default and no 100 % Region reimbursement is stated by IDFM",
    "is_automatic": true,
-   "application_url": "https://www.iledefrance.fr",
+   "application_url": "https://www.iledefrance-mobilites.fr/titres-et-tarifs/detail/forfait-imagine-r-scolaire",
    "application_channel": "automatic",
    "deadline_type": "annual",
    "deadline_note": "Reimbursement automatic when subscribing to the imagine R scolaire forfait",
@@ -3284,7 +3285,7 @@
      "student"
     ],
     "age_min": null,
-    "age_max": null,
+    "age_max": 25,
     "income_annual_max": null,
     "income_note": "No income condition published. Île-de-France Mobilités' official page for the forfait imagine R Scolaire (2026/2027 season) sets only age (under 26 on 1 September), enrolment in secondary education or a sub-baccalauréat apprenticeship, and Île-de-France residence; the pass costs €401.30/year, though some départements reimburse part of it.",
     "requires_children": false,
@@ -3300,9 +3301,9 @@
     "income_source_url": "https://www.iledefrance-mobilites.fr/titres-et-tarifs/detail/forfait-imagine-r-scolaire",
     "income_confidence": "high"
    },
-   "source_url": "https://www.iledefrance.fr",
+   "source_url": "https://www.iledefrance-mobilites.fr/aide-et-contacts/forfait-imagine-r/quest-ce-que-le-forfait-imagine-r-quels-sont-les-tarifs",
    "source_snippet": "The Région Île-de-France funds free school transport for lycéens and apprentices by reimbursing the imagine R scolaire pass.",
-   "last_verified_at": "2026-08-12",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified",
    "income_reviewed_at": "2026-08-13"
   },
@@ -3315,13 +3316,13 @@
    "funder": "SNCF",
    "category": "transport",
    "benefit_type": "discount",
-   "amount_min": null,
-   "amount_max": null,
+   "amount_min": 49,
+   "amount_max": 49,
    "amount_currency": "EUR",
    "amount_period": "annual",
    "amount_note": "Paid annual card (49 €) giving 30 % off TGV/Intercités fares with price caps, for 12-27 year-olds",
    "is_automatic": false,
-   "application_url": "https://www.sncf-connect.com/app/fr-fr/carte-avantage",
+   "application_url": "https://www.sncf-connect.com/catalogue/description/carte-avantage-jeune",
    "application_channel": "online",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -3345,9 +3346,7 @@
     }
    ],
    "eligibility": {
-    "statuses": [
-     "student"
-    ],
+    "statuses": [],
     "age_min": 12,
     "age_max": 27,
     "income_annual_max": null,
@@ -3360,10 +3359,10 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.sncf-connect.com",
+   "source_url": "https://www.sncf-voyageurs.com/fr/voyagez-avec-nous/en-france/tarifs-grandes-lignes/carte-avantage/carte-avantage-jeune/",
    "source_snippet": "The Carte Avantage Jeune gives 12-27 year-olds 30 % off SNCF long-distance trains for an annual fee.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "carte-avantage-senior-sncf",
@@ -3374,13 +3373,13 @@
    "funder": "SNCF",
    "category": "transport",
    "benefit_type": "discount",
-   "amount_min": null,
-   "amount_max": null,
+   "amount_min": 49,
+   "amount_max": 49,
    "amount_currency": "EUR",
    "amount_period": "annual",
    "amount_note": "Paid annual card (49 €) giving 30 % off TGV/Intercités fares for travellers 60 and over",
    "is_automatic": false,
-   "application_url": "https://www.sncf-connect.com/app/fr-fr/carte-avantage",
+   "application_url": "https://www.sncf-connect.com/catalogue/description/carte-avantage-senior",
    "application_channel": "online",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -3404,9 +3403,7 @@
     }
    ],
    "eligibility": {
-    "statuses": [
-     "retired"
-    ],
+    "statuses": [],
     "age_min": 60,
     "age_max": null,
     "income_annual_max": null,
@@ -3419,10 +3416,10 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.sncf-connect.com",
+   "source_url": "https://www.sncf-voyageurs.com/fr/voyagez-avec-nous/en-france/tarifs-grandes-lignes/carte-avantage/carte-avantage-senior/",
    "source_snippet": "The Carte Avantage Senior gives travellers aged 60+ 30 % off SNCF long-distance trains for an annual fee.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "tarification-solidaire-tcl-lyon",
@@ -3437,9 +3434,9 @@
    "amount_max": null,
    "amount_currency": "EUR",
    "amount_period": "monthly",
-   "amount_note": "Reduced-price TCL subscriptions (and free travel for some profiles, e.g. seniors under income conditions) for recipients of solidarity benefits (RSA, C2S-type situations) in the Lyon metropolis",
+   "amount_note": "Solidaire Gratuit for certain statuses (e.g. RSA, asylum seekers, residence-permit applicants; children of beneficiaries also free) and Solidaire Réduit at 11 EUR/month from 1 September 2026 (also for scholarship holders); valid on the whole TCL network",
    "is_automatic": false,
-   "application_url": "https://www.tcl.fr",
+   "application_url": "https://www.tcl.fr/titres-et-tarifs/tarification-tcl/les-abonnements-solidaires-tcl",
    "application_channel": "online",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -3472,7 +3469,7 @@
     "age_min": null,
     "age_max": null,
     "income_annual_max": 7758,
-    "income_note": "Free 'abonnement solidaire' for recipients of RSA/AAH/ASPA (i.e. household resources below those benefits' ceilings - e.g. RSA EUR 646.52/month => EUR 7,758/year single); 85% discount for ARE recipients, scholarship pupils etc. (SYTRAL).",
+    "income_note": "Free subscription tied to status (RSA, asylum seekers, residence-permit applicants...) and a reduced one at 11 EUR/month; the exact ceilings are in the TCL fiches PDFs. Stored 7,758 EUR RSA proxy not confirmed on the page.",
     "requires_children": false,
     "nationality": "any_resident",
     "residency_months_min": null,
@@ -3483,9 +3480,9 @@
     ],
     "gender": "any"
    },
-   "source_url": "https://www.tcl.fr",
+   "source_url": "https://www.tcl.fr/titres-et-tarifs/tarification-tcl/les-abonnements-solidaires-tcl",
    "source_snippet": "TCL offers solidarity fares to Lyon metropolis residents receiving minimum social benefits.",
-   "last_verified_at": "2026-08-12",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -3497,13 +3494,13 @@
    "funder": "Ilévia / Métropole européenne de Lille",
    "category": "transport",
    "benefit_type": "discount",
-   "amount_min": null,
-   "amount_max": null,
+   "amount_min": 3.5,
+   "amount_max": 32.45,
    "amount_currency": "EUR",
    "amount_period": "monthly",
-   "amount_note": "Reduced or free travel profiles for jobseekers, RSA and minimum-benefit recipients in the Lille metropolis, per the MEL solidarity fare grid",
+   "amount_note": "Annual subscription at 3.50 to 32.45 EUR/month depending on quotient familial (QF1-QF3) tiers (50 % to 94 % off), free for some profiles; V'Lille bike share included in long-term subscriptions",
    "is_automatic": false,
-   "application_url": "https://www.ilevia.fr",
+   "application_url": "https://www.ilevia.fr/boutique/titres-solidaires",
    "application_channel": "in_person",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -3534,7 +3531,7 @@
     "age_min": null,
     "age_max": null,
     "income_annual_max": 7758,
-    "income_note": "Reduced/free fares tied to receiving minimum social benefits or jobseeker status; proxy ceiling: RSA level EUR 646.52/month => EUR 7,758/year single.",
+    "income_note": "Pricing is by quotient familial tiers (QF thresholds updated Aug 2025) plus free/social profiles; the stored RSA proxy (7,758 EUR) is not the published rule.",
     "requires_children": false,
     "nationality": "any_resident",
     "residency_months_min": null,
@@ -3545,10 +3542,10 @@
     ],
     "gender": "any"
    },
-   "source_url": "https://www.ilevia.fr",
+   "source_url": "https://www.lillemetropole.fr/actualites/tarification-sociale-ilevia-des-transports-accessibles-tous-dans-la-metropole-europeenne",
    "source_snippet": "Ilévia applies solidarity fares for low-income residents of the Lille metropolis, including jobseekers.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "gratuite-moins-18-cts-strasbourg",
@@ -3563,12 +3560,12 @@
    "amount_max": null,
    "amount_currency": "EUR",
    "amount_period": "annual",
-   "amount_note": "Free bus and tram travel for under-18s living or schooled in the Eurométropole of Strasbourg (Pass Gratuité)",
+   "amount_note": "Free CTS subscription for 4-17 year-olds living in the Eurométropole's 33 communes, Kehl (Germany) or boarding in an EMS school; valid until the end of the month of the 18th birthday; renew every 24 months; card creation 5 EUR in agency",
    "is_automatic": false,
-   "application_url": "https://www.cts-strasbourg.eu",
+   "application_url": "https://www.cts-strasbourg.eu/fr/acheter/nos-titres/titres-reguliers/gratuite-4-a-17ans/index.html",
    "application_channel": "online",
    "deadline_type": "rolling",
-   "deadline_note": null,
+   "deadline_note": "Apply any time (CTS app, online agency or CTS agency); renew every 24 months",
    "procedure_steps": [
     {
      "step": 1,
@@ -3584,10 +3581,8 @@
     }
    ],
    "eligibility": {
-    "statuses": [
-     "student"
-    ],
-    "age_min": null,
+    "statuses": [],
+    "age_min": 4,
     "age_max": 17,
     "income_annual_max": null,
     "income_note": "Under-18s residing or studying in the Eurométropole of Strasbourg",
@@ -3601,10 +3596,10 @@
     ],
     "gender": "any"
    },
-   "source_url": "https://www.cts-strasbourg.eu",
+   "source_url": "https://www.cts-strasbourg.eu/fr/acheter/nos-titres/titres-reguliers/gratuite-4-a-17ans/index.html",
    "source_snippet": "Strasbourg's CTS network is free for under-18s living or schooled in the Eurométropole.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "gratuite-week-end-naolib-nantes",
@@ -3621,7 +3616,7 @@
    "amount_period": "annual",
    "amount_note": "Bus, tram and other Naolib network services free for everyone on Saturdays and Sundays; solidarity fares also exist for low-income subscribers",
    "is_automatic": true,
-   "application_url": "https://www.naolib.fr",
+   "application_url": "https://naolib.fr/gratuite-des-transports-en-commun",
    "application_channel": "automatic",
    "deadline_type": "none",
    "deadline_note": "Automatic every weekend; no application",
@@ -3652,9 +3647,9 @@
     "income_source_url": "https://naolib.fr/fr/faq/transports-en-commun/tramway-bus-navibus/la-gratuite-le-week-end-comment-ca-marche",
     "income_confidence": "high"
    },
-   "source_url": "https://www.naolib.fr",
+   "source_url": "https://naolib.fr/gratuite-des-transports-en-commun",
    "source_snippet": "Nantes Métropole has made its public transport network free on weekends for all users.",
-   "last_verified_at": "2026-08-12",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified",
    "income_reviewed_at": "2026-08-13"
   },
@@ -3673,7 +3668,7 @@
    "amount_period": "monthly",
    "amount_note": "Reduced fares on the Marseille network for recipients of minimum social benefits (RSA-type situations) and jobseekers, per the RTM solidarity grid",
    "is_automatic": false,
-   "application_url": "https://www.rtm.fr",
+   "application_url": "https://www.rtm.fr/droits-reduction",
    "application_channel": "in_person",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -3704,7 +3699,7 @@
     "age_min": null,
     "age_max": null,
     "income_annual_max": 7758,
-    "income_note": "Reduced fares for recipients of minimum social benefits (RSA-type) and jobseekers; proxy ceiling: RSA level EUR 646.52/month => EUR 7,758/year single.",
+    "income_note": "Rights depend on age, social situation, health or administrative status (e.g. C2S without contribution, AME, jobseekers); free Pass for under-11s and 65+. The stored 7,758 EUR RSA proxy is not published by RTM.",
     "requires_children": false,
     "nationality": "any_resident",
     "residency_months_min": null,
@@ -3715,10 +3710,10 @@
     ],
     "gender": "any"
    },
-   "source_url": "https://www.rtm.fr",
+   "source_url": "https://www.rtm.fr/droits-reduction",
    "source_snippet": "The RTM applies solidarity fares for Marseille residents on minimum social benefits.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "tarification-solidaire-tisseo-toulouse",
@@ -3735,7 +3730,7 @@
    "amount_period": "monthly",
    "amount_note": "Reduced-price subscriptions for jobseekers and recipients of minimum social benefits in the Toulouse metropolis, per the Tisséo solidarity fare grid",
    "is_automatic": false,
-   "application_url": "https://www.tisseo.fr",
+   "application_url": "https://www.tisseo.fr/acheter/tarifs/tarifs-reduits-et-droits-reduction",
    "application_channel": "online",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -3766,9 +3761,9 @@
     "age_min": null,
     "age_max": null,
     "income_annual_max": 7758,
-    "income_note": "Reduced subscriptions for jobseekers and minimum-benefit recipients; proxy ceiling: RSA level EUR 646.52/month => EUR 7,758/year single.",
+    "income_note": "Reduction rights depend on profile and resources (jobseekers, students/scholarship holders, seniors, disabled, large families, AME beneficiaries, asylum seekers, temporary protection); a named transport card is required. The stored 7,758 EUR RSA proxy is not published on the page.",
     "requires_children": false,
-    "nationality": "any_resident",
+    "nationality": "any",
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
@@ -3777,10 +3772,10 @@
     ],
     "gender": "any"
    },
-   "source_url": "https://www.tisseo.fr",
+   "source_url": "https://www.tisseo.fr/acheter/tarifs/tarifs-reduits-et-droits-reduction",
    "source_snippet": "Tisséo offers solidarity subscriptions to jobseekers and low-income residents of the Toulouse metropolis.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "carte-mra-auvergne-rhone-alpes",
@@ -3908,9 +3903,9 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.francetravail.fr",
+   "source_url": "https://www.service-public.fr/particuliers/vosdroits/F14860",
    "source_snippet": "Le montant journalier de l'ARE correspond au plus élevé de : 40,4 % du SJR + 13,18 €, ou 57 % du SJR ; plancher de 32,13 € par jour (au 1er juillet 2025).",
-   "last_verified_at": "2026-08-12",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -3928,7 +3923,7 @@
    "amount_period": "one_off",
    "amount_note": "Lump-sum payment of 60 % of remaining ARE rights on the day of business creation (45 % for contracts ended before mid-2023), paid in two instalments; requires prior ACRE",
    "is_automatic": false,
-   "application_url": "https://www.francetravail.fr",
+   "application_url": "https://www.francetravail.fr/candidat/je-creereprends-une-entreprise/les-aides-financieres-creation-d/aide-a-la-reprise-et-a-la-creati.html",
    "application_channel": "online",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -3979,9 +3974,9 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.francetravail.fr",
+   "source_url": "https://www.francetravail.fr/candidat/je-creereprends-une-entreprise/les-aides-financieres-creation-d/aide-a-la-reprise-et-a-la-creati.html",
    "source_snippet": "Vous pouvez également obtenir une aide à la reprise ou à la création d'entreprise (Arce) versée par France Travail... correspond à 45 % ou 60 % des allocations chômage restant dues.",
-   "last_verified_at": "2026-08-12",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -3994,12 +3989,12 @@
    "category": "employment",
    "benefit_type": "cash_monthly",
    "amount_min": null,
-   "amount_max": null,
+   "amount_max": 566.17,
    "amount_currency": "EUR",
    "amount_period": "monthly",
-   "amount_note": "Intensive support plus a monthly allowance up to about 528 € (indexed on the RSA youth amount) for 16-25 year-olds (up to 30 if disabled) not in employment, education or training",
+   "amount_note": "Allowance up to 566.17 EUR/month (service-public; travail-emploi.gouv.fr still shows 561.68) depending on age and resources, conditional on attendance and commitments",
    "is_automatic": false,
-   "application_url": "https://www.francetravail.fr",
+   "application_url": "https://www.francetravail.fr/candidat/mes-droits-aux-aides-et-allocati/aides-financieres-et-autres-allo/autres-allocations/lallocation-cej--les-reponses-a.html",
    "application_channel": "in_person",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -4028,10 +4023,7 @@
     }
    ],
    "eligibility": {
-    "statuses": [
-     "unemployed",
-     "jobseeker"
-    ],
+    "statuses": [],
     "age_min": 16,
     "age_max": 25,
     "income_annual_max": 7758,
@@ -4044,10 +4036,10 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.francetravail.fr",
+   "source_url": "https://www.service-public.fr/particuliers/vosdroits/F32700",
    "source_snippet": "The CEJ offers young NEETs intensive accompaniment and a monthly allowance subject to effort criteria.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "service-civique",
@@ -4058,13 +4050,13 @@
    "funder": "Agence du Service Civique",
    "category": "employment",
    "benefit_type": "cash_monthly",
-   "amount_min": null,
-   "amount_max": null,
+   "amount_min": 619.83,
+   "amount_max": 619.83,
    "amount_currency": "EUR",
    "amount_period": "monthly",
-   "amount_note": "Monthly allowance of about 580 € (part paid by the State, part by the host organisation) for a 6-12 month civic engagement mission",
+   "amount_note": "619.83 EUR net per month (State pays 504.98 EUR, host organisation the rest) for a 6-12 month mission",
    "is_automatic": false,
-   "application_url": "https://www.service-civique.gouv.fr",
+   "application_url": "https://www.service-civique.gouv.fr/etre-volontaire",
    "application_channel": "online",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -4105,10 +4097,10 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.service-civique.gouv.fr",
+   "source_url": "https://www.service-civique.gouv.fr/etre-volontaire/etape03-realiser-mon-service-civique/avantages-volontaires-service-civique",
    "source_snippet": "The Service Civique pays an allowance of around 580 €/month for a voluntary mission of general interest lasting 6 to 12 months.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "cpf-compte-personnel-formation",
@@ -4125,7 +4117,7 @@
    "amount_period": "annual",
    "amount_note": "Training rights in euros (500 €/year, 800 € for low-qualification workers, capped at 5 000/8 000 €) usable for certified training; employees, self-employed and jobseekers",
    "is_automatic": true,
-   "application_url": "https://www.moncompteformation.gouv.fr",
+   "application_url": "https://www.moncompteformation.gouv.fr/espace-public/",
    "application_channel": "online",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -4161,10 +4153,10 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.moncompteformation.gouv.fr",
+   "source_url": "https://travail-emploi.gouv.fr/le-compte-personnel-de-formation-cpf",
    "source_snippet": "The CPF funds certified training from rights accrued through professional activity, usable by employees, the self-employed and jobseekers.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "transition-pro-ptp",
@@ -4181,7 +4173,7 @@
    "amount_period": "monthly",
    "amount_note": "Funding of retraining training costs plus maintenance of salary (employees on leave) or of ARE (jobseekers) during a certified career-change course",
    "is_automatic": false,
-   "application_url": "https://www.transitionspro.fr",
+   "application_url": "https://www.transitionspro.fr/nos-dispositifs/projet-de-transition-professionnelle/",
    "application_channel": "online",
    "deadline_type": "window",
    "deadline_note": "Applications reviewed by regional joint commissions several times a year; anticipate 3-4 months ahead",
@@ -4216,14 +4208,12 @@
    ],
    "eligibility": {
     "statuses": [
-     "employee",
-     "unemployed",
-     "jobseeker"
+     "employee"
     ],
     "age_min": null,
     "age_max": null,
     "income_annual_max": null,
-    "income_note": "Employees with sufficient seniority (24 months activity incl. 12 in the company, with exceptions) or jobseekers with 24 months of salaried activity in the last 5 years",
+    "income_note": "No income test. Employees (CDI: 24 months' seniority; CDD: 24 months as employee in the last 5 years incl. 4 months CDD in the last 12; temp/intermittent rules differ), funding subject to the regional joint commission and funding priorities.",
     "requires_children": false,
     "nationality": "any_resident",
     "residency_months_min": null,
@@ -4232,10 +4222,10 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.transitionspro.fr",
+   "source_url": "https://www.transitionspro.fr/nos-dispositifs/projet-de-transition-professionnelle/",
    "source_snippet": "The PTP finances a career-change training course and maintains the trainee's income during the course.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "permis-1-euro-par-jour",
@@ -4250,9 +4240,9 @@
    "amount_max": null,
    "amount_currency": "EUR",
    "amount_period": "monthly",
-   "amount_note": "Zero-interest loan for driving-school fees for 15-25 year-olds, repaid at 1 €/day (max 30 €/month); State-supported scheme through approved schools",
+   "amount_note": "Zero-interest loan for the driving-school contract (amount capped at the contract; 300 EUR for complementary training after a failed practical test), repaid in instalments of at most 30 EUR/month; usable once; through approved driving schools",
    "is_automatic": false,
-   "application_url": "https://www.securite-routiere.gouv.fr",
+   "application_url": "https://www.securite-routiere.gouv.fr/passer-son-permis-de-conduire/financement-du-permis-de-conduire/permis-1-eu-par-jour",
    "application_channel": "in_person",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -4276,10 +4266,7 @@
     }
    ],
    "eligibility": {
-    "statuses": [
-     "student",
-     "jobseeker"
-    ],
+    "statuses": [],
     "age_min": 15,
     "age_max": 25,
     "income_annual_max": null,
@@ -4292,10 +4279,10 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.securite-routiere.gouv.fr",
+   "source_url": "https://www.securite-routiere.gouv.fr/passer-son-permis-de-conduire/financement-du-permis-de-conduire/permis-1-eu-par-jour/definition-du-permis-1-eu-par-jour",
    "source_snippet": "The 'permis à 1 € par jour' lets 15-25 year-olds finance driving school with a zero-interest loan repaid in small daily amounts.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "aide-regionale-formation-idf",
@@ -4310,9 +4297,9 @@
    "amount_max": null,
    "amount_currency": "EUR",
    "amount_period": "one_off",
-   "amount_note": "Regional funding of qualifying training for jobseekers (including remuneration under certain schemes) when France Travail does not cover it; rules set by the Region",
+   "amount_note": "Aide métiers en tension (part of the Revenu jeunes actifs: monthly remuneration + aide): for Île-de-France jobseekers aged 16-25 registered with France Travail and not on ARE, in Region-funded PRFE/FSS trainings in listed shortage sectors; all ages for Region-funded public-transport driver trainings; increases for RQTH, RSA, QPV, ZRR, ZRE residents. Amount not stated in the extract.",
    "is_automatic": false,
-   "application_url": "https://www.iledefrance.fr",
+   "application_url": "https://www.iledefrance.fr/toutes-les-actualites/aide-metiers-en-tension-et-revenu-jeunes-actifs-pour-se-former-en-etant-remunere",
    "application_channel": "online",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -4345,10 +4332,10 @@
      "unemployed",
      "jobseeker"
     ],
-    "age_min": null,
-    "age_max": null,
+    "age_min": 16,
+    "age_max": 25,
     "income_annual_max": null,
-    "income_note": "Jobseekers resident in Île-de-France with a validated training project",
+    "income_note": "No income test; must be registered with France Travail and not receiving ARE (other age conditions for driver trainings).",
     "requires_children": false,
     "nationality": "any_resident",
     "residency_months_min": null,
@@ -4359,10 +4346,10 @@
     ],
     "gender": "any"
    },
-   "source_url": "https://www.iledefrance.fr",
+   "source_url": "https://www.iledefrance.fr/toutes-les-actualites/aide-metiers-en-tension-et-revenu-jeunes-actifs-pour-se-former-en-etant-remunere",
    "source_snippet": "The Région Île-de-France co-funds training for jobseekers whose project is not fully covered by France Travail.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "credit-impot-frais-garde-enfants",
@@ -4379,7 +4366,7 @@
    "amount_period": "annual",
    "amount_note": "Tax credit of 50 % of childcare costs (crèche, childminder, halte-garderie) up to 3 500 € per child under 6, i.e. max 1 750 € credit per child per year (1 750 €/2 per child in shared custody)",
    "is_automatic": false,
-   "application_url": "https://www.impots.gouv.fr",
+   "application_url": "https://www.service-public.gouv.fr/particuliers/vosdroits/F8",
    "application_channel": "online",
    "deadline_type": "annual",
    "deadline_note": "Declare expenses each spring on the income tax return (box 7GA...)",
@@ -4418,10 +4405,10 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.service-public.fr/particuliers/vosdroits/F8",
-   "source_snippet": "Tax credit equal to 50 % of childcare expenses for children under 6, within a 3 500 € per child expense ceiling.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www.service-public.gouv.fr/particuliers/vosdroits/F8",
+   "source_snippet": "Le crédit d'impôt est égal à 50 % des sommes versées dans la limite des plafonds suivants : Frais de garde à déclarer 3 500 € maximum par enfant ; crédit d'impôt 1 750 € maximum.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "credit-impot-emploi-domicile",
@@ -4436,9 +4423,9 @@
    "amount_max": null,
    "amount_currency": "EUR",
    "amount_period": "annual",
-   "amount_note": "Tax credit of 50 % of eligible home-service expenses (cleaning, childcare at home, gardening, tutoring...), within annual ceilings (12 000 €, increased with dependants); 'avance immédiate' lets providers deduct the 50 % at payment",
+   "amount_note": "Tax credit of 50 % of expenses for a home employee/approved service, ceiling 12,000 EUR a year (max benefit 6,000 EUR), raised by 1,500 EUR per dependent child (750 EUR if shared custody) or household member/ascendant over 65, up to 15,000 EUR in total; aids received (APA, CMG, employer aid) are deducted",
    "is_automatic": false,
-   "application_url": "https://www.cesu.urssaf.fr",
+   "application_url": "https://www.service-public.gouv.fr/particuliers/vosdroits/F12",
    "application_channel": "online",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -4475,10 +4462,10 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.service-public.fr/particuliers/vosdroits/F12",
-   "source_snippet": "50 % tax credit on home personal-services expenses, available as an immediate deduction via the Urssaf 'avance immédiate' service.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www.service-public.gouv.fr/particuliers/vosdroits/F12",
+   "source_snippet": "Le crédit d'impôt s'élève à 50 % des dépenses supportées dans l'année dans la limite d'un plafond qui dépend de votre situation. Cas général : 12 000 € par an (soit un avantage maximal de 6 000 €).",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "acre-creation-entreprise",
@@ -4493,7 +4480,7 @@
    "amount_max": null,
    "amount_currency": "EUR",
    "amount_period": "annual",
-   "amount_note": "Partial exemption from social contributions for 12 months from business creation (25 % exoneration rate for new creations from 2026; degressive between 75 % and 100 % of the PASS; none at/above the PASS of 48 060 €)",
+   "amount_note": "Partial social-contribution relief: micro-entrepreneurs pay 75 % of the normal contribution rate (25 % relief) until the end of the 3rd civil quarter after activity start; other self-employed/company directors get a 12-month exemption (25 % if income below 36,045 EUR/yr, degressive up to 48,060 EUR, none above)",
    "is_automatic": false,
    "application_url": "https://entreprendre.service-public.gouv.fr/vosdroits/F11677",
    "application_channel": "online",
@@ -4542,8 +4529,8 @@
     "gender": "any"
    },
    "source_url": "https://entreprendre.service-public.gouv.fr/vosdroits/F11677",
-   "source_snippet": "The beneficiary of the Acre benefits from partial exemption from personal social security contributions for 12 months.",
-   "last_verified_at": "2026-08-12",
+   "source_snippet": "taux minoré de cotisations sociales égal à 75 % du taux normal ... Vous devez ne pas avoir bénéficié de l'Acre au cours des 3 années précédentes.",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -4556,12 +4543,12 @@
    "category": "business",
    "benefit_type": "cash_one_off",
    "amount_min": null,
-   "amount_max": null,
+   "amount_max": 5000,
    "amount_currency": "EUR",
    "amount_period": "one_off",
-   "amount_note": "State aid to employers hiring apprentices or professionalisation-contract trainees; amounts and conditions set annually by decree (significantly reduced compared with 2023 levels); paid by the ASP",
+   "amount_note": "From 1 Jan 2026 (no 2026 finance law): 5,000 EUR for the first contract year, only for employers under 250 employees hiring an apprentice preparing a level 3-4 qualification (bac or below); 6,000 EUR for apprentices with a disability. Amount depends on contract signature date",
    "is_automatic": false,
-   "application_url": "https://travail-emploi.gouv.fr",
+   "application_url": "https://travail-emploi.gouv.fr/aides-aux-employeurs-dapprentis-0",
    "application_channel": "online",
    "deadline_type": "window",
    "deadline_note": "File with the ASP within the regulatory deadline after the contract starts",
@@ -4591,7 +4578,7 @@
     "age_min": null,
     "age_max": null,
     "income_annual_max": null,
-    "income_note": "Employers (companies under 250 employees for the highest amounts) hiring an apprentice; aid level depends on company size and apprentice's age",
+    "income_note": "Employers under 250 employees hiring an apprentice preparing a level 3-4 qualification (bac or below); not household means-tested",
     "requires_children": false,
     "nationality": "any_resident",
     "residency_months_min": null,
@@ -4600,10 +4587,10 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://travail-emploi.gouv.fr",
-   "source_snippet": "The State pays employers a hiring aid for apprenticeship and professionalisation contracts, with amounts fixed each year.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://travail-emploi.gouv.fr/aides-aux-employeurs-dapprentis-0",
+   "source_snippet": "l'aide sera réservée aux entreprises de moins de 250 salariés pour l'embauche d'un apprenti préparant une certification reconnue aux niveaux 3 et 4 de qualification, et sera maintenue dans ce cas de figure à 5 000 € au titre de la première année du contrat.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "pret-honneur-initiative-france",
@@ -4614,13 +4601,13 @@
    "funder": "Initiative France (local platforms)",
    "category": "business",
    "benefit_type": "cash_one_off",
-   "amount_min": null,
-   "amount_max": null,
+   "amount_min": 3000,
+   "amount_max": 50000,
    "amount_currency": "EUR",
    "amount_period": "one_off",
-   "amount_note": "Interest-free personal loan (typically 3 000-10 000 €, sometimes more) for business creators/buyers, designed to leverage bank loans; includes support and mentoring",
+   "amount_note": "Interest-free personal honour loan of 3,000 to 50,000 EUR (average about 10,000 EUR), repayable over 3 to 5 years, no personal guarantee; granted by a local Initiative association's approval committee",
    "is_automatic": false,
-   "application_url": "https://www.initiative-france.fr",
+   "application_url": "https://www.initiative-france.fr/nos-solutions/financement-le-pret-d-honneur.html",
    "application_channel": "in_person",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -4671,10 +4658,10 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.initiative-france.fr",
-   "source_snippet": "Initiative France grants interest-free honour loans to entrepreneurs to strengthen equity and unlock bank financing.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www.initiative-france.fr/nos-solutions/financement-le-pret-d-honneur.html",
+   "source_snippet": "L'octroi du prêt d'honneur Initiative, d'un montant compris entre 3 000 et 50 000 €, est une reconnaissance de la pertinence et de la solidité de votre projet par le comité d'agrément.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "cheques-vacances-ancv",
@@ -4689,7 +4676,7 @@
    "amount_max": null,
    "amount_currency": "EUR",
    "amount_period": "annual",
-   "amount_note": "Employer-funded holiday vouchers (employer pays 50-80 %+, employee the rest, tax-advantaged) usable for accommodation, transport, restaurants and leisure across France; small companies can use the CESU/CV route",
+   "amount_note": "Employer-subsidised holiday vouchers: both employer and employee contribute; employer contribution must be higher for lower-paid employees; employer contribution is exempt from social charges (except CSG/CRDS) up to 560 EUR per employee per year",
    "is_automatic": false,
    "application_url": "https://www.ancv.com",
    "application_channel": "via_employer",
@@ -4724,10 +4711,10 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.ancv.com",
-   "source_snippet": "Chèques-Vacances are employer-subsidised vouchers for holidays and leisure, managed by the ANCV.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://static.ancv.com/ddmc/externe/site/espace_client/iframe/%5B00000X%5D_modalites_acquisition.html",
+   "source_snippet": "L'attribution de Chèque-Vacances implique nécessairement la contribution de l'employeur et celle du salarié.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "aide-vacances-ancv-partir",
@@ -4742,9 +4729,9 @@
    "amount_max": null,
    "amount_currency": "EUR",
    "amount_period": "one_off",
-   "amount_note": "Holiday aid for low-income individuals and families (Villages Vacances Familles programme and partner schemes): reduced-price stays according to quotient familial, plus partner solidarity offers",
+   "amount_note": "Holiday-project aid (APV) is granted through social organisations/associations (not directly to individuals): reduced-price stays/aid for fragile families, isolated adults, 16-25s, older people, disabled people and carers",
    "is_automatic": false,
-   "application_url": "https://www.ancv.com",
+   "application_url": "https://www.ancv.com/aides-aux-projets-vacances-apv",
    "application_channel": "online",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -4771,8 +4758,8 @@
     "statuses": [],
     "age_min": null,
     "age_max": null,
-    "income_annual_max": 8400,
-    "income_note": "Holiday aid for low quotient familial households; typically QF <= ~EUR 700/month per part depending on programme, i.e. ~EUR 8,400/year (QF x12); thresholds set per ANCV programme/partner.",
+    "income_annual_max": 10800,
+    "income_note": "APV 2026 uses a CAF quotient familial capped at 900 EUR per month (x12 = 10,800 EUR/yr per part) or a capped revenu fiscal de référence by number of parts; applied for via a partner association",
     "requires_children": false,
     "nationality": "any_resident",
     "residency_months_min": null,
@@ -4781,10 +4768,10 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.ancv.com",
-   "source_snippet": "The ANCV helps low-income households go on holiday through subsidised stays and solidarity programmes.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www.ancv.com/aides-aux-projets-vacances-apv",
+   "source_snippet": "Pour qui ? les familles fragilisées ; les adultes isolés ; les jeunes de 16 à 25 ans au moment du séjour ; les personnes âgées ; les personnes en situation de handicap ou gravement malades et leurs aidants",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "gratuite-transports-tam-montpellier",
@@ -4856,8 +4843,8 @@
     ]
    },
    "source_url": "https://www.montpellier.fr/vie-quotidienne/vivre-ici/se-deplacer/je-me-deplace-en-transports-en-commun/se-deplacer-gratuitement",
-   "source_snippet": "Depuis le 21 décembre 2023, les habitants de la métropole de Montpellier peuvent voyager gratuitement, sous réserve d'être en possession d'un Pass gratuité.",
-   "last_verified_at": "2026-08-12",
+   "source_snippet": "Depuis le 21 décembre 2023, la gratuité est réservée aux seuls habitants de la métropole. Toute personne résidant en dehors de la métropole devra présenter un titre en cours de validité.",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -4875,7 +4862,7 @@
    "amount_period": "annual",
    "amount_note": "Entire DK'Bus urban network free for everyone 7 days a week since 1 September 2018 — no ticket, no validation",
    "is_automatic": true,
-   "application_url": "",
+   "application_url": "https://www.dkbus.com/index.php?rub_code=1005",
    "application_channel": "automatic",
    "deadline_type": "none",
    "deadline_note": null,
@@ -4895,7 +4882,7 @@
     "income_note": "No income condition: free for all users, resident or not",
     "requires_children": false,
     "gender": "any",
-    "nationality": "any_resident",
+    "nationality": "any",
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
@@ -4903,9 +4890,9 @@
      "Dunkerque"
     ]
    },
-   "source_url": "https://www.communaute-urbaine-dunkerque.fr/vie-pratique/la-mobilite-et-le-transport/se-deplacer-en-transports-en-commun",
-   "source_snippet": "Depuis le 1er septembre 2018, le réseau de transport urbain est 100% gratuit 7j/7.",
-   "last_verified_at": "2026-08-12",
+   "source_url": "https://www.communaute-urbaine-dunkerque.fr/se-deplacer-en-bus",
+   "source_snippet": "Depuis 2018, la Communauté urbaine de Dunkerque propose un réseau de bus 100 % gratuit, repensé pour offrir un service performant, accessible à tous",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -4921,9 +4908,9 @@
    "amount_max": null,
    "amount_currency": "EUR",
    "amount_period": "annual",
-   "amount_note": "Free card bundling regional aids for lycéens: loan of textbooks, EUR 15 leisure-reading aid, EUR 15 UNSS sports licence aid, loRdi laptop scheme, free first-aid training, year-round cultural/sport offers",
+   "amount_note": "Free digital card bundling regional aids for lycéens: textbook loan, EUR 20 leisure-reading aid (use 1 Sep 2026 to 30 Jun 2027), EUR 15 UNSS sports licence aid (1 Sep to 15 Dec 2026), loRdi laptop (order 1 Dec 2026 to 31 Mar 2027), free first-aid training, first professional equipment; apprentices should ask their CFA",
    "is_automatic": false,
-   "application_url": "https://www.laregion.fr/la-carte-jeune-region-c-est-quoi-35189",
+   "application_url": "https://www.laregion.fr/c-est-quoi-la-carte-jeune-region",
    "application_channel": "online",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -4959,9 +4946,9 @@
      "Occitanie"
     ]
    },
-   "source_url": "https://www.laregion.fr/la-carte-jeune-region-c-est-quoi-35189",
-   "source_snippet": "C'est le support numérique de l'ensemble des aides de la Région en faveur des lycéens et lycéennes d'Occitanie.",
-   "last_verified_at": "2026-08-12",
+   "source_url": "https://www.laregion.fr/c-est-quoi-la-carte-jeune-region",
+   "source_snippet": "Aide à la lecture de loisirs de 20 € : à utiliser du 1er septembre 2026 au 30 juin 2027. Aide à l'acquisition d'une licence sportive (UNSS) de 15 €. Les bénéficiaires de la Carte Jeune Région sont donc les lycéens et lycéennes.",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -5040,9 +5027,9 @@
    "amount_max": 1200,
    "amount_currency": "EUR",
    "amount_period": "one_off",
-   "amount_note": "Regional aid of up to ~EUR 1,200 toward the permis B for lycéens, apprentices, jobseekers under 30, single parents and young people in a Contrat d'engagement jeune",
+   "amount_note": "Regional aid of up to 1,200 EUR toward the permis B (max 90% of the driving-school contract cost, after other aids); 30% advance then 70% balance on proof of test convocation",
    "is_automatic": false,
-   "application_url": "https://www.hautsdefrance.fr",
+   "application_url": "https://aides.hautsdefrance.fr/sub/tiers/aides/details?sigle=PERM26",
    "application_channel": "online",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -5069,12 +5056,13 @@
     "statuses": [
      "student",
      "unemployed",
-     "jobseeker"
+     "jobseeker",
+     "employee"
     ],
-    "age_min": 17,
-    "age_max": 30,
-    "income_annual_max": null,
-    "income_note": "Status-based (lycéens, apprentis, jobseekers <30, single parents, CEJ); income conditions may apply per profile",
+    "age_min": 16,
+    "age_max": 25,
+    "income_annual_max": 34634,
+    "income_note": "Reference tax income (RFR) ceilings: young person in parents' tax household 34,634 EUR (one income, 2x SMIC) or 51,951 EUR (two incomes); autonomous young person 17,317 EUR; autonomous couple 34,634 EUR. 34,634 used as general ceiling. Age 16-25 (no age limit for single-parent families)",
     "requires_children": false,
     "gender": "any",
     "nationality": "any_resident",
@@ -5085,10 +5073,10 @@
      "Hauts-de-France"
     ]
    },
-   "source_url": "https://www.hautsdefrance.fr",
-   "source_snippet": "La Région Hauts-de-France aide au financement du permis de conduire B des jeunes et publics en insertion (jusqu'à environ 1 200 EUR).",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://guide-aides.hautsdefrance.fr/dispositif931",
+   "source_snippet": "Avoir entre 16 et 25 ans révolus à la date de dépôt de la demande d'aide ou sans limite d'âge pour les familles monoparentales ... L'aide ne pourra excéder 1200€",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "bourse-nationale-college",
@@ -5105,7 +5093,7 @@
    "amount_period": "annual",
    "amount_note": "Annual grant in 3 echelons (EUR 120 / EUR 336 / EUR 525 in 2026-27), paid in 3 termly instalments; EUR 327/year internat bonus",
    "is_automatic": false,
-   "application_url": "https://www.education.gouv.fr",
+   "application_url": "https://www.service-public.gouv.fr/particuliers/vosdroits/F984",
    "application_channel": "online",
    "deadline_type": "annual",
    "deadline_note": "Application between 1 September and mid-October via the collège or EduConnect",
@@ -5145,9 +5133,9 @@
     "student_required": false,
     "admin_areas": []
    },
-   "source_url": "https://www.service-public.fr/particuliers/vosdroits/F984",
-   "source_snippet": "La bourse de collège est attribuée sous conditions de ressources, selon le revenu fiscal de référence et le nombre d'enfants à charge (3 échelons, versée trimestriellement).",
-   "last_verified_at": "2026-08-12",
+   "source_url": "https://www.service-public.gouv.fr/particuliers/vosdroits/F984",
+   "source_snippet": "Cette demande doit être faite entre le 1er septembre et le 15 octobre 2026. Montants trimestriels de la bourse 2026-2027 : 175 €, 112 €, 40 €.",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -5159,16 +5147,16 @@
    "funder": "Ministère de l'Éducation nationale",
    "category": "education",
    "benefit_type": "cash_one_off",
-   "amount_min": 495,
-   "amount_max": 1053,
+   "amount_min": 504,
+   "amount_max": 1071,
    "amount_currency": "EUR",
    "amount_period": "annual",
-   "amount_note": "Annual grant in 6 echelons (EUR 495 to EUR 1,053 in 2026-27), paid termly; internat bonus EUR 327-672 and EUR 341.71 equipment bonus in 1st year of vocational tracks",
+   "amount_note": "2026-27: 6 echelons paid in 3 termly instalments of EUR 168 / 207 / 244 / 282 / 319 / 357 (EUR 504 to EUR 1,071 a year); internat and other bonuses are separate",
    "is_automatic": false,
-   "application_url": "https://www.service-public.fr/particuliers/vosdroits/F616",
+   "application_url": "https://www.service-public.gouv.fr/particuliers/vosdroits/R60034",
    "application_channel": "online",
    "deadline_type": "annual",
-   "deadline_note": "Application from 1 September to mid-October via the téléservice bourses",
+   "deadline_note": "Request 1 Sep to 15 Oct 2026 (online via EduConnect or paper), unless automatic study of the right to a grant was consented to at (re-)enrolment; CNED until 31 Oct 2026",
    "procedure_steps": [
     {
      "step": 1,
@@ -5200,9 +5188,9 @@
     "student_required": false,
     "admin_areas": []
    },
-   "source_url": "https://www.service-public.fr/particuliers/vosdroits/F616",
-   "source_snippet": "La bourse comporte 6 échelons, qui prennent en compte le nombre d'enfants à charge composant votre foyer et les ressources de ce foyer à ne pas dépasser.",
-   "last_verified_at": "2026-09-25",
+   "source_url": "https://www.service-public.gouv.fr/particuliers/vosdroits/F616",
+   "source_snippet": "Pour l'année scolaire 2026-2027, la bourse de lycée comprend 6 échelons ... Elle est versée en 3 fois, à la fin de chaque trimestre. Vous devez résider en France.",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -5220,7 +5208,7 @@
    "amount_period": "annual",
    "amount_note": "Health-insurance coverage of medical costs for anyone working or residing in France in a stable and regular way, regardless of income or employment",
    "is_automatic": true,
-   "application_url": "",
+   "application_url": "https://www.service-public.gouv.fr/particuliers/vosdroits/R45084",
    "application_channel": "automatic",
    "deadline_type": "none",
    "deadline_note": null,
@@ -5246,10 +5234,10 @@
     "student_required": false,
     "admin_areas": []
    },
-   "source_url": "https://www.ameli.fr",
-   "source_snippet": "La protection universelle maladie (PUMA) garantit une prise en charge des frais de santé à toute personne travaillant ou résidant en France de manière stable et régulière.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www.service-public.gouv.fr/particuliers/vosdroits/F34308",
+   "source_snippet": "Pour avoir droit à la Puma, vous devez travailler ou résider en France de manière stable ou régulière ... si vous êtes ressortissant d'un autre pays, vous devez avoir un titre ou document de séjour.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "aide-medicale-etat-ame",
@@ -5309,9 +5297,9 @@
     "admin_areas": []
    },
    "source_url": "https://www.service-public.fr/particuliers/vosdroits/F3079",
-   "source_snippet": "L'aide médicale de l'État (AME) permet aux étrangers en situation irrégulière, résidant en France depuis plus de 3 mois, d'accéder aux soins sous conditions de ressources.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_snippet": "Vous devez résider en France depuis plus de 3 mois. Vous ne devez pas avoir de titre de séjour depuis plus de 3 mois. Plafond annuel de ressources : personne seule 10 421 €.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "maprimeadapt",
@@ -5326,9 +5314,9 @@
    "amount_max": null,
    "amount_currency": "EUR",
    "amount_period": "one_off",
-   "amount_note": "Covers 50% or 70% of adaptation works (walk-in shower, stairlift, grab bars...) within a EUR 22,000 works ceiling, for owner-occupiers aged 70+ (60+ with loss of autonomy) or with a disability rate >=50%/PCH",
+   "amount_note": "Covers 50% (modest households) or 70% (very modest households) of adaptation works within a EUR 22,000 excl.-VAT works ceiling; for people aged 70+, 60-69 with a GIR level, or with a disability rate of 50%+/PCH; owner-occupiers and tenants (landlords have a separate scheme)",
    "is_automatic": false,
-   "application_url": "https://www.anah.fr",
+   "application_url": "https://www.anah.gouv.fr",
    "application_channel": "online",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -5376,13 +5364,13 @@
     "gender": "any",
     "nationality": "any_resident",
     "residency_months_min": null,
-    "housing_tenure": "owner",
+    "housing_tenure": null,
     "student_required": false,
     "admin_areas": []
    },
-   "source_url": "https://www.anah.fr",
-   "source_snippet": "MaPrimeAdapt' finance 50 % ou 70 % du coût des travaux d'adaptation du logement, dans la limite d'un plafond de 22 000 EUR, selon les ressources.",
-   "last_verified_at": "2026-08-12",
+   "source_url": "https://www.anah.gouv.fr/sites/default/files/2026-02/Anah-FR-Guide_des_aides_Fev2026_WEB_20260224.pdf",
+   "source_snippet": "Le taux de prise en charge des travaux réalisés dans le cadre de MaPrimeAdapt' est de 50 % pour les ménages aux revenus modestes et de 70 % pour les ménages aux revenus très modestes, dans la limite d'un plafond de travaux subventionnables de 22 000 € HT.",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -5438,8 +5426,8 @@
     "admin_areas": []
    },
    "source_url": "https://www.anil.org/votre-besoin/acheter/financement/prets-reglementes/pret-accession-sociale/",
-   "source_snippet": "Le Prêt d'accession sociale (PAS) à la propriété est un prêt accordé sous conditions de ressources. Il offre un taux d'intérêt avantageux.",
-   "last_verified_at": "2026-08-12",
+   "source_snippet": "Nombre de personnes destinées à occuper le logement : 1 personne - Zone A 49 000 €, B1 34 500 €, B2 31 500 €, C 28 500 € ; 2 personnes - 73 500 / 51 750 / 47 250 / 42 750 €.",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -5455,7 +5443,7 @@
    "amount_max": 15000,
    "amount_currency": "EUR",
    "amount_period": "one_off",
-   "amount_note": "Microloan up to EUR 15,000 over 6-48 months plus a possible EUR 3,000 zero-interest 'apport en capital' advance; mandatory coaching; targets people excluded from classic bank credit",
+   "amount_note": "Microloan up to EUR 15,000 for business projects; complementary zero-interest capital advance up to EUR 3,000 (repayment can be deferred up to 2 years); loan guaranteed at 50%; coaching offered",
    "is_automatic": false,
    "application_url": "https://www.adie.org/fiches-pratiques/le-micro-credit/",
    "application_channel": "online",
@@ -5486,12 +5474,7 @@
     }
    ],
    "eligibility": {
-    "statuses": [
-     "self_employed",
-     "unemployed",
-     "jobseeker",
-     "employee"
-    ],
+    "statuses": [],
     "age_min": null,
     "age_max": null,
     "income_annual_max": null,
@@ -5508,8 +5491,8 @@
     "income_confidence": "high"
    },
    "source_url": "https://www.adie.org/fiches-pratiques/le-micro-credit/",
-   "source_snippet": "Le montant maximum pour un prêt de l'Adie est de 15 000 EUR.",
-   "last_verified_at": "2026-08-12",
+   "source_snippet": "Le montant maximum pour un prêt de l'Adie est de 15 000 €. Le microcrédit proposé par l'Adie est accessible à tous ceux qui n'ont pas accès au crédit bancaire professionnel classique.",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified",
    "income_reviewed_at": "2026-08-13"
   },
@@ -5526,9 +5509,9 @@
    "amount_max": null,
    "amount_currency": "EUR",
    "amount_period": "one_off",
-   "amount_note": "Free pre-hire training (max 400 hours) to close a skills gap identified by an employer who commits to hire (CDI, CDD >= 6 months, alternance); trainee keeps AREF (min EUR 22.99/day) or may get RFPE if not indemnified; employer gets EUR 5/hour aid",
+   "amount_note": "Free pre-hire training of up to 450 hours (up to 600 hours for some groups) to fill a skills gap identified by an employer who commits to hire (CDI, CDD or professionalisation/apprenticeship contract of 6+ months, seasonal 4+ months, etc.); a remuneration during training is possible depending on your situation",
    "is_automatic": false,
-   "application_url": "https://www.francetravail.fr",
+   "application_url": "https://www.francetravail.fr/candidat/en-formation/mes-aides-financieres/la-preparation-operationnelle-a.html",
    "application_channel": "online",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -5568,9 +5551,9 @@
     "student_required": false,
     "admin_areas": []
    },
-   "source_url": "https://www.francetravail.fr",
-   "source_snippet": "La POEI permet au demandeur d'emploi de bénéficier d'une formation (400 heures maximum) avant son embauche, avec le statut de stagiaire et une indemnisation.",
-   "last_verified_at": "2026-08-12",
+   "source_url": "https://www.francetravail.fr/candidat/en-formation/mes-aides-financieres/la-preparation-operationnelle-a.html",
+   "source_snippet": "La Préparation Opérationnelle à l'Emploi (POE) dure 450 heures maximum et jusqu'à 600h pour certains publics.",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -5624,7 +5607,7 @@
     "age_min": null,
     "age_max": null,
     "income_annual_max": null,
-    "income_note": "Not household means-tested: for registered jobseekers, non-indemnified or with an ARE at or below the minimum; annual cap EUR 5,200",
+    "income_note": "Not household means-tested: registered jobseekers who are not receiving unemployment benefit, or receive an allowance at or below the ARE minimum (EUR 32.13/day); annual cap EUR 5,200",
     "requires_children": false,
     "gender": "any",
     "nationality": "any_resident",
@@ -5634,8 +5617,8 @@
     "admin_areas": []
    },
    "source_url": "https://www.service-public.fr/particuliers/vosdroits/F1011",
-   "source_snippet": "Vous pouvez bénéficier de l'aide à la mobilité, toutes catégories confondues, dans la limite d'un plafond annuel de 5 200 EUR.",
-   "last_verified_at": "2026-08-12",
+   "source_snippet": "Vous pouvez bénéficier de l'aide à la mobilité, toutes catégories confondues, dans la limite d'un plafond annuel de 5 200 €. Indemnité kilométrique 0,23 € par km ; repas 6,25 € par jour ; hébergement 31,20 € par nuitée.",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -5653,7 +5636,7 @@
    "amount_period": "one_off",
    "amount_note": "Funding of all or part of training fees for a jobseeker's retraining project validated by the France Travail counsellor; combinable with CPF for the remaining costs",
    "is_automatic": false,
-   "application_url": "https://www.francetravail.fr",
+   "application_url": "https://www.francetravail.fr/candidat/en-formation/mes-aides-financieres/laide-individuelle-a-la-formatio.html",
    "application_channel": "online",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -5693,10 +5676,10 @@
     "student_required": false,
     "admin_areas": []
    },
-   "source_url": "https://www.francetravail.fr",
-   "source_snippet": "L'AIF finance tout ou partie des frais pédagogiques d'une formation validée par le conseiller France Travail dans le cadre du projet professionnel du demandeur d'emploi.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www.francetravail.fr/candidat/en-formation/mes-aides-financieres/laide-individuelle-a-la-formatio.html",
+   "source_snippet": "A qui s'adresse l'AIF ? Les demandeurs d'emploi inscrits à France Travail et les personnes en accompagnement CRP, CTP ou CSP. Toutes les formations validées dans le cadre de votre Projet Personnalisé d'Accès à l'Emploi (PPAE).",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "agepi-aide-garde-enfants-parent-isole",
@@ -5713,10 +5696,10 @@
    "amount_period": "one_off",
    "amount_note": "One-off aid toward childcare for children under 10 when a single parent resumes a job or training: ~EUR 170 (<15h/week) to ~EUR 400 (1 child, 15-35h) and up to ~EUR 561 (3+ children full-time)",
    "is_automatic": false,
-   "application_url": "https://www.francetravail.fr",
+   "application_url": "https://www.francetravail.fr/candidat/en-formation/les-dispositifs/formation---laide-a-la-garde-den.html",
    "application_channel": "online",
    "deadline_type": "rolling",
-   "deadline_note": null,
+   "deadline_note": "Ended: replaced by the Aide à la garde d'enfants (AGE) since 1 May 2024. AGE (children under 12; training 15-35 h/week): EUR 416 first child, +EUR 62.40 per extra child, max EUR 540.80; under 15 h/week: EUR 176.80 first child, max EUR 228.80",
    "procedure_steps": [
     {
      "step": 1,
@@ -5753,10 +5736,10 @@
     "student_required": false,
     "admin_areas": []
    },
-   "source_url": "https://www.francetravail.fr",
+   "source_url": "https://www.service-public.gouv.fr/particuliers/vosdroits/F1814",
    "source_snippet": "L'AGEPI aide les parents isolés demandeurs d'emploi à financer la garde de leurs enfants de moins de 10 ans lors d'une reprise d'activité ou d'une entrée en formation.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "pension-invalidite",
@@ -5767,13 +5750,13 @@
    "funder": "Assurance Maladie (CPAM) / MSA",
    "category": "income_support",
    "benefit_type": "cash_monthly",
-   "amount_min": null,
-   "amount_max": null,
+   "amount_min": 338.31,
+   "amount_max": 2002.5,
    "amount_currency": "EUR",
    "amount_period": "monthly",
-   "amount_note": "Monthly pension for insured people whose working or earning capacity is reduced by at least two-thirds after an illness or non-work accident: 30%, 40% or 50% of the average of the 10 best years' salary depending on category; requires minimum contribution/employment history",
+   "amount_note": "Monthly pension (employees, 1 Jan 2026): category 1 = 30% of average annual salary of the 10 best years (EUR 338.31 to 1,201.50); category 2 = 50% (up to EUR 2,002.50); category 3 = 50% plus EUR 1,298.44 third-person supplement",
    "is_automatic": false,
-   "application_url": "https://www.ameli.fr",
+   "application_url": "https://www.ameli.fr/assure/remboursements/pensions-allocations-rentes/invalidite",
    "application_channel": "online",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -5804,7 +5787,7 @@
     "age_min": null,
     "age_max": null,
     "income_annual_max": null,
-    "income_note": "Not household means-tested: based on incapacity rate and prior salary/contributions",
+    "income_note": "Not household means-tested: capacity for work or earnings reduced by at least two-thirds; requires 600 hours worked or contributions of 2,030 x hourly Smic in the 12 months before stopping work",
     "requires_children": false,
     "gender": "any",
     "nationality": "any_resident",
@@ -5813,10 +5796,10 @@
     "student_required": false,
     "admin_areas": []
    },
-   "source_url": "https://www.ameli.fr",
-   "source_snippet": "La pension d'invalidité compense la perte de salaire due à une réduction d'au moins deux tiers de la capacité de travail ou de gain.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www.ameli.fr/assure/remboursements/pensions-allocations-rentes/invalidite",
+   "source_snippet": "Pension d'invalidité de 1re catégorie 30 % : 338,31 € à 1 201,50 € ; 2e catégorie 50 % : 338,31 € à 2 002,50 € (salarié, montants au 1er janvier 2026).",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "exoneration-taxe-fonciere-seniors",
@@ -5827,13 +5810,13 @@
    "funder": "DGFiP (collectivités locales)",
    "category": "tax",
    "benefit_type": "tax_credit",
-   "amount_min": null,
+   "amount_min": 100,
    "amount_max": null,
    "amount_currency": "EUR",
    "amount_period": "annual",
-   "amount_note": "Full exemption from taxe foncière on the main home for people aged 75+ (or ASPA/ASI/AAH recipients at any eligible age) below the RFR ceiling; 65-74 year-olds below the ceiling get a EUR 100 relief; automatic with the income-tax declaration",
+   "amount_note": "Full exemption from taxe foncière on the main home at 75+ below the RFR ceiling; at 65-74 a EUR 100 reduction (not an exemption)",
    "is_automatic": true,
-   "application_url": "",
+   "application_url": "https://www.service-public.gouv.fr/particuliers/vosdroits/F59",
    "application_channel": "automatic",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -5857,8 +5840,8 @@
     ],
     "age_min": 65,
     "age_max": null,
-    "income_annual_max": 12818,
-    "income_note": "Full exemption at 75+: RFR <= EUR 12,818 for 1 part (increased per additional half-part); 65-74: EUR 100 abattement under the same ceiling (impots.gouv.fr).",
+    "income_annual_max": 12793,
+    "income_note": "RFR of 2025 for 2026 tax: full exemption at 75+ if RFR <= EUR 12,793 for 1 part (EUR 19,625 for 2 parts; EUR 26,457 for 3 parts); at 65-74 a EUR 100 reduction under conditions (AAH/ASPA/ASI recipients have separate rules)",
     "requires_children": false,
     "gender": "any",
     "nationality": "any_resident",
@@ -5867,9 +5850,9 @@
     "student_required": false,
     "admin_areas": []
    },
-   "source_url": "https://www.impots.gouv.fr",
-   "source_snippet": "Les personnes de 75 ans ou plus dont le revenu fiscal de référence ne dépasse pas le plafond (environ 12 818 EUR pour 1 part) sont exonérées de taxe foncière sur leur résidence principale.",
-   "last_verified_at": "2026-08-12",
+   "source_url": "https://www.service-public.gouv.fr/particuliers/vosdroits/F59",
+   "source_snippet": "Si vous aviez plus de 75 ans au 1er janvier 2026, vous pouvez bénéficier d'une exonération de TFPB concernant votre habitation principale. Réduction de 100 € si vous aviez plus de 65 ans et moins de 75 ans.",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -5885,9 +5868,9 @@
    "amount_max": null,
    "amount_currency": "EUR",
    "amount_period": "annual",
-   "amount_note": "Free Navigo travel (all zones) for Parisians aged 65+ (60+ if unfit for work), resident in Paris for at least 3 years, below the income ceiling and not liable for IFI",
+   "amount_note": "Free Pass Navigo (Pass Paris Seniors) for Parisians aged 65+ (60+ if recognised unfit for work); residence in Paris for at least 3 of the last 5 years; must be in a regular situation in France",
    "is_automatic": false,
-   "application_url": "https://www.paris.fr",
+   "application_url": "https://www.paris.fr/pages/aides-aux-transports-3848",
    "application_channel": "online",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -5916,22 +5899,22 @@
     ],
     "age_min": 60,
     "age_max": null,
-    "income_annual_max": 27312,
-    "income_note": "RFR <= EUR 2,276/month, i.e. ~EUR 27,312/year for 1 part (2025 ceiling); not liable for IFI.",
+    "income_annual_max": null,
+    "income_note": "Official test is NOT the RFR: income tax on the 'Soumis au barème' line of the tax notice must not exceed EUR 2,028 (first application) or EUR 2,430 (renewal), with exceptions for war veterans/widows; no household annual income figure can be derived, so null",
     "requires_children": false,
     "gender": "any",
     "nationality": "any_resident",
-    "residency_months_min": null,
+    "residency_months_min": 36,
     "housing_tenure": null,
     "student_required": false,
     "admin_areas": [
      "Paris"
     ]
    },
-   "source_url": "https://www.paris.fr",
-   "source_snippet": "Le Pass Seniors permet aux Parisiens de 65 ans et plus aux revenus modestes (RFR plafonné) de voyager gratuitement sur le réseau francilien.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www.paris.fr/pages/aides-aux-transports-3848",
+   "source_snippet": "Habiter Paris et y résider depuis au moins 3 ans sur les 5 années précédant la date de demande. Ne pas dépasser le plafond de 2028€ pour une première demande ou 2430€ pour un renouvellement. Être en situation régulière en France.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "cheque-eau-bordeaux-metropole",
@@ -5948,7 +5931,7 @@
    "amount_period": "annual",
    "amount_note": "Automatic EUR 10-25 annual reduction on the drinking-water bill for low-income households of the metropolis (tarif social applied without request since January 2024 via a convention with the CAF de la Gironde)",
    "is_automatic": true,
-   "application_url": "",
+   "application_url": "http://leaubordeauxmetropole.fr/actualites/aide-sociale-au-paiement-de-la-facture-deau",
    "application_channel": "automatic",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -5976,9 +5959,9 @@
      "Bordeaux"
     ]
    },
-   "source_url": "https://www.bordeaux-metropole.fr",
-   "source_snippet": "Depuis le 1er janvier 2024, le tarif social via le chèque eau est accordé automatiquement, en fonction du revenu ; le chèque est compris entre 10 et 25 euros par an.",
-   "last_verified_at": "2026-08-12",
+   "source_url": "http://leaubordeauxmetropole.fr/actualites/aide-sociale-au-paiement-de-la-facture-deau",
+   "source_snippet": "Dès 2025, jusqu'à 17 000 ménages pourront bénéficier d'un « chèque-eau », crédité directement sur leur compte bancaire sans aucune démarche à entreprendre.",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -6046,9 +6029,9 @@
    "amount_max": null,
    "amount_currency": "EUR",
    "amount_period": "one_off",
-   "amount_note": "Départemental financial aid to remove barriers when returning to work or training: vehicle purchase/repair, driving licence, childcare, work equipment; amount and rules set by each département, requested via a social worker",
+   "amount_note": "Départemental aid to remove barriers to work (vehicle, mobility, childcare...); rules vary by département (example, Charente: partial or full support up to EUR 500, for RSA recipients with a valid CER or PPAE)",
    "is_automatic": false,
-   "application_url": "https://www.service-public.fr",
+   "application_url": "https://mes-aides.francetravail.fr",
    "application_channel": "in_person",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -6090,10 +6073,10 @@
     "admin_areas": [],
     "rule_source": "geography_unknown"
    },
-   "source_url": "https://www.service-public.fr",
-   "source_snippet": "L'APRE est une aide financière départementale destinée à lever les freins (mobilité, garde d'enfants, équipement) au retour à l'emploi ou en formation.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://mes-aides.francetravail.fr/transport/acheter-ou-louer-un-vehicule/departement-charente/aide-personnalisee-de-retour-a-l-emploiapreaide-aux-deplacements-dont-frais-de-location-charente",
+   "source_snippet": "Aide financière - jusqu'à 500€. Allocataire RSA. Avoir signé un contrat d'engagements réciproques (CER) ou un projet personnalisé à l'emploi (PPAE) en cours de validité",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "faj-fonds-aide-jeunes",
@@ -6134,7 +6117,7 @@
      "jobseeker",
      "student"
     ],
-    "age_min": 16,
+    "age_min": 18,
     "age_max": 25,
     "income_annual_max": 7758,
     "income_note": "For young people in social and financial hardship, typically with resources below the RSA level (EUR 646.52/month => EUR 7,758/year in 2025); rules set locally.",
@@ -6147,10 +6130,10 @@
     "admin_areas": [],
     "rule_source": "geography_unknown"
    },
-   "source_url": "https://www.service-public.fr",
-   "source_snippet": "Le Fonds d'aide aux jeunes finance des aides individuelles ou collectives pour les 16-25 ans en difficulté, via les missions locales et les départements.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www.service-public.gouv.fr/particuliers/vosdroits/F13609",
+   "source_snippet": "Le Fonds d'aide aux jeunes est une aide du département destinée aux jeunes âgés de 18 à 25 ans ayant des difficultés d'insertion sociale ou professionnelle.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "aide-fin-droit-afd",
@@ -6167,7 +6150,7 @@
    "amount_period": "one_off",
    "amount_note": "One-off lump sum of EUR 355.86 (since 1 July 2025) paid automatically to jobseekers reaching the end of their ARE rights who do not meet the ASS activity condition (5 years in the last 10)",
    "is_automatic": true,
-   "application_url": "",
+   "application_url": "https://www.francetravail.fr/candidat/mes-droits-aux-aides-et-allocati/aides-financieres-et-autres-allo/autres-allocations/aide-a-lallocataire-arrivant-en.html",
    "application_channel": "automatic",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -6196,9 +6179,9 @@
     "student_required": false,
     "admin_areas": []
    },
-   "source_url": "https://www.francetravail.fr",
-   "source_snippet": "L'aide de fin de droit (AFD), d'un montant de 355,86 EUR, est attribuée automatiquement depuis la réforme du chômage 2025 aux demandeurs d'emploi en fin de droits non éligibles à l'ASS.",
-   "last_verified_at": "2026-08-12",
+   "source_url": "https://www.francetravail.fr/candidat/mes-droits-aux-aides-et-allocati/aides-financieres-et-autres-allo/autres-allocations/aide-a-lallocataire-arrivant-en.html",
+   "source_snippet": "Le montant de l'AFD est égal à 27 fois la partie fixe de l'Allocation d'aide au retour à l'emploi (ARE). Soit 355,86 € (au 1er juillet 2025).",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -6256,8 +6239,203 @@
     ]
    },
    "source_url": "https://www.lormont.fr/au-quotidien/mobilite/transports-en-commun/tarifs-solidaires",
-   "source_snippet": "Si le quotient familial est inférieur à 550 EUR/mois, la réduction tarifaire est de 100 % ; entre 550 et 610, -50 % ; entre 610 et 942, -30 %.",
-   "last_verified_at": "2026-08-12",
+   "source_snippet": "si le quotient familial est inférieur à 550 €/mois, la réduction tarifaire est de 100 %. Entre 550 et 610, 50 %, et de 30 % pour un quotient familial entre 610 et 942.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "apl-als-etudiants-etrangers-non-ue",
+   "name_local": "APL / ALS pour étudiants étrangers hors UE",
+   "name_en": "APL/ALS housing aid for non-EU international students (conditions since 1 July 2026)",
+   "admin_level": "national",
+   "admin_area": null,
+   "funder": "Caisse d'allocations familiales (CAF) / MSA",
+   "category": "housing",
+   "benefit_type": "cash_monthly",
+   "amount_min": null,
+   "amount_max": null,
+   "amount_currency": "EUR",
+   "amount_period": "monthly",
+   "amount_note": "Amount depends on rent (capped), household size, zone and income",
+   "is_automatic": false,
+   "application_url": "https://www.caf.fr",
+   "application_channel": "online",
+   "deadline_type": "rolling",
+   "deadline_note": "Apply on caf.fr once you hold a valid residence permit and a lease",
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Simulate your entitlement on caf.fr",
+     "url": "https://www.caf.fr"
+    },
+    {
+     "step": 2,
+     "detail": "File the housing-aid application online with your titre de sejour and rent certificate",
+     "url": null
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "Valid residence permit (titre de sejour)",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Lease or attestation de loyer",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Proof of one qualifying situation: Crous social-criteria scholarship, professional activity, or apprenticeship/professionalisation contract",
+     "mandatory": true,
+     "note": "Page notes that non-EU student-visa holders must meet one of these three conditions"
+    }
+   ],
+   "eligibility": {
+    "statuses": [
+     "student"
+    ],
+    "age_min": null,
+    "age_max": null,
+    "income_annual_max": 5235,
+    "income_note": "Means-tested on the last 12 months' income. 5235 = annual resource ceiling for the maximum APL for a single person (figure taken from the existing APL record); aid tapers above it. Non-EU students on a student visa qualify only if they receive a Crous (or aligned regional) social-criteria scholarship, have a professional activity, or are in an apprenticeship/professionalisation contract (page modified 2026-07-01).",
+    "requires_children": false,
+    "nationality": "any_resident",
+    "residency_months_min": null,
+    "housing_tenure": "renting",
+    "student_required": true,
+    "admin_areas": [],
+    "gender": "any"
+   },
+   "source_url": "https://www.service-public.gouv.fr/particuliers/vosdroits/F12006",
+   "source_snippet": "Vous pouvez bénéficier de l'APL même si vous êtes étranger à conditions d’avoir un titre de séjour en cours de validité.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "bourse-france-excellence-eiffel",
+   "name_local": "Bourse France Excellence Eiffel",
+   "name_en": "France Excellence Eiffel Scholarship (master's and PhD)",
+   "admin_level": "national",
+   "admin_area": null,
+   "funder": "Campus France / French Ministry for Europe and Foreign Affairs",
+   "category": "education",
+   "benefit_type": "cash_monthly",
+   "amount_min": 1200,
+   "amount_max": 1200,
+   "amount_currency": "EUR",
+   "amount_period": "monthly",
+   "amount_note": "Monthly allowance of EUR 1,200 (from January 2026) plus coverage of other costs per Campus France",
+   "is_automatic": false,
+   "application_url": "https://www.campusfrance.org/en/eiffel-scholarship-program-of-excellence",
+   "application_channel": "in_person",
+   "deadline_type": "annual",
+   "deadline_note": "Latest published call: applications received by Campus France up to 8 January 2026 included; next call date not yet published. Applications are submitted only by French higher education institutions on behalf of candidates",
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Apply to a French higher education institution and ask it to nominate you",
+     "url": "https://www.campusfrance.org/en/eiffel-scholarship-program-of-excellence"
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "Institution application file",
+     "mandatory": true,
+     "note": null
+    }
+   ],
+   "eligibility": {
+    "statuses": [],
+    "age_min": null,
+    "age_max": 35,
+    "income_annual_max": null,
+    "income_note": "Not income-tested. Foreign applicants, up to 29 years old at master's level and up to 35 at PhD level; candidacy only through a French institution.",
+    "requires_children": false,
+    "nationality": "any",
+    "residency_months_min": null,
+    "housing_tenure": null,
+    "student_required": false,
+    "admin_areas": [],
+    "gender": "any"
+   },
+   "source_url": "https://www.campusfrance.org/fr/la-bourse-france-excellence-eiffel",
+   "source_snippet": "Les boursiers France Excellence Eiffel perçoivent une allocation mensuelle d'un montant de 1.200 € (à compter de janvier 2026)",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "affiliation-securite-sociale-etudiant-etranger",
+   "name_local": "Affiliation à la Sécurité sociale pour étudiants étrangers",
+   "name_en": "Social-security health cover registration for international students (etudiant-etranger.ameli.fr)",
+   "admin_level": "national",
+   "admin_area": null,
+   "funder": "Assurance Maladie (ameli)",
+   "category": "health",
+   "benefit_type": "in_kind",
+   "amount_min": null,
+   "amount_max": null,
+   "amount_currency": "EUR",
+   "amount_period": "annual",
+   "amount_note": "Registration gives a social security number, reimbursement of healthcare costs and a Vitale card; the co-payment (ticket moderateur) remains payable and supplementary insurance is recommended",
+   "is_automatic": false,
+   "application_url": "https://etudiant-etranger.ameli.fr/",
+   "application_channel": "online",
+   "deadline_type": "rolling",
+   "deadline_note": "Can be started before arrival in France",
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Register on etudiant-etranger.ameli.fr with identity papers, proof of enrolment and bank details",
+     "url": "https://etudiant-etranger.ameli.fr/"
+    },
+    {
+     "step": 2,
+     "detail": "Download the provisional affiliation certificate, then the definitive one after certification",
+     "url": null
+    },
+    {
+     "step": 3,
+     "detail": "Request a Vitale card",
+     "url": null
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "Identity papers",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Proof of enrolment",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Bank details",
+     "mandatory": true,
+     "note": null
+    }
+   ],
+   "eligibility": {
+    "statuses": [
+     "student"
+    ],
+    "age_min": null,
+    "age_max": null,
+    "income_annual_max": null,
+    "income_note": "Not income-tested.",
+    "requires_children": false,
+    "nationality": "any_resident",
+    "residency_months_min": null,
+    "housing_tenure": null,
+    "student_required": true,
+    "admin_areas": [],
+    "gender": "any"
+   },
+   "source_url": "https://www.ameli.fr/assure/droits-demarches/europe-international/protection-sociale-france/vous-venez-etudier-en-france",
+   "source_snippet": "1) Vous vous inscrivez sur le site etudiant-etranger.ameli.fr",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   }
  ],

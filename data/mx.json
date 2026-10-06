@@ -19,10 +19,10 @@
       "amount_period": "monthly",
       "amount_note": "MXN 6,400 bimestrales en 2026 (equivalente a 3,200 mensuales), depositados en la Tarjeta del Bienestar; existe un Pago de Marcha único de 3,200 para la persona auxiliar en caso de fallecimiento",
       "is_automatic": false,
-      "application_url": "https://programasparaelbienestar.gob.mx/",
+      "application_url": "https://www.programasparaelbienestar.gob.mx/programas/adultos-mayores/pension-para-personas-adultas-mayores",
       "application_channel": "in_person",
-      "deadline_type": "rolling",
-      "deadline_note": null,
+      "deadline_type": "window",
+      "deadline_note": "Las convocatorias de registro se abren a lo largo del año; el portal oficial informa cuando se emita la siguiente.",
       "procedure_steps": [
         {
           "step": 1,
@@ -73,9 +73,9 @@
         "admin_areas": [],
         "gender": "any"
       },
-      "source_url": "https://programasparaelbienestar.gob.mx/",
-      "source_snippet": "En 2026, el monto bimestral se incrementó a 6,400 pesos... Adultos mayores (65 años y más): $6,400 MXN bimestrales",
-      "last_verified_at": "2026-08-12",
+      "source_url": "https://www.programasparaelbienestar.gob.mx/programas/adultos-mayores/pension-para-personas-adultas-mayores",
+      "source_snippet": "Apoyo económico $6,400 Bimestral. Requisitos: Ser persona adulta mayor con 65 años de edad cumplidos; Tener nacionalidad mexicana por nacimiento o naturalización; Residir en México.",
+      "last_verified_at": "2026-10-05",
       "verification_status": "verified"
     },
     {
@@ -93,10 +93,10 @@
       "amount_period": "monthly",
       "amount_note": "MXN 3,100 bimestrales en 2026 (aprox. 1,550 mensuales), depositados en la Tarjeta del Bienestar",
       "is_automatic": false,
-      "application_url": "https://programasparaelbienestar.gob.mx/",
+      "application_url": "https://www.programasparaelbienestar.gob.mx/programas/mujeres/pension-mujeres-bienestar",
       "application_channel": "in_person",
       "deadline_type": "window",
-      "deadline_note": "El registro se abre en ventanas anunciadas por la Secretaría del Bienestar en los Módulos del Bienestar",
+      "deadline_note": "Último periodo de registro: 22 al 28 de junio de 2026. Esperar la apertura de un nuevo periodo en los Módulos del Bienestar.",
       "procedure_steps": [
         {
           "step": 1,
@@ -140,16 +140,16 @@
         "income_annual_max": null,
         "income_note": "Dirigida a mujeres de 60 a 64 años en situación de vulnerabilidad; ampliación gradual del padrón",
         "requires_children": false,
-        "nationality": "any_resident",
+        "nationality": "citizen_or_pr",
         "residency_months_min": null,
         "housing_tenure": null,
         "student_required": false,
         "admin_areas": [],
         "gender": "female"
       },
-      "source_url": "https://programasparaelbienestar.gob.mx/",
-      "source_snippet": "Pensión Mujeres Bienestar: Dirigida a mujeres de 60 a 64 años en situación de vulnerabilidad. El apoyo será de 3 mil 100 pesos bimestrales, con ampliación gradual del padrón.",
-      "last_verified_at": "2026-08-12",
+      "source_url": "https://www.programasparaelbienestar.gob.mx/programas/mujeres/pension-mujeres-bienestar",
+      "source_snippet": "Apoyo económico $3,100 Bimestral. Mujeres de 60 a 64 años. Requisitos: Tener nacionalidad mexicana por nacimiento o naturalización. Residir en México. Último registro: 22 al 28 de junio de 2026",
+      "last_verified_at": "2026-10-05",
       "verification_status": "verified"
     },
     {
@@ -167,10 +167,10 @@
       "amount_period": "monthly",
       "amount_note": "MXN 3,300 bimestrales en 2026 (aprox. 1,650 mensuales) para personas de 0 a 64 años con discapacidad permanente",
       "is_automatic": false,
-      "application_url": "https://programasparaelbienestar.gob.mx/",
+      "application_url": "https://www.programasparaelbienestar.gob.mx/programas/personas-con-discapacidad/pension-para-personas-con-discapacidad",
       "application_channel": "in_person",
       "deadline_type": "window",
-      "deadline_note": "Registro en Módulos del Bienestar en las fechas que anuncia la Secretaría",
+      "deadline_note": "Las convocatorias se abren a lo largo del año; el portal informará la siguiente. Edad: 0 a 64 años en las 24 entidades con convenio de universalidad; en las otras 8, 0 a 29 años (hasta 64 solo en localidades indígenas, afromexicanas o de alta marginación).",
       "procedure_steps": [
         {
           "step": 1,
@@ -217,16 +217,16 @@
         "income_annual_max": null,
         "income_note": "Para personas con discapacidad permanente certificada; se prioriza a quienes viven en pobreza o marginación",
         "requires_children": false,
-        "nationality": "any_resident",
+        "nationality": "citizen_or_pr",
         "residency_months_min": null,
         "housing_tenure": null,
         "student_required": false,
         "admin_areas": [],
         "gender": "any"
       },
-      "source_url": "https://programasparaelbienestar.gob.mx/",
-      "source_snippet": "El apoyo es de tres mil 300 pesos bimestrales... personas de cero a 64 años con discapacidad permanente, directamente en una tarjeta del Banco del Bienestar",
-      "last_verified_at": "2026-08-12",
+      "source_url": "https://www.programasparaelbienestar.gob.mx/programas/personas-con-discapacidad/pension-para-personas-con-discapacidad",
+      "source_snippet": "Apoyo económico $3,300 Bimestral. Tener discapacidad permanente. Tener nacionalidad mexicana por nacimiento o naturalización. En entidades con convenio de universalidad, tener de 0 a 64 años de edad.",
+      "last_verified_at": "2026-10-05",
       "verification_status": "verified"
     },
     {
@@ -244,10 +244,10 @@
       "amount_period": "one_off",
       "amount_note": "Pago único a los beneficiarios designados en caso de fallecimiento de la madre jefa de familia asegurada; el monto se fija en las Reglas de Operación vigentes",
       "is_automatic": false,
-      "application_url": "https://www.gob.mx/bienestar",
+      "application_url": "https://www.programasparaelbienestar.gob.mx/programas/mujeres/programa-de-madres-trabajadoras",
       "application_channel": "in_person",
-      "deadline_type": "window",
-      "deadline_note": "Registro en ventanas que anuncia la Secretaría del Bienestar",
+      "deadline_type": "none",
+      "deadline_note": "Ended: desde el ejercicio fiscal 2021 el Seguro de Vida para Jefas de Familia se fusionó en el Programa de Apoyo para el Bienestar de las Niñas y Niños Hijos de Madres Trabajadoras (modalidad de orfandad materna, hasta 23 años); ver apoyo-madres-trabajadoras-bienestar.",
       "procedure_steps": [
         {
           "step": 1,
@@ -301,10 +301,10 @@
         "admin_areas": [],
         "gender": "any"
       },
-      "source_url": "https://www.gob.mx/bienestar",
-      "source_snippet": "El Seguro de Vida para Jefas de Familia protege económicamente a las hijas e hijos de mujeres jefas de familia en caso de fallecimiento de la asegurada.",
-      "last_verified_at": "2026-08-12",
-      "verification_status": "auto_extracted"
+      "source_url": "https://www.gob.mx/bienestar/acciones-y-programas/seguro-de-vida-para-jefas-de-familia",
+      "source_snippet": "A partir del ejercicio fiscal 2021, se denominará \"Programa de Apoyo para el Bienestar de las Niñas y Niños Hijos de Madres Trabajadoras\".",
+      "last_verified_at": "2026-10-05",
+      "verification_status": "verified"
     },
     {
       "slug": "produccion-para-el-bienestar",
@@ -315,16 +315,16 @@
       "funder": "Secretaría de Agricultura y Desarrollo Rural (AGRICULTURA)",
       "category": "business",
       "benefit_type": "cash_one_off",
-      "amount_min": 6000,
+      "amount_min": 7300,
       "amount_max": 24000,
       "amount_currency": "MXN",
       "amount_period": "annual",
-      "amount_note": "Apoyo económico anual directo de entre 6,000 y 24,000 pesos según el tipo de cultivo y las hectáreas registradas",
+      "amount_note": "De 7,300 a 24,000 pesos al año, según el cultivo o producto registrado; pago directo con Tarjeta del Banco del Bienestar (próximo pago 7 de septiembre de 2026).",
       "is_automatic": false,
-      "application_url": "https://www.gob.mx/agricultura",
+      "application_url": "https://www.programasparaelbienestar.gob.mx/programas/campo-y-pesca/produccion-para-el-bienestar",
       "application_channel": "in_person",
       "deadline_type": "annual",
-      "deadline_note": "Convocatoria anual; registro ante CADER, DDR u oficinas de AGRICULTURA",
+      "deadline_note": "Registrarse o actualizar datos en el Padrón de Productores; esperar la convocatoria de nuevas incorporaciones de la Secretaría de Agricultura y acudir al módulo habilitado.",
       "procedure_steps": [
         {
           "step": 1,
@@ -375,10 +375,10 @@
         "admin_areas": [],
         "gender": "any"
       },
-      "source_url": "https://www.gob.mx/agricultura",
-      "source_snippet": "El monto mínimo que se ofrece es de 6,000 pesos, y el máximo, de 24,000 pesos por persona.",
-      "last_verified_at": "2026-08-12",
-      "verification_status": "auto_extracted"
+      "source_url": "https://www.programasparaelbienestar.gob.mx/programas/campo-y-pesca/produccion-para-el-bienestar",
+      "source_snippet": "Apoyo económico De $7,300 a $24,000. Recurrencia Anual. Estar registrado o registrarse en el Padrón de Productores de la Secretaría de Agricultura.",
+      "last_verified_at": "2026-10-05",
+      "verification_status": "verified"
     },
     {
       "slug": "precios-de-garantia-segalmex",
@@ -386,16 +386,16 @@
       "name_en": "Guaranteed Prices for Basic Food Crops",
       "admin_level": "national",
       "admin_area": null,
-      "funder": "SEGALMEX / Secretaría de Agricultura y Desarrollo Rural",
+      "funder": "Alimentación para el Bienestar (Secretaría de Agricultura)",
       "category": "business",
       "benefit_type": "in_kind",
       "amount_min": null,
       "amount_max": null,
       "amount_currency": "MXN",
       "amount_period": "annual",
-      "amount_note": "El Estado compra la cosecha de maíz, frijol, trigo, arroz y leche a un precio de garantía publicado anualmente, en lugar de entregar efectivo",
+      "amount_note": "Precios de garantía de acopio: p. ej. maíz 5,610 pesos por tonelada para productores con hasta cinco hectáreas (cifra de la nota de Agricultura); el diagnóstico 2026 del programa S290 publica 5,840 para otro tramo. Consultar tabla vigente.",
       "is_automatic": false,
-      "application_url": "https://www.gob.mx/segalmex",
+      "application_url": "https://www.gob.mx/agricultura/articulos/todo-lo-que-debes-conocer-sobre-el-programa-precios-de-garantia",
       "application_channel": "in_person",
       "deadline_type": "annual",
       "deadline_note": "Convocatoria y calendarios de acopio anuales publicados por SEGALMEX",
@@ -444,10 +444,10 @@
         "admin_areas": [],
         "gender": "any"
       },
-      "source_url": "https://www.gob.mx/segalmex",
-      "source_snippet": "SEGALMEX paga un precio de garantía por la cosecha de maíz, frijol, trigo, arroz y leche a pequeños y medianos productores.",
-      "last_verified_at": "2026-08-12",
-      "verification_status": "auto_extracted"
+      "source_url": "https://www.gob.mx/agricultura/articulos/precios-de-garantia-para-maiz-y-frijol-236555",
+      "source_snippet": "Los precios de garantía para maíz y frijol aplican de la siguiente forma: Maíz, 5,610 pesos por tonelada a productores poseedores de hasta cinco hectáreas con ...",
+      "last_verified_at": "2026-10-05",
+      "verification_status": "verified"
     },
     {
       "slug": "pension-imss-cesantia-vejez",
@@ -462,9 +462,9 @@
       "amount_max": null,
       "amount_currency": "MXN",
       "amount_period": "monthly",
-      "amount_note": "Pensión mensual vitalicia; el monto depende del salario cotizado, semanas cotizadas y régimen (Ley 73 o Ley 97), con pensión mínima garantizada",
+      "amount_note": "Cesantía en edad avanzada desde los 60 años (75% de la pensión de vejez a los 60, hasta 100% a los 64 años y 6 meses); vejez a los 65. Requiere 500 semanas de cotización (Ley 1973) o 1,000 (Ley 1997).",
       "is_automatic": false,
-      "application_url": "https://www.imss.gob.mx/tramites/imss03012",
+      "application_url": "http://www.imss.gob.mx/tramites/imss01002",
       "application_channel": "online",
       "deadline_type": "rolling",
       "deadline_note": null,
@@ -523,10 +523,10 @@
         "admin_areas": [],
         "gender": "any"
       },
-      "source_url": "https://www.imss.gob.mx/pensiones",
-      "source_snippet": "El IMSS otorga pensiones de Cesantía en Edad Avanzada y Vejez a los trabajadores que cumplen edad y semanas de cotización requeridas.",
-      "last_verified_at": "2026-08-12",
-      "verification_status": "auto_extracted"
+      "source_url": "http://www.imss.gob.mx/tramites/imss01002",
+      "source_snippet": "¿Tienes 60 años o más, fuiste asegurado y tienes cumplidas al menos 500 o 1,000 semanas de cotización (Ley del Seguro Social 1973 o 1997, respectivamente)?",
+      "last_verified_at": "2026-10-05",
+      "verification_status": "verified"
     },
     {
       "slug": "incapacidad-temporal-imss",
@@ -541,9 +541,9 @@
       "amount_max": null,
       "amount_currency": "MXN",
       "amount_period": "monthly",
-      "amount_note": "60% del salario base de cotización por enfermedad general (desde el 4º día), 100% en caso de riesgo de trabajo; incapacidad por maternidad al 100% por 84 días",
+      "amount_note": "Enfermedad general: 60% del salario registrado en el IMSS, a partir del 4.º día y hasta 52 semanas.",
       "is_automatic": true,
-      "application_url": "https://www.imss.gob.mx/derechoH/incapacidades",
+      "application_url": "http://www.imss.gob.mx/derechoH/pago-incapacidades",
       "application_channel": "via_employer",
       "deadline_type": "none",
       "deadline_note": null,
@@ -587,10 +587,10 @@
         "admin_areas": [],
         "gender": "any"
       },
-      "source_url": "https://www.imss.gob.mx/derechoH/incapacidades",
-      "source_snippet": "En caso de enfermedad general el subsidio equivale al 60% del salario; por riesgo de trabajo o maternidad se paga el 100%.",
-      "last_verified_at": "2026-08-12",
-      "verification_status": "auto_extracted"
+      "source_url": "http://www.imss.gob.mx/derechoH/pago-incapacidades",
+      "source_snippet": "60% del salario registrado en el IMSS, al inicio de la incapacidad. A partir del 4o. día hasta el término de 52 semanas, según lo determinen los servicios ...",
+      "last_verified_at": "2026-10-05",
+      "verification_status": "verified"
     },
     {
       "slug": "pension-alimentaria-cdmx",
@@ -683,7 +683,7 @@
       "amount_period": "monthly",
       "amount_note": "Consultas, medicamentos, estudios, hospitalización, parto y vacunación gratuitos para personas sin seguridad social",
       "is_automatic": false,
-      "application_url": "https://www.imssbienestar.gob.mx/",
+      "application_url": "https://registro.imssbienestar.gob.mx/",
       "application_channel": "in_person",
       "deadline_type": "rolling",
       "deadline_note": null,
@@ -725,9 +725,9 @@
         "admin_areas": [],
         "gender": "any"
       },
-      "source_url": "https://www.gob.mx/salud/prensa/155-imss-bienestar-coordinara-servicios-de-salud-para-personas-sin-seguridad-social",
-      "source_snippet": "IMSS-Bienestar será el eje central del sistema que garantice el acceso a servicios para población sin seguridad social... bajo los principios de gratuidad, cobertura universal, accesibilidad, oportunidad y calidad",
-      "last_verified_at": "2026-08-12",
+      "source_url": "https://imssbienestar.gob.mx/",
+      "source_snippet": "Ofrece atención médica de calidad, medicamentos y suministros médicos gratuitos en centros de salud ... para todas las personas en México que no tienen seguridad social.",
+      "last_verified_at": "2026-10-05",
       "verification_status": "verified"
     },
     {
@@ -743,9 +743,9 @@
       "amount_max": null,
       "amount_currency": "MXN",
       "amount_period": "annual",
-      "amount_note": "Seguro médico voluntario del IMSS mediante una cuota anual fija por edad (publicada cada año en el DOF); da acceso a consultas, medicamentos, hospitalización y cirugía",
+      "amount_note": "Cuota anual anticipada por persona según grupo de edad; cuotas 2026 vigentes desde el 1 de marzo de 2026 (ver tabla en la página oficial).",
       "is_automatic": false,
-      "application_url": "https://www.imss.gob.mx/tramites/imss02008",
+      "application_url": "http://www.imss.gob.mx/tramites/imss02014",
       "application_channel": "in_person",
       "deadline_type": "rolling",
       "deadline_note": null,
@@ -797,10 +797,10 @@
         "admin_areas": [],
         "gender": "any"
       },
-      "source_url": "https://www.imss.gob.mx/tramites/imss02008",
-      "source_snippet": "Cualquier persona que no cuente con seguridad social puede incorporarse al Seguro de Salud para la Familia pagando una cuota anual anticipada.",
-      "last_verified_at": "2026-08-12",
-      "verification_status": "auto_extracted"
+      "source_url": "https://www.imss.gob.mx/derechoH/segurosalud-familia",
+      "source_snippet": "La cuota es anual anticipada y se determina de acuerdo con el rango de edad al que pertenezca cada miembro del grupo asegurado y se actualiza cada año.",
+      "last_verified_at": "2026-10-05",
+      "verification_status": "verified"
     },
     {
       "slug": "seguro-medico-nueva-generacion",
@@ -882,9 +882,9 @@
       "amount_max": null,
       "amount_currency": "MXN",
       "amount_period": "monthly",
-      "amount_note": "Atención médica, rehabilitación, prótesis y subsidios al 100% del salario por accidentes y enfermedades de trabajo; sin costo para el trabajador",
+      "amount_note": "Riesgo de trabajo: 100% del salario registrado en el IMSS desde el inicio de la incapacidad.",
       "is_automatic": true,
-      "application_url": "https://www.imss.gob.mx/derechoH/riesgos-trabajo",
+      "application_url": "http://www.imss.gob.mx/derechoH/pago-incapacidades",
       "application_channel": "automatic",
       "deadline_type": "none",
       "deadline_note": null,
@@ -928,10 +928,10 @@
         "admin_areas": [],
         "gender": "any"
       },
-      "source_url": "https://www.imss.gob.mx/derechoH/riesgos-trabajo",
-      "source_snippet": "El seguro de riesgos de trabajo cubre atención médica, incapacidades al 100% y, en su caso, pensiones por invalidez o muerte.",
-      "last_verified_at": "2026-08-12",
-      "verification_status": "auto_extracted"
+      "source_url": "http://www.imss.gob.mx/derechoH/pago-incapacidades",
+      "source_snippet": "100% del salario registrado en el IMSS, al inicio de la incapacidad.",
+      "last_verified_at": "2026-10-05",
+      "verification_status": "verified"
     },
     {
       "slug": "issste-salud-trabajadores-estado",
@@ -948,7 +948,7 @@
       "amount_period": "monthly",
       "amount_note": "Consultas, medicamentos, hospitalización, maternidad y servicios preventivos sin costo para derechohabientes del ISSSTE",
       "is_automatic": true,
-      "application_url": "https://www.gob.mx/issste",
+      "application_url": "https://www.gob.mx/issste/acciones-y-programas/afiliacion-y-vigencia-de-derechos",
       "application_channel": "automatic",
       "deadline_type": "none",
       "deadline_note": null,
@@ -988,10 +988,10 @@
         "admin_areas": [],
         "gender": "any"
       },
-      "source_url": "https://www.gob.mx/issste",
-      "source_snippet": "El ISSSTE presta servicios médicos integrales a los trabajadores al servicio del Estado y sus derechohabientes.",
-      "last_verified_at": "2026-08-12",
-      "verification_status": "auto_extracted"
+      "source_url": "https://www.gob.mx/issste/acciones-y-programas/afiliacion-y-vigencia-de-derechos",
+      "source_snippet": "Para este fin, el Trabajador deberá presentar el último comprobante de sueldo o la constancia laboral y comprobante de domicilio actual de no más de tres meses",
+      "last_verified_at": "2026-10-05",
+      "verification_status": "verified"
     },
     {
       "slug": "vacunacion-esquema-completo",
@@ -1008,7 +1008,7 @@
       "amount_period": "monthly",
       "amount_note": "Todas las vacunas del esquema nacional son gratuitas en instituciones públicas de salud",
       "is_automatic": true,
-      "application_url": "https://www.gob.mx/salud/acciones-y-programas/vacunacion",
+      "application_url": "https://www.gob.mx/salud/articulos/esquema-de-vacunacion",
       "application_channel": "in_person",
       "deadline_type": "rolling",
       "deadline_note": null,
@@ -1040,10 +1040,10 @@
         "admin_areas": [],
         "gender": "any"
       },
-      "source_url": "https://www.gob.mx/salud/acciones-y-programas/vacunacion",
-      "source_snippet": "La vacunación en México es gratuita y universal conforme a la Cartilla Nacional de Salud.",
-      "last_verified_at": "2026-08-12",
-      "verification_status": "auto_extracted"
+      "source_url": "https://www.gob.mx/salud/articulos/esquema-de-vacunacion",
+      "source_snippet": "Acudir inmediatamente a tu Unidad de Salud más cercana con la Cartilla Nacional de Salud correspondiente y aplicarte o aplicarle las vacunas a tu hija o hijo",
+      "last_verified_at": "2026-10-05",
+      "verification_status": "verified"
     },
     {
       "slug": "beca-universal-rita-cetina",
@@ -1054,16 +1054,16 @@
       "funder": "Coordinación Nacional de Becas para el Bienestar Benito Juárez (CNBBBJ) / SEP",
       "category": "education",
       "benefit_type": "cash_monthly",
-      "amount_min": 950,
-      "amount_max": 1300,
+      "amount_min": 208,
+      "amount_max": 950,
       "amount_currency": "MXN",
       "amount_period": "monthly",
-      "amount_note": "Secundaria: 1,900 pesos bimestrales por familia + 700 por cada estudiante adicional de secundaria (5 pagos al año, sin julio-agosto). Primaria nuevo ingreso 2026: 2,500 anuales por estudiante",
+      "amount_note": "Primaria: 2,500 pesos por estudiante, pago anual (~208/mes). Secundaria: 1,900 pesos bimestrales (=950/mes) más 700 por cada estudiante adicional.",
       "is_automatic": false,
       "application_url": "https://becaritacetina.gob.mx/",
       "application_channel": "online",
       "deadline_type": "window",
-      "deadline_note": "Registro en línea con Llave MX en las ventanas que publica la CNBBBJ (usualmente septiembre-diciembre)",
+      "deadline_note": "Próximo registro: inicio del ciclo escolar 2026-2027, en línea con Llave MX.",
       "procedure_steps": [
         {
           "step": 1,
@@ -1112,9 +1112,9 @@
         "admin_areas": [],
         "gender": "any"
       },
-      "source_url": "https://programasparaelbienestar.gob.mx/beca-rita-cetina-montos-requisitos-y-como-funciona-para-primaria-y-secundaria/",
-      "source_snippet": "Secundaria: 1,900 pesos bimestrales por un estudiante... Primaria: 2,500 pesos anuales por estudiante registrado este 2026",
-      "last_verified_at": "2026-08-12",
+      "source_url": "https://www.programasparaelbienestar.gob.mx/programas/infancias/beca-rita-cetina",
+      "source_snippet": "Apoyo económico en primaria $2,500 por estudiante, Anual. Apoyo económico en secundaria $1,900 más $700 por cada estudiante adicional, Bimestral. Próximo registro: Inicio de ciclo escolar 2026-2027",
+      "last_verified_at": "2026-10-05",
       "verification_status": "verified"
     },
     {
@@ -1130,7 +1130,7 @@
       "amount_max": 950,
       "amount_currency": "MXN",
       "amount_period": "monthly",
-      "amount_note": "1,900 pesos bimestrales durante los 10 meses del ciclo escolar (sin julio ni agosto), hasta un máximo de 40 meses",
+      "amount_note": "1,900 pesos bimestrales (=950/mes) durante los 5 bimestres del ciclo escolar.",
       "is_automatic": false,
       "application_url": "https://www.gob.mx/becasbenitojuarez",
       "application_channel": "online",
@@ -1173,7 +1173,7 @@
       "eligibility": {
         "statuses": [],
         "age_min": null,
-        "age_max": 25,
+        "age_max": null,
         "income_annual_max": null,
         "income_note": "Universal para estudiantes de hasta 25 años inscritos en escuelas públicas de media superior, modalidad escolarizada o mixta",
         "requires_children": false,
@@ -1184,9 +1184,9 @@
         "admin_areas": [],
         "gender": "any"
       },
-      "source_url": "https://www.gob.mx/becasbenitojuarez/articulos/conoce-todo-sobre-la-beca-universal-de-educacion-media-superior-benito-juarez",
-      "source_snippet": "1,900 pesos bimestrales que se otorgan por los 10 meses que dura el ciclo escolar, hasta por un máximo de 40 meses",
-      "last_verified_at": "2026-08-12",
+      "source_url": "https://www.programasparaelbienestar.gob.mx/programas/jovenes/beca-benito-juarez",
+      "source_snippet": "Apoyo económico $1,900 Bimestral. Todas y todos los estudiantes de nivel medio superior en alguna institución pública tienen derecho a recibir la Beca Benito Juárez.",
+      "last_verified_at": "2026-10-05",
       "verification_status": "verified"
     },
     {
@@ -1204,10 +1204,10 @@
       "amount_period": "monthly",
       "amount_note": "5,800 pesos bimestrales durante los 5 bimestres del ciclo escolar, hasta 45 mensualidades (55 en medicina)",
       "is_automatic": false,
-      "application_url": "https://www.gob.mx/becasbenitojuarez",
+      "application_url": "http://www.becajovenesescribiendoelfuturo.gob.mx/",
       "application_channel": "online",
       "deadline_type": "window",
-      "deadline_note": "Registro en línea en la ventana anual que publica la CNBBBJ",
+      "deadline_note": "Último periodo de solicitudes: 18 al 30 de septiembre de 2026 (cerrado a 5 de octubre de 2026); esperar el siguiente periodo anunciado por la CNBBBJ.",
       "procedure_steps": [
         {
           "step": 1,
@@ -1256,9 +1256,9 @@
         "admin_areas": [],
         "gender": "any"
       },
-      "source_url": "https://www.gob.mx/becasbenitojuarez",
-      "source_snippet": "La beca es de 5,800 pesos bimestrales que se otorgan durante los cinco bimestres que dura el ciclo escolar con un máximo de 45 mensualidades",
-      "last_verified_at": "2026-08-12",
+      "source_url": "https://www.programasparaelbienestar.gob.mx/noticias-y-comunicados/noticia/beca-jovenes-escribiendo-el-futuro-abre-solicitudes-que-necesitas-y-como-hacer-el-tramite",
+      "source_snippet": "Del 18 al 30 de septiembre estará abierto el periodo para solicitar la Beca Jóvenes Escribiendo el Futuro ... La beca entrega $5,800 bimestrales",
+      "last_verified_at": "2026-10-05",
       "verification_status": "verified"
     },
     {
@@ -1276,10 +1276,10 @@
       "amount_period": "monthly",
       "amount_note": "Modalidades de manutención (licenciatura y posgrado), titulación y servicio social; montos y reglas los publica cada institución participante (p. ej. UNAM, UPN)",
       "is_automatic": false,
-      "application_url": "https://www.gob.mx/becasbenitojuarez",
+      "application_url": "https://www.gob.mx/becasbenitojuarez/prensa/presentan-becas-elisa-acuna-para-estudiantes-de-educacion-superior?idiom=es",
       "application_channel": "online",
       "deadline_type": "window",
-      "deadline_note": "Convocatorias publicadas por cada universidad participante",
+      "deadline_note": "Las convocatorias las publican la SEP y cada institución; consulta con tu institución educativa. La Coordinación Benito Juárez no es instancia ejecutora del programa.",
       "procedure_steps": [
         {
           "step": 1,
@@ -1323,9 +1323,9 @@
         "admin_areas": [],
         "gender": "any"
       },
-      "source_url": "https://www.becas.unam.mx/",
-      "source_snippet": "En el marco del Programa de Becas “Elisa Acuña”, la UNAM, a través de la Secretaría General y la Coordinación General de Estudios de Posgrado, emite las convocatorias de Becas para Estudios de Posgrado.",
-      "last_verified_at": "2026-08-12",
+      "source_url": "https://www.gob.mx/becasbenitojuarez/articulos/becas-elisa-acuna",
+      "source_snippet": "Si estás interesada o interesado en alguna beca para Educación Superior consulta con tu institución educativa.",
+      "last_verified_at": "2026-10-05",
       "verification_status": "verified"
     },
     {
@@ -1343,10 +1343,10 @@
       "amount_period": "monthly",
       "amount_note": "Maestría: aprox. 16,048 pesos mensuales (4.5 UMA); doctorado: aprox. 19,803 pesos (6 UMA); incluye seguro médico ISSSTE para el becario y dependientes",
       "is_automatic": false,
-      "application_url": "https://secihti.mx/",
+      "application_url": "https://secihti.mx/becas-nacionales/",
       "application_channel": "online",
       "deadline_type": "window",
-      "deadline_note": "Convocatoria 2026 con recepción continua de solicitudes (febrero a noviembre) vía plataforma SECIHTI",
+      "deadline_note": "La página oficial indica que la convocatoria se publicará próximamente; no se confirma recepción continua de febrero a noviembre. Dirigida a personas mexicanas y extranjeras inscritas en posgrados del SNP.",
       "procedure_steps": [
         {
           "step": 1,
@@ -1395,9 +1395,9 @@
         "admin_areas": [],
         "gender": "any"
       },
-      "source_url": "https://secihti.mx/",
-      "source_snippet": "En 2025, el organismo fue integrado a la nueva Secretaría de Ciencia, Humanidades, Tecnología e Innovación (SECIHTI)... el programa de Becas Nacionales para Estudios de Posgrado continúa siendo el principal mecanismo de financiamiento",
-      "last_verified_at": "2026-08-12",
+      "source_url": "https://secihti.mx/becas-nacionales/",
+      "source_snippet": "El programa de becas nacionales está dirigido a personas de nacionalidad mexicana y extranjera que están inscritas en programas de posgrado registrados en el Sistema Nacional de Posgrados (SNP)",
+      "last_verified_at": "2026-10-05",
       "verification_status": "verified"
     },
     {
@@ -1415,10 +1415,10 @@
       "amount_period": "monthly",
       "amount_note": "Manutención mensual según el país de destino, más apoyos complementarios (matrícula, seguro médico, transporte); los montos se publican en la convocatoria anual",
       "is_automatic": false,
-      "application_url": "https://secihti.mx/",
+      "application_url": "https://secihti.mx/convocatoria/becas-al-extranjero/posgrado-en-ciencias-y-humanidades/convocatoria-2026-becas-de-posgrado-en-ciencia-y-humanidades-en-el-extranjero/",
       "application_channel": "online",
       "deadline_type": "window",
-      "deadline_note": "Convocatoria anual con ventanas de solicitud publicadas por SECIHTI",
+      "deadline_note": "Convocatoria 2026: solicitudes del 23 de marzo al 22 de mayo de 2026 (calendario ajustado dos veces); resultados publicados el 7 de agosto de 2026. Próxima convocatoria no anunciada.",
       "procedure_steps": [
         {
           "step": 1,
@@ -1467,10 +1467,10 @@
         "admin_areas": [],
         "gender": "any"
       },
-      "source_url": "https://secihti.mx/",
-      "source_snippet": "Las Becas Apoyos Complementarios Maternidad Paternidad Posgrado Nacional y al extranjero otorgan una dotación económica complementaria a personas becarias de la Secihti.",
-      "last_verified_at": "2026-08-12",
-      "verification_status": "auto_extracted"
+      "source_url": "https://secihti.mx/convocatoria/becas-al-extranjero/posgrado-en-ciencias-y-humanidades/convocatoria-2026-becas-de-posgrado-en-ciencia-y-humanidades-en-el-extranjero/",
+      "source_snippet": "A personas de nacionalidad mexicana, admitidas o inscritas en un programa presencial de maestría o doctorado en el extranjero en áreas prioritarias de ciencia y humanidades",
+      "last_verified_at": "2026-10-05",
+      "verification_status": "verified"
     },
     {
       "slug": "escuelas-de-tiempo-completo",
@@ -1539,10 +1539,10 @@
       "amount_period": "monthly",
       "amount_note": "Apoyos de manutención, útiles y colegiatura según la convocatoria de cada nivel; los montos los publica la fundación",
       "is_automatic": false,
-      "application_url": "https://www.fundaciontelmextelcel.org/",
+      "application_url": "http://www.fundaciontelmextelcel.org/becas",
       "application_channel": "online",
       "deadline_type": "window",
-      "deadline_note": "Convocatorias anuales publicadas en el sitio de la fundación",
+      "deadline_note": "Convocatoria 2026: solicitud del 24 de agosto al 22 de septiembre de 2026; recepción de documentos hasta el 29 de septiembre de 2026 (cerrada); resultados del 18 al 27 de noviembre de 2026.",
       "procedure_steps": [
         {
           "step": 1,
@@ -1569,17 +1569,17 @@
         "income_annual_max": null,
         "income_note": "Para estudiantes con alto desempeño académico y necesidad económica comprobada",
         "requires_children": false,
-        "nationality": "any_resident",
+        "nationality": "citizen_or_pr",
         "residency_months_min": null,
         "housing_tenure": null,
         "student_required": true,
         "admin_areas": [],
         "gender": "any"
       },
-      "source_url": "https://www.fundaciontelmextelcel.org/",
-      "source_snippet": "Fundación Telmex Telcel otorga becas a estudiantes mexicanos de excelencia académica y escasos recursos.",
-      "last_verified_at": "2026-08-12",
-      "verification_status": "auto_extracted"
+      "source_url": "https://downloads.telmex.com/pdf/BECA-FUNDACION-TELMEX-TELCEL-2026.pdf",
+      "source_snippet": "ofrecen 5,000 becas a estudiantes mexicanos de licenciatura, maestría y doctorado dentro del territorio nacional ... promedio general mínimo de 8.5",
+      "last_verified_at": "2026-10-05",
+      "verification_status": "verified"
     },
     {
       "slug": "becas-santander-universia",
@@ -1652,13 +1652,13 @@
       "funder": "Gobierno de la CDMX / Fideicomiso Bienestar Educativo (Fibien)",
       "category": "education",
       "benefit_type": "cash_monthly",
-      "amount_min": 600,
-      "amount_max": 650,
+      "amount_min": 500,
+      "amount_max": 600,
       "amount_currency": "MXN",
       "amount_period": "monthly",
-      "amount_note": "Preescolar y CAM: 600 pesos mensuales; primaria: 650 pesos mensuales, durante 10 meses del ciclo escolar, más apoyo anual de útiles y uniformes. No se puede retirar en efectivo",
+      "amount_note": "Preescolar 500 pesos; primaria y secundaria 550; estudiantes de CAM 600 (el periodo de pago no se precisó en la fuente).",
       "is_automatic": false,
-      "application_url": "https://registro.mibecaparaempezar.cdmx.gob.mx/",
+      "application_url": "https://www.registro.mibecaparaempezar.cdmx.gob.mx/",
       "application_channel": "online",
       "deadline_type": "window",
       "deadline_note": "Registro en línea con Cuenta Llave CDMX en las ventanas anunciadas por Fibien",
@@ -1712,10 +1712,10 @@
         ],
         "gender": "any"
       },
-      "source_url": "https://mibecaparaempezar.cdmx.gob.mx/",
-      "source_snippet": "Los alumnos de preescolar reciben 600 pesos mensuales. Los estudiantes de primaria reciben 650 pesos mensuales.",
-      "last_verified_at": "2026-08-12",
-      "verification_status": "auto_extracted"
+      "source_url": "https://gobierno.cdmx.gob.mx/noticias/nueva-plataforma-de-registro-de-mi-beca-para-empezar/",
+      "source_snippet": "Los estudiantes de preescolar recibirán 500 pesos; de primaria y secundaria 550, mientras que quienes asistan a los CAM tendrán 600 pesos de apoyo.",
+      "last_verified_at": "2026-10-05",
+      "verification_status": "verified"
     },
     {
       "slug": "beca-transporte-universitarios-cdmx",
@@ -1730,7 +1730,7 @@
       "amount_max": 750,
       "amount_currency": "MXN",
       "amount_period": "monthly",
-      "amount_note": "1,500 pesos bimestrales para gastos de traslado; la Jefa de Gobierno anunció aumento del monto y duplicación de beneficiarios a partir de enero de 2026",
+      "amount_note": "1,500 pesos bimestrales (=750/mes) para estudiantes de instituciones públicas de educación superior de la Ciudad de México.",
       "is_automatic": false,
       "application_url": "https://www.sectei.cdmx.gob.mx/",
       "application_channel": "online",
@@ -1781,9 +1781,9 @@
         ],
         "gender": "any"
       },
-      "source_url": "https://www.sectei.cdmx.gob.mx/",
-      "source_snippet": "Actualmente el programa entrega 1,500 pesos bimestrales. Monto que aumentará a partir de enero de 2026",
-      "last_verified_at": "2026-08-12",
+      "source_url": "https://www.sectei.cdmx.gob.mx/comunicacion/nota/inscripcion-al-segundo-semestre-de-la-beca-universitarias-y-universitarios-para-transporte-y-mas",
+      "source_snippet": "Recibirás un apoyo económico de 1,500 pesos bimestrales; Debes estar inscrito en una institución pública de educación superior de la Ciudad ...",
+      "last_verified_at": "2026-10-05",
       "verification_status": "verified"
     },
     {
@@ -1865,7 +1865,7 @@
       "amount_period": "monthly",
       "amount_note": "Servicio de guardería y educación inicial para hijos de trabajadoras y trabajadores asegurados; cuota de recuperación baja según salario",
       "is_automatic": false,
-      "application_url": "https://www.imss.gob.mx/guarderias",
+      "application_url": "http://www.imss.gob.mx/tramites/imss01006",
       "application_channel": "in_person",
       "deadline_type": "rolling",
       "deadline_note": null,
@@ -1914,10 +1914,10 @@
         "admin_areas": [],
         "gender": "any"
       },
-      "source_url": "https://www.imss.gob.mx/guarderias",
-      "source_snippet": "Las Estancias de Bienestar y Desarrollo Infantil del IMSS brindan cuidado y educación inicial a hijas e hijos de personas trabajadoras aseguradas.",
-      "last_verified_at": "2026-08-12",
-      "verification_status": "auto_extracted"
+      "source_url": "http://www.imss.gob.mx/tramites/imss01006",
+      "source_snippet": "El registro de la solicitud de inscripción a guardería se puede realizar antes de que el niño tenga 43 días de nacido y cuente con CURP.",
+      "last_verified_at": "2026-10-05",
+      "verification_status": "verified"
     },
     {
       "slug": "apoyo-madres-trabajadoras-bienestar",
@@ -1928,16 +1928,16 @@
       "funder": "Secretaría del Bienestar",
       "category": "family",
       "benefit_type": "cash_monthly",
-      "amount_min": null,
-      "amount_max": null,
+      "amount_min": 825,
+      "amount_max": 825,
       "amount_currency": "MXN",
       "amount_period": "monthly",
-      "amount_note": "Apoyo económico bimestral para el cuidado infantil de hijas e hijos de madres trabajadoras, buscadoras de empleo o estudiantes; el monto lo fijan las Reglas de Operación vigentes",
+      "amount_note": "1,650 pesos bimestrales (=825/mes) por niña o niño, máximo tres por hogar salvo nacimientos múltiples; modalidad de orfandad materna hasta los 23 años.",
       "is_automatic": false,
-      "application_url": "https://www.gob.mx/bienestar",
+      "application_url": "https://www.programasparaelbienestar.gob.mx/programas/mujeres/programa-de-madres-trabajadoras",
       "application_channel": "in_person",
       "deadline_type": "window",
-      "deadline_note": "Registro en ventanas que anuncia la Secretaría del Bienestar",
+      "deadline_note": "Las convocatorias se abren a lo largo del año; el portal informará la siguiente.",
       "procedure_steps": [
         {
           "step": 1,
@@ -1986,10 +1986,10 @@
         "admin_areas": [],
         "gender": "female"
       },
-      "source_url": "https://www.gob.mx/bienestar",
-      "source_snippet": "Apoyos para Madres Trabajadoras: mantiene subsidios directos para cuidado infantil y apoyo económico a familias monoparentales.",
-      "last_verified_at": "2026-08-12",
-      "verification_status": "auto_extracted"
+      "source_url": "https://www.programasparaelbienestar.gob.mx/programas/mujeres/programa-de-madres-trabajadoras",
+      "source_snippet": "Apoyo económico 1,650 pesos Bimestral. Ser madre, padre solo o tutor de una niña o niño menor de 4 años de edad o de 6 años en caso de discapacidad.",
+      "last_verified_at": "2026-10-05",
+      "verification_status": "verified"
     },
     {
       "slug": "comedores-comunitarios-dif",
@@ -2197,8 +2197,8 @@
       },
       "source_url": "https://www.gob.mx/inmujeres",
       "source_snippet": "Los Centros de Justicia para las Mujeres concentran servicios de atención jurídica, psicológica y social a mujeres víctimas de violencia.",
-      "last_verified_at": "2026-08-12",
-      "verification_status": "auto_extracted"
+      "last_verified_at": "2026-10-05",
+      "verification_status": "verified"
     },
     {
       "slug": "liconsa-leche-subsidiada",
@@ -2213,9 +2213,9 @@
       "amount_max": null,
       "amount_currency": "MXN",
       "amount_period": "monthly",
-      "amount_note": "Leche fortificada a precio subsidiado de 7.50 pesos por litro (4.5 en el sureste; 6.5 en Guerrero, Oaxaca y Chiapas), hasta 4 litros semanales por persona y 24 por hogar",
+      "amount_note": "Leche fortificada a precio subsidiado de 7.50 pesos por litro (vigente desde 1 nov 2024); 6.50 pesos en Chiapas, Guerrero y Oaxaca; 4.50 pesos en municipios con indice de desarrollo humano bajo. Hasta 4 litros semanales por persona beneficiaria registrada",
       "is_automatic": false,
-      "application_url": "https://www.liconsa.gob.mx/",
+      "application_url": "https://www.gob.mx/lecheparaelbienestar/acciones-y-programas/integracion-del-padron-46692",
       "application_channel": "in_person",
       "deadline_type": "rolling",
       "deadline_note": null,
@@ -2258,7 +2258,7 @@
         "age_min": null,
         "age_max": null,
         "income_annual_max": null,
-        "income_note": "Para familias por debajo de la línea de pobreza con niños de 6 meses a 12 años, embarazadas, mujeres de 45 a 59, adultos mayores o personas con discapacidad",
+        "income_note": "Hogares con ingreso por debajo de la linea de bienestar y con ninos de 6 meses a 12 anos, adolescentes de 13 a 15, mujeres embarazadas o lactantes, mujeres de 45 a 59, personas con enfermedades cronicas o discapacidad, o adultos de 60 y mas. Elegibilidad calificada con el cuestionario CUIS y un modelo estadistico; sujeto a suficiencia presupuestal. Sin umbral numerico publicado",
         "requires_children": false,
         "nationality": "any_resident",
         "residency_months_min": null,
@@ -2267,27 +2267,27 @@
         "admin_areas": [],
         "gender": "any"
       },
-      "source_url": "https://www.liconsa.gob.mx/",
-      "source_snippet": "En 2025, el litro de leche Liconsa tiene un costo subsidiado de 7.50 pesos para los beneficiarios registrados en el programa",
-      "last_verified_at": "2026-08-12",
+      "source_url": "https://www.gob.mx/lecheparaelbienestar/acciones-y-programas/integracion-del-padron-46692",
+      "source_snippet": "El precio de la leche a las familias incorporadas al padron de beneficiarios es de $7.50 por litro, vigente a partir del 1 de noviembre de 2024, con excepcion de los estado de Chiapas, Guerrero y Oaxaca el precio de venta es de $6.50 por litro y para los municipios con un indice de desarrollo humano bajo es de $4.50 por litro.",
+      "last_verified_at": "2026-10-05",
       "verification_status": "verified"
     },
     {
       "slug": "diconsa-abasto-rural",
-      "name_local": "Programa de Abasto Rural (Tiendas Diconsa)",
-      "name_en": "Rural Supply Programme (Diconsa stores)",
+      "name_local": "Programa de Abasto Rural (Tiendas Bienestar, Alimentacion para el Bienestar; antes Diconsa)",
+      "name_en": "Rural Supply Programme (Tiendas Bienestar, formerly Diconsa stores)",
       "admin_level": "national",
       "admin_area": null,
-      "funder": "Diconsa, S.A. de C.V. / SEGALMEX",
+      "funder": "Alimentacion para el Bienestar, S.A. de C.V. (antes Diconsa/Segalmex) / Secretaria de Agricultura y Desarrollo Rural",
       "category": "income_support",
       "benefit_type": "discount",
       "amount_min": null,
       "amount_max": null,
       "amount_currency": "MXN",
       "amount_period": "monthly",
-      "amount_note": "Productos de la canasta básica a precios bajos y garantizados en tiendas comunitarias y rurales Diconsa en localidades de alta marginación",
+      "amount_note": "Canasta Basica de Alimentacion para el Bienestar con un margen de ahorro de al menos 15% frente a las alternativas de abasto de la localidad, via precios (no subsidio directo), en Tiendas Bienestar y Tiendas Bienestar Moviles",
       "is_automatic": false,
-      "application_url": "https://www.gob.mx/diconsa",
+      "application_url": "https://sidof.segob.gob.mx/notas/docFuente/5777720",
       "application_channel": "in_person",
       "deadline_type": "none",
       "deadline_note": null,
@@ -2310,7 +2310,7 @@
         "age_min": null,
         "age_max": null,
         "income_annual_max": null,
-        "income_note": "Población de localidades rurales y de alta marginación con tienda Diconsa",
+        "income_note": "Sin prueba de ingreso individual: poblacion que habita en localidades de mas de 200 habitantes con carencia por acceso a la alimentacion (38,783 localidades objetivo); las comunidades solicitan una tienda con firma de al menos 15 personas mayores de edad",
         "requires_children": false,
         "nationality": "any_resident",
         "residency_months_min": null,
@@ -2319,10 +2319,10 @@
         "admin_areas": [],
         "gender": "any"
       },
-      "source_url": "https://www.gob.mx/diconsa",
-      "source_snippet": "Diconsa opera una red de tiendas rurales y comunitarias que ofrecen productos básicos a bajo costo en zonas de alta marginación.",
-      "last_verified_at": "2026-08-12",
-      "verification_status": "auto_extracted"
+      "source_url": "https://sidof.segob.gob.mx/notas/docFuente/5777720",
+      "source_snippet": "El apoyo consiste en proporcionar el servicio de abasto de la Canasta Basica de Alimentacion para el Bienestar con un margen de ahorro con respecto a las alternativas de abasto de la localidad ... El Margen de Ahorro ... sera por lo menos 15%.",
+      "last_verified_at": "2026-10-05",
+      "verification_status": "verified"
     },
     {
       "slug": "jovenes-construyendo-el-futuro",

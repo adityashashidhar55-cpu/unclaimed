@@ -13,11 +13,11 @@
    "funder": "Vlaamse overheid - Agentschap Uitbetaling Groeipakket / uitbetalers (FONS, KidsLife, MyFamily...)",
    "category": "family",
    "benefit_type": "cash_monthly",
-   "amount_min": 184.62,
-   "amount_max": 408.19,
+   "amount_min": 109.75,
+   "amount_max": 274.56,
    "amount_currency": "EUR",
    "amount_period": "monthly",
-   "amount_note": "184,62 EUR/month for children born on or after 1 Jan 2019; children born before 2019 keep the old scale of 106,27 to 408,19 EUR depending on birth rank. Income-related and care supplements (sociale toeslag, zorgtoeslagen) can be added on top.",
+   "amount_note": "190,66 EUR/month for children born on or after 1 Jan 2019 (amounts valid since 1 Sep 2026). Children born before 2019 keep the old scale: 109,75 EUR (youngest in family on 31/12/2018), 203,07 EUR (second youngest), 274,56 EUR (others). Age supplements and income-related supplements (sociale toeslag) come on top.",
    "is_automatic": true,
    "application_url": "https://www.vlaanderen.be/vlaams-groeipakket/toeslagen/basisbedrag",
    "application_channel": "automatic",
@@ -63,8 +63,8 @@
     "gender": "any"
    },
    "source_url": "https://www.vlaanderen.be/vlaams-groeipakket/toeslagen/basisbedrag",
-   "source_snippet": "\"Kinderen geboren vanaf 1 januari 2019: 184,62 euro per maand\" - fixed monthly amount per child, usually paid automatically around the 8th of the month",
-   "last_verified_at": "2026-08-12",
+   "source_snippet": "Je kind heeft de Belgische nationaliteit of een verblijfsrecht van meer dan 3 maanden. Kinderen geboren vanaf 1 januari 2019: 190,66 euro per maand.",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified",
    "income_reviewed_at": "2026-08-13"
   },
@@ -77,11 +77,11 @@
    "funder": "Vlaamse overheid - uitbetalers van het Groeipakket",
    "category": "family",
    "benefit_type": "cash_one_off",
-   "amount_min": 1269.25,
-   "amount_max": 1269.25,
+   "amount_min": 1310.75,
+   "amount_max": 1310.75,
    "amount_currency": "EUR",
    "amount_period": "one_off",
-   "amount_note": "1.269,25 EUR per child at birth or adoption (indexed); can be requested from the 6th month of pregnancy",
+   "amount_note": "1.310,75 EUR one-off per child at birth or adoption (amount valid since 1 Sep 2026); can be requested from the 6th month of pregnancy",
    "is_automatic": false,
    "application_url": "https://www.vlaanderen.be/vlaams-groeipakket",
    "application_channel": "online",
@@ -123,9 +123,9 @@
     ],
     "gender": "any"
    },
-   "source_url": "https://www.vlaanderen.be/vlaams-groeipakket",
-   "source_snippet": "One-off premium of 1.269,25 euro at the birth or adoption of a child, paid by the Groeipakket payer",
-   "last_verified_at": "2026-08-12",
+   "source_url": "https://www.vlaanderen.be/vlaams-groeipakket/bedragen-en-betaaldata",
+   "source_snippet": "De onderstaande bedragen gelden sinds 1 september 2026 (uitbetaling vanaf oktober 2026). Startbedrag 1.310,75 euro (eenmalig)",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -137,13 +137,13 @@
    "funder": "AViQ / Caisses d'allocations familiales agreees (FAMIFED framework)",
    "category": "family",
    "benefit_type": "cash_monthly",
-   "amount_min": null,
-   "amount_max": null,
+   "amount_min": 123.94,
+   "amount_max": 342.39,
    "amount_currency": "EUR",
    "amount_period": "monthly",
-   "amount_note": "Monthly base amount per child depends on birth rank and age (2026: roughly 162 EUR for a first child, about 305 EUR from the second), plus age supplements from 6/12/18 years and possible income-related social supplements. Paid automatically once affiliated to a family allowance fund.",
+   "amount_note": "Children born before 1 Jan 2020: 123,94 EUR (1st child), 229,32 EUR (2nd), 342,39 EUR (3rd and following). Children born from 1 Jan 2020: 200,51 EUR (0-17 years), 213,44 EUR (18-24 years). Supplements (low income, single parent, large family, disability, age) and the August school bonus come on top.",
    "is_automatic": true,
-   "application_url": "https://www.aviq.be",
+   "application_url": "https://www.camille.be/montants-des-allocations-familiales",
    "application_channel": "automatic",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -177,10 +177,10 @@
     "income_confidence": "medium",
     "gender": "any"
    },
-   "source_url": "https://www.aviq.be",
-   "source_snippet": "Since 2020 family allowances are regionalised; Wallonia applies its own scheme with base amounts rising by birth rank plus age and social supplements",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted",
+   "source_url": "https://www.camille.be/montants-des-allocations-familiales",
+   "source_snippet": "Votre enfant est né à partir du 1er janvier 2020: de 0 à 17 ans : 200,51 €; de 18 à 24 ans : 213,44 €. Né avant le 1er janvier 2020: 1er enfant 123,94 €, 2e enfant 229,32 €, 3e enfant 342,39 €",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified",
    "income_reviewed_at": "2026-08-13"
   },
   {
@@ -192,13 +192,13 @@
    "funder": "Famiris (Brussels public family allowance fund) and approved private funds",
    "category": "family",
    "benefit_type": "cash_monthly",
-   "amount_min": null,
-   "amount_max": null,
+   "amount_min": 181.1,
+   "amount_max": 219.91,
    "amount_currency": "EUR",
    "amount_period": "monthly",
-   "amount_note": "Universal base amount per child by age bracket (0-11, 12-17, 18-24, around 168-215 EUR/month), plus income-tested social supplement (up to about 101 EUR/month for single-parent low-income families)",
+   "amount_note": "Base amount (indexed 01/09/2026): born before 01/12/2019 181,10 EUR (0-11), 194,04 EUR (12-17), 206,97 EUR (18-24 higher education); born from 01/12/2019 194,04 / 206,98 / 219,91 EUR. Social supplement (income < 41.399,40 EUR) up to 181,10 EUR per child; annual age supplement paid in August.",
    "is_automatic": true,
-   "application_url": "https://famiris.brussels",
+   "application_url": "https://famiris.brussels/fr/faq/paiements-allocations-familiales/montants-allocations-familiales/",
    "application_channel": "automatic",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -217,7 +217,7 @@
     "age_min": null,
     "age_max": 24,
     "income_annual_max": null,
-    "income_note": "The Brussels basic child allowance itself has no income ceiling. Only the supplement social is income-tested, on amounts indexed at 01/03/2026: full supplement below a household annual taxable income of EUR 40,586.52, a reduced supplement between EUR 40,586.52 and EUR 58,915.92, and nothing at or above EUR 58,915.92. Because the base benefit is universal, no single ceiling applies to the scheme.",
+    "income_note": "The basic allowance has no income ceiling. The social supplement depends on household taxable income (full below 41.399,40 EUR, reduced from 41.399,40 to 60.095,91 EUR, none above) and cadastral income of at most 2.000 EUR (non-indexed).",
     "requires_children": true,
     "nationality": "any_resident",
     "residency_months_min": null,
@@ -231,9 +231,9 @@
     "income_confidence": "high",
     "gender": "any"
    },
-   "source_url": "https://famiris.brussels",
-   "source_snippet": "Famiris is the Brussels family allowance fund paying the allocation de base plus possible income-related supplément social",
-   "last_verified_at": "2026-08-12",
+   "source_url": "https://famiris.brussels/fr/faq/paiements-allocations-familiales/montants-allocations-familiales/",
+   "source_snippet": "Chaque enfant ayant droit aux allocations familiales bruxelloises reçoit un montant de base en fonction de sa date de naissance et de son âge. Ce droit est inconditionnel jusqu'au 31 août de l'année durant laquelle l'enfant atteint l'âge de 18 ans.",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified",
    "income_reviewed_at": "2026-08-13"
   },
@@ -246,11 +246,11 @@
    "funder": "AViQ / Caisses d'allocations familiales agreees en Wallonie",
    "category": "family",
    "benefit_type": "cash_one_off",
-   "amount_min": 1395.02,
-   "amount_max": 1395.02,
+   "amount_min": 1422.96,
+   "amount_max": 1422.96,
    "amount_currency": "EUR",
    "amount_period": "one_off",
-   "amount_note": "1.395,02 EUR per child from 1 March 2026, regardless of birth rank; paid per child in case of multiple births. Can be requested from the 6th month of pregnancy.",
+   "amount_note": "1.422,96 EUR per child from 1 Sep 2026 (+2% indexation). Mother must be pregnant, affiliated with a Walloon family allowance fund and domiciled in Wallonia; apply from the 5th month of pregnancy (medical certificate after 23rd week).",
    "is_automatic": false,
    "application_url": "https://www.camille.be/prime-de-naissance",
    "application_channel": "online",
@@ -290,8 +290,8 @@
     "gender": "any"
    },
    "source_url": "https://www.camille.be/prime-de-naissance",
-   "source_snippet": "\"A partir du 1er mars 2026, la prime de naissance s'eleve a 1.395,02 euro par enfant, peu importe le rang de naissance\"",
-   "last_verified_at": "2026-08-12",
+   "source_snippet": "À partir du 1er septembre 2026, la prime de naissance s'élève à 1.422,96 € ... Pour recevoir la prime de naissance, vous devez être : enceinte, affiliée à une Caisse d'allocations familiales en Wallonie, domiciliée en Wallonie",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -303,11 +303,11 @@
    "funder": "Famiris / Caisses d'allocations familiales agreees Bruxelles",
    "category": "family",
    "benefit_type": "cash_one_off",
-   "amount_min": 621.7,
-   "amount_max": 1367.74,
+   "amount_min": 646.8,
+   "amount_max": 1422.96,
    "amount_currency": "EUR",
    "amount_period": "one_off",
-   "amount_note": "Higher amount for a first child (about 1.368-1.395 EUR depending on indexation date), lower amount for subsequent children (about 622-634 EUR). Paid at the earliest two months before the due date.",
+   "amount_note": "1.422,96 EUR for the first child (and per child in a multiple birth); 646,80 EUR for each following birth. Amounts indexed 01/09/2026. Applies to Brussels children only; can be applied for from the 6th month of pregnancy or up to one year after birth.",
    "is_automatic": false,
    "application_url": "https://famiris.brussels/fr/faq/allocation-naissance-adoption/allocation-de-naissance/",
    "application_channel": "online",
@@ -346,8 +346,8 @@
     "gender": "any"
    },
    "source_url": "https://famiris.brussels/fr/faq/allocation-naissance-adoption/allocation-de-naissance/",
-   "source_snippet": "\"la prime de naissance s'eleve a 1.367,74 euros a Bruxelles. A partir du deuxieme enfant, vous recevez une allocation de 621,70 euros\" (indexed amounts; multiple births get the full premium per child)",
-   "last_verified_at": "2026-08-12",
+   "source_snippet": "Pour la naissance de votre premier enfant, vous avez droit à une allocation de naissance de 1.422,96 €. Pour les naissances suivantes, vous recevez à chaque fois 646,80 €.",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -359,13 +359,13 @@
    "funder": "Famiris / Caisses d'allocations familiales Bruxelles",
    "category": "family",
    "benefit_type": "cash_one_off",
-   "amount_min": null,
-   "amount_max": null,
+   "amount_min": 25.87,
+   "amount_max": 103.49,
    "amount_currency": "EUR",
    "amount_period": "annual",
-   "amount_note": "Paid once a year in August per child; amount rises with age steps (starting around 25 EUR for young children, higher from 6, 12 and 18 years). Paid automatically with the family allowances.",
+   "amount_note": "Annual age supplement (formerly prime scolaire), paid in August with the July allowance: 25,87 EUR (0-5 years), 38,81 EUR (6-11), 64,68 EUR (12-17 and 18-24 not in higher education), 103,49 EUR (18-24 in higher education).",
    "is_automatic": true,
-   "application_url": "https://famiris.brussels",
+   "application_url": "https://famiris.brussels/fr/faq/paiements-allocations-familiales/montants-allocations-familiales/",
    "application_channel": "automatic",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -395,10 +395,10 @@
     ],
     "gender": "any"
    },
-   "source_url": "https://famiris.brussels",
-   "source_snippet": "Annual age-graded school premium paid automatically in August on top of Brussels family allowances",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://famiris.brussels/fr/faq/paiements-allocations-familiales/montants-allocations-familiales/",
+   "source_snippet": "Tout enfant bénéficiant des allocations familiales bruxelloises a droit au supplément d'âge annuel. Vous recevez ce supplément en août, en même temps que les allocations familiales du mois de juillet.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "kleutertoeslag-vlaanderen",
@@ -409,11 +409,11 @@
    "funder": "Vlaamse overheid - uitbetalers Groeipakket",
    "category": "family",
    "benefit_type": "cash_one_off",
-   "amount_min": null,
-   "amount_max": null,
+   "amount_min": 131.1,
+   "amount_max": 131.1,
    "amount_currency": "EUR",
    "amount_period": "annual",
-   "amount_note": "Annual income-tested supplement (about 160 EUR) for toddlers attending nursery school sufficiently; investigated automatically by the payer",
+   "amount_note": "Now part of the Flemish schooltoeslag for nursery education: 131,10 EUR full supplement per school year 2026-2027 (old note said about 160 EUR).",
    "is_automatic": true,
    "application_url": "https://www.vlaanderen.be/vlaams-groeipakket",
    "application_channel": "automatic",
@@ -449,10 +449,10 @@
     ],
     "gender": "any"
    },
-   "source_url": "https://www.vlaanderen.be/vlaams-groeipakket",
-   "source_snippet": "Yearly supplement within the Groeipakket for 3- and 4-year-olds with sufficient attendance in Dutch-medium nursery education, for lower-income families",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www.vlaanderen.be/vlaams-groeipakket/bedragen-en-betaaldata",
+   "source_snippet": "Schooltoeslag (jaarbedrag schooljaar 2026-2027) - Kleuteronderwijs - Volledige toeslag 131,10 euro",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "pleegzorgtoeslag-vlaanderen",
@@ -463,11 +463,11 @@
    "funder": "Vlaamse overheid - uitbetalers Groeipakket",
    "category": "family",
    "benefit_type": "cash_monthly",
-   "amount_min": 71.3,
-   "amount_max": 71.3,
+   "amount_min": 73.63,
+   "amount_max": 73.63,
    "amount_currency": "EUR",
    "amount_period": "monthly",
-   "amount_note": "71,30 EUR per month on top of the base amount for each child placed in foster care",
+   "amount_note": "73,63 EUR per month per foster child (valid since 1 Sep 2026), on top of the base amount",
    "is_automatic": true,
    "application_url": "https://www.vlaanderen.be/vlaams-groeipakket",
    "application_channel": "automatic",
@@ -503,10 +503,10 @@
     ],
     "gender": "any"
    },
-   "source_url": "https://www.vlaanderen.be/vlaams-groeipakket",
-   "source_snippet": "A child placed in a foster family is entitled to a pleegzorgtoeslag of 71,30 euro paid monthly on top of the Groeipakket",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www.vlaanderen.be/vlaams-groeipakket/bedragen-en-betaaldata",
+   "source_snippet": "Pleegzorgtoeslag 73,63 euro per maand",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "ondersteuningstoeslag-vlaanderen",
@@ -517,11 +517,11 @@
    "funder": "Vlaamse overheid - uitbetalers Groeipakket",
    "category": "family",
    "benefit_type": "cash_monthly",
-   "amount_min": 346.15,
-   "amount_max": 346.15,
+   "amount_min": 357.47,
+   "amount_max": 357.47,
    "amount_currency": "EUR",
    "amount_period": "monthly",
-   "amount_note": "346,15 EUR per month; requires a care assessment (medical-social scale, minimum 12 points); lower amounts may apply for smaller care needs",
+   "amount_note": "357,47 EUR per month (valid since 1 Sep 2026); requires a care assessment (medical-social scale)",
    "is_automatic": false,
    "application_url": "https://www.vlaanderen.be/vlaams-groeipakket",
    "application_channel": "online",
@@ -563,10 +563,10 @@
     ],
     "gender": "any"
    },
-   "source_url": "https://www.vlaanderen.be/vlaams-groeipakket",
-   "source_snippet": "Monthly supplement of 346,15 euro for children and young people with a support need of at least 12 points on the medical-social scale",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www.vlaanderen.be/vlaams-groeipakket/bedragen-en-betaaldata",
+   "source_snippet": "Ondersteuningstoeslag 357,47 euro per maand",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "schoolbonus-groeipakket-vlaanderen",
@@ -577,11 +577,11 @@
    "funder": "Vlaamse overheid - uitbetalers Groeipakket",
    "category": "family",
    "benefit_type": "cash_one_off",
-   "amount_min": 23.07,
-   "amount_max": 69.22,
+   "amount_min": 23.82,
+   "amount_max": 71.48,
    "amount_currency": "EUR",
    "amount_period": "annual",
-   "amount_note": "23,07 EUR (0-4y), 40,38 EUR (5-11y), 57,68 EUR (12-17y), 69,22 EUR (18-24y); income-tested via the social supplement",
+   "amount_note": "Per year: 23,82 EUR (0-4 years), 41,70 EUR (5-11), 59,57 EUR (12-17), 71,48 EUR (18-24). Official overview lists it as a general age-based supplement (no income test stated).",
    "is_automatic": true,
    "application_url": "https://www.vlaanderen.be/vlaams-groeipakket",
    "application_channel": "automatic",
@@ -617,10 +617,10 @@
     ],
     "gender": "any"
    },
-   "source_url": "https://www.vlaanderen.be/vlaams-groeipakket",
-   "source_snippet": "Schoolbonus paid each year in August if the child was entitled to the sociale toeslag in July; 23,07 to 69,22 euro depending on age",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www.vlaanderen.be/vlaams-groeipakket/bedragen-en-betaaldata",
+   "source_snippet": "Schoolbonus: 0-4 jaar 23,82 euro; 5-11 jaar 41,70 euro; 12-17 jaar 59,57 euro; 18-24 jaar 71,48 euro (bedrag per jaar)",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "kinderbijslag-federale-ambtenaren",
@@ -674,11 +674,11 @@
    "funder": "Vlaamse overheid - uitbetalers Groeipakket",
    "category": "education",
    "benefit_type": "cash_one_off",
-   "amount_min": null,
-   "amount_max": null,
+   "amount_min": 131.1,
+   "amount_max": 4602.31,
    "amount_currency": "EUR",
    "amount_period": "annual",
-   "amount_note": "Annual amount per child depends on school level and household income (roughly 70 to 2.000+ EUR for secondary boarding/technical tracks); investigated and paid automatically by the Groeipakket payer",
+   "amount_note": "Annual amounts for school year 2026-2027 by level: nursery 131,10 EUR; primary 152,98-308,92 EUR; secondary 295,48-4.132,12 EUR depending on track, boarding and status; learn-and-work 248,48-876,47 EUR; nursing in higher vocational education up to 4.602,31 EUR. Depends on household income.",
    "is_automatic": true,
    "application_url": "https://www.vlaanderen.be/vlaams-groeipakket",
    "application_channel": "automatic",
@@ -715,10 +715,10 @@
     ],
     "gender": "any"
    },
-   "source_url": "https://www.vlaanderen.be/vlaams-groeipakket",
-   "source_snippet": "Income-tested yearly school allowance within the Groeipakket for children in nursery, primary or secondary education; amount varies with education type and family income",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www.vlaanderen.be/vlaams-groeipakket/bedragen-en-betaaldata",
+   "source_snippet": "Schooltoeslag (jaarbedrag schooljaar 2026-2027) - Lager onderwijs: Minimumtoeslag 152,98 euro, Volledige toeslag 237,92 euro, Uitzonderlijke toeslag 308,92 euro",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "studietoelage-hoger-onderwijs-vlaanderen",
@@ -729,11 +729,11 @@
    "funder": "Vlaamse overheid - Dienst Studietoelagen (AHOVOKS)",
    "category": "education",
    "benefit_type": "cash_one_off",
-   "amount_min": null,
-   "amount_max": null,
+   "amount_min": 343.2,
+   "amount_max": 7150.8,
    "amount_currency": "EUR",
    "amount_period": "annual",
-   "amount_note": "Yearly grant roughly between 400 and 5.500 EUR depending on household income, family size and living situation (kot); paid once per academic year. Includes right to reduced tuition fee and cheaper student housing/meals.",
+   "amount_note": "Academic year 2026-2027 for 60 credits: minimum 343,20 EUR; full grant 3.187,74 EUR (not in kot) or 5.311,19 EUR (kot); exceptional grant 4.625,87 / 7.150,80 EUR. Pro rata for fewer credits (minimum 54 credits required).",
    "is_automatic": false,
    "application_url": "https://www.vlaanderen.be/onderwijs-en-vorming/studietoelage",
    "application_channel": "online",
@@ -768,11 +768,11 @@
      "student"
     ],
     "age_min": 17,
-    "age_max": null,
+    "age_max": 29,
     "income_annual_max": null,
     "income_note": "Income-tested; entitlement depends on household taxable income and number of dependants",
     "requires_children": false,
-    "nationality": "any_resident",
+    "nationality": "citizen_or_pr",
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": true,
@@ -785,9 +785,9 @@
     ],
     "gender": "any"
    },
-   "source_url": "https://www.vlaanderen.be/onderwijs-en-vorming/studietoelage",
-   "source_snippet": "\"De studietoelage dient als financiele ondersteuning om studiekosten te dekken... Het is een bedrag dat je een keer per academiejaar ontvangt als je voldoet aan alle voorwaarden\"",
-   "last_verified_at": "2026-08-12",
+   "source_url": "https://www.vlaanderen.be/onderwijs-en-vorming/studietoelage/bedrag",
+   "source_snippet": "Of je recht hebt op een studietoelage hangt af van je inkomen, je gezinssituatie, je nationaliteit, je leeftijd en de opleiding die je volgt.",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -837,9 +837,9 @@
     "gender": "any"
    },
    "source_url": "https://www.vlaanderen.be/onderwijs-en-vorming/studietoelage",
-   "source_snippet": "\"Krijg je een studietoelage voor het hoger onderwijs? Dan heb je ook recht op verminderd studiegeld bij je onderwijsinstelling in Vlaanderen\"",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted",
+   "source_snippet": "Krijg je een studietoelage voor het hoger onderwijs? Dan heb je ook recht op verminderd studiegeld bij je onderwijsinstelling in Vlaanderen.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified",
    "income_reviewed_at": "2026-08-13"
   },
   {
@@ -933,10 +933,10 @@
     ],
     "gender": "any"
    },
-   "source_url": "https://www.vdab.be",
-   "source_snippet": "VDAB offers free vocational training courses, career counselling and job matching for jobseekers and workers in Flanders",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www.vdab.be/opleidingen/gratis-leren/geen-werk/diploma-behalen",
+   "source_snippet": "Als werkzoekende kan je via VDAB gratis studeren aan een school, hogeschool, universiteit of het volwassenenonderwijs. Je bent ingeschreven bij VDAB als werkzoekende.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "inburgering-gratis-cursus",
@@ -980,10 +980,10 @@
     ],
     "gender": "any"
    },
-   "source_url": "https://www.integratie-inburgering.be",
-   "source_snippet": "Newcomers entitled or obliged to civic integration receive a free integration trajectory including Dutch lessons pathway, social orientation course and career guidance",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www.integratie-inburgering.be/nl/kosten-van-het-inburgeringstraject-vanaf-1-september-2023",
+   "source_snippet": "Wie vanaf 1 september 2023 een inburgeringscontract ... inburgering te volgen in Vlaanderen, kunnen zij het traject gratis volgen.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "werkloosheidsuitkeringen-rva",
@@ -1046,8 +1046,8 @@
     "gender": "any"
    },
    "source_url": "https://www.rva.be/documentatie/bedragen",
-   "source_snippet": "First compensation period: 65% of last wage (capped, highest wage ceiling 4.265,98 EUR/month) during the first 3 months, then 60%; afterwards a flat-rate amount by family situation. New rules from 01.03.2026 including time limitation.",
-   "last_verified_at": "2026-08-12",
+   "source_snippet": "Nieuwe reglementering voor werklozen die voor het eerst uitkeringen genieten vanaf 01.03.2026",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -1118,7 +1118,7 @@
    "amount_max": null,
    "amount_currency": "EUR",
    "amount_period": "monthly",
-   "amount_note": "Usually 65-70% of the last capped daily wage per suspended day; employer procedures via DRS scenario",
+   "amount_note": "60% of the (capped) wage for all forms of temporary unemployment except force majeure; 26,75% withholding tax; possible supplement from the employer/sector.",
    "is_automatic": false,
    "application_url": "https://www.rva.be",
    "application_channel": "online",
@@ -1142,10 +1142,10 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.rva.be",
-   "source_snippet": "Benefits for workers temporarily suspended by their employer for economic reasons or force majeure; in 2026 temporary unemployment is a percentage of the capped daily wage",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www.rva.be/burgers/tijdelijke-werkloosheid/hoeveel-bedraagt-uw-uitkering-bij-tijdelijke-werkloosheid",
+   "source_snippet": "voor alle vormen van tijdelijke werkloosheid (behalve tijdelijke werkloosheid wegens overmacht) 60% van uw (eventueel begrensd) loon.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "tijdskrediet-met-motief",
@@ -1208,9 +1208,9 @@
    "amount_max": null,
    "amount_currency": "EUR",
    "amount_period": "monthly",
-   "amount_note": "Higher flat allowances than ordinary time credit; amount depends on the reduction (1/2 or 1/5), age and sector; long career record required (generally 24-25 years)",
+   "amount_note": "Flat allowance independent of wage (see RVA barema); halftime vs 1/5 and living situation change the amount.",
    "is_automatic": false,
-   "application_url": "https://www.rva.be",
+   "application_url": "https://www.rva.be/burgers/loopbaanonderbreking-tijdskrediet-en-thematische-verloven/tijdskrediet-privesector/het-tijdskrediet-landingsbaan-recht-op-onderbrekingsuitkeringen",
    "application_channel": "online",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -1220,7 +1220,7 @@
     "statuses": [
      "employee"
     ],
-    "age_min": 50,
+    "age_min": 55,
     "age_max": 65,
     "income_annual_max": null,
     "income_note": null,
@@ -1232,10 +1232,10 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.rva.be",
-   "source_snippet": "Older workers (55+, sometimes 50+ in heavy occupations) can reduce working time to half-time or 4/5 in a landing job with a higher RVA allowance, subject to a long career condition",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www.rva.be/burgers/loopbaanonderbreking-tijdskrediet-en-thematische-verloven/tijdskrediet-privesector/het-tijdskrediet-landingsbaan-recht-op-onderbrekingsuitkeringen",
+   "source_snippet": "Sinds 01.01.2015 kunt u vanaf de leeftijd van 60 jaar recht op uitkeringen hebben.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "brugpensioen-swt",
@@ -1250,7 +1250,7 @@
    "amount_max": null,
    "amount_currency": "EUR",
    "amount_period": "monthly",
-   "amount_note": "Consists of the ordinary unemployment benefit plus a flat employer supplement (bedrijfstoeslag) that compensates part of the lost wage; age and career conditions vary by situation",
+   "amount_note": "Complementary allowance: 60% of the last gross salary regardless of household situation (plus employer supplement); see RVA barema.",
    "is_automatic": false,
    "application_url": "https://www.rva.be/documentatie/bedragen",
    "application_channel": "online",
@@ -1274,10 +1274,10 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.rva.be/documentatie/bedragen",
-   "source_snippet": "Dismissed older workers can receive unemployment benefits plus a monthly company supplement until pension age; minimum age and career conditions apply (generally 60+ after restructuring, earlier after long careers)",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www.rva.be/burgers/werkloosheid-met-bedrijfstoeslag-brugpensioen/hoe-wordt-het-bedrag-van-uw-stelsel-van-werkloosheid-met-bedrijfstoeslag-berekend-",
+   "source_snippet": "Het bedrag van de werkloosheidsuitkeringen stemt overeen met 60% van uw laatste brutoloon. Het percentage van 60% geldt ongeacht uw gezinstoestand",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "studentenarbeid-650-uren",
@@ -1294,7 +1294,7 @@
    "amount_period": "annual",
    "amount_note": "Student pays 2,71% instead of 13,07% social contributions and no payroll tax within the 650-hour quota; parents keep child benefit (Groeipakket) and the student stays fiscally dependent within income limits",
    "is_automatic": false,
-   "application_url": "https://www.studentatwork.be",
+   "application_url": "https://www.studentatwork.be/nl/urenpakket-en-impact.html",
    "application_channel": "online",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -1328,9 +1328,9 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.studentatwork.be",
-   "source_snippet": "Students can work 650 hours per calendar year paying only a solidarity contribution of 2,71% (employer 5,42-5,43%) instead of ordinary social contributions, and pay no withholding tax within the quota",
-   "last_verified_at": "2026-08-12",
+   "source_url": "https://www.studentatwork.be/nl/urenpakket-en-impact.html",
+   "source_snippet": "Sinds 1 januari 2025 bevat dat pakket 650 uur. Tijdens die uren betaal je minder sociale bijdragen (2,71% i.p.v. 13,07%) dan een gewone werknemer.",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -1374,9 +1374,9 @@
     "income_confidence": "high",
     "gender": "any"
    },
-   "source_url": "https://www.socialsecurity.be",
-   "source_snippet": "Workers already employed at least 4/5 (or pensioners, teachers from a certain age) can take a flexi-job in horeca, retail and other listed sectors without employee social contributions and with tax-free pay within limits",
-   "last_verified_at": "2026-08-12",
+   "source_url": "https://werk.belgie.be/nl/themas/arbeidsovereenkomsten/bijzondere-arbeidsovereenkomsten/flexi-jobarbeidsovereenkomst",
+   "source_snippet": "Een tewerkstelling hebben die minimaal gelijk is aan 4/5e van een voltijdse job bij één of meerdere andere werkgever(s) gedurende het referentiekwartaal T-3.",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified",
    "income_reviewed_at": "2026-08-13"
   },
@@ -1418,10 +1418,10 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.mi-is.be",
+   "source_url": "https://primabook.mi-is.be/nl/recht-op-maatschappelijke-integratie/de-elementen-van-het-recht-op-maatschappelijke-integratie",
    "source_snippet": "The OCMW/CPAS can hire a social assistance beneficiary with an employer using their benefit as the wage subsidy, giving a paid job, training path and preservation of social rights",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "vlaamse-ondersteuningspremie-vop",
@@ -1438,10 +1438,10 @@
    "amount_period": "one_off",
    "amount_note": "Paid in instalments over up to 2 years; total between roughly 500 and 11.000 EUR depending on the target group and employment duration",
    "is_automatic": false,
-   "application_url": "https://www.vdab.be",
+   "application_url": "https://www.vlaanderen.be/werken/individueel-maatwerk/individueel-maatwerk-voor-werkgevers",
    "application_channel": "online",
    "deadline_type": "rolling",
-   "deadline_note": null,
+   "deadline_note": "Ended: Vlaamse ondersteuningspremie is an 'uitdovend stelsel' (phasing out), replaced by the premiums of Individueel maatwerk (IMW); existing VOP only runs to expiry.",
    "procedure_steps": [
     {
      "step": 1,
@@ -1472,10 +1472,10 @@
     ],
     "gender": "any"
    },
-   "source_url": "https://www.vdab.be",
-   "source_snippet": "Premium for Flemish employers who hire a jobseeker from a disadvantaged target group (young low-skilled, older workers, persons with disabilities, long-term unemployed...) for at least half-time",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www.vlaanderen.be/economie-en-ondernemen/personeel/vlaamse-ondersteuningspremie-vop-uitdovend-stelsel",
+   "source_snippet": "Vlaamse ondersteuningspremie (VOP - Uitdovend stelsel). U kunt voortaan gebruik maken van de premies van individueel maatwerk (IMW).",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "actiris-aanwervingspremies",
@@ -1492,10 +1492,10 @@
    "amount_period": "one_off",
    "amount_note": "Amount and duration depend on the specific measure and the jobseeker's profile; applied for by the employer with Actiris",
    "is_automatic": false,
-   "application_url": "https://www.actiris.brussels",
+   "application_url": "https://www.actiris.brussels/nl/werkgevers/premies-en-opleidingen/",
    "application_channel": "online",
    "deadline_type": "rolling",
-   "deadline_note": null,
+   "deadline_note": "Partly ended: Actiris announces 'Afschaffing van de maatregel activa.brussels' (abolition of the activa.brussels hiring measure); other measures are listed under 'Financiële steun'.",
    "procedure_steps": [],
    "documents_required": [],
    "eligibility": {
@@ -1517,10 +1517,10 @@
     ],
     "gender": "any"
    },
-   "source_url": "https://www.actiris.brussels",
-   "source_snippet": "Brussels employers can receive hiring incentives (activation of unemployment benefits and other premiums) when engaging registered Brussels jobseekers, notably in training paths",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www.actiris.brussels/nl/werkgevers/",
+   "source_snippet": "Afschaffing van de maatregel activa.brussels",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "dienstencheques",
@@ -1531,13 +1531,13 @@
    "funder": "Gewesten (VDAB / Le Forem / Actiris via Pluxee) - RSZ framework",
    "category": "employment",
    "benefit_type": "discount",
-   "amount_min": null,
-   "amount_max": null,
+   "amount_min": 10,
+   "amount_max": 11,
    "amount_currency": "EUR",
    "amount_period": "one_off",
-   "amount_note": "User pays a fixed price per voucher (about 10-11 EUR per hour of work) while the region subsidises the actual wage cost; Wallonia still grants a tax reduction of 0,90 EUR per voucher on the first 150 vouchers",
+   "amount_note": "A service voucher costs 10 EUR (up to 400 per person / 800 per household per year); 11 EUR from the 401st (per person) or 801st (household), maximum 500 per person / 1000 per household. Since 1 Jan 2025 no tax advantage is linked to purchases. Flemish rules; other regions differ.",
    "is_automatic": false,
-   "application_url": "https://www.wikifin.be/nl/belasting-werk-en-inkomen/belastingaangifte/belastingverminderingen/dienstencheques-en-pwa-cheques",
+   "application_url": "https://www.vlaanderen.be/consumentenzaken/vlaamse-dienstencheques/huishoudhulp-betalen-met-dienstencheques/kostprijs-en-belastingvoordeel-van-een-dienstencheque",
    "application_channel": "online",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -1564,9 +1564,9 @@
     "gender": "any",
     "rule_source": "geography_unknown"
    },
-   "source_url": "https://www.wikifin.be/nl/belasting-werk-en-inkomen/belastingaangifte/belastingverminderingen/dienstencheques-en-pwa-cheques",
-   "source_snippet": "\"Sinds 2025 is de belastingvermindering voor dienstencheques geschrapt in het Vlaams Gewest; sinds 2026 ook in het Brussels Gewest. In Wallonie blijft een vermindering van 0,90 euro per cheque (eerste 150 cheques).\" The voucher itself buys one hour of subsidised household help.",
-   "last_verified_at": "2026-08-12",
+   "source_url": "https://www.vlaanderen.be/consumentenzaken/vlaamse-dienstencheques/huishoudhulp-betalen-met-dienstencheques/kostprijs-en-belastingvoordeel-van-een-dienstencheque",
+   "source_snippet": "Een dienstencheque kost 10 euro. Tegen die prijs kunt u 400 cheques per persoon per jaar bestellen.",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -1578,13 +1578,13 @@
    "funder": "OCMW/CPAS (federal law on the right to social integration)",
    "category": "income_support",
    "benefit_type": "cash_monthly",
-   "amount_min": 893.65,
-   "amount_max": 1811.57,
+   "amount_min": 911.56,
+   "amount_max": 1847.89,
    "amount_currency": "EUR",
    "amount_period": "monthly",
-   "amount_note": "From 1 March 2026: 893,65 EUR/month (cohabitant), 1.340,47 EUR (single), 1.811,57 EUR (with dependent family). Partial RIS possible to top up lower income.",
+   "amount_note": "From 01/09/2026 (annual amounts divided by 12): category 1 cohabitant 911,56 EUR (10.938,74/yr), category 2 single 1.367,34 EUR (16.408,11/yr), category 3 with dependent family 1.847,89 EUR (22.174,69/yr). Partial RIS possible.",
    "is_automatic": false,
-   "application_url": "https://www.mi-is.be",
+   "application_url": "https://www.mi-is.be/",
    "application_channel": "online",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -1619,16 +1619,16 @@
     "income_annual_max": null,
     "income_note": "Household means-tested; own income below the RIS amount",
     "requires_children": false,
-    "nationality": "any_resident",
+    "nationality": "citizen_or_pr",
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.mi-is.be",
-   "source_snippet": "\"A partir du 1er mars 2026, le montant du RIS est de: cohabitant 893,65 euros; isole 1.340,47 euros; personne avec famille a charge 1.811,57 euros\" - identical amounts for all CPAS",
-   "last_verified_at": "2026-08-12",
+   "source_url": "https://primabook.mi-is.be/nl/recht-op-maatschappelijke-integratie/bedragen-leefloon",
+   "source_snippet": "Datum in voege 01/09/2026: Categorie 1 10.938,74; Categorie 2 16.408,11; Categorie 3 22.174,69 (bedragen op jaarbasis in euro).",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -1743,13 +1743,13 @@
    "funder": "Federale Pensioendienst (FPD/SFP)",
    "category": "income_support",
    "benefit_type": "cash_monthly",
-   "amount_min": null,
-   "amount_max": null,
+   "amount_min": 1096.18,
+   "amount_max": 1644.28,
    "amount_currency": "EUR",
    "amount_period": "monthly",
-   "amount_note": "Tops income up to the guaranteed amount for your category (single / cohabiting); paid monthly by the Federal Pension Service; gives access to extra advantages (e.g. social tariffs)",
+   "amount_note": "Tops up means to 1.644,28 EUR/month (single, raised base amount) or 1.096,18 EUR/month (cohabiting) at 01.09.2026; paid by the Federal Pension Service.",
    "is_automatic": false,
-   "application_url": "https://www.sfpd.fgov.be",
+   "application_url": "https://www.sfpd.fgov.be/nl/recht-op-pensioen/igo",
    "application_channel": "online",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -1767,8 +1767,8 @@
     ],
     "age_min": 65,
     "age_max": null,
-    "income_annual_max": 19343.52,
-    "income_note": "The Federale Pensioendienst states you qualify if your monthly means are below EUR 1,611.96 for a single person, or EUR 1,074.64 for a cohabitant, at index 183.17 applicable from 01.03.2026 — i.e. EUR 19,343.52/year single and EUR 12,895.68/year cohabiting. The means test covers 90% of pensions, professional and replacement income, property and capital.",
+    "income_annual_max": 19731.36,
+    "income_note": "Means ceiling = IGO base amount: 1.644,28 EUR/month for a single person (19.731,36 EUR/yr) or 1.096,18 EUR/month for a cohabitant, at index 186,83 from 01.09.2026.",
     "requires_children": false,
     "nationality": "any_resident",
     "residency_months_min": null,
@@ -1780,9 +1780,9 @@
     "income_confidence": "high",
     "gender": "any"
    },
-   "source_url": "https://www.sfpd.fgov.be",
-   "source_snippet": "Means-tested top-up to a guaranteed minimum income for persons aged 65+ whose resources are below the threshold",
-   "last_verified_at": "2026-08-12",
+   "source_url": "https://www.sfpd.fgov.be/nl/recht-op-pensioen/igo",
+   "source_snippet": "Voor alleenstaanden – verhoogd basisbedrag = 1 644,28euro (op 01.09.2026 aan index 186,83). Voor samenwonenden - basisbedrag = 1 096,18euro",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified",
    "income_reviewed_at": "2026-08-13"
   },
@@ -1821,10 +1821,10 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.fedasil.be",
-   "source_snippet": "Asylum seekers are entitled to reception (housing, meals, clothing, medical care and a small daily allowance) in a Fedasil or partner centre during their procedure",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www.fedasil.be/nl/asile-en-belgique/opvang-asielzoekers",
+   "source_snippet": "Verzoekers om internationale bescherming hebben recht op materiële hulp (opvang) gedurende de volledige procedure.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "uitpas-kansentarief",
@@ -1880,9 +1880,9 @@
     ],
     "gender": "any"
    },
-   "source_url": "https://www.uitpas.be",
-   "source_snippet": "\"Wie een UiTPAS aan kansentarief heeft, krijgt 80% korting\" - people with a low income pay only 20% of the price for culture, sports and youth activities in participating regions",
-   "last_verified_at": "2026-08-12",
+   "source_url": "https://helpdesk.uitpas.be/hc/nl/articles/360011579540-Wie-heeft-recht-op-het-kansentarief",
+   "source_snippet": "Mensen met een laag inkomen kunnen een UiTPAS kopen aan een sterk verminderd tarief (meestal €1 of zelfs gratis) en genieten 80% korting...",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -1898,12 +1898,12 @@
    "amount_max": null,
    "amount_currency": "EUR",
    "amount_period": "monthly",
-   "amount_note": "Fixed monthly discount defined by federal rules on a basic subscription; usually applied automatically after status check or on request to the operator",
+   "amount_note": "Old discount: up to 11,50 EUR per month on fixed telephony/internet bills (existing beneficiaries only). Social internet offer from 01/03/2024: at least 30 Mbps and 150 GB download.",
    "is_automatic": false,
-   "application_url": "https://www.bipt.be",
+   "application_url": "https://economie.fgov.be/nl/themas/online/telecommunicatie/sociaal-internetaanbod-gunstig",
    "application_channel": "online",
    "deadline_type": "rolling",
-   "deadline_note": null,
+   "deadline_note": "Old social telecom discount: no new applications since 01/03/2024 (existing beneficiaries keep it under conditions). New applications go to the 'sociaal internetaanbod' via your fixed-internet operator.",
    "procedure_steps": [],
    "documents_required": [],
    "eligibility": {
@@ -1920,10 +1920,10 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.bipt.be",
-   "source_snippet": "Certain protected categories (e.g. persons entitled to verhoogde tegemoetkoming, IGO, IVT) get a discount on a basic internet or telecom subscription with participating operators",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www.bipt.be/consumenten/telefoon-internet-tv/tarieven/sociaal-tarief",
+   "source_snippet": "Vanaf 1 maart 2024 kan een 'sociaal internetaanbod' aangevraagd worden bij een operator voor vast internet. Met het sociaal internetaanbod kan je surfen aan een snelheid van minstens 30 Mbps en krijgt men een downloadvolume van 150 GB.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "gratis-juridische-bijstand",
@@ -1960,10 +1960,10 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://justitie.belgium.be",
+   "source_url": "https://justitie.belgium.be/nl/juridisch_advies_nodig",
    "source_snippet": "Free first-line legal information for everyone; free or partly free second-line legal assistance (pro-Deo lawyer) depending on income and situation",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "verhoogde-tegemoetkoming-vt-bim",
@@ -2015,9 +2015,9 @@
     "income_confidence": "high",
     "gender": "any"
    },
-   "source_url": "https://www.riziv.fgov.be",
-   "source_snippet": "\"De verhoogde tegemoetkoming (VT) is de nieuwe naam voor het vroegere BIM-statuut. Het is een regeling die zorgt voor een verlaagd tarief voor gezondheidszorg\" - lower personal share for doctor visits, medicines and treatments for low-income people",
-   "last_verified_at": "2026-08-12",
+   "source_url": "https://www.riziv.fgov.be/nl/thema-s/verzorging-kosten-en-terugbetaling/financiele-toegankelijkheid/verhoogde-tegemoetkoming-grensbedragen-van-de-inkomsten",
+   "source_snippet": "Jaarlijks grensbedrag voor de inkomens van het vorige jaar: 2026: 28.054,93 (gezin van één persoon), verhoging per extra persoon 5.193,74",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified",
    "income_reviewed_at": "2026-08-13"
   },
@@ -2063,8 +2063,8 @@
     "gender": "any"
    },
    "source_url": "https://www.riziv.fgov.be/nl/thema-s/verzorging-kosten-en-terugbetaling/financiele-toegankelijkheid/de-maximumfactuur-maf",
-   "source_snippet": "\"Als de medische kosten van u en uw gezinsleden in de loop van het jaar een maximumbedrag bereiken, dan betaalt uw ziekenfonds de kosten die daar later nog bijkomen volledig terug\" - income-MAF ceiling depends on net taxable family income; social MAF 527,27 EUR (2025), child MAF 761,61 EUR (2025)",
-   "last_verified_at": "2026-08-12",
+   "source_snippet": "De sociale MAF: het totale maximumbedrag van het gezin dat de verhoogde tegemoetkoming geniet, is 450 EUR (geïndexeerd bedrag).",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -2158,10 +2158,10 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.riziv.fgov.be",
-   "source_snippet": "Patients (in particular with verhoogde tegemoetkoming or omnio status) pay only their personal share at the doctor or pharmacist; the health insurance fund pays the rest directly",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www.riziv.fgov.be/nl/thema-s/verzorging-kosten-en-terugbetaling/financiele-toegankelijkheid/derdebetalersregeling",
+   "source_snippet": "De derdebetalersregeling is verplicht: Voor huisartsen wanneer u geniet van een verhoogde tegemoetkoming (behalve voor huisbezoeken)",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "eerstelijns-psychologische-zorg",
@@ -2176,9 +2176,9 @@
    "amount_max": 11,
    "amount_currency": "EUR",
    "amount_period": "one_off",
-   "amount_note": "Per session: free under 24; 11 EUR for adults (4 EUR with VT status); 2,5 EUR for group sessions; first session always free. Up to 8-10 individual sessions per 12 months (extendable to 20 for treatment).",
+   "amount_note": "Free for children and young people up to 23. Adults 24+: first individual session free, then 11 EUR per session (4 EUR with verhoogde tegemoetkoming); group sessions 2,50 EUR; community interventions free.",
    "is_automatic": false,
-   "application_url": "https://www.riziv.fgov.be/nl/professionals/individuele-zorgverleners/klinisch-psychologen/eerstelijns-psychologische-zorg-verlenen-via-netwerken-voor-geestelijke-gezondheid",
+   "application_url": "https://www.riziv.fgov.be/nl/thema-s/verzorging-kosten-en-terugbetaling/wat-het-ziekenfonds-terugbetaalt/geestelijke-gezondheidszorg/eerstelijns-psychologische-zorg-in-een-netwerk-voor-geestelijke-gezondheid",
    "application_channel": "online",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -2204,9 +2204,9 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.riziv.fgov.be/nl/professionals/individuele-zorgverleners/klinisch-psychologen/eerstelijns-psychologische-zorg-verlenen-via-netwerken-voor-geestelijke-gezondheid",
-   "source_snippet": "\"Voor volwassenen vanaf 24 jaar betaalt de patient 11 euro per individuele sessie (4 euro met verhoogde tegemoetkoming); voor kinderen en jongeren tot 23 jaar volledig gedekt. De eerste sessie is altijd gratis.\"",
-   "last_verified_at": "2026-08-12",
+   "source_url": "https://www.riziv.fgov.be/nl/thema-s/verzorging-kosten-en-terugbetaling/wat-het-ziekenfonds-terugbetaalt/geestelijke-gezondheidszorg/eerstelijns-psychologische-zorg-in-een-netwerk-voor-geestelijke-gezondheid",
+   "source_snippet": "Voor volwassenen vanaf 24 jaar oud: voor individuele sessies: de eerste individuele sessie is gratis, daarna betaalt u 11 euro per sessie. Heeft u recht op verhoogde tegemoetkoming? Dan betaalt u 4 euro per sessie.",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -2250,10 +2250,10 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.riziv.fgov.be",
+   "source_url": "https://www.riziv.fgov.be/nl/thema-s/verzorging-kosten-en-terugbetaling/financiele-toegankelijkheid/statuut-chronische-aandoening",
    "source_snippet": "Automatically granted to patients with at least 400,20 EUR health costs per quarter during 8 consecutive quarters (2025 indexed): lower MAF ceiling and third-party payer system",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "gratis-vaccinaties-kind-en-gezin",
@@ -2298,10 +2298,10 @@
     ],
     "gender": "any"
    },
-   "source_url": "https://www.kindengezin.be",
-   "source_snippet": "Free consultation centres and free recommended vaccinations for babies and children in Flanders, plus development follow-up",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www.kindengezin.be/nl/thema/gezondheid-en-vaccinatie/vaccinaties/het-basisvaccinatieschema",
+   "source_snippet": "Alle vaccins in het vaccinatieschema die Kind en Gezin toedient zijn gratis, behalve de vaccins tegen het rotavirus.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "bevolkingsonderzoek-borstkanker",
@@ -2318,7 +2318,7 @@
    "amount_period": "monthly",
    "amount_note": "Free mammography on invitation every 2 years (ages 50-69)",
    "is_automatic": true,
-   "application_url": "https://www.bevolkingsonderzoek.be",
+   "application_url": "https://borstkanker.bevolkingsonderzoek.be/nl",
    "application_channel": "automatic",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -2353,10 +2353,10 @@
     ],
     "gender": "female"
    },
-   "source_url": "https://www.bevolkingsonderzoek.be",
-   "source_snippet": "Women aged 50-69 are invited every 2 years for a free screening mammography within the population screening programme",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://borstkanker.bevolkingsonderzoek.be/nl",
+   "source_snippet": "Het Bevolkingsonderzoek Borstkanker is bestemd voor vrouwen van 50 tot en met 69 jaar zonder symptomen en zonder sterk verhoogd risico.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "bevolkingsonderzoek-dikkedarmkanker",
@@ -2373,7 +2373,7 @@
    "amount_period": "monthly",
    "amount_note": "Free iFOB stool test sent by invitation every 2 years (ages 50-74)",
    "is_automatic": true,
-   "application_url": "https://www.bevolkingsonderzoek.be",
+   "application_url": "https://dikkedarmkanker.bevolkingsonderzoek.be/nl",
    "application_channel": "automatic",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -2408,10 +2408,10 @@
     ],
     "gender": "any"
    },
-   "source_url": "https://www.bevolkingsonderzoek.be",
-   "source_snippet": "Men and women aged 50-74 receive a free stool test by post every two years for early detection of colorectal cancer",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://dikkedarmkanker.bevolkingsonderzoek.be/nl",
+   "source_snippet": "Als je tussen 50 en 74 jaar bent en in aanmerking komt voor het bevolkingsonderzoek ontvang je automatisch een uitnodigingspakket; elke twee jaar een gratis stoelgangtest",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "vlaamse-zorgverzekering-zorgbudget",
@@ -2422,13 +2422,13 @@
    "funder": "Vlaamse Sociale Bescherming via de zorgkassen",
    "category": "health",
    "benefit_type": "cash_monthly",
-   "amount_min": null,
-   "amount_max": null,
+   "amount_min": 140,
+   "amount_max": 140,
    "amount_currency": "EUR",
    "amount_period": "monthly",
-   "amount_note": "Monthly care budget of roughly 130-170 EUR (higher for persons with limited income or heavier needs); requires affiliation and a care-need assessment",
+   "amount_note": "Flat EUR 140 per month, not taxable; requires affiliation with a zorgkas and a care-need assessment",
    "is_automatic": false,
-   "application_url": "https://www.vlaamsezorgkas.be",
+   "application_url": "https://www.vlaanderen.be/gezondheid-en-welzijn/gezondheid/zorgkassen-in-vlaanderen/zorgbudget-van-de-vlaamse-sociale-bescherming/zorgbudget-voor-zwaar-zorgbehoevenden-van-de-vlaamse-sociale-bescherming",
    "application_channel": "online",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -2465,9 +2465,9 @@
     "income_confidence": "high",
     "gender": "any"
    },
-   "source_url": "https://www.vlaamsezorgkas.be",
-   "source_snippet": "Persons affiliated to the Flemish Social Protection who need permanent help with daily living receive a monthly care budget; financed by the yearly zorgpremie (100 EUR in 2026, 35 EUR reduced)",
-   "last_verified_at": "2026-08-12",
+   "source_url": "https://www.vlaanderen.be/gezondheid-en-welzijn/gezondheid/zorgkassen-in-vlaanderen/zorgbudget-van-de-vlaamse-sociale-bescherming/zorgbudget-voor-zwaar-zorgbehoevenden-van-de-vlaamse-sociale-bescherming",
+   "source_snippet": "Het zorgbudget voor zwaar zorgbehoevenden bedraagt 140 euro per maand. Dat bedrag is niet belastbaar.",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified",
    "income_reviewed_at": "2026-08-13"
   },
@@ -2480,13 +2480,13 @@
    "funder": "Vlaamse Zorgkas / zorgkassen",
    "category": "health",
    "benefit_type": "cash_monthly",
-   "amount_min": null,
-   "amount_max": null,
+   "amount_min": 112,
+   "amount_max": 754,
    "amount_currency": "EUR",
    "amount_period": "monthly",
-   "amount_note": "Monthly amount depends on the self-reliance score and income; application via the zorgkas with a BEL assessment",
+   "amount_note": "Maximum EUR 112 (category 1) to EUR 754 (category 5) per month depending on care need and income; indexed",
    "is_automatic": false,
-   "application_url": "https://www.vlaamsezorgkas.be",
+   "application_url": "https://www.vlaamsesocialebescherming.be/zorgbudget-voor-ouderen-met-een-zorgnood",
    "application_channel": "online",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -2496,13 +2496,13 @@
     "statuses": [
      "retired"
     ],
-    "age_min": 60,
+    "age_min": 66,
     "age_max": null,
     "income_annual_max": null,
-    "income_note": "Income-tested",
+    "income_note": "Income-tested on household income incl. savings, investments and property; limits depend on household composition (not published as a single figure on the page). Cannot be combined with an income-replacement or integration allowance.",
     "requires_children": false,
     "nationality": "any_resident",
-    "residency_months_min": null,
+    "residency_months_min": 60,
     "housing_tenure": null,
     "student_required": false,
     "admin_areas": [
@@ -2514,10 +2514,10 @@
     ],
     "gender": "any"
    },
-   "source_url": "https://www.vlaamsezorgkas.be",
-   "source_snippet": "Allowance for people aged 60+ with reduced self-reliance (score on the BEL scale) and limited income to help pay for assistance and services",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www.vlaamsesocialebescherming.be/zorgbudget-voor-ouderen-met-een-zorgnood",
+   "source_snippet": "Het zorgbudget voor ouderen met een zorgnood (vroeger: tegemoetkoming voor hulp aan bejaarden) is een zorgbudget voor 66-plussers met een beperkt inkomen en gezondheidsproblemen. Het bedraagt maximaal 754 euro per maand",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "sociale-woning-huren-vlaanderen",
@@ -2534,7 +2534,7 @@
    "amount_period": "monthly",
    "amount_note": "Rent is calculated on household income (typically well below market rent, e.g. 200-700 EUR/month); registration and income limits apply",
    "is_automatic": false,
-   "application_url": "https://www.wonenvlaanderen.be",
+   "application_url": "https://www.vlaanderen.be/bouwen-wonen-en-energie/huren-en-verhuren/een-huis-of-appartement-huren/een-sociale-woning-huren-bij-een-woonmaatschappij/voorwaarden-voor-een-sociale-woning",
    "application_channel": "online",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -2566,8 +2566,8 @@
     "statuses": [],
     "age_min": null,
     "age_max": null,
-    "income_annual_max": null,
-    "income_note": "Income ceilings per household type; priority rules apply",
+    "income_annual_max": 47039,
+    "income_note": "2026 indexed limits: single 31,361 EUR; single with disability 33,988 EUR; all other households 47,039 EUR (plus an amount per dependent). Income of up to 3 years back counts.",
     "requires_children": false,
     "nationality": "any_resident",
     "residency_months_min": null,
@@ -2582,10 +2582,10 @@
     ],
     "gender": "any"
    },
-   "source_url": "https://www.wonenvlaanderen.be",
-   "source_snippet": "Subsidised rental homes let by social housing companies at income-dependent rents to registered candidates on the waiting list",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www.vlaanderen.be/bouwen-wonen-en-energie/huren-en-verhuren/een-huis-of-appartement-huren/een-sociale-woning-huren-bij-een-woonmaatschappij/voorwaarden-voor-een-sociale-woning",
+   "source_snippet": "Uw gezinstype Geïndexeerde inkomensgrens 2026 Alleenstaande 31.361 euro Alleenstaande met handicap 33.988 euro In alle andere gevallen 47.039 euro",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "mijn-verbouwpremie",
@@ -2642,7 +2642,7 @@
    },
    "source_url": "https://www.vlaanderen.be/bouwen-wonen-en-energie/bouwen-en-verbouwen/premies-voor-renovatie/mijn-verbouwpremie",
    "source_snippet": "\"Mijn VerbouwPremie is een premie van de Vlaamse overheid voor renovatie en energiebesparende investeringen\" - 4 income categories: 50% (cat 4), 35% (cat 3), 25% (cat 2), 20% (cat 1) of the invoice; from 1 March 2026 the two highest categories only qualify for heat pump (boiler) premiums",
-   "last_verified_at": "2026-08-12",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -2658,9 +2658,9 @@
    "amount_max": 60000,
    "amount_currency": "EUR",
    "amount_period": "one_off",
-   "amount_note": "Renovation loan up to 60.000 EUR at a reduced interest rate scaled by income category (lowest categories get the cheapest rates, down to 0-2%)",
+   "amount_note": "Up to EUR 60,000 (minus any earlier Energielening). Statutory interest rate 4.5% in 2026; owner-occupiers in income category 4 get an extra -2% reduction; reductions scale with income category",
    "is_automatic": false,
-   "application_url": "https://www.vlaanderen.be/bouwen-wonen-en-energie/bouwen-en-verbouwen/premies-voor-renovatie/mijn-verbouwpremie",
+   "application_url": "https://www.vlaanderen.be/bouwen-wonen-en-energie/lenen-voor-een-woning/mijn-verbouwlening",
    "application_channel": "online",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -2686,9 +2686,9 @@
     ],
     "gender": "any"
    },
-   "source_url": "https://www.vlaanderen.be/bouwen-wonen-en-energie/bouwen-en-verbouwen/premies-voor-renovatie/mijn-verbouwpremie",
-   "source_snippet": "\"kunt u ook de voordelige Mijn VerbouwLening tot 60.000 euro aanvragen... Sinds 2026 werd Mijn VerbouwLening nog interessanter voor de laagste inkomenscategorieen\"",
-   "last_verified_at": "2026-08-12",
+   "source_url": "https://www.vlaanderen.be/bouwen-wonen-en-energie/lenen-voor-een-woning/mijn-verbouwlening",
+   "source_snippet": "De wettelijke rentevoet blijft in 2026 ongewijzigd en bedraagt 4,5%. Voor eigenaar-bewoners uit inkomenscategorie 4 bedraagt de extra korting -2%.",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -2706,7 +2706,7 @@
    "amount_period": "one_off",
    "amount_note": "Covers 50% of the cost of adaptation works (e.g. bathroom, access) with a maximum premium; income limit 2026: 39.300 EUR single, 55.010 EUR with partner/dependant, +4.410 EUR per extra dependant",
    "is_automatic": false,
-   "application_url": "https://www.vlaanderen.be/premies-voor-renovatie/vlaamse-aanpassingspremie-om-de-woning-aan-te-passen-aan-een-oudere-bewoner/voor-wie-is-de-vlaamse-aanpassingspremie",
+   "application_url": "https://www.vlaanderen.be/bouwen-wonen-en-energie/bouwen-en-verbouwen/premies-voor-renovatie/vlaamse-aanpassingspremie-om-de-woning-aan-te-passen-aan-een-oudere-bewoner/wie-in-aanmerking-komt-voor-de-vlaamse-aanpassingspremie",
    "application_channel": "online",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -2719,7 +2719,7 @@
     "age_min": 65,
     "age_max": null,
     "income_annual_max": 39300,
-    "income_note": "2026 ceilings: 39.300 EUR (single), 55.010 EUR (couple or +1 dependant), +4.410 EUR per additional dependant",
+    "income_note": "2026 ceilings: 39,300 EUR single 65+ without dependants; 55,010 EUR with one dependant or two applicants, plus 4,410 EUR per extra dependant. Indexed yearly.",
     "requires_children": false,
     "nationality": "any_resident",
     "residency_months_min": null,
@@ -2734,9 +2734,9 @@
     ],
     "gender": "any"
    },
-   "source_url": "https://www.vlaanderen.be/premies-voor-renovatie/vlaamse-aanpassingspremie-om-de-woning-aan-te-passen-aan-een-oudere-bewoner/voor-wie-is-de-vlaamse-aanpassingspremie",
-   "source_snippet": "\"Het inkomen van alle 65-plussers mag niet meer bedragen dan 39.300 euro voor een aanvrager zonder persoon ten laste (aanvragen in 2026)\" - premium to adapt the home for an older resident",
-   "last_verified_at": "2026-08-12",
+   "source_url": "https://www.vlaanderen.be/bouwen-wonen-en-energie/bouwen-en-verbouwen/premies-voor-renovatie/vlaamse-aanpassingspremie-om-de-woning-aan-te-passen-aan-een-oudere-bewoner/wie-in-aanmerking-komt-voor-de-vlaamse-aanpassingspremie",
+   "source_snippet": "voor aanvragen in 2026: 39.300 euro voor één aanvrager (één 65-plusser) zonder persoon ten laste; 55.010 euro ... te verhogen met 4.410 euro per bijkomende persoon ten laste",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -2757,7 +2757,7 @@
    "application_url": "https://energie.wallonie.be",
    "application_channel": "online",
    "deadline_type": "rolling",
-   "deadline_note": null,
+   "deadline_note": "Ended: temporary primes regime (14/02/2025-30/09/2026) was replaced on 1 October 2026 by income-based Rénopack/Rénoprêt loans (homes with PEB label G, F or E only)",
    "procedure_steps": [],
    "documents_required": [],
    "eligibility": {
@@ -2780,10 +2780,10 @@
     "income_confidence": "medium",
     "gender": "any"
    },
-   "source_url": "https://energie.wallonie.be",
-   "source_snippet": "Walloon grants for energy audits, insulation, heating and renovation works, with amounts scaled by income category and a possible audit bonus",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted",
+   "source_url": "https://www.wallonie.be/fr/actualites/renovation-energetique-le-nouveau-regime-de-soutien-entre-en-vigueur-le-1er-octobre",
+   "source_snippet": "Le Gouvernement wallon a adopté définitivement les modalités du nouveau régime de soutien en matière de rénovation énergétique. Celui-ci entrera en vigueur le 1er octobre 2026",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified",
    "income_reviewed_at": "2026-08-13"
   },
   {
@@ -2801,10 +2801,10 @@
    "amount_period": "one_off",
    "amount_note": "Premiums cover roughly 20-70% of costs depending on work and income category. IMPORTANT: at the time of writing no new applications can be filed for invoices from 2025 or 2026 (regime suspended); check renolution.brussels for the current status.",
    "is_automatic": false,
-   "application_url": "https://www.renolution.brussels",
+   "application_url": "https://renolution.brussels/fr/les-primes-renolution",
    "application_channel": "online",
    "deadline_type": "rolling",
-   "deadline_note": "Currently suspended for 2025/2026 invoices pending government decision",
+   "deadline_note": "Apply after the works, within 12 months of the final (balance) invoice",
    "procedure_steps": [],
    "documents_required": [],
    "eligibility": {
@@ -2823,10 +2823,10 @@
     ],
     "gender": "any"
    },
-   "source_url": "https://www.renolution.brussels",
-   "source_snippet": "Brussels premium system (since 2022) bundling renovation, energy and facade premiums in about 47 categories, scaled by income category; note: applications for invoices dated 2025/2026 are suspended pending a government decision",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://renolution.brussels/fr/les-primes-renolution",
+   "source_snippet": "Toutes les demandes de primes se font après travaux, dans un délai de 12 mois à dater de la dernière facture de solde de ces travaux.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "ecoreno-credit-brussel",
@@ -2837,13 +2837,13 @@
    "funder": "Fonds du Logement de la Region de Bruxelles-Capitale (with Homegrade, Reseau Habitat)",
    "category": "housing",
    "benefit_type": "discount",
-   "amount_min": null,
+   "amount_min": 1500,
    "amount_max": 25000,
    "amount_currency": "EUR",
    "amount_period": "one_off",
-   "amount_note": "Reduced-rate loan for energy renovation (consumer credit capped at 25.000 EUR; mortgage credit for bigger projects); free simulation on the Fonds du Logement site",
+   "amount_note": "Consumer credit EUR 1,500-25,000 (mortgage ECORENO up to 120% of property value). Rate 2.5% for lower incomes, 3.5% for higher; subject to market changes",
    "is_automatic": false,
-   "application_url": "https://www.fonds.brussels",
+   "application_url": "https://fonds.brussels/fr/emprunter/credit-ecoreno",
    "application_channel": "online",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -2859,8 +2859,8 @@
     "statuses": [],
     "age_min": null,
     "age_max": null,
-    "income_annual_max": null,
-    "income_note": null,
+    "income_annual_max": 94034,
+    "income_note": "Ceilings with no dependants: 73,884 EUR single/single-parent household, 94,034 EUR other households; +5,000 EUR per dependant. 2.5% rate below 45,600/60,600 EUR; 3.5% rate between those and the ceiling.",
     "requires_children": false,
     "nationality": "any_resident",
     "residency_months_min": null,
@@ -2871,9 +2871,9 @@
     ],
     "gender": "any"
    },
-   "source_url": "https://www.fonds.brussels",
-   "source_snippet": "Renovation credit available again since January 2026 at preferential rates of about 2,5-3,5%; consumer credit up to 25.000 EUR or mortgage credit for larger energy renovations",
-   "last_verified_at": "2026-08-12",
+   "source_url": "https://fonds.brussels/fr/emprunter/credit-ecoreno",
+   "source_snippet": "Le montant minimum empruntable est de 1.500 € et le maximum est de 25.000 €.",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -2922,7 +2922,7 @@
    },
    "source_url": "https://www.wonenvlaanderen.be",
    "source_snippet": "Social letting agencies rent out private homes below market price to low-income tenants and manage the property for the owner",
-   "last_verified_at": "2026-08-12",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified",
    "income_reviewed_at": "2026-08-13"
   },
@@ -2935,24 +2935,24 @@
    "funder": "Region de Bruxelles-Capitale - Logement (SLRB/BGHM)",
    "category": "housing",
    "benefit_type": "cash_monthly",
-   "amount_min": null,
-   "amount_max": null,
+   "amount_min": 142.85,
+   "amount_max": 190.46,
    "amount_currency": "EUR",
    "amount_period": "monthly",
-   "amount_note": "Monthly amount depends on household composition and income; paid while waiting for a social dwelling, subject to conditions on the private dwelling",
+   "amount_note": "Basic EUR 190.46/month (EUR 142.85 for single-parent families with income 22,174.69-29,236.66), plus EUR 23.81 per child (EUR 47.62 for single-parent families)",
    "is_automatic": false,
-   "application_url": "https://logement.brussels",
+   "application_url": "https://be.brussels/en/housing/rental/rent-allowance/housing-allowance/rent-allowance-how-apply-and-eligibility-requirements",
    "application_channel": "online",
    "deadline_type": "rolling",
-   "deadline_note": null,
+   "deadline_note": "Granted for 5 years from the application date, then reviewed for a further 5 years",
    "procedure_steps": [],
    "documents_required": [],
    "eligibility": {
     "statuses": [],
     "age_min": null,
     "age_max": null,
-    "income_annual_max": null,
-    "income_note": "Same income conditions as social housing registration",
+    "income_annual_max": 29236.66,
+    "income_note": "Must be on a social housing waiting list (SISP) with at least 2 priority points and income <= 29,236.66 EUR; a lower ceiling applies for the 6-point route. Must not own property and not combine with other rent aid.",
     "requires_children": false,
     "nationality": "any_resident",
     "residency_months_min": null,
@@ -2963,10 +2963,10 @@
     ],
     "gender": "any"
    },
-   "source_url": "https://logement.brussels",
-   "source_snippet": "Monthly premium for households registered on the Brussels social housing waiting list who rent on the private market",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://be.brussels/en/housing/rental/rent-allowance/housing-allowance/rent-allowance-how-apply-and-eligibility-requirements",
+   "source_snippet": "you must be registered on a waiting list for social housing with a public service property company (SISP).",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "verlaagd-tarief-registratierechten-vlaanderen",
@@ -2981,9 +2981,9 @@
    "amount_max": null,
    "amount_currency": "EUR",
    "amount_period": "one_off",
-   "amount_note": "2% on the purchase price (3% for a second property? no - 12% standard); 1% with commitment to thorough energy renovation of the only own home",
+   "amount_note": "2% registration tax on the purchase of the only own home (deeds from 1 January 2025); the buyer must be registered in the population register at the home for at least one year, within three years",
    "is_automatic": false,
-   "application_url": "https://www.vlaanderen.be/belastingen-en-begroting",
+   "application_url": "https://www.vlaanderen.be/belastingen-en-begroting/vlaamse-belastingen/registratiebelasting/verkooprecht/tarieven-in-het-verkooprecht/verlaagd-tarief-in-het-verkooprecht-voor-de-aankoop-van-de-enige-eigen-woning",
    "application_channel": "online",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -3015,10 +3015,10 @@
     ],
     "gender": "any"
    },
-   "source_url": "https://www.vlaanderen.be/belastingen-en-begroting",
-   "source_snippet": "Purchase of the only own home in Flanders is taxed at 2% registration duties instead of 12%, and at 1% when committing to a thorough energy renovation (since 1 January 2024)",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www.vlaanderen.be/belastingen-en-begroting/vlaamse-belastingen/registratiebelasting/verkooprecht/tarieven-in-het-verkooprecht/verlaagd-tarief-in-het-verkooprecht-voor-de-aankoop-van-de-enige-eigen-woning",
+   "source_snippet": "Vanaf 1 januari 2025 betaalt u op de aankoop van een enige eigen woning nog maar 2% registratiebelasting.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "sociaal-tarief-energie",
@@ -3066,7 +3066,7 @@
    },
    "source_url": "https://www.creg.be",
    "source_snippet": "\"In vergelijking met de gemiddelde marktprijs zijn de sociale tarieven voor gas en elektriciteit ongeveer 30% lager\" - federally regulated all-in tariff for protected customers, revised quarterly by the CREG and identical at every supplier",
-   "last_verified_at": "2026-08-12",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified",
    "income_reviewed_at": "2026-08-13"
   },
@@ -3085,10 +3085,10 @@
    "amount_period": "monthly",
    "amount_note": "Winter contributions per half month, varying by dwelling type and protected-customer status; amounts recalculated each winter on the basis of current tariffs",
    "is_automatic": false,
-   "application_url": "https://www.vlaanderen.be/minimale-levering-van-aardgas-voor-wie-betaalt-via-prepaid",
+   "application_url": "https://www.vlaanderen.be/bouwen-wonen-en-energie/elektriciteit-en-aardgas/factuur-voor-elektriciteit-en-aardgas/minimale-levering-bij-prepaid",
    "application_channel": "online",
    "deadline_type": "rolling",
-   "deadline_note": null,
+   "deadline_note": "Available 1 November to 31 March; request via your OCMW (may contact OCMW before 1 November)",
    "procedure_steps": [],
    "documents_required": [],
    "eligibility": {
@@ -3111,9 +3111,9 @@
     ],
     "gender": "any"
    },
-   "source_url": "https://www.vlaanderen.be/minimale-levering-van-aardgas-voor-wie-betaalt-via-prepaid",
-   "source_snippet": "\"Ook in winter 2025-2026 is er financiele tussenkomst voor de verwarmingskosten van kwetsbare gezinnen\" - half-monthly contributions e.g. 31,66 to 54,66 EUR (protected customers) for gas and 78,77 to 135,77 EUR for electricity depending on dwelling type",
-   "last_verified_at": "2026-08-12",
+   "source_url": "https://www.vlaanderen.be/bouwen-wonen-en-energie/elektriciteit-en-aardgas/factuur-voor-elektriciteit-en-aardgas/minimale-levering-bij-prepaid",
+   "source_snippet": "U kunt een minimale levering krijgen tussen 1 november en 31 maart.",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -3131,7 +3131,7 @@
    "amount_period": "monthly",
    "amount_note": "Details differ by region/water company: reduction on the invoice or free basic volume for protected low-income customers; usually automatic via status exchange or on request",
    "is_automatic": true,
-   "application_url": "https://www.vmm.be",
+   "application_url": "https://www.vlaanderen.be/sociaal-tarief-voor-water",
    "application_channel": "automatic",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -3161,9 +3161,9 @@
     "gender": "any",
     "rule_source": "geography_unknown"
    },
-   "source_url": "https://www.vmm.be",
-   "source_snippet": "Protected customers pay a reduced price or receive a free basic quantity of drinking water depending on the region and water company",
-   "last_verified_at": "2026-08-12",
+   "source_url": "https://www.vlaanderen.be/sociaal-tarief-voor-water",
+   "source_snippet": "U krijgt een bedrag dat overeenkomt met 80% korting op dit verbruik. Dat bedrag betaalt het waterbedrijf rechtstreeks uit aan het gezinshoofd.",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified",
    "income_reviewed_at": "2026-08-13"
   },
@@ -3212,9 +3212,9 @@
     ],
     "gender": "any"
    },
-   "source_url": "https://www.stib-mivb.be",
-   "source_snippet": "\"From 1 July 2023, over 65s in Brussels will be able to enjoy an annual pass for 12 EUR, amounting to just 1 EUR a month\"; for seniors living outside Brussels the 65+ annual pass costs 60 EUR",
-   "last_verified_at": "2026-08-12",
+   "source_url": "https://www.stib-mivb.be/accueil/support-client/tarifs-et-titres-de-transport",
+   "source_snippet": "Si vous êtes domicilié dans la région de Bruxelles-Capitale, il s'agit de l'abonnement STIB 65+ Bruxellois qui est au prix de 12 € pour 12 mois.",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -3265,7 +3265,7 @@
    },
    "source_url": "https://www.delijn.be/nl/content/abonnementen/omnipas-65plus/",
    "source_snippet": "\"Met de Omnipas 65+ reis je voor slechts 71 euro een heel jaar lang onbeperkt met alle bussen en (Kust)trams van De Lijn in Vlaanderen en Brussel\"",
-   "last_verified_at": "2026-08-12",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified",
    "income_reviewed_at": "2026-08-13"
   },
@@ -3284,7 +3284,7 @@
    "amount_period": "monthly",
    "amount_note": "School season ticket price depends on trajectory; youth products such as the Go Pass 10 (10 journeys at reduced price) are for under-26s",
    "is_automatic": false,
-   "application_url": "https://www.belgiantrain.be",
+   "application_url": "https://www.belgiantrain.be/nl/products/abonnements/student-abonnement",
    "application_channel": "online",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -3302,14 +3302,14 @@
     "nationality": "any_resident",
     "residency_months_min": null,
     "housing_tenure": null,
-    "student_required": false,
+    "student_required": true,
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.belgiantrain.be",
-   "source_snippet": "Discounted school season tickets for pupils and students commuting by train, plus youth fares (Go Pass 10, Youth Multi) for occasional travel under 26",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www.belgiantrain.be/nl/products/abonnements/student-abonnement",
+   "source_snippet": "Jonger dan 26? Reis het hele jaar onbeperkt naar je lessen",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "delijn-buzzy-pazz",
@@ -3326,7 +3326,7 @@
    "amount_period": "annual",
    "amount_note": "Low fixed yearly price for unlimited travel (around 60 EUR/year, indexed); children under 12 travel free when accompanied",
    "is_automatic": false,
-   "application_url": "https://www.delijn.be",
+   "application_url": "https://www.delijn.be/nl/content/vervoerbewijzen/abonnementen/buzzy-pazz/",
    "application_channel": "online",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -3352,10 +3352,10 @@
     ],
     "gender": "any"
    },
-   "source_url": "https://www.delijn.be",
-   "source_snippet": "Strongly discounted annual season ticket for young people aged 12 to 24 on all De Lijn buses and trams in Flanders",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www.delijn.be/nl/content/vervoerbewijzen/abonnementen/buzzy-pazz/",
+   "source_snippet": "Buzzy Pazz Tiener (12–17 jaar). Naar school, hobby's en vrienden. Buzzy Pazz Jongere (18-24 jaar)",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "fietsvergoeding",
@@ -3370,7 +3370,7 @@
    "amount_max": 0.36,
    "amount_currency": "EUR",
    "amount_period": "monthly",
-   "amount_note": "Up to 0,36 EUR per cycled kilometre (indexed yearly), exempt from tax and social contributions; paid by the employer for home-work trips. Compulsory in the private sector since 2023 (cao 164).",
+   "amount_note": "Tax-exempt bicycle allowance up to EUR 0.36 per kilometre (income year 2025); paid by the employer",
    "is_automatic": false,
    "application_url": "https://www.vlaanderen.be/fietsvergoeding",
    "application_channel": "via_employer",
@@ -3396,7 +3396,7 @@
    },
    "source_url": "https://www.vlaanderen.be/fietsvergoeding",
    "source_snippet": "\"De fiscaal vrijgestelde fietsvergoeding ligt vandaag op maximaal 0,36 euro per kilometer (inkomstenjaar 2025, aanslagjaar 2026)\" - since cao nr 164 a bicycle allowance is a right in the private sector",
-   "last_verified_at": "2026-08-12",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -3414,7 +3414,7 @@
    "amount_period": "monthly",
    "amount_note": "Free travel on De Lijn buses and trams for recognised persons with a disability (free PMH pass)",
    "is_automatic": false,
-   "application_url": "https://www.delijn.be",
+   "application_url": "https://www.delijn.be/nl/content/kortingen/persoon-met-beperking/",
    "application_channel": "online",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -3446,9 +3446,9 @@
     ],
     "gender": "any"
    },
-   "source_url": "https://www.delijn.be",
-   "source_snippet": "\"Personen met een handicap (PMH-abonnement) kunnen gratis reizen met De Lijn\" via their Omnipas; companions of certain categories travel free on several Belgian networks",
-   "last_verified_at": "2026-08-12",
+   "source_url": "https://www.delijn.be/nl/content/kortingen/persoon-met-beperking/",
+   "source_snippet": "Ben je erkend of ingeschreven bij een erkende instantie? Of reis je mee met iemand met een beperking? Dan heb je recht op een gratis vervoerbewijs.",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -3466,7 +3466,7 @@
    "amount_period": "monthly",
    "amount_note": "Card itself is free or cheap (municipal administrative fee possible); parking advantages vary by municipality",
    "is_automatic": false,
-   "application_url": "https://mobilit.belgium.be",
+   "application_url": "https://handicap.belgium.be/nl/andere-hulp/parkeerkaart",
    "application_channel": "in_person",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -3492,10 +3492,10 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://mobilit.belgium.be",
-   "source_snippet": "Parking card giving access to reserved parking spaces and local parking advantages, valid across the EU",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://handicap.belgium.be/nl/andere-hulp/parkeerkaart",
+   "source_snippet": "Je kunt een aanvraag indienen via het tabblad 'Mijn dossier'.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "pensioensparen-belastingvermindering",
@@ -3510,9 +3510,9 @@
    "amount_max": 337.5,
    "amount_currency": "EUR",
    "amount_period": "annual",
-   "amount_note": "30% reduction on deposits up to 1.050 EUR (max advantage 315 EUR + saved municipal tax) or 25% up to 1.350 EUR (max 337,50 EUR). Ages 18-64. Ceilings frozen until 2030.",
+   "amount_note": "30% tax reduction on up to EUR 1,050 (max EUR 315), or 25% on up to EUR 1,350 (max EUR 337.50)",
    "is_automatic": false,
-   "application_url": "https://www.wikifin.be/nl/belasting-werk-en-inkomen/belastingaangifte/belastingverminderingen/pensioensparen",
+   "application_url": "https://fin.belgium.be/nl/particulieren/belastingvoordelen/pensioensparen",
    "application_channel": "online",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -3541,9 +3541,9 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.wikifin.be/nl/belasting-werk-en-inkomen/belastingaangifte/belastingverminderingen/pensioensparen",
-   "source_snippet": "\"basisplafond van maximaal 1050 euro: belastingvermindering van 30%... verhoogde plafond van maximaal 1350 euro: belastingvermindering van 25%\" (2026)",
-   "last_verified_at": "2026-08-12",
+   "source_url": "https://fin.belgium.be/nl/particulieren/belastingvoordelen/pensioensparen",
+   "source_snippet": "Spaart u in 2025 maximaal 1.050 euro (1.050 euro voor 2026), dan hebt u recht op een belastingvermindering van 30 % van het betaalde bedrag.",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -3556,12 +3556,12 @@
    "category": "tax",
    "benefit_type": "tax_credit",
    "amount_min": null,
-   "amount_max": 759,
+   "amount_max": 735,
    "amount_currency": "EUR",
    "amount_period": "annual",
-   "amount_note": "30% reduction; maximum premium around 2.530 EUR/year (2026) i.e. up to ~759 EUR advantage, but the basket is shared with mortgage capital repayments that give a regional housing tax benefit",
+   "amount_note": "30% tax reduction on premiums up to EUR 2,450 (2026), i.e. max EUR 735",
    "is_automatic": false,
-   "application_url": "https://www.wikifin.be",
+   "application_url": "https://www.wikifin.be/nl/belasting-werk-en-inkomen/belastingaangifte/belastingverminderingen/vermindering-voor",
    "application_channel": "online",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -3573,7 +3573,7 @@
      "self_employed"
     ],
     "age_min": null,
-    "age_max": null,
+    "age_max": 99,
     "income_annual_max": null,
     "income_note": null,
     "requires_children": false,
@@ -3584,9 +3584,9 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.wikifin.be",
-   "source_snippet": "30% tax reduction on premiums for long-term savings life insurance, with a 2026 maximum savings amount of about 2.530 EUR depending on net taxable professional income",
-   "last_verified_at": "2026-08-12",
+   "source_url": "https://www.wikifin.be/nl/belasting-werk-en-inkomen/belastingaangifte/belastingverminderingen/vermindering-voor",
+   "source_snippet": "Langetermijnsparen levert een belastingvoordeel op van 30 % op de premies die in de loop van het jaar worden gestort. Voor het jaar 2026 is dit bedrag 2450 euro.",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -3604,7 +3604,7 @@
    "amount_period": "annual",
    "amount_note": "30% reduction (from AJ2026, previously 45%) on gifts of 40 EUR or more to approved institutions, within legal caps (10% of net income, absolute maximum applies)",
    "is_automatic": false,
-   "application_url": "https://financien.belgium.be",
+   "application_url": "https://financien.belgium.be/nl/vzws/giften/welke_giften",
    "application_channel": "online",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -3628,9 +3628,9 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://financien.belgium.be",
-   "source_snippet": "Tax reduction for donations of at least 40 EUR per year and per approved institution; the rate drops from 45% to 30% from assessment year 2026",
-   "last_verified_at": "2026-08-12",
+   "source_url": "https://financien.belgium.be/nl/vzws/giften/welke_giften",
+   "source_snippet": "De gift moet minstens 40 euro bedragen, per kalenderjaar en per vereniging en per schenker.",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -3646,9 +3646,9 @@
    "amount_max": null,
    "amount_currency": "EUR",
    "amount_period": "annual",
-   "amount_note": "Tax-free allowance supplement per child, rising with the number of children; automatically applied via the tax return (household composition)",
+   "amount_note": "Tax-free allowance increase (income year 2026): 1 child 2,030 EUR; 2 children 5,230; 3 children 11,720; 4 children 18,970; +7,240 per child from the 5th; +760 per child under 3",
    "is_automatic": true,
-   "application_url": "https://financien.belgium.be",
+   "application_url": "https://fin.belgium.be/nl/particulieren/belastingaangifte/persoonlijke-situatie/personen-ten-laste/kinderen",
    "application_channel": "automatic",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -3676,10 +3676,10 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://financien.belgium.be",
-   "source_snippet": "Each dependent child raises the parents' tax-free allowance; the supplements for the first two children are being increased to 2.650 EUR per child by 2029",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://fin.belgium.be/nl/particulieren/belastingaangifte/persoonlijke-situatie/personen-ten-laste/kinderen",
+   "source_snippet": "1 kind ten laste 2.030 euro; 2 kinderen ten laste 5.230 euro; 3 kinderen ten laste 11.720 euro; 4 kinderen ten laste 18.970 euro",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "bijkomende-belastingvrije-som-alleenstaande-ouder",
@@ -3694,9 +3694,9 @@
    "amount_max": null,
    "amount_currency": "EUR",
    "amount_period": "annual",
-   "amount_note": "Extra supplement on top of the child supplements; conditions on living situation checked via the population register",
+   "amount_note": "Additional increase of the tax-free allowance of EUR 2,030 for a single parent with one or more dependent children (income year 2026)",
    "is_automatic": true,
-   "application_url": "https://financien.belgium.be",
+   "application_url": "https://fin.belgium.be/nl/particulieren/belastingaangifte/persoonlijke-situatie/personen-ten-laste/kinderen",
    "application_channel": "automatic",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -3724,10 +3724,10 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://financien.belgium.be",
-   "source_snippet": "Extra tax-free allowance supplement for a taxpayer living alone with at least one dependent child; from 2026 reserved to genuinely single parents (no longer for de facto cohabiting parents)",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://fin.belgium.be/nl/particulieren/belastingaangifte/persoonlijke-situatie/personen-ten-laste/kinderen",
+   "source_snippet": "Bijkomende verhoging voor alleenstaande met één of meer kinderen ten laste 2.030 euro (inkomstenjaar 2026)",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "werkbonus",
@@ -3739,12 +3739,12 @@
    "category": "tax",
    "benefit_type": "tax_credit",
    "amount_min": null,
-   "amount_max": 970,
+   "amount_max": 171.99,
    "amount_currency": "EUR",
-   "amount_period": "annual",
-   "amount_note": "Applied automatically via payroll: lower social contributions each month plus a tax reduction via the withholding tax; maximum fiscal bonus 765 EUR (2025) rising to 970 EUR from income year 2026",
+   "amount_period": "monthly",
+   "amount_note": "Reduction of employee social contributions of up to EUR 171.99/month (very low wages) or EUR 127.54/month (low wages) from 1 September 2026",
    "is_automatic": true,
-   "application_url": "https://www.socialsecurity.be",
+   "application_url": "https://www.socialsecurity.be/employer/instructions/dmfa/nl/latest/instructions/deductions/workers_reductions/workbonus.html",
    "application_channel": "via_employer",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -3772,9 +3772,9 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.socialsecurity.be",
-   "source_snippet": "Social work bonus reduces the employee's 13,07% social contributions for low wages (referteloon up to about 3.271 EUR); the fiscal work bonus adds a tax reduction of 33,14% (low wages) or 52,54% rising to 63% from income year 2026 (very low wages), capped at 765 EUR rising to 970 EUR",
-   "last_verified_at": "2026-08-12",
+   "source_url": "https://www.socialsecurity.be/employer/instructions/dmfa/nl/latest/instructions/deductions/workers_reductions/workbonus.html",
+   "source_snippet": "De volgende bedragen gelden vanaf 1 september 2026. LUIK A (lage lonen) ≤ 2.937,93: 127,54. LUIK B (zeer lage lonen) ≤ 2.300,62: 171,99",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -3792,7 +3792,7 @@
    "amount_period": "annual",
    "amount_note": "Maximum 250 EUR per year in eco-vouchers, fully exempt for the employee; granted via collective labour agreement or individual agreement",
    "is_automatic": false,
-   "application_url": "https://www.socialsecurity.be",
+   "application_url": "https://werk.belgie.be/nl/themas/verloning/ecocheques",
    "application_channel": "via_employer",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -3814,10 +3814,10 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.socialsecurity.be",
-   "source_snippet": "Employers can grant eco-vouchers exempt from social contributions and tax, up to 250 EUR per year, usable for ecological products and services",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://werk.belgie.be/nl/themas/verloning/ecocheques",
+   "source_snippet": "Het totale bedrag van ecocheques mag niet meer bedragen dan 250 € per jaar, per werknemer.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "kmo-portefeuille",
@@ -3876,7 +3876,7 @@
    },
    "source_url": "https://www.vlaio.be/nl/subsidies-financiering/kmo-portefeuille",
    "source_snippet": "\"Kleine ondernemingen krijgen 30% steun, middelgrote ondernemingen 20%. Je kan maximaal 7.500 steun per jaar krijgen.\" Higher rates (45%/35%) for energy-efficiency and cybersecurity themes; since 1 Feb 2026 advice only for cybersecurity.",
-   "last_verified_at": "2026-08-12",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -3894,7 +3894,7 @@
    "amount_period": "annual",
    "amount_note": "Percentage of the investment value deductible from taxable income; ordinary rate 8%, thematic deduction for listed sustainable investments at higher rates; carry-forward possible",
    "is_automatic": false,
-   "application_url": "https://financien.belgium.be",
+   "application_url": "https://financien.belgium.be/nl/ondernemingen/vennootschapsbelasting/belastingvoordelen/investeringsaftrek",
    "application_channel": "online",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -3916,10 +3916,10 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://financien.belgium.be",
-   "source_snippet": "Companies (mainly SMEs) can deduct a percentage of qualifying investments from taxable profit: 8% ordinary one-off deduction, higher thematic deduction (up to 20-25% and more for energy/climate/R&D investments from 2025)",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://financien.belgium.be/nl/ondernemingen/vennootschapsbelasting/belastingvoordelen/investeringsaftrek",
+   "source_snippet": "De basisaftrek van 10 % (voor natuurlijke personen of kleine vennootschappen) · De verhoogde thematische aftrek van 40 %",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "tax-shelter-startende-ondernemingen",
@@ -3934,9 +3934,9 @@
    "amount_max": 100000,
    "amount_currency": "EUR",
    "amount_period": "annual",
-   "amount_note": "Tax reduction on the invested amount; investor cap 100.000 EUR/year; company cap 250.000 EUR (start-up) or 500.000 EUR (growth) raised per period",
+   "amount_note": "One-off tax reduction of 30% (small company) or 45% (micro company) on up to EUR 100,000 invested per year",
    "is_automatic": false,
-   "application_url": "https://financien.belgium.be",
+   "application_url": "https://fin.belgium.be/nl/particulieren/belastingvoordelen/investeren-start-up-scale-up-tax-shelter",
    "application_channel": "online",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -3958,9 +3958,9 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://financien.belgium.be",
-   "source_snippet": "Private investors get a tax reduction of 45% (micro), 30% (small) or 25% (growth companies) on investments up to 100.000 EUR per year in qualifying young companies",
-   "last_verified_at": "2026-08-12",
+   "source_url": "https://fin.belgium.be/nl/particulieren/belastingvoordelen/investeren-start-up-scale-up-tax-shelter",
+   "source_snippet": "Per jaar kunt u maximaal 100.000 euro aan betalingen voor het verwerven van aandelen in aanmerking laten komen voor de belastingvermindering.",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -4008,8 +4008,8 @@
    },
    "source_url": "https://www.socialsecurity.be",
    "source_snippet": "Structural reduction of employer social contributions plus target group reductions (first employees, young workers, older workers, low wages...) lowering the cost of hiring",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "ziekte-en-invaliditeitsuitkeringen",
@@ -4026,7 +4026,7 @@
    "amount_period": "monthly",
    "amount_note": "First year: generally 60% of capped gross wage; invalidity afterwards: 40-65% depending on family situation (dependants); subject to medical control by the health fund's advising doctor",
    "is_automatic": false,
-   "application_url": "https://www.riziv.fgov.be",
+   "application_url": "https://www.riziv.fgov.be/nl/thema-s/arbeidsongeschiktheid/werknemers-en-werklozen/de-arbeidsongeschiktheidsuitkering",
    "application_channel": "online",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -4049,10 +4049,10 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.riziv.fgov.be",
-   "source_snippet": "Employees unable to work due to illness or accident receive a primary disability benefit (first year) and afterwards an invalidity benefit, calculated on the capped wage and family situation",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www.riziv.fgov.be/nl/thema-s/arbeidsongeschiktheid/werknemers-en-werklozen/de-arbeidsongeschiktheidsuitkering",
+   "source_snippet": "uw arbeidsongeschiktheidsuitkering is gelijk aan 60% van uw brutodagloon",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "moederschapsuitkering-kraamverlof",
@@ -4069,7 +4069,7 @@
    "amount_period": "monthly",
    "amount_note": "Percentage of wage with caps for employees; flat weekly amounts for self-employed; paid via the health insurance fund",
    "is_automatic": false,
-   "application_url": "https://www.riziv.fgov.be",
+   "application_url": "https://www.riziv.fgov.be/nl/thema-s/zwangerschap-en-geboorte/moederschap/moederschapsrust-voor-werknemers-en-werklozen",
    "application_channel": "online",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -4093,10 +4093,10 @@
     "admin_areas": [],
     "gender": "female"
    },
-   "source_url": "https://www.riziv.fgov.be",
-   "source_snippet": "Paid maternity leave of 15 weeks (more for multiple births): benefit of about 82% of uncapped wage for the first 30 days, then 75% of the capped wage for employees; self-employed mothers receive a flat weekly benefit",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www.riziv.fgov.be/nl/thema-s/zwangerschap-en-geboorte/moederschap/moederschapsrust-voor-werknemers-en-werklozen",
+   "source_snippet": "Moederschapsrust voor werknemers en werklozen - RIZIV",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "geboorteverlof-uitkering",
@@ -4111,9 +4111,9 @@
    "amount_max": null,
    "amount_currency": "EUR",
    "amount_period": "one_off",
-   "amount_note": "20 days per birth, to be taken within 4 months after birth; 82% of capped daily wage for employees",
+   "amount_note": "Allowance of 82% of capped gross wage per day for the 20 days of birth leave (paid via the ziekenfonds)",
    "is_automatic": false,
-   "application_url": "https://www.rva.be",
+   "application_url": "https://www.riziv.fgov.be/nl/thema-s/zwangerschap-en-geboorte/geboorteverlof-en-adoptieverlof/geboorteverlof-voor-werknemers",
    "application_channel": "online",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -4137,10 +4137,10 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.rva.be",
-   "source_snippet": "Co-parents get 20 days of birth leave after the birth of their child, paid at 82% of the capped wage (employees) or a flat amount (self-employed)",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www.riziv.fgov.be/nl/thema-s/zwangerschap-en-geboorte/geboorteverlof-en-adoptieverlof/geboorteverlof-voor-werknemers",
+   "source_snippet": "Het bedrag van de uitkering bedraagt 82 % van uw tot de loongrens begrensde brutoloon.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "ouderschapsverlof-uitkering",
@@ -4157,7 +4157,7 @@
    "amount_period": "monthly",
    "amount_note": "Flat monthly allowance for full-time interruption (roughly 1.000-1.400 EUR gross depending on sector and form); proportional for half-time or 1/5 schemes",
    "is_automatic": false,
-   "application_url": "https://www.rva.be",
+   "application_url": "https://www.rva.be/burgers/loopbaanonderbreking-tijdskrediet-en-thematische-verloven/thematische-verloven-alle-sectoren/ouderschapsverlof",
    "application_channel": "online",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -4180,10 +4180,10 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.rva.be",
-   "source_snippet": "Up to 4 months of full-time (or longer part-time) parental leave per parent per child under 12, with a flat RVA allowance",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www.rva.be/burgers/loopbaanonderbreking-tijdskrediet-en-thematische-verloven/thematische-verloven-alle-sectoren/ouderschapsverlof",
+   "source_snippet": "Tijdens het ouderschapsverlof kan je een maandelijkse onderbrekingsuitkering krijgen van de RVA.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "thematische-verloven-zorgkrediet",
@@ -4200,7 +4200,7 @@
    "amount_period": "monthly",
    "amount_note": "Flat allowances per interruption scheme, paid monthly; duration depends on the theme (e.g. 1-3 months renewable)",
    "is_automatic": false,
-   "application_url": "https://www.rva.be",
+   "application_url": "https://www.rva.be/burgers/loopbaanonderbreking-tijdskrediet-en-thematische-verloven/thematische-verloven-alle-sectoren/verlof-voor-medische-bijstand",
    "application_channel": "online",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -4228,10 +4228,10 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.rva.be",
-   "source_snippet": "Employees can fully or partly interrupt their career to provide palliative care, care for a seriously ill family member or a disabled child, with flat RVA allowances higher than ordinary time credit",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www.rva.be/burgers/loopbaanonderbreking-tijdskrediet-en-thematische-verloven/thematische-verloven-alle-sectoren/verlof-voor-medische-bijstand",
+   "source_snippet": "Verlof voor medische bijstand ... Hoeveel bedraagt de onderbrekingsuitkering betaald door de RVA?",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "kinderopvang-belastingvermindering",
@@ -4248,7 +4248,7 @@
    "amount_period": "annual",
    "amount_note": "45% of actual childcare costs up to a daily cap per child (16,90 EUR income year 2026, 17,30 EUR income year 2027); declared with the childcare institution's attestation",
    "is_automatic": false,
-   "application_url": "https://financien.belgium.be",
+   "application_url": "https://fin.belgium.be/nl/particulieren/belastingvoordelen/kinderopvang/belastingvermindering",
    "application_channel": "online",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -4272,9 +4272,9 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://financien.belgium.be",
-   "source_snippet": "45% tax reduction on childcare expenses for children under 14 (or 18/21 with disability), capped at a maximum per day and per child (16,90 EUR/day for income year 2026)",
-   "last_verified_at": "2026-08-12",
+   "source_url": "https://fin.belgium.be/nl/particulieren/belastingvoordelen/kinderopvang/belastingvermindering",
+   "source_snippet": "De belastingvermindering bedraagt 45 % van de betaalde opvangkosten (voor een begrensd bedrag). Op het moment van de opvang moet uw kind jonger dan 14 jaar zijn",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -4292,7 +4292,7 @@
    "amount_period": "monthly",
    "amount_note": "Amount depends on career and past wages; minimum rights per career year and a guaranteed minimum pension for full careers exist; application possible online, often automatic",
    "is_automatic": false,
-   "application_url": "https://www.sfpd.fgov.be",
+   "application_url": "https://www.sfpd.fgov.be/nl/pensioenaanvraag",
    "application_channel": "online",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -4308,7 +4308,7 @@
     "statuses": [
      "retired"
     ],
-    "age_min": 65,
+    "age_min": 66,
     "age_max": null,
     "income_annual_max": null,
     "income_note": null,
@@ -4320,10 +4320,10 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.sfpd.fgov.be",
-   "source_snippet": "Career-based state pension from the legal pension age (66, rising to 67), calculated on career length and capped career wages, with minimum guarantees per career year",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www.sfpd.fgov.be/nl/pensioenleeftijd/wanneer",
+   "source_snippet": "Wettelijke pensioenleeftijd | Geboren tussen 01.01.1960 en 31.12.1963 | 66 jaar",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "arbeidsongevallenverzekering",
@@ -4340,7 +4340,7 @@
    "amount_period": "monthly",
    "amount_note": "Medical care reimbursed in full; daily allowances and permanent incapacity annuities calculated on the capped yearly wage",
    "is_automatic": true,
-   "application_url": "https://fedris.be",
+   "application_url": "https://www.fedris.be/nl/themas/vergoedingen-ao/vergoedingen-de-privesector",
    "application_channel": "via_employer",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -4368,10 +4368,10 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://fedris.be",
-   "source_snippet": "Employees are insured by their employer against accidents at work and on the way to work: medical costs fully covered plus compensation for temporary or permanent incapacity",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www.fedris.be/nl/themas/vergoedingen-ao/vergoedingen-de-privesector",
+   "source_snippet": "Een arbeidsongevallenverzekering dekt de schade die een werknemer lijdt door een arbeidsongeval of een ongeval op de weg van en naar het werk.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "maaltijdcheques",
@@ -4383,12 +4383,12 @@
    "category": "employment",
    "benefit_type": "in_kind",
    "amount_min": null,
-   "amount_max": 8,
+   "amount_max": 8.91,
    "amount_currency": "EUR",
    "amount_period": "monthly",
-   "amount_note": "Max 8 EUR per worked day, exempt for the employee; commonly worth roughly 130-170 EUR per month for full-time work",
+   "amount_note": "Employer contribution up to EUR 8.91 per meal voucher (employee pays at least EUR 1.09); one voucher per day worked",
    "is_automatic": false,
-   "application_url": "https://www.socialsecurity.be",
+   "application_url": "https://werk.belgie.be/nl/themas/verloning/maaltijdcheques",
    "application_channel": "via_employer",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -4410,10 +4410,10 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.socialsecurity.be",
-   "source_snippet": "Employers can grant one meal voucher per worked day, exempt from social contributions and tax, with a maximum face value of 8 EUR (employer pays at least 6,91 EUR, employee at most 1,09 EUR)",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://werk.belgie.be/nl/themas/verloning/maaltijdcheques",
+   "source_snippet": "De tussenkomst van de werkgever bedraagt maximaal 8,91 € per maaltijdcheque. De tussenkomst van de werknemer bedraagt ten minste 1,09 € per maaltijdcheque.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   }
  ]
 }

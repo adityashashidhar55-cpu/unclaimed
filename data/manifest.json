@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-20T03:21:51.984Z",
+  "generated_at": "2026-10-05T03:41:59.711Z",
   "countries": [
     {
       "country_code": "AE",
@@ -551,6 +551,7 @@
         "Barcelona",
         "Canarias",
         "Cataluña",
+        "Ceuta",
         "Comunidad de Madrid",
         "Comunidad Valenciana",
         "Comunitat Valenciana",
@@ -558,6 +559,7 @@
         "Galicia",
         "Islas Baleares",
         "Madrid",
+        "Melilla",
         "País Vasco"
       ],
       "income_bands": [
@@ -822,13 +824,21 @@
       "currency": "INR",
       "language": "hi",
       "regions": [
+        "Arunachal Pradesh",
+        "Assam",
         "Delhi NCT",
         "Gujarat",
         "Karnataka",
         "Kerala",
         "Maharashtra",
+        "Manipur",
+        "Meghalaya",
+        "Mizoram",
+        "Nagaland",
+        "Sikkim",
         "Tamil Nadu",
         "Telangana",
+        "Tripura",
         "Uttar Pradesh",
         "West Bengal"
       ],
@@ -887,11 +897,15 @@
       "currency": "EUR",
       "language": "it",
       "regions": [
+        "Abruzzo",
+        "Basilicata",
+        "Calabria",
         "Campania",
         "Emilia-Romagna",
         "Lazio",
         "Lombardia",
         "Milano",
+        "Molise",
         "Piemonte",
         "Puglia",
         "Roma",
@@ -1153,6 +1167,7 @@
         "Noord-Holland",
         "Rotterdam",
         "Utrecht",
+        "Weesp",
         "Zuid-Holland"
       ],
       "income_bands": [
@@ -1214,9 +1229,18 @@
         "Auckland",
         "Bay of Plenty",
         "Canterbury",
+        "Gisborne",
+        "Hawke's Bay",
+        "Invercargill",
+        "Manawatu-Whanganui",
+        "Marlborough",
+        "Nelson-Tasman",
+        "Northland",
         "Otago",
+        "Taranaki",
         "Waikato",
-        "Wellington"
+        "Wellington",
+        "West Coast"
       ],
       "income_bands": [
         {
@@ -1346,7 +1370,9 @@
       "regions": [
         "Açores",
         "Açores e Madeira",
+        "Alentejo",
         "Área Metropolitana do Porto",
+        "Centro",
         "Lisboa",
         "Madeira",
         "Norte",
@@ -1526,13 +1552,18 @@
       "regions": [
         "California",
         "Florida",
+        "Georgia",
         "Illinois",
         "Los Angeles",
+        "Massachusetts",
+        "New Jersey",
         "New York",
         "New York City",
+        "Pennsylvania",
         "San Francisco",
         "Seattle",
-        "Texas"
+        "Texas",
+        "Washington"
       ],
       "income_bands": [
         {
@@ -1655,6 +1686,6 @@
       "data_url": "/api/v1/programmes/za.json"
     }
   ],
-  "total_programmes": 1933,
-  "total_verified": 697
+  "total_programmes": 2406,
+  "total_verified": 2160
 }

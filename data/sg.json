@@ -22,7 +22,7 @@
    "application_url": "https://www.govbenefits.gov.sg/government-benefits-schemes/gst-voucher/",
    "application_channel": "automatic",
    "deadline_type": "annual",
-   "deadline_note": null,
+   "deadline_note": "2026 payout paid from August 2026. If not previously signed up for government payouts, sign up via GSTV e-services by 20 June 2027 (payment within 2 months of sign-up).",
    "procedure_steps": [
     {
      "step": 1,
@@ -52,8 +52,8 @@
     "gender": "any"
    },
    "source_url": "https://www.govbenefits.gov.sg/government-benefits-schemes/gst-voucher/",
-   "source_snippet": "GSTV – Cash provides lower-income Singaporeans with cash for their immediate needs. Paid in August each year.",
-   "last_verified_at": "2026-08-12",
+   "source_snippet": "You must be a Singapore citizen, residing in Singapore; You must be aged 21 and above in 2026; Your Income Earned in 2024 as assessed by IRAS (AI for YA 2025) must not exceed $39,000;",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -65,11 +65,11 @@
    "funder": "Ministry of Finance (MOF)",
    "category": "energy",
    "benefit_type": "discount",
-   "amount_min": null,
-   "amount_max": 570,
+   "amount_min": 440,
+   "amount_max": 760,
    "amount_currency": "SGD",
    "amount_period": "annual",
-   "amount_note": "Quarterly rebate credited to utilities account; quantum depends on HDB flat type (up to about $570/year in FY2026, 1.5x the regular amount to cushion the carbon tax increase)",
+   "amount_note": "FY2026 total (GSTV U-Save + Budget 2026 U-Save + 2026 Additional U-Save): $760 (1-2 room), $680 (3-room), $600 (4-room), $520 (5-room), $440 (Executive/Multi-gen). Regular GSTV U-Save alone is $95/$85/$75/$65/$55 per quarter. Paid Jan/Apr/Jul/Oct; Additional U-Save paid Oct 2026 and Jan 2027.",
    "is_automatic": true,
    "application_url": "https://www.govbenefits.gov.sg/government-benefits-schemes/gst-voucher/",
    "application_channel": "automatic",
@@ -88,18 +88,18 @@
     "age_min": null,
     "age_max": null,
     "income_annual_max": null,
-    "income_note": "Household must live in an HDB flat and meet GSTV property conditions (e.g. no member owns more than one property)",
+    "income_note": "No income test. HDB household with at least one Singapore Citizen owner/occupier (or SC tenant if whole flat rented out); no owner/essential occupier owns or has interest in more than one property.",
     "requires_children": false,
     "nationality": "citizen_or_pr",
     "residency_months_min": null,
-    "housing_tenure": "owner",
+    "housing_tenure": null,
     "student_required": false,
     "admin_areas": [],
     "gender": "any"
    },
    "source_url": "https://www.govbenefits.gov.sg/government-benefits-schemes/gst-voucher/",
-   "source_snippet": "U-Save provides eligible HDB households with quarterly rebates to offset their utilities bills. Paid in January, April, July, and October each year.",
-   "last_verified_at": "2026-08-12",
+   "source_snippet": "Singaporean households living in HDB flats must meet the following criteria: ... there must be at least one Singapore Citizen owner or occupier",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -115,7 +115,7 @@
    "amount_max": null,
    "amount_currency": "SGD",
    "amount_period": "annual",
-   "amount_note": "Rebate of 1.5 to 3.5 months of S&CC per year depending on HDB flat type, credited against Town Council bills",
+   "amount_note": "Offsets 3.5 months (1-2 room), 2.5 months (3-4 room), 2.0 months (5-room), 1.5 months (Executive/Multi-gen) of S&CC, paid Apr 2026, Jul 2026, Oct 2026, Jan 2027 via Town Councils; amount varies by Town Council.",
    "is_automatic": true,
    "application_url": "https://www.govbenefits.gov.sg/government-benefits-schemes/gst-voucher/",
    "application_channel": "automatic",
@@ -134,18 +134,18 @@
     "age_min": null,
     "age_max": null,
     "income_annual_max": null,
-    "income_note": "Eligible HDB households; at least one household member is a Singapore Citizen",
+    "income_note": "No income test. HDB household with at least one Singapore Citizen flat owner or occupier; owners/essential occupiers hold no interest in private property; whole flat not rented out.",
     "requires_children": false,
     "nationality": "citizen_or_pr",
     "residency_months_min": null,
-    "housing_tenure": "owner",
+    "housing_tenure": null,
     "student_required": false,
     "admin_areas": [],
     "gender": "any"
    },
    "source_url": "https://www.govbenefits.gov.sg/government-benefits-schemes/gst-voucher/",
-   "source_snippet": "S&CC Rebate provides eligible HDB households with quarterly rebates to offset their S&CC. Paid in January, April, July, and October each year.",
-   "last_verified_at": "2026-08-12",
+   "source_snippet": "There must be at least one Singapore Citizen flat owner or occupier in the flat; The flat owner(s) and essential occupier(s) of the flat do not own or have any interest in a private property; and The flat owner(s) have not rented out the whole flat.",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -166,7 +166,7 @@
    "application_url": "https://www.govbenefits.gov.sg/government-benefits-schemes/gst-voucher/",
    "application_channel": "automatic",
    "deadline_type": "annual",
-   "deadline_note": null,
+   "deadline_note": "2026 top-up credited to CPF MediSave by 11 August 2026. If not previously signed up, sign up via GSTV e-services by 20 June 2027.",
    "procedure_steps": [
     {
      "step": 1,
@@ -190,8 +190,8 @@
     "gender": "any"
    },
    "source_url": "https://www.govbenefits.gov.sg/government-benefits-schemes/gst-voucher/",
-   "source_snippet": "GSTV – MediSave provides Singaporeans aged 65 and above with a CPF MediSave account top-up to support their medical needs. Paid in August each year.",
-   "last_verified_at": "2026-08-12",
+   "source_snippet": "To receive the 2026 GSTV – MediSave, you must ... be aged 65 and above in 2026; The AV of your place of residence ... must not exceed $31,000; and You must not own more than one property.",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -203,16 +203,16 @@
    "funder": "Ministry of Finance (MOF)",
    "category": "income_support",
    "benefit_type": "cash_one_off",
-   "amount_min": null,
-   "amount_max": null,
+   "amount_min": 100,
+   "amount_max": 250,
    "amount_currency": "SGD",
-   "amount_period": "annual",
-   "amount_note": "Tiered by assessable income and property ownership; paid automatically each December from 2022 to 2026; exact quantum published by MOF annually",
+   "amount_period": "one_off",
+   "amount_note": "December 2026 (final) AP Cash: $250 if Assessable Income up to $39,000, $150 if $39,001-$100,000, $100 if above $100,000; $100 if owns more than 1 property. Paid automatically.",
    "is_automatic": true,
-   "application_url": "https://www.govbenefits.gov.sg/",
+   "application_url": "https://www.govbenefits.gov.sg/government-benefits-schemes/assurance-package/",
    "application_channel": "automatic",
    "deadline_type": "annual",
-   "deadline_note": "Final AP Cash tranche in December 2026",
+   "deadline_note": "Final AP Cash tranche paid December 2026; scheme runs 2022-2026.",
    "procedure_steps": [
     {
      "step": 1,
@@ -226,7 +226,7 @@
     "age_min": 21,
     "age_max": null,
     "income_annual_max": null,
-    "income_note": "All Singapore Citizens aged 21+; lower-income citizens and those with fewer properties receive more",
+    "income_note": "No eligibility income cap; amount tiered by Assessable Income (up to $39,000 / $39,001-$100,000 / above $100,000) and property ownership. Singapore citizens residing in Singapore, aged 21+ in the reference year.",
     "requires_children": false,
     "nationality": "citizen_or_pr",
     "residency_months_min": null,
@@ -235,10 +235,10 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.govbenefits.gov.sg/",
-   "source_snippet": "The Assurance Package cushions the impact of the GST increase: AP Cash is paid every December (2022–2026) to all adult Singaporeans, with lower-income citizens receiving more.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www.govbenefits.gov.sg/government-benefits-schemes/assurance-package/",
+   "source_snippet": "You must be a Singapore citizen* residing in Singapore; and You must be aged 21 and above in the reference year",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "cdc-vouchers-scheme",
@@ -253,7 +253,7 @@
    "amount_max": null,
    "amount_currency": "SGD",
    "amount_period": "annual",
-   "amount_note": "2025: $800 per household (in two tranches), usable half at heartland merchants/hawkers and half at supermarkets; digital vouchers via Singpass",
+   "amount_note": "June 2026 tranche: $500 per Singaporean household ($250 for heartland merchants/hawkers + $250 for participating supermarkets), claimed digitally via Singpass. A $300 January 2026 tranche was previously recorded.",
    "is_automatic": false,
    "application_url": "https://vouchers.cdc.gov.sg/",
    "application_channel": "online",
@@ -301,8 +301,8 @@
     "gender": "any"
    },
    "source_url": "https://vouchers.cdc.gov.sg/",
-   "source_snippet": "As announced in Budget 2025, all Singaporean households will receive an additional $800 in CDC Vouchers to help with daily expenses — $500 in May 2025 and $300 in January 2026.",
-   "last_verified_at": "2026-08-12",
+   "source_snippet": "$500 CDC Vouchers 2026 in June for every Singaporean household to help with daily expenses.",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified",
    "income_reviewed_at": "2026-08-13"
   },
@@ -356,8 +356,8 @@
     "gender": "any"
    },
    "source_url": "https://www.cdc.gov.sg/common-flagship-programmes/sg60-vouchers/",
-   "source_snippet": "All Singapore Citizens aged 21 and above in 2025 will receive $600 in SG60 Vouchers. SC seniors aged 60 and above in 2025 will receive $200 more – a total of $800 in SG60 Vouchers.",
-   "last_verified_at": "2026-08-12",
+   "source_snippet": "commemorate Singapore's 60th year of independence by recognising the contributions of Singaporeans and sharing the benefits of our nation's progress.",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified",
    "income_reviewed_at": "2026-08-13"
   },
@@ -376,7 +376,7 @@
    "amount_period": "monthly",
    "amount_note": "Monthly cash assistance sized to household needs; may include rent, utilities, S&CC and medical assistance; typically granted for 3–6 months and renewable",
    "is_automatic": false,
-   "application_url": "https://www.msf.gov.sg/what-we-do/comcare",
+   "application_url": "https://supportgowhere.life.gov.sg/schemes/COMCARE-SMTA/comcare-assistance",
    "application_channel": "in_person",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -418,8 +418,8 @@
     "statuses": [],
     "age_min": null,
     "age_max": null,
-    "income_annual_max": 22800,
-    "income_note": "MSF's published ComCare summary gives household income of SGD 1,900/month or less (SGD 22,800/year), or per capita income of SGD 650/month or less. MSF states explicitly that this is not a hard threshold to qualify — Social Service Offices assess need holistically and may assist households above it.",
+    "income_annual_max": 9600,
+    "income_note": "MSF benchmark is per capita household income (PCHI) of $800/month or less (= $9,600/year per household member); the old household-income benchmark ($1,900/month) was removed from 17 July 2023. Not a hard threshold: Social Service Offices assess holistically (savings, family support).",
     "requires_children": false,
     "nationality": "citizen_or_pr",
     "residency_months_min": null,
@@ -432,8 +432,8 @@
     "gender": "any"
    },
    "source_url": "https://www.msf.gov.sg/what-we-do/comcare",
-   "source_snippet": "Temporary support for families and individuals who are unable to work for a period of time (e.g. due to illness, caregiving responsibilities), are looking for a job, or are earning a low income.",
-   "last_verified_at": "2026-08-12",
+   "source_snippet": "The PCHI benchmark indicates the approximate income level at which households could qualify, and is not a criterion that automatically qualifies a household for SMTA.",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified",
    "income_reviewed_at": "2026-08-13"
   },
@@ -452,7 +452,7 @@
    "amount_period": "monthly",
    "amount_note": "Monthly cash assistance plus free medical treatment at polyclinics/public hospitals and other support; rates set by MSF",
    "is_automatic": false,
-   "application_url": "https://www.msf.gov.sg/what-we-do/comcare",
+   "application_url": "https://supportgowhere.life.gov.sg/schemes/COMCARE-SMTA/comcare-assistance",
    "application_channel": "in_person",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -479,8 +479,8 @@
     "statuses": [],
     "age_min": null,
     "age_max": null,
-    "income_annual_max": null,
-    "income_note": "Little or no income and little or no family support; permanently unable to work",
+    "income_annual_max": 9600,
+    "income_note": "PCHI benchmark of $800/month (=$9,600/year per member) applies; elderly applicants' children's PCHI also considered (<= $800). Little or no means and family support; permanently unable to work.",
     "requires_children": false,
     "nationality": "citizen_or_pr",
     "residency_months_min": null,
@@ -490,8 +490,8 @@
     "gender": "any"
    },
    "source_url": "https://www.msf.gov.sg/what-we-do/comcare",
-   "source_snippet": "Long-term support for persons who are permanently unable to work due to old age, illness or disability, have limited or no means of income, and have little or no family support.",
-   "last_verified_at": "2026-08-12",
+   "source_snippet": "ComCare Long-Term Assistance (LTA), which provides assistance over a longer period of time, to persons who are permanently unable to work due to old age, illness or disability, and have little or no means and family support.",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -509,7 +509,7 @@
    "amount_period": "one_off",
    "amount_note": "Urgent, short-term help (usually one-off or up to three months) while longer-term assistance is processed",
    "is_automatic": false,
-   "application_url": "https://www.msf.gov.sg/what-we-do/comcare",
+   "application_url": "https://supportgowhere.life.gov.sg/schemes/COMCARE-SMTA/comcare-assistance",
    "application_channel": "in_person",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -525,8 +525,8 @@
     "statuses": [],
     "age_min": null,
     "age_max": null,
-    "income_annual_max": null,
-    "income_note": "Urgent and temporary financial need; assessed case-by-case",
+    "income_annual_max": 9600,
+    "income_note": "Usual benchmark: per capita household income of $800/month or less (=$9,600/year per member), with flexibility; urgent and temporary need assessed case by case.",
     "requires_children": false,
     "nationality": "citizen_or_pr",
     "residency_months_min": null,
@@ -536,8 +536,8 @@
     "gender": "any"
    },
    "source_url": "https://www.msf.gov.sg/what-we-do/comcare",
-   "source_snippet": "Immediate financial assistance to individuals and families who require urgent and temporary financial relief.",
-   "last_verified_at": "2026-08-12",
+   "source_snippet": "ComCare Interim Assistance, which provides immediate financial assistance to those who require urgent and temporary financial relief.",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -553,9 +553,9 @@
    "amount_max": null,
    "amount_currency": "SGD",
    "amount_period": "one_off",
-   "amount_note": "Comprises four support packages (employment, debt clearance, home ownership and preschool), combining CPF/cash top-ups and family coach support",
+   "amount_note": "Four progress packages (rolled out from 2H 2024, 3-year trial): preschool (CDA $500 one-off + $200/quarter), stable employment ($450-$550 per adult per quarter in cash+CPF for CPF-paying jobs of at least $1,400/month), debt clearance (donor matches repayments up to $2,500), home-ownership savings ($2 CPF OA top-up per $1 voluntary CPF). $30,000 cap across employment and savings packages. Partnership Payout added from 2026.",
    "is_automatic": false,
-   "application_url": "https://www.msf.gov.sg/",
+   "application_url": "https://www.msf.gov.sg/what-we-do/volunteer/find-causes/comlink",
    "application_channel": "in_person",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -575,10 +575,10 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.msf.gov.sg/",
-   "source_snippet": "ComLink+ provides enhanced support to lower-income families with children living in rental housing, including support packages tied to employment, debt clearance, saving for a home and preschool enrolment.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www.msf.gov.sg/media-room/article/new-packages-to-better-support-comlink-families-that-do-their-part-to-progress-in-life",
+   "source_snippet": "ComLink+ families that take active steps to improve their circumstances will receive financial top-ups through the progress packages.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "workfare-income-supplement",
@@ -595,7 +595,7 @@
    "amount_period": "annual",
    "amount_note": "Max annual WIS (employees, from Work Year 2025): $2,450 (30–34), $3,500 (35–44), $4,200 (45–59), $4,900 (60+ and all PWDs); paid 40% cash/60% CPF monthly; self-employed persons paid annually at lower rates (10% cash/90% MediSave)",
    "is_automatic": true,
-   "application_url": "https://www.mom.gov.sg/employment-practices/schemes-for-employers-and-employees/workfare",
+   "application_url": "https://www.cpf.gov.sg/member/growing-your-savings/government-support/workfare-income-supplement",
    "application_channel": "automatic",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -624,9 +624,9 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.mom.gov.sg/employment-practices/schemes-for-employers-and-employees/workfare",
-   "source_snippet": "WIS supplements the incomes and CPF savings of lower-wage Singaporean workers and encourages them to work regularly. Older workers and all persons with disabilities will receive the highest payments.",
-   "last_verified_at": "2026-08-12",
+   "source_url": "https://www.cpf.gov.sg/member/growing-your-savings/government-support/workfare-income-supplement",
+   "source_snippet": "You will receive 40% of your WIS in cash and 60% in CPF contributions. As an employee, you will receive WIS every month.",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -657,8 +657,8 @@
     ],
     "age_min": 30,
     "age_max": null,
-    "income_annual_max": null,
-    "income_note": "Lower-wage Singapore Citizen workers meeting WIS-style income criteria",
+    "income_annual_max": 36000,
+    "income_note": "Gross monthly income not more than $3,000 for the past 12 months (=$36,000/yr); Singapore Citizens aged 30+ (13+ for persons with disabilities/special needs).",
     "requires_children": false,
     "nationality": "citizen_or_pr",
     "residency_months_min": null,
@@ -668,8 +668,8 @@
     "gender": "any"
    },
    "source_url": "https://www.mom.gov.sg/employment-practices/schemes-for-employers-and-employees/workfare",
-   "source_snippet": "Workfare is a key pillar of Singapore's social security landscape... What it comprises: Workfare Income Supplement (WIS) Scheme; Workfare Skills Support (WSS) Scheme.",
-   "last_verified_at": "2026-08-12",
+   "source_snippet": "Earn a gross monthly income of not more than $3,000 for the past 12 months",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -685,12 +685,12 @@
    "amount_max": null,
    "amount_currency": "SGD",
    "amount_period": "annual",
-   "amount_note": "Government co-funds wage increases (40% in 2025, 20% in 2026) for resident employees earning up to $3,000–$4,000/month; payout computed automatically from CPF data",
+   "amount_note": "Government co-funds wage increases of SC/PR employees earning up to $3,000/month (average wage after increase must be $4,000 or lower): 40% (2025), 30% (2026), 30% (2027), 20% (2028). Minimum average wage increase $100 (2022-2026), $200 (2027-2028). Paid automatically to employers by Q1 of the following year.",
    "is_automatic": true,
-   "application_url": "https://www.iras.gov.sg/",
+   "application_url": "https://www.iras.gov.sg/schemes/disbursement-schemes/progressive-wage-credit-scheme",
    "application_channel": "automatic",
    "deadline_type": "annual",
-   "deadline_note": null,
+   "deadline_note": "Scheme runs 2022-2028 (extended at Budget 2026). Payout for qualifying year 2026 expected Q1 2027; no application needed.",
    "procedure_steps": [
     {
      "step": 1,
@@ -715,10 +715,10 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.iras.gov.sg/",
-   "source_snippet": "The PWCS provides transitional wage support: the Government co-funds eligible wage increases for Singapore Citizens and Permanent Residents from 2022 to 2026 (40% co-funding for 2025, 20% for 2026).",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www.iras.gov.sg/schemes/disbursement-schemes/progressive-wage-credit-scheme",
+   "source_snippet": "Employers do not need to apply for the PWCS and can expect to receive the payout for the respective year by the first quarter of the following year.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "silver-support-scheme",
@@ -729,13 +729,13 @@
    "funder": "Ministry of Manpower (MOM) / CPF Board",
    "category": "income_support",
    "benefit_type": "cash_monthly",
-   "amount_min": 215,
-   "amount_max": 1080,
+   "amount_min": null,
+   "amount_max": 4320,
    "amount_currency": "SGD",
-   "amount_period": "monthly",
-   "amount_note": "Quarterly payments (from 2025) by flat type and household income per person: e.g. $1,080 (1–2 room, income per person ≤$1,500) down to $215 (living in but not owning a 5-room flat, income per person $1,501–$2,300)",
+   "amount_period": "annual",
+   "amount_note": "Paid quarterly (up to $1,080 per quarter = up to $4,320/year) by HDB flat type and per capita household income: $1,080 (1-2 room), $860 (3-room), $650 (4-room), $430 (5-room, living but not owning) at highest income tier; lower amounts for per capita income $1,501-$2,300. Seniors on ComCare LTA receive $430 per quarter regardless.",
    "is_automatic": true,
-   "application_url": "https://www.togetherforbetter.gov.sg/lifestage/seniors/",
+   "application_url": "https://www.cpf.gov.sg/member/retirement-income/government-support/silver-support-scheme",
    "application_channel": "automatic",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -751,19 +751,19 @@
     "statuses": [],
     "age_min": 65,
     "age_max": null,
-    "income_annual_max": null,
-    "income_note": "Total CPF contributions by age 55 ≤ $140,000 (or SEP net trade income ≤$27,600/yr aged 45–54); per-capita household income ≤$2,300/month; lives in 1–5 room HDB; no private property/multiple properties",
+    "income_annual_max": 27600,
+    "income_note": "Per capita household income of up to $2,300/month (=$27,600/year per household member); total CPF contributions by age 55 up to $140,000 (or SEP/platform worker avg annual net trade income up to $27,600 at ages 45-54); lives in 1-5 room HDB; neither senior nor spouse owns a 5-room+ HDB, private property or multiple properties.",
     "requires_children": false,
     "nationality": "citizen_or_pr",
     "residency_months_min": null,
-    "housing_tenure": "owner",
+    "housing_tenure": null,
     "student_required": false,
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.togetherforbetter.gov.sg/lifestage/seniors/",
-   "source_snippet": "The Silver Support Scheme provides quarterly cash payments of up to $1,080 for Singapore Citizens aged 65 and above (previously $900), who had low incomes during their working years.",
-   "last_verified_at": "2026-08-12",
+   "source_url": "https://www.cpf.gov.sg/member/retirement-income/government-support/silver-support-scheme",
+   "source_snippet": "The total CPF contributions you made by age 55 is up to $140,000. ... You live in a 1- to 5-room HDB flat. ... You live in a household with a per capita household income of up to $2,300.",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -781,7 +781,7 @@
    "amount_period": "annual",
    "amount_note": "Dollar-for-dollar matching grant up to $2,000/year, $20,000 lifetime cap; eligibility auto-assessed annually",
    "is_automatic": true,
-   "application_url": "https://www.cpf.gov.sg/",
+   "application_url": "https://www.cpf.gov.sg/service/article/who-is-eligible-for-the-matched-retirement-savings-scheme",
    "application_channel": "automatic",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -795,10 +795,10 @@
    "documents_required": [],
    "eligibility": {
     "statuses": [],
-    "age_min": null,
+    "age_min": 55,
     "age_max": null,
-    "income_annual_max": null,
-    "income_note": "Lower retirement savings (below prevailing Basic Retirement Sum), income and property criteria; age cap removed in 2025; extended to persons with disabilities of all ages from 2026",
+    "income_annual_max": 48000,
+    "income_note": "Average monthly income not more than $4,000 (=$48,000/yr, individual); retirement account savings below $110,200 (2026 Basic Retirement Sum); property Annual Value not more than $21,000; owns not more than one property; below age 55 only if disability verified by MSF.",
     "requires_children": false,
     "nationality": "citizen_or_pr",
     "residency_months_min": null,
@@ -807,10 +807,10 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.cpf.gov.sg/",
-   "source_snippet": "The Government matches dollar-for-dollar cash top-ups to the Retirement Account of eligible seniors with lower retirement savings, up to $2,000 per year with a $20,000 lifetime cap; from 2026 extended to eligible persons with disabilities of all ages.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www.cpf.gov.sg/service/article/who-is-eligible-for-the-matched-retirement-savings-scheme",
+   "source_snippet": "Singapore Citizen. Age 55 or above as of ... Less than $110,200 ... Average Monthly Income Not more than $4,000 ... Annual Value not more than $21,000 ... Own not more than one property",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "cpf-cash-top-up-relief",
@@ -827,7 +827,7 @@
    "amount_period": "annual",
    "amount_note": "Up to $8,000 (self) + up to $8,000 (eligible family members) tax relief per Year of Assessment; top-ups to MediSave count within the same caps",
    "is_automatic": false,
-   "application_url": "https://www.iras.gov.sg/taxes/individual-income-tax",
+   "application_url": "https://www.iras.gov.sg/taxes/individual-income-tax/basics-of-individual-income-tax/tax-reliefs-rebates-and-deductions/tax-reliefs/central-provident-fund-(cpf)-cash-top-up-relief",
    "application_channel": "online",
    "deadline_type": "annual",
    "deadline_note": "Top up by 31 December to enjoy relief for that Year of Assessment",
@@ -858,10 +858,10 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.iras.gov.sg/taxes/individual-income-tax",
-   "source_snippet": "Tax relief of up to $8,000 per year for cash top-ups to your own CPF Special/Retirement/MediSave Account, plus up to another $8,000 for top-ups to family members' accounts.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www.iras.gov.sg/taxes/individual-income-tax/basics-of-individual-income-tax/tax-reliefs-rebates-and-deductions/tax-reliefs/central-provident-fund-(cpf)-cash-top-up-relief",
+   "source_snippet": "Individuals may continue to enjoy tax relief of up to $16,000 (maximum $8,000 for self and maximum $8,000 for family members) a year for eligible CPF cash top-ups",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "medishield-life-premium-subsidies",
@@ -876,9 +876,9 @@
    "amount_max": null,
    "amount_currency": "SGD",
    "amount_period": "annual",
-   "amount_note": "Means-tested premium subsidy of up to 60% (from 1 April 2025) for citizens with per-capita household income up to $3,600/month and home AV up to $31,000; Additional Premium Support ensures no one loses coverage due to inability to pay",
+   "amount_note": "Premium subsidies of up to 60% for Singaporeans with household monthly income per person of $3,600 or less: e.g. lower income (<= $1,500) 25-60% by age; lower-middle (>$1,500-$2,600) 20-55%; plus Pioneer (40-60%) and Merdeka (5-10%) subsidies; Additional Premium Support so no one loses coverage for inability to pay.",
    "is_automatic": true,
-   "application_url": "https://www.healthhub.sg/support-and-tools/costs-and-financing/medishield-life",
+   "application_url": "https://www.moh.gov.sg/managing-expenses/schemes-and-subsidies/medishield-life/medishield-life-premiums-and-subsidies/",
    "application_channel": "automatic",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -894,8 +894,8 @@
     "statuses": [],
     "age_min": null,
     "age_max": null,
-    "income_annual_max": null,
-    "income_note": "Per-capita household income up to $3,600/month (or AV-based for households without income); PRs receive half the citizen subsidy rate",
+    "income_annual_max": 43200,
+    "income_note": "Per capita household income up to $3,600/month (=$43,200/year per household member) for the lower- to middle-income subsidy; households without income assessed by Annual Value.",
     "requires_children": false,
     "nationality": "citizen_or_pr",
     "residency_months_min": null,
@@ -904,9 +904,9 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.healthhub.sg/support-and-tools/costs-and-financing/medishield-life",
-   "source_snippet": "The government will also provide significant support to keep your MediShield Life premium affordable... Premium subsidies for the lower- to middle-income; Pioneer Generation Subsidy; Merdeka Generation Subsidy.",
-   "last_verified_at": "2026-08-12",
+   "source_url": "https://www.moh.gov.sg/managing-expenses/schemes-and-subsidies/medishield-life/medishield-life-premiums-and-subsidies/",
+   "source_snippet": "household monthly income per person of $3,600 and below, up to 60% of their premiums.",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -924,7 +924,7 @@
    "amount_period": null,
    "amount_note": "Per-visit subsidies at CHAS GP/dental clinics tiered by card: CHAS Blue (highest), Orange, Green; PG/MG cardholders receive enhanced rates; Public Assistance cardholders get full CHAS Blue-tier subsidies",
    "is_automatic": false,
-   "application_url": "https://www.chas.sg/about-the-scheme",
+   "application_url": "https://www.chas.sg/Applying-for-CHAS/Eligibility",
    "application_channel": "online",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -952,7 +952,7 @@
     "age_min": null,
     "age_max": null,
     "income_annual_max": null,
-    "income_note": "All Singapore Citizens eligible; higher tiers by household monthly income per person (Blue ≤$1,500; Orange $1,501–$2,300) or home Annual Value",
+    "income_note": "Tiered by household monthly income per person (gross household income / family members): Blue $1,500 and below; Orange $1,501-$2,300; Green above $2,300 (or AV-based for households without income). All Singapore Citizens eligible for at least Green.",
     "requires_children": false,
     "nationality": "citizen_or_pr",
     "residency_months_min": null,
@@ -961,9 +961,9 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.chas.sg/about-the-scheme",
+   "source_url": "https://www.chas.sg/Applying-for-CHAS/Eligibility",
    "source_snippet": "The Community Health Assist Scheme (CHAS) enables all Singapore Citizens, including Pioneer Generation (PG) and Merdeka Generation (MG) cardholders, to receive subsidies for medical and/or dental care at participating General Practitioner (GP) and dental clinics.",
-   "last_verified_at": "2026-08-12",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -981,7 +981,7 @@
    "amount_period": null,
    "amount_note": "Free first Health Plan consultation; free recommended screenings/vaccinations at enrolled clinic; chronic drug subsidy tier for CHAS/MG/PG cardholders; Healthpoints redeemable for rewards",
    "is_automatic": false,
-   "application_url": "https://www.healthiersg.gov.sg/",
+   "application_url": "https://www.healthiersg.gov.sg/enrolment/howtoenrol/",
    "application_channel": "online",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -1000,7 +1000,7 @@
    "documents_required": [],
    "eligibility": {
     "statuses": [],
-    "age_min": null,
+    "age_min": 40,
     "age_max": null,
     "income_annual_max": null,
     "income_note": "All Singapore Citizens and PRs; benefits tiered with CHAS/MG/PG status",
@@ -1012,10 +1012,10 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.healthiersg.gov.sg/",
-   "source_snippet": "Healthier SG enrolment with a regular family doctor provides a fully subsidised first Health Plan consultation, free nationally recommended screenings and vaccinations at enrolled clinics, and chronic-drug subsidies at prices comparable to polyclinics.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www.healthiersg.gov.sg/enrolment/howtoenrol/",
+   "source_snippet": "Eligibility Singapore Citizens and Permanent Residents aged >= 40 years old can enrol in Healthier SG using the HealthHub app.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "screen-for-life",
@@ -1032,7 +1032,7 @@
    "amount_period": "one_off",
    "amount_note": "Fixed subsidised price per screening visit: $0 (PG), $2 (MG/CHAS Blue/Orange), $5 (CHAS Green/eligible citizens); fully subsidised for Healthier SG-enrolled citizens at their enrolled clinic",
    "is_automatic": false,
-   "application_url": "https://www.healthhub.sg/programmes/screen_for_life/screening-journey",
+   "application_url": "https://www.healthhub.sg/programmes/healthiersg-screening",
    "application_channel": "in_person",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -1058,9 +1058,9 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.healthhub.sg/programmes/screen_for_life/screening-journey",
-   "source_snippet": "Pioneer Generation $0; Merdeka Generation or CHAS Blue or Orange $2; Eligible Singapore Citizens / CHAS Green cardholders $5. This fee includes the cost for the GP consult, as well as the first follow-up visit (if required).",
-   "last_verified_at": "2026-08-12",
+   "source_url": "https://www.healthhub.sg/programmes/healthiersg-screening",
+   "source_snippet": "ONLY $5 OR LESS*^ FOR Healthier SG Screening",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -1072,13 +1072,13 @@
    "funder": "Ministry of Health (MOH)",
    "category": "health",
    "benefit_type": "discount",
-   "amount_min": null,
-   "amount_max": null,
+   "amount_min": 300,
+   "amount_max": 1200,
    "amount_currency": "SGD",
    "amount_period": "annual",
-   "amount_note": "Annual MediSave top-ups of $300–$1,200 by birth cohort (for life), plus outpatient subsidies and MediShield Life/CareShield Life premium support",
+   "amount_note": "Annual MediSave top-up $300-$1,200 by birth year (born 1945-49 $300; 1940-44 $500; 1935-39 $700; before/in 1934 $1,200; extra $50-$200 with serious pre-existing conditions), paid mid-July; plus outpatient subsidies and MediShield Life Pioneer subsidies of 40-60%.",
    "is_automatic": true,
-   "application_url": "https://www.pioneers.gov.sg/",
+   "application_url": "https://www.moh.gov.sg/managing-expenses/schemes-and-subsidies/pioneer-generation-package/",
    "application_channel": "automatic",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -1104,10 +1104,10 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.pioneers.gov.sg/",
-   "source_snippet": "Lifelong benefits for Pioneers (born on or before 31 December 1949 and citizen by 31 December 1986): annual MediSave top-ups, additional 50% off subsidised bills at polyclinics/SOCs, enhanced CHAS subsidies, and 40–60% MediShield Life premium subsidies.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www.moh.gov.sg/managing-expenses/schemes-and-subsidies/pioneer-generation-package/",
+   "source_snippet": "Pioneers also receive $300-$1,200 a year in MediSave top-ups (depending on ... Were born on or before 31 December 1949, and ... Became a Singapore citizen",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "merdeka-generation-package",
@@ -1122,9 +1122,9 @@
    "amount_max": null,
    "amount_currency": "SGD",
    "amount_period": null,
-   "amount_note": "Outpatient subsidies at polyclinics/SOCs/CHAS clinics plus MediShield Life premium subsidy of 5% (10% from age 76); CareShield Life additional participation incentive up to $4,000 (one-off)",
+   "amount_note": "Additional 25% off remaining bill at polyclinics/public SOCs; enhanced CHAS subsidies (e.g. up to $23.50 common illness, up to $130 per chronic visit, $520/yr cap); MediShield Life premium subsidy 5% (10% from age 76). CareShield Life participation incentive ($4,000) expired 31 Dec 2024.",
    "is_automatic": true,
-   "application_url": "https://www.merdekageneration.gov.sg/",
+   "application_url": "https://www.moh.gov.sg/managing-expenses/schemes-and-subsidies/merdeka-generation-package/",
    "application_channel": "automatic",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -1150,10 +1150,10 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.merdekageneration.gov.sg/",
-   "source_snippet": "Benefits for the Merdeka Generation (born 1950–1959 and citizen by 31 December 1996): additional 25% off subsidised bills at polyclinics and SOCs, enhanced CHAS subsidies and MediShield Life premium subsidies of 5% (rising to 10% from age 76).",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www.moh.gov.sg/managing-expenses/schemes-and-subsidies/merdeka-generation-package/",
+   "source_snippet": "From 1 July 2019, Merdeka Generation seniors receive additional Merdeka Generation Subsidies of 5% of their annual MediShield Life premiums, increasing to 10% from 76 years old and above",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "medisave-grant-for-newborns",
@@ -1164,13 +1164,13 @@
    "funder": "CPF Board / Ministry of Health (MOH)",
    "category": "family",
    "benefit_type": "cash_one_off",
-   "amount_min": null,
-   "amount_max": null,
+   "amount_min": 5000,
+   "amount_max": 5000,
    "amount_currency": "SGD",
    "amount_period": "one_off",
-   "amount_note": "Automatic grant credited to the newborn's MediSave Account after birth registration (quantum set by CPF; enhanced for third and subsequent children under the Large Families Scheme from 18 Feb 2025)",
+   "amount_note": "$5,000 for Singapore Citizen newborns born on or after 1 April 2025 ($4,000 for births 1 Jan 2015 - 31 Mar 2025); credited automatically within a week of birth registration. Third+ children born from 18 Feb 2025 get a further $5,000 under the Large Families Scheme.",
    "is_automatic": true,
-   "application_url": "https://www.cpf.gov.sg/",
+   "application_url": "https://www.cpf.gov.sg/service/article/what-is-the-medisave-grant-for-newborns",
    "application_channel": "automatic",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -1196,10 +1196,10 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.cpf.gov.sg/",
-   "source_snippet": "A MediSave grant is automatically credited to every Singapore Citizen newborn's CPF MediSave Account to help pay for healthcare needs such as MediShield Life premiums, childhood vaccinations and outpatient treatments.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www.cpf.gov.sg/service/article/what-is-the-medisave-grant-for-newborns",
+   "source_snippet": "All Singapore Citizen newborns born on or after 26 August 2012 are eligible.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "medifund",
@@ -1216,7 +1216,7 @@
    "amount_period": null,
    "amount_note": "Assistance is means-tested and sized to the outstanding subsidised bill and the family's circumstances; applications are assessed at the point of care",
    "is_automatic": false,
-   "application_url": "https://www.moh.gov.sg/cost-financing/healthcare-schemes-subsidies",
+   "application_url": "https://www.moh.gov.sg/managing-expenses/schemes-and-subsidies/medifund/",
    "application_channel": "in_person",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -1253,10 +1253,10 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.moh.gov.sg/cost-financing/healthcare-schemes-subsidies",
-   "source_snippet": "MediFund is an endowment fund that acts as a safety net to help Singaporeans who are unable to afford their subsidised healthcare bills even after government subsidies, MediShield Life and MediSave.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www.moh.gov.sg/managing-expenses/schemes-and-subsidies/medifund/",
+   "source_snippet": "To apply for MediFund assistance, you must: be a Singapore citizen; be a subsidised patient; have received or require treatment from a MediFund-approved",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "seniors-mobility-enabling-fund",
@@ -1273,7 +1273,7 @@
    "amount_period": null,
    "amount_note": "Means-tested subsidy covering a large share (up to 90% for lower-income households) of the cost of approved assistive devices and home healthcare items",
    "is_automatic": false,
-   "application_url": "https://www.aic.sg/",
+   "application_url": "https://www.aic.sg/Financial-Assistance/Seniors-Mobility-and-Enabling-Fund---Mobility-and-Assistive-Devices",
    "application_channel": "in_person",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -1289,8 +1289,8 @@
     "statuses": [],
     "age_min": 60,
     "age_max": null,
-    "income_annual_max": null,
-    "income_note": "Means-tested by household monthly income per person or home Annual Value",
+    "income_annual_max": 57600,
+    "income_note": "Household monthly income per person $4,800 or less (=$57,600/year per household member), or Annual Value of home under $21,000 if no household income.",
     "requires_children": false,
     "nationality": "citizen_or_pr",
     "residency_months_min": null,
@@ -1299,10 +1299,10 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.aic.sg/",
-   "source_snippet": "SMF provides subsidies for assistive devices (e.g. wheelchairs, commodes, hospital beds) and home healthcare items for seniors, as well as transport subsidies to eldercare centres.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www.aic.sg/Financial-Assistance/Seniors-Mobility-and-Enabling-Fund---Mobility-and-Assistive-Devices",
+   "source_snippet": "He/ she must meet the mean-test criteria for SMF: Household monthly income per person must be $4,800 or less OR Annual value (AV) of property under $21,000 if there is no household income",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "assistive-technology-fund",
@@ -1314,12 +1314,12 @@
    "category": "health",
    "benefit_type": "in_kind",
    "amount_min": null,
-   "amount_max": null,
+   "amount_max": 40000,
    "amount_currency": "SGD",
-   "amount_period": null,
-   "amount_note": "Means-tested subsidy of up to 90% of the cost of approved assistive technology, subject to a lifetime cap per person",
+   "amount_period": "one_off",
+   "amount_note": "Subsidy of up to 90% of the cost of the required assistive technology device, with a lifetime cap of $40,000 per person; means-tested.",
    "is_automatic": false,
-   "application_url": "https://www.sgenable.sg/",
+   "application_url": "https://supportgowhere.life.gov.sg/schemes/ATF/assistive-technology-fund",
    "application_channel": "online",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -1345,10 +1345,10 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.sgenable.sg/",
-   "source_snippet": "The Assistive Technology Fund helps persons with disabilities defray the cost of assistive technology devices for education, employment, training or independent living, with means-tested subsidies up to 90% of the device cost, subject to a lifetime cap.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://supportgowhere.life.gov.sg/schemes/ATF/assistive-technology-fund",
+   "source_snippet": "Subsidy of up to 90% of the cost of the required assistive technology device (lifetime cap of $40,000)",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "home-caregiving-grant",
@@ -1392,8 +1392,8 @@
     "statuses": [],
     "age_min": null,
     "age_max": null,
-    "income_annual_max": null,
-    "income_note": "Household monthly income per person ≤ $4,800 (or AV ≤ $31,000 for households without income); care recipient must be SC/PR living in the same household, not in a residential long-term care institution",
+    "income_annual_max": 57600,
+    "income_note": "Household monthly income per person $4,800 or less (=$57,600/year per household member) or, if no household income, property Annual Value under $21,000. Payout tiers: $600 (<= $1,500), $400 ($1,501-$3,600), $200 ($3,601-$4,800); amount also depends on number of properties owned.",
     "requires_children": false,
     "nationality": "citizen_or_pr",
     "residency_months_min": null,
@@ -1403,8 +1403,8 @@
     "gender": "any"
    },
    "source_url": "https://www.aic.sg/Financial-Assistance/Home-Caregiving-Grant",
-   "source_snippet": "The grant amount depends on your monthly household income per person as well as the number of properties owned. $0 – $1,500 (or AV ≤ $21,000 for households without income): $600; $1,501 – $3,600: $400; $3,601 - $4,800: $200.",
-   "last_verified_at": "2026-08-12",
+   "source_snippet": "The grant amount depends on your monthly household income per person as well as the number of properties owned. $0 - $1,500 (or AV <= $21,000 for households without income): $600; $1,501 - $3,600: $400",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -1422,7 +1422,7 @@
    "amount_period": null,
    "amount_note": "Up to 80% subsidy (Class C) and up to 65% (Class B2) for Singapore Citizens; PRs subsidised at lower rates; subsidy level set by means-testing (HOMES)",
    "is_automatic": true,
-   "application_url": "https://www.moh.gov.sg/cost-financing/healthcare-schemes-subsidies",
+   "application_url": "https://www.moh.gov.sg/managing-expenses/schemes-and-subsidies/subsidies-for-acute-inpatient-care-at-public-healthcare-institutions/",
    "application_channel": "automatic",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -1448,10 +1448,10 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.moh.gov.sg/cost-financing/healthcare-schemes-subsidies",
-   "source_snippet": "Patients in Class C and B2 wards at public hospitals receive government subsidies of up to 80% and 65% respectively, means-tested by income or Annual Value; subsidised specialist outpatient and polyclinic services are also available.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www.moh.gov.sg/managing-expenses/schemes-and-subsidies/subsidies-for-acute-inpatient-care-at-public-healthcare-institutions/",
+   "source_snippet": "Subsidy levels are determined through household means-testing",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "enabling-lives-initiative",
@@ -1468,7 +1468,7 @@
    "amount_period": "one_off",
    "amount_note": "Project grant; quantum depends on approved proposal",
    "is_automatic": false,
-   "application_url": "https://www.sgenable.sg/",
+   "application_url": "https://www.eli-grant.sg/",
    "application_channel": "online",
    "deadline_type": "window",
    "deadline_note": "Application calls announced periodically by SG Enable",
@@ -1488,10 +1488,10 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.sgenable.sg/",
-   "source_snippet": "The Enabling Lives Initiative funds ground-up and organisation-led projects that improve the quality of life of persons with disabilities and their caregivers, including social inclusion and assistive technology projects.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www.sgenable.sg/your-first-stop/social-innovation",
+   "source_snippet": "The Enabling Lives Initiative (ELI) Grant, funded by Tote Board and managed by SG Enable, is Singapore's only grant dedicated to driving disability innovation.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "baby-bonus-cash-gift",
@@ -1508,10 +1508,10 @@
    "amount_period": "one_off",
    "amount_note": "$11,000 (1st/2nd child) or $13,000 (3rd+ child), disbursed in instalments: $3,000/$4,000 at birth, then instalments at 6/12/18 months, then $400 every 6 months until age 6.5",
    "is_automatic": false,
-   "application_url": "https://www.madeforfamilies.gov.sg/support-measures/child-raising/financial-support/baby-bonus-scheme",
+   "application_url": "https://www.life.gov.sg/services/baby-bonus",
    "application_channel": "online",
    "deadline_type": "rolling",
-   "deadline_note": null,
+   "deadline_note": "Being replaced by the SG Child Support Package (announced National Day Rally 2026); existing payouts continue and current recipients transition automatically.",
    "procedure_steps": [
     {
      "step": 1,
@@ -1550,7 +1550,7 @@
    },
    "source_url": "https://www.madeforfamilies.gov.sg/support-measures/child-raising/financial-support/baby-bonus-scheme",
    "source_snippet": "The BBCG ranges from $11,000 (for first and second child) to $13,000 (for third and subsequent child). It is disbursed once every six months over the first six-and-a-half years of a child's life.",
-   "last_verified_at": "2026-08-12",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified",
    "income_reviewed_at": "2026-08-13"
   },
@@ -1569,10 +1569,10 @@
    "amount_period": "one_off",
    "amount_note": "First Step Grant $5,000 (1st/2nd child) or $10,000 (3rd+, born from 18 Feb 2025) with no saving required; plus dollar-for-dollar co-matching of parents' savings up to $4,000/$7,000/$9,000/$15,000 by birth order",
    "is_automatic": false,
-   "application_url": "https://www.madeforfamilies.gov.sg/support-measures/child-raising/financial-support/baby-bonus-scheme",
+   "application_url": "https://www.life.gov.sg/services/baby-bonus",
    "application_channel": "online",
    "deadline_type": "rolling",
-   "deadline_note": null,
+   "deadline_note": "Baby Bonus Scheme (incl. CDA) is being replaced by the SG Child Support Package announced at NDR 2026; existing benefits continue. CDA usable until 31 Dec of the year the child turns 12.",
    "procedure_steps": [
     {
      "step": 1,
@@ -1596,8 +1596,8 @@
     "gender": "any"
    },
    "source_url": "https://www.madeforfamilies.gov.sg/support-measures/child-raising/financial-support/baby-bonus-scheme",
-   "source_snippet": "The CDA First Step Grant of $5,000 for the first and second child, and $10,000 for the third and subsequent child born on or after 18 February 2025 will be automatically deposited when you open the CDA.",
-   "last_verified_at": "2026-08-12",
+   "source_snippet": "The CDA First Step Grant of $5,000 for the first and second child, and $10,000 for the third and subsequent child born on or after 18 February 2025 will be automatically deposited",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -1613,9 +1613,9 @@
    "amount_max": null,
    "amount_currency": "SGD",
    "amount_period": "monthly",
-   "amount_note": "16 weeks of maternity leave pay; Government reimbursement capped (per 4-week block) for the 1st/2nd child and fully government-paid for the 3rd+ child, subject to published salary caps",
+   "amount_note": "16 weeks of maternity leave; Government reimburses employers: all 16 weeks for 3rd and subsequent child (capped at $10,000 per 4 weeks, $40,000 total), 8 weeks for 1st and 2nd child (same cap), employer pays the rest.",
    "is_automatic": false,
-   "application_url": "https://www.profamilyleave.gov.sg/",
+   "application_url": "https://www.profamilyleave.msf.gov.sg/schemes/maternity-leave",
    "application_channel": "via_employer",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -1644,10 +1644,10 @@
     "admin_areas": [],
     "gender": "female"
    },
-   "source_url": "https://www.profamilyleave.gov.sg/",
-   "source_snippet": "Working mothers of Singapore Citizen children are entitled to 16 weeks of paid maternity leave under the GPML scheme; the Government pays/reimburses the salary for part or all of the leave, subject to a cap.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www.profamilyleave.msf.gov.sg/schemes/maternity-leave",
+   "source_snippet": "Eligible working mothers can enjoy up to 16 weeks of Government-Paid Maternity Leave (GPML), to be taken within 12 months from the child's date of birth",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "working-mothers-child-relief",
@@ -1664,7 +1664,7 @@
    "amount_period": "annual",
    "amount_note": "Fixed annual relief per qualifying child born from 1 Jan 2024: $8,000 (1st), $10,000 (2nd), $12,000 (3rd+); older cohort claims percentage-of-income relief; total personal reliefs capped at $80,000",
    "is_automatic": false,
-   "application_url": "https://www.iras.gov.sg/taxes/individual-income-tax",
+   "application_url": "https://www.iras.gov.sg/taxes/individual-income-tax/basics-of-individual-income-tax/tax-reliefs-rebates-and-deductions/tax-reliefs/working-mother's-child-relief-(wmcr)",
    "application_channel": "online",
    "deadline_type": "annual",
    "deadline_note": "Claim in annual income tax filing (Mar–Apr)",
@@ -1693,10 +1693,10 @@
     "admin_areas": [],
     "gender": "female"
    },
-   "source_url": "https://www.iras.gov.sg/taxes/individual-income-tax",
-   "source_snippet": "Working mothers can claim WMCR for each qualifying Singapore Citizen child; for children born from 1 January 2024 the relief is a fixed dollar amount ($8,000 first, $10,000 second, $12,000 third and each subsequent child) per year.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www.iras.gov.sg/taxes/individual-income-tax/basics-of-individual-income-tax/tax-reliefs-rebates-and-deductions/tax-reliefs/working-mother's-child-relief-(wmcr)",
+   "source_snippet": "Qualifying Singaporean child born/adopted on or after 1 Jan 2024 Working Mother's Child Relief amount: 1st $8,000, 2nd $10,000",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "fdw-levy-concession",
@@ -1713,7 +1713,7 @@
    "amount_period": "monthly",
    "amount_note": "Concessionary levy of $60/month vs standard levy (currently $300/month); up to 2 FDW concessions per household",
    "is_automatic": true,
-   "application_url": "https://www.mom.gov.sg/",
+   "application_url": "https://www.mom.gov.sg/passes-and-permits/work-permit-for-foreign-domestic-worker/foreign-domestic-worker-levy/levy-concession",
    "application_channel": "automatic",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -1739,10 +1739,10 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.mom.gov.sg/",
-   "source_snippet": "Eligible households pay a concessionary FDW levy of $60 a month (instead of the standard levy) when they employ a foreign domestic worker to care for a child below 16, an elderly person aged 67 or above, or a person with disabilities.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www.mom.gov.sg/passes-and-permits/work-permit-for-foreign-domestic-worker/foreign-domestic-worker-levy/levy-concession",
+   "source_snippet": "As an MDW employer, you can get a concessionary rate of $60 per month if you meet the qualifying criteria.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "childcare-basic-subsidy",
@@ -1757,9 +1757,9 @@
    "amount_max": 600,
    "amount_currency": "SGD",
    "amount_period": "monthly",
-   "amount_note": "$600/month (infant care, working mother) or $300/month (childcare, working mother); $150–$290/month for non-working mothers; credited against centre fees",
+   "amount_note": "Basic Subsidy for Singapore Citizen children in full-day programmes: $600/month infant care and $300/month childcare where the mother works; $150/month where the main applicant is not working.",
    "is_automatic": false,
-   "application_url": "https://www.ecda.gov.sg/",
+   "application_url": "https://www.ecda.gov.sg/parents/preschool-subsidies/infant-and-childcare-subsidy-scheme/overview",
    "application_channel": "via_employer",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -1796,10 +1796,10 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.ecda.gov.sg/",
-   "source_snippet": "All Singapore Citizen children enrolled in ECDA-licensed infant care and childcare centres receive a Basic Subsidy: $600 a month for infant care and $300 a month for childcare where the mother works; lower amounts for non-working mothers.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www.ecda.gov.sg/parents/preschool-subsidies/infant-and-childcare-subsidy-scheme/overview",
+   "source_snippet": "This table shows the amount of preschool subsidies that an SC child enrolled in a full-day infant or childcare programme is eligible to receive. Basic Subsidy Infant Care $600 Childcare $300",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "childcare-additional-subsidy",
@@ -1814,9 +1814,9 @@
    "amount_max": 710,
    "amount_currency": "SGD",
    "amount_period": "monthly",
-   "amount_note": "Tiered by gross household income/per-capita income; maximum for households earning ≤$3,000/month; tapers to zero above the income ceiling ($12,000/month, rising to $15,000 from 2027)",
+   "amount_note": "Additional Subsidy up to $710/month (infant care) or up to $467/month (childcare), tiered by gross household income; available if gross monthly household income is $12,000 or below (or per capita income $3,000 or below for households of 5+).",
    "is_automatic": false,
-   "application_url": "https://www.ecda.gov.sg/",
+   "application_url": "https://www.ecda.gov.sg/parents/preschool-subsidies/infant-and-childcare-subsidy-scheme/overview",
    "application_channel": "via_employer",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -1848,9 +1848,9 @@
     "income_confidence": "high",
     "gender": "any"
    },
-   "source_url": "https://www.ecda.gov.sg/",
-   "source_snippet": "Lower-income working families receive a means-tested Additional Subsidy on top of the Basic Subsidy — up to $710 a month for infant care and up to $467 a month for childcare, tiered by household income.",
-   "last_verified_at": "2026-08-12",
+   "source_url": "https://www.ecda.gov.sg/parents/preschool-subsidies/infant-and-childcare-subsidy-scheme/overview",
+   "source_snippet": "The family's gross monthly household income (HHI) is $12,000 or below; or The per capita income (PCI) is $3,000 or below for households consisting of 5 or more family members",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified",
    "income_reviewed_at": "2026-08-13"
   },
@@ -1863,13 +1863,13 @@
    "funder": "Ministry of Social and Family Development (MSF)",
    "category": "education",
    "benefit_type": "discount",
-   "amount_min": null,
-   "amount_max": null,
+   "amount_min": 17,
+   "amount_max": 161,
    "amount_currency": "SGD",
    "amount_period": "monthly",
-   "amount_note": "Monthly fee assistance at eligible kindergartens (Anchor Operators/MOE Kindergartens), tiered by gross household income (up to about $170/month for the lowest-income tier); plus a one-off annual grant for start-up costs for the lowest tier",
+   "amount_note": "Monthly subsidy of $17 to $161 depending on household income, paid directly to the kindergarten (AOP kindergartens); a separate KiFAS Startup Grant exists for the lowest tier.",
    "is_automatic": false,
-   "application_url": "https://www.msf.gov.sg/what-we-do/comcare",
+   "application_url": "https://www.ecda.gov.sg/parents/preschool-subsidies/kindergarten-fee-assistance-scheme-(kifas)/overview",
    "application_channel": "via_employer",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -1895,9 +1895,9 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.msf.gov.sg/what-we-do/comcare",
-   "source_snippet": "Kindergarten Fee Assistance Scheme (KiFAS) — support to defray kindergarten fees for Singaporean children.",
-   "last_verified_at": "2026-08-12",
+   "source_url": "https://supportgowhere.life.gov.sg/schemes/KIFAS/kindergarten-fee-assistance-scheme-kifas",
+   "source_snippet": "Subsidies range between $17 and $161 per month · Subsidy amount depends on monthly household income, and will be directly disbursed to the child's kindergarten.",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -1910,15 +1910,15 @@
    "category": "education",
    "benefit_type": "discount",
    "amount_min": null,
-   "amount_max": null,
+   "amount_max": 290,
    "amount_currency": "SGD",
    "amount_period": "monthly",
-   "amount_note": "Monthly subsidy for student care fees at MSF-registered student care centres, tiered by household income (up to about $290/month for the lowest-income tier)",
+   "amount_note": "Up to $290/month for children aged 7-14 (P1-Sec 2) at registered student care centres, by household income; revised income criteria apply from January 2027.",
    "is_automatic": false,
-   "application_url": "https://www.msf.gov.sg/what-we-do/comcare",
+   "application_url": "https://www.msf.gov.sg/what-we-do/student-care/for-parents/student-care-fee-assistance",
    "application_channel": "in_person",
    "deadline_type": "rolling",
-   "deadline_note": null,
+   "deadline_note": "Revised SCFA income eligibility takes effect January 2027.",
    "procedure_steps": [
     {
      "step": 1,
@@ -1941,9 +1941,9 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.msf.gov.sg/what-we-do/comcare",
-   "source_snippet": "Fee assistance for children from working families enrolled in MSF-registered Student Care Centres.",
-   "last_verified_at": "2026-08-12",
+   "source_url": "https://www.msf.gov.sg/what-we-do/student-care/for-parents/student-care-fee-assistance",
+   "source_snippet": "For children attending SCCs aged 7 to 14 years old (Primary 1 to Secondary 2) in the calendar year in which subsidies commence, the subsidy is up to $290 per month, depending on your monthly household income.",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -1961,10 +1961,10 @@
    "amount_period": "annual",
    "amount_note": "$10,000 CDA First Step Grant + additional $5,000 MediSave Grant for Newborns + $1,000/year LifeSG Credits for each of the child's first 6 years",
    "is_automatic": true,
-   "application_url": "https://www.madeforfamilies.gov.sg/",
+   "application_url": "https://www.life.gov.sg/family-parenting/benefits-support/large-families-scheme",
    "application_channel": "automatic",
    "deadline_type": "rolling",
-   "deadline_note": null,
+   "deadline_note": "Being replaced by the SG Child Support Package announced at the 2026 National Day Rally; large families with three or more children continue to receive additional help on top. Existing benefits continue.",
    "procedure_steps": [
     {
      "step": 1,
@@ -1990,9 +1990,9 @@
     "income_confidence": "high",
     "gender": "any"
    },
-   "source_url": "https://www.madeforfamilies.gov.sg/",
-   "source_snippet": "Announced at Budget 2025 for third and subsequent Singapore Citizen children born from 18 February 2025: an increased CDA First Step Grant of $10,000, a $5,000 increase in the MediSave Grant for Newborns, and $1,000 a year in Large Family LifeSG Credits until the child turns 6.",
-   "last_verified_at": "2026-08-12",
+   "source_url": "https://www.life.gov.sg/family-parenting/benefits-support/large-families-scheme",
+   "source_snippet": "The SG Child Support Package announced at the 2026 National Day Rally will replace the Baby Bonus Scheme and Large Families Scheme.",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified",
    "income_reviewed_at": "2026-08-13"
   },
@@ -2039,7 +2039,7 @@
     "age_min": null,
     "age_max": null,
     "income_annual_max": 48000,
-    "income_note": "Gross household income ≤ $4,000/month OR per capita income ≤ $1,000/month",
+    "income_note": "Gross household income ≤ $4,000/month OR per capita income ≤ $1,000/month (criteria wef Jan 2026). Annual figure = 4,000 x 12.",
     "requires_children": true,
     "nationality": "citizen_or_pr",
     "residency_months_min": null,
@@ -2049,8 +2049,8 @@
     "gender": "any"
    },
    "source_url": "https://www.moe.gov.sg/financial-matters/financial-assistance",
-   "source_snippet": "Eligibility: Gross household income ≤ $4,000 per month or per capita income ≤ $1,000. Provisions: 100% fee subsidies; free textbooks and uniforms; meal subsidies; transport subsidies of $21 per month.",
-   "last_verified_at": "2026-08-12",
+   "source_snippet": "Monthly gross household income (GHI) ≤$4,000, or a monthly per capita income (PCI) ≤$1,000 ... Secondary level: 100% subsidy of school and miscellaneous fees; free textbooks and school attire; meal subsidies for 10 meals per school week; public transport subsidy of $21 per month",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -2062,13 +2062,13 @@
    "funder": "Ministry of Education (MOE)",
    "category": "education",
    "benefit_type": "cash_one_off",
-   "amount_min": null,
-   "amount_max": null,
+   "amount_min": 230,
+   "amount_max": 290,
    "amount_currency": "SGD",
    "amount_period": "annual",
-   "amount_note": "Annual Edusave contributions for SC students (about $230 primary / $290 secondary) usable for approved enrichment programmes and fees; award quanta vary by award type and school level",
+   "amount_note": "Annual Edusave contribution: $230 for primary school students, $290 for secondary school students (SC students; JC/MI students get no annual contributions). Award quanta vary by award type.",
    "is_automatic": true,
-   "application_url": "https://www.moe.gov.sg/",
+   "application_url": "https://www.moe.gov.sg/financial-matters/edusave-account/overview",
    "application_channel": "automatic",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -2094,10 +2094,10 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.moe.gov.sg/",
-   "source_snippet": "Singapore Citizen students aged 7–16 receive annual Edusave contributions, and students can receive Edusave awards such as the Edusave Merit Bursary, Edusave Good Progress Award and Edusave Awards for Achievement, Good Leadership and Service.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www.moe.gov.sg/financial-matters/edusave-account/overview",
+   "source_snippet": "Every Singapore Citizen (SC) will have an Edusave account created automatically for them. ... Primary school students: $230 - Secondary school students: $290",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "moe-independent-school-bursary",
@@ -2112,7 +2112,7 @@
    "amount_max": null,
    "amount_currency": "SGD",
    "amount_period": "annual",
-   "amount_note": "Tiered fee subsidy: 100% (GHI ≤ $4,000/PCI ≤ $1,000) stepping down to 33% (GHI $9,001–$12,000); top tiers include free textbooks/attire, $21/month transport subsidy, meal subsidies and a $1,600 pre-university bursary",
+   "amount_note": "Tiered by monthly GHI/PCI (wef Jan 2026): GHI ≤ $4,000 or PCI ≤ $1,000: 100% school, misc and exam fee subsidy, free textbooks/attire, meal subsidy (10 meals/week), $21/month transport (JC: $1,600 bursary); GHI $4,001-5,500: pay same fee as Government schools; $5,501-9,000: 1.5x Govt school fee; $9,001-12,000 (PCI $2,251-3,000): 33% subsidy of school and misc fees",
    "is_automatic": false,
    "application_url": "https://www.moe.gov.sg/financial-matters/financial-assistance",
    "application_channel": "online",
@@ -2130,8 +2130,8 @@
     "statuses": [],
     "age_min": null,
     "age_max": null,
-    "income_annual_max": null,
-    "income_note": "SC students in independent schools; gross household income up to $12,000/month for partial subsidy",
+    "income_annual_max": 144000,
+    "income_note": "Highest tier for any subsidy: gross household income up to $12,000/month (or PCI up to $3,000) = $144,000/year; full subsidy tier is GHI ≤ $4,000/month.",
     "requires_children": false,
     "nationality": "citizen_or_pr",
     "residency_months_min": null,
@@ -2140,10 +2140,10 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.moe.gov.sg/financial-matters/financial-assistance",
-   "source_snippet": "Singapore Citizen students in independent schools receive tiered school-fee subsidies based on gross household income — 100% subsidy plus free textbooks, transport and meal subsidies for households earning ≤ $4,000/month (or PCI ≤ $1,000).",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www.moe.gov.sg/media/files/financial-matters/003fa00b-9d91-4985-89db-624ae6d67da4.pdf",
+   "source_snippet": "Income eligibility criteria and benefits wef January 2026 | GHI $9,001 - $12,000 or PCI $2,251 - $3,000 | Student receives subsidy of 33% of school and miscellaneous fees",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "post-secondary-education-account",

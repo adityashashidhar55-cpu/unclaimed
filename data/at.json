@@ -50,7 +50,7 @@
     "income_note": "Keine Einkommensprüfung der Eltern. Zuverdienstgrenze für Kinder ab dem Kalenderjahr des 20. Geburtstags: 17.212 € zu versteuerndes Einkommen pro Kalenderjahr (2025; 2024: 16.455 €).",
     "requires_children": true,
     "gender": "any",
-    "nationality": "any_resident",
+    "nationality": "citizen_or_pr",
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
@@ -58,7 +58,7 @@
    },
    "source_url": "https://www.bundeskanzleramt.gv.at/agenda/familie/familienbeihilfe/basisinformation-zur-familienbeihilfe/familienbeihilfenbetraege.html",
    "source_snippet": "\"Die Familienbeihilfe beträgt für die Kalenderjahre 2025, 2026 und 2027 pro Kind und Monat ab Geburt 138,4 Euro ab 3 Jahren 148 Euro ab 10 Jahren 171,8 Euro ab 19 Jahren 200,4 Euro\"",
-   "last_verified_at": "2026-08-12",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -96,7 +96,7 @@
     "income_note": null,
     "requires_children": true,
     "gender": "any",
-    "nationality": "any_resident",
+    "nationality": "citizen_or_pr",
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
@@ -104,7 +104,7 @@
    },
    "source_url": "https://www.bundeskanzleramt.gv.at/agenda/familie/familienbeihilfe/basisinformation-zur-familienbeihilfe/familienbeihilfenbetraege.html",
    "source_snippet": "\"Gemeinsam mit der Familienbeihilfe wird zusätzlich ein Kinderabsetzbetrag ausgezahlt. Dieser beträgt für die Kalenderjahre 2025, 2026 und 2027 70,9 Euro pro Kind und muss nicht gesondert beantragt werden.\"",
-   "last_verified_at": "2026-08-12",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -142,7 +142,7 @@
     "income_note": null,
     "requires_children": true,
     "gender": "any",
-    "nationality": "any_resident",
+    "nationality": "citizen_or_pr",
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
@@ -150,7 +150,7 @@
    },
    "source_url": "https://www.bundeskanzleramt.gv.at/agenda/familie/familienbeihilfe/basisinformation-zur-familienbeihilfe/familienbeihilfenbetraege.html",
    "source_snippet": "\"Mit der Familienbeihilfe für den August 2025, August 2026 und August 2027 wird zusätzlich ein Schulstartgeld von 121,4 Euro für jedes Kind zwischen 6 und 15 Jahren ausgezahlt; es ist kein gesonderter Antrag erforderlich.\"",
-   "last_verified_at": "2026-08-12",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -194,7 +194,7 @@
     "income_note": "Anspruch ab 3. Kind mit Familienbeihilfe, wenn das zu versteuernde Familieneinkommen (Summe beider Elternteile) im Vorjahr 55.000 € nicht überstiegen hat.",
     "requires_children": true,
     "gender": "any",
-    "nationality": "any_resident",
+    "nationality": "citizen_or_pr",
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
@@ -202,7 +202,7 @@
    },
    "source_url": "https://www.bundeskanzleramt.gv.at/agenda/familie/familienbeihilfe/basisinformation-zur-familienbeihilfe/familienbeihilfenbetraege.html",
    "source_snippet": "\"Es steht für die Kalenderjahre 2025, 2026 und 2027 ein Mehrkindzuschlag von 24,4 Euro monatlich für jedes ... dritte und weitere Kind zu ... wenn das zu versteuernde Familieneinkommen ... die Höhe von 55.000 Euro nicht überschritten hat.\"",
-   "last_verified_at": "2026-08-12",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -240,7 +240,7 @@
     "income_note": null,
     "requires_children": true,
     "gender": "any",
-    "nationality": "any_resident",
+    "nationality": "citizen_or_pr",
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
@@ -248,7 +248,7 @@
    },
    "source_url": "https://www.bundeskanzleramt.gv.at/agenda/familie/familienbeihilfe/basisinformation-zur-familienbeihilfe/familienbeihilfenbetraege.html",
    "source_snippet": "\"für 2 Kinder gewährt wird, um 8,6 Euro ... für 7 und mehr Kinder gewährt wird, um 63,1 Euro für jedes Kind\"",
-   "last_verified_at": "2026-08-12",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -292,7 +292,7 @@
     "income_note": null,
     "requires_children": true,
     "gender": "any",
-    "nationality": "any_resident",
+    "nationality": "citizen_or_pr",
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
@@ -300,7 +300,7 @@
    },
    "source_url": "https://www.bundeskanzleramt.gv.at/agenda/familie/familienbeihilfe/basisinformation-zur-familienbeihilfe/familienbeihilfenbetraege.html",
    "source_snippet": "\"Der Zuschlag für ein erheblich behindertes Kind beträgt 189,2 Euro pro Monat.\"",
-   "last_verified_at": "2026-08-12",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -316,9 +316,9 @@
    "amount_max": null,
    "amount_currency": "EUR",
    "amount_period": "monthly",
-   "amount_note": "Zwei Varianten: pauschales KBG mit valorisiertem Tagessatz (für 2026/27 auf dem Niveau von 2025 eingefroren) je nach Bezugsdauer-Variante, oder einkommensabhängiges KBG = 80 % des letzten Nettoeinkommens für max. 365 Tage (426 bei geteiltem Bezug).",
+   "amount_note": "Zwei Systeme. Pauschales KBG-Konto: Tagessatz je nach Variante von 41,14 EUR/Tag (kürzeste Variante, 365 Tage) bis 17,65 EUR/Tag (längste Variante, 851 Tage). Einkommensabhängiges KBG: 80 % der Letzteinkünfte, max. 80,12 EUR/Tag (rund 2.400 EUR/Monat), 365 Tage (426 bei Teilung zwischen beiden Eltern).",
    "is_automatic": false,
-   "application_url": "https://www.gesundheitskasse.at",
+   "application_url": "https://www.oegk.at",
    "application_channel": "online",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -356,19 +356,19 @@
     "age_min": null,
     "age_max": null,
     "income_annual_max": null,
-    "income_note": "Zuverdienstgrenze: jährlich festgelegter Höchstbetrag pro Kalenderjahr, unterschiedlich für pauschales KBG-Konto und einkommensabhängiges KBG; Überschreiten führt zu Rückforderung. Aktuellen Wert auf oesterreich.gv.at prüfen (kein fixer Haushaltsgrenzwert publiziert).",
+    "income_note": "Zuverdienstgrenze (eigener Zuverdienst, kein Haushaltslimit): Pauschal-KBG 60 % der Einkünfte des Vorjahres, mindestens 18.000 EUR pro Kalenderjahr; einkommensabhängiges KBG 8.600 EUR pro Jahr (2026); Überschreiten führt zu Rückforderung.",
     "requires_children": true,
     "gender": "any",
-    "nationality": "any_resident",
+    "nationality": "citizen_or_pr",
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
     "admin_areas": []
    },
-   "source_url": "https://www.gesundheitskasse.at",
+   "source_url": "https://www.bundeskanzleramt.gv.at/agenda/familie/kinderbetreuungsgeld/basisinformationen-kinderbetreuungsgeld/kinderbetreuungsgeld-konto-pauschalsystem.html",
    "source_snippet": "Einkommensabhängiges Kinderbetreuungsgeld beträgt 80 % des letzten Nettoeinkommens; die pauschale Variante wird je nach gewählter Bezugsdauer als Tagessatz ausgezahlt.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "wochengeld",
@@ -385,7 +385,7 @@
    "amount_period": "monthly",
    "amount_note": "Ersatz des durchschnittlichen Nettoeinkommens während des Beschäftigungsverbots (8 Wochen vor bis 8 Wochen nach der Geburt; bei Früh-/Kaiserschnittgeburt 12 Wochen danach).",
    "is_automatic": false,
-   "application_url": "https://www.gesundheitskasse.at",
+   "application_url": "https://www.oegk.at/cdscontent/?contentid=10007.867346&portal=oegkportal",
    "application_channel": "online",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -413,10 +413,10 @@
     "student_required": false,
     "admin_areas": []
    },
-   "source_url": "https://www.gesundheitskasse.at",
+   "source_url": "https://www.oegk.at/cdscontent/?contentid=10007.867346&portal=oegkportal",
    "source_snippet": "Das Wochengeld ersetzt das durchschnittliche Nettoarbeitsentgelt der letzten 13 Wochen bzw. drei Monate vor Beginn des Beschäftigungsverbots.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "familienzeitbonus",
@@ -464,10 +464,10 @@
     "age_min": null,
     "age_max": null,
     "income_annual_max": null,
-    "income_note": null,
+    "income_note": "Voraussetzungen: Anspruch auf und Bezug von Familienbeihilfe, gemeinsamer Haushalt mit Kind und anderem Elternteil mit identischen Hauptwohnsitzmeldungen, Vater in den letzten 182 Kalendertagen in Österreich erwerbstätig. Nicht-Österreicher: rechtmäßige Niederlassung in Österreich bzw. Asylvoraussetzungen.",
     "requires_children": true,
     "gender": "any",
-    "nationality": "any_resident",
+    "nationality": "citizen_or_pr",
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
@@ -475,7 +475,7 @@
    },
    "source_url": "https://www.bundeskanzleramt.gv.at/agenda/familie/weitere-leistungen-fuer-familien/familienzeitbonus/anspruchsvoraussetzungen-familienzeitbonus.html",
    "source_snippet": "\"ein 'Familienzeitbonus' in Höhe von 54,87 Euro täglich (insgesamt bis zu 1700 Euro) vorgesehen\"",
-   "last_verified_at": "2026-08-12",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -495,8 +495,8 @@
    "is_automatic": false,
    "application_url": "https://www.gesundheitskasse.at",
    "application_channel": "online",
-   "deadline_type": "rolling",
-   "deadline_note": null,
+   "deadline_type": "window",
+   "deadline_note": "Antrag gleichzeitig mit dem KBG oder binnen 124 Tagen ab dem letzten Tag der höchstmöglichen Anspruchsdauer beider Elternteile; jeder Elternteil beantragt bei seinem Krankenversicherungsträger.",
    "procedure_steps": [],
    "documents_required": [],
    "eligibility": {
@@ -507,16 +507,16 @@
     "income_note": null,
     "requires_children": true,
     "gender": "any",
-    "nationality": "any_resident",
+    "nationality": "citizen_or_pr",
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
     "admin_areas": []
    },
-   "source_url": "https://www.gesundheitskasse.at",
+   "source_url": "https://www.bundeskanzleramt.gv.at/agenda/familie/kinderbetreuungsgeld/partnerschaftsbonus.html",
    "source_snippet": "\"Wenn das Kinderbetreuungsgeld annähernd zu gleichen Teilen bezogen wurde (50:50 bis 60:40), so gebührt jedem Elternteil eine Einmalzahlung von 500 Euro.\"",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "unterhaltsvorschuss",
@@ -564,16 +564,16 @@
     "income_note": null,
     "requires_children": true,
     "gender": "any",
-    "nationality": "any_resident",
+    "nationality": "citizen_or_pr",
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
     "admin_areas": []
    },
-   "source_url": "https://www.oesterreich.gv.at",
-   "source_snippet": "\"Maximal der Regelbedarfssatz (2026: 340 bis 600 EUR je nach Alter) oder der niedrigere Titelbetrag. Antrag: Beim Pflegschaftsgericht am Wohnort des Kindes.\"",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www.oesterreich.gv.at/de/themen/steuern_und_finanzen/unterhalt/2/5/Seite.490550",
+   "source_snippet": "Kinder müssen ihren gewöhnlichen Aufenthalt in Österreich haben und Staatsbürgerinnen/Staatsbürger Österreichs oder eines EU-/EWR-Mitgliedstaats oder staatenlos sein; Vorschuss für höchstens fünf Jahre.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "pflegekarenz-pflegeteilzeit",
@@ -588,9 +588,9 @@
    "amount_max": null,
    "amount_currency": "EUR",
    "amount_period": "monthly",
-   "amount_note": "Freistellung bzw. Arbeitszeitreduktion zur Betreuung pflegebedürftiger Angehöriger; Pflegekarenzgeld in Höhe des Arbeitslosengeldes (55 % des Nettoeinkommens) für maximal 3 Monate (Verlängerung möglich).",
+   "amount_note": "Pflegekarenz/Pflegeteilzeit für 1 bis 3 Monate. Pflegekarenzgeld = 55 % des täglichen Nettoeinkommens (Basis Vorjahr), mindestens in Höhe der Geringfügigkeitsgrenze; bei Pflegeteilzeit aliquot. Voraussetzungen: mind. 3 Monate durchgehendes Dienstverhältnis, schriftliche Vereinbarung mit dem Arbeitgeber, Pflegebedürftiger mit Pflegegeld ab Stufe 3 (ab Stufe 1 bei Demenz oder Minderjährigen). Antrag beim Sozialministeriumservice.",
    "is_automatic": false,
-   "application_url": null,
+   "application_url": "https://www.sozialministerium.gv.at/Themen/Arbeit/Arbeitsrecht/Karenz-und-Teilzeit/Pflegekarenz-und-Pflegeteilzeit.html",
    "application_channel": "via_employer",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -634,10 +634,10 @@
     "student_required": false,
     "admin_areas": []
    },
-   "source_url": "https://www.oesterreich.gv.at",
-   "source_snippet": "Dienstnehmerinnen und Dienstnehmer können zur Betreuung pflegebedürftiger Angehöriger eine Pflegekarenz oder Pflegeteilzeit vereinbaren und erhalten Pflegekarenzgeld vom Krankenversicherungsträger.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www.sozialministerium.gv.at/Themen/Arbeit/Arbeitsrecht/Karenz-und-Teilzeit/Pflegekarenz-und-Pflegeteilzeit.html",
+   "source_snippet": "Die Dauer ist auf ein bis drei Monate festgelegt.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "foerderung-24-stunden-betreuung",
@@ -648,11 +648,11 @@
    "funder": "Sozialministeriumservice und Bundesländer",
    "category": "family",
    "benefit_type": "cash_monthly",
-   "amount_min": null,
-   "amount_max": null,
+   "amount_min": 400,
+   "amount_max": 1600,
    "amount_currency": "EUR",
    "amount_period": "monthly",
-   "amount_note": "Zuschüsse des Bundes (Sozialministeriumservice) und der Bundesländer zu den Kosten einer legalen 24-Stunden-Betreuung zu Hause; Höhe einkommens- und landesabhängig.",
+   "amount_note": "Förderung durch das Sozialministeriumservice: 400 EUR/Monat je selbständiger Betreuungskraft (max. 800 EUR bei zwei), 800 EUR/Monat je unselbständig angestellter Betreuungskraft (max. 1.600 EUR bei zwei). Voraussetzungen: Pflegegeld ab Stufe 3, Bedarf an Rund-um-die-Uhr-Betreuung, Nettoeinkommen der betreuten Person max. 2.500 EUR/Monat (+400 EUR je unterhaltsberechtigtem Angehörigen, +600 EUR bei Behinderung). Bundesländer können zusätzlich fördern.",
    "is_automatic": false,
    "application_url": "https://www.sozialministeriumservice.at",
    "application_channel": "online",
@@ -691,9 +691,9 @@
     "student_required": false,
     "admin_areas": []
    },
-   "source_url": "https://www.sozialministeriumservice.at",
-   "source_snippet": "Das Sozialministeriumservice fördert die 24-Stunden-Betreuung durch selbständige oder angestellte Personenbetreuerinnen und Personenbetreuer; zusätzlich gewähren die Bundesländer eigene Zuschüsse.",
-   "last_verified_at": "2026-08-12",
+   "source_url": "https://www.oesterreich.gv.at/de/themen/pflege/1/Seite.360534",
+   "source_snippet": "Pflegegeld mindestens Stufe 3; monatliches Nettoeinkommen nicht über 2.500 Euro; Zuwendung 800 Euro monatlich je unselbständig Betreuungskraft bzw. 400 Euro je selbständiger Betreuungskraft.",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -709,9 +709,9 @@
    "amount_max": null,
    "amount_currency": "EUR",
    "amount_period": "monthly",
-   "amount_note": "Kostenlose Kinderbetreuung in städtischen Kindergärten; Eltern zahlen nur Verpflegungskosten (einkommensabhängig, bei niedrigem Einkommen ebenfalls gratis).",
+   "amount_note": "Besuch städtischer und geförderter privater Kindergärten in Wien ist für alle Kinder bis zum Beginn der Schulpflicht beitragsfrei. Nicht enthalten: Mahlzeiten und besondere Zusatzleistungen (Befreiung von Essenskosten auf Antrag möglich).",
    "is_automatic": true,
-   "application_url": "https://www.wien.gv.at",
+   "application_url": "https://www.wien.gv.at/bildung/gratis-kindergarten",
    "application_channel": "in_person",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -742,9 +742,9 @@
     "income_source_url": "https://www.wien.gv.at/bildung/kindergarten/foerderungen-eltern/beitragsfreier-kindergarten.html",
     "income_confidence": "high"
    },
-   "source_url": "https://www.wien.gv.at",
-   "source_snippet": "In Wien ist der Kindergarten gratis; Eltern zahlen nur für Verpflegung und Bastelmaterial.",
-   "last_verified_at": "2026-08-12",
+   "source_url": "https://www.wien.gv.at/bildung/gratis-kindergarten",
+   "source_snippet": "Der Besuch in städtischen und geförderten privaten elementaren Bildungseinrichtungen in Wien ist für alle Kinder bis zum Beginn der Schulpflicht beitragsfrei",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified",
    "income_reviewed_at": "2026-08-13"
   },
@@ -761,9 +761,9 @@
    "amount_max": null,
    "amount_currency": "EUR",
    "amount_period": "monthly",
-   "amount_note": "Seit 2019 ist der Kindergarten im Burgenland für alle Familien kostenlos; über 90 % der Einrichtungen haben ganztägig geöffnet.",
+   "amount_note": "Öffentliche Kindergärten und Kinderkrippen (sowie Träger mit Versorgungsauftrag für Gemeinden) sind seit 1. November 2019 für Eltern kostenlos. Eltern zahlen weiterhin Verpflegung (Mittagessen, Jause), Bastelbeiträge und externe Zusatzangebote. Voraussetzung: gemeinsamer Hauptwohnsitz von Kind und Elternteil im Burgenland.",
    "is_automatic": true,
-   "application_url": "https://www.burgenland.at",
+   "application_url": "https://www.burgenland.at/themen/gesellschaft/familie/informationen-fuer-eltern/gratiskindergarten/",
    "application_channel": "in_person",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -791,10 +791,10 @@
      "Burgenland"
     ]
    },
-   "source_url": "https://www.burgenland.at",
-   "source_snippet": "\"Im Burgenland ... ist seit 2019 der Kindergarten für alle Familien kostenlos.\"",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www.burgenland.at/themen/gesellschaft/familie/informationen-fuer-eltern/gratiskindergarten/",
+   "source_snippet": "Öffentliche Kindergärten und Kinderkrippen sowie jene Rechtsträger, die für Gemeinden bzw. Gemeindeverbände den Versorgungsauftrag erfüllen, werden ab 1. November 2019 für Eltern kostenlos sein.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "gratis-kindergarten-kaernten",
@@ -809,9 +809,9 @@
    "amount_max": null,
    "amount_currency": "EUR",
    "amount_period": "monthly",
-   "amount_note": "Seit Herbst 2023 sind die Kindergärten in Kärnten gratis; Eltern zahlen nur Verpflegung und Bastelmaterial (Ersparnis je nach Platzart ca. 1.300–4.000 € pro Jahr).",
+   "amount_note": "Beitragsfreie Kinderbildung und -betreuung nach dem Kärntner Kinderbildungs- und -betreuungsgesetz (in Kraft seit 1.9.2023): Das Land ersetzt Elternbeiträge (Elternbeitragsersatz) mit 119 EUR/Monat halbtags und 162 EUR/Monat ganztags im Kindergarten. Eltern zahlen weiter Verpflegung, Kreativ-/Bastelbeitrag und ggf. Zusatzpersonal. Einrichtungen, die noch nicht ins neue Fördersystem umgestiegen sind (Frist 31.12.2026), dürfen weiter Elternbeiträge verlangen (Kinderstipendium 108/147 EUR). Voraussetzungen: Hauptwohnsitz in Kärnten, Betreuung in Kärnten, ab 20 Wochenstunden, Kinder ab 1 Jahr bis Schulpflicht.",
    "is_automatic": true,
-   "application_url": "https://www.kaernten.gv.at",
+   "application_url": "https://www.ktn.gv.at/kinderstipendium",
    "application_channel": "in_person",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -825,7 +825,7 @@
    "documents_required": [],
    "eligibility": {
     "statuses": [],
-    "age_min": 0,
+    "age_min": 1,
     "age_max": 6,
     "income_annual_max": null,
     "income_note": null,
@@ -839,10 +839,10 @@
      "Kärnten"
     ]
    },
-   "source_url": "https://www.kaernten.gv.at",
-   "source_snippet": "\"Seit Herbst 2023 sind auch in Kärnten die Kindergärten gratis. Eltern müssen wie im Burgenland und in Wien nur für Verpflegung und Bastelmaterial aufkommen.\"",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www.ktn.gv.at/kinderstipendium",
+   "source_snippet": "Eltern, die ihre Kinder in den Kindergarten, die Kindertagesstätte oder zu Tagesmüttern/-väter geben keinen Beitrag mehr für die Bildung und Betreuung bezahlen.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "halbtags-gratis-kindergarten-ooe",
@@ -857,9 +857,9 @@
    "amount_max": null,
    "amount_currency": "EUR",
    "amount_period": "monthly",
-   "amount_note": "Halbtags-Betreuung bis 13 Uhr kostenfrei; für Nachmittagsbetreuung zahlen Eltern bis zu 129 € monatlich.",
+   "amount_note": "Der Vormittagsbesuch von Kinderbildungs- und -betreuungseinrichtungen ist in Oberösterreich ab dem 30. Lebensmonat gratis. Für Nachmittagsbetreuung zahlen Eltern einkommensabhängige Elternbeiträge (Oö. Elternbeitragsverordnung); Betrag nicht fix.",
    "is_automatic": true,
-   "application_url": "https://www.land-oberoesterreich.gv.at",
+   "application_url": "https://www.land-oberoesterreich.gv.at/297366.htm",
    "application_channel": "in_person",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -873,7 +873,7 @@
    "documents_required": [],
    "eligibility": {
     "statuses": [],
-    "age_min": 0,
+    "age_min": 2.5,
     "age_max": 6,
     "income_annual_max": null,
     "income_note": null,
@@ -887,10 +887,10 @@
      "Oberösterreich"
     ]
    },
-   "source_url": "https://www.land-oberoesterreich.gv.at",
-   "source_snippet": "\"Zwar ist die Halbtags-Betreuung bis 13 Uhr kostenfrei. Wer darüber hinaus Betreuung braucht, muss zahlen.\"",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www.land-oberoesterreich.gv.at/297366.htm",
+   "source_snippet": "Der Vormittagsbesuch von Kinderbildungs- und -betreuungseinrichtungen ist in Oberösterreich ab dem 30 Lebensmonat gratis.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "vormittags-gratis-kindergarten-noe",
@@ -905,9 +905,9 @@
    "amount_max": null,
    "amount_currency": "EUR",
    "amount_period": "monthly",
-   "amount_note": "Der Vormittags-Kindergarten ist in Niederösterreich kostenlos; für die Nachmittagsbetreuung zahlen Eltern im Durchschnitt ca. 217 € monatlich (inkl. Verpflegung und Bastelbeitrag).",
+   "amount_note": "Der Besuch des NÖ Landeskindergartens ist für Kindergartenkinder (ohne Volksschulkinder) Montag bis Freitag von 7:00 bis 13:00 Uhr kostenlos, auch in den Kindergartenferien. Für die Zeit vor 7:00 und nach 13:00 sowie Mittagessen und Spiel-/Fördermaterial heben die Erhalter einen höchstens kostendeckenden Beitrag ein (unter Bedachtnahme auf die Leistungsfähigkeit der Unterhaltspflichtigen). Unter-3-Jährige: beitragsfreie Vormittagsbetreuung (7-13 Uhr) in Tagesbetreuungseinrichtungen via NÖ Kinderbetreuungsbeitrag (379,08 EUR/Monat Förderung ab März 2026).",
    "is_automatic": true,
-   "application_url": "https://www.noe.gv.at",
+   "application_url": "https://www.noe.gv.at/noe/Kindergaerten-Schulen/Elternfragen_zum_Thema_Kindergarten.html",
    "application_channel": "in_person",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -921,7 +921,7 @@
    "documents_required": [],
    "eligibility": {
     "statuses": [],
-    "age_min": 0,
+    "age_min": 2,
     "age_max": 6,
     "income_annual_max": null,
     "income_note": null,
@@ -935,10 +935,10 @@
      "Niederösterreich"
     ]
    },
-   "source_url": "https://www.noe.gv.at",
-   "source_snippet": "\"Ähnlich wie in Oberösterreich ist der Vormittag kostenlos – der Nachmittags-Kindergarten kostet allerdings.\"",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www.noe.gv.at/noe/Kindergaerten-Schulen/Elternfragen_zum_Thema_Kindergarten.html",
+   "source_snippet": "Der Besuch des Kindergartens ist für Kindergartenkinder mit Ausnahme von Volksschulkindern in der Zeit von Montag bis Freitag, 7.00 Uhr bis 13.00 Uhr, kostenlos.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "verpflichtendes-kindergartenjahr",
@@ -953,7 +953,7 @@
    "amount_max": null,
    "amount_currency": "EUR",
    "amount_period": "monthly",
-   "amount_note": "Das letzte Kindergartenjahr vor der Schule ist bundesweit verpflichtend und beitragsfrei (Bund-Länder-Vereinbarung über Elementarpädagogik).",
+   "amount_note": "Kinder, die bis 31. August das 5. Lebensjahr vollendet haben, müssen im letzten Jahr vor der Schulpflicht halbtags (mind. 20 Stunden pro Woche, September bis Juni) den Kindergarten besuchen; der Besuch ist für die Familien beitragsfrei (Bund trägt 80 Mio. EUR jährlich zu den Kosten bei). Ausnahmen auf Antrag (z. B. Krankheit, Behinderung, weite Entfernung, häusliche Betreuung).",
    "is_automatic": true,
    "application_url": null,
    "application_channel": "in_person",
@@ -981,10 +981,10 @@
     "student_required": false,
     "admin_areas": []
    },
-   "source_url": "https://www.oesterreich.gv.at",
-   "source_snippet": "Fünfjährige Kinder müssen im letzten Jahr vor der Schulpflicht einen Kindergarten besuchen; dieses Kindergartenjahr ist im Rahmen der Bund-Länder-Vereinbarung beitragsfrei.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www.bundeskanzleramt.gv.at/agenda/familie/kinderbildung-und-betreuung/beitragsfreier-pflichtkindergarten.html",
+   "source_snippet": "Der halbtägige Kindergartenbesuch (mindestens 20 Stunden pro Woche) ... kostenfrei für die Familien",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "familienbonus-plus",
@@ -1043,7 +1043,7 @@
    },
    "source_url": "https://www.oesterreich.gv.at/de/themen/familie_und_partnerschaft/finanzielle-unterstuetzungen/6/Seite.080720",
    "source_snippet": "\"Der Familienbonus Plus (BMF) ist ein Steuerabsetzbetrag in Höhe von 2.000 Euro pro Kind und Jahr bis zum 18. Lebensjahr des Kindes ... steht ein reduzierter Familienbonus Plus in Höhe von 700 Euro jährlich zu\"",
-   "last_verified_at": "2026-08-12",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -1092,7 +1092,7 @@
    },
    "source_url": "https://www.usp.gv.at/themen/steuern-finanzen/einkommensteuer-ueberblick/weitere-informationen-est/steuerabsetzbetraege.html",
    "source_snippet": "\"Kindermehrbetrag pro Kind: 700 Euro/Jahr ab dem Jahr 2024\"",
-   "last_verified_at": "2026-08-12",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -1140,8 +1140,8 @@
     ],
     "age_min": null,
     "age_max": null,
-    "income_annual_max": 7284,
-    "income_note": "Anspruch nur, wenn die Einkünfte der (Ehe-)Partnerin/des (Ehe-)Partners den jährlichen Höchstbetrag von 7.284 € (2025) nicht übersteigen; mindestens 1 Kind mit Familienbeihilfe. Wert wird jährlich valorisiert.",
+    "income_annual_max": 7411,
+    "income_note": "Anspruch nur, wenn die Einkünfte der (Ehe-)Partnerin/des (Ehe-)Partners 7.411 EUR im Jahr 2026 nicht übersteigen (2025: 7.284 EUR); mindestens 1 Kind mit Familienbeihilfe. Wert wird jährlich valorisiert.",
     "requires_children": true,
     "gender": "any",
     "nationality": "any_resident",
@@ -1152,7 +1152,7 @@
    },
    "source_url": "https://www.oesterreich.gv.at/de/themen/familie_und_partnerschaft/finanzielle-unterstuetzungen/6/Seite.080720",
    "source_snippet": "\"2026: bei einem Kind 612 Euro, bei zwei Kindern 828 Euro, bei drei Kindern 1.101 Euro, für jedes weitere Kind ... 273 Euro\"",
-   "last_verified_at": "2026-08-12",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -1207,7 +1207,7 @@
    },
    "source_url": "https://www.oesterreich.gv.at/de/themen/familie_und_partnerschaft/finanzielle-unterstuetzungen/6/Seite.080720",
    "source_snippet": "\"Alleinerziehende sind Steuerpflichtige mit mindestens einem Kind, die nicht mehr als sechs Monate im Kalenderjahr in einer Gemeinschaft mit einer (Ehe-)Partnerin/einem (Ehe-)Partner leben\"",
-   "last_verified_at": "2026-08-12",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -1250,7 +1250,7 @@
    },
    "source_url": "https://www.oesterreich.gv.at/de/themen/familie_und_partnerschaft/finanzielle-unterstuetzungen/6/Seite.080720",
    "source_snippet": "\"Unterhaltsabsetzbetrag: 38 Euro bis 75 Euro/Monat und Kind im Jahr 2026\"",
-   "last_verified_at": "2026-08-12",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -1286,8 +1286,8 @@
     ],
     "age_min": null,
     "age_max": null,
-    "income_annual_max": 29743,
-    "income_note": "Basis-VAB nicht einkommensbegrenzt. Zuschlag zum VAB (2025): +790 € bei Einkommen bis 19.424 €, einschleifend auf null bis 29.743 €/Jahr (nur in der Veranlagung); bei Zuschlag SV-Bonus bis +790 € zusätzlich.",
+    "income_annual_max": 30259,
+    "income_note": "Basis-VAB (496 EUR, 2026) nicht einkommensbegrenzt. Zuschlag zum VAB 2026: 804 EUR (2025: 790 EUR) mit Einschleifregelung bis zu einem Einkommen von 30.259 EUR (BMF); wird in der Veranlagung berücksichtigt.",
     "requires_children": false,
     "gender": "any",
     "nationality": "any_resident",
@@ -1296,9 +1296,9 @@
     "student_required": false,
     "admin_areas": []
    },
-   "source_url": "https://www.usp.gv.at/themen/steuern-finanzen/einkommensteuer-ueberblick/weitere-informationen-est/steuerabsetzbetraege.html",
+   "source_url": "https://www.bmf.gv.at/themen/steuern/arbeitnehmerveranlagung/steuertarif-steuerabsetzbetraege/uebersicht-steuerabsetzbetraege.html",
    "source_snippet": "\"Verkehrsabsetzbetrag: 496 Euro/Jahr im Jahr 2026 ... Zuschlag zum Verkehrsabsetzbetrag (mit Einschleifregelung): 804 Euro/Jahr im Jahr 2026\"",
-   "last_verified_at": "2026-08-12",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -1335,7 +1335,7 @@
     "age_min": null,
     "age_max": null,
     "income_annual_max": null,
-    "income_note": "Einschleifregelung je nach Pensionshöhe und Haushaltszusammensetzung",
+    "income_note": "Voller Pensionistenabsetzbetrag 1.020 EUR (2026) bei Pensionseinkünften bis 21.614 EUR; darüber Einschleifregelung. Erhöhter Pensionistenabsetzbetrag 1.502 EUR bei geringer Pension und Alleinstehenden/Alleinverdienern.",
     "requires_children": false,
     "gender": "any",
     "nationality": "any_resident",
@@ -1344,9 +1344,9 @@
     "student_required": false,
     "admin_areas": []
    },
-   "source_url": "https://www.usp.gv.at/themen/steuern-finanzen/einkommensteuer-ueberblick/weitere-informationen-est/steuerabsetzbetraege.html",
+   "source_url": "https://www.bmf.gv.at/themen/steuern/arbeitnehmerveranlagung/steuertarif-steuerabsetzbetraege/uebersicht-steuerabsetzbetraege.html",
    "source_snippet": "\"Pensionistenabsetzbetrag (Grundbetrag mit Einschleifregelungen): 1.020 Euro/Jahr im Jahr 2026 ... Erhöhter Pensionistenabsetzbetrag: 1.502 Euro/Jahr im Jahr 2026\"",
-   "last_verified_at": "2026-08-12",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -1403,9 +1403,9 @@
     "student_required": false,
     "admin_areas": []
    },
-   "source_url": "https://pendlerrechner.bmf.gv.at",
+   "source_url": "https://www.oesterreich.gv.at/de/themen/steuern_und_finanzen/unterstuetzungen_beihilfen_und_foerderungen/pendlerpauschale_und_kilometergeld/1/Seite.1930600",
    "source_snippet": "\"Kleines Pendlerpauschale: 20 bis 40 km 58 €/Monat (696 €/Jahr) ... Großes Pendlerpauschale: über 60 km 306 €/Monat (3.672 €/Jahr)\"",
-   "last_verified_at": "2026-08-12",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -1447,7 +1447,7 @@
    },
    "source_url": "https://www.usp.gv.at/themen/steuern-finanzen/einkommensteuer-ueberblick/weitere-informationen-est/steuerabsetzbetraege.html",
    "source_snippet": "\"Pendlereuro (wenn Anspruch auf Pendlerpauschale besteht): 6 Euro (bis zum Jahr 2025: 2 Euro) pro km der einfachen Wegstrecke zwischen Wohnung und Arbeitsstätte\"",
-   "last_verified_at": "2026-08-12",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -1459,11 +1459,11 @@
    "funder": "Finanzamt Österreich",
    "category": "tax",
    "benefit_type": "cash_monthly",
-   "amount_min": 60,
-   "amount_max": 60,
+   "amount_min": 61.6,
+   "amount_max": 61.6,
    "amount_currency": "EUR",
    "amount_period": "monthly",
-   "amount_note": "60 € pro Monat und Kind (720 €/Jahr) für Bezieher des AVAB/AEAB mit geringen Einkünften, ausbezahlt gemeinsam mit der Familienbeihilfe; Einkommensgrenze ca. 25.000–26.000 €/Jahr (wird valorisiert).",
+   "amount_note": "61,60 EUR pro Monat und Kind (2026) für Alleinverdienende/Alleinerziehende mit geringen Einkünften und Kindern unter 18; wird zusammen mit der Familienbeihilfe ausbezahlt.",
    "is_automatic": true,
    "application_url": null,
    "application_channel": "automatic",
@@ -1481,8 +1481,8 @@
     "statuses": [],
     "age_min": null,
     "age_max": 18,
-    "income_annual_max": 7284,
-    "income_note": "Wie AVAB/AEAB: Partnereinkommen max. 7.284 €/Jahr (2025); Kinderzuschlag je Kind zusätzlich zum Absetzbetrag.",
+    "income_annual_max": 7411,
+    "income_note": "Wie AVAB/AEAB: Partnereinkommen max. 7.411 EUR/Jahr (2026; 2025: 7.284 EUR).",
     "requires_children": true,
     "gender": "any",
     "nationality": "any_resident",
@@ -1491,9 +1491,9 @@
     "student_required": false,
     "admin_areas": []
    },
-   "source_url": "https://www.bmf.gv.at",
-   "source_snippet": "\"Seit 2024 erhalten Alleinverdiener und Alleinerziehende zusätzlich einen Kinderzuschlag von 60 € pro Monat und Kind (720 € pro Jahr), wenn das Kind in Österreich lebt und noch nicht 18 Jahre alt ist.\"",
-   "last_verified_at": "2026-08-12",
+   "source_url": "https://www.bmf.gv.at/themen/steuern/arbeitnehmerveranlagung/steuertarif-steuerabsetzbetraege/uebersicht-steuerabsetzbetraege.html",
+   "source_snippet": "Kinderzuschlag: 61,60 Euro monatlich pro Kind",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -1509,12 +1509,12 @@
    "amount_max": null,
    "amount_currency": "EUR",
    "amount_period": "one_off",
-   "amount_note": "Befreiung von bestimmten Bundesabgaben und Gebühren bei Neugründung oder Übernahme von Unternehmen (z. B. Gesellschaftsvertrags-, Grundbuch- und Firmenbuchgebühren); Antrag beim Finanzamt binnen eines Jahres ab Gründung.",
+   "amount_note": "Befreiung von Stempelgebühren und Bundesverwaltungsabgaben, Grunderwerbsteuer bei Einbringung von Grundstücken, Gerichtsgebühren für Firmen- und Grundbucheintragungen sowie Teilen der Lohnnebenkosten für 35 Kalendermonate ab Gründung (Dienstgeberbeiträge max. 12 Monate). Voraussetzung: neue betriebliche Struktur ohne vergleichbare Tätigkeit des Inhabers in den letzten 5 Jahren.",
    "is_automatic": false,
-   "application_url": "https://www.bmf.gv.at",
+   "application_url": "https://www.wko.at/steuern/neugruendungs-foerderungsgesetz-neugruender-faq",
    "application_channel": "post",
-   "deadline_type": "rolling",
-   "deadline_note": "Antrag binnen eines Jahres ab Gründung/Übergang",
+   "deadline_type": "none",
+   "deadline_note": "Kein fixer Stichtag genannt; das amtliche Formular NeuFö 2 ist rechtzeitig bei jeder zuständigen Behörde (Firmenbuchgericht, Finanzamt, Krankenkasse) vorzulegen.",
    "procedure_steps": [
     {
      "step": 1,
@@ -1545,10 +1545,10 @@
     "student_required": false,
     "admin_areas": []
    },
-   "source_url": "https://www.bmf.gv.at",
-   "source_snippet": "Das NeuFöG befreit Neugründerinnen und Neugründer unter bestimmten Voraussetzungen von Bundesabgaben wie Stempel- und Bundesverwaltungsabgaben sowie bestimmten Gebühren.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www.wko.at/steuern/neugruendungs-foerderungsgesetz-neugruender-faq",
+   "source_snippet": "Vorlage des amtlichen Formulars NeuFö 2 in geeigneter Weise bei den zuständigen Behörden",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "arbeitslosengeld",
@@ -1565,7 +1565,7 @@
    "amount_period": "monthly",
    "amount_note": "Grundbetrag 55 % des täglichen Nettoeinkommens; Familienzuschlag 0,97 €/Tag je Angehörigem; Ergänzungsbetrag bis zum Ausgleichszulagenrichtsatz möglich; Bezugsdauer 20–52 Wochen je nach Alter und Versicherungszeit. Inkl. Kranken- und Pensionsversicherung.",
    "is_automatic": false,
-   "application_url": "https://www.ams.at",
+   "application_url": "https://www.ams.at/arbeitsuchende/arbeitslos-was-tun/geld-vom-ams/arbeitslosengeld",
    "application_channel": "online",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -1610,9 +1610,9 @@
     "student_required": false,
     "admin_areas": []
    },
-   "source_url": "https://www.ams.at",
-   "source_snippet": "\"der Grundbetrag des Arbeitslosengeldes beträgt 55% des täglichen Nettoeinkommens\"",
-   "last_verified_at": "2026-08-12",
+   "source_url": "https://www.ams.at/arbeitsuchende/arbeitslos-was-tun/geld-vom-ams/arbeitslosengeld",
+   "source_snippet": "Der Grundbetrag des Arbeitslosengeldes beträgt 55 % des täglichen Nettoeinkommens.",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -1667,7 +1667,7 @@
    },
    "source_url": "https://www.ams.at/arbeitsuchende/arbeitslos-was-tun/geld-vom-ams/notstandshilfe",
    "source_snippet": "\"Sie erhalten grundsätzlich 92 Prozent davon als Notstandshilfe ... Sie erhalten grundsätzlich 95 Prozent davon, wenn Ihr Arbeitslosengeld-Grundbetrag maximal so hoch war wie der Ausgleichszulagen-Richtsatz.\"",
-   "last_verified_at": "2026-08-12",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -1731,7 +1731,7 @@
    },
    "source_url": "https://www.ams.at/arbeitsuchende/aus-und-weiterbildung/so-foerdern-wir-ihre-aus--und-weiterbildung-/weiterbildungszeit-weiterbildungsteilzeit",
    "source_snippet": "\"Die Höhe der Beihilfe richtet sich nach einem einkommensabhängigen Stufenmodell und beträgt mindestens EUR 41,49 pro Tag (Wert 2026).\"",
-   "last_verified_at": "2026-08-12",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -1743,13 +1743,13 @@
    "funder": "Arbeitsmarktservice (AMS)",
    "category": "employment",
    "benefit_type": "cash_monthly",
-   "amount_min": 700,
-   "amount_max": 1000,
+   "amount_min": null,
+   "amount_max": null,
    "amount_currency": "EUR",
    "amount_period": "monthly",
-   "amount_note": "Grundbetrag ca. 700 €/Monat plus Zuschläge bis ca. 300 €/Monat (z. B. Alleinerziehende, Behinderung) während einer Vollzeit-Ausbildung in einem Mangelberuf; zusätzlich mögliche Übernahme der Kursgebühren; max. 3 Jahre.",
+   "amount_note": "Höhe orientiert sich an den Arbeitslosengeld-Sätzen (mindestens in Höhe des aktuellen Mindestbetrags laut AMS), nicht mehr pauschal 700 EUR. Dauer: solange die Ausbildung dauert, längstens 3 Jahre. Voraussetzungen: mind. 4 Jahre Beschäftigung in den letzten 15 Jahren, kein Hochschulabschluss, Ausbildung mind. 3 Monate und mind. 20 Wochenstunden in MINT oder Gesundheit/Soziales. Persönlicher Kontakt beim AMS mindestens 3 Monate vor Ausbildungsbeginn.",
    "is_automatic": false,
-   "application_url": "https://www.ams.at",
+   "application_url": "https://www.ams.at/arbeitsuchende/aus-und-weiterbildung/so-foerdern-wir-ihre-aus--und-weiterbildung-/fachkraeftestipendium",
    "application_channel": "in_person",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -1785,10 +1785,10 @@
     "student_required": false,
     "admin_areas": []
    },
-   "source_url": "https://www.ams.at",
-   "source_snippet": "\"Fachkräftestipendium: bis zu 1.000 €/Monat ... Grundbetrag: 700 €/Monat + Zuschläge bis 300 €/Monat ... Voraussetzungen: kein einschlägiger Berufsabschluss, Ausbildung in Mangelberuf, Vollzeitausbildung (mind. 20h/Woche), max. 3 Jahre.\"",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www.ams.at/arbeitsuchende/aus-und-weiterbildung/so-foerdern-wir-ihre-aus--und-weiterbildung-/fachkraeftestipendium",
+   "source_snippet": "Solange die Ausbildung dauert, längstens aber 3 Jahre.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "ams-kinderbetreuungs-beihilfe",
@@ -1800,12 +1800,12 @@
    "category": "employment",
    "benefit_type": "cash_monthly",
    "amount_min": null,
-   "amount_max": null,
+   "amount_max": 300,
    "amount_currency": "EUR",
    "amount_period": "monthly",
-   "amount_note": "Einkommensabhängige Beihilfe zur Kinderbetreuung für AMS-Kund:innen mit Kindern unter 15 Jahren (bei Behinderung unter 18) im gemeinsamen Haushalt, z. B. während Kursen oder bei Wiedereinstieg.",
+   "amount_note": "Bis zu 300 EUR pro Monat, abhängig von Einkommen, Betreuungskosten und Kinderbeihilfebezug. Bewilligung für 26 Wochen, danach neu beantragen. Kind unter 15 (bei Behinderung unter 18) im Haushalt; Teilnahme an AMS-Maßnahme oder neue Beschäftigung; Bruttoeinkommen max. 2.700 EUR/Monat.",
    "is_automatic": false,
-   "application_url": "https://www.ams.at",
+   "application_url": "https://www.ams.at/arbeitsuchende/karenz-und-wiedereinstieg/so-unterstuetzen-wir-ihren-wiedereinstieg/kinderbetreuungs-beihilfe-",
    "application_channel": "online",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -1831,9 +1831,9 @@
     "income_source_url": "https://www.oesterreich.gv.at/de/themen/familie_und_partnerschaft/familie-und-kinderfuersorge/kinderbetreuung/Seite.370300",
     "income_confidence": "high"
    },
-   "source_url": "https://www.ams.at",
-   "source_snippet": "\"Das AMS vergibt auch eine Beihilfe für die Kinderbetreuung. Voraussetzungen: Ihr Kind lebt im gemeinsamen Haushalt. Ihr Kind ist jünger als 15 Jahre ODER Ihr Kind mit Behinderung ist jünger als 18 Jahre. Sie verdienen wenig.\"",
-   "last_verified_at": "2026-08-12",
+   "source_url": "https://www.ams.at/arbeitsuchende/karenz-und-wiedereinstieg/so-unterstuetzen-wir-ihren-wiedereinstieg/kinderbetreuungs-beihilfe-",
+   "source_snippet": "Sie verdienen monatlich nicht mehr als 2.700 Euro brutto ... Maximal 300 Euro pro Monat",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified",
    "income_reviewed_at": "2026-08-13"
   },
@@ -1850,12 +1850,12 @@
    "amount_max": null,
    "amount_currency": "EUR",
    "amount_period": "monthly",
-   "amount_note": "Halbierung der Arbeitszeit ab dem vorgeschriebenen Alter (frühestens 5 Jahre vor dem Regelpensionsalter) mit Lohnausgleich auf ca. 75–85 % des bisherigen Entgelts; AMS erstattet dem Dienstgeber das Altersteilzeitgeld.",
+   "amount_note": "Employer reduces working time and pays a wage compensation; AMS reimburses the employer at least 50% of the wage difference (continuous model starting 2026: 80%, rising to 90% from Jan 2029; block model 27.5%). Employee-side effect: wage compensation, not a fixed AMS payment to the employee.",
    "is_automatic": false,
-   "application_url": "https://www.ams.at",
+   "application_url": "https://www.ams.at/unternehmen/personalsicherung-und-fruehwarnsystem/ams-unterstuetzung/altersteilzeitgeld",
    "application_channel": "via_employer",
    "deadline_type": "rolling",
-   "deadline_note": null,
+   "deadline_note": "Application via employer; for each start date see AMS form. Continuous model max 4.5-3.5 years (starting 2026-2028), 3 years from 2029; block model up to 5 years.",
    "procedure_steps": [
     {
      "step": 1,
@@ -1874,10 +1874,10 @@
     "statuses": [
      "employee"
     ],
-    "age_min": 55,
+    "age_min": null,
     "age_max": null,
     "income_annual_max": null,
-    "income_note": null,
+    "income_note": "No income test. Start allowed 3-5 years before regular pension age depending on model/start date; women born 1968+ only from age 59.5. Needs 788-884 insured weeks (by start year) and 3 months at current employer.",
     "requires_children": false,
     "gender": "any",
     "nationality": "any_resident",
@@ -1886,10 +1886,10 @@
     "student_required": false,
     "admin_areas": []
    },
-   "source_url": "https://www.ams.at",
+   "source_url": "https://www.ams.at/unternehmen/personalsicherung-und-fruehwarnsystem/ams-unterstuetzung/altersteilzeitgeld",
    "source_snippet": "Bei der Altersteilzeit wird die Arbeitszeit halbiert; der Entgeltverlust wird durch einen Lohnausgleich abgefedert, den das AMS dem Arbeitgeber ersetzt.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "eingliederungsbeihilfe",
@@ -1904,12 +1904,55 @@
    "amount_max": null,
    "amount_currency": "EUR",
    "amount_period": "monthly",
-   "amount_note": "Lohnkostenzuschuss des AMS für Unternehmen, die arbeitsmarktferne Personen (z. B. Langzeitarbeitslose, Menschen mit Behinderung) einstellen; Höhe und Dauer individuell (anteilig am Entgelt, befristet).",
+   "amount_note": "Wage subsidy paid to the hiring employer; amount and duration are agreed individually with AMS (not fixed). Target: jobless people over 50, under 25 with 6+ months unemployment, 25+ with 12+ months unemployment, or at acute risk of long-term joblessness.",
    "is_automatic": false,
-   "application_url": "https://www.ams.at",
+   "application_url": "https://www.ams.at/unternehmen/service-zur-personalsuche/foerderungen/eingliederungsbeihilfe",
    "application_channel": "via_employer",
    "deadline_type": "rolling",
    "deadline_note": null,
+   "procedure_steps": [],
+   "documents_required": [],
+   "eligibility": {
+    "statuses": [
+     "unemployed",
+     "jobseeker"
+    ],
+    "age_min": null,
+    "age_max": null,
+    "income_annual_max": null,
+    "income_note": "No income test; subsidy goes to employer.",
+    "requires_children": false,
+    "gender": "any",
+    "nationality": "any_resident",
+    "residency_months_min": null,
+    "housing_tenure": null,
+    "student_required": false,
+    "admin_areas": []
+   },
+   "source_url": "https://www.ams.at/unternehmen/service-zur-personalsuche/foerderungen/eingliederungsbeihilfe",
+   "source_snippet": "Das AMS fördert die Eingliederung arbeitsloser oder arbeitsgefährdeter Personen durch Beihilfen zu den Lohnkosten des aufnehmenden Unternehmens.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "kombilohn",
+   "name_local": "Kombilohn (Beihilfe zum Entgelt)",
+   "name_en": "Combined Wage Subsidy for Long-Term Unemployed",
+   "admin_level": "national",
+   "admin_area": null,
+   "funder": "Arbeitsmarktservice (AMS)",
+   "category": "employment",
+   "benefit_type": "cash_monthly",
+   "amount_min": null,
+   "amount_max": 950,
+   "amount_currency": "EUR",
+   "amount_period": "monthly",
+   "amount_note": "Unemployment benefit/emergency assistance plus 30% (under 30 h/week) or 55% (30+ h/week), minus net earnings, capped at EUR 950 per month. Duration max 1 year; up to 3 years for 59+ or after rehabilitation / 50%+ reduced capacity.",
+   "is_automatic": false,
+   "application_url": "https://www.ams.at/arbeitsuchende/karenz-und-wiedereinstieg/so-unterstuetzen-wir-ihren-wiedereinstieg/kombilohn-beihilfe",
+   "application_channel": "in_person",
+   "deadline_type": "rolling",
+   "deadline_note": "Contact AMS before the job starts (via eAMS or phone).",
    "procedure_steps": [],
    "documents_required": [],
    "eligibility": {
@@ -1929,53 +1972,10 @@
     "student_required": false,
     "admin_areas": []
    },
-   "source_url": "https://www.ams.at",
-   "source_snippet": "Das AMS fördert die Eingliederung arbeitsloser oder arbeitsgefährdeter Personen durch Beihilfen zu den Lohnkosten des aufnehmenden Unternehmens.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
-  },
-  {
-   "slug": "kombilohn",
-   "name_local": "Kombilohn (Beihilfe zum Entgelt)",
-   "name_en": "Combined Wage Subsidy for Long-Term Unemployed",
-   "admin_level": "national",
-   "admin_area": null,
-   "funder": "Arbeitsmarktservice (AMS)",
-   "category": "employment",
-   "benefit_type": "cash_monthly",
-   "amount_min": null,
-   "amount_max": null,
-   "amount_currency": "EUR",
-   "amount_period": "monthly",
-   "amount_note": "Befristete Beihilfe zum Entgelt für ältere Langzeitarbeitslose, die eine Beschäftigung unter dem früheren Verdienst aufnehmen; ergänzt das niedrigere Entgelt und sichert die Sozialversicherung.",
-   "is_automatic": false,
-   "application_url": "https://www.ams.at",
-   "application_channel": "in_person",
-   "deadline_type": "rolling",
-   "deadline_note": null,
-   "procedure_steps": [],
-   "documents_required": [],
-   "eligibility": {
-    "statuses": [
-     "unemployed",
-     "jobseeker"
-    ],
-    "age_min": 45,
-    "age_max": null,
-    "income_annual_max": null,
-    "income_note": null,
-    "requires_children": false,
-    "gender": "any",
-    "nationality": "any_resident",
-    "residency_months_min": null,
-    "housing_tenure": null,
-    "student_required": false,
-    "admin_areas": []
-   },
-   "source_url": "https://www.ams.at",
+   "source_url": "https://www.ams.at/arbeitsuchende/karenz-und-wiedereinstieg/so-unterstuetzen-wir-ihren-wiedereinstieg/kombilohn-beihilfe",
    "source_snippet": "Der Kombilohn ist eine Beihilfe zum Entgelt für langzeitarbeitslose Personen, die eine zumutbare, aber schlechter entlohnte Beschäftigung aufnehmen.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "ugp",
@@ -1985,17 +1985,17 @@
    "admin_area": null,
    "funder": "Arbeitsmarktservice (AMS)",
    "category": "employment",
-   "benefit_type": "cash_monthly",
+   "benefit_type": "in_kind",
    "amount_min": null,
    "amount_max": null,
    "amount_currency": "EUR",
-   "amount_period": "monthly",
-   "amount_note": "Kostenlose Gründungsberatung und Seminare; während der Vorbereitungsphase bleibt Arbeitslosengeld/Notstandshilfe ohne Bewerbungspflichten erhalten; nach der Gewerbeanmeldung 2 Monate Gründungsbeihilfe in Höhe des bisherigen Bezugs. Kein pauschaler Gründungszuschuss.",
+   "amount_period": "one_off",
+   "amount_note": "AMS pays business consulting and necessary training; unemployment benefit or emergency assistance continues during participation (up to about 6 months). Support differs by region.",
    "is_automatic": false,
-   "application_url": "https://www.ams.at/unternehmen",
+   "application_url": "https://www.ams.at/arbeitsuchende/aus-und-weiterbildung/so-foerdern-wir-ihre-aus--und-weiterbildung-/unternehmensgruendungs-programm",
    "application_channel": "in_person",
    "deadline_type": "rolling",
-   "deadline_note": null,
+   "deadline_note": "Apply at your local AMS office; you must be unemployed at the start and have a concrete viable business idea.",
    "procedure_steps": [
     {
      "step": 1,
@@ -2037,10 +2037,10 @@
     "student_required": false,
     "admin_areas": []
    },
-   "source_url": "https://www.ams.at/unternehmen",
+   "source_url": "https://www.ams.at/arbeitsuchende/aus-und-weiterbildung/so-foerdern-wir-ihre-aus--und-weiterbildung-/unternehmensgruendungs-programm",
    "source_snippet": "\"Das Unternehmensgründungsprogramm (UGP) ist ein AMS-Förderprogramm, mit dem arbeitslos gemeldete Personen den Schritt in die Selbstständigkeit finanziell abgefedert bekommen. Rechtsgrundlage: § 34 AMSG.\"",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "basifoerderung-lehrbetriebe",
@@ -2048,19 +2048,19 @@
    "name_en": "Basic Subsidy for Apprentice-Training Companies",
    "admin_level": "national",
    "admin_area": null,
-   "funder": "Bundesländer / Wirtschaftskammern (Lehrlingsstellen)",
+   "funder": "Lehrlingsstellen der Wirtschaftskammern",
    "category": "employment",
    "benefit_type": "cash_one_off",
    "amount_min": null,
    "amount_max": null,
    "amount_currency": "EUR",
    "amount_period": "annual",
-   "amount_note": "Für jedes Lehrverhältnis: 1. Lehrjahr drei, 2. Lehrjahr zwei und 3./4. Lehrjahr je ein kollektivvertragliches Bruttolehrlingseinkommen als Förderung; Antrag bei der Lehrlingsstelle der Wirtschaftskammer des Bundeslandes.",
+   "amount_note": "Per apprentice, by training year: before 1 July 2026 = 3 / 2 / 1 collective-agreement gross apprentice incomes for year 1 / 2 / 3-4; from 1 July 2026 payment is 75% of the previous basis (one apprentice per company per year at full rate). Paid only as far as funds are available. Employment must have started after 27 June 2008.",
    "is_automatic": false,
-   "application_url": "https://www.usp.gv.at/themen/mitarbeiter-und-gesundheit/lehre/foerderung-fuer-lehrbetriebe.html",
+   "application_url": "https://www.wko.at/lehre/basisfoerderung",
    "application_channel": "in_person",
    "deadline_type": "rolling",
-   "deadline_note": null,
+   "deadline_note": "Apply via the Lehrlingsstelle after the training year.",
    "procedure_steps": [
     {
      "step": 1,
@@ -2089,9 +2089,9 @@
     "student_required": false,
     "admin_areas": []
    },
-   "source_url": "https://www.usp.gv.at/themen/mitarbeiter-und-gesundheit/lehre/foerderung-fuer-lehrbetriebe.html",
+   "source_url": "https://www.wko.at/lehre/basisfoerderung",
    "source_snippet": "\"Für alle Lehrverhältnisse: 1. Lehrjahr drei, 2. Lehrjahr zwei und für das 3. und 4. Lehrjahr je ein kollektivvertragliches Bruttolehrlingseinkommen.\"",
-   "last_verified_at": "2026-08-12",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -2103,16 +2103,16 @@
    "funder": "Arbeitsmarktservice (AMS)",
    "category": "employment",
    "benefit_type": "cash_monthly",
-   "amount_min": 400,
+   "amount_min": null,
    "amount_max": 900,
    "amount_currency": "EUR",
    "amount_period": "monthly",
-   "amount_note": "Pauschaler monatlicher Zuschuss zu den Ausbildungskosten: max. 400 € (Ausbildungseinrichtungen max. 453 €) für Mädchen/Frauen in Männerberufen, Benachteiligte, verlängerte Lehrzeit/Teilqualifikation; max. 900 € für erwachsene Lehrlinge; für max. 3 Jahre.",
+   "amount_note": "Paid to the training company: up to EUR 400/month for target group 1 (women in trades with low female share, disadvantaged apprentices, extended/partial apprenticeships); up to EUR 900/month for adults over 18 with qualification gaps. Max 3 years; regional variations.",
    "is_automatic": false,
-   "application_url": "https://www.usp.gv.at/themen/mitarbeiter-und-gesundheit/lehre/foerderung-fuer-lehrbetriebe.html",
+   "application_url": "https://www.ams.at/unternehmen/service-zur-personalsuche/foerderungen/foerderung-der-lehrausbildung",
    "application_channel": "in_person",
    "deadline_type": "rolling",
-   "deadline_note": null,
+   "deadline_note": "Application must be submitted BEFORE the apprenticeship begins via the eAMS company account.",
    "procedure_steps": [
     {
      "step": 1,
@@ -2141,9 +2141,9 @@
     "student_required": false,
     "admin_areas": []
    },
-   "source_url": "https://www.usp.gv.at/themen/mitarbeiter-und-gesundheit/lehre/foerderung-fuer-lehrbetriebe.html",
+   "source_url": "https://www.ams.at/unternehmen/service-zur-personalsuche/foerderungen/foerderung-der-lehrausbildung",
    "source_snippet": "\"Zuschüsse: 400 bzw. 900 Euro (erwachsene Lehrlinge) pro Monat für maximal drei Jahre (regional unterschiedlich, jährlich zu beantragen).\"",
-   "last_verified_at": "2026-08-12",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -2155,13 +2155,13 @@
    "funder": "Arbeitsmarktservice (AMS)",
    "category": "education",
    "benefit_type": "in_kind",
-   "amount_min": null,
-   "amount_max": null,
+   "amount_min": 439.8,
+   "amount_max": 1015.8,
    "amount_currency": "EUR",
    "amount_period": "monthly",
-   "amount_note": "Vollwertige Lehrausbildung in anerkannten Ausbildungseinrichtungen für Jugendliche ohne Lehrstelle; Ausbildungsentschädigung durch das AMS; Betriebe, die ÜBA-Lehrlinge übernehmen, erhalten eine einmalige Prämie von 1.000 €.",
+   "amount_note": "Ausbildungsbeihilfe: EUR 439.80 net/month in training years 1-2, EUR 1,015.80 net/month from year 3; AMS also covers training costs and social insurance.",
    "is_automatic": false,
-   "application_url": "https://www.ams.at",
+   "application_url": "https://www.ams.at/arbeitsuchende/aus-und-weiterbildung/so-foerdern-wir-ihre-aus--und-weiterbildung-/ueberbetriebliche-lehrausbildung",
    "application_channel": "in_person",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -2169,8 +2169,8 @@
    "documents_required": [],
    "eligibility": {
     "statuses": [],
-    "age_min": 15,
-    "age_max": 25,
+    "age_min": null,
+    "age_max": null,
     "income_annual_max": null,
     "income_note": null,
     "requires_children": false,
@@ -2181,10 +2181,10 @@
     "student_required": false,
     "admin_areas": []
    },
-   "source_url": "https://www.ams.at",
+   "source_url": "https://www.ams.at/arbeitsuchende/aus-und-weiterbildung/so-foerdern-wir-ihre-aus--und-weiterbildung-/ueberbetriebliche-lehrausbildung",
    "source_snippet": "\"Bei Übernahme eines Lehrlings aus einer überbetrieblichen Einrichtung kann der Lehrbetrieb dafür eine einmalige Prämie in der Höhe von 1.000 Euro pro Lehrling beantragen.\"",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "jugendcoaching",
@@ -2199,9 +2199,9 @@
    "amount_max": null,
    "amount_currency": "EUR",
    "amount_period": "monthly",
-   "amount_note": "Kostenlose individuelle Begleitung für Jugendliche bis 19 (mit Behinderung bis 25), die von Arbeitslosigkeit bedroht sind oder besondere Unterstützung beim Übergang Schule–Beruf brauchen.",
+   "amount_note": "Free of charge and voluntary. Ages 14-19 who are subject to compulsory education or no longer in school; up to age 25 for young people with special educational needs, disabilities or socio-emotional impairments.",
    "is_automatic": false,
-   "application_url": "https://www.neba.at",
+   "application_url": "https://www.neba.at/jugendcoaching/wie-laeuft-jugendcoaching-ab",
    "application_channel": "in_person",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -2210,7 +2210,7 @@
    "eligibility": {
     "statuses": [],
     "age_min": 14,
-    "age_max": 25,
+    "age_max": 19,
     "income_annual_max": null,
     "income_note": null,
     "requires_children": false,
@@ -2221,10 +2221,10 @@
     "student_required": false,
     "admin_areas": []
    },
-   "source_url": "https://www.neba.at",
+   "source_url": "https://www.neba.at/jugendcoaching/wie-laeuft-jugendcoaching-ab",
    "source_snippet": "Jugendcoaching unterstützt Jugendliche, die von Arbeitslosigkeit bedroht oder betroffen sind, kostenlos bei der beruflichen und schulischen Orientierung.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "ausbildung-bis-18",
@@ -2241,7 +2241,7 @@
    "amount_period": "monthly",
    "amount_note": "Verpflichtende Ausbildung bis 18; kostenlose Unterstützungsangebote für Jugendliche ohne Abschluss (Ausbildungsgarantie, Berufsmatura, Lehre mit Matura, Produktionsschulen).",
    "is_automatic": true,
-   "application_url": "https://www.ausbildungbis18.at",
+   "application_url": "https://ausbildungbis18.at/fragen-und-antworten/",
    "application_channel": "in_person",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -2267,10 +2267,10 @@
     "student_required": false,
     "admin_areas": []
    },
-   "source_url": "https://www.ausbildungbis18.at",
+   "source_url": "https://ausbildungbis18.at/fragen-und-antworten/",
    "source_snippet": "Jugendliche müssen sich nach dem Ende der allgemeinen Schulpflicht bis zur Vollendung des 18. Lebensjahres weiterbilden (Schule, Lehre oder anerkannte Ausbildung).",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "berufliche-assistenz-neba",
@@ -2287,7 +2287,7 @@
    "amount_period": "monthly",
    "amount_note": "Kostenlose berufliche Eingliederung: Berufsvorbereitung, Arbeitsassistenz, Job-Coaching und Clearing für Menschen mit Behinderungen oder gesundheitlichen Beeinträchtigungen.",
    "is_automatic": false,
-   "application_url": "https://www.neba.at",
+   "application_url": "https://www.neba.at/neba/welche-neba-leistung-kommt-in-frage",
    "application_channel": "in_person",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -2311,10 +2311,10 @@
     "student_required": false,
     "admin_areas": []
    },
-   "source_url": "https://www.neba.at",
+   "source_url": "https://www.neba.at/neba/welche-neba-leistung-kommt-in-frage",
    "source_snippet": "Die Berufliche Assistenz des NEBA unterstützt Menschen mit Behinderungen kostenlos bei Ausbildung, Arbeitssuche und im Arbeitsprozess.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "persoenliche-assistenz-arbeitsplatz",
@@ -2324,14 +2324,14 @@
    "admin_area": null,
    "funder": "Sozialministeriumservice",
    "category": "employment",
-   "benefit_type": "cash_monthly",
+   "benefit_type": "in_kind",
    "amount_min": null,
    "amount_max": null,
    "amount_currency": "EUR",
    "amount_period": "monthly",
-   "amount_note": "Förderung der Kosten einer persönlichen Assistenz für Menschen mit Behinderung in unselbständiger Erwerbstätigkeit, damit sie am allgemeinen Arbeitsmarkt arbeiten können.",
+   "amount_note": "Assistance services (commute accompaniment, manual help at work, meals/hygiene help). Target: GdB of at least 50% or Pflegegeld level 3+, or intellectual/psychological impairments. Apply via regional Assistenz-Servicestelle or Sozialministeriumservice.",
    "is_automatic": false,
-   "application_url": "https://www.sozialministeriumservice.at",
+   "application_url": "https://www.sozialministeriumservice.gv.at/weitere_Zielgruppen/Sonstige_Massnahmen_und_Projekte/Persoenliche_Assistenz_am_Arbeitsplatz/Persoenliche-Assistenz-am-Arbeitsplatz.de.html",
    "application_channel": "online",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -2353,10 +2353,10 @@
     "student_required": false,
     "admin_areas": []
    },
-   "source_url": "https://www.sozialministeriumservice.at",
+   "source_url": "https://www.sozialministeriumservice.gv.at/weitere_Zielgruppen/Sonstige_Massnahmen_und_Projekte/Persoenliche_Assistenz_am_Arbeitsplatz/Persoenliche-Assistenz-am-Arbeitsplatz.de.html",
    "source_snippet": "Das Sozialministeriumservice fördert die persönliche Assistenz am Arbeitsplatz für unselbständig erwerbstätige Menschen mit Behinderung.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "studienbeihilfe",
@@ -2371,12 +2371,12 @@
    "amount_max": 1072,
    "amount_currency": "EUR",
    "amount_period": "monthly",
-   "amount_note": "Bis zu ca. 1.072 € pro Monat (Höchststudienbeihilfe, Studienjahr 2025/26) abhängig von Alter, Wohnsituation und Familieneinkommen, plus ca. 144 €/Monat pro eigenem Kind; Zuverdienstgrenze 17.212 €/Jahr (2025, valorisiert).",
+   "amount_note": "Basic grant starts at EUR 451/month (2026/27) with increases (over 24, living away from parents, dependents). Parental income assessed on a graduated scale. Studies must begin before age 33 (master's up to 38 under conditions). Student's own earnings limit EUR 17,212 per year.",
    "is_automatic": false,
-   "application_url": "https://www.stipendium.at",
+   "application_url": "https://www.stipendium.at/stipendien/studienbeihilfe",
    "application_channel": "online",
    "deadline_type": "window",
-   "deadline_note": "WS: 20.9.–15.12.; SS: 20.2.–15.5.",
+   "deadline_note": "WS: 20 Sept-15 Dec; SS: 20 Feb-15 May",
    "procedure_steps": [
     {
      "step": 1,
@@ -2406,20 +2406,20 @@
      "student"
     ],
     "age_min": null,
-    "age_max": null,
+    "age_max": 33,
     "income_annual_max": 17212,
-    "income_note": "Zuverdienstgrenze (eigenes Einkommen der Studierenden während des Beihilfenbezugs): 17.212 €/Kalenderjahr (2025; 2024: 16.455 €), aliquot bei Teilbezug, nachträgliche Überprüfung. Zusätzlich Anrechnung des Elterneinkommens abzüglich Freibeträgen auf die Höchstbeihilfe.",
+    "income_note": "17,212 = student's own annual earnings limit (Zuverdienstgrenze); parents' income is assessed separately on a graduated scale.",
     "requires_children": false,
     "gender": "any",
-    "nationality": "any_resident",
+    "nationality": "citizen_or_pr",
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": true,
     "admin_areas": []
    },
-   "source_url": "https://www.stipendium.at",
+   "source_url": "https://www.stipendium.at/stipendien/studienbeihilfe",
    "source_snippet": "\"Maximale Höchststudienbeihilfe: rund 1.072 € pro Monat ... Zusätzlich 144 € pro Monat und Kind ... Antragsfristen: 20. September bis 15. Dezember (Wintersemester), 20. Februar bis 15. Mai (Sommersemester).\"",
-   "last_verified_at": "2026-08-12",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -2432,12 +2432,12 @@
    "category": "education",
    "benefit_type": "cash_monthly",
    "amount_min": null,
-   "amount_max": null,
+   "amount_max": 1151,
    "amount_currency": "EUR",
    "amount_period": "monthly",
-   "amount_note": "Stipendium für Studierende, die sich vor dem Studium mindestens 4 Jahre selbst erhalten haben (eigene Einkünfte über dem monatlichen Ausgleichszulagenrichtsatz); Betrag wird jährlich valorisiert.",
+   "amount_note": "Up to EUR 1,111/month (under 27) or EUR 1,151/month (27+) in 2026/27; supplements for childcare (EUR 161) and disability. Requires 4 years of prior self-support earning at least EUR 11,000 per year; age limit 33 (up to 38).",
    "is_automatic": false,
-   "application_url": "https://www.stipendium.at",
+   "application_url": "https://www.stipendium.at/stipendien/studium-beruf",
    "application_channel": "online",
    "deadline_type": "window",
    "deadline_note": "WS: 20.9.–15.12.; SS: 20.2.–15.5.",
@@ -2456,18 +2456,18 @@
     "age_min": null,
     "age_max": null,
     "income_annual_max": 17212,
-    "income_note": "Zuverdienstgrenze wie Studienbeihilfe: 17.212 € eigenes Einkommen/Kalenderjahr (2025); Voraussetzung: mindestens 4 Jahre Selbsterhalt mit Einkommen über der Ausgleichszulagen-Richtsatzgrenze vor Studienbeginn.",
+    "income_note": "Parents' income not counted; partner's income may reduce amount; own earnings limit EUR 17,212 per year.",
     "requires_children": false,
     "gender": "any",
-    "nationality": "any_resident",
+    "nationality": "citizen_or_pr",
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": true,
     "admin_areas": []
    },
-   "source_url": "https://www.stipendium.at",
+   "source_url": "https://www.stipendium.at/stipendien/studium-beruf",
    "source_snippet": "Das Selbsterhalterstipendium steht Studierenden zu, die sich vor Studienbeginn mindestens vier Jahre selbst erhalten haben.",
-   "last_verified_at": "2026-08-12",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -2479,13 +2479,13 @@
    "funder": "Studienbeihilfenbehörde (BMBWF)",
    "category": "education",
    "benefit_type": "cash_monthly",
-   "amount_min": null,
-   "amount_max": null,
+   "amount_min": 873,
+   "amount_max": 1496,
    "amount_currency": "EUR",
    "amount_period": "monthly",
-   "amount_note": "Zeitlich befristetes Stipendium für Studierende in der Abschlussphase von Diplom-, Master- oder Doktoratsstudien (max. 12 Monate), insbesondere wenn das Studium aufgrund von Erwerbstätigkeit, Kinderbetreuung oder Behinderung verzögert wurde.",
+   "amount_note": "EUR 873-1,496 per month (2026/27) depending on prior year income; max 18 months; must stop employment during the grant; 36+ months employment in preceding 48 months.",
    "is_automatic": false,
-   "application_url": "https://www.stipendium.at",
+   "application_url": "https://www.stipendium.at/stipendien/studium-beruf",
    "application_channel": "online",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -2496,20 +2496,20 @@
      "student"
     ],
     "age_min": null,
-    "age_max": null,
-    "income_annual_max": 17212,
-    "income_note": "Zuverdienstgrenze wie Studienbeihilfe: 17.212 € eigenes Einkommen/Kalenderjahr (2025).",
+    "age_max": 40,
+    "income_annual_max": null,
+    "income_note": "Amount depends on income of the previous year; no single ceiling published.",
     "requires_children": false,
     "gender": "any",
-    "nationality": "any_resident",
+    "nationality": "citizen_or_pr",
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": true,
     "admin_areas": []
    },
-   "source_url": "https://www.stipendium.at",
+   "source_url": "https://www.stipendium.at/stipendien/studium-beruf",
    "source_snippet": "Studienabschluss-Stipendien werden für höchstens zwölf Monate an Studierende in der Abschlussphase ihres Studiums vergeben.",
-   "last_verified_at": "2026-08-12",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -2518,16 +2518,16 @@
    "name_en": "Merit and Talent Scholarships of the Scholarship Foundation",
    "admin_level": "national",
    "admin_area": null,
-   "funder": "Stipendienstiftung der Republik Österreich (BMBWF)",
+   "funder": "Bundesministerium für Wissenschaft (BMFWF), awarded via the educational institution",
    "category": "education",
    "benefit_type": "cash_one_off",
-   "amount_min": null,
-   "amount_max": null,
+   "amount_min": 750,
+   "amount_max": 3600,
    "amount_currency": "EUR",
    "amount_period": "annual",
-   "amount_note": "Stipendien für Studierende mit besonderen Leistungen oder Begabungen; Höhe und Fristen je nach Ausschreibung der jeweiligen Universität.",
+   "amount_note": "Leistungsstipendien EUR 750-1,500 per study year; Förderungsstipendien EUR 750-3,600 per study year. Social need not required.",
    "is_automatic": false,
-   "application_url": "https://www.bmbwf.gv.at",
+   "application_url": "https://transparenzportal.gv.at/tdb/tp/leistung/1007202.html",
    "application_channel": "online",
    "deadline_type": "window",
    "deadline_note": "Ausschreibungstermine der jeweiligen Universität beachten",
@@ -2543,16 +2543,16 @@
     "income_note": null,
     "requires_children": false,
     "gender": "any",
-    "nationality": "any_resident",
+    "nationality": "citizen_or_pr",
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": true,
     "admin_areas": []
    },
-   "source_url": "https://www.bmbwf.gv.at",
+   "source_url": "https://transparenzportal.gv.at/tdb/tp/leistung/1007202.html",
    "source_snippet": "Die Stipendienstiftung der Republik Österreich vergibt Leistungs- und Begabtenstipendien auf Basis der Stipendienrichtlinien an Studierende öffentlicher Universitäten.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "gebuehrenfrei-studium-eu",
@@ -2567,12 +2567,12 @@
    "amount_max": null,
    "amount_currency": "EUR",
    "amount_period": "annual",
-   "amount_note": "Keine Studiengebühr für österreichische und EU/EWR-Studierende innerhalb der Mindeststudiendauer plus zwei Toleranzsemestern; danach ca. 363,36 €/Semester; ÖH-Beitrag (ca. 25–30 €/Semester) bleibt zu zahlen.",
+   "amount_note": "No tuition fee within the standard study duration plus two semesters; thereafter EUR 363.36 per semester (EEA/Swiss and equivalent). The ÖH contribution is always payable. Non-EEA students without equivalent status pay higher fees.",
    "is_automatic": true,
-   "application_url": "https://www.studieren.at",
+   "application_url": "https://www.oesterreich.gv.at/de/themen/bildung_und_ausbildung/hochschulen/universitaet/1/2/1/Seite.160366",
    "application_channel": "automatic",
    "deadline_type": "rolling",
-   "deadline_note": null,
+   "deadline_note": "Fee due 5 Sept (WS) / 5 Feb (SS) if payable.",
    "procedure_steps": [
     {
      "step": 1,
@@ -2591,16 +2591,16 @@
     "income_note": null,
     "requires_children": false,
     "gender": "any",
-    "nationality": "any_resident",
+    "nationality": "citizen_or_pr",
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": true,
     "admin_areas": []
    },
-   "source_url": "https://www.studieren.at",
+   "source_url": "https://www.oesterreich.gv.at/de/themen/bildung_und_ausbildung/hochschulen/universitaet/1/2/1/Seite.160366",
    "source_snippet": "\"EU/EWR: keine Studiengebühr innerhalb der Mindeststudiendauer + Toleranzsemester; danach ca. 363,36 € pro Semester. ÖH-Beitrag ca. 25–30 € pro Semester.\"",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "schuelerbeihilfe",
@@ -2610,30 +2610,30 @@
    "admin_area": null,
    "funder": "Bundesministerium Bildung (BMB)",
    "category": "education",
-   "benefit_type": "cash_monthly",
+   "benefit_type": "cash_one_off",
    "amount_min": null,
    "amount_max": null,
    "amount_currency": "EUR",
-   "amount_period": "monthly",
-   "amount_note": "Beihilfe für Schüler:innen ab 15 in berufsbildenden mittleren und höheren Schulen bei sozialer Bedürftigkeit; Heimbeihilfe bei notwendiger Heimunterbringung; einkommensabhängig.",
+   "amount_period": "annual",
+   "amount_note": "Base amount EUR 1,895 per year, increased or reduced depending on parents' income and own income. Heim- and Fahrtkostenbeihilfe are separate.",
    "is_automatic": false,
-   "application_url": "https://www.bmbwf.gv.at",
+   "application_url": "https://www.oesterreich.gv.at/de/themen/bildung_und_ausbildung/schulen/1/Seite.1760210",
    "application_channel": "online",
    "deadline_type": "window",
-   "deadline_note": "Antragsfrist im Herbst des jeweiligen Schuljahres",
+   "deadline_note": "Application deadline 31 December of the current school year (late applications reduce the benefit).",
    "procedure_steps": [],
    "documents_required": [],
    "eligibility": {
     "statuses": [
      "student"
     ],
-    "age_min": 15,
-    "age_max": null,
+    "age_min": null,
+    "age_max": 34,
     "income_annual_max": null,
-    "income_note": "No single income ceiling is published. Soziale Bedürftigkeit is assessed from income, marital status and family size via a formula: the base amount is reduced by the parents' or spouse's 'zumutbare Unterhaltsleistung' and a share of the applicant's own income, tapering to zero. The ministry directs applicants to a calculator rather than publishing a threshold.",
+    "income_note": "Reduced by parents' reasonable maintenance contribution and the pupil's own income; no single ceiling.",
     "requires_children": false,
     "gender": "any",
-    "nationality": "any_resident",
+    "nationality": "citizen_or_pr",
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": true,
@@ -2642,9 +2642,9 @@
     "income_source_url": "https://www.bmb.gv.at/Themen/schule/befoe/sbh.html",
     "income_confidence": "high"
    },
-   "source_url": "https://www.bmbwf.gv.at",
+   "source_url": "https://www.oesterreich.gv.at/de/themen/bildung_und_ausbildung/schulen/1/Seite.1760210",
    "source_snippet": "Schülerbeihilfen können Schülerinnen und Schüler ab dem vollendeten 15. Lebensjahr in berufsbildenden mittleren und höheren Schulen erhalten, wenn soziale Bedürftigkeit vorliegt.",
-   "last_verified_at": "2026-08-12",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified",
    "income_reviewed_at": "2026-08-13"
   },
@@ -2661,12 +2661,12 @@
    "amount_max": null,
    "amount_currency": "EUR",
    "amount_period": "monthly",
-   "amount_note": "Monatlicher Zuschuss zu den Wohnkosten für geförderte und private Mietwohnungen (auch Wohngemeinschaften); Höhe abhängig von Haushaltsgröße, Einkommen, Wohnungsgröße (angemessen z. B. 60 m² für 1 Person) und Wohnungsaufwand; Mindesthaushaltseinkommen (2026: 1.229,89 € Antragsteller:in) erforderlich.",
+   "amount_note": "Depends on household income, size and housing costs; retroactive up to 4 months before application. Minimum household income also applies (e.g. EUR 1,229.89 for the applicant). Not available to recipients of Mindestsicherung/rent aid from MA 40.",
    "is_automatic": false,
-   "application_url": "https://www.wien.gv.at/wohnen/wohnbaufoerderung/ahs-info/wohnbeihilfe/haushaltseinkommen.html",
+   "application_url": "https://www.wien.gv.at/amtswege/wohnbeihilfe-antrag",
    "application_channel": "online",
    "deadline_type": "rolling",
-   "deadline_note": null,
+   "deadline_note": "Apply online, by email or in person at MA 50; paid retroactively max 4 months.",
    "procedure_steps": [
     {
      "step": 1,
@@ -2704,17 +2704,17 @@
     "income_note": "Obergrenze = 580 € × Gewichtungsfaktor: 1 Person 2,33 → 1.351,40 € netto/Monat (×12 = 16.217 €/Jahr); 2 Pers. 2.128,60 € (25.543 €/J.), 3 Pers. 2.615,80 € (31.390 €/J.), 4 Pers. 3.033,40 € (36.401 €/J.), je weitere Person +435 €/Monat; Teuerungsfreibetrag +100 €. Zusätzlich Mindesteinkommen (1.155,84 €/Monat für Antragsteller:in) erforderlich.",
     "requires_children": false,
     "gender": "any",
-    "nationality": "any_resident",
-    "residency_months_min": null,
+    "nationality": "citizen_or_pr",
+    "residency_months_min": 60,
     "housing_tenure": "renting",
     "student_required": false,
     "admin_areas": [
      "Wien"
     ]
    },
-   "source_url": "https://www.wien.gv.at/wohnen/wohnbaufoerderung/ahs-info/wohnbeihilfe/haushaltseinkommen.html",
+   "source_url": "https://www.wien.gv.at/wohnen/wohnbaufoerderung/ahs-info/pdf/infoblatt-wohnbeihilfe-deutsch.pdf",
    "source_snippet": "\"Wohnbeihilfe wird sowohl für gefördert errichtete beziehungsweise sanierte Wohnungen als auch für private Mietwohnungen ausbezahlt.\"",
-   "last_verified_at": "2026-08-12",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -2730,9 +2730,9 @@
    "amount_max": null,
    "amount_currency": "EUR",
    "amount_period": "monthly",
-   "amount_note": "Zuschuss zu den Wohnkosten (Miete/Betriebskosten) für Haushalte mit niedrigem Einkommen; Höhe abhängig von Haushaltsgröße, Einkommen und Wohnungsaufwand.",
+   "amount_note": "Three models (Wohnzuschuss Modell 2009, Wohnzuschuss, Wohnbeihilfe) for subsidised housing; amount = eligible housing costs minus reasonable own share; awarded annually, re-application needed; retroactive up to 3 months.",
    "is_automatic": false,
-   "application_url": "https://www.noe.gv.at",
+   "application_url": "https://www.noe.gv.at/noe/Wohnen-Leben/Foerd_Wohnzuschuss_Wohnbeihilfe.html",
    "application_channel": "online",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -2746,17 +2746,17 @@
     "income_note": "NÖ Wohnzuschuss/Wohnbeihilfe (nur für geförderte Wohnungen/Wohnheime/Eigenheime): Einkommensgrenze 2.000 €/Monat Familieneinkommen (Umrechnung ×12 = 24.000 €/Jahr; Stand der Erhöhung 2022 laut noe.gv.at).",
     "requires_children": false,
     "gender": "any",
-    "nationality": "any_resident",
-    "residency_months_min": null,
+    "nationality": "citizen_or_pr",
+    "residency_months_min": 60,
     "housing_tenure": "renting",
     "student_required": false,
     "admin_areas": [
      "Niederösterreich"
     ]
    },
-   "source_url": "https://www.noe.gv.at",
+   "source_url": "https://www.noe.gv.at/noe/Wohnen-Leben/Foerd_Wohnzuschuss_Wohnbeihilfe.html",
    "source_snippet": "Das Land Niederösterreich gewährt im Rahmen der Wohnbauförderung Wohnbeihilfen für Haushalte, deren Einkommen bestimmte Grenzen nicht überschreitet.",
-   "last_verified_at": "2026-08-12",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -2768,13 +2768,13 @@
    "funder": "Land Oberösterreich (Wohnbauförderung)",
    "category": "housing",
    "benefit_type": "cash_monthly",
-   "amount_min": null,
-   "amount_max": null,
+   "amount_min": 7,
+   "amount_max": 300,
    "amount_currency": "EUR",
    "amount_period": "monthly",
-   "amount_note": "Monatlicher Zuschuss zu Mietkosten für einkommensschwache Haushalte in Oberösterreich; einkommens- und haushaltsgrößenabhängig.",
+   "amount_note": "Up to EUR 300/month (examples: 1 person up to 166.50, 2 persons 222, 4 persons 300); minimum payout EUR 7/month.",
    "is_automatic": false,
-   "application_url": "https://www.land-oberoesterreich.gv.at",
+   "application_url": "https://www.land-oberoesterreich.gv.at/wohnbeihilfe.htm",
    "application_channel": "online",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -2784,21 +2784,21 @@
     "statuses": [],
     "age_min": null,
     "age_max": null,
-    "income_annual_max": 18131,
-    "income_note": "Keine Wohnbeihilfe mehr ab 1.510,90 € netto/Monat für 1 Person (Jahreszwölftel; ×12 = 18.131 €/Jahr); 2 Pers. 2.343,60 €, 3 Pers. 2.863,10 €, 4 Pers. 3.382,60 €, je weitere +519,50 €; Teuerungsfreibetrag +100 €. Mindesteinkommen = Geringfügigkeitsgrenze (551,10 €/Monat). Quelle: land-oberoesterreich.gv.at.",
+    "income_annual_max": 16982,
+    "income_note": "2026 monthly household income limit for 1 person EUR 1,415.20 (EUR 1,515.20 with inflation allowance), 2 persons 2,227.20, 4 persons 3,155.20; annualised x12 = 16,982 for one person. Minimum income EUR 551.10/month.",
     "requires_children": false,
     "gender": "any",
-    "nationality": "any_resident",
-    "residency_months_min": null,
+    "nationality": "citizen_or_pr",
+    "residency_months_min": 60,
     "housing_tenure": "renting",
     "student_required": false,
     "admin_areas": [
      "Oberösterreich"
     ]
    },
-   "source_url": "https://www.land-oberoesterreich.gv.at",
+   "source_url": "https://www.land-oberoesterreich.gv.at/wohnbeihilfe.htm",
    "source_snippet": "Das Land Oberösterreich fördert im Rahmen der Wohnbauförderung die Wohnkosten einkommensschwacher Haushalte mit einer Wohnbeihilfe.",
-   "last_verified_at": "2026-08-12",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -2811,12 +2811,12 @@
    "category": "housing",
    "benefit_type": "cash_monthly",
    "amount_min": null,
-   "amount_max": null,
+   "amount_max": 235.95,
    "amount_currency": "EUR",
    "amount_period": "monthly",
-   "amount_note": "Zuschuss zu den Wohnkosten für Haushalte mit geringem Einkommen in der Steiermark; einkommens- und haushaltsgrößenabhängig.",
+   "amount_note": "Now called Wohnunterstützung. Maximum monthly support from EUR 143 (1 person) to EUR 235.95 (8+ persons), reduced by income. Assets must be reduced to EUR 10,000. Rental main residence, no rent arrears, age 18+.",
    "is_automatic": false,
-   "application_url": "https://www.wohnen.steiermark.at",
+   "application_url": "https://www.verwaltung.steiermark.at/cms/beitrag/12540919/127384147/",
    "application_channel": "online",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -2827,10 +2827,10 @@
     "age_min": null,
     "age_max": null,
     "income_annual_max": 18864,
-    "income_note": "Seit 2023 'Wohnunterstützung neu' (löst Wohnbeihilfe ab): volle Leistung unterhalb des Mindestsicherungs-Richtsatzes ohne Wohnkostenanteil (628 €/Monat), keine Leistung oberhalb der Armutsgefährdungsschwelle (1.572 € netto/Monat 2025; ×12 = 18.864 €/Jahr). Bemessung: Haushaltseinkommen (1/12 des Jahresnetto) geteilt durch Äquivalenzgewichte.",
+    "income_note": "Income-tested on household net income with weighting factors; no single annual ceiling published in the extract.",
     "requires_children": false,
     "gender": "any",
-    "nationality": "any_resident",
+    "nationality": "citizen_or_pr",
     "residency_months_min": null,
     "housing_tenure": "renting",
     "student_required": false,
@@ -2840,25 +2840,25 @@
    },
    "source_url": "https://www.verwaltung.steiermark.at/cms/beitrag/12540919/127384147/",
    "source_snippet": "\"Wohnunterstützung neu\" löst bisherige Wohnbeihilfe ab — entscheidend sind nur das Einkommen und die Haushaltsgröße.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "wohnschirm-wien",
    "name_local": "Wohnschirm Wien (Fonds Soziales Wien)",
    "name_en": "Housing Shield Vienna (homelessness prevention)",
-   "admin_level": "city",
-   "admin_area": "Wien",
-   "funder": "Fonds Soziales Wien (FSW)",
+   "admin_level": "national",
+   "admin_area": null,
+   "funder": "Republik Österreich (Sozialministerium) - Wohnschirm, nationwide",
    "category": "housing",
    "benefit_type": "cash_one_off",
    "amount_min": null,
    "amount_max": null,
    "amount_currency": "EUR",
    "amount_period": "one_off",
-   "amount_note": "Unterstützung bei drohendem Wohnungsverlust: Übernahme von Miet- und Betriebskostenrückständen sowie Energieschulden, Vermittlung von Rechts- und Sozialberatung.",
+   "amount_note": "Subsidiary help for rent arrears (Wohnschirm Miete), homeless people (Housing First) and low-income energy shutoffs (Wohnschirm Energie); amounts not published on this page. The Vienna-only scheme Wiener Wohnungssicherung Plus ended 31 Dec 2024.",
    "is_automatic": false,
-   "application_url": "https://www.fsw.at",
+   "application_url": "https://wohnschirm.at/",
    "application_channel": "in_person",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -2880,10 +2880,10 @@
      "Wien"
     ]
    },
-   "source_url": "https://www.fsw.at",
+   "source_url": "https://oesterreich.gv.at/themen/bauen_und_wohnen/wohnen/wohnschirm.html",
    "source_snippet": "\"FSW Wohnschirm Energie Wien: Übernahme der Energieschulden\"; der Wohnschirm hilft Menschen, die von Wohnungsverlust bedroht sind.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "sozialhilfe-mindestsicherung",
@@ -2898,7 +2898,7 @@
    "amount_max": 1229.89,
    "amount_currency": "EUR",
    "amount_period": "monthly",
-   "amount_note": "Letztes soziales Netz: 2026 max. 1.229,89 €/Monat für Alleinlebende, 1.721,85 € für Paare (Auszahlung und Zusatzleistungen je nach Bundesland; Wohnkostenpauschale bis +30 % möglich); Vermögens- und Einkommensanrechnung.",
+   "amount_note": "Maximum for singles/single parents about EUR 1,230/month (12x), couples about EUR 1,722; child rates set by provinces; disability supplement about EUR 221.",
    "is_automatic": false,
    "application_url": "https://www.oesterreich.gv.at/de/themen/hilfe_und_finanzielle_unterstuetzung_erhalten/4/Seite.1693914",
    "application_channel": "in_person",
@@ -2927,19 +2927,19 @@
     "statuses": [],
     "age_min": null,
     "age_max": null,
-    "income_annual_max": 14508,
-    "income_note": "Bedarfsorientiert; Richtsätze je Bundesland. Wien 2025: Mindeststandard 100 % = 1.209,01 €/Monat für Alleinstehende (Auszahlung 12×; ×12 = 14.508 €/Jahr), 70 % (846,31 €) für weitere Erwachsene im Haushalt. Ausgleichszulagenrichtsatz Bund 2026: 1.308,39 €/Monat ×14.",
+    "income_annual_max": 14759,
+    "income_note": "Max single rate approx EUR 1,230/month x12 = EUR 14,759/year; couples approx 1,722/month. Provinces set details.",
     "requires_children": false,
     "gender": "any",
-    "nationality": "any_resident",
-    "residency_months_min": null,
+    "nationality": "citizen_or_pr",
+    "residency_months_min": 60,
     "housing_tenure": null,
     "student_required": false,
     "admin_areas": []
    },
    "source_url": "https://www.oesterreich.gv.at/de/themen/hilfe_und_finanzielle_unterstuetzung_erhalten/4/Seite.1693914",
    "source_snippet": "\"Für Alleinlebende und Alleinerziehende ... 2026 steigt dieser Satz laut Sozialministerium auf 1.229,89 Euro. Für Paare wird der monatliche Maximalbetrag bei 1.721,85 Euro liegen.\"",
-   "last_verified_at": "2026-08-12",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -2955,9 +2955,9 @@
    "amount_max": 1229.89,
    "amount_currency": "EUR",
    "amount_period": "monthly",
-   "amount_note": "Wiener Umsetzung der Sozialhilfe: max. ca. 1.229,89 €/Monat für Einzelpersonen (2026, inkl. Anteil Lebensunterhalt und Wohnbedarf); zusätzlich Behindertenzuschlag, Mobilitäts- und Wohnleistungen möglich.",
+   "amount_note": "Mindeststandard single person EUR 1,229.89/month (2026); see MA 40 for couples, children and housing supplement.",
    "is_automatic": false,
-   "application_url": "https://www.wien.gv.at",
+   "application_url": "https://www.wien.gv.at/amtswege/",
    "application_channel": "in_person",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -2967,12 +2967,12 @@
     "statuses": [],
     "age_min": null,
     "age_max": null,
-    "income_annual_max": 14508,
+    "income_annual_max": 14759,
     "income_note": "Wiener Mindeststandard 2025: 100 % = 1.209,01 €/Monat für Alleinstehende/Alleinerziehende (×12 = 14.508 €/Jahr, 12 Auszahlungen); 70 % = 846,31 € für Partner:in bzw. WG-Mitglieder (WG-Regel verschärft ab 1.1.2026). Vermögens- und Einkommensprüfung.",
     "requires_children": false,
     "gender": "any",
-    "nationality": "any_resident",
-    "residency_months_min": null,
+    "nationality": "citizen_or_pr",
+    "residency_months_min": 60,
     "housing_tenure": null,
     "student_required": false,
     "admin_areas": [
@@ -2981,7 +2981,7 @@
    },
    "source_url": "https://www.wien.gv.at",
    "source_snippet": "\"Wiener Mindestsicherung - Lebensunterhalt: €1.229,89 monatlich max. für Einzelperson (€922,41 Lebensunterhalt + €307,47 Wohnbeihilfe ab 2026)\"",
-   "last_verified_at": "2026-08-12",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -2997,9 +2997,9 @@
    "amount_max": 1308.39,
    "amount_currency": "EUR",
    "amount_period": "monthly",
-   "amount_note": "Aufstockung niedriger Pensionen auf den Richtsatz (2026: 1.308,39 €/Monat alleinstehend, 2.064,12 € für Ehepaare; erhöhte Richtsätze bei Krankheit/Gebrechen 1.504,65/2.373,74 €); Antrag bei der Pensionsversicherung.",
+   "amount_note": "2026 Richtsatz: single EUR 1,308.39/month, couples EUR 2,064.12, plus EUR 201.88 per child; paid 14 times yearly; difference to the Richtsatz is topped up.",
    "is_automatic": false,
-   "application_url": "https://www.pv.at",
+   "application_url": "https://www.pv.at/web/pension/in-der-pension/ausgleichszulage-ausgleichszulagenbonus-und-pensionsbonus",
    "application_channel": "online",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -3033,9 +3033,9 @@
     "student_required": false,
     "admin_areas": []
    },
-   "source_url": "https://www.pv.at",
+   "source_url": "https://www.oesterreich.gv.at/de/themen/arbeit_beruf_und_pension/pension/Seite.270224",
    "source_snippet": "\"Alleinstehend €1.308,39 ... Ehepaare (gemeinsam) €2.064,12 ... Erhöhter Richtsatz bei Krankheit/Gebrechen, Alleinstehend €1.504,65\"",
-   "last_verified_at": "2026-08-12",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -3051,9 +3051,9 @@
    "amount_max": 2214.8,
    "amount_currency": "EUR",
    "amount_period": "monthly",
-   "amount_note": "2026: Stufe 1: 206,20 €, Stufe 2: 380,30 €, Stufe 3: 592,60 €, Stufe 4: 888,50 €, Stufe 5: 1.206,90 €, Stufe 6: 1.685,40 €, Stufe 7: 2.214,80 € pro Monat; steuerfrei, nicht zweckgebunden, 12× jährlich.",
+   "amount_note": "2026 monthly: level 1 EUR 206.20, 2 EUR 380.30, 3 EUR 592.60, 4 EUR 888.50, 5 EUR 1,206.90, 6 EUR 1,685.40, 7 EUR 2,214.80; paid 12 times, tax-free.",
    "is_automatic": false,
-   "application_url": "https://www.sozialministerium.at",
+   "application_url": "https://www.oesterreich.gv.at/de/themen/pflege/4/Seite.360516",
    "application_channel": "online",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -3090,9 +3090,9 @@
     "student_required": false,
     "admin_areas": []
    },
-   "source_url": "https://www.sozialministerium.at",
+   "source_url": "https://www.oesterreich.gv.at/de/themen/pflege/4/Seite.360516",
    "source_snippet": "\"Stufe 1 (>65 Std.) 206,20 € ... Stufe 7 (>180 Std. bei völliger Immobilität) 2.214,80 € ... Das Pflegegeld wird monatlich im Nachhinein ausgezahlt (12-mal im Jahr) und ist steuerfrei.\"",
-   "last_verified_at": "2026-08-12",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -3101,19 +3101,19 @@
    "name_en": "Family Hardship Compensation Fund",
    "admin_level": "national",
    "admin_area": null,
-   "funder": "Sozialministeriumservice",
+   "funder": "Bundeskanzleramt (Familie)",
    "category": "income_support",
-   "benefit_type": "cash_monthly",
+   "benefit_type": "cash_one_off",
    "amount_min": null,
    "amount_max": null,
    "amount_currency": "EUR",
-   "amount_period": "monthly",
-   "amount_note": "Unterstützung für Familien mit erheblich behinderten Kindern, wenn durch die Behinderung besondere Härten (z. B. Erwerbsverzicht eines Elternteils) entstehen; einkommensabhängige Geldleistung.",
+   "amount_period": "one_off",
+   "amount_note": "One-time bridging aid for families in unavoidable financial hardship after a special event (illness, disability, death); amount not published. Applicant must receive family allowance or be pregnant.",
    "is_automatic": false,
-   "application_url": "https://www.sozialministeriumservice.at",
+   "application_url": "https://www.bundeskanzleramt.gv.at/agenda/familie/familienhaerteausgleich.html",
    "application_channel": "online",
    "deadline_type": "rolling",
-   "deadline_note": null,
+   "deadline_note": "No deadline; apply via ID Austria, email familienhilfe@bka.gv.at or post.",
    "procedure_steps": [],
    "documents_required": [],
    "eligibility": {
@@ -3130,10 +3130,10 @@
     "student_required": false,
     "admin_areas": []
    },
-   "source_url": "https://www.sozialministeriumservice.at",
+   "source_url": "https://www.bundeskanzleramt.gv.at/agenda/familie/familienhaerteausgleich.html",
    "source_snippet": "Der Familienhärteausgleich unterstützt Familien, in denen ein erheblich behindertes Kind lebt, wenn aufgrund der Behinderung eine besondere soziale Härte vorliegt.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "behindertenpass",
@@ -3148,9 +3148,9 @@
    "amount_max": null,
    "amount_currency": "EUR",
    "amount_period": "one_off",
-   "amount_note": "Kostenloser Lichtbildausweis ab 50 % Behinderungsgrad; Nachweis für Ermäßigungen (Kultur, Öffi-Fahrpreise ab 70 %, Steuerfreibetrag ab 25 %); Zusatzeintragungen: Begleitperson, Fahrpreisermäßigung, Parkausweis-Berechtigung u. a.",
+   "amount_note": "Free proof of disability (GdB or MdE at least 50%) for discounts and tax benefits.",
    "is_automatic": false,
-   "application_url": "https://www.sozialministeriumservice.at",
+   "application_url": "https://www.sozialministeriumservice.gv.at/Menschen_mit_Behinderung/Behindertenpass_und_Parkausweis/Behindertenpass/Behindertenpass.de.html",
    "application_channel": "online",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -3181,16 +3181,16 @@
     "income_note": null,
     "requires_children": false,
     "gender": "any",
-    "nationality": "any_resident",
+    "nationality": "citizen_or_pr",
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
     "admin_areas": []
    },
-   "source_url": "https://www.sozialministeriumservice.at",
+   "source_url": "https://www.sozialministeriumservice.gv.at/Menschen_mit_Behinderung/Behindertenpass_und_Parkausweis/Behindertenpass/Behindertenpass.de.html",
    "source_snippet": "\"Der Antrag und die Ausstellung des Behindertenpasses sind kostenlos. ... Den Behinderten-Pass bekommen Sie, wenn der Grad der Behinderung 50 Prozent oder mehr ist.\"",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "behindertenzuschlag-mindestsicherung-wien",
@@ -3217,11 +3217,11 @@
     "statuses": [],
     "age_min": null,
     "age_max": null,
-    "income_annual_max": 14508,
+    "income_annual_max": 14759,
     "income_note": "Zuschlag zur Wiener Mindestsicherung bei Behinderung — setzt Anspruch auf Mindestsicherung voraus (Mindeststandard 2025: 1.209,01 €/Monat ×12 = 14.508 €/Jahr).",
     "requires_children": false,
     "gender": "any",
-    "nationality": "any_resident",
+    "nationality": "citizen_or_pr",
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
@@ -3229,9 +3229,9 @@
      "Wien"
     ]
    },
-   "source_url": "https://www.wien.gv.at",
+   "source_url": "https://www.sozialministerium.gv.at/Themen/Soziales/Sozialhilfe-und-Mindestsicherung/Leistungen.html",
    "source_snippet": "\"Behindertenzuschlag zur Mindestsicherung: 221,38 Euro pro Monat (2026). Jährlich neu berechnet. Wird ab dem 1. des Antragsmonats ausbezahlt.\"",
-   "last_verified_at": "2026-08-12",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -3247,7 +3247,7 @@
    "amount_max": 1400,
    "amount_currency": "EUR",
    "amount_period": "annual",
-   "amount_note": "Alle Öffis in ganz Österreich für 1.400 €/Jahr (Classic, seit Jänner 2026); ermäßigt 1.050 € für Jugend (u26), Senior:innen (65+) und Menschen mit Behinderung; Familienzusatz 140 € (bis 4 Kinder 6–15 inkludiert).",
+   "amount_note": "Classic EUR 1,400; Youth/Senior/Special EUR 1,050; family surcharge +EUR 140 (valid from 1 Jan 2026). Youth up to 25, Senior 65+, Special for Disability Pass holders (70%+).",
    "is_automatic": false,
    "application_url": "https://www.oebb.at/de/tickets-kundenkarten/kundenkarten/klimaticket",
    "application_channel": "online",
@@ -3281,9 +3281,9 @@
     "student_required": false,
     "admin_areas": []
    },
-   "source_url": "https://www.oebb.at/de/tickets-kundenkarten/kundenkarten/klimaticket",
+   "source_url": "https://www.klimaticket.at/en/home/",
    "source_snippet": "\"KlimaTicket Ö Classic: € 1.400 ... KlimaTicket Ö Ermäßigt: € 1.050 (Jugend u26, Senior 65+, Behinderung) ... Familienzusatz: € 140\"",
-   "last_verified_at": "2026-08-12",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -3299,9 +3299,9 @@
    "amount_max": 467,
    "amount_currency": "EUR",
    "amount_period": "annual",
-   "amount_note": "Jahreskarte Wien ab 2026: 467 € gedruckt bzw. 461 € digital; ermäßigt 294 € für Senior:innen ab 65 und Junge Leute (u26); unbegrenzte Fahrten in Wien (Kernzone).",
+   "amount_note": "2026: standard EUR 461 (digital) / 467 (card) one-time; Senior (65+), Youth (under 26) and Spezial EUR 294 (digital) / 300 (card).",
    "is_automatic": false,
-   "application_url": "https://www.wienerlinien.at",
+   "application_url": "https://www.wienerlinien.at/jahreskarte",
    "application_channel": "online",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -3323,9 +3323,9 @@
      "Wien"
     ]
    },
-   "source_url": "https://www.wienerlinien.at",
+   "source_url": "https://www.wienerlinien.at/jahreskarte",
    "source_snippet": "\"Wien Jahreskarte 2026: 467 € gedruckt, 461 € digital ... Seniorinnen/Senioren ab 65 Jahren erhalten Ermäßigungen für alle öffentlichen Verkehrsmittel in Wien. Die Karte kostet 294 Euro und ist ein Jahr gültig.\"",
-   "last_verified_at": "2026-08-12",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -3337,13 +3337,13 @@
    "funder": "Wiener Linien (Stadt Wien)",
    "category": "transport",
    "benefit_type": "discount",
-   "amount_min": 300,
+   "amount_min": 294,
    "amount_max": 300,
    "amount_currency": "EUR",
    "amount_period": "annual",
-   "amount_note": "Ab 2026: ermäßigte Jahreskarte für 300 € für Menschen mit Behinderung und dem Zusatzeintrag 'Fahrpreisermäßigung' im Behindertenpass.",
+   "amount_note": "EUR 294 (digital) / EUR 300 (card) one-time payment; reduced rate for people with disabilities.",
    "is_automatic": false,
-   "application_url": "https://www.wienerlinien.at",
+   "application_url": "https://www.wienerlinien.at/jahreskarte",
    "application_channel": "online",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -3365,9 +3365,9 @@
      "Wien"
     ]
    },
-   "source_url": "https://www.wienerlinien.at",
+   "source_url": "https://www.wienerlinien.at/jahreskarte",
    "source_snippet": "\"Ab 2026 gibt es eine sogenannte 'Jahreskarte Spezial' für Menschen mit Behinderung und dem Zusatzeintrag Fahrpreisermäßigung. Der Preis beträgt 300 Euro.\"",
-   "last_verified_at": "2026-08-12",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -3385,7 +3385,7 @@
    "amount_period": "annual",
    "amount_note": "Ermäßigungen für einkommensschwache Wiener:innen (Einkommen bis Ausgleichszulagenrichtsatz): ermäßigte Monats-/31-Tage-Karte und Halbpreisfahrscheine bei den Wiener Linien, ermäßigte VHS-Kurse, Bücherei-Jahreskarte, Bäder-Eintritte, 50 % Nachlass Hundeabgabe; automatische Zusendung bei Mindestsicherungsbezug.",
    "is_automatic": false,
-   "application_url": "https://www.wien.gv.at/zusammenleben/mobilpass",
+   "application_url": "https://www.wien.gv.at/gesundheit/leistungen/mindestsicherung/mobilpass.html",
    "application_channel": "online",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -3395,21 +3395,21 @@
     "statuses": [],
     "age_min": null,
     "age_max": null,
-    "income_annual_max": 14508,
-    "income_note": "Mobilpass für Bezieher:innen von Wiener Mindestsicherung bzw. Leistungen nach dem WMG (Mindeststandard 2025: 1.209,01 €/Monat ×12 = 14.508 €/Jahr).",
+    "income_annual_max": 18317,
+    "income_note": "Income may not exceed the Ausgleichszulage Richtsatz; for a single person EUR 1,308.39 x 14 = EUR 18,317 (derived).",
     "requires_children": false,
     "gender": "any",
-    "nationality": "any_resident",
-    "residency_months_min": null,
+    "nationality": "citizen_or_pr",
+    "residency_months_min": 60,
     "housing_tenure": null,
     "student_required": false,
     "admin_areas": [
      "Wien"
     ]
    },
-   "source_url": "https://www.wien.gv.at/zusammenleben/mobilpass",
+   "source_url": "https://www.wien.gv.at/gesundheit/leistungen/mindestsicherung/mobilpass.html",
    "source_snippet": "\"Mit dem Mobilpass bekommen sozial schwache Menschen in Wien bestimmte Ermäßigungen: Ermäßigte Monatskarte oder 31 Tage Wien Karte und Fahrt mit Halbpreisfahrscheinen bei den Wiener Linien.\"",
-   "last_verified_at": "2026-08-12",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -3425,9 +3425,9 @@
    "amount_max": 532,
    "amount_currency": "EUR",
    "amount_period": "annual",
-   "amount_note": "Alle Öffis in der Steiermark zum Fixpreis: Classic ca. 532 €/Jahr (nicht übertragbar); ermäßigt ca. 399 € für Senior:innen 65+, unter 26 und mit Behindertenpass ('Spezial').",
+   "amount_note": "Classic EUR 532 (non-transferable), transferable EUR 646; Senior (65+), Youth (under 26) and Special EUR 399.",
    "is_automatic": false,
-   "application_url": "https://www.verbundlinie.at",
+   "application_url": "https://verbundlinie.at/de/tickets-tarif/standard-tickets/klimaticket-steiermark",
    "application_channel": "online",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -3449,10 +3449,10 @@
      "Steiermark"
     ]
    },
-   "source_url": "https://www.verbundlinie.at",
+   "source_url": "https://verbundlinie.at/de/tickets-tarif/standard-tickets/klimaticket-steiermark",
    "source_snippet": "\"Fixpreis von 532 Euro pro Jahr ... ein um 25 Prozent ermäßigtes KlimaTicket Steiermark für Seniorinnen und Senioren über 65 Jahre, für Menschen mit Behinderung und für alle unter 26 Jahren um 399 Euro pro Jahr.\"",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "kaernten-ticket",
@@ -3463,13 +3463,13 @@
    "funder": "Land Kärnten / Kärntner Linien",
    "category": "transport",
    "benefit_type": "discount",
-   "amount_min": 449,
+   "amount_min": 215,
    "amount_max": 449,
    "amount_currency": "EUR",
    "amount_period": "annual",
-   "amount_note": "Jahreskarte für alle Bus- und Bahnlinien in Kärnten; ab 1. Juli 2026 kostet die Jahreskarte ohne Ermäßigungen 449 €; Ermäßigungen für Jugendliche, Senior:innen u. a.",
+   "amount_note": "From 1 July 2026: Classic EUR 449 (26-65), Jugend/Senior EUR 335, Spezial EUR 215 (disability 70%+, war victims or means-tested benefit recipients); Familie add-on +EUR 120.",
    "is_automatic": false,
-   "application_url": "https://www.kaernten.gv.at",
+   "application_url": "https://www.kaerntner-linien.at/tickets-tarife/kaernten-ticket/",
    "application_channel": "online",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -3491,10 +3491,10 @@
      "Kärnten"
     ]
    },
-   "source_url": "https://www.kaernten.gv.at",
+   "source_url": "https://www.kaerntner-linien.at/tickets-tarife/kaernten-ticket/",
    "source_snippet": "\"Die Jahreskarte ohne Ermäßigungen kostet dann 449 Euro.\"",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "top-jugendticket-ooe",
@@ -3505,13 +3505,13 @@
    "funder": "Oberösterreichischer Verkehrsverbund (OÖVV)",
    "category": "transport",
    "benefit_type": "discount",
-   "amount_min": null,
-   "amount_max": null,
+   "amount_min": 108,
+   "amount_max": 108,
    "amount_currency": "EUR",
    "amount_period": "annual",
-   "amount_note": "Stark verbilligtes Jahresticket für Schüler:innen, Lehrlinge und Studierende in Oberösterreich für alle Verbundverkehrsmittel; Preis je nach Altersgruppe und Netz (jährlich angepasst).",
+   "amount_note": "108,00 Euro im Schuljahr 2026/27 (inkl. 29,60 Euro Selbstbehalt); gilt 13 Monate (1.9. bis 30.9. des Folgejahres) für alle Fahrten in Oberösterreich. Für Schüler:innen und Lehrlinge, nicht für Studierende.",
    "is_automatic": false,
-   "application_url": "https://www.ooevv.at",
+   "application_url": "https://www.ooevv.at/de/tickets-preise/schule-lehre-studium/jugend-ticket-ooe.html",
    "application_channel": "online",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -3522,9 +3522,9 @@
      "student"
     ],
     "age_min": null,
-    "age_max": 26,
+    "age_max": 23,
     "income_annual_max": null,
-    "income_note": null,
+    "income_note": "Kein Einkommenstest; Bezug der Familienbeihilfe erforderlich.",
     "requires_children": false,
     "gender": "any",
     "nationality": "any_resident",
@@ -3535,10 +3535,10 @@
      "Oberösterreich"
     ]
    },
-   "source_url": "https://www.ooevv.at",
-   "source_snippet": "Das Top-Jugendticket des OÖVV ist eine verbilligte Jahreskarte für junge Menschen in Ausbildung für ganz Oberösterreich.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www.ooevv.at/de/tickets-preise/schule-lehre-studium/jugend-ticket-ooe.html",
+   "source_snippet": "Besuch einer Schule mit Öffentlichkeitsrecht oder Ausübung eines anerkannten Lehrberufs; Alter < 24 Jahre; Wohnort und/oder Ausbildungsort in Oberösterreich; Bezug der Familienbeihilfe",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "oebb-vorteilscard",
@@ -3549,13 +3549,13 @@
    "funder": "ÖBB (bundeseigenes Unternehmen)",
    "category": "transport",
    "benefit_type": "discount",
-   "amount_min": 19,
-   "amount_max": 99,
+   "amount_min": 21,
+   "amount_max": 89,
    "amount_currency": "EUR",
    "amount_period": "annual",
-   "amount_note": "50 % Ermäßigung auf ÖBB-Standardtickets; Vorteilscard Jugend (unter 26) um 19 €/Jahr, Senior (ab 65) um 29 €/Jahr; bis zu 4 Kinder unter 15 reisen mit Vorteilscard Jugend gratis mit.",
+   "amount_note": "50 % Ermäßigung auf ÖBB-Standardtickets. Vorteilscard Jugend (unter 26) 21 Euro/Jahr, Family 21 Euro, Senior (65+) 31 Euro, Classic 73 Euro, Comfort 89 Euro; Senior Frei kostenlos bei bestimmten Leistungen. Senior im VOR-Verbund 40 %.",
    "is_automatic": false,
-   "application_url": "https://www.oebb.at",
+   "application_url": "https://www.oebb.at/en/tickets-kundenkarten/kundenkarten/vorteilscard",
    "application_channel": "online",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -3575,10 +3575,10 @@
     "student_required": false,
     "admin_areas": []
    },
-   "source_url": "https://www.oebb.at",
-   "source_snippet": "\"Mit der Vorteilscard bekomme ich 50 % Ermäßigung auf ÖBB-Tickets. Unter 26 Jahren bekomme ich die Vorteilscard um 19 € pro Jahr. Ab 65 Jahren bekomme ich die Vorteilscard um 29 € pro Jahr.\"",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www.oebb.at/en/tickets-kundenkarten/kundenkarten/vorteilscard",
+   "source_snippet": "The Vorteilscard Jugend is aimed at people under 26 years of age and, at €21 per year, is an affordable way for young travellers to get started.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "kpc-kesseltausch",
@@ -3688,7 +3688,7 @@
    "name_en": "Photovoltaic and Storage Subsidy (KPC)",
    "admin_level": "national",
    "admin_area": null,
-   "funder": "Bund (BMIMI) / KPC (Erneuerbare-Ausbau-Gesetz)",
+   "funder": "EAG-Förderabwicklungsstelle (OeMAG)",
    "category": "energy",
    "benefit_type": "cash_one_off",
    "amount_min": null,
@@ -3697,10 +3697,10 @@
    "amount_period": "one_off",
    "amount_note": "Investitionszuschuss für Photovoltaikanlagen und Stromspeicher an Privatgebäuden; Förderhöhe und Calls jährlich per Fördercall auf umweltfoerderung.at.",
    "is_automatic": false,
-   "application_url": "https://www.umweltfoerderung.at",
+   "application_url": "https://eag-abwicklungsstelle.at/",
    "application_channel": "online",
    "deadline_type": "window",
-   "deadline_note": "Jährliche Fördercalls; Antrag nur im Call-Zeitraum möglich",
+   "deadline_note": "Anträge für Investitionszuschüsse (Photovoltaik & Stromspeicher) nur während eines geöffneten Fördercalls; online über die EAG-Förderabwicklungsstelle.",
    "procedure_steps": [],
    "documents_required": [],
    "eligibility": {
@@ -3717,10 +3717,10 @@
     "student_required": false,
     "admin_areas": []
    },
-   "source_url": "https://www.umweltfoerderung.at",
-   "source_snippet": "Die KPC wickelt im Auftrag des Bundes die Förderung von Photovoltaikanlagen und Stromspeichern für private Antragsteller ab (Fördercalls mit begrenztem Budget).",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www.oem-ag.at/foerderung",
+   "source_snippet": "Anträge auf Gewährung von Investitionszuschüssen (gem. § 56 EAG idgF) für Photovoltaikanlagen und Stromspeicher können während eines geöffneten Fördercalls eingebracht werden.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "eladestationen-foerderung",
@@ -3780,7 +3780,7 @@
    "application_url": "https://www.oesterreich.gv.at/de/themen/familie_und_partnerschaft/eltern-kind-pass/Seite.082201",
    "application_channel": "in_person",
    "deadline_type": "rolling",
-   "deadline_note": null,
+   "deadline_note": "Seit 1. Oktober 2026 gibt es ein neues Eltern-Kind-Pass-Untersuchungsprogramm. Nicht versicherte Frauen benötigen vorab einen Anspruchsbeleg.",
    "procedure_steps": [
     {
      "step": 1,
@@ -3804,8 +3804,8 @@
     "admin_areas": []
    },
    "source_url": "https://www.oesterreich.gv.at/de/themen/familie_und_partnerschaft/eltern-kind-pass/Seite.082201",
-   "source_snippet": "\"Der Eltern-Kind-Pass dient der gesundheitlichen Vorsorge für Schwangere und Kleinkinder. ... Die Untersuchungen sind nur bei Inanspruchnahme von Vertragsärztinnen/Vertragsärzten der Krankenversicherungsträger kostenlos.\"",
-   "last_verified_at": "2026-08-12",
+   "source_snippet": "Den Eltern-Kind-Pass kann jede schwangere Frau bekommen, auch wenn sie nicht österreichische Staatsbürgerin ist.",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -3861,7 +3861,7 @@
    "amount_max": null,
    "amount_currency": "EUR",
    "amount_period": "one_off",
-   "amount_note": "Kostenlose Impfungen für alle in Wien lebenden Menschen (Kinder- und Jugendimpfprogramm sowie gratis Impfungen gegen zahlreiche Krankheiten auch für Erwachsene) über das Impfservice der Stadt Wien.",
+   "amount_note": "Kostenlose Impfungen im Impfservice der Stadt Wien, u. a. HPV (Kinder-Impfprogramm, 9. bis 21. Geburtstag; ab 1.7.2026 kostenfrei nur wenn Erstimpfung vor dem 21. Geburtstag) und Gürtelrose-Impfung. Wohnsitz-Voraussetzung nicht auf der Seite angegeben.",
    "is_automatic": false,
    "application_url": "https://www.impfservice.wien",
    "application_channel": "in_person",
@@ -3885,10 +3885,10 @@
      "Wien"
     ]
    },
-   "source_url": "https://www.impfservice.wien",
-   "source_snippet": "Die Stadt Wien bietet über das Impfservice zahlreiche Impfungen für Kinder, Jugendliche und Erwachsene kostenlos an.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://impfservice.wien",
+   "source_snippet": "kostenfreie HPV-Impfungen nur mehr für Personen möglich, die ihre Erstimpfung vor dem 21. Geburtstag erhalten haben",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "kulturpass-wien",
@@ -3929,7 +3929,7 @@
    },
    "source_url": "https://www.oesterreich.gv.at/de/themen/hilfe_und_finanzielle_unterstuetzung_erhalten/ermaessigungen_und_finanzielle_unterstuetzungen_fuer_senioren/1/Seite.2020019",
    "source_snippet": "\"Der Kulturpass ermöglicht kostenlose Besuche von bestimmten Kulturveranstaltungen für Personen mit geringem Einkommen.\"",
-   "last_verified_at": "2026-08-12",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -3945,7 +3945,7 @@
    "amount_max": 608,
    "amount_currency": "EUR",
    "amount_period": "annual",
-   "amount_note": "2025: bei Steuer unter null werden 55 % der SV-Beiträge rückerstattet, max. 487 €/Jahr (608 € bei Pendlerpauschale); Pensionist:innen 80 %, max. 637 €. SV-Bonus zusätzlich bis 790 € bei Zuschlag zum Verkehrsabsetzbetrag.",
+   "amount_note": "2025: bei Steuer unter null 55 % der SV-Beiträge, max. 487 €/Jahr (608 € mit Pendlerpauschale); Pensionist:innen 80 %, max. 710 €. SV-Bonus zusätzlich bis 790 € (Einkommen unter 19.424 €, einschleifend bis 29.743 €). Werte für 2026 auf der Seite nicht angegeben.",
    "is_automatic": false,
    "application_url": "https://finanzonline.bmf.gv.at",
    "application_channel": "online",
@@ -3984,7 +3984,7 @@
    },
    "source_url": "https://www.bmf.gv.at/themen/steuern/arbeitnehmerveranlagung/steuertarif-steuerabsetzbetraege/absetzbetraege-niedrige-einkommen-negativsteuer.html",
    "source_snippet": "\"Besteht Anspruch auf den Verkehrsabsetzbetrag und es ergibt sich eine Einkommensteuer unter null, werden 55 Prozent der Sozialversicherungsbeiträge, höchstens aber 487 Euro jährlich, rückerstattet (SV-Rückerstattung)\" (Werte 2025, BMF)",
-   "last_verified_at": "2026-08-12",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -4036,7 +4036,7 @@
    },
    "source_url": "https://www.gesundheit.gv.at/leben/gesundheitsvorsorge/vorsorgeuntersuchung/was-wird-gemacht.html",
    "source_snippet": "\"Die Vorsorgeuntersuchung kann von allen Personen ab dem vollendeten 18. Lebensjahr mit Wohnsitz in Österreich einmal jährlich kostenlos in Anspruch genommen werden.\"",
-   "last_verified_at": "2026-08-12",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -4134,7 +4134,7 @@
    },
    "source_url": "https://www.bmb.gv.at/Themen/schule/schulpraxis/ugbm/schulbuchaktion.html",
    "source_snippet": "\"Die österreichische Schulbuchaktion sorgt seit 1972 dafür, dass Schülerinnen und Schüler kostenlosen Zugang zu hochwertigen Unterrichtsmitteln bekommen.\"",
-   "last_verified_at": "2026-08-12",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -4155,7 +4155,7 @@
    "application_url": "https://www.salzburg.gv.at/themen/soziales/soziale-und-finanzielle-leistungen/heizscheck",
    "application_channel": "online",
    "deadline_type": "window",
-   "deadline_note": "Antrag jeweils 1. Jänner bis 30. September des Förderjahres.",
+   "deadline_note": "Antragsfrist für Heizperiode 2026/2027 am 30. September 2026 abgelaufen; Anträge derzeit nicht mehr möglich. Betrag/Einkommensgrenzen für 2026/27 stehen in der Richtlinie 2026 (nicht geprüft).",
    "procedure_steps": [
     {
      "step": 1,
@@ -4193,7 +4193,7 @@
    },
    "source_url": "https://www.salzburg.gv.at/themen/soziales/soziale-und-finanzielle-leistungen/heizscheck",
    "source_snippet": "\"Einkommensgrenze 2025/2026: Alleinlebende, Alleinerzieherinnen, Alleinerzieher 1.424 Euro – Ehepaare, Lebensgemeinschaften, eingetragene Partnerschaften 1.862 Euro\"; Zuschuss 250 Euro.",
-   "last_verified_at": "2026-08-12",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -4209,12 +4209,12 @@
    "amount_max": 250,
    "amount_currency": "EUR",
    "amount_period": "one_off",
-   "amount_note": "Bis 250 € einmalig (Heizperiode 2025/26); Einschleifregelung: um Einkommen über der Grenze gekürzt, Deckel bei +250 € über der Grenze, Mindestzuschuss 80 €.",
+   "amount_note": "Bis 250 € einmalig pro Haushalt (Heizperiode 2025/26), 180 € für Sozialhilfebezieher:innen; Einkommensgrenze netto/Monat: 1 Pers. 1.410, 2 Pers. 1.920, 3 Pers. 2.360, 4 Pers. 2.800, 5 Pers. 3.240 (+440 je weitere); Einschleifregelung bis +200 €.",
    "is_automatic": false,
    "application_url": "https://vorarlberg.at/-/heizkostenzuschuss",
    "application_channel": "online",
    "deadline_type": "window",
-   "deadline_note": "Antrag im Aktionszeitraum der Heizperiode (2025/26 bis 13. Februar 2026) beim Wohnsitzgemeindeamt oder online.",
+   "deadline_note": "Antragszeitraum Heizperiode 2025/26: 13.10.2025 bis 13.02.2026 (abgelaufen); Zeitraum 2026/27 nicht gefunden.",
    "procedure_steps": [
     {
      "step": 1,
@@ -4252,7 +4252,7 @@
    },
    "source_url": "https://vorarlberg.at/-/heizkostenzuschuss",
    "source_snippet": "Heizkostenzuschuss 2025/26: Einkommensgrenze 1-Personen-Haushalt 1.410 Euro, maximale Zuschusshöhe 250 Euro; \"Maßgebend für die Anspruchserhebung ist ausschließlich die Einkommenssituation\".",
-   "last_verified_at": "2026-08-12",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -4268,12 +4268,12 @@
    "amount_max": null,
    "amount_currency": "EUR",
    "amount_period": null,
-   "amount_note": "Nettoentgeltgarantie für Arbeitnehmer:innen (i. d. R. 80–90 % des bisherigen Nettoentgelts); Beihilfe an das Unternehmen pro ausgefallener Arbeitsstunde.",
+   "amount_note": "Beihilfe an das Unternehmen auf Basis der ersparten Arbeitslosenversicherungskosten; +15 % bei Qualifizierung; Arbeitszeitreduktion 10-90 %; zunächst max. 6 Monate, verlängerbar bis 24 Monate. Höhe der Nettoentgeltgarantie (80-90 %) auf der Seite nicht angegeben.",
    "is_automatic": false,
    "application_url": "https://www.ams.at/unternehmen/personalsicherung-und-fruehwarnsystem/kurzarbeit",
    "application_channel": "via_employer",
    "deadline_type": "rolling",
-   "deadline_note": null,
+   "deadline_note": "Antrag über eAMS-Unternehmenskonto, vor Beginn der Kurzarbeit beim AMS anzumelden.",
    "procedure_steps": [
     {
      "step": 1,
@@ -4306,7 +4306,7 @@
    },
    "source_url": "https://www.ams.at/unternehmen/personalsicherung-und-fruehwarnsystem/kurzarbeit",
    "source_snippet": "\"Förderbar sind Unternehmen ... die in einem Betrieb ... mit einem Betriebsstandort in Österreich Kurzarbeit durchführen.\" (AMS)",
-   "last_verified_at": "2026-08-12",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -4365,8 +4365,8 @@
   },
   {
    "slug": "weiterbildungsteilzeit-beihilfe",
-   "name_local": "Weiterbildungsbeihilfe und Weiterbildungsteilzeitbeihilfe (Bildungskarenz/-teilzeit)",
-   "name_en": "Educational leave / part-time training allowance (AMS)",
+   "name_local": "Weiterbildungszeit / Weiterbildungsgeld (AMS)",
+   "name_en": "Educational leave: Weiterbildungszeit and Weiterbildungsgeld (AMS)",
    "admin_level": "national",
    "admin_area": null,
    "funder": "Arbeitsmarktservice (AMS)",
@@ -4376,12 +4376,12 @@
    "amount_max": null,
    "amount_currency": "EUR",
    "amount_period": null,
-   "amount_note": "Weiterbildungsbeihilfe in Höhe des fiktiven Arbeitslosengeldes (14× jährlich) während der Weiterbildungszeit; Weiterbildungsteilzeitbeihilfe als Entgeltausfallsersatz bei reduzierter Arbeitszeit.",
+   "amount_note": "Weiterbildungsgeld: einkommensabhängig, mindestens 41,49 € pro Tag (Wert 2026). Ersetzt die Bildungskarenz; Anträge ab 08.06.2026. Voraussetzung: 12 Monate durchgehende Beschäftigung beim selben Arbeitgeber; Karenzierung max. 1 Jahr (Vollzeit) bzw. 2 Jahre (Teilzeit) pro 4 Jahre.",
    "is_automatic": false,
    "application_url": "https://www.ams.at/arbeitsuchende/aus-und-weiterbildung/so-foerdern-wir-ihre-aus--und-weiterbildung-/weiterbildungszeit-weiterbildungsteilzeit",
    "application_channel": "via_employer",
    "deadline_type": "rolling",
-   "deadline_note": null,
+   "deadline_note": "Bildungskarenz wurde durch Weiterbildungszeit abgelöst; frühester Beginn 08.06.2026.",
    "procedure_steps": [
     {
      "step": 1,
@@ -4424,7 +4424,7 @@
    },
    "source_url": "https://www.ams.at/arbeitsuchende/aus-und-weiterbildung/so-foerdern-wir-ihre-aus--und-weiterbildung-/weiterbildungszeit-weiterbildungsteilzeit",
    "source_snippet": "\"Wenn Sie mit Ihrer/Ihrem Dienstgeber:in eine Bildungskarenz oder Bildungsteilzeit vereinbaren und eine Aus- und Weiterbildung absolvieren möchten, dann unterstützen wir Sie in dieser Zeit mit einer Weiterbildungsbeihilfe oder Weiterbildungsteilzeitbeihilfe.\"",
-   "last_verified_at": "2026-08-12",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -4436,11 +4436,11 @@
    "funder": "Wiener ArbeitnehmerInnen Förderungsfonds (waff)",
    "category": "employment",
    "benefit_type": "cash_one_off",
-   "amount_min": null,
-   "amount_max": null,
+   "amount_min": 500,
+   "amount_max": 5000,
    "amount_currency": "EUR",
    "amount_period": null,
-   "amount_note": "Zuschüsse zu Kurs-, Lehrgang- und Studiengebühren je nach Förderprodukt (z. B. 50 % der Kurskosten); zusätzlich Beratung und Bildungskonten.",
+   "amount_note": "Bildungskonto 500 bis max. 5.000 €; Chancen-Scheck und Fachkräfte-/Pflege-Stipendium bis 5.000 €; Lehrlingsförderung. Wiener Wohnadresse erforderlich; Staatsangehörigkeit/Aufenthaltstitel auf der Seite nicht angegeben.",
    "is_automatic": false,
    "application_url": "https://www.waff.at/foerderungen/",
    "application_channel": "online",
@@ -4485,7 +4485,7 @@
    },
    "source_url": "https://www.waff.at/foerderungen/",
    "source_snippet": "Beschäftigte mit Wiener Wohnadresse können unter bestimmten Voraussetzungen finanzielle Unterstützung vom waff für Kurse und Weiterbildung erhalten.",
-   "last_verified_at": "2026-08-12",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -4651,7 +4651,7 @@
    },
    "source_url": "https://www.oesterreich.gv.at/de/themen/hilfe_und_finanzielle_unterstuetzung_erhalten/3/Seite.1693900",
    "source_snippet": "\"Personen mit sozialer und/oder körperlicher Hilfsbedürftigkeit können eine Befreiung vom ORF-Beitrag beantragen ... Das Haushaltsnettoeinkommen aller im Haushalt lebenden Personen darf eine bestimmte Grenze nicht überschreiten.\"",
-   "last_verified_at": "2026-08-12",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -4774,7 +4774,7 @@
    "amount_period": null,
    "amount_note": "Kostenlose Berechtigungsbestätigung für die Online-Wohnungssuche im kommunalen und geförderten Wohnbau; Voraussetzung für Gemeindewohnungen, geförderte und SMART-Wohnungen.",
    "is_automatic": false,
-   "application_url": "https://wohnberatung-wien.at/",
+   "application_url": "https://wohnberatung-wien.at/wohn-ticket/anmeldung-voraussetzungen",
    "application_channel": "online",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -4804,13 +4804,13 @@
    ],
    "eligibility": {
     "statuses": [],
-    "age_min": 17,
+    "age_min": 18,
     "age_max": null,
     "income_annual_max": 61280,
-    "income_note": "Netto-Jahreseinkommen (Werte bis 31.12.2026): 1 Person max. 61.280 €, 2 Pers. 91.320 €, 3 Pers. 103.330 €, 4 Pers. 115.360 €, je weitere +6.730 € (geförderte Mietwohnung/Gemeindewohnung); Eigentumswohnung: 70.030 € (1 Pers.).",
+    "income_note": "Netto-Jahreseinkommen max. 61.280 € (1 Person), 91.320 € (2 Personen), gestaffelt nach Haushaltsgröße; gültig bis 31.12.2026.",
     "requires_children": false,
     "gender": "any",
-    "nationality": "any_resident",
+    "nationality": "citizen_or_pr",
     "residency_months_min": 24,
     "housing_tenure": null,
     "student_required": false,
@@ -4818,9 +4818,9 @@
      "Wien"
     ]
    },
-   "source_url": "https://www.wien.gv.at/wohnen/mietwohnung-genossenschaftswohnung-foerderungswuerdigkeit",
-   "source_snippet": "\"Sie suchen allein eine Wohnung? Dann darf Ihr jährliches Netto-Einkommen nicht mehr als 61.280 Euro betragen.\" (Stadt Wien, gültig bis 31.12.2026)",
-   "last_verified_at": "2026-08-12",
+   "source_url": "https://wohnberatung-wien.at/wohn-ticket/anmeldung-voraussetzungen",
+   "source_snippet": "Sie haben seit mindestens 2 Jahren Ihren Hauptwohnsitz in Wien.",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -4861,7 +4861,7 @@
     "age_min": null,
     "age_max": null,
     "income_annual_max": null,
-    "income_note": "Keine Einkommensprüfung — Voraussetzung ist Familienbeihilfe für mindestens ein Kind.",
+    "income_note": "Kein Einkommenstest; Hauptwohnsitz der antragstellenden Person oder des Kindes in Niederösterreich.",
     "requires_children": true,
     "gender": "any",
     "nationality": "any_resident",
@@ -4872,9 +4872,9 @@
      "Niederösterreich"
     ]
    },
-   "source_url": "https://noe.familienpass.at",
-   "source_snippet": "Der NÖ Familienpass bietet Ermäßigungen bei 500 Partnerbetrieben; beantragt werden kann die kostenlose Karte online unter noe.familienpass.at.",
-   "last_verified_at": "2026-08-12",
+   "source_url": "https://www.noe.gv.at/noe/Familien/Familienland-Pass.html",
+   "source_snippet": "Der Familienland*Pass ist eine kostenlose Vorteilskarte für niederösterreichische Familien und alle, die gerne Zeit mit Kindern verbringen.",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -4928,7 +4928,7 @@
    },
    "source_url": "https://www.land-oberoesterreich.gv.at/32019.htm",
    "source_snippet": "\"Die OÖ Familienkarte gibt es bei Ermäßigungen im OÖ Verkehrsverbund und bei der Westbahn. Zusätzlich gibt es Ermäßigungen bei rund 1700 weiteren Partnerbetrieben.\"",
-   "last_verified_at": "2026-08-12",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -4998,7 +4998,7 @@
    "amount_max": null,
    "amount_currency": "EUR",
    "amount_period": null,
-   "amount_note": "Kostenlose Ermäßigungskarte für Familien mit mindestens zwei Kindern bis 15 Jahren; Vergünstigungen bei Ausflugszielen, Sport und Kultur in der Steiermark.",
+   "amount_note": "Kostenlose Ermäßigungskarte für steirische Familien; gültig bis zum 18. Geburtstag des jüngsten Kindes; Vergünstigungen bei Ausflugszielen, Sport und Kultur.",
    "is_automatic": false,
    "application_url": "https://www.zweiundmehr.steiermark.at",
    "application_channel": "online",
@@ -5034,9 +5034,9 @@
      "Steiermark"
     ]
    },
-   "source_url": "https://www.zweiundmehr.steiermark.at",
-   "source_snippet": "\"Für Familien mit zwei oder mehr Kindern bis 15 Jahren gibt es den Steirischen Familienpass. Diese kostenlose Ermäßigungskarte bietet Vergünstigungen bei Ausflugszielen...\"",
-   "last_verified_at": "2026-08-12",
+   "source_url": "https://www.verwaltung.steiermark.at/cms/beitrag/12877934/127384147/",
+   "source_snippet": "Jede Familie oder jede Alleinerzieherin bzw. jeder Alleinerzieher kann den Familienpass (unabhängig von der Staatsangehörigkeit) beantragen, wenn.",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -5054,7 +5054,7 @@
    "amount_period": null,
    "amount_note": "Ermäßigungen bei Freizeit-, Kultur- und Bildungseinrichtungen in Tirol und im Euregio-Raum (EuregioFamilyPass); kostenlose Ausstellung über den Familienkompass Tirol.",
    "is_automatic": false,
-   "application_url": "https://www.tirol.gv.at",
+   "application_url": "https://www.tirol.gv.at/gesellschaft-soziales/generationen/familienpass/allgemeines-zum-tiroler-familienpass/",
    "application_channel": "online",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -5077,7 +5077,7 @@
     "age_min": null,
     "age_max": null,
     "income_annual_max": null,
-    "income_note": "Keine Einkommensprüfung — Voraussetzung ist Familienbeihilfe für mindestens ein Kind.",
+    "income_note": "Kein Einkommenstest; Hauptwohnsitz, Nebenwohnsitz oder gewöhnlicher Aufenthalt in Tirol; eine Person im Haushalt muss Familienbeihilfe für das Kind beziehen.",
     "requires_children": true,
     "gender": "any",
     "nationality": "any_resident",
@@ -5088,9 +5088,9 @@
      "Tirol"
     ]
    },
-   "source_url": "https://www.tirol.gv.at",
-   "source_snippet": "Der Tiroler Familienpass / EuregioFamilyPass bietet Familien mit Familienbeihilfen-Anspruch Ermäßigungen bei Partnerbetrieben in ganz Tirol (Land Tirol).",
-   "last_verified_at": "2026-08-12",
+   "source_url": "https://www.tirol.gv.at/gesellschaft-soziales/generationen/familienpass/allgemeines-zum-tiroler-familienpass/",
+   "source_snippet": "Der*die Antragsteller*in oder eine andere im selben Haushalt wie das Kind lebende Person muss die Familienbeihilfe für dieses Kind beziehen",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -5106,9 +5106,9 @@
    "amount_max": null,
    "amount_currency": "EUR",
    "amount_period": null,
-   "amount_note": "Kostenlose Ermäßigungskarte für Familien ab einem Kind; Vergünstigungen bei Ausflugszielen, Kultur und Sport in Kärnten; 5 Jahre gültig, einmalig pro Familie.",
+   "amount_note": "Kostenlose digitale Vorteils- und Servicekarte für Familien; Hauptwohnsitz von Eltern und Kindern in Kärnten und Bezug der Familienbeihilfe erforderlich.",
    "is_automatic": false,
-   "application_url": "https://kaerntnerfamilienkarte.at",
+   "application_url": "https://kaerntnerfamilienkarte.at/de/familienkarte",
    "application_channel": "online",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -5147,9 +5147,9 @@
      "Kärnten"
     ]
    },
-   "source_url": "https://kaerntnerfamilienkarte.at",
-   "source_snippet": "Die Kärntner Familienkarte ist eine kostenlose Ermäßigungskarte für Familien ab einem Kind, gültig ab Ausstellung für fünf Jahre; Vergünstigungen bei Ausflugszielen, Kultur und Sport (Jugend- und Familienreferat, Land Kärnten).",
-   "last_verified_at": "2026-08-12",
+   "source_url": "https://kaerntnerfamilienkarte.at/de/familienkarte",
+   "source_snippet": "Jede Kärntner Familie kann die Kärntner Familienkarte beantragen, wenn Eltern und Kinder ihren Hauptwohnsitz in Kärnten haben und Familienbeihilfe bezogen wird.",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -5165,9 +5165,9 @@
    "amount_max": null,
    "amount_currency": "EUR",
    "amount_period": null,
-   "amount_note": "Kostenlose Ermäßigungskarte ab einem Kind (bis 25 Jahre mit Familienbeihilfe bzw. 27 bei Hochschulstudium); Vergünstigungen im Burgenland und darüber hinaus.",
+   "amount_note": "Kostenlose Familienkarte; bis zu 50 % Ermäßigung bei rund 100 Partnerbetrieben; gültig bis zum 18. Geburtstag des jüngsten Kindes. Antrag online (e-government.bgld.gv.at/familycard).",
    "is_automatic": false,
-   "application_url": "https://www.burgenland.at/themen/gesellschaft/familie/familienpass/",
+   "application_url": "http://e-government.bgld.gv.at/familycard",
    "application_channel": "online",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -5202,8 +5202,8 @@
     ]
    },
    "source_url": "https://www.burgenland.at/themen/gesellschaft/familie/familienpass/",
-   "source_snippet": "\"Voraussetzung für den Erhalt der Familienkarte Burgenland ist, dass zumindest ein Kind, für das Anspruch auf Familienbeihilfe besteht, mit Ihnen im gemeinsamen Haushalt lebt.\"",
-   "last_verified_at": "2026-08-12",
+   "source_snippet": "Eltern und Großeltern können beantragen, wenn sie oder die Kinder/Enkel Haupt- oder Nebenwohnsitz im Burgenland haben; gültig bis zum 18. Geburtstag des jüngsten Kindes.",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -5219,7 +5219,7 @@
    "amount_max": null,
    "amount_currency": "EUR",
    "amount_period": null,
-   "amount_note": "Ermäßigungen bei Ausflugszielen, Freizeit- und Kultureinrichtungen in Vorarlberg für Familien mit mindestens einem Kind mit Familienbeihilfe.",
+   "amount_note": "Ermäßigungen bei über 200 Partnerbetrieben (Sport, Kultur, Freizeit, Verkehr); Hauptwohnsitz in Vorarlberg; gültig bis die Kinder das 18. Lebensjahr vollenden.",
    "is_automatic": false,
    "application_url": "https://vorarlberg.at/-/vorarlberger-familienpass",
    "application_channel": "online",
@@ -5256,8 +5256,8 @@
     ]
    },
    "source_url": "https://vorarlberg.at/-/vorarlberger-familienpass",
-   "source_snippet": "\"Vorarlberg bietet Familien einen Familienpass mit verschiedenen Ermäßigungen an.\" (Amt der Vorarlberger Landesregierung)",
-   "last_verified_at": "2026-08-12",
+   "source_snippet": "Hauptwohnsitz in Vorarlberg; discounts at over 200 partner businesses; valid until children complete their 18th year of life.",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {

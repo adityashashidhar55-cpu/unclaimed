@@ -17,7 +17,7 @@
    "amount_max": null,
    "amount_currency": "USD",
    "amount_period": "monthly",
-   "amount_note": "Monthly allotment on an EBT card depends on household size, income and deductions; FY2026 maximum allotments are published by USDA FNS",
+   "amount_note": "Maximum monthly allotment Oct 1 2026 - Sep 30 2027 (48 states + DC): $306 for a household of 1, $1,023 for a household of 4; actual allotment depends on household size, income and deductions",
    "is_automatic": false,
    "application_url": "https://www.fns.usda.gov/snap/state-directory",
    "application_channel": "online",
@@ -61,19 +61,19 @@
     "statuses": [],
     "age_min": null,
     "age_max": null,
-    "income_annual_max": null,
-    "income_note": "Gross monthly income generally at or below 130% of the federal poverty level; net income at or below 100% FPL; many states use higher limits via broad-based categorical eligibility",
+    "income_annual_max": 20748,
+    "income_note": "Gross income limit 130% of poverty and net income limit 100% of poverty (Oct 1 2026 - Sep 30 2027): household of 1 gross $1,729/month (=$20,748/year), net $1,330/month; household of 4 gross $3,575/month, net $2,750/month. Figure shown is household of 1 gross annualised; limit rises with household size. Some states use higher limits via broad-based categorical eligibility (not stated on this page).",
     "requires_children": false,
-    "nationality": "any_resident",
+    "nationality": "citizen_or_pr",
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.fns.usda.gov/snap",
-   "source_snippet": "USDA FNS administers SNAP; households must meet income limits and apply through their state agency.",
-   "last_verified_at": "2026-08-12",
+   "source_url": "https://www.fna.usda.gov/snap/recipient/eligibility",
+   "source_snippet": "Documented immigrants may qualify if they ... Have lived in the United States for at least 5 years; Be receiving disability-related assistance or benefits; Be children under 18. Gross income 130% of poverty; net income 100% of poverty.",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -228,9 +228,9 @@
    "amount_max": 120,
    "amount_currency": "USD",
    "amount_period": "annual",
-   "amount_note": "$120 per eligible school-age child for the summer (2024-2025 standard amount), loaded on an EBT card",
+   "amount_note": "$120 in grocery benefits per eligible school-age child when school is out for summer; offered only in participating states, Tribes and territories",
    "is_automatic": false,
-   "application_url": "https://www.fns.usda.gov/summer/sunbucks",
+   "application_url": "https://www.fna.usda.gov/sebt",
    "application_channel": "online",
    "deadline_type": "annual",
    "deadline_note": "Administered by states during the summer months; many families are automatically enrolled",
@@ -272,10 +272,10 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.fns.usda.gov/summer/sunbucks",
-   "source_snippet": "SUN Bucks provides grocery-buying benefits to eligible school-aged children during the summer when schools are closed.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www.fna.usda.gov/sebt",
+   "source_snippet": "$120 in grocery benefits per eligible school-age child when school is out for summer",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "tefap-emergency-food-assistance",
@@ -476,7 +476,7 @@
    },
    "source_url": "https://www.fns.usda.gov/sfmnp",
    "source_snippet": "SFMNP provides low-income seniors with coupons that can be exchanged for eligible foods at farmers' markets, roadside stands, and community supported agriculture programs.",
-   "last_verified_at": "2026-08-12",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified",
    "income_reviewed_at": "2026-08-13"
   },
@@ -556,7 +556,7 @@
    },
    "source_url": "https://www.acf.hhs.gov/ofa/programs/temporary-assistance-needy-families-tanf",
    "source_snippet": "TANF provides states with flexible funding for programs aimed at promoting stability, family preservation, and access to employment among low-income households with children.",
-   "last_verified_at": "2026-08-12",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified",
    "income_reviewed_at": "2026-08-13"
   },
@@ -637,7 +637,7 @@
    },
    "source_url": "https://www.ssa.gov/ssi",
    "source_snippet": "In 2026, the maximum federal SSI payment rose to $994 per month for an eligible individual and $1,491 for an eligible couple, reflecting the 2.8 percent cost-of-living adjustment.",
-   "last_verified_at": "2026-08-12",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -709,7 +709,7 @@
    },
    "source_url": "https://www.ssa.gov/disability",
    "source_snippet": "Social Security pays disability benefits through 2 programs: Social Security Disability Insurance (SSDI) and Supplemental Security Income (SSI).",
-   "last_verified_at": "2026-08-12",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -783,8 +783,8 @@
    },
    "source_url": "https://www.ssa.gov/retirement",
    "source_snippet": "You can start receiving Social Security retirement benefits as early as age 62, but benefits are reduced before full retirement age.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "va-pension-veterans",
@@ -796,10 +796,10 @@
    "category": "income_support",
    "benefit_type": "cash_monthly",
    "amount_min": null,
-   "amount_max": null,
+   "amount_max": 29093,
    "amount_currency": "USD",
-   "amount_period": "monthly",
-   "amount_note": "Monthly payment tops up countable income to the Maximum Annual Pension Rate (MAPR); higher rates with Aid and Attendance or Housebound",
+   "amount_period": "annual",
+   "amount_note": "Maximum Annual Pension Rate (from Dec 1 2025) for a veteran without dependents: $17,441 basic; $21,313 with Housebound; $29,093 with Aid and Attendance. Monthly payment tops up countable income to the rate.",
    "is_automatic": false,
    "application_url": "https://www.va.gov/pension/how-to-apply/",
    "application_channel": "online",
@@ -843,8 +843,8 @@
     "statuses": [],
     "age_min": 65,
     "age_max": null,
-    "income_annual_max": null,
-    "income_note": "Wartime veterans with limited income and net worth below the VA limit; age 65+ or permanently and totally disabled",
+    "income_annual_max": 17441,
+    "income_note": "Annual family income and net worth must be within Congressional limits. Basic MAPR for a veteran with no dependents is $17,441/year (higher with dependents or Aid and Attendance/Housebound); net worth limit $163,699 (Dec 1 2025 - Nov 30 2026).",
     "requires_children": false,
     "nationality": "any",
     "residency_months_min": null,
@@ -853,10 +853,10 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.va.gov/pension/",
-   "source_snippet": "The Veterans Pension program provides monthly payments to wartime Veterans who meet certain age or disability requirements, and who have income and net worth within certain limits.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www.va.gov/pension/eligibility/",
+   "source_snippet": "You're at least 65 years old ... Your annual family income and net worth fall within Congressional limits. MAPR: $17,441 (no Housebound/A&A), $21,313 (Housebound), $29,093 (Aid and Attendance).",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "unemployment-insurance-ui",
@@ -930,8 +930,8 @@
    },
    "source_url": "https://www.dol.gov/general/topic/unemployment-insurance",
    "source_snippet": "Unemployment Insurance provides temporary financial assistance to eligible workers who lost their jobs through no fault of their own; claims are filed with the state unemployment agency.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "wioa-adult-dislocated-worker-programs",
@@ -1105,8 +1105,8 @@
    "is_automatic": false,
    "application_url": "https://www.dol.gov/agencies/eta/tradeact",
    "application_channel": "in_person",
-   "deadline_type": "rolling",
-   "deadline_note": "Only for workers covered by a certified DOL petition; file through your state workforce agency",
+   "deadline_type": "none",
+   "deadline_note": "Ended: since July 1 2022 the TAA Program cannot certify new workers or serve workers separated after that date. Workers certified and separated on or before June 30 2022 may still be eligible and should contact their nearest American Job Center.",
    "procedure_steps": [
     {
      "step": 1,
@@ -1149,9 +1149,9 @@
     "gender": "any"
    },
    "source_url": "https://www.dol.gov/agencies/eta/tradeact",
-   "source_snippet": "TAA provides assistance to workers who have lost their jobs as a result of increased imports or shifts in production outside the United States.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_snippet": "Since July 1st, 2022, the TAA Program has been unable to certify new workers or serve workers separated after this date.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "ticket-to-work",
@@ -1216,8 +1216,8 @@
    },
    "source_url": "https://www.ssa.gov/work",
    "source_snippet": "The Ticket to Work program supports career development for Social Security disability beneficiaries ages 18 through 64 who want to work.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "eitc-earned-income-tax-credit",
@@ -1274,8 +1274,8 @@
     ],
     "age_min": null,
     "age_max": null,
-    "income_annual_max": null,
-    "income_note": "Low-to-moderate earned income; TY2025 AGI limits range from $19,104 (single, no children) to $68,675 (married filing jointly, 3+ children); investment income must be $11,950 or less",
+    "income_annual_max": 68675,
+    "income_note": "Tax year 2025 maximum AGI: $19,104 single/HOH no children up to $61,555 with 3+ children; married filing jointly $26,214 (no children) up to $68,675 (3+ children). Figure shown is the highest limit (MFJ, 3+ children). Investment income must be $11,950 or less.",
     "requires_children": false,
     "nationality": "citizen_or_pr",
     "residency_months_min": null,
@@ -1286,7 +1286,7 @@
    },
    "source_url": "https://www.irs.gov/credits-deductions/individuals/earned-income-tax-credit/earned-income-and-earned-income-tax-credit-eitc-tables",
    "source_snippet": "If you earned less than $68,675 (Married Filing Jointly) or $61,555 (Single, Qualifying Surviving Spouse or Head of Household) in tax year 2025, you may qualify for the Earned Income Credit.",
-   "last_verified_at": "2026-08-12",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -1345,10 +1345,10 @@
     ],
     "age_min": null,
     "age_max": null,
-    "income_annual_max": null,
-    "income_note": "Phases out at higher incomes ($200,000 single / $400,000 married filing jointly); child must be under 17 at year end",
+    "income_annual_max": 400000,
+    "income_note": "Full credit if income is not more than $200,000 ($400,000 if filing jointly); figure shown is the joint limit. Taxpayer and child must have a Social Security number valid for employment issued before the return due date; ACTC requires earned income of at least $2,500.",
     "requires_children": true,
-    "nationality": "citizen_or_pr",
+    "nationality": "any_resident",
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
@@ -1357,8 +1357,8 @@
    },
    "source_url": "https://www.irs.gov/credits-deductions/individuals/child-tax-credit",
    "source_snippet": "The Child Tax Credit provides a credit of up to $2,200 per qualifying child under age 17 for tax year 2025.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "savers-credit",
@@ -1422,8 +1422,8 @@
    },
    "source_url": "https://www.irs.gov/retirement-plans/plan-participant-employee/retirement-savings-contributions-savers-credit",
    "source_snippet": "The Saver's Credit is a tax credit for eligible contributions to retirement plans; the credit rate is 50%, 20% or 10% of contributions depending on adjusted gross income.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "aotc-american-opportunity-tax-credit",
@@ -1440,7 +1440,7 @@
    "amount_period": "annual",
    "amount_note": "Up to $2,500 per eligible student per year for the first 4 years of higher education; 40% (up to $1,000) is refundable",
    "is_automatic": false,
-   "application_url": "https://www.irs.gov/credits-deductions/individuals/aotc",
+   "application_url": "https://www.irs.gov/credits-deductions/individuals/education-credits-aotc-and-llc",
    "application_channel": "online",
    "deadline_type": "annual",
    "deadline_note": "Claimed on the annual tax return (Form 8863) using Form 1098-T from the school",
@@ -1479,8 +1479,8 @@
     ],
     "age_min": null,
     "age_max": null,
-    "income_annual_max": null,
-    "income_note": "Phases out for MAGI between $80,000-$90,000 ($160,000-$180,000 MFJ); student must be enrolled at least half-time in a degree program and not have completed 4 years of higher education",
+    "income_annual_max": 180000,
+    "income_note": "MAGI must be less than $90,000 ($180,000 if married filing jointly); credit phases out from $80,000 ($160,000 MFJ). Figure shown is the joint limit.",
     "requires_children": false,
     "nationality": "any_resident",
     "residency_months_min": null,
@@ -1489,10 +1489,10 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.irs.gov/credits-deductions/individuals/aotc",
-   "source_snippet": "The American Opportunity Tax Credit is a credit for qualified education expenses paid for an eligible student for the first four years of higher education, up to $2,500 per eligible student.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www.irs.gov/credits-deductions/individuals/education-credits-aotc-and-llc",
+   "source_snippet": "AOTC allows a credit up to $2,500 per eligible student ... AOTC is partially refundable, 40% ... available ONLY for 4 years per eligible student.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "llc-lifetime-learning-credit",
@@ -1550,8 +1550,8 @@
     ],
     "age_min": null,
     "age_max": null,
-    "income_annual_max": null,
-    "income_note": "Phases out for MAGI between $80,000-$90,000 ($160,000-$180,000 MFJ); available for undergraduate, graduate and job-skills courses",
+    "income_annual_max": 180000,
+    "income_note": "MAGI must be less than $90,000 ($180,000 if married filing jointly); credit phases out from $80,000 ($160,000 MFJ). Figure shown is the joint limit.",
     "requires_children": false,
     "nationality": "any_resident",
     "residency_months_min": null,
@@ -1561,9 +1561,9 @@
     "gender": "any"
    },
    "source_url": "https://www.irs.gov/credits-deductions/individuals/education-credits-aotc-and-llc",
-   "source_snippet": "The Lifetime Learning Credit is worth up to $2,000 per tax return for qualified tuition and related expenses at eligible educational institutions.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_snippet": "LLC allows a credit up to $2,000 per return. LLC is 20% of the first $10,000 of qualified expenses ... LLC is non-refundable.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "vita-free-file-tax-preparation",
@@ -1622,8 +1622,8 @@
     "statuses": [],
     "age_min": null,
     "age_max": null,
-    "income_annual_max": 69000,
-    "income_note": "The IRS free tax return preparation page states VITA is for people who generally make $69,000 or less. The page also covers taxpayers with disabilities and limited-English speakers, and the co-located TCE programme serves those aged 60+.",
+    "income_annual_max": 70244,
+    "income_note": "IRS states VITA is for people who generally make about $70,244 or less; the IRS does not set a program-wide limit and individual sites may set their own. Persons with disabilities and limited English-speaking taxpayers also qualify; TCE serves ages 60+.",
     "requires_children": false,
     "nationality": "any_resident",
     "residency_months_min": null,
@@ -1636,8 +1636,8 @@
     "gender": "any"
    },
    "source_url": "https://www.irs.gov/individuals/free-tax-return-preparation-for-qualifying-taxpayers",
-   "source_snippet": "VITA and TCE sites offer free basic tax return preparation to qualified individuals, generally people who make $67,000 or less, persons with disabilities and limited English-speaking taxpayers.",
-   "last_verified_at": "2026-08-12",
+   "source_snippet": "People who generally make about $70,244 or less ... the IRS does not set a program-wide income limit, individual VITA sites may set their own.",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified",
    "income_reviewed_at": "2026-08-13"
   },
@@ -1781,7 +1781,7 @@
    },
    "source_url": "https://www.medicaid.gov/chip",
    "source_snippet": "Children eligible for CHIP are in families with incomes too high to qualify for Medicaid, but too low to afford private coverage.",
-   "last_verified_at": "2026-08-12",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -1858,8 +1858,8 @@
    },
    "source_url": "https://www.healthcare.gov/lower-costs/",
    "source_snippet": "When you apply for Marketplace coverage, you'll find out if you qualify for a premium tax credit that lowers your monthly premium.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "cost-sharing-reductions",
@@ -1920,8 +1920,8 @@
    },
    "source_url": "https://www.healthcare.gov/lower-costs/",
    "source_snippet": "If your income qualifies, you can get extra savings on out-of-pocket costs like deductibles and copayments — but only if you enroll in a Silver plan.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "medicare",
@@ -1989,8 +1989,8 @@
    },
    "source_url": "https://www.medicare.gov",
    "source_snippet": "Medicare is federal health insurance for people 65 or older, and some people under 65 with certain disabilities or conditions.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "medicare-extra-help-part-d",
@@ -2005,7 +2005,7 @@
    "amount_max": null,
    "amount_currency": "USD",
    "amount_period": "annual",
-   "amount_note": "Worth an estimated $5,700 per year; enrollees pay no Part D premium/deductible and modest copays (no more than $12.65 brand-name / $5.10 generic in 2026)",
+   "amount_note": "Extra Help pays Part D premiums, deductibles, coinsurance and other costs for people with limited income and resources. 2026 limits: income $23,940 (single) / $32,460 (couple); resources $18,090 / $36,100.",
    "is_automatic": false,
    "application_url": "https://www.ssa.gov/extrahelp",
    "application_channel": "online",
@@ -2046,8 +2046,8 @@
     ],
     "age_min": null,
     "age_max": null,
-    "income_annual_max": null,
-    "income_note": "Medicare beneficiaries with income below 150% of the federal poverty level and resources at or below $17,600 (single) / $35,130 (couple) in 2025",
+    "income_annual_max": 23940,
+    "income_note": "2026 limits: income $23,940 individual / $32,460 married couple per year; resources $18,090 individual / $36,100 couple.",
     "requires_children": false,
     "nationality": "citizen_or_pr",
     "residency_months_min": null,
@@ -2056,9 +2056,9 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.ssa.gov/extrahelp",
-   "source_snippet": "Medicare Part D Extra Help is a program that covers some of the Part D prescription drug plan costs; its estimated average annual value is $5,700 per person.",
-   "last_verified_at": "2026-08-12",
+   "source_url": "https://www.medicare.gov/basics/costs/help/drug-costs",
+   "source_snippet": "Income and resource limits in 2026: Individual $23,940 income, $18,090 resources; Married couple $32,460 income, $36,100 resources.",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -2076,7 +2076,7 @@
    "amount_period": "monthly",
    "amount_note": "Pays the Medicare Part B premium (and, under QMB, deductibles and coinsurance); worth at least the Part B premium per month",
    "is_automatic": false,
-   "application_url": "https://www.medicare.gov",
+   "application_url": "https://www.medicare.gov/basics/costs/help/medicare-savings-programs",
    "application_channel": "in_person",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -2115,8 +2115,8 @@
     ],
     "age_min": null,
     "age_max": null,
-    "income_annual_max": null,
-    "income_note": "Medicare beneficiaries with limited income and resources; QMB, SLMB and QI have different income ceilings set as percentages of the federal poverty level",
+    "income_annual_max": 21792,
+    "income_note": "2026 monthly income limits (individual / couple): QMB $1,350 / $1,824; SLMB $1,616 / $2,184; QI $1,816 / $2,455 (slightly higher in Alaska and Hawaii). Resource limit $9,950 individual / $14,910 couple. Figure shown is the QI individual limit annualised ($1,816 x 12).",
     "requires_children": false,
     "nationality": "citizen_or_pr",
     "residency_months_min": null,
@@ -2125,10 +2125,10 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.medicare.gov",
-   "source_snippet": "Medicare Savings Programs help pay Medicare premiums and in some cases deductibles, coinsurance and copayments for people with limited income and resources.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www.medicare.gov/basics/costs/help/medicare-savings-programs",
+   "source_snippet": "Monthly income and resource limits for 2026: Individual $1,350 income, $9,950 resources (QMB); QI individual $1,816.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "section-8-housing-choice-voucher",
@@ -2143,9 +2143,9 @@
    "amount_max": null,
    "amount_currency": "USD",
    "amount_period": "monthly",
-   "amount_note": "PHA pays the landlord the difference between about 30% of household income and the rent up to a local payment standard",
+   "amount_note": "The housing agency pays the landlord the difference between the payment standard and your family rent portion; family rent portion is usually 30% of adjusted monthly income and may be as high as 40%",
    "is_automatic": false,
-   "application_url": "https://www.hud.gov/topics/housing_choice_voucher_program_section_8",
+   "application_url": "https://www.hud.gov/helping-americans/housing-choice-vouchers-tenants",
    "application_channel": "in_person",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -2192,9 +2192,9 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.usa.gov/housing-voucher-section-8",
-   "source_snippet": "The Housing Choice Voucher (HCV) Program, also called Section 8, is run by the Department of Housing and Urban Development (HUD). The program gives you a voucher to help you afford safe, private housing.",
-   "last_verified_at": "2026-08-12",
+   "source_url": "https://www.hud.gov/helping-americans/housing-choice-vouchers-tenants",
+   "source_snippet": "Applicants must be a U.S. citizen or eligible non-citizen as defined by HUD. The head of the household must have a valid Social Security number.",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -2212,7 +2212,7 @@
    "amount_period": "monthly",
    "amount_note": "Rent is generally capped at about 30% of adjusted household income in PHA-owned apartments",
    "is_automatic": false,
-   "application_url": "https://www.hud.gov/topics/public_housing",
+   "application_url": "https://www.hud.gov/helping-americans/public-housing",
    "application_channel": "in_person",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -2267,9 +2267,9 @@
     "income_confidence": "high",
     "gender": "any"
    },
-   "source_url": "https://www.hud.gov/topics/public_housing",
-   "source_snippet": "Public housing provides decent and safe rental housing for eligible low-income families, the elderly, and persons with disabilities.",
-   "last_verified_at": "2026-08-12",
+   "source_url": "https://www.hud.gov/helping-americans/public-housing",
+   "source_snippet": "HUD sets the lower income limits at 80% and very low-income limits at 50% of the median income for the county or metropolitan area ... U.S. citizenship or eligible immigration status.",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified",
    "income_reviewed_at": "2026-08-13"
   },
@@ -2286,9 +2286,9 @@
    "amount_max": null,
    "amount_currency": "USD",
    "amount_period": "monthly",
-   "amount_note": "Payment assistance (subsidy) reduces the effective mortgage interest rate for low- and very-low-income buyers in eligible rural areas",
+   "amount_note": "Direct loan with payment assistance that can lower the effective interest rate to as low as 1%. Effective Oct 1 2026 the interest rate is 5.750% for low- and very-low-income borrowers; up to 33-year term (38 years for very-low-income applicants who cannot afford the 33-year term); no down payment typically required. Subsidy must be repaid in whole or part when title transfers or the borrower leaves.",
    "is_automatic": false,
-   "application_url": "https://www.rd.usda.gov/programs-services/single-family-housing-direct-home-loans",
+   "application_url": "https://www.rd.usda.gov/programs-services/single-family-housing-programs/single-family-housing-direct-home-loans",
    "application_channel": "in_person",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -2343,9 +2343,9 @@
     "income_confidence": "high",
     "gender": "any"
    },
-   "source_url": "https://www.rd.usda.gov/programs-services/single-family-housing-direct-home-loans",
-   "source_snippet": "Section 502 direct loans assist low- and very-low-income applicants obtain decent, safe and sanitary housing in eligible rural areas with payment assistance that increases repayment ability.",
-   "last_verified_at": "2026-08-12",
+   "source_url": "https://www.rd.usda.gov/programs-services/single-family-housing-programs/single-family-housing-direct-home-loans",
+   "source_snippet": "Applicants ... must have an adjusted income that is at or below the applicable low-income limit for the area where they wish to buy ... Meet citizenship or eligible noncitizen requirements",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified",
    "income_reviewed_at": "2026-08-13"
   },
@@ -2440,7 +2440,7 @@
    "amount_period": null,
    "amount_note": "Free home energy-efficiency upgrades (insulation, air sealing, heating system repair/replacement); households save an average of $372 or more per year",
    "is_automatic": false,
-   "application_url": "https://www.energy.gov/scep/wap/how-apply-weatherization-assistance",
+   "application_url": "https://www.energy.gov/cmei/scep/wap/how-apply-weatherization-assistance",
    "application_channel": "in_person",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -2487,9 +2487,9 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.energy.gov/scep/wap/weatherization-assistance-program",
-   "source_snippet": "Households that fall at or below 200% of the federal poverty guidelines or receive Supplemental Security Income (SSI) are eligible for weatherization assistance; services are 100% free for those who qualify.",
-   "last_verified_at": "2026-08-12",
+   "source_url": "https://www.energy.gov/cmei/scep/wap/how-apply-weatherization-assistance",
+   "source_snippet": "Households at or below 200% of the poverty income guidelines or that receive Supplemental Security Income are considered under DOE guidelines as eligible for weatherization services. Priority is given to the elderly, families with one or more members with a disability, families with children, high-energy users, or households with a high energy burden.",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -2556,7 +2556,7 @@
    },
    "source_url": "https://www.lifelinesupport.org/about-lifeline/",
    "source_snippet": "Qualifying consumers can get a monthly discount of up to $9.25 off the cost of their phone, internet, or bundled services. Consumers living on qualifying Tribal lands can get up to $34.25 per month.",
-   "last_verified_at": "2026-08-12",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -2572,12 +2572,12 @@
    "amount_max": 7395,
    "amount_currency": "USD",
    "amount_period": "annual",
-   "amount_note": "Award ranges from $740 to $7,395 for 2025-26 and 2026-27, based on Student Aid Index, cost of attendance and enrollment intensity; does not have to be repaid",
+   "amount_note": "Maximum award is $7,395 for the 2026-27 award year (July 1, 2026 to June 30, 2027); actual amount depends on Student Aid Index, cost of attendance, full/part-time status, length of program and remaining Pell lifetime eligibility (12 full-time terms). Does not have to be repaid except under certain circumstances. Official page no longer states a minimum award.",
    "is_automatic": false,
    "application_url": "https://studentaid.gov/h/apply-for-aid/fafsa",
    "application_channel": "online",
    "deadline_type": "annual",
-   "deadline_note": "Submit the FAFSA each year (federal deadline June 30; earlier state/school deadlines apply)",
+   "deadline_note": "Submit the FAFSA every year you are in school; schools use it to determine Pell eligibility",
    "procedure_steps": [
     {
      "step": 1,
@@ -2619,7 +2619,7 @@
     "age_min": null,
     "age_max": null,
     "income_annual_max": null,
-    "income_note": "Undergraduates with exceptional financial need (no prior bachelor's degree); maximum award generally for household income below 175% of federal poverty guidelines (225% for single-parent households)",
+    "income_note": "Awarded to undergraduates with exceptional financial need who have not earned a bachelor's, graduate or professional degree (limited exceptions for teacher certification and workforce programs); need is based on Student Aid Index from the FAFSA",
     "requires_children": false,
     "nationality": "citizen_or_pr",
     "residency_months_min": null,
@@ -2629,8 +2629,8 @@
     "gender": "any"
    },
    "source_url": "https://studentaid.gov/understand-aid/types/grants/pell",
-   "source_snippet": "For both the 2025-26 and 2026-27 award years, the maximum Pell Grant award is $7,395; eligible students can receive between $740 and $7,395.",
-   "last_verified_at": "2026-08-12",
+   "source_snippet": "The maximum Federal Pell Grant award is $7,395 for the 2026–27 award year (July 1, 2026, to June 30, 2027).",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -2646,12 +2646,12 @@
    "amount_max": 4000,
    "amount_currency": "USD",
    "amount_period": "annual",
-   "amount_note": "$100 to $4,000 per year depending on need, other aid received, and the school's FSEOG funds; priority to Pell Grant recipients with the lowest Student Aid Index",
+   "amount_note": "$100 to $4,000 a year depending on financial need, when you apply, other aid received and availability of funds at your school; each school has a limited FSEOG allocation and the grant does not need to be repaid except under certain circumstances",
    "is_automatic": false,
    "application_url": "https://studentaid.gov/h/apply-for-aid/fafsa",
    "application_channel": "online",
    "deadline_type": "annual",
-   "deadline_note": "File the FAFSA early; each school has a limited FSEOG allocation",
+   "deadline_note": "Apply for federal aid as early as possible; each school sets its own deadlines for campus-based funds, and awards stop once the school's FSEOG funds are used",
    "procedure_steps": [
     {
      "step": 1,
@@ -2693,9 +2693,9 @@
     "gender": "any"
    },
    "source_url": "https://studentaid.gov/understand-aid/types/grants/fseog",
-   "source_snippet": "FSEOG awards range from $100 to $4,000 a year; priority is given to students with the greatest financial need who also receive Pell Grants.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_snippet": "You can receive between $100 and $4,000 a year, depending on your financial need, when you apply, the amount of other aid you get, and the availability of funds at your school.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "federal-work-study",
@@ -2763,8 +2763,8 @@
    },
    "source_url": "https://studentaid.gov/understand-aid/types/work-study",
    "source_snippet": "Federal Work-Study provides part-time jobs for undergraduate and graduate students with financial need, allowing them to earn money to help pay education expenses.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "pslf-public-service-loan-forgiveness",
@@ -5026,6 +5026,4248 @@
    "last_verified_at": "2026-08-12",
    "verification_status": "auto_extracted",
    "income_reviewed_at": "2026-08-13"
+  },
+  {
+   "slug": "cdcc-child-and-dependent-care-credit",
+   "name_local": "Credit for Child and Dependent Care Expenses",
+   "name_en": "Credit for Child and Dependent Care Expenses",
+   "admin_level": "national",
+   "admin_area": null,
+   "funder": "Internal Revenue Service (IRS)",
+   "category": "tax",
+   "benefit_type": "tax_credit",
+   "amount_min": null,
+   "amount_max": null,
+   "amount_currency": "USD",
+   "amount_period": "annual",
+   "amount_note": "Credit of 20% to 35% of up to $3,000 of expenses for one qualifying person or $6,000 for two or more; percentage falls as AGI rises above $43,000. Nonrefundable",
+   "is_automatic": false,
+   "application_url": "https://www.irs.gov/credits-deductions/individuals/child-and-dependent-care-credit",
+   "application_channel": "online",
+   "deadline_type": "annual",
+   "deadline_note": "Claim when filing your annual federal return",
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Pay care costs that let you (and spouse) work or look for work",
+     "url": null
+    },
+    {
+     "step": 2,
+     "detail": "Complete Form 2441 and attach it to Form 1040",
+     "url": null
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "Care provider name, address and taxpayer ID",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Qualifying person's SSN",
+     "mandatory": true,
+     "note": null
+    }
+   ],
+   "eligibility": {
+    "statuses": [
+     "employee",
+     "self_employed",
+     "parent"
+    ],
+    "age_min": null,
+    "age_max": null,
+    "income_annual_max": null,
+    "income_note": "No income ceiling; the credit percentage declines as AGI rises above $43,000. Requires earned income.",
+    "requires_children": false,
+    "nationality": "any_resident",
+    "residency_months_min": null,
+    "housing_tenure": null,
+    "student_required": false,
+    "admin_areas": [],
+    "gender": "any"
+   },
+   "source_url": "https://www.irs.gov/credits-deductions/individuals/child-and-dependent-care-credit",
+   "source_snippet": "The credit can be up to 35% of your employment-related expenses.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "trump-accounts-1000-pilot-deposit",
+   "name_local": "Trump Accounts ($1,000 Treasury pilot deposit)",
+   "name_en": "Trump Accounts ($1,000 Treasury pilot deposit)",
+   "admin_level": "national",
+   "admin_area": null,
+   "funder": "U.S. Department of the Treasury",
+   "category": "income_support",
+   "benefit_type": "cash_one_off",
+   "amount_min": 1000,
+   "amount_max": 1000,
+   "amount_currency": "USD",
+   "amount_period": "one_off",
+   "amount_note": "One-time $1,000 Treasury deposit for eligible children born January 1, 2025 to December 31, 2028",
+   "is_automatic": false,
+   "application_url": "https://trumpaccounts.gov/",
+   "application_channel": "online",
+   "deadline_type": "window",
+   "deadline_note": "Covers children born through December 31, 2028",
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Download the official Trump Accounts app (App Store or Google Play)",
+     "url": "https://trumpaccounts.gov/"
+    },
+    {
+     "step": 2,
+     "detail": "Set up the account as custodian for your child",
+     "url": null
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "Child's identifying details",
+     "mandatory": true,
+     "note": null
+    }
+   ],
+   "eligibility": {
+    "statuses": [
+     "parent"
+    ],
+    "age_min": null,
+    "age_max": 17,
+    "income_annual_max": null,
+    "income_note": "No income test published; child must be a U.S. citizen under 18 born 2025-2028",
+    "requires_children": true,
+    "nationality": "citizen_or_pr",
+    "residency_months_min": null,
+    "housing_tenure": null,
+    "student_required": false,
+    "admin_areas": [],
+    "gender": "any"
+   },
+   "source_url": "https://trumpaccounts.gov/",
+   "source_snippet": "The account is fully in your child's name, and you are the sole custodian until they turn 18.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "ssa-survivors-benefits",
+   "name_local": "Social Security Survivors Benefits",
+   "name_en": "Social Security Survivors Benefits",
+   "admin_level": "national",
+   "admin_area": null,
+   "funder": "Social Security Administration (SSA)",
+   "category": "income_support",
+   "benefit_type": "cash_monthly",
+   "amount_min": null,
+   "amount_max": null,
+   "amount_currency": "USD",
+   "amount_period": "monthly",
+   "amount_note": "Monthly payment based on the deceased worker's earnings record",
+   "is_automatic": false,
+   "application_url": "https://www.ssa.gov/benefits/survivors/",
+   "application_channel": "online",
+   "deadline_type": "rolling",
+   "deadline_note": null,
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Contact SSA online or by phone to report the death and apply",
+     "url": "https://www.ssa.gov/benefits/survivors/"
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "Proof of death",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Proof of relationship",
+     "mandatory": true,
+     "note": null
+    }
+   ],
+   "eligibility": {
+    "statuses": [],
+    "age_min": null,
+    "age_max": null,
+    "income_annual_max": null,
+    "income_note": "Not means-tested; based on the deceased person's work record",
+    "requires_children": false,
+    "nationality": "any_resident",
+    "residency_months_min": null,
+    "housing_tenure": null,
+    "student_required": false,
+    "admin_areas": [],
+    "gender": "any"
+   },
+   "source_url": "https://www.ssa.gov/benefits/survivors/",
+   "source_snippet": "Survivor benefits provide monthly payments to eligible family members of people who worked and paid Social Security taxes before they died.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "va-disability-compensation",
+   "name_local": "VA Disability Compensation",
+   "name_en": "VA Disability Compensation",
+   "admin_level": "national",
+   "admin_area": null,
+   "funder": "U.S. Department of Veterans Affairs (VA)",
+   "category": "income_support",
+   "benefit_type": "cash_monthly",
+   "amount_min": null,
+   "amount_max": null,
+   "amount_currency": "USD",
+   "amount_period": "monthly",
+   "amount_note": "Tax-free monthly payment; amount depends on disability rating and dependents (see VA rates page)",
+   "is_automatic": false,
+   "application_url": "https://www.va.gov/disability/how-to-file-claim",
+   "application_channel": "online",
+   "deadline_type": "rolling",
+   "deadline_note": null,
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "File a claim online, by mail, in person or with an accredited representative",
+     "url": "https://www.va.gov/disability/how-to-file-claim"
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "Service records",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Medical evidence of condition",
+     "mandatory": false,
+     "note": null
+    }
+   ],
+   "eligibility": {
+    "statuses": [],
+    "age_min": null,
+    "age_max": null,
+    "income_annual_max": null,
+    "income_note": "Not income-tested",
+    "requires_children": false,
+    "nationality": "any",
+    "residency_months_min": null,
+    "housing_tenure": null,
+    "student_required": false,
+    "admin_areas": [],
+    "gender": "any"
+   },
+   "source_url": "https://www.va.gov/disability/eligibility/",
+   "source_snippet": "A service-connected condition means an illness or injury that was caused by—or got worse because of—your active military service.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "va-post-9-11-gi-bill",
+   "name_local": "Post-9/11 GI Bill (Chapter 33)",
+   "name_en": "Post-9/11 GI Bill (Chapter 33)",
+   "admin_level": "national",
+   "admin_area": null,
+   "funder": "U.S. Department of Veterans Affairs (VA)",
+   "category": "education",
+   "benefit_type": "cash_monthly",
+   "amount_min": null,
+   "amount_max": null,
+   "amount_currency": "USD",
+   "amount_period": "monthly",
+   "amount_note": "Tuition and fees (capped for private schools), monthly housing allowance, books and supplies stipend",
+   "is_automatic": false,
+   "application_url": "https://www.va.gov/education/how-to-apply/",
+   "application_channel": "online",
+   "deadline_type": "rolling",
+   "deadline_note": null,
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Apply for education benefits on VA.gov",
+     "url": "https://www.va.gov/education/how-to-apply/"
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "Service records",
+     "mandatory": true,
+     "note": null
+    }
+   ],
+   "eligibility": {
+    "statuses": [],
+    "age_min": null,
+    "age_max": null,
+    "income_annual_max": null,
+    "income_note": "Not income-tested",
+    "requires_children": false,
+    "nationality": "any",
+    "residency_months_min": null,
+    "housing_tenure": null,
+    "student_required": true,
+    "admin_areas": [],
+    "gender": "any"
+   },
+   "source_url": "https://www.va.gov/education/about-gi-bill-benefits/post-9-11/",
+   "source_snippet": "We'll automatically review your entitlement and notify you if there are changes.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "va-dependency-indemnity-compensation",
+   "name_local": "Dependency and Indemnity Compensation (D.I.C.)",
+   "name_en": "Dependency and Indemnity Compensation (D.I.C.)",
+   "admin_level": "national",
+   "admin_area": null,
+   "funder": "U.S. Department of Veterans Affairs (VA)",
+   "category": "income_support",
+   "benefit_type": "cash_monthly",
+   "amount_min": null,
+   "amount_max": null,
+   "amount_currency": "USD",
+   "amount_period": "monthly",
+   "amount_note": "Tax-free monthly benefit; amount depends on the type of survivor",
+   "is_automatic": false,
+   "application_url": "https://www.va.gov/family-and-caregiver-benefits/survivor-compensation/dependency-indemnity-compensation/",
+   "application_channel": "online",
+   "deadline_type": "rolling",
+   "deadline_note": null,
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Submit Form 21P-534a, 21P-534EZ or 21P-535 via QuickSubmit, by mail, via accredited representative or at a VA regional office",
+     "url": "https://www.va.gov/family-and-caregiver-benefits/survivor-compensation/dependency-indemnity-compensation/"
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "Proof of relationship",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Death certificate",
+     "mandatory": true,
+     "note": null
+    }
+   ],
+   "eligibility": {
+    "statuses": [],
+    "age_min": null,
+    "age_max": null,
+    "income_annual_max": null,
+    "income_note": "Not income-tested for spouses and children; surviving parents must have income below specified limits",
+    "requires_children": false,
+    "nationality": "any",
+    "residency_months_min": null,
+    "housing_tenure": null,
+    "student_required": false,
+    "admin_areas": [],
+    "gender": "any"
+   },
+   "source_url": "https://www.va.gov/family-and-caregiver-benefits/survivor-compensation/dependency-indemnity-compensation/",
+   "source_snippet": "The amount you receive depends on the type of survivor you are.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "va-health-care",
+   "name_local": "VA Health Care",
+   "name_en": "VA Health Care",
+   "admin_level": "national",
+   "admin_area": null,
+   "funder": "U.S. Department of Veterans Affairs (VA)",
+   "category": "health",
+   "benefit_type": "in_kind",
+   "amount_min": null,
+   "amount_max": null,
+   "amount_currency": "USD",
+   "amount_period": "annual",
+   "amount_note": "Free care or copays depending on priority group (1 of 8) and income",
+   "is_automatic": false,
+   "application_url": "https://www.va.gov/health-care/apply/application/introduction",
+   "application_channel": "online",
+   "deadline_type": "rolling",
+   "deadline_note": null,
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Apply online (Form 10-10EZ), by phone or with an accredited representative",
+     "url": "https://www.va.gov/health-care/apply/application/introduction"
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "Military discharge papers (DD-214)",
+     "mandatory": false,
+     "note": null
+    }
+   ],
+   "eligibility": {
+    "statuses": [],
+    "age_min": null,
+    "age_max": null,
+    "income_annual_max": null,
+    "income_note": "Cost-sharing varies by priority group and income; no single ceiling",
+    "requires_children": false,
+    "nationality": "any",
+    "residency_months_min": null,
+    "housing_tenure": null,
+    "student_required": false,
+    "admin_areas": [],
+    "gender": "any"
+   },
+   "source_url": "https://www.va.gov/health-care/eligibility/",
+   "source_snippet": "Your priority group may affect how soon we sign you up for health care benefits.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "fema-individuals-and-households-program",
+   "name_local": "FEMA Individuals and Households Program (IHP)",
+   "name_en": "FEMA Individuals and Households Program (IHP)",
+   "admin_level": "national",
+   "admin_area": null,
+   "funder": "Federal Emergency Management Agency (FEMA)",
+   "category": "housing",
+   "benefit_type": "cash_one_off",
+   "amount_min": null,
+   "amount_max": null,
+   "amount_currency": "USD",
+   "amount_period": "one_off",
+   "amount_note": "Temporary housing, home repair or replacement, personal property, medical, dental, funeral and other needs after a declared disaster",
+   "is_automatic": false,
+   "application_url": "https://www.disasterassistance.gov/",
+   "application_channel": "online",
+   "deadline_type": "window",
+   "deadline_note": "Open only for disasters with a federal declaration; deadlines set per disaster",
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Apply at DisasterAssistance.gov, via the FEMA app, or call 1-800-621-3362",
+     "url": "https://www.disasterassistance.gov/"
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "Proof of identity",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Proof of occupancy/ownership",
+     "mandatory": true,
+     "note": null
+    }
+   ],
+   "eligibility": {
+    "statuses": [],
+    "age_min": null,
+    "age_max": null,
+    "income_annual_max": null,
+    "income_note": "Not income-tested; based on unmet disaster-caused needs after insurance. Citizens, non-citizen nationals and qualified aliens",
+    "requires_children": false,
+    "nationality": "citizen_or_pr",
+    "residency_months_min": null,
+    "housing_tenure": null,
+    "student_required": false,
+    "admin_areas": [],
+    "gender": "any"
+   },
+   "source_url": "https://www.fema.gov/assistance/individual/program",
+   "source_snippet": "IHP assistance is not a substitute for insurance and cannot compensate for all losses caused by a disaster.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "fdpir-food-distribution-indian-reservations",
+   "name_local": "Food Distribution Program on Indian Reservations (FDPIR)",
+   "name_en": "Food Distribution Program on Indian Reservations (FDPIR)",
+   "admin_level": "national",
+   "admin_area": null,
+   "funder": "USDA Food and Nutrition Service",
+   "category": "income_support",
+   "benefit_type": "in_kind",
+   "amount_min": null,
+   "amount_max": null,
+   "amount_currency": "USD",
+   "amount_period": "monthly",
+   "amount_note": "Monthly package of USDA Foods",
+   "is_automatic": false,
+   "application_url": "https://www.fns.usda.gov/fdpir/food-distribution-program-indian-reservations",
+   "application_channel": "in_person",
+   "deadline_type": "rolling",
+   "deadline_note": null,
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Contact your local FDPIR administering Tribal organization or state agency",
+     "url": "https://www.fns.usda.gov/fdpir/food-distribution-program-indian-reservations"
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "Proof of income",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Proof of identity/residence",
+     "mandatory": true,
+     "note": null
+    }
+   ],
+   "eligibility": {
+    "statuses": [],
+    "age_min": null,
+    "age_max": null,
+    "income_annual_max": null,
+    "income_note": "Income-tested; ceiling set by USDA and varies by household size (not stated on programme overview page)",
+    "requires_children": false,
+    "nationality": "any_resident",
+    "residency_months_min": null,
+    "housing_tenure": null,
+    "student_required": false,
+    "admin_areas": [],
+    "gender": "any"
+   },
+   "source_url": "https://www.fna.usda.gov/fdpir/food-distribution-program-indian-reservations",
+   "source_snippet": "The Food Distribution Program on Indian Reservations (FDPIR) provides USDA Foods to income-eligible households living on Indian reservations and to Native American households residing in designated areas near reservations or in Oklahoma.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "usda-section-504-home-repair",
+   "name_local": "USDA Section 504 Home Repair Loans and Grants",
+   "name_en": "USDA Section 504 Home Repair Loans and Grants",
+   "admin_level": "national",
+   "admin_area": null,
+   "funder": "USDA Rural Development",
+   "category": "housing",
+   "benefit_type": "cash_one_off",
+   "amount_min": null,
+   "amount_max": 10000,
+   "amount_currency": "USD",
+   "amount_period": "one_off",
+   "amount_note": "Loans up to $40,000 (1% fixed, 20 years); grants up to $10,000 for applicants 62 or older",
+   "is_automatic": false,
+   "application_url": "https://www.rd.usda.gov/programs-services/single-family-housing-programs/single-family-housing-repair-loans-grants",
+   "application_channel": "in_person",
+   "deadline_type": "rolling",
+   "deadline_note": null,
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Contact your local Rural Development office",
+     "url": "https://www.rd.usda.gov/contact-us/state-offices"
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "Form RD 410-4",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Form RD 3550-4 Employment and Asset Certification",
+     "mandatory": true,
+     "note": null
+    }
+   ],
+   "eligibility": {
+    "statuses": [],
+    "age_min": null,
+    "age_max": null,
+    "income_annual_max": null,
+    "income_note": "Household income cannot exceed county-specific low/very-low income limits",
+    "requires_children": false,
+    "nationality": "citizen_or_pr",
+    "residency_months_min": null,
+    "housing_tenure": "owner",
+    "student_required": false,
+    "admin_areas": [],
+    "gender": "any"
+   },
+   "source_url": "https://www.rd.usda.gov/programs-services/single-family-housing-programs/single-family-housing-repair-loans-grants",
+   "source_snippet": "Grants must be repaid if the property is sold in less than 3 years.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "ca-cal-grant",
+   "name_local": "Cal Grant",
+   "name_en": "Cal Grant",
+   "admin_level": "state",
+   "admin_area": "California",
+   "funder": "California Student Aid Commission",
+   "category": "education",
+   "benefit_type": "cash_one_off",
+   "amount_min": null,
+   "amount_max": null,
+   "amount_currency": "USD",
+   "amount_period": "annual",
+   "amount_note": "Free money for tuition and costs at eligible California colleges; amounts vary by type (A, B, C) and school",
+   "is_automatic": false,
+   "application_url": "https://www.csac.ca.gov/cal-grants",
+   "application_channel": "online",
+   "deadline_type": "annual",
+   "deadline_note": "Priority deadline March 2 (high school and transfer entitlement); September 2 for Community College Entitlement",
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Submit the FAFSA or California Dream Act Application",
+     "url": "https://www.csac.ca.gov/cal-grants"
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "GPA verification",
+     "mandatory": true,
+     "note": null
+    }
+   ],
+   "eligibility": {
+    "statuses": [
+     "student"
+    ],
+    "age_min": null,
+    "age_max": null,
+    "income_annual_max": null,
+    "income_note": "Income and asset ceilings apply but are not stated on the overview page; set by CSAC each year",
+    "requires_children": false,
+    "nationality": "any_resident",
+    "residency_months_min": null,
+    "housing_tenure": null,
+    "student_required": true,
+    "admin_areas": [
+     "California"
+    ],
+    "gender": "any"
+   },
+   "source_url": "https://www.csac.ca.gov/cal-grants",
+   "source_snippet": "The Cal Grant C program provides FREE MONEY to students pursuing an occupational or technical program.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "ca-nonrefundable-renters-credit",
+   "name_local": "California Nonrefundable Renter's Credit",
+   "name_en": "California Nonrefundable Renter's Credit",
+   "admin_level": "state",
+   "admin_area": "California",
+   "funder": "California Franchise Tax Board",
+   "category": "tax",
+   "benefit_type": "tax_credit",
+   "amount_min": 60,
+   "amount_max": 120,
+   "amount_currency": "USD",
+   "amount_period": "annual",
+   "amount_note": "$60 single or married/RDP filing separately; $120 head of household, married/RDP filing jointly or widow(er). Nonrefundable",
+   "is_automatic": false,
+   "application_url": "https://www.ftb.ca.gov/file/personal/credits/nonrefundable-renters-credit.html",
+   "application_channel": "online",
+   "deadline_type": "annual",
+   "deadline_note": "Claim on your California return (Form 540, line 46)",
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Claim the credit on Form 540, 540 2EZ or 540NR",
+     "url": "https://www.ftb.ca.gov/file/personal/credits/nonrefundable-renters-credit.html"
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "Rental records",
+     "mandatory": false,
+     "note": null
+    }
+   ],
+   "eligibility": {
+    "statuses": [],
+    "age_min": null,
+    "age_max": null,
+    "income_annual_max": 107987,
+    "income_note": "AGI limit $53,994 for single or married/RDP filing separately; $107,987 for married/RDP filing jointly, head of household or widow(er) (the higher ceiling is shown)",
+    "requires_children": false,
+    "nationality": "any_resident",
+    "residency_months_min": null,
+    "housing_tenure": "renting",
+    "student_required": false,
+    "admin_areas": [
+     "California"
+    ],
+    "gender": "any"
+   },
+   "source_url": "https://www.ftb.ca.gov/file/personal/credits/nonrefundable-renters-credit.html",
+   "source_snippet": "You may be able to claim this credit if you paid rent for at least 1/2 the year.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "ca-foster-youth-tax-credit",
+   "name_local": "California Foster Youth Tax Credit (FYTC)",
+   "name_en": "California Foster Youth Tax Credit (FYTC)",
+   "admin_level": "state",
+   "admin_area": "California",
+   "funder": "California Franchise Tax Board",
+   "category": "tax",
+   "benefit_type": "tax_credit",
+   "amount_min": null,
+   "amount_max": 1189,
+   "amount_currency": "USD",
+   "amount_period": "annual",
+   "amount_note": "Up to $1,189 per eligible individual; up to $2,378 if both taxpayer and spouse/RDP qualify",
+   "is_automatic": false,
+   "application_url": "https://www.ftb.ca.gov/file/personal/credits/foster-youth-tax-credit.html",
+   "application_channel": "online",
+   "deadline_type": "annual",
+   "deadline_note": "Claim by filing or amending a California return",
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "File or amend your California return and complete FTB 3514",
+     "url": "https://www.ftb.ca.gov/file/personal/credits/foster-youth-tax-credit.html"
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "Foster care verification",
+     "mandatory": true,
+     "note": null
+    }
+   ],
+   "eligibility": {
+    "statuses": [],
+    "age_min": 18,
+    "age_max": 25,
+    "income_annual_max": null,
+    "income_note": "Must qualify for the California Earned Income Tax Credit (CalEITC), which sets the income limit; ages 18-25 at year-end; in foster care at 13 or older",
+    "requires_children": false,
+    "nationality": "any_resident",
+    "residency_months_min": null,
+    "housing_tenure": null,
+    "student_required": false,
+    "admin_areas": [
+     "California"
+    ],
+    "gender": "any"
+   },
+   "source_url": "https://www.ftb.ca.gov/file/personal/credits/foster-youth-tax-credit.html",
+   "source_snippet": "FYTC may provide you with cash back or reduce any tax you owe.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "ca-paid-family-leave",
+   "name_local": "California Paid Family Leave (PFL)",
+   "name_en": "California Paid Family Leave (PFL)",
+   "admin_level": "state",
+   "admin_area": "California",
+   "funder": "California Employment Development Department (EDD)",
+   "category": "family",
+   "benefit_type": "cash_monthly",
+   "amount_min": 50,
+   "amount_max": 1765,
+   "amount_currency": "USD",
+   "amount_period": "weekly",
+   "amount_note": "Up to 8 weeks in 12 months; weekly benefit $50 minimum to $1,765 maximum (2026). No job protection",
+   "is_automatic": false,
+   "application_url": "https://edd.ca.gov/en/disability/paid-family-leave/",
+   "application_channel": "online",
+   "deadline_type": "rolling",
+   "deadline_note": null,
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Apply through myEDD (SDI Online)",
+     "url": "https://edd.ca.gov/en/disability/paid-family-leave/"
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "Medical certification or birth/placement proof",
+     "mandatory": true,
+     "note": null
+    }
+   ],
+   "eligibility": {
+    "statuses": [
+     "employee"
+    ],
+    "age_min": null,
+    "age_max": null,
+    "income_annual_max": null,
+    "income_note": "Not means-tested; must have earned at least $300 and paid into SDI in the last 18 months",
+    "requires_children": false,
+    "nationality": "any_resident",
+    "residency_months_min": null,
+    "housing_tenure": null,
+    "student_required": false,
+    "admin_areas": [
+     "California"
+    ],
+    "gender": "any"
+   },
+   "source_url": "https://edd.ca.gov/en/disability/paid-family-leave/",
+   "source_snippet": "PFL provides benefit payments but not job protection.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "ca-state-disability-insurance",
+   "name_local": "California State Disability Insurance (SDI)",
+   "name_en": "California State Disability Insurance (SDI)",
+   "admin_level": "state",
+   "admin_area": "California",
+   "funder": "California Employment Development Department (EDD)",
+   "category": "income_support",
+   "benefit_type": "cash_monthly",
+   "amount_min": null,
+   "amount_max": null,
+   "amount_currency": "USD",
+   "amount_period": "weekly",
+   "amount_note": "Short-term wage replacement for non-work-related illness, injury, pregnancy or childbirth; amount based on past wages",
+   "is_automatic": false,
+   "application_url": "https://edd.ca.gov/en/disability/",
+   "application_channel": "online",
+   "deadline_type": "rolling",
+   "deadline_note": null,
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "File through your SDI Online account",
+     "url": "https://edd.ca.gov/en/disability/"
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "Medical certification",
+     "mandatory": true,
+     "note": null
+    }
+   ],
+   "eligibility": {
+    "statuses": [
+     "employee"
+    ],
+    "age_min": null,
+    "age_max": null,
+    "income_annual_max": null,
+    "income_note": "Not means-tested",
+    "requires_children": false,
+    "nationality": "any_resident",
+    "residency_months_min": null,
+    "housing_tenure": null,
+    "student_required": false,
+    "admin_areas": [
+     "California"
+    ],
+    "gender": "any"
+   },
+   "source_url": "https://edd.ca.gov/en/disability/",
+   "source_snippet": "The California State Disability Insurance (SDI) program provides short-term Disability Insurance (DI) and Paid Family Leave (PFL) wage replacement benefits to eligible workers who need time off work.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "ca-lifeline-phone-broadband-discount",
+   "name_local": "California LifeLine",
+   "name_en": "California LifeLine",
+   "admin_level": "state",
+   "admin_area": "California",
+   "funder": "California Public Utilities Commission (CPUC)",
+   "category": "income_support",
+   "benefit_type": "discount",
+   "amount_min": null,
+   "amount_max": 30,
+   "amount_currency": "USD",
+   "amount_period": "monthly",
+   "amount_note": "Up to $20/month standalone broadband; up to $30/month bundled broadband and voice; discounts also on home and cell phone service. One per household",
+   "is_automatic": false,
+   "application_url": "https://www.californialifeline.com/",
+   "application_channel": "online",
+   "deadline_type": "rolling",
+   "deadline_note": null,
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Call a participating phone company and ask for the California LifeLine discount",
+     "url": "https://www.californialifeline.com/"
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "Proof of income or programme participation",
+     "mandatory": true,
+     "note": null
+    }
+   ],
+   "eligibility": {
+    "statuses": [],
+    "age_min": null,
+    "age_max": null,
+    "income_annual_max": null,
+    "income_note": "Income- or programme-based eligibility; thresholds are on the California LifeLine eligibility page and were not stated on the programme page",
+    "requires_children": false,
+    "nationality": "any_resident",
+    "residency_months_min": null,
+    "housing_tenure": null,
+    "student_required": false,
+    "admin_areas": [
+     "California"
+    ],
+    "gender": "any"
+   },
+   "source_url": "https://www.cpuc.ca.gov/consumer-support/financial-assistance-savings-and-discounts/lifeline",
+   "source_snippet": "The California LifeLine Program provides discounts on home phone and cell phone services to qualified households.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "ca-in-home-supportive-services",
+   "name_local": "In-Home Supportive Services (IHSS)",
+   "name_en": "In-Home Supportive Services (IHSS)",
+   "admin_level": "state",
+   "admin_area": "California",
+   "funder": "California Department of Social Services",
+   "category": "health",
+   "benefit_type": "in_kind",
+   "amount_min": null,
+   "amount_max": null,
+   "amount_currency": "USD",
+   "amount_period": "monthly",
+   "amount_note": "Paid in-home help for aged, blind and disabled people; hours authorised after a county assessment",
+   "is_automatic": false,
+   "application_url": "https://www.cdss.ca.gov/in-home-supportive-services",
+   "application_channel": "in_person",
+   "deadline_type": "rolling",
+   "deadline_note": null,
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Complete the SOC 295 application and submit to your county IHSS office",
+     "url": "https://www.cdss.ca.gov/in-home-supportive-services"
+    },
+    {
+     "step": 2,
+     "detail": "County social worker interviews you at home",
+     "url": null
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "Health Care Certification form",
+     "mandatory": true,
+     "note": null
+    }
+   ],
+   "eligibility": {
+    "statuses": [],
+    "age_min": null,
+    "age_max": null,
+    "income_annual_max": null,
+    "income_note": "Requires Medi-Cal eligibility; Medi-Cal income rules apply",
+    "requires_children": false,
+    "nationality": "any_resident",
+    "residency_months_min": null,
+    "housing_tenure": null,
+    "student_required": false,
+    "admin_areas": [
+     "California"
+    ],
+    "gender": "any"
+   },
+   "source_url": "https://www.cdss.ca.gov/in-home-supportive-services",
+   "source_snippet": "A county social worker will interview you at your home to determine your eligibility and need for IHSS.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "ca-covered-california-financial-help",
+   "name_local": "Covered California Financial Help (incl. California Premium Subsidy)",
+   "name_en": "Covered California Financial Help (incl. California Premium Subsidy)",
+   "admin_level": "state",
+   "admin_area": "California",
+   "funder": "Covered California",
+   "category": "health",
+   "benefit_type": "tax_credit",
+   "amount_min": null,
+   "amount_max": null,
+   "amount_currency": "USD",
+   "amount_period": "monthly",
+   "amount_note": "Advance premium tax credit (100%-400% FPL), cost-sharing reductions (250% FPL or less) and California Premium Subsidy for those who qualify for APTC",
+   "is_automatic": false,
+   "application_url": "https://www.coveredca.com/support/financial-help/",
+   "application_channel": "online",
+   "deadline_type": "rolling",
+   "deadline_note": null,
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Apply at CoveredCA.com and report household income",
+     "url": "https://www.coveredca.com/support/financial-help/"
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "Proof of income",
+     "mandatory": true,
+     "note": null
+    }
+   ],
+   "eligibility": {
+    "statuses": [],
+    "age_min": null,
+    "age_max": null,
+    "income_annual_max": null,
+    "income_note": "APTC for 100%-400% of FPL; cost-sharing reductions at 250% FPL or less; dollar ceiling depends on household size, so not annualised",
+    "requires_children": false,
+    "nationality": "any_resident",
+    "residency_months_min": null,
+    "housing_tenure": null,
+    "student_required": false,
+    "admin_areas": [
+     "California"
+    ],
+    "gender": "any"
+   },
+   "source_url": "https://www.coveredca.com/support/financial-help/",
+   "source_snippet": "In general, the lower your income, the more help you get.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "ca-child-and-dependent-care-expenses-credit",
+   "name_local": "California Child and Dependent Care Expenses Credit",
+   "name_en": "California Child and Dependent Care Expenses Credit",
+   "admin_level": "state",
+   "admin_area": "California",
+   "funder": "California Franchise Tax Board",
+   "category": "tax",
+   "benefit_type": "tax_credit",
+   "amount_min": null,
+   "amount_max": null,
+   "amount_currency": "USD",
+   "amount_period": "annual",
+   "amount_note": "Percentage of up to $3,000 (one person) or $6,000 (two or more) of expenses. Nonrefundable",
+   "is_automatic": false,
+   "application_url": "https://www.ftb.ca.gov/file/personal/credits/child-and-dependent-care-expenses-credit.html",
+   "application_channel": "online",
+   "deadline_type": "annual",
+   "deadline_note": "Claim on your California return (Form FTB 3506)",
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Attach Form FTB 3506 to your California return",
+     "url": "https://www.ftb.ca.gov/file/personal/credits/child-and-dependent-care-expenses-credit.html"
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "Care provider details",
+     "mandatory": true,
+     "note": null
+    }
+   ],
+   "eligibility": {
+    "statuses": [
+     "employee",
+     "self_employed",
+     "parent"
+    ],
+    "age_min": null,
+    "age_max": null,
+    "income_annual_max": 100000,
+    "income_note": "Federal AGI must be $100,000 or less",
+    "requires_children": false,
+    "nationality": "any_resident",
+    "residency_months_min": null,
+    "housing_tenure": null,
+    "student_required": false,
+    "admin_areas": [
+     "California"
+    ],
+    "gender": "any"
+   },
+   "source_url": "https://www.ftb.ca.gov/file/personal/credits/child-and-dependent-care-expenses-credit.html",
+   "source_snippet": "You must have earned income during the year.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "ny-earned-income-credit",
+   "name_local": "New York State Earned Income Credit",
+   "name_en": "New York State Earned Income Credit",
+   "admin_level": "state",
+   "admin_area": "New York",
+   "funder": "NYS Department of Taxation and Finance",
+   "category": "tax",
+   "benefit_type": "tax_credit",
+   "amount_min": null,
+   "amount_max": null,
+   "amount_currency": "USD",
+   "amount_period": "annual",
+   "amount_note": "Generally 30% of your allowable federal earned income credit, reduced by any household credit",
+   "is_automatic": false,
+   "application_url": "https://www.tax.ny.gov/pit/credits/earned_income_credit.htm",
+   "application_channel": "online",
+   "deadline_type": "annual",
+   "deadline_note": "Claim on your NY return with Form IT-215",
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Claim federal EITC, then complete Form IT-215",
+     "url": "https://www.tax.ny.gov/pit/credits/earned_income_credit.htm"
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "Valid SSN for you and each qualifying child",
+     "mandatory": true,
+     "note": null
+    }
+   ],
+   "eligibility": {
+    "statuses": [],
+    "age_min": null,
+    "age_max": null,
+    "income_annual_max": null,
+    "income_note": "Income limit is the federal EITC limit; NY credit is 30% of the federal credit",
+    "requires_children": false,
+    "nationality": "any_resident",
+    "residency_months_min": null,
+    "housing_tenure": null,
+    "student_required": false,
+    "admin_areas": [
+     "New York"
+    ],
+    "gender": "any"
+   },
+   "source_url": "https://www.tax.ny.gov/pit/credits/earned_income_credit.htm",
+   "source_snippet": "The credit is generally equal to 30% of your allowable federal earned income credit, reduced by the amount of any household credit.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "ny-real-property-tax-credit",
+   "name_local": "New York Real Property Tax Credit (IT-214)",
+   "name_en": "New York Real Property Tax Credit (IT-214)",
+   "admin_level": "state",
+   "admin_area": "New York",
+   "funder": "NYS Department of Taxation and Finance",
+   "category": "tax",
+   "benefit_type": "tax_credit",
+   "amount_min": 75,
+   "amount_max": 375,
+   "amount_currency": "USD",
+   "amount_period": "annual",
+   "amount_note": "Up to $75 if everyone is under 65; up to $375 if applicant, spouse or dependent is 65 or older; refundable",
+   "is_automatic": false,
+   "application_url": "https://www.tax.ny.gov/pit/credits/real_property_tax_credit.htm",
+   "application_channel": "online",
+   "deadline_type": "annual",
+   "deadline_note": "Claim with Form IT-214 (can be filed even if not required to file a return)",
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Complete and file Form IT-214",
+     "url": "https://www.tax.ny.gov/pit/credits/real_property_tax_credit.htm"
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "Rent or property tax records",
+     "mandatory": true,
+     "note": null
+    }
+   ],
+   "eligibility": {
+    "statuses": [],
+    "age_min": null,
+    "age_max": null,
+    "income_annual_max": 18000,
+    "income_note": "Federal AGI of $18,000 or less",
+    "requires_children": false,
+    "nationality": "any_resident",
+    "residency_months_min": null,
+    "housing_tenure": null,
+    "student_required": false,
+    "admin_areas": [
+     "New York"
+    ],
+    "gender": "any"
+   },
+   "source_url": "https://www.tax.ny.gov/pit/credits/real_property_tax_credit.htm",
+   "source_snippet": "If your credit is more than the taxes you owe, you can claim a refund.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "ny-household-credit",
+   "name_local": "New York State Household Credit",
+   "name_en": "New York State Household Credit",
+   "admin_level": "state",
+   "admin_area": "New York",
+   "funder": "NYS Department of Taxation and Finance",
+   "category": "tax",
+   "benefit_type": "tax_credit",
+   "amount_min": null,
+   "amount_max": null,
+   "amount_currency": "USD",
+   "amount_period": "annual",
+   "amount_note": "Amount from household credit tables in the IT-201 instructions; nonrefundable",
+   "is_automatic": false,
+   "application_url": "https://www.tax.ny.gov/pit/credits/household_credit.htm",
+   "application_channel": "online",
+   "deadline_type": "annual",
+   "deadline_note": "Claim on Form IT-201 or IT-203",
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Claim on Form IT-201 or IT-203",
+     "url": "https://www.tax.ny.gov/pit/credits/household_credit.htm"
+    }
+   ],
+   "documents_required": [],
+   "eligibility": {
+    "statuses": [],
+    "age_min": null,
+    "age_max": null,
+    "income_annual_max": 32000,
+    "income_note": "Federal AGI of $28,000 or less if single; $32,000 or less for married filing jointly, surviving spouse or head of household (higher ceiling shown)",
+    "requires_children": false,
+    "nationality": "any_resident",
+    "residency_months_min": null,
+    "housing_tenure": null,
+    "student_required": false,
+    "admin_areas": [
+     "New York"
+    ],
+    "gender": "any"
+   },
+   "source_url": "https://www.tax.ny.gov/pit/credits/household_credit.htm",
+   "source_snippet": "You are entitled to this nonrefundable credit if you: cannot be claimed as a dependent on another individual's federal income tax return, and meet one of the conditions in the table below:",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "ny-child-and-dependent-care-credit",
+   "name_local": "New York Child and Dependent Care Credit (IT-216)",
+   "name_en": "New York Child and Dependent Care Credit (IT-216)",
+   "admin_level": "state",
+   "admin_area": "New York",
+   "funder": "NYS Department of Taxation and Finance",
+   "category": "tax",
+   "benefit_type": "tax_credit",
+   "amount_min": null,
+   "amount_max": null,
+   "amount_currency": "USD",
+   "amount_period": "annual",
+   "amount_note": "Depends on NY AGI, number of qualifying persons and expenses; fully refundable for full-year residents",
+   "is_automatic": false,
+   "application_url": "https://www.tax.ny.gov/pit/credits/child_and_dependent_care_credit.htm",
+   "application_channel": "online",
+   "deadline_type": "annual",
+   "deadline_note": "Claim on your NY return with Form IT-216",
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Complete Form IT-216",
+     "url": "https://www.tax.ny.gov/pit/credits/child_and_dependent_care_credit.htm"
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "Care provider details",
+     "mandatory": true,
+     "note": null
+    }
+   ],
+   "eligibility": {
+    "statuses": [
+     "employee",
+     "self_employed",
+     "parent"
+    ],
+    "age_min": null,
+    "age_max": null,
+    "income_annual_max": null,
+    "income_note": "No fixed ceiling stated; must qualify for the federal credit",
+    "requires_children": false,
+    "nationality": "any_resident",
+    "residency_months_min": null,
+    "housing_tenure": null,
+    "student_required": false,
+    "admin_areas": [
+     "New York"
+    ],
+    "gender": "any"
+   },
+   "source_url": "https://www.tax.ny.gov/pit/credits/child_and_dependent_care_credit.htm",
+   "source_snippet": "You are entitled to this credit if you qualified to claim the federal child and dependent care credit (whether you claimed the federal credit or not).",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "ny-paid-family-leave",
+   "name_local": "New York Paid Family Leave",
+   "name_en": "New York Paid Family Leave",
+   "admin_level": "state",
+   "admin_area": "New York",
+   "funder": "NYS Paid Family Leave",
+   "category": "family",
+   "benefit_type": "cash_monthly",
+   "amount_min": null,
+   "amount_max": 1228.53,
+   "amount_currency": "USD",
+   "amount_period": "weekly",
+   "amount_note": "2026 maximum weekly benefit $1,228.53; includes job protection and continued health insurance",
+   "is_automatic": false,
+   "application_url": "https://paidfamilyleave.ny.gov/",
+   "application_channel": "online",
+   "deadline_type": "rolling",
+   "deadline_note": null,
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Start a claim via the Employees section or call (844) 337-6303",
+     "url": "https://paidfamilyleave.ny.gov/"
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "Documentation of bonding, care or military event",
+     "mandatory": true,
+     "note": null
+    }
+   ],
+   "eligibility": {
+    "statuses": [
+     "employee"
+    ],
+    "age_min": null,
+    "age_max": null,
+    "income_annual_max": null,
+    "income_note": "Not means-tested",
+    "requires_children": false,
+    "nationality": "any_resident",
+    "residency_months_min": null,
+    "housing_tenure": null,
+    "student_required": false,
+    "admin_areas": [
+     "New York"
+    ],
+    "gender": "any"
+   },
+   "source_url": "https://paidfamilyleave.ny.gov/",
+   "source_snippet": "Paid Family Leave also provides: job protection, continued health insurance, and protection from discrimination or retaliation.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "ny-epic-senior-prescription-coverage",
+   "name_local": "Elderly Pharmaceutical Insurance Coverage (EPIC)",
+   "name_en": "Elderly Pharmaceutical Insurance Coverage (EPIC)",
+   "admin_level": "state",
+   "admin_area": "New York",
+   "funder": "NYS Department of Health",
+   "category": "health",
+   "benefit_type": "discount",
+   "amount_min": null,
+   "amount_max": null,
+   "amount_currency": "USD",
+   "amount_period": "annual",
+   "amount_note": "Supplements Medicare Part D drug costs; Fee Plan or Deductible Plan",
+   "is_automatic": false,
+   "application_url": "https://www.health.ny.gov/health_care/epic/",
+   "application_channel": "post",
+   "deadline_type": "rolling",
+   "deadline_note": null,
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Complete the application and mail or fax it to EPIC",
+     "url": "https://www.health.ny.gov/health_care/epic/"
+    }
+   ],
+   "documents_required": [],
+   "eligibility": {
+    "statuses": [
+     "retired"
+    ],
+    "age_min": 65,
+    "age_max": null,
+    "income_annual_max": 100000,
+    "income_note": "Fee Plan up to $20,000 single / $26,000 married; Deductible Plan $20,001-$75,000 single / $26,001-$100,000 married (highest ceiling shown)",
+    "requires_children": false,
+    "nationality": "any_resident",
+    "residency_months_min": null,
+    "housing_tenure": null,
+    "student_required": false,
+    "admin_areas": [
+     "New York"
+    ],
+    "gender": "any"
+   },
+   "source_url": "https://www.health.ny.gov/health_care/epic/",
+   "source_snippet": "EPIC helps more than 325,000 income-eligible seniors aged 65 and older to supplement their out-of-pocket Medicare Part D drug plan costs.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "ny-temporary-assistance",
+   "name_local": "New York Temporary Assistance (Family Assistance and Safety Net)",
+   "name_en": "New York Temporary Assistance (Family Assistance and Safety Net)",
+   "admin_level": "state",
+   "admin_area": "New York",
+   "funder": "NYS Office of Temporary and Disability Assistance (OTDA)",
+   "category": "income_support",
+   "benefit_type": "cash_monthly",
+   "amount_min": null,
+   "amount_max": null,
+   "amount_currency": "USD",
+   "amount_period": "monthly",
+   "amount_note": "Cash assistance; amounts set by household size and district; includes Emergency Assistance",
+   "is_automatic": false,
+   "application_url": "https://otda.ny.gov/programs/temporary-assistance/",
+   "application_channel": "in_person",
+   "deadline_type": "rolling",
+   "deadline_note": null,
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Contact your local department of social services or call OTDA hotline 1-800-342-3009",
+     "url": "https://otda.ny.gov/programs/temporary-assistance/"
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "Proof of identity and income",
+     "mandatory": true,
+     "note": null
+    }
+   ],
+   "eligibility": {
+    "statuses": [],
+    "age_min": null,
+    "age_max": null,
+    "income_annual_max": null,
+    "income_note": "Income- and resource-tested; limits vary by household size and district",
+    "requires_children": false,
+    "nationality": "any_resident",
+    "residency_months_min": null,
+    "housing_tenure": null,
+    "student_required": false,
+    "admin_areas": [
+     "New York"
+    ],
+    "gender": "any"
+   },
+   "source_url": "https://otda.ny.gov/programs/temporary-assistance/",
+   "source_snippet": "If you are unable to work, can't find a job, or your job does not pay enough, TA may be able to help you pay for your expenses.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "new-jersey-anchor-property-tax-relief",
+   "name_local": "ANCHOR Property Tax Relief (New Jersey)",
+   "name_en": "ANCHOR Property Tax Relief (New Jersey)",
+   "admin_level": "state",
+   "admin_area": "New Jersey",
+   "funder": "New Jersey Division of Taxation",
+   "category": "housing",
+   "benefit_type": "cash_one_off",
+   "amount_min": null,
+   "amount_max": null,
+   "amount_currency": "USD",
+   "amount_period": "annual",
+   "amount_note": "Annual property tax relief payment for NJ homeowners and renters; amount is set by the State and not stated on the programme page",
+   "is_automatic": false,
+   "application_url": "https://propertytaxreliefapp.nj.gov/",
+   "application_channel": "online",
+   "deadline_type": "window",
+   "deadline_note": "Deadline for the 2025 application is November 2, 2026; the State pre-filed applications for most homeowners under 65 and all eligible renters (letters sent August 10, 2026)",
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Check for the State's confirmation letter (sent August 10, 2026)",
+     "url": "https://www.nj.gov/treasury/taxation/anchor/"
+    },
+    {
+     "step": 2,
+     "detail": "If none, or if 65+/on disability benefits, file Form PAS-1 online",
+     "url": "https://www.nj.gov/treasury/taxation/anchor/"
+    },
+    {
+     "step": 3,
+     "detail": "Receive the benefit as payment after approval",
+     "url": null
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "Proof of NJ primary residence on October 1, 2025",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "NJ-1040 gross income information",
+     "mandatory": true,
+     "note": null
+    }
+   ],
+   "eligibility": {
+    "statuses": [],
+    "age_min": null,
+    "age_max": null,
+    "income_annual_max": 250000,
+    "income_note": "Homeowners: NJ gross income cannot exceed $250,000. Renters: NJ gross income cannot exceed $150,000 (ceiling used here is the higher homeowner limit). Income is taken from line 29 of NJ-1040.",
+    "requires_children": false,
+    "nationality": "any_resident",
+    "residency_months_min": null,
+    "housing_tenure": null,
+    "student_required": false,
+    "admin_areas": [
+     "New Jersey"
+    ],
+    "gender": "any"
+   },
+   "source_url": "https://www.nj.gov/treasury/taxation/anchor/",
+   "source_snippet": "This program offers property tax relief to New Jersey residents who own or rent property in New Jersey as their main home and meet certain income limits.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "new-jersey-earned-income-tax-credit",
+   "name_local": "New Jersey Earned Income Tax Credit (NJEITC)",
+   "name_en": "New Jersey Earned Income Tax Credit (NJEITC)",
+   "admin_level": "state",
+   "admin_area": "New Jersey",
+   "funder": "New Jersey Division of Taxation",
+   "category": "tax",
+   "benefit_type": "tax_credit",
+   "amount_min": 260,
+   "amount_max": 3218,
+   "amount_currency": "USD",
+   "amount_period": "annual",
+   "amount_note": "Tax Year 2025 maximum: $3,218 with 3+ children, $2,861 with 2, $1,731 with 1, $260 with none (age 18+)",
+   "is_automatic": false,
+   "application_url": "https://www.nj.gov/treasury/taxation/eitc/knoweitc.shtml",
+   "application_channel": "online",
+   "deadline_type": "annual",
+   "deadline_note": "Claimed on Form NJ-1040 for the tax year",
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Calculate your federal EITC",
+     "url": "https://www.nj.gov/treasury/taxation/eitc/knoweitc.shtml"
+    },
+    {
+     "step": 2,
+     "detail": "File Form NJ-1040 and claim the NJEITC",
+     "url": null
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "Federal tax return",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Valid SSN for you, spouse and dependents",
+     "mandatory": true,
+     "note": null
+    }
+   ],
+   "eligibility": {
+    "statuses": [
+     "employee",
+     "self_employed"
+    ],
+    "age_min": null,
+    "age_max": null,
+    "income_annual_max": 68675,
+    "income_note": "Follows federal EITC income limits for Tax Year 2025: single/HoH up to $19,104 (0 children), $50,434 (1), $57,310 (2), $61,555 (3+); married filing jointly up to $26,214, $57,554, $64,430, $68,675. Investment income must not exceed $11,950.",
+    "requires_children": false,
+    "nationality": "any_resident",
+    "residency_months_min": null,
+    "housing_tenure": null,
+    "student_required": false,
+    "admin_areas": [
+     "New Jersey"
+    ],
+    "gender": "any"
+   },
+   "source_url": "https://www.nj.gov/treasury/taxation/eitc/knoweitc.shtml",
+   "source_snippet": "You are eligible for an NJEITC only if you claim and are allowed a federal EITC.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "new-jersey-child-tax-credit",
+   "name_local": "New Jersey Child Tax Credit",
+   "name_en": "New Jersey Child Tax Credit",
+   "admin_level": "state",
+   "admin_area": "New Jersey",
+   "funder": "New Jersey Division of Taxation",
+   "category": "family",
+   "benefit_type": "tax_credit",
+   "amount_min": 200,
+   "amount_max": 1000,
+   "amount_currency": "USD",
+   "amount_period": "annual",
+   "amount_note": "Refundable credit per dependent child age 5 or younger: $1,000 (income up to $30,000), $800, $600, $400, $200 (income $60,001-$80,000)",
+   "is_automatic": false,
+   "application_url": "https://www.nj.gov/treasury/taxation/individuals/childtaxcredit.shtml",
+   "application_channel": "online",
+   "deadline_type": "annual",
+   "deadline_note": "Claimed on Form NJ-1040 (or SimpleFile) for the tax year",
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Confirm the child is age 5 or younger at year end and claimed as a federal dependent",
+     "url": null
+    },
+    {
+     "step": 2,
+     "detail": "File Form NJ-1040 electronically or use SimpleFile",
+     "url": "https://www.nj.gov/treasury/taxation/simplefile/dfd/"
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "SSN or ITIN for the child",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Federal return / dependent information",
+     "mandatory": true,
+     "note": null
+    }
+   ],
+   "eligibility": {
+    "statuses": [],
+    "age_min": null,
+    "age_max": null,
+    "income_annual_max": 80000,
+    "income_note": "Taxable income must be $80,000 or less; credit steps down from $1,000 (<= $30,000) to $200 ($60,001-$80,000). Married filing separately cannot claim.",
+    "requires_children": true,
+    "nationality": "any_resident",
+    "residency_months_min": null,
+    "housing_tenure": null,
+    "student_required": false,
+    "admin_areas": [
+     "New Jersey"
+    ],
+    "gender": "any"
+   },
+   "source_url": "https://www.nj.gov/treasury/taxation/individuals/childtaxcredit.shtml",
+   "source_snippet": "The credit amount can be up to $1,000 for each dependent child age 5 or younger that is claimed on Form NJ-1040.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "new-jersey-senior-freeze-property-tax-reimbursement",
+   "name_local": "Senior Freeze (Property Tax Reimbursement) (New Jersey)",
+   "name_en": "Senior Freeze (Property Tax Reimbursement) (New Jersey)",
+   "admin_level": "state",
+   "admin_area": "New Jersey",
+   "funder": "New Jersey Division of Taxation",
+   "category": "housing",
+   "benefit_type": "cash_one_off",
+   "amount_min": null,
+   "amount_max": null,
+   "amount_currency": "USD",
+   "amount_period": "annual",
+   "amount_note": "Reimbursement amount is calculated by the NJ Division of Taxation; not stated on the eligibility page",
+   "is_automatic": false,
+   "application_url": "https://www.nj.gov/treasury/taxation/ptr/",
+   "application_channel": "online",
+   "deadline_type": "window",
+   "deadline_note": "2025 applications use the single Form PAS-1 application, deadline November 2, 2026 (per ANCHOR page)",
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "File the combined Application for Property Tax Relief (Form PAS-1)",
+     "url": "https://www.nj.gov/treasury/taxation/ptr/"
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "Proof of age or disability benefit",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Proof of ownership and residence since December 31, 2022",
+     "mandatory": true,
+     "note": null
+    }
+   ],
+   "eligibility": {
+    "statuses": [],
+    "age_min": 65,
+    "age_max": null,
+    "income_annual_max": 172475,
+    "income_note": "2025 income must be $172,475 or less (2024: $168,268 or less); combined if married or in a civil union. Must be 65+ (or receiving federal Social Security/Railroad Retirement disability benefits) on December 31, 2025, and have owned and occupied the home since December 31, 2022 or earlier.",
+    "requires_children": false,
+    "nationality": "any_resident",
+    "residency_months_min": null,
+    "housing_tenure": "owner",
+    "student_required": false,
+    "admin_areas": [
+     "New Jersey"
+    ],
+    "gender": "any"
+   },
+   "source_url": "https://www.nj.gov/treasury/taxation/ptr/eligibility.shtml",
+   "source_snippet": "Your total annual income (combined if you were married or in a civil union and lived in the same home) was: 2024 — $168,268 or less; and 2025 — $172,475 or less",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "new-jersey-stay-nj-senior-property-tax-credit",
+   "name_local": "Stay NJ (New Jersey)",
+   "name_en": "Stay NJ (New Jersey)",
+   "admin_level": "state",
+   "admin_area": "New Jersey",
+   "funder": "New Jersey Division of Taxation",
+   "category": "housing",
+   "benefit_type": "cash_one_off",
+   "amount_min": null,
+   "amount_max": 6500,
+   "amount_currency": "USD",
+   "amount_period": "annual",
+   "amount_note": "Up to $6,500 (income $0-$100,000), $5,000 ($100,000.01-$150,000) or $4,000 ($150,000.01-$200,000); paid in quarterly instalments, 2025 payments in February and May 2027",
+   "is_automatic": false,
+   "application_url": "https://www.nj.gov/treasury/taxation/staynj/index.shtml",
+   "application_channel": "online",
+   "deadline_type": "window",
+   "deadline_note": "Applications for the 2025 tax year are due November 2, 2026",
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "File Form PAS-1 online or by paper to claim Senior Freeze, ANCHOR and Stay NJ together",
+     "url": "https://www.nj.gov/treasury/taxation/staynj/index.shtml"
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "Proof of age 65+",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Property tax records for the home owned and lived in all of 2025",
+     "mandatory": true,
+     "note": null
+    }
+   ],
+   "eligibility": {
+    "statuses": [],
+    "age_min": 65,
+    "age_max": null,
+    "income_annual_max": 200000,
+    "income_note": "Income must not exceed $200,000. Renters and mobile home owners cannot participate.",
+    "requires_children": false,
+    "nationality": "any_resident",
+    "residency_months_min": null,
+    "housing_tenure": "owner",
+    "student_required": false,
+    "admin_areas": [
+     "New Jersey"
+    ],
+    "gender": "any"
+   },
+   "source_url": "https://www.nj.gov/treasury/taxation/staynj/index.shtml",
+   "source_snippet": "Form PAS-1 to claim benefits from Senior Freeze, ANCHOR, and the Stay NJ programs",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "new-jersey-universal-service-fund-usf",
+   "name_local": "Universal Service Fund (USF) Energy Bill Assistance (New Jersey)",
+   "name_en": "Universal Service Fund (USF) Energy Bill Assistance (New Jersey)",
+   "admin_level": "state",
+   "admin_area": "New Jersey",
+   "funder": "NJ Board of Public Utilities / Dept. of Community Affairs",
+   "category": "energy",
+   "benefit_type": "discount",
+   "amount_min": null,
+   "amount_max": 1800,
+   "amount_currency": "USD",
+   "amount_period": "annual",
+   "amount_note": "Credit capped at $1,800 for electric and gas combined; goal is that eligible customers pay no more than 6% of annual income for gas and electric",
+   "is_automatic": false,
+   "application_url": "https://dcaid.dca.nj.gov/",
+   "application_channel": "online",
+   "deadline_type": "rolling",
+   "deadline_note": "Joint USF and LIHEAP application; call 1-800-510-3102 for local agency",
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Find your local application agency (1-800-510-3102) or apply via DCAid",
+     "url": "https://dcaid.dca.nj.gov/"
+    },
+    {
+     "step": 2,
+     "detail": "Submit a joint USF and LIHEAP application",
+     "url": null
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "Proof of income",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Electric or gas bill in your name",
+     "mandatory": true,
+     "note": null
+    }
+   ],
+   "eligibility": {
+    "statuses": [],
+    "age_min": null,
+    "age_max": null,
+    "income_annual_max": 57750,
+    "income_note": "Income at or below 175% of the Federal Poverty Level. Annual figure derived for a family of four: NJ FamilyCare page states 138% FPL = $3,795/month (2026), so 100% FPL = $33,000/year and 175% = $57,750; limit rises with household size.",
+    "requires_children": false,
+    "nationality": "any_resident",
+    "residency_months_min": null,
+    "housing_tenure": null,
+    "student_required": false,
+    "admin_areas": [
+     "New Jersey"
+    ],
+    "gender": "any"
+   },
+   "source_url": "https://www.nj.gov/bpu/residential/assistance/usf.html",
+   "source_snippet": "Households with income equal to or less than 175% of the Federal Poverty Level are income eligible.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "new-jersey-familycare-adults",
+   "name_local": "NJ FamilyCare for Adults",
+   "name_en": "NJ FamilyCare for Adults",
+   "admin_level": "state",
+   "admin_area": "New Jersey",
+   "funder": "NJ Division of Medical Assistance and Health Services",
+   "category": "health",
+   "benefit_type": "in_kind",
+   "amount_min": null,
+   "amount_max": null,
+   "amount_currency": "USD",
+   "amount_period": "monthly",
+   "amount_note": "Comprehensive Medicaid coverage; cost and plan details set by NJ FamilyCare",
+   "is_automatic": false,
+   "application_url": "https://www.nj.gov/humanservices/dmahs/individuals-families/familycare/adults/",
+   "application_channel": "online",
+   "deadline_type": "rolling",
+   "deadline_note": null,
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Check income and immigration rules on the NJ FamilyCare adults page",
+     "url": "https://www.nj.gov/humanservices/dmahs/individuals-families/familycare/adults/"
+    },
+    {
+     "step": 2,
+     "detail": "Apply via the NJ FamilyCare application (1-800-701-0710)",
+     "url": "https://www.nj.gov/humanservices/clients/healthcare/"
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "Proof of income",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Proof of citizenship or qualified immigration status",
+     "mandatory": true,
+     "note": null
+    }
+   ],
+   "eligibility": {
+    "statuses": [],
+    "age_min": 19,
+    "age_max": 64,
+    "income_annual_max": 45540,
+    "income_note": "Total family income at or below 138% FPL: $1,836/month for one person, $3,795/month for a family of four (2026). Ceiling shown = four-person annualised ($3,795 x 12). Adults must be US citizens or qualified immigrants (generally LPRs for 5 years; refugees/asylees may qualify sooner). Children under 19 may apply regardless of immigration status (NJ FamilyCare home page).",
+    "requires_children": false,
+    "nationality": "citizen_or_pr",
+    "residency_months_min": null,
+    "housing_tenure": null,
+    "student_required": false,
+    "admin_areas": [
+     "New Jersey"
+    ],
+    "gender": "any"
+   },
+   "source_url": "https://www.nj.gov/humanservices/dmahs/individuals-families/familycare/adults/",
+   "source_snippet": "For an adult to qualify for NJ FamilyCare, the total family income must be at or below 138% of the Federal Poverty Level.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "new-jersey-tuition-aid-grant-tag",
+   "name_local": "Tuition Aid Grant (TAG) (New Jersey)",
+   "name_en": "Tuition Aid Grant (TAG) (New Jersey)",
+   "admin_level": "state",
+   "admin_area": "New Jersey",
+   "funder": "Higher Education Student Assistance Authority (HESAA)",
+   "category": "education",
+   "benefit_type": "cash_one_off",
+   "amount_min": null,
+   "amount_max": null,
+   "amount_currency": "USD",
+   "amount_period": "annual",
+   "amount_note": "Award amounts vary by institution type (public, private, two-year, four-year) and need; see the HESAA TAG award table for 2026-27",
+   "is_automatic": false,
+   "application_url": "https://www.hesaa.org/Pages/TAG.aspx",
+   "application_channel": "online",
+   "deadline_type": "annual",
+   "deadline_note": "Apply via FAFSA/NJ Dreamer application by HESAA grant deadlines",
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Complete the FAFSA (or NJ Alternative Application if eligible)",
+     "url": "https://www.hesaa.org/Pages/TAG.aspx"
+    },
+    {
+     "step": 2,
+     "detail": "Meet HESAA deadlines and enrol at an eligible NJ college",
+     "url": null
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "FAFSA / tax transcripts",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Proof of 12 months NJ residency",
+     "mandatory": true,
+     "note": null
+    }
+   ],
+   "eligibility": {
+    "statuses": [],
+    "age_min": null,
+    "age_max": null,
+    "income_annual_max": null,
+    "income_note": "Need-based via the NJ Eligibility Index (financial aid application); no single household income ceiling is stated on the programme page. Open to citizens, eligible non-citizens and New Jersey Dreamers; 12 consecutive months of NJ residency before the academic period (alternatives for NJ high school attendees).",
+    "requires_children": false,
+    "nationality": "any_resident",
+    "residency_months_min": null,
+    "housing_tenure": null,
+    "student_required": true,
+    "admin_areas": [
+     "New Jersey"
+    ],
+    "gender": "any"
+   },
+   "source_url": "https://www.hesaa.org/Pages/TAG.aspx",
+   "source_snippet": "TAG award amounts vary based on the type of institution at which students enroll.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "illinois-child-tax-credit",
+   "name_local": "Illinois Child Tax Credit",
+   "name_en": "Illinois Child Tax Credit",
+   "admin_level": "state",
+   "admin_area": "Illinois",
+   "funder": "Illinois Department of Revenue",
+   "category": "family",
+   "benefit_type": "tax_credit",
+   "amount_min": null,
+   "amount_max": null,
+   "amount_currency": "USD",
+   "amount_period": "annual",
+   "amount_note": "Refundable credit equal to 40% of your Illinois EITC for tax year 2025 (child under age 12)",
+   "is_automatic": false,
+   "application_url": "https://tax.illinois.gov/individuals/credits/child-tax-credit.html",
+   "application_channel": "online",
+   "deadline_type": "annual",
+   "deadline_note": "Claimed on the Illinois return, Schedule IL-E/EITC Step 5",
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Qualify for the Illinois EITC",
+     "url": "https://tax.illinois.gov/programs/eitc.html"
+    },
+    {
+     "step": 2,
+     "detail": "Complete Schedule IL-E/EITC, Step 5 with your IL-1040",
+     "url": "https://tax.illinois.gov/individuals/credits/child-tax-credit.html"
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "Illinois income tax return",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Child's age/dependent details",
+     "mandatory": true,
+     "note": null
+    }
+   ],
+   "eligibility": {
+    "statuses": [],
+    "age_min": null,
+    "age_max": null,
+    "income_annual_max": null,
+    "income_note": "Tied to Illinois EITC eligibility (federal EITC income limits apply); not a separate income test. Child must be a dependent (or qualifying child) under age 12 on the last day of 2025. Illinois EITC allows filers with an ITIN (Public Act 102-0700).",
+    "requires_children": true,
+    "nationality": "any_resident",
+    "residency_months_min": null,
+    "housing_tenure": null,
+    "student_required": false,
+    "admin_areas": [
+     "Illinois"
+    ],
+    "gender": "any"
+   },
+   "source_url": "https://tax.illinois.gov/individuals/credits/child-tax-credit.html",
+   "source_snippet": "For tax year 2025, the Child Tax Credit is calculated as 40 percent of your Illinois EITC.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "illinois-property-tax-credit",
+   "name_local": "Illinois Property Tax Credit",
+   "name_en": "Illinois Property Tax Credit",
+   "admin_level": "state",
+   "admin_area": "Illinois",
+   "funder": "Illinois Department of Revenue",
+   "category": "tax",
+   "benefit_type": "tax_credit",
+   "amount_min": null,
+   "amount_max": null,
+   "amount_currency": "USD",
+   "amount_period": "annual",
+   "amount_note": "Credit equal to 5% of Illinois property tax paid on your principal residence",
+   "is_automatic": false,
+   "application_url": "https://tax.illinois.gov/research/publications/pubs/illinois-property-tax-credit.html",
+   "application_channel": "online",
+   "deadline_type": "annual",
+   "deadline_note": "Claimed on Form IL-1040",
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Gather property tax bills for your principal residence",
+     "url": null
+    },
+    {
+     "step": 2,
+     "detail": "Claim the credit on Form IL-1040",
+     "url": "https://tax.illinois.gov/research/publications/pubs/illinois-property-tax-credit.html"
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "Property tax bill / proof of payment",
+     "mandatory": true,
+     "note": null
+    }
+   ],
+   "eligibility": {
+    "statuses": [],
+    "age_min": null,
+    "age_max": null,
+    "income_annual_max": null,
+    "income_note": "No income ceiling stated in the verified Pub-108 passages; see Pub-108 for details.",
+    "requires_children": false,
+    "nationality": "any_resident",
+    "residency_months_min": null,
+    "housing_tenure": "owner",
+    "student_required": false,
+    "admin_areas": [
+     "Illinois"
+    ],
+    "gender": "any"
+   },
+   "source_url": "https://tax.illinois.gov/research/publications/pubs/illinois-property-tax-credit.html",
+   "source_snippet": "The Illinois Property Tax Credit is a credit on your individual income tax return (Form IL-1040) equal to 5 percent of Illinois Property Tax (real estate tax) you paid on your principal residence.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "illinois-benefit-access-program-seniors-ride-free",
+   "name_local": "Benefit Access Program: Seniors Ride Free and License Plate Discount (Illinois)",
+   "name_en": "Benefit Access Program: Seniors Ride Free and License Plate Discount (Illinois)",
+   "admin_level": "state",
+   "admin_area": "Illinois",
+   "funder": "Illinois Department on Aging",
+   "category": "transport",
+   "benefit_type": "discount",
+   "amount_min": null,
+   "amount_max": null,
+   "amount_currency": "USD",
+   "amount_period": "annual",
+   "amount_note": "Free rides on fixed-route transit for seniors and people with disabilities, plus a Secretary of State license plate discount",
+   "is_automatic": false,
+   "application_url": "https://ilaging.illinois.gov/benefitsaccess.html",
+   "application_channel": "online",
+   "deadline_type": "annual",
+   "deadline_note": "Apply online; processing up to 8 weeks; plate discount active within 10 business days of approval",
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Apply online (paper applications not available)",
+     "url": "https://ilaging.illinois.gov/benefitsaccess.html"
+    },
+    {
+     "step": 2,
+     "detail": "Present your certificate of eligibility to your transit authority or Secretary of State office",
+     "url": null
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "Proof of age or disability",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Income information for the last closed tax year",
+     "mandatory": true,
+     "note": null
+    }
+   ],
+   "eligibility": {
+    "statuses": [],
+    "age_min": 65,
+    "age_max": null,
+    "income_annual_max": 55500,
+    "income_note": "Income limits (last closed tax year): under $33,562 for 1 person, $44,533 for 2 people, $55,500 for 3 people (ceiling shown = largest published). Open to people 65+ (or turning 65 this year), or aged 16+ and totally and permanently disabled.",
+    "requires_children": false,
+    "nationality": "any_resident",
+    "residency_months_min": null,
+    "housing_tenure": null,
+    "student_required": false,
+    "admin_areas": [
+     "Illinois"
+    ],
+    "gender": "any"
+   },
+   "source_url": "https://ilaging.illinois.gov/benefitsaccess.html",
+   "source_snippet": "$33,562 for a 1 person household (yourself only)",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "illinois-liheap-energy-assistance",
+   "name_local": "LIHEAP Utility Bill Assistance (Illinois)",
+   "name_en": "LIHEAP Utility Bill Assistance (Illinois)",
+   "admin_level": "state",
+   "admin_area": "Illinois",
+   "funder": "Illinois Dept. of Commerce and Economic Opportunity (DCEO)",
+   "category": "energy",
+   "benefit_type": "cash_one_off",
+   "amount_min": null,
+   "amount_max": null,
+   "amount_currency": "USD",
+   "amount_period": "annual",
+   "amount_note": "Benefit amount set by your local agency after eligibility review; covers heating gas, propane and electricity",
+   "is_automatic": false,
+   "application_url": "https://dceo.illinois.gov/communityservices/homeweatherization/communityactionagencies/helpillinoisfamilies.html",
+   "application_channel": "online",
+   "deadline_type": "window",
+   "deadline_note": "Open October 1, 2026 to August 13, 2027 or until funds run out; priority groups (60+, disability, child 5 or under, disconnected) from October 1, others from November 1, 2026",
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Submit a Request for Services via Help Illinois Families or contact your Community Action Agency",
+     "url": "https://dceo.illinois.gov/communityservices/utilitybillassistance/howtoapply.html"
+    },
+    {
+     "step": 2,
+     "detail": "Agency calls to confirm eligibility and benefit",
+     "url": null
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "Proof of past 30-day income",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Recent heating or electric bill",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Social Security card or ITIN",
+     "mandatory": true,
+     "note": null
+    }
+   ],
+   "eligibility": {
+    "statuses": [],
+    "age_min": null,
+    "age_max": null,
+    "income_annual_max": 99000,
+    "income_note": "Based on 30-day gross income: $3,990 for 1 person, $8,250 for 4 people, $11,090 for 6. Annual figure shown = four-person limit x 12 ($99,000). Some utility customers use 300% FPL; federally funded vendors use 60% State Median Income. State funding: all households are encouraged to apply regardless of immigration status.",
+    "requires_children": false,
+    "nationality": "any_resident",
+    "residency_months_min": null,
+    "housing_tenure": null,
+    "student_required": false,
+    "admin_areas": [
+     "Illinois"
+    ],
+    "gender": "any"
+   },
+   "source_url": "https://dceo.illinois.gov/communityservices/homeweatherization/communityactionagencies/helpillinoisfamilies.html",
+   "source_snippet": "You can apply for LIHEAP through your local administering agency from October 1, 2026 through August 13, 2027, or until funding is exhausted.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "illinois-monetary-award-program-map",
+   "name_local": "Monetary Award Program (MAP) Grant (Illinois)",
+   "name_en": "Monetary Award Program (MAP) Grant (Illinois)",
+   "admin_level": "state",
+   "admin_area": "Illinois",
+   "funder": "Illinois Student Assistance Commission (ISAC)",
+   "category": "education",
+   "benefit_type": "cash_one_off",
+   "amount_min": null,
+   "amount_max": null,
+   "amount_currency": "USD",
+   "amount_period": "annual",
+   "amount_note": "Grant that does not need to be repaid; amount depends on need, enrolment (15 semester hours for the maximum) and college",
+   "is_automatic": false,
+   "application_url": "https://www.isac.org/students/during-college/types-of-financial-aid/grants/monetary-award-program/",
+   "application_channel": "online",
+   "deadline_type": "annual",
+   "deadline_note": "Eligibility is determined from your FAFSA (or Alternative Application) when your Illinois college is listed",
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Complete the FAFSA or Alternative Application listing an approved Illinois college",
+     "url": "https://www.isac.org/students/during-college/types-of-financial-aid/grants/monetary-award-program/"
+    },
+    {
+     "step": 2,
+     "detail": "College certifies enrolment and applies the award",
+     "url": null
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "FAFSA",
+     "mandatory": true,
+     "note": null
+    }
+   ],
+   "eligibility": {
+    "statuses": [],
+    "age_min": null,
+    "age_max": null,
+    "income_annual_max": null,
+    "income_note": "Need-based using FAFSA information; no fixed household income ceiling stated on the programme page.",
+    "requires_children": false,
+    "nationality": "citizen_or_pr",
+    "residency_months_min": null,
+    "housing_tenure": null,
+    "student_required": true,
+    "admin_areas": [
+     "Illinois"
+    ],
+    "gender": "any"
+   },
+   "source_url": "https://www.isac.org/students/during-college/types-of-financial-aid/grants/monetary-award-program/",
+   "source_snippet": "MAP grants, which do not need to be repaid, are available to eligible Illinois residents who attend approved Illinois colleges and demonstrate financial need",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "pennsylvania-property-tax-rent-rebate",
+   "name_local": "Property Tax/Rent Rebate Program (Pennsylvania)",
+   "name_en": "Property Tax/Rent Rebate Program (Pennsylvania)",
+   "admin_level": "state",
+   "admin_area": "Pennsylvania",
+   "funder": "Pennsylvania Department of Revenue",
+   "category": "housing",
+   "benefit_type": "cash_one_off",
+   "amount_min": 380,
+   "amount_max": 1000,
+   "amount_currency": "USD",
+   "amount_period": "annual",
+   "amount_note": "Standard rebate $380-$1,000 by income; Philadelphia, Scranton, Pittsburgh residents or those with property tax above 15% of income may get up to $500 supplemental",
+   "is_automatic": false,
+   "application_url": "https://www.pa.gov/services/revenue/apply-for-property-tax-or-rent-rebate",
+   "application_channel": "online",
+   "deadline_type": "window",
+   "deadline_note": "Current deadline December 31, 2026; payments begin July 1",
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Apply via myPATH, by mail, or in person at a local assistance site",
+     "url": "https://www.pa.gov/services/revenue/apply-for-property-tax-or-rent-rebate"
+    },
+    {
+     "step": 2,
+     "detail": "Receive approval in June and payment from July 1",
+     "url": null
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "Proof of income",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Property tax bill or rent certificate",
+     "mandatory": true,
+     "note": null
+    }
+   ],
+   "eligibility": {
+    "statuses": [],
+    "age_min": null,
+    "age_max": null,
+    "income_annual_max": 48110,
+    "income_note": "Household income of $48,110 or less (2026). Rebate tiers: $0-$8,270 = $1,000; $8,271-$15,510 = $770; $15,511-$18,610 = $460; above that up to the cap = $380 (tiers from the prior-year notice). Must be 65+, a widow/widower 50+, or a person with disabilities 18+.",
+    "requires_children": false,
+    "nationality": "any_resident",
+    "residency_months_min": null,
+    "housing_tenure": null,
+    "student_required": false,
+    "admin_areas": [
+     "Pennsylvania"
+    ],
+    "gender": "any"
+   },
+   "source_url": "https://www.pa.gov/agencies/revenue/ptrr",
+   "source_snippet": "Homeowners and renters in Pennsylvania may be eligible to receive up to $1,000 through a standard rebate.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "pennsylvania-pace-pacenet-prescription-assistance",
+   "name_local": "PACE and PACENET Prescription Assistance (Pennsylvania)",
+   "name_en": "PACE and PACENET Prescription Assistance (Pennsylvania)",
+   "admin_level": "state",
+   "admin_area": "Pennsylvania",
+   "funder": "Pennsylvania Department of Aging",
+   "category": "health",
+   "benefit_type": "discount",
+   "amount_min": null,
+   "amount_max": null,
+   "amount_currency": "USD",
+   "amount_period": "annual",
+   "amount_note": "Low-cost prescription medication; works alongside Medicare Part D plans",
+   "is_automatic": false,
+   "application_url": "https://www.pa.gov/services/aging/apply-for-the-pharmaceutical-assistance-contract-for-the-elderly",
+   "application_channel": "online",
+   "deadline_type": "rolling",
+   "deadline_note": null,
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Apply by phone (1-800-225-7223), online enrolment wizard, or mail/fax/email form",
+     "url": "https://www.pa.gov/services/aging/apply-for-the-pharmaceutical-assistance-contract-for-the-elderly"
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "Proof of prior-year income",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Proof of age",
+     "mandatory": true,
+     "note": null
+    }
+   ],
+   "eligibility": {
+    "statuses": [],
+    "age_min": 65,
+    "age_max": null,
+    "income_annual_max": 41500,
+    "income_note": "Prior-year gross income. PACE: single $14,500 or less, married couple $17,700 or less. PACENET: single $14,501-$33,500, married $17,701-$41,500 (ceiling shown = PACENET married). Must be a Pennsylvania resident for at least 90 days and not enrolled in DHS Medicaid prescription benefits.",
+    "requires_children": false,
+    "nationality": "any_resident",
+    "residency_months_min": null,
+    "housing_tenure": null,
+    "student_required": false,
+    "admin_areas": [
+     "Pennsylvania"
+    ],
+    "gender": "any"
+   },
+   "source_url": "https://www.pa.gov/agencies/aging/aging-programs-and-services/pace-program",
+   "source_snippet": "Pennsylvania’s PACE and PACENET programs help qualified residents, age 65 and up, get prescription medicine at a lower cost.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "pennsylvania-liheap-heating-cash-grant",
+   "name_local": "LIHEAP Heating Cash Grant (Pennsylvania)",
+   "name_en": "LIHEAP Heating Cash Grant (Pennsylvania)",
+   "admin_level": "state",
+   "admin_area": "Pennsylvania",
+   "funder": "Pennsylvania Department of Human Services",
+   "category": "energy",
+   "benefit_type": "cash_one_off",
+   "amount_min": 200,
+   "amount_max": 1000,
+   "amount_currency": "USD",
+   "amount_period": "one_off",
+   "amount_note": "One-time cash grant of $200-$1,000 by household size, income and fuel type, paid to your utility or fuel company; crisis grants also available",
+   "is_automatic": false,
+   "application_url": "https://www.pa.gov/services/dhs/apply-for-the-low-income-home-energy-assistance-program-liheap",
+   "application_channel": "online",
+   "deadline_type": "window",
+   "deadline_note": "The 2026-2027 season opens November 2, 2026",
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Apply online via COMPASS or through your County Assistance Office once the season opens (LIHEAP hotline 1-866-857-7095)",
+     "url": "https://www.pa.gov/agencies/dhs/resources/liheap"
+    },
+    {
+     "step": 2,
+     "detail": "Track your application at trackmybenefits.pa.gov",
+     "url": null
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "Proof of household income",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Heating bill or fuel provider details",
+     "mandatory": true,
+     "note": null
+    }
+   ],
+   "eligibility": {
+    "statuses": [],
+    "age_min": null,
+    "age_max": null,
+    "income_annual_max": 49500,
+    "income_note": "Annual income limit by household size (effective Feb 1, 2026): 1 = $23,940; 2 = $32,460; 3 = $40,980; 4 = $49,500; 5 = $58,020; add $8,520 per extra person. Ceiling shown = four-person.",
+    "requires_children": false,
+    "nationality": "any_resident",
+    "residency_months_min": null,
+    "housing_tenure": null,
+    "student_required": false,
+    "admin_areas": [
+     "Pennsylvania"
+    ],
+    "gender": "any"
+   },
+   "source_url": "https://www.pa.gov/services/dhs/apply-for-the-low-income-home-energy-assistance-program-liheap",
+   "source_snippet": "LIHEAP cash grants range from $200 to $1,000 based on household size, income, and fuel type.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "pennsylvania-child-care-works-subsidy",
+   "name_local": "Child Care Works (Pennsylvania)",
+   "name_en": "Child Care Works (Pennsylvania)",
+   "admin_level": "state",
+   "admin_area": "Pennsylvania",
+   "funder": "Pennsylvania Department of Human Services (OCDEL)",
+   "category": "family",
+   "benefit_type": "discount",
+   "amount_min": null,
+   "amount_max": null,
+   "amount_currency": "USD",
+   "amount_period": "monthly",
+   "amount_note": "Subsidy toward child care; family co-payment depends on income",
+   "is_automatic": false,
+   "application_url": "https://www.pa.gov/agencies/dhs/resources/early-learning-child-care/child-care-works",
+   "application_channel": "post",
+   "deadline_type": "rolling",
+   "deadline_note": null,
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Download application CY 868",
+     "url": "https://www.pa.gov/agencies/dhs/resources/early-learning-child-care/child-care-works"
+    },
+    {
+     "step": 2,
+     "detail": "Submit to your local Early Learning Resource Center (ELRC)",
+     "url": null
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "Proof of income",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Proof of work, school or training hours",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Child citizenship/permanent residency proof",
+     "mandatory": true,
+     "note": null
+    }
+   ],
+   "eligibility": {
+    "statuses": [],
+    "age_min": null,
+    "age_max": null,
+    "income_annual_max": 66000,
+    "income_note": "200% of the Federal Poverty Guidelines (May 2026): 2 = $43,280; 3 = $54,640; 4 = $66,000; 5 = $77,360; 6 = $88,720. Ceiling shown = four-person. Parents must work 20+ hours/week, or 10 hours work plus 10 hours school/training. Child must be a US citizen or lawfully admitted permanent resident; eligible from birth to day before 13th birthday (to 18 with disability).",
+    "requires_children": true,
+    "nationality": "citizen_or_pr",
+    "residency_months_min": null,
+    "housing_tenure": null,
+    "student_required": false,
+    "admin_areas": [
+     "Pennsylvania"
+    ],
+    "gender": "any"
+   },
+   "source_url": "https://www.pa.gov/agencies/dhs/resources/early-learning-child-care/child-care-works",
+   "source_snippet": "The annual income for a family to be eligible to receive a subsidy is 200 percent or less of the Federal Poverty Income Guidelines",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "pennsylvania-working-pennsylvanians-tax-credit",
+   "name_local": "Working Pennsylvanians Tax Credit",
+   "name_en": "Working Pennsylvanians Tax Credit",
+   "admin_level": "state",
+   "admin_area": "Pennsylvania",
+   "funder": "Pennsylvania Department of Revenue",
+   "category": "tax",
+   "benefit_type": "tax_credit",
+   "amount_min": null,
+   "amount_max": 805,
+   "amount_currency": "USD",
+   "amount_period": "annual",
+   "amount_note": "State credit equal to 10% of your federal EITC; maximum $805",
+   "is_automatic": true,
+   "application_url": "https://www.pa.gov/agencies/revenue/resources/tax-types-and-information/personal-income-tax/working-pennsylvanians-tax-credit",
+   "application_channel": "online",
+   "deadline_type": "annual",
+   "deadline_note": "Claimed automatically when you file PA-40 with a federal EITC (began with the 2026 tax season)",
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Claim the federal EITC on your Form 1040",
+     "url": null
+    },
+    {
+     "step": 2,
+     "detail": "File your PA-40; Revenue calculates the credit automatically",
+     "url": null
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "Federal Form 1040 (copy if filing on paper)",
+     "mandatory": true,
+     "note": null
+    }
+   ],
+   "eligibility": {
+    "statuses": [
+     "employee",
+     "self_employed"
+    ],
+    "age_min": null,
+    "age_max": null,
+    "income_annual_max": 68675,
+    "income_note": "Follows federal EITC rules for filing status, income and dependents (Tax Year 2025 maximum income $68,675 for married filing jointly with 3+ children, per NJ Division of Taxation publication of federal limits).",
+    "requires_children": false,
+    "nationality": "any_resident",
+    "residency_months_min": null,
+    "housing_tenure": null,
+    "student_required": false,
+    "admin_areas": [
+     "Pennsylvania"
+    ],
+    "gender": "any"
+   },
+   "source_url": "https://www.pa.gov/agencies/revenue/resources/tax-types-and-information/personal-income-tax/working-pennsylvanians-tax-credit",
+   "source_snippet": "The state credit equals 10 percent of your federal credit.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "pennsylvania-tax-forgiveness-special-tax-provisions",
+   "name_local": "Tax Forgiveness (Special Tax Provisions for Poverty) (Pennsylvania)",
+   "name_en": "Tax Forgiveness (Special Tax Provisions for Poverty) (Pennsylvania)",
+   "admin_level": "state",
+   "admin_area": "Pennsylvania",
+   "funder": "Pennsylvania Department of Revenue",
+   "category": "tax",
+   "benefit_type": "tax_credit",
+   "amount_min": null,
+   "amount_max": null,
+   "amount_currency": "USD",
+   "amount_period": "annual",
+   "amount_note": "Forgives 100% of PA personal income tax at the lowest eligibility income, phasing down in 10% steps",
+   "is_automatic": false,
+   "application_url": "https://www.pa.gov/agencies/revenue/resources/tax-types-and-information/personal-income-tax/tax-forgiveness",
+   "application_channel": "online",
+   "deadline_type": "annual",
+   "deadline_note": "Claimed with PA Schedule SP on the PA-40",
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Complete PA Schedule SP to compute eligibility income",
+     "url": null
+    },
+    {
+     "step": 2,
+     "detail": "File with your PA-40",
+     "url": null
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "PA-40 and PA Schedule SP",
+     "mandatory": true,
+     "note": null
+    }
+   ],
+   "eligibility": {
+    "statuses": [],
+    "age_min": null,
+    "age_max": null,
+    "income_annual_max": 34250,
+    "income_note": "Eligibility income tables by dependents: unmarried 1 dependent $16,000 (100%) to $18,250 (10%); married 2 dependents $32,000 to $34,250; married 4 dependents $51,000 to $53,250. Ceiling shown = married, 2 dependents.",
+    "requires_children": false,
+    "nationality": "any_resident",
+    "residency_months_min": null,
+    "housing_tenure": null,
+    "student_required": false,
+    "admin_areas": [
+     "Pennsylvania"
+    ],
+    "gender": "any"
+   },
+   "source_url": "https://www.pa.gov/agencies/revenue/forms-and-publications/pa-personal-income-tax-guide/tax-forgiveness",
+   "source_snippet": "Tax forgiveness is a credit that allows eligible taxpayers to reduce all or part of their Pennsylvania personal income tax liability.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "pennsylvania-chip-childrens-health-insurance",
+   "name_local": "Pennsylvania CHIP (Children's Health Insurance Program)",
+   "name_en": "Pennsylvania CHIP (Children's Health Insurance Program)",
+   "admin_level": "state",
+   "admin_area": "Pennsylvania",
+   "funder": "Pennsylvania Department of Human Services",
+   "category": "health",
+   "benefit_type": "in_kind",
+   "amount_min": null,
+   "amount_max": null,
+   "amount_currency": "USD",
+   "amount_period": "monthly",
+   "amount_note": "Free CHIP has no premiums or copays; higher-income households pay a low monthly premium",
+   "is_automatic": false,
+   "application_url": "https://www.pa.gov/agencies/dhs/resources/chip/eligibility-and-benefits",
+   "application_channel": "online",
+   "deadline_type": "rolling",
+   "deadline_note": null,
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Apply through COMPASS or call 1-877-395-8930",
+     "url": "https://www.pa.gov/agencies/dhs/resources/chip/eligibility-and-benefits"
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "Proof of household income",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Child's citizenship/immigration status",
+     "mandatory": true,
+     "note": null
+    }
+   ],
+   "eligibility": {
+    "statuses": [],
+    "age_min": null,
+    "age_max": 18,
+    "income_annual_max": null,
+    "income_note": "Income guidelines by household size are published as a chart on the DHS page; children below the lowest level are referred to Medical Assistance.",
+    "requires_children": true,
+    "nationality": "citizen_or_pr",
+    "residency_months_min": null,
+    "housing_tenure": null,
+    "student_required": false,
+    "admin_areas": [
+     "Pennsylvania"
+    ],
+    "gender": "any"
+   },
+   "source_url": "https://www.pa.gov/agencies/dhs/resources/chip/eligibility-and-benefits",
+   "source_snippet": "Most families receive CHIP coverage for free.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "massachusetts-senior-circuit-breaker-tax-credit",
+   "name_local": "Senior Circuit Breaker Tax Credit (Massachusetts)",
+   "name_en": "Senior Circuit Breaker Tax Credit (Massachusetts)",
+   "admin_level": "state",
+   "admin_area": "Massachusetts",
+   "funder": "Massachusetts Department of Revenue",
+   "category": "tax",
+   "benefit_type": "tax_credit",
+   "amount_min": null,
+   "amount_max": 2820,
+   "amount_currency": "USD",
+   "amount_period": "annual",
+   "amount_note": "Refundable credit; maximum $2,820 for tax year 2025",
+   "is_automatic": false,
+   "application_url": "https://www.mass.gov/info-details/senior-circuit-breaker-tax-credit",
+   "application_channel": "online",
+   "deadline_type": "annual",
+   "deadline_note": "Claimed on the Massachusetts personal income tax return",
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Check property tax/rent against 10% of total Massachusetts income",
+     "url": "https://www.mass.gov/info-details/senior-circuit-breaker-tax-credit"
+    },
+    {
+     "step": 2,
+     "detail": "Claim on your Massachusetts return (Schedule CB)",
+     "url": null
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "Property tax bill or rent records",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Income records",
+     "mandatory": true,
+     "note": null
+    }
+   ],
+   "eligibility": {
+    "statuses": [],
+    "age_min": 65,
+    "age_max": null,
+    "income_annual_max": 112000,
+    "income_note": "Tax year 2025 total MA income at most $75,000 (single), $94,000 (head of household), $112,000 (married filing jointly). Homeowner assessed value cannot exceed $1,298,000.",
+    "requires_children": false,
+    "nationality": "any_resident",
+    "residency_months_min": null,
+    "housing_tenure": null,
+    "student_required": false,
+    "admin_areas": [
+     "Massachusetts"
+    ],
+    "gender": "any"
+   },
+   "source_url": "https://www.mass.gov/info-details/senior-circuit-breaker-tax-credit",
+   "source_snippet": "The maximum credit amount for tax year 2025 is $2,820.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "massachusetts-child-and-family-tax-credit",
+   "name_local": "Child and Family Tax Credit (Massachusetts)",
+   "name_en": "Child and Family Tax Credit (Massachusetts)",
+   "admin_level": "state",
+   "admin_area": "Massachusetts",
+   "funder": "Massachusetts Department of Revenue",
+   "category": "family",
+   "benefit_type": "tax_credit",
+   "amount_min": 440,
+   "amount_max": 440,
+   "amount_currency": "USD",
+   "amount_period": "annual",
+   "amount_note": "$440 for each eligible individual (child under 13, dependent 65+, or disabled dependent or spouse), tax year 2024 onward",
+   "is_automatic": false,
+   "application_url": "https://www.mass.gov/info-details/massachusetts-child-and-family-tax-credit",
+   "application_channel": "online",
+   "deadline_type": "annual",
+   "deadline_note": "Claimed on Massachusetts Form 1 (line 46a x $440)",
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Count qualifying individuals",
+     "url": null
+    },
+    {
+     "step": 2,
+     "detail": "Enter the number on Form 1 line 46a and multiply by $440 on line 46",
+     "url": "https://www.mass.gov/info-details/massachusetts-child-and-family-tax-credit"
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "SSN, ITIN or MATIN for each qualifying individual",
+     "mandatory": true,
+     "note": null
+    }
+   ],
+   "eligibility": {
+    "statuses": [],
+    "age_min": null,
+    "age_max": null,
+    "income_annual_max": null,
+    "income_note": "No income limit stated on the page; single, head of household or joint filers (not married filing separately). Individuals without an SSN or ITIN can be claimed using a Massachusetts Alternative Taxpayer Identification Number (MATIN), by mail.",
+    "requires_children": true,
+    "nationality": "any_resident",
+    "residency_months_min": null,
+    "housing_tenure": null,
+    "student_required": false,
+    "admin_areas": [
+     "Massachusetts"
+    ],
+    "gender": "any"
+   },
+   "source_url": "https://www.mass.gov/info-details/massachusetts-child-and-family-tax-credit",
+   "source_snippet": "For the 2024 tax year and thereafter, the credit is $440 for each eligible individual for which a taxpayer can claim a credit.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "massachusetts-earned-income-tax-credit",
+   "name_local": "Earned Income Tax Credit (Massachusetts)",
+   "name_en": "Earned Income Tax Credit (Massachusetts)",
+   "admin_level": "state",
+   "admin_area": "Massachusetts",
+   "funder": "Massachusetts Department of Revenue",
+   "category": "tax",
+   "benefit_type": "tax_credit",
+   "amount_min": 260,
+   "amount_max": 3218,
+   "amount_currency": "USD",
+   "amount_period": "annual",
+   "amount_note": "40% of the federal EITC from tax year 2025; maximum state credits $260 (no children) to $3,218 (3+ children)",
+   "is_automatic": false,
+   "application_url": "https://www.mass.gov/info-details/earned-income-tax-credit-eitc",
+   "application_channel": "online",
+   "deadline_type": "annual",
+   "deadline_note": "Claimed on your Massachusetts return after the federal EITC is determined",
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Claim the federal EITC",
+     "url": null
+    },
+    {
+     "step": 2,
+     "detail": "File a Massachusetts return with your federal EITC information",
+     "url": "https://www.mass.gov/info-details/earned-income-tax-credit-eitc"
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "Federal tax return",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Valid SSNs",
+     "mandatory": true,
+     "note": null
+    }
+   ],
+   "eligibility": {
+    "statuses": [
+     "employee",
+     "self_employed"
+    ],
+    "age_min": null,
+    "age_max": null,
+    "income_annual_max": 68675,
+    "income_note": "Follows federal EITC income limits (Tax Year 2025 maximum $68,675 married filing jointly with 3+ children, as published by NJ Division of Taxation). Part-year residents get a prorated credit.",
+    "requires_children": false,
+    "nationality": "any_resident",
+    "residency_months_min": null,
+    "housing_tenure": null,
+    "student_required": false,
+    "admin_areas": [
+     "Massachusetts"
+    ],
+    "gender": "any"
+   },
+   "source_url": "https://www.mass.gov/info-details/earned-income-tax-credit-eitc",
+   "source_snippet": "The amount of the Massachusetts EITC is limited to 40% of the federal EITC multiplied by the total number of days you resided in Massachusetts",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "massachusetts-free-community-college-massreconnect-masseducate",
+   "name_local": "Free Community College: MassReconnect and MassEducate (Massachusetts)",
+   "name_en": "Free Community College: MassReconnect and MassEducate (Massachusetts)",
+   "admin_level": "state",
+   "admin_area": "Massachusetts",
+   "funder": "Massachusetts Department of Higher Education",
+   "category": "education",
+   "benefit_type": "free_slab",
+   "amount_min": null,
+   "amount_max": 1200,
+   "amount_currency": "USD",
+   "amount_period": "annual",
+   "amount_note": "Full tuition and fees at all 15 public community colleges; annual book and supplies allowance up to $1,200 based on income",
+   "is_automatic": false,
+   "application_url": "https://www.mass.gov/info-details/free-community-college",
+   "application_channel": "online",
+   "deadline_type": "annual",
+   "deadline_note": "Complete the FAFSA (or MASFA) each year",
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Complete the FAFSA or MASFA",
+     "url": "https://www.mass.gov/info-details/free-community-college"
+    },
+    {
+     "step": 2,
+     "detail": "Enrol at a Massachusetts public community college and contact financial aid",
+     "url": null
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "FAFSA or MASFA",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Proof of 1 year Massachusetts residency",
+     "mandatory": true,
+     "note": null
+    }
+   ],
+   "eligibility": {
+    "statuses": [],
+    "age_min": null,
+    "age_max": null,
+    "income_annual_max": null,
+    "income_note": "No age or income restriction on tuition-free eligibility; must live in Massachusetts at least one year (or be a High School Completer), enrol in 6+ credits and have no bachelor's degree.",
+    "requires_children": false,
+    "nationality": "any_resident",
+    "residency_months_min": null,
+    "housing_tenure": null,
+    "student_required": true,
+    "admin_areas": [
+     "Massachusetts"
+    ],
+    "gender": "any"
+   },
+   "source_url": "https://www.mass.gov/info-details/free-community-college",
+   "source_snippet": "Building on the success of MassReconnect, which made community college free for students 25 years and older",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "massachusetts-child-care-financial-assistance",
+   "name_local": "Child Care Financial Assistance (Massachusetts)",
+   "name_en": "Child Care Financial Assistance (Massachusetts)",
+   "admin_level": "state",
+   "admin_area": "Massachusetts",
+   "funder": "Massachusetts Dept. of Early Education and Care (EEC)",
+   "category": "family",
+   "benefit_type": "discount",
+   "amount_min": null,
+   "amount_max": null,
+   "amount_currency": "USD",
+   "amount_period": "monthly",
+   "amount_note": "Subsidised child care; waitlist until funding opens; family fee depends on income",
+   "is_automatic": false,
+   "application_url": "https://www.mass.gov/how-to/apply-for-funds-to-help-pay-for-child-care",
+   "application_channel": "online",
+   "deadline_type": "rolling",
+   "deadline_note": "Waitlist: you complete final verification when funding becomes available",
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Apply on MyChildCareMA, by phone (Mass 211 ext. 23) or at a CCR&R office",
+     "url": "https://www.mass.gov/how-to/apply-for-funds-to-help-pay-for-child-care"
+    },
+    {
+     "step": 2,
+     "detail": "Receive Waitlist Approval Notice and complete final verification when funded",
+     "url": null
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "Proof of identity and residency",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Proof of income",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Proof of service need (work, school, etc.)",
+     "mandatory": true,
+     "note": null
+    }
+   ],
+   "eligibility": {
+    "statuses": [],
+    "age_min": null,
+    "age_max": null,
+    "income_annual_max": 141060,
+    "income_note": "Maximum monthly income is 85% of State Median Income: household of 2 $7,994; 3 $9,874; 4 $11,755 per month (ceiling shown = four-person x 12). Families at or under 50% SMI get priority.",
+    "requires_children": true,
+    "nationality": "any_resident",
+    "residency_months_min": null,
+    "housing_tenure": null,
+    "student_required": false,
+    "admin_areas": [
+     "Massachusetts"
+    ],
+    "gender": "any"
+   },
+   "source_url": "https://www.mass.gov/how-to/apply-for-funds-to-help-pay-for-child-care",
+   "source_snippet": "EEC counts parent(s)’s or caregiver income from most sources, such as wages.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "massachusetts-heap-home-energy-assistance",
+   "name_local": "Home Energy Assistance Program (HEAP/LIHEAP) (Massachusetts)",
+   "name_en": "Home Energy Assistance Program (HEAP/LIHEAP) (Massachusetts)",
+   "admin_level": "state",
+   "admin_area": "Massachusetts",
+   "funder": "Massachusetts Dept. of Housing and Community Development",
+   "category": "energy",
+   "benefit_type": "cash_one_off",
+   "amount_min": null,
+   "amount_max": null,
+   "amount_currency": "USD",
+   "amount_period": "annual",
+   "amount_note": "Fixed benefit paid toward your primary heating source (oil, gas, electricity, propane, wood and more)",
+   "is_automatic": false,
+   "application_url": "https://www.mass.gov/how-to/apply-for-home-energy-assistance-heap",
+   "application_channel": "online",
+   "deadline_type": "annual",
+   "deadline_note": "Check with your local agency or call 2-1-1 for the current application period",
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Apply online at toapply.org/MassLIHEAP or through your local agency",
+     "url": "https://www.mass.gov/how-to/apply-for-home-energy-assistance-heap"
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "Proof of household income",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Heating bill or rent showing heat included",
+     "mandatory": true,
+     "note": null
+    }
+   ],
+   "eligibility": {
+    "statuses": [],
+    "age_min": null,
+    "age_max": null,
+    "income_annual_max": null,
+    "income_note": "Household income cannot exceed 60% of the State Median Income; limits by household size are in the FY2027 LIHEAP income chart published by Mass.gov.",
+    "requires_children": false,
+    "nationality": "any_resident",
+    "residency_months_min": null,
+    "housing_tenure": null,
+    "student_required": false,
+    "admin_areas": [
+     "Massachusetts"
+    ],
+    "gender": "any"
+   },
+   "source_url": "https://www.mass.gov/how-to/apply-for-home-energy-assistance-heap",
+   "source_snippet": "Program guidelines require that the total household income cannot exceed 60% of the state median income.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "massachusetts-massgrant-and-massgrant-plus",
+   "name_local": "MASSGrant and MASSGrant Plus (Massachusetts)",
+   "name_en": "MASSGrant and MASSGrant Plus (Massachusetts)",
+   "admin_level": "state",
+   "admin_area": "Massachusetts",
+   "funder": "Massachusetts Office of Student Financial Assistance",
+   "category": "education",
+   "benefit_type": "cash_one_off",
+   "amount_min": null,
+   "amount_max": null,
+   "amount_currency": "USD",
+   "amount_period": "annual",
+   "amount_note": "Need-based; MASSGrant Plus covers remaining tuition and mandatory fees after the Student Aid Index and institutional aid",
+   "is_automatic": false,
+   "application_url": "https://www.mass.gov/info-details/massgrant-massgrant-plus",
+   "application_channel": "online",
+   "deadline_type": "annual",
+   "deadline_note": "Apply each year with the FAFSA or MASFA by the state priority deadline",
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Submit the FAFSA or the Massachusetts Application for State Financial Aid (MASFA)",
+     "url": "https://www.mass.gov/info-details/massgrant-massgrant-plus"
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "FAFSA or MASFA",
+     "mandatory": true,
+     "note": null
+    }
+   ],
+   "eligibility": {
+    "statuses": [],
+    "age_min": null,
+    "age_max": null,
+    "income_annual_max": null,
+    "income_note": "Need-based using the Student Aid Index; no fixed household income ceiling published.",
+    "requires_children": false,
+    "nationality": "any",
+    "residency_months_min": null,
+    "housing_tenure": null,
+    "student_required": true,
+    "admin_areas": [
+     "Massachusetts"
+    ],
+    "gender": "any"
+   },
+   "source_url": "https://www.mass.gov/news/healey-driscoll-administration-extends-state-financial-aid-priority-deadline-to-july-1",
+   "source_snippet": "MASSGrant is a need-based financial aid program that helps to cover educational expenses at state public and private colleges and universities.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "washington-working-families-tax-credit",
+   "name_local": "Working Families Tax Credit (Washington)",
+   "name_en": "Working Families Tax Credit (Washington)",
+   "admin_level": "state",
+   "admin_area": "Washington",
+   "funder": "Washington Department of Revenue",
+   "category": "tax",
+   "benefit_type": "cash_one_off",
+   "amount_min": 335,
+   "amount_max": 1330,
+   "amount_currency": "USD",
+   "amount_period": "annual",
+   "amount_note": "Payment up to $335 (no children), $660 (1), $995 (2), $1,330 (3+)",
+   "is_automatic": false,
+   "application_url": "https://workingfamiliescredit.wa.gov/eligibility",
+   "application_channel": "online",
+   "deadline_type": "annual",
+   "deadline_note": "Applications open each February 1; prior tax years 2022-2024 can also be claimed",
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Check you qualify for the federal EITC and lived in Washington 183+ days",
+     "url": null
+    },
+    {
+     "step": 2,
+     "detail": "Apply online through My DOR, tax software, paper form or community help",
+     "url": "https://workingfamiliescredit.wa.gov/eligibility"
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "Federal tax return",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "SSN or ITIN",
+     "mandatory": true,
+     "note": null
+    }
+   ],
+   "eligibility": {
+    "statuses": [],
+    "age_min": null,
+    "age_max": null,
+    "income_annual_max": 68675,
+    "income_note": "Income limits (tax year 2025 release): 0 children $19,104 single / $26,214 married jointly; 1 child $50,434 / $57,554; 2 $57,310 / $64,430; 3+ $61,555 / $68,675. Ceiling shown = largest. Applicants must be age 25-64 or have a qualifying child. ITIN filers may apply.",
+    "requires_children": false,
+    "nationality": "any_resident",
+    "residency_months_min": null,
+    "housing_tenure": null,
+    "student_required": false,
+    "admin_areas": [
+     "Washington"
+    ],
+    "gender": "any"
+   },
+   "source_url": "https://dor.wa.gov/about/news-releases/2026/working-families-tax-credit-application-window-opens-feb-1",
+   "source_snippet": "The credit provides payments up to $1,330 to individuals and families who meet certain eligibility requirements, including those filing with an Individual Taxpayer Identification Number.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "washington-college-grant",
+   "name_local": "Washington College Grant (WA Grant)",
+   "name_en": "Washington College Grant (WA Grant)",
+   "admin_level": "state",
+   "admin_area": "Washington",
+   "funder": "Washington Student Achievement Council (WSAC)",
+   "category": "education",
+   "benefit_type": "cash_one_off",
+   "amount_min": null,
+   "amount_max": 13203,
+   "amount_currency": "USD",
+   "amount_period": "annual",
+   "amount_note": "Maximum annual awards: public universities $12,700-$13,203, community colleges $5,095, non-college apprenticeships $2,548; amount depends on income and family size",
+   "is_automatic": false,
+   "application_url": "https://wsac.wa.gov/wcg-awards",
+   "application_channel": "online",
+   "deadline_type": "annual",
+   "deadline_note": "Apply with the FAFSA or WASFA",
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Complete the FAFSA, or WASFA if you cannot file a FAFSA",
+     "url": "https://wsac.wa.gov/wcg-awards"
+    },
+    {
+     "step": 2,
+     "detail": "Enrol at an eligible Washington college or apprenticeship",
+     "url": null
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "FAFSA or WASFA",
+     "mandatory": true,
+     "note": null
+    }
+   ],
+   "eligibility": {
+    "statuses": [],
+    "age_min": null,
+    "age_max": null,
+    "income_annual_max": 139500,
+    "income_note": "2026-27: family of four up to $83,500 gets a full award, partial up to $139,500; family of 1 up to $72,500, 2 up to $94,500, 3 up to $117,000, 5 up to $161,500, 6 up to $184,000. Ceiling shown = four-person.",
+    "requires_children": false,
+    "nationality": "any",
+    "residency_months_min": null,
+    "housing_tenure": null,
+    "student_required": true,
+    "admin_areas": [
+     "Washington"
+    ],
+    "gender": "any"
+   },
+   "source_url": "https://wsac.wa.gov/wcg-awards",
+   "source_snippet": "For 2026-27, an eligible student from a family of four with income of $83,500 or less per year would get a full award.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "washington-paid-family-and-medical-leave",
+   "name_local": "Paid Family and Medical Leave (Washington)",
+   "name_en": "Paid Family and Medical Leave (Washington)",
+   "admin_level": "state",
+   "admin_area": "Washington",
+   "funder": "Washington Employment Security Department",
+   "category": "employment",
+   "benefit_type": "cash_monthly",
+   "amount_min": null,
+   "amount_max": 1647,
+   "amount_currency": "USD",
+   "amount_period": "weekly",
+   "amount_note": "Up to 90% of weekly pay, maximum $1,647 per week for 2026; up to 12 weeks (16 combined, 18 for pregnancy complications)",
+   "is_automatic": false,
+   "application_url": "https://paidleave.wa.gov/find-out-how-paid-leave-works/",
+   "application_channel": "online",
+   "deadline_type": "rolling",
+   "deadline_note": "Apply within 30 days of the qualifying event; one waiting week applies",
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Notify your employer 30+ days ahead if foreseeable",
+     "url": null
+    },
+    {
+     "step": 2,
+     "detail": "Apply online within 30 days",
+     "url": "https://paidleave.wa.gov/find-out-how-paid-leave-works/"
+    },
+    {
+     "step": 3,
+     "detail": "Complete the waiting week and file weekly claims",
+     "url": null
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "Proof of qualifying event (medical certification or birth/placement)",
+     "mandatory": true,
+     "note": null
+    }
+   ],
+   "eligibility": {
+    "statuses": [
+     "employee"
+    ],
+    "age_min": null,
+    "age_max": null,
+    "income_annual_max": null,
+    "income_note": "No income test. You need 820 hours worked in your qualifying period.",
+    "requires_children": false,
+    "nationality": "any",
+    "residency_months_min": null,
+    "housing_tenure": null,
+    "student_required": false,
+    "admin_areas": [
+     "Washington"
+    ],
+    "gender": "any"
+   },
+   "source_url": "https://paidleave.wa.gov/how-paid-leave-works/",
+   "source_snippet": "Nearly every Washington worker can use Paid Leave as long as they’ve worked at least 820 hours during their qualifying period.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "washington-working-connections-child-care",
+   "name_local": "Working Connections Child Care (Washington)",
+   "name_en": "Working Connections Child Care (Washington)",
+   "admin_level": "state",
+   "admin_area": "Washington",
+   "funder": "Washington Dept. of Children, Youth, and Families (DCYF)",
+   "category": "family",
+   "benefit_type": "discount",
+   "amount_min": null,
+   "amount_max": null,
+   "amount_currency": "USD",
+   "amount_period": "monthly",
+   "amount_note": "Child care subsidy; copay $0 at the lowest income tier, $65-$215 per month at higher tiers",
+   "is_automatic": false,
+   "application_url": "https://dcyf.wa.gov/services/earlylearning-childcare/getting-help/wccc",
+   "application_channel": "online",
+   "deadline_type": "rolling",
+   "deadline_note": null,
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Apply online, by phone (844-626-8687) or at a Community Service Office",
+     "url": "https://dcyf.wa.gov/services/earlylearning-childcare/getting-help/wccc"
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "Proof of income",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Proof of work, school or training",
+     "mandatory": true,
+     "note": null
+    }
+   ],
+   "eligibility": {
+    "statuses": [],
+    "age_min": null,
+    "age_max": null,
+    "income_annual_max": null,
+    "income_note": "Household income must be below 60% of State Median Income at application; the chart by family size is on the DCYF page.",
+    "requires_children": true,
+    "nationality": "any_resident",
+    "residency_months_min": null,
+    "housing_tenure": null,
+    "student_required": false,
+    "admin_areas": [
+     "Washington"
+    ],
+    "gender": "any"
+   },
+   "source_url": "https://dcyf.wa.gov/services/earlylearning-childcare/getting-help/wccc",
+   "source_snippet": "The total household income must be below 60% of the State Median Income (SMI) at the time of application.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "washington-apple-health-for-kids",
+   "name_local": "Apple Health for Kids (Washington)",
+   "name_en": "Apple Health for Kids (Washington)",
+   "admin_level": "state",
+   "admin_area": "Washington",
+   "funder": "Washington Health Care Authority",
+   "category": "health",
+   "benefit_type": "in_kind",
+   "amount_min": null,
+   "amount_max": null,
+   "amount_currency": "USD",
+   "amount_period": "monthly",
+   "amount_note": "Free for households at or below 215% FPL; low monthly premium above that ($20 per child, $40 family maximum in Tier 1)",
+   "is_automatic": false,
+   "application_url": "https://www.hca.wa.gov/free-or-low-cost-health-care/i-need-medical-dental-or-vision-care/children",
+   "application_channel": "online",
+   "deadline_type": "rolling",
+   "deadline_note": null,
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Apply or renew Apple Health online",
+     "url": "https://www.hca.wa.gov/free-or-low-cost-health-care/i-need-medical-dental-or-vision-care/children"
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "Household monthly income",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Immigration information, if it applies",
+     "mandatory": false,
+     "note": null
+    }
+   ],
+   "eligibility": {
+    "statuses": [],
+    "age_min": null,
+    "age_max": null,
+    "income_annual_max": null,
+    "income_note": "Free coverage at or below 215% of the Federal Poverty Level; charts by household size on the HCA page. Income standards change each April. Children under 6 stay covered through the month they turn six.",
+    "requires_children": true,
+    "nationality": "any_resident",
+    "residency_months_min": null,
+    "housing_tenure": null,
+    "student_required": false,
+    "admin_areas": [
+     "Washington"
+    ],
+    "gender": "any"
+   },
+   "source_url": "https://www.hca.wa.gov/free-or-low-cost-health-care/i-help-others-apply-and-access-apple-health/health-care-children",
+   "source_snippet": "Apple Health for Kids coverage is free to children in households with income at or below 215% of the FPL",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "washington-senior-and-disabled-property-tax-exemption",
+   "name_local": "Property Tax Exemption for Seniors and People with Disabilities (Washington)",
+   "name_en": "Property Tax Exemption for Seniors and People with Disabilities (Washington)",
+   "admin_level": "state",
+   "admin_area": "Washington",
+   "funder": "Washington Department of Revenue / County Assessors",
+   "category": "tax",
+   "benefit_type": "discount",
+   "amount_min": null,
+   "amount_max": null,
+   "amount_currency": "USD",
+   "amount_period": "annual",
+   "amount_note": "Reduction of property taxes; amount depends on your county's income bracket",
+   "is_automatic": false,
+   "application_url": "https://dor.wa.gov/taxes-rates/property-tax/property-tax-exemption-seniors-people-retired-due-disability-and-veterans-disabilities",
+   "application_channel": "in_person",
+   "deadline_type": "annual",
+   "deadline_note": "Apply with your county assessor",
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Check your county's income threshold with your county assessor",
+     "url": "https://dor.wa.gov/taxes-rates/property-tax/property-tax-exemption-seniors-people-retired-due-disability-and-veterans-disabilities"
+    },
+    {
+     "step": 2,
+     "detail": "Apply at your county assessor's office",
+     "url": null
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "Proof of age or disability",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Income records",
+     "mandatory": true,
+     "note": null
+    }
+   ],
+   "eligibility": {
+    "statuses": [],
+    "age_min": 61,
+    "age_max": null,
+    "income_annual_max": null,
+    "income_note": "Income thresholds are set per county (greater of the previous year's threshold or 70% of county median household income per DOR guidance); see dor.wa.gov/incomethresholds. Eligible: age 61+, or unable to work due to disability, or a disabled veteran (80%+ rating); must own and occupy a primary residence.",
+    "requires_children": false,
+    "nationality": "any_resident",
+    "residency_months_min": null,
+    "housing_tenure": "owner",
+    "student_required": false,
+    "admin_areas": [
+     "Washington"
+    ],
+    "gender": "any"
+   },
+   "source_url": "https://dor.wa.gov/taxes-rates/property-tax/property-tax-exemption-seniors-people-retired-due-disability-and-veterans-disabilities",
+   "source_snippet": "individuals who meet certain eligibility requirements may receive a reduction of property taxes",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "texas-residence-homestead-exemption",
+   "name_local": "Residence Homestead Exemption (Texas)",
+   "name_en": "Residence Homestead Exemption (Texas)",
+   "admin_level": "state",
+   "admin_area": "Texas",
+   "funder": "Texas Comptroller / county appraisal districts",
+   "category": "tax",
+   "benefit_type": "discount",
+   "amount_min": null,
+   "amount_max": null,
+   "amount_currency": "USD",
+   "amount_period": "annual",
+   "amount_note": "School districts must exempt $140,000 of your home's value; an additional $60,000 exemption for age 65+ or disabled (reduces taxable value, not a cash payment)",
+   "is_automatic": false,
+   "application_url": "https://comptroller.texas.gov/taxes/property-tax/exemptions/",
+   "application_channel": "in_person",
+   "deadline_type": "annual",
+   "deadline_note": "Applications are filed with your county appraisal district, generally before May 1",
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Get the homestead exemption form from your county appraisal district",
+     "url": null
+    },
+    {
+     "step": 2,
+     "detail": "File it with the appraisal district where the property is located",
+     "url": "https://comptroller.texas.gov/taxes/property-tax/exemptions/"
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "Proof the home is your primary residence",
+     "mandatory": true,
+     "note": null
+    }
+   ],
+   "eligibility": {
+    "statuses": [],
+    "age_min": null,
+    "age_max": null,
+    "income_annual_max": null,
+    "income_note": "No income test.",
+    "requires_children": false,
+    "nationality": "any_resident",
+    "residency_months_min": null,
+    "housing_tenure": "owner",
+    "student_required": false,
+    "admin_areas": [
+     "Texas"
+    ],
+    "gender": "any"
+   },
+   "source_url": "https://comptroller.texas.gov/taxes/property-tax/exemptions/",
+   "source_snippet": "Tax Code Section 11.13(b) requires school districts to provide a $140,000 exemption on a residence homestead.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "texas-chip-childrens-health-insurance",
+   "name_local": "Texas CHIP (Children's Health Insurance Program)",
+   "name_en": "Texas CHIP (Children's Health Insurance Program)",
+   "admin_level": "state",
+   "admin_area": "Texas",
+   "funder": "Texas Health and Human Services",
+   "category": "health",
+   "benefit_type": "in_kind",
+   "amount_min": null,
+   "amount_max": null,
+   "amount_currency": "USD",
+   "amount_period": "annual",
+   "amount_note": "Enrollment fee $50 or less per family per year; co-pays $3-$5 for lower-income and $20-$35 for higher-income families",
+   "is_automatic": false,
+   "application_url": "https://www.hhs.texas.gov/services/health/medicaid-chip/medicaid-chip-members/chip",
+   "application_channel": "online",
+   "deadline_type": "rolling",
+   "deadline_note": null,
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Apply through YourTexasBenefits",
+     "url": "https://www.hhs.texas.gov/services/health/medicaid-chip/medicaid-chip-members/chip"
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "Proof of income",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Child's identity and citizenship/immigration documents",
+     "mandatory": true,
+     "note": null
+    }
+   ],
+   "eligibility": {
+    "statuses": [],
+    "age_min": null,
+    "age_max": null,
+    "income_annual_max": 64632,
+    "income_note": "Monthly family income limits: 1 = $2,622; 2 = $3,543; 3 = $4,464; 4 = $5,386; 5 = $6,307; 6 = $7,228; 7 = $8,149. Ceiling shown = four-person x 12. Immigration rules are not stated on the page; verify with HHSC.",
+    "requires_children": true,
+    "nationality": "citizen_or_pr",
+    "residency_months_min": null,
+    "housing_tenure": null,
+    "student_required": false,
+    "admin_areas": [
+     "Texas"
+    ],
+    "gender": "any"
+   },
+   "source_url": "https://www.hhs.texas.gov/services/health/medicaid-chip/medicaid-chip-members/chip",
+   "source_snippet": "CHIP covers children in families that earn too much money to qualify for Medicaid but cannot afford to buy private insurance.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "florida-homestead-exemption",
+   "name_local": "Homestead Exemption (Florida)",
+   "name_en": "Homestead Exemption (Florida)",
+   "admin_level": "state",
+   "admin_area": "Florida",
+   "funder": "Florida Department of Revenue / county property appraisers",
+   "category": "tax",
+   "benefit_type": "discount",
+   "amount_min": null,
+   "amount_max": null,
+   "amount_currency": "USD",
+   "amount_period": "annual",
+   "amount_note": "Reduces taxable value by as much as $50,000 and qualifies the home for the Save Our Homes assessment cap (not a cash payment)",
+   "is_automatic": false,
+   "application_url": "https://floridarevenue.com/property/Pages/Taxpayers_Exemptions.aspx",
+   "application_channel": "in_person",
+   "deadline_type": "annual",
+   "deadline_note": "File with your county property appraiser; March 1 is the filing deadline for the related Save Our Homes portability forms (confirm local deadline)",
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Contact your county property appraiser",
+     "url": null
+    },
+    {
+     "step": 2,
+     "detail": "Submit the application and documentation",
+     "url": "https://floridarevenue.com/property/Pages/Taxpayers_Exemptions.aspx"
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "Proof the home is your permanent residence",
+     "mandatory": true,
+     "note": null
+    }
+   ],
+   "eligibility": {
+    "statuses": [],
+    "age_min": null,
+    "age_max": null,
+    "income_annual_max": null,
+    "income_note": "No income test.",
+    "requires_children": false,
+    "nationality": "any_resident",
+    "residency_months_min": null,
+    "housing_tenure": "owner",
+    "student_required": false,
+    "admin_areas": [
+     "Florida"
+    ],
+    "gender": "any"
+   },
+   "source_url": "https://floridarevenue.com/property/Pages/Taxpayers_Exemptions.aspx",
+   "source_snippet": "the property owner may be eligible to receive a homestead exemption that would decrease the property’s taxable value by as much as $50,000.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "florida-bright-futures-scholarship",
+   "name_local": "Bright Futures Scholarship (Florida)",
+   "name_en": "Bright Futures Scholarship (Florida)",
+   "admin_level": "state",
+   "admin_area": "Florida",
+   "funder": "Florida Department of Education, Office of Student Financial Assistance",
+   "category": "education",
+   "benefit_type": "cash_one_off",
+   "amount_min": null,
+   "amount_max": null,
+   "amount_currency": "USD",
+   "amount_period": "annual",
+   "amount_note": "Florida Academic Scholars cover 100% of tuition and applicable fees; Florida Medallion Scholars cover 75%",
+   "is_automatic": false,
+   "application_url": "https://www.floridastudentfinancialaidsg.org/pdf/fas-fms.pdf",
+   "application_channel": "online",
+   "deadline_type": "annual",
+   "deadline_note": "Submit the Florida Financial Aid Application (FFAA) by August 31 after high school graduation",
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Meet GPA, test and service-hour requirements",
+     "url": null
+    },
+    {
+     "step": 2,
+     "detail": "Submit the FFAA no later than August 31 after graduation",
+     "url": "https://www.floridastudentfinancialaidsg.org/pdf/fas-fms.pdf"
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "High school transcript",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Test scores",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Service-hour records",
+     "mandatory": true,
+     "note": null
+    }
+   ],
+   "eligibility": {
+    "statuses": [],
+    "age_min": null,
+    "age_max": null,
+    "income_annual_max": null,
+    "income_note": "Merit-based; no income test. FAS: 3.50 weighted GPA, 100 service hours; FMS: 3.00 weighted GPA, 75 volunteer or 100 paid hours (2026-27).",
+    "requires_children": false,
+    "nationality": "citizen_or_pr",
+    "residency_months_min": null,
+    "housing_tenure": null,
+    "student_required": true,
+    "admin_areas": [
+     "Florida"
+    ],
+    "gender": "any"
+   },
+   "source_url": "https://www.floridastudentfinancialaidsg.org/pdf/fas-fms.pdf",
+   "source_snippet": "Submit the Florida Financial Aid Application (FFAA) no later than August 31 after high school graduation.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "florida-liheap-home-energy-assistance",
+   "name_local": "Low-Income Home Energy Assistance Program (Florida)",
+   "name_en": "Low-Income Home Energy Assistance Program (Florida)",
+   "admin_level": "state",
+   "admin_area": "Florida",
+   "funder": "Florida Commerce",
+   "category": "energy",
+   "benefit_type": "cash_one_off",
+   "amount_min": null,
+   "amount_max": null,
+   "amount_currency": "USD",
+   "amount_period": "annual",
+   "amount_note": "Help with energy bills; amount set by your local provider",
+   "is_automatic": false,
+   "application_url": "https://floridajobs.org/community-development/Low-Income-Home-Energy-Assistance-Program",
+   "application_channel": "online",
+   "deadline_type": "rolling",
+   "deadline_note": "Apply through your local LIHEAP provider",
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Find your local provider and apply online",
+     "url": "https://floridajobs.org/community-development/Low-Income-Home-Energy-Assistance-Program/find-your-local-low-income-home-energy-assistance-program-provider-for-help"
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "Proof of income",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Energy bill",
+     "mandatory": true,
+     "note": null
+    }
+   ],
+   "eligibility": {
+    "statuses": [],
+    "age_min": null,
+    "age_max": null,
+    "income_annual_max": null,
+    "income_note": "Total income no more than 60% of the Florida State Median Income or 150% of the Federal Poverty Level; dollar limits by household size are in the State Plan.",
+    "requires_children": false,
+    "nationality": "any_resident",
+    "residency_months_min": null,
+    "housing_tenure": null,
+    "student_required": false,
+    "admin_areas": [
+     "Florida"
+    ],
+    "gender": "any"
+   },
+   "source_url": "https://floridajobs.org/community-development/Low-Income-Home-Energy-Assistance-Program",
+   "source_snippet": "Have a total income no more than 60% of the Florida State Median Income or 150% of Federal Poverty Level.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "georgia-hope-scholarship",
+   "name_local": "HOPE Scholarship (Georgia)",
+   "name_en": "HOPE Scholarship (Georgia)",
+   "admin_level": "state",
+   "admin_area": "Georgia",
+   "funder": "Georgia Student Finance Commission",
+   "category": "education",
+   "benefit_type": "cash_one_off",
+   "amount_min": null,
+   "amount_max": null,
+   "amount_currency": "USD",
+   "amount_period": "annual",
+   "amount_note": "Award levels vary by institution type; see GAfutures award amounts",
+   "is_automatic": false,
+   "application_url": "https://www.gafutures.org/hope-state-aid-programs/hope-zell-miller-scholarships/hope-scholarship/basic-eligibility/",
+   "application_channel": "online",
+   "deadline_type": "annual",
+   "deadline_note": "Apply via GAfutures and the FAFSA",
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Check HOPE GPA and basic eligibility on GAfutures",
+     "url": "https://www.gafutures.org/hope-state-aid-programs/hope-zell-miller-scholarships/hope-scholarship/basic-eligibility/"
+    },
+    {
+     "step": 2,
+     "detail": "Apply through GAfutures",
+     "url": null
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "Transcript",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "FAFSA",
+     "mandatory": false,
+     "note": null
+    }
+   ],
+   "eligibility": {
+    "statuses": [],
+    "age_min": null,
+    "age_max": null,
+    "income_annual_max": null,
+    "income_note": "Merit-based; no income test. Zell Miller Scholarship (higher GPA) is on the same site. Georgia residency: 12 consecutive months if a Georgia resident at high school graduation, otherwise 24 months.",
+    "requires_children": false,
+    "nationality": "citizen_or_pr",
+    "residency_months_min": null,
+    "housing_tenure": null,
+    "student_required": true,
+    "admin_areas": [
+     "Georgia"
+    ],
+    "gender": "any"
+   },
+   "source_url": "https://www.gafutures.org/hope-state-aid-programs/hope-zell-miller-scholarships/hope-scholarship/basic-eligibility/",
+   "source_snippet": "U.S. citizenship or eligible non-citizen",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "georgia-pathways-to-coverage",
+   "name_local": "Georgia Pathways to Coverage",
+   "name_en": "Georgia Pathways to Coverage",
+   "admin_level": "state",
+   "admin_area": "Georgia",
+   "funder": "Georgia Department of Community Health",
+   "category": "health",
+   "benefit_type": "in_kind",
+   "amount_min": null,
+   "amount_max": null,
+   "amount_currency": "USD",
+   "amount_period": "monthly",
+   "amount_note": "Health coverage for adults who meet the activity requirement and are not eligible for other Medicaid",
+   "is_automatic": false,
+   "application_url": "https://pathways.georgia.gov/eligibility",
+   "application_channel": "online",
+   "deadline_type": "rolling",
+   "deadline_note": "Eligibility requirements change January 1, 2027",
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Apply on Georgia Gateway or contact DFCS",
+     "url": "https://pathways.georgia.gov/eligibility"
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "Proof of income",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Proof of 80 hours per month of qualifying activities",
+     "mandatory": true,
+     "note": null
+    }
+   ],
+   "eligibility": {
+    "statuses": [],
+    "age_min": 19,
+    "age_max": 64,
+    "income_annual_max": 26650,
+    "income_note": "Gross household income up to 100% of FPL; for 2025 about $15,650 for one person and $26,650 for a family of three (ceiling shown = three-person). Must be a Georgia resident, a US citizen or legally residing non-citizen, not eligible for other Medicaid, not incarcerated.",
+    "requires_children": false,
+    "nationality": "citizen_or_pr",
+    "residency_months_min": null,
+    "housing_tenure": null,
+    "student_required": false,
+    "admin_areas": [
+     "Georgia"
+    ],
+    "gender": "any"
+   },
+   "source_url": "https://pathways.georgia.gov/eligibility",
+   "source_snippet": "To qualify for Georgia Pathways to Coverage™, an applicant must have a gross household income of up to 100% of the FPL",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "georgia-peachcare-for-kids",
+   "name_local": "PeachCare for Kids (Georgia)",
+   "name_en": "PeachCare for Kids (Georgia)",
+   "admin_level": "state",
+   "admin_area": "Georgia",
+   "funder": "Georgia Department of Community Health",
+   "category": "health",
+   "benefit_type": "in_kind",
+   "amount_min": null,
+   "amount_max": null,
+   "amount_currency": "USD",
+   "amount_period": "monthly",
+   "amount_note": "Children's health coverage; any premium is notified after application",
+   "is_automatic": false,
+   "application_url": "https://dch.georgia.gov/peachcare-kids/eligibility-criteria",
+   "application_channel": "online",
+   "deadline_type": "rolling",
+   "deadline_note": "Processing can take up to 45 days",
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Apply for medical assistance on Georgia Gateway; children are placed in Medicaid or PeachCare by income",
+     "url": "https://georgia.gov/enroll-peachcare-kids"
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "Income verification",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Proof of citizenship or eligible immigration status for the child",
+     "mandatory": true,
+     "note": null
+    }
+   ],
+   "eligibility": {
+    "statuses": [],
+    "age_min": null,
+    "age_max": 18,
+    "income_annual_max": 77064,
+    "income_note": "Eligibility is based on 247% of Federal Poverty Guidelines; family of four limit is $6,422 monthly or $77,064 annually.",
+    "requires_children": true,
+    "nationality": "citizen_or_pr",
+    "residency_months_min": null,
+    "housing_tenure": null,
+    "student_required": false,
+    "admin_areas": [
+     "Georgia"
+    ],
+    "gender": "any"
+   },
+   "source_url": "https://georgia.gov/enroll-peachcare-kids",
+   "source_snippet": "Be under age 19. Not have current health care coverage or be eligible for Medicaid. Meet specific income requirements.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "georgia-pre-k-program",
+   "name_local": "Georgia's Pre-K Program",
+   "name_en": "Georgia's Pre-K Program",
+   "admin_level": "state",
+   "admin_area": "Georgia",
+   "funder": "Georgia Department of Early Care and Learning (Bright from the Start)",
+   "category": "education",
+   "benefit_type": "free_slab",
+   "amount_min": null,
+   "amount_max": null,
+   "amount_currency": "USD",
+   "amount_period": "annual",
+   "amount_note": "Free (lottery-funded) pre-kindergarten, typically a 6.5-hour instructional day on the school calendar",
+   "is_automatic": false,
+   "application_url": "https://www.decal.ga.gov/prek/About.aspx",
+   "application_channel": "in_person",
+   "deadline_type": "annual",
+   "deadline_note": "Spaces may be limited in some communities; register with your school system or provider",
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Contact your local school system or private provider, call 1-888-4GA-PREK, or search online",
+     "url": "https://families.decal.ga.gov/Search"
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "Proof of age",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Proof of Georgia residency",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Health screening form (DHR Form 3300)",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Immunization form (DHR Form 3231)",
+     "mandatory": true,
+     "note": null
+    }
+   ],
+   "eligibility": {
+    "statuses": [],
+    "age_min": null,
+    "age_max": null,
+    "income_annual_max": null,
+    "income_note": "No income test.",
+    "requires_children": true,
+    "nationality": "any_resident",
+    "residency_months_min": null,
+    "housing_tenure": null,
+    "student_required": false,
+    "admin_areas": [
+     "Georgia"
+    ],
+    "gender": "any"
+   },
+   "source_url": "https://www.decal.ga.gov/bfts/enrollinginprek.aspx",
+   "source_snippet": "To participate, children must be four years of age on or before September 1 of the school year that they want to attend Georgia's Pre-K.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "georgia-liheap-energy-assistance",
+   "name_local": "Low Income Home Energy Assistance Program (Georgia)",
+   "name_en": "Low Income Home Energy Assistance Program (Georgia)",
+   "admin_level": "state",
+   "admin_area": "Georgia",
+   "funder": "Georgia Department of Human Services",
+   "category": "energy",
+   "benefit_type": "cash_one_off",
+   "amount_min": null,
+   "amount_max": null,
+   "amount_currency": "USD",
+   "amount_period": "annual",
+   "amount_note": "Energy bill payment assistance, crisis assistance, weatherization and minor energy-related home repairs",
+   "is_automatic": false,
+   "application_url": "https://dhs.georgia.gov/low-income-home-energy-assistance-program",
+   "application_channel": "in_person",
+   "deadline_type": "annual",
+   "deadline_note": "Applications are offered first to homebound individuals, people 65+ and those with life-threatening circumstances; phone 404-657-3426",
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Contact DFCS / your local agency (404-657-3426) to apply",
+     "url": "https://dhs.georgia.gov/low-income-home-energy-assistance-program"
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "Proof of income",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Utility bill",
+     "mandatory": true,
+     "note": null
+    }
+   ],
+   "eligibility": {
+    "statuses": [],
+    "age_min": null,
+    "age_max": null,
+    "income_annual_max": 77071,
+    "income_note": "Income at or below 60% of Georgia median income; threshold $34,549 for a household of one and $77,071 for a household of five (ceiling shown = five-person; Dec 2025 press release).",
+    "requires_children": false,
+    "nationality": "any_resident",
+    "residency_months_min": null,
+    "housing_tenure": null,
+    "student_required": false,
+    "admin_areas": [
+     "Georgia"
+    ],
+    "gender": "any"
+   },
+   "source_url": "https://dhs.georgia.gov/press-releases/2025-12-01/low-income-home-energy-assistance-program-heating-opens-today",
+   "source_snippet": "To qualify, a family’s income must be less than or equal to 60 percent of the median income for a Georgia family.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "georgia-homestead-exemption",
+   "name_local": "Standard Homestead Exemption (Georgia)",
+   "name_en": "Standard Homestead Exemption (Georgia)",
+   "admin_level": "state",
+   "admin_area": "Georgia",
+   "funder": "Georgia Department of Revenue / county tax commissioners",
+   "category": "tax",
+   "benefit_type": "discount",
+   "amount_min": null,
+   "amount_max": null,
+   "amount_currency": "USD",
+   "amount_period": "annual",
+   "amount_note": "$2,000 exemption from county and school taxes (deducted from the 40% assessed value); many counties add local exemptions, some age/income based; disabled veteran exemption available",
+   "is_automatic": false,
+   "application_url": "https://dor.georgia.gov/property-tax-homestead-exemptions",
+   "application_channel": "in_person",
+   "deadline_type": "annual",
+   "deadline_note": "Apply with your county tax commissioner or assessor",
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Contact your local tax commissioner or assessor",
+     "url": null
+    },
+    {
+     "step": 2,
+     "detail": "Submit the homestead application",
+     "url": "https://dor.georgia.gov/property-tax-homestead-exemptions"
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "Proof the home is your primary residence",
+     "mandatory": true,
+     "note": null
+    }
+   ],
+   "eligibility": {
+    "statuses": [],
+    "age_min": null,
+    "age_max": null,
+    "income_annual_max": null,
+    "income_note": "State standard exemption has no income test; some local exemptions apply age and income limits.",
+    "requires_children": false,
+    "nationality": "any_resident",
+    "residency_months_min": null,
+    "housing_tenure": "owner",
+    "student_required": false,
+    "admin_areas": [
+     "Georgia"
+    ],
+    "gender": "any"
+   },
+   "source_url": "https://dor.georgia.gov/property-tax-homestead-exemptions",
+   "source_snippet": "The home of each resident of Georgia that is actually occupied and used as the primary residence by the owner may be granted a $2,000 exemption from county and school taxes",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "georgia-dual-enrollment-program",
+   "name_local": "Dual Enrollment Program (Georgia)",
+   "name_en": "Dual Enrollment Program (Georgia)",
+   "admin_level": "state",
+   "admin_area": "Georgia",
+   "funder": "Georgia Student Finance Commission",
+   "category": "education",
+   "benefit_type": "free_slab",
+   "amount_min": null,
+   "amount_max": null,
+   "amount_currency": "USD",
+   "amount_period": "annual",
+   "amount_note": "Covers standard tuition, mandatory fees and required books for college courses taken while in high school",
+   "is_automatic": false,
+   "application_url": "https://www.gafutures.org/hope-state-aid-programs/scholarships-grants/dual-enrollment/",
+   "application_channel": "online",
+   "deadline_type": "annual",
+   "deadline_note": "Apply through GAfutures",
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Review eligibility and apply on GAfutures",
+     "url": "https://www.gafutures.org/hope-state-aid-programs/scholarships-grants/dual-enrollment/"
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "High school enrolment proof",
+     "mandatory": true,
+     "note": null
+    }
+   ],
+   "eligibility": {
+    "statuses": [],
+    "age_min": null,
+    "age_max": null,
+    "income_annual_max": null,
+    "income_note": "No income test.",
+    "requires_children": false,
+    "nationality": "any_resident",
+    "residency_months_min": null,
+    "housing_tenure": null,
+    "student_required": true,
+    "admin_areas": [
+     "Georgia"
+    ],
+    "gender": "any"
+   },
+   "source_url": "https://www.gafutures.org/hope-state-aid-programs/scholarships-grants/dual-enrollment/",
+   "source_snippet": "Georgia's Dual Enrollment Program provides Georgia resident students enrolled at an eligible public or private high school or home study program",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   }
  ]
 }
