@@ -504,7 +504,7 @@ function evalProgramme(p, profile, entry) {
       const g = profile.nationality_group;
       const satisfied =
         (g === 'citizen_or_pr' && (req === 'citizen_or_pr' || req === 'any_resident')) ||
-        (g === 'any_resident' && req === 'any_resident') ||
+        (['any_resident', 'eu_eea', 'work_visa', 'student_visa', 'other_legal'].includes(g) && req === 'any_resident') ||
         (g === 'refugee_or_protected' && (req === 'refugee_or_protected' || req === 'any_resident'));
       verdicts.push({
         outcome: satisfied ? 'pass' : 'fail',
