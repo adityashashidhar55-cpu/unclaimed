@@ -19,6 +19,7 @@ import { T, wizardDict, translateTree, wizardLang, NUM, localePath, localeOwnsCo
 import { bindCheckout } from './app/checkout.js';
 import { applyPlan, recordApplyConsent } from './app/unlock.js';
 import { utmQuery } from './share-link.js';
+import { emailResultCard, bindEmailResult } from './email-result.js';
 
 const BASE = new URL('.', import.meta.url).pathname.replace(/\/$/, '');
 const app = document.getElementById('app');
@@ -236,10 +237,18 @@ const TENURES = [
   ['homeless', T('I have no fixed home'), T('Temporary, emergency or no accommodation')],
 ];
 
+/* Five distinct situations, not "citizen / resident / refugee": a student visa
+   and a work visa are different rights, and EU free movement is a third. The
+   values are what src/engine/matcher.js NATIONALITY_SATISFIED_BY reads;
+   `any_resident` stays as "other legal residence" so a saved or shared profile
+   that already holds it keeps meaning the same thing. */
 const NATIONALITY = [
   ['citizen_or_pr', T('Citizen or permanent resident'), T('Unlocks the most programmes')],
-  ['any_resident', T('Legal resident on a visa or permit'), T('Work, study, family or other permit')],
+  ['eu_eea', T('EU or EEA national'), T('Living here under EU free movement')],
+  ['work_visa', T('Work visa or permit'), T('Skilled worker, employer-sponsored or similar')],
+  ['student_visa', T('Student visa'), T('Here to study — many benefits are closed to student visas')],
   ['refugee_or_protected', T('Refugee or protected status'), T('Asylum, humanitarian or subsidiary protection')],
+  ['any_resident', T('Other legal residence'), T('Family, dependant or another permit')],
 ];
 
 /**
@@ -548,6 +557,7 @@ function viewHousing() {
     <h2 class="h-eyebrow" style="margin-top:1.5rem">${esc(T('Your housing situation'))}</h2>
     <div class="opts">${TENURES.map(([v, l, s]) => optButton(v, l, s, 'housing_tenure')).join('')}</div>
     <h2 class="h-eyebrow" style="margin-top:2rem">${esc(T('Your status in {country}', { country: countryName(S.entry) }))}</h2>
+    <p class="q-why" style="margin-top:.2rem">${esc(T('Student and work visas qualify for fewer programmes than permanent residence — pick the one that matches your permit.'))}</p>
     <div class="opts">${NATIONALITY.map(([v, l, s]) => optButton(v, l, s, 'nationality_group')).join('')}</div>
     <div class="field" style="margin-top:1.5rem"><label for="res">${esc(T('How many months have you lived in {country}?', { country: countryName(S.entry) }))}</label>
       <input id="res" type="number" inputmode="numeric" min="0" value="${S.profile.residency_months ?? ''}" placeholder="${esc(T('Leave blank if unsure'))}">
@@ -1805,6 +1815,8 @@ function viewResults() {
       ),
     )}</p>
 
+  ${emailResultCard('household')}
+
   ${
     /* Outside the hero deliberately: the hero is one heading and one claim,
        and a network failure is neither. */
@@ -2620,6 +2632,8 @@ app.addEventListener('click', async (ev) => {
     }
   }
 });
+
+bindEmailResult({ audience: 'household', getProfile: () => S.profile });
 
 // A shared result link pasted while /check/ is already open changes only the
 // hash, which does not re-run the module. Without this the recipient sees the
