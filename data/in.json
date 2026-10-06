@@ -97,7 +97,7 @@
    "application_url": "https://pmayg.nic.in",
    "application_channel": "in_person",
    "deadline_type": "rolling",
-   "deadline_note": null,
+   "deadline_note": "Scheme extended by Union Cabinet to March 2029 (FY 2024-25 to 2028-29) to build two crore more houses; beneficiaries are identified from Awaas+ and SECC 2011 permanent wait lists, not by open walk-in application.",
    "procedure_steps": [
     {
      "step": 1,
@@ -148,9 +148,9 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://pmayg.nic.in",
-   "source_snippet": "Financial assistance of ₹1.20 lakh (plain) / ₹1.30 lakh (hilly areas) is provided to eligible rural households to construct a pucca house.",
-   "last_verified_at": "2026-08-12",
+   "source_url": "https://www.pmindia.gov.in/en/news_updates/cabinet-approves-implementation-of-the-pradhan-mantri-awaas-yojana-gramin-pmay-g-during-fy-2024-25-to-2028-29/",
+   "source_snippet": "Unit costs remain unchanged: Rs. 1.20 lakh in plains areas and Rs. 1.30 lakh in northeastern and hill regions; eligible households identified through updated Awaas+ lists and the SECC 2011 Permanent Wait List.",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -166,12 +166,12 @@
    "amount_max": 250000,
    "amount_currency": "INR",
    "amount_period": "one_off",
-   "amount_note": "Central assistance up to ₹2.5 lakh per EWS house (BLC component); interest subsidy up to ₹1.8 lakh on home loans for EWS/LIG/MIG under the Interest Subsidy Scheme",
+   "amount_note": "Central assistance per house under BLC/AHP: Rs 1.5 lakh in most States (plus State share min Rs 1 lakh, i.e. about Rs 2.5 lakh total), Rs 2.25 lakh in NE States, Himachal, Uttarakhand, J&K, Puducherry and Delhi, Rs 2.5 lakh in other UTs; interest subsidy up to Rs 1.8 lakh per unit on loans up to Rs 25 lakh (property value up to Rs 35 lakh) for EWS/LIG/MIG",
    "is_automatic": false,
-   "application_url": "https://pmay-urban.gov.in",
+   "application_url": "https://pmaymis.gov.in/PMAYMIS2_2024/PmayDefault.aspx",
    "application_channel": "online",
    "deadline_type": "rolling",
-   "deadline_note": null,
+   "deadline_note": "PMAY-U 2.0 runs for 5 years from 01.09.2024",
    "procedure_steps": [
     {
      "step": 1,
@@ -223,10 +223,10 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://pmay-urban.gov.in",
-   "source_snippet": "PMAY-U 2.0 provides central assistance and home-loan interest subsidy to urban EWS/LIG/MIG families without a pucca house.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://pmaymis.gov.in/PMAYMIS2_2024/Operational-Guidelines-of-PMAY-U-2.pdf",
+   "source_snippet": "Families belonging to EWS/LIG/MIG segments, living in urban areas, should not own a pucca house either in his/her name or in the name of any member of his/her family in any part of India.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "pm-ujjwala",
@@ -2602,7 +2602,7 @@
    },
    "source_url": "https://pmsuryaghar.gov.in",
    "source_snippet": "PM Surya Ghar gives up to ₹78,000 subsidy for residential rooftop solar, targeting 300 units of free electricity a month for 1 crore households.",
-   "last_verified_at": "2026-08-12",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified",
    "income_reviewed_at": "2026-08-13"
   },
@@ -2619,12 +2619,12 @@
    "amount_max": null,
    "amount_currency": "INR",
    "amount_period": "one_off",
-   "amount_note": "Component B: 30% central subsidy plus 30% state support for standalone solar agriculture pumps (farmer share ~40%); Component C: 30% subsidy for solarisation of grid-connected pumps",
+   "amount_note": "Central subsidy up to 30% of benchmark/tender cost for stand-alone solar pumps (50% in NE states, Sikkim, J&K, HP, Uttarakhand, islands); state gives at least 30%, farmer pays the rest",
    "is_automatic": false,
    "application_url": "https://pmkusum.mnre.gov.in",
    "application_channel": "online",
    "deadline_type": "rolling",
-   "deadline_note": "State-wise allocations and tenders announced periodically",
+   "deadline_note": "Scheme period ran to 31.03.2026 (MNRE); MNRE says the current scheme is proposed to be subsumed under PM-KUSUM 2.0 and the portal only lists timeline extensions for already-sanctioned projects. Ask your state nodal agency before applying.",
    "procedure_steps": [
     {
      "step": 1,
@@ -2676,10 +2676,10 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://pmkusum.mnre.gov.in",
+   "source_url": "https://mnre.gov.in/en/pradhan-mantri-kisan-urja-suraksha-evam-utthaan-mahabhiyaan-pm-kusum/",
    "source_snippet": "PM-KUSUM subsidises solar agriculture pumps and pump solarisation with about 60% central-plus-state support.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "kisan-credit-card",
@@ -2750,10 +2750,10 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.myscheme.gov.in",
+   "source_url": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2238004&reg=3&lang=1",
    "source_snippet": "KCC provides revolving crop credit at 7% (effectively 4% on prompt repayment) for limits up to ₹3 lakh.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "interest-subvention-crop-loan",
@@ -2805,10 +2805,10 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://agricoop.gov.in",
+   "source_url": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2131989",
    "source_snippet": "The interest subvention scheme delivers short-term crop loans at an effective 4% to farmers who repay promptly.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "pmfby",
@@ -2880,9 +2880,9 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://pmfby.gov.in",
+   "source_url": "https://www.pib.gov.in/PressReleaseIframePage.aspx?PRID=1738233",
    "source_snippet": "PMFBY insures crops against natural risks at subsidised farmer premiums of 1.5–5% of the sum insured.",
-   "last_verified_at": "2026-08-12",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -2900,10 +2900,10 @@
    "amount_period": "one_off",
    "amount_note": "Up to ₹20 lakh as grants for prototype/trials and up to ₹50 lakh as investment (convertible debentures/debt) through approved incubators",
    "is_automatic": false,
-   "application_url": "https://www.startupindia.gov.in",
+   "application_url": "https://seedfund.startupindia.gov.in/",
    "application_channel": "online",
-   "deadline_type": "window",
-   "deadline_note": "Incubator-wise application windows announced on the portal",
+   "deadline_type": "none",
+   "deadline_note": "Ended: last date for startups to apply under SISFS was 31 May 2026 (final extended notice); incubators to complete startup selection by 30 June 2026. Scheme extended only for disbursement and completion of approved activities.",
    "procedure_steps": [
     {
      "step": 1,
@@ -2957,10 +2957,10 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.startupindia.gov.in",
+   "source_url": "https://seedfund.startupindia.gov.in/",
    "source_snippet": "SISFS provides up to ₹20 lakh in grants and ₹50 lakh in investment to early-stage DPIIT-recognised startups via incubators.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "csis-education-loan",
@@ -2975,9 +2975,9 @@
    "amount_max": null,
    "amount_currency": "INR",
    "amount_period": "one_off",
-   "amount_note": "Full interest subsidy during the moratorium (course period + one year) on education loans up to ₹7.5 lakh for students from economically weaker sections; see also PM Vidyalaxmi for wider coverage",
+   "amount_note": "100% interest subvention during the moratorium period on education loans up to Rs 10 lakh",
    "is_automatic": false,
-   "application_url": "https://www.vidyalakshmi.co.in",
+   "application_url": "https://pmvidyalaxmi.co.in/",
    "application_channel": "online",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -3025,7 +3025,7 @@
     "age_min": null,
     "age_max": null,
     "income_annual_max": 450000,
-    "income_note": "Students from families with annual income up to ₹4.5 lakh pursuing technical/professional courses in India",
+    "income_note": "Annual gross parental/family income up to Rs 4.5 lakh; student pursuing technical/professional courses at approved NAAC-accredited HEIs / NBA-accredited courses. Applied for via the PM-Vidyalaxmi portal.",
     "requires_children": false,
     "nationality": "citizen_or_pr",
     "residency_months_min": null,
@@ -3034,10 +3034,10 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.vidyalakshmi.co.in",
+   "source_url": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2290972&reg=3&lang=1",
    "source_snippet": "CSIS waives the interest during study and moratorium on education loans up to ₹7.5 lakh for students with family income up to ₹4.5 lakh.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "lpg-subsidy-pahal",
@@ -3100,10 +3100,10 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.mylpg.in",
+   "source_url": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2154117",
    "source_snippet": "PAHAL/DBTL credits the LPG refill subsidy directly to the Aadhaar-linked bank account; PMUY consumers get ₹300 per cylinder.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "railway-concessions",
@@ -3169,10 +3169,10 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://indianrailways.gov.in",
+   "source_url": "https://indianrailways.gov.in/railwayboard/uploads/directorate/traffic_comm/Concession_list_different_persons.pdf",
    "source_snippet": "Indian Railways grants 25–75% fare concessions to persons with disabilities, certain patients and students on authorised journeys.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "ka-gruha-jyothi",
@@ -3246,9 +3246,9 @@
     ],
     "gender": "any"
    },
-   "source_url": "https://sevasindhugs.karnataka.gov.in",
+   "source_url": "https://energy.karnataka.gov.in/141/gruha-jyothi-/en",
    "source_snippet": "Gruha Jyothi gives Karnataka households free electricity up to 200 units a month, merged from the earlier Bhagya Jyothi/Kuteera Jyothi schemes.",
-   "last_verified_at": "2026-08-12",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -3318,10 +3318,10 @@
     ],
     "gender": "female"
    },
-   "source_url": "https://sevasindhugs.karnataka.gov.in",
+   "source_url": "https://dwcd.karnataka.gov.in/41/gruhalakshmi-scheme/en",
    "source_snippet": "Gruha Lakshmi pays ₹2,000 a month to women heads of ration-card households in Karnataka.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "ka-anna-bhagya",
@@ -3385,10 +3385,10 @@
     ],
     "gender": "any"
    },
-   "source_url": "https://ahara.kar.nic.in",
+   "source_url": "https://yuvakanaja.karnataka.gov.in/589/anna-bhagya-yojana/en",
    "source_snippet": "Anna Bhagya gives BPL households 10 kg of rice per person per month, with the state share partly paid as DBT cash.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "ka-shakti",
@@ -3448,9 +3448,9 @@
     ],
     "gender": "female"
    },
-   "source_url": "https://sevasindhugs.karnataka.gov.in",
+   "source_url": "https://ksrtc.karnataka.gov.in/info-2/Student+Bus+Pass/en",
    "source_snippet": "Shakti allows women domiciled in Karnataka to travel free on non-premium state transport buses within the state.",
-   "last_verified_at": "2026-08-12",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -3528,10 +3528,10 @@
     ],
     "gender": "any"
    },
-   "source_url": "https://sevasindhugs.karnataka.gov.in",
+   "source_url": "https://kaushalya.karnataka.gov.in/21/yuvanidhi-scheme/en",
    "source_snippet": "Yuva Nidhi pays ₹1,500–₹3,000 a month to unemployed diploma holders and graduates in Karnataka for up to two years.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "dl-free-electricity",
@@ -3585,9 +3585,9 @@
     ],
     "gender": "any"
    },
-   "source_url": "https://www.bsesdelhi.com",
+   "source_url": "https://solar.delhi.gov.in/public/assets/solar/for-more-information.pdf",
    "source_snippet": "Delhi households pay ₹0 for up to 200 units a month and half price for 201–400 units (capped), funded by the Delhi government.",
-   "last_verified_at": "2026-08-12",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -3642,10 +3642,10 @@
     ],
     "gender": "any"
    },
-   "source_url": "https://djb.gov.in",
+   "source_url": "https://djb.gov.in/DJBRMSPortal/portal/faq.html",
    "source_snippet": "DJB domestic consumers using up to 20 kilolitres a month get a zero water bill.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "dl-women-free-bus",
@@ -3894,10 +3894,10 @@
     ],
     "gender": "female"
    },
-   "source_url": "https://www.tn.gov.in",
+   "source_url": "https://spc.tn.gov.in/vidiyal-payanam-scheme/",
    "source_snippet": "Vidiyal Payanam lets women and transgender persons ride ordinary state buses in Tamil Nadu free of charge.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "tn-breakfast-scheme",
@@ -3951,10 +3951,10 @@
     ],
     "gender": "any"
    },
-   "source_url": "https://tnschools.gov.in",
+   "source_url": "https://www.tnsocialwelfare.tn.gov.in/en/specilisationsnutritious-meal-programme/chief-ministers-breakfast-scheme",
    "source_snippet": "The Chief Minister's Breakfast Scheme serves a free breakfast every school day to primary students across Tamil Nadu.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "tn-kalaignar-magalir",
@@ -4033,9 +4033,9 @@
     ],
     "gender": "female"
    },
-   "source_url": "https://kmut.tn.gov.in",
+   "source_url": "https://spc.tn.gov.in/kalaignar-magalir-urimai-thittam/",
    "source_snippet": "KMUT pays ₹1,000 a month to over 1.3 crore eligible women heads of families in Tamil Nadu.",
-   "last_verified_at": "2026-08-12",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -4111,10 +4111,10 @@
     ],
     "gender": "any"
    },
-   "source_url": "https://www.tn.gov.in",
+   "source_url": "https://www.tnsocialwelfare.tn.gov.in/en/specilisationswoman-welfare/pudhumai-penn",
    "source_snippet": "Pudhumai Penn pays ₹1,000 a month to girls from government schools pursuing college education in Tamil Nadu.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "mh-ladki-bahin",
@@ -4343,10 +4343,10 @@
     "income_confidence": "medium",
     "gender": "female"
    },
-   "source_url": "https://www.telangana.gov.in",
+   "source_url": "https://kamareddy.telangana.gov.in/scheme/maha-lakshmi-scheme/",
    "source_snippet": "Mahalakshmi pays ₹2,500 a month to eligible women heads of households in Telangana.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified",
    "income_reviewed_at": "2026-08-13"
   },
   {
@@ -4585,10 +4585,10 @@
     ],
     "gender": "any"
    },
-   "source_url": "https://swasthyasathi.gov.in",
+   "source_url": "https://swasthyasathi.gov.in/AboutScheme",
    "source_snippet": "Swasthya Sathi provides cashless health cover of ₹5 lakh per family per year to West Bengal households.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "kl-welfare-pension",
@@ -4669,10 +4669,10 @@
     "income_confidence": "medium",
     "gender": "any"
    },
-   "source_url": "https://welfarepension.lsgkerala.gov.in",
+   "source_url": "https://welfarepension.lsgkerala.gov.in/FAQsEng.aspx?pentypeid=2",
    "source_snippet": "Kerala's welfare pension system pays ₹1,600 a month to elderly, widows, persons with disabilities and other eligible categories.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified",
    "income_reviewed_at": "2026-08-13"
   },
   {
@@ -4741,10 +4741,10 @@
     ],
     "gender": "any"
    },
-   "source_url": "https://sha.kerala.gov.in",
+   "source_url": "https://sha.kerala.gov.in/",
    "source_snippet": "KASP gives Kerala's eligible families ₹5 lakh cashless annual health cover integrated with Ayushman Bharat.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "gj-mysy-scholarship",
@@ -4761,7 +4761,7 @@
    "amount_period": "annual",
    "amount_note": "Tuition assistance (up to 50% of fees, capped by course: e.g., up to ₹2 lakh for professional courses, lower caps for diploma/general graduation) plus hostel and book/instrument assistance for eligible students",
    "is_automatic": false,
-   "application_url": "https://mysy.guj.nic.in",
+   "application_url": "https://mysy.gujarat.gov.in/",
    "application_channel": "online",
    "deadline_type": "annual",
    "deadline_note": "Applications open each year after board/admission results",
@@ -4825,10 +4825,10 @@
     ],
     "gender": "any"
    },
-   "source_url": "https://mysy.guj.nic.in",
+   "source_url": "https://mysy.gujarat.gov.in/",
    "source_snippet": "MYSY funds tuition, hostel and book assistance for meritorious Gujarat students from families earning up to ₹6 lakh a year.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "up-kanya-sumangala",
@@ -4839,11 +4839,11 @@
    "funder": "Department of Women and Child Development, Government of Uttar Pradesh",
    "category": "family",
    "benefit_type": "cash_one_off",
-   "amount_min": 15000,
-   "amount_max": 15000,
+   "amount_min": 25000,
+   "amount_max": 25000,
    "amount_currency": "INR",
    "amount_period": "one_off",
-   "amount_note": "Total ₹15,000 in six stages from birth to admission in graduation/diploma (₹2,000 at birth, ₹1,000 immunisation, ₹2,000 Class I, ₹2,000 Class VI, ₹3,000 Class IX, ₹5,000 higher education)",
+   "amount_note": "Rs 25,000 in six stages: Rs 5,000 at birth, Rs 2,000 on full immunisation, Rs 3,000 on Class 1 enrolment, Rs 3,000 on Class 6, Rs 5,000 on Class 9, Rs 7,000 on enrolling in degree/2-year diploma after Class 10/12; maximum two girls per family",
    "is_automatic": false,
    "application_url": "https://mksy.up.gov.in",
    "application_channel": "online",
@@ -4901,7 +4901,7 @@
     "age_min": null,
     "age_max": null,
     "income_annual_max": 300000,
-    "income_note": "Girls born in UP resident families with annual income up to ₹3 lakh; maximum two girls per family (exceptions for twins/adoption)",
+    "income_note": "Family income up to Rs 3 lakh per annum; maximum two girls per family benefit",
     "requires_children": true,
     "nationality": "citizen_or_pr",
     "residency_months_min": null,
@@ -4912,10 +4912,2509 @@
     ],
     "gender": "any"
    },
-   "source_url": "https://mksy.up.gov.in",
+   "source_url": "https://mksy.up.gov.in/",
    "source_snippet": "Kanya Sumangala gives ₹15,000 in six stages for each eligible girl child in Uttar Pradesh from birth to higher education.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "nos-sc-overseas-scholarship",
+   "name_local": "National Overseas Scholarship Scheme for SC etc. Candidates",
+   "name_en": "National Overseas Scholarship (NOS) for SC, DNT, landless agricultural labourer and traditional artisan students to study abroad",
+   "admin_level": "national",
+   "admin_area": null,
+   "funder": "Department of Social Justice and Empowerment, Ministry of Social Justice and Empowerment, Government of India",
+   "category": "education",
+   "benefit_type": "cash_one_off",
+   "amount_min": null,
+   "amount_max": null,
+   "amount_currency": "INR",
+   "amount_period": "annual",
+   "amount_note": "125 fresh awards a year for Master's or PhD abroad: annual maintenance allowance USD 15,400 (USA and other countries except UK) or GBP 9,900 (UK), annual contingency allowance USD 1,500 or GBP 1,100, plus actual tuition fees, visa fees, medical insurance premium and air passage; up to 3 years (Master's) or 4 years (PhD)",
+   "is_automatic": false,
+   "application_url": "https://nosmsje.gov.in/",
+   "application_channel": "online",
+   "deadline_type": "window",
+   "deadline_note": "Portal opens twice a year: April/May and September/October, for 40 days plus 4 days for corrections (2026-27 guidelines); second round only if slots remain",
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Check eligibility in the 2026-27 NOS guidelines (QS top-500 unconditional admission, 60% marks, age up to 35)",
+     "url": "https://socialjustice.gov.in/schemes/28"
+    },
+    {
+     "step": 2,
+     "detail": "Apply online on the NOS portal when a round opens and upload documents",
+     "url": "https://nosmsje.gov.in/"
+    },
+    {
+     "step": 3,
+     "detail": "If selected, visit the Ministry with originals, then submit bonds, solvency certificates and passport/visa copies; funds are paid via Indian Missions abroad",
+     "url": null
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "Class 10 board certificate",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Caste certificate",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Qualifying degree and mark sheets of all semesters (min 60%)",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Admission document from a foreign university (QS top 500)",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Income documents of all family members / income certificate from Tehsildar or above",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Aadhaar card",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "NOC from employer if employed",
+     "mandatory": false,
+     "note": null
+    }
+   ],
+   "eligibility": {
+    "statuses": [
+     "student"
+    ],
+    "age_min": null,
+    "age_max": 35,
+    "income_annual_max": 800000,
+    "income_note": "Gross annual family income from all sources must not exceed Rs 8.00 lakh in the last completed financial year; for FY 2025-26 above Rs 2.5 lakh (old regime) or Rs 3.0 lakh (new regime) ITRs are required. Open to Scheduled Castes, Denotified/Nomadic/Semi-Nomadic Tribes, landless agricultural labourers and traditional artisans; 30% of awards earmarked for women",
+    "requires_children": false,
+    "nationality": "citizen_or_pr",
+    "residency_months_min": null,
+    "housing_tenure": null,
+    "student_required": true,
+    "admin_areas": [],
+    "gender": "any"
+   },
+   "source_url": "https://socialjustice.gov.in/schemes/28",
+   "source_snippet": "Total slots allotted under the scheme annually is 125, out of which 115 slots are reserved for students belonging to Scheduled Caste, 06 slots are reserved for De-notified, Nomadic and Semi-Nomadic Tribes and 04 slots for Landless Agricultural Labourers and Traditional Artisans candidates.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "pm-vidyalaxmi-education-loan",
+   "name_local": "पीएम-विद्यालक्ष्मी",
+   "name_en": "PM-Vidyalaxmi collateral-free education loans with interest subvention",
+   "admin_level": "national",
+   "admin_area": null,
+   "funder": "Department of Higher Education, Ministry of Education, Government of India",
+   "category": "education",
+   "benefit_type": "discount",
+   "amount_min": null,
+   "amount_max": 1000000,
+   "amount_currency": "INR",
+   "amount_period": "one_off",
+   "amount_note": "Collateral-free loans up to Rs 7.5 lakh with 75% credit guarantee; 3% interest subvention on loans up to Rs 10 lakh for family income up to Rs 8 lakh; full interest subvention for family income up to Rs 4.5 lakh; for admission to eligible quality higher education institutions in India (NIRF-based)",
+   "is_automatic": false,
+   "application_url": "https://pmvidyalaxmi.co.in/",
+   "application_channel": "online",
+   "deadline_type": "rolling",
+   "deadline_note": null,
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Register on the PM-Vidyalaxmi portal",
+     "url": "https://pmvidyalaxmi.co.in/"
+    },
+    {
+     "step": 2,
+     "detail": "Fill the Common Education Loan Application Form and apply to banks of your choice",
+     "url": null
+    },
+    {
+     "step": 3,
+     "detail": "After sanction and disbursement, claim interest subvention on the portal; it is paid into a Digital Rupee Wallet to redeem against the loan",
+     "url": null
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "Admission proof to an eligible institution",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Income certificate (for interest subvention)",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Aadhaar and KYC",
+     "mandatory": true,
+     "note": null
+    }
+   ],
+   "eligibility": {
+    "statuses": [
+     "student"
+    ],
+    "age_min": null,
+    "age_max": null,
+    "income_annual_max": 800000,
+    "income_note": "Loan and credit guarantee are not income-tested; 3% interest subvention applies to students with up to Rs 8 lakh annual family income and full interest subvention to up to Rs 4.5 lakh",
+    "requires_children": false,
+    "nationality": "citizen_or_pr",
+    "residency_months_min": null,
+    "housing_tenure": null,
+    "student_required": true,
+    "admin_areas": [],
+    "gender": "any"
+   },
+   "source_url": "https://pmvidyalaxmi.co.in/",
+   "source_snippet": "Under this scheme, students can avail loans of up to Rs 7.5 lakh with a 75% credit guarantee, making it easier for students to get loans without collateral or guarantors.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "top-class-scholarship-sc",
+   "name_local": "अनुसूचित जाति के विद्यार्थियों के लिए उच्च श्रेणी शिक्षा हेतु केन्द्रीय क्षेत्र छात्रवृत्ति",
+   "name_en": "Central Sector Scholarship of Top Class Education for SC Students",
+   "admin_level": "national",
+   "admin_area": null,
+   "funder": "Department of Social Justice and Empowerment, Ministry of Social Justice and Empowerment, Government of India",
+   "category": "education",
+   "benefit_type": "cash_one_off",
+   "amount_min": null,
+   "amount_max": null,
+   "amount_currency": "INR",
+   "amount_period": "annual",
+   "amount_note": "Full tuition fee and non-refundable charges (ceiling Rs 2.00 lakh per year for private institutions) plus academic allowance of Rs 86,000 in the first year and Rs 41,000 in each later year; paid by DBT",
+   "is_automatic": false,
+   "application_url": "https://scholarships.gov.in",
+   "application_channel": "online",
+   "deadline_type": "annual",
+   "deadline_note": "Fresh awards only to first-year students in notified top-class institutions; apply on NSP in the annual window",
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Secure admission in a notified top-class institution (IIT, IIM, NIT, AIIMS, NLU etc.)",
+     "url": "https://socialjustice.gov.in/schemes/27"
+    },
+    {
+     "step": 2,
+     "detail": "Apply on the National Scholarship Portal with income and caste certificates",
+     "url": "https://scholarships.gov.in"
+    },
+    {
+     "step": 3,
+     "detail": "Institution verifies; scholarship paid by DBT",
+     "url": null
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "Caste certificate",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Income certificate (Tehsildar or employer)",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Admission rank and fee details",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Bank account details",
+     "mandatory": true,
+     "note": null
+    }
+   ],
+   "eligibility": {
+    "statuses": [
+     "student"
+    ],
+    "age_min": null,
+    "age_max": null,
+    "income_annual_max": 800000,
+    "income_note": "Total annual family income from all sources up to Rs 8.00 lakh; Scheduled Caste students admitted to notified institutions; 30% of slots for girls; not more than 2 siblings",
+    "requires_children": false,
+    "nationality": "citizen_or_pr",
+    "residency_months_min": null,
+    "housing_tenure": null,
+    "student_required": true,
+    "admin_areas": [],
+    "gender": "any"
+   },
+   "source_url": "https://socialjustice.gov.in/schemes/27",
+   "source_snippet": "Those SC students having total annual family income from all sources up to Rs. 8.00 lakh and having secured admission in a full-time prescribed course in any of the notified institutions according to the general selection criteria prescribed by the concerned institution, will be eligible for scholarship under the Scheme",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "aicte-swanath-scholarship",
+   "name_local": "एआईसीटीई स्वनाथ छात्रवृत्ति योजना",
+   "name_en": "AICTE Swanath Scholarship for orphans, Covid-orphans and wards of martyred armed forces personnel",
+   "admin_level": "national",
+   "admin_area": null,
+   "funder": "All India Council for Technical Education (AICTE)",
+   "category": "education",
+   "benefit_type": "cash_one_off",
+   "amount_min": 50000,
+   "amount_max": 50000,
+   "amount_currency": "INR",
+   "amount_period": "annual",
+   "amount_note": "Rs 50,000 per year for every year of study (up to 4 years Degree, 3 years Diploma); up to 2,000 scholarships a year (1,000 Degree, 1,000 Diploma)",
+   "is_automatic": false,
+   "application_url": "https://scholarships.gov.in",
+   "application_channel": "online",
+   "deadline_type": "annual",
+   "deadline_note": "NSP lists student applications open till 31-10-2026 (All-Scholarships page); confirm window on scholarships.gov.in",
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Apply online on the National Scholarship Portal when the AICTE notice is published",
+     "url": "https://scholarships.gov.in"
+    },
+    {
+     "step": 2,
+     "detail": "Host institution verifies, then the State DTE verifies",
+     "url": null
+    },
+    {
+     "step": 3,
+     "detail": "Paid annually by DBT",
+     "url": null
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "Death certificates / Tehsildar-SDM orphan certificate or Shaheed certificate",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Income certificate (family income under Rs 8 lakh)",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Bonafide certificate from institution",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Class 10 and 10+2 marksheets",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Aadhaar",
+     "mandatory": true,
+     "note": "Mandatory"
+    }
+   ],
+   "eligibility": {
+    "statuses": [
+     "student"
+    ],
+    "age_min": null,
+    "age_max": null,
+    "income_annual_max": 800000,
+    "income_note": "Family income from all sources not more than Rs 8 lakh per annum; applicant must be an orphan, a ward of a parent who died of Covid-19, a ward of martyred Armed Forces/CAPF personnel, or a ward of a parent critically ill/severely disabled; studying in AICTE-approved Degree or Diploma",
+    "requires_children": false,
+    "nationality": "citizen_or_pr",
+    "residency_months_min": null,
+    "housing_tenure": null,
+    "student_required": true,
+    "admin_areas": [],
+    "gender": "any"
+   },
+   "source_url": "https://scholarships.gov.in/public/schemeGuidelines/AICTE/AICTE_3039_G.pdf",
+   "source_snippet": "Rs. 50,000.00 per annum for every year of study i.e. maximum 4 years duration for first year admitted Degree students and maximum 3 years for Diploma Students",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "aicte-pragati-scholarship-degree",
+   "name_local": "एआईसीटीई प्रगति छात्रवृत्ति योजना",
+   "name_en": "AICTE Pragati Scholarship for Girl Students (Degree)",
+   "admin_level": "national",
+   "admin_area": null,
+   "funder": "All India Council for Technical Education (AICTE)",
+   "category": "education",
+   "benefit_type": "cash_one_off",
+   "amount_min": 50000,
+   "amount_max": 50000,
+   "amount_currency": "INR",
+   "amount_period": "annual",
+   "amount_note": "Rs 50,000 per year (4 years for first-year admitted students and 3 years for lateral entry); 5,000 scholarships a year distributed by state, plus all eligible girls from 13 Union Territories and North Eastern states",
+   "is_automatic": false,
+   "application_url": "https://scholarships.gov.in",
+   "application_channel": "online",
+   "deadline_type": "annual",
+   "deadline_note": "NSP lists student applications open till 31-10-2026 (All-Scholarships page); confirm window on scholarships.gov.in",
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Apply online on the National Scholarship Portal after the AICTE notice",
+     "url": "https://scholarships.gov.in"
+    },
+    {
+     "step": 2,
+     "detail": "Institution and State DTE verify the application",
+     "url": null
+    },
+    {
+     "step": 3,
+     "detail": "Merit on qualifying exam marks; paid by DBT annually",
+     "url": null
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "Income certificate (State/UT government)",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Admission proof / bonafide certificate",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Qualifying exam marksheet",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Aadhaar",
+     "mandatory": true,
+     "note": null
+    }
+   ],
+   "eligibility": {
+    "statuses": [
+     "student"
+    ],
+    "age_min": null,
+    "age_max": null,
+    "income_annual_max": 800000,
+    "income_note": "Family income from all sources not more than Rs 8 lakh per annum; maximum two girl children per family; girl admitted to first year or lateral-entry second year of AICTE-approved Degree",
+    "requires_children": false,
+    "nationality": "citizen_or_pr",
+    "residency_months_min": null,
+    "housing_tenure": null,
+    "student_required": true,
+    "admin_areas": [],
+    "gender": "female"
+   },
+   "source_url": "https://scholarships.gov.in/public/schemeGuidelines/AICTE/AICTE_2010_G.pdf",
+   "source_snippet": "Rs. 50,000/- per annum for every year of study i.e. maximum 4 years for first year admitted students and maximum 3 years for second year admitted students through lateral entry",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "aicte-pragati-scholarship-diploma",
+   "name_local": "एआईसीटीई प्रगति छात्रवृत्ति योजना",
+   "name_en": "AICTE Pragati Scholarship for Girl Students (Diploma)",
+   "admin_level": "national",
+   "admin_area": null,
+   "funder": "All India Council for Technical Education (AICTE)",
+   "category": "education",
+   "benefit_type": "cash_one_off",
+   "amount_min": 50000,
+   "amount_max": 50000,
+   "amount_currency": "INR",
+   "amount_period": "annual",
+   "amount_note": "Rs 50,000 per year (3 years for first-year admitted students and 2 years for lateral entry); 5,000 scholarships a year distributed by state, plus all eligible girls from 13 Union Territories and North Eastern states",
+   "is_automatic": false,
+   "application_url": "https://scholarships.gov.in",
+   "application_channel": "online",
+   "deadline_type": "annual",
+   "deadline_note": "NSP lists student applications open till 31-10-2026 (All-Scholarships page); confirm window on scholarships.gov.in",
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Apply online on the National Scholarship Portal after the AICTE notice",
+     "url": "https://scholarships.gov.in"
+    },
+    {
+     "step": 2,
+     "detail": "Institution and State DTE verify the application",
+     "url": null
+    },
+    {
+     "step": 3,
+     "detail": "Merit on qualifying exam marks; paid by DBT annually",
+     "url": null
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "Income certificate (State/UT government)",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Admission proof / bonafide certificate",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Qualifying exam marksheet",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Aadhaar",
+     "mandatory": true,
+     "note": null
+    }
+   ],
+   "eligibility": {
+    "statuses": [
+     "student"
+    ],
+    "age_min": null,
+    "age_max": null,
+    "income_annual_max": 800000,
+    "income_note": "Family income from all sources not more than Rs 8 lakh per annum; maximum two girl children per family; girl admitted to first year or lateral-entry second year of AICTE-approved Diploma",
+    "requires_children": false,
+    "nationality": "citizen_or_pr",
+    "residency_months_min": null,
+    "housing_tenure": null,
+    "student_required": true,
+    "admin_areas": [],
+    "gender": "female"
+   },
+   "source_url": "https://scholarships.gov.in/public/schemeGuidelines/AICTE/AICTE_2011_G.pdf",
+   "source_snippet": "Rs. 50,000/- per annum for every year of study i.e. maximum 3 years for first year admitted students and maximum 2 years for second year admitted students through lateral entry",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "aicte-saksham-scholarship-degree",
+   "name_local": "एआईसीटीई सक्षम छात्रवृत्ति योजना",
+   "name_en": "AICTE Saksham Scholarship for Specially-Abled Students (Degree)",
+   "admin_level": "national",
+   "admin_area": null,
+   "funder": "All India Council for Technical Education (AICTE)",
+   "category": "education",
+   "benefit_type": "cash_one_off",
+   "amount_min": 50000,
+   "amount_max": 50000,
+   "amount_currency": "INR",
+   "amount_period": "annual",
+   "amount_note": "Rs 50,000 per year (4 years for first-year admitted students and 3 years for lateral entry); all eligible students receive the scholarship (no cap on numbers)",
+   "is_automatic": false,
+   "application_url": "https://scholarships.gov.in",
+   "application_channel": "online",
+   "deadline_type": "annual",
+   "deadline_note": "NSP lists student applications open till 31-10-2026 (All-Scholarships page); confirm window on scholarships.gov.in",
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Apply online on the National Scholarship Portal after the AICTE notice",
+     "url": "https://scholarships.gov.in"
+    },
+    {
+     "step": 2,
+     "detail": "Institution and State DTE verify the application",
+     "url": null
+    },
+    {
+     "step": 3,
+     "detail": "Paid annually by DBT",
+     "url": null
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "Disability certificate (40% or more)",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Income certificate (State/UT government)",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Admission proof / bonafide certificate",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Aadhaar",
+     "mandatory": true,
+     "note": null
+    }
+   ],
+   "eligibility": {
+    "statuses": [
+     "student"
+    ],
+    "age_min": null,
+    "age_max": null,
+    "income_annual_max": 800000,
+    "income_note": "Family income from all sources not more than Rs 8 lakh per annum; disability of not less than 40%; admitted to first year or lateral-entry second year of an AICTE-approved Degree",
+    "requires_children": false,
+    "nationality": "citizen_or_pr",
+    "residency_months_min": null,
+    "housing_tenure": null,
+    "student_required": true,
+    "admin_areas": [],
+    "gender": "any"
+   },
+   "source_url": "https://scholarships.gov.in/public/schemeGuidelines/AICTE/AICTE_2012_G.pdf",
+   "source_snippet": "Specially-abled student, having disability of not less than 40%.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "aicte-saksham-scholarship-diploma",
+   "name_local": "एआईसीटीई सक्षम छात्रवृत्ति योजना",
+   "name_en": "AICTE Saksham Scholarship for Specially-Abled Students (Diploma)",
+   "admin_level": "national",
+   "admin_area": null,
+   "funder": "All India Council for Technical Education (AICTE)",
+   "category": "education",
+   "benefit_type": "cash_one_off",
+   "amount_min": 50000,
+   "amount_max": 50000,
+   "amount_currency": "INR",
+   "amount_period": "annual",
+   "amount_note": "Rs 50,000 per year (3 years for first-year admitted students and 2 years for lateral entry); all eligible students receive the scholarship (no cap on numbers)",
+   "is_automatic": false,
+   "application_url": "https://scholarships.gov.in",
+   "application_channel": "online",
+   "deadline_type": "annual",
+   "deadline_note": "NSP lists student applications open till 31-10-2026 (All-Scholarships page); confirm window on scholarships.gov.in",
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Apply online on the National Scholarship Portal after the AICTE notice",
+     "url": "https://scholarships.gov.in"
+    },
+    {
+     "step": 2,
+     "detail": "Institution and State DTE verify the application",
+     "url": null
+    },
+    {
+     "step": 3,
+     "detail": "Paid annually by DBT",
+     "url": null
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "Disability certificate (40% or more)",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Income certificate (State/UT government)",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Admission proof / bonafide certificate",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Aadhaar",
+     "mandatory": true,
+     "note": null
+    }
+   ],
+   "eligibility": {
+    "statuses": [
+     "student"
+    ],
+    "age_min": null,
+    "age_max": null,
+    "income_annual_max": 800000,
+    "income_note": "Family income from all sources not more than Rs 8 lakh per annum; disability of not less than 40%; admitted to first year or lateral-entry second year of an AICTE-approved Diploma",
+    "requires_children": false,
+    "nationality": "citizen_or_pr",
+    "residency_months_min": null,
+    "housing_tenure": null,
+    "student_required": true,
+    "admin_areas": [],
+    "gender": "any"
+   },
+   "source_url": "https://scholarships.gov.in/public/schemeGuidelines/AICTE/AICTE_2013_G.pdf",
+   "source_snippet": "Specially-abled student, having disability of not less than 40%.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "ugc-national-scholarship-pg",
+   "name_local": "स्नातकोत्तर अध्ययन के लिए राष्ट्रीय छात्रवृत्ति",
+   "name_en": "UGC National Scholarship for Post Graduate Studies",
+   "admin_level": "national",
+   "admin_area": null,
+   "funder": "University Grants Commission (UGC), Ministry of Education",
+   "category": "education",
+   "benefit_type": "cash_monthly",
+   "amount_min": 15000,
+   "amount_max": 15000,
+   "amount_currency": "INR",
+   "amount_period": "monthly",
+   "amount_note": "Rs 15,000 per month for 10 months a year for two years; 10,000 scholarships; 30% of slots reserved for women",
+   "is_automatic": false,
+   "application_url": "https://scholarships.gov.in",
+   "application_channel": "online",
+   "deadline_type": "annual",
+   "deadline_note": "NSP lists student applications open till 31-10-2026 (All-Scholarships page); confirm window on scholarships.gov.in",
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Apply on the National Scholarship Portal during the annual window",
+     "url": "https://scholarships.gov.in"
+    },
+    {
+     "step": 2,
+     "detail": "Institution verifies the online application",
+     "url": null
+    },
+    {
+     "step": 3,
+     "detail": "Selection by all-India merit in UG marks; paid by DBT",
+     "url": null
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "Marksheets of UG degree and Class 12",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Admission proof for first year of PG programme",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Caste/category certificate if applicable",
+     "mandatory": false,
+     "note": null
+    },
+    {
+     "doc": "Aadhaar-linked bank account",
+     "mandatory": true,
+     "note": null
+    }
+   ],
+   "eligibility": {
+    "statuses": [
+     "student"
+    ],
+    "age_min": null,
+    "age_max": 29,
+    "income_annual_max": null,
+    "income_note": "No income test; merit-based on UG marks. Age below 30 on date of admission; first PG degree only; regular full-time mode",
+    "requires_children": false,
+    "nationality": "citizen_or_pr",
+    "residency_months_min": null,
+    "housing_tenure": null,
+    "student_required": true,
+    "admin_areas": [],
+    "gender": "any"
+   },
+   "source_url": "https://scholarships.gov.in/public/schemeGuidelines/Guidelines_NATIONAL_SCHOLARSHIP_FOR_POSTGRADUATE_STUDIES_UGC_2324.pdf",
+   "source_snippet": "Ten thousand (10000) National Scholarships or as may be decided by the Commission, at the rate of Rs.15,000/- per month for 10 months in a year, are available for Indian students for two years",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "ishan-uday-scholarship-ner",
+   "name_local": "ईशान उदय विशेष छात्रवृत्ति योजना",
+   "name_en": "Ishan Uday Special Scholarship Scheme for North Eastern Region",
+   "admin_level": "national",
+   "admin_area": null,
+   "funder": "University Grants Commission (UGC), Ministry of Education",
+   "category": "education",
+   "benefit_type": "cash_monthly",
+   "amount_min": 8000,
+   "amount_max": 8000,
+   "amount_currency": "INR",
+   "amount_period": "monthly",
+   "amount_note": "Rs 8,000 per month for 10 months a year for the duration of the UG programme; 10,000 scholarships",
+   "is_automatic": false,
+   "application_url": "https://scholarships.gov.in",
+   "application_channel": "online",
+   "deadline_type": "annual",
+   "deadline_note": "NSP lists student applications open till 31-10-2026 (All-Scholarships page); confirm window on scholarships.gov.in",
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Apply on the National Scholarship Portal during the annual window",
+     "url": "https://scholarships.gov.in"
+    },
+    {
+     "step": 2,
+     "detail": "Institution verifies domicile and income documents",
+     "url": null
+    },
+    {
+     "step": 3,
+     "detail": "State-wise merit selection; paid by DBT",
+     "url": null
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "North East domicile / permanent resident certificate",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Parental income certificate",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Class 12 marksheet",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Aadhaar-linked bank account",
+     "mandatory": true,
+     "note": null
+    }
+   ],
+   "eligibility": {
+    "statuses": [
+     "student"
+    ],
+    "age_min": null,
+    "age_max": null,
+    "income_annual_max": 449999,
+    "income_note": "Parents' income should be below Rs 4.50 lakh per annum; students with parental income of Rs 4.50 lakh or more are not eligible. Class 12 from a school in the North Eastern Region and valid NER domicile; first-year UG, regular mode",
+    "requires_children": false,
+    "nationality": "citizen_or_pr",
+    "residency_months_min": null,
+    "housing_tenure": null,
+    "student_required": true,
+    "admin_areas": [
+     "Arunachal Pradesh",
+     "Assam",
+     "Manipur",
+     "Meghalaya",
+     "Mizoram",
+     "Nagaland",
+     "Sikkim",
+     "Tripura"
+    ],
+    "gender": "any"
+   },
+   "source_url": "https://scholarships.gov.in/public/schemeGuidelines/Guidelines_ISHAN%20UDAY_2324.pdf",
+   "source_snippet": "Ten thousand (10000) Scholarships, at the rate of Rs.8,000/- per month for 10 months in a year, are available for students belonging to economical weaker section of North Eastern Region.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "nmmss-scholarship",
+   "name_local": "राष्ट्रीय साधन-सह-मेधा छात्रवृत्ति योजना",
+   "name_en": "National Means-cum-Merit Scholarship Scheme (NMMSS) for Class 9-12",
+   "admin_level": "national",
+   "admin_area": null,
+   "funder": "Department of School Education and Literacy, Ministry of Education, Government of India",
+   "category": "education",
+   "benefit_type": "cash_monthly",
+   "amount_min": 12000,
+   "amount_max": 12000,
+   "amount_currency": "INR",
+   "amount_period": "annual",
+   "amount_note": "Rs 12,000 per year (Rs 1,000 per month) for classes IX to XII; 1,00,000 fresh scholarships a year allotted by state quota",
+   "is_automatic": false,
+   "application_url": "https://scholarships.gov.in",
+   "application_channel": "online",
+   "deadline_type": "annual",
+   "deadline_note": "State-level selection exam at Class VIII; NSP application window each year",
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Appear in the State/UT selection test (MAT and SAT) in Class VIII",
+     "url": null
+    },
+    {
+     "step": 2,
+     "detail": "Selected students apply on the National Scholarship Portal",
+     "url": "https://scholarships.gov.in"
+    },
+    {
+     "step": 3,
+     "detail": "State verifies; paid by DBT into the student's bank account",
+     "url": null
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "Income certificate",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Class VII/VIII marksheet (min 55%; 5% relaxation for SC/ST)",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Bank account details",
+     "mandatory": true,
+     "note": null
+    }
+   ],
+   "eligibility": {
+    "statuses": [
+     "student"
+    ],
+    "age_min": null,
+    "age_max": null,
+    "income_annual_max": 350000,
+    "income_note": "Parental income not more than Rs 3,50,000 per annum from all sources at the time of selection; student must study in a Government, Government-aided or local body school (not KV/JNV, private or residential schools)",
+    "requires_children": false,
+    "nationality": "citizen_or_pr",
+    "residency_months_min": null,
+    "housing_tenure": null,
+    "student_required": true,
+    "admin_areas": [],
+    "gender": "any"
+   },
+   "source_url": "https://scholarships.gov.in/public/schemeGuidelines/NMMSSGuidelines.pdf",
+   "source_snippet": "The amount of scholarship is ₹ 12000/- per annum @ ₹1000 per month.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "labour-welfare-education-assistance-beedi-cine-mine",
+   "name_local": "बीड़ी/सिने/आईओएमसी/एलएसडीएम कामगारों के बच्चों के लिए शैक्षिक वित्तीय सहायता",
+   "name_en": "Financial Assistance for Education to wards of Beedi, Cine, Iron/Manganese/Chrome Ore, Limestone/Dolomite and Mica workers",
+   "admin_level": "national",
+   "admin_area": null,
+   "funder": "Ministry of Labour and Employment, Government of India",
+   "category": "education",
+   "benefit_type": "cash_one_off",
+   "amount_min": 1000,
+   "amount_max": 25000,
+   "amount_currency": "INR",
+   "amount_period": "annual",
+   "amount_note": "Rs 1,000 (Classes I-IV), 1,500 (V-VIII), 2,000 (IX and X), 3,000 (XI-XII), 6,000 (ITI, Polytechnic, Degree UG/PG) up to Rs 25,000 for professional courses (engineering, medical, management, law) per student per year",
+   "is_automatic": false,
+   "application_url": "https://scholarships.gov.in",
+   "application_channel": "online",
+   "deadline_type": "annual",
+   "deadline_note": "NSP lists student applications open till 31-10-2026 (All-Scholarships page); confirm window on scholarships.gov.in",
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Apply on the National Scholarship Portal during the annual window",
+     "url": "https://scholarships.gov.in"
+    },
+    {
+     "step": 2,
+     "detail": "Upload worker identity card and income certificate",
+     "url": null
+    },
+    {
+     "step": 3,
+     "detail": "Paid by DBT to an Aadhaar-seeded, NPCI-mapped bank account",
+     "url": null
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "Valid identity card of the Beedi/Cine/IOMC/LSDM/Mica worker",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Income certificate",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Aadhaar and Aadhaar-seeded bank account",
+     "mandatory": true,
+     "note": null
+    }
+   ],
+   "eligibility": {
+    "statuses": [
+     "student"
+    ],
+    "age_min": null,
+    "age_max": null,
+    "income_annual_max": 252000,
+    "income_note": "Family income ceiling Rs 21,000 per month = Rs 2,52,000 per annum; either parent must be a Beedi, Cine, IOMC, LSDM or Mica worker with at least six months of service (contract and home-based workers eligible)",
+    "requires_children": false,
+    "nationality": "citizen_or_pr",
+    "residency_months_min": null,
+    "housing_tenure": null,
+    "student_required": true,
+    "admin_areas": [],
+    "gender": "any"
+   },
+   "source_url": "https://scholarships.gov.in/public/schemeGuidelines/Labour_Ministry_Guidelines_of_scholarhsips%20schemes.pdf",
+   "source_snippet": "The family income ceiling shall be Rs. 21,000 per month or Rs. 2,52,000 per annum for Beedi/Cine/Iron Ore, Manganese Ore & Chrome Ore Mine (IOMC) Workers and Limestone & Dolomite Mine (LSDM) and Mica Workers.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "nfhe-st-national-scholarship",
+   "name_local": "अनुसूचित जनजाति के विद्यार्थियों के लिए राष्ट्रीय छात्रवृत्ति",
+   "name_en": "National Scholarship for Higher Education of ST Students (Ministry of Tribal Affairs)",
+   "admin_level": "national",
+   "admin_area": null,
+   "funder": "Ministry of Tribal Affairs, Government of India",
+   "category": "education",
+   "benefit_type": "cash_one_off",
+   "amount_min": null,
+   "amount_max": null,
+   "amount_currency": "INR",
+   "amount_period": "annual",
+   "amount_note": "Full tuition and admission fee (ceiling Rs 2.5 lakh a year in private institutes), books and stationery Rs 5,000 a year, stipend Rs 3,000 a month, and a one-time Rs 45,000 for computer and accessories",
+   "is_automatic": false,
+   "application_url": "https://scholarships.gov.in",
+   "application_channel": "online",
+   "deadline_type": "annual",
+   "deadline_note": "NSP lists student applications open till 31-10-2026 (All-Scholarships page); confirm window on scholarships.gov.in",
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Take admission in a notified premier institution and course",
+     "url": null
+    },
+    {
+     "step": 2,
+     "detail": "Apply on the National Scholarship Portal with ST certificate and income certificate",
+     "url": "https://scholarships.gov.in"
+    },
+    {
+     "step": 3,
+     "detail": "Institute and Ministry verify; payment by DBT",
+     "url": null
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "ST / PVTG certificate",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Income certificate for the previous financial year",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Admission and fee documents",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Aadhaar-linked bank account",
+     "mandatory": true,
+     "note": null
+    }
+   ],
+   "eligibility": {
+    "statuses": [
+     "student"
+    ],
+    "age_min": null,
+    "age_max": null,
+    "income_annual_max": 600000,
+    "income_note": "Total family income from all sources should not exceed Rs 6.0 lakh per annum (combined income of both parents; not applicable to orphans supported by a guardian); Scheduled Tribe students at graduate or postgraduate level in institutes notified by the Ministry",
+    "requires_children": false,
+    "nationality": "citizen_or_pr",
+    "residency_months_min": null,
+    "housing_tenure": null,
+    "student_required": true,
+    "admin_areas": [],
+    "gender": "any"
+   },
+   "source_url": "https://scholarships.gov.in/public/schemeGuidelines/tribalfellowshipguideline.pdf",
+   "source_snippet": "The total family income of the student to be eligible for this scholarship from all sources should not exceed Rs.6.0 lakh per annum.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "pm-usp-csss-college-scholarship",
+   "name_local": "पीएम-यूएसपी केंद्रीय क्षेत्र छात्रवृत्ति योजना (कॉलेज और विश्वविद्यालय छात्र)",
+   "name_en": "PM-USP Central Sector Scheme of Scholarship for College and University Students (CSSS)",
+   "admin_level": "national",
+   "admin_area": null,
+   "funder": "Department of Higher Education, Ministry of Education, Government of India",
+   "category": "education",
+   "benefit_type": "cash_one_off",
+   "amount_min": 12000,
+   "amount_max": 20000,
+   "amount_currency": "INR",
+   "amount_period": "annual",
+   "amount_note": "Rs 12,000 per year at graduation level for the first three years and Rs 20,000 per year at post-graduation level; up to 82,000 fresh scholarships a year, 50% earmarked for girls",
+   "is_automatic": false,
+   "application_url": "https://scholarships.gov.in",
+   "application_channel": "online",
+   "deadline_type": "annual",
+   "deadline_note": "NSP lists student applications open till 31-10-2026 (All-Scholarships page); confirm window on scholarships.gov.in",
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Apply on the National Scholarship Portal (fresh or renewal)",
+     "url": "https://scholarships.gov.in"
+    },
+    {
+     "step": 2,
+     "detail": "Institute and State nodal agency verify",
+     "url": null
+    },
+    {
+     "step": 3,
+     "detail": "Paid by DBT; renewal needs 50% marks and 75% attendance",
+     "url": null
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "Class 12 marksheet (above 80th percentile in stream)",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Income certificate (fresh applicants)",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Admission proof",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Aadhaar-linked bank account",
+     "mandatory": true,
+     "note": null
+    }
+   ],
+   "eligibility": {
+    "statuses": [
+     "student"
+    ],
+    "age_min": null,
+    "age_max": null,
+    "income_annual_max": 450000,
+    "income_note": "Gross parental/family income up to Rs 4.5 lakh per annum; student must be above the 80th percentile of successful candidates in the relevant stream in Class XII; regular degree courses only",
+    "requires_children": false,
+    "nationality": "citizen_or_pr",
+    "residency_months_min": null,
+    "housing_tenure": null,
+    "student_required": true,
+    "admin_areas": [],
+    "gender": "any"
+   },
+   "source_url": "https://scholarships.gov.in/public/schemeGuidelines/CSSS_GUIDLINES_07022024_updated.pdf",
+   "source_snippet": "The rate of scholarship is ₹12,000/-per annum at Graduation level for first three years of College and University courses and ₹20,000/-per annum at Post-Graduation level.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "ayushman-vay-vandana",
+   "name_local": "आयुष्मान वय वंदना कार्ड",
+   "name_en": "Ayushman Vay Vandana free health cover for senior citizens aged 70 and above",
+   "admin_level": "national",
+   "admin_area": null,
+   "funder": "National Health Authority, Ministry of Health and Family Welfare, Government of India",
+   "category": "health",
+   "benefit_type": "in_kind",
+   "amount_min": null,
+   "amount_max": 500000,
+   "amount_currency": "INR",
+   "amount_period": "annual",
+   "amount_note": "Free cashless health cover of Rs 5 lakh per year for secondary and tertiary hospitalisation, irrespective of socio-economic status",
+   "is_automatic": false,
+   "application_url": "https://pmjay.gov.in/",
+   "application_channel": "in_person",
+   "deadline_type": "rolling",
+   "deadline_note": null,
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Check eligibility and enrol for the Ayushman Vay Vandana card at the PM-JAY portal or an empanelled hospital Ayushman Mitra desk",
+     "url": "https://pmjay.gov.in/"
+    },
+    {
+     "step": 2,
+     "detail": "Show the card at an empanelled hospital for cashless treatment",
+     "url": null
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "Aadhaar card (proof of age 70+)",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Mobile number",
+     "mandatory": false,
+     "note": null
+    }
+   ],
+   "eligibility": {
+    "statuses": [],
+    "age_min": 70,
+    "age_max": null,
+    "income_annual_max": null,
+    "income_note": "No income test: all senior citizens aged 70 years and above are covered irrespective of socio-economic status",
+    "requires_children": false,
+    "nationality": "citizen_or_pr",
+    "residency_months_min": null,
+    "housing_tenure": null,
+    "student_required": false,
+    "admin_areas": [],
+    "gender": "any"
+   },
+   "source_url": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2203007",
+   "source_snippet": "In October 2024, Government of India expanded AB-PMJAY to provide free health cover of Rs. 5 lakh per year to all senior citizens aged 70 years and above, irrespective of their socio-economic status.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "nfbs-family-benefit",
+   "name_local": "राष्ट्रीय परिवार लाभ योजना",
+   "name_en": "National Family Benefit Scheme (NFBS) lump sum on death of the breadwinner",
+   "admin_level": "national",
+   "admin_area": null,
+   "funder": "Ministry of Rural Development (National Social Assistance Programme), Government of India",
+   "category": "income_support",
+   "benefit_type": "cash_one_off",
+   "amount_min": 20000,
+   "amount_max": 20000,
+   "amount_currency": "INR",
+   "amount_period": "one_off",
+   "amount_note": "Rs 20,000 lump sum to a BPL household on the death of the primary breadwinner aged 18 to 59; states may add to it",
+   "is_automatic": false,
+   "application_url": "https://nsap.nic.in/",
+   "application_channel": "in_person",
+   "deadline_type": "rolling",
+   "deadline_note": null,
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Apply at the Gram Panchayat, municipality or State social welfare portal after the death",
+     "url": "https://nsap.nic.in/"
+    },
+    {
+     "step": 2,
+     "detail": "Verification of BPL status and age of the deceased",
+     "url": null
+    },
+    {
+     "step": 3,
+     "detail": "Amount paid by DBT",
+     "url": null
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "Death certificate of the primary breadwinner",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "BPL proof",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Applicant's bank account and Aadhaar",
+     "mandatory": true,
+     "note": null
+    }
+   ],
+   "eligibility": {
+    "statuses": [],
+    "age_min": null,
+    "age_max": null,
+    "income_annual_max": null,
+    "income_note": "Means-tested: household must be below the poverty line as identified by the Government of India; no rupee income ceiling published. Deceased primary breadwinner must have been aged 18 to 59",
+    "requires_children": false,
+    "nationality": "citizen_or_pr",
+    "residency_months_min": null,
+    "housing_tenure": null,
+    "student_required": false,
+    "admin_areas": [],
+    "gender": "any"
+   },
+   "source_url": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2187327",
+   "source_snippet": "Under this scheme, a household living below the poverty line becomes eligible for lump sum financial assistance in the unfortunate event of the death of its primary breadwinner, provided the deceased was between 18 and 59 years of age.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "ts-aovn-sc",
+   "name_local": "Ambedkar Overseas Vidya Nidhi (SC)",
+   "name_en": "Ambedkar Overseas Vidya Nidhi (SC students)",
+   "admin_level": "state",
+   "admin_area": "Telangana",
+   "funder": "Telangana SC Development Department",
+   "category": "education",
+   "benefit_type": "cash_one_off",
+   "amount_min": null,
+   "amount_max": 2000000,
+   "amount_currency": "INR",
+   "amount_period": "one_off",
+   "amount_note": "Up to 20 lakh or as per admission letter, whichever is less, plus one-way economy air ticket and visa charges. For SC students; masters abroad in USA, Canada, Germany, France, UK, Singapore, Japan, South Korea, Australia, New Zealand.",
+   "is_automatic": false,
+   "application_url": "https://telanganaepass.cgg.gov.in/OverseasLinks.do",
+   "application_channel": "online",
+   "deadline_type": "window",
+   "deadline_note": "Registrations shown as Closed on the ePASS page on 2026-10-05; only 1 child per family.",
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Read the scheme guidelines on the ePASS overseas scholarship page.",
+     "url": null
+    },
+    {
+     "step": 2,
+     "detail": "Register and submit the application on the Telangana ePASS portal while registration is open.",
+     "url": null
+    },
+    {
+     "step": 3,
+     "detail": "Applications are ranked on merit and a selection list is published.",
+     "url": null
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "Passport",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Admission letter from the overseas university",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "GRE/GMAT and English-proficiency (TOEFL/IELTS/PTE) score reports",
+     "mandatory": true,
+     "note": "Minimum scores as set in the guidelines"
+    },
+    {
+     "doc": "Graduation marks memo (60% minimum)",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Income certificate",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Caste/community certificate",
+     "mandatory": true,
+     "note": "As applicable to the scheme"
+    }
+   ],
+   "eligibility": {
+    "statuses": [
+     "student"
+    ],
+    "age_min": null,
+    "age_max": null,
+    "income_annual_max": 500000,
+    "income_note": "Family income under Rs 5 lakh per year as published in guidelines.",
+    "requires_children": false,
+    "nationality": "citizen_or_pr",
+    "residency_months_min": null,
+    "housing_tenure": null,
+    "student_required": true,
+    "admin_areas": [
+     "Telangana"
+    ],
+    "gender": "any"
+   },
+   "source_url": "https://telanganaepass.cgg.gov.in/OverseasLinks.do",
+   "source_snippet": "Scholarship Grant: Upto 20 lakhs or as per admission letter which ever is less. One way Economic ticket and Visa charges.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "ts-aovn-st",
+   "name_local": "Ambedkar Overseas Vidya Nidhi (ST)",
+   "name_en": "Ambedkar Overseas Vidya Nidhi (ST students)",
+   "admin_level": "state",
+   "admin_area": "Telangana",
+   "funder": "Telangana Tribal Welfare Department",
+   "category": "education",
+   "benefit_type": "cash_one_off",
+   "amount_min": null,
+   "amount_max": 2000000,
+   "amount_currency": "INR",
+   "amount_period": "one_off",
+   "amount_note": "Up to 20 lakh or as per admission letter, whichever is less, plus one-way economy air ticket and visa charges. For ST students; minimum scores GRE 260 / GMAT 500 / TOEFL 60 / IELTS 6.0 / PTE 50.",
+   "is_automatic": false,
+   "application_url": "https://telanganaepass.cgg.gov.in/OverseasLinks.do",
+   "application_channel": "online",
+   "deadline_type": "none",
+   "deadline_note": "Registration link present on ePASS page; no current closing date published, check page.",
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Read the scheme guidelines on the ePASS overseas scholarship page.",
+     "url": null
+    },
+    {
+     "step": 2,
+     "detail": "Register and submit the application on the Telangana ePASS portal while registration is open.",
+     "url": null
+    },
+    {
+     "step": 3,
+     "detail": "Applications are ranked on merit and a selection list is published.",
+     "url": null
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "Passport",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Admission letter from the overseas university",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "GRE/GMAT and English-proficiency (TOEFL/IELTS/PTE) score reports",
+     "mandatory": true,
+     "note": "Minimum scores as set in the guidelines"
+    },
+    {
+     "doc": "Graduation marks memo (60% minimum)",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Income certificate",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Caste/community certificate",
+     "mandatory": true,
+     "note": "As applicable to the scheme"
+    }
+   ],
+   "eligibility": {
+    "statuses": [
+     "student"
+    ],
+    "age_min": null,
+    "age_max": null,
+    "income_annual_max": 500000,
+    "income_note": "Family income under Rs 5 lakh per year as published in guidelines.",
+    "requires_children": false,
+    "nationality": "citizen_or_pr",
+    "residency_months_min": null,
+    "housing_tenure": null,
+    "student_required": true,
+    "admin_areas": [
+     "Telangana"
+    ],
+    "gender": "any"
+   },
+   "source_url": "https://telanganaepass.cgg.gov.in/OverseasLinks.do",
+   "source_snippet": "Scholarship Grant: Upto 20 lakhs or as per admission letter which ever is less. One way Economic ticket and Visa charges.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "ts-cm-overseas-minorities",
+   "name_local": "Chief Minister's Overseas Scholarship Scheme for Minorities",
+   "name_en": "Chief Minister's Overseas Scholarship Scheme (Minorities)",
+   "admin_level": "state",
+   "admin_area": "Telangana",
+   "funder": "Telangana Minorities Welfare Department",
+   "category": "education",
+   "benefit_type": "cash_one_off",
+   "amount_min": null,
+   "amount_max": 2000000,
+   "amount_currency": "INR",
+   "amount_period": "one_off",
+   "amount_note": "Up to 20 lakh or as per admission letter, whichever is less, plus one-way economy air ticket and visa charges. For minority students.",
+   "is_automatic": false,
+   "application_url": "https://telanganaepass.cgg.gov.in/OverseasLinks.do",
+   "application_channel": "online",
+   "deadline_type": "window",
+   "deadline_note": "Registrations shown as Closed on the ePASS page on 2026-10-05.",
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Read the scheme guidelines on the ePASS overseas scholarship page.",
+     "url": null
+    },
+    {
+     "step": 2,
+     "detail": "Register and submit the application on the Telangana ePASS portal while registration is open.",
+     "url": null
+    },
+    {
+     "step": 3,
+     "detail": "Applications are ranked on merit and a selection list is published.",
+     "url": null
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "Passport",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Admission letter from the overseas university",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "GRE/GMAT and English-proficiency (TOEFL/IELTS/PTE) score reports",
+     "mandatory": true,
+     "note": "Minimum scores as set in the guidelines"
+    },
+    {
+     "doc": "Graduation marks memo (60% minimum)",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Income certificate",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Caste/community certificate",
+     "mandatory": true,
+     "note": "As applicable to the scheme"
+    }
+   ],
+   "eligibility": {
+    "statuses": [
+     "student"
+    ],
+    "age_min": null,
+    "age_max": null,
+    "income_annual_max": 500000,
+    "income_note": "Family income under Rs 5 lakh per year as published in guidelines.",
+    "requires_children": false,
+    "nationality": "citizen_or_pr",
+    "residency_months_min": null,
+    "housing_tenure": null,
+    "student_required": true,
+    "admin_areas": [
+     "Telangana"
+    ],
+    "gender": "any"
+   },
+   "source_url": "https://telanganaepass.cgg.gov.in/OverseasLinks.do",
+   "source_snippet": "Scholarship Grant: Upto 20 lakhs or as per admission letter which ever is less. One way Economic ticket and Visa charges.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "ts-mjpovn-bc-ebc",
+   "name_local": "Mahatma Jyothiba Phule Overseas Vidya Nidhi (BC/EBC)",
+   "name_en": "Mahatma Jyothiba Phule Overseas Vidya Nidhi (BC and EBC students)",
+   "admin_level": "state",
+   "admin_area": "Telangana",
+   "funder": "Telangana BC Welfare Department",
+   "category": "education",
+   "benefit_type": "cash_one_off",
+   "amount_min": null,
+   "amount_max": 2000000,
+   "amount_currency": "INR",
+   "amount_period": "one_off",
+   "amount_note": "Up to 20 lakh or as per admission letter, whichever is less, plus one-way economy air ticket and visa charges. For BC/EBC students; merit weighting graduation 60%, GRE/GMAT 20%, TOEFL/IELTS/PTE 20%.",
+   "is_automatic": false,
+   "application_url": "https://telanganaepass.cgg.gov.in/OverseasLinks.do",
+   "application_channel": "online",
+   "deadline_type": "window",
+   "deadline_note": "Last date for overseas scholarship registrations is 15.10.2026. Students with COE/I-20 and visa are eligible to apply.",
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Read the scheme guidelines on the ePASS overseas scholarship page.",
+     "url": null
+    },
+    {
+     "step": 2,
+     "detail": "Register and submit the application on the Telangana ePASS portal while registration is open.",
+     "url": null
+    },
+    {
+     "step": 3,
+     "detail": "Applications are ranked on merit and a selection list is published.",
+     "url": null
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "Passport",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Admission letter from the overseas university",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "GRE/GMAT and English-proficiency (TOEFL/IELTS/PTE) score reports",
+     "mandatory": true,
+     "note": "Minimum scores as set in the guidelines"
+    },
+    {
+     "doc": "Graduation marks memo (60% minimum)",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Income certificate",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Caste/community certificate",
+     "mandatory": true,
+     "note": "As applicable to the scheme"
+    }
+   ],
+   "eligibility": {
+    "statuses": [
+     "student"
+    ],
+    "age_min": null,
+    "age_max": null,
+    "income_annual_max": 500000,
+    "income_note": "Family income under Rs 5 lakh per year as published in guidelines.",
+    "requires_children": false,
+    "nationality": "citizen_or_pr",
+    "residency_months_min": null,
+    "housing_tenure": null,
+    "student_required": true,
+    "admin_areas": [
+     "Telangana"
+    ],
+    "gender": "any"
+   },
+   "source_url": "https://telanganaepass.cgg.gov.in/OverseasLinks.do",
+   "source_snippet": "Last Date For Overseas Scholarship Registrations is **15.10.2026**",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "ts-kalyana-lakshmi-shaadi-mubarak",
+   "name_local": "కళ్యాణ లక్ష్మి / షాదీ ముబారక్",
+   "name_en": "Kalyana Lakshmi / Shaadi Mubarak",
+   "admin_level": "state",
+   "admin_area": "Telangana",
+   "funder": "Telangana Welfare Departments (SC, ST, BC, Minorities)",
+   "category": "family",
+   "benefit_type": "cash_one_off",
+   "amount_min": 100116,
+   "amount_max": 100116,
+   "amount_currency": "INR",
+   "amount_period": "one_off",
+   "amount_note": "Rs 1,00,116 paid to the bride's mother's bank account (raised from Rs 75,116 in March 2018).",
+   "is_automatic": false,
+   "application_url": "https://telanganaepass.cgg.gov.in/KalyanaLakshmiLinks.jsp",
+   "application_channel": "online",
+   "deadline_type": "rolling",
+   "deadline_note": "Apply through ePASS around the marriage.",
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Choose Kalyana Lakshmi (SC/ST/BC/EBC) or Shaadi Mubarak (minorities) on ePASS.",
+     "url": null
+    },
+    {
+     "step": 2,
+     "detail": "Fill in bride and groom details and upload documents.",
+     "url": null
+    },
+    {
+     "step": 3,
+     "detail": "Officials verify; aid is credited to the bride's mother's account.",
+     "url": null
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "Income certificate",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Caste or minority certificate",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Age proof of bride (18+)",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Bank account of bride's mother",
+     "mandatory": true,
+     "note": null
+    }
+   ],
+   "eligibility": {
+    "statuses": [],
+    "age_min": 18,
+    "age_max": null,
+    "income_annual_max": 200000,
+    "income_note": "Rs 2,00,000 for SC, ST and minorities; BC/EBC Rs 2,00,000 urban and Rs 1,50,000 rural. Highest figure shown.",
+    "requires_children": false,
+    "nationality": "citizen_or_pr",
+    "residency_months_min": null,
+    "housing_tenure": null,
+    "student_required": false,
+    "admin_areas": [
+     "Telangana"
+    ],
+    "gender": "female"
+   },
+   "source_url": "https://telanganaepass.cgg.gov.in/KalyanaLakshmiLinks.jsp",
+   "source_snippet": "Eligibility Criteria: 1) SC Income Limit : Rs.2,00,000/- 2) ST Income Limit : Rs.2,00,000/- 3) BC/EBC Income Limit : Urban - Rs.2,00,000/- , Rural - Rs.1,50,000/-",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "ts-rythu-bima",
+   "name_local": "రైతు బీమా",
+   "name_en": "Rythu Bima (Farmer Life Insurance)",
+   "admin_level": "state",
+   "admin_area": "Telangana",
+   "funder": "Telangana Agriculture Department",
+   "category": "income_support",
+   "benefit_type": "cash_one_off",
+   "amount_min": 500000,
+   "amount_max": 500000,
+   "amount_currency": "INR",
+   "amount_period": "one_off",
+   "amount_note": "Rs 5,00,000 life cover per farmer paid to nominee on death; premium paid entirely by the government.",
+   "is_automatic": false,
+   "application_url": "https://www.rythubharosa.telangana.gov.in/Default_Home.aspx",
+   "application_channel": "in_person",
+   "deadline_type": "annual",
+   "deadline_note": "Enrolment through the Agriculture Extension Officer.",
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Approach the Agriculture Extension Officer of your cluster.",
+     "url": null
+    },
+    {
+     "step": 2,
+     "detail": "Submit enrolment form with nominee details.",
+     "url": null
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "Dharani Record of Rights / Pattadar passbook or RoFR patta",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Aadhaar",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Nominee details",
+     "mandatory": true,
+     "note": null
+    }
+   ],
+   "eligibility": {
+    "statuses": [
+     "self_employed"
+    ],
+    "age_min": 18,
+    "age_max": 59,
+    "income_annual_max": null,
+    "income_note": "No income test; land-owning farmers only.",
+    "requires_children": false,
+    "nationality": "citizen_or_pr",
+    "residency_months_min": null,
+    "housing_tenure": null,
+    "student_required": false,
+    "admin_areas": [
+     "Telangana"
+    ],
+    "gender": "any"
+   },
+   "source_url": "https://www.myscheme.gov.in/schemes/rythu-bima",
+   "source_snippet": "No, the entire premium is paid by the Government of Telangana.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "mh-mjpjay",
+   "name_local": "महात्मा जोतिराव फुले जन आरोग्य योजना",
+   "name_en": "Mahatma Jyotirao Phule Jan Arogya Yojana (MJPJAY)",
+   "admin_level": "state",
+   "admin_area": "Maharashtra",
+   "funder": "Maharashtra State Health Assurance Society",
+   "category": "health",
+   "benefit_type": "in_kind",
+   "amount_min": null,
+   "amount_max": 500000,
+   "amount_currency": "INR",
+   "amount_period": "annual",
+   "amount_note": "Cashless cover up to Rs 5 lakh per family per year (floater); Rs 1 lakh per person for road-accident victims (category D).",
+   "is_automatic": false,
+   "application_url": "https://www.jeevandayee.gov.in/MJPJAY/",
+   "application_channel": "in_person",
+   "deadline_type": "rolling",
+   "deadline_note": "Treatment at a network hospital.",
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Go to an empanelled hospital Arogyamitra desk.",
+     "url": null
+    },
+    {
+     "step": 2,
+     "detail": "Present ration card and photo ID.",
+     "url": null
+    },
+    {
+     "step": 3,
+     "detail": "Hospital obtains approval for cashless treatment.",
+     "url": null
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "Ration card (yellow/orange/white) or domicile certificate",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Photo ID",
+     "mandatory": true,
+     "note": null
+    }
+   ],
+   "eligibility": {
+    "statuses": [],
+    "age_min": null,
+    "age_max": null,
+    "income_annual_max": null,
+    "income_note": "Eligibility by ration card category and domicile; no single income ceiling published.",
+    "requires_children": false,
+    "nationality": "citizen_or_pr",
+    "residency_months_min": null,
+    "housing_tenure": null,
+    "student_required": false,
+    "admin_areas": [
+     "Maharashtra"
+    ],
+    "gender": "any"
+   },
+   "source_url": "https://www.myscheme.gov.in/schemes/mjpjay",
+   "source_snippet": "From 1st July 2024, it ensures comprehensive, cashless healthcare for the entire population of Maharashtra.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "mh-shravan-bal",
+   "name_local": "श्रावणबाळ सेवा राज्य निवृत्तिवेतन योजना",
+   "name_en": "Shravan Bal Seva State Pension Scheme",
+   "admin_level": "state",
+   "admin_area": "Maharashtra",
+   "funder": "Maharashtra Revenue and Forest Department",
+   "category": "income_support",
+   "benefit_type": "cash_monthly",
+   "amount_min": 600,
+   "amount_max": 600,
+   "amount_currency": "INR",
+   "amount_period": "monthly",
+   "amount_note": "Rs 600 per month. BPL group: Rs 200 central plus Rs 400 state; non-BPL group needs income at or below Rs 21,000.",
+   "is_automatic": false,
+   "application_url": "https://aaplesarkar.mahaonline.gov.in/",
+   "application_channel": "online",
+   "deadline_type": "rolling",
+   "deadline_note": "Apply any time via Aaple Sarkar or Tahsildar office.",
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Apply on Aaple Sarkar or at the Collector/Tahsildar/Talathi office.",
+     "url": null
+    },
+    {
+     "step": 2,
+     "detail": "Tahsildar verifies and sanctions.",
+     "url": null
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "Age proof (65+)",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Domicile proof (15 years)",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Income certificate or BPL proof",
+     "mandatory": true,
+     "note": null
+    }
+   ],
+   "eligibility": {
+    "statuses": [
+     "retired"
+    ],
+    "age_min": 65,
+    "age_max": null,
+    "income_annual_max": 21000,
+    "income_note": "Non-BPL applicants: income at or below Rs 21,000 per year; BPL applicants need no income figure.",
+    "requires_children": false,
+    "nationality": "citizen_or_pr",
+    "residency_months_min": 180,
+    "housing_tenure": null,
+    "student_required": false,
+    "admin_areas": [
+     "Maharashtra"
+    ],
+    "gender": "any"
+   },
+   "source_url": "https://www.myscheme.gov.in/schemes/sbssps",
+   "source_snippet": "In this scheme, a monthly pension of ₹ 600/- is provided to destitute persons in the state of Maharashtra.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "gj-ma-yojana",
+   "name_local": "મુખ્યમંત્રી અમૃતમ (MA) યોજના",
+   "name_en": "Mukhyamantri Amrutum (MA) Yojana",
+   "admin_level": "state",
+   "admin_area": "Gujarat",
+   "funder": "Government of Gujarat Health Department",
+   "category": "health",
+   "benefit_type": "in_kind",
+   "amount_min": null,
+   "amount_max": 500000,
+   "amount_currency": "INR",
+   "amount_period": "annual",
+   "amount_note": "Cashless cover Rs 5 lakh per family per year for BPL families; MA Vatsalya extends to families with income up to Rs 4 lakh.",
+   "is_automatic": false,
+   "application_url": "https://web.umang.gov.in/landing/scheme/detail/ma.html",
+   "application_channel": "in_person",
+   "deadline_type": "rolling",
+   "deadline_note": "Enrol at designated kiosks; use at empanelled hospitals.",
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Enrol at the designated MA kiosk or Taluka office.",
+     "url": null
+    },
+    {
+     "step": 2,
+     "detail": "Use the card at an empanelled hospital.",
+     "url": null
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "Income certificate or BPL proof",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Aadhaar",
+     "mandatory": true,
+     "note": null
+    }
+   ],
+   "eligibility": {
+    "statuses": [],
+    "age_min": null,
+    "age_max": null,
+    "income_annual_max": 400000,
+    "income_note": "MA Vatsalya: family income up to Rs 4,00,000; BPL families under MA. Seniors: up to Rs 6,00,000.",
+    "requires_children": false,
+    "nationality": "citizen_or_pr",
+    "residency_months_min": null,
+    "housing_tenure": null,
+    "student_required": false,
+    "admin_areas": [
+     "Gujarat"
+    ],
+    "gender": "any"
+   },
+   "source_url": "https://web.umang.gov.in/landing/scheme/detail/ma.html",
+   "source_snippet": "For 1.50 Lakh Limit of Income Certificate –MA benefit limit extend upto 10 LACs",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "gj-vahli-dikri",
+   "name_local": "વ્હાલી દીકરી યોજના",
+   "name_en": "Vahli Dikri Yojana",
+   "admin_level": "state",
+   "admin_area": "Gujarat",
+   "funder": "Gujarat Women and Child Development Department",
+   "category": "family",
+   "benefit_type": "cash_one_off",
+   "amount_min": 4000,
+   "amount_max": 100000,
+   "amount_currency": "INR",
+   "amount_period": "one_off",
+   "amount_note": "Rs 4,000 at Class 1 admission, Rs 6,000 at Class 9, Rs 1,00,000 at age 18 (total Rs 1,10,000).",
+   "is_automatic": false,
+   "application_url": "https://www.myscheme.gov.in/schemes/vdy",
+   "application_channel": "in_person",
+   "deadline_type": "rolling",
+   "deadline_note": "Apply at Anganwadi, Gram Panchayat or CDPO office.",
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Submit the form at the Anganwadi/Gram Panchayat/CDPO office.",
+     "url": null
+    },
+    {
+     "step": 2,
+     "detail": "Officials verify and sanction instalments.",
+     "url": null
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "Girl's birth certificate",
+     "mandatory": true,
+     "note": "Born on or after 02-08-2019"
+    },
+    {
+     "doc": "Income certificate",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Gujarat domicile",
+     "mandatory": true,
+     "note": null
+    }
+   ],
+   "eligibility": {
+    "statuses": [],
+    "age_min": null,
+    "age_max": null,
+    "income_annual_max": 200000,
+    "income_note": "Family income at most Rs 2,00,000 per year.",
+    "requires_children": true,
+    "nationality": "citizen_or_pr",
+    "residency_months_min": null,
+    "housing_tenure": null,
+    "student_required": false,
+    "admin_areas": [
+     "Gujarat"
+    ],
+    "gender": "female"
+   },
+   "source_url": "https://www.myscheme.gov.in/schemes/vdy",
+   "source_snippet": "The Vahli Dikri Yojana, launched by the Women and Child Development Department under the Government of Gujarat, aims to empower girl children by providing financial assistance to their parents.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "gj-namo-lakshmi",
+   "name_local": "નમો લક્ષ્મી યોજના",
+   "name_en": "Namo Lakshmi Yojana",
+   "admin_level": "state",
+   "admin_area": "Gujarat",
+   "funder": "Gujarat Education Department",
+   "category": "education",
+   "benefit_type": "cash_one_off",
+   "amount_min": null,
+   "amount_max": 50000,
+   "amount_currency": "INR",
+   "amount_period": "one_off",
+   "amount_note": "Rs 50,000 in total for Classes 9-12 (Rs 10,000 per year for Classes 9-10, Rs 15,000 per year for Classes 11-12), attendance-linked.",
+   "is_automatic": false,
+   "application_url": "https://www.myscheme.gov.in/schemes/nlygg2",
+   "application_channel": "in_person",
+   "deadline_type": "annual",
+   "deadline_note": "Apply through the school.",
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Submit application through the school to the District Education Officer.",
+     "url": null
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "Income certificate",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Bank account details",
+     "mandatory": true,
+     "note": null
+    }
+   ],
+   "eligibility": {
+    "statuses": [
+     "student"
+    ],
+    "age_min": null,
+    "age_max": null,
+    "income_annual_max": 600000,
+    "income_note": "Family income at most Rs 6,00,000 per year.",
+    "requires_children": false,
+    "nationality": "citizen_or_pr",
+    "residency_months_min": null,
+    "housing_tenure": null,
+    "student_required": true,
+    "admin_areas": [
+     "Gujarat"
+    ],
+    "gender": "female"
+   },
+   "source_url": "https://www.myscheme.gov.in/schemes/nlygg2",
+   "source_snippet": "aims to encourage girls studying in government, aided, and private schools in Gujarat to complete their education from Class 9th to 12th by providing direct financial assistance.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "wb-krishak-bandhu",
+   "name_local": "কৃষক বন্ধু",
+   "name_en": "Krishak Bandhu Scheme",
+   "admin_level": "state",
+   "admin_area": "West Bengal",
+   "funder": "West Bengal Department of Agriculture",
+   "category": "income_support",
+   "benefit_type": "cash_one_off",
+   "amount_min": 4000,
+   "amount_max": 10000,
+   "amount_currency": "INR",
+   "amount_period": "annual",
+   "amount_note": "Rs 10,000 per year in two instalments for 1+ acre; pro rata below 1 acre (minimum Rs 4,000); Rs 2,00,000 death or disability benefit for ages 18-60.",
+   "is_automatic": false,
+   "application_url": "https://krishakbandhu.wb.gov.in/users/sign_up",
+   "application_channel": "online",
+   "deadline_type": "rolling",
+   "deadline_note": "Register on the Krishak Bandhu portal.",
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Sign up on the Krishak Bandhu portal.",
+     "url": null
+    },
+    {
+     "step": 2,
+     "detail": "Block agriculture office verifies land records.",
+     "url": null
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "Land record (khatian)",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Bank account",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Aadhaar",
+     "mandatory": true,
+     "note": null
+    }
+   ],
+   "eligibility": {
+    "statuses": [
+     "self_employed"
+    ],
+    "age_min": null,
+    "age_max": null,
+    "income_annual_max": null,
+    "income_note": "No income test; land up to 2 acres.",
+    "requires_children": false,
+    "nationality": "citizen_or_pr",
+    "residency_months_min": null,
+    "housing_tenure": null,
+    "student_required": false,
+    "admin_areas": [
+     "West Bengal"
+    ],
+    "gender": "any"
+   },
+   "source_url": "https://web.umang.gov.in/landing/scheme/detail/krishak-bandhu-scheme_kbs.html",
+   "source_snippet": "To qualify, you must be a resident of West Bengal, own cultivable land (up to 2 acres), and be actively engaged in farming.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "wb-rupashree-prakalpa",
+   "name_local": "রূপশ্রী প্রকল্প",
+   "name_en": "Rupashree Prakalpa",
+   "admin_level": "state",
+   "admin_area": "West Bengal",
+   "funder": "West Bengal Department of Women and Child Development and Social Welfare",
+   "category": "family",
+   "benefit_type": "cash_one_off",
+   "amount_min": 25000,
+   "amount_max": 25000,
+   "amount_currency": "INR",
+   "amount_period": "one_off",
+   "amount_note": "One-time Rs 25,000 for the first marriage of a woman aged 18+.",
+   "is_automatic": false,
+   "application_url": "https://www.myscheme.gov.in/schemes/wbrupashree",
+   "application_channel": "in_person",
+   "deadline_type": "rolling",
+   "deadline_note": "Apply 30-60 days before the marriage.",
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Submit at the Block/SDO/Municipal office 30-60 days before the wedding.",
+     "url": null
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "Age proof of bride (18+) and groom (21+)",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Income certificate",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Bank account of bride",
+     "mandatory": true,
+     "note": null
+    }
+   ],
+   "eligibility": {
+    "statuses": [],
+    "age_min": 18,
+    "age_max": null,
+    "income_annual_max": 150000,
+    "income_note": "Family income at most Rs 1,50,000 per year.",
+    "requires_children": false,
+    "nationality": "citizen_or_pr",
+    "residency_months_min": null,
+    "housing_tenure": null,
+    "student_required": false,
+    "admin_areas": [
+     "West Bengal"
+    ],
+    "gender": "female"
+   },
+   "source_url": "https://www.myscheme.gov.in/schemes/wbrupashree",
+   "source_snippet": "The \"Rupashree Prakalpa\" scheme was launched by the Department of Women and Child Development and Social Welfare, Government of West Bengal, on 1st April 2018.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "tn-cmchis",
+   "name_local": "முதலமைச்சரின் விரிவான மருத்துவக் காப்பீட்டுத் திட்டம்",
+   "name_en": "Chief Minister's Comprehensive Health Insurance Scheme (CMCHIS)",
+   "admin_level": "state",
+   "admin_area": "Tamil Nadu",
+   "funder": "Tamil Nadu Government (United India Insurance Company as insurer)",
+   "category": "health",
+   "benefit_type": "in_kind",
+   "amount_min": null,
+   "amount_max": 500000,
+   "amount_currency": "INR",
+   "amount_period": "annual",
+   "amount_note": "Cashless cover Rs 5,00,000 per family per year (floater), 1,090 procedures.",
+   "is_automatic": false,
+   "application_url": "https://www.cmchistn.com/",
+   "application_channel": "in_person",
+   "deadline_type": "rolling",
+   "deadline_note": "Use the family insurance card at empanelled hospitals.",
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Confirm the member is listed on the CMCHIS family card.",
+     "url": null
+    },
+    {
+     "step": 2,
+     "detail": "Show the card at an empanelled government or private hospital.",
+     "url": null
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "CMCHIS family card",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Photo ID",
+     "mandatory": true,
+     "note": null
+    }
+   ],
+   "eligibility": {
+    "statuses": [],
+    "age_min": null,
+    "age_max": null,
+    "income_annual_max": 120000,
+    "income_note": "Family income below Rs 1,20,000 per year; the UMANG page's exclusion list also mentions Rs 72,000, so confirm locally.",
+    "requires_children": false,
+    "nationality": "citizen_or_pr",
+    "residency_months_min": null,
+    "housing_tenure": null,
+    "student_required": false,
+    "admin_areas": [
+     "Tamil Nadu"
+    ],
+    "gender": "any"
+   },
+   "source_url": "https://web.umang.gov.in/landing/scheme/detail/chief-ministers-comprehensive-health-insurance-scheme_cmchis.html",
+   "source_snippet": "The Chief Minister Comprehensive Health Insurance Scheme, formerly known as Kalaingar Kaappittu Thittam, was launched on 23rd July 2009",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "ka-vidyasiri",
+   "name_local": "ವಿದ್ಯಾಸಿರಿ",
+   "name_en": "Vidyasiri Food and Accommodation Scholarship",
+   "admin_level": "state",
+   "admin_area": "Karnataka",
+   "funder": "Karnataka Backward Classes Welfare Department",
+   "category": "education",
+   "benefit_type": "cash_monthly",
+   "amount_min": 1500,
+   "amount_max": 1500,
+   "amount_currency": "INR",
+   "amount_period": "monthly",
+   "amount_note": "Rs 1,500 per month for 10 months (Rs 15,000 per year) for non-hostel post-matric students.",
+   "is_automatic": false,
+   "application_url": "https://www.myscheme.gov.in/schemes/vfas",
+   "application_channel": "online",
+   "deadline_type": "annual",
+   "deadline_note": "Apply on the Karnataka State Scholarship Portal in the academic-year window.",
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Apply on the SSP portal.",
+     "url": null
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "Caste and income certificates",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Previous marks card (40-60% by category)",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "College admission proof",
+     "mandatory": true,
+     "note": null
+    }
+   ],
+   "eligibility": {
+    "statuses": [
+     "student"
+    ],
+    "age_min": null,
+    "age_max": null,
+    "income_annual_max": null,
+    "income_note": "Category-specific income limits apply but are not stated on the page.",
+    "requires_children": false,
+    "nationality": "citizen_or_pr",
+    "residency_months_min": null,
+    "housing_tenure": null,
+    "student_required": true,
+    "admin_areas": [
+     "Karnataka"
+    ],
+    "gender": "any"
+   },
+   "source_url": "https://www.myscheme.gov.in/schemes/vfas",
+   "source_snippet": "Vidyasiri-Food and Accommodation Scholarship Scheme (VFAS) is specifically designed for students from backward classes pursuing post-matric courses in government, local, aided, and recognized private institutions affiliated with statutory universities in Karnataka.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "dl-old-age-pension",
+   "name_local": "वृद्धावस्था पेंशन",
+   "name_en": "Delhi Old Age Pension",
+   "admin_level": "state",
+   "admin_area": "Delhi NCT",
+   "funder": "Delhi Social Welfare Department",
+   "category": "income_support",
+   "benefit_type": "cash_monthly",
+   "amount_min": 2000,
+   "amount_max": 2500,
+   "amount_currency": "INR",
+   "amount_period": "monthly",
+   "amount_note": "Rs 2,000 per month for ages 60-69 (plus Rs 500 for SC/ST/minority), Rs 2,500 per month for 70+.",
+   "is_automatic": false,
+   "application_url": "https://edistrict.delhigovt.nic.in",
+   "application_channel": "online",
+   "deadline_type": "rolling",
+   "deadline_note": "Apply any time on e-District.",
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Apply on the Delhi e-District portal.",
+     "url": null
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "Age proof",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Delhi residence proof (5 years)",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Income certificate",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Bank account",
+     "mandatory": true,
+     "note": null
+    }
+   ],
+   "eligibility": {
+    "statuses": [
+     "retired"
+    ],
+    "age_min": 60,
+    "age_max": null,
+    "income_annual_max": 100000,
+    "income_note": "Income below Rs 1,00,000 per year.",
+    "requires_children": false,
+    "nationality": "citizen_or_pr",
+    "residency_months_min": 60,
+    "housing_tenure": null,
+    "student_required": false,
+    "admin_areas": [
+     "Delhi NCT"
+    ],
+    "gender": "any"
+   },
+   "source_url": "https://web.umang.gov.in/landing/scheme/detail/old-age-assistance_oaa.html",
+   "source_snippet": "Rs. 2,500/- per month will be given to people over 70 years.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "kl-snehapoorvam",
+   "name_local": "സ്നേഹപൂർവ്വം",
+   "name_en": "Snehapoorvam Scheme",
+   "admin_level": "state",
+   "admin_area": "Kerala",
+   "funder": "Kerala Social Security Mission",
+   "category": "family",
+   "benefit_type": "cash_monthly",
+   "amount_min": 300,
+   "amount_max": 1000,
+   "amount_currency": "INR",
+   "amount_period": "monthly",
+   "amount_note": "Rs 300 (below Class V), Rs 500 (Classes VI-X), Rs 750 (Classes XI-XII), Rs 1,000 (degree) per month.",
+   "is_automatic": false,
+   "application_url": "https://socialsecuritymission.gov.in",
+   "application_channel": "in_person",
+   "deadline_type": "annual",
+   "deadline_note": "Apply to the school head before 31 October each year.",
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Submit the form to the school head, forwarded to the Kerala Social Security Mission.",
+     "url": null
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "Death certificate of parent(s)",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Income/BPL proof",
+     "mandatory": true,
+     "note": null
+    }
+   ],
+   "eligibility": {
+    "statuses": [
+     "student"
+    ],
+    "age_min": null,
+    "age_max": 24,
+    "income_annual_max": 22375,
+    "income_note": "BPL, or APL with income under Rs 20,000 (rural) / Rs 22,375 (urban) per year.",
+    "requires_children": true,
+    "nationality": "citizen_or_pr",
+    "residency_months_min": null,
+    "housing_tenure": null,
+    "student_required": false,
+    "admin_areas": [
+     "Kerala"
+    ],
+    "gender": "any"
+   },
+   "source_url": "https://web.umang.gov.in/landing/scheme/detail/snehapoorvam-scheme_ss-kerala.html",
+   "source_snippet": "Kerala Government has launched a noble initiative “Snehapoorvam Scheme” to provide financial assistance to orphans who are living in the family, with their relatives, friends, or the support of the community under the Social Welfare Department implemented through Social Security Mission.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   }
  ]
 }

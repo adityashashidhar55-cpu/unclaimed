@@ -1,39 +1,39 @@
 {
- "generated_at": "2026-09-25",
- "total": 1641,
+ "generated_at": "2026-10-05",
+ "total": 1854,
  "countries": [
   {
    "slug": "us",
    "name": "United States",
    "flag": "🇺🇸",
    "currency": "USD",
-   "count": 269,
-   "verified": 73,
-   "priced": 122,
-   "open": 158,
-   "closed": 34
+   "count": 295,
+   "verified": 210,
+   "priced": 168,
+   "open": 162,
+   "closed": 48
   },
   {
    "slug": "gb",
    "name": "United Kingdom",
    "flag": "🇬🇧",
    "currency": "GBP",
-   "count": 137,
-   "verified": 36,
-   "priced": 93,
-   "open": 98,
-   "closed": 28
+   "count": 155,
+   "verified": 139,
+   "priced": 114,
+   "open": 99,
+   "closed": 38
   },
   {
    "slug": "eu",
    "name": "European Union",
    "flag": "🇪🇺",
    "currency": "EUR",
-   "count": 113,
-   "verified": 45,
-   "priced": 27,
-   "open": 54,
-   "closed": 33
+   "count": 112,
+   "verified": 100,
+   "priced": 37,
+   "open": 62,
+   "closed": 36
   },
   {
    "slug": "global",
@@ -41,20 +41,20 @@
    "flag": "🌐",
    "currency": "USD",
    "count": 118,
-   "verified": 52,
-   "priced": 42,
-   "open": 75,
-   "closed": 11
+   "verified": 103,
+   "priced": 48,
+   "open": 76,
+   "closed": 22
   },
   {
    "slug": "in",
    "name": "India",
    "flag": "🇮🇳",
    "currency": "INR",
-   "count": 107,
-   "verified": 21,
-   "priced": 38,
-   "open": 68,
+   "count": 124,
+   "verified": 96,
+   "priced": 72,
+   "open": 73,
    "closed": 7
   },
   {
@@ -62,22 +62,22 @@
    "name": "France",
    "flag": "🇫🇷",
    "currency": "EUR",
-   "count": 92,
-   "verified": 20,
-   "priced": 16,
-   "open": 44,
-   "closed": 4
+   "count": 107,
+   "verified": 83,
+   "priced": 43,
+   "open": 69,
+   "closed": 18
   },
   {
    "slug": "de",
    "name": "Germany",
    "flag": "🇩🇪",
    "currency": "EUR",
-   "count": 91,
-   "verified": 67,
-   "priced": 36,
+   "count": 95,
+   "verified": 90,
+   "priced": 45,
    "open": 70,
-   "closed": 7
+   "closed": 9
   },
   {
    "slug": "be",
@@ -85,10 +85,10 @@
    "flag": "🇧🇪",
    "currency": "EUR",
    "count": 62,
-   "verified": 53,
-   "priced": 16,
-   "open": 39,
-   "closed": 21
+   "verified": 62,
+   "priced": 26,
+   "open": 35,
+   "closed": 14
   },
   {
    "slug": "ca",
@@ -96,21 +96,21 @@
    "flag": "🇨🇦",
    "currency": "CAD",
    "count": 54,
-   "verified": 14,
-   "priced": 28,
+   "verified": 33,
+   "priced": 32,
    "open": 41,
-   "closed": 5
+   "closed": 6
   },
   {
    "slug": "ie",
    "name": "Ireland",
    "flag": "🇮🇪",
    "currency": "EUR",
-   "count": 45,
-   "verified": 19,
-   "priced": 40,
-   "open": 38,
-   "closed": 5
+   "count": 44,
+   "verified": 42,
+   "priced": 39,
+   "open": 39,
+   "closed": 4
   },
   {
    "slug": "nl",
@@ -118,10 +118,10 @@
    "flag": "🇳🇱",
    "currency": "EUR",
    "count": 38,
-   "verified": 11,
-   "priced": 4,
-   "open": 17,
-   "closed": 3
+   "verified": 35,
+   "priced": 18,
+   "open": 21,
+   "closed": 10
   },
   {
    "slug": "ch",
@@ -131,8 +131,8 @@
    "count": 33,
    "verified": 31,
    "priced": 11,
-   "open": 29,
-   "closed": 1
+   "open": 24,
+   "closed": 7
   },
   {
    "slug": "au",
@@ -140,8 +140,8 @@
    "flag": "🇦🇺",
    "currency": "AUD",
    "count": 30,
-   "verified": 13,
-   "priced": 15,
+   "verified": 29,
+   "priced": 18,
    "open": 14,
    "closed": 13
   },
@@ -151,10 +151,10 @@
    "flag": "🇦🇹",
    "currency": "EUR",
    "count": 28,
-   "verified": 25,
-   "priced": 17,
-   "open": 22,
-   "closed": 4
+   "verified": 28,
+   "priced": 23,
+   "open": 16,
+   "closed": 12
   },
   {
    "slug": "jp",
@@ -162,21 +162,21 @@
    "flag": "🇯🇵",
    "currency": "JPY",
    "count": 24,
-   "verified": 6,
-   "priced": 15,
-   "open": 10,
-   "closed": 9
+   "verified": 23,
+   "priced": 16,
+   "open": 12,
+   "closed": 10
   },
   {
    "slug": "es",
    "name": "Spain",
    "flag": "🇪🇸",
    "currency": "EUR",
-   "count": 20,
-   "verified": 5,
-   "priced": 7,
-   "open": 5,
-   "closed": 2
+   "count": 34,
+   "verified": 32,
+   "priced": 20,
+   "open": 15,
+   "closed": 16
   },
   {
    "slug": "sg",
@@ -184,10 +184,10 @@
    "flag": "🇸🇬",
    "currency": "SGD",
    "count": 18,
-   "verified": 7,
+   "verified": 16,
    "priced": 8,
-   "open": 16,
-   "closed": 1
+   "open": 14,
+   "closed": 3
   },
   {
    "slug": "kr",
@@ -195,43 +195,43 @@
    "flag": "🇰🇷",
    "currency": "KRW",
    "count": 18,
-   "verified": 3,
+   "verified": 9,
    "priced": 9,
    "open": 7,
-   "closed": 8
+   "closed": 10
   },
   {
    "slug": "it",
    "name": "Italy",
    "flag": "🇮🇹",
    "currency": "EUR",
-   "count": 18,
-   "verified": 5,
-   "priced": 4,
-   "open": 9,
-   "closed": 2
+   "count": 29,
+   "verified": 25,
+   "priced": 15,
+   "open": 17,
+   "closed": 9
   },
   {
    "slug": "ae",
    "name": "United Arab Emirates",
    "flag": "🇦🇪",
    "currency": "AED",
-   "count": 14,
-   "verified": 5,
-   "priced": 9,
-   "open": 8,
-   "closed": 1
+   "count": 20,
+   "verified": 13,
+   "priced": 15,
+   "open": 10,
+   "closed": 2
   },
   {
    "slug": "dk",
    "name": "Denmark",
    "flag": "🇩🇰",
    "currency": "DKK",
-   "count": 14,
-   "verified": 6,
-   "priced": 4,
-   "open": 10,
-   "closed": 1
+   "count": 19,
+   "verified": 19,
+   "priced": 10,
+   "open": 8,
+   "closed": 9
   },
   {
    "slug": "lu",
@@ -239,20 +239,20 @@
    "flag": "🇱🇺",
    "currency": "EUR",
    "count": 14,
-   "verified": 6,
-   "priced": 1,
+   "verified": 9,
+   "priced": 2,
    "open": 11,
-   "closed": 1
+   "closed": 2
   },
   {
    "slug": "br",
    "name": "Brazil",
    "flag": "🇧🇷",
    "currency": "BRL",
-   "count": 12,
-   "verified": 5,
-   "priced": 7,
-   "open": 7,
+   "count": 16,
+   "verified": 13,
+   "priced": 10,
+   "open": 10,
    "closed": 1
   },
   {
@@ -261,9 +261,9 @@
    "flag": "🇿🇦",
    "currency": "ZAR",
    "count": 11,
-   "verified": 3,
+   "verified": 9,
    "priced": 8,
-   "open": 6,
+   "open": 8,
    "closed": 0
   },
   {
@@ -272,9 +272,9 @@
    "flag": "🇳🇿",
    "currency": "NZD",
    "count": 11,
-   "verified": 3,
+   "verified": 8,
    "priced": 5,
-   "open": 5,
+   "open": 6,
    "closed": 1
   },
   {
@@ -282,32 +282,32 @@
    "name": "Norway",
    "flag": "🇳🇴",
    "currency": "NOK",
-   "count": 11,
-   "verified": 5,
-   "priced": 4,
-   "open": 8,
-   "closed": 2
+   "count": 25,
+   "verified": 22,
+   "priced": 17,
+   "open": 21,
+   "closed": 4
   },
   {
    "slug": "pl",
    "name": "Poland",
    "flag": "🇵🇱",
    "currency": "PLN",
-   "count": 10,
-   "verified": 4,
-   "priced": 2,
-   "open": 3,
-   "closed": 2
+   "count": 19,
+   "verified": 15,
+   "priced": 3,
+   "open": 10,
+   "closed": 5
   },
   {
    "slug": "hk",
    "name": "Hong Kong",
    "flag": "🇭🇰",
    "currency": "HKD",
-   "count": 10,
-   "verified": 0,
-   "priced": 8,
-   "open": 7,
+   "count": 15,
+   "verified": 9,
+   "priced": 11,
+   "open": 12,
    "closed": 3
   },
   {
@@ -315,11 +315,11 @@
    "name": "Finland",
    "flag": "🇫🇮",
    "currency": "EUR",
-   "count": 10,
-   "verified": 6,
-   "priced": 4,
-   "open": 6,
-   "closed": 4
+   "count": 15,
+   "verified": 12,
+   "priced": 8,
+   "open": 11,
+   "closed": 3
   },
   {
    "slug": "pk",
@@ -327,32 +327,32 @@
    "flag": "🇵🇰",
    "currency": "PKR",
    "count": 10,
-   "verified": 3,
-   "priced": 1,
-   "open": 3,
-   "closed": 0
+   "verified": 7,
+   "priced": 3,
+   "open": 5,
+   "closed": 1
   },
   {
    "slug": "se",
    "name": "Sweden",
    "flag": "🇸🇪",
    "currency": "SEK",
-   "count": 9,
-   "verified": 3,
-   "priced": 3,
-   "open": 6,
-   "closed": 0
+   "count": 17,
+   "verified": 17,
+   "priced": 12,
+   "open": 14,
+   "closed": 1
   },
   {
    "slug": "pt",
    "name": "Portugal",
    "flag": "🇵🇹",
    "currency": "EUR",
-   "count": 9,
-   "verified": 2,
-   "priced": 2,
-   "open": 2,
-   "closed": 1
+   "count": 19,
+   "verified": 13,
+   "priced": 5,
+   "open": 10,
+   "closed": 4
   },
   {
    "slug": "ee",
@@ -360,21 +360,21 @@
    "flag": "🇪🇪",
    "currency": "EUR",
    "count": 8,
-   "verified": 2,
-   "priced": 2,
-   "open": 4,
-   "closed": 0
+   "verified": 8,
+   "priced": 7,
+   "open": 7,
+   "closed": 1
   },
   {
    "slug": "cz",
    "name": "Czechia",
    "flag": "🇨🇿",
    "currency": "CZK",
-   "count": 8,
-   "verified": 1,
-   "priced": 1,
-   "open": 1,
-   "closed": 0
+   "count": 13,
+   "verified": 13,
+   "priced": 5,
+   "open": 8,
+   "closed": 4
   },
   {
    "slug": "sa",
@@ -382,20 +382,20 @@
    "flag": "🇸🇦",
    "currency": "SAR",
    "count": 8,
-   "verified": 0,
-   "priced": 2,
+   "verified": 5,
+   "priced": 3,
    "open": 7,
-   "closed": 0
+   "closed": 1
   },
   {
    "slug": "my",
    "name": "Malaysia",
    "flag": "🇲🇾",
    "currency": "MYR",
-   "count": 7,
-   "verified": 0,
-   "priced": 3,
-   "open": 6,
+   "count": 9,
+   "verified": 7,
+   "priced": 5,
+   "open": 7,
    "closed": 1
   },
   {
@@ -403,10 +403,10 @@
    "name": "Taiwan",
    "flag": "🇹🇼",
    "currency": "TWD",
-   "count": 6,
-   "verified": 0,
-   "priced": 4,
-   "open": 4,
+   "count": 8,
+   "verified": 7,
+   "priced": 6,
+   "open": 6,
    "closed": 2
   },
   {
@@ -415,21 +415,21 @@
    "flag": "🇮🇸",
    "currency": "EUR",
    "count": 6,
-   "verified": 5,
-   "priced": 0,
+   "verified": 6,
+   "priced": 1,
    "open": 2,
-   "closed": 0
+   "closed": 4
   },
   {
    "slug": "ro",
    "name": "Romania",
    "flag": "🇷🇴",
    "currency": "RON",
-   "count": 6,
-   "verified": 1,
-   "priced": 2,
-   "open": 1,
-   "closed": 0
+   "count": 8,
+   "verified": 3,
+   "priced": 4,
+   "open": 2,
+   "closed": 1
   },
   {
    "slug": "bd",
@@ -437,7 +437,7 @@
    "flag": "🇧🇩",
    "currency": "BDT",
    "count": 6,
-   "verified": 2,
+   "verified": 4,
    "priced": 2,
    "open": 6,
    "closed": 0
@@ -448,8 +448,8 @@
    "flag": "🇮🇱",
    "currency": "ILS",
    "count": 6,
-   "verified": 2,
-   "priced": 4,
+   "verified": 4,
+   "priced": 3,
    "open": 5,
    "closed": 0
   },
@@ -458,10 +458,10 @@
    "name": "Mexico",
    "flag": "🇲🇽",
    "currency": "MXN",
-   "count": 5,
-   "verified": 2,
-   "priced": 3,
-   "open": 2,
+   "count": 6,
+   "verified": 3,
+   "priced": 4,
+   "open": 3,
    "closed": 2
   },
   {
@@ -469,10 +469,10 @@
    "name": "Indonesia",
    "flag": "🇮🇩",
    "currency": "IDR",
-   "count": 5,
-   "verified": 0,
+   "count": 6,
+   "verified": 1,
    "priced": 2,
-   "open": 1,
+   "open": 2,
    "closed": 4
   },
   {
@@ -480,9 +480,9 @@
    "name": "Thailand",
    "flag": "🇹🇭",
    "currency": "THB",
-   "count": 5,
-   "verified": 0,
-   "priced": 4,
+   "count": 6,
+   "verified": 4,
+   "priced": 5,
    "open": 3,
    "closed": 2
   },
@@ -491,11 +491,11 @@
    "name": "Greece",
    "flag": "🇬🇷",
    "currency": "EUR",
-   "count": 5,
-   "verified": 1,
-   "priced": 2,
-   "open": 3,
-   "closed": 1
+   "count": 10,
+   "verified": 6,
+   "priced": 7,
+   "open": 6,
+   "closed": 2
   },
   {
    "slug": "lk",
@@ -513,32 +513,32 @@
    "name": "Chile",
    "flag": "🇨🇱",
    "currency": "CLP",
-   "count": 5,
-   "verified": 2,
-   "priced": 5,
-   "open": 1,
-   "closed": 1
+   "count": 9,
+   "verified": 8,
+   "priced": 8,
+   "open": 2,
+   "closed": 3
   },
   {
    "slug": "vn",
    "name": "Vietnam",
    "flag": "🇻🇳",
    "currency": "VND",
-   "count": 4,
-   "verified": 0,
-   "priced": 0,
-   "open": 2,
-   "closed": 2
+   "count": 5,
+   "verified": 3,
+   "priced": 1,
+   "open": 4,
+   "closed": 1
   },
   {
    "slug": "ph",
    "name": "Philippines",
    "flag": "🇵🇭",
    "currency": "PHP",
-   "count": 4,
-   "verified": 0,
-   "priced": 1,
-   "open": 2,
+   "count": 7,
+   "verified": 5,
+   "priced": 2,
+   "open": 3,
    "closed": 1
   },
   {
@@ -547,7 +547,7 @@
    "flag": "🇱🇻",
    "currency": "EUR",
    "count": 4,
-   "verified": 0,
+   "verified": 2,
    "priced": 0,
    "open": 2,
    "closed": 1
@@ -558,10 +558,10 @@
    "flag": "🇱🇹",
    "currency": "EUR",
    "count": 4,
-   "verified": 0,
-   "priced": 0,
+   "verified": 1,
+   "priced": 1,
    "open": 2,
-   "closed": 0
+   "closed": 1
   },
   {
    "slug": "hu",
@@ -591,10 +591,10 @@
    "flag": "🇸🇮",
    "currency": "EUR",
    "count": 4,
-   "verified": 1,
+   "verified": 4,
    "priced": 3,
    "open": 1,
-   "closed": 1
+   "closed": 3
   },
   {
    "slug": "mt",
@@ -602,9 +602,9 @@
    "flag": "🇲🇹",
    "currency": "EUR",
    "count": 4,
-   "verified": 0,
-   "priced": 0,
-   "open": 0,
+   "verified": 3,
+   "priced": 1,
+   "open": 2,
    "closed": 0
   },
   {
@@ -623,21 +623,21 @@
    "name": "Nigeria",
    "flag": "🇳🇬",
    "currency": "NGN",
-   "count": 4,
-   "verified": 0,
-   "priced": 2,
+   "count": 6,
+   "verified": 5,
+   "priced": 3,
    "open": 2,
-   "closed": 1
+   "closed": 3
   },
   {
    "slug": "qa",
    "name": "Qatar",
    "flag": "🇶🇦",
    "currency": "QAR",
-   "count": 4,
-   "verified": 1,
-   "priced": 4,
-   "open": 2,
+   "count": 10,
+   "verified": 9,
+   "priced": 8,
+   "open": 8,
    "closed": 1
   },
   {
@@ -645,11 +645,11 @@
    "name": "Colombia",
    "flag": "🇨🇴",
    "currency": "COP",
-   "count": 4,
-   "verified": 1,
+   "count": 5,
+   "verified": 5,
    "priced": 1,
    "open": 3,
-   "closed": 0
+   "closed": 1
   },
   {
    "slug": "sk",
@@ -657,8 +657,8 @@
    "flag": "🇸🇰",
    "currency": "EUR",
    "count": 3,
-   "verified": 0,
-   "priced": 0,
+   "verified": 2,
+   "priced": 1,
    "open": 2,
    "closed": 0
   },
@@ -679,10 +679,10 @@
    "flag": "🇷🇸",
    "currency": "RSD",
    "count": 3,
-   "verified": 0,
+   "verified": 3,
    "priced": 3,
-   "open": 1,
-   "closed": 0
+   "open": 0,
+   "closed": 3
   },
   {
    "slug": "cy",
@@ -690,10 +690,10 @@
    "flag": "🇨🇾",
    "currency": "EUR",
    "count": 3,
-   "verified": 0,
-   "priced": 0,
+   "verified": 3,
+   "priced": 2,
    "open": 1,
-   "closed": 0
+   "closed": 2
   },
   {
    "slug": "om",
@@ -711,10 +711,10 @@
    "name": "Kenya",
    "flag": "🇰🇪",
    "currency": "KES",
-   "count": 3,
-   "verified": 0,
-   "priced": 3,
-   "open": 2,
+   "count": 5,
+   "verified": 3,
+   "priced": 4,
+   "open": 3,
    "closed": 0
   },
   {
@@ -723,10 +723,10 @@
    "flag": "🇪🇬",
    "currency": "EGP",
    "count": 3,
-   "verified": 0,
-   "priced": 2,
+   "verified": 2,
+   "priced": 3,
    "open": 1,
-   "closed": 0
+   "closed": 1
   },
   {
    "slug": "ma",
@@ -755,11 +755,11 @@
    "name": "Bahrain",
    "flag": "🇧🇭",
    "currency": "BHD",
-   "count": 2,
-   "verified": 1,
-   "priced": 0,
-   "open": 2,
-   "closed": 0
+   "count": 8,
+   "verified": 7,
+   "priced": 1,
+   "open": 4,
+   "closed": 2
   },
   {
    "slug": "gh",
@@ -778,7 +778,7 @@
    "flag": "🇷🇼",
    "currency": "RWF",
    "count": 2,
-   "verified": 0,
+   "verified": 1,
    "priced": 1,
    "open": 1,
    "closed": 0
@@ -789,7 +789,7 @@
    "flag": "🇹🇳",
    "currency": "TND",
    "count": 2,
-   "verified": 0,
+   "verified": 1,
    "priced": 0,
    "open": 2,
    "closed": 0
@@ -800,7 +800,7 @@
    "flag": "🇦🇷",
    "currency": "ARS",
    "count": 2,
-   "verified": 0,
+   "verified": 1,
    "priced": 0,
    "open": 1,
    "closed": 0
@@ -813,8 +813,8 @@
    "count": 2,
    "verified": 2,
    "priced": 1,
-   "open": 2,
-   "closed": 0
+   "open": 1,
+   "closed": 1
   },
   {
    "slug": "kw",
@@ -822,7 +822,7 @@
    "flag": "🇰🇼",
    "currency": "KWD",
    "count": 1,
-   "verified": 0,
+   "verified": 1,
    "priced": 1,
    "open": 1,
    "closed": 0
@@ -833,7 +833,7 @@
    "flag": "🇸🇳",
    "currency": "EUR",
    "count": 1,
-   "verified": 0,
+   "verified": 1,
    "priced": 1,
    "open": 1,
    "closed": 0

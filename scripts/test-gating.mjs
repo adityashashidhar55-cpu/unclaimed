@@ -525,8 +525,9 @@ async function lockedScreenBehaviour() {
     res.writeHead(200, { 'content-type': TYPES[path.extname(f)] || 'application/octet-stream' });
     fs.createReadStream(f).pipe(res);
   });
-  const PORT = 8217;
-  await new Promise((r) => server.listen(PORT, r));
+  /* Port 0: a fixed port made two concurrent runs on one machine fail with EADDRINUSE. */
+  await new Promise((r) => server.listen(0, r));
+  const PORT = server.address().port;
   const base = `http://127.0.0.1:${PORT}`;
   const browser = await chromium.launch();
 

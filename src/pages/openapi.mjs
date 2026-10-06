@@ -235,6 +235,39 @@ export function openApiSpec({ SITE_URL, STATS, STARTUP_STATS }) {
           responses: { 200: { description: 'Unsubscribed' } },
         },
       },
+      '/api/report-issue': {
+        post: {
+          tags: ['corrections'],
+          summary: 'Report an error on a programme record (no account needed)',
+          requestBody: {
+            required: true,
+            content: {
+              'application/json': {
+                schema: {
+                  type: 'object',
+                  required: ['slug', 'description'],
+                  properties: {
+                    slug: { type: 'string', description: 'The programme as published on its page, e.g. gb/some-programme' },
+                    country_code: { type: 'string' },
+                    audience: { type: 'string', enum: ['household', 'company'] },
+                    issue_type: { type: 'string', enum: ['wrong_amount', 'dead_link', 'rule_changed', 'wrong_deadline', 'other'] },
+                    description: { type: 'string', maxLength: 2000 },
+                    suggested: { type: 'string', description: 'What it should say instead' },
+                    evidence_url: { type: 'string', format: 'uri', description: 'The official page that shows it' },
+                    reporter_contact: { type: 'string', format: 'email', description: 'Optional; only used to say it is fixed' },
+                  },
+                },
+              },
+            },
+          },
+          responses: {
+            200: { description: 'Filed; the body carries a reference to quote', content: { 'application/json': { schema: { type: 'object', properties: { ok: { type: 'boolean' }, reference: { type: 'string' } } } } } },
+            422: { description: 'A field failed validation' },
+            429: { description: 'Rate limited (10 reports per connection per hour)' },
+            503: { description: 'Reporting is not available on this deployment yet' },
+          },
+        },
+      },
       '/mcp': {
         post: {
           tags: ['mcp'],

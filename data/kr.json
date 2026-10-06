@@ -14,10 +14,10 @@
       "category": "income_support",
       "benefit_type": "cash_monthly",
       "amount_min": null,
-      "amount_max": 2078316,
+      "amount_max": 2737905,
       "amount_currency": "KRW",
       "amount_period": "monthly",
-      "amount_note": "가구 소득인정액에 따라 차감 지급. 2026년 최대액: 1인 가구 월 820,556원, 4인 가구 월 2,078,316원 (기준중위소득 32%)",
+      "amount_note": "가구 소득인정액에 따라 차감 지급(지급기준=선정기준 중위 32%). 2026년 최대액: 1인 820,556원, 2인 1,343,773원, 3인 1,714,892원, 4인 2,078,316원, 5인 2,418,150원, 6인 2,737,905원, 7인 3,044,848원",
       "is_automatic": false,
       "application_url": "https://www.bokjiro.go.kr",
       "application_channel": "online",
@@ -61,8 +61,8 @@
         "statuses": [],
         "age_min": null,
         "age_max": null,
-        "income_annual_max": null,
-        "income_note": "가구 소득인정액이 기준중위소득 32% 이하(2026년 1인 가구 월 820,556원). 근로·사업소득 30% 공제, 청년(34세 이하) 추가 공제 60만원",
+        "income_annual_max": 9846672,
+        "income_note": "가구 소득인정액이 기준중위소득 32% 이하(2026년 월 기준: 1인 820,556원, 4인 2,078,316원). income_annual_max = 1인가구 820,556원x12 (가구원수별 상이: 4인 2,078,316x12=24,939,792). 부양의무자 기준 적용(연소득 1.3억원 또는 일반재산 12억원 초과 시 제외)",
         "requires_children": false,
         "nationality": "citizen_or_pr",
         "residency_months_min": null,
@@ -71,9 +71,9 @@
         "admin_areas": [],
         "gender": "any"
       },
-      "source_url": "https://www.bokjiro.go.kr",
-      "source_snippet": "2026년 생계급여 최대 급여액은 1인 가구 기준 82만 556원으로, 선정 기준은 기준중위소득 32%를 적용한다.",
-      "last_verified_at": "2026-08-12",
+      "source_url": "https://www.mohw.go.kr/menu.es?mid=a10708010300",
+      "source_snippet": "생계급여(중위 32%) | 820,556 | 1,343,773 | 1,714,892 | 2,078,316 | 2,418,150 | 2,737,905",
+      "last_verified_at": "2026-10-05",
       "verification_status": "verified"
     },
     {
@@ -128,8 +128,8 @@
         "statuses": [],
         "age_min": null,
         "age_max": null,
-        "income_annual_max": null,
-        "income_note": "가구 소득인정액이 기준중위소득 40% 이하",
+        "income_annual_max": 12308340,
+        "income_note": "가구 소득인정액이 기준중위소득 40% 이하(2026년 월 기준: 1인 1,025,695원, 2인 1,679,717원, 4인 2,597,895원). income_annual_max = 1인가구 1,025,695원x12. 부양의무자 기준 적용(부양능력 있는 부양의무자가 있으면 제외; 일부 예외)",
         "requires_children": false,
         "nationality": "citizen_or_pr",
         "residency_months_min": null,
@@ -138,9 +138,9 @@
         "admin_areas": [],
         "gender": "any"
       },
-      "source_url": "https://www.bokjiro.go.kr",
-      "source_snippet": "가구 소득인정액이 기준중위소득 40% 이하이면 의료급여 수급자로 선정되어 의료급여 등을 받을 수 있다.",
-      "last_verified_at": "2026-08-12",
+      "source_url": "https://www.mohw.go.kr/menu.es?mid=a10708010300",
+      "source_snippet": "의료급여(중위 40%) | 1,025,695 | 1,679,717 | 2,143,614 | 2,597,895 | 3,022,688 | 3,422,381",
+      "last_verified_at": "2026-10-05",
       "verification_status": "verified"
     },
     {
@@ -195,8 +195,8 @@
         "statuses": [],
         "age_min": null,
         "age_max": null,
-        "income_annual_max": null,
-        "income_note": "가구 소득인정액이 기준중위소득 48% 이하",
+        "income_annual_max": 14770008,
+        "income_note": "가구 소득인정액이 기준중위소득 48% 이하(2026년 월 기준: 1인 1,230,834원, 2인 2,015,660원, 4인 3,117,474원). income_annual_max = 1인가구 1,230,834원x12. 부양의무자 기준 없음",
         "requires_children": false,
         "nationality": "citizen_or_pr",
         "residency_months_min": null,
@@ -205,9 +205,9 @@
         "admin_areas": [],
         "gender": "any"
       },
-      "source_url": "https://www.bokjiro.go.kr",
-      "source_snippet": "주거급여 선정 기준은 기준중위소득 48%이며, 2026년 1인 가구 기준 약 123만 834원 이하이다.",
-      "last_verified_at": "2026-08-12",
+      "source_url": "https://www.mohw.go.kr/menu.es?mid=a10708010300",
+      "source_snippet": "주거급여(중위 48%) | 1,230,834 | 2,015,660 | 2,572,337 | 3,117,474 | 3,627,225 | 4,106,857",
+      "last_verified_at": "2026-10-05",
       "verification_status": "verified"
     },
     {
@@ -219,16 +219,16 @@
       "funder": "교육부 / 보건복지부 / 시·도교육청",
       "category": "education",
       "benefit_type": "cash_one_off",
-      "amount_min": null,
-      "amount_max": null,
+      "amount_min": 502000,
+      "amount_max": 860000,
       "amount_currency": "KRW",
       "amount_period": "annual",
-      "amount_note": "초·중·고 학생에게 교육활동지원비를 연 1회 지급(학년·학교급별 차등, 2026년 평균 4.7% 인상). 교과서비·입학금·수업료 면제 포함",
+      "amount_note": "교육활동지원비 연 1회(이용권/바우처): 초등 502,000원, 중등 699,000원, 고등 860,000원(2026년, 전년 대비 평균 6% 인상). 고교 무상교육 제외 학교의 고교 학비(입학금·수업료·교과서비)도 지원. 신규 수급자는 한국장학재단 e-voucher에서 이용권 별도 신청 필요",
       "is_automatic": false,
       "application_url": "https://www.bokjiro.go.kr",
       "application_channel": "online",
       "deadline_type": "window",
-      "deadline_note": "매년 집중 신청기간 운영, 상시 신청도 가능",
+      "deadline_note": "2026년 집중 신청기간 3월 3일~3월 20일, 연중 신청 가능(신청일 기준 지원이므로 3월 신청 권장). 기수급자는 재신청 불필요",
       "procedure_steps": [
         {
           "step": 1,
@@ -262,8 +262,8 @@
         "statuses": [],
         "age_min": null,
         "age_max": null,
-        "income_annual_max": null,
-        "income_note": "가구 소득인정액이 기준중위소득 50% 이하",
+        "income_annual_max": 15385428,
+        "income_note": "가구 소득인정액이 기준중위소득 50% 이하(2026년 월 기준: 1인 1,282,119원, 4인 3,247,369원). income_annual_max = 1인가구 1,282,119원x12. 부양의무자 기준 없음",
         "requires_children": true,
         "nationality": "citizen_or_pr",
         "residency_months_min": null,
@@ -272,9 +272,9 @@
         "admin_areas": [],
         "gender": "any"
       },
-      "source_url": "https://www.bokjiro.go.kr",
-      "source_snippet": "가구 소득인정액이 기준중위소득 50% 이하이면 교육급여 수급자로 선정되어 교육급여를 받을 수 있다.",
-      "last_verified_at": "2026-08-12",
+      "source_url": "https://www.moe.go.kr/boardCnts/viewRenew.do?boardID=294&boardSeq=105459&lev=0&m=020402",
+      "source_snippet": "교육급여 중 교육활동지원비는 전년 대비 평균 6% 인상하여 초 502,000원, 중 699,000원, 고 860,000원을 지원한다. 연 1회 지원이며",
+      "last_verified_at": "2026-10-05",
       "verification_status": "verified"
     },
     {
@@ -324,8 +324,8 @@
         "statuses": [],
         "age_min": null,
         "age_max": null,
-        "income_annual_max": null,
-        "income_note": "가구 소득인정액이 기준중위소득 50% 이하",
+        "income_annual_max": 15385428,
+        "income_note": "가구 소득인정액이 기준중위소득 50% 이하(2026년 월 기준: 1인 1,282,119원, 4인 3,247,369원). income_annual_max = 1인가구 1,282,119원x12. 차상위계층 확인 시 부양의무자 소득·재산은 고려하지 않음",
         "requires_children": false,
         "nationality": "citizen_or_pr",
         "residency_months_min": null,
@@ -334,10 +334,10 @@
         "admin_areas": [],
         "gender": "any"
       },
-      "source_url": "https://www.bokjiro.go.kr",
-      "source_snippet": "소득인정액이 기준중위소득 50% 이하이면서 기초생활수급 대상이 아닌 가구를 차상위계층으로 확인해 각종 감면·지원 사업과 연계한다.",
-      "last_verified_at": "2026-08-12",
-      "verification_status": "auto_extracted"
+      "source_url": "https://www.bokjiro.go.kr/ssis-tbu/cms/pc/customer/notice/1304241_1141.html",
+      "source_snippet": "소득인정액이 기준중위소득의 50% 이하인 가구 ... 부양의무자 기준 미적용",
+      "last_verified_at": "2026-10-05",
+      "verification_status": "verified"
     },
     {
       "slug": "eunggeup-bokji-jiwon",
@@ -352,7 +352,7 @@
       "amount_max": null,
       "amount_currency": "KRW",
       "amount_period": "monthly",
-      "amount_note": "갑작스런 위기사유(실직·질병·재해 등) 발생 시 생계지원(1인 기준 약 76만원 수준, 매년 고시)·의료지원(300만원 한도)·주거지원 등 단기 지원",
+      "amount_note": "위기사유(실직·질병·재해 등) 발생 시 생계·의료(300만원 이내, 추가 300만원 가능)·주거 등 단기 지원. 생계지원 금액은 매년 고시(2026년 확정액은 해당 페이지에서 확인되지 않음)",
       "is_automatic": false,
       "application_url": "https://www.bokjiro.go.kr",
       "application_channel": "in_person",
@@ -386,8 +386,8 @@
         "statuses": [],
         "age_min": null,
         "age_max": null,
-        "income_annual_max": null,
-        "income_note": "가구 소득이 중위소득 75% 이하, 재산·금융재산 기준 충족, 위기사유 발생",
+        "income_annual_max": 23078148,
+        "income_note": "기준중위소득 75% 이하(2026년 월 기준: 1인 1,923,179원, 4인 4,871,054원). income_annual_max = 1인가구 1,923,179원x12. 재산: 일반재산(주거용 공제 후)+금융재산-부채가 대도시 2.41억/중소도시 1.52억/농어촌 1.3억원 이하, 금융재산 1인 8,564,000원 이하(주거지원은 +200만원). 기준 충족 여부는 사후조사에서 판단",
         "requires_children": false,
         "nationality": "any_resident",
         "residency_months_min": null,
@@ -396,10 +396,10 @@
         "admin_areas": [],
         "gender": "any"
       },
-      "source_url": "https://www.bokjiro.go.kr",
-      "source_snippet": "갑작스러운 위기 상황으로 생계유지가 곤란한 가구에 생계·의료·주거지원 등을 신속하게 지원한다.",
-      "last_verified_at": "2026-08-12",
-      "verification_status": "auto_extracted"
+      "source_url": "https://www.mohw.go.kr/menu.es?mid=a10708010100",
+      "source_snippet": "(소득) 기준중위소득 75%(1인기준 192만 3,179원, 4인기준 487만 1,054원 이하)",
+      "last_verified_at": "2026-10-05",
+      "verification_status": "verified"
     },
     {
       "slug": "gicho-yeongeum",
@@ -458,8 +458,8 @@
         "statuses": [],
         "age_min": 65,
         "age_max": null,
-        "income_annual_max": null,
-        "income_note": "만 65세 이상, 소득인정액 단독가구 월 247만원·부부가구 월 395.2만원 이하(2026년)",
+        "income_annual_max": 29640000,
+        "income_note": "만 65세 이상, 월 소득인정액이 선정기준액 이하: 2026년 단독가구 월 247만원, 부부가구 월 395.2만원. income_annual_max = 단독가구 2,470,000원x12 (부부가구 3,952,000x12=47,424,000)",
         "requires_children": false,
         "nationality": "citizen_or_pr",
         "residency_months_min": null,
@@ -468,9 +468,9 @@
         "admin_areas": [],
         "gender": "any"
       },
-      "source_url": "https://www.nps.or.kr",
-      "source_snippet": "기초연금의 월 최대 수급액인 기준연금액이 2026년 1월부터 34만 9,700원으로 인상되었다.",
-      "last_verified_at": "2026-08-12",
+      "source_url": "https://www.mohw.go.kr/board.es?act=view&bid=0027&list_no=1488478&mid=a10503000000",
+      "source_snippet": "2026년도 기초연금 선정기준액을 단독가구 월 247만 원, 부부가구 월 395만 2,000원으로 결정한다고 밝혔다.",
+      "last_verified_at": "2026-10-05",
       "verification_status": "verified"
     },
     {
@@ -483,10 +483,10 @@
       "category": "income_support",
       "benefit_type": "cash_monthly",
       "amount_min": null,
-      "amount_max": null,
+      "amount_max": 439700,
       "amount_currency": "KRW",
       "amount_period": "monthly",
-      "amount_note": "만 18세 이상 중증장애인 중 소득하위 70%에게 기초급여(2026년 기준 월 34만원대 수준, 물가연동) 및 부가급여 지급",
+      "amount_note": "기초급여 월 최대 349,700원(부부 모두 수급 시 각 20% 감액) + 부가급여(수급유형별 월 3만원~, 2026년 최대 439,700원까지). 2026년 1월부터 연금 월 최대 439,700원",
       "is_automatic": false,
       "application_url": "https://www.bokjiro.go.kr",
       "application_channel": "online",
@@ -520,8 +520,8 @@
         "statuses": [],
         "age_min": 18,
         "age_max": null,
-        "income_annual_max": null,
-        "income_note": "중증장애인(종전 1~2급·3급 중복), 소득인정액 하위 70%",
+        "income_annual_max": 16800000,
+        "income_note": "본인과 배우자 소득인정액이 선정기준액 이하: 2026년 배우자 없는 중증장애인 월 140만원, 배우자 있는 경우 월 224만원. income_annual_max = 단독 1,400,000원x12 (부부 2,240,000x12=26,880,000). 중증장애인(종전 1·2급, 3급 중복) 18세 이상",
         "requires_children": false,
         "nationality": "citizen_or_pr",
         "residency_months_min": null,
@@ -530,10 +530,10 @@
         "admin_areas": [],
         "gender": "any"
       },
-      "source_url": "https://www.bokjiro.go.kr",
-      "source_snippet": "일과 소득활동이 어려운 중증장애인의 생활 안정을 위해 매월 연금을 지급한다.",
-      "last_verified_at": "2026-08-12",
-      "verification_status": "auto_extracted"
+      "source_url": "https://www.mohw.go.kr/menu.es?mid=a10710030100",
+      "source_snippet": "선정기준액(2026년) : 배우자가 없는 중증장애인 140만원, 배우자가 있는 중증장애인 224만원",
+      "last_verified_at": "2026-10-05",
+      "verification_status": "verified"
     },
     {
       "slug": "jangae-sudang",
@@ -544,11 +544,11 @@
       "funder": "보건복지부 / 지방자치단체",
       "category": "income_support",
       "benefit_type": "cash_monthly",
-      "amount_min": null,
-      "amount_max": null,
+      "amount_min": 30000,
+      "amount_max": 60000,
       "amount_currency": "KRW",
       "amount_period": "monthly",
-      "amount_note": "소득인정액 기준 이하 경증장애인에게 소액 수당 월 지급(기초생활·차상위 여부에 따라 차등)",
+      "amount_note": "기초생활수급자(생계·의료·주거·교육급여)·차상위계층 등록장애인 월 6만원(재가), 시설 입소자 월 3만원. 장애인연금법상 중증장애인(연금 수급 대상)은 제외",
       "is_automatic": false,
       "application_url": "https://www.bokjiro.go.kr",
       "application_channel": "online",
@@ -577,8 +577,8 @@
         "statuses": [],
         "age_min": 18,
         "age_max": null,
-        "income_annual_max": null,
-        "income_note": "국민기초생활수급자·차상위계층 중 등록 경증장애인",
+        "income_annual_max": 15385428,
+        "income_note": "국민기초생활보장 수급자 및 차상위계층(소득인정액 기준중위소득 50% 이하; 2026년 월 1인 1,282,119원). income_annual_max = 1인가구 중위 50% x12",
         "requires_children": false,
         "nationality": "citizen_or_pr",
         "residency_months_min": null,
@@ -587,10 +587,10 @@
         "admin_areas": [],
         "gender": "any"
       },
-      "source_url": "https://www.bokjiro.go.kr",
-      "source_snippet": "경증장애인 중 저소득층에게 매월 장애수당을 지급한다.",
-      "last_verified_at": "2026-08-12",
-      "verification_status": "auto_extracted"
+      "source_url": "https://www.mohw.go.kr/menu.es?mid=a10710030200",
+      "source_snippet": "기초생활보장 생계·의료급여 수급자 : 월 6만원 / 기초생활보장 주거·교육급여 수급자 또는 차상위계층 : 월 6만원",
+      "last_verified_at": "2026-10-05",
+      "verification_status": "verified"
     },
     {
       "slug": "jangae-adong-sudang",
@@ -602,10 +602,10 @@
       "category": "family",
       "benefit_type": "cash_monthly",
       "amount_min": null,
-      "amount_max": null,
+      "amount_max": 220000,
       "amount_currency": "KRW",
       "amount_period": "monthly",
-      "amount_note": "만 18세 미만 등록 장애아동을 둔 저소득 가구에 장애 정도별 수당 월 지급(중증 장애아동 기준 더 높은 단가)",
+      "amount_note": "18세 미만 등록 장애아동 중 기초생활수급자·차상위계층 대상 월 최대 22만원(장애 정도·수급 유형별 차등)",
       "is_automatic": false,
       "application_url": "https://www.bokjiro.go.kr",
       "application_channel": "online",
@@ -634,8 +634,8 @@
         "statuses": [],
         "age_min": null,
         "age_max": 17,
-        "income_annual_max": null,
-        "income_note": "만 18세 미만 장애아동, 기초생활수급·차상위 가구 등 소득기준 충족",
+        "income_annual_max": 15385428,
+        "income_note": "기초생활수급자 및 차상위계층(소득인정액 기준중위소득 50% 이하; 2026년 월 1인 1,282,119원). income_annual_max = 1인가구 중위 50% x12",
         "requires_children": true,
         "nationality": "citizen_or_pr",
         "residency_months_min": null,
@@ -644,10 +644,10 @@
         "admin_areas": [],
         "gender": "any"
       },
-      "source_url": "https://www.bokjiro.go.kr",
-      "source_snippet": "장애로 인해 일상생활에 어려움이 있는 만 18세 미만 장애아동 가구에 매월 수당을 지급한다.",
-      "last_verified_at": "2026-08-12",
-      "verification_status": "auto_extracted"
+      "source_url": "https://www.mohw.go.kr/menu.es?mid=a10710030200",
+      "source_snippet": "18세 미만의 등록 장애아동 중 국민기초생활보장 수급자 및 차상위계층.",
+      "last_verified_at": "2026-10-05",
+      "verification_status": "verified"
     },
     {
       "slug": "adong-sudang",
@@ -659,10 +659,10 @@
       "category": "family",
       "benefit_type": "cash_monthly",
       "amount_min": 100000,
-      "amount_max": 100000,
+      "amount_max": 130000,
       "amount_currency": "KRW",
       "amount_period": "monthly",
-      "amount_note": "전국 공통 월 10만원. 2026년부터 만 9세 미만으로 확대(매년 1세씩 상향, 2030년 만 13세 미만까지). 비수도권·인구감소지역 추가 지급",
+      "amount_note": "만 9세 미만 아동 1인당 월 10~13만원: 수도권 10만원, 비수도권 10.5만원, 인구감소지역 11만원, 특별지역 12만원(지역화폐 +1만원 포함 시 13만원). 매년 1세씩 대상 확대(2027년 10세 미만)",
       "is_automatic": false,
       "application_url": "https://www.bokjiro.go.kr",
       "application_channel": "online",
@@ -706,9 +706,9 @@
         "admin_areas": [],
         "gender": "any"
       },
-      "source_url": "https://www.bokjiro.go.kr",
-      "source_snippet": "아동수당 지급 대상이 8세 미만에서 2030년까지 13세 미만으로 단계 확대되며, 월 10만원을 지급한다.",
-      "last_verified_at": "2026-08-12",
+      "source_url": "https://www.mohw.go.kr/menu.es?mid=a10711030100",
+      "source_snippet": "만 9세 미만 모든 아동 ... 아동 1인당 월 10~13만원 * 매월 수도권 10만원, 비수도권 10.5만원, 인구감소지역 우대11만원, 특별12만원(지역화폐+1만원)",
+      "last_verified_at": "2026-10-05",
       "verification_status": "verified"
     },
     {
@@ -768,9 +768,9 @@
         "admin_areas": [],
         "gender": "any"
       },
-      "source_url": "https://www.bokjiro.go.kr",
-      "source_snippet": "부모급여는 만 0세 월 100만원, 만 1세 월 50만원을 지급한다.",
-      "last_verified_at": "2026-08-12",
+      "source_url": "https://www.mohw.go.kr/menu.es?mid=a10711030600",
+      "source_snippet": "지원대상 2세미만 (0 ~ 23개월)의 아동 / 지원금액 0세 월 100만원, 1세 월 50만원 / 지원방식 현금 또는 바우처(보육료 또는 종일제 돌봄)",
+      "last_verified_at": "2026-10-05",
       "verification_status": "verified"
     },
     {
@@ -788,10 +788,10 @@
       "amount_period": "one_off",
       "amount_note": "출생아 1인당 첫째 200만원, 둘째 이상 300만원을 국민행복카드 바우처 포인트로 지급. 출생일 기준 1년 내 사용",
       "is_automatic": false,
-      "application_url": "https://www.gov.kr",
+      "application_url": "https://www.bokjiro.go.kr/ssis-tbu/twataa/wlfareInfo/moveTWAT52011M.do?wlfareInfoId=WLF00004656",
       "application_channel": "online",
       "deadline_type": "window",
-      "deadline_note": "출생일 포함 60일 이내 신청(통상)",
+      "deadline_note": "2024년 이후 출생 아동(주민등록상 생년월일로부터 2년이 초과되지 않은 출생아)이 대상. 이용권 사용기간은 출생일로부터 1년(페이지에 '24.1.1 이후 출생아는 출생일로부터 2년' 표기 있음, 정확한 적용은 복지로에서 확인)",
       "procedure_steps": [
         {
           "step": 1,
@@ -830,9 +830,9 @@
         "admin_areas": [],
         "gender": "any"
       },
-      "source_url": "https://www.gov.kr",
-      "source_snippet": "출생아 1명당 바우처 형태로 첫째 200만원, 둘째 이상 300만원을 지원한다.",
-      "last_verified_at": "2026-08-12",
+      "source_url": "https://www.mohw.go.kr/menu.es?mid=a10711020100",
+      "source_snippet": "출생아당 200만원 이상의 이용권을 국민행복카드 바우처로 지급 * '24.1.1일 이후 출생한 아동부터는 첫째아 200만원, 둘째아 이상 출생아는 300만원 지급",
+      "last_verified_at": "2026-10-05",
       "verification_status": "verified"
     },
     {
@@ -848,7 +848,7 @@
       "amount_max": null,
       "amount_currency": "KRW",
       "amount_period": null,
-      "amount_note": "만 12세 이하 아동 가정에 돌보미 파견. 소득구간별 정부지원율 차등(최대 90%), 연 지원시간 한도 내 이용. 다자녀·청소년한부모 추가 지원",
+      "amount_note": "2026년 시간제 기본형 시간당 12,790원(영아종일제 동일), 종합형 16,620원, 심야·휴일 기본형 19,180원. 소득유형별(가~라형) 정부지원, 마형은 시간당 7,670원(50%) 지원. 두 자녀 이상 다자녀는 본인부담금 10% 추가 지원(마형 제외)",
       "is_automatic": false,
       "application_url": "https://www.bokjiro.go.kr",
       "application_channel": "online",
@@ -877,8 +877,8 @@
         "statuses": [],
         "age_min": null,
         "age_max": null,
-        "income_annual_max": null,
-        "income_note": "소득구간별 정부지원율 차등(전액 본인부담부터 90% 지원까지)",
+        "income_annual_max": 125978760,
+        "income_note": "가·나·다·라형은 기준중위소득 250% 이하 가구(2026년 월 2인가구 4,199,292원 기준 250% = 10,498,230원). income_annual_max = 2인가구 중위 250% x12 (아동 있는 최소 가구원수 기준; 가구원수별 상이). 소득유형별 정부지원 비율 차등, 마형은 소득 무관 50% 지원",
         "requires_children": true,
         "nationality": "any_resident",
         "residency_months_min": null,
@@ -887,10 +887,10 @@
         "admin_areas": [],
         "gender": "any"
       },
-      "source_url": "https://www.mogef.go.kr",
-      "source_snippet": "다자녀 가구, 청소년 한부모 등을 위해 아이돌봄서비스 정부지원을 지속적으로 확대하고 있다.",
-      "last_verified_at": "2026-08-12",
-      "verification_status": "auto_extracted"
+      "source_url": "https://idolbom.go.kr/front/biz/srvcGuide",
+      "source_snippet": "중위소득 250% 이하(가, 나, 다, 라형) 중 아래 조건에 맞는 가구에 할인 혜택이 적용됩니다. ... 두 자녀 이상 다자녀 가정에 본인 부담금의 10% 추가 지원",
+      "last_verified_at": "2026-10-05",
+      "verification_status": "verified"
     },
     {
       "slug": "eorinijip-boyullyo",
@@ -901,13 +901,13 @@
       "funder": "보건복지부 / 지방자치단체",
       "category": "family",
       "benefit_type": "free_slab",
-      "amount_min": null,
-      "amount_max": null,
+      "amount_min": 280000,
+      "amount_max": 584000,
       "amount_currency": "KRW",
       "amount_period": "monthly",
-      "amount_note": "어린이집 이용 영유아의 보육료 전액 지원(무상보육). 부모급여 대상 연령은 바우처 차액 현금 지급 방식",
+      "amount_note": "2026.1.1부터 어린이집 이용 0~5세 기본보육료 지원단가(월, 100% 지원): 0세반 584,000원, 1세반 515,000원, 2세반 426,000원, 3~5세반 280,000원(3~5세 누리과정은 영유아특별회계 전액 부담). 가정·농어촌·장애아동양육수당 또는 부모급여(현금) 수급 아동은 지원 제외(부모급여 바우처 방식은 차액 현금)",
       "is_automatic": false,
-      "application_url": "https://www.bokjiro.go.kr",
+      "application_url": "https://www.bokjiro.go.kr/ssis-tbu/twataa/wlfareInfo/moveTWAT52011M.do?wlfareInfoId=WLF00003250",
       "application_channel": "online",
       "deadline_type": "rolling",
       "deadline_note": null,
@@ -944,10 +944,10 @@
         "admin_areas": [],
         "gender": "any"
       },
-      "source_url": "https://www.bokjiro.go.kr",
-      "source_snippet": "어린이집을 이용하는 영유아에게 소득에 관계없이 보육료를 지원한다.",
-      "last_verified_at": "2026-08-12",
-      "verification_status": "auto_extracted"
+      "source_url": "https://central.childcare.go.kr/lcentral/d1_30000/d1_600058/d1_600320/d1_600322.jsp",
+      "source_snippet": "영유아 어린이집 이용 0~5세 100% 0세반('26.1.1~) 584,000 / 1세반 515,000 / 2세반 426,000 / 3~5세반 280,000",
+      "last_verified_at": "2026-10-05",
+      "verification_status": "verified"
     },
     {
       "slug": "nuri-gwajeong-yuahakbi",
@@ -1001,10 +1001,10 @@
         "admin_areas": [],
         "gender": "any"
       },
-      "source_url": "https://www.moe.go.kr",
-      "source_snippet": "만 3~5세 유아에게 유아학비를 지원하여 사실상 무상 유아교육·보육을 실현한다.",
-      "last_verified_at": "2026-08-12",
-      "verification_status": "auto_extracted"
+      "source_url": "https://www.bokjiro.go.kr/ssis-tbu/twataa/wlfareInfo/moveTWAT52011M.do?wlfareInfoId=WLF00000969",
+      "source_snippet": "국공사립유치원에 재원하는 유아를 대상으로 보호자의 소득수준에 관계없이 전 계층에 유아학비를 지원하여 실질적 교육기회 보장",
+      "last_verified_at": "2026-10-05",
+      "verification_status": "verified"
     },
     {
       "slug": "musang-geupsik-seoul",
@@ -1049,10 +1049,10 @@
         ],
         "gender": "any"
       },
-      "source_url": "https://www.seoul.go.kr",
-      "source_snippet": "서울시는 시내 초·중·고등학생 전원에게 친환경 무상급식을 제공한다.",
-      "last_verified_at": "2026-08-12",
-      "verification_status": "auto_extracted"
+      "source_url": "https://mediahub.seoul.go.kr/archives/2000505",
+      "source_snippet": "서울시가 10년 전 전국 최초로 시작한 ‘친환경 무상급식’이 올해부터 서울의 모든 초중고 전 학년에서 시행됩니다.",
+      "last_verified_at": "2026-10-05",
+      "verification_status": "verified"
     },
     {
       "slug": "hanbumo-adong-yangyukbi",
@@ -1063,11 +1063,11 @@
       "funder": "여성가족부 / 지방자치단체",
       "category": "family",
       "benefit_type": "cash_monthly",
-      "amount_min": 210000,
-      "amount_max": 210000,
+      "amount_min": 230000,
+      "amount_max": 230000,
       "amount_currency": "KRW",
       "amount_period": "monthly",
-      "amount_note": "자녀 1인당 월 21만원. 청소년한부모(0~1세 영아 양육)는 월 40만원. 고등학교 재학 중 자녀까지 지원",
+      "amount_note": "2026년 저소득 한부모가족 아동양육비: 아동 1인당 월 23만원(매월 20일 지급). 추가 아동양육비(중위 65% 이하) 별도. 청소년한부모는 별도 '청소년부모 아동양육비' 사업(기준 중위 65% 이하)으로 금액은 해당 안내 참조",
       "is_automatic": false,
       "application_url": "https://www.bokjiro.go.kr",
       "application_channel": "online",
@@ -1101,8 +1101,8 @@
         "statuses": [],
         "age_min": null,
         "age_max": null,
-        "income_annual_max": null,
-        "income_note": "한부모가족·조손가족, 소득인정액 기준중위소득 63% 이하(지원기준 '24년부터 확대)",
+        "income_annual_max": 32754478,
+        "income_note": "기준 중위소득 65% 이하(2026년 월 2인가구 4,199,292원 x 65% = 2,729,540원). income_annual_max = 2인가구(한부모+자녀 1명) x12 (가구원수별 상이)",
         "requires_children": true,
         "nationality": "citizen_or_pr",
         "residency_months_min": null,
@@ -1111,9 +1111,9 @@
         "admin_areas": [],
         "gender": "any"
       },
-      "source_url": "https://www.bokjiro.go.kr",
-      "source_snippet": "(한부모) ('23) 자녀 1인당 월 20만 원 → ('24) 월 21만 원, 지원기준 중위 63%",
-      "last_verified_at": "2026-08-12",
+      "source_url": "https://www.mogef.go.kr/sp/fam/sp_fam_f006.do",
+      "source_snippet": "지원내용: 아동 1인당 월 23만원 지원. - 지급시기: 매월 20일.",
+      "last_verified_at": "2026-10-05",
       "verification_status": "verified"
     },
     {
@@ -1125,11 +1125,11 @@
       "funder": "보건복지부 / 지방자치단체",
       "category": "family",
       "benefit_type": "cash_monthly",
-      "amount_min": null,
-      "amount_max": null,
+      "amount_min": 300000,
+      "amount_max": 500000,
       "amount_currency": "KRW",
       "amount_period": "monthly",
-      "amount_note": "보호대상아동을 위탁가정에서 양육하는 경우 아동 1인당 양육보조금 월 지급 및 심리·치료비 등 지원",
+      "amount_note": "가정위탁아동 1인당 양육보조금 월 30만원~50만원 이상 차등 지원(연령별, 지방이양 사업이라 지자체별 상이). 전문아동보호비·일시위탁보호비 등 별도",
       "is_automatic": false,
       "application_url": "https://www.bokjiro.go.kr",
       "application_channel": "in_person",
@@ -1168,10 +1168,10 @@
         "admin_areas": [],
         "gender": "any"
       },
-      "source_url": "https://www.bokjiro.go.kr",
-      "source_snippet": "보호대상아동이 위탁가정에서 건강하게 성장할 수 있도록 양육보조금 등을 지원한다.",
-      "last_verified_at": "2026-08-12",
-      "verification_status": "auto_extracted"
+      "source_url": "https://www.mohw.go.kr/menu.es?mid=a10711040200",
+      "source_snippet": "지원내용 : 가정위탁아동 1인당 양육보조금 월 30만원∼50만원 이상 차등 지원(지방이양) 권고",
+      "last_verified_at": "2026-10-05",
+      "verification_status": "verified"
     },
     {
       "slug": "jarip-junbi-cheongnyeon",
@@ -1182,11 +1182,11 @@
       "funder": "보건복지부 / 지방자치단체",
       "category": "income_support",
       "benefit_type": "cash_one_off",
-      "amount_min": null,
-      "amount_max": null,
+      "amount_min": 10000000,
+      "amount_max": 20000000,
       "amount_currency": "KRW",
       "amount_period": "one_off",
-      "amount_note": "아동복지시설·위탁가정 퇴소(종결) 청년에게 자립정착금(지자체별 차등) 지급, 자립수당 월 지급, 주거·교육 연계",
+      "amount_note": "자립정착금(1회): 전국 시·도 최소 1,000만원 이상(서울 2,000만원, 대전·경기·제주·경남 1,500만원, 부산 1,200만원, 그 외 1,000만원). 자립수당: 보호종료 후 5년간 월 50만원(보호종료일 기준 과거 2년 이상 연속 보호 요건)",
       "is_automatic": false,
       "application_url": "https://www.bokjiro.go.kr",
       "application_channel": "in_person",
@@ -1225,10 +1225,10 @@
         "admin_areas": [],
         "gender": "any"
       },
-      "source_url": "https://www.bokjiro.go.kr",
-      "source_snippet": "보호종결 아동의 안정적 사회 정착을 위해 자립정착금과 자립수당, 전담기관 사례관리를 지원한다.",
-      "last_verified_at": "2026-08-12",
-      "verification_status": "auto_extracted"
+      "source_url": "https://www.mohw.go.kr/menu.es?mid=a10711041000",
+      "source_snippet": "보호종료 후 5년 간 자립수당 월 50만원 지급 ... 만 18세 이후 보호종료된 자립준비청년 대상 전국 17개 시·도에서 자립정착금 1,000만원 이상 지급",
+      "last_verified_at": "2026-10-05",
+      "verification_status": "verified"
     },
     {
       "slug": "gukga-janghakgeum-1yuhyeong",
@@ -1284,8 +1284,8 @@
         ],
         "age_min": null,
         "age_max": null,
-        "income_annual_max": null,
-        "income_note": "대한민국 국적 대학생, 학자금 지원구간 9구간 이하(기초·차상위 포함)",
+        "income_annual_max": 233810568,
+        "income_note": "월 소득인정액 기준 9구간 이하(2026년 9구간 경곗값 19,484,214원/월 = 기준중위소득 300%). income_annual_max = 19,484,214x12. 기초·차상위는 수급자격으로 확인",
         "requires_children": false,
         "nationality": "citizen_or_pr",
         "residency_months_min": null,
@@ -1294,9 +1294,9 @@
         "admin_areas": [],
         "gender": "any"
       },
-      "source_url": "https://www.kosaf.go.kr",
-      "source_snippet": "기초·차상위 등록금 전액, 1~3구간 연 600만원, 4~6구간 440만원, 7~8구간 360만원, 9구간 연 100만원 지원.",
-      "last_verified_at": "2026-08-12",
+      "source_url": "https://www.kosaf.go.kr/ko/tuition.do?pg=tuition04_09_07&type=scholar",
+      "source_snippet": "9구간 국가장학금 1유형은 100만원, 다자녀 첫째·둘째 자녀 135만원, 다자녀 셋째 이상은 등록금 200만원 지원입니다. 10구간은 국가장학금 미지원입니다.",
+      "last_verified_at": "2026-10-05",
       "verification_status": "verified"
     },
     {
@@ -1309,10 +1309,10 @@
       "category": "education",
       "benefit_type": "in_kind",
       "amount_min": null,
-      "amount_max": null,
+      "amount_max": 6100000,
       "amount_currency": "KRW",
       "amount_period": "annual",
-      "amount_note": "3자녀 이상 가구 대학생 지원. 8구간 이하 셋째 이상 자녀 등록금 전액(2026년 확대). 첫째·둘째는 구간별 연 최대 610만원 등 차등",
+      "amount_note": "다자녀 국가장학금(2026): 1~3구간 첫째·둘째 610만원, 4~6구간 505만원, 7~8구간 465만원, 9구간 135만원; 셋째 이상은 8구간 이하 등록금 전액, 9구간 200만원. 10구간 미지원",
       "is_automatic": false,
       "application_url": "https://www.kosaf.go.kr",
       "application_channel": "online",
@@ -1343,8 +1343,8 @@
         ],
         "age_min": null,
         "age_max": null,
-        "income_annual_max": null,
-        "income_note": "3자녀 이상 가구 대학생, 학자금 지원구간 9구간 이하",
+        "income_annual_max": 233810568,
+        "income_note": "월 소득인정액 기준 9구간 이하(2026년 9구간 경곗값 19,484,214원/월 = 기준중위소득 300%). income_annual_max = 19,484,214x12. 기초·차상위는 수급자격으로 확인",
         "requires_children": false,
         "nationality": "citizen_or_pr",
         "residency_months_min": null,
@@ -1353,9 +1353,9 @@
         "admin_areas": [],
         "gender": "any"
       },
-      "source_url": "https://www.kosaf.go.kr",
-      "source_snippet": "2026년부터 8구간 이하 다자녀 가구의 셋째 이상 자녀 모두 등록금 전액 지원으로 확대.",
-      "last_verified_at": "2026-08-12",
+      "source_url": "https://www.kosaf.go.kr/ko/tuition.do?pg=tuition04_09_07&type=scholar",
+      "source_snippet": "1구간부터 3구간까지 ... 다자녀 첫째·둘째 자녀 610만원, 다자녀 셋째 이상은 등록금 전액 지원입니다.",
+      "last_verified_at": "2026-10-05",
       "verification_status": "verified"
     },
     {
@@ -1371,7 +1371,7 @@
       "amount_max": null,
       "amount_currency": "KRW",
       "amount_period": "annual",
-      "amount_note": "비수도권 고교 졸업 후 비수도권 대학 진학 우수 저소득 신입생에게 등록금 전액+생활비성 장학금 지원(연간 정액)",
+      "amount_note": "비수도권 고교 졸업 후 2026년 비수도권 대학에 입학한 성적우수 신입생(기선발 2015~2025년 계속지원 확정자 포함). 참여대학 소속 학생에 한함. 지원금액은 확인된 공식 수치 없음",
       "is_automatic": false,
       "application_url": "https://www.kosaf.go.kr",
       "application_channel": "online",
@@ -1402,8 +1402,8 @@
         ],
         "age_min": null,
         "age_max": null,
-        "income_annual_max": null,
-        "income_note": "비수도권 고교 졸업 후 비수도권 대학 진학, 저소득 구간 우수 신입생",
+        "income_annual_max": 233810568,
+        "income_note": "학자금 지원구간 9구간 이하(2026년 9구간 경곗값 월 19,484,214원 x12). 성적우수자 선발",
         "requires_children": false,
         "nationality": "citizen_or_pr",
         "residency_months_min": null,
@@ -1412,10 +1412,10 @@
         "admin_areas": [],
         "gender": "any"
       },
-      "source_url": "https://www.kosaf.go.kr",
-      "source_snippet": "비수도권 출신 우수 신입생에게 등록금과 생활비를 지원하는 지역인재 장학금을 운영한다.",
-      "last_verified_at": "2026-08-12",
-      "verification_status": "auto_extracted"
+      "source_url": "https://www.kosaf.go.kr/ko/scholar.do?pg=scholarship05_12_11&naviParam=JH,02,06,05",
+      "source_snippet": "신입생: 비수도권 고교 졸업자, ’26년 비수도권 대학에 입학한 재학생 ... 신규선발 성적우수 ’26년 신입생(학자금 지원 9구간 이하)",
+      "last_verified_at": "2026-10-05",
+      "verification_status": "verified"
     },
     {
       "slug": "huimang-sadari-janghakgeum",
@@ -1430,12 +1430,12 @@
       "amount_max": null,
       "amount_currency": "KRW",
       "amount_period": "annual",
-      "amount_note": "중소·중견기업 취업(창업) 예정 대학생(Ⅰ유형)과 고졸 재직 대학생(Ⅱ유형)에게 등록금 전액 지원. 취업·재직 요건 이행 필요",
+      "amount_note": "Ⅰ유형(중소기업 취업연계 장학금, 취업지원형·창업지원형): 일반대 3학년 이상·전문대 2학년 이상 재학생, 직전학기 백분위 70점 이상. Ⅱ유형(고졸 후학습자): 고졸 재직 대학생. 지원금액은 확인된 공식 수치 없음",
       "is_automatic": false,
       "application_url": "https://www.kosaf.go.kr",
       "application_channel": "online",
       "deadline_type": "window",
-      "deadline_note": "재단 공고 신청기간",
+      "deadline_note": "학기별 공고. 2026-2학기 Ⅰ유형 신규장학생 신청은 9월 18일 18:00 마감(온라인 사전교육·진단평가 이수 필수)",
       "procedure_steps": [
         {
           "step": 1,
@@ -1476,10 +1476,10 @@
         "admin_areas": [],
         "gender": "any"
       },
-      "source_url": "https://www.kosaf.go.kr",
-      "source_snippet": "중소·중견기업 취업을 희망하는 대학생에게 등록금 전액을 지원하는 희망사다리 장학금을 운영한다.",
-      "last_verified_at": "2026-08-12",
-      "verification_status": "auto_extracted"
+      "source_url": "https://www.kosaf.go.kr/ko/scholar.do?pg=scholarship05_14_01&naviParam=JH,03,02,15",
+      "source_snippet": "대한민국 국적자로 선발학기 기준으로 사업 참여대학에 재학 중인 자 - 일반대 3학년 이상, 전문대 2학년 이상 ... 백분위 점수가 70점 이상",
+      "last_verified_at": "2026-10-05",
+      "verification_status": "verified"
     },
     {
       "slug": "gukga-geullo-janghakgeum",
@@ -1535,10 +1535,10 @@
         "admin_areas": [],
         "gender": "any"
       },
-      "source_url": "https://www.kosaf.go.kr",
-      "source_snippet": "대학생이 안정적으로 학업에 전념할 수 있도록 근로 기회를 제공하고 근로장학금을 지급한다.",
-      "last_verified_at": "2026-08-12",
-      "verification_status": "auto_extracted"
+      "source_url": "https://www.kosaf.go.kr/ko/scholar.do?pg=scholarship05_04_01&naviParam=JH,03,01,08",
+      "source_snippet": "대한민국 국적을 소지한 자 중 지원 대상 대학의 재학생(입학예정자 포함) ... 신청대상: 해당 학기 학자금 지원구간이 산정된 학생",
+      "last_verified_at": "2026-10-05",
+      "verification_status": "verified"
     },
     {
       "slug": "chwieophu-sanghwan-hakjageum",
@@ -1553,7 +1553,7 @@
       "amount_max": null,
       "amount_currency": "KRW",
       "amount_period": null,
-      "amount_note": "등록금 전액 및 생활비(학기당 한도) 대출. 졸업 후 소득이 상환기준소득을 넘으면 소득에 연동해 상환. 저소득·다자녀 구간 이자 지원",
+      "amount_note": "등록금: 학부생 해당 학기 등록금 전액(한도 없음). 생활비: 학기당 최대 200만원(최소 10만원), 학사 총한도 2,400만원(4년제·전문대). 일반상환 대출과 취업 후 상환 대출 선택 가능; 취업 후 상환은 소득 발생 시점부터 소득수준에 따라 상환",
       "is_automatic": false,
       "application_url": "https://www.kosaf.go.kr",
       "application_channel": "online",
@@ -1583,9 +1583,9 @@
           "student"
         ],
         "age_min": null,
-        "age_max": null,
+        "age_max": 35,
         "income_annual_max": null,
-        "income_note": "학자금 지원구간 9구간 이하(다자녀 가구는 소득 무관) 대학생",
+        "income_note": "등록금대출: 학지원구간 무관. 생활비대출: 학부생 학자금 지원 8구간 이하 또는 9구간 중 긴급생계곤란자(다자녀 3자녀 이상 가구·자립준비청년은 구간 무관). 대출신청일 기준 학부생 만 35세 이하, 직전학기 성적 요건 해당 없음(취업 후 상환)",
         "requires_children": false,
         "nationality": "citizen_or_pr",
         "residency_months_min": null,
@@ -1594,10 +1594,10 @@
         "admin_areas": [],
         "gender": "any"
       },
-      "source_url": "https://www.kosaf.go.kr",
-      "source_snippet": "취업후 상환 학자금대출은 소득 9구간 이하(다자녀는 소득무관) 대학생에게 이자 면제 혜택 등을 제공한다.",
-      "last_verified_at": "2026-08-12",
-      "verification_status": "auto_extracted"
+      "source_url": "https://www.kosaf.go.kr/ko/tuition.do?pg=tuition02",
+      "source_snippet": "학부생- 등록금: 학자금 지원구간 무관- 생활비: 학자금 지원 8구간 이하 또는 학자금 지원 9구간 중 긴급생계곤란자 한정",
+      "last_verified_at": "2026-10-05",
+      "verification_status": "verified"
     },
     {
       "slug": "gungmin-naeilbaeum-kadeu",
@@ -1656,9 +1656,9 @@
         "admin_areas": [],
         "gender": "any"
       },
-      "source_url": "https://www.work24.go.kr",
-      "source_snippet": "국민내일배움카드는 훈련비를 5년간 기본 300만원, 요건 충족 시 최대 500만원까지 지원하는 고용노동부 직업능력개발 제도다.",
-      "last_verified_at": "2026-08-12",
+      "source_url": "https://m.work24.go.kr/cm/c/f/1100/selecSystInfo.do?currentPageNo=1&recordCountPerPage=10&systId=SI00000351&systClId=SC00000004",
+      "source_snippet": "취업이나 직무수행에 필요한 교육/훈련 비용을 5년간 300만원~500만원 지원하는 카드입니다. 훈련비 지원액: 5년간 300만원+ 200만원 추가 지원",
+      "last_verified_at": "2026-10-05",
       "verification_status": "verified"
     },
     {
@@ -1796,9 +1796,9 @@
         "admin_areas": [],
         "gender": "any"
       },
-      "source_url": "https://www.ei.go.kr",
-      "source_snippet": "2026년 1월 1일 이후 퇴사자는 8시간 기준 하루 상한액 6만 8,100원, 하한액 6만 6,048원을 적용받는다.",
-      "last_verified_at": "2026-08-12",
+      "source_url": "https://1350.moel.go.kr/rtmview.do?id=1000320790",
+      "source_snippet": "구직급여 일액 산정은 이직 전 사업장에서 지급받은 평균임금의 60%(1일 상한액 68,100원, 1일 하한액 = 소정근로시간으로 환산한 최저임금액의 80%)를 산정합니다.",
+      "last_verified_at": "2026-10-05",
       "verification_status": "verified"
     },
     {
@@ -1814,7 +1814,7 @@
       "amount_max": null,
       "amount_currency": "KRW",
       "amount_period": "one_off",
-      "amount_note": "구직급여 소정급여일수를 1/2 이상 남기고 재취업·창업해 12개월(또는 6개월) 고용·사업 유지 시 잔여 급여의 1/2 지급",
+      "amount_note": "지급액: 구직급여 일액 x 미지급일수의 1/2. 요건: 대기기간(14일) 경과 후 소정급여일수를 1/2 이상 남기고 재취업·창업하여 12개월 이상 계속 고용(또는 사업 영위)",
       "is_automatic": false,
       "application_url": "https://www.work24.go.kr",
       "application_channel": "online",
@@ -1856,10 +1856,10 @@
         "admin_areas": [],
         "gender": "any"
       },
-      "source_url": "https://www.ei.go.kr",
-      "source_snippet": "소정급여일수의 2분의 1 이상을 남기고 재취업한 경우 남은 급여의 2분의 1을 조기재취업수당으로 지급한다.",
-      "last_verified_at": "2026-08-12",
-      "verification_status": "auto_extracted"
+      "source_url": "https://1350.moel.go.kr/rtmview.do?id=1000312369",
+      "source_snippet": "조기재취업수당은 고용보험법 … 일수를 2분의 1 이상 남기고 재취업한 경우로서, 12개월 이상 계속하여 고용되거나 12개월 이상 계속하여 사업을 영위한 경우에 지급합니다",
+      "last_verified_at": "2026-10-05",
+      "verification_status": "verified"
     },
     {
       "slug": "jigeop-hunryeon-saenggyebi-daebu",
@@ -1870,13 +1870,13 @@
       "funder": "고용노동부 / 근로복지공단",
       "category": "employment",
       "benefit_type": "cash_monthly",
-      "amount_min": null,
-      "amount_max": null,
+      "amount_min": 500000,
+      "amount_max": 2000000,
       "amount_currency": "KRW",
       "amount_period": "monthly",
-      "amount_note": "직업훈련 참여 실업자 등에게 저금리(연 1% 수준) 생계비 대부, 월 한도 및 총 한도 내 훈련기간 동안 지급(대부이므로 상환 필요)",
+      "amount_note": "월 50만원~200만원 대부, 1인당 총 한도 2,000만원 이내(2026년 근로복지공단 사업 공고; 고용24 구버전 안내는 총 1,000만원). 훈련기간 동안 대부 대상월의 다음달 1~10일 신청, 상환 필요",
       "is_automatic": false,
-      "application_url": "https://www.comwel.or.kr",
+      "application_url": "https://welfare.comwel.or.kr/default/page.do?mCode=B020010000",
       "application_channel": "online",
       "deadline_type": "rolling",
       "deadline_note": null,
@@ -1916,10 +1916,10 @@
         "admin_areas": [],
         "gender": "any"
       },
-      "source_url": "https://www.comwel.or.kr",
-      "source_snippet": "직업훈련에 참여하는 실업자 등의 생계 부담 완화를 위해 저리로 생계비를 대부한다.",
-      "last_verified_at": "2026-08-12",
-      "verification_status": "auto_extracted"
+      "source_url": "https://welfare.comwel.or.kr/mobile/board/bbs.do?cfgIdx=1&mCode=F010000000&op=view&idxId=472072",
+      "source_snippet": "월 50만원~200만원, 1인당 2,000만원 이내. ※ 대부대상 월의 다음달 1일~10일 '신규' 신청",
+      "last_verified_at": "2026-10-05",
+      "verification_status": "verified"
     },
     {
       "slug": "noin-iljari-saeop",
@@ -1975,10 +1975,10 @@
         "admin_areas": [],
         "gender": "any"
       },
-      "source_url": "https://www.bokjiro.go.kr",
-      "source_snippet": "어르신의 활기찬 노후생활을 위해 다양한 유형의 노인일자리와 사회활동을 지원한다.",
-      "last_verified_at": "2026-08-12",
-      "verification_status": "auto_extracted"
+      "source_url": "https://www.mohw.go.kr/menu.es?mid=a10712020100",
+      "source_snippet": "노인공익활동사업 : 65세 이상 기초연금수급자, 직역연금수급자(배우자 포함)",
+      "last_verified_at": "2026-10-05",
+      "verification_status": "verified"
     },
     {
       "slug": "cheongnyeon-doyak-gyejwa",
@@ -1990,15 +1990,15 @@
       "category": "income_support",
       "benefit_type": "cash_monthly",
       "amount_min": null,
-      "amount_max": 33000,
+      "amount_max": 42000,
       "amount_currency": "KRW",
       "amount_period": "monthly",
-      "amount_note": "월 최대 70만원 납입, 5년 만기. 소득구간별 정부기여금 월 최대 3.3만원 매칭 + 이자소득 비과세. 만기 시 최대 약 5천만원 형성",
+      "amount_note": "월 최대 70만원 납입(5년). 정부기여금은 소득구간별 납입액의 3~6%(월 최대 약 4.2만원) + 이자소득 비과세. 2026년 6월 출시된 청년미래적금(월 50만원 납입·3년)과는 중복가입 불가, 기존 가입자는 갈아타기 가능",
       "is_automatic": false,
       "application_url": "https://ylaccount.kinfa.or.kr",
       "application_channel": "online",
       "deadline_type": "window",
-      "deadline_note": "매월 정해진 가입 신청기간(취급은행 앱)",
+      "deadline_note": "청년미래적금 출시(2026.6)로 후속 상품 전환 중; 청년도약계좌 신규 가입 가능 여부는 공식 페이지에서 확인되지 않음",
       "procedure_steps": [
         {
           "step": 1,
@@ -2037,9 +2037,9 @@
         "admin_areas": [],
         "gender": "any"
       },
-      "source_url": "https://www.kinfa.or.kr",
-      "source_snippet": "만 19~34세, 개인소득 7,500만 원 이하 청년이 월 70만원까지 납입하면 정부가 소득구간별 기여금(월 최대 3.3만원)을 추가 지원한다.",
-      "last_verified_at": "2026-08-12",
+      "source_url": "https://www.fsc.go.kr/no010101/87726",
+      "source_snippet": "청년미래적금과 청년도약계좌는 중복가입 불가 ... 최대 월 납입액 50만원 | 70만원 ... 정부기여금 지급률 ... 소득구간별 3~6%",
+      "last_verified_at": "2026-10-05",
       "verification_status": "verified"
     },
     {
@@ -2055,12 +2055,12 @@
       "amount_max": 300000,
       "amount_currency": "KRW",
       "amount_period": "monthly",
-      "amount_note": "월 10만원 이상 저축 시 정부가 월 30만원 근로소득장려금 매칭(중위 50% 이하), 3년 만기 시 최대 1,440만원. 중위 50~100% 구간은 월 10만원 매칭",
+      "amount_note": "월 10만원 저축 시 정부가 월 30만원 근로소득장려금 매칭, 3년 만기 시 최대 1,440만원(10만x36 + 30만x36)",
       "is_automatic": false,
       "application_url": "https://www.bokjiro.go.kr",
       "application_channel": "online",
       "deadline_type": "window",
-      "deadline_note": "통상 매년 상반기(5월경) 신규 가입자 모집",
+      "deadline_note": "2026년 모집기간 5월 4일~5월 20일(종료). 다음 모집은 공고 시 확인",
       "procedure_steps": [
         {
           "step": 1,
@@ -2089,8 +2089,8 @@
         "statuses": [],
         "age_min": 15,
         "age_max": 39,
-        "income_annual_max": null,
-        "income_note": "월 10만원 이상 근로소득 있는 청년, 가구소득 기준중위소득 100% 이하(30만원 매칭은 50% 이하)",
+        "income_annual_max": 15385428,
+        "income_note": "만 15~39세, 근로·사업소득 월 10만원 이상, 가구 소득인정액 기준중위소득 50% 이하(2026년 월 1인 1,282,119원). income_annual_max = 1인가구 중위 50% x12 (가구원수별 상이)",
         "requires_children": false,
         "nationality": "citizen_or_pr",
         "residency_months_min": null,
@@ -2099,9 +2099,9 @@
         "admin_areas": [],
         "gender": "any"
       },
-      "source_url": "https://www.bokjiro.go.kr",
-      "source_snippet": "매월 10만원 이상 저축하면 정부가 월 30만원의 근로소득장려금을 추가로 적립해 주는 사업이다. 3년 만기 시 최대 1440만원의 목돈을 마련할 수 있다.",
-      "last_verified_at": "2026-08-12",
+      "source_url": "https://www.bokjiro.go.kr/ssis-tbu/twataa/wlfareInfo/moveTWAT52011M.do?wlfareInfoId=WLF00000060",
+      "source_snippet": "가입연령 : 신청 당시 만 15세~ 39세 근로·사업소득 : 근로,사업소득이 월10만원 이상 발생 가구소득 : 소득인정액 기준 중위소득 50% 이하",
+      "last_verified_at": "2026-10-05",
       "verification_status": "verified"
     },
     {
@@ -2117,12 +2117,12 @@
       "amount_max": 200000,
       "amount_currency": "KRW",
       "amount_period": "monthly",
-      "amount_note": "월 20만원씩 최대 12개월(총 240만원). 한시 사업으로 매년 운영 여부 확인 필요",
+      "amount_note": "월 최대 20만원, 최대 24개월(최대 480만원) 실제 납부 임대료 지원. 2026년 신규 수혜자는 2028년 12월까지 지원",
       "is_automatic": false,
       "application_url": "https://www.bokjiro.go.kr",
       "application_channel": "online",
       "deadline_type": "window",
-      "deadline_note": "사업 공고 신청기간(연도별 상이)",
+      "deadline_note": "2026년 신청기간 3월 30일~5월 29일(종료). 다음 모집은 공고 시 확인",
       "procedure_steps": [
         {
           "step": 1,
@@ -2156,8 +2156,8 @@
         "statuses": [],
         "age_min": 19,
         "age_max": 34,
-        "income_annual_max": null,
-        "income_note": "청년가구 중위소득 60% 이하, 원가구(부모) 중위소득 100% 이하. 보증금 5천만원·월세 60만원 이하 주택",
+        "income_annual_max": 18462514,
+        "income_note": "19~34세 독립거주 무주택 청년: 청년가구 소득 기준중위소득 60% 이하(2026년 월 1인 1,538,543원; income_annual_max = x12), 원가구(부모) 중위소득 100% 이하, 총재산 1.22억원 이하. 일부 경우 원가구 소득 미고려",
         "requires_children": false,
         "nationality": "any_resident",
         "residency_months_min": null,
@@ -2166,9 +2166,9 @@
         "admin_areas": [],
         "gender": "any"
       },
-      "source_url": "https://www.bokjiro.go.kr",
-      "source_snippet": "만 19~34세 청년을 대상으로 월세 20만원을 최대 12개월(총 240만원) 지원하는 청년 월세 지원을 운영한다.",
-      "last_verified_at": "2026-08-12",
+      "source_url": "https://www.bokjiro.go.kr/ssis-tbu/twataa/wlfareInfo/moveTWAT52011M.do?wlfareInfoId=WLF00004661",
+      "source_snippet": "월세로 거주하는 청년을 대상으로 실제 납부하는 임대료를 최대 480만원(월 최대 20만원)까지 최대 24개월(회) 동안 매월 분할하여 지원합니다.",
+      "last_verified_at": "2026-10-05",
       "verification_status": "verified"
     },
     {
@@ -2184,12 +2184,12 @@
       "amount_max": 200000,
       "amount_currency": "KRW",
       "amount_period": "monthly",
-      "amount_note": "서울 거주 청년 1인 가구 등에 월 20만원, 최대 10~12개월 지원(연도별 공고 상이). 생애 1회",
+      "amount_note": "월 20만원 임차료 지원, 최대 12개월, 생애 1회. 2026년 선정인원 15,000명. 국토부 청년월세 지원과 중복 선정 시 지급중지",
       "is_automatic": false,
       "application_url": "https://housing.seoul.go.kr",
       "application_channel": "online",
       "deadline_type": "window",
-      "deadline_note": "연 1~2회 모집공고",
+      "deadline_note": "2026년 모집 5월 6일~5월 19일(선착순 아님, 종료). 다음 모집은 서울주거포털 공고 확인",
       "procedure_steps": [
         {
           "step": 1,
@@ -2230,10 +2230,10 @@
         ],
         "gender": "any"
       },
-      "source_url": "https://housing.seoul.go.kr",
-      "source_snippet": "서울시는 청년들의 주거비 부담 완화를 위해 월 20만원의 청년월세를 지원한다.",
-      "last_verified_at": "2026-08-12",
-      "verification_status": "auto_extracted"
+      "source_url": "https://housing.seoul.go.kr/site/main/content/sh01_060513",
+      "source_snippet": "모집신청*선착순 신청 아님: 2026. 5. 6.(수) 10:00 ~ 5. 19.(화) 18:00 마감. 선정인원: 15,000명. 지원내용: 월 20만원 임차료 지원 (최대 12개월, 생애 1회).",
+      "last_verified_at": "2026-10-05",
+      "verification_status": "verified"
     },
     {
       "slug": "cheongnyeon-jeonse-jaageum-daechul",
@@ -2282,8 +2282,8 @@
         "statuses": [],
         "age_min": 19,
         "age_max": 34,
-        "income_annual_max": null,
-        "income_note": "무주택 세대주(예비 포함), 소득·자산 기준 충족, 전용면적·보증금 상한 내",
+        "income_annual_max": 50000000,
+        "income_note": "부부합산 연소득 5천만원 이하, 순자산가액 3.45억원 이하 무주택 세대주(예비세대주 포함), 만 19~34세",
         "requires_children": false,
         "nationality": "any_resident",
         "residency_months_min": null,
@@ -2292,10 +2292,10 @@
         "admin_areas": [],
         "gender": "any"
       },
-      "source_url": "https://nhuf.molit.go.kr",
-      "source_snippet": "청년층의 주거안정을 위해 전세자금을 저금리로 대출한다.",
-      "last_verified_at": "2026-08-12",
-      "verification_status": "auto_extracted"
+      "source_url": "https://m.myhome.go.kr/hws/mbl/cont/selectYouthPolicyYouthOnlyCrutchLoanView.do",
+      "source_snippet": "대출대상: 부부합산 연소득 5천만원 이하, 순자산가액 3.45억원 이하 무주택 세대주(예비세대주 포함) 만 19세 이상 ~ 만 34세 이하의 세대주(예비 세대주 포함)",
+      "last_verified_at": "2026-10-05",
+      "verification_status": "verified"
     },
     {
       "slug": "haengbok-jutaek",
@@ -2310,7 +2310,7 @@
       "amount_max": null,
       "amount_currency": "KRW",
       "amount_period": "monthly",
-      "amount_note": "대학생·청년·신혼부부 등에게 시세 60~80% 수준 임대료로 공공임대주택 공급, 최대 6~10년 거주(유형별 상이)",
+      "amount_note": "임대조건: 보증금+임대료가 시중시세의 60~80% 수준. 최대 거주기간: 대학생·청년·산업단지근로자 10년, 신혼부부·한부모가족 10년(자녀 있는 경우 14년). 자산기준(2026): 총자산 3.45억원 이하(대학생 1.08억원 이하), 자동차 4,542만원 이하",
       "is_automatic": false,
       "application_url": "https://www.applyhome.co.kr",
       "application_channel": "online",
@@ -2354,10 +2354,10 @@
         "admin_areas": [],
         "gender": "any"
       },
-      "source_url": "https://www.lh.or.kr",
-      "source_snippet": "행복주택은 대학생, 청년, 신혼부부 등 젊은 계층의 주거안정을 위해 시세보다 저렴하게 공급하는 공공임대주택이다.",
-      "last_verified_at": "2026-08-12",
-      "verification_status": "auto_extracted"
+      "source_url": "https://apply.lh.or.kr/lhapply/cm/cntnts/cntntsView.do?mi=1201662&cntntsId=1201371",
+      "source_snippet": "최대 거주기간 대학생, 청년, 산업단지근로자 : 10년 ... 자산(2026년 기준) 34,500만원 이하 ... 임대조건 시중 시세의 60~80% 수준",
+      "last_verified_at": "2026-10-05",
+      "verification_status": "verified"
     },
     {
       "slug": "gungmin-imdae-jutaek",
@@ -2372,7 +2372,7 @@
       "amount_max": null,
       "amount_currency": "KRW",
       "amount_period": "monthly",
-      "amount_note": "무주택 저소득층(소득 50~70% 이하, 유형별 상이)에 시세 60~70% 수준 임대료로 장기(최대 30년) 공급",
+      "amount_note": "무주택 저소득층에게 시세보다 저렴한 임대료로 장기 공급(공식 페이지에서 시세 대비 비율·임대기간은 확인되지 않음). 전용 50㎡ 미만은 월평균소득 50%(1인 70%, 2인 60%) 이하에 우선공급",
       "is_automatic": false,
       "application_url": "https://www.applyhome.co.kr",
       "application_channel": "online",
@@ -2401,8 +2401,8 @@
         "statuses": [],
         "age_min": null,
         "age_max": null,
-        "income_annual_max": null,
-        "income_note": "무주택 세대구성원, 전년도 도시근로자 월평균소득 50~70% 이하, 자산 기준 충족",
+        "income_annual_max": 41184324,
+        "income_note": "무주택 세대구성원, 전년도 도시근로자 가구원수별 월평균소득의 70% 이하(1인 90%, 2인 80%). 전용 60㎡ 초과는 100%(1인 120%, 2인 110%). income_annual_max = 1인가구 90%인 월 3,432,027원 x12 (2025년 도시근로자 소득 기준표; 4인 70%=6,161,541원/월)",
         "requires_children": false,
         "nationality": "any_resident",
         "residency_months_min": null,
@@ -2411,10 +2411,10 @@
         "admin_areas": [],
         "gender": "any"
       },
-      "source_url": "https://www.lh.or.kr",
-      "source_snippet": "국민임대주택은 무주택 저소득층의 주거안정을 위해 국가·지자체 재정과 기금으로 건설해 저렴하게 임대하는 주택이다.",
-      "last_verified_at": "2026-08-12",
-      "verification_status": "auto_extracted"
+      "source_url": "https://apply.lh.or.kr/lhapply/cm/cntnts/cntntsView.do?mi=1144&cntntsId=1023",
+      "source_snippet": "전년도 도시근로자 가구원수별 월평균소득의 70%이하(1인가구 90%, 2인가구 80%)",
+      "last_verified_at": "2026-10-05",
+      "verification_status": "verified"
     },
     {
       "slug": "am-hwanja-uaryobi",
@@ -2429,7 +2429,7 @@
       "amount_max": null,
       "amount_currency": "KRW",
       "amount_period": "annual",
-      "amount_note": "저소득층 성인 암환자에게 연간 최대 수백만원(비급여 포함 본인부담 일부), 소아암은 본인부담 전액 수준 지원(연 한도 있음)",
+      "amount_note": "성인암: 건강보험가입자 연간 최대 200만원 지원(비급여 미포함); 의료급여수급권자·차상위본인부담경감자 등 별도 기준. 소아암: 18세 미만 소아암환자 중 소득재산조사 기준 적합자, 전체 암종 지원",
       "is_automatic": false,
       "application_url": "https://www.nhis.or.kr",
       "application_channel": "in_person",
@@ -2473,10 +2473,10 @@
         "admin_areas": [],
         "gender": "any"
       },
-      "source_url": "https://www.bokjiro.go.kr",
-      "source_snippet": "암으로 인한 저소득 가구의 의료비 부담 완화를 위해 암환자 의료비를 지원한다.",
-      "last_verified_at": "2026-08-12",
-      "verification_status": "auto_extracted"
+      "source_url": "https://www.bokjiro.go.kr/ssis-tbu/twataa/wlfareInfo/moveTWAT52011M.do?wlfareInfoId=WLF00006065&wlfareInfoReldBztpCd=02",
+      "source_snippet": "1. 소아암: 18세 미만 소아암환자 중 소득재산조사 기준 적합자 ... 건강보험가입자: 연간 최대 200만원 지원(비급여 미포함).",
+      "last_verified_at": "2026-10-05",
+      "verification_status": "verified"
     },
     {
       "slug": "huigwi-jilhwan-uaryobi",
@@ -2530,10 +2530,10 @@
         "admin_areas": [],
         "gender": "any"
       },
-      "source_url": "https://www.kdca.go.kr",
-      "source_snippet": "희귀질환자의 의료비 부담 경감을 위해 본인부담금 등을 지원한다.",
-      "last_verified_at": "2026-08-12",
-      "verification_status": "auto_extracted"
+      "source_url": "https://helpline.kdca.go.kr/cdchelp/ph/ptlcontents/selectPtlConSent.do?schSno=110&menu=B0101",
+      "source_snippet": "희귀질환자 의료비 지원사업은 저소득층 지원사업으로 환자가구와 부양의무자가구 기준이 모두 만족하는 경우에 지원 가능 지원범위 요양급여 중 본인부담금",
+      "last_verified_at": "2026-10-05",
+      "verification_status": "verified"
     },
     {
       "slug": "bonin-budam-sanghanje",
@@ -2550,7 +2550,7 @@
       "amount_period": "annual",
       "amount_note": "연간 본인부담금(비급여 등 제외)이 소득분위별 상한액 초과 시 초과분 환급. 1인당 평균 환급액 약 135만원 수준",
       "is_automatic": true,
-      "application_url": "https://www.nhis.or.kr",
+      "application_url": "https://www.nhis.or.kr/static/html/wbma/c/wbmac0209.html",
       "application_channel": "automatic",
       "deadline_type": "none",
       "deadline_note": "사후환급: 다음 해 공단이 대상자에게 안내 후 지급",
@@ -2592,10 +2592,10 @@
         "admin_areas": [],
         "gender": "any"
       },
-      "source_url": "https://www.nhis.or.kr",
+      "source_url": "https://www.nhis.or.kr/nhis/minwon/wbhapa01000m01.do?mode=view&articleNo=10946900",
       "source_snippet": "연간 병원비가 내 소득 기준을 넘으면 초과분을 환급하는 본인부담상한제를 운영한다.",
-      "last_verified_at": "2026-08-12",
-      "verification_status": "auto_extracted"
+      "last_verified_at": "2026-10-05",
+      "verification_status": "verified"
     },
     {
       "slug": "jaenanjeok-uaryobi",
@@ -2610,9 +2610,9 @@
       "amount_max": null,
       "amount_currency": "KRW",
       "amount_period": "one_off",
-      "amount_note": "과도한 의료비로 경제적 어려움을 겪는 가구에 본인부담 의료비 일부(소득 수준별 50~80%)를 연 한도 내 지원(최대 수천만원 규모)",
+      "amount_note": "본인부담 의료비 중 소득구간별 50~80% 지원 (기초생활수급자·차상위 80%, 기준중위소득 50% 이하 70%, 100% 이하 60%). 연간 지원 한도액은 공단 안내 참조",
       "is_automatic": false,
-      "application_url": "https://www.nhis.or.kr",
+      "application_url": "https://www.nhis.or.kr/static/html/wbma/c/wbmac0222.html",
       "application_channel": "in_person",
       "deadline_type": "rolling",
       "deadline_note": null,
@@ -2645,7 +2645,7 @@
         "age_min": null,
         "age_max": null,
         "income_annual_max": null,
-        "income_note": "기준중위소득 100% 이하 가구, 의료비가 소득 대비 일정 비율 초과",
+        "income_note": "기준중위소득 100% 이하 중심 (2026년 건강보험료 기준표: 직장 1인 92,180원~5인이상 271,660원). 100% 초과~200% 이하는 개별심사",
         "requires_children": false,
         "nationality": "any_resident",
         "residency_months_min": null,
@@ -2654,10 +2654,10 @@
         "admin_areas": [],
         "gender": "any"
       },
-      "source_url": "https://www.bokjiro.go.kr",
+      "source_url": "https://www.nhis.or.kr/renewal_popup/poster/20260701_poster_longdesc_1.html",
       "source_snippet": "과도한 의료비 지출로 경제적 어려움을 겪는 국민에게 의료비 일부를 지원한다.",
-      "last_verified_at": "2026-08-12",
-      "verification_status": "auto_extracted"
+      "last_verified_at": "2026-10-05",
+      "verification_status": "verified"
     },
     {
       "slug": "imsanbu-chinhoengyeong-kkurami",
@@ -2729,9 +2729,9 @@
       "amount_max": null,
       "amount_currency": "KRW",
       "amount_period": null,
-      "amount_note": "어린이 국가필수예방접종(18종 내외) 무료, 만 65세 이상 인플루엔자·폐렴구균 등 무료 접종. 지정의료기관·보건소 이용",
+      "amount_note": "어린이 국가필수예방접종 무료(지정의료기관·보건소). 2026~2027절기 인플루엔자 국가예방접종: 어린이(생후 6개월~14세 이하), 어르신(65세 이상), 임신부 대상. 만 65세 이상 폐렴구균 등 무료",
       "is_automatic": true,
-      "application_url": "https://nip.kdca.go.kr",
+      "application_url": "https://nip.kdca.go.kr/irhp/mngm/goVcntMngm.do?menuCd=333",
       "application_channel": "automatic",
       "deadline_type": "none",
       "deadline_note": "연령·시기별 접종 권장 일정",
@@ -2763,10 +2763,10 @@
         "admin_areas": [],
         "gender": "any"
       },
-      "source_url": "https://www.kdca.go.kr",
+      "source_url": "https://nip.kdca.go.kr/irhp/infm/goVcntInfo.do?menuLv=1&menuCd=131",
       "source_snippet": "국가예방접종사업으로 어린이 필수 예방접종과 어르신 인플루엔자 접종 등을 무료로 지원한다.",
-      "last_verified_at": "2026-08-12",
-      "verification_status": "auto_extracted"
+      "last_verified_at": "2026-10-05",
+      "verification_status": "verified"
     },
     {
       "slug": "gukga-am-geomjin",
@@ -2781,7 +2781,7 @@
       "amount_max": null,
       "amount_currency": "KRW",
       "amount_period": "annual",
-      "amount_note": "위암·대장암·간암·유방암·자궁경부암·폐암 검진. 건강보험 하위 50%·의료급여 수급자는 무료, 상위 50%는 10% 본인부담",
+      "amount_note": "위암·대장암·간암·유방암·자궁경부암·폐암 검진. 건강보험 하위 50%·의료급여 수급자는 본인부담금 전액 무료. 상위 50%는 본인부담 10% (단, 대장암·자궁경부암 검사는 전액 무료)",
       "is_automatic": true,
       "application_url": "https://www.nhis.or.kr",
       "application_channel": "automatic",
@@ -2815,10 +2815,10 @@
         "admin_areas": [],
         "gender": "any"
       },
-      "source_url": "https://www.nhis.or.kr",
+      "source_url": "https://www.cancer.go.kr/lay1/S1T553C556/contents.do",
       "source_snippet": "6대 암에 대한 국가암검진을 실시하며 건강보험료 하위 50%와 의료급여수급권자는 검진비 전액을 지원한다.",
-      "last_verified_at": "2026-08-12",
-      "verification_status": "auto_extracted"
+      "last_verified_at": "2026-10-05",
+      "verification_status": "verified"
     },
     {
       "slug": "yeongyang-peulleoseo",
@@ -2835,7 +2835,7 @@
       "amount_period": null,
       "amount_note": "중위소득 80% 이하 임산부·출산부·수유부 및 만 6세 미만 영유아 중 영양 위험요인 보유자에게 보충식품 패키지 및 영양교육 제공",
       "is_automatic": false,
-      "application_url": "https://www.bokjiro.go.kr",
+      "application_url": "https://www.bokjiro.go.kr/ssis-tbu/twataa/wlfareInfo/moveTWAT52011M.do?wlfareInfoId=WLF00006239&wlfareInfoReldBztpCd=01",
       "application_channel": "in_person",
       "deadline_type": "rolling",
       "deadline_note": null,
@@ -2877,10 +2877,10 @@
         "admin_areas": [],
         "gender": "any"
       },
-      "source_url": "https://www.bokjiro.go.kr",
+      "source_url": "https://www.mohw.go.kr/menu.es?mid=a10706020300",
       "source_snippet": "영양 위험이 큰 임산부와 영유아에게 보충식품과 영양교육을 제공한다.",
-      "last_verified_at": "2026-08-12",
-      "verification_status": "auto_extracted"
+      "last_verified_at": "2026-10-05",
+      "verification_status": "verified"
     },
     {
       "slug": "nanim-sisulbi-jiwon",
@@ -2895,9 +2895,9 @@
       "amount_max": null,
       "amount_currency": "KRW",
       "amount_period": null,
-      "amount_note": "난임 시술(체외수정·인공수정) 비용 일부 지원(회당 지원 한도·횟수 제한, 기준중위소득 180% 이하 대상). 정부지정 난임시술기관 이용",
+      "amount_note": "체외수정(신선배아) 최대 110만원, 체외수정(동결배아) 최대 50만원 등 시술별 한도. 시술 횟수는 총 25회 범위(건강보험 적용 체외수정 최대 20회, 인공수정 최대 5회). 냉동난자 시술 회당 100만원 2회(복지부 보도)",
       "is_automatic": false,
-      "application_url": "https://www.gov.kr",
+      "application_url": "https://www.bokjiro.go.kr/ssis-tbu/twataa/wlfareInfo/moveTWAT52011M.do?wlfareInfoId=WLF00005450",
       "application_channel": "online",
       "deadline_type": "rolling",
       "deadline_note": null,
@@ -2925,7 +2925,7 @@
         "age_min": null,
         "age_max": null,
         "income_annual_max": null,
-        "income_note": "기준중위소득 180% 이하 법적 혼인 난임부부(사실혼 일부 포함)",
+        "income_note": "소득 기준 없음 (2024년부터 사는 지역·소득수준과 무관하게 난임시술비 지원, 보건복지부). 난임 진단을 받은 난임부부",
         "requires_children": false,
         "nationality": "any_resident",
         "residency_months_min": null,
@@ -2934,10 +2934,10 @@
         "admin_areas": [],
         "gender": "any"
       },
-      "source_url": "https://www.bokjiro.go.kr",
+      "source_url": "https://www.bokjiro.go.kr/ssis-tbu/twataa/wlfareInfo/moveTWAT52011M.do?wlfareInfoId=WLF00005450",
       "source_snippet": "난임부부의 시술비 부담 완화를 위해 시술비 일부를 지원한다.",
-      "last_verified_at": "2026-08-12",
-      "verification_status": "auto_extracted"
+      "last_verified_at": "2026-10-05",
+      "verification_status": "verified"
     },
     {
       "slug": "gowiheom-imsanbu-uaryobi",
@@ -2949,12 +2949,12 @@
       "category": "health",
       "benefit_type": "in_kind",
       "amount_min": null,
-      "amount_max": null,
+      "amount_max": 3000000,
       "amount_currency": "KRW",
-      "amount_period": null,
-      "amount_note": "조기진통·분만 관련 출혈 등 고위험 임신질환 진단 임산부의 입원 진료비 본인부담 90% 지원(소득 기준 충족 시)",
+      "amount_period": "one_off",
+      "amount_note": "고위험 임산부 입원치료비 중 급여 전액본인부담금 및 비급여 진료비의 90% 지원 (병실입원료·환자특식 제외, 1인당 300만원 한도)",
       "is_automatic": false,
-      "application_url": "https://www.bokjiro.go.kr",
+      "application_url": "https://www.bokjiro.go.kr/ssis-tbu/twataa/wlfareInfo/moveTWAT52011M.do?wlfareInfoId=WLF00001088&wlfareInfoReldBztpCd=0",
       "application_channel": "in_person",
       "deadline_type": "rolling",
       "deadline_note": null,
@@ -2991,10 +2991,10 @@
         "admin_areas": [],
         "gender": "female"
       },
-      "source_url": "https://www.bokjiro.go.kr",
+      "source_url": "https://www.bokjiro.go.kr/ssis-tbu/twataa/wlfareInfo/moveTWAT52011M.do?wlfareInfoId=WLF00001088&wlfareInfoReldBztpCd=0",
       "source_snippet": "고위험 임신질환 임산부의 입원 진료비를 지원해 안전한 분만 환경을 조성한다.",
-      "last_verified_at": "2026-08-12",
-      "verification_status": "auto_extracted"
+      "last_verified_at": "2026-10-05",
+      "verification_status": "verified"
     },
     {
       "slug": "misuk-a-uaryobi",
@@ -3006,12 +3006,12 @@
       "category": "health",
       "benefit_type": "in_kind",
       "amount_min": null,
-      "amount_max": null,
+      "amount_max": 20000000,
       "amount_currency": "KRW",
-      "amount_period": null,
-      "amount_note": "출생 후 입원치료가 필요한 미숙아·선천성이상아의 의료비 본인부담 지원(소득 기준 충족 시, 수술비는 별도 한도)",
+      "amount_period": "one_off",
+      "amount_note": "지원대상 금액 중 100만원 이하분 100%, 초과분 90% 지원. 1인당 한도: 미숙아 체중별 400만~2,000만원, 선천성이상아 700만원",
       "is_automatic": false,
-      "application_url": "https://www.bokjiro.go.kr",
+      "application_url": "https://www.bokjiro.go.kr/ssis-tbu/twataa/wlfareInfo/moveTWAT52011M.do?wlfareInfoId=WLF00003237&wlfareInfoReldBztpCd=01",
       "application_channel": "in_person",
       "deadline_type": "rolling",
       "deadline_note": null,
@@ -3039,7 +3039,7 @@
         "age_min": null,
         "age_max": null,
         "income_annual_max": null,
-        "income_note": "기준중위소득 180% 이하 가구의 미숙아·선천성이상아(연령·한도 규정)",
+        "income_note": "2024년부터 가구 소득과 관계없이 지원. 미숙아는 출생 후 24시간 이내 신생아중환자실(NICU) 입원 등 요건",
         "requires_children": true,
         "nationality": "any_resident",
         "residency_months_min": null,
@@ -3048,10 +3048,10 @@
         "admin_areas": [],
         "gender": "any"
       },
-      "source_url": "https://www.bokjiro.go.kr",
+      "source_url": "https://www.mohw.go.kr/menu.es?mid=a10711020200",
       "source_snippet": "미숙아 및 선천성이상아의 의료비 부담을 줄이기 위해 의료비를 지원한다.",
-      "last_verified_at": "2026-08-12",
-      "verification_status": "auto_extracted"
+      "last_verified_at": "2026-10-05",
+      "verification_status": "verified"
     },
     {
       "slug": "cheongsonyeon-sanmo-uaryobi",
@@ -3063,12 +3063,12 @@
       "category": "health",
       "benefit_type": "in_kind",
       "amount_min": null,
-      "amount_max": null,
+      "amount_max": 1200000,
       "amount_currency": "KRW",
-      "amount_period": null,
-      "amount_note": "만 18세 이하 청소년 산모의 임신·출산 관련 의료비(산전 진찰·분만·산후 치료) 본인부담 일부 지원(회당·연 한도)",
+      "amount_period": "one_off",
+      "amount_note": "한 차례 임신당 120만원까지(하루 10만원 이내) 임신·출산 전후 산모 건강관리 관련 의료비 지원 (국민행복카드 바우처)",
       "is_automatic": false,
-      "application_url": "https://www.bokjiro.go.kr",
+      "application_url": "https://www.bokjiro.go.kr/ssis-teu/twataa/wlfareInfo/moveTWAT52011M.do?wlfareInfoId=WLF00003246",
       "application_channel": "in_person",
       "deadline_type": "rolling",
       "deadline_note": null,
@@ -3094,7 +3094,7 @@
       "eligibility": {
         "statuses": [],
         "age_min": null,
-        "age_max": 18,
+        "age_max": 19,
         "income_annual_max": null,
         "income_note": "소득 기준 없음. 만 18세 이하 임신·출산 청소년",
         "requires_children": false,
@@ -3105,10 +3105,10 @@
         "admin_areas": [],
         "gender": "female"
       },
-      "source_url": "https://www.bokjiro.go.kr",
+      "source_url": "https://www.bokjiro.go.kr/ssis-teu/twataa/wlfareInfo/moveTWAT52011M.do?wlfareInfoId=WLF00003246",
       "source_snippet": "청소년 산모의 건강한 임신·출산을 위해 의료비를 지원한다.",
-      "last_verified_at": "2026-08-12",
-      "verification_status": "auto_extracted"
+      "last_verified_at": "2026-10-05",
+      "verification_status": "verified"
     },
     {
       "slug": "baldal-jangaein-jiwon",
@@ -3125,7 +3125,7 @@
       "amount_period": null,
       "amount_note": "만 6~64세 등록 장애인에게 장애인활동지원급여(방문 돌봄 서비스 시간 바우처) 제공, 발달장애인은 특화 서비스·권익옹호 연계",
       "is_automatic": false,
-      "application_url": "https://www.bokjiro.go.kr",
+      "application_url": "https://www.bokjiro.go.kr/ssis-tbu/twataa/wlfareInfo/moveTWAT52011M.do?wlfareInfoId=WLF00003260",
       "application_channel": "in_person",
       "deadline_type": "rolling",
       "deadline_note": null,
@@ -3162,15 +3162,15 @@
         "admin_areas": [],
         "gender": "any"
       },
-      "source_url": "https://www.bokjiro.go.kr",
+      "source_url": "https://www.mohw.go.kr/menu.es?mid=a10710040800",
       "source_snippet": "신체적·정신적 사유로 일상생활이 어려운 장애인에게 활동지원급여를 제공한다.",
-      "last_verified_at": "2026-08-12",
-      "verification_status": "auto_extracted"
+      "last_verified_at": "2026-10-05",
+      "verification_status": "verified"
     },
     {
       "slug": "k-passeu",
-      "name_local": "K-패스",
-      "name_en": "K-Pass (Public Transport Rebate Card)",
+      "name_local": "모두의카드 (구 K-패스)",
+      "name_en": "Everyone's Card (formerly K-Pass) - Public Transport Rebate",
       "admin_level": "national",
       "admin_area": null,
       "funder": "국토교통부 / 대중교통광역교통위원회 / 카드사",
@@ -3180,7 +3180,7 @@
       "amount_max": null,
       "amount_currency": "KRW",
       "amount_period": "monthly",
-      "amount_note": "월 15회 이상 이용 시 이용금액의 일반 20%, 청년(19~34세) 30%, 저소득층 53%, 다자녀 30~50% 적립·환급(월 최대 60회). KTX·고속버스 제외",
+      "amount_note": "월 15회 이상 이용 시 정률제 환급: 일반 20%, 청년·2자녀·어르신 30%, 3자녀 이상 50%, 저소득 53.3%. 정액제: 일정 금액 초과분 전액 환급(수도권 일반형 일반국민 6.2만원, 플러스형 10만원). 정률·정액 중 유리한 쪽 자동 적용. 출퇴근 시차시간(5:30-6:30,9:00-10:00,16:00-17:00,19:00-20:00) 탑승 시 정률 +30%p. 가입 첫 달은 15회 미만도 환급, 월 최대한도 없음",
       "is_automatic": false,
       "application_url": "https://www.korea-pass.kr",
       "application_channel": "online",
@@ -3219,9 +3219,9 @@
         "admin_areas": [],
         "gender": "any"
       },
-      "source_url": "https://www.korea-pass.kr",
+      "source_url": "https://www.molit.go.kr/mtc/USR/WPGE0201/m_37187/DTL.jsp",
       "source_snippet": "K-패스는 대중교통을 탈 때 카드를 사용하면 일반 20%, 청년 30%, 저소득층 53%가 적립되는 정부 사업이다.",
-      "last_verified_at": "2026-08-12",
+      "last_verified_at": "2026-10-05",
       "verification_status": "verified"
     },
     {
@@ -3239,10 +3239,10 @@
       "amount_period": "monthly",
       "amount_note": "30일권 62,000원(따릉이 포함 65,000원)으로 서울 시내 지하철·버스 무제한. 청소년·청년(만19~39세) 55,000/58,000원, 저소득 45,000/48,000원. 단기권 5,000원~",
       "is_automatic": false,
-      "application_url": "https://news.seoul.go.kr/traffic/archives/510651",
+      "application_url": "https://news.seoul.go.kr/traffic/archives/category/public-news_c1/climate-accompany-card_c1/climatepass-info",
       "application_channel": "online",
-      "deadline_type": "rolling",
-      "deadline_note": null,
+      "deadline_type": "none",
+      "deadline_note": "Ended: 30-day Climate Card (기후동행카드 30일권) closed on 2026-10-01 (recharge stopped 2026-09-01, last use 2026-09-29/30), replaced by the 기후동행패스 built on 모두의카드. Only 1/2/3/5/7-day short passes (5,000-20,000 KRW) continue.",
       "procedure_steps": [
         {
           "step": 1,
@@ -3278,9 +3278,9 @@
         ],
         "gender": "any"
       },
-      "source_url": "https://news.seoul.go.kr/traffic/archives/510651",
+      "source_url": "https://news.seoul.go.kr/traffic/public/climatecard-faq/faq-stop",
       "source_snippet": "기후동행카드 30일권 62,000원, 따릉이 포함 65,000원, 청소년·청년할인 55,000원/58,000원, 저소득 할인 45,000원/48,000원.",
-      "last_verified_at": "2026-08-12",
+      "last_verified_at": "2026-10-05",
       "verification_status": "verified"
     },
     {
@@ -3296,9 +3296,9 @@
       "amount_max": null,
       "amount_currency": "KRW",
       "amount_period": "monthly",
-      "amount_note": "경기도민 대상 K-패스 확장형: 전국 대중교통 이용 시 일반 20%, 청년(19~39세) 30%, 저소득층 53% 환급, 월 이용횟수 무제한. 어린이·청소년 연 24만원 지원",
+      "amount_note": "경기도민 대상 모두의카드(K-패스) 확장형: 6~18세 100% 환급(연 24만원, 분기 6만원 한도), 19~39세 청년 30%, 40~64세 20%, 65세 이상 30%, 2자녀 부모 30%, 3자녀 이상 50%, 저소득층 53%. 월 15회 이상 이용, 월 61회 이상 이용분 100% 환급. 모두의카드 정액제(수도권 일반 62,000원 초과분 100%) 병행",
       "is_automatic": false,
-      "application_url": "https://www.gg.go.kr",
+      "application_url": "https://www.gg.go.kr/contents/contents.do?ciIdx=987119&menuId=266082",
       "application_channel": "online",
       "deadline_type": "rolling",
       "deadline_note": null,
@@ -3337,10 +3337,10 @@
         ],
         "gender": "any"
       },
-      "source_url": "https://www.gg.go.kr",
+      "source_url": "https://www.gg.go.kr/myggd/vol199/1_3.php",
       "source_snippet": "The 경기패스는 경기도민이 전국의 대중교통을 이용할 경우 사용한 교통비의 일부를 환급해 주는 카드로, 이용횟수 제한이 없다.",
-      "last_verified_at": "2026-08-12",
-      "verification_status": "auto_extracted"
+      "last_verified_at": "2026-10-05",
+      "verification_status": "verified"
     },
     {
       "slug": "gyeongro-udae-jihaecheol",
@@ -3409,7 +3409,7 @@
       "amount_period": null,
       "amount_note": "보행상 장애가 심한 등록 장애인 등 교통약자에게 특별교통수단(장애인 콜택시)을 저렴한 요금(기본 1천원대 수준, 지자체별 상이)으로 제공",
       "is_automatic": false,
-      "application_url": "https://www.bokjiro.go.kr",
+      "application_url": "https://www.bokjiro.go.kr/ssis-tbu/twataa/wlfareInfo/moveTWAT52011M.do?wlfareInfoId=WLF00002567",
       "application_channel": "in_person",
       "deadline_type": "rolling",
       "deadline_note": null,
@@ -3437,7 +3437,7 @@
         "age_min": null,
         "age_max": null,
         "income_annual_max": null,
-        "income_note": "등록 장애인·고령자·일시적 이동 제한자 등, 소득 기준 없음",
+        "income_note": "소득 기준 없음. 이용대상: 장애의 정도가 심한 장애인 중 보행상 장애가 있는 자 및 보호자, 휠체어를 이용하는 65세 이상으로 대중교통 이용이 어려운 사람 (지자체 이동지원센터 회원가입 필요)",
         "requires_children": false,
         "nationality": "any_resident",
         "residency_months_min": null,
@@ -3446,15 +3446,15 @@
         "admin_areas": [],
         "gender": "any"
       },
-      "source_url": "https://www.bokjiro.go.kr",
+      "source_url": "https://www.bokjiro.go.kr/ssis-tbu/twataa/wlfareInfo/moveTWAT52011M.do?wlfareInfoId=WLF00002567",
       "source_snippet": "장애인 등 교통약자의 이동 편의를 위해 특별교통수단(장애인 콜택시)을 운영한다.",
-      "last_verified_at": "2026-08-12",
-      "verification_status": "auto_extracted"
+      "last_verified_at": "2026-10-05",
+      "verification_status": "verified"
     },
     {
       "slug": "cheongsonyeon-gyotongbi-gg",
-      "name_local": "경기도 청소년 교통비 지원",
-      "name_en": "Gyeonggi Youth Transit Fare Support",
+      "name_local": "6~18세 어린이·청소년 교통비 지원 (The 경기패스)",
+      "name_en": "Gyeonggi Child & Youth Transit Fare Support (ages 6-18)",
       "admin_level": "region",
       "admin_area": "Gyeonggi",
       "funder": "경기도",
@@ -3464,9 +3464,9 @@
       "amount_max": 240000,
       "amount_currency": "KRW",
       "amount_period": "annual",
-      "amount_note": "경기도 거주 만 13~23세 청소년에게 대중교통 이용 실적에 따라 연 최대 24만원을 지역화폐로 지원(반기별 신청)",
+      "amount_note": "분기별 6만원(연 24만원) 한도 대중교통 이용요금 환급 및 똑타 앱 공유자전거 요금 결제 시 1천원 즉시할인. 수도권 모든 대중교통(경기·서울·인천버스, 지하철, 신분당선, 광역버스, GTX 등), 시외·고속버스·KTX·SRT 제외",
       "is_automatic": false,
-      "application_url": "https://www.gg.go.kr",
+      "application_url": "https://www.gg.go.kr/contents/contents.do?ciIdx=987119&menuId=266082",
       "application_channel": "online",
       "deadline_type": "window",
       "deadline_note": "반기별(1월·7월경) 신청기간",
@@ -3491,10 +3491,10 @@
       ],
       "eligibility": {
         "statuses": [],
-        "age_min": 13,
-        "age_max": 23,
+        "age_min": 6,
+        "age_max": 18,
         "income_annual_max": null,
-        "income_note": "경기도 거주 만 13~23세 청소년, 소득 기준 없음",
+        "income_note": "소득 기준 없음. 신청일 기준 주민등록상 주소지가 경기도인 6~18세 (대리인 신청 가능)",
         "requires_children": false,
         "nationality": "any_resident",
         "residency_months_min": null,
@@ -3505,10 +3505,10 @@
         ],
         "gender": "any"
       },
-      "source_url": "https://www.gg.go.kr",
+      "source_url": "https://www.gg.go.kr/contents/contents.do?ciIdx=987119&menuId=266082",
       "source_snippet": "경기도는 만 13~23세 청소년에게 대중교통비 일부를 연 최대 24만원까지 지원한다.",
-      "last_verified_at": "2026-08-12",
-      "verification_status": "auto_extracted"
+      "last_verified_at": "2026-10-05",
+      "verification_status": "verified"
     },
     {
       "slug": "eneoji-baucheo",
@@ -3523,12 +3523,12 @@
       "amount_max": 701300,
       "amount_currency": "KRW",
       "amount_period": "annual",
-      "amount_note": "2026년 세대원수별 연간 총액: 1인 295,200원 / 2인 407,500원 / 3인 532,700원 / 4인 이상 701,300원. 하절기 전기요금 차감, 동절기 요금차감 또는 국민행복카드",
+      "amount_note": "2026년 세대원수별 총액: 1인 295,200원 / 2인 407,500원 / 3인 532,700원 / 4인 이상 701,300원 (하·동절기 구분 없이 사용기간 내 통합 사용, 요금차감 또는 실물카드)",
       "is_automatic": false,
-      "application_url": "https://www.bokjiro.go.kr",
+      "application_url": "https://www.energyv.or.kr/info/apl_info.do",
       "application_channel": "online",
       "deadline_type": "window",
-      "deadline_note": "2026년 신청기간 6.15~12.31(연도별 상이)",
+      "deadline_note": "신청: 2026.6.15.~2026.12.31. 사용기간 2026.7.1.~2027.5.31. 하·동절기 구분 없이 통합 사용",
       "procedure_steps": [
         {
           "step": 1,
@@ -3562,9 +3562,9 @@
         "admin_areas": [],
         "gender": "any"
       },
-      "source_url": "https://www.bokjiro.go.kr",
+      "source_url": "https://www.energyv.or.kr/info/support_info.do",
       "source_snippet": "2026년 에너지바우처는 1인 세대 295,200원부터 4인 이상 세대 701,300원까지 지원한다.",
-      "last_verified_at": "2026-08-12",
+      "last_verified_at": "2026-10-05",
       "verification_status": "verified"
     },
     {
@@ -3610,7 +3610,7 @@
         "age_min": null,
         "age_max": null,
         "income_annual_max": null,
-        "income_note": "기초생활수급자·차상위계층 가구",
+        "income_note": "에너지 소외계층 대상 (한국에너지재단 운영; 구체 소득기준은 공고 참조)",
         "requires_children": false,
         "nationality": "citizen_or_pr",
         "residency_months_min": null,
@@ -3619,10 +3619,10 @@
         "admin_areas": [],
         "gender": "any"
       },
-      "source_url": "https://www.kree.or.kr",
+      "source_url": "https://min24.energy.or.kr/greenhome/contents/view004_02_01.do",
       "source_snippet": "에너지 취약계층의 주거환경 에너지효율 개선(단열·창호·고효율기기)을 지원한다.",
-      "last_verified_at": "2026-08-12",
-      "verification_status": "auto_extracted"
+      "last_verified_at": "2026-10-05",
+      "verification_status": "verified"
     },
     {
       "slug": "jeongi-yogeum-bokji-hallin",
@@ -3637,7 +3637,7 @@
       "amount_max": null,
       "amount_currency": "KRW",
       "amount_period": "monthly",
-      "amount_note": "장애인·기초생활수급자·차상위·다자녀·대가족 등에 월 최대 1.6만원(여름철 2만원) 전기요금 감면. 출산가구·사회복지시설 별도 감면",
+      "amount_note": "월 한도: 장애인·국가유공자·기초수급(생계·의료) 16,000원(여름철 7~9월 20,000원), 기초수급(주거·교육) 10,000원(여름철 12,000원), 차상위계층 8,000원. 대가족·다자녀·출산가구 등 별도 감면",
       "is_automatic": false,
       "application_url": "https://cyber.kepco.co.kr",
       "application_channel": "online",
@@ -3676,10 +3676,10 @@
         "admin_areas": [],
         "gender": "any"
       },
-      "source_url": "https://www.kepco.co.kr",
+      "source_url": "https://cyber.kepco.co.kr/ckepco/front/jsp/CY/H/C/CYHCHP00107.jsp",
       "source_snippet": "장애인·기초생활수급자·다자녀 가구 등에 월 최대 16,000원의 전기요금을 감면한다.",
-      "last_verified_at": "2026-08-12",
-      "verification_status": "auto_extracted"
+      "last_verified_at": "2026-10-05",
+      "verification_status": "verified"
     },
     {
       "slug": "dosi-gaseu-yogeum-gyeonggam",
@@ -3694,9 +3694,9 @@
       "amount_max": null,
       "amount_currency": "KRW",
       "amount_period": "monthly",
-      "amount_note": "기초생활수급자·차상위·장애인·국가유공자 등에 월 일정액(동절기 확대) 도시가스 요금 경감(지역 도시가스사별 상이)",
+      "amount_note": "기초생활수급자·차상위·장애의 정도가 심한 장애인·국가유공자(1~3급)·독립유공자·다자녀가구 등 사회적 배려대상자에 도시가스 요금 경감. 취사난방용/취사용 및 대상별 금액이 다르며(예: 심한 장애인·유공자 취사난방용 연 72,000원 구간) 지역 도시가스사별 신청",
       "is_automatic": false,
-      "application_url": "https://www.bokjiro.go.kr",
+      "application_url": "https://www.kogas.or.kr/site/koGas/1020408030000",
       "application_channel": "in_person",
       "deadline_type": "rolling",
       "deadline_note": null,
@@ -3733,10 +3733,10 @@
         "admin_areas": [],
         "gender": "any"
       },
-      "source_url": "https://www.bokjiro.go.kr",
+      "source_url": "https://www.kogas.or.kr/site/koGas/1020408030000",
       "source_snippet": "취약계층의 가스요금 부담 완화를 위해 도시가스 요금을 경감한다.",
-      "last_verified_at": "2026-08-12",
-      "verification_status": "auto_extracted"
+      "last_verified_at": "2026-10-05",
+      "verification_status": "verified"
     },
     {
       "slug": "yeontan-kupon",
@@ -3753,7 +3753,7 @@
       "amount_period": "annual",
       "amount_note": "연탄 사용 저소득 가구에 동절기 연탄 구입 쿠폰 지원(가구당 연간 지원 한도 내 금액 쿠폰)",
       "is_automatic": false,
-      "application_url": "https://www.bokjiro.go.kr",
+      "application_url": "https://www.bokjiro.go.kr/ssis-tbu/ssis-tbu/twataa/wlfareInfo/moveTWAT52011M.do?wlfareInfoId=WLF00006265",
       "application_channel": "in_person",
       "deadline_type": "window",
       "deadline_note": "통상 동절기 전(연도별 신청기간)",
@@ -3781,7 +3781,7 @@
         "age_min": null,
         "age_max": null,
         "income_annual_max": null,
-        "income_note": "연탄을 연료로 사용하는 기초생활수급자·차상위·소외계층 가구",
+        "income_note": "소득이 기준 중위소득 50% 이하인 가구 등 (연탄 사용 가구; 한국광해광업공단 연탄쿠폰 2026 지급)",
         "requires_children": false,
         "nationality": "citizen_or_pr",
         "residency_months_min": null,
@@ -3790,10 +3790,10 @@
         "admin_areas": [],
         "gender": "any"
       },
-      "source_url": "https://www.bokjiro.go.kr",
+      "source_url": "https://www.bokjiro.go.kr/ssis-tbu/ssis-tbu/twataa/wlfareInfo/moveTWAT52011M.do?wlfareInfoId=WLF00006265",
       "source_snippet": "연탄 사용 저소득 가구의 난방비 부담 완화를 위해 연탄쿠폰을 지원한다.",
-      "last_verified_at": "2026-08-12",
-      "verification_status": "auto_extracted"
+      "last_verified_at": "2026-10-05",
+      "verification_status": "verified"
     },
     {
       "slug": "geullo-jangnyeo-geum-eitc",
@@ -3813,7 +3813,7 @@
       "application_url": "https://www.hometax.go.kr",
       "application_channel": "online",
       "deadline_type": "window",
-      "deadline_note": "정기 신청 5.1~6.1, 기한 후 6.2~11.30(10% 감액), 근로소득자 반기 신청 9월·3월",
+      "deadline_note": "2025년 귀속 정기신청 2026.5.1.~6.1. (마감), 기한 후 신청 2026.6.2.~12.1., 2026년 귀속 상반기분 반기신청 2026.9.1.~9.15.",
       "procedure_steps": [
         {
           "step": 1,
@@ -3850,9 +3850,9 @@
         "admin_areas": [],
         "gender": "any"
       },
-      "source_url": "https://www.hometax.go.kr",
+      "source_url": "https://www.nts.go.kr/nts/cm/cntnts/cntntsView.do?mi=2452&cntntsId=7783",
       "source_snippet": "근로장려금은 단독 가구 165만원, 홑벌이 가구 285만원, 맞벌이 가구 330만원까지 지급된다.",
-      "last_verified_at": "2026-08-12",
+      "last_verified_at": "2026-10-05",
       "verification_status": "verified"
     },
     {
@@ -3911,9 +3911,9 @@
         "admin_areas": [],
         "gender": "any"
       },
-      "source_url": "https://www.hometax.go.kr",
+      "source_url": "https://www.nts.go.kr/nts/cm/cntnts/cntntsView.do?cntntsId=7782&mi=2451",
       "source_snippet": "자녀장려금은 부양자녀 1명당 최소 50만원에서 최대 100만원까지 준다. 소득 기준은 부부합산 7천만원 미만이다.",
-      "last_verified_at": "2026-08-12",
+      "last_verified_at": "2026-10-05",
       "verification_status": "verified"
     },
     {
@@ -3966,7 +3966,7 @@
         "age_min": 15,
         "age_max": 34,
         "income_annual_max": null,
-        "income_note": "중소기업에 취업한 만 15~34세 청년(소득 상한 없음)",
+        "income_note": "소득 상한 없음. 근로계약 체결일 현재 15~34세(군복무기간 최대 6년 차감)",
         "requires_children": false,
         "nationality": "any_resident",
         "residency_months_min": null,
@@ -3975,10 +3975,10 @@
         "admin_areas": [],
         "gender": "any"
       },
-      "source_url": "https://www.hometax.go.kr",
+      "source_url": "https://www.nts.go.kr/nts/cm/cntnts/cntntsView.do?mi=40632&cntntsId=239023",
       "source_snippet": "중소기업에 취업한 청년에게 소득세의 90%를 5년간 감면한다.",
-      "last_verified_at": "2026-08-12",
-      "verification_status": "auto_extracted"
+      "last_verified_at": "2026-10-05",
+      "verification_status": "verified"
     },
     {
       "slug": "changeop-jungsogi-seaek-gammyeon",
@@ -3993,7 +3993,7 @@
       "amount_max": null,
       "amount_currency": "KRW",
       "amount_period": "annual",
-      "amount_note": "청년(만 15~34세) 창업 중소기업·중기업에 최초 과세연도부터 5년간 소득세·법인세 50~100% 감면(수도권 외 청년창업 100%)",
+      "amount_note": "창업 후 최초 소득 발생연도와 그 후 4년간 소득세·법인세 50~100% 감면. 청년창업중소기업: 수도권과밀억제권역 외 100%, 과밀억제권역 50% (수도권 일부 지역 75%). '25.1.1. 이후 창업분은 감면세액 합계 5억원 한도",
       "is_automatic": false,
       "application_url": "https://www.hometax.go.kr",
       "application_channel": "online",
@@ -4029,10 +4029,10 @@
         "admin_areas": [],
         "gender": "any"
       },
-      "source_url": "https://www.hometax.go.kr",
+      "source_url": "https://www.nts.go.kr/nts/cm/cntnts/cntntsView.do?mi=6553&cntntsId=7979",
       "source_snippet": "청년이 창업한 중소기업에 대해 5년간 소득세·법인세를 50~100% 감면한다.",
-      "last_verified_at": "2026-08-12",
-      "verification_status": "auto_extracted"
+      "last_verified_at": "2026-10-05",
+      "verification_status": "verified"
     },
     {
       "slug": "jutaek-cheongyak-jeochuk-sodeuk-gongje",
@@ -4047,7 +4047,7 @@
       "amount_max": 2400000,
       "amount_currency": "KRW",
       "amount_period": "annual",
-      "amount_note": "총급여 7천만원 이하 무주택 세대주가 주택청약종합저축 납입 시 연 240만원 한도 납입액의 40% 소득공제",
+      "amount_note": "총급여 7천만원 이하 무주택 세대주(2025년 귀속부터 무주택 세대주의 배우자도 총급여 7천만원 이하면 가능)가 주택청약종합저축 등 납입 시 연 300만원 한도 납입액의 40% 소득공제",
       "is_automatic": false,
       "application_url": "https://www.hometax.go.kr",
       "application_channel": "via_employer",
@@ -4088,10 +4088,10 @@
         "admin_areas": [],
         "gender": "any"
       },
-      "source_url": "https://www.hometax.go.kr",
+      "source_url": "https://www.nts.go.kr/nts/cm/cntnts/cntntsView.do?mi=40610&cntntsId=239022",
       "source_snippet": "총급여 7천만원 이하 무주택 세대주는 주택청약종합저축 납입액의 40%(연 240만원 한도)를 소득공제받는다.",
-      "last_verified_at": "2026-08-12",
-      "verification_status": "auto_extracted"
+      "last_verified_at": "2026-10-05",
+      "verification_status": "verified"
     },
     {
       "slug": "wolse-seaek-gongje",
@@ -4152,10 +4152,10 @@
         "admin_areas": [],
         "gender": "any"
       },
-      "source_url": "https://www.hometax.go.kr",
+      "source_url": "https://www.nts.go.kr/nts/cm/cntnts/cntntsView.do?mi=40613&cntntsId=239025",
       "source_snippet": "총급여 8천만원 이하 무주택 근로자는 월세액의 15~17%를 세액공제받을 수 있다.",
-      "last_verified_at": "2026-08-12",
-      "verification_status": "auto_extracted"
+      "last_verified_at": "2026-10-05",
+      "verification_status": "verified"
     },
     {
       "slug": "sinyong-kadeu-sodeuk-gongje",
@@ -4200,10 +4200,10 @@
         "admin_areas": [],
         "gender": "any"
       },
-      "source_url": "https://www.hometax.go.kr",
+      "source_url": "https://www.nts.go.kr/nts/cm/cntnts/cntntsView.do?mi=2202&cntntsId=7794",
       "source_snippet": "신용카드 등 사용액이 총급여의 25%를 초과하면 초과분에 대해 소득공제를 적용한다.",
-      "last_verified_at": "2026-08-12",
-      "verification_status": "auto_extracted"
+      "last_verified_at": "2026-10-05",
+      "verification_status": "verified"
     },
     {
       "slug": "yeongeum-gyejwa-seaek-gongje",
@@ -4252,10 +4252,10 @@
         "admin_areas": [],
         "gender": "any"
       },
-      "source_url": "https://www.hometax.go.kr",
+      "source_url": "https://www.nts.go.kr/nts/cm/cntnts/cntntsView.do?cntntsId=7875",
       "source_snippet": "연금계좌 납입액은 연 900만원 한도로 13.2~16.5% 세액공제된다.",
-      "last_verified_at": "2026-08-12",
-      "verification_status": "auto_extracted"
+      "last_verified_at": "2026-10-05",
+      "verification_status": "verified"
     },
     {
       "slug": "isa-bigwase",
@@ -4316,8 +4316,8 @@
     },
     {
       "slug": "cheongnyeon-changeop-sagwanhakgyo",
-      "name_local": "청년창업사관학교",
-      "name_en": "Youth Startup Academy",
+      "name_local": "창업성공패키지(청년창업사관학교)",
+      "name_en": "Startup Success Package (Youth Startup Academy)",
       "admin_level": "national",
       "admin_area": null,
       "funder": "중소벤처기업부 / 창업진흥원",
@@ -4359,7 +4359,7 @@
         "age_min": null,
         "age_max": 39,
         "income_annual_max": null,
-        "income_note": "만 39세 이하 예비창업자 또는 창업 3년 이내 초기창업자",
+        "income_note": "소득 기준 없음. 39세 이하이면서 창업 후 3년 이내인 대표자 (경험창업자는 39세 이하 창업 후 7년 이내)",
         "requires_children": false,
         "nationality": "any_resident",
         "residency_months_min": null,
@@ -4368,10 +4368,10 @@
         "admin_areas": [],
         "gender": "any"
       },
-      "source_url": "https://www.kised.or.kr",
+      "source_url": "https://www.mss.go.kr/site/ulsan/ex/bbs/View.do?cbIdx=254&bcIdx=1065217",
       "source_snippet": "청년창업사관학교는 우수 창업아이템을 보유한 청년 창업자에게 사업비(최대 1억원)와 창업 공간·교육을 지원한다.",
-      "last_verified_at": "2026-08-12",
-      "verification_status": "auto_extracted"
+      "last_verified_at": "2026-10-05",
+      "verification_status": "verified"
     },
     {
       "slug": "chogi-changeop-paekiji",
@@ -4386,12 +4386,12 @@
       "amount_max": 100000000,
       "amount_currency": "KRW",
       "amount_period": "one_off",
-      "amount_note": "창업 3년 이내 초기 창업기업에 평균 약 7천만원(최대 1억원) 사업화 자금 + 특화 프로그램 지원",
+      "amount_note": "사업화자금(시제품 제작, 마케팅, 지식재산권 출원·등록 등) 일반형·투자연계형 최대 1억원 + 창업프로그램. 2026년 모집은 딥테크 특화형·일반형·투자연계형 3개 유형으로 분리 공고",
       "is_automatic": false,
       "application_url": "https://www.k-startup.go.kr",
       "application_channel": "online",
       "deadline_type": "window",
-      "deadline_note": "주관기관별 모집공고(연초)",
+      "deadline_note": "2026년 모집 '26.2~3월 (마감). 차기 공고 시 K-Startup 확인",
       "procedure_steps": [
         {
           "step": 1,
@@ -4423,7 +4423,7 @@
         "age_min": null,
         "age_max": null,
         "income_annual_max": null,
-        "income_note": "창업 3년 이내 초기 창업기업",
+        "income_note": "업력 3년 이내 초기창업기업",
         "requires_children": false,
         "nationality": "any_resident",
         "residency_months_min": null,
@@ -4432,10 +4432,10 @@
         "admin_areas": [],
         "gender": "any"
       },
-      "source_url": "https://www.k-startup.go.kr",
+      "source_url": "https://www.kised.or.kr/menu.es?mid=a10205020000",
       "source_snippet": "초기창업패키지는 유망 초기 창업기업의 사업 안정화를 위해 사업화 자금과 특화 프로그램을 지원한다.",
-      "last_verified_at": "2026-08-12",
-      "verification_status": "auto_extracted"
+      "last_verified_at": "2026-10-05",
+      "verification_status": "verified"
     },
     {
       "slug": "sosanggongin-jeongchaek-jageum",
@@ -4450,9 +4450,9 @@
       "amount_max": null,
       "amount_currency": "KRW",
       "amount_period": null,
-      "amount_note": "소상공인 대상 저금리 정책자금 대출(직접·대리대출): 경영안정자금·성장촉진자금 등, 시중 대비 낮은 금리",
+      "amount_note": "소상공인 정책자금(직접대출·대리대출): 일반경영안정자금, 청년고용연계자금, 재도전특별자금 등. 2026년 3/4분기 금리(7.10부터): 기준금리 3.85%에 가산 +0~1.6%p → 연 3.85~5.45%, 재해피해·장애인기업자금 고정 2.00%, 대환대출 고정 4.50% (분기별 변동)",
       "is_automatic": false,
-      "application_url": "https://www.semas.or.kr",
+      "application_url": "https://ols.semas.or.kr",
       "application_channel": "online",
       "deadline_type": "rolling",
       "deadline_note": "자금별 예산 소진 시 마감",
@@ -4496,10 +4496,10 @@
         "admin_areas": [],
         "gender": "any"
       },
-      "source_url": "https://www.semas.or.kr",
+      "source_url": "https://www.semas.or.kr/web/SUP01/SUP0103/SUP010301.kmdc",
       "source_snippet": "소상공인의 경영 안정과 성장을 위해 저금리 정책자금을 융자 지원한다.",
-      "last_verified_at": "2026-08-12",
-      "verification_status": "auto_extracted"
+      "last_verified_at": "2026-10-05",
+      "verification_status": "verified"
     },
     {
       "slug": "saechulbal-gigeum",
@@ -4514,7 +4514,7 @@
       "amount_max": null,
       "amount_currency": "KRW",
       "amount_period": null,
-      "amount_note": "코로나 등으로 어려운 소상공인·자영업자 대출의 채무조정(금리 인하·거치 연장·장기 분할상환, 부실차주 원금 감면 포함)",
+      "amount_note": "협약 금융회사 보유 대출(코로나19 피해와 무관한 일부 채권 제외)에 대한 채무조정(금리 인하, 상환 유예·장기 분할상환, 부실차주 원금 감면 등). 신청 100% 온라인",
       "is_automatic": false,
       "application_url": "https://newstf.or.kr",
       "application_channel": "online",
@@ -4546,7 +4546,7 @@
         "age_min": null,
         "age_max": null,
         "income_annual_max": null,
-        "income_note": "코로나 피해 개인사업자·소상공인·법인 소기업 차주",
+        "income_note": "2020년 4월~2025년 6월 중 사업을 영위한 개인사업자 또는 법인 소상공인으로서 장기연체(90일 이상) 또는 연체 위험이 큰 취약차주",
         "requires_children": false,
         "nationality": "any_resident",
         "residency_months_min": null,
@@ -4555,10 +4555,10 @@
         "admin_areas": [],
         "gender": "any"
       },
-      "source_url": "https://www.fsc.go.kr",
+      "source_url": "https://www.kamco.or.kr/portal/contents.do?mId=0203010000",
       "source_snippet": "새출발기금은 소상공인·자영업자의 대출 상환 부담을 낮추는 채무조정 프로그램이다.",
-      "last_verified_at": "2026-08-12",
-      "verification_status": "auto_extracted"
+      "last_verified_at": "2026-10-05",
+      "verification_status": "verified"
     },
     {
       "slug": "huimang-riteon-paekiji",
@@ -4573,12 +4573,12 @@
       "amount_max": null,
       "amount_currency": "KRW",
       "amount_period": null,
-      "amount_note": "폐업(예정) 소상공인에게 사업정리 컨설팅·점포 철거비(한도 내)·법률자문·취업·재창업 연계 지원",
+      "amount_note": "사업정리컨설팅+점포철거 지원+법률자문+채무조정 패키지. 점포철거비: 전용면적 3.3㎡당 20만원 이내, 철거·원상복구 비용 600만원 한도(부가세 제외, 폐업일에 따라 한도 상이). 기폐업은 2023.1.1. 이후 폐업자 지원 가능",
       "is_automatic": false,
-      "application_url": "https://www.semas.or.kr",
+      "application_url": "https://hope.sbiz.or.kr/",
       "application_channel": "online",
       "deadline_type": "rolling",
-      "deadline_note": null,
+      "deadline_note": "2026년 원스톱폐업지원: 사업정리컨설팅 1.19.~예산 소진시, 점포철거비 1.28.~예산 소진시 (소상공인24 온라인 신청)",
       "procedure_steps": [
         {
           "step": 1,
@@ -4614,10 +4614,10 @@
         "admin_areas": [],
         "gender": "any"
       },
-      "source_url": "https://www.semas.or.kr",
+      "source_url": "https://www.sbiz.or.kr/nhrp/cnsl/bsnsArngCnslInfo.do",
       "source_snippet": "희망리턴패키지는 폐업 소상공인의 사업정리부터 재취업·재창업까지 패키지로 지원한다.",
-      "last_verified_at": "2026-08-12",
-      "verification_status": "auto_extracted"
+      "last_verified_at": "2026-10-05",
+      "verification_status": "verified"
     },
     {
       "slug": "jiyeok-sinyong-bojung-jedan",
@@ -4697,9 +4697,9 @@
       "amount_max": 21500,
       "amount_currency": "KRW",
       "amount_period": "monthly",
-      "amount_note": "기초생활수급자(생계·의료급여) 월 최대 21,500원, 차상위·주거·교육급여 수급자·장애인·기초연금 수급자 월 최대 11,000원 통신요금 감면",
+      "amount_note": "생계·의료급여 수급자: 기본료 또는 월정액 26,000원 한도 면제 + 음성·데이터 통화료 각 50% 감면(합산 41,000원 한도). 주거·교육급여 수급자: 기본료 또는 월정액 11,000원 한도 면제 + 초과분 35% 감면(최대 감면 30,000원). 차상위·장애인·기초연금수급자 등 별도 기준(복지로 참조)",
       "is_automatic": false,
-      "application_url": "https://www.bokjiro.go.kr",
+      "application_url": "https://www.bokjiro.go.kr/ssis-tbu/twataa/wlfareInfo/moveTWAT52011M.do?wlfareInfoId=WLF00003257",
       "application_channel": "in_person",
       "deadline_type": "rolling",
       "deadline_note": null,
@@ -4736,10 +4736,10 @@
         "admin_areas": [],
         "gender": "any"
       },
-      "source_url": "https://www.bokjiro.go.kr",
+      "source_url": "https://www.mohw.go.kr/menu.es?mid=a10708010800",
       "source_snippet": "기초생활수급자(생계·의료급여)는 월 최대 21,500원의 이동통신 요금을 감면받는다.",
-      "last_verified_at": "2026-08-12",
-      "verification_status": "auto_extracted"
+      "last_verified_at": "2026-10-05",
+      "verification_status": "verified"
     },
     {
       "slug": "seoul-cheongnyeon-sudang",
@@ -4754,12 +4754,12 @@
       "amount_max": 500000,
       "amount_currency": "KRW",
       "amount_period": "monthly",
-      "amount_note": "월 50만원 × 최대 6개월(생애 1회). 진로탐색·구직활동 목적 체크카드 지급, 취·창업 성공수당 별도",
+      "amount_note": "매월 50만원 x 최대 6개월 (생애 1회), 취·창업 성공수당 별도",
       "is_automatic": false,
       "application_url": "https://youth.seoul.go.kr",
       "application_channel": "online",
       "deadline_type": "window",
-      "deadline_note": "연 1회 이상 모집(2026년 3월 2만명 모집 사례)",
+      "deadline_note": "2026년 1차 모집 마감; 추가모집 2026.5.27.~5.29. 마감. 생애 1회 지원",
       "procedure_steps": [
         {
           "step": 1,
@@ -4787,9 +4787,9 @@
         "age_min": 19,
         "age_max": 34,
         "income_annual_max": null,
-        "income_note": "서울 거주 만 19~34세 미취업 청년, 가구 중위소득 150% 이하. 재학·휴학생·유사사업 참여자 제외",
+        "income_note": "2026년 4월 기준 중위소득 150% 이하(건강보험료 기준). 기초생활수급자·차상위계층 제외. 대학(원) 재학·휴학생(야간대 포함), 주 30시간 초과 취업자, 유사사업(청년월세지원, 희망두배 청년통장, 국민취업지원제도) 참여자 제외",
         "requires_children": false,
-        "nationality": "any_resident",
+        "nationality": "citizen_or_pr",
         "residency_months_min": null,
         "housing_tenure": null,
         "student_required": false,
@@ -4800,7 +4800,7 @@
       },
       "source_url": "https://youth.seoul.go.kr",
       "source_snippet": "선정된 청년에게는 월 50만 원씩 최대 6개월간 수당이 지급된다. 중위소득 150% 이하 만 19~34세 서울 거주 미취업 청년이면 신청 가능하다.",
-      "last_verified_at": "2026-08-12",
+      "last_verified_at": "2026-10-05",
       "verification_status": "verified"
     },
     {
@@ -4816,12 +4816,12 @@
       "amount_max": 1000000,
       "amount_currency": "KRW",
       "amount_period": "annual",
-      "amount_note": "만 24세 경기도 청년에게 분기별 25만원, 연 최대 100만원을 지역화폐로 지급(분기별 신청 필요)",
+      "amount_note": "만 24세 청년에게 분기별 25만원(연 최대 100만원)을 경기지역화폐로 지급; 지급된 지역화폐는 유효기간 내 미사용 시 소멸. 기초생활수급자는 일시금 지급",
       "is_automatic": false,
-      "application_url": "https://www.gg.go.kr",
+      "application_url": "https://www.gg.go.kr/contents/contents.do?ciIdx=1037&menuId=2736",
       "application_channel": "online",
       "deadline_type": "window",
-      "deadline_note": "분기별 신청기간",
+      "deadline_note": "2026년 3분기 신청 9.1.~10.2.(마감), 4분기 신청 2026.11.2.~12.1. (지급 12.20.). 성남시·고양시는 2026년 사업 중단으로 지급 불가",
       "procedure_steps": [
         {
           "step": 1,
@@ -4848,8 +4848,8 @@
         "income_annual_max": null,
         "income_note": "신청일 기준 경기도 3년 이상(또는 합산 10년 이상) 거주 만 24세 청년, 소득 기준 없음",
         "requires_children": false,
-        "nationality": "any_resident",
-        "residency_months_min": null,
+        "nationality": "citizen_or_pr",
+        "residency_months_min": 36,
         "housing_tenure": null,
         "student_required": false,
         "admin_areas": [
@@ -4857,10 +4857,10 @@
         ],
         "gender": "any"
       },
-      "source_url": "https://www.gg.go.kr",
+      "source_url": "https://www.gg.go.kr/contents/contents.do?ciIdx=1037&menuId=2736",
       "source_snippet": "경기도는 만 24세 청년에게 분기별 25만원씩 연 최대 100만원의 청년기본소득을 지역화폐로 지급한다.",
-      "last_verified_at": "2026-08-12",
-      "verification_status": "auto_extracted"
+      "last_verified_at": "2026-10-05",
+      "verification_status": "verified"
     },
     {
       "slug": "gwangju-cheongnyeon-gujik-sudang",
@@ -4875,12 +4875,12 @@
       "amount_max": 500000,
       "amount_currency": "KRW",
       "amount_period": "monthly",
-      "amount_note": "만 19~39세 광주 거주 미취업 청년에게 월 50만원씩 최대 6개월(총 300만원). 취·창업 성공수당 별도",
+      "amount_note": "구직활동비 월 50만원 x 6개월(1인당 최대 300만원)",
       "is_automatic": false,
-      "application_url": "https://www.gwangju.go.kr",
+      "application_url": "https://youth.gwangju.go.kr/",
       "application_channel": "online",
       "deadline_type": "window",
-      "deadline_note": "연 1회 모집(2026년 3~8월 사업 사례)",
+      "deadline_note": "2026년 1차(신청 1.26.~2.2.) 및 2차(2.24.~3.3.) 모집 종료; 추가 모집 여부는 광주청년통합플랫폼(현 전남광주 청년통합플랫폼) 확인. 생애 1회",
       "procedure_steps": [
         {
           "step": 1,
@@ -4908,9 +4908,9 @@
         "age_min": 19,
         "age_max": 39,
         "income_annual_max": null,
-        "income_note": "광주 거주 만 19~39세 미취업 청년, 가구원 수 기준 충족. 생계급여 수급자·유사사업 참여자 제외",
+        "income_note": "2025년 기준중위소득 150% 이하(건강보험료 기준). 생계·조건부생계급여 수급자, 군복무자, 재학생, 취·창업자, 타 지자체 청년수당·유사사업 참여자 제외",
         "requires_children": false,
-        "nationality": "any_resident",
+        "nationality": "citizen_or_pr",
         "residency_months_min": null,
         "housing_tenure": null,
         "student_required": false,
@@ -4919,10 +4919,10 @@
         ],
         "gender": "any"
       },
-      "source_url": "https://www.gwangju.go.kr",
+      "source_url": "https://youth.gwangju.go.kr/www/50?siteId=www&policyId=1242&url=%2Fwww%2Fpolicy%2FgjYgPolicyView",
       "source_snippet": "만 19세부터 39세까지의 광주 지역 미취업 청년에게 매월 50만원씩 6개월간 총 300만원의 구직활동비를 지원한다.",
-      "last_verified_at": "2026-08-12",
-      "verification_status": "auto_extracted"
+      "last_verified_at": "2026-10-05",
+      "verification_status": "verified"
     }
   ]
 }

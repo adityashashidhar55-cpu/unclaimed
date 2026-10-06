@@ -17,6 +17,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { computeCounts } from './lib/counts.mjs';
 import { amountShape, amountSentence, needsFigure, shapeCounts, KIND, awardType } from '../packages/amounts/index.js';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
@@ -132,7 +133,7 @@ const ind = load('data', ['manifest.json', 'mcp-tools.json', 'fx-rates.json']);
 const st = load('data/startups', ['manifest.json']);
 const all = [...ind, ...st];
 
-is(all.length, 3858, 'the whole corpus is classified'); // -45 (30 + 15): duplicate company-grant records merged (see data/startups/dedupe-log.json); +2: de-forschungszulage, it-transizione-5-0-iperammortamento (flagship coverage)
+is(all.length, computeCounts(ROOT).total, 'the whole corpus is classified');
 
 let empty = 0;
 let leftovers = 0;

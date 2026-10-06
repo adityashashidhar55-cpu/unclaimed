@@ -57,18 +57,40 @@ const poolsFor = (cc) => {
 };
 const findProgramme = (pool, slug) => load(pool).programmes.find((p) => p.slug === slug);
 
+/* Sections 1 and 2 pin engine behaviour on specific KINDS of record (a shared
+   prize purse, a consortium-only call). They used to read the live XPRIZE and
+   EIC Pathfinder records, which made them a test of whatever the data said that
+   week: a verification run that correctly closes a prize, or rewords a note,
+   failed the build for a reason that had nothing to do with the engine. The
+   fixtures below say what the engine is being shown. */
+const fixture = (slug, over = {}, elig = {}) => ({
+  slug, name_local: slug, name_en: slug, country_code: 'global', admin_level: 'supranational', admin_area: null,
+  funder: `Funder of ${slug}`, funder_type: 'private', grant_type: 'grant', category: 'startup',
+  amount_min: null, amount_max: null, amount_currency: 'EUR', amount_note: null, cofunding_pct: 0, is_automatic: false,
+  application_url: `https://example.org/${slug}`, application_channel: 'online', status: 'open', deadline_type: 'rolling',
+  deadline_note: null, closes_at: null, opens_at: null, reopen_note: null, cycle: 'continuous', typical_months: [],
+  last_call_closed_at: null, procedure_steps: [], documents_required: [],
+  eligibility: {
+    entity: 'startup', company_age_months_min: null, company_age_months_max: null, headcount_min: null, headcount_max: null,
+    turnover_annual_max: null, sme_category: 'any', sectors: ['any'], stages: [], requires_local_entity: false,
+    requires_incorporation: false, rd_focus: false, female_founder_only: false, underrepresented_focus: false, de_minimis: false,
+    other_note: null, ...elig,
+  },
+  source_url: `https://example.org/${slug}/page`, source_snippet: null, last_verified_at: '2026-10-05', verification_status: 'verified',
+  ...over,
+});
+const poolsOf = (...records) => ({ gb: { programmes: [] }, global: { programmes: records } });
+
 /* ------------------------------------------------------------------ *
  * 1. Shared prize purses never inflate the "you could get" total.
  * ------------------------------------------------------------------ */
 {
-  const water = findProgramme('global', 'global-xprize-water-scarcity');
-  const healthspan = findProgramme('global', 'global-xprize-healthspan');
-  t('global-xprize-water-scarcity exists in the fixture', !!water);
-  t('global-xprize-healthspan exists in the fixture', !!healthspan);
+  const water = fixture('global-xprize-water-scarcity', { grant_type: 'prize', amount_max: 119_000_000, amount_currency: 'USD', amount_note: 'US$119m total prize purse, the largest active XPRIZE.' });
+  const healthspan = fixture('global-xprize-healthspan', { grant_type: 'prize', amount_max: 101_000_000, amount_currency: 'USD', amount_note: 'US$101m total prize purse.' });
   t('a $119m prize with "total prize purse" in its own note is detected as a shared purse',
-    water && isSharedPurse(water) === true);
+    isSharedPurse(water) === true);
   t('a $101m prize with "total prize purse" in its own note is detected too',
-    healthspan && isSharedPurse(healthspan) === true);
+    isSharedPurse(healthspan) === true);
 
   /* The exact profile the audit ran: UK deeptech pre-seed, 2 staff, no
      revenue. Its own headline used to read USD 239,225,000. */
@@ -77,7 +99,7 @@ const findProgramme = (pool, slug) => load(pool).programmes.find((p) => p.slug =
     headcount: 2, turnover_annual_eur: 0, stage: 'pre_seed',
     sectors: ['deeptech', 'hardware', 'ai'], rd_active: true, has_local_entity: true,
   };
-  const r = matchStartup(profile, poolsFor('gb'), Date.parse('2026-09-25'));
+  const r = matchStartup(profile, poolsOf(water, healthspan, fixture('a-real-grant', { amount_max: 50_000 })), Date.parse('2026-09-25'));
 
   const xp = r.eligible.find((m) => m.programme.slug === 'global-xprize-water-scarcity');
   t('the XPRIZE record is still reachable and still listed as eligible for this UK founder', !!xp);
@@ -104,14 +126,17 @@ const findProgramme = (pool, slug) => load(pool).programmes.find((p) => p.slug =
  * 2. Consortium-only calls go to conditional, not a solo full-amount win.
  * ------------------------------------------------------------------ */
 {
-  const pathfinder = findProgramme('eu', 'eu-eic-pathfinder');
-  t('eu-eic-pathfinder exists in the fixture', !!pathfinder);
-  t('its own eligibility.other_note names a consortium requirement, and is detected',
-    pathfinder && requiresConsortium(pathfinder) === true);
+  /* Wording as the funder phrases it — singular and plural both. */
+  const pathfinder = fixture('eu-eic-pathfinder', {
+    country_code: 'eu', amount_max: 4_000_000,
+    name_en: 'EIC Pathfinder Open',
+  }, { other_note: 'Pathfinder Open requires consortia of at least three independent legal entities from three countries.' });
+  t('an other_note that says "consortia" is detected as a consortium requirement', requiresConsortium(pathfinder) === true);
+  t('so is the singular', requiresConsortium(fixture('x', {}, { other_note: 'Applicants must form a consortium of three.' })) === true);
 
-  const challenges = findProgramme('eu', 'eic-pathfinder-challenges');
+  const challenges = fixture('eic-pathfinder-challenges', { country_code: 'eu' }, { requires_consortium: false, other_note: 'Single applicants are allowed.' });
   t('Pathfinder Challenges, which explicitly permits single applicants, is not flagged',
-    challenges && requiresConsortium(challenges) === false);
+    requiresConsortium(challenges) === false);
 
   t('an explicit eligibility.requires_consortium overrides the text guess (true)',
     requiresConsortium({ name_en: 'Nothing special', eligibility: { requires_consortium: true } }) === true);
@@ -126,7 +151,7 @@ const findProgramme = (pool, slug) => load(pool).programmes.find((p) => p.slug =
     headcount: 2, turnover_annual_eur: 0, stage: 'pre_seed', sectors: ['deeptech'],
     rd_active: true, has_local_entity: true,
   };
-  const r = matchStartup(profile, poolsFor('gb'), Date.parse('2026-09-25'));
+  const r = matchStartup(profile, { gb: { programmes: [] }, global: { programmes: [] }, eu: { programmes: [pathfinder, challenges] } }, Date.parse('2026-09-25'));
   const eic = r.conditional.find((m) => m.programme.slug === 'eu-eic-pathfinder');
   t('eu-eic-pathfinder is a conditional match, not a solo eligible one',
     !!eic, `eligible? ${r.eligible.some((m) => m.programme.slug === 'eu-eic-pathfinder')}`);

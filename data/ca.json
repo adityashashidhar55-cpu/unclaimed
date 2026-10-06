@@ -14,10 +14,10 @@
    "category": "family",
    "benefit_type": "cash_monthly",
    "amount_min": null,
-   "amount_max": 7997,
+   "amount_max": 8157,
    "amount_currency": "CAD",
    "amount_period": "annual",
-   "amount_note": "Maximum for July 2025-June 2026: $7,997/year per child under 6 and $6,748/year per child aged 6-17; reduced as adjusted family net income (AFNI) exceeds $37,487.",
+   "amount_note": "Maximum for July 2026-June 2027: $8,157/year ($679.75/month) per child under 6 and $6,883/year ($573.58/month) per child aged 6-17; reduced as adjusted family net income (AFNI) exceeds $38,237, with a larger reduction above $82,847.",
    "is_automatic": true,
    "application_url": "https://www.canada.ca/en/revenue-agency/services/child-family-benefits/canada-child-benefit-overview/canada-child-benefit-apply.html",
    "application_channel": "automatic",
@@ -52,7 +52,7 @@
     "age_min": null,
     "age_max": null,
     "income_annual_max": null,
-    "income_note": "Tax-free, income-tested; full amount below $37,487 AFNI, phased out above",
+    "income_note": "Tax-free, income-tested; full amount below $38,237 AFNI (2025 income), phased out above. You or your spouse/partner must be a Canadian citizen, permanent resident or protected person, or hold a qualifying permit (temporary residents after 18 months in Canada).",
     "requires_children": true,
     "nationality": "any_resident",
     "residency_months_min": null,
@@ -61,9 +61,9 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.canada.ca/en/revenue-agency/services/child-family-benefits/canada-child-benefit-overview.html",
-   "source_snippet": "A tax-free monthly payment made to eligible families to help with the cost of raising children under 18 years of age.",
-   "last_verified_at": "2026-08-12",
+   "source_url": "https://www.canada.ca/en/revenue-agency/services/child-family-benefits/canada-child-benefit/how-much.html",
+   "source_snippet": "If your AFNI is under $38,237, you get the maximum amount for each child. It will not be reduced.",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -115,7 +115,7 @@
    },
    "source_url": "https://www.canada.ca/en/revenue-agency/services/child-family-benefits/canada-groceries-essentials-benefit/how-much.html",
    "source_snippet": "The Canada Groceries and Essentials Benefit (CGEB) payments are not taxable... $679 if you are a single individual, $890 if you are married or have a common-law partner, $234 for each eligible child under the age of 19.",
-   "last_verified_at": "2026-08-12",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -192,10 +192,10 @@
    "category": "income_support",
    "benefit_type": "cash_monthly",
    "amount_min": null,
-   "amount_max": 743.05,
+   "amount_max": 762.5,
    "amount_currency": "CAD",
    "amount_period": "monthly",
-   "amount_note": "Maximum April-June 2026: $743.05/month (age 65-74), $817.36/month (75+); indexed quarterly; clawed back when individual net income exceeds the recovery threshold.",
+   "amount_note": "Maximum October-December 2026: $762.50/month (age 65-74), $838.75/month (75+); indexed quarterly; clawed back by the recovery tax when individual net world income exceeds $93,454 (2025) and fully recovered at $152,062 (65-74) / $157,923 (75+). Partial pension with 10 to 39 years of residence after age 18.",
    "is_automatic": false,
    "application_url": "https://www.canada.ca/en/services/benefits/publicpensions/cpp/old-age-security/apply.html",
    "application_channel": "online",
@@ -231,8 +231,8 @@
     ],
     "age_min": 65,
     "age_max": null,
-    "income_annual_max": 148451,
-    "income_note": "OAS is clawed back by the recovery tax on net world income above $90,997 (2024 income year, for payments July 2025 - June 2026) and is fully recovered — no pension payable — at $148,451 for those aged 65-74 and $154,196 for those aged 75 and over.",
+    "income_annual_max": 152062,
+    "income_note": "OAS is clawed back by the recovery tax on net world income above $93,454 (2025) and no pension is payable at $152,062 for those aged 65-74 and $157,923 for those aged 75 and over (payments Oct-Dec 2026).",
     "requires_children": false,
     "nationality": "citizen_or_pr",
     "residency_months_min": 120,
@@ -245,8 +245,8 @@
     "gender": "any"
    },
    "source_url": "https://www.canada.ca/en/services/benefits/publicpensions/cpp/old-age-security.html",
-   "source_snippet": "Old Age Security pension (age 65 to 74) maximum monthly amount $743.05 (April to June 2026).",
-   "last_verified_at": "2026-08-12",
+   "source_snippet": "Maximum OAS pension at age 65 (October to December 2026): $762.50/month",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified",
    "income_reviewed_at": "2026-08-13"
   },
@@ -260,10 +260,10 @@
    "category": "income_support",
    "benefit_type": "cash_monthly",
    "amount_min": null,
-   "amount_max": 1109.85,
+   "amount_max": 1138.9,
    "amount_currency": "CAD",
    "amount_period": "monthly",
-   "amount_note": "Maximum April-June 2026: $1,109.85/month for a single OAS recipient; $668.08/month if the spouse/partner receives full OAS or the Allowance; non-taxable, reviewed each July.",
+   "amount_note": "Maximum October-December 2026: $1,138.90/month for a single, widowed or divorced OAS recipient; $685.56/month if the spouse/partner receives a full OAS pension or the Allowance; non-taxable, recalculated each July.",
    "is_automatic": false,
    "application_url": "https://www.canada.ca/en/services/benefits/publicpensions/cpp/old-age-security/guaranteed-income-supplement/apply.html",
    "application_channel": "online",
@@ -304,8 +304,8 @@
     ],
     "age_min": 65,
     "age_max": null,
-    "income_annual_max": 22512,
-    "income_note": "For a single pensioner, annual income (excluding OAS) must be below $22,512 (Apr-Jun 2026); couple thresholds differ",
+    "income_annual_max": 23112,
+    "income_note": "For a single, widowed or divorced pensioner, annual income (excluding OAS) must be less than $23,112 (Oct-Dec 2026). Couples: less than $30,528 combined if the partner receives a full OAS pension, $42,768 if the partner receives the Allowance, $55,392 if the partner receives neither.",
     "requires_children": false,
     "nationality": "any_resident",
     "residency_months_min": null,
@@ -315,8 +315,8 @@
     "gender": "any"
    },
    "source_url": "https://www.canada.ca/en/services/benefits/publicpensions/cpp/old-age-security/guaranteed-income-supplement.html",
-   "source_snippet": "Guaranteed Income Supplement single person who receives an OAS pension: maximum monthly amount $1,109.85, annual income level cut-off $22,512.",
-   "last_verified_at": "2026-08-12",
+   "source_snippet": "Single, widowed, or divorced: up to $1,138.90/month",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -329,12 +329,12 @@
    "category": "income_support",
    "benefit_type": "cash_monthly",
    "amount_min": null,
-   "amount_max": 1682.15,
+   "amount_max": 1726.18,
    "amount_currency": "CAD",
    "amount_period": "monthly",
-   "amount_note": "April-June 2026 maximums: Allowance $1,411.13/month (spouse/partner receives GIS and full OAS); Allowance for the Survivor $1,682.15/month (widowed); non-taxable.",
+   "amount_note": "Maximum October-December 2026: Allowance $1,448.06/month (spouse/partner receives GIS and full OAS); Allowance for the Survivor $1,726.18/month (surviving spouse/partner); non-taxable.",
    "is_automatic": false,
-   "application_url": "https://www.canada.ca/en/services/benefits/publicpensions/cpp/old-age-security/guaranteed-income-supplement/allowance-survivor.html",
+   "application_url": "https://www.canada.ca/en/services/benefits/publicpensions/old-age-security/guaranteed-income-supplement/allowance-survivor.html",
    "application_channel": "online",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -361,8 +361,8 @@
     "statuses": [],
     "age_min": 60,
     "age_max": 64,
-    "income_annual_max": 41664,
-    "income_note": "Allowance: combined couple income under $41,664; Survivor: individual income under $30,336 (Apr-Jun 2026)",
+    "income_annual_max": 42768,
+    "income_note": "Allowance: combined couple income under $42,768; Allowance for the Survivor: individual income under $31,152 (Oct-Dec 2026).",
     "requires_children": false,
     "nationality": "any_resident",
     "residency_months_min": null,
@@ -371,10 +371,10 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.canada.ca/en/services/benefits/publicpensions/cpp/old-age-security/guaranteed-income-supplement/allowance-survivor.html",
-   "source_snippet": "Allowance $1,411.13; Allowance for the Survivor $1,682.15 (maximum monthly amounts, April to June 2026).",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www.canada.ca/en/services/benefits/publicpensions/old-age-security/guaranteed-income-supplement/allowance-survivor.html",
+   "source_snippet": "Surviving spouse/common-law partner: up to $1,726.18/month",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "cpp-retirement-pension",
@@ -432,8 +432,8 @@
    },
    "source_url": "https://www.canada.ca/en/services/benefits/publicpensions/cpp.html",
    "source_snippet": "Retirement pension (at age 65): maximum $1,507.65 per month (January 2026).",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "cpp-disability-benefit",
@@ -448,7 +448,7 @@
    "amount_max": 1741.2,
    "amount_currency": "CAD",
    "amount_period": "monthly",
-   "amount_note": "Maximum January 2026: $1,741.20/month ($610.46 flat-rate plus earnings-related portion up to $1,130.74); plus $307.81/month per dependent child.",
+   "amount_note": "Maximum CPP disability amount (2026): $1,741.20/month; average for new beneficiaries (July 2026) $1,236.32/month. Actual amount depends on contributions.",
    "is_automatic": false,
    "application_url": "https://www.canada.ca/en/services/benefits/publicpensions/cpp/cpp-disability-benefit/apply.html",
    "application_channel": "online",
@@ -492,9 +492,9 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.canada.ca/en/services/benefits/publicpensions/cpp/cpp-disability-benefit.html",
-   "source_snippet": "Disability pension: flat rate portion $610.46, earnings-related portion $1,130.74, total $1,741.20 (January 2026).",
-   "last_verified_at": "2026-08-12",
+   "source_url": "https://www.canada.ca/en/services/benefits/publicpensions/cpp-disability-benefit.html",
+   "source_snippet": "Maximum CPP disability amount (2026): $1,741.20/month",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -509,7 +509,7 @@
    "amount_min": null,
    "amount_max": 729,
    "amount_currency": "CAD",
-   "amount_period": "monthly",
+   "amount_period": "weekly",
    "amount_note": "55% of average insurable weekly earnings up to $729/week (from January 1, 2026, based on max insurable earnings of $68,900); payable 14 to 45 weeks depending on regional unemployment and insurable hours.",
    "is_automatic": false,
    "application_url": "https://www.canada.ca/en/services/benefits/ei/ei-regular-benefit/apply.html",
@@ -565,7 +565,7 @@
    },
    "source_url": "https://www.canada.ca/en/services/benefits/ei/ei-regular-benefit/benefit-amount.html",
    "source_snippet": "For most people, the basic rate for calculating EI benefits is 55% of their average insurable weekly earnings, up to a maximum amount... you can receive a maximum amount of $729 per week.",
-   "last_verified_at": "2026-08-12",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -580,7 +580,7 @@
    "amount_min": null,
    "amount_max": 729,
    "amount_currency": "CAD",
-   "amount_period": "monthly",
+   "amount_period": "weekly",
    "amount_note": "Maternity: 55% of earnings up to $729/week for up to 15 weeks. Standard parental: up to 40 weeks shared (max 35 per parent) at 55%; extended parental: up to 69 weeks at 33% ($437/week max). Quebec residents use the QPIP instead.",
    "is_automatic": false,
    "application_url": "https://www.canada.ca/en/services/benefits/ei/ei-maternity-parental/apply.html",
@@ -630,8 +630,8 @@
    },
    "source_url": "https://www.canada.ca/en/services/benefits/ei/ei-maternity-parental.html",
    "source_snippet": "EI maternity benefits are offered to biological mothers who cannot work because they are pregnant or have recently given birth; parental benefits are available to parents of a newborn or newly adopted child.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "ei-sickness-benefits",
@@ -645,7 +645,7 @@
    "amount_min": null,
    "amount_max": 729,
    "amount_currency": "CAD",
-   "amount_period": "monthly",
+   "amount_period": "weekly",
    "amount_note": "55% of average insurable weekly earnings up to $729/week for up to 26 weeks for workers unable to work for medical reasons.",
    "is_automatic": false,
    "application_url": "https://www.canada.ca/en/services/benefits/ei/ei-sickness/apply.html",
@@ -695,8 +695,8 @@
    },
    "source_url": "https://www.canada.ca/en/services/benefits/ei/ei-sickness.html",
    "source_snippet": "EI sickness benefits provide up to 26 weeks of financial assistance if you can't work for medical reasons; you could receive 55% of your earnings up to a maximum of $729 a week.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "ei-caregiving-benefits",
@@ -710,7 +710,7 @@
    "amount_min": null,
    "amount_max": 729,
    "amount_currency": "CAD",
-   "amount_period": "monthly",
+   "amount_period": "weekly",
    "amount_note": "55% of earnings up to $729/week: up to 15 weeks (adult) or 35 weeks (child) for family caregivers of a critically ill/injured person, and up to 26 weeks for compassionate care (end-of-life).",
    "is_automatic": false,
    "application_url": "https://www.canada.ca/en/services/benefits/ei/caregiving/apply.html",
@@ -760,8 +760,8 @@
    },
    "source_url": "https://www.canada.ca/en/services/benefits/ei/caregiving.html",
    "source_snippet": "EI caregiving benefits provide financial assistance while you're away from work to care for a critically ill or injured person or a person needing end-of-life care.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "canada-dental-care-plan",
@@ -827,7 +827,7 @@
    },
    "source_url": "https://www.canada.ca/en/services/benefits/dental/dental-care-plan/qualify.html",
    "source_snippet": "To apply for the Canadian Dental Care Plan (CDCP), you must meet all 4 requirements... Your adjusted family net income is less than $90,000.",
-   "last_verified_at": "2026-08-12",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -845,7 +845,7 @@
    "amount_period": "one_off",
    "amount_note": "Up to $2,000 deposited into an RESP ($500 initial plus $100 per eligible year until age 15) for children from low-income families born in 2004 or later; no personal contribution required.",
    "is_automatic": false,
-   "application_url": "https://www.canada.ca/en/employment-social-development/services/education-savings/canada-learning-bond.html",
+   "application_url": "https://www.canada.ca/en/revenue-agency/services/tax/individuals/topics/registered-education-savings-plans-resps/canada-education-savings-programs-cesp/canada-learning-bond.html",
    "application_channel": "in_person",
    "deadline_type": "rolling",
    "deadline_note": "Can be requested retroactively up to age 21.",
@@ -877,8 +877,8 @@
     "statuses": [],
     "age_min": null,
     "age_max": 21,
-    "income_annual_max": 57375,
-    "income_note": "ESDC sets the CLB adjusted income threshold for the benefit year 1 July 2025 - 30 June 2026 at $57,375 or less for families with 1 to 3 qualified children; the threshold rises with more children (4 children: under $64,733; 5: under $72,123).",
+    "income_annual_max": 58523,
+    "income_note": "Adjusted family net income of $58,523 or less for 1 to 3 qualified children; under $66,036 for 4 children; under $73,577 for 5 (threshold rises with more children).",
     "requires_children": true,
     "nationality": "any_resident",
     "residency_months_min": null,
@@ -890,9 +890,9 @@
     "income_confidence": "high",
     "gender": "any"
    },
-   "source_url": "https://www.canada.ca/en/employment-social-development/services/education-savings/canada-learning-bond.html",
-   "source_snippet": "The Canada Learning Bond offers up to $2,000 for eligible low-income families with no contributions required.",
-   "last_verified_at": "2026-08-12",
+   "source_url": "https://www.canada.ca/en/revenue-agency/services/tax/individuals/topics/registered-education-savings-plans-resps/canada-education-savings-programs-cesp/canada-learning-bond.html",
+   "source_snippet": "The CLB is available for eligible children from low-income families born in 2004 or later and provides an initial payment of $500 for the first year the child is eligible, plus $100 for each additional year of eligibility, up to age 15, for a maximum of $2,000.",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified",
    "income_reviewed_at": "2026-08-13"
   },
@@ -906,12 +906,12 @@
    "category": "education",
    "benefit_type": "cash_one_off",
    "amount_min": null,
-   "amount_max": 500,
+   "amount_max": 600,
    "amount_currency": "CAD",
    "amount_period": "annual",
-   "amount_note": "Government matches 20% of the first $2,500 contributed annually to a child's RESP (max $500/year, $7,200 lifetime); low/middle-income families get an additional 10-20% on the first $500.",
+   "amount_note": "Government matches 20% of the first $2,500 contributed annually to a child's RESP (basic CESG up to $500/year, $7,200 lifetime); families with adjusted family net income below $58,523 get an additional 20% on the first $500 (up to $600/year), and $58,523 to $117,045 an additional 10% (up to $550/year).",
    "is_automatic": false,
-   "application_url": "https://www.canada.ca/en/employment-social-development/services/education-savings.html",
+   "application_url": "https://www.canada.ca/en/services/benefits/education/education-savings/estimating-amounts.html",
    "application_channel": "in_person",
    "deadline_type": "rolling",
    "deadline_note": "Contributions must be made by December 31 of the year the child turns 17.",
@@ -944,7 +944,7 @@
     "age_min": null,
     "age_max": 17,
     "income_annual_max": null,
-    "income_note": "Basic 20% grant is not income-tested; Additional CESG is income-tested",
+    "income_note": "Basic 20% CESG is not income-tested; the additional CESG is income-tested: below $58,523 adjusted family net income 20% extra, $58,523-$117,045 10% extra, above $117,045 none.",
     "requires_children": true,
     "nationality": "any_resident",
     "residency_months_min": null,
@@ -953,9 +953,9 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.canada.ca/en/employment-social-development/services/education-savings.html",
-   "source_snippet": "The basic CESG adds 20% on the first $2,500 of annual RESP contributions, up to $500 per year, with a lifetime limit of $7,200.",
-   "last_verified_at": "2026-08-12",
+   "source_url": "https://www.canada.ca/en/services/benefits/education/education-savings/estimating-amounts.html",
+   "source_snippet": "The CESG provides up to $7,200 maximum per eligible child in an RESP regardless of income",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -1010,8 +1010,8 @@
     "statuses": [],
     "age_min": null,
     "age_max": 49,
-    "income_annual_max": null,
-    "income_note": "Full bond at family income up to ~$38,237 (2026 threshold, indexed); partial above",
+    "income_annual_max": 58523,
+    "income_note": "Full bond at family income up to $38,237; reduced bond between $38,237 and $58,523; none above $58,523 (family income from the tax return filed 2 years earlier).",
     "requires_children": false,
     "nationality": "any_resident",
     "residency_months_min": null,
@@ -1022,7 +1022,7 @@
    },
    "source_url": "https://www.canada.ca/en/employment-social-development/programs/disability/savings/how-much.html",
    "source_snippet": "The Canada Disability Savings Bond is money the government contributes to the RDSPs of low- and modest-income individuals... The maximum yearly bond amount is $1,000 until you reach the limit of $20,000.",
-   "last_verified_at": "2026-08-12",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -1084,7 +1084,7 @@
    },
    "source_url": "https://www.canada.ca/en/employment-social-development/programs/disability/savings/how-much.html",
    "source_snippet": "The Canada Disability Savings Grant is a matching grant... The maximum yearly grant amount is $3,500, with a limit of $70,000 over your lifetime.",
-   "last_verified_at": "2026-08-12",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -1146,8 +1146,8 @@
    },
    "source_url": "https://www.canada.ca/en/revenue-agency/services/tax/individuals/segments/tax-credits-deductions-persons-disabilities/disability-tax-credit.html",
    "source_snippet": "The disability tax credit (DTC) is a non-refundable tax credit that helps people with disabilities, or their supporting family member, reduce the amount of income tax they may have to pay.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "child-disability-benefit",
@@ -1162,7 +1162,7 @@
    "amount_max": 3480,
    "amount_currency": "CAD",
    "amount_period": "annual",
-   "amount_note": "Tax-free monthly top-up to the CCB of up to $3,480/year ($290/month, July 2026-June 2027) per child eligible for the Disability Tax Credit; reduced above ~$84,845 AFNI.",
+   "amount_note": "Tax-free monthly top-up to the CCB of up to $3,480/year ($290/month, July 2026-June 2027) per child eligible for the Disability Tax Credit; reduced above $82,847 adjusted family net income (3.2% for one eligible child, 5.7% for two or more).",
    "is_automatic": true,
    "application_url": "https://www.canada.ca/en/revenue-agency/services/child-family-benefits/child-disability-benefit.html",
    "application_channel": "automatic",
@@ -1203,8 +1203,8 @@
    },
    "source_url": "https://www.canada.ca/en/revenue-agency/services/child-family-benefits/child-disability-benefit.html",
    "source_snippet": "The child disability benefit is a tax-free monthly payment made to families who care for a child under age 18 with a severe and prolonged impairment in physical or mental functions.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "canada-student-grants-loans",
@@ -1219,7 +1219,7 @@
    "amount_max": 4200,
    "amount_currency": "CAD",
    "amount_period": "annual",
-   "amount_note": "Needs-based; full-time grant has been up to $4,200/year in recent program years, plus grants for students with dependants or disabilities; amounts vary by year and province (Quebec, Nunavut, Northwest Territories run their own systems).",
+   "amount_note": "Needs-based; full-time grant has been up to $4,200/year in recent program years (amount not stated on the federal page), plus grants for students with dependants or disabilities; amounts vary by year and province (Quebec, Nunavut, Northwest Territories run their own systems). From 1 August 2026 students at private for-profit international schools are no longer eligible, and most full-time students at private for-profit Canadian schools lose access to the full-time grant.",
    "is_automatic": false,
    "application_url": "https://www.canada.ca/en/services/benefits/education/student-aid/grants-loans.html",
    "application_channel": "online",
@@ -1263,7 +1263,7 @@
     "income_annual_max": null,
     "income_note": "Needs-tested on family income and family size",
     "requires_children": false,
-    "nationality": "any_resident",
+    "nationality": "citizen_or_pr",
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": true,
@@ -1271,9 +1271,9 @@
     "gender": "any"
    },
    "source_url": "https://www.canada.ca/en/services/benefits/education/student-aid/grants-loans.html",
-   "source_snippet": "Canada Student Grants are money you do not have to pay back, awarded based on financial need and eligibility factors such as family income and family size.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_snippet": "Both are available to students of low and middle incomes, students with dependants and students with disabilities.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "canada-summer-jobs",
@@ -1293,7 +1293,7 @@
    "application_url": "https://www.canada.ca/en/employment-social-development/services/funding/canada-summer-jobs.html",
    "application_channel": "online",
    "deadline_type": "window",
-   "deadline_note": "Employers apply during an annual intake (usually fall/winter); youth apply directly to funded employers.",
+   "deadline_note": "Employer applications open in fall 2026 (annual intake); youth apply directly to funded employers.",
    "procedure_steps": [
     {
      "step": 1,
@@ -1331,9 +1331,9 @@
     "gender": "any"
    },
    "source_url": "https://www.canada.ca/en/employment-social-development/services/funding/canada-summer-jobs.html",
-   "source_snippet": "Canada Summer Jobs provides wage subsidies to employers from not-for-profit organizations, the public sector, and private sector organizations with 50 or fewer full-time employees, to create quality summer work experiences for young people aged 15 to 30 years.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_snippet": "It helps youth aged 15 to 30 gain paid summer work experience and develop skills for the job market.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "canada-apprentice-loan",
@@ -1396,8 +1396,8 @@
    },
    "source_url": "https://www.canada.ca/en/employment-social-development/services/apprentices/loan.html",
    "source_snippet": "You can get up to $4,000 in interest-free loans per period of technical training, for up to 5 periods of technical training.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "home-buyers-plan",
@@ -1463,8 +1463,8 @@
    },
    "source_url": "https://www.canada.ca/en/revenue-agency/services/tax/individuals/topics/rrsps-related-plans/what-home-buyers-plan.html",
    "source_snippet": "The Home Buyers' Plan (HBP) allows you to withdraw up to $60,000 from your registered retirement savings plans (RRSPs) to buy or build a qualifying home.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "first-home-savings-account",
@@ -1525,8 +1525,8 @@
    },
    "source_url": "https://www.canada.ca/en/revenue-agency/services/tax/individuals/topics/first-home-savings-account.html",
    "source_snippet": "The FHSA is a registered plan which allows you, as a prospective first-time home buyer, to save to buy your first home tax-free (up to certain limits).",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "canada-greener-homes-affordability-program",
@@ -1592,7 +1592,7 @@
    },
    "source_url": "https://natural-resources.canada.ca/energy-efficiency/home-energy-efficiency/canada-greener-homes-initiative",
    "source_snippet": "CGHAP uses a direct-install model: a delivery organization in your province assesses your home, arranges the retrofit, and pays for it directly; eligible households pay nothing out of pocket.",
-   "last_verified_at": "2026-08-12",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -1610,7 +1610,7 @@
    "amount_period": "monthly",
    "amount_note": "Fee reduction at participating licensed child care: fees capped/reduced toward an average of $10 a day by 2026 for children under 6 (in Ontario, 2025 fees capped at $22/day). Applied automatically at enrolled providers.",
    "is_automatic": true,
-   "application_url": "https://www.canada.ca/en/early-learning-child-care.html",
+   "application_url": "https://www.canada.ca/en/employment-social-development/campaigns/child-care.html",
    "application_channel": "automatic",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -1647,9 +1647,9 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.canada.ca/en/early-learning-child-care.html",
-   "source_snippet": "Fees will reduce every year, reaching an average fee of $10/day by 2025-2026 for children under the age of six; as a parent or guardian of a child under the age of six, you do not need to apply to get a fee reduction.",
-   "last_verified_at": "2026-08-12",
+   "source_url": "https://www.canada.ca/en/employment-social-development/campaigns/child-care.html",
+   "source_snippet": "Light purple represents provinces/territories with average fee reductions of 50% or more for regulated child care: Nova Scotia, New Brunswick, Ontario, Alberta and British Columbia.",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -1662,10 +1662,10 @@
    "category": "tax",
    "benefit_type": "tax_credit",
    "amount_min": null,
-   "amount_max": null,
+   "amount_max": 8601,
    "amount_currency": "CAD",
    "amount_period": "annual",
-   "amount_note": "Non-refundable tax credit for supporting a spouse, partner or dependant with a physical or mental impairment; amounts vary by relationship and the dependant's income (indexed annually).",
+   "amount_note": "Non-refundable tax credit (2025 tax year): claim up to $8,601 for a spouse/partner or dependant aged 18+ with an infirmity (lines 30425/30450), and $2,687 for an infirm child under 18 (line 30500) or as an addition to the spouse/eligible-dependant amounts (lines 30300/30400). The amount depends on the relationship, your circumstances and the dependant's net income. Figures are claim amounts, not credit values.",
    "is_automatic": false,
    "application_url": "https://www.canada.ca/en/revenue-agency/services/tax/individuals/topics/about-your-tax-return/tax-return/completing-a-tax-return/deductions-credits-expenses/canada-caregiver-amount.html",
    "application_channel": "online",
@@ -1705,9 +1705,9 @@
     "gender": "any"
    },
    "source_url": "https://www.canada.ca/en/revenue-agency/services/tax/individuals/topics/about-your-tax-return/tax-return/completing-a-tax-return/deductions-credits-expenses/canada-caregiver-amount.html",
-   "source_snippet": "The Canada caregiver credit is a non-refundable tax credit for individuals who support a spouse, common-law partner, or dependant with a physical or mental impairment.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_snippet": "You may be able to claim the Canada caregiver credit (CCC), a non-refundable tax credit that helps people who support family members with a mental or physical infirmity.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "linc-language-training",
@@ -1754,17 +1754,17 @@
     "income_annual_max": null,
     "income_note": "Free; not income-tested. Not available to Canadian citizens or most temporary residents",
     "requires_children": false,
-    "nationality": "any",
+    "nationality": "citizen_or_pr",
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.canada.ca/en/immigration-refugees-citizenship/services/settle-canada/language-skills.html",
-   "source_snippet": "The Government of Canada, in cooperation with local school boards, community colleges and immigrant-serving organizations, offers free language training across the country for adult permanent residents.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www.canada.ca/en/immigration-refugees-citizenship/services/settle-canada/language-skills/classes.html",
+   "source_snippet": "If you're a permanent resident or a protected person, you can take language classes at no cost. They are funded by the government.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "resettlement-assistance-program",
@@ -1820,8 +1820,8 @@
    },
    "source_url": "https://www.canada.ca/en/immigration-refugees-citizenship/services/refugees/help-within-canada/financial.html",
    "source_snippet": "Financial assistance for resettled refugees can include income support for up to one year or until they become self-sufficient, whichever comes first.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "connecting-families-internet",
@@ -1880,7 +1880,7 @@
    },
    "source_url": "https://ised-isde.canada.ca/site/connecting-families/en",
    "source_snippet": "Through Connecting Families, participating Internet service providers offer $20 a month high-speed Internet to hundreds of thousands of low-income families and seniors.",
-   "last_verified_at": "2026-08-12",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified",
    "income_reviewed_at": "2026-08-13"
   },
@@ -1938,8 +1938,8 @@
    },
    "source_url": "https://www.veterans.gc.ca/en/financial-support/emergency-funds/veterans-emergency-fund",
    "source_snippet": "The Veterans Emergency Fund provides emergency financial support to Veterans, their families and survivors whose well-being is at risk due to an urgent and unexpected situation.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "ontario-trillium-benefit",
@@ -1951,10 +1951,10 @@
    "category": "tax",
    "benefit_type": "tax_credit",
    "amount_min": null,
-   "amount_max": 2100,
+   "amount_max": null,
    "amount_currency": "CAD",
    "amount_period": "annual",
-   "amount_note": "Combines the Ontario Energy and Property Tax Credit (up to $1,283, or $1,461 for 65+), Northern Ontario Energy Credit (up to $185/$285) and Ontario Sales Tax Credit ($371 per person); paid monthly July-June when over $360.",
+   "amount_note": "Combines the Ontario Energy and Property Tax Credit (up to $1,307 for ages 18-64 or $1,488 for 65+, $290 on a reserve or in public long-term care), the Northern Ontario Energy Credit (up to $189 single / $290 families) and the Ontario Sales Tax Credit (up to $378 per person, plus up to $378 for a spouse and each child). Benefit year July 2026-June 2027; paid monthly or as a single June 2027 payment.",
    "is_automatic": true,
    "application_url": "https://www.ontario.ca/page/ontario-trillium-benefit",
    "application_channel": "automatic",
@@ -2001,8 +2001,8 @@
     "gender": "any"
    },
    "source_url": "https://www.ontario.ca/page/ontario-trillium-benefit",
-   "source_snippet": "Depending on your income level, location, and family size, you may receive up to $2,100 annually through the Ontario Trillium Benefit (2025-26 benefit year components).",
-   "last_verified_at": "2026-08-12",
+   "source_snippet": "This credit is a tax-free payment to help Ontarians with the sales tax they pay.",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -2074,8 +2074,8 @@
    },
    "source_url": "https://www.ontario.ca/page/ontario-works",
    "source_snippet": "Ontario Works provides money for food, shelter and other costs to people in financial need who meet the eligibility criteria.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "odsp",
@@ -2087,10 +2087,10 @@
    "category": "income_support",
    "benefit_type": "cash_monthly",
    "amount_min": null,
-   "amount_max": 1408,
+   "amount_max": 1436,
    "amount_currency": "CAD",
    "amount_period": "monthly",
-   "amount_note": "Income support for people with disabilities; single maximum $1,408/month after the July 1, 2025 (2.8%) inflation increase; rates now indexed annually; higher amounts for couples/families.",
+   "amount_note": "Income support for people with disabilities; a single person can receive up to $1,436/month for basic needs and shelter after the July 1, 2026 (1.9%) inflation increase; rates are indexed annually in July; higher amounts for couples/families.",
    "is_automatic": false,
    "application_url": "https://www.ontario.ca/page/ontario-disability-support-program",
    "application_channel": "online",
@@ -2142,8 +2142,8 @@
     "gender": "any"
    },
    "source_url": "https://www.ontario.ca/page/ontario-disability-support-program",
-   "source_snippet": "As of July 1, 2025, the Provincial Government raised Ontario Disability Support Program (ODSP) rates by 2.8 per cent; ODSP's single maximum rate is $1,408 per month.",
-   "last_verified_at": "2026-08-12",
+   "source_snippet": "You could receive up to $1,436 a month for basic needs and shelter if you are single.",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -2203,7 +2203,7 @@
     "income_annual_max": null,
     "income_note": "Ontario.ca publishes no household income ceiling for OSAP; the page directs applicants to the OSAP Aid Estimator, since entitlement is calculated from family income, family size, program costs and other factors rather than a single cut-off.",
     "requires_children": false,
-    "nationality": "any_resident",
+    "nationality": "citizen_or_pr",
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": true,
@@ -2215,10 +2215,10 @@
     "income_confidence": "medium",
     "gender": "any"
    },
-   "source_url": "https://www.ontario.ca/page/osap-ontario-student-assistance-program",
-   "source_snippet": "OSAP offers funding through grants (money you don't have to pay back) and loans (money you need to repay once you're done school), based on financial need.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted",
+   "source_url": "https://www.ontario.ca/page/learn-about-osap",
+   "source_snippet": "When you apply for OSAP, we automatically consider you for both grants and a loan.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified",
    "income_reviewed_at": "2026-08-13"
   },
   {
@@ -2234,7 +2234,7 @@
    "amount_max": null,
    "amount_currency": "CAD",
    "amount_period": "one_off",
-   "amount_note": "Free prescription medications (5,000+ products on the Ontario Drug Benefit formulary) for anyone 24 and under with OHIP coverage who is not covered by a private insurance plan.",
+   "amount_note": "Free prescription medications (more than 5,900 products on the Ontario Drug Benefit formulary) for anyone 24 and under with OHIP coverage who is not covered by a private insurance plan; no enrolment needed.",
    "is_automatic": true,
    "application_url": "https://www.ontario.ca/page/learn-about-ohip-plus",
    "application_channel": "automatic",
@@ -2271,9 +2271,9 @@
     "gender": "any"
    },
    "source_url": "https://www.ontario.ca/page/learn-about-ohip-plus",
-   "source_snippet": "OHIP+ provides free prescription medications for children and youth age 24 and under who are covered by OHIP and not covered by a private plan.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_snippet": "OHIP+ covers the cost of more than 5,900 medications for anyone age 24 years or younger who is not covered by a private plan.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "ontario-electricity-support-program",
@@ -2284,11 +2284,11 @@
    "funder": "Ontario Energy Board",
    "category": "energy",
    "benefit_type": "discount",
-   "amount_min": 45,
+   "amount_min": 35,
    "amount_max": 75,
    "amount_currency": "CAD",
    "amount_period": "monthly",
-   "amount_note": "Monthly on-bill credit of $45-$75 for low-income households (higher credits, up to $113, for Indigenous households, electric heating or certain medical devices); based on household income and size.",
+   "amount_note": "Monthly on-bill credit of $35-$75 for low-income households depending on after-tax household income and size (higher credits, up to $113, for Indigenous households, electric heating or certain medical devices); based on household income and size.",
    "is_automatic": false,
    "application_url": "https://ontarioelectricitysupport.ca/",
    "application_channel": "online",
@@ -2323,7 +2323,7 @@
     "age_min": null,
     "age_max": null,
     "income_annual_max": 38000,
-    "income_note": "The Ontario Energy Board publishes an OESP eligibility table by household size and combined annual after-tax household income: 1 person up to $38,000; 2 up to $54,000; 3 up to $65,000; 4 or more up to $71,000. Indigenous customers, electrically heated homes and households with electricity-intensive medical devices receive higher credits.",
+    "income_note": "The OESP credit depends on household size and combined annual after-tax household income: 1 person up to $38,000; 2 people up to $54,000; 3 to 4 people up to $65,000; 5 or more people up to $71,000 (effective March 1, 2024). Indigenous households, electrically heated homes and households with medical devices receive higher credits.",
     "requires_children": false,
     "nationality": "any_resident",
     "residency_months_min": null,
@@ -2338,8 +2338,8 @@
     "gender": "any"
    },
    "source_url": "https://ontarioelectricitysupport.ca/",
-   "source_snippet": "The OESP provides a monthly credit to lower-income households based on household income and household size, applied directly to the electricity bill.",
-   "last_verified_at": "2026-08-12",
+   "source_snippet": "The OESP on-bill credit amount will depend on how many people live in the house and the combined household income after tax.",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified",
    "income_reviewed_at": "2026-08-13"
   },
@@ -2353,10 +2353,10 @@
    "category": "family",
    "benefit_type": "cash_monthly",
    "amount_min": null,
-   "amount_max": 1434,
+   "amount_max": 1760,
    "amount_currency": "CAD",
    "amount_period": "annual",
-   "amount_note": "Up to $1,434/year ($119.50/month) per child under 18 for low- to moderate-income families; combined with the federal CCB in one monthly payment.",
+   "amount_note": "Up to $1,760/year per child ($146.66/month) for low- to moderate-income families (July 2026-June 2027); combined with the federal CCB in one monthly payment.",
    "is_automatic": true,
    "application_url": "https://www.ontario.ca/page/ontario-child-benefit",
    "application_channel": "automatic",
@@ -2406,8 +2406,8 @@
     "gender": "any"
    },
    "source_url": "https://www.ontario.ca/page/ontario-child-benefit",
-   "source_snippet": "The Ontario Child Benefit is a provincial program that helps low-income families provide for their children; payments are combined with the Canada Child Benefit.",
-   "last_verified_at": "2026-08-12",
+   "source_snippet": "The Ontario Child Benefit provides up to $1,760 per child per year depending on:",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified",
    "income_reviewed_at": "2026-08-13"
   },
@@ -2455,8 +2455,8 @@
     ],
     "age_min": 64,
     "age_max": null,
-    "income_annual_max": null,
-    "income_note": "Income-tested on adjusted family net income",
+    "income_annual_max": 60000,
+    "income_note": "Single, divorced or widowed: adjusted family net income below $50,000 (full $500 at $35,000 or less); couples: combined income below $60,000 (full $500 at $45,000 or less); the grant reduces by 3.33% of income above those levels. Only one person per couple can receive it.",
     "requires_children": false,
     "nationality": "any_resident",
     "residency_months_min": null,
@@ -2468,9 +2468,9 @@
     "gender": "any"
    },
    "source_url": "https://www.ontario.ca/page/senior-homeowners-property-tax-grant",
-   "source_snippet": "This grant helps low- to moderate-income seniors with the cost of their property taxes.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_snippet": "If you're a low-to-moderate income senior, you may be eligible for up to $500 back on your property taxes.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "healthy-smiles-ontario",
@@ -2487,7 +2487,7 @@
    "amount_period": "one_off",
    "amount_note": "Free preventive, routine and emergency dental care for children and youth 17 and under from low-income households; also covers emergency care stream for urgent dental needs.",
    "is_automatic": false,
-   "application_url": "https://www.ontario.ca/page/healthy-smiles-ontario",
+   "application_url": "https://www.ontario.ca/page/get-dental-care",
    "application_channel": "online",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -2519,8 +2519,8 @@
     "statuses": [],
     "age_min": null,
     "age_max": 17,
-    "income_annual_max": null,
-    "income_note": "No dollar figure is published on the ontario.ca pages; they state only that the child must be in a household that meets the income eligibility requirements and refer applicants to ServiceOntario or the local public health unit.",
+    "income_annual_max": 29065,
+    "income_note": "Family net income must be at or below $29,065 (1 child), $31,265 (2), $33,465 (3), $35,665 (4), $37,865 (5), $40,065 (6), $42,265 (7) or $44,465 (8 children).",
     "requires_children": true,
     "nationality": "any_resident",
     "residency_months_min": null,
@@ -2534,10 +2534,10 @@
     "income_confidence": "medium",
     "gender": "any"
    },
-   "source_url": "https://www.ontario.ca/page/healthy-smiles-ontario",
+   "source_url": "https://www.ontario.ca/page/get-dental-care",
    "source_snippet": "Healthy Smiles Ontario is a government-funded dental program that provides free preventive, routine, and emergency dental services for children and youth 17 years old and under from low-income households.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified",
    "income_reviewed_at": "2026-08-13"
   },
   {
@@ -2553,9 +2553,9 @@
    "amount_max": 875,
    "amount_currency": "CAD",
    "amount_period": "annual",
-   "amount_note": "Non-refundable Ontario tax credit of up to $875 per person ($1,750 per couple) that reduces or eliminates Ontario income tax for low-income workers.",
+   "amount_note": "Non-refundable Ontario tax credit: maximum $875 or 5.05% of employment income, whichever is lower; reduces or eliminates Ontario personal income tax for low-income workers.",
    "is_automatic": false,
-   "application_url": "https://www.ontario.ca/page/low-income-individuals-and-families-tax-credit",
+   "application_url": "https://www.ontario.ca/page/low-income-workers-tax-credit",
    "application_channel": "online",
    "deadline_type": "annual",
    "deadline_note": "Claimed on the annual Ontario tax return.",
@@ -2580,8 +2580,8 @@
     ],
     "age_min": null,
     "age_max": null,
-    "income_annual_max": 50000,
-    "income_note": "Full credit below ~$32,500 individual income; phases out by $50,000 ($65,000 family)",
+    "income_annual_max": 82500,
+    "income_note": "Maximum credit reduces by 5% of adjusted individual net income over $32,500 or adjusted family net income over $65,000; no credit at $50,000 individual / $82,500 family.",
     "requires_children": false,
     "nationality": "any_resident",
     "residency_months_min": null,
@@ -2592,10 +2592,10 @@
     ],
     "gender": "any"
    },
-   "source_url": "https://www.ontario.ca/page/low-income-individuals-and-families-tax-credit",
-   "source_snippet": "The LIFT credit provides up to $875 in Ontario personal income tax relief to tax filers who have employment income, including those earning minimum wage.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www.ontario.ca/page/low-income-workers-tax-credit",
+   "source_snippet": "The Low-Income Workers Tax Credit (known as Low-income Individuals and Families (LIFT) Tax Credit) is a non-refundable tax credit that you can use to reduce or eliminate your Ontario personal income tax",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "canada-ontario-housing-benefit",
@@ -2610,9 +2610,9 @@
    "amount_max": null,
    "amount_currency": "CAD",
    "amount_period": "monthly",
-   "amount_note": "Portable monthly rent subsidy (difference between 80% of average market rent and 30% of household income) for households on/eligible for the social housing waitlist; follows the household if it moves within Ontario.",
+   "amount_note": "Portable monthly housing benefit calculated as the difference between a percentage of average market rent in the applicant's community and 30% of the household's monthly net income (partial-gap model, with a minimum household contribution); follows the household anywhere in Ontario.",
    "is_automatic": false,
-   "application_url": "https://www.ontario.ca/page/canada-ontario-housing-benefit",
+   "application_url": "https://www.ontario.ca/document/ontarios-second-action-plan-under-national-housing-strategy-2022-25/taking-action",
    "application_channel": "in_person",
    "deadline_type": "rolling",
    "deadline_note": "Apply through your local service manager; funds limited per year.",
@@ -2652,7 +2652,7 @@
     "income_annual_max": null,
     "income_note": "Household income limits set by the program (generally under local ceilings)",
     "requires_children": false,
-    "nationality": "any_resident",
+    "nationality": "citizen_or_pr",
     "residency_months_min": null,
     "housing_tenure": "renting",
     "student_required": false,
@@ -2661,10 +2661,10 @@
     ],
     "gender": "any"
    },
-   "source_url": "https://www.ontario.ca/page/canada-ontario-housing-benefit",
-   "source_snippet": "The COHB pays the difference between 30 per cent of the household's income and average market rent in the area, and is portable across Ontario.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www.ontario.ca/document/ontarios-second-action-plan-under-national-housing-strategy-2022-25/taking-action",
+   "source_snippet": "COHB increases affordability of rental housing in Ontario by providing portable housing benefits directly to households in need that are on, or eligible to be on, a social housing waiting list, and to households in financial need living in community housing.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "toronto-fair-pass",
@@ -2679,7 +2679,7 @@
    "amount_max": null,
    "amount_currency": "CAD",
    "amount_period": "annual",
-   "amount_note": "36% discount on adult TTC single fares ($3.30 to $2.10) and 21% off the adult monthly pass ($156.00 to $123.25), programmed onto a PRESTO card for 12 months.",
+   "amount_note": "36% discount on adult TTC single fares ($3.30 to $2.10) for 12 months on a PRESTO card; TTC monthly fare capping limits Fair Pass clients to $98.70/month after 47 paid trips. The discounted monthly pass ($123.25) is discontinued.",
    "is_automatic": false,
    "application_url": "https://www.toronto.ca/community-people/employment-social-support/support-for-people-in-financial-need/assistance-through-ontario-works/transit-discount/",
    "application_channel": "online",
@@ -2739,8 +2739,8 @@
     "gender": "any"
    },
    "source_url": "https://www.toronto.ca/community-people/employment-social-support/support-for-people-in-financial-need/assistance-through-ontario-works/transit-discount/",
-   "source_snippet": "The Fair Pass Transit Discount Program provides a full year of savings on TTC and Wheel-Trans trips by offering a 36 per cent discount on adult single fares and a 21 per cent discount on adult monthly passes.",
-   "last_verified_at": "2026-08-12",
+   "source_snippet": "Eligible residents receive a 12-month discount on their PRESTO card, saving $1.20 on every TTC adult single fare.",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified",
    "income_reviewed_at": "2026-08-13"
   },
@@ -2754,15 +2754,15 @@
    "category": "income_support",
    "benefit_type": "discount",
    "amount_min": null,
-   "amount_max": null,
+   "amount_max": 683.04,
    "amount_currency": "CAD",
    "amount_period": "annual",
-   "amount_note": "Annual credit (recently about $641 for adults and $328 for children/youth, subject to change) applied to City recreation program registration fees for low-income Toronto residents.",
+   "amount_note": "Annual credit valid for 12 months from approval, applied to City recreation fees: $683.04 for children/youth up to age 24 and $314.60 for adults/older adults (25+); non-transferable between family members; no carry-over.",
    "is_automatic": false,
-   "application_url": "https://www.toronto.ca/community-people/employment-social-support/support-for-people-in-financial-need/",
+   "application_url": "https://www.toronto.ca/community-people/employment-social-support/child-family-support/welcome-policy-recreation-fee-subsidy/",
    "application_channel": "online",
    "deadline_type": "rolling",
-   "deadline_note": "Apply before registering for recreation programs; approval valid for the calendar year.",
+   "deadline_note": "Credit is valid 12 months from the date of approval and does not carry over; reapply with required documents each year.",
    "procedure_steps": [
     {
      "step": 1,
@@ -2789,10 +2789,10 @@
    ],
    "eligibility": {
     "statuses": [],
-    "age_min": null,
+    "age_min": 18,
     "age_max": null,
     "income_annual_max": null,
-    "income_note": "Family income below the LIM-based threshold (varies by household size)",
+    "income_note": "Total after-tax family income (all family members over 18) below the Low-Income Measure After-Tax (LIM-AT) threshold; varies by household size. Main applicant must be 18+ and live in the City of Toronto.",
     "requires_children": false,
     "nationality": "any_resident",
     "residency_months_min": null,
@@ -2803,10 +2803,10 @@
     ],
     "gender": "any"
    },
-   "source_url": "https://www.toronto.ca/community-people/employment-social-support/support-for-people-in-financial-need/",
-   "source_snippet": "The Welcome Policy provides a fee subsidy to help low-income individuals and families access City of Toronto recreation programs.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www.toronto.ca/community-people/employment-social-support/child-family-support/welcome-policy-recreation-fee-subsidy/",
+   "source_snippet": "Welcome Policy is a recreation fee subsidy to support Toronto residents access City-operated recreation programs.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "bc-family-benefit",
@@ -2869,7 +2869,7 @@
    },
    "source_url": "https://www2.gov.bc.ca/gov/content/family-social-supports/affordability/family-benefit",
    "source_snippet": "The maximum annual benefit you may receive is: $1,750 for your first child; $1,100 for your second child; $900 for each additional child.",
-   "last_verified_at": "2026-08-12",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -2885,12 +2885,12 @@
    "amount_max": null,
    "amount_currency": "CAD",
    "amount_period": "monthly",
-   "amount_note": "Monthly cash payment toward rent for BC residents aged 60+ with low to moderate incomes who pay more than 30% of gross income toward rent; amount depends on income, rent and location.",
+   "amount_note": "Monthly rent supplement for BC residents 60+ paying more than 30% of gross household income on rent; minimum $50 per month; amount depends on income, rent and location.",
    "is_automatic": false,
-   "application_url": "https://www.bchousing.org/housing-assistance/rental-assistance-financial-aid/shelter-aid-elderly-renters",
+   "application_url": "https://www.bchousing.org/housing-assistance/rental-assistance-programs/SAFER",
    "application_channel": "online",
    "deadline_type": "rolling",
-   "deadline_note": null,
+   "deadline_note": "Existing clients must reapply each year (form mailed 3 months before birthday).",
    "procedure_steps": [
     {
      "step": 1,
@@ -2921,11 +2921,11 @@
     ],
     "age_min": 60,
     "age_max": null,
-    "income_annual_max": null,
-    "income_note": "Income and rent ceilings vary by community size",
+    "income_annual_max": 40000,
+    "income_note": "Gross income must be under $3,333.34 monthly / $40,000 annually. Applicant and spouse must be Canadian citizens, permanent residents (not under sponsorship), government-sponsored refugees, refugee claimants or CUAET holders; other temporary visa holders are not listed. People receiving BC income or disability assistance are excluded.",
     "requires_children": false,
-    "nationality": "any_resident",
-    "residency_months_min": null,
+    "nationality": "citizen_or_pr",
+    "residency_months_min": 12,
     "housing_tenure": "renting",
     "student_required": false,
     "admin_areas": [
@@ -2933,10 +2933,10 @@
     ],
     "gender": "any"
    },
-   "source_url": "https://www.bchousing.org/housing-assistance/rental-assistance-financial-aid/shelter-aid-elderly-renters",
-   "source_snippet": "SAFER provides monthly cash payments to subsidize rents for eligible BC residents who are age 60 or over and pay rent for their homes.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www.bchousing.org/housing-assistance/rental-assistance-programs/SAFER",
+   "source_snippet": "You are age 60 or older; Your gross monthly income is less than $3,333.34 monthly or $40,000 annually; You have lived in BC for 12 months; You pay more than 30% of your gross, before tax, monthly household income towards rent",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "bc-rental-assistance-program",
@@ -2951,9 +2951,9 @@
    "amount_max": null,
    "amount_currency": "CAD",
    "amount_period": "monthly",
-   "amount_note": "Monthly rent assistance for working low-income families with at least one dependent child; subsidy based on household size, income and rent paid in the private market.",
+   "amount_note": "Reimburses a percentage of the difference between 30% of gross household income and rent, subject to maximum rent ceilings (from April 2025: $1,950 family of 3 or fewer, $2,200 family of 4+) and maximum benefit amounts; also requires assets under $100,000.",
    "is_automatic": false,
-   "application_url": "https://www.bchousing.org/housing-assistance/rental-assistance-financial-aid/rental-assistance-program",
+   "application_url": "https://www.bchousing.org/housing-assistance/rental-assistance-programs/RAP",
    "application_channel": "online",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -2989,10 +2989,10 @@
     "age_min": null,
     "age_max": null,
     "income_annual_max": 60000,
-    "income_note": "BC Housing states applicants must have a total before-tax annual household income of $60,000 or less. Other conditions apply: the household must have at least one dependent child, and meet employment-income and residency tests.",
+    "income_note": "Total before-tax annual household income of $60,000 or less; at least one dependent child; assets under $100,000; must file annual tax return. All household members must be Canadian citizens, permanent residents, government-sponsored refugees, refugee claimants or CUAET holders.",
     "requires_children": true,
-    "nationality": "any_resident",
-    "residency_months_min": null,
+    "nationality": "citizen_or_pr",
+    "residency_months_min": 12,
     "housing_tenure": "renting",
     "student_required": false,
     "admin_areas": [
@@ -3003,9 +3003,9 @@
     "income_confidence": "high",
     "gender": "any"
    },
-   "source_url": "https://www.bchousing.org/housing-assistance/rental-assistance-financial-aid/rental-assistance-program",
-   "source_snippet": "The Rental Assistance Program provides eligible low-income working families with cash assistance to help with their monthly rent payments.",
-   "last_verified_at": "2026-08-12",
+   "source_url": "https://www.bchousing.org/housing-assistance/rental-assistance-programs/RAP",
+   "source_snippet": "You have a total before-tax annual household income of $60,000 or less; You have at least one dependent child; You have less than $100,000 in assets; You have lived in BC for 12 months",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified",
    "income_reviewed_at": "2026-08-13"
   },
@@ -3022,9 +3022,9 @@
    "amount_max": 45,
    "amount_currency": "CAD",
    "amount_period": "annual",
-   "amount_note": "Reduced-cost annual bus pass (Compass Card in Metro Vancouver / BC Transit pass elsewhere) for people on disability assistance and low-income seniors receiving the Seniors Supplement; $45 annual administration fee.",
+   "amount_note": "$45 yearly cost for the pass for eligible low-income seniors; people on disability assistance receive a $52/month transportation supplement or an in-kind bus pass.",
    "is_automatic": false,
-   "application_url": "https://www2.gov.bc.ca/gov/content/transportation/pass-and-travel/bus-pass",
+   "application_url": "https://www2.gov.bc.ca/gov/content/transportation/passenger-travel/buses-taxis-limos/bus-pass",
    "application_channel": "online",
    "deadline_type": "annual",
    "deadline_note": "Renew each calendar year; the pass is valid January 1 to December 31.",
@@ -3068,9 +3068,9 @@
     "income_confidence": "high",
     "gender": "any"
    },
-   "source_url": "https://www2.gov.bc.ca/gov/content/transportation/pass-and-travel/bus-pass",
-   "source_snippet": "The BC Bus Pass Program offers a reduced cost, annual bus pass for low income seniors and individuals receiving disability assistance from the Province of British Columbia.",
-   "last_verified_at": "2026-08-12",
+   "source_url": "https://www2.gov.bc.ca/gov/content/transportation/passenger-travel/buses-taxis-limos/bus-pass/seniors",
+   "source_snippet": "You may be eligible for the BC Bus Pass if you: Are 60 to 64 years old and receive income assistance from the Province of BC ... Are 65 years or older and would qualify for GIS but do not meet the 10-year Canadian residency requirement ... There is a $45 yearly cost for the pass.",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified",
    "income_reviewed_at": "2026-08-13"
   },
@@ -3136,10 +3136,10 @@
     ],
     "gender": "any"
    },
-   "source_url": "https://www2.gov.bc.ca/gov/content/family-social-supports/income-assistance",
-   "source_snippet": "B.C. Employment and Assistance provides help with essential living costs and employment services to British Columbians in need.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www2.gov.bc.ca/gov/content/governments/policies-for-government/bcea-policy-and-procedure-manual/bc-employment-and-assistance-rate-tables/income-assistance-rate-table",
+   "source_snippet": "Support allowance (single employable) $560; Maximum Shelter Allowance 1 person $500",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "bc-disability-assistance",
@@ -3200,10 +3200,10 @@
     ],
     "gender": "any"
    },
-   "source_url": "https://www2.gov.bc.ca/gov/content/family-social-supports/services-for-people-with-disabilities/disability-assistance",
-   "source_snippet": "Disability assistance can help you if you need financial or health support; you must be designated as a Person with Disabilities (PWD) to receive this type of assistance.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www2.gov.bc.ca/gov/content/governments/policies-for-government/bcea-policy-and-procedure-manual/bc-employment-and-assistance-rate-tables/disability-assistance-rate-table",
+   "source_snippet": "Support Allowance 1 person $983.50; Maximum Shelter Allowance 1 person $500. Transportation Supplement for a person with the PWD designation is $52 in cash or an in-kind bus pass.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "bc-affordable-child-care-benefit",
@@ -3220,7 +3220,7 @@
    "amount_period": "monthly",
    "amount_note": "Income-tested child care funding of up to $1,250/month per child (group infant/toddler care), on top of provider fee reductions and $10-a-day ChildCareBC sites; factors: income, family size, type of care.",
    "is_automatic": false,
-   "application_url": "https://www2.gov.bc.ca/gov/content/family-social-supports/caring-for-young-children/child-care-funding/child-care-benefit",
+   "application_url": "https://gov.bc.ca/affordablechildcarebenefit",
    "application_channel": "online",
    "deadline_type": "rolling",
    "deadline_note": "Renew each year; report changes in income or care arrangements.",
@@ -3258,9 +3258,9 @@
     "age_min": null,
     "age_max": null,
     "income_annual_max": 111000,
-    "income_note": "Families earning up to $45,000 may get full funding; reduced amount up to about $111,000",
+    "income_note": "Generally families earning up to $111,000 may qualify; maximum benefit if adjusted annual income is up to $45,000 (licensed care), $39,000 (registered licence-not-required) or $24,000 (licence-not-required/in-home); partial benefit above. Parent must be a BC resident and a Canadian citizen, permanent resident, Convention refugee or protected person.",
     "requires_children": true,
-    "nationality": "any_resident",
+    "nationality": "citizen_or_pr",
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
@@ -3269,10 +3269,10 @@
     ],
     "gender": "any"
    },
-   "source_url": "https://www2.gov.bc.ca/gov/content/family-social-supports/caring-for-young-children/child-care-funding/child-care-benefit",
-   "source_snippet": "The Affordable Child Care Benefit is a monthly payment to help eligible families with the cost of child care; factors like income, family size, and type of care determine how much families can get.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www2.gov.bc.ca/gov/content/family-social-supports/caring-for-young-children/childcarebc-programs/child-care-benefit/information-for-families/eligibility-estimate-funding",
+   "source_snippet": "Canadian citizen, permanent resident of Canada, Convention refugee or a person in need of protection ... families that earn up to $111,000 may qualify for funding",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "bc-fair-pharmacare",
@@ -3329,9 +3329,9 @@
     "gender": "any"
    },
    "source_url": "https://www2.gov.bc.ca/gov/content/health/health-drug-coverage/pharmacare-for-bc-residents/who-we-cover/fair-pharmacare-plan",
-   "source_snippet": "Fair PharmaCare helps B.C. families pay for eligible prescription drugs, dispensing fees and some medical supplies; the less a family earns, the more help they get.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_snippet": "All residents of B.C. are eligible for income-based Fair PharmaCare coverage if they: Are enrolled in the Medical Services Plan (MSP), and Consent for PharmaCare to check income with the Canada Revenue Agency (CRA)",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "quebec-allocation-famille",
@@ -3346,9 +3346,9 @@
    "amount_max": 3068,
    "amount_currency": "CAD",
    "amount_period": "annual",
-   "amount_note": "2026: between $1,221 (minimum) and $3,068 (maximum) per child under 18, indexed each January; plus single-parent supplement (up to $1,077), school supplies supplement and handicapped child supplement; paid quarterly by default, monthly on request.",
+   "amount_note": "2026 yearly amounts per child: minimum $1,221 up to maximum $3,068, plus $430 to $1,077 supplement for single-parent families; Supplement for Handicapped Children $2,892; paid 4 times a year (Jan, Apr, Jul, Oct).",
    "is_automatic": true,
-   "application_url": "https://www.retraitequebec.gouv.qc.ca/en/famille/allocation-famille/",
+   "application_url": "https://www.retraitequebec.gouv.qc.ca/en/citizens/children/family-allowance",
    "application_channel": "automatic",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -3381,9 +3381,9 @@
     "age_min": null,
     "age_max": null,
     "income_annual_max": null,
-    "income_note": "Income-tested above family net income thresholds; minimum amount paid regardless of income",
+    "income_note": "Amount set from family income on 31 Dec of prior year (min amount at $107,000+). Eligible statuses: Canadian citizen, permanent resident, protected person, or temporary resident who has lived in Canada for the last 18 months; refugee claimants also qualify; must file tax returns.",
     "requires_children": true,
-    "nationality": "any_resident",
+    "nationality": "citizen_or_pr",
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
@@ -3392,9 +3392,9 @@
     ],
     "gender": "any"
    },
-   "source_url": "https://www.retraitequebec.gouv.qc.ca/en/famille/allocation-famille/",
-   "source_snippet": "Pour 2026, le montant maximal est de 3 068 $ par enfant par année, et le montant minimal est de 1 221 $ par enfant.",
-   "last_verified_at": "2026-08-12",
+   "source_url": "https://www.retraitequebec.gouv.qc.ca/en/citizens/children/family-allowance",
+   "source_snippet": "Maximum annual amount per child: $3068 + $1077 (single-parent family). Minimum annual amount per child: $1221 + $430 (single-parent family)",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -3445,9 +3445,9 @@
     "age_min": 18,
     "age_max": null,
     "income_annual_max": 64545,
-    "income_note": "Revenu Quebec publishes maximum family income figures for the July 2026 - June 2027 payment period: $64,545 for a person without a spouse and for a single-parent family (+$2,634 per dependent child), and $70,395 for a person with a spouse. At or above these amounts no credit is paid.",
+    "income_note": "Credit phases out at a family-income cap (see Calculation of the Credit page; existing figure not re-verified). Refugee protection claimants on 31 Dec 2025 are not eligible; temporary residents qualify only after 18 months in Canada.",
     "requires_children": false,
-    "nationality": "any_resident",
+    "nationality": "citizen_or_pr",
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
@@ -3459,9 +3459,9 @@
     "income_confidence": "medium",
     "gender": "any"
    },
-   "source_url": "https://www.revenuquebec.ca/en/citizens/tax-credits/solidarity-tax-credit/",
-   "source_snippet": "Le crédit d'impôt pour solidarité aide les personnes à faible revenu qui résident au Québec; depuis juillet 2025, la fréquence des versements varie selon le montant (mensuelle à partir de 800 $).",
-   "last_verified_at": "2026-08-12",
+   "source_url": "https://www.revenuquebec.ca/en/citizens/tax-credits/solidarity-tax-credit/eligibility/",
+   "source_snippet": "You may be eligible for the period from July 2026 to June 2027 if you met the requirements on December 31, 2025. You or your spouse was a Canadian citizen; a permanent resident or a protected person; or a temporary resident ... living in Canada for the last 18 months.",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified",
    "income_reviewed_at": "2026-08-13"
   },
@@ -3475,15 +3475,15 @@
    "category": "family",
    "benefit_type": "discount",
    "amount_min": null,
-   "amount_max": 9.35,
+   "amount_max": null,
    "amount_currency": "CAD",
    "amount_period": "monthly",
-   "amount_note": "Reduced parental contribution of $9.35 per day per child (2025, indexed annually) at subsidized CPEs, daycare centres and home childcare; additional contribution for higher family incomes via the tax system.",
+   "amount_note": "Reduced parental contribution of $9.65 per day per child in 2026 (indexed each 1 January) at subsidized CPEs and daycare centres. Quoted per DAY, not per month.",
    "is_automatic": false,
-   "application_url": "https://www.quebec.ca/en/family-and-support-for-individuals/childcare-services/subsidized-childcare-service",
+   "application_url": "https://www.quebec.ca/en/family-and-support-for-individuals/childhood/childcare-centres/registration-portal",
    "application_channel": "in_person",
    "deadline_type": "rolling",
-   "deadline_note": "Register on La Place 0-5 waiting list for a subsidized space.",
+   "deadline_note": "Register the child on the Childcare Services Registration Portal (formerly La Place 0-5) waiting list.",
    "procedure_steps": [
     {
      "step": 1,
@@ -3519,10 +3519,10 @@
     ],
     "gender": "any"
    },
-   "source_url": "https://www.quebec.ca/en/family-and-support-for-individuals/childcare-services/subsidized-childcare-service",
-   "source_snippet": "Subsidized childcare in Quebec is offered at a reduced contribution set by the government and indexed annually ($9.35 per day in 2025).",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www.quebec.ca/en/family-and-support-for-individuals/childhood/childcare-centres/costs",
+   "source_snippet": "For 2026, the daily rate for subsidized daycare is set at $9.65. This amount is indexed annually on January 1st.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "quebec-aide-financiere-aux-etudes",
@@ -3539,7 +3539,7 @@
    "amount_period": "annual",
    "amount_note": "Loans and needs-based bursaries (non-repayable) for full-time students; assessment based on allowable expenses minus contributions from student/parents/spouse; part-time and disability streams also exist.",
    "is_automatic": false,
-   "application_url": "https://www.quebec.ca/en/education/student-financial-assistance",
+   "application_url": "https://www.quebec.ca/en/education/student-financial-assistance/online-services",
    "application_channel": "online",
    "deadline_type": "annual",
    "deadline_note": "Apply each award year; apply as soon as admission is confirmed.",
@@ -3581,7 +3581,7 @@
     "income_annual_max": null,
     "income_note": "Needs-tested on income and family situation",
     "requires_children": false,
-    "nationality": "any_resident",
+    "nationality": "citizen_or_pr",
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": true,
@@ -3590,10 +3590,10 @@
     ],
     "gender": "any"
    },
-   "source_url": "https://www.quebec.ca/en/education/student-financial-assistance",
-   "source_snippet": "The Loans and Bursaries Program enables students with insufficient financial resources to pursue full-time secondary, college or university studies.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www.quebec.ca/en/education/student-financial-assistance/loans-bursaries-full-time-studies/eligibility-requirements",
+   "source_snippet": "be a Canadian citizen, permanent resident or have refugee or protected person status; be considered a Québec resident; be enrolled in a recognized program; be a full-time student or be deemed a full-time student",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "quebec-last-resort-financial-assistance",
@@ -3608,9 +3608,9 @@
    "amount_max": 1318,
    "amount_currency": "CAD",
    "amount_period": "monthly",
-   "amount_note": "2026 monthly amounts (living independently): Social Assistance $845 (single, no constraints) / $1,283 (couple); Social Solidarity $1,318 (single with severely limited capacity for employment) / $1,934 (couple); indexed each January.",
+   "amount_note": "Social Assistance Program (2026): basic benefit $800/month for one adult plus $45 adjustment = $845 (up to $1,014 with health-related limitations); two adults $1,238 basic ($1,283 with adjustment). Social Solidarity Program rates are higher (not re-read).",
    "is_automatic": false,
-   "application_url": "https://www.quebec.ca/en/family-and-support-for-individuals/financial-assistance/last-resort-financial-assistance",
+   "application_url": "https://www.quebec.ca/en/family-and-support-for-individuals/social-assistance-programs-financial-assistance/applying-last-resort-financial-assistance",
    "application_channel": "online",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -3662,10 +3662,10 @@
     ],
     "gender": "any"
    },
-   "source_url": "https://www.quebec.ca/en/family-and-support-for-individuals/financial-assistance/last-resort-financial-assistance",
-   "source_snippet": "Aide sociale: personne seule 845 $ par mois; Solidarité sociale: personne seule 1 318 $ par mois (montants 2026, vivant à son compte).",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www.quebec.ca/en/family-and-support-for-individuals/social-assistance-programs-financial-assistance/applying-last-resort-financial-assistance",
+   "source_snippet": "If you are an adult with no health-related limitations, your basic benefit is $800 a month, to which one or more adjustments may be added. ... Total benefit: $845",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "quebec-parental-insurance-plan",
@@ -3682,7 +3682,7 @@
    "amount_period": "monthly",
    "amount_note": "Income replacement for maternity/paternity/parental/adoption leave in Quebec: basic plan pays 70% of weekly earnings for maternity (18 weeks) and 70%/55% for parental weeks (special plan pays 75% over a shorter period); maximum insurable earnings indexed annually.",
    "is_automatic": false,
-   "application_url": "https://www.rqap.gouv.qc.ca/en",
+   "application_url": "https://www.quebec.ca/en/family-and-support-for-individuals/pregnancy-parenthood/financial-support-pregnant-women-families/quebec-parental-insurance-plan/apply-benefits",
    "application_channel": "online",
    "deadline_type": "rolling",
    "deadline_note": "Benefit choices (basic vs special plan) are irrevocable once payments begin.",
@@ -3730,10 +3730,10 @@
     ],
     "gender": "any"
    },
-   "source_url": "https://www.rqap.gouv.qc.ca/en",
+   "source_url": "https://www.quebec.ca/en/family-and-support-for-individuals/pregnancy-parenthood/financial-support-pregnant-women-families/quebec-parental-insurance-plan",
    "source_snippet": "The Québec Parental Insurance Plan pays benefits to all eligible workers - salaried or self-employed - taking maternity, paternity, parental or adoption leave.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "quebec-work-premium-tax-credit",
@@ -3778,7 +3778,7 @@
     "income_annual_max": 24475,
     "income_note": "Revenu Quebec's eligibility table for the 2025 taxation year requires annual family income below $24,475 for a person living alone; higher thresholds apply to couples and families with children, and the adapted work premium uses separate amounts.",
     "requires_children": false,
-    "nationality": "any_resident",
+    "nationality": "citizen_or_pr",
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
@@ -3790,9 +3790,9 @@
     "income_confidence": "high",
     "gender": "any"
    },
-   "source_url": "https://www.revenuquebec.ca/en/citizens/tax-credits/work-premium-tax-credits/",
-   "source_snippet": "The work premium is a refundable tax credit intended to encourage people to join or stay in the labour market.",
-   "last_verified_at": "2026-08-12",
+   "source_url": "https://www.revenuquebec.ca/en/citizens/tax-credits/work-premium-tax-credits/eligibility-requirements-for-the-work-premium-tax-credits/",
+   "source_snippet": "you were resident in Québec and: a Canadian citizen; an Indian; a permanent resident; a person on whom Canada has conferred refugee protection. ... Person living alone $24,475 (maximum family income for the work premium, 2025)",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified",
    "income_reviewed_at": "2026-08-13"
   },
@@ -3859,8 +3859,8 @@
     "gender": "any"
    },
    "source_url": "https://www.ramq.gouv.qc.ca/en/citizens/prescription-drug-insurance",
-   "source_snippet": "The Public Prescription Drug Insurance Plan covers persons who do not have access to a private plan; the amount of the annual premium varies according to net family income.",
-   "last_verified_at": "2026-08-12",
+   "source_snippet": "Everyone who has taken up residence in Québec permanently must have prescription drug insurance coverage. Coverage is available through RAMQ's Public Prescription Drug Insurance Plan.",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified",
    "income_reviewed_at": "2026-08-13"
   },
@@ -3919,7 +3919,7 @@
     "income_annual_max": null,
     "income_note": "Income and asset tested (assets up to $100,000 exempt)",
     "requires_children": false,
-    "nationality": "any_resident",
+    "nationality": "citizen_or_pr",
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
@@ -3929,8 +3929,8 @@
     "gender": "any"
    },
    "source_url": "https://www.alberta.ca/aish",
-   "source_snippet": "AISH provides a maximum monthly living allowance of $1,901 to eligible Albertans with a severe and permanent disability, plus health benefits and personal benefits.",
-   "last_verified_at": "2026-08-12",
+   "source_snippet": "You are at least 18 years old and not eligible to receive an Old Age Security pension. You live in Alberta and are a Canadian citizen or permanent resident.",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -3986,7 +3986,7 @@
     "income_annual_max": null,
     "income_note": "Income and asset tested",
     "requires_children": false,
-    "nationality": "any_resident",
+    "nationality": "citizen_or_pr",
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
@@ -3995,10 +3995,10 @@
     ],
     "gender": "any"
    },
-   "source_url": "https://www.alberta.ca/income-support",
-   "source_snippet": "Income Support can help you and your family with basic needs like food, clothing and shelter if you do not have enough money.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www.alberta.ca/income-support-eligibility",
+   "source_snippet": "You must: live in Alberta; be at least 18 years old; be a Canadian citizen, permanent resident, refugee or refugee claimant",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "alberta-child-and-family-benefit",
@@ -4013,7 +4013,7 @@
    "amount_max": null,
    "amount_currency": "CAD",
    "amount_period": "annual",
-   "amount_note": "Quarterly benefit for lower- and middle-income families with children under 18: a base component and a working component, with amounts per child (higher for the first child) phased out by family net income; combined federal-provincial payment schedule.",
+   "amount_note": "July 2026-June 2027 maximum: 1 child base $1,529 + working $782; 2 children $2,293 + $1,494; 3 children $3,057 + $1,920; 4+ children $3,821 + $2,061. Reduced once family net income exceeds $28,116 or $47,115. Paid by CRA in Aug, Nov, Feb, May.",
    "is_automatic": true,
    "application_url": "https://www.alberta.ca/alberta-child-and-family-benefit",
    "application_channel": "automatic",
@@ -4060,9 +4060,9 @@
     "gender": "any"
    },
    "source_url": "https://www.alberta.ca/alberta-child-and-family-benefit",
-   "source_snippet": "The ACFB is a tax-free amount paid to families that have children under 18 years of age; it is made up of a base component and a working component.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_snippet": "To be eligible for the ACFB, you must: be a parent of one or more children under 18; be a resident of Alberta; file a tax return; meet the income criteria",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "alberta-seniors-benefit",
@@ -4074,10 +4074,10 @@
    "category": "income_support",
    "benefit_type": "cash_monthly",
    "amount_min": null,
-   "amount_max": 3792,
+   "amount_max": 3946,
    "amount_currency": "CAD",
    "amount_period": "annual",
-   "amount_note": "Up to $3,792/year (2024-25, indexed) for low-income seniors 65+ (single), or up to $5,688 for couples, based on OAS/GIS receipt and accommodation type; paid monthly or quarterly.",
+   "amount_note": "Maximum annual benefit for a single senior who is a homeowner, renter or lodge resident is $3,946 (couples $5,918; continuing-care home $12,466 single) where income for calculating benefit is $0; reduced by about 17 cents per dollar of income. Benefit year runs 1 July-30 June.",
    "is_automatic": false,
    "application_url": "https://www.alberta.ca/alberta-seniors-benefit",
    "application_channel": "online",
@@ -4111,8 +4111,8 @@
     "income_annual_max": 32690,
     "income_note": "Alberta publishes, for the 1 July 2026 - 30 June 2027 benefit year, income guidelines of $32,690 or less for a single senior and $53,800 or less combined for a senior couple. Alberta notes these are guidelines only for seniors receiving the full OAS pension; actual entitlement varies with accommodation type, marital status and allowable deductions.",
     "requires_children": false,
-    "nationality": "any_resident",
-    "residency_months_min": null,
+    "nationality": "citizen_or_pr",
+    "residency_months_min": 3,
     "housing_tenure": null,
     "student_required": false,
     "admin_areas": [
@@ -4124,8 +4124,8 @@
     "gender": "any"
    },
    "source_url": "https://www.alberta.ca/alberta-seniors-benefit",
-   "source_snippet": "The Alberta Seniors Benefit provides a monthly benefit to eligible seniors with low-income to assist with living expenses.",
-   "last_verified_at": "2026-08-12",
+   "source_snippet": "be 65 years of age or older; have lived in Alberta for at least 3 months immediately before applying; be a Canadian citizen or permanent resident; receive the Old Age Security pension",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified",
    "income_reviewed_at": "2026-08-13"
   },
@@ -4144,7 +4144,7 @@
    "amount_period": "annual",
    "amount_note": "Single application giving low-income Calgarians access to multiple subsidized City programs: Calgary Transit low-income transit pass (sliding scale by income), recreation fee assistance, property tax assistance, seniors services home maintenance and more.",
    "is_automatic": false,
-   "application_url": "https://www.calgary.ca/social-services/low-income/fair-entry.html",
+   "application_url": "https://www.calgary.ca/social-services/low-income/fair-entry-subsidy.html",
    "application_channel": "online",
    "deadline_type": "rolling",
    "deadline_note": "Approval is valid for a set period; reapply when notified.",
@@ -4191,10 +4191,10 @@
     "income_confidence": "medium",
     "gender": "any"
    },
-   "source_url": "https://www.calgary.ca/social-services/low-income/fair-entry.html",
-   "source_snippet": "Fair Entry is an application process that helps Calgarians access City of Calgary subsidized programs and services, using one application for multiple programs.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted",
+   "source_url": "https://www.calgary.ca/social-services/low-income/fair-entry-subsidy.html",
+   "source_snippet": "Fair Entry is an application process that helps you access some City services and programs at a lower cost if you have a lower income. Eligibility is based on residency, income and, in some cases, age.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified",
    "income_reviewed_at": "2026-08-13"
   },
   {
@@ -4260,9 +4260,9 @@
     "gender": "any"
    },
    "source_url": "https://www.gov.mb.ca/fs/eia/",
-   "source_snippet": "The Employment and Income Assistance Program (EIA) provides financial help to Manitobans who have no other way to support themselves or their families.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_snippet": "You must live in Manitoba and be in financial need.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "manitoba-rent-assist",
@@ -4314,7 +4314,7 @@
     "income_annual_max": 29120,
     "income_note": "For Manitobans not receiving EIA, Manitoba requires a net annual income of less than $29,120 for a single person, or $33,920 for a single person 55 years of age or older, or a person who qualifies for the Disability Tax Credit or receives CPP Disability benefits. Limits are higher for larger households.",
     "requires_children": false,
-    "nationality": "any_resident",
+    "nationality": "citizen_or_pr",
     "residency_months_min": null,
     "housing_tenure": "renting",
     "student_required": false,
@@ -4327,8 +4327,8 @@
     "gender": "any"
    },
    "source_url": "https://www.gov.mb.ca/fs/eia/rent_assist.html",
-   "source_snippet": "Rent Assist is a monthly shelter-related financial benefit to help low-income Manitobans who pay rent in the private market.",
-   "last_verified_at": "2026-08-12",
+   "source_snippet": "Manitobans not receiving EIA benefits may apply for Rent Assist if they: are a Canadian citizen, or a permanent resident of Canada; pay rent or room and board for unsubsidized housing; have a net annual income of less than $29,120 for a single person",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified",
    "income_reviewed_at": "2026-08-13"
   },
@@ -4345,7 +4345,7 @@
    "amount_max": null,
    "amount_currency": "CAD",
    "amount_period": "monthly",
-   "amount_note": "Quarterly income supplement for low-income Manitobans aged 55 and over who are not receiving EIA; single component for singles not yet on OAS/GIS and a senior component topping up low OAS incomes.",
+   "amount_note": "Maximum quarterly benefit $161.80 for a single person and $173.90 per person for couples; Junior component partial benefits for singles with income up to $9,746.40 and couples up to $16,255.20; paid quarterly.",
    "is_automatic": false,
    "application_url": "https://www.gov.mb.ca/fs/eia/55plus.html",
    "application_channel": "online",
@@ -4393,8 +4393,8 @@
     "gender": "any"
    },
    "source_url": "https://www.gov.mb.ca/fs/eia/55plus.html",
-   "source_snippet": "The 55 PLUS Program provides quarterly income supplements to low-income Manitobans who are 55 years of age and over.",
-   "last_verified_at": "2026-08-12",
+   "source_snippet": "Applicants may be eligible if they are 55 years of age or older, live in Manitoba, have a valid Manitoba Health registration number and an income within the allowable ranges.",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified",
    "income_reviewed_at": "2026-08-13"
   },
@@ -4411,7 +4411,7 @@
    "amount_max": null,
    "amount_currency": "CAD",
    "amount_period": "monthly",
-   "amount_note": "Monthly income assistance with basic benefit, shelter benefit (actual rent up to caps by community) and utility benefits for low-income Saskatchewan residents; higher rates in northern communities.",
+   "amount_note": "Rates effective 1 May 2026: adult basic benefit $375/month (plus shelter benefit up to $675 single in Saskatoon/Regina, $615 elsewhere); couples and families receive higher shelter amounts.",
    "is_automatic": false,
    "application_url": "https://www.saskatchewan.ca/residents/family-and-social-support/financial-help/saskatchewan-income-support-sis",
    "application_channel": "online",
@@ -4456,7 +4456,7 @@
     "income_annual_max": null,
     "income_note": "No income ceiling published. Saskatchewan states applicants must have no income or low income and have explored every other reasonable way to support themselves, using a whole-income approach in benefit calculation, but gives no dollar figure.",
     "requires_children": false,
-    "nationality": "any_resident",
+    "nationality": "citizen_or_pr",
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
@@ -4469,8 +4469,8 @@
     "gender": "any"
    },
    "source_url": "https://www.saskatchewan.ca/residents/family-and-social-support/financial-help/saskatchewan-income-support-sis",
-   "source_snippet": "The Saskatchewan Income Support (SIS) program helps people meet their basic needs while they become more self-sufficient and independent to the best of their abilities.",
-   "last_verified_at": "2026-08-12",
+   "source_snippet": "you are a Canadian Citizen, permanent resident, or have refugee status or are in Canada under the Canada Ukraine authorization for emergency travel; you are living in Saskatchewan; you are 18 years or older",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified",
    "income_reviewed_at": "2026-08-13"
   },
@@ -4489,10 +4489,10 @@
    "amount_period": "monthly",
    "amount_note": "Income support for people with significant and enduring disabilities: living income benefit, disability impact benefit, shelter benefit (actual costs up to caps) and northern supplement; designed to be more generous than SIS.",
    "is_automatic": false,
-   "application_url": "https://www.saskatchewan.ca/residents/family-and-social-support/people-with-disabilities/saskatchewan-assured-income-for-disability",
+   "application_url": "https://www.saskatchewan.ca/residents/family-and-social-support/people-with-disabilities/income-support-for-people-with-disabilities",
    "application_channel": "online",
    "deadline_type": "rolling",
-   "deadline_note": null,
+   "deadline_note": "Benefit structure is being simplified in 2026 (Province announcement Feb 2026; SAID backgrounder July 2026).",
    "procedure_steps": [
     {
      "step": 1,
@@ -4524,7 +4524,7 @@
     "income_annual_max": null,
     "income_note": "Income and asset tested; higher exemptions than SIS",
     "requires_children": false,
-    "nationality": "any_resident",
+    "nationality": "citizen_or_pr",
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
@@ -4533,10 +4533,10 @@
     ],
     "gender": "any"
    },
-   "source_url": "https://www.saskatchewan.ca/residents/family-and-social-support/people-with-disabilities/saskatchewan-assured-income-for-disability",
-   "source_snippet": "The Saskatchewan Assured Income for Disability (SAID) program provides income support to people with significant and enduring disabilities.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www.saskatchewan.ca/residents/family-and-social-support/people-with-disabilities/income-support-for-people-with-disabilities",
+   "source_snippet": "are a Canadian Citizen, permanent resident, or have refugee status or are in Canada under the Canada-Ukraine authorization for emergency travel; are living in Saskatchewan; are 18 years or older; lack financial resources to provide for your basic needs",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "nova-scotia-income-assistance",
@@ -4600,10 +4600,10 @@
     ],
     "gender": "any"
    },
-   "source_url": "https://novascotia.ca/coms/employment/income_assistance/",
-   "source_snippet": "Income Assistance provides financial support to Nova Scotians who cannot meet their basic needs.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://novascotia.ca/coms/employment/income_assistance/Eligibility.html",
+   "source_snippet": "You can apply if you: live in Nova Scotia; are 19 years old or over (sometimes 16 to 18); need financial help for your basic needs; have tried to find work or other income",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "nova-scotia-child-benefit",
@@ -4618,9 +4618,9 @@
    "amount_max": 1525,
    "amount_currency": "CAD",
    "amount_period": "annual",
-   "amount_note": "Tax-free monthly payment of $127.08/month per child (2025-26, about $1,525/year) for low- and modest-income families with children under 18; paid with the federal CCB.",
+   "amount_note": "$127.08 per month for each child under 18 for July 2026-June 2027 (about $1,525/year); full amount at adjusted family net income under $26,000, partial between $26,000 and $34,000; paid with the federal CCB.",
    "is_automatic": true,
-   "application_url": "https://novascotia.ca/child-benefit/",
+   "application_url": "https://www.canada.ca/en/revenue-agency/services/child-family-benefits/provincial-territorial-programs/province-nova-scotia.html",
    "application_channel": "automatic",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -4664,10 +4664,10 @@
     ],
     "gender": "any"
    },
-   "source_url": "https://novascotia.ca/child-benefit/",
-   "source_snippet": "The Nova Scotia Child Benefit is a non-taxable amount paid monthly to help low- and modest-income families with the cost of raising children under 18.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www.canada.ca/en/revenue-agency/services/child-family-benefits/provincial-territorial-programs/province-nova-scotia.html",
+   "source_snippet": "From July 2026 to June 2027, you may be entitled to a monthly benefit of $127.08 for each child under 18 years of age in your care. If your adjusted family net income is between $26,000 and $34,000, you may get part of the benefit.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "nova-scotia-affordable-living-tax-credit",
@@ -4724,9 +4724,9 @@
     "gender": "any"
    },
    "source_url": "https://www.canada.ca/en/revenue-agency/services/child-family-benefits/provincial-territorial-programs/province-nova-scotia.html",
-   "source_snippet": "The Nova Scotia affordable living tax credit is a tax-free amount paid to make life more affordable for low and modest incomes; $255 for individuals and couples plus $60 for each child.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_snippet": "For July 2026 to June 2027, the program provides a maximum annual credit of $255.00 for an individual or a couple, plus $60.00 for each child. The credit is reduced by 5% of adjusted family net income over $30,000.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "new-brunswick-social-assistance",
@@ -4808,7 +4808,7 @@
    "amount_max": 250,
    "amount_currency": "CAD",
    "amount_period": "annual",
-   "amount_note": "Non-taxable payment of $250/year per child for low-income families, plus a working income supplement (up to $250) and school supply supplement for children born 2004+; paid with the CCB.",
+   "amount_note": "Basic benefit $20.83/month per child ($250/year) plus up to $20.83/month working income supplement per family; July 2026 school supplement $100 per child (born 2009-2021) if family net income is $20,000 or less.",
    "is_automatic": true,
    "application_url": "https://www.canada.ca/en/revenue-agency/services/child-family-benefits/provincial-territorial-programs/province-new-brunswick.html",
    "application_channel": "automatic",
@@ -4855,9 +4855,9 @@
     "gender": "any"
    },
    "source_url": "https://www.canada.ca/en/revenue-agency/services/child-family-benefits/provincial-territorial-programs/province-new-brunswick.html",
-   "source_snippet": "The New Brunswick child tax benefit is a non-taxable amount paid monthly to qualifying families with children under 18 years of age; $250 annually for each child.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_snippet": "You may be entitled to a basic benefit of $20.83 per month for each child. The amount of the basic benefit is reduced if your adjusted family net income is more than $20,000.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "newfoundland-income-support",
@@ -4872,9 +4872,9 @@
    "amount_max": null,
    "amount_currency": "CAD",
    "amount_period": "monthly",
-   "amount_note": "Monthly assistance for basic needs, shelter and utilities for residents with no or insufficient income; includes a disability stream and support for seniors and families in need.",
+   "amount_note": "Monthly basic benefit: single adult $561 (couple $1,122; single parent $729) for board and lodging or maintaining a household, plus shelter up to $522 for a single person living alone and fuel supplement; amount depends on family income and circumstances.",
    "is_automatic": false,
-   "application_url": "https://www.gov.nl.ca/cssd/income-support/",
+   "application_url": "https://www.gov.nl.ca/sswb/income-support/application/",
    "application_channel": "in_person",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -4921,10 +4921,10 @@
     ],
     "gender": "any"
    },
-   "source_url": "https://www.gov.nl.ca/cssd/income-support/",
-   "source_snippet": "Income Support provides financial benefits and other services to eligible low-income people to assist in meeting daily living expenses.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www.gov.nl.ca/sswb/income-support/overview/",
+   "source_snippet": "To qualify for income support a person must: Be 18 years of age; Be a resident of Newfoundland and Labrador; Submit an application for benefits; Be determined eligible according to a financial assessment.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "newfoundland-child-benefit",
@@ -4939,7 +4939,7 @@
    "amount_max": null,
    "amount_currency": "CAD",
    "amount_period": "annual",
-   "amount_note": "Non-taxable monthly amount paid with the CCB to low- and modest-income families with children under 18; per-child amounts vary by birth order and are phased out by family net income (mother's nutrition supplement also included).",
+   "amount_note": "July 2026-June 2027: $157.33/month first child, $166.83 second, $179.16 third, $192.50 each additional child; partial benefit if adjusted family net income is above $20,397. Early childhood nutrition supplement of $150/month per child under 5 is separate.",
    "is_automatic": true,
    "application_url": "https://www.canada.ca/en/revenue-agency/services/child-family-benefits/provincial-territorial-programs/province-newfoundland-labrador.html",
    "application_channel": "automatic",
@@ -4989,8 +4989,8 @@
     "gender": "any"
    },
    "source_url": "https://www.canada.ca/en/revenue-agency/services/child-family-benefits/provincial-territorial-programs/province-newfoundland-labrador.html",
-   "source_snippet": "The Newfoundland and Labrador child benefit is a non-taxable amount paid monthly to help low-income families with the cost of raising children under 18 years of age.",
-   "last_verified_at": "2026-08-12",
+   "source_snippet": "For July 2026 to June 2027, you may be entitled to: $157.33 per month for the first child; ... If your adjusted family net income is more than $20,397, you may get part of the benefit.",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified",
    "income_reviewed_at": "2026-08-13"
   },
@@ -5009,7 +5009,7 @@
    "amount_period": "monthly",
    "amount_note": "Monthly assistance for food, shelter and basic needs for Islanders unable to meet them through other means; rates set by household size and include disability supports.",
    "is_automatic": false,
-   "application_url": "https://www.princeedwardisland.ca/en/information/social-development-and-housing/social-assistance-program",
+   "application_url": "https://www.princeedwardisland.ca/en/information/social-development-and-seniors/social-assistance-program",
    "application_channel": "in_person",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -5056,10 +5056,10 @@
     ],
     "gender": "any"
    },
-   "source_url": "https://www.princeedwardisland.ca/en/information/social-development-and-housing/social-assistance-program",
-   "source_snippet": "Social Assistance helps Prince Edward Island residents meet their basic needs when they are unable to provide for themselves.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www.princeedwardisland.ca/en/information/social-development-and-seniors/social-assistance-program",
+   "source_snippet": "If you are a PEI resident age 18 years or older and your income cannot cover the basic costs of living, call the social assistance screening line toll-free at 1-877-569-0546.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "vancouver-leisure-access-program",
@@ -5074,12 +5074,12 @@
    "amount_max": null,
    "amount_currency": "CAD",
    "amount_period": "annual",
-   "amount_note": "Free or 50%-reduced admission to Park Board pools, rinks and fitness centres plus discounts on registered programs for low-income Vancouver residents; card valid one year.",
+   "amount_note": "Free (100%) admission to pools and rinks, 50% off fitness centres, group lessons, Flexipass and other Park Board services for low-income Vancouver residents; pass valid 3 years from 2026.",
    "is_automatic": false,
    "application_url": "https://vancouver.ca/parks-recreation-culture/leisure-access-card.aspx",
    "application_channel": "in_person",
    "deadline_type": "rolling",
-   "deadline_note": "Card valid for one year; reapply annually.",
+   "deadline_note": "From 1 January 2026 Leisure Access passes are valid for 3 years (previously 1 year); new adult Mobi Community Pass applications closed for 2026.",
    "procedure_steps": [
     {
      "step": 1,
@@ -5124,8 +5124,8 @@
     "gender": "any"
    },
    "source_url": "https://vancouver.ca/parks-recreation-culture/leisure-access-card.aspx",
-   "source_snippet": "The Leisure Access Program helps low-income residents access Park Board programs and services at reduced cost.",
-   "last_verified_at": "2026-08-12",
+   "source_snippet": "The Leisure Access Program (LAP) supports low-income residents of Vancouver by providing free and reduced-fee access to programs and services at Park Board facilities, including community centres.",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified",
    "income_reviewed_at": "2026-08-13"
   },
@@ -5144,7 +5144,7 @@
    "amount_period": "annual",
    "amount_note": "Refundable tax credit covering 50% of eligible tuition/fees, up to a $250 annual accumulation ($5,000 lifetime) for workers aged 26-65 with income in the eligible range (roughly $10,000 to the top of the second bracket).",
    "is_automatic": false,
-   "application_url": "https://www.canada.ca/en/revenue-agency/services/tax/individuals/topics/about-your-tax-return/tax-return/completing-a-tax-return/deductions-credits-expenses/canada-training-credit.html",
+   "application_url": "https://www.canada.ca/en/revenue-agency/services/tax/individuals/topics/about-your-tax-return/tax-return/completing-a-tax-return/deductions-credits-expenses/line-45350-canada-training-credit.html",
    "application_channel": "online",
    "deadline_type": "annual",
    "deadline_note": "Claimed on the annual tax return against training taken in the year.",
@@ -5184,10 +5184,10 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.canada.ca/en/revenue-agency/services/tax/individuals/topics/about-your-tax-return/tax-return/completing-a-tax-return/deductions-credits-expenses/canada-training-credit.html",
-   "source_snippet": "The Canada Training Credit is a refundable tax credit to help Canadians with the cost of eligible training fees; you accumulate $250 each year you are eligible, up to a lifetime limit of $5,000.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www.canada.ca/en/revenue-agency/services/tax/individuals/topics/about-your-tax-return/tax-return/completing-a-tax-return/deductions-credits-expenses/line-45350-canada-training-credit.html",
+   "source_snippet": "Every year, if you file an income tax and benefit return, the Canada Revenue Agency will review the criteria and increase your CTCL by $250 if you qualify, up to a maximum of $5,000 in a lifetime.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "home-accessibility-tax-credit",
@@ -5249,9 +5249,9 @@
     "gender": "any"
    },
    "source_url": "https://www.canada.ca/en/revenue-agency/services/tax/individuals/topics/about-your-tax-return/tax-return/completing-a-tax-return/deductions-credits-expenses/line-31285-home-accessibility-expenses.html",
-   "source_snippet": "The home accessibility tax credit is a non-refundable tax credit for qualifying expenses incurred for work performed or goods acquired in respect of a qualifying renovation of an eligible dwelling.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_snippet": "A qualifying individual can claim up to $20,000 per year in eligible expenses. A qualifying individual is eligible for the disability tax credit at any time in the year or 65 years of age or older at the end of the year.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "multigenerational-home-renovation-tax-credit",
@@ -5268,7 +5268,7 @@
    "amount_period": "one_off",
    "amount_note": "Refundable credit of 15% on up to $50,000 of renovation costs (max $7,500) to create a self-contained secondary unit for a senior or a DTC-eligible adult relative to live with family.",
    "is_automatic": false,
-   "application_url": "https://www.canada.ca/en/revenue-agency/services/tax/individuals/topics/about-your-tax-return/tax-return/completing-a-tax-return/deductions-credits-expenses/line-45355-multigenerational-home-renovation-tax-credit.html",
+   "application_url": "https://www.canada.ca/en/revenue-agency/services/tax/individuals/topics/about-your-tax-return/tax-return/completing-a-tax-return/deductions-credits-expenses/line-45355-mhrtc.html",
    "application_channel": "online",
    "deadline_type": "annual",
    "deadline_note": "One qualifying renovation per eligible person; claimed in the year the renovation is completed.",
@@ -5310,10 +5310,10 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.canada.ca/en/revenue-agency/services/tax/individuals/topics/about-your-tax-return/tax-return/completing-a-tax-return/deductions-credits-expenses/line-45355-multigenerational-home-renovation-tax-credit.html",
-   "source_snippet": "The MHRTC is a refundable tax credit that can be claimed for eligible renovation expenses to create a self-contained secondary unit for a qualifying relation to live with a qualifying individual.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www.canada.ca/en/revenue-agency/services/tax/individuals/topics/about-your-tax-return/tax-return/completing-a-tax-return/deductions-credits-expenses/line-45355-mhrtc.html",
+   "source_snippet": "If you are eligible, you can claim this credit for certain renovation expenses to create a self-contained secondary unit. You can claim up to $50,000 in qualifying expenditures for each qualifying renovation that is completed.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "child-care-expense-deduction",
@@ -5330,7 +5330,7 @@
    "amount_period": "annual",
    "amount_note": "Deduct eligible child care costs from income: up to $8,000 per child under 7, $5,000 per child 7-16, and $11,000 per child eligible for the Disability Tax Credit; generally claimed by the lower-income spouse.",
    "is_automatic": false,
-   "application_url": "https://www.canada.ca/en/revenue-agency/services/forms-publications/publications/t778.html",
+   "application_url": "https://www.canada.ca/en/revenue-agency/services/tax/individuals/topics/about-your-tax-return/tax-return/completing-a-tax-return/deductions-credits-expenses/line-21400-child-care-expenses.html",
    "application_channel": "online",
    "deadline_type": "annual",
    "deadline_note": "Claimed on form T778 with the annual tax return.",
@@ -5372,10 +5372,10 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.canada.ca/en/revenue-agency/services/forms-publications/publications/t778.html",
+   "source_url": "https://www.canada.ca/en/revenue-agency/services/tax/individuals/topics/about-your-tax-return/tax-return/completing-a-tax-return/deductions-credits-expenses/line-21400-child-care-expenses.html",
    "source_snippet": "Child care expenses are amounts you paid to have someone look after an eligible child so that you could earn income, go to school, or conduct research.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "gst-hst-new-housing-rebate",
@@ -5435,9 +5435,9 @@
     "gender": "any"
    },
    "source_url": "https://www.canada.ca/en/revenue-agency/services/forms-publications/publications/rc4028/gst-hst-new-housing-rebate.html",
-   "source_snippet": "You may be eligible for a new housing rebate for some of the GST/HST paid if you purchased a new or substantially renovated house from a builder, built your own house, or substantially renovated your own house.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_snippet": "GST/HST New Housing Rebate RC4028(E) Rev. 26 ... the fair market value of the house at the time that the work is substantially completed is less than $450,000",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "cpp-survivors-pension",
@@ -5454,7 +5454,7 @@
    "amount_period": "monthly",
    "amount_note": "Monthly pension for the surviving spouse/common-law partner of a deceased CPP contributor: max $904.59/month if 65+ (January 2026), $803.54 if under 65; children's benefit $307.81/month.",
    "is_automatic": false,
-   "application_url": "https://www.canada.ca/en/services/benefits/publicpensions/cpp/cpp-survivor-pension/apply.html",
+   "application_url": "https://www.canada.ca/en/services/benefits/publicpensions/cpp/cpp-survivor-pension.html",
    "application_channel": "online",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -5493,8 +5493,8 @@
    },
    "source_url": "https://www.canada.ca/en/services/benefits/publicpensions/cpp/cpp-survivor-pension.html",
    "source_snippet": "Survivor's pension - 65 and older: maximum $904.59 per month; younger than 65: $803.54 (January 2026).",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "non-insured-health-benefits",
@@ -5511,7 +5511,7 @@
    "amount_period": "annual",
    "amount_note": "Covers eligible drugs, dental care, vision care, mental health counselling, medical transportation and medical supplies/equipment for registered First Nations and recognized Inuit not otherwise covered.",
    "is_automatic": false,
-   "application_url": "https://www.canada.ca/en/indigenous-services-canada/services/first-nations-inuit-health/non-insured-health-benefits.html",
+   "application_url": "https://www.sac-isc.gc.ca/eng/1576790320164/1576790364553",
    "application_channel": "in_person",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -5541,17 +5541,17 @@
     "income_annual_max": null,
     "income_note": "Not income-tested; based on First Nations status or Inuit recognition",
     "requires_children": false,
-    "nationality": "any",
+    "nationality": "any_resident",
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.canada.ca/en/indigenous-services-canada/services/first-nations-inuit-health/non-insured-health-benefits.html",
-   "source_snippet": "The Non-Insured Health Benefits program provides eligible First Nations and Inuit clients with coverage for a range of health benefits that are not covered through other programs.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www.sac-isc.gc.ca/eng/1576790320164/1576790364553",
+   "source_snippet": "a client must be a resident of Canada, and 1 of the following: a First Nations individual who is registered under the Indian Act ... an Inuk recognized by an Inuit land claim organization",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "interim-federal-health-program",
@@ -5606,9 +5606,9 @@
     "gender": "any"
    },
    "source_url": "https://www.canada.ca/en/immigration-refugees-citizenship/services/refugees/help-within-canada/health.html",
-   "source_snippet": "The Interim Federal Health Program provides limited, temporary coverage of health-care benefits to people in Canada who are not yet eligible for provincial or territorial health insurance.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_snippet": "The Interim Federal Health Program (IFHP) provides limited and temporary health care coverage until you're eligible for provincial or territorial insurance or leave Canada. This coverage can vary depending on your immigration status.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "jordans-principle",
@@ -5669,8 +5669,8 @@
    },
    "source_url": "https://www.canada.ca/en/indigenous-services-canada/services/jordans-principle.html",
    "source_snippet": "Jordan's Principle makes sure all First Nations children living in Canada can access the products, services and supports they need, when they need them.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "veterans-education-and-training-benefit",
@@ -5682,12 +5682,12 @@
    "category": "education",
    "benefit_type": "cash_one_off",
    "amount_min": null,
-   "amount_max": 86720,
+   "amount_max": 80000,
    "amount_currency": "CAD",
    "amount_period": "one_off",
-   "amount_note": "Up to ~$86,720 for veterans with 12+ years of service (or ~$43,360 with 6+ years) toward tuition and costs of college, university or technical education after release from the Canadian Armed Forces.",
+   "amount_note": "Up to $40,000 with at least 6 years of service and up to $80,000 with at least 12 years of service (taxable) toward mandatory education costs and some incidental and living costs.",
    "is_automatic": false,
-   "application_url": "https://www.veterans.gc.ca/en/financial-support/thriving-education/veterans-education-and-training-benefit",
+   "application_url": "https://veterans.gc.ca/en/education-and-jobs/go-back-school/education-and-training-benefit",
    "application_channel": "online",
    "deadline_type": "rolling",
    "deadline_note": "Apply within 10 years of release.",
@@ -5731,10 +5731,1470 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.veterans.gc.ca/en/financial-support/thriving-education/veterans-education-and-training-benefit",
-   "source_snippet": "The Education and Training Benefit is a taxable benefit that provides funding to Veterans to achieve their education and career goals after release.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://veterans.gc.ca/en/education-and-jobs/go-back-school/education-and-training-benefit",
+   "source_snippet": "The Education and Training Benefit provides up to $80,000 (taxable) to cover mandatory education costs and some incidental and ...",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "canada-disability-benefit",
+   "name_local": "Prestation canadienne pour les personnes handicapées (PCPH)",
+   "name_en": "Canada Disability Benefit (CDB)",
+   "admin_level": "national",
+   "admin_area": null,
+   "funder": "Employment and Social Development Canada (Service Canada)",
+   "category": "income_support",
+   "benefit_type": "cash_monthly",
+   "amount_min": null,
+   "amount_max": 204.2,
+   "amount_currency": "CAD",
+   "amount_period": "monthly",
+   "amount_note": "Maximum $204.20/month for July 2026-June 2027 ($200/month for July 2025-June 2026). Income-tested on adjusted family net income; $150 one-off supplemental payment in fall 2026 to offset the cost of obtaining the Disability Tax Credit. Back payments possible for up to 24 months (not before June 2025).",
+   "is_automatic": false,
+   "application_url": "https://www.canada.ca/en/services/benefits/disability/canada-disability-benefit.html",
+   "application_channel": "online",
+   "deadline_type": "rolling",
+   "deadline_note": null,
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Get approved for the Disability Tax Credit (DTC) with the CRA",
+     "url": "https://www.canada.ca/en/revenue-agency/services/tax/individuals/segments/tax-credits-deductions-persons-disabilities/disability-tax-credit.html"
+    },
+    {
+     "step": 2,
+     "detail": "File your federal income tax return (and your spouse or partner too)",
+     "url": null
+    },
+    {
+     "step": 3,
+     "detail": "Apply for the CDB through Service Canada",
+     "url": "https://www.canada.ca/en/services/benefits/disability/canada-disability-benefit.html"
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "Disability Tax Credit approval",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Filed federal income tax return (both partners)",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Social Insurance Number",
+     "mandatory": true,
+     "note": null
+    }
+   ],
+   "eligibility": {
+    "statuses": [],
+    "age_min": 18,
+    "age_max": 64,
+    "income_annual_max": 58500,
+    "income_note": "Income-tested on adjusted family net income. Published 2025-26 formula: full benefit if income (after a working-income exemption of up to $10,000 single / $14,000 couple) is $23,000 or less single or $32,500 or less for a couple; the benefit falls by 20 cents per dollar above that (10 cents each if both partners get CDB) and reaches $0 at about $35,000 single or $44,500 couple before the exemption, i.e. about $45,000 single / $58,500 couple with full exemption. 58,500 is the highest cut-off; thresholds are indexed each July.",
+    "requires_children": false,
+    "nationality": "any_resident",
+    "residency_months_min": null,
+    "housing_tenure": null,
+    "student_required": false,
+    "admin_areas": [],
+    "gender": "any"
+   },
+   "source_url": "https://www.canada.ca/en/services/benefits/disability/canada-disability-benefit/eligibility.html",
+   "source_snippet": "you must be between the ages of 18 and 64 years old",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "ontario-drug-benefit",
+   "name_local": "Ontario Drug Benefit (ODB) Program",
+   "name_en": "Ontario Drug Benefit (ODB) Program",
+   "admin_level": "region",
+   "admin_area": "Ontario",
+   "funder": "Government of Ontario (Ministry of Health)",
+   "category": "health",
+   "benefit_type": "discount",
+   "amount_min": null,
+   "amount_max": null,
+   "amount_currency": "CAD",
+   "amount_period": "annual",
+   "amount_note": "Covers most of the cost of 5,900+ drugs on the ODB formulary. Seniors 65+ pay a $100 yearly deductible and up to $6.11 per prescription; Ontario Works/ODSP recipients, home-care and long-term-care residents pay up to $2 (or nothing for those 24 and under). Seniors Co-Payment Program lowers this to up to $2 with no deductible for lower-income seniors.",
+   "is_automatic": true,
+   "application_url": "https://www.ontario.ca/page/get-coverage-prescription-drugs",
+   "application_channel": "automatic",
+   "deadline_type": "rolling",
+   "deadline_note": null,
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Seniors are enrolled automatically on the first day of the month after turning 65 (letter sent about 3 months before)",
+     "url": null
+    },
+    {
+     "step": 2,
+     "detail": "Show your Ontario health card at an Ontario pharmacy",
+     "url": "https://www.ontario.ca/page/get-coverage-prescription-drugs"
+    },
+    {
+     "step": 3,
+     "detail": "Optional: apply to the Seniors Co-Payment Program if income is low",
+     "url": "https://www.ontario.ca/page/seniors-ontario-drug-benefit-deductible-and-prescription-co-payment"
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "Ontario health card",
+     "mandatory": true,
+     "note": null
+    }
+   ],
+   "eligibility": {
+    "statuses": [],
+    "age_min": null,
+    "age_max": null,
+    "income_annual_max": null,
+    "income_note": "Not income-tested for seniors 65+ or for people on Ontario Works/ODSP; the Seniors Co-Payment Program (reduced fees) is income-tested.",
+    "requires_children": false,
+    "nationality": "any_resident",
+    "residency_months_min": null,
+    "housing_tenure": null,
+    "student_required": false,
+    "admin_areas": [
+     "Ontario"
+    ],
+    "gender": "any"
+   },
+   "source_url": "https://www.ontario.ca/page/get-coverage-prescription-drugs",
+   "source_snippet": "You may qualify for the Ontario Drug Benefit (ODB) program when you turn 65 years old.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "ontario-trillium-drug-program",
+   "name_local": "Trillium Drug Program (Ontario)",
+   "name_en": "Trillium Drug Program (Ontario)",
+   "admin_level": "region",
+   "admin_area": "Ontario",
+   "funder": "Government of Ontario (Ministry of Health)",
+   "category": "health",
+   "benefit_type": "discount",
+   "amount_min": null,
+   "amount_max": null,
+   "amount_currency": "CAD",
+   "amount_period": "annual",
+   "amount_note": "Household pays a deductible of about 4% of after-tax household income (split into four quarterly instalments); after that, covered drugs cost up to $2 each until the end of the program year (Aug 1-Jul 31).",
+   "is_automatic": false,
+   "application_url": "https://forms.ontariodrugbenefit.ca/",
+   "application_channel": "online",
+   "deadline_type": "annual",
+   "deadline_note": "Apply by September 30 to be reimbursed for eligible drugs from the previous program year (Aug 1-Jul 31). Receipts due by October 31.",
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Complete the Trillium Drug Program application online (or request a paper copy)",
+     "url": "https://forms.ontariodrugbenefit.ca/"
+    },
+    {
+     "step": 2,
+     "detail": "Receive a confirmation letter with your annual deductible",
+     "url": null
+    },
+    {
+     "step": 3,
+     "detail": "Submit pharmacy receipts to count towards the deductible",
+     "url": "https://forms.ontariodrugbenefit.ca/"
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "Ontario health card number",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Household net income (line 23600 of Notice of Assessment)",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Official pharmacy prescription receipts",
+     "mandatory": false,
+     "note": "Used to count the deductible"
+    }
+   ],
+   "eligibility": {
+    "statuses": [],
+    "age_min": null,
+    "age_max": null,
+    "income_annual_max": null,
+    "income_note": "Need-based rather than a fixed income ceiling: aimed at households spending about 4% or more of after-tax household income on prescriptions and not eligible for ODB; the deductible is about 4% of household income after taxes.",
+    "requires_children": false,
+    "nationality": "any_resident",
+    "residency_months_min": null,
+    "housing_tenure": null,
+    "student_required": false,
+    "admin_areas": [
+     "Ontario"
+    ],
+    "gender": "any"
+   },
+   "source_url": "https://www.ontario.ca/page/get-help-high-prescription-drug-costs",
+   "source_snippet": "If you have high prescription-drug costs — compared to your household income — you might qualify for the Trillium Drug Program",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "ontario-seniors-care-at-home-tax-credit",
+   "name_local": "Ontario Seniors Care at Home Tax Credit",
+   "name_en": "Ontario Seniors Care at Home Tax Credit",
+   "admin_level": "region",
+   "admin_area": "Ontario",
+   "funder": "Government of Ontario (claimed through the Canada Revenue Agency)",
+   "category": "tax",
+   "benefit_type": "tax_credit",
+   "amount_min": null,
+   "amount_max": null,
+   "amount_currency": "CAD",
+   "amount_period": "annual",
+   "amount_note": "Refundable credit of 25% of claimable medical expenses up to $6,000 (maximum $1,500). Reduced by 5% of family net income over $35,000 and fully phased out by $65,000.",
+   "is_automatic": false,
+   "application_url": "https://www.canada.ca/en/revenue-agency/services/forms-publications/tax-packages-years/general-income-tax-benefit-package/ontario/5006-tc.html",
+   "application_channel": "online",
+   "deadline_type": "annual",
+   "deadline_note": "Claimed on the annual income tax return (Form ON479)",
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Add up eligible medical expenses on your federal return (lines 33099-33200) and Ontario Form ON428",
+     "url": "https://www.ontario.ca/page/ontario-seniors-care-home-tax-credit"
+    },
+    {
+     "step": 2,
+     "detail": "Claim the credit on Form ON479 (lines 4-14)",
+     "url": "https://www.canada.ca/en/revenue-agency/services/forms-publications/tax-packages-years/general-income-tax-benefit-package/ontario/5006-tc.html"
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "Receipts for eligible medical expenses",
+     "mandatory": true,
+     "note": "Keep in case CRA asks"
+    }
+   ],
+   "eligibility": {
+    "statuses": [],
+    "age_min": null,
+    "age_max": null,
+    "income_annual_max": 65000,
+    "income_note": "Credit reduced by 5% of family net income over $35,000 and fully phased out by at most $65,000. You or your spouse/common-law partner must turn 70 or older in the tax year (age_min left null because the spouse can qualify) and be an Ontario resident at year end.",
+    "requires_children": false,
+    "nationality": "any_resident",
+    "residency_months_min": null,
+    "housing_tenure": null,
+    "student_required": false,
+    "admin_areas": [
+     "Ontario"
+    ],
+    "gender": "any"
+   },
+   "source_url": "https://www.ontario.ca/page/ontario-seniors-care-home-tax-credit",
+   "source_snippet": "The credit provides up to 25% of claimable medical expenses up to $6,000, for a maximum credit of $1,500.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "ontario-autism-program",
+   "name_local": "Ontario Autism Program (OAP)",
+   "name_en": "Ontario Autism Program (OAP)",
+   "admin_level": "region",
+   "admin_area": "Ontario",
+   "funder": "Government of Ontario (Ministry of Children, Community and Social Services) via AccessOAP",
+   "category": "family",
+   "benefit_type": "in_kind",
+   "amount_min": null,
+   "amount_max": null,
+   "amount_currency": "CAD",
+   "amount_period": "one_off",
+   "amount_note": "Needs-based services and supports for children and youth with autism (foundational family services, caregiver-mediated early years programs, core clinical services, entry to school program, urgent response services). Dollar value depends on the service stream.",
+   "is_automatic": false,
+   "application_url": "https://accessoap.ca/",
+   "application_channel": "online",
+   "deadline_type": "rolling",
+   "deadline_note": null,
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Create an AccessOAP account",
+     "url": "https://accessoap.ca/"
+    },
+    {
+     "step": 2,
+     "detail": "Upload the written autism diagnosis and register your child",
+     "url": null
+    },
+    {
+     "step": 3,
+     "detail": "Work with an AccessOAP care coordinator to access services",
+     "url": null
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "Written autism diagnosis from a qualified professional",
+     "mandatory": true,
+     "note": "Must include child name, date of birth, assessment date, statement of ASD criteria, professional name and credentials"
+    }
+   ],
+   "eligibility": {
+    "statuses": [],
+    "age_min": null,
+    "age_max": 17,
+    "income_annual_max": null,
+    "income_note": "Not income-tested; child must be under 18, live in Ontario and have a written autism diagnosis.",
+    "requires_children": true,
+    "nationality": "any_resident",
+    "residency_months_min": null,
+    "housing_tenure": null,
+    "student_required": false,
+    "admin_areas": [
+     "Ontario"
+    ],
+    "gender": "any"
+   },
+   "source_url": "https://www.ontario.ca/page/ontario-autism-program",
+   "source_snippet": "The Ontario Autism Program (OAP) offers support to families of children and youth on the autism spectrum.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "bc-renters-tax-credit",
+   "name_local": "B.C. Renter's Tax Credit",
+   "name_en": "B.C. Renter's Tax Credit",
+   "admin_level": "region",
+   "admin_area": "British Columbia",
+   "funder": "Province of British Columbia (administered by the Canada Revenue Agency)",
+   "category": "tax",
+   "benefit_type": "tax_credit",
+   "amount_min": null,
+   "amount_max": 400,
+   "amount_currency": "CAD",
+   "amount_period": "annual",
+   "amount_note": "Up to $400 per year; reduced by 2% of adjusted income above $64,764 for the 2025 tax year and zero at $84,764 (2026 tax year: threshold $66,189, zero at $86,189). Paid as part of your tax refund, not as a separate payment.",
+   "is_automatic": false,
+   "application_url": "https://www.canada.ca/en/revenue-agency/services/forms-publications/tax-packages-years/general-income-tax-benefit-package/british-columbia/5010-tc.html",
+   "application_channel": "online",
+   "deadline_type": "annual",
+   "deadline_note": "Claimed on the annual T1 return using form BC479",
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "File your T1 income tax return",
+     "url": "https://www.canada.ca/en/revenue-agency/services/forms-publications/tax-packages-years/general-income-tax-benefit-package/british-columbia.html"
+    },
+    {
+     "step": 2,
+     "detail": "Complete form BC479 with rental address, rent paid, months of tenancy and landlord name",
+     "url": "https://www.canada.ca/en/revenue-agency/services/forms-publications/tax-packages-years/general-income-tax-benefit-package/british-columbia/5010-tc.html"
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "Proof of rent paid and landlord name",
+     "mandatory": false,
+     "note": "CRA may ask after filing"
+    }
+   ],
+   "eligibility": {
+    "statuses": [],
+    "age_min": null,
+    "age_max": null,
+    "income_annual_max": 84764,
+    "income_note": "Credit is $400 at adjusted income up to $64,764 (2025 tax year), then reduced by 2% of the excess, reaching zero at $84,764. Adjusted income includes spouse/partner net income.",
+    "requires_children": false,
+    "nationality": "any_resident",
+    "residency_months_min": null,
+    "housing_tenure": "renting",
+    "student_required": false,
+    "admin_areas": [
+     "British Columbia"
+    ],
+    "gender": "any"
+   },
+   "source_url": "https://www2.gov.bc.ca/gov/content/taxes/income-taxes/personal/credits/renters-tax-credit",
+   "source_snippet": "Starting in 2023, the renter's tax credit provides up to $400 per year to low- and moderate- income renter individuals and families.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "quebec-shelter-allowance-program",
+   "name_local": "Programme Allocation-logement",
+   "name_en": "Shelter Allowance Program (Quebec)",
+   "admin_level": "region",
+   "admin_area": "Quebec",
+   "funder": "Revenu Québec",
+   "category": "housing",
+   "benefit_type": "cash_one_off",
+   "amount_min": null,
+   "amount_max": null,
+   "amount_currency": "CAD",
+   "amount_period": "annual",
+   "amount_note": "Financial assistance for low-income households spending at least 30% of family income on housing, for the period October 1, 2026 to September 30, 2027. Amount is calculated by Revenu Québec from family income and the share of income spent on housing (unreduced amount below the lower income maximums, reduced amount up to the higher ones).",
+   "is_automatic": false,
+   "application_url": "https://www.revenuquebec.ca/en/citizens/your-situation/low-income/shelter-allowance-program/how-to-apply-for-the-shelter-allowance/",
+   "application_channel": "online",
+   "deadline_type": "annual",
+   "deadline_note": "Annual application for the October 1 to September 30 period; check Revenu Québec for the current deadline.",
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Check eligibility with the questionnaire for your family situation",
+     "url": "https://www.revenuquebec.ca/en/citizens/your-situation/low-income/shelter-allowance-program/eligibility-shelter-allowance-program/"
+    },
+    {
+     "step": 2,
+     "detail": "Apply to Revenu Québec",
+     "url": "https://www.revenuquebec.ca/en/citizens/your-situation/low-income/shelter-allowance-program/how-to-apply-for-the-shelter-allowance/"
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "Québec income tax return for 2025 (yours and spouse's)",
+     "mandatory": true,
+     "note": "Must be filed if you lived in Québec on December 31, 2025"
+    },
+    {
+     "doc": "Details of housing costs (rent or ownership costs)",
+     "mandatory": true,
+     "note": null
+    }
+   ],
+   "eligibility": {
+    "statuses": [],
+    "age_min": null,
+    "age_max": null,
+    "income_annual_max": 48840,
+    "income_note": "2025 family income must be below the maximum for your family situation: unreduced amount up to $23,600 (person 50+ living alone), $33,100 (couple, one 50+), $40,600 (couple with 1 child or single parent with 1-2 children), $46,800 (couple with 2+ children or single parent with 3+). Reduced amounts up to $48,840 (highest cut-off) depending on share of income spent on housing. Also requires bank/TFSA/investments of $50,000 or less on Dec 31, 2025.",
+    "requires_children": false,
+    "nationality": "any_resident",
+    "residency_months_min": null,
+    "housing_tenure": null,
+    "student_required": false,
+    "admin_areas": [
+     "Quebec"
+    ],
+    "gender": "any"
+   },
+   "source_url": "https://www.revenuquebec.ca/en/citizens/your-situation/low-income/shelter-allowance-program/eligibility-shelter-allowance-program/",
+   "source_snippet": "You may be eligible for the shelter allowance program for the period from October 1, 2026, to September 30, 2027, if you meet all the requirements.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "ontario-seniors-dental-care-program",
+   "name_local": "Ontario Seniors Dental Care Program (OSDCP)",
+   "name_en": "Ontario Seniors Dental Care Program (OSDCP)",
+   "admin_level": "region",
+   "admin_area": "Ontario",
+   "funder": "Government of Ontario (Ministry of Health)",
+   "category": "health",
+   "benefit_type": "in_kind",
+   "amount_min": null,
+   "amount_max": null,
+   "amount_currency": "CAD",
+   "amount_period": "annual",
+   "amount_note": "Free routine dental care (check-ups, x-rays, fillings, extractions, endodontic and periodontal services); dentures partially covered. Coverage runs up to one year and ends July 31 each year.",
+   "is_automatic": false,
+   "application_url": "https://seniors.accerta.ca/",
+   "application_channel": "online",
+   "deadline_type": "rolling",
+   "deadline_note": null,
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Apply online at the OSDCP portal or download and mail the paper form",
+     "url": "https://seniors.accerta.ca/"
+    },
+    {
+     "step": 2,
+     "detail": "Receive a welcome package and dental card by mail",
+     "url": null
+    },
+    {
+     "step": 3,
+     "detail": "Present the card to a participating dental provider at each visit (public health units, community health centres)",
+     "url": "https://www.ontario.ca/page/dental-care-seniors"
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "Date of birth and valid Ontario address",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Social Insurance Number or Temporary Taxation Number",
+     "mandatory": true,
+     "note": "Guarantor form if no SIN or no tax return filed"
+    },
+    {
+     "doc": "Tax return filed for the previous year",
+     "mandatory": true,
+     "note": null
+    }
+   ],
+   "eligibility": {
+    "statuses": [],
+    "age_min": 65,
+    "age_max": null,
+    "income_annual_max": 42290,
+    "income_note": "Annual net income of $25,480 or less for a single senior, or combined annual net income of $42,290 or less for a couple. Must have no other dental benefits (private insurance, Ontario Works, ODSP, NIHB); the Canadian Dental Care Plan is allowed.",
+    "requires_children": false,
+    "nationality": "any_resident",
+    "residency_months_min": null,
+    "housing_tenure": null,
+    "student_required": false,
+    "admin_areas": [
+     "Ontario"
+    ],
+    "gender": "any"
+   },
+   "source_url": "https://www.ontario.ca/page/dental-care-seniors",
+   "source_snippet": "It provides free, routine dental services for low-income seniors who are 65 years of age or older.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "ontario-gains",
+   "name_local": "Ontario Guaranteed Annual Income System (GAINS)",
+   "name_en": "Ontario Guaranteed Annual Income System (GAINS)",
+   "admin_level": "region",
+   "admin_area": "Ontario",
+   "funder": "Government of Ontario (Ministry of Finance)",
+   "category": "income_support",
+   "benefit_type": "cash_monthly",
+   "amount_min": null,
+   "amount_max": 92,
+   "amount_currency": "CAD",
+   "amount_period": "monthly",
+   "amount_note": "Up to $92 per month for the July 2026-June 2027 benefit year, paid on top of OAS and GIS; non-taxable. Amount depends on age, marital status and private income.",
+   "is_automatic": true,
+   "application_url": "https://www.ontario.ca/page/guaranteed-annual-income-system-payments-seniors",
+   "application_channel": "automatic",
+   "deadline_type": "rolling",
+   "deadline_note": null,
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "If you already receive OAS and GIS, no application is needed",
+     "url": null
+    },
+    {
+     "step": 2,
+     "detail": "File your income tax return every year by April 30, or complete a GIS application and send it to Service Canada",
+     "url": "https://catalogue.servicecanada.gc.ca/content/EForms/en/Detail.html?Form=ISP3025"
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "Filed income tax return",
+     "mandatory": true,
+     "note": null
+    }
+   ],
+   "eligibility": {
+    "statuses": [
+     "retired"
+    ],
+    "age_min": 65,
+    "age_max": null,
+    "income_annual_max": 8832,
+    "income_note": "Annual private income of up to $4,416 for a single senior or up to $8,832 for a senior couple (different limits if the spouse is under 65 or not eligible for OAS). Must receive OAS and GIS, have been a Canadian resident for 10 years, and lived in Ontario 12 months or 20 years since age 18.",
+    "requires_children": false,
+    "nationality": "any_resident",
+    "residency_months_min": 12,
+    "housing_tenure": null,
+    "student_required": false,
+    "admin_areas": [
+     "Ontario"
+    ],
+    "gender": "any"
+   },
+   "source_url": "https://www.ontario.ca/page/guaranteed-annual-income-system-payments-seniors",
+   "source_snippet": "GAINS provides a monthly, non-taxable payment to Ontario seniors with low income.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "alberta-child-health-benefit",
+   "name_local": "Alberta Child Health Benefit",
+   "name_en": "Alberta Child Health Benefit",
+   "admin_level": "region",
+   "admin_area": "Alberta",
+   "funder": "Government of Alberta (Health Benefits Contact Centre)",
+   "category": "health",
+   "benefit_type": "in_kind",
+   "amount_min": null,
+   "amount_max": null,
+   "amount_currency": "CAD",
+   "amount_period": "annual",
+   "amount_note": "Covers dental care, prescription drugs, eye glasses, essential diabetes supplies, emergency ambulance and essential over-the-counter medications for children in low-income households. Benefit year runs October 1 to September 30.",
+   "is_automatic": false,
+   "application_url": "https://www.alberta.ca/alberta-child-health-benefit",
+   "application_channel": "online",
+   "deadline_type": "rolling",
+   "deadline_note": null,
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Fill out application form AEHB3931 and sign the declaration and CRA consent",
+     "url": "https://cfr.forms.gov.ab.ca/Form/AEHB3931"
+    },
+    {
+     "step": 2,
+     "detail": "Email, mail or fax the form to the Health Benefits Contact Centre",
+     "url": "https://www.alberta.ca/alberta-child-health-benefit"
+    },
+    {
+     "step": 3,
+     "detail": "Receive a health benefits card; household is reviewed each September",
+     "url": null
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "Completed application form AEHB3931",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "CRA Notice of Assessment",
+     "mandatory": false,
+     "note": "Needed when re-applying after a denial"
+    }
+   ],
+   "eligibility": {
+    "statuses": [],
+    "age_min": null,
+    "age_max": 19,
+    "income_annual_max": 46932,
+    "income_note": "Total net household income must be below the guideline for family size, e.g. $26,023 (1 adult + 1 child), $31,237 (couple + 1 child), $36,634 (couple + 2 children), up to $46,932 (couple + 4 children); add $4,973 per additional child. Based on 2025 income for the 2026-27 benefit year.",
+    "requires_children": true,
+    "nationality": "citizen_or_pr",
+    "residency_months_min": null,
+    "housing_tenure": null,
+    "student_required": false,
+    "admin_areas": [
+     "Alberta"
+    ],
+    "gender": "any"
+   },
+   "source_url": "https://www.alberta.ca/alberta-child-health-benefit",
+   "source_snippet": "The Alberta Child Health Benefit covers health benefits for children in low-income households.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "alberta-adult-health-benefit",
+   "name_local": "Alberta Adult Health Benefit",
+   "name_en": "Alberta Adult Health Benefit",
+   "admin_level": "region",
+   "admin_area": "Alberta",
+   "funder": "Government of Alberta (Health Benefits Contact Centre)",
+   "category": "health",
+   "benefit_type": "in_kind",
+   "amount_min": null,
+   "amount_max": null,
+   "amount_currency": "CAD",
+   "amount_period": "annual",
+   "amount_note": "Covers dental care, prescription drugs, eye exams and glasses (every 2 years), essential diabetes supplies, emergency ambulance and essential over-the-counter medications for low-income Albertans who are pregnant, have high ongoing prescription drug needs, or are leaving Income Support or AISH.",
+   "is_automatic": false,
+   "application_url": "https://www.alberta.ca/alberta-adult-health-benefit",
+   "application_channel": "online",
+   "deadline_type": "rolling",
+   "deadline_note": null,
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Download and complete application form AEHB3931, including declaration and CRA consent",
+     "url": "https://cfr.forms.gov.ab.ca/Form/AEHB3931"
+    },
+    {
+     "step": 2,
+     "detail": "Include pharmacy dispensing history if applying on high ongoing prescription drug needs",
+     "url": null
+    },
+    {
+     "step": 3,
+     "detail": "Email, mail or fax the application to the Health Benefits Contact Centre",
+     "url": "https://www.alberta.ca/alberta-adult-health-benefit"
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "Completed application form AEHB3931",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Pharmacy dispensing history report",
+     "mandatory": false,
+     "note": "To show high ongoing prescription drug needs"
+    }
+   ],
+   "eligibility": {
+    "statuses": [],
+    "age_min": null,
+    "age_max": null,
+    "income_annual_max": 46932,
+    "income_note": "Total net household income (CRA line 23600 plus adjustments, less annual drug costs) must be below the guideline: $16,580 single adult, $23,212 couple with no children, $26,023 (1 adult + 1 child) up to $46,932 (couple + 4 children); add $4,973 per additional child. Based on 2025 income for the 2026-27 benefit year.",
+    "requires_children": false,
+    "nationality": "citizen_or_pr",
+    "residency_months_min": null,
+    "housing_tenure": null,
+    "student_required": false,
+    "admin_areas": [
+     "Alberta"
+    ],
+    "gender": "any"
+   },
+   "source_url": "https://www.alberta.ca/alberta-adult-health-benefit",
+   "source_snippet": "The Alberta Adult Health Benefit program covers health benefits for Albertans in low-income households who are pregnant or have high ongoing prescription drug needs.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "bc-seniors-supplement",
+   "name_local": "B.C. Senior's Supplement",
+   "name_en": "B.C. Senior's Supplement",
+   "admin_level": "region",
+   "admin_area": "British Columbia",
+   "funder": "Province of British Columbia (Ministry of Social Development and Poverty Reduction)",
+   "category": "income_support",
+   "benefit_type": "cash_monthly",
+   "amount_min": null,
+   "amount_max": null,
+   "amount_currency": "CAD",
+   "amount_period": "monthly",
+   "amount_note": "Monthly top-up of $1.00 to $99.30 for single seniors, $2.00 to $220.50 for senior couples, and $1.00 to $99.83 for a spouse receiving the federal OAS allowance. Amount depends on your OAS/GIS monthly amounts.",
+   "is_automatic": true,
+   "application_url": "https://www2.gov.bc.ca/gov/content/family-social-supports/seniors/financial-legal-matters/income-security-programs/seniors-supplement",
+   "application_channel": "automatic",
+   "deadline_type": "rolling",
+   "deadline_note": null,
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "No application: eligibility is determined from your OAS/GIS and tax information",
+     "url": null
+    },
+    {
+     "step": 2,
+     "detail": "Tell Service Canada if your income, marital status or address changes",
+     "url": "https://www.canada.ca/en/employment-social-development/corporate/service-canada/contact.html"
+    }
+   ],
+   "documents_required": [],
+   "eligibility": {
+    "statuses": [
+     "retired"
+    ],
+    "age_min": 60,
+    "age_max": null,
+    "income_annual_max": null,
+    "income_note": "Not a separate income test: paid to low-income seniors who receive OAS and GIS (or the federal spouse's allowance at 60-64) and have no other significant taxable income such as CPP. Entitlement therefore follows GIS income limits.",
+    "requires_children": false,
+    "nationality": "any_resident",
+    "residency_months_min": null,
+    "housing_tenure": null,
+    "student_required": false,
+    "admin_areas": [
+     "British Columbia"
+    ],
+    "gender": "any"
+   },
+   "source_url": "https://www2.gov.bc.ca/gov/content/family-social-supports/seniors/financial-legal-matters/income-security-programs/seniors-supplement",
+   "source_snippet": "You don't need to apply. Payment is automatic.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "ontario-assistive-devices-program",
+   "name_local": "Assistive Devices Program (ADP)",
+   "name_en": "Assistive Devices Program (ADP)",
+   "admin_level": "region",
+   "admin_area": "Ontario",
+   "funder": "Government of Ontario (Ministry of Health)",
+   "category": "health",
+   "benefit_type": "discount",
+   "amount_min": null,
+   "amount_max": null,
+   "amount_currency": "CAD",
+   "amount_period": "one_off",
+   "amount_note": "Pays 75% of the approved price (or up to 75% of an approved maximum) of customized equipment such as wheelchairs, hearing aids, prostheses, oxygen and ostomy supplies; grants for some supplies. Recipients of Ontario Works, ODSP or Assistance for Children with Severe Disabilities can get up to 100%.",
+   "is_automatic": false,
+   "application_url": "https://www.ontario.ca/page/assistive-devices-program",
+   "application_channel": "in_person",
+   "deadline_type": "rolling",
+   "deadline_note": null,
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Find the page for your type of equipment (mobility aids, hearing devices, oxygen, diabetic supplies, etc.) and check clinical criteria",
+     "url": "https://www.ontario.ca/page/assistive-devices-program"
+    },
+    {
+     "step": 2,
+     "detail": "Get an assessment/authorizer sign-off and choose an ADP-registered vendor",
+     "url": null
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "Valid Ontario health card",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Clinical assessment/application completed by an authorizer",
+     "mandatory": true,
+     "note": "Specific to the device"
+    }
+   ],
+   "eligibility": {
+    "statuses": [],
+    "age_min": null,
+    "age_max": null,
+    "income_annual_max": null,
+    "income_note": "Not income-tested: \"We do not consider your income.\" Must be an Ontario resident with a valid health card and a physical disability requiring the equipment for 6 months or longer.",
+    "requires_children": false,
+    "nationality": "any_resident",
+    "residency_months_min": null,
+    "housing_tenure": null,
+    "student_required": false,
+    "admin_areas": [
+     "Ontario"
+    ],
+    "gender": "any"
+   },
+   "source_url": "https://www.ontario.ca/page/assistive-devices-program",
+   "source_snippet": "The Assistive Devices Program (ADP) helps people with long-term physical disabilities pay for customized equipment, like wheelchairs and hearing aids.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "alberta-dental-optical-assistance-seniors",
+   "name_local": "Dental and Optical Assistance for Seniors (Alberta)",
+   "name_en": "Dental and Optical Assistance for Seniors (Alberta)",
+   "admin_level": "region",
+   "admin_area": "Alberta",
+   "funder": "Government of Alberta (benefits administered by Alberta Blue Cross)",
+   "category": "health",
+   "benefit_type": "discount",
+   "amount_min": null,
+   "amount_max": null,
+   "amount_currency": "CAD",
+   "amount_period": "annual",
+   "amount_note": "Up to $5,000 of dental coverage every 5 years (select services, at program fee-schedule rates) and up to $230 every 3 years toward prescription eyeglasses. Benefit year July 1 to June 30.",
+   "is_automatic": false,
+   "application_url": "https://www.alberta.ca/seniors-financial-assistance",
+   "application_channel": "online",
+   "deadline_type": "rolling",
+   "deadline_note": null,
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Apply for the Seniors Financial Assistance programs (Alberta Seniors Benefit) - this also assesses dental and optical eligibility",
+     "url": "https://www.alberta.ca/seniors-financial-assistance"
+    },
+    {
+     "step": 2,
+     "detail": "Show your Alberta health card at a dental or optical provider; ask them to submit a pre-authorization to Alberta Blue Cross",
+     "url": null
+    },
+    {
+     "step": 3,
+     "detail": "If direct billing is not available, submit a reimbursement claim within 12 months",
+     "url": "https://www.ab.bluecross.ca/member/online-services/member-site.php"
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "Alberta health card",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Seniors Financial Assistance application",
+     "mandatory": true,
+     "note": null
+    }
+   ],
+   "eligibility": {
+    "statuses": [
+     "retired"
+    ],
+    "age_min": 65,
+    "age_max": null,
+    "income_annual_max": 65380,
+    "income_note": "Based on 2025 total income (CRA line 15000) for the 2026-27 benefit year: coverage for total income of $0 to $32,690 for a single senior and $0 to $65,380 for a senior couple; no coverage above these amounts. Must also be approved for Seniors Financial Assistance.",
+    "requires_children": false,
+    "nationality": "citizen_or_pr",
+    "residency_months_min": 3,
+    "housing_tenure": null,
+    "student_required": false,
+    "admin_areas": [
+     "Alberta"
+    ],
+    "gender": "any"
+   },
+   "source_url": "https://www.alberta.ca/dental-optical-assistance-seniors",
+   "source_snippet": "Eligible seniors are provided up to a maximum of $5,000 of coverage every 5 years for select dental services and procedures that maintain a reasonable level of dental health.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "bc-home-owner-grant-seniors",
+   "name_local": "B.C. Home Owner Grant (seniors 65+)",
+   "name_en": "B.C. Home Owner Grant (seniors 65+)",
+   "admin_level": "region",
+   "admin_area": "British Columbia",
+   "funder": "Province of British Columbia (Ministry of Finance)",
+   "category": "housing",
+   "benefit_type": "discount",
+   "amount_min": null,
+   "amount_max": 845,
+   "amount_currency": "CAD",
+   "amount_period": "annual",
+   "amount_note": "Reduces annual property tax on your principal residence. Total grant for seniors aged 65 or older is $845 from January 1, 2027 (the extra $200 for northern and rural properties is eliminated); partial grant if assessed value exceeds $2,075,000. You must pay at least $100 of property tax before claiming.",
+   "is_automatic": false,
+   "application_url": "https://www2.gov.bc.ca/gov/content/taxes/property-taxes/annual-property-tax/home-owner-grant/apply",
+   "application_channel": "online",
+   "deadline_type": "annual",
+   "deadline_note": "Claimed each year with your property tax notice; retroactive claims possible for last year",
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Check you are 65+, the registered owner, a Canadian citizen or PR and live in B.C. in the property as your principal residence",
+     "url": "https://www2.gov.bc.ca/gov/content/taxes/property-taxes/annual-property-tax/home-owner-grant/senior"
+    },
+    {
+     "step": 2,
+     "detail": "Apply for the grant when you pay your property taxes",
+     "url": "https://www2.gov.bc.ca/gov/content/taxes/property-taxes/annual-property-tax/home-owner-grant/apply"
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "Property tax notice",
+     "mandatory": true,
+     "note": null
+    }
+   ],
+   "eligibility": {
+    "statuses": [
+     "retired"
+    ],
+    "age_min": 65,
+    "age_max": null,
+    "income_annual_max": null,
+    "income_note": "Not income-tested for the standard seniors grant. A separate low income grant supplement applies to owners of properties assessed above $2,075,000 with adjusted net income of $32,000 or less.",
+    "requires_children": false,
+    "nationality": "citizen_or_pr",
+    "residency_months_min": null,
+    "housing_tenure": "owner",
+    "student_required": false,
+    "admin_areas": [
+     "British Columbia"
+    ],
+    "gender": "any"
+   },
+   "source_url": "https://www2.gov.bc.ca/gov/content/taxes/property-taxes/annual-property-tax/home-owner-grant/senior",
+   "source_snippet": "The home owner grant reduces the amount of property taxes you pay each year for your principal residence.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "quebec-tax-credit-home-support-services-seniors",
+   "name_local": "Crédit d'impôt pour maintien à domicile des aînés",
+   "name_en": "Tax Credit for Home-Support Services for Seniors (Quebec)",
+   "admin_level": "region",
+   "admin_area": "Quebec",
+   "funder": "Revenu Québec",
+   "category": "tax",
+   "benefit_type": "tax_credit",
+   "amount_min": null,
+   "amount_max": null,
+   "amount_currency": "CAD",
+   "amount_period": "annual",
+   "amount_note": "Refundable tax credit toward eligible home-support service expenses for seniors who are owners, tenants or live with a relative; which services qualify depends on your type of residence. Amount is calculated by Revenu Québec on your expenses and can be received as advance payments.",
+   "is_automatic": false,
+   "application_url": "https://www.revenuquebec.ca/en/citizens/tax-credits/tax-credit-for-home-support-services-for-seniors/claim-the-home-support-services-credit/",
+   "application_channel": "online",
+   "deadline_type": "annual",
+   "deadline_note": "Claimed on the annual Québec income tax return",
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Check which services are eligible for your type of residence",
+     "url": "https://www.revenuquebec.ca/en/citizens/tax-credits/tax-credit-for-home-support-services-for-seniors/"
+    },
+    {
+     "step": 2,
+     "detail": "Claim the credit on your Québec tax return (or request advance payments)",
+     "url": "https://www.revenuquebec.ca/en/citizens/tax-credits/tax-credit-for-home-support-services-for-seniors/claim-the-home-support-services-credit/"
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "Receipts/invoices for eligible home-support services",
+     "mandatory": true,
+     "note": null
+    }
+   ],
+   "eligibility": {
+    "statuses": [
+     "retired"
+    ],
+    "age_min": 70,
+    "age_max": null,
+    "income_annual_max": null,
+    "income_note": "Eligibility is by age (70 or over) and Québec residence on December 31; you can claim regardless of your level of autonomy.",
+    "requires_children": false,
+    "nationality": "any_resident",
+    "residency_months_min": null,
+    "housing_tenure": null,
+    "student_required": false,
+    "admin_areas": [
+     "Quebec"
+    ],
+    "gender": "any"
+   },
+   "source_url": "https://www.revenuquebec.ca/en/citizens/tax-credits/tax-credit-for-home-support-services-for-seniors/",
+   "source_snippet": "You may be entitled to the tax credit for home-support services for seniors if you meet the following conditions on December 31, 2025: You were resident in Québec. You were 70 or over.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "ircc-newcomer-settlement-services",
+   "name_local": "IRCC-funded settlement services for newcomers",
+   "name_en": "IRCC-funded settlement services for newcomers",
+   "admin_level": "national",
+   "admin_area": null,
+   "funder": "Immigration, Refugees and Citizenship Canada (IRCC)",
+   "category": "employment",
+   "benefit_type": "in_kind",
+   "amount_min": null,
+   "amount_max": null,
+   "amount_currency": "CAD",
+   "amount_period": "one_off",
+   "amount_note": "Free services delivered by funded organizations: settlement plans, language assessment and training (English or French), help finding a job or getting a regulated-profession licence, citizenship test preparation, and services for youth, women, seniors, refugees, 2SLGBTQI+ people and people with disabilities. Not offered in Quebec through this finder.",
+   "is_automatic": false,
+   "application_url": "https://ircc.canada.ca/english/newcomers/services/index.asp",
+   "application_channel": "in_person",
+   "deadline_type": "none",
+   "deadline_note": "From April 1, 2026 economic-class permanent residents can only use newcomer services for a limited period",
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Check you are eligible (permanent resident incl. resettled refugee, approved-in-principle PR applicant, protected person, or certain temporary residents)",
+     "url": "https://ircc.canada.ca/english/newcomers/services/index.asp"
+    },
+    {
+     "step": 2,
+     "detail": "Search for free services near you and call or email before visiting",
+     "url": "https://ircc.canada.ca/english/newcomers/services/index.asp"
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "Proof of status (PR card, confirmation of PR, or IRB decision letter)",
+     "mandatory": true,
+     "note": null
+    }
+   ],
+   "eligibility": {
+    "statuses": [],
+    "age_min": null,
+    "age_max": null,
+    "income_annual_max": null,
+    "income_note": "Not means-tested. Quebec residents should use Quebec government integration services instead.",
+    "requires_children": false,
+    "nationality": "any_resident",
+    "residency_months_min": null,
+    "housing_tenure": null,
+    "student_required": false,
+    "admin_areas": [],
+    "gender": "any"
+   },
+   "source_url": "https://ircc.canada.ca/english/newcomers/services/index.asp",
+   "source_snippet": "You can get our free settlement services if you're eligible.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "bc-hydro-customer-crisis-fund",
+   "name_local": "BC Hydro Customer Crisis Fund",
+   "name_en": "BC Hydro Customer Crisis Fund",
+   "admin_level": "region",
+   "admin_area": "British Columbia",
+   "funder": "BC Hydro",
+   "category": "energy",
+   "benefit_type": "cash_one_off",
+   "amount_min": null,
+   "amount_max": 800,
+   "amount_currency": "CAD",
+   "amount_period": "one_off",
+   "amount_note": "Grant equal to your overdue BC Hydro balance, up to $800 for electrically heated homes and $700 for non-electrically heated homes; one grant per account holder per year; does not need to be repaid.",
+   "is_automatic": false,
+   "application_url": "https://app.bchydro.com/ccf-application",
+   "application_channel": "online",
+   "deadline_type": "rolling",
+   "deadline_note": null,
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Apply online (fastest) or submit a paper application via Service BC, mail or fax",
+     "url": "https://app.bchydro.com/ccf-application"
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "BC Hydro account details",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Documents to verify circumstances if selected for audit",
+     "mandatory": false,
+     "note": "Notice of Assessment, bank statement or proof of assistance programs; keep for 36 months"
+    }
+   ],
+   "eligibility": {
+    "statuses": [],
+    "age_min": null,
+    "age_max": null,
+    "income_annual_max": null,
+    "income_note": "Not income-tested: open to all residential account holders with a temporary financial crisis in the last 12 months, payments overdue 21+ days (or facing disconnection) and an outstanding balance of $1,000 or less.",
+    "requires_children": false,
+    "nationality": "any_resident",
+    "residency_months_min": null,
+    "housing_tenure": null,
+    "student_required": false,
+    "admin_areas": [
+     "British Columbia"
+    ],
+    "gender": "any"
+   },
+   "source_url": "https://www.bchydro.com/accounts-billing/bill-payment/ways-to-pay/customer-crisis-fund.html",
+   "source_snippet": "The Customer Crisis Fund is a program that offers support for residential customers who are facing disconnection of their BC Hydro service, despite attempting to make payments.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "ontario-leap",
+   "name_local": "Ontario Low-income Energy Assistance Program (LEAP)",
+   "name_en": "Ontario Low-income Energy Assistance Program (LEAP)",
+   "admin_level": "region",
+   "admin_area": "Ontario",
+   "funder": "Ontario Energy Board / Government of Ontario",
+   "category": "energy",
+   "benefit_type": "cash_one_off",
+   "amount_min": null,
+   "amount_max": null,
+   "amount_currency": "CAD",
+   "amount_period": "one_off",
+   "amount_note": "Emergency grants of up to $650 on electricity bills ($780 if the home is heated electrically) and up to $650 on natural gas bills.",
+   "is_automatic": false,
+   "application_url": "https://www.oeb.ca/consumer-information-and-protection/bill-assistance-programs/low-income-energy-assistance-program",
+   "application_channel": "in_person",
+   "deadline_type": "rolling",
+   "deadline_note": null,
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Check the household after-tax income limit for your household size",
+     "url": "https://www.oeb.ca/consumer-information-and-protection/bill-assistance-programs/low-income-energy-assistance-program"
+    },
+    {
+     "step": 2,
+     "detail": "Apply through a local LEAP intake agency",
+     "url": "https://www.oeb.ca/consumer-information-and-protection/bill-assistance-programs/low-income-energy-assistance-program"
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "Recent energy bill",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Proof of household income",
+     "mandatory": true,
+     "note": null
+    }
+   ],
+   "eligibility": {
+    "statuses": [],
+    "age_min": null,
+    "age_max": null,
+    "income_annual_max": 71000,
+    "income_note": "Published household after-tax income ceiling of $71,000 applies to households of 5 or more people; lower ceilings apply for smaller households (see source page). Already annual.",
+    "requires_children": false,
+    "nationality": "any_resident",
+    "residency_months_min": null,
+    "housing_tenure": null,
+    "student_required": false,
+    "admin_areas": [
+     "Ontario"
+    ],
+    "gender": "any"
+   },
+   "source_url": "https://www.oeb.ca/consumer-information-and-protection/bill-assistance-programs/low-income-energy-assistance-program",
+   "source_snippet": "Customers who meet income eligibility can get up to $650 in emergency assistance for their electricity bills ($780 if their home is heated electrically)",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "ontario-special-services-at-home",
+   "name_local": "Special Services at Home (Ontario)",
+   "name_en": "Special Services at Home (Ontario)",
+   "admin_level": "region",
+   "admin_area": "Ontario",
+   "funder": "Government of Ontario (Ministry of Children, Community and Social Services)",
+   "category": "family",
+   "benefit_type": "cash_monthly",
+   "amount_min": null,
+   "amount_max": null,
+   "amount_currency": "CAD",
+   "amount_period": "monthly",
+   "amount_note": "Discretionary funding for families of a child under 18 with a physical or developmental disability; no amount is published.",
+   "is_automatic": false,
+   "application_url": "https://www.tpon.gov.on.ca/indiv/#/ssah",
+   "application_channel": "online",
+   "deadline_type": "rolling",
+   "deadline_note": null,
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Check your child meets the disability and age criteria",
+     "url": "https://www.ontario.ca/page/special-services-home"
+    },
+    {
+     "step": 2,
+     "detail": "Apply online",
+     "url": "https://www.tpon.gov.on.ca/indiv/#/ssah"
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "Documentation of the child's disability",
+     "mandatory": true,
+     "note": null
+    }
+   ],
+   "eligibility": {
+    "statuses": [
+     "parent"
+    ],
+    "age_min": null,
+    "age_max": 17,
+    "income_annual_max": null,
+    "income_note": "No income ceiling published on the programme page.",
+    "requires_children": true,
+    "nationality": "any_resident",
+    "residency_months_min": null,
+    "housing_tenure": null,
+    "student_required": false,
+    "admin_areas": [
+     "Ontario"
+    ],
+    "gender": "any"
+   },
+   "source_url": "https://www.ontario.ca/page/special-services-home",
+   "source_snippet": "Child under 18 with a physical or developmental disability, legally entitled to live in Canada.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "alberta-child-care-subsidy",
+   "name_local": "Alberta Child Care Subsidy",
+   "name_en": "Alberta Child Care Subsidy",
+   "admin_level": "region",
+   "admin_area": "Alberta",
+   "funder": "Government of Alberta",
+   "category": "family",
+   "benefit_type": "discount",
+   "amount_min": null,
+   "amount_max": 644,
+   "amount_currency": "CAD",
+   "amount_period": "monthly",
+   "amount_note": "Subsidy towards child care fees; maximum $644 per month (kindergarten, facility-based).",
+   "is_automatic": false,
+   "application_url": "https://applychildcaresubsidy.alberta.ca/",
+   "application_channel": "online",
+   "deadline_type": "rolling",
+   "deadline_note": null,
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Check eligibility",
+     "url": "https://www.alberta.ca/child-care-subsidy-program"
+    },
+    {
+     "step": 2,
+     "detail": "Apply online",
+     "url": "https://applychildcaresubsidy.alberta.ca/"
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "Proof of family income",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Proof of child care enrolment",
+     "mandatory": true,
+     "note": null
+    }
+   ],
+   "eligibility": {
+    "statuses": [
+     "parent"
+    ],
+    "age_min": null,
+    "age_max": null,
+    "income_annual_max": 90000,
+    "income_note": "Published family income threshold of $90,000 (annual).",
+    "requires_children": true,
+    "nationality": "any_resident",
+    "residency_months_min": null,
+    "housing_tenure": null,
+    "student_required": false,
+    "admin_areas": [
+     "Alberta"
+    ],
+    "gender": "any"
+   },
+   "source_url": "https://www.alberta.ca/child-care-subsidy-program",
+   "source_snippet": "Family income under $90,000.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "quebec-ramq-children-dental",
+   "name_local": "Services dentaires gratuits pour les enfants de moins de 10 ans (RAMQ)",
+   "name_en": "RAMQ free dental services for children under 10",
+   "admin_level": "region",
+   "admin_area": "Quebec",
+   "funder": "Régie de l'assurance maladie du Québec (RAMQ)",
+   "category": "health",
+   "benefit_type": "free_slab",
+   "amount_min": null,
+   "amount_max": null,
+   "amount_currency": "CAD",
+   "amount_period": "one_off",
+   "amount_note": "Listed dental services free of charge for children under age 10.",
+   "is_automatic": false,
+   "application_url": "https://www.ramq.gouv.qc.ca/en/citizens/health-insurance/dental-services",
+   "application_channel": "in_person",
+   "deadline_type": "rolling",
+   "deadline_note": null,
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Book with a dentist and present the child's health insurance card",
+     "url": "https://www.ramq.gouv.qc.ca/en/citizens/health-insurance/dental-services"
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "Child's RAMQ health insurance card",
+     "mandatory": true,
+     "note": null
+    }
+   ],
+   "eligibility": {
+    "statuses": [
+     "parent"
+    ],
+    "age_min": null,
+    "age_max": 9,
+    "income_annual_max": null,
+    "income_note": "Not income-tested.",
+    "requires_children": true,
+    "nationality": "any_resident",
+    "residency_months_min": null,
+    "housing_tenure": null,
+    "student_required": false,
+    "admin_areas": [
+     "Quebec"
+    ],
+    "gender": "any"
+   },
+   "source_url": "https://www.ramq.gouv.qc.ca/en/citizens/health-insurance/dental-services",
+   "source_snippet": "Children under age 10 receive the following services free of charge when the services are rendered by a dentist at a dental clinic or hospital",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "bc-access-grant-full-time",
+   "name_local": "BC Access Grant (full-time)",
+   "name_en": "BC Access Grant (full-time)",
+   "admin_level": "region",
+   "admin_area": "British Columbia",
+   "funder": "StudentAid BC",
+   "category": "education",
+   "benefit_type": "cash_one_off",
+   "amount_min": null,
+   "amount_max": 4000,
+   "amount_currency": "CAD",
+   "amount_period": "annual",
+   "amount_note": "Up to $4,000 per 8-month year for programmes under 2 years; up to $1,000 for programmes of 2 or more years.",
+   "is_automatic": true,
+   "application_url": "https://studentaidbc.ca/explore/grants-scholarships/bc-access-grant-full-time",
+   "application_channel": "automatic",
+   "deadline_type": "rolling",
+   "deadline_note": null,
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Apply for a StudentAid BC loan; you are automatically assessed for the grant",
+     "url": "https://studentaidbc.ca/explore/grants-scholarships/bc-access-grant-full-time"
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "StudentAid BC application",
+     "mandatory": true,
+     "note": null
+    }
+   ],
+   "eligibility": {
+    "statuses": [
+     "student"
+    ],
+    "age_min": null,
+    "age_max": null,
+    "income_annual_max": 181162,
+    "income_note": "Income cut-offs vary by family size; highest published is $181,162 for programmes under 2 years; for 2+ year programmes it ranges from $48,978 (1 person) to $121,638 (7+).",
+    "requires_children": false,
+    "nationality": "any_resident",
+    "residency_months_min": null,
+    "housing_tenure": null,
+    "student_required": true,
+    "admin_areas": [
+     "British Columbia"
+    ],
+    "gender": "any"
+   },
+   "source_url": "https://studentaidbc.ca/explore/grants-scholarships/bc-access-grant-full-time",
+   "source_snippet": "This program provides upfront, non-repayable financial assistance to low- and middle-income students enrolled in full-time studies at B.C. public post-secondary institutions.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   }
  ]
 }

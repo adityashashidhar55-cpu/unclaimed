@@ -75,7 +75,7 @@
    },
    "source_url": "https://www.bsv.admin.ch/de/leistungen-ahv-detail",
    "source_snippet": "Altersrente: 1'260.- im Minimum, 2'520.- im Maximum (Rentenbetrag mit voller Beitragsdauer in Franken pro Monat)",
-   "last_verified_at": "2026-08-12",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -132,11 +132,7 @@
     }
    ],
    "eligibility": {
-    "statuses": [
-     "employee",
-     "self_employed",
-     "unemployed"
-    ],
+    "statuses": [],
     "age_min": null,
     "age_max": null,
     "income_annual_max": null,
@@ -151,7 +147,7 @@
    },
    "source_url": "https://www.bsv.admin.ch/de/leistungen-ahv-detail",
    "source_snippet": "Die Mindestrente der AHV sowie der IV steigt von 1225 auf 1260 Franken pro Monat, die Maximalrente von 2450 auf 2520 Franken",
-   "last_verified_at": "2026-08-12",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -208,8 +204,8 @@
    },
    "source_url": "https://www.bsv.admin.ch/de/leistungen-ahv-detail",
    "source_snippet": "Witwen- oder Witwerrente: 1'008.- im Minimum, 2'016.- im Maximum",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "ahv-iv-waisenrente",
@@ -265,8 +261,8 @@
    },
    "source_url": "https://www.bsv.admin.ch/de/leistungen-ahv-detail",
    "source_snippet": "Kinder- bzw. Waisenrente: 504.- im Minimum, 1'008.- im Maximum",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "ergaenzungsleistungen-el",
@@ -472,7 +468,7 @@
    },
    "source_url": "https://www.bsv.admin.ch/de/leistungen-ahv-detail",
    "source_snippet": "Hilflosenentschädigung: 252.- leichten Grades, 630.- mittleren Grades, 1'008.- schweren Grades",
-   "last_verified_at": "2026-08-12",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -529,8 +525,8 @@
    },
    "source_url": "https://www.ahv-iv.ch",
    "source_snippet": "Hilflosenentschädigungen der AHV und der IV sind für Rentenbezüger bestimmt, die auf Dritthilfe angewiesen sind; die Höhe hängt vom Grad der Hilflosigkeit ab",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "iv-assistenzbeitrag",
@@ -596,7 +592,7 @@
    },
    "source_url": "https://www.bsv.admin.ch/de/leistungen-ahv-detail",
    "source_snippet": "In der IV beträgt der Assistenzbeitrag neu 35.30 Franken pro Stunde (+1 Fr.) und 169.10 Franken pro Nacht (+4.65 Fr.)",
-   "last_verified_at": "2026-08-12",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -663,8 +659,8 @@
    },
    "source_url": "https://www.ahv-iv.ch",
    "source_snippet": "Eingliederung vor Rente: Die IV unterstützt berufliche Eingliederungsmassnahmen wie Umschulung, Weiterbildung und Arbeitsversuche",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "iv-hilfsmittel",
@@ -720,8 +716,8 @@
    },
    "source_url": "https://www.bsv.admin.ch/de/leistungen-ahv-detail",
    "source_snippet": "Die AHV finanziert auch eine Reihe von Hilfsmitteln für Altersrentner, wie z.B. Prothesen, Hörgeräte oder orthopädische Massschuhe",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "ueberbrueckungsleistungen-uel",
@@ -851,7 +847,7 @@
    },
    "source_url": "https://www.bsv.admin.ch/de/eo-elternschaft",
    "source_snippet": "Die Entschädigung beträgt 80 Prozent des durchschnittlichen Erwerbseinkommens vor der Geburt (max. 220 Franken pro Tag). Der Mutterschaftsurlaub muss unmittelbar nach der Geburt und am Stück bezogen werden (14 Wochen).",
-   "last_verified_at": "2026-08-12",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -917,7 +913,7 @@
    },
    "source_url": "https://www.bsv.admin.ch/de/eo-elternschaft",
    "source_snippet": "Erwerbstätige Väter haben nach der Geburt ihres Kindes Anspruch auf einen Urlaub von 2 Wochen, der über die EO entschädigt wird. Der Vaterschaftsurlaub muss innert 6 Monaten nach der Geburt bezogen werden.",
-   "last_verified_at": "2026-08-12",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -973,7 +969,7 @@
    },
    "source_url": "https://www.bsv.admin.ch/de/eo-elternschaft",
    "source_snippet": "Erwerbstätige Eltern, die ein Kind unter 4 Jahren adoptieren, haben Anspruch auf einen bezahlten Adoptionsurlaub von 2 Wochen, den sie frei unter sich aufteilen können.",
-   "last_verified_at": "2026-08-12",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -1039,7 +1035,7 @@
    },
    "source_url": "https://www.bsv.admin.ch/de/eo-betreuung-schwer-beeintraechtigtes-kind-leichte-sprache",
    "source_snippet": "Für die Betreuung eines gesundheitlich schwer beeinträchtigten Kindes haben berufstätige Eltern das Recht auf einen 14-wöchigen bezahlten Urlaub. Die Betreuungs-Entschädigung entspricht 80 % des durchschnittlichen Lohns.",
-   "last_verified_at": "2026-08-12",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -1188,9 +1184,9 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.sg.ch/wirtschaft-arbeit/arbeitslos-arbeit-finden/arbeitslos-so-geht-es-weiter.html",
+   "source_url": "https://www.arbeit.swiss/de/stellensuchende/versicherungsleistungen",
    "source_snippet": "Ihre Arbeitslosenentschädigung entspricht grundsätzlich 70% Ihres versicherten Verdienstes oder 80% bei einer Unterhaltspflicht gegenüber Kindern unter 25 Jahren. Der maximale Betrag liegt bei CHF 12350.",
-   "last_verified_at": "2026-08-12",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -1259,7 +1255,7 @@
    },
    "source_url": "https://www.seco.admin.ch",
    "source_snippet": "Während der Kurzarbeit erhalten Arbeitnehmende eine Kurzarbeitsentschädigung von 80% des wegfallenden Lohns",
-   "last_verified_at": "2026-08-12",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -1318,8 +1314,8 @@
    },
    "source_url": "https://www.arbeit.swiss",
    "source_snippet": "Die Insolvenzentschädigung deckt Lohnausfälle von bis zu vier Monaten bei Zahlungsunfähigkeit des Arbeitgebers",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "alv-schlechtwetterentschaedigung",
@@ -1377,8 +1373,8 @@
    },
    "source_url": "https://www.arbeit.swiss",
    "source_snippet": "Die Schlechtwetterentschädigung beträgt 80 Prozent des wegfallenden Lohns bei witterungsbedingten Arbeitsausfällen",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "alv-bildungsmassnahmen",
@@ -1559,7 +1555,7 @@
    },
    "source_url": "https://www.ahv-iv.ch",
    "source_snippet": "Die Kinderzulage stieg von 200 auf 215 Franken pro Monat. Es handelt sich um Mindestansätze, die Kantone können auch höhere Zulagen festlegen",
-   "last_verified_at": "2026-08-12",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -1621,7 +1617,7 @@
    },
    "source_url": "https://www.ahv-iv.ch",
    "source_snippet": "Die Ausbildungszulage stieg von 250 auf 268 Franken pro Monat (Mindestansatz, Kantone können mehr festlegen)",
-   "last_verified_at": "2026-08-12",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -1678,8 +1674,8 @@
    },
    "source_url": "https://www.ahv-iv.ch",
    "source_snippet": "Merkblatt 6.09 - Familienzulagen in der Landwirtschaft (FamZ, FLG)",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "geburts-adoptionszulagen-kantonal",
@@ -1734,8 +1730,8 @@
    },
    "source_url": "https://www.ahv-iv.ch",
    "source_snippet": "Einige Kantone kennen zusätzlich einmalige Geburts- oder Adoptionszulagen aus der Familienausgleichskasse",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "alimentenbevorschussung",
@@ -1814,7 +1810,7 @@
    },
    "source_url": "https://www.zh.ch/de/familie/eltern-in-trennung/alimentenhilfe/alimentenbevorschussung-beantragen.html",
    "source_snippet": "Bevorschusst werden Unterhaltsbeiträge gemäss dem Urteil oder dem Vertrag. Die maximale Höhe des Vorschusses ist die einer einfachen Waisen- und Kinderrente (gegenwärtig 1008 Franken pro Monat).",
-   "last_verified_at": "2026-08-12",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified",
    "income_reviewed_at": "2026-08-13"
   },
@@ -1944,8 +1940,8 @@
    },
    "source_url": "https://www.bag.admin.ch",
    "source_snippet": "Die obligatorische Krankenpflegeversicherung deckt die Kosten für die Behandlung bei Krankheit, Mutterschaft und Unfall für alle in der Schweiz wohnhaften Personen",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "sozialhilfe",
@@ -2047,9 +2043,9 @@
    "amount_max": null,
    "amount_currency": "CHF",
    "amount_period": "monthly",
-   "amount_note": "Reduced-rate social assistance for asylum seekers, temporarily admitted persons and protection status S during the first years of residence; administered by cantons with federal funding.",
+   "amount_note": "Social assistance for asylum seekers is paid by cantons at cantonal rates; the federal government reimburses cantons via lump sums (Globalpauschale 1a for asylum seekers; 1b for provisionally admitted persons in Switzerland <7 years and protection status S without residence permit). Recognised refugees (Globalpauschale 2) are entitled to equal treatment with the resident population. Rates differ by canton; the exact monthly amounts are not published on the SEM page.",
    "is_automatic": true,
-   "application_url": "https://www.sem.admin.ch",
+   "application_url": "https://www.sem.admin.ch/sem/de/home/asyl/sozialhilfesubventionen/bundessubventionen.html",
    "application_channel": "automatic",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -2081,10 +2077,10 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.sem.admin.ch",
-   "source_snippet": "Asylsuchende, vorläufig Aufgenommene und Schutzbedürftige erhalten Sozialhilfe im Asylbereich nach den kantonalen Ansätzen",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www.sem.admin.ch/sem/de/home/asyl/sozialhilfesubventionen/bundessubventionen.html",
+   "source_snippet": "Der Bund erstattet den Kantonen die Sozialhilfekosten für alle Asylsuchenden mittels der Globalpauschale 1a.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "wohneigentumsfoerderung-kantonal",
@@ -2167,12 +2163,12 @@
    "amount_max": null,
    "amount_currency": "CHF",
    "amount_period": "monthly",
-   "amount_note": "Municipal and cooperatively subsidised flats let below market rent to eligible households; income limits apply and applications run via the city's housing register.",
+   "amount_note": "Subsidised flats (for people with little money) and cost-rent 'freitragende' flats let by the City of Zurich at cost rent (no profit). Income limits apply (see income_note); applicants must live in Canton Zurich at least 2 years before the tenancy starts; no waiting list - vacant flats are advertised on the E-Vermietung platform and a random generator decides who may view.",
    "is_automatic": false,
-   "application_url": "https://www.stadt-zuerich.ch",
+   "application_url": "https://www.stadt-zuerich.ch/de/lebenslagen/wohnen/freie-wohnungen.html",
    "application_channel": "online",
    "deadline_type": "rolling",
-   "deadline_note": null,
+   "deadline_note": "No waiting list; apply for advertised flats via E-Vermietung (flats also published weekly in the Tagblatt). A random generator decides who may view; only people who viewed can apply.",
    "procedure_steps": [
     {
      "step": 1,
@@ -2201,11 +2197,11 @@
     "statuses": [],
     "age_min": null,
     "age_max": null,
-    "income_annual_max": 58500,
-    "income_note": "Subsidised flats: taxable household income ceiling (canton ZH Wohnbauförderung framework) 1 person CHF 49'600 / 2+ persons CHF 58'500 (2020 values, indexed annually per 1 July); taxable wealth max CHF 200'000; min. 2 years' residence in canton Zürich.",
+    "income_annual_max": 62600,
+    "income_note": "Subsidised flats, taxable household income at move-in: 1 person CHF 53,100; 2+ persons CHF 62,600 (from 4 years after move-in: CHF 59,400 / CHF 71,100). One twentieth of taxable wealth above CHF 100,000 is added to income; taxable wealth max CHF 200,000. Figure shown = limit for households of 2+ persons at move-in. Cost-rent (freitragende) flats: income max 4x gross annual rent at start, and during tenancy not above both CHF 70,000 and 6x annual rent.",
     "requires_children": false,
-    "nationality": "any_resident",
-    "residency_months_min": null,
+    "nationality": "citizen_or_pr",
+    "residency_months_min": 24,
     "housing_tenure": "renting",
     "student_required": false,
     "admin_areas": [
@@ -2213,10 +2209,10 @@
     ],
     "gender": "any"
    },
-   "source_url": "https://www.stadt-zuerich.ch",
-   "source_snippet": "Die Stadt Zürich und gemeinnützige Wohnbauträger vermieten kostengünstige Wohnungen an Haushalte mit beschränktem Einkommen",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www.stadt-zuerich.ch/de/lebenslagen/wohnen/mietbedingungen.html",
+   "source_snippet": "Mietende von geförderten Wohnungen brauchen die Schweizer Staatsbürgerschaft. Oder sie benötigen einen Ausweis B, Ausweis C oder Ausweis S.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "das-gebaeudeprogramm",
@@ -2231,9 +2227,9 @@
    "amount_max": null,
    "amount_currency": "CHF",
    "amount_period": "one_off",
-   "amount_note": "Subsidies for energy-efficient renovation: insulation of the building envelope, replacement of fossil heating with heat pumps/district heating/wood, and other efficiency measures; cantonal application offices, funded from the CO2 levy.",
+   "amount_note": "Subsidies for energy-efficient renovation and renewable heating; support measures and amounts vary by canton - check with your canton's energy advisory office before starting. Funded by one third of the CO2 levy proceeds.",
    "is_automatic": false,
-   "application_url": "https://www.bfe.admin.ch",
+   "application_url": "https://www.dasgebaeudeprogramm.ch/de/",
    "application_channel": "online",
    "deadline_type": "rolling",
    "deadline_note": "Apply BEFORE starting the renovation works (cantonal rule)",
@@ -2290,9 +2286,9 @@
     ],
     "gender": "any"
    },
-   "source_url": "https://www.bfe.admin.ch",
-   "source_snippet": "Das Gebäudeprogramm fördert die energetische Gebäudesanierung - Wärmedämmung der Gebäudehülle und Ersatz fossiler Heizungen - finanziert aus der CO2-Abgabe",
-   "last_verified_at": "2026-08-12",
+   "source_url": "https://www.dasgebaeudeprogramm.ch/de/",
+   "source_snippet": "Beantragen Sie die Fördergelder, sobald das Konzept steht – auf jeden Fall vor Baubeginn.",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -2428,13 +2424,13 @@
    "funder": "BAFU / Krankenversicherer",
    "category": "energy",
    "benefit_type": "discount",
-   "amount_min": null,
-   "amount_max": null,
+   "amount_min": 61.8,
+   "amount_max": 61.8,
    "amount_currency": "CHF",
    "amount_period": "annual",
-   "amount_note": "Two thirds of the CO2 levy on fuels is redistributed equally to all residents as an automatic deduction on the health insurance premium bill (amount varies by year, recently around CHF 80-90 per person).",
+   "amount_note": "CHF 61.80 per insured person for 2026 (combined CO2 and VOC levy redistribution; 2025: CHF 61.80; 2024: CHF 64.20). Paid out via health insurers, offset against the premium bill; same amount for every insured resident regardless of energy use.",
    "is_automatic": true,
-   "application_url": "https://www.bafu.admin.ch",
+   "application_url": "https://www.bafu.admin.ch/de/co2-abgabe-private",
    "application_channel": "automatic",
    "deadline_type": "none",
    "deadline_note": null,
@@ -2460,10 +2456,10 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.bafu.admin.ch",
-   "source_snippet": "Zwei Drittel der Einnahmen aus der CO2-Abgabe werden über die Krankenkassen an die Bevölkerung zurückerstattet",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www.bafu.admin.ch/de/co2-abgabe-private",
+   "source_snippet": "werden gleichmässig an alle in der Schweiz wohnhaften Personen, die nach dem Bundesgesetz über die Krankenversicherung (KVG) versichert sind, zurückverteilt",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "stipendien-darlehen-kantonal",
@@ -2480,7 +2476,7 @@
    "amount_period": "annual",
    "amount_note": "Income-tested grants (Stipendien, non-repayable) and interest-free loans (Darlehen) for upper-secondary and tertiary education; computed from training and living costs minus own/parental means. In Zurich, apply by 31 July (autumn) / 31 January (spring) for full entitlement.",
    "is_automatic": false,
-   "application_url": "https://www.zh.ch/de/bildung/berufs-studien-laufbahnberatung/ausbildungsbeitraege.html",
+   "application_url": "https://www.services.zh.ch/app/Stipendien/",
    "application_channel": "online",
    "deadline_type": "annual",
    "deadline_note": "E.g. Zurich: 31 July for autumn semester, 31 January for spring semester; late applications reduced",
@@ -2525,9 +2521,9 @@
     "age_min": null,
     "age_max": 45,
     "income_annual_max": null,
-    "income_note": "Income-tested via the deficit principle (Fehlbetragsdeckung): stipend = recognised education/living costs minus own and parents' expected contribution; cantons publish no single income ceiling. Parental income/wealth scales, cost budgets and loan shares vary by canton (EDK model law as reference).",
+    "income_note": "Income-tested via a double deficit model (family budget and personal budget); Zurich states there is no general income limit for the applicant or parents. Foreign nationals qualify only with a settlement permit (C), 5 years of a residence permit, EU/EFTA citizenship (treaty equal treatment), or as recognised refugee/stateless person assigned to the canton - non-EU students on a student permit do not qualify. Age: stipends under 25, stipend or loan 25-34, loans 35-44; no contributions above 45. Other cantons differ.",
     "requires_children": false,
-    "nationality": "any_resident",
+    "nationality": "citizen_or_pr",
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": true,
@@ -2544,9 +2540,9 @@
     ],
     "gender": "any"
    },
-   "source_url": "https://www.zh.ch/de/bildung/berufs-studien-laufbahnberatung/ausbildungsbeitraege.html",
-   "source_snippet": "Stipendienrechtlicher Wohnsitz im Kanton Zürich; finanzielle Verhältnisse reichen nicht aus, um die Ausbildungs- und Lebenshaltungskosten zu finanzieren",
-   "last_verified_at": "2026-08-12",
+   "source_url": "https://www.zh.ch/de/bildung/berufs-studien-laufbahnberatung/ausbildungsbeitraege/voraussetzungen-fuer-ausbildungsbeitraege.html",
+   "source_snippet": "Personen, die über eine Niederlassungsbewilligung in der Schweiz verfügen. Personen, die seit fünf Jahren über eine Aufenthaltsbewilligung in der Schweiz verfügen.",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -2599,9 +2595,9 @@
     "age_min": null,
     "age_max": 60,
     "income_annual_max": null,
-    "income_note": "Income-tested via deficit principle against the city's published cost budgets; no single income ceiling - entitlement ends when family income covers the recognised budget.",
+    "income_note": "Income-tested via the deficit principle; no single income ceiling. Under-45s must first apply to the canton (the city can convert a cantonal loan into a stipend); eligibility therefore follows cantonal nationality rules (C permit, 5-year B permit, EU/EFTA, refugees/stateless). Persons with an F permit (without refugee status) or protection status S in Switzerland <5 years apply directly to the city.",
     "requires_children": false,
-    "nationality": "any_resident",
+    "nationality": "citizen_or_pr",
     "residency_months_min": 24,
     "housing_tenure": null,
     "student_required": true,
@@ -2611,8 +2607,8 @@
     "gender": "any"
    },
    "source_url": "https://www.stadt-zuerich.ch/de/bildung/berufsberatung-laufbahnberatung/stipendien/ausbildungsstipendien.html",
-   "source_snippet": "Volljährige Personen erhalten Zusatzbeiträge für Wohnen/Leben in der Stadt Zürich: von 18 bis 24 Jahren: 100 Franken pro Monat; ab 25 Jahren: 150 Franken pro Monat",
-   "last_verified_at": "2026-08-12",
+   "source_snippet": "Sie können Ausbildungsstipendien der Stadt Zürich erhalten, wenn Sie seit mindestens 2 Jahren ununterbrochen in der Stadt Zürich wohnen (zivilrechtlicher Wohnsitz).",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -2630,10 +2626,10 @@
    "amount_period": "annual",
    "amount_note": "Means-tested cantonal grants and loans for Vaud-resident students in post-compulsory education; parental income considered for young students.",
    "is_automatic": false,
-   "application_url": "https://www.vd.ch",
+   "application_url": "https://www.vd.ch/prestation/demander-une-bourse-ou-un-pret-detudes-ou-dapprentissage",
    "application_channel": "online",
    "deadline_type": "annual",
-   "deadline_note": "Annual application before the start of the academic year (cantonal deadline)",
+   "deadline_note": "Applications possible at any time, but for aid covering the full year file by the last day of the month of the academic start: 31 August (gymnase, apprenticeship, ES, SEMO) or 30 September (EPFL, universities, HES). Filing during the year: aid from the 1st of the following month; none if filed <3 months before year end. Online applications for 2026-27 opened 1 April 2026.",
    "procedure_steps": [
     {
      "step": 1,
@@ -2671,10 +2667,10 @@
     ],
     "gender": "any"
    },
-   "source_url": "https://www.vd.ch",
-   "source_snippet": "Le canton de Vaud octroie des bourses et prêts d'études selon la situation financière de la famille",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www.vd.ch/formation/aides-financieres-aux-etudes-et-a-la-formation-professionnelle-bourses-ou-prets/informations-principales",
+   "source_snippet": "Si votre situation financière ou celle de vos parents ne suffit pas à financer votre formation après l’école obligatoire, vous pouvez demander, sous certaines conditions, une aide financière auprès de l’Office cantonal des bourses d’études et d’apprentissage (OCBE).",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "bourses-geneve",
@@ -2686,15 +2682,15 @@
    "category": "education",
    "benefit_type": "cash_one_off",
    "amount_min": null,
-   "amount_max": null,
+   "amount_max": 16740,
    "amount_currency": "CHF",
    "amount_period": "annual",
-   "amount_note": "Means-tested cantonal scholarships for Geneva-resident students in secondary II and tertiary education.",
+   "amount_note": "Up to CHF 12,550 per year for upper-secondary (secondaire II) studies and up to CHF 16,740 per year for tertiary studies; career-change grants up to CHF 41,830 per year. Ceilings increase by CHF 4,000 per dependent child. Mostly grants (not repaid); loans in some cases.",
    "is_automatic": false,
-   "application_url": "https://www.ge.ch",
+   "application_url": "https://www.ge.ch/obtenir-bourse-pret-etudes-apprentissage",
    "application_channel": "online",
    "deadline_type": "annual",
-   "deadline_note": null,
+   "deadline_note": "Apply no later than 6 months after the start of the school/academic year; applications can be filed from May before the start.",
    "procedure_steps": [
     {
      "step": 1,
@@ -2718,12 +2714,12 @@
     "statuses": [
      "student"
     ],
-    "age_min": null,
+    "age_min": 15,
     "age_max": null,
     "income_annual_max": null,
-    "income_note": "Means-tested (deficit principle) per cantonal barème; household and parental income/fortune determine the grant; no single income ceiling.",
+    "income_note": "Means-tested: parents' and own income insufficient. Eligible if parents live (or pay tax as cross-border workers) in Geneva, or you live in Geneva with C permit or EU B permit, or non-EU B permit with >5 years in Switzerland (if parents abroad), or recognised refugee/stateless assigned to Geneva. Students on a study permit (permis B formation) are excluded unless parents are cross-border workers.",
     "requires_children": false,
-    "nationality": "any_resident",
+    "nationality": "citizen_or_pr",
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": true,
@@ -2732,10 +2728,10 @@
     ],
     "gender": "any"
    },
-   "source_url": "https://www.ge.ch",
-   "source_snippet": "Le canton de Genève attribue des bourses d'études en fonction des ressources financières",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www.ge.ch/obtenir-bourse-pret-etudes-apprentissage",
+   "source_snippet": "Les personnes séjournant en Suisse pour leurs études (permis B formation) n'ont pas droit aux aides financières du Service des bourses et prêts d’étude (SBPE) du canton de Genève.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "ausbildungsbeitraege-basel-stadt",
@@ -2752,7 +2748,7 @@
    "amount_period": "annual",
    "amount_note": "Cantonal scholarships and loans for Basel-Stadt residents in upper-secondary and tertiary education; means-tested with parental contribution for younger students.",
    "is_automatic": false,
-   "application_url": "https://www.bs.ch",
+   "application_url": "https://www.bs.ch/themen/finanzielle-hilfe/leistungen/stipendien",
    "application_channel": "online",
    "deadline_type": "annual",
    "deadline_note": null,
@@ -2793,10 +2789,10 @@
     ],
     "gender": "any"
    },
-   "source_url": "https://www.bs.ch",
-   "source_snippet": "Das Amt für Ausbildungsbeiträge gewährt Stipendien und Darlehen für anerkannte Ausbildungen bei ungenügenden finanziellen Mitteln",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www.bs.ch/themen/finanzielle-hilfe/leistungen/stipendien",
+   "source_snippet": "Habe ich Anspruch auf Stipendien? Ihre Eltern im Kanton Basel-Stadt leben oder Sie während längerer Zeit im Kanton Basel-Stadt gelebt haben oder Sie dem Kanton Basel-Stadt zugeteilt worden sind, als Flüchtling oder als vorläufig aufgenommene Person.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "stipendien-bern",
@@ -2813,10 +2809,10 @@
    "amount_period": "annual",
    "amount_note": "Means-tested cantonal grants/loans for Bern-resident students; apply each academic year via the canton's online portal.",
    "is_automatic": false,
-   "application_url": "https://www.be.ch",
+   "application_url": "https://www.bkd.be.ch/de/start/dienstleistungen/foerderung-und-unterstuetzung/ausbildungsbeitraege/stipendien.html",
    "application_channel": "online",
    "deadline_type": "annual",
-   "deadline_note": null,
+   "deadline_note": "Deadlines: 30 June for academic years starting in the first half of the year; 31 December for years starting in the second half. Reapply every year via the online portal.",
    "procedure_steps": [
     {
      "step": 1,
@@ -2841,11 +2837,11 @@
      "student"
     ],
     "age_min": null,
-    "age_max": null,
+    "age_max": 35,
     "income_annual_max": null,
-    "income_note": "Means-tested via Fehlbetragsdeckungsprinzip (deficit principle); Bern has no partial parent-independence rule - parental capacity is always counted; no single published income ceiling.",
+    "income_note": "Means-tested via the deficit principle; parental capacity always counted; no single income ceiling. Foreign students: C permit, or B permit with 5 years living in Switzerland at time of application in Bern, or recognised refugees/stateless assigned to Bern. After age 35 only in exceptional cases. No scholarship for a second university degree.",
     "requires_children": false,
-    "nationality": "any_resident",
+    "nationality": "citizen_or_pr",
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": true,
@@ -2854,10 +2850,10 @@
     ],
     "gender": "any"
    },
-   "source_url": "https://www.be.ch",
-   "source_snippet": "Der Kanton Bern gewährt Stipendien und Darlehen, wenn die Kosten einer Ausbildung nicht aus eigenen oder familiären Mitteln finanziert werden können",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www.bst.bkd.be.ch/en/start/themen/studium-campusleben/studienfinanzierung/stipendien-und-darlehen.html",
+   "source_snippet": "Foreign students can submit applications... if they have a C permit or B permit and have been living in Switzerland for five years at the time of the application in the canton of Bern.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "subventionierte-sprachkurse-integration",
@@ -3008,9 +3004,9 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.jugendundsport.ch/de/jugendsport-sportfoerderungsprogramm-des-bundes-fuer-kinder-und-jugendliche",
-   "source_snippet": "Der Bund unterstützt Vereine, nationale Sportverbände und Kantone bei ihrer Arbeit mit Kindern und Jugendlichen und in der Aus- und Weiterbildung",
-   "last_verified_at": "2026-08-12",
+   "source_url": "https://www.jugendundsport.ch/",
+   "source_snippet": "Das grösste Sportförderprogramm der Schweiz unterstützt Kurse und Lager finanziell, stellt Leihmaterial bereit und bietet bedürfnisgerechte Aus- und Weiterbildung.",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -3129,7 +3125,7 @@
    },
    "source_url": "https://www.sbb.ch/de/angebote/halbtax",
    "source_snippet": "Erwachsene ab 25 Jahre bekommen das erste Halbtax für 190 Franken und Jugendliche von 16 bis 24,99 Jahren für 120 Franken pro Jahr",
-   "last_verified_at": "2026-08-12",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -3145,9 +3141,9 @@
    "amount_max": null,
    "amount_currency": "CHF",
    "amount_period": "annual",
-   "amount_note": "Junior-Karte (about CHF 30/year): children 6-15.99 travel free when accompanied by a parent with a valid ticket. Mitnahmekarte: free travel with any accompanying person. Children under 6 always travel free.",
+   "amount_note": "Junior-Karte: CHF 30 per child (per parent couple) per year; the child aged 6 to 15.99 then travels free with a parent holding a valid ticket; third child's Junior-Karte is free. Kinder-Mitfahrkarte: CHF 30 per accompanying person and child for non-parent companions (e.g. grandparent). Children under 6 travel free; Kinder-Tageskarte CHF 19 (2nd class) / CHF 33 (1st class).",
    "is_automatic": false,
-   "application_url": "https://www.sbb.ch",
+   "application_url": "https://www.sbb.ch/de/angebote/junior-karte",
    "application_channel": "online",
    "deadline_type": "annual",
    "deadline_note": null,
@@ -3179,10 +3175,10 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.sbb.ch",
-   "source_snippet": "Mit der Junior-Karte reisen Kinder von 6 bis 15,99 Jahren gratis in Begleitung eines Elternteils im öffentlichen Verkehr",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www.sbb.ch/de/angebote/junior-karte",
+   "source_snippet": "Mit der Junior-Karte für 30 Franken reist ein Kind ab 6 Jahren bis vor dem 16. Geburtstag ein Jahr lang in Begleitung eines Elternteils mit gültigem Fahrausweis gratis durch die Schweiz.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "tageskarte-gemeinde",
@@ -3259,7 +3255,7 @@
    "amount_max": null,
    "amount_currency": "CHF",
    "amount_period": "annual",
-   "amount_note": "Annual pass giving free entry to 500+ museums across Switzerland; card also serves as SwissPass.",
+   "amount_note": "Annual pass with free entry to 500+ museums and castles across Switzerland. Prices: adult CHF 177 (CHF 147 with 30-year anniversary discount valid until 31.12.2026); 1 adult + 3 children CHF 212 (CHF 182); 2 adults + 3 children CHF 313 (CHF 283).",
    "is_automatic": false,
    "application_url": "https://www.museumspass.ch",
    "application_channel": "online",
@@ -3287,10 +3283,10 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.museumspass.ch",
-   "source_snippet": "Der Museumspass ermöglicht während eines Jahres den freien Eintritt in über 500 Museen in der ganzen Schweiz",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www.museumspass.ch/de/",
+   "source_snippet": "Der Schweizer Museumspass gewährt Ihnen ein Jahr lang kostenlosen Zugang zu über 500 Museen und Schlössern in der ganzen Schweiz.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "saeule-3a-steuerabzug",
@@ -3305,7 +3301,7 @@
    "amount_max": 7258,
    "amount_currency": "CHF",
    "amount_period": "annual",
-   "amount_note": "Payments into a tied pillar 3a account are deductible from taxable income up to CHF 7'258/year (2025/2026, with 2nd-pillar membership) or 20% of net earned income up to CHF 36'288 (without).",
+   "amount_note": "Contributions to a tied pillar 3a account are deductible from taxable income up to CHF 7,258 in 2026 (employees/people in a pension fund) or, for people without second-pillar membership, 20% of net earned income up to CHF 36,288 (2026).",
    "is_automatic": false,
    "application_url": "https://www.estv.admin.ch",
    "application_channel": "post",
@@ -3347,9 +3343,9 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.estv.admin.ch",
-   "source_snippet": "Steuerjahr 2025/2026: maximaler Abzug für Personen mit Vorsorgeeinrichtung CHF 7'258; ohne Vorsorgeeinrichtung 20% des Erwerbseinkommens, max. CHF 36'288",
-   "last_verified_at": "2026-08-12",
+   "source_url": "https://www.estv.admin.ch/dam/de/sd-web/oQ0wWcDmCJTS/2a-2026-de.pdf",
+   "source_snippet": "Höchstabzug von 7258 Fr. im Jahr",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -3362,10 +3358,10 @@
    "category": "tax",
    "benefit_type": "tax_credit",
    "amount_min": null,
-   "amount_max": 6700,
+   "amount_max": 6800,
    "amount_currency": "CHF",
    "amount_period": "annual",
-   "amount_note": "CHF 6'700 per child per year deducted from taxable income for the direct federal tax (since 2023); cantons have their own child deductions.",
+   "amount_note": "CHF 6,800 per child deducted from taxable income for the direct federal tax (same for tax years 2025, 2026 and 2027); plus a deduction of CHF 263 per child from the tax amount (2026; CHF 264 in 2027). Cantons have their own child deductions.",
    "is_automatic": true,
    "application_url": "https://www.estv.admin.ch",
    "application_channel": "automatic",
@@ -3393,10 +3389,10 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.estv.admin.ch",
-   "source_snippet": "Bei der direkten Bundessteuer können Eltern pro minderjähriges oder in Ausbildung befindliches Kind CHF 6'700 vom steuerbaren Einkommen abziehen",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www.estv.admin.ch/de/abzuege-ansaetze-tarife-direkte-bundessteuer",
+   "source_snippet": "Kinderabzug ( Art. 35 Abs. 1 Bst. a DBG ) 6'800 6'800 6'800",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "betreuungskostenabzug-dritte",
@@ -3411,7 +3407,7 @@
    "amount_max": 25800,
    "amount_currency": "CHF",
    "amount_period": "annual",
-   "amount_note": "Working parents can deduct documented third-party childcare costs (Kita, Tagesfamilie, Hort) up to CHF 25'800 per child per year from taxable income for the direct federal tax; cantonal limits differ (e.g. Zurich CHF 25'000).",
+   "amount_note": "Documented third-party childcare costs deductible up to CHF 25,800 per child per year for the direct federal tax (tax years 2025 and 2026; CHF 25,900 from 2027). Cantonal limits differ.",
    "is_automatic": false,
    "application_url": "https://www.estv.admin.ch",
    "application_channel": "post",
@@ -3449,9 +3445,9 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.estv.admin.ch",
-   "source_snippet": "Eltern können die nachgewiesenen Kosten für die Drittbetreuung ihrer Kinder bis zu CHF 25'800 pro Kind und Jahr vom steuerbaren Einkommen abziehen (Art. 33 Abs. 3 DBG)",
-   "last_verified_at": "2026-08-12",
+   "source_url": "https://www.estv.admin.ch/de/abzuege-ansaetze-tarife-direkte-bundessteuer",
+   "source_snippet": "Kinderdrittbetreuungskostenabzug ( Art. 33 Abs. 3 DBG ) pro Kind max. 25'900 25'800 25'800",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -3463,11 +3459,11 @@
    "funder": "Bund (DBG)",
    "category": "tax",
    "benefit_type": "tax_credit",
-   "amount_min": null,
-   "amount_max": 13500,
+   "amount_min": 8600,
+   "amount_max": 14100,
    "amount_currency": "CHF",
    "amount_period": "annual",
-   "amount_note": "Married couples where both partners work deduct 50% of the lower earned income, minimum CHF 8'100 and maximum CHF 13'500 per year, from taxable income for the direct federal tax.",
+   "amount_note": "Two-earner deduction for married couples (Art. 33 para. 2 DBG): minimum CHF 8,600 and maximum CHF 14,100 per year from taxable income, same for tax years 2025, 2026 and 2027.",
    "is_automatic": true,
    "application_url": "https://www.estv.admin.ch",
    "application_channel": "automatic",
@@ -3498,10 +3494,10 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.estv.admin.ch",
-   "source_snippet": "Bei Zweitverdienerehepaaren sind 50 Prozent des tieferen Erwerbseinkommens abzugsberechtigt, mindestens CHF 8'100, höchstens CHF 13'500 (Art. 33a DBG)",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www.estv.admin.ch/de/abzuege-ansaetze-tarife-direkte-bundessteuer",
+   "source_snippet": "Zweiverdienerabzug ( Art. 33 Abs. 2 DBG ) min. 8'600 max. 14'100",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "bvg-einkauf-steuerabzug",
@@ -3571,12 +3567,12 @@
    "amount_max": null,
    "amount_currency": "CHF",
    "amount_period": "one_off",
-   "amount_note": "Innosuisse funds science-based innovation projects between companies (especially SMEs) and research partners: it funds the research partner's costs while the implementation partner typically bears 40-60% of total project costs (min. 5% cash to the research partner).",
+   "amount_note": "Innosuisse funds the research partner's costs; the implementation partner (company/organisation active in Switzerland) bears 40-60% of total project costs and must pay at least 5% of total costs in cash to the research partner.",
    "is_automatic": false,
-   "application_url": "https://www.innosuisse.ch",
+   "application_url": "https://www.innosuisse.admin.ch/de/innovationsprojekte-mit-umsetzungspartner",
    "application_channel": "online",
    "deadline_type": "window",
-   "deadline_note": "Submission dates several times per year via the Innosuisse portal",
+   "deadline_note": "Submit at least six weeks before an Innovation Council meeting (decision in 6-8 weeks). Upcoming meetings per field, e.g. Engineering 21.10.26 / 25.11.26 / 27.01.27; ICT 21.10.26 / 18.11.26 / 03.02.27; Energy & Environment 30.10.26 / 27.11.26 / 22.01.27; Life Sciences 13.10.26 / 23.11.26 / 27.01.27; Social Sciences & Business Management 21.10.26 / 25.11.26 / 04.02.27.",
    "procedure_steps": [
     {
      "step": 1,
@@ -3622,9 +3618,9 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.sbfi.admin.ch/de/innosuisse-schweizerische-agentur-fuer-innovationsfoerderung",
-   "source_snippet": "Die Fördermittel gehen an die Forschungspartner, während die Umsetzungspartner in der Regel 50 Prozent der Projektkosten tragen",
-   "last_verified_at": "2026-08-12",
+   "source_url": "https://www.innosuisse.admin.ch/de/innovationsprojekte-mit-umsetzungspartner",
+   "source_snippet": "Sie übernehmen die in Ihrem Unternehmen anfallenden Projektkosten im Umfang von 40–60% der Gesamtprojektkosten",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -3637,12 +3633,12 @@
    "category": "business",
    "benefit_type": "in_kind",
    "amount_min": null,
-   "amount_max": null,
+   "amount_max": 75000,
    "amount_currency": "CHF",
    "amount_period": "one_off",
-   "amount_note": "Free coaching, business training modules and internationalisation support (camps, trade fairs) for science-based Swiss start-ups with high market potential.",
+   "amount_note": "Coaching vouchers for coaching with Innosuisse-accredited coaches: Initial Coaching up to CHF 10,000 (12 months), Core Coaching up to CHF 50,000 (36 months), Scale-up Coaching up to CHF 75,000 (24 months). Separate Entrepreneurship Training and Start-ups GoGlobal offers exist.",
    "is_automatic": false,
-   "application_url": "https://www.innosuisse.ch",
+   "application_url": "https://www.innosuisse.admin.ch/de/start-up-coaching-fur-start-up",
    "application_channel": "online",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -3676,9 +3672,9 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.sbfi.admin.ch/de/innosuisse-schweizerische-agentur-fuer-innovationsfoerderung",
-   "source_snippet": "Innosuisse unterstützt angehende Unternehmerinnen und Unternehmer mit massgeschneiderten Ausbildungsmodulen und professionellem Coaching (Begleitung von Start-ups)",
-   "last_verified_at": "2026-08-12",
+   "source_url": "https://www.innosuisse.admin.ch/de/start-up-coaching-fur-start-up",
+   "source_snippet": "Mit dem Initial Coaching erhalten Sie einen Gutschein im Wert von maximal CHF 10 000 für Coaching-Sitzungen mit von Innosuisse akkreditierten Coaches über einen Zeitraum von bis zu zwölf Monaten.",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -3694,9 +3690,9 @@
    "amount_max": null,
    "amount_currency": "CHF",
    "amount_period": "one_off",
-   "amount_note": "Joint Innosuisse-SNSF programme funding researchers who want to develop research results into marketable products or services (Proof of Concept, Discovery instruments).",
+   "amount_note": "Joint Innosuisse-SNSF programme with two offers: BRIDGE Proof of Concept (young researchers, first research experience) and BRIDGE Discovery (experienced researchers working on basic and applied research). Funding amounts and call dates are set on bridge.ch and are not stated on the Innosuisse page.",
    "is_automatic": false,
-   "application_url": "https://www.innosuisse.ch",
+   "application_url": "https://www.innosuisse.admin.ch/de/projekte-bridge",
    "application_channel": "online",
    "deadline_type": "window",
    "deadline_note": null,
@@ -3730,10 +3726,10 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.sbfi.admin.ch/de/innosuisse-schweizerische-agentur-fuer-innovationsfoerderung",
-   "source_snippet": "BRIDGE-Projekte (Unterstützung von Forschenden, welche Forschungsresultate umsetzen wollen)",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www.innosuisse.admin.ch/de/projekte-bridge",
+   "source_snippet": "BRIDGE Proof of Concept unterstützt junge Forschende gezielt dabei, ihre erzielten wissenschaftlichen Resultate in eine Anwendung umzusetzen und dabei den Schritt in die Wirtschaftspraxis zu wagen.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "innovationsscheck-innosuisse",
@@ -3748,12 +3744,12 @@
    "amount_max": 15000,
    "amount_currency": "CHF",
    "amount_period": "one_off",
-   "amount_note": "Low-threshold voucher of up to CHF 15'000 for a first feasibility study with a Swiss research institution, open to companies and other organisations.",
+   "amount_note": "Voucher covering 100% of the research partner's costs up to CHF 15,000 for a feasibility/preliminary study. For SMEs, start-ups and other organisations with fewer than 250 full-time equivalents and a Swiss seat (UID number) that already have a Swiss research partner; no cheque received in the last two years.",
    "is_automatic": false,
-   "application_url": "https://www.innosuisse.ch",
+   "application_url": "https://www.innosuisse.admin.ch/de/innovationsscheck",
    "application_channel": "online",
    "deadline_type": "rolling",
-   "deadline_note": null,
+   "deadline_note": "Applications possible at any time; decision in 4-6 weeks; the preliminary study must be completed within 6 months.",
    "procedure_steps": [
     {
      "step": 1,
@@ -3789,10 +3785,10 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.sbfi.admin.ch/de/innosuisse-schweizerische-agentur-fuer-innovationsfoerderung",
-   "source_snippet": "Innovationscheck (Vorstudie zum Test einer Idee)",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www.innosuisse.admin.ch/de/innovationsscheck",
+   "source_snippet": "Innosuisse finanziert 100 % der Kosten des Forschungspartners bis zu 15 000 Schweizer Franken.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "venture-kick",
@@ -3807,7 +3803,7 @@
    "amount_max": 150000,
    "amount_currency": "CHF",
    "amount_period": "one_off",
-   "amount_note": "Philanthropic pre-seed funding of up to CHF 150'000 in three stages (Kick 1: 10'000, Kick 2: 40'000, Kick 3: 100'000) plus coaching for Swiss university spin-off start-ups.",
+   "amount_note": "Philanthropic three-stage funding of up to CHF 150,000 for startups from Swiss universities, starting with a first kick of CHF 10,000. Winners can obtain a further CHF 850,000 in equity from Kickfund plus an InnoBooster grant of CHF 150,000 (up to CHF 1,150,000 in total), plus Kickers Camps and investor network.",
    "is_automatic": false,
    "application_url": "https://www.venturekick.ch",
    "application_channel": "online",
@@ -3853,10 +3849,10 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.venturekick.ch",
-   "source_snippet": "Venture Kick unterstützt Schweizer Hochschul-Spin-offs mit bis zu 150'000 Franken Starthilfe in drei Stufen",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www.venturekick.ch/",
+   "source_snippet": "Venture Kick is a philanthropic three-stage funding model designed to support Swiss startups with initial funding of up CHF 150,000 to kick-start their entrepreneurial success.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "neue-regionalpolitik-nrp",
@@ -3871,9 +3867,9 @@
    "amount_max": null,
    "amount_currency": "CHF",
    "amount_period": "one_off",
-   "amount_note": "Confederation and cantons co-finance projects strengthening the competitiveness and innovation of rural, mountain and border regions (loans and non-repayable contributions to projects via cantonal programmes).",
+   "amount_note": "Regional policy of the Confederation and cantons (multi-year programme 2024-2031): non-repayable contributions (a-fonds-perdu), loans and tax relief for initiatives, programmes and projects in mountain regions, the wider rural area and border regions. Financial aid is borne in principle half by the Confederation and half by the cantons. Amount is set per project.",
    "is_automatic": false,
-   "application_url": "https://www.seco.admin.ch",
+   "application_url": "https://regiosuisse.ch/programme/nrp/ueber-die-nrp",
    "application_channel": "in_person",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -3907,10 +3903,10 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.seco.admin.ch",
-   "source_snippet": "Mit der Neuen Regionalpolitik (NRP) unterstützen Bund und Kantone Projekte zur Stärkung der Wettbewerbsfähigkeit der Regionen",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://regiosuisse.ch/programme/nrp/ueber-die-nrp",
+   "source_snippet": "Über die NRP können A-fonds-perdu-Beiträge, Darlehen sowie Steuererleichterungen gewährt werden. Die Finanzhilfen werden von Bund und Kantonen grundsätzlich je zur Hälfte getragen (Äquivalenzleistung der Kantone).",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "direktzahlungen-landwirtschaft",
@@ -3925,9 +3921,9 @@
    "amount_max": null,
    "amount_currency": "CHF",
    "amount_period": "annual",
-   "amount_note": "Federal direct payments (over CHF 2 billion/year in total) to agricultural holdings for public services: food security, cultural landscape, biodiversity, animal welfare; per-farm amounts depend on area, livestock and programmes.",
+   "amount_note": "Federal direct payments (over CHF 2 billion/year in total) to agricultural holdings for public services: food security, cultural landscape, biodiversity, animal welfare; per-farm amounts depend on area, livestock and programmes. Conditions (BLW): manager not older than 65, farm of at least 0.20 standard labour units, ecological proof of performance (OeLN) and animal-welfare rules met; natural persons need civil-law residence in Switzerland.",
    "is_automatic": false,
-   "application_url": "https://www.blw.admin.ch",
+   "application_url": "https://www.blw.admin.ch/de/direktzahlungen-betriebe",
    "application_channel": "post",
    "deadline_type": "annual",
    "deadline_note": "Annual declaration to the cantonal agricultural office",
@@ -3955,7 +3951,7 @@
      "self_employed"
     ],
     "age_min": null,
-    "age_max": null,
+    "age_max": 65,
     "income_annual_max": null,
     "income_note": null,
     "requires_children": false,
@@ -3966,10 +3962,10 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.blw.admin.ch",
-   "source_snippet": "Mit Direktzahlungen entschädigt der Bund die Landwirtschaftsbetriebe für öffentlich gewollte Leistungen wie Versorgungssicherheit, Landschaftspflege und Tierwohl",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www.blw.admin.ch/de/direktzahlungen-betriebe",
+   "source_snippet": "Beitragsberechtigt sind Natürliche Personen mit zivilrechtlichem Wohnsitz in der Schweiz sowie die «bäuerliche» AG oder GmbH mit Sitz in der Schweiz. Die Bewirtschafter und Bewirtschafterinnen dürfen nicht älter als 65 Jahre sein.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "s-ge-exportfoerderung",
@@ -3984,17 +3980,17 @@
    "amount_max": null,
    "amount_currency": "CHF",
    "amount_period": "one_off",
-   "amount_note": "Mandated by the Confederation, S-GE offers SMEs export consulting, market analyses, trade fair participation and network access at subsidised conditions.",
+   "amount_note": "Switzerland Global Enterprise export consulting for companies based in Switzerland or Liechtenstein: international business strategy, market analysis, partner search, legal/tax/regulatory guidance and on-site support in 130+ markets. Fee or subsidy terms are not stated on the page; book a consultation.",
    "is_automatic": false,
-   "application_url": "https://www.s-ge.com",
+   "application_url": "https://www.s-ge.com/export/de/book-meeting",
    "application_channel": "online",
    "deadline_type": "rolling",
    "deadline_note": null,
    "procedure_steps": [
     {
      "step": 1,
-     "detail": "Contact S-GE for an initial consultation on your export project",
-     "url": "https://www.s-ge.com"
+     "detail": "Book a consultation with S-GE on your export project",
+     "url": "https://www.s-ge.com/export/de/book-meeting"
     }
    ],
    "documents_required": [],
@@ -4014,10 +4010,10 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.s-ge.com",
-   "source_snippet": "Switzerland Global Enterprise unterstützt Schweizer KMU im Auftrag des Bundes bei der Internationalisierung und Exportförderung",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www.s-ge.com/export/de/dienstleistungen/exportberatung",
+   "source_snippet": "Wir unterstützen Sie von der Strategieentwicklung und Marktanalyse über die Partnersuche bis hin zur rechtlichen Beratung und Unterstützung vor Ort.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "betreuungsgutscheine-zuerich",
@@ -4032,12 +4028,12 @@
    "amount_max": null,
    "amount_currency": "CHF",
    "amount_period": "monthly",
-   "amount_note": "Income-graded municipal subsidy for daycare (Kita) and day families: parents pay a sliding-scale share of costs; subsidy is paid to the provider. Canton/city framework agreements apply.",
+   "amount_note": "Subsidies for children aged 0-4 living in the City of Zurich in Kitas and day families with subsidised places. Two confirmations needed: confirmed subsidised care volume (SBU, via the online service 'Meine Kinder') and a contribution-factor confirmation (depends on income and assets). Subsidy is paid to the Kita, which charges a lower parental fee, and only while the child is actually cared for.",
    "is_automatic": false,
-   "application_url": "https://www.stadt-zuerich.ch",
+   "application_url": "https://www.stadt-zuerich.ch/de/lebenslagen/jugend-und-familie/fruehe-kindheit/familienergaenzende-kinderbetreuung/betreuungskosten-und-subventionen.html",
    "application_channel": "online",
    "deadline_type": "rolling",
-   "deadline_note": "Apply before the childcare start; reconfirm income annually",
+   "deadline_note": "Subsidy is paid only while the child is actually in care; reconfirm via the city's services as required",
    "procedure_steps": [
     {
      "step": 1,
@@ -4076,9 +4072,9 @@
     "income_source_url": "https://www.stadt-zuerich.ch/de/lebenslagen/jugend-und-familie/fruehe-kindheit/familienergaenzende-kinderbetreuung/betreuungskosten-und-subventionen.html",
     "income_confidence": "high"
    },
-   "source_url": "https://www.stadt-zuerich.ch",
-   "source_snippet": "Die Stadt Zürich subventioniert die familienergänzende Kinderbetreuung einkommensabhängig (subventionierte Kita-Plätze und Tagesfamilien)",
-   "last_verified_at": "2026-08-12",
+   "source_url": "https://www.stadt-zuerich.ch/de/lebenslagen/jugend-und-familie/fruehe-kindheit/familienergaenzende-kinderbetreuung/betreuungskosten-und-subventionen.html",
+   "source_snippet": "Mit dem Beitragsfaktor rechnen wir aus, wie viel Subventionen Sie bekommen. Das hängt davon ab, wie viel Sie verdienen und wie viel Vermögen Sie haben.",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified",
    "income_reviewed_at": "2026-08-13"
   },
@@ -4095,17 +4091,17 @@
    "amount_max": null,
    "amount_currency": "CHF",
    "amount_period": "monthly",
-   "amount_note": "Needs-based subsidies (Beiträge an die Kinderbetreuung) reduce Kita/day-family fees for families in the Canton of Bern; subsidy paid to the institution based on income.",
+   "amount_note": "Childcare vouchers (Betreuungsgutscheine) reduce fees in Kitas and day-family organisations admitted to the voucher system. Voucher value depends on income, assets and family size; it is deducted from the monthly invoice, not paid to parents. Each municipality decides whether to issue vouchers and may restrict the target group or number of vouchers.",
    "is_automatic": false,
-   "application_url": "https://www.be.ch",
+   "application_url": "https://be.kibon.ch/web/#/anmeldung",
    "application_channel": "online",
    "deadline_type": "rolling",
-   "deadline_note": null,
+   "deadline_note": "Apply via kiBon at your municipality (voucher office); voucher granted when care need is proven; check your municipality for restrictions",
    "procedure_steps": [
     {
      "step": 1,
-     "detail": "Apply at the municipality/cantonal portal for childcare subsidies with income proof",
-     "url": "https://www.be.ch"
+     "detail": "Register on kiBon and apply for childcare vouchers with your municipality of residence",
+     "url": "https://be.kibon.ch/web/#/anmeldung"
     }
    ],
    "documents_required": [
@@ -4136,10 +4132,10 @@
     ],
     "gender": "any"
    },
-   "source_url": "https://www.be.ch",
-   "source_snippet": "Der Kanton Bern gewährt bedürfnisabhängige Beiträge an die familienergänzende Kinderbetreuung",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www.fambe.sites.be.ch/familienthemen/kinderbetreuung/betreuungsgutscheine",
+   "source_snippet": "Die Gutscheinhöhe hängt vom Einkommen, dem Vermögen und der Familiengrösse ab.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "caritas-notlagenhilfe",
@@ -4154,9 +4150,9 @@
    "amount_max": null,
    "amount_currency": "CHF",
    "amount_period": "one_off",
-   "amount_note": "Charitable one-off or short-term financial assistance and debt counselling for people in emergency situations (e.g. health insurance premium arrears support in some cantons).",
+   "amount_note": "Caritas Einzelfallhilfe: one-off or short-term financial bridging aid for acute emergencies (e.g. rent arrears, health insurance premiums, unexpected bills, necessary costs for children, health or education), decided after a free, confidential consultation at the regional Caritas social counselling. Meant for people on low income, including those not (yet) receiving state support or whose residence situation restricts benefits. Does not replace long-term social assistance.",
    "is_automatic": false,
-   "application_url": "https://www.caritas.ch",
+   "application_url": "https://caritas-regio.ch/angebote/soziale-rechtliche-unterstuetzung/sozialberatung",
    "application_channel": "in_person",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -4188,10 +4184,10 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.caritas.ch",
-   "source_snippet": "Caritas Schweiz unterstützt Menschen in Notlagen mit finanzieller Hilfe, Beratung und regionalen Angeboten",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www.caritas.ch/de/fonds-fuer-einzelfallhilfe/",
+   "source_snippet": "Die Einzelfallhilfe der Caritas richtet sich an Menschen, die sich in einer akuten finanziellen Notlage befinden und kurzfristig Unterstützung benötigen.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "winterhilfe-schweiz",
@@ -4206,9 +4202,9 @@
    "amount_max": null,
    "amount_currency": "CHF",
    "amount_period": "one_off",
-   "amount_note": "Swiss charity providing grants to individuals and families in financial distress, usually channelled via professional social services; no direct legal entitlement.",
+   "amount_note": "Winterhilfe gives in-kind aid (clothing parcels, beds and mattresses, school starter sets, children's sport/music programmes) and pays urgent bills the health insurer does not cover (e.g. dental, glasses, deductibles). Applications go through the regional Winterhilfe organisation of your canton; every request is individually assessed and may be redirected to another body such as the social office.",
    "is_automatic": false,
-   "application_url": "https://www.winterhilfe.ch",
+   "application_url": "https://www.winterhilfe.ch/",
    "application_channel": "in_person",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -4240,10 +4236,10 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.winterhilfe.ch",
-   "source_snippet": "Die Schweizer Winterhilfe unterstützt notleidende Menschen in der Schweiz, in der Regel vermittelt durch Sozialdienste",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www.winterhilfe.ch/",
+   "source_snippet": "Die Angebote richten sich ausschliesslich an Menschen, die in der Schweiz leben und deren Einkommen sich am Existenzminimum bewegt.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "kulturlegi-bern",
@@ -4258,9 +4254,9 @@
    "amount_max": null,
    "amount_currency": "CHF",
    "amount_period": "annual",
-   "amount_note": "Personal discount card for people on tight budgets: discounts of at least 30% (often 50-70%) at ~700 offers in canton Bern and ~4'300 nationwide (culture, sport, education, health). First year free; renewal CHF 20 single / CHF 30 couples/families; free for under-18s.",
+   "amount_note": "Discounts from 30% at 700+ offers in canton Bern and many more across Switzerland. Free in the first year; renewal costs CHF 20 for the first adult of a family and CHF 10 for the second. Card is personal, valid one year, for adults and children from age 5.",
    "is_automatic": false,
-   "application_url": "https://www.kulturlegi.ch/kanton-bern/kulturlegi-beantragen/was-ist-die-kulturlegi",
+   "application_url": "https://www.kulturlegi.ch/kanton-bern/kulturlegi-beantragen/online-antrag",
    "application_channel": "online",
    "deadline_type": "annual",
    "deadline_note": "Card valid 1 year, renewable",
@@ -4287,8 +4283,8 @@
     "statuses": [],
     "age_min": null,
     "age_max": null,
-    "income_annual_max": 12624,
-    "income_note": "For people at or below subsistence level: recipients of social assistance, EL, stipends, high health-premium reduction or documented income at SKOS minimum (proxy: SKOS basic allowance single CHF 1'052/month = CHF 12'624/year, 2025).",
+    "income_annual_max": 40000,
+    "income_note": "Either proof of a qualifying benefit (social assistance or asylum aid, EL, health-premium reduction at least second-highest level, stipend, wage garnishment) or total income below the ceiling: CHF 40,000 single, CHF 45,000 single parent, CHF 50,000 couple, plus CHF 15,000 per further adult. Total income = taxable income plus 10% of taxable wealth above CHF 30,000 (single) / 50,000 (couple). Wealth must be below CHF 100,000 (single) / 200,000 (couple), +50,000 per child or further adult. Household income counts. Criteria changed 1 Feb 2025. Must live in a partner municipality.",
     "requires_children": false,
     "gender": "any",
     "nationality": "any_resident",
@@ -4299,9 +4295,9 @@
      "Bern"
     ]
    },
-   "source_url": "https://www.kulturlegi.ch/kanton-bern/kulturlegi-beantragen/was-ist-die-kulturlegi",
-   "source_snippet": "Mit der KulturLegi profitieren Sie von Vergünstigungen ab 30 Prozent bei über 700 Angeboten im Kanton Bern und vielen weiteren in der ganzen Schweiz.",
-   "last_verified_at": "2026-08-12",
+   "source_url": "https://www.kulturlegi.ch/kanton-bern/kulturlegi-beantragen/obergrenze",
+   "source_snippet": "Zu einer KulturLegi Bern berechtigt sind Sie, wenn Sie in einer Partnergemeinde wohnen und eine Unterstützungsleistung erhalten oder über ein geringes Einkommen verfügen.",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -4319,7 +4315,7 @@
    "amount_period": "annual",
    "amount_note": "Discount card for low-income residents of canton Zürich: discounts (typically 30-70%) at ~1'000 regional offers and nationwide KulturLegi partners (swimming pools, theatres, courses, Caritas-Markt). First year free; renewal CHF 20 / CHF 30 per couple/family.",
    "is_automatic": false,
-   "application_url": "https://www.kulturlegi.ch/zuerich/kulturlegi-beantragen/online-antrag",
+   "application_url": "https://www.kulturlegi.ch/zuerich/kulturlegi-beantragen/wie-und-wo-beantragen",
    "application_channel": "online",
    "deadline_type": "annual",
    "deadline_note": "Card valid 1 year, renewable",
@@ -4341,8 +4337,8 @@
     "statuses": [],
     "age_min": null,
     "age_max": null,
-    "income_annual_max": 12624,
-    "income_note": "Eligibility via benefit receipt (social assistance, asylum support, EL, stipend, high IPV, wage seizure) or low total income per last tax bill; joint household income counts for couples/families (proxy reference: SKOS subsistence level, single CHF 12'624/year basic allowance 2025).",
+    "income_annual_max": 40000,
+    "income_note": "Either proof of a qualifying benefit (social assistance or asylum aid, supplementary benefits to AHV/IV, stipend, wage garnishment) or low total income per last tax bill (or last annual salary statement if taxed at source). Ceilings on total income: CHF 40,000 single, CHF 45,000 single parent, CHF 50,000 married couple with two incomes, CHF 55,000 couple living together/married one income, plus CHF 15,000 per further adult. Total income = taxable income plus 10% of taxable wealth above CHF 30,000 (single) / 50,000 (couple). Wealth must be below CHF 100,000 (single) / 200,000 (couple), +50,000 per child/adult. Household income counts. Criteria changed 1 July 2024.",
     "requires_children": false,
     "gender": "any",
     "nationality": "any_resident",
@@ -4355,7 +4351,7 @@
    },
    "source_url": "https://www.kulturlegi.ch/zuerich/kulturlegi-beantragen/wer-ist-berechtigt",
    "source_snippet": "Zu einer KulturLegi Zürich berechtigt sind Sie, wenn Sie im Kanton wohnen und eine Unterstützungsleistung erhalten oder über ein geringes Einkommen verfügen.",
-   "last_verified_at": "2026-08-12",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -4373,7 +4369,7 @@
    "amount_period": "annual",
    "amount_note": "Discount card for people on tight budgets in the Basel region: 30-70% discounts on culture, sport, education and health offers; valid nationwide at all KulturLegi partners.",
    "is_automatic": false,
-   "application_url": "https://www.kulturlegi.ch",
+   "application_url": "https://www.kulturlegi.ch/beider-basel/kulturlegi-beantragen/wer-ist-berechtigt",
    "application_channel": "online",
    "deadline_type": "annual",
    "deadline_note": "Card valid 1 year, renewable",
@@ -4395,8 +4391,8 @@
     "statuses": [],
     "age_min": null,
     "age_max": null,
-    "income_annual_max": 12624,
-    "income_note": "For people receiving social assistance/EL/stipends/high premium reduction or with income at SKOS subsistence level (proxy: CHF 12'624/year single basic allowance, 2025).",
+    "income_annual_max": 49375,
+    "income_note": "Either proof of a qualifying benefit (social assistance, EL, stipend, premium reduction, wage garnishment, FamilienpassPlus) or low income assessed on the Basel-Stadt premium-reduction (IPV) limits: maximum net annual household income CHF 49,375 (1 person), 79,000 (2), 89,000 (3), 97,000 (4), 103,000 (5), 107,000 (6), 111,000 (7). Residence status plays no role.",
     "requires_children": false,
     "gender": "any",
     "nationality": "any_resident",
@@ -4408,10 +4404,10 @@
      "Basel-Landschaft"
     ]
    },
-   "source_url": "https://www.kulturlegi.ch",
-   "source_snippet": "KulturLegi eligibility per Caritas: people supported by social assistance, receiving EL, stipends or high premium reductions, or with income demonstrably at subsistence level.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www.kulturlegi.ch/beider-basel/kulturlegi-beantragen/wer-ist-berechtigt",
+   "source_snippet": "Berechtigt für die KulturLegi beider Basel sind Kinder ab 5 Jahren und Erwachsene, die im Kanton Basel-Stadt oder im Kanton Basel-Landschaft leben und ihren Lebensunterhalt nachweislich mit wenig Geld bestreiten. Dabei spielen Aufenthaltsstatus, Zusammensetzung des Haushaltes und Weltanschauung keine Rolle.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "kulturlegi-zentralschweiz",
@@ -4428,7 +4424,7 @@
    "amount_period": "annual",
    "amount_note": "Discount card (30-70%) for low-income households in Central Switzerland, valid at ~4'300 KulturLegi offers nationwide; first year generally free, small renewal fee for adults.",
    "is_automatic": false,
-   "application_url": "https://www.kulturlegi.ch",
+   "application_url": "https://www.kulturlegi.ch/zentralschweiz/legi-beantragen/online-antrag",
    "application_channel": "online",
    "deadline_type": "annual",
    "deadline_note": "Card valid 1 year, renewable",
@@ -4450,8 +4446,8 @@
     "statuses": [],
     "age_min": null,
     "age_max": null,
-    "income_annual_max": 12624,
-    "income_note": "Benefit-based or income at SKOS subsistence level (proxy: CHF 12'624/year single basic allowance, 2025).",
+    "income_annual_max": 42500,
+    "income_note": "Either proof of a qualifying benefit (social assistance, EL, stipend, wage garnishment, or at least nine more months at the debt-enforcement subsistence minimum) or household income below: CHF 42,500 single, CHF 60,500 couple, two-parent family CHF 71,500 (1 child) to 97,000 (5 children), single parent CHF 54,500 (1 child) to 82,500 (5 children). Wealth below CHF 37,500 (single) / 60,000 (couple). Source calculation sheet is labelled 2023.",
     "requires_children": false,
     "gender": "any",
     "nationality": "any_resident",
@@ -4467,10 +4463,10 @@
      "Zug"
     ]
    },
-   "source_url": "https://www.kulturlegi.ch",
-   "source_snippet": "Regional KulturLegi cards are issued by Caritas offices and are valid for all KulturLegi offers throughout Switzerland.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www.kulturlegi.ch/zentralschweiz/kulturlegi-beantragen/wer-ist-berechtigt",
+   "source_snippet": "Zu einer KulturLegi Zentralschweiz berechtigt sind Kinder ab 5 Jahren und Erwachsene aus den Kantonen LU, OW, NW, SZ, ZG und Uri, die eine Unterstützungsleistung erhalten oder über ein geringes Einkommen verfügen.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "subside-lamal-geneve",
@@ -4485,9 +4481,9 @@
    "amount_max": 348,
    "amount_currency": "CHF",
    "amount_period": "monthly",
-   "amount_note": "Subsidy paid directly to the insurer, reducing the LAMal basic premium. 2026 monthly amounts by income group: adults CHF 348 (group 1) down to CHF 55 (group 8); young adults 19-25 group 9: CHF 106; children group 9: CHF 67. Awarded automatically from tax data (RDU); newcomers and certain categories must apply to SAM by 31 Dec. Replaces the former 'chèques annuels santé (CAS)' scheme (abolished 2016).",
+   "amount_note": "Subsidy paid directly to the insurer, reducing the LAMal basic premium. 2026 monthly amounts by income group: adults CHF 348 (group 1) down to CHF 55 (group 8); young adults 19-25 group 9: CHF 106; children group 9: CHF 67. Awarded automatically from tax data (RDU); newcomers and certain categories must apply to SAM by 31 Dec. Replaces the former 'chèques annuels santé (CAS)' scheme (abolished 2016). Official 2026 scale for households with children (monthly subsidy by RDU bracket): single person + 1 child CHF 480 (RDU up to 51,000) down to CHF 67 (RDU 121,001-151,000); couple + 1 child CHF 828 down to CHF 67; each additional child adds amounts (4 children, couple: up to CHF 1,224).",
    "is_automatic": true,
-   "application_url": "https://www.ge.ch/informations-generales-subside-assurance-maladie",
+   "application_url": "https://www.ge.ch/demander-subside-assurance-maladie-2026",
    "application_channel": "automatic",
    "deadline_type": "annual",
    "deadline_note": "Automatic via tax data; manual applications (new residents, taxed-at-source etc.) due by 31 December",
@@ -4538,7 +4534,7 @@
    },
    "source_url": "https://www.ge.ch/informations-generales-subside-assurance-maladie",
    "source_snippet": "Le subside est en principe accordé automatiquement selon votre revenu. Il n'y a donc pas besoin d'en faire la demande.",
-   "last_verified_at": "2026-08-12",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -4556,10 +4552,10 @@
    "amount_period": "monthly",
    "amount_note": "Cantonal premium subsidy paid to the insurer for households whose 'reddito disponibile' falls below thresholds based on the LAPS existential need. Over 110'000 Ticino residents receive it; PC (EL) recipients and API/AFI beneficiaries receive it automatically, others must apply to IAS.",
    "is_automatic": false,
-   "application_url": "https://www.ti.ch/ias",
+   "application_url": "https://www4.ti.ch/dss/ias/prestazioni-e-contributi/scheda/p/s/dettaglio/riduzione-dei-premi-dellassicurazione-malattia-ripam/",
    "application_channel": "post",
    "deadline_type": "annual",
-   "deadline_note": "Annual application to IAS (unless granted automatically)",
+   "deadline_note": "Apply by 31 December of the year before the year concerned; a late application gives entitlement only from the following month. People receiving EL, AFI/API, social assistance or extraordinary unemployment benefits do not need to apply (handled automatically). Forms for 2027 are open.",
    "procedure_steps": [
     {
      "step": 1,
@@ -4600,9 +4596,9 @@
      "Ticino"
     ]
    },
-   "source_url": "https://www.ti.ch/ias",
-   "source_snippet": "Il sistema di sussidio ticinese supporta oltre 110'000 cittadini ticinesi (DSS Ticino via RSI); il fabbisogno esistenziale LAPS 2026 è fissato a 18'709 CHF annui per una persona sola.",
-   "last_verified_at": "2026-08-12",
+   "source_url": "https://www4.ti.ch/dss/ias/prestazioni-e-contributi/scheda/p/s/dettaglio/riduzione-dei-premi-dellassicurazione-malattia-ripam/",
+   "source_snippet": "È la riduzione del premio della cassa malati, più comunemente chiamata \"sussidio di cassa malati\". È un aiuto economico per il cittadino che il Cantone versa direttamente alla cassa malati.",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -4776,8 +4772,8 @@
     ]
    },
    "source_url": "https://www.ge.ch/pensions-alimentaires-impayees",
-   "source_snippet": "ont un revenu annuel déterminant inférieur à 125'000 francs si l'avance concerne un enfant",
-   "last_verified_at": "2026-08-12",
+   "source_snippet": "Le SCARPA verse des avances de pension aux personnes qui vivent à Genève depuis un an au moins, ont un revenu annuel déterminant inférieur à 125'000 francs si l'avance concerne un enfant",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -4793,17 +4789,17 @@
    "amount_max": null,
    "amount_currency": "CHF",
    "amount_period": "one_off",
-   "amount_note": "Geneva extends federal maternity compensation to 16 weeks (112 days) at 80% of insured income; cantonal top-up raises the daily cap to CHF 329.60 (federal cap CHF 220) and guarantees a minimum of CHF 62/day; weeks 15-16 paid entirely by the canton.",
+   "amount_note": "Geneva extends federal maternity compensation to 16 weeks (112 days) at 80% of insured income; cantonal top-up raises the daily cap to CHF 329.60 (federal cap CHF 220) and guarantees a minimum of CHF 69/day; weeks 15-16 paid entirely by the canton.",
    "is_automatic": false,
-   "application_url": "https://www.medisuisse.ch/fr/prestations/allocation-de-maternite-geneve/",
+   "application_url": "https://www.ge.ch/fonds-cantonal-compensation-assurance-maternite",
    "application_channel": "via_employer",
    "deadline_type": "rolling",
    "deadline_note": null,
    "procedure_steps": [
     {
      "step": 1,
-     "detail": "Apply via employer or the cantonal compensation fund (OCAS) as for the federal EO allowance",
-     "url": "https://www.medisuisse.ch/fr/prestations/allocation-de-maternite-geneve/"
+     "detail": "Ask the compensation fund of your employer (of your last employer if unemployed, or the AVS fund you are affiliated with if self-employed)",
+     "url": "https://www.ge.ch/fonds-cantonal-compensation-assurance-maternite"
     }
    ],
    "documents_required": [
@@ -4832,9 +4828,9 @@
      "Genève"
     ]
    },
-   "source_url": "https://www.medisuisse.ch/fr/prestations/allocation-de-maternite-geneve/",
-   "source_snippet": "la femme a droit à un congé de maternité de 16 semaines (112 jours) pendant lesquelles elle touche des allocations de maternité correspondant au 80 % du gain assuré",
-   "last_verified_at": "2026-08-12",
+   "source_url": "https://www.ge.ch/fonds-cantonal-compensation-assurance-maternite",
+   "source_snippet": "A Genève, le droit à un congé maternité payé est de 16 semaines. En Suisse, il est de 14 semaines. L'allocation maternité correspond au 80% du salaire LAA.",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -4890,7 +4886,7 @@
    },
    "source_url": "https://www.stadt-zuerich.ch/de/lebenslagen/unterstuetzung-und-beratung/finanzielle-unterstuetzung/alimente.html",
    "source_snippet": "Überbrückungshilfe wird bezahlt, solange die Vaterschafts- oder Unterhaltsregelung noch nicht geklärt ist. Sie kann längstens bis zum vollendeten vierten Altersjahr ausgerichtet werden.",
-   "last_verified_at": "2026-08-12",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -4906,12 +4902,12 @@
    "amount_max": 24000,
    "amount_currency": "CHF",
    "amount_period": "annual",
-   "amount_note": "Living-cost grants for students in recognised nursing programmes (Pflege HF/FH): CHF 24'000/year full-time (CHF 18'000 part-time) plus CHF 10'000/year per dependent child, minus AHV/IV pensions and EL; paid monthly. No entitlement above CHF 500'000 wealth.",
+   "amount_note": "Living-cost grants for recognised nursing studies (Pflege HF or FH Bachelor, full or part time; not part-time-while-working FH): CHF 24,000 per training year full time, CHF 18,000 part time, plus CHF 10,000 per year per child with care or maintenance duties; pensions and EL are deducted. Paid in monthly instalments. No entitlement above CHF 500,000 wealth; yearly amounts below CHF 500 are not paid. Training must have started from autumn semester 2024. Must live in Basel-Stadt or Basel-Landschaft at start of the year, and be 25+, or have completed an apprenticeship and been financially independent for 2 years, or have parental duties.",
    "is_automatic": false,
-   "application_url": "https://www.baselland.ch/politik-und-behorden/direktionen/volkswirtschafts-und-gesundheitsdirektion/amt-fur-gesundheit/stab/ausbildungsverpflichtung-pflege/individuelle-unterstuetzung-fuer-studierende-ausbildungsbeitraege",
+   "application_url": "https://www.bs-bl.ch/ausbildungsbeitraege-pflege",
    "application_channel": "online",
-   "deadline_type": "rolling",
-   "deadline_note": "Application before/during the training year",
+   "deadline_type": "window",
+   "deadline_note": "Online registration first, then application form by 30 April (spring-semester start) or 31 October (autumn-semester start); granted per training year, renewal application each year",
    "procedure_steps": [
     {
      "step": 1,
@@ -4932,7 +4928,9 @@
     }
    ],
    "eligibility": {
-    "statuses": [],
+    "statuses": [
+     "student"
+    ],
     "age_min": null,
     "age_max": null,
     "income_annual_max": null,
@@ -4949,8 +4947,8 @@
     ]
    },
    "source_url": "https://www.baselland.ch/politik-und-behorden/direktionen/volkswirtschafts-und-gesundheitsdirektion/amt-fur-gesundheit/stab/ausbildungsverpflichtung-pflege/individuelle-unterstuetzung-fuer-studierende-ausbildungsbeitraege",
-   "source_snippet": "Vollzeitausbildung: CHF 24'000 pro Jahr ... zusätzlich CHF 10'000 pro Jahr pro Kind ... Bei einem Vermögen von über CHF 500'000 besteht kein Anspruch auf Ausbildungsbeiträge.",
-   "last_verified_at": "2026-08-12",
+   "source_snippet": "Vollzeitausbildungen: 24'000 Franken pro Ausbildungsjahr. Teilzeitausbildungen: 18'000 Franken pro Ausbildungsjahr. 10'000 Franken pro Ausbildungsjahr für jedes Kind",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -4966,7 +4964,7 @@
    "amount_max": null,
    "amount_currency": "CHF",
    "amount_period": "monthly",
-   "amount_note": "Interest-free cantonal loans to non-profit developers create cost-rent flats roughly 20% below market rent. Tenants must meet income/wealth ceilings: taxable income max (2022, indexed annually per 1 July) CHF 51'000 (1 person) / CHF 60'200 (2+ persons) at entry, +~CHF 6'200-8'200 after 4 years; taxable wealth max CHF 200'000.",
+   "amount_note": "The canton grants interest-free loans to non-profit and other developers (cantonal and municipal loans raised from 20% to 25% as of 1 July 2026) so that flats are let at cost rent for people with low income and wealth. Tenants apply to the developer when a flat is advertised; family-size rule applies only to larger flats since 1 July 2026.",
    "is_automatic": false,
    "application_url": "https://www.zh.ch/de/soziales/wohnbaufoerderung.html",
    "application_channel": "in_person",
@@ -5000,8 +4998,8 @@
     "statuses": [],
     "age_min": null,
     "age_max": null,
-    "income_annual_max": 60200,
-    "income_note": "Taxable household income ceiling at entry: CHF 51'000 (1 person) / CHF 60'200 (2+ persons), 2022 values indexed annually (Landesindex, published per 1 July); higher limits apply after 4 years of tenancy; taxable wealth max CHF 200'000.",
+    "income_annual_max": 63000,
+    "income_note": "Taxable household income ceilings for tenants at move-in, valid 1 July 2026 to 30 June 2027 (taxable income 2025): category I flats CHF 53,400 (1 person) / CHF 63,000 (2+ persons); category II flats CHF 63,000 / CHF 74,700. After 4 years of tenancy: CHF 59,800 / 71,500 (cat. I) and CHF 71,500 / 83,200 (cat. II). Wealth ceilings also apply (Merkblatt 8/9). Indexed yearly, next update 1 Aug 2027. income_annual_max shows the category I ceiling for 2+ persons.",
     "requires_children": false,
     "gender": "any",
     "nationality": "any_resident",
@@ -5013,8 +5011,8 @@
     ]
    },
    "source_url": "https://www.zh.ch/de/soziales/wohnbaufoerderung.html",
-   "source_snippet": "Der Kanton Zürich fördert die Bereitstellung von preisgünstigen Mietwohnungen für Personen mit geringem Einkommen und Vermögen.",
-   "last_verified_at": "2026-08-12",
+   "source_snippet": "Personen, die eine geförderte Wohnung bewohnen möchten, müssen einige Anforderungen erfüllen. Unter anderem dürfen bei Einkommen und Vermögen gewisse Höchstwerte nicht überschritten werden",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -5032,7 +5030,7 @@
    "amount_period": "one_off",
    "amount_note": "Federally supported guarantee cooperatives guarantee SME bank loans up to CHF 1'000'000, easing access to credit for start-ups, investments and successions; the Confederation covers up to 65% of losses and part of administrative costs. SMEs pay an annual risk premium (~1.25%).",
    "is_automatic": false,
-   "application_url": "https://www.seco.admin.ch/seco/de/home/Standortfoerderung/KMU-Politik/Buergschaften_fuer_KMU.html",
+   "application_url": "https://kmu-buergschaften.ch/en/",
    "application_channel": "in_person",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -5076,9 +5074,9 @@
     "student_required": false,
     "admin_areas": []
    },
-   "source_url": "https://www.seco.admin.ch/seco/de/home/Standortfoerderung/KMU-Politik/Buergschaften_fuer_KMU.html",
-   "source_snippet": "Diese Genossenschaften bürgen für Kredite in Höhe von bis zu 1 Million Franken. Der Bund sichert ihr Verlustrisiko mit bis zu 65% ab.",
-   "last_verified_at": "2026-08-12",
+   "source_url": "https://www.seco.admin.ch/de/buergschaften-fuer-kmu",
+   "source_snippet": "Diese Genossenschaften bürgen für Kredite in Höhe von bis zu 1 Million Franken.",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -5096,7 +5094,7 @@
    "amount_period": "one_off",
    "amount_note": "Nationwide guarantee cooperative specifically for women entrepreneurs: guarantees bank loans up to CHF 1'000'000 for business foundings, takeovers and growth; part of the federally recognised SME guarantee system.",
    "is_automatic": false,
-   "application_url": "https://www.kmu-buergschaften.ch/en/",
+   "application_url": "https://kmu-buergschaften.ch/wp-content/uploads/saffa-buergschaftsantrag-de-1.pdf",
    "application_channel": "in_person",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -5135,9 +5133,9 @@
     "student_required": false,
     "admin_areas": []
    },
-   "source_url": "https://www.kmu-buergschaften.ch/en/",
-   "source_snippet": "BG SAFFA ... operates throughout Switzerland and focuses on women entrepreneurs.",
-   "last_verified_at": "2026-08-12",
+   "source_url": "https://kmu-buergschaften.ch/en/",
+   "source_snippet": "BG SAFFA, which operates throughout Switzerland and focuses on women entrepreneurs.",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -5207,7 +5205,7 @@
    },
    "source_url": "https://www.zh.ch/de/wirtschaft-arbeit/stellensuche-arbeitslosigkeit/beratung-vermittlung/beratung-zu-selbstaendigkeit.html",
    "source_snippet": "In der Planungsphase können Sie während maximal 18 Wochen (das entspricht 90 Taggeldern) Ihre Selbständigkeit vorbereiten.",
-   "last_verified_at": "2026-08-12",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -5225,7 +5223,7 @@
    "amount_period": "one_off",
    "amount_note": "Under the federal law on the improvement of agricultural structures (RKG), farmers obtain subsidised loans/contributions: start-up aid for young farmers, credits for farm buildings, processing/storage facilities, ecological installations and operating-aid loans; administered by cantons (e.g. Bernische Stiftung für Agrarkredite).",
    "is_automatic": false,
-   "application_url": "https://www.blw.admin.ch",
+   "application_url": "https://www.weu.be.ch/de/start/themen/landwirtschaft/hochbau-kredite/gesuch-kredite.html",
    "application_channel": "post",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -5266,7 +5264,7 @@
    },
    "source_url": "https://www.weu.be.ch/de/start/themen/landwirtschaft/hochbau-kredite/gesuch-kredite.html",
    "source_snippet": "Starthilfe für Jungbäuerinnen und Jungbauern ... Investitionshilfen für Neubauten, Sanierungen und Erweiterungen von Ökonomiegebäuden ... Betriebshilfe-Darlehen",
-   "last_verified_at": "2026-08-12",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -5318,7 +5316,7 @@
    },
    "source_url": "https://www.taxinfo.sv.fin.be.ch/taxinfo/e11abaa8-c657-4848-bedd-4f4d5a647c4d",
    "source_snippet": "Krankheits- und Unfallkosten sind nur abziehbar, soweit sie einen Selbstbehalt von 5% des Reineinkommens übersteigen.",
-   "last_verified_at": "2026-08-12",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -5334,7 +5332,7 @@
    "amount_max": null,
    "amount_currency": "CHF",
    "amount_period": "monthly",
-   "amount_note": "Rescues ~16-35 tonnes of surplus food daily and distributes it free to over 500 social institutions and distribution points in 12 regions (soup kitchens, shelters, food points); individuals receive food via these partner institutions, not directly.",
+   "amount_note": "Rescues about 30-35 tonnes of surplus food daily and distributes it free to over 500 social institutions and distribution points in 12 regions (soup kitchens, shelters, food points); individuals receive food via these partner institutions, not directly.",
    "is_automatic": true,
    "application_url": "https://schweizertafel.ch/",
    "application_channel": "in_person",
@@ -5369,8 +5367,8 @@
     "admin_areas": []
    },
    "source_url": "https://schweizertafel.ch/",
-   "source_snippet": "Die Schweizer Tafel rettet täglich einwandfreie Lebensmittel vor dem Abfall und verteilt sie an soziale Institutionen und Abgabestellen in der ganzen Schweiz.",
-   "last_verified_at": "2026-08-12",
+   "source_snippet": "Die Lebensmittel verteilen wir kostenlos an über 500 soziale Einrichtungen in der ganzen Schweiz.",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -5386,9 +5384,9 @@
    "amount_max": null,
    "amount_currency": "CHF",
    "amount_period": "monthly",
-   "amount_note": "Distributes donated food at weekly distribution points across Switzerland to people in financial hardship; access requires a customer card (max 1 year) issued by recognised social services after a means check. Card also grants first-time access to Caritas-Märkte.",
+   "amount_note": "Distributes donated food at weekly distribution points across Switzerland to people in financial hardship; access requires a customer card (max 1 year) issued by recognised social services after a means check. Card also grants first-time access to Caritas-Märkte. Customers pay a symbolic CHF 1 per weekly pick-up.",
    "is_automatic": false,
-   "application_url": "https://www.tischlein.ch/lebensmittel-beziehen/",
+   "application_url": "https://www.tischlein.ch/de/lebensmittel-erhalten",
    "application_channel": "in_person",
    "deadline_type": "annual",
    "deadline_note": "Customer card valid max 1 calendar year",
@@ -5425,9 +5423,9 @@
     "student_required": false,
     "admin_areas": []
    },
-   "source_url": "https://www.tischlein.ch/lebensmittel-beziehen/",
-   "source_snippet": "Die Kundenkarte wird ausschliesslich von privaten oder öffentlichen Sozialfachstellen ausgestellt. Diese prüfen die finanziellen Umstände der Betroffenen.",
-   "last_verified_at": "2026-08-12",
+   "source_url": "https://www.tischlein.ch/de/lebensmittel-erhalten",
+   "source_snippet": "Mit einer Tischlein deck dich-Kundenkarte kannst du jede Woche an deiner Tischlein deck dich-Abgabestelle Lebensmittel beziehen.",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -5473,7 +5471,7 @@
    },
    "source_url": "https://www.prosenectute.ch/de/dienstleistungen/beratung.html",
    "source_snippet": "Unsere Fachpersonen vor Ort beraten Sie kostenlos, vertraulich und kompetent zu Finanzen, Pensionierung, Gesundheit, Lebensgestaltung, persönlicher Vorsorge und Wohnen.",
-   "last_verified_at": "2026-08-12",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -5522,7 +5520,7 @@
     "income_note": "Counselling and immediate help regardless of financial situation; longer-term help, compensation and advances depend on the applicant's financial circumstances (income limits described as generous; no single published ceiling).",
     "requires_children": false,
     "gender": "any",
-    "nationality": "any_resident",
+    "nationality": "any",
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
@@ -5530,7 +5528,7 @@
    },
    "source_url": "https://www.zh.ch/de/sicherheit-justiz/opferhilfe.html",
    "source_snippet": "Anspruch auf Opferhilfe hat jede Person, die durch eine Straftat in ihrer körperlichen, psychischen oder sexuellen Gesundheit direkt und schwer beeinträchtigt worden ist.",
-   "last_verified_at": "2026-08-12",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -5546,12 +5544,12 @@
    "amount_max": 0,
    "amount_currency": "CHF",
    "amount_period": "one_off",
-   "amount_note": "Free HPV vaccination (Gardasil 9) for girls and boys / young women and men aged 11-26 resident in the canton, via school medical services and participating doctors; no deductible (franchise-free) when done within cantonal programmes.",
+   "amount_note": "Free HPV vaccination (Gardasil 9) for girls and boys / young women and men aged 11-26 resident in the canton, via school medical services and participating doctors; no deductible (franchise-free) when done within cantonal programmes. St. Gallen: cantonal programme runs until 31 Dec 2026; from 1 Jan 2027 Gardasil 9 enters the standard drug list.",
    "is_automatic": false,
    "application_url": "https://www.zh.ch/de/gesundheit/gesundheitsberufe/fachspezifische-informationen/medizin/impfprogramm-gegen-humane-papillomaviren.html",
    "application_channel": "in_person",
-   "deadline_type": "none",
-   "deadline_note": "First vaccination before the 27th birthday",
+   "deadline_type": "window",
+   "deadline_note": "First dose before the 27th birthday. Canton St. Gallen's programme ends on 31 December 2026 (vaccine moves to standard reimbursement from 1 January 2027); other cantons not re-verified.",
    "procedure_steps": [
     {
      "step": 1,
@@ -5597,7 +5595,7 @@
    },
    "source_url": "https://www.sg.ch/gesundheit-soziales/gesundheit/praevention---gesundheitsfoerderung/impfen/kantonales-hpv-impfprogramm.html",
    "source_snippet": "Im Rahmen des kantonalen HPV-Impfprogramms ist die Impfung für diese Personengruppe kostenlos.",
-   "last_verified_at": "2026-08-12",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   }
  ]

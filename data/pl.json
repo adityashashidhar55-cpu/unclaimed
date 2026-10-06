@@ -17,9 +17,9 @@
       "amount_max": 800,
       "amount_currency": "PLN",
       "amount_period": "monthly",
-      "amount_note": "800 zł miesięcznie na każde dziecko do 18. roku życia, bez kryterium dochodowego",
+      "amount_note": "800 zł miesięcznie na każde dziecko do 18. roku życia, bez kryterium dochodowego. Cudzoziemcy: muszą mieszkać w Polsce z dzieckiem, być aktywni zawodowo (podlegać ubezpieczeniom emerytalno-rentowym), a dziecko musi realizować obowiązek przedszkolny/szkolny/nauki.",
       "is_automatic": false,
-      "application_url": "https://www.gov.pl/web/rodzina/swiadczenie-wychowawcze-rodzina-800-plus",
+      "application_url": "https://www.gov.pl/web/gov/skorzystaj-z-programu-rodzina-500",
       "application_channel": "online",
       "deadline_type": "rolling",
       "deadline_note": null,
@@ -51,16 +51,16 @@
         "income_annual_max": null,
         "income_note": null,
         "requires_children": true,
-        "nationality": "any_resident",
+        "nationality": "citizen_or_pr",
         "residency_months_min": null,
         "housing_tenure": null,
         "student_required": false,
         "admin_areas": [],
         "gender": "any"
       },
-      "source_url": "https://www.gov.pl/web/rodzina/swiadczenie-wychowawcze-rodzina-800-plus",
+      "source_url": "https://www.gov.pl/web/gov/skorzystaj-z-programu-rodzina-500",
       "source_snippet": "Świadczenie wychowawcze w wysokości 800 zł miesięcznie przysługuje na każde dziecko do ukończenia 18. roku życia, bez względu na dochód osiągany przez rodzinę.",
-      "last_verified_at": "2026-08-12",
+      "last_verified_at": "2026-10-05",
       "verification_status": "verified"
     },
     {
@@ -78,10 +78,10 @@
       "amount_period": "annual",
       "amount_note": "300 zł raz w roku na każde uczące się dziecko (do 20. r.ż., z niepełnosprawnością do 24. r.ż.), bez kryterium dochodowego",
       "is_automatic": false,
-      "application_url": "https://www.gov.pl/web/rodzina/dobry-start",
+      "application_url": "https://www.zus.pl/swiadczenia/swiadczenia-dla-rodzin/program-dobry-start",
       "application_channel": "online",
       "deadline_type": "annual",
-      "deadline_note": "Wnioski online od 1 lipca do 30 listopada danego roku",
+      "deadline_note": "Wnioski można składać od 1 lipca do 30 listopada danego roku.",
       "procedure_steps": [
         {
           "step": 1,
@@ -117,9 +117,9 @@
         "admin_areas": [],
         "gender": "any"
       },
-      "source_url": "https://www.gov.pl/web/rodzina/dobry-start",
-      "source_snippet": "Dobry Start to 300 zł na wyprawkę szkolną dla uczniów, bez względu na dochód rodziny.",
-      "last_verified_at": "2026-08-12",
+      "source_url": "https://www.zus.pl/swiadczenia/swiadczenia-dla-rodzin/program-dobry-start",
+      "source_snippet": "Możesz raz w roku otrzymać 300 zł na wyprawkę szkolną dziecka, bez względu na dochód rodziny, jeśli jesteś rodzicem lub opiekunem ucznia w wieku do 20 lat, w wieku do 24 lat – w przypadku ucznia z niepełnosprawnością.",
+      "last_verified_at": "2026-10-05",
       "verification_status": "verified"
     },
     {
@@ -135,7 +135,7 @@
       "amount_max": 135,
       "amount_currency": "PLN",
       "amount_period": "monthly",
-      "amount_note": "95 zł (dziecko do 5 lat), 124 zł (5–18 lat), 135 zł (18–24 lata, uczące się) miesięcznie na dziecko",
+      "amount_note": "95 zł (do 5 lat), 124 zł (5-18 lat), 135 zł (18-24 lata) miesięcznie na dziecko",
       "is_automatic": false,
       "application_url": "https://www.gov.pl/web/rodzina/zasilek-rodzinny",
       "application_channel": "online",
@@ -172,7 +172,7 @@
         "age_min": null,
         "age_max": null,
         "income_annual_max": 32352,
-        "income_note": "Kryterium dochodowe 674 zł netto/os./msc (764 zł, gdy w rodzinie dziecko z orzeczeniem o niepełnosprawności) — okres zasiłkowy XI 2025–X 2026. Założenie: rodzina 4-os.: 674 × 12 × 4 = 32 352 zł/rok (z dzieckiem niepełnosprawnym 764 × 12 × 4 ≈ 36 672 zł). Powyżej progu działa zasada „złotówka za złotówkę”.",
+        "income_note": "Kryterium: 674 zł miesięcznie na osobę w rodzinie (764 zł gdy w rodzinie jest dziecko z orzeczeniem o niepełnosprawności). income_annual_max 32352 = 674 x 12 x 4 (rodzina 4-osobowa). Mechanizm złotówka za złotówkę przy przekroczeniu.",
         "requires_children": true,
         "nationality": "any_resident",
         "residency_months_min": null,
@@ -182,8 +182,8 @@
         "gender": "any"
       },
       "source_url": "https://www.gov.pl/web/rodzina/zasilek-rodzinny",
-      "source_snippet": "Zasiłki rodzinne 2025/2026 — kryterium 674 zł i 764 zł, kwoty 95/124/135 zł (okres XI 2025 – X 2026).",
-      "last_verified_at": "2026-08-12",
+      "source_snippet": "Zasiłek rodzinny przysługuje, jeżeli przeciętny miesięczny dochód rodziny w przeliczeniu na osobę albo dochód osoby uczącej się nie przekracza kwoty 674,00 zł.",
+      "last_verified_at": "2026-10-05",
       "verification_status": "verified"
     },
     {
@@ -236,8 +236,8 @@
         "gender": "any"
       },
       "source_url": "https://www.gov.pl/web/rodzina/zasilek-rodzinny",
-      "source_snippet": "Jednorazowy dodatek z tytułu narodzin dziecka wynosi 1000 zł i jest wypłacany jednorazowo na każde urodzone lub przysposobione dziecko.",
-      "last_verified_at": "2026-08-12",
+      "source_snippet": "Dodatek do zasiłku rodzinnego z tytułu urodzenia dziecka przysługuje jednorazowo w wysokości 1000 zł.",
+      "last_verified_at": "2026-10-05",
       "verification_status": "verified"
     },
     {
@@ -258,7 +258,7 @@
       "application_url": "https://www.gov.pl/web/rodzina/jednorazowa-zapomoga-z-tytulu-urodzenia-sie-dziecka",
       "application_channel": "in_person",
       "deadline_type": "rolling",
-      "deadline_note": "Wniosek w ciągu 12 miesięcy od narodzin dziecka",
+      "deadline_note": "Wniosek o wypłatę należy złożyć w terminie 12 miesięcy od dnia narodzin dziecka.",
       "procedure_steps": [
         {
           "step": 1,
@@ -280,7 +280,7 @@
         "age_min": null,
         "age_max": null,
         "income_annual_max": 92256,
-        "income_note": "Kryterium 1922 zł netto/os./msc. Założenie rodziny 4-os.: 1922 × 12 × 4 = 92 256 zł/rok.",
+        "income_note": "Dochód rodziny do 1922 zł netto na osobę. income_annual_max 92256 = 1922 x 12 x 4 (rodzina 4-osobowa).",
         "requires_children": true,
         "nationality": "any_resident",
         "residency_months_min": null,
@@ -290,8 +290,8 @@
         "gender": "any"
       },
       "source_url": "https://www.gov.pl/web/rodzina/jednorazowa-zapomoga-z-tytulu-urodzenia-sie-dziecka",
-      "source_snippet": "Jeśli dochód na głowę w rodzinie nie przekracza 1922 zł netto, przysługuje rodzicom tzw. becikowe, czyli jednorazowe 1000 zł.",
-      "last_verified_at": "2026-08-12",
+      "source_snippet": "jednorazowa zapomoga z tytułu urodzenia się dziecka w wysokości 1000 zł na jedno dziecko ... przysługuje, jeżeli dochód rodziny w przeliczeniu na osobę nie przekracza kwoty 1922,00 zł netto.",
+      "last_verified_at": "2026-10-05",
       "verification_status": "verified"
     },
     {
@@ -344,8 +344,8 @@
         "gender": "any"
       },
       "source_url": "https://www.gov.pl/web/rodzina/zasilek-rodzinny",
-      "source_snippet": "Dodatek z tytułu samotnego wychowywania dziecka przysługuje w wysokości 193 zł miesięcznie na dziecko, maksymalnie 386 zł miesięcznie na wszystkie dzieci.",
-      "last_verified_at": "2026-08-12",
+      "source_snippet": "Dodatek do zasiłku rodzinnego z tytułu samotnego wychowywania dziecka przysługuje w wysokości 193,00 zł miesięcznie na dziecko, nie więcej jednak niż 386,00 zł na wszystkie dzieci.",
+      "last_verified_at": "2026-10-05",
       "verification_status": "verified"
     },
     {
@@ -357,11 +357,11 @@
       "funder": "Gmina (budżet państwa)",
       "category": "family",
       "benefit_type": "cash_monthly",
-      "amount_min": 90,
-      "amount_max": 170,
+      "amount_min": 95,
+      "amount_max": 95,
       "amount_currency": "PLN",
       "amount_period": "monthly",
-      "amount_note": "90 zł miesięcznie na trzecie i kolejne dziecko, nie więcej niż 170 zł łącznie",
+      "amount_note": "95 zł miesięcznie na trzecie i każde następne dziecko uprawnione do zasiłku rodzinnego",
       "is_automatic": false,
       "application_url": "https://www.gov.pl/web/rodzina/zasilek-rodzinny",
       "application_channel": "in_person",
@@ -398,9 +398,9 @@
         "gender": "any"
       },
       "source_url": "https://www.gov.pl/web/rodzina/zasilek-rodzinny",
-      "source_snippet": "Dodatek z tytułu wychowywania dziecka w rodzinie wielodzietnej przysługuje na trzecie i kolejne dziecko w wysokości 90 zł miesięcznie, łącznie nie więcej niż 170 zł.",
-      "last_verified_at": "2026-08-12",
-      "verification_status": "auto_extracted"
+      "source_snippet": "Wysokość dodatku do zasiłku rodzinnego z tytułu wychowywania dziecka w rodzinie wielodzietnej wynosi 95,00 zł miesięcznie. Dodatek przysługuje na trzecie i na następne dzieci uprawnione do zasiłku rodzinnego.",
+      "last_verified_at": "2026-10-05",
+      "verification_status": "verified"
     },
     {
       "slug": "swiadczenia-fundusz-alimentacyjny",
@@ -417,7 +417,7 @@
       "amount_period": "monthly",
       "amount_note": "W wysokości zasądzonych alimentów, maks. 1000 zł miesięcznie na dziecko (od 2026 r.); działa zasada „złotówka za złotówkę”",
       "is_automatic": false,
-      "application_url": "https://www.gov.pl/web/rodzina/swiadczenia-z-funduszu-alimentacyjnego",
+      "application_url": "https://powroty.gov.pl/swiadczenia-rodzinne-i-z-funduszu-alimentacyjnego-w-polsce-a-dochody-zagraniczne-11400/",
       "application_channel": "online",
       "deadline_type": "rolling",
       "deadline_note": null,
@@ -456,8 +456,8 @@
         ],
         "age_min": null,
         "age_max": null,
-        "income_annual_max": 58032,
-        "income_note": "Kryterium 1209 zł netto/os./msc (okres świadczeniowy X 2025–IX 2026); od 1.10.2026 wzrost do 1665 zł/os./msc. Założenie rodziny 4-os.: 1209 × 12 × 4 = 58 032 zł/rok. Złotówka za złotówkę.",
+        "income_annual_max": 79920,
+        "income_note": "Od 1 października 2026 r. kryterium 1665 zł netto na osobę (było 1209 zł). income_annual_max 79920 = 1665 x 12 x 4 (rodzina 4-osobowa).",
         "requires_children": true,
         "nationality": "any_resident",
         "residency_months_min": null,
@@ -466,9 +466,9 @@
         "admin_areas": [],
         "gender": "any"
       },
-      "source_url": "https://www.gov.pl/web/rodzina/swiadczenia-z-funduszu-alimentacyjnego",
-      "source_snippet": "Od 1 stycznia 2026 r. maksymalna kwota świadczenia z funduszu alimentacyjnego wynosi 1000 zł na dziecko; kryterium dochodowe 1209 zł (od października 2026 r. 1665 zł).",
-      "last_verified_at": "2026-08-12",
+      "source_url": "https://isap.sejm.gov.pl/isap.nsf/DocDetails.xsp?id=WMP20260000138",
+      "source_snippet": "od 1 października 2026 r., wysokość kryterium dochodowego uprawniającego do świadczeń z funduszu alimentacyjnego wzrośnie do kwoty 1665,00 zł na osobę miesięcznie.",
+      "last_verified_at": "2026-10-05",
       "verification_status": "verified"
     },
     {
@@ -486,10 +486,10 @@
       "amount_period": "monthly",
       "amount_note": "1000 zł miesięcznie przez 12 miesięcy (dłużej przy wieloraczkach); dla osób bez prawa do zasiłku macierzyńskiego (np. bezrobotni, studenci, umowy cywilnoprawne)",
       "is_automatic": false,
-      "application_url": "https://www.gov.pl/web/rodzina/swiadczenie-rodzicielskie",
+      "application_url": "https://www.gov.pl/web/rodzina/wiadczenie-rodzicielskie",
       "application_channel": "in_person",
       "deadline_type": "rolling",
-      "deadline_note": null,
+      "deadline_note": "Do 3 miesięcy od porodu; po terminie prawo od miesiąca złożenia wniosku (nie później niż w okresie 52 tygodni dla jednego dziecka). Wypłata 52 tygodnie (jedno dziecko), 65/67/69/71 przy mnogiej ciąży.",
       "procedure_steps": [
         {
           "step": 1,
@@ -510,8 +510,8 @@
         ],
         "age_min": null,
         "age_max": null,
-        "income_annual_max": 92256,
-        "income_note": "Kryterium 1922 zł netto/os./msc. Założenie rodziny 4-os.: 1922 × 12 × 4 = 92 256 zł/rok.",
+        "income_annual_max": null,
+        "income_note": "Brak kryterium dochodowego.",
         "requires_children": true,
         "nationality": "any_resident",
         "residency_months_min": null,
@@ -520,9 +520,9 @@
         "admin_areas": [],
         "gender": "any"
       },
-      "source_url": "https://www.gov.pl/web/rodzina/swiadczenie-rodzicielskie",
-      "source_snippet": "Świadczenie rodzicielskie, tak zwane kosiniakowe, wypłacane jest przez rok w stałej wysokości 1000 zł miesięcznie osobom bez prawa do zasiłku macierzyńskiego.",
-      "last_verified_at": "2026-08-12",
+      "source_url": "https://www.gov.pl/web/rodzina/wiadczenie-rodzicielskie",
+      "source_snippet": "świadczenie rodzicielskie w wysokości 1000 zł miesięcznie nie jest uzależnione od kryterium dochodowego",
+      "last_verified_at": "2026-10-05",
       "verification_status": "verified"
     },
     {
@@ -538,9 +538,9 @@
       "amount_max": null,
       "amount_currency": "PLN",
       "amount_period": "monthly",
-      "amount_note": "100% podstawy za urlop macierzyński; 81,5% podstawy za cały okres przy wniosku do 21 dni po porodzie; 70% za pozostałą część urlopu rodzicielskiego i nieprzenoszalne 9 tygodni drugiego rodzica",
+      "amount_note": "81,5% (uśredniona) lub 100% podstawy wymiaru za urlop macierzyński, 70% za część urlopu rodzicielskiego; 20 tygodni na jedno dziecko; podwyższany do kwoty świadczenia rodzicielskiego (1000 zł) gdy niższy",
       "is_automatic": false,
-      "application_url": "https://www.zus.pl",
+      "application_url": "https://www.zus.pl/swiadczenia/zasilki/zasilek-macierzynski/wysokosc",
       "application_channel": "via_employer",
       "deadline_type": "rolling",
       "deadline_note": null,
@@ -576,9 +576,9 @@
         "admin_areas": [],
         "gender": "any"
       },
-      "source_url": "https://www.zus.pl",
-      "source_snippet": "Za okres urlopu macierzyńskiego zasiłek wynosi 100% podstawy, za urlop rodzicielski 70%; przy złożeniu wniosku do 21 dni po porodzie 81,5% podstawy za cały okres.",
-      "last_verified_at": "2026-08-12",
+      "source_url": "https://www.zus.pl/swiadczenia/zasilki/zasilek-macierzynski/wysokosc",
+      "source_snippet": "Zasiłek macierzyński za okres urlopu macierzyńskiego ... przysługuje w wysokości 81,5 % podstawy wymiaru zasiłku ... za okres urlopu rodzicielskiego w wysokości 70% podstawy wymiaru zasiłku.",
+      "last_verified_at": "2026-10-05",
       "verification_status": "verified"
     },
     {
@@ -596,7 +596,7 @@
       "amount_period": "monthly",
       "amount_note": "1500 zł miesięcznie (1900 zł na dziecko z niepełnosprawnością) na dziecko w wieku 12–35 miesięcy dla rodziców aktywnych zawodowo; bez kryterium dochodowego",
       "is_automatic": false,
-      "application_url": "https://www.gov.pl/web/rodzina/program-aktywny-rodzic",
+      "application_url": "https://www.gov.pl/web/rodzina/aktywny-rodzic",
       "application_channel": "online",
       "deadline_type": "rolling",
       "deadline_note": null,
@@ -632,9 +632,9 @@
         "admin_areas": [],
         "gender": "any"
       },
-      "source_url": "https://www.gov.pl/web/rodzina/program-aktywny-rodzic",
-      "source_snippet": "Świadczenie „Aktywni rodzice w pracy” wynosi 1500 zł miesięcznie na dziecko pełnosprawne (1900 zł na dziecko z orzeczeniem) przez okres 24 miesięcy.",
-      "last_verified_at": "2026-08-12",
+      "source_url": "https://www.gov.pl/web/rodzina/aktywny-rodzic",
+      "source_snippet": "Wysokość świadczenia wynosi 1500 zł miesięcznie i może być wypłacane przez maksymalnie 24 miesiące.",
+      "last_verified_at": "2026-10-05",
       "verification_status": "verified"
     },
     {
@@ -647,12 +647,12 @@
       "category": "family",
       "benefit_type": "cash_monthly",
       "amount_min": null,
-      "amount_max": 1900,
+      "amount_max": 1500,
       "amount_currency": "PLN",
       "amount_period": "monthly",
-      "amount_note": "Do 1500 zł miesięcznie (do 1900 zł dla dziecka z niepełnosprawnością), nie więcej niż faktyczna opłata za żłobek/klub dziecięcy/dziennego opiekuna; do końca roku szkolnego ukończenia 3 (ew. 4) lat",
+      "amount_note": "Do 1500 zł miesięcznie na dziecko (do 1900 zł przy niepełnosprawności dziecka), nie więcej niż opłata za pobyt dziecka w żłobku/klubie/u opiekuna",
       "is_automatic": false,
-      "application_url": "https://www.gov.pl/web/rodzina/program-aktywny-rodzic",
+      "application_url": "https://www.gov.pl/web/rodzina/aktywny-rodzic",
       "application_channel": "online",
       "deadline_type": "rolling",
       "deadline_note": null,
@@ -686,9 +686,9 @@
         "admin_areas": [],
         "gender": "any"
       },
-      "source_url": "https://www.gov.pl/web/rodzina/program-aktywny-rodzic",
-      "source_snippet": "„Aktywnie w żłobku” – do 1500 zł miesięcznie na dziecko pełnosprawne i do 1900 zł na dziecko z niepełnosprawnością; kwota nie może przekroczyć faktycznej opłaty za opiekę w placówce.",
-      "last_verified_at": "2026-08-12",
+      "source_url": "https://www.gov.pl/web/rodzina/aktywny-rodzic",
+      "source_snippet": "Wysokość świadczenia wynosi do 1500 zł miesięcznie na dziecko. W przypadku rodziców dzieci z niepełnosprawnością świadczenie może wynieść do 1900 zł miesięcznie, jednak nie więcej niż wysokość opłaty, jaką rodzic ponosi za pobyt dziecka w instytucji opieki.",
+      "last_verified_at": "2026-10-05",
       "verification_status": "verified"
     },
     {
@@ -706,7 +706,7 @@
       "amount_period": "monthly",
       "amount_note": "500 zł miesięcznie dla rodzica/opiekuna sprawującego opiekę nad dzieckiem w wieku 12–35 miesięcy w domu; bez kryterium dochodowego",
       "is_automatic": false,
-      "application_url": "https://www.gov.pl/web/rodzina/program-aktywny-rodzic",
+      "application_url": "https://www.gov.pl/web/rodzina/aktywny-rodzic",
       "application_channel": "online",
       "deadline_type": "rolling",
       "deadline_note": null,
@@ -740,9 +740,9 @@
         "admin_areas": [],
         "gender": "any"
       },
-      "source_url": "https://www.gov.pl/web/rodzina/program-aktywny-rodzic",
-      "source_snippet": "Świadczenie „Aktywnie w domu” – 500 zł miesięcznie dla rodziców, którzy sprawują opiekę nad dzieckiem w domu (dziecko w wieku 12–35 miesięcy).",
-      "last_verified_at": "2026-08-12",
+      "source_url": "https://www.gov.pl/web/rodzina/aktywny-rodzic",
+      "source_snippet": "Aktywnie w domu: Wysokość świadczenia wynosi 500 zł miesięcznie. Ten rodzaj wsparcia jest skierowany do rodziców dzieci w wieku od 12. do 35. miesiąca życia.",
+      "last_verified_at": "2026-10-05",
       "verification_status": "verified"
     },
     {
@@ -760,7 +760,7 @@
       "amount_period": "monthly",
       "amount_note": "3386 zł miesięcznie w 2026 r. (3287 zł w 2025 r.); bez kryterium dochodowego; +100% na drugą i każdą kolejną osobę objętą opieką",
       "is_automatic": false,
-      "application_url": "https://www.gov.pl/web/rodzina/swiadczenie-pielegnacyjne",
+      "application_url": "https://www.gov.pl/web/rodzina/swiadczenie-pielegnacyjne-od-1-stycznia-2024-r--nowe-zasady",
       "application_channel": "in_person",
       "deadline_type": "rolling",
       "deadline_note": null,
@@ -794,9 +794,9 @@
         "admin_areas": [],
         "gender": "any"
       },
-      "source_url": "https://www.gov.pl/web/rodzina/swiadczenie-pielegnacyjne",
-      "source_snippet": "Od 1 stycznia 2026 r. miesięczna kwota świadczenia pielęgnacyjnego wynosi 3386 zł; świadczenie nie jest obłożone kryterium dochodowym.",
-      "last_verified_at": "2026-08-12",
+      "source_url": "https://www.gov.pl/web/rodzina/swiadczenie-pielegnacyjne-od-1-stycznia-2024-r--nowe-zasady",
+      "source_snippet": "Od 1 stycznia 2026 r. wysokość świadczenia pielęgnacyjnego będzie wynosić 3386 zł miesięcznie.",
+      "last_verified_at": "2026-10-05",
       "verification_status": "verified"
     },
     {
@@ -871,7 +871,7 @@
       "application_url": "https://www.gov.pl/web/rodzina",
       "application_channel": "in_person",
       "deadline_type": "rolling",
-      "deadline_note": null,
+      "deadline_note": "Zasiłek przejściowy/legacy: przysługuje osobie, której prawo do świadczenia pielęgnacyjnego wygasło z mocy prawa (art. 11 ust. 3); nie jest dostępny dla nowych opiekunów od 2024 r. na dawnych zasadach.",
       "procedure_steps": [
         {
           "step": 1,
@@ -900,10 +900,10 @@
         "admin_areas": [],
         "gender": "any"
       },
-      "source_url": "https://www.gov.pl/web/rodzina",
-      "source_snippet": "Zasiłek dla opiekuna wynosi 520 zł miesięcznie i przysługuje m.in. osobie sprawującej opiekę nad dzieckiem z orzeczeniem o niepełnosprawności, jeżeli nie pobiera świadczenia pielęgnacyjnego.",
-      "last_verified_at": "2026-08-12",
-      "verification_status": "auto_extracted"
+      "source_url": "https://isap.sejm.gov.pl/isap.nsf/download.xsp/WDU20240000246/T/D20240246L.pdf",
+      "source_snippet": "Zasiłek dla opiekuna przysługuje w wysokości 520 zł miesięcznie.",
+      "last_verified_at": "2026-10-05",
+      "verification_status": "verified"
     },
     {
       "slug": "swiadczenie-za-zyciem",
@@ -920,7 +920,7 @@
       "amount_period": "one_off",
       "amount_note": "4000 zł jednorazowo po urodzeniu żywego dziecka z ciężkim i nieodwracalnym upośledzeniem albo nieuleczalną chorobą zagrażającą życiu; bez kryterium dochodowego",
       "is_automatic": false,
-      "application_url": "https://www.gov.pl/web/rodzina",
+      "application_url": "https://www.gov.pl/web/rodzina/program-za-zyciem",
       "application_channel": "in_person",
       "deadline_type": "rolling",
       "deadline_note": "Wniosek w ciągu 12 miesięcy od narodzin dziecka",
@@ -954,10 +954,10 @@
         "admin_areas": [],
         "gender": "any"
       },
-      "source_url": "https://www.gov.pl/web/rodzina",
-      "source_snippet": "Jednorazowe świadczenie „Za życiem” wynosi 4000 zł i przysługuje po urodzeniu dziecka z ciężkim i nieodwracalnym upośledzeniem albo nieuleczalną chorobą zagrażającą życiu.",
-      "last_verified_at": "2026-08-12",
-      "verification_status": "auto_extracted"
+      "source_url": "https://www.gov.pl/web/rodzina/program-za-zyciem",
+      "source_snippet": "Jednorazowe świadczenie przysługuje z tytułu urodzenia się żywego dziecka z ciężkim i nieodwracalnym upośledzeniem albo nieuleczalną chorobą zagrażającą życiu ... bez względu na osiągane dochody.",
+      "last_verified_at": "2026-10-05",
+      "verification_status": "verified"
     },
     {
       "slug": "karta-duzej-rodziny",
@@ -974,7 +974,7 @@
       "amount_period": "monthly",
       "amount_note": "Ustawowe zniżki m.in. 37% na jednorazowe i 49% na miesięczne bilety kolejowe dla rodziców, 50%/75% ulgi na paszport, bezpłatny wstęp do parków narodowych; dodatkowe rabaty u partnerów",
       "is_automatic": false,
-      "application_url": "https://www.gov.pl/web/rodzina/karta-duzej-rodziny",
+      "application_url": "https://www.gov.pl/web/rodzina/pytania-i-odpowiedzi-karta-duzej-rodziny",
       "application_channel": "online",
       "deadline_type": "rolling",
       "deadline_note": null,
@@ -1001,16 +1001,16 @@
         "income_annual_max": null,
         "income_note": null,
         "requires_children": true,
-        "nationality": "any_resident",
+        "nationality": "citizen_or_pr",
         "residency_months_min": null,
         "housing_tenure": null,
         "student_required": false,
         "admin_areas": [],
         "gender": "any"
       },
-      "source_url": "https://www.gov.pl/web/rodzina/karta-duzej-rodziny",
-      "source_snippet": "Zniżki na przejazdy kolejowe – 37% na bilety jednorazowe oraz 49% na bilety miesięczne – ojciec, matka, macocha i ojczym; bezpłatny wstęp do parków narodowych.",
-      "last_verified_at": "2026-08-12",
+      "source_url": "https://www.gov.pl/web/rodzina/pytania-i-odpowiedzi-karta-duzej-rodziny",
+      "source_snippet": "Prawo do posiadania Karty Dużej Rodziny przysługuje wszystkim rodzicom oraz małżonkom rodziców, którzy mają lub mieli na utrzymaniu łącznie co najmniej troje dzieci. Dochód rodziny nie jest kryterium przyznania karty.",
+      "last_verified_at": "2026-10-05",
       "verification_status": "verified"
     },
     {
@@ -1061,8 +1061,8 @@
         "gender": "any"
       },
       "source_url": "https://www.zus.pl/renta-socjalna",
-      "source_snippet": "Renta socjalna w 2025 roku wynosi 1878,91 zł brutto miesięcznie; od 1.03.2026 r. 1978,49 zł.",
-      "last_verified_at": "2026-08-12",
+      "source_snippet": "Renta socjalna również zostanie podwyższona do kwoty 1 978,49 zł.",
+      "last_verified_at": "2026-10-05",
       "verification_status": "verified"
     },
     {
@@ -1080,7 +1080,7 @@
       "amount_period": "monthly",
       "amount_note": "Maks. 500 zł miesięcznie; pełna kwota, gdy łączne świadczenia publiczne nie przekraczają 2187,67 zł brutto",
       "is_automatic": false,
-      "application_url": "https://www.zus.pl",
+      "application_url": "https://www.zus.pl/-/500-swiadczenie-uzupelniajace-dla-osob-niezdolnych-do-samodzielnej-egzystencji",
       "application_channel": "online",
       "deadline_type": "rolling",
       "deadline_note": null,
@@ -1102,8 +1102,8 @@
         "statuses": [],
         "age_min": 18,
         "age_max": null,
-        "income_annual_max": 30628.68,
-        "income_note": "Kryterium indywidualne (gospodarstwo 1-os.): suma świadczeń publicznych ≤ 2552,39 zł brutto/msc = 30 628,68 zł/rok (do 28.02.2026; od 1.03.2026 — 2687,67 zł/msc ≈ 32 252,04 zł/rok). Złotówka za złotówkę do pełnej kwoty 500 zł.",
+        "income_annual_max": 32252.04,
+        "income_note": "Od 1 marca 2026 r. limit miesięczny 2687,67 zł (x12 = 32252.04 rocznie) dla osoby ubiegającej się, nie rodziny.",
         "requires_children": false,
         "nationality": "any_resident",
         "residency_months_min": null,
@@ -1112,9 +1112,9 @@
         "admin_areas": [],
         "gender": "any"
       },
-      "source_url": "https://www.zus.pl",
-      "source_snippet": "W 2026 roku świadczenie uzupełniające dla osób niezdolnych do samodzielnej egzystencji wynosi maksymalnie 500 zł miesięcznie; pełne 500 zł, gdy łączne świadczenia nie przekraczają 2187,67 zł brutto.",
-      "last_verified_at": "2026-08-12",
+      "source_url": "https://www.zus.pl/-/500-swiadczenie-uzupelniajace-dla-osob-niezdolnych-do-samodzielnej-egzystencji",
+      "source_snippet": "Świadczenie uzupełniające przysługuje w wysokości 500 zł osobie, która: nie jest uprawniona do emerytury ani renty i nie ma ustalonego prawa do innego ...",
+      "last_verified_at": "2026-10-05",
       "verification_status": "verified"
     },
     {
@@ -1126,13 +1126,13 @@
       "funder": "Zakład Ubezpieczeń Społecznych (ZUS)",
       "category": "income_support",
       "benefit_type": "cash_monthly",
-      "amount_min": 792,
-      "amount_max": 4353,
+      "amount_min": 791.4,
+      "amount_max": 4352.68,
       "amount_currency": "PLN",
       "amount_period": "monthly",
-      "amount_note": "Wysokość zależna od liczby punktów decyzji wojewódzkiego zespołu ds. orzekania o niepełnosprawności (70–100 pkt); bez kryterium dochodowego; waloryzowane",
+      "amount_note": "40% (70-74 pkt) do 220% (95-100 pkt) renty socjalnej; renta socjalna od 1.03.2026 = 1978,49 zł",
       "is_automatic": false,
-      "application_url": "https://www.gov.pl/web/rodzina/swiadczenie-wspierajace",
+      "application_url": "https://www.zus.pl/swiadczenia/inne-swiadczenia-z-zus/wiadczenie-wspierajace-dla-osob-z-niepelnosprawnoscia",
       "application_channel": "online",
       "deadline_type": "rolling",
       "deadline_note": null,
@@ -1157,16 +1157,16 @@
         "income_annual_max": null,
         "income_note": "Brak kryterium dochodowego — świadczenie przysługuje bez względu na dochód; warunkiem jest decyzja WZON o poziomie potrzeby wsparcia 70–100 pkt.",
         "requires_children": false,
-        "nationality": "any_resident",
+        "nationality": "citizen_or_pr",
         "residency_months_min": null,
         "housing_tenure": null,
         "student_required": false,
         "admin_areas": [],
         "gender": "any"
       },
-      "source_url": "https://www.gov.pl/web/rodzina/swiadczenie-wspierajace",
-      "source_snippet": "Świadczenie wspierające kierowane jest do osób pełnoletnich z niepełnosprawnościami; wysokość od 792 zł do 4353 zł miesięcznie w zależności od skali potrzeb (70–100 punktów WZON).",
-      "last_verified_at": "2026-08-12",
+      "source_url": "https://www.zus.pl/swiadczenia/inne-swiadczenia-z-zus/wiadczenie-wspierajace-dla-osob-z-niepelnosprawnoscia",
+      "source_snippet": "Świadczenie wspierające otrzymasz, jeśli: masz skończone 18 lat, jesteś obywatelką lub obywatelem Polski albo UE lub EFTA, a jeśli nie – przebywasz w Polsce i masz dostęp do rynku pracy, mieszkasz w Polsce",
+      "last_verified_at": "2026-10-05",
       "verification_status": "verified"
     },
     {
@@ -1217,8 +1217,8 @@
         "gender": "any"
       },
       "source_url": "https://www.gov.pl/web/rodzina/zasilek-pielegnacyjny",
-      "source_snippet": "Kwota zasiłku pielęgnacyjnego wynosi 215,84 zł miesięcznie; od 2019 roku nie była zmieniana, weryfikacja co trzy lata.",
-      "last_verified_at": "2026-08-12",
+      "source_snippet": "Wysokość zasiłku pielęgnacyjnego wynosi 215,84 zł miesięcznie.",
+      "last_verified_at": "2026-10-05",
       "verification_status": "verified"
     },
     {
@@ -1236,7 +1236,7 @@
       "amount_period": "monthly",
       "amount_note": "366,68 zł miesięcznie od 1.03.2026 (330,07 zł wcześniej); z urzędu po ukończeniu 75 lat; waloryzowany z emeryturami",
       "is_automatic": true,
-      "application_url": "https://www.zus.pl",
+      "application_url": "https://www.zus.pl/swiadczenia/dodatki-do-swiadczen-emerytalno-rentowych/dodatek-pielegnacyjny",
       "application_channel": "automatic",
       "deadline_type": "rolling",
       "deadline_note": null,
@@ -1270,9 +1270,9 @@
         "admin_areas": [],
         "gender": "any"
       },
-      "source_url": "https://www.zus.pl",
-      "source_snippet": "Wysokość dodatku pielęgnacyjnego od 1 marca 2026 roku do 28 lutego 2027 roku wynosi 366,68 zł; osobom po 75. roku życiu przysługuje z urzędu.",
-      "last_verified_at": "2026-08-12",
+      "source_url": "https://www.zus.pl/swiadczenia/dodatki-do-swiadczen-emerytalno-rentowych/dodatek-pielegnacyjny",
+      "source_snippet": "Dodatek pielęgnacyjny przyznamy osobie, która jest całkowicie niezdolna do pracy oraz do samodzielnej egzystencji albo ukończyła 75 lat.",
+      "last_verified_at": "2026-10-05",
       "verification_status": "verified"
     },
     {
@@ -1288,9 +1288,9 @@
       "amount_max": 1978.49,
       "amount_currency": "PLN",
       "amount_period": "monthly",
-      "amount_note": "Uzupełnienie do wysokości najniższej emerytury (1978,49 zł od 1.03.2026; 1878,91 zł w 2025 r.); dla matki po 60. lub ojca po 65. roku życia bez wystarczających środków",
+      "amount_note": "Do 1978,49 zł (najniższa emerytura od 1.03.2026); dopełnienie do najniższej emerytury. Kobieta od 60 lat (min. 4 dzieci), mężczyzna od 65 lat.",
       "is_automatic": false,
-      "application_url": "https://www.gov.pl/web/rodzina/mama-4-plus",
+      "application_url": "https://www.zus.pl/-/rodzicielskie-swiadczenie-uzupelniajace-mama-4-",
       "application_channel": "in_person",
       "deadline_type": "rolling",
       "deadline_note": null,
@@ -1316,18 +1316,18 @@
         "age_min": 60,
         "age_max": null,
         "income_annual_max": null,
-        "income_note": "Brak formalnego kryterium dochodowego; stosowana zasada „złotówka za złotówkę” — świadczenie uzupełnia łączne dochody do kwoty najniższej emerytury (1978,49 zł od 1.03.2026).",
+        "income_note": "Brak dochodu zapewniającego środki utrzymania; świadczenie to dopełnienie do najniższej emerytury, nie przysługuje przy emeryturze/rencie co najmniej równej najniższej emeryturze.",
         "requires_children": true,
         "nationality": "any_resident",
-        "residency_months_min": null,
+        "residency_months_min": 120,
         "housing_tenure": null,
         "student_required": false,
         "admin_areas": [],
         "gender": "any"
       },
-      "source_url": "https://www.gov.pl/web/rodzina/mama-4-plus",
-      "source_snippet": "Rodzicielskie świadczenie uzupełniające przysługuje matce lub ojcu, którzy wychowali co najmniej czworo dzieci i nie posiadają niezbędnych środków do życia, w wysokości do najniższej emerytury.",
-      "last_verified_at": "2026-08-12",
+      "source_url": "https://www.zus.pl/-/rodzicielskie-swiadczenie-uzupelniajace-mama-4-",
+      "source_snippet": "Aby otrzymać świadczenie, musisz mieszkać w Polsce i mieć tutaj ośrodek interesów życiowych przez co najmniej 10 lat (po ukończeniu 16 roku życia)",
+      "last_verified_at": "2026-10-05",
       "verification_status": "verified"
     },
     {
@@ -1345,7 +1345,7 @@
       "amount_period": "annual",
       "amount_note": "W wysokości najniższej emerytury (1978,49 zł brutto w 2026 r.; 1878,91 zł w 2025 r.); wypłacana z urzędu, zwykle w kwietniu",
       "is_automatic": true,
-      "application_url": "https://www.zus.pl",
+      "application_url": "https://www.zus.pl/-/trzynasta-emerytura-czyli-dodatkowe-roczne-swiadczenie-pieniez-1",
       "application_channel": "automatic",
       "deadline_type": "rolling",
       "deadline_note": null,
@@ -1379,9 +1379,9 @@
         "admin_areas": [],
         "gender": "any"
       },
-      "source_url": "https://www.zus.pl",
-      "source_snippet": "13. emerytura jest równa najniższej emeryturze (1978,49 zł brutto w 2026, 1878,91 zł w 2025) i przysługuje każdemu bez względu na wysokość świadczenia.",
-      "last_verified_at": "2026-08-12",
+      "source_url": "https://www.zus.pl/-/trzynasta-emerytura-czyli-dodatkowe-roczne-swiadczenie-pieniez-1",
+      "source_snippet": "Trzynastą emeryturę będziemy wypłacać w wysokości najniższej emerytury obowiązującej od 1 marca danego roku.",
+      "last_verified_at": "2026-10-05",
       "verification_status": "verified"
     },
     {
@@ -1399,10 +1399,10 @@
       "amount_period": "annual",
       "amount_note": "Do wysokości najniższej emerytury; pełna kwota przy świadczeniu do 2900 zł brutto, powyżej zasada „złotówka za złotówkę”; poniżej 50 zł nie przysługuje; wypłata zwykle we wrześniu",
       "is_automatic": true,
-      "application_url": "https://www.zus.pl",
+      "application_url": "https://www.zus.pl/-/czternastki-ruszaj%C4%85-we-wrze%C5%9Bniu.-nawet-blisko-2-tys.-z%C5%82-dodatkowego-wsparcia",
       "application_channel": "automatic",
       "deadline_type": "rolling",
-      "deadline_note": null,
+      "deadline_note": "2026: wypłata od 1 września (terminy 1-25 września; 1 października dla świadczeń przedemerytalnych); z urzędu.",
       "procedure_steps": [
         {
           "step": 1,
@@ -1424,7 +1424,7 @@
         "age_min": 60,
         "age_max": null,
         "income_annual_max": null,
-        "income_note": null,
+        "income_note": "Pełna kwota przy emeryturze/rencie do 2900 zł brutto; powyżej złotówka za złotówkę; brak świadczenia gdy emerytura/renta przekracza 4828,49 zł brutto.",
         "requires_children": false,
         "nationality": "any_resident",
         "residency_months_min": null,
@@ -1433,9 +1433,9 @@
         "admin_areas": [],
         "gender": "any"
       },
-      "source_url": "https://www.zus.pl",
-      "source_snippet": "14. emerytura bazuje na najniższej emeryturze, ale jeśli świadczenie przekracza 2900 zł brutto, jest pomniejszana o nadwyżkę (zasada „złotówka za złotówkę”).",
-      "last_verified_at": "2026-08-12",
+      "source_url": "https://www.zus.pl/-/czternastki-ruszaj%C4%85-we-wrze%C5%9Bniu.-nawet-blisko-2-tys.-z%C5%82-dodatkowego-wsparcia",
+      "source_snippet": "W 2026 roku pełna czternasta emerytura wynosi 1978,49 zł brutto. Taką kwotę otrzymają osoby, których emerytura lub renta nie przekracza 2900 zł brutto.",
+      "last_verified_at": "2026-10-05",
       "verification_status": "verified"
     },
     {
@@ -1451,9 +1451,9 @@
       "amount_max": null,
       "amount_currency": "PLN",
       "amount_period": "monthly",
-      "amount_note": "Automatyczne podwyższenie świadczeń od 1 marca o wskaźnik waloryzacji (inflacja + min. 20% realnego wzrostu przeciętnego wynagrodzenia); kwota zależy od świadczenia",
+      "amount_note": "Od 1 marca 2026 r. wskaźnik waloryzacji 105,3% (+5,3%); najniższa emerytura 1978,49 zł; z urzędu, bez wniosku",
       "is_automatic": true,
-      "application_url": "https://www.zus.pl",
+      "application_url": "https://www.zus.pl/-/od-marca-emerytury-i-renty-w-g%C3%B3r%C4%99",
       "application_channel": "automatic",
       "deadline_type": "rolling",
       "deadline_note": null,
@@ -1487,10 +1487,10 @@
         "admin_areas": [],
         "gender": "any"
       },
-      "source_url": "https://www.zus.pl",
-      "source_snippet": "Emerytury i renty podlegają corocznej waloryzacji od dnia 1 marca każdego roku, z mocy prawa, bez składania wniosku.",
-      "last_verified_at": "2026-08-12",
-      "verification_status": "auto_extracted"
+      "source_url": "https://www.zus.pl/-/od-marca-emerytury-i-renty-w-g%C3%B3r%C4%99",
+      "source_snippet": "Od 1 marca świadczenia emerytalno-rentowe oraz dodatki wypłacane przez ZUS zostaną zwaloryzowane. Świadczenia wzrosną o 5,3 procent.",
+      "last_verified_at": "2026-10-05",
+      "verification_status": "verified"
     },
     {
       "slug": "wyrownanie-do-najnizszej-emerytury",
@@ -1507,7 +1507,7 @@
       "amount_period": "monthly",
       "amount_note": "Świadczenie nie może być niższe niż najniższa emerytura (1978,49 zł od 1.03.2026; 1878,91 zł w 2025 r.); wymagany ustawowy staż ubezpieczeniowy (kobiety 20 lat, mężczyźni 25 lat)",
       "is_automatic": true,
-      "application_url": "https://www.zus.pl",
+      "application_url": "https://www.zus.pl/swiadczenia/renty/kwoty-najnizszych-swiadczen-emerytalno-rentowych",
       "application_channel": "automatic",
       "deadline_type": "rolling",
       "deadline_note": null,
@@ -1541,10 +1541,10 @@
         "admin_areas": [],
         "gender": "any"
       },
-      "source_url": "https://www.zus.pl",
-      "source_snippet": "Emerytura nie może być niższa od najniższej emerytury, jeżeli ubezpieczony udowodni wymagany staż; wyrównanie następuje z urzędu.",
-      "last_verified_at": "2026-08-12",
-      "verification_status": "auto_extracted"
+      "source_url": "https://www.zus.pl/swiadczenia/renty/kwoty-najnizszych-swiadczen-emerytalno-rentowych",
+      "source_snippet": "Kwoty najniższych gwarantowanych świadczeń emerytalno-rentowych od 1 marca 2026 r.: emerytura, renta z tytułu całkowitej niezdolności do pracy, renta socjalna i renta rodzinna – 1978,49 zł",
+      "last_verified_at": "2026-10-05",
+      "verification_status": "verified"
     },
     {
       "slug": "zasilek-chorobowy",
@@ -1614,9 +1614,9 @@
       "amount_max": null,
       "amount_currency": "PLN",
       "amount_period": "monthly",
-      "amount_note": "90% podstawy wymiaru zasiłku chorobowego za pierwsze 90 dni (3 miesiące), 75% za pozostały okres; 100% przy ciąży lub wypadku w pracy; przysługuje do 12 miesięcy",
+      "amount_note": "90% podstawy wymiaru zasiłku chorobowego przez pierwsze 3 miesiące, 75% później; do 12 miesięcy",
       "is_automatic": false,
-      "application_url": "https://www.zus.pl",
+      "application_url": "https://www.zus.pl/swiadczenia/zasilki/swiadczenie-rehabilitacyjne/z-ubezpieczenia-chorobowego/wysokosc",
       "application_channel": "in_person",
       "deadline_type": "rolling",
       "deadline_note": null,
@@ -1651,10 +1651,10 @@
         "admin_areas": [],
         "gender": "any"
       },
-      "source_url": "https://www.zus.pl",
-      "source_snippet": "Świadczenie rehabilitacyjne wynosi 90% podstawy za pierwsze 90 dni i 75% za pozostały okres; przysługuje przez okres niezbędny do przywrócenia zdolności do pracy, nie dłużej niż 12 miesięcy.",
-      "last_verified_at": "2026-08-12",
-      "verification_status": "auto_extracted"
+      "source_url": "https://www.zus.pl/swiadczenia/zasilki/swiadczenie-rehabilitacyjne/z-ubezpieczenia-chorobowego/wysokosc",
+      "source_snippet": "Wysokość świadczenia rehabilitacyjnego wynosi: 90% podstawy wymiaru zasiłku chorobowego za okres pierwszych 3 miesięcy (90 dni), 75% podstawy wymiaru zasiłku",
+      "last_verified_at": "2026-10-05",
+      "verification_status": "verified"
     },
     {
       "slug": "zasilek-opiekunczy",
@@ -1669,9 +1669,9 @@
       "amount_max": null,
       "amount_currency": "PLN",
       "amount_period": "monthly",
-      "amount_note": "80% podstawy wymiaru; m.in. do 60 dni w roku na opiekę nad dzieckiem do 14 lat, do 14 dni na innym członkiem rodziny",
+      "amount_note": "80% podstawy wymiaru zasiłku; do 60 dni w roku na dziecko do 14 lat, 14 dni na starsze dziecko lub innego chorego członka rodziny",
       "is_automatic": false,
-      "application_url": "https://www.zus.pl",
+      "application_url": "https://www.zus.pl/swiadczenia/zasilki/zasilek-opiekunczy/wysokosc",
       "application_channel": "via_employer",
       "deadline_type": "rolling",
       "deadline_note": null,
@@ -1707,10 +1707,10 @@
         "admin_areas": [],
         "gender": "any"
       },
-      "source_url": "https://www.zus.pl",
-      "source_snippet": "Zasiłek opiekuńczy wynosi 80% podstawy wymiaru – niezależnie od tego, czy dotyczy opieki nad dzieckiem czy innym członkiem rodziny.",
-      "last_verified_at": "2026-08-12",
-      "verification_status": "auto_extracted"
+      "source_url": "https://www.zus.pl/swiadczenia/zasilki/zasilek-opiekunczy/wysokosc",
+      "source_snippet": "Miesięczny zasiłek opiekuńczy wynosi 80% podstawy wymiaru zasiłku.",
+      "last_verified_at": "2026-10-05",
+      "verification_status": "verified"
     },
     {
       "slug": "renta-rodzinna",
@@ -1725,9 +1725,9 @@
       "amount_max": null,
       "amount_currency": "PLN",
       "amount_period": "monthly",
-      "amount_note": "85% świadczenia zmarłego dla jednej osoby uprawnionej (90% dla dwóch, 95% dla trzech i więcej); dla współmałżonka i dzieci po zmarłym ubezpieczonym",
+      "amount_note": "85% świadczenia zmarłego (1 uprawniony), 90% (2), 95% (3 i więcej); najniższa renta rodzinna od 1.03.2026 = 1978,49 zł",
       "is_automatic": false,
-      "application_url": "https://www.zus.pl",
+      "application_url": "https://www.zus.pl/swiadczenia/renty/renta-rodzinna",
       "application_channel": "in_person",
       "deadline_type": "rolling",
       "deadline_note": null,
@@ -1759,10 +1759,10 @@
         "admin_areas": [],
         "gender": "any"
       },
-      "source_url": "https://www.zus.pl",
-      "source_snippet": "Renta rodzinna wynosi 85% świadczenia przysługującego zmarłemu dla jednej osoby uprawnionej, 90% dla dwóch i 95% dla trzech lub więcej osób.",
-      "last_verified_at": "2026-08-12",
-      "verification_status": "auto_extracted"
+      "source_url": "https://www.zus.pl/swiadczenia/renty/renta-rodzinna",
+      "source_snippet": "85% świadczenia zmarłego – jeżeli do renty rodzinnej uprawniona jest jedna osoba; 90% ... dwie osoby; 95% ... trzy osoby lub więcej.",
+      "last_verified_at": "2026-10-05",
+      "verification_status": "verified"
     },
     {
       "slug": "zasilek-staly",
@@ -1773,13 +1773,13 @@
       "funder": "Gmina (ośrodek pomocy społecznej)",
       "category": "income_support",
       "benefit_type": "cash_monthly",
-      "amount_min": null,
-      "amount_max": null,
+      "amount_min": 100,
+      "amount_max": 1229,
       "amount_currency": "PLN",
       "amount_period": "monthly",
-      "amount_note": "Od 30% do 130% kryterium dochodowego osoby samotnie gospodarującej; wypłacany osobom całkowicie niezdolnym do pracy ze względu na wiek lub niepełnosprawność przy niskim dochodzie",
+      "amount_note": "Osoba samotna: różnica między 130% kryterium a dochodem, max 1229 zł miesięcznie (od 1.01.2025); osoba w rodzinie: różnica między kryterium a dochodem na osobę; minimum 100 zł",
       "is_automatic": false,
-      "application_url": "https://www.gov.pl/web/rodzina/pomoc-spoleczna",
+      "application_url": "https://www.gov.pl/web/rodzina/zasilek-staly",
       "application_channel": "in_person",
       "deadline_type": "rolling",
       "deadline_note": null,
@@ -1802,7 +1802,7 @@
         "age_min": null,
         "age_max": null,
         "income_annual_max": 39504,
-        "income_note": "Kryteria pomocy społecznej (od 1.01.2025, obowiązują w 2026): 1010 zł/msc osoba samotna (12 120 zł/rok) lub 823 zł/os./msc w rodzinie; rodzina 4-os.: 823 × 12 × 4 = 39 504 zł/rok.",
+        "income_note": "Kryterium od 1.01.2025: 1010 zł (osoba samotnie gospodarująca), 823 zł na osobę w rodzinie. income_annual_max 39504 = 823 x 12 x 4 (rodzina 4-osobowa).",
         "requires_children": false,
         "nationality": "any_resident",
         "residency_months_min": null,
@@ -1811,10 +1811,10 @@
         "admin_areas": [],
         "gender": "any"
       },
-      "source_url": "https://www.gov.pl/web/rodzina/pomoc-spoleczna",
-      "source_snippet": "Zasiłek stały przysługuje pełnoletniej osobie samotnie gospodarującej, niezdolnej do pracy z powodu wieku lub całkowicie niezdolnej do pracy, jeżeli jej dochód jest niższy od kryterium dochodowego.",
-      "last_verified_at": "2026-08-12",
-      "verification_status": "auto_extracted"
+      "source_url": "https://www.gov.pl/web/rodzina/zasilek-staly",
+      "source_snippet": "kwota zasiłku od dnia 1 stycznia 2025 r. nie może być wyższa niż 1 229 zł miesięcznie. Kwota zasiłku stałego nie może być niższa niż 100 zł miesięcznie.",
+      "last_verified_at": "2026-10-05",
+      "verification_status": "verified"
     },
     {
       "slug": "zasilek-okresowy",
@@ -1985,9 +1985,9 @@
       "amount_max": 2140.7,
       "amount_currency": "PLN",
       "amount_period": "monthly",
-      "amount_note": "Od 1.06.2026: 100% = 1783,90 zł brutto przez pierwsze 90 dni, potem 1400,90 zł; 80% przy stażu <5 lat, 120% przy stażu >20 lat; wypłacany 6–12 miesięcy",
+      "amount_note": "Od 1.09.2026 (PSZ): 100% = 1783,90 zł brutto przez pierwsze 90 dni, potem 1400,90 zł; 120% = 2140,70 / 1681,10 zł; 80% przy stażu <5 lat (np. 1120,80 zł po 90 dniach)",
       "is_automatic": false,
-      "application_url": "https://psz.praca.gov.pl",
+      "application_url": "https://psz.praca.gov.pl/rynek-pracy/stawki-kwoty-wskazniki/-/asset_publisher/MDNO4TyL2uZj/content/184577-obowiazujace-stawki-kwoty-i-wskazniki/10240",
       "application_channel": "in_person",
       "deadline_type": "rolling",
       "deadline_note": null,
@@ -2032,9 +2032,9 @@
         "admin_areas": [],
         "gender": "any"
       },
-      "source_url": "https://psz.praca.gov.pl",
-      "source_snippet": "Od 1 czerwca 2026 r. podstawowy zasiłek dla bezrobotnych wynosi 1783,90 zł brutto przez pierwsze 90 dni i 1400,90 zł w kolejnych miesiącach.",
-      "last_verified_at": "2026-08-12",
+      "source_url": "https://psz.praca.gov.pl/rynek-pracy/stawki-kwoty-wskazniki/-/asset_publisher/MDNO4TyL2uZj/content/184577-obowiazujace-stawki-kwoty-i-wskazniki/10240",
+      "source_snippet": "Podstawowy zasiłek dla bezrobotnych wynosi 1783,90 zł za pierwsze 90 dni i 1400,90 zł za kolejne dni, natomiast podwyższony o 120 procent tych kwot odpowiednio 2140,70 zł i 1681,10 zł.",
+      "last_verified_at": "2026-10-05",
       "verification_status": "verified"
     },
     {
@@ -2047,12 +2047,12 @@
       "category": "business",
       "benefit_type": "cash_one_off",
       "amount_min": null,
-      "amount_max": 57377.28,
+      "amount_max": 55398.78,
       "amount_currency": "PLN",
       "amount_period": "one_off",
-      "amount_note": "Do 6-krotności przeciętnego wynagrodzenia (od 1.06.2026 maks. 57 377,28 zł); urzędy mogą ustalać niższą kwotę; bezzwrotna przy prowadzeniu działalności min. 12 miesięcy",
+      "amount_note": "Do 600% przeciętnego wynagrodzenia = 55 398,78 zł",
       "is_automatic": false,
-      "application_url": "https://psz.praca.gov.pl",
+      "application_url": "https://psz.praca.gov.pl/rynek-pracy/stawki-kwoty-wskazniki/-/asset_publisher/MDNO4TyL2uZj/content/184577-obowiazujace-stawki-kwoty-i-wskazniki/10240",
       "application_channel": "in_person",
       "deadline_type": "rolling",
       "deadline_note": null,
@@ -2102,9 +2102,9 @@
         "admin_areas": [],
         "gender": "any"
       },
-      "source_url": "https://psz.praca.gov.pl",
-      "source_snippet": "Od 1.06.2026 maksymalna kwota dotacji na podjęcie działalności gospodarczej wynosi 57 377,28 zł (600% przeciętnego wynagrodzenia); urzędy pracy mogą ustalać kwoty niższe.",
-      "last_verified_at": "2026-08-12",
+      "source_url": "https://psz.praca.gov.pl/rynek-pracy/stawki-kwoty-wskazniki/-/asset_publisher/MDNO4TyL2uZj/content/184577-obowiazujace-stawki-kwoty-i-wskazniki/10240",
+      "source_snippet": "Środki na dofinansowanie podjęcia działalności gospodarczej – do 600% przeciętnego wynagrodzenia (art. 147 ust. 1). 55.398,78",
+      "last_verified_at": "2026-10-05",
       "verification_status": "verified"
     },
     {
@@ -2120,9 +2120,9 @@
       "amount_max": null,
       "amount_currency": "PLN",
       "amount_period": "one_off",
-      "amount_note": "Do 15-krotności przeciętnego wynagrodzenia (od grudnia 2025 r. maks. ok. 131 575,50 zł); dla zarejestrowanych bezrobotnych z orzeczeniem o niepełnosprawności",
+      "amount_note": "Do 6-krotności przeciętnego wynagrodzenia (zobowiązanie na min. 12 miesięcy) lub od 6- do 15-krotności (min. 24 miesiące); ok. 138 497 zł przy 15-krotności (9233,13 zł x 15); decyduje rada powiatu, składa się wniosek w powiatowym urzędzie pracy",
       "is_automatic": false,
-      "application_url": "https://www.pfron.org.pl",
+      "application_url": "https://www.pfron.org.pl/osoby-niepelnosprawne/dofinansowanie-dzialalnosci-gospodarczej/dotacja-na-rozpoczecie-dzialalnosci-gospodarczej/",
       "application_channel": "in_person",
       "deadline_type": "rolling",
       "deadline_note": null,
@@ -2157,9 +2157,9 @@
         "admin_areas": [],
         "gender": "any"
       },
-      "source_url": "https://www.pfron.org.pl",
-      "source_snippet": "W przypadku osób niepełnosprawnych dotacja finansowana ze środków PFRON może wynieść nawet 15-krotność średniego wynagrodzenia, co od grudnia 2025 daje kwotę 131 575,50 zł.",
-      "last_verified_at": "2026-08-12",
+      "source_url": "https://www.pfron.org.pl/osoby-niepelnosprawne/dofinansowanie-dzialalnosci-gospodarczej/dotacja-na-rozpoczecie-dzialalnosci-gospodarczej/",
+      "source_snippet": "w przypadku zobowiązania przez okres co najmniej 24 miesięcy – wysokość dotacji będzie wynosiła od sześciokrotności do piętnastokrotności przeciętnego wynagrodzenia",
+      "last_verified_at": "2026-10-05",
       "verification_status": "verified"
     },
     {
@@ -2177,7 +2177,7 @@
       "amount_period": "monthly",
       "amount_note": "120% zasiłku dla bezrobotnych (od 1.06.2026: 2140,70 zł miesięcznie) w okresie odbywania szkolenia finansowanego przez urząd pracy",
       "is_automatic": false,
-      "application_url": "https://psz.praca.gov.pl",
+      "application_url": "https://psz.praca.gov.pl/rynek-pracy/stawki-kwoty-wskazniki/-/asset_publisher/MDNO4TyL2uZj/content/184577-obowiazujace-stawki-kwoty-i-wskazniki/10240",
       "application_channel": "in_person",
       "deadline_type": "rolling",
       "deadline_note": null,
@@ -2212,9 +2212,9 @@
         "admin_areas": [],
         "gender": "any"
       },
-      "source_url": "https://psz.praca.gov.pl",
-      "source_snippet": "Stypendium dla bezrobotnego w okresie odbywania szkolenia wynosi 2140,70 zł (120% zasiłku) od 1 czerwca 2026 r.",
-      "last_verified_at": "2026-08-12",
+      "source_url": "https://psz.praca.gov.pl/rynek-pracy/stawki-kwoty-wskazniki/-/asset_publisher/MDNO4TyL2uZj/content/184577-obowiazujace-stawki-kwoty-i-wskazniki/10240",
+      "source_snippet": "Szkolenia – 120% zasiłku (art. 234 ust. 1 i 2) 2.140,70",
+      "last_verified_at": "2026-10-05",
       "verification_status": "verified"
     },
     {
@@ -2232,7 +2232,7 @@
       "amount_period": "monthly",
       "amount_note": "892,00 zł miesięcznie (od 1.06.2026); przysługuje m.in. osobom odbywającym staż lub przygotowanie zawodowe oraz podczas zatrudnienia po skierowaniu z urzędu",
       "is_automatic": false,
-      "application_url": "https://psz.praca.gov.pl",
+      "application_url": "https://psz.praca.gov.pl/rynek-pracy/stawki-kwoty-wskazniki/-/asset_publisher/MDNO4TyL2uZj/content/184577-obowiazujace-stawki-kwoty-i-wskazniki/10240",
       "application_channel": "in_person",
       "deadline_type": "rolling",
       "deadline_note": null,
@@ -2267,9 +2267,9 @@
         "admin_areas": [],
         "gender": "any"
       },
-      "source_url": "https://psz.praca.gov.pl",
-      "source_snippet": "Dodatek aktywizacyjny wynosi 892,00 zł od 1 czerwca 2026 r.",
-      "last_verified_at": "2026-08-12",
+      "source_url": "https://psz.praca.gov.pl/rynek-pracy/stawki-kwoty-wskazniki/-/asset_publisher/MDNO4TyL2uZj/content/184577-obowiazujace-stawki-kwoty-i-wskazniki/10240",
+      "source_snippet": "Dodatek aktywizacyjny – 50% zasiłku (art. 233 ust. 2). 892,00",
+      "last_verified_at": "2026-10-05",
       "verification_status": "verified"
     },
     {
@@ -2287,7 +2287,7 @@
       "amount_period": "monthly",
       "amount_note": "120% zasiłku dla bezrobotnych (od 1.06.2026: ok. 2140,70 zł) miesięcznie przez okres stażu (zwykle 3–6 miesięcy)",
       "is_automatic": false,
-      "application_url": "https://psz.praca.gov.pl",
+      "application_url": "https://psz.praca.gov.pl/dla-bezrobotnych-i-poszukujacych-pracy/podnoszenie-kwalifikacji/staze",
       "application_channel": "in_person",
       "deadline_type": "rolling",
       "deadline_note": null,
@@ -2322,10 +2322,10 @@
         "admin_areas": [],
         "gender": "any"
       },
-      "source_url": "https://psz.praca.gov.pl",
-      "source_snippet": "W okresie odbywania stażu bezrobotnemu przysługuje stypendium w wysokości 120% zasiłku dla bezrobotnych.",
-      "last_verified_at": "2026-08-12",
-      "verification_status": "auto_extracted"
+      "source_url": "https://psz.praca.gov.pl/dla-bezrobotnych-i-poszukujacych-pracy/podnoszenie-kwalifikacji/staze",
+      "source_snippet": "Wysokość stypendium stażowego obowiązująca od 01.06.2026 r. 120% kwoty zasiłku. 2140,70 brutto. 2140,70 netto.",
+      "last_verified_at": "2026-10-05",
+      "verification_status": "verified"
     },
     {
       "slug": "bony-szkoleniowe-powiatowe",
@@ -2340,9 +2340,9 @@
       "amount_max": null,
       "amount_currency": "PLN",
       "amount_period": "one_off",
-      "amount_note": "Bon szkoleniowy pokrywa koszty szkolenia wybranego przez bezrobotnego; bon na zatrudnienie – dofinansowanie wynagrodzenia nowo zatrudnionego; warunki ustala powiat",
+      "amount_note": "Bon na kształcenie ustawiczne: powiatowy urząd pracy finansuje koszty do wysokości przeciętnego wynagrodzenia z dnia przyznania bonu; w czasie szkolenia stypendium 120% zasiłku dla bezrobotnych (przy min. 150 godz./mies.). Realizacja ustawa z 20.03.2025.",
       "is_automatic": false,
-      "application_url": "https://psz.praca.gov.pl",
+      "application_url": "https://psz.praca.gov.pl/dla-bezrobotnych-i-poszukujacych-pracy/podnoszenie-kwalifikacji/bony-na-ksztalcenie-ustawiczne",
       "application_channel": "in_person",
       "deadline_type": "rolling",
       "deadline_note": null,
@@ -2377,10 +2377,10 @@
         "admin_areas": [],
         "gender": "any"
       },
-      "source_url": "https://psz.praca.gov.pl",
-      "source_snippet": "Powiatowe urzędy pracy przyznają bony szkoleniowe na pokrycie kosztów szkolenia oraz bony na zatrudnienie wspierające podjęcie pracy przez bezrobotnych.",
-      "last_verified_at": "2026-08-12",
-      "verification_status": "auto_extracted"
+      "source_url": "https://psz.praca.gov.pl/dla-bezrobotnych-i-poszukujacych-pracy/podnoszenie-kwalifikacji/bony-na-ksztalcenie-ustawiczne",
+      "source_snippet": "Powiatowy urząd pracy finansuje koszty bonu na kształcenie ustawiczne do wysokości przeciętnego wynagrodzenia obowiązującego w dniu przyznania bonu.",
+      "last_verified_at": "2026-10-05",
+      "verification_status": "verified"
     },
     {
       "slug": "stypendium-szkolne",
@@ -2397,10 +2397,10 @@
       "amount_period": "monthly",
       "amount_note": "Od 99,20 zł do 248 zł miesięcznie, wypłacane 1–10 miesięcy w roku szkolnym; wniosek do 15 września",
       "is_automatic": false,
-      "application_url": "https://www.gov.pl/web/edukacja",
+      "application_url": "https://www.gov.pl/web/edukacja/stypendium-szkolne-oraz-zasilek-szkolny",
       "application_channel": "in_person",
       "deadline_type": "annual",
-      "deadline_note": "Wniosek do 15 września",
+      "deadline_note": "Wniosek do 15 września; w uzasadnionych przypadkach można złożyć po tym terminie",
       "procedure_steps": [
         {
           "step": 1,
@@ -2420,7 +2420,7 @@
         "age_min": null,
         "age_max": 24,
         "income_annual_max": 39504,
-        "income_note": "Kryterium dochodowe ustala rada gminy w uchwale; typowo 674 zł/os./msc (próg świadczeń rodzinnych) lub 823 zł/os./msc (kryterium PS). Przy 823 zł i rodzinie 4-os.: 823 × 12 × 4 = 39 504 zł/rok — wartość orientacyjna, sprawdź uchwałę gminy.",
+        "income_note": "Kryterium: 823 zł netto na osobę w rodzinie (od 1.01.2025; wcześniej 600 zł). Przykład: rodzina 4-os. 823 × 12 × 4 = 39 504 zł/rok.",
         "requires_children": false,
         "nationality": "any_resident",
         "residency_months_min": null,
@@ -2429,9 +2429,9 @@
         "admin_areas": [],
         "gender": "any"
       },
-      "source_url": "https://www.gov.pl/web/edukacja",
-      "source_snippet": "Stypendium szkolne przysługuje uczniowi z rodziny, w której dochód netto na osobę nie przekracza 823 zł miesięcznie; wynosi od 99,20 zł do 248 zł miesięcznie.",
-      "last_verified_at": "2026-08-12",
+      "source_url": "https://www.gov.pl/web/edukacja/stypendium-szkolne-oraz-zasilek-szkolny",
+      "source_snippet": "Wysokość stypendium wypłacanego uczniowi wynosi od 99,20 zł do 248,00 zł miesięcznie i może być wypłacone od jednego do dziesięciu miesięcy w danym roku szkolnym.",
+      "last_verified_at": "2026-10-05",
       "verification_status": "verified"
     },
     {
@@ -2447,9 +2447,9 @@
       "amount_max": null,
       "amount_currency": "PLN",
       "amount_period": "one_off",
-      "amount_note": "Jednorazowa pomoc dla ucznia, którego rodzina znalazła się przejściowo w trudnej sytuacji z powodu zdarzenia losowego; do 5-krotności zasiłku rodzinnego; bez kryterium dochodowego",
+      "amount_note": "Zasiłek szkolny nie może przekroczyć jednorazowo pięciokrotności kwoty zasiłku rodzinnego na dziecko w wieku 5-18 lat",
       "is_automatic": false,
-      "application_url": "https://www.gov.pl/web/edukacja",
+      "application_url": "https://www.gov.pl/web/edukacja/stypendium-szkolne-oraz-zasilek-szkolny",
       "application_channel": "in_person",
       "deadline_type": "rolling",
       "deadline_note": "Wniosek w ciągu 2 miesięcy od zdarzenia losowego",
@@ -2481,9 +2481,9 @@
         "admin_areas": [],
         "gender": "any"
       },
-      "source_url": "https://www.gov.pl/web/edukacja",
-      "source_snippet": "Zasiłek szkolny przysługuje uczniowi, którego rodzina przejściowo znalazła się w trudnej sytuacji z powodu zdarzenia losowego; nie zależy od kryterium dochodowego.",
-      "last_verified_at": "2026-08-12",
+      "source_url": "https://www.gov.pl/web/edukacja/stypendium-szkolne-oraz-zasilek-szkolny",
+      "source_snippet": "Zasiłek szkolny nie może przekroczyć jednorazowo pięciokrotności kwoty zasiłku rodzinnego, przysługującego na dziecko w wieku 5-18 lat",
+      "last_verified_at": "2026-10-05",
       "verification_status": "verified"
     },
     {
@@ -2501,7 +2501,7 @@
       "amount_period": "monthly",
       "amount_note": "Wysokość ustala senat uczelni; przysługuje studentowi w trudnej sytuacji materialnej przez maks. 12 semestrów (14 przy jednolitych studiach)",
       "is_automatic": false,
-      "application_url": "https://www.gov.pl/web/nauka",
+      "application_url": "https://www.gov.pl/web/nauka/swiadczenia-dla-studentow-w-roku-akademickim-2025-2026",
       "application_channel": "in_person",
       "deadline_type": "annual",
       "deadline_note": null,
@@ -2524,18 +2524,18 @@
         "age_min": null,
         "age_max": null,
         "income_annual_max": 91627.2,
-        "income_note": "Ustawowy max. 1908,90 zł netto/os./msc w rodzinie studenta (r. akad. 2025/2026; od 2026/2027 — 2099,70 zł); uczelnia może ustalić próg niższy. Rodzina 4-os.: 1908,90 × 12 × 4 = 91 627,20 zł/rok.",
+        "income_note": "Próg w roku akademickim 2025/2026: 1 908,90 zł netto na osobę w rodzinie (ok. 22 907 zł/rok na osobę; rodzina 4-os. ≈ 91 627 zł). Cudzoziemcy: tylko posiadacze zezwolenia na pobyt stały, rezydenci długoterminowi UE, Karty Polaka lub polskiego pochodzenia i inne grupy z art. 324 ust. 2 ustawy; studenci spoza UE na zwykłym pobycie czasowym są wyłączeni.",
         "requires_children": false,
-        "nationality": "any_resident",
+        "nationality": "citizen_or_pr",
         "residency_months_min": null,
         "housing_tenure": null,
         "student_required": true,
         "admin_areas": [],
         "gender": "any"
       },
-      "source_url": "https://www.gov.pl/web/nauka",
-      "source_snippet": "W roku akademickim 2025/2026 uczelnia nie może przyznać stypendium socjalnego przy dochodzie powyżej 1908,90 zł na osobę; na 2026/2027 próg wynosi 2099,70 zł.",
-      "last_verified_at": "2026-08-12",
+      "source_url": "https://www.gov.pl/web/nauka/swiadczenia-dla-studentow-w-roku-akademickim-2025-2026",
+      "source_snippet": "nie przekracza kwoty 1.908,9 zł netto na osobę w rodzinie",
+      "last_verified_at": "2026-10-05",
       "verification_status": "verified"
     },
     {
@@ -2553,7 +2553,7 @@
       "amount_period": "one_off",
       "amount_note": "Jednorazowa lub kilkakrotna w roku pomoc dla studenta/doktoranta, który przejściowo znalazł się w trudnej sytuacji życiowej; warunki ustala regulamin uczelni",
       "is_automatic": false,
-      "application_url": "https://www.gov.pl/web/nauka",
+      "application_url": "https://www.gov.pl/web/nauka/swiadczenia-dla-studentow-w-roku-akademickim-2025-2026",
       "application_channel": "in_person",
       "deadline_type": "rolling",
       "deadline_note": null,
@@ -2585,10 +2585,10 @@
         "admin_areas": [],
         "gender": "any"
       },
-      "source_url": "https://www.gov.pl/web/nauka",
-      "source_snippet": "Student może otrzymać zapomogę, jeżeli przejściowo znalazł się w trudnej sytuacji życiowej.",
-      "last_verified_at": "2026-08-12",
-      "verification_status": "auto_extracted"
+      "source_url": "https://www.gov.pl/web/nauka/swiadczenia-dla-studentow-w-roku-akademickim-2025-2026",
+      "source_snippet": "student, który znalazł się przejściowo w trudnej sytuacji życiowej",
+      "last_verified_at": "2026-10-05",
+      "verification_status": "verified"
     },
     {
       "slug": "stypendium-ministra-wybitne-osiagania",
@@ -2811,7 +2811,7 @@
     {
       "slug": "bezplatne-leki-75-plus",
       "name_local": "Bezpłatne leki dla seniorów 75+ (wykaz „S”)",
-      "name_en": "Free medicines for persons aged 75+ (list \"S\")",
+      "name_en": "Free medicines for persons aged 65+ (list \"S\")",
       "admin_level": "national",
       "admin_area": null,
       "funder": "Narodowy Fundusz Zdrowia (NFZ)",
@@ -2821,9 +2821,9 @@
       "amount_max": null,
       "amount_currency": "PLN",
       "amount_period": "monthly",
-      "amount_note": "Leki z wykazu „S” wydawane bezpłatnie osobom po ukończeniu 75 lat na receptę oznaczoną „S” (wskazania zgodne z decyzją refundacyjną)",
+      "amount_note": "Leki z wykazu „S” wydawane bezpłatnie osobom po ukończeniu 65 lat na receptę z literą S w polu „kod uprawnień dodatkowych”",
       "is_automatic": true,
-      "application_url": "https://www.gov.pl/web/zdrowie",
+      "application_url": "https://www.gov.pl/web/gov/korzystaj-z-bezplatnych-lekow-75",
       "application_channel": "in_person",
       "deadline_type": "rolling",
       "deadline_note": null,
@@ -2843,7 +2843,7 @@
       ],
       "eligibility": {
         "statuses": [],
-        "age_min": 75,
+        "age_min": 65,
         "age_max": null,
         "income_annual_max": null,
         "income_note": null,
@@ -2855,9 +2855,9 @@
         "admin_areas": [],
         "gender": "any"
       },
-      "source_url": "https://www.gov.pl/web/zdrowie",
-      "source_snippet": "Bezpłatne leki dla seniorów 75+ wydawane są na podstawie wykazu „S” dołączanego do obwieszczenia refundacyjnego Ministra Zdrowia.",
-      "last_verified_at": "2026-08-12",
+      "source_url": "https://www.gov.pl/web/gov/korzystaj-z-bezplatnych-lekow-75",
+      "source_snippet": "Dla osób, które ukończyły 65 lat – liczy się dzień urodzin.",
+      "last_verified_at": "2026-10-05",
       "verification_status": "verified"
     },
     {
@@ -2875,7 +2875,7 @@
       "amount_period": "monthly",
       "amount_note": "Wybrane leki (m.in. kwas foliowy, preparaty jodu, progesteron) wydawane bezpłatnie kobietom w ciąży na receptę z kodem „C” do 12 miesięcy po porodzie",
       "is_automatic": false,
-      "application_url": "https://www.gov.pl/web/zdrowie",
+      "application_url": "https://www.gov.pl/web/zdrowie/bezplatne-leki-dla-kobiet-w-ciazy",
       "application_channel": "in_person",
       "deadline_type": "rolling",
       "deadline_note": null,
@@ -2907,10 +2907,10 @@
         "admin_areas": [],
         "gender": "female"
       },
-      "source_url": "https://www.gov.pl/web/zdrowie",
-      "source_snippet": "Leki z wykazu „C” przysługują bezpłatnie kobietom w ciąży oraz w okresie połogu i karmienia (do 12 miesięcy po porodzie).",
-      "last_verified_at": "2026-08-12",
-      "verification_status": "auto_extracted"
+      "source_url": "https://www.gov.pl/web/zdrowie/bezplatne-leki-dla-kobiet-w-ciazy",
+      "source_snippet": "każda kobieta, która spodziewa się dziecka ... oznaczone jako leki \"C\"",
+      "last_verified_at": "2026-10-05",
+      "verification_status": "verified"
     },
     {
       "slug": "rzadowy-program-in-vitro-2024-2028",
@@ -3019,7 +3019,7 @@
     {
       "slug": "program-szczepien-ochronnych",
       "name_local": "Bezpłatne szczepienia ochronne (Program Szczepień Ochronnych)",
-      "name_en": "Free mandatory and recommended vaccinations (National Immunisation Programme)",
+      "name_en": "Free mandatory vaccinations (National Immunisation Programme)",
       "admin_level": "national",
       "admin_area": null,
       "funder": "Ministerstwo Zdrowia / NFZ",
@@ -3029,7 +3029,7 @@
       "amount_max": null,
       "amount_currency": "PLN",
       "amount_period": "monthly",
-      "amount_note": "Bezpłatne szczepienia obowiązkowe dla dzieci oraz bezpłatne szczepienia zalecane dla grup ryzyka (m.in. przeciw grypie dla seniorów 65+, HPV dla dzieci 12–13 lat)",
+      "amount_note": "Szczepienia obowiązkowe są bezpłatne; szczepienia zalecane są płatne",
       "is_automatic": true,
       "application_url": "https://szczepienia.pzh.gov.pl",
       "application_channel": "in_person",
@@ -3063,10 +3063,10 @@
         "admin_areas": [],
         "gender": "any"
       },
-      "source_url": "https://szczepienia.pzh.gov.pl",
-      "source_snippet": "Szczepienia obowiązkowe i wybrane szczepienia zalecane (m.in. przeciwko grypie dla osób 65+, HPV) są bezpłatne w ramach Programu Szczepień Ochronnych.",
-      "last_verified_at": "2026-08-12",
-      "verification_status": "auto_extracted"
+      "source_url": "https://szczepienia.pzh.gov.pl/vaccines-in-poland/children-vaccination-schedule/",
+      "source_snippet": "Zawiera on listę szczepień obowiązkowych (bezpłatnych) oraz zalecanych (płatnych) i jest aktualizowany każdego roku.",
+      "last_verified_at": "2026-10-05",
+      "verification_status": "verified"
     },
     {
       "slug": "programy-profilaktyczne-nfz",
@@ -3083,7 +3083,7 @@
       "amount_period": "monthly",
       "amount_note": "Bezpłatne pakiety badań diagnostycznych dla osób 40+ (Profilaktyka 40 PLUS), programy przesiewowe (rak piersi, szyjki macicy, jelita grubego) dla ubezpieczonych",
       "is_automatic": false,
-      "application_url": "https://www.nfz.gov.pl",
+      "application_url": "https://www.gov.pl/web/zdrowie/profilaktyka-40-plus",
       "application_channel": "online",
       "deadline_type": "rolling",
       "deadline_note": null,
@@ -3115,10 +3115,10 @@
         "admin_areas": [],
         "gender": "any"
       },
-      "source_url": "https://www.nfz.gov.pl",
-      "source_snippet": "Program „Profilaktyka 40 PLUS” zapewnia bezpłatny pakiet badań diagnostycznych osobom powyżej 40. roku życia.",
-      "last_verified_at": "2026-08-12",
-      "verification_status": "auto_extracted"
+      "source_url": "https://www.gov.pl/web/zdrowie/profilaktyka-40-plus",
+      "source_snippet": "powyżej 40. roku życia",
+      "last_verified_at": "2026-10-05",
+      "verification_status": "verified"
     },
     {
       "slug": "refundacja-wyrobow-medycznych-nfz",
@@ -3135,7 +3135,7 @@
       "amount_period": "monthly",
       "amount_note": "Bezpłatne lub częściowo refundowane wyroby medyczne (sprzęt ortopedyczny, środki pomocnicze, sprzęt stomijny i chłonny) na zlecenie lekarskie, do ustawowych limitów",
       "is_automatic": false,
-      "application_url": "https://www.nfz.gov.pl",
+      "application_url": "https://www.nfz.gov.pl/dla-pacjenta/ubezpieczenia-w-nfz/zaopatrzenie-w-wyroby-medyczne/",
       "application_channel": "in_person",
       "deadline_type": "rolling",
       "deadline_note": null,
@@ -3167,10 +3167,10 @@
         "admin_areas": [],
         "gender": "any"
       },
-      "source_url": "https://www.nfz.gov.pl",
-      "source_snippet": "NFZ refunduje wyroby medyczne wydawane na zlecenie w ramach świadczeń gwarantowanych, w granicach określonych limitami finansowania.",
-      "last_verified_at": "2026-08-12",
-      "verification_status": "auto_extracted"
+      "source_url": "https://www.nfz.gov.pl/dla-pacjenta/ubezpieczenia-w-nfz/zaopatrzenie-w-wyroby-medyczne/",
+      "source_snippet": "Możesz wybrać wyrób droższy niż limit refundacji i dopłacić różnicę między ceną brutto wyrobu a kwotą refundacji.",
+      "last_verified_at": "2026-10-05",
+      "verification_status": "verified"
     },
     {
       "slug": "za-zyciem-opieka-medyczna",
@@ -3185,7 +3185,7 @@
       "amount_max": null,
       "amount_currency": "PLN",
       "amount_period": "monthly",
-      "amount_note": "Priorytetowy, bezpłatny dostęp do opieki medycznej dla kobiet w ciąży i dzieci do 18 lat wymagających szerokiej diagnostyki i leczenia (koordynowana opieka)",
+      "amount_note": "Opieka medyczna bezpłatna; dodatkowo jednorazowe świadczenie 4 000 zł na dziecko z ciężkim i nieodwracalnym upośledzeniem lub nieuleczalną chorobą (wniosek w urzędzie miasta/gminy lub OPS)",
       "is_automatic": false,
       "application_url": "https://www.gov.pl/web/zdrowie",
       "application_channel": "in_person",
@@ -3219,10 +3219,10 @@
         "admin_areas": [],
         "gender": "any"
       },
-      "source_url": "https://www.gov.pl/web/zdrowie",
-      "source_snippet": "Program „Za Życiem” zapewnia kompleksową, bezpłatną opiekę medyczną kobietom w ciąży i dzieciom wymagającym szczególnej opieki.",
-      "last_verified_at": "2026-08-12",
-      "verification_status": "auto_extracted"
+      "source_url": "https://www.nfz.gov.pl/dla-pacjenta/programy-profilaktyczne/informator-za-zyciem/",
+      "source_snippet": "Wniosek należy złożyć w urzędzie miasta/gminy lub ośrodku pomocy społecznej w miejscu zamieszkania.",
+      "last_verified_at": "2026-10-05",
+      "verification_status": "verified"
     },
     {
       "slug": "dodatek-mieszkaniowy",
@@ -3239,7 +3239,7 @@
       "amount_period": "monthly",
       "amount_note": "Wysokość zależna od czynszu, powierzchni normatywnej i dochodów (średnio ok. 300–400 zł); przyznawany na 6 miesięcy, wypłacany do 10. dnia miesiąca",
       "is_automatic": false,
-      "application_url": "https://www.gov.pl/web/infrastruktura",
+      "application_url": "https://www.gov.pl/web/rozwoj-technologia/dodatki-mieszkaniowe",
       "application_channel": "in_person",
       "deadline_type": "rolling",
       "deadline_note": null,
@@ -3261,8 +3261,8 @@
         "statuses": [],
         "age_min": null,
         "age_max": null,
-        "income_annual_max": 128211.36,
-        "income_note": "Od 9.02.2026: gospodarstwo jednoos. ≤ 40% przeciętnego wynagrodzenia (3561,42 zł/msc = 42 737,04 zł/rok), wieloos. ≤ 30% na osobę (2671,07 zł/msc); przeciętne wynagrodzenie 8903,56 zł (GUS 2025). Rodzina 4-os.: 2671,07 × 12 × 4 ≈ 128 211,36 zł/rok.",
+        "income_annual_max": 42737.04,
+        "income_note": "Gospodarstwo jednoosobowe: dochód do 3 561,42 zł miesięcznie (≈ 42 737 zł/rok); gospodarstwa wieloosobowe mają niższy próg na osobę (125% najniższej emerytury) - sprawdź uchwałę gminy.",
         "requires_children": false,
         "nationality": "any_resident",
         "residency_months_min": null,
@@ -3271,9 +3271,9 @@
         "admin_areas": [],
         "gender": "any"
       },
-      "source_url": "https://www.gov.pl/web/infrastruktura",
-      "source_snippet": "Dodatek mieszkaniowy przysługuje, gdy średni miesięczny dochód na członka gospodarstwa nie przekroczył 40% (1-os.) lub 30% (wieloos.) przeciętnego wynagrodzenia; średnio świadczenie wynosi ok. 300–400 zł.",
-      "last_verified_at": "2026-08-12",
+      "source_url": "https://www.gov.pl/web/rozwoj-technologia/dodatki-mieszkaniowe",
+      "source_snippet": "gospodarstwo jednoosobowe - dochód nie może przekraczać kwoty 3.561,42 zł,",
+      "last_verified_at": "2026-10-05",
       "verification_status": "verified"
     },
     {
@@ -3427,10 +3427,10 @@
         "admin_areas": [],
         "gender": "any"
       },
-      "source_url": "https://www.bgk.pl",
-      "source_snippet": "Społeczne inicjatywy mieszkaniowe (SIM) to spółki gminne budujące mieszkania na wynajem z preferencyjnym finansowaniem zwrotnym z BGK, dla osób o niskich i średnich dochodach.",
-      "last_verified_at": "2026-08-12",
-      "verification_status": "auto_extracted"
+      "source_url": "https://www.funduszeunijne.gov.pl/strony/o-funduszach/fundusze-2021-2027/aktualnosci/sim-waznym-elementem-polityki-mieszkaniowej-w-polsce/",
+      "source_snippet": "Celem działalności programu mieszkaniowego z udziałem SIM jest udostępnienie mieszkań osobom o umiarkowanych dochodach.",
+      "last_verified_at": "2026-10-05",
+      "verification_status": "verified"
     },
     {
       "slug": "program-termo-premia-termomodernizacyjna",
@@ -3445,12 +3445,12 @@
       "amount_max": null,
       "amount_currency": "PLN",
       "amount_period": "one_off",
-      "amount_note": "Premia termomodernizacyjna do 26% kosztów przedsięwzięcia (31% przy połączeniu z OZE); premia remontowa do 25%; dla wspólnot, spółdzielni, JST, TBS, SIM oraz właścicieli domów jednorodzinnych",
+      "amount_note": "Grant termomodernizacyjny 10% kosztów netto dla głębokiej termomodernizacji budynku wielorodzinnego; premia dostępna tylko dla inwestorów korzystających z kredytu",
       "is_automatic": false,
-      "application_url": "https://www.bgk.pl",
+      "application_url": "https://www.bgk.pl/programy-i-fundusze/programy/program-termo/",
       "application_channel": "in_person",
-      "deadline_type": "rolling",
-      "deadline_note": null,
+      "deadline_type": "window",
+      "deadline_note": "Nabór wniosków wstrzymany (stan na 2026-10-05); wniosek o wypłatę premii zwiększonej grantem – najpóźniej do 31.08.2026",
       "procedure_steps": [
         {
           "step": 1,
@@ -3479,9 +3479,9 @@
         "admin_areas": [],
         "gender": "any"
       },
-      "source_url": "https://www.bgk.pl",
-      "source_snippet": "Wysokość premii termomodernizacyjnej wynosi 26 proc. kosztów inwestycji (31 proc. przy połączeniu z OZE); mogą się o nią starać m.in. wspólnoty mieszkaniowe, TBS-y, spółdzielnie i właściciele domów jednorodzinnych.",
-      "last_verified_at": "2026-08-12",
+      "source_url": "https://www.bgk.pl/programy-i-fundusze/programy/program-termo/",
+      "source_snippet": "Premia termomodernizacyjna z opcją grantu termomodernizacyjnego ... Nabór wniosków wstrzymany",
+      "last_verified_at": "2026-10-05",
       "verification_status": "verified"
     },
     {
@@ -3549,9 +3549,9 @@
       "amount_max": null,
       "amount_currency": "PLN",
       "amount_period": "one_off",
-      "amount_note": "Dotacja 40% (podstawowy), 70% (podwyższony) lub 100% (najwyższy poziom, z prefinansowaniem) kosztów kwalifikowanych wymiany źródła ciepła i termomodernizacji domu jednorodzinnego; także dotacja na częściową spłatę kredytu",
+      "amount_note": "Do 40%, 70% lub 100% kosztów kwalifikowanych netto zależnie od poziomu; maksymalne kwoty dotacji wg kosztu w tabelach programu (od 20.07.2026 zmienione zasady)",
       "is_automatic": false,
-      "application_url": "https://czystepowietrze.gov.pl",
+      "application_url": "https://czystepowietrze.gov.pl/wez-dofinansowanie/zloz-wniosek",
       "application_channel": "online",
       "deadline_type": "rolling",
       "deadline_note": null,
@@ -3584,7 +3584,7 @@
         "age_min": null,
         "age_max": null,
         "income_annual_max": 135000,
-        "income_note": "Poziom podstawowy: roczny dochód wnioskodawcy ≤ 135 000 zł. Poziom podwyższony: ≤ 1894 zł/os./msc (gospodarstwo wieloos.; 2651 zł jednoos. ≈ 31 812 zł/rok). Poziom najwyższy: ≤ 1090 zł/os./msc (1526 zł jednoos. ≈ 18 312 zł/rok).",
+        "income_note": "Poziom podstawowy (do 40% kosztów): roczny dochód wnioskodawcy ≤ 135 000 zł. Poziom podwyższony (do 70%): ≤ 2 250 zł/os./msc w gosp. wieloosobowym, ≤ 3 150 zł w jednoosobowym (≈ 37 800 zł/rok). Poziom najwyższy (do 100%): ≤ 1 300 zł/os./msc wieloos., ≤ 1 800 zł jednoos. (≈ 21 600 zł/rok) lub zasiłek stały/okresowy/rodzinny/specjalny opiekuńczy; budynek powyżej 140 kWh/m²/rok.",
         "requires_children": false,
         "nationality": "any_resident",
         "residency_months_min": null,
@@ -3593,9 +3593,9 @@
         "admin_areas": [],
         "gender": "any"
       },
-      "source_url": "https://czystepowietrze.gov.pl",
-      "source_snippet": "Intensywność dofinansowania dla Beneficjentów uprawnionych do: podstawowego poziomu dofinansowania wynosi 40%, podwyższonego poziomu dofinansowania wynosi 70%, najwyższego poziomu dofinansowania wynosi 100%.",
-      "last_verified_at": "2026-08-12",
+      "source_url": "https://czystepowietrze.gov.pl/wez-dofinansowanie/dla-kogo",
+      "source_snippet": "Próg dochodu rocznego beneficjenta: 135 000 zł",
+      "last_verified_at": "2026-10-05",
       "verification_status": "verified"
     },
     {
@@ -3613,10 +3613,10 @@
       "amount_period": "one_off",
       "amount_note": "Do 7000 zł na pompę powietrzną i do 21 000 zł na pompę gruntową (do 30% kosztów; do 45% z Kartą Dużej Rodziny); dla nowych domów o podwyższonym standardzie energetycznym; nabór do 31.12.2026",
       "is_automatic": false,
-      "application_url": "https://mojecieplo.gov.pl",
+      "application_url": "https://mojecieplo.gov.pl/",
       "application_channel": "online",
       "deadline_type": "window",
-      "deadline_note": "Nabór ciągły do 31 grudnia 2026 r. lub wyczerpania budżetu (600 mln zł)",
+      "deadline_note": "Nabór ciągły do 26.02.2027 r. (przedłużony we wrześniu 2026) lub do wyczerpania puli środków (600 mln zł)",
       "procedure_steps": [
         {
           "step": 1,
@@ -3636,7 +3636,7 @@
         "age_min": null,
         "age_max": null,
         "income_annual_max": null,
-        "income_note": "Brak kryterium dochodowego.",
+        "income_note": "Brak kryterium dochodowego. Dotacja do 30% albo do 45% kosztów kwalifikowanych, maks. 21 000 zł na inwestycję; dla nowych domów jednorodzinnych.",
         "requires_children": false,
         "nationality": "any_resident",
         "residency_months_min": null,
@@ -3645,9 +3645,9 @@
         "admin_areas": [],
         "gender": "any"
       },
-      "source_url": "https://mojecieplo.gov.pl",
-      "source_snippet": "Program „Moje Ciepło” przewiduje dotacje od 7 do nawet 21 tys. zł na zakup i montaż pomp ciepła w nowych budynkach jednorodzinnych o podwyższonym standardzie energetycznym; wnioski do 31.12.2026 r.",
-      "last_verified_at": "2026-08-12",
+      "source_url": "https://mojecieplo.gov.pl/o-programie/",
+      "source_snippet": "Nabór wniosków odbywa się w trybie ciągłym od 29.04.2022 r. do 26.02.2027 r. lub do wyczerpania dedykowanej puli środków.",
+      "last_verified_at": "2026-10-05",
       "verification_status": "verified"
     },
     {
@@ -3660,15 +3660,15 @@
       "category": "energy",
       "benefit_type": "cash_one_off",
       "amount_min": null,
-      "amount_max": 28000,
+      "amount_max": 16000,
       "amount_currency": "PLN",
       "amount_period": "one_off",
-      "amount_note": "Program Mój Prąd 6.0 zakończył naboru 12.09.2025; w 2026 działa okres przejściowy (do 50% kosztów, maks. 28 000 zł na PV + magazyny) oraz ogłoszony program „Dofinansowanie przydomowych magazynów energii 2026–2030” z budżetem 1 mld zł (nabór zapowiadany na II/III kw. 2026)",
+      "amount_note": "Do 30% kosztów kwalifikowanych, nie więcej niż 800 zł/kWh; maks. 16 000 zł na magazyn energii (net-billing) lub 8 000 zł (net-metering); magazyn ciepła maks. 1 000 zł. Budżet do 1 mld zł. Brak dotacji do fotowoltaiki w tym programie.",
       "is_automatic": false,
-      "application_url": "https://przydomowemagazyny.gov.pl",
+      "application_url": "https://przydomowemagazyny.gov.pl/",
       "application_channel": "online",
       "deadline_type": "window",
-      "deadline_note": null,
+      "deadline_note": "PME 1 (KPO): nabór 30.03-19.06.2026, wznowiony 8.06.2026. PME 2: nabór startuje 20.10.2026 o godz. 9:00 (planowany IV kw. 2026).",
       "procedure_steps": [
         {
           "step": 1,
@@ -3688,7 +3688,7 @@
         "age_min": null,
         "age_max": null,
         "income_annual_max": null,
-        "income_note": "Brak kryterium dochodowego (program Mój Prąd).",
+        "income_note": "Brak kryterium dochodowego. Program „Dofinansowanie przydomowych magazynów energii” (PME 2, Fundusz Modernizacyjny): dla prosumentów z mikroinstalacją OZE; min. pojemność magazynu energii 10 kWh, magazynu ciepła 100 dm³; koszty od 1.11.2025.",
         "requires_children": false,
         "nationality": "any_resident",
         "residency_months_min": null,
@@ -3697,9 +3697,9 @@
         "admin_areas": [],
         "gender": "any"
       },
-      "source_url": "https://przydomowemagazyny.gov.pl",
-      "source_snippet": "Nabór wniosków w programie Mój Prąd 6.0 został zakończony 12 września 2025 r.; dofinansowanie do 28 000 zł obejmuje fotowoltaikę i magazyn energii, a program docelowy 2026–2030 ma budżet ok. 1 mld zł.",
-      "last_verified_at": "2026-08-12",
+      "source_url": "https://przydomowemagazyny.gov.pl/o-programie/",
+      "source_snippet": "do 30% kosztów kwalifikowanych, nie więcej niż 800 zł/1kWh pojemności nominalnej, a łączna wartość dotacji nie może przekroczyć: 16 tys. zł na jeden magazyn energii dla wnioskodawców rozliczających się z wyprodukowanej energii elektrycznej w systemie tzw. net-billing",
+      "last_verified_at": "2026-10-05",
       "verification_status": "verified"
     },
     {
@@ -3717,10 +3717,10 @@
       "amount_period": "annual",
       "amount_note": "1000 zł (cena ciepła 170–200 zł/GJ), 2000 zł (200–230 zł/GJ) lub 3500 zł (powyżej 230 zł/GJ) za 2026 r.; tylko dla gospodarstw korzystających z ciepła systemowego; zasada „złotówka za złotówkę”, min. wypłata 20 zł",
       "is_automatic": false,
-      "application_url": "https://www.gov.pl/web/energia",
+      "application_url": "https://www.gov.pl/web/gov/zloz-wniosek-o-wyplate-bonu-cieplowniczego",
       "application_channel": "online",
       "deadline_type": "window",
-      "deadline_note": "Wnioski za 2026 r. od 1 lipca do 31 sierpnia 2026 r.",
+      "deadline_note": "Nabór wniosków za 2026 r. zakończył się 31 sierpnia 2026 r.; kolejny termin nieogłoszony",
       "procedure_steps": [
         {
           "step": 1,
@@ -3759,9 +3759,9 @@
         "admin_areas": [],
         "gender": "any"
       },
-      "source_url": "https://www.gov.pl/web/energia",
-      "source_snippet": "W 2026 roku dopłaty w ramach bonu ciepłowniczego wynoszą: 170–200 zł/GJ netto – 1000 zł, 200–230 zł/GJ netto – 2000 zł, powyżej 230 zł/GJ netto – 3500 zł.",
-      "last_verified_at": "2026-08-12",
+      "source_url": "https://www.gov.pl/web/gov/zloz-wniosek-o-wyplate-bonu-cieplowniczego",
+      "source_snippet": "Twoje miesięczne dochody nie przekraczają 3272,69 zł na osobę w gospodarstwie jednoosobowym lub 2454,52 zł na osobę w gospodarstwie wieloosobowym? ... Nabór wniosków zakończył się 31 sierpnia 2026 r.",
+      "last_verified_at": "2026-10-05",
       "verification_status": "verified"
     },
     {
@@ -3811,10 +3811,10 @@
         "admin_areas": [],
         "gender": "any"
       },
-      "source_url": "https://utk.gov.pl",
-      "source_snippet": "Uczniom i studentom przysługuje ustawowa ulga przy przewozach środkami publicznego transportu zbiorowego: 37% (uczniowie do 24 lat) i 51% (studenci) w transporcie kolejowym.",
-      "last_verified_at": "2026-08-12",
-      "verification_status": "auto_extracted"
+      "source_url": "https://study.gov.pl/news/power-student-card-poland-where-can-you-get-discounts",
+      "source_snippet": "discount of 51% for a single ticket and 49% for a monthly ticket. Students traveling by public buses can also benefit from a 49% discount.",
+      "last_verified_at": "2026-10-05",
+      "verification_status": "verified"
     },
     {
       "slug": "ulga-37-proc-emeryci-rencisci-kolej",
@@ -3831,7 +3831,7 @@
       "amount_period": "monthly",
       "amount_note": "37% zniżki na 2 przejazdy kolejowe w roku kalendarzowym (2 klasa) dla emerytów i rencistów na podstawie legitymacji emeryta/rencisty",
       "is_automatic": true,
-      "application_url": "https://www.intercity.pl",
+      "application_url": "https://www.intercity.pl/pl/site/dla-pasazera/oferty/krajowe/bilet-dla-seniora.html",
       "application_channel": "in_person",
       "deadline_type": "rolling",
       "deadline_note": null,
@@ -3853,7 +3853,7 @@
         "statuses": [
           "retired"
         ],
-        "age_min": 60,
+        "age_min": null,
         "age_max": null,
         "income_annual_max": null,
         "income_note": null,
@@ -3865,9 +3865,9 @@
         "admin_areas": [],
         "gender": "any"
       },
-      "source_url": "https://www.intercity.pl",
-      "source_snippet": "Emerytom i rencistom przysługuje ustawowa ulga 37% na 2 przejazdy rocznie w przewozach kolejowych; wymagana legitymacja ZUS lub KRUS (papierowa lub w mObywatel).",
-      "last_verified_at": "2026-08-12",
+      "source_url": "https://www.intercity.pl/pl/site/dla-pasazera/oferty/krajowe/bilet-dla-seniora.html",
+      "source_snippet": "emeryci i renciści, bez względu na wiek, mają także prawo do dwóch przejazdów w roku z ulgą ustawową 37% w 2. klasie wszystkich",
+      "last_verified_at": "2026-10-05",
       "verification_status": "verified"
     },
     {
@@ -3883,9 +3883,9 @@
       "amount_max": null,
       "amount_currency": "PLN",
       "amount_period": "monthly",
-      "amount_note": "30% dla każdego posiadacza KDR podróżującego min. w 2 osoby (wszystkie kategorie pociągów); 37% na bilety jednorazowe i 49% na miesięczne dla rodziców z rodzin wielodzietnych",
+      "amount_note": "PKP Intercity: 30% rabatu przy wspólnej podróży co najmniej 2 osób z Kartą Dużej Rodziny (taryfa obowiązuje od 28.05.2026)",
       "is_automatic": true,
-      "application_url": "https://www.intercity.pl",
+      "application_url": "https://www.intercity.pl/pl/site/dla-pasazera/oferty/krajowe/oferta-duzej-rodziny/",
       "application_channel": "in_person",
       "deadline_type": "rolling",
       "deadline_note": null,
@@ -3917,9 +3917,9 @@
         "admin_areas": [],
         "gender": "any"
       },
-      "source_url": "https://www.intercity.pl",
-      "source_snippet": "Ulga w wysokości 30% przysługuje każdemu posiadaczowi KDR podróżującemu w co najmniej dwie osoby; rodzice z KDR mają 37% na bilety jednorazowe i 49% na miesięczne.",
-      "last_verified_at": "2026-08-12",
+      "source_url": "https://www.intercity.pl/pl/site/dla-pasazera/oferty/krajowe/oferta-duzej-rodziny/",
+      "source_snippet": "30-procentowy rabat podczas wspólnej podróży co najmniej 2 osób posiadających Kartę Dużej Rodziny (bez względu na przynależność rodzinną).",
+      "last_verified_at": "2026-10-05",
       "verification_status": "verified"
     },
     {
@@ -3972,9 +3972,9 @@
         ],
         "gender": "any"
       },
-      "source_url": "https://www.wtp.waw.pl",
-      "source_snippet": "Osoby, które ukończyły 70 lat, jeżdżą całkowicie bezpłatnie; podczas kontroli wystarczy dowód osobisty lub inny dokument ze zdjęciem i datą urodzenia.",
-      "last_verified_at": "2026-08-12",
+      "source_url": "https://www.wtp.waw.pl/newsy/2024/09/13/wtp-dla-seniorow/",
+      "source_snippet": "Podróżni, który ukończyli 70. rok życia mają prawo do bezpłatnych przejazdów na podstawie dokumentu ze zdjęciem, potwierdzającego wiek.",
+      "last_verified_at": "2026-10-05",
       "verification_status": "verified"
     },
     {
@@ -4027,15 +4027,15 @@
         ],
         "gender": "any"
       },
-      "source_url": "https://www.wtp.waw.pl",
-      "source_snippet": "Osoby w wieku 65–69 lat mogą kupić roczny Bilet Seniora za 50 zł – imienny, obejmujący autobusy, tramwaje, metro, SKM oraz w ramach Wspólnego Biletu pociągi KM i WKD w strefach 1 i 2.",
-      "last_verified_at": "2026-08-12",
+      "source_url": "https://www.wtp.waw.pl/newsy/2024/09/13/wtp-dla-seniorow/",
+      "source_snippet": "Osoby w wieku 65-70 lat mogą skorzystać ze specjalnej oferty Biletu Seniora, który ważny jest rok i kosztuje jedynie 50 zł.",
+      "last_verified_at": "2026-10-05",
       "verification_status": "verified"
     },
     {
       "slug": "pomorskie-mobilny-senior",
       "name_local": "Bilet „Mobilny Senior” w Taryfie Pomorskiej",
-      "name_en": "Pomeranian \"Mobile Senior\" cheap long-term ticket",
+      "name_en": "Pomeranian \"Mobile Senior\" half-year rail ticket (age 70+)",
       "admin_level": "region",
       "admin_area": "Pomorskie",
       "funder": "Urząd Marszałkowski Województwa Pomorskiego / operatorzy Taryfy Pomorskiej",
@@ -4045,9 +4045,9 @@
       "amount_max": 10,
       "amount_currency": "PLN",
       "amount_period": "one_off",
-      "amount_note": "10 zł za 6 miesięcy nielimitowanych przejazdów po województwie pomorskim (pociągi SKM, Polregio i komunikacja miejska objęta Taryfą Pomorską) dla seniorów",
+      "amount_note": "10 zł za bilet ważny pół roku w pociągach PKP SKM i Polregio w województwie pomorskim",
       "is_automatic": false,
-      "application_url": "https://www.pomorskie.eu",
+      "application_url": "https://pomorskie.eu/pasazer-senior-oferty-specjalnie-dla-naszych-starszych-podroznych/",
       "application_channel": "in_person",
       "deadline_type": "rolling",
       "deadline_note": null,
@@ -4067,7 +4067,7 @@
       ],
       "eligibility": {
         "statuses": [],
-        "age_min": 60,
+        "age_min": 70,
         "age_max": null,
         "income_annual_max": null,
         "income_note": null,
@@ -4081,9 +4081,9 @@
         ],
         "gender": "any"
       },
-      "source_url": "https://www.pomorskie.eu",
-      "source_snippet": "Bilet „Mobilny Senior” w ramach Taryfy Pomorskiej – 10 zł za 6 miesięcy przejazdów po całym województwie pociągami SKM, Polregio i komunikacją miejską w objętych miastach.",
-      "last_verified_at": "2026-08-12",
+      "source_url": "https://pomorskie.eu/pasazer-senior-oferty-specjalnie-dla-naszych-starszych-podroznych/",
+      "source_snippet": "To sieciowy bilet – Mobilny Senior. Mogą go kupić osoby w wieku powyżej 70 lat.",
+      "last_verified_at": "2026-10-05",
       "verification_status": "verified"
     },
     {
@@ -4208,7 +4208,7 @@
       "amount_period": "monthly",
       "amount_note": "Zniżki u tysięcy partnerów w Polsce i za granicą (transport, kultura, gastronomia, oprogramowanie); karta płatna rocznie",
       "is_automatic": false,
-      "application_url": "https://isic.pl",
+      "application_url": "https://www.isic.pl/rodzaje-legitymacji/karta-isic",
       "application_channel": "online",
       "deadline_type": "rolling",
       "deadline_note": null,
@@ -4240,10 +4240,10 @@
         "admin_areas": [],
         "gender": "any"
       },
-      "source_url": "https://isic.pl",
-      "source_snippet": "ISIC to jedyna międzynarodowo uznawana legitymacja studencka uprawniająca do zniżek u partnerów w Polsce i na świecie.",
-      "last_verified_at": "2026-08-12",
-      "verification_status": "auto_extracted"
+      "source_url": "https://www.isic.pl/rodzaje-legitymacji/karta-isic",
+      "source_snippet": "ISIC. Karta dla uczniów i studentów od ukończenia 7 roku życia. 59 zł bez ubezpieczenia",
+      "last_verified_at": "2026-10-05",
+      "verification_status": "verified"
     },
     {
       "slug": "ulga-na-dziecko",
@@ -4260,7 +4260,7 @@
       "amount_period": "annual",
       "amount_note": "1112,04 zł rocznie na 1. i 2. dziecko, 2000,04 zł na 3., 2700 zł na 4. i kolejne; przy 1 dziecku limit dochodów 56 000 zł (112 000 zł małżonkowie); brak limitu przy dziecku z niepełnosprawnością",
       "is_automatic": false,
-      "application_url": "https://www.podatki.gov.pl",
+      "application_url": "https://www.podatki.gov.pl/",
       "application_channel": "online",
       "deadline_type": "annual",
       "deadline_note": "W rozliczeniu rocznym PIT-36/PIT-37 (załącznik PIT/O)",
@@ -4294,9 +4294,9 @@
         "admin_areas": [],
         "gender": "any"
       },
-      "source_url": "https://www.podatki.gov.pl",
-      "source_snippet": "Ulga prorodzinna: pierwsze dziecko 1112,04 zł rocznie, drugie 1112,04 zł, trzecie 2000,04 zł, czwarte i kolejne 2700,00 zł.",
-      "last_verified_at": "2026-08-12",
+      "source_url": "https://www.biznes.gov.pl/pl/portal/00265",
+      "source_snippet": "92,67 zł na pierwsze i drugie dziecko (1 112,04 zł rocznie)",
+      "last_verified_at": "2026-10-05",
       "verification_status": "verified"
     },
     {
@@ -4309,12 +4309,12 @@
       "category": "tax",
       "benefit_type": "tax_credit",
       "amount_min": null,
-      "amount_max": null,
+      "amount_max": 85528,
       "amount_currency": "PLN",
       "amount_period": "annual",
-      "amount_note": "Zwolnienie z PIT przychodów z pracy, zleceń i praktyk do 85 528 zł rocznie dla osób do ukończenia 26 lat; stosowane zwykle już przez płatnika",
+      "amount_note": "Zwolnione z PIT przychody do 85 528 zł rocznie (limit łączny z innymi ulgami zerowego PIT)",
       "is_automatic": true,
-      "application_url": "https://www.podatki.gov.pl",
+      "application_url": "https://www.podatki.gov.pl/ulgi-i-odliczenia/ulga-dla-mlodych-pit-dla-osob-do-26-lat",
       "application_channel": "via_employer",
       "deadline_type": "rolling",
       "deadline_note": null,
@@ -4348,9 +4348,9 @@
         "admin_areas": [],
         "gender": "any"
       },
-      "source_url": "https://www.podatki.gov.pl",
-      "source_snippet": "Ulga dla młodych do 26 lat – przychody z pracy i zleceń do 85 528 zł rocznie są zwolnione z podatku.",
-      "last_verified_at": "2026-08-12",
+      "source_url": "https://www.podatki.gov.pl/ulgi-i-odliczenia/ulga-dla-mlodych-pit-dla-osob-do-26-lat",
+      "source_snippet": "Zwolnione od podatku są przychody do wysokości nieprzekraczającej 85 528 zł w roku podatkowym.",
+      "last_verified_at": "2026-10-05",
       "verification_status": "verified"
     },
     {
@@ -4363,12 +4363,12 @@
       "category": "tax",
       "benefit_type": "tax_credit",
       "amount_min": null,
-      "amount_max": null,
+      "amount_max": 85528,
       "amount_currency": "PLN",
       "amount_period": "annual",
-      "amount_note": "Zwolnienie z PIT przychodów do 85 528 zł rocznie dla każdego rodzica wychowującego co najmniej 4 dzieci (z pracy, działalności, zleceń)",
+      "amount_note": "Zwolnienie z PIT przychodów do 85 528 zł rocznie u każdego z rodziców (limit łączny z ulgą dla pracujących seniorów)",
       "is_automatic": false,
-      "application_url": "https://www.podatki.gov.pl",
+      "application_url": "https://www.podatki.gov.pl/ulgi-i-odliczenia/ulga-dla-rodzin-4plus-pit",
       "application_channel": "online",
       "deadline_type": "annual",
       "deadline_note": null,
@@ -4404,9 +4404,9 @@
         "admin_areas": [],
         "gender": "any"
       },
-      "source_url": "https://www.podatki.gov.pl",
-      "source_snippet": "Zwolnienie dla rodzin 4+ dotyczy przychodów do 85 528 zł rocznie przy wychowywaniu co najmniej czworga dzieci.",
-      "last_verified_at": "2026-08-12",
+      "source_url": "https://www.podatki.gov.pl/ulgi-i-odliczenia/ulga-dla-rodzin-4plus-pit",
+      "source_snippet": "Zwolnieniu podlega kwota przychodu nieprzekraczająca 85 528 zł w roku podatkowym u każdego z rodziców lub opiekunów prawnych.",
+      "last_verified_at": "2026-10-05",
       "verification_status": "verified"
     },
     {
@@ -4419,12 +4419,12 @@
       "category": "tax",
       "benefit_type": "tax_credit",
       "amount_min": null,
-      "amount_max": null,
+      "amount_max": 85528,
       "amount_currency": "PLN",
       "amount_period": "annual",
-      "amount_note": "Zwolnienie z PIT przychodów do 85 528 zł rocznie dla osób po wieku emerytalnym (60/65 lat), które nie pobierają emerytury/renty rodzinnej i pozostają aktywne zawodowo",
+      "amount_note": "Zwolnione z PIT przychody do 85 528 zł rocznie; dla kobiet po 60. i mężczyzn po 65. roku życia, które mimo prawa nie pobierają emerytury",
       "is_automatic": false,
-      "application_url": "https://www.podatki.gov.pl",
+      "application_url": "https://www.podatki.gov.pl/ulgi-i-odliczenia/ulga-dla-pracujacych-seniorow-pit",
       "application_channel": "online",
       "deadline_type": "annual",
       "deadline_note": null,
@@ -4460,9 +4460,9 @@
         "admin_areas": [],
         "gender": "any"
       },
-      "source_url": "https://www.podatki.gov.pl",
-      "source_snippet": "Ulga dla pracujących seniorów: zwolnienie przychodów do 85 528 zł rocznie po osiągnięciu wieku emerytalnego, pod warunkiem niepobierania świadczenia emerytalnego.",
-      "last_verified_at": "2026-08-12",
+      "source_url": "https://www.podatki.gov.pl/ulgi-i-odliczenia/ulga-dla-pracujacych-seniorow-pit",
+      "source_snippet": "Zwolnieniu od podatku podlegają przychody do wysokości nieprzekraczającej 85 528 zł w roku podatkowym.",
+      "last_verified_at": "2026-10-05",
       "verification_status": "verified"
     },
     {
@@ -4478,9 +4478,9 @@
       "amount_max": null,
       "amount_currency": "PLN",
       "amount_period": "annual",
-      "amount_note": "Zwolnienie z PIT przychodów do 85 528 zł rocznie przez 4 kolejne lata dla osób przenoszących rezydencję podatkową do Polski po min. 3 latach za granicą",
+      "amount_note": "Zwolnienie z PIT przychodów do 85 528 zł w roku podatkowym przez 4 kolejne lata; limit łączny z ulgami dla seniorów, rodzin 4+ i młodych. Warunek obywatelstwa: polskie, Karta Polaka, UE/EOG/Szwajcaria albo 3-letnie nieprzerwane zamieszkanie w UE/EOG, CH, Australii, Chile, Izraelu, Japonii, Kanadzie, Meksyku, N. Zelandii, Korei, W. Brytanii lub USA",
       "is_automatic": false,
-      "application_url": "https://www.podatki.gov.pl",
+      "application_url": "https://www.podatki.gov.pl/ulgi-i-odliczenia/ulga-na-powrot-pit",
       "application_channel": "online",
       "deadline_type": "annual",
       "deadline_note": null,
@@ -4512,9 +4512,9 @@
         "admin_areas": [],
         "gender": "any"
       },
-      "source_url": "https://www.podatki.gov.pl",
-      "source_snippet": "Ulga na powrót: zwolnienie przychodów do 85 528 zł rocznie po zmianie rezydencji podatkowej na polską po min. 3 latach za granicą; obowiązuje przez 4 lata.",
-      "last_verified_at": "2026-08-12",
+      "source_url": "https://www.podatki.gov.pl/ulgi-i-odliczenia/ulga-na-powrot-pit",
+      "source_snippet": "Ważne! Wskazane wyżej warunki muszą być spełnione łącznie. Oznacza to, że jeżeli nie spełniasz któregoś z nich, nie możesz skorzystać z ulgi.",
+      "last_verified_at": "2026-10-05",
       "verification_status": "verified"
     },
     {
@@ -4532,7 +4532,7 @@
       "amount_period": "one_off",
       "amount_note": "Odliczenie od dochodu wydatków na termomodernizację istniejącego domu jednorodzinnego do 53 000 zł na podatnika (106 000 zł małżonkowie-współwłaściciele); realizacja w 3 lata; można łączyć z dotacją (odlicza się wkład własny)",
       "is_automatic": false,
-      "application_url": "https://www.podatki.gov.pl",
+      "application_url": "https://www.podatki.gov.pl/ulgi-i-odliczenia/ulga-termomodernizacyjna-pit-kto-i-ile-moze-odliczyc",
       "application_channel": "online",
       "deadline_type": "annual",
       "deadline_note": null,
@@ -4564,9 +4564,9 @@
         "admin_areas": [],
         "gender": "any"
       },
-      "source_url": "https://www.podatki.gov.pl",
-      "source_snippet": "Maksymalna kwota odliczenia w uldze termomodernizacyjnej wynosi 53 000 zł na jednego podatnika, niezależnie od liczby posiadanych nieruchomości.",
-      "last_verified_at": "2026-08-12",
+      "source_url": "https://www.podatki.gov.pl/ulgi-i-odliczenia/ulga-termomodernizacyjna-pit-kto-i-ile-moze-odliczyc",
+      "source_snippet": "Odliczasz wydatki, które ponosisz, ale nie więcej niż 53 000 zł w odniesieniu do wszystkich realizowanych przedsięwzięć termomodernizacyjnych w budynkach, których jesteś właścicielem(-ką) lub współwłaścicielem(-ką).",
+      "last_verified_at": "2026-10-05",
       "verification_status": "verified"
     },
     {
@@ -4584,7 +4584,7 @@
       "amount_period": "annual",
       "amount_note": "Odliczenie wpłat na IKZE od dochodu do 11 304 zł w 2026 r. (16 956 zł dla prowadzących działalność gospodarczą); wypłata po 65. r.ż. opodatkowana 10% ryczałtem",
       "is_automatic": false,
-      "application_url": "https://www.podatki.gov.pl",
+      "application_url": "https://www.podatki.gov.pl/ulgi-i-odliczenia/ulga-na-ikze-pit",
       "application_channel": "online",
       "deadline_type": "annual",
       "deadline_note": null,
@@ -4616,9 +4616,9 @@
         "admin_areas": [],
         "gender": "any"
       },
-      "source_url": "https://www.podatki.gov.pl",
-      "source_snippet": "Limity wpłat na IKZE w 2026 r. wynoszą 11 304 zł dla pozostałych osób i 16 956 zł dla osób prowadzących pozarolniczą działalność gospodarczą.",
-      "last_verified_at": "2026-08-12",
+      "source_url": "https://www.podatki.gov.pl/ulgi-i-odliczenia/ulga-na-ikze-pit",
+      "source_snippet": "Limity: 2026 – 11 304 zł (ogólnie); 16 956 zł dla osób prowadzących pozarolniczą działalność gospodarczą (art. 8 ust. 6 ustawy o SUS).",
+      "last_verified_at": "2026-10-05",
       "verification_status": "verified"
     },
     {
@@ -4634,9 +4634,9 @@
       "amount_max": null,
       "amount_currency": "PLN",
       "amount_period": "annual",
-      "amount_note": "Odliczenie od dochodu wydatków na cele rehabilitacyjne (m.in. sprzęt medyczny, leki, przewodnik, remonty dostosowujące) – w części bez limitu, w części z limitami (np. 2280 zł leki, 250 zł/mies. dojazdy)",
+      "amount_note": "Odliczenie wydatków na rehabilitację: część bez limitu (cała kwota), część z limitem; leki - nadwyżka ponad 100 zł miesięcznie; pieluchomajtki, przewodnik, pies asystujący, używanie samochodu - po max 2280 zł w roku podatkowym; dla osoby na utrzymaniu roczny dochód nie może przekraczać 22 546,92 zł (2025)",
       "is_automatic": false,
-      "application_url": "https://www.podatki.gov.pl",
+      "application_url": "https://www.podatki.gov.pl/ulgi-i-odliczenia/ulga-rehabilitacyjna-pit",
       "application_channel": "online",
       "deadline_type": "annual",
       "deadline_note": null,
@@ -4668,9 +4668,9 @@
         "admin_areas": [],
         "gender": "any"
       },
-      "source_url": "https://www.podatki.gov.pl",
-      "source_snippet": "Ulga rehabilitacyjna – odliczenie wydatków na cele rehabilitacyjne (np. zakup sprzętu medycznego, utrzymanie psa przewodnika); wymaga orzeczenia o niepełnosprawności i dowodów poniesionych kosztów.",
-      "last_verified_at": "2026-08-12",
+      "source_url": "https://www.podatki.gov.pl/ulgi-i-odliczenia/ulga-rehabilitacyjna-pit",
+      "source_snippet": "Z ulgi możesz skorzystać, jeżeli jesteś osobą niepełnosprawną lub masz na utrzymaniu osobę niepełnosprawną oraz ponosisz wydatki na rehabilitację lub wydatki związane z ułatwieniem wykonywania czynności życiowych.",
+      "last_verified_at": "2026-10-05",
       "verification_status": "verified"
     },
     {
@@ -4688,7 +4688,7 @@
       "amount_period": "annual",
       "amount_note": "Podatek liczony jak dla małżeństwa (podwójna kwota wolna, realny zysk do ok. 3600 zł rocznie); limit dochodów pełnoletniego uczącego się dziecka 22 546,92 zł",
       "is_automatic": false,
-      "application_url": "https://www.podatki.gov.pl",
+      "application_url": "https://www.podatki.gov.pl/poradniki-i-informatory/osoba-samotnie-wychowujaca-dziecko",
       "application_channel": "online",
       "deadline_type": "annual",
       "deadline_note": null,
@@ -4722,9 +4722,9 @@
         "admin_areas": [],
         "gender": "any"
       },
-      "source_url": "https://www.podatki.gov.pl",
-      "source_snippet": "Samotny rodzic: podwójna kwota wolna (zysk 3600 zł); limit dochodów pełnoletniego dziecka 22 546,92 zł.",
-      "last_verified_at": "2026-08-12",
+      "source_url": "https://www.podatki.gov.pl/poradniki-i-informatory/osoba-samotnie-wychowujaca-dziecko",
+      "source_snippet": "Nie możesz rozliczyć się w sposób preferencyjny, jeżeli co najmniej jedno dziecko wychowujesz wspólnie z drugim rodzicem albo opiekunem prawnym.",
+      "last_verified_at": "2026-10-05",
       "verification_status": "verified"
     },
     {
@@ -4740,9 +4740,9 @@
       "amount_max": null,
       "amount_currency": "PLN",
       "amount_period": "annual",
-      "amount_note": "Dodatkowe odliczenie od dochodu 100% kosztów kwalifikowanych B+R (200% dla centrów badawczo-rozwojowych; w CIT do 150% dla MŚP-CBR); możliwy zwrot gotówkowy dla startujących MŚP",
+      "amount_note": "Dodatkowe odliczenie od podstawy opodatkowania: 100% pozostałych kosztów kwalifikowanych B+R; 200% m.in. kosztów wynagrodzeń i składek oraz dla centrów B+R (status CBR); odliczenie nie może przekroczyć dochodu z działalności gospodarczej (skala lub 19% liniowy)",
       "is_automatic": false,
-      "application_url": "https://www.podatki.gov.pl",
+      "application_url": "https://www.podatki.gov.pl/ulgi-i-odliczenia/ulga-badawczo-rozwojowa-pit",
       "application_channel": "online",
       "deadline_type": "annual",
       "deadline_note": null,
@@ -4776,9 +4776,9 @@
         "admin_areas": [],
         "gender": "any"
       },
-      "source_url": "https://www.podatki.gov.pl",
-      "source_snippet": "Odliczeniu podlega 100% kosztów kwalifikowanych, a w przypadku podatników posiadających status centrum badawczo-rozwojowego – do 200% kosztów.",
-      "last_verified_at": "2026-08-12",
+      "source_url": "https://www.podatki.gov.pl/ulgi-i-odliczenia/ulga-badawczo-rozwojowa-pit",
+      "source_snippet": "Ulgę odliczasz od podstawy obliczenia podatku.",
+      "last_verified_at": "2026-10-05",
       "verification_status": "verified"
     },
     {
@@ -4796,7 +4796,7 @@
       "amount_period": "annual",
       "amount_note": "Preferencyjna stawka 5% od dochodów z kwalifikowanych praw własności intelektualnej (patenty, programy komputerowe, wzory) wytworzonych w działalności B+R",
       "is_automatic": false,
-      "application_url": "https://www.podatki.gov.pl",
+      "application_url": "https://www.podatki.gov.pl/poradniki-i-informatory/ip-box-rozliczenie-dochodow-z-kwalifikowanych-praw-wlasnosci-intelektualnej-pit",
       "application_channel": "online",
       "deadline_type": "annual",
       "deadline_note": null,
@@ -4830,9 +4830,9 @@
         "admin_areas": [],
         "gender": "any"
       },
-      "source_url": "https://www.podatki.gov.pl",
-      "source_snippet": "Ulga IP Box pozwala na opodatkowanie dochodów z kwalifikowanych praw własności intelektualnej, takich jak patenty czy autorskie prawa do programów komputerowych, preferencyjną stawką 5%.",
-      "last_verified_at": "2026-08-12",
+      "source_url": "https://www.podatki.gov.pl/poradniki-i-informatory/ip-box-rozliczenie-dochodow-z-kwalifikowanych-praw-wlasnosci-intelektualnej-pit",
+      "source_snippet": "Z opodatkowania 5% stawką podatku możesz skorzystać po zakończeniu roku podatkowego w zeznaniu rocznym. Nie możesz korzystać z preferencyjnego opodatkowania w trakcie roku podatkowego.",
+      "last_verified_at": "2026-10-05",
       "verification_status": "verified"
     },
     {
@@ -4848,12 +4848,12 @@
       "amount_max": null,
       "amount_currency": "PLN",
       "amount_period": "annual",
-      "amount_note": "Dodatkowe odliczenie 50% kosztów uzyskania przychodów poniesionych na robotyzację produkcji (zakup robotów przemysłowych, maszyn, oprogramowania, szkoleń)",
+      "amount_note": "Dodatkowe odliczenie 50% kosztów robotyzacji (razem 150% kosztów); kwalifikowane koszty poniesione w latach 2022-2026; limit: dochód z działalności w roku podatkowym",
       "is_automatic": false,
-      "application_url": "https://www.podatki.gov.pl",
+      "application_url": "https://www.podatki.gov.pl/ulgi-i-odliczenia/ulga-na-robotyzacje-pit",
       "application_channel": "online",
       "deadline_type": "annual",
-      "deadline_note": null,
+      "deadline_note": "Koszty poniesione w latach 2022-2026; odliczenie nie może przekroczyć dochodu z działalności gospodarczej w roku podatkowym; rozliczenie w zeznaniu rocznym",
       "procedure_steps": [
         {
           "step": 1,
@@ -4884,10 +4884,10 @@
         "admin_areas": [],
         "gender": "any"
       },
-      "source_url": "https://www.podatki.gov.pl",
-      "source_snippet": "Ulga na robotyzację pozwala dodatkowo odliczyć od podstawy opodatkowania 50% kosztów poniesionych na robotyzację działalności produkcyjnej.",
-      "last_verified_at": "2026-08-12",
-      "verification_status": "auto_extracted"
+      "source_url": "https://www.podatki.gov.pl/ulgi-i-odliczenia/ulga-na-robotyzacje-pit",
+      "source_snippet": "Dzięki uldze na robotyzację rozliczysz w podatku dochodowym 150% poniesionych kosztów, czyli: 100% jako koszt uzyskania przychodów, 50% jako odliczenie w ramach ulgi.",
+      "last_verified_at": "2026-10-05",
+      "verification_status": "verified"
     },
     {
       "slug": "odliczenie-skladki-zdrowotnej-liniowiec",
@@ -4899,12 +4899,12 @@
       "category": "tax",
       "benefit_type": "tax_credit",
       "amount_min": null,
-      "amount_max": null,
+      "amount_max": 14100,
       "amount_currency": "PLN",
       "amount_period": "annual",
-      "amount_note": "Podatnicy na podatku liniowym mogą odliczyć zapłaconą składkę zdrowotną od dochodu (do rocznego limitu ustalanego co roku); ryczałtowcy odliczają 50% zapłaconych składek od przychodu",
+      "amount_note": "Dla podatku liniowego 19%: składki zdrowotne można odliczyć od dochodu lub zaliczyć do kosztów; roczny limit łącznie: 14 100 zł w 2026 r. (12 900 zł w 2025, 11 600 zł w 2024)",
       "is_automatic": false,
-      "application_url": "https://www.podatki.gov.pl",
+      "application_url": "https://www.podatki.gov.pl/ulgi-i-odliczenia/odliczenie-skladek-na-ubezpieczenie-zdrowotne-pit",
       "application_channel": "online",
       "deadline_type": "annual",
       "deadline_note": null,
@@ -4938,10 +4938,10 @@
         "admin_areas": [],
         "gender": "any"
       },
-      "source_url": "https://www.podatki.gov.pl",
-      "source_snippet": "Osoby rozliczające się podatkiem liniowym mogą odliczyć składkę na ubezpieczenie zdrowotne od podstawy opodatkowania do wysokości rocznego limitu.",
-      "last_verified_at": "2026-08-12",
-      "verification_status": "auto_extracted"
+      "source_url": "https://www.podatki.gov.pl/ulgi-i-odliczenia/odliczenie-skladek-na-ubezpieczenie-zdrowotne-pit",
+      "source_snippet": "Pamiętaj, że łączna wysokość składek na ubezpieczenie zdrowotne zaliczonych do kosztów uzyskania przychodów lub odliczonych od dochodu nie może przekroczyć [limit roku]: w 2026 r. kwoty 14 100 zł.",
+      "last_verified_at": "2026-10-05",
+      "verification_status": "verified"
     },
     {
       "slug": "dotacje-unijne-fundusze-europejskie-2021-2027",
@@ -4993,9 +4993,9 @@
         "gender": "any"
       },
       "source_url": "https://www.funduszeeuropejskie.gov.pl",
-      "source_snippet": "W perspektywie 2021–2027 przedsiębiorcy mogą ubiegać się o dotacje m.in. w programach FENG, Fundusze Europejskie dla Polski Wschodniej, FERS oraz regionalnych programach wojewódzkich.",
-      "last_verified_at": "2026-08-12",
-      "verification_status": "auto_extracted"
+      "source_snippet": "Wejdź i sprawdź, jak skorzystać z dofinansowania z Funduszy Europejskich 2021-2027. Skorzystaj z Wyszukiwarki Dotacji, umów się na bezpłatne konsultacje w Punktach PIFE lub zapisz się na szkolenie!",
+      "last_verified_at": "2026-10-05",
+      "verification_status": "verified"
     },
     {
       "slug": "program-smart-parp",
@@ -5012,10 +5012,10 @@
       "amount_period": "one_off",
       "amount_note": "Dofinansowanie projektów badawczo-rozwojowych i wdrożeniowych dla przedsiębiorstw (moduły: prace B+R, wdrożenie, cyfryzacja, internacjonalizacja); dofinansowanie zależne od wielkości firmy i modułu; nabory w trybie konkursowym",
       "is_automatic": false,
-      "application_url": "https://www.parp.gov.pl",
+      "application_url": "https://www.parp.gov.pl/component/grants/grants/sciezka-smart---nabor-projektow-dotyczacych-wdrozenia-wynikow-prac-b-r",
       "application_channel": "online",
       "deadline_type": "window",
-      "deadline_note": null,
+      "deadline_note": "Nabory 2026 zakończone: nabór B+R nr 1/2026 do 31.03.2026 (566 wniosków), nabór wdrożeniowy do 11.06.2026 (297 wniosków); kolejny nabór nie ogłoszony na stronie PARP",
       "procedure_steps": [
         {
           "step": 1,
@@ -5046,10 +5046,10 @@
         "admin_areas": [],
         "gender": "any"
       },
-      "source_url": "https://www.parp.gov.pl",
-      "source_snippet": "Ścieżka SMART to największy program PARP wspierający przedsiębiorstwa w prowadzeniu prac badawczo-rozwojowych i wdrażaniu ich wyników, dofinansowany z Funduszy Europejskich.",
-      "last_verified_at": "2026-08-12",
-      "verification_status": "auto_extracted"
+      "source_url": "https://www.parp.gov.pl/harmonogram-naborow/grants/sciezka-smart",
+      "source_snippet": "Nabór zakończył się 11 czerwca 2026 r. Do PARP wpłynęło 297 wniosków o dofinansowanie na kwotę ok. 2,8 mld zł.",
+      "last_verified_at": "2026-10-05",
+      "verification_status": "verified"
     },
     {
       "slug": "gwarancje-de-minimis-bgk",
@@ -5063,10 +5063,10 @@
       "amount_min": null,
       "amount_max": null,
       "amount_currency": "PLN",
-      "amount_period": "monthly",
-      "amount_note": "Bezpłatna gwarancja spłaty do 80% kwoty kredytu obrotowego lub inwestycyjnego dla MŚP, ułatwiająca dostęp do finansowania bankowego",
+      "amount_period": "one_off",
+      "amount_note": "Gwarancja spłaty kredytu w portfelowej linii gwarancyjnej de minimis (PLD-KFG) dla MŚP przez banki współpracujące z BGK; wskaźnik gwarancji nie większy niż 60% kwoty kredytu (z zastrzeżeniem wyjątków); okres do 60 mies. (obrotowy) / 120 mies. (inwestycyjny); BGK pobiera opłatę prowizyjną płatną przez kredytobiorcę; stanowi pomoc de minimis",
       "is_automatic": false,
-      "application_url": "https://www.bgk.pl",
+      "application_url": "https://www.bgk.pl/produkty/gwarancja-de-minimis/strefa-przedsiebiorcy/",
       "application_channel": "in_person",
       "deadline_type": "rolling",
       "deadline_note": null,
@@ -5100,10 +5100,10 @@
         "admin_areas": [],
         "gender": "any"
       },
-      "source_url": "https://www.bgk.pl",
-      "source_snippet": "Gwarancja de minimis BGK zabezpiecza spłatę do 80% kwoty kredytu udzielonego mikro-, małemu lub średniemu przedsiębiorcy.",
-      "last_verified_at": "2026-08-12",
-      "verification_status": "auto_extracted"
+      "source_url": "https://www.bgk.pl/produkty/gwarancja-de-minimis/",
+      "source_snippet": "zobowiązanie BGK do zapłaty z tytułu gwarancji [...] z uwzględnieniem wskaźnika procentowego gwarancji, określonego w umowie kredytu (nie większego niż 60% z zastrzeżeniem ust. 1 pkt 1 i 2 i ust. 13)",
+      "last_verified_at": "2026-10-05",
+      "verification_status": "verified"
     },
     {
       "slug": "kuke-gwarancje-eksportowe",
@@ -5155,9 +5155,9 @@
         "gender": "any"
       },
       "source_url": "https://kuke.com.pl",
-      "source_snippet": "KUKE ubezpiecza należności z kontraktów eksportowych i udziela gwarancji, w tym popartych poręczeniem Skarbu Państwa, wspierając eksport polskich przedsiębiorstw.",
-      "last_verified_at": "2026-08-12",
-      "verification_status": "auto_extracted"
+      "source_snippet": "KUKE oferuje rozwiązania, które pomagają przedsiębiorcom bezpiecznie rozwijać biznes w kraju i na świecie.",
+      "last_verified_at": "2026-10-05",
+      "verification_status": "verified"
     },
     {
       "slug": "granty-ncn",
@@ -5174,10 +5174,10 @@
       "amount_period": "one_off",
       "amount_note": "Granty na projekty badawcze (OPUS, PRELUDIUM, SONATA i in.) dla naukowców, doktorantów i zespołów; finansowanie kosztów badań, etatów i stypendiów; konkursy ogłaszane cyklicznie",
       "is_automatic": false,
-      "application_url": "https://www.ncn.gov.pl",
+      "application_url": "https://www.ncn.gov.pl/finansowanie-nauki/konkursy/harmonogram",
       "application_channel": "online",
       "deadline_type": "window",
-      "deadline_note": null,
+      "deadline_note": "Harmonogram 2026: OPUS 31 i PRELUDIUM 25 zakończone 16.06.2026; SONATA BIS 16 i MAESTRO 18 zakończone 15.09.2026; MINIATURA 10 (ciągły) zakończona 31.07.2026; kolejny: SONATINA 11 nabór 15.12.2026-15.03.2027",
       "procedure_steps": [
         {
           "step": 1,
@@ -5206,10 +5206,10 @@
         "admin_areas": [],
         "gender": "any"
       },
-      "source_url": "https://www.ncn.gov.pl",
-      "source_snippet": "NCN finansuje projekty badawcze z zakresu nauk podstawowych w trybie konkursowym, m.in. OPUS, PRELUDIUM, SONATA, MAESTRO.",
-      "last_verified_at": "2026-08-12",
-      "verification_status": "auto_extracted"
+      "source_url": "https://www.ncn.gov.pl/finansowanie-nauki/konkursy/harmonogram",
+      "source_snippet": "SONATA BIS 16, MAESTRO 18 | 15 czerwca | 15 września | marzec 2027 r.; SONATINA 11 | 15 grudnia | 15 marca 2027 r. | wrzesień 2027 r.",
+      "last_verified_at": "2026-10-05",
+      "verification_status": "verified"
     },
     {
       "slug": "granty-i-pozyczki-nabr",
@@ -5267,20 +5267,20 @@
     },
     {
       "slug": "bon-na-zasiedlenie-repatrianci",
-      "name_local": "Bon na zasiedlenie dla repatriantów",
-      "name_en": "Settlement voucher for repatriates of Polish origin",
+      "name_local": "Pomoc finansowa dla repatriantów (remont lokalu, potrzeby mieszkaniowe)",
+      "name_en": "Financial assistance for repatriates (housing renovation grant and housing needs support)",
       "admin_level": "national",
       "admin_area": null,
       "funder": "Wojewoda (budżet państwa)",
       "category": "housing",
       "benefit_type": "cash_one_off",
       "amount_min": null,
-      "amount_max": null,
+      "amount_max": 25000,
       "amount_currency": "PLN",
       "amount_period": "one_off",
-      "amount_note": "Jednorazowe świadczenie na częściową spłatę kredytu mieszkaniowego lub kosztów remontu lokalu dla repatriantów i ich małżonków; wysokość uzależniona od okresu zamieszkania i liczby osób (waloryzowana)",
+      "amount_note": "Starosta/gmina: pomoc na remont, adaptację lub wyposażenie lokalu do 6 000 zł na repatrianta i każdego członka najbliższej rodziny; Pełnomocnik Rządu ds. Repatriacji: pomoc na zaspokojenie potrzeb mieszkaniowych do 25 000 zł na osobę (plus dopłata do 25 000 zł łącznie; dopłata do czynszu do 300 zł mies.)",
       "is_automatic": false,
-      "application_url": "https://www.gov.pl/web/udsc",
+      "application_url": "https://www.gov.pl/web/mswia/pomoc-dla-repatriantow",
       "application_channel": "in_person",
       "deadline_type": "rolling",
       "deadline_note": null,
@@ -5312,10 +5312,10 @@
         "admin_areas": [],
         "gender": "any"
       },
-      "source_url": "https://www.gov.pl/web/udsc",
-      "source_snippet": "Bon na zasiedlenie przysługuje repatriantowi oraz małżonkowi repatrianta na częściową spłatę kredytu mieszkaniowego lub sfinansowanie remontu lokalu; przyznaje go wojewoda.",
-      "last_verified_at": "2026-08-12",
-      "verification_status": "auto_extracted"
+      "source_url": "https://www.gov.pl/web/mswia/pomoc-dla-repatriantow",
+      "source_snippet": "Łączna wysokość pomocy finansowej nie może przekroczyć 25 000 złotych na repatrianta oraz każdego członka jego najbliższej rodziny prowadzącego wspólnie z nim gospodarstwo domowe.",
+      "last_verified_at": "2026-10-05",
+      "verification_status": "verified"
     },
     {
       "slug": "szczepienia-grypa-bezplatne",
@@ -5330,12 +5330,12 @@
       "amount_max": 0,
       "amount_currency": "PLN",
       "amount_period": "annual",
-      "amount_note": "Szczepionki Vaxigrip Tetra i Influvac Tetra bezpłatne dla dzieci 6 msc–18 lat, osób 65+ oraz kobiet w ciąży i połogu; dorośli 19–64 lata — refundacja 50% (ok. 26–27 zł)",
+      "amount_note": "Bezpłatnie: dzieci i młodzież do 18 r.ż., dorośli 65+, kobiety w ciąży i połogu (Influvac, Vaxigrip); 50% refundacji: dorośli 18-64 lata oraz Efluelda Tetra dla 60+",
       "is_automatic": true,
       "application_url": "https://pacjent.gov.pl/programy-profilaktyczne/szczepienia-przeciw-grypie",
       "application_channel": "automatic",
       "deadline_type": "annual",
-      "deadline_note": "Szczepienia w sezonie jesienno-zimowym; podanie możliwe w POZ i aptekach z umową z NFZ",
+      "deadline_note": "Sezon 2026/2027; recepta od lekarza lub farmaceuty wymagana do refundacji (100% lub 50%)",
       "procedure_steps": [
         {
           "step": 1,
@@ -5369,9 +5369,9 @@
         "student_required": false,
         "admin_areas": []
       },
-      "source_url": "https://szczepienia.pzh.gov.pl/faq/jak-sa-refundowane-szczepionki-przeciw-grypie-w-sezonie-2024-2025/",
-      "source_snippet": "Szczepionki przeciw grypie są bezpłatne: dla dzieci i młodzieży do ukończenia 18 lat, dla dorosłych w wieku 65+ lat, dla kobiet w ciąży i połogu; 50% refundacji w wieku 18–64 lata.",
-      "last_verified_at": "2026-08-12",
+      "source_url": "https://szczepienia.pzh.gov.pl/faq/jak-sa-refundowane-szczepionki-przeciw-grypie-w-sezonie-2026-2027/",
+      "source_snippet": "Bezpłatnie: dla dzieci i młodzieży do ukończenia 18 lat; dla dorosłych w wieku 65+ lat; dla kobiet w ciąży i połogu. 50% refundacji: dorosłym w wieku 18-64 lata.",
+      "last_verified_at": "2026-10-05",
       "verification_status": "verified"
     },
     {
@@ -5426,9 +5426,9 @@
         "student_required": false,
         "admin_areas": []
       },
-      "source_url": "https://pacjent.gov.pl",
-      "source_snippet": "Szczepionka przeciw RSV (Abrysvo, Arexvy) i przeciw półpaścowi (Shingrix) dostępna bezpłatnie dla pacjentów po 65. roku życia; 60–64 lata — 50% odpłatności (lista leków refundowanych MZ od 2025 r.).",
-      "last_verified_at": "2026-08-12",
+      "source_url": "https://szczepienia.pzh.gov.pl/dla-lekarzy/szczepienia-seniorow/zasady-szczepien-seniorow/",
+      "source_snippet": "Szczepionka przeciw RSV jest refundowana: Osobom w wieku 65+ (refundacja 100%), szczepionka bezpłatna na wykazie leków „pacjent 65+”, Osobom w wieku 60+ (refundacja apteczna 50%).",
+      "last_verified_at": "2026-10-05",
       "verification_status": "verified"
     },
     {
@@ -5484,29 +5484,29 @@
         "admin_areas": []
       },
       "source_url": "https://www.gov.pl/web/zdrowie/zdrowie-psychiczne",
-      "source_snippet": "Centra Zdrowia Psychicznego to miejsca, w których można uzyskać natychmiastową, bezpłatną pomoc przez całą dobę, bez skierowania; program pilotażowy przedłużony do 31 grudnia 2026 r.",
-      "last_verified_at": "2026-08-12",
+      "source_snippet": "zbliżającego się terminu zakończenia programu pilotażowego, przypadającego na dzień 31 grudnia 2026",
+      "last_verified_at": "2026-10-05",
       "verification_status": "verified"
     },
     {
       "slug": "bezplatne-podreczniki-wyprawka-szkolna",
-      "name_local": "Rządowy program pomocy uczniom „Wyprawka szkolna” (bezpłatne podręczniki)",
-      "name_en": "Government school-kit programme — free textbooks via gminas",
+      "name_local": "Rządowy program pomocy uczniom niepełnosprawnym w formie dofinansowania zakupu podręczników, materiałów edukacyjnych i materiałów ćwiczeniowych w latach 2026-2028",
+      "name_en": "Government textbook subsidy programme for pupils with disabilities (2026-2028)",
       "admin_level": "national",
       "admin_area": null,
       "funder": "Ministerstwo Edukacji Narodowej (dotacja dla JST)",
       "category": "education",
       "benefit_type": "in_kind",
       "amount_min": null,
-      "amount_max": null,
+      "amount_max": 534,
       "amount_currency": "PLN",
-      "amount_period": "annual",
-      "amount_note": "Gminy otrzymują dotację na zakup podręczników, materiałów ćwiczeniowych i edukacyjnych dla uczniów szkół podstawowych i ponadpodstawowych; zakres bezpłatnego wyposażenia ustala gmina",
+      "amount_period": "one_off",
+      "amount_note": "Dofinansowanie zakupu podręczników dla uczniów niepełnosprawnych z orzeczeniem o potrzebie kształcenia specjalnego: do 534 zł (liceum/technikum), do 468 zł (szkoła branżowa), do 270 zł (szkoła specjalna przysposabiająca do pracy); realizują gminy",
       "is_automatic": true,
-      "application_url": "https://www.gov.pl/web/edukacja-i-nauka",
+      "application_url": "https://www.gov.pl/web/edukacja/rzadowy-program-pomocy-uczniom-niepelnosprawnym-w-formie-dofinansowania-zakupu-podrecznikow-materialow-edukacyjnych-i-materialow-cwiczeniowych-w-latach-2026-2028",
       "application_channel": "automatic",
       "deadline_type": "annual",
-      "deadline_note": "Dotacja realizowana corocznie na dany rok szkolny",
+      "deadline_note": "Program na lata 2026-2028; nabory prowadzą gminy/szkoły",
       "procedure_steps": [
         {
           "step": 1,
@@ -5535,10 +5535,10 @@
         "student_required": false,
         "admin_areas": []
       },
-      "source_url": "https://www.gov.pl/web/edukacja-i-nauka",
-      "source_snippet": "Rządowy program pomocy uczniom „Wyprawka szkolna” — dotacja dla jednostek samorządu terytorialnego na zakup podręczników i materiałów ćwiczeniowych dla uczniów.",
-      "last_verified_at": "2026-08-12",
-      "verification_status": "auto_extracted"
+      "source_url": "https://www.gov.pl/web/edukacja/rzadowy-program-pomocy-uczniom-niepelnosprawnym-w-formie-dofinansowania-zakupu-podrecznikow-materialow-edukacyjnych-i-materialow-cwiczeniowych-w-latach-2026-2028",
+      "source_snippet": "Pomoc w formie dofinansowania zakupu podręczników, materiałów edukacyjnych i materiałów ćwiczeniowych jest jedną z form realizacji zadania wyrównywania szans edukacyjnych, podnoszenia jakości kształcenia uczniów niepełnosprawnych.",
+      "last_verified_at": "2026-10-05",
+      "verification_status": "verified"
     },
     {
       "slug": "stypendium-doktoranckie",
@@ -5593,8 +5593,8 @@
         "admin_areas": []
       },
       "source_url": "https://us.edu.pl/doktorant/stypendia-i-wsparcie/stypendium-doktoranckie/stypendium-doktoranckie-w-szkole-doktorskiej/",
-      "source_snippet": "Każda osoba przyjęta do Szkoły Doktorskiej, nieposiadająca stopnia naukowego doktora, otrzymuje stypendium doktoranckie — 3570,50 zł brutto, po ocenie śródokresowej 5500,00 zł brutto.",
-      "last_verified_at": "2026-08-12",
+      "source_snippet": "Każda osoba przyjęta do Szkoły Doktorskiej, nieposiadająca stopnia naukowego doktora, otrzymuje stypendium doktoranckie. 37% wynagrodzenia profesora: 3570,50 zł brutto; po ocenie śródokresowej 57%: 5500,00 zł brutto (2026).",
+      "last_verified_at": "2026-10-05",
       "verification_status": "verified"
     },
     {
@@ -5612,7 +5612,7 @@
       "amount_period": "monthly",
       "amount_note": "400 zł miesięcznie na dziecko (max 24 miesiące; 36 przy wieloraczkach, 72 przy dziecku niepełnosprawnym) dla osoby przebywającej na urlopie wychowawczym",
       "is_automatic": false,
-      "application_url": "https://www.gov.pl/web/rodzina/zasilek-rodzinny",
+      "application_url": "https://www.gov.pl/web/uw-podlaski/dodatek-z-tytulu-opieki-nad-dzieckiem-w-okresie-korzystania-z-urlopu-wychowawczego",
       "application_channel": "online",
       "deadline_type": "rolling",
       "deadline_note": null,
@@ -5643,7 +5643,7 @@
         "age_min": null,
         "age_max": null,
         "income_annual_max": 32352,
-        "income_note": "Jak zasiłek rodzinny: 674 zł netto/os./msc (764 zł z dzieckiem niepełnosprawnym); rodzina 4-os.: 674 × 12 × 4 = 32 352 zł/rok.",
+        "income_note": "Kryterium dochodowe zasiłku rodzinnego: 674 zł netto na osobę w rodzinie (764 zł gdy w rodzinie jest dziecko z orzeczeniem o niepełnosprawności); rodzina 4-os.: 674 × 12 × 4 = 32 352 zł/rok",
         "requires_children": true,
         "gender": "any",
         "nationality": "any_resident",
@@ -5652,9 +5652,9 @@
         "student_required": false,
         "admin_areas": []
       },
-      "source_url": "https://www.gov.pl/web/rodzina/zasilek-rodzinny",
-      "source_snippet": "Dodatki do zasiłku rodzinnego: podczas urlopu wychowawczego – 400 zł/mies.; kryterium dochodowe jak przy zasiłku rodzinnym (674 zł na osobę).",
-      "last_verified_at": "2026-08-12",
+      "source_url": "https://www.gov.pl/web/uw-podlaski/dodatek-z-tytulu-opieki-nad-dzieckiem-w-okresie-korzystania-z-urlopu-wychowawczego",
+      "source_snippet": "Dodatek do zasiłku rodzinnego z tytułu opieki nad dzieckiem w okresie korzystania z urlopu wychowawczego przysługuje w wysokości 400 zł miesięcznie.",
+      "last_verified_at": "2026-10-05",
       "verification_status": "verified"
     },
     {
@@ -5666,11 +5666,11 @@
       "funder": "Zakład Ubezpieczeń Społecznych (FUS)",
       "category": "income_support",
       "benefit_type": "cash_monthly",
-      "amount_min": 2014.35,
-      "amount_max": 2014.35,
+      "amount_min": 1993.76,
+      "amount_max": 1993.76,
       "amount_currency": "PLN",
       "amount_period": "monthly",
-      "amount_note": "2014,35 zł brutto miesięcznie od 1.03.2026 (2025: 1893,41 zł); waloryzowane corocznie 1 marca; osoby po utracie renty — do wysokości ostatniej renty, nie wyżej niż ryczałt",
+      "amount_note": "1993,76 zł brutto miesięcznie od 1.03.2026 (kwota świadczenia przedemerytalnego wg komunikatu ZUS o najniższych świadczeniach); część osób — do wysokości ostatniej renty; waloryzowane corocznie 1 marca",
       "is_automatic": false,
       "application_url": "https://www.zus.pl/swiadczenie-przedemerytalne",
       "application_channel": "online",
@@ -5712,7 +5712,7 @@
         "age_min": 55,
         "age_max": null,
         "income_annual_max": null,
-        "income_note": "Brak kryterium dochodowego przy przyznaniu; limity dorabiania: bez zmniejszenia do 25% przeciętnego wynagrodzenia, zawieszenie powyżej 70%. Wiek: kobiety 55 lat/20 lat stażu, mężczyźni 60 lat/25 lat stażu (lub 35/40 lat stażu bez względu na wiek).",
+        "income_note": "Brak kryterium dochodowego przy przyznaniu; limity dorabiania od 1.03.2026: dopuszczalna kwota przychodu 2 225,90 zł mies. (25% przeciętnego wynagrodzenia), graniczna 6 232,50 zł (70%); powyżej progu zawieszenie. Warunki wieku i stażu zależą od przyczyny rozwiązania stosunku pracy (np. kobiety 56 lat / mężczyźni 61 lat albo 55/60 lat; staż 20/25 lat lub do 35/40 lat)",
         "requires_children": false,
         "gender": "any",
         "nationality": "any_resident",
@@ -5721,9 +5721,9 @@
         "student_required": false,
         "admin_areas": []
       },
-      "source_url": "https://www.zus.pl/swiadczenie-przedemerytalne",
-      "source_snippet": "Od 1 marca 2026 r. świadczenie przedemerytalne wynosi 2014,35 zł brutto; przysługuje po 180 dniach pobierania zasiłku dla bezrobotnych osobom spełniającym warunki wieku i stażu.",
-      "last_verified_at": "2026-08-12",
+      "source_url": "https://www.zus.pl/swiadczenia/swiadczenia-przedemerytalne/warunki-wymagane-do-przyznania-swiadczenia-przedemerytalnego",
+      "source_snippet": "Żeby otrzymać prawo do świadczenia przedemerytalnego, musisz jednocześnie spełnić warunki, które są uzależnione od przyczyn rozwiązania stosunku pracy, Twojego wieku oraz stażu pracy.",
+      "last_verified_at": "2026-10-05",
       "verification_status": "verified"
     },
     {
@@ -5739,9 +5739,9 @@
       "amount_max": 0,
       "amount_currency": "PLN",
       "amount_period": "one_off",
-      "amount_note": "Bezpłatny turnus rehabilitacyjny (do 24 dni, ośrodki ZUS lub kontraktowane) dla osób zagrożonych całkowitą niezdolnością do pracy; zasiłek chorobowy za czas rehabilitacji",
+      "amount_note": "Rehabilitacja lecznicza do 24 dni (turnus może być skrócony/przedłużony za zgodą ZUS); ZUS pokrywa koszty zabiegów, zakwaterowania i wyżywienia oraz zwraca koszty dojazdu najtańszym transportem publicznym; wniosek PR-4 wypełnia lekarz prowadzący",
       "is_automatic": false,
-      "application_url": "https://www.zus.pl/prewencja-rentowa",
+      "application_url": "https://www.zus.pl/-/wniosek-zus-pr-4",
       "application_channel": "post",
       "deadline_type": "rolling",
       "deadline_note": null,
@@ -5787,10 +5787,10 @@
         "student_required": false,
         "admin_areas": []
       },
-      "source_url": "https://www.zus.pl/prewencja-rentowa",
-      "source_snippet": "Rehabilitacja lecznicza w ramach prewencji rentowej ZUS przysługuje osobom zagrożonym całkowitą niezdolnością do pracy; udział w turnusie jest bezpłatny.",
-      "last_verified_at": "2026-08-12",
-      "verification_status": "auto_extracted"
+      "source_url": "https://www.zus.pl/swiadczenia/prewencja-i-rehabilitacja/prewencja-rentowa/kierowanie-na-rehabilitacje-lecznicza-w-ramach-prewencji-rentowej-zus",
+      "source_snippet": "Z programu rehabilitacji możesz skorzystać, jeśli jesteś zagrożony utratą zdolności do pracy. Musi jednak istnieć szansa, że ją odzyskasz po rehabilitacji.",
+      "last_verified_at": "2026-10-05",
+      "verification_status": "verified"
     },
     {
       "slug": "prace-interwencyjne",
@@ -5802,10 +5802,10 @@
       "category": "employment",
       "benefit_type": "cash_monthly",
       "amount_min": null,
-      "amount_max": null,
+      "amount_max": 4806,
       "amount_currency": "PLN",
       "amount_period": "monthly",
-      "amount_note": "Refundacja wynagrodzenia osoby skierowanej (typowo do ok. 2300–3200 zł/msc) przez 6–12 miesięcy; umowa z pracodawcą lub organizacją; zasiłek dla bezrobotnego zawieszany",
+      "amount_note": "Refundacja części wynagrodzenia i składek ZUS skierowanego bezrobotnego do wysokości minimalnego wynagrodzenia (4 806 zł od 1.01.2026); typowo 3-12 miesięcy; pracodawca utrzymuje zatrudnienie co najmniej połowę okresu refundacji",
       "is_automatic": false,
       "application_url": "https://www.praca.gov.pl",
       "application_channel": "in_person",
@@ -5847,9 +5847,9 @@
         "student_required": false,
         "admin_areas": []
       },
-      "source_url": "https://www.praca.gov.pl",
-      "source_snippet": "Prace interwencyjne — forma pomocy realizowana przez powiatowe urzędy pracy w 2026 r. (refundacja wynagrodzenia skierowanej osoby, np. 2300 zł miesięcznie).",
-      "last_verified_at": "2026-08-12",
+      "source_url": "https://warszawa.praca.gov.pl/prace-interwencyjne-poznaj-szczegoly",
+      "source_snippet": "Maksymalna wnioskowana kwota refundacji w wysokości uzgodnionej, nie może przekroczyć kwoty minimalnego wynagrodzenia za pracę (obowiązującego w ostatnim dniu danego miesiąca).",
+      "last_verified_at": "2026-10-05",
       "verification_status": "verified"
     },
     {
@@ -5865,7 +5865,7 @@
       "amount_max": null,
       "amount_currency": "PLN",
       "amount_period": "monthly",
-      "amount_note": "Niepełnowymiarowa praca (do 1/2 etatu, min. 10 godz./tydz.) u organizacji pożytku publicznego, gmin, OSP itp.; refundacja wynagrodzenia do wysokości zasiłku; do 12 miesięcy",
+      "amount_note": "Świadczenie za prace społecznie użyteczne wg stawki godzinowej od 100% minimalnej stawki godzinowej: 31,40 zł/godz. w 2026 r. (minimalne wynagrodzenie 4 806 zł mies.); wykonywane w niepełnym wymiarze u gmin/organizacji; finansowane z Funduszu Pracy",
       "is_automatic": false,
       "application_url": "https://www.praca.gov.pl",
       "application_channel": "in_person",
@@ -5907,9 +5907,9 @@
         "student_required": false,
         "admin_areas": []
       },
-      "source_url": "https://www.praca.gov.pl",
-      "source_snippet": "Prace społecznie użyteczne — forma pomocy oferowana przez powiatowe urzędy pracy również w 2026 r., finansowana z Funduszu Pracy.",
-      "last_verified_at": "2026-08-12",
+      "source_url": "https://chrzanow.praca.gov.pl/rynek-pracy/stawki-kwoty-wskazniki",
+      "source_snippet": "Świadczenie z tytułu wykonywania prac społecznie użytecznych – od 100% minimalnej stawki godzinowej (art. 142 ust. 12): 31,40 zł",
+      "last_verified_at": "2026-10-05",
       "verification_status": "verified"
     },
     {
@@ -5925,7 +5925,7 @@
       "amount_max": null,
       "amount_currency": "PLN",
       "amount_period": "one_off",
-      "amount_note": "Dofinansowanie kosztów kształcenia: do 90% (mikroprzedsiębiorstwa do 9 pracowników) lub 70% (pozostali); limit na uczestnika: 200% przeciętnego wynagrodzenia; roczne limity dla firmy 4–14-krotność przeciętnego wynagrodzenia",
+      "amount_note": "Dofinansowanie kształcenia ustawicznego: do 80% kosztów (100% dla mikroprzedsiębiorstw), nie więcej niż 300% przeciętnego wynagrodzenia na uczestnika w roku; nabory ogłasza powiatowy urząd pracy, z priorytetami m.in. osoby 50+, z niepełnosprawnością, o niskim wykształceniu",
       "is_automatic": false,
       "application_url": "https://www.praca.gov.pl",
       "application_channel": "via_employer",
@@ -5982,9 +5982,9 @@
         "student_required": false,
         "admin_areas": []
       },
-      "source_url": "https://www.praca.gov.pl",
-      "source_snippet": "KFS: pracodawca może uzyskać środki na kształcenie ustawicze w wysokości 70% kosztów (90% gdy firma zatrudnia do 9 osób); maks. 200% przeciętnego wynagrodzenia na uczestnika.",
-      "last_verified_at": "2026-08-12",
+      "source_url": "https://przemysl.praca.gov.pl/strona-glowna/-/asset_publisher/1vCsJBiwSO6s/content/ogloszenie-o-naborze-wnioskow-o-przyznanie-srodkow-z-rezerwy-krajowego-funduszu-szkoleniowego-1",
+      "source_snippet": "Powiatowy Urząd Pracy w Przemyślu ogłasza nabór wniosków na przyznanie środków z rezerwy Krajowego Funduszu Szkoleniowego (KFS) na sfinansowanie kształcenia ustawicznego.",
+      "last_verified_at": "2026-10-05",
       "verification_status": "verified"
     },
     {
@@ -6002,7 +6002,7 @@
       "amount_period": "monthly",
       "amount_note": "2760 zł (znaczny), 1550 zł (umiarkowany), 575 zł (lekki stopień) + zwiększenie 600/900/1200 zł przy schorzeniach specjalnych (choroby psychiczne, upośledzenie, epilepsja, niewidomi); max 75–90% kosztów płacy",
       "is_automatic": false,
-      "application_url": "https://www.pfron.org.pl",
+      "application_url": "https://www.pfron.org.pl/pracodawcy/dofinansowanie-wynagrodzen/",
       "application_channel": "via_employer",
       "deadline_type": "rolling",
       "deadline_note": null,
@@ -6051,9 +6051,9 @@
         "student_required": false,
         "admin_areas": []
       },
-      "source_url": "https://www.pfron.org.pl",
-      "source_snippet": "Miesięczne dofinansowanie przysługuje w kwocie: 2760 zł (znaczny stopień), 1550 zł (umiarkowany), 575 zł (lekki), zwiększane o 600–1200 zł przy schorzeniach specjalnych (art. 26a ustawy o rehabilitacji).",
-      "last_verified_at": "2026-08-12",
+      "source_url": "https://www.pfron.org.pl/pracodawcy/dofinansowanie-wynagrodzen/wysokosc-dofinansowania-do-wynagrodzen-pracownikow-niepelnosprawnych/",
+      "source_snippet": "2760 zł – znaczny stopień; 1550 zł – umiarkowany; 575 zł – lekki stopień niepełnosprawności. Powyższe kwoty obowiązują od okresu sprawozdawczego lipiec 2024 r.",
+      "last_verified_at": "2026-10-05",
       "verification_status": "verified"
     },
     {
@@ -6069,9 +6069,9 @@
       "amount_max": null,
       "amount_currency": "PLN",
       "amount_period": "annual",
-      "amount_note": "Odliczenie od dochodu (przychodu przy ryczałcie): 130 zł za każdy bezpłatnie oddany litr krwi lub jej składników; limit łączny darowizn: 6% dochodu/przychodu; nie przysługuje przy podatku liniowym",
+      "amount_note": "Odliczenie darowizny na cele krwiodawstwa = iloczyn kwoty rekompensaty (rozporządzenie MZ) i litrów oddanej krwi lub jej składników; limit 6% dochodu (ryczałt: przychodu); dla podatników na skali lub ryczałcie (nie liniowy)",
       "is_automatic": false,
-      "application_url": "https://www.podatki.gov.pl",
+      "application_url": "https://www.podatki.gov.pl/ulgi-i-odliczenia/darowizny-na-krwiodawstwo-pit",
       "application_channel": "online",
       "deadline_type": "annual",
       "deadline_note": "Rozliczenie w zeznaniu rocznym PIT-36/PIT-37/PIT-28 (załącznik PIT/O)",
@@ -6108,9 +6108,9 @@
         "student_required": false,
         "admin_areas": []
       },
-      "source_url": "https://www.podatki.gov.pl",
-      "source_snippet": "Odliczenie przysługuje według stawki 130 zł za 1 litr oddanej krwi/osocza; łączny limit ulg z darowizn wynosi 6% dochodu podatnika.",
-      "last_verified_at": "2026-08-12",
+      "source_url": "https://www.podatki.gov.pl/ulgi-i-odliczenia/darowizny-na-krwiodawstwo-pit",
+      "source_snippet": "Kwota odliczenia darowizny przekazanej na cele krwiodawstwa stanowi iloczyn kwoty rekompensaty określonej przepisami wydanymi na podstawie ustawy o publicznej służbie krwi i litrów oddanej przez Ciebie krwi lub jej składników.",
+      "last_verified_at": "2026-10-05",
       "verification_status": "verified"
     },
     {
@@ -6128,7 +6128,7 @@
       "amount_period": "annual",
       "amount_note": "Dodatkowe odliczenie 100% kosztów kwalifikowanych (targi, promocja, dokumentacja sprzedażowa) — łącznie 200% kosztów; limit 1 000 000 zł rocznie; PIT (skala, liniowy) i CIT",
       "is_automatic": false,
-      "application_url": "https://www.podatki.gov.pl",
+      "application_url": "https://www.podatki.gov.pl/ulgi-i-odliczenia/ulga-na-ekspansje-pit",
       "application_channel": "online",
       "deadline_type": "annual",
       "deadline_note": "Rozliczenie w zeznaniu rocznym PIT-36/PIT-36L/CIT-8",
@@ -6167,9 +6167,9 @@
         "student_required": false,
         "admin_areas": []
       },
-      "source_url": "https://www.podatki.gov.pl",
-      "source_snippet": "Ulga na ekspansję: podatnik może dodatkowo odliczyć od podstawy opodatkowania koszty poniesione w celu zwiększenia przychodów ze sprzedaży produktów; odliczenie nie może przekroczyć 1 000 000 zł w roku podatkowym.",
-      "last_verified_at": "2026-08-12",
+      "source_url": "https://www.podatki.gov.pl/ulgi-i-odliczenia/ulga-na-ekspansje-pit",
+      "source_snippet": "Ulga na ekspansję pozwala na dodatkowe odliczenie kosztów poniesionych w celu rozszerzenia rynków zbytu, w tym zagranicznych.",
+      "last_verified_at": "2026-10-05",
       "verification_status": "verified"
     },
     {
@@ -6187,7 +6187,7 @@
       "amount_period": "annual",
       "amount_note": "Dodatkowe odliczenie 30% kosztów produkcji próbnej i wprowadzenia nowego produktu na rynek; limit: 10% dochodu podatnika; PIT i CIT",
       "is_automatic": false,
-      "application_url": "https://www.podatki.gov.pl",
+      "application_url": "https://www.podatki.gov.pl/ulgi-i-odliczenia/ulga-na-prototyp-pit",
       "application_channel": "online",
       "deadline_type": "annual",
       "deadline_note": "Rozliczenie w zeznaniu rocznym (PIT-36/PIT-36L/CIT-8, załączniki PIT/BR lub CIT/BR)",
@@ -6226,10 +6226,10 @@
         "student_required": false,
         "admin_areas": []
       },
-      "source_url": "https://www.podatki.gov.pl",
-      "source_snippet": "Ulga prototypowa pozwala odliczyć 30% kosztów produkcji próbnej i wprowadzenia nowego produktu na rynek; odliczenie nie może przekroczyć 10% dochodu.",
-      "last_verified_at": "2026-08-12",
-      "verification_status": "auto_extracted"
+      "source_url": "https://www.podatki.gov.pl/ulgi-i-odliczenia/ulga-na-prototyp-pit",
+      "source_snippet": "Możesz odliczyć 30% sumy kosztów uzyskania przychodów poniesionych w roku podatkowym na produkcję próbną nowego produktu i wprowadzenia nowego produktu na rynek.",
+      "last_verified_at": "2026-10-05",
+      "verification_status": "verified"
     },
     {
       "slug": "stop-smog",
@@ -6348,8 +6348,8 @@
         ]
       },
       "source_url": "https://www.wtp.waw.pl/warszawska-karta-miejska/bilet-warszawiaka-karta-warszawianki-karta-warszawiaka/",
-      "source_snippet": "Karta młodego warszawiaka przysługuje dzieciom do 30 września roku, w którym kończą 21 lat, oraz studentom do 26. roku życia; bilet ulgowy 30-dniowy 49 zł, 90-dniowy 125 zł.",
-      "last_verified_at": "2026-08-12",
+      "source_snippet": "Karta przysługuje osobom: zameldowanym na pobyt stały na terenie m.st. Warszawy lub zamieszkującym na terenie m.st. Warszawy i rozliczającym podatek dochodowy od osób fizycznych (PIT) w urzędzie skarbowym w Warszawie.",
+      "last_verified_at": "2026-10-05",
       "verification_status": "verified"
     },
     {
@@ -6395,7 +6395,7 @@
         "age_min": null,
         "age_max": null,
         "income_annual_max": null,
-        "income_note": null,
+        "income_note": "Brak kryterium dochodowego; Karta Mieszkańca może być wydana każdemu na żądanie (regulamin), a część zniżek zależy od rozliczania PIT w Gdańsku",
         "requires_children": false,
         "gender": "any",
         "nationality": "any_resident",
@@ -6406,9 +6406,9 @@
           "Gdańsk"
         ]
       },
-      "source_url": "https://www.gdansk.pl",
-      "source_snippet": "Gdańska Karta Mieszkańca (portal Jestem z Gdańska) daje m.in. bezpłatne wejścia raz w roku do wybranych atrakcji i rabaty u partnerów programu; karta dla osób rozliczających PIT w Gdańsku.",
-      "last_verified_at": "2026-08-12",
+      "source_url": "https://jestemzgdanska.pl",
+      "source_snippet": "Gdańska Karta Mieszkańca może być wydana każdemu na jego żądanie.",
+      "last_verified_at": "2026-10-05",
       "verification_status": "verified"
     },
     {
@@ -6466,8 +6466,8 @@
         ]
       },
       "source_url": "https://krakow.pl/aktualnosci/302928,29,komunikat,karta_krakowska_ze_zwiekszonym_zainteresowaniem_mieszkancow.html",
-      "source_snippet": "Karta Krakowska oferuje zniżki na bilety okresowe w komunikacji miejskiej i tańsze parkowanie na OPP; korzysta z niej prawie 359 tys. użytkowników.",
-      "last_verified_at": "2026-08-12",
+      "source_snippet": "Karta Krakowska to element polityki promocyjnej i społecznej Krakowa, mający na celu jego rozwój, zwiększenie dostępności do komunikacji miejskiej i dóbr kultury, jak również zwiększenie dochodów miasta z tytułu podatku dochodowego od osób fizycznych.",
+      "last_verified_at": "2026-10-05",
       "verification_status": "verified"
     },
     {
@@ -6485,7 +6485,7 @@
       "amount_period": "monthly",
       "amount_note": "Bezpłatne przejazdy autobusami i tramwajami we Wrocławiu dla wszystkich osób 65+, także niemieszkających w mieście; wystarczy dowód osobisty",
       "is_automatic": true,
-      "application_url": "https://www.wroclaw.pl",
+      "application_url": "https://www.wroclaw.pl/komunikacja/uprawnienia-do-ulg",
       "application_channel": "automatic",
       "deadline_type": "none",
       "deadline_note": null,
@@ -6511,7 +6511,7 @@
         "income_note": null,
         "requires_children": false,
         "gender": "any",
-        "nationality": "any_resident",
+        "nationality": "any",
         "residency_months_min": null,
         "housing_tenure": null,
         "student_required": false,
@@ -6519,9 +6519,9 @@
           "Wrocław"
         ]
       },
-      "source_url": "https://www.wroclaw.pl",
-      "source_snippet": "Wrocław udostępnia bezpłatne przejazdy komunikacją miejską osobom po 65. roku życia — wystarczy dowód osobisty.",
-      "last_verified_at": "2026-08-12",
+      "source_url": "https://www.wroclaw.pl/komunikacja/uprawnienia-do-ulg",
+      "source_snippet": "Od 2022 r. z bezpłatnych przejazdów komunikacją miejską Wrocławia mogą korzystać seniorzy, którzy ukończyli 65 lat.",
+      "last_verified_at": "2026-10-05",
       "verification_status": "verified"
     },
     {
@@ -6533,11 +6533,11 @@
       "funder": "ZTM Poznań / Miasto Poznań",
       "category": "transport",
       "benefit_type": "free_slab",
-      "amount_min": 0,
-      "amount_max": 0,
+      "amount_min": null,
+      "amount_max": null,
       "amount_currency": "PLN",
       "amount_period": "annual",
-      "amount_note": "Bilet specjalny na 366 dni (opłata manipulacyjna 12 zł) dla Zasłużonych Honorowych Dawców Krwi I stopnia (15 l kobiety / 18 l mężczyźni); 50% ulgi dla odznaką II stopnia (10/12 l)",
+      "amount_note": "Ulgi ZTM Poznań dla honorowych dawców krwi: 50% ulgi dla odznaki 'Zasłużony Honorowy Dawca Krwi II stopnia'; bilet specjalny dla odznaki I stopnia lub 'Zasłużony dla Zdrowia Narodu'; wariant metropolitalny wymaga rozliczania PIT w Poznaniu/gminie porozumienia; cena biletu specjalnego nie jest podana w wyciągu strony",
       "is_automatic": false,
       "application_url": "https://www.ztm.poznan.pl/wszystko-o-biletach/ulgi-i-zwolnienia/",
       "application_channel": "in_person",
@@ -6584,8 +6584,8 @@
         ]
       },
       "source_url": "https://www.ztm.poznan.pl/wszystko-o-biletach/ulgi-i-zwolnienia/",
-      "source_snippet": "W Poznaniu przejazdy są bezpłatne po oddaniu 18 litrów krwi przez mężczyzn i 15 litrów przez kobiety; od 12/10 litrów przysługuje 50% zniżka (uchwała RM Poznania nr XCVI/1846/VIII/2024).",
-      "last_verified_at": "2026-08-12",
+      "source_snippet": "osoby, którym nadano odznakę „Zasłużony Honorowy Dawca Krwi I stopnia” lub „Honorowy Dawca Krwi – Zasłużony dla Zdrowia Narodu”",
+      "last_verified_at": "2026-10-05",
       "verification_status": "verified"
     },
     {
@@ -6597,11 +6597,11 @@
       "funder": "ZTM Poznań / Miasto Poznań",
       "category": "transport",
       "benefit_type": "free_slab",
-      "amount_min": 0,
-      "amount_max": 0,
+      "amount_min": null,
+      "amount_max": null,
       "amount_currency": "PLN",
       "amount_period": "monthly",
-      "amount_note": "Bezpłatne przejazdy dla mieszkańców Poznania (i gmin objętych porozumieniem) pobierających świadczenie pielęgnacyjne lub rentę socjalną i rozliczających PIT w Poznaniu",
+      "amount_note": "Bilet specjalny (socjalny) ZTM Poznań dla osób pobierających świadczenie pielęgnacyjne lub rentę socjalną, mieszkających w Poznaniu lub gminie porozumienia i rozliczających tam PIT; dokumenty: decyzja o przyznaniu świadczenia + dowód tożsamości + zweryfikowany status podatnika",
       "is_automatic": false,
       "application_url": "https://www.ztm.poznan.pl/wszystko-o-biletach/ulgi-i-zwolnienia/",
       "application_channel": "in_person",
@@ -6643,8 +6643,8 @@
         ]
       },
       "source_url": "https://www.ztm.poznan.pl/wszystko-o-biletach/ulgi-i-zwolnienia/",
-      "source_snippet": "Bezpłatne przejazdy przysługują osobom pobierającym świadczenie pielęgnacyjne oraz rentę socjalną, zamieszkałym w Poznaniu i rozliczającym PIT w urzędzie skarbowym w Poznaniu (uchwała taryfowa).",
-      "last_verified_at": "2026-08-12",
+      "source_snippet": "osoby pobierające świadczenie pielęgnacyjne spełniające warunki dla osób wskazanych w poz. 1 niniejszej tabeli",
+      "last_verified_at": "2026-10-05",
       "verification_status": "verified"
     },
     {
@@ -6662,7 +6662,7 @@
       "amount_period": "one_off",
       "amount_note": "Pomoc pieniężna na usamodzielnienie (m.in. zagospodarowanie — w 2026 r. do 2066 zł, wyższe kwoty za znaczne osiągnięcia) dla wychowanków pieczy zastępczej rozpoczynających samodzielne życie",
       "is_automatic": false,
-      "application_url": "https://www.gov.pl/web/rodzina/pomoc-spoleczna",
+      "application_url": "https://www.gov.pl/web/rodzina/pomoc-pieniezna-na-usamodzielnienie",
       "application_channel": "in_person",
       "deadline_type": "rolling",
       "deadline_note": null,
@@ -6689,8 +6689,8 @@
         "statuses": [],
         "age_min": null,
         "age_max": null,
-        "income_annual_max": 39504,
-        "income_note": "Kryteria pomocy społecznej: 1010 zł/msc osoba samotna (12 120 zł/rok) lub 823 zł/os./msc w rodzinie; rodzina 4-os. ≈ 39 504 zł/rok.",
+        "income_annual_max": 79008,
+        "income_note": "Pomoc pieniężna na usamodzielnienie (pomoc społeczna): dochód osoby samotnej nie może przekraczać 200% kryterium dochodowego (2 × 1010 zł), a w rodzinie dochód na osobę 200% kryterium (2 × 823 zł = 1 646 zł/mies.); rodzina 4-os.: 1 646 × 12 × 4 = 79 008 zł/rok. Kryteria 1010/823 zł obowiązują od 1.01.2025",
         "requires_children": false,
         "gender": "any",
         "nationality": "any_resident",
@@ -6699,10 +6699,10 @@
         "student_required": false,
         "admin_areas": []
       },
-      "source_url": "https://www.gov.pl/web/rodzina/pomoc-spoleczna",
-      "source_snippet": "Świadczenia pieniężne z pomocy społecznej obejmują pomoc na usamodzielnienie; w 2026 r. wsparcie na usamodzielnienie wynosi do 2066 zł.",
-      "last_verified_at": "2026-08-12",
-      "verification_status": "auto_extracted"
+      "source_url": "https://www.gov.pl/web/rodzina/pomoc-pieniezna-na-usamodzielnienie",
+      "source_snippet": "w rodzinie, w której dochód na osobę nie przekracza 200 % kwoty kryterium dochodowego na osobę w rodzinie.",
+      "last_verified_at": "2026-10-05",
+      "verification_status": "verified"
     },
     {
       "slug": "stypendium-mloda-polska",
@@ -6713,16 +6713,16 @@
       "funder": "Ministerstwo Kultury i Dziedzictwa Narodowego (Narodowe Centrum Kultury)",
       "category": "education",
       "benefit_type": "cash_one_off",
-      "amount_min": null,
-      "amount_max": null,
+      "amount_min": 35000,
+      "amount_max": 55000,
       "amount_currency": "PLN",
-      "amount_period": "annual",
-      "amount_note": "Stypendium roczne dla utalentowanych twórców do 40. roku życia (zasięg wg dyscypliny) na realizację projektu artystycznego; nabór coroczny wskazanych dyscyplin",
+      "amount_period": "one_off",
+      "amount_note": "Stypendium w wysokości od 35 000 do 55 000 zł brutto na realizację projektu artystycznego (literatura, sztuki wizualne, muzyka, taniec, teatr, film); edycja XXIV (stypendia na 2027)",
       "is_automatic": false,
-      "application_url": "https://nck.pl",
+      "application_url": "https://nck.pl/dotacje-i-stypendia/stypendia/programy/mloda-polska/aktualnosci/nabor-2026",
       "application_channel": "online",
       "deadline_type": "annual",
-      "deadline_note": "Nabór ogłaszany corocznie dla wybranych dyscyplin (terminy na stronie NCK)",
+      "deadline_note": "Nabór do XXIV edycji (Młoda Polska 2027) trwał do 30.09.2026 - zakończony; kolejny nabór oczekiwany w 2027 r. (termin nieogłoszony)",
       "procedure_steps": [
         {
           "step": 1,
@@ -6750,21 +6750,21 @@
       "eligibility": {
         "statuses": [],
         "age_min": null,
-        "age_max": 40,
+        "age_max": 35,
         "income_annual_max": null,
         "income_note": null,
         "requires_children": false,
         "gender": "any",
-        "nationality": "any_resident",
+        "nationality": "citizen_or_pr",
         "residency_months_min": null,
         "housing_tenure": null,
         "student_required": false,
         "admin_areas": []
       },
-      "source_url": "https://nck.pl",
-      "source_snippet": "„Młoda Polska” to program stypendialny Ministra Kultury i Dziedzictwa Narodowego dla młodych, utalentowanych twórców, realizowany przez Narodowe Centrum Kultury.",
-      "last_verified_at": "2026-08-12",
-      "verification_status": "auto_extracted"
+      "source_url": "https://nck.pl/dotacje-i-stypendia/stypendia/programy/mloda-polska/aktualnosci/nabor-2026",
+      "source_snippet": "Służy wspieraniu młodych (do 35 roku życia) artystów, którzy mają w swoim dorobku wybitne osiągnięcia w dziedzinie sztuki, którą uprawiają.",
+      "last_verified_at": "2026-10-05",
+      "verification_status": "verified"
     }
   ]
 }

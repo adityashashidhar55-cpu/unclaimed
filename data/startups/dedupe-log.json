@@ -403,5 +403,32 @@
     "kept_name": "Innosuisse – Start-up innovation projects",
     "reason": "same Innosuisse start-up innovation projects, recorded once from the German page and once from the English one",
     "merged_at": "2026-09-25"
+  },
+  {
+    "country": "eu",
+    "removed": "eu-esa-bass-kickstart",
+    "removed_name": "ESA Space Solutions Kick-Start activities",
+    "kept": "eu-esa-business-applications-kick-start",
+    "kept_name": "ESA Space Solutions Kick-start Activity",
+    "reason": "BASS Kick-start is the ESA Business Applications Kick-start; re-verification pointed both at the same official page",
+    "merged_at": "2026-10-05"
+  },
+  {
+    "country": "gb",
+    "removed": "gb-se-rd-grant",
+    "removed_name": "Scottish Enterprise R&D Grant",
+    "kept": "uk-scottish-enterprise-rd-grants",
+    "kept_name": "Scottish Enterprise Research and Development (R&D) grants",
+    "reason": "same Scottish Enterprise R&D grant page after re-verification",
+    "merged_at": "2026-10-05"
+  },
+  {
+    "country": "ie",
+    "removed": "ie-ei-hpsu-feasibility",
+    "removed_name": "HPSU Feasibility Study Grant",
+    "kept": "ie-hpsu-feasibility-study-grant",
+    "kept_name": "Enterprise Ireland HPSU Feasibility Study Grant",
+    "reason": "same Enterprise Ireland HPSU Feasibility Study Grant page after re-verification",
+    "merged_at": "2026-10-05"
   }
 ]

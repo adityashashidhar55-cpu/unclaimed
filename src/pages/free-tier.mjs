@@ -34,6 +34,7 @@ import {
   passportedFrom,
   isStatutoryRight,
   isCitizensOnly,
+  isEndedScheme,
   isHardshipAid,
 } from '../engine/matcher.js';
 import { isFreeMoney } from '../engine/startup.js';
@@ -171,6 +172,11 @@ export function lockedHouseholdRecord(p, { cc, base, opaqueId }) {
       statutory_right: isStatutoryRight(p),
       citizens_only: isCitizensOnly(p),
       hardship_aid: isHardshipAid(p),
+      /* "Ended: ..." lives in deadline_note, which is stripped above. Without
+         this a retired scheme is dropped from the full dataset's results and
+         comes straight back from the public one — the two verdicts that
+         scripts/test-gating.mjs holds identical. */
+      ended: isEndedScheme(p),
     },
   };
 }

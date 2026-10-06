@@ -46,12 +46,14 @@ import { sourceTrust } from './pages/trust.mjs';
 import { similarHousehold, similarCompany, similarHouseholdBlock, similarCompanyBlock } from './pages/similar.mjs';
 import { buildSearchIndexes, searchPage, SEARCH_CLIENT_JS } from './pages/search.mjs';
 import { expertHelpCta, renderExpertHelpPage } from './pages/expert-help.mjs';
+import { renderReportErrorPage } from './pages/report-error.mjs';
 import { renderConnectPage } from './pages/connect.mjs';
 import { renderReadinessPage } from './pages/readiness.mjs';
 import { trustCentrePage } from './pages/trust-centre.mjs';
 import { scamsPage } from './pages/scams.mjs';
 import { accessibilityPage } from './pages/accessibility.mjs';
 import { changelogPage } from './pages/changelog.mjs';
+import { finalizeSeo } from './seo.mjs';
 import { buildStartupFeeds } from './pages/feeds.mjs';
 import { openApiSpec, startupCsv } from './pages/openapi.mjs';
 import { buildFunderDirectory, funderKey, fundersIndexPage, funderProfilePage } from './pages/funders.mjs';
@@ -202,9 +204,12 @@ function write(rel, content) {
   fs.writeFileSync(full, rel.endsWith('.js') && typeof content === 'string' ? versionImports(content) : content);
 }
 
+/** rel path -> language it was last written in (a later write wins the file). */
+const PAGE_LANG = new Map();
 function page(rel, html) {
   write(rel, html);
   PAGES.push(rel);
+  PAGE_LANG.set(rel, L);
 }
 
 const PAGES = [];
@@ -213,6 +218,30 @@ const nf = (n) => new Intl.NumberFormat('en').format(n);
 /* "2026-08-12" is a column value. "12 August 2026" is a date. The former was
    printed twice on every programme page, including in the At a glance table
    directly under three rows of ordinary English. */
+/**
+ * The one sentence a reader needs about a record's age, on every programme page.
+ *
+ * Verified: "Last checked against the official page on 5 October 2026" — the
+ * date is when a person (or the verification run) compared this record with the
+ * funder's own page, which is a per-record fact now that last_verified_at is.
+ * Anything else: "Not yet re-checked", saying so in words, with the date the
+ * record was extracted so the reader can judge how stale it might be. The two
+ * must never read alike — a page that looks equally sure of everything is the
+ * one that teaches readers to trust none of it.
+ */
+function provenanceLine(p, tr, style) {
+  const verified = p.verification_status === 'verified';
+  const date = dateLabel(p.last_verified_at);
+  const text = verified ? tr('provLastChecked', date) : tr('provNotRechecked', date);
+  return `<p class="small prov-line ${verified ? 'prov-line--checked' : 'prov-line--stale'}" style="${style}">${verified ? '' : '<strong>'}${esc(text)}${verified ? '' : '</strong>'}</p>`;
+}
+
+/** A visible way to say "this is wrong", pre-filled with the record it is about. */
+function reportErrorLink({ base, tr, audience, cc, slug }) {
+  const qs = new URLSearchParams({ audience, country: cc, slug: `${cc}/${slug}` }).toString();
+  return `<p class="small" style="margin:.5rem 0 0"><a class="link-underline" rel="nofollow" href="${esc(`${base}/report-error/?${qs}`)}">${esc(tr('reportError'))}</a> <span class="tiny">${esc(tr('reportErrorHint'))}</span></p>`;
+}
+
 const dateLabel = (iso) => {
   if (!iso) return '';
   const d = new Date(`${String(iso).slice(0, 10)}T00:00:00Z`);
@@ -577,7 +606,9 @@ function landing() {
     </div>
 
     <h1 class="aud-me" style="max-width:18ch;margin:1.6rem auto 0" data-blur-words>${esc(TR('homeH1'))}</h1>
-    <h1 class="aud-biz" style="max-width:18ch;margin:1.6rem auto 0" data-blur-words>${esc(TR('homeEntH1'))}</h1>
+    ${/* One <h1> per page: the household headline is the H1, the company one is
+          an H2 drawn at H1 size (.h1-lg), shown only when the audience is biz. */''}
+    <h2 class="aud-biz h1-lg" style="max-width:18ch;margin:1.6rem auto 0" data-blur-words>${esc(TR('homeEntH1'))}</h2>
 
     <p class="lede reveal aud-me" data-delay="200" style="max-width:54ch;margin:1.4rem auto 0">
       ${esc(TR('homeLede'))}
@@ -734,7 +765,16 @@ function landing() {
     description: `${nf(STATS.total + startupCount)} sourced government and private funding programmes across ${jurisdictions} jurisdictions. Find what you are owed in ninety seconds — free, anonymous, no sign-up.`,
     canonical: `${SITE_URL}${L === 'en' ? '' : '/' + L}/`,
     jsonld: [
-      { '@context': 'https://schema.org', '@type': 'WebSite', name: SITE_NAME, url: SITE_URL },
+      { '@context': 'https://schema.org', '@type': 'Organization', name: SITE_NAME, url: SITE_URL, logo: `${SITE_URL}/icon-512.png` },
+      {
+        '@context': 'https://schema.org', '@type': 'WebSite', name: SITE_NAME, url: SITE_URL, inLanguage: L,
+        /* /search/ is one shared English page that reads ?q= (src/pages/search.mjs). */
+        potentialAction: {
+          '@type': 'SearchAction',
+          target: { '@type': 'EntryPoint', urlTemplate: `${SITE_URL}/search/?q={search_term_string}` },
+          'query-input': 'required name=search_term_string',
+        },
+      },
       {
         '@context': 'https://schema.org', '@type': 'Dataset', name: `${SITE_NAME} programme dataset`,
         description: `${nf(STATS.total + startupCount)} sourced funding programmes across ${jurisdictions} jurisdictions.`,
@@ -1021,10 +1061,11 @@ function programmePage(entry, data, p) {
         <p class="tiny" style="margin:.6rem 0 0">${esc(
           p.verification_status === 'verified' ? TR('provVerified') : TR('provAuto'),
         )}</p>
-        <p class="tiny" style="margin:.3rem 0 0">${esc(TR('trustVerifiedOn', dateLabel(p.last_verified_at)))}</p>
+        ${provenanceLine(p, TR, 'margin:.3rem 0 0')}
         <p class="tiny" style="margin:.2rem 0 0">${esc(
           trust.homepage ? TR('trustSourceHomepage') : TR('trustSourceHost', trust.host),
         )}</p>
+        ${reportErrorLink({ base: BASE, tr: TR, audience: 'household', cc, slug: p.slug })}
       </div>
 
       ${/* The heading was assembled as "Other {label} support in {country}",
@@ -1042,7 +1083,7 @@ function programmePage(entry, data, p) {
           categoryLabel(p.category).toLowerCase(),
           entry.name,
         ),
-      )}</h2>${teaseList({ rows: relatedRows, total: related.length, noun: 'programmes', href: `${LB()}/pricing/`, tr: TR, checkHref: `${LB()}/check/`, cc, base: BASE, hiddenSlugs: related.slice(FREE_ROWS).map((x) => x.slug) })}` : ''}
+      )}</h2>${teaseList({ rows: relatedRows, total: related.length, noun: 'programmes', href: `${LB()}/pricing/`, tr: TR, checkHref: `${LB()}/check/`, cc, base: BASE, hiddenSlugs: related.slice(FREE_ROWS).map((x) => x.slug), hiddenItems: related.slice(FREE_ROWS).map((x) => ({ name: x.name_en, href: progHref(BASE, cc, x) })) })}` : ''}
 
       ${/* Deterministic, build-time similarity across the WHOLE country pool
             (not just this category) — see src/pages/similar.mjs. This is a
@@ -1145,7 +1186,7 @@ unlockProgramme();
 </script>`,
     title: `${p.name_en} — ${entry.name}`,
     description: `${p.name_en}${p.name_local !== p.name_en ? ` (${p.name_local})` : ''}: who qualifies, ${amt ? `worth ${amt}, ` : ''}documents needed, how to apply, and the official ${p.funder} source.`,
-    canonical: `${SITE_URL}/${cc}/${p.category}/${p.slug}/`,
+    canonical: `${SITE_URL}${L === 'en' ? '' : '/' + L}/${cc}/${p.category}/${p.slug}/`,
     body: paywallMarkup + body,
     jsonld: [ld, breadcrumbLd(crumbs.map((c) => ({ ...c, href: c.href })))],
   });
@@ -1175,7 +1216,7 @@ function countryPage(entry, data) {
           total: list.length,
           noun: `${categoryLabel(cat).toLowerCase()} programmes`,
           href: `${LB()}/pricing/`, tr: TR, checkHref: `${LB()}/check/`,
-          cc, base: BASE, hiddenSlugs: list.slice(FREE_ROWS).map((p) => p.slug) })}
+          cc, base: BASE, hiddenSlugs: list.slice(FREE_ROWS).map((p) => p.slug), hiddenItems: list.slice(FREE_ROWS).map((p) => ({ name: p.name_en, href: progHref(BASE, cc, p) })) })}
       </section>`;
     })
     .join('');
@@ -1232,7 +1273,7 @@ function countryPage(entry, data) {
     altLangs: ALT,
     title: `${entry.name} — every benefit, grant and rebate we could source`,
     description: `${entry.programme_count} government and institutional support programmes in ${entry.name}: housing, family, income support, energy, transport, tax and business. Official sources, eligibility rules and application steps. Free eligibility check.`,
-    canonical: `${SITE_URL}/${cc}/`,
+    canonical: `${SITE_URL}${L === 'en' ? '' : '/' + L}/${cc}/`,
     body,
     jsonld: [
       breadcrumbLd(crumbs),
@@ -1293,7 +1334,7 @@ function categoryPage(entry, data, cat, list) {
       total: list.length,
       noun: `${categoryLabel(cat).toLowerCase()} programmes`,
       href: `${LB()}/pricing/`, tr: TR, checkHref: `${LB()}/check/`,
-      cc, base: BASE, hiddenSlugs: sortedForTease.slice(FREE_ROWS).map((p) => p.slug) })}
+      cc, base: BASE, hiddenSlugs: sortedForTease.slice(FREE_ROWS).map((p) => p.slug), hiddenItems: sortedForTease.slice(FREE_ROWS).map((p) => ({ name: p.name_en, href: progHref(BASE, cc, p) })) })}
   </div>
 </section>`;
 
@@ -1305,7 +1346,7 @@ function categoryPage(entry, data, cat, list) {
     altLangs: ALT,
     title: `${categoryLabel(cat)} in ${entry.name} — ${list.length} programmes`,
     description: `Every ${categoryLabel(cat).toLowerCase()} programme we could source in ${entry.name} (${list.length} records), with eligibility rules, amounts, documents and official links.`,
-    canonical: `${SITE_URL}/${cc}/${cat}/`,
+    canonical: `${SITE_URL}${L === 'en' ? '' : '/' + L}/${cc}/${cat}/`,
     body,
     jsonld: [breadcrumbLd(crumbs)],
   });
@@ -1447,7 +1488,7 @@ function countriesIndex() {
     altLangs: ALT,
     title: TR('countriesTitle'),
     description: `Benefit and grant coverage across ${STATS.countryCount} countries — ${nf(STATS.total)} sourced programmes with eligibility rules and official links.`,
-    canonical: `${SITE_URL}/countries/`,
+    canonical: `${SITE_URL}${L === 'en' ? '' : '/' + L}/countries/`,
     body,
     jsonld: [breadcrumbLd([{ label: TR('backHome'), href: `${LB()}/` }, { label: TR('navCountries') }])],
   });
@@ -1485,6 +1526,7 @@ ${disclaimerBar(TR)}
 <section class="section-tight shell">
   <div id="app" class="wizard">
     <noscript>
+      <h1>${esc(TR('checkTitle'))}</h1>
       <div class="callout">
         <p><strong>${esc(TR('checkNoJsTitle'))}</strong> — ${esc(TR('checkNoJsBody'))}</p>
         <p><a class="link-underline" href="${LB()}/countries/">${esc(TR('checkBrowseAll', STATS.countryCount))}</a></p>
@@ -1581,7 +1623,7 @@ function methodologyPage() {
     altLangs: ALT,
     title: `${TR('methodology')} — ${TR('methH1')}`,
     description: TR('methLede'),
-    canonical: `${SITE_URL}/methodology/`,
+    canonical: `${SITE_URL}${L === 'en' ? '' : '/' + L}/methodology/`,
     body,
   });
 }
@@ -2102,7 +2144,7 @@ function appShell() {
      visitor with scripting off got a blank screen and no route back to a site
      that works perfectly well without JavaScript. It inherits --ink now, and
      the way out is a link in --teal. -->
-<div id="app"><noscript><p style="padding:2rem;color:var(--ink)">
+<div id="app"><noscript><h1 style="padding:2rem 2rem 0;color:var(--ink)">Unclaimed</h1><p style="padding:1rem 2rem 2rem;color:var(--ink)">
 This app needs JavaScript. The full site works without it — <a href="${BASE}/" style="color:var(--teal)">open unclaimed</a>.
 </p></noscript></div>
 
@@ -2177,7 +2219,7 @@ function webManifest() {
     name: 'Unclaimed — money you are owed',
     short_name: 'Unclaimed',
     description:
-      'Find the government benefits and grants you are entitled to. Works offline for the eligibility check, no account needed, your answers are never sent to us.',
+      'Find the government benefits and grants you are entitled to. Works offline for the eligibility check, no account needed, your answers stay on your device unless you ask us to email you the result.',
     start_url: `${BASE}/app/`,
     scope: `${BASE}/`,
     display: 'standalone',
@@ -2375,7 +2417,7 @@ ${disclaimerBar(TR)}
   <div id="acct-hero-in" hidden>
     <!-- No eyebrow: the card below already says SIGNED IN, and saying it
          twice on one screen is the same repetition the headline had. -->
-    <h1 style="max-width:16ch">${esc(TR('navMyAccount'))}</h1>
+    <h2 class="h1-lg" style="max-width:16ch">${esc(TR('navMyAccount'))}</h2>
   </div>
 
   <div class="card" style="margin-top:2.4rem" id="auth-card">
@@ -3396,6 +3438,7 @@ ${disclaimerBar(TR)}
   ])}
   <div id="app" class="wizard" data-base="${BASE}">
     <noscript>
+      <h1>${esc(TR('startupCheckTitle'))}</h1>
       <div class="callout">
         <p><strong>The company check needs JavaScript</strong> — it runs in your browser so your figures
         never reach a server. Without it you can still read every programme:</p>
@@ -3583,7 +3626,8 @@ ${disclaimerBar(TR)}
       total: data.programmes.length,
       noun: 'startup programmes',
       href: `${LB()}/pricing/`,
-      container: 'grid grid-2', tr: TR, checkHref: `${LB()}/check/`, })}
+      container: 'grid grid-2', tr: TR, checkHref: `${LB()}/check/`,
+      hiddenItems: data.programmes.slice(FREE_ROWS).map((p) => ({ name: p.name_en, href: `${BASE}/startups/${c.slug}/${p.slug}/` })) })}
   </div>
 
   ${alertsSubscribeBox({ jurisdiction: c.slug, audience: 'companies' })}
@@ -3599,6 +3643,20 @@ ${disclaimerBar(TR)}
     audience: 'biz',
     body,
   });
+}
+
+let STARTUP_SHARED_NAMES = null;
+/** True when another programme in the same country has this exact name. */
+function startupNameIsShared(cc, name) {
+  if (!STARTUP_SHARED_NAMES) {
+    STARTUP_SHARED_NAMES = new Set();
+    for (const [code, d] of Object.entries(STARTUP_DATA)) {
+      const n = new Map();
+      for (const q of d.programmes) n.set(q.name_en, (n.get(q.name_en) || 0) + 1);
+      for (const [name, k] of n) if (k > 1) STARTUP_SHARED_NAMES.add(`${code}|${name}`);
+    }
+  }
+  return STARTUP_SHARED_NAMES.has(`${cc}|${name}`);
 }
 
 /** /startups/{cc}/{slug}/ */
@@ -3725,14 +3783,15 @@ ${disclaimerBar(TR)}
 
   <div class="callout" style="margin-top:2rem">
     <p><strong>Source.</strong> <a href="${esc(p.source_url)}" rel="nofollow noopener">${esc(p.source_url)}</a>
-    ${p.verification_status !== 'verified' ? ' · <strong>not human-checked</strong>' : ''}</p>
+    </p>
     ${p.source_snippet ? `<p class="small" style="margin-top:.6rem">"${esc(String(p.source_snippet).slice(0, 300))}"</p>` : ''}
-    <p class="tiny" style="margin-top:.6rem">Verified on ${esc(dateLabel(p.last_verified_at))}</p>
+    ${provenanceLine(p, TR, 'margin-top:.6rem')}
     <p class="tiny" style="margin-top:.2rem">${
       trust.homepage
         ? "Source: funder's homepage — the programme page was not found"
         : `Source: ${esc(trust.host)}`
     }</p>
+    ${reportErrorLink({ base: BASE, tr: TR, audience: 'company', cc: c.slug, slug: p.slug })}
   </div>
 
   ${similarCompanyBlock({
@@ -3748,14 +3807,57 @@ ${disclaimerBar(TR)}
 
   return layout({
     base: BASE, linkBase: LB(), lang: L, tr: TR, altLangs: ALT,
-    title: `${p.name_en} — ${c.name} startup funding`,
-    description: `${p.name_en} from ${p.funder}. ${amt != null ? money(amt, p.amount_currency) + '. ' : ''}Eligibility, steps and documents, linked to the official page.`,
+    /* Name + type + country, and the funder when two programmes in a country
+       share a name (the seven regional i-Demo calls differ only by region).
+       The description used to read "Y Combinator from Y Combinator." */
+    title: `${p.name_en} — ${INSTRUMENTS[p.grant_type]?.label ?? 'Startup funding'} in ${c.name}${startupNameIsShared(c.slug, p.name_en) ? ` (${p.funder})` : ''}`,
+    description: `${p.name_en} — ${(INSTRUMENTS[p.grant_type]?.label ?? 'startup funding').toLowerCase()} in ${c.name}${p.funder && !p.name_en.toLowerCase().includes(String(p.funder).toLowerCase()) && !String(p.funder).toLowerCase().includes(p.name_en.toLowerCase()) ? `, from ${p.funder}` : startupNameIsShared(c.slug, p.name_en) ? `, from ${p.funder}` : ''}. ${amt != null ? money(amt, p.amount_currency) + '. ' : ''}Eligibility, steps and documents, linked to the official page.`,
     canonical: `${SITE_URL}${L === 'en' ? '' : '/' + L}/startups/${c.slug}/${p.slug}/`,
     /* A company surface. See layout()'s `audience`: generated, not cookied,
        so the masthead offers the workspace even with JavaScript off. */
     audience: 'biz',
     body,
+    jsonld: [
+      breadcrumbLd([
+        { label: TR('backHome'), href: `${LB()}/` },
+        { label: 'Startup grants', href: `${SB()}/startups/` },
+        { label: c.name, href: `${BASE}/startups/${c.slug}/` },
+        { label: p.name_en },
+      ]),
+      startupProgrammeLd(c, p, amt),
+    ],
   });
+}
+
+/**
+ * schema.org markup for a company programme, from fields we hold and nothing
+ * else. A public funder's grant, loan or tax credit is a GovernmentService; a
+ * private or corporate funder's award is a MonetaryGrant (funder + amount).
+ */
+function startupProgrammeLd(c, p, amt) {
+  const url = `${SITE_URL}${L === 'en' ? '' : '/' + L}/startups/${c.slug}/${p.slug}/`;
+  const isPublic = p.funder_type === 'public' || p.funder_type === 'ppp';
+  const area = { '@type': 'Place', name: c.name };
+  const money = amt != null && p.amount_currency
+    ? { '@type': 'MonetaryAmount', currency: p.amount_currency, value: amt }
+    : null;
+  if (isPublic) {
+    return {
+      '@context': 'https://schema.org', '@type': 'GovernmentService',
+      name: p.name_en, url, serviceType: INSTRUMENTS[p.grant_type]?.label ?? p.grant_type,
+      provider: { '@type': 'GovernmentOrganization', name: p.funder },
+      areaServed: area,
+      audience: { '@type': 'BusinessAudience', audienceType: 'Companies' },
+      ...(p.application_url ? { serviceUrl: p.application_url } : {}),
+    };
+  }
+  return {
+    '@context': 'https://schema.org', '@type': 'MonetaryGrant',
+    name: p.name_en, url,
+    funder: { '@type': 'Organization', name: p.funder },
+    ...(money ? { amount: money } : {}),
+    ...(p.source_url ? { sameAs: p.source_url } : {}),
+  };
 }
 
 /* ================================================================== */
@@ -3806,7 +3908,8 @@ ${disclaimerBar(TR)}
       rows: list.slice(0, FREE_ROWS).map((p) => listRow(LB(), cc, p, data.currency)),
       total: list.length,
       noun: 'programmes',
-      href: `${LB()}/pricing/`, tr: TR, checkHref: `${LB()}/check/`, })}
+      href: `${LB()}/pricing/`, tr: TR, checkHref: `${LB()}/check/`,
+      hiddenItems: list.slice(FREE_ROWS).map((p) => ({ name: p.name_en, href: progHref(LB(), cc, p) })) })}
   </div>
   <div class="callout" style="margin-top:2.5rem">
     <p><strong>${list.length - priced.length} of these publish no fixed amount.</strong> That does not mean they are
@@ -3965,6 +4068,10 @@ function buildLanguage(lang) {
        its own top-level path. */
     ALT = [];
     page('help/expert/index.html', renderExpertHelpPage({ BASE, LB, SITE_URL }));
+
+    /* "Report an error" — src/pages/report-error.mjs. Linked from every programme page. */
+    ALT = [];
+    page('report-error/index.html', renderReportErrorPage({ BASE, LB, SITE_URL }));
 
     /* /connect/ (the MCP landing page) is generated further down, once the
        9-tool list (data/mcp-tools.json plus the two company tools appended
@@ -4277,6 +4384,7 @@ write('forschungszulage.js', fs.readFileSync(path.join(SRC, 'pwa/forschungszulag
    src/pwa/share-link.js. Emitted at dist root, same as the two files that
    import it, so './share-link.js' resolves from either. */
 write('share-link.js', fs.readFileSync(path.join(SRC, 'pwa/share-link.js'), 'utf8'));
+write('email-result.js', fs.readFileSync(path.join(SRC, 'pwa/email-result.js'), 'utf8'));
 /* Shared by both client-rendered wizards, which are both emitted at the dist
    root, so './wizard-i18n.js' resolves for each of them. */
 write('wizard-i18n.js', fs.readFileSync(path.join(SRC, 'pwa/wizard-i18n.js'), 'utf8'));
@@ -4485,10 +4593,7 @@ ${countries.map(({ entry }) => `- ${entry.slug}: ${entry.name} — ${entry.progr
 /* /api/v1/full/ holds the unstripped dataset. The Worker 404s every external
    request to it, but a crawler should not be spending requests finding that
    out, and the path should not appear in anyone's index of the site. */
-write(
-  'robots.txt',
-  `User-agent: *\nAllow: /\nDisallow: /api/v1/full/\nDisallow: /dashboard/\n\nSitemap: ${SITE_URL}/sitemap.xml\n`,
-);
+/* robots.txt is written after the sitemaps, below, so it can list them. */
 
 /**
  * Redirects for URLs people or old links guess but that were never the real
@@ -4521,28 +4626,16 @@ write(
   ].join('\n'),
 );
 
-const urls = PAGES.map((p) => {
-  const u = `${SITE_URL}/${p.replace(/index\.html$/, '')}`;
-  const depth = p.split('/').length;
-  const pri = depth <= 1 ? '1.0' : depth === 2 ? '0.9' : depth === 3 ? '0.7' : '0.6';
-  return `  <url><loc>${u}</loc><lastmod>${STATS.asOf}</lastmod><priority>${pri}</priority></url>`;
+/* Hreflang, breadcrumbs, unique titles, sitemap index — see src/seo.mjs. */
+const SEO = finalizeSeo({
+  OUT, PAGE_LANG, SITE_URL, ORIGIN, LANGS, LOCALES, countries, STARTUP_DATA, write,
 });
-// Sitemaps cap at 50k URLs; split if needed.
-if (urls.length <= 45000) {
-  write('sitemap.xml', `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls.join('\n')}\n</urlset>\n`);
-} else {
-  const chunks = [];
-  for (let i = 0; i < urls.length; i += 45000) chunks.push(urls.slice(i, i + 45000));
-  chunks.forEach((c, i) =>
-    write(`sitemap-${i + 1}.xml`, `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${c.join('\n')}\n</urlset>\n`),
-  );
-  write(
-    'sitemap.xml',
-    `<?xml version="1.0" encoding="UTF-8"?>\n<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${chunks
-      .map((_, i) => `  <sitemap><loc>${SITE_URL}/sitemap-${i + 1}.xml</loc><lastmod>${STATS.asOf}</lastmod></sitemap>`)
-      .join('\n')}\n</sitemapindex>\n`,
-  );
-}
+write(
+  'robots.txt',
+  `User-agent: *\nAllow: /\nDisallow: /api/v1/full/\nDisallow: /dashboard/\n\nSitemap: ${SITE_URL}/sitemap.xml\n${SEO.sitemapFiles
+    .map((f) => `Sitemap: ${SITE_URL}/${f}\n`)
+    .join('')}`,
+);
 
 write('.nojekyll', '');
 

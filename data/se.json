@@ -19,7 +19,7 @@
    "amount_period": "monthly",
    "amount_note": "1 250 kr per barn och månad, skattefritt, t.o.m. kvartalet före barnet fyller 16",
    "is_automatic": true,
-   "application_url": "https://www.forsakringskassan.se/",
+   "application_url": "https://www.forsakringskassan.se/privatperson/familj-och-barn/barnbidrag-och-flerbarnstillagg",
    "application_channel": "automatic",
    "deadline_type": "none",
    "deadline_note": null,
@@ -51,9 +51,9 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.forsakringskassan.se/privatperson/e-tjanster-blanketter-och-informationsmaterial/aktuella-belopp",
-   "source_snippet": "Barnbidrag, kronor per månad: 1 250 (1 barn)",
-   "last_verified_at": "2026-08-12",
+   "source_url": "https://www.forsakringskassan.se/privatperson/familj-och-barn/barnbidrag-och-flerbarnstillagg/barnbidrag-och-flerbarnstillagg-sa-funkar-det",
+   "source_snippet": "Barnbidraget är 1 250 kronor i månaden per barn. Föräldrar som bor och har barn i Sverige får barnbidrag automatiskt varje månad.",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -71,7 +71,7 @@
    "amount_period": "monthly",
    "amount_note": "2 barn: 150 kr; 3 barn: 730 kr; 4 barn: 1 740 kr; därefter +1 250 kr per ytterligare barn (totaltillägg per månad)",
    "is_automatic": true,
-   "application_url": "https://www.forsakringskassan.se/",
+   "application_url": "https://www.forsakringskassan.se/privatperson/familj-och-barn/barnbidrag-och-flerbarnstillagg",
    "application_channel": "automatic",
    "deadline_type": "none",
    "deadline_note": null,
@@ -103,9 +103,9 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.forsakringskassan.se/privatperson/e-tjanster-blanketter-och-informationsmaterial/aktuella-belopp",
-   "source_snippet": "Flerbarnstillägg: 2 barn 150 kr, 3 barn 730 kr, 4 barn 1 740 kr per månad",
-   "last_verified_at": "2026-08-12",
+   "source_url": "https://www.forsakringskassan.se/privatperson/familj-och-barn/barnbidrag-och-flerbarnstillagg/barnbidrag-och-flerbarnstillagg-sa-funkar-det",
+   "source_snippet": "Flerbarnstillägg: 2 barn: 150 kronor per månad; 3 barn: 730 kronor per månad; 4 barn: 1 740 kronor per månad; femte barnet och därefter 1 250 kronor per barn och månad.",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -123,10 +123,10 @@
    "amount_period": "monthly",
    "amount_note": "480 dagar per barn: 390 dagar på sjukpenningnivå (ca 80 % av SGI, max 1 259 kr/dag 2026, min 250 kr) + 90 dagar på lägstanivå 180 kr/dag",
    "is_automatic": false,
-   "application_url": "https://www.forsakringskassan.se/",
+   "application_url": "https://www.forsakringskassan.se/privatperson/familj-och-barn/foraldrapenning",
    "application_channel": "online",
    "deadline_type": "rolling",
-   "deadline_note": "Dagar kan tas ut tills barnet fyller 12 år (max 96 dagar sparade efter 4 års ålder)",
+   "deadline_note": "Dagar kan tas ut tills barnet fyller 12 år eller går ut årskurs 5 (max 96 dagar sparade efter 4 års ålder). Ansök senast 90 dagar efter första dagen du var hemma med barnet.",
    "procedure_steps": [
     {
      "step": 1,
@@ -167,9 +167,9 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.forsakringskassan.se/privatperson/e-tjanster-blanketter-och-informationsmaterial/aktuella-belopp",
-   "source_snippet": "Dagar på sjukpenningnivå, högsta möjliga belopp: 1 259; dagar på lägstanivå: 180",
-   "last_verified_at": "2026-08-12",
+   "source_url": "https://www.forsakringskassan.se/privatperson/familj-och-barn/foraldrapenning",
+   "source_snippet": "Föräldrarna får 480 dagar per barn att dela på. ... Vi behöver ha din ansökan senast 90 dagar efter första dagen du var hemma med barnet.",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -185,12 +185,12 @@
    "amount_max": null,
    "amount_currency": "SEK",
    "amount_period": "monthly",
-   "amount_note": "Ersättning på sjukpenningnivå (ca 80 % av SGI) vid vård av sjukt barn; huvudregel 120 dagar per barn och år tills barnet fyller 12",
+   "amount_note": "Ca 80 % av inkomsten (något under), tak 7,5 prisbasbelopp; högst 120 dagar per barn och år; barn under 12 år",
    "is_automatic": false,
-   "application_url": "https://www.forsakringskassan.se/",
+   "application_url": "https://www.forsakringskassan.se/privatperson/familj-och-barn/vab-for-barn-under-12-ar",
    "application_channel": "online",
    "deadline_type": "rolling",
-   "deadline_note": "Ansök senast 90 dagar efter första vård-dagen",
+   "deadline_note": "Ansök senast 30 dagar efter första dagen du var hemma med barnet (ej 90 dagar). Upp till 120 dagar per barn och år.",
    "procedure_steps": [
     {
      "step": 1,
@@ -222,9 +222,9 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.forsakringskassan.se/",
-   "source_snippet": "Du har rätt att vara ledig från arbetet för att ta hand om sjukt barn, och får då ersättning i form av tillfällig föräldrapenning; huvudregeln är 120 dagar per barn/år tills barnet är 12 år",
-   "last_verified_at": "2026-08-12",
+   "source_url": "https://www.forsakringskassan.se/privatperson/familj-och-barn/vab-for-barn-under-12-ar",
+   "source_snippet": "Ansök senast 30 dagar efter första dagen du var hemma med barnet. Ersättning för vab kan betalas ut i 120 dagar per år för ett barn.",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -240,12 +240,12 @@
    "amount_max": null,
    "amount_currency": "SEK",
    "amount_period": "one_off",
-   "amount_note": "10 dagar med ersättning på sjukpenningnivå för den andra föräldern i samband med barnets födelse",
+   "amount_note": "10 dagar per barn med ersättning på ca 80 % av inkomsten (tak 7,5 prisbasbelopp)",
    "is_automatic": false,
-   "application_url": "https://www.forsakringskassan.se/",
+   "application_url": "https://www.forsakringskassan.se/privatperson/familj-och-barn/10-dagar-efter-fodsel-eller-adoption",
    "application_channel": "online",
    "deadline_type": "rolling",
-   "deadline_note": "Ska tas ut inom 60 dagar efter att barnet kommit hem",
+   "deadline_note": "Dagarna tas ut till och med den 60:e dagen efter att barnet kom hem. Ansök senast 30 dagar efter första dagen du var hemma med barnet.",
    "procedure_steps": [
     {
      "step": 1,
@@ -276,10 +276,10 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.forsakringskassan.se/",
-   "source_snippet": "Den andra föräldern kan få tillfällig föräldrapenning i tio dagar i samband med barnets födelse",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www.forsakringskassan.se/privatperson/familj-och-barn/10-dagar-efter-fodsel-eller-adoption",
+   "source_snippet": "Du får alltid ersättning för 10 dagar per barn. ... Ansök senast 30 dagar efter den första dagen som du var hemma med barnet.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "graviditetspenning",
@@ -294,9 +294,9 @@
    "amount_max": null,
    "amount_currency": "SEK",
    "amount_period": "monthly",
-   "amount_note": "Ca 80 % av SGI för gravida som inte kan fortsätta arbeta p.g.a. riskfyllt arbete eller besvär; kan betalas ut från 60 dagar före beräknad förlossning",
+   "amount_note": "Ungefär 80 % av lönen, högst 944 kronor per dag; kan betalas från den 60:e dagen före beräknad förlossning (fysiskt tungt arbete) eller från dagen riskförbudet börjar",
    "is_automatic": false,
-   "application_url": "https://www.forsakringskassan.se/",
+   "application_url": "https://www.forsakringskassan.se/privatperson/familj-och-barn/gravid-och-kan-inte-jobba-graviditetspenning",
    "application_channel": "online",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -336,10 +336,10 @@
     "admin_areas": [],
     "gender": "female"
    },
-   "source_url": "https://www.forsakringskassan.se/",
-   "source_snippet": "Graviditetspenning är en ersättning till dig som är gravid och inte kan arbeta som vanligt",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www.forsakringskassan.se/privatperson/familj-och-barn/gravid-och-kan-inte-jobba-graviditetspenning",
+   "source_snippet": "Du får ungefär 80 procent av din lön, men högst 944 kronor per dag.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "underhallsstod",
@@ -354,12 +354,12 @@
    "amount_max": 2223,
    "amount_currency": "SEK",
    "amount_period": "monthly",
-   "amount_note": "Fullt underhållsstöd 2026: 1 673 kr/mån (t.o.m. 7 år), 1 823 kr/mån (7–14 år), 2 223 kr/mån (från 15 år); betalas när den andra föräldern inte betalar underhåll",
+   "amount_note": "Fullt underhållsstöd 2026: 1 673 kr/mån (t.o.m. månaden barnet fyller 7), 1 823 kr/mån (t.o.m. 15 år), 2 223 kr/mån (från månaden efter 15 år)",
    "is_automatic": false,
-   "application_url": "https://www.forsakringskassan.se/",
+   "application_url": "https://www.forsakringskassan.se/privatperson/familj-och-barn/foraldrar-som-inte-lever-ihop/om-den-som-ska-betala-underhall-inte-kan-eller-vill-betala",
    "application_channel": "online",
    "deadline_type": "rolling",
-   "deadline_note": null,
+   "deadline_note": "Underhållsstöd kan betalas tidigast från 1 månad innan ansökan skickas in",
    "procedure_steps": [
     {
      "step": 1,
@@ -388,9 +388,9 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.forsakringskassan.se/privatperson/e-tjanster-blanketter-och-informationsmaterial/aktuella-belopp",
-   "source_snippet": "Underhållsstöd: 1 673 kr (t.o.m. 7 år), 1 823 kr (7+), 2 223 kr (15+) per månad",
-   "last_verified_at": "2026-08-12",
+   "source_url": "https://www.forsakringskassan.se/privatperson/familj-och-barn/foraldrar-som-inte-lever-ihop/om-den-som-ska-betala-underhall-inte-kan-eller-vill-betala",
+   "source_snippet": "Till och med den månad barnet fyller 7 år: 1 673 kronor per månad. ... Du kan få underhållsstöd tidigast från 1 månad innan du skickar in din ansökan.",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -402,16 +402,16 @@
    "funder": "Försäkringskassan",
    "category": "family",
    "benefit_type": "cash_one_off",
-   "amount_min": null,
-   "amount_max": null,
+   "amount_min": 75000,
+   "amount_max": 75000,
    "amount_currency": "SEK",
    "amount_period": "one_off",
-   "amount_note": "Bidrag till vissa kostnader vid internationell adoption förmedlad av auktoriserad organisation; belopp beror på kostnaderna",
+   "amount_note": "75 000 kr per barn, skattefritt; internationell adoption via auktoriserad organisation, barnet under 10 år",
    "is_automatic": false,
-   "application_url": "https://www.forsakringskassan.se/",
+   "application_url": "https://www.forsakringskassan.se/privatperson/familj-och-barn/introduktion-till-dig-som-ska-bli-foralder/adoptionsbidrag",
    "application_channel": "post",
    "deadline_type": "window",
-   "deadline_note": "Ansök inom viss tid efter adoptionen",
+   "deadline_note": "Ansök inom ett år från den dag adoptionen blev giltig",
    "procedure_steps": [
     {
      "step": 1,
@@ -445,10 +445,10 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.forsakringskassan.se/",
-   "source_snippet": "Bidrag lämnas för adoptioner som förmedlas av en sammanslutning som är auktoriserad enligt lagen om internationell adoptionsförmedling",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www.forsakringskassan.se/privatperson/familj-och-barn/introduktion-till-dig-som-ska-bli-foralder/adoptionsbidrag",
+   "source_snippet": "Du får 75 000 kronor per barn. Bidraget är skattefritt. Du måste ansöka inom ett år från den dag då adoptionen blev giltig.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "barnpension-efterlevandestod",
@@ -459,13 +459,13 @@
    "funder": "Pensionsmyndigheten",
    "category": "family",
    "benefit_type": "cash_monthly",
-   "amount_min": null,
+   "amount_min": 1973,
    "amount_max": null,
    "amount_currency": "SEK",
    "amount_period": "monthly",
-   "amount_note": "Ersättning till barn under 18 år (20 vid studier) vars förälder avlidit; efterlevandestödet är ett grundskydd baserat på prisbasbeloppet",
-   "is_automatic": false,
-   "application_url": "https://www.pensionsmyndigheten.se/",
+   "amount_note": "Efterlevandestöd 1 973 kr/mån (3 947 kr om båda föräldrarna avlidit); barnpension 30-35 % av den avlidnes beräknade pension beroende på antal syskon",
+   "is_automatic": true,
+   "application_url": "https://www.pensionsmyndigheten.se/for-pensionarer/Ekonomiskt_stod/barnpension-och-efterlevandestod-till-barn",
    "application_channel": "online",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -486,7 +486,7 @@
    "eligibility": {
     "statuses": [],
     "age_min": null,
-    "age_max": null,
+    "age_max": 20,
     "income_annual_max": null,
     "income_note": null,
     "requires_children": true,
@@ -497,10 +497,10 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.pensionsmyndigheten.se/",
-   "source_snippet": "Barnpension är grundad på den avlidna förälderns inkomst medan efterlevandestöd är ett grundskydd för barn som får låg eller ingen barnpension",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www.pensionsmyndigheten.se/for-pensionarer/Ekonomiskt_stod/barnpension-och-efterlevandestod-till-barn",
+   "source_snippet": "Efterlevandestöd: 1 973 kr per månad. Oftast behöver du själv inte ansöka om barnpension eller efterlevandestöd.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "omvardnadsbidrag",
@@ -515,9 +515,9 @@
    "amount_max": 12333,
    "amount_currency": "SEK",
    "amount_period": "monthly",
-   "amount_note": "Helt bidrag 12 333 kr/mån före skatt (250 % av prisbasbeloppet); kan betalas i fjärdedelar: 9 250 / 6 167 / 3 083 kr",
+   "amount_note": "2026 före skatt: helt 12 333, tre fjärdedels 9 250, halvt 6 167, en fjärdedels 3 083 kr/mån",
    "is_automatic": false,
-   "application_url": "https://www.forsakringskassan.se/",
+   "application_url": "https://www.forsakringskassan.se/privatperson/familj-och-barn/barn-med-funktionsnedsattning-eller-behov-av-extra-stod/omvardnadsbidrag",
    "application_channel": "online",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -541,7 +541,7 @@
     "age_max": null,
     "income_annual_max": null,
     "income_note": null,
-    "requires_children": false,
+    "requires_children": true,
     "nationality": "any_resident",
     "residency_months_min": null,
     "housing_tenure": null,
@@ -549,9 +549,9 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.forsakringskassan.se/privatperson/e-tjanster-blanketter-och-informationsmaterial/aktuella-belopp",
-   "source_snippet": "Omvårdnadsbidrag, helt bidrag: 12 333 kr per månad före skatt",
-   "last_verified_at": "2026-08-12",
+   "source_url": "https://www.forsakringskassan.se/privatperson/familj-och-barn/barn-med-funktionsnedsattning-eller-behov-av-extra-stod/omvardnadsbidrag",
+   "source_snippet": "Omvårdnadsbidrag 2026: helt 12 333 kronor, tre fjärdedels 9 250, halvt 6 167, en fjärdedels 3 083 kronor per månad före skatt.",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -569,10 +569,10 @@
    "amount_period": "monthly",
    "amount_note": "Bidrag till förälder som vårdar sjukt eller funktionsnedsatt barn; omfattar en inkomstdel och en merkostnadsdel (888–3 404 kr/mån beroende på merkostnader)",
    "is_automatic": false,
-   "application_url": "https://www.forsakringskassan.se/",
+   "application_url": "https://www.forsakringskassan.se/privatperson/familj-och-barn/barn-med-funktionsnedsattning-eller-behov-av-extra-stod/omvardnadsbidrag",
    "application_channel": "online",
-   "deadline_type": "rolling",
-   "deadline_note": null,
+   "deadline_type": "none",
+   "deadline_note": "Ended: vårdbidrag no longer exists as a benefit; replaced by omvårdnadsbidrag (care needs) and merkostnadsersättning för barn (extra costs), which Försäkringskassan lists separately",
    "procedure_steps": [
     {
      "step": 1,
@@ -601,9 +601,9 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.forsakringskassan.se/privatperson/e-tjanster-blanketter-och-informationsmaterial/aktuella-belopp",
+   "source_url": "https://www.forsakringskassan.se/privatperson/familj-och-barn/barn-med-funktionsnedsattning-eller-behov-av-extra-stod/omvardnadsbidrag",
    "source_snippet": "Vårdbidrag, merkostnadsdelen: 888–3 404 kr per månad beroende på merkostnadernas andel av prisbasbeloppet",
-   "last_verified_at": "2026-08-12",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -616,15 +616,15 @@
    "category": "housing",
    "benefit_type": "cash_monthly",
    "amount_min": null,
-   "amount_max": 5200,
+   "amount_max": 6200,
    "amount_currency": "SEK",
    "amount_period": "monthly",
-   "amount_note": "Inkomstprövat; 2026 max ca 3 400 kr/mån (1 barn), 4 200 kr (2 barn), 5 200 kr (3+ barn) efter höjda bostadskostnadsgränser (6 800/7 900/8 600 kr)",
+   "amount_note": "Inkomstprövat; högsta bostadsbidrag: 4 200 kr (1 barn), 5 200 kr (2 barn), 6 200 kr (3+ barn). Högsta bostadskostnad som räknas: 6 800 / 7 900 / 8 600 kr per månad",
    "is_automatic": false,
-   "application_url": "https://www.forsakringskassan.se/",
+   "application_url": "https://www.forsakringskassan.se/privatperson/familj-och-barn/bostadsbidrag-for-barnfamiljer/ansok-om-bostadsbidrag-for-barnfamiljer",
    "application_channel": "online",
    "deadline_type": "rolling",
-   "deadline_note": "Beslut gäller max 12 månader; preliminärt bidrag avräknas mot slutlig inkomst",
+   "deadline_note": "Beslut gäller i högst 12 månader, därefter ny ansökan; ingen retroaktiv utbetalning. Från 1 januari 2027 kontrolleras inkomsten varje månad i stället för i efterhand.",
    "procedure_steps": [
     {
      "step": 1,
@@ -663,9 +663,9 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.riksdagen.se/sv/dokument-och-lagar/dokument/proposition/ett-mer-traffsakert-och-korrekt-bostadsbidrag_hd03170/html/",
-   "source_snippet": "Bostadsbidraget är en inkomstprövad förmån... barnfamiljer kan få bidrag till bostadskostnader och särskilt bidrag för hemmavarande barn",
-   "last_verified_at": "2026-08-12",
+   "source_url": "https://www.forsakringskassan.se/privatperson/familj-och-barn/bostadsbidrag-for-barnfamiljer/ansok-om-bostadsbidrag-for-barnfamiljer",
+   "source_snippet": "Det högsta bostadsbidraget som går att få är 4 200 kronor om familjen har 1 barn, 5 200 kronor om familjen har 2 barn, 6 200 kronor om familjen har 3 eller fler barn.",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -678,12 +678,12 @@
    "category": "housing",
    "benefit_type": "cash_monthly",
    "amount_min": null,
-   "amount_max": null,
+   "amount_max": 1300,
    "amount_currency": "SEK",
    "amount_period": "monthly",
-   "amount_note": "Inkomstprövat bidrag till bostadskostnaden för unga 18–29 år med låg inkomst (även studenter med CSN); bidrag lämnas med 90 respektive 65 procent av bostadskostnaden inom vissa gränser",
+   "amount_note": "Högsta belopp 1 300 kr per månad; inkomstprövat, för unga under 29 år utan barn",
    "is_automatic": false,
-   "application_url": "https://www.forsakringskassan.se/",
+   "application_url": "https://www.forsakringskassan.se/privatperson/ersattningar-a-o/bostadsbidrag-till-unga-under-29-ar",
    "application_channel": "online",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -710,8 +710,8 @@
     "statuses": [],
     "age_min": 18,
     "age_max": 29,
-    "income_annual_max": 41000,
-    "income_note": "Inkomstgräns 41 000 kr/år för ensamstående respektive 58 000 kr/år för sammanboende; bidraget minskas med en tredjedel av överskjutande inkomst; tillgångsgräns 100 000 kr; fr o m 2027 planeras inkomstspärr 190 000 kr/år för hushåll utan barn",
+    "income_annual_max": 86720,
+    "income_note": "Ensamstående: sammanlagd årsinkomst före skatt högst 86 720 kr. Sammanboende/gifta: tillsammans högst 103 720 kr per år.",
     "requires_children": false,
     "nationality": "any_resident",
     "residency_months_min": null,
@@ -720,9 +720,9 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.riksdagen.se/sv/dokument-och-lagar/dokument/proposition/ett-mer-traffsakert-och-korrekt-bostadsbidrag_hd03170/html/",
-   "source_snippet": "Unga utan barn kan endast få bidrag till bostadskostnader... 90 respektive 65 procent av bostadskostnaden mellan vissa angivna gränser",
-   "last_verified_at": "2026-08-12",
+   "source_url": "https://www.forsakringskassan.se/privatperson/ersattningar-a-o/bostadsbidrag-till-unga-under-29-ar",
+   "source_snippet": "Det högsta belopp du kan få är 1 300 kronor per månad. ... din sammanlagda årsinkomst före skatt är högst 86 720 kronor.",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -738,7 +738,7 @@
    "amount_max": 7290,
    "amount_currency": "SEK",
    "amount_period": "monthly",
-   "amount_note": "Max 7 290 kr/mån (2026) för ensamstående; makar/sambor upp till 3 645 kr var; prövas mot bostadskostnad, inkomster och tillgångar",
+   "amount_note": "Upp till 7 290 kr per månad, beroende på ekonomi, bostadskostnad, tillgångar och familjesituation; skattefritt",
    "is_automatic": false,
    "application_url": "https://www.pensionsmyndigheten.se/ansokbt",
    "application_channel": "online",
@@ -779,9 +779,9 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.pensionsmyndigheten.se/",
-   "source_snippet": "Bostadstillägg på maximalt 7 290 kronor per månad kan beviljas (beloppen gäller för 2026)",
-   "last_verified_at": "2026-08-12",
+   "source_url": "https://www.pensionsmyndigheten.se/for-pensionarer/ekonomiskt-stod/sa-fungerar-bostadstillagg/fakta-om-bostadstillagg",
+   "source_snippet": "Du kan få upp till 7 290 kronor per månad, beroende på din ekonomi, bostadskostnad, dina tillgångar och din familjesituation.",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -794,12 +794,12 @@
    "category": "housing",
    "benefit_type": "cash_monthly",
    "amount_min": null,
-   "amount_max": null,
+   "amount_max": 6550,
    "amount_currency": "SEK",
    "amount_period": "monthly",
-   "amount_note": "Inkomst- och kostnadsprövat tillägg för dig med hel sjukersättning eller aktivitetsersättning",
+   "amount_note": "Högst 6 550 kr per månad för ensamstående (3 275 kr om gift/sambo); tillgångar påverkar beloppet; skattefritt",
    "is_automatic": false,
-   "application_url": "https://www.pensionsmyndigheten.se/",
+   "application_url": "https://www.forsakringskassan.se/privatperson/vuxen-med-funktionsnedsattning/bostadstillagg-for-dig-med-aktivitetsersattning-eller-sjukersattning",
    "application_channel": "online",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -831,10 +831,10 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.pensionsmyndigheten.se/",
-   "source_snippet": "Du som har sjukersättning eller aktivitetsersättning kan ansöka om bostadstillägg hos Pensionsmyndigheten",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www.forsakringskassan.se/privatperson/vuxen-med-funktionsnedsattning/bostadstillagg-for-dig-med-aktivitetsersattning-eller-sjukersattning",
+   "source_snippet": "Det högsta bostadstillägget som går att få är 6 550 kronor i månaden om du är ensamstående.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "bostadsanpassningsbidrag",
@@ -849,9 +849,9 @@
    "amount_max": null,
    "amount_currency": "SEK",
    "amount_period": "one_off",
-   "amount_note": "Bidrag till åtgärder i bostaden (t.ex. ramp, hissanpassning, tillgängligt badrum) vid varaktig funktionsnedsättning; belopp = godkänd kostnad efter prövning",
+   "amount_note": "Kommunalt bidrag som motsvarar skälig kostnad för nödvändiga anpassningar; inget kostnadstak i lagen och ingen ekonomisk prövning",
    "is_automatic": false,
-   "application_url": "https://www.boverket.se/",
+   "application_url": "https://www.boverket.se/sv/babhandboken/for-dig-som-soker/vad-ar-bostadsanpassningsbidrag/",
    "application_channel": "in_person",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -898,10 +898,10 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.boverket.se/",
-   "source_snippet": "Bostadsanpassningsbidrag är ett bidrag som kommunen lämnar för åtgärder i bostaden vid varaktig funktionsnedsättning",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www.boverket.se/sv/babhandboken/for-dig-som-soker/vad-ar-bostadsanpassningsbidrag/",
+   "source_snippet": "Bostadsanpassningsbidraget är ett kommunalt bidrag som riktar sig till dig som har en funktionsnedsättning. ... Kommunen ska inte göra en bedömning av din ekonomi när du ansöker om bidrag.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "investeringsstod-hyresratter",
@@ -918,10 +918,10 @@
    "amount_period": "one_off",
    "amount_note": "Statligt stöd till byggherrar som bygger hyresrätter/studentbostäder med rimlig hyra i tillväxtregioner; stöd per lägenhet enligt Boverkets regler",
    "is_automatic": false,
-   "application_url": "https://www.boverket.se/",
+   "application_url": "https://www.boverket.se/sv/bidrag--garantier/stod-for-hyresbostader-och-bostader-for-studerande/",
    "application_channel": "online",
-   "deadline_type": "window",
-   "deadline_note": "Ansökningsomgångar enligt anslagsläge",
+   "deadline_type": "none",
+   "deadline_note": "Ended: Stödet går inte längre att söka (long-term investment grant required applications by 31 Dec 2021)",
    "procedure_steps": [
     {
      "step": 1,
@@ -950,15 +950,15 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.boverket.se/",
-   "source_snippet": "Boverket fördelar investeringsstöd för nybyggnad av hyresbostäder och studentbostäder",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www.boverket.se/sv/bidrag--garantier/stod-for-hyresbostader-och-bostader-for-studerande/",
+   "source_snippet": "Stödet går inte längre att söka.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "bostad-forst-stockholm",
-   "name_local": "Bostad först (Stockholm)",
-   "name_en": "Housing First queue for young adults (Stockholm)",
+   "name_local": "Ungdomsbostäder (Bostadsförmedlingen i Stockholm)",
+   "name_en": "Youth housing via the Stockholm housing queue",
    "admin_level": "city",
    "admin_area": "Stockholm",
    "funder": "Stockholms stads bostadsförmedling",
@@ -968,12 +968,12 @@
    "amount_max": null,
    "amount_currency": "SEK",
    "amount_period": "one_off",
-   "amount_note": "Särskild bostadskö för unga 19–24 år i Stockholms kommun som studerar eller arbetar minst halvtid; förtur till studentlägenheter och ungdomslägenheter",
+   "amount_note": "Mindre bostad (oftast 20-40 kvm) med relativt låg hyra; förmedlas efter kötid",
    "is_automatic": false,
-   "application_url": "https://bostad.stockholm.se/",
+   "application_url": "https://bostad.stockholm.se/sa-gar-det-till/boendetyper/ungdomslagenheter/",
    "application_channel": "online",
-   "deadline_type": "annual",
-   "deadline_note": "Förtur gäller ett år i taget",
+   "deadline_type": "rolling",
+   "deadline_note": "Ingen ansökningsfrist; registrera dig i bostadskön från 18-årsdagen och sök annonserade ungdomsbostäder löpande",
    "procedure_steps": [
     {
      "step": 1,
@@ -995,8 +995,8 @@
    ],
    "eligibility": {
     "statuses": [],
-    "age_min": 19,
-    "age_max": 24,
+    "age_min": 18,
+    "age_max": 25,
     "income_annual_max": null,
     "income_note": null,
     "requires_children": false,
@@ -1009,10 +1009,10 @@
     ],
     "gender": "any"
    },
-   "source_url": "https://bostad.stockholm.se/",
-   "source_snippet": "Bostad först är en särskild förtur i bostadskön för unga 19–24 år som arbetar eller studerar minst halvtid",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://bostad.stockholm.se/sa-gar-det-till/boendetyper/ungdomslagenheter/",
+   "source_snippet": "Är du mellan 18 och 25 år och registrerad hos Bostadsförmedlingen? Då har du möjlighet att få en mindre bostad med lägre hyra genom Bostadsförmedlingen.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "ekonomiskt-bistand",
@@ -1029,7 +1029,7 @@
    "amount_period": "monthly",
    "amount_note": "Behovsprövat stöd enligt socialtjänstlagen: riksnorm för levnadskostnader (mat, kläder m.m.) plus skäliga kostnader för boende, el m.m.; från 1 juli 2026 gäller aktivitetskrav vid längre stödtid",
    "is_automatic": false,
-   "application_url": "https://www.socialstyrelsen.se/",
+   "application_url": "https://www.socialstyrelsen.se/kunskapsstod-och-regler/omraden/ekonomiskt-bistand/ekonomiskt-bistand-for-privatpersoner/",
    "application_channel": "in_person",
    "deadline_type": "rolling",
    "deadline_note": "Ansöks månadsvis hos hemkommunen",
@@ -1066,8 +1066,8 @@
     "statuses": [],
     "age_min": null,
     "age_max": null,
-    "income_annual_max": 62160,
-    "income_note": "Behovsprövat: riksnorm 2025 för ensamstående vuxen = 3 910 kr/mån personliga kostnader + 1 270 kr/mån gemensamma hushållskostnader = 5 180 kr/mån (≈ 62 160 kr/år); därutöver skäliga kostnader för boende, el, hemförsäkring, arbetsresor m.m.; alla inkomster räknas av kr för kr mot behovet, så stöd upphör när inkomsten täcker riksnorm plus skäliga kostnader",
+    "income_annual_max": 62640,
+    "income_note": "Riksnorm 2026 för ensamstående vuxen: personliga kostnader 3 940 + gemensamma hushållskostnader (1 person) 1 280 = 5 220 kr/mån = 62 640 kr/år, exklusive skälig boendekostnad som prövas individuellt; för fler personer, se riksnormen",
     "requires_children": false,
     "nationality": "any_resident",
     "residency_months_min": null,
@@ -1076,9 +1076,9 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.umea.se/omsorgochstod/ekonomiochpengar/ekonomisktbistandforsorjningsstod.4.408bf0f717442258a88f01.html",
-   "source_snippet": "Försörjningsstöd är ett behovsprövat, ekonomiskt stöd som man ansöker om månadsvis hos kommunens socialtjänst",
-   "last_verified_at": "2026-08-12",
+   "source_url": "https://www.socialstyrelsen.se/kunskapsstod-och-regler/omraden/ekonomiskt-bistand/riksnormen/",
+   "source_snippet": "Summa personliga kostnader vuxna ensamstående 3940; Summa gemensamma kostnader, antal personer 1: 1280 (kronor per månad, riksnormen 2026)",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -1094,12 +1094,12 @@
    "amount_max": null,
    "amount_currency": "SEK",
    "amount_period": "monthly",
-   "amount_note": "Garanterar 65+ (från 2023 även vissa invandrade 67+) skälig levnadsnivå: 7 576 kr/mån plus skälig bostadskostnad max 7 500 kr/mån (2026); prövas mot inkomster och tillgångar",
+   "amount_note": "Skälig levnadsnivå 7 576 kr/mån + skälig bostadskostnad max 7 500 kr/mån, minus egen inkomst; skattefritt",
    "is_automatic": false,
-   "application_url": "https://www.pensionsmyndigheten.se/",
+   "application_url": "https://www.pensionsmyndigheten.se/for-pensionarer/ekonomiskt-stod/ansok-om-aldreforsorjningsstod",
    "application_channel": "online",
    "deadline_type": "rolling",
-   "deadline_note": null,
+   "deadline_note": "Stödet betalas från månaden ansökan kommer in; ansök på nytt efter 12 månader",
    "procedure_steps": [
     {
      "step": 1,
@@ -1118,10 +1118,10 @@
     "statuses": [
      "retired"
     ],
-    "age_min": 65,
+    "age_min": 67,
     "age_max": null,
-    "income_annual_max": 90912,
-    "income_note": "Inkomst- och tillgångsprövat: skälig levnadsnivå 7 576 kr/mån netto (2026) ≈ 90 912 kr/år, plus skälig bostadskostnad upp till max 7 500 kr/mån; stödet motsvarar skillnaden mellan denna nivå och inkomsterna efter skatt",
+    "income_annual_max": 180912,
+    "income_note": "Stödet fyller upp till skälig levnadsnivå 7 576 kr/mån plus skälig bostadskostnad max 7 500 kr/mån = högst 15 076 kr/mån = 180 912 kr/år (ensamstående); lägre om boendekostnaden är lägre (utan boendekostnad 90 912 kr/år). Alla inkomster, även utländska, räknas.",
     "requires_children": false,
     "nationality": "any_resident",
     "residency_months_min": null,
@@ -1130,9 +1130,9 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.pensionsmyndigheten.se/for-pensionarer/ekonomiskt-stod/missuppfattningar-om-aldreforsorjningsstodet",
-   "source_snippet": "Äldreförsörjningsstödet består av två delar, dels en skälig levnadsnivå på 7 576 kronor per månad, dels en skälig bostadskostnad på maximalt 7 500 kronor per månad",
-   "last_verified_at": "2026-08-12",
+   "source_url": "https://www.pensionsmyndigheten.se/for-pensionarer/ekonomiskt-stod/ansok-om-aldreforsorjningsstod",
+   "source_snippet": "Vem kan få äldreförsörjningsstöd? Du bor i Sverige. Du har ansökt om din allmänna pension. Du är 67 år eller äldre.",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -1148,9 +1148,9 @@
    "amount_max": 11988,
    "amount_currency": "SEK",
    "amount_period": "monthly",
-   "amount_note": "Grundskydd inom allmän pensionen; full garantipension 2026: 11 988 kr/mån (ensamstående, född 1938+), 10 853 kr (gift); kräver 40 års bosättning för fullt belopp",
+   "amount_note": "Full garantipension 2026 för ensamstående född 1938 eller senare: 11 988 kr/mån före skatt (gifta 10 853); minskas med 1/40 för varje år under 40 års bosättning och reduceras av inkomstgrundad pension",
    "is_automatic": false,
-   "application_url": "https://www.pensionsmyndigheten.se/",
+   "application_url": "https://www.pensionsmyndigheten.se/forsta-din-pension/sa-fungerar-pensionen/garantipension",
    "application_channel": "online",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -1178,15 +1178,15 @@
     "income_note": "Prövas mot övrig allmän pension: garantipensionen trappas av stegvis mot inkomst- och premiepension och upphör helt vid högre pensionsinkomster – det finns ingen fast inkomstgräns att ange, utan utfallet beror på hela pensionsutfallet (full garantipension 2026: 11 988 kr/mån före skatt för ensamstående född 1938 eller senare)",
     "requires_children": false,
     "nationality": "any_resident",
-    "residency_months_min": null,
+    "residency_months_min": 36,
     "housing_tenure": null,
     "student_required": false,
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.pensionsmyndigheten.se/for-pensionarer/ekonomiskt-stod/missuppfattningar-om-aldreforsorjningsstodet",
-   "source_snippet": "Full garantipension till ensamstående som är född 1938 och senare är 11 988 kronor per månad före skatt",
-   "last_verified_at": "2026-08-12",
+   "source_url": "https://www.pensionsmyndigheten.se/forsta-din-pension/sa-fungerar-pensionen/garantipension",
+   "source_snippet": "Du kan ha rätt till garantipension om du varit bosatt i Sverige i minst tre år. För full garantipension krävs 40 år i Sverige.",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -1198,16 +1198,16 @@
    "funder": "Försäkringskassan",
    "category": "income_support",
    "benefit_type": "cash_monthly",
-   "amount_min": 30,
+   "amount_min": null,
    "amount_max": 1259,
    "amount_currency": "SEK",
    "amount_period": "monthly",
-   "amount_note": "Från sjukdag 15: ca 80 % av SGI upp till 10 prisbasbelopp (kalenderdagsberäknat max 1 259 kr/dag 2026); dag 1–14 sjuklön från arbetsgivaren; efter 364 dagar normalt 75 %",
+   "amount_note": "Ca 80 % av SGI, högst 1 259 kr per dag 2026 (högst vid 75 %: 1 180 kr/dag); nivåerna 25/50/75/100 % efter minskad arbetsförmåga",
    "is_automatic": false,
-   "application_url": "https://www.forsakringskassan.se/",
+   "application_url": "https://www.forsakringskassan.se/privatperson/sjuk-eller-skadad/ersattning-nar-du-ar-sjuk-eller-skadad-sjukpenning",
    "application_channel": "online",
    "deadline_type": "rolling",
-   "deadline_note": "Läkarintyg från dag 8 hos arbetsgivaren / dag 15 hos Försäkringskassan",
+   "deadline_note": "Dag 1-14 betalar arbetsgivaren sjuklön; du kan ansöka om sjukpenning hos Försäkringskassan från dag 15",
    "procedure_steps": [
     {
      "step": 1,
@@ -1250,9 +1250,9 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.forsakringskassan.se/privatperson/e-tjanster-blanketter-och-informationsmaterial/aktuella-belopp",
-   "source_snippet": "Kalenderdagsberäknad sjukpenning, högst vid 80 procent: 1 259 kr per dag",
-   "last_verified_at": "2026-08-12",
+   "source_url": "https://www.forsakringskassan.se/privatperson/sjuk-eller-skadad/ersattning-nar-du-ar-sjuk-eller-skadad-sjukpenning",
+   "source_snippet": "Dag 15 och framåt kan du ansöka om sjukpenning från Försäkringskassan. Högst vid 80 procent: 1 259 kronor per dag.",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -1268,9 +1268,9 @@
    "amount_max": 23939,
    "amount_currency": "SEK",
    "amount_period": "monthly",
-   "amount_note": "Vid varaktigt nedsatt arbetsförmåga från 30 års ålder; inkomstrelaterad ersättning max 23 939 kr/mån (2026) eller garantiersättning beroende på bosättningstid",
+   "amount_note": "Inkomstrelaterad: 64,7 % av genomsnittlig inkomst, högst 23 939 kr/mån 2026; garantiersättning för dem med låg/ingen inkomst, beroende på bosättningstid och ålder",
    "is_automatic": false,
-   "application_url": "https://www.forsakringskassan.se/",
+   "application_url": "https://www.forsakringskassan.se/privatperson/vuxen-med-funktionsnedsattning/sjukersattning-resten-av-arbetslivet-sjukpension",
    "application_channel": "online",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -1290,7 +1290,7 @@
    ],
    "eligibility": {
     "statuses": [],
-    "age_min": 30,
+    "age_min": 19,
     "age_max": null,
     "income_annual_max": null,
     "income_note": "Inkomstrelaterad nivå kräver tidigare arbetsinkomst",
@@ -1302,9 +1302,9 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.forsakringskassan.se/privatperson/e-tjanster-blanketter-och-informationsmaterial/aktuella-belopp",
-   "source_snippet": "Högsta belopp för inkomstrelaterad sjukersättning och aktivitetsersättning: 23 939 kronor/månad",
-   "last_verified_at": "2026-08-12",
+   "source_url": "https://www.forsakringskassan.se/privatperson/vuxen-med-funktionsnedsattning/sjukersattning-resten-av-arbetslivet-sjukpension",
+   "source_snippet": "Du som inte klarar att arbeta alls, varken nu eller resten av arbetslivet, kan få sjukersättning på heltid från och med juli månad det år som du fyller 19.",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -1320,9 +1320,9 @@
    "amount_max": 23939,
    "amount_currency": "SEK",
    "amount_period": "monthly",
-   "amount_note": "För unga 19–29 år med nedsatt arbetsförmåga minst ett år; inkomstrelaterad max 23 939 kr/mån (2026) eller garantiersättning; även vid förlängd skolgång",
+   "amount_note": "Inkomstrelaterad max 23 939 kr/mån 2026; högsta garantiersättning 13 715 kr/mån; fyra nivåer (hel, 3/4, 1/2, 1/4)",
    "is_automatic": false,
-   "application_url": "https://www.forsakringskassan.se/",
+   "application_url": "https://www.forsakringskassan.se/privatperson/vuxen-med-funktionsnedsattning/aktivitetsersattning-for-unga-vuxna",
    "application_channel": "online",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -1354,9 +1354,9 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.forsakringskassan.se/privatperson/e-tjanster-blanketter-och-informationsmaterial/aktuella-belopp",
-   "source_snippet": "Högsta belopp för inkomstrelaterad sjukersättning och aktivitetsersättning: 23 939 kronor/månad",
-   "last_verified_at": "2026-08-12",
+   "source_url": "https://www.forsakringskassan.se/privatperson/vuxen-med-funktionsnedsattning/aktivitetsersattning-for-unga-vuxna",
+   "source_snippet": "Aktivitetsersättning är till för dig som är mellan 19 och 29 år. ... max 23 939 kronor per månad år 2026.",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -1372,9 +1372,9 @@
    "amount_max": null,
    "amount_currency": "SEK",
    "amount_period": "monthly",
-   "amount_note": "Ca 80 % av SGI under tid du deltar i arbetslivsinriktad rehabilitering som Försäkringskassan beslutat om",
+   "amount_note": "Knappt 80 % av inkomsten upp till ett inkomsttak (förebyggande sjukpenning)",
    "is_automatic": false,
-   "application_url": "https://www.forsakringskassan.se/",
+   "application_url": "https://www.forsakringskassan.se/privatperson/sjuk-eller-skadad/forebyggande-sjukpenning-rehabilitering-eller-planerad-vard",
    "application_channel": "online",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -1410,10 +1410,10 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.forsakringskassan.se/",
-   "source_snippet": "Rehabiliteringspenning kan betalas ut under tid som försäkrad deltar i arbetslivsinriktad rehabiliteringsåtgärd",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www.forsakringskassan.se/privatperson/sjuk-eller-skadad/forebyggande-sjukpenning-rehabilitering-eller-planerad-vard",
+   "source_snippet": "Sjukpenning i förebyggande syfte ger dig knappt 80 procent av din inkomst upp till ett inkomsttak.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "smittbararpenning",
@@ -1428,9 +1428,9 @@
    "amount_max": null,
    "amount_currency": "SEK",
    "amount_period": "monthly",
-   "amount_note": "Ersättning när du måste avstå från arbete p.g.a. smittsam sjukdom enligt läkarbeslut",
+   "amount_note": "Knappt 80 % av inkomsten med inkomsttak",
    "is_automatic": false,
-   "application_url": "https://www.forsakringskassan.se/",
+   "application_url": "https://www.forsakringskassan.se/privatperson/sjuk-eller-skadad/smittad-av-en-allmanfarlig-sjukdom",
    "application_channel": "online",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -1465,10 +1465,10 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.forsakringskassan.se/",
-   "source_snippet": "Du kan få smittbärarpenning om du har eller misstänks ha en samhällsfarlig sjukdom och därför inte får arbeta",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www.forsakringskassan.se/privatperson/sjuk-eller-skadad/smittad-av-en-allmanfarlig-sjukdom",
+   "source_snippet": "Smittbärarpenning: knappt 80 procent av din inkomst, eller tidigare inkomst om du är arbetslös, med ett tak.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "akassa-inkomstbaserad",
@@ -1488,7 +1488,7 @@
    "application_url": "https://www.unionensakassa.se/",
    "application_channel": "online",
    "deadline_type": "rolling",
-   "deadline_note": "Bli medlem i god tid – ersättningsnivån beror på medlemstid",
+   "deadline_note": "Nya regler sedan 1 oktober 2025: ersättningsnivån beror på medlemstid (80 % efter minst 12 månader, 60 % 6-11 månader, 50 % högst 5 månader); ersättningsgrundande inkomst högst 34 000 kr/mån",
    "procedure_steps": [
     {
      "step": 1,
@@ -1518,7 +1518,7 @@
      "unemployed",
      "jobseeker"
     ],
-    "age_min": null,
+    "age_min": 20,
     "age_max": null,
     "income_annual_max": null,
     "income_note": "Ingen övre inkomstgräns; i stället inkomstvillkor nedåt: minst 120 000 kr sammanlagt under ramtidens 12 månader och minst 11 000 kr/mån under minst 4 månader; ersättning 50–80 % av tidigare inkomst upp till inkomsttaket 34 000 kr/mån (ny lag fr o m 1 okt 2025)",
@@ -1530,9 +1530,9 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://stsakassa.se/nylagarbetsloshetsersattning",
-   "source_snippet": "Ersättningen kan som högst vara 80 procent av 34 000 kronor (det som utbetalas är högst 27 200 kr/månad före skatt)",
-   "last_verified_at": "2026-08-12",
+   "source_url": "https://www.iaf.se/pressrum/aktuellt-och-pressmeddelanden/nya-regler-for-arbetsloshetsforsakringen-fran-den-1-oktober/",
+   "source_snippet": "Högsta ersättningsgrundande inkomst är 34 000 kronor i månaden. 80 procent – medlem i minst tolv månader.",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -1548,12 +1548,12 @@
    "amount_max": null,
    "amount_currency": "SEK",
    "amount_period": "monthly",
-   "amount_note": "Daglig ersättning när du deltar i vissa av Arbetsförmedlingens program (t.ex. jobb- och utvecklingsgarantin); grundbelopp 223 kr/dag, mer om du haft inkomst",
+   "amount_note": "Inkomstrelaterat högst 1 236 kr/dag; grundbelopp 365 kr/dag före skatt vid heltid; utvecklingsersättning 57 eller 206 kr/dag (18-24 år)",
    "is_automatic": false,
-   "application_url": "https://www.forsakringskassan.se/",
+   "application_url": "https://www.forsakringskassan.se/privatperson/arbetssokande/aktivitetsstod-eller-utvecklingsersattning-nar-du-deltar-i-arbetsformedlingens-program",
    "application_channel": "online",
    "deadline_type": "rolling",
-   "deadline_note": null,
+   "deadline_note": "Ansök månaden efter den månad du deltog i programmet; ansökan inkommen den 1-7 ger utbetalning samma månad",
    "procedure_steps": [
     {
      "step": 1,
@@ -1585,10 +1585,10 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.forsakringskassan.se/",
-   "source_snippet": "Du kan få aktivitetsstöd när du deltar i ett arbetsmarknadspolitiskt program hos Arbetsförmedlingen",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www.forsakringskassan.se/privatperson/arbetssokande/aktivitetsstod-eller-utvecklingsersattning-nar-du-deltar-i-arbetsformedlingens-program",
+   "source_snippet": "Du kan som högst få 1 236 kronor per dag. ... 365 kronor per dag före skatt för heltid.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "etableringsersattning",
@@ -1600,15 +1600,15 @@
    "category": "income_support",
    "benefit_type": "cash_monthly",
    "amount_min": null,
-   "amount_max": 325,
+   "amount_max": null,
    "amount_currency": "SEK",
    "amount_period": "monthly",
-   "amount_note": "308 kr/dag (höjs till 325 kr/dag 1 sep 2026) vid heltidsdeltagande; individuellt barntillägg tillkommer för barn; etableringstillägg och bostadsersättning avskaffas 1 sep 2026",
+   "amount_note": "231 kr per dag i inledande fas, 335 kr per dag därefter (högst 5 dagar per vecka) – publiceras per dag",
    "is_automatic": false,
-   "application_url": "https://www.forsakringskassan.se/",
+   "application_url": "https://www.forsakringskassan.se/privatperson/arbetssokande/ersattning-for-dig-som-deltar-i-etableringsprogrammet-hos-arbetsformedlingen",
    "application_channel": "online",
    "deadline_type": "rolling",
-   "deadline_note": "Programmet varar normalt upp till 24 månader",
+   "deadline_note": "Ansök månaden efter den månad du deltog i programmet; ansökan inkommen den 1-7 ger utbetalning samma månad. Programmets längd varierar individuellt",
    "procedure_steps": [
     {
      "step": 1,
@@ -1631,7 +1631,7 @@
    "eligibility": {
     "statuses": [],
     "age_min": 20,
-    "age_max": 67,
+    "age_max": 64,
     "income_annual_max": null,
     "income_note": "Ingen fast inkomstgräns; ersättningen lämnas per dag med deltagande (231 kr/dag under kartläggningsperioden, därefter 308 kr/dag, höjt till 325 kr/dag fr o m 1 sep 2026) och arbetsinkomster tränger undan ersättningen för de dagar man arbetar",
     "requires_children": false,
@@ -1642,9 +1642,9 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://skr.se/mottagandeochetableringavnyanlandaochasylsokande/mottagandeavasylsokandeochnyanlanda.8259.html",
-   "source_snippet": "Nyanlända som deltar i etableringsprogrammet får etableringsersättning som handläggs av Försäkringskassan... ersättningen höjs från 308 kronor till 325 kronor per dag (1 september 2026)",
-   "last_verified_at": "2026-08-12",
+   "source_url": "https://www.forsakringskassan.se/privatperson/arbetssokande/ersattning-for-dig-som-deltar-i-etableringsprogrammet-hos-arbetsformedlingen",
+   "source_snippet": "nyanländ invandrare ... 20 men inte 65 år ... 231 kronor per dag ... 335 kronor per dag",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -1660,9 +1660,9 @@
    "amount_max": null,
    "amount_currency": "SEK",
    "amount_period": "monthly",
-   "amount_note": "För personer med stora funktionsnedsättningar som behöver personlig assistans >20 tim/vecka; schablonbelopp 347,70 kr/tim, högsta timbelopp 389,42 kr (2026); kommunen ansvarar vid mindre behov",
+   "amount_note": "Schablonbelopp per timme (årligt fastställd); kräver behov av hjälp över 20 timmar per vecka med grundläggande behov",
    "is_automatic": false,
-   "application_url": "https://www.forsakringskassan.se/",
+   "application_url": "https://www.forsakringskassan.se/privatperson/vuxen-med-funktionsnedsattning/assistansersattning/assistansersattning-for-vuxna",
    "application_channel": "in_person",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -1683,7 +1683,7 @@
    "eligibility": {
     "statuses": [],
     "age_min": null,
-    "age_max": null,
+    "age_max": 66,
     "income_annual_max": null,
     "income_note": null,
     "requires_children": false,
@@ -1694,9 +1694,9 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.forsakringskassan.se/privatperson/e-tjanster-blanketter-och-informationsmaterial/aktuella-belopp",
-   "source_snippet": "Assistansersättning – schablonbelopp: 347,70 kronor; högsta möjliga timbelopp: 389,42 kronor",
-   "last_verified_at": "2026-08-12",
+   "source_url": "https://www.forsakringskassan.se/privatperson/vuxen-med-funktionsnedsattning/assistansersattning/assistansersattning-for-vuxna",
+   "source_snippet": "Själva ersättningen är oftast ett så kallat schablonbelopp som vi betalar ut per timme.",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -1712,9 +1712,9 @@
    "amount_max": 3453,
    "amount_currency": "SEK",
    "amount_period": "monthly",
-   "amount_note": "För extra kostnader p.g.a. funktionsnedsättning (19–64 år, minst ett år); 1 480–3 453 kr/mån (2026) beroende på merkostnadernas storlek",
+   "amount_note": "Högst 3 453 kr per månad 2026; kräver funktionsnedsättning i minst ett år och merkostnader över 14 800 kr per år",
    "is_automatic": false,
-   "application_url": "https://www.forsakringskassan.se/",
+   "application_url": "https://www.forsakringskassan.se/privatperson/vuxen-med-funktionsnedsattning/merkostnadsersattning-for-vuxna",
    "application_channel": "online",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -1751,9 +1751,9 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.forsakringskassan.se/privatperson/e-tjanster-blanketter-och-informationsmaterial/aktuella-belopp",
-   "source_snippet": "Merkostnadsersättning: 1 480–3 453 kr per månad beroende på merkostnadernas andel av prisbasbeloppet (30–70 %)",
-   "last_verified_at": "2026-08-12",
+   "source_url": "https://www.forsakringskassan.se/privatperson/vuxen-med-funktionsnedsattning/merkostnadsersattning-for-vuxna",
+   "source_snippet": "Det högsta beloppet som går att få är 3 453 kronor i månaden år 2026.",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -1771,10 +1771,10 @@
    "amount_period": "monthly",
    "amount_note": "Utgår vidare till den som beviljats före 2019 års reform; 1 776–3 404 kr/mån (2026); nya ansökningar prövas som merkostnadsersättning",
    "is_automatic": false,
-   "application_url": "https://www.forsakringskassan.se/",
+   "application_url": "https://www.forsakringskassan.se/privatperson/vuxen-med-funktionsnedsattning/merkostnadsersattning-for-vuxna",
    "application_channel": "online",
    "deadline_type": "none",
-   "deadline_note": null,
+   "deadline_note": "Ended: closed to new applicants – 'Det går inte längre att ansöka om handikappersättning'; replaced by merkostnadsersättning; only existing recipients continue",
    "procedure_steps": [
     {
      "step": 1,
@@ -1803,9 +1803,9 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.forsakringskassan.se/privatperson/e-tjanster-blanketter-och-informationsmaterial/aktuella-belopp",
-   "source_snippet": "Handikappersättning: 1 776, 2 615 eller 3 404 kr per månad beroende på merkostnadsandel (36/53/69 % av prisbasbeloppet)",
-   "last_verified_at": "2026-08-12",
+   "source_url": "https://www.forsakringskassan.se/privatperson/vuxen-med-funktionsnedsattning/handikappersattning",
+   "source_snippet": "Det går inte längre att ansöka om handikappersättning.",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -1821,12 +1821,12 @@
    "amount_max": null,
    "amount_currency": "SEK",
    "amount_period": "monthly",
-   "amount_note": "Omställningspension betalas normalt 12 månader till efterlevande make/maka/sambo under 65; efterlevandepension är inkomstgrundad",
-   "is_automatic": false,
-   "application_url": "https://www.pensionsmyndigheten.se/",
+   "amount_note": "Omställningspension: 55 % av den avlidnes beräknade pension i 12 månader; änkepension för kvinnor gifta 31 dec 1989",
+   "is_automatic": true,
+   "application_url": "https://www.pensionsmyndigheten.se/for-pensionarer/Ekonomiskt_stod/omstallningspension",
    "application_channel": "online",
    "deadline_type": "rolling",
-   "deadline_note": "Ansök inom 12 månader efter dödsfallet för retroaktiv utbetalning",
+   "deadline_note": "Betalas i 12 månader; retroaktivt tre månader från ansökan. Ansökan krävs bara i vissa fall (t.ex. den avlidne bodde utomlands)",
    "procedure_steps": [
     {
      "step": 1,
@@ -1844,7 +1844,7 @@
    "eligibility": {
     "statuses": [],
     "age_min": null,
-    "age_max": 64,
+    "age_max": 66,
     "income_annual_max": null,
     "income_note": null,
     "requires_children": false,
@@ -1855,10 +1855,10 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.pensionsmyndigheten.se/",
-   "source_snippet": "Omställningspension kan betalas till dig vars make, maka, registrerade partner eller sambo har avlidit",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www.pensionsmyndigheten.se/for-pensionarer/Ekonomiskt_stod/omstallningspension",
+   "source_snippet": "Du kan få omställningspension i tolv månader. Du ska vara under 67 år. 55 procent av den avlidnes beräknade pension.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "begravningshjalp",
@@ -1873,9 +1873,9 @@
    "amount_max": null,
    "amount_currency": "SEK",
    "amount_period": "one_off",
-   "amount_note": "Kommunen kan ge bistånd till skäliga begravningskostnader när dödsboets tillgångar inte räcker",
+   "amount_note": "Kommunen (socialtjänsten) bör ge bistånd till kostnader för en värdig begravning, i regel inte mer än ett halvt basbelopp",
    "is_automatic": false,
-   "application_url": "https://www.socialstyrelsen.se/",
+   "application_url": "https://www.socialstyrelsen.se/kunskapsstod-och-regler/omraden/ekonomiskt-bistand/ekonomiskt-bistand-for-privatpersoner/",
    "application_channel": "in_person",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -1912,10 +1912,10 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.socialstyrelsen.se/",
-   "source_snippet": "Om tillgångarna i dödsboet inte räcker till begravningskostnaderna kan kommunen ge ekonomiskt bistånd",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www.socialstyrelsen.se/kunskapsstod-och-regler/regler-och-riktlinjer/foreskrifter-och-allmanna-rad/konsoliderade-foreskrifter/20131-om-ekonomiskt-bistand/",
+   "source_snippet": "Ekonomiskt bistånd till begravningskostnader bör i regel inte vara högre än ett halvt basbelopp.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "narstaendepenning",
@@ -1930,12 +1930,12 @@
    "amount_max": null,
    "amount_currency": "SEK",
    "amount_period": "monthly",
-   "amount_note": "Ca 80 % av SGI, max 100 dagar, när du avstår från arbete för att vårda en svårt sjuk närstående i livets slutskede",
+   "amount_note": "Knappt 80 % av inkomsten med tak; högst 100 dagar per svårt sjuk person",
    "is_automatic": false,
-   "application_url": "https://www.forsakringskassan.se/",
+   "application_url": "https://www.forsakringskassan.se/privatperson/sjuk-eller-skadad/stodja-en-svart-sjuk-narstaende",
    "application_channel": "online",
    "deadline_type": "rolling",
-   "deadline_note": null,
+   "deadline_note": "Ansök inom 3 månader från första dagen du begär ersättning",
    "procedure_steps": [
     {
      "step": 1,
@@ -1967,10 +1967,10 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.forsakringskassan.se/",
-   "source_snippet": "Du kan få tillfällig föräldrapenning vid vård av närstående som är svårt sjuk",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www.forsakringskassan.se/privatperson/sjuk-eller-skadad/stodja-en-svart-sjuk-narstaende",
+   "source_snippet": "Man kan få närståendepenning för 100 dagar och dagarna är kopplade till personen som är svårt sjuk.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "bilstod-funktionsnedsattning",
@@ -1985,12 +1985,12 @@
    "amount_max": null,
    "amount_currency": "SEK",
    "amount_period": "one_off",
-   "amount_note": "Bidrag till anskaffning och anpassning av bil för dig med varaktig funktionsnedsättning som har svårt att förflytta dig; grundbelopp och tilläggsbidrag prövas",
+   "amount_note": "Grundbidrag högst 30 000 kr; anskaffningsbidrag 4 000-40 000 kr (inkomst under 220 000 kr/år); tilläggsbidrag 50 000-60 000 kr vid anpassning",
    "is_automatic": false,
-   "application_url": "https://www.forsakringskassan.se/",
+   "application_url": "https://www.forsakringskassan.se/privatperson/vuxen-med-funktionsnedsattning/kopa-eller-anpassa-bil-for-vuxen",
    "application_channel": "online",
    "deadline_type": "rolling",
-   "deadline_note": "Nytt bilstöd tidigast efter 9 år (7 år vid ändrat behov)",
+   "deadline_note": "Bilstöd kan oftast betalas ut vart 9:e år; tidigare om bilen körts minst 180 000 km eller av medicinska/trafiksäkerhetsskäl",
    "procedure_steps": [
     {
      "step": 1,
@@ -2024,10 +2024,10 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.forsakringskassan.se/",
-   "source_snippet": "Bilstöd är ett bidrag till dig som har en funktionsnedsättning och behöver bil för att kunna förflytta dig",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www.forsakringskassan.se/privatperson/vuxen-med-funktionsnedsattning/kopa-eller-anpassa-bil-for-vuxen",
+   "source_snippet": "Bilstöd kan oftast betalas ut vart 9:e år.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "studiebidrag-gymnasiet",
@@ -2044,7 +2044,7 @@
    "amount_period": "monthly",
    "amount_note": "1 250 kr/mån, 10 månader per år (sept–juni); från kvartalet efter 16 år t.o.m. första halvåret det år du fyller 20; heltidsstudier och närvarokrav",
    "is_automatic": true,
-   "application_url": "https://www.csn.se/",
+   "application_url": "https://www.csn.se/bidrag-och-lan/bidrag-for-gymnasiestudier-i-sverige.html",
    "application_channel": "automatic",
    "deadline_type": "none",
    "deadline_note": null,
@@ -2069,7 +2069,7 @@
     "income_annual_max": null,
     "income_note": null,
     "requires_children": false,
-    "nationality": "any_resident",
+    "nationality": "citizen_or_pr",
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": true,
@@ -2078,7 +2078,7 @@
    },
    "source_url": "https://www.csn.se/bidrag-och-lan/bidrag-for-gymnasiestudier-i-sverige.html",
    "source_snippet": "Du kan få studiebidrag från kvartalet efter du fyllt 16 år... 1 250 kronor per månad",
-   "last_verified_at": "2026-08-12",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -2096,7 +2096,7 @@
    "amount_period": "monthly",
    "amount_note": "285, 570 eller 855 kr/mån beroende på familjens ekonomi; familjens årsinkomst under 125 000 kr före skatt",
    "is_automatic": false,
-   "application_url": "https://www.csn.se/",
+   "application_url": "https://www.csn.se/bidrag-och-lan/bidrag-for-gymnasiestudier-i-sverige.html",
    "application_channel": "online",
    "deadline_type": "annual",
    "deadline_note": "Ansöks för varje läsår",
@@ -2121,7 +2121,7 @@
     "income_annual_max": 125000,
     "income_note": "Familjens sammanlagda inkomst före skatt måste vara lägre än 125 000 kr under läsåret (1 juli–30 juni); förmögenhet över 75 000 kr räknas in med en femtedel; bidraget trappas: 855/570/285 kr/mån beroende på inkomst",
     "requires_children": false,
-    "nationality": "any_resident",
+    "nationality": "citizen_or_pr",
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": true,
@@ -2130,7 +2130,7 @@
    },
    "source_url": "https://www.csn.se/bidrag-och-lan/bidrag-for-gymnasiestudier-i-sverige.html",
    "source_snippet": "Extra tillägg uppgår till 855, 570 eller 285 kronor per månad... familjens inkomst ska vara lägre än 125 000 kronor före skatt",
-   "last_verified_at": "2026-08-12",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -2146,9 +2146,9 @@
    "amount_max": 2350,
    "amount_currency": "SEK",
    "amount_period": "monthly",
-   "amount_note": "1 190–2 350 kr/mån för gymnasieelever som måste bo på annan ort p.g.a. utbildningen (vissa utbildningar via CSN, kommunala via hemkommunen)",
+   "amount_note": "1 190–2 350 kr/mån beroende på avstånd hem–skola (0–44 km 1 190 kr; 1 300+ km 2 350 kr); minst 2 timmars daglig restid, eget boende, under 20 år; högst 9 månader per år (sept–maj)",
    "is_automatic": false,
-   "application_url": "https://www.csn.se/",
+   "application_url": "https://www.csn.se/bidrag-och-lan/bidrag-for-gymnasiestudier-i-sverige/inackorderingstillagg.html",
    "application_channel": "online",
    "deadline_type": "annual",
    "deadline_note": null,
@@ -2178,16 +2178,16 @@
     "income_annual_max": null,
     "income_note": null,
     "requires_children": false,
-    "nationality": "any_resident",
+    "nationality": "citizen_or_pr",
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": true,
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.csn.se/bidrag-och-lan/bidrag-for-gymnasiestudier-i-sverige.html",
+   "source_url": "https://www.csn.se/bidrag-och-lan/bidrag-for-gymnasiestudier-i-sverige/inackorderingstillagg.html",
    "source_snippet": "Inackorderingstillägg lämnas med lägst 1 190 och högst 2 350 kronor i månaden",
-   "last_verified_at": "2026-08-12",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -2199,13 +2199,13 @@
    "funder": "CSN",
    "category": "education",
    "benefit_type": "cash_monthly",
-   "amount_min": 4148,
+   "amount_min": 4120,
    "amount_max": 13592,
    "amount_currency": "SEK",
    "amount_period": "monthly",
-   "amount_note": "Fullt studiemedel 2026: 13 592 kr per 4 veckor heltid (bidrag 4 148 kr skattefritt + lån 9 444 kr); fribelopp 114 676 kr per kalenderhalvår; max 240 veckor högskola",
+   "amount_note": "Heltid 2026: 13 592 kr per 4 veckor (bidrag 4 120 kr + lån 9 472 kr); bidraget är skattefritt",
    "is_automatic": false,
-   "application_url": "https://www.csn.se/",
+   "application_url": "https://www.csn.se/bidrag-och-lan/studiemedel.html",
    "application_channel": "online",
    "deadline_type": "window",
    "deadline_note": "Ansök inför varje termin; studieförsäkran krävs",
@@ -2238,18 +2238,18 @@
     "age_min": 20,
     "age_max": null,
     "income_annual_max": 229352,
-    "income_note": "Fribelopp (inte hårt tak): 114 676 kr per kalenderhalvår 2026 vid heltidsstudier 20 veckor (113 901 kr 2025) – här årsräknat som 2 × 114 676 = 229 352 kr; inkomst över fribeloppet minskar bidrag och lån med 61 % av överskottet; deltid och färre studieveckor ger högre fribelopp",
+    "income_note": "Fribelopp (inte hårt tak): inkomst över fribeloppet minskar studiemedlet; exakt belopp beror på studietakt och antal veckor (inte verifierat här). Tidigare angivet årsräknat värde 229 352 kr bygger på en icke-officiell källa.",
     "requires_children": false,
-    "nationality": "any_resident",
+    "nationality": "citizen_or_pr",
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": true,
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://gratiskalkyl.se/artiklar/csn-2026-belopp-och-regler",
-   "source_snippet": "Fullt studiemedel: 13 592 kr per 4 veckor (bidrag 4 148 kr + lån 9 444 kr)",
-   "last_verified_at": "2026-08-12",
+   "source_url": "https://www.csn.se/bidrag-och-lan/studiemedel.html",
+   "source_snippet": "Bidrag 4 120 | Lån 9 472 | Totalt 13 592 (Studiemedel för 4 veckor, kr)",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -2261,13 +2261,13 @@
    "funder": "CSN",
    "category": "education",
    "benefit_type": "cash_monthly",
-   "amount_min": null,
-   "amount_max": null,
+   "amount_min": 780,
+   "amount_max": 2056,
    "amount_currency": "SEK",
    "amount_period": "monthly",
-   "amount_note": "Skattefritt tillägg utöver studiemedlen för dig som har barn under 18 år; belopp per barn och 4-veckorsperiod enligt CSN:s beloppstabeller",
+   "amount_note": "2026 heltid per 4 veckor: 780 kr (1 barn), 1 276 kr (2 barn), 1 536 kr (3 barn) upp till 2 056 kr; lägre vid 75 % och 50 % studietakt; betalas t.o.m. kalenderhalvåret barnet fyller 18; skattefritt",
    "is_automatic": false,
-   "application_url": "https://www.csn.se/",
+   "application_url": "https://www.csn.se/bidrag-och-lan/studiemedel/tillaggsbidrag.html",
    "application_channel": "online",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -2292,17 +2292,17 @@
     "income_annual_max": null,
     "income_note": "Ingen inkomstprövning; kräver vårdnad om barn under 18 år och studiemedel för samma veckor (2026: 780 kr per 4 veckor för 1 barn vid heltid, mer vid fler barn)",
     "requires_children": true,
-    "nationality": "any_resident",
+    "nationality": "citizen_or_pr",
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": true,
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.csn.se/",
+   "source_url": "https://www.csn.se/bidrag-och-lan/studiemedel/tillaggsbidrag.html",
    "source_snippet": "Du som har barn kan få ett extra bidrag utöver dina studiemedel – tilläggsbidrag",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "tillagslan-csn",
@@ -2313,13 +2313,13 @@
    "funder": "CSN",
    "category": "education",
    "benefit_type": "cash_monthly",
-   "amount_min": null,
-   "amount_max": null,
+   "amount_min": 2344,
+   "amount_max": 4688,
    "amount_currency": "SEK",
    "amount_period": "monthly",
-   "amount_note": "Extra lån utöver ordinarie studiemedel för dig som fyllt 25 och haft viss lägsta inkomst före studierna; kan även gälla vid barn under 18",
+   "amount_note": "2026: 4 688 kr per 4 veckor heltid (3 528 vid 75 %, 2 344 vid 50 %); högst 120 veckor; måste ha fyllt 25 under året och haft tillräcklig inkomst kalenderåret före studiestart (245 680 kr för 2026)",
    "is_automatic": false,
-   "application_url": "https://www.csn.se/",
+   "application_url": "https://www.csn.se/bidrag-och-lan/studiemedel/tillaggslan.html",
    "application_channel": "online",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -2344,17 +2344,17 @@
     "income_annual_max": null,
     "income_note": "Ingen övre inkomstgräns – tvärtom krävs en LÄGSTA inkomst året före studiestarten (245 680 kr under 2025 för studiestart 2026); max 4 688 kr/4 veckor vid heltid 2026",
     "requires_children": false,
-    "nationality": "any_resident",
+    "nationality": "citizen_or_pr",
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": true,
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.csn.se/",
+   "source_url": "https://www.csn.se/bidrag-och-lan/studiemedel/tillaggslan.html",
    "source_snippet": "Tilläggslån är ett extra lån du kan få om du har arbetat och varit van vid en högre inkomst",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "merkostnadslan-utlandsstudier",
@@ -2366,12 +2366,12 @@
    "category": "education",
    "benefit_type": "cash_monthly",
    "amount_min": null,
-   "amount_max": null,
+   "amount_max": 17760,
    "amount_currency": "SEK",
-   "amount_period": "monthly",
-   "amount_note": "Extra lån vid studier utomlands för kursavgifter, resor, försäkring och dyrare levnadskostnader; kräver ordinarie studiemedel",
+   "amount_period": "one_off",
+   "amount_note": "Per kalenderhalvår 2026: högst 5 920 kr (studier inom EU/EES, Schweiz, Storbritannien) eller 17 760 kr (utanför); avser resekostnader till och från studielandet; kan höjas vid synnerliga skäl; kräver studiemedel under hela studieperioden",
    "is_automatic": false,
-   "application_url": "https://www.csn.se/",
+   "application_url": "https://www.csn.se/bidrag-och-lan/studiemedel/merkostnadslan.html",
    "application_channel": "online",
    "deadline_type": "window",
    "deadline_note": "Ansök per termin tillsammans med studiemedlen",
@@ -2401,17 +2401,17 @@
     "income_annual_max": null,
     "income_note": null,
     "requires_children": false,
-    "nationality": "any_resident",
+    "nationality": "citizen_or_pr",
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": true,
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.csn.se/",
+   "source_url": "https://www.csn.se/bidrag-och-lan/studiemedel/merkostnadslan.html",
    "source_snippet": "Vid studier utomlands kan du låna extra för kursavgifter, resa och försäkring",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "sfi-gratis",
@@ -2428,7 +2428,7 @@
    "amount_period": null,
    "amount_note": "Gratis svenskundervisning för vuxna invandrare; från 1 jan 2026 gäller rätten i tre år från första mottagandet (kan förlängas till sex år)",
    "is_automatic": false,
-   "application_url": "https://www.skolverket.se/",
+   "application_url": "https://utbildningsguiden.skolverket.se/utbildning-for-vuxna/om-utbildningar-for-vuxna/om-komvux-i-svenska-for-invandrare-sfi",
    "application_channel": "in_person",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -2460,9 +2460,9 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://skr.se/mottagandeochetableringavnyanlandaochasylsokande/mottagandeavasylsokandeochnyanlanda.8259.html",
-   "source_snippet": "Den 1 januari 2026 började nya bestämmelser att gälla för sfi... rätten att delta i sfi gäller i tre år",
-   "last_verified_at": "2026-08-12",
+   "source_url": "https://www.skolverket.se/styrning-och-ansvar/anordna-utbildning/nyanlandas-utbildning/mottagande-och-utbildning-i-komvux/skarpta-krav-i-sfi",
+   "source_snippet": "Rätten att delta i utbildning i sfi gäller i tre år från den tidpunkt då personen för första gången togs emot till utbildningen.",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -2480,7 +2480,7 @@
    "amount_period": null,
    "amount_note": "Avgiftsfria studier på grund- och gymnasienivå för vuxna från 20 år (eller som slutat gymnasiet); CSN-studiemedel kan sökas vid sidan om",
    "is_automatic": false,
-   "application_url": "https://www.skolverket.se/",
+   "application_url": "https://utbildningsguiden.skolverket.se/utbildning-for-vuxna/om-utbildningar-for-vuxna/om-komvux-pa-grundlaggande-och-gymnasial-niva",
    "application_channel": "online",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -2512,10 +2512,10 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.skolverket.se/",
-   "source_snippet": "Komvux är kommunal vuxenutbildning på grundläggande och gymnasial nivå och är avgiftsfri",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://utbildningsguiden.skolverket.se/utbildning-for-vuxna/om-utbildningar-for-vuxna/om-komvux-pa-grundlaggande-och-gymnasial-niva",
+   "source_snippet": "Kommunal vuxenutbildning (komvux) är för dig som behöver läsa kurser och ämnen på grundläggande eller gymnasial nivå.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "yrkeshogskola-avgiftsfri",
@@ -2530,9 +2530,9 @@
    "amount_max": 0,
    "amount_currency": "SEK",
    "amount_period": null,
-   "amount_note": "Avgiftsfria eftergymnasiala yrkesutbildningar (YH) som drivs i samverkan med arbetslivet; CSN-studiemedel kan sökas",
+   "amount_note": "Yrkeshögskoleutbildningar är i huvudsak avgiftsfria, men vissa anordnare tar ut en studerandeavgift; CSN-studiemedel kan sökas",
    "is_automatic": false,
-   "application_url": "https://www.yrkeshogskolan.se/",
+   "application_url": "https://utbildningsguiden.skolverket.se/utbildning-for-vuxna/om-utbildningar-for-vuxna/om-yrkeshogskola",
    "application_channel": "online",
    "deadline_type": "window",
    "deadline_note": "Antagning per utbildningsstart",
@@ -2564,10 +2564,10 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.yrkeshogskolan.se/",
-   "source_snippet": "Utbildningarna inom yrkeshögskolan är avgiftsfria och berättigar till studiemedel",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://utbildningsguiden.skolverket.se/utbildning-for-vuxna/om-utbildningar-for-vuxna/om-yrkeshogskola",
+   "source_snippet": "inom yrkeshögskolan är avgiftsfria, men det finns en del som tar ut en studerandeavgift.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "skolskjuts",
@@ -2582,9 +2582,9 @@
    "amount_max": 0,
    "amount_currency": "SEK",
    "amount_period": null,
-   "amount_note": "Gratis resa eller skjuts för grundskoleelever med lång väg till skolan enligt skollagen; kommunens avståndsgränser gäller",
+   "amount_note": "Gratis skolskjuts om det behövs med hänsyn till färdvägens längd, trafikförhållanden, funktionsnedsättning eller annan särskild omständighet; prövas individuellt av hemkommunen",
    "is_automatic": false,
-   "application_url": "https://www.skolverket.se/",
+   "application_url": "https://www.skolverket.se/styrning-och-ansvar/regler-och-ansvar/ansvar-i-skolfragor/skolskjuts",
    "application_channel": "in_person",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -2616,10 +2616,10 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.skolverket.se/",
-   "source_snippet": "Elever som har långt till skolan kan ha rätt till kostnadsfri skolskjuts enligt skollagen",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www.skolverket.se/styrning-och-ansvar/regler-och-ansvar/ansvar-i-skolfragor/skolskjuts",
+   "source_snippet": "har rätt till kostnadsfri skolskjuts om det behövs med hänsyn till färdvägens längd, trafikförhållanden, elevens funktionsnedsättning eller någon annan särskild omständighet",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "hogkostnadsskydd-oppenvard",
@@ -2675,7 +2675,7 @@
    },
    "source_url": "https://www.1177.se/sa-fungerar-varden/kostnader-och-ersattningar/hogkostnadsskydd-for-oppenvard/",
    "source_snippet": "Högkostnadsskyddet innebär att du betalar sammanlagt högst 1 450 kronor för besök i öppenvården under en period på tolv månader",
-   "last_verified_at": "2026-08-12",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -2693,7 +2693,7 @@
    "amount_period": "annual",
    "amount_note": "Egenavgiften för receptbelagda läkemedel inom förmånen är max 3 800 kr per tolvmånadersperiod (taket höjt från 2 900 kr 1 juli 2025); läkemedel till barn under 18 är gratis",
    "is_automatic": true,
-   "application_url": "https://www.ehalsomyndigheten.se/",
+   "application_url": "https://www.1177.se/undersokning-behandling/behandling-med-lakemedel/att-fa-recept-och-att-kopa-lakemedel/lakemedel-pa-recept--kostnader/",
    "application_channel": "automatic",
    "deadline_type": "none",
    "deadline_note": null,
@@ -2725,9 +2725,9 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://hejaolika.se/artikel/avgifter-vid-funktionsnedsattning/",
-   "source_snippet": "Därefter gjordes en stor engångshöjning 1 juli 2025, från 2900 kronor till 3800 kronor",
-   "last_verified_at": "2026-08-12",
+   "source_url": "https://www.1177.se/undersokning-behandling/behandling-med-lakemedel/att-fa-recept-och-att-kopa-lakemedel/lakemedel-pa-recept--kostnader/",
+   "source_snippet": "När du har betalat 3 800 kronor behöver du inte betala mer under resten av högkostnadsperioden. För barn och ungdomar under 18 år kostar det ingenting för läkemedel som ingår i högkostnadsskyddet.",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -2743,9 +2743,9 @@
    "amount_max": 600,
    "amount_currency": "SEK",
    "amount_period": "annual",
-   "amount_note": "300 kr/år (24–64 år) eller 600 kr/år (20–23 år och 65+); dras direkt på tandläkarnotan; högkostnadsskydd subventionerar större behandlingar utifrån TLV:s referenspriser",
+   "amount_note": "Allmänt tandvårdsbidrag: 600 kr/år (20–23 år), 300 kr/år (24–65 år), 600 kr/år (från 67 år; även den som fyller 66 under 2026); dras på tandläkarnotan; högkostnadsskydd för större behandlingar",
    "is_automatic": true,
-   "application_url": "https://www.forsakringskassan.se/",
+   "application_url": "https://www.forsakringskassan.se/privatperson/tandvard/tandvardsstod",
    "application_channel": "automatic",
    "deadline_type": "none",
    "deadline_note": "Bidraget förnyas 1 juli varje år",
@@ -2777,9 +2777,9 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.aquadental.se/forsakringskassan",
-   "source_snippet": "Beroende på hur gammal du är får du antingen 300 eller 600 kronor i bidrag... 20-23 år: 600 kr, 24-64 år: 300 kr, 65+: 600 kr",
-   "last_verified_at": "2026-08-12",
+   "source_url": "https://www.1177.se/sa-fungerar-varden/kostnader-och-ersattningar/kostnader-och-ersattningar-inom-tandvard/tandvard-nar-du-ar-over-19-ar---statligt-tandvardsstod/",
+   "source_snippet": "Från och med det år du fyller 20 år och till och med det år du fyller 23 är bidraget 600 kronor per år.",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -2795,9 +2795,9 @@
    "amount_max": 0,
    "amount_currency": "SEK",
    "amount_period": null,
-   "amount_note": "Tandvården är avgiftsfri för barn och unga – i de flesta regioner t.o.m. det år man fyller 23 (åldersgräns varierar något mellan regioner)",
+   "amount_note": "Tandvården är avgiftsfri till och med det år man fyller 19 år (åldersgränsen sänktes från 23 år i regionerna under 2025); därefter betalar man själv med statligt tandvårdsbidrag",
    "is_automatic": true,
-   "application_url": "https://www.1177.se/",
+   "application_url": "https://www.1177.se/sa-fungerar-varden/kostnader-och-ersattningar/kostnader-och-ersattningar-inom-tandvard/",
    "application_channel": "automatic",
    "deadline_type": "none",
    "deadline_note": null,
@@ -2818,7 +2818,7 @@
    "eligibility": {
     "statuses": [],
     "age_min": null,
-    "age_max": 23,
+    "age_max": 19,
     "income_annual_max": null,
     "income_note": null,
     "requires_children": false,
@@ -2830,10 +2830,10 @@
     "gender": "any",
     "rule_source": "geography_unknown"
    },
-   "source_url": "https://www.1177.se/",
-   "source_snippet": "Tandvård är kostnadsfri för barn och unga upp till en ålder som regionen bestämmer, oftast 23 år",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www.1177.se/sa-fungerar-varden/kostnader-och-ersattningar/kostnader-och-ersattningar-inom-tandvard/",
+   "source_snippet": "Fram till och med det år du fyller 19 år är din tandvård avgiftsfri.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "sjukresor-region",
@@ -2848,9 +2848,9 @@
    "amount_max": null,
    "amount_currency": "SEK",
    "amount_period": "one_off",
-   "amount_note": "Regionen ersätter resor till och från vård som du remitterats till; egenavgift per resa enligt regionens taxa (räknas in i högkostnadsskyddet i många regioner)",
+   "amount_note": "Regionen ersätter resekostnad över egenavgiften för resor till vård på grund av sjukdom eller förlossning; egenavgiften bestäms av varje region och beror på färdsätt; gäller vård i den region där du är folkbokförd",
    "is_automatic": false,
-   "application_url": "https://www.1177.se/",
+   "application_url": "https://www.1177.se/sa-fungerar-varden/sjukresor-och-fardtjanst/sjukresor/",
    "application_channel": "post",
    "deadline_type": "rolling",
    "deadline_note": "Reseräkning ska normalt lämnas in inom ett år",
@@ -2888,10 +2888,10 @@
     "gender": "any",
     "rule_source": "geography_unknown"
    },
-   "source_url": "https://www.1177.se/",
-   "source_snippet": "Du kan ha rätt till ersättning från regionen för resor i samband med vård",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www.1177.se/sa-fungerar-varden/sjukresor-och-fardtjanst/sjukresor/",
+   "source_snippet": "Du måste alltid betala en del av resan själv, den så kallade egenavgiften.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "mammografi-screening",
@@ -2906,9 +2906,9 @@
    "amount_max": 0,
    "amount_currency": "SEK",
    "amount_period": null,
-   "amount_note": "Kvinnor 40–74 år kallas kostnadsfritt till mammografiscreening vartannat år inom det nationella screeningprogrammet",
+   "amount_note": "Kvinnor (juridiskt kön kvinna vid födseln) 40–74 år erbjuds avgiftsfri mammografiscreening med 1,5 till 2 års mellanrum",
    "is_automatic": true,
-   "application_url": "https://www.1177.se/",
+   "application_url": "https://www.1177.se/undersokning-behandling/undersokningar-och-provtagning/upptack-och-forebygg-cancer/regelbunden-mammografi-for-att-upptacka-brostcancer/",
    "application_channel": "automatic",
    "deadline_type": "none",
    "deadline_note": null,
@@ -2940,10 +2940,10 @@
     "admin_areas": [],
     "gender": "female"
    },
-   "source_url": "https://www.1177.se/",
-   "source_snippet": "Screening med mammografi erbjuds alla kvinnor mellan 40 och 74 år och är avgiftsfri",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www.1177.se/undersokning-behandling/undersokningar-och-provtagning/upptack-och-forebygg-cancer/regelbunden-mammografi-for-att-upptacka-brostcancer/",
+   "source_snippet": "Du erbjuds screening med mammografi med 1,5 till 2 års mellanrum. Screening mot bröstcancer kostar ingenting för dig.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "fria-preventivmedel-unga",
@@ -2958,9 +2958,9 @@
    "amount_max": 0,
    "amount_currency": "SEK",
    "amount_period": null,
-   "amount_note": "Många regioner erbjuder gratis preventivmedel till unga (ofta t.o.m. 25 år) via ungdomsmottagningar och vårdcentraler",
+   "amount_note": "Preventivmedel inom läkemedelsförmånen är kostnadsfria för unga till och med det år man fyller 21; för 21–25 år varierar kostnad/regional subvention; många regioner har gratis preventivmedel på ungdomsmottagning",
    "is_automatic": false,
-   "application_url": "https://www.1177.se/",
+   "application_url": "https://www.1177.se/liv--halsa/sexuell-halsa/skydd-mot-graviditet/preventivmedel--skydd-mot-graviditet/",
    "application_channel": "in_person",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -2981,7 +2981,7 @@
    "eligibility": {
     "statuses": [],
     "age_min": null,
-    "age_max": 25,
+    "age_max": 21,
     "income_annual_max": null,
     "income_note": null,
     "requires_children": false,
@@ -2993,10 +2993,10 @@
     "gender": "any",
     "rule_source": "geography_unknown"
    },
-   "source_url": "https://www.1177.se/",
-   "source_snippet": "I många regioner kan unga få preventivmedel utan kostnad",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www.1177.se/liv--halsa/sexuell-halsa/skydd-mot-graviditet/preventivmedel--skydd-mot-graviditet/",
+   "source_snippet": "Preventivmedel inom läkemedelsförmånen är kostnadsfria för unga till och med det år som du fyller 21 år.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "hemtjanst-maxtaxa",
@@ -3007,13 +3007,13 @@
    "funder": "Kommunerna",
    "category": "health",
    "benefit_type": "discount",
-   "amount_min": null,
-   "amount_max": null,
+   "amount_min": 0,
+   "amount_max": 2660,
    "amount_currency": "SEK",
    "amount_period": "monthly",
-   "amount_note": "Kommunala avgifter för hemtjänst, trygghetslarm m.m. är behovsprövade och avgiftsbelagda med kommunal maxtaxa och förbehållsbelopp som skyddar minimibelopp att leva på",
+   "amount_note": "Maxtaxa 2026: avgiften för hemtjänst, dagverksamhet, kommunal hälso- och sjukvård och förbrukningsartiklar får högst uppgå till 2 660 kr per månad; avgiften är behovsprövad och kommunen skyddar förbehållsbelopp",
    "is_automatic": false,
-   "application_url": "https://www.socialstyrelsen.se/",
+   "application_url": "https://www.socialstyrelsen.se/kunskapsstod-och-regler/omraden/aldre/regelverk/boende-och-stod-aldre/",
    "application_channel": "in_person",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -3047,10 +3047,10 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.socialstyrelsen.se/",
-   "source_snippet": "Avgiften för hemtjänst beräknas utifrån inkomst och får inte understiga kommunens maxtaxa; ett förbehållsbelopp ska alltid finnas kvar",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www.socialstyrelsen.se/kunskapsstod-och-regler/omraden/aldre/regelverk/boende-och-stod-aldre/",
+   "source_snippet": "Avgiften för hemtjänst, dagverksamhet samt kommunal hälso- och sjukvård och förbrukningsartiklar får per månad uppgå till 2 660 kr per månad.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "rutavdrag",
@@ -3067,7 +3067,7 @@
    "amount_period": "annual",
    "amount_note": "50 % av arbetskostnaden för hushållsnära tjänster (städning, barnpassning, trädgård, IT-hjälp m.m.); dras direkt på fakturan; RUT+ROT sammanlagt max 75 000 kr/person/år",
    "is_automatic": false,
-   "application_url": "https://www.skatteverket.se/rotochrut",
+   "application_url": "https://www.skatteverket.se/privat/fastigheterochbostad/rotarbeteochrutarbete/safungerarrutavdraget.4.d5e04db14b6fef2c866097.html",
    "application_channel": "via_employer",
    "deadline_type": "none",
    "deadline_note": null,
@@ -3104,9 +3104,9 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://offerta.se/guider/ovrigt/rot-och-rutavdrag",
-   "source_snippet": "För RUT-avdraget är subventionsgraden 50 %. Totalt får ROT + RUT tillsammans uppgå till högst 75 000 kr per person och år",
-   "last_verified_at": "2026-08-12",
+   "source_url": "https://www.skatteverket.se/privat/fastigheterochbostad/rotarbeteochrutarbete/safungerarrutavdraget.4.d5e04db14b6fef2c866097.html",
+   "source_snippet": "företaget får dra av högst 50 procent av arbetskostnaden på fakturan ... Du kan få högst 75 000 kronor per år i rotavdrag och rutavdrag.",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -3122,9 +3122,9 @@
    "amount_max": 50000,
    "amount_currency": "SEK",
    "amount_period": "annual",
-   "amount_note": "30 % av arbetskostnaden för reparation/om-/tillbyggnad av bostad du äger (tillfälligt 50 % för betalningar 12 maj–31 dec 2025); max 50 000 kr/person/år inom det gemensamma taket 75 000 kr med RUT",
+   "amount_note": "30 % av arbetskostnaden för rotarbete i bostad du äger; högst 50 000 kr/person/år inom det gemensamma taket 75 000 kr med RUT; du ska ha fyllt 18 år vid årets slut",
    "is_automatic": false,
-   "application_url": "https://www.skatteverket.se/rotochrut",
+   "application_url": "https://www.skatteverket.se/privat/fastigheterochbostad/rotarbeteochrutarbete/safungerarrotavdraget.4.5947400c11f47f7f9dd80004014.html",
    "application_channel": "via_employer",
    "deadline_type": "none",
    "deadline_note": null,
@@ -3156,9 +3156,9 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://byggforetagen.se/2025/11/det-har-behover-du-som-foretagare-veta-om-det-tillfalliga-rot-avdraget/",
-   "source_snippet": "Högst 50 procent (30 procent från och med 1 januari 2026) dras av från arbetskostnaden",
-   "last_verified_at": "2026-08-12",
+   "source_url": "https://www.skatteverket.se/privat/fastigheterochbostad/rotarbeteochrutarbete/safungerarrotavdraget.4.5947400c11f47f7f9dd80004014.html",
+   "source_snippet": "Företaget får dra av högst 30 procent av arbetskostnaden på fakturan. Rotavdraget och rutavdraget är sammanlagt högst 75 000 kronor per person och år. Högst 50 000 kronor får vara rotavdrag.",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -3176,7 +3176,7 @@
    "amount_period": "annual",
    "amount_note": "15 % av kostnaden för solceller (sänkt från 20 % 1 juli 2025), 50 % för batterilagring och laddpunkt till elfordon; sammanlagt max 50 000 kr/person/år; dras på fakturan",
    "is_automatic": false,
-   "application_url": "https://www.skatteverket.se/gronteknik",
+   "application_url": "https://www.skatteverket.se/privat/fastigheterochbostad/gronteknik.4.676f4884175c97df4192860.html",
    "application_channel": "via_employer",
    "deadline_type": "none",
    "deadline_note": null,
@@ -3213,9 +3213,9 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.riksdagen.se/sv/dokument-och-lagar/dokument/betankande/inkomstskatt_hd01sku13/html/",
-   "source_snippet": "Skattereduktionen för installation av grön teknik får sammanlagt uppgå till högst 50 000 kronor per person och år",
-   "last_verified_at": "2026-08-12",
+   "source_url": "https://www.skatteverket.se/privat/fastigheterochbostad/gronteknik.4.676f4884175c97df4192860.html",
+   "source_snippet": "Skattereduktionen för grön teknik är högst 50 000 kronor per person och år.",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -3231,9 +3231,9 @@
    "amount_max": null,
    "amount_currency": "SEK",
    "amount_period": "annual",
-   "amount_note": "Automatisk skattereduktion på förvärvsinkomster; beräknas på arbetsinkomst, kommunalskatt och prisbasbelopp – höjs automatiskt när prisbasbeloppet höjs (ca 800 kr mer 2026)",
+   "amount_note": "Automatisk skattereduktion på arbetsinkomst; inräknad i Skatteverkets skattetabeller; storleken beror på arbetsinkomst och om man fyllt 66 vid årets ingång; förstärkt 2026 för arbetsinkomster över cirka 192 000 kr/år",
    "is_automatic": true,
-   "application_url": "https://www.skatteverket.se/",
+   "application_url": "https://www.skatteverket.se/privat/skatter/arbeteochinkomst/skattereduktioner/jobbskatteavdrag.4.6fdde64a12cc4eee2308000107.html",
    "application_channel": "automatic",
    "deadline_type": "none",
    "deadline_note": null,
@@ -3268,9 +3268,9 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.skatteverket.se/",
-   "source_snippet": "Grundavdrag och jobbskatteavdrag höjs automatiskt med upp till 800 kronor per år (vid höjt prisbasbelopp)",
-   "last_verified_at": "2026-08-12",
+   "source_url": "https://www.skatteverket.se/privat/skatter/arbeteochinkomst/skattereduktioner/jobbskatteavdrag.4.6fdde64a12cc4eee2308000107.html",
+   "source_snippet": "Jobbskatteavdraget är inräknat i Skatteverkets skattetabeller som arbetsgivaren använder i samband med löneutbetalningar. Du behöver alltså inte själv ansöka om avdraget.",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -3288,7 +3288,7 @@
    "amount_period": "annual",
    "amount_note": "Avdrag för resekostnader över 11 000 kr/år (inkomstår 2025; höjs till 15 000 kr från inkomstår 2026); bil kräver normalt 5 km+ och 2 timmars tidsvinst per dag; schablon 25 kr/mil egen bil",
    "is_automatic": false,
-   "application_url": "https://www.skatteverket.se/reseavdrag",
+   "application_url": "https://www.skatteverket.se/privat/skatter/bilochtrafik/avdragforresortillochfranarbetet.4.3810a01c150939e893f25603.html",
    "application_channel": "online",
    "deadline_type": "annual",
    "deadline_note": "Görs i inkomstdeklarationen",
@@ -3322,9 +3322,9 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.skatteverket.se/",
-   "source_snippet": "Du får avdrag för den del av dina godkända resekostnader som överstiger 11 000 kronor under året",
-   "last_verified_at": "2026-08-12",
+   "source_url": "https://www.skatteverket.se/privat/skatter/bilochtrafik/avdragforresortillochfranarbetet.4.3810a01c150939e893f25603.html",
+   "source_snippet": "Riksdagen har beslutat att höja beloppsgränsen för avdrag för resor till och från arbetet från 11 000 kronor till 15 000 kronor från och med inkomstår 2026 (deklarationen 2027).",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -3342,7 +3342,7 @@
    "amount_period": "annual",
    "amount_note": "30 % skattereduktion på ränteunderskott upp till 100 000 kr (därefter 21 %); bolån fullt avdrag – för lån utan säkerhet räknas bara 50 % av räntan från inkomstår 2025; förifyllt i deklarationen",
    "is_automatic": true,
-   "application_url": "https://www.skatteverket.se/",
+   "application_url": "https://www.skatteverket.se/privat/deklaration/avdragforprivatpersoner/avdragforranteutgifter.106.1b39a64a1919eabb488b87.html",
    "application_channel": "automatic",
    "deadline_type": "annual",
    "deadline_note": null,
@@ -3374,10 +3374,10 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.skatteverket.se/",
-   "source_snippet": "Du får göra avdrag för dina ränteutgifter i inkomstslaget kapital; för lån utan säkerhet gäller från 2025 att bara hälften av räntan får räknas med",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www.skatteverket.se/privat/skatter/arbeteochinkomst/skattereduktioner.4.3810a01c150939e893f1a17e.html",
+   "source_snippet": "På underskott av kapital får du skattereduktion med 30 procent om underskottet är högst 100 000 kronor. Om underskottet är större än 100 000 kronor är skattereduktionen 30 procent av 100 000 kronor plus 21 procent av den del av underskottet som överstiger 100 000 kronor.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "skattefri-uthyrning-40000",
@@ -3394,7 +3394,7 @@
    "amount_period": "annual",
    "amount_note": "Hyresintäkter upp till 40 000 kr/år per bostad är skattefria; därutöver avdrag med 20 % av hyran (småhus) eller avgiftsandel (bostadsrätt/hyresrätt)",
    "is_automatic": false,
-   "application_url": "https://www.skatteverket.se/",
+   "application_url": "https://www.skatteverket.se/privat/fastigheterochbostad/inkomsterfranbostad/hyrautprivatbostadbostadsrattsmahusochhyresratt.4.233f91f71260075abe8800033479.html",
    "application_channel": "online",
    "deadline_type": "annual",
    "deadline_note": "Redovisas i deklarationen vid överskjutande belopp",
@@ -3426,10 +3426,10 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.skatteverket.se/",
-   "source_snippet": "Hyr du ut privatbostad finns ett schablonavdrag på 40 000 kronor per år",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www.skatteverket.se/privat/fastigheterochbostad/inkomsterfranbostad/hyrautprivatbostadbostadsrattsmahusochhyresratt.4.233f91f71260075abe8800033479.html",
+   "source_snippet": "Du får oftast göra ett schablonavdrag med 40 000 kronor. ... Det innebär att du i de flesta fall inte behöver betala skatt på hyresintäkter under 40 000 kronor.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "nystartsjobb",
@@ -3444,9 +3444,9 @@
    "amount_max": null,
    "amount_currency": "SEK",
    "amount_period": "monthly",
-   "amount_note": "Arbetsgivaren får ersättning motsvarande 1–3 gånger arbetsgivaravgiften (upp till ca 60 % av lönekostnaden) för att anställa långtidsarbetslösa eller nyanlända; stöd upp till flera år",
+   "amount_note": "Arbetsgivaren får ersättning motsvarande 1, 2 eller 2,5 gånger arbetsgivaravgiften (nivå beror på den anställdes bakgrund) för lön upp till 20 000 kr/mån heltid; upp till 1 år (20–24 år) eller upp till 2 år (25+, nyanlända m.fl.)",
    "is_automatic": false,
-   "application_url": "https://arbetsformedlingen.se/for-arbetssokande/extra-stod/stod-a-o",
+   "application_url": "https://arbetsformedlingen.se/for-arbetssokande/extra-stod/stod-a-o/nystartsjobb",
    "application_channel": "online",
    "deadline_type": "rolling",
    "deadline_note": "Ansökan ska vara inne innan anställningen börjar",
@@ -3486,9 +3486,9 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://arbetsformedlingen.se/for-arbetssokande/extra-stod/stod-a-o",
-   "source_snippet": "Med ett nystartsjobb får du som varit arbetslös länge eller varit borta från arbetslivet till exempel på grund av sjukdom en chans att börja om",
-   "last_verified_at": "2026-08-12",
+   "source_url": "https://arbetsformedlingen.se/for-arbetsgivare/kom-igang-med-din-rekrytering/fa-stod-i-rekryteringen/nystartsjobb",
+   "source_snippet": "Ersättningens storlek beror på den anställdes bakgrund och finns i tre nivåer: 1, 2 och 2,5 gånger arbetsgivaravgiften.",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -3504,9 +3504,9 @@
    "amount_max": null,
    "amount_currency": "SEK",
    "amount_period": "monthly",
-   "amount_note": "Arbetsgivaren kan få bidrag till upp till 80 % av lönekostnaden (takbelopp per månad) vid anställning av person med funktionsnedsättning som får nedsatt arbetsförmåga",
+   "amount_note": "Arbetsgivaren kan få bidrag för den del av lönekostnaden som inte är högre än en bruttolön på 20 000 kr/mån heltid; första beslutet högst ett år, kan förlängas; för personer med funktionsnedsättning som ger nedsatt arbetsförmåga",
    "is_automatic": false,
-   "application_url": "https://arbetsformedlingen.se/for-arbetssokande/extra-stod/stod-a-o",
+   "application_url": "https://arbetsformedlingen.se/for-arbetssokande/extra-stod/stod-a-o/lonebidrag",
    "application_channel": "online",
    "deadline_type": "rolling",
    "deadline_note": "Beslut före anställningsstart",
@@ -3546,9 +3546,9 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://arbetsformedlingen.se/for-arbetssokande/extra-stod/stod-a-o",
-   "source_snippet": "Om du har en funktionsnedsättning kan du få ett jobb som är anpassat för dig. Din arbetsgivare kan få bidrag till din lön",
-   "last_verified_at": "2026-08-12",
+   "source_url": "https://arbetsformedlingen.se/for-arbetsgivare/kom-igang-med-din-rekrytering/fa-stod-i-rekryteringen/lonebidrag",
+   "source_snippet": "Du kan få bidrag för den del av lönekostnaden som inte är högre än en bruttolön på 20 000 kronor per månad för heltid.",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -3564,9 +3564,9 @@
    "amount_max": 20000,
    "amount_currency": "SEK",
    "amount_period": "monthly",
-   "amount_note": "Arbetsgivaren kan få ersättning upp till 80 % av lönekostnaden, max 20 000 kr/mån, i upp till 12 månader (kan förlängas) för att anställa prioriterade arbetssökande; kan kombineras med studier",
+   "amount_note": "Arbetsgivaren får ersättning med 80 % av lönekostnaden (bruttolön, sjuklön, semesterlön m.m.) i upp till 12 månader, kan förlängas till sammanlagt 24 månader",
    "is_automatic": false,
-   "application_url": "https://arbetsformedlingen.se/for-arbetssokande/extra-stod/stod-a-o",
+   "application_url": "https://arbetsformedlingen.se/for-arbetssokande/extra-stod/stod-a-o/introduktionsjobb",
    "application_channel": "online",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -3601,9 +3601,9 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://arbetsformedlingen.se/for-arbetssokande/extra-stod/stod-a-o",
-   "source_snippet": "När du behöver hjälp att komma in på arbetsmarknaden. Du kan kombinera introduktionsjobbet med studier",
-   "last_verified_at": "2026-08-12",
+   "source_url": "https://arbetsformedlingen.se/for-arbetsgivare/kom-igang-med-din-rekrytering/fa-stod-i-rekryteringen/introduktionsjobb",
+   "source_snippet": "80 procent av lönekostnaden, det vill säga bruttolön, sjuklön, semesterlön och",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -3619,9 +3619,9 @@
    "amount_max": null,
    "amount_currency": "SEK",
    "amount_period": "monthly",
-   "amount_note": "Statligt subventionerad anställning för dig som varit arbetslös länge eller är nyanländ i vissa kategorier; arbetsgivaren får ekonomiskt stöd",
+   "amount_note": "Statligt subventionerad tvåårig anställning för dig som är 20+, arbetslös och antingen varit arbetslös minst 24 av de senaste 27 månaderna, deltar i etableringsprogrammet eller är nyanländ med uppehållstillstånd de senaste 36 månaderna; arbetsgivaren får stöd och du får ersättning från Försäkringskassan; LAS 5 § gäller inte",
    "is_automatic": false,
-   "application_url": "https://arbetsformedlingen.se/for-arbetssokande/extra-stod/stod-a-o",
+   "application_url": "https://arbetsformedlingen.se/for-arbetssokande/extra-stod/stod-a-o/etableringsjobb",
    "application_channel": "online",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -3656,9 +3656,9 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://arbetsformedlingen.se/for-arbetssokande/extra-stod/stod-a-o",
-   "source_snippet": "Om du varit arbetslös länge eller tillhör en viss kategori nyanlända kan du få etableringsjobb för att lättare etablera dig på arbetsmarknaden",
-   "last_verified_at": "2026-08-12",
+   "source_url": "https://arbetsformedlingen.se/for-arbetssokande/extra-stod/stod-a-o/etableringsjobb",
+   "source_snippet": "Om du varit arbetslös länge eller tillhör en viss kategori nyanlända kan du få etableringsjobb för att lättare etablera dig på arbetsmarknaden.",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -3676,7 +3676,7 @@
    "amount_period": "one_off",
    "amount_note": "Praktik på en arbetsplats för att skaffa arbetslivserfarenhet eller förbereda eget företagande; du behåller din ersättning under praktiken",
    "is_automatic": false,
-   "application_url": "https://arbetsformedlingen.se/for-arbetssokande/extra-stod/stod-a-o",
+   "application_url": "https://arbetsformedlingen.se/for-arbetssokande/extra-stod/stod-a-o/arbetspraktik",
    "application_channel": "in_person",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -3711,9 +3711,9 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://arbetsformedlingen.se/for-arbetssokande/extra-stod/stod-a-o",
-   "source_snippet": "Behöver du skaffa dig arbetslivserfarenhet och öka dina chanser att få jobb? Eller förbereda dig för att starta eget? Då kan praktik på en arbetsplats vara rätt för dig",
-   "last_verified_at": "2026-08-12",
+   "source_url": "https://arbetsformedlingen.se/for-arbetssokande/extra-stod/stod-a-o/arbetspraktik",
+   "source_snippet": "Arbetspraktik innebär att du provar på att jobba på en arbetsplats",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -3731,7 +3731,7 @@
    "amount_period": "one_off",
    "amount_note": "Kostnadsfri personlig handledare hos en leverantör du själv väljer, som hjälper dig mot jobb eller utbildning; tilläggstjänster som kartläggning kan tillkomma",
    "is_automatic": false,
-   "application_url": "https://arbetsformedlingen.se/for-arbetssokande/extra-stod/stod-a-o",
+   "application_url": "https://arbetsformedlingen.se/for-arbetssokande/extra-stod/stod-a-o/rusta-och-matcha",
    "application_channel": "online",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -3766,9 +3766,9 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://arbetsformedlingen.se/for-arbetssokande/extra-stod/stod-a-o",
-   "source_snippet": "Rusta och matcha är för dig som behöver extra stöd när du söker jobb. Du väljer själv en leverantör och får en egen handledare",
-   "last_verified_at": "2026-08-12",
+   "source_url": "https://arbetsformedlingen.se/for-arbetssokande/extra-stod/stod-a-o/rusta-och-matcha",
+   "source_snippet": "Rusta och matcha är ett stöd för dig som har varit inskriven på Arbetsförmedlingen under en längre tid.",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -3784,9 +3784,9 @@
    "amount_max": null,
    "amount_currency": "SEK",
    "amount_period": "monthly",
-   "amount_note": "Ersättning (arbetslöshetsersättning eller aktivitetsstöd) under uppstartsfasen i upp till 6 månader efter prövning av affärsplanen",
+   "amount_note": "Starta eget-bidrag (stöd till start av näringsverksamhet): ersättning från Försäkringskassan i 6 månader, 10 månader vid funktionsnedsättning, efter att Arbetsförmedlingen godkänt affärsplanen; kräver att du är 18+, inskriven arbetssökande, utan skulder hos Kronofogden",
    "is_automatic": false,
-   "application_url": "https://arbetsformedlingen.se/",
+   "application_url": "https://arbetsformedlingen.se/for-arbetssokande/extra-stod/stod-a-o/starta-eget-stod-till-start-av-naringsverksamhet",
    "application_channel": "in_person",
    "deadline_type": "rolling",
    "deadline_note": "Beslut måste fattas innan verksamheten startar",
@@ -3832,10 +3832,10 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://arbetsformedlingen.se/",
-   "source_snippet": "Du som är inskriven hos Arbetsförmedlingen kan få stöd när du startar en egen näringsverksamhet",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://arbetsformedlingen.se/for-arbetssokande/extra-stod/stod-a-o/starta-eget-stod-till-start-av-naringsverksamhet",
+   "source_snippet": "Stödet ges i 6 månader eller i 10 månader om du har en funktionsnedsättning.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "jobbgarantin-ungdom",
@@ -3852,7 +3852,7 @@
    "amount_period": "one_off",
    "amount_note": "Program för arbetssökande under 25 år med förstärkt stöd: jobbsökarstöd, praktik, studie- och yrkesvägledning; ersättning via Försäkringskassan under programmet",
    "is_automatic": false,
-   "application_url": "https://arbetsformedlingen.se/for-arbetssokande/extra-stod/stod-a-o",
+   "application_url": "https://arbetsformedlingen.se/for-arbetssokande/extra-stod/stod-a-o/jobbgarantin-for-ungdomar",
    "application_channel": "in_person",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -3887,9 +3887,9 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://arbetsformedlingen.se/for-arbetssokande/extra-stod/stod-a-o",
-   "source_snippet": "Ett program för dig under 25 år. Du kan till exempel få stöd i att söka jobb, praktik eller studie- och yrkesvägledning",
-   "last_verified_at": "2026-08-12",
+   "source_url": "https://arbetsformedlingen.se/for-arbetssokande/extra-stod/stod-a-o/jobbgarantin-for-ungdomar",
+   "source_snippet": "ett program för dig som är under 25 år",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -3907,7 +3907,7 @@
    "amount_period": "one_off",
    "amount_note": "Kostnadsfri, ofta branschskräddarsydd yrkesutbildning för arbetssökande; CSN-liknande ersättning (aktivitetsstöd) under utbildningen",
    "is_automatic": false,
-   "application_url": "https://arbetsformedlingen.se/for-arbetssokande/extra-stod/stod-a-o",
+   "application_url": "https://arbetsformedlingen.se/for-arbetssokande/extra-stod/stod-a-o/arbetsmarknadsutbildning",
    "application_channel": "in_person",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -3942,9 +3942,9 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://arbetsformedlingen.se/for-arbetssokande/extra-stod/stod-a-o",
-   "source_snippet": "En arbetsmarknadsutbildning gör dig mer attraktiv på den aktuella arbetsmarknaden. Utbildningen är ofta skräddarsydd tillsammans med en specifik arbetsgivare",
-   "last_verified_at": "2026-08-12",
+   "source_url": "https://arbetsformedlingen.se/for-arbetssokande/extra-stod/stod-a-o/arbetsmarknadsutbildning",
+   "source_snippet": "En arbetsmarknadsutbildning är en kortare yrkesinriktad utbildning som du kan få gå via Arbetsförmedlingen.",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -3962,10 +3962,10 @@
    "amount_period": "one_off",
    "amount_note": "Kommunalt subventionerade feriearbeten för unga (t.ex. 16–19 år) under sommar- och lovperioder; timlön enligt kommunens taxa, fördelning via kö/lottning",
    "is_automatic": false,
-   "application_url": "https://stockholm.se/",
+   "application_url": "https://jobba.stockholm/feriejobb",
    "application_channel": "online",
    "deadline_type": "window",
-   "deadline_note": "Ansökningsperiod inför sommaren",
+   "deadline_note": "Ansökan per lov (sport-, sommar-, höstlov) via e-tjänst; t.ex. för höstlov 27 augusti–10 september; målgrupp anges med födelseår (t.ex. födda 2008–2010)",
    "procedure_steps": [
     {
      "step": 1,
@@ -3996,10 +3996,10 @@
     ],
     "gender": "any"
    },
-   "source_url": "https://stockholm.se/",
-   "source_snippet": "Stockholms stad erbjuder feriearbete för unga som är folkbokförda i staden",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://jobba.stockholm/feriejobb",
+   "source_snippet": "Vi erbjuder feriejobb för unga på sportlovet, sommarlovet och höstlovet.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "fardtjanst",
@@ -4014,9 +4014,9 @@
    "amount_max": null,
    "amount_currency": "SEK",
    "amount_period": "one_off",
-   "amount_note": "Anpassad dörr-till-dörr-transport till taxi-liknande pris för dig som inte kan resa med ordinarie kollektivtrafik p.g.a. funktionsnedsättning; tillstånd prövas",
+   "amount_note": "Kostnaden varierar mellan kommunerna; kräver tillstånd (färdtjänstlagen), ansökan hos kommunen eller regional trafikmyndighet, ofta läkarintyg; du måste vara folkbokförd i kommunen/regionen",
    "is_automatic": false,
-   "application_url": "https://www.1177.se/",
+   "application_url": "https://www.1177.se/sa-fungerar-varden/sjukresor-och-fardtjanst/fardtjanst/",
    "application_channel": "in_person",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -4054,10 +4054,10 @@
     "gender": "any",
     "rule_source": "geography_unknown"
    },
-   "source_url": "https://www.1177.se/",
-   "source_snippet": "Färdtjänsten är till för dig som har stora svårigheter att resa med den vanliga kollektivtrafiken",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www.1177.se/sa-fungerar-varden/sjukresor-och-fardtjanst/fardtjanst/",
+   "source_snippet": "Du kan få färdtjänst om du har en funktionsnedsättning. Det gäller om du har stora svårigheter att förflytta dig utan hjälp eller att resa med kollektivtrafik.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "sl-studentrabatt",
@@ -4072,9 +4072,9 @@
    "amount_max": null,
    "amount_currency": "SEK",
    "amount_period": "monthly",
-   "amount_note": "Rabatterade periodbiljetter för studerande med giltig studentlegitimation (Mecenat/Studentkortet med SL-symbol); gäller bl.a. 30-dagarsbiljett",
+   "amount_note": "Rabatterat pris på SL:s biljetter för heltidsstudenter med godkänd studentlegitimation (med SL:s logotyp); vuxna studenter måste uppfylla SL:s särskilda villkor",
    "is_automatic": false,
-   "application_url": "https://sl.se/",
+   "application_url": "https://sl.se/biljetter/biljettregler/rabatter",
    "application_channel": "online",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -4108,10 +4108,10 @@
     ],
     "gender": "any"
    },
-   "source_url": "https://sl.se/",
-   "source_snippet": "Studerande med giltig studentlegitimation kan resa med rabatterad biljett hos SL",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://sl.se/biljetter/biljettregler/rabatter",
+   "source_snippet": "Du som är ung, heltidsstudent med godkänd studentlegitimation och du som är lite äldre kan köpa SL:s biljetter till rabatterat pris.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "vasttrafik-studentrabatt",
@@ -4126,9 +4126,9 @@
    "amount_max": null,
    "amount_currency": "SEK",
    "amount_period": "monthly",
-   "amount_note": "Studenterabatt (ca 25 %) på periodbiljetter för dig som studerar minst halvtid och kan visa studentlegitimation",
+   "amount_note": "25 % studentrabatt på periodbiljetter (30, 90 och 365 dagar; Periodbiljett Ungdom). Kräver digital studentlegitimation med gul studentresesymbol (läsåret 2026/2027) samt ID-handling. Tillfälligt kampanjpris: 30-dagarsbiljetter till halva priset under begränsad period",
    "is_automatic": false,
-   "application_url": "https://www.vasttrafik.se/",
+   "application_url": "https://www.vasttrafik.se/biljetter/mer-om-biljetter/studentrabatt/",
    "application_channel": "online",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -4162,10 +4162,10 @@
     ],
     "gender": "any"
    },
-   "source_url": "https://www.vasttrafik.se/",
-   "source_snippet": "Du som studerar kan få rabatt på Västtrafiks periodbiljetter mot uppvisande av studentlegitimation",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www.vasttrafik.se/biljetter/mer-om-biljetter/studentrabatt/",
+   "source_snippet": "Som vuxen student kan du få 25 procent studentrabatt på våra periodbiljetter.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "skanetrafiken-studentrabatt",
@@ -4180,9 +4180,9 @@
    "amount_max": null,
    "amount_currency": "SEK",
    "amount_period": "monthly",
-   "amount_note": "Rabatterade 30-dagarsbiljetter för studenter på CSN-berättigade utbildningar med studentlegitimation",
+   "amount_note": "25 % rabatt på alla biljetter inom Skåne (undantag t.ex. Sommarbiljetten); 35 % på 30-dagarsbiljett och Flex 10/30 till Danmark. Kräver studiemedelsberättigad utbildning, minst 50 % studietakt och minst 15 hp under terminen samt digital studentlegitimation (Mecenat, WeStudents, Hitract eller Studentkortet)",
    "is_automatic": false,
-   "application_url": "https://www.skanetrafiken.se/",
+   "application_url": "https://www.skanetrafiken.se/biljetter/studentrabatt/",
    "application_channel": "online",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -4216,10 +4216,10 @@
     ],
     "gender": "any"
    },
-   "source_url": "https://www.skanetrafiken.se/",
-   "source_snippet": "Som student kan du köpa våra periodbiljetter till rabatterat pris",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www.skanetrafiken.se/biljetter/studentrabatt/",
+   "source_snippet": "Du får 25 procent studentrabatt på alla biljetter inom Skåne.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "sj-studentrabatt",
@@ -4234,9 +4234,9 @@
    "amount_max": null,
    "amount_currency": "SEK",
    "amount_period": "one_off",
-   "amount_note": "Rabatt på SJ:s tågbiljetter för studenter (upp till ca 15–30 % beroende på biljetttyp) mot uppvisande av giltig studentlegitimation",
+   "amount_note": "15 % rabatt på ordinarie pris i 2:a klass, 2:a klass Lugn och utvalda periodkort (t.ex. SJ 30-dagarskort). Gäller student eller ungdom 16-25 år; studenter visar studentkort (STUK, Mecenat eller ISIC) tillsammans med legitimation",
    "is_automatic": false,
-   "application_url": "https://www.sj.se/",
+   "application_url": "https://www.sj.se/biljetter-och-rabatter/student-och-ungdom",
    "application_channel": "online",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -4268,10 +4268,10 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.sj.se/",
-   "source_snippet": "Som student reser du med rabatt hos SJ mot uppvisande av giltig studentlegitimation",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www.sj.se/biljetter-och-rabatter/student-och-ungdom",
+   "source_snippet": "Du som är student eller ungdom (16-25 år) kan alltid resa billigt med oss. Du får alltid 15 % rabatt på ordinarie pris på alla SJ-tåg!",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "mecenat-studentrabatter",
@@ -4340,7 +4340,7 @@
    "amount_period": null,
    "amount_note": "Kostnadsfri, opartisk rådgivning till hushåll och småföretag om energieffektivisering, uppvärmning och elsparande",
    "is_automatic": false,
-   "application_url": "https://www.energimyndigheten.se/",
+   "application_url": "https://energiochklimatradgivningen.se/kontaktaradgivare.3852.html",
    "application_channel": "in_person",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -4372,10 +4372,10 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.energimyndigheten.se/",
-   "source_snippet": "Energimyndigheten finansierar kommunal och regional energi- och klimatrådgivning som är kostnadsfri för hushåll",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www.energimyndigheten.se/effektiv-energianvandning/hushall/energi--och-klimatradgivning/",
+   "source_snippet": "Energi-och klimatrådgivningen är en kostnadsfri service som hjälper dig att bli mer energismart och minska din energianvändning.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "ladda-bilen-stod",
@@ -4390,12 +4390,12 @@
    "amount_max": null,
    "amount_currency": "SEK",
    "amount_period": "one_off",
-   "amount_note": "Stöd till bostadsrättsföreningar, företag och organisationer för installation av laddstolpar; täcker en del av investeringskostnaden enligt Naturvårdsverkets regler",
+   "amount_note": "Bidrag till installation av laddstationer för boende, anställda eller gäster. Kan sökas av företag, bostadsrättsföreningar, organisationer, ideella föreningar, kommuner, regioner och statliga myndigheter (inte privatpersoner). Stödandel och maxbelopp anges inte på huvudsidan",
    "is_automatic": false,
-   "application_url": "https://www.naturvardsverket.se/",
+   "application_url": "https://www.naturvardsverket.se/amnesomraden/klimatomstallningen/ladda-bilen/",
    "application_channel": "online",
    "deadline_type": "rolling",
-   "deadline_note": "Ansök innan installationen påbörjas",
+   "deadline_note": "Alltid öppet för ansökningar; inga särskilda ansökningsperioder",
    "procedure_steps": [
     {
      "step": 1,
@@ -4424,10 +4424,10 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.naturvardsverket.se/",
-   "source_snippet": "Naturvårdsverket administrerar stödet Ladda bilen för laddningsinfrastruktur till elbilar",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www.naturvardsverket.se/amnesomraden/klimatomstallningen/ladda-bilen/",
+   "source_snippet": "Företag, bostadsrättsföreningar, organisationer, ideella föreningar, kommuner, regioner och statliga myndigheter kan söka.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "almi-foretagslan",
@@ -4442,9 +4442,9 @@
    "amount_max": null,
    "amount_currency": "SEK",
    "amount_period": "one_off",
-   "amount_note": "Lån till små och medelstora företag och startups som kompletterar bankmarknaden; mikrolån upp till några hundra tusen, företagslån större; ränta och villkor individuella",
+   "amount_note": "Mikrolån: upp till 250 000 kr. Större företagslån enligt Almis övriga lån. Kräver att du driver eller ska starta ett företag registrerat i Sverige; privatpersoner kan inte ansöka. Ränta och villkor enligt Almis prissättning",
    "is_automatic": false,
-   "application_url": "https://www.almi.se/",
+   "application_url": "https://www.almi.se/lan-finansiering/mikrolan/",
    "application_channel": "online",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -4478,10 +4478,10 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.almi.se/",
-   "source_snippet": "Almi erbjuder lån till företag som komplement till banken, bland annat mikrolån och företagslån",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www.almi.se/lan-finansiering/",
+   "source_snippet": "Med ett Mikrolån kan du låna upp till 250 000 kronor.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "leader-landsbygdsstod",
@@ -4496,9 +4496,9 @@
    "amount_max": null,
    "amount_currency": "SEK",
    "amount_period": "one_off",
-   "amount_note": "Stöd till företag, föreningar och offentliga aktörer för utvecklingsprojekt på landsbygden; medfinansiering enligt lokala utvecklingsstrategier",
+   "amount_note": "Stöd för 40-100 % av stödberättigande utgifter om nyttan tillfaller en bredare allmänhet; 40-70 % (max 300 000 kr) om projektet gynnar en eller få kommersiella verksamheter. Leaderföreningens styrelse avgör stödnivå. Sök via Jordbruksverkets e-tjänst efter kontakt med ditt leaderkontor",
    "is_automatic": false,
-   "application_url": "https://jordbruksverket.se/",
+   "application_url": "https://jordbruksverket.se/stod/lokalt-ledd-utveckling-genom-leader/stod-for-projekt-och-samarbeten-genom-leader",
    "application_channel": "online",
    "deadline_type": "window",
    "deadline_note": "Ansökningsperioder enligt lokal strategi",
@@ -4530,27 +4530,27 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://jordbruksverket.se/",
-   "source_snippet": "Leader är en metod för landsbygdsutveckling där lokala grupper delar ut stöd till projekt",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://jordbruksverket.se/stod/lokalt-ledd-utveckling-genom-leader/stod-for-projekt-och-samarbeten-genom-leader",
+   "source_snippet": "Myndigheter, kommuner, regioner, föreningar, andra organisationer och företag som bidrar till att främja utvecklingen i ett leaderområde kan få stöd.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "etableringsstod-unga-jordbrukare",
-   "name_local": "Etableringsstöd för unga jordbrukare",
-   "name_en": "Start-up aid for young farmers",
+   "name_local": "Startstöd",
+   "name_en": "Start-up aid for young farmers (Startstöd)",
    "admin_level": "national",
    "admin_area": null,
    "funder": "Jordbruksverket (EU-landsbygdsprogram)",
    "category": "business",
    "benefit_type": "cash_one_off",
-   "amount_min": null,
-   "amount_max": null,
+   "amount_min": 150000,
+   "amount_max": 300000,
    "amount_currency": "SEK",
    "amount_period": "one_off",
-   "amount_note": "Stöd till dig under 41 år som etablerar dig för första gången som chef för en jordbruksrörelse; engångsbelopp enligt programperiodens regler mot godkänd affärsplan",
+   "amount_note": "150 000 kr om produktionspotentialen motsvarar halvtidsarbete (minst 860 timmar), 300 000 kr vid heltidsarbete (minst 1 720 timmar). Kräver affärsplan på 3-5 år och att det är första gången du äger ett jordbruks-, trädgårds- eller rennäringsföretag",
    "is_automatic": false,
-   "application_url": "https://jordbruksverket.se/",
+   "application_url": "https://jordbruksverket.se/stod/jordbruk-tradgard-och-rennaring/nystartade-foretag-och-unga-jordbrukare/startstod",
    "application_channel": "online",
    "deadline_type": "window",
    "deadline_note": "Ansökningsomgångar under programperioden",
@@ -4589,10 +4589,10 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://jordbruksverket.se/",
-   "source_snippet": "Du som är ung och startar som jordbrukare kan söka etableringsstöd hos Jordbruksverket",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://jordbruksverket.se/stod/jordbruk-tradgard-och-rennaring/nystartade-foretag-och-unga-jordbrukare/startstod",
+   "source_snippet": "Du som är 40 år eller yngre kan få stödet om du startar eller tar över ett jordbruks-, trädgårds- eller rennärings­företag.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "fritidsbanken",
@@ -4642,9 +4642,9 @@
     "gender": "any"
    },
    "source_url": "https://www.fritidsbanken.se/",
-   "source_snippet": "Hos Fritidsbanken kan alla låna sport- och friluftsprylar gratis, som i ett bibliotek",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_snippet": "På Fritidsbanken lånar du sport- och friluftsutrustning gratis i 14 dagar.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "omstallningsstudiestod-csn",
@@ -4656,12 +4656,12 @@
    "category": "education",
    "benefit_type": "cash_monthly",
    "amount_min": null,
-   "amount_max": 24180,
+   "amount_max": 5773,
    "amount_currency": "SEK",
-   "amount_period": "monthly",
-   "amount_note": "Bidragsdel motsvarar 80 % av årsinkomsten (högst 4,5 inkomstbasbelopp), max 24 180 kr/mån vid heltid i 2025 års prisnivå; skattepliktigt och pensionsgrundande; kompletterande omställningsstudielån upp till 15 236 kr/mån (2025) kan tillkomma; max 44 heltidsveckor",
+   "amount_period": "weekly",
+   "amount_note": "Bidraget motsvarar 80 % av din årliga inkomst upp till ett maxbelopp: 5 773 kr per vecka före skatt år 2026 (ca 23 092 kr per 4 veckor). Skattepliktigt. Lån kan också ges till och med året du fyller 60",
    "is_automatic": false,
-   "application_url": "https://www.csn.se/",
+   "application_url": "https://www.csn.se/bidrag-och-lan/omstallningsstudiestod-for-dig-mitt-i-arbetslivet/sa-ansoker-du.html",
    "application_channel": "online",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -4702,20 +4702,20 @@
      "student"
     ],
     "age_min": 27,
-    "age_max": 62,
+    "age_max": 63,
     "income_annual_max": null,
-    "income_note": "Ingen inkomstgräns uppåt – stödet baseras i stället på tidigare inkomst (SGI-baserat, max 4,5 inkomstbasbelopp); du måste ha haft tillräcklig arbetsinkomst: minst 12,5 % av inkomstbasbeloppet per månad under etableringsvillkoret",
+    "income_note": "Ingen inkomstprövning, men bidraget baseras på din årsinkomst (80 %, upp till maxbelopp). Krav: arbetat minst 8 av senaste 14 åren och minst 12 av senaste 24 månaderna",
     "requires_children": false,
     "gender": "any",
-    "nationality": "any_resident",
+    "nationality": "citizen_or_pr",
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": true,
     "admin_areas": []
    },
    "source_url": "https://www.csn.se/bidrag-och-lan/omstallningsstudiestod-for-dig-mitt-i-arbetslivet/villkor-for-att-fa-omstallningsstudiestod.html",
-   "source_snippet": "Du ska ha arbetat i minst 8 år (96 månader) de senaste 14 åren ... Du ska även ha arbetat minst 12 av de senaste 24 månaderna",
-   "last_verified_at": "2026-08-12",
+   "source_snippet": "Du kan få omställningsstudiestöd från och med året du fyller 27 år till och med året du fyller 63 år. Men från och med året du fyller 62 år kan du få bidrag i max 10 veckor.",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -4733,7 +4733,7 @@
    "amount_period": "one_off",
    "amount_note": "Staten betalar rättshjälpsbiträdets arvode enligt timkostnadsnorm (upp till 100 timmar); den enskilde betalar en rättshjälpsavgift på 2–40 % av kostnaden beroende på ekonomiskt underlag; kräver minst ett timmes rådgivning först och att tvisten avser minst ett halvt prisbasbelopp",
    "is_automatic": false,
-   "application_url": "https://www.domstol.se/",
+   "application_url": "https://www.domstol.se/amnen/rattshjalp/behover-du-rattshjalp/har-du-ratt-till-rattshjalp/",
    "application_channel": "in_person",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -4775,9 +4775,9 @@
     "student_required": false,
     "admin_areas": []
    },
-   "source_url": "https://www.domstol.se/",
-   "source_snippet": "Rättshjälp får som huvudregel beviljas en fysisk person vars ekonomiska underlag inte överstiger 260 000 kronor",
-   "last_verified_at": "2026-08-12",
+   "source_url": "https://www.domstol.se/amnen/rattshjalp/behover-du-rattshjalp/har-du-ratt-till-rattshjalp/",
+   "source_snippet": "Upp till 260 000 kronor per år: Du kan ha rätt till rättshjälp.",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -4795,7 +4795,7 @@
    "amount_period": "annual",
    "amount_note": "25 % skattereduktion på penninggåvor till godkända gåvomottagare, max 3 000 kr per år (motsvarar gåvor på 12 000 kr); kräver minst 200 kr per gåvotillfälle och minst 2 000 kr totalt under året",
    "is_automatic": false,
-   "application_url": "https://www.skatteverket.se/",
+   "application_url": "https://www.skatteverket.se/privat/skatter/arbeteochinkomst/skattereduktioner/skattereduktionforprivatpersonersomgergavor.4.5fc8c94513259a4ba1d800064144.html",
    "application_channel": "automatic",
    "deadline_type": "annual",
    "deadline_note": "Gåvomottagaren lämnar kontrolluppgift; avdraget finns förifyllt i deklarationen",
@@ -4832,9 +4832,9 @@
     "student_required": false,
     "admin_areas": []
    },
-   "source_url": "https://www.skatteverket.se/",
-   "source_snippet": "Skattereduktionen är på 25 procent av dina totala gåvor under ett kalenderår och du kan få max 3 000 kronor i skattereduktion",
-   "last_verified_at": "2026-08-12",
+   "source_url": "https://www.skatteverket.se/privat/skatter/arbeteochinkomst/skattereduktioner/skattereduktionforprivatpersonersomgergavor.4.5fc8c94513259a4ba1d800064144.html",
+   "source_snippet": "Skattereduktionen är 25 procent av gåvobeloppet. Du kan få skattereduktion med högst 3 000 kronor.",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -4850,9 +4850,9 @@
    "amount_max": null,
    "amount_currency": "SEK",
    "amount_period": "annual",
-   "amount_note": "Personer som fyllt 65 år vid årets ingång får ett förhöjt grundavdrag på pensionsinkomster, vilket sänker skatten jämfört med löntagare på samma inkomstnivå; beräknas automatiskt i deklarationen",
+   "amount_note": "Förhöjt grundavdrag för dig som fyllt 66 år vid årets ingång och varit bosatt i Sverige hela inkomståret; sänker skatten på pension och annan inkomst. Från 1 januari 2027 höjs åldersgränsen till 67 år vid årets ingång. Beloppet för 2026: 65 800 kr vid låga inkomster, högst 179 100 kr",
    "is_automatic": true,
-   "application_url": "https://www.skatteverket.se/",
+   "application_url": "https://www.skatteverket.se/privat/skatter/arbeteochinkomst/askattsedelochskattetabeller/grundavdrag.4.6d02084411db6e252fe80009078.html",
    "application_channel": "automatic",
    "deadline_type": "none",
    "deadline_note": null,
@@ -4874,22 +4874,22 @@
     "statuses": [
      "retired"
     ],
-    "age_min": 65,
+    "age_min": 66,
     "age_max": null,
     "income_annual_max": null,
     "income_note": "Ingen inkomstprövning; avdraget varierar med inkomstens storlek och trappas av vid högre pensionsinkomster",
     "requires_children": false,
     "gender": "any",
     "nationality": "any_resident",
-    "residency_months_min": null,
+    "residency_months_min": 12,
     "housing_tenure": null,
     "student_required": false,
     "admin_areas": []
    },
-   "source_url": "https://www.skatteverket.se/",
-   "source_snippet": "Personer som vid beskattningsårets ingång fyllt 65 år har rätt till ett förhöjt grundavdrag vid beräkning av kommunalskatt på pensionsinkomster",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www.skatteverket.se/privat/skatter/arbeteochinkomst/askattsedelochskattetabeller/grundavdrag.4.6d02084411db6e252fe80009078.html",
+   "source_snippet": "Enligt nuvarande regler får du som har fyllt 66 år vid ingången av inkomståret och varit bosatt i Sverige hela inkomståret ett förhöjt grundavdrag.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "skolmat-gratis",
@@ -4904,9 +4904,9 @@
    "amount_max": null,
    "amount_currency": "SEK",
    "amount_period": "monthly",
-   "amount_note": "Alla elever i grundskolan, grundsärskolan, gymnasieskolan och gymnasiesärskolan har rätt till kostnadsfria skolmåltider varje skoldag enligt skollagen (2010:800); någon avgift får inte tas ut",
+   "amount_note": "Kostnadsfria, näringsriktiga skolmåltider i förskoleklass, grundskola och övriga obligatoriska skolformer. I gymnasieskolan måste måltider inte erbjudas; om de erbjuds avgör elevens hemkommun om de är avgiftsfria",
    "is_automatic": true,
-   "application_url": "https://www.skolverket.se/",
+   "application_url": "https://www.skolverket.se/larande-och-trygghet/elevhalsa-och-stodinsatser/skolans-gemensamma-elevhalsoarbete/mat-i-forskolan-och-skolan",
    "application_channel": "automatic",
    "deadline_type": "none",
    "deadline_note": null,
@@ -4940,10 +4940,10 @@
     "student_required": true,
     "admin_areas": []
    },
-   "source_url": "https://www.riksdagen.se/sv/dokument-och-lagar/dokument/svensk-forfattningssamling/skollag-2010800_sfs-2010-800/",
-   "source_snippet": "Eleverna ska enligt skollagen erbjudas kostnadsfria och näringsriktiga skolmåltider",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www.skolverket.se/styrning-och-ansvar/regler-och-ansvar/ansvar-i-skolfragor/avgifter",
+   "source_snippet": "Att utbildningen i de obligatoriska skolformerna ska vara avgiftsfri innebär också att eleverna ska erbjudas näringsriktiga skolmåltider utan att behöva betala för dem.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "gratis-laromedel-skolor",
@@ -4958,9 +4958,9 @@
    "amount_max": null,
    "amount_currency": "SEK",
    "amount_period": "annual",
-   "amount_note": "Undervisningen i grundskolan och gymnasieskolan ska vara kostnadsfri, inklusive läromedel, arbetsmaterial och liknande; kommunala och fristående skolor får inte ta ut avgifter för läromedel",
+   "amount_note": "Eleverna ska utan kostnad ha tillgång till läroböcker, andra läromedel och lärverktyg. I gymnasieskolan får huvudmannen dock besluta att eleverna ska hålla sig med enstaka egna hjälpmedel",
    "is_automatic": true,
-   "application_url": "https://www.skolverket.se/",
+   "application_url": "https://www.skolverket.se/styrning-och-ansvar/regler-och-ansvar/ansvar-i-skolfragor/avgifter",
    "application_channel": "automatic",
    "deadline_type": "none",
    "deadline_note": null,
@@ -4994,10 +4994,10 @@
     "student_required": true,
     "admin_areas": []
    },
-   "source_url": "https://www.riksdagen.se/sv/dokument-och-lagar/dokument/svensk-forfattningssamling/skollag-2010800_sfs-2010-800/",
-   "source_snippet": "Utbildningen ska vara kostnadsfri för eleverna; avgifter för läromedel får inte tas ut",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www.skolverket.se/styrning-och-ansvar/regler-och-ansvar/ansvar-i-skolfragor/avgifter",
+   "source_snippet": "Eleverna ska utan kostnad ha tillgång till läroböcker, andra läromedel och andra lärverktyg som behövs för en god kunskapsutveckling i enlighet med utbildningens mål.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "samhallsorientering-nyanlanda",
@@ -5058,8 +5058,8 @@
     "rule_source": "geography_unknown"
    },
    "source_url": "https://lund.se/omsorg-och-stod/stod-for-nyanlanda/rad-och-stod-for-dig-som-ar-ny-i-sverige/samhallsorientering-for-nyanlanda",
-   "source_snippet": "Kursen hålls på ditt modersmål eller något annat språk som du kan, i minst 100 timmar ... Kursen är gratis för dig som deltar",
-   "last_verified_at": "2026-08-12",
+   "source_snippet": "Samhällsorienteringen är för dig som är ny i Lund, är över 18 år och som nyligen fått uppehållstillstånd i Sverige.",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -5071,13 +5071,13 @@
    "funder": "E-hälsomyndigheten (föreningar ansluts via Försäkringskassan)",
    "category": "family",
    "benefit_type": "cash_one_off",
-   "amount_min": 500,
-   "amount_max": 2000,
+   "amount_min": 550,
+   "amount_max": 2500,
    "amount_currency": "SEK",
    "amount_period": "annual",
-   "amount_note": "Allmänt fritidskort 500 kr/barn och år för barn 8–16 år; särskilt fritidskort 2 000 kr/år för barn i hushåll som haft bostadsbidrag föregående år; används digitalt för avgifter hos anslutna idrotts-, kultur- och friluftsverksamheter och kulturskolor; infördes 8 september 2025 (förordning 2025:764)",
+   "amount_note": "Från 10 augusti 2026 har barn rätt till Fritidskortet redan det år de fyller 6. Barn 6-16 år får 550 kr per år; barn i hushåll som fått bostadstillägg föregående år (från Försäkringskassan eller Pensionsmyndigheten) kan få 2 500 kr. Kan användas till regelbundna fritidsaktiviteter inom idrott, kultur och friluftsliv",
    "is_automatic": false,
-   "application_url": "https://www.ehalsomyndigheten.se/",
+   "application_url": "https://www.fritidskortet.se/",
    "application_channel": "online",
    "deadline_type": "annual",
    "deadline_note": "Kortet gäller per kalenderår och förnyas",
@@ -5107,7 +5107,7 @@
    ],
    "eligibility": {
     "statuses": [],
-    "age_min": 8,
+    "age_min": 6,
     "age_max": 16,
     "income_annual_max": null,
     "income_note": "Allmänt kort (500 kr) utan inkomstprövning; särskilt kort (2 000 kr) riktas till hushåll som fått bostadsbidrag – bostadsbidraget har i sin tur inkomstgräns 150 000 kr/år för ensamstående (75 000 kr vardera för makar)",
@@ -5119,9 +5119,9 @@
     "student_required": false,
     "admin_areas": []
    },
-   "source_url": "https://www.ehalsomyndigheten.se/",
-   "source_snippet": "Det allmänna fritidskortet uppgår till 500 kronor och det särskilda till 2 000 kronor (se förordningen 2025:764 om fritidskort)",
-   "last_verified_at": "2026-08-12",
+   "source_url": "https://www.ehalsomyndigheten.se/privatperson/fritidskortet/",
+   "source_snippet": "Barn mellan 6 och 16 år får 550 kronor per år.",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -5137,7 +5137,7 @@
    "amount_max": null,
    "amount_currency": "SEK",
    "amount_period": "annual",
-   "amount_note": "Du betalar själv de första 3 000 kr (enligt referenspris) per 12-månadersperiod; därefter ersätter Försäkringskassan 50 % av kostnader upp till 15 000 kr och 85 % av kostnader över 15 000 kr; gäller från det år du fyller 20",
+   "amount_note": "Högkostnadsskydd: du betalar själv de första 3 000 kr per 12 månader, därefter ersätter Försäkringskassan 50 % av kostnaden upp till 15 000 kr och 85 % över 15 000 kr (enligt referenspris). Gäller från det år du fyller 20 och är försäkrad i Sverige (bor eller arbetar här). Allmänt tandvårdsbidrag: 600 kr/år 20-23 år, 300 kr/år 24-65 år, 600 kr/år från 67 år",
    "is_automatic": true,
    "application_url": "https://www.forsakringskassan.se/privatperson/tandvard/tandvardsstod",
    "application_channel": "automatic",
@@ -5172,8 +5172,8 @@
     "admin_areas": []
    },
    "source_url": "https://www.forsakringskassan.se/privatperson/tandvard/tandvardsstod",
-   "source_snippet": "Sedan täcker högkostnadsskyddet 50 procent av de kostnader som överstiger 3 000 kronor – 85 procent av de kostnader som överstiger 15 000 kronor",
-   "last_verified_at": "2026-08-12",
+   "source_snippet": "Du kan använda högkostnadsskyddet från och med det år du fyller 20 år och är försäkrad i Sverige.",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -5189,7 +5189,7 @@
    "amount_max": 600,
    "amount_currency": "SEK",
    "amount_period": "one_off",
-   "amount_note": "Hörapparater förskrivs och lånas ut via regionens hörselrehabilitering efter utprovning hos audionom; i t.ex. Region Stockholm är lånet kostnadsfritt utöver en hjälpmedelsavgift på 600 kr per förskrivning samt vanlig patientavgift; service och reparationer av utlånade hjälpmedel är kostnadsfria",
+   "amount_note": "Hörapparater förskrivs via regionens hörselrehabilitering. I Region Stockholm tillkommer en hjälpmedelsavgift på 600 kr per förskrivningstillfälle utöver patientavgiften; avgiftsfritt för barn under 18 år. Avgifter varierar mellan regionerna",
    "is_automatic": false,
    "application_url": "https://www.1177.se/",
    "application_channel": "in_person",
@@ -5234,10 +5234,10 @@
     "admin_areas": [],
     "rule_source": "geography_unknown"
    },
-   "source_url": "https://viss.nu/kunskapsstod/vardprogram/tinnitus",
-   "source_snippet": "Betalar patienten en engångsavgift på 600 kr för utprovning av hörapparat, som sedan lånas av Region Stockholm",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www.1177.se/Stockholm/sa-fungerar-varden/varden-i-stockholms-lan/hjalp-att-valja-mottagning/horselmottagningar-i-stockholms-lan/",
+   "source_snippet": "Utöver patientavgiften betalar du en hjälpmedelsavgift på 600 kronor.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "ungdomsmottagning-gratis",
@@ -5252,7 +5252,7 @@
    "amount_max": 0,
    "amount_currency": "SEK",
    "amount_period": "monthly",
-   "amount_note": "Avgiftsfria besök för unga (åldersgräns varierar, ofta 12/13–22/23 år): preventivmedelsrådgivning, gratis kondomer, graviditetstest, test för könssjukdomar samt kuratorssamtal om psykisk hälsa; tystnadsplikt och möjlighet till anonymitet",
+   "amount_note": "Besök på ungdomsmottagning är kostnadsfria. Åldersgräns varierar mellan regioner/mottagningar; i Stockholm 12-22 år",
    "is_automatic": true,
    "application_url": "https://www.1177.se/",
    "application_channel": "in_person",
@@ -5275,7 +5275,7 @@
    "eligibility": {
     "statuses": [],
     "age_min": 12,
-    "age_max": 23,
+    "age_max": 22,
     "income_annual_max": null,
     "income_note": "Ingen inkomstprövning – alla besök är kostnadsfria",
     "requires_children": false,
@@ -5288,8 +5288,8 @@
     "rule_source": "geography_unknown"
    },
    "source_url": "https://vard.regionstockholm.se/mottagning/ungdomsmottagningar/",
-   "source_snippet": "Ungdomsmottagningen är för dig som är mellan 12-22 år ... Alla besök hos ungdomsmottagningen är kostnadsfria",
-   "last_verified_at": "2026-08-12",
+   "source_snippet": "Ungdomsmottagningen är för dig som är mellan 12-22 år ... Alla besök hos ungdomsmottagningen är kostnadsfria.",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -5341,8 +5341,8 @@
     "rule_source": "geography_unknown"
    },
    "source_url": "https://www.1177.se/barn--gravid/vard-och-stod-for-barn/besok-pa-barnavardscentralen-bvc/",
-   "source_snippet": "Du betalar ingenting när ni besöker BVC",
-   "last_verified_at": "2026-08-12",
+   "source_snippet": "På BVC får ditt barn hälsoundersökningar och vaccinationer från att hen är nyfödd tills hen börjar i förskoleklass.",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -5358,9 +5358,9 @@
    "amount_max": 0,
    "amount_currency": "SEK",
    "amount_period": "monthly",
-   "amount_note": "Öppen hälso- och sjukvård är avgiftsfri för barn och unga – i de flesta regioner till och med 19 års ålder (gränsen varierar något mellan regionerna); besök hos BUP och ungdomsmottagning är gratis oavsett ålder inom målgruppen",
+   "amount_note": "Öppen hälso- och sjukvård är avgiftsfri för barn och unga; i Region Stockholm gäller det 0-17 år (barn under 18). Åldersgränsen kan skilja mellan regioner. Läkemedel inom högkostnadsskyddet är kostnadsfria för barn under 18; tandvård är avgiftsfri till och med det år man fyller 19",
    "is_automatic": true,
-   "application_url": "https://www.1177.se/",
+   "application_url": "https://www.1177.se/sa-fungerar-varden/kostnader-och-ersattningar/patientavgifter/",
    "application_channel": "automatic",
    "deadline_type": "none",
    "deadline_note": null,
@@ -5381,7 +5381,7 @@
    "eligibility": {
     "statuses": [],
     "age_min": null,
-    "age_max": 19,
+    "age_max": 17,
     "income_annual_max": null,
     "income_note": "Ingen inkomstprövning",
     "requires_children": false,
@@ -5393,9 +5393,9 @@
     "admin_areas": [],
     "rule_source": "geography_unknown"
    },
-   "source_url": "https://www.1177.se/Vastra-Gotaland/liv--halsa/psykisk-halsa/att-soka-stod-och-hjalp/att-ma-psykiskt-daligt-som-ung/",
-   "source_snippet": "All sjukvård för barn och ungdomar till och med 19 år är avgiftsfri. Besök på Bup och ungdomsmottagning är gratis",
-   "last_verified_at": "2026-08-12",
+   "source_url": "https://www.1177.se/sa-fungerar-varden/kostnader-och-ersattningar/patientavgifter/",
+   "source_snippet": "Barn och unga mellan 0 och 17 år betalar ingen avgift vare sig på vårdcentraler, närakuter, akutsjukhusens akutmottagningar eller när de behandlas och sover över på ett sjukhus.",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -5411,9 +5411,9 @@
    "amount_max": 0,
    "amount_currency": "SEK",
    "amount_period": "one_off",
-   "amount_note": "Kvinnor kallas kostnadsfritt till gynekologisk cellprovskontroll inom det nationella screeningprogrammet (23–70 år; HPV-test/cellprov med 3–7 års intervall beroende på ålder); analysen och kallelsen är avgiftsfria",
+   "amount_note": "Kostnadsfritt prov inom screeningprogrammet mot livmoderhalscancer: kallelse vart 5:e år vid 23-50 år, vart 7:e år vid 50-70 år, vart 3:e år efter allvarliga cellförändringar",
    "is_automatic": true,
-   "application_url": "https://www.1177.se/",
+   "application_url": "https://www.1177.se/undersokning-behandling/undersokningar-och-provtagning/upptack-och-forebygg-cancer/lamna-prov-for-att-upptacka-hpv-och-cellforandringar-i-livmoderhalsen/",
    "application_channel": "in_person",
    "deadline_type": "rolling",
    "deadline_note": "Kallelse skickas automatiskt enligt screeningprogrammets intervall",
@@ -5446,10 +5446,10 @@
     "admin_areas": [],
     "rule_source": "geography_unknown"
    },
-   "source_url": "https://www.1177.se/",
-   "source_snippet": "Cellprov inom screeningprogrammet är avgiftsfritt (gynekologisk cellprovskontroll kallas till inom det nationella screeningprogrammet)",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www.1177.se/undersokning-behandling/undersokningar-och-provtagning/upptack-och-forebygg-cancer/lamna-prov-for-att-upptacka-hpv-och-cellforandringar-i-livmoderhalsen/",
+   "source_snippet": "Du är mellan 23 och 70 år. ... Att lämna provet kostar ingenting för dig.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "glasogonbidrag-barn",
@@ -5510,8 +5510,8 @@
     "rule_source": "geography_unknown"
    },
    "source_url": "https://www.1177.se/Stockholm/sa-fungerar-varden/kostnader-och-ersattningar/glasogonbidrag-for-barn-och-unga2/",
-   "source_snippet": "Barn 0–7 år kan få maximalt 500 kronor i bidrag. Barn och unga 8–19 år kan få maximalt 800 kronor i bidrag",
-   "last_verified_at": "2026-08-12",
+   "source_snippet": "Barn 0–7 år kan få maximalt 500 kronor i bidrag. Barn och unga 8–19 år kan få maximalt 800 kronor i bidrag.",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -5527,9 +5527,9 @@
    "amount_max": null,
    "amount_currency": "SEK",
    "amount_period": "one_off",
-   "amount_note": "Personliga hjälpmedel (t.ex. rullstolar, hörsel- och kommunikationshjälpmedel) förskrivs och lånas normalt kostnadsfritt efter bedömning av förskrivare; service, reparation och anpassning ingår; regler om egenavgift varierar mellan regioner",
+   "amount_note": "Hjälpmedel förskrivs av t.ex. arbetsterapeut, fysioterapeut, logoped, audionom, synpedagog eller sjuksköterska. Kostnaden varierar mellan kommuner och regioner: ibland utan kostnad, ibland mot avgift; vissa regioner har högkostnadsskydd för hjälpmedel",
    "is_automatic": false,
-   "application_url": "https://www.1177.se/",
+   "application_url": "https://www.1177.se/undersokning-behandling/hjalpmedel/sa-far-du-ett-hjalpmedel/att-fa-ett-hjalpmedel/",
    "application_channel": "in_person",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -5572,10 +5572,10 @@
     "admin_areas": [],
     "rule_source": "geography_unknown"
    },
-   "source_url": "https://www.1177.se/",
-   "source_snippet": "Hjälpmedel förskrivs av regionen efter individuell bedömning och lånas i regel utan kostnad via hjälpmedelscentralen",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www.1177.se/undersokning-behandling/hjalpmedel/sa-far-du-ett-hjalpmedel/att-fa-ett-hjalpmedel/",
+   "source_snippet": "Regionerna och kommunerna är skyldiga att erbjuda hjälpmedel om du behöver det.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "hyresgaranti-unga-kommun",
@@ -5653,12 +5653,12 @@
    "amount_max": null,
    "amount_currency": "SEK",
    "amount_period": "one_off",
-   "amount_note": "Investeringsstöd till företag, kommuner, regioner, föreningar och BRF:er för åtgärder som minskar utsläpp av växthusgaser (energikonvertering, laddinfrastruktur, biogas m.m.); normalt upp till 70 % av merkostnaden (max 50 % för publik laddinfrastruktur); privatpersoner kan inte söka; ansökningsomgångar flera gånger per år",
+   "amount_note": "Investeringsstöd till fysiska investeringar som minskar utsläppen av växthusgaser; kan sökas av företag, kommuner, regioner, föreningar och BRF:er. Stöd ges inte i efterhand för redan genomförda åtgärder",
    "is_automatic": false,
-   "application_url": "https://www.naturvardsverket.se/",
+   "application_url": "https://www.naturvardsverket.se/amnesomraden/klimatomstallningen/klimatklivet/",
    "application_channel": "online",
    "deadline_type": "window",
-   "deadline_note": "Ansökningsomgångar 2026 bl.a. februari, mars, april och maj; anbudsförfarande för publik laddinfrastruktur",
+   "deadline_note": "Nästa ansökningsomgång 19 oktober-6 november 2026. Under 2026 har Klimatklivet sex ansökningsomgångar, fyra riktade mot vissa investeringstyper och två öppna",
    "procedure_steps": [
     {
      "step": 1,
@@ -5704,9 +5704,9 @@
     "student_required": false,
     "admin_areas": []
    },
-   "source_url": "https://www.naturvardsverket.se/",
-   "source_snippet": "Klimatklivet kan ge företag och organisationer upp till 70 procent i ekonomiskt stöd för åtgärder som sänker verksamhetens utsläpp",
-   "last_verified_at": "2026-08-12",
+   "source_url": "https://www.naturvardsverket.se/amnesomraden/klimatomstallningen/klimatklivet/klimatklivets-ansokningsomgangar/",
+   "source_snippet": "19 oktober–6 november 2026 har",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -5722,7 +5722,7 @@
    "amount_max": null,
    "amount_currency": "SEK",
    "amount_period": "monthly",
-   "amount_note": "Barn och unga 7–19 år reser med 40 % rabatt på samtliga biljetter i ordinarie sortiment inom Skåne (50 % på enkel- och 24-timmarsbiljett vid resa mellan Skåne och Danmark); barn 0–6 år reser utan avgift med betalande resenär",
+   "amount_note": "Barn 0-6 år reser gratis; barn och unga 7-19 år får 40 % rabatt på alla biljetter inom Skåne (vid resa över länsgräns varierar rabatten, 40 % för delen inom Skåne). Till Danmark 50 % på enkel- och 24-timmarsbiljett för 7-15 år",
    "is_automatic": true,
    "application_url": "https://www.skanetrafiken.se/biljetter/priser-och-rabatter/",
    "application_channel": "automatic",
@@ -5743,9 +5743,7 @@
     }
    ],
    "eligibility": {
-    "statuses": [
-     "student"
-    ],
+    "statuses": [],
     "age_min": 7,
     "age_max": 19,
     "income_annual_max": null,
@@ -5761,8 +5759,8 @@
     ]
    },
    "source_url": "https://www.skanetrafiken.se/biljetter/priser-och-rabatter/",
-   "source_snippet": "Barn och unga 7–19 år: 40 procent rabatt på alla biljetter",
-   "last_verified_at": "2026-08-12",
+   "source_snippet": "Barn och unga 7–19 år: 40 procent rabatt på alla biljetter.",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -5778,7 +5776,7 @@
    "amount_max": null,
    "amount_currency": "SEK",
    "amount_period": "monthly",
-   "amount_note": "Fr o m 1 oktober 2025 får även den som inte är medlem i en a-kassa inkomstbaserad ersättning: 50 % av den ersättningsgrundande inkomsten upp till taket 34 000 kr/mån (max ca 17 000 kr/mån före skatt); samma inkomstvillkor som för medlemmar; ansökan prövas av Alfa-kassan",
+   "amount_note": "Från 1 oktober 2025: 50 % av ersättningsgrundande inkomst för den som inte är medlem i a-kassa (eller varit medlem fem månader eller kortare); högsta ersättningsgrundande inkomst 34 000 kr/månad. Kräver inkomstvillkor, fyllda 20 år; ersättning betalas ut månadsvis. Längre medlemstid ger högre nivå",
    "is_automatic": false,
    "application_url": "https://www.alfakassan.se/",
    "application_channel": "online",
@@ -5830,9 +5828,9 @@
     "student_required": false,
     "admin_areas": []
    },
-   "source_url": "https://www.alfakassan.se/",
-   "source_snippet": "Sedan 1 oktober 2025 är även icke-medlemmens ersättning inkomstbaserad: 50 procent av den ersättningsgrundande inkomsten, upp till taket 34 000 kronor",
-   "last_verified_at": "2026-08-12",
+   "source_url": "https://www.iaf.se/pressrum/aktuellt-och-pressmeddelanden/nya-regler-for-arbetsloshetsforsakringen-fran-den-1-oktober/",
+   "source_snippet": "50 procent – medlem i fem månader eller kortare, eller inte medlem. Högsta ersättningsgrundande inkomst är 34 000 kronor i månaden.",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -5848,9 +5846,9 @@
    "amount_max": null,
    "amount_currency": "SEK",
    "amount_period": "one_off",
-   "amount_note": "Omställningsstöd för privatanställda tjänstemän på TRR-anslutna företag: personlig rådgivare, coachning, finansiering av utbildning/praktik samt – för uppsagda 40+ med minst 5 års sammanhängande anställning – avgångsersättning (AGE) som tillsammans med a-kassan kan ge ca 70 % av tidigare lön i upp till 12 månader; även kompletterande och kortvarigt studiestöd",
+   "amount_note": "Omställningsstöd (rådgivning, vägledning, kompetensutveckling och olika former av ekonomiskt studiestöd) samt avgångsersättning (AGE) som komplement till a-kassa. Gäller tjänstemän på TRR-anslutna företag (kollektivavtal inom Svenskt Näringsliv/PTK). Stödet gäller upp till månaden innan du fyller 66 (född 1958 eller senare); från 2026 upp till 67 för födda 1960 och senare",
    "is_automatic": false,
-   "application_url": "https://www.trr.se/",
+   "application_url": "https://www.trr.se/fragor-och-svar/",
    "application_channel": "online",
    "deadline_type": "rolling",
    "deadline_note": "Ansökan ska normalt komma in inom 2 år från anställningens slut",
@@ -5884,7 +5882,7 @@
      "unemployed"
     ],
     "age_min": null,
-    "age_max": 65,
+    "age_max": 66,
     "income_annual_max": null,
     "income_note": "Ingen inkomstprövning – villkoren kopplar till anställning hos TRR-anslutet företag, inte till inkomstnivå",
     "requires_children": false,
@@ -5895,9 +5893,9 @@
     "student_required": false,
     "admin_areas": []
    },
-   "source_url": "https://www.trr.se/",
-   "source_snippet": "För att ha rätt till TRRs omställningsstöd måste du vara uppsagd från ett TRR-anslutet företag",
-   "last_verified_at": "2026-08-12",
+   "source_url": "https://www.trr.se/fragor-och-svar/",
+   "source_snippet": "Endast företag som har kollektivavtal kan vara anslutna till TRR.",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -5913,9 +5911,9 @@
    "amount_max": null,
    "amount_currency": "SEK",
    "amount_period": "monthly",
-   "amount_note": "Boendetillägg till dig med sjuk- eller rehabiliteringspenning i särskilda fall; höjt 1 januari 2025 med 1 700 kr/mån för ensamstående (850 kr annars); barntillägg höjt med 500 kr/barn upp till tre barn; tillägget minskas med 70 % av bidragsgrundande inkomst över 83 950 kr/år",
+   "amount_note": "Boendetillägg är ett tillägg till sjukpenning i särskilda fall och betalas ut månadsvis i efterskott. Beloppet beror på om du är gift eller ogift, antal barn i hushållet och din bidragsgrundande inkomst; minskas om du får bostadsbidrag. Kräver att du haft aktivitetsersättning till och med månaden innan du fyllde 30 år och skyddat din rätt (t.ex. genom arbete eller anmälan hos Arbetsförmedlingen)",
    "is_automatic": false,
-   "application_url": "https://www.forsakringskassan.se/",
+   "application_url": "https://www.forsakringskassan.se/privatperson/vuxen-med-funktionsnedsattning/sjukpenning-i-sarskilda-fall",
    "application_channel": "online",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -5935,8 +5933,8 @@
    ],
    "eligibility": {
     "statuses": [],
-    "age_min": 18,
-    "age_max": 64,
+    "age_min": null,
+    "age_max": null,
     "income_annual_max": 83950,
     "income_note": "Inkomstgräns för avräkning: boendetillägget minskas med 70 % av den bidragsgrundande inkomst som överstiger 83 950 kr/år (höjt från 58 400 kr 1 januari 2025); kräver bostadskostnad och hel sjuk-/rehabiliteringspenning i särskilda fall",
     "requires_children": false,
@@ -5947,9 +5945,9 @@
     "student_required": false,
     "admin_areas": []
    },
-   "source_url": "https://www.forsakringskassan.se/nyhetsarkiv/nyheter-press/2024-12-29-forandringar-i-socialforsakringen-vid-arsskiftet-2024-25",
-   "source_snippet": "Boendetillägget ska minskas med 70 procent av den bidragsgrundande inkomst som överstiger 83 950 kronor",
-   "last_verified_at": "2026-08-12",
+   "source_url": "https://www.forsakringskassan.se/privatperson/vuxen-med-funktionsnedsattning/sjukpenning-i-sarskilda-fall",
+   "source_snippet": "Du kan få boendetillägg om du har haft aktivitetsersättning till och med månaden innan du har fyllt 30 år",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -6001,9 +5999,9 @@
     "rule_source": "geography_unknown"
    },
    "source_url": "https://www.kulturskolor.se/",
-   "source_snippet": "Kulturskolan är en kommunal fritidsverksamhet med undervisning inom flera konstnärliga ämnen till subventionerad avgift",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_snippet": "Kommunal kultur- eller musikskola finns i nästan samtliga, 287, av landets 290 kommuner.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "bibliotek-gratis-lan",
@@ -6054,9 +6052,9 @@
     "rule_source": "geography_unknown"
    },
    "source_url": "https://www.riksdagen.se/sv/dokument-och-lagar/dokument/svensk-forfattningssamling/bibliotekslag-2013801_sfs-2013-801/",
-   "source_snippet": "Alla har rätt att låna bibliotekets medier utan avgift (bibliotekslagen 2013:801)",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_snippet": "På folkbiblioteken ska allmänheten utan kostnad få låna eller på annat sätt få tillgång till litteratur under en viss tid, oavsett vilken typ av format det handlar om.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   }
  ]
 }

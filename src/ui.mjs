@@ -653,7 +653,7 @@ export const FREE_ROWS = 2;
 export function teaseList({
   rows, total = null, noun = 'programmes', href = null,
   container = 'list-rows', tr = null, checkHref = null,
-  cc = null, hiddenSlugs = null, base = '',
+  cc = null, hiddenSlugs = null, base = '', hiddenItems = null,
 }) {
   const T = tr ?? EN;
   const n = total ?? rows.length;
@@ -671,7 +671,16 @@ export function teaseList({
   return `<div class="${container}">${shown.join('')}</div>
   <section class="locked-bucket locked-bucket--inline"${teaseAttrs}>
     ${lockedRows(Math.min(hidden, 4), T)}
-    <p class="small" style="margin:.6rem 0 0">${T('moreLocked', hidden, esc(noun))}</p>
+    <p class="small" style="margin:.6rem 0 0">${T('moreLocked', hidden, esc(noun))}</p>${
+      /* Names are public (see test-gating: a locked record keeps its name and
+         its public-page url); only the details stay behind the plan. Plain
+         links, so a crawler finds every programme from the list page. */
+      hiddenItems && hiddenItems.length
+        ? `\n    <ul class="tease-names small">${hiddenItems
+            .map((it) => `<li><a href="${esc(it.href)}">${esc(it.name)}</a></li>`)
+            .join('')}</ul>`
+        : ''
+    }
     <p class="btn-row" style="margin:.8rem 0 0">
       <a class="btn btn-primary btn-sm" href="${href ?? '/pricing/'}">${esc(T('seePlans'))}</a>
       <a class="btn btn-sm" href="${checkHref ?? '/check/'}">${esc(T('checkFree'))}</a>

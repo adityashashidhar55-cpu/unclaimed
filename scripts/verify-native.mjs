@@ -140,13 +140,13 @@ fs.existsSync(path.join(ROOT, 'native/STORE.md')) ? ok('store listing copy and r
   const round = (n) => Math.round(n / 100) * 100; // the listing rounds the headline
   claimed.total === counts.total || claimed.total === round(counts.total)
     ? ok(`listing programme count matches the data (${counts.total})`)
-    : fail(`STORE.md claims ${claimed.total} programmes, data has ${counts.total}`);
+    : fail(`STORE.md claims ${claimed.total} programmes, data has ${counts.total} — run: node scripts/regen-counts.mjs`);
   claimed.jurisdictions === counts.jurisdictions.size
     ? ok(`listing jurisdiction count matches the data (${counts.jurisdictions.size})`)
-    : fail(`STORE.md claims ${claimed.jurisdictions} jurisdictions, data has ${counts.jurisdictions.size}`);
+    : fail(`STORE.md claims ${claimed.jurisdictions} jurisdictions, data has ${counts.jurisdictions.size} — run: node scripts/regen-counts.mjs`);
   claimed.closed === counts.closed
     ? ok(`listing closed-programme count matches the data (${counts.closed})`)
-    : fail(`STORE.md claims ${claimed.closed} closed, data has ${counts.closed}`);
+    : fail(`STORE.md claims ${claimed.closed} closed, data has ${counts.closed} — run: node scripts/regen-counts.mjs`);
 }
 
 fs.existsSync(path.join(ROOT, 'dist/privacy/index.html'))

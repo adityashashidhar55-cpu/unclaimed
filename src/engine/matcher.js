@@ -83,9 +83,25 @@ const NATIONALITY_LABEL = {
  * programme open to residents is open to them. Reading it any more narrowly
  * told the people most likely to be missing money that they qualified for
  * nothing at all.
+ *
+ * The answers the wizard offers, and what each one opens:
+ *
+ *   citizen_or_pr         everything below, and every `citizen_or_pr` programme
+ *   eu_eea                `any_resident` only — free movement is a right to
+ *                         live here, not citizenship
+ *   work_visa             `any_resident` only
+ *   student_visa          `any_resident` only — and deliberately NOT
+ *                         `citizen_or_pr`: most means-tested support carries a
+ *                         "no recourse to public funds" condition on a student
+ *                         visa, and it must not be listed as claimable
+ *   refugee_or_protected  `refugee_or_protected` and `any_resident`
+ *   other_legal / any_resident   `any_resident` only (family, dependant, other permit)
+ *
+ * A programme with `nationality: "any"` sets no residence test at all, so it
+ * never reaches this table and every answer satisfies it.
  */
 const NATIONALITY_SATISFIED_BY = {
-  any_resident: ['citizen_or_pr', 'eu_eea', 'other_legal', 'refugee_or_protected', 'any_resident'],
+  any_resident: ['citizen_or_pr', 'eu_eea', 'work_visa', 'student_visa', 'other_legal', 'refugee_or_protected', 'any_resident'],
   citizen_or_pr: ['citizen_or_pr'],
   refugee_or_protected: ['refugee_or_protected'],
 };
@@ -298,6 +314,7 @@ const PASSPORT_BENEFITS = [
   ['Tax Credits', /\bworking tax credit\b|\bchild tax credit\b/i],
   ['RSA', /\bRSA\b|revenu de solidarit[ée]/i],
   ['ASS or AAH', /\bASS\b|\bAAH\b|allocation aux adultes handicap/i],
+  ['AME', /\bAME\b|aide m[ée]dicale de l.[ÉE]tat/i],
   ['a CAF solidarity benefit', /\bCAF\b|prestations? de solidarit[ée]|minima sociaux/i],
   ['C2S / CMU', /\bC2S\b|\bCMU\b|compl[ée]mentaire sant[ée] solidaire/i],
   ['Bürgergeld', /b[üu]rgergeld|sozialhilfe|grundsicherung|wohngeld/i],

@@ -28,7 +28,7 @@ rather than improvising in the console at 11pm.
 > startup grants — all published, all real, and scattered across thousands of
 > pages nobody reads.
 >
-> Unclaimed Grants collects 3,900 programmes across 77 jurisdictions, each one
+> Unclaimed Grants collects 4,300 programmes across 77 jurisdictions, each one
 > linked to the funding body's own page with the date we last checked it, and
 > tells you which ones you qualify for.
 >
@@ -43,7 +43,7 @@ rather than improvising in the console at 11pm.
 >
 > **Never miss a deadline again.**
 > Grants close. Get a reminder before each one does, and another when a closed
-> programme is due to reopen — we track 236 closed programmes with their
+> programme is due to reopen — we track 379 closed programmes with their
 > expected return dates, because a grant you miss by a week is worth nothing.
 >
 > **Keep your paperwork once.**

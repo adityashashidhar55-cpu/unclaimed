@@ -199,7 +199,7 @@ h1, h2, h3, h4 {
   margin: 0 0 .6rem;
   color: var(--ink);
 }
-h1 { font-size: clamp(2.6rem, 6.4vw, 5rem); letter-spacing: -.035em; line-height: .95; }
+h1, h2.h1-lg { font-size: clamp(2.6rem, 6.4vw, 5rem); letter-spacing: -.035em; line-height: .95; }
 h2 { font-size: clamp(1.9rem, 3.6vw, 3rem); letter-spacing: -.028em; }
 h3 { font-size: 1.3rem; letter-spacing: -.018em; }
 /* The uppercase eyebrow is a LOOK, not a heading level.
@@ -1624,3 +1624,13 @@ div.q { margin-bottom: 2.4rem; }
   margin: 0 0 .9rem;
   user-select: all;
 }
+
+/* Programme names under a locked list: plain links, so they stay crawlable. */
+.tease-names { margin: .8rem 0 0; padding: 0; list-style: none; columns: 2 16rem; column-gap: 1.5rem; }
+.tease-names li { margin: 0 0 .3rem; break-inside: avoid; }
+/* Provenance line on every programme page: "Last checked against the official
+   page on …" (green) or "Not yet re-checked …" (terracotta, bold). The two must
+   not look alike. Both colours are the existing AA-contrast tokens. */
+.prov-line { color: var(--ink-2); }
+.prov-line--checked { color: var(--green); }
+.prov-line--stale { color: var(--terracotta); }

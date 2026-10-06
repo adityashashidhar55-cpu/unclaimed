@@ -44,7 +44,7 @@
     "income_annual_max": null,
     "income_note": "No income ceiling exists. The federal ministry states 'Das Kindergeld wird einkommensunabhängig gezahlt'; the amount is 259 EUR per child per month from 1 January 2026.",
     "requires_children": true,
-    "nationality": "any_resident",
+    "nationality": "citizen_or_pr",
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
@@ -56,7 +56,7 @@
    },
    "source_url": "https://www.arbeitsagentur.de/familie-und-kinder",
    "source_snippet": "Seit dem 1. Januar 2026 gibt es monatlich 259,00 Euro Kindergeld pro Kind (§ 66 EStG)",
-   "last_verified_at": "2026-08-12",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified",
    "income_reviewed_at": "2026-08-13"
   },
@@ -113,7 +113,7 @@
     "income_annual_max": null,
     "income_note": "No upper income ceiling is published (2025/2026 rules). Only a MINIMUM gross income threshold exists: 900 EUR/month for couples, 600 EUR/month for single parents. The upper end is an individual needs calculation — KiZ tapers to zero as income rises, so no single household ceiling can be stated.",
     "requires_children": true,
-    "nationality": "any_resident",
+    "nationality": "citizen_or_pr",
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
@@ -125,7 +125,7 @@
    },
    "source_url": "https://www.arbeitsagentur.de/familie-und-kinder",
    "source_snippet": "Der Kinderzuschlag hat im Jahr 2026 eine Höhe von bis zu 297 Euro; Alleinerziehende müssen mindestens 600 Euro brutto, Paare 900 Euro brutto verdienen",
-   "last_verified_at": "2026-08-12",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified",
    "income_reviewed_at": "2026-08-13"
   },
@@ -188,7 +188,7 @@
    },
    "source_url": "https://www.bmfsfj.de",
    "source_snippet": "Das Elterngeld beträgt zwischen 300 und 1.800 Euro monatlich, je nach bisherigem Nettoeinkommen (65 bis 67 Prozent)",
-   "last_verified_at": "2026-08-12",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -249,7 +249,7 @@
    },
    "source_url": "https://www.bmfsfj.de",
    "source_snippet": "ElterngeldPlus wird mit 150 bis 900 Euro monatlich über die doppelte Bezugsdauer gezahlt",
-   "last_verified_at": "2026-08-12",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -311,7 +311,7 @@
    },
    "source_url": "https://www.bmfsfj.de",
    "source_snippet": "Kinder bis 5 Jahre erhalten max. 227 Euro, 6 bis 11 Jahre 299 Euro, 12 bis 17 Jahre 394 Euro monatlich",
-   "last_verified_at": "2026-08-12",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified",
    "income_reviewed_at": "2026-08-13"
   },
@@ -372,7 +372,7 @@
    },
    "source_url": "https://www.bundesgesundheitsministerium.de",
    "source_snippet": "Gesetzlich Versicherte erhalten von ihrer Krankenkasse Mutterschaftsgeld von höchstens 13 Euro pro Kalendertag; der Arbeitgeber zahlt die Differenz zum Nettoentgelt",
-   "last_verified_at": "2026-08-12",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -419,7 +419,7 @@
     ],
     "age_min": null,
     "age_max": null,
-    "income_annual_max": 13512,
+    "income_annual_max": null,
     "income_note": "Hardship test (§ 3 Vergaberichtlinien): income limit = 1.5x the applicable SGB XII Regelbedarfsstufe; for single expectant mothers 2x Regelbedarfsstufe 1 = 1,126 EUR/month net (x12 = 13,512 EUR/year, Regelsatz 563 EUR in 2026) PLUS reasonable housing costs; e.g. counselling centres publish 2,533.50 EUR/month for singles incl. housing.",
     "requires_children": false,
     "nationality": "any_resident",
@@ -431,7 +431,7 @@
    },
    "source_url": "https://www.bundesstiftung-mutter-und-kind.de",
    "source_snippet": "Die Bundesstiftung Mutter und Kind gewährt Schwangeren und Familien in Notlagen Zuschüsse, beantragt über anerkannte Schwangerschaftsberatungsstellen",
-   "last_verified_at": "2026-08-12",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -483,7 +483,7 @@
    },
    "source_url": "https://www.bmas.de",
    "source_snippet": "Für den persönlichen Schulbedarf gibt es 195 Euro pro Schuljahr – 130 Euro zum ersten und 65 Euro zum zweiten Schulhalbjahr",
-   "last_verified_at": "2026-08-12",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -545,7 +545,7 @@
     "income_annual_max": 6756,
     "income_note": "Needs-based: countable income must be below the household need. Regelbedarfsstufe 1 (single adult) 563 EUR/month (x12 = 6,756 EUR/year; frozen 2024-2026) plus reasonable housing/heating costs; partners 506 EUR/month each; earnings allowances of § 11b SGB II apply.",
     "requires_children": false,
-    "nationality": "any_resident",
+    "nationality": "citizen_or_pr",
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
@@ -554,7 +554,7 @@
    },
    "source_url": "https://www.arbeitsagentur.de/grundsicherung",
    "source_snippet": "Der Bürgergeld-Regelsatz 2026 beträgt 563 Euro monatlich für Alleinstehende; zusätzlich übernimmt das Jobcenter angemessene Kosten für Unterkunft und Heizung",
-   "last_verified_at": "2026-08-12",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -610,7 +610,7 @@
    },
    "source_url": "https://www.arbeitsagentur.de/grundsicherung",
    "source_snippet": "Das Jobcenter übernimmt zusätzlich zum Regelsatz die Kosten für Unterkunft und Heizung, sofern sie als angemessen gelten",
-   "last_verified_at": "2026-08-12",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -666,7 +666,7 @@
    },
    "source_url": "https://www.arbeitsagentur.de/grundsicherung",
    "source_snippet": "Bei erstmaligem Bedarf können Beihilfen für die Erstausstattung der Wohnung, für Bekleidung sowie bei Schwangerschaft und Geburt gewährt werden",
-   "last_verified_at": "2026-08-12",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -728,7 +728,7 @@
    },
    "source_url": "https://www.bmas.de",
    "source_snippet": "Sozialhilfe können Sie nur erhalten, wenn Sie sich nicht durch Arbeitskraft, Einkommen und Vermögen selbst helfen können",
-   "last_verified_at": "2026-08-12",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -792,7 +792,7 @@
    },
    "source_url": "https://www.bmas.de",
    "source_snippet": "Anspruch auf Grundsicherung besteht, wenn Einkommen und Vermögen nicht ausreichen, den notwendigen Bedarf zu decken (Regelbedarf 563 Euro plus angemessene Unterkunfts- und Heizkosten)",
-   "last_verified_at": "2026-08-12",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -808,7 +808,7 @@
    "amount_max": null,
    "amount_currency": "EUR",
    "amount_period": "monthly",
-   "amount_note": "Standard need of 460 EUR per month for a single adult since 2025 (lower rates in shared accommodation and for minors), plus accommodation and health needs",
+   "amount_note": "Standard need (Bedarfsstufe 1) of 455 EUR per month for a single adult since 1 Jan 2026 (lower rates in shared accommodation and for minors), plus accommodation and health needs",
    "is_automatic": true,
    "application_url": "https://www.bmas.de",
    "application_channel": "in_person",
@@ -842,9 +842,9 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.bmas.de",
+   "source_url": "https://www.bmas.de/DE/Soziales/Sozialhilfe/LeistungenAsylbewerberleistungsgesetz/leistungssaetze-asylbewerberleistungsgesetz-art.html",
    "source_snippet": "Der Standardbedarf für alleinstehende Erwachsene im AsylbLG beträgt seit 2025 460 Euro monatlich",
-   "last_verified_at": "2026-08-12",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -898,7 +898,7 @@
    },
    "source_url": "https://www.deutsche-rentenversicherung.de",
    "source_snippet": "Der Grundrentenzuschlag wird für mindestens 33 Jahre Grundrentenzeiten mit unterdurchschnittlichem Einkommen automatisch von der Rentenversicherung geprüft und gezahlt",
-   "last_verified_at": "2026-08-12",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -947,7 +947,7 @@
     "statuses": [],
     "age_min": null,
     "age_max": null,
-    "income_annual_max": 18492,
+    "income_annual_max": null,
     "income_note": "Ceiling depends on household size and Mietenstufe I-VII (§ 12 WoGG, 2025/26 values): 1-person household Mietenstufe 4 (e.g. Berlin): max 1,541 EUR/month countable income (x12 = 18,492 EUR/year; approx. 2,201 EUR gross); Mietenstufe 7 (Munich): 1,619 EUR/month; 4-person households up to 3,516-3,671 EUR/month; not combinable with Buergergeld/SGB XII.",
     "requires_children": false,
     "nationality": "any_resident",
@@ -957,9 +957,9 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.bmwsb.bund.de",
+   "source_url": "https://www.bmwsb.bund.de/DE/wohnen/wohngeld/wohngeld-plus/wohngeld-plus_node.html",
    "source_snippet": "Die Höhe des Wohngeldes hängt von der Anzahl der Haushaltsmitglieder, dem Gesamteinkommen und der Höhe der anrechenbaren Miete ab",
-   "last_verified_at": "2026-08-12",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -977,7 +977,7 @@
    "amount_period": "one_off",
    "amount_note": "Certificate granting access to rent-controlled social housing; income limits apply (generally 12,000 EUR single + 5,500 EUR per further person, plus supplements)",
    "is_automatic": false,
-   "application_url": "https://www.bmwsb.bund.de",
+   "application_url": "https://verwaltung.bund.de/leistungsverzeichnis/en/leistung/99107022012000",
    "application_channel": "in_person",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -1016,7 +1016,7 @@
    },
    "source_url": "https://www.bmwsb.bund.de",
    "source_snippet": "Mit einem Wohnberechtigungsschein können Haushalte unterhalb der Einkommensgrenzen eine geförderte Sozialwohnung anmieten",
-   "last_verified_at": "2026-08-12",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -1066,7 +1066,7 @@
     "income_annual_max": 78000,
     "income_note": "No statutory fixed ceiling - computed from allowances (§ 25 BAfoeg): married parents 2,540 EUR/month (x12 = 30,480 EUR/year), single parent 1,690 EUR/month, +770 EUR per dependent child, plus 50%+5% relative allowances; indicative: full rate up to ~41,500 EUR/year parental gross, entitlement usually ends around ~78,000 EUR/year (no siblings; Finanztip calculation, 2026). Student's own allowance: Minijob level (603 EUR/month in 2026).",
     "requires_children": false,
-    "nationality": "any_resident",
+    "nationality": "citizen_or_pr",
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": true,
@@ -1075,7 +1075,7 @@
    },
    "source_url": "https://www.bafoeg.de",
    "source_snippet": "Der Höchstsatz für Studierende beträgt 992 Euro monatlich – 475 Euro Grundbedarf, 380 Euro Wohnpauschale und 137 Euro Versicherungszuschlag",
-   "last_verified_at": "2026-08-12",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -1134,7 +1134,7 @@
    },
    "source_url": "https://www.bafoeg.de",
    "source_snippet": "Beim Schüler-BAföG muss die Förderung am Ende nichts zurückgezahlt werden; für Alleinwohnende liegt der Höchstbetrag bei 775 Euro",
-   "last_verified_at": "2026-08-12",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -1186,7 +1186,7 @@
     "income_annual_max": null,
     "income_note": "No income or assets test since the AFBG reform of 1 Aug 2020: course and exam fees are funded regardless of the applicant's income.",
     "requires_children": false,
-    "nationality": "any_resident",
+    "nationality": "citizen_or_pr",
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
@@ -1195,7 +1195,7 @@
    },
    "source_url": "https://www.aufstiegs-bafoeg.de",
    "source_snippet": "Der maximale Gesamtbetrag der geförderten Lehrgangs- und Prüfungsgebühren wird von bisher 15.000 Euro auf 18.000 Euro angehoben (Reform, in Kraft 1. August 2027)",
-   "last_verified_at": "2026-08-12",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -1257,7 +1257,7 @@
    },
    "source_url": "https://www.deutschlandstipendium.de",
    "source_snippet": "Das Deutschlandstipendium beträgt 300 Euro pro Monat – 150 Euro übernehmen private Fördernde, die anderen 150 Euro trägt der Bund",
-   "last_verified_at": "2026-08-12",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified",
    "income_reviewed_at": "2026-08-13"
   },
@@ -1323,7 +1323,7 @@
    },
    "source_url": "https://www.arbeitsagentur.de/bildung",
    "source_snippet": "Der BAB-Höchstsatz liegt bei 822 Euro pro Monat (442 Euro Grundbedarf plus 380 Euro Mietzuschuss)",
-   "last_verified_at": "2026-08-12",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -1341,7 +1341,7 @@
    "amount_period": "monthly",
    "amount_note": "Loan (not grant) of 100-650 EUR per month for students (first and second degrees), age 18-44, independent of parents' income",
    "is_automatic": false,
-   "application_url": "https://www.kfw.de/173",
+   "application_url": "https://www.kfw.de/174",
    "application_channel": "online",
    "deadline_type": "rolling",
    "deadline_note": "Apply online via KfW with verification at a distribution partner (bank/Studentenwerk)",
@@ -1373,17 +1373,17 @@
     "income_annual_max": null,
     "income_note": "No income test (universal or contribution-based benefit).",
     "requires_children": false,
-    "nationality": "any_resident",
+    "nationality": "citizen_or_pr",
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": true,
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.kfw.de/173",
+   "source_url": "https://www.kfw.de/174",
    "source_snippet": "Der KfW-Studienkredit finanziert Studierende mit 100 bis 650 Euro monatlich, unabhängig vom Einkommen der Eltern",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "kfw-bildungskredit",
@@ -1400,7 +1400,7 @@
    "amount_period": "monthly",
    "amount_note": "Low-interest loan up to 7,200 EUR total (max 300 EUR/month over 24 months) for advanced stages of education/training, up to age 36, independent of income",
    "is_automatic": false,
-   "application_url": "https://www.kfw.de/174",
+   "application_url": "https://www.kfw.de/173",
    "application_channel": "online",
    "deadline_type": "rolling",
    "deadline_note": "Application via the Bundesverwaltungsamt portal",
@@ -1435,10 +1435,10 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.kfw.de/174",
+   "source_url": "https://www.kfw.de/173",
    "source_snippet": "Der Bildungskredit richtet sich an Studierende und Auszubildende in fortgeschrittenen Ausbildungsabschnitten: bis 300 Euro monatlich, insgesamt bis 7.200 Euro",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "arbeitslosengeld-1",
@@ -1501,7 +1501,7 @@
    },
    "source_url": "https://www.arbeitsagentur.de/arbeitslos-arbeit-finden",
    "source_snippet": "Das Arbeitslosengeld beträgt 60 Prozent (ohne Kinder) bzw. 67 Prozent vom letzten Nettogehalt; die Agentur für Arbeit übernimmt zusätzlich die Sozialversicherungsbeiträge",
-   "last_verified_at": "2026-08-12",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -1559,7 +1559,7 @@
    },
    "source_url": "https://www.arbeitsagentur.de/unternehmen/finanziell/kurzarbeitergeld",
    "source_snippet": "Das Kurzarbeitergeld beträgt 60 Prozent der Nettoentgeltdifferenz; mit mindestens einem Kind sind es 67 Prozent (§ 105 SGB III)",
-   "last_verified_at": "2026-08-12",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -1633,7 +1633,7 @@
    },
    "source_url": "https://www.arbeitsagentur.de/existenzgruendung",
    "source_snippet": "Für sechs Monate erhalten Gründer einen Zuschuss in Höhe des zuletzt bezogenen Arbeitslosengeldes zuzüglich 300 Euro monatlich; Voraussetzung ist ein Restanspruch auf ALG I von mindestens 150 Tagen",
-   "last_verified_at": "2026-08-12",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -1758,7 +1758,7 @@
    },
    "source_url": "https://www.arbeitsagentur.de/karriere-und-weiterbildung",
    "source_snippet": "Mit dem Bildungsgutschein übernimmt die Bundesagentur für Arbeit die Weiterbildungskosten, wenn die Weiterbildung für eine berufliche (Wieder-)Eingliederung notwendig ist",
-   "last_verified_at": "2026-08-12",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -1818,8 +1818,8 @@
    },
    "source_url": "https://www.arbeitsagentur.de/karriere-und-weiterbildung",
    "source_snippet": "Der AVGS ist die Förderung für Coaching-Maßnahmen: Bewerbungstraining, berufliche Orientierung, Existenzgründung; er deckt 100% der Kosten",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "weiterbildungsgeld",
@@ -1873,8 +1873,8 @@
    },
    "source_url": "https://www.arbeitsagentur.de/karriere-und-weiterbildung",
    "source_snippet": "Weiterbildung möglich über Bildungsgutschein plus Weiterbildungsgeld 150 Euro pro Monat",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "qualifizierungschancengesetz",
@@ -1927,8 +1927,8 @@
    },
    "source_url": "https://www.arbeitsagentur.de/unternehmen",
    "source_snippet": "Über das Qualifizierungschancengesetz können Arbeitgeber bis zu 100 % der Weiterbildungskosten und bis zu 75 % der Lohnkosten erstattet bekommen",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "krankengeld",
@@ -1981,8 +1981,8 @@
    },
    "source_url": "https://www.bundesgesundheitsministerium.de",
    "source_snippet": "Das Krankengeld beträgt 70 Prozent des Bruttoentgelts, höchstens 90 Prozent des Nettoentgelts, für bis zu 78 Wochen je Erkrankung",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "pflegegeld",
@@ -2037,7 +2037,7 @@
    },
    "source_url": "https://www.bundesgesundheitsministerium.de",
    "source_snippet": "Pflegebedürftige mit Pflegegrad 3 erhalten auch 2026 weiterhin 599 Euro Pflegegeld pro Monat",
-   "last_verified_at": "2026-08-12",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -2107,9 +2107,9 @@
    "amount_max": 131,
    "amount_currency": "EUR",
    "amount_period": "monthly",
-   "amount_note": "131 EUR per month (2025/2026) for all care grades 1-5 at home, for relief services (day care, household help, care companions)",
+   "amount_note": "Up to 131 EUR per month (1,572 EUR per year) for all care grades 1-5 in home care, for relief services (day care, household help, care companions)",
    "is_automatic": false,
-   "application_url": "https://www.bundesgesundheitsministerium.de",
+   "application_url": "https://www.bundesgesundheitsministerium.de/pflege-zu-hause/weitere-leistungen-und-angebote-zur-unterstuetzung-im-alltag",
    "application_channel": "online",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -2141,10 +2141,10 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.bundesgesundheitsministerium.de",
-   "source_snippet": "Der Entlastungsbetrag beträgt ab 2025 131 Euro pro Monat für alle Pflegegrade in häuslicher Pflege",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www.bundesgesundheitsministerium.de/pflege-zu-hause/weitere-leistungen-und-angebote-zur-unterstuetzung-im-alltag",
+   "source_snippet": "Pflegebedürftige in häuslicher Pflege haben Anspruch auf einen Entlastungsbetrag in Höhe von bis zu 131 Euro monatlich (also insgesamt bis zu 1.572 Euro im Jahr). Das gilt auch für Pflegebedürftige des Pflegegrades 1.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "entlastungsbudget-pflege",
@@ -2159,9 +2159,9 @@
    "amount_max": 3539,
    "amount_currency": "EUR",
    "amount_period": "annual",
-   "amount_note": "Joint annual budget of up to 3,539 EUR (since July 2025) combining short-term care and respite care, usable flexibly",
+   "amount_note": "Joint annual budget of up to 3,539 EUR per calendar year (2026), available since 1 July 2025 for short-term care and respite care, usable flexibly; if respite care is given by close relatives/household members non-professionally the payout is capped at twice the care allowance",
    "is_automatic": false,
-   "application_url": "https://www.bundesgesundheitsministerium.de",
+   "application_url": "https://www.bundesgesundheitsministerium.de/pflege-zu-hause",
    "application_channel": "online",
    "deadline_type": "annual",
    "deadline_note": null,
@@ -2193,10 +2193,10 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.bundesgesundheitsministerium.de",
-   "source_snippet": "Kurzzeit- und Verhinderungspflege können in einem gemeinsamen Budget von 3.539 EUR pro Jahr flexibel kombiniert werden",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www.bundesgesundheitsministerium.de/pflege-zu-hause",
+   "source_snippet": "seit dem 1. Juli 2025 ein Gemeinsamer Jahresbetrag für Verhinderungspflege und Kurzzeitpflege zur Verfügung. Der Gemeinsame Jahresbetrag ist ein Gesamtleistungsbetrag, den die Versicherten flexibel einsetzen können. Er beträgt im Jahr 2026 insgesamt bis zu 3.539 Euro im Kalenderjahr.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "festzuschuss-zahnersatz",
@@ -2213,7 +2213,7 @@
    "amount_period": "one_off",
    "amount_note": "60% of the standard treatment cost; 70% with 5 years and 75% with 10 years of documented check-ups (Bonusheft); 100% of standard care in hardship cases (low income)",
    "is_automatic": true,
-   "application_url": "https://www.kzbv.de",
+   "application_url": "https://www.bundesgesundheitsministerium.de/zahnaerztliche-behandlung",
    "application_channel": "in_person",
    "deadline_type": "rolling",
    "deadline_note": "Treatment plan (Heil- und Kostenplan) approved by the health fund before treatment",
@@ -2245,7 +2245,7 @@
     "age_min": null,
     "age_max": null,
     "income_annual_max": 18984,
-    "income_note": "Haertefall full coverage of Regelversorgung (§ 55 Abs. 2 SGB V, 2026): monthly gross income up to 1,582 EUR single (x12 = 18,984 EUR/year); 2,175.25 EUR with one dependant, +395.50 EUR per further dependant; sliding Haertefallregelung above the limit.",
+    "income_note": "Haertefall full coverage of Regelversorgung (2026): monthly gross income up to 1,582 EUR single (x12 = 18,984 EUR/year); 2,175.25 EUR with one dependant, +395.50 EUR per further dependant; sliding Haertefallregelung above the limit (own share max 3x the excess). Recipients of Sozialhilfe, Buergergeld, BAfoeG or SGB III training aid are presumed hardship cases with no income check.",
     "requires_children": false,
     "nationality": "any_resident",
     "residency_months_min": null,
@@ -2254,9 +2254,9 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.kzbv.de",
-   "source_snippet": "Die Krankenkasse beteiligt sich an den Kosten für Zahnersatz mit einem Festzuschuss von 60 Prozent der Regelversorgung; mit Bonusheft 70 bis 75 Prozent",
-   "last_verified_at": "2026-08-12",
+   "source_url": "https://www.bundesgesundheitsministerium.de/zahnaerztliche-behandlung",
+   "source_snippet": "Der befundbezogene Festzuschuss umfasst 60 Prozent des für die jeweilige Regelversorgung festgesetzten Betrages. Sofern Versicherte mit ihrem Bonusheft nachweisen können [...] erhöht sich der Festzuschuss auf 70 Prozent und nach zehn Jahren [...] auf 75 Prozent",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -2274,7 +2274,7 @@
    "amount_period": "one_off",
    "amount_note": "Free midwife care during pregnancy, birth and postnatal period (incl. on-call availability and home visits) for statutorily insured women",
    "is_automatic": false,
-   "application_url": "https://www.bundesgesundheitsministerium.de",
+   "application_url": "https://www.gkv-spitzenverband.de/service/hebammenliste/hebammenliste.jsp",
    "application_channel": "in_person",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -2308,10 +2308,10 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.bundesgesundheitsministerium.de",
-   "source_snippet": "Gesetzlich Versicherte haben Anspruch auf Hebammenhilfe in Schwangerschaft, bei der Geburt und im Wochenbett",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www.gkv-spitzenverband.de/krankenversicherung/ambulante_leistungen/hebammen_geburtshaeuser/hebammenhilfevertrag/hebammenhilfevertrag.jsp",
+   "source_snippet": "Die gesetzlich Versicherten haben nach Maßgabe des SGB V Anspruch auf Hebammenhilfe.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "familienversicherung-gkv",
@@ -2326,9 +2326,9 @@
    "amount_max": null,
    "amount_currency": "EUR",
    "amount_period": "monthly",
-   "amount_note": "Non-working spouses and children are co-insured free of contributions (income and age limits apply)",
+   "amount_note": "Spouses/registered partners and children of statutory members are co-insured free of contributions if their total income stays below the monthly limit (603 EUR in 2026)",
    "is_automatic": false,
-   "application_url": "https://www.bundesgesundheitsministerium.de",
+   "application_url": "https://www.bundesgesundheitsministerium.de/gesetzlich-versicherte",
    "application_channel": "online",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -2351,7 +2351,7 @@
     "age_min": null,
     "age_max": null,
     "income_annual_max": 6780,
-    "income_note": "Income limit applies to the insured family member (not the household): max 565 EUR/month (x12 = 6,780 EUR/year, 2026) = 1/7 of the Bezugsgoesse; Minijob up to 603 EUR/month additionally allowed (§ 10 SGB V).",
+    "income_note": "Income limit applies to the co-insured family member (not the household): 603 EUR per month (2026 per BMG) = 7,236 EUR/year. Residence or habitual abode in Germany required.",
     "requires_children": false,
     "nationality": "any_resident",
     "residency_months_min": null,
@@ -2360,9 +2360,9 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.bundesgesundheitsministerium.de",
-   "source_snippet": "Ehegatten und Kinder von gesetzlich Versicherten sind unter bestimmten Voraussetzungen beitragsfrei familienversichert",
-   "last_verified_at": "2026-08-12",
+   "source_url": "https://www.bundesgesundheitsministerium.de/gesetzlich-versicherte",
+   "source_snippet": "Die Einkommensgrenze liegt bei 603 Euro monatlich (Stand 2026).",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -2380,7 +2380,7 @@
    "amount_period": "annual",
    "amount_note": "Co-payments capped at 2% of gross annual household income (1% for chronically ill); exemption for the rest of the year once reached",
    "is_automatic": false,
-   "application_url": "https://www.gkv-spitzenverband.de",
+   "application_url": "https://www.bundesgesundheitsministerium.de/zuzahlung-und-erstattung-arzneimittel",
    "application_channel": "post",
    "deadline_type": "annual",
    "deadline_note": "Keep receipts; apply at your health fund for exemption",
@@ -2412,9 +2412,9 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.gkv-spitzenverband.de",
-   "source_snippet": "Zuzahlungen sind auf 2 Prozent des Bruttojahreseinkommens begrenzt, bei chronisch Kranken auf 1 Prozent",
-   "last_verified_at": "2026-08-12",
+   "source_url": "https://www.bundesgesundheitsministerium.de/zuzahlung-und-erstattung-arzneimittel",
+   "source_snippet": "Sie liegt bei zwei Prozent des Bruttoeinkommens, für chronisch Kranke bei einem Prozent. Zuzahlungsbefreiung bei der Krankenkasse beantragen.",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -2430,12 +2430,12 @@
    "amount_max": 63,
    "amount_currency": "EUR",
    "amount_period": "monthly",
-   "amount_note": "63 EUR per month (2026) as a cancellable monthly subscription, valid nationwide on local and regional public transport",
+   "amount_note": "63 EUR per month (2026) as a monthly cancellable subscription (cancel by the 10th for month end), valid nationwide on local and regional public transport; announced price from 2027: 66.80 EUR per month (RMV)",
    "is_automatic": false,
    "application_url": "https://deutschlandticket.de",
    "application_channel": "online",
    "deadline_type": "rolling",
-   "deadline_note": "Cancellable monthly; buy from any transport company/association",
+   "deadline_note": "Cancellable monthly (notice by the 10th of the month); order online at deutschlandticket.de or from any transport company",
    "procedure_steps": [
     {
      "step": 1,
@@ -2465,8 +2465,8 @@
     "gender": "any"
    },
    "source_url": "https://deutschlandticket.de",
-   "source_snippet": "Ab 2026 kostet das Deutschlandticket 63 Euro pro Monat (2025: 58 Euro); bundesweit gültig im ÖPNV",
-   "last_verified_at": "2026-08-12",
+   "source_snippet": "Bestell dir in nur wenigen Minuten dein persönliches Deutschlandticket und sei für 63 Euro im Monat bundesweit im öffentlichen Nahverkehr mobil.",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -2484,7 +2484,7 @@
    "amount_period": "monthly",
    "amount_note": "With at least 25% employer subsidy the ticket price is reduced by 5% (59.85 EUR in 2026); employees pay max. 44.10 EUR, or 0 EUR at full subsidy (tax-free)",
    "is_automatic": false,
-   "application_url": "https://deutschlandticket.de",
+   "application_url": "https://www.bahn.de/angebot/pendler/deutschland-ticket-jobticket",
    "application_channel": "via_employer",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -2518,9 +2518,9 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://deutschlandticket.de",
-   "source_snippet": "Arbeitgeber erhalten 5 % Rabatt auf das Deutschlandticket, wenn sie mindestens 25 % der Kosten bezuschussen; Arbeitnehmer zahlen maximal 44,10 Euro (2026)",
-   "last_verified_at": "2026-08-12",
+   "source_url": "https://www.bahn.de/angebot/pendler/deutschland-ticket-jobticket",
+   "source_snippet": "Dieser Rabatt wird nur dann gewährt, wenn der Arbeitgebende einen Mindestzuschuss von 25 Prozent auf den Ausgabepreis an die Mitarbeitenden gewährt. [...] Januar 2026 maximal 44,10 Euro.",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -2536,9 +2536,9 @@
    "amount_max": 27.5,
    "amount_currency": "EUR",
    "amount_period": "monthly",
-   "amount_note": "27.50 EUR per month (since 1 January 2026) for fare zone Berlin AB, for recipients of Bürgergeld, Sozialhilfe, Grundsicherung, AsylbLG benefits or Wohngeld",
+   "amount_note": "27.50 EUR per month for fare zone Berlin AB for recipients of Bürgergeld, Sozialhilfe, AsylbLG benefits, Wohngeld (also household members considered in the Wohngeld calculation) or certain victim/rehabilitation compensation benefits",
    "is_automatic": false,
-   "application_url": "https://www.bvg.de",
+   "application_url": "https://www.bvg.de/de/abos-und-tickets/berlin-ticket-s",
    "application_channel": "in_person",
    "deadline_type": "rolling",
    "deadline_note": "Monthly ticket only (calendar month), buyable at BVG/S-Bahn ticket machines with entitlement proof",
@@ -2569,7 +2569,7 @@
     "age_min": null,
     "age_max": null,
     "income_annual_max": null,
-    "income_note": "Benefit-linked: Berlin residents receiving Buergergeld, Sozialhilfe, AsylbLG, Wohngeld or Kinderzuschlag buy the discounted Deutschlandticket.",
+    "income_note": "Benefit-linked: Berlin-Ticket S is open to people receiving Bürgergeld (SGB II), Sozialhilfe (SGB XII), Asylbewerberleistungsgesetz benefits, Wohngeld, and a few compensation benefits (StrRehaG, BerRehaG, PrVG); no separate income test.",
     "requires_children": false,
     "nationality": "any_resident",
     "residency_months_min": null,
@@ -2580,9 +2580,9 @@
     ],
     "gender": "any"
    },
-   "source_url": "https://www.bvg.de",
-   "source_snippet": "Zum 1. Januar 2026 stieg das Berlin Ticket S auf 27,50 Euro; berechtigt sind Bezieher von Bürgergeld, Sozialhilfe, Grundsicherung, AsylbLG-Leistungen oder Wohngeld",
-   "last_verified_at": "2026-08-12",
+   "source_url": "https://www.bvg.de/de/abos-und-tickets/berlin-ticket-s",
+   "source_snippet": "Mit einem monatlichen Preis von nur 27.50 € ermöglicht es Menschen, die Sozialleistungen beziehen, den öffentlichen Nahverkehr im Tarifbereich Berlin AB unbegrenzt zu nutzen.",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -2594,16 +2594,16 @@
    "funder": "Freie und Hansestadt Hamburg / HVV",
    "category": "transport",
    "benefit_type": "discount",
-   "amount_min": null,
-   "amount_max": null,
+   "amount_min": 35.5,
+   "amount_max": 35.5,
    "amount_currency": "EUR",
    "amount_period": "monthly",
-   "amount_note": "Reduced-price HAMBURG-CARD for HVV season tickets for holders of a Beförderungsberechtigung (social benefit recipients); discount varies by product",
+   "amount_note": "Sozialrabatt of 35.50 EUR per month on an hvv Deutschlandticket, monthly ticket or jobticket (hvv Deutschlandticket then costs eligible people 27.50 EUR per month); only for full months and while the benefit notice is valid; can be claimed 3 months retroactively or 2 months ahead",
    "is_automatic": false,
-   "application_url": "https://www.hamburg.de",
+   "application_url": "https://www.hvv.de/de/sozialrabatt",
    "application_channel": "in_person",
    "deadline_type": "rolling",
-   "deadline_note": "Apply for the Beförderungsberechtigung at the Bezirksamt; then buy discounted HVV season tickets",
+   "deadline_note": "Apply online in the meinhvv customer account (Deutschlandticket on chip card) with your current benefit notice; paper monthly tickets only in person at an hvv service point",
    "procedure_steps": [
     {
      "step": 1,
@@ -2632,7 +2632,7 @@
     "age_min": null,
     "age_max": null,
     "income_annual_max": null,
-    "income_note": "Benefit-linked: Hamburg Card with Sozialrabatt for recipients of Buergergeld, Grundsicherung, Hilfe zum Lebensunterhalt, AsylbLG, Wohngeld or Kinderzuschlag.",
+    "income_note": "Benefit-linked: Sozialrabatt Hamburg for people registered in Hamburg who receive Grundsicherungsgeld/Buergergeld (SGB II), Hilfe zum Lebensunterhalt or Grundsicherung (SGB XII) or Asylbewerberleistungsgesetz benefits from a Hamburg benefit authority. Wohngeld/Kinderzuschlag are not listed.",
     "requires_children": false,
     "nationality": "any_resident",
     "residency_months_min": null,
@@ -2643,10 +2643,10 @@
     ],
     "gender": "any"
    },
-   "source_url": "https://www.hamburg.de",
-   "source_snippet": "Personen mit geringem Einkommen erhalten in Hamburg auf Antrag eine Beförderungsberechtigung für HVV-Zeitkarten mit Sozialrabatt",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www.hvv.de/de/sozialrabatt",
+   "source_snippet": "Der Sozialrabatt beträgt 35,50 € pro Monat. Das hvv Deutschlandticket kostet somit für Berechtigte nur 27,50 € pro Monat (Eigenanteil).",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "muenchen-mobilaktiv",
@@ -2661,9 +2661,9 @@
    "amount_max": null,
    "amount_currency": "EUR",
    "amount_period": "monthly",
-   "amount_note": "Low-income Munich residents receive discounted MVV tickets (e.g. reduced IsarCard) via the MoBilAktiv programme",
+   "amount_note": "Munich residents with the München-Pass get the discounted MVV Monatskarte S for chosen zones plus reduced day tickets (up to 15 single/group day tickets or 20 children's day tickets per month); tickets are not transferable and the pass must be carried",
    "is_automatic": false,
-   "application_url": "https://stadt.muenchen.de",
+   "application_url": "https://service.muenchen.de/intelliform/forms/01/03/03/muenchen_pass/index",
    "application_channel": "in_person",
    "deadline_type": "rolling",
    "deadline_note": "Apply at the Sozialreferat; discount granted for defined benefit recipients",
@@ -2701,9 +2701,9 @@
     "income_source_url": "https://stadt.muenchen.de/service/info/munchenpass/1073956/n0/",
     "income_confidence": "high"
    },
-   "source_url": "https://stadt.muenchen.de",
-   "source_snippet": "Mit MoBilAktiv erhalten Münchnerinnen und Münchner mit geringem Einkommen ermäßigte Fahrkarten des MVV",
-   "last_verified_at": "2026-08-12",
+   "source_url": "https://stadt.muenchen.de/service/info/munchenpass/1073956/n0/",
+   "source_snippet": "Die derzeitige Münchener Einkommensgrenze ist: Ein-Personenhaushalt: 1.900 Euro; jede weitere Person ab 14 Jahren: 950 Euro; jede weitere Person bis einschließlich 13 Jahren: 570 Euro",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified",
    "income_reviewed_at": "2026-08-13"
   },
@@ -2716,13 +2716,13 @@
    "funder": "Stadt Frankfurt am Main / RMV",
    "category": "transport",
    "benefit_type": "discount",
-   "amount_min": null,
-   "amount_max": null,
+   "amount_min": 31.5,
+   "amount_max": 31.5,
    "amount_currency": "EUR",
    "amount_period": "monthly",
-   "amount_note": "Discounted monthly ticket for Frankfurt am Main for recipients of social benefits (e.g. Bürgergeld, Sozialhilfe), valid in the RMV Frankfurt city area",
+   "amount_note": "With the Frankfurt-Pass mobil the Deutschland-Ticket costs 31.50 EUR per month (instead of 63 EUR); a reduced RMV adult Monatskarte for the Frankfurt city area (zone 5000 incl. airport) is also offered with the Frankfurt-Pass",
    "is_automatic": false,
-   "application_url": "https://www.rmv.de",
+   "application_url": "https://frankfurt.de/leistungen/Familie-Kinder-und-Jugend-8958408/Finanzielle-und-sonstige-Hilfen-8958417/Frankfurt-Pass",
    "application_channel": "in_person",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -2760,9 +2760,9 @@
     "income_source_url": "https://frankfurt.de/leistungen/Familie-Kinder-und-Jugend-8958408/Finanzielle-und-sonstige-Hilfen-8958417/Frankfurt-Pass",
     "income_confidence": "high"
    },
-   "source_url": "https://www.rmv.de",
-   "source_snippet": "Das Frankfurt-Ticket ist ein verbilligtes Zeitkartenangebot des RMV für Empfänger sozialer Leistungen im Frankfurter Stadtgebiet",
-   "last_verified_at": "2026-08-12",
+   "source_url": "https://www.rmv.de/c/de/tickets/sortiment/tickets-im-ueberblick/sonderberechtigte/sozialpaesse/frankfurt-pass",
+   "source_snippet": "Deutschland-Ticket mit Frankfurt-Pass mobil: Preis 31,50 Euro/Monat; Der Frankfurt-Pass ermöglicht einkommensschwächeren Bürgerinnen und Bürgern mit erstem Wohnsitz in Frankfurt, ermäßigte Zeitkarten zu kaufen.",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified",
    "income_reviewed_at": "2026-08-13"
   },
@@ -2779,9 +2779,9 @@
    "amount_max": null,
    "amount_currency": "EUR",
    "amount_period": "annual",
-   "amount_note": "Free use of local public transport with the token (Wertmarke); the token costs 92 EUR per year (half-year option available)",
+   "amount_note": "Free use of local public transport with the Wertmarke token; the token costs 104 EUR per year or 53 EUR per half year (free for some benefit recipients); requires severe disability pass with qualifying Merkzeichen",
    "is_automatic": false,
-   "application_url": "https://www.bmas.de",
+   "application_url": "https://www.zbfs.bayern.de/menschen_mit_behinderung/nachteilsausgleiche/freifahrt_mit_wertmarke/",
    "application_channel": "post",
    "deadline_type": "annual",
    "deadline_note": null,
@@ -2813,10 +2813,10 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.bmas.de",
-   "source_snippet": "Schwerbehinderte Menschen mit entsprechendem Merkzeichen können mit einer Wertmarke den öffentlichen Personennahverkehr unentgeltlich benutzen",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www.zbfs.bayern.de/menschen_mit_behinderung/nachteilsausgleiche/freifahrt_mit_wertmarke/",
+   "source_snippet": "Eine Wertmarke mit Gültigkeit von einem Jahr kostet 104 Euro, mit Gültigkeit von einem halben Jahr 53 Euro.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "beg-heizungsfoerderung-kfw",
@@ -2892,9 +2892,9 @@
    "amount_max": null,
    "amount_currency": "EUR",
    "amount_period": "one_off",
-   "amount_note": "15% subsidy for insulation, windows, ventilation etc. (20% with iSFP renovation roadmap); eligible costs 30,000 EUR per dwelling unit per year (60,000 EUR with iSFP)",
+   "amount_note": "Base subsidy 15% of eligible costs (plus 5% iSFP bonus when an individual renovation roadmap exists, from 30,000 EUR eligible costs for single-unit buildings); eligible costs capped at 30,000 EUR for the first unit, 15,000 EUR for units 2-6, 8,000 EUR from the 7th unit (60,000/30,000/15,000 with iSFP); minimum 300 EUR; an energy efficiency expert must be involved",
    "is_automatic": false,
-   "application_url": "https://www.bafa.de",
+   "application_url": "https://www.bafa.de/DE/Energie/Effiziente_Gebaeude/Sanierung_Wohngebaeude/Gebaeudehuelle/gebaeudehuelle_node.html",
    "application_channel": "online",
    "deadline_type": "rolling",
    "deadline_note": "Apply at BAFA before starting the measure",
@@ -2929,10 +2929,10 @@
     "income_source_url": "https://www.bafa.de/DE/Energie/Effiziente_Gebaeude/Sanierung_Wohngebaeude/sanierung_wohngebaeude_node.html",
     "income_confidence": "medium"
    },
-   "source_url": "https://www.bafa.de",
-   "source_snippet": "Maßnahmen an der Gebäudehülle werden grundsätzlich mit 15 % der förderfähigen Kosten bezuschusst; mit iSFP steigt der Satz auf 20 %",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted",
+   "source_url": "https://www.bafa.de/DE/Energie/Effiziente_Gebaeude/Sanierung_Wohngebaeude/Gebaeudehuelle/gebaeudehuelle_node.html",
+   "source_snippet": "Das förderfähige Mindestinvestitionsvolumen liegt bei 300 Euro brutto. Der Grundfördersatz beträgt 15 % der förderfähigen Ausgaben. Die Höchstgrenze [...] beträgt 30.000 Euro für die erste Wohneinheit",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified",
    "income_reviewed_at": "2026-08-13"
   },
   {
@@ -2950,7 +2950,7 @@
    "amount_period": "one_off",
    "amount_note": "50% of the consultant fee, max 650 EUR (1-2 family homes) or 850 EUR (3+ units); plus 250 EUR for presenting an iSFP at an owners' meeting",
    "is_automatic": false,
-   "application_url": "https://www.bafa.de",
+   "application_url": "https://www.bafa.de/DE/Energie/Energieberatung/Energieberatung_Wohngebaeude/energieberatung_wohngebaeude_node.html",
    "application_channel": "online",
    "deadline_type": "rolling",
    "deadline_note": "Consultant must be listed in the dena energy efficiency expert list",
@@ -2982,10 +2982,10 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.bafa.de",
-   "source_snippet": "Das BAFA übernimmt 50 % des förderfähigen Honorars, bei Ein- und Zweifamilienhäusern maximal 650 Euro",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www.bafa.de/DE/Energie/Energieberatung/Energieberatung_Wohngebaeude/energieberatung_wohngebaeude_node.html",
+   "source_snippet": "Der Zuschuss für eine geförderte Energieberatung für Wohngebäude beträgt 50 Prozent des zuwendungsfähigen Beratungshonorars, maximal 650 Euro für Ein- und Zweifamilienhäuser und 850 Euro für Wohnhäuser mit mindestens drei Wohneinheiten.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "kfw-wohngebaeude-kredit",
@@ -3000,7 +3000,7 @@
    "amount_max": null,
    "amount_currency": "EUR",
    "amount_period": "one_off",
-   "amount_note": "Credit up to 150,000 EUR per dwelling unit with repayment subsidy 5-45% (KfW 261), or investment grant (KfW 262) for renovation to an Efficiency House standard",
+   "amount_note": "Credit up to 150,000 EUR per dwelling unit for renovation to an Efficiency House standard, with repayment subsidy of 5-15% (up to 22,500 EUR; EH 40 NH 15%) plus +10 points for Worst Performing Buildings and up to +15 points for serial renovation; Baubegleitung loan up to 10,000 EUR with 50% subsidy; interest from 3.05% effective",
    "is_automatic": false,
    "application_url": "https://www.kfw.de/261",
    "application_channel": "online",
@@ -3029,7 +3029,7 @@
     "age_min": null,
     "age_max": null,
     "income_annual_max": null,
-    "income_note": "No income test (universal or contribution-based benefit).",
+    "income_note": "No income test. Open to everyone who renovates: private persons, WEGs, companies, municipalities, non-profits (the earlier restriction to owners/tenants no longer applies).",
     "requires_children": false,
     "nationality": "any_resident",
     "residency_months_min": null,
@@ -3039,9 +3039,9 @@
     "gender": "any"
    },
    "source_url": "https://www.kfw.de/261",
-   "source_snippet": "Wohngebäude-Kredit bis 150.000 Euro je Wohneinheit, Tilgungszuschuss 5 bis 45 % je nach Effizienzhaus-Standard",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_snippet": "Kreditbetrag: bis zu 150.000 Euro Kredit je Wohneinheit. Vorteil: höhere Förderung für besonders energieeffiziente Vorhaben, bis zu 40 % Ersparnis durch Tilgungszuschuss",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "kfw-altersgerecht-umbauen",
@@ -3056,7 +3056,7 @@
    "amount_max": 50000,
    "amount_currency": "EUR",
    "amount_period": "one_off",
-   "amount_note": "Low-interest loan up to 50,000 EUR per dwelling unit for barrier-reducing conversion measures",
+   "amount_note": "Low-interest loan up to 50,000 EUR per dwelling unit for barrier-reducing conversion and burglary protection (interest from 3.39% effective); no repayment subsidy",
    "is_automatic": false,
    "application_url": "https://www.kfw.de/159",
    "application_channel": "online",
@@ -3091,9 +3091,9 @@
     "gender": "any"
    },
    "source_url": "https://www.kfw.de/159",
-   "source_snippet": "Altersgerecht Umbauen: Kredit bis 50.000 Euro je Wohneinheit für Maßnahmen zum barrierereduzierten Wohnen",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_snippet": "Kreditbetrag: bis zu 50.000 Euro je Wohneinheit. Wir fördern alle, die in Barrierereduzierung oder Einbruchschutz investieren, zum Beispiel: Privatpersonen (Eigentümer/innen und Mieter/innen, unabhängig vom Alter)",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "stromspar-check",
@@ -3108,9 +3108,9 @@
    "amount_max": null,
    "amount_currency": "EUR",
    "amount_period": "one_off",
-   "amount_note": "Free home advice on saving electricity, water and heating plus free installation of saving devices (LEDs, switchable strips) for low-income households",
+   "amount_note": "Free energy-saving advice at home or online for low-income households, free immediate aids (e.g. LEDs, water-saving shower head) and a grant towards a new energy-efficient fridge; average saving about 300 EUR per household per year",
    "is_automatic": false,
-   "application_url": "https://www.stromspar-check.de",
+   "application_url": "https://stromspar-check.de/termin-vereinbaren/",
    "application_channel": "in_person",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -3145,10 +3145,10 @@
     "income_source_url": "https://www.stromspar-check.de/",
     "income_confidence": "medium"
    },
-   "source_url": "https://www.stromspar-check.de",
-   "source_snippet": "Der Stromspar-Check berät einkommensschwache Haushalte kostenlos zu Hause und installiert unentgeltlich Stromsparhelfer",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted",
+   "source_url": "https://stromspar-check.de/",
+   "source_snippet": "Der bundesweite Stromspar-Check ist eine kostenlose Energiespar-Beratung für Menschen mit geringem Einkommen. Sie erhalten nach Bedarf kostenlose Soforthilfen (z.B. Sparduschkopf, LEDs etc.) und einen Zuschuss für ein neues Kühlgerät.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified",
    "income_reviewed_at": "2026-08-13"
   },
   {
@@ -3161,12 +3161,12 @@
    "category": "tax",
    "benefit_type": "tax_credit",
    "amount_min": null,
-   "amount_max": null,
+   "amount_max": 9756,
    "amount_currency": "EUR",
    "amount_period": "annual",
-   "amount_note": "Alternative to Kindergeld via tax return (Günstigerprüfung): combined approx. 6,500 EUR per child per year in 2026 (Kinderfreibetrag plus Betreuungsfreibetrag), halves per parent",
+   "amount_note": "2026: Kinderfreibetrag 6,828 EUR (3,414 EUR per parent) plus allowance for care, upbringing and education (BEA) 2,928 EUR (1,464 EUR per parent) = 9,756 EUR per child for both parents; applied automatically via the Günstigerprüfung if better than Kindergeld",
    "is_automatic": true,
-   "application_url": "https://www.bundesfinanzministerium.de",
+   "application_url": "https://familienportal.de/familienportal/familienleistungen/steuerentlastungen/was-sind-freibetraege-fuer-kinder--125198",
    "application_channel": "online",
    "deadline_type": "annual",
    "deadline_note": "Considered automatically in the income tax assessment (Günstigerprüfung)",
@@ -3198,10 +3198,10 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.bundesfinanzministerium.de",
-   "source_snippet": "Das Finanzamt prüft im Rahmen der Günstigerprüfung, ob der Kinderfreibetrag für die Eltern günstiger ist als das ausgezahlte Kindergeld",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://familienportal.de/familienportal/familienleistungen/steuerentlastungen/was-sind-freibetraege-fuer-kinder--125198",
+   "source_snippet": "der Kinderfreibetrag in Höhe von 6.828 Euro bei Zusammenveranlagung bzw. 3.414 Euro pro Elternteil im Jahr 2026. [...] der Freibetrag für die Betreuung, Erziehung oder den Ausbildungsbedarf in Höhe von 2.928 Euro bei Zusammenveranlagung bzw. 1.464 Euro pro Elternteil.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "entlastungsbetrag-alleinerziehende",
@@ -3218,7 +3218,7 @@
    "amount_period": "annual",
    "amount_note": "4,260 EUR per year tax-free allowance for the first child, plus 240 EUR for each additional child; granted via tax class II or the tax return",
    "is_automatic": false,
-   "application_url": "https://www.bundesfinanzministerium.de",
+   "application_url": "https://familienportal.de/familienportal/familienleistungen/steuerentlastungen/was-ist-der-entlastungsbetrag-fuer-alleinerziehende-und-wie-werden-kinderfreibetraege-bei-nicht-verheirateten-eltern-aufgeteilt--125202",
    "application_channel": "online",
    "deadline_type": "annual",
    "deadline_note": "Apply for tax class II at the tax office (ELSTER) or claim in the tax return",
@@ -3254,9 +3254,9 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.bundesfinanzministerium.de",
-   "source_snippet": "Der Entlastungsbetrag für Alleinerziehende beträgt 4.260 Euro jährlich für das erste Kind und erhöht sich um je 240 Euro für jedes weitere Kind",
-   "last_verified_at": "2026-08-12",
+   "source_url": "https://familienportal.de/familienportal/familienleistungen/steuerentlastungen/was-ist-der-entlastungsbetrag-fuer-alleinerziehende-und-wie-werden-kinderfreibetraege-bei-nicht-verheirateten-eltern-aufgeteilt--125202",
+   "source_snippet": "Der steuerliche Entlastungsbetrag für Alleinerziehende beträgt 4.260 Euro pro Jahr. Für jedes weitere Kind erhöht sich der Entlastungsbetrag um 240 Euro.",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -3272,9 +3272,9 @@
    "amount_max": null,
    "amount_currency": "EUR",
    "amount_period": "annual",
-   "amount_note": "Flat-rate income tax allowance depending on the degree of disability (GdB 20-100, e.g. 2,840 EUR at GdB 100; doubled for blind/helpless persons)",
+   "amount_note": "Flat-rate income tax allowance depending on the degree of disability (GdB 20-100, e.g. 2,840 EUR at GdB 100); blind and deaf-blind people (and those with Merkzeichen H) receive 7,400 EUR instead",
    "is_automatic": true,
-   "application_url": "https://www.bundesfinanzministerium.de",
+   "application_url": "https://lsth.bundesfinanzministerium.de/lsth/2026/A-Einkommensteuergesetz/IV-Tarif-31-34b/Paragraf-33b/inhalt.html",
    "application_channel": "online",
    "deadline_type": "annual",
    "deadline_note": "Claimed in the income tax return with the disabled pass",
@@ -3306,10 +3306,10 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.bundesfinanzministerium.de",
-   "source_snippet": "Der Behinderten-Pauschbetrag richtet sich nach dem Grad der Behinderung und wird bei der Einkommensteuer berücksichtigt",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://lsth.bundesfinanzministerium.de/lsth/2026/A-Einkommensteuergesetz/IV-Tarif-31-34b/Paragraf-33b/inhalt.html",
+   "source_snippet": "Blinde und Taubblinde erhalten einen Pauschbetrag von 7.400 Euro; in diesem Fall kann der Pauschbetrag nach Satz 2 nicht zusätzlich in Anspruch genommen werden.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "steuerermaessigung-haushaltsnah",
@@ -3326,7 +3326,7 @@
    "amount_period": "annual",
    "amount_note": "20% of labour costs deductible from the tax bill: max 4,000 EUR/year for household services, max 1,200 EUR/year for tradesperson services, plus up to 510 EUR for mini-job household help",
    "is_automatic": false,
-   "application_url": "https://www.bundesfinanzministerium.de",
+   "application_url": "https://www.gesetze-im-internet.de/estg/__35a.html",
    "application_channel": "online",
    "deadline_type": "annual",
    "deadline_note": "Claim in the income tax return with invoices and bank payment proof",
@@ -3358,10 +3358,10 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.bundesfinanzministerium.de",
-   "source_snippet": "Für haushaltsnahe Dienstleistungen werden 20 Prozent der Aufwendungen, höchstens 4.000 Euro jährlich, von der Steuerschuld abgezogen",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www.gesetze-im-internet.de/estg/__35a.html",
+   "source_snippet": "auf Antrag um 20 Prozent, höchstens 510 Euro [...] höchstens 4 000 Euro [...] Handwerkerleistungen [...] um 20 Prozent der Aufwendungen des Steuerpflichtigen, höchstens jedoch um 1 200 Euro.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "riester-foerderung",
@@ -3378,7 +3378,7 @@
    "amount_period": "annual",
    "amount_note": "175 EUR basic allowance per year plus 300 EUR child allowance per child born from 2008 (185 EUR for earlier births), paid into the Riester contract; full subsidy requires 4% of gross income contributions",
    "is_automatic": false,
-   "application_url": "https://www.deutsche-rentenversicherung.de",
+   "application_url": "https://riester.deutsche-rentenversicherung.de/DE/Lohnt-sich-Riester/Staatliche-Foerderung-fuer-Sie/staatliche-foerderung-fuer-sie_node",
    "application_channel": "online",
    "deadline_type": "annual",
    "deadline_note": "Apply via the Riester provider (Dauerzulagenantrag possible); 2-year retroactive window",
@@ -3413,9 +3413,9 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.deutsche-rentenversicherung.de",
-   "source_snippet": "Die volle Riester-Grundzulage beträgt 175 Euro jährlich; die Kinderzulage für ab 2008 geborene Kinder beträgt 300 Euro",
-   "last_verified_at": "2026-08-12",
+   "source_url": "https://riester.deutsche-rentenversicherung.de/DE/Lohnt-sich-Riester/Staatliche-Foerderung-fuer-Sie/staatliche-foerderung-fuer-sie_node",
+   "source_snippet": "Die jährliche Grundzulage beträgt pro Person 175 Euro. Pro Kind, das bis Ende 2007 geboren wurde, zahlt Ihnen der Staat 185 Euro Riester-Zulage. Für Kinder, die ab 2008 geboren wurden, bekommen Sie pro Kind 300 Euro pro Jahr.",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -3433,7 +3433,7 @@
    "amount_period": "annual",
    "amount_note": "Up to approx. 123 EUR per year (9% on up to 470 EUR building society savings plus 20% on up to 400 EUR fund savings), for employees below income ceilings",
    "is_automatic": false,
-   "application_url": "https://www.bundesfinanzministerium.de",
+   "application_url": "https://www.bundesfinanzministerium.de/Content/DE/Glossareintraege/A/arbeitnehmer-sparzulage.html",
    "application_channel": "online",
    "deadline_type": "annual",
    "deadline_note": "Applied via the income tax return (Anlage VL) or via the employer/provider",
@@ -3467,9 +3467,9 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.bundesfinanzministerium.de",
-   "source_snippet": "Bis zu 123 Euro pro Arbeitnehmer jährlich für vermögenswirksame Leistungen in Bausparverträgen oder Fondssparplänen",
-   "last_verified_at": "2026-08-12",
+   "source_url": "https://www.bundesfinanzministerium.de/Content/DE/Glossareintraege/A/arbeitnehmer-sparzulage.html",
+   "source_snippet": "für Beteiligungen am Produktivkapital 20 Prozent der so angelegten vermögenswirksamen Leistungen, soweit diese 400 Euro jährlich nicht überschreiten [...] Diese betragen 40.000 Euro bei Ledigen oder getrennt Lebenden beziehungsweise 80.000 Euro bei zusammenveranlagten Ehegatten oder Lebenspartnern.",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -3487,7 +3487,7 @@
    "amount_period": "annual",
    "amount_note": "10% state premium on building society savings, max 70 EUR/year (singles) or 140 EUR/year (married couples)",
    "is_automatic": false,
-   "application_url": "https://www.bundesfinanzministerium.de",
+   "application_url": "https://lsth.bundesfinanzministerium.de/lsth/2026/B-Anhaenge/Anhang-31/I/inhalt.html",
    "application_channel": "online",
    "deadline_type": "annual",
    "deadline_note": "Applied via the building society with the annual savings statement",
@@ -3519,9 +3519,9 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.bundesfinanzministerium.de",
-   "source_snippet": "Ein staatlicher Bonus von 10 Prozent auf die Sparleistungen für Bausparverträge, bis zu 70 Euro für Alleinstehende und 140 Euro für Verheiratete jährlich",
-   "last_verified_at": "2026-08-12",
+   "source_url": "https://lsth.bundesfinanzministerium.de/lsth/2026/B-Anhaenge/Anhang-31/I/inhalt.html",
+   "source_snippet": "Die Einkommensgrenze beträgt 35.000 Euro, bei Ehegatten 70.000 [...] Sie beträgt 10 Prozent der Aufwendungen",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -3539,10 +3539,10 @@
    "amount_period": "one_off",
    "amount_note": "Low-interest loan up to 25 million EUR for start-ups and young companies (investments and working capital), via the house bank; KfW takes over up to 80% of the credit risk",
    "is_automatic": false,
-   "application_url": "https://www.kfw.de/058",
+   "application_url": "https://www.kfw.de/inlandsfoerderung/Unternehmen/Gr%C3%BCndung-und-Nachfolge/F%C3%B6rderprodukte/ERP-F%C3%B6rderkredit-KMU-(365-366)/",
    "application_channel": "in_person",
    "deadline_type": "rolling",
-   "deadline_note": "Apply via your bank (Hausbank) before the investment",
+   "deadline_note": "Ended: KfW states 'Diesen Kredit können Sie nicht mehr beantragen' for ERP-Gründerkredit Universell (073-076); replaced by the ERP-Förderkredit KMU (365/366), up to 25 million EUR with 50% KfW risk cover.",
    "procedure_steps": [
     {
      "step": 1,
@@ -3579,10 +3579,10 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.kfw.de/058",
-   "source_snippet": "Zinsgünstiger Kredit bis 25 Mio. Euro für Gründer und junge Unternehmen, KfW übernimmt bis zu 80 % des Kreditrisikos der Hausbank",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www.kfw.de/073",
+   "source_snippet": "Diesen Kredit können Sie nicht mehr beantragen. Ab sofort können Sie den ERP-Förderkredit KMU und den KfW-Förderkredit großer Mittelstand beantragen.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "kfw-startgeld",
@@ -3594,15 +3594,15 @@
    "category": "business",
    "benefit_type": "cash_one_off",
    "amount_min": null,
-   "amount_max": 125000,
+   "amount_max": 200000,
    "amount_currency": "EUR",
    "amount_period": "one_off",
-   "amount_note": "Simplified low-interest loan up to 125,000 EUR for business start-ups and takeovers, via the house bank",
+   "amount_note": "Simplified low-interest loan up to 200,000 EUR (max 80,000 EUR of it for working capital) for start-ups and young companies up to 5 years after first revenue, via the house bank; KfW takes over 80% of the credit risk; no equity required; interest from 5.65% effective",
    "is_automatic": false,
    "application_url": "https://www.kfw.de/067",
    "application_channel": "in_person",
    "deadline_type": "rolling",
-   "deadline_note": null,
+   "deadline_note": "Apply via your bank (Finanzierungspartner) BEFORE starting the project; draw within 12 months of approval",
    "procedure_steps": [
     {
      "step": 1,
@@ -3635,9 +3635,9 @@
     "gender": "any"
    },
    "source_url": "https://www.kfw.de/067",
-   "source_snippet": "StartGeld: vereinfachter zinsgünstiger Kredit der KfW bis 125.000 Euro für Existenzgründungen",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_snippet": "bis zu 200.000 Euro Kredit [...] davon bis zu 80.000 Euro für Betriebsmittel. Die KfW übernimmt 80 % des Kreditrisikos.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "mikrokreditfonds",
@@ -3654,10 +3654,10 @@
    "amount_period": "one_off",
    "amount_note": "Microloans up to 25,000 EUR (stepwise, first loan usually up to 10,000 EUR) for small entrepreneurs without access to bank credit, via local microfinance institutions",
    "is_automatic": false,
-   "application_url": "https://www.mikrokreditfonds.de",
+   "application_url": "https://www.indaro-mikrofinanz.de/",
    "application_channel": "in_person",
    "deadline_type": "rolling",
-   "deadline_note": null,
+   "deadline_note": "Ended: the Mikrokreditfonds Deutschland expired on 30 June 2026 and has not been continued since 1 July 2026 (decision of the federal ministry). Existing microfinance institutions such as indaro no longer grant fund-backed loans.",
    "procedure_steps": [
     {
      "step": 1,
@@ -3689,10 +3689,10 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.mikrokreditfonds.de",
-   "source_snippet": "Der Mikrokreditfonds Deutschland vergibt Kleinstkredite bis 25.000 Euro an Kleinstunternehmer über lokale Mikrofinanzinstitute",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www.indaro-mikrofinanz.de/",
+   "source_snippet": "Der Mikrokreditfonds Deutschland ist zum 30.06.2026 ausgelaufen und wird seit dem 01.07.2026 nicht mehr fortgeführt",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "nrwbank-gruendung-wachstum",
@@ -3704,12 +3704,12 @@
    "category": "business",
    "benefit_type": "cash_one_off",
    "amount_min": null,
-   "amount_max": null,
+   "amount_max": 10000000,
    "amount_currency": "EUR",
    "amount_period": "one_off",
-   "amount_note": "State development bank loan for start-ups and consolidating companies in North Rhine-Westphalia, via the house bank (amounts in the millions possible)",
+   "amount_note": "Instalment loan up to 10 million EUR, financing share up to 100% of eligible investments/working capital, terms 5/10/20 years with 1-3 repayment-free years; optional 50% liability exemption for the house bank from 125,000 EUR; apply via your house bank; start-up/investment location must be in NRW",
    "is_automatic": false,
-   "application_url": "https://www.nrwbank.de",
+   "application_url": "https://www.nrwbank.de/de/foerderung/foerderprodukte/60100/nrwbank-gruendung-und-wachstum.html",
    "application_channel": "in_person",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -3745,10 +3745,10 @@
     ],
     "gender": "any"
    },
-   "source_url": "https://www.nrwbank.de",
-   "source_snippet": "Die NRW.BANK fördert Gründungen und Wachstum von Unternehmen in Nordrhein-Westfalen mit zinsgünstigen Darlehen über die Hausbank",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www.nrwbank.de/de/foerderung/foerderprodukte/60100/nrwbank-gruendung-und-wachstum.html",
+   "source_snippet": "Zinsgünstige Darlehen bis 10 Mio. € mit einem Finanzierungsanteil von bis zu 100% - besonders günstige Zinsen für Gründer und junge Unternehmen bis 5 Jahre und für Vorhaben in Fördergebieten",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "lfa-bayerischer-gruenderkredit",
@@ -3760,12 +3760,12 @@
    "category": "business",
    "benefit_type": "cash_one_off",
    "amount_min": null,
-   "amount_max": null,
+   "amount_max": 20000000,
    "amount_currency": "EUR",
    "amount_period": "one_off",
-   "amount_note": "Low-interest development loan of the LfA Förderbank Bayern for start-ups in Bavaria, applied for via the house bank",
+   "amount_note": "LfA start-up loans via your house bank: Gründungskredit Smart up to 150,000 EUR (obligatory 80% LfA liability exemption), Gründungs- und Wachstumskredit (GuW) up to 20 million EUR per project for the 5-year start-up phase, Universalkredit up to 25 million EUR; the product named 'Bayerischer Gründerkredit' is no longer listed",
    "is_automatic": false,
-   "application_url": "https://www.lfa.de",
+   "application_url": "https://www.lfa.de/website/de/foerderangebote/gruendung-wachstum/gruendung/index.php",
    "application_channel": "in_person",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -3801,10 +3801,10 @@
     ],
     "gender": "any"
    },
-   "source_url": "https://www.lfa.de",
-   "source_snippet": "Die LfA Förderbank Bayern unterstützt Existenzgründer in Bayern mit dem zinsgünstigen Bayerischen Gründerkredit",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www.lfa.de/website/de/foerderangebote/gruendung-wachstum/gruendung/index.php",
+   "source_snippet": "Gründungs- und Wachstumskredit (GuW): Zur Finanzierung von Neugründungen, Betriebsübernahmen, tätigen Beteiligungen und für den Finanzierungsbedarf junger Unternehmen innerhalb der 5-jährigen Existenzgründungsphase; Darlehen bis zu 20 Mio. EUR pro Vorhaben",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "ibb-coaching-bonus",
@@ -3821,10 +3821,10 @@
    "amount_period": "one_off",
    "amount_note": "Subsidises external coaching/consulting for Berlin start-ups and young companies by up to 3,000 EUR",
    "is_automatic": false,
-   "application_url": "https://www.ibb.de",
+   "application_url": "https://www.ibb-business-team.de/gruendungsbonus-plus/",
    "application_channel": "online",
    "deadline_type": "rolling",
-   "deadline_note": null,
+   "deadline_note": "Ended: Coaching BONUS is no longer offered; IBB Business Team's current programme list (Existenzgründung & Beratung) shows only deGUT, Businessplan-Wettbewerb and GründungsBONUS Plus, and /coaching-bonus/ redirects to the overview page (checked 5 Oct 2026). For start-ups see GründungsBONUS Plus (up to 50% cost subsidy).",
    "procedure_steps": [
     {
      "step": 1,
@@ -3858,10 +3858,10 @@
     ],
     "gender": "any"
    },
-   "source_url": "https://www.ibb.de",
-   "source_snippet": "Der IBB Coaching BONUS fördert externe Beratungsleistungen für Berliner Existenzgründer und junge Unternehmen mit bis zu 3.000 Euro",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www.ibb-business-team.de/",
+   "source_snippet": "GründungsBONUS Plus: Zuschüsse für den Unternehmensaufbau innovativer Gründungen",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "kita-beitragsfreiheit-nrw",
@@ -3912,9 +3912,9 @@
     ],
     "gender": "any"
    },
-   "source_url": "https://www.kita.nrw",
-   "source_snippet": "Beitragsfrei sind die letzten beiden Kindergartenjahre: ohne Stunden- und ohne Einkommensgrenze (§ 50 KiBiz)",
-   "last_verified_at": "2026-08-12",
+   "source_url": "https://www.mkjfgfi.nrw/system/files/media/document/file/handreichung-ktp-nrw-stand-15.-april-2025.pdf",
+   "source_snippet": "In NRW entscheidet mit Ausnahme der beiden letzten Jahre vor der Einschulung, die elternbeitragsfrei sind, grundsätzlich allein das örtliche Jugendamt über die Elternbeiträge.",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -3930,9 +3930,9 @@
    "amount_max": null,
    "amount_currency": "EUR",
    "amount_period": "monthly",
-   "amount_note": "Daycare is free of parental fees in Berlin; only meal costs (about 25 EUR/month) are charged, redeemable for low-income families",
+   "amount_note": "Daycare in Kita and Kindertagespflege is free of parental fees in Berlin; only a meal contribution of 23 EUR per month applies (waived with a valid berlinpass-BuT for families on Bürgergeld, Sozialhilfe, Kinderzuschlag, Wohngeld or AsylbLG); optional extras may be charged up to 100 EUR per month",
    "is_automatic": false,
-   "application_url": "https://www.berlin.de",
+   "application_url": "https://service.berlin.de/dienstleistung/324873/",
    "application_channel": "online",
    "deadline_type": "rolling",
    "deadline_note": "Apply for the Kita-Gutschein at the Jugendamt of your Bezirk",
@@ -3970,10 +3970,10 @@
     ],
     "gender": "any"
    },
-   "source_url": "https://www.berlin.de",
-   "source_snippet": "In Berlin ist die Kindertagesbetreuung beitragsfrei; Eltern zahlen lediglich einen Verpflegungskostenanteil",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www.berlin.de/sen/jugend/familie-und-kinder/kindertagesbetreuung/kostenbeteiligung/",
+   "source_snippet": "Die Betreuung in Kindertageseinrichtungen und in Kindertagespflegestellen ist für alle Kinder kostenfrei. Wenn Ihr Kind ein Mittagessen erhält, beteiligen Sie sich als Eltern an den Kosten mit einem Verpflegungsanteil von 23 Euro im Monat.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "landeserziehungsgeld-sachsen",
@@ -4098,12 +4098,12 @@
    "amount_max": null,
    "amount_currency": "EUR",
    "amount_period": "annual",
-   "amount_note": "State-wide social pass with discounts on culture, sport, leisure and public services for recipients of social benefits in Berlin",
+   "amount_note": "Berlin-Ticket S (social ticket) plus reduced/free entry to museums, theatres, concerts, cinemas, pools, zoo, libraries and VHS/music-school courses on showing a Leistungsbescheid. Requires main residence in Berlin (or no fixed abode and Land Berlin benefits).",
    "is_automatic": false,
-   "application_url": "https://www.berlin.de",
+   "application_url": "https://service.berlin.de/dienstleistung/121742/",
    "application_channel": "in_person",
-   "deadline_type": "annual",
-   "deadline_note": null,
+   "deadline_type": "rolling",
+   "deadline_note": "Since 1 Jan 2025 no separate Berechtigungsnachweis/VBB-Kundenkarte needed: Leistungsbescheid + official ID suffices. This interim rule is limited until 1 May 2027.",
    "procedure_steps": [
     {
      "step": 1,
@@ -4123,7 +4123,7 @@
     "age_min": null,
     "age_max": null,
     "income_annual_max": null,
-    "income_note": "Benefit-linked: recipients of Buergergeld, Sozialhilfe, AsylbLG, Wohngeld, Kinderzuschlag or BuT benefits; the income ceilings of those benefits apply.",
+    "income_note": "Benefit-linked: recipients of Buergergeld/Sozialgeld, Sozialhilfe, Grundsicherung im Alter/bei Erwerbsminderung, AsylbLG, Wohngeld or certain SED-Unrechtsbereinigung benefits (and household members). SGB VIII recipients are not eligible.",
     "requires_children": false,
     "nationality": "any_resident",
     "residency_months_min": null,
@@ -4134,15 +4134,15 @@
     ],
     "gender": "any"
    },
-   "source_url": "https://www.berlin.de",
-   "source_snippet": "Der BerlinPass bündelt die Sozialermäßigungen des Landes Berlin für Leistungsberechtigte in einem Nachweis",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://service.berlin.de/dienstleistung/121742/",
+   "source_snippet": "Eine Berechtigung zur Nutzung des Berlin-Ticket S sowie für weitere Vergünstigungen erhalten alle Personen, die eine der folgenden Leistungen beziehen: 1) Arbeitslosengeld II bzw. Sozialgeld (Hartz IV, Bürgergeld) 2) Sozialhilfe ... 5) Leistungen nach dem Asylbewerberleistungsgesetz 6) Wohngeld",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "bayernbonus-familie",
-   "name_local": "BayernBonus Familie",
-   "name_en": "Bavaria Family Bonus Card",
+   "name_local": "Mehrkindfamilienkarte Bayern",
+   "name_en": "Bavaria Large-Family Card (Mehrkindfamilienkarte)",
    "admin_level": "state",
    "admin_area": "Bayern",
    "funder": "Freistaat Bayern (StMAS)",
@@ -4152,9 +4152,9 @@
    "amount_max": null,
    "amount_currency": "EUR",
    "amount_period": "annual",
-   "amount_note": "Free family card with discounts at around 2,000 partners (leisure, culture, shopping) for families with children in Bavaria",
+   "amount_note": "Card for families with three or more children giving discounts and facilitations at partner offers across Bavaria; issued on application, free of charge via Kolpingwerk Landesverband Bayern (funded by StMAS). Number of partners not stated on the official pages read.",
    "is_automatic": false,
-   "application_url": "https://www.stmas.bayern.de",
+   "application_url": "https://mehrkindfamilienkarte.bayern/karte-beantragen",
    "application_channel": "online",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -4177,7 +4177,7 @@
     "age_min": null,
     "age_max": null,
     "income_annual_max": null,
-    "income_note": "No income test (universal or contribution-based benefit).",
+    "income_note": "No income test; eligibility is three or more children (proof e.g. Kindergeldbescheid).",
     "requires_children": true,
     "nationality": "any_resident",
     "residency_months_min": null,
@@ -4188,10 +4188,10 @@
     ],
     "gender": "any"
    },
-   "source_url": "https://www.stmas.bayern.de",
-   "source_snippet": "Die BayernBonus Familie Karte gewährt Familien mit Kindern Vergünstigungen bei rund 2.000 Partnern in ganz Bayern",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www.familienland.bayern.de/familienleben/mehrkindfamilien/finanzielle-unterstuetzung/",
+   "source_snippet": "Mehrkindfamilien sind Familien mit drei oder mehr Kindern. ... Die Mehrkindfamilienkarte wird auf Antrag ausgegeben.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "rundfunkbeitrag-befreiung",
@@ -4206,12 +4206,12 @@
    "amount_max": 18.36,
    "amount_currency": "EUR",
    "amount_period": "monthly",
-   "amount_note": "Saves the full 18.36 EUR/month broadcasting contribution for recipients of Bürgergeld, Grundsicherung, Hilfe zum Lebensunterhalt, AsylbLG, BAföG/BAB (not living with parents), Blindenhilfe etc.",
+   "amount_note": "Saves the full 18.36 EUR/month broadcasting contribution (55.08 EUR per quarter). Exemption for recipients of Grundsicherungsgeld (formerly Bürgergeld), Hilfe zum Lebensunterhalt, Grundsicherung im Alter/bei Erwerbsminderung, AsylbLG, BAföG/BAB/Ausbildungsgeld (if not living with parents), Blindenhilfe, Pflegegeld etc. Recipients of Arbeitslosengeld I, Wohngeld or Übergangsgeld have NO claim. Not granted automatically; can be backdated up to 3 years.",
    "is_automatic": false,
-   "application_url": "https://www.rundfunkbeitrag.de",
+   "application_url": "https://www.rundfunkbeitrag.de/buergerinnen-und-buerger/formulare/befreiung-oder-ermaessigung-beantragen",
    "application_channel": "online",
    "deadline_type": "rolling",
-   "deadline_note": "Apply at the Beitragsservice with a benefit notice not older than 2 months",
+   "deadline_note": "Apply with a benefit notice (name, benefit, period); exemption lasts as long as the notice, max 3 years if unlimited; backdating up to 3 years.",
    "procedure_steps": [
     {
      "step": 1,
@@ -4231,7 +4231,7 @@
     "age_min": null,
     "age_max": null,
     "income_annual_max": null,
-    "income_note": "Benefit-linked: exemption for recipients of Buergergeld, Sozialhilfe/Grundsicherung, AsylbLG, and BAfoeg/BAB recipients not living with parents; hardship exemption possible if income only slightly above the threshold.",
+    "income_note": "Benefit-linked exemption (Wohngeld, ALG I and Übergangsgeld do not qualify). Hardship exemption possible if income exceeds social need by less than 18.36 EUR/month.",
     "requires_children": false,
     "nationality": "any_resident",
     "residency_months_min": null,
@@ -4240,9 +4240,9 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.rundfunkbeitrag.de",
-   "source_snippet": "Von der Beitragspflicht werden auf Antrag natürliche Personen befreit, die bestimmte Sozialleistungen erhalten (z.B. Bürgergeld, Grundsicherung im Alter, Hilfe zum Lebensunterhalt)",
-   "last_verified_at": "2026-08-12",
+   "source_url": "https://www.rundfunkbeitrag.de/buergerinnen-und-buerger/informationen/empfaenger-von-sozialleistungen",
+   "source_snippet": "Empfänger von Arbeitslosengeld I, Wohngeld oder Übergangsgeld haben keinen Anspruch auf eine Befreiung.",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -4294,8 +4294,8 @@
    },
    "source_url": "https://www.bmas.de",
    "source_snippet": "Der Schwerbehindertenausweis wird ab einem Grad der Behinderung von 50 ausgestellt und eröffnet Nachteilsausgleiche wie Steuer-Pauschbetrag und unentgeltliche Beförderung",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "blindengeld-laender",
@@ -4310,7 +4310,7 @@
    "amount_max": null,
    "amount_currency": "EUR",
    "amount_period": "monthly",
-   "amount_note": "Monthly state allowance for blind people (amount varies by Land, e.g. paid in Bayern, Berlin, NRW, Sachsen); plus Blindenhilfe (§ 72 SGB XII) for income-weak blind people",
+   "amount_note": "Income-independent state benefit for blind people; amount varies by Land. Example Bayern (from 1 Jul 2026): blind 809 EUR/month, deafblind 1,618 EUR, severely visually impaired 242.70 EUR, deafsighted 485.40 EUR (85% of SGB XII Blindenhilfe). Berlin 2025: 838.55 EUR/month (not re-verified).",
    "is_automatic": false,
    "application_url": "https://www.bmas.de",
    "application_channel": "in_person",
@@ -4347,8 +4347,8 @@
    },
    "source_url": "https://www.bmas.de",
    "source_snippet": "Mehrere Bundesländer zahlen ein monatliches Blindengeld in unterschiedlicher Höhe; einkommensschwache Blinde erhalten zusätzlich Blindenhilfe nach § 72 SGB XII",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "basiskonto",
@@ -4365,7 +4365,7 @@
    "amount_period": "monthly",
    "amount_note": "Statutory right to a basic payment account with standard functions at every bank in Germany; only reasonable fees allowed",
    "is_automatic": false,
-   "application_url": "https://www.bafin.de",
+   "application_url": "https://www.bafin.de/DE/verbraucherinnen-verbraucher/themen-finanzprodukte/konten-zahlungen/konten/basiskonto/basiskonto_node.html",
    "application_channel": "in_person",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -4397,10 +4397,10 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.bafin.de",
-   "source_snippet": "Nach dem Zahlungskontengesetz hat jede Person mit rechtmäßigem Aufenthalt in der EU Anspruch auf ein Basiskonto mit Grundfunktionen",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www.bafin.de/DE/verbraucherinnen-verbraucher/themen-finanzprodukte/konten-zahlungen/konten/basiskonto/basiskonto_node.html",
+   "source_snippet": "Anspruch auf ein Basiskonto haben grundsätzlich alle Verbraucherinnen und Verbraucher, die sich rechtmäßig in der EU aufhalten und in Deutschland noch kein Zahlungskonto besitzen. Auch Geduldete haben dieses Recht.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "bayerisches-landeserziehungsgeld",
@@ -4476,12 +4476,12 @@
    "amount_max": 300,
    "amount_currency": "EUR",
    "amount_period": "monthly",
-   "amount_note": "250 EUR/month per child (300 EUR from the 3rd child) for 12 months in the child's 3rd year of life; independent of income and employment; phased out for births after 31 Dec 2024 (payments continue into 2027)",
+   "amount_note": "250 EUR per child per month (300 EUR from the third child) from the 13th to the 36th month of life (2nd and 3rd year), income-independent; only one parent can receive it. ONLY for children born before 1 Jan 2025 - no Familiengeld for children born from 1 Jan 2025.",
    "is_automatic": false,
-   "application_url": "https://www.zbfs.bayern.de",
+   "application_url": "https://www.zbfs.bayern.de/familienleistungen/familiengeld/",
    "application_channel": "online",
    "deadline_type": "rolling",
-   "deadline_note": null,
+   "deadline_note": "Closed to new births: for children born on or after 01.01.2025 no Familiengeld is provided. Children born earlier keep their entitlement until month 36.",
    "procedure_steps": [
     {
      "step": 1,
@@ -4517,9 +4517,9 @@
     "income_source_url": "https://www.zbfs.bayern.de/familienleistungen/familiengeld/",
     "income_confidence": "high"
    },
-   "source_url": "https://www.zbfs.bayern.de",
-   "source_snippet": "Das Familiengeld wird einkommens- und erwerbsunabhängig gezahlt: 250 Euro pro Monat und Kind, ab dem dritten Kind 300 Euro.",
-   "last_verified_at": "2026-08-12",
+   "source_url": "https://www.zbfs.bayern.de/familienleistungen/familiengeld/",
+   "source_snippet": "Für Kinder, die ab dem 01.01.2025 geboren werden, ist keine Familiengeldleistung mehr vorgesehen.",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified",
    "income_reviewed_at": "2026-08-13"
   },
@@ -4538,7 +4538,7 @@
    "amount_period": "annual",
    "amount_note": "Free public transport ticket (AB zone) for Berlin pupils; replaced the former paid Schuelerferienticket scheme in August 2019",
    "is_automatic": false,
-   "application_url": "https://www.bvg.de",
+   "application_url": "https://www.bvg.de/de/abos-und-tickets/schuelerticket",
    "application_channel": "in_person",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -4574,9 +4574,9 @@
      "Berlin"
     ]
    },
-   "source_url": "https://www.bvg.de",
-   "source_snippet": "Berliner Schülerinnen und Schüler erhalten ihre Fahrkarte kostenlos (kostenlose Schülerfahrkarte).",
-   "last_verified_at": "2026-08-12",
+   "source_url": "https://www.bvg.de/de/abos-und-tickets/schuelerticket",
+   "source_snippet": "Kostenloses Schülerticket Berlin für alle Berliner Schüler*innen mit gültigem Berliner Schülerausweis I.",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -4592,12 +4592,12 @@
    "amount_max": null,
    "amount_currency": "EUR",
    "amount_period": "monthly",
-   "amount_note": "Covers 5 hours of daycare per day free of charge (plus free lunch); extended care hours subject to an income-graded parental contribution",
+   "amount_note": "Up to 5 hours/day in a Kita (or up to 30 hours/week in Kindertagespflege) are free of charge from birth to school entry. Beyond that parental fees are staged by income, family size, age group and hours (Kita from 4 to 204 EUR/month for up to 6h/12h bands). Families receiving SGB II/XII, AsylbLG, Kinderzuschlag or Wohngeld pay no contribution. Kita offers generally include a warm lunch (except 4h/5h variants without lunch).",
    "is_automatic": false,
-   "application_url": "https://www.hamburg.de",
+   "application_url": "https://www.hamburg.de/politik-und-verwaltung/behoerden/bsfb/familie/kinderbetreuung/elterninformationen/kita-gutschein-35656",
    "application_channel": "online",
    "deadline_type": "rolling",
-   "deadline_note": null,
+   "deadline_note": "Apply 3-6 months before the desired start of care (XL-Kita-Gutschein since Jan 2025).",
    "procedure_steps": [
     {
      "step": 1,
@@ -4638,9 +4638,9 @@
     "income_source_url": "https://www.hamburg.de/politik-und-verwaltung/behoerden/bsfb/familie/kinderbetreuung/elterninformationen/elternbeitrag-hoehe-35372",
     "income_confidence": "high"
    },
-   "source_url": "https://www.hamburg.de",
-   "source_snippet": "Mit dem Kita-Gutschein werden in Hamburg 5 Stunden Betreuung pro Tag kostenlos übernommen; für darüber hinausgehende Zeiten wird ein einkommensabhängiger Elternbeitrag erhoben.",
-   "last_verified_at": "2026-08-12",
+   "source_url": "https://www.hamburg.de/politik-und-verwaltung/behoerden/bsfb/familie/kinderbetreuung/elterninformationen/elternbeitrag-hoehe-35372",
+   "source_snippet": "Bis zu fünf Stunden täglich in der Kita bzw. bis zu 30 Wochenstunden in der Kindertagespflege sind ab Geburt bis zur Einschulung beitragsfrei.",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified",
    "income_reviewed_at": "2026-08-13"
   },
@@ -4654,15 +4654,15 @@
    "category": "education",
    "benefit_type": "cash_one_off",
    "amount_min": null,
-   "amount_max": null,
+   "amount_max": 1500,
    "amount_currency": "EUR",
    "amount_period": "one_off",
-   "amount_note": "Subsidy of usually 50% of course costs for job-related further training; the 'Weiterbildungsbonus Plus' variant covers higher shares for low earners",
+   "amount_note": "Weiterbildungsbonus PLUS pays 40% of course costs: max 750 EUR for costs up to 2,499 EUR, max 1,000 EUR for costs from 2,500 EUR. Special rates: employees in Hamburg crafts up to 75% (max 1,000 EUR); employees receiving SGB II top-up up to 100% (max 1,500 EUR); solo self-employed on SGB II up to 75% (max 1,000 EUR). Usually once per calendar year.",
    "is_automatic": false,
-   "application_url": "https://www.hamburg.de",
+   "application_url": "https://www.zwei-p.org/weiterbildungsbonus",
    "application_channel": "in_person",
    "deadline_type": "rolling",
-   "deadline_note": null,
+   "deadline_note": "Apply at least 4 weeks before the course starts via the Zwei P Serviceportal.",
    "procedure_steps": [
     {
      "step": 1,
@@ -4690,7 +4690,7 @@
     "age_min": null,
     "age_max": null,
     "income_annual_max": null,
-    "income_note": "Employees/self-employed working at least 15 h/week in Hamburg (or at SMEs under 250 staff); the Plus variant targets low incomes.",
+    "income_note": "Employees: live in Hamburg and/or work for a Hamburg employer with fewer than 250 staff, at least 15 h/week in socially insured employment, low-qualified or max. vocational qualification. Self-employed: live in Hamburg, main occupation, start-up phase completed. Civil servants and public-sector employees excluded.",
     "requires_children": false,
     "gender": "any",
     "nationality": "any_resident",
@@ -4701,10 +4701,10 @@
      "Hamburg"
     ]
    },
-   "source_url": "https://www.hamburg.de",
-   "source_snippet": "Der Hamburger Weiterbildungsbonus bezuschusst berufliche Weiterbildungen mit in der Regel 50 Prozent der Kurskosten.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www.zwei-p.org/weiterbildungsbonus",
+   "source_snippet": "Die Förderung beträgt 40 % der Lehrgangskosten: bei Lehrgangskosten bis zu 2.499,00 Euro - max. 750 Euro; bei Lehrgangskosten ab 2.500,00 Euro - max. 1.000 Euro",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "nrwbank-wohneigentum",
@@ -4719,7 +4719,7 @@
    "amount_max": null,
    "amount_currency": "EUR",
    "amount_period": "annual",
-   "amount_note": "Below-market-interest loan for building, buying or refinancing owner-occupied housing in NRW; no fixed maximum loan amount, up to 50% of costs (100% of residual capital for refinancing)",
+   "amount_note": "Low-interest loan covering up to 50% of eligible investment costs (100% of remaining capital for follow-on financing); no minimum or maximum amount. Terms 10-35 years. Must be applied for via a Hausbank before the project starts.",
    "is_automatic": false,
    "application_url": "https://www.nrwbank.de/de/foerderung/foerderprodukte/15937/nrwbank-wohneigentum.html",
    "application_channel": "in_person",
@@ -4744,7 +4744,7 @@
     "age_min": null,
     "age_max": null,
     "income_annual_max": 100000,
-    "income_note": "Taxable household income (average of 2nd and 3rd year before application): max 75,000 EUR/year for single-person households, 100,000 EUR/year for multi-person households, +20,000 EUR per child under 18.",
+    "income_note": "Taxable household income (average of 2nd and 3rd year before application): max 75,000 EUR for single-person households, max 100,000 EUR for multi-person households, plus 20,000 EUR per child under 18 in the household. Figure shown is the multi-person base limit.",
     "requires_children": false,
     "gender": "any",
     "nationality": "any_resident",
@@ -4756,14 +4756,14 @@
     ]
    },
    "source_url": "https://www.nrwbank.de/de/foerderung/foerderprodukte/15937/nrwbank-wohneigentum.html",
-   "source_snippet": "Antragsberechtigt sind Einpersonenhaushalte mit einem jährlich zu versteuernden Haushaltseinkommen von max. 75.000 € ... Mehrpersonenhaushalte ... max. 100.000 €. Für jedes im Haushalt lebende Kind unter 18 Jahre erhöht sich das maximal jährlich zu versteuernde Haushaltseinkommen um 20.000 €.",
-   "last_verified_at": "2026-08-12",
+   "source_snippet": "Einpersonenhaushalte mit einem jährlich zu versteuernden Haushaltseinkommen von max. 75.000 € ... Mehrpersonenhaushalte ... max. 100.000 € ... Für jedes im Haushalt lebende Kind unter 18 Jahre erhöht sich ... um 20.000 €.",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
    "slug": "kfw-wohneigentum-fuer-familien",
-   "name_local": "KfW Wohneigentum für Familien (300)",
-   "name_en": "KfW Home Ownership for Families (300)",
+   "name_local": "Wohneigentum für Familien – Neubau (300)",
+   "name_en": "KfW Home Ownership for Families - New Build (300)",
    "admin_level": "national",
    "admin_area": null,
    "funder": "KfW (Kreditanstalt für Wiederaufbau)",
@@ -4773,9 +4773,9 @@
    "amount_max": 270000,
    "amount_currency": "EUR",
    "amount_period": "one_off",
-   "amount_note": "Low-interest loan up to 170,000 EUR (1-2 children), 200,000 EUR (3-4 children) or 220,000 EUR (5+ children); +50,000 EUR with QNG sustainability seal; for new-build climate-friendly owner-occupied homes (Effizienzhaus 40); Baukindergeld successor",
+   "amount_note": "Loan from 170,000 to 270,000 EUR depending on funding level (Klimafreundliches Wohngebäude: 170k for 1-2 children, 200k for 3-4, 220k for 5+; with QNG: 220k / 250k / 270k) and number of children. Interest from 0.01% (e.g. 0.72% eff. for 11-25 years). Covers new build and first purchase (within 1 year of completion) only.",
    "is_automatic": false,
-   "application_url": "https://www.kfw.de/300",
+   "application_url": "https://www.kfw.de/inlandsfoerderung/Privatpersonen/Neubau/F%C3%B6rderprodukte/Wohneigentum-f%C3%BCr-Familien-(300)/",
    "application_channel": "in_person",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -4805,7 +4805,7 @@
     "age_min": null,
     "age_max": null,
     "income_annual_max": 90000,
-    "income_note": "Average taxable household income of the 2nd and 3rd year before application: max 90,000 EUR/year with one child, +10,000 EUR for each additional child.",
+    "income_note": "Taxable household income (average of 2nd and 3rd year before application) max 90,000 EUR with one child, +10,000 EUR per additional child. Household must include at least one child under 18; applicant must own no other residential property in Germany.",
     "requires_children": true,
     "gender": "any",
     "nationality": "any_resident",
@@ -4814,9 +4814,9 @@
     "student_required": false,
     "admin_areas": []
    },
-   "source_url": "https://www.kfw.de/300",
-   "source_snippet": "Einkommensgrenze: max. 90.000 € zu versteuerndes Einkommen bei einem Kind, +10.000 € für jedes weitere Kind; Kredit bis 270.000 €.",
-   "last_verified_at": "2026-08-12",
+   "source_url": "https://www.kfw.de/inlandsfoerderung/Privatpersonen/Neubau/F%C3%B6rderprodukte/Wohneigentum-f%C3%BCr-Familien-(300)/",
+   "source_snippet": "Das Einkommen Ihres Haushalts darf maximal 90.000 Euro bei einem Kind betragen – plus 10.000 Euro für jedes weitere Kind.",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -4829,12 +4829,12 @@
    "category": "energy",
    "benefit_type": "discount",
    "amount_min": null,
-   "amount_max": null,
+   "amount_max": 150000000,
    "amount_currency": "EUR",
    "amount_period": "one_off",
-   "amount_note": "Low-interest LOAN (not a cash grant) for plants generating electricity and/or heat from renewable energies (photovoltaics, wind, biogas, heat pumps etc.); up to 100% of eligible project costs. The EUR 100,000,000 figure previously shown here is a KfW facility-wide/per-project loan ceiling, not a per-household amount, and has been removed pending direct reverification of the current per-project cap (kfw.de blocks automated fetches).",
+   "amount_note": "Low-interest LOAN (not a cash grant): up to 100% of investment costs, up to 150 million EUR per project, no minimum; interest from about 4.64% effective p.a. (individual rate set by the house bank). For PV, wind, hydro, heat pumps, storage etc.; private persons eligible if part of the electricity or heat is fed in.",
    "is_automatic": false,
-   "application_url": "https://www.kfw.de/270",
+   "application_url": "https://www.kfw.de/inlandsfoerderung/Unternehmen/Energie-Umwelt/F%C3%B6rderprodukte/Erneuerbare-Energien-Standard-(270)/",
    "application_channel": "in_person",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -4868,10 +4868,10 @@
     "student_required": false,
     "admin_areas": []
    },
-   "source_url": "https://www.kfw.de/270",
-   "source_snippet": "Die KfW fördert mit dem Programm Erneuerbare Energien – Standard (270) Anlagen zur Strom- und Wärmeerzeugung aus erneuerbaren Energien mit zinsgünstigen Krediten.",
-   "last_verified_at": "2026-09-25",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www.kfw.de/inlandsfoerderung/Unternehmen/Energie-Umwelt/F%C3%B6rderprodukte/Erneuerbare-Energien-Standard-(270)/",
+   "source_snippet": "Sie sind als Privatperson antragsberechtigt, wenn Sie einen Teil des erzeugten Stroms einspeisen oder verkaufen.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "beg-fachplanung-baubegleitung",
@@ -4883,12 +4883,12 @@
    "category": "energy",
    "benefit_type": "cash_one_off",
    "amount_min": null,
-   "amount_max": 2500,
+   "amount_max": 10000,
    "amount_currency": "EUR",
    "amount_period": "one_off",
-   "amount_note": "Grant of 50% of the costs for expert energy planning and construction supervision of a renovation to an Effizienzhaus; max 2,500 EUR for single/two-family homes (higher caps for multi-family buildings and non-residential buildings)",
+   "amount_note": "Grant of 50% of eligible expert planning/construction-supervision costs. Eligible costs capped at 5,000 EUR for 1-2 family houses (max grant 2,500 EUR) and 2,000 EUR per dwelling for buildings with 3+ units, max 20,000 EUR in total (max grant 10,000 EUR). Only together with a BEG EM measure; an Energieeffizienz-Experte must be involved.",
    "is_automatic": false,
-   "application_url": "https://www.bafa.de",
+   "application_url": "https://www.bafa.de/DE/Energie/Effiziente_Gebaeude/Sanierung_Wohngebaeude/Fachplanung_Baubegleitung/fachplanung_baubegleitung_node.html",
    "application_channel": "online",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -4920,9 +4920,9 @@
     "student_required": false,
     "admin_areas": []
    },
-   "source_url": "https://www.bafa.de",
-   "source_snippet": "Fachplanung und Baubegleitung werden mit 50 Prozent der Kosten gefördert, maximal 2.500 Euro bei Ein- und Zweifamilienhäusern.",
-   "last_verified_at": "2026-08-12",
+   "source_url": "https://www.bafa.de/DE/Energie/Effiziente_Gebaeude/Sanierung_Wohngebaeude/Fachplanung_Baubegleitung/fachplanung_baubegleitung_node.html",
+   "source_snippet": "Der Fördersatz beträgt 50 % der förderfähigen Ausgaben. Die förderfähigen Ausgaben sind gedeckelt auf 5.000 Euro bei Ein- und Zweifamilienhäusern, und bei Mehrfamilienhäusern ... auf 2.000 Euro pro Wohneinheit, insgesamt auf maximal 20.000 Euro.",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -4974,7 +4974,7 @@
    },
    "source_url": "https://www.bundesregierung.de/breg-de/aktuelles/nullrunde-buergergeld-2383676",
    "source_snippet": "Die Unterstützung für den persönlichen Schulbedarf beträgt im ersten Schulhalbjahr 2026 weiterhin 130 Euro und im zweiten Schulhalbjahr 65 Euro.",
-   "last_verified_at": "2026-08-12",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -4992,7 +4992,7 @@
    "amount_period": "monthly",
    "amount_note": "Actual costs of lunch in daycare, school or after-school care are covered (§ 34 SGB XII)",
    "is_automatic": false,
-   "application_url": "https://www.bmas.de",
+   "application_url": "https://www.bmas.de/DE/Arbeit/Grundsicherung-Buergergeld/Bildungspaket/Leistungen/leistungen-bildungspaket_art.html",
    "application_channel": "in_person",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -5024,10 +5024,10 @@
     "student_required": false,
     "admin_areas": []
    },
-   "source_url": "https://www.bmas.de",
-   "source_snippet": "Die tatsächlichen Aufwendungen für das gemeinsame Mittagessen in Schule, Kita oder Hort werden übernommen.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www.bmas.de/DE/Arbeit/Grundsicherung-Buergergeld/Bildungspaket/Leistungen/leistungen-bildungspaket_art.html",
+   "source_snippet": "Ohne zusätzliche Kosten für die Eltern ist das gemeinschaftliche Mittagessen in Schulen, Kindertagesstätten und in der Kindertagespflege gesichert.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "but-ausfluege-klassenfahrten",
@@ -5044,7 +5044,7 @@
    "amount_period": "one_off",
    "amount_note": "Actual costs of one- and multi-day school trips and excursions are covered at actual cost",
    "is_automatic": false,
-   "application_url": "https://www.bmas.de",
+   "application_url": "https://www.bmas.de/DE/Arbeit/Grundsicherung-Buergergeld/Bildungspaket/Leistungen/leistungen-bildungspaket_art.html",
    "application_channel": "in_person",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -5076,10 +5076,10 @@
     "student_required": false,
     "admin_areas": []
    },
-   "source_url": "https://www.bmas.de",
-   "source_snippet": "Die Kosten für ein- und mehrtägige Ausflüge und Klassenfahrten werden in tatsächlicher Höhe übernommen.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www.bmas.de/DE/Arbeit/Grundsicherung-Buergergeld/Bildungspaket/Leistungen/leistungen-bildungspaket_art.html",
+   "source_snippet": "Bei ein- und mehrtägigen Ausflügen von Schulen, Kitas und Kindertagespflege werden die Kosten übernommen (z. B. für Klassenfahrten).",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "but-lernfoerderung",
@@ -5096,7 +5096,7 @@
    "amount_period": "monthly",
    "amount_note": "Appropriate learning support (Nachhilfe) is covered when the school confirms it is needed to reach essential learning goals (e.g. promotion to the next class is at risk)",
    "is_automatic": false,
-   "application_url": "https://www.bmas.de",
+   "application_url": "https://www.bmas.de/DE/Arbeit/Grundsicherung-Buergergeld/Bildungspaket/Leistungen/leistungen-bildungspaket_art.html",
    "application_channel": "in_person",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -5133,10 +5133,10 @@
     "student_required": false,
     "admin_areas": []
    },
-   "source_url": "https://www.bmas.de",
-   "source_snippet": "Angemessene Lernförderung wird übernommen, wenn sie erforderlich ist, um die wesentlichen Lernziele zu erreichen.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www.bmas.de/DE/Arbeit/Grundsicherung-Buergergeld/Bildungspaket/Leistungen/leistungen-bildungspaket_art.html",
+   "source_snippet": "Bedürftige Schülerinnen und Schüler können, unabhängig von einer Versetzungsgefährdung, unter bestimmten Voraussetzungen Lernförderung in Anspruch nehmen.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "but-teilhabe-kultur-sport",
@@ -5153,7 +5153,7 @@
    "amount_period": "monthly",
    "amount_note": "15 EUR per month for membership fees for sports clubs, music lessons, cultural and leisure activities",
    "is_automatic": false,
-   "application_url": "https://www.bmas.de",
+   "application_url": "https://www.bmas.de/DE/Arbeit/Grundsicherung-Buergergeld/Bildungspaket/Leistungen/leistungen-bildungspaket_art.html",
    "application_channel": "in_person",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -5185,9 +5185,9 @@
     "student_required": false,
     "admin_areas": []
    },
-   "source_url": "https://www.bmas.de",
-   "source_snippet": "Für die Teilnahme an kulturellen und sportlichen Aktivitäten stehen 15 Euro monatlich zur Verfügung.",
-   "last_verified_at": "2026-08-12",
+   "source_url": "https://www.bmas.de/DE/Arbeit/Grundsicherung-Buergergeld/Bildungspaket/Leistungen/leistungen-bildungspaket_art.html",
+   "source_snippet": "Für die Teilhabe am sozialen und kulturellen Leben in der Gemeinschaft wird ein Betrag von pauschal 15 Euro monatlich erbracht.",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -5242,7 +5242,7 @@
    },
    "source_url": "https://www.gesetze-im-internet.de/estg/__3.html",
    "source_snippet": "Einnahmen aus nebenberuflichen Tätigkeiten als Übungsleiter, Ausbilder, Erzieher, Betreuer ... bis zu 3.300 Euro im Kalenderjahr steuerfrei (§ 3 Nr. 26 EStG).",
-   "last_verified_at": "2026-08-12",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -5294,7 +5294,7 @@
    },
    "source_url": "https://www.gesetze-im-internet.de/estg/__3.html",
    "source_snippet": "Ehrenamtliche Tätigkeiten im gemeinnützigen, mildtätigen oder kirchlichen Bereich: bis zu 960 Euro im Kalenderjahr steuerfrei (§ 3 Nr. 26a EStG).",
-   "last_verified_at": "2026-08-12",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -5346,7 +5346,7 @@
    },
    "source_url": "https://www.gesetze-im-internet.de/estg/__33b.html",
    "source_snippet": "Pflege-Pauschbetrag für die unentgeltliche Pflege: 600 / 1.100 / 1.800 Euro je nach Pflegegrad (§ 33b Abs. 6 EStG).",
-   "last_verified_at": "2026-08-12",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -5403,7 +5403,7 @@
    },
    "source_url": "https://www.gesetze-im-internet.de/estg/__35a.html",
    "source_snippet": "Für Handwerkerleistungen ... ermäßigt sich die tarifliche Einkommensteuer ... um 20 Prozent der Aufwendungen, höchstens jedoch um 1 200 Euro.",
-   "last_verified_at": "2026-08-12",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -5419,9 +5419,9 @@
    "amount_max": 2500,
    "amount_currency": "EUR",
    "amount_period": "one_off",
-   "amount_note": "1,000 EUR for passing the intermediate exam and 1,500 EUR for passing the final exam of a funded, qualification-oriented training course (with Bildungsgutschein); tax-free and not offset against benefits",
+   "amount_note": "1,000 EUR for passing the Zwischenprüfung (or first part of a stretched exam) and 1,500 EUR for passing the Abschlussprüfung of a funded, qualification-oriented further training (SGB III, via Bildungsgutschein); tax-free. amount_max 2,500 = both prizes combined.",
    "is_automatic": false,
-   "application_url": "https://www.arbeitsagentur.de/vor-ort/bonn/weiterbildungspraemie",
+   "application_url": "https://www.arbeitsagentur.de/karriere-und-weiterbildung/bildungsgutschein",
    "application_channel": "in_person",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -5457,9 +5457,9 @@
     "student_required": false,
     "admin_areas": []
    },
-   "source_url": "https://www.arbeitsagentur.de/vor-ort/bonn/weiterbildungspraemie",
-   "source_snippet": "Für das Bestehen einer Zwischenprüfung erhalten Sie 1.000,- €, für die Abschlussprüfung 1.500,- € steuerfrei.",
-   "last_verified_at": "2026-08-12",
+   "source_url": "https://www.arbeitsagentur.de/karriere-und-weiterbildung/bildungsgutschein",
+   "source_snippet": "Wenn Sie im Rahmen einer geförderten abschlussorientierten Weiterbildung die Zwischenprüfung ... bestehen, haben Sie unter bestimmten Voraussetzungen Anspruch auf eine Prämie von 1.000 Euro. Die Prämie für das Bestehen der Abschlussprüfung beträgt 1.500 Euro.",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -5480,7 +5480,7 @@
    "application_url": "https://www.ihk.de/schwaben/produktmarken/aus-und-weiterbildung/weiterbildung/meisterbonus-3760514",
    "application_channel": "post",
    "deadline_type": "rolling",
-   "deadline_note": null,
+   "deadline_note": "Exam result must not be older than 2 years; application via the competent chamber (payout on two cut-off dates per year). Scheme expires for exam results determined after 31 Dec 2027 (extension to be decided later).",
    "procedure_steps": [
     {
      "step": 1,
@@ -5520,8 +5520,8 @@
     ]
    },
    "source_url": "https://www.ihk.de/schwaben/produktmarken/aus-und-weiterbildung/weiterbildung/meisterbonus-3760514",
-   "source_snippet": "3.000 Euro bei erfolgreicher Weiterbildungsprüfung ab 01. Januar 2023",
-   "last_verified_at": "2026-08-12",
+   "source_snippet": "3.000 Euro bei erfolgreicher Weiterbildungsprüfung ab 01. Januar 2023 ... Der Hauptwohnsitz oder Beschäftigungsort des/r Begünstigten muss ... in Bayern liegen.",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -5542,7 +5542,7 @@
    "application_url": "https://www.ihk.de/erfurt/bildung/pruefungen/fortbildungspruefungen/meisterbonus-5874760",
    "application_channel": "post",
    "deadline_type": "rolling",
-   "deadline_note": null,
+   "deadline_note": "2,000 EUR for exams from 1 Jan 2026 (1,000 EUR before). Exam after 01.01.2023 and not older than 2 years; apply to an IHK in Thüringen; payout twice a year.",
    "procedure_steps": [
     {
      "step": 1,
@@ -5582,8 +5582,8 @@
     ]
    },
    "source_url": "https://www.ihk.de/erfurt/bildung/pruefungen/fortbildungspruefungen/meisterbonus-5874760",
-   "source_snippet": "2.000 Euro, für Abschlüsse mit einer Prüfung ab dem 1. Januar 2026",
-   "last_verified_at": "2026-08-12",
+   "source_snippet": "1000,- Euro, für Abschlüsse mit einer Prüfung vor dem 1. Januar 2026; 2.000 Euro, für Abschlüsse mit einer Prüfung ab dem 1. Januar 2026.",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -5637,7 +5637,7 @@
    },
    "source_url": "https://wirtschaft.hessen.de/hessenpass-mobil",
    "source_snippet": "Sie können ... ein vergünstigtes Abonnement des Deutschland-Tickets für derzeit 44 Euro pro Monat [kaufen], für alle, die in Hessen wohnen und bestimmte Sozialleistungen beziehen.",
-   "last_verified_at": "2026-08-12",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -5691,7 +5691,7 @@
    },
    "source_url": "https://www.stuttgart.de/organigramm/leistungen/sozialticket-beantragen",
    "source_snippet": "Das Stuttgarter SozialTicket ist ein Angebot der Landeshauptstadt Stuttgart für die Inhaberinnen und Inhaber einer Bonuscard + Kultur. Mit dem SozialTicket verringert sich der Preis für bestimmte Zeit-Tickets des Verkehrs- und Tarifverbunds Stuttgart (VVS).",
-   "last_verified_at": "2026-08-12",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -5707,7 +5707,7 @@
    "amount_max": null,
    "amount_currency": "EUR",
    "amount_period": "annual",
-   "amount_note": "Free or discounted admission to over 140 attractions (state castles, gardens, museums and private partners) with the annual voucher card",
+   "amount_note": "Free or discounted admission with a yearly voucher card: currently up to 119 times to state attractions (castles, gardens, museums) and up to 69 times to private attractions in Baden-Württemberg. Income-independent; also usable by up to 4 additional adults registered in the pass.",
    "is_automatic": false,
    "application_url": "https://www.service-bw.de/zufi/leistungen/173",
    "application_channel": "in_person",
@@ -5751,8 +5751,8 @@
     ]
    },
    "source_url": "https://sozialministerium.baden-wuerttemberg.de/de/soziales/familie/leistungen/landesfamilienpass",
-   "source_snippet": "Der Landesfamilienpass ist eine freiwillige und einkommensunabhängig Leistung des Landes, die es seit dem Jahr 1979 gibt.",
-   "last_verified_at": "2026-08-12",
+   "source_snippet": "Mit dem Landesfamilienpass und der dazugehörigen jährlich neuen Gutscheinkarte können Familien derzeit bis zu 119 Mal kostenlos oder zu einem ermäßigten Eintritt zahlreiche staatliche Attraktionen ... und bis zu 69 Mal private Attraktionen ... besuchen.",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -5770,10 +5770,10 @@
    "amount_period": "annual",
    "amount_note": "Discounts on DVB public transport fares and on the Deutschlandticket, reduced admission to culture and sports facilities, free library and legal advice services for low-income Dresden residents",
    "is_automatic": false,
-   "application_url": "https://www.dresden.de/dresden-pass",
+   "application_url": "https://forms.dresden.de/lhd/form/provide/2702/",
    "application_channel": "online",
    "deadline_type": "rolling",
-   "deadline_note": null,
+   "deadline_note": "Valid from the date of issue for the duration of the qualifying benefit, usually one year; report changes immediately.",
    "procedure_steps": [
     {
      "step": 1,
@@ -5807,9 +5807,9 @@
     "income_source_url": "https://www.dresden.de/de/rathaus/dienstleistungen/dresdenpass_d115.php",
     "income_confidence": "high"
    },
-   "source_url": "https://www.dresden.de/dresden-pass",
-   "source_snippet": "Der Dresden-Pass ermöglicht Einwohnern mit geringem Einkommen den kostengünstigeren Besuch kultureller Einrichtungen, Ermäßigungen bei der Nutzung der Leistungen der Dresdner Verkehrsbetriebe AG (DVB AG) und bei kommunalen Leistungen.",
-   "last_verified_at": "2026-08-12",
+   "source_url": "https://www.dresden.de/de/rathaus/dienstleistungen/dresdenpass_d115.php",
+   "source_snippet": "Einwohnerinnen und Einwohner mit Hauptwohnsitz in Dresden, die eine der folgenden Sozialleistungen beziehen: Hilfe zum Lebensunterhalt oder Grundsicherung ..., Bürgergeld oder Sozialgeld, Wohngeld, Kinderzuschlag, ... Asyl",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified",
    "income_reviewed_at": "2026-08-13"
   },
@@ -5826,7 +5826,7 @@
    "amount_max": null,
    "amount_currency": "EUR",
    "amount_period": "monthly",
-   "amount_note": "Surplus food distributed free of charge or for a small contribution at over 970 local Tafel outlets",
+   "amount_note": "Surplus food distributed free of charge or for a small contribution at over 980 local Tafel outlets (about 1.5 million people served per year); local Tafeln set their own need criteria.",
    "is_automatic": false,
    "application_url": "https://www.tafel.de",
    "application_channel": "in_person",
@@ -5854,15 +5854,15 @@
     "income_note": "For people with low income (typically benefit recipients); local Tafeln apply their own need criteria.",
     "requires_children": false,
     "gender": "any",
-    "nationality": "any_resident",
+    "nationality": "any",
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
     "admin_areas": []
    },
    "source_url": "https://www.tafel.de",
-   "source_snippet": "They collect qualitatively good food that would otherwise land in the garbage and distribute it for free or a symbolic amount to socially and economically disadvantaged people.",
-   "last_verified_at": "2026-08-12",
+   "source_snippet": "Über 980 Tafeln, eine Mission: Lebensmittel retten und armutsbetroffenen Menschen helfen. ... unabhängig von Nationalität, kultureller Herkunft, Religion, Geschlecht oder Alter.",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -5919,7 +5919,179 @@
    },
    "source_url": "https://www.deutsche-rentenversicherung.de/DRV/DE/Rente/Allgemeine-Informationen/Rentenarten-und-Leistungen/Renten-an-Hinterbliebene/renten-an-hinterbliebene_node",
    "source_snippet": "Haben Sie neben Ihrer Witwen-, Witwer- oder Erziehungsrente weitere Einkünfte, werden diese oberhalb eines bestimmten Freibetrags zu 40 Prozent auf Ihre Rente angerechnet.",
-   "last_verified_at": "2026-08-12",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "fes-stipendium-auslaender",
+   "name_local": "FES-Stipendium Grundförderung für Ausländer:innen",
+   "name_en": "Friedrich-Ebert-Stiftung scholarship for international students already studying in Germany",
+   "admin_level": "national",
+   "admin_area": null,
+   "funder": "Friedrich-Ebert-Stiftung (FES)",
+   "category": "education",
+   "benefit_type": "cash_monthly",
+   "amount_min": 992,
+   "amount_max": 992,
+   "amount_currency": "EUR",
+   "amount_period": "monthly",
+   "amount_note": "EUR 992 a month; health insurance costs are covered; extra EUR 255 a month for scholarship holders with children; not repayable",
+   "is_automatic": false,
+   "application_url": "https://www.fes.de/studienfoerderung/bewerbung",
+   "application_channel": "online",
+   "deadline_type": "annual",
+   "deadline_note": "Master's: before or at the start of the first semester (30 November for winter semester, 31 May for summer semester); Bachelor/Diploma/State Exams: after the first semester and up to three semesters before the end of standard study time",
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Apply online through the FES application portal",
+     "url": "https://www.fes.de/studienfoerderung/bewerbung"
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "Proof of enrolment at a German university",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Grades/transcripts",
+     "mandatory": true,
+     "note": null
+    }
+   ],
+   "eligibility": {
+    "statuses": [
+     "student"
+    ],
+    "age_min": null,
+    "age_max": null,
+    "income_annual_max": null,
+    "income_note": "Not income-tested; selection by very good German, above-average grades and civic engagement. Open to foreign nationals already studying at a German state or state-recognised university.",
+    "requires_children": false,
+    "nationality": "any_resident",
+    "residency_months_min": null,
+    "housing_tenure": null,
+    "student_required": true,
+    "admin_areas": [],
+    "gender": "any"
+   },
+   "source_url": "https://www.fes.de/studienfoerderung/stipendium/grundfoerderung-fuer-auslaender-innen",
+   "source_snippet": "bereits an einer deutschen, staatlichen oder staatlich anerkannten Hochschule oder Fachhochschule studieren",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "gkv-studententarif-auslaendische-studierende",
+   "name_local": "Studentischer Krankenversicherungstarif",
+   "name_en": "Statutory health insurance student rate for international students under 30",
+   "admin_level": "national",
+   "admin_area": null,
+   "funder": "Statutory health insurers (GKV), e.g. TK",
+   "category": "health",
+   "benefit_type": "discount",
+   "amount_min": 120,
+   "amount_max": 130,
+   "amount_currency": "EUR",
+   "amount_period": "monthly",
+   "amount_note": "Reduced student rate of about EUR 120-130 a month; standard contribution applies from age 30 even if still studying",
+   "is_automatic": false,
+   "application_url": "https://www.daad.de/en/studying-in-germany/living-in-germany/health-insurance/",
+   "application_channel": "online",
+   "deadline_type": "none",
+   "deadline_note": null,
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Choose a statutory health insurer and apply for the student rate with your enrolment certificate",
+     "url": "https://www.daad.de/en/studying-in-germany/living-in-germany/health-insurance/"
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "Enrolment certificate",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Passport/residence permit",
+     "mandatory": true,
+     "note": null
+    }
+   ],
+   "eligibility": {
+    "statuses": [
+     "student"
+    ],
+    "age_min": null,
+    "age_max": 29,
+    "income_annual_max": null,
+    "income_note": "Not income-tested. Health insurance is compulsory in Germany; student rate applies under age 30.",
+    "requires_children": false,
+    "nationality": "any_resident",
+    "residency_months_min": null,
+    "housing_tenure": null,
+    "student_required": true,
+    "admin_areas": [],
+    "gender": "any"
+   },
+   "source_url": "https://www.daad.de/en/studying-in-germany/living-in-germany/health-insurance/",
+   "source_snippet": "If you are under 30 years of age, you will profit from a reduced student rate of about 120-130 euros per month",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "studierendenwerk-wohnheimplatz",
+   "name_local": "Wohnheimplatz beim Studierendenwerk",
+   "name_en": "Studierendenwerk student dormitory places (international students)",
+   "admin_level": "national",
+   "admin_area": null,
+   "funder": "Studierendenwerke (Deutsches Studierendenwerk)",
+   "category": "housing",
+   "benefit_type": "discount",
+   "amount_min": null,
+   "amount_max": null,
+   "amount_currency": "EUR",
+   "amount_period": "monthly",
+   "amount_note": "Average gross warm rent EUR 305.52 a month in Studierendenwerk dormitories, the most affordable housing option outside the parental home; over 40% of international students live in dormitories",
+   "is_automatic": false,
+   "application_url": "https://www.studierendenwerke.de/themen/wohnen/studierendenwohnheime",
+   "application_channel": "online",
+   "deadline_type": "rolling",
+   "deadline_note": "Apply early through your local Studierendenwerk",
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Find your local Studierendenwerk and apply for a dormitory place",
+     "url": "https://www.studierendenwerke.de/themen/wohnen/studierendenwohnheime"
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "Admission or enrolment proof",
+     "mandatory": true,
+     "note": null
+    }
+   ],
+   "eligibility": {
+    "statuses": [
+     "student"
+    ],
+    "age_min": null,
+    "age_max": null,
+    "income_annual_max": null,
+    "income_note": "Not income-tested.",
+    "requires_children": false,
+    "nationality": "any_resident",
+    "residency_months_min": null,
+    "housing_tenure": "student_housing",
+    "student_required": true,
+    "admin_areas": [],
+    "gender": "any"
+   },
+   "source_url": "https://www.studierendenwerke.de/themen/wohnen/studierendenwohnheime",
+   "source_snippet": "Auch internationale Studierende sind besonders auf eine günstige Unterbringung angewiesen.",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   }
  ]

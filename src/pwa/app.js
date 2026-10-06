@@ -115,6 +115,9 @@ const QUESTIONS = [
     options: [
       ['citizen_or_pr', 'Citizen or permanent resident'],
       ['eu_eea', 'EU / EEA national'],
+      ['work_visa', 'Work visa or permit'],
+      ['student_visa', 'Student visa'],
+      ['refugee_or_protected', 'Refugee or protected status'],
       ['other_legal', 'Other legal residence'],
       [null, 'Rather not say'],
     ],

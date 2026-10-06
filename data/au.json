@@ -16,7 +16,7 @@
    "amount_min": null,
    "amount_max": null,
    "amount_currency": "AUD",
-   "amount_period": "monthly",
+   "amount_period": "fortnightly",
    "amount_note": "Fortnightly income support; rate depends on age, partner status and children (single no children rate is a few hundred dollars per week; indexed March and September). Income and assets tested.",
    "is_automatic": false,
    "application_url": "https://www.servicesaustralia.gov.au/jobseeker-payment",
@@ -76,7 +76,7 @@
    },
    "source_url": "https://www.servicesaustralia.gov.au/jobseeker-payment",
    "source_snippet": "Main income support payment for people aged 22 to Age Pension age who are looking for work or temporarily unable to work.",
-   "last_verified_at": "2026-08-12",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -91,7 +91,7 @@
    "amount_min": null,
    "amount_max": null,
    "amount_currency": "AUD",
-   "amount_period": "monthly",
+   "amount_period": "fortnightly",
    "amount_note": "Fortnightly payment for young jobseekers (16-21), full-time students (18-24) and apprentices (16-24); rate depends on age, living arrangements and dependency status.",
    "is_automatic": false,
    "application_url": "https://www.servicesaustralia.gov.au/youth-allowance",
@@ -150,7 +150,7 @@
    },
    "source_url": "https://www.servicesaustralia.gov.au/youth-allowance",
    "source_snippet": "Income support for young people who are studying, training or looking for work.",
-   "last_verified_at": "2026-08-12",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified",
    "income_reviewed_at": "2026-08-13"
   },
@@ -166,7 +166,7 @@
    "amount_min": null,
    "amount_max": null,
    "amount_currency": "AUD",
-   "amount_period": "monthly",
+   "amount_period": "fortnightly",
    "amount_note": "Fortnightly income support for full-time students and apprentices aged 25 or over; income and assets tested.",
    "is_automatic": false,
    "application_url": "https://www.servicesaustralia.gov.au/austudy",
@@ -220,8 +220,8 @@
    },
    "source_url": "https://www.servicesaustralia.gov.au/austudy",
    "source_snippet": "Financial help if you are 25 or older and studying or undertaking an Australian Apprenticeship full time.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "abstudy",
@@ -235,7 +235,7 @@
    "amount_min": null,
    "amount_max": null,
    "amount_currency": "AUD",
-   "amount_period": "monthly",
+   "amount_period": "fortnightly",
    "amount_note": "Fortnightly living allowance plus supplements for Aboriginal and Torres Strait Islander students and apprentices; rates vary by age, study load and circumstances.",
    "is_automatic": false,
    "application_url": "https://www.servicesaustralia.gov.au/abstudy",
@@ -289,8 +289,8 @@
    },
    "source_url": "https://www.servicesaustralia.gov.au/abstudy",
    "source_snippet": "Help with costs for Aboriginal and Torres Strait Islander Australians who are studying or undertaking an apprenticeship.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "parenting-payment",
@@ -304,7 +304,7 @@
    "amount_min": null,
    "amount_max": null,
    "amount_currency": "AUD",
-   "amount_period": "monthly",
+   "amount_period": "fortnightly",
    "amount_note": "Fortnightly income support for principal carers: single parents with a youngest child under 14, partnered parents with a youngest child under 6; income and assets tested.",
    "is_automatic": false,
    "application_url": "https://www.servicesaustralia.gov.au/parenting-payment",
@@ -358,7 +358,7 @@
    },
    "source_url": "https://www.servicesaustralia.gov.au/parenting-payment",
    "source_snippet": "Principal carer of a child under 14 if single (or under 6 if partnered), meeting residence, income and assets rules.",
-   "last_verified_at": "2026-08-12",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -373,8 +373,8 @@
    "amount_min": null,
    "amount_max": null,
    "amount_currency": "AUD",
-   "amount_period": "monthly",
-   "amount_note": "Fortnightly pension from Age Pension age (67); full single rate is around $1,100+ per fortnight including supplements; income and assets tested and indexed twice yearly.",
+   "amount_period": "fortnightly",
+   "amount_note": "Fortnightly pension from Age Pension age (67); maximum single rate quoted by Services Australia is $1,237.70 per fortnight including supplements; income and assets tested and indexed March and September.",
    "is_automatic": false,
    "application_url": "https://www.servicesaustralia.gov.au/age-pension",
    "application_channel": "online",
@@ -427,7 +427,7 @@
    },
    "source_url": "https://www.servicesaustralia.gov.au/residence-rules-for-age-pension?context=22526",
    "source_snippet": "To get Age Pension you generally need to have been an Australian resident for at least 10 years in total. For at least 5 of these years, there must be no break in your residence.",
-   "last_verified_at": "2026-08-12",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -442,7 +442,7 @@
    "amount_min": null,
    "amount_max": null,
    "amount_currency": "AUD",
-   "amount_period": "monthly",
+   "amount_period": "fortnightly",
    "amount_note": "Fortnightly payment for people with a permanent physical, intellectual or psychiatric condition that stops them working; assessed against Impairment Tables; income and assets tested.",
    "is_automatic": false,
    "application_url": "https://www.servicesaustralia.gov.au/disability-support-pension",
@@ -486,7 +486,7 @@
     "income_note": "Income and assets tested; 10-year qualifying residence generally applies",
     "requires_children": false,
     "nationality": "citizen_or_pr",
-    "residency_months_min": null,
+    "residency_months_min": 120,
     "housing_tenure": null,
     "student_required": false,
     "admin_areas": [],
@@ -494,8 +494,8 @@
    },
    "source_url": "https://www.servicesaustralia.gov.au/disability-support-pension",
    "source_snippet": "Financial support if you have a permanent physical, intellectual or psychiatric condition that stops you from working.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "carer-payment",
@@ -509,7 +509,7 @@
    "amount_min": null,
    "amount_max": null,
    "amount_currency": "AUD",
-   "amount_period": "monthly",
+   "amount_period": "fortnightly",
    "amount_note": "Fortnightly income support for people giving constant care to someone with a disability, severe illness or who is frail aged; income and assets tested.",
    "is_automatic": false,
    "application_url": "https://www.servicesaustralia.gov.au/carer-payment",
@@ -561,7 +561,7 @@
    },
    "source_url": "https://my.gov.au/en/services/health-and-disability/caring-for-someone/becoming-a-carer/government-support-for-carers/carer-payment",
    "source_snippet": "To get this payment, you must: care for someone who needs constant care, which stops you from working full time; care for someone who'll have these needs for at least 6 months; be under the income and assets test limits; meet the residence rules.",
-   "last_verified_at": "2026-08-12",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -573,11 +573,11 @@
    "funder": "Services Australia (Centrelink)",
    "category": "income_support",
    "benefit_type": "cash_monthly",
-   "amount_min": null,
-   "amount_max": 160,
+   "amount_min": 162.6,
+   "amount_max": 162.6,
    "amount_currency": "AUD",
    "amount_period": "fortnightly",
-   "amount_note": "Fortnightly supplement (around $160 per fortnight, indexed) for people who provide daily care at home to someone with a disability or medical condition; income tested only, no assets test.",
+   "amount_note": "$162.60 per fortnight (adjusted each 1 January); not part of taxable income; Carer Supplement and Child Disability Assistance Payment may be paid automatically each year; income tested only (no assets test).",
    "is_automatic": false,
    "application_url": "https://www.servicesaustralia.gov.au/carer-allowance",
    "application_channel": "online",
@@ -616,20 +616,20 @@
     "statuses": [],
     "age_min": null,
     "age_max": null,
-    "income_annual_max": null,
-    "income_note": "Income tested (high threshold); not assets tested",
+    "income_annual_max": 250000,
+    "income_note": "Your and your partner's combined adjusted taxable income must be less than $250,000 per financial year (before tax); no assets test; no income test for the person cared for.",
     "requires_children": false,
-    "nationality": "any_resident",
+    "nationality": "citizen_or_pr",
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.servicesaustralia.gov.au/carer-allowance",
-   "source_snippet": "A supplementary payment for carers who provide additional daily care and attention to someone with a disability or medical condition.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www.servicesaustralia.gov.au/how-much-carer-allowance-you-can-get",
+   "source_snippet": "Carer Allowance is $162.60 each fortnight.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "special-benefit",
@@ -643,7 +643,7 @@
    "amount_min": null,
    "amount_max": null,
    "amount_currency": "AUD",
-   "amount_period": "monthly",
+   "amount_period": "fortnightly",
    "amount_note": "Fortnightly payment of last resort for people in severe financial hardship who are not eligible for any other Centrelink payment; rate comparable to JobSeeker.",
    "is_automatic": false,
    "application_url": "https://www.servicesaustralia.gov.au/special-benefit",
@@ -693,10 +693,10 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.servicesaustralia.gov.au/special-benefit",
-   "source_snippet": "Help if you are in severe financial need and cannot get any other income support payment from us.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www.servicesaustralia.gov.au/who-can-get-special-benefit",
+   "source_snippet": "you hold an approved temporary visa, or you are an Australian citizen or Australian resident younger than 16",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "crisis-payment",
@@ -756,9 +756,9 @@
     "gender": "any"
    },
    "source_url": "https://www.servicesaustralia.gov.au/crisis-payment",
-   "source_snippet": "A one-off payment if you have experienced an extreme circumstance and are in severe financial hardship.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_snippet": "It's equal to a week's pay at the maximum basic rate of your income support payment or ABSTUDY Living Allowance.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "advance-payment",
@@ -775,7 +775,7 @@
    "amount_period": "one_off",
    "amount_note": "Lump-sum advance of a future Centrelink entitlement (minimum and maximum set by payment type), repaid by fortnightly deductions over 13 fortnights; no interest.",
    "is_automatic": false,
-   "application_url": "https://www.servicesaustralia.gov.au/advance-payments",
+   "application_url": "https://www.servicesaustralia.gov.au/advance-payment",
    "application_channel": "online",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -812,10 +812,10 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.servicesaustralia.gov.au/advance-payments",
-   "source_snippet": "You can ask to get part of your income support payment in advance; we recover it by deductions from future payments.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www.servicesaustralia.gov.au/advance-payment",
+   "source_snippet": "You may get part of your income support payment or Family Tax Benefit (Part A) early. This is an advance payment. You pay it back later out of your payments",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "mobility-allowance",
@@ -895,7 +895,7 @@
    "amount_min": null,
    "amount_max": null,
    "amount_currency": "AUD",
-   "amount_period": "monthly",
+   "amount_period": "fortnightly",
    "amount_note": "Fortnightly support for farmers and their partners in financial hardship, paid at a rate comparable to JobSeeker, for up to 4 years in each 10-year period, with activity and case-management support.",
    "is_automatic": false,
    "application_url": "https://www.servicesaustralia.gov.au/farm-household-allowance",
@@ -954,8 +954,8 @@
    },
    "source_url": "https://www.servicesaustralia.gov.au/farm-household-allowance",
    "source_snippet": "Support for eligible farmers and their partners experiencing financial hardship.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "family-tax-benefit-part-a",
@@ -969,10 +969,10 @@
    "amount_min": null,
    "amount_max": null,
    "amount_currency": "AUD",
-   "amount_period": "monthly",
+   "amount_period": "fortnightly",
    "amount_note": "Fortnightly per-child payment; rate depends on child age, number of children and family income; supplement paid after end-of-year reconciliation.",
    "is_automatic": false,
-   "application_url": "https://www.servicesaustralia.gov.au/family-tax-benefit-part-a",
+   "application_url": "https://www.servicesaustralia.gov.au/family-tax-benefit",
    "application_channel": "online",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -1019,17 +1019,17 @@
     "income_annual_max": null,
     "income_note": "Income tested; payment tapers with family adjusted taxable income",
     "requires_children": true,
-    "nationality": "any_resident",
+    "nationality": "citizen_or_pr",
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.servicesaustralia.gov.au/family-tax-benefit-part-a",
-   "source_snippet": "A two-part payment that helps with the cost of raising children; Part A is paid per child depending on family circumstances.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www.servicesaustralia.gov.au/residence-rules-for-family-tax-benefit",
+   "source_snippet": "If you’ve recently arrived as a resident in Australia, you may have to wait one year to get Family Tax Benefit Part A.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "family-tax-benefit-part-b",
@@ -1043,10 +1043,10 @@
    "amount_min": null,
    "amount_max": null,
    "amount_currency": "AUD",
-   "amount_period": "monthly",
+   "amount_period": "fortnightly",
    "amount_note": "Fortnightly per-family payment for single-income families and single parents; rate depends on age of youngest child; no newly arrived residents waiting period.",
    "is_automatic": false,
-   "application_url": "https://www.servicesaustralia.gov.au/family-tax-benefit-part-b",
+   "application_url": "https://www.servicesaustralia.gov.au/family-tax-benefit",
    "application_channel": "online",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -1083,17 +1083,17 @@
     "income_annual_max": null,
     "income_note": "Income tested on primary earner and second earner income",
     "requires_children": true,
-    "nationality": "any_resident",
+    "nationality": "citizen_or_pr",
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.servicesaustralia.gov.au/family-tax-benefit-part-b",
-   "source_snippet": "Extra help for single parents and families with one main income, paid per family based on the age of the youngest child.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www.servicesaustralia.gov.au/residence-rules-for-family-tax-benefit",
+   "source_snippet": "There is no waiting period for Family Tax Benefit Part B.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "child-care-subsidy",
@@ -1157,16 +1157,16 @@
     "income_annual_max": null,
     "income_note": "Income tested; subsidy percentage tapers from family income of around $85,000, cutting out above around $535,000",
     "requires_children": true,
-    "nationality": "any_resident",
+    "nationality": "citizen_or_pr",
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.servicesaustralia.gov.au/child-care-subsidy",
-   "source_snippet": "To get Child Care Subsidy (CCS) you must: care for a child 13 or younger who's not attending secondary school, unless an exemption applies; use an approved child care service; be responsible for paying the child care fees; meet residence and immunisation requirements.",
-   "last_verified_at": "2026-08-12",
+   "source_url": "https://www.servicesaustralia.gov.au/residence-rules-for-child-care-subsidy",
+   "source_snippet": "On the day you claim, you or your partner must be living in Australia and also have one of the following: Australian citizenship, a permanent visa, a Special Category visa, a certain temporary visa",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -1178,10 +1178,10 @@
    "funder": "Services Australia (Centrelink)",
    "category": "family",
    "benefit_type": "cash_monthly",
-   "amount_min": null,
-   "amount_max": null,
+   "amount_min": 1004.7,
+   "amount_max": 1004.7,
    "amount_currency": "AUD",
-   "amount_period": "monthly",
+   "amount_period": "weekly",
    "amount_note": "Paid at the National Minimum Wage ($1,004.70 per week before tax from 1 July 2026); up to 130 days (26 weeks) per family for children born or adopted from 1 July 2026, plus a 12% ATO superannuation contribution for children from 1 July 2025.",
    "is_automatic": false,
    "application_url": "https://www.servicesaustralia.gov.au/parental-leave-pay",
@@ -1245,7 +1245,7 @@
    },
    "source_url": "https://www.servicesaustralia.gov.au/about-paid-parental-leave-scheme?context=23121",
    "source_snippet": "This payment is taxable and paid at the rate of the National Minimum Wage. From 1 July 2026, the rate of Parental Leave Pay is $1,004.70 per week, before tax.",
-   "last_verified_at": "2026-08-12",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified",
    "income_reviewed_at": "2026-08-13"
   },
@@ -1259,10 +1259,10 @@
    "category": "family",
    "benefit_type": "cash_one_off",
    "amount_min": null,
-   "amount_max": null,
+   "amount_max": 2125.76,
    "amount_currency": "AUD",
    "amount_period": "one_off",
-   "amount_note": "A small upfront lump sum plus a fortnightly supplement for up to 13 weeks for families eligible for Family Tax Benefit Part A who are not receiving Parental Leave Pay for the same child.",
+   "amount_note": "Newborn Upfront Payment is a lump sum of $708 per child; Newborn Supplement is added to Family Tax Benefit Part A for up to 13 weeks; maximum total for a first child is $2,125.76 over the 13 weeks. Not payable if you get Parental Leave Pay for the same child.",
    "is_automatic": false,
    "application_url": "https://www.servicesaustralia.gov.au/newborn-upfront-payment-and-newborn-supplement",
    "application_channel": "online",
@@ -1296,17 +1296,17 @@
     "income_annual_max": null,
     "income_note": "Linked to Family Tax Benefit Part A eligibility",
     "requires_children": true,
-    "nationality": "any_resident",
+    "nationality": "citizen_or_pr",
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.servicesaustralia.gov.au/newborn-upfront-payment-and-newborn-supplement",
-   "source_snippet": "A lump sum and an increase to your Family Tax Benefit Part A for up to 13 weeks to help with the upfront costs of a newborn or adopted child.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www.servicesaustralia.gov.au/how-much-newborn-upfront-payment-and-newborn-supplement-you-can-get?context=22186",
+   "source_snippet": "This is a lump sum payment of $708 per child. For your first child, the maximum total amount you can receive is $2,125.76 for the 13 weeks.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "double-orphan-pension",
@@ -1320,7 +1320,7 @@
    "amount_min": null,
    "amount_max": null,
    "amount_currency": "AUD",
-   "amount_period": "monthly",
+   "amount_period": "fortnightly",
    "amount_note": "Small fortnightly payment for carers of children whose parents have both died, or one has died and the other cannot care for them; not income or assets tested.",
    "is_automatic": false,
    "application_url": "https://www.servicesaustralia.gov.au/double-orphan-pension",
@@ -1364,8 +1364,8 @@
    },
    "source_url": "https://www.servicesaustralia.gov.au/double-orphan-pension",
    "source_snippet": "Help with the costs of caring for a child whose parents cannot care for them or have died; the carer must care for the child at least 35% of the time.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "low-income-health-care-card",
@@ -1429,7 +1429,7 @@
    },
    "source_url": "https://www.servicesaustralia.gov.au/low-income-health-care-card",
    "source_snippet": "A concession card to get cheaper health care and medicines if your income is below the limit.",
-   "last_verified_at": "2026-08-12",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified",
    "income_reviewed_at": "2026-08-13"
   },
@@ -1484,8 +1484,8 @@
    },
    "source_url": "https://www.servicesaustralia.gov.au/pensioner-concession-card",
    "source_snippet": "Get cheaper health care, medicines and some discounts if you get certain payments from us.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "commonwealth-seniors-health-card",
@@ -1500,7 +1500,7 @@
    "amount_max": null,
    "amount_currency": "AUD",
    "amount_period": "annual",
-   "amount_note": "Concession card for self-funded retirees of Age Pension age with adjusted taxable income below the limit (around $99,025 single / $158,440 couple combined, indexed); gives cheaper PBS medicines and some concessions.",
+   "amount_note": "Concession card for self-funded retirees of Age Pension age who do not get an income support payment, with adjusted taxable income below the limit ($105,048 single / $168,076 couple combined); gives cheaper PBS medicines and some concessions.",
    "is_automatic": false,
    "application_url": "https://www.servicesaustralia.gov.au/commonwealth-seniors-health-card",
    "application_channel": "online",
@@ -1536,8 +1536,8 @@
     ],
     "age_min": 67,
     "age_max": null,
-    "income_annual_max": null,
-    "income_note": "Adjusted taxable income below the annual limit; not assets tested",
+    "income_annual_max": 105048,
+    "income_note": "Adjusted taxable income limits: $105,048 a year if single; $168,076 a year for couples; $210,096 a year for couples separated by illness, respite care or prison. Not assets tested (deeming applies to financial assets).",
     "requires_children": false,
     "nationality": "citizen_or_pr",
     "residency_months_min": null,
@@ -1546,10 +1546,10 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.servicesaustralia.gov.au/commonwealth-seniors-health-card",
-   "source_snippet": "A card for older Australians who do not get an income support payment, giving access to cheaper medicines and other concessions.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www.servicesaustralia.gov.au/income-test-for-commonwealth-seniors-health-card?context=21966",
+   "source_snippet": "Income limits for the Commonwealth Seniors Health Card: $105,048.00 a year if you’re single; $168,076.00 a year for couples",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "medicare-safety-net",
@@ -1564,7 +1564,7 @@
    "amount_max": null,
    "amount_currency": "AUD",
    "amount_period": "annual",
-   "amount_note": "Once annual out-of-pocket costs for out-of-hospital Medicare services pass a threshold (2026 concessional EMSN threshold around $811.80; general around $2,615.50), Medicare pays up to 80% of further out-of-pocket costs for the rest of the calendar year.",
+   "amount_note": "2026 Extended Medicare Safety Net thresholds: general $2,699.10; concessional card holders and Family Tax Benefit Part A families $861.20. Once reached, Medicare pays 80% of out-of-pocket costs (up to benefit caps) for out-of-hospital services for the rest of the calendar year.",
    "is_automatic": false,
    "application_url": "https://www.servicesaustralia.gov.au/medicare-safety-nets",
    "application_channel": "online",
@@ -1601,16 +1601,16 @@
     "income_annual_max": null,
     "income_note": "Lower threshold for concession card holders and Family Tax Benefit Part A families",
     "requires_children": false,
-    "nationality": "any_resident",
+    "nationality": "citizen_or_pr",
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.servicesaustralia.gov.au/medicare-safety-nets",
-   "source_snippet": "Once your annual out-of-pocket medical costs reach a threshold, Medicare gives you a higher benefit for the rest of the calendar year.",
-   "last_verified_at": "2026-08-12",
+   "source_url": "https://www.servicesaustralia.gov.au/what-are-medicare-safety-nets-thresholds?context=22001",
+   "source_snippet": "Extended Medicare Safety Net (EMSN) - General $2699.10; Concessional and Family Tax Benefit Part A $861.20",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -1626,7 +1626,7 @@
    "amount_max": null,
    "amount_currency": "AUD",
    "amount_period": "annual",
-   "amount_note": "After spending the annual threshold on PBS prescriptions (indexed each 1 January), general patients pay only the concessional co-payment and concession card holders get PBS medicines free for the rest of the calendar year.",
+   "amount_note": "From 1 January 2026 the general patient Safety Net threshold is $1,748.20; after reaching it general patients pay $7.70 per PBS script for the rest of the calendar year (general co-payment is up to $25.00). Concessional threshold is $277.20, after which concession card holders pay nil.",
    "is_automatic": false,
    "application_url": "https://www.pbs.gov.au/info/about-the-pbs",
    "application_channel": "in_person",
@@ -1670,10 +1670,10 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.pbs.gov.au/info/about-the-pbs",
-   "source_snippet": "The PBS Safety Net reduces the cost of prescription medicines once you or your family spend a certain amount on PBS medicines in a calendar year.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www.pbs.gov.au/healthpro/explanatory-notes/section1/Section_1_5_Explanatory_Notes",
+   "source_snippet": "From 1 January 2026 the general patient Safety Net threshold is $1,748.20. ... pay the concessional co-payment amount of $7.70 plus any applicable premium for PBS benefits for the rest of that calendar year.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "child-dental-benefits-schedule",
@@ -1720,17 +1720,17 @@
     "income_annual_max": null,
     "income_note": "Family must receive a qualifying payment such as Family Tax Benefit Part A",
     "requires_children": true,
-    "nationality": "any_resident",
+    "nationality": "citizen_or_pr",
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.servicesaustralia.gov.au/child-dental-benefits-schedule",
-   "source_snippet": "Covers part or the full cost of some basic dental services for eligible children aged 0 to 17 whose family gets a qualifying payment.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www.servicesaustralia.gov.au/whats-covered-child-dental-benefits-schedule?context=22426",
+   "source_snippet": "You can claim up to $1,158 for each eligible child over 2 consecutive calendar years.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "ndis",
@@ -1796,7 +1796,7 @@
    },
    "source_url": "https://www.ndis.gov.au/applying/eligibility-requirements/what-are-ndis-eligibility-requirements",
    "source_snippet": "You must be aged from 0 to 64 years when you apply... You must be living in Australia and be either an Australian citizen, a permanent resident or a Protected Special Category visa holder.",
-   "last_verified_at": "2026-08-12",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -1808,11 +1808,11 @@
    "funder": "Services Australia (Centrelink)",
    "category": "health",
    "benefit_type": "cash_one_off",
-   "amount_min": null,
-   "amount_max": null,
+   "amount_min": 203,
+   "amount_max": 203,
    "amount_currency": "AUD",
    "amount_period": "annual",
-   "amount_note": "Small annual payment (around $190 per piece of equipment, indexed) to help with energy costs of essential medical equipment such as home dialysis, oxygen concentrators and ventilators.",
+   "amount_note": "$203.00 per year for heating or cooling used for medical needs and for each piece of eligible essential medical equipment.",
    "is_automatic": false,
    "application_url": "https://www.servicesaustralia.gov.au/essential-medical-equipment-payment",
    "application_channel": "online",
@@ -1856,10 +1856,10 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.servicesaustralia.gov.au/essential-medical-equipment-payment",
-   "source_snippet": "An annual payment to help with the extra costs of running essential medical equipment at home.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www.servicesaustralia.gov.au/who-can-get-essential-medical-equipment-payment-and-how-much-you-can-get?context=21831",
+   "source_snippet": "We'll pay you $203.00 per year for: heating or cooling used for medical needs; each piece of eligible essential medical equipment.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "continence-aids-payment-scheme",
@@ -1871,10 +1871,10 @@
    "category": "health",
    "benefit_type": "cash_one_off",
    "amount_min": null,
-   "amount_max": 700,
+   "amount_max": 739.4,
    "amount_currency": "AUD",
    "amount_period": "annual",
-   "amount_note": "Annual payment (around $700 per year, indexed) paid in instalments to help people aged 5 or over with permanent and severe incontinence buy continence products.",
+   "amount_note": "Up to $739.40 per person for 2026-27 (indexed annually), paid as an annual payment in July or bi-annually in July and January.",
    "is_automatic": false,
    "application_url": "https://www.servicesaustralia.gov.au/continence-aids-payment-scheme",
    "application_channel": "online",
@@ -1911,17 +1911,17 @@
     "income_annual_max": null,
     "income_note": "Not income tested",
     "requires_children": false,
-    "nationality": "any_resident",
+    "nationality": "citizen_or_pr",
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.servicesaustralia.gov.au/continence-aids-payment-scheme",
-   "source_snippet": "A payment to help eligible people who have permanent and severe incontinence meet some of the costs of continence products.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www.servicesaustralia.gov.au/how-much-you-can-get-continence-aids-payment-scheme?context=21826",
+   "source_snippet": "The 2026-27 payment rate for the Continence Aids Payment Scheme (CAPS) is up to $739.40 per person.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "hecs-help",
@@ -1989,7 +1989,7 @@
    },
    "source_url": "https://www.studyassist.gov.au/help-loans/hecs-help",
    "source_snippet": "HECS-HELP is a loan scheme that helps eligible Commonwealth supported students pay their student contribution amounts; repayments are made through the tax system once income reaches the threshold.",
-   "last_verified_at": "2026-08-12",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -2001,8 +2001,8 @@
    "funder": "Services Australia (Centrelink)",
    "category": "education",
    "benefit_type": "cash_one_off",
-   "amount_min": null,
-   "amount_max": null,
+   "amount_min": 3000,
+   "amount_max": 5000,
    "amount_currency": "AUD",
    "amount_period": "one_off",
    "amount_note": "One-off payment (up to $5,000 for students from outer regional and remote areas; $3,000 for inner regional) to help with relocation costs to start tertiary study in the year after finishing year 12.",
@@ -2061,7 +2061,7 @@
    },
    "source_url": "https://www.servicesaustralia.gov.au/tertiary-access-payment",
    "source_snippet": "A payment to help with the cost of moving from a regional or remote area for tertiary study straight after finishing year 12.",
-   "last_verified_at": "2026-08-12",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified",
    "income_reviewed_at": "2026-08-13"
   },
@@ -2074,11 +2074,11 @@
    "funder": "Services Australia (Centrelink)",
    "category": "education",
    "benefit_type": "cash_one_off",
-   "amount_min": null,
-   "amount_max": null,
+   "amount_min": 1349,
+   "amount_max": 1349,
    "amount_currency": "AUD",
-   "amount_period": "annual",
-   "amount_note": "Voluntary income-contingent loan of $1,201 (2025 rate, indexed) available up to twice a year for students on Youth Allowance, Austudy or ABSTUDY living allowance; repaid through the tax system.",
+   "amount_period": "one_off",
+   "amount_note": "Voluntary loan of $1,349 per loan period (January 2026 rate), available up to twice a year, for students getting Youth Allowance, Austudy or ABSTUDY Living Allowance; repaid through the tax system.",
    "is_automatic": false,
    "application_url": "https://www.servicesaustralia.gov.au/student-start-up-loan",
    "application_channel": "online",
@@ -2125,14 +2125,14 @@
     "gender": "any"
    },
    "source_url": "https://www.servicesaustralia.gov.au/student-start-up-loan",
-   "source_snippet": "A voluntary loan you can get up to twice a year if you are an eligible student; you pay it back through the tax system once you earn over the threshold.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_snippet": "The Student Start-up Loan is a voluntary $1349 loan. You can get the loan up to 2 times a year, once for each loan period.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "trade-support-loans",
-   "name_local": "Trade Support Loans",
-   "name_en": "Trade Support Loans",
+   "name_local": "Australian Apprenticeship Support Loans (AASL)",
+   "name_en": "Australian Apprenticeship Support Loans (AASL, formerly Trade Support Loans)",
    "admin_level": "national",
    "admin_area": null,
    "funder": "Australian Apprenticeships (Department of Employment and Workplace Relations)",
@@ -2142,9 +2142,9 @@
    "amount_max": null,
    "amount_currency": "AUD",
    "amount_period": "monthly",
-   "amount_note": "Income-contingent loans totalling up to around $26,000 (indexed) over the apprenticeship for apprentices in priority trade occupations, paid monthly; 20% discount on the amount owed for completing the apprenticeship; repaid via the tax system.",
+   "amount_note": "Interest-free loan of up to $27,048 (2026-27) paid in monthly instalments for apprentices in qualifications on the Australian Apprenticeship Priority List; 20% discount on the loan on completing the apprenticeship; repayments only above $69,528 income (2026-27); indexation capped at lower of WPI or CPI.",
    "is_automatic": false,
-   "application_url": "https://www.australianapprenticeships.gov.au/programs/trade-support-loans",
+   "application_url": "https://www.apprenticeships.gov.au/support-and-resources/financial-support-apprentices",
    "application_channel": "online",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -2188,9 +2188,9 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.australianapprenticeships.gov.au/",
-   "source_snippet": "Australian Apprentices may be eligible to receive financial support through Trade Support Loans, with a 20 per cent discount applied if apprentices successfully complete the apprenticeship.",
-   "last_verified_at": "2026-08-12",
+   "source_url": "https://www.apprenticeships.gov.au/support-and-resources/financial-support-apprentices",
+   "source_snippet": "An Australian Apprenticeship Support Loan (AASL) is an interest free loan to help you meet day to day costs while undertaking your studies. You can borrow up to $27,048 (2026-2027), which is paid in monthly instalments.",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -2203,12 +2203,12 @@
    "category": "housing",
    "benefit_type": "cash_monthly",
    "amount_min": null,
-   "amount_max": 77,
+   "amount_max": 125.52,
    "amount_currency": "AUD",
    "amount_period": "weekly",
-   "amount_note": "Tapering allowance over 3 years for apprentices who have to move away from their parental home for the first time to start or stay in an apprenticeship (around $77/week in year 1, reducing in later years).",
+   "amount_note": "Weekly tax-free payment that reduces over three years: $125.52 per week in year 1, $94.14 in year 2, $47.07 in year 3; indexed each 1 July by March-quarter CPI.",
    "is_automatic": false,
-   "application_url": "https://www.australianapprenticeships.gov.au/",
+   "application_url": "https://www.apprenticeships.gov.au/support-and-resources/financial-support-apprentices",
    "application_channel": "in_person",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -2252,10 +2252,10 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.australianapprenticeships.gov.au/",
-   "source_snippet": "Australian Apprentices undertaking a Certificate II or higher-level qualification may be eligible for the Living Away from Home Allowance if they have to move away from their parental/guardian home for the first time.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www.apprenticeships.gov.au/support-and-resources/financial-support-apprentices",
+   "source_snippet": "In your first year of training, you would receive: $125.52 per week. In your second year of training, you would receive: $94.14 per week. In your third year of training, you would receive: $47.07 per week",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "workforce-australia",
@@ -2314,8 +2314,8 @@
    },
    "source_url": "https://www.workforceaustralia.gov.au/",
    "source_snippet": "Workforce Australia is the front door for government employment and skills services, helping Australians find and keep a job.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "disability-employment-services",
@@ -2332,10 +2332,10 @@
    "amount_period": "monthly",
    "amount_note": "Free specialist employment support for people with disability, injury or health condition, including resume help, job placement and ongoing workplace support.",
    "is_automatic": false,
-   "application_url": "https://www.workforceaustralia.gov.au/individuals/coaching-and-support",
+   "application_url": "https://www.workforceaustralia.gov.au/individuals/obligations/learn/get-started/inclusive-employment-australia",
    "application_channel": "in_person",
    "deadline_type": "rolling",
-   "deadline_note": null,
+   "deadline_note": "Ended: Disability Employment Services was replaced by Inclusive Employment Australia on 1 November 2025.",
    "procedure_steps": [
     {
      "step": 1,
@@ -2377,10 +2377,10 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.dss.gov.au/",
-   "source_snippet": "Disability Employment Services help people with disability, injury or health condition find and keep a job.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www.dss.gov.au/inclusive-employment-australia",
+   "source_snippet": "Inclusive Employment Australia replaced the Disability Employment Services program on 1 November 2025.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "transition-to-independent-living-allowance",
@@ -2397,7 +2397,7 @@
    "amount_period": "one_off",
    "amount_note": "One-off payment of up to $1,500 for young people aged 15 to 25 leaving formal out-of-home care, to help with the costs of moving to independent living.",
    "is_automatic": false,
-   "application_url": "https://www.servicesaustralia.gov.au/transition-independent-living-allowance",
+   "application_url": "https://www.servicesaustralia.gov.au/transition-to-independent-living-allowance",
    "application_channel": "online",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -2432,17 +2432,17 @@
     "income_annual_max": null,
     "income_note": "Not income tested",
     "requires_children": false,
-    "nationality": "any_resident",
+    "nationality": "citizen_or_pr",
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.dss.gov.au/",
-   "source_snippet": "A one-off payment of up to $1,500 to help young people transition from formal out-of-home care to independent living.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www.dss.gov.au/towards-adulthood/applying-transition-independent-living-allowance/eligibility-transition-independent-living-allowance",
+   "source_snippet": "be an Australian citizen or permanent Australian resident at the time of application for TILA; be aged between 15 and 25 years when applying",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "low-income-tax-offset",
@@ -2457,9 +2457,9 @@
    "amount_max": 700,
    "amount_currency": "AUD",
    "amount_period": "annual",
-   "amount_note": "Non-refundable tax offset of up to $700 for taxable incomes up to $37,500, tapering out at $66,667; applied automatically at tax return assessment.",
+   "amount_note": "Non-refundable tax offset of up to $700: $700 for taxable income up to $37,500; then reduces by 5 cents per $1 between $37,501 and $45,000; then by 1.5 cents per $1 up to $66,667, where it is nil. Applied automatically on assessment.",
    "is_automatic": true,
-   "application_url": "https://www.ato.gov.au/individuals-and-families",
+   "application_url": "https://www.ato.gov.au/individuals-and-families/income-deductions-offsets-and-records/tax-offsets/low-income-tax-offset",
    "application_channel": "automatic",
    "deadline_type": "annual",
    "deadline_note": null,
@@ -2494,10 +2494,10 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.ato.gov.au/",
-   "source_snippet": "The low income tax offset provides up to $700 for Australian resident taxpayers with taxable income up to $37,500, reducing to nil at $66,667.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www.ato.gov.au/individuals-and-families/income-deductions-offsets-and-records/tax-offsets/low-income-tax-offset",
+   "source_snippet": "You may be eligible for the low income tax offset (LITO) if you earn up to $66,667. $37,500 or less, you will get the maximum offset of $700",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "superannuation-co-contribution",
@@ -2514,7 +2514,7 @@
    "amount_period": "annual",
    "amount_note": "Government pays up to $500 (50 cents per $1 of personal after-tax contributions, up to $1,000) into the super fund of low and middle income earners; maximum for incomes up to around $47,488 (2025-26), phasing out around $62,488.",
    "is_automatic": true,
-   "application_url": "https://www.ato.gov.au/individuals-and-families/super-for-individuals-and-families/super/growing-and-keeping-track-of-your-super/how-to-save-more-in-your-super/government-super-contributions",
+   "application_url": "https://www.ato.gov.au/individuals-and-families/super-for-individuals-and-families/super/growing-and-keeping-track-of-your-super/how-to-save-more-in-your-super/government-super-contributions/super-co-contribution",
    "application_channel": "automatic",
    "deadline_type": "annual",
    "deadline_note": null,
@@ -2548,7 +2548,7 @@
      "self_employed"
     ],
     "age_min": null,
-    "age_max": null,
+    "age_max": 70,
     "income_annual_max": 62488,
     "income_note": "Total income below the upper threshold (around $62,488 in 2025-26); 10% eligible income rule applies",
     "requires_children": false,
@@ -2559,10 +2559,10 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.ato.gov.au/individuals-and-families/super-for-individuals-and-families/super/growing-and-keeping-track-of-your-super/how-to-save-more-in-your-super/government-super-contributions",
-   "source_snippet": "The super co-contribution is a government payment of up to $500 into your super fund if you are a low or middle income earner who makes personal after-tax contributions.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www.ato.gov.au/individuals-and-families/super-for-individuals-and-families/super/growing-and-keeping-track-of-your-super/how-to-save-more-in-your-super/government-super-contributions/super-co-contribution",
+   "source_snippet": "If you're a low or middle-income earner and make personal non-concessional (after-tax) contributions to your super fund, the government may also make a co-contribution up to a maximum of $500.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "low-income-superannuation-tax-offset",
@@ -2577,9 +2577,9 @@
    "amount_max": 500,
    "amount_currency": "AUD",
    "amount_period": "annual",
-   "amount_note": "Refund of the 15% contributions tax on concessional super contributions (up to $500 a year) for people with adjusted taxable income of $37,000 or less, paid directly to the super fund.",
+   "amount_note": "Government payment of 15% of concessional (before-tax) super contributions up to a maximum of $500 a year (minimum $10), paid directly into your super fund; adjusted taxable income $37,000 or less.",
    "is_automatic": true,
-   "application_url": "https://www.ato.gov.au/individuals-and-families/super-for-individuals-and-families/super/growing-and-keeping-track-of-your-super/how-to-save-more-in-your-super/government-super-contributions",
+   "application_url": "https://www.ato.gov.au/individuals-and-families/super-for-individuals-and-families/super/growing-and-keeping-track-of-your-super/how-to-save-more-in-your-super/government-super-contributions/low-income-super-tax-offset",
    "application_channel": "automatic",
    "deadline_type": "annual",
    "deadline_note": null,
@@ -2607,17 +2607,17 @@
     "income_annual_max": 37000,
     "income_note": "Adjusted taxable income of $37,000 or less",
     "requires_children": false,
-    "nationality": "any_resident",
+    "nationality": "citizen_or_pr",
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.ato.gov.au/individuals-and-families/super-for-individuals-and-families/super/growing-and-keeping-track-of-your-super/how-to-save-more-in-your-super/government-super-contributions",
-   "source_snippet": "LISTO is a government payment of up to $500 a year to help low income earners save for retirement, effectively refunding the tax on their concessional contributions.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www.ato.gov.au/individuals-and-families/super-for-individuals-and-families/super/growing-and-keeping-track-of-your-super/how-to-save-more-in-your-super/government-super-contributions/low-income-super-tax-offset",
+   "source_snippet": "you have not held a temporary resident visa at any time during the income year (note that New Zealand citizens in Australia are eligible for the payment)",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "private-health-insurance-rebate",
@@ -2696,7 +2696,7 @@
    "amount_period": "one_off",
    "amount_note": "Lets first home buyers make voluntary super contributions of up to $15,000 per year ($50,000 total, taxed concessionally at 15%) and later withdraw them plus earnings for a home deposit.",
    "is_automatic": false,
-   "application_url": "https://www.ato.gov.au/individuals-and-families/super-for-individuals-and-families/super/withdrawing-and-using-your-super/withdrawal-options/first-home-super-saver-scheme",
+   "application_url": "https://www.ato.gov.au/individuals-and-families/super-for-individuals-and-families/super/withdrawing-and-using-your-super/early-access-to-super/first-home-super-saver-scheme",
    "application_channel": "online",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -2743,9 +2743,9 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.ato.gov.au/individuals-and-families/super-for-individuals-and-families/super/withdrawing-and-using-your-super/withdrawal-options/first-home-super-saver-scheme",
-   "source_snippet": "Voluntary super contributions of up to $15,000 per year, with a maximum lifetime cap of $50,000, can be withdrawn to help buy your first home.",
-   "last_verified_at": "2026-08-12",
+   "source_url": "https://www.ato.gov.au/individuals-and-families/super-for-individuals-and-families/super/withdrawing-and-using-your-super/early-access-to-super/first-home-super-saver-scheme/about-the-fhss-scheme",
+   "source_snippet": "Using the FHSS scheme, you can contribute a maximum of $15,000 in any one financial year up to a total maximum of $50,000 across all years.",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -2761,12 +2761,12 @@
    "amount_max": 20000,
    "amount_currency": "AUD",
    "amount_period": "annual",
-   "amount_note": "Eligible small businesses (aggregated turnover under $10 million) can immediately deduct the full cost of each eligible depreciating asset costing less than $20,000 (per recent measures; threshold and dates change - check current year).",
+   "amount_note": "Small businesses with aggregated turnover under $10 million can immediately deduct the full cost of each eligible depreciating asset costing less than $20,000 that is first used or installed ready for use in an income year. The $20,000 limit was made permanent from 1 July 2026 (it applied for 2025-26 by earlier law) and is per asset, so several assets can be written off. Assets of $20,000 or more go into the small business pool (15% first year, 30% after).",
    "is_automatic": false,
-   "application_url": "https://www.ato.gov.au/businesses-and-organisations/income-and-deductions-for-business",
+   "application_url": "https://www.ato.gov.au/businesses-and-organisations/income-deductions-and-concessions/depreciation-and-capital-expenses-and-allowances/simpler-depreciation-for-small-business/instant-asset-write-off",
    "application_channel": "via_employer",
    "deadline_type": "annual",
-   "deadline_note": null,
+   "deadline_note": "Claimed in the business tax return for the income year the asset is first used or installed ready for use.",
    "procedure_steps": [
     {
      "step": 1,
@@ -2807,10 +2807,10 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.ato.gov.au/businesses-and-organisations/income-and-deductions-for-business",
-   "source_snippet": "Eligible businesses can claim an immediate deduction for the business portion of the cost of an asset in the year it is first used or installed ready for use.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www.ato.gov.au/businesses-and-organisations/income-deductions-and-concessions/depreciation-and-capital-expenses-and-allowances/simpler-depreciation-for-small-business/instant-asset-write-off",
+   "source_snippet": "From 1 July 2026, small businesses with an aggregated turnover of less than $10 million, can deduct the full cost of eligible depreciating assets costing less than $20,000 that are first used or installed ready for use in an income year.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "rd-tax-incentive",
@@ -2825,12 +2825,12 @@
    "amount_max": null,
    "amount_currency": "AUD",
    "amount_period": "annual",
-   "amount_note": "Refundable tax offset of company tax rate plus 18.5% premium for companies with aggregated turnover under $20 million; non-refundable offset with 8.5%/16.5% intensity premium for larger companies.",
+   "amount_note": "Refundable offset (corporate tax rate plus 18.5% premium) for companies with aggregated turnover under $20 million; larger companies get a non-refundable offset with an R&D intensity premium. At least $20,000 of eligible R&D expenditure is needed in the income year. The 2026-27 Budget announced changes to the R&DTI that start from 1 July 2028.",
    "is_automatic": false,
-   "application_url": "https://business.gov.au/grants-and-programs/research-and-development-tax-incentive",
+   "application_url": "https://business.gov.au/grants-and-programs/research-and-development-tax-incentive/apply-for-the-randd-tax-incentive",
    "application_channel": "online",
    "deadline_type": "annual",
-   "deadline_note": null,
+   "deadline_note": "Registration deadline is 10 months after the end of the company's income year.",
    "procedure_steps": [
     {
      "step": 1,
@@ -2877,8 +2877,8 @@
     "gender": "any"
    },
    "source_url": "https://business.gov.au/grants-and-programs/research-and-development-tax-incentive/overview-of-rd-tax-incentive",
-   "source_snippet": "If your company's annual aggregated turnover is less than 20 million, the refundable offset rate is equal to your company tax rate plus a premium of 18.5 per cent.",
-   "last_verified_at": "2026-08-12",
+   "source_snippet": "The refundable R&D tax offset is equal to your corporate tax rate plus an 18.5% premium.",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -2894,12 +2894,12 @@
    "amount_max": 80000,
    "amount_currency": "AUD",
    "amount_period": "annual",
-   "amount_note": "Upfront grant agreements reimbursing around 50% of eligible export promotion spend; tiers provide roughly $20,000-$80,000 per financial year for SMEs, up to $50,000 for representative bodies; grants run in rounds (Round 4 covers 2025-26 to 2026-27).",
+   "amount_note": "Round 4 grant agreements run up to 2 financial years (2025-26 and 2026-27). Tier 1 offers $20,000 to $30,000 per financial year, Tier 2 $20,000 to $50,000, Tier 3 $20,000 to $80,000.",
    "is_automatic": false,
-   "application_url": "https://www.austrade.gov.au/en/export/export-grants",
+   "application_url": "https://www.austrade.gov.au/en/how-we-can-help-you/grants/export-market-development-grants",
    "application_channel": "online",
    "deadline_type": "window",
-   "deadline_note": null,
+   "deadline_note": "Applications are closed for Round 4. There are currently no grant rounds open to applications; Austrade will update its website when timing of the next round is confirmed.",
    "procedure_steps": [
     {
      "step": 1,
@@ -2950,9 +2950,9 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.austrade.gov.au/en/export/export-grants",
-   "source_snippet": "The EMDG program provides grants to Australian small and medium enterprises and their representative bodies to market and promote their goods and services globally and undertake export training.",
-   "last_verified_at": "2026-08-12",
+   "source_url": "https://www.austrade.gov.au/en/how-we-can-help-you/grants/export-market-development-grants",
+   "source_snippet": "Applications are closed for Round 4 of EMDG.",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -2965,10 +2965,10 @@
    "category": "housing",
    "benefit_type": "cash_monthly",
    "amount_min": null,
-   "amount_max": null,
+   "amount_max": 297.36,
    "amount_currency": "AUD",
-   "amount_period": "monthly",
-   "amount_note": "Extra fortnightly payment for people on an eligible Centrelink payment who pay rent; paid at 75 cents per dollar of rent above a threshold up to a maximum (single maximum around $219 per fortnight; indexed March and September).",
+   "amount_period": "fortnightly",
+   "amount_note": "Paid automatically with an eligible payment once fortnightly rent exceeds a threshold. Maximum fortnightly rate with income support/ABSTUDY: single $223.80, single sharer $149.20, couple (combined) $211.00. With Family Tax Benefit: up to $263.06 (1-2 children) or $297.36 (3+ children).",
    "is_automatic": false,
    "application_url": "https://www.servicesaustralia.gov.au/rent-assistance",
    "application_channel": "online",
@@ -3003,18 +3003,18 @@
     "age_min": null,
     "age_max": null,
     "income_annual_max": null,
-    "income_note": "Requires an eligible income support or family payment; not separately means tested",
+    "income_note": "No separate claim or means test: paid if you get an eligible Services Australia payment (or DVA equivalent) and pay eligible rent above a threshold. Eligibility follows the underlying payment, which requires Australian residence (citizen, permanent resident or protected visa), so most temporary visa holders do not qualify.",
     "requires_children": false,
-    "nationality": "any_resident",
+    "nationality": "citizen_or_pr",
     "residency_months_min": null,
     "housing_tenure": "renting",
     "student_required": false,
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.dva.gov.au/what-we-help-with/housing-and-home-life/rent-assistance",
-   "source_snippet": "For every $1 of rent you pay over the rent threshold you will receive $0.75 of Rent Assistance up to a maximum amount.",
-   "last_verified_at": "2026-08-12",
+   "source_url": "https://www.servicesaustralia.gov.au/rent-assistance",
+   "source_snippet": "You can get Rent Assistance if you get an eligible payment and your eligible rent or accommodation costs are over a certain amount.",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -3030,9 +3030,9 @@
    "amount_max": null,
    "amount_currency": "AUD",
    "amount_period": "one_off",
-   "amount_note": "Government guarantee to the lender lets eligible first home buyers purchase with as little as 5% deposit (2% for single parents) without paying Lenders Mortgage Insurance; property price caps apply by location; no income caps or place limits since 1 October 2025.",
+   "amount_note": "Government guarantee lets eligible first home buyers buy with as little as 5% deposit without paying Lenders Mortgage Insurance; property price caps apply by location. From 1 October 2025 there are no limits on the number of guarantees and no income caps.",
    "is_automatic": false,
-   "application_url": "https://www.housingaustralia.gov.au/",
+   "application_url": "https://www.housingaustralia.gov.au/support-buy-home/first-home-guarantee",
    "application_channel": "in_person",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -3084,9 +3084,9 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.housingaustralia.gov.au/",
-   "source_snippet": "The Australian Government 5% Deposit Scheme supports home buyers who have saved a small deposit to purchase a home sooner, with a minimum 5% deposit for first home buyers and no LMI.",
-   "last_verified_at": "2026-08-12",
+   "source_url": "https://www.housingaustralia.gov.au/support-buy-home/first-home-guarantee",
+   "source_snippet": "From 1 October 2025, the Scheme will remove limits to the number of Government guarantees available, giving all Australian first home buyers the chance to enter the market with a deposit of as little as 5% and avoid Lenders Mortgage Insurance.",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -3102,7 +3102,7 @@
    "amount_max": null,
    "amount_currency": "AUD",
    "amount_period": "monthly",
-   "amount_note": "Voluntary government loan for Australians of Age Pension age secured against real estate, paid as a fortnightly loan payment up to 150% of the maximum Age Pension rate; repayable with compound interest, usually when the home is sold.",
+   "amount_note": "Voluntary government loan for people of Age Pension age, secured against Australian real estate. Fortnightly loan payments up to 150% of the maximum rate of your qualifying pension; advance (lump sum) payments up to 50% of the maximum pension rate in any 26 fortnights. Interest 3.95% a year, compounding fortnightly; repaid usually when the property is sold. No negative equity guarantee applies.",
    "is_automatic": false,
    "application_url": "https://www.servicesaustralia.gov.au/home-equity-access-scheme",
    "application_channel": "online",
@@ -3154,9 +3154,9 @@
     "gender": "any"
    },
    "source_url": "https://www.servicesaustralia.gov.au/home-equity-access-scheme",
-   "source_snippet": "The Home Equity Access Scheme lets older Australians get a voluntary non-taxable loan from the government using Australian property as security.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_snippet": "You can get a fortnightly loan payment up to the full 150% of the maximum rate of your qualifying pension.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "first-home-owner-grant-nsw",
@@ -3171,12 +3171,12 @@
    "amount_max": 10000,
    "amount_currency": "AUD",
    "amount_period": "one_off",
-   "amount_note": "$10,000 one-off grant for buying or building a new home in NSW; price cap $600,000 for new home purchases or $750,000 combined for house-and-land.",
+   "amount_note": "$10,000 one-off grant for buying or building a new home in NSW. New home purchase price must not exceed $600,000; house-and-land (vacant land with a building contract) combined cost must not exceed $750,000.",
    "is_automatic": false,
-   "application_url": "https://www.revenue.nsw.gov.au/",
+   "application_url": "https://www.revenue.nsw.gov.au/grants-schemes/first-home-owner-new-homes-grant",
    "application_channel": "online",
    "deadline_type": "rolling",
-   "deadline_note": null,
+   "deadline_note": "Lodge within 12 months of settlement or the completed construction date. Contracts signed on/after 1 July 2023 require 12 continuous months of occupation.",
    "procedure_steps": [
     {
      "step": 1,
@@ -3217,9 +3217,9 @@
     ],
     "gender": "any"
    },
-   "source_url": "https://www.revenue.nsw.gov.au/",
-   "source_snippet": "The NSW First Home Owner Grant is worth $10,000 for eligible first home buyers building or buying a new home, capped at $600,000 (new homes) or $750,000 (house and land).",
-   "last_verified_at": "2026-08-12",
+   "source_url": "https://www.revenue.nsw.gov.au/grants-schemes/first-home-owner-new-homes-grant",
+   "source_snippet": "A $10,000 First Home Owner Grant (FHOG) is available when you buy or build your first new home.",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -3235,9 +3235,9 @@
    "amount_max": 10000,
    "amount_currency": "AUD",
    "amount_period": "one_off",
-   "amount_note": "$10,000 grant for buying or building a new home in Victoria valued up to $750,000; $20,000 for new homes in regional Victoria (regional top-up subject to current program dates).",
+   "amount_note": "$10,000 payment to help eligible first home buyers buy or build a new home in Victoria to live in. Applies to newly constructed or never-occupied properties valued up to $750,000.",
    "is_automatic": false,
-   "application_url": "https://www.sro.vic.gov.au/first-home-owner-grant",
+   "application_url": "https://www.sro.vic.gov.au/buying-property/first-home-owner-grant/apply-first-home-owner-grant",
    "application_channel": "online",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -3281,10 +3281,10 @@
     ],
     "gender": "any"
    },
-   "source_url": "https://www.sro.vic.gov.au/first-home-owner-grant",
-   "source_snippet": "$10,000 grant for buying or building a new home in Victoria valued up to $750,000; $20,000 for new homes in regional Victoria (regional top-up subject to current program dates).",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www.sro.vic.gov.au/buying-property/first-home-owner-grant",
+   "source_snippet": "The First Home Owner Grant is a $10,000 payment to help eligible first home buyers buy or build a new home in Victoria to live in. It applies to newly constructed or never-occupied properties valued up to $750,000.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "first-home-owner-grant-qld",
@@ -3299,12 +3299,12 @@
    "amount_max": 30000,
    "amount_currency": "AUD",
    "amount_period": "one_off",
-   "amount_note": "$30,000 grant for buying or building a new home in Queensland valued under $750,000 for contracts signed before 30 June 2026 (reverts to $15,000 afterwards); check the Queensland Revenue Office for the current amount.",
+   "amount_note": "$30,000 for eligible contracts signed on or after 20 November 2023 (the $30,000 grant continues for contracts from 1 July 2026 onward); $15,000 for contracts signed before 20 November 2023. New homes valued at less than $750,000 only. Move in within 1 year and live there continuously for 6 months.",
    "is_automatic": false,
-   "application_url": "https://qro.qld.gov.au/property-concessions-grants/first-home-grant/",
+   "application_url": "https://qro.qld.gov.au/property-concessions-grants/first-home-grant/apply/",
    "application_channel": "online",
    "deadline_type": "rolling",
-   "deadline_note": null,
+   "deadline_note": "No fixed deadline; the grant is paid on settlement/completion of an eligible new home.",
    "procedure_steps": [
     {
      "step": 1,
@@ -3345,10 +3345,10 @@
     ],
     "gender": "any"
    },
-   "source_url": "https://qro.qld.gov.au/property-concessions-grants/first-home-grant/",
-   "source_snippet": "$30,000 grant for buying or building a new home in Queensland valued under $750,000 for contracts signed before 30 June 2026 (reverts to $15,000 afterwards); check the Queensland Revenue Office for the current amount.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www.qld.gov.au/housing/buying-owning-home/home-buyers-financial-help/first-home-owner-grant",
+   "source_snippet": "The increased $30,000 grant will continue for eligible contracts signed from 1 July 2026 going forward.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "first-home-owner-grant-sa",
@@ -3363,7 +3363,7 @@
    "amount_max": 15000,
    "amount_currency": "AUD",
    "amount_period": "one_off",
-   "amount_note": "$15,000 grant for eligible first home buyers buying or building a new home in South Australia.",
+   "amount_note": "One-off payment of up to $15,000 for eligible first home buyers buying or building a new residential property in South Australia. No property value cap for contracts signed on or after 6 June 2024. For contracts from 13 February 2025 you are not eligible if you or your spouse/partner own or have previously owned Australian residential property.",
    "is_automatic": false,
    "application_url": "https://www.revenuesa.sa.gov.au/grants-and-concessions/first-home-owner-grant",
    "application_channel": "online",
@@ -3398,7 +3398,7 @@
     "age_min": 18,
     "age_max": null,
     "income_annual_max": null,
-    "income_note": "Not income tested; must be a first home buyer",
+    "income_note": "Not income tested. At least one applicant must be an Australian citizen, a permanent resident, or a New Zealand citizen permanently residing in Australia who holds a Special Category visa.",
     "requires_children": false,
     "nationality": "citizen_or_pr",
     "residency_months_min": null,
@@ -3410,9 +3410,9 @@
     "gender": "any"
    },
    "source_url": "https://www.revenuesa.sa.gov.au/grants-and-concessions/first-home-owner-grant",
-   "source_snippet": "$15,000 grant for eligible first home buyers buying or building a new home in South Australia.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_snippet": "A one-off payment of up to $15,000 is available to eligible applicants buying or building new residential property.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "first-home-owner-grant-wa",
@@ -3427,12 +3427,12 @@
    "amount_max": 10000,
    "amount_currency": "AUD",
    "amount_period": "one_off",
-   "amount_note": "$10,000 grant for buying or building a new home in Western Australia; property value caps apply (different caps north and south of the 26th parallel).",
+   "amount_note": "One-off payment of up to $10,000 (or the consideration paid if less) for people buying or building their first new home in Western Australia. The total value of the transaction must not exceed the capped amount; caps changed for transactions commencing on or after 7 May 2026 (different caps apply north and south of the 26th parallel).",
    "is_automatic": false,
-   "application_url": "https://www.wa.gov.au/organisation/department-of-finance/first-home-owner-grant",
+   "application_url": "https://www.wa.gov.au/government/publications/apply-the-first-home-owner-grant",
    "application_channel": "online",
    "deadline_type": "rolling",
-   "deadline_note": null,
+   "deadline_note": "Apply within 12 months of completion of the eligible transaction.",
    "procedure_steps": [
     {
      "step": 1,
@@ -3473,10 +3473,10 @@
     ],
     "gender": "any"
    },
-   "source_url": "https://www.wa.gov.au/organisation/department-of-finance/first-home-owner-grant",
-   "source_snippet": "$10,000 grant for buying or building a new home in Western Australia; property value caps apply (different caps north and south of the 26th parallel).",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www.wa.gov.au/government/publications/about-the-first-home-owner-grant",
+   "source_snippet": "The first home owner grant (FHOG) is a one-off payment of up to $10,000 for eligible applications from people buying or building their first new home.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "nsw-first-home-buyers-assistance-scheme",
@@ -3493,7 +3493,7 @@
    "amount_period": "one_off",
    "amount_note": "Full transfer (stamp) duty exemption for first home buyers on new or existing homes up to $800,000 and vacant land up to $350,000; concessional rates up to $1,000,000 (homes) and $450,000 (land).",
    "is_automatic": false,
-   "application_url": "https://www.nsw.gov.au/housing-and-construction/buying-and-selling-property/home-buying-assistance/first-home-buyers-assistance-scheme",
+   "application_url": "https://www.revenue.nsw.gov.au/grants-schemes/assistance-scheme",
    "application_channel": "online",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -3542,9 +3542,9 @@
     ],
     "gender": "any"
    },
-   "source_url": "https://www.nsw.gov.au/housing-and-construction/buying-and-selling-property/home-buying-assistance/first-home-buyers-assistance-scheme",
-   "source_snippet": "Eligible first home buyers purchasing an existing property for $800,000 or less won't pay any transfer duty at all. Those who buy a property worth between $800,000 and $1 million will pay a reduced rate.",
-   "last_verified_at": "2026-08-12",
+   "source_url": "https://www.revenue.nsw.gov.au/grants-schemes/assistance-scheme",
+   "source_snippet": "at least one of the first home buyers must be an Australian citizen or permanent resident",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -3562,7 +3562,7 @@
    "amount_period": "one_off",
    "amount_note": "Full stamp duty exemption for first home buyers on homes valued up to $600,000; sliding concession for homes between $600,000 and $750,000; principal place of residence requirement.",
    "is_automatic": false,
-   "application_url": "https://www.sro.vic.gov.au/first-home-owner",
+   "application_url": "https://www.sro.vic.gov.au/buying-property/land-transfer-stamp-duty/concessions-exemptions-and-waivers/first-home-buyers/first-home-buyer-duty-exemption-or-concession",
    "application_channel": "online",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -3600,7 +3600,7 @@
     "age_min": 18,
     "age_max": null,
     "income_annual_max": null,
-    "income_note": "Not income tested; must live in the home for at least 12 months",
+    "income_note": "Not income tested. At least one purchaser must be an Australian citizen, New Zealand citizen or permanent resident; must live in the home as principal place of residence.",
     "requires_children": false,
     "nationality": "citizen_or_pr",
     "residency_months_min": null,
@@ -3611,9 +3611,9 @@
     ],
     "gender": "any"
    },
-   "source_url": "https://www.sro.vic.gov.au/first-home-owner",
-   "source_snippet": "First home buyers pay no stamp duty on properties valued at $600,000 or less, with a concession available for homes valued up to $750,000.",
-   "last_verified_at": "2026-08-12",
+   "source_url": "https://www.sro.vic.gov.au/buying-property/land-transfer-stamp-duty/concessions-exemptions-and-waivers/first-home-buyers/first-home-buyer-duty-exemption-or-concession",
+   "source_snippet": "up to $600,000, you pay no duty. $600,001 to $750,000, you pay a reduced amount of duty.",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -3629,9 +3629,9 @@
    "amount_max": null,
    "amount_currency": "AUD",
    "amount_period": "one_off",
-   "amount_note": "Transfer duty concession for first home buyers; full concession on new homes and vacant land with no value cap (from 1 May 2025), and on established homes up to the published threshold.",
+   "amount_note": "First home concession on established homes valued under $800,000 (saves up to $24,525); no duty payable at $700,000 or under, phasing out up to $800,000. First home (new home) concession gives a full concession with no value cap on new homes.",
    "is_automatic": false,
-   "application_url": "https://qro.qld.gov.au/property-concessions-grants/home-concession/",
+   "application_url": "https://qro.qld.gov.au/duties/transfer-duty/concessions/homes/first-home/",
    "application_channel": "online",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -3669,9 +3669,9 @@
     "age_min": 18,
     "age_max": null,
     "income_annual_max": null,
-    "income_note": "Not income tested; must occupy as home within 1 year",
+    "income_note": "Not income tested. For transactions entered into on or after 1 August 2026 you must be an Australian citizen, permanent resident or specified foreign retiree. Must move in within 1 year of settlement and be at least 18.",
     "requires_children": false,
-    "nationality": "any_resident",
+    "nationality": "citizen_or_pr",
     "residency_months_min": null,
     "housing_tenure": "owner",
     "student_required": false,
@@ -3680,10 +3680,10 @@
     ],
     "gender": "any"
    },
-   "source_url": "https://qro.qld.gov.au/",
-   "source_snippet": "Queensland first home buyers can claim a transfer duty concession, with a full concession applying to new homes and eligible vacant land.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://qro.qld.gov.au/duties/transfer-duty/concessions/homes/first-home/",
+   "source_snippet": "The first home concession only applies to a home valued under $800,000 and can save you up to $24,525.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "qld-bond-loan",
@@ -3738,7 +3738,7 @@
     "age_min": null,
     "age_max": null,
     "income_annual_max": 74256,
-    "income_note": "Combined gross weekly income limit of $1,428 for a one-adult household ($74,256 annualised), per the Queensland Government table updated 24 June 2026. Add $713.86/week per additional adult and $428.31/week per dependant. A separate asset test applies: less than $5,500 in cash or savings across all applicants.",
+    "income_note": "Combined gross weekly income limit of $1,428 for one adult ($74,256 annualised); $2,142 for 2 adults; add $428.31/week per dependant. Less than $5,500 in cash or savings across applicants. Rent must not be more than 60% of total gross weekly income. Applicants must be an Australian citizen, permanent resident, or hold a temporary protection or bridging visa.",
     "requires_children": false,
     "nationality": "citizen_or_pr",
     "residency_months_min": null,
@@ -3753,8 +3753,8 @@
     "gender": "any"
    },
    "source_url": "https://www.qld.gov.au/housing/renting/assistance/bond-loans",
-   "source_snippet": "A Bond Loan is an interest-free loan to cover your rental bond when moving into private rental accommodation.",
-   "last_verified_at": "2026-08-12",
+   "source_snippet": "be an Australian citizen, permanent resident, or have a temporary protection or bridging visa; have less than $5,500 in cash or savings among all the bond loan applicants",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified",
    "income_reviewed_at": "2026-08-13"
   },
@@ -3771,9 +3771,9 @@
    "amount_max": null,
    "amount_currency": "AUD",
    "amount_period": "one_off",
-   "amount_note": "Interest-free loan of up to 100% of the rental bond for eligible people on low incomes entering private rental in NSW; repaid in weekly or fortnightly instalments.",
+   "amount_note": "Interest-free loan of up to 100% of the rental bond (at least 25% or 1 week of the bond), repaid fortnightly over 12 or 18 months (36 months in exceptional circumstances).",
    "is_automatic": false,
-   "application_url": "https://www.nsw.gov.au/departments-and-agencies/homes-nsw/social-housing-resources/factsheets-for-tenants/rentstart-bond-loan-factsheet-for-clients",
+   "application_url": "https://www.service.nsw.gov.au/transaction/apply-for-a-rentstart-bond-loan",
    "application_channel": "online",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -3811,7 +3811,7 @@
     "age_min": null,
     "age_max": null,
     "income_annual_max": null,
-    "income_note": "Must be eligible for social housing, have less than $5,000 cash assets, and pay no more than 60% of household gross income in rent",
+    "income_note": "Must be eligible for social housing and meet its income and asset limits (waived if experiencing domestic or family violence), have less than $5,000 in cash assets and not own property. Service NSW states rent must not be more than 50% of household gross weekly income (some NSW Government Rentstart pages state 60%).",
     "requires_children": false,
     "nationality": "citizen_or_pr",
     "residency_months_min": null,
@@ -3822,9 +3822,9 @@
     ],
     "gender": "any"
    },
-   "source_url": "https://www.nsw.gov.au/departments-and-agencies/homes-nsw/social-housing-resources/factsheets-for-tenants/rentstart-bond-loan-factsheet-for-clients",
-   "source_snippet": "The NSW Government offers an interest-free loan to cover part or all of the rental bond for eligible clients.",
-   "last_verified_at": "2026-08-12",
+   "source_url": "https://www.service.nsw.gov.au/transaction/apply-for-a-rentstart-bond-loan",
+   "source_snippet": "You must be an Australian citizen or permanent resident in NSW and: be aged 18 or over; be eligible for social housing; meet the household income and assets eligibility limits; have less than $5,000 in cash assets",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -3845,7 +3845,7 @@
    "application_url": "https://www.energy.gov.au/energy-bill-relief-fund",
    "application_channel": "automatic",
    "deadline_type": "none",
-   "deadline_note": null,
+   "deadline_note": "Ended: 31 December 2025. The Energy Bill Relief Fund has closed; check state and territory concession schemes for ongoing energy rebates.",
    "procedure_steps": [
     {
      "step": 1,
@@ -3881,7 +3881,7 @@
    },
    "source_url": "https://www.energy.gov.au/energy-bill-relief-fund",
    "source_snippet": "Australian households and eligible small businesses with electricity bills have received up to $150 in energy bill rebates from 1 July 2025 to the end of 2025. The Energy Bill Relief Fund ended on 31 December 2025.",
-   "last_verified_at": "2026-08-12",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -3897,7 +3897,7 @@
    "amount_max": 285,
    "amount_currency": "AUD",
    "amount_period": "annual",
-   "amount_note": "Rebate of up to about $285 per year on electricity bills for NSW households with an eligible concession card (Pensioner Concession Card, Health Care Card, DVA card); applied via your retailer.",
+   "amount_note": "Applied as a daily credit on each electricity bill; apply by calling your retailer. The page does not state an annual dollar figure (earlier figure of about $285 a year not confirmed on the page).",
    "is_automatic": false,
    "application_url": "https://www.service.nsw.gov.au/transaction/apply-for-the-low-income-household-rebate-retail-customers",
    "application_channel": "online",
@@ -3932,9 +3932,9 @@
     "age_min": null,
     "age_max": null,
     "income_annual_max": null,
-    "income_note": "Requires an eligible concession card",
+    "income_note": "Must live in NSW with a home electricity account in your name and hold a Pensioner Concession Card, Health Care Card, Low Income Health Care Card or DVA Veteran Gold Card. Commonwealth Seniors Health Card holders are not eligible. Card eligibility itself requires Australian residence.",
     "requires_children": false,
-    "nationality": "any_resident",
+    "nationality": "citizen_or_pr",
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
@@ -3944,8 +3944,8 @@
     "gender": "any"
    },
    "source_url": "https://www.service.nsw.gov.au/transaction/apply-for-the-low-income-household-rebate-retail-customers",
-   "source_snippet": "The NSW Low Income Household Rebate helps eligible concession cardholders pay their electricity bills. If you're a retail (on-market) customer, you need to contact your electricity retailer to apply.",
-   "last_verified_at": "2026-08-12",
+   "source_snippet": "Retail customers receive the rebate as a daily credit on each electricity bill.",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -3963,7 +3963,7 @@
    "amount_period": "one_off",
    "amount_note": "Emergency $50 vouchers toward electricity or gas bills for NSW households experiencing short-term financial hardship or crisis; issued via community welfare organisations and Service NSW.",
    "is_automatic": false,
-   "application_url": "https://www.service.nsw.gov.au/",
+   "application_url": "https://www.service.nsw.gov.au/transaction/energy-accounts-payment-assistance-eapa-scheme",
    "application_channel": "in_person",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -4001,7 +4001,7 @@
     "age_min": null,
     "age_max": null,
     "income_annual_max": null,
-    "income_note": "For households in short-term financial crisis or emergency",
+    "income_note": "For households in a short-term financial crisis or emergency who have not paid their most recent electricity or gas bill (e.g. loss of income, unexpected medical costs, disaster, disconnection letter).",
     "requires_children": false,
     "nationality": "any_resident",
     "residency_months_min": null,
@@ -4012,10 +4012,10 @@
     ],
     "gender": "any"
    },
-   "source_url": "https://www.service.nsw.gov.au/",
-   "source_snippet": "EAPA helps people experiencing a short-term financial crisis or emergency to pay their electricity or natural gas bills through $50 vouchers.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www.service.nsw.gov.au/transaction/energy-accounts-payment-assistance-eapa-scheme",
+   "source_snippet": "Households that get their electricity and/or gas from a retailer may be eligible for EAPA.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "vic-annual-electricity-concession",
@@ -4030,9 +4030,9 @@
    "amount_max": null,
    "amount_currency": "AUD",
    "amount_period": "annual",
-   "amount_note": "17.5% concession off electricity usage and service charges (after retailer discounts) all year for eligible concession card holders in Victoria.",
+   "amount_note": "17.5% off electricity usage and service costs (calculated after retailer discounts and solar credits); does not apply to the first $171.60 of the annual bill. Households using over $4,038.82 a year (from 1 December 2025) must apply for the Excess Electricity Concession. Can be backdated up to 12 months.",
    "is_automatic": false,
-   "application_url": "https://www.energy.vic.gov.au/",
+   "application_url": "https://services.dffh.vic.gov.au/annual-electricity-concession",
    "application_channel": "online",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -4065,9 +4065,9 @@
     "age_min": null,
     "age_max": null,
     "income_annual_max": null,
-    "income_note": "Requires an eligible concession card",
+    "income_note": "Account holder must hold a Pensioner Concession Card, Health Care Card or Veterans' Affairs Gold Card; card name and address must match the electricity account. Card eligibility requires Australian residence.",
     "requires_children": false,
-    "nationality": "any_resident",
+    "nationality": "citizen_or_pr",
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
@@ -4076,10 +4076,10 @@
     ],
     "gender": "any"
    },
-   "source_url": "https://www.energy.vic.gov.au/",
-   "source_snippet": "Eligible concession card holders living in Victoria can receive a 17.5% concession on their electricity bills.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://services.dffh.vic.gov.au/annual-electricity-concession",
+   "source_snippet": "An electricity account holder who has one of the following eligible cards: Pensioner Concession Card; Health Care Card; Veterans' Affairs Gold Card.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "qld-electricity-rebate",
@@ -4091,10 +4091,10 @@
    "category": "energy",
    "benefit_type": "discount",
    "amount_min": null,
-   "amount_max": 386,
+   "amount_max": 399.47,
    "amount_currency": "AUD",
    "amount_period": "annual",
-   "amount_note": "Fixed annual rebate (around $386 per year, indexed) deducted from electricity bills for Queenslanders holding an eligible concession card; apply via your electricity retailer.",
+   "amount_note": "Rebate of $399.47 per year (GST inclusive) deducted from electricity bills for eligible cardholders; apply through your electricity retailer.",
    "is_automatic": false,
    "application_url": "https://www.qld.gov.au/housing/home-energy-savings/energy-and-utility-rebates",
    "application_channel": "online",
@@ -4129,9 +4129,9 @@
     "age_min": null,
     "age_max": null,
     "income_annual_max": null,
-    "income_note": "Requires an eligible concession card",
+    "income_note": "Account holder with a Queensland Seniors Card, Pensioner Concession Card, Health Care Card (including Low Income and Ex-Carer), DVA Veteran Gold Card or ImmiCard (asylum seekers). Foster Child Health Care Card and Commonwealth Seniors Health Card holders are not eligible. Supply address must be your principal residence.",
     "requires_children": false,
-    "nationality": "any_resident",
+    "nationality": "citizen_or_pr",
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
@@ -4141,8 +4141,8 @@
     "gender": "any"
    },
    "source_url": "https://www.qld.gov.au/housing/home-energy-savings/energy-and-utility-rebates",
-   "source_snippet": "Contact your electricity retailer... you will need copies of your bills and concession card handy so you can verify your eligibility. Rebates are automatically deducted from your bill.",
-   "last_verified_at": "2026-08-12",
+   "source_snippet": "The current electricity rebate is $399.47 per year (GST inclusive) for eligible cardholders.",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -4154,16 +4154,16 @@
    "funder": "Government of South Australia",
    "category": "energy",
    "benefit_type": "cash_one_off",
-   "amount_min": null,
-   "amount_max": null,
+   "amount_min": 270.6,
+   "amount_max": 270.6,
    "amount_currency": "AUD",
    "amount_period": "annual",
-   "amount_note": "Annual payment (around $255 per household, indexed) to help eligible pensioners, concession card holders and low-income South Australians with cost of living expenses including energy.",
+   "amount_note": "$270.60 for the 2026-27 financial year, paid once a year by EFT between August and December; indexed each year.",
    "is_automatic": false,
-   "application_url": "https://www.sa.gov.au/topics/care-and-support/concessions-and-grants/concessions/cost-of-living-concession",
+   "application_url": "https://www.sa.gov.au/topics/care-and-support/concessions/household-concessions/cost-of-living-concessions",
    "application_channel": "online",
    "deadline_type": "annual",
-   "deadline_note": null,
+   "deadline_note": "You must apply by 31 December to get the Cost of Living Concession for that financial year. Eligibility assessed on your circumstances on 1 July.",
    "procedure_steps": [
     {
      "step": 1,
@@ -4188,9 +4188,9 @@
     "age_min": null,
     "age_max": null,
     "income_annual_max": null,
-    "income_note": "No income figure is published. Eligibility on 1 July of the financial year is by holding an eligible card (Pensioner Concession Card, Low Income Health Care Card, Commonwealth Seniors Health Card, Veteran Gold Card) or receiving an eligible Centrelink payment. The concession is $270.60 for 2026-27.",
+    "income_note": "Hold an eligible card (Pensioner Concession Card, certain Veteran Gold Cards, Low Income Health Care Card, Commonwealth Seniors Health Card), receive an eligible Centrelink payment (JobSeeker, Youth Allowance, Parenting Payment, Special Benefit, ABSTUDY, Austudy etc.), or meet low-income limits: single $24,926.20 a year, single with children $26,416, partnered $46,295.60. Asylum seekers can also be eligible via a separate route.",
     "requires_children": false,
-    "nationality": "any_resident",
+    "nationality": "citizen_or_pr",
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
@@ -4202,10 +4202,10 @@
     "income_confidence": "medium",
     "gender": "any"
    },
-   "source_url": "https://www.sa.gov.au/",
-   "source_snippet": "The Cost of Living Concession helps South Australians on low or fixed incomes with everyday living expenses.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted",
+   "source_url": "https://www.sa.gov.au/topics/care-and-support/concessions/household-concessions/cost-of-living-concessions",
+   "source_snippet": "You must apply by 31 December to get the COLC for that financial year. Concession amount: $270.60 for the 2026-27 financial year.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified",
    "income_reviewed_at": "2026-08-13"
   },
   {
@@ -4221,7 +4221,7 @@
    "amount_max": 800,
    "amount_currency": "AUD",
    "amount_period": "annual",
-   "amount_note": "Annual concession (combined value around $800 for 2025-26) on electricity, gas, water and sewerage for eligible ACT concession card holders, applied through ActewAGL and Icon Water accounts.",
+   "amount_note": "Annual rebate of $800 for 2026-27 on electricity, gas, water and sewerage (seasonal daily rates), applied by your energy provider.",
    "is_automatic": false,
    "application_url": "https://www.revenue.act.gov.au/community-assistance/utilities-concession",
    "application_channel": "online",
@@ -4256,9 +4256,9 @@
     "age_min": null,
     "age_max": null,
     "income_annual_max": null,
-    "income_note": "Requires an eligible concession card",
+    "income_note": "Primary cardholder of a Pensioner Concession Card, Low Income Health Care Card, Health Care Card, Veteran Gold Card (specified types) or ACT Services Access Card; card name and address must match the electricity account. Commonwealth Seniors Health Card does not qualify.",
     "requires_children": false,
-    "nationality": "any_resident",
+    "nationality": "citizen_or_pr",
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
@@ -4268,9 +4268,9 @@
     "gender": "any"
    },
    "source_url": "https://www.revenue.act.gov.au/",
-   "source_snippet": "The Utilities Concession provides eligible ACT residents with help on their electricity, gas, water and sewerage costs.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_snippet": "The annual rebate for 2026-27 is $800.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "tas-annual-electricity-concession",
@@ -4285,9 +4285,9 @@
    "amount_max": null,
    "amount_currency": "AUD",
    "amount_period": "annual",
-   "amount_note": "Daily-rate concession on electricity bills for eligible Tasmanian concession card holders (Pensioner Concession Card, Health Care Card, DVA cards); applied via the electricity retailer.",
+   "amount_note": "Daily-rate discount on electricity bills: the current concession is 184.347 cents per day. Apply through your electricity retailer.",
    "is_automatic": false,
-   "application_url": "https://www.concessions.tas.gov.au/",
+   "application_url": "https://www.concessions.tas.gov.au/browse-categories/electricity",
    "application_channel": "online",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -4320,9 +4320,9 @@
     "age_min": null,
     "age_max": null,
     "income_annual_max": null,
-    "income_note": "Requires an eligible concession card",
+    "income_note": "Eligible concession card holders (Services Australia Health Care Card, Pensioner Concession Card, DVA Pensioner Concession Card) and ImmiCard (Bridging Visa E) holders.",
     "requires_children": false,
-    "nationality": "any_resident",
+    "nationality": "citizen_or_pr",
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
@@ -4331,10 +4331,10 @@
     ],
     "gender": "any"
    },
-   "source_url": "https://www.concessions.tas.gov.au/",
-   "source_snippet": "The Annual Electricity Concession provides a daily discount on electricity accounts for eligible concession card holders.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www.concessions.tas.gov.au/browse-categories/electricity",
+   "source_snippet": "The current concession is 184.347 cents per day. Eligibility: Eligible concession card holders. ImmiCard (Bridging Visa E) holders.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "wa-energy-concession-extension-scheme",
@@ -4345,16 +4345,16 @@
    "funder": "Government of Western Australia (Synergy/Horizon Power concessions)",
    "category": "energy",
    "benefit_type": "discount",
-   "amount_min": null,
+   "amount_min": 377.14,
    "amount_max": null,
    "amount_currency": "AUD",
    "amount_period": "annual",
-   "amount_note": "Annual electricity concessions for eligible WA concession card holders, including the Energy Assistance Payment credit and dependent child rebate; applied to Synergy or Horizon Power accounts.",
+   "amount_note": "Energy Assistance Payment $377.14 a year; plus Dependent Child Rebate ($396.56 for one child, $103.91 for each additional child) and Air Conditioning Rebate ($78.98 per month for eligible months in specified towns) where eligible (rates from 1 July 2026).",
    "is_automatic": false,
-   "application_url": "https://www.wa.gov.au/",
+   "application_url": "https://osr.wa.gov.au/revenuewaconnect",
    "application_channel": "online",
    "deadline_type": "rolling",
-   "deadline_note": null,
+   "deadline_note": "Renew annually through RevenueWAConnect within 30 days of your anniversary date or the application is cancelled. Only for households not directly billed by Synergy, Horizon Power, BHP or Rio Tinto (those customers claim through the supplier).",
    "procedure_steps": [
     {
      "step": 1,
@@ -4384,9 +4384,9 @@
     "age_min": null,
     "age_max": null,
     "income_annual_max": null,
-    "income_note": "Requires an eligible concession card",
+    "income_note": "Household member must hold a Pensioner Concession Card, Health Care Card, Commonwealth Seniors Health Card or DVA Gold Card; tenants must have lived there at least three months or hold a lease of at least three months. Card eligibility requires Australian residence.",
     "requires_children": false,
-    "nationality": "any_resident",
+    "nationality": "citizen_or_pr",
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
@@ -4395,10 +4395,10 @@
     ],
     "gender": "any"
    },
-   "source_url": "https://www.wa.gov.au/",
-   "source_snippet": "The Energy Concession Extension Scheme provides electricity concessions to eligible Western Australian concession card holders, with additional rebates for dependent children.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www.wa.gov.au/government/publications/apply-the-energy-concession-extension-scheme",
+   "source_snippet": "You may receive an annual subsidy from RevenueWA to assist with your electricity costs if you hold an eligible concession card and cannot receive the Energy Assistance Payment directly from your supplier.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "nsw-opal-concession-fares",
@@ -4413,9 +4413,9 @@
    "amount_max": null,
    "amount_currency": "AUD",
    "amount_period": "monthly",
-   "amount_note": "Concession Opal card holders pay about half the adult fare; Gold Senior/Pensioner Opal card caps travel at $2.50 per day for eligible pensioners and seniors on the Opal network.",
+   "amount_note": "Gold Senior/Pensioner Opal fares: travel for only $2.50 a day on public transport for eligible seniors, pensioners, asylum seekers, DVA Gold Card holders and NSW war widows/widowers. Concession Opal fares are available to eligible tertiary and TAFE students (who must live in NSW) and others eligible by income.",
    "is_automatic": false,
-   "application_url": "https://transportnsw.info/tickets-opal/opal/fares-payments/concessions",
+   "application_url": "https://transportnsw.info/tickets-fares/eligibility-concessions",
    "application_channel": "online",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -4459,10 +4459,10 @@
     ],
     "gender": "any"
    },
-   "source_url": "https://transportnsw.info/tickets-opal/opal/fares-payments/concessions",
-   "source_snippet": "Eligible concession card holders pay half the adult fare, and Gold Senior/Pensioner Opal card holders travel for no more than $2.50 a day on the Opal network.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://transportnsw.info/tickets-fares/eligibility-concessions/seniors",
+   "source_snippet": "Note: Some Seniors Cards are not accepted for concession fares. Gold Senior/Pensioner Opal fares allow you to travel for only $2.50 a day on public transport ...",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "vic-myki-concession",
@@ -4477,9 +4477,9 @@
    "amount_max": null,
    "amount_currency": "AUD",
    "amount_period": "monthly",
-   "amount_note": "Eligible concession card holders (Health Care Card, Pensioner Concession Card, students) pay concession fares of about 50% of full fare on metropolitan and regional public transport; free weekend travel for some card holders.",
+   "amount_note": "Concession myki gives 50% off fares for eligible students, pensioners, seniors, people on disability support and Health Care Card holders; free travel vouchers are available to some concession and seniors card holders.",
    "is_automatic": false,
-   "application_url": "https://www.ptv.vic.gov.au/tickets/fares/concession/",
+   "application_url": "https://transport.vic.gov.au/tickets-and-payments/myki/myki-types/concession-myki",
    "application_channel": "online",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -4511,7 +4511,7 @@
     "age_min": null,
     "age_max": null,
     "income_annual_max": null,
-    "income_note": "Concession requires an eligible card",
+    "income_note": "Requires an eligible card or status. Postgraduate and part-time students cannot get a student concession; international students use a separate International Student Travel Pass.",
     "requires_children": false,
     "nationality": "any_resident",
     "residency_months_min": null,
@@ -4522,10 +4522,10 @@
     ],
     "gender": "any"
    },
-   "source_url": "https://www.ptv.vic.gov.au/tickets/fares/concession/",
-   "source_snippet": "Concession myki fares are around half the full fare for eligible concession card holders in Victoria.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://transport.vic.gov.au/tickets-and-payments/myki/myki-types/concession-myki",
+   "source_snippet": "Check if you qualify for concession myki fares or free travel including students, seniors, veterans, carers, and people with disabilities in Victoria.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "qld-go-card-concession",
@@ -4540,12 +4540,12 @@
    "amount_max": null,
    "amount_currency": "AUD",
    "amount_period": "monthly",
-   "amount_note": "Concession go card fares (about 50% of the adult fare) for eligible pensioners, seniors, students and concession card holders on South East Queensland public transport.",
+   "amount_note": "Replaced: all Queensland public transport fares are 50 cents per journey regardless of concession status; there is no separate half-price concession fare.",
    "is_automatic": false,
-   "application_url": "https://translink.com.au/",
+   "application_url": "https://translink.com.au/tickets-and-fares/concessions",
    "application_channel": "online",
    "deadline_type": "rolling",
-   "deadline_note": null,
+   "deadline_note": "Ended: half-price concession go card fares have been replaced by flat 50-cent fares per journey for all passengers on the Queensland public transport network; some groups (e.g. children under 5, TPI/EDA Veteran Travel card holders) travel free.",
    "procedure_steps": [
     {
      "step": 1,
@@ -4585,10 +4585,10 @@
     ],
     "gender": "any"
    },
-   "source_url": "https://translink.com.au/",
-   "source_snippet": "Concession fares are available to eligible pensioners, seniors, students and concession card holders on Translink services.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://translink.com.au/tickets-and-fares/concessions",
+   "source_snippet": "All public transport fares in Queensland are 50 cents per journey, regardless of how far you travel on the network or how you choose to pay.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "nsw-taxi-transport-subsidy-scheme",
@@ -4605,7 +4605,7 @@
    "amount_period": "monthly",
    "amount_note": "Subsidises 50% of taxi fares (up to $60 per trip) for NSW residents with a severe permanent disability who cannot safely use public transport.",
    "is_automatic": false,
-   "application_url": "https://www.service.nsw.gov.au/",
+   "application_url": "https://www.service.nsw.gov.au/transaction/apply-for-the-taxi-transport-subsidy-scheme",
    "application_channel": "post",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -4649,10 +4649,10 @@
     ],
     "gender": "any"
    },
-   "source_url": "https://www.service.nsw.gov.au/",
-   "source_snippet": "The Taxi Transport Subsidy Scheme subsidises taxi travel for people with a severe permanent disability who cannot use public transport.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://transportnsw.info/taxi-transport-subsidy-scheme",
+   "source_snippet": "The taxi fare subsidy provided under the scheme is up to 50% of the total metered fare to a maximum of $60 per trip.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "nsw-active-and-creative-kids-voucher",
@@ -4667,12 +4667,12 @@
    "amount_max": 100,
    "amount_currency": "AUD",
    "amount_period": "annual",
-   "amount_note": "Two $50 vouchers per child per calendar year ($100 total) for NSW school-aged children in families receiving Family Tax Benefit, toward sport, recreation, creative and cultural activities with registered providers.",
+   "amount_note": "Two $50 vouchers per child per calendar year ($100 total) towards sport, creative and cultural activities with registered providers; two unexpired vouchers can be combined.",
    "is_automatic": false,
-   "application_url": "https://www.service.nsw.gov.au/guidelines/active-and-creative-kids-voucher",
+   "application_url": "https://www.service.nsw.gov.au/transaction/apply-for-an-active-and-creative-kids-voucher",
    "application_channel": "online",
    "deadline_type": "annual",
-   "deadline_note": null,
+   "deadline_note": "2026 Voucher 1: apply and use by 31 December 2026. 2026 Voucher 2: apply and use by 14 July 2027.",
    "procedure_steps": [
     {
      "step": 1,
@@ -4706,10 +4706,10 @@
     "statuses": [
      "parent"
     ],
-    "age_min": null,
-    "age_max": null,
+    "age_min": 4.5,
+    "age_max": 18,
     "income_annual_max": null,
-    "income_note": "Family must receive Family Tax Benefit Part A, Part B or both",
+    "income_note": "Parent, guardian or carer must have received Family Tax Benefit Part A, Part B or both in the current or previous financial year; child must be a NSW resident aged 4.5 to 18.",
     "requires_children": true,
     "nationality": "any_resident",
     "residency_months_min": null,
@@ -4720,9 +4720,9 @@
     ],
     "gender": "any"
    },
-   "source_url": "https://www.service.nsw.gov.au/guidelines/active-and-creative-kids-voucher",
-   "source_snippet": "The Active and Creative Kids Voucher program aims to support certain families with school-aged children by providing two $50 vouchers per calendar year.",
-   "last_verified_at": "2026-08-12",
+   "source_url": "https://www.service.nsw.gov.au/transaction/apply-for-an-active-and-creative-kids-voucher",
+   "source_snippet": "To be eligible for the voucher, a child must be under the care of a parent, guardian or carer who is receiving in the current or previous financial year Family Tax Benefit Part A, Part B or both; a NSW resident; aged between 4.5 and 18 years.",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -4734,16 +4734,16 @@
    "funder": "Victorian Department of Education",
    "category": "education",
    "benefit_type": "cash_one_off",
-   "amount_min": 150,
-   "amount_max": 250,
+   "amount_min": 400,
+   "amount_max": 400,
    "amount_currency": "AUD",
    "amount_period": "annual",
-   "amount_note": "Annual payment of $150 (primary) or $250 (secondary) per eligible student paid to the school to help with camps, sports and excursion costs for families holding a concession card.",
+   "amount_note": "From 1 January 2026 CSEF pays $400 per year for each eligible primary or secondary school student (up from $154 and $256), paid directly to the school.",
    "is_automatic": false,
    "application_url": "https://www.vic.gov.au/camps-sports-and-excursions-fund",
    "application_channel": "in_person",
    "deadline_type": "annual",
-   "deadline_note": null,
+   "deadline_note": "2026 applications go to the school and close 26 June 2026 (page status: Closed). Dates for 2027 not yet published.",
    "procedure_steps": [
     {
      "step": 1,
@@ -4776,9 +4776,9 @@
     "age_min": null,
     "age_max": null,
     "income_annual_max": null,
-    "income_note": "Requires an eligible concession card",
+    "income_note": "Parent/carer must hold a financially means-tested card (Health Care Card, Pensioner Concession Card, Veteran Gold Card) on the first student day of Term 1 or Term 2. Special consideration exists for asylum seekers and Temporary Protection or Humanitarian visa applicants awaiting a decision, and for students in out-of-home care.",
     "requires_children": true,
-    "nationality": "any_resident",
+    "nationality": "citizen_or_pr",
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
@@ -4788,9 +4788,9 @@
     "gender": "any"
    },
    "source_url": "https://www.vic.gov.au/camps-sports-and-excursions-fund",
-   "source_snippet": "CSEF provides payments to assist eligible families to cover the costs of school trips, camps and sporting activities.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_snippet": "Payments for 2026 are $400 per year for all eligible Victorian school students.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "qld-fairplay-vouchers",
@@ -4805,12 +4805,12 @@
    "amount_max": 200,
    "amount_currency": "AUD",
    "amount_period": "annual",
-   "amount_note": "Vouchers of up to $200 for Queensland children aged 5-17 whose families hold a Health Care Card or Pensioner Concession Card, toward sport and active recreation membership, registration or participation fees; released in rounds.",
+   "amount_note": "The FairPlay vouchers have become Play On! Sports Vouchers: up to $200 per eligible child (aged 5 to 17) per financial year for membership, registration or participation fees with registered activity providers. Two application rounds each financial year; one voucher per child.",
    "is_automatic": false,
-   "application_url": "https://www.qld.gov.au/recreation/sports/funding/fairplay",
+   "application_url": "https://www.qld.gov.au/recreation/sports/funding/playon/apply",
    "application_channel": "online",
    "deadline_type": "window",
-   "deadline_note": null,
+   "deadline_note": "Applications opened 27 July 2026 and close 18 December 2026 (unless exhausted earlier); vouchers must be presented to a provider by 18 June 2027. Vouchers for Medicare card holders are exhausted; families in financial hardship can be referred via a referral agent.",
    "procedure_steps": [
     {
      "step": 1,
@@ -4843,7 +4843,7 @@
     "age_min": 5,
     "age_max": 17,
     "income_annual_max": null,
-    "income_note": "Parent/carer must hold an eligible concession card",
+    "income_note": "Parent/carer applies using the child's Medicare card; applicants may apply with a Health Care Card or Pensioner Concession Card. No dollar income limit published.",
     "requires_children": true,
     "nationality": "any_resident",
     "residency_months_min": null,
@@ -4854,10 +4854,10 @@
     ],
     "gender": "any"
    },
-   "source_url": "https://www.qld.gov.au/recreation/sports/funding/fairplay",
-   "source_snippet": "FairPlay vouchers support eligible Queensland children and young people to participate in sport and active recreation.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www.qld.gov.au/recreation/sports/funding/playon/apply",
+   "source_snippet": "When applications are open, parents, carers and guardians can apply for a Play On! Sports Voucher worth up to $200 for their eligible child. A maximum of one voucher is available for each eligible child per financial year.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "no-interest-loans-scheme",
@@ -4983,10 +4983,10 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://ndh.org.au/",
-   "source_snippet": "The National Debt Helpline is a not-for-profit service that helps people tackle their debt problems with free, independent and confidential advice.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://ndh.org.au/financial-counselling/",
+   "source_snippet": "Call us on 1800 007 007 ... here to offer you free, confidential and independent advice.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "legal-aid-commissions",
@@ -5046,9 +5046,9 @@
     "gender": "any"
    },
    "source_url": "https://www.nationallegalaid.org/",
-   "source_snippet": "Legal Aid commissions provide free legal information and advice to all, and legal representation to people who meet means and merits tests.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_snippet": "The legal aid commissions are independent statutory bodies that provide legal assistance services to the public, with a particular focus on the needs of people",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "public-and-community-housing",
@@ -5125,9 +5125,9 @@
     "gender": "any"
    },
    "source_url": "https://www.nsw.gov.au/housing-and-construction/homes-nsw/social-housing",
-   "source_snippet": "Social housing is secure and affordable rental housing for people on low incomes with housing needs, with rent set as a proportion of household income.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted",
+   "source_snippet": "To be considered for social housing, clients must provide proof of Australian citizenship or permanent residency for every person on their application who is aged 18 years and over.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified",
    "income_reviewed_at": "2026-08-13"
   },
   {
@@ -5145,7 +5145,7 @@
    "amount_period": "annual",
    "amount_note": "Free card for residents aged 60+ (who are not working full time) giving transport concessions and discounts at participating businesses; administered separately by each state and territory.",
    "is_automatic": false,
-   "application_url": "https://www.seniorscard.nsw.gov.au/",
+   "application_url": "https://www.service.nsw.gov.au/transaction/apply-for-a-nsw-seniors-card-or-nsw-senior-savers-card",
    "application_channel": "online",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -5175,7 +5175,7 @@
     "age_min": 60,
     "age_max": null,
     "income_annual_max": null,
-    "income_note": "Not income tested; generally must work fewer than 20-35 paid hours per week depending on state",
+    "income_note": "Not income tested. NSW Seniors Card: aged 60 or over, living in NSW, Australian citizen or permanent resident, and not working or averaging 20 hours or less paid work a week over 12 months. Other states set their own rules (not verified).",
     "requires_children": false,
     "nationality": "citizen_or_pr",
     "residency_months_min": null,
@@ -5193,10 +5193,10 @@
     ],
     "gender": "any"
    },
-   "source_url": "https://www.seniorscard.nsw.gov.au/",
-   "source_snippet": "The NSW Seniors Card gives permanent residents aged 60 or over access to transport concessions and discounts from thousands of businesses.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www.service.nsw.gov.au/transaction/apply-for-a-nsw-seniors-card-or-nsw-senior-savers-card",
+   "source_snippet": "As a NSW permanent resident aged 60 or over, you can apply for either a NSW Seniors Card or Senior Savers Card.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "pensioner-education-supplement",
@@ -5207,11 +5207,11 @@
    "funder": "Services Australia (Centrelink)",
    "category": "education",
    "benefit_type": "cash_monthly",
-   "amount_min": null,
-   "amount_max": null,
+   "amount_min": 31.2,
+   "amount_max": 62.4,
    "amount_currency": "AUD",
-   "amount_period": "monthly",
-   "amount_note": "Small fortnightly supplement (around $31-$62) for students receiving certain pension payments (e.g. Disability Support Pension, Carer Payment, Parenting Payment Single) to help with study costs.",
+   "amount_period": "fortnightly",
+   "amount_note": "$62.40 a fortnight if studying at least a 50% full-time course load and receiving a qualifying payment (e.g. Partner Service Pension, Carer Payment, Disability Support Pension); $31.20 a fortnight if studying less than 50% of a full-time load.",
    "is_automatic": false,
    "application_url": "https://www.servicesaustralia.gov.au/pensioner-education-supplement",
    "application_channel": "online",
@@ -5258,9 +5258,9 @@
     "gender": "any"
    },
    "source_url": "https://www.servicesaustralia.gov.au/pensioner-education-supplement",
-   "source_snippet": "A regular extra payment to help with study costs if you get certain income support payments.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_snippet": "You'll get $62.40 a fortnight if you're studying at least a 50% full time course load and you get one of these:",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "assistance-for-isolated-children",
@@ -5380,8 +5380,8 @@
     "gender": "any"
    },
    "source_url": "https://www.servicesaustralia.gov.au/work-bonus",
-   "source_snippet": "The Work Bonus helps you keep more of your pension if you are of Age Pension age and earn income from work.",
-   "last_verified_at": "2026-08-12",
+   "source_snippet": "You'll accrue $300 to your Work Bonus balance each fortnight, up to a maximum of $11,800.",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified",
    "income_reviewed_at": "2026-08-13"
   },
@@ -5395,15 +5395,15 @@
    "category": "income_support",
    "benefit_type": "cash_one_off",
    "amount_min": null,
-   "amount_max": 1500,
+   "amount_max": 5155,
    "amount_currency": "AUD",
    "amount_period": "one_off",
-   "amount_note": "Payment of up to $1,500 cash plus goods/services and caseworker support for people escaping intimate partner violence (up to $5,000 total value). NOTE: program status/funding rounds change - check UnitingCare for current availability.",
+   "amount_note": "Now delivered as the Leaving Violence Program (the Escaping Violence Payment trial has ended): up to 12 weeks of support including financial support of up to $5,155 (up to $1,500 by bank transfer and up to $3,655 in goods and services), risk and needs assessment, safety planning and referrals. Not a crisis service.",
    "is_automatic": false,
-   "application_url": "https://www.unitingvictas.org.au/community-services/family-and-relationship-services/escaping-violence-payment/",
+   "application_url": "https://leavingviolenceprogram.org.au/eligibility-check",
    "application_channel": "online",
    "deadline_type": "rolling",
-   "deadline_note": null,
+   "deadline_note": "Replaces the Escaping Violence Payment trial. You cannot have been supported by the Program, the EVP trial or the Temporary Visa Holders Experiencing Violence Pilot in the last 12 months.",
    "procedure_steps": [
     {
      "step": 1,
@@ -5430,10 +5430,10 @@
    ],
    "eligibility": {
     "statuses": [],
-    "age_min": null,
+    "age_min": 18,
     "age_max": null,
     "income_annual_max": null,
-    "income_note": "For people experiencing financial hardship due to escaping violence",
+    "income_note": "No dollar income test; you must be experiencing financial stress because of intimate partner violence, have left or plan to leave, and live in Australia with a current address as a citizen, permanent resident or temporary visa holder.",
     "requires_children": false,
     "nationality": "any_resident",
     "residency_months_min": null,
@@ -5442,10 +5442,855 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.unitingvictas.org.au/community-services/family-and-relationship-services/escaping-violence-payment/",
-   "source_snippet": "The Escaping Violence Payment provides financial assistance of up to $5,000 (including up to $1,500 in cash) to people escaping intimate partner violence.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://leavingviolenceprogram.org.au/",
+   "source_snippet": "The Program is available to eligible victim-survivors regardless of gender or visa status.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "education-entry-payment",
+   "name_local": "Education Entry Payment (EdEP)",
+   "name_en": "Education Entry Payment (EdEP)",
+   "admin_level": "national",
+   "admin_area": null,
+   "funder": "Services Australia (Centrelink)",
+   "category": "education",
+   "benefit_type": "cash_one_off",
+   "amount_min": 208,
+   "amount_max": 208,
+   "amount_currency": "AUD",
+   "amount_period": "one_off",
+   "amount_note": "A once-a-year payment of $208 when you start approved study or training while getting certain income support payments.",
+   "is_automatic": true,
+   "application_url": "https://www.servicesaustralia.gov.au/how-to-claim-education-entry-payment?context=22146",
+   "application_channel": "automatic",
+   "deadline_type": "annual",
+   "deadline_note": "Paid once each calendar year (once only at course start if transferring to a student payment); max one EdEP every rolling 12 months for JobSeeker/Parenting Payment partnered",
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Check you get a qualifying payment (Disability Support Pension, Carer Payment, Parenting Payment single, JobSeeker 12 months, etc.) and are in approved study",
+     "url": "https://www.servicesaustralia.gov.au/who-can-get-education-entry-payment?context=22146"
+    },
+    {
+     "step": 2,
+     "detail": "Tell Services Australia when you start an approved course",
+     "url": "https://www.servicesaustralia.gov.au/how-to-claim-education-entry-payment?context=22146"
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "Proof of enrolment in approved study or training",
+     "mandatory": true,
+     "note": null
+    }
+   ],
+   "eligibility": {
+    "statuses": [
+     "student"
+    ],
+    "age_min": null,
+    "age_max": null,
+    "income_annual_max": null,
+    "income_note": "No separate income test: eligibility follows the underlying income support payment, which is income- and assets-tested.",
+    "requires_children": false,
+    "nationality": "citizen_or_pr",
+    "residency_months_min": null,
+    "housing_tenure": null,
+    "student_required": true,
+    "admin_areas": [],
+    "gender": "any"
+   },
+   "source_url": "https://www.servicesaustralia.gov.au/who-can-get-education-entry-payment?context=22146",
+   "source_snippet": "To get EdEP, you need to be doing approved study or training and get certain payments from us.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "relocation-scholarship",
+   "name_local": "Relocation Scholarship",
+   "name_en": "Relocation Scholarship",
+   "admin_level": "national",
+   "admin_area": null,
+   "funder": "Services Australia (Centrelink)",
+   "category": "education",
+   "benefit_type": "cash_one_off",
+   "amount_min": null,
+   "amount_max": 5707,
+   "amount_currency": "AUD",
+   "amount_period": "annual",
+   "amount_note": "Once-a-year payment for students on Youth Allowance or ABSTUDY who move to or from a regional or remote area to study: $5,707 in the first year, then $2,854 a year in years 2-3 (family home regional/remote) or $1,425 a year after that.",
+   "is_automatic": true,
+   "application_url": "https://www.servicesaustralia.gov.au/how-to-get-relocation-scholarship?context=22566",
+   "application_channel": "automatic",
+   "deadline_type": "annual",
+   "deadline_note": "Paid once a year; no application needed unless doing a regional placement",
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Get at least $1 of Youth Allowance (student) or ABSTUDY Living Allowance",
+     "url": "https://www.servicesaustralia.gov.au/youth-allowance-for-students-and-australian-apprentices"
+    },
+    {
+     "step": 2,
+     "detail": "Check if your family home or course is in a regional or remote area",
+     "url": "https://www.centrelink.gov.au/apps/custonline_ris/"
+    },
+    {
+     "step": 3,
+     "detail": "Tell Services Australia if you move",
+     "url": "https://www.servicesaustralia.gov.au/tell-us-about-changes-if-you-get-relocation-scholarship?context=22566"
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "Proof of enrolment in a full-time approved scholarship course",
+     "mandatory": true,
+     "note": null
+    }
+   ],
+   "eligibility": {
+    "statuses": [
+     "student"
+    ],
+    "age_min": null,
+    "age_max": 22,
+    "income_annual_max": null,
+    "income_note": "Not separately income-tested: you must receive at least $1 of Youth Allowance or ABSTUDY, which are income- and parental-income-tested. Most people do not qualify after turning 22.",
+    "requires_children": false,
+    "nationality": "citizen_or_pr",
+    "residency_months_min": null,
+    "housing_tenure": null,
+    "student_required": true,
+    "admin_areas": [],
+    "gender": "any"
+   },
+   "source_url": "https://www.servicesaustralia.gov.au/how-much-relocation-scholarship-you-can-get?context=22566",
+   "source_snippet": "You'll get: $5,707 in the first year you need to live away from home to study",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "adult-migrant-english-program",
+   "name_local": "Adult Migrant English Program (AMEP)",
+   "name_en": "Adult Migrant English Program (AMEP)",
+   "admin_level": "national",
+   "admin_area": null,
+   "funder": "Department of Home Affairs",
+   "category": "education",
+   "benefit_type": "in_kind",
+   "amount_min": null,
+   "amount_max": null,
+   "amount_currency": "AUD",
+   "amount_period": "one_off",
+   "amount_note": "Free English language tuition (face-to-face, distance learning or AMEPOnline) for eligible migrants and humanitarian entrants; free childcare for children under school age while you attend class.",
+   "is_automatic": false,
+   "application_url": "https://immi.homeaffairs.gov.au/settling-in-australia/amep/find-a-class",
+   "application_channel": "in_person",
+   "deadline_type": "none",
+   "deadline_note": "For visas starting after 1 October 2020: register with a provider within 6 months, start within 12 months and finish within 5 years of the visa start date",
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Check you are eligible (aged 18+, little or no English, permanent resident or eligible temporary visa, or a citizen who held an eligible visa)",
+     "url": "https://immi.homeaffairs.gov.au/settling-in-australia/amep/about-the-program"
+    },
+    {
+     "step": 2,
+     "detail": "Find an AMEP provider and class near you",
+     "url": "https://immi.homeaffairs.gov.au/settling-in-australia/amep/find-a-class"
+    },
+    {
+     "step": 3,
+     "detail": "Register with the provider within 6 months of your visa start date",
+     "url": null
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "Visa details / proof of eligible visa",
+     "mandatory": true,
+     "note": null
+    }
+   ],
+   "eligibility": {
+    "statuses": [],
+    "age_min": 18,
+    "age_max": null,
+    "income_annual_max": null,
+    "income_note": "Not means-tested.",
+    "requires_children": false,
+    "nationality": "any_resident",
+    "residency_months_min": null,
+    "housing_tenure": null,
+    "student_required": false,
+    "admin_areas": [],
+    "gender": "any"
+   },
+   "source_url": "https://immi.homeaffairs.gov.au/settling-in-australia/amep/about-the-program",
+   "source_snippet": "The Adult Migrant English Program (AMEP) is a free service to help eligible migrants and humanitarian entrants improve their English language skills and settle into Australia.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "support-at-home",
+   "name_local": "Support at Home program",
+   "name_en": "Support at Home program",
+   "admin_level": "national",
+   "admin_area": null,
+   "funder": "Department of Health, Disability and Ageing (My Aged Care)",
+   "category": "health",
+   "benefit_type": "in_kind",
+   "amount_min": null,
+   "amount_max": null,
+   "amount_currency": "AUD",
+   "amount_period": "annual",
+   "amount_note": "Government-funded in-home aged care (nursing, personal care, domestic help, meals, transport, equipment, home modifications). Funding is assigned by one of 8 classifications after assessment; you contribute to some services based on income and assets, and from 1 October 2026 personal care is fully government-funded.",
+   "is_automatic": false,
+   "application_url": "https://www.myagedcare.gov.au/apply-online",
+   "application_channel": "online",
+   "deadline_type": "rolling",
+   "deadline_note": null,
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Check if you are eligible and apply for an aged care assessment through My Aged Care",
+     "url": "https://www.myagedcare.gov.au/apply-online"
+    },
+    {
+     "step": 2,
+     "detail": "Receive an approval letter with your services and funding",
+     "url": null
+    },
+    {
+     "step": 3,
+     "detail": "Choose a provider and sign a service agreement",
+     "url": "https://www.myagedcare.gov.au/support-at-home"
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "Medicare card",
+     "mandatory": false,
+     "note": null
+    },
+    {
+     "doc": "Income and asset information for Services Australia (to work out contributions)",
+     "mandatory": false,
+     "note": null
+    }
+   ],
+   "eligibility": {
+    "statuses": [],
+    "age_min": null,
+    "age_max": null,
+    "income_annual_max": null,
+    "income_note": "Eligibility is by aged care assessment of care needs, not by an income cut-off; income and assets only determine the contribution you pay.",
+    "requires_children": false,
+    "nationality": "any_resident",
+    "residency_months_min": null,
+    "housing_tenure": null,
+    "student_required": false,
+    "admin_areas": [],
+    "gender": "any"
+   },
+   "source_url": "https://www.myagedcare.gov.au/support-at-home",
+   "source_snippet": "The Support at Home program was introduced in November 2025, replacing the Home Care Packages Program and the Short-term Restorative Care Programme.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "cheaper-home-batteries-program",
+   "name_local": "Cheaper Home Batteries Program",
+   "name_en": "Cheaper Home Batteries Program",
+   "admin_level": "national",
+   "admin_area": null,
+   "funder": "Australian Government (DCCEEW, via the Small-scale Renewable Energy Scheme)",
+   "category": "energy",
+   "benefit_type": "discount",
+   "amount_min": null,
+   "amount_max": null,
+   "amount_currency": "AUD",
+   "amount_period": "one_off",
+   "amount_note": "From 1 July 2025 the Australian Government funds around a 30% discount on eligible small-scale battery systems connected to new or existing rooftop solar. The discount is generally provided via solar and battery retailers and installers.",
+   "is_automatic": false,
+   "application_url": "https://www.energy.gov.au/rebates/cheaper-home-batteries-program",
+   "application_channel": "in_person",
+   "deadline_type": "rolling",
+   "deadline_note": null,
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Choose an eligible battery system and an approved installer/retailer",
+     "url": "https://www.energy.gov.au/solar"
+    },
+    {
+     "step": 2,
+     "detail": "The discount is applied at purchase by the retailer or installer",
+     "url": null
+    }
+   ],
+   "documents_required": [],
+   "eligibility": {
+    "statuses": [],
+    "age_min": null,
+    "age_max": null,
+    "income_annual_max": null,
+    "income_note": "Not income-tested. Applies to households and small businesses installing an eligible battery with rooftop solar.",
+    "requires_children": false,
+    "nationality": "any_resident",
+    "residency_months_min": null,
+    "housing_tenure": "owner",
+    "student_required": false,
+    "admin_areas": [],
+    "gender": "any"
+   },
+   "source_url": "https://www.energy.gov.au/rebates/cheaper-home-batteries-program",
+   "source_snippet": "From 1 July 2025, the Australian Government is funding around a 30% discount on eligible small-scale battery systems connected to new or existing rooftop solar.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "nsw-family-energy-rebate",
+   "name_local": "NSW Family Energy Rebate",
+   "name_en": "NSW Family Energy Rebate",
+   "admin_level": "region",
+   "admin_area": "New South Wales",
+   "funder": "NSW Government (Service NSW / NSW Energy Rebates)",
+   "category": "energy",
+   "benefit_type": "cash_one_off",
+   "amount_min": null,
+   "amount_max": null,
+   "amount_currency": "AUD",
+   "amount_period": "annual",
+   "amount_note": "Lump-sum rebate credited to your electricity bill to help families with dependent children. One rebate per household per financial year; principal place of residence only. Dollar amount is set by the NSW Government each year.",
+   "is_automatic": false,
+   "application_url": "https://www.service.nsw.gov.au/transaction/apply-for-the-family-energy-rebate-retail-customers",
+   "application_channel": "online",
+   "deadline_type": "rolling",
+   "deadline_note": "Processing currently 6 to 8 weeks",
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Make sure your 2025-26 tax return is lodged and your Family Tax Benefit is finalised with Centrelink",
+     "url": "https://www.servicesaustralia.gov.au/advising-non-lodgement-tax-return"
+    },
+    {
+     "step": 2,
+     "detail": "Apply online via Service NSW (or post the PDF form with your latest electricity bill)",
+     "url": "https://www.service.nsw.gov.au/transaction/apply-for-the-family-energy-rebate-retail-customers"
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "Services Australia letter confirming Family Tax Benefit finalised",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Services Australia Customer Reference Number (CRN)",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Electricity account details",
+     "mandatory": true,
+     "note": null
+    }
+   ],
+   "eligibility": {
+    "statuses": [],
+    "age_min": null,
+    "age_max": null,
+    "income_annual_max": null,
+    "income_note": "No separate income figure: you must have received Family Tax Benefit in 2025-26, which is itself income-tested.",
+    "requires_children": true,
+    "nationality": "any_resident",
+    "residency_months_min": null,
+    "housing_tenure": null,
+    "student_required": false,
+    "admin_areas": [
+     "New South Wales"
+    ],
+    "gender": "any"
+   },
+   "source_url": "https://www.service.nsw.gov.au/transaction/apply-for-the-family-energy-rebate-retail-customers",
+   "source_snippet": "The NSW Family Energy Rebate helps people with dependent children pay their electricity bills.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "vic-utility-relief-grant",
+   "name_local": "Utility Relief Grant Scheme (Victoria)",
+   "name_en": "Utility Relief Grant Scheme (Victoria)",
+   "admin_level": "region",
+   "admin_area": "Victoria",
+   "funder": "Victorian Department of Families, Fairness and Housing",
+   "category": "energy",
+   "benefit_type": "cash_one_off",
+   "amount_min": null,
+   "amount_max": 650,
+   "amount_currency": "AUD",
+   "amount_period": "one_off",
+   "amount_note": "Grant towards an overdue mains electricity, gas or water bill. Maximum $650 per utility type in a two-year period ($1,300 for households with a single source of energy); paid to your retailer.",
+   "is_automatic": false,
+   "application_url": "https://services.dffh.vic.gov.au/utility-relief-grant-scheme",
+   "application_channel": "online",
+   "deadline_type": "rolling",
+   "deadline_note": null,
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Phone your electricity, gas or water retailer to request an application",
+     "url": "https://services.dffh.vic.gov.au/utility-relief-grant-scheme"
+    },
+    {
+     "step": 2,
+     "detail": "Complete the form online or on paper (a support worker can help) and return it",
+     "url": null
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "Pensioner Concession Card, Health Care Card or DVA Gold Card (or other proof of low income)",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Payslips, receipts or statutory declaration as needed",
+     "mandatory": false,
+     "note": null
+    }
+   ],
+   "eligibility": {
+    "statuses": [],
+    "age_min": null,
+    "age_max": null,
+    "income_annual_max": null,
+    "income_note": "No published dollar ceiling: account holder must hold a Pensioner Concession Card, Health Care Card or DVA Gold Card, or be part of a low-income household, and meet a hardship criterion (family violence, recent income drop, high unexpected costs, or shelter costs above 30% of household income).",
+    "requires_children": false,
+    "nationality": "any_resident",
+    "residency_months_min": null,
+    "housing_tenure": null,
+    "student_required": false,
+    "admin_areas": [
+     "Victoria"
+    ],
+    "gender": "any"
+   },
+   "source_url": "https://services.dffh.vic.gov.au/utility-relief-grant-scheme",
+   "source_snippet": "Relief grants for paying overdue energy or water bills are available to low-income Victorians experiencing unexpected hardship.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "qld-pensioner-rates-subsidy",
+   "name_local": "Queensland Pensioner Rates Subsidy",
+   "name_en": "Queensland Pensioner Rates Subsidy",
+   "admin_level": "region",
+   "admin_area": "Queensland",
+   "funder": "Queensland Government (administered by local councils)",
+   "category": "housing",
+   "benefit_type": "discount",
+   "amount_min": null,
+   "amount_max": 200,
+   "amount_currency": "AUD",
+   "amount_period": "annual",
+   "amount_note": "Subsidy of 20 per cent (up to a maximum of $200 each year) of the gross rates and charges levied by your local council.",
+   "is_automatic": false,
+   "application_url": "https://www.qld.gov.au/community/cost-of-living-support/concessions/property-concessions/rates-subsidy",
+   "application_channel": "in_person",
+   "deadline_type": "rolling",
+   "deadline_note": null,
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Contact your local council to apply (each council has its own process)",
+     "url": "https://www.dlgwv.qld.gov.au/local-government/for-the-community/local-government-directory/search-the-local-government-directory"
+    },
+    {
+     "step": 2,
+     "detail": "Lodge a new application if you change address",
+     "url": null
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "Queensland Pensioner Concession Card or DVA Gold Card",
+     "mandatory": true,
+     "note": null
+    }
+   ],
+   "eligibility": {
+    "statuses": [
+     "retired"
+    ],
+    "age_min": null,
+    "age_max": null,
+    "income_annual_max": null,
+    "income_note": "Not a separate income test: you must hold a Pensioner Concession Card or DVA Gold Card (which are income- and assets-tested) and own or be life tenant of your Queensland home.",
+    "requires_children": false,
+    "nationality": "any_resident",
+    "residency_months_min": null,
+    "housing_tenure": "owner",
+    "student_required": false,
+    "admin_areas": [
+     "Queensland"
+    ],
+    "gender": "any"
+   },
+   "source_url": "https://www.qld.gov.au/community/cost-of-living-support/concessions/property-concessions/rates-subsidy",
+   "source_snippet": "Eligible pensioners can receive a subsidy of 20 per cent (up to a maximum amount of $200 each year) of the gross rates and charges levied by your local council.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "free-tafe",
+   "name_local": "Free TAFE",
+   "name_en": "Free TAFE",
+   "admin_level": "national",
+   "admin_area": null,
+   "funder": "Australian Government (DEWR) with state and territory governments",
+   "category": "education",
+   "benefit_type": "free_slab",
+   "amount_min": null,
+   "amount_max": null,
+   "amount_currency": "AUD",
+   "amount_period": "one_off",
+   "amount_note": "Tuition-free TAFE and vocational education places in priority areas (care, technology, hospitality, construction, agriculture, manufacturing, VET workforce). Made permanent by the Free TAFE Act 2025, with at least 100,000 places per year from 2027.",
+   "is_automatic": false,
+   "application_url": "https://www.yourcareer.gov.au/fee-free-tafe",
+   "application_channel": "in_person",
+   "deadline_type": "none",
+   "deadline_note": "Places and eligibility are set by each state and territory; check Your Career for current courses",
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Search eligible Free TAFE courses on Your Career",
+     "url": "https://www.yourcareer.gov.au/fee-free-tafe"
+    },
+    {
+     "step": 2,
+     "detail": "Enrol with your state or territory TAFE provider",
+     "url": null
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "Proof of identity and residency/visa status",
+     "mandatory": true,
+     "note": "Rules vary by state"
+    }
+   ],
+   "eligibility": {
+    "statuses": [],
+    "age_min": null,
+    "age_max": null,
+    "income_annual_max": null,
+    "income_note": "Not income-tested; places are prioritised for First Nations Australians, people aged 17-24, people out of work or on income support, unpaid carers, women facing economic insecurity, people with disability and certain visa holders.",
+    "requires_children": false,
+    "nationality": "citizen_or_pr",
+    "residency_months_min": null,
+    "housing_tenure": null,
+    "student_required": false,
+    "admin_areas": [],
+    "gender": "any"
+   },
+   "source_url": "https://www.dewr.gov.au/skills-reform/free-tafe",
+   "source_snippet": "The Australian Government has made Free TAFE a permanent feature of the national VET system",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "humanitarian-settlement-program",
+   "name_local": "Humanitarian Settlement Program (HSP)",
+   "name_en": "Humanitarian Settlement Program (HSP)",
+   "admin_level": "national",
+   "admin_area": null,
+   "funder": "Department of Home Affairs",
+   "category": "income_support",
+   "benefit_type": "in_kind",
+   "amount_min": null,
+   "amount_max": null,
+   "amount_currency": "AUD",
+   "amount_period": "one_off",
+   "amount_note": "Case-managed settlement support for 6-18 months: airport reception, short-term accommodation, help finding long-term housing, learning English, employment, education and training, and orientation.",
+   "is_automatic": true,
+   "application_url": "https://immi.homeaffairs.gov.au/settling-in-australia/humanitarian-settlement-program/about-the-program",
+   "application_channel": "automatic",
+   "deadline_type": "none",
+   "deadline_note": null,
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Granted a Refugee (subclass 200, 201, 203, 204) or Global Special Humanitarian (subclass 202) visa; support starts on arrival",
+     "url": null
+    },
+    {
+     "step": 2,
+     "detail": "Work with your HSP service provider case manager",
+     "url": "https://immi.homeaffairs.gov.au/settling-in-australia/humanitarian-settlement-program/service-providers"
+    }
+   ],
+   "documents_required": [],
+   "eligibility": {
+    "statuses": [],
+    "age_min": null,
+    "age_max": null,
+    "income_annual_max": null,
+    "income_note": "Not means-tested; based on visa type. Australian citizens are not eligible. Subclass 202 visa holders under the Community Support Program are supported by their proposing organisation instead.",
+    "requires_children": false,
+    "nationality": "refugee_or_protected",
+    "residency_months_min": null,
+    "housing_tenure": null,
+    "student_required": false,
+    "admin_areas": [],
+    "gender": "any"
+   },
+   "source_url": "https://immi.homeaffairs.gov.au/settling-in-australia/humanitarian-settlement-program/about-the-program",
+   "source_snippet": "The Humanitarian Settlement Program (HSP) supports humanitarian entrants and other eligible visa holders during their initial settlement.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "nsw-life-support-energy-rebate",
+   "name_local": "NSW Life Support Energy Rebate",
+   "name_en": "NSW Life Support Energy Rebate",
+   "admin_level": "region",
+   "admin_area": "New South Wales",
+   "funder": "NSW Government",
+   "category": "energy",
+   "benefit_type": "discount",
+   "amount_min": null,
+   "amount_max": null,
+   "amount_currency": "AUD",
+   "amount_period": "annual",
+   "amount_note": "Rebate amount depends on the life support machine and the number of days in the billing period.",
+   "is_automatic": false,
+   "application_url": "https://www.service.nsw.gov.au/transaction/apply-for-the-life-support-energy-rebate-retail-customers",
+   "application_channel": "online",
+   "deadline_type": "rolling",
+   "deadline_note": "Reapply every 4 years",
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Get the form completed by a medical practitioner",
+     "url": "https://www.service.nsw.gov.au/transaction/apply-for-the-life-support-energy-rebate-retail-customers"
+    },
+    {
+     "step": 2,
+     "detail": "Submit it to your electricity retailer",
+     "url": "https://www.service.nsw.gov.au/transaction/apply-for-the-life-support-energy-rebate-retail-customers"
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "Medical practitioner's application form",
+     "mandatory": true,
+     "note": null
+    }
+   ],
+   "eligibility": {
+    "statuses": [],
+    "age_min": null,
+    "age_max": null,
+    "income_annual_max": null,
+    "income_note": "Not income-tested.",
+    "requires_children": false,
+    "nationality": "any_resident",
+    "residency_months_min": null,
+    "housing_tenure": null,
+    "student_required": false,
+    "admin_areas": [
+     "New South Wales"
+    ],
+    "gender": "any"
+   },
+   "source_url": "https://www.service.nsw.gov.au/transaction/apply-for-the-life-support-energy-rebate-retail-customers",
+   "source_snippet": "Apply through the electricity retailer with a medical practitioner's form.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "qld-home-energy-emergency-assistance-scheme",
+   "name_local": "Queensland Home Energy Emergency Assistance Scheme",
+   "name_en": "Queensland Home Energy Emergency Assistance Scheme",
+   "admin_level": "region",
+   "admin_area": "Queensland",
+   "funder": "Queensland Government",
+   "category": "energy",
+   "benefit_type": "cash_one_off",
+   "amount_min": null,
+   "amount_max": 720,
+   "amount_currency": "AUD",
+   "amount_period": "one_off",
+   "amount_note": "Up to $720 once every 2 years towards energy bills.",
+   "is_automatic": false,
+   "application_url": "https://heeas-application-form.treasury.qld.gov.au/",
+   "application_channel": "online",
+   "deadline_type": "rolling",
+   "deadline_note": null,
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Contact your energy provider",
+     "url": "https://www.qld.gov.au/housing/home-energy-savings/home-energy-emergency-assistance-scheme"
+    },
+    {
+     "step": 2,
+     "detail": "Complete the online application form",
+     "url": "https://heeas-application-form.treasury.qld.gov.au/"
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "Concession card or proof of income/hardship",
+     "mandatory": true,
+     "note": null
+    }
+   ],
+   "eligibility": {
+    "statuses": [],
+    "age_min": null,
+    "age_max": null,
+    "income_annual_max": null,
+    "income_note": "Eligible with a concession card, income at or below the part-rate age pension limit, or being on a hardship programme; no single ceiling published here.",
+    "requires_children": false,
+    "nationality": "any_resident",
+    "residency_months_min": null,
+    "housing_tenure": null,
+    "student_required": false,
+    "admin_areas": [
+     "Queensland"
+    ],
+    "gender": "any"
+   },
+   "source_url": "https://www.qld.gov.au/housing/home-energy-savings/home-energy-emergency-assistance-scheme",
+   "source_snippet": "Up to $720 once every 2 years.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "vic-free-kinder",
+   "name_local": "Free Kinder (Victoria)",
+   "name_en": "Free Kinder (Victoria)",
+   "admin_level": "region",
+   "admin_area": "Victoria",
+   "funder": "Victorian Government",
+   "category": "education",
+   "benefit_type": "free_slab",
+   "amount_min": null,
+   "amount_max": null,
+   "amount_currency": "AUD",
+   "amount_period": "annual",
+   "amount_note": "Free kindergarten for 3- and 4-year-old children.",
+   "is_automatic": false,
+   "application_url": "https://findakinder.vic.gov.au/",
+   "application_channel": "in_person",
+   "deadline_type": "rolling",
+   "deadline_note": null,
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Find a kinder programme near you",
+     "url": "https://findakinder.vic.gov.au/"
+    },
+    {
+     "step": 2,
+     "detail": "Enrol with the chosen service",
+     "url": "https://www.vic.gov.au/kinder-quick-guide-parents"
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "Child's birth certificate or proof of age",
+     "mandatory": true,
+     "note": null
+    }
+   ],
+   "eligibility": {
+    "statuses": [
+     "parent"
+    ],
+    "age_min": 3,
+    "age_max": 4,
+    "income_annual_max": null,
+    "income_note": "Not income-tested.",
+    "requires_children": true,
+    "nationality": "any_resident",
+    "residency_months_min": null,
+    "housing_tenure": null,
+    "student_required": false,
+    "admin_areas": [
+     "Victoria"
+    ],
+    "gender": "any"
+   },
+   "source_url": "https://www.vic.gov.au/kinder-quick-guide-parents",
+   "source_snippet": "Free Kinder: All 3- and 4-year-old children in Victoria can access Free Kinder.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "qld-free-kindy",
+   "name_local": "Free Kindy (Queensland)",
+   "name_en": "Free Kindy (Queensland)",
+   "admin_level": "region",
+   "admin_area": "Queensland",
+   "funder": "Queensland Government",
+   "category": "education",
+   "benefit_type": "free_slab",
+   "amount_min": null,
+   "amount_max": null,
+   "amount_currency": "AUD",
+   "amount_period": "annual",
+   "amount_note": "15 hours per week for 40 weeks per year of free kindergarten.",
+   "is_automatic": false,
+   "application_url": "https://earlychildhood.qld.gov.au/freekindy",
+   "application_channel": "in_person",
+   "deadline_type": "rolling",
+   "deadline_note": null,
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Check the child meets the age cut-off",
+     "url": "https://earlychildhood.qld.gov.au/freekindy"
+    },
+    {
+     "step": 2,
+     "detail": "Enrol with an approved kindergarten provider",
+     "url": "https://earlychildhood.qld.gov.au/freekindy"
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "Proof of child's age",
+     "mandatory": true,
+     "note": null
+    }
+   ],
+   "eligibility": {
+    "statuses": [
+     "parent"
+    ],
+    "age_min": 4,
+    "age_max": 4,
+    "income_annual_max": null,
+    "income_note": "Not income-tested. Refugee and humanitarian visa families and fee-exempt temporary visa holders are eligible.",
+    "requires_children": true,
+    "nationality": "any_resident",
+    "residency_months_min": null,
+    "housing_tenure": null,
+    "student_required": false,
+    "admin_areas": [
+     "Queensland"
+    ],
+    "gender": "any"
+   },
+   "source_url": "https://earlychildhood.qld.gov.au/freekindy",
+   "source_snippet": "15 hours per week for 40 weeks per year, for children at least 4 by 30 June in the year before school.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   }
  ]
 }

@@ -107,6 +107,9 @@ export const MERGES = [
   ['fr', 'fr-first-factory', 'fr-premiere-usine', 'same Premiere Usine / First Factory call, same source page; the survivor has the procedure and documents'],
   ['ch', 'ch-innosuisse-innovationsprojekte-umsetzungspartner', 'ch-innosuisse-innovation-project-implementation-partner', 'same Innosuisse innovation project with an implementation partner, recorded once from the German page and once from the English one'],
   ['ch', 'ch-innosuisse-startup-innovationsprojekte', 'ch-innosuisse-startup-innovation-projects', 'same Innosuisse start-up innovation projects, recorded once from the German page and once from the English one'],
+  ['eu', 'eu-esa-bass-kickstart', 'eu-esa-business-applications-kick-start', 'BASS Kick-start is the ESA Business Applications Kick-start; re-verification pointed both at the same official page'],
+  ['gb', 'gb-se-rd-grant', 'uk-scottish-enterprise-rd-grants', 'same Scottish Enterprise R&D grant page after re-verification'],
+  ['ie', 'ie-ei-hpsu-feasibility', 'ie-hpsu-feasibility-study-grant', 'same Enterprise Ireland HPSU Feasibility Study Grant page after re-verification'],
 ];
 
 function loadCountry(cc) {

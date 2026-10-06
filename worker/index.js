@@ -34,6 +34,12 @@ import { buildBrief, briefText } from '../packages/brief/index.js';
 import { verify as verifyTotp, newSecret as newTotpSecret, otpauthUri, isReplay, base32Encode } from '../packages/totp/index.js';
 import { effectiveStatus, deadlineState } from '../packages/deadlines/index.js';
 import { validateLeadInput, leadNotificationText } from '../packages/leads/index.js';
+import {
+  validateResultsEmailInput, buildShareLink, householdHeadline, companyHeadline, resultSignature,
+  resultEmail, sequenceEmail, digestEmail, dueStep, unsubscribeHeaders,
+  DAY, DIGEST_EVERY_DAYS, DIGEST_START_DAYS, LOCALES as LIFECYCLE_LOCALES,
+} from '../packages/lifecycle/index.js';
+import { validateIssueInput, validateResolution, newReference } from '../packages/issues/index.js';
 /* Old company-grant slug -> surviving canonical slug, for the 45 records merged
    as duplicates (scripts/merge-duplicates.mjs). The static site 301s the old
    pages via _redirects; this is the same table for MCP's get_* tools, so an
@@ -438,32 +444,12 @@ async function loadManifest(env, request) {
 /* ------------------------------------------------------------------ */
 
 /**
- * POST /api/check — the free half.
- *
- * Returns the money figure and the shape of the result. Deliberately returns
- * NO programme names, amounts or steps to an unentitled caller: the teaser is
- * "you are owed X across Y schemes", and X is the honest computed number.
+ * The free half of a household check, as plain data: the money and the shape of
+ * the result, never a programme. One function so POST /api/check and the
+ * "email me this result" flow cannot disagree about what "free" contains.
  */
-async function handleCheck(request, env) {
-  const profile = await request.json().catch(() => null);
-  if (!profile?.country_code) return bad('country_code required');
-
-  const cc = String(profile.country_code).toLowerCase();
-
-  /* Entitlement is resolved before the data load, not after: loadCountry needs
-     to know whether a missing full dataset is a non-event or an incident. */
-  const session = await readSession(env, request.headers.get('cookie'), request.headers.get('authorization'));
-  const ent = await entitlementFor(env, session, cc);
-
-  const data = await loadCountry(env, request, cc, { entitled: ent.entitled });
-  const manifest = await loadManifest(env, request);
-  if (!data || !manifest) return bad('unknown country', 404);
-
-  const entry = manifest.countries.find((c) => c.slug === cc);
-  const result = match(profile, data, entry);
-
-  /* Free payload — the number, never the list. */
-  const free = {
+function buildFreeResult(result, entry) {
+  return {
     country: entry.name,
     currency: result.currency,
     total_min: result.total_min,
@@ -493,6 +479,37 @@ async function handleCheck(request, env) {
     }, {}),
     data_as_of: result.data_as_of,
     disclaimer: result.disclaimer,
+  };
+}
+
+/**
+ * POST /api/check — the free half.
+ *
+ * Returns the money figure and the shape of the result. Deliberately returns
+ * NO programme names, amounts or steps to an unentitled caller: the teaser is
+ * "you are owed X across Y schemes", and X is the honest computed number.
+ */
+async function handleCheck(request, env) {
+  const profile = await request.json().catch(() => null);
+  if (!profile?.country_code) return bad('country_code required');
+
+  const cc = String(profile.country_code).toLowerCase();
+
+  /* Entitlement is resolved before the data load, not after: loadCountry needs
+     to know whether a missing full dataset is a non-event or an incident. */
+  const session = await readSession(env, request.headers.get('cookie'), request.headers.get('authorization'));
+  const ent = await entitlementFor(env, session, cc);
+
+  const data = await loadCountry(env, request, cc, { entitled: ent.entitled });
+  const manifest = await loadManifest(env, request);
+  if (!data || !manifest) return bad('unknown country', 404);
+
+  const entry = manifest.countries.find((c) => c.slug === cc);
+  const result = match(profile, data, entry);
+
+  /* Free payload — the number, never the list. */
+  const free = {
+    ...buildFreeResult(result, entry),
     entitled: ent.entitled,
     paywall: ent.entitled ? null : { reason: ent.reason, unlocks: 'schemes, steps, documents and prepared applications' },
   };
@@ -1155,6 +1172,121 @@ async function handleAdminLeads(request, env) {
   return json({ leads: rows.results });
 }
 
+/* ------------------------------------------------------------------ */
+/* "Report an error" — POST /api/report-issue, GET /api/admin/issues   */
+/* ------------------------------------------------------------------ */
+
+/**
+ * Store one validated report. Shared by the programme-page form and the MCP
+ * report_issue tool, so a correction raised by an assistant lands in the same
+ * queue as one raised by a reader. `v` is validateIssueInput's output.
+ *
+ * Throws like any other D1 write when migration 0016 is not applied; callers
+ * decide whether that is a 503 (the form) or "logged only" (the MCP tool,
+ * which has always logged and must keep answering).
+ */
+async function storeIssueReport(env, v, { source, ip }) {
+  const id = crypto.randomUUID();
+  const reference = newReference();
+  const ipHash = ip ? (await sha256Hex(`issue-ip:${ip}`)).slice(0, 16) : null;
+  await env.DB.prepare(
+    `INSERT INTO issue_reports
+       (id, reference, source, audience, country_code, slug, issue_type, description, suggested,
+        evidence_url, page_url, locale, reporter_contact, status, created_at, ip_hash)
+     VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, 'open', ?, ?)`,
+  )
+    .bind(
+      id, reference, source, v.audience || null, v.country_code || null, v.slug, v.issue_type, v.description,
+      v.suggested || null, v.evidence_url || null, v.page_url || null, v.locale || null,
+      v.reporter_contact || null, Date.now(), ipHash,
+    )
+    .run();
+  return { id, reference };
+}
+
+/**
+ * POST /api/report-issue — { slug, country_code, audience, issue_type,
+ * description, suggested, evidence_url, page_url, locale, reporter_contact }
+ *
+ * Open to anyone, with no account, because the people best placed to spot a
+ * wrong figure are the ones who just tried to claim it. That makes it
+ * spammable, so: a honeypot field, a per-network-address hourly cap (the same
+ * fixed-window counter the lead and alert forms use), tight length limits in
+ * validateIssueInput, and nothing here is ever rendered back to another visitor.
+ *
+ * Before migration 0016 the INSERT fails with "no such table" and the router's
+ * catch-all turns that into a 503 — see isMissingSchema().
+ */
+async function handleReportIssue(request, env) {
+  const body = await request.json().catch(() => null);
+  if (!body) return bad('body required');
+
+  const v = validateIssueInput(body);
+  if (!v.ok) return json({ error: v.error }, 422);
+  if (v.honeypot) return json({ ok: true, reference: newReference() }); // a bot learns nothing
+
+  const ip = request.headers.get('cf-connecting-ip') ?? 'unknown';
+  if (!(await underSendLimit(env, `issue_ip:${ip}`, MAX_ISSUES_PER_HOUR))) {
+    return json({ error: 'too_many_requests', message: 'Too many reports from this connection. Try again in an hour.' }, 429);
+  }
+
+  const { reference } = await storeIssueReport(env, v, { source: 'web', ip });
+  return json({ ok: true, reference });
+}
+
+const MAX_ISSUES_PER_HOUR = 10;
+
+/**
+ * GET /api/admin/issues?status=open&limit=100 — the queue, oldest open first
+ * so nothing sits at the bottom, plus a count per status. Same requireAdmin
+ * gate and shape as handleAdminLeads.
+ */
+async function handleAdminIssues(request, env) {
+  if (!(await requireAdmin(request, env))) return bad('admin only', 403);
+  const url = new URL(request.url);
+  const limit = Math.min(500, Math.max(1, parseInt(url.searchParams.get('limit'), 10) || 100));
+  const status = url.searchParams.get('status') || 'open';
+
+  const where = status === 'all' ? '' : 'WHERE status = ?';
+  const order = status === 'open' ? 'created_at ASC' : 'created_at DESC';
+  const stmt = env.DB.prepare(
+    `SELECT id, reference, source, audience, country_code, slug, issue_type, description, suggested,
+            evidence_url, page_url, locale, reporter_contact, status, resolution_note, resolved_by,
+            resolved_at, created_at
+       FROM issue_reports ${where} ORDER BY ${order} LIMIT ?`,
+  );
+  const rows = await (status === 'all' ? stmt.bind(limit) : stmt.bind(status, limit)).all();
+  const counts = await env.DB.prepare('SELECT status, COUNT(*) AS n FROM issue_reports GROUP BY status').all();
+
+  return json({
+    issues: rows.results,
+    counts: Object.fromEntries((counts.results ?? []).map((r) => [r.status, r.n])),
+  });
+}
+
+/**
+ * POST /api/admin/issues/resolve — { id, status: fixed|rejected|duplicate|open, note }
+ * Audited like every other admin write.
+ */
+async function handleAdminIssueResolve(request, env) {
+  const session = await requireAdmin(request, env);
+  if (!session) return bad('admin only', 403);
+  const v = validateResolution(await request.json().catch(() => ({})));
+  if (!v.ok) return json({ error: v.error }, 422);
+
+  const row = await env.DB.prepare('SELECT id, reference, slug, status FROM issue_reports WHERE id = ? OR reference = ?').bind(v.id, v.id).first();
+  if (!row) return json({ error: 'no_such_issue' }, 404);
+
+  const reopening = v.status === 'open';
+  await env.DB.prepare(
+    'UPDATE issue_reports SET status = ?, resolution_note = ?, resolved_by = ?, resolved_at = ? WHERE id = ?',
+  )
+    .bind(v.status, v.note || null, reopening ? null : session.email, reopening ? null : Date.now(), row.id)
+    .run();
+  await audit(env, { actor: session.email, action: 'issue_resolve', subject: row.slug, detail: { reference: row.reference, from: row.status, to: v.status } });
+  return json({ ok: true, id: row.id, status: v.status });
+}
+
 /**
  * The scheduled digest. Runs once a day (see wrangler.jsonc's cron); every
  * step is written to survive being run twice in the same UTC day without
@@ -1225,6 +1357,283 @@ async function runAlertsCron(env, opts = {}) {
     sent += 1;
   }
   return { sent };
+}
+
+/* ------------------------------------------------------------------ */
+/* "Email me this result" — capture, follow-ups, weekly digest         */
+/* ------------------------------------------------------------------ */
+
+const RESULTS_MAX_SENDS_PER_RUN = 150; // stays well inside a Worker's subrequest budget; the rest go tomorrow
+
+const appOrigin = (env) => env.APP_ORIGIN || 'https://unclaimedgrant.com';
+const unlockUrlFor = (env) => `${appOrigin(env)}/pricing/?utm_source=result_email&utm_medium=email`;
+const localePrefix = (locale) => (locale && locale !== 'en' && LIFECYCLE_LOCALES.includes(locale) ? `/${locale}` : '');
+
+/**
+ * Re-run the FREE check for a saved profile — the same functions /api/check
+ * and /api/startups/check answer with, so an emailed number cannot differ from
+ * the one on the results screen. Returns { free, headline, countryName } or
+ * null for a country we do not cover.
+ *
+ * `memo` is the cron's per-run cache of asset reads: a thousand subscribers
+ * in GB are one dataset read, not a thousand.
+ */
+async function freeResultFor(env, audience, profile, memo = new Map()) {
+  const base = appOrigin(env);
+  const request = new Request(`${base}/api/check`);
+  const once = (key, fn) => {
+    if (!memo.has(key)) memo.set(key, Promise.resolve().then(fn).catch(() => null));
+    return memo.get(key);
+  };
+  const cc = String(profile.country_code).toLowerCase();
+  const manifest = await once('manifest', () => loadManifest(env, request));
+  const countryName = manifest?.countries?.find((c) => c.slug === cc)?.name ?? cc.toUpperCase();
+
+  if (audience === 'company') {
+    const datasets = {};
+    for (const pool of reachFor(cc)) {
+      // eslint-disable-next-line no-await-in-loop
+      const d = await once(`pool:${pool}`, () => loadStartupPool(env, request, pool));
+      if (d) datasets[pool] = d;
+    }
+    if (!Object.keys(datasets).length) return null;
+    const free = startupFreeResult(matchStartup(profile, datasets, Date.now()));
+    return { free, headline: companyHeadline(free, countryName), countryName };
+  }
+
+  const data = await once(`country:${cc}`, () => loadCountry(env, request, cc, { entitled: false }));
+  const entry = manifest?.countries?.find((c) => c.slug === cc);
+  if (!data || !entry) return null;
+  const free = buildFreeResult(match(profile, data, entry), entry);
+  return { free, headline: householdHeadline(free), countryName };
+}
+
+/**
+ * POST /api/results/email — { email, audience, profile, consent?, locale? }.
+ *
+ * One transactional email, always: the result they asked for. Everything after
+ * it is marketing and exists only when `consent` is the literal boolean true.
+ * With no consent the answers are wiped the moment the email is sent, so a
+ * visitor who just wanted the link in their inbox leaves nothing behind but an
+ * address and a timestamp.
+ *
+ * The numbers are recomputed here from the profile, never read from the
+ * request: this endpoint mails an address nobody has proven belongs to the
+ * caller, and a client-supplied "you are owed 1,000,000" would be a free way
+ * to send anyone a lie in our name.
+ */
+async function handleResultsEmail(request, env) {
+  if (!env.RESEND_API_KEY) return json({ error: 'email_not_configured' }, 503);
+
+  const body = await request.json().catch(() => null);
+  if (!body) return bad('body required');
+
+  const ip = request.headers.get('cf-connecting-ip') ?? 'unknown';
+  if (!(await underSendLimit(env, `result_ip:${ip}`, MAX_SENDS_PER_HOUR.ip))) {
+    return json({ error: 'too_many_requests', message: 'Too many requests. Try again in an hour.' }, 429);
+  }
+
+  const v = validateResultsEmailInput(body);
+  if (!v.ok) return json({ error: v.error }, 422);
+
+  if (!(await underSendLimit(env, `result_email:${v.email}`, MAX_SENDS_PER_HOUR.email))) {
+    return json({ error: 'too_many_requests', message: 'Too many requests. Try again in an hour.' }, 429);
+  }
+
+  const computed = await freeResultFor(env, v.audience, v.profile);
+  if (!computed) return json({ error: 'unknown_country' }, 404);
+
+  const now = Date.now();
+  const shareLink = buildShareLink(appOrigin(env), v);
+  const sig = resultSignature(computed.free, v.audience);
+
+  const existing = await env.DB.prepare(
+    'SELECT id, token, consent_at, unsubscribed_at FROM result_subscribers WHERE email = ? AND audience = ?',
+  ).bind(v.email, v.audience).first();
+
+  /* The unsubscribe token survives re-submits, for the same reason alerts'
+     does: it is already in the List-Unsubscribe header of every earlier mail. */
+  const token = existing?.token || genToken();
+  const id = existing?.id || crypto.randomUUID();
+  const live = !!existing && existing.unsubscribed_at == null; // an active row, as opposed to none or an unsubscribed one
+  const reopt = v.marketing && !!existing && !live; // ticking the box again after unsubscribing IS a fresh opt-in
+  const consentAt = v.marketing ? (live && existing.consent_at ? existing.consent_at : now) : live ? existing.consent_at ?? null : null;
+
+  if (existing) {
+    await env.DB.prepare(
+      `UPDATE result_subscribers
+          SET country = ?, locale = ?, profile = ?, share_link = ?, consent_at = ?, result_sig = ?, ip = ?,
+              unsubscribed_at = CASE WHEN ? THEN NULL ELSE unsubscribed_at END,
+              seq_step = CASE WHEN ? THEN 0 ELSE seq_step END,
+              created_at = CASE WHEN ? THEN ? ELSE created_at END,
+              last_mail_at = CASE WHEN ? THEN NULL ELSE last_mail_at END
+        WHERE id = ?`,
+    )
+      .bind(v.country, v.locale, v.profileJson, shareLink, consentAt, sig, ip, reopt ? 1 : 0, reopt ? 1 : 0, reopt ? 1 : 0, now, reopt ? 1 : 0, id)
+      .run();
+  } else {
+    await env.DB.prepare(
+      `INSERT INTO result_subscribers
+         (id, email, audience, country, locale, profile, share_link, token, consent_at, created_at, result_sig, ip)
+       VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`,
+    )
+      .bind(id, v.email, v.audience, v.country, v.locale, v.profileJson, shareLink, token, v.marketing ? now : null, now, sig, ip)
+      .run();
+  }
+
+  const unsubscribeUrl = `${appOrigin(env)}/api/results/unsubscribe?token=${token}`;
+  const { subject, text } = resultEmail({
+    audience: v.audience,
+    headline: computed.headline,
+    shareLink,
+    unlockUrl: unlockUrlFor(env),
+    unsubscribeUrl,
+    marketing: consentAt != null,
+  });
+  const sent = await sendAlertEmail(env, { to: v.email, subject, text, headers: unsubscribeHeaders(unsubscribeUrl) });
+
+  if (sent) {
+    await env.DB.prepare('UPDATE result_subscribers SET sent_at = ? WHERE id = ?').bind(Date.now(), id).run();
+    if (consentAt == null) {
+      /* No consent to keep anything: wipe the answers and the link that
+         encodes them. What stays is the address, the country and the time. */
+      await env.DB.prepare("UPDATE result_subscribers SET profile = '{}', share_link = '' WHERE id = ?").bind(id).run();
+    }
+  }
+  return json({ ok: sent, sent, follow_ups: consentAt != null }, sent ? 200 : 502);
+}
+
+/** GET or POST /api/results/unsubscribe?token= — one click; also forgets the saved answers. */
+async function handleResultsUnsubscribe(request, env) {
+  const token = new URL(request.url).searchParams.get('token');
+  if (!token) return bad('token required');
+
+  const row = await env.DB.prepare('SELECT id FROM result_subscribers WHERE token = ?').bind(token).first();
+  if (row) {
+    await env.DB.prepare(
+      `UPDATE result_subscribers
+          SET unsubscribed_at = COALESCE(unsubscribed_at, ?), profile = '{}', share_link = ''
+        WHERE id = ?`,
+    ).bind(Date.now(), row.id).run();
+  }
+  if (request.method === 'POST') return new Response(null, { status: 200 });
+  return ALERTS_HTML('Unsubscribed', row ? "You won't get any more email from us about your result, and the answers we held for it are deleted." : 'That link was already used.');
+}
+
+/**
+ * The daily follow-up job: the day 2/5/10/21 sequence, then the weekly digest.
+ * Runs inside the same cron as the deadline alerts and is idempotent for the
+ * same reason: a platform retry must not mail anyone twice.
+ *
+ * At most one marketing email per subscriber per run, and never one within 20
+ * hours of the last (last_mail_at is written only after a send succeeded).
+ * Never to someone who unsubscribed, never without consent_at, never to
+ * someone who has since paid — that last check is by email, via users and
+ * entitlementFor, so it honours grants and pauses exactly as the paywall does.
+ */
+async function runResultsCron(env, opts = {}) {
+  const asOf = opts.asOf ?? Date.now();
+  if (!env.RESEND_API_KEY) return { sent: 0, skipped: 'not_configured' };
+
+  const subs = await unlessMissing(
+    () => env.DB.prepare(
+      `SELECT * FROM result_subscribers
+        WHERE consent_at IS NOT NULL AND unsubscribed_at IS NULL AND sent_at IS NOT NULL
+        ORDER BY created_at LIMIT 2000`,
+    ).all(),
+    null,
+  );
+  if (!subs) return { sent: 0, skipped: 'schema_missing' };
+
+  const memo = new Map();
+  const rawLoad = opts.loadJurisdictionProgrammes ?? ((cc, audience) => loadJurisdictionProgrammes(env, cc, audience));
+  const loadProgrammes = (cc, audience) => {
+    const k = `progs:${audience}:${cc}`;
+    if (!memo.has(k)) memo.set(k, Promise.resolve(rawLoad(cc, audience)).catch(() => []));
+    return memo.get(k);
+  };
+
+  const stats = { sent: 0, sequence: 0, digest: 0, skipped_paid: 0 };
+  for (const sub of subs.results ?? []) {
+    if (stats.sent >= RESULTS_MAX_SENDS_PER_RUN) break;
+    if (sub.last_mail_at != null && asOf - sub.last_mail_at < 20 * 3600 * 1000) continue;
+
+    const step = dueStep(sub.created_at, sub.seq_step, asOf);
+    const lastMail = sub.last_mail_at ?? sub.sent_at;
+    const digestDue =
+      !step &&
+      sub.seq_step >= 4 &&
+      asOf - sub.created_at >= DIGEST_START_DAYS * DAY &&
+      asOf - lastMail >= DIGEST_EVERY_DAYS * DAY;
+    if (!step && !digestDue) continue;
+
+    let profile;
+    try { profile = JSON.parse(sub.profile); } catch { continue; }
+    if (!profile?.country_code) continue; // answers were forgotten: nothing to recompute from
+
+    /* Already paying (or granted) is the end of the sales sequence. */
+    // eslint-disable-next-line no-await-in-loop
+    const user = await env.DB.prepare('SELECT id FROM users WHERE email = ?').bind(sub.email).first();
+    if (user) {
+      // eslint-disable-next-line no-await-in-loop
+      const ent = await entitlementFor(env, { uid: user.id }, sub.country);
+      if (ent.entitled) { stats.skipped_paid += 1; continue; }
+    }
+
+    // eslint-disable-next-line no-await-in-loop
+    const computed = await freeResultFor(env, sub.audience, profile, memo);
+    if (!computed) continue;
+    const sig = resultSignature(computed.free, sub.audience);
+
+    const jAudience = sub.audience === 'company' ? 'companies' : 'individuals';
+    // eslint-disable-next-line no-await-in-loop
+    const programmes = await loadProgrammes(sub.country, jAudience);
+    const unsubscribeUrl = `${appOrigin(env)}/api/results/unsubscribe?token=${sub.token}`;
+    const prefix = localePrefix(sub.locale);
+    const countryUrl =
+      sub.audience === 'company'
+        ? `${appOrigin(env)}${prefix}/startups/${sub.country}/closing-soon/`
+        : `${appOrigin(env)}${prefix}/${sub.country}/`;
+    const ctx = {
+      audience: sub.audience,
+      headline: computed.headline,
+      countryName: computed.countryName,
+      shareLink: sub.share_link,
+      unlockUrl: unlockUrlFor(env),
+      unsubscribeUrl,
+      countryUrl,
+    };
+
+    let mail;
+    if (step) {
+      const DAYS60 = 60 * DAY;
+      const closing = programmes.length
+        ? programmes.filter((p) => {
+            if (effectiveStatus(p, asOf) !== 'open' || p?.closes_at == null) return false;
+            const t = typeof p.closes_at === 'number' ? p.closes_at : Date.parse(p.closes_at);
+            return !Number.isNaN(t) && t >= asOf && t - asOf <= DAYS60;
+          }).length
+        : null;
+      mail = sequenceEmail(step, { ...ctx, closing });
+    } else {
+      const newlyOpen = planDigest(programmes, { asOf, lastSentAt: lastMail }).filter((i) => i.reason === 'newly_open').length;
+      const changed = sig !== sub.result_sig;
+      if (!changed && newlyOpen === 0) continue; // never send an empty digest
+      mail = digestEmail({ ...ctx, newlyOpen, changed });
+    }
+
+    // eslint-disable-next-line no-await-in-loop
+    const ok = await sendAlertEmail(env, { to: sub.email, ...mail, headers: unsubscribeHeaders(unsubscribeUrl) });
+    if (!ok) continue;
+
+    // eslint-disable-next-line no-await-in-loop
+    await env.DB.prepare('UPDATE result_subscribers SET seq_step = ?, last_mail_at = ?, result_sig = ? WHERE id = ?')
+      .bind(step || sub.seq_step, asOf, sig, sub.id)
+      .run();
+    stats.sent += 1;
+    if (step) stats.sequence += 1; else stats.digest += 1;
+  }
+  return stats;
 }
 
 /* ------------------------------------------------------------------ */
@@ -1426,6 +1835,26 @@ async function loadStartupPool(env, request, pool) {
   return res.ok ? res.json() : null;
 }
 
+/** The free half of a company check as plain data. Shared with the result-email flow. */
+function startupFreeResult(r) {
+  return {
+    country: r.country,
+    pools: r.pools,
+    sme_category: r.sme_category,
+    counts: {
+      eligible: r.eligible.length,
+      conditional: r.conditional.length,
+      needs_answer: r.needs_answer.length,
+      not_eligible: r.not_eligible.length,
+      closed: r.closed.length,
+    },
+    /* Free: the money. Paid: which programmes. */
+    non_dilutive: r.non_dilutive,
+    totals: r.totals,
+    unlocks: r.unlocks.map((u) => ({ field: u.field, count: u.count })),
+  };
+}
+
 /**
  * POST /api/startups/check — the free half, same contract as /api/check.
  *
@@ -1447,22 +1876,7 @@ async function handleStartupCheck(request, env) {
 
   const r = matchStartup(profile, datasets, Date.now());
 
-  return json({
-    country: r.country,
-    pools: r.pools,
-    sme_category: r.sme_category,
-    counts: {
-      eligible: r.eligible.length,
-      conditional: r.conditional.length,
-      needs_answer: r.needs_answer.length,
-      not_eligible: r.not_eligible.length,
-      closed: r.closed.length,
-    },
-    /* Free: the money. Paid: which programmes. */
-    non_dilutive: r.non_dilutive,
-    totals: r.totals,
-    unlocks: r.unlocks.map((u) => ({ field: u.field, count: u.count })),
-  });
+  return json(startupFreeResult(r));
 }
 
 /** POST /api/startups/plan — paid. The list, plus the de minimis ceiling applied. */
@@ -4569,20 +4983,32 @@ async function mcpGetCoverage(env, request, args) {
 }
 
 /**
- * report_issue — no migration for this: none of the existing tables fit an
- * arbitrary correction report without new, unindexed columns, and the brief
- * is to prefer an existing table over a migration that needs manual
- * application. Logged so it is visible in the Worker's own logs/tail, with a
- * reference the reporter can quote if they follow up.
+ * report_issue — logged, and stored in issue_reports when migration 0016 is
+ * applied. It used to be log-only because none of the then-existing tables fit
+ * a correction report; now that one does, a report raised by an assistant lands
+ * in the same queue (GET /api/admin/issues) as one raised from a programme page.
+ * The log line stays, and so does the answer when the table is not there yet:
+ * the tool has always answered, and a deploy before the migration must not
+ * turn that into an error.
  */
 async function mcpReportIssue(env, request, args) {
-  const reference = `mcp-${Date.now().toString(36)}-${Math.random().toString(36).slice(2, 8)}`;
-  console.log('mcp_report_issue', JSON.stringify({ reference, ts: Date.now(), ...args }));
+  console.log('mcp_report_issue', JSON.stringify({ ts: Date.now(), ...args }));
+  const v = validateIssueInput({
+    slug: args?.slug, country_code: args?.country_code, issue_type: args?.issue_type,
+    description: args?.description, reporter_contact: args?.reporter_contact,
+  });
+  const stored = v.ok && !v.honeypot
+    ? await unlessMissing(() => storeIssueReport(env, v, { source: 'mcp', ip: request?.headers?.get?.('cf-connecting-ip') ?? null }), null)
+    : null;
+  const reference = stored?.reference ?? `mcp-${Date.now().toString(36)}-${Math.random().toString(36).slice(2, 8)}`;
   return toolResult({
     received: true,
     reference,
+    stored: !!stored,
     triage_sla_working_days: 5,
-    message: 'Logged for review. There is no live ticket lookup yet — quote the reference if you follow up.',
+    message: stored
+      ? 'Filed for review. Quote the reference if you follow up.'
+      : 'Logged for review. There is no live ticket lookup yet — quote the reference if you follow up.',
   });
 }
 
@@ -4874,7 +5300,12 @@ export default {
       if (pathname === '/api/alerts/unsubscribe' && (request.method === 'GET' || request.method === 'POST')) {
         return withCors(await handleAlertsUnsubscribe(request, env));
       }
+      if (pathname === '/api/results/email' && request.method === 'POST') return withCors(await handleResultsEmail(request, env));
+      if (pathname === '/api/results/unsubscribe' && (request.method === 'GET' || request.method === 'POST')) {
+        return withCors(await handleResultsUnsubscribe(request, env));
+      }
       if (pathname === '/api/leads' && request.method === 'POST') return withCors(await handleLeadsSubmit(request, env));
+      if (pathname === '/api/report-issue' && request.method === 'POST') return withCors(await handleReportIssue(request, env));
       if (pathname === '/api/me') return withCors(await handleMe(request, env));
       if (pathname === '/api/profile') return withCors(await handleProfile(request, env));
       if (pathname === '/api/billing/checkout' && request.method === 'POST') return withCors(await handleCheckout(request, env));
@@ -4920,6 +5351,8 @@ export default {
       if (pathname === '/api/admin/revoke' && request.method === 'POST') return withCors(await handleAdminRevoke(request, env));
       if (pathname === '/api/admin/audit') return withCors(await handleAdminAudit(request, env));
       if (pathname === '/api/admin/leads') return withCors(await handleAdminLeads(request, env));
+      if (pathname === '/api/admin/issues') return withCors(await handleAdminIssues(request, env));
+      if (pathname === '/api/admin/issues/resolve' && request.method === 'POST') return withCors(await handleAdminIssueResolve(request, env));
       if (pathname === '/api/admin/totp') return withCors(await handleAdminTotpStatus(request, env));
       if (pathname === '/api/admin/totp/enable' && request.method === 'POST') return withCors(await handleAdminTotpEnable(request, env));
       if (pathname === '/api/admin/totp/disable' && request.method === 'POST') return withCors(await handleAdminTotpDisable(request, env));
@@ -4975,6 +5408,7 @@ export default {
      the last few sends. */
   async scheduled(event, env, ctx) {
     ctx.waitUntil(runAlertsCron(env));
+    ctx.waitUntil(runResultsCron(env));
   },
 };
 
@@ -5024,7 +5458,13 @@ export const __test = {
   handleAlertsConfirm,
   handleAlertsUnsubscribe,
   runAlertsCron,
+  handleResultsEmail,
+  handleResultsUnsubscribe,
+  runResultsCron,
   handleLeadsSubmit,
+  handleReportIssue,
+  handleAdminIssues,
+  handleAdminIssueResolve,
   handleAdminLeads,
   handleCheckout,
   handleBillingPause,

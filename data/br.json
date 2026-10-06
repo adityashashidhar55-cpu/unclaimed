@@ -13,16 +13,16 @@
    "funder": "Ministério do Desenvolvimento e Assistência Social, Família e Combate à Fome (MDS) / Caixa Econômica Federal",
    "category": "income_support",
    "benefit_type": "cash_monthly",
-   "amount_min": 600,
+   "amount_min": 691,
    "amount_max": null,
    "amount_currency": "BRL",
    "amount_period": "monthly",
-   "amount_note": "Minimum of R$ 600 per family (Benefício Complementar tops up to R$ 600). Composition: R$ 142 per member (Benefício de Renda de Cidadania) + R$ 150 per child aged 0-6 (Benefício Primeira Infância) + R$ 50 per pregnant woman, nursing mother or member aged 7-17 (Benefício Variável Familiar).",
+   "amount_note": "Minimum of R$ 691 per family from the October 2026 payroll (Benefício Complementar tops up to R$ 691; was R$ 600). Composition from October 2026: R$ 164 per member (Benefício de Renda de Cidadania, was R$ 142) + R$ 173 per child aged 0 to under 7 (Benefício Primeira Infância, was R$ 150) + R$ 58 per pregnant woman, nursing mother or child/adolescent aged 7 to under 18 (Benefício Variável Familiar, was R$ 50). Decreto nº 13.120 of 17 Sep 2026 raised values 15.04%; amounts available from 19 Oct 2026.",
    "is_automatic": false,
    "application_url": "https://www.gov.br/mds/pt-br/acoes-e-programas/bolsa-familia",
    "application_channel": "in_person",
    "deadline_type": "rolling",
-   "deadline_note": "Monthly payments by NIS final digit; family must keep CadÚnico updated (every 2 years) and comply with health/school conditionalities.",
+   "deadline_note": "Monthly payments by NIS final digit; family must keep CadÚnico updated (every 2 years) and comply with health/school conditionalities. New values apply from the October 2026 payroll (paid from 19 Oct 2026).",
    "procedure_steps": [
     {
      "step": 1,
@@ -61,8 +61,8 @@
     "statuses": [],
     "age_min": null,
     "age_max": null,
-    "income_annual_max": null,
-    "income_note": "Per capita family income up to R$ 218 per month; families in poverty or extreme poverty registered in CadÚnico",
+    "income_annual_max": 2616,
+    "income_note": "Per capita family income up to R$ 218 per month (official MDS page); R$ 218 x 12 = R$ 2,616 per person per year (per-capita figure, not household total). Family must be registered in CadÚnico.",
     "requires_children": false,
     "nationality": "any_resident",
     "residency_months_min": null,
@@ -71,9 +71,9 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.gov.br/mds/pt-br/acoes-e-programas/bolsa-familia",
-   "source_snippet": "Benefício de Renda de Cidadania – BRC, no valor de R$ 142,00 por integrante da família... Benefício Complementar pago às famílias que receberem valor inferior a R$ 600,00.",
-   "last_verified_at": "2026-08-12",
+   "source_url": "https://www.gov.br/mds/pt-br/noticias/bolsa-familia-tera-valor-minimo-de-r-691-a-partir-de-outubro",
+   "source_snippet": "O Benefício Complementar garante que a soma das parcelas recebidas pela família não fique abaixo de R$ 691.",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -85,13 +85,13 @@
    "funder": "Governo Federal (MDS), operado pelo INSS",
    "category": "income_support",
    "benefit_type": "cash_monthly",
-   "amount_min": 1518,
-   "amount_max": 1518,
+   "amount_min": 1621,
+   "amount_max": 1621,
    "amount_currency": "BRL",
    "amount_period": "monthly",
-   "amount_note": "One national minimum wage per month (R$ 1.518 in 2025; reajustado anualmente). No 13th salary and no survivor's pension.",
+   "amount_note": "One national minimum wage per month (R$ 1.621 in 2026). No 13th salary and no survivor's pension.",
    "is_automatic": false,
-   "application_url": "https://www.gov.br/inss/pt-br/direitos-e-deveres/assistencia-social/bpc-loas",
+   "application_url": "https://www.gov.br/mds/pt-br/acoes-e-programas/SUAS/beneficios-assistenciais/beneficio-assistencial-ao-idoso-e-a-pessoa-com-deficiencia-bpc",
    "application_channel": "online",
    "deadline_type": "rolling",
    "deadline_note": "Requires CadÚnico updated within the last 2 years; review every 2 years.",
@@ -136,10 +136,10 @@
    ],
    "eligibility": {
     "statuses": [],
-    "age_min": 65,
+    "age_min": null,
     "age_max": null,
-    "income_annual_max": null,
-    "income_note": "Persons aged 65+ OR persons with long-term disability of any age; per capita family income up to 1/4 of the minimum wage (may be flexibilised in court)",
+    "income_annual_max": 4863,
+    "income_note": "Persons aged 65+ OR persons with disability of any age (biopsychosocial assessment); per capita family income up to 1/4 of the minimum wage = R$ 405.25/month in 2026; x12 = R$ 4,863 per person per year (per-capita figure). Family must be in CadÚnico (updated within 24 months, CPF of all members), biometric registration, and reside in Brazil.",
     "requires_children": false,
     "nationality": "any_resident",
     "residency_months_min": null,
@@ -148,9 +148,9 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.gov.br/inss/pt-br/direitos-e-deveres/assistencia-social/bpc-loas",
-   "source_snippet": "Garante um salário mínimo mensal ao idoso com 65 anos ou mais e à pessoa com deficiência cuja renda familiar per capita não ultrapasse 1/4 do salário mínimo, sem exigir contribuição ao INSS.",
-   "last_verified_at": "2026-08-12",
+   "source_url": "https://www.gov.br/mds/pt-br/acoes-e-programas/SUAS/beneficios-assistenciais/beneficio-assistencial-ao-idoso-e-a-pessoa-com-deficiencia-bpc",
+   "source_snippet": "Possuir renda familiar per capita de até ¼ do salário mínimo; Ter idade igual ou superior a 65 anos ou deficiência verificada por meio de avaliação biopsicossocial; ... Residir no Brasil.",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -162,13 +162,13 @@
    "funder": "INSS (benefício assistencial, Lei nº 13.146/2015, regulamentado pelo Decreto nº 10.919/2021)",
    "category": "employment",
    "benefit_type": "cash_monthly",
-   "amount_min": 759,
-   "amount_max": 759,
+   "amount_min": 810.5,
+   "amount_max": 810.5,
    "amount_currency": "BRL",
    "amount_period": "monthly",
-   "amount_note": "50% of the national minimum wage per month (R$ 759 in 2025) while the person works formally with pay up to 2 minimum wages.",
+   "amount_note": "50% of the national minimum wage per month (R$ 810,50 in 2026) while the person works formally with pay up to 2 minimum wages.",
    "is_automatic": false,
-   "application_url": "https://www.gov.br/inss/pt-br/direitos-e-deveres/assistencia-social/auxilio-inclusao",
+   "application_url": "https://www.gov.br/pt-br/servicos/solicitar-auxilio-inclusao-a-pessoa-com-deficiencia",
    "application_channel": "online",
    "deadline_type": "rolling",
    "deadline_note": "BPC can be reinstated if the job ends, without a new full process.",
@@ -212,8 +212,8 @@
     ],
     "age_min": null,
     "age_max": null,
-    "income_annual_max": null,
-    "income_note": "Persons with moderate/severe disability who receive or received BPC in the last 5 years; employment income up to 2 minimum wages per month",
+    "income_annual_max": 4863,
+    "income_note": "Persons with moderate/severe disability who receive or received BPC in the last 5 years; own remuneration up to 2 minimum wages per month (R$ 3,242 in 2026); family must still meet BPC criteria (per capita family income up to 1/4 minimum wage = R$ 405.25/month; x12 = R$ 4,863 per person per year).",
     "requires_children": false,
     "nationality": "any_resident",
     "residency_months_min": null,
@@ -222,9 +222,9 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.gov.br/inss/pt-br/direitos-e-deveres/assistencia-social/auxilio-inclusao",
-   "source_snippet": "Benefício pago pelo INSS para pessoas com deficiência que recebem ou já receberam o BPC... trabalhador passa a receber 50% do salário mínimo como incentivo financeiro.",
-   "last_verified_at": "2026-08-12",
+   "source_url": "https://www.gov.br/inss/pt-br/direitos-e-deveres/beneficios-assistenciais/auxilio-inclusao-a-pessoa-com-deficiencia",
+   "source_snippet": "O seu valor mensal é de meio salário mínimo; ... Ter remuneração mensal limitada a 2 (dois) salários mínimos; Ter o grau de deficiência moderado ou grave;",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -279,8 +279,8 @@
     "statuses": [],
     "age_min": null,
     "age_max": null,
-    "income_annual_max": null,
-    "income_note": "Per capita family income up to half the minimum wage (R$ 810,50 in 2026); Bolsa Família families have priority",
+    "income_annual_max": 9726,
+    "income_note": "Per capita family income up to half the minimum wage (R$ 810,50/month in 2026) = R$ 9,726 per person per year (per-capita figure); family in CadÚnico, Bolsa Família families have priority. 2-3 person families get 1 voucher every 3 months; 4+ every 2 months.",
     "requires_children": false,
     "nationality": "any_resident",
     "residency_months_min": null,
@@ -289,9 +289,9 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://wiki-sagi.mds.gov.br/home/DS/PGP",
-   "source_snippet": "Com o Programa Gás do Povo, a família beneficiária recebe um vale para realizar a recarga gratuita do botijão de gás de 13kg em uma revenda varejista credenciada.",
-   "last_verified_at": "2026-08-12",
+   "source_url": "https://www.gov.br/mds/pt-br/acoes-e-programas/gas-do-povo",
+   "source_snippet": "ter renda familiar de até meio salário mínimo por pessoa. ... famílias com 2 ou 3 pessoas: recebem 1 vale a cada 3 meses. famílias com 4 ou mais pessoas: recebem 1 vale a cada 2 meses.",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -358,8 +358,8 @@
    },
    "source_url": "https://www.gov.br/mds/pt-br/acoes-e-programas/assistencia-social",
    "source_snippet": "Os benefícios eventuais são garantias previstas na Lei Orgânica da Assistência Social (Lei nº 8.742/1993) para suprir necessidades transitórias de vulnerabilidade, como nascimento, morte e calamidades.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "salario-familia",
@@ -370,13 +370,13 @@
    "funder": "INSS (pago pelo empregador e descontado da GPS)",
    "category": "family",
    "benefit_type": "cash_monthly",
-   "amount_min": 65,
-   "amount_max": 65,
+   "amount_min": 67.54,
+   "amount_max": 67.54,
    "amount_currency": "BRL",
    "amount_period": "monthly",
-   "amount_note": "R$ 65,00 per month per child under 14 or disabled child of any age (2025 value, Portaria Interministerial MPS/MF nº 2/2025).",
+   "amount_note": "R$ 67,54 per month per child under 14 or disabled child of any age (2026 value, Portaria Interministerial MPS/MF nº 13 of 9 Jan 2026).",
    "is_automatic": false,
-   "application_url": "https://www.gov.br/inss/pt-br/direitos-e-deveres/salario-familia",
+   "application_url": "https://www.gov.br/inss/pt-br/direitos-e-deveres/salario-familia/salario-familia",
    "application_channel": "via_employer",
    "deadline_type": "rolling",
    "deadline_note": "Paid monthly with the salary; suspended when the child turns 14 or employment ends.",
@@ -420,8 +420,8 @@
     ],
     "age_min": null,
     "age_max": null,
-    "income_annual_max": null,
-    "income_note": "Monthly remuneration up to R$ 1.906,04 (2025 ceiling); employees, domestic workers, individual contributors and avulsos",
+    "income_annual_max": 23764.56,
+    "income_note": "Worker's monthly remuneration up to R$ 1.980,38 from 01/01/2026 (individual pay, not household income); x12 = R$ 23,764.56. Employees (including domestic), avulsos, and retirees aged 65+ (men) / 60+ (women) with qualifying children.",
     "requires_children": true,
     "nationality": "any_resident",
     "residency_months_min": null,
@@ -430,9 +430,9 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.gov.br/inss/pt-br/direitos-e-deveres/salario-familia",
-   "source_snippet": "O trabalhador com renda bruta de até R$ 1.906,04 tem direito a receber R$ 65,00 por filho ou dependente, mensalmente.",
-   "last_verified_at": "2026-08-12",
+   "source_url": "https://www.gov.br/inss/pt-br/direitos-e-deveres/salario-familia/valor-limite-para-direito-ao-salario-familia",
+   "source_snippet": "A partir de 01/01/2026 | Até 1.980,38 cota 67,54 | PORTARIA INTERMINISTERIAL MPS/MF Nº 13, DE 9 DE JANEIRO DE 2026",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -444,11 +444,11 @@
    "funder": "INSS (Regime Geral de Previdência Social)",
    "category": "income_support",
    "benefit_type": "cash_monthly",
-   "amount_min": 1518,
+   "amount_min": 1621,
    "amount_max": null,
    "amount_currency": "BRL",
    "amount_period": "monthly",
-   "amount_note": "Family share: 50% of the deceased's retirement/benefit value + 10% per dependent (up to 100%); minimum of one minimum wage (R$ 1.518 in 2025).",
+   "amount_note": "Family share: 50% of the deceased's retirement/benefit value + 10% per dependent (up to 100%); minimum of one minimum wage (R$ 1.621 in 2026).",
    "is_automatic": false,
    "application_url": "https://www.gov.br/inss/pt-br/direitos-e-deveres/pensoes/pensao-por-morte",
    "application_channel": "online",
@@ -507,7 +507,7 @@
    },
    "source_url": "https://www.gov.br/inss/pt-br/direitos-e-deveres/pensoes/pensao-por-morte",
    "source_snippet": "Benefício previdenciário pago aos dependentes do segurado da Previdência Social que falecer, conforme Lei nº 8.213/1991.",
-   "last_verified_at": "2026-08-12",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified",
    "income_reviewed_at": "2026-08-13"
   },
@@ -520,13 +520,13 @@
    "funder": "INSS (para empregadas, pago pelo empregador; demais seguradas, pago diretamente pelo INSS)",
    "category": "family",
    "benefit_type": "cash_monthly",
-   "amount_min": 1518,
+   "amount_min": 1621,
    "amount_max": null,
    "amount_currency": "BRL",
    "amount_period": "monthly",
-   "amount_note": "120 days of the full salary for employees; for unemployed, individual, optional and special insureds, 1/12 of the average of last contributions, minimum one minimum wage (R$ 1.518 in 2025).",
+   "amount_note": "120 days of the full salary for employees; for unemployed, individual, optional and special insureds, 1/12 of the average of last contributions, minimum one minimum wage (R$ 1.621 in 2026).",
    "is_automatic": false,
-   "application_url": "https://www.gov.br/inss/pt-br/direitos-e-deveres/salario-maternidade",
+   "application_url": "https://www.gov.br/inss/pt-br/direitos-e-deveres/salario-maternidade/salario-maternidade",
    "application_channel": "online",
    "deadline_type": "window",
    "deadline_note": "Request between the birth/adoption and the child's 5th birthday; unemployed insureds must request via Meu INSS.",
@@ -573,7 +573,7 @@
     "age_min": null,
     "age_max": null,
     "income_annual_max": null,
-    "income_note": "Insured women (employed, domestic, individual, optional, unemployed within the grace period); also for adoption and legal custody; no minimum contribution for employees, 10 months for individual/optional",
+    "income_note": "Insured women (employed, domestic, MEI, individual, optional, unemployed within the grace period); also adoption and legal custody (to one adopter per process); no carência (minimum contribution period) for any category, but insured status must be proven (per INSS, following STF ADIs 2.110 and 2.111 / IN 188/2025).",
     "requires_children": true,
     "nationality": "any_resident",
     "residency_months_min": null,
@@ -582,10 +582,10 @@
     "admin_areas": [],
     "gender": "female"
    },
-   "source_url": "https://www.gov.br/inss/pt-br/direitos-e-deveres/salario-maternidade",
-   "source_snippet": "Benefício previdenciário de 120 dias pago à segurada por ocasião do nascimento do filho, adoção ou guarda judicial para fins de adoção.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www.gov.br/inss/pt-br/direitos-e-deveres/salario-maternidade/salario-maternidade",
+   "source_snippet": "Carência: Isenta para todas as categorias, devendo, entretanto, ser comprovada a qualidade de segurado. ... 120 dias no caso de parto;",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "auxilio-incapacidade-temporaria",
@@ -596,16 +596,16 @@
    "funder": "INSS",
    "category": "income_support",
    "benefit_type": "cash_monthly",
-   "amount_min": 1518,
+   "amount_min": 1621,
    "amount_max": null,
    "amount_currency": "BRL",
    "amount_period": "monthly",
-   "amount_note": "91% of the 'salário de benefício', limited to the average of the insured's contribution salaries; minimum of one minimum wage.",
+   "amount_note": "91% of the 'salário de benefício', limited to the average of the insured's contribution salaries; minimum of one minimum wage (R$ 1.621 in 2026).",
    "is_automatic": false,
-   "application_url": "https://www.gov.br/inss/pt-br/direitos-e-deveres/auxilio-por-incapacidade",
+   "application_url": "https://www.gov.br/inss/pt-br/direitos-e-deveres/beneficios-por-incapacidade/auxilio-por-incapacidade-temporaria",
    "application_channel": "online",
    "deadline_type": "rolling",
-   "deadline_note": "Requires INSS medical expertise (perícia); waiting period of 12 contributions (waived for accidents/listed diseases).",
+   "deadline_note": "Requires INSS medical assessment (perícia, or online ATESTMED document analysis, which grants at most 90 days before extension); carência of 12 monthly contributions, waived for accidents, occupational disease and a list of serious illnesses.",
    "procedure_steps": [
     {
      "step": 1,
@@ -657,10 +657,10 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.gov.br/inss/pt-br/direitos-e-deveres/auxilio-por-incapacidade",
-   "source_snippet": "Benefício devido ao segurado que ficar temporariamente incapaz para o trabalho por motivo de doença ou acidente, por mais de 15 dias consecutivos.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www.gov.br/inss/pt-br/direitos-e-deveres/beneficios-por-incapacidade/auxilio-por-incapacidade-temporaria",
+   "source_snippet": "benefício devido ao segurado do INSS que comprove, em perícia médica, estar incapacitado temporariamente para o trabalho ou sua atividade habitual por mais de 15 (quinze) dias consecutivos ... Em regra, cumprir carência de 12 contribuições mensais.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "aposentadoria-incapacidade-permanente",
@@ -671,13 +671,13 @@
    "funder": "INSS",
    "category": "income_support",
    "benefit_type": "cash_monthly",
-   "amount_min": 1518,
+   "amount_min": 1621,
    "amount_max": null,
    "amount_currency": "BRL",
    "amount_period": "monthly",
-   "amount_note": "60% of the average contribution salary + 2% per year above 20 (men) / 15 (women) years of contribution; 100% of the average in case of work accident; minimum of one minimum wage.",
+   "amount_note": "60% of the average contribution salary + 2% per year above 20 (men) / 15 (women) years of contribution; 100% of the average in case of work accident; minimum of one minimum wage (R$ 1.621 in 2026).",
    "is_automatic": false,
-   "application_url": "https://www.gov.br/inss/pt-br/direitos-e-deveres/aposentadoria/aposentadoria-por-incapacidade-permanente",
+   "application_url": "https://www.gov.br/inss/pt-br/direitos-e-deveres/aposentadorias/aposentadoria-por-incapacidade-permanente",
    "application_channel": "online",
    "deadline_type": "rolling",
    "deadline_note": "Requires INSS medical expertise; may add 25% if permanent assistance of a third person is needed.",
@@ -732,10 +732,10 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.gov.br/inss/pt-br/direitos-e-deveres/aposentadoria/aposentadoria-por-incapacidade-permanente",
-   "source_snippet": "Será concedida ao segurado que, cumprida a carência, for considerado incapaz e insuscetível de reabilitação para o exercício de atividade que lhe garanta a subsistência.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www.gov.br/inss/pt-br/direitos-e-deveres/aposentadorias/aposentadoria-por-incapacidade-permanente",
+   "source_snippet": "benefício devido ao segurado permanentemente incapaz de exercer qualquer atividade laborativa e que também não possa ser reabilitado em outra profissão ... acréscimo de 25% no valor de seu benefício",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "auxilio-acidente",
@@ -752,10 +752,10 @@
    "amount_period": "monthly",
    "amount_note": "50% of the value that would be the permanent incapacity retirement; paid monthly until retirement age. Compatible with continued work.",
    "is_automatic": false,
-   "application_url": "https://www.gov.br/inss/pt-br/direitos-e-deveres/auxilio-por-incapacidade",
+   "application_url": "https://www.gov.br/inss/pt-br/direitos-e-deveres/beneficios-por-incapacidade/auxilio-acidente",
    "application_channel": "online",
    "deadline_type": "rolling",
-   "deadline_note": "Granted after consolidation of sequelae from an accident of any nature.",
+   "deadline_note": "Granted after consolidation of permanent sequelae from an accident; no carência required; requested by calling 135.",
    "procedure_steps": [
     {
      "step": 1,
@@ -801,10 +801,10 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.gov.br/inss/pt-br/direitos-e-deveres/auxilio-por-incapacidade",
-   "source_snippet": "Benefício de natureza indenizatória pago ao segurado empregado que, após acidente, ficar com sequelas permanentes que reduzam a capacidade para o trabalho.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www.gov.br/inss/pt-br/direitos-e-deveres/beneficios-por-incapacidade/auxilio-acidente",
+   "source_snippet": "benefício de natureza indenizatória pago ao segurado do INSS quando, em decorrência de acidente, apresentar sequela permanente que reduza definitivamente sua capacidade para o trabalho ... não impede o segurado de continuar trabalhando.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "auxilio-reclusao",
@@ -815,13 +815,13 @@
    "funder": "INSS",
    "category": "income_support",
    "benefit_type": "cash_monthly",
-   "amount_min": 1518,
+   "amount_min": 1621,
    "amount_max": null,
    "amount_currency": "BRL",
    "amount_period": "monthly",
-   "amount_note": "Value proportional to the prisoner's contribution salary, minimum one minimum wage; paid to dependents while the insured remains in closed-regime custody.",
+   "amount_note": "Value proportional to the prisoner's contribution salary, minimum one minimum wage (R$ 1.621 in 2026); paid to dependents while the insured remains in closed-regime custody. Requires 24 contributions before imprisonment.",
    "is_automatic": false,
-   "application_url": "https://www.gov.br/inss/pt-br/direitos-e-deveres/pensoes/auxilio-reclusao",
+   "application_url": "https://www.gov.br/inss/pt-br/direitos-e-deveres/auxilio-reclusao/auxilio-reclusao",
    "application_channel": "online",
    "deadline_type": "rolling",
    "deadline_note": "Only for closed-regime imprisonment of a low-income insured; ceases with release or regime progression.",
@@ -876,9 +876,9 @@
     "income_confidence": "high",
     "gender": "any"
    },
-   "source_url": "https://www.gov.br/inss/pt-br/direitos-e-deveres/pensoes/auxilio-reclusao",
-   "source_snippet": "Benefício previdenciário pago aos dependentes do segurado de baixa renda recolhido à prisão em regime fechado (Lei nº 8.213/1991, art. 80).",
-   "last_verified_at": "2026-08-12",
+   "source_url": "https://www.gov.br/inss/pt-br/direitos-e-deveres/auxilio-reclusao/auxilio-reclusao",
+   "source_snippet": "A média dos salários de contribuição ... deverá ser igual ou menor do que aquele informado na tabela: A partir de 01/01/2026 | 1.980,38 | PORTARIA INTERMINISTERIAL MPS/MF Nº 13",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified",
    "income_reviewed_at": "2026-08-13"
   },
@@ -891,13 +891,13 @@
    "funder": "Ministério do Trabalho e Emprego (Fundo de Amparo ao Trabalhador - FAT); pago pela Caixa",
    "category": "employment",
    "benefit_type": "cash_monthly",
-   "amount_min": 1518,
-   "amount_max": 2424.11,
+   "amount_min": 1621,
+   "amount_max": 2518.65,
    "amount_currency": "BRL",
    "amount_period": "monthly",
-   "amount_note": "3 to 5 monthly instalments depending on time worked; minimum one minimum wage (R$ 1.518) and maximum R$ 2.424,11 (2025 table). Fishermen, domestic workers and rescued workers have specific rules.",
+   "amount_note": "3 to 5 monthly instalments depending on time worked; minimum one minimum wage (R$ 1.621 in 2026) and maximum R$ 2.518,65 (table in force from 11 Jan 2026, for average salary above R$ 3.703,99). Fishermen, domestic workers and rescued workers have specific rules.",
    "is_automatic": false,
-   "application_url": "https://www.gov.br/trabalho-e-emprego/pt-br/assuntos/seguro-desemprego",
+   "application_url": "https://www.gov.br/trabalho-e-emprego/pt-br/servicos/trabalhador/seguro-desemprego/seguro-desemprego-formal",
    "application_channel": "online",
    "deadline_type": "window",
    "deadline_note": "Request from the 7th to the 120th day after dismissal (employed workers).",
@@ -951,9 +951,9 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.gov.br/trabalho-e-emprego/pt-br/assuntos/seguro-desemprego",
-   "source_snippet": "Valor mínimo do seguro desemprego é de R$ 1.518 em 2025... quem ganha acima de R$ 3.564,96: o valor será sempre de R$ 2.424,11.",
-   "last_verified_at": "2026-08-12",
+   "source_url": "https://www.gov.br/trabalho-e-emprego/pt-br/servicos/trabalhador/seguro-desemprego/seguro-desemprego-formal",
+   "source_snippet": "Ao solicitar o benefício pela primeira vez: O trabalhador deverá ter recebido pelo menos 12 salários nos últimos 18 meses imediatamente anteriores à data de dispensa.",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -965,16 +965,16 @@
    "funder": "Governo Federal (FAT); PIS pago pela Caixa, PASEP pelo Banco do Brasil",
    "category": "employment",
    "benefit_type": "cash_one_off",
-   "amount_min": 126.5,
-   "amount_max": 1518,
+   "amount_min": 136,
+   "amount_max": 1621,
    "amount_currency": "BRL",
    "amount_period": "annual",
-   "amount_note": "Up to one minimum wage per year, proportional to months worked in the base year (1/12 per month); 2025 values of R$ 126,50 to R$ 1.518.",
+   "amount_note": "Up to one minimum wage per year, proportional to months worked in the base year (1/12 per month); 2026 payment values from R$ 136 (1 month) to R$ 1.621 (12 months), base year 2024.",
    "is_automatic": true,
    "application_url": "https://www.gov.br/pt-br/servicos/receber-o-abono-salarial",
    "application_channel": "automatic",
    "deadline_type": "annual",
-   "deadline_note": "Payment calendar each year (usually February to August); unclaimed amounts can be requested later within the legal deadline.",
+   "deadline_note": "2026 calendar (base year 2024): payment from 16 Feb to 17 Aug 2026 by birth month; amounts remain available until 30/12/2026.",
    "procedure_steps": [
     {
      "step": 1,
@@ -1010,8 +1010,8 @@
     ],
     "age_min": null,
     "age_max": null,
-    "income_annual_max": null,
-    "income_note": "Worked at least 30 days with formal contract in the base year with average pay up to 2 minimum wages; registered in PIS/PASEP for 5+ years; employer data in RAIS/eSocial",
+    "income_annual_max": 33192,
+    "income_note": "Worked at least 30 days with formal contract in the base year with average monthly pay up to R$ 2.766 (individual remuneration, base year 2024, for the 2026 calendar); x12 = R$ 33,192; registered in PIS/PASEP for 5+ years; employer data reported in eSocial.",
     "requires_children": false,
     "nationality": "any_resident",
     "residency_months_min": null,
@@ -1021,8 +1021,8 @@
     "gender": "any"
    },
    "source_url": "https://www.gov.br/pt-br/servicos/receber-o-abono-salarial",
-   "source_snippet": "O valor do abono salarial é proporcional aos meses trabalhados, com base no salário mínimo; cada mês trabalhado equivale a 1/12 do salário mínimo.",
-   "last_verified_at": "2026-08-12",
+   "source_snippet": "No calendário de pagamento de 2026 terão direito os trabalhadores que receberam, no ano-base 2024, remuneração média de até R$ 2.766,00 ... O Salário-Mínimo no ano de 2026 é de R$ 1.621,00",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -1038,7 +1038,7 @@
    "amount_max": null,
    "amount_currency": "BRL",
    "amount_period": "one_off",
-   "amount_note": "Saque-rescisão: full balance on dismissal without just cause (+40% fine paid by employer). Saque-aniversário: annual withdrawal of a percentage (5% to 50%) of the balance in the birthday month. Saque calamidade: up to R$ 6.200 per account in municipalities with recognised state of calamity (up to 3 withdrawals per year).",
+   "amount_note": "Saque-rescisão: full balance on dismissal without just cause (+40% fine paid by employer). Saque-aniversário: annual withdrawal of a percentage (5% to 50%) of the balance in the birthday month. Saque calamidade: up to R$ 6.220 per account in municipalities with recognised state of calamity (up to 3 withdrawals per year).",
    "is_automatic": false,
    "application_url": "https://www.caixa.gov.br/beneficios-trabalhador/fgts/Paginas/default.aspx",
    "application_channel": "online",
@@ -1089,10 +1089,10 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.caixa.gov.br/beneficios-trabalhador/fgts/Paginas/default.aspx",
-   "source_snippet": "O trabalhador pode sacar o FGTS nas modalidades saque-rescisão, saque-aniversário, saque calamidade e demais hipóteses legais, conforme regras do Conselho Curador do FGTS.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www.caixa.gov.br/beneficios-trabalhador/fgts/saque-FGTS/Paginas/default.aspx",
+   "source_snippet": "Saque-Rescisão – ... o trabalhador, quando demitido sem justa causa, tem direito ao saque integral da conta do FGTS, incluindo a multa rescisória ... Saque-Aniversário – sistemática opcional em que o trabalhador pode sacar anualmente, no mês de aniversário, parte do seu saldo",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "seguro-defeso",
@@ -1103,16 +1103,16 @@
    "funder": "INSS / Ministério da Pesca e Aquicultura",
    "category": "income_support",
    "benefit_type": "cash_monthly",
-   "amount_min": 1518,
-   "amount_max": 1518,
+   "amount_min": 1621,
+   "amount_max": 1621,
    "amount_currency": "BRL",
    "amount_period": "monthly",
-   "amount_note": "One minimum wage per month (R$ 1.518 in 2025) during the defeso (closed fishing season), usually 3-4 instalments per year.",
+   "amount_note": "One minimum wage per month (R$ 1.621 in 2026) during the defeso (closed fishing season), usually 3-4 instalments per year.",
    "is_automatic": false,
-   "application_url": "https://www.gov.br/inss/pt-br/direitos-e-deveres/seguro-defeso",
+   "application_url": "https://www.gov.br/pt-br/servicos/solicitar-seguro-defeso-pescador-artesanal",
    "application_channel": "online",
    "deadline_type": "window",
-   "deadline_note": "Request during the closed season defined for each species/region; requires RGP registration at least 3 years before (gradual rules).",
+   "deadline_note": "Request between 30 days before the start of the closed season and the last day of the closed season, online via Meu INSS; requires RGP registration for at least 1 year, proof of social-security contribution on sales in the previous 12 months, and no other income or benefit (except auxílio-acidente and a pensão por morte up to one minimum wage).",
    "procedure_steps": [
     {
      "step": 1,
@@ -1163,10 +1163,10 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.gov.br/inss/pt-br/direitos-e-deveres/seguro-defeso",
-   "source_snippet": "Benefício previdenciário de um salário mínimo mensal pago ao pescador profissional artesanal durante o período de defeso (proibição de pesca).",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www.gov.br/pt-br/servicos/solicitar-seguro-defeso-pescador-artesanal",
+   "source_snippet": "esteja inscrita no Registro Geral de Pesca (RGP) há pelo menos 1 ano; ... peça o benefício dentro do prazo (entre 30 dias antes da data de início do defeso até o último dia do período de defeso).",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "bolsa-atleta",
@@ -1237,7 +1237,7 @@
    },
    "source_url": "https://www.gov.br/esporte/pt-br/acoes-e-programas-1/programa-bolsa-atleta",
    "source_snippet": "O valor da Bolsa Atleta varia de R$ 410,00 até R$ 16.629,00, conforme categoria do atleta... O pagamento é realizado pelo período de 12 meses.",
-   "last_verified_at": "2026-08-12",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -1248,17 +1248,17 @@
    "admin_area": null,
    "funder": "Ministério do Trabalho e Emprego (FAT)",
    "category": "employment",
-   "benefit_type": "cash_monthly",
-   "amount_min": 1518,
-   "amount_max": 1518,
+   "benefit_type": "in_kind",
+   "amount_min": null,
+   "amount_max": null,
    "amount_currency": "BRL",
    "amount_period": "monthly",
-   "amount_note": "One minimum wage per month (R$ 1.518 in 2025) during the qualification course; unemployment insurance instalments are suspended and preserved while in training.",
+   "amount_note": "Free professional qualification courses (Pronatec Bolsa-Formação Trabalhador) for workers, including those receiving unemployment insurance; students receive meals, transport and school materials. No separate cash grant of one minimum wage per month is stated by the official sources.",
    "is_automatic": false,
-   "application_url": "https://www.gov.br/trabalho-e-emprego/pt-br/assuntos/qualificacao-profissional",
+   "application_url": "https://www.gov.br/trabalho-e-emprego/pt-br/servicos/trabalhador/seguro-desemprego/seguro-desemprego-formal",
    "application_channel": "in_person",
    "deadline_type": "rolling",
-   "deadline_note": "Offered together with unemployment insurance at Agências do Trabalho/SINE.",
+   "deadline_note": "Unemployment insurance payment is conditioned on enrolment and attendance in a qualification course; courses offered via Agências do Trabalho/SINE and the Pronatec network.",
    "procedure_steps": [
     {
      "step": 1,
@@ -1305,10 +1305,10 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.gov.br/trabalho-e-emprego/pt-br/assuntos/qualificacao-profissional",
-   "source_snippet": "O trabalhador em situação de desemprego pode receber bolsa-formação de um salário mínimo durante curso de qualificação profissional, com suspensão das parcelas do seguro-desemprego.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www.planalto.gov.br/ccivil_03/_ato2011-2014/2011/lei/L12513compilado.htm",
+   "source_snippet": "O recebimento da assistência financeira do Programa Seguro-Desemprego fica condicionado à comprovação de matrícula e de frequência do trabalhador em curso de formação inicial e continuada ou qualificação profissional.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "tarifa-social-energia-eletrica",
@@ -1323,7 +1323,7 @@
    "amount_max": null,
    "amount_currency": "BRL",
    "amount_period": "monthly",
-   "amount_note": "Progressive discounts on the residential tariff: 65% up to 30 kWh/month, 40% from 31 to 100 kWh, 10% from 101 to 220 kWh; indigenous and quilombola families have 100% up to 50 kWh. Lei 15.235/2025 added 100% exemption up to 80 kWh/month for eligible low-income families.",
+   "amount_note": "Since bills issued from 5 July 2025 there is a single discount band: 100% off for consumption up to 80 kWh per month (eligible families pay nothing for the first 80 kWh); consumption above 80 kWh gets no discount. This replaced the earlier progressive bands (65% / 40% / 10%). Free of the CDE and Proinfa charges.",
    "is_automatic": true,
    "application_url": "https://www.gov.br/aneel/pt-br/assuntos/tarifas/tarifa-social",
    "application_channel": "automatic",
@@ -1381,8 +1381,8 @@
     "gender": "any"
    },
    "source_url": "https://www.gov.br/aneel/pt-br/assuntos/tarifas/tarifa-social",
-   "source_snippet": "Descontos de 65% para famílias com consumo de até 30 kWh por mês; 40% para consumo entre 31 e 100 kWh; 10% entre 101 e 220 kWh.",
-   "last_verified_at": "2026-08-12",
+   "source_snippet": "Passa a existir apenas uma faixa de desconto para os beneficiários da Tarifa Social: 100% para o consumo até 80 kWh mensais. A parcela de consumo que ultrapassar 80 kWh não receberá desconto.",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified",
    "income_reviewed_at": "2026-08-13"
   },
@@ -1399,7 +1399,7 @@
    "amount_max": 55000,
    "amount_currency": "BRL",
    "amount_period": "one_off",
-   "amount_note": "Subsidy (aporte) of up to R$ 55.000 plus reduced interest (around 4% a.a.) for families with monthly income up to R$ 2.850; financing up to 95% of the property value. Programme resumed in 2023 (Resolução CCI/FGTS).",
+   "amount_note": "Subsidised housing units for Faixa 1 (gross family income up to R$ 3.200 urban; up to R$ 50.000 per year rural). Families receiving BPC or Bolsa Família are exempt from instalments (unit 100% free). CAIXA's MCMV Cidades page lists a maximum aporte of R$ 55 mil; the gov.br/cidades page does not state a subsidy amount.",
    "is_automatic": false,
    "application_url": "https://www.caixa.gov.br/poder-publico/habitacao/minha-casa-minha-vida/Paginas/default.aspx",
    "application_channel": "in_person",
@@ -1448,8 +1448,8 @@
     "statuses": [],
     "age_min": null,
     "age_max": null,
-    "income_annual_max": null,
-    "income_note": "Gross monthly family income up to R$ 2.850; priority to families in vulnerable situations, women-headed households and persons in situation of risk",
+    "income_annual_max": 38400,
+    "income_note": "Gross monthly family income up to R$ 3.200 in urban areas (x12 = R$ 38,400 per household per year) or up to R$ 50.000 per year in rural areas (Portaria MCID nº 333 of 30 Mar 2026); priority to women-headed households, persons with disabilities, elderly, families in vulnerable situations.",
     "requires_children": false,
     "nationality": "any_resident",
     "residency_months_min": null,
@@ -1458,9 +1458,9 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.caixa.gov.br/poder-publico/habitacao/minha-casa-minha-vida/mcmv-cidades/Paginas/default.aspx",
-   "source_snippet": "Faixa 1 - até R$ 2.850,00 - aporte máximo até R$ 55 mil; famílias com renda mensal bruta de até R$ 8.600,00 podem participar do MCMV.",
-   "last_verified_at": "2026-08-12",
+   "source_url": "https://www.gov.br/cidades/pt-br/acesso-a-informacao/acoes-e-programas/habitacao/programa-minha-casa-minha-vida/sobre-o-minha-casa-minha-vida-1",
+   "source_snippet": "As famílias da chamada Faixa 1 com renda mensal bruta limitada a R$ 3.200 (três mil e duzentos reais) em áreas urbanas, é de R$ 50.000,00 (cinquenta mil reais) anuais, nas áreas rurais",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -1476,9 +1476,9 @@
    "amount_max": 35000,
    "amount_currency": "BRL",
    "amount_period": "one_off",
-   "amount_note": "Faixa 2 (income R$ 2.850,01 to R$ 4.700): subsidy up to R$ 55 mil in some modalities and reduced interest (~7,66% a.a.); Faixa 3 (R$ 4.700,01 to R$ 8.600): subsidy up to R$ 20-35 mil with market-linked FGTS rates.",
+   "amount_note": "Faixa 2 (family income R$ 3.200,01 to R$ 5.000) and Faixa 3 (R$ 5.000,01 to R$ 9.600): FGTS-funded financing at reduced interest; Faixa 3 interest 7,66% to 8,16% a.a.; Faixa 2 can receive FGTS subsidy depending on income; Faixa 3 can buy properties up to R$ 400 mil. Faixa 4 (Classe Média) up to R$ 13.000 at 10% a.a. Subsidy caps in the earlier record (R$ 35 mil / R$ 20 mil) come from an older CAIXA page and are not confirmed by the current gov.br page.",
    "is_automatic": false,
-   "application_url": "https://www.caixa.gov.br/voce/habitacao/minha-casa-minha-vida/Paginas/default.aspx",
+   "application_url": "https://www.gov.br/cidades/pt-br/acesso-a-informacao/acoes-e-programas/habitacao/programa-minha-casa-minha-vida/mcmv-fgts",
    "application_channel": "in_person",
    "deadline_type": "rolling",
    "deadline_note": "Apply directly at Caixa or at developers of MCMV projects; credit analysis required.",
@@ -1520,8 +1520,8 @@
     "statuses": [],
     "age_min": null,
     "age_max": null,
-    "income_annual_max": null,
-    "income_note": "Gross monthly family income from R$ 2.850,01 to R$ 8.600; cannot own another residential property in the same municipality",
+    "income_annual_max": 115200,
+    "income_note": "Gross monthly family income from R$ 3.200,01 up to R$ 9.600 for Faixas 2-3 (x12 = R$ 115,200 per household per year at the upper limit); Classe Média up to R$ 13.000 handled separately; rural annual limits R$ 50.000,01 to R$ 134.000. Cannot own another residential property in the same municipality.",
     "requires_children": false,
     "nationality": "any_resident",
     "residency_months_min": null,
@@ -1530,9 +1530,9 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.caixa.gov.br/poder-publico/habitacao/minha-casa-minha-vida/mcmv-cidades/Paginas/default.aspx",
-   "source_snippet": "Faixa 2: R$ 2.850,01 a R$ 4.700,00 - até R$ 35 mil de aporte; Faixa 3: R$ 4.700,01 a R$ 8.600,00 - até R$ 20 mil.",
-   "last_verified_at": "2026-08-12",
+   "source_url": "https://www.gov.br/cidades/pt-br/acesso-a-informacao/acoes-e-programas/habitacao/programa-minha-casa-minha-vida/sobre-o-minha-casa-minha-vida-1",
+   "source_snippet": "Faixa 2 | até R$ 3.200,01 a R$ 5.000,00 ... Faixa 3 | de até R$ 5.000,01 a R$ 9.600,00 ... Faixa 4 (Classe Média) | Até R$ 13.000,00",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -1545,10 +1545,10 @@
    "category": "housing",
    "benefit_type": "discount",
    "amount_min": null,
-   "amount_max": 55000,
+   "amount_max": 97500,
    "amount_currency": "BRL",
    "amount_period": "one_off",
-   "amount_note": "Subsidy for construction, renovation or expansion of rural housing for families with income up to R$ 2.850/month who work in rural activities; operation via state/municipal entities or rural producers' organisations.",
+   "amount_note": "Subsidy for rural housing for families with gross annual income up to R$ 50.000 (Faixa Rural 1): production of a housing unit up to R$ 97.500 (up to R$ 107.000 in the North region); improvement of a unit up to R$ 50.000 (up to R$ 55.000 in the North region); includes cistern and effluent treatment. Proposals are submitted by municipalities, states or non-profit entities.",
    "is_automatic": false,
    "application_url": "https://www.gov.br/cidades/pt-br/acesso-a-informacao/acoes-e-programas/habitacao/minha-casa-minha-vida",
    "application_channel": "in_person",
@@ -1592,8 +1592,8 @@
     "statuses": [],
     "age_min": null,
     "age_max": null,
-    "income_annual_max": null,
-    "income_note": "Rural families with monthly income up to R$ 2.850 working in agriculture, fishing, extractivism; tenure of the rural land required",
+    "income_annual_max": 50000,
+    "income_note": "Rural families with gross annual income up to R$ 50.000 working in family agriculture, forestry, aquaculture, extractivism, fishing, indigenous and quilombola communities, or other rural residents.",
     "requires_children": false,
     "nationality": "any_resident",
     "residency_months_min": null,
@@ -1602,10 +1602,10 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.gov.br/cidades/pt-br/acesso-a-informacao/acoes-e-programas/habitacao/minha-casa-minha-vida",
-   "source_snippet": "Modalidade rural do programa habitacional destinada a famílias que vivem no campo e exercem atividade agropecuária, pesqueira ou extrativista.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www.gov.br/cidades/pt-br/acesso-a-informacao/acoes-e-programas/habitacao/programa-minha-casa-minha-vida/sobre-o-minha-casa-minha-vida-1",
+   "source_snippet": "Os subsídios são destinados a famílias com renda bruta anual de R$ 50.000,00, correspondente à Faixa Rural I do MCMV ... Produção da unidade habitacional - R$ 97.500,00 (até R$ 107.000,00 na Região Norte); e Melhoria da unidade habitacional - R$ 50.000,00 (até R$ 55.000,00 na Região Norte).",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "pe-de-meia",
@@ -1620,7 +1620,7 @@
    "amount_max": 200,
    "amount_currency": "BRL",
    "amount_period": "monthly",
-   "amount_note": "Incentivo Frequência: up to 9 instalments of R$ 200/year (80% attendance). Plus Incentivo Matrícula R$ 200/year, Incentivo Conclusão R$ 1.000 per completed year (savings, released after graduation) and Incentivo Enem R$ 200.",
+   "amount_note": "Incentivo Frequência: up to R$ 1.800 per year, paid in up to 9 monthly instalments of R$ 200 for regular high school (80% attendance), or up to 8 instalments of R$ 225 for EJA. Plus Incentivo Matrícula, Incentivo Conclusão (savings released after graduation) and Incentivo Enem as recorded.",
    "is_automatic": true,
    "application_url": "https://www.gov.br/mec/pt-br/pe-de-meia",
    "application_channel": "automatic",
@@ -1664,8 +1664,8 @@
     "statuses": [],
     "age_min": 14,
     "age_max": 24,
-    "income_annual_max": null,
-    "income_note": "Students aged 14-24 in public high school or EJA registered in CadÚnico",
+    "income_annual_max": 9726,
+    "income_note": "Students aged 14-24 with regularised CPF in public high school (regular or EJA), belonging to families registered in CadÚnico with per capita income up to half the minimum wage (R$ 810,50/month in 2026; x12 = R$ 9,726 per person per year, per-capita figure).",
     "requires_children": false,
     "nationality": "any_resident",
     "residency_months_min": null,
@@ -1675,8 +1675,8 @@
     "gender": "any"
    },
    "source_url": "https://www.gov.br/mec/pt-br/pe-de-meia",
-   "source_snippet": "Estudantes do ensino médio regular poderão receber até nove parcelas de R$ 200 ao longo do ano, mediante comprovação de frequência.",
-   "last_verified_at": "2026-08-12",
+   "source_snippet": "Até R$ 1.800 ao ano, divididos em até 9 parcelas mensais de R$ 200,00, caso atinja frequência mínima de 80% no mês ou no período.",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -1692,7 +1692,7 @@
    "amount_max": null,
    "amount_currency": "BRL",
    "amount_period": "monthly",
-   "amount_note": "Financing of up to 100% of tuition with zero interest for students with per capita family income up to 3 minimum wages (Fies Social/zero interest modalities); P-Fies at variable rates for incomes up to 5 minimum wages. Repayment starts after graduation with grace period.",
+   "amount_note": "Zero interest rate for all students; you study first and start paying after graduation; no guarantor needed if family income is up to 1.5 minimum wage per person. Eligible: Enem from 2010 with average score at least 450 and essay above zero, not as a 'treineiro', family income up to 3 minimum wages per person. P-Fies (BNDES-linked) is not described on this page.",
    "is_automatic": false,
    "application_url": "https://www.gov.br/pt-br/servicos/obter-financiamento-do-fies",
    "application_channel": "online",
@@ -1736,8 +1736,8 @@
     "statuses": [],
     "age_min": null,
     "age_max": null,
-    "income_annual_max": null,
-    "income_note": "Per capita family income up to 3 minimum wages (Fies) or 5 minimum wages (P-Fies); private HEI courses with positive MEC evaluation",
+    "income_annual_max": 58356,
+    "income_note": "Family income up to 3 minimum wages per person (R$ 4.863/month in 2026; x12 = R$ 58,356 per person per year, per-capita figure); no guarantor required up to 1.5 minimum wage per person. Enem from 2010 with average score at least 450 and essay above zero.",
     "requires_children": false,
     "nationality": "any_resident",
     "residency_months_min": null,
@@ -1747,8 +1747,8 @@
     "gender": "any"
    },
    "source_url": "https://www.gov.br/pt-br/servicos/obter-financiamento-do-fies",
-   "source_snippet": "Taxa de juros ZERO para todos os estudantes; sem necessidade de fiador se sua renda familiar for até 1,5 salário mínimo por pessoa.",
-   "last_verified_at": "2026-08-12",
+   "source_snippet": "Taxa de juros ZERO para todos os estudantes; Sem necessidade de fiador se sua renda familiar for até 1,5 salário mínimo por pessoa. ... Renda familiar até 3 salários mínimos por pessoa;",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -1764,7 +1764,7 @@
    "amount_max": null,
    "amount_currency": "BRL",
    "amount_period": "monthly",
-   "amount_note": "Full scholarships (100%) for per capita family income up to 1.5 minimum wage; partial scholarships (50%) for income up to 3 minimum wages; requires Enem average of at least 450 points and essay above zero.",
+   "amount_note": "Full scholarships (100%) for per capita family income up to 1.5 minimum wage; partial scholarships (50%) for income up to 3 minimum wages; Enem average of at least 450 points and essay above zero, in one of the last two editions before the selection.",
    "is_automatic": false,
    "application_url": "https://www.gov.br/mec/pt-br/acesso-a-informacao/institucional/programas-e-acoes/prouni",
    "application_channel": "online",
@@ -1808,10 +1808,10 @@
     "statuses": [],
     "age_min": null,
     "age_max": null,
-    "income_annual_max": null,
-    "income_note": "Bolsa integral: per capita income up to 1.5 minimum wage; bolsa parcial: up to 3 minimum wages; full high school at public school or as full scholarship holder, PCD or public-school teachers for licenciatura",
+    "income_annual_max": 58356,
+    "income_note": "Bolsa integral: family income up to 1.5 minimum wage per person (R$ 2.431,50/month in 2026); bolsa parcial: up to 3 minimum wages per person (R$ 4.863/month; x12 = R$ 58,356 per person per year, per-capita figure); Brazilian students without a higher-education degree; high school completed in public school or as full scholarship holder (other cases for partial scholarship); persons with disability and public-school teachers (licenciatura/pedagogia, no income test) have separate rules.",
     "requires_children": false,
-    "nationality": "any_resident",
+    "nationality": "citizen_or_pr",
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": true,
@@ -1819,8 +1819,8 @@
     "gender": "any"
    },
    "source_url": "https://www.gov.br/mec/pt-br/acesso-a-informacao/institucional/programas-e-acoes/prouni",
-   "source_snippet": "Bolsa integral (100%): renda familiar bruta mensal per capita de até 1,5 salário mínimo; bolsa parcial (50%): até 3 salários mínimos.",
-   "last_verified_at": "2026-08-12",
+   "source_snippet": "Bolsa integral (100%): Renda familiar menor ou igual a 1,5 salário-mínimo por pessoa; Bolsa parcial (50%): Renda familiar menor ou igual a 3 salários-mínimos por pessoa. ... Estudantes brasileiros sem diploma de curso superior",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -1836,7 +1836,7 @@
    "amount_max": null,
    "amount_currency": "BRL",
    "amount_period": "annual",
-   "amount_note": "Full waiver of the Enem registration fee (R$ 85 in 2025) for students completing public high school, CadÚnico members and low-income candidates.",
+   "amount_note": "Full waiver of the Enem registration fee (R$ 85,00) for: students in the last year of public high school; people who completed high school in public school or as full scholarship holders with per-person family income up to 1.5 minimum wage; and CadÚnico families with per-person income up to half a minimum wage or total monthly family income up to 3 minimum wages.",
    "is_automatic": false,
    "application_url": "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem",
    "application_channel": "online",
@@ -1875,8 +1875,8 @@
     "statuses": [],
     "age_min": null,
     "age_max": null,
-    "income_annual_max": null,
-    "income_note": "Students in the last year of public high school; candidates registered in CadÚnico or with low income (per capita up to half minimum wage)",
+    "income_annual_max": 58356,
+    "income_note": "Three routes: (1) last year of public high school, no income test; (2) all high school in public school/full scholarship with income up to 1.5 minimum wage per person; (3) CadÚnico with valid NIS and income up to half a minimum wage per person or up to 3 minimum wages total monthly family income (R$ 4.863/month; x12 = R$ 58,356 per household).",
     "requires_children": false,
     "nationality": "any_resident",
     "residency_months_min": null,
@@ -1886,8 +1886,8 @@
     "gender": "any"
    },
    "source_url": "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem",
-   "source_snippet": "Estudantes que estão cursando o último ano do ensino médio em escolas públicas, assim como aqueles que comprovaram ser de baixa renda ou inscritos no CadÚnico, têm direito à isenção.",
-   "last_verified_at": "2026-08-12",
+   "source_snippet": "Tem direito a não pagar a taxa de inscrição quem: está cursando a última série do ensino médio, no ano da edição, em escola da rede pública; cursou todo o ensino médio em escola da rede pública ou como bolsista integral na rede privada; além de ter renda, por pessoa, igual ou menor que um salário mínimo e meio",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -1903,9 +1903,9 @@
    "amount_max": null,
    "amount_currency": "BRL",
    "amount_period": "monthly",
-   "amount_note": "Monthly permanence grants (auxílio moradia, alimentação, transporte, creche) defined by each federal institution's own student assistance programme; typical values range from R$ 300 to R$ 800 per month depending on the modality and institution.",
+   "amount_note": "Direct benefits (housing, food, transport, health, digital inclusion, culture, sport, childcare, pedagogic support) set by each federal institution's own assistance programme; the Bolsa Permanência is a cash grant; total pecuniary student-assistance benefits per student may not exceed 1.5 minimum wages (R$ 2.431,50 in 2026), except for indigenous and quilombola students.",
    "is_automatic": false,
-   "application_url": "https://www.gov.br/mec/pt-br/acesso-a-informacao/institucional/programas-e-acoes/assistencia-estudantil",
+   "application_url": "https://www.gov.br/mec/pt-br/pnaes",
    "application_channel": "in_person",
    "deadline_type": "rolling",
    "deadline_note": "Apply at the student assistance sector (pró-reitoria de assuntos estudantis) of your federal university/institute; socioeconomic evaluation required.",
@@ -1960,9 +1960,9 @@
     "income_confidence": "high",
     "gender": "any"
    },
-   "source_url": "https://www.gov.br/mec/pt-br/acesso-a-informacao/institucional/programas-e-acoes/assistencia-estudantil",
-   "source_snippet": "A Pnaes garante ações de assistência estudantil nas instituições federais de ensino superior, incluindo auxílios moradia, transporte e alimentação para estudantes em vulnerabilidade socioeconômica.",
-   "last_verified_at": "2026-08-12",
+   "source_url": "https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2024/lei/l14914.htm",
+   "source_snippet": "IV - ser integrante de grupo familiar em situação de vulnerabilidade socioeconômica, observado o limite de renda bruta familiar mensal per capita de até 1 (um) salário mínimo ... IX - ser estudante estrangeiro em situação de vulnerabilidade socioeconômica ou refugiado.",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified",
    "income_reviewed_at": "2026-08-13"
   },
@@ -1979,7 +1979,7 @@
    "amount_max": null,
    "amount_currency": "BRL",
    "amount_period": "one_off",
-   "amount_note": "At least 50% of places in each course at federal universities and institutos federais reserved for students who completed all of high school in public schools, subdivided by income (up to 1.5 minimum wage per capita) and race/ethnicity; minimum 25% of the reserved places for low-income candidates.",
+   "amount_note": "At least 50% of places in each course at federal universities and institutos federais reserved for students who completed all of high school in public schools; half of those places go to students with family income up to 1 minimum wage per capita (lowered from 1.5 by Lei 14.723/2023), with sub-quotas for pretos, pardos, indígenas, quilombolas and persons with disability.",
    "is_automatic": false,
    "application_url": "https://www.gov.br/mec/pt-br/acesso-a-informacao/institucional/programas-e-acoes/sistema-de-selecao-unificada-sisu",
    "application_channel": "online",
@@ -2037,8 +2037,8 @@
     "gender": "any"
    },
    "source_url": "https://www.planalto.gov.br/ccivil_03/_ato2011-2014/2012/lei/l12711.htm",
-   "source_snippet": "Art. 1º As instituições federais de educação superior vinculadas ao Ministério da Educação reservarão, no mínimo, 50% de suas vagas para estudantes oriundos integralmente de escola pública.",
-   "last_verified_at": "2026-08-12",
+   "source_snippet": "Redução do critério de renda familiar per capita para um salário-mínimo na reserva de vagas de 50% das cotas.",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified",
    "income_reviewed_at": "2026-08-13"
   },
@@ -2106,8 +2106,8 @@
    },
    "source_url": "https://www.planalto.gov.br/ccivil_03/leis/2003/l10.741.htm",
    "source_snippet": "Art. 39. É assegurada, no sistema de transporte coletivo, a gratuidade aos maiores de 65 anos... reservados 10% dos assentos, devidamente identificados.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "passe-livre-interestadual-pcd",
@@ -2124,7 +2124,7 @@
    "amount_period": "one_off",
    "amount_note": "Full fare exemption on interstate collective road transport for persons with disability with per capita family income up to one minimum wage; companion may travel free when medically justified.",
    "is_automatic": false,
-   "application_url": "https://www.gov.br/antt/pt-br/acesso-a-informacao/perguntas-frequentes/passe-livre",
+   "application_url": "https://www.gov.br/pt-br/servicos/obter-passe-livre-interestadual-digital",
    "application_channel": "online",
    "deadline_type": "rolling",
    "deadline_note": "Credential issued digitally by ANTT after document analysis; keep CadÚnico updated.",
@@ -2166,8 +2166,8 @@
     "statuses": [],
     "age_min": null,
     "age_max": null,
-    "income_annual_max": null,
-    "income_note": "Persons with disability with per capita family income up to one minimum wage (hipossuficiência econômica)",
+    "income_annual_max": 19452,
+    "income_note": "Persons with disability with per capita family income up to one minimum wage (R$ 1.621/month in 2026; x12 = R$ 19,452 per person per year, per-capita figure); proof via BPC (code B87), or CadÚnico plus Cadastro-Inclusão, or CadÚnico plus medical attestation entered on the ANTT portal.",
     "requires_children": false,
     "nationality": "any_resident",
     "residency_months_min": null,
@@ -2176,9 +2176,9 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.gov.br/antt/pt-br",
-   "source_snippet": "Benefício que garante gratuidade no transporte coletivo interestadual para pessoas com deficiência que comprovem situação de hipossuficiência econômica.",
-   "last_verified_at": "2026-08-12",
+   "source_url": "https://www.gov.br/pt-br/servicos/obter-passe-livre-interestadual-digital",
+   "source_snippet": "O Passe Livre Interestadual é a gratuidade no transporte coletivo interestadual de passageiros concedida à pessoa com deficiência comprovadamente carente, nos termos da Lei nº 8.899, de 29 de junho de 1994. ... renda familiar per capta de até 1 salário-mínimo.",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -2196,7 +2196,7 @@
    "amount_period": "monthly",
    "amount_note": "Employer must advance the full cost of commuting from home to work and back; the worker pays at most 6% of the basic salary via payroll deduction, the remainder being subsidised by the employer.",
    "is_automatic": false,
-   "application_url": "https://www.gov.br/trabalho-e-emprego/pt-br",
+   "application_url": "https://www.planalto.gov.br/ccivil_03/leis/l7418.htm",
    "application_channel": "via_employer",
    "deadline_type": "rolling",
    "deadline_note": "Inform the employer at hiring the address and transport lines used.",
@@ -2245,7 +2245,7 @@
    },
    "source_url": "https://www.planalto.gov.br/ccivil_03/leis/l7418.htm",
    "source_snippet": "O empregador antecipará ao empregado o Vale-Transporte para utilização efetiva em despesas de deslocamento residência-trabalho e vice-versa, com desconto de até 6% do salário básico.",
-   "last_verified_at": "2026-08-12",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified",
    "income_reviewed_at": "2026-08-13"
   },
@@ -2264,7 +2264,7 @@
    "amount_period": "one_off",
    "amount_note": "Half-price admission to artistic, cultural and sports events for students, seniors 60+, persons with disabilities (and companion when needed) and young people 15-29 in poverty (ID Jovem). Category: leisure/culture access benefit.",
    "is_automatic": false,
-   "application_url": "https://www.gov.br/mdh/pt-br/navegue-por-temas/juventude/id-jovem",
+   "application_url": "https://www.gov.br/pt-br/servicos/obter-a-carteira-de-identidade-jovem",
    "application_channel": "online",
    "deadline_type": "rolling",
    "deadline_note": "Students present the student ID (CIE); low-income youth issue the free ID Jovem online; seniors present ID.",
@@ -2307,7 +2307,7 @@
     "age_min": 15,
     "age_max": null,
     "income_annual_max": null,
-    "income_note": "Students, persons 60+, PCDs and young people 15-29 in poverty (ID Jovem: CadÚnico, per capita income up to 2 minimum wages)",
+    "income_note": "Students, persons 60+, PCDs, and young people 15-29 in low-income families (ID Jovem: CadÚnico updated within 24 months, total monthly family income up to 2 minimum wages, not per capita). Only the ID Jovem route has an income test; students and seniors do not.",
     "requires_children": false,
     "nationality": "any_resident",
     "residency_months_min": null,
@@ -2317,9 +2317,9 @@
     "gender": "any"
    },
    "source_url": "https://www.gov.br/mdh/pt-br/navegue-por-temas/juventude/id-jovem",
-   "source_snippet": "O benefício da meia-entrada é assegurado ao estudante, ao idoso, à pessoa com deficiência e ao jovem de baixa renda, nos termos da Lei nº 12.933/2013.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_snippet": "jovem de baixa renda com idade entre 15 e 29 anos; renda familiar mensal de até dois salários mínimos; e estar inscrito no Cadastro Único para Programas Sociais do Governo Federal (CadÚnico) e com o cadastro atualizado nos últimos 24 meses.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "farmacia-popular",
@@ -2401,12 +2401,12 @@
    "amount_max": null,
    "amount_currency": "BRL",
    "amount_period": "monthly",
-   "amount_note": "Free dispensing of high-cost specialised medicines (oncology, rare diseases, hepatitis, multiple sclerosis, immunosuppressants, etc.) through state pharmacies under SUS clinical protocols.",
+   "amount_note": "Free dispensing of specialised medicines through the Componente Especializado da Assistência Farmacêutica (CEAF): 105 clinical conditions and 181 drugs (338 presentations) under Ministry of Health clinical protocols (PCDT), e.g. rare diseases, autoimmune diseases, multiple sclerosis, rheumatoid arthritis, inflammatory bowel disease, severe psoriasis and transplant patients. The term 'alto custo' is no longer used officially.",
    "is_automatic": false,
-   "application_url": "https://www.gov.br/saude/pt-br/composicao/sectics/daf/assistencia-farmaceutica-no-sus",
+   "application_url": "https://www.gov.br/saude/pt-br/composicao/sectics/daf/ceaf",
    "application_channel": "in_person",
    "deadline_type": "rolling",
-   "deadline_note": "Requires SUS prescription and specific clinical documentation (LME) at the state specialised pharmacy.",
+   "deadline_note": "Prescription plus LME form and PCDT documents; request at the state health secretariat's reference pharmacy (in person or via the state's digital platform); technical evaluation and authorisation, then dispensing. Bring CNS card, ID and proof of residence.",
    "procedure_steps": [
     {
      "step": 1,
@@ -2455,10 +2455,10 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.gov.br/saude/pt-br/composicao/sectics/daf/assistencia-farmaceutica-no-sus",
-   "source_snippet": "O Componente Especializado da Assistência Farmacêutica garante medicamentos estratégicos e de alto custo gratuitamente à população, conforme Protocolos Clínicos e Diretrizes Terapêuticas.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www.gov.br/saude/pt-br/composicao/sectics/daf/ceaf",
+   "source_snippet": "O Componente Especializado da Assistência Farmacêutica - CEAF é uma estratégia de acesso a medicamentos no âmbito do Sistema Único de Saúde (SUS) ... O CEAF atende atualmente 105 condições clínicas e conta com um elenco de 181 fármacos em 338 apresentações farmacêuticas",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "brasil-sorridente",
@@ -2475,7 +2475,7 @@
    "amount_period": "one_off",
    "amount_note": "Free dental treatment in the SUS network: check-ups, cleaning, fillings, extractions, root canals (in Centros de Especialidades Odontológicas), prostheses and oral cancer diagnosis.",
    "is_automatic": false,
-   "application_url": "https://www.gov.br/saude/pt-br/acesso-a-informacao/acoes-e-programas/brasil-sorridente",
+   "application_url": "https://www.gov.br/saude/pt-br/composicao/saps/brasil-sorridente",
    "application_channel": "in_person",
    "deadline_type": "rolling",
    "deadline_note": "Register at the UBS (basic health unit) of your area; specialised care by referral.",
@@ -2522,10 +2522,10 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.gov.br/saude/pt-br/acesso-a-informacao/acoes-e-programas/brasil-sorridente",
-   "source_snippet": "A Política Nacional de Saúde Bucal (Brasil Sorridente) garante ações de promoção, prevenção e tratamento odontológico gratuito na rede SUS.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www.gov.br/saude/pt-br/composicao/saps/brasil-sorridente",
+   "source_snippet": "O Brasil Sorridente é um programa de assistência odontológica, criado em 2004, que apresenta diretrizes nacionais de saúde bucal, integradas na Política Nacional de Saúde Bucal.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "academia-da-saude",
@@ -2542,7 +2542,7 @@
    "amount_period": "monthly",
    "amount_note": "Free guided physical activity, gymnastics, dance and health promotion classes at public poles (parks and squares) for the whole population, prioritising people with chronic diseases.",
    "is_automatic": false,
-   "application_url": "https://www.gov.br/saude/pt-br/acesso-a-informacao/acoes-e-programas/academia-da-saude",
+   "application_url": "https://www.gov.br/saude/pt-br/composicao/saps/academia-da-saude",
    "application_channel": "in_person",
    "deadline_type": "rolling",
    "deadline_note": "Enrol directly at the pole or through the local UBS.",
@@ -2589,10 +2589,10 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.gov.br/saude/pt-br/acesso-a-informacao/acoes-e-programas/academia-da-saude",
-   "source_snippet": "O Programa Academia da Saúde oferece gratuitamente espaços públicos com profissionais qualificados para a prática de atividade física e promoção da saúde.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www.gov.br/saude/pt-br/composicao/saps/academia-da-saude",
+   "source_snippet": "O Programa Academia da Saúde (PAS), lançado em 2011 e redefinido em 2013, é uma estratégia de promoção da saúde e produção do cuidado que funciona com a implantação de espaços públicos conhecidos como polos onde são ofertadas práticas de atividades físicas para população.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "dignidade-menstrual",
@@ -2607,12 +2607,12 @@
    "amount_max": null,
    "amount_currency": "BRL",
    "amount_period": "monthly",
-   "amount_note": "Free menstrual pads distributed through public schools, health units and social assistance network to low-income students and women in vulnerable situations (street situation, incarcerated, CadÚnico).",
+   "amount_note": "Free sanitary pads: 40 units per person every 56 days (two menstrual cycles), collected at any pharmacy accredited to Programa Farmácia Popular do Brasil with an authorisation issued in the Meu SUS Digital app (not distributed through schools/UBS/CRAS as previously stated).",
    "is_automatic": false,
-   "application_url": "https://www.gov.br/mulheres/pt-br/central-de-conteudos/noticias/2024/programa-dignidade-menstrual",
+   "application_url": "https://www.gov.br/pt-br/servicos/obter-autorizacao-para-retirada-gratuita-de-absorventes-higienicos-em-estabelecimentos-do-farmacia-popular",
    "application_channel": "in_person",
    "deadline_type": "rolling",
-   "deadline_note": "Distribution via enrolled public schools, UBSs and CRAS; no individual application in most cases.",
+   "deadline_note": "No fixed deadline. Get the 'Autorização do Programa Dignidade Menstrual' in Meu SUS Digital (gov.br service) and show it with photo ID and CPF at a Farmácia Popular pharmacy.",
    "procedure_steps": [
     {
      "step": 1,
@@ -2639,10 +2639,10 @@
    ],
    "eligibility": {
     "statuses": [],
-    "age_min": null,
-    "age_max": null,
+    "age_min": 10,
+    "age_max": 49,
     "income_annual_max": null,
-    "income_note": "Low-income students of public schools and women in situations of vulnerability registered in CadÚnico",
+    "income_note": "Aged 10-49 and registered in CadUnico with monthly income up to R$ 218 (per person); OR low-income public-school student; OR person in street situation. Income test is per person and does not apply to the student/street routes, so no single household ceiling is set.",
     "requires_children": false,
     "nationality": "any_resident",
     "residency_months_min": null,
@@ -2651,10 +2651,10 @@
     "admin_areas": [],
     "gender": "female"
    },
-   "source_url": "https://www.gov.br/saude/pt-br/acesso-a-informacao/acoes-e-programas/saude-menstrual",
-   "source_snippet": "O programa garante a distribuição gratuita de absorventes a estudantes de baixa renda de escolas públicas e a mulheres em situação de vulnerabilidade (Lei nº 14.214/2021).",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www.gov.br/saude/pt-br/composicao/saps/dignidade-menstrual",
+   "source_snippet": "Cada pessoa tem direito a 40 unidades de absorventes higiênicos para utilizar durante dois ciclos menstruais, ou seja, a cada período de 56 dias.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "isencao-ir-ate-5000",
@@ -2671,7 +2671,7 @@
    "amount_period": "monthly",
    "amount_note": "From 2026: zero income tax for monthly income up to R$ 5.000 (maximum relief of R$ 978,62/month) and progressive reduction for income up to R$ 7.350/month; applied automatically in payroll and annual return.",
    "is_automatic": true,
-   "application_url": "https://www.gov.br/receitafederal/pt-br",
+   "application_url": "https://www.gov.br/receitafederal/pt-br/assuntos/meu-imposto-de-renda/tabelas/2026",
    "application_channel": "automatic",
    "deadline_type": "annual",
    "deadline_note": "Automatic in payroll from January 2026; compensated in the annual adjustment declaration.",
@@ -2702,8 +2702,8 @@
     ],
     "age_min": null,
     "age_max": null,
-    "income_annual_max": null,
-    "income_note": "Monthly taxable income up to R$ 5.000 (full exemption) with tapering reduction up to R$ 7.350; partial financing by taxation of high incomes",
+    "income_annual_max": 88200,
+    "income_note": "Individual taxable income (not household): full relief up to R$ 5.000/month (R$ 60.000/year); reduction tapers linearly to zero at R$ 7.350/month (R$ 88.200/year). Ceiling shown is the annual level where the benefit ends.",
     "requires_children": false,
     "nationality": "any_resident",
     "residency_months_min": null,
@@ -2713,9 +2713,9 @@
     "gender": "any"
    },
    "source_url": "https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2025/lei/l15270.htm",
-   "source_snippet": "A Lei nº 15.270/2025 institui redução do imposto sobre a renda das pessoas físicas, com isenção para rendimentos mensais de até R$ 5.000.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_snippet": "de R$ 5.000,01 até R$ 7.350,00 | R$ 978,62 - (0,133145 x rendimentos tributáveis sujeitos à incidência mensal) ... produzirá efeitos a partir de 1º de janeiro de 2026.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "isencao-ir-doenca-grave",
@@ -2732,7 +2732,7 @@
    "amount_period": "monthly",
    "amount_note": "Full exemption of income tax on retirement, pension or reform income for persons with specified serious diseases (cancer, AIDS, Parkinson's, active tuberculosis, severe cardiopathy, mental alienation, etc.).",
    "is_automatic": false,
-   "application_url": "https://www.gov.br/receitafederal/pt-br/assuntos/orientacao-tributaria/isencoes/imposto-sobre-a-renda",
+   "application_url": "https://www.gov.br/receitafederal/pt-br/assuntos/meu-imposto-de-renda/preenchimento/molestia-grave",
    "application_channel": "in_person",
    "deadline_type": "rolling",
    "deadline_note": "Requires medical report from an official health service (SUS/INSS/military) proving the disease; process via e-CAC or INSS/paying source.",
@@ -2781,10 +2781,10 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.gov.br/receitafederal/pt-br/assuntos/orientacao-tributaria/isencoes/imposto-sobre-a-renda",
-   "source_snippet": "São isentos do imposto sobre a renda os rendimentos de aposentadoria, reforma e pensão percebidos por portadores de moléstia grave, conforme o art. 6º, XIV, da Lei nº 7.713/1988.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www.gov.br/receitafederal/pt-br/assuntos/meu-imposto-de-renda/preenchimento/molestia-grave",
+   "source_snippet": "As pessoas portadoras de doenças graves têm direito à isenção do Imposto sobre a Renda da Pessoa Física (IRPF) incidente sobre os rendimentos relativos a aposentadoria, pensão ou reserva/reforma (militares), inclusive o 13º.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "mei",
@@ -2795,16 +2795,16 @@
    "funder": "Governo Federal (Receita Federal / Sebrae como parceiro) - LC nº 123/2006",
    "category": "business",
    "benefit_type": "tax_credit",
-   "amount_min": 56,
-   "amount_max": 66,
+   "amount_min": 81.05,
+   "amount_max": 87.05,
    "amount_currency": "BRL",
    "amount_period": "monthly",
-   "amount_note": "Free registration (no opening fees) and a single monthly DAS payment of about R$ 56-66 (INSS 5% of minimum wage + ICMS R$ 1 commerce/industry + ISS R$ 5 services); exemption from federal taxes on revenue and access to INSS benefits with reduced contribution.",
+   "amount_note": "Free registration and a single monthly DAS-MEI for 2026: R$ 81,05 INSS (5% of the R$ 1.621,00 minimum wage) plus R$ 5,00 ISS (services) and/or R$ 1,00 ICMS (commerce/industry), i.e. R$ 81,05 to R$ 87,05; MEI truck driver pays R$ 194,52 INSS (12%).",
    "is_automatic": false,
    "application_url": "https://www.gov.br/empresas-e-negocios/pt-br/empreendedor",
    "application_channel": "online",
    "deadline_type": "rolling",
-   "deadline_note": "Annual revenue limit of R$ 81.000; monthly DAS due on the 20th; annual DASN-SIMEI declaration required.",
+   "deadline_note": "Annual revenue limit R$ 81.000 (Ministry of Entrepreneurship/gov.br); monthly DAS due on the 20th; annual DASN-SIMEI declaration required.",
    "procedure_steps": [
     {
      "step": 1,
@@ -2855,10 +2855,10 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.gov.br/empresas-e-negocios/pt-br/empreendedor",
-   "source_snippet": "A formalização é gratuita e o MEI paga mensalmente um valor fixo que inclui INSS, ICMS e/ou ISS, com direito a benefícios previdenciários.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www8.receita.fazenda.gov.br/simplesnacional/noticias/NoticiaCompleta.aspx?id=c3b2044c-ff97-432a-b33c-ecf2a3df6dc3",
+   "source_snippet": "R$ 81,05 de INSS (5% do valor do salário-mínimo, de R$ 1.621,00); R$ 5,00 de ISS, caso seja contribuinte deste imposto; e R$ 1,00 de ICMS, caso seja contribuinte deste imposto.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "simples-nacional",
@@ -2875,10 +2875,10 @@
    "amount_period": "monthly",
    "amount_note": "Unified monthly payment (DAS) covering 8 federal, state and municipal taxes with progressive rates starting at 4% (commerce), 4,5% (industry) and 6% (services) of revenue - substantially below the regular regimes.",
    "is_automatic": false,
-   "application_url": "https://www8.receita.fazenda.gov.br/SimplesNacional/",
+   "application_url": "https://www8.receita.fazenda.gov.br/SimplesNacional/Servicos/Grupo.aspx?grp=4&id=39",
    "application_channel": "online",
    "deadline_type": "annual",
-   "deadline_note": "Option for the regime made in January each year (30-day window for existing companies); ME up to R$ 360 mil and EPP up to R$ 4,8 mi annual revenue.",
+   "deadline_note": "Option for 2027 had to be made in September 2026 (new CGSN rules published Aug 2026 for the Consumption Tax Reform, which also lets firms opt for IBS/CBS outside the regime); the January option window no longer applies. ME up to R$ 360 mil and EPP up to R$ 4,8 mi annual revenue.",
    "procedure_steps": [
     {
      "step": 1,
@@ -2925,9 +2925,9 @@
     "gender": "any"
    },
    "source_url": "https://www8.receita.fazenda.gov.br/SimplesNacional/",
-   "source_snippet": "Regime tributário compartilhado de arrecadação, cobrança e fiscalização, aplicável às Microempresas e Empresas de Pequeno Porte, previsto na LC nº 123/2006.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_snippet": "Publicado Roteiro da Opção pelo Simples Nacional Para o Ano de 2027 ... Veja as principais modificações na forma de opção, que agora deverá ser realizada no mês de setembro/2026",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "crediamigo-bnb",
@@ -2939,15 +2939,15 @@
    "category": "business",
    "benefit_type": "discount",
    "amount_min": 500,
-   "amount_max": 25000,
+   "amount_max": 21000,
    "amount_currency": "BRL",
    "amount_period": "one_off",
-   "amount_note": "Productive microcredit loans roughly from R$ 500 to R$ 25.000+ for working capital and investment, with below-market rates and group or individual modalities; technical guidance included.",
+   "amount_note": "Productive microcredit with business guidance; loans are escalating and renewable up to R$ 21.000,00 depending on the business and repayment capacity. Released at once within seven business days; free current account. Group credit uses joint (solidarity) guarantee; individual credit needs a co-obligor.",
    "is_automatic": false,
-   "application_url": "https://www.bnb.gov.br/microcredito/crediamigo",
+   "application_url": "https://www.bnb.gov.br/faca-um-crediamigo",
    "application_channel": "in_person",
    "deadline_type": "rolling",
-   "deadline_note": "Business visit by the bank's microcredit agent (agente de microcrédito) at the client's location.",
+   "deadline_note": "No deadline. Request via www.bnb.gov.br/faca-um-crediamigo or WhatsApp; a microcredit agent visits the business. Needs CPF, photo ID and current proof of residence.",
    "procedure_steps": [
     {
      "step": 1,
@@ -2986,10 +2986,10 @@
     "statuses": [
      "self_employed"
     ],
-    "age_min": null,
+    "age_min": 18,
     "age_max": null,
-    "income_annual_max": null,
-    "income_note": "Microentrepreneurs (formal or informal) in urban or rural areas; serves the North, Northeast and other regions where BNB operates",
+    "income_annual_max": 360000,
+    "income_note": "Business turnover (not household income) up to R$ 360 mil per year; must be of age and have or want to start a business activity.",
     "requires_children": false,
     "nationality": "any_resident",
     "residency_months_min": null,
@@ -2998,10 +2998,10 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.bnb.gov.br/microcredito/crediamigo",
-   "source_snippet": "O CrediAmigo é o programa de microcrédito produtivo orientado do Banco do Nordeste, voltado a microempreendedores urbanos e rurais.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www.bnb.gov.br/crediamigo/sobre",
+   "source_snippet": "Seu empréstimo pode ser renovado e evoluir até R$ 21.000,00, de acordo com a estrutura do seu negócio e capacidade de pagamento.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "pnmpo-microcredito",
@@ -3057,8 +3057,8 @@
     ],
     "age_min": null,
     "age_max": null,
-    "income_annual_max": null,
-    "income_note": "Formal or informal microentrepreneurs with annual gross revenue up to R$ 360.000",
+    "income_annual_max": 200000,
+    "income_note": "Entrepreneurs (individuals or companies, formal or informal) with annual turnover up to R$ 200 mil per the Ministry of Finance page; note Banco do Nordeste's Crediamigo (a PNMPO operator) publishes R$ 360 mil. Turnover, not household income.",
     "requires_children": false,
     "nationality": "any_resident",
     "residency_months_min": null,
@@ -3067,10 +3067,10 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.gov.br/trabalho-e-emprego/pt-br/assuntos/microcredito",
-   "source_snippet": "O PNMPO orienta e financia microempreendedores formais e informais, combinando crédito produtivo com assistência técnica.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www.gov.br/fazenda/pt-br/assuntos/politica-agricola-e-meio-ambiente/atuacao-spe/microcredito",
+   "source_snippet": "As operações são direcionadas a pessoas naturais e jurídicas empreendedoras de atividades produtivas urbanas e rurais, de forma individual ou coletiva, com faturamento de até R$ 200 mil.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "pronaf",
@@ -3082,15 +3082,15 @@
    "category": "business",
    "benefit_type": "discount",
    "amount_min": null,
-   "amount_max": 500000,
+   "amount_max": 450000,
    "amount_currency": "BRL",
    "amount_period": "annual",
-   "amount_note": "Subsidised rural credit for family farmers: Pronaf Custeio (working capital, up to R$ 250 mil), Pronaf Investimento (up to R$ 500 mil), Pronaf Agroecologia/Mulher/Jovem/Bioeconomia with special conditions; interest typically around 5-6% a.a. in the Safra Plan.",
+   "amount_note": "Subsidised rural credit for family farmers, Safra 2026/2027 (R$ 85,2 bi planned). Limits and rates vary by line: Pronaf B investment from R$ 12 mil; Bioeconomia up to R$ 250 mil; Agroecologia up to R$ 250 mil or R$ 450 mil; interest from 0,5% to 9% a.a. depending on the line. R$ 500 mil is the family income ceiling, not a loan limit.",
    "is_automatic": false,
-   "application_url": "https://www.gov.br/agricultura/pt-br/assuntos/sustentabilidade/pronaf",
+   "application_url": "https://www.gov.br/mda/pt-br/noticias/2026/07/plano-safra-da-agricultura-familiar-2026-2027",
    "application_channel": "in_person",
    "deadline_type": "annual",
-   "deadline_note": "Credit lines opened each Plano Safra (July-June); requires DAP/CAF.",
+   "deadline_note": "Lines follow the Plano Safra (July 2026 - June 2027); requires a valid CAF (Cadastro Nacional da Agricultura Familiar).",
    "procedure_steps": [
     {
      "step": 1,
@@ -3131,8 +3131,8 @@
     ],
     "age_min": null,
     "age_max": null,
-    "income_annual_max": null,
-    "income_note": "Family farmers fitting the DAP criteria (management by the family, majority of income from the property, limited area and income)",
+    "income_annual_max": 500000,
+    "income_note": "Family gross annual income up to R$ 500 mil (100% of gross production value plus other income, excluding social benefits); lower ceilings for specific lines (Pronaf B R$ 60 mil; Mulher/Jovem lines R$ 150 mil).",
     "requires_children": false,
     "nationality": "any_resident",
     "residency_months_min": null,
@@ -3141,10 +3141,10 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.gov.br/agricultura/pt-br/assuntos/sustentabilidade/pronaf",
-   "source_snippet": "O Pronaf é o programa do Governo Federal de apoio à agricultura familiar, com linhas de crédito de custeio e investimento a juros subvencionados.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www.bndes.gov.br/wps/portal/site/home/financiamento/produto/pronaf-custeio",
+   "source_snippet": "Tenham obtido renda bruta familiar nos últimos 12 meses de produção normal que antecedem a solicitação do CAF de até R$ 500 mil",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "pronamp",
@@ -3156,12 +3156,12 @@
    "category": "business",
    "benefit_type": "discount",
    "amount_min": null,
-   "amount_max": 430000,
+   "amount_max": 1500000,
    "amount_currency": "BRL",
    "amount_period": "annual",
-   "amount_note": "Subsidised working-capital and investment credit for medium rural producers with annual gross revenue up to R$ 3 milhões (investment limit around R$ 430 mil per beneficiary per year); interest around 8% a.a. in the Safra Plan.",
+   "amount_note": "Subsidised working-capital and investment credit for medium rural producers with annual gross income up to R$ 3,5 milhões (at least 80% from farming); credit limit up to R$ 1,5 milhão per client per agricultural year across the rural credit system (BNDES). Interest follows the Plano Safra line.",
    "is_automatic": false,
-   "application_url": "https://www.gov.br/agricultura/pt-br/assuntos/politica-agricola/plano-safra",
+   "application_url": "https://www.bndes.gov.br/wps/portal/site/home/financiamento/produto/pronamp-investimento",
    "application_channel": "in_person",
    "deadline_type": "annual",
    "deadline_note": "Lines opened each Plano Safra (July-June).",
@@ -3205,8 +3205,8 @@
     ],
     "age_min": null,
     "age_max": null,
-    "income_annual_max": null,
-    "income_note": "Medium rural producers with annual gross revenue up to R$ 3.000.000",
+    "income_annual_max": 3500000,
+    "income_note": "Rural owners, squatters, tenants or partners with annual gross income up to R$ 3.500.000 (sum of production value and other income) and at least 80% of it from agriculture/livestock.",
     "requires_children": false,
     "nationality": "any_resident",
     "residency_months_min": null,
@@ -3215,10 +3215,10 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.gov.br/agricultura/pt-br/assuntos/politica-agricola/plano-safra",
-   "source_snippet": "O Pronamp financia custeio e investimento do médio produtor rural com receita bruta anual de até R$ 3 milhões, com juros subvencionados no Plano Safra.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www.bndes.gov.br/wps/portal/site/home/financiamento/produto/pronamp-investimento",
+   "source_snippet": "possuam renda bruta anual de até R$ 3,5 milhões. Limite de crédito até R$ 1,5 milhão por cliente, em cada Ano Agrícola e em todo o Sistema Nacional de Crédito Rural (SNCR).",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "desenrola-brasil",
@@ -3233,12 +3233,12 @@
    "amount_max": null,
    "amount_currency": "BRL",
    "amount_period": "one_off",
-   "amount_note": "Renegotiation of overdue debts (credit card, overdraft, personal credit, Fies) contracted until 31/01/2026 and overdue 91-720 days: discounts from 30% to 90%, new credit at max 1.99% a.m., up to 48 instalments, limit of R$ 15 mil per bank; optional use of FGTS (up to R$ 1 mil or 20% of balance).",
+   "amount_note": "Renegotiation of overdue credit card, overdraft and personal-credit (CDC) debts contracted until 31/01/2026 and overdue 91 days to 2 years: discounts up to 90%, maximum interest 1,99% a month, up to 48 months, partial use of FGTS balance allowed.",
    "is_automatic": false,
-   "application_url": "https://www.caixa.gov.br/desenrola/Paginas/default.aspx",
+   "application_url": "https://www.gov.br/pt-br/servicos/solicitar-renegociacao-de-dividas-familias",
    "application_channel": "online",
    "deadline_type": "window",
-   "deadline_note": "Programme with a 90-day adherence window counted from the MP publication (May 2026); Desenrola Fies adherence until 31/12/2026.",
+   "deadline_note": "Ended: the Renegociação de Dívidas - Famílias (Novo Desenrola Brasil, MP 1.355/2026) was available until 31 August 2026 per the official gov.br service page. Desenrola Fies is a separate track.",
    "procedure_steps": [
     {
      "step": 1,
@@ -3272,8 +3272,8 @@
     "statuses": [],
     "age_min": null,
     "age_max": null,
-    "income_annual_max": null,
-    "income_note": "Individuals with monthly income up to 5 minimum wages with eligible overdue debts; also micro and small enterprises in specific tracks",
+    "income_annual_max": 97260,
+    "income_note": "Individuals with monthly income up to 5 minimum wages (R$ 8.105/month = R$ 97.260/year) with eligible overdue debts; negotiate directly with the participating bank.",
     "requires_children": false,
     "nationality": "any_resident",
     "residency_months_min": null,
@@ -3282,9 +3282,9 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.caixa.gov.br/desenrola/Paginas/default.aspx",
-   "source_snippet": "Descontos aplicados sobre o valor da dívida original; taxa de juros de 1,99% ao mês; prazos de pagamento entre 12 e 48 meses; parcela mínima de R$ 50,00.",
-   "last_verified_at": "2026-08-12",
+   "source_url": "https://www.gov.br/pt-br/servicos/solicitar-renegociacao-de-dividas-familias",
+   "source_snippet": "A Renegociação de Dívidas - Famílias permanecerá disponível até o dia 31 de agosto de 2026.",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -3339,8 +3339,8 @@
     "statuses": [],
     "age_min": null,
     "age_max": null,
-    "income_annual_max": null,
-    "income_note": "Low-income rural families registered in CadÚnico living in the Semi-arid region; priority to Bolsa Família and BPC families",
+    "income_annual_max": 9726,
+    "income_note": "Rural families in CadUnico with per-person monthly income up to half a minimum wage (R$ 810,50 = R$ 9.726/year per person); priority to traditional peoples and communities; families are indicated through the programme's executing entities.",
     "requires_children": false,
     "nationality": "any_resident",
     "residency_months_min": null,
@@ -3350,9 +3350,9 @@
     "gender": "any"
    },
    "source_url": "https://www.gov.br/mds/pt-br/acoes-e-programas/inclusao-produtiva-rural/cisternas",
-   "source_snippet": "O Programa Cisternas financia a construção de tecnologias sociais de acesso à água para consumo humano e produção de alimentos no Semiárido brasileiro.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_snippet": "Destina-se a famílias rurais de baixa renda (renda per capita de até meio salário mínimo) e a equipamentos públicos rurais afetados pela seca ou falta de água, com prioridade para povos e comunidades tradicionais.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "tarifa-social-sabesp",
@@ -3369,10 +3369,10 @@
    "amount_period": "monthly",
    "amount_note": "Fixed social tariff for up to 10 m³/month: R$ 16,42 (Vulnerável, per capita income up to R$ 218) or R$ 21 (Social, income up to half minimum wage) - discounts up to about 78% versus the standard residential tariff.",
    "is_automatic": true,
-   "application_url": "https://www.sabesp.com.br",
+   "application_url": "https://www.sabesp.com.br/servicos/para-voce",
    "application_channel": "automatic",
    "deadline_type": "rolling",
-   "deadline_note": "Applied automatically via CadÚnico cross-check; CPF of the bill holder must match the CadÚnico registration; one property per family.",
+   "deadline_note": "Automatic for CadUnico customers whose account holder matches the CadUnico registration; keep CadUnico updated every 2 years. Unemployed and collective housing need documents and/or inspection; no retroactive effect.",
    "procedure_steps": [
     {
      "step": 1,
@@ -3411,8 +3411,8 @@
     "statuses": [],
     "age_min": null,
     "age_max": null,
-    "income_annual_max": null,
-    "income_note": "CadÚnico families in the Sabesp concession area: Vulnerável up to R$ 218 per capita; Social from R$ 218 to half minimum wage per capita",
+    "income_annual_max": 9726,
+    "income_note": "Per-person monthly income up to half a minimum wage in CadUnico (R$ 810,50 = R$ 9.726/year per person) for the Social tariff; Vulnerável tariff up to R$ 218 per person. Also available to unemployed people (last salary up to 3 minimum wages, consumption up to 15 m³, 90 days account holder) and families receiving BPC.",
     "requires_children": false,
     "nationality": "any_resident",
     "residency_months_min": null,
@@ -3423,9 +3423,9 @@
     ],
     "gender": "any"
    },
-   "source_url": "https://www.sabesp.com.br",
-   "source_snippet": "Famílias de baixa renda podem reduzir custos, pagando de R$ 16,42 a R$ 21 pelo consumo mensal de até 10 m³, conforme a renda registrada no CadÚnico.",
-   "last_verified_at": "2026-08-12",
+   "source_url": "https://www.sabesp.com.br/servicos/para-voce",
+   "source_snippet": "Tarifa Residencial Social para Pessoas inscritas no CadÚnico: Estar cadastrado no CadÚnico com renda mensal por pessoa de até meio salário mínimo;",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -3441,12 +3441,12 @@
    "amount_max": null,
    "amount_currency": "BRL",
    "amount_period": "monthly",
-   "amount_note": "Reduced social tariff on water and sewage for low-income families registered in CadÚnico in municipalities served by Copasa; discount varies by consumption band.",
+   "amount_note": "Social tariff with a discount of up to 50% on the water and sewage bill for CadUnico families in municipalities served by Copasa.",
    "is_automatic": true,
    "application_url": "https://www.copasa.com.br/web/portal",
    "application_channel": "automatic",
    "deadline_type": "rolling",
-   "deadline_note": "Applied via CadÚnico cross-check; request at Copasa agencies or service channels if not automatic.",
+   "deadline_note": "Not automatic: request at www.copasa.com.br or by WhatsApp (31) 9 9770-7000 (Mon-Fri 8h-18h) with ID, CPF, a recent water bill and proof of CadUnico registration.",
    "procedure_steps": [
     {
      "step": 1,
@@ -3497,10 +3497,10 @@
     ],
     "gender": "any"
    },
-   "source_url": "https://www.copasa.com.br/web/portal",
-   "source_snippet": "A Copasa mantém tarifa social para famílias de baixa renda inscritas no Cadastro Único nos municípios onde opera.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://news.copasa.com.br/saiba-como-garantir-desconto-de-ate-50-na-conta-de-agua-com-a-tarifa-social/",
+   "source_snippet": "Para solicitar, o cliente precisa apresentar: ● Documento de identidade e CPF; ● Conta de água da residência; ● Comprovante de Cadastro no CadÚnico.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "casa-paulista-cdhu",
@@ -3511,16 +3511,16 @@
    "funder": "Governo do Estado de São Paulo - Companhia de Desenvolvimento Habitacional e Urbano (CDHU)",
    "category": "housing",
    "benefit_type": "in_kind",
-   "amount_min": null,
-   "amount_max": null,
+   "amount_min": 10000,
+   "amount_max": 16000,
    "amount_currency": "BRL",
    "amount_period": "one_off",
-   "amount_note": "State social housing: free or heavily subsidised housing units, urbanisation of favelas and 'Cheque-Moradia' subsidy for families with income up to 5 minimum wages; waiting list by municipality.",
+   "amount_note": "Casa Paulista - Carta de Crédito Imobiliário: state credit letter of R$ 10 mil to R$ 16 mil for families earning 1 to 3 minimum wages buying a home directly from a developer, financed by Caixa; the programme also offers subsidy certificates for families with gross monthly income up to R$ 4.863,00.",
    "is_automatic": false,
-   "application_url": "https://www.cdhu.sp.gov.br/",
+   "application_url": "https://www.habitacao.sp.gov.br/habitacao/institucional/nossos_servicos/programa-casa-paulista/cidadao",
    "application_channel": "in_person",
    "deadline_type": "rolling",
-   "deadline_note": "Register at the municipal housing secretariat of the city where you want to live; selection by score/lottery among registered families.",
+   "deadline_note": "No registration or lottery: check household income (max 3 minimum wages), choose a property from the monthly list of active developments, visit it and simulate financing with Caixa on site; credit approval is Caixa's.",
    "procedure_steps": [
     {
      "step": 1,
@@ -3559,8 +3559,8 @@
     "statuses": [],
     "age_min": null,
     "age_max": null,
-    "income_annual_max": null,
-    "income_note": "Families with monthly income up to 5 minimum wages residing in São Paulo state municipalities; cannot own urban property",
+    "income_annual_max": 58356,
+    "income_note": "Household income up to 3 minimum wages (R$ 4.863/month = R$ 58.356/year); subsidy certificates cap at R$ 4.863 gross monthly income.",
     "requires_children": false,
     "nationality": "any_resident",
     "residency_months_min": null,
@@ -3571,10 +3571,10 @@
     ],
     "gender": "any"
    },
-   "source_url": "https://www.cdhu.sp.gov.br/",
-   "source_snippet": "A CDHU promove a construção de moradias, urbanização de favelas e programas como o Cheque-Moradia para famílias de baixa renda do Estado de São Paulo.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www.habitacao.sp.gov.br/habitacao/institucional/nossos_servicos/programa-casa-paulista/cidadao",
+   "source_snippet": "Famílias que ganham de 1 a 3 salários mínimos mensais podem comprar a sua casa ou apartamento diretamente com a construtora, sem a necessidade de sorteio, utilizando uma carta de crédito com valores de R$ 10 mil (dez mil) a R$ 16 mil (dezesseis mil)",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "cnh-social",
@@ -3648,8 +3648,8 @@
     "gender": "any"
    },
    "source_url": "https://www.gov.br/mulheres/pt-br/central-de-conteudos/noticias/2026/defeso-eleitoral/cnh-social-saiba-como-acessar-o-programa-que-preve-gratuidade-na-habilitacao-para-pessoas-de-baixa-renda",
-   "source_snippet": "A Lei nº 15.153/2025 passou a prever que órgãos de trânsito estaduais e do Distrito Federal utilizem recursos arrecadados com multas para custear a formação de condutores de baixa renda, por meio do programa CNH Social.",
-   "last_verified_at": "2026-08-12",
+   "source_snippet": "A Lei nº 15.153/2025, que alterou o Código de Trânsito Brasileiro (CTB), passou a prever que órgãos de trânsito estaduais e do Distrito Federal utilizem recursos arrecadados com multas para custear a formação de condutores de baixa renda, por meio do programa CNH Social.",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -3665,12 +3665,12 @@
    "amount_max": null,
    "amount_currency": "BRL",
    "amount_period": "monthly",
-   "amount_note": "Free public transport (buses, and integration with metro/CPTM via BOM/Metrô cards) for students of public and private schools (scholarship holders) enrolled in the city; issued through the school via SPTrans.",
+   "amount_note": "Bilhete Único de Estudante gives free travel (gratuidade) or half fare (meia tarifa) on São Paulo city transit. Gratuidade: students of the city with a valid CadUnico NIS (per-person family income up to 1.5 minimum wages), ProUni/FIES students, and some profiles automatically without income proof (see SPTrans questionnaire); others get half fare. The student pays an annual amount ('valor correspondente') to activate the benefit.",
    "is_automatic": false,
-   "application_url": "https://www.sptrans.com.br/bilhete-unico/estudante",
+   "application_url": "https://www.sptrans.com.br/estudante/gratuidade/",
    "application_channel": "online",
    "deadline_type": "annual",
-   "deadline_note": "Requested through the school at the beginning of the school year; revalidation required annually.",
+   "deadline_note": "Annual: revalidate the previous-year card (sticker) or order a new card; the benefit is issued via the SPTrans student portal/educational institution.",
    "procedure_steps": [
     {
      "step": 1,
@@ -3710,7 +3710,7 @@
     "age_min": null,
     "age_max": null,
     "income_annual_max": null,
-    "income_note": "Students enrolled in schools of the city of São Paulo (public network full gratuity; private network for full scholarship holders)",
+    "income_note": "Per-person family income up to 1.5 minimum wages (about R$ 2.431,50/month) via CadUnico for the income-based gratuidade route; automatic and ProUni/FIES routes have no income test, so no household ceiling is set.",
     "requires_children": false,
     "nationality": "any_resident",
     "residency_months_min": null,
@@ -3721,10 +3721,10 @@
     ],
     "gender": "any"
    },
-   "source_url": "https://www.sptrans.com.br/bilhete-unico/estudante",
-   "source_snippet": "A gratuidade estudantil garante acesso gratuito aos ônibus municipais para estudantes da rede pública da cidade de São Paulo, por meio do Bilhete Único Estudante.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www.sptrans.com.br/estudante/gratuidade/",
+   "source_snippet": "Você possui um NIS (Número de Identificação Social) válido, registrado no CadÚnico, comprovando uma renda familiar mensal per capita de até 1,5 salário mínimo?",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "passe-livre-estudantil-rio",
@@ -3739,9 +3739,9 @@
    "amount_max": null,
    "amount_currency": "BRL",
    "amount_period": "monthly",
-   "amount_note": "Free municipal buses for students enrolled in public schools of the municipality of Rio de Janeiro and for low-income students of private/community institutions (via Vale-Estudante); integration discounts on the Riocard system.",
+   "amount_note": "Free public transport for students of the municipal and state public school networks in Rio city (Passe Livre usable on weekends and holidays, 76 trips per month). Passe Livre Universitário (Lei 6.833/2020) covers quota students, ProUni students and students with family per-capita income up to one minimum wage.",
    "is_automatic": false,
-   "application_url": "https://www.rio.rj.gov.br/web/smt/passe-livre-estudantil",
+   "application_url": "https://transportes.prefeitura.rio/gratuidade-para-estudantes/",
    "application_channel": "online",
    "deadline_type": "annual",
    "deadline_note": "Requested at the beginning of the school year via the school or the Riocard Mais app; annual revalidation.",
@@ -3784,7 +3784,7 @@
     "age_min": null,
     "age_max": null,
     "income_annual_max": null,
-    "income_note": "Students of public schools of the municipality of Rio de Janeiro; low-income students of private institutions per municipal rules",
+    "income_note": "No income test for public-school students; university route requires quota/ProUni status or per-capita family income up to 1 minimum wage (about R$ 1.621/month), so no single ceiling is set.",
     "requires_children": false,
     "nationality": "any_resident",
     "residency_months_min": null,
@@ -3795,10 +3795,10 @@
     ],
     "gender": "any"
    },
-   "source_url": "https://www.rio.rj.gov.br/web/smt/passe-livre-estudantil",
-   "source_snippet": "O Passe Livre Estudantil assegura gratuidade nos ônibus municipais do Rio de Janeiro para estudantes da rede pública municipal, conforme legislação municipal.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://transportes.prefeitura.rio/gratuidade-para-estudantes/",
+   "source_snippet": "A Cidade do Rio de Janeiro garante gratuidade no transporte público para estudantes das redes públicas do Município e do Estado do Rio.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "cartao-familia-carioca",
@@ -3878,16 +3878,16 @@
    "funder": "Governo do Estado do Rio de Janeiro - Secretaria de Assistência Social e Direitos Humanos",
    "category": "income_support",
    "benefit_type": "cash_monthly",
-   "amount_min": null,
-   "amount_max": null,
+   "amount_min": 200,
+   "amount_max": 380,
    "amount_currency": "BRL",
    "amount_period": "monthly",
-   "amount_note": "State monthly cash transfer to families in CadÚnico in situations of poverty/vulnerability in Rio de Janeiro state, complementing the federal Bolsa Família; values per family profile defined by state decree.",
+   "amount_note": "Per the official FAQ (2021 emergency programme): R$ 200 plus R$ 80 gas aid plus R$ 50 per child under 18 (max 2 children), up to R$ 380 per month.",
    "is_automatic": false,
    "application_url": "https://www.rj.gov.br/sasdh/",
    "application_channel": "automatic",
    "deadline_type": "rolling",
-   "deadline_note": "Automatic selection from CadÚnico; keep registration updated at the CRAS.",
+   "deadline_note": "Ended: the official FAQ describes a COVID-19 emergency minimum-income programme with payments from June 2021 and a forecast end in December 2021; no current enrolment is published and it did not complement Bolsa Família (recipients of federal transfer programmes were excluded).",
    "procedure_steps": [
     {
      "step": 1,
@@ -3921,8 +3921,8 @@
     "statuses": [],
     "age_min": null,
     "age_max": null,
-    "income_annual_max": null,
-    "income_note": "Families in poverty or extreme poverty registered in CadÚnico in the state of Rio de Janeiro",
+    "income_annual_max": 2520,
+    "income_note": "2021 rules: CadUnico per-person income up to R$ 210/month (R$ 2.520/year), or formal workers dismissed during the pandemic with last salary below R$ 1.501; not for recipients of federal transfer programmes.",
     "requires_children": false,
     "nationality": "any_resident",
     "residency_months_min": null,
@@ -3933,10 +3933,10 @@
     ],
     "gender": "any"
    },
-   "source_url": "https://www.rj.gov.br/sasdh/",
-   "source_snippet": "O SuperaRJ é o programa estadual de transferência de renda do Rio de Janeiro para famílias em situação de pobreza e extrema pobreza inscritas no CadÚnico.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www.superarj.rj.gov.br/faq",
+   "source_snippet": "O Supera RJ é um programa de renda mínima que tem como objetivo o enfrentamento e a superação da crise econômica causada pelas medidas de combate ao novo Corona vírus (COVID - 19)",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "bolsa-do-povo-sp",
@@ -4024,16 +4024,16 @@
    "funder": "Governo do Estado da Bahia - Secretaria da Educação (SEC)",
    "category": "education",
    "benefit_type": "cash_monthly",
-   "amount_min": null,
+   "amount_min": 150,
    "amount_max": null,
    "amount_currency": "BRL",
    "amount_period": "monthly",
-   "amount_note": "Monthly grant to students of the state public network in situations of social vulnerability, conditional on school attendance; values set by state decree (paid per semester/year to students of Ensino Médio).",
+   "amount_note": "R$ 150 per month per family with one admitted student, plus R$ 50 per additional student from the second; paid on the 15th of the month after school activities, on a Lecard card. Requires at least 75% school attendance and other conditions.",
    "is_automatic": false,
-   "application_url": "https://www.educacao.ba.gov.br/",
+   "application_url": "https://www.ba.gov.br/educacao/bolsa-presenca",
    "application_channel": "automatic",
-   "deadline_type": "annual",
-   "deadline_note": "Automatic selection among enrolled students of the state network in vulnerability; payments per semester.",
+   "deadline_type": "rolling",
+   "deadline_note": "Permanent programme (Lei 14.396/2021) run with the school calendar: eligible families (CadUnico + state-network enrolment) collect the card at the school and sign the Termo de Compromisso.",
    "procedure_steps": [
     {
      "step": 1,
@@ -4067,8 +4067,8 @@
     "statuses": [],
     "age_min": null,
     "age_max": null,
-    "income_annual_max": null,
-    "income_note": "Students of the Bahia state public school network in situation of social vulnerability",
+    "income_annual_max": 2616,
+    "income_note": "Families in CadUnico in poverty/extreme poverty, per-person income of R$ 218/month (R$ 2.616/year per person), with a student enrolled in the Bahia state public network; Bolsa Família is not required.",
     "requires_children": false,
     "nationality": "any_resident",
     "residency_months_min": null,
@@ -4079,10 +4079,10 @@
     ],
     "gender": "any"
    },
-   "source_url": "https://www.educacao.ba.gov.br/",
-   "source_snippet": "O Bolsa Presença é o programa baiano de incentivo à permanência escolar de estudantes da rede estadual em vulnerabilidade, condicionado à frequência.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www.ba.gov.br/educacao/bolsa-presenca",
+   "source_snippet": "Será concedida bolsa mensal à família do aluno participante do Programa Bolsa Presença nos seguintes termos: I – no valor de R$ 150,00 (cento e cinquenta reais) por família com até um aluno admitido no Programa;",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "cartao-mais-infancia-ceara",
@@ -4097,9 +4097,9 @@
    "amount_max": 100,
    "amount_currency": "BRL",
    "amount_period": "monthly",
-   "amount_note": "R$ 100 per month per child aged 0 to 6 in families in extreme poverty registered in CadÚnico (limit of children per family per state rules), conditional on health and education follow-up.",
+   "amount_note": "State cash transfer of R$ 100 per month to families with children aged 0 to 5 years and 11 months in extreme poverty (state page, from March 2021); paid per family, not per child. A municipal (Sobral) page cites R$ 150, which the state page does not confirm.",
    "is_automatic": false,
-   "application_url": "https://www.sps.ce.gov.br/",
+   "application_url": "https://www.ce.gov.br/mais-infancia-ceara/mais-acoes-do-programa-mais-infancia-ceara/",
    "application_channel": "automatic",
    "deadline_type": "rolling",
    "deadline_note": "Automatic selection from CadÚnico; conditions monitored via health/school attendance.",
@@ -4137,7 +4137,7 @@
     "age_min": null,
     "age_max": null,
     "income_annual_max": null,
-    "income_note": "Families in extreme poverty in Ceará with children aged 0-6 registered in CadÚnico",
+    "income_note": "Families in extreme poverty registered in CadUnico with children aged 0 to 5 years and 11 months; the income ceiling is not stated on the state page.",
     "requires_children": true,
     "nationality": "any_resident",
     "residency_months_min": null,
@@ -4148,10 +4148,10 @@
     ],
     "gender": "any"
    },
-   "source_url": "https://www.sps.ce.gov.br/",
-   "source_snippet": "O Cartão Mais Infância Ceará transfere R$ 100 mensais por criança de 0 a 6 anos de famílias em extrema pobreza, com condicionalidades de saúde e educação.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www.ce.gov.br/mais-infancia-ceara/mais-acoes-do-programa-mais-infancia-ceara/",
+   "source_snippet": "Cartão Mais Infância. – Transferência de renda mensal, no valor de R$ 100, a partir de março de 2021, para famílias com crianças de 0 a 5 anos e 11 meses em",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "leite-das-criancas-pr",
@@ -4166,12 +4166,12 @@
    "amount_max": null,
    "amount_currency": "BRL",
    "amount_period": "monthly",
-   "amount_note": "Free monthly supply of powdered milk for children from 6 months to 6 years of low-income families registered in CadÚnico, distributed at municipal health units.",
+   "amount_note": "Free daily litre of pasteurised whole milk enriched with vitamins A, D and iron for children aged 6 to 36 months (not powdered milk), distributed at schools.",
    "is_automatic": false,
-   "application_url": "https://www.seab.pr.gov.br/Pagina/Programa-Leite-das-Criancas",
+   "application_url": "https://www.agricultura.pr.gov.br/Programa-Leite-das-Criancas",
    "application_channel": "in_person",
    "deadline_type": "rolling",
-   "deadline_note": "Register at the municipal health unit (UBS) with CadÚnico data.",
+   "deadline_note": "Register at the municipal CRAS or CREAS with photo ID, proof of address, proof of income and the child's birth certificate; milk starts within 30 days of document check.",
    "procedure_steps": [
     {
      "step": 1,
@@ -4205,8 +4205,8 @@
     "statuses": [],
     "age_min": null,
     "age_max": null,
-    "income_annual_max": null,
-    "income_note": "Low-income families in Paraná with children aged 6 months to 6 years registered in CadÚnico",
+    "income_annual_max": 12632,
+    "income_note": "Per-person income up to half the Paraná regional minimum wage: R$ 2.105,34 in 2026 (Resolução SEAB 62/2026) so R$ 1.052,67/month = about R$ 12.632/year per person.",
     "requires_children": true,
     "nationality": "any_resident",
     "residency_months_min": null,
@@ -4217,10 +4217,10 @@
     ],
     "gender": "any"
    },
-   "source_url": "https://www.seab.pr.gov.br/Pagina/Programa-Leite-das-Criancas",
-   "source_snippet": "O Programa Leite das Crianças distribui leite em pó gratuitamente a crianças de famílias de baixa renda do Paraná.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www.agricultura.pr.gov.br/Programa-Leite-das-Criancas",
+   "source_snippet": "distribuição gratuita e diária de um litro de leite a crianças de seis a 36 meses, pertencentes a famílias cuja renda por pessoa não ultrapasse meio salário mínimo regional.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "devolve-icms-rs",
@@ -4231,16 +4231,16 @@
    "funder": "Governo do Estado do Rio Grande do Sul - Secretaria da Fazenda (SEFAZ)",
    "category": "tax",
    "benefit_type": "cash_monthly",
-   "amount_min": null,
+   "amount_min": 400,
    "amount_max": null,
    "amount_currency": "BRL",
-   "amount_period": "monthly",
-   "amount_note": "Monthly return of part of the ICMS embedded in essential purchases (food basket, gas, electricity, water) to families registered in CadÚnico; amounts vary by consumption and family composition and are paid to the indicated account.",
+   "amount_period": "annual",
+   "amount_note": "Minimum R$ 400 per year paid in four quarterly instalments of R$ 100, plus a variable part that grows with the number of receipts issued with the beneficiary's CPF in the previous quarter. Not a monthly return of tax on essential purchases.",
    "is_automatic": true,
-   "application_url": "https://www.devolveicms.rs.gov.br/",
+   "application_url": "https://devolveicms.rs.gov.br/inicial",
    "application_channel": "automatic",
    "deadline_type": "rolling",
-   "deadline_note": "Automatic calculation from state data; family must activate/check the account in the programme portal/app.",
+   "deadline_note": "Paid quarterly (last business day of April, July and October per the service page); on the Cartão Cidadão or via PIX/Banrisul account. Eligible families are those in CadUnico.",
    "procedure_steps": [
     {
      "step": 1,
@@ -4274,8 +4274,8 @@
     "statuses": [],
     "age_min": null,
     "age_max": null,
-    "income_annual_max": null,
-    "income_note": "Families registered in CadÚnico residing in Rio Grande do Sul (per capita income criteria of the state programme)",
+    "income_annual_max": 58356,
+    "income_note": "CadUnico families that receive Bolsa Família or have a dependent in the state regular high school, with family income up to 3 national minimum wages (R$ 4.863/month = R$ 58.356/year) or per-person income below half a minimum wage.",
     "requires_children": false,
     "nationality": "any_resident",
     "residency_months_min": null,
@@ -4286,10 +4286,10 @@
     ],
     "gender": "any"
    },
-   "source_url": "https://www.devolveicms.rs.gov.br/",
-   "source_snippet": "O Devolve ICMS devolve mensalmente às famílias de baixa renda gaúchas parte do imposto embutido no preço de produtos e serviços essenciais.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www.rs.gov.br/carta-de-servicos/servicos?servico=2289",
+   "source_snippet": "As famílias beneficiárias recebem, no mínimo, R$ 400 por ano, pagos em quatro parcelas trimestrais de R$ 100.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "renda-mais-df",
@@ -4309,7 +4309,7 @@
    "application_url": "https://www.sedes.df.gov.br/",
    "application_channel": "automatic",
    "deadline_type": "rolling",
-   "deadline_note": "Automatic selection from CadÚnico of families residing in the DF.",
+   "deadline_note": "Ended: no programme named 'Renda Mais DF' appears on SEDES-DF or in the Distrito Federal budget plan; the district's income-transfer programme is Programa DF Social (CadUnico, per-person income below half a minimum wage).",
    "procedure_steps": [
     {
      "step": 1,
@@ -4355,10 +4355,10 @@
     ],
     "gender": "any"
    },
-   "source_url": "https://www.sedes.df.gov.br/",
-   "source_snippet": "O Renda Mais DF é o programa de transferência de renda do Distrito Federal para famílias em situação de pobreza e extrema pobreza.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www.sedes.df.gov.br/programas-sociais-no-df",
+   "source_snippet": "Renda para seleção: Renda per capita mensal inferior a 1/2 salário mínimo vigente",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "programa-travessia-mg",
@@ -4368,17 +4368,17 @@
    "admin_area": "Minas Gerais",
    "funder": "Governo do Estado de Minas Gerais - Secretaria de Desenvolvimento Social (SEDESE)",
    "category": "housing",
-   "benefit_type": "cash_monthly",
+   "benefit_type": "in_kind",
    "amount_min": null,
-   "amount_max": 400,
+   "amount_max": null,
    "amount_currency": "BRL",
    "amount_period": "monthly",
-   "amount_note": "Monthly grant (rent-type aid, about R$ 400/month per reference rules) for families leaving street situations or without housing, supporting rental while the family reintegrates; operated with the municipal social assistance network.",
+   "amount_note": "State social-development programme (launched 2008, Sedese) delivered through agreements with municipalities in localities with concentrations of socially vulnerable families, to promote their inclusion. Official pages do not publish an individual monthly cash grant of R$ 400 or a rent aid for homeless families.",
    "is_automatic": false,
-   "application_url": "https://www.social.mg.gov.br/",
+   "application_url": "https://www.governo.mg.gov.br/Noticias/Detalhe/2957",
    "application_channel": "in_person",
    "deadline_type": "rolling",
-   "deadline_note": "Access via CRAS/CREAS and Centro Pop reference of the municipality.",
+   "deadline_note": "No individual application: the programme is operated through Sedese agreements with municipalities; ask the municipal social assistance network (CRAS).",
    "procedure_steps": [
     {
      "step": 1,
@@ -4413,21 +4413,21 @@
     "age_min": null,
     "age_max": null,
     "income_annual_max": null,
-    "income_note": "Families in street situation or homelessness in Minas Gerais, referenced by the social assistance network",
+    "income_note": "Families in socially vulnerable localities covered by municipal agreements with Sedese; no individual income ceiling is published.",
     "requires_children": false,
     "nationality": "any_resident",
     "residency_months_min": null,
-    "housing_tenure": "homeless",
+    "housing_tenure": null,
     "student_required": false,
     "admin_areas": [
      "Minas Gerais"
     ],
     "gender": "any"
    },
-   "source_url": "https://www.social.mg.gov.br/",
-   "source_snippet": "O Programa Travessia oferece auxílio financeiro mensal a famílias em situação de rua de Minas Gerais para apoiar o aluguel e a reinserção habitacional.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www.governo.mg.gov.br/Noticias/Detalhe/2957",
+   "source_snippet": "Lançado em 2008 e coordenado pela Secretaria de Estado de Desenvolvimento Social (Sedese), o Programa Travessia promove a inclusão social e",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "isencao-ipva-pcd",
@@ -4442,12 +4442,12 @@
    "amount_max": null,
    "amount_currency": "BRL",
    "amount_period": "annual",
-   "amount_note": "Full or partial IPVA exemption for vehicles owned by persons with disabilities (physical, visual, severe/profound mental or autism) driving themselves or being transported; rules, value ceilings and eligible disabilities set by each state.",
+   "amount_note": "São Paulo state IPVA exemption for vehicles of persons with disabilities or autism: no IPVA in years when the vehicle's market value is below R$ 70 mil; between R$ 70 mil and R$ 120 mil you pay IPVA only on the difference. (Other states' rules are not covered by this record.)",
    "is_automatic": false,
-   "application_url": "https://www.fazenda.sp.gov.br/",
+   "application_url": "https://portal.fazenda.sp.gov.br/servicos/ipva/Paginas/como-solicitar-isencao-ipva-pcd.aspx",
    "application_channel": "in_person",
    "deadline_type": "annual",
-   "deadline_note": "Request at the state tax authority (SEFAZ/Detran) before licensing; renewal rules vary by state.",
+   "deadline_note": "Request through the SP Finance Department (Sefaz-SP) with medical documentation and a declaration in SIVEI that no other vehicle is exempt; follow the protocol and payment rules in the year of the request.",
    "procedure_steps": [
     {
      "step": 1,
@@ -4487,26 +4487,21 @@
     "age_min": null,
     "age_max": null,
     "income_annual_max": null,
-    "income_note": "Persons with disabilities (driver or non-driver) as defined by each state's law; some states limit the exemption to vehicles up to a value ceiling",
+    "income_note": "No income test; person with disability/autism as defined by São Paulo state rules; vehicle value limit R$ 120 mil.",
     "requires_children": false,
     "nationality": "any_resident",
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
     "admin_areas": [
-     "São Paulo",
-     "Rio de Janeiro",
-     "Minas Gerais",
-     "Paraná",
-     "Rio Grande do Sul",
-     "Distrito Federal"
+     "São Paulo"
     ],
     "gender": "any"
    },
-   "source_url": "https://www.fazenda.sp.gov.br/",
-   "source_snippet": "As secretarias estaduais da Fazenda concedem isenção de IPVA a veículos de pessoas com deficiência, nos termos da legislação de cada estado.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://portal.fazenda.sp.gov.br/servicos/ipva/Paginas/quem-tem-direito-isencao-ipva-pcd.aspx",
+   "source_snippet": "No ano em que o valor venal do veículo estiver abaixo de R$70 mil: não é necessário pagar o IPVA do ano",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "isencao-iptu-idoso-sp",
@@ -4521,12 +4516,12 @@
    "amount_max": null,
    "amount_currency": "BRL",
    "amount_period": "annual",
-   "amount_note": "IPTU exemption (full or partial) on the own residence of retirees, pensioners and seniors with low income and property value within municipal ceilings, per municipal legislation of São Paulo.",
+   "amount_note": "Full IPTU exemption if monthly income is up to 3 minimum wages, partial exemption between 3 and 5 minimum wages, for retirees, pensioners and INSS lifetime-income/elderly social assistance beneficiaries who live in their only property (market value up to R$ 1.823.697,00) in São Paulo city.",
    "is_automatic": false,
-   "application_url": "https://www.prefeitura.sp.gov.br/cidade/secretarias/fazenda/esclareca_suas_duvidas/iptu/",
+   "application_url": "https://prefeitura.sp.gov.br/web/fazenda/w/servicos/iptu/29312",
    "application_channel": "online",
    "deadline_type": "annual",
-   "deadline_note": "Request at the Secretaria da Fazenda portal (or at a Subprefeitura); the benefit is personal and must be maintained/updated.",
+   "deadline_note": "Electronic request in the SIIA system until the last business day of the year of the tax event (retirees who must file IRPF can request only after the Receita filing deadline); results published in the Diário Oficial da Cidade.",
    "procedure_steps": [
     {
      "step": 1,
@@ -4562,11 +4557,13 @@
     }
    ],
    "eligibility": {
-    "statuses": [],
-    "age_min": 60,
+    "statuses": [
+     "retired"
+    ],
+    "age_min": null,
     "age_max": null,
-    "income_annual_max": null,
-    "income_note": "Retirees, pensioners and seniors (60+) who own and live in the property, within income and property-value ceilings of the municipality",
+    "income_annual_max": 97260,
+    "income_note": "Monthly income (benefit, investments, any income) up to 3 minimum wages (R$ 4.863) for full exemption and up to 5 minimum wages (R$ 8.105/month = R$ 97.260/year) for partial exemption; no other property in Brazil; property value up to R$ 1.823.697.",
     "requires_children": false,
     "nationality": "any_resident",
     "residency_months_min": null,
@@ -4577,10 +4574,10 @@
     ],
     "gender": "any"
    },
-   "source_url": "https://www.prefeitura.sp.gov.br/cidade/secretarias/fazenda/",
-   "source_snippet": "A Prefeitura de São Paulo concede isenção de IPTU a aposentados, pensionistas e idosos proprietários do único imóvel residencial, dentro dos limites de renda e valor venal definidos em lei municipal.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://prefeitura.sp.gov.br/web/fazenda/w/servicos/iptu/29312",
+   "source_snippet": "Rendimento mensal (benefício, investimentos, rendas em geral) que não ultrapasse 3 (três) salários mínimos no exercício a que se refere o pedido, para isenção total;",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "aluguel-social-bh",
@@ -4591,16 +4588,16 @@
    "funder": "Prefeitura de Belo Horizonte - Secretaria Municipal de Política Urbana / SMADC",
    "category": "housing",
    "benefit_type": "cash_monthly",
-   "amount_min": null,
-   "amount_max": null,
+   "amount_min": 800,
+   "amount_max": 800,
    "amount_currency": "BRL",
    "amount_period": "monthly",
-   "amount_note": "Temporary monthly rent subsidy for families in social vulnerability or removed from risk areas/public works in Belo Horizonte, while awaiting definitive housing; value defined by municipal rules.",
+   "amount_note": "Bolsa Moradia: R$ 800,00 per month rent subsidy for families removed by public works, disaster victims, families in precarious housing in risk areas or irregular occupations, and homeless families; the beneficiary finds a property that Urbel inspects before the lease.",
    "is_automatic": false,
-   "application_url": "https://prefeitura.pbh.gov.br/politica-urbana",
+   "application_url": "https://prefeitura.pbh.gov.br/urbel/bolsa-moradia",
    "application_channel": "in_person",
    "deadline_type": "rolling",
-   "deadline_note": "Access via the municipal housing secretariat (URA regional) after social evaluation.",
+   "deadline_note": "Referral by Urbel (removals for works/risk) or by the Subsecretaria de Assistência Social (homeless families); send the original rent receipt by the 25th of each month.",
    "procedure_steps": [
     {
      "step": 1,
@@ -4640,7 +4637,7 @@
     "age_min": null,
     "age_max": null,
     "income_annual_max": null,
-    "income_note": "Low-income families of Belo Horizonte in vulnerability, removed from risk areas or by public works",
+    "income_note": "Eligibility is by situation (removal for public works, calamity, risk area/irregular occupation, homeless), not by an income ceiling; the homeless route also needs CadUnico and about two years' residence in Belo Horizonte (PBH news).",
     "requires_children": false,
     "nationality": "any_resident",
     "residency_months_min": null,
@@ -4652,10 +4649,10 @@
     ],
     "gender": "any"
    },
-   "source_url": "https://prefeitura.pbh.gov.br/politica-urbana",
-   "source_snippet": "O auxílio moradia/aluguel social de Belo Horizonte garante subsídio temporário de aluguel a famílias em vulnerabilidade ou removidas de áreas de risco.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://prefeitura.pbh.gov.br/urbel/bolsa-moradia",
+   "source_snippet": "O valor do benefício é de R$ 800,00. O recibo original que comprova o pagamento do aluguel deve ser encaminhado até o dia 25 do mês.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "transporte-intermunicipal-idoso-sp",
@@ -4670,12 +4667,12 @@
    "amount_max": null,
    "amount_currency": "BRL",
    "amount_period": "monthly",
-   "amount_note": "Free intermunicipal bus lines managed by EMTU for persons aged 65+ in the São Paulo metropolitan region (Bilhete Único Idoso/EMTU card).",
+   "amount_note": "Free travel on EMTU intermunicipal bus lines for people aged 65 or over (metropolitan São Paulo, Baixada Santista, Campinas), with ID.",
    "is_automatic": false,
-   "application_url": "https://www.emtu.sp.gov.br/",
+   "application_url": "https://www.emtu.sp.gov.br/emtu/redes-de-transporte/passageiro-idoso.fss",
    "application_channel": "in_person",
    "deadline_type": "rolling",
-   "deadline_note": "Issue the senior card at EMTU posts or authorised operators.",
+   "deadline_note": "No application needed for people aged 65+: board free by showing photo ID (RG); the TOP Sênior card is optional. People aged 60-65 can use the electronic ticket on EMTU lines.",
    "procedure_steps": [
     {
      "step": 1,
@@ -4716,10 +4713,10 @@
     ],
     "gender": "any"
    },
-   "source_url": "https://www.emtu.sp.gov.br/",
-   "source_snippet": "A EMTU garante a gratuidade do transporte intermunicipal para pessoas com 65 anos ou mais na Região Metropolitana de São Paulo.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www.emtu.sp.gov.br/emtu/redes-de-transporte/passageiro-idoso.fss",
+   "source_snippet": "Para idosos com 65 anos de idade ou mais, o cartão do idoso não é obrigatório. O embarque pode ser feito gratuitamente com a apresentação do RG",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "primeiro-emprego-jovem-aprendiz",
@@ -4786,10 +4783,10 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.gov.br/trabalho-e-emprego/pt-br/assuntos/aprendizagem",
-   "source_snippet": "A Lei da Aprendizagem garante a jovens de 14 a 24 anos contrato de aprendizagem com salário, FGTS, 13º e férias, em vagas de empresas de médio e grande porte.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www.gov.br/trabalho-e-emprego/pt-br/noticias-e-conteudo/2026/julho/aprendizagem-profissional-regras-direitos-e-funcionamento-do-contrato-de-aprendizagem",
+   "source_snippet": "Instituída pela Lei nº 10.097, de 19 de dezembro de 2000, a contratação de aprendizes é destinada a adolescentes e jovens entre 14 anos completos e 24 anos incompletos.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   }
  ]
 }

@@ -17,9 +17,9 @@
    "amount_max": 190.98,
    "amount_currency": "EUR",
    "amount_period": "monthly",
-   "amount_note": "Monthly amount depends on income tier (escalão), child age and household type. 2026: 1st tier €190.98 (<=36 months) / €75.13 (>36 months); 4th tier €88.43/€44.77; 5th tier no entitlement. Top-ups for single-parent (+35%), large families and Garantia para a Infância.",
+   "amount_note": "2026 monthly amounts by income tier (escalao) and child age. Up to 36 months: 1st tier 190.98, 2nd 161.65, 3rd 132.07, 4th 88.43. 37-72 months: 75.13 / 75.13 / 59.33 / 44.77. Over 72 months: 75.13 / 75.13 / 54.35 / none (4th tier only up to 72 months). 5th tier: no entitlement. Single-parent households +50% (1st-3rd tier). Double payment in September for school-age children aged 6-16 in tier 1. Garantia para a Infancia top-up for tier 1.",
    "is_automatic": false,
-   "application_url": "https://www.seg-social.pt/seguranca-social-direta",
+   "application_url": "https://www.seg-social.pt/ptss/pssd/menu/familia/desenvolvimento-criancas-jovens/abono-familia-criancas-jovens",
    "application_channel": "online",
    "deadline_type": "rolling",
    "deadline_note": "Apply within 6 months of the month after birth for full back-payment.",
@@ -57,7 +57,7 @@
     "age_min": null,
     "age_max": null,
     "income_annual_max": 36575,
-    "income_note": "Income test uses the household reference income (rendimento de referência) = total annual gross income of the household ÷ (number of children entitled to abono + 1). For new applications in 2026 entitlement ends in the 5th escalão: reference income must be ≤ 2,5×IAS×14 = €18,287.50. income_annual_max shows the household-level equivalent for 1 child (18,287.50×2 = €36,575); add €18,287.50 per extra entitled child. Movable assets must be ≤ 240×IAS (€128,911.20).",
+    "income_note": "Reference income = total annual household income divided by (number of entitled children + 1). 5th tier (no entitlement) starts above 2.5 x IAS x 14 = 18,287.50 EUR (2025 incomes, IAS 522.50). The 36,575 EUR household figure applies to a household with 1 child; add 18,287.50 per additional child. Movable assets must not exceed 128,911.20 EUR.",
     "requires_children": true,
     "nationality": "any_resident",
     "residency_months_min": null,
@@ -66,9 +66,9 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.seg-social.pt/abono-de-familia-para-criancas-e-jovens",
+   "source_url": "https://www.seg-social.pt/ptss/pssd/documento/cmc1z3qdt00j1kl2ya2677byz",
    "source_snippet": "Montantes 2026: €190.98 (1st tier, ≤36 months); €75.13 (1st tier, >36 months); updated +2.2% by Portaria 60/2026/1 (press reports of published portaria).",
-   "last_verified_at": "2026-08-12",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -84,12 +84,12 @@
    "amount_max": 190.98,
    "amount_currency": "EUR",
    "amount_period": "monthly",
-   "amount_note": "2026 values: €190.98 (1st tier), €161.65 (2nd), €132.07 (3rd), €88.43 (4th tier) per unborn child; +35% for single-parent households; doubles for twins.",
+   "amount_note": "2026 monthly amount per baby by tier: 1st 190.98, 2nd 161.65, 3rd 132.07, 4th 88.43 (single-parent households +35%: 257.82 / 218.23 / 178.29 / 119.38), multiplied by number of babies expected. Paid until birth month (40+ weeks) or 6 months if premature.",
    "is_automatic": false,
-   "application_url": "https://www.seg-social.pt/seguranca-social-direta",
+   "application_url": "https://www.seg-social.pt/ptss/pssd/menu/familia/desenvolvimento-criancas-jovens/abono-familia-criancas-jovens",
    "application_channel": "online",
    "deadline_type": "rolling",
-   "deadline_note": "Can be requested from the 13th week of pregnancy up to 6 months after birth.",
+   "deadline_note": "Can be requested from week 13 of pregnancy (pregnancy certificate shared via SNS 24, then accept the proposal in Social Security portal). If not requested during pregnancy, up to 6 months after birth (counted from the month after birth), together with the child allowance; after that the right is lost.",
    "procedure_steps": [
     {
      "step": 1,
@@ -119,7 +119,7 @@
     "age_min": null,
     "age_max": null,
     "income_annual_max": 36575,
-    "income_note": "Income test uses the household reference income (rendimento de referência) = total annual gross income of the household ÷ (number of children entitled to abono (including the unborn child) + 1). For new applications in 2026 entitlement ends in the 5th escalão: reference income must be ≤ 2,5×IAS×14 = €18,287.50. income_annual_max shows the household-level equivalent for 1 child (18,287.50×2 = €36,575); add €18,287.50 per extra entitled child. Movable assets must be ≤ 240×IAS (€128,911.20).",
+    "income_note": "Household income must not exceed the 4th tier (<= 2.5 x IAS x 14; IAS 2026 = 537.13 EUR). Household movable assets must not exceed 128,911.20 EUR. Must live in Portugal or be treated as resident (legal residence proof required for foreigners).",
     "requires_children": false,
     "nationality": "any_resident",
     "residency_months_min": null,
@@ -128,9 +128,9 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.seg-social.pt/abono-de-familia-pre-natal",
+   "source_url": "https://www.seg-social.pt/ptss/pssd/documento/cmc20h6d800pqkl2y3q3ur06i",
    "source_snippet": "190,98 € por mês no 1.º escalão... A partir da 13.ª semana de gravidez.",
-   "last_verified_at": "2026-08-12",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -146,12 +146,12 @@
    "amount_max": 144.63,
    "amount_currency": "EUR",
    "amount_period": "monthly",
-   "amount_note": "2026 values: €74.19 (up to 14 years), €108.06 (14-18), €144.63 (18-24). Added to the child allowance for children with certified disability.",
+   "amount_note": "Monthly supplement to the child allowance by age: up to 14 years 74.19; 14-18 years 108.06; 18-24 years 144.63 (single-parent households: 111.29 / 162.09 / 216.95).",
    "is_automatic": false,
-   "application_url": "https://www.seg-social.pt/seguranca-social-direta",
+   "application_url": "https://www.seg-social.pt/ptss/pssd/menu/familia/desenvolvimento-criancas-jovens/abono-familia-criancas-jovens",
    "application_channel": "online",
    "deadline_type": "rolling",
-   "deadline_note": null,
+   "deadline_note": "Apply within 6 months from the month after the disability occurred; later requests are paid only from the month after the request.",
    "procedure_steps": [
     {
      "step": 1,
@@ -169,7 +169,7 @@
    "eligibility": {
     "statuses": [],
     "age_min": null,
-    "age_max": null,
+    "age_max": 24,
     "income_annual_max": 36575,
     "income_note": "Requires entitlement to abono de família (escalões 1-4). Same income test: reference income (annual household gross income ÷ (children + 1)) ≤ 2,5×IAS×14 = €18,287.50 in 2026; €36,575 household annual income for a 1-child household.",
     "requires_children": true,
@@ -180,9 +180,9 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.seg-social.pt/bonificacao-por-deficiencia",
+   "source_url": "https://www.seg-social.pt/ptss/pssd/documento/cmc1z51er00j2kl2yw7syicv9",
    "source_snippet": "a bonificação por deficiência passa a ser de 74,19 euros para crianças e jovens até aos 14 anos, 108,06 euros para jovens com mais de 14 anos e 144,63 para jovens dos 18 aos 24 anos",
-   "last_verified_at": "2026-08-12",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -198,9 +198,9 @@
    "amount_max": 128.24,
    "amount_currency": "EUR",
    "amount_period": "monthly",
-   "amount_note": "€128.24/month (2026) for dependent children needing permanent third-person care.",
+   "amount_note": "128.24 EUR per month (2026).",
    "is_automatic": false,
-   "application_url": "https://www.seg-social.pt/seguranca-social-direta",
+   "application_url": "https://www.seg-social.pt/ptss/pssd/menu/familia/deficiencia-incapacidade/complemento-dependencia",
    "application_channel": "online",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -210,8 +210,8 @@
     "statuses": [],
     "age_min": null,
     "age_max": null,
-    "income_annual_max": 36575,
-    "income_note": "Requires entitlement to abono de família with bonificação por deficiência (escalões 1-4). Same income test: reference income ≤ 2,5×IAS×14 = €18,287.50 in 2026; €36,575 household annual income for a 1-child household.",
+    "income_annual_max": 9668.4,
+    "income_note": "Contributory route: no income test. Non-contributory route: the dependent descendant's own monthly income must be <= 214.85 EUR (40% of IAS 537.13) and household income <= 805.70 EUR per month (1.5 x IAS); 805.70 x 12 = 9,668.40 EUR per year. Previous 36,575 figure was copied from the child allowance and is not supported.",
     "requires_children": true,
     "nationality": "any_resident",
     "residency_months_min": null,
@@ -220,9 +220,9 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.seg-social.pt/subsidio-por-assistencia-de-terceira-pessoa",
+   "source_url": "https://www.seg-social.pt/ptss/pssd/documento/cmc1z99ne00j6kl2yx6syfo54",
    "source_snippet": "o subsídio por assistência de terceira pessoa sobe 2,78 euros, para 128,24 euros mensais",
-   "last_verified_at": "2026-08-12",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -238,12 +238,12 @@
    "amount_max": null,
    "amount_currency": "EUR",
    "amount_period": "monthly",
-   "amount_note": "Percentage of reference remuneration: 120 days at 100%; 150 days at 80%; shared leave 150 days (120+30) at 100%, 180 days (150+30) at 83%, or 90% if the father takes 60 consecutive days. Minimum daily value ~€14.32 (2026). +2% in the Autonomous Regions.",
+   "amount_note": "Daily amount = 80-100% of the reference remuneration depending on the modality chosen (80% if not shared; 100% with shared leave of 30 days; 83%/90% for longer 180-day modalities), never below 14.32 EUR per day (80% of 1/30 of IAS 537.13). +2% in the autonomous regions. Requires 6 months of contributions.",
    "is_automatic": false,
-   "application_url": "https://www.seg-social.pt/seguranca-social-direta",
+   "application_url": "https://www.seg-social.pt/ptss/pssd/menu/familia/maternidade-paternidade/subsidio-parental-inicial",
    "application_channel": "online",
    "deadline_type": "rolling",
-   "deadline_note": "Apply within 6 months of the birth.",
+   "deadline_note": "Apply within 6 months after the first day you stopped working; if later but still within the entitlement period, the delay is deducted from the payment period.",
    "procedure_steps": [
     {
      "step": 1,
@@ -280,9 +280,9 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.gov.pt/guias/ter-uma-crianca/licenca-parental",
+   "source_url": "https://www.seg-social.pt/ptss/pssd/documento/cmc1ynbn400fskl2y5g278wvp",
    "source_snippet": "Se escolherem 120 dias recebem 100% da remuneração de referência... Se escolherem 150 dias recebem 80%.",
-   "last_verified_at": "2026-08-12",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -300,7 +300,7 @@
    "amount_period": "monthly",
    "amount_note": "Means-tested parental allowance for parents without sufficient contributions. 2026: household income per person must be <= €429.70 and movable assets <= 240xIAS (€128,911.20).",
    "is_automatic": false,
-   "application_url": "https://www.seg-social.pt/seguranca-social-direta",
+   "application_url": "https://www.seg-social.pt/ptss/pssd/menu/momento-filhos/momento-depois-parto/subsidio-social-parental",
    "application_channel": "online",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -311,7 +311,7 @@
     "age_min": null,
     "age_max": null,
     "income_annual_max": 5156,
-    "income_note": "Means-tested: monthly reference income of the household (total monthly income ÷ equivalence scale 1 + 0.7 per adult + 0.5 per minor) must be ≤ 80% of IAS = €429.70 (2026). income_annual_max = €5,156 per equivalence unit per year (429.70×12).",
+    "income_note": "Gross monthly income must not exceed 80% of IAS per household member (IAS 2026 = 537.13 -> 429.70 EUR/month = 5,156.40 EUR/year per person). Household movable assets must not exceed 240 x IAS (128,911.20 EUR).",
     "requires_children": true,
     "nationality": "any_resident",
     "residency_months_min": null,
@@ -320,9 +320,9 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.seg-social.pt/subsidio-social-parental",
+   "source_url": "https://www.seg-social.pt/ptss/pssd/menu/momento-filhos/momento-depois-parto/subsidio-social-parental",
    "source_snippet": "Em 2026, o rendimento do agregado por pessoa tem de ser igual ou inferior a 429,70 euros, e o património mobiliário não pode ultrapassar 240 vezes o IAS.",
-   "last_verified_at": "2026-08-12",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -338,12 +338,12 @@
    "amount_max": null,
    "amount_currency": "EUR",
    "amount_period": "monthly",
-   "amount_note": "Same percentages and durations as the initial parental allowance for working parents who adopt.",
+   "amount_note": "Daily amount = percentage of reference remuneration (100% for 120 days or 80% for 150 days depending on modality; 100% for 150 days if shared; 83%/90% for 180 days), never below 14.32 EUR/day (IAS 2026 = 537.13). Requires 6 months of contributions; social adoption allowance exists for those without.",
    "is_automatic": false,
-   "application_url": "https://www.seg-social.pt/seguranca-social-direta",
+   "application_url": "https://www.seg-social.pt/ptss/pssd/menu/familia/apadrinhamento-acolhimento",
    "application_channel": "online",
    "deadline_type": "rolling",
-   "deadline_note": null,
+   "deadline_note": "Apply within 6 months after the first day you stopped working.",
    "procedure_steps": [],
    "documents_required": [],
    "eligibility": {
@@ -363,10 +363,10 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.seg-social.pt/subsidio-por-adocao",
+   "source_url": "https://www.seg-social.pt/ptss/pssd/documento/cmn7mc60m0008hw2y4qkt0evb",
    "source_snippet": "Allowance equivalent to the initial parental subsidy for workers who adopt a child under 15.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "garantia-para-a-infancia",
@@ -381,12 +381,12 @@
    "amount_max": null,
    "amount_currency": "EUR",
    "amount_period": "monthly",
-   "amount_note": "Guarantees a minimum total of €100/month (2025) per child in the 1st income tier, topping up the child allowance and prenatal allowance.",
+   "amount_note": "Top-up paid together with the child allowance, only for children under 18 in tier 1 of the child allowance. The guide publishes 127.33 EUR per month (difference between child allowance and guarantee value); check the Social Security simulator for the current figure.",
    "is_automatic": true,
-   "application_url": null,
+   "application_url": "https://www.seg-social.pt/ptss/pssd/menu/familia/desenvolvimento-criancas-jovens/abono-familia-criancas-jovens",
    "application_channel": "automatic",
    "deadline_type": "rolling",
-   "deadline_note": null,
+   "deadline_note": "Automatic: no application needed if the child already receives tier-1 child allowance.",
    "procedure_steps": [
     {
      "step": 1,
@@ -400,7 +400,7 @@
     "age_min": null,
     "age_max": null,
     "income_annual_max": 5264,
-    "income_note": "Household must be in abono escalão 1 AND reference income (annual gross income ÷ (children + 1)) ≤ 0,35×IAS×14 = €2,631.94 (requests made in 2026). income_annual_max = household equivalent for 1 child (€5,264). Guaranteed minimum €127.33/month per child (reference value €1,528/year in 2026).",
+    "income_note": "Household reference income must be below 0.35 x IAS x 14 (guide shows 2,495.37 EUR using 2024 incomes/IAS). Reference income is divided by (children + 1).",
     "requires_children": true,
     "nationality": "any_resident",
     "residency_months_min": null,
@@ -409,10 +409,10 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.seg-social.pt/garantia-para-a-infancia",
+   "source_url": "https://www.seg-social.pt/ptss/pssd/documento/cmc1z745z00j4kl2yl81nyy2v",
    "source_snippet": "Complement ensuring a minimum €100/month per child for the most vulnerable households.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "subsidio-de-funeral",
@@ -427,12 +427,12 @@
    "amount_max": 268.57,
    "amount_currency": "EUR",
    "amount_period": "one_off",
-   "amount_note": "€268.57 (2026), equal to 50% of the IAS, towards funeral costs of a family member.",
+   "amount_note": "268.57 EUR (2026). For deaths from 9 April 2026 of a minor or unborn child, or of a person with permanent total incapacity receiving disability benefits, the amount is 1,611.39 EUR (3 x IAS).",
    "is_automatic": false,
-   "application_url": "https://www.seg-social.pt/seguranca-social-direta",
+   "application_url": "https://www.seg-social.pt/ptss/pssd/menu/familia/obito/subsidio-morte",
    "application_channel": "online",
    "deadline_type": "rolling",
-   "deadline_note": "Apply within 6 months of the death.",
+   "deadline_note": "Apply within 6 months after the first day of the month following the death.",
    "procedure_steps": [],
    "documents_required": [],
    "eligibility": {
@@ -449,9 +449,9 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.seg-social.pt/subsidio-de-funeral",
+   "source_url": "https://www.seg-social.pt/ptss/pssd/documento/cmc1z63t400j3kl2y4u8sjx1u",
    "source_snippet": "O montante do subsídio de funeral (...) é de 268,57 euros e corresponde a 50 % do indexante dos apoios sociais (IAS).",
-   "last_verified_at": "2026-08-12",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -467,12 +467,12 @@
    "amount_max": null,
    "amount_currency": "EUR",
    "amount_period": "monthly",
-   "amount_note": "Free attendance at non-profit (IPSS) crèches up to a set monthly fee and copayment in for-profit crèches.",
+   "amount_note": "Free of charge (no parental fee) for children up to 3 years in solidarity-network, Santa Casa Lisboa, Social Security childminders (amas), and public or for-profit creches that joined the creche pool.",
    "is_automatic": false,
-   "application_url": "https://www.seg-social.pt",
+   "application_url": "https://www.seg-social.pt/ptss/pssd/menu/familia/desenvolvimento-criancas-jovens/creche-feliz",
    "application_channel": "in_person",
    "deadline_type": "rolling",
-   "deadline_note": null,
+   "deadline_note": "Request a place only via the Social Security portal. Children turning 3 between 16 September and 31 December should apply for pre-school instead. Priority rules apply (previous-year attendance, disability, siblings, Garantia para a Infancia/child allowance tiers 1-2, etc.).",
    "procedure_steps": [],
    "documents_required": [],
    "eligibility": {
@@ -489,10 +489,10 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.seg-social.pt/creche-feliz",
+   "source_url": "https://www.seg-social.pt/ptss/pssd/menu/familia/desenvolvimento-criancas-jovens/creche-feliz",
    "source_snippet": "Universal measures include the Creche Feliz programme covering crèche fees (ASE overview, avozdoalgarve.pt).",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "rendimento-social-de-insercao",
@@ -507,9 +507,9 @@
    "amount_max": null,
    "amount_currency": "EUR",
    "amount_period": "monthly",
-   "amount_note": "Reference value: holder €237.25, each adult €166.08, each child €118.63; the benefit tops up household income to this reference. Granted for 12 months, renewable.",
+   "amount_note": "Benefit = household maximum (247.56 for applicant + 173.29 per other adult + 123.78 per minor) minus household income.",
    "is_automatic": false,
-   "application_url": "https://www.seg-social.pt/seguranca-social-direta",
+   "application_url": "https://www.seg-social.pt/ptss/pssd/menu/ajuda/contactos-canais-atendimento/balcao-e-clic",
    "application_channel": "online",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -537,18 +537,18 @@
     "age_min": null,
     "age_max": null,
     "income_annual_max": 2971,
-    "income_note": "2026 reference value €247.56/month for the titular (+70% per additional adult, +50% per minor); RSI pays the difference to household income, so a single person qualifies with income below €247.56/month = €2,971/year. Movable assets must be ≤ 60×IAS = €32,227.80.",
+    "income_note": "RSI value 2026 = 247.56 EUR/month. Single person: income below 247.56/month (2,970.72/year). Households: income below the household maximum = 247.56 (applicant) + 173.29 per other adult + 123.78 per minor. Movable assets <= 32,227.80 EUR. Residence: EU/EEA/free-movement nationals and refugees need legal residence; nationals of other countries need at least 1 year of legal residence (so many visa holders qualify only after 1 year).",
     "requires_children": false,
     "nationality": "any_resident",
-    "residency_months_min": null,
+    "residency_months_min": 12,
     "housing_tenure": null,
     "student_required": false,
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.gov.pt/servicos/pedir-o-rendimento-social-de-insercao",
+   "source_url": "https://www.seg-social.pt/ptss/pssd/documento/cmc20aw2e00ovkl2ysmfehy58",
    "source_snippet": "O valor de referência do RSI corresponde à soma dos seguintes valores: Pela pessoa titular - 237,25€ Por cada pessoa adulta - 166,08€ Por cada criança ou jovem com menos de 18 anos - 118,63€.",
-   "last_verified_at": "2026-08-12",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -564,9 +564,9 @@
    "amount_max": 1342.83,
    "amount_currency": "EUR",
    "amount_period": "monthly",
-   "amount_note": "65% of reference remuneration; 2026 limits: minimum 1xIAS (€537.13; €617.70 = 1.15xIAS when base salary was at least the minimum wage), maximum 2.5xIAS (€1,342.83), capped at 75% of net reference remuneration. +10% for single-earner or dual-unemployed households with children.",
+   "amount_note": "65% of reference remuneration; never below 537.13 EUR (1 x IAS 2026) unless net reference pay is lower, 617.70 in some cases; capped at 1,342.83 EUR (2.5 x IAS) and at 75% of net reference remuneration.",
    "is_automatic": false,
-   "application_url": "https://www.seg-social.pt/seguranca-social-direta",
+   "application_url": "https://www.seg-social.pt/ptss/pssd/menu/trabalho/desemprego/subsidio-desemprego",
    "application_channel": "online",
    "deadline_type": "rolling",
    "deadline_note": "Apply within 90 days of becoming unemployed; prior registration at IEFP required.",
@@ -611,9 +611,9 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.seg-social.pt/subsidio-de-desemprego",
+   "source_url": "https://www.seg-social.pt/ptss/pssd/documento/cmc0debv9008agw2ys1kly9so",
    "source_snippet": "não pode ser superior a 2,5 X IAS (1 306,25€), nem inferior ao IAS (522,50€) (Guia Prático, 2025 values; 2026: €617.70 min / €1,342.83 max).",
-   "last_verified_at": "2026-08-12",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -631,7 +631,7 @@
    "amount_period": "monthly",
    "amount_note": "Means-tested benefit after unemployment benefit exhaustion or without qualifying contributions. 2026: €537.13 (with family) or €429.70 (single).",
    "is_automatic": false,
-   "application_url": "https://www.seg-social.pt/seguranca-social-direta",
+   "application_url": "https://www.seg-social.pt/ptss/pssd/menu/trabalho/desemprego/subsidio-social-desemprego",
    "application_channel": "online",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -645,7 +645,7 @@
     "age_min": null,
     "age_max": null,
     "income_annual_max": 5156,
-    "income_note": "Condição de recursos: monthly income per person of the household (ponderation 1 / 0.7 per adult / 0.5 per minor) ≤ 80% of IAS = €429.70 (2026) → income_annual_max = €5,156 per equivalence unit/year. Movable assets ≤ 240×IAS = €128,911.20.",
+    "income_note": "Monthly household income per person must not exceed 429.70 EUR (80% of IAS 2026 = 537.13), i.e. 5,156.40 EUR per year per person (household income divided by weighting of members).",
     "requires_children": false,
     "nationality": "any_resident",
     "residency_months_min": null,
@@ -654,9 +654,9 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.seg-social.pt/subsidio-social-de-desemprego",
+   "source_url": "https://www.seg-social.pt/ptss/pssd/documento/cmc1zkh2r00kckl2yylki8rf5",
    "source_snippet": "Subsídio social de desemprego (com agregado) 537,13 €; (isolado) 429,70 € (2026 values).",
-   "last_verified_at": "2026-08-12",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -674,7 +674,7 @@
    "amount_period": "monthly",
    "amount_note": "Monthly top-up to bring annual income up to the reference value: €8,040/year for a single person (max €670/month) or €14,070/year for a couple (2026). Beneficiaries also get free co-payments on medicines (BAS).",
    "is_automatic": false,
-   "application_url": "https://www.seg-social.pt/seguranca-social-direta",
+   "application_url": "https://www.seg-social.pt/ptss/pssd/documento/cmc20buk100owkl2yi68k318c",
    "application_channel": "online",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -697,7 +697,7 @@
     "age_min": 66,
     "age_max": null,
     "income_annual_max": 14070,
-    "income_note": "2026: gross annual income ≤ €8,040 (single) or ≤ €14,070 for a couple (both counted); income_annual_max is the couple/household ceiling. Children with income in the 4th abono tier or above exclude the applicant.",
+    "income_note": "Annual gross income must not exceed 8,040 EUR (single person, 670/month reference value) or 14,070 EUR (couple), 2026. Benefit tops up income to the reference value.",
     "requires_children": false,
     "nationality": "any_resident",
     "residency_months_min": null,
@@ -706,9 +706,9 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.seg-social.pt/complemento-solidario-para-idosos",
+   "source_url": "https://www.seg-social.pt/ptss/pssd/documento/cmc20buk100owkl2yi68k318c",
    "source_snippet": "O valor a receber, por mês, corresponde a 1/12 vezes a diferença entre 8 040,00€ (valor de referência ... titular isolado) ou 14 070,00€ (casal) e o valor anual dos rendimentos.",
-   "last_verified_at": "2026-08-12",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -720,13 +720,13 @@
    "funder": "Instituto da Segurança Social, I.P. (ISS)",
    "category": "income_support",
    "benefit_type": "cash_monthly",
-   "amount_min": null,
-   "amount_max": null,
+   "amount_min": 262.4,
+   "amount_max": 308.07,
    "amount_currency": "EUR",
    "amount_period": "monthly",
-   "amount_note": "Means-tested non-contributory pension for people at/above the legal pension age without sufficient contributions; amount indexed to the IAS and updated annually.",
+   "amount_note": "262.40 EUR/month (2026) plus extraordinary solidarity supplement: 22.83 (under 70) or 45.67 (70+), i.e. 285.23 / 308.07. Extra yearly supplement of 27.55 in October.",
    "is_automatic": false,
-   "application_url": "https://www.seg-social.pt/seguranca-social-direta",
+   "application_url": "https://www.seg-social.pt/ptss/pssd/documento/cmc1zy5i500n7kl2ynj8bh0nm",
    "application_channel": "online",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -737,7 +737,7 @@
     "age_min": 66,
     "age_max": null,
     "income_annual_max": 3008,
-    "income_note": "2026: monthly gross income ≤ 40% of IAS = €214.85 (single) → income_annual_max = €3,008/year (214.85×14); couple limit 60% of IAS = €322.28/month (€4,512/year).",
+    "income_note": "Age 66 years 9 months or more. Monthly income <= 214.85 EUR (40% of IAS 537.13) single, or <= 322.28 EUR (60%) for a couple; annualised x14 = 3,008 / 4,512 EUR.",
     "requires_children": false,
     "nationality": "any_resident",
     "residency_months_min": null,
@@ -746,10 +746,10 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.seg-social.pt/pensao-social-de-velhice",
+   "source_url": "https://www.seg-social.pt/ptss/pssd/documento/cmc1zy5i500n7kl2ynj8bh0nm",
    "source_snippet": "Non-contributory old-age pension for residents with insufficient social security contributions, subject to a means test.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "pensao-social-de-invalidez",
@@ -766,7 +766,7 @@
    "amount_period": "monthly",
    "amount_note": "Means-tested non-contributory pension for people with total incapacity for work and insufficient contributions; replaced by the complement of the Prestação Social para a Inclusão for new cases.",
    "is_automatic": false,
-   "application_url": "https://www.seg-social.pt/seguranca-social-direta",
+   "application_url": "https://www.seg-social.pt/ptss/pssd/menu/trabalho/reforma-invalidez/protecao-especial-invalidez",
    "application_channel": "online",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -774,10 +774,10 @@
    "documents_required": [],
    "eligibility": {
     "statuses": [],
-    "age_min": null,
+    "age_min": 18,
     "age_max": null,
     "income_annual_max": 3008,
-    "income_note": "2026: monthly gross income ≤ 40% of IAS = €214.85 (single) → income_annual_max = €3,008/year (214.85×14); couple limit 60% of IAS = €322.28/month (€4,512/year).",
+    "income_note": "Pensao Social de Invalidez Especial (non-contributory): monthly gross income <= 40% of IAS (214.85 EUR) for a single person or 60% (322.28 EUR) for a couple; annualised x14 = 3,008 EUR.",
     "requires_children": false,
     "nationality": "any_resident",
     "residency_months_min": null,
@@ -786,10 +786,10 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.seg-social.pt/pensao-social-de-invalidez",
+   "source_url": "https://www.seg-social.pt/ptss/pssd/menu/trabalho/reforma-invalidez/protecao-especial-invalidez",
    "source_snippet": "Non-contributory invalidity pension subject to a means test (legacy regime; PSI applies to new disability cases).",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "complemento-por-dependencia",
@@ -800,13 +800,13 @@
    "funder": "Instituto da Segurança Social, I.P. (ISS)",
    "category": "income_support",
    "benefit_type": "cash_monthly",
-   "amount_min": null,
-   "amount_max": null,
+   "amount_min": 118.08,
+   "amount_max": 236.16,
    "amount_currency": "EUR",
    "amount_period": "monthly",
-   "amount_note": "Supplement for pensioners unable to perform daily activities without help: 1st degree (bedridden/severely dependent) and 2nd degree, with different IAS-indexed amounts.",
+   "amount_note": "2026: general regime 131.20 (1st degree) / 236.16 (2nd degree); agricultural/non-contributory regimes 118.08 / 223.04.",
    "is_automatic": false,
-   "application_url": "https://www.seg-social.pt/seguranca-social-direta",
+   "application_url": "https://www.seg-social.pt/ptss/pssd/menu/familia/deficiencia-incapacidade/complemento-dependencia",
    "application_channel": "online",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -817,7 +817,7 @@
     "age_min": null,
     "age_max": null,
     "income_annual_max": null,
-    "income_note": "Requires medical certification of dependency (SVI verification system).",
+    "income_note": "No income test: paid to pensioners certified as dependent (1st or 2nd degree) who are not working. The earlier 36,575 EUR figure was not supported by the official guide.",
     "requires_children": false,
     "nationality": "any_resident",
     "residency_months_min": null,
@@ -826,10 +826,10 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.seg-social.pt/complemento-por-dependencia",
+   "source_url": "https://www.seg-social.pt/ptss/pssd/documento/cmc201u8200nfkl2y5w3l7yr9",
    "source_snippet": "Supplement to pensions for dependent persons, paid at 1st or 2nd degree rates.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "prestacao-social-para-a-inclusao",
@@ -844,9 +844,9 @@
    "amount_max": null,
    "amount_currency": "EUR",
    "amount_period": "monthly",
-   "amount_note": "Base component of 1xIAS (€537.13 in 2026) for people with a certified disability (>=60% incapacity) aged 18+, plus a complement component that tops up low incomes.",
+   "amount_note": "Base component up to 333.64 EUR/month (166.82 under 18), reduced by other income; complement up to 670 EUR/month (reference 8,040 EUR/year x household weighting).",
    "is_automatic": false,
-   "application_url": "https://www.seg-social.pt/seguranca-social-direta",
+   "application_url": "https://www.seg-social.pt/ptss/pssd/menu/familia/deficiencia-incapacidade/prestacao-social-inclusao",
    "application_channel": "online",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -869,7 +869,7 @@
     "age_min": 18,
     "age_max": null,
     "income_annual_max": 12880,
-    "income_note": "Base component (€4,003.68/year in 2026, adults) is not income-tested but its sum with work income cannot exceed €12,880/year (income_annual_max = accumulation ceiling for keeping the base). The complemento (max €670/month in 2026) is means-tested on household income (ponderation 1/0.7/0.5).",
+    "income_note": "Base component reduces with income; work income of 920 EUR/month (12,880/year) removes it. Complement requires age 18+ and low household income (reference 8,040 EUR/year for a single person, scaled by household weighting).",
     "requires_children": false,
     "nationality": "any_resident",
     "residency_months_min": null,
@@ -878,10 +878,10 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.seg-social.pt/prestacao-social-para-a-inclusao",
+   "source_url": "https://www.seg-social.pt/ptss/pssd/documento/cmc20cv1800oxkl2ycdd4k87m",
    "source_snippet": "Base component of 1 IAS for persons with certified disability of at least 60%.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "subsidio-apoio-cuidador-informal",
@@ -893,12 +893,12 @@
    "category": "income_support",
    "benefit_type": "cash_monthly",
    "amount_min": null,
-   "amount_max": null,
+   "amount_max": 590.84,
    "amount_currency": "EUR",
    "amount_period": "monthly",
-   "amount_note": "Monthly allowance for the main informal carer who cannot work because of full-time caring duties; means-tested and capped by reference to the IAS. Under the Estatuto do Cuidador Informal (Law 93/2019).",
+   "amount_note": "Subsidy = 1.1 x IAS (590.84 EUR, 2026) minus the carer's and the cared-for person's monthly income; +57.48 if the carer pays voluntary social insurance.",
    "is_automatic": false,
-   "application_url": "https://www.seg-social.pt/seguranca-social-direta",
+   "application_url": "https://www.seg-social.pt/ptss/pssd/menu/familia/deficiencia-incapacidade/subsidio-apoio-cuidador-informal-principal",
    "application_channel": "online",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -931,7 +931,7 @@
     "age_min": null,
     "age_max": null,
     "income_annual_max": 8379,
-    "income_note": "2026: household monthly reference income (ponderation 1 / 0.7 per other adult / 0.5 per minor) must be < 1,3×IAS = €698.27 → income_annual_max = €8,379 per equivalence unit/year. Subsidy = €590.84 (1,1×IAS) minus reference income. From 2026 it no longer counts as income for other benefits (DL 138/2025).",
+    "income_note": "Household reference income must not exceed 698.27 EUR/month (1.3 x IAS 537.13) = 8,379.24 EUR/year.",
     "requires_children": false,
     "nationality": "any_resident",
     "residency_months_min": null,
@@ -940,10 +940,10 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.seg-social.pt/subsidio-de-apoio-ao-cuidador-informal-principal",
+   "source_url": "https://www.seg-social.pt/ptss/pssd/documento/cmc20e8l500pnkl2y1hmvyxo8",
    "source_snippet": "Allowance paid to the main informal carer under the Estatuto do Cuidador Informal, subject to means-testing.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "subsidio-de-doenca",
@@ -958,9 +958,9 @@
    "amount_max": null,
    "amount_currency": "EUR",
    "amount_period": "monthly",
-   "amount_note": "Replaces income during certified sick leave: 55% to 75% of reference remuneration depending on duration; minimum daily values indexed to IAS.",
+   "amount_note": "Daily amount = 55% (up to 30 days), 60% (31-90 days), 70% (91-365 days), 75% (over 365 days) of reference remuneration; minimum 9.20 EUR/day. Requires 6 months of contributions (qualifying period) and a sickness certificate (CIT).",
    "is_automatic": false,
-   "application_url": "https://www.seg-social.pt/seguranca-social-direta",
+   "application_url": "https://www.seg-social.pt/ptss/pssd/menu/doenca/cuidados-doenca/subsidio-doenca",
    "application_channel": "automatic",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -983,10 +983,10 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.seg-social.pt/subsidio-de-doenca",
+   "source_url": "https://www.seg-social.pt/ptss/pssd/documento/cmdde8gsx000qi12yzi40plc6",
    "source_snippet": "Sickness benefit of 55%-75% of reference remuneration according to the length of the sick leave.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "navegante-metropolitano",
@@ -1001,9 +1001,9 @@
    "amount_max": 40,
    "amount_currency": "EUR",
    "amount_period": "monthly",
-   "amount_note": "€40/month covering all public transport operators across the 18 municipalities of the Lisbon Metropolitan Area.",
+   "amount_note": "40 EUR per month (price unchanged in 2026). Discounts: free for under-24s, 50% for 65+, Social+ for low-income households.",
    "is_automatic": false,
-   "application_url": "https://www.portalviva.pt",
+   "application_url": "https://www.navegante.pt/",
    "application_channel": "online",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -1025,9 +1025,9 @@
     ],
     "gender": "any"
    },
-   "source_url": "https://www.tmlmobilidade.pt",
+   "source_url": "https://navegante.pt/viajar/tarifario-navegante",
    "source_snippet": "Monthly pass (Navegante Metropolitano): Covering the entire Lisbon Metropolitan Area, this pass costs €40 per month.",
-   "last_verified_at": "2026-08-12",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -1045,7 +1045,7 @@
    "amount_period": "monthly",
    "amount_note": "€30/month valid on all operators within a single municipality of the Lisbon Metropolitan Area.",
    "is_automatic": false,
-   "application_url": "https://www.portalviva.pt",
+   "application_url": "https://www.navegante.pt/",
    "application_channel": "online",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -1067,9 +1067,9 @@
     ],
     "gender": "any"
    },
-   "source_url": "https://www.tmlmobilidade.pt",
+   "source_url": "https://navegante.pt/viajar/tarifario-navegante",
    "source_snippet": "Monthly pass (Navegante Municipal): Valid within a single municipality, this pass costs €30 per month.",
-   "last_verified_at": "2026-08-12",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -1085,9 +1085,9 @@
    "amount_max": 0,
    "amount_currency": "EUR",
    "amount_period": "monthly",
-   "amount_note": "Free monthly pass for students aged 4-23 (4_18 for under-18s, sub23 for higher-education students up to 23) in the Lisbon Metropolitan Area, since 1 January 2024.",
+   "amount_note": "100% discount on the navegante metropolitano pass for young people up to 23 (until the end of the month they turn 24); activate via navegante app or a navegante space with ID.",
    "is_automatic": false,
-   "application_url": "https://www.portalviva.pt",
+   "application_url": "https://www.navegante.pt/viajar/descontos",
    "application_channel": "online",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -1103,15 +1103,15 @@
     "nationality": "any_resident",
     "residency_months_min": null,
     "housing_tenure": null,
-    "student_required": true,
+    "student_required": false,
     "admin_areas": [
      "Lisboa"
     ],
     "gender": "any"
    },
-   "source_url": "https://www.tmlmobilidade.pt",
+   "source_url": "https://www.navegante.pt/viajar/descontos",
    "source_snippet": "Since 1 January 2024, the Navegante Metropolitano pass has been provided free of charge to students aged between 4 and 23.",
-   "last_verified_at": "2026-08-12",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -1129,10 +1129,10 @@
    "amount_period": "monthly",
    "amount_note": "Free unlimited travel on Lisbon public transport for residents aged 65 and over (and extended concessions in the metropolitan area).",
    "is_automatic": false,
-   "application_url": "https://www.lisboa.pt",
+   "application_url": "https://65mais.lisboa.pt/",
    "application_channel": "in_person",
    "deadline_type": "rolling",
-   "deadline_note": null,
+   "deadline_note": "Free public transport for residents of Lisbon (fiscal domicile) extended to 2029; requires navegante/Lisboa Viva card with +65 profile. Outside this municipal scheme, navegante +65 gives 50% off (20 EUR).",
    "procedure_steps": [],
    "documents_required": [],
    "eligibility": {
@@ -1151,9 +1151,9 @@
     ],
     "gender": "any"
    },
-   "source_url": "https://www.lisboa.pt",
+   "source_url": "https://informacao.lisboa.pt/dossies-tematicos/transportes-publicos-gratuitos",
    "source_snippet": "residents aged 65 and over, are also entitled to free unlimited travel",
-   "last_verified_at": "2026-08-12",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -1169,9 +1169,9 @@
    "amount_max": 40,
    "amount_currency": "EUR",
    "amount_period": "monthly",
-   "amount_note": "€40/month covering all operators in the Porto Metropolitan Area; free for students 4-23 under the 4_18/sub23 scheme and reduced fares for pensioners.",
+   "amount_note": "2026 tariff (in force from 1 Jan 2026): Metropolitano 40 EUR/month (3Z 30). 3rd age (65+): 30 EUR (25% off); Social+ 50% off: 20 EUR; Prateado Jovem for young people.",
    "is_automatic": false,
-   "application_url": "https://www.andante.pt",
+   "application_url": "https://andante.pt/comprar/",
    "application_channel": "online",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -1194,10 +1194,10 @@
     ],
     "gender": "any"
    },
-   "source_url": "https://www.andante.pt",
+   "source_url": "https://andante.pt/wp-content/uploads/2026/01/Tarifario-Andante.pdf",
    "source_snippet": "Metropolitan pass covering the whole Porto Metropolitan Area for €40/month (Andante Metropolitano).",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "passe-social-mais",
@@ -1214,7 +1214,7 @@
    "amount_period": "monthly",
    "amount_note": "25% discount on Navegante passes for households with income below defined thresholds, registered in Lisbon.",
    "is_automatic": false,
-   "application_url": "https://www.lisboa.pt",
+   "application_url": "https://www.navegante.pt/viajar/descontos",
    "application_channel": "online",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -1224,8 +1224,8 @@
     "statuses": [],
     "age_min": null,
     "age_max": null,
-    "income_annual_max": null,
-    "income_note": "For low-income households below the municipal threshold.",
+    "income_annual_max": 7734.72,
+    "income_note": "Social+ tier A (50% off): CSI or RSI recipients. Tier B (25% off): pensioners, unemployment benefit recipients (monthly amount <= 1.2 x IAS), or families with gross monthly income per household member <= 1.2 x IAS = 644.56 EUR (IAS 537.13) = 7,734.72 EUR/year per person.",
     "requires_children": false,
     "nationality": "any_resident",
     "residency_months_min": null,
@@ -1236,10 +1236,10 @@
     ],
     "gender": "any"
    },
-   "source_url": "https://www.lisboa.pt",
+   "source_url": "https://www.portalviva.pt/pt/homepage/cart%C3%B5es/transportes/navegante%C2%AE-personalizado/modalidades-do-lisboa-viva.aspx",
    "source_snippet": "Municipal scheme granting discounted passes to low-income households (Passe Social+).",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "cp-descontos-jovem-senior",
@@ -1254,9 +1254,9 @@
    "amount_max": null,
    "amount_currency": "EUR",
    "amount_period": "one_off",
-   "amount_note": "CP offers 25% discount for passengers aged 12-25 (Cartão Jovem) and 50% for passengers aged 65+ on Alfa Pendular, Intercidades, Regional and InterRegional services.",
+   "amount_note": "Senior: up to 50% off Alfa Pendular and Intercidades for age 65+ (any nationality/residence). Youth: 25% off for ages up to 25; Cartao Jovem/EYC 25% for ages 12-30.",
    "is_automatic": false,
-   "application_url": "https://www.cp.pt",
+   "application_url": "https://www.cp.pt/info/w/senior",
    "application_channel": "online",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -1276,10 +1276,10 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.cp.pt",
+   "source_url": "https://www.cp.pt/info/w/senior",
    "source_snippet": "Youth (up to 25) and senior (65+) discounts of 25%/50% on CP long-distance and regional trains.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "transporte-escolar-gratuito",
@@ -1294,7 +1294,7 @@
    "amount_max": null,
    "amount_currency": "EUR",
    "amount_period": "monthly",
-   "amount_note": "Free school transport for pupils in compulsory education living beyond defined distances from school, organised by municipalities; part of Ação Social Escolar for low-income families.",
+   "amount_note": "Free school transport (municipal responsibility, DL 21/2019) for pre-school, basic and secondary pupils living more than 3 km from the school (rule published in the DL; local conditions vary by municipality).",
    "is_automatic": true,
    "application_url": null,
    "application_channel": "automatic",
@@ -1322,10 +1322,10 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.dgeste.gov.pt",
+   "source_url": "https://portalautarquico.dgal.gov.pt/ficheiros/?schema=f7664ca7-3a1a-4b25-9f46-2056eef44c33&channel=ed16ac2e-ba4c-4299-883d-468376316b46&content_id=9D59608A-3475-4354-88EB-34E586F7CD80&field=storage_image&lang=pt&ver=1&filetype=pdf&dtestate=2019-05-30182941",
    "source_snippet": "The supports of Ação Social Escolar include refeições gratuitas ou comparticipadas, manuais escolares gratuitos, transporte, material escolar, alojamento...",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "subsidio-social-mobilidade-aereas",
@@ -1340,12 +1340,12 @@
    "amount_max": null,
    "amount_currency": "EUR",
    "amount_period": "one_off",
-   "amount_note": "Reimbursement = eligible ticket cost minus the maximum fare borne by the passenger. 2026 (DL 37-A/2025, DL 1-A/2026): Madeira↔mainland residents pay max €79 (students €59); Azores↔mainland residents pay max €119 (students €89). Return-trip caps no longer apply to the eligible ticket cost.",
+   "amount_note": "New rules from 15 Jan 2026 (online claim). Azores-mainland: maximum eligible fare 600 EUR; resident pays up to 119 EUR, student up to 89 EUR (rest reimbursed up to the cap). Madeira-mainland: maximum eligible fare 400 EUR.",
    "is_automatic": false,
-   "application_url": "https://www.gov.pt",
+   "application_url": "https://www.ssm.gov.pt/",
    "application_channel": "online",
    "deadline_type": "rolling",
-   "deadline_note": null,
+   "deadline_note": "Online claim for trips bought from 15 Jan 2026; CTT counter for trips bought up to 14 Jan 2026 and some cases.",
    "procedure_steps": [],
    "documents_required": [],
    "eligibility": {
@@ -1356,7 +1356,7 @@
     "income_note": "No income test: open to residents (≥6 months) of the Azores/Madeira, their household, and displaced students of any age.",
     "requires_children": false,
     "nationality": "any_resident",
-    "residency_months_min": null,
+    "residency_months_min": 6,
     "housing_tenure": null,
     "student_required": false,
     "admin_areas": [
@@ -1366,9 +1366,9 @@
     ],
     "gender": "any"
    },
-   "source_url": "https://www.gov.pt",
+   "source_url": "https://www.gov.pt/servicos/pedir-o-subsidio-social-de-mobilidade",
    "source_snippet": "«o valor suportado pelos residentes dos Açores nas ligações aéreas com o continente baixou de 134 para 119 euros e pelos residentes na Madeira de 86 para 79 euros» (DL 1-A/2026).",
-   "last_verified_at": "2026-08-12",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -1384,9 +1384,9 @@
    "amount_max": null,
    "amount_currency": "EUR",
    "amount_period": "monthly",
-   "amount_note": "33.8% discount on regulated electricity tariffs (before VAT) in 2026, plus exemption from the special consumption tax (IEC) and reduced audiovisual contribution; applied automatically to eligible low-income households (contracted power <= 6.9 kVA).",
+   "amount_note": "Discount in the access tariff worth about 33.8% off the transitional tariff price (ERSE example 13.44 EUR/month) plus exemption from the electricity special consumption tax.",
    "is_automatic": true,
-   "application_url": null,
+   "application_url": "https://www.dgeg.gov.pt/pt/areas-transversais/politicas-de-protecao-ao-consumidor-de-energia/tarifa-social-de-energia/",
    "application_channel": "automatic",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -1402,8 +1402,8 @@
     "statuses": [],
     "age_min": null,
     "age_max": null,
-    "income_annual_max": 5808,
-    "income_note": "Eligibility: beneficiaries of RSI, CSI, abono de família, social unemployment benefit, pensão social de velhice or PSI complement; OR households with annual income ≤ €5,808 + 50% per additional member without income (max 10 people). income_annual_max = €5,808 base household threshold.",
+    "income_annual_max": 6272.64,
+    "income_note": "Alternative income route: total annual household income <= 6,272.64 EUR, plus 50% (3,136.32) for each household member with no income, including the holder, up to 10 members (e.g. 2 members 9,408.96). Also automatic for recipients of CSI, RSI, unemployment benefits, child allowance, social invalidity pension/PSI complement, or social old-age pension. Contract in holder's name, permanent home, up to 6.9 kVA.",
     "requires_children": false,
     "nationality": "any_resident",
     "residency_months_min": null,
@@ -1412,9 +1412,9 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.dgeg.gov.pt",
+   "source_url": "https://www.dgeg.gov.pt/pt/areas-transversais/politicas-de-protecao-ao-consumidor-de-energia/tarifa-social-de-energia/quais-as-condicoes-de-atribuicao-da-tarifa-social-de-energia/",
    "source_snippet": "Em 2026, o desconto mantém-se em 33,8% por referência às tarifas transitórias do mercado regulado... A atribuição é, em regra, automática.",
-   "last_verified_at": "2026-08-12",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -1430,9 +1430,9 @@
    "amount_max": null,
    "amount_currency": "EUR",
    "amount_period": "monthly",
-   "amount_note": "~31.2% discount on regulated natural gas tariffs (2026) for economically vulnerable consumers in the lowest consumption tier.",
+   "amount_note": "ERSE 2026-27: social discount of 7.16 EUR/month in the example (about 31.2% off transitional tariffs) plus exemption from the gas special consumption tax.",
    "is_automatic": true,
-   "application_url": null,
+   "application_url": "https://www.dgeg.gov.pt/pt/areas-transversais/politicas-de-protecao-ao-consumidor-de-energia/tarifa-social-de-energia/",
    "application_channel": "automatic",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -1448,8 +1448,8 @@
     "statuses": [],
     "age_min": null,
     "age_max": null,
-    "income_annual_max": 5808,
-    "income_note": "Same economic-vulnerability criteria as the social electricity tariff: beneficiary of listed social benefits OR household annual income ≤ €5,808 + 50% per additional member without income (max 10).",
+    "income_annual_max": null,
+    "income_note": "No income route for gas: eligibility is based on receiving CSI, RSI, unemployment benefit, 1st-tier child allowance, or social invalidity pension/PSI complement. Contract in holder's name, permanent home, low pressure, up to 500 m3 per year.",
     "requires_children": false,
     "nationality": "any_resident",
     "residency_months_min": null,
@@ -1458,9 +1458,9 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.dgeg.gov.pt",
+   "source_url": "https://www.erse.pt/media/r3ibodbm/tarifa-social-gn-out2026.pdf",
    "source_snippet": "Em média, o desconto da tarifa social na sua fatura de gás natural em 2026 é de 31,2% (sem taxas e impostos).",
-   "last_verified_at": "2026-08-12",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -1481,7 +1481,7 @@
    "application_url": "https://www.fundoambiental.pt",
    "application_channel": "online",
    "deadline_type": "window",
-   "deadline_note": "Applications close when the available vouchers (c. 20,000 in the 2025 phase) are allocated.",
+   "deadline_note": "Ended: Vale Eficiencia 2nd phase beneficiary applications closed on 31 October 2024 (supplier/technical facilitator applications closed 31 July 2025); no new beneficiary window announced. Check Fundo Ambiental for successor schemes such as E-Lar.",
    "procedure_steps": [
     {
      "step": 1,
@@ -1520,9 +1520,9 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.fundoambiental.pt",
+   "source_url": "https://www.fundoambiental.pt/apoios-prr/c13-eficiencia-energetica-em-edificios/06c13-i01-programa-vale-eficiencia-ii.aspx",
    "source_snippet": "se for aprovada, receberá um vale de 1300 euros para melhorar a sua casa... As candidaturas encerram quando os 20.000 vales existentes forem distribuídos.",
-   "last_verified_at": "2026-08-12",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -1543,7 +1543,7 @@
    "application_url": "https://www.fundoambiental.pt",
    "application_channel": "online",
    "deadline_type": "window",
-   "deadline_note": "Calls open in phases while PRR funding lasts.",
+   "deadline_note": "Ended: the 1st call (Aviso 05/C13-i01/2023) closed on 31 October 2023 and its funding was exhausted/reinforced in 2025 for already-submitted applications; no new phase announced on the programme page. Check Fundo Ambiental for successors (e.g. E-Lar 2nd phase, open since 11 Dec 2025).",
    "procedure_steps": [
     {
      "step": 1,
@@ -1572,9 +1572,9 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.fundoambiental.pt",
+   "source_url": "https://www.fundoambiental.pt/apoios-prr/c13-eficiencia-energetica-em-edificios/05c13-i012023-paes-2023-1-aviso.aspx",
    "source_snippet": "Programa Edifícios Mais Sustentáveis (Fundo Ambiental) continua ativo em 2025, com comparticipações que cobrem até 85 % do investimento elegível; limite total: €7.500 por edifício unifamiliar.",
-   "last_verified_at": "2026-08-12",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -1590,9 +1590,9 @@
    "amount_max": null,
    "amount_currency": "EUR",
    "amount_period": "monthly",
-   "amount_note": "Monthly rent subsidy (a percentage of the rent, between 25% and 100% of the supported share depending on income) for young people aged 18-35 renting a permanent home; Porta 65+ variant covers other vulnerable households.",
+   "amount_note": "Monthly subsidy equal to a percentage of the rent (percentage set by income bracket in the official table); each approved application lasts 12 months, support lasts at most 5 years. Rent must not exceed the maximum reference rent of the municipality (RMR table 2026). Official page does not publish the percentage table as text.",
    "is_automatic": false,
-   "application_url": "https://www.portaldahabitacao.pt",
+   "application_url": "https://www.portaldahabitacao.pt/porta-65-jovem1",
    "application_channel": "online",
    "deadline_type": "rolling",
    "deadline_note": "Since June 2023 applications run continuously (no fixed windows).",
@@ -1649,9 +1649,9 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.portaldahabitacao.pt",
-   "source_snippet": "Desde junho de 2023, as candidaturas funcionam em contínuo... jovens entre os 18 e os 35 anos.",
-   "last_verified_at": "2026-08-12",
+   "source_url": "https://www.portaldahabitacao.pt/porta-65-jovem1",
+   "source_snippet": "Jovens isolados ou em coabitação com idade igual ou superior a 18 anos e igual ou inferior a 35 anos... O rendimento mensal corrigido do agregado não pode exceder quatro vezes a Retribuição Mínima Mensal Garantida",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -1667,9 +1667,9 @@
    "amount_max": null,
    "amount_currency": "EUR",
    "amount_period": "monthly",
-   "amount_note": "Landlords rent homes at least 20% below market reference values and get IRS/IRC exemption on rental income; tenants gain affordable rents with an effort rate capped by income band.",
+   "amount_note": "Programme renamed Programa de Apoio ao Arrendamento (PAA). Rent must be at least 20% below a reference value (area, INE median, typology, etc.); lease min 5 years (9 months for higher-education student housing); landlord gets IRS/IRC exemption on rent. Tenants: any person or group whose total income is below a programme maximum (students can apply if rent is paid by someone with income).",
    "is_automatic": false,
-   "application_url": "https://www.portaldahabitacao.pt",
+   "application_url": "https://paa.portaldahabitacao.pt/",
    "application_channel": "online",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -1689,9 +1689,9 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.portaldahabitacao.pt",
-   "source_snippet": "promove uma oferta alargada de habitação para arrendamento com rendas até 20% abaixo do valor de referência de mercado",
-   "last_verified_at": "2026-08-12",
+   "source_url": "https://www.portaldahabitacao.pt/arrendamento-acessivel",
+   "source_snippet": "O Programa de Apoio ao Arrendamento (PAA), com a anterior designação Programa de Arrendamento Acessível, ... confere isenção de IRS ou IRC para as rendas ... A renda deve ser pelo menos 20% inferior a um valor de referência",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -1749,7 +1749,7 @@
    "amount_period": "monthly",
    "amount_note": "Up to €200/month for tenant households with an effort rate above 35% and income below set limits; extended to the end of 2026 (confirm current status at the housing portal).",
    "is_automatic": false,
-   "application_url": "https://www.portaldahabitacao.pt",
+   "application_url": "https://www.portaldahabitacao.pt/apoio-extraordin%C3%A1rio-%C3%A0-renda",
    "application_channel": "online",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -1769,9 +1769,9 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.portaldahabitacao.pt",
-   "source_snippet": "Apoio Extraordinário à Renda: permite receber até 200€ por mês, para famílias com maior taxa de esforço, até ao final de 2026.",
-   "last_verified_at": "2026-08-12",
+   "source_url": "https://www.portaldahabitacao.pt/apoio-extraordin%C3%A1rio-%C3%A0-renda",
+   "source_snippet": "O apoio extraordinário à renda consiste num apoio financeiro mensal, não reembolsável, até ao limite máximo de 200€, que corresponde à diferença entre a taxa de esforço efetivamente suportada pelo agregado com a renda e uma taxa de esforço máxima de 35 %.",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -1789,7 +1789,7 @@
    "amount_period": "one_off",
    "amount_note": "Financial support to municipalities, IPSS, residents' associations and directly to families living in undignified housing conditions (overcrowding, insalubrity, precarity) for rehabilitation, acquisition or rental solutions.",
    "is_automatic": false,
-   "application_url": "https://www.portaldahabitacao.pt",
+   "application_url": "http://p1d.portaldahabitacao.pt/p1d/",
    "application_channel": "online",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -1809,9 +1809,9 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.portaldahabitacao.pt",
-   "source_snippet": "apoia famílias que vivem em condições indignas — precariedade, insalubridade, sobrelotação, inadequação face a necessidades específicas",
-   "last_verified_at": "2026-08-12",
+   "source_url": "https://www.portaldahabitacao.pt/1.%C2%BA-direito",
+   "source_snippet": "O 1.º Direito - Programa de Apoio ao Acesso à Habitação, visa apoiar a promoção de soluções habitacionais para pessoas que vivem em condições habitacionais indignas e que não dispõem de capacidade financeira para suportar o custo do acesso a uma habitação adequada.",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -1829,7 +1829,7 @@
    "amount_period": "one_off",
    "amount_note": "Full IMT + stamp duty exemption for buyers up to 35 years old on a first permanent home up to the 4th IMT tier (€316,772 in 2024, €324,058 in 2025, c. €330,500 in 2026); partial exemption above that up to the 8th tier; registration fees also waived.",
    "is_automatic": true,
-   "application_url": "https://www.portaldasfinancas.gov.pt",
+   "application_url": "https://info.portaldasfinancas.gov.pt/pt/apoio_contribuinte/IMT_Jovem/Pages/default.aspx",
    "application_channel": "automatic",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -1858,9 +1858,9 @@
     "income_source_url": "https://info.portaldasfinancas.gov.pt/pt/apoio_contribuinte/IMT_Jovem/Pages/default.aspx",
     "income_confidence": "medium"
    },
-   "source_url": "https://www.portaldasfinancas.gov.pt",
-   "source_snippet": "Ter 35 anos ou menos na data da escritura; Comprar a primeira habitação própria e permanente; limite do 4.º escalão do IMT (316.772 € em 2024, 324.058 € em 2025).",
-   "last_verified_at": "2026-08-12",
+   "source_url": "https://info.portaldasfinancas.gov.pt/pt/apoio_contribuinte/IMT_Jovem/Pages/default.aspx",
+   "source_snippet": "isenção em sede de IMT e em sede de IS (verba 1.1 da Tabela Geral do IS), para a primeira aquisição de prédio urbano ou de fração autónoma de prédio urbano destinado exclusivamente a habitação própria e permanente, por jovens com idade igual ou inferior a 35 anos.",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified",
    "income_reviewed_at": "2026-08-13"
   },
@@ -1877,20 +1877,20 @@
    "amount_max": null,
    "amount_currency": "EUR",
    "amount_period": "one_off",
-   "amount_note": "State personal guarantee covering up to 15% of the loan value so buyers up to 35 years old can finance 100% of the purchase of a first permanent home (price caps apply).",
+   "amount_note": "State personal guarantee of up to 15% of the initial loan principal so buyers aged 18-35 can finance 100% of the transaction value; guarantee lasts 10 years; property value capped at EUR 450,000.",
    "is_automatic": false,
-   "application_url": "https://www.portaldahabitacao.pt",
+   "application_url": "https://portugal.gov.pt/gc24/comunicacao/noticias/garantia-publica-o-que-e-e-como-funciona",
    "application_channel": "in_person",
-   "deadline_type": "rolling",
-   "deadline_note": null,
+   "deadline_type": "window",
+   "deadline_note": "Credit contracts must be formalised by 31 December 2026 to benefit from the public guarantee.",
    "procedure_steps": [],
    "documents_required": [],
    "eligibility": {
     "statuses": [],
-    "age_min": null,
+    "age_min": 18,
     "age_max": 35,
-    "income_annual_max": null,
-    "income_note": null,
+    "income_annual_max": 83696,
+    "income_note": "Income must not exceed the 8th IRS bracket: EUR 83,696 (2025 figure per Government page). Also: tax address in Portugal, no other residential property, first own permanent home, property value up to EUR 450,000, no tax/social-security debts; borrowers must still meet banks' risk criteria.",
     "requires_children": false,
     "nationality": "any_resident",
     "residency_months_min": null,
@@ -1899,10 +1899,10 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.portaldahabitacao.pt",
-   "source_snippet": "State guarantee of up to 15% of the transaction value enabling up to 100% financing for first-home buyers aged 35 or under.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://portugal.gov.pt/gc24/comunicacao/noticias/garantia-publica-o-que-e-e-como-funciona",
+   "source_snippet": "A garantia pode chegar até 15% do capital em dívida inicialmente contratado, com vista à obtenção de um financiamento a 100% do valor da transação.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "habitacao-social-lisboa",
@@ -1961,7 +1961,7 @@
    "amount_period": "monthly",
    "amount_note": "Monthly rent subsidy for households renting in Lisbon with an excessive effort rate; 8th edition open in 2026 with a minimum income of €6,000/year; payments renewed for 12 months (Mar 2026-Feb 2027).",
    "is_automatic": false,
-   "application_url": "https://www.lisboa.pt",
+   "application_url": "https://habitarlisboa.cm-lisboa.pt/ords/f?p=100:2",
    "application_channel": "online",
    "deadline_type": "window",
    "deadline_note": "Applications open in periodic editions; current payments run March 2026 to February 2027.",
@@ -1986,7 +1986,7 @@
    ],
    "eligibility": {
     "statuses": [],
-    "age_min": null,
+    "age_min": 18,
     "age_max": null,
     "income_annual_max": 35000,
     "income_note": "9th edition (2026): annual household income must be ≥ €6,000 and ≤ €35,000 (1 person) or €45,000 (2 people) + €5,000 per additional dependant (income_annual_max = 1-person ceiling); rent effort rate ≥ 30%; rent caps by typology (T0 €600 – T4 €1,550).",
@@ -2000,9 +2000,9 @@
     ],
     "gender": "any"
    },
-   "source_url": "https://www.lisboa.pt",
-   "source_snippet": "o Subsídio Municipal ao Arrendamento Acessível (SMAA) entra na sua 8.ª edição, com um rendimento mínimo de 6.000€ para acesso ao apoio",
-   "last_verified_at": "2026-08-12",
+   "source_url": "https://informacoeseservicos.lisboa.pt/servicos/detalhe/subsidio-municipal-ao-arrendamento-acessivel-smaa",
+   "source_snippet": "Residentes em território nacional com título de residência válido, com idade igual ou superior a 18 anos, que aufiram rendimentos devidamente comprovados.",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -2014,24 +2014,24 @@
    "funder": "Governo Regional da Madeira (IVHM)",
    "category": "housing",
    "benefit_type": "cash_monthly",
-   "amount_min": null,
-   "amount_max": null,
+   "amount_min": 25,
+   "amount_max": 250,
    "amount_currency": "EUR",
    "amount_period": "monthly",
-   "amount_note": "Renewable financial support for tenant households in the Autonomous Region of Madeira; open all year.",
+   "amount_note": "Rental modality: monthly support of EUR 25-250 (limited to 2/3 of the rent), plus EUR 50 bonuses (households up to 35, disability >=60%, domestic-violence victims, ex-IHM social-housing tenants, large families). Max rent EUR 850 (1 person) to EUR 1,250 (4+). Acquisition modality: 10% of price up to EUR 15,000 (up to EUR 20,000 with bonuses).",
    "is_automatic": false,
-   "application_url": "https://www.madeira.gov.pt",
+   "application_url": "https://www.ihm.pt/pt/prahabitar-programa-de-apoio-a-aquisicao-e-ao-arrendamento-de-habitacao",
    "application_channel": "in_person",
    "deadline_type": "rolling",
-   "deadline_note": null,
+   "deadline_note": "Applications are open all year (no fixed periods); rental support is renewed annually on request.",
    "procedure_steps": [],
    "documents_required": [],
    "eligibility": {
     "statuses": [],
-    "age_min": null,
+    "age_min": 18,
     "age_max": null,
-    "income_annual_max": null,
-    "income_note": null,
+    "income_annual_max": 48341.7,
+    "income_note": "Rental modality: gross annual household income between 12 and 90 IAS (EUR 6,445.56 to EUR 48,341.70 at IAS 2026 EUR 537.13); acquisition modality: between 20 and 70 regional minimum wages. No household member may own housing suitable as permanent home.",
     "requires_children": false,
     "nationality": "any_resident",
     "residency_months_min": null,
@@ -2042,9 +2042,9 @@
     ],
     "gender": "any"
    },
-   "source_url": "https://www.madeira.gov.pt",
-   "source_snippet": "Madeira: o programa PRAHABITAR continua disponível durante todo o ano, com um apoio financeiro renovável para arrendatários.",
-   "last_verified_at": "2026-08-12",
+   "source_url": "https://www.ihm.pt/pt/prahabitar-programa-de-apoio-a-aquisicao-e-ao-arrendamento-de-habitacao",
+   "source_snippet": "Aufiram rendimentos anuais brutos entre 12 e 90 IAS - Indexante de Apoios Sociais em vigor; ... O montante do apoio tem como valor mínimo 25€ e valor máximo 250€",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -2128,7 +2128,7 @@
     "age_min": null,
     "age_max": 35,
     "income_annual_max": null,
-    "income_note": "Exempt income capped at 55xIAS; excluded if taxpayer benefited from RNH, IFICI or the Regressar regime.",
+    "income_note": "Option exercised in the Modelo 3 IRS return. Not cumulative with the RNH or Regressar (art. 12.º-A) regimes. Exempt-income cap (55 x IAS = EUR 29,542.15 for IAS 2026 EUR 537.13) per record; cap figure not re-checked on this AT FAQ page.",
     "requires_children": false,
     "nationality": "any_resident",
     "residency_months_min": null,
@@ -2137,9 +2137,9 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://info.portaldasfinancas.gov.pt/pt/apoio_ao_contribuinte/Cidadaos/Rendimentos/Declaracao/Deducoes_beneficios_taxas/Paginas/default.aspx",
-   "source_snippet": "100 % de isenção no 1.º ano; 75 % entre o 2.º e o 4.º ano; 50 % do 5.º ao 7.º ano; 25 % do 8.º ao 10.º ano; limite de 55 x IAS (28 737,50 € em 2025).",
-   "last_verified_at": "2026-08-12",
+   "source_url": "https://info.portaldasfinancas.gov.pt/pt/apoio_contribuinte/questoes_frequentes/pages/faqs-00053.aspx",
+   "source_snippet": "Beneficiam de uma isenção de IRS, os rendimentos auferidos por sujeito passivo até 35 anos, que não seja considerado dependente, nos dez primeiros anos de obtenção de rendimentos do trabalho, mediante opção na declaração de rendimentos... A isenção é total ou parcial, consoante o ano de obtenção dos rendimentos.",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -2155,7 +2155,7 @@
    "amount_max": 800,
    "amount_currency": "EUR",
    "amount_period": "annual",
-   "amount_note": "30% of education and training expenses deducted from IRS up to a general cap of €800/year per household (higher for displaced students' rent, up to €1,000).",
+   "amount_note": "30% of education and training expenses (incl. creches, schools, textbooks, school meals) deducted from IRS, global cap EUR 800 per household. Rent for a displaced student aged up to 25 studying more than 50 km from the family home: up to EUR 400/year deductible, with the global cap raised by EUR 300 for that rent.",
    "is_automatic": true,
    "application_url": "https://www.portaldasfinancas.gov.pt",
    "application_channel": "automatic",
@@ -2183,10 +2183,10 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://info.portaldasfinancas.gov.pt",
-   "source_snippet": "Education expenses deducted at 30% up to €800 per household per year (CIRS art. 78-D).",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://info.portaldasfinancas.gov.pt/pt/informacao_fiscal/codigos_tributarios/cirs_rep/Pages/irs78d.aspx",
+   "source_snippet": "é dedutível um montante correspondente a 30 % do valor suportado a título de despesas de formação e educação, incluindo formação profissional, por qualquer membro do agregado familiar, com o limite global de 800 €",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "deducao-irs-saude",
@@ -2201,7 +2201,7 @@
    "amount_max": 1000,
    "amount_currency": "EUR",
    "amount_period": "annual",
-   "amount_note": "15% of health expenses (and 30% of the VAT portion where applicable for VAT-exempt services with prescription) deducted from IRS up to €1,000/year per household.",
+   "amount_note": "15% of health expenses (invoices with exempt/reduced VAT from health-sector providers, health insurance premiums, user charges at public facilities) deducted from IRS, up to EUR 1,000 per household. Normal-VAT invoices count only with a medical prescription.",
    "is_automatic": true,
    "application_url": "https://www.portaldasfinancas.gov.pt",
    "application_channel": "automatic",
@@ -2229,10 +2229,10 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://info.portaldasfinancas.gov.pt",
-   "source_snippet": "Health expenses deducted at 15% up to €1,000 per household per year (CIRS art. 78-C).",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://info.portaldasfinancas.gov.pt/pt/informacao_fiscal/codigos_tributarios/cirs_rep/Pages/irs78c.aspx",
+   "source_snippet": "é dedutível um montante correspondente a 15 % do valor suportado a título de despesas de saúde por qualquer membro do agregado familiar, com o limite global de (euro) 1 000",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "deducao-irs-rendas",
@@ -2244,10 +2244,10 @@
    "category": "tax",
    "benefit_type": "tax_credit",
    "amount_min": null,
-   "amount_max": 502,
+   "amount_max": 900,
    "amount_currency": "EUR",
    "amount_period": "annual",
-   "amount_note": "15% of rent paid on a permanent home deducted from IRS up to €502/year (general cap; higher for lower incomes).",
+   "amount_note": "15% of rent paid for a permanent home (registered lease) deducted from IRS. General limit raised from EUR 800 (Lei 36/2024): EUR 900 for 2026 income, EUR 1,000 from 2027; higher limits (up to EUR 1,100 when fully phased in, 50% phase-in 2025, 75% 2026) apply to low taxable incomes. The record's EUR 502 limit is outdated.",
    "is_automatic": true,
    "application_url": "https://www.portaldasfinancas.gov.pt",
    "application_channel": "automatic",
@@ -2275,10 +2275,10 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://info.portaldasfinancas.gov.pt",
-   "source_snippet": "Rent for permanent housing deducted at 15% up to €502 per year (CIRS art. 78-F).",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://info.portaldasfinancas.gov.pt/pt/informacao_fiscal/codigos_tributarios/cirs_rep/Pages/irs78e.aspx",
+   "source_snippet": "O limite a que se refere a alínea a) do n.º 1 é elevado para 1000,00 €... aplica-se a partir do ano de 2027, inclusive, aplicando-se no ano de 2026 o limite de 900,00 €.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "imi-familiar",
@@ -2289,11 +2289,11 @@
    "funder": "Autoridade Tributária e Aduaneira / Municípios",
    "category": "tax",
    "benefit_type": "tax_credit",
-   "amount_min": 20,
-   "amount_max": 70,
+   "amount_min": 30,
+   "amount_max": 140,
    "amount_currency": "EUR",
    "amount_period": "annual",
-   "amount_note": "Fixed reduction of the municipal property tax (IMI) for owner-occupied homes with dependent children: €20 (1 child), €40 (2), €70 (3+), where the municipality opts in.",
+   "amount_note": "Fixed IMI reduction ('IMI Familiar') for the household's permanent home, by number of dependants: EUR 30 (1), EUR 70 (2), EUR 140 (3 or more), where the municipality adopts it. Per AT 2024 leaflet; the record's EUR 20/40/70 was wrong.",
    "is_automatic": true,
    "application_url": "https://www.portaldasfinancas.gov.pt",
    "application_channel": "automatic",
@@ -2321,10 +2321,10 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://info.portaldasfinancas.gov.pt",
-   "source_snippet": "Fixed IMI reduction per dependent for permanent owner-occupied homes (IMI familiar).",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://info.portaldasfinancas.gov.pt/pt/apoio_contribuinte/Folhetos_informativos/Documents/SFP_Taxas_2024.pdf",
+   "source_snippet": "NÚMERO DE DEPENDENTES A CARGO DEDUÇÃO FIXA (em €). 1. 30. 2. 70. 3 ou mais. 140",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "ifici-rnh",
@@ -2341,7 +2341,7 @@
    "amount_period": "annual",
    "amount_note": "20% flat IRS rate on net employment/professional income for new tax residents in qualified research, teaching and high-value-added activities, for 10 years. The old RNH regime is closed to new applicants since 2024.",
    "is_automatic": false,
-   "application_url": "https://www.portaldasfinancas.gov.pt",
+   "application_url": "https://info.portaldasfinancas.gov.pt/pt/informacao_fiscal/codigos_tributarios/bf_rep/Pages/EBF58A.aspx",
    "application_channel": "online",
    "deadline_type": "annual",
    "deadline_note": "Registration deadlines apply after becoming a tax resident.",
@@ -2364,9 +2364,9 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.portaldasfinancas.gov.pt",
-   "source_snippet": "O regime do Residente Não Habitual (RNH) está a ser gradualmente substituído pelo IFICI... aplica uma taxa reduzida de 20%.",
-   "last_verified_at": "2026-08-12",
+   "source_url": "https://info.portaldasfinancas.gov.pt/pt/informacao_fiscal/codigos_tributarios/bf_rep/Pages/EBF58A.aspx",
+   "source_snippet": "O sujeito passivo que cumpra os requisitos previstos no número anterior pode ser tributado, em sede de IRS, à taxa especial de 20 % sobre os rendimentos líquidos das categorias A e B auferidos no âmbito das atividades referidas, durante um prazo de 10 anos consecutivos",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -2451,10 +2451,10 @@
    "category": "education",
    "benefit_type": "cash_monthly",
    "amount_min": null,
-   "amount_max": null,
+   "amount_max": 161.14,
    "amount_currency": "EUR",
    "amount_period": "monthly",
-   "amount_note": "Monthly accommodation supplement for grant-holding students studying away from home, towards actual lodging costs up to a regulatory cap (€342.50/month in 2025/26 reference).",
+   "amount_note": "Monthly supplement for displaced grant-holders: in SAS residences equal to the rent actually paid up to 17.5% of IAS (EUR 94.00 at IAS 2026 EUR 537.13); if residence was requested but not obtained, actual lodging cost up to 30% of IAS (EUR 161.14). One extra month possible. The record's EUR 342.50 cap was wrong.",
    "is_automatic": false,
    "application_url": "https://www.dges.gov.pt",
    "application_channel": "online",
@@ -2469,17 +2469,17 @@
     "income_annual_max": 24035,
     "income_note": "Requires a DGES study grant as a displaced student: same income rule — per capita household income < 23×IAS = €12,017.50/year (2025/26); income_annual_max = 2-person household equivalent (€24,035).",
     "requires_children": false,
-    "nationality": "any_resident",
+    "nationality": "citizen_or_pr",
     "residency_months_min": null,
     "housing_tenure": "renting",
     "student_required": true,
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.dges.gov.pt",
-   "source_snippet": "Accommodation supplement paid to displaced scholarship students on top of the DGES grant.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www.dges.gov.pt/pt/pagina/complemento-de-alojamento-publico",
+   "source_snippet": "beneficiam de um complemento igual ao valor do encargo efetivamente pago pelo alojamento e comprovado por recibo, até ao limite de 30% do IAS (artigo 19.º, n.º 2).",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "mais-superior",
@@ -2534,9 +2534,9 @@
    "amount_max": null,
    "amount_currency": "EUR",
    "amount_period": "annual",
-   "amount_note": "Merit scholarship for higher-education students with exceptional grades, regardless of income; amount fixed annually by government order.",
+   "amount_note": "Merit scholarships are awarded by public and private higher-education institutions (not by DGES directly) to students with exceptional academic performance, regardless of income; amount and criteria follow Despacho 13531/2009 as amended.",
    "is_automatic": false,
-   "application_url": "https://www.dges.gov.pt",
+   "application_url": "https://www.dges.gov.pt/en/pagina/merit-grants",
    "application_channel": "online",
    "deadline_type": "annual",
    "deadline_note": null,
@@ -2546,8 +2546,8 @@
     "statuses": [],
     "age_min": null,
     "age_max": null,
-    "income_annual_max": 8280,
-    "income_note": "Household annual gross income must be ≤ 9× the national minimum wage (SMN €920 in 2026) = €8,280/year, plus grade average ≥ 16.",
+    "income_annual_max": null,
+    "income_note": "Official page: merit scholarships are awarded to students with exceptional performance regardless of income. No income cap is published (the EUR 8,280 cap and grade >=16 in the record are not on the official page).",
     "requires_children": false,
     "nationality": "any_resident",
     "residency_months_min": null,
@@ -2556,10 +2556,10 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.dges.gov.pt",
-   "source_snippet": "Merit-based scholarship for students with outstanding academic performance in higher education.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www.dges.gov.pt/en/pagina/merit-grants",
+   "source_snippet": "Merit scholarships are awarded by Public and Private Higher Education Institutions to students with exceptional performance, regardless of their income",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "acao-social-escolar",
@@ -2625,7 +2625,7 @@
    "application_url": "https://manuaisescolares.pt",
    "application_channel": "online",
    "deadline_type": "annual",
-   "deadline_note": "Vouchers issued each school year; deadlines per school year.",
+   "deadline_note": "2026/27 school year: vouchers available from 3 August (years 1-4), 10 August (years 5-9) and 13 August (secondary and other training offers); guardians register on manuaisescolares.pt or the Edu Rede Escolar app.",
    "procedure_steps": [],
    "documents_required": [],
    "eligibility": {
@@ -2643,9 +2643,9 @@
     "gender": "any"
    },
    "source_url": "https://manuaisescolares.pt",
-   "source_snippet": "State programme providing free textbooks to all pupils via MEGA vouchers redeemed in bookshops.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_snippet": "A partir do dia 3 de agosto para os alunos dos seguintes anos de escolaridade: 1º Ciclo: 1º, 2º, 3º e 4º anos; A partir do dia 10 de agosto ... 2º Ciclo ... 3º Ciclo; A partir do dia 13 de agosto ... Secundário",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "bolsas-estudo-lisboa",
@@ -2704,10 +2704,10 @@
    "amount_period": "annual",
    "amount_note": "Reimbursement of up to €750 per candidate per 12-month period for digital-skills training (AI, cybersecurity, programming, digital marketing) delivered by DGERT-certified providers; paid after course completion.",
    "is_automatic": false,
-   "application_url": "https://iefponline.iefp.pt",
+   "application_url": "https://www.iefp.pt/cheque-formacao-digital",
    "application_channel": "online",
-   "deadline_type": "window",
-   "deadline_note": "Current phase: courses must be completed by 30 June 2026; check IEFP for reopening.",
+   "deadline_type": "none",
+   "deadline_note": "Ended: IEFP page marks 'Candidaturas Encerradas'; training had to be completed by 30 June 2026 (PRR Emprego + Digital 2025). No reopening announced.",
    "procedure_steps": [
     {
      "step": 1,
@@ -2754,9 +2754,9 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.iefp.pt",
-   "source_snippet": "O apoio pode atingir um valor máximo de 750 euros por candidato e por ano... candide-se até 30 de junho de 2026.",
-   "last_verified_at": "2026-08-12",
+   "source_url": "https://www.iefp.pt/cheque-formacao-digital",
+   "source_snippet": "Candidatura (Candidaturas Encerradas) ... sendo de atender como a data de limite máximo para a conclusão da formação 30-06-2026.",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -2768,16 +2768,16 @@
    "funder": "IEFP, I.P.",
    "category": "employment",
    "benefit_type": "cash_monthly",
-   "amount_min": null,
-   "amount_max": null,
+   "amount_min": 913.12,
+   "amount_max": 1396.54,
    "amount_currency": "EUR",
    "amount_period": "monthly",
-   "amount_note": "9-month paid internships for unemployed young people (and career changers): IEFP co-funds the internship allowance (65% to 100% of 1 IAS, plus meal and insurance contributions) paid by the host entity.",
+   "amount_note": "IEFP professional internships are now Estágios INICIAR (QNQ levels 4-5; monthly bolsa EUR 913.12 / 966.83 gross) and Estágios +Talento (levels 6-8; EUR 1,181.69 / 1,289.11 / 1,396.54 gross), 6 months (12 for people with disability), plus meal allowance EUR 6.15/day; IEFP pays 65-80% of the bolsa to the host entity. 'Ativar.pt' is not named on the IEFP page.",
    "is_automatic": false,
-   "application_url": "https://www.iefp.pt",
+   "application_url": "https://iefponline.iefp.pt/",
    "application_channel": "online",
-   "deadline_type": "rolling",
-   "deadline_note": null,
+   "deadline_type": "window",
+   "deadline_note": "Employer application window for 2026 ran 10 February to 30 July 2026 (closed); windows are set yearly by IEFP.",
    "procedure_steps": [
     {
      "step": 1,
@@ -2791,7 +2791,7 @@
      "unemployed",
      "jobseeker"
     ],
-    "age_min": null,
+    "age_min": 18,
     "age_max": 35,
     "income_annual_max": null,
     "income_note": "Internship allowance indexed to the IAS.",
@@ -2803,10 +2803,10 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.iefp.pt",
-   "source_snippet": "IEFP internship measure (Ativar.pt) co-funding internship allowances for registered unemployed.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www.iefp.pt/estagios",
+   "source_snippet": "Desempregados inscritos no IEFP, com uma qualificação de nível 4 ou 5 do Quadro Nacional de Qualificações (QNQ) e ter uma das seguintes condições: Idade entre 18 e 35 anos;",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "contrato-emprego",
@@ -2817,16 +2817,16 @@
    "funder": "IEFP, I.P.",
    "category": "employment",
    "benefit_type": "cash_one_off",
-   "amount_min": null,
-   "amount_max": null,
+   "amount_min": 6445.56,
+   "amount_max": 23204.02,
    "amount_currency": "EUR",
    "amount_period": "one_off",
-   "amount_note": "Financial support to employers hiring registered unemployed on permanent or fixed-term contracts (exemption/reduction of employer social-security contributions and/or cash premium), with higher support for disadvantaged groups.",
+   "amount_note": "Employer hiring support now under Medida +Emprego: EUR 6,445.56 (12 x IAS 2026) for a full-time permanent contract with a registered unemployed person, +35% per bonus (up to 4: disability, age <=35, long-term unemployed, under-represented gender, interior territory) = max EUR 15,469.34. Emprego +Talento (graduates up to 35): EUR 9,668.34 base (18 x IAS), max EUR 23,204.02. Paid in three instalments over 24 months.",
    "is_automatic": false,
-   "application_url": "https://www.iefp.pt",
+   "application_url": "https://iefponline.iefp.pt/",
    "application_channel": "online",
    "deadline_type": "window",
-   "deadline_note": "Applications by the employer, within set periods after the contract starts.",
+   "deadline_note": "Applications open 15 July 2026 to 15 December 2026 (or until budget exhausted); employer must apply within 30 days of registering the job offer on iefponline.",
    "procedure_steps": [],
    "documents_required": [],
    "eligibility": {
@@ -2846,10 +2846,10 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.iefp.pt",
-   "source_snippet": "IEFP hiring-incentive measure supporting permanent contracts for registered unemployed (Contrato-Emprego).",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www.iefp.pt/apoios-a-contratacao",
+   "source_snippet": "Pode receber um apoio financeiro no valor de 6.445,56 €, o equivalente a 12 vezes o valor do Indexante dos Apoios Sociais (IAS).",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "formacao-profissional-iefp",
@@ -2906,7 +2906,7 @@
    "amount_period": "one_off",
    "amount_note": "Free recognition, validation and certification of competences (RVCC) and adult education courses allowing adults to complete the 4th, 6th, 9th or 12th year of schooling or vocational qualifications.",
    "is_automatic": false,
-   "application_url": "https://www.qualifica.gov.pt",
+   "application_url": "https://www.qualifica.gov.pt/index.html#/pesquisaCentros",
    "application_channel": "in_person",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -2914,7 +2914,7 @@
    "documents_required": [],
    "eligibility": {
     "statuses": [],
-    "age_min": null,
+    "age_min": 18,
     "age_max": null,
     "income_annual_max": null,
     "income_note": null,
@@ -2926,9 +2926,9 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.qualifica.gov.pt",
-   "source_snippet": "o processo RVCC... disponível nos Centros Qualifica, permite obter equivalência ao 4.º, 6.º ou 9.º ano de escolaridade.",
-   "last_verified_at": "2026-08-12",
+   "source_url": "https://www.qualifica.gov.pt/index.html",
+   "source_snippet": "Os Centros Qualifica são centros especializados em qualificação de adultos, vocacionados para a orientação e o encaminhamento para ofertas de educação e formação profissional de adultos com idade igual ou superior a 18 anos que procuram uma certificação escolar ou profissional",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -2941,12 +2941,12 @@
    "category": "employment",
    "benefit_type": "cash_one_off",
    "amount_min": null,
-   "amount_max": null,
+   "amount_max": 20000,
    "amount_currency": "EUR",
    "amount_period": "one_off",
-   "amount_note": "Small loans (microcredit) with technical support for unemployed people and low-income entrepreneurs to create their own job or micro-business.",
+   "amount_note": "Programa Nacional de Microcrédito (MICROINVEST): bank loan up to EUR 20,000 for investments up to EUR 20,000 with state guarantee and interest subsidy (5 years, 2 years capital grace), plus free technical support; for people with difficulty accessing the labour market and at risk of exclusion, or micro-entities/cooperatives up to 10 staff. Priority for unemployed aged 16-34 registered 4+ months.",
    "is_automatic": false,
-   "application_url": "https://www.iefp.pt",
+   "application_url": "https://www.iefp.pt/empreendedorismo",
    "application_channel": "in_person",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -2958,7 +2958,7 @@
      "jobseeker",
      "self_employed"
     ],
-    "age_min": null,
+    "age_min": 16,
     "age_max": null,
     "income_annual_max": null,
     "income_note": null,
@@ -2970,10 +2970,10 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.iefp.pt",
-   "source_snippet": "Microcredit lines supporting business creation by unemployed people and vulnerable entrepreneurs (IEFP/ANDC partnerships).",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www.iefp.pt/empreendedorismo",
+   "source_snippet": "É concedida prioridade nos casos em que as pessoas tenham idade entre os 16 e os 34 anos e sejam desempregadas inscritas no centro de emprego e formação profissional há pelo menos 4 meses.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "investe-jovem",
@@ -3027,36 +3027,40 @@
    "funder": "IAPMEI / StartUP Portugal",
    "category": "business",
    "benefit_type": "cash_monthly",
-   "amount_min": null,
-   "amount_max": null,
+   "amount_min": 900,
+   "amount_max": 900,
    "amount_currency": "EUR",
    "amount_period": "monthly",
-   "amount_note": "Monthly grant (c. €700) over up to 12 months for aspiring entrepreneurs developing a business idea, plus incubation support.",
+   "amount_note": "StartUP Voucher Innovate 2025-2026: monthly bolsa of EUR 900 (max 2 bolsas per project) over a 9-month, three-phase path, plus EUR 1,500 interim prizes at the start of phases 2 and 3 and a EUR 2,000 completion prize after creating own employment; incubation and mentoring included.",
    "is_automatic": false,
-   "application_url": "https://www.iapmei.pt",
+   "application_url": "https://www.iapmei.pt/pt/saber-mais/empreendedorismo-e-inovacao/empreendedorismo/startup-voucher-innovate-2025-2026/",
    "application_channel": "online",
    "deadline_type": "window",
-   "deadline_note": "Calls open periodically on the IAPMEI portal.",
+   "deadline_note": "Aviso 2026-01: applications closed (Candidaturas encerradas). Calls open periodically on the IAPMEI portal.",
    "procedure_steps": [],
    "documents_required": [],
    "eligibility": {
     "statuses": [],
     "age_min": 18,
-    "age_max": null,
+    "age_max": 29,
     "income_annual_max": null,
-    "income_note": null,
+    "income_note": "Candidates must be graduates not studying, in training or working, with no other income, with tax domicile in NUTS II Norte, Centro or Alentejo, and a project at idea stage.",
     "requires_children": false,
     "nationality": "any_resident",
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": [],
+    "admin_areas": [
+     "Norte",
+     "Centro",
+     "Alentejo"
+    ],
     "gender": "any"
    },
-   "source_url": "https://startupportugal.com",
-   "source_snippet": "Entrepreneurship grant for teams developing a new business idea (StartUP Voucher, StartUP Portugal).",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www.iapmei.pt/pt/saber-mais/empreendedorismo-e-inovacao/empreendedorismo/startup-voucher-innovate-2025-2026/",
+   "source_snippet": "Jovens até aos 29 anos, licenciados ou com grau superior, que não estejam a estudar, em formação, a trabalhar e que não tenham outras fontes de rendimento. Bolsa mensal no valor de 900€ (até ao máximo de 2 bolsas/projeto).",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "sifide",
@@ -3071,12 +3075,12 @@
    "amount_max": null,
    "amount_currency": "EUR",
    "amount_period": "annual",
-   "amount_note": "Tax credit on corporate R&D expenditure: 32.5% base rate on current expenses plus up to 50% incremental rate, deducted from IRC.",
+   "amount_note": "Tax deduction from IRC: base rate 32.5% of eligible R&D expenses plus an incremental rate of 50% of the increase versus the average of the previous two years, incremental up to EUR 1.5 million (up to 82.5% of R&D investment recoverable). PhD staff costs count at 120%.",
    "is_automatic": false,
-   "application_url": "https://www.ani.pt",
+   "application_url": "https://sifide.ani.pt/PortalResponsavel/LoginEntry.aspx",
    "application_channel": "online",
    "deadline_type": "annual",
-   "deadline_note": null,
+   "deadline_note": "Application must be submitted by the end of the fifth month of the year following the fiscal year (end of May).",
    "procedure_steps": [],
    "documents_required": [],
    "eligibility": {
@@ -3093,10 +3097,10 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.ani.pt",
-   "source_snippet": "Fiscal incentive system crediting business R&D expenses against corporate income tax (SIFIDE II).",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://ani.pt/en/sifide-system-of-tax-incentives-for-business-rd/",
+   "source_snippet": "SIFIDE offers a base rate for tax deduction from taxable income of 32.5% of R&D expenses. In addition, an incremental rate of 50% of the increase in this expense compared to the average of the previous two years is applied, up to a limit of €1.5 million.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "portugal-2030-incentivos-pme",
@@ -3113,10 +3117,10 @@
    "amount_period": "one_off",
    "amount_note": "EU-co-funded grants for SME investment in innovation, digitalisation, internationalisation and energy transition, with non-repayable components up to set intensity rates.",
    "is_automatic": false,
-   "application_url": "https://portugal2030.pt",
+   "application_url": "https://compete2030.gov.pt/avisos/",
    "application_channel": "online",
    "deadline_type": "window",
-   "deadline_note": "Calls (avisos) open per region/theme throughout the programming period.",
+   "deadline_note": "Calls (avisos) open on Balcao 2030 with fixed deadlines. As of 2026-10-05 open: SICE Inovacao Produtiva (Mpr-2026-6) to 30/10/2026; SICE Rede de Fornecedores (MPr-2026-8) to 30/12/2026; SIID Internacionalizacao de I&D (MPr-2026-4) and SIID I&D Empresarial Demonstradores (MPr-2026-7) to 29/12/2026.",
    "procedure_steps": [],
    "documents_required": [],
    "eligibility": {
@@ -3133,10 +3137,10 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://portugal2030.pt",
-   "source_snippet": "European-funds incentive schemes for company modernisation and innovation under Portugal 2030.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://compete2030.gov.pt/avisos/",
+   "source_snippet": "SICE - Inovação Produtiva: Mpr-2026-6, 30/10/2026, beneficiários: PME, nos territórios de baixa densidade e nos outros territórios",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "pepac-jovem-agricultor",
@@ -3147,16 +3151,16 @@
    "funder": "Estado / Autoridade de Gestão do PEPAC (ex-IFAP)",
    "category": "business",
    "benefit_type": "cash_one_off",
-   "amount_min": null,
-   "amount_max": 70000,
+   "amount_min": 25000,
+   "amount_max": 55000,
    "amount_currency": "EUR",
    "amount_period": "one_off",
-   "amount_note": "Installation premium for young farmers (18-40) setting up an agricultural holding; premium amounts vary by call (up to c. €70,000 depending on project type and region).",
+   "amount_note": "Fixed amount of EUR 25,000, plus EUR 25,000 if the young farmer installs on an exclusive basis, plus EUR 5,000 if the holding is in a vulnerable territory (max EUR 55,000, before adjustments).",
    "is_automatic": false,
-   "application_url": "https://www.agricultura.gov.pt",
+   "application_url": "https://pepacc.pt/concursos/premio-instalacao-jovens-agricultores-1o-concurso-4o-periodo/",
    "application_channel": "online",
    "deadline_type": "window",
-   "deadline_note": "Applications during published PEPAC calls.",
+   "deadline_note": "No call open as of 2026-10-05. The latest notice (C.2.2.1, 1st competition, 4th period) ran 5 Sep - 30 Dec 2025; no 2026 call for this prize is listed on pepacc.pt. Watch pepacc.pt for the next notice.",
    "procedure_steps": [],
    "documents_required": [],
    "eligibility": {
@@ -3173,10 +3177,10 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.agricultura.gov.pt",
-   "source_snippet": "Installation support for young farmers under the PEPAC (Common Agricultural Policy strategic plan).",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://pepacc.pt/concursos/premio-instalacao-jovens-agricultores-1o-concurso-4o-periodo/",
+   "source_snippet": "O apoio a conceder ... assume a forma de montante fixo no valor de 25.000 euros, acrescido dos seguintes montantes: 25.000 euros, no caso do jovem se instalar em regime de exclusividade; 5.000 euros ... territórios vulneráveis",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "cheque-dentista",
@@ -3230,9 +3234,9 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.dgs.pt",
+   "source_url": "https://www.sns.gov.pt/noticias/2023/12/12/governo-reforca-saude-oral-ao-longo-do-ciclo-de-vida/",
    "source_snippet": "O valor de cada cheque, em 2026, corresponde a 45 euros... crianças, grávidas, idosos beneficiários do CSI e doentes com patologias específicas.",
-   "last_verified_at": "2026-08-12",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {

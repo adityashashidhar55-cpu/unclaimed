@@ -23,7 +23,7 @@ import { fileURLToPath } from 'node:url';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const LANGS = ['fr', 'de', 'es', 'it', 'pt', 'hi'];
-const SOURCES = ['src/app.js', 'src/pwa/startup-check.js'];
+const SOURCES = ['src/app.js', 'src/pwa/startup-check.js', 'src/pwa/email-result.js'];
 
 let pass = 0;
 let fail = 0;

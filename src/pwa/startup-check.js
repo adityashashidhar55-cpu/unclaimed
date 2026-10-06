@@ -38,6 +38,7 @@ import { track } from '../beacon.js';
 import { bindCheckout } from './app/checkout.js';
 import { T, translateTree, NUM, wizardLang, localePath, setHTML } from './wizard-i18n.js';
 import { utmQuery } from './share-link.js';
+import { emailResultCard, bindEmailResult } from './email-result.js';
 
 const $ = (s) => document.querySelector(s);
 const esc = (s) =>
@@ -532,8 +533,10 @@ function viewResult() {
       T('Anyone with that link sees the answers you gave — where the company is registered, its stage, its headcount and its turnover.'),
     )}</p>
 
+    ${emailResultCard('company')}
+
     <p class="tiny" style="margin-top:1.6rem;max-width:70ch">${esc(
-      T('This ran entirely in your browser. Your stage, headcount, turnover and every other detail you gave stayed on this device and were never sent anywhere — which is also why nothing was saved; sign in to keep it. The only thing that leaves this device is an anonymous, cookieless note of which country you checked and which screen you reached, so we can see where people get stuck — see /trust/.'),
+      T('This ran entirely in your browser. Your stage, headcount, turnover and every other detail you gave stayed on this device and were never sent anywhere — which is also why nothing was saved; sign in to keep it. The one exception: if you ask us to email you the result, we keep your email address and answers to send it. The only thing that leaves this device is an anonymous, cookieless note of which country you checked and which screen you reached, so we can see where people get stuck — see /trust/.'),
     )}</p>
 
     <div class="card no-print" style="margin-top:1.6rem;border-style:dashed">
@@ -737,6 +740,8 @@ async function compute() {
   S.result = matchStartup(S.profile, S.pools, Date.now());
   render();
 }
+
+bindEmailResult({ audience: 'company', getProfile: () => S.profile });
 
 document.addEventListener('click', async (ev) => {
   const el = ev.target.closest('[data-act], [data-field]');

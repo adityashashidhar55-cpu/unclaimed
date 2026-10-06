@@ -19,20 +19,20 @@
       "amount_period": "monthly",
       "amount_note": "2026: da 58,30 euro per figlio minorenne (ISEE pari o superiore a 46.582,71 o assente) a 203,80 euro (ISEE fino a 17.468,51); maggiorazioni per figli oltre il secondo, madri under 21, disabilita', nuclei numerosi e genitori lavoratori",
       "is_automatic": false,
-      "application_url": "https://www.inps.it",
+      "application_url": "https://www.inps.it/it/it/dettaglio-scheda.it.schede-servizio-strumento.schede-servizi.assegno-unico-e-universale-per-i-figli-a-carico-55984.assegno-unico-e-universale-per-i-figli-a-carico.html",
       "application_channel": "online",
       "deadline_type": "rolling",
-      "deadline_note": "Domanda annuale entro il 30 giugno per l'assegno da marzo a febbraio",
+      "deadline_note": "Domanda tutto l'anno: se presentata dal 1° marzo al 30 giugno spettano gli arretrati da marzo; se presentata dopo il 30 giugno l'assegno decorre dal mese successivo alla domanda",
       "procedure_steps": [
         {
           "step": 1,
           "detail": "Presentare la DSU e ottenere l'ISEE in corso di validita' presso un CAF o online INPS",
-          "url": "https://www.inps.it"
+          "url": "https://www.inps.it/it/it/dettaglio-scheda.it.schede-servizio-strumento.schede-servizi.assegno-unico-e-universale-per-i-figli-a-carico-55984.assegno-unico-e-universale-per-i-figli-a-carico.html"
         },
         {
           "step": 2,
           "detail": "Presentare domanda AUU sul portale INPS con SPID, CIE o CNS, oppure tramite patronato",
-          "url": "https://www.inps.it"
+          "url": "https://www.inps.it/it/it/dettaglio-scheda.it.schede-servizio-strumento.schede-servizi.assegno-unico-e-universale-per-i-figli-a-carico-55984.assegno-unico-e-universale-per-i-figli-a-carico.html"
         }
       ],
       "documents_required": [
@@ -63,9 +63,9 @@
         "admin_areas": [],
         "gender": "any"
       },
-      "source_url": "https://www.inps.it",
-      "source_snippet": "L'importo dell'Assegno unico e universale varia in base all'ISEE del nucleo familiare, all'eta' dei figli a carico e ad altri requisiti previsti dalla normativa.",
-      "last_verified_at": "2026-08-12",
+      "source_url": "https://www.inps.it/it/it/dettaglio-scheda.it.schede-servizio-strumento.schede-servizi.assegno-unico-e-universale-per-i-figli-a-carico-55984.assegno-unico-e-universale-per-i-figli-a-carico.html",
+      "source_snippet": "da un massimo di 203,8 euro per ciascun figlio minore con ISEE fino a 17.468,51 euro a un minimo di 58,3 euro per ciascun figlio minore in assenza di ISEE o con ISEE pari o superiore a 46.582,71 euro",
+      "last_verified_at": "2026-10-05",
       "verification_status": "verified"
     },
     {
@@ -83,7 +83,7 @@
       "amount_period": "monthly",
       "amount_note": "Integrazione al reddito familiare fino a 6.500 euro annui (soglia 2025) + fino a 280 euro/mese per nuclei in affitto; importi maggiorati fino a 1.950 euro/mese per nuclei interamente over 60 o con disabilita' grave; massimo 18 mensilita' rinnovabili",
       "is_automatic": false,
-      "application_url": "https://www.inps.it",
+      "application_url": "https://www.inps.it/it/it/dettaglio-scheda.it.schede-servizio-strumento.schede-servizi.assegno-di-inclusione-adi.html",
       "application_channel": "online",
       "deadline_type": "rolling",
       "deadline_note": null,
@@ -91,12 +91,12 @@
         {
           "step": 1,
           "detail": "Presentare DSU e ottenere ISEE non superiore a 10.140 euro",
-          "url": "https://www.inps.it"
+          "url": "https://www.inps.it/it/it/dettaglio-scheda.it.schede-servizio-strumento.schede-servizi.assegno-di-inclusione-adi.html"
         },
         {
           "step": 2,
           "detail": "Domanda online INPS o tramite patronato/CAF",
-          "url": "https://www.inps.it"
+          "url": "https://www.inps.it/it/it/dettaglio-scheda.it.schede-servizio-strumento.schede-servizi.assegno-di-inclusione-adi.html"
         },
         {
           "step": 3,
@@ -120,19 +120,19 @@
         "statuses": [],
         "age_min": null,
         "age_max": null,
-        "income_annual_max": 6500,
-        "income_note": "Doppia soglia: reddito familiare non superiore a 6.500 euro annui (parametro 1 della scala di equivalenza; 8.190 per nuclei di soli over 67 o con disabilita' grave) E ISEE non superiore a 10.140 euro; qui riportato il tetto di reddito familiare base 2025-2026",
+        "income_annual_max": 10140,
+        "income_note": "Doppia soglia: ISEE in corso di validita' non superiore a 10.140 euro E reddito familiare inferiore a 6.500 euro annui moltiplicati per la scala di equivalenza ADI (8.190 per nuclei di soli over 67 o con disabilita' grave/non autosufficienza; 10.140 per nuclei in affitto). Valore annuo riportato = tetto ISEE di 10.140 euro",
         "requires_children": false,
-        "nationality": "any_resident",
+        "nationality": "citizen_or_pr",
         "residency_months_min": 60,
         "housing_tenure": null,
         "student_required": false,
         "admin_areas": [],
         "gender": "any"
       },
-      "source_url": "https://www.inps.it",
-      "source_snippet": "I nuclei beneficiari di ADI nel mese di dicembre 2025 sono stati quasi 647 mila, con importo medio erogato di 685 euro (INPS, Osservatorio statistico ADI-SFL).",
-      "last_verified_at": "2026-08-12",
+      "source_url": "https://www.inps.it/it/it/dettaglio-scheda.it.schede-servizio-strumento.schede-servizi.assegno-di-inclusione-adi.html",
+      "source_snippet": "Il richiedente, al momento della presentazione della domanda, deve essere residente in Italia da almeno cinque anni, di cui gli ultimi due in modo continuativo.",
+      "last_verified_at": "2026-10-05",
       "verification_status": "verified"
     },
     {
@@ -150,7 +150,7 @@
       "amount_period": "monthly",
       "amount_note": "500 euro/mese (dal 2025, prima 350) per max 12 mesi, prorogabili di altri 12 se in corso di formazione; subordinata a partecipazione effettiva ai percorsi",
       "is_automatic": false,
-      "application_url": "https://www.inps.it",
+      "application_url": "https://www.inps.it/it/it/dettaglio-scheda.it.schede-servizio-strumento.schede-servizi.supporto-per-la-formazione-e-il-lavoro-sfl-.html",
       "application_channel": "online",
       "deadline_type": "rolling",
       "deadline_note": null,
@@ -158,7 +158,7 @@
         {
           "step": 1,
           "detail": "Domanda online sul portale INPS (Menu Lavoro > Disoccupazione > Indennita' > SFL) o tramite patronato/CAF",
-          "url": "https://www.inps.it"
+          "url": "https://www.inps.it/it/it/dettaglio-scheda.it.schede-servizio-strumento.schede-servizi.supporto-per-la-formazione-e-il-lavoro-sfl-.html"
         },
         {
           "step": 2,
@@ -193,16 +193,16 @@
         "income_annual_max": 10140,
         "income_note": "Dal 2025: ISEE non superiore a 10.140 euro e reddito familiare non superiore a 10.140 euro (prima 6.000); 500 euro/mese per max 12 mesi prorogabili",
         "requires_children": false,
-        "nationality": "any_resident",
+        "nationality": "citizen_or_pr",
         "residency_months_min": 60,
         "housing_tenure": null,
         "student_required": false,
         "admin_areas": [],
         "gender": "any"
       },
-      "source_url": "https://www.inps.it",
-      "source_snippet": "La legge di bilancio 2025 ha previsto, a partire dal 1° gennaio 2025, l'incremento della prestazione SFL da 350 a 500 euro mensili.",
-      "last_verified_at": "2026-08-12",
+      "source_url": "https://www.inps.it/it/it/dettaglio-scheda.it.schede-servizio-strumento.schede-servizi.supporto-per-la-formazione-e-il-lavoro-sfl-.html",
+      "source_snippet": "L’indennità di partecipazione è pari a 500 euro al mese.",
+      "last_verified_at": "2026-10-05",
       "verification_status": "verified"
     },
     {
@@ -220,7 +220,7 @@
       "amount_period": "monthly",
       "amount_note": "75% della retribuzione media mensile degli ultimi 4 anni (massimale 2026: 1.584,70 euro); riduzione del 3% al mese dal 151° giorno (under 55) o 211° (over 55); durata pari alla meta' delle settimane di contribuzione, max 24 mesi",
       "is_automatic": false,
-      "application_url": "https://www.inps.it",
+      "application_url": "https://www.inps.it/it/it/dettaglio-scheda.it.schede-servizio-strumento.schede-servizi.50593.naspi-indennit-mensile-di-disoccupazione.html",
       "application_channel": "online",
       "deadline_type": "rolling",
       "deadline_note": "Domanda entro 68 giorni dalla cessazione del rapporto di lavoro",
@@ -228,7 +228,7 @@
         {
           "step": 1,
           "detail": "Domanda online sul portale INPS, tramite patronato o contact center (803 164)",
-          "url": "https://www.inps.it"
+          "url": "https://www.inps.it/it/it/dettaglio-scheda.it.schede-servizio-strumento.schede-servizi.50593.naspi-indennit-mensile-di-disoccupazione.html"
         },
         {
           "step": 2,
@@ -264,9 +264,9 @@
         "admin_areas": [],
         "gender": "any"
       },
-      "source_url": "https://www.inps.it",
-      "source_snippet": "L'importo massimo mensile della medesima indennita' non puo' in ogni caso superare, per il corrente anno, euro 1.584,70 (circolare INPS n. 4 del 28 gennaio 2026).",
-      "last_verified_at": "2026-08-12",
+      "source_url": "https://www.inps.it/it/it/dettaglio-scheda.it.schede-servizio-strumento.schede-servizi.50593.naspi-indennit-mensile-di-disoccupazione.html",
+      "source_snippet": "Sono necessarie almeno 13 settimane di contribuzione contro la disoccupazione nei quattro anni precedenti l'inizio del periodo di disoccupazione.",
+      "last_verified_at": "2026-10-05",
       "verification_status": "verified"
     },
     {
@@ -284,7 +284,7 @@
       "amount_period": "monthly",
       "amount_note": "75% del reddito medio mensile (massimale 2026: 1.584,70 euro); riduzione 3% al mese; durata pari ai mesi di contribuzione, max 12 mesi",
       "is_automatic": false,
-      "application_url": "https://www.inps.it",
+      "application_url": "https://www.inps.it/it/it/dettaglio-scheda.it.schede-servizio-strumento.schede-servizi.dis-coll-indennit-mensile-di-disoccupazione-50183.dis-coll-indennit-mensile-di-disoccupazione.html",
       "application_channel": "online",
       "deadline_type": "rolling",
       "deadline_note": "Domanda entro 68 giorni dalla cessazione",
@@ -292,7 +292,7 @@
         {
           "step": 1,
           "detail": "Domanda online INPS o tramite patronato",
-          "url": "https://www.inps.it"
+          "url": "https://www.inps.it/it/it/dettaglio-scheda.it.schede-servizio-strumento.schede-servizi.dis-coll-indennit-mensile-di-disoccupazione-50183.dis-coll-indennit-mensile-di-disoccupazione.html"
         }
       ],
       "documents_required": [
@@ -304,8 +304,7 @@
       ],
       "eligibility": {
         "statuses": [
-          "unemployed",
-          "self_employed"
+          "unemployed"
         ],
         "age_min": null,
         "age_max": null,
@@ -319,9 +318,9 @@
         "admin_areas": [],
         "gender": "any"
       },
-      "source_url": "https://www.inps.it",
-      "source_snippet": "La Dis-Coll e' un'indennita' di disoccupazione rivolta ai collaboratori coordinati e continuativi, anche a progetto, iscritti in via esclusiva alla Gestione Separata, non pensionati e privi di partita Iva.",
-      "last_verified_at": "2026-08-12",
+      "source_url": "https://www.inps.it/it/it/dettaglio-scheda.it.schede-servizio-strumento.schede-servizi.dis-coll-indennit-mensile-di-disoccupazione-50183.dis-coll-indennit-mensile-di-disoccupazione.html",
+      "source_snippet": "La domanda va presentata entro 68 giorni dalla data di cessazione del rapporto di collaborazione, assegno di ricerca o dottorato di ricerca con borsa di studio.",
+      "last_verified_at": "2026-10-05",
       "verification_status": "verified"
     },
     {
@@ -334,20 +333,20 @@
       "category": "employment",
       "benefit_type": "cash_monthly",
       "amount_min": null,
-      "amount_max": null,
+      "amount_max": 1423.69,
       "amount_currency": "EUR",
       "amount_period": "monthly",
-      "amount_note": "80% della retribuzione perduta entro massimali aggiornati annualmente (2026: lordo maggiorato 1.708,44 euro per il settore edile; massimali ordinari comunicati con circolare INPS annuale)",
+      "amount_note": "80% della retribuzione globale per le ore non prestate; massimale mensile dal 1° gennaio 2026: 1.423,69 euro lordo (1.340,56 netto), maggiorato del 20% per edile e lapideo (1.708,44 euro lordo)",
       "is_automatic": false,
-      "application_url": "https://www.inps.it",
+      "application_url": "https://www.inps.it/it/it/dettaglio-scheda.it.schede-servizio-strumento.schede-servizi.50599.cassa-integrazione-guadagni-ordinaria.html",
       "application_channel": "via_employer",
       "deadline_type": "rolling",
-      "deadline_note": "Domanda presentata dal datore di lavoro",
+      "deadline_note": "Domanda presentata dal datore di lavoro entro 15 giorni dall'inizio della sospensione o riduzione dell'attivita'; per eventi non evitabili entro la fine del mese successivo",
       "procedure_steps": [
         {
           "step": 1,
           "detail": "Il datore di lavoro presenta istanza di integrazione salariale alla sede INPS competente",
-          "url": "https://www.inps.it"
+          "url": "https://www.inps.it/it/it/dettaglio-scheda.it.schede-servizio-strumento.schede-servizi.50599.cassa-integrazione-guadagni-ordinaria.html"
         }
       ],
       "documents_required": [
@@ -373,10 +372,10 @@
         "admin_areas": [],
         "gender": "any"
       },
-      "source_url": "https://www.inps.it",
-      "source_snippet": "Importo mensile lordo maggiorato del 20% per i trattamenti di integrazione salariale del settore edile: 1.708,44 euro (circolare INPS n. 4/2026).",
-      "last_verified_at": "2026-08-12",
-      "verification_status": "auto_extracted"
+      "source_url": "https://www.inps.it/it/it/dettaglio-scheda.it.schede-servizio-strumento.schede-servizi.50599.cassa-integrazione-guadagni-ordinaria.html",
+      "source_snippet": "La domanda deve essere presentata entro 15 giorni dall'inizio della sospensione o riduzione dell'attività.",
+      "last_verified_at": "2026-10-05",
+      "verification_status": "verified"
     },
     {
       "slug": "assegno-sociale",
@@ -393,7 +392,7 @@
       "amount_period": "monthly",
       "amount_note": "546,24 euro/mese per 13 mensilita' (7.101,12 euro annui, importo 2026)",
       "is_automatic": false,
-      "application_url": "https://www.inps.it",
+      "application_url": "https://www.inps.it/it/it/dettaglio-scheda.it.schede-servizio-strumento.schede-servizi.assegno-sociale-50184.assegno-sociale.html",
       "application_channel": "online",
       "deadline_type": "rolling",
       "deadline_note": null,
@@ -401,7 +400,7 @@
         {
           "step": 1,
           "detail": "Domanda online INPS o tramite patronato",
-          "url": "https://www.inps.it"
+          "url": "https://www.inps.it/it/it/dettaglio-scheda.it.schede-servizio-strumento.schede-servizi.assegno-sociale-50184.assegno-sociale.html"
         }
       ],
       "documents_required": [
@@ -425,16 +424,16 @@
         "income_annual_max": 7101.12,
         "income_note": "Reddito annuo inferiore a 7.101,12 euro (persona sola) o 14.202,24 euro (coniugato), valori 2026; residenza continuativa in Italia da almeno 10 anni",
         "requires_children": false,
-        "nationality": "any_resident",
+        "nationality": "citizen_or_pr",
         "residency_months_min": 120,
         "housing_tenure": null,
         "student_required": false,
         "admin_areas": [],
         "gender": "any"
       },
-      "source_url": "https://www.inps.it",
-      "source_snippet": "L'importo della prestazione passa dunque dai 538,68 euro mensili del 2025 ai 546,24 del 2026 (13 mensilita' da 546,24 euro, circolare INPS n. 153/2025).",
-      "last_verified_at": "2026-08-12",
+      "source_url": "https://www.inps.it/it/it/dettaglio-scheda.it.schede-servizio-strumento.schede-servizi.assegno-sociale-50184.assegno-sociale.html",
+      "source_snippet": "L’importo dell’Assegno per il 2026 è pari a 546,24 euro per 13 mensilità.",
+      "last_verified_at": "2026-10-05",
       "verification_status": "verified"
     },
     {
@@ -452,7 +451,7 @@
       "amount_period": "monthly",
       "amount_note": "340,71 euro/mese per 13 mensilita' (importo 2026); al compimento dei 67 anni si trasforma in assegno sociale sostitutivo",
       "is_automatic": false,
-      "application_url": "https://www.inps.it",
+      "application_url": "https://www.inps.it/it/it/dettaglio-approfondimento.schede-informative.pensione-di-inabilit-agli-invalidi-civili.html",
       "application_channel": "online",
       "deadline_type": "rolling",
       "deadline_note": null,
@@ -465,12 +464,12 @@
         {
           "step": 2,
           "detail": "Domanda di accertamento invalidita' civile online INPS o tramite patronato",
-          "url": "https://www.inps.it"
+          "url": "https://www.inps.it/it/it/dettaglio-approfondimento.schede-informative.pensione-di-inabilit-agli-invalidi-civili.html"
         },
         {
           "step": 3,
           "detail": "Visita della commissione medica ASL/INPS e successiva domanda economica",
-          "url": "https://www.inps.it"
+          "url": "https://www.inps.it/it/it/dettaglio-approfondimento.schede-informative.pensione-di-inabilit-agli-invalidi-civili.html"
         }
       ],
       "documents_required": [
@@ -499,9 +498,9 @@
         "admin_areas": [],
         "gender": "any"
       },
-      "source_url": "https://www.inps.it",
-      "source_snippet": "Pensione di inabilita' (invalidi civili totali), 100%: importo mensile 2026 340,71 euro, 13 mensilita', limite reddito annuo 20.029,55 euro (Circolare INPS n. 153 del 19 dicembre 2025).",
-      "last_verified_at": "2026-08-12",
+      "source_url": "https://www.inps.it/it/it/dettaglio-approfondimento.schede-informative.pensione-di-inabilit-agli-invalidi-civili.html",
+      "source_snippet": "reddito inferiore alla soglia stabilita ogni anno per legge (per il 2026: 20.029,55 euro)",
+      "last_verified_at": "2026-10-05",
       "verification_status": "verified"
     },
     {
@@ -514,12 +513,12 @@
       "category": "health",
       "benefit_type": "cash_monthly",
       "amount_min": null,
-      "amount_max": 340.71,
+      "amount_max": 340,
       "amount_currency": "EUR",
       "amount_period": "monthly",
-      "amount_note": "340,71 euro/mese per 13 mensilita' (importo 2026); compatibile con lavoro entro il limite di reddito",
+      "amount_note": "340 euro/mese (importo 2026); compatibile con lavoro entro il limite di reddito personale annuo di 5.852,21 euro; in condizioni particolari di reddito puo' essere incrementato (maggiorazione sociale)",
       "is_automatic": false,
-      "application_url": "https://www.inps.it",
+      "application_url": "https://www.inps.it/it/it/dettaglio-approfondimento.schede-informative.assegno-mensile-di-assistenza.html",
       "application_channel": "online",
       "deadline_type": "rolling",
       "deadline_note": null,
@@ -527,12 +526,12 @@
         {
           "step": 1,
           "detail": "Certificato medico introduttivo e domanda di accertamento invalidita' civile",
-          "url": "https://www.inps.it"
+          "url": "https://www.inps.it/it/it/dettaglio-approfondimento.schede-informative.assegno-mensile-di-assistenza.html"
         },
         {
           "step": 2,
           "detail": "Domanda economica online INPS dopo il riconoscimento",
-          "url": "https://www.inps.it"
+          "url": "https://www.inps.it/it/it/dettaglio-approfondimento.schede-informative.assegno-mensile-di-assistenza.html"
         }
       ],
       "documents_required": [
@@ -556,9 +555,9 @@
         "admin_areas": [],
         "gender": "any"
       },
-      "source_url": "https://www.inps.it",
-      "source_snippet": "Assegno mensile (invalidi civili parziali, 74-99%): importo mensile 2026 340,71 euro, limite reddito annuo 5.852,21 euro (Circolare INPS n. 153/2025).",
-      "last_verified_at": "2026-08-12",
+      "source_url": "https://www.inps.it/it/it/dettaglio-approfondimento.schede-informative.assegno-mensile-di-assistenza.html",
+      "source_snippet": "Per il 2026 l’importo dell’assegno è di 340 euro.",
+      "last_verified_at": "2026-10-05",
       "verification_status": "verified"
     },
     {
@@ -576,7 +575,7 @@
       "amount_period": "monthly",
       "amount_note": "551,53 euro/mese per 12 mensilita' (importo 2026 dopo rettifica INPS messaggio n. 628/2026); indipendente dal reddito; esente IRPEF",
       "is_automatic": false,
-      "application_url": "https://www.inps.it",
+      "application_url": "https://www.inps.it/it/it/dettaglio-approfondimento.schede-informative.indennit-di-accompagnamento-agli-invalidi-civili.html",
       "application_channel": "online",
       "deadline_type": "rolling",
       "deadline_note": null,
@@ -584,7 +583,7 @@
         {
           "step": 1,
           "detail": "Domanda di accertamento invalidita' civile con accertamento di non autosufficienza",
-          "url": "https://www.inps.it"
+          "url": "https://www.inps.it/it/it/dettaglio-approfondimento.schede-informative.indennit-di-accompagnamento-agli-invalidi-civili.html"
         }
       ],
       "documents_required": [
@@ -608,9 +607,9 @@
         "admin_areas": [],
         "gender": "any"
       },
-      "source_url": "https://www.inps.it",
-      "source_snippet": "L'indennita' di accompagnamento e' indipendente da redditi: 551,53 euro mensili dal 1° gennaio 2026 (messaggio INPS n. 628 del 23 febbraio 2026).",
-      "last_verified_at": "2026-08-12",
+      "source_url": "https://www.inps.it/it/it/dettaglio-approfondimento.schede-informative.indennit-di-accompagnamento-agli-invalidi-civili.html",
+      "source_snippet": "Per il 2026 l’importo dell’indennità è di 551,53 euro.",
+      "last_verified_at": "2026-10-05",
       "verification_status": "verified"
     },
     {
@@ -628,7 +627,7 @@
       "amount_period": "monthly",
       "amount_note": "340,71 euro/mese per 12 mensilita' (2026), per la durata delle cure o della frequenza scolastica/formativa",
       "is_automatic": false,
-      "application_url": "https://www.inps.it",
+      "application_url": "https://www.inps.it/it/it/dettaglio-approfondimento.schede-informative.indennit-mensile-di-frequenza.html",
       "application_channel": "online",
       "deadline_type": "rolling",
       "deadline_note": null,
@@ -636,7 +635,7 @@
         {
           "step": 1,
           "detail": "Domanda di accertamento invalidita' civile del minore online INPS o tramite patronato",
-          "url": "https://www.inps.it"
+          "url": "https://www.inps.it/it/it/dettaglio-approfondimento.schede-informative.indennit-mensile-di-frequenza.html"
         }
       ],
       "documents_required": [
@@ -665,10 +664,10 @@
         "admin_areas": [],
         "gender": "any"
       },
-      "source_url": "https://www.inps.it",
-      "source_snippet": "Indennita' di frequenza (minori): importo mensile 340,71 euro per la durata delle cure, limite reddito 5.852,21 euro (Circolare INPS n. 153/2025).",
-      "last_verified_at": "2026-08-12",
-      "verification_status": "auto_extracted"
+      "source_url": "https://www.inps.it/it/it/dettaglio-approfondimento.schede-informative.indennit-mensile-di-frequenza.html",
+      "source_snippet": "Per il 2026 l’importo è di 340,71 mensili.",
+      "last_verified_at": "2026-10-05",
+      "verification_status": "verified"
     },
     {
       "slug": "pensione-ciechi-civili",
@@ -685,7 +684,7 @@
       "amount_period": "monthly",
       "amount_note": "Ciechi assoluti non ricoverati: 368,46 euro/mese (2026); ciechi parziali e ricoverati: 340,71 euro; indennita' di accompagnamento per ciechi assoluti 1.064,98 euro/mese senza limiti di reddito",
       "is_automatic": false,
-      "application_url": "https://www.inps.it",
+      "application_url": "https://www.inps.it/it/it/dettaglio-approfondimento.schede-informative.pensione-ai-ciechi-civili-assoluti.html",
       "application_channel": "online",
       "deadline_type": "rolling",
       "deadline_note": null,
@@ -693,7 +692,7 @@
         {
           "step": 1,
           "detail": "Domanda di accertamento della cecita' civile online INPS o tramite patronato",
-          "url": "https://www.inps.it"
+          "url": "https://www.inps.it/it/it/dettaglio-approfondimento.schede-informative.pensione-ai-ciechi-civili-assoluti.html"
         }
       ],
       "documents_required": [
@@ -717,10 +716,10 @@
         "admin_areas": [],
         "gender": "any"
       },
-      "source_url": "https://www.inps.it",
-      "source_snippet": "Pensione ciechi civili assoluti (non ricoverati): 368,46 euro mensili nel 2026 (Circolare INPS n. 153/2025).",
-      "last_verified_at": "2026-08-12",
-      "verification_status": "auto_extracted"
+      "source_url": "https://www.inps.it/it/it/dettaglio-approfondimento.schede-informative.pensione-ai-ciechi-civili-assoluti.html",
+      "source_snippet": "Per il 2026 l’importo della pensione è di 368,46 euro per i ciechi non ricoverati e 340,71 euro per quelli ricoverati.",
+      "last_verified_at": "2026-10-05",
+      "verification_status": "verified"
     },
     {
       "slug": "indennita-comunicazione-sordi",
@@ -737,7 +736,7 @@
       "amount_period": "monthly",
       "amount_note": "272,13 euro/mese per 12 mensilita' (2026, importo rettificato con messaggio INPS n. 628/2026); indipendente dal reddito",
       "is_automatic": false,
-      "application_url": "https://www.inps.it",
+      "application_url": "https://www.inps.it/it/it/dettaglio-approfondimento.schede-informative.indennit-di-comunicazione-ai-sordi.html",
       "application_channel": "online",
       "deadline_type": "rolling",
       "deadline_note": null,
@@ -745,7 +744,7 @@
         {
           "step": 1,
           "detail": "Domanda di accertamento della sordita' civile online INPS o tramite patronato",
-          "url": "https://www.inps.it"
+          "url": "https://www.inps.it/it/it/dettaglio-approfondimento.schede-informative.indennit-di-comunicazione-ai-sordi.html"
         }
       ],
       "documents_required": [
@@ -769,10 +768,10 @@
         "admin_areas": [],
         "gender": "any"
       },
-      "source_url": "https://www.inps.it",
-      "source_snippet": "L'indennita' di comunicazione per sordomuti passa a 272,13 euro mensili (rettifica INPS, messaggio n. 628 del 23 febbraio 2026).",
-      "last_verified_at": "2026-08-12",
-      "verification_status": "auto_extracted"
+      "source_url": "https://www.inps.it/it/it/dettaglio-approfondimento.schede-informative.indennit-di-comunicazione-ai-sordi.html",
+      "source_snippet": "L’importo per il 2026 è di 272,13 euro mensili.",
+      "last_verified_at": "2026-10-05",
+      "verification_status": "verified"
     },
     {
       "slug": "bonus-asilo-nido",
@@ -787,22 +786,22 @@
       "amount_max": 3600,
       "amount_currency": "EUR",
       "amount_period": "annual",
-      "amount_note": "Fino a 3.600 euro/anno (bambini nati dal 2024 con ISEE fino a 40.000); 1.500 euro senza ISEE oltre soglia; erogato in max 11 mensilita', entro le rette pagate; dal 2026 domanda unica valida fino al terzo anno",
+      "amount_note": "Fino a 3.600 euro/anno per nati dal 2024 con ISEE minorenni fino a 40.000 (1.500 con ISEE assente o oltre 40.000); nati prima del 2024: 3.000 euro (ISEE fino a 25.000,99), 2.500 euro (25.001-40.000), 1.500 euro negli altri casi. Erogato in max 11 mensilita' per anno solare, entro il valore della retta",
       "is_automatic": false,
-      "application_url": "https://www.inps.it",
+      "application_url": "https://www.inps.it/it/it/dettaglio-scheda.it.schede-servizio-strumento.schede-servizi.bonus-asilo-nido-e-forme-di-supporto-presso-la-propria-abitazione-51105.bonus-asilo-nido-e-forme-di-supporto-presso-la-propria-abitazione.html",
       "application_channel": "online",
-      "deadline_type": "annual",
-      "deadline_note": "Domande generalmente da febbraio/marzo al 31 dicembre, fino a esaurimento fondi",
+      "deadline_type": "rolling",
+      "deadline_note": "Servizio 2026 aperto con messaggio INPS 31 marzo 2026; dal 2026 le domande sono valide fino ad agosto dell'anno in cui il bambino compie tre anni (una domanda per figlio)",
       "procedure_steps": [
         {
           "step": 1,
           "detail": "Domanda online sul portale INPS (servizio Bonus Asilo Nido) o tramite patronato",
-          "url": "https://www.inps.it"
+          "url": "https://www.inps.it/it/it/dettaglio-scheda.it.schede-servizio-strumento.schede-servizi.bonus-asilo-nido-e-forme-di-supporto-presso-la-propria-abitazione-51105.bonus-asilo-nido-e-forme-di-supporto-presso-la-propria-abitazione.html"
         },
         {
           "step": 2,
           "detail": "Caricamento ricevute di pagamento delle rette (anche da app INPS Mobile)",
-          "url": "https://www.inps.it"
+          "url": "https://www.inps.it/it/it/dettaglio-scheda.it.schede-servizio-strumento.schede-servizi.bonus-asilo-nido-e-forme-di-supporto-presso-la-propria-abitazione-51105.bonus-asilo-nido-e-forme-di-supporto-presso-la-propria-abitazione.html"
         }
       ],
       "documents_required": [
@@ -838,9 +837,9 @@
         "admin_areas": [],
         "gender": "any"
       },
-      "source_url": "https://www.inps.it",
-      "source_snippet": "Per bambini nati dal 1° gennaio 2024: con ISEE fino a 40.000 euro l'importo e' di 3.600 euro annui; con ISEE oltre 40.000 euro o assente, 1.500 euro annui.",
-      "last_verified_at": "2026-08-12",
+      "source_url": "https://www.inps.it/it/it/dettaglio-scheda.it.schede-servizio-strumento.schede-servizi.bonus-asilo-nido-e-forme-di-supporto-presso-la-propria-abitazione-51105.bonus-asilo-nido-e-forme-di-supporto-presso-la-propria-abitazione.html",
+      "source_snippet": "A partire dal 2026, le domande presentate sono valide fino al mese di agosto dell’anno di compimento dei tre anni di età del bambino.",
+      "last_verified_at": "2026-10-05",
       "verification_status": "verified"
     },
     {
@@ -858,7 +857,7 @@
       "amount_period": "monthly",
       "amount_note": "40 euro al mese, ricarica bimestrale di 80 euro, per spesa alimentare, sanitaria e bollette luce/gas; sconti nei negozi convenzionati",
       "is_automatic": false,
-      "application_url": "https://www.mef.gov.it/focus/Carta-Acquisti/",
+      "application_url": "https://www.inps.it/it/it/dettaglio-approfondimento.schede-informative.la-carta-acquisti.html",
       "application_channel": "in_person",
       "deadline_type": "rolling",
       "deadline_note": null,
@@ -866,7 +865,7 @@
         {
           "step": 1,
           "detail": "Presentare il modulo di richiesta in un ufficio postale con documento e attestazione ISEE",
-          "url": "https://www.mef.gov.it/focus/Carta-Acquisti/"
+          "url": "https://www.inps.it/it/it/dettaglio-approfondimento.schede-informative.la-carta-acquisti.html"
         },
         {
           "step": 2,
@@ -896,16 +895,16 @@
         "income_annual_max": 8230.81,
         "income_note": "ISEE non superiore a 8.230,81 euro (soglia 2026 rivalutata ISTAT; 8.117,17 nel 2025). Per over 70 anche reddito complessivo entro 10.974,42 euro (65-70 anni: 8.230,81); valore = soglia ISEE 2026",
         "requires_children": false,
-        "nationality": "any_resident",
+        "nationality": "citizen_or_pr",
         "residency_months_min": null,
         "housing_tenure": null,
         "student_required": false,
         "admin_areas": [],
         "gender": "any"
       },
-      "source_url": "https://www.mef.gov.it/focus/Carta-Acquisti/",
-      "source_snippet": "La Carta Acquisti vale 40 euro al mese e viene caricata ogni due mesi con 80 euro (40 euro x 2 = 80 euro) in base agli stanziamenti.",
-      "last_verified_at": "2026-08-12",
+      "source_url": "https://www.inps.it/it/it/dettaglio-approfondimento.schede-informative.la-carta-acquisti.html",
+      "source_snippet": "Sulla carta si accredita bimestralmente una somma di denaro pari ad 80 euro che può essere utilizzata per la spesa alimentare negli esercizi convenzionati e per il pagamento delle bollette di gas e luce presso gli uffici postali.",
+      "last_verified_at": "2026-10-05",
       "verification_status": "verified"
     },
     {
@@ -921,17 +920,17 @@
       "amount_max": 500,
       "amount_currency": "EUR",
       "amount_period": "one_off",
-      "amount_note": "500 euro una tantum per beni alimentari di prima necessita' (edizione 2025; prima spesa entro il 16 dicembre 2025, credito da esaurire entro il 28 febbraio 2026)",
+      "amount_note": "500 euro per ciascun anno (2026 e 2027), su carta prepagata Poste Italiane per beni alimentari di prima necessita'; lista unica di beneficiari valida per entrambe le annualita'",
       "is_automatic": true,
-      "application_url": "https://www.inps.it",
+      "application_url": "https://www.inps.it/it/it/inps-comunica/notizie/dettaglio-news-page.news.2026.09.carta-dedicata-a-te-modalit-operative-per-il-2026-2027.html",
       "application_channel": "automatic",
       "deadline_type": "window",
-      "deadline_note": "Assegnazione d'ufficio: ricarica automatica per chi aveva gia' la carta; i nuovi beneficiari sono avvisati dal Comune",
+      "deadline_note": "Nessuna domanda: beneficiari individuati automaticamente; carte attivate dal 4 novembre 2026 con ricarica di 500 euro; per il 2026 primo utilizzo entro il 16 dicembre 2026; ricarica 2027 da aprile",
       "procedure_steps": [
         {
           "step": 1,
           "detail": "Nessuna domanda: assegnazione d'ufficio sulla base di ISEE e priorita' familiari; verifica sul sito del proprio Comune",
-          "url": "https://www.inps.it"
+          "url": "https://www.inps.it/it/it/inps-comunica/notizie/dettaglio-news-page.news.2026.09.carta-dedicata-a-te-modalit-operative-per-il-2026-2027.html"
         },
         {
           "step": 2,
@@ -960,9 +959,9 @@
         "admin_areas": [],
         "gender": "any"
       },
-      "source_url": "https://www.inps.it",
-      "source_snippet": "Si tratta di un aiuto economico da 500 euro, destinato all'acquisto di beni alimentari di prima necessita'. Per ottenere la carta e' necessario avere un ISEE inferiore a 15.000 euro.",
-      "last_verified_at": "2026-08-12",
+      "source_url": "https://www.inps.it/it/it/inps-comunica/notizie/dettaglio-news-page.news.2026.09.carta-dedicata-a-te-modalit-operative-per-il-2026-2027.html",
+      "source_snippet": "Possono accedere al beneficio i nuclei familiari residenti in Italia con ISEE ordinario non superiore a 15.000 euro e con tutti i componenti iscritti all’Anagrafe della popolazione residente.",
+      "last_verified_at": "2026-10-05",
       "verification_status": "verified"
     },
     {
@@ -980,7 +979,7 @@
       "amount_period": "monthly",
       "amount_note": "Indennita' pari all'80% della retribuzione per 5 mesi (2 prima + 3 dopo il parto, o flessibile); lavoratrici autonome: indennita' forfettaria",
       "is_automatic": false,
-      "application_url": "https://www.inps.it",
+      "application_url": "https://www.inps.it/it/it/dettaglio-scheda.it.schede-servizio-strumento.schede-servizi.50586.indennit-per-congedo-di-maternit-e-di-paternit-alternativo-per-lavoratrici-e-lavoratori-dipendenti.html",
       "application_channel": "via_employer",
       "deadline_type": "rolling",
       "deadline_note": null,
@@ -993,7 +992,7 @@
         {
           "step": 2,
           "detail": "Domanda di indennita' tramite datore di lavoro o portale INPS (servizio Domande di maternita' e paternita')",
-          "url": "https://www.inps.it"
+          "url": "https://www.inps.it/it/it/dettaglio-scheda.it.schede-servizio-strumento.schede-servizi.50586.indennit-per-congedo-di-maternit-e-di-paternit-alternativo-per-lavoratrici-e-lavoratori-dipendenti.html"
         }
       ],
       "documents_required": [
@@ -1020,9 +1019,9 @@
         "admin_areas": [],
         "gender": "female"
       },
-      "source_url": "https://www.inps.it",
-      "source_snippet": "La legge riconosce un'indennita' economica alla lavoratrice in maternita' a carico dell'INPS pari all'80% della retribuzione per 5 mesi (D.Lgs. 151/2001).",
-      "last_verified_at": "2026-08-12",
+      "source_url": "https://www.inps.it/it/it/dettaglio-scheda.it.schede-servizio-strumento.schede-servizi.50586.indennit-per-congedo-di-maternit-e-di-paternit-alternativo-per-lavoratrici-e-lavoratori-dipendenti.html",
+      "source_snippet": "ha diritto a percepire un'indennità pari all' 80% della retribuzione media globale giornaliera",
+      "last_verified_at": "2026-10-05",
       "verification_status": "verified"
     },
     {
@@ -1040,7 +1039,7 @@
       "amount_period": "monthly",
       "amount_note": "3 mesi complessivi all'80% della retribuzione (entro i 6 anni del figlio), ulteriori mesi al 30%; dal 2026 fruibile fino ai 14 anni del figlio",
       "is_automatic": false,
-      "application_url": "https://www.inps.it",
+      "application_url": "https://www.inps.it/it/it/dettaglio-scheda.it.schede-servizio-strumento.schede-servizi.50583.indennit-di-congedo-parentale-per-lavoratrici-e-lavoratori-dipendenti.html",
       "application_channel": "online",
       "deadline_type": "rolling",
       "deadline_note": "Preavviso al datore di lavoro (5 giorni; 48 ore per fruizione oraria)",
@@ -1048,7 +1047,7 @@
         {
           "step": 1,
           "detail": "Domanda online INPS (servizio Domande di maternita' e paternita') e comunicazione al datore di lavoro",
-          "url": "https://www.inps.it"
+          "url": "https://www.inps.it/it/it/dettaglio-scheda.it.schede-servizio-strumento.schede-servizi.50583.indennit-di-congedo-parentale-per-lavoratrici-e-lavoratori-dipendenti.html"
         }
       ],
       "documents_required": [
@@ -1076,9 +1075,9 @@
         "admin_areas": [],
         "gender": "any"
       },
-      "source_url": "https://www.inps.it",
-      "source_snippet": "Il Legislatore ha disposto l'innalzamento dell'indennita' spettante per il congedo parentale all'80% per la durata massima complessiva di 3 mesi, sino al sesto anno di vita del bambino (Circolare INPS n. 95/2025).",
-      "last_verified_at": "2026-08-12",
+      "source_url": "https://www.inps.it/it/it/dettaglio-scheda.it.schede-servizio-strumento.schede-servizi.50583.indennit-di-congedo-parentale-per-lavoratrici-e-lavoratori-dipendenti.html",
+      "source_snippet": "un'indennità pari al 30% della retribuzione media giornaliera (di cui tre mesi indennizzabili all'80%)",
+      "last_verified_at": "2026-10-05",
       "verification_status": "verified"
     },
     {
@@ -1094,9 +1093,9 @@
       "amount_max": null,
       "amount_currency": "EUR",
       "amount_period": "monthly",
-      "amount_note": "80% della retribuzione giornaliera convenzionale per 5 mesi per iscritte alla Gestione Separata; indennita' forfettarie per lavoratrici autonome",
+      "amount_note": "Indennita' pari all'80% di 1/365 del reddito derivante da collaborazione coordinata e continuativa o attivita' libero professionale, per i cinque mesi di maternita'",
       "is_automatic": false,
-      "application_url": "https://www.inps.it",
+      "application_url": "https://www.inps.it/it/it/dettaglio-scheda.it.schede-servizio-strumento.schede-servizi.indennit-di-maternit-paternit-per-lavoratrici-e-lavoratori-iscritti-alla-gestione-separata-58666.indennit-di-maternit-paternit-per-lavoratrici-e-lavoratori-iscritti-alla-gestione-separata.html",
       "application_channel": "online",
       "deadline_type": "rolling",
       "deadline_note": null,
@@ -1104,7 +1103,7 @@
         {
           "step": 1,
           "detail": "Domanda online INPS o tramite patronato con certificato di gravidanza telematico",
-          "url": "https://www.inps.it"
+          "url": "https://www.inps.it/it/it/dettaglio-scheda.it.schede-servizio-strumento.schede-servizi.indennit-di-maternit-paternit-per-lavoratrici-e-lavoratori-iscritti-alla-gestione-separata-58666.indennit-di-maternit-paternit-per-lavoratrici-e-lavoratori-iscritti-alla-gestione-separata.html"
         }
       ],
       "documents_required": [
@@ -1130,10 +1129,10 @@
         "admin_areas": [],
         "gender": "female"
       },
-      "source_url": "https://www.inps.it",
-      "source_snippet": "Per le lavoratrici iscritte alla Gestione Separata l'indennita' di maternita' e' pari all'80% della retribuzione giornaliera convenzionale per 5 mesi.",
-      "last_verified_at": "2026-08-12",
-      "verification_status": "auto_extracted"
+      "source_url": "https://www.inps.it/it/it/dettaglio-scheda.it.schede-servizio-strumento.schede-servizi.indennit-di-maternit-paternit-per-lavoratrici-e-lavoratori-iscritti-alla-gestione-separata-58666.indennit-di-maternit-paternit-per-lavoratrici-e-lavoratori-iscritti-alla-gestione-separata.html",
+      "source_snippet": "Un' indennità pari all'80% di 1/365 del reddito derivante da: - attività di collaborazione coordinata e continuativa; - attività libero professionale, utile ai fini contributivi, nei limiti del massimale annualmente previsto.",
+      "last_verified_at": "2026-10-05",
+      "verification_status": "verified"
     },
     {
       "slug": "bonus-nuovi-nati",
@@ -1150,15 +1149,15 @@
       "amount_period": "one_off",
       "amount_note": "Erogazione una tantum di 1.000 euro per ogni figlio nato o adottato dal 1° gennaio 2025",
       "is_automatic": false,
-      "application_url": "https://www.inps.it",
+      "application_url": "https://www.inps.it/it/it/dettaglio-scheda.it.schede-servizio-strumento.schede-servizi.bonus-nuovi-nati.html",
       "application_channel": "online",
-      "deadline_type": "window",
-      "deadline_note": "Domanda entro i termini fissati dalle istruzioni INPS per l'anno di nascita/adozione",
+      "deadline_type": "rolling",
+      "deadline_note": "Domanda a pena di decadenza entro 120 giorni dalla data di nascita o di ingresso in famiglia del minore",
       "procedure_steps": [
         {
           "step": 1,
           "detail": "Domanda online sul portale INPS o tramite patronato con ISEE in corso di validita'",
-          "url": "https://www.inps.it"
+          "url": "https://www.inps.it/it/it/dettaglio-scheda.it.schede-servizio-strumento.schede-servizi.bonus-nuovi-nati.html"
         }
       ],
       "documents_required": [
@@ -1189,9 +1188,9 @@
         "admin_areas": [],
         "gender": "any"
       },
-      "source_url": "https://www.inps.it",
-      "source_snippet": "Il Bonus Nuovi Nati, un'erogazione una tantum di 1.000 euro per ogni figlio nato o adottato dal 1° gennaio 2025.",
-      "last_verified_at": "2026-08-12",
+      "source_url": "https://www.inps.it/it/it/dettaglio-scheda.it.schede-servizio-strumento.schede-servizi.bonus-nuovi-nati.html",
+      "source_snippet": "La domanda deve essere presentata, a pena di decadenza, entro 120 giorni dalla data di nascita, ovvero dalla data di ingresso in famiglia del minore.",
+      "last_verified_at": "2026-10-05",
       "verification_status": "verified"
     },
     {
@@ -1203,13 +1202,13 @@
       "funder": "INPS",
       "category": "income_support",
       "benefit_type": "cash_monthly",
-      "amount_min": 250,
-      "amount_max": 800,
+      "amount_min": 255.53,
+      "amount_max": 817.69,
       "amount_currency": "EUR",
       "amount_period": "monthly",
-      "amount_note": "Da 250 a 800 euro/mese per 6 mesi, pari al 25% su base semestrale degli ultimi redditi certificati",
+      "amount_note": "Per il 2026 da 255,53 a 817,69 euro/mese per 6 mesi: 25% su base semestrale della media dei redditi da lavoro autonomo dei due anni precedenti (limiti 250-800 rivalutati ISTAT)",
       "is_automatic": false,
-      "application_url": "https://www.inps.it",
+      "application_url": "https://www.inps.it/it/it/dettaglio-scheda.it.schede-servizio-strumento.schede-servizi.indennit-straordinaria-continuit-reddituale-e-operativa-iscro--55497.indennit-straordinaria-di-continuit-reddituale-e-operativa-iscro-.html",
       "application_channel": "online",
       "deadline_type": "annual",
       "deadline_note": "Domanda entro il 31 ottobre di ciascun anno",
@@ -1217,7 +1216,7 @@
         {
           "step": 1,
           "detail": "Domanda online sul portale INPS o tramite patronato",
-          "url": "https://www.inps.it"
+          "url": "https://www.inps.it/it/it/dettaglio-scheda.it.schede-servizio-strumento.schede-servizi.indennit-straordinaria-continuit-reddituale-e-operativa-iscro--55497.indennit-straordinaria-di-continuit-reddituale-e-operativa-iscro-.html"
         }
       ],
       "documents_required": [
@@ -1243,9 +1242,9 @@
         "admin_areas": [],
         "gender": "any"
       },
-      "source_url": "https://www.inps.it",
-      "source_snippet": "L'ISCRO e' un'indennita' straordinaria da 250 a 800 euro mensili per sei mesi destinata ai liberi professionisti iscritti alla Gestione Separata in calo di fatturato.",
-      "last_verified_at": "2026-08-12",
+      "source_url": "https://www.inps.it/it/it/dettaglio-scheda.it.schede-servizio-strumento.schede-servizi.indennit-straordinaria-continuit-reddituale-e-operativa-iscro--55497.indennit-straordinaria-di-continuit-reddituale-e-operativa-iscro-.html",
+      "source_snippet": "La domanda va presentata esclusivamente online, entro il 31 ottobre di ogni anno, effettuando l’accesso al servizio con le proprie credenziali.",
+      "last_verified_at": "2026-10-05",
       "verification_status": "verified"
     },
     {
@@ -1263,15 +1262,15 @@
       "amount_period": "monthly",
       "amount_note": "Fino a 850 euro/mese, a integrazione dell'indennita' di accompagnamento, per assistenti personali o servizi socioassistenziali; sperimentazione avviata nel 2025",
       "is_automatic": false,
-      "application_url": "https://www.inps.it",
+      "application_url": "https://www.inps.it/it/it/dettaglio-scheda.it.schede-servizio-strumento.schede-servizi.decreto-anziani-prestazione-universale.html",
       "application_channel": "online",
-      "deadline_type": "rolling",
-      "deadline_note": null,
+      "deadline_type": "window",
+      "deadline_note": "Misura sperimentale: erogata fino al 31 dicembre 2026 (art. 34 d.lgs. 29/2024)",
       "procedure_steps": [
         {
           "step": 1,
           "detail": "Domanda online INPS o tramite patronato, con controlli automatici su eta', ISEE e condizione di non autosufficienza",
-          "url": "https://www.inps.it"
+          "url": "https://www.inps.it/it/it/dettaglio-scheda.it.schede-servizio-strumento.schede-servizi.decreto-anziani-prestazione-universale.html"
         }
       ],
       "documents_required": [
@@ -1302,9 +1301,9 @@
         "admin_areas": [],
         "gender": "any"
       },
-      "source_url": "https://www.inps.it",
-      "source_snippet": "La prestazione universale per anziani non autosufficienti e' un contributo economico fino a 850 euro mensili destinato agli anziani non autosufficienti con almeno 80 anni, ISEE entro i 6.000 euro e bisogno assistenziale gravissimo.",
-      "last_verified_at": "2026-08-12",
+      "source_url": "https://www.inps.it/it/it/dettaglio-scheda.it.schede-servizio-strumento.schede-servizi.decreto-anziani-prestazione-universale.html",
+      "source_snippet": "La Prestazione Universale è una misura economica sperimentale dal 1° gennaio 2025 al 31 dicembre 2026, destinata alle persone anziane non autosufficienti con un bisogno assistenziale gravissimo.",
+      "last_verified_at": "2026-10-05",
       "verification_status": "verified"
     },
     {
@@ -1320,17 +1319,17 @@
       "amount_max": null,
       "amount_currency": "EUR",
       "amount_period": "monthly",
-      "amount_note": "Dopo l'introduzione dell'Assegno Unico, l'ANF resta residuale per pensionati con nuclei senza figli o con condizioni non coperte da AUU; importi per fasce di reddito pubblicati annualmente",
+      "amount_note": "Dal 1° marzo 2022 l'ANF e' abrogato per i nuclei con figli e orfanili (sostituito dall'Assegno unico); resta per altri familiari a carico del pensionato (es. coniuge, fratelli/sorelle/nipoti orfani minori o inabili); importi per fasce di reddito in tabelle valide dal 1° luglio al 30 giugno",
       "is_automatic": false,
-      "application_url": "https://www.inps.it",
+      "application_url": "https://www.inps.it/it/it/dettaglio-scheda.it.schede-servizio-strumento.schede-servizi.assegno-per-il-nucleo-familiare-ai-pensionati-53730.Assegno-per-il-Nucleo-Familiare-ai-Pensionati.html",
       "application_channel": "online",
-      "deadline_type": "annual",
-      "deadline_note": "Domanda annuale per il periodo 1 luglio - 30 giugno",
+      "deadline_type": "rolling",
+      "deadline_note": "Domanda insieme alla domanda di pensione o successivamente tramite ricostituzione della pensione; tabelle importi valide dal 1° luglio al 30 giugno",
       "procedure_steps": [
         {
           "step": 1,
           "detail": "Domanda online INPS (modello ANF/DIP SR16) o tramite patronato",
-          "url": "https://www.inps.it"
+          "url": "https://www.inps.it/it/it/dettaglio-scheda.it.schede-servizio-strumento.schede-servizi.assegno-per-il-nucleo-familiare-ai-pensionati-53730.Assegno-per-il-Nucleo-Familiare-ai-Pensionati.html"
         }
       ],
       "documents_required": [
@@ -1356,10 +1355,10 @@
         "admin_areas": [],
         "gender": "any"
       },
-      "source_url": "https://www.inps.it",
-      "source_snippet": "L'assegno per il nucleo familiare spetta ai nuclei familiari dei lavoratori dipendenti e dei pensionati da lavoro dipendente, con importi differenziati per fasce di reddito.",
-      "last_verified_at": "2026-08-12",
-      "verification_status": "auto_extracted"
+      "source_url": "https://www.inps.it/it/it/dettaglio-scheda.it.schede-servizio-strumento.schede-servizi.assegno-per-il-nucleo-familiare-ai-pensionati-53730.Assegno-per-il-Nucleo-Familiare-ai-Pensionati.html",
+      "source_snippet": "a partire dal 1° marzo 2022, limitatamente ai nuclei familiari con figli e orfanili, l’Assegno per il Nucleo Familiare è abrogato.",
+      "last_verified_at": "2026-10-05",
+      "verification_status": "verified"
     },
     {
       "slug": "programma-gol",
@@ -1376,7 +1375,7 @@
       "amount_period": "one_off",
       "amount_note": "Servizi gratuiti di orientamento, formazione, riqualificazione e accompagnamento al lavoro; nessun importo monetario",
       "is_automatic": false,
-      "application_url": "https://www.anpal.gov.it",
+      "application_url": "https://www.lavoro.gov.it/temi-e-priorita/occupazione/focus/programma-gol/pagine/chi-si-rivolge",
       "application_channel": "in_person",
       "deadline_type": "rolling",
       "deadline_note": null,
@@ -1384,7 +1383,7 @@
         {
           "step": 1,
           "detail": "Presentarsi al Centro per l'Impiego con DID attiva per la presa in carico e l'assegnazione al percorso GOL",
-          "url": "https://www.anpal.gov.it"
+          "url": "https://www.lavoro.gov.it/temi-e-priorita/occupazione/focus/programma-gol/pagine/chi-si-rivolge"
         },
         {
           "step": 2,
@@ -1416,10 +1415,10 @@
         "admin_areas": [],
         "gender": "any"
       },
-      "source_url": "https://www.anpal.gov.it",
-      "source_snippet": "GOL e' il percorso di presa in carico dei lavoratori in transizione occupazionale, con servizi di upskilling, reskilling, tirocini e accompagnamento al lavoro (Missione 5 Componente 1 PNRR).",
-      "last_verified_at": "2026-08-12",
-      "verification_status": "auto_extracted"
+      "source_url": "https://www.lavoro.gov.it/temi-e-priorita/occupazione/focus/programma-gol/pagine/chi-si-rivolge",
+      "source_snippet": "Gol non è un programma cui iscriversi, ma una nuova offerta di servizi per il lavoro.",
+      "last_verified_at": "2026-10-05",
+      "verification_status": "verified"
     },
     {
       "slug": "bonus-sociale-luce-gas",
@@ -1436,7 +1435,7 @@
       "amount_period": "annual",
       "amount_note": "Sconto automatico in bolletta con importi aggiornati trimestralmente da ARERA; esteso dal 2026 anche alla TARI (sconto 25%)",
       "is_automatic": true,
-      "application_url": "https://www.arera.it",
+      "application_url": "https://www.arera.it/consumatori/bonus-sociale/bonus-sociale-per-disagio-economico",
       "application_channel": "automatic",
       "deadline_type": "none",
       "deadline_note": "Nessuna domanda: basta la DSU/ISEE in corso di validita'; rinnovo automatico con la DSU annuale",
@@ -1449,7 +1448,7 @@
         {
           "step": 2,
           "detail": "Lo sconto viene applicato automaticamente in bolletta dal gestore",
-          "url": "https://www.arera.it"
+          "url": "https://www.arera.it/consumatori/bonus-sociale/bonus-sociale-per-disagio-economico"
         }
       ],
       "documents_required": [
@@ -1463,8 +1462,8 @@
         "statuses": [],
         "age_min": null,
         "age_max": null,
-        "income_annual_max": 9530,
-        "income_note": "ISEE ordinario non superiore a 9.530 euro; elevato a 20.000 euro per nuclei con almeno 4 figli a carico (soglie confermate 2026)",
+        "income_annual_max": 9796,
+        "income_note": "ISEE ordinario non superiore a 9.796 euro dal 1° gennaio 2026 (9.530 nel 2025); soglia 20.000 euro per nuclei con almeno 4 figli a carico",
         "requires_children": false,
         "nationality": "any_resident",
         "residency_months_min": null,
@@ -1473,9 +1472,9 @@
         "admin_areas": [],
         "gender": "any"
       },
-      "source_url": "https://www.arera.it",
-      "source_snippet": "Hanno diritto alle agevolazioni i nuclei con ISEE fino a 9.530 euro, soglia elevata a 20.000 euro per le famiglie con almeno quattro figli a carico; lo sconto e' riconosciuto in via automatica sulla base dell'ISEE.",
-      "last_verified_at": "2026-08-12",
+      "source_url": "https://www.arera.it/consumatori/bonus-sociale/bonus-sociale-per-disagio-economico",
+      "source_snippet": "È uno sconto applicato in modo automatico sulle bollette elettriche, gas e idriche ai nuclei familiari che hanno un’attestazione [ISEE] sottosoglia.",
+      "last_verified_at": "2026-10-05",
       "verification_status": "verified"
     },
     {
@@ -1493,7 +1492,7 @@
       "amount_period": "annual",
       "amount_note": "Sconto sulla componente idrica per nuclei con ISEE sotto soglia, applicato automaticamente; per forniture condominiali rimborso diretto del gestore entro 60 giorni",
       "is_automatic": true,
-      "application_url": "https://www.arera.it",
+      "application_url": "https://www.arera.it/consumatori/bonus-sociale/bonus-sociale-per-disagio-economico",
       "application_channel": "automatic",
       "deadline_type": "none",
       "deadline_note": "Rinnovo automatico con la DSU annuale",
@@ -1515,8 +1514,8 @@
         "statuses": [],
         "age_min": null,
         "age_max": null,
-        "income_annual_max": 9530,
-        "income_note": "ISEE non superiore a 9.530 euro (20.000 euro con almeno 4 figli a carico), come per gli altri bonus sociali ARERA",
+        "income_annual_max": 9796,
+        "income_note": "ISEE ordinario non superiore a 9.796 euro dal 1° gennaio 2026 (9.530 nel 2025); soglia 20.000 euro per nuclei con almeno 4 figli a carico",
         "requires_children": false,
         "nationality": "any_resident",
         "residency_months_min": null,
@@ -1525,9 +1524,9 @@
         "admin_areas": [],
         "gender": "any"
       },
-      "source_url": "https://www.arera.it",
-      "source_snippet": "I bonus sociali per disagio economico riducono la spesa di elettricita', gas e acqua in via automatica sulla base dell'ISEE.",
-      "last_verified_at": "2026-08-12",
+      "source_url": "https://www.arera.it/consumatori/bonus-sociale/bonus-sociale-per-disagio-economico",
+      "source_snippet": "È uno sconto applicato in modo automatico sulle bollette elettriche, gas e idriche ai nuclei familiari che hanno un’attestazione [ISEE] sottosoglia.",
+      "last_verified_at": "2026-10-05",
       "verification_status": "verified"
     },
     {
@@ -1545,7 +1544,7 @@
       "amount_period": "annual",
       "amount_note": "Sconto del 25% della tassa o tariffa rifiuti per ISEE sotto soglia; erogazione automatica avviata nel 2026 (delibera ARERA 355/2025/R/rif)",
       "is_automatic": true,
-      "application_url": "https://www.arera.it",
+      "application_url": "https://www.arera.it/comunicati-stampa/dettaglio/bonus-sociali-arera-alza-a-9796-euro-la-soglia-isee-per-laccesso-alle-agevolazioni-per-acqua-luce-gas-e-rifiuti",
       "application_channel": "automatic",
       "deadline_type": "none",
       "deadline_note": "Riconoscimento automatico sulla base della DSU",
@@ -1567,8 +1566,8 @@
         "statuses": [],
         "age_min": null,
         "age_max": null,
-        "income_annual_max": 9530,
-        "income_note": "Riduzione TARI/TIA del 25% per nuclei con ISEE non superiore a 9.530 euro (20.000 con almeno 4 figli), se prevista dal regolamento comunale",
+        "income_annual_max": 9796,
+        "income_note": "ISEE ordinario non superiore a 9.796 euro dal 1° gennaio 2026 (9.530 nel 2025); soglia 20.000 euro per nuclei con almeno 4 figli a carico",
         "requires_children": false,
         "nationality": "any_resident",
         "residency_months_min": null,
@@ -1577,10 +1576,10 @@
         "admin_areas": [],
         "gender": "any"
       },
-      "source_url": "https://www.arera.it",
-      "source_snippet": "La nuova disciplina sulla Ta.Ri prevede uno sconto del 25% della tassa o della tariffa corrispettiva, riconosciuto agli ISEE sotto soglia e regolato da ARERA.",
-      "last_verified_at": "2026-08-12",
-      "verification_status": "auto_extracted"
+      "source_url": "https://www.arera.it/comunicati-stampa/dettaglio/bonus-sociali-arera-alza-a-9796-euro-la-soglia-isee-per-laccesso-alle-agevolazioni-per-acqua-luce-gas-e-rifiuti",
+      "source_snippet": "Dal 1° gennaio 2026, la soglia minima per ottenere automaticamente i bonus passa dagli attuali 9.530 euro a 9.796 euro, resta invariata a 20.000 euro quella per i nuclei familiari con almeno 4 figli a carico.",
+      "last_verified_at": "2026-10-05",
+      "verification_status": "verified"
     },
     {
       "slug": "conto-termico-3",
@@ -1597,7 +1596,7 @@
       "amount_period": "one_off",
       "amount_note": "Incentivo diretto fino al 65% delle spese ammissibili (pompe di calore, isolamento, solare termico); per le PA fino al 100% in casi specifici; DM 7 marzo 2025",
       "is_automatic": false,
-      "application_url": "https://www.gse.it",
+      "application_url": "https://www.gse.it/servizi-per-te/efficienza-energetica/conto-termico-3-0/come-accedere",
       "application_channel": "online",
       "deadline_type": "rolling",
       "deadline_note": "Domanda entro 90 giorni dalla fine dei lavori (Portaltermico)",
@@ -1610,7 +1609,7 @@
         {
           "step": 2,
           "detail": "Presentare domanda sul portale Portaltermico del GSE entro 90 giorni dalla fine lavori",
-          "url": "https://www.gse.it"
+          "url": "https://www.gse.it/servizi-per-te/efficienza-energetica/conto-termico-3-0/come-accedere"
         }
       ],
       "documents_required": [
@@ -1639,35 +1638,35 @@
         "admin_areas": [],
         "gender": "any"
       },
-      "source_url": "https://www.gse.it",
-      "source_snippet": "Il Conto Termico incentiva interventi per l'incremento dell'efficienza energetica e la produzione di energia termica da fonti rinnovabili con erogazione diretta del GSE.",
-      "last_verified_at": "2026-08-12",
-      "verification_status": "auto_extracted"
+      "source_url": "https://www.gse.it/servizi-per-te/efficienza-energetica/conto-termico-3-0/come-accedere",
+      "source_snippet": "Presenta la richiesta di accesso diretto agli incentivi entro 90 giorni dalla data di conclusione dell'intervento poi: 1.",
+      "last_verified_at": "2026-10-05",
+      "verification_status": "verified"
     },
     {
       "slug": "reddito-energetico",
       "name_local": "Reddito energetico (bonus fotovoltaico famiglie povere)",
-      "name_en": "Energy income - free photovoltaic systems for poor households (pilot, PNRR)",
+      "name_en": "Energy income - photovoltaic system fully paid by a national fund for households in economic hardship",
       "admin_level": "national",
       "admin_area": null,
-      "funder": "Ministero dell'Ambiente / GSE / Regioni (PNRR)",
+      "funder": "GSE - Gestore dei Servizi Energetici (Fondo nazionale Reddito Energetico)",
       "category": "energy",
       "benefit_type": "in_kind",
       "amount_min": null,
       "amount_max": null,
       "amount_currency": "EUR",
       "amount_period": "one_off",
-      "amount_note": "Installazione gratuita di impianti fotovoltaici domestici per nuclei beneficiari di sostegno al reddito, con requisiti tecnici sull'abitazione; bandi regionali a sportello",
+      "amount_note": "Contributo economico che copre le spese dell'impianto fotovoltaico in autoconsumo (polizza multi-rischi, manutenzione e monitoraggio per almeno dieci anni inclusi); fondo iniziale di 100 milioni di euro per il 2024 e 100 milioni per il 2025",
       "is_automatic": false,
-      "application_url": "https://www.gse.it",
+      "application_url": "https://www.gse.it/servizi-per-te/fotovoltaico/reddito-energetico/pillole-informative-reddito-energetico",
       "application_channel": "online",
       "deadline_type": "window",
-      "deadline_note": "Sportelli regionali fino a esaurimento fondi",
+      "deadline_note": "Bandi annuali GSE a contingente (fondo 2024 e 2025); in caso di esaurimento si puo' presentare nuova richiesta al bando successivo",
       "procedure_steps": [
         {
           "step": 1,
           "detail": "Verificare l'apertura dello sportello nella propria Regione e presentare domanda sul portale dedicato",
-          "url": "https://www.gse.it"
+          "url": "https://www.gse.it/servizi-per-te/fotovoltaico/reddito-energetico/pillole-informative-reddito-energetico"
         }
       ],
       "documents_required": [
@@ -1686,8 +1685,8 @@
         "statuses": [],
         "age_min": null,
         "age_max": null,
-        "income_annual_max": 9530,
-        "income_note": "Rivolto a nuclei con ISEE non superiore a 9.530 euro (20.000 con 4+ figli) o percettori ADI/Prestazione universale; impianto FER da 2-6 kW in detrazione Irpef",
+        "income_annual_max": 15000,
+        "income_note": "ISEE in corso di validita' inferiore a 15.000 euro (inferiore a 30.000 con almeno quattro figli a carico); titolari di diritto reale sull'immobile di residenza anagrafica; intestatari del contratto di fornitura elettrica del nucleo",
         "requires_children": false,
         "nationality": "any_resident",
         "residency_months_min": null,
@@ -1696,10 +1695,10 @@
         "admin_areas": [],
         "gender": "any"
       },
-      "source_url": "https://www.gse.it",
-      "source_snippet": "Il Reddito energetico prevede l'installazione di impianti fotovoltaici a favore di nuclei familiari in condizione di poverta', finanziato con fondi PNRR tramite bandi regionali.",
-      "last_verified_at": "2026-08-12",
-      "verification_status": "auto_extracted"
+      "source_url": "https://www.gse.it/servizi-per-te/fotovoltaico/reddito-energetico/pillole-informative-reddito-energetico",
+      "source_snippet": "appartenenti a nuclei familiari in condizione di disagio economico, ovvero con un ISEE (Indicatore della Situazione Economica Equivalente) in corso di validità inferiore a 15.000 euro, oppure inferiore a 30.000 euro nel caso di nuclei familiari con almeno quattro figli a carico",
+      "last_verified_at": "2026-10-05",
+      "verification_status": "verified"
     },
     {
       "slug": "bonus-ristrutturazioni",
@@ -1716,7 +1715,7 @@
       "amount_period": "annual",
       "amount_note": "Detrazione IRPEF 50% per l'abitazione principale e 36% per gli altri immobili sulle spese 2025-2026 (36% e 30% nel 2027), su spesa massima di 96.000 euro per unita' immobiliare. EUR 48,000 e' il totale detraibile nell'arco di 10 anni (50% di 96.000), ripartito in 10 rate annuali da EUR 4.800 (non un importo annuale di 48.000 euro).",
       "is_automatic": false,
-      "application_url": "https://www.agenziaentrate.gov.it",
+      "application_url": "https://www.agenziaentrate.gov.it/portale/la-misura-della-detrazione-limiti-detraibilita",
       "application_channel": "online",
       "deadline_type": "annual",
       "deadline_note": "Indicare le spese nella dichiarazione dei redditi dell'anno di pagamento",
@@ -1729,7 +1728,7 @@
         {
           "step": 2,
           "detail": "Indicare le spese nel modello 730 o Redditi PF",
-          "url": "https://www.agenziaentrate.gov.it"
+          "url": "https://www.agenziaentrate.gov.it/portale/la-misura-della-detrazione-limiti-detraibilita"
         }
       ],
       "documents_required": [
@@ -1758,9 +1757,9 @@
         "admin_areas": [],
         "gender": "any"
       },
-      "source_url": "https://www.agenziaentrate.gov.it",
-      "source_snippet": "Dal 1° gennaio 2025 al 31 dicembre 2026 il Bonus Ristrutturazione prevede una detrazione del 50% per gli interventi sulle abitazioni principali e del 36% per gli altri immobili, fino a 96.000 euro per unita' immobiliare.",
-      "last_verified_at": "2026-09-25",
+      "source_url": "https://www.agenziaentrate.gov.it/portale/la-misura-della-detrazione-limiti-detraibilita",
+      "source_snippet": "detrazione del 50% (con limite massimo di spesa agevolabile di 96.000 euro), per interventi effettuati sull’unità immobiliare adibita ad abitazione principale",
+      "last_verified_at": "2026-10-05",
       "verification_status": "verified"
     },
     {
@@ -1778,7 +1777,7 @@
       "amount_period": "annual",
       "amount_note": "Detrazione 50% abitazione principale / 36% altri immobili per spese 2025-2026 (36%/30% nel 2027); escluse caldaie a combustibili fossili; tetti di spesa differenziati per intervento, ripartizione in 10 rate",
       "is_automatic": false,
-      "application_url": "https://www.agenziaentrate.gov.it",
+      "application_url": "https://www.agenziaentrate.gov.it/portale/aree-tematiche/casa/agevolazioni/agevolazioni-risparmio-energetico",
       "application_channel": "online",
       "deadline_type": "annual",
       "deadline_note": "Dichiarazione dei redditi dell'anno di sostenimento della spesa; pratica ENEA obbligatoria",
@@ -1791,7 +1790,7 @@
         {
           "step": 2,
           "detail": "Indicare le spese nella dichiarazione dei redditi",
-          "url": "https://www.agenziaentrate.gov.it"
+          "url": "https://www.agenziaentrate.gov.it/portale/aree-tematiche/casa/agevolazioni/agevolazioni-risparmio-energetico"
         }
       ],
       "documents_required": [
@@ -1820,10 +1819,10 @@
         "admin_areas": [],
         "gender": "any"
       },
-      "source_url": "https://www.agenziaentrate.gov.it",
-      "source_snippet": "Ecobonus: detrazione elevata al 50% delle spese sostenute negli anni 2025 e 2026 per l'abitazione principale; esclusi gli interventi con caldaie uniche alimentate a combustibili fossili (Circolare AE n. 8/2025).",
-      "last_verified_at": "2026-08-12",
-      "verification_status": "auto_extracted"
+      "source_url": "https://www.agenziaentrate.gov.it/portale/aree-tematiche/casa/agevolazioni/agevolazioni-risparmio-energetico",
+      "source_snippet": "la detrazione spetta nella misura del 36%, elevata al 50% in caso di abitazione principale.",
+      "last_verified_at": "2026-10-05",
+      "verification_status": "verified"
     },
     {
       "slug": "sismabonus",
@@ -1840,7 +1839,7 @@
       "amount_period": "annual",
       "amount_note": "Detrazione 50% abitazione principale / 36% altri immobili per spese 2025-2026 (36%/30% nel 2027) su interventi in zone sismiche 1, 2 e 3; massimale 96.000 euro per unita' immobiliare",
       "is_automatic": false,
-      "application_url": "https://www.agenziaentrate.gov.it",
+      "application_url": "https://www.agenziaentrate.gov.it/portale/aree-tematiche/casa/agevolazioni/sisma-bonus",
       "application_channel": "online",
       "deadline_type": "annual",
       "deadline_note": "Dichiarazione dei redditi dell'anno di sostenimento della spesa",
@@ -1853,7 +1852,7 @@
         {
           "step": 2,
           "detail": "Indicare le spese nella dichiarazione dei redditi",
-          "url": "https://www.agenziaentrate.gov.it"
+          "url": "https://www.agenziaentrate.gov.it/portale/aree-tematiche/casa/agevolazioni/sisma-bonus"
         }
       ],
       "documents_required": [
@@ -1882,10 +1881,10 @@
         "admin_areas": [],
         "gender": "any"
       },
-      "source_url": "https://www.agenziaentrate.gov.it",
-      "source_snippet": "Il Sismabonus prevede una detrazione per gli interventi di riduzione del rischio sismico nelle zone 1, 2 e 3, con aliquote rimodulate dalla Legge di Bilancio 2025.",
-      "last_verified_at": "2026-08-12",
-      "verification_status": "auto_extracted"
+      "source_url": "https://www.agenziaentrate.gov.it/portale/aree-tematiche/casa/agevolazioni/sisma-bonus",
+      "source_snippet": "Per le spese sostenute dal 1º gennaio 2017 al 31 dicembre 2024 spetta una detrazione del 50%, che va calcolata su un ammontare massimo di 96.000 euro per unità immobiliare (per ciascun anno).",
+      "last_verified_at": "2026-10-05",
+      "verification_status": "verified"
     },
     {
       "slug": "bonus-mobili",
@@ -1902,7 +1901,7 @@
       "amount_period": "annual",
       "amount_note": "Detrazione 50% su spesa massima di 5.000 euro (quindi max 2.500 euro) per arredi ed elettrodomestici collegati a una ristrutturazione avviata, ripartita in 10 rate",
       "is_automatic": false,
-      "application_url": "https://www.agenziaentrate.gov.it",
+      "application_url": "https://www.agenziaentrate.gov.it/portale/aree-tematiche/casa/agevolazioni/bonus-mobili-ed-elettrodomestici",
       "application_channel": "online",
       "deadline_type": "annual",
       "deadline_note": "Spese collegate a intervento di ristrutturazione in corso",
@@ -1915,7 +1914,7 @@
         {
           "step": 2,
           "detail": "Indicare le spese nella dichiarazione dei redditi",
-          "url": "https://www.agenziaentrate.gov.it"
+          "url": "https://www.agenziaentrate.gov.it/portale/aree-tematiche/casa/agevolazioni/bonus-mobili-ed-elettrodomestici"
         }
       ],
       "documents_required": [
@@ -1944,10 +1943,10 @@
         "admin_areas": [],
         "gender": "any"
       },
-      "source_url": "https://www.agenziaentrate.gov.it",
-      "source_snippet": "Proroga della detrazione prevista dal Bonus mobili con lo stesso limite di spesa ammesso alla detrazione di 5.000 euro (Circolare AE n. 8/2025).",
-      "last_verified_at": "2026-08-12",
-      "verification_status": "auto_extracted"
+      "source_url": "https://www.agenziaentrate.gov.it/portale/aree-tematiche/casa/agevolazioni/bonus-mobili-ed-elettrodomestici",
+      "source_snippet": "è possibile fruire di una detrazione del 50% calcolata su un importo massimo di 5.000 euro per il 2026, riferito, complessivamente, alle spese sostenute per l’acquisto di mobili e grandi elettrodomestici.",
+      "last_verified_at": "2026-10-05",
+      "verification_status": "verified"
     },
     {
       "slug": "detrazione-affitto-studenti-fuori-sede",
@@ -1964,7 +1963,7 @@
       "amount_period": "annual",
       "amount_note": "Detrazione del 19% su canoni fino a 2.633 euro/anno (max 500,27 euro) per studenti iscritti a universita' in Comune distante almeno 100 km da quello di residenza",
       "is_automatic": false,
-      "application_url": "https://www.agenziaentrate.gov.it",
+      "application_url": "https://www.agenziaentrate.gov.it/portale/documents/20143/5629825/Detrazioni+per+canoni+di+locazione_tabella_aggiornata.pdf/f76fe2b8-ecab-9d12-1986-752885a8b95a",
       "application_channel": "online",
       "deadline_type": "annual",
       "deadline_note": "Dichiarazione dei redditi",
@@ -2013,10 +2012,10 @@
         "admin_areas": [],
         "gender": "any"
       },
-      "source_url": "https://www.agenziaentrate.gov.it",
-      "source_snippet": "E' prevista una detrazione del 19% per i canoni di locazione degli studenti universitari fuori sede, entro il limite di 2.633 euro annui.",
-      "last_verified_at": "2026-08-12",
-      "verification_status": "auto_extracted"
+      "source_url": "https://www.agenziaentrate.gov.it/portale/documents/20143/5629825/Detrazioni+per+canoni+di+locazione_tabella_aggiornata.pdf/f76fe2b8-ecab-9d12-1986-752885a8b95a",
+      "source_snippet": "La detrazione è pari al 19% dei canoni effettivamente pagati (l'importo massimo della spesa è di 2.633,00 euro).",
+      "last_verified_at": "2026-10-05",
+      "verification_status": "verified"
     },
     {
       "slug": "detrazione-spese-universitarie",
@@ -2033,7 +2032,7 @@
       "amount_period": "annual",
       "amount_note": "Detrazione del 19% sulle spese di istruzione universitaria (tasse e contributi), entro i tetti regionali per corsi statali e limite annuo per atenei non statali",
       "is_automatic": false,
-      "application_url": "https://www.agenziaentrate.gov.it",
+      "application_url": "https://infoprecompilata.agenziaentrate.gov.it/portale/documents/10180/208302/Spese+universitarie.pdf/01fd0858-76b5-4b2b-ad74-b2e72af5d282",
       "application_channel": "online",
       "deadline_type": "annual",
       "deadline_note": "Dichiarazione dei redditi",
@@ -2067,10 +2066,10 @@
         "admin_areas": [],
         "gender": "any"
       },
-      "source_url": "https://www.agenziaentrate.gov.it",
-      "source_snippet": "Le spese per l'istruzione universitaria sono detraibili nella misura del 19%, entro i limiti previsti per ciascuna tipologia di corso.",
-      "last_verified_at": "2026-08-12",
-      "verification_status": "auto_extracted"
+      "source_url": "https://infoprecompilata.agenziaentrate.gov.it/portale/documents/10180/208302/Spese+universitarie.pdf/01fd0858-76b5-4b2b-ad74-b2e72af5d282",
+      "source_snippet": "La detrazione spetta, nella misura del 19 per cento, delle spese sostenute per la frequenza di corsi di laurea presso università statali e non statali",
+      "last_verified_at": "2026-10-05",
+      "verification_status": "verified"
     },
     {
       "slug": "no-tax-area-universita",
@@ -2085,9 +2084,9 @@
       "amount_max": null,
       "amount_currency": "EUR",
       "amount_period": "annual",
-      "amount_note": "Esenzione totale dalle tasse universitarie per studenti con ISEE per prestazioni per il diritto allo studio fino a circa 27.000 euro (soglia aggiornata periodicamente); riduzioni progressive oltre la soglia secondo tabelle di ciascun ateneo",
+      "amount_note": "Esonero totale dal contributo omnicomprensivo con ISEE fino a 22.000 euro (dal secondo anno servono requisiti di merito/durata); riduzioni dell'80% (22.001-24.000), 50% (24.001-26.000), 25% (26.001-28.000), 10% (28.001-30.000)",
       "is_automatic": true,
-      "application_url": "https://www.mur.gov.it",
+      "application_url": "https://www.mur.gov.it/it/news/martedi-31082021/universita-pubblicato-il-decreto-ministeriale-gli-esoneri-dal-contributo",
       "application_channel": "online",
       "deadline_type": "annual",
       "deadline_note": "Presentare l'ISEE universita' entro le scadenze di immatricolazione/rinnovo del proprio ateneo",
@@ -2117,7 +2116,7 @@
         "age_min": null,
         "age_max": null,
         "income_annual_max": 30000,
-        "income_note": "No tax area: esonero totale dal contributo omnicomprensivo con ISEE universita' fino a 27.726,72 euro (soglia base aggiornata), estesa dalla L. Bilancio 2024 fino a 30.000 euro; molti atenei applicano riduzioni a scaglioni",
+        "income_note": "ISEE universita': esonero totale fino a 22.000 euro; riduzioni progressive tra 22.001 e 30.000 euro (DM 1014/2021). Le universita' possono prevedere esoneri ulteriori.",
         "requires_children": false,
         "nationality": "any_resident",
         "residency_months_min": null,
@@ -2126,9 +2125,9 @@
         "admin_areas": [],
         "gender": "any"
       },
-      "source_url": "https://www.mur.gov.it",
+      "source_url": "https://www.mur.gov.it/it/news/martedi-31082021/universita-pubblicato-il-decreto-ministeriale-gli-esoneri-dal-contributo",
       "source_snippet": "Gli studenti con ISEE per il diritto allo studio entro la soglia della no tax area sono esenti dalle tasse universitarie; oltre la soglia si applicano riduzioni progressive (L. 232/2016).",
-      "last_verified_at": "2026-08-12",
+      "last_verified_at": "2026-10-05",
       "verification_status": "verified"
     },
     {
@@ -2140,13 +2139,13 @@
       "funder": "Agenzia delle Entrate (fiscalita' generale)",
       "category": "housing",
       "benefit_type": "tax_credit",
-      "amount_min": null,
+      "amount_min": 991.6,
       "amount_max": 2000,
       "amount_currency": "EUR",
       "amount_period": "annual",
-      "amount_note": "Fino a 2.000 euro/anno per i primi 4 anni di locazione (minimo 991,60 euro), per giovani 20-31 anni che trasferiscono la residenza in un immobile diverso da quello dei genitori",
+      "amount_note": "Maggiore valore tra il 20% del canone annuo e 991,60 euro forfettari, fino a un massimo di 2.000 euro; per i primi 4 anni del contratto, fino al compimento dei 31 anni",
       "is_automatic": false,
-      "application_url": "https://www.agenziaentrate.gov.it",
+      "application_url": "https://www.agenziaentrate.gov.it/portale/documents/20143/5629825/Detrazioni+per+canoni+di+locazione_tabella_aggiornata.pdf/f76fe2b8-ecab-9d12-1986-752885a8b95a",
       "application_channel": "online",
       "deadline_type": "annual",
       "deadline_note": "Dichiarazione dei redditi",
@@ -2177,7 +2176,7 @@
       "eligibility": {
         "statuses": [],
         "age_min": 20,
-        "age_max": 31,
+        "age_max": 30,
         "income_annual_max": 15493.71,
         "income_note": "Reddito complessivo non superiore a 15.493,71 euro",
         "requires_children": false,
@@ -2188,10 +2187,10 @@
         "admin_areas": [],
         "gender": "any"
       },
-      "source_url": "https://www.agenziaentrate.gov.it",
-      "source_snippet": "Ai giovani tra i 20 e i 31 anni che stipulano un contratto di locazione spetta una detrazione fino a 2.000 euro annui per i primi quattro anni, con reddito non superiore a 15.493,71 euro.",
-      "last_verified_at": "2026-08-12",
-      "verification_status": "auto_extracted"
+      "source_url": "https://www.agenziaentrate.gov.it/portale/documents/20143/5629825/Detrazioni+per+canoni+di+locazione_tabella_aggiornata.pdf/f76fe2b8-ecab-9d12-1986-752885a8b95a",
+      "source_snippet": "Maggiore valore tra 20% canone annuo e importo forfettario di 991,60 euro (fino a un massimo di 2000 euro).",
+      "last_verified_at": "2026-10-05",
+      "verification_status": "verified"
     },
     {
       "slug": "detrazione-canone-locazione-abitazione",
@@ -2203,12 +2202,12 @@
       "category": "housing",
       "benefit_type": "tax_credit",
       "amount_min": 150,
-      "amount_max": 495.5,
+      "amount_max": 495.8,
       "amount_currency": "EUR",
       "amount_period": "annual",
-      "amount_note": "Detrazione di 495,50 euro (reddito fino a 15.493,71 euro) o 247,90 euro (fino a 30.987,41 euro); importi diversi per contratti concordati, giovani 20-30 anni e trasfertisti",
+      "amount_note": "Contratti liberi: 300 euro (reddito fino a 15.493,71) o 150 euro (fino a 30.987,41); contratti concordati: 495,80 euro (fino a 15.493,71) o 247,90 euro (fino a 30.987,41)",
       "is_automatic": false,
-      "application_url": "https://www.agenziaentrate.gov.it",
+      "application_url": "https://www.agenziaentrate.gov.it/portale/documents/20143/5629825/Detrazioni+per+canoni+di+locazione_tabella_aggiornata.pdf/f76fe2b8-ecab-9d12-1986-752885a8b95a",
       "application_channel": "online",
       "deadline_type": "annual",
       "deadline_note": "Dichiarazione dei redditi",
@@ -2231,7 +2230,7 @@
         "age_min": null,
         "age_max": null,
         "income_annual_max": 30987.41,
-        "income_note": "Reddito complessivo fino a 30.987,41 euro; abitazione adibita a dimora principale",
+        "income_note": "Reddito complessivo fino a 30.987,41 euro; abitazione adibita a dimora principale; detrazioni rapportate ai giorni di utilizzo e non cumulabili",
         "requires_children": false,
         "nationality": "any_resident",
         "residency_months_min": null,
@@ -2240,10 +2239,10 @@
         "admin_areas": [],
         "gender": "any"
       },
-      "source_url": "https://www.agenziaentrate.gov.it",
-      "source_snippet": "Per i conduttori di unita' immobiliari adibite ad abitazione principale sono previste detrazioni differenziate in base al reddito e alla tipologia contrattuale.",
-      "last_verified_at": "2026-08-12",
-      "verification_status": "auto_extracted"
+      "source_url": "https://www.agenziaentrate.gov.it/portale/documents/20143/5629825/Detrazioni+per+canoni+di+locazione_tabella_aggiornata.pdf/f76fe2b8-ecab-9d12-1986-752885a8b95a",
+      "source_snippet": "495,80 euro per reddito complessivo fino a 15.493,71 euro. 247,90 euro per reddito complessivo fino a 30.987,41 euro.",
+      "last_verified_at": "2026-10-05",
+      "verification_status": "verified"
     },
     {
       "slug": "agevolazioni-prima-casa",
@@ -2258,9 +2257,9 @@
       "amount_max": null,
       "amount_currency": "EUR",
       "amount_period": "one_off",
-      "amount_note": "Imposta di registro al 2% (anziche' 9%) sul valore catastale, ipotecaria e catastale fisse 50 euro ciascuna; da costruttore IVA 4% e imposte fisse 200 euro",
+      "amount_note": "Da privato: registro 2% (invece di 9%), ipotecaria e catastale fisse 50 euro ciascuna. Da impresa con IVA: IVA 4% (invece di 10%), registro, ipotecaria e catastale fisse 200 euro ciascuna. Se si possiede gia' una prima casa agevolata, va venduta entro due anni dal nuovo acquisto (Legge di bilancio 2025)",
       "is_automatic": false,
-      "application_url": "https://www.agenziaentrate.gov.it",
+      "application_url": "https://www.agenziaentrate.gov.it/portale/aree-tematiche/casa/agevolazioni/agevolazioni-per-acquisto-della-prima-casa",
       "application_channel": "in_person",
       "deadline_type": "none",
       "deadline_note": "Richiesta in atto notarile al momento del rogito",
@@ -2297,9 +2296,9 @@
         "admin_areas": [],
         "gender": "any"
       },
-      "source_url": "https://www.agenziaentrate.gov.it",
-      "source_snippet": "Le agevolazioni ordinarie prima casa (registro 2%, ipotecaria e catastale fisse a 50 euro) sono attive e senza scadenza.",
-      "last_verified_at": "2026-08-12",
+      "source_url": "https://www.agenziaentrate.gov.it/portale/aree-tematiche/casa/agevolazioni/agevolazioni-per-acquisto-della-prima-casa",
+      "source_snippet": "imposta di registro proporzionale nella misura del 2% (invece che 9%); imposta ipotecaria fissa di 50 euro; imposta catastale fissa di 50 euro",
+      "last_verified_at": "2026-10-05",
       "verification_status": "verified"
     },
     {
@@ -2317,7 +2316,7 @@
       "amount_period": "annual",
       "amount_note": "Detrazione del 19% su interessi passivi fino a 4.000 euro/anno (max 760 euro) per mutui su abitazione principale",
       "is_automatic": false,
-      "application_url": "https://www.agenziaentrate.gov.it",
+      "application_url": "https://www.agenziaentrate.gov.it/portale/documents/20143/9155203/03-Interessi_Passivi_Mutui.pdf/80711592-be35-0eb8-5b39-026a23485aaf?t=1750164991697",
       "application_channel": "online",
       "deadline_type": "annual",
       "deadline_note": "Dichiarazione dei redditi",
@@ -2349,10 +2348,10 @@
         "admin_areas": [],
         "gender": "any"
       },
-      "source_url": "https://www.agenziaentrate.gov.it",
-      "source_snippet": "Gli interessi passivi sui mutui per l'abitazione principale sono detraibili nella misura del 19% entro il limite annuo di 4.000 euro.",
-      "last_verified_at": "2026-08-12",
-      "verification_status": "auto_extracted"
+      "source_url": "https://www.agenziaentrate.gov.it/portale/documents/20143/9155203/03-Interessi_Passivi_Mutui.pdf/80711592-be35-0eb8-5b39-026a23485aaf?t=1750164991697",
+      "source_snippet": "Gli interessi passivi, gli oneri accessori e le quote di rivalutazione corrisposti in dipendenza di mutui danno diritto ad una detrazione dall'imposta lorda nella misura del 19 per cento.",
+      "last_verified_at": "2026-10-05",
+      "verification_status": "verified"
     },
     {
       "slug": "consap-mutuo-prima-casa-under36",
@@ -2369,10 +2368,10 @@
       "amount_period": "one_off",
       "amount_note": "Garanzia statale fino all'80% della quota capitale (90% per nuclei con 5+ figli) su mutui fino a 250.000 euro, anche al 100% del valore; tassi vincolati al TEGM; attivo fino al 31 dicembre 2027",
       "is_automatic": false,
-      "application_url": "https://www.fondogaranziamutui.consap.it",
+      "application_url": "https://www.consap.it/fondo-prima-casa/",
       "application_channel": "in_person",
       "deadline_type": "window",
-      "deadline_note": "Sezione prioritaria attiva fino al 31 dicembre 2027",
+      "deadline_note": "Garanzia rafforzata per le categorie prioritarie prorogata al 31 dicembre 2027; domande tramite le banche aderenti, non direttamente a Consap. Dal 3 agosto 2026 accesso esteso anche a persone con disabilita' grave",
       "procedure_steps": [
         {
           "step": 1,
@@ -2411,9 +2410,9 @@
         "admin_areas": [],
         "gender": "any"
       },
-      "source_url": "https://www.fondogaranziamutui.consap.it",
-      "source_snippet": "Fondo di Garanzia Consap: garanzia 80% sul mutuo, attivo fino al 31/12/2027; mutui fino a 250.000 euro anche al 100% del valore dell'immobile.",
-      "last_verified_at": "2026-08-12",
+      "source_url": "https://www.consap.it/fondo-prima-casa/",
+      "source_snippet": "giovani che non abbiano compiuto trentasei anni",
+      "last_verified_at": "2026-10-05",
       "verification_status": "verified"
     },
     {
@@ -2431,7 +2430,7 @@
       "amount_period": "annual",
       "amount_note": "Pacchetto di agevolazioni: 3 giorni/mese di permesso retribuito per caregiver, IVA 4% e detrazione 19% (fino a 15.493,71 euro di spesa) sull'auto per disabili, detrazione spese di assistenza personale fino a 10.000 euro, esenzione bollo auto in molte regioni",
       "is_automatic": false,
-      "application_url": "https://www.inps.it",
+      "application_url": "https://www.inps.it/it/it/dettaglio-scheda.it.schede-servizio-strumento.schede-servizi.50098.indennit-per-permessi-fruiti-dai-lavoratori-per-assistere-familiari-disabili-in-situazione-di-gravit-o-fruiti-dai-lavoratori-disabili.html",
       "application_channel": "online",
       "deadline_type": "rolling",
       "deadline_note": null,
@@ -2462,7 +2461,7 @@
         "age_min": null,
         "age_max": null,
         "income_annual_max": null,
-        "income_note": "Persone con handicap certificato e loro familiari/conviventi caregivers",
+        "income_note": "Nessun limite di reddito; serve disabilita' grave (art. 3 c.3 L.104/1992) riconosciuta dalla commissione ASL/INPS. I permessi spettano solo ai lavoratori dipendenti (esclusi autonomi, domestici, parasubordinati)",
         "requires_children": false,
         "nationality": "any_resident",
         "residency_months_min": null,
@@ -2471,10 +2470,10 @@
         "admin_areas": [],
         "gender": "any"
       },
-      "source_url": "https://www.inps.it",
-      "source_snippet": "La Legge 5 febbraio 1992, n. 104 e' la legge-quadro per l'assistenza, l'integrazione sociale e i diritti delle persone handicappate.",
-      "last_verified_at": "2026-08-12",
-      "verification_status": "auto_extracted"
+      "source_url": "https://www.inps.it/it/it/dettaglio-scheda.it.schede-servizio-strumento.schede-servizi.50098.indennit-per-permessi-fruiti-dai-lavoratori-per-assistere-familiari-disabili-in-situazione-di-gravit-o-fruiti-dai-lavoratori-disabili.html",
+      "source_snippet": "tre giorni di permesso mensile, anche frazionabili in ore",
+      "last_verified_at": "2026-10-05",
+      "verification_status": "verified"
     },
     {
       "slug": "esenzione-ticket-reddito-e01-e02",
@@ -2707,12 +2706,12 @@
       "category": "housing",
       "benefit_type": "cash_one_off",
       "amount_min": null,
-      "amount_max": null,
+      "amount_max": 12000,
       "amount_currency": "EUR",
       "amount_period": "one_off",
-      "amount_note": "Contributo a copertura (totale o parziale) dei canoni pregressi per inquilini che hanno perso o ridotto il reddito per cause involontarie; gestito dai Comuni con bandi a sportello",
+      "amount_note": "Contributo massimo 12.000 euro: fino a 8.000 euro per sanare la morosita' (contratto residuo di almeno 2 anni), fino a 6.000 euro per il differimento dello sfratto, piu' deposito cauzionale o canoni di un nuovo contratto concordato, entro il tetto di 12.000",
       "is_automatic": false,
-      "application_url": "https://www.mit.gov.it",
+      "application_url": "https://www.mit.gov.it/comunicazione/news/fondo-morosita-incolpevole-ok-al-riparto-di-4584-milioni",
       "application_channel": "in_person",
       "deadline_type": "window",
       "deadline_note": "Bandi comunali fino a esaurimento delle risorse statali",
@@ -2742,7 +2741,7 @@
         "age_min": null,
         "age_max": null,
         "income_annual_max": 26000,
-        "income_note": "ISEE non superiore a 26.000 euro e ISE non superiore a 35.000 euro (DM 30 marzo 2016); contributo massimo 12.000 euro per nucleo",
+        "income_note": "ISEE non superiore a 26.000 euro (reddito da lavoro) oppure ISE non superiore a 35.000 euro; sfratto per morosita' con citazione per la convalida; contratto registrato e residenza nell'alloggio da almeno un anno",
         "requires_children": false,
         "nationality": "any_resident",
         "residency_months_min": null,
@@ -2751,9 +2750,9 @@
         "admin_areas": [],
         "gender": "any"
       },
-      "source_url": "https://www.mit.gov.it",
-      "source_snippet": "Il Fondo sostiene gli inquilini morosi incolpevoli, che non riescono a pagare il canone di affitto a causa della perdita o della consistente riduzione della capacita' reddituale del nucleo familiare.",
-      "last_verified_at": "2026-08-12",
+      "source_url": "https://www.mit.gov.it/comunicazione/news/fondo-morosita-incolpevole-ok-al-riparto-di-4584-milioni",
+      "source_snippet": "L'importo massimo di contributo concedibile per sanare la morosità incolpevole accertata non può superare l’importo di euro 12 mila euro",
+      "last_verified_at": "2026-10-05",
       "verification_status": "verified"
     },
     {
@@ -2826,9 +2825,9 @@
       "amount_max": 200000,
       "amount_currency": "EUR",
       "amount_period": "one_off",
-      "amount_note": "Voucher di avvio fino a 50.000 euro (100%) oppure contributo a fondo perduto fino a 200.000 euro (75% fino a 120.000 euro, 70% oltre); obbligo di mantenimento attivita' per 5 anni",
+      "amount_note": "Voucher fino a 40.000 euro (estendibile a 50.000) a fondo perduto; per programmi fino a 120.000 euro contributo del 75% a fondo perduto, tra 120.000 e 200.000 euro 70%; valutazione entro 90 giorni in ordine cronologico, dotazione 356,4 milioni",
       "is_automatic": false,
-      "application_url": "https://www.invitalia.it",
+      "application_url": "https://www.invitalia.it/incentivi-e-strumenti/resto-al-sud-20",
       "application_channel": "online",
       "deadline_type": "window",
       "deadline_note": "Sportello aperto dal 15 ottobre 2025 fino a esaurimento fondi, valutazione cronologica",
@@ -2878,9 +2877,9 @@
         ],
         "gender": "any"
       },
-      "source_url": "https://www.invitalia.it",
-      "source_snippet": "Resto al Sud 2.0: voucher fino a 50.000 euro al 100% e contributo a fondo perduto fino a 200.000 euro (75% fino a 120.000, 70% oltre) per under 35 nel Mezzogiorno; sportello dal 15 ottobre 2025.",
-      "last_verified_at": "2026-08-12",
+      "source_url": "https://www.invitalia.it/incentivi-e-strumenti/resto-al-sud-20",
+      "source_snippet": "giovani tra i 18 anni compiuti e i 35 anni non ancora compiuti",
+      "last_verified_at": "2026-10-05",
       "verification_status": "verified"
     },
     {
@@ -2896,9 +2895,9 @@
       "amount_max": 1500000,
       "amount_currency": "EUR",
       "amount_period": "one_off",
-      "amount_note": "Finanziamento a tasso zero senza garanzie reali pari all'80% delle spese (90% per compagini femminili, under 36 o con dottori di ricerca); nel Mezzogiorno il 30% (35% giovani/donne) e' a fondo perduto; rimborso max 10 anni",
+      "amount_note": "Finanziamento a tasso zero dell'80% delle spese ammissibili (90% per startup femminili, under 36 o con ricercatore con dottorato dall'estero); per startup del Centro-Sud ulteriore contributo a fondo perduto del 30%; progetti da 100.000 a 1,5 milioni di euro",
       "is_automatic": false,
-      "application_url": "https://www.invitalia.it",
+      "application_url": "https://www.invitalia.it/incentivi-e-strumenti/smart-start-italia",
       "application_channel": "online",
       "deadline_type": "rolling",
       "deadline_note": "Sportello continuativo fino a esaurimento risorse, valutazione cronologica",
@@ -2942,9 +2941,9 @@
         "admin_areas": [],
         "gender": "any"
       },
-      "source_url": "https://www.invitalia.it",
-      "source_snippet": "Smart&Start Italia: finanziamento a tasso zero fino a 1,5 milioni di euro senza garanzie reali, copertura fino al 90% delle spese ammissibili; al Sud contributo a fondo perduto del 30%.",
-      "last_verified_at": "2026-08-12",
+      "source_url": "https://www.invitalia.it/incentivi-e-strumenti/smart-start-italia",
+      "source_snippet": "Finanziamento a tasso zero dell'80% delle spese ammissibili",
+      "last_verified_at": "2026-10-05",
       "verification_status": "verified"
     },
     {
@@ -2960,12 +2959,12 @@
       "amount_max": 3000000,
       "amount_currency": "EUR",
       "amount_period": "one_off",
-      "amount_note": "Finanziamento fino a 3 milioni di euro per progetti fino a 1,5 milioni di spese ammissibili: fino al 90% a tasso zero e fino al 10% a fondo perduto (15-20% in specifiche condizioni)",
+      "amount_note": "Investimenti fino a 1,5 milioni di euro (imprese costituite da meno di 36 mesi) o 3 milioni (36-60 mesi); finanziamento agevolato fino al 90% delle spese; contributo a fondo perduto non oltre il 20% (15% per 36-60 mesi), ora esaurito",
       "is_automatic": false,
-      "application_url": "https://www.invitalia.it",
+      "application_url": "https://www.invitalia.it/incentivi-e-strumenti/nuove-imprese-tasso-zero/cose",
       "application_channel": "online",
       "deadline_type": "rolling",
-      "deadline_note": "Sportello continuativo fino a esaurimento risorse",
+      "deadline_note": "Dal 1 luglio 2026 risorse a fondo perduto esaurite: disponibile solo il finanziamento agevolato a tasso zero",
       "procedure_steps": [
         {
           "step": 1,
@@ -2996,10 +2995,10 @@
         "admin_areas": [],
         "gender": "any"
       },
-      "source_url": "https://www.invitalia.it",
-      "source_snippet": "ON Nuove Imprese a Tasso Zero sostiene la nascita e lo sviluppo di micro e piccole imprese a prevalenza giovanile o femminile con mix di finanziamento a tasso zero e contributo a fondo perduto.",
-      "last_verified_at": "2026-08-12",
-      "verification_status": "auto_extracted"
+      "source_url": "https://www.invitalia.it/incentivi-e-strumenti/nuove-imprese-tasso-zero/cose",
+      "source_snippet": "Si comunica l'esaurimento delle risorse destinate ai contributi a fondo perduto",
+      "last_verified_at": "2026-10-05",
+      "verification_status": "verified"
     },
     {
       "slug": "microcredito-fondo-garanzia-pmi",
@@ -3016,7 +3015,7 @@
       "amount_period": "one_off",
       "amount_note": "Finanziamento chirografario fino a 75.000 euro (100.000 euro per SRL) senza garanzie reali, con garanzia pubblica gratuita dell'80% fino a 50.000 euro e 60% oltre",
       "is_automatic": false,
-      "application_url": "https://www.mcc.it",
+      "application_url": "https://www.fondidigaranzia.it/sezioni-del-fondo/microcredito/",
       "application_channel": "in_person",
       "deadline_type": "rolling",
       "deadline_note": null,
@@ -3060,9 +3059,9 @@
         "admin_areas": [],
         "gender": "any"
       },
-      "source_url": "https://www.mcc.it",
-      "source_snippet": "Importo massimo erogabile: fino a max 75.000 euro per soggetto beneficiario ovvero 100.000 euro in favore delle societa' a responsabilita' limitata; garanzia del Fondo concessa a titolo gratuito: 80% per operazioni fino a 50.000 euro.",
-      "last_verified_at": "2026-08-12",
+      "source_url": "https://www.fondidigaranzia.it/sezioni-del-fondo/microcredito/",
+      "source_snippet": "non possono eccedere il limite di euro 75.000 per ciascun beneficiario. I finanziamenti in favore delle società a responsabilità limitata non possono eccedere il limite di euro 100.000",
+      "last_verified_at": "2026-10-05",
       "verification_status": "verified"
     },
     {
@@ -3078,9 +3077,9 @@
       "amount_max": null,
       "amount_currency": "EUR",
       "amount_period": "one_off",
-      "amount_note": "Garanzia pubblica gratuita fino all'80% su finanziamenti bancari fino a 2,5 milioni di euro per PMI e professionisti",
+      "amount_note": "Garanzia pubblica: diretta all'80% con riassicurazione all'80% per operazioni di investimento e categorie specifiche; al 50% per operazioni di liquidita'",
       "is_automatic": false,
-      "application_url": "https://www.fondidigaranzia.it",
+      "application_url": "https://www.mimit.gov.it/it/incentivi/fondo-di-garanzia-per-le-pmi",
       "application_channel": "in_person",
       "deadline_type": "rolling",
       "deadline_note": null,
@@ -3114,10 +3113,10 @@
         "admin_areas": [],
         "gender": "any"
       },
-      "source_url": "https://www.fondidigaranzia.it",
-      "source_snippet": "Il Fondo di Garanzia per le PMI facilita l'accesso al credito di micro e piccole imprese, artigiani e professionisti mediante garanzia pubblica sui finanziamenti bancari.",
-      "last_verified_at": "2026-08-12",
-      "verification_status": "auto_extracted"
+      "source_url": "https://www.mimit.gov.it/it/incentivi/fondo-di-garanzia-per-le-pmi",
+      "source_snippet": "garanzia diretta dell'80% e riassicurazione all'80%",
+      "last_verified_at": "2026-10-05",
+      "verification_status": "verified"
     },
     {
       "slug": "nuova-sabatini",
@@ -3132,12 +3131,12 @@
       "amount_max": null,
       "amount_currency": "EUR",
       "amount_period": "one_off",
-      "amount_note": "Contributo in conto interessi su finanziamenti bancari fino a 5 milioni di euro per l'acquisto di macchinari, impianti e beni strumentali, inclusi beni 4.0 e green",
+      "amount_note": "Contributo in conto interessi su finanziamenti bancari da 20.000 euro a 4 milioni di euro (durata massima 5 anni): tasso 2,75% beni ordinari, 3,575% beni 4.0 e green; capitalizzazione 5% (micro/piccole). Rifinanziata dalla Legge di Bilancio 2026 con 650 milioni; domande sulla piattaforma ministeriale",
       "is_automatic": false,
-      "application_url": "https://www.mimit.gov.it",
+      "application_url": "https://www.mimit.gov.it/it/incentivi/agevolazioni-per-gli-investimenti-delle-pmi-in-beni-strumentali-nuova-sabatini",
       "application_channel": "in_person",
       "deadline_type": "rolling",
-      "deadline_note": null,
+      "deadline_note": "Sportello aperto (pagina aggiornata 14 settembre 2026)",
       "procedure_steps": [
         {
           "step": 1,
@@ -3173,10 +3172,10 @@
         "admin_areas": [],
         "gender": "any"
       },
-      "source_url": "https://www.mimit.gov.it",
-      "source_snippet": "La Nuova Sabatini eroga un contributo in conto interessi per finanziamenti bancari destinati all'acquisto di beni strumentali d'impresa, anche in tecnologia 4.0.",
-      "last_verified_at": "2026-08-12",
-      "verification_status": "auto_extracted"
+      "source_url": "https://www.mimit.gov.it/it/incentivi/agevolazioni-per-gli-investimenti-delle-pmi-in-beni-strumentali-nuova-sabatini",
+      "source_snippet": "di importo compreso tra 20.000 euro e 4 milioni di euro",
+      "last_verified_at": "2026-10-05",
+      "verification_status": "verified"
     },
     {
       "slug": "zes-unica-credito-imposta",
@@ -3193,10 +3192,10 @@
       "amount_period": "annual",
       "amount_note": "Credito d'imposta fino al 60% (piccole imprese), 50% (medie) e 40% (grandi) su investimenti in beni strumentali nelle regioni ZES; massimali annui per impresa",
       "is_automatic": false,
-      "application_url": "https://www.agenziacoesione.gov.it",
+      "application_url": "https://www.agenziaentrate.gov.it/portale/credito-d-imposta-per-investimenti-nella-zes-unica-zes-2026-/come-e-quando-imprese",
       "application_channel": "online",
       "deadline_type": "window",
-      "deadline_note": "Comunicazione preventiva telematica all'Agenzia delle Entrate prima dell'investimento",
+      "deadline_note": "ZES 2026: comunicazione all'Agenzia delle Entrate dal 31 marzo al 30 maggio 2026 (chiusa); comunicazione integrativa obbligatoria dal 3 al 17 gennaio 2027 a pena di decadenza",
       "procedure_steps": [
         {
           "step": 1,
@@ -3237,10 +3236,10 @@
         ],
         "gender": "any"
       },
-      "source_url": "https://www.agenziacoesione.gov.it",
-      "source_snippet": "Il credito d'imposta ZES Unica sostiene gli investimenti produttivi nelle regioni del Mezzogiorno con aliquote differenziate per dimensione d'impresa.",
-      "last_verified_at": "2026-08-12",
-      "verification_status": "auto_extracted"
+      "source_url": "https://www.agenziaentrate.gov.it/portale/credito-d-imposta-per-investimenti-nella-zes-unica-zes-2026-/come-e-quando-imprese",
+      "source_snippet": "una comunicazione dal 31 marzo 2026 al 30 maggio 2026, nella quale devono essere indicati l’ammontare delle spese sostenute per gli investimenti realizzati dal 1°gennaio 2026",
+      "last_verified_at": "2026-10-05",
+      "verification_status": "verified"
     },
     {
       "slug": "fondo-impresa-femminile",
@@ -3257,10 +3256,10 @@
       "amount_period": "one_off",
       "amount_note": "Contributi a fondo perduto e finanziamenti a tasso zero per avvio e consolidamento di imprese a prevalenza femminile; bandi periodici a sportello",
       "is_automatic": false,
-      "application_url": "https://www.mimit.gov.it",
+      "application_url": "https://www.mimit.gov.it/it/incentivi/fondo-impresa-femminile",
       "application_channel": "online",
       "deadline_type": "window",
-      "deadline_note": "Finestre a sportello pubblicate sul portale MIMIT/Invitalia",
+      "deadline_note": "Ended: sportello chiuso il 7 giugno 2022 per esaurimento delle risorse (finestre 20 maggio e 8 giugno 2022); MIMIT indica come alternative Smart&Start Italia e ON - Oltre Nuove Imprese a Tasso Zero",
       "procedure_steps": [
         {
           "step": 1,
@@ -3291,10 +3290,10 @@
         "admin_areas": [],
         "gender": "female"
       },
-      "source_url": "https://www.mimit.gov.it",
-      "source_snippet": "Il Fondo Impresa Femminile sostiene la creazione e il consolidamento delle imprese femminili con finanziamenti agevolati e contributi a fondo perduto.",
-      "last_verified_at": "2026-08-12",
-      "verification_status": "auto_extracted"
+      "source_url": "https://www.mimit.gov.it/it/incentivi/fondo-impresa-femminile",
+      "source_snippet": "A seguito dell'esaurimento delle risorse disponibili, con avviso del 7 giugno 2022 è stata disposta la chiusura dello sportello.",
+      "last_verified_at": "2026-10-05",
+      "verification_status": "verified"
     },
     {
       "slug": "decontribuzione-sud",
@@ -3306,15 +3305,15 @@
       "category": "business",
       "benefit_type": "discount",
       "amount_min": null,
-      "amount_max": null,
+      "amount_max": 125,
       "amount_currency": "EUR",
       "amount_period": "monthly",
-      "amount_note": "Esonero strutturale del 30% sui contributi previdenziali per datori di lavoro privati del Mezzogiorno; aliquote transitorie maggiorate in alcuni anni (Legge di Bilancio)",
+      "amount_note": "Decontribuzione Sud PMI (L. 207/2024): esonero del 20% dei contributi, max 125 euro/mese per 12 mensilita' per lavoratore a tempo indeterminato, nel 2026 e 2027; 25% max 145 euro nel 2025; 20% max 100 euro nel 2028; 15% max 75 euro nel 2029. Sostituisce la misura al 30% valida fino al 31 dicembre 2024",
       "is_automatic": true,
-      "application_url": "https://www.inps.it",
+      "application_url": "https://www.inps.it/it/it/inps-comunica/notizie/dettaglio-news-page.news.2025.01.decontribuzione-sud-pmi-le-istruzioni-per-l-esonero-contributivo.html",
       "application_channel": "automatic",
       "deadline_type": "none",
-      "deadline_note": "Applicazione diretta in denuncia contributiva Uniemens",
+      "deadline_note": "Misura 2025-2029; il vecchio esonero del 30% si applicava ai periodi 1 luglio 2022 - 31 dicembre 2024",
       "procedure_steps": [
         {
           "step": 1,
@@ -3328,24 +3327,28 @@
         "age_min": null,
         "age_max": null,
         "income_annual_max": null,
-        "income_note": "Datori di lavoro privati (escluse PA, domestico e agricoltura) con unita' operative nelle regioni del Mezzogiorno",
+        "income_note": "Microimprese, piccole e medie imprese private con lavoratori dipendenti a tempo indeterminato in una delle otto regioni (esclusi settore agricolo e lavoro domestico)",
         "requires_children": false,
         "nationality": "any_resident",
         "residency_months_min": null,
         "housing_tenure": null,
         "student_required": false,
         "admin_areas": [
+          "Abruzzo",
+          "Molise",
           "Campania",
-          "Puglia",
+          "Basilicata",
           "Sicilia",
+          "Puglia",
+          "Calabria",
           "Sardegna"
         ],
         "gender": "any"
       },
-      "source_url": "https://www.inps.it",
-      "source_snippet": "L'esonero contributivo strutturale del 30% e' riconosciuto ai datori di lavoro privati che occupano lavoratori nelle regioni del Mezzogiorno (D.L. 124/2019).",
-      "last_verified_at": "2026-08-12",
-      "verification_status": "auto_extracted"
+      "source_url": "https://www.inps.it/it/it/inps-comunica/notizie/dettaglio-news-page.news.2025.01.decontribuzione-sud-pmi-le-istruzioni-per-l-esonero-contributivo.html",
+      "source_snippet": "per il 2026, in misura pari al 20% dei complessivi contributi previdenziali per un importo massimo di 125 euro su base mensile per 12 mensilità",
+      "last_verified_at": "2026-10-05",
+      "verification_status": "verified"
     },
     {
       "slug": "decontribuzione-giovani-under36",
@@ -3356,16 +3359,16 @@
       "funder": "INPS (fiscalita' generale)",
       "category": "employment",
       "benefit_type": "discount",
-      "amount_min": null,
-      "amount_max": null,
+      "amount_min": 500,
+      "amount_max": 650,
       "amount_currency": "EUR",
       "amount_period": "monthly",
-      "amount_note": "Esonero contributivo fino al 50% (o 100% in specifiche finestre di legge di bilancio) per datori privati che assumono giovani sotto i 35-36 anni a tempo indeterminato, per un massimo di 36-48 mesi",
+      "amount_note": "Bonus giovani 2026: esonero del 100% (70% se l'assunzione non aumenta l'organico) con massimale 500 euro/mese, 650 euro/mese in Abruzzo, Molise, Campania, Basilicata, Sicilia, Puglia, Calabria, Sardegna, Marche e Umbria; assunzioni e trasformazioni fino al 30 aprile 2026. Incentivo alla stabilizzazione: esonero del 100% dei contributi per trasformazioni a tempo indeterminato dal 1 agosto al 31 dicembre 2026. Il vecchio Esonero giovani under 36 riguardava assunzioni dal 1 luglio 2022 al 31 dicembre 2023",
       "is_automatic": true,
-      "application_url": "https://www.inps.it",
-      "application_channel": "automatic",
-      "deadline_type": "none",
-      "deadline_note": "Applicazione diretta in Uniemens secondo le circolari INPS annuali",
+      "application_url": "https://www.inps.it/it/it/dettaglio-scheda.it.schede-servizio-strumento.schede-servizi.portale-delle-agevolazioni-ex-diresco--50122.portale-delle-agevolazioni-ex-diresco-.html",
+      "application_channel": "online",
+      "deadline_type": "window",
+      "deadline_note": "Bonus giovani: assunzioni fino al 30 aprile 2026 (chiuso). Stabilizzazione under 35: trasformazioni dal 1 agosto al 31 dicembre 2026, domanda sul Portale delle Agevolazioni INPS (SPID/CIE/CNS)",
       "procedure_steps": [
         {
           "step": 1,
@@ -3377,9 +3380,9 @@
       "eligibility": {
         "statuses": [],
         "age_min": null,
-        "age_max": 35,
+        "age_max": 34,
         "income_annual_max": null,
-        "income_note": "Lavoratori che non abbiano compiuto 35-36 anni e privi di precedente occupazione stabile, secondo le istruzioni INPS vigenti",
+        "income_note": "Giovani che non abbiano compiuto 35 anni e mai occupati a tempo indeterminato; datori di lavoro privati con DURC regolare",
         "requires_children": false,
         "nationality": "any_resident",
         "residency_months_min": null,
@@ -3388,10 +3391,10 @@
         "admin_areas": [],
         "gender": "any"
       },
-      "source_url": "https://www.inps.it",
-      "source_snippet": "L'esonero contributivo per l'assunzione di giovani under 35 e' applicato dal datore di lavoro direttamente in denuncia Uniemens, per un massimo di 36 mesi.",
-      "last_verified_at": "2026-08-12",
-      "verification_status": "auto_extracted"
+      "source_url": "https://www.inps.it/it/it/inps-comunica/notizie/dettaglio-news-page.news.2026.08.under-35-incentivo-alla-stabilizzazione-con-esonero-totale-contributi.html",
+      "source_snippet": "esonero dal versamento del 100% dei contributi previdenziali a carico dei datori di lavoro privati per le trasformazioni di rapporti di lavoro da tempo determinato a tempo indeterminato effettuate dal 1° agosto al 31 dicembre 2026",
+      "last_verified_at": "2026-10-05",
+      "verification_status": "verified"
     },
     {
       "slug": "dote-unica-lavoro-lombardia",
@@ -3406,12 +3409,12 @@
       "amount_max": null,
       "amount_currency": "EUR",
       "amount_period": "one_off",
-      "amount_note": "Servizi gratuiti di orientamento, formazione e accompagnamento al lavoro presso operatori accreditati, per disoccupati, inoccupati e percettori di sostegno al reddito",
+      "amount_note": "Dote personalizzata di servizi gratuiti, nessun cofinanziamento; percorsi di riqualificazione fino a 200 ore di formazione; servizi da erogare entro 12 mesi; dotazione 5 milioni di euro (FSE+ 2021-2027)",
       "is_automatic": false,
-      "application_url": "https://www.dotelavoro.regione.lombardia.it",
+      "application_url": "https://www.bandi.regione.lombardia.it/servizi/servizio/bandi/dettaglio/istruzione-formazione-lavoro/lavoro-occupazione/dote-unica-lavoro-quinta-fase-RLW12023031023",
       "application_channel": "in_person",
-      "deadline_type": "rolling",
-      "deadline_note": null,
+      "deadline_type": "window",
+      "deadline_note": "Quinta fase aperta: domande entro il 31 dicembre 2026 ore 12:00 (decreto 18891 del 19 dicembre 2025); richieste di liquidazione entro il 23 luglio 2028",
       "procedure_steps": [
         {
           "step": 1,
@@ -3434,7 +3437,7 @@
         "age_min": 30,
         "age_max": null,
         "income_annual_max": null,
-        "income_note": "Residenti o domiciliati in Lombardia; under 30 indirizzati al programma Garanzia Giovani/GOL",
+        "income_note": "Fase V rivolta agli occupati sospesi (CIGS, FIS e fondi di solidarieta' con integrazione salariale); persone con disabilita' L.68/99 senza limiti di eta' o durata della disoccupazione",
         "requires_children": false,
         "nationality": "any_resident",
         "residency_months_min": null,
@@ -3445,10 +3448,10 @@
         ],
         "gender": "any"
       },
-      "source_url": "https://www.dotelavoro.regione.lombardia.it",
-      "source_snippet": "Dote Unica Lavoro e' il programma di Regione Lombardia per il reinserimento occupazionale di disoccupati e percettori di ammortizzatori sociali.",
-      "last_verified_at": "2026-08-12",
-      "verification_status": "auto_extracted"
+      "source_url": "https://www.bandi.regione.lombardia.it/servizi/servizio/bandi/dettaglio/istruzione-formazione-lavoro/lavoro-occupazione/dote-unica-lavoro-quinta-fase-RLW12023031023",
+      "source_snippet": "occupati sospesi",
+      "last_verified_at": "2026-10-05",
+      "verification_status": "verified"
     },
     {
       "slug": "reddito-di-dignita-puglia",
@@ -3459,16 +3462,16 @@
       "funder": "Regione Puglia",
       "category": "income_support",
       "benefit_type": "cash_monthly",
-      "amount_min": null,
-      "amount_max": null,
+      "amount_min": 500,
+      "amount_max": 500,
       "amount_currency": "EUR",
       "amount_period": "monthly",
-      "amount_note": "Integrazione al reddito per nuclei in condizione di poverta' assoluta, con percorsi di inclusione sociale e lavorativa obbligatori; importo legato alla composizione del nucleo",
+      "amount_note": "Indennita' mensile di attivazione di 500 euro per 12 mesi (ReD 3.0 Edizione II); inclusione sociale e attivazione obbligatorie (almeno 62 ore mensili)",
       "is_automatic": false,
-      "application_url": "https://www.regione.puglia.it",
+      "application_url": "https://www.regione.puglia.it/web/welfare-diritti-e-cittadinanza/poverta-e-inclusione",
       "application_channel": "in_person",
       "deadline_type": "window",
-      "deadline_note": "Bandi pubblicati dai Comuni/Ambiti territoriali sociali",
+      "deadline_note": "ReD 3.0 II edizione: domande dal 29/06/2020 'fino a esaurimento risorse' secondo la scheda POR; un avviso 2023 ha chiuso il 5 gennaio 2024 (pagina Regione Puglia). Verificare l'avviso in corso presso il Comune/Ambito",
       "procedure_steps": [
         {
           "step": 1,
@@ -3490,8 +3493,8 @@
       ],
       "eligibility": {
         "statuses": [],
-        "age_min": null,
-        "age_max": null,
+        "age_min": 18,
+        "age_max": 66,
         "income_annual_max": 9360,
         "income_note": "ISEE ordinario non superiore a 9.360 euro, elevabile a 20.000 euro per famiglie con tre componenti minorenni o almeno 5 componenti (LR Puglia 3/2016); patrimonio immobiliare < 30.000, mobiliare < 15.000",
         "requires_children": false,
@@ -3504,9 +3507,9 @@
         ],
         "gender": "any"
       },
-      "source_url": "https://www.regione.puglia.it",
-      "source_snippet": "Il Reddito di Dignita' (ReD) e' la misura di contrasto alla poverta' di Regione Puglia, legata a percorsi di inclusione sociale e attivazione lavorativa.",
-      "last_verified_at": "2026-08-12",
+      "source_url": "https://por.regione.puglia.it/en/-/red-3-0-edizione-ii",
+      "source_snippet": "valore ISEE (Indicatore della situazione economica equivalente) ordinario non superiore ad 9.360,00 euro",
+      "last_verified_at": "2026-10-05",
       "verification_status": "verified"
     },
     {
@@ -3518,16 +3521,16 @@
       "funder": "EDISU Piemonte / Regione Piemonte",
       "category": "education",
       "benefit_type": "cash_one_off",
-      "amount_min": null,
-      "amount_max": null,
+      "amount_min": 1295.08,
+      "amount_max": 8455.33,
       "amount_currency": "EUR",
       "amount_period": "annual",
-      "amount_note": "Importo annuo differenziato per condizione (in sede, pendolare, fuori sede) pubblicato nel bando; servizi integrativi: alloggio e mensa gratuiti o a tariffa ridotta",
+      "amount_note": "In sede 1.295,08-3.318,19; pendolare 1.945,36-4.878,85; fuori sede 3.800,00-8.455,33 euro/anno secondo ISEE e area di studio (importi al netto di 150 euro di servizio mensa); maggiorazioni per studentesse STEM",
       "is_automatic": false,
-      "application_url": "https://www.edisu.piemonte.it",
+      "application_url": "https://www.edisu.piemonte.it/en/news/avvisi/benefits-application-202627-publication-notice-competition-and-start-procedure",
       "application_channel": "online",
       "deadline_type": "annual",
-      "deadline_note": "Bando annuale con scadenza estiva (indicativamente luglio-agosto)",
+      "deadline_note": "Bando 2026/27: domande dal 22 luglio al 4 settembre 2026 ore 12:00 (chiuso); prossimo bando non ancora pubblicato",
       "procedure_steps": [
         {
           "step": 1,
@@ -3554,7 +3557,7 @@
         "age_min": null,
         "age_max": null,
         "income_annual_max": 26306.25,
-        "income_note": "ISEE universita' non superiore a 26.306,25 euro e ISPE non superiore a 57.187,53 euro (bando EDISU 2025/2026)",
+        "income_note": "ISEE universitario non superiore a 26.306,25 euro e ISPE non superiore a 57.187,53 euro (bando 2026/27); studenti non UE con famiglia all'estero usano l'ISEE parificato",
         "requires_children": false,
         "nationality": "any_resident",
         "residency_months_min": null,
@@ -3565,9 +3568,9 @@
         ],
         "gender": "any"
       },
-      "source_url": "https://www.edisu.piemonte.it",
-      "source_snippet": "EDISU Piemonte eroga borse di studio, posti alloggio e servizio ristorazione agli studenti universitari meritevoli e in condizione economica svantaggiata.",
-      "last_verified_at": "2026-08-12",
+      "source_url": "https://www.edisu.piemonte.it/sites/default/files/documentazione/bandi-di-concorso/Bando_borsa_di_studio_servizio_abitativo_premio_di_laurea_contributo_studenti_con_disabilit%C3%A0_dal_46_p.c._iscritti_al_collocamento_mirato_a.a._2026-27.pdf",
+      "source_snippet": "Dal 22/07 al 04/09/2026 ORE 12:00",
+      "last_verified_at": "2026-10-05",
       "verification_status": "verified"
     },
     {
@@ -3579,16 +3582,16 @@
       "funder": "DiSCo Lazio / Regione Lazio",
       "category": "education",
       "benefit_type": "cash_one_off",
-      "amount_min": null,
-      "amount_max": null,
+      "amount_min": 2290.16,
+      "amount_max": 6571.11,
       "amount_currency": "EUR",
       "amount_period": "annual",
-      "amount_note": "Importo annuo differenziato per condizione (in sede, pendolare, fuori sede) pubblicato nel bando; alloggio e mensa a tariffa agevolata",
+      "amount_note": "In sede 2.290,16; pendolare 3.590,71; fuori sede 6.571,11 euro/anno piu' due pasti giornalieri (importi comprensivi di 600 euro di servizio mensa)",
       "is_automatic": false,
-      "application_url": "https://www.laziodisco.it",
+      "application_url": "https://laziodisco.it/bando-diritto-allo-studio-2026-2027/",
       "application_channel": "online",
       "deadline_type": "annual",
-      "deadline_note": "Bando annuale con scadenza estiva",
+      "deadline_note": "Bando 2026/27: domande dal 10 giugno al 22 luglio 2026 ore 12:00 (poi prorogato al 23 luglio ore 20:00); correzioni 30 luglio-11 agosto 2026; chiuso, prossimo bando non ancora pubblicato",
       "procedure_steps": [
         {
           "step": 1,
@@ -3609,8 +3612,8 @@
         ],
         "age_min": null,
         "age_max": null,
-        "income_annual_max": 26306.25,
-        "income_note": "ISEE universita' entro la soglia nazionale a.a. 2025/2026 (circa 26.300 euro; valore di riferimento nazionale 26.306,25, verificare il bando Laziodisco)",
+        "income_annual_max": 28339.88,
+        "income_note": "ISEE/ISEEUP non superiore a 28.339,88 euro e ISPE non superiore a 61.608,48 euro per la borsa di studio (40.000 euro ISEE per il posto alloggio); studenti non italiani residenti all'estero presentano l'ISEEUP entro il 10 dicembre 2026",
         "requires_children": false,
         "nationality": "any_resident",
         "residency_months_min": null,
@@ -3621,10 +3624,10 @@
         ],
         "gender": "any"
       },
-      "source_url": "https://www.laziodisco.it",
-      "source_snippet": "DiSCo Lazio assegna borse di studio, posti alloggio e servizi di ristorazione agli studenti degli atenei laziali secondo merito e condizione economica.",
-      "last_verified_at": "2026-08-12",
-      "verification_status": "auto_extracted"
+      "source_url": "https://laziodisco.it/wp-content/uploads/2026/07/BANDO-DIRITTO-ALLO-STUDIO-26-27-con-EC.pdf",
+      "source_snippet": "Dal 10 giugno al 22 luglio 2026 ore 12.00",
+      "last_verified_at": "2026-10-05",
+      "verification_status": "verified"
     },
     {
       "slug": "borsa-studio-ergo-emilia-romagna",
@@ -3635,16 +3638,16 @@
       "funder": "ER-GO / Regione Emilia-Romagna",
       "category": "education",
       "benefit_type": "cash_one_off",
-      "amount_min": null,
-      "amount_max": null,
+      "amount_min": 1445.08,
+      "amount_max": 7171.11,
       "amount_currency": "EUR",
       "amount_period": "annual",
-      "amount_note": "Importo annuo differenziato per condizione; servizi di alloggio e ristorazione per gli atenei di Bologna, Modena-Reggio, Parma e Ferrara",
+      "amount_note": "Fuori sede 3.585,56-7.171,11; pendolare 2.095,36-4.190,71; in sede 1.445,08-2.890,16 euro/anno secondo la fascia ISEE",
       "is_automatic": false,
-      "application_url": "https://www.er-go.it",
+      "application_url": "https://www.er-go.it/cosa-fare-per/bandi-di-concorso/scadenze/scadenze-per-richiedere-i-benefici",
       "application_channel": "online",
       "deadline_type": "annual",
-      "deadline_note": "Bando annuale con scadenza estiva",
+      "deadline_note": "Bando 2026/27: domande dal 23 giugno al 24 agosto 2026 ore 16:00 (chiuso); prossimo bando non ancora pubblicato",
       "procedure_steps": [
         {
           "step": 1,
@@ -3665,8 +3668,8 @@
         ],
         "age_min": null,
         "age_max": null,
-        "income_annual_max": 26306.25,
-        "income_note": "ISEE universita' entro la soglia nazionale a.a. 2025/2026 (circa 26.300 euro; riferimento nazionale 26.306,25, verificare bando ER-GO)",
+        "income_annual_max": 25000,
+        "income_note": "ISEE non superiore a 25.000 euro e ISPE non superiore a 50.000 euro; studenti non UE devono presentare documentazione estera legalizzata",
         "requires_children": false,
         "nationality": "any_resident",
         "residency_months_min": null,
@@ -3677,10 +3680,10 @@
         ],
         "gender": "any"
       },
-      "source_url": "https://www.er-go.it",
-      "source_snippet": "ER-GO gestisce per la Regione Emilia-Romagna borse di studio, residenze universitarie e servizi di ristorazione per il diritto allo studio.",
-      "last_verified_at": "2026-08-12",
-      "verification_status": "auto_extracted"
+      "source_url": "https://www.er-go.it/tutte-le-notizie/bando-a-a-2026-2027-apertura-domande-il-23-giugno-2026",
+      "source_snippet": "da martedì 23 giugno 2026 fino a lunedì 24 agosto 2026 ALLE ORE 16:00",
+      "last_verified_at": "2026-10-05",
+      "verification_status": "verified"
     },
     {
       "slug": "borsa-studio-dsu-toscana",
@@ -3697,10 +3700,10 @@
       "amount_period": "annual",
       "amount_note": "Importo annuo differenziato per condizione; servizi di alloggio e mensa per gli atenei di Firenze, Pisa e Siena",
       "is_automatic": false,
-      "application_url": "https://www.dsu.toscana.it",
+      "application_url": "https://www.dsu.toscana.it/-/bando-borsa-di-studio-e-posto-alloggio-a.a.-2026/2027",
       "application_channel": "online",
       "deadline_type": "annual",
-      "deadline_note": "Bando annuale con scadenza estiva",
+      "deadline_note": "Bando 2026/27: lauree e lauree magistrali entro il 7 settembre 2026 (chiuso); dottorato e specializzazione entro il 16 novembre 2026",
       "procedure_steps": [
         {
           "step": 1,
@@ -3721,8 +3724,8 @@
         ],
         "age_min": null,
         "age_max": null,
-        "income_annual_max": 26306.25,
-        "income_note": "ISEE universita' entro la soglia nazionale a.a. 2025/2026 (circa 26.300 euro; riferimento nazionale 26.306,25, verificare bando DSU Toscana)",
+        "income_annual_max": 27000,
+        "income_note": "ISEE non superiore a 27.000 euro e ISPE non superiore a 60.000 euro (34.600 e 70.000 per studenti con disabilita'); studenti non UE devono presentare redditi e patrimoni esteri legalizzati o apostillati",
         "requires_children": false,
         "nationality": "any_resident",
         "residency_months_min": null,
@@ -3733,10 +3736,10 @@
         ],
         "gender": "any"
       },
-      "source_url": "https://www.dsu.toscana.it",
-      "source_snippet": "DSU Toscana eroga borse di studio e servizi per il diritto allo studio universitario nella regione Toscana.",
-      "last_verified_at": "2026-08-12",
-      "verification_status": "auto_extracted"
+      "source_url": "https://www.dsu.toscana.it/documents/4390857/32478257/bando+borsa+alloggio+26-27.pdf/092c16da-95e8-1712-b1eb-f159d5e7743e?t=1784280597313",
+      "source_snippet": "ISEE: € 27.000,00",
+      "last_verified_at": "2026-10-05",
+      "verification_status": "verified"
     },
     {
       "slug": "borsa-studio-adisu-puglia",
@@ -3753,10 +3756,10 @@
       "amount_period": "annual",
       "amount_note": "Importo annuo differenziato per condizione; servizi di alloggio e ristorazione per gli atenei pugliesi",
       "is_automatic": false,
-      "application_url": "https://www.adisupuglia.it",
+      "application_url": "https://adisupuglia.it/pagina106703_borse-di-studio.html/",
       "application_channel": "online",
       "deadline_type": "annual",
-      "deadline_note": "Bando annuale con scadenza estiva",
+      "deadline_note": "Bando 2026/27: lauree e magistrali dal 14 luglio al 13 agosto 2026 ore 12:00 (chiuso); dottorato e specializzazione dal 1 al 30 ottobre 2026 ore 12:00",
       "procedure_steps": [
         {
           "step": 1,
@@ -3777,8 +3780,8 @@
         ],
         "age_min": null,
         "age_max": null,
-        "income_annual_max": 26306.25,
-        "income_note": "ISEE universita' entro la soglia nazionale a.a. 2025/2026 (circa 26.300 euro; riferimento nazionale 26.306,25, verificare bando ADISU Puglia)",
+        "income_annual_max": 26000,
+        "income_note": "ISEE 2026 per prestazioni universitarie non superiore a 26.000 euro e ISPE non superiore a 56.000 euro (bando 2026/27)",
         "requires_children": false,
         "nationality": "any_resident",
         "residency_months_min": null,
@@ -3789,10 +3792,10 @@
         ],
         "gender": "any"
       },
-      "source_url": "https://www.adisupuglia.it",
-      "source_snippet": "ADISU Puglia gestisce borse di studio, posti alloggio e servizi di ristorazione per gli studenti universitari della regione.",
-      "last_verified_at": "2026-08-12",
-      "verification_status": "auto_extracted"
+      "source_url": "https://adisupuglia.it/area_letturaNotizia/636384/pagsistema.html",
+      "source_snippet": "ISEE (Indicator of Equivalent Economic Situation) 2026 for university services, exceeding the limit of € 26,000.00",
+      "last_verified_at": "2026-10-05",
+      "verification_status": "verified"
     },
     {
       "slug": "borsa-studio-ersu-sicilia",
@@ -3809,10 +3812,10 @@
       "amount_period": "annual",
       "amount_note": "Importo annuo differenziato per condizione, pubblicato nei bandi dei tre enti ERSU; alloggi e mense universitarie a tariffa agevolata",
       "is_automatic": false,
-      "application_url": "https://www.ersu.palermo.it",
+      "application_url": "https://studenti.ersupalermo.it/",
       "application_channel": "online",
       "deadline_type": "annual",
-      "deadline_note": "Bandi annuali con scadenza estiva per ciascun ERSU",
+      "deadline_note": "ERSU Palermo 2026/27: domande dal 5 giugno al 22 luglio 2026 ore 14:00 (chiuso); graduatorie borse pubblicate il 30 settembre 2026",
       "procedure_steps": [
         {
           "step": 1,
@@ -3833,8 +3836,8 @@
         ],
         "age_min": null,
         "age_max": null,
-        "income_annual_max": 26306.25,
-        "income_note": "ISEE universita' entro la soglia nazionale a.a. 2025/2026 (circa 26.300 euro; riferimento nazionale 26.306,25, verificare bando ERSU)",
+        "income_annual_max": 23000,
+        "income_note": "ERSU Palermo bando 2026/27: ISEE non superiore a 23.000 euro e ISPE non superiore a 52.500 euro; i limiti di ERSU Catania ed ERSU Messina non sono stati verificati e possono differire",
         "requires_children": false,
         "nationality": "any_resident",
         "residency_months_min": null,
@@ -3845,10 +3848,10 @@
         ],
         "gender": "any"
       },
-      "source_url": "https://www.ersu.palermo.it",
-      "source_snippet": "Gli ERSU siciliani assegnano borse di studio, posti alloggio e servizi di ristorazione agli studenti universitari meritevoli e in condizione economica svantaggiata.",
-      "last_verified_at": "2026-08-12",
-      "verification_status": "auto_extracted"
+      "source_url": "https://www.ersupalermo.it/2026/06/05/bando-di-concorso-per-lattribuzione-di-borse-di-studio-altri-contributi-economici-e-servizi-per-il-diritto-allo-studio-universitario/",
+      "source_snippet": "ISEE non superiore a € 23.000,00",
+      "last_verified_at": "2026-10-05",
+      "verification_status": "verified"
     },
     {
       "slug": "diritto-allo-studio-alloggio-mensa",
@@ -3868,7 +3871,7 @@
       "application_url": "https://www.mur.gov.it",
       "application_channel": "online",
       "deadline_type": "annual",
-      "deadline_note": "Bandi annuali degli enti DSU",
+      "deadline_note": "Bandi annuali degli enti regionali per il diritto allo studio (DSU); scadenze e importi definiti da ciascun ente. Soglie MUR a.a. 2026/2027: ISEE 28.339,88 / ISPE 61.608,48.",
       "procedure_steps": [
         {
           "step": 1,
@@ -3889,8 +3892,8 @@
         ],
         "age_min": null,
         "age_max": null,
-        "income_annual_max": 26306.25,
-        "income_note": "Accesso ai servizi del diritto allo studio con ISEE universita' entro la soglia nazionale a.a. 2025/2026 (circa 26.300 euro; riferimento nazionale 26.306,25)",
+        "income_annual_max": 28339.88,
+        "income_note": "ISEE universita' massimo 28.339,88 euro (ISPE max 61.608,48) per l'a.a. 2026/2027, aggiornato annualmente dal MUR (D.D. n. 176 del 10-02-2026). Il vecchio valore 26.306,25 e' superato.",
         "requires_children": false,
         "nationality": "any_resident",
         "residency_months_min": null,
@@ -3899,10 +3902,10 @@
         "admin_areas": [],
         "gender": "any"
       },
-      "source_url": "https://www.mur.gov.it",
-      "source_snippet": "Il diritto allo studio universitario garantisce agli studenti idonei borse di studio, alloggi e servizi di ristorazione gratuiti o agevolati tramite gli enti regionali DSU.",
-      "last_verified_at": "2026-08-12",
-      "verification_status": "auto_extracted"
+      "source_url": "https://www.mur.gov.it/sites/default/files/2026-03/Decreto%20Direttoriale%20n.%20176%20del%2010-02-2026.pdf",
+      "source_snippet": "limite massimo ISEE: euro 28.339,88; limite massimo ISPE: euro 61.608,48 (a.a. 2026/2027, aggiornamento ISTAT ex art. 4 c.3 DM 1320/2021)",
+      "last_verified_at": "2026-10-05",
+      "verification_status": "verified"
     },
     {
       "slug": "carta-del-merito-cultura",
@@ -3913,16 +3916,16 @@
       "funder": "Ministero della Cultura",
       "category": "education",
       "benefit_type": "in_kind",
-      "amount_min": null,
-      "amount_max": 500,
+      "amount_min": 500,
+      "amount_max": 1000,
       "amount_currency": "EUR",
       "amount_period": "one_off",
-      "amount_note": "Carta da 500 euro per libri, teatro, cinema e corsi: Carta del Merito per diplomati con 100/100 o 100 e lode; Carta Cultura per 19enni con ISEE fino a 35.000 euro; 18app soppressa dal 2024 - verificare ogni anno il rifinanziamento in legge di bilancio",
+      "amount_note": "Due carte da 500 euro ciascuna (Carta della cultura giovani e Carta del merito), cumulabili tra loro fino a 1.000 euro.",
       "is_automatic": false,
-      "application_url": "https://culturagiovani.it",
+      "application_url": "https://cartegiovani.cultura.gov.it/",
       "application_channel": "online",
       "deadline_type": "annual",
-      "deadline_note": "Registrazione e spesa entro le scadenze dell'edizione annuale",
+      "deadline_note": "Edizione 2026: richiesta dal 31 gennaio al 30 giugno 2026 (chiusa); spesa consentita fino al 31 dicembre 2026. Prossima edizione non ancora annunciata.",
       "procedure_steps": [
         {
           "step": 1,
@@ -3953,8 +3956,8 @@
         ],
         "age_min": 19,
         "age_max": 19,
-        "income_annual_max": null,
-        "income_note": "Carta Cultura: ISEE fino a 35.000 euro; Carta del Merito: diploma di maturita' con 100/100 o lode",
+        "income_annual_max": 35000,
+        "income_note": "ISEE max 35.000 euro per la Carta della cultura giovani; la Carta del merito (diploma con 100/100 entro i 19 anni) non ha test ISEE.",
         "requires_children": false,
         "nationality": "any_resident",
         "residency_months_min": null,
@@ -3963,10 +3966,10 @@
         "admin_areas": [],
         "gender": "any"
       },
-      "source_url": "https://culturagiovani.it",
-      "source_snippet": "Carta del Merito e Carta Cultura giovanile da 500 euro hanno sostituito la 18app; l'edizione di ciascun anno dipende dal rifinanziamento in legge di bilancio.",
-      "last_verified_at": "2026-08-12",
-      "verification_status": "auto_extracted"
+      "source_url": "https://cartegiovani.cultura.gov.it/",
+      "source_snippet": "Dal 31 gennaio 2026 al 30 giugno 2026 puoi richiedere la 'Carta della cultura giovani' e la 'Carta del merito', ciascuna del valore di 500 euro, cumulabili tra loro.",
+      "last_verified_at": "2026-10-05",
+      "verification_status": "verified"
     },
     {
       "slug": "fondo-credito-giovani",
@@ -3978,15 +3981,15 @@
       "category": "education",
       "benefit_type": "cash_one_off",
       "amount_min": null,
-      "amount_max": 25000,
+      "amount_max": 50000,
       "amount_currency": "EUR",
       "amount_period": "one_off",
-      "amount_note": "Prestito d'onore fino a 25.000 euro a tasso agevolato per studenti meritevoli in corsi di laurea magistrale, master e dottorato, restituibile dopo il termine degli studi",
+      "amount_note": "Finanziamento garantito a tranche annuali fino a 15.000 euro per ciascun anno di corso residuo, fino a 50.000 euro in totale (70.000 euro per percorsi all'estero); rimborso da 3 a 15 anni. Per corsi universitari/lauree, master, dottorati, scuole di specializzazione, corsi di lingua (min 6 mesi) e ITS.",
       "is_automatic": false,
-      "application_url": "https://www.mur.gov.it",
+      "application_url": "https://www.consap.it/fondostudio/",
       "application_channel": "in_person",
       "deadline_type": "rolling",
-      "deadline_note": null,
+      "deadline_note": "Domanda continua via portale MyConsap; ultima modifica normativa: decreto interministeriale 17/11/2025 pubblicato in G.U. il 24/01/2026.",
       "procedure_steps": [
         {
           "step": 1,
@@ -4005,8 +4008,8 @@
         "statuses": [
           "student"
         ],
-        "age_min": null,
-        "age_max": 30,
+        "age_min": 18,
+        "age_max": 40,
         "income_annual_max": null,
         "income_note": "Studenti meritevoli (media voti e requisiti definiti dall'accordo interministeriale)",
         "requires_children": false,
@@ -4017,10 +4020,10 @@
         "admin_areas": [],
         "gender": "any"
       },
-      "source_url": "https://www.mur.gov.it",
-      "source_snippet": "Il Fondo per il credito ai giovani garantisce prestiti d'onore agli studenti meritevoli per completare gli studi, con restituzione posticipata.",
-      "last_verified_at": "2026-08-12",
-      "verification_status": "auto_extracted"
+      "source_url": "https://www.consap.it/fondostudio/",
+      "source_snippet": "studenti aventi eta' compresa tra i 18 e i 40 anni; tranche annuali non superiori a 15.000 euro, fino a un massimo di 50.000 euro (70.000 per percorsi all'estero)",
+      "last_verified_at": "2026-10-05",
+      "verification_status": "verified"
     },
     {
       "slug": "dote-scuola-lombardia",
@@ -4037,10 +4040,10 @@
       "amount_period": "annual",
       "amount_note": "Buono per spese scolastiche (libri, trasporto, attrezzature) per studenti delle scuole secondarie lombarde, con componenti per merito e per ISEE; bando annuale",
       "is_automatic": false,
-      "application_url": "https://www.regione.lombardia.it",
+      "application_url": "https://www.bandi.regione.lombardia.it/servizi/servizio/bandi/dettaglio/istruzione-formazione-lavoro/diritto-dovere-istruzione/dote-scuola-materiale-didattico-2026-27-borse-studio-2025-26-RLW12025050888",
       "application_channel": "online",
       "deadline_type": "annual",
-      "deadline_note": "Bando annuale con scadenze fisse",
+      "deadline_note": "Dote Scuola Materiale didattico a.s. 2026/27: domande chiuse il 07/05/2026 ore 12:00. Bando annuale; prossima edizione non ancora aperta.",
       "procedure_steps": [
         {
           "step": 1,
@@ -4067,7 +4070,7 @@
         "age_min": null,
         "age_max": null,
         "income_annual_max": 15748.78,
-        "income_note": "ISEE non superiore a 15.748,78 euro (bando a.s. 2025/2026, componente materiale didattico e borsa di studio statale)",
+        "income_note": "ISEE massimo 15.748,78 euro (valore richiesto dal 1 gennaio 2026), residenza in Lombardia.",
         "requires_children": false,
         "nationality": "any_resident",
         "residency_months_min": null,
@@ -4078,9 +4081,9 @@
         ],
         "gender": "any"
       },
-      "source_url": "https://www.regione.lombardia.it",
-      "source_snippet": "Dote Scuola sostiene le spese di istruzione degli studenti delle scuole secondarie lombarde con buoni legati a merito e condizione economica.",
-      "last_verified_at": "2026-08-12",
+      "source_url": "https://www.bandi.regione.lombardia.it/servizi/servizio/bandi/dettaglio/istruzione-formazione-lavoro/diritto-dovere-istruzione/dote-scuola-materiale-didattico-2026-27-borse-studio-2025-26-RLW12025050888",
+      "source_snippet": "Scade il: 07/05/2026, ore 12:00. ISEE massimo 15.748,78 euro; studenti residenti in Lombardia.",
+      "last_verified_at": "2026-10-05",
       "verification_status": "verified"
     },
     {
@@ -4096,9 +4099,9 @@
       "amount_max": null,
       "amount_currency": "EUR",
       "amount_period": "one_off",
-      "amount_note": "Sconti fino al 30% su biglietti delle Frecce e Intercity per viaggiatori fino a 30 anni, soggetti a disponibilita' di posti a tariffa agevolata",
+      "amount_note": "20% di sconto sui biglietti regionali singoli per chi ha meno di 30 anni, con iscrizione gratuita a X-GO.",
       "is_automatic": false,
-      "application_url": "https://www.trenitalia.com",
+      "application_url": "https://www.trenitalia.com/it/offerte/young-regionale.html",
       "application_channel": "online",
       "deadline_type": "rolling",
       "deadline_note": null,
@@ -4130,10 +4133,10 @@
         "admin_areas": [],
         "gender": "any"
       },
-      "source_url": "https://www.trenitalia.com",
-      "source_snippet": "Offerta Young: sconti sui biglietti per i viaggiatori con meno di 30 anni, soggetti a disponibilita'.",
-      "last_verified_at": "2026-08-12",
-      "verification_status": "auto_extracted"
+      "source_url": "https://www.trenitalia.com/it/offerte/young-regionale.html",
+      "source_snippet": "Promo Young X-GO sconto 20% treni regionali per under 30",
+      "last_verified_at": "2026-10-05",
+      "verification_status": "verified"
     },
     {
       "slug": "conto-corrente-base-gratuito",
@@ -4148,9 +4151,9 @@
       "amount_max": null,
       "amount_currency": "EUR",
       "amount_period": "annual",
-      "amount_note": "Conto di base a zero canone per consumatori con ISEE fino a 11.600 euro e pensionati con trattamento lordo annuo fino a 18.000 euro; numero limitato di operazioni incluse",
+      "amount_note": "Conto di base gratuito con ISEE inferiore a 11.600 euro; per pensionati con pensione lorda annua fino a 18.000 euro il conto di base costa solo l'imposta di bollo (34,20 euro/anno). Operazioni oltre il massimo incluso sono a pagamento.",
       "is_automatic": false,
-      "application_url": "https://www.bancaditalia.it",
+      "application_url": "https://economiapertutti.bancaditalia.it/aree-tematiche/conto-corrente/il-conto-di-base/index.html",
       "application_channel": "in_person",
       "deadline_type": "none",
       "deadline_note": null,
@@ -4175,19 +4178,19 @@
         "age_min": null,
         "age_max": null,
         "income_annual_max": 11600,
-        "income_note": "ISEE fino a 11.600 euro, oppure pensione lorda annua fino a 18.000 euro",
+        "income_note": "Gratuito se ISEE < 11.600 euro; pensionati con pensione lorda fino a 18.000 euro pagano solo il bollo (34,20 euro/anno).",
         "requires_children": false,
-        "nationality": "any_resident",
+        "nationality": "any",
         "residency_months_min": null,
         "housing_tenure": null,
         "student_required": false,
         "admin_areas": [],
         "gender": "any"
       },
-      "source_url": "https://www.bancaditalia.it",
-      "source_snippet": "Il conto di base e' gratuito per i consumatori con ISEE non superiore a 11.600 euro e per i pensionati con trattamento pensionistico lordo annuo non superiore a 18.000 euro.",
-      "last_verified_at": "2026-08-12",
-      "verification_status": "auto_extracted"
+      "source_url": "https://economiapertutti.bancaditalia.it/notizie-e-rubriche/notizie/il-conto-di-base-a-chi-rivolto-e-quando-pu-essere-gratuito/",
+      "source_snippet": "Se hai un ISEE inferiore a 11.600 euro, hai diritto ad aprire un conto di base senza pagare nulla",
+      "last_verified_at": "2026-10-05",
+      "verification_status": "verified"
     },
     {
       "slug": "torno-subito-milestone-lazio",
@@ -4204,10 +4207,10 @@
       "amount_period": "one_off",
       "amount_note": "Rimborso fino al 100% di master o corsi di alta formazione (con massimali) piu' spese di permanenza e viaggio; Fase 2: tirocinio retribuito nel Lazio",
       "is_automatic": false,
-      "application_url": "https://www.regione.lazio.it",
+      "application_url": "https://sicer.regione.lazio.it/sigem-gestione-21-27/",
       "application_channel": "online",
       "deadline_type": "window",
-      "deadline_note": "Edizione MILESTONE 2026: domande chiuse il 30 aprile 2026; nuove finestre annuali previste",
+      "deadline_note": "MILESTONE 2026 (Torno Subito): Linea I Formazione 07/01/2026-30/04/2026 (chiusa); Linea II Lavoro 09/03/2026-09/06/2026 (chiusa). Nuova finestra non ancora annunciata. Budget 15 milioni di euro.",
       "procedure_steps": [
         {
           "step": 1,
@@ -4239,8 +4242,8 @@
         ],
         "age_min": 18,
         "age_max": 39,
-        "income_annual_max": null,
-        "income_note": "Nessun test di reddito; richiesto lo stato di inoccupazione/disoccupazione e la residenza nel Lazio",
+        "income_annual_max": 8173.91,
+        "income_note": "Reddito individuale annuo da lavoro dipendente non superiore a 8.173,91 euro (disoccupati/sottoccupati); non e' un tetto familiare.",
         "requires_children": false,
         "gender": "any",
         "nationality": "any_resident",
@@ -4251,9 +4254,9 @@
           "Lazio"
         ]
       },
-      "source_url": "https://www.regione.lazio.it",
-      "source_snippet": "Finanzia percorsi di alta formazione fuori dal Lazio, in Italia o all'estero, per laureati, laureandi e diplomati ITS residenti nel Lazio (18-39 anni, inoccupati o disoccupati).",
-      "last_verified_at": "2026-08-12",
+      "source_url": "https://portafuturolazio.it/mercato-del-lavoro/mobilita-internazionale/torno-subito/",
+      "source_snippet": "Line I (Formation): 7 Jan 2026 - 30 Apr 2026; Line II (Work): 9 Mar 2026 - 9 Jun 2026; age 18-39 (40 not yet reached); Lazio residents",
+      "last_verified_at": "2026-10-05",
       "verification_status": "verified"
     },
     {
@@ -4307,7 +4310,7 @@
       },
       "source_url": "https://www.atm.it/IT/VIAGGIACONNOI/GUIDE/Pagine/Agevolazioni_isee.aspx",
       "source_snippet": "Annuale: 50,00 euro. Per tutti i cittadini con ISEE fino a 6.000 euro. Si richiede solo ai Centri di assistenza fiscale (CAF).",
-      "last_verified_at": "2026-08-12",
+      "last_verified_at": "2026-10-05",
       "verification_status": "verified"
     },
     {
@@ -4320,10 +4323,10 @@
       "category": "transport",
       "benefit_type": "discount",
       "amount_min": 22,
-      "amount_max": 200,
+      "amount_max": 22,
       "amount_currency": "EUR",
       "amount_period": "monthly",
-      "amount_note": "Mensile 22 euro o annuale 200 euro per under 30 con ISEE inferiore a 28.000 euro; senza ISEE, under 27: stesse tariffe per studenti e lavoratori",
+      "amount_note": "Abbonamento giovani under 30: 22 euro al mese oppure 200 euro all'anno, per chi ha meno di 30 anni e ISEE inferiore a 28.000 euro.",
       "is_automatic": false,
       "application_url": "https://www.atm.it/IT/VIAGGIACONNOI/ABBONAMENTI/Pagine/Tipologie.aspx",
       "application_channel": "in_person",
@@ -4360,8 +4363,8 @@
         ]
       },
       "source_url": "https://www.atm.it/IT/VIAGGIACONNOI/ABBONAMENTI/Pagine/Tipologie.aspx",
-      "source_snippet": "Per le persone fino al 30esimo anno e con un ISEE inferiore ai 28.000 euro - Mensile: 22,00 euro - Annuale: 200,00 euro.",
-      "last_verified_at": "2026-08-12",
+      "source_snippet": "Tutti i viaggiatori fino al compimento del 30° anno di età con ISEE inferiore a 28.000 €",
+      "last_verified_at": "2026-10-05",
       "verification_status": "verified"
     },
     {
@@ -4377,9 +4380,9 @@
       "amount_max": null,
       "amount_currency": "EUR",
       "amount_period": "monthly",
-      "amount_note": "Sconto under 26 sugli abbonamenti STIBM e ferroviari caricabili su carta Io Viaggio (10 euro, validita' 4 anni); profilo assegnato automaticamente in base alla data di nascita",
+      "amount_note": "Tessera Io Viaggio (10 euro, valida 4 anni): in base alla data di nascita il sistema assegna il profilo che consente di caricare abbonamenti STIBM agevolati Under 26 (e Over 65). Percentuali di sconto non indicate sulla pagina.",
       "is_automatic": false,
-      "application_url": "https://www.trenord.it",
+      "application_url": "https://www.trenord.it/ioviaggio/",
       "application_channel": "online",
       "deadline_type": "none",
       "deadline_note": null,
@@ -4412,10 +4415,10 @@
           "Lombardia"
         ]
       },
-      "source_url": "https://www.trenord.it",
-      "source_snippet": "The system automatically assigns the corresponding profile that allows you to load the discounted STIBM Under 26 or Over 65 season tickets.",
-      "last_verified_at": "2026-08-12",
-      "verification_status": "auto_extracted"
+      "source_url": "https://www.trenord.it/ioviaggio/",
+      "source_snippet": "il sistema assegna automaticamente il profilo corrispondente che permette di caricare gli abbonamenti STIBM agevolati Under 26 e Over 65",
+      "last_verified_at": "2026-10-05",
+      "verification_status": "verified"
     },
     {
       "slug": "sostegno-affitto-giovani-lavoratori-milano",
@@ -4432,10 +4435,10 @@
       "amount_period": "one_off",
       "amount_note": "Contributo una tantum fino a 2.400 euro, erogato al proprietario a parziale copertura del canone; contratto registrato da almeno 6 mesi con almeno 12 mesi residui",
       "is_automatic": false,
-      "application_url": "https://www.comune.milano.it",
+      "application_url": "https://www.comune.milano.it/en/servizi/casa/sceglimi-sostegno-all-affitto-per-under-35",
       "application_channel": "online",
-      "deadline_type": "window",
-      "deadline_note": "Avviso attivo dal 2025 con successivi rifinanziamenti (DGC 149/2025, DGR XII/5292/2025); domande fino a esaurimento fondi",
+      "deadline_type": "rolling",
+      "deadline_note": "Avviso scegliMI: contributi concessi in ordine cronologico fino a esaurimento delle risorse; il Comune comunica sul sito l'esaurimento dei fondi. Nessuna scadenza fissa.",
       "procedure_steps": [
         {
           "step": 1,
@@ -4467,8 +4470,8 @@
         ],
         "age_min": null,
         "age_max": 35,
-        "income_annual_max": 26000,
-        "income_note": "ISEE ordinario o corrente non superiore a 26.000 euro; attivita' lavorativa svolta a Milano",
+        "income_annual_max": 60000,
+        "income_note": "Nessun limite ISEE: reddito lordo annuo del nucleo non superiore a 40.000 euro se nucleo di una persona, 60.000 euro se due o piu' persone (qui il tetto massimo 60.000). Canone > 30% del reddito netto mensile del nucleo, contratto residuo >= 24 mesi.",
         "requires_children": false,
         "gender": "any",
         "nationality": "any_resident",
@@ -4479,9 +4482,9 @@
           "Milano"
         ]
       },
-      "source_url": "https://www.comune.milano.it",
-      "source_snippet": "Attestazione ISEE ordinario o corrente <= 26.000 euro, in corso di validita' - contributo massimo una tantum di 2.400 euro.",
-      "last_verified_at": "2026-08-12",
+      "source_url": "https://www.comune.milano.it/en/servizi/casa/sceglimi-sostegno-all-affitto-per-under-35",
+      "source_snippet": "contributo fino a 2.400 euro per giovani lavoratori fino a 35 anni con contratto di affitto a Milano con durata residua di almeno 24 mesi e canone mensile superiore al 30% del reddito netto del nucleo",
+      "last_verified_at": "2026-10-05",
       "verification_status": "verified"
     },
     {
@@ -4524,15 +4527,15 @@
         "income_note": "Nessun requisito di reddito",
         "requires_children": false,
         "gender": "any",
-        "nationality": "any_resident",
+        "nationality": "citizen_or_pr",
         "residency_months_min": null,
         "housing_tenure": null,
         "student_required": false,
         "admin_areas": []
       },
       "source_url": "https://ioapp.it/carta-giovani-nazionale",
-      "source_snippet": "Iniziativa promossa dalla Presidenza del Consiglio dei Ministri per i cittadini italiani ed europei residenti in Italia tra i 18 e i 35 anni.",
-      "last_verified_at": "2026-08-12",
+      "source_snippet": "iniziativa ... per i cittadini italiani ed europei residenti in Italia tra i 18 e i 35 anni",
+      "last_verified_at": "2026-10-05",
       "verification_status": "verified"
     },
     {
@@ -4550,10 +4553,10 @@
       "amount_period": "monthly",
       "amount_note": "Anticipo fino a 800 euro mensili per massimo 12 mensilita' a copertura dell'assegno di mantenimento non corrisposto dal genitore non convivente; recupero a carico dell'INPS verso il genitore inadempiente",
       "is_automatic": false,
-      "application_url": "https://www.inps.it",
+      "application_url": "https://www.inps.it/it/it/dettaglio-scheda.it.schede-servizio-strumento.schede-servizi.contributo-per-genitori-separati-o-divorziati-per-garantire-la-continuit--di-erogazione-dell-assegno-di-mantenimento.html",
       "application_channel": "online",
-      "deadline_type": "rolling",
-      "deadline_note": null,
+      "deadline_type": "window",
+      "deadline_note": "Ended: contributo INPS una tantum (max 800 euro per 12 mensilita') per genitori separati/divorziati/non conviventi che non hanno ricevuto il mantenimento tra 08/03/2020 e 31/03/2022 per Covid; domande solo dal 12/02/2024 al 31/03/2024. Non e' un fondo di garanzia permanente: nessun anticipo mensile di 800 euro per 12 mesi.",
       "procedure_steps": [
         {
           "step": 1,
@@ -4579,8 +4582,8 @@
         ],
         "age_min": null,
         "age_max": null,
-        "income_annual_max": null,
-        "income_note": "Richiesta una condizione di bisogno economico valutata caso per caso; la norma non fissa una soglia ISEE nazionale unica",
+        "income_annual_max": 8174,
+        "income_note": "Reddito IRPEF non superiore a 8.174 euro nelle annualita' 2020, 2021, 2022 di mancato mantenimento; convivenza con i figli.",
         "requires_children": true,
         "gender": "any",
         "nationality": "any_resident",
@@ -4589,10 +4592,10 @@
         "student_required": false,
         "admin_areas": []
       },
-      "source_url": "https://www.inps.it",
-      "source_snippet": "Fondo di garanzia per i genitori separati o divorziati che non percepiscono l'assegno di mantenimento per i figli (D.L. 4/2019, conv. L. 28/2019).",
-      "last_verified_at": "2026-08-12",
-      "verification_status": "auto_extracted"
+      "source_url": "https://www.inps.it/it/it/dettaglio-scheda.it.schede-servizio-strumento.schede-servizi.contributo-per-genitori-separati-o-divorziati-per-garantire-la-continuit--di-erogazione-dell-assegno-di-mantenimento.html",
+      "source_snippet": "La domanda per ottenere il bonus genitori separati, divorziati, non conviventi puo' essere presentata all'INPS dal 12 febbraio 2024 al 31 marzo 2024.",
+      "last_verified_at": "2026-10-05",
+      "verification_status": "verified"
     },
     {
       "slug": "bonus-psicologo",
@@ -4606,13 +4609,13 @@
       "amount_min": 500,
       "amount_max": 1500,
       "amount_currency": "EUR",
-      "amount_period": "annual",
-      "amount_note": "Fino a 50 euro a seduta: massimo 1.500 euro con ISEE fino a 15.000, 1.000 euro tra 15.001 e 30.000, 500 euro tra 30.001 e 50.000; erogato al professionista tramite codice univoco",
+      "amount_period": "one_off",
+      "amount_note": "Contributo riconosciuto una sola volta, fino a 50 euro per seduta: max 1.500 euro con ISEE < 15.000; max 1.000 euro con ISEE 15.000-30.000; max 500 euro con ISEE 30.000-50.000.",
       "is_automatic": false,
-      "application_url": "https://www.inps.it",
+      "application_url": "https://www.inps.it/it/it/dettaglio-scheda.it.schede-servizio-strumento.schede-servizi.contributo-per-sostenere-le-spese-relative-a-sessioni-di-psicoterapia-bonus-psicologo.html",
       "application_channel": "online",
       "deadline_type": "window",
-      "deadline_note": "Finestra annuale (2025: 15 settembre - 14 novembre); per il 2026 fondi confermati (8,5 milioni) e date INPS da definire",
+      "deadline_note": "Ultima finestra: 15/09/2025-14/11/2025 (chiusa). Date 2026 non ancora pubblicate nella scheda INPS.",
       "procedure_steps": [
         {
           "step": 1,
@@ -4646,9 +4649,9 @@
         "student_required": false,
         "admin_areas": []
       },
-      "source_url": "https://www.inps.it",
-      "source_snippet": "Fondo confermato per il 2026 (8,5 milioni di euro); contributo fino a 1.500 euro con ISEE fino a 15.000 euro, fino a 50 euro per seduta.",
-      "last_verified_at": "2026-08-12",
+      "source_url": "https://www.inps.it/it/it/dettaglio-scheda.it.schede-servizio-strumento.schede-servizi.contributo-per-sostenere-le-spese-relative-a-sessioni-di-psicoterapia-bonus-psicologo.html",
+      "source_snippet": "requisiti: residenza in Italia; ISEE in corso di validita', con valore non superiore a 50mila euro. Contributo riconosciuto una sola volta, fino a 50 euro per ogni seduta.",
+      "last_verified_at": "2026-10-05",
       "verification_status": "verified"
     },
     {
@@ -4664,9 +4667,9 @@
       "amount_max": null,
       "amount_currency": "EUR",
       "amount_period": "monthly",
-      "amount_note": "Tariffa premio ventennale del GSE sull'energia condivisa (valori in base alla taglia dell'impianto) piu', per i progetti presentati entro il 30 novembre 2025, contributo PNRR a fondo perduto fino al 40% (Comuni fino a 5.000 abitanti)",
+      "amount_note": "Tariffa premio sull'energia condivisa + restituzione componenti tariffarie; contributo PNRR in conto capitale fino al 40% dei costi per CER in comuni sotto i 50.000 abitanti.",
       "is_automatic": false,
-      "application_url": "https://www.gse.it",
+      "application_url": "https://www.gse.it/servizi-per-te/autoconsumo/gruppi-di-autoconsumatori-e-comunita-di-energia-rinnovabile/comunit%C3%A0-energetiche-rinnovabili",
       "application_channel": "online",
       "deadline_type": "window",
       "deadline_note": "Tariffa incentivante nel contingente di 5 GW fino al 31 dicembre 2027; contributi PNRR per domande entro il 30/11/2025 con accordi entro il 30/06/2026",
@@ -4703,10 +4706,10 @@
         "student_required": false,
         "admin_areas": []
       },
-      "source_url": "https://www.gse.it",
-      "source_snippet": "Il GSE gestisce tariffa premio e contributi PNRR per comunita' energetiche e autoconsumo diffuso secondo il Decreto CACER (DM 414/2023).",
-      "last_verified_at": "2026-08-12",
-      "verification_status": "auto_extracted"
+      "source_url": "https://www.gse.it/servizi-per-te/autoconsumo/gruppi-di-autoconsumatori-e-comunita-di-energia-rinnovabile/comunit%C3%A0-energetiche-rinnovabili",
+      "source_snippet": "tariffa premio sull'energia condivisa; contributo in conto capitale fino al 40% dei costi per CER in comuni con meno di 50.000 abitanti (PNRR)",
+      "last_verified_at": "2026-10-05",
+      "verification_status": "verified"
     },
     {
       "slug": "iperammortamento-2026",
@@ -4721,12 +4724,12 @@
       "amount_max": null,
       "amount_currency": "EUR",
       "amount_period": "annual",
-      "amount_note": "Maggiorazione del costo fiscale fino al 180% ai fini IRES/IRPEF per beni strumentali nuovi prodotti in UE/SEE; valido per investimenti fino al 30 settembre 2028; sostituisce il credito Transizione 5.0",
+      "amount_note": "Maggiorazione del costo di acquisizione: 180% fino a 2,5 milioni, 100% da 2,5 a 10 milioni, 50% da 10 a 20 milioni. Non e' un credito d'imposta compensabile in F24 ma una riduzione dell'imponibile.",
       "is_automatic": true,
-      "application_url": "https://www.mimit.gov.it",
+      "application_url": "https://www.mimit.gov.it/it/incentivi/nuovo-piano-transizione-5-0-iperammortamento",
       "application_channel": "automatic",
       "deadline_type": "window",
-      "deadline_note": "Investimenti dal 1 gennaio 2026 al 30 settembre 2028 (L. 199/2025, art. 1 c. 427)",
+      "deadline_note": "Investimenti dal 1 gennaio 2026 al 30 settembre 2028; piattaforma GSE: prenotazione operativa dal 12 giugno, conferma investimento dal 21 luglio 2026.",
       "procedure_steps": [
         {
           "step": 1,
@@ -4755,10 +4758,10 @@
         "student_required": false,
         "admin_areas": []
       },
-      "source_url": "https://www.mimit.gov.it",
-      "source_snippet": "Per i nuovi investimenti avviati dal 1 gennaio 2026, la Legge di Bilancio 2026 (L. 199/2025) introduce l'iperammortamento con maggiorazione fino al 180%.",
-      "last_verified_at": "2026-08-12",
-      "verification_status": "auto_extracted"
+      "source_url": "https://www.mimit.gov.it/it/incentivi/nuovo-piano-transizione-5-0-iperammortamento",
+      "source_snippet": "investimenti effettuati dal 1 gennaio 2026 al 30 settembre 2028; fino a 2,5 milioni di euro: 180%; oltre 2,5 e fino a 10 milioni di euro: 100%; oltre 10 e fino a 20 milioni di euro: 50%",
+      "last_verified_at": "2026-10-05",
+      "verification_status": "verified"
     },
     {
       "slug": "credito-imposta-ricerca-sviluppo",
@@ -4775,7 +4778,7 @@
       "amount_period": "annual",
       "amount_note": "Credito del 10% sulle spese di ricerca fondamentale, industriale e sviluppo sperimentale, massimo 5 milioni di euro annui, fino al 2031; per il 2026 il credito design sale al 10% (max 2 milioni); uso in compensazione F24",
       "is_automatic": false,
-      "application_url": "https://www.mimit.gov.it",
+      "application_url": "https://www.mimit.gov.it/it/incentivi/credito-d-imposta-r-s",
       "application_channel": "automatic",
       "deadline_type": "rolling",
       "deadline_note": "Attivo fino al periodo d'imposta in corso al 31 dicembre 2031 (art. 1 c. 200 L. 160/2019)",
@@ -4812,9 +4815,9 @@
         "student_required": false,
         "admin_areas": []
       },
-      "source_url": "https://www.mimit.gov.it",
-      "source_snippet": "Nel 2026 l'aliquota del credito d'imposta ricerca e sviluppo e' confermata al 10% della base di calcolo, con un massimale di 5 milioni di euro annui per beneficiario.",
-      "last_verified_at": "2026-08-12",
+      "source_url": "https://www.mimit.gov.it/it/incentivi/credito-d-imposta-r-s",
+      "source_snippet": "fino a quello in corso al 31 dicembre 2031, il credito d'imposta e' riconosciuto in misura pari al 10% ... nel limite massimo annuale di 5 milioni di euro",
+      "last_verified_at": "2026-10-05",
       "verification_status": "verified"
     },
     {
@@ -4832,7 +4835,7 @@
       "amount_period": "monthly",
       "amount_note": "60 euro per ogni mese lavorato nel 2026 (massimo 720 euro annui), pagati in un'unica soluzione a dicembre; esente da IRPEF, contributi e ISEE; spetta fino ai 10 anni del secondo figlio (18 con 3+ figli); non cumulabile con l'esonero IVS",
       "is_automatic": false,
-      "application_url": "https://www.inps.it",
+      "application_url": "https://www.inps.it/it/it/dettaglio-scheda.it.schede-servizio-strumento.schede-servizi.nuovo-bonus-mamme.html",
       "application_channel": "online",
       "deadline_type": "annual",
       "deadline_note": "Domanda INPS per l'annualita' 2026; pagamento previsto a dicembre 2026",
@@ -4868,9 +4871,9 @@
         "student_required": false,
         "admin_areas": []
       },
-      "source_url": "https://www.inps.it",
-      "source_snippet": "La Legge di bilancio 2026 ha aumentato da 40 a 60 euro mensili il Bonus mamme, per un massimo di 720 euro annui, con reddito da lavoro non superiore a 40.000 euro.",
-      "last_verified_at": "2026-08-12",
+      "source_url": "https://www.inps.it/it/it/inps-comunica/notizie/dettaglio-news-page.news.2026.01.vademecum-bonus-mamme.html",
+      "source_snippet": "la legge di bilancio 2026 ha aumentato il Bonus mamme a 60 euro mensili (fino a 720 euro annui)",
+      "last_verified_at": "2026-10-05",
       "verification_status": "verified"
     },
     {
@@ -4888,7 +4891,7 @@
       "amount_period": "annual",
       "amount_note": "Esonero totale dei contributi IVS a carico della lavoratrice (fino a 3.000 euro annui) per madri di 3 o piu' figli con contratto a tempo indeterminato, fino al 18esimo anno del figlio piu' piccolo (2024-2026); parziale per 2 figli sotto i 10 anni; non cumulabile con il Bonus mamme",
       "is_automatic": true,
-      "application_url": "https://www.inps.it",
+      "application_url": "https://www.inps.it/it/it/inps-comunica/notizie/dettaglio-news-page.news.2025.02.lavoratrici-madri-istruzioni-per-l-esonero-contributivo-2025.html",
       "application_channel": "via_employer",
       "deadline_type": "rolling",
       "deadline_note": "Sperimentazione triennale 2024-2026 (L. Bilancio 2024); dal 2027 prevista misura strutturale",
@@ -4917,9 +4920,9 @@
         "student_required": false,
         "admin_areas": []
       },
-      "source_url": "https://www.inps.it",
-      "source_snippet": "Esonero totale dei contributi INPS per madri con 3 o piu' figli (figlio piu' giovane sotto i 18 anni); non incide sull'accantonamento pensionistico grazie alla contribuzione figurativa.",
-      "last_verified_at": "2026-08-12",
+      "source_url": "https://www.inps.it/it/it/inps-comunica/notizie/dettaglio-news-page.news.2025.02.lavoratrici-madri-istruzioni-per-l-esonero-contributivo-2025.html",
+      "source_snippet": "Questo esonero, che puo' arrivare fino a 3.000 euro annui, e' applicabile solo alle lavoratrici con contratto dipendente a tempo indeterminato",
+      "last_verified_at": "2026-10-05",
       "verification_status": "verified"
     },
     {
@@ -4937,10 +4940,10 @@
       "amount_period": "monthly",
       "amount_note": "Indennita' pari alla pensione maturata, massimo 1.500 euro lordi/mese, fino ai 67 anni; niente tredicesima ne' perequazione durante la fruizione; 30 anni di contributi (36 per lavori gravosi)",
       "is_automatic": false,
-      "application_url": "https://www.inps.it",
+      "application_url": "https://www.inps.it/it/it/dettaglio-scheda.it.schede-servizio-strumento.schede-servizi.ape-sociale---anticipo-pensionistico---verifica-requisiti.html",
       "application_channel": "online",
       "deadline_type": "rolling",
-      "deadline_note": null,
+      "deadline_note": "APE sociale prorogata fino al 31 dicembre 2026 con gli stessi requisiti; requisito anagrafico 63 anni e 5 mesi; scadenze di presentazione domanda 31 marzo, 15 luglio e 30 novembre (date indicate per il 2025, 2026 non specificate nella scheda).",
       "procedure_steps": [
         {
           "step": 1,
@@ -4978,9 +4981,9 @@
         "student_required": false,
         "admin_areas": []
       },
-      "source_url": "https://www.inps.it",
-      "source_snippet": "APE Sociale 2026: 63 anni e 5 mesi di eta', 30 anni di contributi (36 per gravosi), importo massimo 1.500 euro al mese.",
-      "last_verified_at": "2026-08-12",
+      "source_url": "https://www.inps.it/it/it/dettaglio-scheda.it.schede-servizio-strumento.schede-servizi.ape-sociale---anticipo-pensionistico---verifica-requisiti.html",
+      "source_snippet": "il requisito anagrafico richiesto per l'accesso al beneficio e' di 63 anni e 5 mesi. Importo: rata mensile di pensione (se inferiore a 1.500 euro) o pari a 1.500 euro.",
+      "last_verified_at": "2026-10-05",
       "verification_status": "verified"
     },
     {
@@ -4998,7 +5001,7 @@
       "amount_period": "monthly",
       "amount_note": "Importo calcolato sul sistema pensionistico (retributivo/contributivo) in base ai contributi versati; decorrenza triennale rinnovabile; richiede 5 anni di contributi di cui 3 nell'ultimo quinquennio e riduzione della capacita' lavorativa oltre i 2/3",
       "is_automatic": false,
-      "application_url": "https://www.inps.it",
+      "application_url": "https://www.inps.it/it/it/dettaglio-scheda.it.schede-servizio-strumento.schede-servizi.assegno-ordinario-di-invalidit-per-persone-con-capacit-lavorativa-ridotta-50294.assegno-ordinario-di-invalidit-per-persone-con-capacit-lavorativa-ridotta.html",
       "application_channel": "online",
       "deadline_type": "rolling",
       "deadline_note": null,
@@ -5034,10 +5037,10 @@
         "student_required": false,
         "admin_areas": []
       },
-      "source_url": "https://www.inps.it",
-      "source_snippet": "L'assegno ordinario di invalidita' spetta ai lavoratori con riduzione permanente della capacita' lavorativa a meno di un terzo, con 5 anni di contributi di cui 3 nel quinquennio precedente.",
-      "last_verified_at": "2026-08-12",
-      "verification_status": "auto_extracted"
+      "source_url": "https://www.inps.it/it/it/dettaglio-scheda.it.schede-servizio-strumento.schede-servizi.assegno-ordinario-di-invalidit-per-persone-con-capacit-lavorativa-ridotta-50294.assegno-ordinario-di-invalidit-per-persone-con-capacit-lavorativa-ridotta.html",
+      "source_snippet": "una capacita' lavorativa ridotta a meno di un terzo; almeno cinque anni di assicurazione e 260 contributi settimanali di cui 156 nel quinquennio precedente la domanda",
+      "last_verified_at": "2026-10-05",
+      "verification_status": "verified"
     },
     {
       "slug": "buono-libri-campania",
@@ -5054,10 +5057,10 @@
       "amount_period": "annual",
       "amount_note": "Voucher digitale (piattaforma CouponsBook) pari al costo della dotazione libraria della classe; fascia prioritaria ISEE fino a 10.633 euro, seconda fascia fino a 13.300 euro se residuano fondi",
       "is_automatic": false,
-      "application_url": "https://www.regione.campania.it",
+      "application_url": "https://www.regione.campania.it/comunicazione/area-stampa/comunicati/16072026-comunicato-n-435-provvedimenti-giunta-regionale",
       "application_channel": "online",
       "deadline_type": "annual",
-      "deadline_note": "Domande al Comune di residenza in settembre (a.s. 2025/26: entro il 7 settembre 2025); voucher da usare entro il 28 febbraio",
+      "deadline_note": "I Comuni gestiscono le domande ogni anno (settembre-ottobre, scadenze diverse per Comune). Per a.s. 2026/2027 la Regione ha trasferito ai Comuni oltre 27,2 milioni di euro di fondi ministeriali (comunicato 16/07/2026).",
       "procedure_steps": [
         {
           "step": 1,
@@ -5082,7 +5085,7 @@
         "age_min": null,
         "age_max": null,
         "income_annual_max": 13300,
-        "income_note": "ISEE non superiore a 13.300 euro (fascia 1 prioritaria fino a 10.633 euro) per l'a.s. 2025/2026",
+        "income_note": "ISEE fino a 13.300 euro (fascia 1: 0-10.633,00; fascia 2: 10.633,01-13.300,00) secondo i criteri regionali (Allegato A); priorita' alla fascia 1.",
         "requires_children": true,
         "gender": "any",
         "nationality": "any_resident",
@@ -5093,9 +5096,9 @@
           "Campania"
         ]
       },
-      "source_url": "https://www.regione.campania.it",
-      "source_snippet": "Fascia 1: ISEE da 0 a 10.633,00 euro. Fascia 2: ISEE da 10.633,01 a 13.300,00 euro. Destinatari: studenti delle scuole secondarie di I e II grado.",
-      "last_verified_at": "2026-08-12",
+      "source_url": "https://www.regione.campania.it/comunicazione/area-stampa/comunicati/16072026-comunicato-n-435-provvedimenti-giunta-regionale",
+      "source_snippet": "oltre 27,2 milioni di euro di fondi ministeriali ai Comuni per i contributi per i libri di testo agli studenti delle scuole secondarie di I e II grado",
+      "last_verified_at": "2026-10-05",
       "verification_status": "verified"
     },
     {
@@ -5107,16 +5110,16 @@
       "funder": "Roma Capitale / Regione Lazio",
       "category": "education",
       "benefit_type": "cash_one_off",
-      "amount_min": 170,
-      "amount_max": 200,
+      "amount_min": null,
+      "amount_max": null,
       "amount_currency": "EUR",
       "amount_period": "annual",
-      "amount_note": "170 euro per classe (200 euro per prime classi di medie e superiori e prime/terze degli istituti professionali); gestito dal Comune con fondi regionali (oltre 15,7 milioni stanziati per il Lazio nel 2025)",
+      "amount_note": "Importi per a.s. 2026/27 non indicati sulla pagina ufficiale di Roma Capitale (i valori 170-200 euro erano dell'edizione 2025/26).",
       "is_automatic": false,
-      "application_url": "https://www.comune.roma.it",
+      "application_url": "https://www.comune.roma.it/web/it/informazione-di-servizio.page?contentId=IDS1628237",
       "application_channel": "online",
       "deadline_type": "annual",
-      "deadline_note": "Domande al Comune in settembre (Roma: entro il 12 settembre 2025 per l'a.s. 2025/26)",
+      "deadline_note": "Edizione a.s. 2026/27: domande online dal 07/08/2026, scadenza prorogata al 28/09/2026 ore 23.59 (chiusa). Prossima edizione presumibilmente settembre 2027, non annunciata.",
       "procedure_steps": [
         {
           "step": 1,
@@ -5136,7 +5139,7 @@
         "age_min": null,
         "age_max": null,
         "income_annual_max": 15493.71,
-        "income_note": "ISEE non superiore a 15.493,71 euro (soglia Regione Lazio a.s. 2025/2026)",
+        "income_note": "ISEE in corso di validita' non superiore a 15.493,71 euro; residenza a Roma; frequenza di scuola secondaria di I o II grado o IeFP nel 2026/27.",
         "requires_children": true,
         "gender": "any",
         "nationality": "any_resident",
@@ -5147,9 +5150,9 @@
           "Roma"
         ]
       },
-      "source_url": "https://www.comune.roma.it",
-      "source_snippet": "A Roma Capitale: 200 euro per le prime classi delle medie e delle superiori, 170 euro per le altre classi; ISEE massimo 15.493,71 euro (Regione Lazio).",
-      "last_verified_at": "2026-08-12",
+      "source_url": "https://www.comune.roma.it/web/it/informazione-di-servizio.page?contentId=IDS1628237",
+      "source_snippet": "Scadenza invio domande rinviata al 28 settembre 2026. ISEE non superiore a 15.493,71 euro; residente a Roma; scuola secondaria di I e II grado o IeFP",
+      "last_verified_at": "2026-10-05",
       "verification_status": "verified"
     },
     {
@@ -5170,7 +5173,7 @@
       "application_url": "https://scuola.er-go.it",
       "application_channel": "online",
       "deadline_type": "window",
-      "deadline_note": "Finestra annuale autunnale (a.s. 2025/26: 4/9 - 25/10/2025 ore 18)",
+      "deadline_note": "A.s. 2026/27: domande online dal 04/09/2026 al 23/10/2026 ore 18:00 (Decreto regionale 1229/2026), tramite SPID.",
       "procedure_steps": [
         {
           "step": 1,
@@ -5190,7 +5193,7 @@
         "age_min": null,
         "age_max": null,
         "income_annual_max": 15748.78,
-        "income_note": "ISEE in fascia 1 (fino a 10.632,94 euro) o fascia 2 (10.632,95 - 15.748,78 euro) per l'a.s. 2025/2026",
+        "income_note": "ISEE in corso di validita' fino a 15.748,78 euro; residenza in Emilia-Romagna; iscrizione a scuola secondaria o IeFP.",
         "requires_children": true,
         "gender": "any",
         "nationality": "any_resident",
@@ -5202,8 +5205,8 @@
         ]
       },
       "source_url": "https://scuola.er-go.it",
-      "source_snippet": "Isee richiesto: Fascia 1 fino a 10.632,94 euro e Fascia 2 tra 10.632,95 e 15.748,78 euro; bando aperto dal 4 settembre al 25 ottobre 2025.",
-      "last_verified_at": "2026-08-12",
+      "source_snippet": "domande dal 4 settembre al 23 ottobre 2026 ore 18; ISEE in corso di validita' fino a 15.748,78 euro",
+      "last_verified_at": "2026-10-05",
       "verification_status": "verified"
     },
     {
@@ -5221,10 +5224,10 @@
       "amount_period": "annual",
       "amount_note": "100 euro per dote per iscrizione a corsi sportivi (figli 6-17 anni): 1 dote con 1-2 figli minori, 2 con 3 figli, 3 con 4+; numero pari ai figli 6-17 se presente un minore con disabilita'; anni sportivi 2025/26 e 2026/27 (stanziamento 2 milioni/anno)",
       "is_automatic": false,
-      "application_url": "https://www.bandi.regione.lombardia.it",
+      "application_url": "https://www.bandi.regione.lombardia.it/servizi/servizio/bandi/dettaglio/sport-turismo/pratica-sport/bando-dote-sport-2025-anno-sportivo-2025-2026-RLAV2026052287",
       "application_channel": "online",
       "deadline_type": "window",
-      "deadline_note": "Bandi annuali: pubblicazione inizio 2026 per l'anno sportivo 2025/2026 (DGR XII-5208/2025)",
+      "deadline_note": "Bando Dote Sport 2025 (anno sportivo 2025/26): domande dal 18/02/2026 ore 10:00 al 18/03/2026 ore 12:00 (chiuso; graduatorie approvate il 03/06/2026). Prossimo bando non ancora pubblicato.",
       "procedure_steps": [
         {
           "step": 1,
@@ -5244,7 +5247,7 @@
         "age_min": null,
         "age_max": null,
         "income_annual_max": 20000,
-        "income_note": "ISEE non superiore a 20.000 euro (30.000 euro se nel nucleo un minore con disabilita'); residenza continuativa in Lombardia da almeno 5 anni di un genitore",
+        "income_note": "ISEE ordinario o minorenni (dal 1 gennaio 2026) non superiore a 20.000 euro, 30.000 euro se nel nucleo e' presente un minore con disabilita'. Minori 6-17 anni (nati dal 01/01/2009 al 31/12/2020).",
         "requires_children": true,
         "gender": "any",
         "nationality": "any_resident",
@@ -5255,9 +5258,9 @@
           "Lombardia"
         ]
       },
-      "source_url": "https://www.bandi.regione.lombardia.it",
-      "source_snippet": "Valore ISEE ordinario o minorenni non superiore a 20.000,00 euro (limite elevato a 30.000,00 se presente un minore con disabilita'); la singola Dote e' pari a 100 euro.",
-      "last_verified_at": "2026-08-12",
+      "source_url": "https://www.bandi.regione.lombardia.it/servizi/servizio/bandi/dettaglio/sport-turismo/pratica-sport/bando-dote-sport-2025-anno-sportivo-2025-2026-RLAV2026052287",
+      "source_snippet": "Ciascuna Dote e' pari a 100 euro. valore ISEE ... non superiore a 20.000 euro (30.000 euro se nel nucleo familiare e' presente un minore con disabilita')",
+      "last_verified_at": "2026-10-05",
       "verification_status": "verified"
     },
     {
@@ -5273,9 +5276,9 @@
       "amount_max": null,
       "amount_currency": "EUR",
       "amount_period": "annual",
-      "amount_note": "Esenzione permanente dalla tassa automobilistica per un veicolo (benzina fino a 2.000 cc, diesel fino a 2.800 cc, elettrico fino a 150 kW); spetta anche al familiare con il disabile fiscalmente a carico",
+      "amount_note": "Esenzione per un solo veicolo: auto fino a 2.000 cc benzina/ibrido, 2.800 cc diesel/ibrido diesel, 150 kW se elettrica. Spetta anche se l'auto e' intestata a un familiare di cui la persona con disabilita' e' fiscalmente a carico.",
       "is_automatic": false,
-      "application_url": "https://www.agenziaentrate.gov.it",
+      "application_url": "https://www.agenziaentrate.gov.it/portale/esenzione-permanente-dal-pagamento-del-bollo",
       "application_channel": "in_person",
       "deadline_type": "rolling",
       "deadline_note": "Prima domanda entro 90 giorni dalla scadenza del bollo; poi rinnovo automatico",
@@ -5312,9 +5315,9 @@
         "student_required": false,
         "admin_areas": []
       },
-      "source_url": "https://www.agenziaentrate.gov.it",
-      "source_snippet": "Le persone con disabilita' hanno diritto all'esenzione permanente dal pagamento del bollo auto, su veicoli fino a 2.000 cc benzina o 2.800 cc diesel.",
-      "last_verified_at": "2026-08-12",
+      "source_url": "https://www.agenziaentrate.gov.it/portale/esenzione-permanente-dal-pagamento-del-bollo",
+      "source_snippet": "I documenti vanno presentati entro 90 giorni dalla scadenza del termine entro cui andrebbe effettuato il pagamento. Una volta riconosciuta, l'esenzione e' valida anche per gli anni successivi",
+      "last_verified_at": "2026-10-05",
       "verification_status": "verified"
     },
     {
@@ -5332,7 +5335,7 @@
       "amount_period": "annual",
       "amount_note": "Detrazione del 19% sulle spese mediche e sanitarie (anche per familiari a carico) per la parte eccedente 129,11 euro annui; rateizzabile in 5 quote oltre 15.493,71 euro",
       "is_automatic": true,
-      "application_url": "https://www.agenziaentrate.gov.it",
+      "application_url": "https://www.agenziaentrate.gov.it/portale/aspetti-generali",
       "application_channel": "automatic",
       "deadline_type": "annual",
       "deadline_note": "Con la dichiarazione dei redditi (730 o Modello Redditi)",
@@ -5364,10 +5367,10 @@
         "student_required": false,
         "admin_areas": []
       },
-      "source_url": "https://www.agenziaentrate.gov.it",
-      "source_snippet": "Le spese sanitarie danno diritto a una detrazione d'imposta del 19% per la parte che eccede l'importo di 129,11 euro.",
-      "last_verified_at": "2026-08-12",
-      "verification_status": "auto_extracted"
+      "source_url": "https://www.agenziaentrate.gov.it/portale/aspetti-generali",
+      "source_snippet": "E' possibile portare in detrazione dall'Irpef il 19% delle spese sanitarie per la parte eccedente l'importo di 129,11 euro.",
+      "last_verified_at": "2026-10-05",
+      "verification_status": "verified"
     },
     {
       "slug": "bonus-elettrico-disagio-fisico",
@@ -5378,13 +5381,13 @@
       "funder": "ARERA (SGAte)",
       "category": "health",
       "benefit_type": "discount",
-      "amount_min": null,
-      "amount_max": null,
+      "amount_min": 142.35,
+      "amount_max": 463.55,
       "amount_currency": "EUR",
       "amount_period": "annual",
-      "amount_note": "Sconto continuativo in bolletta in tre livelli, in base a potenza impegnata, apparecchiatura e ore d'uso giornaliere (valori aggiornati ogni anno da ARERA); include l'iscrizione all'elenco dei clienti non disalimentabili; cumulabile con il bonus sociale economico",
+      "amount_note": "Bonus 2026 da 142,35 a 463,55 euro l'anno a seconda di potenza impegnata, apparecchiatura e ore di utilizzo (tre fasce di consumo); erogato in 12 rate in bolletta. Nessun limite ISEE.",
       "is_automatic": false,
-      "application_url": "https://www.arera.it",
+      "application_url": "https://www.arera.it/consumatori/bonus-sociale/bonus-per-gravi-condizioni-di-salute",
       "application_channel": "in_person",
       "deadline_type": "rolling",
       "deadline_note": null,
@@ -5416,9 +5419,9 @@
         "student_required": false,
         "admin_areas": []
       },
-      "source_url": "https://www.arera.it",
-      "source_snippet": "L'agevolazione non e' legata all'ISEE ed il suo ammontare dipende dal consumo annuo dei macchinari salvavita utilizzati.",
-      "last_verified_at": "2026-08-12",
+      "source_url": "https://www.arera.it/atlante-per-il-consumatore/elettricita/diritti-e-tutele/bonus-elettrico/chi-ha-diritto-al-bonus-elettrico-per-disagio-fisico",
+      "source_snippet": "Hanno diritto al bonus per disagio fisico tutti i clienti domestici titolari di un contratto di fornitura che devono utilizzare, per se' o per un malato grave che vive nella medesima abitazione, macchine elettromedicali necessarie per il mantenimento in vita.",
+      "last_verified_at": "2026-10-05",
       "verification_status": "verified"
     },
     {
@@ -5436,7 +5439,7 @@
       "amount_period": "annual",
       "amount_note": "383 euro per l'a.s. 2025/2026 (prima 500 euro), estesa a docenti con supplenza al 31/8 o al 30/6 e al personale educativo; spendibile in formazione, libri, musei, hardware/software, strumenti musicali e trasporti",
       "is_automatic": false,
-      "application_url": "https://www.cartadeldocente.istruzione.it",
+      "application_url": "https://www.mim.gov.it/-/mim-attiva-dal-9-marzo-la-carta-del-docente-2025-2026",
       "application_channel": "online",
       "deadline_type": "annual",
       "deadline_note": "Piattaforma attiva dal 9 marzo 2026 per l'a.s. 2025/2026",
@@ -5464,9 +5467,9 @@
         "student_required": false,
         "admin_areas": []
       },
-      "source_url": "https://www.cartadeldocente.istruzione.it",
-      "source_snippet": "Per l'anno scolastico 2025/2026 il valore e' pari a 383 euro; piattaforma attiva dal 9 marzo 2026, accesso con SPID o CIE.",
-      "last_verified_at": "2026-08-12",
+      "source_url": "https://www.mim.gov.it/-/mim-attiva-dal-9-marzo-la-carta-del-docente-2025-2026",
+      "source_snippet": "La Carta, con il nuovo importo pari a 383 euro e le nuove modalita', sara' attivabile a partire da lunedi' 9 marzo.",
+      "last_verified_at": "2026-10-05",
       "verification_status": "verified"
     },
     {
@@ -5484,7 +5487,7 @@
       "amount_period": "annual",
       "amount_note": "Esenzione integrale dal canone (90 euro/anno addebitato in bolletta) per over 75 con reddito proprio e del coniuge fino a 8.000 euro complessivi, senza conviventi titolari di reddito (esclusi colf/badanti)",
       "is_automatic": false,
-      "application_url": "https://www.agenziaentrate.gov.it",
+      "application_url": "https://www.agenziaentrate.gov.it/portale/Schede/Agevolazioni/Canone+TV/Casi+particolari+di+esonero+TV/Cittadini+ultrasettantacinquenni/",
       "application_channel": "online",
       "deadline_type": "annual",
       "deadline_note": "Dichiarazione sostitutiva da presentare all'Agenzia delle Entrate (entro il 31 gennaio per l'intero anno o entro il 31 luglio per il secondo semestre)",
@@ -5507,7 +5510,7 @@
         "age_min": 75,
         "age_max": null,
         "income_annual_max": 8000,
-        "income_note": "Reddito complessivo del richiedente e del coniuge non superiore a 8.000 euro annui; nessun convivente con reddito proprio",
+        "income_note": "Reddito annuo proprio e del coniuge non superiore complessivamente a 8.000 euro, senza conviventi titolari di reddito proprio (esclusi colf e badanti).",
         "requires_children": false,
         "gender": "any",
         "nationality": "any_resident",
@@ -5516,9 +5519,9 @@
         "student_required": false,
         "admin_areas": []
       },
-      "source_url": "https://www.agenziaentrate.gov.it",
-      "source_snippet": "Il reddito del richiedente e del coniuge non deve superare 8.000 euro annui complessivi, senza conviventi titolari di reddito proprio.",
-      "last_verified_at": "2026-08-12",
+      "source_url": "https://www.agenziaentrate.gov.it/portale/Schede/Agevolazioni/Canone+TV/Casi+particolari+di+esonero+TV/Cittadini+ultrasettantacinquenni/",
+      "source_snippet": "un reddito annuo proprio e del coniuge non superiore complessivamente a 8.000 euro; senza conviventi titolari di un reddito proprio (fatta eccezione per collaboratori domestici, colf e badanti)",
+      "last_verified_at": "2026-10-05",
       "verification_status": "verified"
     },
     {
@@ -5534,9 +5537,9 @@
       "amount_max": null,
       "amount_currency": "EUR",
       "amount_period": "one_off",
-      "amount_note": "10 giorni (20 in caso di parto plurimo) retribuiti al 100%, fruibili entro 5 mesi dalla nascita anche non continuativi; spetta anche al genitore affidatario",
+      "amount_note": "10 giorni lavorativi di congedo (20 in caso di parto plurimo) con indennita' pari al 100% della retribuzione; fruibile da 2 mesi prima della data presunta del parto fino a 5 mesi dopo la nascita.",
       "is_automatic": true,
-      "application_url": "https://www.inps.it",
+      "application_url": "https://www.inps.it/it/it/dettaglio-scheda.it.schede-servizio-strumento.schede-servizi.congedo-di-paternit-obbligatorio-58988.congedo-di-paternit-obbligatorio.html",
       "application_channel": "via_employer",
       "deadline_type": "rolling",
       "deadline_note": null,
@@ -5572,10 +5575,10 @@
         "student_required": false,
         "admin_areas": []
       },
-      "source_url": "https://www.inps.it",
-      "source_snippet": "Il congedo di paternita' obbligatorio e' di 10 giorni lavorativi, indennizzati al 100%, fruibili entro cinque mesi dalla nascita.",
-      "last_verified_at": "2026-08-12",
-      "verification_status": "auto_extracted"
+      "source_url": "https://www.inps.it/it/it/dettaglio-scheda.it.schede-servizio-strumento.schede-servizi.congedo-di-paternit-obbligatorio-58988.congedo-di-paternit-obbligatorio.html",
+      "source_snippet": "È un congedo obbligatorio di dieci giorni; È riconosciuta un'indennita' giornaliera pari al 100% della retribuzione.",
+      "last_verified_at": "2026-10-05",
+      "verification_status": "verified"
     }
   ]
 }

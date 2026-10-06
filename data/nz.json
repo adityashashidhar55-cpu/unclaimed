@@ -16,8 +16,8 @@
    "amount_min": null,
    "amount_max": null,
    "amount_currency": "NZD",
-   "amount_period": "monthly",
-   "amount_note": "Weekly payment; net rate from 1 Apr 2026 approx $372.55/week (single 25+), $324.50 (single 20–24), $633.94 (couple no children). Rates reviewed each April.",
+   "amount_period": "weekly",
+   "amount_note": "Paid weekly; max net rates (at M tax code) from 1 Apr 2026: single 18-19 living with parents $276.46, single 20-24 or 18-19 not with parents $324.50, single 25+ $372.55, couple (total, no children) $633.94, sole parent $521.52. Reduced by income. Full-time students cannot get it (see StudyLink).",
    "is_automatic": false,
    "application_url": "https://www.workandincome.govt.nz/products/a-z-benefits/jobseeker-support.html",
    "application_channel": "online",
@@ -65,7 +65,7 @@
     "age_min": 18,
     "age_max": null,
     "income_annual_max": null,
-    "income_note": "Income and asset tested; partner income counts",
+    "income_note": "Income tested incl. partner's: weekly pre-tax income limits e.g. single 25+ $693, couple no children $1,066, sole parent $957.",
     "requires_children": false,
     "nationality": "citizen_or_pr",
     "residency_months_min": 24,
@@ -75,8 +75,8 @@
     "gender": "any"
    },
    "source_url": "https://www.workandincome.govt.nz/products/a-z-benefits/jobseeker-support.html",
-   "source_snippet": "Jobseeker Support is a weekly payment that helps people until they find work.",
-   "last_verified_at": "2026-08-12",
+   "source_snippet": "Jobseeker Support is a weekly payment that helps people while they are looking for work or can't work right now.",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -91,10 +91,10 @@
    "amount_min": null,
    "amount_max": null,
    "amount_currency": "NZD",
-   "amount_period": "monthly",
-   "amount_note": "Weekly payment for students who cannot find work over the summer break when Student Allowance stops.",
+   "amount_period": "weekly",
+   "amount_note": "Weekly payment during the break between academic years of a full-time programme; rates in MSD Map (jobseeker-support-student-hardship-current). Apply through StudyLink.",
    "is_automatic": false,
-   "application_url": "https://www.workandincome.govt.nz/products/a-z-benefits/jobseeker-support-student-hardship.html",
+   "application_url": "https://www.studylink.govt.nz/products/a-z-products/jobseeker-support-student-hardship/index.html",
    "application_channel": "online",
    "deadline_type": "window",
    "deadline_note": "Applies to the summer study break period each year",
@@ -130,7 +130,7 @@
     "age_min": 18,
     "age_max": null,
     "income_annual_max": null,
-    "income_note": "Income tested",
+    "income_note": "Must have little or no income and be in hardship; available for and seeking full-time work.",
     "requires_children": false,
     "nationality": "citizen_or_pr",
     "residency_months_min": null,
@@ -139,10 +139,10 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.workandincome.govt.nz/products/a-z-benefits/jobseeker-support-student-hardship.html",
-   "source_snippet": "Students may apply for Jobseeker Support Student Hardship while they are looking for a job over the summer holiday.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://map.workandincome.govt.nz/map/students/jobseeker-support-student-hardship/qualifications.html",
+   "source_snippet": "To get Jobseeker Support Student Hardship a client must: ... be a New Zealand citizen or residence class visa holder; have little or no income; be in the break between two academic years of a programme of study",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "sole-parent-support",
@@ -156,8 +156,8 @@
    "amount_min": null,
    "amount_max": null,
    "amount_currency": "NZD",
-   "amount_period": "monthly",
-   "amount_note": "Weekly payment for sole parents with a dependent child under 14; net rate from 1 Apr 2026 approx $521.52/week. Obligations to prepare for work apply.",
+   "amount_period": "weekly",
+   "amount_note": "Weekly payment; max net rate approx $521.52/week from 1 Apr 2026 (per Jobseeker Support page sole-parent rate); see MSD rates table. Only for youngest child under 14.",
    "is_automatic": false,
    "application_url": "https://www.workandincome.govt.nz/products/a-z-benefits/sole-parent-support.html",
    "application_channel": "online",
@@ -196,21 +196,21 @@
     "statuses": [
      "parent"
     ],
-    "age_min": null,
+    "age_min": 20,
     "age_max": null,
     "income_annual_max": null,
     "income_note": "Income tested",
     "requires_children": true,
     "nationality": "citizen_or_pr",
-    "residency_months_min": null,
+    "residency_months_min": 24,
     "housing_tenure": null,
     "student_required": false,
     "admin_areas": [],
     "gender": "any"
    },
    "source_url": "https://www.workandincome.govt.nz/products/a-z-benefits/sole-parent-support.html",
-   "source_snippet": "Sole Parent $521.52 weekly (net, from 1 April 2026) per published Work and Income benefit rates.",
-   "last_verified_at": "2026-08-12",
+   "source_snippet": "Sole Parent Support is a weekly payment that helps single parents find part-time work or get ready for future work.",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -225,7 +225,7 @@
    "amount_min": null,
    "amount_max": null,
    "amount_currency": "NZD",
-   "amount_period": "monthly",
+   "amount_period": "weekly",
    "amount_note": "Weekly payment for people who have, or care full-time for someone with, a health condition, injury or disability that severely restricts ability to work. Rate depends on age and circumstances.",
    "is_automatic": false,
    "application_url": "https://www.workandincome.govt.nz/products/a-z-benefits/supported-living-payment.html",
@@ -266,19 +266,19 @@
     "age_min": 16,
     "age_max": null,
     "income_annual_max": null,
-    "income_note": "Income tested",
+    "income_note": "May depend on your and your partner's income; rates and cut-out points published by MSD.",
     "requires_children": false,
     "nationality": "citizen_or_pr",
-    "residency_months_min": null,
+    "residency_months_min": 24,
     "housing_tenure": null,
     "student_required": false,
     "admin_areas": [],
     "gender": "any"
    },
    "source_url": "https://www.workandincome.govt.nz/products/a-z-benefits/supported-living-payment.html",
-   "source_snippet": "For people who are permanently and severely restricted in their capacity to work, or caring for someone full-time.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_snippet": "Supported Living Payment is a weekly payment to help you if you have, or are caring for someone with, a significant health condition, injury or disability.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "nz-superannuation",
@@ -292,7 +292,7 @@
    "amount_min": null,
    "amount_max": null,
    "amount_currency": "NZD",
-   "amount_period": "monthly",
+   "amount_period": "fortnightly",
    "amount_note": "Fortnightly payment; from 1 Apr 2026 approx $555.15/week net (single living alone, tax code M), $512.45 (single sharing), $427.04 each (qualifying couple). Not income or asset tested.",
    "is_automatic": false,
    "application_url": "https://www.workandincome.govt.nz/eligibility/seniors/superannuation/",
@@ -335,7 +335,7 @@
     "age_min": 65,
     "age_max": null,
     "income_annual_max": null,
-    "income_note": "Not income or asset tested",
+    "income_note": "Not income or asset tested. Residence requirement: 10 to 20 years lived in NZ from age 20 (depending on date of birth; e.g. 12 years for those born 1961-63), including 5 years from age 50.",
     "requires_children": false,
     "nationality": "citizen_or_pr",
     "residency_months_min": 120,
@@ -344,9 +344,9 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.workandincome.govt.nz/eligibility/seniors/superannuation/",
-   "source_snippet": "Single (living alone) $555.15 weekly after tax (M); couple both qualifying $854.08 total — rates from 1 April 2026.",
-   "last_verified_at": "2026-08-12",
+   "source_url": "https://www.workandincome.govt.nz/eligibility/seniors/superannuation/who-can-get-it",
+   "source_snippet": "You may qualify for NZ Super if you: are 65 or older; either: are a New Zealand (NZ) citizen; are an NZ permanent resident, or hold an NZ residence class visa; are ordinarily resident in New Zealand...",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -361,7 +361,7 @@
    "amount_min": null,
    "amount_max": null,
    "amount_currency": "NZD",
-   "amount_period": "monthly",
+   "amount_period": "fortnightly",
    "amount_note": "Fortnightly payment at the same rates as NZ Super for qualifying veterans with service-related conditions or aged 65+.",
    "is_automatic": false,
    "application_url": "https://www.workandincome.govt.nz/products/a-z-benefits/veterans-pension.html",
@@ -413,10 +413,10 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.workandincome.govt.nz/products/a-z-benefits/veterans-pension.html",
-   "source_snippet": "Veteran's Pension is paid at the same rates as NZ Superannuation to qualifying veterans.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www.workandincome.govt.nz/eligibility/seniors/veterans-pension",
+   "source_snippet": "Veteran's Pension is a fortnightly payment for veterans who have qualifying operational service in the New Zealand Armed Forces.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "youth-payment",
@@ -430,7 +430,7 @@
    "amount_min": null,
    "amount_max": null,
    "amount_currency": "NZD",
-   "amount_period": "monthly",
+   "amount_period": "weekly",
    "amount_note": "Weekly payment for 16–17 year olds who cannot live with or be supported by their parents and are in education, training or work-based learning.",
    "is_automatic": false,
    "application_url": "https://www.workandincome.govt.nz/products/a-z-benefits/youth-payment.html",
@@ -474,14 +474,14 @@
     "nationality": "citizen_or_pr",
     "residency_months_min": null,
     "housing_tenure": null,
-    "student_required": false,
+    "student_required": true,
     "admin_areas": [],
     "gender": "any"
    },
    "source_url": "https://www.workandincome.govt.nz/products/a-z-benefits/youth-payment.html",
-   "source_snippet": "Weekly payment for 16 and 17 year olds with no parental support, managed with a youth service provider.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_snippet": "Youth Payment helps young people aged 16 or 17 who can't live with their parents or guardian and aren't supported by them or anyone else.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "young-parent-payment",
@@ -495,7 +495,7 @@
    "amount_min": null,
    "amount_max": null,
    "amount_currency": "NZD",
-   "amount_period": "monthly",
+   "amount_period": "weekly",
    "amount_note": "Weekly payment for parents aged 16–19 (18–19 with no parental support) whose main role is caring for their child.",
    "is_automatic": false,
    "application_url": "https://www.workandincome.govt.nz/products/a-z-benefits/young-parent-payment.html",
@@ -543,9 +543,9 @@
     "gender": "any"
    },
    "source_url": "https://www.workandincome.govt.nz/products/a-z-benefits/young-parent-payment.html",
-   "source_snippet": "Payment for young parents aged 16 to 19 who have dependent children in their care.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_snippet": "Young Parent Payment helps young parents aged 16-19 year olds.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "emergency-benefit",
@@ -559,13 +559,13 @@
    "amount_min": null,
    "amount_max": null,
    "amount_currency": "NZD",
-   "amount_period": "monthly",
+   "amount_period": "weekly",
    "amount_note": "Weekly hardship payment for people in hardship who cannot get any other benefit (e.g. residency criteria not yet met).",
    "is_automatic": false,
    "application_url": "https://www.workandincome.govt.nz/products/a-z-benefits/emergency-benefit.html",
    "application_channel": "in_person",
    "deadline_type": "rolling",
-   "deadline_note": null,
+   "deadline_note": "Apply by phoning Work and Income on 0800 559 009",
    "procedure_steps": [
     {
      "step": 1,
@@ -605,9 +605,9 @@
     "gender": "any"
    },
    "source_url": "https://www.workandincome.govt.nz/products/a-z-benefits/emergency-benefit.html",
-   "source_snippet": "Hardship assistance for people who cannot get another benefit, for example because they do not meet residency requirements.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_snippet": "If you can't support yourself and don't qualify for any other payment, you may be able to get the Emergency Benefit.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "temporary-additional-support",
@@ -621,7 +621,7 @@
    "amount_min": null,
    "amount_max": null,
    "amount_currency": "NZD",
-   "amount_period": "monthly",
+   "amount_period": "weekly",
    "amount_note": "Weekly payment (max 13 weeks at a time) to cover essential living costs that cannot be met from income and other resources. You do not need to be on a benefit.",
    "is_automatic": false,
    "application_url": "https://www.workandincome.govt.nz/products/a-z-benefits/temporary-additional-support.html",
@@ -667,9 +667,9 @@
     "gender": "any"
    },
    "source_url": "https://www.workandincome.govt.nz/products/a-z-benefits/temporary-additional-support.html",
-   "source_snippet": "A weekly payment that helps to cover essential living costs that cannot be met from income and through other resources; paid for a maximum of 13 weeks.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_snippet": "Temporary Additional Support is a weekly payment that helps you when you don't have enough money to cover your essential living costs.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "special-benefit",
@@ -683,13 +683,13 @@
    "amount_min": null,
    "amount_max": null,
    "amount_currency": "NZD",
-   "amount_period": "monthly",
+   "amount_period": "weekly",
    "amount_note": "Legacy weekly hardship payment; largely replaced by Temporary Additional Support since 2007 and now only continued for a small number of existing recipients.",
    "is_automatic": false,
-   "application_url": "https://www.workandincome.govt.nz/",
+   "application_url": "https://www.workandincome.govt.nz/products/a-z-benefits/temporary-additional-support.html",
    "application_channel": "in_person",
    "deadline_type": "rolling",
-   "deadline_note": "No new grants in most cases — TAS applies instead",
+   "deadline_note": "Legacy payment for existing recipients only; new applicants who need help with essential costs apply for Temporary Additional Support instead",
    "procedure_steps": [
     {
      "step": 1,
@@ -718,10 +718,10 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.workandincome.govt.nz/",
-   "source_snippet": "Special Benefit was largely replaced by Temporary Additional Support; Work and Income assesses which ongoing extra help applies.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www.workandincome.govt.nz/on-a-benefit/tell-us/income/need-to-declare/special-benefit",
+   "source_snippet": "If you're getting Special Benefit you have to tell us about any income, one-off payments or assets you, or your partner, get.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "orphans-benefit",
@@ -735,8 +735,8 @@
    "amount_min": null,
    "amount_max": null,
    "amount_currency": "NZD",
-   "amount_period": "monthly",
-   "amount_note": "Weekly payment to the carer of a child whose parents have died, cannot be found, or cannot care for them. Not income tested for the carer.",
+   "amount_period": "weekly",
+   "amount_note": "Weekly payment; amount depends on child's age and any income the child has (MSD rates table). Clothing Allowance and $350 Establishment Grant also paid.",
    "is_automatic": false,
    "application_url": "https://www.workandincome.govt.nz/products/a-z-benefits/orphans-benefit.html",
    "application_channel": "online",
@@ -768,7 +768,7 @@
    ],
    "eligibility": {
     "statuses": [],
-    "age_min": null,
+    "age_min": 18,
     "age_max": null,
     "income_annual_max": null,
     "income_note": "Carer's income not tested for Orphan's Benefit",
@@ -781,9 +781,9 @@
     "gender": "any"
    },
    "source_url": "https://www.workandincome.govt.nz/products/a-z-benefits/orphans-benefit.html",
-   "source_snippet": "Weekly payment for people caring for a child whose parents have died, cannot be found or are unable to care for them.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_snippet": "Orphan's Benefit is a weekly payment which helps carers supporting a child or young person whose parents have died or can't be found, or can't look after them because they have a serious long-term health condition or incapacity.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "unsupported-childs-benefit",
@@ -797,8 +797,8 @@
    "amount_min": null,
    "amount_max": null,
    "amount_currency": "NZD",
-   "amount_period": "monthly",
-   "amount_note": "Weekly payment for carers (often grandparents or whānau) looking after a child whose parents cannot care for them because of a family breakdown.",
+   "amount_period": "weekly",
+   "amount_note": "Weekly payment; amount depends on child's age and any income the child has (MSD rates table). Clothing Allowance and $350 Establishment Grant also paid.",
    "is_automatic": false,
    "application_url": "https://www.workandincome.govt.nz/products/a-z-benefits/unsupported-childs-benefit.html",
    "application_channel": "online",
@@ -830,7 +830,7 @@
    ],
    "eligibility": {
     "statuses": [],
-    "age_min": null,
+    "age_min": 18,
     "age_max": null,
     "income_annual_max": null,
     "income_note": "Carer's income not tested",
@@ -843,9 +843,9 @@
     "gender": "any"
    },
    "source_url": "https://www.workandincome.govt.nz/products/a-z-benefits/unsupported-childs-benefit.html",
-   "source_snippet": "Weekly payment for someone caring for a child whose parents are unable to care for them due to a family breakdown.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_snippet": "Unsupported Child's Benefit is a weekly payment which helps carers supporting a child or young person whose parents can't care for them because of a family breakdown.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "hardship-food-grant",
@@ -860,12 +860,12 @@
    "amount_max": null,
    "amount_currency": "NZD",
    "amount_period": "one_off",
-   "amount_note": "One-off, non-recoverable payment for food in an emergency. Amount depends on family size; you do not have to be on a benefit.",
+   "amount_note": "One-off payment loaded on a payment card (7 days to spend); amount depends on your situation; not repayable; food and essential groceries only. You do not need to be on a benefit.",
    "is_automatic": false,
-   "application_url": "https://www.workandincome.govt.nz/benefits/urgent-costs/food.html",
+   "application_url": "https://www.workandincome.govt.nz/eligibility/urgent-costs/food",
    "application_channel": "online",
    "deadline_type": "rolling",
-   "deadline_note": "Limits on number of grants without an appointment in a period",
+   "deadline_note": null,
    "procedure_steps": [
     {
      "step": 1,
@@ -890,19 +890,19 @@
     "age_min": 16,
     "age_max": null,
     "income_annual_max": null,
-    "income_note": "Income and cash asset tested",
+    "income_note": "Weekly pre-tax income must be under: single 18+ $1,010.41; single 16-17 $879.17; couple $1,467.61; sole parent 1 child $1,226.09; sole parent 2+ children $1,291.75. Also need no cash assets / no other way to pay for food.",
     "requires_children": false,
-    "nationality": "any_resident",
+    "nationality": "citizen_or_pr",
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.workandincome.govt.nz/",
-   "source_snippet": "If you have an urgent or unexpected cost like food, Work and Income may be able to help with a Special Needs Grant you do not have to pay back.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www.workandincome.govt.nz/eligibility/urgent-costs/food",
+   "source_snippet": "We may be able to help you pay for food if you're on a low income or a benefit. ... are a New Zealand citizen or permanent resident",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "recoverable-assistance-payment",
@@ -919,7 +919,7 @@
    "amount_period": "one_off",
    "amount_note": "Interest-free, repayable payment for essential immediate needs (e.g. appliances, school costs, car repairs) for people not on a benefit who cannot get an advance. Repaid by instalments.",
    "is_automatic": false,
-   "application_url": "https://www.workandincome.govt.nz/benefits/urgent-costs/index.html",
+   "application_url": "https://www.workandincome.govt.nz/products/a-z-benefits/recoverable-assistance-payment-grant",
    "application_channel": "online",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -951,20 +951,20 @@
     "statuses": [],
     "age_min": 16,
     "age_max": null,
-    "income_annual_max": null,
-    "income_note": "Income and cash asset tested",
+    "income_annual_max": 52541.32,
+    "income_note": "Annual pre-tax income limits: single 18+ $52,541.32; single 16-17 $45,716.84; couple $76,315.72; sole parent 1 child $63,756.68; 2+ children $67,171. Asset limits: single $1,411.22; couple/sole parent $2,351.46. Figure shown is single 18+.",
     "requires_children": false,
-    "nationality": "any_resident",
+    "nationality": "citizen_or_pr",
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.workandincome.govt.nz/",
-   "source_snippet": "Recoverable Assistance is an interest-free payment for essential costs that you pay back later.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www.workandincome.govt.nz/products/a-z-benefits/recoverable-assistance-payment-grant",
+   "source_snippet": "A Recoverable Assistance Payment is a one-off payment to help you pay an essential or emergency cost if you can't pay it another way. You don't qualify for this payment if you're on a benefit. You have to pay the money back.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "advance-payment-of-benefit",
@@ -979,9 +979,9 @@
    "amount_max": null,
    "amount_currency": "NZD",
    "amount_period": "one_off",
-   "amount_note": "Interest-free advance of up to 6 weeks of your main benefit for immediate essential costs (e.g. whiteware, car repairs, school uniforms); repaid from your benefit.",
+   "amount_note": "One-off repayable payment loaded on a payment card (7 days to spend); amount depends on your situation and the cost; repaid from your benefit. The page does not state a 6-week cap.",
    "is_automatic": false,
-   "application_url": "https://www.workandincome.govt.nz/products/a-z-benefits/advance-payment-of-benefit.html",
+   "application_url": "https://www.workandincome.govt.nz/products/a-z-benefits/advance-payment-of-benefit",
    "application_channel": "online",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -1014,7 +1014,7 @@
     "age_min": 16,
     "age_max": null,
     "income_annual_max": null,
-    "income_note": "Must be receiving a main benefit",
+    "income_note": "Must be getting a main benefit, Orphan's/Unsupported Child's Benefit, NZ Super or Veteran's Pension. Weekly income under $1,010.41 (single 18+); assets under $1,411.22 (single) / $2,351.46 (couple or sole parent).",
     "requires_children": false,
     "nationality": "any_resident",
     "residency_months_min": null,
@@ -1023,10 +1023,10 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.workandincome.govt.nz/",
-   "source_snippet": "An advance of your benefit for essential costs, repaid interest-free out of your future payments.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www.workandincome.govt.nz/products/a-z-benefits/advance-payment-of-benefit",
+   "source_snippet": "An Advance Payment of Benefit is a one-off payment to help you pay an essential or emergency cost if you can't pay it another way. To qualify for this payment you need to be getting a main benefit (e.g., Jobseeker Support), a pension or Orphan's or Unsupported Child's Benefit and you will have...",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "special-needs-grant-health-costs",
@@ -1040,13 +1040,13 @@
    "amount_min": null,
    "amount_max": 1000,
    "amount_currency": "NZD",
-   "amount_period": "one_off",
-   "amount_note": "One-off grant for urgent dental treatment (up to $1,000 in a 12-month period) or glasses for people in hardship. May be recoverable depending on circumstances.",
+   "amount_period": "annual",
+   "amount_note": "Immediate and essential dental treatment: up to $1,000 in any 52-week period, not repayable; more may be possible but may need repaying. Glasses and other health costs are covered by separate Work and Income pages.",
    "is_automatic": false,
-   "application_url": "https://www.workandincome.govt.nz/benefits/urgent-costs/index.html",
+   "application_url": "https://www.workandincome.govt.nz/eligibility/health-and-disability/dental-treatment",
    "application_channel": "online",
    "deadline_type": "rolling",
-   "deadline_note": "Dental capped at $1,000 per 12 months",
+   "deadline_note": "Dental capped at $1,000 per any 52-week period",
    "procedure_steps": [
     {
      "step": 1,
@@ -1076,19 +1076,19 @@
     "age_min": 16,
     "age_max": null,
     "income_annual_max": null,
-    "income_note": "Income and cash asset tested",
+    "income_note": "Weekly pre-tax income under $1,010.41 (single 18+), $879.17 (single 16-17), $1,467.61 (couple), $1,226.09 (sole parent 1 child); asset limits $1,411.22 single / $2,351.46 couple or sole parent.",
     "requires_children": false,
-    "nationality": "any_resident",
+    "nationality": "citizen_or_pr",
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.workandincome.govt.nz/",
-   "source_snippet": "Work and Income can help with urgent dental treatment up to $1,000 in any 12-month period through a Special Needs Grant.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www.workandincome.govt.nz/eligibility/health-and-disability/dental-treatment",
+   "source_snippet": "You can apply for up to $1,000 a year (any 52-week period), to help with immediate and essential dental treatment. You don't have to pay this back.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "funeral-grant",
@@ -1100,15 +1100,15 @@
    "category": "income_support",
    "benefit_type": "cash_one_off",
    "amount_min": null,
-   "amount_max": null,
+   "amount_max": 2697.43,
    "amount_currency": "NZD",
    "amount_period": "one_off",
-   "amount_note": "One-off payment (currently up to around $2,600) towards the actual and reasonable costs of a funeral for people in hardship. Asset tested.",
+   "amount_note": "One-off payment; the most you can be paid is $2,697.43, towards reasonable funeral expenses. Income and asset tested if the deceased is your partner or child; deceased person's assets are deducted. Not repayable if criteria met.",
    "is_automatic": false,
    "application_url": "https://www.workandincome.govt.nz/products/a-z-benefits/funeral-grant.html",
    "application_channel": "online",
    "deadline_type": "rolling",
-   "deadline_note": "Apply within a reasonable time after the funeral",
+   "deadline_note": null,
    "procedure_steps": [
     {
      "step": 1,
@@ -1138,7 +1138,7 @@
     "age_min": 16,
     "age_max": null,
     "income_annual_max": null,
-    "income_note": "Asset test applies to deceased and partner",
+    "income_note": "Income limit applies only if the deceased is your partner or child (annual pre-tax e.g. $38,522.12 single 18+ with no children; $55,954.08 couple if the deceased is your child). The deceased must have normally lived in New Zealand.",
     "requires_children": false,
     "nationality": "any_resident",
     "residency_months_min": null,
@@ -1147,10 +1147,10 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.workandincome.govt.nz/",
-   "source_snippet": "A Funeral Grant helps with actual and reasonable funeral costs when someone dies and there is hardship.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www.workandincome.govt.nz/products/a-z-benefits/funeral-grant.html",
+   "source_snippet": "A Funeral Grant can help with some of the funeral costs of someone who has died. ... The most you can be paid is $2,697.43.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "civil-defence-payment",
@@ -1165,12 +1165,12 @@
    "amount_max": null,
    "amount_currency": "NZD",
    "amount_period": "one_off",
-   "amount_note": "Payments for people affected by a declared civil defence emergency (e.g. floods, cyclones) to help with food, clothing, accommodation and loss of livelihood.",
+   "amount_note": "Maximum amounts: food/bedding/clothing $400 single to $1,110 (couple/sole parent 3+ children); temporary accommodation up to $1,426/week single; hosted accommodation $261/week single; lost income up to $372.55/week single 25+. No income or asset test in most cases.",
    "is_automatic": false,
-   "application_url": "https://www.workandincome.govt.nz/benefits/natural-disaster-support.html",
+   "application_url": "https://www.workandincome.govt.nz/products/a-z-benefits/civil-defence-payment.html",
    "application_channel": "in_person",
    "deadline_type": "window",
-   "deadline_note": "Only available during and shortly after a declared emergency",
+   "deadline_note": "Not currently available (as at 2026-10-05); only made available for a declared emergency event",
    "procedure_steps": [
     {
      "step": 1,
@@ -1202,17 +1202,17 @@
     "income_annual_max": null,
     "income_note": "Hardship-based, not normally income tested",
     "requires_children": false,
-    "nationality": "any_resident",
+    "nationality": "any",
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.workandincome.govt.nz/",
-   "source_snippet": "Civil Defence Payments help people affected by an emergency with immediate costs such as food, bedding and accommodation.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www.workandincome.govt.nz/products/a-z-benefits/civil-defence-payment.html",
+   "source_snippet": "Civil Defence Payments are not currently available. ... You don't have to be on a benefit to qualify for a Civil Defence Payment. You also don't have to be a New Zealand resident.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "acc-weekly-compensation",
@@ -1232,7 +1232,7 @@
    "application_url": "https://www.acc.co.nz/im-injured/financial-support/weekly-compensation",
    "application_channel": "online",
    "deadline_type": "rolling",
-   "deadline_note": null,
+   "deadline_note": "Usually payable from day 8 after your injury",
    "procedure_steps": [
     {
      "step": 1,
@@ -1285,8 +1285,8 @@
     "gender": "any"
    },
    "source_url": "https://www.acc.co.nz/im-injured/financial-support/weekly-compensation",
-   "source_snippet": "We pay up to 80% of your income as weekly compensation if you can't work because of your injury.",
-   "last_verified_at": "2026-08-12",
+   "source_snippet": "We pay up to 80% of your income as weekly compensation if you can't work because of your injury. Get paid while you recover. Apply using MyACC.",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -1299,10 +1299,10 @@
    "category": "family",
    "benefit_type": "tax_credit",
    "amount_min": null,
-   "amount_max": 144,
+   "amount_max": 152,
    "amount_currency": "NZD",
    "amount_period": "weekly",
-   "amount_note": "Weekly payment per child; from 1 Apr 2024 up to $144/week for the eldest child and $117/week for each additional child. Abates from family income over $42,700. Paid by IRD (or Work and Income if on a benefit).",
+   "amount_note": "Full amount if family income is $44,900 or less: eldest child $7,921/yr ($152/wk), each other child $6,454/yr ($124/wk). Reduces by 27.5 cents per dollar of family income over $44,900.",
    "is_automatic": false,
    "application_url": "https://www.ird.govt.nz/working-for-families/types/family-tax-credit",
    "application_channel": "online",
@@ -1338,21 +1338,21 @@
      "employee",
      "self_employed"
     ],
-    "age_min": null,
+    "age_min": 16,
     "age_max": null,
     "income_annual_max": null,
-    "income_note": "Abates once family income exceeds $42,700",
+    "income_note": "Full credit up to $44,900 family income; abates at 27.5% above that, so the cut-off depends on the number of children. Residency: NZ resident for tax, lived in NZ 12 months in a row at any time.",
     "requires_children": true,
     "nationality": "citizen_or_pr",
-    "residency_months_min": null,
+    "residency_months_min": 12,
     "housing_tenure": null,
     "student_required": false,
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.ird.govt.nz/working-for-families/types",
-   "source_snippet": "The most you can get each week from 1 April 2024: eldest child $144.00, each other child $117.00 (IR201, Inland Revenue).",
-   "last_verified_at": "2026-08-12",
+   "source_url": "https://www.ird.govt.nz/working-for-families/types/family-tax-credit",
+   "source_snippet": "The family tax credit is the main payment for people who qualify for Working for Families.",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -1365,10 +1365,10 @@
    "category": "family",
    "benefit_type": "tax_credit",
    "amount_min": null,
-   "amount_max": 97,
+   "amount_max": 147,
    "amount_currency": "NZD",
    "amount_period": "weekly",
-   "amount_note": "Weekly payment for families normally in paid work; from 31 Jul 2024 up to $97/week for the first 3 children plus $15 for each additional child. Not payable while on a main benefit or student allowance.",
+   "amount_note": "From 1 Apr 2026 up to $147/week ($7,670/yr) for 1-3 children, plus $780/yr for each additional child. IRD says this may fall back to $97/week if petrol drops below $3/litre for four weeks, and returns to $97/week ($5,070/yr) after 31 Mar 2027. Not payable on passive income only.",
    "is_automatic": false,
    "application_url": "https://www.ird.govt.nz/working-for-families/types/in-work-tax-credit",
    "application_channel": "online",
@@ -1404,21 +1404,21 @@
      "employee",
      "self_employed"
     ],
-    "age_min": null,
+    "age_min": 16,
     "age_max": null,
     "income_annual_max": null,
-    "income_note": "Requires paid work (single parents 20 hrs/week; couples 30 hrs/week combined)",
+    "income_note": "Full credit up to $44,900 family income, then abated (27.5%) with any left-over family tax credit abatement. Must be earning income from paid work.",
     "requires_children": true,
     "nationality": "citizen_or_pr",
-    "residency_months_min": null,
+    "residency_months_min": 12,
     "housing_tenure": null,
     "student_required": false,
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.ird.govt.nz/working-for-families/types",
-   "source_snippet": "From 31 July 2024: $97.00 a week for the first 3 children, $15.00 for each other child (IR201, Inland Revenue).",
-   "last_verified_at": "2026-08-12",
+   "source_url": "https://www.ird.govt.nz/working-for-families/types/in-work-tax-credit",
+   "source_snippet": "If you get Working for Families, you'll qualify for an in-work tax credit as long as you're earning income from paid work.",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -1431,12 +1431,12 @@
    "category": "family",
    "benefit_type": "tax_credit",
    "amount_min": null,
-   "amount_max": null,
+   "amount_max": 4041,
    "amount_currency": "NZD",
    "amount_period": "annual",
-   "amount_note": "$73/week per child under 3 (up to $3,838/year); rising to $77/week (up to $4,041) from 1 Apr 2026. First year not income tested for children born before 1 Apr 2026; thereafter reduces by 21c per $1 over $79,000 family income.",
+   "amount_note": "$77 a week (up to $4,041/yr) for the first 3 years of a child's life. For children born on/after 1 Apr 2026 the payment reduces by 21 cents per dollar of family income over $79,000 in every year; for children born earlier the first year is not income tested.",
    "is_automatic": false,
-   "application_url": "https://smartstart.services.govt.nz/register-my-baby",
+   "application_url": "https://www.ird.govt.nz/working-for-families/types/best-start",
    "application_channel": "online",
    "deadline_type": "rolling",
    "deadline_note": "Payments stop when the child turns 3",
@@ -1470,19 +1470,19 @@
     ],
     "age_min": null,
     "age_max": null,
-    "income_annual_max": 97000,
-    "income_note": "Full rate under $79,000 family income; reduces 21c per $1 above; stops around $97,000",
+    "income_annual_max": 98243,
+    "income_note": "Abates from $79,000 family income at 21%; entitlement reaches nil at about $98,243 (derived: 79,000 + 4,041/0.21). Applies to all years for children born from 1 Apr 2026; years 2-3 for earlier births. Not paid at the same time as paid parental leave.",
     "requires_children": true,
     "nationality": "citizen_or_pr",
-    "residency_months_min": null,
+    "residency_months_min": 12,
     "housing_tenure": null,
     "student_required": false,
     "admin_areas": [],
     "gender": "any"
    },
    "source_url": "https://www.ird.govt.nz/working-for-families/types/best-start",
-   "source_snippet": "Best Start is a payment of $73 a week for families with a new baby; from 1 April 2026 the weekly payment of $77 is reduced when the family income exceeds $79,000.",
-   "last_verified_at": "2026-08-12",
+   "source_snippet": "Best Start payments give extra support to your family over the 1st 3 years of your child's life. The full entitlement is $77 a week.",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -1498,7 +1498,7 @@
    "amount_max": null,
    "amount_currency": "NZD",
    "amount_period": "annual",
-   "amount_note": "Tops up after-tax family income of working families to a guaranteed minimum (at least $679/week after tax at April 2024 settings). Requires minimum work hours and excludes those on a main benefit.",
+   "amount_note": "Tops net (after-tax) family income up to $36,604/yr ($703/week after tax). Requires minimum paid work hours: single parent 20 hrs/week; couple 30 hrs/week between them. Amount does not depend on number of children.",
    "is_automatic": false,
    "application_url": "https://www.ird.govt.nz/working-for-families/types/minimum-family-tax-credit",
    "application_channel": "online",
@@ -1533,21 +1533,21 @@
      "parent",
      "employee"
     ],
-    "age_min": null,
+    "age_min": 16,
     "age_max": null,
-    "income_annual_max": null,
-    "income_note": "Single parents must work 20 hrs/week; couples 30 hrs/week combined",
+    "income_annual_max": 36604,
+    "income_note": "Net (after-tax) family income must be under $36,604 for the year. Not available for self-employed/partnership income alone.",
     "requires_children": true,
     "nationality": "citizen_or_pr",
-    "residency_months_min": null,
+    "residency_months_min": 12,
     "housing_tenure": null,
     "student_required": false,
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.ird.govt.nz/working-for-families/types",
-   "source_snippet": "This payment tops up your family's income to at least $679 a week after tax (IR201, Inland Revenue, April 2025).",
-   "last_verified_at": "2026-08-12",
+   "source_url": "https://www.ird.govt.nz/working-for-families/types/minimum-family-tax-credit",
+   "source_snippet": "If you qualify, we'll top up your income so you'll get $703 a week (after tax).",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -1562,10 +1562,10 @@
    "amount_min": null,
    "amount_max": null,
    "amount_currency": "NZD",
-   "amount_period": "monthly",
-   "amount_note": "Weekly payment for up to 26 weeks matching your normal pay, capped at $788.66 gross/week (1 Jul 2025–30 Jun 2026; $811.05 from 1 Jul 2026). Minimum for self-employed $235/week. Cannot overlap with Best Start.",
+   "amount_period": "weekly",
+   "amount_note": "Higher of ordinary weekly pay and average weekly income, capped at $811.05 gross/week for 1 Jul 2026-30 Jun 2027 ($788.66 for 1 Jul 2025-30 Jun 2026). Same payment regardless of number of children.",
    "is_automatic": false,
-   "application_url": "https://www.ird.govt.nz/paid-parental-leave",
+   "application_url": "https://www.ird.govt.nz/paid-parental-leave/applications",
    "application_channel": "online",
    "deadline_type": "window",
    "deadline_note": "Apply before you return to work; payments must be taken in one continuous period",
@@ -1622,8 +1622,8 @@
     "gender": "any"
    },
    "source_url": "https://www.ird.govt.nz/paid-parental-leave/working-out-your-entitlement/employees",
-   "source_snippet": "Your maximum paid parental leave payment (before tax) is: 1 July 2025 to 30 June 2026 — $788.66 a week.",
-   "last_verified_at": "2026-08-12",
+   "source_snippet": "The maximum paid parental leave payment (before tax) is: 1 July 2026 to 30 June 2027 - $811.05 a week",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -1636,10 +1636,10 @@
    "category": "housing",
    "benefit_type": "cash_monthly",
    "amount_min": null,
-   "amount_max": null,
+   "amount_max": 305,
    "amount_currency": "NZD",
-   "amount_period": "monthly",
-   "amount_note": "Weekly payment towards rent, board or home-ownership costs; maximum depends on household and one of 4 areas (highest in Auckland/Queenstown). You do not have to be on a benefit. Not paid to public housing tenants.",
+   "amount_period": "weekly",
+   "amount_note": "Weekly, tax-free. Maximum by area and household: Single 16+ $165 (Area 1) to $70 (Area 4); couple with children up to $305 (Area 1) to $120 (Area 4). Must pay above an entry threshold; not payable if living in public housing.",
    "is_automatic": false,
    "application_url": "https://www.workandincome.govt.nz/products/a-z-benefits/accommodation-supplement.html",
    "application_channel": "online",
@@ -1684,9 +1684,9 @@
     "age_min": 16,
     "age_max": null,
     "income_annual_max": null,
-    "income_note": "Asset tested ($8,100 single / $16,200 couple cash asset limits); income tested for non-beneficiaries",
+    "income_note": "Income and asset tested incl. partner; cash assets no more than $8,100 (single) / $16,200 (couple or sole parent).",
     "requires_children": false,
-    "nationality": "any_resident",
+    "nationality": "citizen_or_pr",
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
@@ -1694,8 +1694,8 @@
     "gender": "any"
    },
    "source_url": "https://www.workandincome.govt.nz/products/a-z-benefits/accommodation-supplement.html",
-   "source_snippet": "The Accommodation Supplement is a weekly payment to assist people who are not in public housing, with their rent, board or the cost of owning a home.",
-   "last_verified_at": "2026-08-12",
+   "source_snippet": "Accommodation Supplement is a weekly payment which helps people with their rent, board or the cost of owning a home.",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -1711,9 +1711,9 @@
    "amount_max": null,
    "amount_currency": "NZD",
    "amount_period": "monthly",
-   "amount_note": "Eligible public housing tenants pay an income-related rent (generally about 25% of net household income) with the Government paying the rest via the Income-Related Rent Subsidy to Kāinga Ora or community housing providers.",
+   "amount_note": "Eligible tenants pay income-related rent based on household income (see Living in public housing); the Government pays the rest.",
    "is_automatic": false,
-   "application_url": "https://www.workandincome.govt.nz/housing/public-housing/index.html",
+   "application_url": "https://www.workandincome.govt.nz/housing/find-a-house/apply-for-public-housing",
    "application_channel": "in_person",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -1756,19 +1756,19 @@
     "age_min": 16,
     "age_max": null,
     "income_annual_max": null,
-    "income_note": "Income and asset tested for public housing eligibility",
+    "income_note": "Generally income under $832.72/week after tax (single, no children) or $1,281.12/week (partner or children) and cash assets under $42,700; may still qualify above these. Must have a serious housing need.",
     "requires_children": false,
     "nationality": "citizen_or_pr",
-    "residency_months_min": null,
+    "residency_months_min": 24,
     "housing_tenure": "renting",
     "student_required": false,
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.workandincome.govt.nz/",
-   "source_snippet": "MSD calculates the amount of Income Related Rent that public housing tenants are charged by Kāinga Ora or registered Community Housing Providers.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www.workandincome.govt.nz/housing/find-a-house/who-can-get-public-housing.html",
+   "source_snippet": "Residency: ... you're a New Zealand citizen; you have a resident visa or permanent resident visa and have lived in NZ continuously for at least 2 years since getting it; you're recognised as a refugee ... Age: You must be 16 or older.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "emergency-housing-sng",
@@ -1783,9 +1783,9 @@
    "amount_max": null,
    "amount_currency": "NZD",
    "amount_period": "one_off",
-   "amount_note": "Non-recoverable grant paying for short-term emergency accommodation (motel/transitional housing) for people with nowhere to stay, generally up to 7 nights at a time while longer-term housing is found.",
+   "amount_note": "Work and Income generally pays the first 7 nights if you qualify; after that you pay an Emergency Housing Contribution.",
    "is_automatic": false,
-   "application_url": "https://www.workandincome.govt.nz/housing/nowhere-to-stay/index.html",
+   "application_url": "https://www.workandincome.govt.nz/housing/nowhere-to-stay/emergency-housing",
    "application_channel": "in_person",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -1818,19 +1818,19 @@
     "age_min": 18,
     "age_max": null,
     "income_annual_max": null,
-    "income_note": "Income and asset tested",
+    "income_note": "Weekly pre-tax income generally under $740.81 (single 18+), $644.59 (single 16-17), $1,076.04 (couple), $898.96 (sole parent 1 child), $947.09 (2+ children); cash assets under $1,411.22 (single) / $2,351.46 (couple or sole parent).",
     "requires_children": false,
-    "nationality": "any_resident",
+    "nationality": "citizen_or_pr",
     "residency_months_min": null,
     "housing_tenure": "homeless",
     "student_required": false,
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.workandincome.govt.nz/",
-   "source_snippet": "If you have nowhere to stay, Work and Income may help with emergency housing paid through an Emergency Housing Special Needs Grant.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www.workandincome.govt.nz/housing/nowhere-to-stay/emergency-housing/who-can-get-it",
+   "source_snippet": "If you have nowhere to stay tonight or in the next 7 nights, we may be able to pay for you to stay in emergency housing.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "housing-support-products",
@@ -1845,9 +1845,9 @@
    "amount_max": null,
    "amount_currency": "NZD",
    "amount_period": "one_off",
-   "amount_note": "Grants to get and keep rental housing: bond up to 4 weeks' rent (max $2,000, non-recoverable), rent in advance up to 2 weeks (max $1,000), rent arrears up to 4 weeks (recoverable), moving costs up to $1,500 (recoverable).",
+   "amount_note": "Bond Grant: lowest of 4 weeks' rent, the amount the landlord asks, or your share of the bond; it must be repaid (repayment plan). Other moving-house grants (accommodation costs in advance, moving costs, security cover) are on the Moving house page; the earlier '$2,000 non-recoverable' bond figure is not on the official page.",
    "is_automatic": false,
-   "application_url": "https://www.workandincome.govt.nz/housing/move-into-a-house/index.html",
+   "application_url": "https://www.workandincome.govt.nz/housing/move-house",
    "application_channel": "online",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -1885,19 +1885,19 @@
     "age_min": 16,
     "age_max": null,
     "income_annual_max": null,
-    "income_note": "Income and cash asset tested",
+    "income_note": "Weekly pre-tax income under $1,353 (single 16+), $2,006 (couple no children), $2,337 (couple with children), $1,846 (sole parent 1 child); assets under $8,100 single / $16,200 couple or sole parent.",
     "requires_children": false,
-    "nationality": "any_resident",
+    "nationality": "citizen_or_pr",
     "residency_months_min": null,
     "housing_tenure": "renting",
     "student_required": false,
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.msd.govt.nz/",
-   "source_snippet": "Bond grant up to four weeks' rent (max $2,000) and up to two weeks' rent in advance (max $1,000) — you don't have to pay these back.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www.workandincome.govt.nz/housing/move-house/bond",
+   "source_snippet": "If you don't have enough money to pay bond to your landlord, you may be able to get a Bond Grant. You'll need to pay the money back.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "first-home-loan",
@@ -1949,10 +1949,10 @@
    ],
    "eligibility": {
     "statuses": [],
-    "age_min": null,
+    "age_min": 18,
     "age_max": null,
     "income_annual_max": 95000,
-    "income_note": "$95,000 single no dependants; $150,000 single with dependants or two+ buyers combined",
+    "income_note": "Before-tax income over last 12 months: $95,000 or less (individual, no dependants); $150,000 or less (individual with dependants); $150,000 or less combined for two or more buyers.",
     "requires_children": false,
     "nationality": "citizen_or_pr",
     "residency_months_min": null,
@@ -1962,8 +1962,8 @@
     "gender": "any"
    },
    "source_url": "https://www.govt.nz/browse/housing-and-property/buying-or-selling-a-home/buying-your-first-home/",
-   "source_snippet": "With a First Home Loan, you only need a 5% deposit. Kāinga Ora underwrite the loan... (First Home Grant and First Home Partner are no longer available).",
-   "last_verified_at": "2026-08-12",
+   "source_snippet": "A First Home Loan can make it easier for you to get into your first home by lowering the required deposit to 5%.",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -1981,10 +1981,10 @@
    "amount_period": "one_off",
    "amount_note": "Withdraw nearly all your KiwiSaver savings (leaving $1,000) to buy your first home, after at least 3 years of membership. No income test. Apply through your KiwiSaver provider before settlement.",
    "is_automatic": false,
-   "application_url": "https://www.ird.govt.nz/kiwisaver/kiwisaver-individuals/getting-my-kiwisaver-savings-early",
+   "application_url": "https://kaingaora.govt.nz/home-ownership/kiwisaver-first-home-withdrawal/",
    "application_channel": "online",
    "deadline_type": "rolling",
-   "deadline_note": "Must apply before purchase settlement",
+   "deadline_note": "Apply to your KiwiSaver provider before purchase settlement",
    "procedure_steps": [
     {
      "step": 1,
@@ -2028,10 +2028,10 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.ird.govt.nz/kiwisaver",
-   "source_snippet": "You may be able to withdraw your KiwiSaver savings to put towards buying your first home.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://kaingaora.govt.nz/home-ownership/kiwisaver-first-home-withdrawal/",
+   "source_snippet": "If you have been a member of KiwiSaver for at least 3 years, you may be able to make a withdrawal from your savings to put towards buying your first home. ... at least $1,000 must remain in their KiwiSaver account.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "kainga-whenua-loan",
@@ -2090,10 +2090,10 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.govt.nz/browse/housing-and-property/buying-or-selling-a-home/buying-your-first-home/",
-   "source_snippet": "The Kāinga Whenua Loan is an opportunity for Māori to build, purchase or relocate a house on Māori land that has shared ownership.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://kaingaora.govt.nz/home-ownership/kainga-whenua/",
+   "source_snippet": "The Kainga Whenua Loan is designed to support whanau Maori with their housing aspirations and remove some of the barriers to accessing finance.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "tenant-home-ownership-grant",
@@ -2113,7 +2113,7 @@
    "application_url": "https://kaingaora.govt.nz/home-ownership/tenant-home-ownership/",
    "application_channel": "post",
    "deadline_type": "rolling",
-   "deadline_note": "Only selected Kāinga Ora homes in some areas are available",
+   "deadline_note": "Only selected Kainga Ora houses; not available in Auckland, Wellington City, Christchurch, Hamilton or Tauranga",
    "procedure_steps": [
     {
      "step": 1,
@@ -2152,10 +2152,10 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.govt.nz/browse/housing-and-property/buying-or-selling-a-home/buying-your-first-home/",
-   "source_snippet": "The tenant home ownership grant is a gift of 10% of the purchase price of selected Kāinga Ora houses up to a maximum of $20,000.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://kaingaora.govt.nz/home-ownership/tenant-home-ownership/",
+   "source_snippet": "The Tenant Home Ownership grant is a gift of 10% of the purchase price of selected Kainga Ora houses up to a maximum of $20,000. The Tenant Home Ownership grant is not available in areas where there is high demand for state houses.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "rates-rebate",
@@ -2167,15 +2167,15 @@
    "category": "housing",
    "benefit_type": "cash_one_off",
    "amount_min": null,
-   "amount_max": 805,
+   "amount_max": 830,
    "amount_currency": "NZD",
    "amount_period": "annual",
-   "amount_note": "Rebate of up to $805 on council rates for low-income residential ratepayers. SuperGold cardholders get the full rebate with household income up to $45,000 (from 1 Jul 2025); general threshold around $31,510 plus dependants allowance.",
+   "amount_note": "Maximum rebate $830 for the 2026-27 rating year; must be living in your own home on 1 July 2026. Assessed by your council.",
    "is_automatic": false,
-   "application_url": "https://www.govt.nz/browse/housing-and-property/owning-a-home/apply-for-a-rates-rebate/",
+   "application_url": "https://www.govt.nz/browse/housing-and-property/getting-help-with-housing/getting-a-rates-rebate/rates-rebate-application-form/",
    "application_channel": "post",
    "deadline_type": "annual",
-   "deadline_note": "Apply by 30 June for the current rating year",
+   "deadline_note": "Apply to your council by 30 June 2027 for the 1 Jul 2026-30 Jun 2027 rating year",
    "procedure_steps": [
     {
      "step": 1,
@@ -2214,8 +2214,8 @@
     ],
     "age_min": null,
     "age_max": null,
-    "income_annual_max": null,
-    "income_note": "There is no income ceiling — $33,210 is the household income up to which you get the MAXIMUM rebate, and govt.nz states households earning more may still get a reduced rebate. SuperGold cardholder households get the maximum up to $46,400. Figures are for the 1 July 2026 to 30 June 2027 rating year.",
+    "income_annual_max": 33210,
+    "income_note": "Household income up to $33,210 gets the maximum rebate; SuperGold cardholder households up to $46,400. Above these you may still get a smaller rebate (depends on rates paid and dependants). Based on income for 1 Apr 2025-31 Mar 2026.",
     "requires_children": false,
     "nationality": "any_resident",
     "residency_months_min": null,
@@ -2227,9 +2227,9 @@
     "income_confidence": "high",
     "gender": "any"
    },
-   "source_url": "https://www.beehive.govt.nz/release/rates-relief-66000-more-supergold-cardholders",
-   "source_snippet": "The maximum rebate for the scheme will also increase from $790 to $805... income abatement threshold... lifted from $31,510 to $45,000.",
-   "last_verified_at": "2026-08-12",
+   "source_url": "https://www.govt.nz/browse/housing-and-property/getting-help-with-housing/getting-a-rates-rebate/what-is-a-rates-rebate/",
+   "source_snippet": "The maximum rebate you can get is $830. You may be eligible for all or only part of this amount.",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified",
    "income_reviewed_at": "2026-08-13"
   },
@@ -2246,9 +2246,9 @@
    "amount_max": null,
    "amount_currency": "NZD",
    "amount_period": "annual",
-   "amount_note": "Several councils let older homeowners (e.g. 65+) or ratepayers in financial hardship postpone paying rates; the postponed amount accrues as a charge against the property and is repaid when it is sold.",
+   "amount_note": "Council-specific. Example (Wellington City Council): postponement for owner-occupiers in extreme financial hardship as a last resort; approved for one year at a time; $200 application fee; interest charged annually; legal charge over the property. Other councils run their own policies.",
    "is_automatic": false,
-   "application_url": "https://wellington.govt.nz/property-rates-and-building/rates",
+   "application_url": "https://wellington.govt.nz/property-rates-and-building/rates/rating-policies/postponement-or-rates-payments",
    "application_channel": "post",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -2296,10 +2296,10 @@
     ],
     "gender": "any"
    },
-   "source_url": "https://wellington.govt.nz/property-rates-and-building/rates",
-   "source_snippet": "Councils may allow ratepayers, including older homeowners, to postpone rates with repayment when the property is sold.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://wellington.govt.nz/property-rates-and-building/rates/rating-policies/postponement-or-rates-payments",
+   "source_snippet": "The Council may help ratepayers by postponing their rates payments in cases of extreme financial hardship.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "community-services-card",
@@ -2349,9 +2349,9 @@
     "age_min": 16,
     "age_max": null,
     "income_annual_max": 34974,
-    "income_note": "Yearly income before tax must be less than $34,974 for a single person living with others ($37,116 single living alone), per the Work and Income table updated 29 July 2026. Couple with no dependent children $55,501; family of 2 $67,791, family of 3 $83,444, family of 4 $96,266. Separate, higher limits apply to NZ Super recipients.",
+    "income_note": "Yearly pre-tax income limits: single living with others $34,974; single living alone $37,116; couple no children $55,501; family of 2 $67,791; family of 3 $83,444 (NZ Super rates are higher).",
     "requires_children": false,
-    "nationality": "any_resident",
+    "nationality": "citizen_or_pr",
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
@@ -2362,8 +2362,8 @@
     "gender": "any"
    },
    "source_url": "https://www.workandincome.govt.nz/products/a-z-benefits/community-services-card.html",
-   "source_snippet": "Benefit recipients and people on low incomes can get a Community Services Card for subsidised health services.",
-   "last_verified_at": "2026-08-12",
+   "source_snippet": "The Community Services Card can help you with the costs of health care and public transport.",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified",
    "income_reviewed_at": "2026-08-13"
   },
@@ -2382,7 +2382,7 @@
    "amount_period": "annual",
    "amount_note": "Card for people with long-term conditions who have visited their enrolled medical practice 12+ times in a year; reduces GP visit costs and specialist prescription co-payments. Not income tested. Renewed annually.",
    "is_automatic": false,
-   "application_url": "https://www.healthnz.govt.nz/health-topics/tests-and-treatments/medicines/prescriptions",
+   "application_url": "https://www.healthnz.govt.nz/hospitals-services/services-support/general-practices",
    "application_channel": "in_person",
    "deadline_type": "rolling",
    "deadline_note": "Must be reapplied for every year",
@@ -2419,9 +2419,9 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.healthnz.govt.nz/health-topics/tests-and-treatments/medicines/prescriptions",
-   "source_snippet": "A High Use Health Card is a card that your healthcare provider can apply for if you have a long-term condition... 12 or more times in 1 year. Unlike the Community Services Card, the HUHC doesn't depend on your income.",
-   "last_verified_at": "2026-08-12",
+   "source_url": "https://www.healthnz.govt.nz/hospitals-services/services-support/general-practices",
+   "source_snippet": "You may be eligible for a High Use Health Card if you have visited a healthcare practitioner at the general practice you are enrolled in 12 or more times in one year. The 12 visits must be related to a health condition that is ongoing, and not be related to an injury.",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -2482,8 +2482,8 @@
     "gender": "any"
    },
    "source_url": "https://www.healthnz.govt.nz/health-topics/tests-and-treatments/medicines/prescriptions",
-   "source_snippet": "People need to pay the standard $5 prescription charge, with exemptions for people aged 13 years or under, holding a Community Services Card, aged 65 years or over, or holding a Prescription Subsidy Card.",
-   "last_verified_at": "2026-08-12",
+   "source_snippet": "People need to pay the standard $5 prescription charge, with exemptions for people: aged 13 years or under; holding a Community Services Card (CSC), or a dependent child of a CSC holder; aged 65 years or over; holding a Prescription Subsidy Card (PSC).",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -2496,10 +2496,10 @@
    "category": "health",
    "benefit_type": "cash_monthly",
    "amount_min": null,
-   "amount_max": null,
+   "amount_max": 82.85,
    "amount_currency": "NZD",
-   "amount_period": "monthly",
-   "amount_note": "Weekly payment (up to around $80) for ongoing, regular costs from a disability or health condition — e.g. doctor visits, prescriptions, counselling, special transport. You do not have to be on a benefit.",
+   "amount_period": "weekly",
+   "amount_note": "Up to $82.85 a week depending on your extra disability costs; not taxed and not repayable.",
    "is_automatic": false,
    "application_url": "https://www.workandincome.govt.nz/products/a-z-benefits/disability-allowance.html",
    "application_channel": "online",
@@ -2534,9 +2534,9 @@
     "age_min": 16,
     "age_max": null,
     "income_annual_max": null,
-    "income_note": "Income tested (single and couple thresholds apply)",
+    "income_note": "Weekly pre-tax income limits: single 18+ $870; single 16-17 $696.60; couple $1,295.11; sole parent 1 child $971.51; 2+ children $1,023.59.",
     "requires_children": false,
-    "nationality": "any_resident",
+    "nationality": "citizen_or_pr",
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
@@ -2544,9 +2544,9 @@
     "gender": "any"
    },
    "source_url": "https://www.workandincome.govt.nz/products/a-z-benefits/disability-allowance.html",
-   "source_snippet": "Weekly payment for people who have regular, ongoing costs because of a disability, such as visits to the doctor or hospital, medicines or extra travel.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_snippet": "Disability Allowance is a weekly payment for people who have regular, ongoing costs because of a disability.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "child-disability-allowance",
@@ -2557,11 +2557,11 @@
    "funder": "Ministry of Social Development — Work and Income",
    "category": "health",
    "benefit_type": "cash_monthly",
-   "amount_min": null,
-   "amount_max": null,
+   "amount_min": 62.43,
+   "amount_max": 62.43,
    "amount_currency": "NZD",
-   "amount_period": "monthly",
-   "amount_note": "Fortnightly payment (currently around $60) to the main carer of a child with a serious disability who needs constant care and attention for at least 12 months. Not income tested.",
+   "amount_period": "weekly",
+   "amount_note": "Fixed $62.43 a week per qualifying child, paid fortnightly; not affected by income, assets or costs.",
    "is_automatic": false,
    "application_url": "https://www.workandincome.govt.nz/products/a-z-benefits/child-disability-allowance.html",
    "application_channel": "online",
@@ -2598,7 +2598,7 @@
     "income_annual_max": null,
     "income_note": "Not income tested",
     "requires_children": true,
-    "nationality": "any_resident",
+    "nationality": "citizen_or_pr",
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
@@ -2606,9 +2606,9 @@
     "gender": "any"
    },
    "source_url": "https://www.workandincome.govt.nz/products/a-z-benefits/child-disability-allowance.html",
-   "source_snippet": "A fortnightly payment to the main carer of a child who has a serious disability and needs constant care and attention.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_snippet": "Child Disability Allowance is a fortnightly payment made to the main carer of a child or young person with a serious disability.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "breastscreen-aotearoa",
@@ -2623,9 +2623,9 @@
    "amount_max": null,
    "amount_currency": "NZD",
    "amount_period": "one_off",
-   "amount_note": "Free mammogram every 2 years for women and eligible people aged 45–69. Book directly — no referral needed.",
+   "amount_note": "Free mammograms for eligible women aged 45 to 69, or 70 to 74 if they qualify for the screening age extension. For most women every 2 years (for 70-74 it depends on birth date). Not for people ineligible for publicly funded health care.",
    "is_automatic": false,
-   "application_url": "https://www.timetoscreen.nz/breast-screening/",
+   "application_url": "https://www.healthnz.govt.nz/health-topics/keeping-healthy/cancer-screening/breast-screening",
    "application_channel": "in_person",
    "deadline_type": "rolling",
    "deadline_note": "Screening recommended every 2 years",
@@ -2651,21 +2651,21 @@
    "eligibility": {
     "statuses": [],
     "age_min": 45,
-    "age_max": 69,
+    "age_max": 74,
     "income_annual_max": null,
     "income_note": "Free; not income tested",
     "requires_children": false,
-    "nationality": "any_resident",
+    "nationality": "citizen_or_pr",
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
     "admin_areas": [],
     "gender": "female"
    },
-   "source_url": "https://www.timetoscreen.nz/breast-screening/",
-   "source_snippet": "Free mammograms every 2 years for women aged 45 to 69 through BreastScreen Aotearoa.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www.healthnz.govt.nz/health-topics/keeping-healthy/cancer-screening/breast-screening",
+   "source_snippet": "Eligible women (those aged between 45 and 69 or those who qualify for the age range extension for women aged 70 to 74) can get regular free mammograms.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "cervical-screening",
@@ -2680,9 +2680,9 @@
    "amount_max": null,
    "amount_currency": "NZD",
    "amount_period": "one_off",
-   "amount_note": "Cervical screening (HPV primary screening, including self-test option) every 3–5 years for people aged 25–69; free for Māori and Pacific participants, Community Services Card holders, those over 30 never screened, and follow-up tests.",
+   "amount_note": "The programme is not fully funded. Free routine screening if: Maori or Pacific aged 25-69; aged 25-69 with a Community Services Card; aged 30+ and never screened or overdue (5+ years since last cytology / 7+ since last HPV test); aged 70-74 and never screened or without recent normal results. Follow-up tests free for all. People not eligible for publicly funded health care pay for everything.",
    "is_automatic": false,
-   "application_url": "https://www.timetoscreen.nz/cervical-screening/",
+   "application_url": "https://www.healthnz.govt.nz/health-topics/keeping-healthy/cancer-screening/cervical-screening",
    "application_channel": "in_person",
    "deadline_type": "rolling",
    "deadline_note": "Screening every 3 years (or 5 years for HPV-negative self-test)",
@@ -2703,21 +2703,21 @@
    "eligibility": {
     "statuses": [],
     "age_min": 25,
-    "age_max": 69,
+    "age_max": 74,
     "income_annual_max": null,
-    "income_note": "Free for priority groups; small fee may apply otherwise",
+    "income_note": "Free only for priority groups (Maori/Pacific, Community Services Card holders, never/under-screened); not otherwise free",
     "requires_children": false,
-    "nationality": "any_resident",
+    "nationality": "citizen_or_pr",
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
     "admin_areas": [],
     "gender": "female"
    },
-   "source_url": "https://www.timetoscreen.nz/cervical-screening/",
-   "source_snippet": "Regular cervical screening, including HPV self-testing, is offered free to priority groups aged 25 to 69.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www.healthnz.govt.nz/health-topics/keeping-healthy/cancer-screening/cervical-screening/eligibility-for-cervical-screening",
+   "source_snippet": "The National Cervical Screening Programme is not fully funded. Free routine cervical screening ... is available if you are: ... Māori and Pacific wāhine aged 25 to 69 years; aged 25 to 69 and hold a Community Services Card.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "bowel-screening",
@@ -2732,12 +2732,12 @@
    "amount_max": null,
    "amount_currency": "NZD",
    "amount_period": "one_off",
-   "amount_note": "Free home bowel screening test kit posted every 2 years to eligible people aged 58–74 (60–74 for some groups).",
+   "amount_note": "Free home test kit mailed every 2 years to people aged 58 to 74 (from 56 in Waitemata, Auckland, Counties Manukau, Waikato, Tairawhiti, Wairarapa, West Coast and South Canterbury districts; other districts expected to move to 56 in early 2027). No need to apply. Free for people eligible for publicly funded health care.",
    "is_automatic": true,
-   "application_url": "https://www.timetoscreen.nz/bowel-screening/",
+   "application_url": "https://www.healthnz.govt.nz/health-topics/keeping-healthy/cancer-screening/bowel-screening",
    "application_channel": "automatic",
    "deadline_type": "rolling",
-   "deadline_note": "Invitation sent every 2 years",
+   "deadline_note": "Kit sent automatically around your birthday every 2 years",
    "procedure_steps": [
     {
      "step": 1,
@@ -2754,22 +2754,22 @@
    ],
    "eligibility": {
     "statuses": [],
-    "age_min": 58,
+    "age_min": 56,
     "age_max": 74,
     "income_annual_max": null,
     "income_note": "Free; not income tested",
     "requires_children": false,
-    "nationality": "any_resident",
+    "nationality": "citizen_or_pr",
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.timetoscreen.nz/bowel-screening/",
-   "source_snippet": "Free bowel screening every 2 years for eligible New Zealanders, with a home test kit sent by post.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www.healthnz.govt.nz/health-topics/keeping-healthy/cancer-screening/bowel-screening/check-if-youre-eligible",
+   "source_snippet": "People eligible for publicly funded health care can have free bowel screening through the programme.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "free-gp-visits-under-14",
@@ -2786,7 +2786,7 @@
    "amount_period": "one_off",
    "amount_note": "Children under 14 enrolled with a general practice get free daytime GP visits and free after-hours care at participating clinics.",
    "is_automatic": true,
-   "application_url": "https://www.healthnz.govt.nz/",
+   "application_url": "https://www.healthnz.govt.nz/hospitals-services/eligibility-subsidies/zero-fees-for-under-14s",
    "application_channel": "automatic",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -2816,17 +2816,17 @@
     "income_annual_max": null,
     "income_note": "Free; not income tested",
     "requires_children": true,
-    "nationality": "any_resident",
+    "nationality": "citizen_or_pr",
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.healthnz.govt.nz/",
-   "source_snippet": "Children under 14 years enrolled with a general practice are eligible for free GP visits and after-hours services.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www.healthnz.govt.nz/hospitals-services/eligibility-subsidies/zero-fees-for-under-14s",
+   "source_snippet": "All tamariki aged 13 and under who are eligible for publicly funded health services, are eligible for free doctor visits and more.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "acc-treatment-and-rehabilitation",
@@ -2887,7 +2887,7 @@
    },
    "source_url": "https://www.acc.co.nz/im-injured",
    "source_snippet": "Along with financial support if you can't work or have a permanent injury, we can pay for things like transport to get you to appointments or work, childcare and help around the home.",
-   "last_verified_at": "2026-08-12",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -2950,9 +2950,9 @@
     "gender": "any"
    },
    "source_url": "https://www.workandincome.govt.nz/map/income-support/extra-help/home-help/multiple-births-01.html",
-   "source_snippet": "240 hours of funded home help for twins with an older sibling under five; 1,560 hours for triplets or higher order multiples.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_snippet": "If a client has given birth or adopted twins, they can only get Home Help for multiple births if they also have another child who is under the age of 5 years old.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "community-connect-concession",
@@ -3021,8 +3021,8 @@
     "gender": "any"
    },
    "source_url": "https://at.govt.nz/bus-train-ferry/at-hop-card/card-concessions-and-discounted-fares/community-connect-concession",
-   "source_snippet": "This gives you 50% off most buses, trains and ferries when using your registered AT HOP card.",
-   "last_verified_at": "2026-08-12",
+   "source_snippet": "This gives you a 50% discount on most buses, trains and ferries.",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -3040,7 +3040,7 @@
    "amount_period": "annual",
    "amount_note": "Free concession card issued automatically with NZ Super or Veteran's Pension: free off-peak travel on scheduled buses, trains and ferries nationwide (weekdays after 9am, all weekend and public holidays) plus discounts at 2,800+ businesses.",
    "is_automatic": true,
-   "application_url": "https://supergold.govt.nz/",
+   "application_url": "https://www.supergold.govt.nz/info_for_cardholders/how_to_get_a_supergold_card",
    "application_channel": "automatic",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -3079,9 +3079,9 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.govt.nz/browse/tax-benefits-and-finance/supergold-card/",
+   "source_url": "https://www.govt.nz/browse/benefits-pensions-and-financial-support/supergold-cards/",
    "source_snippet": "Use your SuperGold card or Veteran SuperGold card to get business discounts, free or discounted council services, and free off-peak travel on public transport.",
-   "last_verified_at": "2026-08-12",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -3096,8 +3096,8 @@
    "amount_min": null,
    "amount_max": null,
    "amount_currency": "NZD",
-   "amount_period": "monthly",
-   "amount_note": "Subsidised taxi and ride-share fares (typically 50–75% off depending on region, up to a per-trip cap) for people with long-term impairments who cannot use public transport independently. Administered by regional councils.",
+   "amount_period": "one_off",
+   "amount_note": "Subsidy of 65% of each taxi/ride fare (from 1 July 2026) up to a maximum subsidy per trip; you pay the rest. Eligibility is by a mobility assessment for people with permanent disabilities or long-term impairments. Run by regional transport authorities.",
    "is_automatic": false,
    "application_url": "https://www.nzta.govt.nz/resources/total-mobility-scheme/",
    "application_channel": "in_person",
@@ -3140,18 +3140,27 @@
     "student_required": false,
     "admin_areas": [
      "Auckland",
-     "Wellington",
-     "Canterbury",
-     "Waikato",
      "Bay of Plenty",
-     "Otago"
+     "Canterbury",
+     "Gisborne",
+     "Hawke's Bay",
+     "Invercargill",
+     "Manawatu-Whanganui",
+     "Marlborough",
+     "Nelson-Tasman",
+     "Northland",
+     "Otago",
+     "Taranaki",
+     "Waikato",
+     "Wellington",
+     "West Coast"
     ],
     "gender": "any"
    },
-   "source_url": "https://www.nzta.govt.nz/resources/total-mobility-scheme/",
-   "source_snippet": "The Total Mobility scheme subsidises taxi travel for people who cannot use public transport because of a serious mobility impairment.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www.nzta.govt.nz/travelling-on-our-roads/public-transport/travelling-with-a-disability",
+   "source_snippet": "The subsidy per trip is 65% of the fare, (from 1 July 2026) up to a maximum subsidy.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "at-tertiary-concession",
@@ -3166,12 +3175,12 @@
    "amount_max": null,
    "amount_currency": "NZD",
    "amount_period": "monthly",
-   "amount_note": "Discounted fares (at least 20% off adult fares) on Auckland buses, trains and most ferries for enrolled full-time tertiary students, loaded on a registered AT HOP card.",
+   "amount_note": "40% discount on most Auckland buses, trains and ferries for full-time students at Auckland tertiary institutions registered with Auckland Transport (not Waiheke/Rakino ferries or other regions). Loaded on a registered AT HOP card.",
    "is_automatic": false,
    "application_url": "https://at.govt.nz/bus-train-ferry/at-hop-card/card-concessions-and-discounted-fares/tertiary-student-concession",
    "application_channel": "online",
    "deadline_type": "rolling",
-   "deadline_note": "Renewed each study year",
+   "deadline_note": "Concession expires after 3 years (UoA, AUT, Massey online applications) or at the earliest of 31 March next year, sticker expiry or student ID expiry (other institutions)",
    "procedure_steps": [
     {
      "step": 1,
@@ -3214,10 +3223,10 @@
     ],
     "gender": "any"
    },
-   "source_url": "https://at.govt.nz/",
-   "source_snippet": "Eligible full-time tertiary students get discounted fares on AT bus, train and ferry services with a registered AT HOP card.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://at.govt.nz/bus-train-ferry/at-hop-card/card-concessions-and-discounted-fares/tertiary-student-concession",
+   "source_snippet": "Full-time students at Auckland tertiary institutions can get a 40% discount on most buses, trains and ferries.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "winter-energy-payment",
@@ -3340,7 +3349,7 @@
    },
    "source_url": "https://www.eeca.govt.nz/co-funding-and-support/products/warmer-kiwi-homes-programme/information/",
    "source_snippet": "You may be able to get a 90% grant (up to $3,450) if you have a Community Services Card, SuperGold Combo card, or live in the highest-need areas.",
-   "last_verified_at": "2026-08-12",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -3353,10 +3362,10 @@
    "category": "education",
    "benefit_type": "cash_monthly",
    "amount_min": null,
-   "amount_max": null,
+   "amount_max": 336,
    "amount_currency": "NZD",
-   "amount_period": "monthly",
-   "amount_note": "Income-tested subsidy paid to licensed childcare providers for under-5s (and some 5–6 year olds): up to $6.52 per child per hour; up to 9 hours/week if not working or up to 50 hours/week if working/studying. Cannot be claimed for the same hours as 20 Hours ECE.",
+   "amount_period": "weekly",
+   "amount_note": "Up to $6.72 per child per hour (maximum rate, lower incomes) - $336 per week for 50 hours. Normally up to 9 hours a week if not working/studying, up to 50 hours if working, studying, training or in other listed situations. Paid to the childcare provider.",
    "is_automatic": false,
    "application_url": "https://www.workandincome.govt.nz/products/a-z-benefits/childcare-subsidy.html",
    "application_channel": "online",
@@ -3394,19 +3403,19 @@
     ],
     "age_min": null,
     "age_max": null,
-    "income_annual_max": null,
-    "income_note": "Subsidy tapers with weekly household income; cuts out at higher incomes",
+    "income_annual_max": 160732,
+    "income_note": "Weekly gross household income test at 1 April 2026: subsidy cuts out at $2,404/week (1 child), $2,748 (2 children), $3,091 (3+ children). Annual figure is the 3+ children cut-out ($3,091 x 52); 1 child = about $125,008, 2 children = about $142,896.",
     "requires_children": true,
-    "nationality": "any_resident",
+    "nationality": "citizen_or_pr",
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.workandincome.govt.nz/map/deskfile/extra-help-information/childcare-assistance-tables/childcare-subsidy-current.html",
-   "source_snippet": "Up to $6.52 per child per hour, paid to licensed ECE provider; up to 50 hours per week if both parents are working or studying.",
-   "last_verified_at": "2026-08-12",
+   "source_url": "https://www.workandincome.govt.nz/products/a-z-benefits/childcare-subsidy.html",
+   "source_snippet": "you're a New Zealand citizen or permanent resident | your family is on a low or middle income.",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -3419,10 +3428,10 @@
    "category": "education",
    "benefit_type": "cash_monthly",
    "amount_min": null,
-   "amount_max": null,
+   "amount_max": 336,
    "amount_currency": "NZD",
-   "amount_period": "monthly",
-   "amount_note": "Income-tested subsidy for before/after-school care and school holiday programmes for children aged 5–13 (up to 18 if receiving Child Disability Allowance), up to 20 hours/week term time and 50 hours/week in holidays.",
+   "amount_period": "weekly",
+   "amount_note": "Up to $6.72 per child per hour: up to $134.40 a week in term time (20 hours) and $336 a week in school holidays (50 hours). Child must be at school and under 14 (under 18 with Child Disability Allowance). Caregiver must be working, studying/training or in another listed situation. Paid to the provider.",
    "is_automatic": false,
    "application_url": "https://www.workandincome.govt.nz/products/a-z-benefits/oscar-subsidy.html",
    "application_channel": "online",
@@ -3460,10 +3469,10 @@
     ],
     "age_min": null,
     "age_max": null,
-    "income_annual_max": null,
-    "income_note": "Income tested",
+    "income_annual_max": 160732,
+    "income_note": "Same weekly gross income tables as Childcare Subsidy (1 April 2026): cut-out $2,404/week (1 child), $2,748 (2), $3,091 (3+). Annual figure = 3+ children cut-out x 52; 1 child about $125,008.",
     "requires_children": true,
-    "nationality": "any_resident",
+    "nationality": "citizen_or_pr",
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
@@ -3472,8 +3481,8 @@
    },
    "source_url": "https://www.workandincome.govt.nz/products/a-z-benefits/oscar-subsidy.html",
    "source_snippet": "OSCAR Subsidy helps with the cost of before-school, after-school and school holiday programmes for children aged 5 to 13.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "twenty-hours-ece",
@@ -3487,10 +3496,10 @@
    "amount_min": null,
    "amount_max": null,
    "amount_currency": "NZD",
-   "amount_period": "monthly",
-   "amount_note": "Government funds up to 20 hours per week (max 6 hours/day) of early childhood education for all 3, 4 and 5-year-olds at participating licensed services, from the child's third birthday until they start school. Services cannot charge fees for these hours (optional charges may apply).",
+   "amount_period": "weekly",
+   "amount_note": "Up to 20 hours of early childhood education per week (max 6 hours a day) for 3, 4 and 5 year olds; you cannot be charged fees for those hours. Optional charges and hours beyond 20 may be charged. Some services may not offer it.",
    "is_automatic": false,
-   "application_url": "https://www.education.govt.nz/parents-and-caregivers/early-learning/",
+   "application_url": "https://www.education.govt.nz/parents-and-caregivers/early-learning/available-assistance/20-hours-funding-early-childhood-education",
    "application_channel": "in_person",
    "deadline_type": "rolling",
    "deadline_note": "From third birthday until starting school",
@@ -3520,8 +3529,8 @@
    ],
    "eligibility": {
     "statuses": [],
-    "age_min": null,
-    "age_max": null,
+    "age_min": 3,
+    "age_max": 5,
     "income_annual_max": null,
     "income_note": "Not income tested",
     "requires_children": true,
@@ -3532,9 +3541,9 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.education.govt.nz/education-professionals/early-learning/funding-and-financials/ece-funding-handbook/glossary",
-   "source_snippet": "20 Hours ECE enables services to provide early childhood education to 3-year-olds, 4-year-olds and 5-year-olds for up to a maximum of 6 hours per child per day and 20 hours per child per week without charging fees.",
-   "last_verified_at": "2026-08-12",
+   "source_url": "https://www.education.govt.nz/parents-and-caregivers/early-learning/available-assistance/20-hours-funding-early-childhood-education",
+   "source_snippet": "If a child is 3, 4 or 5, they are eligible for the 20 hours ECE funding scheme. The subsidy covers up to 20 hours of early childhood education each week. It can only be used for up to 6 hours a day.",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -3603,7 +3612,7 @@
    },
    "source_url": "https://www.ird.govt.nz/fees-free",
    "source_snippet": "Fees Free covers fees for the final year of tertiary study or final 2 years of work-based learning... up to $12,000. The Government has announced it is ending Fees Free at the end of 2026.",
-   "last_verified_at": "2026-08-12",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -3618,7 +3627,7 @@
    "amount_min": null,
    "amount_max": null,
    "amount_currency": "NZD",
-   "amount_period": "monthly",
+   "amount_period": "weekly",
    "amount_note": "Weekly payment for full-time students that does not have to be paid back. Income tested (personal, and parental income if under 24 without children). Not paid over the summer break.",
    "is_automatic": false,
    "application_url": "https://www.studylink.govt.nz/products/a-z-products/student-allowance/index.html",
@@ -3659,12 +3668,12 @@
      "student"
     ],
     "age_min": 18,
-    "age_max": null,
+    "age_max": 65,
     "income_annual_max": null,
     "income_note": "No single-person ceiling is published. For a student without a partner, personal income above $284.70 a week before tax reduces the allowance cent for cent, so the cut-out depends on the applicable weekly rate. StudyLink does publish a partnered cut-out: combined income of $1,185.75 a week before tax ($61,659 a year) means you cannot get a Student Allowance. Rates valid from 31 March 2026.",
     "requires_children": false,
     "nationality": "citizen_or_pr",
-    "residency_months_min": null,
+    "residency_months_min": 36,
     "housing_tenure": null,
     "student_required": true,
     "admin_areas": [],
@@ -3674,8 +3683,8 @@
     "gender": "any"
    },
    "source_url": "https://www.studylink.govt.nz/products/a-z-products/student-allowance/index.html",
-   "source_snippet": "Student Allowance is a weekly payment that can help with your living expenses while you're studying. You don't have to pay the money back.",
-   "last_verified_at": "2026-08-12",
+   "source_snippet": "A Student Allowance is a weekly payment that can help with your living expenses while you’re studying. ... In most cases you have to be: between 18-65, and studying full-time.",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified",
    "income_reviewed_at": "2026-08-13"
   },
@@ -3689,10 +3698,10 @@
    "category": "education",
    "benefit_type": "in_kind",
    "amount_min": null,
-   "amount_max": null,
+   "amount_max": 333.48,
    "amount_currency": "NZD",
-   "amount_period": "monthly",
-   "amount_note": "Weekly living-costs loan for full-time students (up to around $320/week), added to your student loan and repaid through the tax system once you earn over the repayment threshold. Interest-free while you remain in NZ.",
+   "amount_period": "weekly",
+   "amount_note": "Living-costs loan of up to $333.48 a week for full-time students (not available if you are on a benefit or in prison). Repayable. If you are 55 or older you can only borrow compulsory course fees, so no living costs. Reduced by any Student Allowance.",
    "is_automatic": false,
    "application_url": "https://www.studylink.govt.nz/products/a-z-products/student-loan/index.html",
    "application_channel": "online",
@@ -3727,12 +3736,12 @@
      "student"
     ],
     "age_min": null,
-    "age_max": null,
+    "age_max": 54,
     "income_annual_max": null,
     "income_note": "Not means tested but reduced by any Student Allowance received",
     "requires_children": false,
     "nationality": "citizen_or_pr",
-    "residency_months_min": null,
+    "residency_months_min": 36,
     "housing_tenure": null,
     "student_required": true,
     "admin_areas": [],
@@ -3740,8 +3749,8 @@
    },
    "source_url": "https://www.studylink.govt.nz/products/a-z-products/student-loan/index.html",
    "source_snippet": "A Student Loan can help pay for your course fees, study materials and living costs — you have to pay it back.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "student-loan-course-related-costs",
@@ -3791,12 +3800,12 @@
      "student"
     ],
     "age_min": null,
-    "age_max": null,
+    "age_max": 54,
     "income_annual_max": null,
     "income_note": "Not income tested",
     "requires_children": false,
     "nationality": "citizen_or_pr",
-    "residency_months_min": null,
+    "residency_months_min": 36,
     "housing_tenure": null,
     "student_required": true,
     "admin_areas": [],
@@ -3804,8 +3813,8 @@
    },
    "source_url": "https://www.studylink.govt.nz/products/a-z-products/student-loan/index.html",
    "source_snippet": "You can borrow up to $1,000 a year for course-related costs such as textbooks and equipment.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "training-incentive-allowance",
@@ -3817,15 +3826,15 @@
    "category": "education",
    "benefit_type": "cash_one_off",
    "amount_min": null,
-   "amount_max": null,
+   "amount_max": 5723.2,
    "amount_currency": "NZD",
    "amount_period": "annual",
-   "amount_note": "Payment towards tuition fees and course costs for people on Sole Parent Support, Supported Living Payment or certain other payments studying approved employment-focused courses (up to a yearly maximum, around $4,900).",
+   "amount_note": "$143.08 for each week of study, up to $5,723.20 in a 52-week period. Paid weekly, upfront for costs such as fees or a laptop, or a mix. For people on Sole Parent Support, Supported Living Payment, Young Parent Payment (sole parents), Emergency Benefit/EMA (sole parents) or Jobseeker Support (sole parents) studying an approved course of 12+ weeks at levels 1-7.",
    "is_automatic": false,
    "application_url": "https://www.workandincome.govt.nz/products/a-z-benefits/training-incentive-allowance.html",
    "application_channel": "online",
    "deadline_type": "rolling",
-   "deadline_note": "Course must be approved before enrolling",
+   "deadline_note": "Apply within 28 days of your study starting; reapply each year or for a new course",
    "procedure_steps": [
     {
      "step": 1,
@@ -3871,28 +3880,28 @@
    },
    "source_url": "https://www.workandincome.govt.nz/products/a-z-benefits/training-incentive-allowance.html",
    "source_snippet": "Training Incentive Allowance helps with the costs of studying an approved course while on certain benefits.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "school-donations-scheme",
    "name_local": "School Donations Scheme",
-   "name_en": "School donations scheme ($150 per student for decile 1–7 schools)",
+   "name_en": "School donations scheme (schools with Equity Index 432+ can opt in; parents not asked for donations)",
    "admin_level": "national",
    "admin_area": null,
    "funder": "Ministry of Education",
    "category": "education",
    "benefit_type": "in_kind",
    "amount_min": null,
-   "amount_max": 150,
+   "amount_max": null,
    "amount_currency": "NZD",
    "amount_period": "annual",
-   "amount_note": "Government pays decile 1–7 state and state-integrated schools $150 per student per year if the board agrees not to ask parents for donations (except for school camps). Families at opted-in schools pay no donation.",
+   "amount_note": "Paid to the school, not to families: eligible state and state-integrated schools and kura with an Equity Index (EQI) of 432 or higher can opt in and receive a per-student rate (see MoE operational funding rates) if they agree not to ask parents for donations (except overnight camps). Families at opted-in schools are not asked for donations.",
    "is_automatic": true,
-   "application_url": "https://www.education.govt.nz/our-work/publications/education-circulars/education-circular-202103",
+   "application_url": "https://www.education.govt.nz/education-professionals/schools-year-0-13/funding-and-financials/school-donations-scheme",
    "application_channel": "automatic",
    "deadline_type": "annual",
-   "deadline_note": "School boards opt in each year",
+   "deadline_note": "School boards opt in each year via the July roll return or a late opt-in form by late November",
    "procedure_steps": [
     {
      "step": 1,
@@ -3926,9 +3935,9 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.education.govt.nz/our-work/publications/education-circulars/education-circular-202103",
-   "source_snippet": "Decile 1-7 state and state-integrated schools have been able to choose to receive a $150 per student, per year payment if they agree not to ask parents and caregivers for donations.",
-   "last_verified_at": "2026-08-12",
+   "source_url": "https://www.education.govt.nz/education-professionals/schools-year-0-13/funding-and-financials/school-donations-scheme",
+   "source_snippet": "State and state-integrated schools and kura with an equity index (EQI) of 432 or higher can choose to join the scheme. To join, schools and kura must agree not to ask parents and caregivers for donations (except for overnight camps).",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -3944,12 +3953,12 @@
    "amount_max": null,
    "amount_currency": "NZD",
    "amount_period": "monthly",
-   "amount_note": "Free nutritious lunch every school day for students at around 1,000 participating schools and kura selected by equity index, reaching over 230,000 learners.",
+   "amount_note": "Free healthy lunch every school day for students at participating schools and kura, chosen using the Equity Index; more than 240,000 students are served. Not income tested for families.",
    "is_automatic": true,
-   "application_url": "https://www.education.govt.nz/",
+   "application_url": "https://www.education.govt.nz/parents-and-caregivers/schools-year-0-13/healthy-school-lunches/which-schools-and-kura-have-healthy-school-lunches",
    "application_channel": "automatic",
    "deadline_type": "rolling",
-   "deadline_note": "Available only at participating schools",
+   "deadline_note": "Available only at participating schools; programme currently funded for 2025, 2026 and 2027",
    "procedure_steps": [
     {
      "step": 1,
@@ -3978,10 +3987,10 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.education.govt.nz/",
-   "source_snippet": "Ka Ora, Ka Ako provides a free healthy lunch every school day to students at participating schools and kura.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www.education.govt.nz/education-professionals/schools-year-0-13/healthy-school-lunches/ka-ora-ka-ako-healthy-school-lunches-about-programme",
+   "source_snippet": "We provide healthy lunches every school day to more than 240,000 students who need them to support their learning and thrive.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "free-period-products-schools",
@@ -3996,9 +4005,9 @@
    "amount_max": null,
    "amount_currency": "NZD",
    "amount_period": "monthly",
-   "amount_note": "Free pads and tampons provided in all state and state-integrated schools and kura that opt in, to reduce period poverty and support attendance.",
+   "amount_note": "Free period products (pads and tampons) available in most state and state-integrated primary, intermediate and secondary schools and kura; students can ask at school.",
    "is_automatic": true,
-   "application_url": "https://www.education.govt.nz/",
+   "application_url": "https://www.education.govt.nz/parents-and-caregivers/schools-year-0-13/health-and-safety/period-products-schools",
    "application_channel": "automatic",
    "deadline_type": "rolling",
    "deadline_note": "Schools opt in to receive funded products",
@@ -4030,10 +4039,10 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.education.govt.nz/",
-   "source_snippet": "Free period products are provided to students in participating state and state-integrated schools to improve access to education.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www.education.govt.nz/parents-and-caregivers/schools-year-0-13/health-and-safety/period-products-schools",
+   "source_snippet": "We provide free period products in schools and kura across New Zealand so students can learn, participate and stay engaged in school without barriers.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "flexi-wage",
@@ -4044,13 +4053,13 @@
    "funder": "Ministry of Social Development — Work and Income",
    "category": "employment",
    "benefit_type": "cash_one_off",
-   "amount_min": null,
-   "amount_max": null,
+   "amount_min": 5638.68,
+   "amount_max": 11277.36,
    "amount_currency": "NZD",
    "amount_period": "one_off",
-   "amount_note": "Wage subsidy paid to employers to hire jobseekers at risk of long-term benefit receipt; can also support people starting self-employment. Amount negotiated case by case.",
+   "amount_note": "Wage contribution paid to the employer: $5,638.68 (GST inclusive) in total over 24 weeks, or $11,277.36 (GST inclusive) over 36 weeks, depending on the support the person needs; plus training and ongoing support. Employer must pay at least the adult minimum wage and contact Work and Income before the person starts. A separate Flexi-wage for self-employment exists.",
    "is_automatic": false,
-   "application_url": "https://www.workandincome.govt.nz/employers/subsidies-and-other-assistance/index.html",
+   "application_url": "https://www.workandincome.govt.nz/employers/subsidies-training-and-other-help/flexi-wage.html",
    "application_channel": "in_person",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -4096,10 +4105,10 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.workandincome.govt.nz/employers/subsidies-and-other-assistance/index.html",
-   "source_snippet": "Flexi-wage is a subsidy to help employers hire people who are at risk of staying on a benefit long term, and can support self-employment.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www.workandincome.govt.nz/employers/subsidies-training-and-other-help/flexi-wage.html",
+   "source_snippet": "Flexi-wage helps you hire staff and get them the skills needed to do the job. You get a wage contribution, while they get training and ongoing support.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "self-employment-start-up-payment",
@@ -4114,9 +4123,9 @@
    "amount_max": null,
    "amount_currency": "NZD",
    "amount_period": "one_off",
-   "amount_note": "One-off payment to help people on a benefit start a viable business — covering costs such as stock, equipment and initial overheads. Paid alongside business planning support.",
+   "amount_note": "Amount depends on your situation. Can pay for equipment, initial start-up stock, materials, premises renovation, connection fees, first month's lease/bond, legal, insurance, marketing and a basic website.",
    "is_automatic": false,
-   "application_url": "https://www.workandincome.govt.nz/employers/subsidies-and-other-assistance/index.html",
+   "application_url": "https://www.workandincome.govt.nz/products/a-z-benefits/self-employment-start-up-payment.html",
    "application_channel": "in_person",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -4150,22 +4159,22 @@
      "jobseeker",
      "self_employed"
     ],
-    "age_min": null,
+    "age_min": 16,
     "age_max": null,
     "income_annual_max": null,
-    "income_note": "For people on a main benefit starting self-employment",
+    "income_note": "Must be out of work, disadvantaged in the labour market and at risk of long-term benefit dependency (usually getting or qualifying for a benefit); business plan must be assessed as viable",
     "requires_children": false,
-    "nationality": "any_resident",
+    "nationality": "citizen_or_pr",
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.workandincome.govt.nz/employers/subsidies-and-other-assistance/index.html",
-   "source_snippet": "Work and Income may help with the costs of starting a business if you are on a benefit and have a viable business plan.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www.workandincome.govt.nz/products/a-z-benefits/self-employment-start-up-payment.html",
+   "source_snippet": "If you're starting a business and need help with essential start up costs, eg furniture or the first lot of stock, we may be able to help.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "apprenticeship-boost",
@@ -4182,7 +4191,7 @@
    "amount_period": "monthly",
    "amount_note": "$500 per month (excl GST) paid directly to employers for up to 12 months per apprentice training in a targeted occupation, while in their first 12 months of training. Employer must pay at least the minimum or training wage.",
    "is_automatic": false,
-   "application_url": "https://www.workandincome.govt.nz/employers/subsidies-and-other-assistance/apprenticeship-boost.html",
+   "application_url": "https://www.workandincome.govt.nz/employers/subsidies-training-and-other-help/apprenticeship-boost/index.html",
    "application_channel": "online",
    "deadline_type": "rolling",
    "deadline_note": "Up to 12 months of support per eligible apprentice",
@@ -4228,7 +4237,7 @@
    },
    "source_url": "https://www.tec.govt.nz/funding/fund-finder/apprenticeship-boost",
    "source_snippet": "From 1 January 2025, employers can receive up to 12 months of support per eligible apprentice. Payments are currently $500 per month (excluding GST).",
-   "last_verified_at": "2026-08-12",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -4241,12 +4250,12 @@
    "category": "employment",
    "benefit_type": "cash_monthly",
    "amount_min": null,
-   "amount_max": null,
+   "amount_max": 16000,
    "amount_currency": "NZD",
-   "amount_period": "monthly",
-   "amount_note": "Wage subsidy paid to employers who hire jobseekers into sustainable jobs with an industry training pathway (formal qualification or apprenticeship), plus support funding for the participant.",
+   "amount_period": "annual",
+   "amount_note": "Employer wage subsidy of up to $16,000 paid for 1 year (pro-rated for part-time), up to $2,000 for pre-employment training and up to $8,000 towards industry training fees; the employee can get incentive payments of up to $3,000 over 1 year. Employer must offer a permanent job at at least the adult minimum wage with an NZQA-approved training pathway.",
    "is_automatic": false,
-   "application_url": "https://www.workandincome.govt.nz/employers/subsidies-and-other-assistance/index.html",
+   "application_url": "https://www.workandincome.govt.nz/employers/subsidies-training-and-other-help/mana-in-mahi",
    "application_channel": "in_person",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -4291,10 +4300,10 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.workandincome.govt.nz/employers/subsidies-and-other-assistance/index.html",
-   "source_snippet": "Mana in Mahi supports employers to hire people on a benefit into jobs that come with industry training towards a qualification.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www.workandincome.govt.nz/employers/subsidies-training-and-other-help/mana-in-mahi",
+   "source_snippet": "a wage subsidy of up to $16,000 paid for 1 year (pro-rated if the employee is working part-time)",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "independent-earner-tax-credit",
@@ -4352,8 +4361,8 @@
    },
    "source_url": "https://www.ird.govt.nz/ietc",
    "source_snippet": "If you're using a ME or ME SL tax code you'll need to change this with your employer when you apply for Working for Families — you cannot receive both (IR201).",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "kiwisaver-government-contribution",
@@ -4368,7 +4377,7 @@
    "amount_max": 260.72,
    "amount_currency": "NZD",
    "amount_period": "annual",
-   "amount_note": "Government contributes 25 cents for every $1 you contribute to KiwiSaver each year, up to $260.72 (from the 2025/26 year), paid annually into your KiwiSaver account. Eligibility and amounts reduced under Budget 2025 changes; removed for higher earners.",
+   "amount_note": "Government contributes 25 cents per dollar you contribute, up to $260.72 a year (you must contribute at least $1,042.86 between 1 July and 30 June to get the maximum). Paid via your KiwiSaver provider; no claim needed.",
    "is_automatic": true,
    "application_url": "https://www.ird.govt.nz/kiwisaver",
    "application_channel": "automatic",
@@ -4398,10 +4407,10 @@
      "employee",
      "self_employed"
     ],
-    "age_min": 18,
-    "age_max": 64,
-    "income_annual_max": null,
-    "income_note": "Not paid for incomes over $180,000 under Budget 2025 changes",
+    "age_min": 16,
+    "age_max": null,
+    "income_annual_max": 180000,
+    "income_note": "Individual taxable income of $180,000 or under per year; must contribute to KiwiSaver ($1,042.86 between 1 July and 30 June for the full amount)",
     "requires_children": false,
     "nationality": "citizen_or_pr",
     "residency_months_min": null,
@@ -4410,10 +4419,10 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.ird.govt.nz/kiwisaver",
-   "source_snippet": "The Government contributes 25c for every dollar you contribute to KiwiSaver, up to $260.72 a year.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www.ird.govt.nz/kiwisaver/kiwisaver-individuals/kiwisaver-benefits",
+   "source_snippet": "If you’re contributing to KiwiSaver, the government will contribute up to $260.72 each year. To get it all you must have contributed at least $1042.86 in the period 1 July to 30 June.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "rd-tax-incentive",
@@ -4479,9 +4488,9 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.mbie.govt.nz/science-and-technology/science-and-innovation/funding-information-and-opportunities/r-d-tax-incentive",
-   "source_snippet": "The main features of the R&D tax incentive include a credit rate of 15%, a $120 million cap on eligible expenditure, and a minimum R&D expenditure threshold of $50,000 per year.",
-   "last_verified_at": "2026-08-12",
+   "source_url": "https://www.ird.govt.nz/research-and-development/tax-incentive",
+   "source_snippet": "The research and development tax incentive (RDTI) offers a tax credit at the rate of 15% of eligible R&D eligible expenditure or loss up to $120 million. To claim the tax incentive, you must spend at least $50,000 a year on eligible R&D.",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -4497,7 +4506,7 @@
    "amount_max": null,
    "amount_currency": "NZD",
    "amount_period": "annual",
-   "amount_note": "Allows eligible loss-making companies to cash out tax losses from R&D expenditure as a refund (28% of eligible losses, capped), repaid as a clawback if the company later sells R&D assets or is liquidated.",
+   "amount_note": "Cash refund of up to 28% of tax losses from eligible R&D business expenditure for NZ tax-resident companies. The credit must be repaid when the business begins to make a profit or owes repayment tax after a loss recovery event.",
    "is_automatic": false,
    "application_url": "https://www.ird.govt.nz/research-and-development/loss-tax-credit",
    "application_channel": "online",
@@ -4545,8 +4554,8 @@
    },
    "source_url": "https://www.ird.govt.nz/research-and-development/loss-tax-credit",
    "source_snippet": "Cash refund for loss-making startups (must be repaid once the company becomes profitable).",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "investment-boost",
@@ -4563,7 +4572,7 @@
    "amount_period": "annual",
    "amount_note": "Immediate 20% deduction of the cost of eligible new depreciable assets purchased on or after 22 May 2025, in addition to standard depreciation. No cap on asset value.",
    "is_automatic": false,
-   "application_url": "https://www.ird.govt.nz/investment-boost",
+   "application_url": "https://www.ird.govt.nz/income-tax/income-tax-for-businesses-and-organisations/types-of-business-expenses/new-assets---investment-boost",
    "application_channel": "automatic",
    "deadline_type": "annual",
    "deadline_note": "Applies to eligible assets purchased from 22 May 2025",
@@ -4597,10 +4606,10 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.ird.govt.nz/",
-   "source_snippet": "Investment Boost allows businesses an upfront deduction equal to 20 per cent of the cost of eligible assets purchased on or after 22 May 2025, in addition to standard depreciation.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www.ird.govt.nz/income-tax/income-tax-for-businesses-and-organisations/types-of-business-expenses/new-assets---investment-boost",
+   "source_snippet": "From 22 May 2025, businesses can claim 20% of the cost of new assets as an expense, then claim depreciation as usual on the remaining 80%.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "rbp-capability-vouchers",
@@ -4615,9 +4624,9 @@
    "amount_max": 5000,
    "amount_currency": "NZD",
    "amount_period": "annual",
-   "amount_note": "Vouchers co-funding up to 50% of the cost of management capability training and coaching, maximum $5,000 (excl GST) per business per year, for GST-registered NZ businesses with 50 or fewer FTEs, accessed through a Regional Business Partner assessment.",
+   "amount_note": "Management Capability Development Fund (via the Regional Business Partner Network) subsidises up to 50% of the cost of management training, up to $5,000 a year (excluding GST). You first register and meet a growth advisor for a discovery session; your business must meet the criteria.",
    "is_automatic": false,
-   "application_url": "https://www.regionalbusinesspartners.co.nz/",
+   "application_url": "https://web.regionalbusinesspartners.co.nz/business/",
    "application_channel": "online",
    "deadline_type": "rolling",
    "deadline_note": "Vouchers expire 3 months after issue",
@@ -4667,8 +4676,8 @@
     "gender": "any"
    },
    "source_url": "https://www.business.govt.nz/strategy-and-performance/regional-business-partner-network",
-   "source_snippet": "The Management Capability Development Voucher Fund provides financial subsidy of up to 50% towards the cost of management capability building... maximum $5,000 excluding GST per business in one year.",
-   "last_verified_at": "2026-08-12",
+   "source_snippet": "The fund subsidises up to 50% of the cost of management training up to $5,000 a year (excluding GST).",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -4684,12 +4693,12 @@
    "amount_max": 11960,
    "amount_currency": "NZD",
    "amount_period": "one_off",
-   "amount_note": "Grant reimbursing up to about $11,960 plus GST towards a student's wages for a 10-week full-time R&D summer placement. For businesses with an active R&D programme. Administered by MBIE Innovation Services (formerly Callaghan Innovation, disestablished December 2025).",
+   "amount_note": "Funds up to $11,960 plus GST toward a student intern's wages for up to 400 hours (min 30 hours a week for 10 weeks); student must be paid at least $29.90 an hour. Business must be an NZ-registered company, limited partnership or Maori incorporation/trust with an active R&D programme.",
    "is_automatic": false,
    "application_url": "https://www.business.govt.nz/tax-and-money/innovation-funding/r-and-d-experience-grant",
    "application_channel": "online",
    "deadline_type": "window",
-   "deadline_note": "Annual application window (e.g. closes late August for summer placements)",
+   "deadline_note": "Closed for the 2026/27 funding round (internship must begin before 1 December and finish by 31 March the following year); check the page for the next round",
    "procedure_steps": [
     {
      "step": 1,
@@ -4736,9 +4745,9 @@
     "gender": "any"
    },
    "source_url": "https://www.business.govt.nz/tax-and-money/innovation-funding/r-and-d-experience-grant",
-   "source_snippet": "A grant that reimburses up to $11,960 plus GST toward a student intern's wages for a 10-week, full-time R&D placement.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_snippet": "The R&D Experience Grant is now closed for the 2026/27 funding round. ... Innovation Services funds up to $11,960 plus GST, for up to 400 hours of full-time work.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "new-to-rd-grant",
@@ -4750,15 +4759,15 @@
    "category": "business",
    "benefit_type": "cash_one_off",
    "amount_min": null,
-   "amount_max": null,
+   "amount_max": 400000,
    "amount_currency": "NZD",
    "amount_period": "one_off",
-   "amount_note": "Co-funding grant for businesses with limited R&D experience to start an eligible R&D project, delivered by MBIE Innovation Services at funds.business.govt.nz (transferred from Callaghan Innovation, disestablished December 2025).",
+   "amount_note": "Covers 40% of eligible R&D costs, up to a maximum of $400,000 (based on up to $1 million of eligible project costs excluding GST); you fund the other 60% and co-funding cannot come from other NZ government funds. Lasts up to 2 years.",
    "is_automatic": false,
-   "application_url": "https://funds.business.govt.nz/",
+   "application_url": "https://www.business.govt.nz/tax-and-money/innovation-funding/new-to-r-and-d-grant",
    "application_channel": "online",
    "deadline_type": "window",
-   "deadline_note": "Application rounds published on the funding portal",
+   "deadline_note": "Applications are open; contact Innovation Services before applying",
    "procedure_steps": [
     {
      "step": 1,
@@ -4799,10 +4808,10 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://funds.business.govt.nz/",
-   "source_snippet": "MBIE continues to co-fund... innovation grants including the New to R&D Grant (now under Innovation Services at funds.business.govt.nz).",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www.business.govt.nz/tax-and-money/innovation-funding/new-to-r-and-d-grant",
+   "source_snippet": "The grant covers 40% of eligible R&D costs, up to a maximum of $400,000, based on up to $1 million in total eligible project costs (excluding GST). You fund the remaining 60%.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "maori-business-support",
@@ -4819,7 +4828,7 @@
    "amount_period": "one_off",
    "amount_note": "Business growth advisors, connections to Māori business networks and access to the Māori Development Fund for Māori-led businesses, trusts and enterprises.",
    "is_automatic": false,
-   "application_url": "https://www.tpk.govt.nz/",
+   "application_url": "https://www.tpk.govt.nz/nga-putea-me-nga-ratonga/maori-enterprise",
    "application_channel": "online",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -4858,10 +4867,10 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.tpk.govt.nz/",
-   "source_snippet": "Te Puni Kōkiri delivers the Māori Development Fund, business growth advisors, and connections to Māori business networks.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www.tpk.govt.nz/nga-putea-me-nga-ratonga/maori-enterprise",
+   "source_snippet": "Te Puni Kōkiri partners with other agencies to provide specific business support for Māori businesses.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "pelt-english-tuition",
@@ -4872,13 +4881,13 @@
    "funder": "Tertiary Education Commission / English Language Partners New Zealand",
    "category": "education",
    "benefit_type": "in_kind",
-   "amount_min": null,
-   "amount_max": null,
+   "amount_min": 1531.82,
+   "amount_max": 6131.82,
    "amount_currency": "NZD",
    "amount_period": "one_off",
-   "amount_note": "Migrants who paid for English language tuition as part of their residence visa conditions can access funded ESOL classes through approved providers such as English Language Partners.",
+   "amount_note": "Funded English course fees up to your 'balance of entitlement', between NZ$1,531.82 and NZ$6,131.82 depending on your English level when you applied and what you paid Immigration NZ (Parent Category residence = NZ$1,531.82). Costs above your balance are paid by you.",
    "is_automatic": false,
-   "application_url": "https://www.englishlanguage.org.nz/",
+   "application_url": "https://www.tec.govt.nz/funding/fund-finder/pelt/migrant-learners",
    "application_channel": "in_person",
    "deadline_type": "rolling",
    "deadline_note": "Classes must usually start within a set period of residence approval",
@@ -4913,17 +4922,17 @@
     "income_annual_max": null,
     "income_note": "Pre-paid via visa levy; not income tested",
     "requires_children": false,
-    "nationality": "refugee_or_protected",
+    "nationality": "any_resident",
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.englishlanguage.org.nz/",
-   "source_snippet": "English Language Partners provides government-funded English language classes for eligible migrants and former refugees.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www.tec.govt.nz/funding/fund-finder/pelt/migrant-learners",
+   "source_snippet": "Migrants who have paid Immigration New Zealand for English language tuition before arriving in New Zealand are eligible for Pre-purchased English Language Tuition (PELT) courses.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "moneytalks-financial-mentoring",
@@ -4940,7 +4949,7 @@
    "amount_period": "one_off",
    "amount_note": "Free, confidential financial mentoring helpline (0800 345 123) connecting people to local budgeting services, help with benefit debt, no-interest budgeting advances and hardship support navigation.",
    "is_automatic": true,
-   "application_url": "https://www.moneytalks.co.nz/",
+   "application_url": "https://fincap.org.nz/moneytalks",
    "application_channel": "online",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -4977,10 +4986,10 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.moneytalks.co.nz/",
-   "source_snippet": "MoneyTalks is a free helpline providing independent financial mentoring and connecting people to local budgeting services.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://fincap.org.nz/moneytalks",
+   "source_snippet": "We connect people with financial mentors and services to help them out of financial hardship. Free text 4029 for advice - or click on the blue live chat button",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "bank-sustainable-energy-loans",
@@ -4995,9 +5004,9 @@
    "amount_max": 80000,
    "amount_currency": "NZD",
    "amount_period": "one_off",
-   "amount_note": "Major NZ banks offer existing home-loan customers top-up loans at around 1% p.a. (typically 3-year fixed) for energy upgrades — insulation, heat pumps, double glazing, solar, EV chargers — capped at $50,000–$80,000 depending on the bank.",
+   "amount_note": "ANZ Good Energy Home Loan: fixed 1.00% p.a. for 3 years, up to $80,000, available only as a top-up to an existing ANZ home loan for eligible energy upgrades (home and transport). Other banks offer comparable products; their terms were not verified here. Standard lending criteria apply.",
    "is_automatic": false,
-   "application_url": "https://www.anz.co.nz/personal/home-loans-mortgages/home-loans/good-energy-home-loan/",
+   "application_url": "https://www.anz.co.nz/personal/home-loans-mortgages/loan-types/good-energy/",
    "application_channel": "in_person",
    "deadline_type": "rolling",
    "deadline_note": "Promotional rate applies for a fixed period; standard rate applies after",
@@ -5039,10 +5048,10 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.anz.co.nz/",
-   "source_snippet": "The four major banks (ANZ, ASB, BNZ and Kiwibank) each offer an energy-upgrade loan capped at $80,000, fixed at around 1% p.a. for three years.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www.anz.co.nz/personal/home-loans-mortgages/loan-types/good-energy/",
+   "source_snippet": "At a fixed rate of 1.00% p.a. for 3 years, up to $80,000, an ANZ Good Energy Home Loan top up can be used to make your home and transport more energy efficient",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   }
  ]
 }

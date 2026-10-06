@@ -64,12 +64,12 @@
      "unemployed",
      "jobseeker"
     ],
-    "age_min": null,
+    "age_min": 18,
     "age_max": null,
     "income_annual_max": null,
-    "income_note": "No published income ceiling. GOV.UK eligibility (checked 2026) sets only a capital rule — you must have £16,000 or less in money, savings and investments; earnings reduce the award on a continuous taper rather than cutting it off at a fixed figure, so the point at which entitlement ends depends on household composition, housing costs and work allowances.",
+    "income_note": "No published income ceiling; capital must be £16,000 or less; earnings reduce the award on a taper. People subject to immigration control with no recourse to public funds cannot claim; EU/EEA/Swiss citizens need settled or pre-settled status.",
     "requires_children": false,
-    "nationality": "any_resident",
+    "nationality": "citizen_or_pr",
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
@@ -79,9 +79,9 @@
     "income_source_url": "https://www.gov.uk/universal-credit/eligibility",
     "income_confidence": "high"
    },
-   "source_url": "https://www.gov.uk/universal-credit",
+   "source_url": "https://www.gov.uk/universal-credit/eligibility",
    "source_snippet": "Universal Credit is a monthly payment to help with living costs for people on a low income, out of work or unable to work; claimed online via GOV.UK.",
-   "last_verified_at": "2026-08-12",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified",
    "income_reviewed_at": "2026-08-13"
   },
@@ -98,7 +98,7 @@
    "amount_max": null,
    "amount_currency": "GBP",
    "amount_period": "monthly",
-   "amount_note": "Guarantee Credit tops weekly income up to a guaranteed minimum (£227.10 single, £346.60 couple in 2025/26); extra amounts for carers, severe disability and housing costs",
+   "amount_note": "Guarantee Credit tops weekly income up to a guaranteed minimum of £238 (single) or £363.25 (couple); extra amounts for carers, severe disability and housing costs",
    "is_automatic": false,
    "application_url": "https://www.gov.uk/pension-credit/how-to-claim",
    "application_channel": "online",
@@ -129,10 +129,10 @@
     ],
     "age_min": null,
     "age_max": null,
-    "income_annual_max": 11809,
-    "income_note": "Guarantee Credit tops weekly income up to £227.10 (single) / £346.60 (couple), 2025/26 rates; converted: £227.10 x 52 = £11,809/yr single (£18,023 couple). Savings Credit may add a little for modest savers; no fixed capital limit but £1 of tariff income per £500 of capital over £10,000 is assumed.",
+    "income_annual_max": 12376,
+    "income_note": "Weekly guaranteed minimum £238 single (x52 = £12,376) or £363.25 couple (x52 = £18,889.00); figure shown is the single threshold. Claimants must have reached State Pension age.",
     "requires_children": false,
-    "nationality": "any_resident",
+    "nationality": "citizen_or_pr",
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
@@ -141,7 +141,7 @@
    },
    "source_url": "https://www.gov.uk/pension-credit",
    "source_snippet": "Pension Credit gives you extra money to help with your living costs if you're over State Pension age and on a low income; claiming also passports to other help such as free TV licence (over 75) and Warm Home Discount.",
-   "last_verified_at": "2026-08-12",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -205,7 +205,7 @@
    },
    "source_url": "https://www.gov.uk/child-benefit",
    "source_snippet": "You get Child Benefit if you're responsible for bringing up a child who is under 16, or under 20 if they stay in approved education or training.",
-   "last_verified_at": "2026-08-12",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -271,7 +271,7 @@
    },
    "source_url": "https://www.gov.uk/tax-free-childcare",
    "source_snippet": "For every £8 you pay into your Tax-Free Childcare account, the Government will top it up by an extra £2, up to a cap of £2,000 per child, per year.",
-   "last_verified_at": "2026-08-12",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -326,9 +326,9 @@
     "age_min": null,
     "age_max": null,
     "income_annual_max": 100000,
-    "income_note": "Working-families offer: each parent must earn at least 16 hrs/week at National Minimum Wage but neither parent may earn over £100,000 adjusted net income per year (per-parent cap, not household).",
+    "income_note": "Each parent must expect to earn at least the minimum (over 21: £2,643.68 over 3 months) and household adjusted net income of each parent must be under £100,000. Applicant needs British/Irish citizenship, settled or pre-settled status, or permission to access public funds (NRPF visa holders excluded).",
     "requires_children": true,
-    "nationality": "any_resident",
+    "nationality": "citizen_or_pr",
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
@@ -337,9 +337,9 @@
     ],
     "gender": "any"
    },
-   "source_url": "https://www.gov.uk/30-hours-free-childcare",
+   "source_url": "https://www.gov.uk/free-childcare-if-working/check-youre-eligible",
    "source_snippet": "From September 2025, up to 30 hours of government funded childcare per week is available for eligible working parents of children aged 9 months to 4 years, capped at 1,140 hours per year.",
-   "last_verified_at": "2026-08-12",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -414,7 +414,7 @@
    "application_url": "https://www.childcarechoices.gov.uk",
    "application_channel": "in_person",
    "deadline_type": "rolling",
-   "deadline_note": null,
+   "deadline_note": "Available from the term after the child's 3rd birthday (1 January, 1 April or 1 September); stops when child starts reception.",
    "procedure_steps": [
     {
      "step": 1,
@@ -439,10 +439,10 @@
     ],
     "gender": "any"
    },
-   "source_url": "https://www.childcarechoices.gov.uk",
+   "source_url": "https://www.gov.uk/help-with-childcare-costs/free-childcare-and-education-for-3-to-4-year-olds",
    "source_snippet": "All 3 and 4-year-olds in England are entitled to 15 hours of free early education per week (570 hours a year) with a registered provider.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "housing-benefit",
@@ -462,7 +462,7 @@
    "application_url": "https://www.gov.uk/housing-benefit/how-to-claim",
    "application_channel": "in_person",
    "deadline_type": "rolling",
-   "deadline_note": null,
+   "deadline_note": "New claims only if you have reached State Pension age or live in supported, sheltered or temporary housing; otherwise claim Universal Credit.",
    "procedure_steps": [
     {
      "step": 1,
@@ -490,9 +490,9 @@
     "age_min": null,
     "age_max": null,
     "income_annual_max": null,
-    "income_note": "Means-tested legacy benefit (no new claims except pension-age or supported/temporary housing); no single published ceiling — entitlement tapers with income against an applicable amount; savings over £16,000 usually disqualify.",
+    "income_note": "Means-tested; savings over £16,000 usually rule you out (unless on Guarantee Credit). Full-time students, asylum seekers and people whose leave states no public funds cannot claim.",
     "requires_children": false,
-    "nationality": "any_resident",
+    "nationality": "citizen_or_pr",
     "residency_months_min": null,
     "housing_tenure": "renting",
     "student_required": false,
@@ -501,7 +501,7 @@
    },
    "source_url": "https://www.gov.uk/housing-benefit",
    "source_snippet": "You can only make a new claim for Housing Benefit if you have reached State Pension age or you live in temporary or supported housing.",
-   "last_verified_at": "2026-08-12",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -560,7 +560,7 @@
    },
    "source_url": "https://www.gov.uk/apply-council-tax-reduction",
    "source_snippet": "Council tax reduction is a discount that helps people on low incomes pay their council tax bill; the level of discount is based on the income of the household.",
-   "last_verified_at": "2026-08-12",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -578,7 +578,7 @@
    "amount_period": "annual",
    "amount_note": "Reduction of up to 100% of council tax for low-income households in Scotland; national rules administered by councils",
    "is_automatic": false,
-   "application_url": "https://www.mygov.scot/council-tax-reduction",
+   "application_url": "https://www.mygov.scot/council-tax/discounts-exemptions-and-reductions",
    "application_channel": "online",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -600,10 +600,10 @@
     ],
     "gender": "any"
    },
-   "source_url": "https://www.mygov.scot/council-tax-reduction",
+   "source_url": "https://www.mygov.scot/council-tax/discounts-exemptions-and-reductions",
    "source_snippet": "You could get Council Tax Reduction if you're on a low income or claim benefits; apply through your local council in Scotland.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "council-tax-support-wales",
@@ -620,7 +620,7 @@
    "amount_period": "annual",
    "amount_note": "Reduction of up to 100% of the council tax bill for low-income households in Wales under the national scheme",
    "is_automatic": false,
-   "application_url": "https://www.gov.wales",
+   "application_url": "https://www.gov.wales/council-tax-discounts-disregards-exemptions-and-reductions",
    "application_channel": "online",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -637,7 +637,7 @@
     "age_min": null,
     "age_max": null,
     "income_annual_max": null,
-    "income_note": "All-Wales scheme: full reduction for households on the lowest incomes or in receipt of UC/income-related benefits, tapering as income rises; savings over £16,000 usually disqualify. No single published annual ceiling.",
+    "income_note": "Means-tested on weekly income and capital; you cannot get CTR if you have capital of £16,000 or more (unless 65+ and you or partner get Guarantee Credit).",
     "requires_children": false,
     "nationality": "any_resident",
     "residency_months_min": null,
@@ -648,10 +648,10 @@
     ],
     "gender": "any"
    },
-   "source_url": "https://www.gov.wales",
+   "source_url": "https://www.gov.wales/council-tax-discounts-disregards-exemptions-and-reductions",
    "source_snippet": "The Welsh Council Tax Reduction Scheme can reduce your council tax bill by up to 100% if you are on a low income; apply to your local council.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "rate-relief-northern-ireland",
@@ -666,9 +666,9 @@
    "amount_max": null,
    "amount_currency": "GBP",
    "amount_period": "annual",
-   "amount_note": "Help with domestic rates for people on low incomes or certain benefits in Northern Ireland",
+   "amount_note": "Help with rates for people on a low income, Pension Credit or Universal Credit: Housing Benefit and Rate Relief for state-pension-age households; Rate Rebate for those on Universal Credit",
    "is_automatic": false,
-   "application_url": "https://www.nidirect.gov.uk",
+   "application_url": "https://www.nidirect.gov.uk/articles/people-low-income",
    "application_channel": "online",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -696,10 +696,10 @@
     ],
     "gender": "any"
    },
-   "source_url": "https://www.nidirect.gov.uk",
+   "source_url": "https://www.nidirect.gov.uk/articles/people-low-income",
    "source_snippet": "You may be entitled to rate relief in Northern Ireland if you are on a low income or get certain benefits; apply to Land & Property Services.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "discretionary-housing-payment",
@@ -763,10 +763,10 @@
    "category": "employment",
    "benefit_type": "cash_monthly",
    "amount_min": null,
-   "amount_max": null,
+   "amount_max": 95.55,
    "amount_currency": "GBP",
-   "amount_period": "monthly",
-   "amount_note": "Contribution-based allowance paid for up to 6 months while looking for work; weekly rate depends on age (under/over 25)",
+   "amount_period": "weekly",
+   "amount_note": "Up to £75.65 a week if aged up to 24, up to £95.55 a week if 25 or over; payable for up to 182 days (about 6 months)",
    "is_automatic": false,
    "application_url": "https://www.gov.uk/jobseekers-allowance/how-to-claim",
    "application_channel": "online",
@@ -810,8 +810,8 @@
    },
    "source_url": "https://www.gov.uk/jobseekers-allowance",
    "source_snippet": "New Style JSA is a fortnightly contribution-based payment for people who are unemployed or working less than 16 hours a week and actively looking for work.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "new-style-employment-support-allowance",
@@ -881,8 +881,8 @@
    },
    "source_url": "https://www.gov.uk/employment-support-allowance",
    "source_snippet": "You can apply for New Style ESA if you have a disability or health condition that affects how much you can work and you have paid enough National Insurance contributions.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "income-support",
@@ -901,8 +901,8 @@
    "is_automatic": false,
    "application_url": "https://www.gov.uk/income-support",
    "application_channel": "online",
-   "deadline_type": "rolling",
-   "deadline_note": null,
+   "deadline_type": "none",
+   "deadline_note": "Ended: Income Support can no longer be claimed; claim Universal Credit (or Pension Credit/ESA as applicable) instead.",
    "procedure_steps": [],
    "documents_required": [],
    "eligibility": {
@@ -924,8 +924,8 @@
    },
    "source_url": "https://www.gov.uk/income-support",
    "source_snippet": "Income Support is extra money for people on a low income in specific circumstances such as carers or lone parents with a child under 5; most new claimants must claim Universal Credit instead.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "statutory-sick-pay",
@@ -983,7 +983,7 @@
    },
    "source_url": "https://www.gov.uk/statutory-sick-pay",
    "source_snippet": "Statutory Sick Pay is £123.25 per week or 80% of the worker's average weekly earnings, whichever is lower, paid from the first full day of sickness absence for up to 28 weeks.",
-   "last_verified_at": "2026-08-12",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -1046,16 +1046,19 @@
     "income_annual_max": null,
     "income_note": "Not means-tested; for people aged 16 to State Pension age with a long-term health condition or disability; Scotland uses Adult Disability Payment instead",
     "requires_children": false,
-    "nationality": "any_resident",
-    "residency_months_min": null,
+    "nationality": "citizen_or_pr",
+    "residency_months_min": 24,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": [],
+    "admin_areas": [
+     "England",
+     "Wales"
+    ],
     "gender": "any"
    },
    "source_url": "https://www.gov.uk/pip",
    "source_snippet": "PIP can help with extra living costs if you have both a long-term physical or mental health condition or disability and difficulty doing certain everyday tasks or getting around.",
-   "last_verified_at": "2026-08-12",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -1110,16 +1113,19 @@
     "income_annual_max": null,
     "income_note": "Not means-tested; for people over State Pension age who need help with personal care due to disability",
     "requires_children": false,
-    "nationality": "any_resident",
-    "residency_months_min": null,
+    "nationality": "citizen_or_pr",
+    "residency_months_min": 24,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": [],
+    "admin_areas": [
+     "England",
+     "Wales"
+    ],
     "gender": "any"
    },
    "source_url": "https://www.gov.uk/attendance-allowance",
    "source_snippet": "Attendance Allowance helps with extra costs if you have a disability or health condition severe enough that you need someone to help look after you; it's paid at 2 different rates.",
-   "last_verified_at": "2026-08-12",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -1164,8 +1170,8 @@
     "statuses": [],
     "age_min": 16,
     "age_max": null,
-    "income_annual_max": 10192,
-    "income_note": "Earnings limit (not household means test): net weekly earnings after deductions must not exceed £196/week (2025/26), rising to £204/week from April 2026; £196 x 52 = £10,192/yr. Caring 35+ hrs/week for someone on a qualifying disability benefit.",
+    "income_annual_max": 10608,
+    "income_note": "Individual (not household) earnings limit £204 a week after tax, NI and expenses (x52 = £10,608).",
     "requires_children": false,
     "nationality": "any_resident",
     "residency_months_min": null,
@@ -1176,7 +1182,7 @@
    },
    "source_url": "https://www.gov.uk/carers-allowance",
    "source_snippet": "You could get Carer's Allowance if you care for someone at least 35 hours a week and they get certain benefits; paid at £86.45 per week (2026/27).",
-   "last_verified_at": "2026-08-12",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -1217,19 +1223,22 @@
     "age_min": null,
     "age_max": 15,
     "income_annual_max": null,
-    "income_note": "Not means-tested; for children under 16 with extra care or mobility needs",
+    "income_note": "Not means-tested. Child must have lived in England, Scotland or Wales for a minimum period (13 weeks if under 6 months; 26 of last 156 weeks if 6 months to 3 years; 6 of last 12 months if over 3).",
     "requires_children": true,
-    "nationality": "any_resident",
+    "nationality": "citizen_or_pr",
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
-    "admin_areas": [],
+    "admin_areas": [
+     "England",
+     "Wales"
+    ],
     "gender": "any"
    },
    "source_url": "https://www.gov.uk/disability-living-allowance-children",
    "source_snippet": "Disability Living Allowance (DLA) for children may help with the extra costs of looking after a child who is under 16 and has difficulties walking or needs much more looking after than a child of the same age.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "adult-disability-payment-scotland",
@@ -1276,8 +1285,8 @@
    },
    "source_url": "https://www.mygov.scot/adult-disability-payment",
    "source_snippet": "Adult Disability Payment is extra money to help you if you have a disability or long-term health condition that affects your everyday life; it replaces Personal Independence Payment in Scotland.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "child-disability-payment-scotland",
@@ -1331,10 +1340,10 @@
    "category": "income_support",
    "benefit_type": "cash_monthly",
    "amount_min": null,
-   "amount_max": null,
+   "amount_max": 86.45,
    "amount_currency": "GBP",
-   "amount_period": "monthly",
-   "amount_note": "Scotland's replacement for Carer's Allowance, paid weekly at the same headline rate, plus the twice-yearly Carer's Allowance Supplement in Scotland",
+   "amount_period": "weekly",
+   "amount_note": "Up to £86.45 a week; may be less if you get certain other benefits such as State Pension; Scottish Carer Supplement paid in addition",
    "is_automatic": false,
    "application_url": "https://www.mygov.scot/carer-support-payment",
    "application_channel": "online",
@@ -1360,8 +1369,8 @@
    },
    "source_url": "https://www.mygov.scot/carer-support-payment",
    "source_snippet": "Carer Support Payment is money for unpaid carers in Scotland who provide 35 hours or more of care a week; it replaces Carer's Allowance and is run by Social Security Scotland.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "carers-allowance-supplement-scotland",
@@ -1420,11 +1429,11 @@
    "funder": "Social Security Scotland",
    "category": "income_support",
    "benefit_type": "cash_one_off",
-   "amount_min": null,
-   "amount_max": null,
+   "amount_min": 405.1,
+   "amount_max": 405.1,
    "amount_currency": "GBP",
    "amount_period": "annual",
-   "amount_note": "Yearly cash grant for young carers aged 16, 17 or 18 in Scotland who provide regular care",
+   "amount_note": "£405.10 once a year, until you turn 20",
    "is_automatic": false,
    "application_url": "https://www.mygov.scot/young-carer-grant",
    "application_channel": "online",
@@ -1435,7 +1444,7 @@
    "eligibility": {
     "statuses": [],
     "age_min": 16,
-    "age_max": 18,
+    "age_max": 19,
     "income_annual_max": null,
     "income_note": "For young people in Scotland caring for someone around 16 hours a week on average; not means-tested",
     "requires_children": false,
@@ -1450,8 +1459,8 @@
    },
    "source_url": "https://www.mygov.scot/young-carer-grant",
    "source_snippet": "Young Carer Grant is a yearly payment for young carers aged 16 to 18 in Scotland who spend time caring for someone with a disability or illness.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "scottish-child-payment",
@@ -1462,11 +1471,11 @@
    "funder": "Social Security Scotland",
    "category": "family",
    "benefit_type": "cash_monthly",
-   "amount_min": null,
-   "amount_max": null,
+   "amount_min": 28.2,
+   "amount_max": 28.2,
    "amount_currency": "GBP",
-   "amount_period": "monthly",
-   "amount_note": "Weekly payment for every child under 16 in families in Scotland on qualifying benefits, paid every 4 weeks; check mygov.scot for the current weekly rate",
+   "amount_period": "weekly",
+   "amount_note": "£28.20 a week for every child under 16",
    "is_automatic": false,
    "application_url": "https://www.mygov.scot/scottish-child-payment",
    "application_channel": "online",
@@ -1512,7 +1521,7 @@
    },
    "source_url": "https://www.mygov.scot/scottish-child-payment",
    "source_snippet": "Scottish Child Payment is a weekly payment that helps towards the costs of supporting your family; you can apply whether you're in work or not, as long as you're getting one of the qualifying benefits.",
-   "last_verified_at": "2026-08-12",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified",
    "income_reviewed_at": "2026-08-13"
   },
@@ -1525,11 +1534,11 @@
    "funder": "Social Security Scotland",
    "category": "family",
    "benefit_type": "cash_one_off",
-   "amount_min": null,
-   "amount_max": null,
+   "amount_min": 331.95,
+   "amount_max": 796.65,
    "amount_currency": "GBP",
    "amount_period": "one_off",
-   "amount_note": "Three one-off payments: Pregnancy and Baby Payment, Early Learning Payment and School Age Payment; amounts are set by the Scottish Government",
+   "amount_note": "Pregnancy and Baby Payment £796.65 (first child) or £398.35 (later children); Early Learning Payment £331.95; School Age Payment £331.95",
    "is_automatic": false,
    "application_url": "https://www.mygov.scot/best-start-grant-best-start-foods",
    "application_channel": "online",
@@ -1561,7 +1570,7 @@
    },
    "source_url": "https://www.mygov.scot/best-start-grant-best-start-foods",
    "source_snippet": "Best Start Grant is 3 cash payments that you can apply for if you're a parent or a carer: the Pregnancy and Baby Payment, Early Learning Payment and School Age Payment.",
-   "last_verified_at": "2026-08-12",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -1573,11 +1582,11 @@
    "funder": "Social Security Scotland",
    "category": "health",
    "benefit_type": "in_kind",
-   "amount_min": null,
-   "amount_max": null,
+   "amount_min": 22.4,
+   "amount_max": 44.8,
    "amount_currency": "GBP",
    "amount_period": "monthly",
-   "amount_note": "Prepaid card with regular payments to buy healthy food (milk, fruit, vegetables, pulses, eggs) for pregnant women and children under 3 on qualifying benefits",
+   "amount_note": "Paid every 4 weeks: £22.40 during pregnancy, £44.80 for each child from birth to age 1, £22.40 for each child aged 1 to 3",
    "is_automatic": false,
    "application_url": "https://www.mygov.scot/best-start-grant-best-start-foods",
    "application_channel": "online",
@@ -1603,8 +1612,8 @@
    },
    "source_url": "https://www.mygov.scot/best-start-grant-best-start-foods",
    "source_snippet": "Best Start Foods is a prepaid card that you can use to buy healthy foods for children under 3; you can use the card in shops and online.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "sure-start-maternity-grant",
@@ -1624,7 +1633,7 @@
    "application_url": "https://www.gov.uk/sure-start-maternity-grant/how-to-claim",
    "application_channel": "post",
    "deadline_type": "rolling",
-   "deadline_note": null,
+   "deadline_note": "Claim within 11 weeks before the baby's due date or within 6 months after the birth.",
    "procedure_steps": [
     {
      "step": 1,
@@ -1659,8 +1668,8 @@
    },
    "source_url": "https://www.gov.uk/sure-start-maternity-grant",
    "source_snippet": "You could get a one-off payment of £500 to help towards the costs of having a child if this is your first child and you get certain benefits.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "healthy-start",
@@ -1716,7 +1725,7 @@
    },
    "source_url": "https://www.healthystart.nhs.uk",
    "source_snippet": "If you're more than 10 weeks pregnant or have a child under 4, you may be entitled to get help to buy healthy food and milk through a prepaid Healthy Start card.",
-   "last_verified_at": "2026-08-12",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -1750,8 +1759,8 @@
     "statuses": [],
     "age_min": null,
     "age_max": null,
-    "income_annual_max": 7400,
-    "income_note": "Universal Credit households with annual net earned income of £7,400 or less (after tax, excluding benefits) qualify for 'targeted' FSM; from September 2026 all UC households qualify for 'expanded' FSM, with the £7,400 group also unlocking Pupil Premium and HAF.",
+    "income_annual_max": null,
+    "income_note": "From the 2026 to 2027 academic year every child in a household receiving Universal Credit qualifies regardless of household income. Other qualifying benefits (e.g. income-related ESA, Guarantee Credit) remain; the £7,400 earnings cap now applies only to the 'targeted' FSM category used by HAF.",
     "requires_children": true,
     "nationality": "any_resident",
     "residency_months_min": null,
@@ -1764,7 +1773,7 @@
    },
    "source_url": "https://www.gov.uk/apply-free-school-meals",
    "source_snippet": "From the start of the 2026 to 2027 academic year, all children in households receiving Universal Credit will be entitled to free school meals, regardless of household earnings.",
-   "last_verified_at": "2026-08-12",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -1847,7 +1856,7 @@
     "age_min": null,
     "age_max": null,
     "income_annual_max": 7400,
-    "income_note": "Free holiday clubs with meals for schoolchildren eligible for benefits-related free school meals — i.e. UC households with net earnings of £7,400/yr or less (threshold retained for HAF even after the September 2026 FSM expansion); councils may use 15% of funding for other children.",
+    "income_note": "From September 2026 HAF eligibility is aligned to targeted FSM: Universal Credit households with annual earnings of £7,400 or less; not extended to the wider expanded FSM category.",
     "requires_children": true,
     "nationality": "any_resident",
     "residency_months_min": null,
@@ -1858,10 +1867,10 @@
     ],
     "gender": "any"
    },
-   "source_url": "https://www.gov.uk/government/publications/holiday-activities-and-food-programme",
+   "source_url": "https://www.gov.uk/government/publications/holiday-activities-and-food-programme/holiday-activities-and-food-programme-2026-to-2027",
    "source_snippet": "The Holiday Activities and Food (HAF) Programme provides free holiday activities and healthy meals for eligible children and young people during the school holidays, funded by the Department for Education.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "education-maintenance-allowance-wales",
@@ -1878,7 +1887,7 @@
    "amount_period": "monthly",
    "amount_note": "£30 a week during term time for 16-18 year olds from lower-income households who stay in education (school or college) in Wales",
    "is_automatic": false,
-   "application_url": "https://www.gov.wales/education-maintenance-allowance-ema",
+   "application_url": "https://www.studentfinancewales.co.uk/further-education-funding/education-maintenance-allowance/",
    "application_channel": "online",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -1902,11 +1911,11 @@
     ],
     "age_min": 16,
     "age_max": 18,
-    "income_annual_max": 20817,
-    "income_note": "£40/week (term time) for 16-19 learners in Wales: household income must be £20,817 or less for families with one dependent child, or £23,077 or less with two or more dependent children (assessed by Student Finance Wales).",
+    "income_annual_max": 24570,
+    "income_note": "Household income £24,570 or less (one young person in household) or £27,273 or less (more than one young person), thresholds from September 2026; figure shown is the lower.",
     "requires_children": false,
-    "nationality": "any_resident",
-    "residency_months_min": null,
+    "nationality": "citizen_or_pr",
+    "residency_months_min": 36,
     "housing_tenure": null,
     "student_required": true,
     "admin_areas": [
@@ -1914,10 +1923,10 @@
     ],
     "gender": "any"
    },
-   "source_url": "https://www.gov.wales/education-maintenance-allowance-ema",
+   "source_url": "https://www.studentfinancewales.co.uk/further-education-funding/education-maintenance-allowance/eligibility/",
    "source_snippet": "Education Maintenance Allowance gives £30 a week to help 16 to 18 year olds from lower income families in Wales stay in education after GCSEs.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "bursary-fund-16-to-19-england",
@@ -1951,7 +1960,7 @@
      "student"
     ],
     "age_min": 16,
-    "age_max": 18,
+    "age_max": 19,
     "income_annual_max": null,
     "income_note": "No national income threshold. GOV.UK (2026) sets a defined vulnerable-group bursary of up to £1,200 a year based on circumstances (in care, care leaver, receiving Income Support/Universal Credit in own name, or receiving Disability Living Allowance/PIP with ESA or UC), while discretionary bursaries are allocated by each school or college under its own household-income criteria.",
     "requires_children": false,
@@ -1969,8 +1978,8 @@
    },
    "source_url": "https://www.gov.uk/1619-bursary-fund",
    "source_snippet": "You could get a bursary to help with education-related costs if you're aged 16 to 19 and studying at a publicly funded school or college in England.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified",
    "income_reviewed_at": "2026-08-13"
   },
   {
@@ -1991,7 +2000,7 @@
    "application_url": null,
    "application_channel": "automatic",
    "deadline_type": "annual",
-   "deadline_note": "Discount applied to electricity bills between October and March each winter; scheme confirmed to run until 2030/31",
+   "deadline_note": "Scheme reopens in October 2026 for winter 2026 to 2027; your electricity supplier applies the £150 discount to your bill.",
    "procedure_steps": [
     {
      "step": 1,
@@ -2022,7 +2031,7 @@
    },
    "source_url": "https://www.gov.uk/the-warm-home-discount-scheme",
    "source_snippet": "You could get £150 off your electricity bill for winter under the Warm Home Discount Scheme if you get the Guarantee Credit element of Pension Credit or another qualifying means-tested benefit.",
-   "last_verified_at": "2026-08-12",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified",
    "income_reviewed_at": "2026-08-13"
   },
@@ -2035,11 +2044,11 @@
    "funder": "Department for Work and Pensions (DWP)",
    "category": "energy",
    "benefit_type": "cash_one_off",
-   "amount_min": 200,
+   "amount_min": 100,
    "amount_max": 300,
    "amount_currency": "GBP",
    "amount_period": "annual",
-   "amount_note": "£200 per household, or £300 where someone is aged 80 or over, paid automatically each winter; recovered via tax where the recipient's taxable income exceeds £35,000",
+   "amount_note": "Between £100 and £300 for winter 2026 to 2027 for people born on or before 27 June 1960; HMRC recovers the payment if your total income is over £35,000 (partner's income does not count)",
    "is_automatic": true,
    "application_url": null,
    "application_channel": "automatic",
@@ -2075,7 +2084,7 @@
    },
    "source_url": "https://www.gov.uk/winter-fuel-payment",
    "source_snippet": "If you were born before the qualifying date you could get between £200 and £300 to help you pay your heating bills for winter; those with taxable income over £35,000 have the payment taken back via HMRC.",
-   "last_verified_at": "2026-08-12",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -2096,7 +2105,7 @@
    "application_url": null,
    "application_channel": "automatic",
    "deadline_type": "window",
-   "deadline_note": "Scheme runs 1 November to 31 March each year",
+   "deadline_note": "Scheme runs 1 November 2026 to 31 March 2027; paid automatically for each 7-day period of very cold weather in your area.",
    "procedure_steps": [
     {
      "step": 1,
@@ -2127,8 +2136,8 @@
    },
    "source_url": "https://www.gov.uk/cold-weather-payment",
    "source_snippet": "You'll get a payment of £25 if the average temperature in your area is recorded as, or forecast to be, zero degrees Celsius or below over 7 consecutive days; paid automatically to people on certain benefits.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "winter-heating-payment-scotland",
@@ -2139,11 +2148,11 @@
    "funder": "Social Security Scotland",
    "category": "energy",
    "benefit_type": "cash_one_off",
-   "amount_min": null,
-   "amount_max": null,
+   "amount_min": 62,
+   "amount_max": 62,
    "amount_currency": "GBP",
    "amount_period": "annual",
-   "amount_note": "Annual payment made automatically each winter to people in Scotland on qualifying low-income benefits; replaces Cold Weather Payment in Scotland",
+   "amount_note": "Current payment is £62.00, paid automatically from December and through winter each year; Social Security Scotland writes or emails to say it is coming (appears as 'WHP' on bank statement)",
    "is_automatic": true,
    "application_url": null,
    "application_channel": "automatic",
@@ -2162,7 +2171,7 @@
     "age_min": null,
     "age_max": null,
     "income_annual_max": null,
-    "income_note": "£59.75 (2025/26) annual payment replacing Cold Weather Payments in Scotland for people on qualifying low-income benefits (UC, Pension Credit, income-related ESA/JSA, Income Support); the benefit test is the means test.",
+    "income_note": "£62.00 annual payment replacing Cold Weather Payments in Scotland for people on qualifying low-income benefits; the benefit test is the means test.",
     "requires_children": false,
     "nationality": "any_resident",
     "residency_months_min": null,
@@ -2175,8 +2184,8 @@
    },
    "source_url": "https://www.mygov.scot/winter-heating-payment",
    "source_snippet": "Winter Heating Payment is to help people on low income benefits who might have extra heating needs; it's paid automatically by Social Security Scotland once a year.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "pension-age-winter-heating-payment-scotland",
@@ -2187,11 +2196,11 @@
    "funder": "Social Security Scotland",
    "category": "energy",
    "benefit_type": "cash_one_off",
-   "amount_min": null,
-   "amount_max": null,
+   "amount_min": 105.55,
+   "amount_max": 316.7,
    "amount_currency": "GBP",
    "amount_period": "annual",
-   "amount_note": "Annual winter payment for people over State Pension age in Scotland, replacing the Winter Fuel Payment there",
+   "amount_note": "You could get a payment of between £105.55 and £316.70; paid automatically, letters being sent from November 2026; a small number of people need to apply",
    "is_automatic": true,
    "application_url": null,
    "application_channel": "automatic",
@@ -2212,7 +2221,7 @@
     "age_min": null,
     "age_max": null,
     "income_annual_max": 35000,
-    "income_note": "Scottish replacement for the Winter Fuel Payment; same clawback rule — individuals with total taxable income over £35,000 for the tax year have the payment recovered via HMRC.",
+    "income_note": "If total (individual, not joint) income is over £35,000, HMRC takes the payment back.",
     "requires_children": false,
     "nationality": "any_resident",
     "residency_months_min": null,
@@ -2225,8 +2234,8 @@
    },
    "source_url": "https://www.mygov.scot/pension-age-winter-heating-payment",
    "source_snippet": "Pension Age Winter Heating Payment is a payment to help people of State Pension age living in Scotland with heating costs during winter; it replaces Winter Fuel Payment in Scotland.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "eco4",
@@ -2243,10 +2252,10 @@
    "amount_period": "one_off",
    "amount_note": "Fully or partly funded energy-efficiency measures (insulation, heating upgrades, first-time central heating, heat pumps) for low-income households in inefficient homes (EPC D-G)",
    "is_automatic": false,
-   "application_url": "https://www.gov.uk/apply-great-british-insulation-scheme",
+   "application_url": "https://www.ofgem.gov.uk/environmental-and-social-schemes/energy-company-obligation-eco",
    "application_channel": "online",
    "deadline_type": "window",
-   "deadline_note": "ECO4 has been extended to run until 31 December 2026; suppliers may stop taking new applications earlier",
+   "deadline_note": "ECO4 applies to measures installed from 1 April 2022 and will run until 31 December 2026 (nine-month extension); suppliers may stop taking applications earlier",
    "procedure_steps": [
     {
      "step": 1,
@@ -2270,7 +2279,7 @@
     "age_min": null,
     "age_max": null,
     "income_annual_max": null,
-    "income_note": "Energy-supplier obligation: Help to Heat group = receipt of means-tested benefits (UC, Housing Benefit, Pension Credit, income-based JSA/ESA, tax credits within income limits); ECO4 Flex let councils refer households on low income (typically under £31,000) or with health vulnerabilities. Obligation closed to new installations from 31 March 2026 — successor support sits under the Warm Homes Plan / Warm Homes: Local Grant.",
+    "income_note": "Energy-supplier obligation for low-income, fuel-poor and vulnerable households; Help to Heat group = receipt of means-tested benefits; ECO4 Flex lets councils refer households on low income or with health vulnerabilities. Ofgem says ECO4 runs until 31 December 2026 (earlier text claiming closure on 31 March 2026 was contradicted).",
     "requires_children": false,
     "nationality": "any_resident",
     "residency_months_min": null,
@@ -2279,9 +2288,9 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.gov.uk/apply-great-british-insulation-scheme",
+   "source_url": "https://www.ofgem.gov.uk/environmental-and-social-schemes/energy-company-obligation-eco",
    "source_snippet": "The Energy Company Obligation (ECO4) requires large energy suppliers to fund energy efficiency improvements such as insulation and heating upgrades in the homes of low-income and vulnerable households.",
-   "last_verified_at": "2026-08-12",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -2302,7 +2311,7 @@
    "application_url": null,
    "application_channel": "online",
    "deadline_type": "window",
-   "deadline_note": "Ended: closed to new applicants in October 2025; all installations completed by 31 March 2026 when the scheme ended. See Warm Homes: Local Grant for successor support.",
+   "deadline_note": "Ended: the national service to check eligibility for free or cheaper home insulation has closed (scheme ran to 31 March 2026). Some energy suppliers may still accept applications - check with your supplier. Successor: Warm Homes: Local Grant.",
    "procedure_steps": [],
    "documents_required": [],
    "eligibility": {
@@ -2325,7 +2334,7 @@
    },
    "source_url": "https://www.gov.uk/apply-great-british-insulation-scheme",
    "source_snippet": "The Great British Insulation Scheme (GBIS) was a UK Government-backed scheme to help homes in England, Scotland and Wales get free or cheaper insulation; GBIS ended on 31 March 2026.",
-   "last_verified_at": "2026-09-25",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -2373,8 +2382,8 @@
    },
    "source_url": "https://www.gov.uk/apply-warm-homes-local-grant",
    "source_snippet": "The Warm Homes: Local Grant funds energy performance upgrades and low carbon heating for low-income households in England, delivered by local authorities.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "boiler-upgrade-scheme",
@@ -2446,7 +2455,7 @@
    "amount_period": "one_off",
    "amount_note": "Free advice for all households and free home energy-efficiency improvements (insulation, heating) for eligible low-income and vulnerable households in Wales",
    "is_automatic": false,
-   "application_url": "https://nest.gov.wales",
+   "application_url": "https://www.gov.wales/get-help-energy-efficiency-your-home-nest",
    "application_channel": "online",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -2474,10 +2483,10 @@
     ],
     "gender": "any"
    },
-   "source_url": "https://nest.gov.wales",
+   "source_url": "https://www.gov.wales/get-help-energy-efficiency-your-home-nest",
    "source_snippet": "Nest is the Welsh Government scheme offering free, impartial advice and, if you are eligible, a package of free home energy efficiency improvements such as insulation or a new boiler.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "home-energy-scotland",
@@ -2576,8 +2585,8 @@
    },
    "source_url": "https://www.nhsbsa.nhs.uk/nhs-low-income-scheme",
    "source_snippet": "The NHS Low Income Scheme can help you pay for NHS prescription charges, dental treatment, sight tests, wigs and fabric supports, and travel to receive NHS treatment.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "free-nhs-prescriptions-exemptions-england",
@@ -2726,7 +2735,7 @@
    "amount_period": "one_off",
    "amount_note": "Refund of reasonable travel costs to hospital or other NHS premises for appointments, for people on qualifying benefits or the NHS Low Income Scheme",
    "is_automatic": false,
-   "application_url": "https://www.nhs.uk/nhs-services/",
+   "application_url": "https://www.nhs.uk/nhs-services/help-with-health-costs/healthcare-travel-costs-scheme-htcs/",
    "application_channel": "in_person",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -2763,10 +2772,10 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.nhs.uk/nhs-services/",
+   "source_url": "https://www.nhs.uk/nhs-services/help-with-health-costs/healthcare-travel-costs-scheme-htcs/",
    "source_snippet": "Under the Healthcare Travel Costs Scheme you can claim back reasonable travel costs to NHS appointments if you receive a qualifying benefit or hold an HC2 or HC3 certificate.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "free-nhs-dental-treatment-exemptions",
@@ -2783,7 +2792,7 @@
    "amount_period": "monthly",
    "amount_note": "Free NHS dental treatment for under-18s (under-19 in full-time education), pregnant women and new mothers, and people on qualifying benefits or HC2 certificates",
    "is_automatic": false,
-   "application_url": "https://www.nhs.uk/nhs-services/",
+   "application_url": "https://www.nhs.uk/nhs-services/dentists/who-can-get-free-nhs-dental-treatment/",
    "application_channel": "online",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -2805,10 +2814,10 @@
     ],
     "gender": "any"
    },
-   "source_url": "https://www.nhs.uk/nhs-services/",
+   "source_url": "https://www.nhs.uk/nhs-services/dentists/who-can-get-free-nhs-dental-treatment/",
    "source_snippet": "You're entitled to free NHS dental treatment if you're under 18 (or under 19 in qualifying full-time education), pregnant or have had a baby in the last 12 months, or you get certain benefits.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "blue-badge",
@@ -2879,7 +2888,7 @@
    },
    "source_url": "https://www.gov.uk/apply-blue-badge",
    "source_snippet": "The Blue Badge scheme helps disabled people with severe mobility problems to access goods and services by allowing them to park close to their destination; badges cost £10 and are usually valid for up to 3 years.",
-   "last_verified_at": "2026-08-12",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -2945,7 +2954,7 @@
    },
    "source_url": "https://www.gov.uk/apply-for-elderly-person-bus-pass",
    "source_snippet": "In England you can get a bus pass for free travel when you reach the State Pension age, under the English National Concessionary Travel Scheme; apply to your local council.",
-   "last_verified_at": "2026-08-12",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -3009,7 +3018,7 @@
    },
    "source_url": "https://www.gov.uk/apply-for-disabled-bus-pass",
    "source_snippet": "A concessionary free bus pass allows eligible disabled residents to travel on buses for free, anywhere in England, valid between 9.30am and 11pm Monday to Friday and at any time on weekends and public holidays.",
-   "last_verified_at": "2026-08-12",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -3027,7 +3036,7 @@
    "amount_period": "monthly",
    "amount_note": "Free travel on buses, Tube, trams, DLR, London Overground and most National Rail services in London for older and eligible disabled Londoners",
    "is_automatic": false,
-   "application_url": "https://www.londoncouncils.gov.uk/services/freedom-pass",
+   "application_url": "https://www.freedompass.org/",
    "application_channel": "online",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -3060,7 +3069,7 @@
     "age_min": null,
     "age_max": null,
     "income_annual_max": null,
-    "income_note": "Not means-tested; older person's pass from State Pension age, disabled person's pass for eligible London residents",
+    "income_note": "Not means-tested; Freedom Pass site says it is for Londoners over the age of 66 and those with eligible disabilities.",
     "requires_children": false,
     "nationality": "any_resident",
     "residency_months_min": null,
@@ -3071,10 +3080,10 @@
     ],
     "gender": "any"
    },
-   "source_url": "https://www.londoncouncils.gov.uk/services/freedom-pass",
+   "source_url": "https://www.freedompass.org/",
    "source_snippet": "The Freedom Pass gives free travel across London and free bus journeys nationally to older and disabled people who are resident in a London borough.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "national-entitlement-card-scotland",
@@ -3091,7 +3100,7 @@
    "amount_period": "monthly",
    "amount_note": "Free bus travel throughout Scotland for everyone aged 60+, eligible disabled people, and all 5-21 year olds (Young Persons' Free Bus Travel Scheme)",
    "is_automatic": false,
-   "application_url": "https://www.transport.gov.scot",
+   "application_url": "https://www.transport.gov.scot/concessionary-travel/",
    "application_channel": "online",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -3135,10 +3144,10 @@
     ],
     "gender": "any"
    },
-   "source_url": "https://www.transport.gov.scot",
+   "source_url": "https://www.transport.gov.scot/concessionary-travel/",
    "source_snippet": "The National Entitlement Card gives free bus travel across Scotland to people aged 60 and over, eligible disabled people, and all young people aged 5 to 21.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "16-25-railcard",
@@ -3153,7 +3162,7 @@
    "amount_max": null,
    "amount_currency": "GBP",
    "amount_period": "annual",
-   "amount_note": "About £30 a year (or £70 for 3 years) for 1/3 off most rail fares across Britain for people aged 16-25 and full-time students of any age",
+   "amount_note": "£35 for 1 year or £80 for 3 years for 1/3 off most rail fares across Britain; for everyone aged 16-25 and mature students",
    "is_automatic": false,
    "application_url": "https://www.16-25railcard.co.uk",
    "application_channel": "online",
@@ -3177,8 +3186,8 @@
    },
    "source_url": "https://www.16-25railcard.co.uk",
    "source_snippet": "A 16-25 Railcard gets you 1/3 off rail fares to travel across Britain for just £30 a year, for anyone aged 16-25 or a mature student in full-time study.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "senior-railcard",
@@ -3193,7 +3202,7 @@
    "amount_max": null,
    "amount_currency": "GBP",
    "amount_period": "annual",
-   "amount_note": "About £30 a year (or £70 for 3 years) for 1/3 off most rail fares for people aged 60 and over",
+   "amount_note": "£35 for 1 year or £80 for 3 years for 1/3 off most rail fares for everyone aged 60 and over",
    "is_automatic": false,
    "application_url": "https://www.senior-railcard.co.uk",
    "application_channel": "online",
@@ -3219,8 +3228,8 @@
    },
    "source_url": "https://www.senior-railcard.co.uk",
    "source_snippet": "The Senior Railcard gives everyone aged 60 and over 1/3 off Standard and First Class Anytime, Off-Peak and Advance fares across Britain.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "disabled-persons-railcard",
@@ -3237,7 +3246,7 @@
    "amount_period": "annual",
    "amount_note": "About £20 a year (or £54 for 3 years) for 1/3 off rail fares for the cardholder and one accompanying adult",
    "is_automatic": false,
-   "application_url": "https://www.disabledpersons-railcard.co.uk",
+   "application_url": "https://www.railcard.co.uk/disabled-persons-railcard/",
    "application_channel": "online",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -3257,10 +3266,10 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.disabledpersons-railcard.co.uk",
+   "source_url": "https://www.railcard.co.uk/disabled-persons-railcard/",
    "source_snippet": "The Disabled Persons Railcard allows you and an adult companion to get 1/3 off rail fares across Britain; it costs £20 for one year.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "two-together-railcard",
@@ -3275,7 +3284,7 @@
    "amount_max": null,
    "amount_currency": "GBP",
    "amount_period": "annual",
-   "amount_note": "About £30 a year for 1/3 off most rail fares when the two named cardholders travel together",
+   "amount_note": "£35 a year for 1/3 off rail fares for you and the person you travel with most, across Great Britain",
    "is_automatic": false,
    "application_url": "https://www.twotogether-railcard.co.uk",
    "application_channel": "online",
@@ -3299,8 +3308,8 @@
    },
    "source_url": "https://www.twotogether-railcard.co.uk",
    "source_snippet": "The Two Together Railcard saves two named people 1/3 off rail fares when they travel together, for £30 a year.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "network-railcard",
@@ -3315,7 +3324,7 @@
    "amount_max": null,
    "amount_currency": "GBP",
    "amount_period": "annual",
-   "amount_note": "About £30 a year for 1/3 off most off-peak rail fares in the Network Railcard area (London and the South East) for the holder and up to 3 accompanying adults",
+   "amount_note": "£35 a year for 1/3 off rail fares in London and the South East; £13 minimum fare applies Monday to Friday; discounted tickets from 10:00am Monday to Friday and any time at weekends/public holidays",
    "is_automatic": false,
    "application_url": "https://www.network-railcard.co.uk",
    "application_channel": "online",
@@ -3341,8 +3350,8 @@
    },
    "source_url": "https://www.network-railcard.co.uk",
    "source_snippet": "The Network Railcard gives 1/3 off most rail fares for journeys in the Network Railcard area of London and the South East, for £30 a year.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "motability-scheme",
@@ -3392,7 +3401,7 @@
    },
    "source_url": "https://www.motability.co.uk",
    "source_snippet": "The Motability Scheme enables disabled people to exchange their qualifying mobility allowance to lease a new car, scooter or powered wheelchair, with insurance, maintenance and breakdown cover included.",
-   "last_verified_at": "2026-08-12",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -3457,7 +3466,7 @@
    },
    "source_url": "https://www.gov.uk/disabled-facilities-grants",
    "source_snippet": "The maximum grant in England is £30,000; you can apply if you are a homeowner, tenant, or landlord applying on behalf of a tenant, or a disabled person who plans to live in the property.",
-   "last_verified_at": "2026-08-12",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified",
    "income_reviewed_at": "2026-08-13"
   },
@@ -3498,8 +3507,8 @@
    },
    "source_url": "https://www.gov.uk/support-for-mortgage-interest",
    "source_snippet": "Support for Mortgage Interest is a loan to help towards interest payments on your mortgage or loans taken out for certain repairs and improvements to your home.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "legal-aid",
@@ -3599,7 +3608,7 @@
    },
    "source_url": "https://www.gov.uk/get-help-savings-low-income",
    "source_snippet": "Customers are able to save up to £50 per calendar month in their Help to Save account for up to 48 calendar months; after 2 years the Government awards a 50% bonus of the highest balance saved.",
-   "last_verified_at": "2026-08-12",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -3639,8 +3648,8 @@
    },
    "source_url": "https://www.gov.uk/lifetime-isa",
    "source_snippet": "With a Lifetime ISA you can save up to £4,000 each year until you're 50, and the government will add a 25% bonus to your savings, up to a maximum of £1,000 per year.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "marriage-allowance",
@@ -3685,8 +3694,8 @@
    },
    "source_url": "https://www.gov.uk/marriage-allowance",
    "source_snippet": "Marriage Allowance lets you transfer £1,260 of your Personal Allowance to your husband, wife or civil partner, reducing their tax by up to £252 in the tax year.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "blind-persons-tax-allowance",
@@ -3701,7 +3710,7 @@
    "amount_max": null,
    "amount_currency": "GBP",
    "amount_period": "annual",
-   "amount_note": "Extra tax-free allowance (£3,070 in 2025/26) added to the Personal Allowance for people registered blind or severely sight impaired",
+   "amount_note": "Extra tax-free allowance of £3,250 for the 2026 to 2027 tax year, added to the Personal Allowance for people registered blind or severely sight impaired",
    "is_automatic": false,
    "application_url": "https://www.gov.uk/blind-persons-allowance",
    "application_channel": "post",
@@ -3725,8 +3734,8 @@
    },
    "source_url": "https://www.gov.uk/blind-persons-allowance",
    "source_snippet": "Blind Person's Allowance is an extra amount of tax-free allowance added to your Personal Allowance if you're registered blind or severely sight impaired.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "start-up-loans",
@@ -3741,7 +3750,7 @@
    "amount_max": 25000,
    "amount_currency": "GBP",
    "amount_period": "one_off",
-   "amount_note": "Government-backed personal loans of £500 to £25,000 at a fixed 6% interest over 1-5 years to start or grow a business, with free mentoring and business support",
+   "amount_note": "Loans of £500 to £25,000 at a fixed 7.5% interest per year, repayable over 1 to 5 years; no application or early repayment fee",
    "is_automatic": false,
    "application_url": "https://www.gov.uk/apply-start-up-loan",
    "application_channel": "online",
@@ -3775,7 +3784,7 @@
     "age_min": null,
     "age_max": null,
     "income_annual_max": null,
-    "income_note": "For people aged 18+ starting or running a UK-based business trading for less than 36 months; credit checks apply",
+    "income_note": "Must live in the UK, be 18 or over, and have (or plan to start) a UK-based business fully trading for less than 5 years",
     "requires_children": false,
     "nationality": "any_resident",
     "residency_months_min": null,
@@ -3786,8 +3795,8 @@
    },
    "source_url": "https://www.gov.uk/apply-start-up-loan",
    "source_snippet": "Start Up Loans is a government-backed scheme helping people start or grow a business in the UK, offering loans of up to £25,000 with free support and mentoring.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "maternity-allowance",
@@ -3802,7 +3811,7 @@
    "amount_max": null,
    "amount_currency": "GBP",
    "amount_period": "monthly",
-   "amount_note": "Up to 39 weeks of payments for pregnant people who do not qualify for Statutory Maternity Pay (e.g. self-employed or recently stopped work); paid at a standard weekly rate or 90% of average earnings if lower",
+   "amount_note": "£194.32 a week or 90% of average weekly earnings (whichever is less) for up to 39 weeks; self-employed £27 to £194.32 a week; £27 a week for up to 14 weeks for unpaid work in a spouse/partner's business",
    "is_automatic": false,
    "application_url": "https://www.gov.uk/maternity-allowance/how-to-claim",
    "application_channel": "post",
@@ -3836,7 +3845,7 @@
     "age_min": null,
     "age_max": null,
     "income_annual_max": null,
-    "income_note": "For those who do not qualify for Statutory Maternity Pay: requires employment/self-employment in 26 of the 66 test weeks with earnings of at least £30/week in 13 weeks; pays £187.18/week (2025/26) or 90% of average earnings if lower.",
+    "income_note": "For those who do not qualify for Statutory Maternity Pay; pays £194.32/week or 90% of average earnings if lower (self-employed £27-£194.32).",
     "requires_children": false,
     "nationality": "any_resident",
     "residency_months_min": null,
@@ -3847,8 +3856,8 @@
    },
    "source_url": "https://www.gov.uk/maternity-allowance",
    "source_snippet": "You could get Maternity Allowance for up to 39 weeks if you're pregnant or have recently given birth and don't qualify for Statutory Maternity Pay.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "statutory-maternity-pay",
@@ -3863,7 +3872,7 @@
    "amount_max": null,
    "amount_currency": "GBP",
    "amount_period": "monthly",
-   "amount_note": "39 weeks: 90% of average weekly earnings for the first 6 weeks, then the lower of 90% of earnings or the standard weekly rate for 33 weeks",
+   "amount_note": "Up to 39 weeks: 90% of average weekly earnings for the first 6 weeks, then £194.32 or 90% of average weekly earnings (whichever is lower) for the next 33 weeks",
    "is_automatic": false,
    "application_url": null,
    "application_channel": "via_employer",
@@ -3901,8 +3910,8 @@
    },
    "source_url": "https://www.gov.uk/maternity-pay-leave",
    "source_snippet": "Statutory Maternity Pay is paid for up to 39 weeks: 90% of your average weekly earnings for the first 6 weeks, then the standard rate or 90% of earnings (whichever is lower) for the next 33 weeks.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "statutory-paternity-pay",
@@ -3917,7 +3926,7 @@
    "amount_max": null,
    "amount_currency": "GBP",
    "amount_period": "monthly",
-   "amount_note": "1 or 2 weeks of leave paid at the standard weekly rate or 90% of average weekly earnings (whichever is lower) after the birth or adoption of a child",
+   "amount_note": "1 or 2 weeks at £194.32 or 90% of average weekly earnings, whichever is lower",
    "is_automatic": false,
    "application_url": null,
    "application_channel": "via_employer",
@@ -3943,8 +3952,8 @@
    },
    "source_url": "https://www.gov.uk/paternity-pay-leave",
    "source_snippet": "When you take time off because your partner is having a baby, adopting a child or having a baby through surrogacy, you might be eligible for 1 or 2 weeks of Statutory Paternity Pay and Leave.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "shared-parental-leave-pay",
@@ -3985,8 +3994,8 @@
    },
    "source_url": "https://www.gov.uk/shared-parental-leave-and-pay",
    "source_snippet": "You and your partner may be able to get Shared Parental Leave and Statutory Shared Parental Pay if you're having a baby or adopting a child.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "bereavement-support-payment",
@@ -4001,7 +4010,7 @@
    "amount_max": null,
    "amount_currency": "GBP",
    "amount_period": "monthly",
-   "amount_note": "A lump sum followed by up to 18 monthly payments, at a higher rate for those with dependent children and a standard rate otherwise, when a spouse, civil partner or cohabiting partner dies",
+   "amount_note": "Higher rate (with children or pregnant, or living-together partners): £3,500 one-off plus 18 monthly payments of £350; lower rate: £2,500 one-off plus 18 monthly payments of £100. Claim within 3 months for full payments; 3-12 months gives the lump sum with reduced monthly payments",
    "is_automatic": false,
    "application_url": "https://www.gov.uk/bereavement-support-payment/how-to-claim",
    "application_channel": "online",
@@ -4031,8 +4040,8 @@
    },
    "source_url": "https://www.gov.uk/bereavement-support-payment",
    "source_snippet": "You may be able to get Bereavement Support Payment if your husband, wife, civil partner or partner you lived with has died; it consists of a first payment followed by up to 18 monthly payments.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "funeral-expenses-payment",
@@ -4066,7 +4075,7 @@
     "age_min": null,
     "age_max": null,
     "income_annual_max": null,
-    "income_note": "Covers cremation/burial fees plus up to £1,000 of other costs for people arranging a funeral who receive UC, Income Support, income-based JSA/ESA, Pension Credit, Housing Benefit, tax credits or a Sure Start Maternity Grant; the qualifying-benefit rule is the means test.",
+    "income_note": "You (or your partner) must get Universal Credit, income-related Employment and Support Allowance, Pension Credit or Housing Benefit (a Support for Mortgage Interest loan may also qualify); covers burial/cremation fees plus up to £1,000 for other expenses. Applies to England and Wales; Scotland has Funeral Support Payment.",
     "requires_children": false,
     "nationality": "any_resident",
     "residency_months_min": null,
@@ -4081,8 +4090,8 @@
    },
    "source_url": "https://www.gov.uk/funeral-payments",
    "source_snippet": "You could get a Funeral Expenses Payment if you get certain benefits and need help to pay for a funeral you're arranging; Scotland has the Funeral Support Payment instead.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "guardians-allowance",
@@ -4093,10 +4102,10 @@
    "funder": "HM Revenue & Customs (HMRC)",
    "category": "family",
    "benefit_type": "cash_monthly",
-   "amount_min": null,
-   "amount_max": null,
+   "amount_min": 22.95,
+   "amount_max": 22.95,
    "amount_currency": "GBP",
-   "amount_period": "monthly",
+   "amount_period": "weekly",
    "amount_note": "Weekly tax-free payment for people bringing up a child whose parents have died (or in some cases where one parent has died and the other cannot be traced or is in prison)",
    "is_automatic": false,
    "application_url": "https://www.gov.uk/guardians-allowance/how-to-claim",
@@ -4110,7 +4119,7 @@
     "age_min": null,
     "age_max": null,
     "income_annual_max": null,
-    "income_note": "£22.10/week (2025/26) for people bringing up a child whose parents have died (with Child Benefit entitlement); not means-tested.",
+    "income_note": "£22.95/week (current rate); not means-tested; paid on top of Child Benefit.",
     "requires_children": true,
     "nationality": "any_resident",
     "residency_months_min": null,
@@ -4120,9 +4129,9 @@
     "gender": "any"
    },
    "source_url": "https://www.gov.uk/guardians-allowance",
-   "source_snippet": "You could get Guardian's Allowance if you're bringing up a child whose parents have died; it's paid weekly and is tax-free.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_snippet": "The Guardian’s Allowance rate is £22.95 a week.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "tv-licence-concessions",
@@ -4139,7 +4148,7 @@
    "amount_period": "annual",
    "amount_note": "Free TV licence for people aged 75 or over who receive Pension Credit; 50% discount for people registered blind or severely sight impaired; reduced fee for care home residents",
    "is_automatic": false,
-   "application_url": "https://www.tvlicensing.co.uk",
+   "application_url": "https://www.tvlicensing.co.uk/reducedfee",
    "application_channel": "online",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -4173,10 +4182,10 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.tvlicensing.co.uk",
-   "source_snippet": "If you're 75 or over and you or your partner receive Pension Credit, you can get a free TV licence; if you're blind (severely sight impaired) you can get a 50% concession.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www.tvlicensing.co.uk/reducedfee",
+   "source_snippet": "You can get a free TV Licence if you, as the licence holder, are 75 years or older and you, or your partner living at the same address, receive Pension Credit.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "bt-home-essentials",
@@ -4187,13 +4196,13 @@
    "funder": "BT",
    "category": "income_support",
    "benefit_type": "discount",
-   "amount_min": null,
+   "amount_min": 16.5,
    "amount_max": null,
    "amount_currency": "GBP",
    "amount_period": "monthly",
-   "amount_note": "Low-cost fibre broadband and calls packages for customers on Universal Credit, Pension Credit and other means-tested benefits, at a fraction of standard prices with no exit fees",
+   "amount_note": "Home Essentials Fibre plans start from £16.50 a month, no set-up fees. People on contribution-based-only ESA are not eligible.",
    "is_automatic": false,
-   "application_url": "https://www.bt.com/home-essentials",
+   "application_url": "https://www.bt.com/broadband/home-essentials",
    "application_channel": "online",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -4213,10 +4222,10 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.bt.com/home-essentials",
-   "source_snippet": "BT Home Essentials is a low-cost broadband and phone plan for customers on Universal Credit and other means-tested benefits.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www.bt.com/broadband/home-essentials",
+   "source_snippet": "Home Essentials Fibre broadband plans start from £16.50 with no set-up fees.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "virgin-media-essential-broadband",
@@ -4227,11 +4236,11 @@
    "funder": "Virgin Media O2",
    "category": "income_support",
    "benefit_type": "discount",
-   "amount_min": null,
-   "amount_max": null,
+   "amount_min": 12.5,
+   "amount_max": 20,
    "amount_currency": "GBP",
    "amount_period": "monthly",
-   "amount_note": "Discounted broadband-only package for people receiving Universal Credit and other qualifying benefits, with no fixed-term contract and no price rises while on benefits",
+   "amount_note": "Essential Broadband £12.50/month; Essential Broadband Plus £20/month; rolling 30-day contract, free setup. Only for customers receiving Universal Credit or another qualifying benefit (Pension Credit, JSA, ESA, Income Support).",
    "is_automatic": false,
    "application_url": "https://www.virginmedia.com/broadband/low-income-families",
    "application_channel": "online",
@@ -4254,9 +4263,9 @@
     "gender": "any"
    },
    "source_url": "https://www.virginmedia.com/broadband/low-income-families",
-   "source_snippet": "Essential broadband is Virgin Media's social tariff: low-cost broadband for customers receiving Universal Credit and certain other benefits.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_snippet": "Starting from £12.50 a month, our social tariff broadband is available on its own or with TV.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "voxi-for-now",
@@ -4267,13 +4276,13 @@
    "funder": "Vodafone (VOXI)",
    "category": "income_support",
    "benefit_type": "discount",
-   "amount_min": null,
-   "amount_max": null,
+   "amount_min": 10,
+   "amount_max": 10,
    "amount_currency": "GBP",
    "amount_period": "monthly",
-   "amount_note": "Heavily discounted SIM-only mobile plan for people receiving means-tested benefits, offering unlimited 5G data, calls and texts at a low monthly price",
+   "amount_note": "£10/month: unlimited data, calls and texts for 6 months, then 20GB; 30-day rolling.",
    "is_automatic": false,
-   "application_url": "https://www.voxi.co.uk/voxi-for-now",
+   "application_url": "https://www.voxi.co.uk/for-now",
    "application_channel": "online",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -4293,10 +4302,10 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.voxi.co.uk/voxi-for-now",
-   "source_snippet": "VOXI For Now is a discounted mobile plan giving unlimited data, minutes and texts at a low monthly price to people receiving government benefits.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www.voxi.co.uk/for-now",
+   "source_snippet": "If you’re receiving government benefits, we want to give you Unlimited data, calls and texts for £10 a month.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "sky-broadband-basics",
@@ -4307,13 +4316,13 @@
    "funder": "Sky",
    "category": "income_support",
    "benefit_type": "discount",
-   "amount_min": null,
-   "amount_max": null,
+   "amount_min": 20,
+   "amount_max": 24,
    "amount_currency": "GBP",
    "amount_period": "monthly",
-   "amount_note": "Discounted broadband for existing Sky customers who receive Universal Credit or Pension Credit, on a rolling monthly contract",
+   "amount_note": "£20/month (Superfast 35 or Essentials Plus) or £24/month (Full Fibre 75 / Superfast 80); 24-month contract, no price rise. Only available to customers who already have Sky Broadband.",
    "is_automatic": false,
-   "application_url": "https://www.sky.com/help/articles/sky-broadband-basics",
+   "application_url": "https://www.sky.com/help/articles/sky-social-tariff",
    "application_channel": "online",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -4333,10 +4342,10 @@
     "admin_areas": [],
     "gender": "any"
    },
-   "source_url": "https://www.sky.com/help/articles/sky-broadband-basics",
-   "source_snippet": "Sky Broadband Basics is a lower-cost broadband tariff available to Sky customers who claim Universal Credit or Pension Credit.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www.sky.com/help/articles/sky-social-tariff",
+   "source_snippet": "Sky Broadband Basics is our social tariff broadband offer for eligible customers claiming one of the qualifying benefits.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "watersure",
@@ -4353,7 +4362,7 @@
    "amount_period": "annual",
    "amount_note": "Caps the water bill of metered households on certain benefits who use a lot of water for essential reasons (3+ children or a medical condition), so they pay no more than the average metered bill",
    "is_automatic": false,
-   "application_url": "https://www.ofwat.gov.uk",
+   "application_url": "https://www.ofwat.gov.uk/households/customer-assistance/",
    "application_channel": "in_person",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -4393,10 +4402,10 @@
     ],
     "gender": "any"
    },
-   "source_url": "https://www.ofwat.gov.uk",
-   "source_snippet": "WaterSure caps the bills of water meter customers on certain benefits who need to use a lot of water because of a medical condition or because they have three or more children.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www.ofwat.gov.uk/households/customer-assistance/",
+   "source_snippet": "The WaterSure scheme – this scheme is available for certain customers with a water meter and allows bills to be capped.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "household-support-fund",
@@ -4441,10 +4450,10 @@
     ],
     "gender": "any"
    },
-   "source_url": "https://www.gov.uk/browse/benefits",
+   "source_url": "https://www.gov.uk/government/publications/crisis-and-resilience-fund-guidance-for-local-authorities-in-england-1-april-2026-to-31-march-2029",
    "source_snippet": "The Household Support Fund provides funding to local councils in England to help vulnerable households with the cost of essentials such as food and energy bills.",
-   "last_verified_at": "2026-09-25",
-   "verification_status": "auto_extracted"
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "local-welfare-assistance",
@@ -4552,11 +4561,11 @@
    "funder": "Social Security Scotland",
    "category": "employment",
    "benefit_type": "cash_one_off",
-   "amount_min": null,
-   "amount_max": null,
+   "amount_min": 331.95,
+   "amount_max": 531.1,
    "amount_currency": "GBP",
    "amount_period": "one_off",
-   "amount_note": "One-off payment to help with the costs of starting a new job (travel, clothing, childcare) for people in Scotland aged 16-24 (or care leavers up to 25) who have been out of paid work on qualifying benefits",
+   "amount_note": "£331.95, or £531.10 if you are the main carer of any children.",
    "is_automatic": false,
    "application_url": "https://www.mygov.scot/job-start-payment",
    "application_channel": "online",
@@ -4584,9 +4593,9 @@
     "gender": "any"
    },
    "source_url": "https://www.mygov.scot/job-start-payment",
-   "source_snippet": "Job Start Payment is a one-off payment to help young people in Scotland with the costs of starting a new job after a period out of work on qualifying benefits.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_snippet": "You can get a one-off payment of either: £331.95 £531.10 – if you're the main carer of any children",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "vodafone-essentials-broadband",
@@ -4597,13 +4606,13 @@
    "funder": "Vodafone UK",
    "category": "income_support",
    "benefit_type": "discount",
-   "amount_min": null,
+   "amount_min": 20,
    "amount_max": 20,
    "amount_currency": "GBP",
    "amount_period": "monthly",
-   "amount_note": "Fibre 2 Essentials at £20/month (up to 73Mbps); the earlier £12 Fibre 1 Essentials tier was withdrawn in 2026",
+   "amount_note": "£20/month, up to 80Mbps, 12-month contract, no price rise, no early termination fee.",
    "is_automatic": false,
-   "application_url": "https://www.vodafone.co.uk/broadband/essentials",
+   "application_url": "https://www.vodafone.co.uk/broadband/essentials-broadband",
    "application_channel": "online",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -4640,9 +4649,9 @@
     "student_required": false,
     "admin_areas": []
    },
-   "source_url": "https://www.vodafone.co.uk/broadband/essentials",
-   "source_snippet": "Vodafone Essentials Broadband is available to new and existing customers receiving Jobseeker's Allowance, Universal Credit, Pension Credit, Employment Support Allowance, Income Support, Reduced Earnings Allowance, Personal Independence Payment or Disability Allowance.",
-   "last_verified_at": "2026-08-12",
+   "source_url": "https://www.vodafone.co.uk/broadband/essentials-broadband",
+   "source_snippet": "This is an affordable broadband plan from just £20 a month (66p a day).",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -4655,12 +4664,12 @@
    "category": "income_support",
    "benefit_type": "discount",
    "amount_min": 10,
-   "amount_max": null,
+   "amount_max": 10,
    "amount_currency": "GBP",
    "amount_period": "monthly",
-   "amount_note": "Unlimited data, calls and texts from £10/month for people on qualifying benefits",
+   "amount_note": "£10/month for 10GB data, unlimited calls and texts, 30-day rolling, no price rises.",
    "is_automatic": false,
-   "application_url": "https://www.o2.co.uk/",
+   "application_url": "https://www.o2.co.uk/essential-plan",
    "application_channel": "online",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -4692,10 +4701,10 @@
     "student_required": false,
     "admin_areas": []
    },
-   "source_url": "https://www.o2.co.uk/",
-   "source_snippet": "O2 Essential Plan: mobile social tariff offering unlimited data from £10 a month for customers on qualifying benefits.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www.o2.co.uk/essential-plan",
+   "source_snippet": "At £10 a month for 10GB of data and unlimited calls and texts, you can keep doing the stuff you love for a low monthly cost – with no long-term contract, upfront costs or price rises.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "thames-water-waterhelp",
@@ -4710,9 +4719,9 @@
    "amount_max": null,
    "amount_currency": "GBP",
    "amount_period": "annual",
-   "amount_note": "50% discount on the water bill for eligible low-income households; London pilot auto-enrols households whose bill exceeds 5% of equivalised net income",
+   "amount_note": "Discount of between 25% and 99% off your bill if you qualify.",
    "is_automatic": false,
-   "application_url": "https://www.thameswater.co.uk/help/account-and-billing/financial-support",
+   "application_url": "https://www.thameswater.co.uk/help/account-and-billing/financial-support/waterhelp",
    "application_channel": "online",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -4740,7 +4749,7 @@
     "age_min": null,
     "age_max": null,
     "income_annual_max": null,
-    "income_note": "No fixed income figure is published (checked 2026). Thames Water states only that you may be eligible if your annual water bill is more than 5% of your net income, with eligibility also depending on the number of occupants at the property — so the effective threshold varies by bill size and household size.",
+    "income_note": "Eligible if your annual bill is more than 5% of your net income (also depends on number of occupants); income is verified.",
     "requires_children": false,
     "gender": "any",
     "nationality": "any_resident",
@@ -4755,9 +4764,9 @@
     "income_source_url": "https://www.thameswater.co.uk/help/account-and-billing/financial-support/waterhelp",
     "income_confidence": "high"
    },
-   "source_url": "https://www.thameswater.co.uk/help/account-and-billing/financial-support",
-   "source_snippet": "Customers whose water bill is more than five per cent of their equivalised net income could qualify for a 50 per cent discount under Thames Water's WaterHelp scheme.",
-   "last_verified_at": "2026-08-12",
+   "source_url": "https://www.thameswater.co.uk/help/account-and-billing/financial-support/waterhelp",
+   "source_snippet": "If your annual bill is more than 5% of your net income, you may be eligible for WaterHelp ... a discount of between 25% and 99% on your bill if you qualify.",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified",
    "income_reviewed_at": "2026-08-13"
   },
@@ -4857,8 +4866,8 @@
     "statuses": [],
     "age_min": null,
     "age_max": null,
-    "income_annual_max": 21500,
-    "income_note": "For customers on income-related benefits (UC, tax credits, Housing Benefit, Council Tax Support, Pension Credit etc.) who are in arrears, or whose household income is under £21,500 a year following a recent life event (job loss, bereavement, illness).",
+    "income_annual_max": 22500,
+    "income_note": "Must receive a qualifying benefit, OR have household income under £22,500 a year if applying due to a recent life event (last 6 months); and be in arrears or have had a change in circumstances.",
     "requires_children": false,
     "gender": "any",
     "nationality": "any_resident",
@@ -4869,9 +4878,9 @@
      "North West England"
     ]
    },
-   "source_url": "https://www.unitedutilities.com/services/your-bill/difficulty-paying-your-bill/",
-   "source_snippet": "To be eligible for the Back on Track scheme you must receive at least one income-related benefit and be in arrears, or have a household income of less than £21,500 a year due to a recent life event.",
-   "last_verified_at": "2026-08-12",
+   "source_url": "https://www.unitedutilities.com/my-account/your-bill/difficulty-paying-your-bill/how-we-can-help/back-on-track/back-on-track-terms/",
+   "source_snippet": "Have a household income of less than £22,500 a year if applying due to a recent life event.",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -4929,8 +4938,8 @@
     ]
    },
    "source_url": "https://www.mygov.scot/scottish-welfare-fund",
-   "source_snippet": "Community Care Grants and Crisis Grants do not have to be paid back; you apply through your local council and must be over 16 and on a low income.",
-   "last_verified_at": "2026-08-12",
+   "source_snippet": "To apply for a grant from the Scottish Welfare Fund you must be: 16 or older; on a low income or getting certain benefits. You can only apply through your local council.",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -4988,8 +4997,8 @@
     ]
    },
    "source_url": "https://www.gov.wales/discretionary-assistance-fund-daf",
-   "source_snippet": "The Discretionary Assistance Fund provides two types of grant that you do not need to pay back: the Emergency Assistance Payment and the Individual Assistance Payment.",
-   "last_verified_at": "2026-08-12",
+   "source_snippet": "The Discretionary Assistance Fund provides 2 types of grants that you do not need to pay back: Emergency Assistance Payment (EAP) and Individual Assistance Payment (IAP).",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -5007,7 +5016,7 @@
    "amount_period": "one_off",
    "amount_note": "Short-term grants or interest-free loans for a crisis that places health, safety or wellbeing at significant risk (living expenses, household items, rent in advance)",
    "is_automatic": false,
-   "application_url": "https://www.nidirect.gov.uk/articles/extra-financial-support",
+   "application_url": "https://www.nidirect.gov.uk/campaigns/finance-support",
    "application_channel": "online",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -5046,10 +5055,10 @@
      "Northern Ireland"
     ]
    },
-   "source_url": "https://www.nidirect.gov.uk/articles/extra-financial-support",
-   "source_snippet": "Discretionary Support is short-term financial help for people in Northern Ireland in a crisis which places their or their family's health, safety or wellbeing at significant risk.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www.nidirect.gov.uk/campaigns/finance-support",
+   "source_snippet": "The Finance Support Service supports people who live in Northern Ireland and need short-term financial help.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "welfare-supplementary-payments-ni",
@@ -5066,7 +5075,7 @@
    "amount_period": "monthly",
    "amount_note": "Automatic mitigation payments covering losses from the Benefit Cap, Social Sector Size Criteria ('bedroom tax'), ESA/PIP transition and loss of disability premiums; extended to end of March 2028",
    "is_automatic": true,
-   "application_url": "https://www.nidirect.gov.uk/articles/support-if-youre-affected-by-welfare-changes",
+   "application_url": "https://www.nidirect.gov.uk/articles/support-if-youre-affected-welfare-changes",
    "application_channel": "automatic",
    "deadline_type": "window",
    "deadline_note": "Most schemes extended to 31 March 2028 under 2024 Executive decision",
@@ -5101,8 +5110,8 @@
     ]
    },
    "source_url": "https://www.communities-ni.gov.uk/news/welfare-mitigation-payments-be-extended-another-three-years",
-   "source_snippet": "Welfare Supplementary Payment schemes will continue in payment after agreement by the Executive; most of the payments will run until the end of March 2028.",
-   "last_verified_at": "2026-08-12",
+   "source_snippet": "Welfare Supplementary Payments are available to support you if you may lose out under the following changes: Benefit Cap, Personal Independence Payment, Carer's Allowance, Changes to Housing Benefit. Payments will be made every four weeks in arrears.",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -5120,7 +5129,7 @@
    "amount_period": "annual",
    "amount_note": "Free school lunch for every primary school pupil (Reception to Year 6), worth roughly £500-£650 per child per year; no means test",
    "is_automatic": true,
-   "application_url": "https://www.gov.wales/free-school-meals",
+   "application_url": "https://www.gov.wales/free-school-meals-information-parents-and-carers",
    "application_channel": "automatic",
    "deadline_type": "none",
    "deadline_note": null,
@@ -5157,9 +5166,9 @@
     "income_source_url": "https://www.gov.wales/free-school-meals-information-parents-and-carers",
     "income_confidence": "medium"
    },
-   "source_url": "https://www.gov.wales/free-school-meals",
-   "source_snippet": "All primary school children in Wales can now access Universal Primary Free School Meals, rolled out between September 2022 and September 2024.",
-   "last_verified_at": "2026-08-12",
+   "source_url": "https://www.gov.wales/free-school-meals-information-parents-and-carers",
+   "source_snippet": "All primary school children who attend a state funded (maintained) school in Wales can get a free school meal.",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified",
    "income_reviewed_at": "2026-08-13"
   },
@@ -5176,7 +5185,7 @@
    "amount_max": null,
    "amount_currency": "GBP",
    "amount_period": "annual",
-   "amount_note": "12.5 hours/week of funded part-time childcare for 2-year-olds (39 weeks/year), plus enhanced health visiting, parenting support and speech & language support; being rolled out to all 2-year-olds in Wales area by area",
+   "amount_note": "12.5 hours a week (2.5 hours a day, 5 days) of funded part-time childcare for 2 year olds in eligible disadvantaged areas; being rolled out in phases.",
    "is_automatic": false,
    "application_url": "https://www.gov.wales/get-help-flying-start",
    "application_channel": "in_person",
@@ -5218,8 +5227,8 @@
     ]
    },
    "source_url": "https://www.gov.wales/flying-start-childcare-guide-parents-and-carers",
-   "source_snippet": "12.5 hours of Flying Start childcare is gradually being made available to all 2 year olds across Wales starting with the most disadvantaged areas first.",
-   "last_verified_at": "2026-08-12",
+   "source_snippet": "Families in disadvantaged areas with children under 4 years old receive additional help: funded high quality, part-time (12.5 hours a week) childcare for 2 year olds",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -5237,7 +5246,7 @@
    "amount_period": "annual",
    "amount_note": "Up to 30 hours/week of funded early education and childcare for eligible working parents of 3-4 year olds, for up to 48 weeks a year (10 hours Foundation Phase nursery + up to 20 hours childcare)",
    "is_automatic": false,
-   "application_url": "https://www.gov.wales/childcare-offer-wales-campaign",
+   "application_url": "https://www.gov.wales/childcare-offer-for-wales-campaign",
    "application_channel": "online",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -5278,7 +5287,7 @@
     "age_min": null,
     "age_max": 4,
     "income_annual_max": 100000,
-    "income_note": "Each parent must earn at least the equivalent of 16 hours/week at National Minimum Wage and neither parent may have gross income over £100,000 per year (per-parent cap); some students, kinship carers and newly self-employed parents also qualify.",
+    "income_note": "Each parent's gross income must be £100,000 or less per year; parents must be working (min average 16 hrs at NMW/NLW), on statutory leave or in further/higher education.",
     "requires_children": true,
     "gender": "any",
     "nationality": "any_resident",
@@ -5289,9 +5298,9 @@
      "Wales"
     ]
    },
-   "source_url": "https://www.gov.wales/childcare-offer-wales-campaign",
-   "source_snippet": "Eligible working parents of three and four year olds in Wales can access up to 30 hours per week of government-funded early education and childcare, with a £100,000 gross income cap per parent.",
-   "last_verified_at": "2026-08-12",
+   "source_url": "https://www.gov.wales/get-30-hours-childcare-3-and-4-year-olds/eligibility",
+   "source_snippet": "you must live in Wales; each parent's gross income must be £100,000 or less per year",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -5307,7 +5316,7 @@
    "amount_max": null,
    "amount_currency": "GBP",
    "amount_period": "one_off",
-   "amount_note": "50% discount on selected rail tickets (Anytime Day, Off-Peak Day and season tickets up to 3 months); also 50% off some bus/tram fares in participating areas and Oyster season tickets in London",
+   "amount_note": "50% discount on selected rail tickets.",
    "is_automatic": false,
    "application_url": "https://www.nationalrail.co.uk/railcards/concessionary-travel/",
    "application_channel": "in_person",
@@ -5345,8 +5354,8 @@
     "admin_areas": []
    },
    "source_url": "https://www.nationalrail.co.uk/railcards/concessionary-travel/",
-   "source_snippet": "The card is provided to those claiming Jobseekers Allowance or Universal Credit for 3 to 9 months (for 18 to 24 year olds) or 3 to 12 months (for over 25s), and entitles you to a 50% discount on selected rail tickets.",
-   "last_verified_at": "2026-08-12",
+   "source_snippet": "If you are claiming Jobseekers Allowance or Universal Credit, you may be entitled to a Jobcentre Plus Travel Discount Card. This entitles you to a 50% discount on selected rail tickets.",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -5404,8 +5413,8 @@
     ]
    },
    "source_url": "https://www.mygov.scot/under-22-bus-pass",
-   "source_snippet": "Young people aged 5 to 21 who live in Scotland can get a free bus pass. You can use this on most bus services in Scotland.",
-   "last_verified_at": "2026-08-12",
+   "source_snippet": "Young people aged 5 to 21 who live in Scotland can get a free bus pass.",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -5423,7 +5432,7 @@
    "amount_period": "annual",
    "amount_note": "Free travel at any time on local bus services throughout Wales for people aged 60+ and eligible disabled people; discounted or free travel on some rail services (e.g. 34% off Cardiff & Valleys lines)",
    "is_automatic": false,
-   "application_url": "https://tfw.wales/concessionary-travel",
+   "application_url": "https://portal.tfw.wales/",
    "application_channel": "online",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -5472,9 +5481,9 @@
      "Wales"
     ]
    },
-   "source_url": "https://tfw.wales/concessionary-travel",
-   "source_snippet": "If your primary address is in Wales and you're either aged 60 and over or meet the Government's disability eligibility criteria, you can travel for free on most bus services in Wales and the borders.",
-   "last_verified_at": "2026-08-12",
+   "source_url": "https://portal.tfw.wales/",
+   "source_snippet": "You're entitled to a Concessionary Travel Card if you're at least 60 years old and your primary residence is in Wales.",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -5523,7 +5532,7 @@
    "eligibility": {
     "statuses": [],
     "age_min": 60,
-    "age_max": 65,
+    "age_max": null,
     "income_annual_max": null,
     "income_note": "Not means-tested: for London borough residents aged 60 or over who are not yet eligible for a Freedom Pass (State Pension age).",
     "requires_children": false,
@@ -5537,8 +5546,8 @@
     ]
    },
    "source_url": "https://tfl.gov.uk/fares/free-and-discounted-travel/60-plus-oyster-photocard",
-   "source_snippet": "If you're 60 or over and live in a London borough, you can get a 60+ London Oyster photocard until you're eligible for a Freedom Pass.",
-   "last_verified_at": "2026-08-12",
+   "source_snippet": "If you're aged 60 or over and live in a London borough, you might be eligible for a 60+ London Oyster photocard",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -5550,16 +5559,16 @@
    "funder": "National Rail (Rail Delivery Group)",
    "category": "transport",
    "benefit_type": "discount",
-   "amount_min": 30,
-   "amount_max": 30,
+   "amount_min": null,
+   "amount_max": null,
    "amount_currency": "GBP",
    "amount_period": "one_off",
-   "amount_note": "£30 a year (or until your 18th birthday) for 50% off most rail fares, including season tickets",
+   "amount_note": "50% off rail travel; card costs £35 for 1 year.",
    "is_automatic": false,
-   "application_url": "https://www.16-17saver.co.uk/",
+   "application_url": "https://www.railcard.co.uk/16-17-saver/",
    "application_channel": "online",
    "deadline_type": "annual",
-   "deadline_note": "Valid until the holder's 18th birthday",
+   "deadline_note": "Can be bought up to the day before your 18th birthday (from 17 Aug 2026) and lasts a full year.",
    "procedure_steps": [
     {
      "step": 1,
@@ -5588,10 +5597,10 @@
     "student_required": false,
     "admin_areas": []
    },
-   "source_url": "https://www.16-17saver.co.uk/",
-   "source_snippet": "The 16-17 Saver costs £30 and gives 50% off most rail fares for 16 and 17 year olds, including season tickets.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www.railcard.co.uk/16-17-saver/",
+   "source_snippet": "£35 for a 1-year Railcard. The 16-17 Saver is a 1-year Railcard with massive discounts on train travel.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "skills-bootcamps",
@@ -5608,7 +5617,7 @@
    "amount_period": "one_off",
    "amount_note": "Free, flexible courses of up to 16 weeks in priority sectors (digital, construction, green skills, HGV driving, health) with a guaranteed employer interview on completion; employers contribute 10-30% when upskilling their own staff",
    "is_automatic": false,
-   "application_url": "https://www.gov.uk/guidance/find-a-skills-bootcamp",
+   "application_url": "https://www.skillsforcareers.education.gov.uk/pages/training-choice/skills-bootcamp",
    "application_channel": "online",
    "deadline_type": "rolling",
    "deadline_note": "Funded through the National Skills Fund; course availability varies by region and funding round",
@@ -5650,9 +5659,9 @@
     "student_required": false,
     "admin_areas": []
    },
-   "source_url": "https://www.london.gov.uk/programmes-strategies/jobs-and-skills/skills-bootcamps-londoners",
-   "source_snippet": "Skills Bootcamps are free, flexible courses of up to 16 weeks that help you develop new skills and fast-track to a job interview or gain new responsibilities with your current employer.",
-   "last_verified_at": "2026-08-12",
+   "source_url": "https://www.skillsforcareers.education.gov.uk/pages/training-choice/skills-bootcamp",
+   "source_snippet": "You need to be 19 or over to do a Skills Bootcamp.",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -5708,8 +5717,8 @@
     "admin_areas": []
    },
    "source_url": "https://www.skillsforcareers.education.gov.uk/pages/training-choice/free-courses-for-jobs",
-   "source_snippet": "The government will pay for you to do a course if you're 19 or older and you either: earn less than £25,750; are not in work.",
-   "last_verified_at": "2026-08-12",
+   "source_snippet": "You can get a free qualification if you’re: aged 19 or over; earn below £25,750 or are unemployed",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -5727,7 +5736,7 @@
    "amount_period": "one_off",
    "amount_note": "Voluntary supported employment programme (individual placement and support) for disabled people, people with health conditions and other disadvantaged groups; rolling out across England and Wales from 2025 with funding to 2030",
    "is_automatic": false,
-   "application_url": "https://www.gov.uk/government/collections/connect-to-work",
+   "application_url": "https://www.gov.uk/government/publications/connect-to-work",
    "application_channel": "via_employer",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -5759,10 +5768,10 @@
     "student_required": false,
     "admin_areas": []
    },
-   "source_url": "https://www.gov.uk/government/collections/connect-to-work",
-   "source_snippet": "Connect to Work is a DWP-funded voluntary supported employment programme available across England and Wales for disabled and disadvantaged people.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_url": "https://www.gov.uk/government/publications/connect-to-work",
+   "source_snippet": "It provides intensive, holistic support for people who are disabled, have long-term health conditions or complex non-health related barriers to employment.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "growth-guarantee-scheme",
@@ -5777,7 +5786,7 @@
    "amount_max": 2000000,
    "amount_currency": "GBP",
    "amount_period": "one_off",
-   "amount_note": "70% government-backed guarantee to lenders on SME finance: term loans, overdrafts, asset finance, invoice finance and asset-based lending from £25,001 (term loans/overdrafts; from £1,000 for asset/invoice finance) up to £2m (£1m for NI Protocol-scope borrowers); extended to March 2030",
+   "amount_note": "Facilities generally up to £2m per business group (£1m for NI Protocol borrowers); minimum £1,000 for asset/invoice finance, £25,001 for term loans and overdrafts; 70% government guarantee to lender; borrower remains 100% liable. Annual turnover limit rising from £45m to £54m.",
    "is_automatic": false,
    "application_url": "https://www.british-business-bank.co.uk/finance-options/debt-finance/growth-guarantee-scheme",
    "application_channel": "online",
@@ -5824,8 +5833,8 @@
     "admin_areas": []
    },
    "source_url": "https://www.british-business-bank.co.uk/finance-options/debt-finance/growth-guarantee-scheme",
-   "source_snippet": "The Growth Guarantee Scheme is the successor to the Recovery Loan Scheme and can generally support facility sizes of up to £2m, providing the lender with a 70% government-backed guarantee.",
-   "last_verified_at": "2026-08-12",
+   "source_snippet": "The Growth Guarantee Scheme can generally support facility sizes of up to £2m and provides the lender with a 70% government-backed guarantee.",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -5883,9 +5892,9 @@
     "admin_areas": []
    },
    "source_url": "https://www.gov.uk/tax-relief-for-employees",
-   "source_snippet": "You may be able to claim tax relief if you use your own money for things you must buy for your job, including repairing or replacing small tools and cleaning, repairing or replacing specialist clothing.",
-   "last_verified_at": "2026-08-12",
-   "verification_status": "auto_extracted"
+   "source_snippet": "Claiming tax relief on expenses you have to pay for your work, like uniforms, tools, travel and working from home costs.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
   },
   {
    "slug": "family-fund-grants",
@@ -5902,7 +5911,7 @@
    "amount_period": "one_off",
    "amount_note": "Grants for essential items (washing machines, beds, clothing, sensory/play equipment, family breaks) for families raising disabled or seriously ill children and young people",
    "is_automatic": false,
-   "application_url": "https://www.familyfund.org.uk/",
+   "application_url": "https://www.familyfund.org.uk/grants/apply-for-a-grant/",
    "application_channel": "online",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -5932,7 +5941,7 @@
    ],
    "eligibility": {
     "statuses": [],
-    "age_min": null,
+    "age_min": 0,
     "age_max": 24,
     "income_annual_max": null,
     "income_note": "No income threshold is published (checked 2026). Family Fund requires the disabled child to need a high level of support in at least 3 of 7 key areas and the family to be 'on a low income', stating only that a grant is not usually awarded where there is 'a significant level of household income, savings or capital'. Families not on a qualifying benefit are assessed case by case.",
@@ -5947,9 +5956,9 @@
     "income_source_url": "https://www.familyfund.org.uk/grants/are-we-eligible/",
     "income_confidence": "high"
    },
-   "source_url": "https://www.familyfund.org.uk/",
-   "source_snippet": "Family Fund looks at your income and the impact of disability on your child; you can apply if you are the parent/carer of a child or young person with a disability or serious illness and are on a low income or receiving benefits.",
-   "last_verified_at": "2026-08-12",
+   "source_url": "https://www.familyfund.org.uk/grants/are-we-eligible/",
+   "source_snippet": "Grants are available for families living on a low income, raising a disabled or seriously ill child or young person whose additional support needs meet our child and young persons eligibility criteria.",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified",
    "income_reviewed_at": "2026-08-13"
   },
@@ -5968,7 +5977,7 @@
    "amount_period": "annual",
    "amount_note": "Free NHS prescriptions and free NHS dental treatment while pregnant and for 12 months after the birth; certificate backdated to one month before application and valid until 12 months after due date/birth",
    "is_automatic": false,
-   "application_url": "https://www.nhsbsa.nhs.uk/exemption-certificates/maternity-exemption-certificates",
+   "application_url": "https://www.nhsbsa.nhs.uk/help-nhs-prescription-costs/maternity-exemption-certificates",
    "application_channel": "in_person",
    "deadline_type": "rolling",
    "deadline_note": null,
@@ -6000,9 +6009,9 @@
     "student_required": false,
     "admin_areas": []
    },
-   "source_url": "https://www.nhsbsa.nhs.uk/exemption-certificates/maternity-exemption-certificates",
-   "source_snippet": "You're entitled to a maternity exemption certificate if, at the time of your application, you are pregnant or have given birth in the last 12 months.",
-   "last_verified_at": "2026-08-12",
+   "source_url": "https://www.nhsbsa.nhs.uk/help-nhs-prescription-costs/maternity-exemption-certificates",
+   "source_snippet": "You’re entitled to a maternity exemption certificate if, at the time of your application, you are pregnant or have given birth in the last 12 months.",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -6058,8 +6067,8 @@
     "admin_areas": []
    },
    "source_url": "https://www.nhs.uk/nhs-services/help-with-health-costs/wigs-and-fabric-supports-on-the-nhs/",
-   "source_snippet": "You can get free wigs and fabric supports if you are under 16, 16 to 18 and in full-time education, a hospital inpatient, a war pensioner, or receiving qualifying benefits or named on a valid HC2 certificate.",
-   "last_verified_at": "2026-08-12",
+   "source_snippet": "You can get free wigs and fabric supports if you are: under 16; 16 to 18 and in full-time education; a hospital inpatient; a war pensioner...",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   },
   {
@@ -6080,7 +6089,7 @@
    "application_url": "https://www.gov.uk/find-local-council",
    "application_channel": "in_person",
    "deadline_type": "rolling",
-   "deadline_note": null,
+   "deadline_note": "Fund period 1 April 2026 to 31 March 2029; apply to your local council.",
    "procedure_steps": [
     {
      "step": 1,
@@ -6094,9 +6103,9 @@
     "age_min": null,
     "age_max": null,
     "income_annual_max": null,
-    "income_note": "DWP-funded council crisis support (food, energy, essentials); each English council sets its own eligibility, usually targeting low-income households not captured by benefit criteria — thresholds vary locally.",
+    "income_note": "Low-income households facing a financial shock; delivered by councils in England 1 April 2026 to 31 March 2029. Crisis Payments made under the Localism Act count as public funds so people with No Recourse to Public Funds are not eligible (councils may use other powers).",
     "requires_children": false,
-    "nationality": "any_resident",
+    "nationality": "citizen_or_pr",
     "residency_months_min": null,
     "housing_tenure": null,
     "student_required": false,
@@ -6106,8 +6115,1742 @@
     "gender": "any"
    },
    "source_url": "https://www.gov.uk/government/publications/crisis-and-resilience-fund-guidance-for-local-authorities-in-england-1-april-2026-to-31-march-2029/the-crisis-and-resilience-fund-guidance-for-local-authorities-in-england-1-april-2026-to-31-march-2029",
-   "source_snippet": "Crisis and Resilience Fund: Guidance for local authorities in England (1 April 2026 to 31 March 2029) - a GBP 1 billion resilience fund providing a safety net for families.",
-   "last_verified_at": "2026-09-25",
+   "source_snippet": "The Crisis and Resilience Fund (“The Fund”) has been made available to local authorities (LAs) in England to support low-income households who encounter a financial shock... 1 April 2026 to 31 March 2029 inclusive",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "new-state-pension",
+   "name_local": "The new State Pension",
+   "name_en": "The new State Pension",
+   "admin_level": "national",
+   "admin_area": null,
+   "funder": "Department for Work and Pensions (DWP)",
+   "category": "income_support",
+   "benefit_type": "cash_monthly",
+   "amount_min": null,
+   "amount_max": 241.3,
+   "amount_currency": "GBP",
+   "amount_period": "weekly",
+   "amount_note": "Full rate is £241.30 a week; your amount depends on your National Insurance qualifying years (10 needed for any new State Pension, 35 for the full rate) and whether you were contracted out. Increases each year by the highest of earnings growth, CPI inflation or 2.5% (triple lock).",
+   "is_automatic": false,
+   "application_url": "https://www.gov.uk/claim-state-pension-online",
+   "application_channel": "online",
+   "deadline_type": "rolling",
+   "deadline_note": "You do not get it automatically; claim from about 4 months before State Pension age. You can delay (defer) claiming to increase the amount.",
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Check your State Pension forecast and National Insurance record",
+     "url": "https://www.gov.uk/check-state-pension"
+    },
+    {
+     "step": 2,
+     "detail": "Claim online with the invitation code from your letter, or phone the Pension Service if you reach State Pension age within 4 months",
+     "url": "https://www.gov.uk/claim-state-pension-online"
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "Bank or building society details",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Date of most recent marriage, civil partnership or divorce",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Dates of any time living or working abroad",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Invitation code from your State Pension letter",
+     "mandatory": false,
+     "note": "Needed for online claims"
+    }
+   ],
+   "eligibility": {
+    "statuses": [
+     "retired"
+    ],
+    "age_min": null,
+    "age_max": null,
+    "income_annual_max": null,
+    "income_note": "No income or savings test: based on your National Insurance record, not income. You must have at least 10 qualifying years for any new State Pension; claimable from abroad if you have paid enough contributions.",
+    "requires_children": false,
+    "nationality": "any",
+    "residency_months_min": null,
+    "housing_tenure": null,
+    "student_required": false,
+    "admin_areas": [],
+    "gender": "any",
+    "income_test": "none",
+    "income_source_url": null,
+    "income_confidence": "high"
+   },
+   "source_url": "https://www.gov.uk/new-state-pension/what-youll-get",
+   "source_snippet": "The full rate of new State Pension is £241.30 a week.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "access-to-work",
+   "name_local": "Access to Work (grant for disabled people and people with health conditions)",
+   "name_en": "Access to Work (grant for disabled people and people with health conditions)",
+   "admin_level": "national",
+   "admin_area": null,
+   "funder": "Department for Work and Pensions (DWP)",
+   "category": "employment",
+   "benefit_type": "in_kind",
+   "amount_min": null,
+   "amount_max": null,
+   "amount_currency": "GBP",
+   "amount_period": "one_off",
+   "amount_note": "Grant paid towards practical support at work (specialist equipment, support workers, travel to work if you cannot use public transport, vehicle adaptations, workplace changes), plus mental health support and interview communication support. Grant size is set in your decision letter. Does not affect other benefits and does not have to be repaid.",
+   "is_automatic": false,
+   "application_url": "https://www.gov.uk/access-to-work/apply",
+   "application_channel": "online",
+   "deadline_type": "rolling",
+   "deadline_note": "Apply up to 12 weeks before starting or returning to a paid job; renew 12 weeks before an ongoing grant ends.",
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Check you are eligible",
+     "url": "https://www.gov.uk/access-to-work/eligibility"
+    },
+    {
+     "step": 2,
+     "detail": "Apply online or by phone (0800 121 7479)",
+     "url": "https://www.get-disability-work-support.service.gov.uk/apply/"
+    },
+    {
+     "step": 3,
+     "detail": "Speak to an Access to Work adviser, who may arrange an assessment; you get a decision letter with the grant amount",
+     "url": null
+    },
+    {
+     "step": 4,
+     "detail": "Claim money from your grant online or by post with invoices or receipts",
+     "url": "https://www.get-disability-work-support.service.gov.uk/claim"
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "Contact details and workplace address",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Details of how your condition affects your work and support you need",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Workplace contact who can confirm you work there",
+     "mandatory": false,
+     "note": "If employed"
+    },
+    {
+     "doc": "Unique Taxpayer Reference",
+     "mandatory": false,
+     "note": "If self-employed"
+    },
+    {
+     "doc": "National Insurance number",
+     "mandatory": false,
+     "note": "If you have one"
+    }
+   ],
+   "eligibility": {
+    "statuses": [
+     "employee",
+     "self_employed"
+    ],
+    "age_min": 16,
+    "age_max": null,
+    "income_annual_max": null,
+    "income_note": "No income or savings test for employed people. Self-employed applicants must have annual turnover of at least £6,500. Must live and work (or be about to start or return to work within 12 weeks) in England, Scotland or Wales; Northern Ireland has a separate scheme.",
+    "requires_children": false,
+    "nationality": "any_resident",
+    "residency_months_min": null,
+    "housing_tenure": null,
+    "student_required": false,
+    "admin_areas": [],
+    "gender": "any",
+    "income_test": "none",
+    "income_source_url": null,
+    "income_confidence": "high"
+   },
+   "source_url": "https://www.gov.uk/access-to-work",
+   "source_snippet": "Access to Work can help you get or stay in work if you have a physical or mental health condition or disability.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "disabled-students-allowance",
+   "name_local": "Disabled Students' Allowance (DSA, England)",
+   "name_en": "Disabled Students' Allowance (DSA, England)",
+   "admin_level": "national",
+   "admin_area": null,
+   "funder": "Student Finance England (Student Loans Company)",
+   "category": "education",
+   "benefit_type": "in_kind",
+   "amount_min": null,
+   "amount_max": 27783,
+   "amount_currency": "GBP",
+   "amount_period": "annual",
+   "amount_note": "Up to £27,783 per year for undergraduate and postgraduate students for specialist equipment, non-medical helpers, disability-related travel and other study support. You pay the first £200 if you are assessed as needing a new computer. Not repaid. Not based on household income.",
+   "is_automatic": false,
+   "application_url": "https://www.gov.uk/disabled-students-allowance-dsa",
+   "application_channel": "online",
+   "deadline_type": "annual",
+   "deadline_note": "Apply through your student finance application; do not buy equipment before your needs assessment.",
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Apply for DSA with your student finance application",
+     "url": "https://www.gov.uk/disabled-students-allowance-dsa"
+    },
+    {
+     "step": 2,
+     "detail": "Receive your DSA eligibility letter, then a supplier (Study Tech or Capita) contacts you to arrange a needs assessment",
+     "url": null
+    },
+    {
+     "step": 3,
+     "detail": "After the assessment you receive a report and an entitlement letter; most payments go direct to suppliers",
+     "url": null
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "Evidence of disability or long-term condition",
+     "mandatory": true,
+     "note": "Assessed at application"
+    },
+    {
+     "doc": "Student finance application",
+     "mandatory": true,
+     "note": null
+    }
+   ],
+   "eligibility": {
+    "statuses": [
+     "student"
+    ],
+    "age_min": null,
+    "age_max": null,
+    "income_annual_max": null,
+    "income_note": "Not income-tested: the type of support and amount depend on your individual needs, not household income. Nationality and residency conditions follow student finance rules (gov.uk/student-finance/who-qualifies).",
+    "requires_children": false,
+    "nationality": "any_resident",
+    "residency_months_min": null,
+    "housing_tenure": null,
+    "student_required": true,
+    "admin_areas": [],
+    "gender": "any",
+    "income_test": "none",
+    "income_source_url": null,
+    "income_confidence": "high"
+   },
+   "source_url": "https://www.gov.uk/disabled-students-allowance-dsa",
+   "source_snippet": "The type of support and how much you get depends on your individual needs - not your household income.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "industrial-injuries-disablement-benefit",
+   "name_local": "Industrial Injuries Disablement Benefit (IIDB)",
+   "name_en": "Industrial Injuries Disablement Benefit (IIDB)",
+   "admin_level": "national",
+   "admin_area": null,
+   "funder": "Department for Work and Pensions (DWP)",
+   "category": "income_support",
+   "benefit_type": "cash_monthly",
+   "amount_min": null,
+   "amount_max": 233.9,
+   "amount_currency": "GBP",
+   "amount_period": "weekly",
+   "amount_note": "Weekly amount depends on assessed level of disablement (1 to 100%; normally you must be assessed at 14% or more): £233.90 at 100%, £187.12 at 80%, £140.34 at 60%, £93.56 at 40%, £46.78 at 20%. Amounts are a guide only.",
+   "is_automatic": false,
+   "application_url": "https://www.gov.uk/industrial-injuries-disablement-benefit/how-to-claim",
+   "application_channel": "post",
+   "deadline_type": "rolling",
+   "deadline_note": "Claim by post using form BI100A (accidents) or BI100PD (diseases), or phone the Barnsley IIDB Centre on 0800 121 8379 to have one sent.",
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Download claim form BI100A (accident) or BI100PD (disease) or phone 0800 121 8379 to request one",
+     "url": "https://www.gov.uk/government/publications/industrial-injuries-disablement-benefit-claim-forms"
+    },
+    {
+     "step": 2,
+     "detail": "Post the completed form to the Barnsley IIDB Centre, Mail Handling Site A, Wolverhampton WV98 1SY",
+     "url": null
+    },
+    {
+     "step": 3,
+     "detail": "Your claim is assessed from the form or at a face to face medical assessment",
+     "url": null
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "Completed claim form BI100A or BI100PD",
+     "mandatory": true,
+     "note": null
+    }
+   ],
+   "eligibility": {
+    "statuses": [
+     "employee"
+    ],
+    "age_min": null,
+    "age_max": null,
+    "income_annual_max": null,
+    "income_note": "Not income-tested. Must have been employed (or on an approved employment training scheme) when the accident or disease happened; self-employed people cannot claim. The accident must have happened in England, Scotland or Wales.",
+    "requires_children": false,
+    "nationality": "any_resident",
+    "residency_months_min": null,
+    "housing_tenure": null,
+    "student_required": false,
+    "admin_areas": [],
+    "gender": "any",
+    "income_test": "none",
+    "income_source_url": null,
+    "income_confidence": "high"
+   },
+   "source_url": "https://www.gov.uk/industrial-injuries-disablement-benefit",
+   "source_snippet": "You might get Industrial Injuries Disablement Benefit (IIDB) if you became ill or are disabled because of an accident or disease either:",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "statutory-adoption-pay",
+   "name_local": "Statutory Adoption Pay",
+   "name_en": "Statutory Adoption Pay",
+   "admin_level": "national",
+   "admin_area": null,
+   "funder": "Your employer (reclaimed from HM Revenue and Customs)",
+   "category": "family",
+   "benefit_type": "cash_monthly",
+   "amount_min": null,
+   "amount_max": 194.32,
+   "amount_currency": "GBP",
+   "amount_period": "weekly",
+   "amount_note": "Paid for up to 39 weeks: 90% of average weekly earnings for the first 6 weeks, then £194.32 or 90% of average weekly earnings (whichever is lower) for the next 33 weeks. Paid like wages (tax and National Insurance deducted). Employers may offer more.",
+   "is_automatic": false,
+   "application_url": "https://www.gov.uk/adoption-pay-leave/how-to-claim",
+   "application_channel": "via_employer",
+   "deadline_type": "window",
+   "deadline_note": "Give your employer at least 28 days' notice of when you want pay to start; tell them within 7 days of being matched with a child for Statutory Adoption Leave.",
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Tell your employer you want to stop work to adopt and when you want pay to start (at least 28 days' notice)",
+     "url": null
+    },
+    {
+     "step": 2,
+     "detail": "Give your employer proof of adoption (for example matching certificate and agency letter)",
+     "url": null
+    },
+    {
+     "step": 3,
+     "detail": "Employer confirms within 28 days how much you will get and when it starts and stops",
+     "url": null
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "Proof of adoption: matching certificate, agency letter with date of placement",
+     "mandatory": true,
+     "note": "Overseas adoptions also need official notification and arrival date"
+    }
+   ],
+   "eligibility": {
+    "statuses": [
+     "employee",
+     "parent"
+    ],
+    "age_min": null,
+    "age_max": null,
+    "income_annual_max": null,
+    "income_note": "Not means-tested, but you must earn on average at least £129 a week before tax and have been continuously employed by your employer for at least 26 weeks by the week you were matched with a child. Not available for private adoptions, stepchild or family member adoption, special guardians or kinship carers.",
+    "requires_children": true,
+    "nationality": "any_resident",
+    "residency_months_min": null,
+    "housing_tenure": null,
+    "student_required": false,
+    "admin_areas": [],
+    "gender": "any",
+    "income_test": "none",
+    "income_source_url": null,
+    "income_confidence": "high"
+   },
+   "source_url": "https://www.gov.uk/adoption-pay-leave",
+   "source_snippet": "Statutory Adoption Pay is paid for up to 39 weeks.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "budgeting-loan",
+   "name_local": "Budgeting Loan (Social Fund)",
+   "name_en": "Budgeting Loan (Social Fund)",
+   "admin_level": "national",
+   "admin_area": null,
+   "funder": "Department for Work and Pensions (DWP)",
+   "category": "income_support",
+   "benefit_type": "cash_one_off",
+   "amount_min": 100,
+   "amount_max": 812,
+   "amount_currency": "GBP",
+   "amount_period": "one_off",
+   "amount_note": "Interest-free loan of at least £100 and up to £348 if single, £464 if you have a partner, or £812 if you or your partner claim Child Benefit. Repaid automatically from benefits, normally within 2 years (104 weeks). Not available in Northern Ireland (separate scheme).",
+   "is_automatic": false,
+   "application_url": "https://www.apply-budgeting-loan.service.gov.uk/steps/appointee-who",
+   "application_channel": "online",
+   "deadline_type": "rolling",
+   "deadline_note": "Decision within 7 days by text or email, 21 days by letter.",
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Check you are eligible",
+     "url": "https://www.gov.uk/budgeting-loans/eligibility"
+    },
+    {
+     "step": 2,
+     "detail": "Apply online or on paper form SF500",
+     "url": "https://www.apply-budgeting-loan.service.gov.uk/steps/appointee-who"
+    },
+    {
+     "step": 3,
+     "detail": "Accept the loan offer online or by post; money arrives within 7 days (online) or 21 days (post)",
+     "url": null
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "Bank details (loan is paid into the account your benefit is paid into)",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "National Insurance number",
+     "mandatory": true,
+     "note": null
+    }
+   ],
+   "eligibility": {
+    "statuses": [],
+    "age_min": null,
+    "age_max": null,
+    "income_annual_max": null,
+    "income_note": "Not an income ceiling: you must have received Income Support, income-based JSA, income-related ESA or Pension Credit for the past 6 months. Cannot be claimed while on Universal Credit (apply for a Budgeting Advance instead). Savings over £1,000 (£2,000 if you or your partner are 63 or over) reduce the loan.",
+    "requires_children": false,
+    "nationality": "any_resident",
+    "residency_months_min": null,
+    "housing_tenure": null,
+    "student_required": false,
+    "admin_areas": [
+     "England",
+     "Scotland",
+     "Wales"
+    ],
+    "gender": "any",
+    "income_test": "none",
+    "income_source_url": "https://www.gov.uk/budgeting-help-benefits",
+    "income_confidence": "high"
+   },
+   "source_url": "https://www.gov.uk/budgeting-help-benefits",
+   "source_snippet": "A Budgeting Loan can help pay for:",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "care-to-learn",
+   "name_local": "Care to Learn (childcare costs for young parents in England)",
+   "name_en": "Care to Learn (childcare costs for young parents in England)",
+   "admin_level": "national",
+   "admin_area": null,
+   "funder": "Department for Education (via your education provider)",
+   "category": "education",
+   "benefit_type": "in_kind",
+   "amount_min": null,
+   "amount_max": 195,
+   "amount_currency": "GBP",
+   "amount_period": "weekly",
+   "amount_note": "Up to £180 per child per week outside London or £195 per child per week in London towards childcare while you study, including deposit and registration fees, a childcare taster session and keeping your place over the summer holidays. Paid by your education provider direct to your childcare provider. Does not affect family benefits.",
+   "is_automatic": false,
+   "application_url": "https://www.gov.uk/care-to-learn/how-to-apply",
+   "application_channel": "in_person",
+   "deadline_type": "rolling",
+   "deadline_note": "Apply through your education provider.",
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Ask your school, college or education provider to apply for Care to Learn for you",
+     "url": null
+    },
+    {
+     "step": 2,
+     "detail": "Provide your child's birth certificate or a letter confirming Child Benefit for that child",
+     "url": null
+    },
+    {
+     "step": 3,
+     "detail": "Your education provider pays your childcare provider and arranges or pays your travel",
+     "url": null
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "Child's birth certificate or Child Benefit letter",
+     "mandatory": true,
+     "note": "Either one"
+    }
+   ],
+   "eligibility": {
+    "statuses": [
+     "student",
+     "parent"
+    ],
+    "age_min": null,
+    "age_max": 19,
+    "income_annual_max": null,
+    "income_note": "No income test is published on the official page. You must be a parent under 20 at the start of your course, the main carer, living in England, studying a publicly-funded course (not higher education) and using an Ofsted-registered (or school/childminder agency) childcare provider.",
+    "requires_children": true,
+    "nationality": "any_resident",
+    "residency_months_min": null,
+    "housing_tenure": null,
+    "student_required": true,
+    "admin_areas": [
+     "England"
+    ],
+    "gender": "any",
+    "income_test": "none",
+    "income_source_url": null,
+    "income_confidence": "high"
+   },
+   "source_url": "https://www.gov.uk/care-to-learn",
+   "source_snippet": "The Care to Learn scheme can help with childcare costs while you study.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "carers-credit",
+   "name_local": "Carer's Credit (National Insurance credits)",
+   "name_en": "Carer's Credit (National Insurance credits)",
+   "admin_level": "national",
+   "admin_area": null,
+   "funder": "Department for Work and Pensions (DWP)",
+   "category": "income_support",
+   "benefit_type": "in_kind",
+   "amount_min": null,
+   "amount_max": null,
+   "amount_currency": "GBP",
+   "amount_period": "annual",
+   "amount_note": "Not a cash payment: National Insurance credits that fill gaps in your National Insurance record so caring does not reduce your State Pension. Automatic if you get Carer's Allowance, Carer Support Payment, or Child Benefit for a child under 12.",
+   "is_automatic": false,
+   "application_url": "https://www.gov.uk/carers-credit/how-to-claim",
+   "application_channel": "post",
+   "deadline_type": "rolling",
+   "deadline_note": "You can still get credits for breaks in caring of up to 12 weeks in a row.",
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Download the Carer's Credit claim form",
+     "url": "https://www.gov.uk/government/publications/carers-credit-application-form"
+    },
+    {
+     "step": 2,
+     "detail": "Ask a health or social care professional to sign the Care Certificate part if the person you care for does not get a qualifying benefit",
+     "url": null
+    },
+    {
+     "step": 3,
+     "detail": "Post to Freepost DWP Carers Allowance Unit, or phone 0800 731 0297 to request a form",
+     "url": null
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "Carer's Credit claim form",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Signed Care Certificate",
+     "mandatory": false,
+     "note": "Only if the person you look after does not get a qualifying disability benefit"
+    }
+   ],
+   "eligibility": {
+    "statuses": [],
+    "age_min": 16,
+    "age_max": null,
+    "income_annual_max": null,
+    "income_note": "Your income, savings or investments do not affect eligibility. You must be 16 or over, under State Pension age and caring for at least 20 hours a week.",
+    "requires_children": false,
+    "nationality": "any_resident",
+    "residency_months_min": null,
+    "housing_tenure": null,
+    "student_required": false,
+    "admin_areas": [],
+    "gender": "any",
+    "income_test": "none",
+    "income_source_url": null,
+    "income_confidence": "high"
+   },
+   "source_url": "https://www.gov.uk/carers-credit",
+   "source_snippet": "You could get Carer’s Credit if you’re caring for someone for at least 20 hours a week.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "vaccine-damage-payment",
+   "name_local": "Vaccine Damage Payment",
+   "name_en": "Vaccine Damage Payment",
+   "admin_level": "national",
+   "admin_area": null,
+   "funder": "Department for Work and Pensions (administered by NHS Business Services Authority)",
+   "category": "health",
+   "benefit_type": "cash_one_off",
+   "amount_min": 120000,
+   "amount_max": 120000,
+   "amount_currency": "GBP",
+   "amount_period": "one_off",
+   "amount_note": "One-off tax-free payment of £120,000 if you are severely disabled (at least 60% disabled) as a result of vaccination against certain listed diseases. Not a compensation scheme: you can still take legal action.",
+   "is_automatic": false,
+   "application_url": "https://www.nhsbsa.nhs.uk/vaccine-damage-payment-scheme-vdps",
+   "application_channel": "online",
+   "deadline_type": "window",
+   "deadline_note": "You can only claim for a child once they are 2 years old. For an adult, claim by the latest of their 21st birthday or within 6 years of the vaccination.",
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Claim online on the NHSBSA website or fill in and post a paper form",
+     "url": "https://www.nhsbsa.nhs.uk/vaccine-damage-payment-scheme-vdps"
+    },
+    {
+     "step": 2,
+     "detail": "Medical evidence is used to assess your level of disablement",
+     "url": null
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "Medical evidence from doctors or hospitals involved in your treatment",
+     "mandatory": true,
+     "note": null
+    }
+   ],
+   "eligibility": {
+    "statuses": [],
+    "age_min": null,
+    "age_max": null,
+    "income_annual_max": null,
+    "income_note": "Not means-tested. Vaccination must normally have been before your 18th birthday (exceptions apply, for example COVID-19, HPV, flu) and given in the UK or Isle of Man, unless given as part of armed forces medical treatment.",
+    "requires_children": false,
+    "nationality": "any",
+    "residency_months_min": null,
+    "housing_tenure": null,
+    "student_required": false,
+    "admin_areas": [],
+    "gender": "any",
+    "income_test": "none",
+    "income_source_url": null,
+    "income_confidence": "high"
+   },
+   "source_url": "https://www.gov.uk/vaccine-damage-payment",
+   "source_snippet": "If you’re severely disabled as a result of a vaccination against certain diseases, you could get a one-off tax-free payment of £120,000.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "christmas-bonus",
+   "name_local": "Christmas Bonus (UK)",
+   "name_en": "Christmas Bonus (UK)",
+   "admin_level": "national",
+   "admin_area": null,
+   "funder": "Department for Work and Pensions (DWP)",
+   "category": "income_support",
+   "benefit_type": "cash_one_off",
+   "amount_min": 10,
+   "amount_max": 10,
+   "amount_currency": "GBP",
+   "amount_period": "one_off",
+   "amount_note": "One-off tax-free £10 payment made before Christmas to people who get certain benefits in the qualifying week (normally the first full week of December). Paid automatically.",
+   "is_automatic": true,
+   "application_url": "https://www.gov.uk/christmas-bonus",
+   "application_channel": "automatic",
+   "deadline_type": "annual",
+   "deadline_note": "Qualifying week is normally the first full week of December; you do not need to claim.",
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "No action needed: you are paid automatically if you get a qualifying benefit in the qualifying week",
+     "url": null
+    }
+   ],
+   "documents_required": [],
+   "eligibility": {
+    "statuses": [],
+    "age_min": null,
+    "age_max": null,
+    "income_annual_max": null,
+    "income_note": "No separate income test: entitlement follows receipt of certain qualifying benefits in the qualifying week (see the gov.uk Christmas Bonus guide for the list).",
+    "requires_children": false,
+    "nationality": "any_resident",
+    "residency_months_min": null,
+    "housing_tenure": null,
+    "student_required": false,
+    "admin_areas": [],
+    "gender": "any",
+    "income_test": "none",
+    "income_source_url": null,
+    "income_confidence": "high"
+   },
+   "source_url": "https://www.gov.uk/christmas-bonus",
+   "source_snippet": "The Christmas Bonus is a one-off tax-free £10 payment made before Christmas, paid to people who get certain benefits in the qualifying week.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "childcare-grant-students",
+   "name_local": "Childcare Grant (students with children, England)",
+   "name_en": "Childcare Grant (students with children, England)",
+   "admin_level": "national",
+   "admin_area": null,
+   "funder": "Student Finance England (Student Loans Company)",
+   "category": "education",
+   "benefit_type": "cash_monthly",
+   "amount_min": null,
+   "amount_max": 342.24,
+   "amount_currency": "GBP",
+   "amount_period": "weekly",
+   "amount_note": "Up to 85% of your childcare costs or a maximum of £199.62 a week for one child or £342.24 a week for 2 or more children, whichever is less. Not repaid. Paid into an online Childcare Grant Payment Service account and released to your provider. From 1 August 2026 it cannot be used for nannies.",
+   "is_automatic": false,
+   "application_url": "https://www.gov.uk/childcare-grant",
+   "application_channel": "online",
+   "deadline_type": "annual",
+   "deadline_note": "Apply as part of your main student finance application. For courses starting on or after 1 January 2027, apply through the Lifelong Learning Entitlement (applications open end of October 2026).",
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Apply online as part of your main student finance application",
+     "url": "https://www.gov.uk/student-finance-register-login"
+    },
+    {
+     "step": 2,
+     "detail": "Send in the evidence you are asked for",
+     "url": null
+    },
+    {
+     "step": 3,
+     "detail": "Get a decision letter, then set up your Childcare Grant Payment Service (CCGPS) account and approve payments to your provider",
+     "url": null
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "Evidence of household income and childcare costs",
+     "mandatory": true,
+     "note": "You are told what to send when you apply"
+    }
+   ],
+   "eligibility": {
+    "statuses": [
+     "student",
+     "parent"
+    ],
+    "age_min": null,
+    "age_max": null,
+    "income_annual_max": 28914.47,
+    "income_note": "Household income must be less than £20,107.23 if applying for 1 child, or less than £28,914.47 if applying for 2 or more children (ceiling shown is the higher figure). Child must be under 15 (under 17 with special educational needs). Not available with a Postgraduate Loan, Tax-Free Childcare, or childcare element of Universal Credit. Must be a permanent resident in England and eligible for student finance.",
+    "requires_children": true,
+    "nationality": "any_resident",
+    "residency_months_min": null,
+    "housing_tenure": null,
+    "student_required": true,
+    "admin_areas": [
+     "England"
+    ],
+    "gender": "any"
+   },
+   "source_url": "https://www.gov.uk/childcare-grant",
+   "source_snippet": "You can get 85% of your childcare costs or a fixed maximum amount, whichever is less.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "parents-learning-allowance",
+   "name_local": "Parents' Learning Allowance (England)",
+   "name_en": "Parents' Learning Allowance (England)",
+   "admin_level": "national",
+   "admin_area": null,
+   "funder": "Student Finance England (Student Loans Company)",
+   "category": "education",
+   "benefit_type": "cash_one_off",
+   "amount_min": 50,
+   "amount_max": 2024,
+   "amount_currency": "GBP",
+   "amount_period": "annual",
+   "amount_note": "Between £50 and £2,024 for each year of your course depending on household income, paid into your bank account in up to 3 instalments per year. Not repaid and does not affect benefits or tax credit.",
+   "is_automatic": false,
+   "application_url": "https://www.gov.uk/parents-learning-allowance",
+   "application_channel": "online",
+   "deadline_type": "annual",
+   "deadline_note": "Apply when you apply for student finance.",
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Apply for Parents' Learning Allowance as part of your student finance application",
+     "url": "https://www.gov.uk/student-finance-register-login"
+    },
+    {
+     "step": 2,
+     "detail": "Your student finance account is updated to show how much you will get",
+     "url": null
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "Household income details",
+     "mandatory": true,
+     "note": null
+    }
+   ],
+   "eligibility": {
+    "statuses": [
+     "student",
+     "parent"
+    ],
+    "age_min": null,
+    "age_max": null,
+    "income_annual_max": 18957.99,
+    "income_note": "Household income must be less than £18,957.99 a year. You must be a student in England with dependent children on a full-time undergraduate course (or course worth at least 120 credits). You do not need to be paying for childcare. Not available with a Postgraduate Loan.",
+    "requires_children": true,
+    "nationality": "any_resident",
+    "residency_months_min": null,
+    "housing_tenure": null,
+    "student_required": true,
+    "admin_areas": [
+     "England"
+    ],
+    "gender": "any"
+   },
+   "source_url": "https://www.gov.uk/parents-learning-allowance",
+   "source_snippet": "Depending on your household income, you could get between £50 and £2,024 for each year of your course.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "adult-dependants-grant",
+   "name_local": "Adult Dependants' Grant (England)",
+   "name_en": "Adult Dependants' Grant (England)",
+   "admin_level": "national",
+   "admin_area": null,
+   "funder": "Student Finance England (Student Loans Company)",
+   "category": "education",
+   "benefit_type": "cash_one_off",
+   "amount_min": null,
+   "amount_max": 3545,
+   "amount_currency": "GBP",
+   "amount_period": "annual",
+   "amount_note": "Maximum £3,545 a year if an adult depends on you financially while you study; amount depends on your income, the adult dependant's income and your circumstances. Paid into your bank account in up to 3 instalments per year. Not repaid but affects income-related benefits.",
+   "is_automatic": false,
+   "application_url": "https://www.gov.uk/adult-dependants-grant",
+   "application_channel": "online",
+   "deadline_type": "annual",
+   "deadline_note": "Complete the Adult Dependants' Grant section of your main student finance application.",
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Fill in the Adult Dependants' Grant section of your main student finance application with estimates of household income",
+     "url": "https://www.gov.uk/student-finance-register-login"
+    },
+    {
+     "step": 2,
+     "detail": "Student Finance England assesses and may ask for supporting information",
+     "url": null
+    },
+    {
+     "step": 3,
+     "detail": "Student Finance England tells you if you qualify and how much you get",
+     "url": null
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "P60",
+     "mandatory": false,
+     "note": "May be requested"
+    },
+    {
+     "doc": "Child Benefit details",
+     "mandatory": false,
+     "note": "May be requested"
+    },
+    {
+     "doc": "Financial information from your partner, for example bank statements",
+     "mandatory": false,
+     "note": "May be requested"
+    }
+   ],
+   "eligibility": {
+    "statuses": [
+     "student"
+    ],
+    "age_min": null,
+    "age_max": null,
+    "income_annual_max": 15835.98,
+    "income_note": "You are not eligible if your household income (your taxable income plus that of anyone else living in your household) is over £15,835.98. The dependant cannot be your child, a relative earning more than £3,796 a year, someone getting student finance, or your partner if you are under 25 (unless married or in a civil partnership). Not available with a Postgraduate Loan. For courses starting on or after 1 August 2026 the adult must live in the UK.",
+    "requires_children": false,
+    "nationality": "any_resident",
+    "residency_months_min": null,
+    "housing_tenure": null,
+    "student_required": true,
+    "admin_areas": [
+     "England"
+    ],
+    "gender": "any"
+   },
+   "source_url": "https://www.gov.uk/adult-dependants-grant",
+   "source_snippet": "If you’re a student and an adult depends on you financially, you may be able to apply for an Adult Dependants’ Grant of up to £3,545.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "statutory-redundancy-pay",
+   "name_local": "Statutory Redundancy Pay",
+   "name_en": "Statutory Redundancy Pay",
+   "admin_level": "national",
+   "admin_area": null,
+   "funder": "Your employer (Redundancy Payments Service if your employer is insolvent)",
+   "category": "employment",
+   "benefit_type": "cash_one_off",
+   "amount_min": null,
+   "amount_max": 22530,
+   "amount_currency": "GBP",
+   "amount_period": "one_off",
+   "amount_note": "Half a week's pay for each full year of service under 22, one week's pay for each year aged 22 to 40, and one and a half weeks' pay for each year aged 41 or over, capped at 20 years. For redundancies on or after 6 April 2026 weekly pay is capped at £751 and the maximum payment is £22,530. Statutory redundancy pay under £30,000 is not taxable.",
+   "is_automatic": false,
+   "application_url": "https://www.gov.uk/redundancy-your-rights/statutory-redundancy-pay",
+   "application_channel": "via_employer",
+   "deadline_type": "window",
+   "deadline_note": "You have 6 months from the date your job ends to apply for statutory redundancy pay.",
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Check your entitlement and calculate your pay",
+     "url": "https://www.gov.uk/calculate-your-redundancy-pay"
+    },
+    {
+     "step": 2,
+     "detail": "Claim from your employer; you must apply within 6 months of the date your job ends",
+     "url": null
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "Details of length of service and average weekly pay over the 12 weeks before notice",
+     "mandatory": true,
+     "note": null
+    }
+   ],
+   "eligibility": {
+    "statuses": [
+     "employee"
+    ],
+    "age_min": null,
+    "age_max": null,
+    "income_annual_max": null,
+    "income_note": "Not means-tested. You must be an employee with at least 2 years' service with your current employer. Not available to some groups, for example members of the armed forces, crown servants and some apprentices.",
+    "requires_children": false,
+    "nationality": "any_resident",
+    "residency_months_min": null,
+    "housing_tenure": null,
+    "student_required": false,
+    "admin_areas": [],
+    "gender": "any",
+    "income_test": "none",
+    "income_source_url": null,
+    "income_confidence": "high"
+   },
+   "source_url": "https://www.gov.uk/redundancy-your-rights",
+   "source_snippet": "You’ll normally be entitled to statutory redundancy pay if you’re an employee and you’ve been working for your current employer for 2 years or more.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "pension-age-disability-payment-scotland",
+   "name_local": "Pension Age Disability Payment (Scotland)",
+   "name_en": "Pension Age Disability Payment (Scotland)",
+   "admin_level": "region",
+   "admin_area": "Scotland",
+   "funder": "Social Security Scotland",
+   "category": "health",
+   "benefit_type": "cash_monthly",
+   "amount_min": 76.7,
+   "amount_max": 114.6,
+   "amount_currency": "GBP",
+   "amount_period": "weekly",
+   "amount_note": "Lower rate £76.70 a week (help or supervision during the day or night); higher rate £114.60 a week (during the day and night). Terminally ill people automatically get the higher rate. Replacing Attendance Allowance in Scotland; if you already get Attendance Allowance you are moved across without having to apply.",
+   "is_automatic": false,
+   "application_url": "https://www.mygov.scot/pension-age-disability-payment",
+   "application_channel": "online",
+   "deadline_type": "rolling",
+   "deadline_note": "People already on Attendance Allowance in Scotland are transferred by Social Security Scotland without needing to apply.",
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Check Pension Age Disability Payment on mygov.scot and apply to Social Security Scotland",
+     "url": "https://www.mygov.scot/pension-age-disability-payment"
+    }
+   ],
+   "documents_required": [],
+   "eligibility": {
+    "statuses": [],
+    "age_min": null,
+    "age_max": null,
+    "income_annual_max": null,
+    "income_note": "Not means-tested: income and savings are not taken into account. You need care needs because of a disability or long-term health condition and must have reached State Pension age. You do not need a carer.",
+    "requires_children": false,
+    "nationality": "any_resident",
+    "residency_months_min": null,
+    "housing_tenure": null,
+    "student_required": false,
+    "admin_areas": [
+     "Scotland"
+    ],
+    "gender": "any",
+    "income_test": "none",
+    "income_source_url": "https://www.mygov.scot/pension-age-disability-payment",
+    "income_confidence": "high"
+   },
+   "source_url": "https://www.mygov.scot/pension-age-disability-payment",
+   "source_snippet": "Pension Age Disability Payment is not means-tested.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "child-winter-heating-payment-scotland",
+   "name_local": "Child Winter Heating Payment (Scotland)",
+   "name_en": "Child Winter Heating Payment (Scotland)",
+   "admin_level": "region",
+   "admin_area": "Scotland",
+   "funder": "Social Security Scotland",
+   "category": "energy",
+   "benefit_type": "cash_one_off",
+   "amount_min": 265.5,
+   "amount_max": 265.5,
+   "amount_currency": "GBP",
+   "amount_period": "annual",
+   "amount_note": "Paid once a year from October and through the winter, whatever the weather. The current payment is £265.50. Formerly called Child Winter Heating Assistance.",
+   "is_automatic": false,
+   "application_url": "https://www.mygov.scot/child-winter-heating-payment",
+   "application_channel": "online",
+   "deadline_type": "annual",
+   "deadline_note": "Paid once a year from October; the mygov.scot page explains how to apply if the child does not live in Scotland.",
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Check Child Winter Heating Payment on mygov.scot, including how to apply if the child does not live in Scotland",
+     "url": "https://www.mygov.scot/child-winter-heating-payment"
+    }
+   ],
+   "documents_required": [],
+   "eligibility": {
+    "statuses": [],
+    "age_min": null,
+    "age_max": null,
+    "income_annual_max": null,
+    "income_note": "No income test is described on the official page. It is a payment to help disabled children and young people and their families with increased heating costs over winter.",
+    "requires_children": true,
+    "nationality": "any_resident",
+    "residency_months_min": null,
+    "housing_tenure": null,
+    "student_required": false,
+    "admin_areas": [
+     "Scotland"
+    ],
+    "gender": "any",
+    "income_test": "none",
+    "income_source_url": "https://www.mygov.scot/child-winter-heating-payment",
+    "income_confidence": "medium"
+   },
+   "source_url": "https://www.mygov.scot/child-winter-heating-payment",
+   "source_snippet": "The current payment is £265.50.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "school-clothing-grant-scotland",
+   "name_local": "School Clothing Grant (Scotland, council-administered)",
+   "name_en": "School Clothing Grant (Scotland, council-administered)",
+   "admin_level": "region",
+   "admin_area": "Scotland",
+   "funder": "Local councils in Scotland (Scottish Government framework)",
+   "category": "education",
+   "benefit_type": "cash_one_off",
+   "amount_min": 120,
+   "amount_max": null,
+   "amount_currency": "GBP",
+   "amount_period": "annual",
+   "amount_note": "Everyone who gets a school clothing grant receives at least £120 per child of primary school age and £150 per child of secondary school age, normally paid by bank transfer once a year (usually July or August). Who can apply and the exact amount depend on your local council.",
+   "is_automatic": false,
+   "application_url": "https://www.mygov.scot/clothing-grants",
+   "application_channel": "online",
+   "deadline_type": "annual",
+   "deadline_note": "Most councils accept applications from July until the end of March; check your council.",
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Choose your council on mygov.scot to find its school clothing grant page",
+     "url": "https://www.mygov.scot/clothing-grants"
+    },
+    {
+     "step": 2,
+     "detail": "Apply to your local council, often together with free school meals",
+     "url": null
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "Proof of qualifying benefit or income as required by your council",
+     "mandatory": true,
+     "note": "Rules vary by council"
+    }
+   ],
+   "eligibility": {
+    "statuses": [],
+    "age_min": null,
+    "age_max": null,
+    "income_annual_max": null,
+    "income_note": "Council-set eligibility, so no single income ceiling is published on mygov.scot. Apply to your local council for its qualifying benefits and income rules.",
+    "requires_children": true,
+    "nationality": "any_resident",
+    "residency_months_min": null,
+    "housing_tenure": null,
+    "student_required": false,
+    "admin_areas": [
+     "Scotland"
+    ],
+    "gender": "any",
+    "income_test": "unpublished",
+    "income_source_url": "https://www.mygov.scot/clothing-grants",
+    "income_confidence": "high"
+   },
+   "source_url": "https://www.mygov.scot/clothing-grants",
+   "source_snippet": "Everybody who gets a school clothing grant will get at least:",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "free-school-meals-northern-ireland",
+   "name_local": "Free School Meals (Northern Ireland)",
+   "name_en": "Free School Meals (Northern Ireland)",
+   "admin_level": "region",
+   "admin_area": "Northern Ireland",
+   "funder": "Education Authority (Department of Education, Northern Ireland)",
+   "category": "education",
+   "benefit_type": "in_kind",
+   "amount_min": null,
+   "amount_max": null,
+   "amount_currency": "GBP",
+   "amount_period": "annual",
+   "amount_note": "Free school lunches for eligible children at school or full-time pre-school. Free school milk is also given to all pupils at special schools and to pre-school pupils.",
+   "is_automatic": false,
+   "application_url": "https://www.nidirect.gov.uk/articles/nutrition-and-school-meals",
+   "application_channel": "online",
+   "deadline_type": "annual",
+   "deadline_note": "Apply through the Education Authority; for the 2026-27 school year the Universal Credit threshold is £15,900 net annual earnings.",
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Apply for free school meals via the Education Authority",
+     "url": "http://www.eani.org.uk/i-want-to/fsm/"
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "Proof of qualifying benefit, for example Universal Credit award",
+     "mandatory": true,
+     "note": null
+    }
+   ],
+   "eligibility": {
+    "statuses": [],
+    "age_min": null,
+    "age_max": null,
+    "income_annual_max": 15900,
+    "income_note": "For 2026-27, if you receive Universal Credit your household's net earnings (after tax) must not be over £15,900 per year (£15,390 for 2025-26 applications). You also qualify on income-related ESA, support under Part VI of the Immigration and Asylum Act 1999 or the guarantee element of State Pension Credit, or if your child has a statement of special educational needs and a special diet. Young people on Universal Credit in their own right also qualify.",
+    "requires_children": true,
+    "nationality": "any_resident",
+    "residency_months_min": null,
+    "housing_tenure": null,
+    "student_required": false,
+    "admin_areas": [
+     "Northern Ireland"
+    ],
+    "gender": "any"
+   },
+   "source_url": "https://www.nidirect.gov.uk/articles/nutrition-and-school-meals",
+   "source_snippet": "Your child will be entitled to free school meals if they are at school or pre-school (full-time) and you get any of the following:",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "council-tax-student-exemption",
+   "name_local": "Council Tax exemption for full-time students",
+   "name_en": "Council Tax exemption for full-time students (incl. international students)",
+   "admin_level": "region",
+   "admin_area": null,
+   "funder": "Local councils (England, Scotland, Wales)",
+   "category": "housing",
+   "benefit_type": "discount",
+   "amount_min": null,
+   "amount_max": null,
+   "amount_currency": "GBP",
+   "amount_period": "annual",
+   "amount_note": "Full exemption (100% off the Council Tax bill) where everyone in the household is a full-time student; where only some residents are students the household may still get a discount (25% if one adult is counted, 50% if all are disregarded)",
+   "is_automatic": false,
+   "application_url": "https://www.gov.uk/apply-for-council-tax-discount",
+   "application_channel": "online",
+   "deadline_type": "rolling",
+   "deadline_note": "Apply to your local council; ask your university for a Council Tax exemption certificate (student status letter)",
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Ask your university for a council tax exemption certificate confirming your full-time course",
+     "url": null
+    },
+    {
+     "step": 2,
+     "detail": "Apply for a discount or exemption with your local council even if you did not receive a bill",
+     "url": "https://www.gov.uk/apply-for-council-tax-discount"
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "University certificate / letter confirming full-time student status, course length and hours",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Tenancy address",
+     "mandatory": true,
+     "note": null
+    }
+   ],
+   "eligibility": {
+    "statuses": [
+     "student"
+    ],
+    "age_min": null,
+    "age_max": null,
+    "income_annual_max": null,
+    "income_note": "Not income-tested. Course must last at least 1 year and involve at least 21 hours study per week (12 hours and 3 months for under-20s studying up to A level). Applies to student-visa holders living in England, Scotland and Wales.",
+    "requires_children": false,
+    "nationality": "any_resident",
+    "residency_months_min": null,
+    "housing_tenure": null,
+    "student_required": true,
+    "admin_areas": [],
+    "gender": "any",
+    "rule_source": "geography_unknown"
+   },
+   "source_url": "https://www.gov.uk/council-tax/discounts-for-full-time-students",
+   "source_snippet": "Households where everyone’s a full-time student do not have to pay Council Tax.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "chevening-scholarships",
+   "name_local": "Chevening Scholarships",
+   "name_en": "Chevening Scholarships (fully funded UK master's)",
+   "admin_level": "national",
+   "admin_area": null,
+   "funder": "UK Foreign, Commonwealth & Development Office (FCDO)",
+   "category": "education",
+   "benefit_type": "cash_monthly",
+   "amount_min": null,
+   "amount_max": null,
+   "amount_currency": "GBP",
+   "amount_period": "annual",
+   "amount_note": "Fully funded one-year master's in the UK (fees, living stipend, travel and visa costs; see chevening.org for the current stipend)",
+   "is_automatic": false,
+   "application_url": "https://www.chevening.org/scholarships/",
+   "application_channel": "online",
+   "deadline_type": "window",
+   "deadline_note": "2027/28 cycle: applications opened 4 August 2026 and close at 11:00 UTC on 6 October 2026",
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Check eligibility and read the guidance",
+     "url": "https://www.chevening.org/scholarships/who-can-apply/"
+    },
+    {
+     "step": 2,
+     "detail": "Submit the online application before the closing time",
+     "url": "https://www.chevening.org/scholarships/application-timeline/"
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "Passport / proof of citizenship of a Chevening-eligible country",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Two references",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "University course choices",
+     "mandatory": true,
+     "note": null
+    }
+   ],
+   "eligibility": {
+    "statuses": [],
+    "age_min": null,
+    "age_max": null,
+    "income_annual_max": null,
+    "income_note": "Not income-tested. Open to citizens of Chevening-eligible countries (apply from outside the UK); not open to UK citizens. 2027/28 round closes 6 October 2026 11:00 UTC.",
+    "requires_children": false,
+    "nationality": "any",
+    "residency_months_min": null,
+    "housing_tenure": null,
+    "student_required": false,
+    "admin_areas": [],
+    "gender": "any"
+   },
+   "source_url": "https://www.chevening.org/scholarships/",
+   "source_snippet": "Chevening Scholarships are fully-funded, leaving you free to focus on achieving your professional goals and maximising the experience of a lifetime.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "commonwealth-masters-scholarships",
+   "name_local": "Commonwealth Master's Scholarships",
+   "name_en": "Commonwealth Master's Scholarships (UK)",
+   "admin_level": "national",
+   "admin_area": null,
+   "funder": "Commonwealth Scholarship Commission in the UK (CSC) / FCDO",
+   "category": "education",
+   "benefit_type": "cash_monthly",
+   "amount_min": 1712,
+   "amount_max": 2000,
+   "amount_currency": "GBP",
+   "amount_period": "monthly",
+   "amount_note": "Monthly stipend GBP 1,712 (GBP 2,000 in London) plus full tuition fees paid by agreement with the university and approved airfare to the UK and return",
+   "is_automatic": false,
+   "application_url": "https://cscuk.fcdo.gov.uk/scholarships/commonwealth-masters-scholarships/",
+   "application_channel": "online",
+   "deadline_type": "window",
+   "deadline_note": "2027/28 round closes 16:00 BST on Tuesday 20 October 2026; you must also apply through a nominating agency, which nominates candidates to the CSC by December 2026",
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Check your country is eligible and find your nominating agency",
+     "url": "https://cscuk.fcdo.gov.uk/scholarships/commonwealth-masters-scholarships/"
+    },
+    {
+     "step": 2,
+     "detail": "Apply online to the CSC before the deadline",
+     "url": null
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "Proof of citizenship or refugee status of an eligible Commonwealth country",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Academic transcripts and references",
+     "mandatory": true,
+     "note": null
+    }
+   ],
+   "eligibility": {
+    "statuses": [],
+    "age_min": null,
+    "age_max": null,
+    "income_annual_max": null,
+    "income_note": "Aimed at candidates who could not otherwise afford to study in the UK; no numeric income ceiling published on the page. Citizens of, or refugees recognised by, eligible Commonwealth countries (42 listed).",
+    "requires_children": false,
+    "nationality": "any",
+    "residency_months_min": null,
+    "housing_tenure": null,
+    "student_required": false,
+    "admin_areas": [],
+    "gender": "any"
+   },
+   "source_url": "https://cscuk.fcdo.gov.uk/scholarships/commonwealth-masters-scholarships/",
+   "source_snippet": "Applicants must be a citizen of or have been granted refugee status by an eligible Commonwealth country.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "great-scholarships-uk",
+   "name_local": "GREAT Scholarships",
+   "name_en": "GREAT Scholarships (GBP 10,000 towards UK postgraduate tuition)",
+   "admin_level": "national",
+   "admin_area": null,
+   "funder": "British Council / UK Government GREAT Britain campaign with UK universities",
+   "category": "education",
+   "benefit_type": "cash_one_off",
+   "amount_min": 10000,
+   "amount_max": 10000,
+   "amount_currency": "GBP",
+   "amount_period": "one_off",
+   "amount_note": "GBP 10,000 towards tuition fees for a one-year taught postgraduate course; over 140 scholarships from over 60 universities",
+   "is_automatic": false,
+   "application_url": "https://study-uk.britishcouncil.org/scholarships/great-scholarships",
+   "application_channel": "online",
+   "deadline_type": "rolling",
+   "deadline_note": "Deadlines vary by university and country; check the country page and the participating university",
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Choose a participating UK university and course for your country",
+     "url": "https://study-uk.britishcouncil.org/scholarships/great-scholarships"
+    },
+    {
+     "step": 2,
+     "detail": "Apply to the university for the scholarship",
+     "url": null
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "University offer / application",
+     "mandatory": true,
+     "note": null
+    }
+   ],
+   "eligibility": {
+    "statuses": [],
+    "age_min": null,
+    "age_max": null,
+    "income_annual_max": null,
+    "income_note": "Not income-tested. Open to applicants from 18 listed countries (Bangladesh, China, Egypt, France, Ghana, Greece, India, Indonesia, Italy, Kenya, Malaysia, Mexico, Nigeria, Pakistan, Spain, Thailand, Turkey, Vietnam).",
+    "requires_children": false,
+    "nationality": "any",
+    "residency_months_min": null,
+    "housing_tenure": null,
+    "student_required": false,
+    "admin_areas": [],
+    "gender": "any"
+   },
+   "source_url": "https://study-uk.britishcouncil.org/scholarships/great-scholarships",
+   "source_snippet": "£10,000 towards their tuition fees for a wide range of one-year taught postgraduate courses.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "gates-cambridge-scholarship",
+   "name_local": "Gates Cambridge Scholarship",
+   "name_en": "Gates Cambridge Scholarship (full cost, postgraduate, outside UK)",
+   "admin_level": "national",
+   "admin_area": null,
+   "funder": "Gates Cambridge Trust, University of Cambridge",
+   "category": "education",
+   "benefit_type": "cash_monthly",
+   "amount_min": null,
+   "amount_max": 23152,
+   "amount_currency": "GBP",
+   "amount_period": "annual",
+   "amount_note": "Covers the University Composition Fee, a maintenance allowance of GBP 23,152 for 12 months (2026-27 rate), one economy single airfare at the beginning and end of the course, and inbound visa costs and the Immigration Health Surcharge",
+   "is_automatic": false,
+   "application_url": "https://www.gatescambridge.org/programme/the-scholarship/",
+   "application_channel": "online",
+   "deadline_type": "annual",
+   "deadline_note": "Deadlines are in the Timeline section of the application portal; apply via your Cambridge course application",
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Read eligibility and timeline",
+     "url": "https://www.gatescambridge.org/programme/the-scholarship/"
+    },
+    {
+     "step": 2,
+     "detail": "Apply to Cambridge and tick the Gates Cambridge scholarship option",
+     "url": null
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "Cambridge graduate application",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "References",
+     "mandatory": true,
+     "note": null
+    }
+   ],
+   "eligibility": {
+    "statuses": [],
+    "age_min": null,
+    "age_max": null,
+    "income_annual_max": null,
+    "income_note": "Not income-tested. Open to applicants from countries outside the UK.",
+    "requires_children": false,
+    "nationality": "any",
+    "residency_months_min": null,
+    "housing_tenure": null,
+    "student_required": false,
+    "admin_areas": [],
+    "gender": "any"
+   },
+   "source_url": "https://www.gatescambridge.org/programme/the-scholarship/",
+   "source_snippet": "Each year Gates Cambridge offers around 70 full-cost scholarships to outstanding applicants from countries outside the UK to pursue a postgraduate degree in any subject available at the University of Cambridge.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "clarendon-fund-oxford",
+   "name_local": "Clarendon Fund Scholarships",
+   "name_en": "Clarendon Fund scholarships (University of Oxford)",
+   "admin_level": "national",
+   "admin_area": null,
+   "funder": "University of Oxford (Clarendon Fund)",
+   "category": "education",
+   "benefit_type": "cash_monthly",
+   "amount_min": null,
+   "amount_max": null,
+   "amount_currency": "GBP",
+   "amount_period": "annual",
+   "amount_note": "Over 200 new fully-funded scholarships a year; cover course fees in full plus a grant for living expenses for the period of fee liability",
+   "is_automatic": false,
+   "application_url": "https://www.ox.ac.uk/admissions/graduate/fees-and-funding/funding/clarendon/applicants",
+   "application_channel": "online",
+   "deadline_type": "annual",
+   "deadline_note": "No separate application: apply to your Oxford Master's or DPhil by the December or January deadline relevant to your course",
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Apply to your Oxford graduate course by the December or January funding deadline",
+     "url": "https://www.ox.ac.uk/admissions/graduate/fees-and-funding/funding/clarendon/applicants"
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "Oxford graduate application",
+     "mandatory": true,
+     "note": null
+    }
+   ],
+   "eligibility": {
+    "statuses": [],
+    "age_min": null,
+    "age_max": null,
+    "income_annual_max": null,
+    "income_note": "Not income-tested; merit-based, open to all nationalities (highly competitive).",
+    "requires_children": false,
+    "nationality": "any",
+    "residency_months_min": null,
+    "housing_tenure": null,
+    "student_required": false,
+    "admin_areas": [],
+    "gender": "any"
+   },
+   "source_url": "https://www.ox.ac.uk/admissions/graduate/fees-and-funding/funding/clarendon/applicants",
+   "source_snippet": "If you apply for a full-time or part-time Master’s or DPhil at Oxford by the relevant December for January funding deadline for your course, you will be automatically considered for a Clarendon scholarship.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "student-oyster-18-plus",
+   "name_local": "18+ Student Oyster photocard",
+   "name_en": "18+ Student Oyster photocard (30% off London Travelcards and bus passes)",
+   "admin_level": "city",
+   "admin_area": "London",
+   "funder": "Transport for London (TfL)",
+   "category": "transport",
+   "benefit_type": "discount",
+   "amount_min": null,
+   "amount_max": null,
+   "amount_currency": "GBP",
+   "amount_period": "annual",
+   "amount_note": "30% off adult-rate Travelcards and Bus & Tram Pass season tickets; GBP 20 administration fee",
+   "is_automatic": false,
+   "application_url": "https://tfl.gov.uk/fares/free-and-discounted-travel/18-plus-student-oyster-photocard",
+   "application_channel": "online",
+   "deadline_type": "rolling",
+   "deadline_note": "Apply online each academic year",
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Apply online with your student enrolment ID, London address and a digital photo",
+     "url": "https://tfl.gov.uk/fares/free-and-discounted-travel/18-plus-student-oyster-photocard"
+    },
+    {
+     "step": 2,
+     "detail": "Pay the GBP 20 administration fee by card",
+     "url": null
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "Student enrolment ID",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "Digital photo",
+     "mandatory": true,
+     "note": null
+    },
+    {
+     "doc": "London borough address",
+     "mandatory": true,
+     "note": null
+    }
+   ],
+   "eligibility": {
+    "statuses": [
+     "student"
+    ],
+    "age_min": 18,
+    "age_max": null,
+    "income_annual_max": null,
+    "income_note": "Not income-tested. Must be 18+, live in a London borough during term time, be enrolled at a school, college or university and on a full-time course with at least 15 tuition-led or structured learning hours a week.",
+    "requires_children": false,
+    "nationality": "any_resident",
+    "residency_months_min": null,
+    "housing_tenure": null,
+    "student_required": true,
+    "admin_areas": [
+     "London"
+    ],
+    "gender": "any"
+   },
+   "source_url": "https://tfl.gov.uk/fares/free-and-discounted-travel/18-plus-student-oyster-photocard",
+   "source_snippet": "Save 30% on adult-rate Travelcards and Bus & Tram Pass season tickets.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "foreign-income-tax-relief-students",
+   "name_local": "Tax exemption on foreign income for foreign students",
+   "name_en": "UK tax exemption on foreign income used for study and living costs",
+   "admin_level": "national",
+   "admin_area": null,
+   "funder": "HM Revenue & Customs (HMRC)",
+   "category": "tax",
+   "benefit_type": "tax_credit",
+   "amount_min": null,
+   "amount_max": null,
+   "amount_currency": "GBP",
+   "amount_period": "annual",
+   "amount_note": "No UK tax on foreign income or gains used for course fees or living costs; HMRC may ask you to account for living costs above GBP 15,000 a year (excluding course fees)",
+   "is_automatic": false,
+   "application_url": "https://www.gov.uk/tax-foreign-income/study-in-the-uk",
+   "application_channel": "online",
+   "deadline_type": "none",
+   "deadline_note": null,
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Check the rule on GOV.UK and keep records of how foreign funds are spent",
+     "url": "https://www.gov.uk/tax-foreign-income/study-in-the-uk"
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "Records showing foreign income was used for fees and living costs",
+     "mandatory": false,
+     "note": null
+    }
+   ],
+   "eligibility": {
+    "statuses": [
+     "student"
+    ],
+    "age_min": null,
+    "age_max": null,
+    "income_annual_max": null,
+    "income_note": "Not income-tested. Does not apply where the student's country has no double-taxation agreement covering students, or where the money is used for other purposes.",
+    "requires_children": false,
+    "nationality": "any_resident",
+    "residency_months_min": null,
+    "housing_tenure": null,
+    "student_required": true,
+    "admin_areas": [],
+    "gender": "any"
+   },
+   "source_url": "https://www.gov.uk/tax-foreign-income/study-in-the-uk",
+   "source_snippet": "Foreign students usually do not pay UK tax on foreign income or gains, as long as they're used for course fees or living costs.",
+   "last_verified_at": "2026-10-05",
+   "verification_status": "verified"
+  },
+  {
+   "slug": "nhs-access-student-visa-health-surcharge",
+   "name_local": "NHS access via student Immigration Health Surcharge",
+   "name_en": "NHS access for student-visa holders (Immigration Health Surcharge)",
+   "admin_level": "national",
+   "admin_area": null,
+   "funder": "UK Home Office / NHS",
+   "category": "health",
+   "benefit_type": "in_kind",
+   "amount_min": null,
+   "amount_max": null,
+   "amount_currency": "GBP",
+   "amount_period": "annual",
+   "amount_note": "Not a payment to you: the immigration health surcharge (776 pounds per year of visa for students, their dependants and Youth Mobility visas) is paid with the visa application, and in return you can use the NHS like an ordinary resident, though prescription and dental charges still apply",
+   "is_automatic": false,
+   "application_url": "https://www.gov.uk/healthcare-immigration-application",
+   "application_channel": "online",
+   "deadline_type": "none",
+   "deadline_note": "Paid as part of the student visa application",
+   "procedure_steps": [
+    {
+     "step": 1,
+     "detail": "Pay the Immigration Health Surcharge during your visa application",
+     "url": "https://www.gov.uk/healthcare-immigration-application"
+    },
+    {
+     "step": 2,
+     "detail": "Register with a GP after arrival",
+     "url": null
+    }
+   ],
+   "documents_required": [
+    {
+     "doc": "Student visa application reference",
+     "mandatory": true,
+     "note": null
+    }
+   ],
+   "eligibility": {
+    "statuses": [
+     "student"
+    ],
+    "age_min": null,
+    "age_max": null,
+    "income_annual_max": null,
+    "income_note": "Not income-tested. Applies to students applying for a UK visa for more than 6 months.",
+    "requires_children": false,
+    "nationality": "any_resident",
+    "residency_months_min": null,
+    "housing_tenure": null,
+    "student_required": true,
+    "admin_areas": [],
+    "gender": "any"
+   },
+   "source_url": "https://www.gov.uk/healthcare-immigration-application/how-much-pay",
+   "source_snippet": "£776 per year for students, their dependants, and those on a Youth Mobility Scheme visa",
+   "last_verified_at": "2026-10-05",
    "verification_status": "verified"
   }
  ]

@@ -173,13 +173,13 @@ export function isSharedPurse(programme) {
  * fail — it goes to the same `conditional` bucket the founder-criteria gates
  * below already use, with a caveat naming the condition. Detected from the
  * record's own name and `eligibility.other_note`, narrowly (the literal word
- * "consortium"), because a false positive here hides real money and a false
+ * "consortium" or its plural), because a false positive here hides real money and a false
  * negative shows money nobody can actually claim solo. `eligibility.
  * requires_consortium`, once research populates it, always wins over the
  * text guess, in either direction — including an explicit `false` for a
  * record whose prose merely discusses consortia without requiring one.
  */
-const CONSORTIUM_HINTS = /\bconsortium\b/i;
+const CONSORTIUM_HINTS = /\bconsorti(?:um|a)\b/i; // the plural too: "requires consortia of at least three"
 
 export function requiresConsortium(programme) {
   const e = programme?.eligibility || {};

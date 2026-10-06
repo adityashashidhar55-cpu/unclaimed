@@ -545,5 +545,45 @@ const EARNER = (cc, o = {}) => ({
   t('and it carries a note explaining why', hit.m && typeof hit.m.ended_note === 'string' && hit.m.ended_note.length > 0);
 }
 
+/* ---- residence answers: a student visa is not permanent residence -------- *
+ *
+ * The wizard offers citizen/PR, EU-EEA, work visa, student visa, refugee and
+ * "other legal residence". What each opens is decided by one table
+ * (NATIONALITY_SATISFIED_BY): a student visa — like a work visa or EU free
+ * movement — satisfies a programme open to residents, and nothing that asks for
+ * citizens or permanent residents, or for refugees.
+ */
+{
+  const mk = (slug, nationality) => ({
+    slug, name_local: slug, name_en: slug, admin_level: 'national', admin_area: null, funder: 'F', category: 'housing',
+    benefit_type: 'cash_monthly', amount_min: 100, amount_max: 100, amount_currency: 'EUR', amount_period: 'monthly',
+    amount_note: null, is_automatic: false, application_url: 'https://example.org/a', application_channel: 'online',
+    deadline_type: 'rolling', deadline_note: null, procedure_steps: [], documents_required: [],
+    eligibility: { statuses: [], age_min: null, age_max: null, income_annual_max: null, income_note: null, requires_children: false,
+      nationality, residency_months_min: null, housing_tenure: null, student_required: false, admin_areas: [], gender: 'any' },
+    source_url: 'https://example.org/a', source_snippet: null, last_verified_at: '2026-10-05', verification_status: 'verified',
+  });
+  const data = { country_code: 'FR', programmes: [mk('for-citizens', 'citizen_or_pr'), mk('for-residents', 'any_resident'), mk('for-anyone', 'any'), mk('for-refugees', 'refugee_or_protected')] };
+  const entry = { ...entryFor('fr'), regions: [] };
+  const verdict = (group) => {
+    const r = match(EARNER('fr', { nationality_group: group, income_annual: 20000 }), data, entry);
+    const ids = (b) => new Set((r[b] || []).map((x) => x.programme.slug));
+    return { eligible: ids('eligible'), not: ids('not_eligible') };
+  };
+  for (const g of ['student_visa', 'work_visa', 'eu_eea', 'other_legal', 'any_resident']) {
+    const v = verdict(g);
+    t(`${g}: qualifies for a programme open to residents`, v.eligible.has('for-residents'));
+    t(`${g}: qualifies for a programme with no residence test`, v.eligible.has('for-anyone'));
+    t(`${g}: does NOT qualify for citizens-and-permanent-residents programmes`, !v.eligible.has('for-citizens'));
+    t(`${g}: does NOT qualify for refugee-only programmes`, !v.eligible.has('for-refugees'));
+  }
+  const pr = verdict('citizen_or_pr');
+  t('citizen_or_pr qualifies for the citizen programme and the resident one', pr.eligible.has('for-citizens') && pr.eligible.has('for-residents'));
+  t('the matcher table names the two new visa answers',
+    /student_visa/.test(fs.readFileSync(new URL('src/engine/matcher.js', ROOT), 'utf8')));
+  t('the web wizard offers a student visa as its own answer',
+    /\['student_visa', T\('Student visa'\)/.test(fs.readFileSync(new URL('src/app.js', ROOT), 'utf8')));
+}
+
 console.log(`\n${pass} passed, ${fail} failed\n`);
 process.exit(fail ? 1 : 0);

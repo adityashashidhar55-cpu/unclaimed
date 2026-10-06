@@ -10,6 +10,7 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
+import { readAllSitemaps } from './_sitemaps.mjs';
 const DIST = path.join(ROOT, 'dist');
 
 let pass = 0;
@@ -95,7 +96,7 @@ if (fs.existsSync(searchPage)) {
   t('the search page mounts #search-app', html.includes('id="search-app"'));
   t('the search page loads search.js as a module', /<script type="module" src="[^"]*\/search\.js/.test(html));
   t('the search page has a noscript fallback that links elsewhere', /<noscript>[\s\S]*<a[^>]+href/.test(html));
-  t('the search page is in the sitemap', fs.readFileSync(path.join(DIST, 'sitemap.xml'), 'utf8').includes('/search/'));
+  t('the search page is in the sitemap', readAllSitemaps(DIST).includes('/search/'));
 }
 
 t('search.js is published', fs.existsSync(path.join(DIST, 'search.js')));
