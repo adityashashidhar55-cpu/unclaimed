@@ -223,5 +223,20 @@
     "country": "ch",
     "from": "ch-innosuisse-startup-innovationsprojekte",
     "to": "ch-innosuisse-startup-innovation-projects"
+  },
+  {
+    "country": "eu",
+    "from": "eu-esa-bass-kickstart",
+    "to": "eu-esa-business-applications-kick-start"
+  },
+  {
+    "country": "gb",
+    "from": "gb-se-rd-grant",
+    "to": "uk-scottish-enterprise-rd-grants"
+  },
+  {
+    "country": "ie",
+    "from": "ie-ei-hpsu-feasibility",
+    "to": "ie-hpsu-feasibility-study-grant"
   }
 ]
