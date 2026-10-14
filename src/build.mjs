@@ -2564,7 +2564,7 @@ ${disclaimerBar(TR)}
    modules; this block was the one that did not. */
 import { requestCode, verifyCode, finishTotp, me } from '${BASE}/app/auth.js?v=${ASSET_V}';
 import { accountState, awaitEntitlement, upgrade, pauseBilling, resumeBilling, fetchQuota } from '${BASE}/app/checkout.js?v=${ASSET_V}';
-import { track } from '${BASE}/beacon.js?v=${ASSET_V}';
+import { track } from '${BASE}/flow.js?v=${ASSET_V}';
 
 const $ = (s) => document.querySelector(s);
 const msg = $('#auth-msg');
@@ -4373,6 +4373,8 @@ write('dashboard/dashboard.css', fs.readFileSync(path.join(SRC, 'pwa/dashboard.c
    resolves; holds no secret, since the Worker checks the session. */
 write('admin/admin.js', fs.readFileSync(path.join(SRC, 'pwa/admin.js'), 'utf8'));
 write('beacon.js', fs.readFileSync(path.join(SRC, 'pwa/beacon.js'), 'utf8'));
+/* The only thing pages import statically for analytics — see src/pwa/flow.js. */
+write('flow.js', fs.readFileSync(path.join(SRC, 'pwa/flow.js'), 'utf8'));
 /* The audience switch, at the root so every page and every language can load
    the same copy — the cookie it sets is shared across all of them. */
 write('audience.js', fs.readFileSync(path.join(SRC, 'pwa/audience.js'), 'utf8'));

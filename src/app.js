@@ -14,7 +14,7 @@ import {
   estimateShareText,
   DISCLAIMER,
 } from './engine/matcher.js';
-import { track } from './beacon.js';
+import { track } from './flow.js';
 import { T, wizardDict, translateTree, wizardLang, NUM, localePath, localeOwnsCountry, countryName, setHTML } from './wizard-i18n.js';
 import { bindCheckout } from './app/checkout.js';
 import { applyPlan, recordApplyConsent } from './app/unlock.js';

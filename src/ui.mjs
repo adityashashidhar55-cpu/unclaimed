@@ -410,7 +410,7 @@ ${scripts}
      fired by the screen it belongs to. Deferred as a module so it cannot
      delay first paint, and it fails silently when the API is not there. -->
 <script type="module">
-import { track } from "${base}/beacon.js?v=${ASSET_V}";
+import { track } from "${base}/flow.js?v=${ASSET_V}";
 ${dualAudience ? `import { initAudience } from "${base}/audience.js?v=${ASSET_V}";` : ''}
 import { bindCheckout } from "${base}/app/checkout.js?v=${ASSET_V}";
 import { unlockLists } from "${base}/app/unlock.js?v=${ASSET_V}";
