@@ -65,6 +65,8 @@ for (const asset of [
      evaluates and the app opens to a blank screen. Nothing in the shell logs
      it anywhere a store reviewer would think to look. */
   'beacon.js',
+  /* flow.js is what auth.js and app.js import; it loads beacon.js lazily. */
+  'flow.js',
   'audience.js',
   'engine',
   'packages',
