@@ -41,6 +41,7 @@ const SRC_MAP = {
   '/startup-check.js': 'src/pwa/startup-check.js',
   '/audience.js': 'src/pwa/audience.js',
   '/beacon.js': 'src/pwa/beacon.js',
+  '/flow.js': 'src/pwa/flow.js',
   '/app/checkout.js': 'src/pwa/checkout.js',
   '/app/auth.js': 'src/pwa/auth.js',
   '/app/unlock.js': 'src/pwa/unlock.js',
