@@ -16,7 +16,7 @@
  * a token JavaScript can read is a token any injected script can steal.
  */
 
-import { track } from '../beacon.js';
+import { track } from '../flow.js';
 
 /**
  * Where the API lives, and how this client proves who it is.

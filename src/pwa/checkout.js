@@ -23,7 +23,7 @@
  */
 
 import { startCheckout, me } from './auth.js';
-import { track } from '../beacon.js';
+import { track } from '../flow.js';
 
 /** Plan keys the Worker accepts. Kept here so a typo in markup fails loudly. */
 export const PLANS = {

@@ -23,7 +23,7 @@
 import { matchStartup, reachFor, isFreeMoney } from '../engine/startup.js';
 /* formatMoney, not a hand-rolled symbol table: see money() below. */
 import { formatMoney } from '../engine/matcher.js';
-import { track } from '../beacon.js';
+import { track } from '../flow.js';
 /* The company funnel's paywall moment had no checkout on it at all: the only
    two controls sent the buyer to /pricing/ to choose again. The individual
    screen has always had a data-checkout button; this one did not import the
