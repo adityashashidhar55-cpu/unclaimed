@@ -2776,11 +2776,18 @@ form.addEventListener('submit', async (e) => {
     const res = await requestCode(email, acctType());
     btn.disabled = false; btn.textContent = 'Send me a code';
     if (!res.ok) { fail(res.message || AUTH_SEND_FAIL); return; }
+    /* A code that was never sent is not a code the visitor can type. This
+       used to advance to the code step regardless and print "Mail is not
+       configured on this deployment yet." over an input nobody could fill —
+       so a real mail outage read to the visitor as a broken form, and to us
+       as nothing at all. Stay put, say what happened, let them retry. */
+    if (!res.sent && !res.devCode) {
+      fail('We could not send the code just now. Please try again in a minute — if it keeps failing, email hello@unclaimedgrant.com and we will sort it out.');
+      return;
+    }
     $('#step-email').hidden = true;
     $('#step-code').hidden = false;
-    $('#code-sent-to').textContent = res.sent
-      ? 'We sent a code to ' + email + '. It expires in ten minutes.'
-      : 'Mail is not configured on this deployment yet.';
+    $('#code-sent-to').textContent = 'We sent a code to ' + email + '. It expires in ten minutes. If it is not there, check your spam folder.';
     if (res.devCode) $('#auth-code').value = res.devCode;
     $('#auth-code').focus();
     return;
