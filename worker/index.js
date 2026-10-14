@@ -709,22 +709,114 @@ async function underSendLimit(env, bucket, limit) {
   return (row?.count ?? 0) <= limit;
 }
 
+/* ------------------------------------------------------------------ */
+/* Mail                                                                */
+/* ------------------------------------------------------------------ */
+
+/**
+ * Every email this product sends goes through here, and every failure is
+ * written down.
+ *
+ * It did not use to be. Both senders ended in `return res.ok`, nobody read the
+ * body, and nothing was logged. So when the provider started refusing — an
+ * expired key, a domain that fell out of verification, a monthly quota reached
+ * — the product did exactly what it does when everything is fine, except no
+ * mail arrived. Sign-in codes, deadline digests, results emails and lead
+ * notifications all went quiet at once, with a green deploy, an empty log and
+ * a UI that said "We sent a code".
+ *
+ * A send that fails silently is worse than one that throws: it costs days
+ * before anyone even knows there is a bug to find. So the rule here is that a
+ * refusal is recorded in three places — the Worker log, a row this deployment
+ * can be asked about over HTTP, and the boolean the caller already returns —
+ * and the reason travels with it.
+ *
+ * What is NOT recorded: the key, the recipient, or the body of the message.
+ * The provider's status code and its own error name are enough to tell a
+ * revoked key from an unverified domain from a quota, and none of them say
+ * anything about a user.
+ */
+async function postToResend(env, payload) {
+  if (!env.RESEND_API_KEY) {
+    await recordMailOutcome(env, { ok: false, status: 0, name: 'not_configured' });
+    return false;
+  }
+
+  let res;
+  try {
+    res = await fetch('https://api.resend.com/emails', {
+      method: 'POST',
+      headers: { authorization: `Bearer ${env.RESEND_API_KEY}`, 'content-type': 'application/json' },
+      body: JSON.stringify(payload),
+    });
+  } catch (err) {
+    /* The provider was unreachable. Distinct from a refusal, and the only one
+       of these that is likely to fix itself. */
+    console.error('resend_unreachable', String(err?.message ?? err));
+    await recordMailOutcome(env, { ok: false, status: 0, name: 'unreachable' });
+    return false;
+  }
+
+  if (res.ok) {
+    await recordMailOutcome(env, { ok: true, status: res.status });
+    return true;
+  }
+
+  /* Resend answers a refusal with { statusCode, name, message }. `name` is the
+     machine-readable half and is what tells the operator which of the four
+     things went wrong without needing the dashboard. */
+  const body = await res.text().catch(() => '');
+  let name = 'unknown';
+  try { name = String(JSON.parse(body)?.name ?? 'unknown'); } catch { /* not JSON */ }
+  console.error('resend_rejected', res.status, name, body.slice(0, 300));
+  await recordMailOutcome(env, { ok: false, status: res.status, name });
+  return false;
+}
+
+/**
+ * The last thing mail did, kept in worker_config so it survives the isolate.
+ *
+ * Two keys, not one: a success must never erase the record of the last
+ * failure, because "it works now" and "it has not worked since Tuesday" are
+ * different answers and the second one is the one that gets asked about.
+ *
+ * Wrapped in try/catch on purpose — a deployment whose D1 is unhappy must
+ * still be able to send mail. Bookkeeping never fails the thing it books.
+ */
+async function recordMailOutcome(env, { ok, status, name = null }) {
+  try {
+    const row = JSON.stringify({ at: Date.now(), status, ...(name ? { name } : {}) });
+    await env.DB.prepare(
+      `INSERT INTO worker_config (key, value, created_at) VALUES (?, ?, ?)
+       ON CONFLICT(key) DO UPDATE SET value = excluded.value`,
+    )
+      .bind(ok ? 'mail_last_ok' : 'mail_last_error', row, Date.now())
+      .run();
+  } catch (err) {
+    console.error('mail_outcome_unrecorded', String(err?.message ?? err));
+  }
+}
+
+/** Parse a recorded outcome back, or null. */
+async function readMailOutcome(env, key) {
+  try {
+    const row = await env.DB.prepare('SELECT value FROM worker_config WHERE key = ?').bind(key).first();
+    return row ? JSON.parse(row.value) : null;
+  } catch {
+    return null;
+  }
+}
+
 async function sendCodeEmail(env, email, code) {
-  if (!env.RESEND_API_KEY) return false;
-  const res = await fetch('https://api.resend.com/emails', {
-    method: 'POST',
-    headers: { authorization: `Bearer ${env.RESEND_API_KEY}`, 'content-type': 'application/json' },
-    body: JSON.stringify({
-      from: env.MAIL_FROM || 'Unclaimed Grants <hello@unclaimedgrant.com>',
-      to: email,
-      subject: `${code} is your sign-in code`,
-      text:
-        `Your Unclaimed Grants sign-in code is:\n\n    ${code}\n\n` +
-        `It expires in 10 minutes and can be used once.\n\n` +
-        `If you did not ask to sign in, ignore this email — nobody can get in without this code.`,
-    }),
+  return postToResend(env, {
+    from: env.MAIL_FROM || 'Unclaimed Grants <hello@unclaimedgrant.com>',
+    to: email,
+    subject: `${code} is your sign-in code`,
+    text:
+      `Your Unclaimed Grants sign-in code is:\n\n    ${code}\n\n` +
+      `It expires in 10 minutes and can be used once.\n\n` +
+      `If you did not ask to sign in, ignore this email — nobody can get in without this code.`,
   });
-  return res.ok;
 }
 
 /**
@@ -941,19 +1033,13 @@ async function handleAuthVerify(request, env) {
  * without the confirm email carrying a header that makes no sense on it.
  */
 async function sendAlertEmail(env, { to, subject, text, headers = {} }) {
-  if (!env.RESEND_API_KEY) return false;
-  const res = await fetch('https://api.resend.com/emails', {
-    method: 'POST',
-    headers: { authorization: `Bearer ${env.RESEND_API_KEY}`, 'content-type': 'application/json' },
-    body: JSON.stringify({
-      from: env.ALERTS_FROM || 'Unclaimed <alerts@unclaimedgrant.com>',
-      to,
-      subject,
-      text,
-      headers,
-    }),
+  return postToResend(env, {
+    from: env.ALERTS_FROM || 'Unclaimed <alerts@unclaimedgrant.com>',
+    to,
+    subject,
+    text,
+    headers,
   });
-  return res.ok;
 }
 
 /**
@@ -975,7 +1061,31 @@ async function loadJurisdictionProgrammes(env, cc, audience) {
 
 /** GET /api/alerts/status — whether the subscribe form should even render. */
 async function handleAlertsStatus(request, env) {
-  return json({ configured: !!env.RESEND_API_KEY });
+  /* `configured` is what the subscribe form reads, and it only ever meant
+     "a key is set". That is not the same as "mail works", and the gap between
+     those two sentences is where a whole outage lived unnoticed: the key was
+     set, the form rendered, every send was refused, and this endpoint
+     cheerfully said yes throughout.
+
+     So it now also reports what mail actually DID, last time it tried. No
+     recipient, no key, no message body — a status code, the provider's own
+     error name, and when. Enough to tell a revoked key (401) from an
+     unverified domain (403 / validation_error) from a quota (429) from a
+     provider outage (unreachable), which is the whole diagnosis. */
+  const lastOk = await readMailOutcome(env, 'mail_last_ok');
+  const lastError = await readMailOutcome(env, 'mail_last_error');
+  const healthy = !!lastOk && (!lastError || lastOk.at >= lastError.at);
+
+  return json({
+    configured: !!env.RESEND_API_KEY,
+    mail: {
+      healthy,
+      last_ok_at: lastOk?.at ?? null,
+      last_error_at: lastError?.at ?? null,
+      last_error_status: lastError?.status ?? null,
+      last_error_name: lastError?.name ?? null,
+    },
+  });
 }
 
 /**
